@@ -24,7 +24,7 @@ gem "hubspot-sdk", "~> 0.0.1"
 require "bundler/setup"
 require "hubspot_sdk"
 
-hubspot = HubspotSDK::Client.new(access_token: "pat-na1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx")
+hubspot = HubspotSDK::Client.new(access_token: "pat-na1-xxxxxxxx-xxxx")
 
 created_response_simple_public_object = hubspot.crm.objects.contacts.create(properties: {email: "mark.s@lumon.industries"})
 

@@ -33,11 +33,7 @@ class HubspotSDKTest < Minitest::Test
       body: {}
     )
 
-    hubspot =
-      HubspotSDK::Client.new(
-        base_url: "http://localhost",
-        access_token: "pat-na1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-      )
+    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
     assert_raises(HubspotSDK::Errors::InternalServerError) do
       hubspot.crm.objects.contacts.create(properties: {foo: "string"})
@@ -55,7 +51,7 @@ class HubspotSDKTest < Minitest::Test
     hubspot =
       HubspotSDK::Client.new(
         base_url: "http://localhost",
-        access_token: "pat-na1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        access_token: "pat-na1-xxxxxxxx-xxxx",
         max_retries: 3
       )
 
@@ -72,11 +68,7 @@ class HubspotSDKTest < Minitest::Test
       body: {}
     )
 
-    hubspot =
-      HubspotSDK::Client.new(
-        base_url: "http://localhost",
-        access_token: "pat-na1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-      )
+    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
     assert_raises(HubspotSDK::Errors::InternalServerError) do
       hubspot.crm.objects.contacts.create(properties: {foo: "string"}, request_options: {max_retries: 3})
@@ -94,7 +86,7 @@ class HubspotSDKTest < Minitest::Test
     hubspot =
       HubspotSDK::Client.new(
         base_url: "http://localhost",
-        access_token: "pat-na1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        access_token: "pat-na1-xxxxxxxx-xxxx",
         max_retries: 3
       )
 
@@ -115,7 +107,7 @@ class HubspotSDKTest < Minitest::Test
     hubspot =
       HubspotSDK::Client.new(
         base_url: "http://localhost",
-        access_token: "pat-na1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        access_token: "pat-na1-xxxxxxxx-xxxx",
         max_retries: 1
       )
 
@@ -137,7 +129,7 @@ class HubspotSDKTest < Minitest::Test
     hubspot =
       HubspotSDK::Client.new(
         base_url: "http://localhost",
-        access_token: "pat-na1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        access_token: "pat-na1-xxxxxxxx-xxxx",
         max_retries: 1
       )
 
@@ -161,7 +153,7 @@ class HubspotSDKTest < Minitest::Test
     hubspot =
       HubspotSDK::Client.new(
         base_url: "http://localhost",
-        access_token: "pat-na1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        access_token: "pat-na1-xxxxxxxx-xxxx",
         max_retries: 1
       )
 
@@ -179,11 +171,7 @@ class HubspotSDKTest < Minitest::Test
       body: {}
     )
 
-    hubspot =
-      HubspotSDK::Client.new(
-        base_url: "http://localhost",
-        access_token: "pat-na1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-      )
+    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
     assert_raises(HubspotSDK::Errors::InternalServerError) do
       hubspot.crm.objects.contacts.create(properties: {foo: "string"})
@@ -200,11 +188,7 @@ class HubspotSDKTest < Minitest::Test
       body: {}
     )
 
-    hubspot =
-      HubspotSDK::Client.new(
-        base_url: "http://localhost",
-        access_token: "pat-na1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-      )
+    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
     assert_raises(HubspotSDK::Errors::InternalServerError) do
       hubspot.crm.objects.contacts.create(
@@ -224,11 +208,7 @@ class HubspotSDKTest < Minitest::Test
       body: {}
     )
 
-    hubspot =
-      HubspotSDK::Client.new(
-        base_url: "http://localhost",
-        access_token: "pat-na1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-      )
+    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
     assert_raises(HubspotSDK::Errors::InternalServerError) do
       hubspot.crm.objects.contacts.create(
@@ -251,11 +231,7 @@ class HubspotSDKTest < Minitest::Test
       headers: {"location" => "/redirected"}
     )
 
-    hubspot =
-      HubspotSDK::Client.new(
-        base_url: "http://localhost",
-        access_token: "pat-na1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-      )
+    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
     assert_raises(HubspotSDK::Errors::APIConnectionError) do
       hubspot.crm.objects.contacts.create(properties: {foo: "string"}, request_options: {extra_headers: {}})
@@ -284,11 +260,7 @@ class HubspotSDKTest < Minitest::Test
       headers: {"location" => "/redirected"}
     )
 
-    hubspot =
-      HubspotSDK::Client.new(
-        base_url: "http://localhost",
-        access_token: "pat-na1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-      )
+    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
     assert_raises(HubspotSDK::Errors::APIConnectionError) do
       hubspot.crm.objects.contacts.create(properties: {foo: "string"}, request_options: {extra_headers: {}})
@@ -312,11 +284,7 @@ class HubspotSDKTest < Minitest::Test
       headers: {"location" => "/redirected"}
     )
 
-    hubspot =
-      HubspotSDK::Client.new(
-        base_url: "http://localhost",
-        access_token: "pat-na1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-      )
+    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
     assert_raises(HubspotSDK::Errors::APIConnectionError) do
       hubspot.crm.objects.contacts.create(
@@ -346,11 +314,7 @@ class HubspotSDKTest < Minitest::Test
       headers: {"location" => "https://example.com/redirected"}
     )
 
-    hubspot =
-      HubspotSDK::Client.new(
-        base_url: "http://localhost",
-        access_token: "pat-na1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-      )
+    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
     assert_raises(HubspotSDK::Errors::APIConnectionError) do
       hubspot.crm.objects.contacts.create(
@@ -371,11 +335,7 @@ class HubspotSDKTest < Minitest::Test
       body: {}
     )
 
-    hubspot =
-      HubspotSDK::Client.new(
-        base_url: "http://localhost",
-        access_token: "pat-na1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-      )
+    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
     hubspot.crm.objects.contacts.create(properties: {foo: "string"})
 

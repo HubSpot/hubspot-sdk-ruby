@@ -50,7 +50,7 @@ class HubspotSDK::Test::SingletonClient < HubspotSDK::Client
   def initialize
     super(
       base_url: HubspotSDK::Test::SingletonClient::TEST_API_BASE_URL,
-      access_token: "pat-na1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      access_token: "pat-na1-xxxxxxxx-xxxx"
     )
   end
 end
