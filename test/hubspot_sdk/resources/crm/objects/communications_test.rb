@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::CommunicationsTest < HubspotSDK
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.communications.create(properties: {foo: "string"})
+    response = @hubspot.crm.objects.communications.create(properties: {foo: "string"})
 
     assert_pattern do
       response => HubspotSDK::CRM::CreatedResponseSimplePublicObject
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::CommunicationsTest < HubspotSDK
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.communications.update(
+      @hubspot.crm.objects.communications.update(
         "communicationId",
         properties: {
           property_checkbox: "false",
@@ -59,7 +59,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::CommunicationsTest < HubspotSDK
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.communications.list
+    response = @hubspot.crm.objects.communications.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -90,7 +90,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::CommunicationsTest < HubspotSDK
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.communications.delete("communicationId")
+    response = @hubspot.crm.objects.communications.delete("communicationId")
 
     assert_pattern do
       response => nil
@@ -100,7 +100,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::CommunicationsTest < HubspotSDK
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.communications.get("communicationId")
+    response = @hubspot.crm.objects.communications.get("communicationId")
 
     assert_pattern do
       response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
@@ -124,7 +124,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::CommunicationsTest < HubspotSDK
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.communications.search
+    response = @hubspot.crm.objects.communications.search
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject

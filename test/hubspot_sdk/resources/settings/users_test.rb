@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Settings::UsersTest < HubspotSDK::Test::Resou
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.users.create(email: "newUser@email.com")
+    response = @hubspot.settings.users.create(email: "newUser@email.com")
 
     assert_pattern do
       response => HubspotSDK::Settings::PublicUser
@@ -31,7 +31,7 @@ class HubspotSDK::Test::Resources::Settings::UsersTest < HubspotSDK::Test::Resou
   def test_update
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.users.update("userId")
+    response = @hubspot.settings.users.update("userId")
 
     assert_pattern do
       response => HubspotSDK::Settings::PublicUser
@@ -56,7 +56,7 @@ class HubspotSDK::Test::Resources::Settings::UsersTest < HubspotSDK::Test::Resou
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.users.list
+    response = @hubspot.settings.users.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -88,7 +88,7 @@ class HubspotSDK::Test::Resources::Settings::UsersTest < HubspotSDK::Test::Resou
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.users.delete("userId")
+    response = @hubspot.settings.users.delete("userId")
 
     assert_pattern do
       response => nil
@@ -98,7 +98,7 @@ class HubspotSDK::Test::Resources::Settings::UsersTest < HubspotSDK::Test::Resou
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.users.get("userId")
+    response = @hubspot.settings.users.get("userId")
 
     assert_pattern do
       response => HubspotSDK::Settings::PublicUser
@@ -123,7 +123,7 @@ class HubspotSDK::Test::Resources::Settings::UsersTest < HubspotSDK::Test::Resou
   def test_list_roles
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.users.list_roles
+    response = @hubspot.settings.users.list_roles
 
     assert_pattern do
       response => HubspotSDK::Settings::CollectionResponsePublicPermissionSetNoPaging
@@ -139,7 +139,7 @@ class HubspotSDK::Test::Resources::Settings::UsersTest < HubspotSDK::Test::Resou
   def test_list_teams
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.users.list_teams
+    response = @hubspot.settings.users.list_teams
 
     assert_pattern do
       response => HubspotSDK::Settings::CollectionResponsePublicTeamNoPaging

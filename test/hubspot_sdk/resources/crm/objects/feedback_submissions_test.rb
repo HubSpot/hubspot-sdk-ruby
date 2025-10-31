@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::FeedbackSubmissionsTest < Hubsp
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.feedback_submissions.list
+    response = @hubspot.crm.objects.feedback_submissions.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -37,7 +37,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::FeedbackSubmissionsTest < Hubsp
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.feedback_submissions.get("feedbackSubmissionId")
+    response = @hubspot.crm.objects.feedback_submissions.get("feedbackSubmissionId")
 
     assert_pattern do
       response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
@@ -61,7 +61,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::FeedbackSubmissionsTest < Hubsp
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.feedback_submissions.search
+    response = @hubspot.crm.objects.feedback_submissions.search
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject

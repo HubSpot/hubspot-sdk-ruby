@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::CardsTest < HubspotSDK::Test
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.extensions.cards.create(
+      @hubspot.crm.extensions.cards.create(
         0,
         actions: {baseUrls: ["https://www.example.com/hubspot"]},
         display_: {
@@ -48,7 +48,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::CardsTest < HubspotSDK::Test
   def test_update_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.extensions.cards.update("cardId", app_id: 0)
+    response = @hubspot.crm.extensions.cards.update("cardId", app_id: 0)
 
     assert_pattern do
       response => HubspotSDK::CRM::Extensions::PublicCardResponse
@@ -71,7 +71,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::CardsTest < HubspotSDK::Test
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.extensions.cards.list(0)
+    response = @hubspot.crm.extensions.cards.list(0)
 
     assert_pattern do
       response => HubspotSDK::CRM::Extensions::PublicCardListResponse
@@ -87,7 +87,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::CardsTest < HubspotSDK::Test
   def test_delete_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.extensions.cards.delete("cardId", app_id: 0)
+    response = @hubspot.crm.extensions.cards.delete("cardId", app_id: 0)
 
     assert_pattern do
       response => nil
@@ -97,7 +97,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::CardsTest < HubspotSDK::Test
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.extensions.cards.get("cardId", app_id: 0)
+    response = @hubspot.crm.extensions.cards.get("cardId", app_id: 0)
 
     assert_pattern do
       response => HubspotSDK::CRM::Extensions::PublicCardResponse
@@ -120,7 +120,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::CardsTest < HubspotSDK::Test
   def test_get_sample_response
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.extensions.cards.get_sample_response
+    response = @hubspot.crm.extensions.cards.get_sample_response
 
     assert_pattern do
       response => HubspotSDK::CRM::Extensions::IntegratorCardPayloadResponse

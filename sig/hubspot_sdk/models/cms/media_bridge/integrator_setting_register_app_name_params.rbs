@@ -3,15 +3,30 @@ module HubspotSDK
     module Cms
       module MediaBridge
         type integrator_setting_register_app_name_params =
-          {  } & HubspotSDK::Internal::Type::request_parameters
+          { updated_at: Integer, name: String }
+          & HubspotSDK::Internal::Type::request_parameters
 
-        class IntegratorSettingRegisterAppNameParams < HubspotSDK::Models::Cms::MediaBridgeProviderPartial
+        class IntegratorSettingRegisterAppNameParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+          attr_accessor updated_at: Integer
 
-          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+          attr_reader name: String?
+
+          def name=: (String) -> String
+
+          def initialize: (
+            updated_at: Integer,
+            ?name: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            updated_at: Integer,
+            name: String,
+            request_options: HubspotSDK::RequestOptions
+          }
         end
       end
     end

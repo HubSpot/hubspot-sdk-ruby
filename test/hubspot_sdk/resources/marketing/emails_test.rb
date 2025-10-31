@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Marketing::EmailsTest < HubspotSDK::Test::Res
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.emails.create(name: "My subject")
+    response = @hubspot.marketing.emails.create(name: "My subject")
 
     assert_pattern do
       response => HubspotSDK::Marketing::PublicEmail
@@ -70,7 +70,7 @@ class HubspotSDK::Test::Resources::Marketing::EmailsTest < HubspotSDK::Test::Res
   def test_update
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.emails.update("emailId")
+    response = @hubspot.marketing.emails.update("emailId")
 
     assert_pattern do
       response => HubspotSDK::Marketing::PublicEmail
@@ -134,7 +134,7 @@ class HubspotSDK::Test::Resources::Marketing::EmailsTest < HubspotSDK::Test::Res
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.emails.list
+    response = @hubspot.marketing.emails.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -205,7 +205,7 @@ class HubspotSDK::Test::Resources::Marketing::EmailsTest < HubspotSDK::Test::Res
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.emails.delete("emailId")
+    response = @hubspot.marketing.emails.delete("emailId")
 
     assert_pattern do
       response => nil
@@ -215,7 +215,7 @@ class HubspotSDK::Test::Resources::Marketing::EmailsTest < HubspotSDK::Test::Res
   def test_clone__required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.emails.clone_(id: "id")
+    response = @hubspot.marketing.emails.clone_(id: "id")
 
     assert_pattern do
       response => HubspotSDK::Marketing::PublicEmail
@@ -280,7 +280,7 @@ class HubspotSDK::Test::Resources::Marketing::EmailsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.emails.create_ab_test_variation(
+      @hubspot.marketing.emails.create_ab_test_variation(
         content_id: "contentId",
         variation_name: "variationName"
       )
@@ -347,7 +347,7 @@ class HubspotSDK::Test::Resources::Marketing::EmailsTest < HubspotSDK::Test::Res
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.emails.get("emailId")
+    response = @hubspot.marketing.emails.get("emailId")
 
     assert_pattern do
       response => HubspotSDK::Marketing::PublicEmail
@@ -411,7 +411,7 @@ class HubspotSDK::Test::Resources::Marketing::EmailsTest < HubspotSDK::Test::Res
   def test_get_ab_test_variation
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.emails.get_ab_test_variation("emailId")
+    response = @hubspot.marketing.emails.get_ab_test_variation("emailId")
 
     assert_pattern do
       response => HubspotSDK::Marketing::PublicEmail
@@ -475,7 +475,7 @@ class HubspotSDK::Test::Resources::Marketing::EmailsTest < HubspotSDK::Test::Res
   def test_get_draft
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.emails.get_draft("emailId")
+    response = @hubspot.marketing.emails.get_draft("emailId")
 
     assert_pattern do
       response => HubspotSDK::Marketing::PublicEmail
@@ -539,7 +539,7 @@ class HubspotSDK::Test::Resources::Marketing::EmailsTest < HubspotSDK::Test::Res
   def test_get_revision_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.emails.get_revision("revisionId", email_id: "emailId")
+    response = @hubspot.marketing.emails.get_revision("revisionId", email_id: "emailId")
 
     assert_pattern do
       response => HubspotSDK::Marketing::VersionPublicEmail
@@ -558,7 +558,7 @@ class HubspotSDK::Test::Resources::Marketing::EmailsTest < HubspotSDK::Test::Res
   def test_list_revisions
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.emails.list_revisions("emailId")
+    response = @hubspot.marketing.emails.list_revisions("emailId")
 
     assert_pattern do
       response => HubspotSDK::Marketing::CollectionResponseWithTotalVersionPublicEmail
@@ -576,7 +576,7 @@ class HubspotSDK::Test::Resources::Marketing::EmailsTest < HubspotSDK::Test::Res
   def test_publish
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.emails.publish("emailId")
+    response = @hubspot.marketing.emails.publish("emailId")
 
     assert_pattern do
       response => nil
@@ -586,7 +586,7 @@ class HubspotSDK::Test::Resources::Marketing::EmailsTest < HubspotSDK::Test::Res
   def test_reset_draft
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.emails.reset_draft("emailId")
+    response = @hubspot.marketing.emails.reset_draft("emailId")
 
     assert_pattern do
       response => nil
@@ -596,7 +596,7 @@ class HubspotSDK::Test::Resources::Marketing::EmailsTest < HubspotSDK::Test::Res
   def test_restore_revision_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.emails.restore_revision("revisionId", email_id: "emailId")
+    response = @hubspot.marketing.emails.restore_revision("revisionId", email_id: "emailId")
 
     assert_pattern do
       response => nil
@@ -606,7 +606,7 @@ class HubspotSDK::Test::Resources::Marketing::EmailsTest < HubspotSDK::Test::Res
   def test_restore_revision_to_draft_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.emails.restore_revision_to_draft(0, email_id: "emailId")
+    response = @hubspot.marketing.emails.restore_revision_to_draft(0, email_id: "emailId")
 
     assert_pattern do
       response => HubspotSDK::Marketing::PublicEmail
@@ -670,7 +670,7 @@ class HubspotSDK::Test::Resources::Marketing::EmailsTest < HubspotSDK::Test::Res
   def test_unpublish
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.emails.unpublish("emailId")
+    response = @hubspot.marketing.emails.unpublish("emailId")
 
     assert_pattern do
       response => nil
@@ -680,7 +680,7 @@ class HubspotSDK::Test::Resources::Marketing::EmailsTest < HubspotSDK::Test::Res
   def test_update_draft
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.emails.update_draft("emailId")
+    response = @hubspot.marketing.emails.update_draft("emailId")
 
     assert_pattern do
       response => HubspotSDK::Marketing::PublicEmail

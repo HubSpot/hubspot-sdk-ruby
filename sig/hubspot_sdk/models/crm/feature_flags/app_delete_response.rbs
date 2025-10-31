@@ -1,0 +1,67 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module FeatureFlags
+        type app_delete_response =
+          {
+            app_id: Integer,
+            default_state: HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse::default_state,
+            flag_name: String,
+            override_state: HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse::override_state
+          }
+
+        class AppDeleteResponse < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor app_id: Integer
+
+          attr_accessor default_state: HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse::default_state
+
+          attr_accessor flag_name: String
+
+          attr_reader override_state: HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse::override_state?
+
+          def override_state=: (
+            HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse::override_state
+          ) -> HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse::override_state
+
+          def initialize: (
+            app_id: Integer,
+            default_state: HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse::default_state,
+            flag_name: String,
+            ?override_state: HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse::override_state
+          ) -> void
+
+          def to_hash: -> {
+            app_id: Integer,
+            default_state: HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse::default_state,
+            flag_name: String,
+            override_state: HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse::override_state
+          }
+
+          type default_state = :OFF | :ON | :ABSENT
+
+          module DefaultState
+            extend HubspotSDK::Internal::Type::Enum
+
+            OFF: :OFF
+            ON: :ON
+            ABSENT: :ABSENT
+
+            def self?.values: -> ::Array[HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse::default_state]
+          end
+
+          type override_state = :OFF | :ON | :ABSENT
+
+          module OverrideState
+            extend HubspotSDK::Internal::Type::Enum
+
+            OFF: :OFF
+            ON: :ON
+            ABSENT: :ABSENT
+
+            def self?.values: -> ::Array[HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse::override_state]
+          end
+        end
+      end
+    end
+  end
+end

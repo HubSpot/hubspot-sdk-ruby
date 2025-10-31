@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Account::UsageTest < HubspotSDK::Test::Resour
   def test_get_daily_private_apps_usage
     skip("Prism tests are disabled")
 
-    response = @hub_spot.account.usage.get_daily_private_apps_usage
+    response = @hubspot.account.usage.get_daily_private_apps_usage
 
     assert_pattern do
       response => HubspotSDK::Account::CollectionResponseAPIUsage

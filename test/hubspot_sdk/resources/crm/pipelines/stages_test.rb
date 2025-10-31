@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::Pipelines::StagesTest < HubspotSDK::Test
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.pipelines.stages.create(
+      @hubspot.crm.pipelines.stages.create(
         "pipelineId",
         object_type: "objectType",
         display_order: 1,
@@ -37,7 +37,7 @@ class HubspotSDK::Test::Resources::CRM::Pipelines::StagesTest < HubspotSDK::Test
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.pipelines.stages.update("stageId", object_type: "objectType", pipeline_id: "pipelineId")
+      @hubspot.crm.pipelines.stages.update("stageId", object_type: "objectType", pipeline_id: "pipelineId")
 
     assert_pattern do
       response => HubspotSDK::CRM::PipelineStage
@@ -61,7 +61,7 @@ class HubspotSDK::Test::Resources::CRM::Pipelines::StagesTest < HubspotSDK::Test
   def test_list_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.pipelines.stages.list("pipelineId", object_type: "objectType")
+    response = @hubspot.crm.pipelines.stages.list("pipelineId", object_type: "objectType")
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponsePipelineStageNoPaging
@@ -78,7 +78,7 @@ class HubspotSDK::Test::Resources::CRM::Pipelines::StagesTest < HubspotSDK::Test
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.pipelines.stages.delete("stageId", object_type: "objectType", pipeline_id: "pipelineId")
+      @hubspot.crm.pipelines.stages.delete("stageId", object_type: "objectType", pipeline_id: "pipelineId")
 
     assert_pattern do
       response => nil
@@ -89,7 +89,7 @@ class HubspotSDK::Test::Resources::CRM::Pipelines::StagesTest < HubspotSDK::Test
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.pipelines.stages.get("stageId", object_type: "objectType", pipeline_id: "pipelineId")
+      @hubspot.crm.pipelines.stages.get("stageId", object_type: "objectType", pipeline_id: "pipelineId")
 
     assert_pattern do
       response => HubspotSDK::CRM::PipelineStage
@@ -114,11 +114,7 @@ class HubspotSDK::Test::Resources::CRM::Pipelines::StagesTest < HubspotSDK::Test
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.pipelines.stages.get_audit(
-        "stageId",
-        object_type: "objectType",
-        pipeline_id: "pipelineId"
-      )
+      @hubspot.crm.pipelines.stages.get_audit("stageId", object_type: "objectType", pipeline_id: "pipelineId")
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponsePublicAuditInfoNoPaging
@@ -135,7 +131,7 @@ class HubspotSDK::Test::Resources::CRM::Pipelines::StagesTest < HubspotSDK::Test
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.pipelines.stages.replace(
+      @hubspot.crm.pipelines.stages.replace(
         "stageId",
         object_type: "objectType",
         pipeline_id: "pipelineId",

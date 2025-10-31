@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Scheduler::Meetings::CalendarTest < HubspotSD
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.scheduler.meetings.calendar.create(
+      @hubspot.scheduler.meetings.calendar.create(
         associations: [
           {
             to: {id: "37295"},

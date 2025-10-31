@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::OwnersTest < HubspotSDK::Test::ResourceT
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.owners.list
+    response = @hubspot.crm.owners.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -39,7 +39,7 @@ class HubspotSDK::Test::Resources::CRM::OwnersTest < HubspotSDK::Test::ResourceT
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.owners.get(0)
+    response = @hubspot.crm.owners.get(0)
 
     assert_pattern do
       response => HubspotSDK::CRM::PublicOwner

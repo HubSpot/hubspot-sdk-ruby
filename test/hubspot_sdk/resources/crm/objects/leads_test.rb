@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::LeadsTest < HubspotSDK::Test::R
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.leads.create(properties: {foo: "string"})
+    response = @hubspot.crm.objects.leads.create(properties: {foo: "string"})
 
     assert_pattern do
       response => HubspotSDK::CRM::CreatedResponseSimplePublicObject
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::LeadsTest < HubspotSDK::Test::R
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.leads.update(
+      @hubspot.crm.objects.leads.update(
         "leadsId",
         properties: {
           property_checkbox: "false",
@@ -59,7 +59,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::LeadsTest < HubspotSDK::Test::R
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.leads.list
+    response = @hubspot.crm.objects.leads.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -90,7 +90,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::LeadsTest < HubspotSDK::Test::R
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.leads.delete("leadsId")
+    response = @hubspot.crm.objects.leads.delete("leadsId")
 
     assert_pattern do
       response => nil
@@ -100,7 +100,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::LeadsTest < HubspotSDK::Test::R
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.leads.get("leadsId")
+    response = @hubspot.crm.objects.leads.get("leadsId")
 
     assert_pattern do
       response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
@@ -124,7 +124,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::LeadsTest < HubspotSDK::Test::R
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.leads.search
+    response = @hubspot.crm.objects.leads.search
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject

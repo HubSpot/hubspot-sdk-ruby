@@ -10,13 +10,13 @@ module HubspotSDK
             label: String,
             property_definitions:
               T::Array[
-                HubspotSDK::Events::ExternalBehavioralEventPropertyCreate::OrHash
+                HubspotSDK::Events::EventDefinitionCreateParams::PropertyDefinition::OrHash
               ],
             description: String,
             name: String,
             primary_object: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Events::ExternalBehavioralEventTypeDefinition)
+          ).returns(HubspotSDK::Models::Events::EventDefinitionCreateResponse)
         end
         def create(
           # Human readable label for the event. Used in HubSpot UI
@@ -46,7 +46,7 @@ module HubspotSDK
             description: String,
             label: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Events::ExternalBehavioralEventTypeDefinition)
+          ).returns(HubspotSDK::Models::Events::EventDefinitionUpdateResponse)
         end
         def update(
           # The internal name of the custom event.
@@ -70,7 +70,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(
             HubspotSDK::Internal::Page[
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
+              HubspotSDK::Models::Events::EventDefinitionListResponse
             ]
           )
         end
@@ -158,7 +158,7 @@ module HubspotSDK
           params(
             event_name: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Events::ExternalBehavioralEventTypeDefinition)
+          ).returns(HubspotSDK::Models::Events::EventDefinitionGetResponse)
         end
         def get(
           # The internal name of the custom event.

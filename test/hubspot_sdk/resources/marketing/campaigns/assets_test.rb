@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::AssetsTest < HubspotSDK
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.campaigns.assets.update(
+      @hubspot.marketing.campaigns.assets.update(
         "assetId",
         campaign_guid: "campaignGuid",
         asset_type: "assetType"
@@ -21,7 +21,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::AssetsTest < HubspotSDK
   def test_list_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.campaigns.assets.list("assetType", campaign_guid: "campaignGuid")
+    response = @hubspot.marketing.campaigns.assets.list("assetType", campaign_guid: "campaignGuid")
 
     assert_pattern do
       response => HubspotSDK::Marketing::CollectionResponsePublicCampaignAssetForwardPaging
@@ -39,7 +39,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::AssetsTest < HubspotSDK
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.campaigns.assets.delete(
+      @hubspot.marketing.campaigns.assets.delete(
         "assetId",
         campaign_guid: "campaignGuid",
         asset_type: "assetType"

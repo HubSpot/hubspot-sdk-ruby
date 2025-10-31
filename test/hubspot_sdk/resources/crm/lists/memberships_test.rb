@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Lists::MembershipsTest < HubspotSDK::Tes
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.lists.memberships.list("listId")
+    response = @hubspot.crm.lists.memberships.list("listId")
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -30,7 +30,7 @@ class HubspotSDK::Test::Resources::CRM::Lists::MembershipsTest < HubspotSDK::Tes
   def test_add_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.lists.memberships.add("listId", body: ["string"])
+    response = @hubspot.crm.lists.memberships.add("listId", body: ["string"])
 
     assert_pattern do
       response => HubspotSDK::CRM::MembershipsUpdateResponse
@@ -48,7 +48,7 @@ class HubspotSDK::Test::Resources::CRM::Lists::MembershipsTest < HubspotSDK::Tes
   def test_add_all_from_list_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.lists.memberships.add_all_from_list("sourceListId", list_id: "listId")
+    response = @hubspot.crm.lists.memberships.add_all_from_list("sourceListId", list_id: "listId")
 
     assert_pattern do
       response => nil
@@ -59,7 +59,7 @@ class HubspotSDK::Test::Resources::CRM::Lists::MembershipsTest < HubspotSDK::Tes
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.lists.memberships.add_and_remove(
+      @hubspot.crm.lists.memberships.add_and_remove(
         "listId",
         record_ids_to_add: %w[123 456 789],
         record_ids_to_remove: ["654"]
@@ -81,7 +81,7 @@ class HubspotSDK::Test::Resources::CRM::Lists::MembershipsTest < HubspotSDK::Tes
   def test_get_lists_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.lists.memberships.get_lists("recordId", object_type_id: "objectTypeId")
+    response = @hubspot.crm.lists.memberships.get_lists("recordId", object_type_id: "objectTypeId")
 
     assert_pattern do
       response => HubspotSDK::CRM::APICollectionResponseRecordListMembershipNoPaging
@@ -98,7 +98,7 @@ class HubspotSDK::Test::Resources::CRM::Lists::MembershipsTest < HubspotSDK::Tes
   def test_get_page_ordered_by_added_to_list_date
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.lists.memberships.get_page_ordered_by_added_to_list_date("listId")
+    response = @hubspot.crm.lists.memberships.get_page_ordered_by_added_to_list_date("listId")
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -122,7 +122,7 @@ class HubspotSDK::Test::Resources::CRM::Lists::MembershipsTest < HubspotSDK::Tes
   def test_remove_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.lists.memberships.remove("listId", body: ["string"])
+    response = @hubspot.crm.lists.memberships.remove("listId", body: ["string"])
 
     assert_pattern do
       response => HubspotSDK::CRM::MembershipsUpdateResponse
@@ -140,7 +140,7 @@ class HubspotSDK::Test::Resources::CRM::Lists::MembershipsTest < HubspotSDK::Tes
   def test_remove_all
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.lists.memberships.remove_all("listId")
+    response = @hubspot.crm.lists.memberships.remove_all("listId")
 
     assert_pattern do
       response => nil

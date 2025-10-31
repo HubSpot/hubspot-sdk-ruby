@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::LimitsTest < HubspotSDK::Test::ResourceT
   def test_get_association_label_limits
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.limits.get_association_label_limits
+    response = @hubspot.crm.limits.get_association_label_limits
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseAssociationLabelLimitResponseNoPaging
@@ -23,7 +23,7 @@ class HubspotSDK::Test::Resources::CRM::LimitsTest < HubspotSDK::Test::ResourceT
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.limits.get_association_records_limits_by_object_type(
+      @hubspot.crm.limits.get_association_records_limits_by_object_type(
         "toObjectTypeId",
         from_object_type_id: "fromObjectTypeId"
       )
@@ -46,7 +46,7 @@ class HubspotSDK::Test::Resources::CRM::LimitsTest < HubspotSDK::Test::ResourceT
   def test_get_association_records_limits_from_objects
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.limits.get_association_records_limits_from_objects
+    response = @hubspot.crm.limits.get_association_records_limits_from_objects
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseObjectTypeNearOrAtAssociationLimitNoPaging
@@ -62,7 +62,7 @@ class HubspotSDK::Test::Resources::CRM::LimitsTest < HubspotSDK::Test::ResourceT
   def test_get_association_records_limits_to_objects
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.limits.get_association_records_limits_to_objects("fromObjectTypeId")
+    response = @hubspot.crm.limits.get_association_records_limits_to_objects("fromObjectTypeId")
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseObjectTypeNearOrAtAssociationLimitNoPaging
@@ -78,7 +78,7 @@ class HubspotSDK::Test::Resources::CRM::LimitsTest < HubspotSDK::Test::ResourceT
   def test_get_calculated_property_limits
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.limits.get_calculated_property_limits
+    response = @hubspot.crm.limits.get_calculated_property_limits
 
     assert_pattern do
       response => HubspotSDK::CRM::CalculatedPropertyLimitResponse
@@ -97,7 +97,7 @@ class HubspotSDK::Test::Resources::CRM::LimitsTest < HubspotSDK::Test::ResourceT
   def test_get_custom_object_type_limits
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.limits.get_custom_object_type_limits
+    response = @hubspot.crm.limits.get_custom_object_type_limits
 
     assert_pattern do
       response => HubspotSDK::CRM::CustomObjectLimitResponse
@@ -115,7 +115,7 @@ class HubspotSDK::Test::Resources::CRM::LimitsTest < HubspotSDK::Test::ResourceT
   def test_get_custom_property_limits
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.limits.get_custom_property_limits
+    response = @hubspot.crm.limits.get_custom_property_limits
 
     assert_pattern do
       response => HubspotSDK::CRM::CustomPropertyLimitResponse
@@ -134,7 +134,7 @@ class HubspotSDK::Test::Resources::CRM::LimitsTest < HubspotSDK::Test::ResourceT
   def test_get_pipeline_limits
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.limits.get_pipeline_limits
+    response = @hubspot.crm.limits.get_pipeline_limits
 
     assert_pattern do
       response => HubspotSDK::CRM::PipelineLimitResponse
@@ -151,7 +151,7 @@ class HubspotSDK::Test::Resources::CRM::LimitsTest < HubspotSDK::Test::ResourceT
   def test_get_record_limits
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.limits.get_record_limits
+    response = @hubspot.crm.limits.get_record_limits
 
     assert_pattern do
       response => HubspotSDK::CRM::RecordLimitResponse

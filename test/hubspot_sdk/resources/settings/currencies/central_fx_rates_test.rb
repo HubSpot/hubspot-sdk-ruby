@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Settings::Currencies::CentralFxRatesTest < Hu
   def test_create_currency_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.currencies.central_fx_rates.create_currency(currency_code: :AED)
+    response = @hubspot.settings.currencies.central_fx_rates.create_currency(currency_code: :AED)
 
     assert_pattern do
       response => HubspotSDK::Settings::ExchangeRate
@@ -29,7 +29,7 @@ class HubspotSDK::Test::Resources::Settings::Currencies::CentralFxRatesTest < Hu
   def test_get_information
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.currencies.central_fx_rates.get_information
+    response = @hubspot.settings.currencies.central_fx_rates.get_information
 
     assert_pattern do
       response => HubspotSDK::Settings::CentralExchangeRatesInformation
@@ -45,7 +45,7 @@ class HubspotSDK::Test::Resources::Settings::Currencies::CentralFxRatesTest < Hu
   def test_get_unsupported_currencies
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.currencies.central_fx_rates.get_unsupported_currencies
+    response = @hubspot.settings.currencies.central_fx_rates.get_unsupported_currencies
 
     assert_pattern do
       response => HubspotSDK::Settings::CollectionResponseCurrencyCodeInfoNoPaging

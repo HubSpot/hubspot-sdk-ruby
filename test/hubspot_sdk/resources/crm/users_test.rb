@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::UsersTest < HubspotSDK::Test::ResourceTe
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.users.create(properties: {foo: "string"})
+    response = @hubspot.crm.users.create(properties: {foo: "string"})
 
     assert_pattern do
       response => HubspotSDK::CRM::CreatedResponseSimplePublicObject
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::CRM::UsersTest < HubspotSDK::Test::ResourceTe
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.users.update(
+      @hubspot.crm.users.update(
         "userId",
         properties: {
           property_checkbox: "false",
@@ -59,7 +59,7 @@ class HubspotSDK::Test::Resources::CRM::UsersTest < HubspotSDK::Test::ResourceTe
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.users.list
+    response = @hubspot.crm.users.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -90,7 +90,7 @@ class HubspotSDK::Test::Resources::CRM::UsersTest < HubspotSDK::Test::ResourceTe
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.users.delete("userId")
+    response = @hubspot.crm.users.delete("userId")
 
     assert_pattern do
       response => nil
@@ -100,7 +100,7 @@ class HubspotSDK::Test::Resources::CRM::UsersTest < HubspotSDK::Test::ResourceTe
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.users.get("userId")
+    response = @hubspot.crm.users.get("userId")
 
     assert_pattern do
       response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
@@ -124,7 +124,7 @@ class HubspotSDK::Test::Resources::CRM::UsersTest < HubspotSDK::Test::ResourceTe
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.users.search
+    response = @hubspot.crm.users.search
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject

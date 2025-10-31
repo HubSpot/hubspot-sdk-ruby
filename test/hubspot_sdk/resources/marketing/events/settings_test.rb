@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Marketing::Events::SettingsTest < HubspotSDK:
   def test_create_or_update_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.events.settings.create_or_update(0, event_details_url: "eventDetailsUrl")
+    response = @hubspot.marketing.events.settings.create_or_update(0, event_details_url: "eventDetailsUrl")
 
     assert_pattern do
       response => HubspotSDK::Marketing::EventDetailSettings
@@ -23,7 +23,7 @@ class HubspotSDK::Test::Resources::Marketing::Events::SettingsTest < HubspotSDK:
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.events.settings.get(0)
+    response = @hubspot.marketing.events.settings.get(0)
 
     assert_pattern do
       response => HubspotSDK::Marketing::EventDetailSettings

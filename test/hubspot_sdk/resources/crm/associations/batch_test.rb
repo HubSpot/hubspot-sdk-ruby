@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::Associations::BatchTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.associations.batch.create(
+      @hubspot.crm.associations.batch.create(
         "toObjectType",
         from_object_type: "fromObjectType",
         inputs: [{from: {id: "53628"}, to: {id: "12726"}, type: "contact_to_company"}]
@@ -35,7 +35,7 @@ class HubspotSDK::Test::Resources::CRM::Associations::BatchTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.associations.batch.delete(
+      @hubspot.crm.associations.batch.delete(
         "toObjectType",
         from_object_type: "fromObjectType",
         inputs: [{from: {id: "53628"}, to: {id: "12726"}, type: "contact_to_company"}]
@@ -50,7 +50,7 @@ class HubspotSDK::Test::Resources::CRM::Associations::BatchTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.associations.batch.get(
+      @hubspot.crm.associations.batch.get(
         "toObjectType",
         from_object_type: "fromObjectType",
         inputs: [{id: "37295"}]

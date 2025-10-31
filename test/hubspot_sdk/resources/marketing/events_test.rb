@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.create(
+      @hubspot.marketing.events.create(
         event_name: "eventName",
         event_organizer: "eventOrganizer",
         external_account_id: "externalAccountId",
@@ -39,7 +39,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.update(
+      @hubspot.marketing.events.update(
         "objectId",
         custom_properties: [{name: "", sourceUpstreamDeployable: "sourceUpstreamDeployable", value: ""}]
       )
@@ -71,7 +71,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.events.list
+    response = @hubspot.marketing.events.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -113,7 +113,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.events.delete("objectId")
+    response = @hubspot.marketing.events.delete("objectId")
 
     assert_pattern do
       response => nil
@@ -124,7 +124,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.cancel_by_external_event_id(
+      @hubspot.marketing.events.cancel_by_external_event_id(
         "externalEventId",
         external_account_id: "externalAccountId"
       )
@@ -154,7 +154,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.complete_by_external_event_id(
+      @hubspot.marketing.events.complete_by_external_event_id(
         "externalEventId",
         external_account_id: "externalAccountId",
         end_date_time: "2019-12-27T18:11:19.117Z",
@@ -185,7 +185,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
   def test_delete_batch_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.events.delete_batch(inputs: [{objectId: "objectId"}])
+    response = @hubspot.marketing.events.delete_batch(inputs: [{objectId: "objectId"}])
 
     assert_pattern do
       response => nil
@@ -196,7 +196,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.delete_batch_by_external_event_id(
+      @hubspot.marketing.events.delete_batch_by_external_event_id(
         inputs: [{appId: 0, externalAccountId: "externalAccountId", externalEventId: "externalEventId"}]
       )
 
@@ -209,7 +209,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.delete_by_external_event_id(
+      @hubspot.marketing.events.delete_by_external_event_id(
         "externalEventId",
         external_account_id: "externalAccountId"
       )
@@ -222,7 +222,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.events.get("objectId")
+    response = @hubspot.marketing.events.get("objectId")
 
     assert_pattern do
       response => HubspotSDK::Marketing::MarketingEventPublicReadResponseV2
@@ -258,7 +258,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.get_by_external_event_id(
+      @hubspot.marketing.events.get_by_external_event_id(
         "externalEventId",
         external_account_id: "externalAccountId"
       )
@@ -295,7 +295,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
   def test_search_by_external_event_id_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.events.search_by_external_event_id(q: "q")
+    response = @hubspot.marketing.events.search_by_external_event_id(q: "q")
 
     assert_pattern do
       response => HubspotSDK::Marketing::CollectionResponseSearchPublicResponseWrapperNoPaging
@@ -311,7 +311,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
   def test_search_identifiers_by_external_event_id
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.events.search_identifiers_by_external_event_id("externalEventId")
+    response = @hubspot.marketing.events.search_identifiers_by_external_event_id("externalEventId")
 
     assert_pattern do
       response => HubspotSDK::Marketing::CollectionResponseWithTotalMarketingEventIdentifiersResponseNoPaging
@@ -329,7 +329,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.update_batch(
+      @hubspot.marketing.events.update_batch(
         inputs: [
           {
             customProperties: [{name: "", sourceUpstreamDeployable: "sourceUpstreamDeployable", value: ""}],
@@ -358,7 +358,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.update_by_external_event_id(
+      @hubspot.marketing.events.update_by_external_event_id(
         "externalEventId",
         external_account_id: "externalAccountId"
       )
@@ -391,7 +391,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.upsert_batch(
+      @hubspot.marketing.events.upsert_batch(
         inputs: [
           {
             eventName: "eventName",
@@ -424,7 +424,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.upsert_by_external_event_id(
+      @hubspot.marketing.events.upsert_by_external_event_id(
         "externalEventId",
         event_name: "eventName",
         event_organizer: "eventOrganizer",
@@ -460,7 +460,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.upsert_subscriber_state_by_email(
+      @hubspot.marketing.events.upsert_subscriber_state_by_email(
         "subscriberState",
         external_event_id: "externalEventId",
         external_account_id: "externalAccountId",
@@ -476,7 +476,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.upsert_subscriber_state_by_id(
+      @hubspot.marketing.events.upsert_subscriber_state_by_id(
         "subscriberState",
         external_event_id: "externalEventId",
         external_account_id: "externalAccountId",

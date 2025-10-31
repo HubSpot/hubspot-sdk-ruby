@@ -12,7 +12,7 @@ module HubspotSDK
           # @param inputs [Array<HubspotSDK::Models::PublicObjectID>]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::Objects::BatchResponseDealToDealSplits]
+          # @return [HubspotSDK::Models::CRM::Objects::DealSplitBatchReadResponse]
           #
           # @see HubspotSDK::Models::CRM::Objects::DealSplitBatchReadParams
           def batch_read(params)
@@ -21,7 +21,7 @@ module HubspotSDK
               method: :post,
               path: "crm/v3/objects/deals/splits/batch/read",
               body: parsed,
-              model: HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits,
+              model: HubspotSDK::Models::CRM::Objects::DealSplitBatchReadResponse,
               options: options
             )
           end
@@ -32,10 +32,10 @@ module HubspotSDK
           #
           # @overload batch_upsert(inputs:, request_options: {})
           #
-          # @param inputs [Array<HubspotSDK::Models::CRM::Objects::PublicDealSplitsCreateRequest>]
+          # @param inputs [Array<HubspotSDK::Models::CRM::Objects::DealSplitBatchUpsertParams::Input>]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::Objects::BatchResponseDealToDealSplits]
+          # @return [HubspotSDK::Models::CRM::Objects::DealSplitBatchUpsertResponse]
           #
           # @see HubspotSDK::Models::CRM::Objects::DealSplitBatchUpsertParams
           def batch_upsert(params)
@@ -44,7 +44,7 @@ module HubspotSDK
               method: :post,
               path: "crm/v3/objects/deals/splits/batch/upsert",
               body: parsed,
-              model: HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits,
+              model: HubspotSDK::Models::CRM::Objects::DealSplitBatchUpsertResponse,
               options: options
             )
           end

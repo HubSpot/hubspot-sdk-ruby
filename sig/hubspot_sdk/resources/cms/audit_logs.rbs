@@ -12,7 +12,7 @@ module HubspotSDK
           ?sort: ::Array[String],
           ?user_id: ::Array[String],
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::PublicAuditLog]
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Models::Cms::AuditLogListResponse]
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

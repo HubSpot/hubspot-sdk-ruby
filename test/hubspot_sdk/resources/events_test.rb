@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::EventsTest < HubspotSDK::Test::ResourceTest
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.events.list
+    response = @hubspot.events.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -34,7 +34,7 @@ class HubspotSDK::Test::Resources::EventsTest < HubspotSDK::Test::ResourceTest
   def test_list_event_types
     skip("Prism tests are disabled")
 
-    response = @hub_spot.events.list_event_types
+    response = @hubspot.events.list_event_types
 
     assert_pattern do
       response => HubspotSDK::Events::VisibleExternalEventTypeNames

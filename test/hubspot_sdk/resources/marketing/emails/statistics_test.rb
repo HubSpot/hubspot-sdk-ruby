@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Marketing::Emails::StatisticsTest < HubspotSD
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.emails.statistics.get
+    response = @hubspot.marketing.emails.statistics.get
 
     assert_pattern do
       response => HubspotSDK::Marketing::AggregateEmailStatistics
@@ -24,7 +24,7 @@ class HubspotSDK::Test::Resources::Marketing::Emails::StatisticsTest < HubspotSD
   def test_get_histogram
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.emails.statistics.get_histogram
+    response = @hubspot.marketing.emails.statistics.get_histogram
 
     assert_pattern do
       response => HubspotSDK::Marketing::CollectionResponseWithTotalEmailStatisticIntervalNoPaging

@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::OrdersTest < HubspotSDK::Test::
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.orders.create(properties: {foo: "string"})
+    response = @hubspot.crm.objects.orders.create(properties: {foo: "string"})
 
     assert_pattern do
       response => HubspotSDK::CRM::CreatedResponseSimplePublicObject
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::OrdersTest < HubspotSDK::Test::
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.orders.update(
+      @hubspot.crm.objects.orders.update(
         "orderId",
         properties: {
           property_checkbox: "false",
@@ -59,7 +59,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::OrdersTest < HubspotSDK::Test::
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.orders.list
+    response = @hubspot.crm.objects.orders.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -90,7 +90,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::OrdersTest < HubspotSDK::Test::
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.orders.delete("orderId")
+    response = @hubspot.crm.objects.orders.delete("orderId")
 
     assert_pattern do
       response => nil
@@ -100,7 +100,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::OrdersTest < HubspotSDK::Test::
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.orders.get("orderId")
+    response = @hubspot.crm.objects.orders.get("orderId")
 
     assert_pattern do
       response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
@@ -124,7 +124,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::OrdersTest < HubspotSDK::Test::
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.orders.search
+    response = @hubspot.crm.objects.orders.search
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject

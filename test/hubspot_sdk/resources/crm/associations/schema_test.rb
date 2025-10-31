@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Associations::SchemaTest < HubspotSDK::T
   def test_list_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.associations.schema.list("toObjectType", from_object_type: "fromObjectType")
+    response = @hubspot.crm.associations.schema.list("toObjectType", from_object_type: "fromObjectType")
 
     assert_pattern do
       response => HubspotSDK::CRM::Associations::CollectionResponsePublicAssociationDefinitionNoPaging

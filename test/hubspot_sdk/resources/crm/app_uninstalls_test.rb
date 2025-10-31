@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::AppUninstallsTest < HubspotSDK::Test::Re
   def test_uninstall
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.app_uninstalls.uninstall
+    response = @hubspot.crm.app_uninstalls.uninstall
 
     assert_pattern do
       response => nil

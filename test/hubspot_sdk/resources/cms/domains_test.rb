@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Cms::DomainsTest < HubspotSDK::Test::Resource
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.domains.list
+    response = @hubspot.cms.domains.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -48,7 +48,7 @@ class HubspotSDK::Test::Resources::Cms::DomainsTest < HubspotSDK::Test::Resource
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.domains.get("domainId")
+    response = @hubspot.cms.domains.get("domainId")
 
     assert_pattern do
       response => HubspotSDK::Cms::Domain

@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::BatchTest < HubspotSDK:
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.campaigns.batch.create(inputs: [{properties: {foo: "string"}}])
+    response = @hubspot.marketing.campaigns.batch.create(inputs: [{properties: {foo: "string"}}])
 
     assert_pattern do
       response => HubspotSDK::Marketing::BatchResponsePublicCampaign
@@ -27,7 +27,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::BatchTest < HubspotSDK:
   def test_update_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.campaigns.batch.update(inputs: [{id: "id", properties: {foo: "string"}}])
+    response = @hubspot.marketing.campaigns.batch.update(inputs: [{id: "id", properties: {foo: "string"}}])
 
     assert_pattern do
       response => HubspotSDK::Marketing::BatchResponsePublicCampaign
@@ -48,7 +48,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::BatchTest < HubspotSDK:
   def test_delete_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.campaigns.batch.delete(inputs: [{id: "id"}])
+    response = @hubspot.marketing.campaigns.batch.delete(inputs: [{id: "id"}])
 
     assert_pattern do
       response => nil
@@ -58,7 +58,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::BatchTest < HubspotSDK:
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.campaigns.batch.get(inputs: [{id: "id"}])
+    response = @hubspot.marketing.campaigns.batch.get(inputs: [{id: "id"}])
 
     assert_pattern do
       response => HubspotSDK::Marketing::BatchResponsePublicCampaignWithAssets

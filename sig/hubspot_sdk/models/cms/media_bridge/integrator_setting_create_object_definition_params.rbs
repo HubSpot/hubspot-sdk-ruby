@@ -3,15 +3,40 @@ module HubspotSDK
     module Cms
       module MediaBridge
         type integrator_setting_create_object_definition_params =
-          {  } & HubspotSDK::Internal::Type::request_parameters
+          {
+            media_types: ::Array[HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateObjectDefinitionParams::media_type]
+          }
+          & HubspotSDK::Internal::Type::request_parameters
 
-        class IntegratorSettingCreateObjectDefinitionParams < HubspotSDK::Models::Cms::IntegratorObjectCreationRequest
+        class IntegratorSettingCreateObjectDefinitionParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+          attr_accessor media_types: ::Array[HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateObjectDefinitionParams::media_type]
 
-          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+          def initialize: (
+            media_types: ::Array[HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateObjectDefinitionParams::media_type],
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            media_types: ::Array[HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateObjectDefinitionParams::media_type],
+            request_options: HubspotSDK::RequestOptions
+          }
+
+          type media_type = :VIDEO | :AUDIO | :DOCUMENT | :OTHER | :IMAGE
+
+          module MediaType
+            extend HubspotSDK::Internal::Type::Enum
+
+            VIDEO: :VIDEO
+            AUDIO: :AUDIO
+            DOCUMENT: :DOCUMENT
+            OTHER: :OTHER
+            IMAGE: :IMAGE
+
+            def self?.values: -> ::Array[HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateObjectDefinitionParams::media_type]
+          end
         end
       end
     end

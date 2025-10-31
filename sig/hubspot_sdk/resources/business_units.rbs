@@ -6,7 +6,7 @@ module HubspotSDK
         ?name: ::Array[String],
         ?properties: ::Array[String],
         ?request_options: HubspotSDK::request_opts
-      ) -> HubspotSDK::BusinessUnits::CollectionResponsePublicBusinessUnitNoPaging
+      ) -> HubspotSDK::Models::BusinessUnits::BusinessUnitGetByUserIDResponse
 
       def initialize: (client: HubspotSDK::Client) -> void
     end

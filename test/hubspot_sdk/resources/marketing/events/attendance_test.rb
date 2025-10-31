@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Marketing::Events::AttendanceTest < HubspotSD
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.attendance.create_by_event_id_and_contact_id(
+      @hubspot.marketing.events.attendance.create_by_event_id_and_contact_id(
         "subscriberState",
         object_id_: "objectId",
         inputs: [{interactionDateTime: 0}]
@@ -35,7 +35,7 @@ class HubspotSDK::Test::Resources::Marketing::Events::AttendanceTest < HubspotSD
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.attendance.create_by_event_id_and_email(
+      @hubspot.marketing.events.attendance.create_by_event_id_and_email(
         "subscriberState",
         object_id_: "objectId",
         inputs: [{email: "email", interactionDateTime: 0}]
@@ -63,7 +63,7 @@ class HubspotSDK::Test::Resources::Marketing::Events::AttendanceTest < HubspotSD
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.attendance.create_by_external_event_id_and_contact_id(
+      @hubspot.marketing.events.attendance.create_by_external_event_id_and_contact_id(
         "subscriberState",
         external_event_id: "externalEventId",
         inputs: [{interactionDateTime: 0}]
@@ -91,7 +91,7 @@ class HubspotSDK::Test::Resources::Marketing::Events::AttendanceTest < HubspotSD
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.attendance.create_by_external_event_id_and_email(
+      @hubspot.marketing.events.attendance.create_by_external_event_id_and_email(
         "subscriberState",
         external_event_id: "externalEventId",
         inputs: [{email: "email", interactionDateTime: 0}]

@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::DealsTest < HubspotSDK::Test::R
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.deals.create(properties: {foo: "string"})
+    response = @hubspot.crm.objects.deals.create(properties: {foo: "string"})
 
     assert_pattern do
       response => HubspotSDK::CRM::CreatedResponseSimplePublicObject
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::DealsTest < HubspotSDK::Test::R
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.deals.update(
+      @hubspot.crm.objects.deals.update(
         "dealId",
         properties: {
           property_checkbox: "false",
@@ -59,7 +59,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::DealsTest < HubspotSDK::Test::R
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.deals.list
+    response = @hubspot.crm.objects.deals.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -90,7 +90,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::DealsTest < HubspotSDK::Test::R
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.deals.delete("dealId")
+    response = @hubspot.crm.objects.deals.delete("dealId")
 
     assert_pattern do
       response => nil
@@ -100,7 +100,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::DealsTest < HubspotSDK::Test::R
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.deals.get("dealId")
+    response = @hubspot.crm.objects.deals.get("dealId")
 
     assert_pattern do
       response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
@@ -125,7 +125,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::DealsTest < HubspotSDK::Test::R
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.deals.merge(
+      @hubspot.crm.objects.deals.merge(
         object_id_to_merge: "objectIdToMerge",
         primary_object_id: "primaryObjectId"
       )
@@ -151,7 +151,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::DealsTest < HubspotSDK::Test::R
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.deals.search
+    response = @hubspot.crm.objects.deals.search
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject

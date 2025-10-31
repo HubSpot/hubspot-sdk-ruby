@@ -3,25 +3,65 @@ module HubspotSDK
     module CRM
       module FeatureFlags
         type portal_batch_upsert_params =
-          { app_id: Integer } & HubspotSDK::Internal::Type::request_parameters
+          {
+            app_id: Integer,
+            portal_states: ::Array[HubspotSDK::CRM::FeatureFlags::PortalBatchUpsertParams::PortalState]
+          }
+          & HubspotSDK::Internal::Type::request_parameters
 
-        class PortalBatchUpsertParams < HubspotSDK::Models::CRM::PortalFlagStateBatchPutRequest
+        class PortalBatchUpsertParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def app_id: -> Integer
+          attr_accessor app_id: Integer
 
-          def app_id=: (Integer _) -> Integer
+          attr_accessor portal_states: ::Array[HubspotSDK::CRM::FeatureFlags::PortalBatchUpsertParams::PortalState]
 
           def initialize: (
             app_id: Integer,
+            portal_states: ::Array[HubspotSDK::CRM::FeatureFlags::PortalBatchUpsertParams::PortalState],
             ?request_options: HubspotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
             app_id: Integer,
+            portal_states: ::Array[HubspotSDK::CRM::FeatureFlags::PortalBatchUpsertParams::PortalState],
             request_options: HubspotSDK::RequestOptions
           }
+
+          type portal_state =
+            {
+              flag_state: HubspotSDK::Models::CRM::FeatureFlags::PortalBatchUpsertParams::PortalState::flag_state,
+              portal_id: Integer
+            }
+
+          class PortalState < HubspotSDK::Internal::Type::BaseModel
+            attr_accessor flag_state: HubspotSDK::Models::CRM::FeatureFlags::PortalBatchUpsertParams::PortalState::flag_state
+
+            attr_accessor portal_id: Integer
+
+            def initialize: (
+              flag_state: HubspotSDK::Models::CRM::FeatureFlags::PortalBatchUpsertParams::PortalState::flag_state,
+              portal_id: Integer
+            ) -> void
+
+            def to_hash: -> {
+              flag_state: HubspotSDK::Models::CRM::FeatureFlags::PortalBatchUpsertParams::PortalState::flag_state,
+              portal_id: Integer
+            }
+
+            type flag_state = :OFF | :ON | :ABSENT
+
+            module FlagState
+              extend HubspotSDK::Internal::Type::Enum
+
+              OFF: :OFF
+              ON: :ON
+              ABSENT: :ABSENT
+
+              def self?.values: -> ::Array[HubspotSDK::Models::CRM::FeatureFlags::PortalBatchUpsertParams::PortalState::flag_state]
+            end
+          end
         end
       end
     end

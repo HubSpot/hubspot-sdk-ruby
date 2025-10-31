@@ -26,7 +26,7 @@ module HubspotSDK
         # @param webhook_url [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Conversations::PublicChannelIntegrationChannel]
+        # @return [HubspotSDK::Models::Conversations::CustomChannelCreateResponse]
         #
         # @see HubspotSDK::Models::Conversations::CustomChannelCreateParams
         def create(params)
@@ -35,7 +35,7 @@ module HubspotSDK
             method: :post,
             path: "conversations/v3/custom-channels/",
             body: parsed,
-            model: HubspotSDK::Conversations::PublicChannelIntegrationChannel,
+            model: HubspotSDK::Models::Conversations::CustomChannelCreateResponse,
             options: options
           )
         end
@@ -54,7 +54,7 @@ module HubspotSDK
         # @param webhook_url [Object]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Conversations::PublicChannelIntegrationChannel]
+        # @return [HubspotSDK::Models::Conversations::CustomChannelUpdateResponse]
         #
         # @see HubspotSDK::Models::Conversations::CustomChannelUpdateParams
         def update(channel_id, params)
@@ -63,7 +63,7 @@ module HubspotSDK
             method: :patch,
             path: ["conversations/v3/custom-channels/%1$s", channel_id],
             body: parsed,
-            model: HubspotSDK::Conversations::PublicChannelIntegrationChannel,
+            model: HubspotSDK::Models::Conversations::CustomChannelUpdateResponse,
             options: options
           )
         end
@@ -74,14 +74,14 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Conversations::CollectionResponseWithTotalPublicChannelIntegrationChannelForwardPaging]
+        # @return [HubspotSDK::Models::Conversations::CustomChannelListResponse]
         #
         # @see HubspotSDK::Models::Conversations::CustomChannelListParams
         def list(params = {})
           @client.request(
             method: :get,
             path: "conversations/v3/custom-channels/",
-            model: HubspotSDK::Conversations::CollectionResponseWithTotalPublicChannelIntegrationChannelForwardPaging,
+            model: HubspotSDK::Models::Conversations::CustomChannelListResponse,
             options: params[:request_options]
           )
         end
@@ -113,14 +113,14 @@ module HubspotSDK
         # @param channel_id [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Conversations::PublicChannelIntegrationChannel]
+        # @return [HubspotSDK::Models::Conversations::CustomChannelGetResponse]
         #
         # @see HubspotSDK::Models::Conversations::CustomChannelGetParams
         def get(channel_id, params = {})
           @client.request(
             method: :get,
             path: ["conversations/v3/custom-channels/%1$s", channel_id],
-            model: HubspotSDK::Conversations::PublicChannelIntegrationChannel,
+            model: HubspotSDK::Models::Conversations::CustomChannelGetResponse,
             options: params[:request_options]
           )
         end

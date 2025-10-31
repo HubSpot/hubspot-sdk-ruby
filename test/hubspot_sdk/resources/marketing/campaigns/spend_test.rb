@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::SpendTest < HubspotSDK:
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.campaigns.spend.create("campaignGuid", amount: 0, name: "name", order: 0)
+    response = @hubspot.marketing.campaigns.spend.create("campaignGuid", amount: 0, name: "name", order: 0)
 
     assert_pattern do
       response => HubspotSDK::Marketing::PublicSpendItem
@@ -29,7 +29,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::SpendTest < HubspotSDK:
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.campaigns.spend.update(
+      @hubspot.marketing.campaigns.spend.update(
         0,
         campaign_guid: "campaignGuid",
         amount: 0,
@@ -57,7 +57,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::SpendTest < HubspotSDK:
   def test_delete_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.campaigns.spend.delete(0, campaign_guid: "campaignGuid")
+    response = @hubspot.marketing.campaigns.spend.delete(0, campaign_guid: "campaignGuid")
 
     assert_pattern do
       response => nil
@@ -67,7 +67,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::SpendTest < HubspotSDK:
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.campaigns.spend.get(0, campaign_guid: "campaignGuid")
+    response = @hubspot.marketing.campaigns.spend.get(0, campaign_guid: "campaignGuid")
 
     assert_pattern do
       response => HubspotSDK::Marketing::PublicSpendItem

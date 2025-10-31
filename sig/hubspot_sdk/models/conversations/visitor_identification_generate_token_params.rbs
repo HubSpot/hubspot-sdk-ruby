@@ -2,15 +2,36 @@ module HubspotSDK
   module Models
     module Conversations
       type visitor_identification_generate_token_params =
-        {  } & HubspotSDK::Internal::Type::request_parameters
+        { email: String, first_name: String, last_name: String }
+        & HubspotSDK::Internal::Type::request_parameters
 
-      class VisitorIdentificationGenerateTokenParams < HubspotSDK::Models::Conversations::IdentificationTokenGenerationRequest
+      class VisitorIdentificationGenerateTokenParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
-        def initialize: (?request_options: HubspotSDK::request_opts) -> void
+        attr_accessor email: String
 
-        def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+        attr_reader first_name: String?
+
+        def first_name=: (String) -> String
+
+        attr_reader last_name: String?
+
+        def last_name=: (String) -> String
+
+        def initialize: (
+          email: String,
+          ?first_name: String,
+          ?last_name: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          email: String,
+          first_name: String,
+          last_name: String,
+          request_options: HubspotSDK::RequestOptions
+        }
       end
     end
   end

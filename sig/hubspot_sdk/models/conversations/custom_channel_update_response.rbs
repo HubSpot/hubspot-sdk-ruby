@@ -1,0 +1,65 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type custom_channel_update_response =
+        {
+          id: String,
+          capabilities: ::Hash[Symbol, top],
+          created_at: Time,
+          name: String,
+          channel_account_connection_redirect_url: String,
+          channel_description: String,
+          channel_logo_url: String,
+          webhook_url: String
+        }
+
+      class CustomChannelUpdateResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor capabilities: ::Hash[Symbol, top]
+
+        attr_accessor created_at: Time
+
+        attr_accessor name: String
+
+        attr_reader channel_account_connection_redirect_url: String?
+
+        def channel_account_connection_redirect_url=: (String) -> String
+
+        attr_reader channel_description: String?
+
+        def channel_description=: (String) -> String
+
+        attr_reader channel_logo_url: String?
+
+        def channel_logo_url=: (String) -> String
+
+        attr_reader webhook_url: String?
+
+        def webhook_url=: (String) -> String
+
+        def initialize: (
+          id: String,
+          capabilities: ::Hash[Symbol, top],
+          created_at: Time,
+          name: String,
+          ?channel_account_connection_redirect_url: String,
+          ?channel_description: String,
+          ?channel_logo_url: String,
+          ?webhook_url: String
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          capabilities: ::Hash[Symbol, top],
+          created_at: Time,
+          name: String,
+          channel_account_connection_redirect_url: String,
+          channel_description: String,
+          channel_logo_url: String,
+          webhook_url: String
+        }
+      end
+    end
+  end
+end

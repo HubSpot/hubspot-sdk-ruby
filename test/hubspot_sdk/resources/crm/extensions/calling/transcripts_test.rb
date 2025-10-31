@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::TranscriptsTest < H
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.extensions.calling.transcripts.create(
+      @hubspot.crm.extensions.calling.transcripts.create(
         engagement_id: 0,
         transcript_create_utterances: [
           {
@@ -33,7 +33,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::TranscriptsTest < H
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.extensions.calling.transcripts.delete("transcriptId")
+    response = @hubspot.crm.extensions.calling.transcripts.delete("transcriptId")
 
     assert_pattern do
       response => nil
@@ -43,7 +43,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::TranscriptsTest < H
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.extensions.calling.transcripts.get("transcriptId")
+    response = @hubspot.crm.extensions.calling.transcripts.get("transcriptId")
 
     assert_pattern do
       response => HubspotSDK::CRM::Extensions::Calling::TranscriptResponse

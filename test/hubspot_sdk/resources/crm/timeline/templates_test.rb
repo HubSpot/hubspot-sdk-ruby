@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::TemplatesTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.timeline.templates.create(
+      @hubspot.crm.timeline.templates.create(
         0,
         name: "PetSpot Registration",
         object_type: "contacts",
@@ -40,7 +40,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::TemplatesTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.timeline.templates.update(
+      @hubspot.crm.timeline.templates.update(
         "eventTemplateId",
         app_id: 0,
         id: "1001298",
@@ -73,7 +73,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::TemplatesTest < HubspotSDK::Te
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.timeline.templates.list(0)
+    response = @hubspot.crm.timeline.templates.list(0)
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseTimelineEventTemplateNoPaging
@@ -89,7 +89,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::TemplatesTest < HubspotSDK::Te
   def test_delete_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.timeline.templates.delete("eventTemplateId", app_id: 0)
+    response = @hubspot.crm.timeline.templates.delete("eventTemplateId", app_id: 0)
 
     assert_pattern do
       response => nil
@@ -99,7 +99,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::TemplatesTest < HubspotSDK::Te
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.timeline.templates.get("eventTemplateId", app_id: 0)
+    response = @hubspot.crm.timeline.templates.get("eventTemplateId", app_id: 0)
 
     assert_pattern do
       response => HubspotSDK::CRM::TimelineEventTemplate

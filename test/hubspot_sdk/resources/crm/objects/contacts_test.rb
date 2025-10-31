@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContactsTest < HubspotSDK::Test
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.contacts.create(properties: {foo: "string"})
+    response = @hubspot.crm.objects.contacts.create(properties: {foo: "string"})
 
     assert_pattern do
       response => HubspotSDK::CRM::CreatedResponseSimplePublicObject
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContactsTest < HubspotSDK::Test
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.contacts.update(
+      @hubspot.crm.objects.contacts.update(
         "contactId",
         properties: {
           property_checkbox: "false",
@@ -59,7 +59,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContactsTest < HubspotSDK::Test
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.contacts.list
+    response = @hubspot.crm.objects.contacts.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -90,7 +90,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContactsTest < HubspotSDK::Test
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.contacts.delete("contactId")
+    response = @hubspot.crm.objects.contacts.delete("contactId")
 
     assert_pattern do
       response => nil
@@ -100,7 +100,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContactsTest < HubspotSDK::Test
   def test_gdpr_delete_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.contacts.gdpr_delete(object_id_: "objectId")
+    response = @hubspot.crm.objects.contacts.gdpr_delete(object_id_: "objectId")
 
     assert_pattern do
       response => nil
@@ -110,7 +110,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContactsTest < HubspotSDK::Test
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.contacts.get("contactId")
+    response = @hubspot.crm.objects.contacts.get("contactId")
 
     assert_pattern do
       response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
@@ -135,7 +135,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContactsTest < HubspotSDK::Test
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.contacts.merge(
+      @hubspot.crm.objects.contacts.merge(
         object_id_to_merge: "objectIdToMerge",
         primary_object_id: "primaryObjectId"
       )
@@ -161,7 +161,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContactsTest < HubspotSDK::Test
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.contacts.search
+    response = @hubspot.crm.objects.contacts.search
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject

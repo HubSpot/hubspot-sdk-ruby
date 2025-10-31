@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::TicketsTest < HubspotSDK::Test:
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.tickets.create(properties: {foo: "string"})
+    response = @hubspot.crm.objects.tickets.create(properties: {foo: "string"})
 
     assert_pattern do
       response => HubspotSDK::CRM::CreatedResponseSimplePublicObject
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::TicketsTest < HubspotSDK::Test:
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.tickets.update(
+      @hubspot.crm.objects.tickets.update(
         "ticketId",
         properties: {
           property_checkbox: "false",
@@ -59,7 +59,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::TicketsTest < HubspotSDK::Test:
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.tickets.list
+    response = @hubspot.crm.objects.tickets.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -90,7 +90,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::TicketsTest < HubspotSDK::Test:
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.tickets.delete("ticketId")
+    response = @hubspot.crm.objects.tickets.delete("ticketId")
 
     assert_pattern do
       response => nil
@@ -100,7 +100,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::TicketsTest < HubspotSDK::Test:
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.tickets.get("ticketId")
+    response = @hubspot.crm.objects.tickets.get("ticketId")
 
     assert_pattern do
       response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
@@ -125,7 +125,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::TicketsTest < HubspotSDK::Test:
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.tickets.merge(
+      @hubspot.crm.objects.tickets.merge(
         object_id_to_merge: "objectIdToMerge",
         primary_object_id: "primaryObjectId"
       )
@@ -151,7 +151,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::TicketsTest < HubspotSDK::Test:
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.tickets.search
+    response = @hubspot.crm.objects.tickets.search
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject

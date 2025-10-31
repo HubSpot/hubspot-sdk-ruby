@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
   def test_update_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.media_bridge.schemas.update("objectType", app_id: "appId")
+    response = @hubspot.cms.media_bridge.schemas.update("objectType", app_id: "appId")
 
     assert_pattern do
       response => HubspotSDK::CRM::Objects::ObjectTypeDefinition
@@ -35,7 +35,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.media_bridge.schemas.list("appId")
+    response = @hubspot.cms.media_bridge.schemas.list("appId")
 
     assert_pattern do
       response => HubspotSDK::CollectionResponseObjectSchemaNoPaging
@@ -52,7 +52,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.media_bridge.schemas.create_association(
+      @hubspot.cms.media_bridge.schemas.create_association(
         "objectType",
         app_id: "appId",
         from_object_type_id: "fromObjectTypeId",
@@ -60,15 +60,15 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
       )
 
     assert_pattern do
-      response => HubspotSDK::Events::AssociationDefinition
+      response => HubspotSDK::Models::Cms::MediaBridge::SchemaCreateAssociationResponse
     end
 
     assert_pattern do
       response => {
         id: Integer,
         allows_custom_labels: HubspotSDK::Internal::Type::Boolean,
-        cardinality: HubspotSDK::Events::AssociationDefinition::Cardinality,
-        category: HubspotSDK::Events::AssociationDefinition::Category,
+        cardinality: HubspotSDK::Models::Cms::MediaBridge::SchemaCreateAssociationResponse::Cardinality,
+        category: HubspotSDK::Models::Cms::MediaBridge::SchemaCreateAssociationResponse::Category,
         from_object_type_id: String,
         has_all_associated_objects: HubspotSDK::Internal::Type::Boolean,
         has_cascading_deletes: HubspotSDK::Internal::Type::Boolean,
@@ -76,7 +76,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
         has_user_enforced_max_to_object_ids: HubspotSDK::Internal::Type::Boolean,
         hidden: HubspotSDK::Internal::Type::Boolean,
         inverse_allows_custom_labels: HubspotSDK::Internal::Type::Boolean,
-        inverse_cardinality: HubspotSDK::Events::AssociationDefinition::InverseCardinality,
+        inverse_cardinality: HubspotSDK::Models::Cms::MediaBridge::SchemaCreateAssociationResponse::InverseCardinality,
         inverse_has_all_associated_objects: HubspotSDK::Internal::Type::Boolean,
         inverse_id: Integer,
         inverse_name: String,
@@ -87,10 +87,10 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
         name: String,
         portal_unique_identifier: String,
         to_object_type_id: String,
-        from_object_type: HubspotSDK::Events::AssociationDefinition::FromObjectType | nil,
+        from_object_type: HubspotSDK::Models::Cms::MediaBridge::SchemaCreateAssociationResponse::FromObjectType | nil,
         inverse_label: String | nil,
         label: String | nil,
-        to_object_type: HubspotSDK::Events::AssociationDefinition::ToObjectType | nil
+        to_object_type: HubspotSDK::Models::Cms::MediaBridge::SchemaCreateAssociationResponse::ToObjectType | nil
       }
     end
   end
@@ -99,7 +99,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.media_bridge.schemas.delete_association(
+      @hubspot.cms.media_bridge.schemas.delete_association(
         "associationId",
         app_id: "appId",
         object_type: "objectType"
@@ -113,7 +113,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.media_bridge.schemas.get("objectType", app_id: "appId")
+    response = @hubspot.cms.media_bridge.schemas.get("objectType", app_id: "appId")
 
     assert_pattern do
       response => HubspotSDK::CRM::Objects::ObjectSchema
@@ -122,7 +122,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
     assert_pattern do
       response => {
         id: String,
-        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::AssociationDefinition]),
+        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Objects::ObjectSchema::Association]),
         labels: HubspotSDK::ObjectTypeDefinitionLabels,
         name: String,
         properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property]),

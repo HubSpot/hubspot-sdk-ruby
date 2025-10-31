@@ -2,15 +2,57 @@ module HubspotSDK
   module Models
     module Conversations
       type custom_channel_update_params =
-        {  } & HubspotSDK::Internal::Type::request_parameters
+        {
+          capabilities: ::Hash[Symbol, top],
+          channel_description: top,
+          channel_logo_url: top,
+          channel_account_connection_redirect_url: top,
+          name: top,
+          webhook_url: top
+        }
+        & HubspotSDK::Internal::Type::request_parameters
 
-      class CustomChannelUpdateParams < HubspotSDK::Models::Conversations::PublicChannelIntegrationChannelPatch
+      class CustomChannelUpdateParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
-        def initialize: (?request_options: HubspotSDK::request_opts) -> void
+        attr_accessor capabilities: ::Hash[Symbol, top]
 
-        def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+        attr_accessor channel_description: top
+
+        attr_accessor channel_logo_url: top
+
+        attr_reader channel_account_connection_redirect_url: top?
+
+        def channel_account_connection_redirect_url=: (top) -> top
+
+        attr_reader name: top?
+
+        def name=: (top) -> top
+
+        attr_reader webhook_url: top?
+
+        def webhook_url=: (top) -> top
+
+        def initialize: (
+          capabilities: ::Hash[Symbol, top],
+          channel_description: top,
+          channel_logo_url: top,
+          ?channel_account_connection_redirect_url: top,
+          ?name: top,
+          ?webhook_url: top,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          capabilities: ::Hash[Symbol, top],
+          channel_description: top,
+          channel_logo_url: top,
+          channel_account_connection_redirect_url: top,
+          name: top,
+          webhook_url: top,
+          request_options: HubspotSDK::RequestOptions
+        }
       end
     end
   end

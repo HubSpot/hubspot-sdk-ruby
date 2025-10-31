@@ -7,10 +7,10 @@ class HubspotSDK::Test::Resources::Conversations::VisitorIdentificationTest < Hu
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.conversations.visitor_identification.generate_token(email: "visitor-email@example.com")
+      @hubspot.conversations.visitor_identification.generate_token(email: "visitor-email@example.com")
 
     assert_pattern do
-      response => HubspotSDK::Conversations::IdentificationTokenResponse
+      response => HubspotSDK::Models::Conversations::VisitorIdentificationGenerateTokenResponse
     end
 
     assert_pattern do

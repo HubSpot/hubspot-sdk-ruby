@@ -4,12 +4,12 @@ module HubspotSDK
       class TaxRates
         def list: (
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Settings::CollectionResponsePublicTaxRateGroupForwardPaging
+        ) -> HubspotSDK::Models::Settings::TaxRateListResponse
 
         def get: (
           String tax_rate_group_id,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Settings::PublicTaxRateGroup
+        ) -> HubspotSDK::Models::Settings::TaxRateGetResponse
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

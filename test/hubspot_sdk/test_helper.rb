@@ -77,7 +77,7 @@ class HubspotSDK::Test::ResourceTest < Minitest::Test
 
   def before_all
     super
-    @hub_spot = HubspotSDK::Test::SingletonClient.instance
+    @hubspot = HubspotSDK::Test::SingletonClient.instance
   end
 
   def around_all = async? ? Sync { super } : super

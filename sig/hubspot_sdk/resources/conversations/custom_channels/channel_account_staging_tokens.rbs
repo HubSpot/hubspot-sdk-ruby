@@ -9,7 +9,7 @@ module HubspotSDK
             account_name: String,
             delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Conversations::PublicChannelAccountStagingToken
+          ) -> HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountStagingTokenUpdateResponse
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

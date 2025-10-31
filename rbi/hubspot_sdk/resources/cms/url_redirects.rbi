@@ -18,7 +18,7 @@ module HubspotSDK
             is_trailing_slash_optional: T::Boolean,
             precedence: Integer,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::URLMapping)
+          ).returns(HubspotSDK::Models::Cms::URLRedirectCreateResponse)
         end
         def create(
           destination:,
@@ -53,7 +53,7 @@ module HubspotSDK
             created: Time,
             updated: Time,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::URLMapping)
+          ).returns(HubspotSDK::Models::Cms::URLRedirectUpdateResponse)
         end
         def update(
           url_redirect_id,
@@ -107,7 +107,11 @@ module HubspotSDK
             updated_at: Time,
             updated_before: Time,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Internal::Page[HubspotSDK::Cms::URLMapping])
+          ).returns(
+            HubspotSDK::Internal::Page[
+              HubspotSDK::Models::Cms::URLRedirectListResponse
+            ]
+          )
         end
         def list(
           # The paging cursor token of the last successfully read resource will be returned
@@ -154,7 +158,7 @@ module HubspotSDK
           params(
             url_redirect_id: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::URLMapping)
+          ).returns(HubspotSDK::Models::Cms::URLRedirectGetResponse)
         end
         def get(
           # The ID of the target redirect.

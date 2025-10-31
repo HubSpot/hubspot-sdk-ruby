@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Webhooks::SubscriptionsTest < HubspotSDK::Tes
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.webhooks.subscriptions.create(0, event_type: :"contact.propertyChange")
+    response = @hubspot.webhooks.subscriptions.create(0, event_type: :"contact.propertyChange")
 
     assert_pattern do
       response => HubspotSDK::Webhooks::SubscriptionResponse
@@ -28,7 +28,7 @@ class HubspotSDK::Test::Resources::Webhooks::SubscriptionsTest < HubspotSDK::Tes
   def test_update_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.webhooks.subscriptions.update(0, app_id: 0)
+    response = @hubspot.webhooks.subscriptions.update(0, app_id: 0)
 
     assert_pattern do
       response => HubspotSDK::Webhooks::SubscriptionResponse
@@ -50,7 +50,7 @@ class HubspotSDK::Test::Resources::Webhooks::SubscriptionsTest < HubspotSDK::Tes
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.webhooks.subscriptions.list(0)
+    response = @hubspot.webhooks.subscriptions.list(0)
 
     assert_pattern do
       response => HubspotSDK::Webhooks::SubscriptionListResponse
@@ -66,7 +66,7 @@ class HubspotSDK::Test::Resources::Webhooks::SubscriptionsTest < HubspotSDK::Tes
   def test_delete_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.webhooks.subscriptions.delete(0, app_id: 0)
+    response = @hubspot.webhooks.subscriptions.delete(0, app_id: 0)
 
     assert_pattern do
       response => nil
@@ -76,7 +76,7 @@ class HubspotSDK::Test::Resources::Webhooks::SubscriptionsTest < HubspotSDK::Tes
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.webhooks.subscriptions.get(0, app_id: 0)
+    response = @hubspot.webhooks.subscriptions.get(0, app_id: 0)
 
     assert_pattern do
       response => HubspotSDK::Webhooks::SubscriptionResponse
@@ -98,7 +98,7 @@ class HubspotSDK::Test::Resources::Webhooks::SubscriptionsTest < HubspotSDK::Tes
   def test_update_batch_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.webhooks.subscriptions.update_batch(0, inputs: [{id: 0, active: true}])
+    response = @hubspot.webhooks.subscriptions.update_batch(0, inputs: [{id: 0, active: true}])
 
     assert_pattern do
       response => HubspotSDK::Webhooks::BatchResponseSubscriptionResponse

@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::MessagesTest <
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.conversations.custom_channels.messages.create(
+      @hubspot.conversations.custom_channels.messages.create(
         "channelId",
         attachments: [{fileId: "fileId", type: :FILE}],
         channel_account_id: "channelAccountId",
@@ -53,7 +53,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::MessagesTest <
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.conversations.custom_channels.messages.update(
+      @hubspot.conversations.custom_channels.messages.update(
         "messageId",
         channel_id: "channelId",
         status_type: :SENT
@@ -92,7 +92,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::MessagesTest <
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.conversations.custom_channels.messages.get("messageId", channel_id: "channelId")
+    response = @hubspot.conversations.custom_channels.messages.get("messageId", channel_id: "channelId")
 
     assert_pattern do
       response => HubspotSDK::Conversations::PublicConversationsMessage

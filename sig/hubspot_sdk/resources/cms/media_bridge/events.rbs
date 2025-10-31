@@ -4,14 +4,14 @@ module HubspotSDK
       class MediaBridge
         class Events
           def create_attention_span_event: (
-            media_type: HubspotSDK::Models::Cms::AttentionSpanEventRequest::media_type,
+            media_type: HubspotSDK::Models::Cms::MediaBridge::EventCreateAttentionSpanEventParams::media_type,
             occurred_timestamp: Integer,
             raw_data_map: ::Hash[Symbol, Integer],
             session_id: String,
             ?_hsenc: String,
             ?contact_id: Integer,
             ?contact_utk: String,
-            ?derived_values: HubspotSDK::Cms::AttentionSpanCalculatedValues,
+            ?derived_values: HubspotSDK::Cms::MediaBridge::EventCreateAttentionSpanEventParams::DerivedValues,
             ?external_id: String,
             ?media_bridge_id: Integer,
             ?media_name: String,
@@ -21,13 +21,13 @@ module HubspotSDK
             ?page_url: String,
             ?raw_data_string: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::AttentionSpanEvent
+          ) -> HubspotSDK::Models::Cms::MediaBridge::EventCreateAttentionSpanEventResponse
 
           def create_media_played_event: (
-            media_type: HubspotSDK::Models::Cms::MediaPlayedEventRequest::media_type,
+            media_type: HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedEventParams::media_type,
             occurred_timestamp: Integer,
             session_id: String,
-            state: HubspotSDK::Models::Cms::MediaPlayedEventRequest::state,
+            state: HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedEventParams::state,
             ?_hsenc: String,
             ?contact_id: Integer,
             ?contact_utk: String,
@@ -40,10 +40,10 @@ module HubspotSDK
             ?page_name: String,
             ?page_url: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::MediaPlayedEvent
+          ) -> HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedEventResponse
 
           def create_media_played_percent_event: (
-            media_type: HubspotSDK::Models::Cms::MediaPlayedPercentageEventRequest::media_type,
+            media_type: HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedPercentEventParams::media_type,
             occurred_timestamp: Integer,
             played_percent: Integer,
             session_id: String,
@@ -58,7 +58,7 @@ module HubspotSDK
             ?page_name: String,
             ?page_url: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::MediaPlayedPercentageEvent
+          ) -> HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedPercentEventResponse
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

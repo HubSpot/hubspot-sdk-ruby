@@ -7,32 +7,32 @@ class HubspotSDK::Test::Resources::Events::EventDefinitionsTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.events.event_definitions.create(
+      @hubspot.events.event_definitions.create(
         label: "label",
         property_definitions: [{label: "label", type: "type"}]
       )
 
     assert_pattern do
-      response => HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
+      response => HubspotSDK::Models::Events::EventDefinitionCreateResponse
     end
 
     assert_pattern do
       response => {
         id: String,
         archived: HubspotSDK::Internal::Type::Boolean,
-        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::AssociationDefinition]),
+        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::Events::EventDefinitionCreateResponse::Association]),
         fully_qualified_name: String,
-        labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels,
+        labels: HubspotSDK::Models::Events::EventDefinitionCreateResponse::Labels,
         name: String,
         object_type_id: String,
         properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property]),
-        combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch | nil,
+        combo_event_rules: HubspotSDK::Models::Events::EventDefinitionCreateResponse::ComboEventRules | nil,
         created_at: Time | nil,
         created_user_id: Integer | nil,
         description: String | nil,
         primary_object: String | nil,
         primary_object_id: String | nil,
-        tracking_type: HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType | nil
+        tracking_type: HubspotSDK::Models::Events::EventDefinitionCreateResponse::TrackingType | nil
       }
     end
   end
@@ -40,29 +40,29 @@ class HubspotSDK::Test::Resources::Events::EventDefinitionsTest < HubspotSDK::Te
   def test_update
     skip("Prism tests are disabled")
 
-    response = @hub_spot.events.event_definitions.update("eventName")
+    response = @hubspot.events.event_definitions.update("eventName")
 
     assert_pattern do
-      response => HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
+      response => HubspotSDK::Models::Events::EventDefinitionUpdateResponse
     end
 
     assert_pattern do
       response => {
         id: String,
         archived: HubspotSDK::Internal::Type::Boolean,
-        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::AssociationDefinition]),
+        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::Events::EventDefinitionUpdateResponse::Association]),
         fully_qualified_name: String,
-        labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels,
+        labels: HubspotSDK::Models::Events::EventDefinitionUpdateResponse::Labels,
         name: String,
         object_type_id: String,
         properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property]),
-        combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch | nil,
+        combo_event_rules: HubspotSDK::Models::Events::EventDefinitionUpdateResponse::ComboEventRules | nil,
         created_at: Time | nil,
         created_user_id: Integer | nil,
         description: String | nil,
         primary_object: String | nil,
         primary_object_id: String | nil,
-        tracking_type: HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType | nil
+        tracking_type: HubspotSDK::Models::Events::EventDefinitionUpdateResponse::TrackingType | nil
       }
     end
   end
@@ -70,7 +70,7 @@ class HubspotSDK::Test::Resources::Events::EventDefinitionsTest < HubspotSDK::Te
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.events.event_definitions.list
+    response = @hubspot.events.event_definitions.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -80,26 +80,26 @@ class HubspotSDK::Test::Resources::Events::EventDefinitionsTest < HubspotSDK::Te
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
+      row => HubspotSDK::Models::Events::EventDefinitionListResponse
     end
 
     assert_pattern do
       row => {
         id: String,
         archived: HubspotSDK::Internal::Type::Boolean,
-        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::AssociationDefinition]),
+        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::Events::EventDefinitionListResponse::Association]),
         fully_qualified_name: String,
-        labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels,
+        labels: HubspotSDK::Models::Events::EventDefinitionListResponse::Labels,
         name: String,
         object_type_id: String,
         properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property]),
-        combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch | nil,
+        combo_event_rules: HubspotSDK::Models::Events::EventDefinitionListResponse::ComboEventRules | nil,
         created_at: Time | nil,
         created_user_id: Integer | nil,
         description: String | nil,
         primary_object: String | nil,
         primary_object_id: String | nil,
-        tracking_type: HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType | nil
+        tracking_type: HubspotSDK::Models::Events::EventDefinitionListResponse::TrackingType | nil
       }
     end
   end
@@ -107,7 +107,7 @@ class HubspotSDK::Test::Resources::Events::EventDefinitionsTest < HubspotSDK::Te
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.events.event_definitions.delete("eventName")
+    response = @hubspot.events.event_definitions.delete("eventName")
 
     assert_pattern do
       response => nil
@@ -117,7 +117,7 @@ class HubspotSDK::Test::Resources::Events::EventDefinitionsTest < HubspotSDK::Te
   def test_create_property_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.events.event_definitions.create_property("eventName", label: "label", type: "type")
+    response = @hubspot.events.event_definitions.create_property("eventName", label: "label", type: "type")
 
     assert_pattern do
       response => HubspotSDK::Property
@@ -158,7 +158,7 @@ class HubspotSDK::Test::Resources::Events::EventDefinitionsTest < HubspotSDK::Te
   def test_delete_property_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.events.event_definitions.delete_property("propertyName", event_name: "eventName")
+    response = @hubspot.events.event_definitions.delete_property("propertyName", event_name: "eventName")
 
     assert_pattern do
       response => nil
@@ -168,29 +168,29 @@ class HubspotSDK::Test::Resources::Events::EventDefinitionsTest < HubspotSDK::Te
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.events.event_definitions.get("eventName")
+    response = @hubspot.events.event_definitions.get("eventName")
 
     assert_pattern do
-      response => HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
+      response => HubspotSDK::Models::Events::EventDefinitionGetResponse
     end
 
     assert_pattern do
       response => {
         id: String,
         archived: HubspotSDK::Internal::Type::Boolean,
-        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::AssociationDefinition]),
+        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::Events::EventDefinitionGetResponse::Association]),
         fully_qualified_name: String,
-        labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels,
+        labels: HubspotSDK::Models::Events::EventDefinitionGetResponse::Labels,
         name: String,
         object_type_id: String,
         properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property]),
-        combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch | nil,
+        combo_event_rules: HubspotSDK::Models::Events::EventDefinitionGetResponse::ComboEventRules | nil,
         created_at: Time | nil,
         created_user_id: Integer | nil,
         description: String | nil,
         primary_object: String | nil,
         primary_object_id: String | nil,
-        tracking_type: HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType | nil
+        tracking_type: HubspotSDK::Models::Events::EventDefinitionGetResponse::TrackingType | nil
       }
     end
   end
@@ -198,7 +198,7 @@ class HubspotSDK::Test::Resources::Events::EventDefinitionsTest < HubspotSDK::Te
   def test_update_property_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.events.event_definitions.update_property("propertyName", event_name: "eventName")
+    response = @hubspot.events.event_definitions.update_property("propertyName", event_name: "eventName")
 
     assert_pattern do
       response => HubspotSDK::Property

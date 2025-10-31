@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::InvoicesTest < HubspotSDK::Test
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.invoices.create(properties: {foo: "string"})
+    response = @hubspot.crm.objects.invoices.create(properties: {foo: "string"})
 
     assert_pattern do
       response => HubspotSDK::CRM::CreatedResponseSimplePublicObject
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::InvoicesTest < HubspotSDK::Test
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.invoices.update(
+      @hubspot.crm.objects.invoices.update(
         "invoiceId",
         properties: {
           property_checkbox: "false",
@@ -59,7 +59,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::InvoicesTest < HubspotSDK::Test
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.invoices.list
+    response = @hubspot.crm.objects.invoices.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -90,7 +90,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::InvoicesTest < HubspotSDK::Test
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.invoices.delete("invoiceId")
+    response = @hubspot.crm.objects.invoices.delete("invoiceId")
 
     assert_pattern do
       response => nil
@@ -100,7 +100,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::InvoicesTest < HubspotSDK::Test
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.invoices.get("invoiceId")
+    response = @hubspot.crm.objects.invoices.get("invoiceId")
 
     assert_pattern do
       response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
@@ -124,7 +124,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::InvoicesTest < HubspotSDK::Test
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.invoices.search
+    response = @hubspot.crm.objects.invoices.search
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject

@@ -3,15 +3,45 @@ module HubspotSDK
     module Conversations
       module CustomChannels
         type channel_account_create_params =
-          {  } & HubspotSDK::Internal::Type::request_parameters
+          {
+            authorized: bool,
+            inbox_id: String,
+            name: String,
+            delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+          }
+          & HubspotSDK::Internal::Type::request_parameters
 
-        class ChannelAccountCreateParams < HubspotSDK::Models::Conversations::PublicChannelAccountEgg
+        class ChannelAccountCreateParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+          attr_accessor authorized: bool
 
-          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+          attr_accessor inbox_id: String
+
+          attr_accessor name: String
+
+          attr_reader delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier?
+
+          def delivery_identifier=: (
+            HubspotSDK::Conversations::PublicDeliveryIdentifier
+          ) -> HubspotSDK::Conversations::PublicDeliveryIdentifier
+
+          def initialize: (
+            authorized: bool,
+            inbox_id: String,
+            name: String,
+            ?delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            authorized: bool,
+            inbox_id: String,
+            name: String,
+            delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
+            request_options: HubspotSDK::RequestOptions
+          }
         end
       end
     end

@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Marketing::Events::ParticipationsTest < Hubsp
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.participations.get_by_external_account_and_event_id(
+      @hubspot.marketing.events.participations.get_by_external_account_and_event_id(
         "externalEventId",
         external_account_id: "externalAccountId"
       )
@@ -29,7 +29,7 @@ class HubspotSDK::Test::Resources::Marketing::Events::ParticipationsTest < Hubsp
   def test_get_by_id
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.events.participations.get_by_id(0)
+    response = @hubspot.marketing.events.participations.get_by_id(0)
 
     assert_pattern do
       response => HubspotSDK::Marketing::AttendanceCounters
@@ -48,7 +48,7 @@ class HubspotSDK::Test::Resources::Marketing::Events::ParticipationsTest < Hubsp
   def test_list_breakdown_by_contact
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.events.participations.list_breakdown_by_contact("contactIdentifier")
+    response = @hubspot.marketing.events.participations.list_breakdown_by_contact("contactIdentifier")
 
     assert_pattern do
       response => HubspotSDK::Marketing::CollectionResponseWithTotalParticipationBreakdownForwardPaging
@@ -67,7 +67,7 @@ class HubspotSDK::Test::Resources::Marketing::Events::ParticipationsTest < Hubsp
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.participations.list_breakdown_by_external_account_and_event_id(
+      @hubspot.marketing.events.participations.list_breakdown_by_external_account_and_event_id(
         "externalEventId",
         external_account_id: "externalAccountId"
       )
@@ -88,7 +88,7 @@ class HubspotSDK::Test::Resources::Marketing::Events::ParticipationsTest < Hubsp
   def test_list_breakdown_by_id
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.events.participations.list_breakdown_by_id(0)
+    response = @hubspot.marketing.events.participations.list_breakdown_by_id(0)
 
     assert_pattern do
       response => HubspotSDK::Marketing::CollectionResponseWithTotalParticipationBreakdownForwardPaging

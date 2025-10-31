@@ -10,17 +10,17 @@ module HubspotSDK
           # @overload create(channel_id, attachments:, channel_account_id:, integration_thread_id:, message_direction:, recipients:, senders:, text:, timestamp:, in_reply_to_id: nil, integration_idempotency_id: nil, pre_resolved_contacts: nil, rich_text: nil, request_options: {})
           #
           # @param channel_id [String]
-          # @param attachments [Array<HubspotSDK::Models::Conversations::FileAttachment, HubspotSDK::Models::Conversations::LocationAttachment, HubspotSDK::Models::Conversations::ContactAttachment, HubspotSDK::Models::Conversations::UnsupportedContentAttachment, HubspotSDK::Models::Conversations::MessageHeaderAttachment, HubspotSDK::Models::Conversations::QuickRepliesAttachment, HubspotSDK::Models::Conversations::SocialMetadataIntegrationAttachment>]
+          # @param attachments [Array<HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsFileAttachment, HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsLocationAttachment, HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsContactAttachment, HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsUnsupportedContentAttachment, HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsMessageHeaderAttachment, HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsQuickRepliesAttachment, HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsSocialMetadataIntegrationAttachment>]
           # @param channel_account_id [String]
           # @param integration_thread_id [String]
-          # @param message_direction [Symbol, HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::MessageDirection]
-          # @param recipients [Array<HubspotSDK::Models::Conversations::ChannelIntegrationParticipant>]
-          # @param senders [Array<HubspotSDK::Models::Conversations::ChannelIntegrationParticipant>]
+          # @param message_direction [Symbol, HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::MessageDirection]
+          # @param recipients [Array<HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Recipient>]
+          # @param senders [Array<HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Sender>]
           # @param text [String]
           # @param timestamp [Time]
           # @param in_reply_to_id [String]
           # @param integration_idempotency_id [String]
-          # @param pre_resolved_contacts [HubspotSDK::Models::Conversations::PreResolvedContacts]
+          # @param pre_resolved_contacts [HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::PreResolvedContacts]
           # @param rich_text [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -48,7 +48,7 @@ module HubspotSDK
           #
           # @param channel_id [String] Path param:
           #
-          # @param status_type [Symbol, HubspotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType] Body param: Valid status are SENT, FAILED, and READ
+          # @param status_type [Symbol, HubspotSDK::Models::Conversations::CustomChannels::MessageUpdateParams::StatusType] Body param: Valid status are SENT, FAILED, and READ
           #
           # @param error_message [String] Body param:
           #

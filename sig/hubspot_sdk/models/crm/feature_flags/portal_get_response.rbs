@@ -1,0 +1,51 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module FeatureFlags
+        type portal_get_response =
+          {
+            app_id: Integer,
+            flag_name: String,
+            flag_state: HubspotSDK::Models::CRM::FeatureFlags::PortalGetResponse::flag_state,
+            portal_id: Integer
+          }
+
+        class PortalGetResponse < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor app_id: Integer
+
+          attr_accessor flag_name: String
+
+          attr_accessor flag_state: HubspotSDK::Models::CRM::FeatureFlags::PortalGetResponse::flag_state
+
+          attr_accessor portal_id: Integer
+
+          def initialize: (
+            app_id: Integer,
+            flag_name: String,
+            flag_state: HubspotSDK::Models::CRM::FeatureFlags::PortalGetResponse::flag_state,
+            portal_id: Integer
+          ) -> void
+
+          def to_hash: -> {
+            app_id: Integer,
+            flag_name: String,
+            flag_state: HubspotSDK::Models::CRM::FeatureFlags::PortalGetResponse::flag_state,
+            portal_id: Integer
+          }
+
+          type flag_state = :OFF | :ON | :ABSENT
+
+          module FlagState
+            extend HubspotSDK::Internal::Type::Enum
+
+            OFF: :OFF
+            ON: :ON
+            ABSENT: :ABSENT
+
+            def self?.values: -> ::Array[HubspotSDK::Models::CRM::FeatureFlags::PortalGetResponse::flag_state]
+          end
+        end
+      end
+    end
+  end
+end

@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::PropertiesTest < HubspotSDK::Test::Resou
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.properties.create(
+      @hubspot.crm.properties.create(
         "objectType",
         field_type: :booleancheckbox,
         group_name: "groupName",
@@ -32,7 +32,7 @@ class HubspotSDK::Test::Resources::CRM::PropertiesTest < HubspotSDK::Test::Resou
   def test_update_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.properties.update("propertyName", object_type: "objectType")
+    response = @hubspot.crm.properties.update("propertyName", object_type: "objectType")
 
     assert_pattern do
       response => HubspotSDK::Property
@@ -73,7 +73,7 @@ class HubspotSDK::Test::Resources::CRM::PropertiesTest < HubspotSDK::Test::Resou
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.properties.list("objectType")
+    response = @hubspot.crm.properties.list("objectType")
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseProperty
@@ -90,7 +90,7 @@ class HubspotSDK::Test::Resources::CRM::PropertiesTest < HubspotSDK::Test::Resou
   def test_delete_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.properties.delete("propertyName", object_type: "objectType")
+    response = @hubspot.crm.properties.delete("propertyName", object_type: "objectType")
 
     assert_pattern do
       response => nil
@@ -100,7 +100,7 @@ class HubspotSDK::Test::Resources::CRM::PropertiesTest < HubspotSDK::Test::Resou
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.properties.get("propertyName", object_type: "objectType")
+    response = @hubspot.crm.properties.get("propertyName", object_type: "objectType")
 
     assert_pattern do
       response => HubspotSDK::Property

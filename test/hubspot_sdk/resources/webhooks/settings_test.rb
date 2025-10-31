@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Webhooks::SettingsTest < HubspotSDK::Test::Re
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.webhooks.settings.update(
+      @hubspot.webhooks.settings.update(
         0,
         target_url: "https://www.example.com/hubspot/target",
         throttling: {maxConcurrentRequests: 10}
@@ -30,7 +30,7 @@ class HubspotSDK::Test::Resources::Webhooks::SettingsTest < HubspotSDK::Test::Re
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.webhooks.settings.list(0)
+    response = @hubspot.webhooks.settings.list(0)
 
     assert_pattern do
       response => HubspotSDK::Webhooks::SettingsResponse
@@ -49,7 +49,7 @@ class HubspotSDK::Test::Resources::Webhooks::SettingsTest < HubspotSDK::Test::Re
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.webhooks.settings.delete(0)
+    response = @hubspot.webhooks.settings.delete(0)
 
     assert_pattern do
       response => nil

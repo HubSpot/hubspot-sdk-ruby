@@ -3,15 +3,60 @@ module HubspotSDK
     module CRM
       module Objects
         type deal_split_batch_upsert_params =
-          {  } & HubspotSDK::Internal::Type::request_parameters
+          {
+            inputs: ::Array[HubspotSDK::CRM::Objects::DealSplitBatchUpsertParams::Input]
+          }
+          & HubspotSDK::Internal::Type::request_parameters
 
-        class DealSplitBatchUpsertParams < HubspotSDK::Models::CRM::Objects::PublicDealSplitsBatchCreateRequest
+        class DealSplitBatchUpsertParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+          attr_accessor inputs: ::Array[HubspotSDK::CRM::Objects::DealSplitBatchUpsertParams::Input]
 
-          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+          def initialize: (
+            inputs: ::Array[HubspotSDK::CRM::Objects::DealSplitBatchUpsertParams::Input],
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            inputs: ::Array[HubspotSDK::CRM::Objects::DealSplitBatchUpsertParams::Input],
+            request_options: HubspotSDK::RequestOptions
+          }
+
+          type input =
+            {
+              id: Integer,
+              splits: ::Array[HubspotSDK::CRM::Objects::DealSplitBatchUpsertParams::Input::Split]
+            }
+
+          class Input < HubspotSDK::Internal::Type::BaseModel
+            attr_accessor id: Integer
+
+            attr_accessor splits: ::Array[HubspotSDK::CRM::Objects::DealSplitBatchUpsertParams::Input::Split]
+
+            def initialize: (
+              id: Integer,
+              splits: ::Array[HubspotSDK::CRM::Objects::DealSplitBatchUpsertParams::Input::Split]
+            ) -> void
+
+            def to_hash: -> {
+              id: Integer,
+              splits: ::Array[HubspotSDK::CRM::Objects::DealSplitBatchUpsertParams::Input::Split]
+            }
+
+            type split = { owner_id: Integer, percentage: Float }
+
+            class Split < HubspotSDK::Internal::Type::BaseModel
+              attr_accessor owner_id: Integer
+
+              attr_accessor percentage: Float
+
+              def initialize: (owner_id: Integer, percentage: Float) -> void
+
+              def to_hash: -> { owner_id: Integer, percentage: Float }
+            end
+          end
         end
       end
     end

@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::SchemasTest < HubspotSDK::Test:
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.schemas.create(
+      @hubspot.crm.objects.schemas.create(
         associated_objects: ["CONTACT"],
         labels: {},
         name: "my_object",
@@ -29,7 +29,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::SchemasTest < HubspotSDK::Test:
     assert_pattern do
       response => {
         id: String,
-        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::AssociationDefinition]),
+        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Objects::ObjectSchema::Association]),
         labels: HubspotSDK::ObjectTypeDefinitionLabels,
         name: String,
         properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property]),
@@ -52,7 +52,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::SchemasTest < HubspotSDK::Test:
   def test_update
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.schemas.update("objectType")
+    response = @hubspot.crm.objects.schemas.update("objectType")
 
     assert_pattern do
       response => HubspotSDK::CRM::Objects::ObjectTypeDefinition
@@ -81,7 +81,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::SchemasTest < HubspotSDK::Test:
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.schemas.list
+    response = @hubspot.crm.objects.schemas.list
 
     assert_pattern do
       response => HubspotSDK::CollectionResponseObjectSchemaNoPaging
@@ -97,7 +97,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::SchemasTest < HubspotSDK::Test:
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.schemas.delete("objectType")
+    response = @hubspot.crm.objects.schemas.delete("objectType")
 
     assert_pattern do
       response => nil
@@ -108,22 +108,22 @@ class HubspotSDK::Test::Resources::CRM::Objects::SchemasTest < HubspotSDK::Test:
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.schemas.create_association(
+      @hubspot.crm.objects.schemas.create_association(
         "objectType",
         from_object_type_id: "fromObjectTypeId",
         to_object_type_id: "toObjectTypeId"
       )
 
     assert_pattern do
-      response => HubspotSDK::Events::AssociationDefinition
+      response => HubspotSDK::Models::CRM::Objects::SchemaCreateAssociationResponse
     end
 
     assert_pattern do
       response => {
         id: Integer,
         allows_custom_labels: HubspotSDK::Internal::Type::Boolean,
-        cardinality: HubspotSDK::Events::AssociationDefinition::Cardinality,
-        category: HubspotSDK::Events::AssociationDefinition::Category,
+        cardinality: HubspotSDK::Models::CRM::Objects::SchemaCreateAssociationResponse::Cardinality,
+        category: HubspotSDK::Models::CRM::Objects::SchemaCreateAssociationResponse::Category,
         from_object_type_id: String,
         has_all_associated_objects: HubspotSDK::Internal::Type::Boolean,
         has_cascading_deletes: HubspotSDK::Internal::Type::Boolean,
@@ -131,7 +131,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::SchemasTest < HubspotSDK::Test:
         has_user_enforced_max_to_object_ids: HubspotSDK::Internal::Type::Boolean,
         hidden: HubspotSDK::Internal::Type::Boolean,
         inverse_allows_custom_labels: HubspotSDK::Internal::Type::Boolean,
-        inverse_cardinality: HubspotSDK::Events::AssociationDefinition::InverseCardinality,
+        inverse_cardinality: HubspotSDK::Models::CRM::Objects::SchemaCreateAssociationResponse::InverseCardinality,
         inverse_has_all_associated_objects: HubspotSDK::Internal::Type::Boolean,
         inverse_id: Integer,
         inverse_name: String,
@@ -142,10 +142,10 @@ class HubspotSDK::Test::Resources::CRM::Objects::SchemasTest < HubspotSDK::Test:
         name: String,
         portal_unique_identifier: String,
         to_object_type_id: String,
-        from_object_type: HubspotSDK::Events::AssociationDefinition::FromObjectType | nil,
+        from_object_type: HubspotSDK::Models::CRM::Objects::SchemaCreateAssociationResponse::FromObjectType | nil,
         inverse_label: String | nil,
         label: String | nil,
-        to_object_type: HubspotSDK::Events::AssociationDefinition::ToObjectType | nil
+        to_object_type: HubspotSDK::Models::CRM::Objects::SchemaCreateAssociationResponse::ToObjectType | nil
       }
     end
   end
@@ -154,7 +154,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::SchemasTest < HubspotSDK::Test:
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.schemas.delete_association("associationIdentifier", object_type: "objectType")
+      @hubspot.crm.objects.schemas.delete_association("associationIdentifier", object_type: "objectType")
 
     assert_pattern do
       response => nil
@@ -164,7 +164,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::SchemasTest < HubspotSDK::Test:
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.schemas.get("objectType")
+    response = @hubspot.crm.objects.schemas.get("objectType")
 
     assert_pattern do
       response => HubspotSDK::CRM::Objects::ObjectSchema
@@ -173,7 +173,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::SchemasTest < HubspotSDK::Test:
     assert_pattern do
       response => {
         id: String,
-        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::AssociationDefinition]),
+        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Objects::ObjectSchema::Association]),
         labels: HubspotSDK::ObjectTypeDefinitionLabels,
         name: String,
         properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property]),

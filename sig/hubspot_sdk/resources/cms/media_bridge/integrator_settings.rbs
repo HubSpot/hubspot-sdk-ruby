@@ -5,16 +5,16 @@ module HubspotSDK
         class IntegratorSettings
           def create_object_definition: (
             String app_id,
-            media_types: ::Array[HubspotSDK::Models::Cms::IntegratorObjectCreationRequest::media_type],
+            media_types: ::Array[HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateObjectDefinitionParams::media_type],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::BulkIntegratorObjectCreationResponse
+          ) -> HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateObjectDefinitionResponse
 
           def create_oembed_domain: (
             String app_id,
-            endpoints: HubspotSDK::Cms::Endpoints,
+            endpoints: HubspotSDK::Cms::MediaBridge::IntegratorSettingCreateOembedDomainParams::Endpoints,
             ?portal_id: Integer,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::IntegratorOEmbedDomainModel
+          ) -> HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateOembedDomainResponse
 
           def delete_oembed_domain: (
             String app_id,
@@ -24,56 +24,56 @@ module HubspotSDK
           def get_event_visibility_settings: (
             String app_id,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::EventVisibilityResponse
+          ) -> HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetEventVisibilitySettingsResponse
 
           def get_object_definitions_by_media_type: (
             String media_type,
             app_id: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::ObjectDefinitionResponse
+          ) -> HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetObjectDefinitionsByMediaTypeResponse
 
           def get_oembed_domain: (
             String o_embed_domain_id,
             app_id: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::IntegratorOEmbedDomainModel
+          ) -> HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetOembedDomainResponse
 
           def list_oembed_domains: (
             String app_id,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::OEmbedDomainsCollectionResponse
+          ) -> HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingListOembedDomainsResponse
 
           def register_app_name: (
             String app_id,
             updated_at: Integer,
             ?name: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse
+          ) -> HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingRegisterAppNameResponse
 
           def update_app_name: (
             String app_id,
             updated_at: Integer,
             ?name: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse
+          ) -> HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateAppNameResponse
 
           def update_event_visibility_settings: (
             String app_id,
-            event_type: HubspotSDK::Models::Cms::EventVisibilityChange::event_type,
+            event_type: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateEventVisibilitySettingsParams::event_type,
             updated_at: Integer,
             ?show_in_reporting: bool,
             ?show_in_timeline: bool,
             ?show_in_workflows: bool,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::EventVisibilityChange
+          ) -> HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateEventVisibilitySettingsResponse
 
           def update_oembed_domain: (
             String o_embed_domain_id,
             app_id: String,
-            endpoints: HubspotSDK::Cms::Endpoints,
+            endpoints: HubspotSDK::Cms::MediaBridge::IntegratorSettingUpdateOembedDomainParams::Endpoints,
             ?portal_id: Integer,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::IntegratorOEmbedDomainModel
+          ) -> HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateOembedDomainResponse
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

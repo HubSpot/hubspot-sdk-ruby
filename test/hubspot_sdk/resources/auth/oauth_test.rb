@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Auth::OAuthTest < HubspotSDK::Test::ResourceT
   def test_create_access_token
     skip("Prism tests are disabled")
 
-    response = @hub_spot.auth.oauth.create_access_token
+    response = @hubspot.auth.oauth.create_access_token
 
     assert_pattern do
       response => HubspotSDK::Auth::TokenResponseIf
@@ -26,7 +26,7 @@ class HubspotSDK::Test::Resources::Auth::OAuthTest < HubspotSDK::Test::ResourceT
   def test_delete_refresh_token
     skip("Prism tests are disabled")
 
-    response = @hub_spot.auth.oauth.delete_refresh_token("token")
+    response = @hubspot.auth.oauth.delete_refresh_token("token")
 
     assert_pattern do
       response => nil
@@ -36,7 +36,7 @@ class HubspotSDK::Test::Resources::Auth::OAuthTest < HubspotSDK::Test::ResourceT
   def test_get_access_token
     skip("Prism tests are disabled")
 
-    response = @hub_spot.auth.oauth.get_access_token("token")
+    response = @hubspot.auth.oauth.get_access_token("token")
 
     assert_pattern do
       response => HubspotSDK::Auth::AccessTokenInfoResponse
@@ -60,7 +60,7 @@ class HubspotSDK::Test::Resources::Auth::OAuthTest < HubspotSDK::Test::ResourceT
   def test_get_refresh_token
     skip("Prism tests are disabled")
 
-    response = @hub_spot.auth.oauth.get_refresh_token("token")
+    response = @hubspot.auth.oauth.get_refresh_token("token")
 
     assert_pattern do
       response => HubspotSDK::Auth::RefreshTokenInfoResponse

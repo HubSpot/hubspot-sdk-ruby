@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ObjectsTest < HubspotSDK::Test:
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.objects.create("objectType", properties: {foo: "string"})
+    response = @hubspot.crm.objects.objects.create("objectType", properties: {foo: "string"})
 
     assert_pattern do
       response => HubspotSDK::CRM::CreatedResponseSimplePublicObject
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ObjectsTest < HubspotSDK::Test:
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.objects.update(
+      @hubspot.crm.objects.objects.update(
         "objectId",
         object_type: "objectType",
         properties: {
@@ -60,7 +60,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ObjectsTest < HubspotSDK::Test:
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.objects.list("objectType")
+    response = @hubspot.crm.objects.objects.list("objectType")
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -91,7 +91,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ObjectsTest < HubspotSDK::Test:
   def test_delete_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.objects.delete("objectId", object_type: "objectType")
+    response = @hubspot.crm.objects.objects.delete("objectId", object_type: "objectType")
 
     assert_pattern do
       response => nil
@@ -101,7 +101,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ObjectsTest < HubspotSDK::Test:
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.objects.get("objectId", object_type: "objectType")
+    response = @hubspot.crm.objects.objects.get("objectId", object_type: "objectType")
 
     assert_pattern do
       response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
@@ -125,7 +125,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ObjectsTest < HubspotSDK::Test:
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.objects.search("objectType")
+    response = @hubspot.crm.objects.objects.search("objectType")
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject

@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Marketing::Events::AssociationsTest < Hubspot
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.events.associations.list("marketingEventId")
+    response = @hubspot.marketing.events.associations.list("marketingEventId")
 
     assert_pattern do
       response => HubspotSDK::Marketing::CollectionResponseWithTotalPublicListNoPaging
@@ -24,7 +24,7 @@ class HubspotSDK::Test::Resources::Marketing::Events::AssociationsTest < Hubspot
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.associations.delete("listId", marketing_event_id: "marketingEventId")
+      @hubspot.marketing.events.associations.delete("listId", marketing_event_id: "marketingEventId")
 
     assert_pattern do
       response => nil
@@ -35,7 +35,7 @@ class HubspotSDK::Test::Resources::Marketing::Events::AssociationsTest < Hubspot
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.associations.associate("listId", marketing_event_id: "marketingEventId")
+      @hubspot.marketing.events.associations.associate("listId", marketing_event_id: "marketingEventId")
 
     assert_pattern do
       response => nil
@@ -46,7 +46,7 @@ class HubspotSDK::Test::Resources::Marketing::Events::AssociationsTest < Hubspot
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.associations.associate_by_external_account(
+      @hubspot.marketing.events.associations.associate_by_external_account(
         "listId",
         external_account_id: "externalAccountId",
         external_event_id: "externalEventId"
@@ -61,7 +61,7 @@ class HubspotSDK::Test::Resources::Marketing::Events::AssociationsTest < Hubspot
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.associations.delete_by_external_account(
+      @hubspot.marketing.events.associations.delete_by_external_account(
         "listId",
         external_account_id: "externalAccountId",
         external_event_id: "externalEventId"
@@ -76,7 +76,7 @@ class HubspotSDK::Test::Resources::Marketing::Events::AssociationsTest < Hubspot
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.events.associations.list_by_external_account(
+      @hubspot.marketing.events.associations.list_by_external_account(
         "externalEventId",
         external_account_id: "externalAccountId"
       )

@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::PartnerServices::AssociationsTe
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.partner_services.associations.update(
+      @hubspot.crm.objects.partner_services.associations.update(
         "associationType",
         partner_service_id: "partnerServiceId",
         to_object_type: "toObjectType",
@@ -37,7 +37,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::PartnerServices::AssociationsTe
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.partner_services.associations.list(
+      @hubspot.crm.objects.partner_services.associations.list(
         "toObjectType",
         partner_service_id: "partnerServiceId"
       )
@@ -65,7 +65,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::PartnerServices::AssociationsTe
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.partner_services.associations.delete(
+      @hubspot.crm.objects.partner_services.associations.delete(
         "associationType",
         partner_service_id: "partnerServiceId",
         to_object_type: "toObjectType",

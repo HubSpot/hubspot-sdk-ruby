@@ -4,19 +4,19 @@ module HubspotSDK
       class EventDefinitions
         def create: (
           label: String,
-          property_definitions: ::Array[HubspotSDK::Events::ExternalBehavioralEventPropertyCreate],
+          property_definitions: ::Array[HubspotSDK::Events::EventDefinitionCreateParams::PropertyDefinition],
           ?description: String,
           ?name: String,
           ?primary_object: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
+        ) -> HubspotSDK::Models::Events::EventDefinitionCreateResponse
 
         def update: (
           String event_name,
           ?description: String,
           ?label: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
+        ) -> HubspotSDK::Models::Events::EventDefinitionUpdateResponse
 
         def list: (
           ?after: String,
@@ -25,7 +25,7 @@ module HubspotSDK
           ?search_string: String,
           ?sort_order: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Events::ExternalBehavioralEventTypeDefinition]
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Models::Events::EventDefinitionListResponse]
 
         def delete: (
           String event_name,
@@ -51,7 +51,7 @@ module HubspotSDK
         def get: (
           String event_name,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
+        ) -> HubspotSDK::Models::Events::EventDefinitionGetResponse
 
         def update_property: (
           String property_name,

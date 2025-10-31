@@ -7,14 +7,14 @@ class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.url_redirects.create(
+      @hubspot.cms.url_redirects.create(
         destination: "destination",
         redirect_style: 0,
         route_prefix: "routePrefix"
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::URLMapping
+      response => HubspotSDK::Models::Cms::URLRedirectCreateResponse
     end
 
     assert_pattern do
@@ -40,7 +40,7 @@ class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.url_redirects.update(
+      @hubspot.cms.url_redirects.update(
         "urlRedirectId",
         id: "id",
         destination: "destination",
@@ -56,7 +56,7 @@ class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::Res
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::URLMapping
+      response => HubspotSDK::Models::Cms::URLRedirectUpdateResponse
     end
 
     assert_pattern do
@@ -81,7 +81,7 @@ class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::Res
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.url_redirects.list
+    response = @hubspot.cms.url_redirects.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -91,7 +91,7 @@ class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::Res
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Cms::URLMapping
+      row => HubspotSDK::Models::Cms::URLRedirectListResponse
     end
 
     assert_pattern do
@@ -116,7 +116,7 @@ class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::Res
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.url_redirects.delete("urlRedirectId")
+    response = @hubspot.cms.url_redirects.delete("urlRedirectId")
 
     assert_pattern do
       response => nil
@@ -126,10 +126,10 @@ class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::Res
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.url_redirects.get("urlRedirectId")
+    response = @hubspot.cms.url_redirects.get("urlRedirectId")
 
     assert_pattern do
-      response => HubspotSDK::Cms::URLMapping
+      response => HubspotSDK::Models::Cms::URLRedirectGetResponse
     end
 
     assert_pattern do

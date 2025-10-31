@@ -3,15 +3,465 @@ module HubspotSDK
     module Conversations
       module CustomChannels
         type message_create_params =
-          {  } & HubspotSDK::Internal::Type::request_parameters
+          {
+            attachments: ::Array[HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::attachment],
+            channel_account_id: String,
+            integration_thread_id: String,
+            message_direction: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::message_direction,
+            recipients: ::Array[HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Recipient],
+            senders: ::Array[HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Sender],
+            text: String,
+            timestamp: Time,
+            in_reply_to_id: String,
+            integration_idempotency_id: String,
+            pre_resolved_contacts: HubspotSDK::Conversations::CustomChannels::MessageCreateParams::PreResolvedContacts,
+            rich_text: String
+          }
+          & HubspotSDK::Internal::Type::request_parameters
 
-        class MessageCreateParams < HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg
+        class MessageCreateParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+          attr_accessor attachments: ::Array[HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::attachment]
 
-          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+          attr_accessor channel_account_id: String
+
+          attr_accessor integration_thread_id: String
+
+          attr_accessor message_direction: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::message_direction
+
+          attr_accessor recipients: ::Array[HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Recipient]
+
+          attr_accessor senders: ::Array[HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Sender]
+
+          attr_accessor text: String
+
+          attr_accessor timestamp: Time
+
+          attr_reader in_reply_to_id: String?
+
+          def in_reply_to_id=: (String) -> String
+
+          attr_reader integration_idempotency_id: String?
+
+          def integration_idempotency_id=: (String) -> String
+
+          attr_reader pre_resolved_contacts: HubspotSDK::Conversations::CustomChannels::MessageCreateParams::PreResolvedContacts?
+
+          def pre_resolved_contacts=: (
+            HubspotSDK::Conversations::CustomChannels::MessageCreateParams::PreResolvedContacts
+          ) -> HubspotSDK::Conversations::CustomChannels::MessageCreateParams::PreResolvedContacts
+
+          attr_reader rich_text: String?
+
+          def rich_text=: (String) -> String
+
+          def initialize: (
+            attachments: ::Array[HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::attachment],
+            channel_account_id: String,
+            integration_thread_id: String,
+            message_direction: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::message_direction,
+            recipients: ::Array[HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Recipient],
+            senders: ::Array[HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Sender],
+            text: String,
+            timestamp: Time,
+            ?in_reply_to_id: String,
+            ?integration_idempotency_id: String,
+            ?pre_resolved_contacts: HubspotSDK::Conversations::CustomChannels::MessageCreateParams::PreResolvedContacts,
+            ?rich_text: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            attachments: ::Array[HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::attachment],
+            channel_account_id: String,
+            integration_thread_id: String,
+            message_direction: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::message_direction,
+            recipients: ::Array[HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Recipient],
+            senders: ::Array[HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Sender],
+            text: String,
+            timestamp: Time,
+            in_reply_to_id: String,
+            integration_idempotency_id: String,
+            pre_resolved_contacts: HubspotSDK::Conversations::CustomChannels::MessageCreateParams::PreResolvedContacts,
+            rich_text: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+
+          type attachment =
+            HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsFileAttachment
+            | HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsLocationAttachment
+            | HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsContactAttachment
+            | HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsUnsupportedContentAttachment
+            | HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsMessageHeaderAttachment
+            | HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsQuickRepliesAttachment
+            | HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsSocialMetadataIntegrationAttachment
+
+          module Attachment
+            extend HubspotSDK::Internal::Type::Union
+
+            type conversations_customchannels_file_attachment =
+              {
+                file_id: String,
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsFileAttachment::type_,
+                file_usage_type: String
+              }
+
+            class ConversationsCustomchannelsFileAttachment < HubspotSDK::Internal::Type::BaseModel
+              attr_accessor file_id: String
+
+              attr_accessor type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsFileAttachment::type_
+
+              attr_reader file_usage_type: String?
+
+              def file_usage_type=: (String) -> String
+
+              def initialize: (
+                file_id: String,
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsFileAttachment::type_,
+                ?file_usage_type: String
+              ) -> void
+
+              def to_hash: -> {
+                file_id: String,
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsFileAttachment::type_,
+                file_usage_type: String
+              }
+
+              type type_ = :FILE
+
+              module Type
+                extend HubspotSDK::Internal::Type::Enum
+
+                FILE: :FILE
+
+                def self?.values: -> ::Array[HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsFileAttachment::type_]
+              end
+            end
+
+            type conversations_customchannels_location_attachment =
+              {
+                latitude: Float,
+                longitude: Float,
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsLocationAttachment::type_,
+                address: String,
+                name: String,
+                url: String
+              }
+
+            class ConversationsCustomchannelsLocationAttachment < HubspotSDK::Internal::Type::BaseModel
+              attr_accessor latitude: Float
+
+              attr_accessor longitude: Float
+
+              attr_accessor type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsLocationAttachment::type_
+
+              attr_reader address: String?
+
+              def address=: (String) -> String
+
+              attr_reader name: String?
+
+              def name=: (String) -> String
+
+              attr_reader url: String?
+
+              def url=: (String) -> String
+
+              def initialize: (
+                latitude: Float,
+                longitude: Float,
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsLocationAttachment::type_,
+                ?address: String,
+                ?name: String,
+                ?url: String
+              ) -> void
+
+              def to_hash: -> {
+                latitude: Float,
+                longitude: Float,
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsLocationAttachment::type_,
+                address: String,
+                name: String,
+                url: String
+              }
+
+              type type_ = :LOCATION
+
+              module Type
+                extend HubspotSDK::Internal::Type::Enum
+
+                LOCATION: :LOCATION
+
+                def self?.values: -> ::Array[HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsLocationAttachment::type_]
+              end
+            end
+
+            type conversations_customchannels_contact_attachment =
+              {
+                contact_profile: HubspotSDK::Conversations::ContactProfile,
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsContactAttachment::type_
+              }
+
+            class ConversationsCustomchannelsContactAttachment < HubspotSDK::Internal::Type::BaseModel
+              attr_accessor contact_profile: HubspotSDK::Conversations::ContactProfile
+
+              attr_accessor type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsContactAttachment::type_
+
+              def initialize: (
+                contact_profile: HubspotSDK::Conversations::ContactProfile,
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsContactAttachment::type_
+              ) -> void
+
+              def to_hash: -> {
+                contact_profile: HubspotSDK::Conversations::ContactProfile,
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsContactAttachment::type_
+              }
+
+              type type_ = :CONTACT
+
+              module Type
+                extend HubspotSDK::Internal::Type::Enum
+
+                CONTACT: :CONTACT
+
+                def self?.values: -> ::Array[HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsContactAttachment::type_]
+              end
+            end
+
+            type conversations_customchannels_unsupported_content_attachment =
+              {
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsUnsupportedContentAttachment::type_
+              }
+
+            class ConversationsCustomchannelsUnsupportedContentAttachment < HubspotSDK::Internal::Type::BaseModel
+              attr_accessor type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsUnsupportedContentAttachment::type_
+
+              def initialize: (
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsUnsupportedContentAttachment::type_
+              ) -> void
+
+              def to_hash: -> {
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsUnsupportedContentAttachment::type_
+              }
+
+              type type_ = :UNSUPPORTED_CONTENT
+
+              module Type
+                extend HubspotSDK::Internal::Type::Enum
+
+                UNSUPPORTED_CONTENT: :UNSUPPORTED_CONTENT
+
+                def self?.values: -> ::Array[HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsUnsupportedContentAttachment::type_]
+              end
+            end
+
+            type conversations_customchannels_message_header_attachment =
+              {
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsMessageHeaderAttachment::type_,
+                file_id: Integer,
+                text: String
+              }
+
+            class ConversationsCustomchannelsMessageHeaderAttachment < HubspotSDK::Internal::Type::BaseModel
+              attr_accessor type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsMessageHeaderAttachment::type_
+
+              attr_reader file_id: Integer?
+
+              def file_id=: (Integer) -> Integer
+
+              attr_reader text: String?
+
+              def text=: (String) -> String
+
+              def initialize: (
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsMessageHeaderAttachment::type_,
+                ?file_id: Integer,
+                ?text: String
+              ) -> void
+
+              def to_hash: -> {
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsMessageHeaderAttachment::type_,
+                file_id: Integer,
+                text: String
+              }
+
+              type type_ = :MESSAGE_HEADER
+
+              module Type
+                extend HubspotSDK::Internal::Type::Enum
+
+                MESSAGE_HEADER: :MESSAGE_HEADER
+
+                def self?.values: -> ::Array[HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsMessageHeaderAttachment::type_]
+              end
+            end
+
+            type conversations_customchannels_quick_replies_attachment =
+              {
+                quick_replies: ::Array[HubspotSDK::Conversations::QuickReply],
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsQuickRepliesAttachment::type_
+              }
+
+            class ConversationsCustomchannelsQuickRepliesAttachment < HubspotSDK::Internal::Type::BaseModel
+              attr_accessor quick_replies: ::Array[HubspotSDK::Conversations::QuickReply]
+
+              attr_accessor type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsQuickRepliesAttachment::type_
+
+              def initialize: (
+                quick_replies: ::Array[HubspotSDK::Conversations::QuickReply],
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsQuickRepliesAttachment::type_
+              ) -> void
+
+              def to_hash: -> {
+                quick_replies: ::Array[HubspotSDK::Conversations::QuickReply],
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsQuickRepliesAttachment::type_
+              }
+
+              type type_ = :QUICK_REPLIES
+
+              module Type
+                extend HubspotSDK::Internal::Type::Enum
+
+                QUICK_REPLIES: :QUICK_REPLIES
+
+                def self?.values: -> ::Array[HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsQuickRepliesAttachment::type_]
+              end
+            end
+
+            type conversations_customchannels_social_metadata_integration_attachment =
+              {
+                social_metadata: HubspotSDK::Conversations::SocialMetadata,
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsSocialMetadataIntegrationAttachment::type_
+              }
+
+            class ConversationsCustomchannelsSocialMetadataIntegrationAttachment < HubspotSDK::Internal::Type::BaseModel
+              attr_accessor social_metadata: HubspotSDK::Conversations::SocialMetadata
+
+              attr_accessor type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsSocialMetadataIntegrationAttachment::type_
+
+              def initialize: (
+                social_metadata: HubspotSDK::Conversations::SocialMetadata,
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsSocialMetadataIntegrationAttachment::type_
+              ) -> void
+
+              def to_hash: -> {
+                social_metadata: HubspotSDK::Conversations::SocialMetadata,
+                type: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsSocialMetadataIntegrationAttachment::type_
+              }
+
+              type type_ = :SOCIAL_MEDIA_METADATA
+
+              module Type
+                extend HubspotSDK::Internal::Type::Enum
+
+                SOCIAL_MEDIA_METADATA: :SOCIAL_MEDIA_METADATA
+
+                def self?.values: -> ::Array[HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsSocialMetadataIntegrationAttachment::type_]
+              end
+            end
+
+            def self?.variants: -> ::Array[HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::attachment]
+          end
+
+          type message_direction = :INCOMING | :OUTGOING
+
+          module MessageDirection
+            extend HubspotSDK::Internal::Type::Enum
+
+            INCOMING: :INCOMING
+            OUTGOING: :OUTGOING
+
+            def self?.values: -> ::Array[HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::message_direction]
+          end
+
+          type recipient =
+            {
+              delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
+              name: String
+            }
+
+          class Recipient < HubspotSDK::Internal::Type::BaseModel
+            attr_accessor delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            def initialize: (
+              delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
+              ?name: String
+            ) -> void
+
+            def to_hash: -> {
+              delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
+              name: String
+            }
+          end
+
+          type sender =
+            {
+              delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
+              name: String
+            }
+
+          class Sender < HubspotSDK::Internal::Type::BaseModel
+            attr_accessor delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            def initialize: (
+              delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
+              ?name: String
+            ) -> void
+
+            def to_hash: -> {
+              delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
+              name: String
+            }
+          end
+
+          type pre_resolved_contacts =
+            {
+              contacts: ::Array[HubspotSDK::Conversations::CustomChannels::MessageCreateParams::PreResolvedContacts::Contact]
+            }
+
+          class PreResolvedContacts < HubspotSDK::Internal::Type::BaseModel
+            attr_accessor contacts: ::Array[HubspotSDK::Conversations::CustomChannels::MessageCreateParams::PreResolvedContacts::Contact]
+
+            def initialize: (
+              contacts: ::Array[HubspotSDK::Conversations::CustomChannels::MessageCreateParams::PreResolvedContacts::Contact]
+            ) -> void
+
+            def to_hash: -> {
+              contacts: ::Array[HubspotSDK::Conversations::CustomChannels::MessageCreateParams::PreResolvedContacts::Contact]
+            }
+
+            type contact =
+              {
+                contact_properties_leading_to_match: ::Array[String],
+                contact_vid: Integer
+              }
+
+            class Contact < HubspotSDK::Internal::Type::BaseModel
+              attr_accessor contact_properties_leading_to_match: ::Array[String]
+
+              attr_accessor contact_vid: Integer
+
+              def initialize: (
+                contact_properties_leading_to_match: ::Array[String],
+                contact_vid: Integer
+              ) -> void
+
+              def to_hash: -> {
+                contact_properties_leading_to_match: ::Array[String],
+                contact_vid: Integer
+              }
+            end
+          end
         end
       end
     end

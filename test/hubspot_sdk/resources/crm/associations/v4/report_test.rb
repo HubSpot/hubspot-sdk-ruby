@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4::ReportTest < HubspotSD
   def test_get_high_usage_report
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.associations.v4.report.get_high_usage_report(0)
+    response = @hubspot.crm.associations.v4.report.get_high_usage_report(0)
 
     assert_pattern do
       response => HubspotSDK::CRM::Associations::ReportCreationResponse

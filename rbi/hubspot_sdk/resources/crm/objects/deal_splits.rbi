@@ -10,7 +10,9 @@ module HubspotSDK
             params(
               inputs: T::Array[HubspotSDK::PublicObjectID::OrHash],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits)
+            ).returns(
+              HubspotSDK::Models::CRM::Objects::DealSplitBatchReadResponse
+            )
           end
           def batch_read(inputs:, request_options: {})
           end
@@ -22,10 +24,12 @@ module HubspotSDK
             params(
               inputs:
                 T::Array[
-                  HubspotSDK::CRM::Objects::PublicDealSplitsCreateRequest::OrHash
+                  HubspotSDK::CRM::Objects::DealSplitBatchUpsertParams::Input::OrHash
                 ],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits)
+            ).returns(
+              HubspotSDK::Models::CRM::Objects::DealSplitBatchUpsertResponse
+            )
           end
           def batch_upsert(inputs:, request_options: {})
           end

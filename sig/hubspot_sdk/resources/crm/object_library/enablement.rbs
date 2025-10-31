@@ -5,12 +5,12 @@ module HubspotSDK
         class Enablement
           def list: (
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::PortalObjectTypeEnablementPublicResponse
+          ) -> HubspotSDK::Models::CRM::ObjectLibrary::EnablementListResponse
 
           def get: (
             String object_type_id,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::ObjectTypeEnablementPublicResponse
+          ) -> HubspotSDK::Models::CRM::ObjectLibrary::EnablementGetResponse
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

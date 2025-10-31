@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::PostalMailTest < HubspotSDK::Te
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.postal_mail.create(properties: {foo: "string"})
+    response = @hubspot.crm.objects.postal_mail.create(properties: {foo: "string"})
 
     assert_pattern do
       response => HubspotSDK::CRM::CreatedResponseSimplePublicObject
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::PostalMailTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.postal_mail.update(
+      @hubspot.crm.objects.postal_mail.update(
         "postalMailId",
         properties: {
           property_checkbox: "false",
@@ -59,7 +59,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::PostalMailTest < HubspotSDK::Te
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.postal_mail.list
+    response = @hubspot.crm.objects.postal_mail.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -90,7 +90,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::PostalMailTest < HubspotSDK::Te
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.postal_mail.delete("postalMailId")
+    response = @hubspot.crm.objects.postal_mail.delete("postalMailId")
 
     assert_pattern do
       response => nil
@@ -100,7 +100,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::PostalMailTest < HubspotSDK::Te
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.postal_mail.get("postalMailId")
+    response = @hubspot.crm.objects.postal_mail.get("postalMailId")
 
     assert_pattern do
       response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
@@ -124,7 +124,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::PostalMailTest < HubspotSDK::Te
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.postal_mail.search
+    response = @hubspot.crm.objects.postal_mail.search
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject

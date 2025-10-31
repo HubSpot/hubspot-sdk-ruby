@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Marketing::Subscriptions::V4::LinksTest < Hub
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.subscriptions.v4.links.create(
+      @hubspot.marketing.subscriptions.v4.links.create(
         channel: :EMAIL,
         subscriber_id_string: "subscriberIdString"
       )

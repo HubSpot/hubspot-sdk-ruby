@@ -7,7 +7,7 @@ module HubspotSDK
           ?first_name: String,
           ?last_name: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Conversations::IdentificationTokenResponse
+        ) -> HubspotSDK::Models::Conversations::VisitorIdentificationGenerateTokenResponse
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

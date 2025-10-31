@@ -4,7 +4,7 @@ module HubspotSDK
   module Models
     module CRM
       module FeatureFlags
-        class PortalBatchDeleteParams < HubspotSDK::Models::CRM::PortalFlagStateBatchDeleteRequest
+        class PortalBatchDeleteParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
@@ -19,18 +19,26 @@ module HubspotSDK
           sig { returns(Integer) }
           attr_accessor :app_id
 
+          sig { returns(T::Array[Integer]) }
+          attr_accessor :portal_ids
+
           sig do
             params(
               app_id: Integer,
+              portal_ids: T::Array[Integer],
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
-          def self.new(app_id:, request_options: {})
+          def self.new(app_id:, portal_ids:, request_options: {})
           end
 
           sig do
             override.returns(
-              { app_id: Integer, request_options: HubspotSDK::RequestOptions }
+              {
+                app_id: Integer,
+                portal_ids: T::Array[Integer],
+                request_options: HubspotSDK::RequestOptions
+              }
             )
           end
           def to_hash

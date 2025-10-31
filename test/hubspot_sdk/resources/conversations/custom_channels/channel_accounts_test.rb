@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccount
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.conversations.custom_channels.channel_accounts.create(
+      @hubspot.conversations.custom_channels.channel_accounts.create(
         "channelId",
         authorized: true,
         inbox_id: "inboxId",
@@ -38,7 +38,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccount
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.conversations.custom_channels.channel_accounts.update(
+      @hubspot.conversations.custom_channels.channel_accounts.update(
         "channelAccountId",
         channel_id: "channelId"
       )
@@ -66,7 +66,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccount
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.conversations.custom_channels.channel_accounts.list("channelId")
+    response = @hubspot.conversations.custom_channels.channel_accounts.list("channelId")
 
     assert_pattern do
       response => HubspotSDK::Conversations::CollectionResponseWithTotalPublicChannelAccountForwardPaging
@@ -85,10 +85,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccount
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.conversations.custom_channels.channel_accounts.get(
-        "channelAccountId",
-        channel_id: "channelId"
-      )
+      @hubspot.conversations.custom_channels.channel_accounts.get("channelAccountId", channel_id: "channelId")
 
     assert_pattern do
       response => HubspotSDK::Conversations::PublicChannelAccount

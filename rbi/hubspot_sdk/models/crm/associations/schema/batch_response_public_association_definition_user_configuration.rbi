@@ -31,7 +31,7 @@ module HubspotSDK
 
             sig do
               returns(
-                HubspotSDK::CRM::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::TaggedSymbol
+                HubspotSDK::CRM::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::OrSymbol
               )
             end
             attr_accessor :status
@@ -82,7 +82,7 @@ module HubspotSDK
                     ],
                   started_at: Time,
                   status:
-                    HubspotSDK::CRM::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::TaggedSymbol,
+                    HubspotSDK::CRM::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::OrSymbol,
                   links: T::Hash[Symbol, String],
                   requested_at: Time
                 }

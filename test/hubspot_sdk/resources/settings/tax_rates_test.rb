@@ -6,15 +6,15 @@ class HubspotSDK::Test::Resources::Settings::TaxRatesTest < HubspotSDK::Test::Re
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.tax_rates.list
+    response = @hubspot.settings.tax_rates.list
 
     assert_pattern do
-      response => HubspotSDK::Settings::CollectionResponsePublicTaxRateGroupForwardPaging
+      response => HubspotSDK::Models::Settings::TaxRateListResponse
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Settings::PublicTaxRateGroup]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::Settings::TaxRateListResponse::Result]),
         paging: HubspotSDK::ForwardPaging | nil
       }
     end
@@ -23,10 +23,10 @@ class HubspotSDK::Test::Resources::Settings::TaxRatesTest < HubspotSDK::Test::Re
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.tax_rates.get("taxRateGroupId")
+    response = @hubspot.settings.tax_rates.get("taxRateGroupId")
 
     assert_pattern do
-      response => HubspotSDK::Settings::PublicTaxRateGroup
+      response => HubspotSDK::Models::Settings::TaxRateGetResponse
     end
 
     assert_pattern do

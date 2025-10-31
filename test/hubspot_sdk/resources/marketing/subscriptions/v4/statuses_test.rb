@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Marketing::Subscriptions::V4::StatusesTest < 
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.subscriptions.v4.statuses.update(
+      @hubspot.marketing.subscriptions.v4.statuses.update(
         "subscriberIdString",
         channel: :EMAIL,
         status_state: :SUBSCRIBED,
@@ -35,7 +35,7 @@ class HubspotSDK::Test::Resources::Marketing::Subscriptions::V4::StatusesTest < 
   def test_batch_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.subscriptions.v4.statuses.batch_get(channel: :EMAIL, inputs: ["string"])
+    response = @hubspot.marketing.subscriptions.v4.statuses.batch_get(channel: :EMAIL, inputs: ["string"])
 
     assert_pattern do
       response => HubspotSDK::Marketing::Subscriptions::BatchResponsePublicStatusBulkResponse
@@ -57,7 +57,7 @@ class HubspotSDK::Test::Resources::Marketing::Subscriptions::V4::StatusesTest < 
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.subscriptions.v4.statuses.batch_get_unsubscribe_all_status(
+      @hubspot.marketing.subscriptions.v4.statuses.batch_get_unsubscribe_all_status(
         channel: :EMAIL,
         inputs: ["string"]
       )
@@ -82,7 +82,7 @@ class HubspotSDK::Test::Resources::Marketing::Subscriptions::V4::StatusesTest < 
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.subscriptions.v4.statuses.batch_unsubscribe_all(channel: :EMAIL, inputs: ["string"])
+      @hubspot.marketing.subscriptions.v4.statuses.batch_unsubscribe_all(channel: :EMAIL, inputs: ["string"])
 
     assert_pattern do
       response => HubspotSDK::Marketing::Subscriptions::BatchResponsePublicBulkOptOutFromAllResponse
@@ -106,7 +106,7 @@ class HubspotSDK::Test::Resources::Marketing::Subscriptions::V4::StatusesTest < 
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.subscriptions.v4.statuses.batch_update(
+      @hubspot.marketing.subscriptions.v4.statuses.batch_update(
         inputs: [
           {
             channel: :EMAIL,
@@ -138,7 +138,7 @@ class HubspotSDK::Test::Resources::Marketing::Subscriptions::V4::StatusesTest < 
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.subscriptions.v4.statuses.get("subscriberIdString", channel: :EMAIL)
+    response = @hubspot.marketing.subscriptions.v4.statuses.get("subscriberIdString", channel: :EMAIL)
 
     assert_pattern do
       response => HubspotSDK::Marketing::Subscriptions::ActionResponseWithResultsPublicStatus
@@ -162,7 +162,7 @@ class HubspotSDK::Test::Resources::Marketing::Subscriptions::V4::StatusesTest < 
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.subscriptions.v4.statuses.get_unsubscribe_all_status(
+      @hubspot.marketing.subscriptions.v4.statuses.get_unsubscribe_all_status(
         "subscriberIdString",
         channel: :EMAIL
       )
@@ -189,7 +189,7 @@ class HubspotSDK::Test::Resources::Marketing::Subscriptions::V4::StatusesTest < 
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.subscriptions.v4.statuses.unsubscribe_all("subscriberIdString", channel: :EMAIL)
+      @hubspot.marketing.subscriptions.v4.statuses.unsubscribe_all("subscriberIdString", channel: :EMAIL)
 
     assert_pattern do
       response => HubspotSDK::Marketing::Subscriptions::ActionResponseWithResultsPublicStatus

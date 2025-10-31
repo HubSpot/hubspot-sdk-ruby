@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.lists.create(
+      @hubspot.crm.lists.create(
         name: "Dynamic Association List Example",
         object_type_id: "0-1",
         processing_type: "DYNAMIC"
@@ -27,7 +27,7 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.lists.list
+    response = @hubspot.crm.lists.list
 
     assert_pattern do
       response => HubspotSDK::CRM::ListsByIDResponse
@@ -43,7 +43,7 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.lists.delete("listId")
+    response = @hubspot.crm.lists.delete("listId")
 
     assert_pattern do
       response => nil
@@ -53,7 +53,7 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
   def test_delete_schedule_conversion
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.lists.delete_schedule_conversion("listId")
+    response = @hubspot.crm.lists.delete_schedule_conversion("listId")
 
     assert_pattern do
       response => nil
@@ -63,7 +63,7 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.lists.get("listId")
+    response = @hubspot.crm.lists.get("listId")
 
     assert_pattern do
       response => HubspotSDK::CRM::ListFetchResponse
@@ -79,7 +79,7 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
   def test_get_by_object_type_id_and_name_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.lists.get_by_object_type_id_and_name("listName", object_type_id: "objectTypeId")
+    response = @hubspot.crm.lists.get_by_object_type_id_and_name("listName", object_type_id: "objectTypeId")
 
     assert_pattern do
       response => HubspotSDK::CRM::ListFetchResponse
@@ -95,7 +95,7 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
   def test_get_schedule_conversion
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.lists.get_schedule_conversion("listId")
+    response = @hubspot.crm.lists.get_schedule_conversion("listId")
 
     assert_pattern do
       response => HubspotSDK::CRM::PublicListConversionResponse
@@ -113,7 +113,7 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
   def test_restore
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.lists.restore("listId")
+    response = @hubspot.crm.lists.restore("listId")
 
     assert_pattern do
       response => nil
@@ -124,7 +124,7 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.lists.schedule_conversion(
+      @hubspot.crm.lists.schedule_conversion(
         "listId",
         conversion_type: :CONVERSION_DATE,
         day: 0,
@@ -148,7 +148,7 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.lists.search
+    response = @hubspot.crm.lists.search
 
     assert_pattern do
       response => HubspotSDK::CRM::ListSearchResponse
@@ -168,7 +168,7 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.lists.update_filters(
+      @hubspot.crm.lists.update_filters(
         "listId",
         filter_branch: {
           filterBranches: [
@@ -371,7 +371,7 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
   def test_update_name
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.lists.update_name("listId")
+    response = @hubspot.crm.lists.update_name("listId")
 
     assert_pattern do
       response => HubspotSDK::CRM::ListUpdateResponse

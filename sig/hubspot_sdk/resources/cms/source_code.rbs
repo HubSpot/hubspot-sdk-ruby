@@ -7,7 +7,7 @@ module HubspotSDK
           environment: String,
           ?file: HubspotSDK::Internal::file_input,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::AssetFileMetadata
+        ) -> HubspotSDK::Models::Cms::SourceCodeCreateResponse
 
         def delete: (
           String path,
@@ -36,14 +36,14 @@ module HubspotSDK
           environment: String,
           ?properties: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::AssetFileMetadata
+        ) -> HubspotSDK::Models::Cms::SourceCodeGetMetadataResponse
 
         def upsert: (
           String path,
           environment: String,
           ?file: HubspotSDK::Internal::file_input,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::AssetFileMetadata
+        ) -> HubspotSDK::Models::Cms::SourceCodeUpsertResponse
 
         def validate: (
           String path,

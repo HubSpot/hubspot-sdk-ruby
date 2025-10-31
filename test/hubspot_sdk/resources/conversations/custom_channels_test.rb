@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannelsTest < HubspotSD
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.conversations.custom_channels.create(
+      @hubspot.conversations.custom_channels.create(
         capabilities: {
           "0": {},
           "1": {},
@@ -469,7 +469,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannelsTest < HubspotSD
       )
 
     assert_pattern do
-      response => HubspotSDK::Conversations::PublicChannelIntegrationChannel
+      response => HubspotSDK::Models::Conversations::CustomChannelCreateResponse
     end
 
     assert_pattern do
@@ -490,7 +490,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannelsTest < HubspotSD
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.conversations.custom_channels.update(
+      @hubspot.conversations.custom_channels.update(
         "channelId",
         capabilities: {
           "0": {},
@@ -954,7 +954,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannelsTest < HubspotSD
       )
 
     assert_pattern do
-      response => HubspotSDK::Conversations::PublicChannelIntegrationChannel
+      response => HubspotSDK::Models::Conversations::CustomChannelUpdateResponse
     end
 
     assert_pattern do
@@ -974,15 +974,15 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannelsTest < HubspotSD
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.conversations.custom_channels.list
+    response = @hubspot.conversations.custom_channels.list
 
     assert_pattern do
-      response => HubspotSDK::Conversations::CollectionResponseWithTotalPublicChannelIntegrationChannelForwardPaging
+      response => HubspotSDK::Models::Conversations::CustomChannelListResponse
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::PublicChannelIntegrationChannel]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::Conversations::CustomChannelListResponse::Result]),
         total: Integer,
         paging: HubspotSDK::ForwardPaging | nil
       }
@@ -992,7 +992,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannelsTest < HubspotSD
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.conversations.custom_channels.delete("channelId")
+    response = @hubspot.conversations.custom_channels.delete("channelId")
 
     assert_pattern do
       response => nil
@@ -1002,10 +1002,10 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannelsTest < HubspotSD
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.conversations.custom_channels.get("channelId")
+    response = @hubspot.conversations.custom_channels.get("channelId")
 
     assert_pattern do
-      response => HubspotSDK::Conversations::PublicChannelIntegrationChannel
+      response => HubspotSDK::Models::Conversations::CustomChannelGetResponse
     end
 
     assert_pattern do

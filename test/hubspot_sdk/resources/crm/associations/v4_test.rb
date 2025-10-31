@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4Test < HubspotSDK::Test:
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.associations.v4.create(
+      @hubspot.crm.associations.v4.create(
         "toObjectId",
         from_object_type: "fromObjectType",
         from_object_id: "fromObjectId",
@@ -36,7 +36,7 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4Test < HubspotSDK::Test:
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.associations.v4.update(
+      @hubspot.crm.associations.v4.update(
         "toObjectId",
         object_type: "objectType",
         object_id_: "objectId",
@@ -61,7 +61,7 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4Test < HubspotSDK::Test:
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.associations.v4.list("toObjectType", object_type: "objectType", object_id_: "objectId")
+      @hubspot.crm.associations.v4.list("toObjectType", object_type: "objectType", object_id_: "objectId")
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -86,7 +86,7 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4Test < HubspotSDK::Test:
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.associations.v4.delete(
+      @hubspot.crm.associations.v4.delete(
         "toObjectId",
         object_type: "objectType",
         object_id_: "objectId",

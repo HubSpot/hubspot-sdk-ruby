@@ -2,15 +2,23 @@ module HubspotSDK
   module Models
     module Cms
       type source_code_extract_async_params =
-        {  } & HubspotSDK::Internal::Type::request_parameters
+        { path: String } & HubspotSDK::Internal::Type::request_parameters
 
-      class SourceCodeExtractAsyncParams < HubspotSDK::Models::Cms::FileExtractRequest
+      class SourceCodeExtractAsyncParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
-        def initialize: (?request_options: HubspotSDK::request_opts) -> void
+        attr_accessor path: String
 
-        def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+        def initialize: (
+          path: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          path: String,
+          request_options: HubspotSDK::RequestOptions
+        }
       end
     end
   end

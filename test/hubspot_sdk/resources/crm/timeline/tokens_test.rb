@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::TokensTest < HubspotSDK::Test:
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.timeline.tokens.create(
+      @hubspot.crm.timeline.tokens.create(
         "eventTemplateId",
         app_id: 0,
         label: "Pet Type",
@@ -36,7 +36,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::TokensTest < HubspotSDK::Test:
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.timeline.tokens.update(
+      @hubspot.crm.timeline.tokens.update(
         "tokenName",
         app_id: 0,
         event_template_id: "eventTemplateId",
@@ -64,7 +64,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::TokensTest < HubspotSDK::Test:
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.timeline.tokens.delete("tokenName", app_id: 0, event_template_id: "eventTemplateId")
+      @hubspot.crm.timeline.tokens.delete("tokenName", app_id: 0, event_template_id: "eventTemplateId")
 
     assert_pattern do
       response => nil
