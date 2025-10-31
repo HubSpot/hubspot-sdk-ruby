@@ -1,0 +1,71 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type hub_db_table_row_v3 =
+        {
+          values: ::Hash[Symbol, top],
+          id: String,
+          child_table_id: String,
+          created_at: Time,
+          name: String,
+          path: String,
+          published_at: Time,
+          updated_at: Time
+        }
+
+      class HubDBTableRowV3 < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor values: ::Hash[Symbol, top]
+
+        attr_reader id: String?
+
+        def id=: (String) -> String
+
+        attr_reader child_table_id: String?
+
+        def child_table_id=: (String) -> String
+
+        attr_reader created_at: Time?
+
+        def created_at=: (Time) -> Time
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader path: String?
+
+        def path=: (String) -> String
+
+        attr_reader published_at: Time?
+
+        def published_at=: (Time) -> Time
+
+        attr_reader updated_at: Time?
+
+        def updated_at=: (Time) -> Time
+
+        def initialize: (
+          values: ::Hash[Symbol, top],
+          ?id: String,
+          ?child_table_id: String,
+          ?created_at: Time,
+          ?name: String,
+          ?path: String,
+          ?published_at: Time,
+          ?updated_at: Time
+        ) -> void
+
+        def to_hash: -> {
+          values: ::Hash[Symbol, top],
+          id: String,
+          child_table_id: String,
+          created_at: Time,
+          name: String,
+          path: String,
+          published_at: Time,
+          updated_at: Time
+        }
+      end
+    end
+  end
+end

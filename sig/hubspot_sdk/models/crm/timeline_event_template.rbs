@@ -1,0 +1,65 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type timeline_event_template =
+        {
+          id: String,
+          name: String,
+          object_type: String,
+          tokens: ::Array[HubspotSDK::CRM::TimelineEventTemplateToken],
+          created_at: Time,
+          detail_template: String,
+          header_template: String,
+          updated_at: Time
+        }
+
+      class TimelineEventTemplate < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor name: String
+
+        attr_accessor object_type: String
+
+        attr_accessor tokens: ::Array[HubspotSDK::CRM::TimelineEventTemplateToken]
+
+        attr_reader created_at: Time?
+
+        def created_at=: (Time) -> Time
+
+        attr_reader detail_template: String?
+
+        def detail_template=: (String) -> String
+
+        attr_reader header_template: String?
+
+        def header_template=: (String) -> String
+
+        attr_reader updated_at: Time?
+
+        def updated_at=: (Time) -> Time
+
+        def initialize: (
+          id: String,
+          name: String,
+          object_type: String,
+          tokens: ::Array[HubspotSDK::CRM::TimelineEventTemplateToken],
+          ?created_at: Time,
+          ?detail_template: String,
+          ?header_template: String,
+          ?updated_at: Time
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          name: String,
+          object_type: String,
+          tokens: ::Array[HubspotSDK::CRM::TimelineEventTemplateToken],
+          created_at: Time,
+          detail_template: String,
+          header_template: String,
+          updated_at: Time
+        }
+      end
+    end
+  end
+end

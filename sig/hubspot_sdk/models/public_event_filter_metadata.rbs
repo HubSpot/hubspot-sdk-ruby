@@ -1,0 +1,50 @@
+module HubspotSDK
+  module Models
+    type public_event_filter_metadata =
+      {
+        operation: HubspotSDK::Models::PublicEventFilterMetadata::operation,
+        property: String
+      }
+
+    class PublicEventFilterMetadata < HubspotSDK::Internal::Type::BaseModel
+      attr_accessor operation: HubspotSDK::Models::PublicEventFilterMetadata::operation
+
+      attr_accessor property: String
+
+      def initialize: (
+        operation: HubspotSDK::Models::PublicEventFilterMetadata::operation,
+        property: String
+      ) -> void
+
+      def to_hash: -> {
+        operation: HubspotSDK::Models::PublicEventFilterMetadata::operation,
+        property: String
+      }
+
+      type operation =
+        HubspotSDK::PublicBoolPropertyOperation
+        | HubspotSDK::PublicNumberPropertyOperation
+        | HubspotSDK::PublicStringPropertyOperation
+        | HubspotSDK::PublicDateTimePropertyOperation
+        | HubspotSDK::PublicRangedDatePropertyOperation
+        | HubspotSDK::PublicComparativePropertyUpdatedOperation
+        | HubspotSDK::PublicComparativeDatePropertyOperation
+        | HubspotSDK::PublicRollingDateRangePropertyOperation
+        | HubspotSDK::PublicRollingPropertyUpdatedOperation
+        | HubspotSDK::PublicEnumerationPropertyOperation
+        | HubspotSDK::PublicAllPropertyTypesOperation
+        | HubspotSDK::PublicRangedNumberPropertyOperation
+        | HubspotSDK::PublicMultiStringPropertyOperation
+        | HubspotSDK::PublicDatePropertyOperation
+        | HubspotSDK::PublicCalendarDatePropertyOperation
+        | HubspotSDK::PublicTimePointOperation
+        | HubspotSDK::PublicRangedTimeOperation
+
+      module Operation
+        extend HubspotSDK::Internal::Type::Union
+
+        def self?.variants: -> ::Array[HubspotSDK::Models::PublicEventFilterMetadata::operation]
+      end
+    end
+  end
+end

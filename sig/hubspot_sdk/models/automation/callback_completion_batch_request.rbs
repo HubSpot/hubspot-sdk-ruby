@@ -1,0 +1,24 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type callback_completion_batch_request =
+        { callback_id: String, output_fields: ::Hash[Symbol, String] }
+
+      class CallbackCompletionBatchRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor callback_id: String
+
+        attr_accessor output_fields: ::Hash[Symbol, String]
+
+        def initialize: (
+          callback_id: String,
+          output_fields: ::Hash[Symbol, String]
+        ) -> void
+
+        def to_hash: -> {
+          callback_id: String,
+          output_fields: ::Hash[Symbol, String]
+        }
+      end
+    end
+  end
+end

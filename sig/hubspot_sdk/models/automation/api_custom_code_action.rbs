@@ -1,0 +1,71 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_custom_code_action =
+        {
+          action_id: String,
+          input_fields: ::Array[HubspotSDK::Automation::APIInputVariable],
+          output_fields: ::Array[HubspotSDK::Automation::APIEnumerationOutputField],
+          runtime: String,
+          secret_names: ::Array[String],
+          source_code: String,
+          type: HubspotSDK::Models::Automation::APICustomCodeAction::type_,
+          connection: HubspotSDK::Automation::APIConnection
+        }
+
+      class APICustomCodeAction < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor action_id: String
+
+        attr_accessor input_fields: ::Array[HubspotSDK::Automation::APIInputVariable]
+
+        attr_accessor output_fields: ::Array[HubspotSDK::Automation::APIEnumerationOutputField]
+
+        attr_accessor runtime: String
+
+        attr_accessor secret_names: ::Array[String]
+
+        attr_accessor source_code: String
+
+        attr_accessor type: HubspotSDK::Models::Automation::APICustomCodeAction::type_
+
+        attr_reader connection: HubspotSDK::Automation::APIConnection?
+
+        def connection=: (
+          HubspotSDK::Automation::APIConnection
+        ) -> HubspotSDK::Automation::APIConnection
+
+        def initialize: (
+          action_id: String,
+          input_fields: ::Array[HubspotSDK::Automation::APIInputVariable],
+          output_fields: ::Array[HubspotSDK::Automation::APIEnumerationOutputField],
+          runtime: String,
+          secret_names: ::Array[String],
+          source_code: String,
+          type: HubspotSDK::Models::Automation::APICustomCodeAction::type_,
+          ?connection: HubspotSDK::Automation::APIConnection
+        ) -> void
+
+        def to_hash: -> {
+          action_id: String,
+          input_fields: ::Array[HubspotSDK::Automation::APIInputVariable],
+          output_fields: ::Array[HubspotSDK::Automation::APIEnumerationOutputField],
+          runtime: String,
+          secret_names: ::Array[String],
+          source_code: String,
+          type: HubspotSDK::Models::Automation::APICustomCodeAction::type_,
+          connection: HubspotSDK::Automation::APIConnection
+        }
+
+        type type_ = :CUSTOM_CODE
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          CUSTOM_CODE: :CUSTOM_CODE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APICustomCodeAction::type_]
+        end
+      end
+    end
+  end
+end

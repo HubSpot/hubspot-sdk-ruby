@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_enrollment_event_property_value =
+        {
+          enrollment_event_property_token: String,
+          type: HubspotSDK::Models::Automation::APIEnrollmentEventPropertyValue::type_
+        }
+
+      class APIEnrollmentEventPropertyValue < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor enrollment_event_property_token: String
+
+        attr_accessor type: HubspotSDK::Models::Automation::APIEnrollmentEventPropertyValue::type_
+
+        def initialize: (
+          enrollment_event_property_token: String,
+          type: HubspotSDK::Models::Automation::APIEnrollmentEventPropertyValue::type_
+        ) -> void
+
+        def to_hash: -> {
+          enrollment_event_property_token: String,
+          type: HubspotSDK::Models::Automation::APIEnrollmentEventPropertyValue::type_
+        }
+
+        type type_ = :ENROLLMENT_EVENT_PROPERTY
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          ENROLLMENT_EVENT_PROPERTY: :ENROLLMENT_EVENT_PROPERTY
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIEnrollmentEventPropertyValue::type_]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,9 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Blogs
+        Padding: HubspotSDK::Internal::Type::Converter
+      end
+    end
+  end
+end

@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type lifecycle_stage = { object_type_id: String, value: String }
+
+      class LifecycleStage < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor object_type_id: String
+
+        attr_accessor value: String
+
+        def initialize: (object_type_id: String, value: String) -> void
+
+        def to_hash: -> { object_type_id: String, value: String }
+      end
+    end
+  end
+end

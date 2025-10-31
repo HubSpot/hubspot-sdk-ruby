@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module FeatureFlags
+        type app_get_params =
+          { app_id: Integer } & HubspotSDK::Internal::Type::request_parameters
+
+        class AppGetParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor app_id: Integer
+
+          def initialize: (
+            app_id: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            app_id: Integer,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

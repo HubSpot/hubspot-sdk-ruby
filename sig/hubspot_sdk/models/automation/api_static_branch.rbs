@@ -1,0 +1,31 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_static_branch =
+        {
+          branch_value: String,
+          connection: HubspotSDK::Automation::APIConnection
+        }
+
+      class APIStaticBranch < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor branch_value: String
+
+        attr_reader connection: HubspotSDK::Automation::APIConnection?
+
+        def connection=: (
+          HubspotSDK::Automation::APIConnection
+        ) -> HubspotSDK::Automation::APIConnection
+
+        def initialize: (
+          branch_value: String,
+          ?connection: HubspotSDK::Automation::APIConnection
+        ) -> void
+
+        def to_hash: -> {
+          branch_value: String,
+          connection: HubspotSDK::Automation::APIConnection
+        }
+      end
+    end
+  end
+end

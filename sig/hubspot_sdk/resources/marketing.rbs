@@ -1,0 +1,21 @@
+module HubspotSDK
+  module Resources
+    class Marketing
+      attr_reader campaigns: HubspotSDK::Resources::Marketing::Campaigns
+
+      attr_reader emails: HubspotSDK::Resources::Marketing::Emails
+
+      attr_reader events: HubspotSDK::Resources::Marketing::Events
+
+      attr_reader forms: HubspotSDK::Resources::Marketing::Forms
+
+      attr_reader single_send: HubspotSDK::Resources::Marketing::SingleSend
+
+      attr_reader subscriptions: HubspotSDK::Resources::Marketing::Subscriptions
+
+      attr_reader transactional: HubspotSDK::Resources::Marketing::Transactional
+
+      def initialize: (client: HubspotSDK::Client) -> void
+    end
+  end
+end

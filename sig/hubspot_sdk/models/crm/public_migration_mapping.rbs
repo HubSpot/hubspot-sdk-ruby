@@ -1,0 +1,18 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type public_migration_mapping =
+        { legacy_list_id: String, list_id: String }
+
+      class PublicMigrationMapping < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor legacy_list_id: String
+
+        attr_accessor list_id: String
+
+        def initialize: (legacy_list_id: String, list_id: String) -> void
+
+        def to_hash: -> { legacy_list_id: String, list_id: String }
+      end
+    end
+  end
+end

@@ -1,0 +1,43 @@
+module HubspotSDK
+  module Models
+    module Settings
+      type user_update_params =
+        {
+          id_property: HubspotSDK::Models::Settings::PublicUserUpdate::id_property
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class UserUpdateParams < HubspotSDK::Models::Settings::PublicUserUpdate
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        def id_property: -> HubspotSDK::Models::Settings::PublicUserUpdate::id_property?
+
+        def id_property=: (
+          HubspotSDK::Models::Settings::PublicUserUpdate::id_property _
+        ) -> HubspotSDK::Models::Settings::PublicUserUpdate::id_property
+
+        def initialize: (
+          ?id_property: HubspotSDK::Models::Settings::PublicUserUpdate::id_property,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          id_property: HubspotSDK::Models::Settings::PublicUserUpdate::id_property,
+          request_options: HubspotSDK::RequestOptions
+        }
+
+        type id_property = :USER_ID | :EMAIL
+
+        module IDProperty
+          extend HubspotSDK::Internal::Type::Enum
+
+          USER_ID: :USER_ID
+          EMAIL: :EMAIL
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Settings::PublicUserUpdate::id_property]
+        end
+      end
+    end
+  end
+end

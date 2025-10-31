@@ -1,0 +1,63 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Associations
+        type standard_error1 =
+          {
+            category: String,
+            context: ::Hash[Symbol, ::Array[String]],
+            errors: ::Array[HubspotSDK::ErrorDetail],
+            links: ::Hash[Symbol, String],
+            message: String,
+            status: String,
+            id: String,
+            sub_category: top
+          }
+
+        class StandardError1 < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor category: String
+
+          attr_accessor context: ::Hash[Symbol, ::Array[String]]
+
+          attr_accessor errors: ::Array[HubspotSDK::ErrorDetail]
+
+          attr_accessor links: ::Hash[Symbol, String]
+
+          attr_accessor message: String
+
+          attr_accessor status: String
+
+          attr_reader id: String?
+
+          def id=: (String) -> String
+
+          attr_reader sub_category: top?
+
+          def sub_category=: (top) -> top
+
+          def initialize: (
+            category: String,
+            context: ::Hash[Symbol, ::Array[String]],
+            errors: ::Array[HubspotSDK::ErrorDetail],
+            links: ::Hash[Symbol, String],
+            message: String,
+            status: String,
+            ?id: String,
+            ?sub_category: top
+          ) -> void
+
+          def to_hash: -> {
+            category: String,
+            context: ::Hash[Symbol, ::Array[String]],
+            errors: ::Array[HubspotSDK::ErrorDetail],
+            links: ::Hash[Symbol, String],
+            message: String,
+            status: String,
+            id: String,
+            sub_category: top
+          }
+        end
+      end
+    end
+  end
+end

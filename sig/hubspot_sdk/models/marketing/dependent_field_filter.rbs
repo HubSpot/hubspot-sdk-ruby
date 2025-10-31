@@ -1,0 +1,93 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type dependent_field_filter =
+        {
+          operator: HubspotSDK::Models::Marketing::DependentFieldFilter::operator,
+          range_end: String,
+          range_start: String,
+          value: String,
+          values: ::Array[String]
+        }
+
+      class DependentFieldFilter < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor operator: HubspotSDK::Models::Marketing::DependentFieldFilter::operator
+
+        attr_accessor range_end: String
+
+        attr_accessor range_start: String
+
+        attr_accessor value: String
+
+        attr_accessor values: ::Array[String]
+
+        def initialize: (
+          operator: HubspotSDK::Models::Marketing::DependentFieldFilter::operator,
+          range_end: String,
+          range_start: String,
+          value: String,
+          values: ::Array[String]
+        ) -> void
+
+        def to_hash: -> {
+          operator: HubspotSDK::Models::Marketing::DependentFieldFilter::operator,
+          range_end: String,
+          range_start: String,
+          value: String,
+          values: ::Array[String]
+        }
+
+        type operator =
+          :eq
+          | :neq
+          | :contains
+          | :doesnt_contain
+          | :str_starts_with
+          | :str_ends_with
+          | :lt
+          | :lte
+          | :gt
+          | :gte
+          | :between
+          | :not_between
+          | :within_time_reverse
+          | :within_time
+          | :set_any
+          | :set_not_any
+          | :set_all
+          | :set_not_all
+          | :set_eq
+          | :set_neq
+          | :is_not_empty
+
+        module Operator
+          extend HubspotSDK::Internal::Type::Enum
+
+          EQ: :eq
+          NEQ: :neq
+          CONTAINS: :contains
+          DOESNT_CONTAIN: :doesnt_contain
+          STR_STARTS_WITH: :str_starts_with
+          STR_ENDS_WITH: :str_ends_with
+          LT: :lt
+          LTE: :lte
+          GT: :gt
+          GTE: :gte
+          BETWEEN: :between
+          NOT_BETWEEN: :not_between
+          WITHIN_TIME_REVERSE: :within_time_reverse
+          WITHIN_TIME: :within_time
+          SET_ANY: :set_any
+          SET_NOT_ANY: :set_not_any
+          SET_ALL: :set_all
+          SET_NOT_ALL: :set_not_all
+          SET_EQ: :set_eq
+          SET_NEQ: :set_neq
+          IS_NOT_EMPTY: :is_not_empty
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::DependentFieldFilter::operator]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,47 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_timestamp_value =
+        {
+          timestamp_type: HubspotSDK::Models::Automation::APITimestampValue::timestamp_type,
+          type: HubspotSDK::Models::Automation::APITimestampValue::type_
+        }
+
+      class APITimestampValue < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor timestamp_type: HubspotSDK::Models::Automation::APITimestampValue::timestamp_type
+
+        attr_accessor type: HubspotSDK::Models::Automation::APITimestampValue::type_
+
+        def initialize: (
+          timestamp_type: HubspotSDK::Models::Automation::APITimestampValue::timestamp_type,
+          type: HubspotSDK::Models::Automation::APITimestampValue::type_
+        ) -> void
+
+        def to_hash: -> {
+          timestamp_type: HubspotSDK::Models::Automation::APITimestampValue::timestamp_type,
+          type: HubspotSDK::Models::Automation::APITimestampValue::type_
+        }
+
+        type timestamp_type = :EXECUTION_TIME
+
+        module TimestampType
+          extend HubspotSDK::Internal::Type::Enum
+
+          EXECUTION_TIME: :EXECUTION_TIME
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APITimestampValue::timestamp_type]
+        end
+
+        type type_ = :TIMESTAMP
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          TIMESTAMP: :TIMESTAMP
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APITimestampValue::type_]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,51 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type workflow_list_email_campaigns_params =
+        {
+          after: String,
+          before: String,
+          flow_id: ::Array[String],
+          limit: Integer
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class WorkflowListEmailCampaignsParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_reader after: String?
+
+        def after=: (String) -> String
+
+        attr_reader before: String?
+
+        def before=: (String) -> String
+
+        attr_reader flow_id: ::Array[String]?
+
+        def flow_id=: (::Array[String]) -> ::Array[String]
+
+        attr_reader limit: Integer?
+
+        def limit=: (Integer) -> Integer
+
+        def initialize: (
+          ?after: String,
+          ?before: String,
+          ?flow_id: ::Array[String],
+          ?limit: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          after: String,
+          before: String,
+          flow_id: ::Array[String],
+          limit: Integer,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

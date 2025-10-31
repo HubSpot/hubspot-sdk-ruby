@@ -1,0 +1,45 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class Lists
+        class Folders
+          def create: (
+            name: String,
+            ?parent_folder_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::CRM::ListFolderCreateResponse
+
+          def delete: (
+            String folder_id,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def get: (
+            ?folder_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::CRM::ListFolderFetchResponse
+
+          def move: (
+            String new_parent_folder_id,
+            folder_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::CRM::ListFolderFetchResponse
+
+          def move_list: (
+            list_id: String,
+            new_folder_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def rename: (
+            String folder_id,
+            ?new_folder_name: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::CRM::ListFolderFetchResponse
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

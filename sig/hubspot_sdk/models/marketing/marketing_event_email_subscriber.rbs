@@ -1,0 +1,43 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type marketing_event_email_subscriber =
+        {
+          email: String,
+          interaction_date_time: Integer,
+          contact_properties: ::Hash[Symbol, String],
+          properties: ::Hash[Symbol, String]
+        }
+
+      class MarketingEventEmailSubscriber < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor email: String
+
+        attr_accessor interaction_date_time: Integer
+
+        attr_reader contact_properties: ::Hash[Symbol, String]?
+
+        def contact_properties=: (
+          ::Hash[Symbol, String]
+        ) -> ::Hash[Symbol, String]
+
+        attr_reader properties: ::Hash[Symbol, String]?
+
+        def properties=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
+
+        def initialize: (
+          email: String,
+          interaction_date_time: Integer,
+          ?contact_properties: ::Hash[Symbol, String],
+          ?properties: ::Hash[Symbol, String]
+        ) -> void
+
+        def to_hash: -> {
+          email: String,
+          interaction_date_time: Integer,
+          contact_properties: ::Hash[Symbol, String],
+          properties: ::Hash[Symbol, String]
+        }
+      end
+    end
+  end
+end

@@ -1,0 +1,18 @@
+module HubspotSDK
+  module Resources
+    class Conversations
+      class Channels
+        def list: (
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Conversations::CollectionResponseWithTotalPublicChannelForwardPaging
+
+        def get: (
+          String channel_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Conversations::PublicChannel
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

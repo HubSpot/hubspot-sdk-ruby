@@ -1,0 +1,42 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_enumeration_output_field =
+        {
+          name: String,
+          options: ::Array[String],
+          type: HubspotSDK::Models::Automation::APIEnumerationOutputField::type_
+        }
+
+      class APIEnumerationOutputField < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor name: String
+
+        attr_accessor options: ::Array[String]
+
+        attr_accessor type: HubspotSDK::Models::Automation::APIEnumerationOutputField::type_
+
+        def initialize: (
+          name: String,
+          options: ::Array[String],
+          type: HubspotSDK::Models::Automation::APIEnumerationOutputField::type_
+        ) -> void
+
+        def to_hash: -> {
+          name: String,
+          options: ::Array[String],
+          type: HubspotSDK::Models::Automation::APIEnumerationOutputField::type_
+        }
+
+        type type_ = :ENUMERATION
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          ENUMERATION: :ENUMERATION
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIEnumerationOutputField::type_]
+        end
+      end
+    end
+  end
+end

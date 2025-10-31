@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type unsupported_content_attachment =
+        {
+          type: HubspotSDK::Models::Conversations::UnsupportedContentAttachment::type_
+        }
+
+      class UnsupportedContentAttachment < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor type: HubspotSDK::Models::Conversations::UnsupportedContentAttachment::type_
+
+        def initialize: (
+          type: HubspotSDK::Models::Conversations::UnsupportedContentAttachment::type_
+        ) -> void
+
+        def to_hash: -> {
+          type: HubspotSDK::Models::Conversations::UnsupportedContentAttachment::type_
+        }
+
+        type type_ = :UNSUPPORTED_CONTENT
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          UNSUPPORTED_CONTENT: :UNSUPPORTED_CONTENT
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::UnsupportedContentAttachment::type_]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,53 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_monthly_relative_days_enrollment_schedule =
+        {
+          monthly_relative_days: HubspotSDK::Models::Automation::APIMonthlyRelativeDaysEnrollmentSchedule::monthly_relative_days,
+          time_of_day: HubspotSDK::Automation::APITimeOfDay,
+          type: HubspotSDK::Models::Automation::APIMonthlyRelativeDaysEnrollmentSchedule::type_
+        }
+
+      class APIMonthlyRelativeDaysEnrollmentSchedule < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor monthly_relative_days: HubspotSDK::Models::Automation::APIMonthlyRelativeDaysEnrollmentSchedule::monthly_relative_days
+
+        attr_accessor time_of_day: HubspotSDK::Automation::APITimeOfDay
+
+        attr_accessor type: HubspotSDK::Models::Automation::APIMonthlyRelativeDaysEnrollmentSchedule::type_
+
+        def initialize: (
+          monthly_relative_days: HubspotSDK::Models::Automation::APIMonthlyRelativeDaysEnrollmentSchedule::monthly_relative_days,
+          time_of_day: HubspotSDK::Automation::APITimeOfDay,
+          type: HubspotSDK::Models::Automation::APIMonthlyRelativeDaysEnrollmentSchedule::type_
+        ) -> void
+
+        def to_hash: -> {
+          monthly_relative_days: HubspotSDK::Models::Automation::APIMonthlyRelativeDaysEnrollmentSchedule::monthly_relative_days,
+          time_of_day: HubspotSDK::Automation::APITimeOfDay,
+          type: HubspotSDK::Models::Automation::APIMonthlyRelativeDaysEnrollmentSchedule::type_
+        }
+
+        type monthly_relative_days = :LAST_DAY_OF_MONTH | :FIRST_MONDAY_OF_MONTH
+
+        module MonthlyRelativeDays
+          extend HubspotSDK::Internal::Type::Enum
+
+          LAST_DAY_OF_MONTH: :LAST_DAY_OF_MONTH
+          FIRST_MONDAY_OF_MONTH: :FIRST_MONDAY_OF_MONTH
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIMonthlyRelativeDaysEnrollmentSchedule::monthly_relative_days]
+        end
+
+        type type_ = :MONTHLY_RELATIVE_DAYS
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          MONTHLY_RELATIVE_DAYS: :MONTHLY_RELATIVE_DAYS
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIMonthlyRelativeDaysEnrollmentSchedule::type_]
+        end
+      end
+    end
+  end
+end

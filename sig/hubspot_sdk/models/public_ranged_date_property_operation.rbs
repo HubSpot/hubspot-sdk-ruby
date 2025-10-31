@@ -1,0 +1,55 @@
+module HubspotSDK
+  module Models
+    type public_ranged_date_property_operation =
+      {
+        include_objects_with_no_value_set: bool,
+        lower_bound: Integer,
+        operation_type: HubspotSDK::Models::PublicRangedDatePropertyOperation::operation_type,
+        operator: String,
+        requires_time_zone_conversion: bool,
+        upper_bound: Integer
+      }
+
+    class PublicRangedDatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      attr_accessor include_objects_with_no_value_set: bool
+
+      attr_accessor lower_bound: Integer
+
+      attr_accessor operation_type: HubspotSDK::Models::PublicRangedDatePropertyOperation::operation_type
+
+      attr_accessor operator: String
+
+      attr_accessor requires_time_zone_conversion: bool
+
+      attr_accessor upper_bound: Integer
+
+      def initialize: (
+        include_objects_with_no_value_set: bool,
+        lower_bound: Integer,
+        operation_type: HubspotSDK::Models::PublicRangedDatePropertyOperation::operation_type,
+        operator: String,
+        requires_time_zone_conversion: bool,
+        upper_bound: Integer
+      ) -> void
+
+      def to_hash: -> {
+        include_objects_with_no_value_set: bool,
+        lower_bound: Integer,
+        operation_type: HubspotSDK::Models::PublicRangedDatePropertyOperation::operation_type,
+        operator: String,
+        requires_time_zone_conversion: bool,
+        upper_bound: Integer
+      }
+
+      type operation_type = :RANGED_DATE
+
+      module OperationType
+        extend HubspotSDK::Internal::Type::Enum
+
+        RANGED_DATE: :RANGED_DATE
+
+        def self?.values: -> ::Array[HubspotSDK::Models::PublicRangedDatePropertyOperation::operation_type]
+      end
+    end
+  end
+end

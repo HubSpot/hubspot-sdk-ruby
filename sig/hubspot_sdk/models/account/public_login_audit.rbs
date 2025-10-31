@@ -1,0 +1,81 @@
+module HubspotSDK
+  module Models
+    module Account
+      type public_login_audit =
+        {
+          id: String,
+          login_at: Time,
+          login_succeeded: bool,
+          country_code: String,
+          email: String,
+          ip_address: String,
+          location: String,
+          region_code: String,
+          user_agent: String,
+          user_id: Integer
+        }
+
+      class PublicLoginAudit < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor login_at: Time
+
+        attr_accessor login_succeeded: bool
+
+        attr_reader country_code: String?
+
+        def country_code=: (String) -> String
+
+        attr_reader email: String?
+
+        def email=: (String) -> String
+
+        attr_reader ip_address: String?
+
+        def ip_address=: (String) -> String
+
+        attr_reader location: String?
+
+        def location=: (String) -> String
+
+        attr_reader region_code: String?
+
+        def region_code=: (String) -> String
+
+        attr_reader user_agent: String?
+
+        def user_agent=: (String) -> String
+
+        attr_reader user_id: Integer?
+
+        def user_id=: (Integer) -> Integer
+
+        def initialize: (
+          id: String,
+          login_at: Time,
+          login_succeeded: bool,
+          ?country_code: String,
+          ?email: String,
+          ?ip_address: String,
+          ?location: String,
+          ?region_code: String,
+          ?user_agent: String,
+          ?user_id: Integer
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          login_at: Time,
+          login_succeeded: bool,
+          country_code: String,
+          email: String,
+          ip_address: String,
+          location: String,
+          region_code: String,
+          user_agent: String,
+          user_id: Integer
+        }
+      end
+    end
+  end
+end

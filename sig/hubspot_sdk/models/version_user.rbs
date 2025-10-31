@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Models
+    type version_user = { id: String, email: String, full_name: String }
+
+    class VersionUser < HubspotSDK::Internal::Type::BaseModel
+      attr_accessor id: String
+
+      attr_accessor email: String
+
+      attr_accessor full_name: String
+
+      def initialize: (id: String, email: String, full_name: String) -> void
+
+      def to_hash: -> { id: String, email: String, full_name: String }
+    end
+  end
+end

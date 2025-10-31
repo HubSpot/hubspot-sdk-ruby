@@ -1,0 +1,28 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Lists
+        type membership_get_lists_params =
+          { object_type_id: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class MembershipGetListsParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor object_type_id: String
+
+          def initialize: (
+            object_type_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            object_type_id: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

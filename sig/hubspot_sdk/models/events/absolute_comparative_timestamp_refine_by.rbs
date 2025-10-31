@@ -1,0 +1,53 @@
+module HubspotSDK
+  module Models
+    module Events
+      type absolute_comparative_timestamp_refine_by =
+        {
+          comparison: HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::comparison,
+          timestamp: Integer,
+          type: HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::type_
+        }
+
+      class AbsoluteComparativeTimestampRefineBy < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor comparison: HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::comparison
+
+        attr_accessor timestamp: Integer
+
+        attr_accessor type: HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::type_
+
+        def initialize: (
+          comparison: HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::comparison,
+          timestamp: Integer,
+          type: HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::type_
+        ) -> void
+
+        def to_hash: -> {
+          comparison: HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::comparison,
+          timestamp: Integer,
+          type: HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::type_
+        }
+
+        type comparison = :BEFORE | :AFTER
+
+        module Comparison
+          extend HubspotSDK::Internal::Type::Enum
+
+          BEFORE: :BEFORE
+          AFTER: :AFTER
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::comparison]
+        end
+
+        type type_ = :AbsoluteComparativeTimestampRefineBy
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          ABSOLUTE_COMPARATIVE_TIMESTAMP_REFINE_BY: :AbsoluteComparativeTimestampRefineBy
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::type_]
+        end
+      end
+    end
+  end
+end

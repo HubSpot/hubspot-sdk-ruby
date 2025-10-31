@@ -1,0 +1,107 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_webhook_action =
+        {
+          action_id: String,
+          method_: HubspotSDK::Models::Automation::APIWebhookAction::method_,
+          query_params: ::Array[HubspotSDK::Automation::APIInputVariable],
+          type: HubspotSDK::Models::Automation::APIWebhookAction::type_,
+          webhook_url: String,
+          auth_settings: HubspotSDK::Models::Automation::APIWebhookAction::auth_settings,
+          connection: HubspotSDK::Automation::APIConnection
+        }
+
+      class APIWebhookAction < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor action_id: String
+
+        attr_accessor method_: HubspotSDK::Models::Automation::APIWebhookAction::method_
+
+        attr_accessor query_params: ::Array[HubspotSDK::Automation::APIInputVariable]
+
+        attr_accessor type: HubspotSDK::Models::Automation::APIWebhookAction::type_
+
+        attr_accessor webhook_url: String
+
+        attr_reader auth_settings: HubspotSDK::Models::Automation::APIWebhookAction::auth_settings?
+
+        def auth_settings=: (
+          HubspotSDK::Models::Automation::APIWebhookAction::auth_settings
+        ) -> HubspotSDK::Models::Automation::APIWebhookAction::auth_settings
+
+        attr_reader connection: HubspotSDK::Automation::APIConnection?
+
+        def connection=: (
+          HubspotSDK::Automation::APIConnection
+        ) -> HubspotSDK::Automation::APIConnection
+
+        def initialize: (
+          action_id: String,
+          method_: HubspotSDK::Models::Automation::APIWebhookAction::method_,
+          query_params: ::Array[HubspotSDK::Automation::APIInputVariable],
+          type: HubspotSDK::Models::Automation::APIWebhookAction::type_,
+          webhook_url: String,
+          ?auth_settings: HubspotSDK::Models::Automation::APIWebhookAction::auth_settings,
+          ?connection: HubspotSDK::Automation::APIConnection
+        ) -> void
+
+        def to_hash: -> {
+          action_id: String,
+          method_: HubspotSDK::Models::Automation::APIWebhookAction::method_,
+          query_params: ::Array[HubspotSDK::Automation::APIInputVariable],
+          type: HubspotSDK::Models::Automation::APIWebhookAction::type_,
+          webhook_url: String,
+          auth_settings: HubspotSDK::Models::Automation::APIWebhookAction::auth_settings,
+          connection: HubspotSDK::Automation::APIConnection
+        }
+
+        type method_ =
+          :CONNECT
+          | :DELETE
+          | :GET
+          | :HEAD
+          | :OPTIONS
+          | :PATCH
+          | :POST
+          | :PUT
+          | :TRACE
+
+        module Method
+          extend HubspotSDK::Internal::Type::Enum
+
+          CONNECT: :CONNECT
+          DELETE: :DELETE
+          GET: :GET
+          HEAD: :HEAD
+          OPTIONS: :OPTIONS
+          PATCH: :PATCH
+          POST: :POST
+          PUT: :PUT
+          TRACE: :TRACE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIWebhookAction::method_]
+        end
+
+        type type_ = :WEBHOOK
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          WEBHOOK: :WEBHOOK
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIWebhookAction::type_]
+        end
+
+        type auth_settings =
+          HubspotSDK::Automation::APIAuthKeyWebhookAuthSettings
+          | HubspotSDK::Automation::APISignatureWebhookAuthSettings
+
+        module AuthSettings
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Automation::APIWebhookAction::auth_settings]
+        end
+      end
+    end
+  end
+end

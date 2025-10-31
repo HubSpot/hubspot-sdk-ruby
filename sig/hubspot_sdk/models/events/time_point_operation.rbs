@@ -1,0 +1,131 @@
+module HubspotSDK
+  module Models
+    module Events
+      type time_point_operation =
+        {
+          endpoint_behavior: HubspotSDK::Models::Events::TimePointOperation::endpoint_behavior,
+          include_objects_with_no_value_set: bool,
+          operation_type: String,
+          operator: HubspotSDK::Models::Events::TimePointOperation::operator,
+          operator_name: String,
+          property_parser: HubspotSDK::Models::Events::TimePointOperation::property_parser,
+          property_type: HubspotSDK::Models::Events::TimePointOperation::property_type,
+          time_point: HubspotSDK::Models::Events::TimePointOperation::time_point,
+          type: String,
+          default_value: String
+        }
+
+      class TimePointOperation < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor endpoint_behavior: HubspotSDK::Models::Events::TimePointOperation::endpoint_behavior
+
+        attr_accessor include_objects_with_no_value_set: bool
+
+        attr_accessor operation_type: String
+
+        attr_accessor operator: HubspotSDK::Models::Events::TimePointOperation::operator
+
+        attr_accessor operator_name: String
+
+        attr_accessor property_parser: HubspotSDK::Models::Events::TimePointOperation::property_parser
+
+        attr_accessor property_type: HubspotSDK::Models::Events::TimePointOperation::property_type
+
+        attr_accessor time_point: HubspotSDK::Models::Events::TimePointOperation::time_point
+
+        attr_accessor type: String
+
+        attr_reader default_value: String?
+
+        def default_value=: (String) -> String
+
+        def initialize: (
+          endpoint_behavior: HubspotSDK::Models::Events::TimePointOperation::endpoint_behavior,
+          include_objects_with_no_value_set: bool,
+          operation_type: String,
+          operator: HubspotSDK::Models::Events::TimePointOperation::operator,
+          operator_name: String,
+          property_parser: HubspotSDK::Models::Events::TimePointOperation::property_parser,
+          property_type: HubspotSDK::Models::Events::TimePointOperation::property_type,
+          time_point: HubspotSDK::Models::Events::TimePointOperation::time_point,
+          type: String,
+          ?default_value: String
+        ) -> void
+
+        def to_hash: -> {
+          endpoint_behavior: HubspotSDK::Models::Events::TimePointOperation::endpoint_behavior,
+          include_objects_with_no_value_set: bool,
+          operation_type: String,
+          operator: HubspotSDK::Models::Events::TimePointOperation::operator,
+          operator_name: String,
+          property_parser: HubspotSDK::Models::Events::TimePointOperation::property_parser,
+          property_type: HubspotSDK::Models::Events::TimePointOperation::property_type,
+          time_point: HubspotSDK::Models::Events::TimePointOperation::time_point,
+          type: String,
+          default_value: String
+        }
+
+        type endpoint_behavior = :INCLUSIVE | :EXCLUSIVE
+
+        module EndpointBehavior
+          extend HubspotSDK::Internal::Type::Enum
+
+          INCLUSIVE: :INCLUSIVE
+          EXCLUSIVE: :EXCLUSIVE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::TimePointOperation::endpoint_behavior]
+        end
+
+        type operator = :IS_BEFORE | :IS_AFTER
+
+        module Operator
+          extend HubspotSDK::Internal::Type::Enum
+
+          IS_BEFORE: :IS_BEFORE
+          IS_AFTER: :IS_AFTER
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::TimePointOperation::operator]
+        end
+
+        type property_parser =
+          :VALUE
+          | :UPDATED_AT
+          | :ANNIVERSARY
+          | :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION
+          | :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION
+
+        module PropertyParser
+          extend HubspotSDK::Internal::Type::Enum
+
+          VALUE: :VALUE
+          UPDATED_AT: :UPDATED_AT
+          ANNIVERSARY: :ANNIVERSARY
+          VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION: :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION
+          ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION: :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::TimePointOperation::property_parser]
+        end
+
+        type property_type = :timepoint
+
+        module PropertyType
+          extend HubspotSDK::Internal::Type::Enum
+
+          TIMEPOINT: :timepoint
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::TimePointOperation::property_type]
+        end
+
+        type time_point =
+          HubspotSDK::Events::DatePoint
+          | HubspotSDK::Events::IndexedTimePoint
+          | HubspotSDK::Events::PropertyReferencedTime
+
+        module TimePoint
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Events::TimePointOperation::time_point]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,63 @@
+module HubspotSDK
+  module Models
+    module Account
+      type api_usage =
+        {
+          collected_at: Time,
+          current_usage: Integer,
+          fetch_status: HubspotSDK::Models::Account::APIUsage::fetch_status,
+          name: String,
+          usage_limit: Integer,
+          resets_at: Time
+        }
+
+      class APIUsage < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor collected_at: Time
+
+        attr_accessor current_usage: Integer
+
+        attr_accessor fetch_status: HubspotSDK::Models::Account::APIUsage::fetch_status
+
+        attr_accessor name: String
+
+        attr_accessor usage_limit: Integer
+
+        attr_reader resets_at: Time?
+
+        def resets_at=: (Time) -> Time
+
+        def initialize: (
+          collected_at: Time,
+          current_usage: Integer,
+          fetch_status: HubspotSDK::Models::Account::APIUsage::fetch_status,
+          name: String,
+          usage_limit: Integer,
+          ?resets_at: Time
+        ) -> void
+
+        def to_hash: -> {
+          collected_at: Time,
+          current_usage: Integer,
+          fetch_status: HubspotSDK::Models::Account::APIUsage::fetch_status,
+          name: String,
+          usage_limit: Integer,
+          resets_at: Time
+        }
+
+        type fetch_status = :SUCCESS | :TIMEOUT | :FAILURE | :CACHED | :NOTFOUND
+
+        module FetchStatus
+          extend HubspotSDK::Internal::Type::Enum
+
+          SUCCESS: :SUCCESS
+          TIMEOUT: :TIMEOUT
+          FAILURE: :FAILURE
+          CACHED: :CACHED
+          NOTFOUND: :NOTFOUND
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Account::APIUsage::fetch_status]
+        end
+      end
+    end
+  end
+end

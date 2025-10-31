@@ -1,0 +1,26 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type public_message_failure_details =
+        { error_message_tokens: ::Hash[Symbol, String], error_message: String }
+
+      class PublicMessageFailureDetails < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor error_message_tokens: ::Hash[Symbol, String]
+
+        attr_reader error_message: String?
+
+        def error_message=: (String) -> String
+
+        def initialize: (
+          error_message_tokens: ::Hash[Symbol, String],
+          ?error_message: String
+        ) -> void
+
+        def to_hash: -> {
+          error_message_tokens: ::Hash[Symbol, String],
+          error_message: String
+        }
+      end
+    end
+  end
+end

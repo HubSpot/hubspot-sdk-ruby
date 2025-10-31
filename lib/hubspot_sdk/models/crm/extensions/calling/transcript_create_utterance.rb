@@ -1,0 +1,45 @@
+# frozen_string_literal: true
+
+module HubspotSDK
+  module Models
+    module CRM
+      module Extensions
+        module Calling
+          class TranscriptCreateUtterance < HubspotSDK::Internal::Type::BaseModel
+            # @!attribute end_time_millis
+            #
+            #   @return [Integer]
+            required :end_time_millis, Integer, api_name: :endTimeMillis
+
+            # @!attribute speaker
+            #
+            #   @return [HubspotSDK::Models::CRM::Extensions::Calling::Speaker]
+            required :speaker, -> { HubspotSDK::CRM::Extensions::Calling::Speaker }
+
+            # @!attribute start_time_millis
+            #
+            #   @return [Integer]
+            required :start_time_millis, Integer, api_name: :startTimeMillis
+
+            # @!attribute text
+            #
+            #   @return [String]
+            required :text, String
+
+            # @!attribute language_code
+            #
+            #   @return [String, nil]
+            optional :language_code, String, api_name: :languageCode
+
+            # @!method initialize(end_time_millis:, speaker:, start_time_millis:, text:, language_code: nil)
+            #   @param end_time_millis [Integer]
+            #   @param speaker [HubspotSDK::Models::CRM::Extensions::Calling::Speaker]
+            #   @param start_time_millis [Integer]
+            #   @param text [String]
+            #   @param language_code [String]
+          end
+        end
+      end
+    end
+  end
+end

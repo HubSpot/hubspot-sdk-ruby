@@ -1,0 +1,21 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type row_meta_data =
+        { css_class: String, styles: HubspotSDK::Cms::Styles }
+
+      class RowMetaData < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor css_class: String
+
+        attr_accessor styles: HubspotSDK::Cms::Styles
+
+        def initialize: (
+          css_class: String,
+          styles: HubspotSDK::Cms::Styles
+        ) -> void
+
+        def to_hash: -> { css_class: String, styles: HubspotSDK::Cms::Styles }
+      end
+    end
+  end
+end

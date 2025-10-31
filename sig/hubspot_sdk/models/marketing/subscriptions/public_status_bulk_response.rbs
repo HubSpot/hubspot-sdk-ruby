@@ -1,0 +1,29 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      module Subscriptions
+        type public_status_bulk_response =
+          {
+            statuses: ::Array[HubspotSDK::Marketing::Subscriptions::PublicStatus],
+            subscriber_id_string: String
+          }
+
+        class PublicStatusBulkResponse < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor statuses: ::Array[HubspotSDK::Marketing::Subscriptions::PublicStatus]
+
+          attr_accessor subscriber_id_string: String
+
+          def initialize: (
+            statuses: ::Array[HubspotSDK::Marketing::Subscriptions::PublicStatus],
+            subscriber_id_string: String
+          ) -> void
+
+          def to_hash: -> {
+            statuses: ::Array[HubspotSDK::Marketing::Subscriptions::PublicStatus],
+            subscriber_id_string: String
+          }
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,74 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_association_data_source =
+        {
+          association_category: HubspotSDK::Models::Automation::APIAssociationDataSource::association_category,
+          association_type_id: Integer,
+          name: String,
+          object_type_id: String,
+          type: HubspotSDK::Models::Automation::APIAssociationDataSource::type_,
+          sort_by: HubspotSDK::Automation::APISort
+        }
+
+      class APIAssociationDataSource < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor association_category: HubspotSDK::Models::Automation::APIAssociationDataSource::association_category
+
+        attr_accessor association_type_id: Integer
+
+        attr_accessor name: String
+
+        attr_accessor object_type_id: String
+
+        attr_accessor type: HubspotSDK::Models::Automation::APIAssociationDataSource::type_
+
+        attr_reader sort_by: HubspotSDK::Automation::APISort?
+
+        def sort_by=: (
+          HubspotSDK::Automation::APISort
+        ) -> HubspotSDK::Automation::APISort
+
+        def initialize: (
+          association_category: HubspotSDK::Models::Automation::APIAssociationDataSource::association_category,
+          association_type_id: Integer,
+          name: String,
+          object_type_id: String,
+          type: HubspotSDK::Models::Automation::APIAssociationDataSource::type_,
+          ?sort_by: HubspotSDK::Automation::APISort
+        ) -> void
+
+        def to_hash: -> {
+          association_category: HubspotSDK::Models::Automation::APIAssociationDataSource::association_category,
+          association_type_id: Integer,
+          name: String,
+          object_type_id: String,
+          type: HubspotSDK::Models::Automation::APIAssociationDataSource::type_,
+          sort_by: HubspotSDK::Automation::APISort
+        }
+
+        type association_category =
+          :HUBSPOT_DEFINED | :USER_DEFINED | :INTEGRATOR_DEFINED
+
+        module AssociationCategory
+          extend HubspotSDK::Internal::Type::Enum
+
+          HUBSPOT_DEFINED: :HUBSPOT_DEFINED
+          USER_DEFINED: :USER_DEFINED
+          INTEGRATOR_DEFINED: :INTEGRATOR_DEFINED
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIAssociationDataSource::association_category]
+        end
+
+        type type_ = :ASSOCIATION
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          ASSOCIATION: :ASSOCIATION
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIAssociationDataSource::type_]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,28 @@
+module HubspotSDK
+  module Resources
+    class Cms
+      class Domains
+        def list: (
+          ?after: String,
+          ?archived: bool,
+          ?created_after: Time,
+          ?created_at: Time,
+          ?created_before: Time,
+          ?limit: Integer,
+          ?sort: ::Array[String],
+          ?updated_after: Time,
+          ?updated_at: Time,
+          ?updated_before: Time,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::Domain]
+
+        def get: (
+          String domain_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Cms::Domain
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

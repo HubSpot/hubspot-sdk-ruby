@@ -1,0 +1,19 @@
+module HubspotSDK
+  module Models
+    module Account
+      type acting_user = { user_id: Integer, user_email: String }
+
+      class ActingUser < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor user_id: Integer
+
+        attr_reader user_email: String?
+
+        def user_email=: (String) -> String
+
+        def initialize: (user_id: Integer, ?user_email: String) -> void
+
+        def to_hash: -> { user_id: Integer, user_email: String }
+      end
+    end
+  end
+end

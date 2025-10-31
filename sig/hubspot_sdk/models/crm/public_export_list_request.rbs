@@ -1,0 +1,139 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type public_export_list_request =
+        {
+          export_internal_values_options: ::Array[HubspotSDK::Models::CRM::PublicExportListRequest::export_internal_values_option],
+          export_name: String,
+          export_type: HubspotSDK::Models::CRM::PublicExportListRequest::export_type,
+          format_: HubspotSDK::Models::CRM::PublicExportListRequest::format_,
+          language: HubspotSDK::Models::CRM::PublicExportListRequest::language,
+          list_id: String,
+          object_properties: ::Array[String],
+          object_type: String,
+          override_associated_objects_per_definition_per_row_limit: bool,
+          associated_object_type: String
+        }
+
+      class PublicExportListRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor export_internal_values_options: ::Array[HubspotSDK::Models::CRM::PublicExportListRequest::export_internal_values_option]
+
+        attr_accessor export_name: String
+
+        attr_accessor export_type: HubspotSDK::Models::CRM::PublicExportListRequest::export_type
+
+        attr_accessor format_: HubspotSDK::Models::CRM::PublicExportListRequest::format_
+
+        attr_accessor language: HubspotSDK::Models::CRM::PublicExportListRequest::language
+
+        attr_accessor list_id: String
+
+        attr_accessor object_properties: ::Array[String]
+
+        attr_accessor object_type: String
+
+        attr_accessor override_associated_objects_per_definition_per_row_limit: bool
+
+        attr_reader associated_object_type: String?
+
+        def associated_object_type=: (String) -> String
+
+        def initialize: (
+          export_internal_values_options: ::Array[HubspotSDK::Models::CRM::PublicExportListRequest::export_internal_values_option],
+          export_name: String,
+          export_type: HubspotSDK::Models::CRM::PublicExportListRequest::export_type,
+          format_: HubspotSDK::Models::CRM::PublicExportListRequest::format_,
+          language: HubspotSDK::Models::CRM::PublicExportListRequest::language,
+          list_id: String,
+          object_properties: ::Array[String],
+          object_type: String,
+          override_associated_objects_per_definition_per_row_limit: bool,
+          ?associated_object_type: String
+        ) -> void
+
+        def to_hash: -> {
+          export_internal_values_options: ::Array[HubspotSDK::Models::CRM::PublicExportListRequest::export_internal_values_option],
+          export_name: String,
+          export_type: HubspotSDK::Models::CRM::PublicExportListRequest::export_type,
+          format_: HubspotSDK::Models::CRM::PublicExportListRequest::format_,
+          language: HubspotSDK::Models::CRM::PublicExportListRequest::language,
+          list_id: String,
+          object_properties: ::Array[String],
+          object_type: String,
+          override_associated_objects_per_definition_per_row_limit: bool,
+          associated_object_type: String
+        }
+
+        type export_internal_values_option = :NAMES | :VALUES
+
+        module ExportInternalValuesOption
+          extend HubspotSDK::Internal::Type::Enum
+
+          NAMES: :NAMES
+          VALUES: :VALUES
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PublicExportListRequest::export_internal_values_option]
+        end
+
+        type export_type = :LIST
+
+        module ExportType
+          extend HubspotSDK::Internal::Type::Enum
+
+          LIST: :LIST
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PublicExportListRequest::export_type]
+        end
+
+        type format_ = :XLS | :XLSX | :CSV
+
+        module Format
+          extend HubspotSDK::Internal::Type::Enum
+
+          XLS: :XLS
+          XLSX: :XLSX
+          CSV: :CSV
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PublicExportListRequest::format_]
+        end
+
+        type language =
+          :EN
+          | :DE
+          | :ES
+          | :FR
+          | :JA
+          | :NL
+          | :PT_BR
+          | :IT
+          | :PL
+          | :SV
+          | :FI
+          | :ZH_TW
+          | :DA_DK
+          | :NO
+
+        module Language
+          extend HubspotSDK::Internal::Type::Enum
+
+          EN: :EN
+          DE: :DE
+          ES: :ES
+          FR: :FR
+          JA: :JA
+          NL: :NL
+          PT_BR: :PT_BR
+          IT: :IT
+          PL: :PL
+          SV: :SV
+          FI: :FI
+          ZH_TW: :ZH_TW
+          DA_DK: :DA_DK
+          NO: :NO
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PublicExportListRequest::language]
+        end
+      end
+    end
+  end
+end

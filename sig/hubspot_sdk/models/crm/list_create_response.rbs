@@ -1,0 +1,15 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type list_create_response = { list: HubspotSDK::CRM::PublicObjectList }
+
+      class ListCreateResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor list: HubspotSDK::CRM::PublicObjectList
+
+        def initialize: (list: HubspotSDK::CRM::PublicObjectList) -> void
+
+        def to_hash: -> { list: HubspotSDK::CRM::PublicObjectList }
+      end
+    end
+  end
+end

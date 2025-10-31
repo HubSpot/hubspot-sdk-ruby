@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type side_or_corner = { horizontal_side: String, vertical_side: String }
+
+      class SideOrCorner < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor horizontal_side: String
+
+        attr_accessor vertical_side: String
+
+        def initialize: (horizontal_side: String, vertical_side: String) -> void
+
+        def to_hash: -> { horizontal_side: String, vertical_side: String }
+      end
+    end
+  end
+end

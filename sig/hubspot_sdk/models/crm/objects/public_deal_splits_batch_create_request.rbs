@@ -1,0 +1,24 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Objects
+        type public_deal_splits_batch_create_request =
+          {
+            inputs: ::Array[HubspotSDK::CRM::Objects::PublicDealSplitsCreateRequest]
+          }
+
+        class PublicDealSplitsBatchCreateRequest < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor inputs: ::Array[HubspotSDK::CRM::Objects::PublicDealSplitsCreateRequest]
+
+          def initialize: (
+            inputs: ::Array[HubspotSDK::CRM::Objects::PublicDealSplitsCreateRequest]
+          ) -> void
+
+          def to_hash: -> {
+            inputs: ::Array[HubspotSDK::CRM::Objects::PublicDealSplitsCreateRequest]
+          }
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_flow_batch_fetch_flow_id_coordinate =
+        {
+          flow_id: String,
+          type: HubspotSDK::Models::Automation::APIFlowBatchFetchFlowIDCoordinate::type_
+        }
+
+      class APIFlowBatchFetchFlowIDCoordinate < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor flow_id: String
+
+        attr_accessor type: HubspotSDK::Models::Automation::APIFlowBatchFetchFlowIDCoordinate::type_
+
+        def initialize: (
+          flow_id: String,
+          type: HubspotSDK::Models::Automation::APIFlowBatchFetchFlowIDCoordinate::type_
+        ) -> void
+
+        def to_hash: -> {
+          flow_id: String,
+          type: HubspotSDK::Models::Automation::APIFlowBatchFetchFlowIDCoordinate::type_
+        }
+
+        type type_ = :FLOW_ID
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          FLOW_ID: :FLOW_ID
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIFlowBatchFetchFlowIDCoordinate::type_]
+        end
+      end
+    end
+  end
+end

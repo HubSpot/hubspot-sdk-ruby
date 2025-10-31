@@ -1,0 +1,13 @@
+module HubspotSDK
+  module Resources
+    class Account
+      attr_reader activity: HubspotSDK::Resources::Account::Activity
+
+      attr_reader details: HubspotSDK::Resources::Account::Details
+
+      attr_reader usage: HubspotSDK::Resources::Account::Usage
+
+      def initialize: (client: HubspotSDK::Client) -> void
+    end
+  end
+end

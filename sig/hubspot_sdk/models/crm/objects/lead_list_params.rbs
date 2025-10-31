@@ -1,0 +1,67 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Objects
+        type lead_list_params =
+          {
+            after: String,
+            archived: bool,
+            associations: ::Array[String],
+            limit: Integer,
+            properties: ::Array[String],
+            properties_with_history: ::Array[String]
+          }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class LeadListParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_reader after: String?
+
+          def after=: (String) -> String
+
+          attr_reader archived: bool?
+
+          def archived=: (bool) -> bool
+
+          attr_reader associations: ::Array[String]?
+
+          def associations=: (::Array[String]) -> ::Array[String]
+
+          attr_reader limit: Integer?
+
+          def limit=: (Integer) -> Integer
+
+          attr_reader properties: ::Array[String]?
+
+          def properties=: (::Array[String]) -> ::Array[String]
+
+          attr_reader properties_with_history: ::Array[String]?
+
+          def properties_with_history=: (::Array[String]) -> ::Array[String]
+
+          def initialize: (
+            ?after: String,
+            ?archived: bool,
+            ?associations: ::Array[String],
+            ?limit: Integer,
+            ?properties: ::Array[String],
+            ?properties_with_history: ::Array[String],
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            after: String,
+            archived: bool,
+            associations: ::Array[String],
+            limit: Integer,
+            properties: ::Array[String],
+            properties_with_history: ::Array[String],
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

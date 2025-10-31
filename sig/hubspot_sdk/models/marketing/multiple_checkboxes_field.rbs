@@ -1,0 +1,79 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type multiple_checkboxes_field =
+        {
+          default_values: ::Array[String],
+          dependent_fields: ::Array[HubspotSDK::Marketing::DependentField],
+          field_type: HubspotSDK::Models::Marketing::MultipleCheckboxesField::field_type,
+          hidden: bool,
+          label: String,
+          name: String,
+          object_type_id: String,
+          options: ::Array[HubspotSDK::Marketing::EnumeratedFieldOption],
+          required: bool,
+          description: String
+        }
+
+      class MultipleCheckboxesField < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor default_values: ::Array[String]
+
+        attr_accessor dependent_fields: ::Array[HubspotSDK::Marketing::DependentField]
+
+        attr_accessor field_type: HubspotSDK::Models::Marketing::MultipleCheckboxesField::field_type
+
+        attr_accessor hidden: bool
+
+        attr_accessor label: String
+
+        attr_accessor name: String
+
+        attr_accessor object_type_id: String
+
+        attr_accessor options: ::Array[HubspotSDK::Marketing::EnumeratedFieldOption]
+
+        attr_accessor required: bool
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        def initialize: (
+          default_values: ::Array[String],
+          dependent_fields: ::Array[HubspotSDK::Marketing::DependentField],
+          field_type: HubspotSDK::Models::Marketing::MultipleCheckboxesField::field_type,
+          hidden: bool,
+          label: String,
+          name: String,
+          object_type_id: String,
+          options: ::Array[HubspotSDK::Marketing::EnumeratedFieldOption],
+          required: bool,
+          ?description: String
+        ) -> void
+
+        def to_hash: -> {
+          default_values: ::Array[String],
+          dependent_fields: ::Array[HubspotSDK::Marketing::DependentField],
+          field_type: HubspotSDK::Models::Marketing::MultipleCheckboxesField::field_type,
+          hidden: bool,
+          label: String,
+          name: String,
+          object_type_id: String,
+          options: ::Array[HubspotSDK::Marketing::EnumeratedFieldOption],
+          required: bool,
+          description: String
+        }
+
+        type field_type = :multiple_checkboxes
+
+        module FieldType
+          extend HubspotSDK::Internal::Type::Enum
+
+          MULTIPLE_CHECKBOXES: :multiple_checkboxes
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::MultipleCheckboxesField::field_type]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,53 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Objects
+        module PartnerServices
+          type association_list_params =
+            {
+              partner_service_id: String,
+              after: String,
+              include_fa: bool,
+              limit: Integer
+            }
+            & HubspotSDK::Internal::Type::request_parameters
+
+          class AssociationListParams < HubspotSDK::Internal::Type::BaseModel
+            extend HubspotSDK::Internal::Type::RequestParameters::Converter
+            include HubspotSDK::Internal::Type::RequestParameters
+
+            attr_accessor partner_service_id: String
+
+            attr_reader after: String?
+
+            def after=: (String) -> String
+
+            attr_reader include_fa: bool?
+
+            def include_fa=: (bool) -> bool
+
+            attr_reader limit: Integer?
+
+            def limit=: (Integer) -> Integer
+
+            def initialize: (
+              partner_service_id: String,
+              ?after: String,
+              ?include_fa: bool,
+              ?limit: Integer,
+              ?request_options: HubspotSDK::request_opts
+            ) -> void
+
+            def to_hash: -> {
+              partner_service_id: String,
+              after: String,
+              include_fa: bool,
+              limit: Integer,
+              request_options: HubspotSDK::RequestOptions
+            }
+          end
+        end
+      end
+    end
+  end
+end

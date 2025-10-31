@@ -1,0 +1,26 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type paging =
+        { next_: HubspotSDK::NextPage, prev: HubspotSDK::PreviousPage }
+
+      class Paging < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor next_: HubspotSDK::NextPage
+
+        attr_reader prev: HubspotSDK::PreviousPage?
+
+        def prev=: (HubspotSDK::PreviousPage) -> HubspotSDK::PreviousPage
+
+        def initialize: (
+          next_: HubspotSDK::NextPage,
+          ?prev: HubspotSDK::PreviousPage
+        ) -> void
+
+        def to_hash: -> {
+          next_: HubspotSDK::NextPage,
+          prev: HubspotSDK::PreviousPage
+        }
+      end
+    end
+  end
+end

@@ -1,0 +1,24 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type public_merge_input =
+        { object_id_to_merge: String, primary_object_id: String }
+
+      class PublicMergeInput < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor object_id_to_merge: String
+
+        attr_accessor primary_object_id: String
+
+        def initialize: (
+          object_id_to_merge: String,
+          primary_object_id: String
+        ) -> void
+
+        def to_hash: -> {
+          object_id_to_merge: String,
+          primary_object_id: String
+        }
+      end
+    end
+  end
+end

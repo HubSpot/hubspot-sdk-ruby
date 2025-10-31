@@ -1,0 +1,44 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type public_message_status =
+        {
+          status_type: HubspotSDK::Models::Conversations::PublicMessageStatus::status_type,
+          failure_details: HubspotSDK::Conversations::PublicMessageFailureDetails
+        }
+
+      class PublicMessageStatus < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor status_type: HubspotSDK::Models::Conversations::PublicMessageStatus::status_type
+
+        attr_reader failure_details: HubspotSDK::Conversations::PublicMessageFailureDetails?
+
+        def failure_details=: (
+          HubspotSDK::Conversations::PublicMessageFailureDetails
+        ) -> HubspotSDK::Conversations::PublicMessageFailureDetails
+
+        def initialize: (
+          status_type: HubspotSDK::Models::Conversations::PublicMessageStatus::status_type,
+          ?failure_details: HubspotSDK::Conversations::PublicMessageFailureDetails
+        ) -> void
+
+        def to_hash: -> {
+          status_type: HubspotSDK::Models::Conversations::PublicMessageStatus::status_type,
+          failure_details: HubspotSDK::Conversations::PublicMessageFailureDetails
+        }
+
+        type status_type = :SENT | :FAILED | :RECEIVED | :READ
+
+        module StatusType
+          extend HubspotSDK::Internal::Type::Enum
+
+          SENT: :SENT
+          FAILED: :FAILED
+          RECEIVED: :RECEIVED
+          READ: :READ
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicMessageStatus::status_type]
+        end
+      end
+    end
+  end
+end

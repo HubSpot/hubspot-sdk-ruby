@@ -1,0 +1,199 @@
+# typed: strong
+
+module HubspotSDK
+  module Models
+    module CRM
+      module Extensions
+        class ActionHookActionBody < HubspotSDK::Internal::Type::BaseModel
+          OrHash =
+            T.type_alias do
+              T.any(
+                HubspotSDK::CRM::Extensions::ActionHookActionBody,
+                HubspotSDK::Internal::AnyHash
+              )
+            end
+
+          sig do
+            returns(
+              HubspotSDK::CRM::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+            )
+          end
+          attr_accessor :http_method
+
+          sig { returns(T::Array[String]) }
+          attr_accessor :property_names_included
+
+          sig do
+            returns(
+              HubspotSDK::CRM::Extensions::ActionHookActionBody::Type::TaggedSymbol
+            )
+          end
+          attr_accessor :type
+
+          sig { returns(String) }
+          attr_accessor :url
+
+          sig do
+            returns(
+              T.nilable(HubspotSDK::CRM::Extensions::ActionConfirmationBody)
+            )
+          end
+          attr_reader :confirmation
+
+          sig do
+            params(
+              confirmation:
+                HubspotSDK::CRM::Extensions::ActionConfirmationBody::OrHash
+            ).void
+          end
+          attr_writer :confirmation
+
+          sig { returns(T.nilable(String)) }
+          attr_reader :label
+
+          sig { params(label: String).void }
+          attr_writer :label
+
+          sig do
+            params(
+              http_method:
+                HubspotSDK::CRM::Extensions::ActionHookActionBody::HTTPMethod::OrSymbol,
+              property_names_included: T::Array[String],
+              type:
+                HubspotSDK::CRM::Extensions::ActionHookActionBody::Type::OrSymbol,
+              url: String,
+              confirmation:
+                HubspotSDK::CRM::Extensions::ActionConfirmationBody::OrHash,
+              label: String
+            ).returns(T.attached_class)
+          end
+          def self.new(
+            http_method:,
+            property_names_included:,
+            type:,
+            url:,
+            confirmation: nil,
+            label: nil
+          )
+          end
+
+          sig do
+            override.returns(
+              {
+                http_method:
+                  HubspotSDK::CRM::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol,
+                property_names_included: T::Array[String],
+                type:
+                  HubspotSDK::CRM::Extensions::ActionHookActionBody::Type::TaggedSymbol,
+                url: String,
+                confirmation:
+                  HubspotSDK::CRM::Extensions::ActionConfirmationBody,
+                label: String
+              }
+            )
+          end
+          def to_hash
+          end
+
+          module HTTPMethod
+            extend HubspotSDK::Internal::Type::Enum
+
+            TaggedSymbol =
+              T.type_alias do
+                T.all(
+                  Symbol,
+                  HubspotSDK::CRM::Extensions::ActionHookActionBody::HTTPMethod
+                )
+              end
+            OrSymbol = T.type_alias { T.any(Symbol, String) }
+
+            CONNECT =
+              T.let(
+                :CONNECT,
+                HubspotSDK::CRM::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+              )
+            DELETE =
+              T.let(
+                :DELETE,
+                HubspotSDK::CRM::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+              )
+            GET =
+              T.let(
+                :GET,
+                HubspotSDK::CRM::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+              )
+            HEAD =
+              T.let(
+                :HEAD,
+                HubspotSDK::CRM::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+              )
+            OPTIONS =
+              T.let(
+                :OPTIONS,
+                HubspotSDK::CRM::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+              )
+            PATCH =
+              T.let(
+                :PATCH,
+                HubspotSDK::CRM::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+              )
+            POST =
+              T.let(
+                :POST,
+                HubspotSDK::CRM::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+              )
+            PUT =
+              T.let(
+                :PUT,
+                HubspotSDK::CRM::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+              )
+            TRACE =
+              T.let(
+                :TRACE,
+                HubspotSDK::CRM::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+              )
+
+            sig do
+              override.returns(
+                T::Array[
+                  HubspotSDK::CRM::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+                ]
+              )
+            end
+            def self.values
+            end
+          end
+
+          module Type
+            extend HubspotSDK::Internal::Type::Enum
+
+            TaggedSymbol =
+              T.type_alias do
+                T.all(
+                  Symbol,
+                  HubspotSDK::CRM::Extensions::ActionHookActionBody::Type
+                )
+              end
+            OrSymbol = T.type_alias { T.any(Symbol, String) }
+
+            ACTION_HOOK =
+              T.let(
+                :ACTION_HOOK,
+                HubspotSDK::CRM::Extensions::ActionHookActionBody::Type::TaggedSymbol
+              )
+
+            sig do
+              override.returns(
+                T::Array[
+                  HubspotSDK::CRM::Extensions::ActionHookActionBody::Type::TaggedSymbol
+                ]
+              )
+            end
+            def self.values
+            end
+          end
+        end
+      end
+    end
+  end
+end

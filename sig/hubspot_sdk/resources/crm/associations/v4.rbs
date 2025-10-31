@@ -1,0 +1,49 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class Associations
+        class V4
+          attr_reader batch: HubspotSDK::Resources::CRM::Associations::V4::Batch
+
+          attr_reader report: HubspotSDK::Resources::CRM::Associations::V4::Report
+
+          def create: (
+            String to_object_id,
+            from_object_type: String,
+            from_object_id: String,
+            to_object_type: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::CRM::BatchResponsePublicDefaultAssociation
+
+          def update: (
+            String to_object_id,
+            object_type: String,
+            object_id_: String,
+            to_object_type: String,
+            body: ::Array[HubspotSDK::AssociationSpec],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::CRM::CreatedResponseLabelsBetweenObjectPair
+
+          def list: (
+            String to_object_type,
+            object_type: String,
+            object_id_: String,
+            ?after: String,
+            ?limit: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Internal::Page[HubspotSDK::CRM::MultiAssociatedObjectWithLabel]
+
+          def delete: (
+            String to_object_id,
+            object_type: String,
+            object_id_: String,
+            to_object_type: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

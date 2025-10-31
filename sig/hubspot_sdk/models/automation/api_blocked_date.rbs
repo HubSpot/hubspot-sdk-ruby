@@ -1,0 +1,67 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_blocked_date =
+        {
+          day_of_month: Integer,
+          month: HubspotSDK::Models::Automation::APIBlockedDate::month,
+          year: Integer
+        }
+
+      class APIBlockedDate < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor day_of_month: Integer
+
+        attr_accessor month: HubspotSDK::Models::Automation::APIBlockedDate::month
+
+        attr_reader year: Integer?
+
+        def year=: (Integer) -> Integer
+
+        def initialize: (
+          day_of_month: Integer,
+          month: HubspotSDK::Models::Automation::APIBlockedDate::month,
+          ?year: Integer
+        ) -> void
+
+        def to_hash: -> {
+          day_of_month: Integer,
+          month: HubspotSDK::Models::Automation::APIBlockedDate::month,
+          year: Integer
+        }
+
+        type month =
+          :JANUARY
+          | :FEBRUARY
+          | :MARCH
+          | :APRIL
+          | :MAY
+          | :JUNE
+          | :JULY
+          | :AUGUST
+          | :SEPTEMBER
+          | :OCTOBER
+          | :NOVEMBER
+          | :DECEMBER
+
+        module Month
+          extend HubspotSDK::Internal::Type::Enum
+
+          JANUARY: :JANUARY
+          FEBRUARY: :FEBRUARY
+          MARCH: :MARCH
+          APRIL: :APRIL
+          MAY: :MAY
+          JUNE: :JUNE
+          JULY: :JULY
+          AUGUST: :AUGUST
+          SEPTEMBER: :SEPTEMBER
+          OCTOBER: :OCTOBER
+          NOVEMBER: :NOVEMBER
+          DECEMBER: :DECEMBER
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIBlockedDate::month]
+        end
+      end
+    end
+  end
+end

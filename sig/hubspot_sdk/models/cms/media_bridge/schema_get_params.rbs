@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module MediaBridge
+        type schema_get_params =
+          { app_id: String } & HubspotSDK::Internal::Type::request_parameters
+
+        class SchemaGetParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor app_id: String
+
+          def initialize: (
+            app_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            app_id: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,22 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type batch_input_marketing_event_create_request_params =
+        {
+          inputs: ::Array[HubspotSDK::Marketing::MarketingEventCreateRequestParams]
+        }
+
+      class BatchInputMarketingEventCreateRequestParams < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubspotSDK::Marketing::MarketingEventCreateRequestParams]
+
+        def initialize: (
+          inputs: ::Array[HubspotSDK::Marketing::MarketingEventCreateRequestParams]
+        ) -> void
+
+        def to_hash: -> {
+          inputs: ::Array[HubspotSDK::Marketing::MarketingEventCreateRequestParams]
+        }
+      end
+    end
+  end
+end

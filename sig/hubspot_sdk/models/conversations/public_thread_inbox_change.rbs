@@ -1,0 +1,89 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type public_thread_inbox_change =
+        {
+          id: String,
+          archived: bool,
+          client: HubspotSDK::Conversations::PublicClient,
+          conversations_thread_id: String,
+          created_at: Time,
+          created_by: String,
+          from_inbox_id: String,
+          recipients: ::Array[HubspotSDK::Conversations::PublicRecipient],
+          senders: ::Array[HubspotSDK::Conversations::PublicSender],
+          to_inbox_id: String,
+          type: HubspotSDK::Models::Conversations::PublicThreadInboxChange::type_,
+          updated_at: Time
+        }
+
+      class PublicThreadInboxChange < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor archived: bool
+
+        attr_accessor client: HubspotSDK::Conversations::PublicClient
+
+        attr_accessor conversations_thread_id: String
+
+        attr_accessor created_at: Time
+
+        attr_accessor created_by: String
+
+        attr_accessor from_inbox_id: String
+
+        attr_accessor recipients: ::Array[HubspotSDK::Conversations::PublicRecipient]
+
+        attr_accessor senders: ::Array[HubspotSDK::Conversations::PublicSender]
+
+        attr_accessor to_inbox_id: String
+
+        attr_accessor type: HubspotSDK::Models::Conversations::PublicThreadInboxChange::type_
+
+        attr_reader updated_at: Time?
+
+        def updated_at=: (Time) -> Time
+
+        def initialize: (
+          id: String,
+          archived: bool,
+          client: HubspotSDK::Conversations::PublicClient,
+          conversations_thread_id: String,
+          created_at: Time,
+          created_by: String,
+          from_inbox_id: String,
+          recipients: ::Array[HubspotSDK::Conversations::PublicRecipient],
+          senders: ::Array[HubspotSDK::Conversations::PublicSender],
+          to_inbox_id: String,
+          type: HubspotSDK::Models::Conversations::PublicThreadInboxChange::type_,
+          ?updated_at: Time
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          archived: bool,
+          client: HubspotSDK::Conversations::PublicClient,
+          conversations_thread_id: String,
+          created_at: Time,
+          created_by: String,
+          from_inbox_id: String,
+          recipients: ::Array[HubspotSDK::Conversations::PublicRecipient],
+          senders: ::Array[HubspotSDK::Conversations::PublicSender],
+          to_inbox_id: String,
+          type: HubspotSDK::Models::Conversations::PublicThreadInboxChange::type_,
+          updated_at: Time
+        }
+
+        type type_ = :THREAD_INBOX_CHANGE
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          THREAD_INBOX_CHANGE: :THREAD_INBOX_CHANGE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicThreadInboxChange::type_]
+        end
+      end
+    end
+  end
+end

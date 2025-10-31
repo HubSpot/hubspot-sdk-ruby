@@ -1,0 +1,31 @@
+module HubspotSDK
+  module Resources
+    class Events
+      attr_reader event_definitions: HubspotSDK::Resources::Events::EventDefinitions
+
+      attr_reader send_: HubspotSDK::Resources::Events::Send
+
+      def list: (
+        ?id: ::Array[String],
+        ?after: String,
+        ?before: String,
+        ?event_type: String,
+        ?limit: Integer,
+        ?object_id_: Integer,
+        ?object_property: HubspotSDK::Events::EventListParams::ObjectProperty,
+        ?object_type: String,
+        ?occurred_after: Time,
+        ?occurred_before: Time,
+        ?property: HubspotSDK::Events::EventListParams::Property,
+        ?sort: ::Array[String],
+        ?request_options: HubspotSDK::request_opts
+      ) -> HubspotSDK::Internal::Page[HubspotSDK::Events::ExternalUnifiedEvent]
+
+      def list_event_types: (
+        ?request_options: HubspotSDK::request_opts
+      ) -> HubspotSDK::Events::VisibleExternalEventTypeNames
+
+      def initialize: (client: HubspotSDK::Client) -> void
+    end
+  end
+end

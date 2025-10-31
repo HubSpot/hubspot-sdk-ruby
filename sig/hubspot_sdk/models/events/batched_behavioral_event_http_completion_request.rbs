@@ -1,0 +1,22 @@
+module HubspotSDK
+  module Models
+    module Events
+      type batched_behavioral_event_http_completion_request =
+        {
+          inputs: ::Array[HubspotSDK::Events::BehavioralEventHTTPCompletionRequest]
+        }
+
+      class BatchedBehavioralEventHTTPCompletionRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubspotSDK::Events::BehavioralEventHTTPCompletionRequest]
+
+        def initialize: (
+          inputs: ::Array[HubspotSDK::Events::BehavioralEventHTTPCompletionRequest]
+        ) -> void
+
+        def to_hash: -> {
+          inputs: ::Array[HubspotSDK::Events::BehavioralEventHTTPCompletionRequest]
+        }
+      end
+    end
+  end
+end

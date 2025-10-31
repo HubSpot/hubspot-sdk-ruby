@@ -1,0 +1,275 @@
+module HubspotSDK
+  module Models
+    module Files
+      type file_search_params =
+        {
+          after: String,
+          allows_anonymous_access: bool,
+          before: String,
+          created_at: Time,
+          created_at_gte: Time,
+          created_at_lte: Time,
+          encoding: String,
+          expires_at: Time,
+          expires_at_gte: Time,
+          expires_at_lte: Time,
+          extension: String,
+          :file_md5 => String,
+          height: Integer,
+          height_gte: Integer,
+          height_lte: Integer,
+          id_gte: Integer,
+          id_lte: Integer,
+          ids: ::Array[Integer],
+          is_usable_in_content: bool,
+          limit: Integer,
+          name: String,
+          parent_folder_ids: ::Array[Integer],
+          path: String,
+          properties: ::Array[String],
+          size: Integer,
+          size_gte: Integer,
+          size_lte: Integer,
+          sort: ::Array[String],
+          type: String,
+          updated_at: Time,
+          updated_at_gte: Time,
+          updated_at_lte: Time,
+          url: String,
+          width: Integer,
+          width_gte: Integer,
+          width_lte: Integer
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class FileSearchParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_reader after: String?
+
+        def after=: (String) -> String
+
+        attr_reader allows_anonymous_access: bool?
+
+        def allows_anonymous_access=: (bool) -> bool
+
+        attr_reader before: String?
+
+        def before=: (String) -> String
+
+        attr_reader created_at: Time?
+
+        def created_at=: (Time) -> Time
+
+        attr_reader created_at_gte: Time?
+
+        def created_at_gte=: (Time) -> Time
+
+        attr_reader created_at_lte: Time?
+
+        def created_at_lte=: (Time) -> Time
+
+        attr_reader encoding: String?
+
+        def encoding=: (String) -> String
+
+        attr_reader expires_at: Time?
+
+        def expires_at=: (Time) -> Time
+
+        attr_reader expires_at_gte: Time?
+
+        def expires_at_gte=: (Time) -> Time
+
+        attr_reader expires_at_lte: Time?
+
+        def expires_at_lte=: (Time) -> Time
+
+        attr_reader extension: String?
+
+        def extension=: (String) -> String
+
+        attr_reader file_md5: String?
+
+        def file_md5=: (String) -> String
+
+        attr_reader height: Integer?
+
+        def height=: (Integer) -> Integer
+
+        attr_reader height_gte: Integer?
+
+        def height_gte=: (Integer) -> Integer
+
+        attr_reader height_lte: Integer?
+
+        def height_lte=: (Integer) -> Integer
+
+        attr_reader id_gte: Integer?
+
+        def id_gte=: (Integer) -> Integer
+
+        attr_reader id_lte: Integer?
+
+        def id_lte=: (Integer) -> Integer
+
+        attr_reader ids: ::Array[Integer]?
+
+        def ids=: (::Array[Integer]) -> ::Array[Integer]
+
+        attr_reader is_usable_in_content: bool?
+
+        def is_usable_in_content=: (bool) -> bool
+
+        attr_reader limit: Integer?
+
+        def limit=: (Integer) -> Integer
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader parent_folder_ids: ::Array[Integer]?
+
+        def parent_folder_ids=: (::Array[Integer]) -> ::Array[Integer]
+
+        attr_reader path: String?
+
+        def path=: (String) -> String
+
+        attr_reader properties: ::Array[String]?
+
+        def properties=: (::Array[String]) -> ::Array[String]
+
+        attr_reader size: Integer?
+
+        def size=: (Integer) -> Integer
+
+        attr_reader size_gte: Integer?
+
+        def size_gte=: (Integer) -> Integer
+
+        attr_reader size_lte: Integer?
+
+        def size_lte=: (Integer) -> Integer
+
+        attr_reader sort: ::Array[String]?
+
+        def sort=: (::Array[String]) -> ::Array[String]
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        attr_reader updated_at: Time?
+
+        def updated_at=: (Time) -> Time
+
+        attr_reader updated_at_gte: Time?
+
+        def updated_at_gte=: (Time) -> Time
+
+        attr_reader updated_at_lte: Time?
+
+        def updated_at_lte=: (Time) -> Time
+
+        attr_reader url: String?
+
+        def url=: (String) -> String
+
+        attr_reader width: Integer?
+
+        def width=: (Integer) -> Integer
+
+        attr_reader width_gte: Integer?
+
+        def width_gte=: (Integer) -> Integer
+
+        attr_reader width_lte: Integer?
+
+        def width_lte=: (Integer) -> Integer
+
+        def initialize: (
+          ?after: String,
+          ?allows_anonymous_access: bool,
+          ?before: String,
+          ?created_at: Time,
+          ?created_at_gte: Time,
+          ?created_at_lte: Time,
+          ?encoding: String,
+          ?expires_at: Time,
+          ?expires_at_gte: Time,
+          ?expires_at_lte: Time,
+          ?extension: String,
+          ?file_md5: String,
+          ?height: Integer,
+          ?height_gte: Integer,
+          ?height_lte: Integer,
+          ?id_gte: Integer,
+          ?id_lte: Integer,
+          ?ids: ::Array[Integer],
+          ?is_usable_in_content: bool,
+          ?limit: Integer,
+          ?name: String,
+          ?parent_folder_ids: ::Array[Integer],
+          ?path: String,
+          ?properties: ::Array[String],
+          ?size: Integer,
+          ?size_gte: Integer,
+          ?size_lte: Integer,
+          ?sort: ::Array[String],
+          ?type: String,
+          ?updated_at: Time,
+          ?updated_at_gte: Time,
+          ?updated_at_lte: Time,
+          ?url: String,
+          ?width: Integer,
+          ?width_gte: Integer,
+          ?width_lte: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          after: String,
+          allows_anonymous_access: bool,
+          before: String,
+          created_at: Time,
+          created_at_gte: Time,
+          created_at_lte: Time,
+          encoding: String,
+          expires_at: Time,
+          expires_at_gte: Time,
+          expires_at_lte: Time,
+          extension: String,
+          :file_md5 => String,
+          height: Integer,
+          height_gte: Integer,
+          height_lte: Integer,
+          id_gte: Integer,
+          id_lte: Integer,
+          ids: ::Array[Integer],
+          is_usable_in_content: bool,
+          limit: Integer,
+          name: String,
+          parent_folder_ids: ::Array[Integer],
+          path: String,
+          properties: ::Array[String],
+          size: Integer,
+          size_gte: Integer,
+          size_lte: Integer,
+          sort: ::Array[String],
+          type: String,
+          updated_at: Time,
+          updated_at_gte: Time,
+          updated_at_lte: Time,
+          url: String,
+          width: Integer,
+          width_gte: Integer,
+          width_lte: Integer,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

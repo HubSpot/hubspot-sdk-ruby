@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type list_schedule_conversion_params =
+        {
+          public_list_conversion_time: HubspotSDK::Models::CRM::public_list_conversion_time
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class ListScheduleConversionParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        def public_list_conversion_time: -> HubspotSDK::Models::CRM::public_list_conversion_time
+
+        def public_list_conversion_time=: (
+          HubspotSDK::Models::CRM::public_list_conversion_time _
+        ) -> HubspotSDK::Models::CRM::public_list_conversion_time
+
+        def initialize: (
+          public_list_conversion_time: HubspotSDK::Models::CRM::public_list_conversion_time,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          public_list_conversion_time: HubspotSDK::Models::CRM::public_list_conversion_time,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

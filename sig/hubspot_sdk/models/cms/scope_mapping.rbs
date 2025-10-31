@@ -1,0 +1,28 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type scope_mapping =
+        { access_level: String, request_action: String, scope_name: String }
+
+      class ScopeMapping < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor access_level: String
+
+        attr_accessor request_action: String
+
+        attr_accessor scope_name: String
+
+        def initialize: (
+          access_level: String,
+          request_action: String,
+          scope_name: String
+        ) -> void
+
+        def to_hash: -> {
+          access_level: String,
+          request_action: String,
+          scope_name: String
+        }
+      end
+    end
+  end
+end

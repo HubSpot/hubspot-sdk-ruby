@@ -1,0 +1,46 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type public_message_header =
+        {
+          type: HubspotSDK::Models::Conversations::PublicMessageHeader::type_,
+          file_id: Integer,
+          text: String
+        }
+
+      class PublicMessageHeader < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor type: HubspotSDK::Models::Conversations::PublicMessageHeader::type_
+
+        attr_reader file_id: Integer?
+
+        def file_id=: (Integer) -> Integer
+
+        attr_reader text: String?
+
+        def text=: (String) -> String
+
+        def initialize: (
+          type: HubspotSDK::Models::Conversations::PublicMessageHeader::type_,
+          ?file_id: Integer,
+          ?text: String
+        ) -> void
+
+        def to_hash: -> {
+          type: HubspotSDK::Models::Conversations::PublicMessageHeader::type_,
+          file_id: Integer,
+          text: String
+        }
+
+        type type_ = :MESSAGE_HEADER
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          MESSAGE_HEADER: :MESSAGE_HEADER
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicMessageHeader::type_]
+        end
+      end
+    end
+  end
+end

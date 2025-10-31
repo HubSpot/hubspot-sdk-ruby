@@ -1,0 +1,49 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type meeting_settings_response =
+        {
+          criteria: HubspotSDK::Models::Automation::MeetingSettingsResponse::criteria,
+          selling_strategy: HubspotSDK::Models::Automation::MeetingSettingsResponse::selling_strategy
+        }
+
+      class MeetingSettingsResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor criteria: HubspotSDK::Models::Automation::MeetingSettingsResponse::criteria
+
+        attr_accessor selling_strategy: HubspotSDK::Models::Automation::MeetingSettingsResponse::selling_strategy
+
+        def initialize: (
+          criteria: HubspotSDK::Models::Automation::MeetingSettingsResponse::criteria,
+          selling_strategy: HubspotSDK::Models::Automation::MeetingSettingsResponse::selling_strategy
+        ) -> void
+
+        def to_hash: -> {
+          criteria: HubspotSDK::Models::Automation::MeetingSettingsResponse::criteria,
+          selling_strategy: HubspotSDK::Models::Automation::MeetingSettingsResponse::selling_strategy
+        }
+
+        type criteria = :ALL | :NONE
+
+        module Criteria
+          extend HubspotSDK::Internal::Type::Enum
+
+          ALL: :ALL
+          NONE: :NONE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::MeetingSettingsResponse::criteria]
+        end
+
+        type selling_strategy = :LEAD_BASED | :ACCOUNT_BASED
+
+        module SellingStrategy
+          extend HubspotSDK::Internal::Type::Enum
+
+          LEAD_BASED: :LEAD_BASED
+          ACCOUNT_BASED: :ACCOUNT_BASED
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::MeetingSettingsResponse::selling_strategy]
+        end
+      end
+    end
+  end
+end

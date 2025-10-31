@@ -1,0 +1,44 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type file_attachment =
+        {
+          file_id: String,
+          type: HubspotSDK::Models::Conversations::FileAttachment::type_,
+          file_usage_type: String
+        }
+
+      class FileAttachment < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor file_id: String
+
+        attr_accessor type: HubspotSDK::Models::Conversations::FileAttachment::type_
+
+        attr_reader file_usage_type: String?
+
+        def file_usage_type=: (String) -> String
+
+        def initialize: (
+          file_id: String,
+          type: HubspotSDK::Models::Conversations::FileAttachment::type_,
+          ?file_usage_type: String
+        ) -> void
+
+        def to_hash: -> {
+          file_id: String,
+          type: HubspotSDK::Models::Conversations::FileAttachment::type_,
+          file_usage_type: String
+        }
+
+        type type_ = :FILE
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          FILE: :FILE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::FileAttachment::type_]
+        end
+      end
+    end
+  end
+end

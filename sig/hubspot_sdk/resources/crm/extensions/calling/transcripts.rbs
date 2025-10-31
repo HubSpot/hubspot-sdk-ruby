@@ -1,0 +1,29 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class Extensions
+        class Calling
+          class Transcripts
+            def create: (
+              engagement_id: Integer,
+              transcript_create_utterances: ::Array[HubspotSDK::CRM::Extensions::Calling::TranscriptCreateUtterance],
+              ?request_options: HubspotSDK::request_opts
+            ) -> HubspotSDK::CRM::Extensions::Calling::TranscriptCreateResponse
+
+            def delete: (
+              String transcript_id,
+              ?request_options: HubspotSDK::request_opts
+            ) -> nil
+
+            def get: (
+              String transcript_id,
+              ?request_options: HubspotSDK::request_opts
+            ) -> HubspotSDK::CRM::Extensions::Calling::TranscriptResponse
+
+            def initialize: (client: HubspotSDK::Client) -> void
+          end
+        end
+      end
+    end
+  end
+end

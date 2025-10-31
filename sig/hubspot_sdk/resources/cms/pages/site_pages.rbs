@@ -1,0 +1,349 @@
+module HubspotSDK
+  module Resources
+    class Cms
+      class Pages
+        class SitePages
+          def create: (
+            id: String,
+            ab_status: HubspotSDK::Models::Cms::Page::ab_status,
+            ab_test_id: String,
+            archived_at: Time,
+            archived_in_dashboard: bool,
+            attached_stylesheets: ::Array[::Hash[Symbol, top]],
+            author_name: String,
+            campaign: String,
+            category_id: Integer,
+            content_group_id: String,
+            content_type_category: HubspotSDK::Models::Cms::Page::content_type_category,
+            created: Time,
+            created_by_id: String,
+            currently_published: bool,
+            current_state: HubspotSDK::Models::Cms::Page::current_state,
+            domain: String,
+            dynamic_page_data_source_id: String,
+            dynamic_page_data_source_type: Integer,
+            dynamic_page_hub_db_table_id: String,
+            enable_domain_stylesheets: bool,
+            enable_layout_stylesheets: bool,
+            featured_image: String,
+            featured_image_alt_text: String,
+            folder_id: String,
+            footer_html: String,
+            head_html: String,
+            html_title: String,
+            include_default_custom_css: bool,
+            language: HubspotSDK::Models::Cms::Page::language,
+            layout_sections: ::Hash[Symbol, HubspotSDK::Cms::LayoutSection],
+            link_rel_canonical_url: String,
+            mab_experiment_id: String,
+            meta_description: String,
+            name: String,
+            page_expiry_date: Integer,
+            page_expiry_enabled: bool,
+            page_expiry_redirect_id: Integer,
+            page_expiry_redirect_url: String,
+            page_redirected: bool,
+            password: String,
+            public_access_rules: ::Array[top],
+            public_access_rules_enabled: bool,
+            publish_date: Time,
+            publish_immediately: bool,
+            slug: String,
+            state: String,
+            subcategory: String,
+            template_path: String,
+            theme_settings_values: ::Hash[Symbol, top],
+            translated_from_id: String,
+            translations: ::Hash[Symbol, HubspotSDK::Cms::ContentLanguageVariation],
+            updated: Time,
+            updated_by_id: String,
+            url: String,
+            use_featured_image: bool,
+            widget_containers: ::Hash[Symbol, top],
+            widgets: ::Hash[Symbol, top],
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def update: (
+            String object_id_,
+            id: String,
+            ab_status: HubspotSDK::Models::Cms::Page::ab_status,
+            ab_test_id: String,
+            archived_at: Time,
+            archived_in_dashboard: bool,
+            attached_stylesheets: ::Array[::Hash[Symbol, top]],
+            author_name: String,
+            campaign: String,
+            category_id: Integer,
+            content_group_id: String,
+            content_type_category: HubspotSDK::Models::Cms::Page::content_type_category,
+            created: Time,
+            created_by_id: String,
+            currently_published: bool,
+            current_state: HubspotSDK::Models::Cms::Page::current_state,
+            domain: String,
+            dynamic_page_data_source_id: String,
+            dynamic_page_data_source_type: Integer,
+            dynamic_page_hub_db_table_id: String,
+            enable_domain_stylesheets: bool,
+            enable_layout_stylesheets: bool,
+            featured_image: String,
+            featured_image_alt_text: String,
+            folder_id: String,
+            footer_html: String,
+            head_html: String,
+            html_title: String,
+            include_default_custom_css: bool,
+            language: HubspotSDK::Models::Cms::Page::language,
+            layout_sections: ::Hash[Symbol, HubspotSDK::Cms::LayoutSection],
+            link_rel_canonical_url: String,
+            mab_experiment_id: String,
+            meta_description: String,
+            name: String,
+            page_expiry_date: Integer,
+            page_expiry_enabled: bool,
+            page_expiry_redirect_id: Integer,
+            page_expiry_redirect_url: String,
+            page_redirected: bool,
+            password: String,
+            public_access_rules: ::Array[top],
+            public_access_rules_enabled: bool,
+            publish_date: Time,
+            publish_immediately: bool,
+            slug: String,
+            state: String,
+            subcategory: String,
+            template_path: String,
+            theme_settings_values: ::Hash[Symbol, top],
+            translated_from_id: String,
+            translations: ::Hash[Symbol, HubspotSDK::Cms::ContentLanguageVariation],
+            updated: Time,
+            updated_by_id: String,
+            url: String,
+            use_featured_image: bool,
+            widget_containers: ::Hash[Symbol, top],
+            widgets: ::Hash[Symbol, top],
+            ?archived: bool,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::Page
+
+          def list: (
+            ?after: String,
+            ?archived: bool,
+            ?created_after: Time,
+            ?created_at: Time,
+            ?created_before: Time,
+            ?limit: Integer,
+            ?property: String,
+            ?sort: ::Array[String],
+            ?updated_after: Time,
+            ?updated_at: Time,
+            ?updated_before: Time,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::Page]
+
+          def delete: (
+            String object_id_,
+            ?archived: bool,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def attach_to_lang_group: (
+            id: String,
+            language: String,
+            primary_id: String,
+            ?primary_language: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def clone_: (
+            id: String,
+            ?clone_name: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::Page
+
+          def create_ab_test_variation: (
+            content_id: String,
+            variation_name: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::Page
+
+          def create_batch: (
+            inputs: ::Array[HubspotSDK::Cms::Page],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::BatchResponsePage
+
+          def create_language_variation: (
+            id: String,
+            ?language: String,
+            ?primary_language: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::Page
+
+          def delete_batch: (
+            inputs: ::Array[String],
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def detach_from_lang_group: (
+            id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def end_ab_test: (
+            ab_test_id: String,
+            winner_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def get: (
+            String object_id_,
+            ?archived: bool,
+            ?property: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::Page
+
+          def get_batch: (
+            inputs: ::Array[String],
+            ?archived: bool,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::BatchResponsePage
+
+          def get_draft: (
+            String object_id_,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::Page
+
+          def get_revision: (
+            String revision_id,
+            object_id_: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::VersionPage
+
+          def list_revisions: (
+            String object_id_,
+            ?after: String,
+            ?before: String,
+            ?limit: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::CollectionResponseWithTotalVersionPage
+
+          def publish_draft: (
+            String object_id_,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def rerun_ab_test: (
+            ab_test_id: String,
+            variation_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def reset_draft: (
+            String object_id_,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def restore_revision: (
+            String revision_id,
+            object_id_: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::Page
+
+          def restore_revision_to_draft: (
+            Integer revision_id,
+            object_id_: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::Page
+
+          def schedule: (
+            id: String,
+            publish_date: Time,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def set_new_lang_primary: (
+            id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def update_batch: (
+            inputs: ::Array[top],
+            ?archived: bool,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::BatchResponsePage
+
+          def update_draft: (
+            String object_id_,
+            id: String,
+            ab_status: HubspotSDK::Models::Cms::Page::ab_status,
+            ab_test_id: String,
+            archived_at: Time,
+            archived_in_dashboard: bool,
+            attached_stylesheets: ::Array[::Hash[Symbol, top]],
+            author_name: String,
+            campaign: String,
+            category_id: Integer,
+            content_group_id: String,
+            content_type_category: HubspotSDK::Models::Cms::Page::content_type_category,
+            created: Time,
+            created_by_id: String,
+            currently_published: bool,
+            current_state: HubspotSDK::Models::Cms::Page::current_state,
+            domain: String,
+            dynamic_page_data_source_id: String,
+            dynamic_page_data_source_type: Integer,
+            dynamic_page_hub_db_table_id: String,
+            enable_domain_stylesheets: bool,
+            enable_layout_stylesheets: bool,
+            featured_image: String,
+            featured_image_alt_text: String,
+            folder_id: String,
+            footer_html: String,
+            head_html: String,
+            html_title: String,
+            include_default_custom_css: bool,
+            language: HubspotSDK::Models::Cms::Page::language,
+            layout_sections: ::Hash[Symbol, HubspotSDK::Cms::LayoutSection],
+            link_rel_canonical_url: String,
+            mab_experiment_id: String,
+            meta_description: String,
+            name: String,
+            page_expiry_date: Integer,
+            page_expiry_enabled: bool,
+            page_expiry_redirect_id: Integer,
+            page_expiry_redirect_url: String,
+            page_redirected: bool,
+            password: String,
+            public_access_rules: ::Array[top],
+            public_access_rules_enabled: bool,
+            publish_date: Time,
+            publish_immediately: bool,
+            slug: String,
+            state: String,
+            subcategory: String,
+            template_path: String,
+            theme_settings_values: ::Hash[Symbol, top],
+            translated_from_id: String,
+            translations: ::Hash[Symbol, HubspotSDK::Cms::ContentLanguageVariation],
+            updated: Time,
+            updated_by_id: String,
+            url: String,
+            use_featured_image: bool,
+            widget_containers: ::Hash[Symbol, top],
+            widgets: ::Hash[Symbol, top],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::Page
+
+          def update_languages: (
+            languages: ::Hash[Symbol, String],
+            primary_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

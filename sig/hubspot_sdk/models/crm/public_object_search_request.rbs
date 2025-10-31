@@ -1,0 +1,61 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type public_object_search_request =
+        {
+          after: String,
+          filter_groups: ::Array[HubspotSDK::CRM::FilterGroup],
+          limit: Integer,
+          properties: ::Array[String],
+          query: String,
+          sorts: ::Array[String]
+        }
+
+      class PublicObjectSearchRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_reader after: String?
+
+        def after=: (String) -> String
+
+        attr_reader filter_groups: ::Array[HubspotSDK::CRM::FilterGroup]?
+
+        def filter_groups=: (
+          ::Array[HubspotSDK::CRM::FilterGroup]
+        ) -> ::Array[HubspotSDK::CRM::FilterGroup]
+
+        attr_reader limit: Integer?
+
+        def limit=: (Integer) -> Integer
+
+        attr_reader properties: ::Array[String]?
+
+        def properties=: (::Array[String]) -> ::Array[String]
+
+        attr_reader query: String?
+
+        def query=: (String) -> String
+
+        attr_reader sorts: ::Array[String]?
+
+        def sorts=: (::Array[String]) -> ::Array[String]
+
+        def initialize: (
+          ?after: String,
+          ?filter_groups: ::Array[HubspotSDK::CRM::FilterGroup],
+          ?limit: Integer,
+          ?properties: ::Array[String],
+          ?query: String,
+          ?sorts: ::Array[String]
+        ) -> void
+
+        def to_hash: -> {
+          after: String,
+          filter_groups: ::Array[HubspotSDK::CRM::FilterGroup],
+          limit: Integer,
+          properties: ::Array[String],
+          query: String,
+          sorts: ::Array[String]
+        }
+      end
+    end
+  end
+end

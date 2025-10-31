@@ -1,0 +1,20 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type collection_response_timeline_event_template_no_paging =
+        { results: ::Array[HubspotSDK::CRM::TimelineEventTemplate] }
+
+      class CollectionResponseTimelineEventTemplateNoPaging < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubspotSDK::CRM::TimelineEventTemplate]
+
+        def initialize: (
+          results: ::Array[HubspotSDK::CRM::TimelineEventTemplate]
+        ) -> void
+
+        def to_hash: -> {
+          results: ::Array[HubspotSDK::CRM::TimelineEventTemplate]
+        }
+      end
+    end
+  end
+end

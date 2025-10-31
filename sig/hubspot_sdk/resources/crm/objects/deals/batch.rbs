@@ -1,0 +1,42 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class Objects
+        class Deals
+          class Batch
+            def create: (
+              inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectBatchInputForCreate],
+              ?request_options: HubspotSDK::request_opts
+            ) -> HubspotSDK::CRM::BatchResponseSimplePublicObject
+
+            def update: (
+              inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectBatchInput],
+              ?request_options: HubspotSDK::request_opts
+            ) -> HubspotSDK::CRM::BatchResponseSimplePublicObject
+
+            def delete: (
+              inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectID],
+              ?request_options: HubspotSDK::request_opts
+            ) -> nil
+
+            def get: (
+              inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectID],
+              properties: ::Array[String],
+              properties_with_history: ::Array[String],
+              ?archived: bool,
+              ?id_property: String,
+              ?request_options: HubspotSDK::request_opts
+            ) -> HubspotSDK::CRM::BatchResponseSimplePublicObject
+
+            def upsert: (
+              inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectBatchInputUpsert],
+              ?request_options: HubspotSDK::request_opts
+            ) -> HubspotSDK::CRM::BatchResponseSimplePublicUpsertObject
+
+            def initialize: (client: HubspotSDK::Client) -> void
+          end
+        end
+      end
+    end
+  end
+end

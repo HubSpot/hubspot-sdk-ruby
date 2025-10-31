@@ -1,0 +1,36 @@
+module HubspotSDK
+  module Internal
+    class Page[Elem]
+      include HubspotSDK::Internal::Type::BasePage[Elem]
+
+      attr_accessor results: ::Array[Elem]?
+
+      attr_accessor paging: Paging
+
+      def inspect: -> String
+
+      type paging = { next_: Paging::Next }
+      class Paging < HubspotSDK::Internal::Type::BaseModel
+        attr_reader next_: Paging::Next?
+
+        def next_=: (Paging::Next) -> Paging::Next
+
+        def initialize: (?next_: Paging::Next) -> void
+
+        def to_hash: -> { next_: Paging::Next }
+
+        type next_ = { after: String }
+
+        class Next < HubspotSDK::Internal::Type::BaseModel
+          attr_reader after: String?
+
+          def after=: (String) -> String
+
+          def initialize: (?after: String) -> void
+
+          def to_hash: -> { after: String }
+        end
+      end
+    end
+  end
+end

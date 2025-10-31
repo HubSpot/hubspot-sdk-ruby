@@ -1,0 +1,56 @@
+module HubspotSDK
+  module Models
+    module Account
+      type public_api_user_action_event =
+        {
+          id: String,
+          acting_user: HubspotSDK::Account::ActingUser,
+          action: String,
+          category: String,
+          occurred_at: Time,
+          sub_category: String,
+          target_object_id: String
+        }
+
+      class PublicAPIUserActionEvent < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor acting_user: HubspotSDK::Account::ActingUser
+
+        attr_accessor action: String
+
+        attr_accessor category: String
+
+        attr_accessor occurred_at: Time
+
+        attr_reader sub_category: String?
+
+        def sub_category=: (String) -> String
+
+        attr_reader target_object_id: String?
+
+        def target_object_id=: (String) -> String
+
+        def initialize: (
+          id: String,
+          acting_user: HubspotSDK::Account::ActingUser,
+          action: String,
+          category: String,
+          occurred_at: Time,
+          ?sub_category: String,
+          ?target_object_id: String
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          acting_user: HubspotSDK::Account::ActingUser,
+          action: String,
+          category: String,
+          occurred_at: Time,
+          sub_category: String,
+          target_object_id: String
+        }
+      end
+    end
+  end
+end

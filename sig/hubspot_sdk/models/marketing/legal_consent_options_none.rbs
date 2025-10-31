@@ -1,0 +1,30 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type legal_consent_options_none =
+        { type: HubspotSDK::Models::Marketing::LegalConsentOptionsNone::type_ }
+
+      class LegalConsentOptionsNone < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor type: HubspotSDK::Models::Marketing::LegalConsentOptionsNone::type_
+
+        def initialize: (
+          type: HubspotSDK::Models::Marketing::LegalConsentOptionsNone::type_
+        ) -> void
+
+        def to_hash: -> {
+          type: HubspotSDK::Models::Marketing::LegalConsentOptionsNone::type_
+        }
+
+        type type_ = :none
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          NONE: :none
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::LegalConsentOptionsNone::type_]
+        end
+      end
+    end
+  end
+end

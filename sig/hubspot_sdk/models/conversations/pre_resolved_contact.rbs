@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type pre_resolved_contact =
+        {
+          contact_properties_leading_to_match: ::Array[String],
+          contact_vid: Integer
+        }
+
+      class PreResolvedContact < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor contact_properties_leading_to_match: ::Array[String]
+
+        attr_accessor contact_vid: Integer
+
+        def initialize: (
+          contact_properties_leading_to_match: ::Array[String],
+          contact_vid: Integer
+        ) -> void
+
+        def to_hash: -> {
+          contact_properties_leading_to_match: ::Array[String],
+          contact_vid: Integer
+        }
+      end
+    end
+  end
+end

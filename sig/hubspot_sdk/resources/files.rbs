@@ -1,0 +1,11 @@
+module HubspotSDK
+  module Resources
+    class Files
+      attr_reader files: HubspotSDK::Resources::Files::Files
+
+      attr_reader folders: HubspotSDK::Resources::Files::Folders
+
+      def initialize: (client: HubspotSDK::Client) -> void
+    end
+  end
+end

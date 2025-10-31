@@ -1,0 +1,64 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type batch_response_timeline_event_response =
+        {
+          completed_at: Time,
+          results: ::Array[HubspotSDK::CRM::TimelineEventResponse],
+          started_at: Time,
+          status: HubspotSDK::Models::CRM::BatchResponseTimelineEventResponse::status,
+          links: ::Hash[Symbol, String],
+          requested_at: Time
+        }
+
+      class BatchResponseTimelineEventResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor completed_at: Time
+
+        attr_accessor results: ::Array[HubspotSDK::CRM::TimelineEventResponse]
+
+        attr_accessor started_at: Time
+
+        attr_accessor status: HubspotSDK::Models::CRM::BatchResponseTimelineEventResponse::status
+
+        attr_reader links: ::Hash[Symbol, String]?
+
+        def links=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
+
+        attr_reader requested_at: Time?
+
+        def requested_at=: (Time) -> Time
+
+        def initialize: (
+          completed_at: Time,
+          results: ::Array[HubspotSDK::CRM::TimelineEventResponse],
+          started_at: Time,
+          status: HubspotSDK::Models::CRM::BatchResponseTimelineEventResponse::status,
+          ?links: ::Hash[Symbol, String],
+          ?requested_at: Time
+        ) -> void
+
+        def to_hash: -> {
+          completed_at: Time,
+          results: ::Array[HubspotSDK::CRM::TimelineEventResponse],
+          started_at: Time,
+          status: HubspotSDK::Models::CRM::BatchResponseTimelineEventResponse::status,
+          links: ::Hash[Symbol, String],
+          requested_at: Time
+        }
+
+        type status = :PENDING | :PROCESSING | :CANCELED | :COMPLETE
+
+        module Status
+          extend HubspotSDK::Internal::Type::Enum
+
+          PENDING: :PENDING
+          PROCESSING: :PROCESSING
+          CANCELED: :CANCELED
+          COMPLETE: :COMPLETE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CRM::BatchResponseTimelineEventResponse::status]
+        end
+      end
+    end
+  end
+end

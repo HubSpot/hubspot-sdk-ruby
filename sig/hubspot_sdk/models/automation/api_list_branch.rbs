@@ -1,0 +1,58 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_list_branch =
+        {
+          branch_name: String,
+          connection: HubspotSDK::Automation::APIConnection,
+          filter_branch: HubspotSDK::Models::Automation::APIListBranch::filter_branch
+        }
+
+      class APIListBranch < HubspotSDK::Internal::Type::BaseModel
+        attr_reader branch_name: String?
+
+        def branch_name=: (String) -> String
+
+        attr_reader connection: HubspotSDK::Automation::APIConnection?
+
+        def connection=: (
+          HubspotSDK::Automation::APIConnection
+        ) -> HubspotSDK::Automation::APIConnection
+
+        attr_reader filter_branch: HubspotSDK::Models::Automation::APIListBranch::filter_branch?
+
+        def filter_branch=: (
+          HubspotSDK::Models::Automation::APIListBranch::filter_branch
+        ) -> HubspotSDK::Models::Automation::APIListBranch::filter_branch
+
+        def initialize: (
+          ?branch_name: String,
+          ?connection: HubspotSDK::Automation::APIConnection,
+          ?filter_branch: HubspotSDK::Models::Automation::APIListBranch::filter_branch
+        ) -> void
+
+        def to_hash: -> {
+          branch_name: String,
+          connection: HubspotSDK::Automation::APIConnection,
+          filter_branch: HubspotSDK::Models::Automation::APIListBranch::filter_branch
+        }
+
+        type filter_branch =
+          HubspotSDK::PublicOrFilterBranch
+          | HubspotSDK::PublicAndFilterBranch
+          | HubspotSDK::PublicNotAllFilterBranch
+          | HubspotSDK::PublicNotAnyFilterBranch
+          | HubspotSDK::PublicRestrictedFilterBranch
+          | HubspotSDK::PublicUnifiedEventsFilterBranch
+          | HubspotSDK::PublicPropertyAssociationFilterBranch
+          | HubspotSDK::PublicAssociationFilterBranch
+
+        module FilterBranch
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Automation::APIListBranch::filter_branch]
+        end
+      end
+    end
+  end
+end

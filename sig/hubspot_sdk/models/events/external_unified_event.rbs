@@ -1,0 +1,49 @@
+module HubspotSDK
+  module Models
+    module Events
+      type external_unified_event =
+        {
+          id: String,
+          event_type: String,
+          object_id_: String,
+          object_type: String,
+          occurred_at: Time,
+          properties: ::Hash[Symbol, String]
+        }
+
+      class ExternalUnifiedEvent < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor event_type: String
+
+        attr_accessor object_id_: String
+
+        attr_accessor object_type: String
+
+        attr_accessor occurred_at: Time
+
+        attr_reader properties: ::Hash[Symbol, String]?
+
+        def properties=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
+
+        def initialize: (
+          id: String,
+          event_type: String,
+          object_id_: String,
+          object_type: String,
+          occurred_at: Time,
+          ?properties: ::Hash[Symbol, String]
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          event_type: String,
+          object_id_: String,
+          object_type: String,
+          occurred_at: Time,
+          properties: ::Hash[Symbol, String]
+        }
+      end
+    end
+  end
+end

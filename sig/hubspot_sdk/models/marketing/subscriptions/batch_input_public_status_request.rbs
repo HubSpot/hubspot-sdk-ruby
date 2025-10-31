@@ -1,0 +1,24 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      module Subscriptions
+        type batch_input_public_status_request =
+          {
+            inputs: ::Array[HubspotSDK::Marketing::Subscriptions::PublicStatusRequest]
+          }
+
+        class BatchInputPublicStatusRequest < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor inputs: ::Array[HubspotSDK::Marketing::Subscriptions::PublicStatusRequest]
+
+          def initialize: (
+            inputs: ::Array[HubspotSDK::Marketing::Subscriptions::PublicStatusRequest]
+          ) -> void
+
+          def to_hash: -> {
+            inputs: ::Array[HubspotSDK::Marketing::Subscriptions::PublicStatusRequest]
+          }
+        end
+      end
+    end
+  end
+end

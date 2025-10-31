@@ -1,0 +1,95 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type timeline_event_response =
+        {
+          id: String,
+          event_template_id: String,
+          object_type: String,
+          tokens: ::Hash[Symbol, String],
+          created_at: Time,
+          domain: String,
+          email: String,
+          extra_data: top,
+          object_id_: String,
+          timeline_i_frame: HubspotSDK::CRM::TimelineEventIFrame,
+          timestamp: Time,
+          utk: String
+        }
+
+      class TimelineEventResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor event_template_id: String
+
+        attr_accessor object_type: String
+
+        attr_accessor tokens: ::Hash[Symbol, String]
+
+        attr_reader created_at: Time?
+
+        def created_at=: (Time) -> Time
+
+        attr_reader domain: String?
+
+        def domain=: (String) -> String
+
+        attr_reader email: String?
+
+        def email=: (String) -> String
+
+        attr_reader extra_data: top?
+
+        def extra_data=: (top) -> top
+
+        attr_reader object_id_: String?
+
+        def object_id_=: (String) -> String
+
+        attr_reader timeline_i_frame: HubspotSDK::CRM::TimelineEventIFrame?
+
+        def timeline_i_frame=: (
+          HubspotSDK::CRM::TimelineEventIFrame
+        ) -> HubspotSDK::CRM::TimelineEventIFrame
+
+        attr_reader timestamp: Time?
+
+        def timestamp=: (Time) -> Time
+
+        attr_reader utk: String?
+
+        def utk=: (String) -> String
+
+        def initialize: (
+          id: String,
+          event_template_id: String,
+          object_type: String,
+          tokens: ::Hash[Symbol, String],
+          ?created_at: Time,
+          ?domain: String,
+          ?email: String,
+          ?extra_data: top,
+          ?object_id_: String,
+          ?timeline_i_frame: HubspotSDK::CRM::TimelineEventIFrame,
+          ?timestamp: Time,
+          ?utk: String
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          event_template_id: String,
+          object_type: String,
+          tokens: ::Hash[Symbol, String],
+          created_at: Time,
+          domain: String,
+          email: String,
+          extra_data: top,
+          object_id_: String,
+          timeline_i_frame: HubspotSDK::CRM::TimelineEventIFrame,
+          timestamp: Time,
+          utk: String
+        }
+      end
+    end
+  end
+end

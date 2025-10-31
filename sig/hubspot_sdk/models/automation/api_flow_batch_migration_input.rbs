@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_flow_batch_migration_input =
+        {
+          inputs: ::Array[HubspotSDK::Models::Automation::APIFlowBatchMigrationInput::input]
+        }
+
+      class APIFlowBatchMigrationInput < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubspotSDK::Models::Automation::APIFlowBatchMigrationInput::input]
+
+        def initialize: (
+          inputs: ::Array[HubspotSDK::Models::Automation::APIFlowBatchMigrationInput::input]
+        ) -> void
+
+        def to_hash: -> {
+          inputs: ::Array[HubspotSDK::Models::Automation::APIFlowBatchMigrationInput::input]
+        }
+
+        type input =
+          HubspotSDK::Automation::APIFlowBatchFetchMigrationFlowIDCoordinate
+          | HubspotSDK::Automation::APIFlowBatchFetchMigrationWorkflowIDCoordinate
+
+        module Input
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Automation::APIFlowBatchMigrationInput::input]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,55 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type contact_profile =
+        {
+          addresses: ::Array[HubspotSDK::Conversations::ContactAddress],
+          emails: ::Array[HubspotSDK::Conversations::ContactEmail],
+          phones: ::Array[HubspotSDK::Conversations::ContactPhone],
+          urls: ::Array[HubspotSDK::Conversations::ContactURL],
+          name: HubspotSDK::Conversations::ContactName,
+          org: HubspotSDK::Conversations::ContactOrg
+        }
+
+      class ContactProfile < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor addresses: ::Array[HubspotSDK::Conversations::ContactAddress]
+
+        attr_accessor emails: ::Array[HubspotSDK::Conversations::ContactEmail]
+
+        attr_accessor phones: ::Array[HubspotSDK::Conversations::ContactPhone]
+
+        attr_accessor urls: ::Array[HubspotSDK::Conversations::ContactURL]
+
+        attr_reader name: HubspotSDK::Conversations::ContactName?
+
+        def name=: (
+          HubspotSDK::Conversations::ContactName
+        ) -> HubspotSDK::Conversations::ContactName
+
+        attr_reader org: HubspotSDK::Conversations::ContactOrg?
+
+        def org=: (
+          HubspotSDK::Conversations::ContactOrg
+        ) -> HubspotSDK::Conversations::ContactOrg
+
+        def initialize: (
+          addresses: ::Array[HubspotSDK::Conversations::ContactAddress],
+          emails: ::Array[HubspotSDK::Conversations::ContactEmail],
+          phones: ::Array[HubspotSDK::Conversations::ContactPhone],
+          urls: ::Array[HubspotSDK::Conversations::ContactURL],
+          ?name: HubspotSDK::Conversations::ContactName,
+          ?org: HubspotSDK::Conversations::ContactOrg
+        ) -> void
+
+        def to_hash: -> {
+          addresses: ::Array[HubspotSDK::Conversations::ContactAddress],
+          emails: ::Array[HubspotSDK::Conversations::ContactEmail],
+          phones: ::Array[HubspotSDK::Conversations::ContactPhone],
+          urls: ::Array[HubspotSDK::Conversations::ContactURL],
+          name: HubspotSDK::Conversations::ContactName,
+          org: HubspotSDK::Conversations::ContactOrg
+        }
+      end
+    end
+  end
+end

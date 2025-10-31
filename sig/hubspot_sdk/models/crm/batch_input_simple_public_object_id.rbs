@@ -1,0 +1,20 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type batch_input_simple_public_object_id =
+        { inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectID] }
+
+      class BatchInputSimplePublicObjectID < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectID]
+
+        def initialize: (
+          inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectID]
+        ) -> void
+
+        def to_hash: -> {
+          inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectID]
+        }
+      end
+    end
+  end
+end

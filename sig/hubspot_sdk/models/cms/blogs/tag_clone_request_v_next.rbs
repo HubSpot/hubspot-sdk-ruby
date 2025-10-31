@@ -1,0 +1,43 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Blogs
+        type tag_clone_request_v_next =
+          {
+            id: String,
+            name: String,
+            language: String,
+            primary_language: String
+          }
+
+        class TagCloneRequestVNext < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_accessor name: String
+
+          attr_reader language: String?
+
+          def language=: (String) -> String
+
+          attr_reader primary_language: String?
+
+          def primary_language=: (String) -> String
+
+          def initialize: (
+            id: String,
+            name: String,
+            ?language: String,
+            ?primary_language: String
+          ) -> void
+
+          def to_hash: -> {
+            id: String,
+            name: String,
+            language: String,
+            primary_language: String
+          }
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_contact_property_anchor =
+        {
+          contact_property: String,
+          type: HubspotSDK::Models::Automation::APIContactPropertyAnchor::type_
+        }
+
+      class APIContactPropertyAnchor < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor contact_property: String
+
+        attr_accessor type: HubspotSDK::Models::Automation::APIContactPropertyAnchor::type_
+
+        def initialize: (
+          contact_property: String,
+          type: HubspotSDK::Models::Automation::APIContactPropertyAnchor::type_
+        ) -> void
+
+        def to_hash: -> {
+          contact_property: String,
+          type: HubspotSDK::Models::Automation::APIContactPropertyAnchor::type_
+        }
+
+        type type_ = :CONTACT_PROPERTY_ANCHOR
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          CONTACT_PROPERTY_ANCHOR: :CONTACT_PROPERTY_ANCHOR
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIContactPropertyAnchor::type_]
+        end
+      end
+    end
+  end
+end

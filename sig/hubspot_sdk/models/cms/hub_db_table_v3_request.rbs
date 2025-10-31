@@ -1,0 +1,73 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type hub_db_table_v3_request =
+        {
+          label: String,
+          name: String,
+          allow_child_tables: bool,
+          allow_public_api_access: bool,
+          columns: ::Array[HubspotSDK::Cms::ColumnRequest],
+          dynamic_meta_tags: ::Hash[Symbol, Integer],
+          enable_child_table_pages: bool,
+          use_for_pages: bool
+        }
+
+      class HubDBTableV3Request < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor label: String
+
+        attr_accessor name: String
+
+        attr_reader allow_child_tables: bool?
+
+        def allow_child_tables=: (bool) -> bool
+
+        attr_reader allow_public_api_access: bool?
+
+        def allow_public_api_access=: (bool) -> bool
+
+        attr_reader columns: ::Array[HubspotSDK::Cms::ColumnRequest]?
+
+        def columns=: (
+          ::Array[HubspotSDK::Cms::ColumnRequest]
+        ) -> ::Array[HubspotSDK::Cms::ColumnRequest]
+
+        attr_reader dynamic_meta_tags: ::Hash[Symbol, Integer]?
+
+        def dynamic_meta_tags=: (
+          ::Hash[Symbol, Integer]
+        ) -> ::Hash[Symbol, Integer]
+
+        attr_reader enable_child_table_pages: bool?
+
+        def enable_child_table_pages=: (bool) -> bool
+
+        attr_reader use_for_pages: bool?
+
+        def use_for_pages=: (bool) -> bool
+
+        def initialize: (
+          label: String,
+          name: String,
+          ?allow_child_tables: bool,
+          ?allow_public_api_access: bool,
+          ?columns: ::Array[HubspotSDK::Cms::ColumnRequest],
+          ?dynamic_meta_tags: ::Hash[Symbol, Integer],
+          ?enable_child_table_pages: bool,
+          ?use_for_pages: bool
+        ) -> void
+
+        def to_hash: -> {
+          label: String,
+          name: String,
+          allow_child_tables: bool,
+          allow_public_api_access: bool,
+          columns: ::Array[HubspotSDK::Cms::ColumnRequest],
+          dynamic_meta_tags: ::Hash[Symbol, Integer],
+          enable_child_table_pages: bool,
+          use_for_pages: bool
+        }
+      end
+    end
+  end
+end

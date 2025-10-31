@@ -1,0 +1,44 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type record_list_membership =
+        {
+          first_added_timestamp: Time,
+          last_added_timestamp: Time,
+          list_id: String,
+          list_version: Integer,
+          is_public_list: bool
+        }
+
+      class RecordListMembership < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor first_added_timestamp: Time
+
+        attr_accessor last_added_timestamp: Time
+
+        attr_accessor list_id: String
+
+        attr_accessor list_version: Integer
+
+        attr_reader is_public_list: bool?
+
+        def is_public_list=: (bool) -> bool
+
+        def initialize: (
+          first_added_timestamp: Time,
+          last_added_timestamp: Time,
+          list_id: String,
+          list_version: Integer,
+          ?is_public_list: bool
+        ) -> void
+
+        def to_hash: -> {
+          first_added_timestamp: Time,
+          last_added_timestamp: Time,
+          list_id: String,
+          list_version: Integer,
+          is_public_list: bool
+        }
+      end
+    end
+  end
+end

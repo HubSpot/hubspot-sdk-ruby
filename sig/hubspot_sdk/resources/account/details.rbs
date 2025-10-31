@@ -1,0 +1,13 @@
+module HubspotSDK
+  module Resources
+    class Account
+      class Details
+        def get: (
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Account::PortalInformationResponse
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

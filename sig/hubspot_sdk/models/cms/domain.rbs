@@ -1,0 +1,141 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type domain =
+        {
+          id: String,
+          domain: String,
+          is_resolving: bool,
+          is_used_for_blog_post: bool,
+          is_used_for_email: bool,
+          is_used_for_knowledge: bool,
+          is_used_for_landing_page: bool,
+          is_used_for_site_page: bool,
+          correct_cname: String,
+          created: Time,
+          is_ssl_enabled: bool,
+          is_ssl_only: bool,
+          manually_marked_as_resolving: bool,
+          primary_blog_post: bool,
+          primary_email: bool,
+          primary_knowledge: bool,
+          primary_landing_page: bool,
+          primary_site_page: bool,
+          secondary_to_domain: String,
+          updated: Time
+        }
+
+      class Domain < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor domain: String
+
+        attr_accessor is_resolving: bool
+
+        attr_accessor is_used_for_blog_post: bool
+
+        attr_accessor is_used_for_email: bool
+
+        attr_accessor is_used_for_knowledge: bool
+
+        attr_accessor is_used_for_landing_page: bool
+
+        attr_accessor is_used_for_site_page: bool
+
+        attr_reader correct_cname: String?
+
+        def correct_cname=: (String) -> String
+
+        attr_reader created: Time?
+
+        def created=: (Time) -> Time
+
+        attr_reader is_ssl_enabled: bool?
+
+        def is_ssl_enabled=: (bool) -> bool
+
+        attr_reader is_ssl_only: bool?
+
+        def is_ssl_only=: (bool) -> bool
+
+        attr_reader manually_marked_as_resolving: bool?
+
+        def manually_marked_as_resolving=: (bool) -> bool
+
+        attr_reader primary_blog_post: bool?
+
+        def primary_blog_post=: (bool) -> bool
+
+        attr_reader primary_email: bool?
+
+        def primary_email=: (bool) -> bool
+
+        attr_reader primary_knowledge: bool?
+
+        def primary_knowledge=: (bool) -> bool
+
+        attr_reader primary_landing_page: bool?
+
+        def primary_landing_page=: (bool) -> bool
+
+        attr_reader primary_site_page: bool?
+
+        def primary_site_page=: (bool) -> bool
+
+        attr_reader secondary_to_domain: String?
+
+        def secondary_to_domain=: (String) -> String
+
+        attr_reader updated: Time?
+
+        def updated=: (Time) -> Time
+
+        def initialize: (
+          id: String,
+          domain: String,
+          is_resolving: bool,
+          is_used_for_blog_post: bool,
+          is_used_for_email: bool,
+          is_used_for_knowledge: bool,
+          is_used_for_landing_page: bool,
+          is_used_for_site_page: bool,
+          ?correct_cname: String,
+          ?created: Time,
+          ?is_ssl_enabled: bool,
+          ?is_ssl_only: bool,
+          ?manually_marked_as_resolving: bool,
+          ?primary_blog_post: bool,
+          ?primary_email: bool,
+          ?primary_knowledge: bool,
+          ?primary_landing_page: bool,
+          ?primary_site_page: bool,
+          ?secondary_to_domain: String,
+          ?updated: Time
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          domain: String,
+          is_resolving: bool,
+          is_used_for_blog_post: bool,
+          is_used_for_email: bool,
+          is_used_for_knowledge: bool,
+          is_used_for_landing_page: bool,
+          is_used_for_site_page: bool,
+          correct_cname: String,
+          created: Time,
+          is_ssl_enabled: bool,
+          is_ssl_only: bool,
+          manually_marked_as_resolving: bool,
+          primary_blog_post: bool,
+          primary_email: bool,
+          primary_knowledge: bool,
+          primary_landing_page: bool,
+          primary_site_page: bool,
+          secondary_to_domain: String,
+          updated: Time
+        }
+      end
+    end
+  end
+end

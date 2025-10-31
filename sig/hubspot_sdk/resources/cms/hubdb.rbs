@@ -1,0 +1,13 @@
+module HubspotSDK
+  module Resources
+    class Cms
+      class Hubdb
+        attr_reader rows: HubspotSDK::Resources::Cms::Hubdb::Rows
+
+        attr_reader tables: HubspotSDK::Resources::Cms::Hubdb::Tables
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

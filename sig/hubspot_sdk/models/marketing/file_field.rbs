@@ -1,0 +1,88 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type file_field =
+        {
+          allow_multiple_files: bool,
+          dependent_fields: ::Array[HubspotSDK::Marketing::DependentField],
+          field_type: HubspotSDK::Models::Marketing::FileField::field_type,
+          hidden: bool,
+          label: String,
+          name: String,
+          object_type_id: String,
+          required: bool,
+          default_value: String,
+          description: String,
+          placeholder: String
+        }
+
+      class FileField < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor allow_multiple_files: bool
+
+        attr_accessor dependent_fields: ::Array[HubspotSDK::Marketing::DependentField]
+
+        attr_accessor field_type: HubspotSDK::Models::Marketing::FileField::field_type
+
+        attr_accessor hidden: bool
+
+        attr_accessor label: String
+
+        attr_accessor name: String
+
+        attr_accessor object_type_id: String
+
+        attr_accessor required: bool
+
+        attr_reader default_value: String?
+
+        def default_value=: (String) -> String
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader placeholder: String?
+
+        def placeholder=: (String) -> String
+
+        def initialize: (
+          allow_multiple_files: bool,
+          dependent_fields: ::Array[HubspotSDK::Marketing::DependentField],
+          field_type: HubspotSDK::Models::Marketing::FileField::field_type,
+          hidden: bool,
+          label: String,
+          name: String,
+          object_type_id: String,
+          required: bool,
+          ?default_value: String,
+          ?description: String,
+          ?placeholder: String
+        ) -> void
+
+        def to_hash: -> {
+          allow_multiple_files: bool,
+          dependent_fields: ::Array[HubspotSDK::Marketing::DependentField],
+          field_type: HubspotSDK::Models::Marketing::FileField::field_type,
+          hidden: bool,
+          label: String,
+          name: String,
+          object_type_id: String,
+          required: bool,
+          default_value: String,
+          description: String,
+          placeholder: String
+        }
+
+        type field_type = :file
+
+        module FieldType
+          extend HubspotSDK::Internal::Type::Enum
+
+          FILE: :file
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::FileField::field_type]
+        end
+      end
+    end
+  end
+end

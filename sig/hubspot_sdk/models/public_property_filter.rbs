@@ -1,0 +1,65 @@
+module HubspotSDK
+  module Models
+    type public_property_filter =
+      {
+        filter_type: HubspotSDK::Models::PublicPropertyFilter::filter_type,
+        operation: HubspotSDK::Models::PublicPropertyFilter::operation,
+        property: String
+      }
+
+    class PublicPropertyFilter < HubspotSDK::Internal::Type::BaseModel
+      attr_accessor filter_type: HubspotSDK::Models::PublicPropertyFilter::filter_type
+
+      attr_accessor operation: HubspotSDK::Models::PublicPropertyFilter::operation
+
+      attr_accessor property: String
+
+      def initialize: (
+        filter_type: HubspotSDK::Models::PublicPropertyFilter::filter_type,
+        operation: HubspotSDK::Models::PublicPropertyFilter::operation,
+        property: String
+      ) -> void
+
+      def to_hash: -> {
+        filter_type: HubspotSDK::Models::PublicPropertyFilter::filter_type,
+        operation: HubspotSDK::Models::PublicPropertyFilter::operation,
+        property: String
+      }
+
+      type filter_type = :PROPERTY
+
+      module FilterType
+        extend HubspotSDK::Internal::Type::Enum
+
+        PROPERTY: :PROPERTY
+
+        def self?.values: -> ::Array[HubspotSDK::Models::PublicPropertyFilter::filter_type]
+      end
+
+      type operation =
+        HubspotSDK::PublicBoolPropertyOperation
+        | HubspotSDK::PublicNumberPropertyOperation
+        | HubspotSDK::PublicStringPropertyOperation
+        | HubspotSDK::PublicDateTimePropertyOperation
+        | HubspotSDK::PublicRangedDatePropertyOperation
+        | HubspotSDK::PublicComparativePropertyUpdatedOperation
+        | HubspotSDK::PublicComparativeDatePropertyOperation
+        | HubspotSDK::PublicRollingDateRangePropertyOperation
+        | HubspotSDK::PublicRollingPropertyUpdatedOperation
+        | HubspotSDK::PublicEnumerationPropertyOperation
+        | HubspotSDK::PublicAllPropertyTypesOperation
+        | HubspotSDK::PublicRangedNumberPropertyOperation
+        | HubspotSDK::PublicMultiStringPropertyOperation
+        | HubspotSDK::PublicDatePropertyOperation
+        | HubspotSDK::PublicCalendarDatePropertyOperation
+        | HubspotSDK::PublicTimePointOperation
+        | HubspotSDK::PublicRangedTimeOperation
+
+      module Operation
+        extend HubspotSDK::Internal::Type::Union
+
+        def self?.variants: -> ::Array[HubspotSDK::Models::PublicPropertyFilter::operation]
+      end
+    end
+  end
+end

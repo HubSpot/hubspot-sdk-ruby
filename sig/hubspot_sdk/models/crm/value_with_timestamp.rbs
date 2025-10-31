@@ -1,0 +1,53 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type value_with_timestamp =
+        {
+          source_type: String,
+          timestamp: Time,
+          value: String,
+          source_id: String,
+          source_label: String,
+          updated_by_user_id: Integer
+        }
+
+      class ValueWithTimestamp < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor source_type: String
+
+        attr_accessor timestamp: Time
+
+        attr_accessor value: String
+
+        attr_reader source_id: String?
+
+        def source_id=: (String) -> String
+
+        attr_reader source_label: String?
+
+        def source_label=: (String) -> String
+
+        attr_reader updated_by_user_id: Integer?
+
+        def updated_by_user_id=: (Integer) -> Integer
+
+        def initialize: (
+          source_type: String,
+          timestamp: Time,
+          value: String,
+          ?source_id: String,
+          ?source_label: String,
+          ?updated_by_user_id: Integer
+        ) -> void
+
+        def to_hash: -> {
+          source_type: String,
+          timestamp: Time,
+          value: String,
+          source_id: String,
+          source_label: String,
+          updated_by_user_id: Integer
+        }
+      end
+    end
+  end
+end

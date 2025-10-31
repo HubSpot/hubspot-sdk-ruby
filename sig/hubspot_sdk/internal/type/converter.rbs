@@ -1,0 +1,79 @@
+module HubspotSDK
+  module Internal
+    module Type
+      module Converter
+        extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+
+        type input = HubspotSDK::Internal::Type::Converter | Class
+
+        type coerce_state =
+          {
+            translate_names: bool,
+            strictness: bool,
+            exactness: { yes: Integer, no: Integer, maybe: Integer },
+            error: Class,
+            branched: Integer
+          }
+
+        type dump_state = { can_retry: bool }
+
+        def coerce: (
+          top value,
+          state: HubspotSDK::Internal::Type::Converter::coerce_state
+        ) -> top
+
+        def dump: (
+          top value,
+          state: HubspotSDK::Internal::Type::Converter::dump_state
+        ) -> top
+
+        def inspect: (?depth: Integer) -> String
+
+        def self.type_info: (
+          {
+            const: (nil | bool | Integer | Float | Symbol)?,
+            enum: ^-> HubspotSDK::Internal::Type::Converter::input?,
+            union: ^-> HubspotSDK::Internal::Type::Converter::input?
+          }
+          | ^-> HubspotSDK::Internal::Type::Converter::input
+          | HubspotSDK::Internal::Type::Converter::input spec
+        ) -> (^-> top)
+
+        def self.meta_info: (
+          {
+            const: (nil | bool | Integer | Float | Symbol)?,
+            enum: ^-> HubspotSDK::Internal::Type::Converter::input?,
+            union: ^-> HubspotSDK::Internal::Type::Converter::input?
+          }
+          | ^-> HubspotSDK::Internal::Type::Converter::input
+          | HubspotSDK::Internal::Type::Converter::input type_info,
+          {
+            const: (nil | bool | Integer | Float | Symbol)?,
+            enum: ^-> HubspotSDK::Internal::Type::Converter::input?,
+            union: ^-> HubspotSDK::Internal::Type::Converter::input?
+          }
+          | ^-> HubspotSDK::Internal::Type::Converter::input
+          | HubspotSDK::Internal::Type::Converter::input spec
+        ) -> ::Hash[Symbol, top]
+
+        def self.new_coerce_state: (
+          ?translate_names: bool
+        ) -> HubspotSDK::Internal::Type::Converter::coerce_state
+
+        def self.coerce: (
+          HubspotSDK::Internal::Type::Converter::input target,
+          top value,
+          ?state: HubspotSDK::Internal::Type::Converter::coerce_state
+        ) -> top
+
+        def self.dump: (
+          HubspotSDK::Internal::Type::Converter::input target,
+          top value,
+          ?state: HubspotSDK::Internal::Type::Converter::dump_state
+        ) -> top
+
+        def self.inspect: (top target, depth: Integer) -> String
+      end
+    end
+  end
+end

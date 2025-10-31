@@ -1,0 +1,24 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Associations
+        module Schema
+          type collection_response_association_spec_with_label_no_paging =
+            { results: ::Array[HubspotSDK::CRM::AssociationSpecWithLabel] }
+
+          class CollectionResponseAssociationSpecWithLabelNoPaging < HubspotSDK::Internal::Type::BaseModel
+            attr_accessor results: ::Array[HubspotSDK::CRM::AssociationSpecWithLabel]
+
+            def initialize: (
+              results: ::Array[HubspotSDK::CRM::AssociationSpecWithLabel]
+            ) -> void
+
+            def to_hash: -> {
+              results: ::Array[HubspotSDK::CRM::AssociationSpecWithLabel]
+            }
+          end
+        end
+      end
+    end
+  end
+end

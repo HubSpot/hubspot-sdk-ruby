@@ -1,0 +1,62 @@
+module HubspotSDK
+  module Models
+    type error =
+      {
+        category: String,
+        correlation_id: String,
+        message: String,
+        context: ::Hash[Symbol, ::Array[String]],
+        errors: ::Array[HubspotSDK::ErrorDetail],
+        links: ::Hash[Symbol, String],
+        sub_category: String
+      }
+
+    class Error < HubspotSDK::Internal::Type::BaseModel
+      attr_accessor category: String
+
+      attr_accessor correlation_id: String
+
+      attr_accessor message: String
+
+      attr_reader context: ::Hash[Symbol, ::Array[String]]?
+
+      def context=: (
+        ::Hash[Symbol, ::Array[String]]
+      ) -> ::Hash[Symbol, ::Array[String]]
+
+      attr_reader errors: ::Array[HubspotSDK::ErrorDetail]?
+
+      def errors=: (
+        ::Array[HubspotSDK::ErrorDetail]
+      ) -> ::Array[HubspotSDK::ErrorDetail]
+
+      attr_reader links: ::Hash[Symbol, String]?
+
+      def links=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
+
+      attr_reader sub_category: String?
+
+      def sub_category=: (String) -> String
+
+      def initialize: (
+        category: String,
+        correlation_id: String,
+        message: String,
+        ?context: ::Hash[Symbol, ::Array[String]],
+        ?errors: ::Array[HubspotSDK::ErrorDetail],
+        ?links: ::Hash[Symbol, String],
+        ?sub_category: String
+      ) -> void
+
+      def to_hash: -> {
+        category: String,
+        correlation_id: String,
+        message: String,
+        context: ::Hash[Symbol, ::Array[String]],
+        errors: ::Array[HubspotSDK::ErrorDetail],
+        links: ::Hash[Symbol, String],
+        sub_category: String
+      }
+    end
+  end
+end

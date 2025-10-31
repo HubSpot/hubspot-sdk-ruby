@@ -1,0 +1,40 @@
+module HubspotSDK
+  module Models
+    type public_relative_comparative_timestamp_refine_by =
+      {
+        comparison: String,
+        time_offset: HubspotSDK::PublicTimeOffset,
+        type: HubspotSDK::Models::PublicRelativeComparativeTimestampRefineBy::type_
+      }
+
+    class PublicRelativeComparativeTimestampRefineBy < HubspotSDK::Internal::Type::BaseModel
+      attr_accessor comparison: String
+
+      attr_accessor time_offset: HubspotSDK::PublicTimeOffset
+
+      attr_accessor type: HubspotSDK::Models::PublicRelativeComparativeTimestampRefineBy::type_
+
+      def initialize: (
+        comparison: String,
+        time_offset: HubspotSDK::PublicTimeOffset,
+        type: HubspotSDK::Models::PublicRelativeComparativeTimestampRefineBy::type_
+      ) -> void
+
+      def to_hash: -> {
+        comparison: String,
+        time_offset: HubspotSDK::PublicTimeOffset,
+        type: HubspotSDK::Models::PublicRelativeComparativeTimestampRefineBy::type_
+      }
+
+      type type_ = :RELATIVE_COMPARATIVE
+
+      module Type
+        extend HubspotSDK::Internal::Type::Enum
+
+        RELATIVE_COMPARATIVE: :RELATIVE_COMPARATIVE
+
+        def self?.values: -> ::Array[HubspotSDK::Models::PublicRelativeComparativeTimestampRefineBy::type_]
+      end
+    end
+  end
+end

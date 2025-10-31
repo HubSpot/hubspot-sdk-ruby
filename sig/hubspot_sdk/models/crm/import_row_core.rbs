@@ -1,0 +1,44 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type import_row_core =
+        {
+          contains_encrypted_properties: bool,
+          file_id: Integer,
+          line_number: Integer,
+          row_data: ::Array[String],
+          page_name: String
+        }
+
+      class ImportRowCore < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor contains_encrypted_properties: bool
+
+        attr_accessor file_id: Integer
+
+        attr_accessor line_number: Integer
+
+        attr_accessor row_data: ::Array[String]
+
+        attr_reader page_name: String?
+
+        def page_name=: (String) -> String
+
+        def initialize: (
+          contains_encrypted_properties: bool,
+          file_id: Integer,
+          line_number: Integer,
+          row_data: ::Array[String],
+          ?page_name: String
+        ) -> void
+
+        def to_hash: -> {
+          contains_encrypted_properties: bool,
+          file_id: Integer,
+          line_number: Integer,
+          row_data: ::Array[String],
+          page_name: String
+        }
+      end
+    end
+  end
+end

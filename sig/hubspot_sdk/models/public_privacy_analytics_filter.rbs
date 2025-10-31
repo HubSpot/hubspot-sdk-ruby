@@ -1,0 +1,40 @@
+module HubspotSDK
+  module Models
+    type public_privacy_analytics_filter =
+      {
+        filter_type: HubspotSDK::Models::PublicPrivacyAnalyticsFilter::filter_type,
+        operator: String,
+        privacy_name: String
+      }
+
+    class PublicPrivacyAnalyticsFilter < HubspotSDK::Internal::Type::BaseModel
+      attr_accessor filter_type: HubspotSDK::Models::PublicPrivacyAnalyticsFilter::filter_type
+
+      attr_accessor operator: String
+
+      attr_accessor privacy_name: String
+
+      def initialize: (
+        filter_type: HubspotSDK::Models::PublicPrivacyAnalyticsFilter::filter_type,
+        operator: String,
+        privacy_name: String
+      ) -> void
+
+      def to_hash: -> {
+        filter_type: HubspotSDK::Models::PublicPrivacyAnalyticsFilter::filter_type,
+        operator: String,
+        privacy_name: String
+      }
+
+      type filter_type = :PRIVACY
+
+      module FilterType
+        extend HubspotSDK::Internal::Type::Enum
+
+        PRIVACY: :PRIVACY
+
+        def self?.values: -> ::Array[HubspotSDK::Models::PublicPrivacyAnalyticsFilter::filter_type]
+      end
+    end
+  end
+end

@@ -1,0 +1,38 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type list_filter_update_request =
+        {
+          filter_branch: HubspotSDK::Models::CRM::ListFilterUpdateRequest::filter_branch
+        }
+
+      class ListFilterUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor filter_branch: HubspotSDK::Models::CRM::ListFilterUpdateRequest::filter_branch
+
+        def initialize: (
+          filter_branch: HubspotSDK::Models::CRM::ListFilterUpdateRequest::filter_branch
+        ) -> void
+
+        def to_hash: -> {
+          filter_branch: HubspotSDK::Models::CRM::ListFilterUpdateRequest::filter_branch
+        }
+
+        type filter_branch =
+          HubspotSDK::PublicOrFilterBranch
+          | HubspotSDK::PublicAndFilterBranch
+          | HubspotSDK::PublicNotAllFilterBranch
+          | HubspotSDK::PublicNotAnyFilterBranch
+          | HubspotSDK::PublicRestrictedFilterBranch
+          | HubspotSDK::PublicUnifiedEventsFilterBranch
+          | HubspotSDK::PublicPropertyAssociationFilterBranch
+          | HubspotSDK::PublicAssociationFilterBranch
+
+        module FilterBranch
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::CRM::ListFilterUpdateRequest::filter_branch]
+        end
+      end
+    end
+  end
+end

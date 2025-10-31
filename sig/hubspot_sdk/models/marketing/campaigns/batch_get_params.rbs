@@ -1,0 +1,42 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      module Campaigns
+        type batch_get_params =
+          { end_date: String, properties: ::Array[String], start_date: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class BatchGetParams < HubspotSDK::Models::Marketing::BatchInputPublicCampaignReadInput
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def end_date: -> String?
+
+          def end_date=: (String _) -> String
+
+          def properties: -> ::Array[String]?
+
+          def properties=: (::Array[String] _) -> ::Array[String]
+
+          def start_date: -> String?
+
+          def start_date=: (String _) -> String
+
+          def initialize: (
+            ?end_date: String,
+            ?properties: ::Array[String],
+            ?start_date: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            end_date: String,
+            properties: ::Array[String],
+            start_date: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

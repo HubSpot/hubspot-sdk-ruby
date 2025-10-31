@@ -1,0 +1,22 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type collection_response_object_type_near_or_at_association_limit_no_paging =
+        {
+          results: ::Array[HubspotSDK::CRM::ObjectTypeNearOrAtAssociationLimit]
+        }
+
+      class CollectionResponseObjectTypeNearOrAtAssociationLimitNoPaging < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubspotSDK::CRM::ObjectTypeNearOrAtAssociationLimit]
+
+        def initialize: (
+          results: ::Array[HubspotSDK::CRM::ObjectTypeNearOrAtAssociationLimit]
+        ) -> void
+
+        def to_hash: -> {
+          results: ::Array[HubspotSDK::CRM::ObjectTypeNearOrAtAssociationLimit]
+        }
+      end
+    end
+  end
+end

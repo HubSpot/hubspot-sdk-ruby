@@ -1,0 +1,18 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type smtp_api_token_request_egg =
+        { campaign_name: String, create_contact: bool }
+
+      class SmtpAPITokenRequestEgg < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor campaign_name: String
+
+        attr_accessor create_contact: bool
+
+        def initialize: (campaign_name: String, create_contact: bool) -> void
+
+        def to_hash: -> { campaign_name: String, create_contact: bool }
+      end
+    end
+  end
+end

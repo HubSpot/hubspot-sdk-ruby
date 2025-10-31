@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module Files
+      type folder_input =
+        { name: String, parent_folder_id: String, parent_path: String }
+
+      class FolderInput < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor name: String
+
+        attr_reader parent_folder_id: String?
+
+        def parent_folder_id=: (String) -> String
+
+        attr_reader parent_path: String?
+
+        def parent_path=: (String) -> String
+
+        def initialize: (
+          name: String,
+          ?parent_folder_id: String,
+          ?parent_path: String
+        ) -> void
+
+        def to_hash: -> {
+          name: String,
+          parent_folder_id: String,
+          parent_path: String
+        }
+      end
+    end
+  end
+end

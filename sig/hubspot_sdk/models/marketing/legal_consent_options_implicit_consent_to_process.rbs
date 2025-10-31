@@ -1,0 +1,56 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type legal_consent_options_implicit_consent_to_process =
+        {
+          communications_checkboxes: ::Array[HubspotSDK::Marketing::LegalConsentCheckbox],
+          privacy_text: String,
+          type: HubspotSDK::Models::Marketing::LegalConsentOptionsImplicitConsentToProcess::type_,
+          communication_consent_text: String,
+          consent_to_process_text: String
+        }
+
+      class LegalConsentOptionsImplicitConsentToProcess < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor communications_checkboxes: ::Array[HubspotSDK::Marketing::LegalConsentCheckbox]
+
+        attr_accessor privacy_text: String
+
+        attr_accessor type: HubspotSDK::Models::Marketing::LegalConsentOptionsImplicitConsentToProcess::type_
+
+        attr_reader communication_consent_text: String?
+
+        def communication_consent_text=: (String) -> String
+
+        attr_reader consent_to_process_text: String?
+
+        def consent_to_process_text=: (String) -> String
+
+        def initialize: (
+          communications_checkboxes: ::Array[HubspotSDK::Marketing::LegalConsentCheckbox],
+          privacy_text: String,
+          type: HubspotSDK::Models::Marketing::LegalConsentOptionsImplicitConsentToProcess::type_,
+          ?communication_consent_text: String,
+          ?consent_to_process_text: String
+        ) -> void
+
+        def to_hash: -> {
+          communications_checkboxes: ::Array[HubspotSDK::Marketing::LegalConsentCheckbox],
+          privacy_text: String,
+          type: HubspotSDK::Models::Marketing::LegalConsentOptionsImplicitConsentToProcess::type_,
+          communication_consent_text: String,
+          consent_to_process_text: String
+        }
+
+        type type_ = :implicit_consent_to_process
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          IMPLICIT_CONSENT_TO_PROCESS: :implicit_consent_to_process
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::LegalConsentOptionsImplicitConsentToProcess::type_]
+        end
+      end
+    end
+  end
+end

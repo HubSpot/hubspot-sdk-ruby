@@ -1,0 +1,42 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_ab_test_branch_action =
+        {
+          action_id: String,
+          test_branches: ::Array[HubspotSDK::Automation::APIConnection],
+          type: HubspotSDK::Models::Automation::APIAbTestBranchAction::type_
+        }
+
+      class APIAbTestBranchAction < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor action_id: String
+
+        attr_accessor test_branches: ::Array[HubspotSDK::Automation::APIConnection]
+
+        attr_accessor type: HubspotSDK::Models::Automation::APIAbTestBranchAction::type_
+
+        def initialize: (
+          action_id: String,
+          test_branches: ::Array[HubspotSDK::Automation::APIConnection],
+          type: HubspotSDK::Models::Automation::APIAbTestBranchAction::type_
+        ) -> void
+
+        def to_hash: -> {
+          action_id: String,
+          test_branches: ::Array[HubspotSDK::Automation::APIConnection],
+          type: HubspotSDK::Models::Automation::APIAbTestBranchAction::type_
+        }
+
+        type type_ = :AB_TEST_BRANCH
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          AB_TEST_BRANCH: :AB_TEST_BRANCH
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIAbTestBranchAction::type_]
+        end
+      end
+    end
+  end
+end

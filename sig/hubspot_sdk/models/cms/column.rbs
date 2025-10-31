@@ -1,0 +1,216 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type column =
+        {
+          label: String,
+          name: String,
+          type: HubspotSDK::Models::Cms::Column::type_,
+          id: String,
+          created_at: Time,
+          created_by: HubspotSDK::Cms::SimpleUser,
+          created_by_user_id: Integer,
+          deleted: bool,
+          description: String,
+          foreign_column_id: Integer,
+          foreign_ids: ::Array[HubspotSDK::Cms::ForeignID],
+          foreign_ids_by_id: ::Hash[Symbol, HubspotSDK::Cms::ForeignID],
+          foreign_ids_by_name: ::Hash[Symbol, HubspotSDK::Cms::ForeignID],
+          foreign_table_id: Integer,
+          option_count: Integer,
+          options: ::Array[HubspotSDK::Option],
+          updated_at: Time,
+          updated_by: HubspotSDK::Cms::SimpleUser,
+          updated_by_user_id: Integer,
+          width: Integer
+        }
+
+      class Column < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor label: String
+
+        attr_accessor name: String
+
+        attr_accessor type: HubspotSDK::Models::Cms::Column::type_
+
+        attr_reader id: String?
+
+        def id=: (String) -> String
+
+        attr_reader created_at: Time?
+
+        def created_at=: (Time) -> Time
+
+        attr_reader created_by: HubspotSDK::Cms::SimpleUser?
+
+        def created_by=: (
+          HubspotSDK::Cms::SimpleUser
+        ) -> HubspotSDK::Cms::SimpleUser
+
+        attr_reader created_by_user_id: Integer?
+
+        def created_by_user_id=: (Integer) -> Integer
+
+        attr_reader deleted: bool?
+
+        def deleted=: (bool) -> bool
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader foreign_column_id: Integer?
+
+        def foreign_column_id=: (Integer) -> Integer
+
+        attr_reader foreign_ids: ::Array[HubspotSDK::Cms::ForeignID]?
+
+        def foreign_ids=: (
+          ::Array[HubspotSDK::Cms::ForeignID]
+        ) -> ::Array[HubspotSDK::Cms::ForeignID]
+
+        attr_reader foreign_ids_by_id: ::Hash[Symbol, HubspotSDK::Cms::ForeignID]?
+
+        def foreign_ids_by_id=: (
+          ::Hash[Symbol, HubspotSDK::Cms::ForeignID]
+        ) -> ::Hash[Symbol, HubspotSDK::Cms::ForeignID]
+
+        attr_reader foreign_ids_by_name: ::Hash[Symbol, HubspotSDK::Cms::ForeignID]?
+
+        def foreign_ids_by_name=: (
+          ::Hash[Symbol, HubspotSDK::Cms::ForeignID]
+        ) -> ::Hash[Symbol, HubspotSDK::Cms::ForeignID]
+
+        attr_reader foreign_table_id: Integer?
+
+        def foreign_table_id=: (Integer) -> Integer
+
+        attr_reader option_count: Integer?
+
+        def option_count=: (Integer) -> Integer
+
+        attr_reader options: ::Array[HubspotSDK::Option]?
+
+        def options=: (
+          ::Array[HubspotSDK::Option]
+        ) -> ::Array[HubspotSDK::Option]
+
+        attr_reader updated_at: Time?
+
+        def updated_at=: (Time) -> Time
+
+        attr_reader updated_by: HubspotSDK::Cms::SimpleUser?
+
+        def updated_by=: (
+          HubspotSDK::Cms::SimpleUser
+        ) -> HubspotSDK::Cms::SimpleUser
+
+        attr_reader updated_by_user_id: Integer?
+
+        def updated_by_user_id=: (Integer) -> Integer
+
+        attr_reader width: Integer?
+
+        def width=: (Integer) -> Integer
+
+        def initialize: (
+          label: String,
+          name: String,
+          type: HubspotSDK::Models::Cms::Column::type_,
+          ?id: String,
+          ?created_at: Time,
+          ?created_by: HubspotSDK::Cms::SimpleUser,
+          ?created_by_user_id: Integer,
+          ?deleted: bool,
+          ?description: String,
+          ?foreign_column_id: Integer,
+          ?foreign_ids: ::Array[HubspotSDK::Cms::ForeignID],
+          ?foreign_ids_by_id: ::Hash[Symbol, HubspotSDK::Cms::ForeignID],
+          ?foreign_ids_by_name: ::Hash[Symbol, HubspotSDK::Cms::ForeignID],
+          ?foreign_table_id: Integer,
+          ?option_count: Integer,
+          ?options: ::Array[HubspotSDK::Option],
+          ?updated_at: Time,
+          ?updated_by: HubspotSDK::Cms::SimpleUser,
+          ?updated_by_user_id: Integer,
+          ?width: Integer
+        ) -> void
+
+        def to_hash: -> {
+          label: String,
+          name: String,
+          type: HubspotSDK::Models::Cms::Column::type_,
+          id: String,
+          created_at: Time,
+          created_by: HubspotSDK::Cms::SimpleUser,
+          created_by_user_id: Integer,
+          deleted: bool,
+          description: String,
+          foreign_column_id: Integer,
+          foreign_ids: ::Array[HubspotSDK::Cms::ForeignID],
+          foreign_ids_by_id: ::Hash[Symbol, HubspotSDK::Cms::ForeignID],
+          foreign_ids_by_name: ::Hash[Symbol, HubspotSDK::Cms::ForeignID],
+          foreign_table_id: Integer,
+          option_count: Integer,
+          options: ::Array[HubspotSDK::Option],
+          updated_at: Time,
+          updated_by: HubspotSDK::Cms::SimpleUser,
+          updated_by_user_id: Integer,
+          width: Integer
+        }
+
+        type type_ =
+          :NULL
+          | :TEXT
+          | :NUMBER
+          | :URL
+          | :IMAGE
+          | :SELECT
+          | :MULTISELECT
+          | :BOOLEAN
+          | :LOCATION
+          | :DATE
+          | :DATETIME
+          | :CURRENCY
+          | :RICHTEXT
+          | :FOREIGN_ID
+          | :VIDEO
+          | :CTA
+          | :FILE
+          | :JSON
+          | :COMPOSITE
+          | :CODE
+          | :HUBSPOT_VIDEO
+          | :EMBED
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          NULL: :NULL
+          TEXT: :TEXT
+          NUMBER: :NUMBER
+          URL: :URL
+          IMAGE: :IMAGE
+          SELECT: :SELECT
+          MULTISELECT: :MULTISELECT
+          BOOLEAN: :BOOLEAN
+          LOCATION: :LOCATION
+          DATE: :DATE
+          DATETIME: :DATETIME
+          CURRENCY: :CURRENCY
+          RICHTEXT: :RICHTEXT
+          FOREIGN_ID: :FOREIGN_ID
+          VIDEO: :VIDEO
+          CTA: :CTA
+          FILE: :FILE
+          JSON: :JSON
+          COMPOSITE: :COMPOSITE
+          CODE: :CODE
+          HUBSPOT_VIDEO: :HUBSPOT_VIDEO
+          EMBED: :EMBED
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::Column::type_]
+        end
+      end
+    end
+  end
+end

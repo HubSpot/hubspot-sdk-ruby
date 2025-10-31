@@ -1,0 +1,288 @@
+# typed: strong
+
+module HubspotSDK
+  module Resources
+    class Cms
+      class Hubdb
+        class Rows
+          sig { returns(HubspotSDK::Resources::Cms::Hubdb::Rows::Batch) }
+          attr_reader :batch
+
+          # Add a new row to a HubDB table. New rows will be added to the draft version of
+          # the table. Use the `/publish` endpoint to push these changes to published
+          # version.
+          sig do
+            params(
+              table_id_or_name: String,
+              values: T::Hash[Symbol, T.anything],
+              child_table_id: Integer,
+              display_index: Integer,
+              name: String,
+              path: String,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(HubspotSDK::Cms::HubDBTableRowV3)
+          end
+          def create(
+            # The ID or name of the target table.
+            table_id_or_name,
+            # List of key value pairs with the column name and column value
+            values:,
+            # Specifies the value for the column child table id
+            child_table_id: nil,
+            display_index: nil,
+            # Specifies the value for `hs_name` column, which will be used as title in the
+            # dynamic pages
+            name: nil,
+            # Specifies the value for `hs_path` column, which will be used as slug in the
+            # dynamic pages
+            path: nil,
+            request_options: {}
+          )
+          end
+
+          # Returns a set of rows in the published version of the specified table. Row
+          # results can be filtered and sorted. Filtering and sorting options will be sent
+          # as query parameters to the API request. For example, by adding the query
+          # parameters `column1__gt=5&sort=-column1`, API returns the rows with values for
+          # column `column1` greater than 5 and in the descending order of `column1` values.
+          # Refer to the
+          # [overview section](https://developers.hubspot.com/docs/api/cms/hubdb#filtering-and-sorting-table-rows)
+          # for detailed filtering and sorting options. **Note:** This endpoint can be
+          # accessed without any authentication, if the table is set to be allowed for
+          # public access.
+          sig do
+            params(
+              table_id_or_name: String,
+              after: String,
+              archived: T::Boolean,
+              limit: Integer,
+              offset: Integer,
+              properties: T::Array[String],
+              sort: T::Array[String],
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(HubspotSDK::Internal::Page[T.anything])
+          end
+          def list(
+            # The ID or name of the table to query.
+            table_id_or_name,
+            # The cursor token value to get the next set of results. You can get this from the
+            # `paging.next.after` JSON property of a paged response containing more results.
+            after: nil,
+            archived: nil,
+            # The maximum number of results to return. Default is `1000`.
+            limit: nil,
+            offset: nil,
+            # Specify the column names to get results containing only the required columns
+            # instead of all column details.
+            properties: nil,
+            # Specifies the column names to sort the results by. See the above description for
+            # more details.
+            sort: nil,
+            request_options: {}
+          )
+          end
+
+          # Clones a single row in the draft version of a table.
+          sig do
+            params(
+              row_id: String,
+              table_id_or_name: String,
+              name: String,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(HubspotSDK::Cms::HubDBTableRowV3)
+          end
+          def clone_draft(
+            # Path param: The ID of the row
+            row_id,
+            # Path param: The ID or name of the table
+            table_id_or_name:,
+            # Query param:
+            name: nil,
+            request_options: {}
+          )
+          end
+
+          # Permanently deletes a row from a table's draft version.
+          sig do
+            params(
+              row_id: String,
+              table_id_or_name: String,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).void
+          end
+          def delete_draft(
+            # The ID of the row
+            row_id,
+            # The ID or name of the table
+            table_id_or_name:,
+            request_options: {}
+          )
+          end
+
+          # Get a single row by ID from the published version of a table. **Note:** This
+          # endpoint can be accessed without any authentication, if the table is set to be
+          # allowed for public access.
+          sig do
+            params(
+              row_id: String,
+              table_id_or_name: String,
+              archived: T::Boolean,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(HubspotSDK::Cms::HubDBTableRowV3)
+          end
+          def get(
+            # Path param: The ID of the row
+            row_id,
+            # Path param: The ID or name of the table
+            table_id_or_name:,
+            # Query param:
+            archived: nil,
+            request_options: {}
+          )
+          end
+
+          # Get a single row by ID from a table's draft version.
+          sig do
+            params(
+              row_id: String,
+              table_id_or_name: String,
+              archived: T::Boolean,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(HubspotSDK::Cms::HubDBTableRowV3)
+          end
+          def get_draft(
+            # Path param: The ID of the row
+            row_id,
+            # Path param: The ID or name of the table
+            table_id_or_name:,
+            # Query param:
+            archived: nil,
+            request_options: {}
+          )
+          end
+
+          # Returns rows in the draft version of the specified table. Row results can be
+          # filtered and sorted. Filtering and sorting options will be sent as query
+          # parameters to the API request. For example, by adding the query parameters
+          # `column1__gt=5&sort=-column1`, API returns the rows with values for column
+          # `column1` greater than 5 and in the descending order of `column1` values. Refer
+          # to the
+          # [overview section](https://developers.hubspot.com/docs/api/cms/hubdb#filtering-and-sorting-table-rows)
+          # for detailed filtering and sorting options.
+          sig do
+            params(
+              table_id_or_name: String,
+              after: String,
+              archived: T::Boolean,
+              limit: Integer,
+              offset: Integer,
+              properties: T::Array[String],
+              sort: T::Array[String],
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(
+              HubspotSDK::Cms::UnifiedCollectionResponseWithTotalBaseHubDBTableRowV3::Variants
+            )
+          end
+          def list_draft(
+            # The ID or name of the table to query.
+            table_id_or_name,
+            # The cursor token value to get the next set of results. You can get this from the
+            # `paging.next.after` JSON property of a paged response containing more results.
+            after: nil,
+            archived: nil,
+            # The maximum number of results to return. Default is `1000`.
+            limit: nil,
+            offset: nil,
+            # Specify the column names to get results containing only the required columns
+            # instead of all column details. If you want to include multiple columns in the
+            # result, use this query param as many times.
+            properties: nil,
+            # Specifies the column names to sort the results by.
+            sort: nil,
+            request_options: {}
+          )
+          end
+
+          # Replace a single row in the draft version of a table. All column values must be
+          # specified. If a column has a value in the target table and this request doesn't
+          # define that value, it will be deleted. See the "Create a row" endpoint for
+          # instructions on how to format the JSON row definitions.
+          sig do
+            params(
+              row_id: String,
+              table_id_or_name: String,
+              values: T::Hash[Symbol, T.anything],
+              child_table_id: Integer,
+              display_index: Integer,
+              name: String,
+              path: String,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(HubspotSDK::Cms::HubDBTableRowV3)
+          end
+          def replace_draft(
+            # Path param: The ID of the row
+            row_id,
+            # Path param: The ID or name of the table
+            table_id_or_name:,
+            # Body param: List of key value pairs with the column name and column value
+            values:,
+            # Body param: Specifies the value for the column child table id
+            child_table_id: nil,
+            # Body param:
+            display_index: nil,
+            # Body param: Specifies the value for `hs_name` column, which will be used as
+            # title in the dynamic pages
+            name: nil,
+            # Body param: Specifies the value for `hs_path` column, which will be used as slug
+            # in the dynamic pages
+            path: nil,
+            request_options: {}
+          )
+          end
+
+          # Sparse updates a single row in the table's draft version. All the column values
+          # need not be specified. Only the columns or fields that needs to be modified can
+          # be specified. See the "Create a row" endpoint for instructions on how to format
+          # the JSON row definitions.
+          sig do
+            params(
+              row_id: String,
+              table_id_or_name: String,
+              values: T::Hash[Symbol, T.anything],
+              child_table_id: Integer,
+              display_index: Integer,
+              name: String,
+              path: String,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(HubspotSDK::Cms::HubDBTableRowV3)
+          end
+          def update_draft(
+            # Path param: The ID of the row
+            row_id,
+            # Path param: The ID or name of the table
+            table_id_or_name:,
+            # Body param: List of key value pairs with the column name and column value
+            values:,
+            # Body param: Specifies the value for the column child table id
+            child_table_id: nil,
+            # Body param:
+            display_index: nil,
+            # Body param: Specifies the value for `hs_name` column, which will be used as
+            # title in the dynamic pages
+            name: nil,
+            # Body param: Specifies the value for `hs_path` column, which will be used as slug
+            # in the dynamic pages
+            path: nil,
+            request_options: {}
+          )
+          end
+
+          # @api private
+          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          def self.new(client:)
+          end
+        end
+      end
+    end
+  end
+end

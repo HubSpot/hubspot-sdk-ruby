@@ -1,0 +1,59 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type public_font_style =
+        {
+          bold: bool,
+          color: String,
+          font: String,
+          italic: bool,
+          size: Integer,
+          underline: bool
+        }
+
+      class PublicFontStyle < HubspotSDK::Internal::Type::BaseModel
+        attr_reader bold: bool?
+
+        def bold=: (bool) -> bool
+
+        attr_reader color: String?
+
+        def color=: (String) -> String
+
+        attr_reader font: String?
+
+        def font=: (String) -> String
+
+        attr_reader italic: bool?
+
+        def italic=: (bool) -> bool
+
+        attr_reader size: Integer?
+
+        def size=: (Integer) -> Integer
+
+        attr_reader underline: bool?
+
+        def underline=: (bool) -> bool
+
+        def initialize: (
+          ?bold: bool,
+          ?color: String,
+          ?font: String,
+          ?italic: bool,
+          ?size: Integer,
+          ?underline: bool
+        ) -> void
+
+        def to_hash: -> {
+          bold: bool,
+          color: String,
+          font: String,
+          italic: bool,
+          size: Integer,
+          underline: bool
+        }
+      end
+    end
+  end
+end

@@ -1,0 +1,58 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_list_branch_action =
+        {
+          action_id: String,
+          list_branches: ::Array[HubspotSDK::Automation::APIListBranch],
+          type: HubspotSDK::Models::Automation::APIListBranchAction::type_,
+          default_branch: HubspotSDK::Automation::APIConnection,
+          default_branch_name: String
+        }
+
+      class APIListBranchAction < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor action_id: String
+
+        attr_accessor list_branches: ::Array[HubspotSDK::Automation::APIListBranch]
+
+        attr_accessor type: HubspotSDK::Models::Automation::APIListBranchAction::type_
+
+        attr_reader default_branch: HubspotSDK::Automation::APIConnection?
+
+        def default_branch=: (
+          HubspotSDK::Automation::APIConnection
+        ) -> HubspotSDK::Automation::APIConnection
+
+        attr_reader default_branch_name: String?
+
+        def default_branch_name=: (String) -> String
+
+        def initialize: (
+          action_id: String,
+          list_branches: ::Array[HubspotSDK::Automation::APIListBranch],
+          type: HubspotSDK::Models::Automation::APIListBranchAction::type_,
+          ?default_branch: HubspotSDK::Automation::APIConnection,
+          ?default_branch_name: String
+        ) -> void
+
+        def to_hash: -> {
+          action_id: String,
+          list_branches: ::Array[HubspotSDK::Automation::APIListBranch],
+          type: HubspotSDK::Models::Automation::APIListBranchAction::type_,
+          default_branch: HubspotSDK::Automation::APIConnection,
+          default_branch_name: String
+        }
+
+        type type_ = :LIST_BRANCH
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          LIST_BRANCH: :LIST_BRANCH
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIListBranchAction::type_]
+        end
+      end
+    end
+  end
+end

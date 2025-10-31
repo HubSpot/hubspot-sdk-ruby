@@ -1,0 +1,71 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type public_sequence_settings_response =
+        {
+          id: String,
+          created_at: Time,
+          eligible_follow_up_days: String,
+          individual_task_reminders_enabled: bool,
+          selling_strategy: String,
+          send_window_end_minute: Integer,
+          send_window_start_minute: Integer,
+          task_reminder_minute: Integer,
+          updated_at: Time,
+          unenrollment_settings: HubspotSDK::Automation::UnenrollmentSettingsResponse
+        }
+
+      class PublicSequenceSettingsResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor created_at: Time
+
+        attr_accessor eligible_follow_up_days: String
+
+        attr_accessor individual_task_reminders_enabled: bool
+
+        attr_accessor selling_strategy: String
+
+        attr_accessor send_window_end_minute: Integer
+
+        attr_accessor send_window_start_minute: Integer
+
+        attr_accessor task_reminder_minute: Integer
+
+        attr_accessor updated_at: Time
+
+        attr_reader unenrollment_settings: HubspotSDK::Automation::UnenrollmentSettingsResponse?
+
+        def unenrollment_settings=: (
+          HubspotSDK::Automation::UnenrollmentSettingsResponse
+        ) -> HubspotSDK::Automation::UnenrollmentSettingsResponse
+
+        def initialize: (
+          id: String,
+          created_at: Time,
+          eligible_follow_up_days: String,
+          individual_task_reminders_enabled: bool,
+          selling_strategy: String,
+          send_window_end_minute: Integer,
+          send_window_start_minute: Integer,
+          task_reminder_minute: Integer,
+          updated_at: Time,
+          ?unenrollment_settings: HubspotSDK::Automation::UnenrollmentSettingsResponse
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          created_at: Time,
+          eligible_follow_up_days: String,
+          individual_task_reminders_enabled: bool,
+          selling_strategy: String,
+          send_window_end_minute: Integer,
+          send_window_start_minute: Integer,
+          task_reminder_minute: Integer,
+          updated_at: Time,
+          unenrollment_settings: HubspotSDK::Automation::UnenrollmentSettingsResponse
+        }
+      end
+    end
+  end
+end

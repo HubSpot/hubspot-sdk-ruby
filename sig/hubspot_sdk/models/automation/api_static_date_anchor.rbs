@@ -1,0 +1,82 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_static_date_anchor =
+        {
+          day_of_month: Integer,
+          month: HubspotSDK::Models::Automation::APIStaticDateAnchor::month,
+          type: HubspotSDK::Models::Automation::APIStaticDateAnchor::type_,
+          year: Integer
+        }
+
+      class APIStaticDateAnchor < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor day_of_month: Integer
+
+        attr_accessor month: HubspotSDK::Models::Automation::APIStaticDateAnchor::month
+
+        attr_accessor type: HubspotSDK::Models::Automation::APIStaticDateAnchor::type_
+
+        attr_reader year: Integer?
+
+        def year=: (Integer) -> Integer
+
+        def initialize: (
+          day_of_month: Integer,
+          month: HubspotSDK::Models::Automation::APIStaticDateAnchor::month,
+          type: HubspotSDK::Models::Automation::APIStaticDateAnchor::type_,
+          ?year: Integer
+        ) -> void
+
+        def to_hash: -> {
+          day_of_month: Integer,
+          month: HubspotSDK::Models::Automation::APIStaticDateAnchor::month,
+          type: HubspotSDK::Models::Automation::APIStaticDateAnchor::type_,
+          year: Integer
+        }
+
+        type month =
+          :JANUARY
+          | :FEBRUARY
+          | :MARCH
+          | :APRIL
+          | :MAY
+          | :JUNE
+          | :JULY
+          | :AUGUST
+          | :SEPTEMBER
+          | :OCTOBER
+          | :NOVEMBER
+          | :DECEMBER
+
+        module Month
+          extend HubspotSDK::Internal::Type::Enum
+
+          JANUARY: :JANUARY
+          FEBRUARY: :FEBRUARY
+          MARCH: :MARCH
+          APRIL: :APRIL
+          MAY: :MAY
+          JUNE: :JUNE
+          JULY: :JULY
+          AUGUST: :AUGUST
+          SEPTEMBER: :SEPTEMBER
+          OCTOBER: :OCTOBER
+          NOVEMBER: :NOVEMBER
+          DECEMBER: :DECEMBER
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIStaticDateAnchor::month]
+        end
+
+        type type_ = :STATIC_DATE_ANCHOR
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          STATIC_DATE_ANCHOR: :STATIC_DATE_ANCHOR
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIStaticDateAnchor::type_]
+        end
+      end
+    end
+  end
+end

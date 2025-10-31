@@ -1,0 +1,52 @@
+module HubspotSDK
+  module Internal
+    module Type
+      module Union
+        include HubspotSDK::Internal::Type::Converter
+        include HubspotSDK::Internal::Util::SorbetRuntimeSupport
+
+        private def self.known_variants: -> ::Array[[Symbol?, (^-> HubspotSDK::Internal::Type::Converter::input), ::Hash[Symbol, top]]]
+
+        def self.derefed_variants: -> ::Array[[Symbol?, top, ::Hash[Symbol, top]]]
+
+        def self.variants: -> ::Array[top]
+
+        private def self.discriminator: (Symbol property) -> void
+
+        private def self.variant: (
+          Symbol
+          | ::Hash[Symbol, top]
+          | ^-> HubspotSDK::Internal::Type::Converter::input
+          | HubspotSDK::Internal::Type::Converter::input key,
+          ?::Hash[Symbol, top]
+          | ^-> HubspotSDK::Internal::Type::Converter::input
+          | HubspotSDK::Internal::Type::Converter::input spec
+        ) -> void
+
+        private def self.resolve_variant: (
+          top value
+        ) -> HubspotSDK::Internal::Type::Converter::input?
+
+        def ===: (top other) -> bool
+
+        def ==: (top other) -> bool
+
+        def hash: -> Integer
+
+        def coerce: (
+          top value,
+          state: HubspotSDK::Internal::Type::Converter::coerce_state
+        ) -> top
+
+        def dump: (
+          top value,
+          state: HubspotSDK::Internal::Type::Converter::dump_state
+        ) -> top
+
+        def to_sorbet_type: -> top
+
+        def inspect: (?depth: Integer) -> String
+      end
+    end
+  end
+end

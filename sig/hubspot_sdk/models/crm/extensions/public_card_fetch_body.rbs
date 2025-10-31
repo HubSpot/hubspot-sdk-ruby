@@ -1,0 +1,29 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Extensions
+        type public_card_fetch_body =
+          {
+            object_types: ::Array[HubspotSDK::CRM::Extensions::CardObjectTypeBody],
+            target_url: String
+          }
+
+        class PublicCardFetchBody < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor object_types: ::Array[HubspotSDK::CRM::Extensions::CardObjectTypeBody]
+
+          attr_accessor target_url: String
+
+          def initialize: (
+            object_types: ::Array[HubspotSDK::CRM::Extensions::CardObjectTypeBody],
+            target_url: String
+          ) -> void
+
+          def to_hash: -> {
+            object_types: ::Array[HubspotSDK::CRM::Extensions::CardObjectTypeBody],
+            target_url: String
+          }
+        end
+      end
+    end
+  end
+end

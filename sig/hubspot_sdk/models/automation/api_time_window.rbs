@@ -1,0 +1,55 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_time_window =
+        {
+          day: HubspotSDK::Models::Automation::APITimeWindow::day,
+          end_time: HubspotSDK::Automation::APITimeOfDay,
+          start_time: HubspotSDK::Automation::APITimeOfDay
+        }
+
+      class APITimeWindow < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor day: HubspotSDK::Models::Automation::APITimeWindow::day
+
+        attr_accessor end_time: HubspotSDK::Automation::APITimeOfDay
+
+        attr_accessor start_time: HubspotSDK::Automation::APITimeOfDay
+
+        def initialize: (
+          day: HubspotSDK::Models::Automation::APITimeWindow::day,
+          end_time: HubspotSDK::Automation::APITimeOfDay,
+          start_time: HubspotSDK::Automation::APITimeOfDay
+        ) -> void
+
+        def to_hash: -> {
+          day: HubspotSDK::Models::Automation::APITimeWindow::day,
+          end_time: HubspotSDK::Automation::APITimeOfDay,
+          start_time: HubspotSDK::Automation::APITimeOfDay
+        }
+
+        type day =
+          :MONDAY
+          | :TUESDAY
+          | :WEDNESDAY
+          | :THURSDAY
+          | :FRIDAY
+          | :SATURDAY
+          | :SUNDAY
+
+        module Day
+          extend HubspotSDK::Internal::Type::Enum
+
+          MONDAY: :MONDAY
+          TUESDAY: :TUESDAY
+          WEDNESDAY: :WEDNESDAY
+          THURSDAY: :THURSDAY
+          FRIDAY: :FRIDAY
+          SATURDAY: :SATURDAY
+          SUNDAY: :SUNDAY
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APITimeWindow::day]
+        end
+      end
+    end
+  end
+end

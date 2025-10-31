@@ -1,0 +1,114 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_time_delay =
+        {
+          days_of_week: ::Array[HubspotSDK::Models::Automation::APITimeDelay::days_of_week],
+          delta: Integer,
+          time_unit: HubspotSDK::Models::Automation::APITimeDelay::time_unit,
+          time_of_day: HubspotSDK::Automation::APITimeOfDay,
+          time_zone_strategy: HubspotSDK::Automation::APIStaticTimeZoneStrategy
+        }
+
+      class APITimeDelay < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor days_of_week: ::Array[HubspotSDK::Models::Automation::APITimeDelay::days_of_week]
+
+        attr_accessor delta: Integer
+
+        attr_accessor time_unit: HubspotSDK::Models::Automation::APITimeDelay::time_unit
+
+        attr_reader time_of_day: HubspotSDK::Automation::APITimeOfDay?
+
+        def time_of_day=: (
+          HubspotSDK::Automation::APITimeOfDay
+        ) -> HubspotSDK::Automation::APITimeOfDay
+
+        attr_reader time_zone_strategy: HubspotSDK::Automation::APIStaticTimeZoneStrategy?
+
+        def time_zone_strategy=: (
+          HubspotSDK::Automation::APIStaticTimeZoneStrategy
+        ) -> HubspotSDK::Automation::APIStaticTimeZoneStrategy
+
+        def initialize: (
+          days_of_week: ::Array[HubspotSDK::Models::Automation::APITimeDelay::days_of_week],
+          delta: Integer,
+          time_unit: HubspotSDK::Models::Automation::APITimeDelay::time_unit,
+          ?time_of_day: HubspotSDK::Automation::APITimeOfDay,
+          ?time_zone_strategy: HubspotSDK::Automation::APIStaticTimeZoneStrategy
+        ) -> void
+
+        def to_hash: -> {
+          days_of_week: ::Array[HubspotSDK::Models::Automation::APITimeDelay::days_of_week],
+          delta: Integer,
+          time_unit: HubspotSDK::Models::Automation::APITimeDelay::time_unit,
+          time_of_day: HubspotSDK::Automation::APITimeOfDay,
+          time_zone_strategy: HubspotSDK::Automation::APIStaticTimeZoneStrategy
+        }
+
+        type days_of_week =
+          :MONDAY
+          | :TUESDAY
+          | :WEDNESDAY
+          | :THURSDAY
+          | :FRIDAY
+          | :SATURDAY
+          | :SUNDAY
+
+        module DaysOfWeek
+          extend HubspotSDK::Internal::Type::Enum
+
+          MONDAY: :MONDAY
+          TUESDAY: :TUESDAY
+          WEDNESDAY: :WEDNESDAY
+          THURSDAY: :THURSDAY
+          FRIDAY: :FRIDAY
+          SATURDAY: :SATURDAY
+          SUNDAY: :SUNDAY
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APITimeDelay::days_of_week]
+        end
+
+        type time_unit =
+          :NANOS
+          | :MICROS
+          | :MILLIS
+          | :SECONDS
+          | :MINUTES
+          | :HOURS
+          | :HALF_DAYS
+          | :DAYS
+          | :WEEKS
+          | :MONTHS
+          | :YEARS
+          | :DECADES
+          | :CENTURIES
+          | :MILLENNIA
+          | :ERAS
+          | :FOREVER
+
+        module TimeUnit
+          extend HubspotSDK::Internal::Type::Enum
+
+          NANOS: :NANOS
+          MICROS: :MICROS
+          MILLIS: :MILLIS
+          SECONDS: :SECONDS
+          MINUTES: :MINUTES
+          HOURS: :HOURS
+          HALF_DAYS: :HALF_DAYS
+          DAYS: :DAYS
+          WEEKS: :WEEKS
+          MONTHS: :MONTHS
+          YEARS: :YEARS
+          DECADES: :DECADES
+          CENTURIES: :CENTURIES
+          MILLENNIA: :MILLENNIA
+          ERAS: :ERAS
+          FOREVER: :FOREVER
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APITimeDelay::time_unit]
+        end
+      end
+    end
+  end
+end

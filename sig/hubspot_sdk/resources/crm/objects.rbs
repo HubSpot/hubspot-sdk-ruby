@@ -1,0 +1,79 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class Objects
+        attr_reader appointments: HubspotSDK::Resources::CRM::Objects::Appointments
+
+        attr_reader calls: HubspotSDK::Resources::CRM::Objects::Calls
+
+        attr_reader carts: HubspotSDK::Resources::CRM::Objects::Carts
+
+        attr_reader commerce_payments: HubspotSDK::Resources::CRM::Objects::CommercePayments
+
+        attr_reader communications: HubspotSDK::Resources::CRM::Objects::Communications
+
+        attr_reader companies: HubspotSDK::Resources::CRM::Objects::Companies
+
+        attr_reader contacts: HubspotSDK::Resources::CRM::Objects::Contacts
+
+        attr_reader contracts: HubspotSDK::Resources::CRM::Objects::Contracts
+
+        attr_reader courses: HubspotSDK::Resources::CRM::Objects::Courses
+
+        attr_reader custom: HubspotSDK::Resources::CRM::Objects::Custom
+
+        attr_reader deal_splits: HubspotSDK::Resources::CRM::Objects::DealSplits
+
+        attr_reader deals: HubspotSDK::Resources::CRM::Objects::Deals
+
+        attr_reader discounts: HubspotSDK::Resources::CRM::Objects::Discounts
+
+        attr_reader emails: HubspotSDK::Resources::CRM::Objects::Emails
+
+        attr_reader feedback_submissions: HubspotSDK::Resources::CRM::Objects::FeedbackSubmissions
+
+        attr_reader fees: HubspotSDK::Resources::CRM::Objects::Fees
+
+        attr_reader goal_targets: HubspotSDK::Resources::CRM::Objects::GoalTargets
+
+        attr_reader invoices: HubspotSDK::Resources::CRM::Objects::Invoices
+
+        attr_reader leads: HubspotSDK::Resources::CRM::Objects::Leads
+
+        attr_reader line_items: HubspotSDK::Resources::CRM::Objects::LineItems
+
+        attr_reader listings: HubspotSDK::Resources::CRM::Objects::Listings
+
+        attr_reader meetings: HubspotSDK::Resources::CRM::Objects::Meetings
+
+        attr_reader notes: HubspotSDK::Resources::CRM::Objects::Notes
+
+        attr_reader objects: HubspotSDK::Resources::CRM::Objects::Objects
+
+        attr_reader orders: HubspotSDK::Resources::CRM::Objects::Orders
+
+        attr_reader partner_clients: HubspotSDK::Resources::CRM::Objects::PartnerClients
+
+        attr_reader partner_services: HubspotSDK::Resources::CRM::Objects::PartnerServices
+
+        attr_reader postal_mail: HubspotSDK::Resources::CRM::Objects::PostalMail
+
+        attr_reader products: HubspotSDK::Resources::CRM::Objects::Products
+
+        attr_reader quotes: HubspotSDK::Resources::CRM::Objects::Quotes
+
+        attr_reader schemas: HubspotSDK::Resources::CRM::Objects::Schemas
+
+        attr_reader services: HubspotSDK::Resources::CRM::Objects::Services
+
+        attr_reader tasks: HubspotSDK::Resources::CRM::Objects::Tasks
+
+        attr_reader taxes: HubspotSDK::Resources::CRM::Objects::Taxes
+
+        attr_reader tickets: HubspotSDK::Resources::CRM::Objects::Tickets
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

@@ -1,0 +1,30 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      module CustomChannels
+        type channel_account_staging_token_update_params =
+          { channel_id: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class ChannelAccountStagingTokenUpdateParams < HubspotSDK::Models::Conversations::PublicChannelAccountStagingTokenUpdateRequest
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def channel_id: -> String
+
+          def channel_id=: (String _) -> String
+
+          def initialize: (
+            channel_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            channel_id: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

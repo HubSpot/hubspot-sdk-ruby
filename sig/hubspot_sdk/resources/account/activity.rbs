@@ -1,0 +1,35 @@
+module HubspotSDK
+  module Resources
+    class Account
+      class Activity
+        def list_audit_logs: (
+          ?acting_user_id: ::Array[Integer],
+          ?after: String,
+          ?limit: Integer,
+          ?occurred_after: Time,
+          ?occurred_before: Time,
+          ?sort: ::Array[String],
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Account::CollectionResponsePublicAPIUserActionEventForwardPaging
+
+        def list_login_activities: (
+          ?after: String,
+          ?limit: Integer,
+          ?user_id: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Account::CollectionResponsePublicLoginAuditForwardPaging
+
+        def list_security_activities: (
+          ?after: String,
+          ?from_timestamp: Integer,
+          ?limit: Integer,
+          ?to_timestamp: Integer,
+          ?user_id: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Account::CollectionResponseHydratedCriticalActionForwardPaging
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

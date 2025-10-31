@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type option_decorators_extension_data =
+        {
+          option_decorators: ::Hash[Symbol, HubspotSDK::Cms::OptionDecorations],
+          option_decorator_style: String
+        }
+
+      class OptionDecoratorsExtensionData < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor option_decorators: ::Hash[Symbol, HubspotSDK::Cms::OptionDecorations]
+
+        attr_accessor option_decorator_style: String
+
+        def initialize: (
+          option_decorators: ::Hash[Symbol, HubspotSDK::Cms::OptionDecorations],
+          option_decorator_style: String
+        ) -> void
+
+        def to_hash: -> {
+          option_decorators: ::Hash[Symbol, HubspotSDK::Cms::OptionDecorations],
+          option_decorator_style: String
+        }
+      end
+    end
+  end
+end

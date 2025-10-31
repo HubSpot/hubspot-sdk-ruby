@@ -1,0 +1,16 @@
+module HubspotSDK
+  module Resources
+    class Conversations
+      class VisitorIdentification
+        def generate_token: (
+          email: String,
+          ?first_name: String,
+          ?last_name: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Conversations::IdentificationTokenResponse
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

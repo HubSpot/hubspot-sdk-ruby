@@ -1,0 +1,13 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class Extensions
+        class VideoConferencing
+          attr_reader settings: HubspotSDK::Resources::CRM::Extensions::VideoConferencing::Settings
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

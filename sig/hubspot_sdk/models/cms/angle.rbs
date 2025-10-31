@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type angle = { units: String, value: Float }
+
+      class Angle < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor units: String
+
+        attr_accessor value: Float
+
+        def initialize: (units: String, value: Float) -> void
+
+        def to_hash: -> { units: String, value: Float }
+      end
+    end
+  end
+end

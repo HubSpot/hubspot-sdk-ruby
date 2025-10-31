@@ -1,0 +1,51 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type import_list_errors_params =
+        {
+          after: String,
+          include_error_message: bool,
+          include_row_data: bool,
+          limit: Integer
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class ImportListErrorsParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_reader after: String?
+
+        def after=: (String) -> String
+
+        attr_reader include_error_message: bool?
+
+        def include_error_message=: (bool) -> bool
+
+        attr_reader include_row_data: bool?
+
+        def include_row_data=: (bool) -> bool
+
+        attr_reader limit: Integer?
+
+        def limit=: (Integer) -> Integer
+
+        def initialize: (
+          ?after: String,
+          ?include_error_message: bool,
+          ?include_row_data: bool,
+          ?limit: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          after: String,
+          include_error_message: bool,
+          include_row_data: bool,
+          limit: Integer,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

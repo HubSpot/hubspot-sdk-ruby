@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      module Campaigns
+        type asset_delete_params =
+          { campaign_guid: String, asset_type: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class AssetDeleteParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor campaign_guid: String
+
+          attr_accessor asset_type: String
+
+          def initialize: (
+            campaign_guid: String,
+            asset_type: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            campaign_guid: String,
+            asset_type: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

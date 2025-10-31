@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type email_create_ab_test_variation_params =
+        {  } & HubspotSDK::Internal::Type::request_parameters
+
+      class EmailCreateAbTestVariationParams < HubspotSDK::Models::AbTestCreateRequestVNext
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        def initialize: (?request_options: HubspotSDK::request_opts) -> void
+
+        def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+      end
+    end
+  end
+end

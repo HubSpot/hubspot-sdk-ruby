@@ -1,0 +1,49 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Associations
+        module Schema
+          type public_association_definition_configuration_update_request =
+            {
+              category: HubspotSDK::Models::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest::category,
+              max_to_object_ids: Integer,
+              type_id: Integer
+            }
+
+          class PublicAssociationDefinitionConfigurationUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+            attr_accessor category: HubspotSDK::Models::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest::category
+
+            attr_accessor max_to_object_ids: Integer
+
+            attr_accessor type_id: Integer
+
+            def initialize: (
+              category: HubspotSDK::Models::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest::category,
+              max_to_object_ids: Integer,
+              type_id: Integer
+            ) -> void
+
+            def to_hash: -> {
+              category: HubspotSDK::Models::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest::category,
+              max_to_object_ids: Integer,
+              type_id: Integer
+            }
+
+            type category =
+              :HUBSPOT_DEFINED | :USER_DEFINED | :INTEGRATOR_DEFINED
+
+            module Category
+              extend HubspotSDK::Internal::Type::Enum
+
+              HUBSPOT_DEFINED: :HUBSPOT_DEFINED
+              USER_DEFINED: :USER_DEFINED
+              INTEGRATOR_DEFINED: :INTEGRATOR_DEFINED
+
+              def self?.values: -> ::Array[HubspotSDK::Models::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest::category]
+            end
+          end
+        end
+      end
+    end
+  end
+end

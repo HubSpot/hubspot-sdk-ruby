@@ -1,0 +1,42 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type public_client =
+        {
+          client_type: HubspotSDK::Models::Conversations::PublicClient::client_type,
+          integration_app_id: Integer
+        }
+
+      class PublicClient < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor client_type: HubspotSDK::Models::Conversations::PublicClient::client_type
+
+        attr_reader integration_app_id: Integer?
+
+        def integration_app_id=: (Integer) -> Integer
+
+        def initialize: (
+          client_type: HubspotSDK::Models::Conversations::PublicClient::client_type,
+          ?integration_app_id: Integer
+        ) -> void
+
+        def to_hash: -> {
+          client_type: HubspotSDK::Models::Conversations::PublicClient::client_type,
+          integration_app_id: Integer
+        }
+
+        type client_type = :HUBSPOT | :SYSTEM | :INTEGRATION | :UNKNOWN
+
+        module ClientType
+          extend HubspotSDK::Internal::Type::Enum
+
+          HUBSPOT: :HUBSPOT
+          SYSTEM: :SYSTEM
+          INTEGRATION: :INTEGRATION
+          UNKNOWN: :UNKNOWN
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicClient::client_type]
+        end
+      end
+    end
+  end
+end

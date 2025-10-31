@@ -1,0 +1,52 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type content_folder =
+        {
+          id: String,
+          category: Integer,
+          created: Time,
+          deleted_at: Time,
+          name: String,
+          parent_folder_id: Integer,
+          updated: Time
+        }
+
+      class ContentFolder < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor category: Integer
+
+        attr_accessor created: Time
+
+        attr_accessor deleted_at: Time
+
+        attr_accessor name: String
+
+        attr_accessor parent_folder_id: Integer
+
+        attr_accessor updated: Time
+
+        def initialize: (
+          id: String,
+          category: Integer,
+          created: Time,
+          deleted_at: Time,
+          name: String,
+          parent_folder_id: Integer,
+          updated: Time
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          category: Integer,
+          created: Time,
+          deleted_at: Time,
+          name: String,
+          parent_folder_id: Integer,
+          updated: Time
+        }
+      end
+    end
+  end
+end

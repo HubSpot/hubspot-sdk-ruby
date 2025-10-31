@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class Extensions
+        attr_reader calling: HubspotSDK::Resources::CRM::Extensions::Calling
+
+        attr_reader cards: HubspotSDK::Resources::CRM::Extensions::Cards
+
+        attr_reader video_conferencing: HubspotSDK::Resources::CRM::Extensions::VideoConferencing
+
+        attr_reader videoconferencing: HubspotSDK::Resources::CRM::Extensions::Videoconferencing
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

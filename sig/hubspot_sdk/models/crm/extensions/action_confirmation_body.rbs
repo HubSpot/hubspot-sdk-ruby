@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Extensions
+        type action_confirmation_body =
+          {
+            cancel_button_label: String,
+            confirm_button_label: String,
+            prompt: String
+          }
+
+        class ActionConfirmationBody < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor cancel_button_label: String
+
+          attr_accessor confirm_button_label: String
+
+          attr_accessor prompt: String
+
+          def initialize: (
+            cancel_button_label: String,
+            confirm_button_label: String,
+            prompt: String
+          ) -> void
+
+          def to_hash: -> {
+            cancel_button_label: String,
+            confirm_button_label: String,
+            prompt: String
+          }
+        end
+      end
+    end
+  end
+end

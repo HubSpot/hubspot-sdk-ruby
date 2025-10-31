@@ -1,0 +1,43 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type public_single_send_request_egg =
+        {
+          email_id: Integer,
+          message: HubspotSDK::Marketing::PublicSingleSendEmail,
+          contact_properties: ::Hash[Symbol, String],
+          custom_properties: ::Hash[Symbol, top]
+        }
+
+      class PublicSingleSendRequestEgg < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor email_id: Integer
+
+        attr_accessor message: HubspotSDK::Marketing::PublicSingleSendEmail
+
+        attr_reader contact_properties: ::Hash[Symbol, String]?
+
+        def contact_properties=: (
+          ::Hash[Symbol, String]
+        ) -> ::Hash[Symbol, String]
+
+        attr_reader custom_properties: ::Hash[Symbol, top]?
+
+        def custom_properties=: (::Hash[Symbol, top]) -> ::Hash[Symbol, top]
+
+        def initialize: (
+          email_id: Integer,
+          message: HubspotSDK::Marketing::PublicSingleSendEmail,
+          ?contact_properties: ::Hash[Symbol, String],
+          ?custom_properties: ::Hash[Symbol, top]
+        ) -> void
+
+        def to_hash: -> {
+          email_id: Integer,
+          message: HubspotSDK::Marketing::PublicSingleSendEmail,
+          contact_properties: ::Hash[Symbol, String],
+          custom_properties: ::Hash[Symbol, top]
+        }
+      end
+    end
+  end
+end

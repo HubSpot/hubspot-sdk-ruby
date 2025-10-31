@@ -1,0 +1,93 @@
+module HubspotSDK
+  module Resources
+    class Cms
+      class MediaBridge
+        class Properties
+          def create: (
+            String object_type,
+            app_id: String,
+            field_type: HubspotSDK::Models::PropertyCreate::field_type,
+            group_name: String,
+            label: String,
+            name: String,
+            type: HubspotSDK::Models::PropertyCreate::type_,
+            ?calculation_formula: String,
+            ?data_sensitivity: HubspotSDK::Models::PropertyCreate::data_sensitivity,
+            ?description: String,
+            ?display_order: Integer,
+            ?external_options: bool,
+            ?form_field: bool,
+            ?has_unique_value: bool,
+            ?hidden: bool,
+            ?options: ::Array[HubspotSDK::OptionInput],
+            ?referenced_object_type: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Property
+
+          def update: (
+            String property_name,
+            app_id: String,
+            object_type: String,
+            ?calculation_formula: String,
+            ?description: String,
+            ?display_order: Integer,
+            ?field_type: HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type,
+            ?form_field: bool,
+            ?group_name: String,
+            ?has_unique_value: bool,
+            ?hidden: bool,
+            ?label: String,
+            ?options: ::Array[HubspotSDK::OptionInput],
+            ?type: HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::type_,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Property
+
+          def list: (
+            String object_type,
+            app_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::CollectionResponsePropertyNoPaging
+
+          def delete: (
+            String property_name,
+            app_id: String,
+            object_type: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def archive_batch: (
+            String object_type,
+            app_id: String,
+            inputs: ::Array[HubspotSDK::PropertyName],
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def create_batch: (
+            String object_type,
+            app_id: String,
+            inputs: ::Array[HubspotSDK::PropertyCreate],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::BatchResponseProperty
+
+          def get: (
+            String property_name,
+            app_id: String,
+            object_type: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Property
+
+          def get_batch: (
+            String object_type,
+            app_id: String,
+            archived: bool,
+            inputs: ::Array[HubspotSDK::PropertyName],
+            ?data_sensitivity: HubspotSDK::Models::CRM::BatchReadInputPropertyName::data_sensitivity,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::BatchResponseProperty
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,42 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type labels_between_object_pair =
+        {
+          from_object_id: String,
+          from_object_type_id: String,
+          labels: ::Array[String],
+          to_object_id: String,
+          to_object_type_id: String
+        }
+
+      class LabelsBetweenObjectPair < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor from_object_id: String
+
+        attr_accessor from_object_type_id: String
+
+        attr_accessor labels: ::Array[String]
+
+        attr_accessor to_object_id: String
+
+        attr_accessor to_object_type_id: String
+
+        def initialize: (
+          from_object_id: String,
+          from_object_type_id: String,
+          labels: ::Array[String],
+          to_object_id: String,
+          to_object_type_id: String
+        ) -> void
+
+        def to_hash: -> {
+          from_object_id: String,
+          from_object_type_id: String,
+          labels: ::Array[String],
+          to_object_id: String,
+          to_object_type_id: String
+        }
+      end
+    end
+  end
+end

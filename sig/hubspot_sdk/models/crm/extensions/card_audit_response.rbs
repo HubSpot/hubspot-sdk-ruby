@@ -1,0 +1,73 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Extensions
+        type card_audit_response =
+          {
+            action_type: HubspotSDK::Models::CRM::Extensions::CardAuditResponse::action_type,
+            application_id: Integer,
+            auth_source: HubspotSDK::Models::CRM::Extensions::CardAuditResponse::auth_source,
+            changed_at: Integer,
+            initiating_user_id: Integer,
+            object_type_id: Integer
+          }
+
+        class CardAuditResponse < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor action_type: HubspotSDK::Models::CRM::Extensions::CardAuditResponse::action_type
+
+          attr_accessor application_id: Integer
+
+          attr_accessor auth_source: HubspotSDK::Models::CRM::Extensions::CardAuditResponse::auth_source
+
+          attr_accessor changed_at: Integer
+
+          attr_accessor initiating_user_id: Integer
+
+          attr_accessor object_type_id: Integer
+
+          def initialize: (
+            action_type: HubspotSDK::Models::CRM::Extensions::CardAuditResponse::action_type,
+            application_id: Integer,
+            auth_source: HubspotSDK::Models::CRM::Extensions::CardAuditResponse::auth_source,
+            changed_at: Integer,
+            initiating_user_id: Integer,
+            object_type_id: Integer
+          ) -> void
+
+          def to_hash: -> {
+            action_type: HubspotSDK::Models::CRM::Extensions::CardAuditResponse::action_type,
+            application_id: Integer,
+            auth_source: HubspotSDK::Models::CRM::Extensions::CardAuditResponse::auth_source,
+            changed_at: Integer,
+            initiating_user_id: Integer,
+            object_type_id: Integer
+          }
+
+          type action_type = :CREATE | :UPDATE | :DELETE
+
+          module ActionType
+            extend HubspotSDK::Internal::Type::Enum
+
+            CREATE: :CREATE
+            UPDATE: :UPDATE
+            DELETE: :DELETE
+
+            def self?.values: -> ::Array[HubspotSDK::Models::CRM::Extensions::CardAuditResponse::action_type]
+          end
+
+          type auth_source = :INTERNAL | :APP | :EXTERNAL
+
+          module AuthSource
+            extend HubspotSDK::Internal::Type::Enum
+
+            INTERNAL: :INTERNAL
+            APP: :APP
+            EXTERNAL: :EXTERNAL
+
+            def self?.values: -> ::Array[HubspotSDK::Models::CRM::Extensions::CardAuditResponse::auth_source]
+          end
+        end
+      end
+    end
+  end
+end

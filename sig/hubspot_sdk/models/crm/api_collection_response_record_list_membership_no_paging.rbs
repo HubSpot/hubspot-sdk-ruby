@@ -1,0 +1,29 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type api_collection_response_record_list_membership_no_paging =
+        {
+          results: ::Array[HubspotSDK::CRM::RecordListMembership],
+          total: Integer
+        }
+
+      class APICollectionResponseRecordListMembershipNoPaging < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubspotSDK::CRM::RecordListMembership]
+
+        attr_reader total: Integer?
+
+        def total=: (Integer) -> Integer
+
+        def initialize: (
+          results: ::Array[HubspotSDK::CRM::RecordListMembership],
+          ?total: Integer
+        ) -> void
+
+        def to_hash: -> {
+          results: ::Array[HubspotSDK::CRM::RecordListMembership],
+          total: Integer
+        }
+      end
+    end
+  end
+end

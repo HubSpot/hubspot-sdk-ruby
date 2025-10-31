@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type system_actor =
+        {
+          id: String,
+          type: HubspotSDK::Models::Conversations::SystemActor::type_
+        }
+
+      class SystemActor < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor type: HubspotSDK::Models::Conversations::SystemActor::type_
+
+        def initialize: (
+          id: String,
+          type: HubspotSDK::Models::Conversations::SystemActor::type_
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          type: HubspotSDK::Models::Conversations::SystemActor::type_
+        }
+
+        type type_ = :SYSTEM
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          SYSTEM: :SYSTEM
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::SystemActor::type_]
+        end
+      end
+    end
+  end
+end

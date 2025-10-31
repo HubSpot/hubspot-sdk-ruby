@@ -1,0 +1,22 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Associations
+        type public_fetch_associations_batch_request =
+          { id: String, after: String }
+
+        class PublicFetchAssociationsBatchRequest < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_reader after: String?
+
+          def after=: (String) -> String
+
+          def initialize: (id: String, ?after: String) -> void
+
+          def to_hash: -> { id: String, after: String }
+        end
+      end
+    end
+  end
+end

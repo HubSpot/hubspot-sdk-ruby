@@ -1,0 +1,29 @@
+# typed: strong
+
+module HubspotSDK
+  module Resources
+    class CRM
+      class Associations
+        class V4
+          class Report
+            # Requests a report of all objects in the portal which have a high usage of
+            # associations
+            sig do
+              params(
+                user_id: Integer,
+                request_options: HubspotSDK::RequestOptions::OrHash
+              ).returns(HubspotSDK::CRM::Associations::ReportCreationResponse)
+            end
+            def get_high_usage_report(user_id, request_options: {})
+            end
+
+            # @api private
+            sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+            def self.new(client:)
+            end
+          end
+        end
+      end
+    end
+  end
+end

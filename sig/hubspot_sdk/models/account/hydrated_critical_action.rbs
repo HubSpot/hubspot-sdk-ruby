@@ -1,0 +1,86 @@
+module HubspotSDK
+  module Models
+    module Account
+      type hydrated_critical_action =
+        {
+          id: String,
+          created_at: Time,
+          type: String,
+          user_id: Integer,
+          acting_user: String,
+          country_code: String,
+          info_url: String,
+          ip_address: String,
+          location: String,
+          object_id_: String,
+          region_code: String
+        }
+
+      class HydratedCriticalAction < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor created_at: Time
+
+        attr_accessor type: String
+
+        attr_accessor user_id: Integer
+
+        attr_reader acting_user: String?
+
+        def acting_user=: (String) -> String
+
+        attr_reader country_code: String?
+
+        def country_code=: (String) -> String
+
+        attr_reader info_url: String?
+
+        def info_url=: (String) -> String
+
+        attr_reader ip_address: String?
+
+        def ip_address=: (String) -> String
+
+        attr_reader location: String?
+
+        def location=: (String) -> String
+
+        attr_reader object_id_: String?
+
+        def object_id_=: (String) -> String
+
+        attr_reader region_code: String?
+
+        def region_code=: (String) -> String
+
+        def initialize: (
+          id: String,
+          created_at: Time,
+          type: String,
+          user_id: Integer,
+          ?acting_user: String,
+          ?country_code: String,
+          ?info_url: String,
+          ?ip_address: String,
+          ?location: String,
+          ?object_id_: String,
+          ?region_code: String
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          created_at: Time,
+          type: String,
+          user_id: Integer,
+          acting_user: String,
+          country_code: String,
+          info_url: String,
+          ip_address: String,
+          location: String,
+          object_id_: String,
+          region_code: String
+        }
+      end
+    end
+  end
+end

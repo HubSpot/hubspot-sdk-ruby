@@ -1,0 +1,69 @@
+module HubspotSDK
+  module Resources
+    class Events
+      class EventDefinitions
+        def create: (
+          label: String,
+          property_definitions: ::Array[HubspotSDK::Events::ExternalBehavioralEventPropertyCreate],
+          ?description: String,
+          ?name: String,
+          ?primary_object: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
+
+        def update: (
+          String event_name,
+          ?description: String,
+          ?label: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
+
+        def list: (
+          ?after: String,
+          ?include_properties: bool,
+          ?limit: Integer,
+          ?search_string: String,
+          ?sort_order: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Events::ExternalBehavioralEventTypeDefinition]
+
+        def delete: (
+          String event_name,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def create_property: (
+          String event_name,
+          label: String,
+          type: String,
+          ?description: String,
+          ?name: String,
+          ?options: ::Array[HubspotSDK::OptionInput],
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Property
+
+        def delete_property: (
+          String property_name,
+          event_name: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def get: (
+          String event_name,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
+
+        def update_property: (
+          String property_name,
+          event_name: String,
+          ?description: String,
+          ?label: String,
+          ?options: ::Array[HubspotSDK::OptionInput],
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Property
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

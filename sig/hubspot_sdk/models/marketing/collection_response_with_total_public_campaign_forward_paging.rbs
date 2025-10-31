@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type collection_response_with_total_public_campaign_forward_paging =
+        {
+          results: ::Array[HubspotSDK::Marketing::PublicCampaign],
+          total: Integer,
+          paging: HubspotSDK::ForwardPaging
+        }
+
+      class CollectionResponseWithTotalPublicCampaignForwardPaging < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubspotSDK::Marketing::PublicCampaign]
+
+        attr_accessor total: Integer
+
+        attr_reader paging: HubspotSDK::ForwardPaging?
+
+        def paging=: (HubspotSDK::ForwardPaging) -> HubspotSDK::ForwardPaging
+
+        def initialize: (
+          results: ::Array[HubspotSDK::Marketing::PublicCampaign],
+          total: Integer,
+          ?paging: HubspotSDK::ForwardPaging
+        ) -> void
+
+        def to_hash: -> {
+          results: ::Array[HubspotSDK::Marketing::PublicCampaign],
+          total: Integer,
+          paging: HubspotSDK::ForwardPaging
+        }
+      end
+    end
+  end
+end

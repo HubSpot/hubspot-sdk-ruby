@@ -1,0 +1,19 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Objects
+        type appointment_create_params =
+          {  } & HubspotSDK::Internal::Type::request_parameters
+
+        class AppointmentCreateParams < HubspotSDK::Models::CRM::SimplePublicObjectInputForCreate
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+
+          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+        end
+      end
+    end
+  end
+end

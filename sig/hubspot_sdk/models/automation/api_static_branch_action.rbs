@@ -1,0 +1,81 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_static_branch_action =
+        {
+          action_id: String,
+          input_value: HubspotSDK::Models::Automation::APIStaticBranchAction::input_value,
+          static_branches: ::Array[HubspotSDK::Automation::APIStaticBranch],
+          type: HubspotSDK::Models::Automation::APIStaticBranchAction::type_,
+          default_branch: HubspotSDK::Automation::APIConnection,
+          default_branch_name: String
+        }
+
+      class APIStaticBranchAction < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor action_id: String
+
+        attr_accessor input_value: HubspotSDK::Models::Automation::APIStaticBranchAction::input_value
+
+        attr_accessor static_branches: ::Array[HubspotSDK::Automation::APIStaticBranch]
+
+        attr_accessor type: HubspotSDK::Models::Automation::APIStaticBranchAction::type_
+
+        attr_reader default_branch: HubspotSDK::Automation::APIConnection?
+
+        def default_branch=: (
+          HubspotSDK::Automation::APIConnection
+        ) -> HubspotSDK::Automation::APIConnection
+
+        attr_reader default_branch_name: String?
+
+        def default_branch_name=: (String) -> String
+
+        def initialize: (
+          action_id: String,
+          input_value: HubspotSDK::Models::Automation::APIStaticBranchAction::input_value,
+          static_branches: ::Array[HubspotSDK::Automation::APIStaticBranch],
+          type: HubspotSDK::Models::Automation::APIStaticBranchAction::type_,
+          ?default_branch: HubspotSDK::Automation::APIConnection,
+          ?default_branch_name: String
+        ) -> void
+
+        def to_hash: -> {
+          action_id: String,
+          input_value: HubspotSDK::Models::Automation::APIStaticBranchAction::input_value,
+          static_branches: ::Array[HubspotSDK::Automation::APIStaticBranch],
+          type: HubspotSDK::Models::Automation::APIStaticBranchAction::type_,
+          default_branch: HubspotSDK::Automation::APIConnection,
+          default_branch_name: String
+        }
+
+        type input_value =
+          HubspotSDK::Automation::APIActionDataValue
+          | HubspotSDK::Automation::APIObjectPropertyValue
+          | HubspotSDK::Automation::APIStaticValue
+          | HubspotSDK::Automation::APIRelativeDateTimeValue
+          | HubspotSDK::Automation::APITimestampValue
+          | HubspotSDK::Automation::APIIncrementValue
+          | HubspotSDK::Automation::APIFetchedObjectPropertyValue
+          | HubspotSDK::Automation::APIAppendObjectPropertyValue
+          | HubspotSDK::Automation::APIStaticAppendValue
+          | HubspotSDK::Automation::APIEnrollmentEventPropertyValue
+
+        module InputValue
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Automation::APIStaticBranchAction::input_value]
+        end
+
+        type type_ = :STATIC_BRANCH
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          STATIC_BRANCH: :STATIC_BRANCH
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIStaticBranchAction::type_]
+        end
+      end
+    end
+  end
+end

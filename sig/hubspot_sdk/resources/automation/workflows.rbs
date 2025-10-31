@@ -1,0 +1,54 @@
+module HubspotSDK
+  module Resources
+    class Automation
+      class Workflows
+        def create: (
+          api_flow_create_request: HubspotSDK::Models::Automation::APIFlowCreateRequest,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Models::Automation::api_flow
+
+        def update: (
+          String flow_id,
+          api_flow_put_request: HubspotSDK::Models::Automation::APIFlowPutRequest,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Models::Automation::api_flow
+
+        def list: (
+          ?after: String,
+          ?limit: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Automation::APIFlowListing]
+
+        def delete: (
+          Integer flow_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def batch_get: (
+          inputs: ::Array[HubspotSDK::Automation::APIFlowBatchFetchFlowIDCoordinate],
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Automation::BatchResponseAPIFlow
+
+        def batch_get_id_mappings: (
+          inputs: ::Array[HubspotSDK::Models::Automation::APIFlowBatchMigrationInput::input],
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Automation::BatchResponseFlowIDWorkflowIDMappingResponse
+
+        def get: (
+          String flow_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Models::Automation::api_flow
+
+        def list_email_campaigns: (
+          ?after: String,
+          ?before: String,
+          ?flow_id: ::Array[String],
+          ?limit: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Automation::CollectionResponseAPIFlowEmailCampaign
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

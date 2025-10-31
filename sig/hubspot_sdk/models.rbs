@@ -1,0 +1,229 @@
+module HubspotSDK
+  class AbTestCreateRequestVNext = HubspotSDK::Models::AbTestCreateRequestVNext
+
+  module Account = HubspotSDK::Models::Account
+
+  class ActionResponse = HubspotSDK::Models::ActionResponse
+
+  class AssociationDefinition = HubspotSDK::Models::AssociationDefinition
+
+  class AssociationDefinitionEgg = HubspotSDK::Models::AssociationDefinitionEgg
+
+  class AssociationSpec = HubspotSDK::Models::AssociationSpec
+
+  module Auth = HubspotSDK::Models::Auth
+
+  module Automation = HubspotSDK::Models::Automation
+
+  class BatchInputPropertyCreate = HubspotSDK::Models::BatchInputPropertyCreate
+
+  class BatchInputPropertyName = HubspotSDK::Models::BatchInputPropertyName
+
+  class BatchInputPublicObjectID = HubspotSDK::Models::BatchInputPublicObjectID
+
+  class BatchInputString = HubspotSDK::Models::BatchInputString
+
+  class BatchResponseProperty = HubspotSDK::Models::BatchResponseProperty
+
+  module BusinessUnits = HubspotSDK::Models::BusinessUnits
+
+  module Cms = HubspotSDK::Models::Cms
+
+  class CollectionResponseObjectSchemaNoPaging = HubspotSDK::Models::CollectionResponseObjectSchemaNoPaging
+
+  module Conversations = HubspotSDK::Models::Conversations
+
+  module CRM = HubspotSDK::Models::CRM
+
+  class Error = HubspotSDK::Models::Error
+
+  class ErrorDetail = HubspotSDK::Models::ErrorDetail
+
+  module Events = HubspotSDK::Models::Events
+
+  module Files = HubspotSDK::Models::Files
+
+  class ForwardPaging = HubspotSDK::Models::ForwardPaging
+
+  HubDBTableRowV3Wrapper: HubspotSDK::Internal::Type::Converter
+
+  module Marketing = HubspotSDK::Models::Marketing
+
+  class NextPage = HubspotSDK::Models::NextPage
+
+  class ObjectTypeDefinitionLabels = HubspotSDK::Models::ObjectTypeDefinitionLabels
+
+  class Option = HubspotSDK::Models::Option
+
+  class OptionInput = HubspotSDK::Models::OptionInput
+
+  class Paging = HubspotSDK::Models::Paging
+
+  class PreviousPage = HubspotSDK::Models::PreviousPage
+
+  class Property = HubspotSDK::Models::Property
+
+  class PropertyCreate = HubspotSDK::Models::PropertyCreate
+
+  class PropertyGroupCreate = HubspotSDK::Models::PropertyGroupCreate
+
+  class PropertyGroupUpdate = HubspotSDK::Models::PropertyGroupUpdate
+
+  class PropertyModificationMetadata = HubspotSDK::Models::PropertyModificationMetadata
+
+  class PropertyName = HubspotSDK::Models::PropertyName
+
+  class PublicAbsoluteComparativeTimestampRefineBy = HubspotSDK::Models::PublicAbsoluteComparativeTimestampRefineBy
+
+  class PublicAbsoluteRangedTimestampRefineBy = HubspotSDK::Models::PublicAbsoluteRangedTimestampRefineBy
+
+  class PublicAdsSearchFilter = HubspotSDK::Models::PublicAdsSearchFilter
+
+  class PublicAdsTimeFilter = HubspotSDK::Models::PublicAdsTimeFilter
+
+  class PublicAllHistoryRefineBy = HubspotSDK::Models::PublicAllHistoryRefineBy
+
+  class PublicAllPropertyTypesOperation = HubspotSDK::Models::PublicAllPropertyTypesOperation
+
+  class PublicAndFilterBranch = HubspotSDK::Models::PublicAndFilterBranch
+
+  class PublicAssociationFilterBranch = HubspotSDK::Models::PublicAssociationFilterBranch
+
+  class PublicAssociationInListFilter = HubspotSDK::Models::PublicAssociationInListFilter
+
+  class PublicBoolPropertyOperation = HubspotSDK::Models::PublicBoolPropertyOperation
+
+  class PublicCalendarDatePropertyOperation = HubspotSDK::Models::PublicCalendarDatePropertyOperation
+
+  class PublicCampaignInfluencedFilter = HubspotSDK::Models::PublicCampaignInfluencedFilter
+
+  class PublicCommunicationSubscriptionFilter = HubspotSDK::Models::PublicCommunicationSubscriptionFilter
+
+  class PublicComparativeDatePropertyOperation = HubspotSDK::Models::PublicComparativeDatePropertyOperation
+
+  class PublicComparativePropertyUpdatedOperation = HubspotSDK::Models::PublicComparativePropertyUpdatedOperation
+
+  class PublicConstantFilter = HubspotSDK::Models::PublicConstantFilter
+
+  class PublicCtaAnalyticsFilter = HubspotSDK::Models::PublicCtaAnalyticsFilter
+
+  class PublicDatePoint = HubspotSDK::Models::PublicDatePoint
+
+  class PublicDatePropertyOperation = HubspotSDK::Models::PublicDatePropertyOperation
+
+  class PublicDateTimePropertyOperation = HubspotSDK::Models::PublicDateTimePropertyOperation
+
+  class PublicEmailEventFilter = HubspotSDK::Models::PublicEmailEventFilter
+
+  class PublicEmailSubscriptionFilter = HubspotSDK::Models::PublicEmailSubscriptionFilter
+
+  class PublicEnumerationPropertyOperation = HubspotSDK::Models::PublicEnumerationPropertyOperation
+
+  class PublicEventAnalyticsFilter = HubspotSDK::Models::PublicEventAnalyticsFilter
+
+  class PublicEventFilterMetadata = HubspotSDK::Models::PublicEventFilterMetadata
+
+  class PublicFiscalQuarterReference = HubspotSDK::Models::PublicFiscalQuarterReference
+
+  class PublicFiscalYearReference = HubspotSDK::Models::PublicFiscalYearReference
+
+  class PublicFormSubmissionFilter = HubspotSDK::Models::PublicFormSubmissionFilter
+
+  class PublicFormSubmissionOnPageFilter = HubspotSDK::Models::PublicFormSubmissionOnPageFilter
+
+  class PublicIndexedTimePoint = HubspotSDK::Models::PublicIndexedTimePoint
+
+  class PublicIndexOffset = HubspotSDK::Models::PublicIndexOffset
+
+  class PublicInListFilter = HubspotSDK::Models::PublicInListFilter
+
+  class PublicInListFilterMetadata = HubspotSDK::Models::PublicInListFilterMetadata
+
+  class PublicIntegrationEventFilter = HubspotSDK::Models::PublicIntegrationEventFilter
+
+  class PublicMonthReference = HubspotSDK::Models::PublicMonthReference
+
+  class PublicMultiStringPropertyOperation = HubspotSDK::Models::PublicMultiStringPropertyOperation
+
+  class PublicNotAllFilterBranch = HubspotSDK::Models::PublicNotAllFilterBranch
+
+  class PublicNotAnyFilterBranch = HubspotSDK::Models::PublicNotAnyFilterBranch
+
+  class PublicNowReference = HubspotSDK::Models::PublicNowReference
+
+  class PublicNumAssociationsFilter = HubspotSDK::Models::PublicNumAssociationsFilter
+
+  class PublicNumberPropertyOperation = HubspotSDK::Models::PublicNumberPropertyOperation
+
+  class PublicNumOccurrencesRefineBy = HubspotSDK::Models::PublicNumOccurrencesRefineBy
+
+  class PublicObjectID = HubspotSDK::Models::PublicObjectID
+
+  class PublicOrFilterBranch = HubspotSDK::Models::PublicOrFilterBranch
+
+  class PublicPageViewAnalyticsFilter = HubspotSDK::Models::PublicPageViewAnalyticsFilter
+
+  class PublicPrivacyAnalyticsFilter = HubspotSDK::Models::PublicPrivacyAnalyticsFilter
+
+  class PublicPropertyAssociationFilterBranch = HubspotSDK::Models::PublicPropertyAssociationFilterBranch
+
+  class PublicPropertyAssociationInListFilter = HubspotSDK::Models::PublicPropertyAssociationInListFilter
+
+  class PublicPropertyFilter = HubspotSDK::Models::PublicPropertyFilter
+
+  class PublicPropertyReferencedTime = HubspotSDK::Models::PublicPropertyReferencedTime
+
+  class PublicQuarterReference = HubspotSDK::Models::PublicQuarterReference
+
+  class PublicRangedDatePropertyOperation = HubspotSDK::Models::PublicRangedDatePropertyOperation
+
+  class PublicRangedNumberPropertyOperation = HubspotSDK::Models::PublicRangedNumberPropertyOperation
+
+  class PublicRangedTimeOperation = HubspotSDK::Models::PublicRangedTimeOperation
+
+  class PublicRelativeComparativeTimestampRefineBy = HubspotSDK::Models::PublicRelativeComparativeTimestampRefineBy
+
+  class PublicRelativeRangedTimestampRefineBy = HubspotSDK::Models::PublicRelativeRangedTimestampRefineBy
+
+  class PublicRestrictedFilterBranch = HubspotSDK::Models::PublicRestrictedFilterBranch
+
+  class PublicRollingDateRangePropertyOperation = HubspotSDK::Models::PublicRollingDateRangePropertyOperation
+
+  class PublicRollingPropertyUpdatedOperation = HubspotSDK::Models::PublicRollingPropertyUpdatedOperation
+
+  class PublicSetOccurrencesRefineBy = HubspotSDK::Models::PublicSetOccurrencesRefineBy
+
+  class PublicStringPropertyOperation = HubspotSDK::Models::PublicStringPropertyOperation
+
+  class PublicSurveyMonkeyFilter = HubspotSDK::Models::PublicSurveyMonkeyFilter
+
+  class PublicSurveyMonkeyValueFilter = HubspotSDK::Models::PublicSurveyMonkeyValueFilter
+
+  class PublicTimeOffset = HubspotSDK::Models::PublicTimeOffset
+
+  class PublicTimePointOperation = HubspotSDK::Models::PublicTimePointOperation
+
+  class PublicTodayReference = HubspotSDK::Models::PublicTodayReference
+
+  class PublicUnifiedEventsFilter = HubspotSDK::Models::PublicUnifiedEventsFilter
+
+  class PublicUnifiedEventsFilterBranch = HubspotSDK::Models::PublicUnifiedEventsFilterBranch
+
+  class PublicWebinarFilter = HubspotSDK::Models::PublicWebinarFilter
+
+  class PublicWeekReference = HubspotSDK::Models::PublicWeekReference
+
+  class PublicYearReference = HubspotSDK::Models::PublicYearReference
+
+  module Scheduler = HubspotSDK::Models::Scheduler
+
+  module Settings = HubspotSDK::Models::Settings
+
+  class StandardError = HubspotSDK::Models::StandardError
+
+  class TaskLocator = HubspotSDK::Models::TaskLocator
+
+  class VersionUser = HubspotSDK::Models::VersionUser
+
+  module Webhooks = HubspotSDK::Models::Webhooks
+end

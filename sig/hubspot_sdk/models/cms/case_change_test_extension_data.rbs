@@ -1,0 +1,15 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type case_change_test_extension_data = { mood: String }
+
+      class CaseChangeTestExtensionData < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor mood: String
+
+        def initialize: (mood: String) -> void
+
+        def to_hash: -> { mood: String }
+      end
+    end
+  end
+end

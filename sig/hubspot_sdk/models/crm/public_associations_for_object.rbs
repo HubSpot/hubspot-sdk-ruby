@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type public_associations_for_object =
+        {
+          to: HubspotSDK::PublicObjectID,
+          types: ::Array[HubspotSDK::AssociationSpec]
+        }
+
+      class PublicAssociationsForObject < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor to: HubspotSDK::PublicObjectID
+
+        attr_accessor types: ::Array[HubspotSDK::AssociationSpec]
+
+        def initialize: (
+          to: HubspotSDK::PublicObjectID,
+          types: ::Array[HubspotSDK::AssociationSpec]
+        ) -> void
+
+        def to_hash: -> {
+          to: HubspotSDK::PublicObjectID,
+          types: ::Array[HubspotSDK::AssociationSpec]
+        }
+      end
+    end
+  end
+end

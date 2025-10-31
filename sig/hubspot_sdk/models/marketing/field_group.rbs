@@ -1,0 +1,83 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type field_group =
+        {
+          fields: ::Array[HubspotSDK::Models::Marketing::FieldGroup::field],
+          group_type: HubspotSDK::Models::Marketing::FieldGroup::group_type,
+          rich_text_type: HubspotSDK::Models::Marketing::FieldGroup::rich_text_type,
+          rich_text: String
+        }
+
+      class FieldGroup < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor fields: ::Array[HubspotSDK::Models::Marketing::FieldGroup::field]
+
+        attr_accessor group_type: HubspotSDK::Models::Marketing::FieldGroup::group_type
+
+        attr_accessor rich_text_type: HubspotSDK::Models::Marketing::FieldGroup::rich_text_type
+
+        attr_reader rich_text: String?
+
+        def rich_text=: (String) -> String
+
+        def initialize: (
+          fields: ::Array[HubspotSDK::Models::Marketing::FieldGroup::field],
+          group_type: HubspotSDK::Models::Marketing::FieldGroup::group_type,
+          rich_text_type: HubspotSDK::Models::Marketing::FieldGroup::rich_text_type,
+          ?rich_text: String
+        ) -> void
+
+        def to_hash: -> {
+          fields: ::Array[HubspotSDK::Models::Marketing::FieldGroup::field],
+          group_type: HubspotSDK::Models::Marketing::FieldGroup::group_type,
+          rich_text_type: HubspotSDK::Models::Marketing::FieldGroup::rich_text_type,
+          rich_text: String
+        }
+
+        type field =
+          HubspotSDK::Marketing::EmailField
+          | HubspotSDK::Marketing::PhoneField
+          | HubspotSDK::Marketing::MobilePhoneField
+          | HubspotSDK::Marketing::SingleLineTextField
+          | HubspotSDK::Marketing::MultiLineTextField
+          | HubspotSDK::Marketing::NumberField
+          | HubspotSDK::Marketing::SingleCheckboxField
+          | HubspotSDK::Marketing::MultipleCheckboxesField
+          | HubspotSDK::Marketing::DropdownField
+          | HubspotSDK::Marketing::RadioField
+          | HubspotSDK::Marketing::DatepickerField
+          | HubspotSDK::Marketing::FileField
+          | HubspotSDK::Marketing::PaymentLinkRadioField
+
+        module Field
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Marketing::FieldGroup::field]
+        end
+
+        type group_type = :default_group | :progressive | :queued
+
+        module GroupType
+          extend HubspotSDK::Internal::Type::Enum
+
+          DEFAULT_GROUP: :default_group
+          PROGRESSIVE: :progressive
+          QUEUED: :queued
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::FieldGroup::group_type]
+        end
+
+        type rich_text_type = :text | :image
+
+        module RichTextType
+          extend HubspotSDK::Internal::Type::Enum
+
+          TEXT: :text
+          IMAGE: :image
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::FieldGroup::rich_text_type]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,30 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Lists
+        type folder_rename_params =
+          { new_folder_name: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class FolderRenameParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_reader new_folder_name: String?
+
+          def new_folder_name=: (String) -> String
+
+          def initialize: (
+            ?new_folder_name: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            new_folder_name: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

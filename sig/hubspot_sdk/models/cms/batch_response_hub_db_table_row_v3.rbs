@@ -1,0 +1,76 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type batch_response_hub_db_table_row_v3 =
+        {
+          completed_at: Time,
+          links: ::Hash[Symbol, String],
+          requested_at: Time,
+          results: ::Array[HubspotSDK::Cms::HubDBTableRowV3],
+          started_at: Time,
+          status: HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::status
+        }
+
+      class BatchResponseHubDBTableRowV3 < HubspotSDK::Internal::Type::BaseModel
+        attr_reader completed_at: Time?
+
+        def completed_at=: (Time) -> Time
+
+        attr_reader links: ::Hash[Symbol, String]?
+
+        def links=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
+
+        attr_reader requested_at: Time?
+
+        def requested_at=: (Time) -> Time
+
+        attr_reader results: ::Array[HubspotSDK::Cms::HubDBTableRowV3]?
+
+        def results=: (
+          ::Array[HubspotSDK::Cms::HubDBTableRowV3]
+        ) -> ::Array[HubspotSDK::Cms::HubDBTableRowV3]
+
+        attr_reader started_at: Time?
+
+        def started_at=: (Time) -> Time
+
+        attr_reader status: HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::status?
+
+        def status=: (
+          HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::status
+        ) -> HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::status
+
+        def initialize: (
+          ?completed_at: Time,
+          ?links: ::Hash[Symbol, String],
+          ?requested_at: Time,
+          ?results: ::Array[HubspotSDK::Cms::HubDBTableRowV3],
+          ?started_at: Time,
+          ?status: HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::status
+        ) -> void
+
+        def to_hash: -> {
+          completed_at: Time,
+          links: ::Hash[Symbol, String],
+          requested_at: Time,
+          results: ::Array[HubspotSDK::Cms::HubDBTableRowV3],
+          started_at: Time,
+          status: HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::status
+        }
+
+        type status = :PENDING | :PROCESSING | :CANCELED | :COMPLETE
+
+        module Status
+          extend HubspotSDK::Internal::Type::Enum
+
+          PENDING: :PENDING
+          PROCESSING: :PROCESSING
+          CANCELED: :CANCELED
+          COMPLETE: :COMPLETE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::status]
+        end
+      end
+    end
+  end
+end

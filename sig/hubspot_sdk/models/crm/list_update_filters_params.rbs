@@ -1,0 +1,28 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type list_update_filters_params =
+        { enroll_objects_in_workflows: bool }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class ListUpdateFiltersParams < HubspotSDK::Models::CRM::ListFilterUpdateRequest
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        def enroll_objects_in_workflows: -> bool?
+
+        def enroll_objects_in_workflows=: (bool _) -> bool
+
+        def initialize: (
+          ?enroll_objects_in_workflows: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          enroll_objects_in_workflows: bool,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

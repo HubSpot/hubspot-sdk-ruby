@@ -1,0 +1,88 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_event_based_enrollment_criteria =
+        {
+          event_filter_branches: ::Array[HubspotSDK::PublicUnifiedEventsFilterBranch],
+          list_membership_filter_branches: ::Array[HubspotSDK::Models::Automation::APIEventBasedEnrollmentCriteria::list_membership_filter_branch],
+          should_re_enroll: bool,
+          type: HubspotSDK::Models::Automation::APIEventBasedEnrollmentCriteria::type_,
+          refinement_criteria: HubspotSDK::Models::Automation::APIEventBasedEnrollmentCriteria::refinement_criteria
+        }
+
+      class APIEventBasedEnrollmentCriteria < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor event_filter_branches: ::Array[HubspotSDK::PublicUnifiedEventsFilterBranch]
+
+        attr_accessor list_membership_filter_branches: ::Array[HubspotSDK::Models::Automation::APIEventBasedEnrollmentCriteria::list_membership_filter_branch]
+
+        attr_accessor should_re_enroll: bool
+
+        attr_accessor type: HubspotSDK::Models::Automation::APIEventBasedEnrollmentCriteria::type_
+
+        attr_reader refinement_criteria: HubspotSDK::Models::Automation::APIEventBasedEnrollmentCriteria::refinement_criteria?
+
+        def refinement_criteria=: (
+          HubspotSDK::Models::Automation::APIEventBasedEnrollmentCriteria::refinement_criteria
+        ) -> HubspotSDK::Models::Automation::APIEventBasedEnrollmentCriteria::refinement_criteria
+
+        def initialize: (
+          event_filter_branches: ::Array[HubspotSDK::PublicUnifiedEventsFilterBranch],
+          list_membership_filter_branches: ::Array[HubspotSDK::Models::Automation::APIEventBasedEnrollmentCriteria::list_membership_filter_branch],
+          should_re_enroll: bool,
+          type: HubspotSDK::Models::Automation::APIEventBasedEnrollmentCriteria::type_,
+          ?refinement_criteria: HubspotSDK::Models::Automation::APIEventBasedEnrollmentCriteria::refinement_criteria
+        ) -> void
+
+        def to_hash: -> {
+          event_filter_branches: ::Array[HubspotSDK::PublicUnifiedEventsFilterBranch],
+          list_membership_filter_branches: ::Array[HubspotSDK::Models::Automation::APIEventBasedEnrollmentCriteria::list_membership_filter_branch],
+          should_re_enroll: bool,
+          type: HubspotSDK::Models::Automation::APIEventBasedEnrollmentCriteria::type_,
+          refinement_criteria: HubspotSDK::Models::Automation::APIEventBasedEnrollmentCriteria::refinement_criteria
+        }
+
+        type list_membership_filter_branch =
+          HubspotSDK::PublicOrFilterBranch
+          | HubspotSDK::PublicAndFilterBranch
+          | HubspotSDK::PublicNotAllFilterBranch
+          | HubspotSDK::PublicNotAnyFilterBranch
+          | HubspotSDK::PublicRestrictedFilterBranch
+          | HubspotSDK::PublicUnifiedEventsFilterBranch
+          | HubspotSDK::PublicPropertyAssociationFilterBranch
+          | HubspotSDK::PublicAssociationFilterBranch
+
+        module ListMembershipFilterBranch
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Automation::APIEventBasedEnrollmentCriteria::list_membership_filter_branch]
+        end
+
+        type type_ = :EVENT_BASED
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          EVENT_BASED: :EVENT_BASED
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIEventBasedEnrollmentCriteria::type_]
+        end
+
+        type refinement_criteria =
+          HubspotSDK::PublicOrFilterBranch
+          | HubspotSDK::PublicAndFilterBranch
+          | HubspotSDK::PublicNotAllFilterBranch
+          | HubspotSDK::PublicNotAnyFilterBranch
+          | HubspotSDK::PublicRestrictedFilterBranch
+          | HubspotSDK::PublicUnifiedEventsFilterBranch
+          | HubspotSDK::PublicPropertyAssociationFilterBranch
+          | HubspotSDK::PublicAssociationFilterBranch
+
+        module RefinementCriteria
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Automation::APIEventBasedEnrollmentCriteria::refinement_criteria]
+        end
+      end
+    end
+  end
+end

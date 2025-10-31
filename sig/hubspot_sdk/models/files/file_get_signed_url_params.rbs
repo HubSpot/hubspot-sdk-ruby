@@ -1,0 +1,59 @@
+module HubspotSDK
+  module Models
+    module Files
+      type file_get_signed_url_params =
+        {
+          expiration_seconds: Integer,
+          size: HubspotSDK::Models::Files::FileGetSignedURLParams::size,
+          upscale: bool
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class FileGetSignedURLParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_reader expiration_seconds: Integer?
+
+        def expiration_seconds=: (Integer) -> Integer
+
+        attr_reader size: HubspotSDK::Models::Files::FileGetSignedURLParams::size?
+
+        def size=: (
+          HubspotSDK::Models::Files::FileGetSignedURLParams::size
+        ) -> HubspotSDK::Models::Files::FileGetSignedURLParams::size
+
+        attr_reader upscale: bool?
+
+        def upscale=: (bool) -> bool
+
+        def initialize: (
+          ?expiration_seconds: Integer,
+          ?size: HubspotSDK::Models::Files::FileGetSignedURLParams::size,
+          ?upscale: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          expiration_seconds: Integer,
+          size: HubspotSDK::Models::Files::FileGetSignedURLParams::size,
+          upscale: bool,
+          request_options: HubspotSDK::RequestOptions
+        }
+
+        type size = :thumb | :icon | :medium | :preview
+
+        module Size
+          extend HubspotSDK::Internal::Type::Enum
+
+          THUMB: :thumb
+          ICON: :icon
+          MEDIUM: :medium
+          PREVIEW: :preview
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Files::FileGetSignedURLParams::size]
+        end
+      end
+    end
+  end
+end
