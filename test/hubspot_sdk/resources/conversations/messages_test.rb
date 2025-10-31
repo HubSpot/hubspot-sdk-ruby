@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Conversations::MessagesTest < HubspotSDK::Tes
   def test_create
     skip("Prism tests are disabled")
 
-    response = @hub_spot.conversations.messages.create("threadId")
+    response = @hubspot.conversations.messages.create("threadId")
 
     assert_pattern do
       response => HubspotSDK::Conversations::PublicMessage
@@ -27,7 +27,7 @@ class HubspotSDK::Test::Resources::Conversations::MessagesTest < HubspotSDK::Tes
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.conversations.messages.list("threadId")
+    response = @hubspot.conversations.messages.list("threadId")
 
     assert_pattern do
       response => HubspotSDK::Conversations::CollectionResponsePublicMessageForwardPaging
@@ -44,7 +44,7 @@ class HubspotSDK::Test::Resources::Conversations::MessagesTest < HubspotSDK::Tes
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.conversations.messages.get("messageId", thread_id: "threadId")
+    response = @hubspot.conversations.messages.get("messageId", thread_id: "threadId")
 
     assert_pattern do
       response => HubspotSDK::Conversations::PublicMessage
@@ -65,7 +65,7 @@ class HubspotSDK::Test::Resources::Conversations::MessagesTest < HubspotSDK::Tes
   def test_get_original_content_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.conversations.messages.get_original_content("messageId", thread_id: "threadId")
+    response = @hubspot.conversations.messages.get_original_content("messageId", thread_id: "threadId")
 
     assert_pattern do
       response => HubspotSDK::Conversations::PublicMessageContent

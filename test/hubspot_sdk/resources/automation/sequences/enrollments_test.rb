@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Automation::Sequences::EnrollmentsTest < Hubs
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.automation.sequences.enrollments.enroll(
+      @hubspot.automation.sequences.enrollments.enroll(
         contact_id: "contactId",
         sender_email: "senderEmail",
         sequence_id: "sequenceId"
@@ -30,7 +30,7 @@ class HubspotSDK::Test::Resources::Automation::Sequences::EnrollmentsTest < Hubs
   def test_get_by_contact_id
     skip("Prism tests are disabled")
 
-    response = @hub_spot.automation.sequences.enrollments.get_by_contact_id("contactId")
+    response = @hubspot.automation.sequences.enrollments.get_by_contact_id("contactId")
 
     assert_pattern do
       response => HubspotSDK::Automation::PublicSequenceEnrollmentResponse

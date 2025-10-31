@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::Discounts::BatchTest < HubspotS
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.discounts.batch.create(inputs: [{properties: {foo: "string"}}])
+    response = @hubspot.crm.objects.discounts.batch.create(inputs: [{properties: {foo: "string"}}])
 
     assert_pattern do
       response => HubspotSDK::CRM::BatchResponseSimplePublicObject
@@ -29,8 +29,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::Discounts::BatchTest < HubspotS
   def test_update_required_params
     skip("Prism tests are disabled")
 
-    response =
-      @hub_spot.crm.objects.discounts.batch.update(inputs: [{id: "id", properties: {foo: "string"}}])
+    response = @hubspot.crm.objects.discounts.batch.update(inputs: [{id: "id", properties: {foo: "string"}}])
 
     assert_pattern do
       response => HubspotSDK::CRM::BatchResponseSimplePublicObject
@@ -53,7 +52,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::Discounts::BatchTest < HubspotS
   def test_delete_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.discounts.batch.delete(inputs: [{id: "id"}])
+    response = @hubspot.crm.objects.discounts.batch.delete(inputs: [{id: "id"}])
 
     assert_pattern do
       response => nil
@@ -64,7 +63,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::Discounts::BatchTest < HubspotS
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.discounts.batch.get(
+      @hubspot.crm.objects.discounts.batch.get(
         inputs: [{id: "id"}],
         properties: ["string"],
         properties_with_history: ["string"]
@@ -91,8 +90,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::Discounts::BatchTest < HubspotS
   def test_upsert_required_params
     skip("Prism tests are disabled")
 
-    response =
-      @hub_spot.crm.objects.discounts.batch.upsert(inputs: [{id: "id", properties: {foo: "string"}}])
+    response = @hubspot.crm.objects.discounts.batch.upsert(inputs: [{id: "id", properties: {foo: "string"}}])
 
     assert_pattern do
       response => HubspotSDK::CRM::BatchResponseSimplePublicUpsertObject

@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::RevisionsTest < HubspotS
   def test_list_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.automation.actions.revisions.list("definitionId", app_id: 0)
+    response = @hubspot.automation.actions.revisions.list("definitionId", app_id: 0)
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -33,7 +33,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::RevisionsTest < HubspotS
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.automation.actions.revisions.get("revisionId", app_id: 0, definition_id: "definitionId")
+      @hubspot.automation.actions.revisions.get("revisionId", app_id: 0, definition_id: "definitionId")
 
     assert_pattern do
       response => HubspotSDK::Automation::PublicActionRevision

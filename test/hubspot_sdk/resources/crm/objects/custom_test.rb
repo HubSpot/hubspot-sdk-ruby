@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::CustomTest < HubspotSDK::Test::
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.custom.create("objectType", properties: {foo: "string"})
+    response = @hubspot.crm.objects.custom.create("objectType", properties: {foo: "string"})
 
     assert_pattern do
       response => HubspotSDK::CRM::CreatedResponseSimplePublicObject
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::CustomTest < HubspotSDK::Test::
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.custom.update(
+      @hubspot.crm.objects.custom.update(
         "objectId",
         object_type: "objectType",
         properties: {
@@ -60,7 +60,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::CustomTest < HubspotSDK::Test::
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.custom.list("objectType")
+    response = @hubspot.crm.objects.custom.list("objectType")
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -91,7 +91,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::CustomTest < HubspotSDK::Test::
   def test_delete_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.custom.delete("objectId", object_type: "objectType")
+    response = @hubspot.crm.objects.custom.delete("objectId", object_type: "objectType")
 
     assert_pattern do
       response => nil
@@ -101,7 +101,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::CustomTest < HubspotSDK::Test::
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.custom.get("objectId", object_type: "objectType")
+    response = @hubspot.crm.objects.custom.get("objectId", object_type: "objectType")
 
     assert_pattern do
       response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
@@ -126,7 +126,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::CustomTest < HubspotSDK::Test::
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.custom.merge(
+      @hubspot.crm.objects.custom.merge(
         "objectType",
         object_id_to_merge: "objectIdToMerge",
         primary_object_id: "primaryObjectId"
@@ -153,7 +153,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::CustomTest < HubspotSDK::Test::
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.custom.search("objectType")
+    response = @hubspot.crm.objects.custom.search("objectType")
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject

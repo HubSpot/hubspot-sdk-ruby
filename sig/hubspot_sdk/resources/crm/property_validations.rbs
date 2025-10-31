@@ -5,13 +5,13 @@ module HubspotSDK
         def list: (
           String object_type_id,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::CRM::CollectionResponsePublicPropertyValidationRuleMapNoPaging
+        ) -> HubspotSDK::Models::CRM::PropertyValidationListResponse
 
         def get: (
           String property_name,
           object_type_id: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::CRM::CollectionResponsePublicPropertyValidationRuleNoPaging
+        ) -> HubspotSDK::Models::CRM::PropertyValidationGetResponse
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

@@ -6,17 +6,17 @@ class HubspotSDK::Test::Resources::Cms::SiteSearchTest < HubspotSDK::Test::Resou
   def test_get_indexed_data
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.site_search.get_indexed_data("contentId")
+    response = @hubspot.cms.site_search.get_indexed_data("contentId")
 
     assert_pattern do
-      response => HubspotSDK::Cms::IndexedData
+      response => HubspotSDK::Models::Cms::SiteSearchGetIndexedDataResponse
     end
 
     assert_pattern do
       response => {
         id: String,
-        fields: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::IndexedField]),
-        type: HubspotSDK::Cms::IndexedData::Type
+        fields: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Models::Cms::SiteSearchGetIndexedDataResponse::Field]),
+        type: HubspotSDK::Models::Cms::SiteSearchGetIndexedDataResponse::Type
       }
     end
   end
@@ -24,10 +24,10 @@ class HubspotSDK::Test::Resources::Cms::SiteSearchTest < HubspotSDK::Test::Resou
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.site_search.search
+    response = @hubspot.cms.site_search.search
 
     assert_pattern do
-      response => HubspotSDK::Cms::PublicSearchResults
+      response => HubspotSDK::Models::Cms::SiteSearchSearchResponse
     end
 
     assert_pattern do
@@ -35,7 +35,7 @@ class HubspotSDK::Test::Resources::Cms::SiteSearchTest < HubspotSDK::Test::Resou
         limit: Integer,
         offset: Integer,
         page: Integer,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ContentSearchResult]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::Cms::SiteSearchSearchResponse::Result]),
         total: Integer,
         search_term: String | nil
       }

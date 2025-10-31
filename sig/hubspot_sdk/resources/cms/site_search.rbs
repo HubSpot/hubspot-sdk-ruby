@@ -6,7 +6,7 @@ module HubspotSDK
           String content_id,
           ?type: HubspotSDK::Models::Cms::SiteSearchGetIndexedDataParams::type_,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::IndexedData
+        ) -> HubspotSDK::Models::Cms::SiteSearchGetIndexedDataResponse
 
         def search: (
           ?autocomplete: bool,
@@ -27,7 +27,7 @@ module HubspotSDK
           ?table_id: Integer,
           ?type: ::Array[HubspotSDK::Models::Cms::SiteSearchSearchParams::type_],
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::PublicSearchResults
+        ) -> HubspotSDK::Models::Cms::SiteSearchSearchResponse
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

@@ -3,24 +3,34 @@ module HubspotSDK
     module Conversations
       module CustomChannels
         type channel_account_update_params =
-          { channel_id: String }
+          { channel_id: String, authorized: bool, name: String }
           & HubspotSDK::Internal::Type::request_parameters
 
-        class ChannelAccountUpdateParams < HubspotSDK::Models::Conversations::PublicChannelAccountUpdateRequest
+        class ChannelAccountUpdateParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def channel_id: -> String
+          attr_accessor channel_id: String
 
-          def channel_id=: (String _) -> String
+          attr_reader authorized: bool?
+
+          def authorized=: (bool) -> bool
+
+          attr_reader name: String?
+
+          def name=: (String) -> String
 
           def initialize: (
             channel_id: String,
+            ?authorized: bool,
+            ?name: String,
             ?request_options: HubspotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
             channel_id: String,
+            authorized: bool,
+            name: String,
             request_options: HubspotSDK::RequestOptions
           }
         end

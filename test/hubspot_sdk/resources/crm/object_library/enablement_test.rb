@@ -6,10 +6,10 @@ class HubspotSDK::Test::Resources::CRM::ObjectLibrary::EnablementTest < HubspotS
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.object_library.enablement.list
+    response = @hubspot.crm.object_library.enablement.list
 
     assert_pattern do
-      response => HubspotSDK::CRM::PortalObjectTypeEnablementPublicResponse
+      response => HubspotSDK::Models::CRM::ObjectLibrary::EnablementListResponse
     end
 
     assert_pattern do
@@ -22,10 +22,10 @@ class HubspotSDK::Test::Resources::CRM::ObjectLibrary::EnablementTest < HubspotS
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.object_library.enablement.get("objectTypeId")
+    response = @hubspot.crm.object_library.enablement.get("objectTypeId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::ObjectTypeEnablementPublicResponse
+      response => HubspotSDK::Models::CRM::ObjectLibrary::EnablementGetResponse
     end
 
     assert_pattern do

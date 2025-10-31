@@ -1,0 +1,60 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      module CustomChannels
+        type channel_account_staging_token_update_response =
+          {
+            account_token: String,
+            created_at: Time,
+            generic_channel_id: Integer,
+            inbox_id: Integer,
+            user_id: Integer,
+            account_name: String,
+            delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+          }
+
+        class ChannelAccountStagingTokenUpdateResponse < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor account_token: String
+
+          attr_accessor created_at: Time
+
+          attr_accessor generic_channel_id: Integer
+
+          attr_accessor inbox_id: Integer
+
+          attr_accessor user_id: Integer
+
+          attr_reader account_name: String?
+
+          def account_name=: (String) -> String
+
+          attr_reader delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier?
+
+          def delivery_identifier=: (
+            HubspotSDK::Conversations::PublicDeliveryIdentifier
+          ) -> HubspotSDK::Conversations::PublicDeliveryIdentifier
+
+          def initialize: (
+            account_token: String,
+            created_at: Time,
+            generic_channel_id: Integer,
+            inbox_id: Integer,
+            user_id: Integer,
+            ?account_name: String,
+            ?delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+          ) -> void
+
+          def to_hash: -> {
+            account_token: String,
+            created_at: Time,
+            generic_channel_id: Integer,
+            inbox_id: Integer,
+            user_id: Integer,
+            account_name: String,
+            delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+          }
+        end
+      end
+    end
+  end
+end

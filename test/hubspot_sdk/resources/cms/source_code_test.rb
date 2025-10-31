@@ -6,10 +6,10 @@ class HubspotSDK::Test::Resources::Cms::SourceCodeTest < HubspotSDK::Test::Resou
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.source_code.create("path", environment: "environment")
+    response = @hubspot.cms.source_code.create("path", environment: "environment")
 
     assert_pattern do
-      response => HubspotSDK::Cms::AssetFileMetadata
+      response => HubspotSDK::Models::Cms::SourceCodeCreateResponse
     end
 
     assert_pattern do
@@ -29,7 +29,7 @@ class HubspotSDK::Test::Resources::Cms::SourceCodeTest < HubspotSDK::Test::Resou
   def test_delete_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.source_code.delete("path", environment: "environment")
+    response = @hubspot.cms.source_code.delete("path", environment: "environment")
 
     assert_pattern do
       response => nil
@@ -39,7 +39,7 @@ class HubspotSDK::Test::Resources::Cms::SourceCodeTest < HubspotSDK::Test::Resou
   def test_extract_async_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.source_code.extract_async(path: "path")
+    response = @hubspot.cms.source_code.extract_async(path: "path")
 
     assert_pattern do
       response => HubspotSDK::TaskLocator
@@ -56,7 +56,7 @@ class HubspotSDK::Test::Resources::Cms::SourceCodeTest < HubspotSDK::Test::Resou
   def test_get_required_params
     skip("Prism doesn't support application/octet-stream responses")
 
-    response = @hub_spot.cms.source_code.get("path", environment: "environment")
+    response = @hubspot.cms.source_code.get("path", environment: "environment")
 
     assert_pattern do
       response => StringIO
@@ -66,7 +66,7 @@ class HubspotSDK::Test::Resources::Cms::SourceCodeTest < HubspotSDK::Test::Resou
   def test_get_extraction_status
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.source_code.get_extraction_status(0)
+    response = @hubspot.cms.source_code.get_extraction_status(0)
 
     assert_pattern do
       response => HubspotSDK::ActionResponse
@@ -86,10 +86,10 @@ class HubspotSDK::Test::Resources::Cms::SourceCodeTest < HubspotSDK::Test::Resou
   def test_get_metadata_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.source_code.get_metadata("path", environment: "environment")
+    response = @hubspot.cms.source_code.get_metadata("path", environment: "environment")
 
     assert_pattern do
-      response => HubspotSDK::Cms::AssetFileMetadata
+      response => HubspotSDK::Models::Cms::SourceCodeGetMetadataResponse
     end
 
     assert_pattern do
@@ -109,10 +109,10 @@ class HubspotSDK::Test::Resources::Cms::SourceCodeTest < HubspotSDK::Test::Resou
   def test_upsert_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.source_code.upsert("path", environment: "environment")
+    response = @hubspot.cms.source_code.upsert("path", environment: "environment")
 
     assert_pattern do
-      response => HubspotSDK::Cms::AssetFileMetadata
+      response => HubspotSDK::Models::Cms::SourceCodeUpsertResponse
     end
 
     assert_pattern do
@@ -132,7 +132,7 @@ class HubspotSDK::Test::Resources::Cms::SourceCodeTest < HubspotSDK::Test::Resou
   def test_validate_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.source_code.validate("path", environment: "environment")
+    response = @hubspot.cms.source_code.validate("path", environment: "environment")
 
     assert_pattern do
       response => StringIO

@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::ImportsTest < HubspotSDK::Test::Resource
   def test_create
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.imports.create
+    response = @hubspot.crm.imports.create
 
     assert_pattern do
       response => HubspotSDK::CRM::PublicImportResponse
@@ -32,7 +32,7 @@ class HubspotSDK::Test::Resources::CRM::ImportsTest < HubspotSDK::Test::Resource
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.imports.list
+    response = @hubspot.crm.imports.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -65,7 +65,7 @@ class HubspotSDK::Test::Resources::CRM::ImportsTest < HubspotSDK::Test::Resource
   def test_cancel
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.imports.cancel(0)
+    response = @hubspot.crm.imports.cancel(0)
 
     assert_pattern do
       response => HubspotSDK::ActionResponse
@@ -85,7 +85,7 @@ class HubspotSDK::Test::Resources::CRM::ImportsTest < HubspotSDK::Test::Resource
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.imports.get(0)
+    response = @hubspot.crm.imports.get(0)
 
     assert_pattern do
       response => HubspotSDK::CRM::PublicImportResponse
@@ -111,7 +111,7 @@ class HubspotSDK::Test::Resources::CRM::ImportsTest < HubspotSDK::Test::Resource
   def test_list_errors
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.imports.list_errors(0)
+    response = @hubspot.crm.imports.list_errors(0)
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponsePublicImportErrorForwardPaging

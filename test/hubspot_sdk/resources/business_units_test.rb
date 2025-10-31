@@ -6,10 +6,10 @@ class HubspotSDK::Test::Resources::BusinessUnitsTest < HubspotSDK::Test::Resourc
   def test_get_by_user_id
     skip("Prism tests are disabled")
 
-    response = @hub_spot.business_units.get_by_user_id("userId")
+    response = @hubspot.business_units.get_by_user_id("userId")
 
     assert_pattern do
-      response => HubspotSDK::BusinessUnits::CollectionResponsePublicBusinessUnitNoPaging
+      response => HubspotSDK::Models::BusinessUnits::BusinessUnitGetByUserIDResponse
     end
 
     assert_pattern do

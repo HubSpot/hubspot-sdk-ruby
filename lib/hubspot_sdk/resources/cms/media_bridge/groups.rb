@@ -47,7 +47,7 @@ module HubspotSDK
           # @param app_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::CollectionResponsePropertyGroupNoPaging]
+          # @return [HubspotSDK::Models::Cms::MediaBridge::GroupListResponse]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::GroupListParams
           def list(object_type, params)
@@ -59,7 +59,7 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["media-bridge/v1/%1$s/properties/%2$s/groups", app_id, object_type],
-              model: HubspotSDK::Cms::CollectionResponsePropertyGroupNoPaging,
+              model: HubspotSDK::Models::Cms::MediaBridge::GroupListResponse,
               options: options
             )
           end

@@ -13,7 +13,7 @@ module HubspotSDK
         #
         # @param label [String] Human readable label for the event. Used in HubSpot UI
         #
-        # @param property_definitions [Array<HubspotSDK::Models::Events::ExternalBehavioralEventPropertyCreate>] List of custom properties on event
+        # @param property_definitions [Array<HubspotSDK::Models::Events::EventDefinitionCreateParams::PropertyDefinition>] List of custom properties on event
         #
         # @param description [String] A description of the event that will be shown as help text in HubSpot.
         #
@@ -23,7 +23,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Events::ExternalBehavioralEventTypeDefinition]
+        # @return [HubspotSDK::Models::Events::EventDefinitionCreateResponse]
         #
         # @see HubspotSDK::Models::Events::EventDefinitionCreateParams
         def create(params)
@@ -32,7 +32,7 @@ module HubspotSDK
             method: :post,
             path: "events/v3/event-definitions",
             body: parsed,
-            model: HubspotSDK::Events::ExternalBehavioralEventTypeDefinition,
+            model: HubspotSDK::Models::Events::EventDefinitionCreateResponse,
             options: options
           )
         end
@@ -49,7 +49,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Events::ExternalBehavioralEventTypeDefinition]
+        # @return [HubspotSDK::Models::Events::EventDefinitionUpdateResponse]
         #
         # @see HubspotSDK::Models::Events::EventDefinitionUpdateParams
         def update(event_name, params = {})
@@ -58,7 +58,7 @@ module HubspotSDK
             method: :patch,
             path: ["events/v3/event-definitions/%1$s", event_name],
             body: parsed,
-            model: HubspotSDK::Events::ExternalBehavioralEventTypeDefinition,
+            model: HubspotSDK::Models::Events::EventDefinitionUpdateResponse,
             options: options
           )
         end
@@ -82,7 +82,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Events::ExternalBehavioralEventTypeDefinition>]
+        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Events::EventDefinitionListResponse>]
         #
         # @see HubspotSDK::Models::Events::EventDefinitionListParams
         def list(params = {})
@@ -96,7 +96,7 @@ module HubspotSDK
               sort_order: "sortOrder"
             ),
             page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Events::ExternalBehavioralEventTypeDefinition,
+            model: HubspotSDK::Models::Events::EventDefinitionListResponse,
             options: options
           )
         end
@@ -192,14 +192,14 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Events::ExternalBehavioralEventTypeDefinition]
+        # @return [HubspotSDK::Models::Events::EventDefinitionGetResponse]
         #
         # @see HubspotSDK::Models::Events::EventDefinitionGetParams
         def get(event_name, params = {})
           @client.request(
             method: :get,
             path: ["events/v3/event-definitions/%1$s", event_name],
-            model: HubspotSDK::Events::ExternalBehavioralEventTypeDefinition,
+            model: HubspotSDK::Models::Events::EventDefinitionGetResponse,
             options: params[:request_options]
           )
         end

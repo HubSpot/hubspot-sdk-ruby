@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::SettingsTest < HubspotSDK::Test::
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.settings.list
+    response = @hubspot.cms.blogs.settings.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -44,7 +44,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::SettingsTest < HubspotSDK::Test::
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.blogs.settings.attach_to_lang_group(
+      @hubspot.cms.blogs.settings.attach_to_lang_group(
         id: "id",
         language: "language",
         primary_id: "primaryId"
@@ -58,7 +58,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::SettingsTest < HubspotSDK::Test::
   def test_create_language_variation_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.settings.create_language_variation(id: "id")
+    response = @hubspot.cms.blogs.settings.create_language_variation(id: "id")
 
     assert_pattern do
       response => HubspotSDK::Cms::Blogs::Blog
@@ -88,7 +88,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::SettingsTest < HubspotSDK::Test::
   def test_detach_from_lang_group_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.settings.detach_from_lang_group(id: "id")
+    response = @hubspot.cms.blogs.settings.detach_from_lang_group(id: "id")
 
     assert_pattern do
       response => nil
@@ -98,7 +98,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::SettingsTest < HubspotSDK::Test::
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.settings.get("blogId")
+    response = @hubspot.cms.blogs.settings.get("blogId")
 
     assert_pattern do
       response => HubspotSDK::Cms::Blogs::Blog
@@ -128,7 +128,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::SettingsTest < HubspotSDK::Test::
   def test_get_revision_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.settings.get_revision("revisionId", blog_id: "blogId")
+    response = @hubspot.cms.blogs.settings.get_revision("revisionId", blog_id: "blogId")
 
     assert_pattern do
       response => HubspotSDK::Cms::Blogs::VersionBlog
@@ -147,7 +147,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::SettingsTest < HubspotSDK::Test::
   def test_list_revisions
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.settings.list_revisions("blogId")
+    response = @hubspot.cms.blogs.settings.list_revisions("blogId")
 
     assert_pattern do
       response => HubspotSDK::Cms::Blogs::CollectionResponseWithTotalVersionBlog
@@ -165,7 +165,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::SettingsTest < HubspotSDK::Test::
   def test_set_new_lang_primary_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.settings.set_new_lang_primary(id: "id")
+    response = @hubspot.cms.blogs.settings.set_new_lang_primary(id: "id")
 
     assert_pattern do
       response => nil
@@ -176,7 +176,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::SettingsTest < HubspotSDK::Test::
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.blogs.settings.update_languages(languages: {foo: "string"}, primary_id: "primaryId")
+      @hubspot.cms.blogs.settings.update_languages(languages: {foo: "string"}, primary_id: "primaryId")
 
     assert_pattern do
       response => nil

@@ -9,13 +9,8 @@ module HubspotSDK
       module Actions
       end
 
-      module Appointments
-      end
-
       module Associations
         module Schema
-          module V4
-          end
         end
 
         module V4
@@ -94,8 +89,6 @@ module HubspotSDK
       module CRM
         module Associations
           module Schema
-            module V4
-            end
           end
 
           module V4
@@ -120,9 +113,6 @@ module HubspotSDK
         end
 
         module Objects
-          module Appointments
-          end
-
           module Calls
           end
 
@@ -329,9 +319,6 @@ module HubspotSDK
       end
 
       module Objects
-        module Appointments
-        end
-
         module Calls
         end
 
@@ -468,8 +455,6 @@ module HubspotSDK
       end
 
       module Schema
-        module V4
-        end
       end
 
       module Sequences

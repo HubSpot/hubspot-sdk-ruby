@@ -12,11 +12,25 @@ module HubspotSDK
             )
           end
 
+        # The type of the client.
         sig do
-          returns(HubspotSDK::Conversations::PublicClient::ClientType::OrSymbol)
+          returns(
+            T.nilable(
+              HubspotSDK::Conversations::PublicClient::ClientType::TaggedSymbol
+            )
+          )
         end
-        attr_accessor :client_type
+        attr_reader :client_type
 
+        sig do
+          params(
+            client_type:
+              HubspotSDK::Conversations::PublicClient::ClientType::OrSymbol
+          ).void
+        end
+        attr_writer :client_type
+
+        # The ID of the client if the client is an integration.
         sig { returns(T.nilable(Integer)) }
         attr_reader :integration_app_id
 
@@ -30,14 +44,19 @@ module HubspotSDK
             integration_app_id: Integer
           ).returns(T.attached_class)
         end
-        def self.new(client_type:, integration_app_id: nil)
+        def self.new(
+          # The type of the client.
+          client_type: nil,
+          # The ID of the client if the client is an integration.
+          integration_app_id: nil
+        )
         end
 
         sig do
           override.returns(
             {
               client_type:
-                HubspotSDK::Conversations::PublicClient::ClientType::OrSymbol,
+                HubspotSDK::Conversations::PublicClient::ClientType::TaggedSymbol,
               integration_app_id: Integer
             }
           )
@@ -45,6 +64,7 @@ module HubspotSDK
         def to_hash
         end
 
+        # The type of the client.
         module ClientType
           extend HubspotSDK::Internal::Type::Enum
 

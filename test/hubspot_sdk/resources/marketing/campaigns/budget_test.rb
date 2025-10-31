@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::BudgetTest < HubspotSDK
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.campaigns.budget.create("campaignGuid", amount: 0, name: "name", order: 0)
+    response = @hubspot.marketing.campaigns.budget.create("campaignGuid", amount: 0, name: "name", order: 0)
 
     assert_pattern do
       response => HubspotSDK::Marketing::PublicBudgetItem
@@ -29,7 +29,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::BudgetTest < HubspotSDK
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.campaigns.budget.update(
+      @hubspot.marketing.campaigns.budget.update(
         0,
         campaign_guid: "campaignGuid",
         amount: 0,
@@ -57,7 +57,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::BudgetTest < HubspotSDK
   def test_delete_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.campaigns.budget.delete(0, campaign_guid: "campaignGuid")
+    response = @hubspot.marketing.campaigns.budget.delete(0, campaign_guid: "campaignGuid")
 
     assert_pattern do
       response => nil
@@ -67,7 +67,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::BudgetTest < HubspotSDK
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.campaigns.budget.get(0, campaign_guid: "campaignGuid")
+    response = @hubspot.marketing.campaigns.budget.get(0, campaign_guid: "campaignGuid")
 
     assert_pattern do
       response => HubspotSDK::Marketing::PublicBudgetItem
@@ -89,7 +89,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::BudgetTest < HubspotSDK
   def test_get_totals
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.campaigns.budget.get_totals("campaignGuid")
+    response = @hubspot.marketing.campaigns.budget.get_totals("campaignGuid")
 
     assert_pattern do
       response => HubspotSDK::Marketing::PublicBudgetTotals

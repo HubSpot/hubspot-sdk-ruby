@@ -20,7 +20,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::AssetFileMetadata]
+        # @return [HubspotSDK::Models::Cms::SourceCodeCreateResponse]
         #
         # @see HubspotSDK::Models::Cms::SourceCodeCreateParams
         def create(path, params)
@@ -34,7 +34,7 @@ module HubspotSDK
             path: ["cms/v3/source-code/%1$s/content/%2$s", environment, path],
             headers: {"content-type" => "multipart/form-data"},
             body: parsed,
-            model: HubspotSDK::Cms::AssetFileMetadata,
+            model: HubspotSDK::Models::Cms::SourceCodeCreateResponse,
             options: options
           )
         end
@@ -151,7 +151,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::AssetFileMetadata]
+        # @return [HubspotSDK::Models::Cms::SourceCodeGetMetadataResponse]
         #
         # @see HubspotSDK::Models::Cms::SourceCodeGetMetadataParams
         def get_metadata(path, params)
@@ -164,7 +164,7 @@ module HubspotSDK
             method: :get,
             path: ["cms/v3/source-code/%1$s/metadata/%2$s", environment, path],
             query: parsed,
-            model: HubspotSDK::Cms::AssetFileMetadata,
+            model: HubspotSDK::Models::Cms::SourceCodeGetMetadataResponse,
             options: options
           )
         end
@@ -182,7 +182,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::AssetFileMetadata]
+        # @return [HubspotSDK::Models::Cms::SourceCodeUpsertResponse]
         #
         # @see HubspotSDK::Models::Cms::SourceCodeUpsertParams
         def upsert(path, params)
@@ -196,7 +196,7 @@ module HubspotSDK
             path: ["cms/v3/source-code/%1$s/content/%2$s", environment, path],
             headers: {"content-type" => "multipart/form-data"},
             body: parsed,
-            model: HubspotSDK::Cms::AssetFileMetadata,
+            model: HubspotSDK::Models::Cms::SourceCodeUpsertResponse,
             options: options
           )
         end

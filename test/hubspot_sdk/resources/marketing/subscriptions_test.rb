@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Marketing::SubscriptionsTest < HubspotSDK::Te
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.subscriptions.list
+    response = @hubspot.marketing.subscriptions.list
 
     assert_pattern do
       response => HubspotSDK::Marketing::SubscriptionDefinitionsResponse
@@ -22,7 +22,7 @@ class HubspotSDK::Test::Resources::Marketing::SubscriptionsTest < HubspotSDK::Te
   def test_get_email_status
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.subscriptions.get_email_status("emailAddress")
+    response = @hubspot.marketing.subscriptions.get_email_status("emailAddress")
 
     assert_pattern do
       response => HubspotSDK::Marketing::PublicSubscriptionStatusesResponse
@@ -40,7 +40,7 @@ class HubspotSDK::Test::Resources::Marketing::SubscriptionsTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.subscriptions.subscribe(
+      @hubspot.marketing.subscriptions.subscribe(
         email_address: "emailAddress",
         subscription_id: "subscriptionId"
       )
@@ -68,7 +68,7 @@ class HubspotSDK::Test::Resources::Marketing::SubscriptionsTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.subscriptions.unsubscribe(
+      @hubspot.marketing.subscriptions.unsubscribe(
         email_address: "emailAddress",
         subscription_id: "subscriptionId"
       )

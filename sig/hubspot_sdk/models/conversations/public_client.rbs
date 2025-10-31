@@ -8,14 +8,18 @@ module HubspotSDK
         }
 
       class PublicClient < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor client_type: HubspotSDK::Models::Conversations::PublicClient::client_type
+        attr_reader client_type: HubspotSDK::Models::Conversations::PublicClient::client_type?
+
+        def client_type=: (
+          HubspotSDK::Models::Conversations::PublicClient::client_type
+        ) -> HubspotSDK::Models::Conversations::PublicClient::client_type
 
         attr_reader integration_app_id: Integer?
 
         def integration_app_id=: (Integer) -> Integer
 
         def initialize: (
-          client_type: HubspotSDK::Models::Conversations::PublicClient::client_type,
+          ?client_type: HubspotSDK::Models::Conversations::PublicClient::client_type,
           ?integration_app_id: Integer
         ) -> void
 

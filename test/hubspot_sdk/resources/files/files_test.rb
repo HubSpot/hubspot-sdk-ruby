@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Files::FilesTest < HubspotSDK::Test::Resource
   def test_update
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.files.update("321669910225")
+    response = @hubspot.files.files.update("321669910225")
 
     assert_pattern do
       response => HubspotSDK::Files::File
@@ -42,7 +42,7 @@ class HubspotSDK::Test::Resources::Files::FilesTest < HubspotSDK::Test::Resource
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.files.delete("321669910225")
+    response = @hubspot.files.files.delete("321669910225")
 
     assert_pattern do
       response => nil
@@ -52,7 +52,7 @@ class HubspotSDK::Test::Resources::Files::FilesTest < HubspotSDK::Test::Resource
   def test_gdpr_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.files.gdpr_delete("321669910225")
+    response = @hubspot.files.files.gdpr_delete("321669910225")
 
     assert_pattern do
       response => nil
@@ -62,7 +62,7 @@ class HubspotSDK::Test::Resources::Files::FilesTest < HubspotSDK::Test::Resource
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.files.get("321669910225")
+    response = @hubspot.files.files.get("321669910225")
 
     assert_pattern do
       response => HubspotSDK::Files::File
@@ -98,7 +98,7 @@ class HubspotSDK::Test::Resources::Files::FilesTest < HubspotSDK::Test::Resource
   def test_get_by_path
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.files.get_by_path("path")
+    response = @hubspot.files.files.get_by_path("path")
 
     assert_pattern do
       response => HubspotSDK::Files::FileStat
@@ -115,7 +115,7 @@ class HubspotSDK::Test::Resources::Files::FilesTest < HubspotSDK::Test::Resource
   def test_get_import_task_status
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.files.get_import_task_status("taskId")
+    response = @hubspot.files.files.get_import_task_status("taskId")
 
     assert_pattern do
       response => HubspotSDK::Files::FileActionResponse
@@ -139,7 +139,7 @@ class HubspotSDK::Test::Resources::Files::FilesTest < HubspotSDK::Test::Resource
   def test_get_signed_url
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.files.get_signed_url("321669910225")
+    response = @hubspot.files.files.get_signed_url("321669910225")
 
     assert_pattern do
       response => HubspotSDK::Files::SignedURL
@@ -162,7 +162,7 @@ class HubspotSDK::Test::Resources::Files::FilesTest < HubspotSDK::Test::Resource
   def test_import_from_url_async_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.files.import_from_url_async(access: :PUBLIC_INDEXABLE, url: "url")
+    response = @hubspot.files.files.import_from_url_async(access: :PUBLIC_INDEXABLE, url: "url")
 
     assert_pattern do
       response => HubspotSDK::Files::ImportFromURLTaskLocator
@@ -179,7 +179,7 @@ class HubspotSDK::Test::Resources::Files::FilesTest < HubspotSDK::Test::Resource
   def test_replace
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.files.replace("321669910225")
+    response = @hubspot.files.files.replace("321669910225")
 
     assert_pattern do
       response => HubspotSDK::Files::File
@@ -215,7 +215,7 @@ class HubspotSDK::Test::Resources::Files::FilesTest < HubspotSDK::Test::Resource
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.files.search
+    response = @hubspot.files.files.search
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -258,7 +258,7 @@ class HubspotSDK::Test::Resources::Files::FilesTest < HubspotSDK::Test::Resource
   def test_upload
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.files.upload
+    response = @hubspot.files.files.upload
 
     assert_pattern do
       response => HubspotSDK::Files::File

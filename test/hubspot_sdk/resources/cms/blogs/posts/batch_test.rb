@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::Posts::BatchTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.blogs.posts.batch.create(
+      @hubspot.cms.blogs.posts.batch.create(
         inputs: [
           {
             id: "id",
@@ -163,7 +163,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::Posts::BatchTest < HubspotSDK::Te
   def test_update_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.posts.batch.update(inputs: [{}])
+    response = @hubspot.cms.blogs.posts.batch.update(inputs: [{}])
 
     assert_pattern do
       response => HubspotSDK::Cms::Blogs::BatchResponseBlogPost
@@ -184,7 +184,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::Posts::BatchTest < HubspotSDK::Te
   def test_delete_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.posts.batch.delete(inputs: ["string"])
+    response = @hubspot.cms.blogs.posts.batch.delete(inputs: ["string"])
 
     assert_pattern do
       response => nil
@@ -194,7 +194,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::Posts::BatchTest < HubspotSDK::Te
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.posts.batch.get(inputs: ["string"])
+    response = @hubspot.cms.blogs.posts.batch.get(inputs: ["string"])
 
     assert_pattern do
       response => HubspotSDK::Cms::Blogs::BatchResponseBlogPost

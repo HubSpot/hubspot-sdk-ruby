@@ -16,7 +16,7 @@ module HubspotSDK
 
             sig do
               returns(
-                HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::TaggedSymbol
+                HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::OrSymbol
               )
             end
             attr_accessor :category
@@ -49,7 +49,7 @@ module HubspotSDK
               override.returns(
                 {
                   category:
-                    HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::TaggedSymbol,
+                    HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::OrSymbol,
                   type_id: Integer,
                   user_enforced_max_to_object_ids: Integer
                 }

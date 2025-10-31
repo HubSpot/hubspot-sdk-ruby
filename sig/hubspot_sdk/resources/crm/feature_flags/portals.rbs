@@ -7,37 +7,37 @@ module HubspotSDK
             Integer portal_id,
             app_id: Integer,
             flag_name: String,
-            flag_state: HubspotSDK::Models::CRM::PortalFlagStatePutRequest::flag_state,
+            flag_state: HubspotSDK::Models::CRM::FeatureFlags::PortalUpdateParams::flag_state,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::PortalFlagStateResponse
+          ) -> HubspotSDK::Models::CRM::FeatureFlags::PortalUpdateResponse
 
           def delete: (
             Integer portal_id,
             app_id: Integer,
             flag_name: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::PortalFlagStateResponse
+          ) -> HubspotSDK::Models::CRM::FeatureFlags::PortalDeleteResponse
 
           def batch_delete: (
             String flag_name,
             app_id: Integer,
             portal_ids: ::Array[Integer],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::PortalFlagStateBatchResponse
+          ) -> HubspotSDK::Models::CRM::FeatureFlags::PortalBatchDeleteResponse
 
           def batch_upsert: (
             String flag_name,
             app_id: Integer,
-            portal_states: ::Array[HubspotSDK::CRM::BatchPortalEntry],
+            portal_states: ::Array[HubspotSDK::CRM::FeatureFlags::PortalBatchUpsertParams::PortalState],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::PortalFlagStateBatchResponse
+          ) -> HubspotSDK::Models::CRM::FeatureFlags::PortalBatchUpsertResponse
 
           def get: (
             Integer portal_id,
             app_id: Integer,
             flag_name: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::PortalFlagStateResponse
+          ) -> HubspotSDK::Models::CRM::FeatureFlags::PortalGetResponse
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

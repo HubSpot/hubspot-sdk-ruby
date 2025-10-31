@@ -1,0 +1,20 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module MediaBridge
+        type integrator_setting_register_app_name_response =
+          { app_id: Integer, name: String }
+
+        class IntegratorSettingRegisterAppNameResponse < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor app_id: Integer
+
+          attr_accessor name: String
+
+          def initialize: (app_id: Integer, name: String) -> void
+
+          def to_hash: -> { app_id: Integer, name: String }
+        end
+      end
+    end
+  end
+end

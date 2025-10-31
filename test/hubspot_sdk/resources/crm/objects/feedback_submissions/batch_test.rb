@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::FeedbackSubmissions::BatchTest 
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.feedback_submissions.batch.get(
+      @hubspot.crm.objects.feedback_submissions.batch.get(
         inputs: [{id: "id"}],
         properties: ["string"],
         properties_with_history: ["string"]

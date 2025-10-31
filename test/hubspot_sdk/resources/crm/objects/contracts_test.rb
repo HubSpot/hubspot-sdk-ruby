@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContractsTest < HubspotSDK::Tes
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.contracts.create(properties: {foo: "string"})
+    response = @hubspot.crm.objects.contracts.create(properties: {foo: "string"})
 
     assert_pattern do
       response => HubspotSDK::CRM::CreatedResponseSimplePublicObject
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContractsTest < HubspotSDK::Tes
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.contracts.update(
+      @hubspot.crm.objects.contracts.update(
         "contractId",
         properties: {
           property_checkbox: "false",
@@ -59,7 +59,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContractsTest < HubspotSDK::Tes
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.contracts.list
+    response = @hubspot.crm.objects.contracts.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -90,7 +90,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContractsTest < HubspotSDK::Tes
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.contracts.delete("contractId")
+    response = @hubspot.crm.objects.contracts.delete("contractId")
 
     assert_pattern do
       response => nil
@@ -100,7 +100,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContractsTest < HubspotSDK::Tes
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.contracts.get("contractId")
+    response = @hubspot.crm.objects.contracts.get("contractId")
 
     assert_pattern do
       response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
@@ -124,7 +124,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContractsTest < HubspotSDK::Tes
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.contracts.search
+    response = @hubspot.crm.objects.contracts.search
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject

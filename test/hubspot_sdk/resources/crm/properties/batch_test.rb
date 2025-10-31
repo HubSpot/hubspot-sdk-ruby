@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::Properties::BatchTest < HubspotSDK::Test
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.properties.batch.create(
+      @hubspot.crm.properties.batch.create(
         "objectType",
         inputs: [
           {
@@ -39,7 +39,7 @@ class HubspotSDK::Test::Resources::CRM::Properties::BatchTest < HubspotSDK::Test
   def test_delete_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.properties.batch.delete("objectType", inputs: [{name: "name"}])
+    response = @hubspot.crm.properties.batch.delete("objectType", inputs: [{name: "name"}])
 
     assert_pattern do
       response => nil
@@ -49,7 +49,7 @@ class HubspotSDK::Test::Resources::CRM::Properties::BatchTest < HubspotSDK::Test
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.properties.batch.get("objectType", archived: true, inputs: [{name: "name"}])
+    response = @hubspot.crm.properties.batch.get("objectType", archived: true, inputs: [{name: "name"}])
 
     assert_pattern do
       response => HubspotSDK::BatchResponseProperty

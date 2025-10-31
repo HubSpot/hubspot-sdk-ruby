@@ -3,25 +3,61 @@ module HubspotSDK
     module Cms
       module MediaBridge
         type integrator_setting_update_oembed_domain_params =
-          { app_id: String } & HubspotSDK::Internal::Type::request_parameters
+          {
+            app_id: String,
+            endpoints: HubspotSDK::Cms::MediaBridge::IntegratorSettingUpdateOembedDomainParams::Endpoints,
+            portal_id: Integer
+          }
+          & HubspotSDK::Internal::Type::request_parameters
 
-        class IntegratorSettingUpdateOembedDomainParams < HubspotSDK::Models::Cms::IntegratorOEmbedDomainRequest
+        class IntegratorSettingUpdateOembedDomainParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def app_id: -> String
+          attr_accessor app_id: String
 
-          def app_id=: (String _) -> String
+          attr_accessor endpoints: HubspotSDK::Cms::MediaBridge::IntegratorSettingUpdateOembedDomainParams::Endpoints
+
+          attr_reader portal_id: Integer?
+
+          def portal_id=: (Integer) -> Integer
 
           def initialize: (
             app_id: String,
+            endpoints: HubspotSDK::Cms::MediaBridge::IntegratorSettingUpdateOembedDomainParams::Endpoints,
+            ?portal_id: Integer,
             ?request_options: HubspotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
             app_id: String,
+            endpoints: HubspotSDK::Cms::MediaBridge::IntegratorSettingUpdateOembedDomainParams::Endpoints,
+            portal_id: Integer,
             request_options: HubspotSDK::RequestOptions
           }
+
+          type endpoints =
+            { discovery: bool, schemes: ::Array[String], url: String }
+
+          class Endpoints < HubspotSDK::Internal::Type::BaseModel
+            attr_accessor discovery: bool
+
+            attr_accessor schemes: ::Array[String]
+
+            attr_accessor url: String
+
+            def initialize: (
+              discovery: bool,
+              schemes: ::Array[String],
+              url: String
+            ) -> void
+
+            def to_hash: -> {
+              discovery: bool,
+              schemes: ::Array[String],
+              url: String
+            }
+          end
         end
       end
     end

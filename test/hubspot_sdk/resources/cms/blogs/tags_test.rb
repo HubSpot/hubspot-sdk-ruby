@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::TagsTest < HubspotSDK::Test::Reso
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.blogs.tags.create(
+      @hubspot.cms.blogs.tags.create(
         id: "id",
         created: "2019-12-27T18:11:19.117Z",
         deleted_at: "2019-12-27T18:11:19.117Z",
@@ -38,7 +38,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::TagsTest < HubspotSDK::Test::Reso
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.blogs.tags.update(
+      @hubspot.cms.blogs.tags.update(
         "objectId",
         id: "id",
         created: "2019-12-27T18:11:19.117Z",
@@ -69,7 +69,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::TagsTest < HubspotSDK::Test::Reso
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.tags.list
+    response = @hubspot.cms.blogs.tags.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -98,7 +98,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::TagsTest < HubspotSDK::Test::Reso
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.tags.delete("objectId")
+    response = @hubspot.cms.blogs.tags.delete("objectId")
 
     assert_pattern do
       response => nil
@@ -109,7 +109,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::TagsTest < HubspotSDK::Test::Reso
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.blogs.tags.attach_to_lang_group(id: "id", language: "language", primary_id: "primaryId")
+      @hubspot.cms.blogs.tags.attach_to_lang_group(id: "id", language: "language", primary_id: "primaryId")
 
     assert_pattern do
       response => nil
@@ -120,7 +120,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::TagsTest < HubspotSDK::Test::Reso
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.blogs.tags.create_batch(
+      @hubspot.cms.blogs.tags.create_batch(
         inputs: [
           {
             id: "id",
@@ -153,7 +153,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::TagsTest < HubspotSDK::Test::Reso
   def test_create_lang_variation_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.tags.create_lang_variation(id: "id", name: "name")
+    response = @hubspot.cms.blogs.tags.create_lang_variation(id: "id", name: "name")
 
     assert_pattern do
       response => HubspotSDK::Cms::Blogs::Tag
@@ -175,7 +175,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::TagsTest < HubspotSDK::Test::Reso
   def test_delete_batch_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.tags.delete_batch(inputs: ["string"])
+    response = @hubspot.cms.blogs.tags.delete_batch(inputs: ["string"])
 
     assert_pattern do
       response => nil
@@ -185,7 +185,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::TagsTest < HubspotSDK::Test::Reso
   def test_detach_from_lang_group_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.tags.detach_from_lang_group(id: "id")
+    response = @hubspot.cms.blogs.tags.detach_from_lang_group(id: "id")
 
     assert_pattern do
       response => nil
@@ -195,7 +195,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::TagsTest < HubspotSDK::Test::Reso
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.tags.get("objectId")
+    response = @hubspot.cms.blogs.tags.get("objectId")
 
     assert_pattern do
       response => HubspotSDK::Cms::Blogs::Tag
@@ -217,7 +217,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::TagsTest < HubspotSDK::Test::Reso
   def test_get_batch_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.tags.get_batch(inputs: ["string"])
+    response = @hubspot.cms.blogs.tags.get_batch(inputs: ["string"])
 
     assert_pattern do
       response => HubspotSDK::Cms::Blogs::BatchResponseTag
@@ -238,7 +238,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::TagsTest < HubspotSDK::Test::Reso
   def test_set_lang_primary_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.tags.set_lang_primary(id: "id")
+    response = @hubspot.cms.blogs.tags.set_lang_primary(id: "id")
 
     assert_pattern do
       response => nil
@@ -248,7 +248,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::TagsTest < HubspotSDK::Test::Reso
   def test_update_batch_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.tags.update_batch(inputs: [{}])
+    response = @hubspot.cms.blogs.tags.update_batch(inputs: [{}])
 
     assert_pattern do
       response => HubspotSDK::Cms::Blogs::BatchResponseTag
@@ -269,7 +269,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::TagsTest < HubspotSDK::Test::Reso
   def test_update_langs_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.tags.update_langs(languages: {foo: "string"}, primary_id: "primaryId")
+    response = @hubspot.cms.blogs.tags.update_langs(languages: {foo: "string"}, primary_id: "primaryId")
 
     assert_pattern do
       response => nil

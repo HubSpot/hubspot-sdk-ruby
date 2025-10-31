@@ -129,7 +129,9 @@ module HubspotSDK
               to_object_type_id: String,
               name: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Events::AssociationDefinition)
+            ).returns(
+              HubspotSDK::Models::CRM::Objects::SchemaCreateAssociationResponse
+            )
           end
           def create_association(
             # Fully qualified name or object type ID of your schema.

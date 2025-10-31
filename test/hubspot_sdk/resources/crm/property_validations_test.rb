@@ -6,15 +6,15 @@ class HubspotSDK::Test::Resources::CRM::PropertyValidationsTest < HubspotSDK::Te
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.property_validations.list("objectTypeId")
+    response = @hubspot.crm.property_validations.list("objectTypeId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::CollectionResponsePublicPropertyValidationRuleMapNoPaging
+      response => HubspotSDK::Models::CRM::PropertyValidationListResponse
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicPropertyValidationRuleMap])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::CRM::PropertyValidationListResponse::Result])
       }
     end
   end
@@ -22,15 +22,15 @@ class HubspotSDK::Test::Resources::CRM::PropertyValidationsTest < HubspotSDK::Te
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.property_validations.get("propertyName", object_type_id: "objectTypeId")
+    response = @hubspot.crm.property_validations.get("propertyName", object_type_id: "objectTypeId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::CollectionResponsePublicPropertyValidationRuleNoPaging
+      response => HubspotSDK::Models::CRM::PropertyValidationGetResponse
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicPropertyValidationRule])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::CRM::PropertyValidationGetResponse::Result])
       }
     end
   end

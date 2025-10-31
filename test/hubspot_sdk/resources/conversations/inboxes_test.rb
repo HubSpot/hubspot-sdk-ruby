@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Conversations::InboxesTest < HubspotSDK::Test
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.conversations.inboxes.list
+    response = @hubspot.conversations.inboxes.list
 
     assert_pattern do
       response => HubspotSDK::Conversations::CollectionResponseWithTotalPublicInboxForwardPaging
@@ -24,7 +24,7 @@ class HubspotSDK::Test::Resources::Conversations::InboxesTest < HubspotSDK::Test
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.conversations.inboxes.get("inboxId")
+    response = @hubspot.conversations.inboxes.get("inboxId")
 
     assert_pattern do
       response => HubspotSDK::Conversations::PublicInbox

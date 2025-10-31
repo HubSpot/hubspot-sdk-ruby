@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.blogs.posts.create(
+      @hubspot.cms.blogs.posts.create(
         id: "id",
         ab_status: :master,
         ab_test_id: "abTestId",
@@ -215,7 +215,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.blogs.posts.update(
+      @hubspot.cms.blogs.posts.update(
         "objectId",
         id: "id",
         ab_status: :master,
@@ -423,7 +423,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.posts.list
+    response = @hubspot.cms.blogs.posts.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -506,7 +506,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.posts.delete("objectId")
+    response = @hubspot.cms.blogs.posts.delete("objectId")
 
     assert_pattern do
       response => nil
@@ -517,7 +517,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.blogs.posts.attach_to_lang_group(id: "id", language: "language", primary_id: "primaryId")
+      @hubspot.cms.blogs.posts.attach_to_lang_group(id: "id", language: "language", primary_id: "primaryId")
 
     assert_pattern do
       response => nil
@@ -527,7 +527,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
   def test_clone__required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.posts.clone_(id: "id")
+    response = @hubspot.cms.blogs.posts.clone_(id: "id")
 
     assert_pattern do
       response => HubspotSDK::Cms::Blogs::BlogPost
@@ -603,7 +603,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
   def test_create_lang_variation_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.posts.create_lang_variation(id: "id")
+    response = @hubspot.cms.blogs.posts.create_lang_variation(id: "id")
 
     assert_pattern do
       response => HubspotSDK::Cms::Blogs::BlogPost
@@ -679,7 +679,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
   def test_detach_from_lang_group_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.posts.detach_from_lang_group(id: "id")
+    response = @hubspot.cms.blogs.posts.detach_from_lang_group(id: "id")
 
     assert_pattern do
       response => nil
@@ -689,7 +689,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.posts.get("objectId")
+    response = @hubspot.cms.blogs.posts.get("objectId")
 
     assert_pattern do
       response => HubspotSDK::Cms::Blogs::BlogPost
@@ -765,7 +765,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
   def test_get_draft_by_id
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.posts.get_draft_by_id("objectId")
+    response = @hubspot.cms.blogs.posts.get_draft_by_id("objectId")
 
     assert_pattern do
       response => HubspotSDK::Cms::Blogs::BlogPost
@@ -841,7 +841,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
   def test_get_previous_version_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.posts.get_previous_version("revisionId", object_id_: "objectId")
+    response = @hubspot.cms.blogs.posts.get_previous_version("revisionId", object_id_: "objectId")
 
     assert_pattern do
       response => HubspotSDK::Cms::Blogs::VersionBlogPost
@@ -860,7 +860,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
   def test_get_previous_versions
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.posts.get_previous_versions("objectId")
+    response = @hubspot.cms.blogs.posts.get_previous_versions("objectId")
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -886,7 +886,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
   def test_push_live
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.posts.push_live("objectId")
+    response = @hubspot.cms.blogs.posts.push_live("objectId")
 
     assert_pattern do
       response => nil
@@ -896,7 +896,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
   def test_reset_draft
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.posts.reset_draft("objectId")
+    response = @hubspot.cms.blogs.posts.reset_draft("objectId")
 
     assert_pattern do
       response => nil
@@ -906,7 +906,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
   def test_restore_previous_version_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.posts.restore_previous_version("revisionId", object_id_: "objectId")
+    response = @hubspot.cms.blogs.posts.restore_previous_version("revisionId", object_id_: "objectId")
 
     assert_pattern do
       response => HubspotSDK::Cms::Blogs::BlogPost
@@ -982,7 +982,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
   def test_restore_previous_version_to_draft_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.posts.restore_previous_version_to_draft(0, object_id_: "objectId")
+    response = @hubspot.cms.blogs.posts.restore_previous_version_to_draft(0, object_id_: "objectId")
 
     assert_pattern do
       response => HubspotSDK::Cms::Blogs::BlogPost
@@ -1058,7 +1058,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
   def test_schedule_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.posts.schedule(id: "id", publish_date: "2019-12-27T18:11:19.117Z")
+    response = @hubspot.cms.blogs.posts.schedule(id: "id", publish_date: "2019-12-27T18:11:19.117Z")
 
     assert_pattern do
       response => nil
@@ -1068,7 +1068,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
   def test_set_lang_primary_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.posts.set_lang_primary(id: "id")
+    response = @hubspot.cms.blogs.posts.set_lang_primary(id: "id")
 
     assert_pattern do
       response => nil
@@ -1079,7 +1079,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.blogs.posts.update_draft(
+      @hubspot.cms.blogs.posts.update_draft(
         "objectId",
         id: "id",
         ab_status: :master,
@@ -1287,7 +1287,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
   def test_update_langs_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.blogs.posts.update_langs(languages: {foo: "string"}, primary_id: "primaryId")
+    response = @hubspot.cms.blogs.posts.update_langs(languages: {foo: "string"}, primary_id: "primaryId")
 
     assert_pattern do
       response => nil

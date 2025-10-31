@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Events::SendTest < HubspotSDK::Test::Resource
   def test_send__required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.events.send_.send_(event_name: "pe123456_account_login")
+    response = @hubspot.events.send_.send_(event_name: "pe123456_account_login")
 
     assert_pattern do
       response => nil
@@ -16,7 +16,7 @@ class HubspotSDK::Test::Resources::Events::SendTest < HubspotSDK::Test::Resource
   def test_send_batch_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.events.send_.send_batch(inputs: [{eventName: "pe123456_account_login"}])
+    response = @hubspot.events.send_.send_batch(inputs: [{eventName: "pe123456_account_login"}])
 
     assert_pattern do
       response => nil

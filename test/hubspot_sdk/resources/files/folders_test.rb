@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Files::FoldersTest < HubspotSDK::Test::Resour
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.folders.create(name: "name")
+    response = @hubspot.files.folders.create(name: "name")
 
     assert_pattern do
       response => HubspotSDK::Files::Folder
@@ -29,7 +29,7 @@ class HubspotSDK::Test::Resources::Files::FoldersTest < HubspotSDK::Test::Resour
   def test_delete_by_id
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.folders.delete_by_id("321669910225")
+    response = @hubspot.files.folders.delete_by_id("321669910225")
 
     assert_pattern do
       response => nil
@@ -39,7 +39,7 @@ class HubspotSDK::Test::Resources::Files::FoldersTest < HubspotSDK::Test::Resour
   def test_delete_by_path
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.folders.delete_by_path("folderPath")
+    response = @hubspot.files.folders.delete_by_path("folderPath")
 
     assert_pattern do
       response => nil
@@ -49,7 +49,7 @@ class HubspotSDK::Test::Resources::Files::FoldersTest < HubspotSDK::Test::Resour
   def test_get_by_id
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.folders.get_by_id("321669910225")
+    response = @hubspot.files.folders.get_by_id("321669910225")
 
     assert_pattern do
       response => HubspotSDK::Files::Folder
@@ -72,7 +72,7 @@ class HubspotSDK::Test::Resources::Files::FoldersTest < HubspotSDK::Test::Resour
   def test_get_by_path
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.folders.get_by_path("folderPath")
+    response = @hubspot.files.folders.get_by_path("folderPath")
 
     assert_pattern do
       response => HubspotSDK::Files::Folder
@@ -95,7 +95,7 @@ class HubspotSDK::Test::Resources::Files::FoldersTest < HubspotSDK::Test::Resour
   def test_get_update_async_status
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.folders.get_update_async_status("taskId")
+    response = @hubspot.files.folders.get_update_async_status("taskId")
 
     assert_pattern do
       response => HubspotSDK::Files::FolderActionResponse
@@ -119,7 +119,7 @@ class HubspotSDK::Test::Resources::Files::FoldersTest < HubspotSDK::Test::Resour
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.folders.search
+    response = @hubspot.files.folders.search
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -149,7 +149,7 @@ class HubspotSDK::Test::Resources::Files::FoldersTest < HubspotSDK::Test::Resour
   def test_update_async_by_id_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.folders.update_async_by_id(id: "id")
+    response = @hubspot.files.folders.update_async_by_id(id: "id")
 
     assert_pattern do
       response => HubspotSDK::Files::FolderUpdateTaskLocator
@@ -166,7 +166,7 @@ class HubspotSDK::Test::Resources::Files::FoldersTest < HubspotSDK::Test::Resour
   def test_update_by_id
     skip("Prism tests are disabled")
 
-    response = @hub_spot.files.folders.update_by_id("321669910225")
+    response = @hubspot.files.folders.update_by_id("321669910225")
 
     assert_pattern do
       response => HubspotSDK::Files::Folder

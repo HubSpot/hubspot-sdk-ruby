@@ -13,7 +13,9 @@ module HubspotSDK
             first_name: String,
             last_name: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Conversations::IdentificationTokenResponse)
+          ).returns(
+            HubspotSDK::Models::Conversations::VisitorIdentificationGenerateTokenResponse
+          )
         end
         def generate_token(
           # The email of the visitor that you wish to identify

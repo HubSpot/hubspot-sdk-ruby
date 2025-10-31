@@ -8,7 +8,7 @@ module HubspotSDK
         # library
         sig do
           params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-            HubspotSDK::Settings::CollectionResponsePublicTaxRateGroupForwardPaging
+            HubspotSDK::Models::Settings::TaxRateListResponse
           )
         end
         def list(request_options: {})
@@ -19,7 +19,7 @@ module HubspotSDK
           params(
             tax_rate_group_id: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Settings::PublicTaxRateGroup)
+          ).returns(HubspotSDK::Models::Settings::TaxRateGetResponse)
         end
         def get(tax_rate_group_id, request_options: {})
         end

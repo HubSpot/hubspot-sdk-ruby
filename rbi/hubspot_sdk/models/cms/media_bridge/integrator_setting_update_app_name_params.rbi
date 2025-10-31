@@ -4,7 +4,7 @@ module HubspotSDK
   module Models
     module Cms
       module MediaBridge
-        class IntegratorSettingUpdateAppNameParams < HubspotSDK::Models::Cms::MediaBridgeProviderPartial
+        class IntegratorSettingUpdateAppNameParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
@@ -16,16 +16,33 @@ module HubspotSDK
               )
             end
 
+          sig { returns(Integer) }
+          attr_accessor :updated_at
+
+          sig { returns(T.nilable(String)) }
+          attr_reader :name
+
+          sig { params(name: String).void }
+          attr_writer :name
+
           sig do
-            params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-              T.attached_class
-            )
+            params(
+              updated_at: Integer,
+              name: String,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(T.attached_class)
           end
-          def self.new(request_options: {})
+          def self.new(updated_at:, name: nil, request_options: {})
           end
 
           sig do
-            override.returns({ request_options: HubspotSDK::RequestOptions })
+            override.returns(
+              {
+                updated_at: Integer,
+                name: String,
+                request_options: HubspotSDK::RequestOptions
+              }
+            )
           end
           def to_hash
           end

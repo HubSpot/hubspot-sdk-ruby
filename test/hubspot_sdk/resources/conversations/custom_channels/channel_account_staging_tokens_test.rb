@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccount
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.conversations.custom_channels.channel_account_staging_tokens.update(
+      @hubspot.conversations.custom_channels.channel_account_staging_tokens.update(
         "accountToken",
         channel_id: "channelId",
         account_name: "accountName",
@@ -15,7 +15,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccount
       )
 
     assert_pattern do
-      response => HubspotSDK::Conversations::PublicChannelAccountStagingToken
+      response => HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountStagingTokenUpdateResponse
     end
 
     assert_pattern do

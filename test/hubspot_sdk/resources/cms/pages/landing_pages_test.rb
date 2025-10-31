@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.pages.landing_pages.create(
+      @hubspot.cms.pages.landing_pages.create(
         id: "id",
         ab_status: :master,
         ab_test_id: "abTestId",
@@ -145,7 +145,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.pages.landing_pages.update(
+      @hubspot.cms.pages.landing_pages.update(
         "objectId",
         id: "id",
         ab_status: :master,
@@ -345,7 +345,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.list
+    response = @hubspot.cms.pages.landing_pages.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -424,7 +424,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.delete("objectId")
+    response = @hubspot.cms.pages.landing_pages.delete("objectId")
 
     assert_pattern do
       response => nil
@@ -435,7 +435,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.pages.landing_pages.attach_to_lang_group(
+      @hubspot.cms.pages.landing_pages.attach_to_lang_group(
         id: "id",
         language: "language",
         primary_id: "primaryId"
@@ -449,7 +449,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_clone__required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.clone_(id: "id")
+    response = @hubspot.cms.pages.landing_pages.clone_(id: "id")
 
     assert_pattern do
       response => HubspotSDK::Cms::Page
@@ -522,7 +522,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.pages.landing_pages.create_ab_test_variation(
+      @hubspot.cms.pages.landing_pages.create_ab_test_variation(
         content_id: "contentId",
         variation_name: "variationName"
       )
@@ -598,7 +598,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.pages.landing_pages.create_batch(
+      @hubspot.cms.pages.landing_pages.create_batch(
         inputs: [
           {
             id: "id",
@@ -751,7 +751,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.pages.landing_pages.create_folder(
+      @hubspot.cms.pages.landing_pages.create_folder(
         id: "id",
         category: 0,
         created: "2019-12-27T18:11:19.117Z",
@@ -782,7 +782,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.pages.landing_pages.create_folders_batch(
+      @hubspot.cms.pages.landing_pages.create_folders_batch(
         inputs: [
           {
             id: "id",
@@ -815,7 +815,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_create_language_variation_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.create_language_variation(id: "id")
+    response = @hubspot.cms.pages.landing_pages.create_language_variation(id: "id")
 
     assert_pattern do
       response => HubspotSDK::Cms::Page
@@ -887,7 +887,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_delete_batch_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.delete_batch(inputs: ["string"])
+    response = @hubspot.cms.pages.landing_pages.delete_batch(inputs: ["string"])
 
     assert_pattern do
       response => nil
@@ -897,7 +897,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_delete_folder
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.delete_folder("objectId")
+    response = @hubspot.cms.pages.landing_pages.delete_folder("objectId")
 
     assert_pattern do
       response => nil
@@ -907,7 +907,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_delete_folders_batch_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.delete_folders_batch(inputs: ["string"])
+    response = @hubspot.cms.pages.landing_pages.delete_folders_batch(inputs: ["string"])
 
     assert_pattern do
       response => nil
@@ -917,7 +917,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_detach_from_lang_group_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.detach_from_lang_group(id: "id")
+    response = @hubspot.cms.pages.landing_pages.detach_from_lang_group(id: "id")
 
     assert_pattern do
       response => nil
@@ -927,7 +927,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_end_ab_test_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.end_ab_test(ab_test_id: "abTestId", winner_id: "winnerId")
+    response = @hubspot.cms.pages.landing_pages.end_ab_test(ab_test_id: "abTestId", winner_id: "winnerId")
 
     assert_pattern do
       response => nil
@@ -937,7 +937,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.get("objectId")
+    response = @hubspot.cms.pages.landing_pages.get("objectId")
 
     assert_pattern do
       response => HubspotSDK::Cms::Page
@@ -1009,7 +1009,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_get_batch_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.get_batch(inputs: ["string"])
+    response = @hubspot.cms.pages.landing_pages.get_batch(inputs: ["string"])
 
     assert_pattern do
       response => HubspotSDK::Cms::BatchResponsePage
@@ -1030,7 +1030,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_get_draft
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.get_draft("objectId")
+    response = @hubspot.cms.pages.landing_pages.get_draft("objectId")
 
     assert_pattern do
       response => HubspotSDK::Cms::Page
@@ -1102,7 +1102,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_get_folder
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.get_folder("objectId")
+    response = @hubspot.cms.pages.landing_pages.get_folder("objectId")
 
     assert_pattern do
       response => HubspotSDK::Cms::ContentFolder
@@ -1124,7 +1124,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_get_folder_revision_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.get_folder_revision("revisionId", object_id_: "objectId")
+    response = @hubspot.cms.pages.landing_pages.get_folder_revision("revisionId", object_id_: "objectId")
 
     assert_pattern do
       response => HubspotSDK::Cms::VersionContentFolder
@@ -1143,7 +1143,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_get_folders_batch_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.get_folders_batch(inputs: ["string"])
+    response = @hubspot.cms.pages.landing_pages.get_folders_batch(inputs: ["string"])
 
     assert_pattern do
       response => HubspotSDK::Cms::BatchResponseContentFolder
@@ -1164,7 +1164,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_get_revision_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.get_revision("revisionId", object_id_: "objectId")
+    response = @hubspot.cms.pages.landing_pages.get_revision("revisionId", object_id_: "objectId")
 
     assert_pattern do
       response => HubspotSDK::Cms::VersionPage
@@ -1183,7 +1183,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_list_folder_revisions
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.list_folder_revisions("objectId")
+    response = @hubspot.cms.pages.landing_pages.list_folder_revisions("objectId")
 
     assert_pattern do
       response => HubspotSDK::Cms::CollectionResponseWithTotalVersionContentFolder
@@ -1201,7 +1201,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_list_folders
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.list_folders
+    response = @hubspot.cms.pages.landing_pages.list_folders
 
     assert_pattern do
       response => HubspotSDK::Cms::CollectionResponseWithTotalContentFolderForwardPaging
@@ -1219,7 +1219,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_list_revisions
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.list_revisions("objectId")
+    response = @hubspot.cms.pages.landing_pages.list_revisions("objectId")
 
     assert_pattern do
       response => HubspotSDK::Cms::CollectionResponseWithTotalVersionPage
@@ -1237,7 +1237,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_publish_draft
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.publish_draft("objectId")
+    response = @hubspot.cms.pages.landing_pages.publish_draft("objectId")
 
     assert_pattern do
       response => nil
@@ -1248,7 +1248,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.pages.landing_pages.rerun_ab_test(ab_test_id: "abTestId", variation_id: "variationId")
+      @hubspot.cms.pages.landing_pages.rerun_ab_test(ab_test_id: "abTestId", variation_id: "variationId")
 
     assert_pattern do
       response => nil
@@ -1258,7 +1258,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_reset_draft
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.reset_draft("objectId")
+    response = @hubspot.cms.pages.landing_pages.reset_draft("objectId")
 
     assert_pattern do
       response => nil
@@ -1268,8 +1268,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_restore_folder_revision_required_params
     skip("Prism tests are disabled")
 
-    response =
-      @hub_spot.cms.pages.landing_pages.restore_folder_revision("revisionId", object_id_: "objectId")
+    response = @hubspot.cms.pages.landing_pages.restore_folder_revision("revisionId", object_id_: "objectId")
 
     assert_pattern do
       response => HubspotSDK::Cms::ContentFolder
@@ -1291,7 +1290,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_restore_revision_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.restore_revision("revisionId", object_id_: "objectId")
+    response = @hubspot.cms.pages.landing_pages.restore_revision("revisionId", object_id_: "objectId")
 
     assert_pattern do
       response => HubspotSDK::Cms::Page
@@ -1363,7 +1362,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_restore_revision_to_draft_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.restore_revision_to_draft(0, object_id_: "objectId")
+    response = @hubspot.cms.pages.landing_pages.restore_revision_to_draft(0, object_id_: "objectId")
 
     assert_pattern do
       response => HubspotSDK::Cms::Page
@@ -1435,7 +1434,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_schedule_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.schedule(id: "id", publish_date: "2019-12-27T18:11:19.117Z")
+    response = @hubspot.cms.pages.landing_pages.schedule(id: "id", publish_date: "2019-12-27T18:11:19.117Z")
 
     assert_pattern do
       response => nil
@@ -1445,7 +1444,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_set_new_lang_primary_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.set_new_lang_primary(id: "id")
+    response = @hubspot.cms.pages.landing_pages.set_new_lang_primary(id: "id")
 
     assert_pattern do
       response => nil
@@ -1455,7 +1454,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_update_batch_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.update_batch(inputs: [{}])
+    response = @hubspot.cms.pages.landing_pages.update_batch(inputs: [{}])
 
     assert_pattern do
       response => HubspotSDK::Cms::BatchResponsePage
@@ -1477,7 +1476,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.pages.landing_pages.update_draft(
+      @hubspot.cms.pages.landing_pages.update_draft(
         "objectId",
         id: "id",
         ab_status: :master,
@@ -1678,7 +1677,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.pages.landing_pages.update_folder(
+      @hubspot.cms.pages.landing_pages.update_folder(
         "objectId",
         id: "id",
         category: 0,
@@ -1709,7 +1708,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
   def test_update_folders_batch_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.pages.landing_pages.update_folders_batch(inputs: [{}])
+    response = @hubspot.cms.pages.landing_pages.update_folders_batch(inputs: [{}])
 
     assert_pattern do
       response => HubspotSDK::Cms::BatchResponseContentFolder
@@ -1731,7 +1730,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.pages.landing_pages.update_languages(languages: {foo: "string"}, primary_id: "primaryId")
+      @hubspot.cms.pages.landing_pages.update_languages(languages: {foo: "string"}, primary_id: "primaryId")
 
     assert_pattern do
       response => nil

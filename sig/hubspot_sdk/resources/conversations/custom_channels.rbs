@@ -16,7 +16,7 @@ module HubspotSDK
           ?channel_logo_url: String,
           ?webhook_url: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Conversations::PublicChannelIntegrationChannel
+        ) -> HubspotSDK::Models::Conversations::CustomChannelCreateResponse
 
         def update: (
           String channel_id,
@@ -27,11 +27,11 @@ module HubspotSDK
           ?name: top,
           ?webhook_url: top,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Conversations::PublicChannelIntegrationChannel
+        ) -> HubspotSDK::Models::Conversations::CustomChannelUpdateResponse
 
         def list: (
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Conversations::CollectionResponseWithTotalPublicChannelIntegrationChannelForwardPaging
+        ) -> HubspotSDK::Models::Conversations::CustomChannelListResponse
 
         def delete: (
           String channel_id,
@@ -41,7 +41,7 @@ module HubspotSDK
         def get: (
           String channel_id,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Conversations::PublicChannelIntegrationChannel
+        ) -> HubspotSDK::Models::Conversations::CustomChannelGetResponse
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

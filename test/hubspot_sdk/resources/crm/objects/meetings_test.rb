@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::MeetingsTest < HubspotSDK::Test
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.meetings.create(properties: {foo: "string"})
+    response = @hubspot.crm.objects.meetings.create(properties: {foo: "string"})
 
     assert_pattern do
       response => HubspotSDK::CRM::CreatedResponseSimplePublicObject
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::MeetingsTest < HubspotSDK::Test
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.meetings.update(
+      @hubspot.crm.objects.meetings.update(
         "meetingId",
         properties: {
           property_checkbox: "false",
@@ -59,7 +59,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::MeetingsTest < HubspotSDK::Test
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.meetings.list
+    response = @hubspot.crm.objects.meetings.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -90,7 +90,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::MeetingsTest < HubspotSDK::Test
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.meetings.delete("meetingId")
+    response = @hubspot.crm.objects.meetings.delete("meetingId")
 
     assert_pattern do
       response => nil
@@ -100,7 +100,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::MeetingsTest < HubspotSDK::Test
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.meetings.get("meetingId")
+    response = @hubspot.crm.objects.meetings.get("meetingId")
 
     assert_pattern do
       response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
@@ -124,7 +124,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::MeetingsTest < HubspotSDK::Test
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.meetings.search
+    response = @hubspot.crm.objects.meetings.search
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject

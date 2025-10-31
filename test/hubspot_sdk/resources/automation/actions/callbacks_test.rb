@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::CallbacksTest < HubspotS
   def test_complete_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.automation.actions.callbacks.complete("callbackId", output_fields: {foo: "string"})
+    response = @hubspot.automation.actions.callbacks.complete("callbackId", output_fields: {foo: "string"})
 
     assert_pattern do
       response => nil
@@ -17,7 +17,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::CallbacksTest < HubspotS
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.automation.actions.callbacks.complete_batch(
+      @hubspot.automation.actions.callbacks.complete_batch(
         inputs: [{callbackId: "callbackId", outputFields: {foo: "string"}}]
       )
 

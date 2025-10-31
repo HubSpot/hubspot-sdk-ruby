@@ -3,32 +3,48 @@ module HubspotSDK
     module CRM
       module FeatureFlags
         type portal_update_params =
-          { app_id: Integer, flag_name: String }
+          {
+            app_id: Integer,
+            flag_name: String,
+            flag_state: HubspotSDK::Models::CRM::FeatureFlags::PortalUpdateParams::flag_state
+          }
           & HubspotSDK::Internal::Type::request_parameters
 
-        class PortalUpdateParams < HubspotSDK::Models::CRM::PortalFlagStatePutRequest
+        class PortalUpdateParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def app_id: -> Integer
+          attr_accessor app_id: Integer
 
-          def app_id=: (Integer _) -> Integer
+          attr_accessor flag_name: String
 
-          def flag_name: -> String
-
-          def flag_name=: (String _) -> String
+          attr_accessor flag_state: HubspotSDK::Models::CRM::FeatureFlags::PortalUpdateParams::flag_state
 
           def initialize: (
             app_id: Integer,
             flag_name: String,
+            flag_state: HubspotSDK::Models::CRM::FeatureFlags::PortalUpdateParams::flag_state,
             ?request_options: HubspotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
             app_id: Integer,
             flag_name: String,
+            flag_state: HubspotSDK::Models::CRM::FeatureFlags::PortalUpdateParams::flag_state,
             request_options: HubspotSDK::RequestOptions
           }
+
+          type flag_state = :OFF | :ON | :ABSENT
+
+          module FlagState
+            extend HubspotSDK::Internal::Type::Enum
+
+            OFF: :OFF
+            ON: :ON
+            ABSENT: :ABSENT
+
+            def self?.values: -> ::Array[HubspotSDK::Models::CRM::FeatureFlags::PortalUpdateParams::flag_state]
+          end
         end
       end
     end

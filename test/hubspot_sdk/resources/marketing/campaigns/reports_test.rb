@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::ReportsTest < HubspotSD
   def test_get_attribution_metrics
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.campaigns.reports.get_attribution_metrics("campaignGuid")
+    response = @hubspot.marketing.campaigns.reports.get_attribution_metrics("campaignGuid")
 
     assert_pattern do
       response => HubspotSDK::Marketing::MetricsCounters
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::ReportsTest < HubspotSD
   def test_get_revenue_attribution
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.campaigns.reports.get_revenue_attribution("campaignGuid")
+    response = @hubspot.marketing.campaigns.reports.get_revenue_attribution("campaignGuid")
 
     assert_pattern do
       response => HubspotSDK::Marketing::RevenueAttributionAggregate
@@ -46,7 +46,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::ReportsTest < HubspotSD
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.campaigns.reports.list_contact_ids_by_type(
+      @hubspot.marketing.campaigns.reports.list_contact_ids_by_type(
         "contactType",
         campaign_guid: "campaignGuid"
       )

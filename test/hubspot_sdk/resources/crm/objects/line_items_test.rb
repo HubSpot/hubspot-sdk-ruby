@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::LineItemsTest < HubspotSDK::Tes
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.line_items.create(properties: {foo: "string"})
+    response = @hubspot.crm.objects.line_items.create(properties: {foo: "string"})
 
     assert_pattern do
       response => HubspotSDK::CRM::CreatedResponseSimplePublicObject
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::LineItemsTest < HubspotSDK::Tes
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.line_items.update(
+      @hubspot.crm.objects.line_items.update(
         "lineItemId",
         properties: {
           property_checkbox: "false",
@@ -59,7 +59,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::LineItemsTest < HubspotSDK::Tes
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.line_items.list
+    response = @hubspot.crm.objects.line_items.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -90,7 +90,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::LineItemsTest < HubspotSDK::Tes
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.line_items.delete("lineItemId")
+    response = @hubspot.crm.objects.line_items.delete("lineItemId")
 
     assert_pattern do
       response => nil
@@ -100,7 +100,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::LineItemsTest < HubspotSDK::Tes
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.line_items.get("lineItemId")
+    response = @hubspot.crm.objects.line_items.get("lineItemId")
 
     assert_pattern do
       response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
@@ -124,7 +124,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::LineItemsTest < HubspotSDK::Tes
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.line_items.search
+    response = @hubspot.crm.objects.line_items.search
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject

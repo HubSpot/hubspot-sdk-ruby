@@ -6,18 +6,18 @@ class HubspotSDK::Test::Resources::CRM::FeatureFlags::AppsTest < HubspotSDK::Tes
   def test_update_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.feature_flags.apps.update("flagName", app_id: 0, default_state: :OFF)
+    response = @hubspot.crm.feature_flags.apps.update("flagName", app_id: 0, default_state: :OFF)
 
     assert_pattern do
-      response => HubspotSDK::CRM::FlagResponse
+      response => HubspotSDK::Models::CRM::FeatureFlags::AppUpdateResponse
     end
 
     assert_pattern do
       response => {
         app_id: Integer,
-        default_state: HubspotSDK::CRM::FlagResponse::DefaultState,
+        default_state: HubspotSDK::Models::CRM::FeatureFlags::AppUpdateResponse::DefaultState,
         flag_name: String,
-        override_state: HubspotSDK::CRM::FlagResponse::OverrideState | nil
+        override_state: HubspotSDK::Models::CRM::FeatureFlags::AppUpdateResponse::OverrideState | nil
       }
     end
   end
@@ -25,18 +25,18 @@ class HubspotSDK::Test::Resources::CRM::FeatureFlags::AppsTest < HubspotSDK::Tes
   def test_delete_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.feature_flags.apps.delete("flagName", app_id: 0)
+    response = @hubspot.crm.feature_flags.apps.delete("flagName", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::CRM::FlagResponse
+      response => HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse
     end
 
     assert_pattern do
       response => {
         app_id: Integer,
-        default_state: HubspotSDK::CRM::FlagResponse::DefaultState,
+        default_state: HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse::DefaultState,
         flag_name: String,
-        override_state: HubspotSDK::CRM::FlagResponse::OverrideState | nil
+        override_state: HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse::OverrideState | nil
       }
     end
   end
@@ -44,18 +44,18 @@ class HubspotSDK::Test::Resources::CRM::FeatureFlags::AppsTest < HubspotSDK::Tes
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.feature_flags.apps.get("flagName", app_id: 0)
+    response = @hubspot.crm.feature_flags.apps.get("flagName", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::CRM::FlagResponse
+      response => HubspotSDK::Models::CRM::FeatureFlags::AppGetResponse
     end
 
     assert_pattern do
       response => {
         app_id: Integer,
-        default_state: HubspotSDK::CRM::FlagResponse::DefaultState,
+        default_state: HubspotSDK::Models::CRM::FeatureFlags::AppGetResponse::DefaultState,
         flag_name: String,
-        override_state: HubspotSDK::CRM::FlagResponse::OverrideState | nil
+        override_state: HubspotSDK::Models::CRM::FeatureFlags::AppGetResponse::OverrideState | nil
       }
     end
   end
@@ -63,15 +63,15 @@ class HubspotSDK::Test::Resources::CRM::FeatureFlags::AppsTest < HubspotSDK::Tes
   def test_list_portals_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.feature_flags.apps.list_portals("flagName", app_id: 0)
+    response = @hubspot.crm.feature_flags.apps.list_portals("flagName", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::CRM::PortalFlagStateBatchResponse
+      response => HubspotSDK::Models::CRM::FeatureFlags::AppListPortalsResponse
     end
 
     assert_pattern do
       response => {
-        portal_flag_states: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PortalFlagStateResponse])
+        portal_flag_states: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::CRM::FeatureFlags::AppListPortalsResponse::PortalFlagState])
       }
     end
   end

@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::DefinitionsTest < Hubspo
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.automation.actions.definitions.create(
+      @hubspot.automation.actions.definitions.create(
         0,
         action_url: "actionUrl",
         functions: [{functionSource: "functionSource", functionType: :PRE_ACTION_EXECUTION}],
@@ -63,7 +63,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::DefinitionsTest < Hubspo
   def test_update_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.automation.actions.definitions.update("definitionId", app_id: 0)
+    response = @hubspot.automation.actions.definitions.update("definitionId", app_id: 0)
 
     assert_pattern do
       response => HubspotSDK::Automation::PublicActionDefinition
@@ -91,7 +91,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::DefinitionsTest < Hubspo
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.automation.actions.definitions.list(0)
+    response = @hubspot.automation.actions.definitions.list(0)
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -126,7 +126,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::DefinitionsTest < Hubspo
   def test_delete_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.automation.actions.definitions.delete("definitionId", app_id: 0)
+    response = @hubspot.automation.actions.definitions.delete("definitionId", app_id: 0)
 
     assert_pattern do
       response => nil
@@ -136,7 +136,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::DefinitionsTest < Hubspo
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.automation.actions.definitions.get("definitionId", app_id: 0)
+    response = @hubspot.automation.actions.definitions.get("definitionId", app_id: 0)
 
     assert_pattern do
       response => HubspotSDK::Automation::PublicActionDefinition

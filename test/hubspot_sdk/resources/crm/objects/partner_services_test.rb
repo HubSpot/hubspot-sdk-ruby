@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::PartnerServicesTest < HubspotSD
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.partner_services.update(
+      @hubspot.crm.objects.partner_services.update(
         "partnerServiceId",
         properties: {
           property_checkbox: "false",
@@ -41,7 +41,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::PartnerServicesTest < HubspotSD
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.partner_services.list
+    response = @hubspot.crm.objects.partner_services.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -72,7 +72,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::PartnerServicesTest < HubspotSD
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.partner_services.get("partnerServiceId")
+    response = @hubspot.crm.objects.partner_services.get("partnerServiceId")
 
     assert_pattern do
       response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
@@ -96,7 +96,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::PartnerServicesTest < HubspotSD
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.partner_services.search
+    response = @hubspot.crm.objects.partner_services.search
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject

@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::VideoConferencing::SettingsT
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.extensions.video_conferencing.settings.update(
+      @hubspot.crm.extensions.video_conferencing.settings.update(
         0,
         create_meeting_url: "https://example.com/create-meeting"
       )
@@ -30,7 +30,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::VideoConferencing::SettingsT
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.extensions.video_conferencing.settings.delete(0)
+    response = @hubspot.crm.extensions.video_conferencing.settings.delete(0)
 
     assert_pattern do
       response => nil
@@ -40,7 +40,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::VideoConferencing::SettingsT
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.extensions.video_conferencing.settings.get(0)
+    response = @hubspot.crm.extensions.video_conferencing.settings.get(0)
 
     assert_pattern do
       response => HubspotSDK::CRM::Extensions::ExternalSettings

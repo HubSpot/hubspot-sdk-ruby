@@ -7,10 +7,7 @@ class HubspotSDK::Test::Resources::Marketing::Transactional::SmtpTokensTest < Hu
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.marketing.transactional.smtp_tokens.create(
-        campaign_name: "campaignName",
-        create_contact: true
-      )
+      @hubspot.marketing.transactional.smtp_tokens.create(campaign_name: "campaignName", create_contact: true)
 
     assert_pattern do
       response => HubspotSDK::Marketing::SmtpAPITokenView
@@ -32,7 +29,7 @@ class HubspotSDK::Test::Resources::Marketing::Transactional::SmtpTokensTest < Hu
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.transactional.smtp_tokens.list
+    response = @hubspot.marketing.transactional.smtp_tokens.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -61,7 +58,7 @@ class HubspotSDK::Test::Resources::Marketing::Transactional::SmtpTokensTest < Hu
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.transactional.smtp_tokens.delete("tokenId")
+    response = @hubspot.marketing.transactional.smtp_tokens.delete("tokenId")
 
     assert_pattern do
       response => nil
@@ -71,7 +68,7 @@ class HubspotSDK::Test::Resources::Marketing::Transactional::SmtpTokensTest < Hu
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.transactional.smtp_tokens.get("tokenId")
+    response = @hubspot.marketing.transactional.smtp_tokens.get("tokenId")
 
     assert_pattern do
       response => HubspotSDK::Marketing::SmtpAPITokenView
@@ -93,7 +90,7 @@ class HubspotSDK::Test::Resources::Marketing::Transactional::SmtpTokensTest < Hu
   def test_reset_password
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.transactional.smtp_tokens.reset_password("tokenId")
+    response = @hubspot.marketing.transactional.smtp_tokens.reset_password("tokenId")
 
     assert_pattern do
       response => HubspotSDK::Marketing::SmtpAPITokenView

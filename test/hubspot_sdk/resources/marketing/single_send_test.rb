@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Marketing::SingleSendTest < HubspotSDK::Test:
   def test_send__required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.single_send.send_(email_id: 0, message: {to: "to"})
+    response = @hubspot.marketing.single_send.send_(email_id: 0, message: {to: "to"})
 
     assert_pattern do
       response => HubspotSDK::Marketing::EmailSendStatusView

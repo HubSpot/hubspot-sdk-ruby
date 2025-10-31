@@ -22,7 +22,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Conversations::IdentificationTokenResponse]
+        # @return [HubspotSDK::Models::Conversations::VisitorIdentificationGenerateTokenResponse]
         #
         # @see HubspotSDK::Models::Conversations::VisitorIdentificationGenerateTokenParams
         def generate_token(params)
@@ -32,7 +32,7 @@ module HubspotSDK
             method: :post,
             path: "visitor-identification/v3/tokens/create",
             body: parsed,
-            model: HubspotSDK::Conversations::IdentificationTokenResponse,
+            model: HubspotSDK::Models::Conversations::VisitorIdentificationGenerateTokenResponse,
             options: options
           )
         end

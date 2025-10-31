@@ -83,7 +83,7 @@ module HubspotSDK
     # @param developer_api_key [String, nil]
     #
     # @param base_url [String, nil] Override the default base URL for the API, e.g.,
-    # `"https://api.example.com/v2/"`. Defaults to `ENV["HUB_SPOT_BASE_URL"]`
+    # `"https://api.example.com/v2/"`. Defaults to `ENV["HUBSPOT_BASE_URL"]`
     #
     # @param max_retries [Integer] Max number of retries to attempt after a failed retryable request.
     #
@@ -95,7 +95,7 @@ module HubspotSDK
     def initialize(
       access_token: nil,
       developer_api_key: nil,
-      base_url: ENV["HUB_SPOT_BASE_URL"],
+      base_url: ENV["HUBSPOT_BASE_URL"],
       max_retries: self.class::DEFAULT_MAX_RETRIES,
       timeout: self.class::DEFAULT_TIMEOUT_IN_SECONDS,
       initial_retry_delay: self.class::DEFAULT_INITIAL_RETRY_DELAY,

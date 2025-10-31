@@ -11,7 +11,7 @@ module HubspotSDK
           properties: T::Array[String],
           request_options: HubspotSDK::RequestOptions::OrHash
         ).returns(
-          HubspotSDK::BusinessUnits::CollectionResponsePublicBusinessUnitNoPaging
+          HubspotSDK::Models::BusinessUnits::BusinessUnitGetByUserIDResponse
         )
       end
       def get_by_user_id(

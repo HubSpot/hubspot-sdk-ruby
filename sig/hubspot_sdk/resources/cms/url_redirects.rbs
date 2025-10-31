@@ -14,7 +14,7 @@ module HubspotSDK
           ?is_trailing_slash_optional: bool,
           ?precedence: Integer,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::URLMapping
+        ) -> HubspotSDK::Models::Cms::URLRedirectCreateResponse
 
         def update: (
           String url_redirect_id,
@@ -32,7 +32,7 @@ module HubspotSDK
           ?created: Time,
           ?updated: Time,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::URLMapping
+        ) -> HubspotSDK::Models::Cms::URLRedirectUpdateResponse
 
         def list: (
           ?after: String,
@@ -46,7 +46,7 @@ module HubspotSDK
           ?updated_at: Time,
           ?updated_before: Time,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::URLMapping]
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Models::Cms::URLRedirectListResponse]
 
         def delete: (
           String url_redirect_id,
@@ -56,7 +56,7 @@ module HubspotSDK
         def get: (
           String url_redirect_id,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::URLMapping
+        ) -> HubspotSDK::Models::Cms::URLRedirectGetResponse
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

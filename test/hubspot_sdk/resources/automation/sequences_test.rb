@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Automation::SequencesTest < HubspotSDK::Test:
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.automation.sequences.list
+    response = @hubspot.automation.sequences.list
 
     assert_pattern do
       response => HubspotSDK::Automation::CollectionResponseWithTotalPublicSequenceLiteResponseForwardPaging
@@ -24,7 +24,7 @@ class HubspotSDK::Test::Resources::Automation::SequencesTest < HubspotSDK::Test:
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.automation.sequences.get("sequenceId")
+    response = @hubspot.automation.sequences.get("sequenceId")
 
     assert_pattern do
       response => HubspotSDK::Automation::PublicSequenceResponse

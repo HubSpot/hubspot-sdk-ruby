@@ -1,6 +1,6 @@
-# Hub Spot Ruby API library
+# Hubspot Ruby API library
 
-The Hub Spot Ruby library provides convenient access to the Hub Spot REST API from any Ruby 3.2.0+ application. It ships with comprehensive types & docstrings in Yard, RBS, and RBI – [see below](https://github.com/stainless-sdks/hubspot-sdk-ruby#Sorbet) for usage with Sorbet. The standard library's `net/http` is used as the HTTP transport, with connection pooling via the `connection_pool` gem.
+The Hubspot Ruby library provides convenient access to the Hubspot REST API from any Ruby 3.2.0+ application. It ships with comprehensive types & docstrings in Yard, RBS, and RBI – [see below](https://github.com/stainless-sdks/hubspot-sdk-ruby#Sorbet) for usage with Sorbet. The standard library's `net/http` is used as the HTTP transport, with connection pooling via the `connection_pool` gem.
 
 It is generated with [Stainless](https://www.stainless.com/).
 
@@ -24,21 +24,21 @@ gem "hubspot-sdk", "~> 0.0.1"
 require "bundler/setup"
 require "hubspot_sdk"
 
-hub_spot = HubspotSDK::Client.new(access_token: "pat-na1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx")
+hubspot = HubspotSDK::Client.new(access_token: "pat-na1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx")
 
-created_response_simple_public_object = hub_spot.crm.objects.contacts.create(properties: {email: "mark.s@lumon.industries"})
+created_response_simple_public_object = hubspot.crm.objects.contacts.create(properties: {email: "mark.s@lumon.industries"})
 
 puts(created_response_simple_public_object.createdResourceId)
 ```
 
 ### Pagination
 
-List methods in the Hub Spot API are paginated.
+List methods in the Hubspot API are paginated.
 
 This library provides auto-paginating iterators with each list response, so you do not have to request successive pages manually:
 
 ```ruby
-page = hub_spot.crm.objects.contacts.list(limit: 100)
+page = hubspot.crm.objects.contacts.list(limit: 100)
 
 # Fetch single item from page.
 contact = page.results[0]
@@ -67,14 +67,14 @@ Request parameters that correspond to file uploads can be passed as raw contents
 require "pathname"
 
 # Use `Pathname` to send the filename and/or avoid paging a large file into memory:
-import_result = hub_spot.cms.hubdb.tables.import_draft(file: Pathname("/path/to/file"))
+import_result = hubspot.cms.hubdb.tables.import_draft(file: Pathname("/path/to/file"))
 
 # Alternatively, pass file contents or a `StringIO` directly:
-import_result = hub_spot.cms.hubdb.tables.import_draft(file: File.read("/path/to/file"))
+import_result = hubspot.cms.hubdb.tables.import_draft(file: File.read("/path/to/file"))
 
 # Or, to control the filename and/or content type:
 file = HubspotSDK::FilePart.new(File.read("/path/to/file"), filename: "/path/to/file", content_type: "…")
-import_result = hub_spot.cms.hubdb.tables.import_draft(file: file)
+import_result = hubspot.cms.hubdb.tables.import_draft(file: file)
 
 puts(import_result.duplicateRows)
 ```
@@ -87,7 +87,7 @@ When the library is unable to connect to the API, or if the API returns a non-su
 
 ```ruby
 begin
-  contact = hub_spot.crm.objects.contacts.create(properties: {email: "mark.s@lumon.industries"})
+  contact = hubspot.crm.objects.contacts.create(properties: {email: "mark.s@lumon.industries"})
 rescue HubspotSDK::Errors::APIConnectionError => e
   puts("The server could not be reached")
   puts(e.cause)  # an underlying Exception, likely raised within `net/http`
@@ -125,12 +125,12 @@ You can use the `max_retries` option to configure or disable this:
 
 ```ruby
 # Configure the default for all requests:
-hub_spot = HubspotSDK::Client.new(
+hubspot = HubspotSDK::Client.new(
   max_retries: 0 # default is 2
 )
 
 # Or, configure per-request:
-hub_spot.crm.objects.contacts.create(
+hubspot.crm.objects.contacts.create(
   properties: {email: "mark.s@lumon.industries"},
   request_options: {max_retries: 5}
 )
@@ -142,12 +142,12 @@ By default, requests will time out after 60 seconds. You can use the timeout opt
 
 ```ruby
 # Configure the default for all requests:
-hub_spot = HubspotSDK::Client.new(
+hubspot = HubspotSDK::Client.new(
   timeout: nil # default is 60
 )
 
 # Or, configure per-request:
-hub_spot.crm.objects.contacts.create(
+hubspot.crm.objects.contacts.create(
   properties: {email: "mark.s@lumon.industries"},
   request_options: {timeout: 5}
 )
@@ -181,7 +181,7 @@ Note: the `extra_` parameters of the same name overrides the documented paramete
 
 ```ruby
 created_response_simple_public_object =
-  hub_spot.crm.objects.contacts.create(
+  hubspot.crm.objects.contacts.create(
     properties: {email: "mark.s@lumon.industries"},
     request_options: {
       extra_query: {my_query_parameter: value},
@@ -228,18 +228,18 @@ This library provides comprehensive [RBI](https://sorbet.org/docs/rbi) definitio
 You can provide typesafe request parameters like so:
 
 ```ruby
-hub_spot.crm.objects.contacts.create(properties: {email: "mark.s@lumon.industries"})
+hubspot.crm.objects.contacts.create(properties: {email: "mark.s@lumon.industries"})
 ```
 
 Or, equivalently:
 
 ```ruby
 # Hashes work, but are not typesafe:
-hub_spot.crm.objects.contacts.create(properties: {email: "mark.s@lumon.industries"})
+hubspot.crm.objects.contacts.create(properties: {email: "mark.s@lumon.industries"})
 
 # You can also splat a full Params class:
 params = HubspotSDK::CRM::Objects::ContactCreateParams.new(properties: {email: "mark.s@lumon.industries"})
-hub_spot.crm.objects.contacts.create(**params)
+hubspot.crm.objects.contacts.create(**params)
 ```
 
 ### Enums
@@ -258,13 +258,13 @@ Enum parameters have a "relaxed" type, so you can either pass in enum constants 
 
 ```ruby
 # Using the enum constants preserves the tagged type information:
-hub_spot.auth.oauth.create_access_token(
+hubspot.auth.oauth.create_access_token(
   grant_type: HubspotSDK::Auth::OAuthCreateAccessTokenParams::GrantType::AUTHORIZATION_CODE,
   # …
 )
 
 # Literal values are also permissible:
-hub_spot.auth.oauth.create_access_token(
+hubspot.auth.oauth.create_access_token(
   grant_type: :authorization_code,
   # …
 )

@@ -11,14 +11,14 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::PortalObjectTypeEnablementPublicResponse]
+          # @return [HubspotSDK::Models::CRM::ObjectLibrary::EnablementListResponse]
           #
           # @see HubspotSDK::Models::CRM::ObjectLibrary::EnablementListParams
           def list(params = {})
             @client.request(
               method: :get,
               path: "crm/v3/object-library/enablement",
-              model: HubspotSDK::CRM::PortalObjectTypeEnablementPublicResponse,
+              model: HubspotSDK::Models::CRM::ObjectLibrary::EnablementListResponse,
               options: params[:request_options]
             )
           end
@@ -30,14 +30,14 @@ module HubspotSDK
           # @param object_type_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::ObjectTypeEnablementPublicResponse]
+          # @return [HubspotSDK::Models::CRM::ObjectLibrary::EnablementGetResponse]
           #
           # @see HubspotSDK::Models::CRM::ObjectLibrary::EnablementGetParams
           def get(object_type_id, params = {})
             @client.request(
               method: :get,
               path: ["crm/v3/object-library/enablement/%1$s", object_type_id],
-              model: HubspotSDK::CRM::ObjectTypeEnablementPublicResponse,
+              model: HubspotSDK::Models::CRM::ObjectLibrary::EnablementGetResponse,
               options: params[:request_options]
             )
           end

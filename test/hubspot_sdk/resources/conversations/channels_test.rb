@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Conversations::ChannelsTest < HubspotSDK::Tes
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.conversations.channels.list
+    response = @hubspot.conversations.channels.list
 
     assert_pattern do
       response => HubspotSDK::Conversations::CollectionResponseWithTotalPublicChannelForwardPaging
@@ -24,7 +24,7 @@ class HubspotSDK::Test::Resources::Conversations::ChannelsTest < HubspotSDK::Tes
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.conversations.channels.get("channelId")
+    response = @hubspot.conversations.channels.get("channelId")
 
     assert_pattern do
       response => HubspotSDK::Conversations::PublicChannel

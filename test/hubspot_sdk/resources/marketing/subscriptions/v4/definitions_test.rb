@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Marketing::Subscriptions::V4::DefinitionsTest
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.subscriptions.v4.definitions.list
+    response = @hubspot.marketing.subscriptions.v4.definitions.list
 
     assert_pattern do
       response => HubspotSDK::Marketing::Subscriptions::ActionResponseWithResultsSubscriptionDefinition

@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::FunctionsTest < HubspotS
   def test_list_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.automation.actions.functions.list("definitionId", app_id: 0)
+    response = @hubspot.automation.actions.functions.list("definitionId", app_id: 0)
 
     assert_pattern do
       response => HubspotSDK::Automation::CollectionResponsePublicActionFunctionIdentifierNoPaging
@@ -23,7 +23,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::FunctionsTest < HubspotS
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.automation.actions.functions.delete(
+      @hubspot.automation.actions.functions.delete(
         "functionId",
         app_id: 0,
         definition_id: "definitionId",
@@ -39,7 +39,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::FunctionsTest < HubspotS
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.automation.actions.functions.create_or_replace(
+      @hubspot.automation.actions.functions.create_or_replace(
         "functionId",
         app_id: 0,
         definition_id: "definitionId",
@@ -63,7 +63,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::FunctionsTest < HubspotS
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.automation.actions.functions.create_or_replace_by_function_type(
+      @hubspot.automation.actions.functions.create_or_replace_by_function_type(
         :PRE_ACTION_EXECUTION,
         app_id: 0,
         definition_id: "definitionId",
@@ -86,7 +86,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::FunctionsTest < HubspotS
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.automation.actions.functions.delete_by_function_type(
+      @hubspot.automation.actions.functions.delete_by_function_type(
         :PRE_ACTION_EXECUTION,
         app_id: 0,
         definition_id: "definitionId"
@@ -101,7 +101,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::FunctionsTest < HubspotS
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.automation.actions.functions.get(
+      @hubspot.automation.actions.functions.get(
         "functionId",
         app_id: 0,
         definition_id: "definitionId",
@@ -125,7 +125,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::FunctionsTest < HubspotS
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.automation.actions.functions.get_by_function_type(
+      @hubspot.automation.actions.functions.get_by_function_type(
         :PRE_ACTION_EXECUTION,
         app_id: 0,
         definition_id: "definitionId"

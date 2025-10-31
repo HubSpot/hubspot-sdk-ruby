@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Scheduler::Meetings::MeetingsLinksTest < Hubs
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.scheduler.meetings.meetings_links.list
+    response = @hubspot.scheduler.meetings.meetings_links.list
 
     assert_pattern do
       response => HubspotSDK::Scheduler::CollectionResponseWithTotalExternalLinkMetadataForwardPaging
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::Scheduler::Meetings::MeetingsLinksTest < Hubs
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.scheduler.meetings.meetings_links.book(
+      @hubspot.scheduler.meetings.meetings_links.book(
         duration: 0,
         email: "email",
         first_name: "firstName",
@@ -65,7 +65,7 @@ class HubspotSDK::Test::Resources::Scheduler::Meetings::MeetingsLinksTest < Hubs
   def test_get_availability_by_slug
     skip("Prism tests are disabled")
 
-    response = @hub_spot.scheduler.meetings.meetings_links.get_availability_by_slug("slug")
+    response = @hubspot.scheduler.meetings.meetings_links.get_availability_by_slug("slug")
 
     assert_pattern do
       response => HubspotSDK::Scheduler::ExternalLinkAvailabilityAndBusyTimes
@@ -82,7 +82,7 @@ class HubspotSDK::Test::Resources::Scheduler::Meetings::MeetingsLinksTest < Hubs
   def test_get_booking_info_by_slug
     skip("Prism tests are disabled")
 
-    response = @hub_spot.scheduler.meetings.meetings_links.get_booking_info_by_slug("slug")
+    response = @hubspot.scheduler.meetings.meetings_links.get_booking_info_by_slug("slug")
 
     assert_pattern do
       response => HubspotSDK::Scheduler::ExternalBookingInfo

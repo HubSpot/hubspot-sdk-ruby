@@ -19,22 +19,22 @@ module HubspotSDK
         #   @return [Symbol, HubspotSDK::Models::Conversations::PublicFile::Type]
         required :type, enum: -> { HubspotSDK::Conversations::PublicFile::Type }
 
+        # @!attribute url
+        #
+        #   @return [String]
+        required :url, String
+
         # @!attribute name
         #
         #   @return [String, nil]
         optional :name, String
 
-        # @!attribute url
-        #
-        #   @return [String, nil]
-        optional :url, String
-
-        # @!method initialize(file_id:, file_usage_type:, type:, name: nil, url: nil)
+        # @!method initialize(file_id:, file_usage_type:, type:, url:, name: nil)
         #   @param file_id [String]
         #   @param file_usage_type [String]
         #   @param type [Symbol, HubspotSDK::Models::Conversations::PublicFile::Type]
-        #   @param name [String]
         #   @param url [String]
+        #   @param name [String]
 
         # @see HubspotSDK::Models::Conversations::PublicFile#type
         module Type

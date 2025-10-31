@@ -12,11 +12,11 @@ module HubspotSDK
               flag_name: String,
               app_id: Integer,
               default_state:
-                HubspotSDK::CRM::FlagPutRequest::DefaultState::OrSymbol,
+                HubspotSDK::CRM::FeatureFlags::AppUpdateParams::DefaultState::OrSymbol,
               override_state:
-                HubspotSDK::CRM::FlagPutRequest::OverrideState::OrSymbol,
+                HubspotSDK::CRM::FeatureFlags::AppUpdateParams::OverrideState::OrSymbol,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::FlagResponse)
+            ).returns(HubspotSDK::Models::CRM::FeatureFlags::AppUpdateResponse)
           end
           def update(
             # Path param: The name of the flag, either `hs-release-app-cards` or
@@ -39,7 +39,7 @@ module HubspotSDK
               flag_name: String,
               app_id: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::FlagResponse)
+            ).returns(HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse)
           end
           def delete(
             # The name of the flag, either `hs-release-app-cards` or `hs-hide-crm-cards`.
@@ -57,7 +57,7 @@ module HubspotSDK
               flag_name: String,
               app_id: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::FlagResponse)
+            ).returns(HubspotSDK::Models::CRM::FeatureFlags::AppGetResponse)
           end
           def get(
             # The name of the flag, either `hs-release-app-cards` or `hs-hide-crm-cards`.
@@ -77,7 +77,9 @@ module HubspotSDK
               limit: Integer,
               start_portal_id: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::PortalFlagStateBatchResponse)
+            ).returns(
+              HubspotSDK::Models::CRM::FeatureFlags::AppListPortalsResponse
+            )
           end
           def list_portals(
             # Path param: The name of the flag, either `hs-release-app-cards` or

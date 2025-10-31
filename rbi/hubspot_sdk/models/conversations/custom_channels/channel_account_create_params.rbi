@@ -4,7 +4,7 @@ module HubspotSDK
   module Models
     module Conversations
       module CustomChannels
-        class ChannelAccountCreateParams < HubspotSDK::Models::Conversations::PublicChannelAccountEgg
+        class ChannelAccountCreateParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
@@ -16,16 +16,60 @@ module HubspotSDK
               )
             end
 
+          sig { returns(T::Boolean) }
+          attr_accessor :authorized
+
+          sig { returns(String) }
+          attr_accessor :inbox_id
+
+          sig { returns(String) }
+          attr_accessor :name
+
           sig do
-            params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-              T.attached_class
+            returns(
+              T.nilable(HubspotSDK::Conversations::PublicDeliveryIdentifier)
             )
           end
-          def self.new(request_options: {})
+          attr_reader :delivery_identifier
+
+          sig do
+            params(
+              delivery_identifier:
+                HubspotSDK::Conversations::PublicDeliveryIdentifier::OrHash
+            ).void
+          end
+          attr_writer :delivery_identifier
+
+          sig do
+            params(
+              authorized: T::Boolean,
+              inbox_id: String,
+              name: String,
+              delivery_identifier:
+                HubspotSDK::Conversations::PublicDeliveryIdentifier::OrHash,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(T.attached_class)
+          end
+          def self.new(
+            authorized:,
+            inbox_id:,
+            name:,
+            delivery_identifier: nil,
+            request_options: {}
+          )
           end
 
           sig do
-            override.returns({ request_options: HubspotSDK::RequestOptions })
+            override.returns(
+              {
+                authorized: T::Boolean,
+                inbox_id: String,
+                name: String,
+                delivery_identifier:
+                  HubspotSDK::Conversations::PublicDeliveryIdentifier,
+                request_options: HubspotSDK::RequestOptions
+              }
+            )
           end
           def to_hash
           end

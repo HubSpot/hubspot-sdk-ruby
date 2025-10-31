@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.hubdb.rows.create("tableIdOrName", values: {foo: {}})
+    response = @hubspot.cms.hubdb.rows.create("tableIdOrName", values: {foo: {}})
 
     assert_pattern do
       response => HubspotSDK::Cms::HubDBTableRowV3
@@ -29,7 +29,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.hubdb.rows.list("tableIdOrName")
+    response = @hubspot.cms.hubdb.rows.list("tableIdOrName")
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -46,7 +46,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
   def test_clone_draft_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.hubdb.rows.clone_draft("321669910225", table_id_or_name: "tableIdOrName")
+    response = @hubspot.cms.hubdb.rows.clone_draft("321669910225", table_id_or_name: "tableIdOrName")
 
     assert_pattern do
       response => HubspotSDK::Cms::HubDBTableRowV3
@@ -69,7 +69,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
   def test_delete_draft_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.hubdb.rows.delete_draft("321669910225", table_id_or_name: "tableIdOrName")
+    response = @hubspot.cms.hubdb.rows.delete_draft("321669910225", table_id_or_name: "tableIdOrName")
 
     assert_pattern do
       response => nil
@@ -79,7 +79,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.hubdb.rows.get("321669910225", table_id_or_name: "tableIdOrName")
+    response = @hubspot.cms.hubdb.rows.get("321669910225", table_id_or_name: "tableIdOrName")
 
     assert_pattern do
       response => HubspotSDK::Cms::HubDBTableRowV3
@@ -102,7 +102,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
   def test_get_draft_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.hubdb.rows.get_draft("321669910225", table_id_or_name: "tableIdOrName")
+    response = @hubspot.cms.hubdb.rows.get_draft("321669910225", table_id_or_name: "tableIdOrName")
 
     assert_pattern do
       response => HubspotSDK::Cms::HubDBTableRowV3
@@ -125,7 +125,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
   def test_list_draft
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.hubdb.rows.list_draft("tableIdOrName")
+    response = @hubspot.cms.hubdb.rows.list_draft("tableIdOrName")
 
     assert_pattern do
       response => HubspotSDK::Cms::UnifiedCollectionResponseWithTotalBaseHubDBTableRowV3
@@ -143,7 +143,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.hubdb.rows.replace_draft(
+      @hubspot.cms.hubdb.rows.replace_draft(
         "321669910225",
         table_id_or_name: "tableIdOrName",
         values: {foo: {}}
@@ -171,7 +171,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.hubdb.rows.update_draft(
+      @hubspot.cms.hubdb.rows.update_draft(
         "321669910225",
         table_id_or_name: "tableIdOrName",
         values: {foo: {}}

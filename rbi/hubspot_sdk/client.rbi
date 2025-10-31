@@ -81,8 +81,8 @@ module HubspotSDK
       access_token: nil,
       developer_api_key: nil,
       # Override the default base URL for the API, e.g.,
-      # `"https://api.example.com/v2/"`. Defaults to `ENV["HUB_SPOT_BASE_URL"]`
-      base_url: ENV["HUB_SPOT_BASE_URL"],
+      # `"https://api.example.com/v2/"`. Defaults to `ENV["HUBSPOT_BASE_URL"]`
+      base_url: ENV["HUBSPOT_BASE_URL"],
       # Max number of retries to attempt after a failed retryable request.
       max_retries: HubspotSDK::Client::DEFAULT_MAX_RETRIES,
       timeout: HubspotSDK::Client::DEFAULT_TIMEOUT_IN_SECONDS,

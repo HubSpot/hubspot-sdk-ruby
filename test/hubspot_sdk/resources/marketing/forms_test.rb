@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Marketing::FormsTest < HubspotSDK::Test::Reso
   def test_create
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.forms.create
+    response = @hubspot.marketing.forms.create
 
     assert_pattern do
       response => HubspotSDK::Marketing::FormDefinitionBase
@@ -32,7 +32,7 @@ class HubspotSDK::Test::Resources::Marketing::FormsTest < HubspotSDK::Test::Reso
   def test_update
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.forms.update("formId")
+    response = @hubspot.marketing.forms.update("formId")
 
     assert_pattern do
       response => HubspotSDK::Marketing::FormDefinitionBase
@@ -58,7 +58,7 @@ class HubspotSDK::Test::Resources::Marketing::FormsTest < HubspotSDK::Test::Reso
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.forms.list
+    response = @hubspot.marketing.forms.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -91,7 +91,7 @@ class HubspotSDK::Test::Resources::Marketing::FormsTest < HubspotSDK::Test::Reso
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.forms.delete("formId")
+    response = @hubspot.marketing.forms.delete("formId")
 
     assert_pattern do
       response => nil
@@ -101,7 +101,7 @@ class HubspotSDK::Test::Resources::Marketing::FormsTest < HubspotSDK::Test::Reso
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.forms.get("formId")
+    response = @hubspot.marketing.forms.get("formId")
 
     assert_pattern do
       response => HubspotSDK::Marketing::FormDefinitionBase
@@ -127,7 +127,7 @@ class HubspotSDK::Test::Resources::Marketing::FormsTest < HubspotSDK::Test::Reso
   def test_replace
     skip("Prism tests are disabled")
 
-    response = @hub_spot.marketing.forms.replace("formId")
+    response = @hubspot.marketing.forms.replace("formId")
 
     assert_pattern do
       response => HubspotSDK::Marketing::FormDefinitionBase

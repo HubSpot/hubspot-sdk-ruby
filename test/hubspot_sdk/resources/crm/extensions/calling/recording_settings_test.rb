@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::RecordingSettingsTe
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.extensions.calling.recording_settings.create(
+      @hubspot.crm.extensions.calling.recording_settings.create(
         0,
         url_to_retrieve_authed_recording: "urlToRetrieveAuthedRecording"
       )
@@ -26,7 +26,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::RecordingSettingsTe
   def test_update
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.extensions.calling.recording_settings.update(0)
+    response = @hubspot.crm.extensions.calling.recording_settings.update(0)
 
     assert_pattern do
       response => HubspotSDK::CRM::Extensions::RecordingSettingsResponse
@@ -42,7 +42,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::RecordingSettingsTe
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.extensions.calling.recording_settings.get(0)
+    response = @hubspot.crm.extensions.calling.recording_settings.get(0)
 
     assert_pattern do
       response => HubspotSDK::CRM::Extensions::RecordingSettingsResponse
@@ -58,7 +58,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::RecordingSettingsTe
   def test_mark_ready_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.extensions.calling.recording_settings.mark_ready(engagement_id: 0)
+    response = @hubspot.crm.extensions.calling.recording_settings.mark_ready(engagement_id: 0)
 
     assert_pattern do
       response => nil

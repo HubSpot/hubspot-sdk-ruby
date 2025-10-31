@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::GoalTargetsTest < HubspotSDK::T
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.goal_targets.create(properties: {foo: "string"})
+    response = @hubspot.crm.objects.goal_targets.create(properties: {foo: "string"})
 
     assert_pattern do
       response => HubspotSDK::CRM::CreatedResponseSimplePublicObject
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::GoalTargetsTest < HubspotSDK::T
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.goal_targets.update(
+      @hubspot.crm.objects.goal_targets.update(
         "goalTargetId",
         properties: {
           property_checkbox: "false",
@@ -59,7 +59,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::GoalTargetsTest < HubspotSDK::T
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.goal_targets.list
+    response = @hubspot.crm.objects.goal_targets.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -90,7 +90,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::GoalTargetsTest < HubspotSDK::T
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.goal_targets.delete("goalTargetId")
+    response = @hubspot.crm.objects.goal_targets.delete("goalTargetId")
 
     assert_pattern do
       response => nil
@@ -100,7 +100,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::GoalTargetsTest < HubspotSDK::T
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.goal_targets.get("goalTargetId")
+    response = @hubspot.crm.objects.goal_targets.get("goalTargetId")
 
     assert_pattern do
       response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
@@ -124,7 +124,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::GoalTargetsTest < HubspotSDK::T
   def test_search
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.goal_targets.search
+    response = @hubspot.crm.objects.goal_targets.search
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject

@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::PipelinesTest < HubspotSDK::Test::Resour
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.pipelines.create(
+      @hubspot.crm.pipelines.create(
         "objectType",
         display_order: 0,
         label: "My replaced pipeline",
@@ -35,7 +35,7 @@ class HubspotSDK::Test::Resources::CRM::PipelinesTest < HubspotSDK::Test::Resour
   def test_update_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.pipelines.update("pipelineId", object_type: "objectType")
+    response = @hubspot.crm.pipelines.update("pipelineId", object_type: "objectType")
 
     assert_pattern do
       response => HubspotSDK::CRM::Pipeline
@@ -58,7 +58,7 @@ class HubspotSDK::Test::Resources::CRM::PipelinesTest < HubspotSDK::Test::Resour
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.pipelines.list("objectType")
+    response = @hubspot.crm.pipelines.list("objectType")
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponsePipelineNoPaging
@@ -74,7 +74,7 @@ class HubspotSDK::Test::Resources::CRM::PipelinesTest < HubspotSDK::Test::Resour
   def test_delete_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.pipelines.delete("pipelineId", object_type: "objectType")
+    response = @hubspot.crm.pipelines.delete("pipelineId", object_type: "objectType")
 
     assert_pattern do
       response => nil
@@ -84,7 +84,7 @@ class HubspotSDK::Test::Resources::CRM::PipelinesTest < HubspotSDK::Test::Resour
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.pipelines.get("pipelineId", object_type: "objectType")
+    response = @hubspot.crm.pipelines.get("pipelineId", object_type: "objectType")
 
     assert_pattern do
       response => HubspotSDK::CRM::Pipeline
@@ -107,7 +107,7 @@ class HubspotSDK::Test::Resources::CRM::PipelinesTest < HubspotSDK::Test::Resour
   def test_get_audit_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.pipelines.get_audit("pipelineId", object_type: "objectType")
+    response = @hubspot.crm.pipelines.get_audit("pipelineId", object_type: "objectType")
 
     assert_pattern do
       response => HubspotSDK::CRM::CollectionResponsePublicAuditInfoNoPaging
@@ -124,7 +124,7 @@ class HubspotSDK::Test::Resources::CRM::PipelinesTest < HubspotSDK::Test::Resour
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.pipelines.replace(
+      @hubspot.crm.pipelines.replace(
         "pipelineId",
         object_type: "objectType",
         display_order: 0,

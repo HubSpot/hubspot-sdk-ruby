@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::EventsTest < HubspotSDK::Test:
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.timeline.events.create(
+      @hubspot.crm.timeline.events.create(
         event_template_id: "1001298",
         tokens: {petAge: "string", petColor: "black", petName: "Art3mis"}
       )
@@ -38,7 +38,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::EventsTest < HubspotSDK::Test:
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.timeline.events.batch_create(
+      @hubspot.crm.timeline.events.batch_create(
         inputs: [
           {eventTemplateId: "1001298", tokens: {petAge: "string", petColor: "black", petName: "Art3mis"}},
           {eventTemplateId: "1001298", tokens: {petAge: "string", petColor: "yellow", petName: "Pocket"}}
@@ -53,7 +53,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::EventsTest < HubspotSDK::Test:
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.timeline.events.get("eventId", event_template_id: "eventTemplateId")
+    response = @hubspot.crm.timeline.events.get("eventId", event_template_id: "eventTemplateId")
 
     assert_pattern do
       response => HubspotSDK::CRM::TimelineEventResponse
@@ -80,7 +80,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::EventsTest < HubspotSDK::Test:
   def test_get_detail_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.timeline.events.get_detail("eventId", event_template_id: "eventTemplateId")
+    response = @hubspot.crm.timeline.events.get_detail("eventId", event_template_id: "eventTemplateId")
 
     assert_pattern do
       response => HubspotSDK::CRM::EventDetail

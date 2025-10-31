@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::PartnerClients::BatchTest < Hub
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.partner_clients.batch.batch_get(
+      @hubspot.crm.objects.partner_clients.batch.batch_get(
         inputs: [{id: "id"}],
         properties: ["string"],
         properties_with_history: ["string"]
@@ -35,8 +35,13 @@ class HubspotSDK::Test::Resources::CRM::Objects::PartnerClients::BatchTest < Hub
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.partner_clients.batch.batch_update(
-        inputs: [{id: "id", properties: {foo: "string"}}]
+      @hubspot.crm.objects.partner_clients.batch.batch_update(
+        inputs: [
+          {
+            id: "id",
+            properties: {foo: "string"}
+          }
+        ]
       )
 
     assert_pattern do

@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::Lists::MappingTest < HubspotSDK::Test::R
   def test_batch_create_id_mapping_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.lists.mapping.batch_create_id_mapping(body: ["string"])
+    response = @hubspot.crm.lists.mapping.batch_create_id_mapping(body: ["string"])
 
     assert_pattern do
       response => HubspotSDK::CRM::PublicBatchMigrationMapping
@@ -23,7 +23,7 @@ class HubspotSDK::Test::Resources::CRM::Lists::MappingTest < HubspotSDK::Test::R
   def test_get_id_mapping
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.lists.mapping.get_id_mapping
+    response = @hubspot.crm.lists.mapping.get_id_mapping
 
     assert_pattern do
       response => HubspotSDK::CRM::PublicMigrationMapping

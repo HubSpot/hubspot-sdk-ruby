@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Settings::CurrenciesTest < HubspotSDK::Test::
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.settings.currencies.batch_create(inputs: [{conversionRate: 0, fromCurrencyCode: :AED}])
+      @hubspot.settings.currencies.batch_create(inputs: [{conversionRate: 0, fromCurrencyCode: :AED}])
 
     assert_pattern do
       response => HubspotSDK::Settings::BatchResponseExchangeRate
@@ -28,7 +28,7 @@ class HubspotSDK::Test::Resources::Settings::CurrenciesTest < HubspotSDK::Test::
   def test_batch_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.currencies.batch_get(inputs: [{id: "37295"}])
+    response = @hubspot.settings.currencies.batch_get(inputs: [{id: "37295"}])
 
     assert_pattern do
       response => HubspotSDK::Settings::BatchResponseExchangeRate
@@ -49,7 +49,7 @@ class HubspotSDK::Test::Resources::Settings::CurrenciesTest < HubspotSDK::Test::
   def test_batch_update_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.currencies.batch_update(inputs: [{id: "id", conversionRate: 0}])
+    response = @hubspot.settings.currencies.batch_update(inputs: [{id: "id", conversionRate: 0}])
 
     assert_pattern do
       response => HubspotSDK::Settings::BatchResponseExchangeRate
@@ -71,7 +71,7 @@ class HubspotSDK::Test::Resources::Settings::CurrenciesTest < HubspotSDK::Test::
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.settings.currencies.create_exchange_rate(conversion_rate: 0, from_currency_code: :AED)
+      @hubspot.settings.currencies.create_exchange_rate(conversion_rate: 0, from_currency_code: :AED)
 
     assert_pattern do
       response => HubspotSDK::Settings::ExchangeRate
@@ -94,7 +94,7 @@ class HubspotSDK::Test::Resources::Settings::CurrenciesTest < HubspotSDK::Test::
   def test_get_company_currency
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.currencies.get_company_currency
+    response = @hubspot.settings.currencies.get_company_currency
 
     assert_pattern do
       response => HubspotSDK::Settings::CompanyCurrency
@@ -111,7 +111,7 @@ class HubspotSDK::Test::Resources::Settings::CurrenciesTest < HubspotSDK::Test::
   def test_get_exchange_rate_by_id
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.currencies.get_exchange_rate_by_id("exchangeRateId")
+    response = @hubspot.settings.currencies.get_exchange_rate_by_id("exchangeRateId")
 
     assert_pattern do
       response => HubspotSDK::Settings::ExchangeRate
@@ -134,7 +134,7 @@ class HubspotSDK::Test::Resources::Settings::CurrenciesTest < HubspotSDK::Test::
   def test_list_codes
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.currencies.list_codes
+    response = @hubspot.settings.currencies.list_codes
 
     assert_pattern do
       response => HubspotSDK::Settings::CollectionResponseCurrencyCodeInfoNoPaging
@@ -150,7 +150,7 @@ class HubspotSDK::Test::Resources::Settings::CurrenciesTest < HubspotSDK::Test::
   def test_list_current_exchange_rates
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.currencies.list_current_exchange_rates
+    response = @hubspot.settings.currencies.list_current_exchange_rates
 
     assert_pattern do
       response => HubspotSDK::Settings::CollectionResponseExchangeRateNoPaging
@@ -166,7 +166,7 @@ class HubspotSDK::Test::Resources::Settings::CurrenciesTest < HubspotSDK::Test::
   def test_list_exchange_rates
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.currencies.list_exchange_rates
+    response = @hubspot.settings.currencies.list_exchange_rates
 
     assert_pattern do
       response => HubspotSDK::Settings::CollectionResponseExchangeRateForwardPaging
@@ -183,7 +183,7 @@ class HubspotSDK::Test::Resources::Settings::CurrenciesTest < HubspotSDK::Test::
   def test_update_company_currency_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.currencies.update_company_currency(currency_code: :AED)
+    response = @hubspot.settings.currencies.update_company_currency(currency_code: :AED)
 
     assert_pattern do
       response => HubspotSDK::Settings::CompanyCurrency
@@ -200,7 +200,7 @@ class HubspotSDK::Test::Resources::Settings::CurrenciesTest < HubspotSDK::Test::
   def test_update_exchange_rate_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.settings.currencies.update_exchange_rate("exchangeRateId", conversion_rate: 0)
+    response = @hubspot.settings.currencies.update_exchange_rate("exchangeRateId", conversion_rate: 0)
 
     assert_pattern do
       response => HubspotSDK::Settings::ExchangeRate
@@ -224,7 +224,7 @@ class HubspotSDK::Test::Resources::Settings::CurrenciesTest < HubspotSDK::Test::
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.settings.currencies.update_visibility(
+      @hubspot.settings.currencies.update_visibility(
         from_currency_code: :AED,
         to_currency_code: :AED,
         visible_in_ui: true

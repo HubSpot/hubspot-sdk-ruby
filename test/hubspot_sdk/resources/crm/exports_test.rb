@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::CRM::ExportsTest < HubspotSDK::Test::Resource
   def test_create
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.exports.create
+    response = @hubspot.crm.exports.create
 
     assert_pattern do
       response => HubspotSDK::TaskLocator
@@ -23,7 +23,7 @@ class HubspotSDK::Test::Resources::CRM::ExportsTest < HubspotSDK::Test::Resource
   def test_get_status
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.exports.get_status(0)
+    response = @hubspot.crm.exports.get_status(0)
 
     assert_pattern do
       response => HubspotSDK::CRM::ActionResponseWithSingleResultUri

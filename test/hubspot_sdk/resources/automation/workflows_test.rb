@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Automation::WorkflowsTest < HubspotSDK::Test:
   def test_create
     skip("Prism tests are disabled")
 
-    response = @hub_spot.automation.workflows.create
+    response = @hubspot.automation.workflows.create
 
     assert_pattern do
       response => HubspotSDK::Automation::APIFlow
@@ -23,7 +23,7 @@ class HubspotSDK::Test::Resources::Automation::WorkflowsTest < HubspotSDK::Test:
   def test_update
     skip("Prism tests are disabled")
 
-    response = @hub_spot.automation.workflows.update("flowId")
+    response = @hubspot.automation.workflows.update("flowId")
 
     assert_pattern do
       response => HubspotSDK::Automation::APIFlow
@@ -40,7 +40,7 @@ class HubspotSDK::Test::Resources::Automation::WorkflowsTest < HubspotSDK::Test:
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.automation.workflows.list
+    response = @hubspot.automation.workflows.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -71,7 +71,7 @@ class HubspotSDK::Test::Resources::Automation::WorkflowsTest < HubspotSDK::Test:
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.automation.workflows.delete(0)
+    response = @hubspot.automation.workflows.delete(0)
 
     assert_pattern do
       response => nil
@@ -81,7 +81,7 @@ class HubspotSDK::Test::Resources::Automation::WorkflowsTest < HubspotSDK::Test:
   def test_batch_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.automation.workflows.batch_get(inputs: [{flowId: "flowId", type: :FLOW_ID}])
+    response = @hubspot.automation.workflows.batch_get(inputs: [{flowId: "flowId", type: :FLOW_ID}])
 
     assert_pattern do
       response => HubspotSDK::Automation::BatchResponseAPIFlow
@@ -103,7 +103,7 @@ class HubspotSDK::Test::Resources::Automation::WorkflowsTest < HubspotSDK::Test:
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.automation.workflows.batch_get_id_mappings(
+      @hubspot.automation.workflows.batch_get_id_mappings(
         inputs: [{flowMigrationStatuses: "12345", type: :FLOW_ID}]
       )
 
@@ -126,7 +126,7 @@ class HubspotSDK::Test::Resources::Automation::WorkflowsTest < HubspotSDK::Test:
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.automation.workflows.get("flowId")
+    response = @hubspot.automation.workflows.get("flowId")
 
     assert_pattern do
       response => HubspotSDK::Automation::APIFlow
@@ -143,7 +143,7 @@ class HubspotSDK::Test::Resources::Automation::WorkflowsTest < HubspotSDK::Test:
   def test_list_email_campaigns
     skip("Prism tests are disabled")
 
-    response = @hub_spot.automation.workflows.list_email_campaigns
+    response = @hubspot.automation.workflows.list_email_campaigns
 
     assert_pattern do
       response => HubspotSDK::Automation::CollectionResponseAPIFlowEmailCampaign

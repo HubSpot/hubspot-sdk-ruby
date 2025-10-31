@@ -1,0 +1,76 @@
+module HubspotSDK
+  module Models
+    module Settings
+      type tax_rate_list_response =
+        {
+          results: ::Array[HubspotSDK::Models::Settings::TaxRateListResponse::Result],
+          paging: HubspotSDK::ForwardPaging
+        }
+
+      class TaxRateListResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubspotSDK::Models::Settings::TaxRateListResponse::Result]
+
+        attr_reader paging: HubspotSDK::ForwardPaging?
+
+        def paging=: (HubspotSDK::ForwardPaging) -> HubspotSDK::ForwardPaging
+
+        def initialize: (
+          results: ::Array[HubspotSDK::Models::Settings::TaxRateListResponse::Result],
+          ?paging: HubspotSDK::ForwardPaging
+        ) -> void
+
+        def to_hash: -> {
+          results: ::Array[HubspotSDK::Models::Settings::TaxRateListResponse::Result],
+          paging: HubspotSDK::ForwardPaging
+        }
+
+        type result =
+          {
+            id: String,
+            active: bool,
+            created_at: Time,
+            label: String,
+            name: String,
+            percentage_rate: Float,
+            updated_at: Time
+          }
+
+        class Result < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_accessor active: bool
+
+          attr_accessor created_at: Time
+
+          attr_accessor label: String
+
+          attr_accessor name: String
+
+          attr_accessor percentage_rate: Float
+
+          attr_accessor updated_at: Time
+
+          def initialize: (
+            id: String,
+            active: bool,
+            created_at: Time,
+            label: String,
+            name: String,
+            percentage_rate: Float,
+            updated_at: Time
+          ) -> void
+
+          def to_hash: -> {
+            id: String,
+            active: bool,
+            created_at: Time,
+            label: String,
+            name: String,
+            percentage_rate: Float,
+            updated_at: Time
+          }
+        end
+      end
+    end
+  end
+end

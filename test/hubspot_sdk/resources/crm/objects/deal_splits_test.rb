@@ -6,18 +6,18 @@ class HubspotSDK::Test::Resources::CRM::Objects::DealSplitsTest < HubspotSDK::Te
   def test_batch_read_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.objects.deal_splits.batch_read(inputs: [{id: "37295"}])
+    response = @hubspot.crm.objects.deal_splits.batch_read(inputs: [{id: "37295"}])
 
     assert_pattern do
-      response => HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits
+      response => HubspotSDK::Models::CRM::Objects::DealSplitBatchReadResponse
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Objects::DealToDealSplits]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::CRM::Objects::DealSplitBatchReadResponse::Result]),
         started_at: Time,
-        status: HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits::Status,
+        status: HubspotSDK::Models::CRM::Objects::DealSplitBatchReadResponse::Status,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
@@ -28,18 +28,18 @@ class HubspotSDK::Test::Resources::CRM::Objects::DealSplitsTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.objects.deal_splits.batch_upsert(inputs: [{id: 0, splits: [{ownerId: 0, percentage: 0}]}])
+      @hubspot.crm.objects.deal_splits.batch_upsert(inputs: [{id: 0, splits: [{ownerId: 0, percentage: 0}]}])
 
     assert_pattern do
-      response => HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits
+      response => HubspotSDK::Models::CRM::Objects::DealSplitBatchUpsertResponse
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Objects::DealToDealSplits]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::CRM::Objects::DealSplitBatchUpsertResponse::Result]),
         started_at: Time,
-        status: HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits::Status,
+        status: HubspotSDK::Models::CRM::Objects::DealSplitBatchUpsertResponse::Status,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }

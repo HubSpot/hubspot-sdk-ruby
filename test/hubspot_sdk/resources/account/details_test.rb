@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Account::DetailsTest < HubspotSDK::Test::Reso
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.account.details.get
+    response = @hubspot.account.details.get
 
     assert_pattern do
       response => HubspotSDK::Account::PortalInformationResponse

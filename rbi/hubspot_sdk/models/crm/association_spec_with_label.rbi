@@ -13,9 +13,7 @@ module HubspotSDK
           end
 
         sig do
-          returns(
-            HubspotSDK::CRM::AssociationSpecWithLabel::Category::TaggedSymbol
-          )
+          returns(HubspotSDK::CRM::AssociationSpecWithLabel::Category::OrSymbol)
         end
         attr_accessor :category
 
@@ -43,7 +41,7 @@ module HubspotSDK
           override.returns(
             {
               category:
-                HubspotSDK::CRM::AssociationSpecWithLabel::Category::TaggedSymbol,
+                HubspotSDK::CRM::AssociationSpecWithLabel::Category::OrSymbol,
               type_id: Integer,
               label: String
             }

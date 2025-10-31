@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::PropertiesTest < HubspotSDK
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.media_bridge.properties.create(
+      @hubspot.cms.media_bridge.properties.create(
         "objectType",
         app_id: "appId",
         field_type: :booleancheckbox,
@@ -57,7 +57,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::PropertiesTest < HubspotSDK
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.media_bridge.properties.update("propertyName", app_id: "appId", object_type: "objectType")
+      @hubspot.cms.media_bridge.properties.update("propertyName", app_id: "appId", object_type: "objectType")
 
     assert_pattern do
       response => HubspotSDK::Property
@@ -98,15 +98,15 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::PropertiesTest < HubspotSDK
   def test_list_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.media_bridge.properties.list("objectType", app_id: "appId")
+    response = @hubspot.cms.media_bridge.properties.list("objectType", app_id: "appId")
 
     assert_pattern do
-      response => HubspotSDK::Cms::CollectionResponsePropertyNoPaging
+      response => HubspotSDK::Models::Cms::MediaBridge::PropertyListResponse
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Property1])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::Cms::MediaBridge::PropertyListResponse::Result])
       }
     end
   end
@@ -115,7 +115,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::PropertiesTest < HubspotSDK
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.media_bridge.properties.delete("propertyName", app_id: "appId", object_type: "objectType")
+      @hubspot.cms.media_bridge.properties.delete("propertyName", app_id: "appId", object_type: "objectType")
 
     assert_pattern do
       response => nil
@@ -126,7 +126,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::PropertiesTest < HubspotSDK
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.media_bridge.properties.archive_batch(
+      @hubspot.cms.media_bridge.properties.archive_batch(
         "objectType",
         app_id: "appId",
         inputs: [{name: "name"}]
@@ -141,7 +141,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::PropertiesTest < HubspotSDK
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.media_bridge.properties.create_batch(
+      @hubspot.cms.media_bridge.properties.create_batch(
         "objectType",
         app_id: "appId",
         inputs: [
@@ -175,7 +175,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::PropertiesTest < HubspotSDK
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.media_bridge.properties.get("propertyName", app_id: "appId", object_type: "objectType")
+      @hubspot.cms.media_bridge.properties.get("propertyName", app_id: "appId", object_type: "objectType")
 
     assert_pattern do
       response => HubspotSDK::Property
@@ -217,7 +217,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::PropertiesTest < HubspotSDK
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.media_bridge.properties.get_batch(
+      @hubspot.cms.media_bridge.properties.get_batch(
         "objectType",
         app_id: "appId",
         archived: true,

@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::Rows::BatchTest < HubspotSDK::Tes
   def test_clone_batch_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.hubdb.rows.batch.clone_batch("tableIdOrName", inputs: [{id: "id"}])
+    response = @hubspot.cms.hubdb.rows.batch.clone_batch("tableIdOrName", inputs: [{id: "id"}])
 
     assert_pattern do
       response => HubspotSDK::Cms::BatchResponseHubDBTableRowV3
@@ -27,7 +27,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::Rows::BatchTest < HubspotSDK::Tes
   def test_create_batch_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.hubdb.rows.batch.create_batch("tableIdOrName", inputs: [{values: {foo: {}}}])
+    response = @hubspot.cms.hubdb.rows.batch.create_batch("tableIdOrName", inputs: [{values: {foo: {}}}])
 
     assert_pattern do
       response => HubspotSDK::Cms::BatchResponseHubDBTableRowV3
@@ -48,7 +48,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::Rows::BatchTest < HubspotSDK::Tes
   def test_get_batch_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.hubdb.rows.batch.get_batch("tableIdOrName", inputs: ["string"])
+    response = @hubspot.cms.hubdb.rows.batch.get_batch("tableIdOrName", inputs: ["string"])
 
     assert_pattern do
       response => HubspotSDK::Cms::BatchResponseHubDBTableRowV3
@@ -69,7 +69,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::Rows::BatchTest < HubspotSDK::Tes
   def test_get_draft_batch_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.hubdb.rows.batch.get_draft_batch("tableIdOrName", inputs: ["string"])
+    response = @hubspot.cms.hubdb.rows.batch.get_draft_batch("tableIdOrName", inputs: ["string"])
 
     assert_pattern do
       response => HubspotSDK::Cms::BatchResponseHubDBTableRowV3
@@ -90,7 +90,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::Rows::BatchTest < HubspotSDK::Tes
   def test_purge_batch_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.cms.hubdb.rows.batch.purge_batch("tableIdOrName", inputs: ["string"])
+    response = @hubspot.cms.hubdb.rows.batch.purge_batch("tableIdOrName", inputs: ["string"])
 
     assert_pattern do
       response => nil
@@ -101,7 +101,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::Rows::BatchTest < HubspotSDK::Tes
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.hubdb.rows.batch.replace_batch("tableIdOrName", inputs: [{id: "id", values: {foo: {}}}])
+      @hubspot.cms.hubdb.rows.batch.replace_batch("tableIdOrName", inputs: [{id: "id", values: {foo: {}}}])
 
     assert_pattern do
       response => HubspotSDK::Cms::BatchResponseHubDBTableRowV3
@@ -123,7 +123,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::Rows::BatchTest < HubspotSDK::Tes
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.hubdb.rows.batch.update_batch("tableIdOrName", inputs: [{id: "id", values: {foo: {}}}])
+      @hubspot.cms.hubdb.rows.batch.update_batch("tableIdOrName", inputs: [{id: "id", values: {foo: {}}}])
 
     assert_pattern do
       response => HubspotSDK::Cms::BatchResponseHubDBTableRowV3

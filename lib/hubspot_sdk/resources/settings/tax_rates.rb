@@ -11,14 +11,14 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Settings::CollectionResponsePublicTaxRateGroupForwardPaging]
+        # @return [HubspotSDK::Models::Settings::TaxRateListResponse]
         #
         # @see HubspotSDK::Models::Settings::TaxRateListParams
         def list(params = {})
           @client.request(
             method: :get,
             path: "tax-rates/v1/tax-rates",
-            model: HubspotSDK::Settings::CollectionResponsePublicTaxRateGroupForwardPaging,
+            model: HubspotSDK::Models::Settings::TaxRateListResponse,
             options: params[:request_options]
           )
         end
@@ -30,14 +30,14 @@ module HubspotSDK
         # @param tax_rate_group_id [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Settings::PublicTaxRateGroup]
+        # @return [HubspotSDK::Models::Settings::TaxRateGetResponse]
         #
         # @see HubspotSDK::Models::Settings::TaxRateGetParams
         def get(tax_rate_group_id, params = {})
           @client.request(
             method: :get,
             path: ["tax-rates/v1/tax-rates/%1$s", tax_rate_group_id],
-            model: HubspotSDK::Settings::PublicTaxRateGroup,
+            model: HubspotSDK::Models::Settings::TaxRateGetResponse,
             options: params[:request_options]
           )
         end

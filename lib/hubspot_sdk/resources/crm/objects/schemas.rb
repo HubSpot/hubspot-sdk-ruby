@@ -151,7 +151,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Events::AssociationDefinition]
+          # @return [HubspotSDK::Models::CRM::Objects::SchemaCreateAssociationResponse]
           #
           # @see HubspotSDK::Models::CRM::Objects::SchemaCreateAssociationParams
           def create_association(object_type, params)
@@ -160,7 +160,7 @@ module HubspotSDK
               method: :post,
               path: ["crm-object-schemas/v3/schemas/%1$s/associations", object_type],
               body: parsed,
-              model: HubspotSDK::Events::AssociationDefinition,
+              model: HubspotSDK::Models::CRM::Objects::SchemaCreateAssociationResponse,
               options: options
             )
           end

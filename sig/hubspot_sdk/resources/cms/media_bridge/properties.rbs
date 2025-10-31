@@ -31,14 +31,14 @@ module HubspotSDK
             ?calculation_formula: String,
             ?description: String,
             ?display_order: Integer,
-            ?field_type: HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type,
+            ?field_type: HubspotSDK::Models::Cms::MediaBridge::PropertyUpdateParams::field_type,
             ?form_field: bool,
             ?group_name: String,
             ?has_unique_value: bool,
             ?hidden: bool,
             ?label: String,
             ?options: ::Array[HubspotSDK::OptionInput],
-            ?type: HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::type_,
+            ?type: HubspotSDK::Models::Cms::MediaBridge::PropertyUpdateParams::type_,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Property
 
@@ -46,7 +46,7 @@ module HubspotSDK
             String object_type,
             app_id: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::CollectionResponsePropertyNoPaging
+          ) -> HubspotSDK::Models::Cms::MediaBridge::PropertyListResponse
 
           def delete: (
             String property_name,

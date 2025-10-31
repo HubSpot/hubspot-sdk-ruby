@@ -3,38 +3,44 @@ module HubspotSDK
     module Conversations
       type public_channel_account =
         {
+          archived: bool,
           id: String,
           active: bool,
-          archived: bool,
+          archived_at: Time,
           authorized: bool,
           channel_id: String,
           created_at: Time,
+          delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
           inbox_id: String,
-          name: String,
-          archived_at: Time,
-          delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+          name: String
         }
 
       class PublicChannelAccount < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor id: String
-
-        attr_accessor active: bool
-
         attr_accessor archived: bool
 
-        attr_accessor authorized: bool
+        attr_reader id: String?
 
-        attr_accessor channel_id: String
+        def id=: (String) -> String
 
-        attr_accessor created_at: Time
+        attr_reader active: bool?
 
-        attr_accessor inbox_id: String
-
-        attr_accessor name: String
+        def active=: (bool) -> bool
 
         attr_reader archived_at: Time?
 
         def archived_at=: (Time) -> Time
+
+        attr_reader authorized: bool?
+
+        def authorized=: (bool) -> bool
+
+        attr_reader channel_id: String?
+
+        def channel_id=: (String) -> String
+
+        attr_reader created_at: Time?
+
+        def created_at=: (Time) -> Time
 
         attr_reader delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier?
 
@@ -42,30 +48,38 @@ module HubspotSDK
           HubspotSDK::Conversations::PublicDeliveryIdentifier
         ) -> HubspotSDK::Conversations::PublicDeliveryIdentifier
 
+        attr_reader inbox_id: String?
+
+        def inbox_id=: (String) -> String
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
         def initialize: (
-          id: String,
-          active: bool,
           archived: bool,
-          authorized: bool,
-          channel_id: String,
-          created_at: Time,
-          inbox_id: String,
-          name: String,
+          ?id: String,
+          ?active: bool,
           ?archived_at: Time,
-          ?delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+          ?authorized: bool,
+          ?channel_id: String,
+          ?created_at: Time,
+          ?delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
+          ?inbox_id: String,
+          ?name: String
         ) -> void
 
         def to_hash: -> {
+          archived: bool,
           id: String,
           active: bool,
-          archived: bool,
+          archived_at: Time,
           authorized: bool,
           channel_id: String,
           created_at: Time,
+          delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
           inbox_id: String,
-          name: String,
-          archived_at: Time,
-          delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+          name: String
         }
       end
     end

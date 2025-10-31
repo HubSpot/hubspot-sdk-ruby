@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Conversations::ThreadsTest < HubspotSDK::Test
   def test_update
     skip("Prism tests are disabled")
 
-    response = @hub_spot.conversations.threads.update("threadId")
+    response = @hubspot.conversations.threads.update("threadId")
 
     assert_pattern do
       response => HubspotSDK::Conversations::PublicThread
@@ -36,7 +36,7 @@ class HubspotSDK::Test::Resources::Conversations::ThreadsTest < HubspotSDK::Test
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hub_spot.conversations.threads.list
+    response = @hubspot.conversations.threads.list
 
     assert_pattern do
       response => HubspotSDK::Conversations::CollectionResponsePublicThreadForwardPaging
@@ -53,7 +53,7 @@ class HubspotSDK::Test::Resources::Conversations::ThreadsTest < HubspotSDK::Test
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.conversations.threads.delete("threadId")
+    response = @hubspot.conversations.threads.delete("threadId")
 
     assert_pattern do
       response => nil
@@ -63,7 +63,7 @@ class HubspotSDK::Test::Resources::Conversations::ThreadsTest < HubspotSDK::Test
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.conversations.threads.get("threadId")
+    response = @hubspot.conversations.threads.get("threadId")
 
     assert_pattern do
       response => HubspotSDK::Conversations::PublicThread

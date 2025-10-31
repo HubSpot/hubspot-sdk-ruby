@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Conversations::ActorsTest < HubspotSDK::Test:
   def test_batch_read_required_params
     skip("Prism tests are disabled")
 
-    response = @hub_spot.conversations.actors.batch_read(inputs: ["string"])
+    response = @hubspot.conversations.actors.batch_read(inputs: ["string"])
 
     assert_pattern do
       response => HubspotSDK::Conversations::BatchResponsePublicActor
@@ -27,7 +27,7 @@ class HubspotSDK::Test::Resources::Conversations::ActorsTest < HubspotSDK::Test:
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.conversations.actors.get("actorId")
+    response = @hubspot.conversations.actors.get("actorId")
 
     assert_pattern do
       response => HubspotSDK::Conversations::PublicActor

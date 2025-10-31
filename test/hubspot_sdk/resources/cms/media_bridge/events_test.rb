@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::EventsTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.media_bridge.events.create_attention_span_event(
+      @hubspot.cms.media_bridge.events.create_attention_span_event(
         media_type: :VIDEO,
         occurred_timestamp: 0,
         raw_data_map: {foo: 0},
@@ -15,7 +15,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::EventsTest < HubspotSDK::Te
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::AttentionSpanEvent
+      response => HubspotSDK::Models::Cms::MediaBridge::EventCreateAttentionSpanEventResponse
     end
 
     assert_pattern do
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::EventsTest < HubspotSDK::Te
         media_bridge_object_coordinates: String,
         media_bridge_object_type_id: String,
         media_name: String,
-        media_type: HubspotSDK::Cms::AttentionSpanEvent::MediaType,
+        media_type: HubspotSDK::Models::Cms::MediaBridge::EventCreateAttentionSpanEventResponse::MediaType,
         occurred_timestamp: Integer,
         percent_range: String,
         portal_id: Integer,
@@ -47,7 +47,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::EventsTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.media_bridge.events.create_media_played_event(
+      @hubspot.cms.media_bridge.events.create_media_played_event(
         media_type: :VIDEO,
         occurred_timestamp: 0,
         session_id: "sessionId",
@@ -55,7 +55,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::EventsTest < HubspotSDK::Te
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::MediaPlayedEvent
+      response => HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedEventResponse
     end
 
     assert_pattern do
@@ -65,12 +65,12 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::EventsTest < HubspotSDK::Te
         media_bridge_object_coordinates: String,
         media_bridge_object_type_id: String,
         media_name: String,
-        media_type: HubspotSDK::Cms::MediaPlayedEvent::MediaType,
+        media_type: HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedEventResponse::MediaType,
         occurred_timestamp: Integer,
         portal_id: Integer,
         provider_id: Integer,
         session_id: String,
-        state: HubspotSDK::Cms::MediaPlayedEvent::State,
+        state: HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedEventResponse::State,
         iframe_url: String | nil,
         media_url: String | nil,
         page_id: Integer | nil,
@@ -85,7 +85,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::EventsTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.cms.media_bridge.events.create_media_played_percent_event(
+      @hubspot.cms.media_bridge.events.create_media_played_percent_event(
         media_type: :VIDEO,
         occurred_timestamp: 0,
         played_percent: 0,
@@ -93,7 +93,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::EventsTest < HubspotSDK::Te
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::MediaPlayedPercentageEvent
+      response => HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedPercentEventResponse
     end
 
     assert_pattern do
@@ -103,7 +103,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::EventsTest < HubspotSDK::Te
         media_bridge_object_coordinates: String,
         media_bridge_object_type_id: String,
         media_name: String,
-        media_type: HubspotSDK::Cms::MediaPlayedPercentageEvent::MediaType,
+        media_type: HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedPercentEventResponse::MediaType,
         occurred_timestamp: Integer,
         played_percent: Integer,
         portal_id: Integer,

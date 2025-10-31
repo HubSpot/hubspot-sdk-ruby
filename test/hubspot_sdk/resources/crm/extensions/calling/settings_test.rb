@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::SettingsTest < Hubs
     skip("Prism tests are disabled")
 
     response =
-      @hub_spot.crm.extensions.calling.settings.create(
+      @hubspot.crm.extensions.calling.settings.create(
         0,
         name: "HubPhone",
         url: "https://www.example.com/hubspot/iframe"
@@ -30,7 +30,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::SettingsTest < Hubs
   def test_update
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.extensions.calling.settings.update(0)
+    response = @hubspot.crm.extensions.calling.settings.update(0)
 
     assert_pattern do
       response => HubspotSDK::Webhooks::SettingsResponse
@@ -49,7 +49,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::SettingsTest < Hubs
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.extensions.calling.settings.delete(0)
+    response = @hubspot.crm.extensions.calling.settings.delete(0)
 
     assert_pattern do
       response => nil
@@ -59,7 +59,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::SettingsTest < Hubs
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hub_spot.crm.extensions.calling.settings.get(0)
+    response = @hubspot.crm.extensions.calling.settings.get(0)
 
     assert_pattern do
       response => HubspotSDK::Webhooks::SettingsResponse

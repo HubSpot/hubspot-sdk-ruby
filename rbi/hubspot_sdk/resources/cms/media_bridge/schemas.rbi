@@ -69,7 +69,9 @@ module HubspotSDK
               to_object_type_id: String,
               name: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Events::AssociationDefinition)
+            ).returns(
+              HubspotSDK::Models::Cms::MediaBridge::SchemaCreateAssociationResponse
+            )
           end
           def create_association(
             # Path param:
