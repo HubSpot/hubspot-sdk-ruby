@@ -1,0 +1,60 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      module Subscriptions
+        module V4
+          type status_batch_unsubscribe_all_params =
+            {
+              channel: HubspotSDK::Models::BatchInputString::channel,
+              business_unit_id: Integer,
+              verbose: bool
+            }
+            & HubspotSDK::Internal::Type::request_parameters
+
+          class StatusBatchUnsubscribeAllParams < HubspotSDK::Models::BatchInputString
+            extend HubspotSDK::Internal::Type::RequestParameters::Converter
+            include HubspotSDK::Internal::Type::RequestParameters
+
+            def channel: -> HubspotSDK::Models::BatchInputString::channel
+
+            def channel=: (
+              HubspotSDK::Models::BatchInputString::channel _
+            ) -> HubspotSDK::Models::BatchInputString::channel
+
+            def business_unit_id: -> Integer?
+
+            def business_unit_id=: (Integer _) -> Integer
+
+            def verbose: -> bool?
+
+            def verbose=: (bool _) -> bool
+
+            def initialize: (
+              channel: HubspotSDK::Models::BatchInputString::channel,
+              ?business_unit_id: Integer,
+              ?verbose: bool,
+              ?request_options: HubspotSDK::request_opts
+            ) -> void
+
+            def to_hash: -> {
+              channel: HubspotSDK::Models::BatchInputString::channel,
+              business_unit_id: Integer,
+              verbose: bool,
+              request_options: HubspotSDK::RequestOptions
+            }
+
+            type channel = :EMAIL
+
+            module Channel
+              extend HubspotSDK::Internal::Type::Enum
+
+              EMAIL: :EMAIL
+
+              def self?.values: -> ::Array[HubspotSDK::Models::BatchInputString::channel]
+            end
+          end
+        end
+      end
+    end
+  end
+end

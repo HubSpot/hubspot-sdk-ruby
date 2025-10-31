@@ -1,0 +1,21 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Extensions
+        module Calling
+          type transcript_create_params =
+            {  } & HubspotSDK::Internal::Type::request_parameters
+
+          class TranscriptCreateParams < HubspotSDK::Models::CRM::Extensions::Calling::TranscriptCreateRequest
+            extend HubspotSDK::Internal::Type::RequestParameters::Converter
+            include HubspotSDK::Internal::Type::RequestParameters
+
+            def initialize: (?request_options: HubspotSDK::request_opts) -> void
+
+            def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+          end
+        end
+      end
+    end
+  end
+end

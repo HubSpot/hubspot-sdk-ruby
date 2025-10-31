@@ -1,0 +1,62 @@
+module HubspotSDK
+  module Models
+    module Automation
+      module Actions
+        type function_create_or_replace_params =
+          {
+            app_id: Integer,
+            definition_id: String,
+            function_type: HubspotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::function_type,
+            body: String
+          }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class FunctionCreateOrReplaceParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor app_id: Integer
+
+          attr_accessor definition_id: String
+
+          attr_accessor function_type: HubspotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::function_type
+
+          attr_accessor body: String
+
+          def initialize: (
+            app_id: Integer,
+            definition_id: String,
+            function_type: HubspotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::function_type,
+            body: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            app_id: Integer,
+            definition_id: String,
+            function_type: HubspotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::function_type,
+            body: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+
+          type function_type =
+            :PRE_ACTION_EXECUTION
+            | :PRE_FETCH_OPTIONS
+            | :POST_FETCH_OPTIONS
+            | :POST_ACTION_EXECUTION
+
+          module FunctionType
+            extend HubspotSDK::Internal::Type::Enum
+
+            PRE_ACTION_EXECUTION: :PRE_ACTION_EXECUTION
+            PRE_FETCH_OPTIONS: :PRE_FETCH_OPTIONS
+            POST_FETCH_OPTIONS: :POST_FETCH_OPTIONS
+            POST_ACTION_EXECUTION: :POST_ACTION_EXECUTION
+
+            def self?.values: -> ::Array[HubspotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::function_type]
+          end
+        end
+      end
+    end
+  end
+end

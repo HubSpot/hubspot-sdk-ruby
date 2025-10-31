@@ -1,0 +1,97 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class Lists
+        attr_reader folders: HubspotSDK::Resources::CRM::Lists::Folders
+
+        attr_reader mapping: HubspotSDK::Resources::CRM::Lists::Mapping
+
+        attr_reader memberships: HubspotSDK::Resources::CRM::Lists::Memberships
+
+        def create: (
+          name: String,
+          object_type_id: String,
+          processing_type: String,
+          ?custom_properties: ::Hash[Symbol, String],
+          ?filter_branch: HubspotSDK::Models::CRM::ListCreateRequest::filter_branch,
+          ?list_folder_id: Integer,
+          ?list_permissions: HubspotSDK::CRM::PublicListPermissions,
+          ?membership_settings: HubspotSDK::CRM::PublicMembershipSettings,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::CRM::ListCreateResponse
+
+        def list: (
+          ?include_filters: bool,
+          ?list_ids: ::Array[String],
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::CRM::ListsByIDResponse
+
+        def delete: (
+          String list_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def delete_schedule_conversion: (
+          String list_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def get: (
+          String list_id,
+          ?include_filters: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::CRM::ListFetchResponse
+
+        def get_by_object_type_id_and_name: (
+          String list_name,
+          object_type_id: String,
+          ?include_filters: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::CRM::ListFetchResponse
+
+        def get_schedule_conversion: (
+          String list_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::CRM::PublicListConversionResponse
+
+        def restore: (
+          String list_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def schedule_conversion: (
+          String list_id,
+          public_list_conversion_time: HubspotSDK::Models::CRM::PublicListConversionTime,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::CRM::PublicListConversionResponse
+
+        def search: (
+          ?additional_properties: ::Array[String],
+          ?count: Integer,
+          ?list_ids: ::Array[String],
+          ?offset: Integer,
+          ?processing_types: ::Array[String],
+          ?query: String,
+          ?sort: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::CRM::ListSearchResponse
+
+        def update_filters: (
+          String list_id,
+          filter_branch: HubspotSDK::Models::CRM::ListFilterUpdateRequest::filter_branch,
+          ?enroll_objects_in_workflows: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::CRM::ListUpdateResponse
+
+        def update_name: (
+          String list_id,
+          ?include_filters: bool,
+          ?list_name: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::CRM::ListUpdateResponse
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

@@ -1,0 +1,123 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type column_request =
+        {
+          id: Integer,
+          label: String,
+          name: String,
+          options: ::Array[HubspotSDK::Option],
+          type: HubspotSDK::Models::Cms::ColumnRequest::type_,
+          foreign_column_id: Integer,
+          foreign_table_id: Integer,
+          max_number_of_characters: Integer,
+          max_number_of_options: Integer
+        }
+
+      class ColumnRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: Integer
+
+        attr_accessor label: String
+
+        attr_accessor name: String
+
+        attr_accessor options: ::Array[HubspotSDK::Option]
+
+        attr_accessor type: HubspotSDK::Models::Cms::ColumnRequest::type_
+
+        attr_reader foreign_column_id: Integer?
+
+        def foreign_column_id=: (Integer) -> Integer
+
+        attr_reader foreign_table_id: Integer?
+
+        def foreign_table_id=: (Integer) -> Integer
+
+        attr_reader max_number_of_characters: Integer?
+
+        def max_number_of_characters=: (Integer) -> Integer
+
+        attr_reader max_number_of_options: Integer?
+
+        def max_number_of_options=: (Integer) -> Integer
+
+        def initialize: (
+          id: Integer,
+          label: String,
+          name: String,
+          options: ::Array[HubspotSDK::Option],
+          type: HubspotSDK::Models::Cms::ColumnRequest::type_,
+          ?foreign_column_id: Integer,
+          ?foreign_table_id: Integer,
+          ?max_number_of_characters: Integer,
+          ?max_number_of_options: Integer
+        ) -> void
+
+        def to_hash: -> {
+          id: Integer,
+          label: String,
+          name: String,
+          options: ::Array[HubspotSDK::Option],
+          type: HubspotSDK::Models::Cms::ColumnRequest::type_,
+          foreign_column_id: Integer,
+          foreign_table_id: Integer,
+          max_number_of_characters: Integer,
+          max_number_of_options: Integer
+        }
+
+        type type_ =
+          :NULL
+          | :TEXT
+          | :NUMBER
+          | :URL
+          | :IMAGE
+          | :SELECT
+          | :MULTISELECT
+          | :BOOLEAN
+          | :LOCATION
+          | :DATE
+          | :DATETIME
+          | :CURRENCY
+          | :RICHTEXT
+          | :FOREIGN_ID
+          | :VIDEO
+          | :CTA
+          | :FILE
+          | :JSON
+          | :COMPOSITE
+          | :CODE
+          | :HUBSPOT_VIDEO
+          | :EMBED
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          NULL: :NULL
+          TEXT: :TEXT
+          NUMBER: :NUMBER
+          URL: :URL
+          IMAGE: :IMAGE
+          SELECT: :SELECT
+          MULTISELECT: :MULTISELECT
+          BOOLEAN: :BOOLEAN
+          LOCATION: :LOCATION
+          DATE: :DATE
+          DATETIME: :DATETIME
+          CURRENCY: :CURRENCY
+          RICHTEXT: :RICHTEXT
+          FOREIGN_ID: :FOREIGN_ID
+          VIDEO: :VIDEO
+          CTA: :CTA
+          FILE: :FILE
+          JSON: :JSON
+          COMPOSITE: :COMPOSITE
+          CODE: :CODE
+          HUBSPOT_VIDEO: :HUBSPOT_VIDEO
+          EMBED: :EMBED
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::ColumnRequest::type_]
+        end
+      end
+    end
+  end
+end

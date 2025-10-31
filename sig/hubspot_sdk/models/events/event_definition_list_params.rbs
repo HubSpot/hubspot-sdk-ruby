@@ -1,0 +1,58 @@
+module HubspotSDK
+  module Models
+    module Events
+      type event_definition_list_params =
+        {
+          after: String,
+          include_properties: bool,
+          limit: Integer,
+          search_string: String,
+          sort_order: String
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class EventDefinitionListParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_reader after: String?
+
+        def after=: (String) -> String
+
+        attr_reader include_properties: bool?
+
+        def include_properties=: (bool) -> bool
+
+        attr_reader limit: Integer?
+
+        def limit=: (Integer) -> Integer
+
+        attr_reader search_string: String?
+
+        def search_string=: (String) -> String
+
+        attr_reader sort_order: String?
+
+        def sort_order=: (String) -> String
+
+        def initialize: (
+          ?after: String,
+          ?include_properties: bool,
+          ?limit: Integer,
+          ?search_string: String,
+          ?sort_order: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          after: String,
+          include_properties: bool,
+          limit: Integer,
+          search_string: String,
+          sort_order: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

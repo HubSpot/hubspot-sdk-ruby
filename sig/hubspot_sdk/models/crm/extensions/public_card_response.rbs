@@ -1,0 +1,63 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Extensions
+        type public_card_response =
+          {
+            id: String,
+            actions: HubspotSDK::CRM::Extensions::CardActions,
+            audit_history: ::Array[HubspotSDK::CRM::Extensions::CardAuditResponse],
+            display_: HubspotSDK::CRM::Extensions::CardDisplayBody,
+            fetch: HubspotSDK::CRM::Extensions::PublicCardFetchBody,
+            title: String,
+            created_at: Time,
+            updated_at: Time
+          }
+
+        class PublicCardResponse < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_accessor actions: HubspotSDK::CRM::Extensions::CardActions
+
+          attr_accessor audit_history: ::Array[HubspotSDK::CRM::Extensions::CardAuditResponse]
+
+          attr_accessor display_: HubspotSDK::CRM::Extensions::CardDisplayBody
+
+          attr_accessor fetch: HubspotSDK::CRM::Extensions::PublicCardFetchBody
+
+          attr_accessor title: String
+
+          attr_reader created_at: Time?
+
+          def created_at=: (Time) -> Time
+
+          attr_reader updated_at: Time?
+
+          def updated_at=: (Time) -> Time
+
+          def initialize: (
+            id: String,
+            actions: HubspotSDK::CRM::Extensions::CardActions,
+            audit_history: ::Array[HubspotSDK::CRM::Extensions::CardAuditResponse],
+            display_: HubspotSDK::CRM::Extensions::CardDisplayBody,
+            fetch: HubspotSDK::CRM::Extensions::PublicCardFetchBody,
+            title: String,
+            ?created_at: Time,
+            ?updated_at: Time
+          ) -> void
+
+          def to_hash: -> {
+            id: String,
+            actions: HubspotSDK::CRM::Extensions::CardActions,
+            audit_history: ::Array[HubspotSDK::CRM::Extensions::CardAuditResponse],
+            display_: HubspotSDK::CRM::Extensions::CardDisplayBody,
+            fetch: HubspotSDK::CRM::Extensions::PublicCardFetchBody,
+            title: String,
+            created_at: Time,
+            updated_at: Time
+          }
+        end
+      end
+    end
+  end
+end

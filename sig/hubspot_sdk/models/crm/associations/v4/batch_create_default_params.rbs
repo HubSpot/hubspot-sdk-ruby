@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Associations
+        module V4
+          type batch_create_default_params =
+            { from_object_type: String }
+            & HubspotSDK::Internal::Type::request_parameters
+
+          class BatchCreateDefaultParams < HubspotSDK::Models::CRM::Associations::BatchInputPublicDefaultAssociationMultiPost
+            extend HubspotSDK::Internal::Type::RequestParameters::Converter
+            include HubspotSDK::Internal::Type::RequestParameters
+
+            def from_object_type: -> String
+
+            def from_object_type=: (String _) -> String
+
+            def initialize: (
+              from_object_type: String,
+              ?request_options: HubspotSDK::request_opts
+            ) -> void
+
+            def to_hash: -> {
+              from_object_type: String,
+              request_options: HubspotSDK::RequestOptions
+            }
+          end
+        end
+      end
+    end
+  end
+end

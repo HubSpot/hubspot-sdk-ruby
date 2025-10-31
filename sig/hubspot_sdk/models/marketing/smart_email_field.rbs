@@ -1,0 +1,7 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      SmartEmailField: HubspotSDK::Internal::Type::Converter
+    end
+  end
+end

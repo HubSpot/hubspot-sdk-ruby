@@ -1,0 +1,41 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type simple_public_object_batch_input =
+        {
+          id: String,
+          properties: ::Hash[Symbol, String],
+          id_property: String,
+          object_write_trace_id: String
+        }
+
+      class SimplePublicObjectBatchInput < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor properties: ::Hash[Symbol, String]
+
+        attr_reader id_property: String?
+
+        def id_property=: (String) -> String
+
+        attr_reader object_write_trace_id: String?
+
+        def object_write_trace_id=: (String) -> String
+
+        def initialize: (
+          id: String,
+          properties: ::Hash[Symbol, String],
+          ?id_property: String,
+          ?object_write_trace_id: String
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          properties: ::Hash[Symbol, String],
+          id_property: String,
+          object_write_trace_id: String
+        }
+      end
+    end
+  end
+end

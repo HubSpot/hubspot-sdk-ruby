@@ -1,0 +1,31 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type simple_public_object_input_for_create =
+        {
+          properties: ::Hash[Symbol, String],
+          associations: ::Array[HubspotSDK::CRM::PublicAssociationsForObject]
+        }
+
+      class SimplePublicObjectInputForCreate < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor properties: ::Hash[Symbol, String]
+
+        attr_reader associations: ::Array[HubspotSDK::CRM::PublicAssociationsForObject]?
+
+        def associations=: (
+          ::Array[HubspotSDK::CRM::PublicAssociationsForObject]
+        ) -> ::Array[HubspotSDK::CRM::PublicAssociationsForObject]
+
+        def initialize: (
+          properties: ::Hash[Symbol, String],
+          ?associations: ::Array[HubspotSDK::CRM::PublicAssociationsForObject]
+        ) -> void
+
+        def to_hash: -> {
+          properties: ::Hash[Symbol, String],
+          associations: ::Array[HubspotSDK::CRM::PublicAssociationsForObject]
+        }
+      end
+    end
+  end
+end

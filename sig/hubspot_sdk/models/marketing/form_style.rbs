@@ -1,0 +1,89 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type form_style =
+        {
+          background_width: String,
+          font_family: String,
+          help_text_color: String,
+          help_text_size: String,
+          label_text_color: String,
+          label_text_size: String,
+          legal_consent_text_color: String,
+          legal_consent_text_size: String,
+          submit_alignment: HubspotSDK::Models::Marketing::FormStyle::submit_alignment,
+          submit_color: String,
+          submit_font_color: String,
+          submit_size: String
+        }
+
+      class FormStyle < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor background_width: String
+
+        attr_accessor font_family: String
+
+        attr_accessor help_text_color: String
+
+        attr_accessor help_text_size: String
+
+        attr_accessor label_text_color: String
+
+        attr_accessor label_text_size: String
+
+        attr_accessor legal_consent_text_color: String
+
+        attr_accessor legal_consent_text_size: String
+
+        attr_accessor submit_alignment: HubspotSDK::Models::Marketing::FormStyle::submit_alignment
+
+        attr_accessor submit_color: String
+
+        attr_accessor submit_font_color: String
+
+        attr_accessor submit_size: String
+
+        def initialize: (
+          background_width: String,
+          font_family: String,
+          help_text_color: String,
+          help_text_size: String,
+          label_text_color: String,
+          label_text_size: String,
+          legal_consent_text_color: String,
+          legal_consent_text_size: String,
+          submit_alignment: HubspotSDK::Models::Marketing::FormStyle::submit_alignment,
+          submit_color: String,
+          submit_font_color: String,
+          submit_size: String
+        ) -> void
+
+        def to_hash: -> {
+          background_width: String,
+          font_family: String,
+          help_text_color: String,
+          help_text_size: String,
+          label_text_color: String,
+          label_text_size: String,
+          legal_consent_text_color: String,
+          legal_consent_text_size: String,
+          submit_alignment: HubspotSDK::Models::Marketing::FormStyle::submit_alignment,
+          submit_color: String,
+          submit_font_color: String,
+          submit_size: String
+        }
+
+        type submit_alignment = :left | :right | :center
+
+        module SubmitAlignment
+          extend HubspotSDK::Internal::Type::Enum
+
+          LEFT: :left
+          RIGHT: :right
+          CENTER: :center
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::FormStyle::submit_alignment]
+        end
+      end
+    end
+  end
+end

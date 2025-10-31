@@ -1,0 +1,66 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type public_update_subscription_status_request =
+        {
+          email_address: String,
+          subscription_id: String,
+          legal_basis: HubspotSDK::Models::Marketing::PublicUpdateSubscriptionStatusRequest::legal_basis,
+          legal_basis_explanation: String
+        }
+
+      class PublicUpdateSubscriptionStatusRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor email_address: String
+
+        attr_accessor subscription_id: String
+
+        attr_reader legal_basis: HubspotSDK::Models::Marketing::PublicUpdateSubscriptionStatusRequest::legal_basis?
+
+        def legal_basis=: (
+          HubspotSDK::Models::Marketing::PublicUpdateSubscriptionStatusRequest::legal_basis
+        ) -> HubspotSDK::Models::Marketing::PublicUpdateSubscriptionStatusRequest::legal_basis
+
+        attr_reader legal_basis_explanation: String?
+
+        def legal_basis_explanation=: (String) -> String
+
+        def initialize: (
+          email_address: String,
+          subscription_id: String,
+          ?legal_basis: HubspotSDK::Models::Marketing::PublicUpdateSubscriptionStatusRequest::legal_basis,
+          ?legal_basis_explanation: String
+        ) -> void
+
+        def to_hash: -> {
+          email_address: String,
+          subscription_id: String,
+          legal_basis: HubspotSDK::Models::Marketing::PublicUpdateSubscriptionStatusRequest::legal_basis,
+          legal_basis_explanation: String
+        }
+
+        type legal_basis =
+          :LEGITIMATE_INTEREST_PQL
+          | :LEGITIMATE_INTEREST_CLIENT
+          | :PERFORMANCE_OF_CONTRACT
+          | :CONSENT_WITH_NOTICE
+          | :NON_GDPR
+          | :PROCESS_AND_STORE
+          | :LEGITIMATE_INTEREST_OTHER
+
+        module LegalBasis
+          extend HubspotSDK::Internal::Type::Enum
+
+          LEGITIMATE_INTEREST_PQL: :LEGITIMATE_INTEREST_PQL
+          LEGITIMATE_INTEREST_CLIENT: :LEGITIMATE_INTEREST_CLIENT
+          PERFORMANCE_OF_CONTRACT: :PERFORMANCE_OF_CONTRACT
+          CONSENT_WITH_NOTICE: :CONSENT_WITH_NOTICE
+          NON_GDPR: :NON_GDPR
+          PROCESS_AND_STORE: :PROCESS_AND_STORE
+          LEGITIMATE_INTEREST_OTHER: :LEGITIMATE_INTEREST_OTHER
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::PublicUpdateSubscriptionStatusRequest::legal_basis]
+        end
+      end
+    end
+  end
+end

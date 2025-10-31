@@ -1,0 +1,49 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class Timeline
+        class Templates
+          def create: (
+            Integer app_id,
+            name: String,
+            object_type: String,
+            tokens: ::Array[HubspotSDK::CRM::TimelineEventTemplateToken],
+            ?detail_template: String,
+            ?header_template: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::CRM::TimelineEventTemplate
+
+          def update: (
+            String event_template_id,
+            app_id: Integer,
+            id: String,
+            name: String,
+            tokens: ::Array[HubspotSDK::CRM::TimelineEventTemplateToken],
+            ?detail_template: String,
+            ?header_template: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::CRM::TimelineEventTemplate
+
+          def list: (
+            Integer app_id,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::CRM::CollectionResponseTimelineEventTemplateNoPaging
+
+          def delete: (
+            String event_template_id,
+            app_id: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def get: (
+            String event_template_id,
+            app_id: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::CRM::TimelineEventTemplate
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

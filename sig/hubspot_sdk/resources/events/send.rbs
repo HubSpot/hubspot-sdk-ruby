@@ -1,0 +1,25 @@
+module HubspotSDK
+  module Resources
+    class Events
+      class Send
+        def send_: (
+          event_name: String,
+          ?email: String,
+          ?object_id_: String,
+          ?occurred_at: Time,
+          ?properties: ::Hash[Symbol, String],
+          ?utk: String,
+          ?uuid: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def send_batch: (
+          inputs: ::Array[HubspotSDK::Events::BehavioralEventHTTPCompletionRequest],
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

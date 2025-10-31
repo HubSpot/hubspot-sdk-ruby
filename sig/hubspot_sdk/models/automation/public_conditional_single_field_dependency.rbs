@@ -1,0 +1,47 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type public_conditional_single_field_dependency =
+        {
+          controlling_field_name: String,
+          controlling_field_value: String,
+          dependency_type: HubspotSDK::Models::Automation::PublicConditionalSingleFieldDependency::dependency_type,
+          dependent_field_names: ::Array[String]
+        }
+
+      class PublicConditionalSingleFieldDependency < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor controlling_field_name: String
+
+        attr_accessor controlling_field_value: String
+
+        attr_accessor dependency_type: HubspotSDK::Models::Automation::PublicConditionalSingleFieldDependency::dependency_type
+
+        attr_accessor dependent_field_names: ::Array[String]
+
+        def initialize: (
+          controlling_field_name: String,
+          controlling_field_value: String,
+          dependency_type: HubspotSDK::Models::Automation::PublicConditionalSingleFieldDependency::dependency_type,
+          dependent_field_names: ::Array[String]
+        ) -> void
+
+        def to_hash: -> {
+          controlling_field_name: String,
+          controlling_field_value: String,
+          dependency_type: HubspotSDK::Models::Automation::PublicConditionalSingleFieldDependency::dependency_type,
+          dependent_field_names: ::Array[String]
+        }
+
+        type dependency_type = :CONDITIONAL_SINGLE_FIELD
+
+        module DependencyType
+          extend HubspotSDK::Internal::Type::Enum
+
+          CONDITIONAL_SINGLE_FIELD: :CONDITIONAL_SINGLE_FIELD
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::PublicConditionalSingleFieldDependency::dependency_type]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,20 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type batch_input_simple_public_object_batch_input_upsert =
+        { inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectBatchInputUpsert] }
+
+      class BatchInputSimplePublicObjectBatchInputUpsert < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectBatchInputUpsert]
+
+        def initialize: (
+          inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectBatchInputUpsert]
+        ) -> void
+
+        def to_hash: -> {
+          inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectBatchInputUpsert]
+        }
+      end
+    end
+  end
+end

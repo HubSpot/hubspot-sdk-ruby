@@ -1,0 +1,129 @@
+# typed: strong
+
+module HubspotSDK
+  module Models
+    module Settings
+      class PublicUser < HubspotSDK::Internal::Type::BaseModel
+        OrHash =
+          T.type_alias do
+            T.any(
+              HubspotSDK::Settings::PublicUser,
+              HubspotSDK::Internal::AnyHash
+            )
+          end
+
+        # The user's unique ID
+        sig { returns(String) }
+        attr_accessor :id
+
+        # The user's email
+        sig { returns(String) }
+        attr_accessor :email
+
+        sig { returns(T.nilable(String)) }
+        attr_reader :first_name
+
+        sig { params(first_name: String).void }
+        attr_writer :first_name
+
+        sig { returns(T.nilable(String)) }
+        attr_reader :last_name
+
+        sig { params(last_name: String).void }
+        attr_writer :last_name
+
+        # The user's primary team
+        sig { returns(T.nilable(String)) }
+        attr_reader :primary_team_id
+
+        sig { params(primary_team_id: String).void }
+        attr_writer :primary_team_id
+
+        # The user's role
+        sig { returns(T.nilable(String)) }
+        attr_reader :role_id
+
+        sig { params(role_id: String).void }
+        attr_writer :role_id
+
+        sig { returns(T.nilable(T::Array[String])) }
+        attr_reader :role_ids
+
+        sig { params(role_ids: T::Array[String]).void }
+        attr_writer :role_ids
+
+        # The user's additional teams
+        sig { returns(T.nilable(T::Array[String])) }
+        attr_reader :secondary_team_ids
+
+        sig { params(secondary_team_ids: T::Array[String]).void }
+        attr_writer :secondary_team_ids
+
+        sig { returns(T.nilable(T::Boolean)) }
+        attr_reader :send_welcome_email
+
+        sig { params(send_welcome_email: T::Boolean).void }
+        attr_writer :send_welcome_email
+
+        sig { returns(T.nilable(T::Boolean)) }
+        attr_reader :super_admin
+
+        sig { params(super_admin: T::Boolean).void }
+        attr_writer :super_admin
+
+        # A user
+        sig do
+          params(
+            id: String,
+            email: String,
+            first_name: String,
+            last_name: String,
+            primary_team_id: String,
+            role_id: String,
+            role_ids: T::Array[String],
+            secondary_team_ids: T::Array[String],
+            send_welcome_email: T::Boolean,
+            super_admin: T::Boolean
+          ).returns(T.attached_class)
+        end
+        def self.new(
+          # The user's unique ID
+          id:,
+          # The user's email
+          email:,
+          first_name: nil,
+          last_name: nil,
+          # The user's primary team
+          primary_team_id: nil,
+          # The user's role
+          role_id: nil,
+          role_ids: nil,
+          # The user's additional teams
+          secondary_team_ids: nil,
+          send_welcome_email: nil,
+          super_admin: nil
+        )
+        end
+
+        sig do
+          override.returns(
+            {
+              id: String,
+              email: String,
+              first_name: String,
+              last_name: String,
+              primary_team_id: String,
+              role_id: String,
+              role_ids: T::Array[String],
+              secondary_team_ids: T::Array[String],
+              send_welcome_email: T::Boolean,
+              super_admin: T::Boolean
+            }
+          )
+        end
+        def to_hash
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,29 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type collection_response_form_definition_base_forward_paging =
+        {
+          results: ::Array[HubspotSDK::Marketing::HubSpotFormDefinition],
+          paging: HubspotSDK::ForwardPaging
+        }
+
+      class CollectionResponseFormDefinitionBaseForwardPaging < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubspotSDK::Marketing::HubSpotFormDefinition]
+
+        attr_reader paging: HubspotSDK::ForwardPaging?
+
+        def paging=: (HubspotSDK::ForwardPaging) -> HubspotSDK::ForwardPaging
+
+        def initialize: (
+          results: ::Array[HubspotSDK::Marketing::HubSpotFormDefinition],
+          ?paging: HubspotSDK::ForwardPaging
+        ) -> void
+
+        def to_hash: -> {
+          results: ::Array[HubspotSDK::Marketing::HubSpotFormDefinition],
+          paging: HubspotSDK::ForwardPaging
+        }
+      end
+    end
+  end
+end

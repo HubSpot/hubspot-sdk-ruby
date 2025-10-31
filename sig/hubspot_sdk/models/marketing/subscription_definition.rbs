@@ -1,0 +1,78 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type subscription_definition =
+        {
+          id: String,
+          created_at: Time,
+          description: String,
+          is_active: bool,
+          is_default: bool,
+          is_internal: bool,
+          name: String,
+          updated_at: Time,
+          business_unit_id: Integer,
+          communication_method: String,
+          purpose: String
+        }
+
+      class SubscriptionDefinition < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor created_at: Time
+
+        attr_accessor description: String
+
+        attr_accessor is_active: bool
+
+        attr_accessor is_default: bool
+
+        attr_accessor is_internal: bool
+
+        attr_accessor name: String
+
+        attr_accessor updated_at: Time
+
+        attr_reader business_unit_id: Integer?
+
+        def business_unit_id=: (Integer) -> Integer
+
+        attr_reader communication_method: String?
+
+        def communication_method=: (String) -> String
+
+        attr_reader purpose: String?
+
+        def purpose=: (String) -> String
+
+        def initialize: (
+          id: String,
+          created_at: Time,
+          description: String,
+          is_active: bool,
+          is_default: bool,
+          is_internal: bool,
+          name: String,
+          updated_at: Time,
+          ?business_unit_id: Integer,
+          ?communication_method: String,
+          ?purpose: String
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          created_at: Time,
+          description: String,
+          is_active: bool,
+          is_default: bool,
+          is_internal: bool,
+          name: String,
+          updated_at: Time,
+          business_unit_id: Integer,
+          communication_method: String,
+          purpose: String
+        }
+      end
+    end
+  end
+end

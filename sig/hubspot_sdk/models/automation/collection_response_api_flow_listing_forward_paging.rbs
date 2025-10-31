@@ -1,0 +1,29 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type collection_response_api_flow_listing_forward_paging =
+        {
+          results: ::Array[HubspotSDK::Automation::APIFlowListing],
+          paging: HubspotSDK::ForwardPaging
+        }
+
+      class CollectionResponseAPIFlowListingForwardPaging < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubspotSDK::Automation::APIFlowListing]
+
+        attr_reader paging: HubspotSDK::ForwardPaging?
+
+        def paging=: (HubspotSDK::ForwardPaging) -> HubspotSDK::ForwardPaging
+
+        def initialize: (
+          results: ::Array[HubspotSDK::Automation::APIFlowListing],
+          ?paging: HubspotSDK::ForwardPaging
+        ) -> void
+
+        def to_hash: -> {
+          results: ::Array[HubspotSDK::Automation::APIFlowListing],
+          paging: HubspotSDK::ForwardPaging
+        }
+      end
+    end
+  end
+end

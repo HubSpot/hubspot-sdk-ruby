@@ -1,0 +1,201 @@
+# frozen_string_literal: true
+
+module HubspotSDK
+  module Models
+    module Cms
+      class Column < HubspotSDK::Internal::Type::BaseModel
+        # @!attribute label
+        #   Label of the column
+        #
+        #   @return [String]
+        required :label, String
+
+        # @!attribute name
+        #   Name of the column
+        #
+        #   @return [String]
+        required :name, String
+
+        # @!attribute type
+        #   Type of the column
+        #
+        #   @return [Symbol, HubspotSDK::Models::Cms::Column::Type]
+        required :type, enum: -> { HubspotSDK::Cms::Column::Type }
+
+        # @!attribute id
+        #   Column Id
+        #
+        #   @return [String, nil]
+        optional :id, String
+
+        # @!attribute created_at
+        #
+        #   @return [Time, nil]
+        optional :created_at, Time, api_name: :createdAt
+
+        # @!attribute created_by
+        #
+        #   @return [HubspotSDK::Models::Cms::SimpleUser, nil]
+        optional :created_by, -> { HubspotSDK::Cms::SimpleUser }, api_name: :createdBy
+
+        # @!attribute created_by_user_id
+        #
+        #   @return [Integer, nil]
+        optional :created_by_user_id, Integer, api_name: :createdByUserId
+
+        # @!attribute deleted
+        #
+        #   @return [Boolean, nil]
+        optional :deleted, HubspotSDK::Internal::Type::Boolean
+
+        # @!attribute description
+        #
+        #   @return [String, nil]
+        optional :description, String
+
+        # @!attribute foreign_column_id
+        #   Foreign Column id
+        #
+        #   @return [Integer, nil]
+        optional :foreign_column_id, Integer, api_name: :foreignColumnId
+
+        # @!attribute foreign_ids
+        #   Foreign Ids
+        #
+        #   @return [Array<HubspotSDK::Models::Cms::ForeignID>, nil]
+        optional :foreign_ids,
+                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ForeignID] },
+                 api_name: :foreignIds
+
+        # @!attribute foreign_ids_by_id
+        #   Foreign ids
+        #
+        #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::ForeignID}, nil]
+        optional :foreign_ids_by_id,
+                 -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::ForeignID] },
+                 api_name: :foreignIdsById
+
+        # @!attribute foreign_ids_by_name
+        #   Foreign ids by name
+        #
+        #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::ForeignID}, nil]
+        optional :foreign_ids_by_name,
+                 -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::ForeignID] },
+                 api_name: :foreignIdsByName
+
+        # @!attribute foreign_table_id
+        #   Foreign table id referenced
+        #
+        #   @return [Integer, nil]
+        optional :foreign_table_id, Integer, api_name: :foreignTableId
+
+        # @!attribute option_count
+        #   Number of options available
+        #
+        #   @return [Integer, nil]
+        optional :option_count, Integer, api_name: :optionCount
+
+        # @!attribute options
+        #   Options to choose for select and multi-select columns
+        #
+        #   @return [Array<HubspotSDK::Models::Option>, nil]
+        optional :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Option] }
+
+        # @!attribute updated_at
+        #
+        #   @return [Time, nil]
+        optional :updated_at, Time, api_name: :updatedAt
+
+        # @!attribute updated_by
+        #
+        #   @return [HubspotSDK::Models::Cms::SimpleUser, nil]
+        optional :updated_by, -> { HubspotSDK::Cms::SimpleUser }, api_name: :updatedBy
+
+        # @!attribute updated_by_user_id
+        #
+        #   @return [Integer, nil]
+        optional :updated_by_user_id, Integer, api_name: :updatedByUserId
+
+        # @!attribute width
+        #   Column width for HubDB UI
+        #
+        #   @return [Integer, nil]
+        optional :width, Integer
+
+        # @!method initialize(label:, name:, type:, id: nil, created_at: nil, created_by: nil, created_by_user_id: nil, deleted: nil, description: nil, foreign_column_id: nil, foreign_ids: nil, foreign_ids_by_id: nil, foreign_ids_by_name: nil, foreign_table_id: nil, option_count: nil, options: nil, updated_at: nil, updated_by: nil, updated_by_user_id: nil, width: nil)
+        #   @param label [String] Label of the column
+        #
+        #   @param name [String] Name of the column
+        #
+        #   @param type [Symbol, HubspotSDK::Models::Cms::Column::Type] Type of the column
+        #
+        #   @param id [String] Column Id
+        #
+        #   @param created_at [Time]
+        #
+        #   @param created_by [HubspotSDK::Models::Cms::SimpleUser]
+        #
+        #   @param created_by_user_id [Integer]
+        #
+        #   @param deleted [Boolean]
+        #
+        #   @param description [String]
+        #
+        #   @param foreign_column_id [Integer] Foreign Column id
+        #
+        #   @param foreign_ids [Array<HubspotSDK::Models::Cms::ForeignID>] Foreign Ids
+        #
+        #   @param foreign_ids_by_id [Hash{Symbol=>HubspotSDK::Models::Cms::ForeignID}] Foreign ids
+        #
+        #   @param foreign_ids_by_name [Hash{Symbol=>HubspotSDK::Models::Cms::ForeignID}] Foreign ids by name
+        #
+        #   @param foreign_table_id [Integer] Foreign table id referenced
+        #
+        #   @param option_count [Integer] Number of options available
+        #
+        #   @param options [Array<HubspotSDK::Models::Option>] Options to choose for select and multi-select columns
+        #
+        #   @param updated_at [Time]
+        #
+        #   @param updated_by [HubspotSDK::Models::Cms::SimpleUser]
+        #
+        #   @param updated_by_user_id [Integer]
+        #
+        #   @param width [Integer] Column width for HubDB UI
+
+        # Type of the column
+        #
+        # @see HubspotSDK::Models::Cms::Column#type
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          NULL = :NULL
+          TEXT = :TEXT
+          NUMBER = :NUMBER
+          URL = :URL
+          IMAGE = :IMAGE
+          SELECT = :SELECT
+          MULTISELECT = :MULTISELECT
+          BOOLEAN = :BOOLEAN
+          LOCATION = :LOCATION
+          DATE = :DATE
+          DATETIME = :DATETIME
+          CURRENCY = :CURRENCY
+          RICHTEXT = :RICHTEXT
+          FOREIGN_ID = :FOREIGN_ID
+          VIDEO = :VIDEO
+          CTA = :CTA
+          FILE = :FILE
+          JSON = :JSON
+          COMPOSITE = :COMPOSITE
+          CODE = :CODE
+          HUBSPOT_VIDEO = :HUBSPOT_VIDEO
+          EMBED = :EMBED
+
+          # @!method self.values
+          #   @return [Array<Symbol>]
+        end
+      end
+    end
+  end
+end

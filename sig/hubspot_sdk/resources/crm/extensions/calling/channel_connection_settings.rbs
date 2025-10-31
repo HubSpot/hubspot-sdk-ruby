@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class Extensions
+        class Calling
+          class ChannelConnectionSettings
+            def create: (
+              Integer app_id,
+              is_ready: bool,
+              url: String,
+              ?request_options: HubspotSDK::request_opts
+            ) -> HubspotSDK::CRM::Extensions::ChannelConnectionSettingsResponse
+
+            def update: (
+              Integer app_id,
+              ?is_ready: bool,
+              ?url: String,
+              ?request_options: HubspotSDK::request_opts
+            ) -> HubspotSDK::CRM::Extensions::ChannelConnectionSettingsResponse
+
+            def delete: (
+              Integer app_id,
+              ?request_options: HubspotSDK::request_opts
+            ) -> nil
+
+            def get: (
+              Integer app_id,
+              ?request_options: HubspotSDK::request_opts
+            ) -> HubspotSDK::CRM::Extensions::ChannelConnectionSettingsResponse
+
+            def initialize: (client: HubspotSDK::Client) -> void
+          end
+        end
+      end
+    end
+  end
+end

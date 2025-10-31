@@ -1,0 +1,95 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type public_thread_status_change =
+        {
+          id: String,
+          archived: bool,
+          client: HubspotSDK::Conversations::PublicClient,
+          conversations_thread_id: String,
+          created_at: Time,
+          created_by: String,
+          new_status: HubspotSDK::Models::Conversations::PublicThreadStatusChange::new_status,
+          recipients: ::Array[HubspotSDK::Conversations::PublicRecipient],
+          senders: ::Array[HubspotSDK::Conversations::PublicSender],
+          type: HubspotSDK::Models::Conversations::PublicThreadStatusChange::type_,
+          updated_at: Time
+        }
+
+      class PublicThreadStatusChange < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor archived: bool
+
+        attr_accessor client: HubspotSDK::Conversations::PublicClient
+
+        attr_accessor conversations_thread_id: String
+
+        attr_accessor created_at: Time
+
+        attr_accessor created_by: String
+
+        attr_accessor new_status: HubspotSDK::Models::Conversations::PublicThreadStatusChange::new_status
+
+        attr_accessor recipients: ::Array[HubspotSDK::Conversations::PublicRecipient]
+
+        attr_accessor senders: ::Array[HubspotSDK::Conversations::PublicSender]
+
+        attr_accessor type: HubspotSDK::Models::Conversations::PublicThreadStatusChange::type_
+
+        attr_reader updated_at: Time?
+
+        def updated_at=: (Time) -> Time
+
+        def initialize: (
+          id: String,
+          archived: bool,
+          client: HubspotSDK::Conversations::PublicClient,
+          conversations_thread_id: String,
+          created_at: Time,
+          created_by: String,
+          new_status: HubspotSDK::Models::Conversations::PublicThreadStatusChange::new_status,
+          recipients: ::Array[HubspotSDK::Conversations::PublicRecipient],
+          senders: ::Array[HubspotSDK::Conversations::PublicSender],
+          type: HubspotSDK::Models::Conversations::PublicThreadStatusChange::type_,
+          ?updated_at: Time
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          archived: bool,
+          client: HubspotSDK::Conversations::PublicClient,
+          conversations_thread_id: String,
+          created_at: Time,
+          created_by: String,
+          new_status: HubspotSDK::Models::Conversations::PublicThreadStatusChange::new_status,
+          recipients: ::Array[HubspotSDK::Conversations::PublicRecipient],
+          senders: ::Array[HubspotSDK::Conversations::PublicSender],
+          type: HubspotSDK::Models::Conversations::PublicThreadStatusChange::type_,
+          updated_at: Time
+        }
+
+        type new_status = :OPEN | :CLOSED
+
+        module NewStatus
+          extend HubspotSDK::Internal::Type::Enum
+
+          OPEN: :OPEN
+          CLOSED: :CLOSED
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicThreadStatusChange::new_status]
+        end
+
+        type type_ = :THREAD_STATUS_CHANGE
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          THREAD_STATUS_CHANGE: :THREAD_STATUS_CHANGE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicThreadStatusChange::type_]
+        end
+      end
+    end
+  end
+end

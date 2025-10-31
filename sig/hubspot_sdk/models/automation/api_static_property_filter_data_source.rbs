@@ -1,0 +1,56 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_static_property_filter_data_source =
+        {
+          name: String,
+          property_name: String,
+          static_value: String,
+          type: HubspotSDK::Models::Automation::APIStaticPropertyFilterDataSource::type_,
+          sort_by: HubspotSDK::Automation::APISort
+        }
+
+      class APIStaticPropertyFilterDataSource < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor name: String
+
+        attr_accessor property_name: String
+
+        attr_accessor static_value: String
+
+        attr_accessor type: HubspotSDK::Models::Automation::APIStaticPropertyFilterDataSource::type_
+
+        attr_reader sort_by: HubspotSDK::Automation::APISort?
+
+        def sort_by=: (
+          HubspotSDK::Automation::APISort
+        ) -> HubspotSDK::Automation::APISort
+
+        def initialize: (
+          name: String,
+          property_name: String,
+          static_value: String,
+          type: HubspotSDK::Models::Automation::APIStaticPropertyFilterDataSource::type_,
+          ?sort_by: HubspotSDK::Automation::APISort
+        ) -> void
+
+        def to_hash: -> {
+          name: String,
+          property_name: String,
+          static_value: String,
+          type: HubspotSDK::Models::Automation::APIStaticPropertyFilterDataSource::type_,
+          sort_by: HubspotSDK::Automation::APISort
+        }
+
+        type type_ = :STATIC_PROPERTY_FILTER
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          STATIC_PROPERTY_FILTER: :STATIC_PROPERTY_FILTER
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIStaticPropertyFilterDataSource::type_]
+        end
+      end
+    end
+  end
+end

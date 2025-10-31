@@ -1,0 +1,45 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_sort =
+        {
+          order: HubspotSDK::Models::Automation::APISort::order,
+          property: String,
+          missing: String
+        }
+
+      class APISort < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor order: HubspotSDK::Models::Automation::APISort::order
+
+        attr_accessor property: String
+
+        attr_reader missing: String?
+
+        def missing=: (String) -> String
+
+        def initialize: (
+          order: HubspotSDK::Models::Automation::APISort::order,
+          property: String,
+          ?missing: String
+        ) -> void
+
+        def to_hash: -> {
+          order: HubspotSDK::Models::Automation::APISort::order,
+          property: String,
+          missing: String
+        }
+
+        type order = :ASC | :DESC
+
+        module Order
+          extend HubspotSDK::Internal::Type::Enum
+
+          ASC: :ASC
+          DESC: :DESC
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APISort::order]
+        end
+      end
+    end
+  end
+end

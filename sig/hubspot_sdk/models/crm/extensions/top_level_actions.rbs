@@ -1,0 +1,62 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Extensions
+        type top_level_actions =
+          {
+            secondary: ::Array[HubspotSDK::Models::CRM::Extensions::TopLevelActions::secondary],
+            primary: HubspotSDK::Models::CRM::Extensions::TopLevelActions::primary,
+            settings: HubspotSDK::CRM::Extensions::IFrameActionBody
+          }
+
+        class TopLevelActions < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor secondary: ::Array[HubspotSDK::Models::CRM::Extensions::TopLevelActions::secondary]
+
+          attr_reader primary: HubspotSDK::Models::CRM::Extensions::TopLevelActions::primary?
+
+          def primary=: (
+            HubspotSDK::Models::CRM::Extensions::TopLevelActions::primary
+          ) -> HubspotSDK::Models::CRM::Extensions::TopLevelActions::primary
+
+          attr_reader settings: HubspotSDK::CRM::Extensions::IFrameActionBody?
+
+          def settings=: (
+            HubspotSDK::CRM::Extensions::IFrameActionBody
+          ) -> HubspotSDK::CRM::Extensions::IFrameActionBody
+
+          def initialize: (
+            secondary: ::Array[HubspotSDK::Models::CRM::Extensions::TopLevelActions::secondary],
+            ?primary: HubspotSDK::Models::CRM::Extensions::TopLevelActions::primary,
+            ?settings: HubspotSDK::CRM::Extensions::IFrameActionBody
+          ) -> void
+
+          def to_hash: -> {
+            secondary: ::Array[HubspotSDK::Models::CRM::Extensions::TopLevelActions::secondary],
+            primary: HubspotSDK::Models::CRM::Extensions::TopLevelActions::primary,
+            settings: HubspotSDK::CRM::Extensions::IFrameActionBody
+          }
+
+          type secondary =
+            HubspotSDK::CRM::Extensions::ActionHookActionBody
+            | HubspotSDK::CRM::Extensions::IFrameActionBody
+
+          module Secondary
+            extend HubspotSDK::Internal::Type::Union
+
+            def self?.variants: -> ::Array[HubspotSDK::Models::CRM::Extensions::TopLevelActions::secondary]
+          end
+
+          type primary =
+            HubspotSDK::CRM::Extensions::ActionHookActionBody
+            | HubspotSDK::CRM::Extensions::IFrameActionBody
+
+          module Primary
+            extend HubspotSDK::Internal::Type::Union
+
+            def self?.variants: -> ::Array[HubspotSDK::Models::CRM::Extensions::TopLevelActions::primary]
+          end
+        end
+      end
+    end
+  end
+end

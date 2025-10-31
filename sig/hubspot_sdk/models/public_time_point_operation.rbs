@@ -1,0 +1,75 @@
+module HubspotSDK
+  module Models
+    type public_time_point_operation =
+      {
+        include_objects_with_no_value_set: bool,
+        operation_type: HubspotSDK::Models::PublicTimePointOperation::operation_type,
+        operator: String,
+        time_point: HubspotSDK::Models::PublicTimePointOperation::time_point,
+        type: String,
+        endpoint_behavior: String,
+        property_parser: String
+      }
+
+    class PublicTimePointOperation < HubspotSDK::Internal::Type::BaseModel
+      attr_accessor include_objects_with_no_value_set: bool
+
+      attr_accessor operation_type: HubspotSDK::Models::PublicTimePointOperation::operation_type
+
+      attr_accessor operator: String
+
+      attr_accessor time_point: HubspotSDK::Models::PublicTimePointOperation::time_point
+
+      attr_accessor type: String
+
+      attr_reader endpoint_behavior: String?
+
+      def endpoint_behavior=: (String) -> String
+
+      attr_reader property_parser: String?
+
+      def property_parser=: (String) -> String
+
+      def initialize: (
+        include_objects_with_no_value_set: bool,
+        operation_type: HubspotSDK::Models::PublicTimePointOperation::operation_type,
+        operator: String,
+        time_point: HubspotSDK::Models::PublicTimePointOperation::time_point,
+        type: String,
+        ?endpoint_behavior: String,
+        ?property_parser: String
+      ) -> void
+
+      def to_hash: -> {
+        include_objects_with_no_value_set: bool,
+        operation_type: HubspotSDK::Models::PublicTimePointOperation::operation_type,
+        operator: String,
+        time_point: HubspotSDK::Models::PublicTimePointOperation::time_point,
+        type: String,
+        endpoint_behavior: String,
+        property_parser: String
+      }
+
+      type operation_type = :TIME_POINT
+
+      module OperationType
+        extend HubspotSDK::Internal::Type::Enum
+
+        TIME_POINT: :TIME_POINT
+
+        def self?.values: -> ::Array[HubspotSDK::Models::PublicTimePointOperation::operation_type]
+      end
+
+      type time_point =
+        HubspotSDK::PublicDatePoint
+        | HubspotSDK::PublicIndexedTimePoint
+        | HubspotSDK::PublicPropertyReferencedTime
+
+      module TimePoint
+        extend HubspotSDK::Internal::Type::Union
+
+        def self?.variants: -> ::Array[HubspotSDK::Models::PublicTimePointOperation::time_point]
+      end
+    end
+  end
+end

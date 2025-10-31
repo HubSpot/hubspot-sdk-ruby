@@ -1,0 +1,45 @@
+module HubspotSDK
+  module Models
+    type public_rolling_property_updated_operation =
+      {
+        include_objects_with_no_value_set: bool,
+        number_of_days: Integer,
+        operation_type: HubspotSDK::Models::PublicRollingPropertyUpdatedOperation::operation_type,
+        operator: String
+      }
+
+    class PublicRollingPropertyUpdatedOperation < HubspotSDK::Internal::Type::BaseModel
+      attr_accessor include_objects_with_no_value_set: bool
+
+      attr_accessor number_of_days: Integer
+
+      attr_accessor operation_type: HubspotSDK::Models::PublicRollingPropertyUpdatedOperation::operation_type
+
+      attr_accessor operator: String
+
+      def initialize: (
+        include_objects_with_no_value_set: bool,
+        number_of_days: Integer,
+        operation_type: HubspotSDK::Models::PublicRollingPropertyUpdatedOperation::operation_type,
+        operator: String
+      ) -> void
+
+      def to_hash: -> {
+        include_objects_with_no_value_set: bool,
+        number_of_days: Integer,
+        operation_type: HubspotSDK::Models::PublicRollingPropertyUpdatedOperation::operation_type,
+        operator: String
+      }
+
+      type operation_type = :ROLLING_PROPERTY_UPDATED
+
+      module OperationType
+        extend HubspotSDK::Internal::Type::Enum
+
+        ROLLING_PROPERTY_UPDATED: :ROLLING_PROPERTY_UPDATED
+
+        def self?.values: -> ::Array[HubspotSDK::Models::PublicRollingPropertyUpdatedOperation::operation_type]
+      end
+    end
+  end
+end

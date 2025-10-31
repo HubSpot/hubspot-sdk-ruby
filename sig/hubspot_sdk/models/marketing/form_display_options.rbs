@@ -1,0 +1,60 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type form_display_options =
+        {
+          render_raw_html: bool,
+          style: HubspotSDK::Marketing::FormStyle,
+          submit_button_text: String,
+          theme: HubspotSDK::Models::Marketing::FormDisplayOptions::theme,
+          css_class: String
+        }
+
+      class FormDisplayOptions < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor render_raw_html: bool
+
+        attr_accessor style: HubspotSDK::Marketing::FormStyle
+
+        attr_accessor submit_button_text: String
+
+        attr_accessor theme: HubspotSDK::Models::Marketing::FormDisplayOptions::theme
+
+        attr_reader css_class: String?
+
+        def css_class=: (String) -> String
+
+        def initialize: (
+          render_raw_html: bool,
+          style: HubspotSDK::Marketing::FormStyle,
+          submit_button_text: String,
+          theme: HubspotSDK::Models::Marketing::FormDisplayOptions::theme,
+          ?css_class: String
+        ) -> void
+
+        def to_hash: -> {
+          render_raw_html: bool,
+          style: HubspotSDK::Marketing::FormStyle,
+          submit_button_text: String,
+          theme: HubspotSDK::Models::Marketing::FormDisplayOptions::theme,
+          css_class: String
+        }
+
+        type theme =
+          :default_style | :canvas | :linear | :round | :sharp | :legacy
+
+        module Theme
+          extend HubspotSDK::Internal::Type::Enum
+
+          DEFAULT_STYLE: :default_style
+          CANVAS: :canvas
+          LINEAR: :linear
+          ROUND: :round
+          SHARP: :sharp
+          LEGACY: :legacy
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::FormDisplayOptions::theme]
+        end
+      end
+    end
+  end
+end

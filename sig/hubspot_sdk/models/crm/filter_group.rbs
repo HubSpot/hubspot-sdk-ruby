@@ -1,0 +1,15 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type filter_group = { filters: ::Array[HubspotSDK::CRM::Filter] }
+
+      class FilterGroup < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor filters: ::Array[HubspotSDK::CRM::Filter]
+
+        def initialize: (filters: ::Array[HubspotSDK::CRM::Filter]) -> void
+
+        def to_hash: -> { filters: ::Array[HubspotSDK::CRM::Filter] }
+      end
+    end
+  end
+end

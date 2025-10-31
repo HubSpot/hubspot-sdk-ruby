@@ -1,0 +1,28 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      module CustomChannels
+        type message_get_params =
+          { channel_id: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class MessageGetParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor channel_id: String
+
+          def initialize: (
+            channel_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            channel_id: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

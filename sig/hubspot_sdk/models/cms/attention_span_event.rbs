@@ -1,0 +1,140 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type attention_span_event =
+        {
+          contact_id: Integer,
+          media_bridge_id: Integer,
+          media_bridge_object_coordinates: String,
+          media_bridge_object_type_id: String,
+          media_name: String,
+          media_type: HubspotSDK::Models::Cms::AttentionSpanEvent::media_type,
+          occurred_timestamp: Integer,
+          percent_range: String,
+          portal_id: Integer,
+          provider_id: Integer,
+          session_id: String,
+          total_percent_played: Float,
+          media_url: String,
+          page_id: Integer,
+          page_name: String,
+          page_object_coordinates: String,
+          page_url: String,
+          raw_data: String,
+          total_seconds_played: Integer
+        }
+
+      class AttentionSpanEvent < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor contact_id: Integer
+
+        attr_accessor media_bridge_id: Integer
+
+        attr_accessor media_bridge_object_coordinates: String
+
+        attr_accessor media_bridge_object_type_id: String
+
+        attr_accessor media_name: String
+
+        attr_accessor media_type: HubspotSDK::Models::Cms::AttentionSpanEvent::media_type
+
+        attr_accessor occurred_timestamp: Integer
+
+        attr_accessor percent_range: String
+
+        attr_accessor portal_id: Integer
+
+        attr_accessor provider_id: Integer
+
+        attr_accessor session_id: String
+
+        attr_accessor total_percent_played: Float
+
+        attr_reader media_url: String?
+
+        def media_url=: (String) -> String
+
+        attr_reader page_id: Integer?
+
+        def page_id=: (Integer) -> Integer
+
+        attr_reader page_name: String?
+
+        def page_name=: (String) -> String
+
+        attr_reader page_object_coordinates: String?
+
+        def page_object_coordinates=: (String) -> String
+
+        attr_reader page_url: String?
+
+        def page_url=: (String) -> String
+
+        attr_reader raw_data: String?
+
+        def raw_data=: (String) -> String
+
+        attr_reader total_seconds_played: Integer?
+
+        def total_seconds_played=: (Integer) -> Integer
+
+        def initialize: (
+          contact_id: Integer,
+          media_bridge_id: Integer,
+          media_bridge_object_coordinates: String,
+          media_bridge_object_type_id: String,
+          media_name: String,
+          media_type: HubspotSDK::Models::Cms::AttentionSpanEvent::media_type,
+          occurred_timestamp: Integer,
+          percent_range: String,
+          portal_id: Integer,
+          provider_id: Integer,
+          session_id: String,
+          total_percent_played: Float,
+          ?media_url: String,
+          ?page_id: Integer,
+          ?page_name: String,
+          ?page_object_coordinates: String,
+          ?page_url: String,
+          ?raw_data: String,
+          ?total_seconds_played: Integer
+        ) -> void
+
+        def to_hash: -> {
+          contact_id: Integer,
+          media_bridge_id: Integer,
+          media_bridge_object_coordinates: String,
+          media_bridge_object_type_id: String,
+          media_name: String,
+          media_type: HubspotSDK::Models::Cms::AttentionSpanEvent::media_type,
+          occurred_timestamp: Integer,
+          percent_range: String,
+          portal_id: Integer,
+          provider_id: Integer,
+          session_id: String,
+          total_percent_played: Float,
+          media_url: String,
+          page_id: Integer,
+          page_name: String,
+          page_object_coordinates: String,
+          page_url: String,
+          raw_data: String,
+          total_seconds_played: Integer
+        }
+
+        type media_type = :VIDEO | :AUDIO | :DOCUMENT | :OTHER | :IMAGE
+
+        module MediaType
+          extend HubspotSDK::Internal::Type::Enum
+
+          VIDEO: :VIDEO
+          AUDIO: :AUDIO
+          DOCUMENT: :DOCUMENT
+          OTHER: :OTHER
+          IMAGE: :IMAGE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::AttentionSpanEvent::media_type]
+        end
+      end
+    end
+  end
+end

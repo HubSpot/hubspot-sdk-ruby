@@ -1,0 +1,149 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type property_update =
+        {
+          calculation_formula: String,
+          description: String,
+          display_order: Integer,
+          field_type: HubspotSDK::Models::CRM::PropertyUpdate::field_type,
+          form_field: bool,
+          group_name: String,
+          hidden: bool,
+          label: String,
+          options: ::Array[HubspotSDK::OptionInput],
+          type: HubspotSDK::Models::CRM::PropertyUpdate::type_
+        }
+
+      class PropertyUpdate < HubspotSDK::Internal::Type::BaseModel
+        attr_reader calculation_formula: String?
+
+        def calculation_formula=: (String) -> String
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader display_order: Integer?
+
+        def display_order=: (Integer) -> Integer
+
+        attr_reader field_type: HubspotSDK::Models::CRM::PropertyUpdate::field_type?
+
+        def field_type=: (
+          HubspotSDK::Models::CRM::PropertyUpdate::field_type
+        ) -> HubspotSDK::Models::CRM::PropertyUpdate::field_type
+
+        attr_reader form_field: bool?
+
+        def form_field=: (bool) -> bool
+
+        attr_reader group_name: String?
+
+        def group_name=: (String) -> String
+
+        attr_reader hidden: bool?
+
+        def hidden=: (bool) -> bool
+
+        attr_reader label: String?
+
+        def label=: (String) -> String
+
+        attr_reader options: ::Array[HubspotSDK::OptionInput]?
+
+        def options=: (
+          ::Array[HubspotSDK::OptionInput]
+        ) -> ::Array[HubspotSDK::OptionInput]
+
+        attr_reader type: HubspotSDK::Models::CRM::PropertyUpdate::type_?
+
+        def type=: (
+          HubspotSDK::Models::CRM::PropertyUpdate::type_
+        ) -> HubspotSDK::Models::CRM::PropertyUpdate::type_
+
+        def initialize: (
+          ?calculation_formula: String,
+          ?description: String,
+          ?display_order: Integer,
+          ?field_type: HubspotSDK::Models::CRM::PropertyUpdate::field_type,
+          ?form_field: bool,
+          ?group_name: String,
+          ?hidden: bool,
+          ?label: String,
+          ?options: ::Array[HubspotSDK::OptionInput],
+          ?type: HubspotSDK::Models::CRM::PropertyUpdate::type_
+        ) -> void
+
+        def to_hash: -> {
+          calculation_formula: String,
+          description: String,
+          display_order: Integer,
+          field_type: HubspotSDK::Models::CRM::PropertyUpdate::field_type,
+          form_field: bool,
+          group_name: String,
+          hidden: bool,
+          label: String,
+          options: ::Array[HubspotSDK::OptionInput],
+          type: HubspotSDK::Models::CRM::PropertyUpdate::type_
+        }
+
+        type field_type =
+          :booleancheckbox
+          | :calculation_equation
+          | :checkbox
+          | :date
+          | :file
+          | :html
+          | :number
+          | :phonenumber
+          | :radio
+          | :select
+          | :text
+          | :textarea
+
+        module FieldType
+          extend HubspotSDK::Internal::Type::Enum
+
+          BOOLEANCHECKBOX: :booleancheckbox
+          CALCULATION_EQUATION: :calculation_equation
+          CHECKBOX: :checkbox
+          DATE: :date
+          FILE: :file
+          HTML: :html
+          NUMBER: :number
+          PHONENUMBER: :phonenumber
+          RADIO: :radio
+          SELECT: :select
+          TEXT: :text
+          TEXTAREA: :textarea
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PropertyUpdate::field_type]
+        end
+
+        type type_ =
+          :bool
+          | :date
+          | :datetime
+          | :enumeration
+          | :number
+          | :phone_number
+          | :string
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          BOOL: :bool
+          DATE: :date
+          DATETIME: :datetime
+          ENUMERATION: :enumeration
+          NUMBER: :number
+          PHONE_NUMBER: :phone_number
+          STRING: :string
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PropertyUpdate::type_]
+        end
+      end
+    end
+  end
+end

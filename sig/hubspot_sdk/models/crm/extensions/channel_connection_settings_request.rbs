@@ -1,0 +1,20 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Extensions
+        type channel_connection_settings_request =
+          { is_ready: bool, url: String }
+
+        class ChannelConnectionSettingsRequest < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor is_ready: bool
+
+          attr_accessor url: String
+
+          def initialize: (is_ready: bool, url: String) -> void
+
+          def to_hash: -> { is_ready: bool, url: String }
+        end
+      end
+    end
+  end
+end

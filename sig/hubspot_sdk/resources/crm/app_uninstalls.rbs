@@ -1,0 +1,11 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class AppUninstalls
+        def uninstall: (?request_options: HubspotSDK::request_opts) -> nil
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

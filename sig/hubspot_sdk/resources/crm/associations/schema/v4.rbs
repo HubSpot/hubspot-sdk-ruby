@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class Associations
+        class Schema
+          class V4
+            attr_reader configurations: HubspotSDK::Resources::CRM::Associations::Schema::V4::Configurations
+
+            attr_reader definitions: HubspotSDK::Resources::CRM::Associations::Schema::V4::Definitions
+
+            def initialize: (client: HubspotSDK::Client) -> void
+          end
+        end
+      end
+    end
+  end
+end

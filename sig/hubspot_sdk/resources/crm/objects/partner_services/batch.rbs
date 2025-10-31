@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class Objects
+        class PartnerServices
+          class Batch
+            def update: (
+              inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectBatchInput],
+              ?request_options: HubspotSDK::request_opts
+            ) -> HubspotSDK::CRM::BatchResponseSimplePublicObject
+
+            def get: (
+              inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectID],
+              properties: ::Array[String],
+              properties_with_history: ::Array[String],
+              ?archived: bool,
+              ?id_property: String,
+              ?request_options: HubspotSDK::request_opts
+            ) -> HubspotSDK::CRM::BatchResponseSimplePublicObject
+
+            def initialize: (client: HubspotSDK::Client) -> void
+          end
+        end
+      end
+    end
+  end
+end

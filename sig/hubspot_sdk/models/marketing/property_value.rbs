@@ -1,0 +1,367 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type property_value =
+        {
+          name: String,
+          source_upstream_deployable: String,
+          value: String,
+          data_sensitivity: HubspotSDK::Models::Marketing::PropertyValue::data_sensitivity,
+          is_encrypted: bool,
+          is_large_value: bool,
+          persistence_timestamp: Integer,
+          request_id: String,
+          selected_by_user: bool,
+          selected_by_user_timestamp: Integer,
+          source: HubspotSDK::Models::Marketing::PropertyValue::source,
+          source_id: String,
+          source_label: String,
+          source_metadata: String,
+          source_vid: ::Array[Integer],
+          timestamp: Integer,
+          unit: String,
+          updated_by_user_id: Integer,
+          use_timestamp_as_persistence_timestamp: bool
+        }
+
+      class PropertyValue < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor name: String
+
+        attr_accessor source_upstream_deployable: String
+
+        attr_accessor value: String
+
+        attr_reader data_sensitivity: HubspotSDK::Models::Marketing::PropertyValue::data_sensitivity?
+
+        def data_sensitivity=: (
+          HubspotSDK::Models::Marketing::PropertyValue::data_sensitivity
+        ) -> HubspotSDK::Models::Marketing::PropertyValue::data_sensitivity
+
+        attr_reader is_encrypted: bool?
+
+        def is_encrypted=: (bool) -> bool
+
+        attr_reader is_large_value: bool?
+
+        def is_large_value=: (bool) -> bool
+
+        attr_reader persistence_timestamp: Integer?
+
+        def persistence_timestamp=: (Integer) -> Integer
+
+        attr_reader request_id: String?
+
+        def request_id=: (String) -> String
+
+        attr_reader selected_by_user: bool?
+
+        def selected_by_user=: (bool) -> bool
+
+        attr_reader selected_by_user_timestamp: Integer?
+
+        def selected_by_user_timestamp=: (Integer) -> Integer
+
+        attr_reader source: HubspotSDK::Models::Marketing::PropertyValue::source?
+
+        def source=: (
+          HubspotSDK::Models::Marketing::PropertyValue::source
+        ) -> HubspotSDK::Models::Marketing::PropertyValue::source
+
+        attr_reader source_id: String?
+
+        def source_id=: (String) -> String
+
+        attr_reader source_label: String?
+
+        def source_label=: (String) -> String
+
+        attr_reader source_metadata: String?
+
+        def source_metadata=: (String) -> String
+
+        attr_reader source_vid: ::Array[Integer]?
+
+        def source_vid=: (::Array[Integer]) -> ::Array[Integer]
+
+        attr_reader timestamp: Integer?
+
+        def timestamp=: (Integer) -> Integer
+
+        attr_reader unit: String?
+
+        def unit=: (String) -> String
+
+        attr_reader updated_by_user_id: Integer?
+
+        def updated_by_user_id=: (Integer) -> Integer
+
+        attr_reader use_timestamp_as_persistence_timestamp: bool?
+
+        def use_timestamp_as_persistence_timestamp=: (bool) -> bool
+
+        def initialize: (
+          name: String,
+          source_upstream_deployable: String,
+          value: String,
+          ?data_sensitivity: HubspotSDK::Models::Marketing::PropertyValue::data_sensitivity,
+          ?is_encrypted: bool,
+          ?is_large_value: bool,
+          ?persistence_timestamp: Integer,
+          ?request_id: String,
+          ?selected_by_user: bool,
+          ?selected_by_user_timestamp: Integer,
+          ?source: HubspotSDK::Models::Marketing::PropertyValue::source,
+          ?source_id: String,
+          ?source_label: String,
+          ?source_metadata: String,
+          ?source_vid: ::Array[Integer],
+          ?timestamp: Integer,
+          ?unit: String,
+          ?updated_by_user_id: Integer,
+          ?use_timestamp_as_persistence_timestamp: bool
+        ) -> void
+
+        def to_hash: -> {
+          name: String,
+          source_upstream_deployable: String,
+          value: String,
+          data_sensitivity: HubspotSDK::Models::Marketing::PropertyValue::data_sensitivity,
+          is_encrypted: bool,
+          is_large_value: bool,
+          persistence_timestamp: Integer,
+          request_id: String,
+          selected_by_user: bool,
+          selected_by_user_timestamp: Integer,
+          source: HubspotSDK::Models::Marketing::PropertyValue::source,
+          source_id: String,
+          source_label: String,
+          source_metadata: String,
+          source_vid: ::Array[Integer],
+          timestamp: Integer,
+          unit: String,
+          updated_by_user_id: Integer,
+          use_timestamp_as_persistence_timestamp: bool
+        }
+
+        type data_sensitivity = :none | :standard | :high
+
+        module DataSensitivity
+          extend HubspotSDK::Internal::Type::Enum
+
+          NONE: :none
+          STANDARD: :standard
+          HIGH: :high
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::PropertyValue::data_sensitivity]
+        end
+
+        type source =
+          :UNKNOWN
+          | :IMPORT
+          | :API
+          | :FORM
+          | :ANALYTICS
+          | :MIGRATION
+          | :SALESFORCE
+          | :INTEGRATION
+          | :CONTACTS_WEB
+          | :WAL_INCREMENTAL
+          | :TASK
+          | :EMAIL
+          | :WORKFLOWS
+          | :CALCULATED
+          | :SOCIAL
+          | :BATCH_UPDATE
+          | :SIGNALS
+          | :BIDEN
+          | :DEFAULT
+          | :COMPANIES
+          | :DEALS
+          | :ASSISTS
+          | :PRESENTATIONS
+          | :TALLY
+          | :SIDEKICK
+          | :CRM_UI
+          | :MERGE_CONTACTS
+          | :PORTAL_USER_ASSOCIATOR
+          | :INTEGRATIONS_PLATFORM
+          | :BCC_TO_CRM
+          | :FORWARD_TO_CRM
+          | :ENGAGEMENTS
+          | :SALES
+          | :HEISENBERG
+          | :LEADIN
+          | :GMAIL_INTEGRATION
+          | :ACADEMY
+          | :SALES_MESSAGES
+          | :AVATARS_SERVICE
+          | :MERGE_COMPANIES
+          | :SEQUENCES
+          | :COMPANY_FAMILIES
+          | :MOBILE_IOS
+          | :MOBILE_ANDROID
+          | :CONTACTS
+          | :ASSOCIATIONS
+          | :EXTENSION
+          | :SUCCESS
+          | :BOT
+          | :INTEGRATIONS_SYNC
+          | :AUTOMATION_PLATFORM
+          | :CONVERSATIONS
+          | :EMAIL_INTEGRATION
+          | :CONTENT_MEMBERSHIP
+          | :QUOTES
+          | :BET_ASSIGNMENT
+          | :QUOTAS
+          | :BET_CRM_CONNECTOR
+          | :MEETINGS
+          | :MERGE_OBJECTS
+          | :RECYCLING_BIN
+          | :ADS
+          | :AI_GROUP
+          | :COMMUNICATOR
+          | :SETTINGS
+          | :PROPERTY_SETTINGS
+          | :PIPELINE_SETTINGS
+          | :COMPANY_INSIGHTS
+          | :BEHAVIORAL_EVENTS
+          | :PAYMENTS
+          | :GOALS
+          | :PORTAL_OBJECT_SYNC
+          | :APPROVALS
+          | :FILE_MANAGER
+          | :MARKETPLACE
+          | :INTERNAL_PROCESSING
+          | :FORECASTING
+          | :SLACK_INTEGRATION
+          | :CRM_UI_BULK_ACTION
+          | :WORKFLOW_CONTACT_DELETE_ACTION
+          | :ACCEPTANCE_TEST
+          | :PLAYBOOKS
+          | :CHATSPOT
+          | :FLYWHEEL_PRODUCT_DATA_SYNC
+          | :HELP_DESK
+          | :BILLING
+          | :DATA_ENRICHMENT
+          | :AUTOMATION_JOURNEY
+          | :MICROAPPS
+          | :INTENT
+          | :PROSPECTING_AGENT
+          | :CENTRAL_EXCHANGE_RATES
+          | :HELP_DESK_AI
+          | :CONVERSATIONAL_ENRICHMENT
+          | :CRM_PROCESSES_PLATFORM
+          | :CLONE_OBJECTS
+          | :MARKET_SOURCING
+          | :DATASET
+          | :PROPERTY_RESTORE
+
+        module Source
+          extend HubspotSDK::Internal::Type::Enum
+
+          UNKNOWN: :UNKNOWN
+          IMPORT: :IMPORT
+          API: :API
+          FORM: :FORM
+          ANALYTICS: :ANALYTICS
+          MIGRATION: :MIGRATION
+          SALESFORCE: :SALESFORCE
+          INTEGRATION: :INTEGRATION
+          CONTACTS_WEB: :CONTACTS_WEB
+          WAL_INCREMENTAL: :WAL_INCREMENTAL
+          TASK: :TASK
+          EMAIL: :EMAIL
+          WORKFLOWS: :WORKFLOWS
+          CALCULATED: :CALCULATED
+          SOCIAL: :SOCIAL
+          BATCH_UPDATE: :BATCH_UPDATE
+          SIGNALS: :SIGNALS
+          BIDEN: :BIDEN
+          DEFAULT: :DEFAULT
+          COMPANIES: :COMPANIES
+          DEALS: :DEALS
+          ASSISTS: :ASSISTS
+          PRESENTATIONS: :PRESENTATIONS
+          TALLY: :TALLY
+          SIDEKICK: :SIDEKICK
+          CRM_UI: :CRM_UI
+          MERGE_CONTACTS: :MERGE_CONTACTS
+          PORTAL_USER_ASSOCIATOR: :PORTAL_USER_ASSOCIATOR
+          INTEGRATIONS_PLATFORM: :INTEGRATIONS_PLATFORM
+          BCC_TO_CRM: :BCC_TO_CRM
+          FORWARD_TO_CRM: :FORWARD_TO_CRM
+          ENGAGEMENTS: :ENGAGEMENTS
+          SALES: :SALES
+          HEISENBERG: :HEISENBERG
+          LEADIN: :LEADIN
+          GMAIL_INTEGRATION: :GMAIL_INTEGRATION
+          ACADEMY: :ACADEMY
+          SALES_MESSAGES: :SALES_MESSAGES
+          AVATARS_SERVICE: :AVATARS_SERVICE
+          MERGE_COMPANIES: :MERGE_COMPANIES
+          SEQUENCES: :SEQUENCES
+          COMPANY_FAMILIES: :COMPANY_FAMILIES
+          MOBILE_IOS: :MOBILE_IOS
+          MOBILE_ANDROID: :MOBILE_ANDROID
+          CONTACTS: :CONTACTS
+          ASSOCIATIONS: :ASSOCIATIONS
+          EXTENSION: :EXTENSION
+          SUCCESS: :SUCCESS
+          BOT: :BOT
+          INTEGRATIONS_SYNC: :INTEGRATIONS_SYNC
+          AUTOMATION_PLATFORM: :AUTOMATION_PLATFORM
+          CONVERSATIONS: :CONVERSATIONS
+          EMAIL_INTEGRATION: :EMAIL_INTEGRATION
+          CONTENT_MEMBERSHIP: :CONTENT_MEMBERSHIP
+          QUOTES: :QUOTES
+          BET_ASSIGNMENT: :BET_ASSIGNMENT
+          QUOTAS: :QUOTAS
+          BET_CRM_CONNECTOR: :BET_CRM_CONNECTOR
+          MEETINGS: :MEETINGS
+          MERGE_OBJECTS: :MERGE_OBJECTS
+          RECYCLING_BIN: :RECYCLING_BIN
+          ADS: :ADS
+          AI_GROUP: :AI_GROUP
+          COMMUNICATOR: :COMMUNICATOR
+          SETTINGS: :SETTINGS
+          PROPERTY_SETTINGS: :PROPERTY_SETTINGS
+          PIPELINE_SETTINGS: :PIPELINE_SETTINGS
+          COMPANY_INSIGHTS: :COMPANY_INSIGHTS
+          BEHAVIORAL_EVENTS: :BEHAVIORAL_EVENTS
+          PAYMENTS: :PAYMENTS
+          GOALS: :GOALS
+          PORTAL_OBJECT_SYNC: :PORTAL_OBJECT_SYNC
+          APPROVALS: :APPROVALS
+          FILE_MANAGER: :FILE_MANAGER
+          MARKETPLACE: :MARKETPLACE
+          INTERNAL_PROCESSING: :INTERNAL_PROCESSING
+          FORECASTING: :FORECASTING
+          SLACK_INTEGRATION: :SLACK_INTEGRATION
+          CRM_UI_BULK_ACTION: :CRM_UI_BULK_ACTION
+          WORKFLOW_CONTACT_DELETE_ACTION: :WORKFLOW_CONTACT_DELETE_ACTION
+          ACCEPTANCE_TEST: :ACCEPTANCE_TEST
+          PLAYBOOKS: :PLAYBOOKS
+          CHATSPOT: :CHATSPOT
+          FLYWHEEL_PRODUCT_DATA_SYNC: :FLYWHEEL_PRODUCT_DATA_SYNC
+          HELP_DESK: :HELP_DESK
+          BILLING: :BILLING
+          DATA_ENRICHMENT: :DATA_ENRICHMENT
+          AUTOMATION_JOURNEY: :AUTOMATION_JOURNEY
+          MICROAPPS: :MICROAPPS
+          INTENT: :INTENT
+          PROSPECTING_AGENT: :PROSPECTING_AGENT
+          CENTRAL_EXCHANGE_RATES: :CENTRAL_EXCHANGE_RATES
+          HELP_DESK_AI: :HELP_DESK_AI
+          CONVERSATIONAL_ENRICHMENT: :CONVERSATIONAL_ENRICHMENT
+          CRM_PROCESSES_PLATFORM: :CRM_PROCESSES_PLATFORM
+          CLONE_OBJECTS: :CLONE_OBJECTS
+          MARKET_SOURCING: :MARKET_SOURCING
+          DATASET: :DATASET
+          PROPERTY_RESTORE: :PROPERTY_RESTORE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::PropertyValue::source]
+        end
+      end
+    end
+  end
+end

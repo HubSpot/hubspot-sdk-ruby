@@ -1,0 +1,159 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type hub_db_table_v3 =
+        {
+          deleted_at: Time,
+          label: String,
+          name: String,
+          id: String,
+          allow_child_tables: bool,
+          allow_public_api_access: bool,
+          column_count: Integer,
+          columns: ::Array[HubspotSDK::Cms::Column],
+          created_at: Time,
+          created_by: HubspotSDK::Cms::SimpleUser,
+          deleted: bool,
+          dynamic_meta_tags: ::Hash[Symbol, Integer],
+          enable_child_table_pages: bool,
+          is_ordered_manually: bool,
+          published: bool,
+          published_at: Time,
+          row_count: Integer,
+          updated_at: Time,
+          updated_by: HubspotSDK::Cms::SimpleUser,
+          use_for_pages: bool
+        }
+
+      class HubDBTableV3 < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor deleted_at: Time
+
+        attr_accessor label: String
+
+        attr_accessor name: String
+
+        attr_reader id: String?
+
+        def id=: (String) -> String
+
+        attr_reader allow_child_tables: bool?
+
+        def allow_child_tables=: (bool) -> bool
+
+        attr_reader allow_public_api_access: bool?
+
+        def allow_public_api_access=: (bool) -> bool
+
+        attr_reader column_count: Integer?
+
+        def column_count=: (Integer) -> Integer
+
+        attr_reader columns: ::Array[HubspotSDK::Cms::Column]?
+
+        def columns=: (
+          ::Array[HubspotSDK::Cms::Column]
+        ) -> ::Array[HubspotSDK::Cms::Column]
+
+        attr_reader created_at: Time?
+
+        def created_at=: (Time) -> Time
+
+        attr_reader created_by: HubspotSDK::Cms::SimpleUser?
+
+        def created_by=: (
+          HubspotSDK::Cms::SimpleUser
+        ) -> HubspotSDK::Cms::SimpleUser
+
+        attr_reader deleted: bool?
+
+        def deleted=: (bool) -> bool
+
+        attr_reader dynamic_meta_tags: ::Hash[Symbol, Integer]?
+
+        def dynamic_meta_tags=: (
+          ::Hash[Symbol, Integer]
+        ) -> ::Hash[Symbol, Integer]
+
+        attr_reader enable_child_table_pages: bool?
+
+        def enable_child_table_pages=: (bool) -> bool
+
+        attr_reader is_ordered_manually: bool?
+
+        def is_ordered_manually=: (bool) -> bool
+
+        attr_reader published: bool?
+
+        def published=: (bool) -> bool
+
+        attr_reader published_at: Time?
+
+        def published_at=: (Time) -> Time
+
+        attr_reader row_count: Integer?
+
+        def row_count=: (Integer) -> Integer
+
+        attr_reader updated_at: Time?
+
+        def updated_at=: (Time) -> Time
+
+        attr_reader updated_by: HubspotSDK::Cms::SimpleUser?
+
+        def updated_by=: (
+          HubspotSDK::Cms::SimpleUser
+        ) -> HubspotSDK::Cms::SimpleUser
+
+        attr_reader use_for_pages: bool?
+
+        def use_for_pages=: (bool) -> bool
+
+        def initialize: (
+          deleted_at: Time,
+          label: String,
+          name: String,
+          ?id: String,
+          ?allow_child_tables: bool,
+          ?allow_public_api_access: bool,
+          ?column_count: Integer,
+          ?columns: ::Array[HubspotSDK::Cms::Column],
+          ?created_at: Time,
+          ?created_by: HubspotSDK::Cms::SimpleUser,
+          ?deleted: bool,
+          ?dynamic_meta_tags: ::Hash[Symbol, Integer],
+          ?enable_child_table_pages: bool,
+          ?is_ordered_manually: bool,
+          ?published: bool,
+          ?published_at: Time,
+          ?row_count: Integer,
+          ?updated_at: Time,
+          ?updated_by: HubspotSDK::Cms::SimpleUser,
+          ?use_for_pages: bool
+        ) -> void
+
+        def to_hash: -> {
+          deleted_at: Time,
+          label: String,
+          name: String,
+          id: String,
+          allow_child_tables: bool,
+          allow_public_api_access: bool,
+          column_count: Integer,
+          columns: ::Array[HubspotSDK::Cms::Column],
+          created_at: Time,
+          created_by: HubspotSDK::Cms::SimpleUser,
+          deleted: bool,
+          dynamic_meta_tags: ::Hash[Symbol, Integer],
+          enable_child_table_pages: bool,
+          is_ordered_manually: bool,
+          published: bool,
+          published_at: Time,
+          row_count: Integer,
+          updated_at: Time,
+          updated_by: HubspotSDK::Cms::SimpleUser,
+          use_for_pages: bool
+        }
+      end
+    end
+  end
+end

@@ -1,0 +1,45 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type public_email_subscription_details =
+        {
+          office_location_id: String,
+          preferences_group_id: String,
+          subscription_id: String,
+          subscription_name: String
+        }
+
+      class PublicEmailSubscriptionDetails < HubspotSDK::Internal::Type::BaseModel
+        attr_reader office_location_id: String?
+
+        def office_location_id=: (String) -> String
+
+        attr_reader preferences_group_id: String?
+
+        def preferences_group_id=: (String) -> String
+
+        attr_reader subscription_id: String?
+
+        def subscription_id=: (String) -> String
+
+        attr_reader subscription_name: String?
+
+        def subscription_name=: (String) -> String
+
+        def initialize: (
+          ?office_location_id: String,
+          ?preferences_group_id: String,
+          ?subscription_id: String,
+          ?subscription_name: String
+        ) -> void
+
+        def to_hash: -> {
+          office_location_id: String,
+          preferences_group_id: String,
+          subscription_id: String,
+          subscription_name: String
+        }
+      end
+    end
+  end
+end

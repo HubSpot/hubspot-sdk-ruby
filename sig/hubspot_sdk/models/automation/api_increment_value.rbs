@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_increment_value =
+        {
+          increment_amount: Float,
+          type: HubspotSDK::Models::Automation::APIIncrementValue::type_
+        }
+
+      class APIIncrementValue < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor increment_amount: Float
+
+        attr_accessor type: HubspotSDK::Models::Automation::APIIncrementValue::type_
+
+        def initialize: (
+          increment_amount: Float,
+          type: HubspotSDK::Models::Automation::APIIncrementValue::type_
+        ) -> void
+
+        def to_hash: -> {
+          increment_amount: Float,
+          type: HubspotSDK::Models::Automation::APIIncrementValue::type_
+        }
+
+        type type_ = :INCREMENT
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          INCREMENT: :INCREMENT
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIIncrementValue::type_]
+        end
+      end
+    end
+  end
+end

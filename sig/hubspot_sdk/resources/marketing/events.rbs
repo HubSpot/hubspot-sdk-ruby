@@ -1,0 +1,168 @@
+module HubspotSDK
+  module Resources
+    class Marketing
+      class Events
+        attr_reader associations: HubspotSDK::Resources::Marketing::Events::Associations
+
+        attr_reader attendance: HubspotSDK::Resources::Marketing::Events::Attendance
+
+        attr_reader participations: HubspotSDK::Resources::Marketing::Events::Participations
+
+        attr_reader settings: HubspotSDK::Resources::Marketing::Events::Settings
+
+        def create: (
+          event_name: String,
+          event_organizer: String,
+          external_account_id: String,
+          external_event_id: String,
+          ?custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
+          ?end_date_time: Time,
+          ?event_cancelled: bool,
+          ?event_completed: bool,
+          ?event_description: String,
+          ?event_type: String,
+          ?event_url: String,
+          ?start_date_time: Time,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Marketing::MarketingEventDefaultResponse
+
+        def update: (
+          String object_id_,
+          custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
+          ?end_date_time: Time,
+          ?event_cancelled: bool,
+          ?event_description: String,
+          ?event_name: String,
+          ?event_organizer: String,
+          ?event_type: String,
+          ?event_url: String,
+          ?start_date_time: Time,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Marketing::MarketingEventPublicDefaultResponseV2
+
+        def list: (
+          ?after: String,
+          ?limit: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Marketing::MarketingEventPublicReadResponseV2]
+
+        def delete: (
+          String object_id_,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def cancel_by_external_event_id: (
+          String external_event_id,
+          external_account_id: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Marketing::MarketingEventDefaultResponse
+
+        def complete_by_external_event_id: (
+          String external_event_id,
+          external_account_id: String,
+          end_date_time: Time,
+          start_date_time: Time,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Marketing::MarketingEventDefaultResponse
+
+        def delete_batch: (
+          inputs: ::Array[HubspotSDK::Marketing::MarketingEventPublicObjectIDDeleteRequest],
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def delete_batch_by_external_event_id: (
+          inputs: ::Array[HubspotSDK::Marketing::MarketingEventExternalUniqueIdentifier],
+          ?request_options: HubspotSDK::request_opts
+        ) -> StringIO
+
+        def delete_by_external_event_id: (
+          String external_event_id,
+          external_account_id: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def get: (
+          String object_id_,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Marketing::MarketingEventPublicReadResponseV2
+
+        def get_by_external_event_id: (
+          String external_event_id,
+          external_account_id: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Marketing::MarketingEventPublicReadResponse
+
+        def search_by_external_event_id: (
+          q: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Marketing::CollectionResponseSearchPublicResponseWrapperNoPaging
+
+        def search_identifiers_by_external_event_id: (
+          String external_event_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Marketing::CollectionResponseWithTotalMarketingEventIdentifiersResponseNoPaging
+
+        def update_batch: (
+          inputs: ::Array[HubspotSDK::Marketing::MarketingEventPublicUpdateRequestFullV2],
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2
+
+        def update_by_external_event_id: (
+          String external_event_id,
+          external_account_id: String,
+          ?custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
+          ?end_date_time: Time,
+          ?event_cancelled: bool,
+          ?event_completed: bool,
+          ?event_description: String,
+          ?event_name: String,
+          ?event_organizer: String,
+          ?event_type: String,
+          ?event_url: String,
+          ?start_date_time: Time,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Marketing::MarketingEventPublicDefaultResponse
+
+        def upsert_batch: (
+          inputs: ::Array[HubspotSDK::Marketing::MarketingEventCreateRequestParams],
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponse
+
+        def upsert_by_external_event_id: (
+          String path_external_event_id,
+          event_name: String,
+          event_organizer: String,
+          external_account_id: String,
+          body_external_event_id: String,
+          ?custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
+          ?end_date_time: Time,
+          ?event_cancelled: bool,
+          ?event_completed: bool,
+          ?event_description: String,
+          ?event_type: String,
+          ?event_url: String,
+          ?start_date_time: Time,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Marketing::MarketingEventPublicDefaultResponse
+
+        def upsert_subscriber_state_by_email: (
+          String subscriber_state,
+          external_event_id: String,
+          external_account_id: String,
+          inputs: ::Array[HubspotSDK::Marketing::MarketingEventEmailSubscriber],
+          ?request_options: HubspotSDK::request_opts
+        ) -> StringIO
+
+        def upsert_subscriber_state_by_id: (
+          String subscriber_state,
+          external_event_id: String,
+          external_account_id: String,
+          inputs: ::Array[HubspotSDK::Marketing::MarketingEventSubscriber],
+          ?request_options: HubspotSDK::request_opts
+        ) -> StringIO
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

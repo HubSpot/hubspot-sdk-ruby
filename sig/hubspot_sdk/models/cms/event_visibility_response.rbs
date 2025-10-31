@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type event_visibility_response =
+        {
+          created_at: Time,
+          visibility_settings: ::Array[HubspotSDK::Cms::EventVisibilityChange]
+        }
+
+      class EventVisibilityResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor created_at: Time
+
+        attr_accessor visibility_settings: ::Array[HubspotSDK::Cms::EventVisibilityChange]
+
+        def initialize: (
+          created_at: Time,
+          visibility_settings: ::Array[HubspotSDK::Cms::EventVisibilityChange]
+        ) -> void
+
+        def to_hash: -> {
+          created_at: Time,
+          visibility_settings: ::Array[HubspotSDK::Cms::EventVisibilityChange]
+        }
+      end
+    end
+  end
+end

@@ -1,0 +1,79 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type filter =
+        {
+          operator: HubspotSDK::Models::CRM::Filter::operator,
+          property_name: String,
+          high_value: String,
+          value: String,
+          values: ::Array[String]
+        }
+
+      class Filter < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor operator: HubspotSDK::Models::CRM::Filter::operator
+
+        attr_accessor property_name: String
+
+        attr_reader high_value: String?
+
+        def high_value=: (String) -> String
+
+        attr_reader value: String?
+
+        def value=: (String) -> String
+
+        attr_reader values: ::Array[String]?
+
+        def values=: (::Array[String]) -> ::Array[String]
+
+        def initialize: (
+          operator: HubspotSDK::Models::CRM::Filter::operator,
+          property_name: String,
+          ?high_value: String,
+          ?value: String,
+          ?values: ::Array[String]
+        ) -> void
+
+        def to_hash: -> {
+          operator: HubspotSDK::Models::CRM::Filter::operator,
+          property_name: String,
+          high_value: String,
+          value: String,
+          values: ::Array[String]
+        }
+
+        type operator =
+          :EQ
+          | :NEQ
+          | :LT
+          | :LTE
+          | :GT
+          | :GTE
+          | :BETWEEN
+          | :IN
+          | :NOT_IN
+          | :HAS_PROPERTY
+          | :NOT_HAS_PROPERTY
+
+        module Operator
+          extend HubspotSDK::Internal::Type::Enum
+
+          EQ: :EQ
+          NEQ: :NEQ
+          LT: :LT
+          LTE: :LTE
+          GT: :GT
+          GTE: :GTE
+          BETWEEN: :BETWEEN
+          IN: :IN
+          NOT_IN: :NOT_IN
+          HAS_PROPERTY: :HAS_PROPERTY
+          NOT_HAS_PROPERTY: :NOT_HAS_PROPERTY
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CRM::Filter::operator]
+        end
+      end
+    end
+  end
+end

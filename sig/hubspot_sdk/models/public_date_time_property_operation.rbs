@@ -1,0 +1,50 @@
+module HubspotSDK
+  module Models
+    type public_date_time_property_operation =
+      {
+        include_objects_with_no_value_set: bool,
+        operation_type: HubspotSDK::Models::PublicDateTimePropertyOperation::operation_type,
+        operator: String,
+        requires_time_zone_conversion: bool,
+        timestamp: Integer
+      }
+
+    class PublicDateTimePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      attr_accessor include_objects_with_no_value_set: bool
+
+      attr_accessor operation_type: HubspotSDK::Models::PublicDateTimePropertyOperation::operation_type
+
+      attr_accessor operator: String
+
+      attr_accessor requires_time_zone_conversion: bool
+
+      attr_accessor timestamp: Integer
+
+      def initialize: (
+        include_objects_with_no_value_set: bool,
+        operation_type: HubspotSDK::Models::PublicDateTimePropertyOperation::operation_type,
+        operator: String,
+        requires_time_zone_conversion: bool,
+        timestamp: Integer
+      ) -> void
+
+      def to_hash: -> {
+        include_objects_with_no_value_set: bool,
+        operation_type: HubspotSDK::Models::PublicDateTimePropertyOperation::operation_type,
+        operator: String,
+        requires_time_zone_conversion: bool,
+        timestamp: Integer
+      }
+
+      type operation_type = :DATETIME
+
+      module OperationType
+        extend HubspotSDK::Internal::Type::Enum
+
+        DATETIME: :DATETIME
+
+        def self?.values: -> ::Array[HubspotSDK::Models::PublicDateTimePropertyOperation::operation_type]
+      end
+    end
+  end
+end

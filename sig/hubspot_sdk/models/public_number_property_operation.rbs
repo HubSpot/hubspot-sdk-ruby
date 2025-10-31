@@ -1,0 +1,45 @@
+module HubspotSDK
+  module Models
+    type public_number_property_operation =
+      {
+        include_objects_with_no_value_set: bool,
+        operation_type: HubspotSDK::Models::PublicNumberPropertyOperation::operation_type,
+        operator: String,
+        value: Float
+      }
+
+    class PublicNumberPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      attr_accessor include_objects_with_no_value_set: bool
+
+      attr_accessor operation_type: HubspotSDK::Models::PublicNumberPropertyOperation::operation_type
+
+      attr_accessor operator: String
+
+      attr_accessor value: Float
+
+      def initialize: (
+        include_objects_with_no_value_set: bool,
+        operation_type: HubspotSDK::Models::PublicNumberPropertyOperation::operation_type,
+        operator: String,
+        value: Float
+      ) -> void
+
+      def to_hash: -> {
+        include_objects_with_no_value_set: bool,
+        operation_type: HubspotSDK::Models::PublicNumberPropertyOperation::operation_type,
+        operator: String,
+        value: Float
+      }
+
+      type operation_type = :NUMBER
+
+      module OperationType
+        extend HubspotSDK::Internal::Type::Enum
+
+        NUMBER: :NUMBER
+
+        def self?.values: -> ::Array[HubspotSDK::Models::PublicNumberPropertyOperation::operation_type]
+      end
+    end
+  end
+end

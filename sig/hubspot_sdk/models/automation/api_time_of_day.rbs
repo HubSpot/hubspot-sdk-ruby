@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_time_of_day = { hour: Integer, minute: Integer }
+
+      class APITimeOfDay < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor hour: Integer
+
+        attr_accessor minute: Integer
+
+        def initialize: (hour: Integer, minute: Integer) -> void
+
+        def to_hash: -> { hour: Integer, minute: Integer }
+      end
+    end
+  end
+end

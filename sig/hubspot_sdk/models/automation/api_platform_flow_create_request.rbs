@@ -1,0 +1,209 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_platform_flow_create_request =
+        {
+          actions: ::Array[HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::action],
+          blocked_dates: ::Array[HubspotSDK::Automation::APIBlockedDate],
+          custom_properties: ::Hash[Symbol, String],
+          data_sources: ::Array[HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::data_source],
+          flow_type: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::flow_type,
+          is_enabled: bool,
+          object_type_id: String,
+          time_windows: ::Array[HubspotSDK::Automation::APITimeWindow],
+          type: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::type_,
+          description: String,
+          enrollment_criteria: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::enrollment_criteria,
+          enrollment_schedule: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::enrollment_schedule,
+          name: String,
+          start_action_id: String,
+          suppression_filter_branch: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::suppression_filter_branch,
+          uuid: String
+        }
+
+      class APIPlatformFlowCreateRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor actions: ::Array[HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::action]
+
+        attr_accessor blocked_dates: ::Array[HubspotSDK::Automation::APIBlockedDate]
+
+        attr_accessor custom_properties: ::Hash[Symbol, String]
+
+        attr_accessor data_sources: ::Array[HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::data_source]
+
+        attr_accessor flow_type: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::flow_type
+
+        attr_accessor is_enabled: bool
+
+        attr_accessor object_type_id: String
+
+        attr_accessor time_windows: ::Array[HubspotSDK::Automation::APITimeWindow]
+
+        attr_accessor type: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::type_
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader enrollment_criteria: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::enrollment_criteria?
+
+        def enrollment_criteria=: (
+          HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::enrollment_criteria
+        ) -> HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::enrollment_criteria
+
+        attr_reader enrollment_schedule: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::enrollment_schedule?
+
+        def enrollment_schedule=: (
+          HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::enrollment_schedule
+        ) -> HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::enrollment_schedule
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader start_action_id: String?
+
+        def start_action_id=: (String) -> String
+
+        attr_reader suppression_filter_branch: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::suppression_filter_branch?
+
+        def suppression_filter_branch=: (
+          HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::suppression_filter_branch
+        ) -> HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::suppression_filter_branch
+
+        attr_reader uuid: String?
+
+        def uuid=: (String) -> String
+
+        def initialize: (
+          actions: ::Array[HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::action],
+          blocked_dates: ::Array[HubspotSDK::Automation::APIBlockedDate],
+          custom_properties: ::Hash[Symbol, String],
+          data_sources: ::Array[HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::data_source],
+          flow_type: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::flow_type,
+          is_enabled: bool,
+          object_type_id: String,
+          time_windows: ::Array[HubspotSDK::Automation::APITimeWindow],
+          type: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::type_,
+          ?description: String,
+          ?enrollment_criteria: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::enrollment_criteria,
+          ?enrollment_schedule: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::enrollment_schedule,
+          ?name: String,
+          ?start_action_id: String,
+          ?suppression_filter_branch: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::suppression_filter_branch,
+          ?uuid: String
+        ) -> void
+
+        def to_hash: -> {
+          actions: ::Array[HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::action],
+          blocked_dates: ::Array[HubspotSDK::Automation::APIBlockedDate],
+          custom_properties: ::Hash[Symbol, String],
+          data_sources: ::Array[HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::data_source],
+          flow_type: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::flow_type,
+          is_enabled: bool,
+          object_type_id: String,
+          time_windows: ::Array[HubspotSDK::Automation::APITimeWindow],
+          type: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::type_,
+          description: String,
+          enrollment_criteria: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::enrollment_criteria,
+          enrollment_schedule: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::enrollment_schedule,
+          name: String,
+          start_action_id: String,
+          suppression_filter_branch: HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::suppression_filter_branch,
+          uuid: String
+        }
+
+        type action =
+          HubspotSDK::Automation::APIStaticBranchAction
+          | HubspotSDK::Automation::APIListBranchAction
+          | HubspotSDK::Automation::APIAbTestBranchAction
+          | HubspotSDK::Automation::APICustomCodeAction
+          | HubspotSDK::Automation::APIWebhookAction
+          | HubspotSDK::Automation::APISingleConnectionAction
+
+        module Action
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::action]
+        end
+
+        type data_source =
+          HubspotSDK::Automation::APIAssociationDataSource
+          | HubspotSDK::Automation::APIAssociationTimestampDataSource
+          | HubspotSDK::Automation::APIStaticPropertyFilterDataSource
+          | HubspotSDK::Automation::APIEnrolledRecordPropertyFilterDataSource
+          | HubspotSDK::Automation::APIDatasetFieldPropertyFilterDataSource
+          | HubspotSDK::Automation::APIEnrolledArgumentPropertyFilterDataSource
+
+        module DataSource
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::data_source]
+        end
+
+        type flow_type = :WORKFLOW | :ACTION_SET | :UNKNOWN
+
+        module FlowType
+          extend HubspotSDK::Internal::Type::Enum
+
+          WORKFLOW: :WORKFLOW
+          ACTION_SET: :ACTION_SET
+          UNKNOWN: :UNKNOWN
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::flow_type]
+        end
+
+        type type_ = :CONTACT_FLOW | :PLATFORM_FLOW
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          CONTACT_FLOW: :CONTACT_FLOW
+          PLATFORM_FLOW: :PLATFORM_FLOW
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::type_]
+        end
+
+        type enrollment_criteria =
+          HubspotSDK::Automation::APIListBasedEnrollmentCriteria
+          | HubspotSDK::Automation::APIEventBasedEnrollmentCriteria
+          | HubspotSDK::Automation::APIManualEnrollmentCriteria
+
+        module EnrollmentCriteria
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::enrollment_criteria]
+        end
+
+        type enrollment_schedule =
+          HubspotSDK::Automation::APIDailyEnrollmentSchedule
+          | HubspotSDK::Automation::APIWeeklyEnrollmentSchedule
+          | HubspotSDK::Automation::APIMonthlySpecificDaysEnrollmentSchedule
+          | HubspotSDK::Automation::APIMonthlyRelativeDaysEnrollmentSchedule
+          | HubspotSDK::Automation::APIYearlyEnrollmentSchedule
+          | HubspotSDK::Automation::APIPropertyBasedEnrollmentSchedule
+
+        module EnrollmentSchedule
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::enrollment_schedule]
+        end
+
+        type suppression_filter_branch =
+          HubspotSDK::PublicOrFilterBranch
+          | HubspotSDK::PublicAndFilterBranch
+          | HubspotSDK::PublicNotAllFilterBranch
+          | HubspotSDK::PublicNotAnyFilterBranch
+          | HubspotSDK::PublicRestrictedFilterBranch
+          | HubspotSDK::PublicUnifiedEventsFilterBranch
+          | HubspotSDK::PublicPropertyAssociationFilterBranch
+          | HubspotSDK::PublicAssociationFilterBranch
+
+        module SuppressionFilterBranch
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Automation::APIPlatformFlowCreateRequest::suppression_filter_branch]
+        end
+      end
+    end
+  end
+end

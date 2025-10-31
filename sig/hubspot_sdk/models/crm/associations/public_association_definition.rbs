@@ -1,0 +1,19 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Associations
+        type public_association_definition = { id: String, name: String }
+
+        class PublicAssociationDefinition < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_accessor name: String
+
+          def initialize: (id: String, name: String) -> void
+
+          def to_hash: -> { id: String, name: String }
+        end
+      end
+    end
+  end
+end

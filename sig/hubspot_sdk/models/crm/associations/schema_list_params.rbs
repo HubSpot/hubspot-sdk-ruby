@@ -1,0 +1,28 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Associations
+        type schema_list_params =
+          { from_object_type: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class SchemaListParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor from_object_type: String
+
+          def initialize: (
+            from_object_type: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            from_object_type: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

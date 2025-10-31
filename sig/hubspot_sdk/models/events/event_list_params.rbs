@@ -1,0 +1,135 @@
+module HubspotSDK
+  module Models
+    module Events
+      type event_list_params =
+        {
+          id: ::Array[String],
+          after: String,
+          before: String,
+          event_type: String,
+          limit: Integer,
+          object_id_: Integer,
+          object_property: HubspotSDK::Events::EventListParams::ObjectProperty,
+          object_type: String,
+          occurred_after: Time,
+          occurred_before: Time,
+          property: HubspotSDK::Events::EventListParams::Property,
+          sort: ::Array[String]
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class EventListParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_reader id: ::Array[String]?
+
+        def id=: (::Array[String]) -> ::Array[String]
+
+        attr_reader after: String?
+
+        def after=: (String) -> String
+
+        attr_reader before: String?
+
+        def before=: (String) -> String
+
+        attr_reader event_type: String?
+
+        def event_type=: (String) -> String
+
+        attr_reader limit: Integer?
+
+        def limit=: (Integer) -> Integer
+
+        attr_reader object_id_: Integer?
+
+        def object_id_=: (Integer) -> Integer
+
+        attr_reader object_property: HubspotSDK::Events::EventListParams::ObjectProperty?
+
+        def object_property=: (
+          HubspotSDK::Events::EventListParams::ObjectProperty
+        ) -> HubspotSDK::Events::EventListParams::ObjectProperty
+
+        attr_reader object_type: String?
+
+        def object_type=: (String) -> String
+
+        attr_reader occurred_after: Time?
+
+        def occurred_after=: (Time) -> Time
+
+        attr_reader occurred_before: Time?
+
+        def occurred_before=: (Time) -> Time
+
+        attr_reader property: HubspotSDK::Events::EventListParams::Property?
+
+        def property=: (
+          HubspotSDK::Events::EventListParams::Property
+        ) -> HubspotSDK::Events::EventListParams::Property
+
+        attr_reader sort: ::Array[String]?
+
+        def sort=: (::Array[String]) -> ::Array[String]
+
+        def initialize: (
+          ?id: ::Array[String],
+          ?after: String,
+          ?before: String,
+          ?event_type: String,
+          ?limit: Integer,
+          ?object_id_: Integer,
+          ?object_property: HubspotSDK::Events::EventListParams::ObjectProperty,
+          ?object_type: String,
+          ?occurred_after: Time,
+          ?occurred_before: Time,
+          ?property: HubspotSDK::Events::EventListParams::Property,
+          ?sort: ::Array[String],
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          id: ::Array[String],
+          after: String,
+          before: String,
+          event_type: String,
+          limit: Integer,
+          object_id_: Integer,
+          object_property: HubspotSDK::Events::EventListParams::ObjectProperty,
+          object_type: String,
+          occurred_after: Time,
+          occurred_before: Time,
+          property: HubspotSDK::Events::EventListParams::Property,
+          sort: ::Array[String],
+          request_options: HubspotSDK::RequestOptions
+        }
+
+        type object_property = { propname: top }
+
+        class ObjectProperty < HubspotSDK::Internal::Type::BaseModel
+          attr_reader propname: top?
+
+          def propname=: (top) -> top
+
+          def initialize: (?propname: top) -> void
+
+          def to_hash: -> { propname: top }
+        end
+
+        type property = { propname: top }
+
+        class Property < HubspotSDK::Internal::Type::BaseModel
+          attr_reader propname: top?
+
+          def propname=: (top) -> top
+
+          def initialize: (?propname: top) -> void
+
+          def to_hash: -> { propname: top }
+        end
+      end
+    end
+  end
+end

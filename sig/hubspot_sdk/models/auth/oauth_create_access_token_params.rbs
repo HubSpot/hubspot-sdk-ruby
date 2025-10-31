@@ -1,0 +1,78 @@
+module HubspotSDK
+  module Models
+    module Auth
+      type oauth_create_access_token_params =
+        {
+          client_id: String,
+          client_secret: String,
+          code: String,
+          grant_type: HubspotSDK::Models::Auth::OAuthCreateAccessTokenParams::grant_type,
+          redirect_uri: String,
+          refresh_token: String
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class OAuthCreateAccessTokenParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_reader client_id: String?
+
+        def client_id=: (String) -> String
+
+        attr_reader client_secret: String?
+
+        def client_secret=: (String) -> String
+
+        attr_reader code: String?
+
+        def code=: (String) -> String
+
+        attr_reader grant_type: HubspotSDK::Models::Auth::OAuthCreateAccessTokenParams::grant_type?
+
+        def grant_type=: (
+          HubspotSDK::Models::Auth::OAuthCreateAccessTokenParams::grant_type
+        ) -> HubspotSDK::Models::Auth::OAuthCreateAccessTokenParams::grant_type
+
+        attr_reader redirect_uri: String?
+
+        def redirect_uri=: (String) -> String
+
+        attr_reader refresh_token: String?
+
+        def refresh_token=: (String) -> String
+
+        def initialize: (
+          ?client_id: String,
+          ?client_secret: String,
+          ?code: String,
+          ?grant_type: HubspotSDK::Models::Auth::OAuthCreateAccessTokenParams::grant_type,
+          ?redirect_uri: String,
+          ?refresh_token: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          client_id: String,
+          client_secret: String,
+          code: String,
+          grant_type: HubspotSDK::Models::Auth::OAuthCreateAccessTokenParams::grant_type,
+          redirect_uri: String,
+          refresh_token: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+
+        type grant_type = :authorization_code | :refresh_token
+
+        module GrantType
+          extend HubspotSDK::Internal::Type::Enum
+
+          AUTHORIZATION_CODE: :authorization_code
+          REFRESH_TOKEN: :refresh_token
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Auth::OAuthCreateAccessTokenParams::grant_type]
+        end
+      end
+    end
+  end
+end

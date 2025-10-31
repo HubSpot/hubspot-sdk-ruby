@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type pipeline_stage_input =
+        {
+          display_order: Integer,
+          label: String,
+          metadata: ::Hash[Symbol, String]
+        }
+
+      class PipelineStageInput < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor display_order: Integer
+
+        attr_accessor label: String
+
+        attr_reader metadata: ::Hash[Symbol, String]?
+
+        def metadata=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
+
+        def initialize: (
+          display_order: Integer,
+          label: String,
+          ?metadata: ::Hash[Symbol, String]
+        ) -> void
+
+        def to_hash: -> {
+          display_order: Integer,
+          label: String,
+          metadata: ::Hash[Symbol, String]
+        }
+      end
+    end
+  end
+end

@@ -1,0 +1,149 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type marketing_event_public_read_response_v2 =
+        {
+          created_at: Time,
+          custom_properties: ::Array[HubspotSDK::Marketing::CRMPropertyWrapper],
+          event_name: String,
+          object_id_: String,
+          updated_at: Time,
+          app_info: HubspotSDK::Marketing::AppInfo,
+          attendees: Integer,
+          cancellations: Integer,
+          end_date_time: Time,
+          event_cancelled: bool,
+          event_completed: bool,
+          event_description: String,
+          event_organizer: String,
+          event_status: String,
+          event_type: String,
+          event_url: String,
+          external_event_id: String,
+          no_shows: Integer,
+          registrants: Integer,
+          start_date_time: Time
+        }
+
+      class MarketingEventPublicReadResponseV2 < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor created_at: Time
+
+        attr_accessor custom_properties: ::Array[HubspotSDK::Marketing::CRMPropertyWrapper]
+
+        attr_accessor event_name: String
+
+        attr_accessor object_id_: String
+
+        attr_accessor updated_at: Time
+
+        attr_reader app_info: HubspotSDK::Marketing::AppInfo?
+
+        def app_info=: (
+          HubspotSDK::Marketing::AppInfo
+        ) -> HubspotSDK::Marketing::AppInfo
+
+        attr_reader attendees: Integer?
+
+        def attendees=: (Integer) -> Integer
+
+        attr_reader cancellations: Integer?
+
+        def cancellations=: (Integer) -> Integer
+
+        attr_reader end_date_time: Time?
+
+        def end_date_time=: (Time) -> Time
+
+        attr_reader event_cancelled: bool?
+
+        def event_cancelled=: (bool) -> bool
+
+        attr_reader event_completed: bool?
+
+        def event_completed=: (bool) -> bool
+
+        attr_reader event_description: String?
+
+        def event_description=: (String) -> String
+
+        attr_reader event_organizer: String?
+
+        def event_organizer=: (String) -> String
+
+        attr_reader event_status: String?
+
+        def event_status=: (String) -> String
+
+        attr_reader event_type: String?
+
+        def event_type=: (String) -> String
+
+        attr_reader event_url: String?
+
+        def event_url=: (String) -> String
+
+        attr_reader external_event_id: String?
+
+        def external_event_id=: (String) -> String
+
+        attr_reader no_shows: Integer?
+
+        def no_shows=: (Integer) -> Integer
+
+        attr_reader registrants: Integer?
+
+        def registrants=: (Integer) -> Integer
+
+        attr_reader start_date_time: Time?
+
+        def start_date_time=: (Time) -> Time
+
+        def initialize: (
+          created_at: Time,
+          custom_properties: ::Array[HubspotSDK::Marketing::CRMPropertyWrapper],
+          event_name: String,
+          object_id_: String,
+          updated_at: Time,
+          ?app_info: HubspotSDK::Marketing::AppInfo,
+          ?attendees: Integer,
+          ?cancellations: Integer,
+          ?end_date_time: Time,
+          ?event_cancelled: bool,
+          ?event_completed: bool,
+          ?event_description: String,
+          ?event_organizer: String,
+          ?event_status: String,
+          ?event_type: String,
+          ?event_url: String,
+          ?external_event_id: String,
+          ?no_shows: Integer,
+          ?registrants: Integer,
+          ?start_date_time: Time
+        ) -> void
+
+        def to_hash: -> {
+          created_at: Time,
+          custom_properties: ::Array[HubspotSDK::Marketing::CRMPropertyWrapper],
+          event_name: String,
+          object_id_: String,
+          updated_at: Time,
+          app_info: HubspotSDK::Marketing::AppInfo,
+          attendees: Integer,
+          cancellations: Integer,
+          end_date_time: Time,
+          event_cancelled: bool,
+          event_completed: bool,
+          event_description: String,
+          event_organizer: String,
+          event_status: String,
+          event_type: String,
+          event_url: String,
+          external_event_id: String,
+          no_shows: Integer,
+          registrants: Integer,
+          start_date_time: Time
+        }
+      end
+    end
+  end
+end

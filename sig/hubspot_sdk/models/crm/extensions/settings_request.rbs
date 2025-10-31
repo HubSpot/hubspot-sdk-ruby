@@ -1,0 +1,78 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Extensions
+        type settings_request =
+          {
+            name: String,
+            url: String,
+            height: Integer,
+            is_ready: bool,
+            supports_custom_objects: bool,
+            supports_inbound_calling: bool,
+            uses_calling_window: bool,
+            uses_remote: bool,
+            width: Integer
+          }
+
+        class SettingsRequest < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor name: String
+
+          attr_accessor url: String
+
+          attr_reader height: Integer?
+
+          def height=: (Integer) -> Integer
+
+          attr_reader is_ready: bool?
+
+          def is_ready=: (bool) -> bool
+
+          attr_reader supports_custom_objects: bool?
+
+          def supports_custom_objects=: (bool) -> bool
+
+          attr_reader supports_inbound_calling: bool?
+
+          def supports_inbound_calling=: (bool) -> bool
+
+          attr_reader uses_calling_window: bool?
+
+          def uses_calling_window=: (bool) -> bool
+
+          attr_reader uses_remote: bool?
+
+          def uses_remote=: (bool) -> bool
+
+          attr_reader width: Integer?
+
+          def width=: (Integer) -> Integer
+
+          def initialize: (
+            name: String,
+            url: String,
+            ?height: Integer,
+            ?is_ready: bool,
+            ?supports_custom_objects: bool,
+            ?supports_inbound_calling: bool,
+            ?uses_calling_window: bool,
+            ?uses_remote: bool,
+            ?width: Integer
+          ) -> void
+
+          def to_hash: -> {
+            name: String,
+            url: String,
+            height: Integer,
+            is_ready: bool,
+            supports_custom_objects: bool,
+            supports_inbound_calling: bool,
+            uses_calling_window: bool,
+            uses_remote: bool,
+            width: Integer
+          }
+        end
+      end
+    end
+  end
+end

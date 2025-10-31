@@ -1,0 +1,44 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type contact_phone =
+        {
+          phone: String,
+          type: HubspotSDK::Models::Conversations::ContactPhone::type_
+        }
+
+      class ContactPhone < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor phone: String
+
+        attr_reader type: HubspotSDK::Models::Conversations::ContactPhone::type_?
+
+        def type=: (
+          HubspotSDK::Models::Conversations::ContactPhone::type_
+        ) -> HubspotSDK::Models::Conversations::ContactPhone::type_
+
+        def initialize: (
+          phone: String,
+          ?type: HubspotSDK::Models::Conversations::ContactPhone::type_
+        ) -> void
+
+        def to_hash: -> {
+          phone: String,
+          type: HubspotSDK::Models::Conversations::ContactPhone::type_
+        }
+
+        type type_ = :CELL | :MAIN | :HOME | :WORK
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          CELL: :CELL
+          MAIN: :MAIN
+          HOME: :HOME
+          WORK: :WORK
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::ContactPhone::type_]
+        end
+      end
+    end
+  end
+end

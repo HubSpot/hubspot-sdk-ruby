@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_connection = { edge_type: String, next_action_id: String }
+
+      class APIConnection < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor edge_type: String
+
+        attr_accessor next_action_id: String
+
+        def initialize: (edge_type: String, next_action_id: String) -> void
+
+        def to_hash: -> { edge_type: String, next_action_id: String }
+      end
+    end
+  end
+end

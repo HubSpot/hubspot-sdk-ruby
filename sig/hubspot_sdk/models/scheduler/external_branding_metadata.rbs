@@ -1,0 +1,144 @@
+module HubspotSDK
+  module Models
+    module Scheduler
+      type external_branding_metadata =
+        {
+          logo_alt_text: String,
+          show_marketing_ad: bool,
+          show_sales_ad: bool,
+          :accent2_color => String,
+          accent_color: String,
+          :company_address_line1 => String,
+          :company_address_line2 => String,
+          company_avatar: String,
+          company_city: String,
+          company_country: String,
+          company_domain: String,
+          company_name: String,
+          company_state: String,
+          company_zip: String,
+          logo_height: Integer,
+          logo_url: String,
+          logo_width: Integer,
+          primary_color: String,
+          secondary_color: String
+        }
+
+      class ExternalBrandingMetadata < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor logo_alt_text: String
+
+        attr_accessor show_marketing_ad: bool
+
+        attr_accessor show_sales_ad: bool
+
+        attr_reader accent2_color: String?
+
+        def accent2_color=: (String) -> String
+
+        attr_reader accent_color: String?
+
+        def accent_color=: (String) -> String
+
+        attr_reader company_address_line1: String?
+
+        def company_address_line1=: (String) -> String
+
+        attr_reader company_address_line2: String?
+
+        def company_address_line2=: (String) -> String
+
+        attr_reader company_avatar: String?
+
+        def company_avatar=: (String) -> String
+
+        attr_reader company_city: String?
+
+        def company_city=: (String) -> String
+
+        attr_reader company_country: String?
+
+        def company_country=: (String) -> String
+
+        attr_reader company_domain: String?
+
+        def company_domain=: (String) -> String
+
+        attr_reader company_name: String?
+
+        def company_name=: (String) -> String
+
+        attr_reader company_state: String?
+
+        def company_state=: (String) -> String
+
+        attr_reader company_zip: String?
+
+        def company_zip=: (String) -> String
+
+        attr_reader logo_height: Integer?
+
+        def logo_height=: (Integer) -> Integer
+
+        attr_reader logo_url: String?
+
+        def logo_url=: (String) -> String
+
+        attr_reader logo_width: Integer?
+
+        def logo_width=: (Integer) -> Integer
+
+        attr_reader primary_color: String?
+
+        def primary_color=: (String) -> String
+
+        attr_reader secondary_color: String?
+
+        def secondary_color=: (String) -> String
+
+        def initialize: (
+          logo_alt_text: String,
+          show_marketing_ad: bool,
+          show_sales_ad: bool,
+          ?accent2_color: String,
+          ?accent_color: String,
+          ?company_address_line1: String,
+          ?company_address_line2: String,
+          ?company_avatar: String,
+          ?company_city: String,
+          ?company_country: String,
+          ?company_domain: String,
+          ?company_name: String,
+          ?company_state: String,
+          ?company_zip: String,
+          ?logo_height: Integer,
+          ?logo_url: String,
+          ?logo_width: Integer,
+          ?primary_color: String,
+          ?secondary_color: String
+        ) -> void
+
+        def to_hash: -> {
+          logo_alt_text: String,
+          show_marketing_ad: bool,
+          show_sales_ad: bool,
+          :accent2_color => String,
+          accent_color: String,
+          :company_address_line1 => String,
+          :company_address_line2 => String,
+          company_avatar: String,
+          company_city: String,
+          company_country: String,
+          company_domain: String,
+          company_name: String,
+          company_state: String,
+          company_zip: String,
+          logo_height: Integer,
+          logo_url: String,
+          logo_width: Integer,
+          primary_color: String,
+          secondary_color: String
+        }
+      end
+    end
+  end
+end

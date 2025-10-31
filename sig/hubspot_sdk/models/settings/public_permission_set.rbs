@@ -1,0 +1,28 @@
+module HubspotSDK
+  module Models
+    module Settings
+      type public_permission_set =
+        { id: String, name: String, requires_billing_write: bool }
+
+      class PublicPermissionSet < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor name: String
+
+        attr_accessor requires_billing_write: bool
+
+        def initialize: (
+          id: String,
+          name: String,
+          requires_billing_write: bool
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          name: String,
+          requires_billing_write: bool
+        }
+      end
+    end
+  end
+end

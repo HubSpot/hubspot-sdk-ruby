@@ -1,0 +1,76 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type single_checkbox_field =
+        {
+          dependent_fields: ::Array[HubspotSDK::Marketing::DependentField],
+          field_type: HubspotSDK::Models::Marketing::SingleCheckboxField::field_type,
+          hidden: bool,
+          label: String,
+          name: String,
+          object_type_id: String,
+          required: bool,
+          default_value: String,
+          description: String
+        }
+
+      class SingleCheckboxField < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor dependent_fields: ::Array[HubspotSDK::Marketing::DependentField]
+
+        attr_accessor field_type: HubspotSDK::Models::Marketing::SingleCheckboxField::field_type
+
+        attr_accessor hidden: bool
+
+        attr_accessor label: String
+
+        attr_accessor name: String
+
+        attr_accessor object_type_id: String
+
+        attr_accessor required: bool
+
+        attr_reader default_value: String?
+
+        def default_value=: (String) -> String
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        def initialize: (
+          dependent_fields: ::Array[HubspotSDK::Marketing::DependentField],
+          field_type: HubspotSDK::Models::Marketing::SingleCheckboxField::field_type,
+          hidden: bool,
+          label: String,
+          name: String,
+          object_type_id: String,
+          required: bool,
+          ?default_value: String,
+          ?description: String
+        ) -> void
+
+        def to_hash: -> {
+          dependent_fields: ::Array[HubspotSDK::Marketing::DependentField],
+          field_type: HubspotSDK::Models::Marketing::SingleCheckboxField::field_type,
+          hidden: bool,
+          label: String,
+          name: String,
+          object_type_id: String,
+          required: bool,
+          default_value: String,
+          description: String
+        }
+
+        type field_type = :single_checkbox
+
+        module FieldType
+          extend HubspotSDK::Internal::Type::Enum
+
+          SINGLE_CHECKBOX: :single_checkbox
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::SingleCheckboxField::field_type]
+        end
+      end
+    end
+  end
+end

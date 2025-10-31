@@ -1,0 +1,28 @@
+module HubspotSDK
+  module Models
+    module Files
+      type folder_update_input_with_id =
+        { id: String, name: String, parent_folder_id: Integer }
+
+      class FolderUpdateInputWithID < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader parent_folder_id: Integer?
+
+        def parent_folder_id=: (Integer) -> Integer
+
+        def initialize: (
+          id: String,
+          ?name: String,
+          ?parent_folder_id: Integer
+        ) -> void
+
+        def to_hash: -> { id: String, name: String, parent_folder_id: Integer }
+      end
+    end
+  end
+end

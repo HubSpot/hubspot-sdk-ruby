@@ -1,0 +1,44 @@
+module HubspotSDK
+  module Models
+    module Auth
+      type token_response_if =
+        {
+          access_token: String,
+          expires_in: Integer,
+          refresh_token: String,
+          token_type: String,
+          id_token: String
+        }
+
+      class TokenResponseIf < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor access_token: String
+
+        attr_accessor expires_in: Integer
+
+        attr_accessor refresh_token: String
+
+        attr_accessor token_type: String
+
+        attr_reader id_token: String?
+
+        def id_token=: (String) -> String
+
+        def initialize: (
+          access_token: String,
+          expires_in: Integer,
+          refresh_token: String,
+          token_type: String,
+          ?id_token: String
+        ) -> void
+
+        def to_hash: -> {
+          access_token: String,
+          expires_in: Integer,
+          refresh_token: String,
+          token_type: String,
+          id_token: String
+        }
+      end
+    end
+  end
+end

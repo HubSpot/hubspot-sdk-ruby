@@ -1,0 +1,31 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class Properties
+        class Batch
+          def create: (
+            String object_type,
+            inputs: ::Array[HubspotSDK::PropertyCreate],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::BatchResponseProperty
+
+          def delete: (
+            String object_type,
+            inputs: ::Array[HubspotSDK::PropertyName],
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def get: (
+            String object_type,
+            archived: bool,
+            inputs: ::Array[HubspotSDK::PropertyName],
+            ?data_sensitivity: HubspotSDK::Models::CRM::BatchReadInputPropertyName::data_sensitivity,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::BatchResponseProperty
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

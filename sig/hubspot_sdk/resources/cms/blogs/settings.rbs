@@ -1,0 +1,76 @@
+module HubspotSDK
+  module Resources
+    class Cms
+      class Blogs
+        class Settings
+          def list: (
+            ?after: String,
+            ?archived: bool,
+            ?created_after: Time,
+            ?created_at: Time,
+            ?created_before: Time,
+            ?limit: Integer,
+            ?sort: ::Array[String],
+            ?updated_after: Time,
+            ?updated_at: Time,
+            ?updated_before: Time,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::Blogs::Blog]
+
+          def attach_to_lang_group: (
+            id: String,
+            language: String,
+            primary_id: String,
+            ?primary_language: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def create_language_variation: (
+            id: String,
+            ?language: String,
+            ?primary_language: String,
+            ?slug: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::Blogs::Blog
+
+          def detach_from_lang_group: (
+            id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def get: (
+            String blog_id,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::Blogs::Blog
+
+          def get_revision: (
+            String revision_id,
+            blog_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::Blogs::VersionBlog
+
+          def list_revisions: (
+            String blog_id,
+            ?after: String,
+            ?before: String,
+            ?limit: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::Blogs::CollectionResponseWithTotalVersionBlog
+
+          def set_new_lang_primary: (
+            id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def update_languages: (
+            languages: ::Hash[Symbol, String],
+            primary_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

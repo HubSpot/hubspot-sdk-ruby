@@ -1,0 +1,53 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      module Emails
+        type statistic_get_params =
+          {
+            email_ids: ::Array[Integer],
+            end_timestamp: String,
+            property: String,
+            start_timestamp: String
+          }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class StatisticGetParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_reader email_ids: ::Array[Integer]?
+
+          def email_ids=: (::Array[Integer]) -> ::Array[Integer]
+
+          attr_reader end_timestamp: String?
+
+          def end_timestamp=: (String) -> String
+
+          attr_reader property: String?
+
+          def property=: (String) -> String
+
+          attr_reader start_timestamp: String?
+
+          def start_timestamp=: (String) -> String
+
+          def initialize: (
+            ?email_ids: ::Array[Integer],
+            ?end_timestamp: String,
+            ?property: String,
+            ?start_timestamp: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            email_ids: ::Array[Integer],
+            end_timestamp: String,
+            property: String,
+            start_timestamp: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

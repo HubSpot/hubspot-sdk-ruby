@@ -1,0 +1,15 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type color_stop = { color: HubspotSDK::Cms::RgbaColor }
+
+      class ColorStop < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor color: HubspotSDK::Cms::RgbaColor
+
+        def initialize: (color: HubspotSDK::Cms::RgbaColor) -> void
+
+        def to_hash: -> { color: HubspotSDK::Cms::RgbaColor }
+      end
+    end
+  end
+end

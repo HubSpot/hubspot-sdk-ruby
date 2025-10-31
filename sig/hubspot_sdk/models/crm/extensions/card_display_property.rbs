@@ -1,0 +1,66 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Extensions
+        type card_display_property =
+          {
+            data_type: HubspotSDK::Models::CRM::Extensions::CardDisplayProperty::data_type,
+            label: String,
+            name: String,
+            options: ::Array[HubspotSDK::CRM::Extensions::DisplayOption]
+          }
+
+        class CardDisplayProperty < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor data_type: HubspotSDK::Models::CRM::Extensions::CardDisplayProperty::data_type
+
+          attr_accessor label: String
+
+          attr_accessor name: String
+
+          attr_accessor options: ::Array[HubspotSDK::CRM::Extensions::DisplayOption]
+
+          def initialize: (
+            data_type: HubspotSDK::Models::CRM::Extensions::CardDisplayProperty::data_type,
+            label: String,
+            name: String,
+            options: ::Array[HubspotSDK::CRM::Extensions::DisplayOption]
+          ) -> void
+
+          def to_hash: -> {
+            data_type: HubspotSDK::Models::CRM::Extensions::CardDisplayProperty::data_type,
+            label: String,
+            name: String,
+            options: ::Array[HubspotSDK::CRM::Extensions::DisplayOption]
+          }
+
+          type data_type =
+            :BOOLEAN
+            | :CURRENCY
+            | :DATE
+            | :DATETIME
+            | :EMAIL
+            | :LINK
+            | :NUMERIC
+            | :STRING
+            | :STATUS
+
+          module DataType
+            extend HubspotSDK::Internal::Type::Enum
+
+            BOOLEAN: :BOOLEAN
+            CURRENCY: :CURRENCY
+            DATE: :DATE
+            DATETIME: :DATETIME
+            EMAIL: :EMAIL
+            LINK: :LINK
+            NUMERIC: :NUMERIC
+            STRING: :STRING
+            STATUS: :STATUS
+
+            def self?.values: -> ::Array[HubspotSDK::Models::CRM::Extensions::CardDisplayProperty::data_type]
+          end
+        end
+      end
+    end
+  end
+end

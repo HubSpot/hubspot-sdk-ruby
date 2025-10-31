@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type unenrollment_settings_response =
+        {
+          email_settings: HubspotSDK::Automation::EmailSettingsResponse,
+          meeting_settings: HubspotSDK::Automation::MeetingSettingsResponse
+        }
+
+      class UnenrollmentSettingsResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor email_settings: HubspotSDK::Automation::EmailSettingsResponse
+
+        attr_accessor meeting_settings: HubspotSDK::Automation::MeetingSettingsResponse
+
+        def initialize: (
+          email_settings: HubspotSDK::Automation::EmailSettingsResponse,
+          meeting_settings: HubspotSDK::Automation::MeetingSettingsResponse
+        ) -> void
+
+        def to_hash: -> {
+          email_settings: HubspotSDK::Automation::EmailSettingsResponse,
+          meeting_settings: HubspotSDK::Automation::MeetingSettingsResponse
+        }
+      end
+    end
+  end
+end

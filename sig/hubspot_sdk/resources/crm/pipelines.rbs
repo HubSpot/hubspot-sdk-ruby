@@ -1,0 +1,66 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class Pipelines
+        attr_reader stages: HubspotSDK::Resources::CRM::Pipelines::Stages
+
+        def create: (
+          String object_type,
+          display_order: Integer,
+          label: String,
+          stages: ::Array[HubspotSDK::CRM::PipelineStageInput],
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::CRM::Pipeline
+
+        def update: (
+          String pipeline_id,
+          object_type: String,
+          ?validate_deal_stage_usages_before_delete: bool,
+          ?validate_references_before_delete: bool,
+          ?archived: bool,
+          ?display_order: Integer,
+          ?label: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::CRM::Pipeline
+
+        def list: (
+          String object_type,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::CRM::CollectionResponsePipelineNoPaging
+
+        def delete: (
+          String pipeline_id,
+          object_type: String,
+          ?validate_deal_stage_usages_before_delete: bool,
+          ?validate_references_before_delete: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def get: (
+          String pipeline_id,
+          object_type: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::CRM::Pipeline
+
+        def get_audit: (
+          String pipeline_id,
+          object_type: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::CRM::CollectionResponsePublicAuditInfoNoPaging
+
+        def replace: (
+          String pipeline_id,
+          object_type: String,
+          display_order: Integer,
+          label: String,
+          stages: ::Array[HubspotSDK::CRM::PipelineStageInput],
+          ?validate_deal_stage_usages_before_delete: bool,
+          ?validate_references_before_delete: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::CRM::Pipeline
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

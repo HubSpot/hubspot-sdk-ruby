@@ -1,0 +1,22 @@
+module HubspotSDK
+  module Models
+    module Webhooks
+      type batch_input_subscription_batch_update_request =
+        {
+          inputs: ::Array[HubspotSDK::Webhooks::SubscriptionBatchUpdateRequest]
+        }
+
+      class BatchInputSubscriptionBatchUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubspotSDK::Webhooks::SubscriptionBatchUpdateRequest]
+
+        def initialize: (
+          inputs: ::Array[HubspotSDK::Webhooks::SubscriptionBatchUpdateRequest]
+        ) -> void
+
+        def to_hash: -> {
+          inputs: ::Array[HubspotSDK::Webhooks::SubscriptionBatchUpdateRequest]
+        }
+      end
+    end
+  end
+end

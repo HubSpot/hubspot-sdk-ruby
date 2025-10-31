@@ -1,0 +1,46 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class Associations
+        class Schema
+          class V4
+            class Definitions
+              def create: (
+                String to_object_type,
+                from_object_type: String,
+                label: String,
+                name: String,
+                ?inverse_label: String,
+                ?request_options: HubspotSDK::request_opts
+              ) -> HubspotSDK::CRM::Associations::Schema::CollectionResponseAssociationSpecWithLabelNoPaging
+
+              def update: (
+                String to_object_type,
+                from_object_type: String,
+                association_type_id: Integer,
+                label: String,
+                ?inverse_label: String,
+                ?request_options: HubspotSDK::request_opts
+              ) -> nil
+
+              def list: (
+                String to_object_type,
+                from_object_type: String,
+                ?request_options: HubspotSDK::request_opts
+              ) -> HubspotSDK::CRM::Associations::Schema::CollectionResponseAssociationSpecWithLabelNoPaging
+
+              def delete: (
+                Integer association_type_id,
+                from_object_type: String,
+                to_object_type: String,
+                ?request_options: HubspotSDK::request_opts
+              ) -> nil
+
+              def initialize: (client: HubspotSDK::Client) -> void
+            end
+          end
+        end
+      end
+    end
+  end
+end

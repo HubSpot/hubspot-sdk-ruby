@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type property_group =
+        { archived: bool, label: String, name: String, display_order: Integer }
+
+      class PropertyGroup < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor archived: bool
+
+        attr_accessor label: String
+
+        attr_accessor name: String
+
+        attr_reader display_order: Integer?
+
+        def display_order=: (Integer) -> Integer
+
+        def initialize: (
+          archived: bool,
+          label: String,
+          name: String,
+          ?display_order: Integer
+        ) -> void
+
+        def to_hash: -> {
+          archived: bool,
+          label: String,
+          name: String,
+          display_order: Integer
+        }
+      end
+    end
+  end
+end

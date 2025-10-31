@@ -1,0 +1,50 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type owner_get_params =
+        {
+          archived: bool,
+          id_property: HubspotSDK::Models::CRM::OwnerGetParams::id_property
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class OwnerGetParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_reader archived: bool?
+
+        def archived=: (bool) -> bool
+
+        attr_reader id_property: HubspotSDK::Models::CRM::OwnerGetParams::id_property?
+
+        def id_property=: (
+          HubspotSDK::Models::CRM::OwnerGetParams::id_property
+        ) -> HubspotSDK::Models::CRM::OwnerGetParams::id_property
+
+        def initialize: (
+          ?archived: bool,
+          ?id_property: HubspotSDK::Models::CRM::OwnerGetParams::id_property,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          archived: bool,
+          id_property: HubspotSDK::Models::CRM::OwnerGetParams::id_property,
+          request_options: HubspotSDK::RequestOptions
+        }
+
+        type id_property = :id | :userId
+
+        module IDProperty
+          extend HubspotSDK::Internal::Type::Enum
+
+          ID: :id
+          USER_ID: :userId
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CRM::OwnerGetParams::id_property]
+        end
+      end
+    end
+  end
+end

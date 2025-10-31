@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type multi_associated_object_with_label =
+        {
+          association_types: ::Array[HubspotSDK::CRM::Associations::AssociationSpecWithLabel1],
+          to_object_id: String
+        }
+
+      class MultiAssociatedObjectWithLabel < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor association_types: ::Array[HubspotSDK::CRM::Associations::AssociationSpecWithLabel1]
+
+        attr_accessor to_object_id: String
+
+        def initialize: (
+          association_types: ::Array[HubspotSDK::CRM::Associations::AssociationSpecWithLabel1],
+          to_object_id: String
+        ) -> void
+
+        def to_hash: -> {
+          association_types: ::Array[HubspotSDK::CRM::Associations::AssociationSpecWithLabel1],
+          to_object_id: String
+        }
+      end
+    end
+  end
+end

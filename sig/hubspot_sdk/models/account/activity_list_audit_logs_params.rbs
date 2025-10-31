@@ -1,0 +1,65 @@
+module HubspotSDK
+  module Models
+    module Account
+      type activity_list_audit_logs_params =
+        {
+          acting_user_id: ::Array[Integer],
+          after: String,
+          limit: Integer,
+          occurred_after: Time,
+          occurred_before: Time,
+          sort: ::Array[String]
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class ActivityListAuditLogsParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_reader acting_user_id: ::Array[Integer]?
+
+        def acting_user_id=: (::Array[Integer]) -> ::Array[Integer]
+
+        attr_reader after: String?
+
+        def after=: (String) -> String
+
+        attr_reader limit: Integer?
+
+        def limit=: (Integer) -> Integer
+
+        attr_reader occurred_after: Time?
+
+        def occurred_after=: (Time) -> Time
+
+        attr_reader occurred_before: Time?
+
+        def occurred_before=: (Time) -> Time
+
+        attr_reader sort: ::Array[String]?
+
+        def sort=: (::Array[String]) -> ::Array[String]
+
+        def initialize: (
+          ?acting_user_id: ::Array[Integer],
+          ?after: String,
+          ?limit: Integer,
+          ?occurred_after: Time,
+          ?occurred_before: Time,
+          ?sort: ::Array[String],
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          acting_user_id: ::Array[Integer],
+          after: String,
+          limit: Integer,
+          occurred_after: Time,
+          occurred_before: Time,
+          sort: ::Array[String],
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

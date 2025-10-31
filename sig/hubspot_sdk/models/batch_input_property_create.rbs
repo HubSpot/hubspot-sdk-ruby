@@ -1,0 +1,14 @@
+module HubspotSDK
+  module Models
+    type batch_input_property_create =
+      { inputs: ::Array[HubspotSDK::PropertyCreate] }
+
+    class BatchInputPropertyCreate < HubspotSDK::Internal::Type::BaseModel
+      attr_accessor inputs: ::Array[HubspotSDK::PropertyCreate]
+
+      def initialize: (inputs: ::Array[HubspotSDK::PropertyCreate]) -> void
+
+      def to_hash: -> { inputs: ::Array[HubspotSDK::PropertyCreate] }
+    end
+  end
+end

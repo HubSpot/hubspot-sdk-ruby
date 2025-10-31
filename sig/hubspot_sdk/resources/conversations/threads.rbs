@@ -1,0 +1,30 @@
+module HubspotSDK
+  module Resources
+    class Conversations
+      class Threads
+        def update: (
+          String thread_id,
+          ?archived: bool,
+          ?status: HubspotSDK::Models::Conversations::PublicThreadUpdateRequest::status,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Conversations::PublicThread
+
+        def list: (
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Conversations::CollectionResponsePublicThreadForwardPaging
+
+        def delete: (
+          String thread_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def get: (
+          String thread_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Conversations::PublicThread
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

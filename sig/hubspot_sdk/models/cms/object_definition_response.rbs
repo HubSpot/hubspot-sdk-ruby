@@ -1,0 +1,46 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type object_definition_response =
+        {
+          object_type_id: String,
+          object_type_name: String,
+          properties: ::Array[HubspotSDK::Cms::PropertyDefinition],
+          property_groups: ::Array[HubspotSDK::Cms::GroupView],
+          schema: HubspotSDK::Cms::InboundDBObjectType
+        }
+
+      class ObjectDefinitionResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor object_type_id: String
+
+        attr_accessor object_type_name: String
+
+        attr_accessor properties: ::Array[HubspotSDK::Cms::PropertyDefinition]
+
+        attr_accessor property_groups: ::Array[HubspotSDK::Cms::GroupView]
+
+        attr_reader schema: HubspotSDK::Cms::InboundDBObjectType?
+
+        def schema=: (
+          HubspotSDK::Cms::InboundDBObjectType
+        ) -> HubspotSDK::Cms::InboundDBObjectType
+
+        def initialize: (
+          object_type_id: String,
+          object_type_name: String,
+          properties: ::Array[HubspotSDK::Cms::PropertyDefinition],
+          property_groups: ::Array[HubspotSDK::Cms::GroupView],
+          ?schema: HubspotSDK::Cms::InboundDBObjectType
+        ) -> void
+
+        def to_hash: -> {
+          object_type_id: String,
+          object_type_name: String,
+          properties: ::Array[HubspotSDK::Cms::PropertyDefinition],
+          property_groups: ::Array[HubspotSDK::Cms::GroupView],
+          schema: HubspotSDK::Cms::InboundDBObjectType
+        }
+      end
+    end
+  end
+end

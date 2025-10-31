@@ -1,0 +1,19 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class Extensions
+        class Calling
+          attr_reader channel_connection_settings: HubspotSDK::Resources::CRM::Extensions::Calling::ChannelConnectionSettings
+
+          attr_reader recording_settings: HubspotSDK::Resources::CRM::Extensions::Calling::RecordingSettings
+
+          attr_reader settings: HubspotSDK::Resources::CRM::Extensions::Calling::Settings
+
+          attr_reader transcripts: HubspotSDK::Resources::CRM::Extensions::Calling::Transcripts
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

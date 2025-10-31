@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type created_response_property =
+        {
+          created_resource_id: String,
+          entity: HubspotSDK::Property,
+          location: String
+        }
+
+      class CreatedResponseProperty < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor created_resource_id: String
+
+        attr_accessor entity: HubspotSDK::Property
+
+        attr_reader location: String?
+
+        def location=: (String) -> String
+
+        def initialize: (
+          created_resource_id: String,
+          entity: HubspotSDK::Property,
+          ?location: String
+        ) -> void
+
+        def to_hash: -> {
+          created_resource_id: String,
+          entity: HubspotSDK::Property,
+          location: String
+        }
+      end
+    end
+  end
+end

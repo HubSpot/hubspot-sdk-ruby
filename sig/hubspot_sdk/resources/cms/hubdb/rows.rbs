@@ -1,0 +1,94 @@
+module HubspotSDK
+  module Resources
+    class Cms
+      class Hubdb
+        class Rows
+          attr_reader batch: HubspotSDK::Resources::Cms::Hubdb::Rows::Batch
+
+          def create: (
+            String table_id_or_name,
+            values: ::Hash[Symbol, top],
+            ?child_table_id: Integer,
+            ?display_index: Integer,
+            ?name: String,
+            ?path: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::HubDBTableRowV3
+
+          def list: (
+            String table_id_or_name,
+            ?after: String,
+            ?archived: bool,
+            ?limit: Integer,
+            ?offset: Integer,
+            ?properties: ::Array[String],
+            ?sort: ::Array[String],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Internal::Page[top]
+
+          def clone_draft: (
+            String row_id,
+            table_id_or_name: String,
+            ?name: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::HubDBTableRowV3
+
+          def delete_draft: (
+            String row_id,
+            table_id_or_name: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def get: (
+            String row_id,
+            table_id_or_name: String,
+            ?archived: bool,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::HubDBTableRowV3
+
+          def get_draft: (
+            String row_id,
+            table_id_or_name: String,
+            ?archived: bool,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::HubDBTableRowV3
+
+          def list_draft: (
+            String table_id_or_name,
+            ?after: String,
+            ?archived: bool,
+            ?limit: Integer,
+            ?offset: Integer,
+            ?properties: ::Array[String],
+            ?sort: ::Array[String],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Models::Cms::unified_collection_response_with_total_base_hub_db_table_row_v3
+
+          def replace_draft: (
+            String row_id,
+            table_id_or_name: String,
+            values: ::Hash[Symbol, top],
+            ?child_table_id: Integer,
+            ?display_index: Integer,
+            ?name: String,
+            ?path: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::HubDBTableRowV3
+
+          def update_draft: (
+            String row_id,
+            table_id_or_name: String,
+            values: ::Hash[Symbol, top],
+            ?child_table_id: Integer,
+            ?display_index: Integer,
+            ?name: String,
+            ?path: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::HubDBTableRowV3
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

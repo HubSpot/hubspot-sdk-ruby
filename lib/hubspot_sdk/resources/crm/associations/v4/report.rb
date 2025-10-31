@@ -1,0 +1,40 @@
+# frozen_string_literal: true
+
+module HubspotSDK
+  module Resources
+    class CRM
+      class Associations
+        class V4
+          class Report
+            # Requests a report of all objects in the portal which have a high usage of
+            # associations
+            #
+            # @overload get_high_usage_report(user_id, request_options: {})
+            #
+            # @param user_id [Integer]
+            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            #
+            # @return [HubspotSDK::Models::CRM::Associations::ReportCreationResponse]
+            #
+            # @see HubspotSDK::Models::CRM::Associations::V4::ReportGetHighUsageReportParams
+            def get_high_usage_report(user_id, params = {})
+              @client.request(
+                method: :post,
+                path: ["crm/v4/associations/usage/high-usage-report/%1$s", user_id],
+                model: HubspotSDK::CRM::Associations::ReportCreationResponse,
+                options: params[:request_options]
+              )
+            end
+
+            # @api private
+            #
+            # @param client [HubspotSDK::Client]
+            def initialize(client:)
+              @client = client
+            end
+          end
+        end
+      end
+    end
+  end
+end

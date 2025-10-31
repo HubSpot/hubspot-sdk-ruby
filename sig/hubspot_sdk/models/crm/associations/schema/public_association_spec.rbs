@@ -1,0 +1,21 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Associations
+        module Schema
+          type public_association_spec = { category: String, type_id: Integer }
+
+          class PublicAssociationSpec < HubspotSDK::Internal::Type::BaseModel
+            attr_accessor category: String
+
+            attr_accessor type_id: Integer
+
+            def initialize: (category: String, type_id: Integer) -> void
+
+            def to_hash: -> { category: String, type_id: Integer }
+          end
+        end
+      end
+    end
+  end
+end

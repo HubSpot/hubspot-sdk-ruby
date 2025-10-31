@@ -1,0 +1,41 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type public_channel_integration_message_update_request =
+        {
+          status_type: HubspotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest::status_type,
+          error_message: String
+        }
+
+      class PublicChannelIntegrationMessageUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor status_type: HubspotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest::status_type
+
+        attr_reader error_message: String?
+
+        def error_message=: (String) -> String
+
+        def initialize: (
+          status_type: HubspotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest::status_type,
+          ?error_message: String
+        ) -> void
+
+        def to_hash: -> {
+          status_type: HubspotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest::status_type,
+          error_message: String
+        }
+
+        type status_type = :SENT | :FAILED | :READ
+
+        module StatusType
+          extend HubspotSDK::Internal::Type::Enum
+
+          SENT: :SENT
+          FAILED: :FAILED
+          READ: :READ
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest::status_type]
+        end
+      end
+    end
+  end
+end

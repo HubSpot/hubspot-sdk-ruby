@@ -1,0 +1,24 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type email_field_validation =
+        { blocked_email_domains: ::Array[String], use_default_block_list: bool }
+
+      class EmailFieldValidation < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor blocked_email_domains: ::Array[String]
+
+        attr_accessor use_default_block_list: bool
+
+        def initialize: (
+          blocked_email_domains: ::Array[String],
+          use_default_block_list: bool
+        ) -> void
+
+        def to_hash: -> {
+          blocked_email_domains: ::Array[String],
+          use_default_block_list: bool
+        }
+      end
+    end
+  end
+end

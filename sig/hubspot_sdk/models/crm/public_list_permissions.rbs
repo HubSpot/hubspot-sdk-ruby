@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type public_list_permissions =
+        {
+          teams_with_edit_access: ::Array[Integer],
+          users_with_edit_access: ::Array[Integer]
+        }
+
+      class PublicListPermissions < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor teams_with_edit_access: ::Array[Integer]
+
+        attr_accessor users_with_edit_access: ::Array[Integer]
+
+        def initialize: (
+          teams_with_edit_access: ::Array[Integer],
+          users_with_edit_access: ::Array[Integer]
+        ) -> void
+
+        def to_hash: -> {
+          teams_with_edit_access: ::Array[Integer],
+          users_with_edit_access: ::Array[Integer]
+        }
+      end
+    end
+  end
+end

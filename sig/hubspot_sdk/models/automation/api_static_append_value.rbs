@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_static_append_value =
+        {
+          static_append_value: String,
+          type: HubspotSDK::Models::Automation::APIStaticAppendValue::type_
+        }
+
+      class APIStaticAppendValue < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor static_append_value: String
+
+        attr_accessor type: HubspotSDK::Models::Automation::APIStaticAppendValue::type_
+
+        def initialize: (
+          static_append_value: String,
+          type: HubspotSDK::Models::Automation::APIStaticAppendValue::type_
+        ) -> void
+
+        def to_hash: -> {
+          static_append_value: String,
+          type: HubspotSDK::Models::Automation::APIStaticAppendValue::type_
+        }
+
+        type type_ = :STATIC_APPEND_VALUE
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          STATIC_APPEND_VALUE: :STATIC_APPEND_VALUE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIStaticAppendValue::type_]
+        end
+      end
+    end
+  end
+end

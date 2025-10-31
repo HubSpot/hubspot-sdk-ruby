@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type list_list_params =
+        { include_filters: bool, list_ids: ::Array[String] }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class ListListParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_reader include_filters: bool?
+
+        def include_filters=: (bool) -> bool
+
+        attr_reader list_ids: ::Array[String]?
+
+        def list_ids=: (::Array[String]) -> ::Array[String]
+
+        def initialize: (
+          ?include_filters: bool,
+          ?list_ids: ::Array[String],
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          include_filters: bool,
+          list_ids: ::Array[String],
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

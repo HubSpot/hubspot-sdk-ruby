@@ -1,0 +1,82 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      module Emails
+        type statistic_get_histogram_params =
+          {
+            email_ids: ::Array[Integer],
+            end_timestamp: String,
+            interval: HubspotSDK::Models::Marketing::Emails::StatisticGetHistogramParams::interval,
+            start_timestamp: String
+          }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class StatisticGetHistogramParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_reader email_ids: ::Array[Integer]?
+
+          def email_ids=: (::Array[Integer]) -> ::Array[Integer]
+
+          attr_reader end_timestamp: String?
+
+          def end_timestamp=: (String) -> String
+
+          attr_reader interval: HubspotSDK::Models::Marketing::Emails::StatisticGetHistogramParams::interval?
+
+          def interval=: (
+            HubspotSDK::Models::Marketing::Emails::StatisticGetHistogramParams::interval
+          ) -> HubspotSDK::Models::Marketing::Emails::StatisticGetHistogramParams::interval
+
+          attr_reader start_timestamp: String?
+
+          def start_timestamp=: (String) -> String
+
+          def initialize: (
+            ?email_ids: ::Array[Integer],
+            ?end_timestamp: String,
+            ?interval: HubspotSDK::Models::Marketing::Emails::StatisticGetHistogramParams::interval,
+            ?start_timestamp: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            email_ids: ::Array[Integer],
+            end_timestamp: String,
+            interval: HubspotSDK::Models::Marketing::Emails::StatisticGetHistogramParams::interval,
+            start_timestamp: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+
+          type interval =
+            :YEAR
+            | :QUARTER
+            | :MONTH
+            | :WEEK
+            | :DAY
+            | :HOUR
+            | :QUARTER_HOUR
+            | :MINUTE
+            | :SECOND
+
+          module Interval
+            extend HubspotSDK::Internal::Type::Enum
+
+            YEAR: :YEAR
+            QUARTER: :QUARTER
+            MONTH: :MONTH
+            WEEK: :WEEK
+            DAY: :DAY
+            HOUR: :HOUR
+            QUARTER_HOUR: :QUARTER_HOUR
+            MINUTE: :MINUTE
+            SECOND: :SECOND
+
+            def self?.values: -> ::Array[HubspotSDK::Models::Marketing::Emails::StatisticGetHistogramParams::interval]
+          end
+        end
+      end
+    end
+  end
+end

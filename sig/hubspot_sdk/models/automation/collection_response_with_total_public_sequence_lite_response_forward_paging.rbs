@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type collection_response_with_total_public_sequence_lite_response_forward_paging =
+        {
+          results: ::Array[HubspotSDK::Automation::PublicSequenceLiteResponse],
+          total: Integer,
+          paging: HubspotSDK::ForwardPaging
+        }
+
+      class CollectionResponseWithTotalPublicSequenceLiteResponseForwardPaging < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubspotSDK::Automation::PublicSequenceLiteResponse]
+
+        attr_accessor total: Integer
+
+        attr_reader paging: HubspotSDK::ForwardPaging?
+
+        def paging=: (HubspotSDK::ForwardPaging) -> HubspotSDK::ForwardPaging
+
+        def initialize: (
+          results: ::Array[HubspotSDK::Automation::PublicSequenceLiteResponse],
+          total: Integer,
+          ?paging: HubspotSDK::ForwardPaging
+        ) -> void
+
+        def to_hash: -> {
+          results: ::Array[HubspotSDK::Automation::PublicSequenceLiteResponse],
+          total: Integer,
+          paging: HubspotSDK::ForwardPaging
+        }
+      end
+    end
+  end
+end

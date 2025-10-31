@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type associated_id = { id: String, type: String }
+
+      class AssociatedID < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor type: String
+
+        def initialize: (id: String, type: String) -> void
+
+        def to_hash: -> { id: String, type: String }
+      end
+    end
+  end
+end

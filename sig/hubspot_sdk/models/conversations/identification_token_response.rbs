@@ -1,0 +1,15 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type identification_token_response = { token: String }
+
+      class IdentificationTokenResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor token: String
+
+        def initialize: (token: String) -> void
+
+        def to_hash: -> { token: String }
+      end
+    end
+  end
+end

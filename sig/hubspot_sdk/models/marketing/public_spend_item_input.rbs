@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type public_spend_item_input =
+        { amount: Float, name: String, order: Integer, description: String }
+
+      class PublicSpendItemInput < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor amount: Float
+
+        attr_accessor name: String
+
+        attr_accessor order: Integer
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        def initialize: (
+          amount: Float,
+          name: String,
+          order: Integer,
+          ?description: String
+        ) -> void
+
+        def to_hash: -> {
+          amount: Float,
+          name: String,
+          order: Integer,
+          description: String
+        }
+      end
+    end
+  end
+end

@@ -1,0 +1,39 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      attr_reader app_uninstalls: HubspotSDK::Resources::CRM::AppUninstalls
+
+      attr_reader associations: HubspotSDK::Resources::CRM::Associations
+
+      attr_reader exports: HubspotSDK::Resources::CRM::Exports
+
+      attr_reader extensions: HubspotSDK::Resources::CRM::Extensions
+
+      attr_reader feature_flags: HubspotSDK::Resources::CRM::FeatureFlags
+
+      attr_reader imports: HubspotSDK::Resources::CRM::Imports
+
+      attr_reader limits: HubspotSDK::Resources::CRM::Limits
+
+      attr_reader lists: HubspotSDK::Resources::CRM::Lists
+
+      attr_reader object_library: HubspotSDK::Resources::CRM::ObjectLibrary
+
+      attr_reader objects: HubspotSDK::Resources::CRM::Objects
+
+      attr_reader owners: HubspotSDK::Resources::CRM::Owners
+
+      attr_reader pipelines: HubspotSDK::Resources::CRM::Pipelines
+
+      attr_reader properties: HubspotSDK::Resources::CRM::Properties
+
+      attr_reader property_validations: HubspotSDK::Resources::CRM::PropertyValidations
+
+      attr_reader timeline: HubspotSDK::Resources::CRM::Timeline
+
+      attr_reader users: HubspotSDK::Resources::CRM::Users
+
+      def initialize: (client: HubspotSDK::Client) -> void
+    end
+  end
+end

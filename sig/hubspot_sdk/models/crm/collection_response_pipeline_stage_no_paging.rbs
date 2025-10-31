@@ -1,0 +1,18 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type collection_response_pipeline_stage_no_paging =
+        { results: ::Array[HubspotSDK::CRM::PipelineStage] }
+
+      class CollectionResponsePipelineStageNoPaging < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubspotSDK::CRM::PipelineStage]
+
+        def initialize: (
+          results: ::Array[HubspotSDK::CRM::PipelineStage]
+        ) -> void
+
+        def to_hash: -> { results: ::Array[HubspotSDK::CRM::PipelineStage] }
+      end
+    end
+  end
+end

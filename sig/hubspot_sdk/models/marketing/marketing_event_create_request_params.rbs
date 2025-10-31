@@ -1,0 +1,95 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type marketing_event_create_request_params =
+        {
+          event_name: String,
+          event_organizer: String,
+          external_account_id: String,
+          external_event_id: String,
+          custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
+          end_date_time: Time,
+          event_cancelled: bool,
+          event_completed: bool,
+          event_description: String,
+          event_type: String,
+          event_url: String,
+          start_date_time: Time
+        }
+
+      class MarketingEventCreateRequestParams < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor event_name: String
+
+        attr_accessor event_organizer: String
+
+        attr_accessor external_account_id: String
+
+        attr_accessor external_event_id: String
+
+        attr_reader custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue]?
+
+        def custom_properties=: (
+          ::Array[HubspotSDK::Marketing::PropertyValue]
+        ) -> ::Array[HubspotSDK::Marketing::PropertyValue]
+
+        attr_reader end_date_time: Time?
+
+        def end_date_time=: (Time) -> Time
+
+        attr_reader event_cancelled: bool?
+
+        def event_cancelled=: (bool) -> bool
+
+        attr_reader event_completed: bool?
+
+        def event_completed=: (bool) -> bool
+
+        attr_reader event_description: String?
+
+        def event_description=: (String) -> String
+
+        attr_reader event_type: String?
+
+        def event_type=: (String) -> String
+
+        attr_reader event_url: String?
+
+        def event_url=: (String) -> String
+
+        attr_reader start_date_time: Time?
+
+        def start_date_time=: (Time) -> Time
+
+        def initialize: (
+          event_name: String,
+          event_organizer: String,
+          external_account_id: String,
+          external_event_id: String,
+          ?custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
+          ?end_date_time: Time,
+          ?event_cancelled: bool,
+          ?event_completed: bool,
+          ?event_description: String,
+          ?event_type: String,
+          ?event_url: String,
+          ?start_date_time: Time
+        ) -> void
+
+        def to_hash: -> {
+          event_name: String,
+          event_organizer: String,
+          external_account_id: String,
+          external_event_id: String,
+          custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
+          end_date_time: Time,
+          event_cancelled: bool,
+          event_completed: bool,
+          event_description: String,
+          event_type: String,
+          event_url: String,
+          start_date_time: Time
+        }
+      end
+    end
+  end
+end

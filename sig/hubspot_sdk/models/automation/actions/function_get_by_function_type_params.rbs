@@ -1,0 +1,49 @@
+module HubspotSDK
+  module Models
+    module Automation
+      module Actions
+        type function_get_by_function_type_params =
+          { app_id: Integer, definition_id: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class FunctionGetByFunctionTypeParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor app_id: Integer
+
+          attr_accessor definition_id: String
+
+          def initialize: (
+            app_id: Integer,
+            definition_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            app_id: Integer,
+            definition_id: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+
+          type function_type =
+            :PRE_ACTION_EXECUTION
+            | :PRE_FETCH_OPTIONS
+            | :POST_FETCH_OPTIONS
+            | :POST_ACTION_EXECUTION
+
+          module FunctionType
+            extend HubspotSDK::Internal::Type::Enum
+
+            PRE_ACTION_EXECUTION: :PRE_ACTION_EXECUTION
+            PRE_FETCH_OPTIONS: :PRE_FETCH_OPTIONS
+            POST_FETCH_OPTIONS: :POST_FETCH_OPTIONS
+            POST_ACTION_EXECUTION: :POST_ACTION_EXECUTION
+
+            def self?.values: -> ::Array[HubspotSDK::Models::Automation::Actions::FunctionGetByFunctionTypeParams::function_type]
+          end
+        end
+      end
+    end
+  end
+end

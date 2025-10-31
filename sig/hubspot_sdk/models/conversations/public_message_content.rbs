@@ -1,0 +1,21 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type public_message_content = { rich_text: String, text: String }
+
+      class PublicMessageContent < HubspotSDK::Internal::Type::BaseModel
+        attr_reader rich_text: String?
+
+        def rich_text=: (String) -> String
+
+        attr_reader text: String?
+
+        def text=: (String) -> String
+
+        def initialize: (?rich_text: String, ?text: String) -> void
+
+        def to_hash: -> { rich_text: String, text: String }
+      end
+    end
+  end
+end

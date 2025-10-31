@@ -1,0 +1,179 @@
+module HubspotSDK
+  module Models
+    module Files
+      type file =
+        {
+          id: String,
+          access: HubspotSDK::Models::Files::File::access,
+          archived: bool,
+          created_at: Time,
+          updated_at: Time,
+          archived_at: Time,
+          default_hosting_url: String,
+          encoding: String,
+          expires_at: Integer,
+          extension: String,
+          :file_md5 => String,
+          height: Integer,
+          is_usable_in_content: bool,
+          name: String,
+          parent_folder_id: String,
+          path: String,
+          size: Integer,
+          source_group: String,
+          type: String,
+          url: String,
+          width: Integer
+        }
+
+      class File < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor access: HubspotSDK::Models::Files::File::access
+
+        attr_accessor archived: bool
+
+        attr_accessor created_at: Time
+
+        attr_accessor updated_at: Time
+
+        attr_reader archived_at: Time?
+
+        def archived_at=: (Time) -> Time
+
+        attr_reader default_hosting_url: String?
+
+        def default_hosting_url=: (String) -> String
+
+        attr_reader encoding: String?
+
+        def encoding=: (String) -> String
+
+        attr_reader expires_at: Integer?
+
+        def expires_at=: (Integer) -> Integer
+
+        attr_reader extension: String?
+
+        def extension=: (String) -> String
+
+        attr_reader file_md5: String?
+
+        def file_md5=: (String) -> String
+
+        attr_reader height: Integer?
+
+        def height=: (Integer) -> Integer
+
+        attr_reader is_usable_in_content: bool?
+
+        def is_usable_in_content=: (bool) -> bool
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader parent_folder_id: String?
+
+        def parent_folder_id=: (String) -> String
+
+        attr_reader path: String?
+
+        def path=: (String) -> String
+
+        attr_reader size: Integer?
+
+        def size=: (Integer) -> Integer
+
+        attr_reader source_group: String?
+
+        def source_group=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        attr_reader url: String?
+
+        def url=: (String) -> String
+
+        attr_reader width: Integer?
+
+        def width=: (Integer) -> Integer
+
+        def initialize: (
+          id: String,
+          access: HubspotSDK::Models::Files::File::access,
+          archived: bool,
+          created_at: Time,
+          updated_at: Time,
+          ?archived_at: Time,
+          ?default_hosting_url: String,
+          ?encoding: String,
+          ?expires_at: Integer,
+          ?extension: String,
+          ?file_md5: String,
+          ?height: Integer,
+          ?is_usable_in_content: bool,
+          ?name: String,
+          ?parent_folder_id: String,
+          ?path: String,
+          ?size: Integer,
+          ?source_group: String,
+          ?type: String,
+          ?url: String,
+          ?width: Integer
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          access: HubspotSDK::Models::Files::File::access,
+          archived: bool,
+          created_at: Time,
+          updated_at: Time,
+          archived_at: Time,
+          default_hosting_url: String,
+          encoding: String,
+          expires_at: Integer,
+          extension: String,
+          :file_md5 => String,
+          height: Integer,
+          is_usable_in_content: bool,
+          name: String,
+          parent_folder_id: String,
+          path: String,
+          size: Integer,
+          source_group: String,
+          type: String,
+          url: String,
+          width: Integer
+        }
+
+        type access =
+          :PUBLIC_INDEXABLE
+          | :PUBLIC_NOT_INDEXABLE
+          | :HIDDEN_INDEXABLE
+          | :HIDDEN_NOT_INDEXABLE
+          | :HIDDEN_PRIVATE
+          | :PRIVATE
+          | :HIDDEN_SENSITIVE
+          | :SENSITIVE
+
+        module Access
+          extend HubspotSDK::Internal::Type::Enum
+
+          PUBLIC_INDEXABLE: :PUBLIC_INDEXABLE
+          PUBLIC_NOT_INDEXABLE: :PUBLIC_NOT_INDEXABLE
+          HIDDEN_INDEXABLE: :HIDDEN_INDEXABLE
+          HIDDEN_NOT_INDEXABLE: :HIDDEN_NOT_INDEXABLE
+          HIDDEN_PRIVATE: :HIDDEN_PRIVATE
+          PRIVATE: :PRIVATE
+          HIDDEN_SENSITIVE: :HIDDEN_SENSITIVE
+          SENSITIVE: :SENSITIVE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Files::File::access]
+        end
+      end
+    end
+  end
+end

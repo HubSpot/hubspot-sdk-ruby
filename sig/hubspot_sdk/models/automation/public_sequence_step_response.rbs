@@ -1,0 +1,65 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type public_sequence_step_response =
+        {
+          id: String,
+          action_type: String,
+          created_at: Time,
+          delay_millis: Integer,
+          step_order: Integer,
+          updated_at: Time,
+          email_pattern: HubspotSDK::Automation::PublicEmailPatternResponse,
+          task_pattern: HubspotSDK::Automation::PublicTaskPatternResponse
+        }
+
+      class PublicSequenceStepResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor action_type: String
+
+        attr_accessor created_at: Time
+
+        attr_accessor delay_millis: Integer
+
+        attr_accessor step_order: Integer
+
+        attr_accessor updated_at: Time
+
+        attr_reader email_pattern: HubspotSDK::Automation::PublicEmailPatternResponse?
+
+        def email_pattern=: (
+          HubspotSDK::Automation::PublicEmailPatternResponse
+        ) -> HubspotSDK::Automation::PublicEmailPatternResponse
+
+        attr_reader task_pattern: HubspotSDK::Automation::PublicTaskPatternResponse?
+
+        def task_pattern=: (
+          HubspotSDK::Automation::PublicTaskPatternResponse
+        ) -> HubspotSDK::Automation::PublicTaskPatternResponse
+
+        def initialize: (
+          id: String,
+          action_type: String,
+          created_at: Time,
+          delay_millis: Integer,
+          step_order: Integer,
+          updated_at: Time,
+          ?email_pattern: HubspotSDK::Automation::PublicEmailPatternResponse,
+          ?task_pattern: HubspotSDK::Automation::PublicTaskPatternResponse
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          action_type: String,
+          created_at: Time,
+          delay_millis: Integer,
+          step_order: Integer,
+          updated_at: Time,
+          email_pattern: HubspotSDK::Automation::PublicEmailPatternResponse,
+          task_pattern: HubspotSDK::Automation::PublicTaskPatternResponse
+        }
+      end
+    end
+  end
+end

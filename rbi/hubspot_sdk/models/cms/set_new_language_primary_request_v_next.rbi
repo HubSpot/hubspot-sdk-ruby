@@ -1,0 +1,33 @@
+# typed: strong
+
+module HubspotSDK
+  module Models
+    module Cms
+      class SetNewLanguagePrimaryRequestVNext < HubspotSDK::Internal::Type::BaseModel
+        OrHash =
+          T.type_alias do
+            T.any(
+              HubspotSDK::Cms::SetNewLanguagePrimaryRequestVNext,
+              HubspotSDK::Internal::AnyHash
+            )
+          end
+
+        # ID of object to set as primary in multi-language group.
+        sig { returns(String) }
+        attr_accessor :id
+
+        # Request body object for setting a new primary language.
+        sig { params(id: String).returns(T.attached_class) }
+        def self.new(
+          # ID of object to set as primary in multi-language group.
+          id:
+        )
+        end
+
+        sig { override.returns({ id: String }) }
+        def to_hash
+        end
+      end
+    end
+  end
+end

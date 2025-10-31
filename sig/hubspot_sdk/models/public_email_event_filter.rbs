@@ -1,0 +1,118 @@
+module HubspotSDK
+  module Models
+    type public_email_event_filter =
+      {
+        app_id: String,
+        email_id: String,
+        filter_type: HubspotSDK::Models::PublicEmailEventFilter::filter_type,
+        level: String,
+        operator: HubspotSDK::Models::PublicEmailEventFilter::operator,
+        click_url: String,
+        pruning_refine_by: HubspotSDK::Models::PublicEmailEventFilter::pruning_refine_by
+      }
+
+    class PublicEmailEventFilter < HubspotSDK::Internal::Type::BaseModel
+      attr_accessor app_id: String
+
+      attr_accessor email_id: String
+
+      attr_accessor filter_type: HubspotSDK::Models::PublicEmailEventFilter::filter_type
+
+      attr_accessor level: String
+
+      attr_accessor operator: HubspotSDK::Models::PublicEmailEventFilter::operator
+
+      attr_reader click_url: String?
+
+      def click_url=: (String) -> String
+
+      attr_reader pruning_refine_by: HubspotSDK::Models::PublicEmailEventFilter::pruning_refine_by?
+
+      def pruning_refine_by=: (
+        HubspotSDK::Models::PublicEmailEventFilter::pruning_refine_by
+      ) -> HubspotSDK::Models::PublicEmailEventFilter::pruning_refine_by
+
+      def initialize: (
+        app_id: String,
+        email_id: String,
+        filter_type: HubspotSDK::Models::PublicEmailEventFilter::filter_type,
+        level: String,
+        operator: HubspotSDK::Models::PublicEmailEventFilter::operator,
+        ?click_url: String,
+        ?pruning_refine_by: HubspotSDK::Models::PublicEmailEventFilter::pruning_refine_by
+      ) -> void
+
+      def to_hash: -> {
+        app_id: String,
+        email_id: String,
+        filter_type: HubspotSDK::Models::PublicEmailEventFilter::filter_type,
+        level: String,
+        operator: HubspotSDK::Models::PublicEmailEventFilter::operator,
+        click_url: String,
+        pruning_refine_by: HubspotSDK::Models::PublicEmailEventFilter::pruning_refine_by
+      }
+
+      type filter_type = :EMAIL_EVENT
+
+      module FilterType
+        extend HubspotSDK::Internal::Type::Enum
+
+        EMAIL_EVENT: :EMAIL_EVENT
+
+        def self?.values: -> ::Array[HubspotSDK::Models::PublicEmailEventFilter::filter_type]
+      end
+
+      type operator =
+        :LINK_CLICKED
+        | :MARKED_SPAM
+        | :OPENED
+        | :OPENED_BUT_LINK_NOT_CLICKED
+        | :OPENED_BUT_NOT_REPLIED
+        | :REPLIED
+        | :UNSUBSCRIBED
+        | :BOUNCED
+        | :RECEIVED
+        | :RECEIVED_BUT_NOT_OPENED
+        | :SENT
+        | :SENT_BUT_LINK_NOT_CLICKED
+        | :SENT_BUT_NOT_RECEIVED
+
+      module Operator
+        extend HubspotSDK::Internal::Type::Enum
+
+        LINK_CLICKED: :LINK_CLICKED
+        MARKED_SPAM: :MARKED_SPAM
+        OPENED: :OPENED
+        OPENED_BUT_LINK_NOT_CLICKED: :OPENED_BUT_LINK_NOT_CLICKED
+        OPENED_BUT_NOT_REPLIED: :OPENED_BUT_NOT_REPLIED
+        REPLIED: :REPLIED
+        UNSUBSCRIBED: :UNSUBSCRIBED
+        BOUNCED: :BOUNCED
+        RECEIVED: :RECEIVED
+        RECEIVED_BUT_NOT_OPENED: :RECEIVED_BUT_NOT_OPENED
+        SENT: :SENT
+        SENT_BUT_LINK_NOT_CLICKED: :SENT_BUT_LINK_NOT_CLICKED
+        SENT_BUT_NOT_RECEIVED: :SENT_BUT_NOT_RECEIVED
+
+        def self?.values: -> ::Array[HubspotSDK::Models::PublicEmailEventFilter::operator]
+      end
+
+      type pruning_refine_by =
+        HubspotSDK::PublicNumOccurrencesRefineBy
+        | HubspotSDK::PublicSetOccurrencesRefineBy
+        | HubspotSDK::PublicRelativeComparativeTimestampRefineBy
+        | HubspotSDK::PublicRelativeRangedTimestampRefineBy
+        | HubspotSDK::PublicAbsoluteComparativeTimestampRefineBy
+        | HubspotSDK::PublicAbsoluteRangedTimestampRefineBy
+        | HubspotSDK::PublicAllHistoryRefineBy
+        | HubspotSDK::PublicTimePointOperation
+        | HubspotSDK::PublicRangedTimeOperation
+
+      module PruningRefineBy
+        extend HubspotSDK::Internal::Type::Union
+
+        def self?.variants: -> ::Array[HubspotSDK::Models::PublicEmailEventFilter::pruning_refine_by]
+      end
+    end
+  end
+end

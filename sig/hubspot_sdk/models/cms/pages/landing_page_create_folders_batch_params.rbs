@@ -1,0 +1,19 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Pages
+        type landing_page_create_folders_batch_params =
+          {  } & HubspotSDK::Internal::Type::request_parameters
+
+        class LandingPageCreateFoldersBatchParams < HubspotSDK::Models::Cms::BatchInputContentFolder
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+
+          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+        end
+      end
+    end
+  end
+end

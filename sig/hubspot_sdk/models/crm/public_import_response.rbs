@@ -1,0 +1,123 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type public_import_response =
+        {
+          id: String,
+          created_at: Time,
+          mapped_object_type_ids: ::Array[String],
+          metadata: HubspotSDK::CRM::PublicImportMetadata,
+          opt_out_import: bool,
+          state: HubspotSDK::Models::CRM::PublicImportResponse::state,
+          updated_at: Time,
+          import_name: String,
+          import_request_json: top,
+          import_source: HubspotSDK::Models::CRM::PublicImportResponse::import_source,
+          import_template: HubspotSDK::CRM::ImportTemplate
+        }
+
+      class PublicImportResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor created_at: Time
+
+        attr_accessor mapped_object_type_ids: ::Array[String]
+
+        attr_accessor metadata: HubspotSDK::CRM::PublicImportMetadata
+
+        attr_accessor opt_out_import: bool
+
+        attr_accessor state: HubspotSDK::Models::CRM::PublicImportResponse::state
+
+        attr_accessor updated_at: Time
+
+        attr_reader import_name: String?
+
+        def import_name=: (String) -> String
+
+        attr_reader import_request_json: top?
+
+        def import_request_json=: (top) -> top
+
+        attr_reader import_source: HubspotSDK::Models::CRM::PublicImportResponse::import_source?
+
+        def import_source=: (
+          HubspotSDK::Models::CRM::PublicImportResponse::import_source
+        ) -> HubspotSDK::Models::CRM::PublicImportResponse::import_source
+
+        attr_reader import_template: HubspotSDK::CRM::ImportTemplate?
+
+        def import_template=: (
+          HubspotSDK::CRM::ImportTemplate
+        ) -> HubspotSDK::CRM::ImportTemplate
+
+        def initialize: (
+          id: String,
+          created_at: Time,
+          mapped_object_type_ids: ::Array[String],
+          metadata: HubspotSDK::CRM::PublicImportMetadata,
+          opt_out_import: bool,
+          state: HubspotSDK::Models::CRM::PublicImportResponse::state,
+          updated_at: Time,
+          ?import_name: String,
+          ?import_request_json: top,
+          ?import_source: HubspotSDK::Models::CRM::PublicImportResponse::import_source,
+          ?import_template: HubspotSDK::CRM::ImportTemplate
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          created_at: Time,
+          mapped_object_type_ids: ::Array[String],
+          metadata: HubspotSDK::CRM::PublicImportMetadata,
+          opt_out_import: bool,
+          state: HubspotSDK::Models::CRM::PublicImportResponse::state,
+          updated_at: Time,
+          import_name: String,
+          import_request_json: top,
+          import_source: HubspotSDK::Models::CRM::PublicImportResponse::import_source,
+          import_template: HubspotSDK::CRM::ImportTemplate
+        }
+
+        type state =
+          :STARTED
+          | :PROCESSING
+          | :DONE
+          | :FAILED
+          | :CANCELED
+          | :DEFERRED
+          | :REVERTED
+
+        module State
+          extend HubspotSDK::Internal::Type::Enum
+
+          STARTED: :STARTED
+          PROCESSING: :PROCESSING
+          DONE: :DONE
+          FAILED: :FAILED
+          CANCELED: :CANCELED
+          DEFERRED: :DEFERRED
+          REVERTED: :REVERTED
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PublicImportResponse::state]
+        end
+
+        type import_source =
+          :API | :CRM_UI | :IMPORT | :MOBILE_ANDROID | :MOBILE_IOS | :SALESFORCE
+
+        module ImportSource
+          extend HubspotSDK::Internal::Type::Enum
+
+          API: :API
+          CRM_UI: :CRM_UI
+          IMPORT: :IMPORT
+          MOBILE_ANDROID: :MOBILE_ANDROID
+          MOBILE_IOS: :MOBILE_IOS
+          SALESFORCE: :SALESFORCE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PublicImportResponse::import_source]
+        end
+      end
+    end
+  end
+end

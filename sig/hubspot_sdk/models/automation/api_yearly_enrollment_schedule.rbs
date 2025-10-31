@@ -1,0 +1,80 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_yearly_enrollment_schedule =
+        {
+          day_of_month: Integer,
+          month: HubspotSDK::Models::Automation::APIYearlyEnrollmentSchedule::month,
+          time_of_day: HubspotSDK::Automation::APITimeOfDay,
+          type: HubspotSDK::Models::Automation::APIYearlyEnrollmentSchedule::type_
+        }
+
+      class APIYearlyEnrollmentSchedule < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor day_of_month: Integer
+
+        attr_accessor month: HubspotSDK::Models::Automation::APIYearlyEnrollmentSchedule::month
+
+        attr_accessor time_of_day: HubspotSDK::Automation::APITimeOfDay
+
+        attr_accessor type: HubspotSDK::Models::Automation::APIYearlyEnrollmentSchedule::type_
+
+        def initialize: (
+          day_of_month: Integer,
+          month: HubspotSDK::Models::Automation::APIYearlyEnrollmentSchedule::month,
+          time_of_day: HubspotSDK::Automation::APITimeOfDay,
+          type: HubspotSDK::Models::Automation::APIYearlyEnrollmentSchedule::type_
+        ) -> void
+
+        def to_hash: -> {
+          day_of_month: Integer,
+          month: HubspotSDK::Models::Automation::APIYearlyEnrollmentSchedule::month,
+          time_of_day: HubspotSDK::Automation::APITimeOfDay,
+          type: HubspotSDK::Models::Automation::APIYearlyEnrollmentSchedule::type_
+        }
+
+        type month =
+          :JANUARY
+          | :FEBRUARY
+          | :MARCH
+          | :APRIL
+          | :MAY
+          | :JUNE
+          | :JULY
+          | :AUGUST
+          | :SEPTEMBER
+          | :OCTOBER
+          | :NOVEMBER
+          | :DECEMBER
+
+        module Month
+          extend HubspotSDK::Internal::Type::Enum
+
+          JANUARY: :JANUARY
+          FEBRUARY: :FEBRUARY
+          MARCH: :MARCH
+          APRIL: :APRIL
+          MAY: :MAY
+          JUNE: :JUNE
+          JULY: :JULY
+          AUGUST: :AUGUST
+          SEPTEMBER: :SEPTEMBER
+          OCTOBER: :OCTOBER
+          NOVEMBER: :NOVEMBER
+          DECEMBER: :DECEMBER
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIYearlyEnrollmentSchedule::month]
+        end
+
+        type type_ = :YEARLY
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          YEARLY: :YEARLY
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIYearlyEnrollmentSchedule::type_]
+        end
+      end
+    end
+  end
+end

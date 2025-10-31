@@ -1,0 +1,161 @@
+module HubspotSDK
+  module Models
+    module Webhooks
+      type subscription_response =
+        {
+          id: String,
+          active: bool,
+          created_at: Time,
+          event_type: HubspotSDK::Models::Webhooks::SubscriptionResponse::event_type,
+          object_type_id: String,
+          property_name: String,
+          updated_at: Time
+        }
+
+      class SubscriptionResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor active: bool
+
+        attr_accessor created_at: Time
+
+        attr_accessor event_type: HubspotSDK::Models::Webhooks::SubscriptionResponse::event_type
+
+        attr_reader object_type_id: String?
+
+        def object_type_id=: (String) -> String
+
+        attr_reader property_name: String?
+
+        def property_name=: (String) -> String
+
+        attr_reader updated_at: Time?
+
+        def updated_at=: (Time) -> Time
+
+        def initialize: (
+          id: String,
+          active: bool,
+          created_at: Time,
+          event_type: HubspotSDK::Models::Webhooks::SubscriptionResponse::event_type,
+          ?object_type_id: String,
+          ?property_name: String,
+          ?updated_at: Time
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          active: bool,
+          created_at: Time,
+          event_type: HubspotSDK::Models::Webhooks::SubscriptionResponse::event_type,
+          object_type_id: String,
+          property_name: String,
+          updated_at: Time
+        }
+
+        type event_type =
+          :"contact.propertyChange"
+          | :"company.propertyChange"
+          | :"deal.propertyChange"
+          | :"ticket.propertyChange"
+          | :"product.propertyChange"
+          | :"line_item.propertyChange"
+          | :"contact.creation"
+          | :"contact.deletion"
+          | :"contact.privacyDeletion"
+          | :"company.creation"
+          | :"company.deletion"
+          | :"deal.creation"
+          | :"deal.deletion"
+          | :"ticket.creation"
+          | :"ticket.deletion"
+          | :"product.creation"
+          | :"product.deletion"
+          | :"line_item.creation"
+          | :"line_item.deletion"
+          | :"conversation.creation"
+          | :"conversation.deletion"
+          | :"conversation.newMessage"
+          | :"conversation.privacyDeletion"
+          | :"conversation.propertyChange"
+          | :"contact.merge"
+          | :"company.merge"
+          | :"deal.merge"
+          | :"ticket.merge"
+          | :"product.merge"
+          | :"line_item.merge"
+          | :"contact.restore"
+          | :"company.restore"
+          | :"deal.restore"
+          | :"ticket.restore"
+          | :"product.restore"
+          | :"line_item.restore"
+          | :"contact.associationChange"
+          | :"company.associationChange"
+          | :"deal.associationChange"
+          | :"ticket.associationChange"
+          | :"line_item.associationChange"
+          | :"object.propertyChange"
+          | :"object.creation"
+          | :"object.deletion"
+          | :"object.merge"
+          | :"object.restore"
+          | :"object.associationChange"
+
+        module EventType
+          extend HubspotSDK::Internal::Type::Enum
+
+          CONTACT_PROPERTY_CHANGE: :"contact.propertyChange"
+          COMPANY_PROPERTY_CHANGE: :"company.propertyChange"
+          DEAL_PROPERTY_CHANGE: :"deal.propertyChange"
+          TICKET_PROPERTY_CHANGE: :"ticket.propertyChange"
+          PRODUCT_PROPERTY_CHANGE: :"product.propertyChange"
+          LINE_ITEM_PROPERTY_CHANGE: :"line_item.propertyChange"
+          CONTACT_CREATION: :"contact.creation"
+          CONTACT_DELETION: :"contact.deletion"
+          CONTACT_PRIVACY_DELETION: :"contact.privacyDeletion"
+          COMPANY_CREATION: :"company.creation"
+          COMPANY_DELETION: :"company.deletion"
+          DEAL_CREATION: :"deal.creation"
+          DEAL_DELETION: :"deal.deletion"
+          TICKET_CREATION: :"ticket.creation"
+          TICKET_DELETION: :"ticket.deletion"
+          PRODUCT_CREATION: :"product.creation"
+          PRODUCT_DELETION: :"product.deletion"
+          LINE_ITEM_CREATION: :"line_item.creation"
+          LINE_ITEM_DELETION: :"line_item.deletion"
+          CONVERSATION_CREATION: :"conversation.creation"
+          CONVERSATION_DELETION: :"conversation.deletion"
+          CONVERSATION_NEW_MESSAGE: :"conversation.newMessage"
+          CONVERSATION_PRIVACY_DELETION: :"conversation.privacyDeletion"
+          CONVERSATION_PROPERTY_CHANGE: :"conversation.propertyChange"
+          CONTACT_MERGE: :"contact.merge"
+          COMPANY_MERGE: :"company.merge"
+          DEAL_MERGE: :"deal.merge"
+          TICKET_MERGE: :"ticket.merge"
+          PRODUCT_MERGE: :"product.merge"
+          LINE_ITEM_MERGE: :"line_item.merge"
+          CONTACT_RESTORE: :"contact.restore"
+          COMPANY_RESTORE: :"company.restore"
+          DEAL_RESTORE: :"deal.restore"
+          TICKET_RESTORE: :"ticket.restore"
+          PRODUCT_RESTORE: :"product.restore"
+          LINE_ITEM_RESTORE: :"line_item.restore"
+          CONTACT_ASSOCIATION_CHANGE: :"contact.associationChange"
+          COMPANY_ASSOCIATION_CHANGE: :"company.associationChange"
+          DEAL_ASSOCIATION_CHANGE: :"deal.associationChange"
+          TICKET_ASSOCIATION_CHANGE: :"ticket.associationChange"
+          LINE_ITEM_ASSOCIATION_CHANGE: :"line_item.associationChange"
+          OBJECT_PROPERTY_CHANGE: :"object.propertyChange"
+          OBJECT_CREATION: :"object.creation"
+          OBJECT_DELETION: :"object.deletion"
+          OBJECT_MERGE: :"object.merge"
+          OBJECT_RESTORE: :"object.restore"
+          OBJECT_ASSOCIATION_CHANGE: :"object.associationChange"
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Webhooks::SubscriptionResponse::event_type]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,28 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type object_type_definition =
+        { object_type_id: String, plural_label: String, singular_label: String }
+
+      class ObjectTypeDefinition < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor object_type_id: String
+
+        attr_accessor plural_label: String
+
+        attr_accessor singular_label: String
+
+        def initialize: (
+          object_type_id: String,
+          plural_label: String,
+          singular_label: String
+        ) -> void
+
+        def to_hash: -> {
+          object_type_id: String,
+          plural_label: String,
+          singular_label: String
+        }
+      end
+    end
+  end
+end

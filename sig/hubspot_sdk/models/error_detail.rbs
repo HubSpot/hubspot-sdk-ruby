@@ -1,0 +1,50 @@
+module HubspotSDK
+  module Models
+    type error_detail =
+      {
+        message: String,
+        code: String,
+        context: ::Hash[Symbol, ::Array[String]],
+        in_: String,
+        sub_category: String
+      }
+
+    class ErrorDetail < HubspotSDK::Internal::Type::BaseModel
+      attr_accessor message: String
+
+      attr_reader code: String?
+
+      def code=: (String) -> String
+
+      attr_reader context: ::Hash[Symbol, ::Array[String]]?
+
+      def context=: (
+        ::Hash[Symbol, ::Array[String]]
+      ) -> ::Hash[Symbol, ::Array[String]]
+
+      attr_reader in_: String?
+
+      def in_=: (String) -> String
+
+      attr_reader sub_category: String?
+
+      def sub_category=: (String) -> String
+
+      def initialize: (
+        message: String,
+        ?code: String,
+        ?context: ::Hash[Symbol, ::Array[String]],
+        ?in_: String,
+        ?sub_category: String
+      ) -> void
+
+      def to_hash: -> {
+        message: String,
+        code: String,
+        context: ::Hash[Symbol, ::Array[String]],
+        in_: String,
+        sub_category: String
+      }
+    end
+  end
+end

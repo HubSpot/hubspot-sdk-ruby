@@ -1,0 +1,28 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type endpoints =
+        { discovery: bool, schemes: ::Array[String], url: String }
+
+      class Endpoints < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor discovery: bool
+
+        attr_accessor schemes: ::Array[String]
+
+        attr_accessor url: String
+
+        def initialize: (
+          discovery: bool,
+          schemes: ::Array[String],
+          url: String
+        ) -> void
+
+        def to_hash: -> {
+          discovery: bool,
+          schemes: ::Array[String],
+          url: String
+        }
+      end
+    end
+  end
+end

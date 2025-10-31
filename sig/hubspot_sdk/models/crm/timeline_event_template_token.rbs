@@ -1,0 +1,75 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type timeline_event_template_token =
+        {
+          label: String,
+          name: String,
+          type: HubspotSDK::Models::CRM::TimelineEventTemplateToken::type_,
+          created_at: Time,
+          object_property_name: String,
+          options: ::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption],
+          updated_at: Time
+        }
+
+      class TimelineEventTemplateToken < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor label: String
+
+        attr_accessor name: String
+
+        attr_accessor type: HubspotSDK::Models::CRM::TimelineEventTemplateToken::type_
+
+        attr_reader created_at: Time?
+
+        def created_at=: (Time) -> Time
+
+        attr_reader object_property_name: String?
+
+        def object_property_name=: (String) -> String
+
+        attr_reader options: ::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption]?
+
+        def options=: (
+          ::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption]
+        ) -> ::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption]
+
+        attr_reader updated_at: Time?
+
+        def updated_at=: (Time) -> Time
+
+        def initialize: (
+          label: String,
+          name: String,
+          type: HubspotSDK::Models::CRM::TimelineEventTemplateToken::type_,
+          ?created_at: Time,
+          ?object_property_name: String,
+          ?options: ::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption],
+          ?updated_at: Time
+        ) -> void
+
+        def to_hash: -> {
+          label: String,
+          name: String,
+          type: HubspotSDK::Models::CRM::TimelineEventTemplateToken::type_,
+          created_at: Time,
+          object_property_name: String,
+          options: ::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption],
+          updated_at: Time
+        }
+
+        type type_ = :date | :enumeration | :number | :string
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          DATE: :date
+          ENUMERATION: :enumeration
+          NUMBER: :number
+          STRING: :string
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CRM::TimelineEventTemplateToken::type_]
+        end
+      end
+    end
+  end
+end

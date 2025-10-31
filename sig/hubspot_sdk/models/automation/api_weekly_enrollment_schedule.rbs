@@ -1,0 +1,65 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_weekly_enrollment_schedule =
+        {
+          days_of_week: ::Array[HubspotSDK::Models::Automation::APIWeeklyEnrollmentSchedule::days_of_week],
+          time_of_day: HubspotSDK::Automation::APITimeOfDay,
+          type: HubspotSDK::Models::Automation::APIWeeklyEnrollmentSchedule::type_
+        }
+
+      class APIWeeklyEnrollmentSchedule < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor days_of_week: ::Array[HubspotSDK::Models::Automation::APIWeeklyEnrollmentSchedule::days_of_week]
+
+        attr_accessor time_of_day: HubspotSDK::Automation::APITimeOfDay
+
+        attr_accessor type: HubspotSDK::Models::Automation::APIWeeklyEnrollmentSchedule::type_
+
+        def initialize: (
+          days_of_week: ::Array[HubspotSDK::Models::Automation::APIWeeklyEnrollmentSchedule::days_of_week],
+          time_of_day: HubspotSDK::Automation::APITimeOfDay,
+          type: HubspotSDK::Models::Automation::APIWeeklyEnrollmentSchedule::type_
+        ) -> void
+
+        def to_hash: -> {
+          days_of_week: ::Array[HubspotSDK::Models::Automation::APIWeeklyEnrollmentSchedule::days_of_week],
+          time_of_day: HubspotSDK::Automation::APITimeOfDay,
+          type: HubspotSDK::Models::Automation::APIWeeklyEnrollmentSchedule::type_
+        }
+
+        type days_of_week =
+          :MONDAY
+          | :TUESDAY
+          | :WEDNESDAY
+          | :THURSDAY
+          | :FRIDAY
+          | :SATURDAY
+          | :SUNDAY
+
+        module DaysOfWeek
+          extend HubspotSDK::Internal::Type::Enum
+
+          MONDAY: :MONDAY
+          TUESDAY: :TUESDAY
+          WEDNESDAY: :WEDNESDAY
+          THURSDAY: :THURSDAY
+          FRIDAY: :FRIDAY
+          SATURDAY: :SATURDAY
+          SUNDAY: :SUNDAY
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIWeeklyEnrollmentSchedule::days_of_week]
+        end
+
+        type type_ = :WEEKLY
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          WEEKLY: :WEEKLY
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIWeeklyEnrollmentSchedule::type_]
+        end
+      end
+    end
+  end
+end

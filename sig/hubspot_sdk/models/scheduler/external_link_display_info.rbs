@@ -1,0 +1,45 @@
+module HubspotSDK
+  module Models
+    module Scheduler
+      type external_link_display_info =
+        {
+          avatar: String,
+          company_avatar: String,
+          headline: String,
+          public_display_avatar_option: String
+        }
+
+      class ExternalLinkDisplayInfo < HubspotSDK::Internal::Type::BaseModel
+        attr_reader avatar: String?
+
+        def avatar=: (String) -> String
+
+        attr_reader company_avatar: String?
+
+        def company_avatar=: (String) -> String
+
+        attr_reader headline: String?
+
+        def headline=: (String) -> String
+
+        attr_reader public_display_avatar_option: String?
+
+        def public_display_avatar_option=: (String) -> String
+
+        def initialize: (
+          ?avatar: String,
+          ?company_avatar: String,
+          ?headline: String,
+          ?public_display_avatar_option: String
+        ) -> void
+
+        def to_hash: -> {
+          avatar: String,
+          company_avatar: String,
+          headline: String,
+          public_display_avatar_option: String
+        }
+      end
+    end
+  end
+end

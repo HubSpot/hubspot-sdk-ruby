@@ -1,0 +1,83 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type pipeline_stage =
+        {
+          id: String,
+          archived: bool,
+          created_at: Time,
+          display_order: Integer,
+          label: String,
+          updated_at: Time,
+          archived_at: Time,
+          metadata: ::Hash[Symbol, String],
+          write_permissions: HubspotSDK::Models::CRM::PipelineStage::write_permissions
+        }
+
+      class PipelineStage < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor archived: bool
+
+        attr_accessor created_at: Time
+
+        attr_accessor display_order: Integer
+
+        attr_accessor label: String
+
+        attr_accessor updated_at: Time
+
+        attr_reader archived_at: Time?
+
+        def archived_at=: (Time) -> Time
+
+        attr_reader metadata: ::Hash[Symbol, String]?
+
+        def metadata=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
+
+        attr_reader write_permissions: HubspotSDK::Models::CRM::PipelineStage::write_permissions?
+
+        def write_permissions=: (
+          HubspotSDK::Models::CRM::PipelineStage::write_permissions
+        ) -> HubspotSDK::Models::CRM::PipelineStage::write_permissions
+
+        def initialize: (
+          id: String,
+          archived: bool,
+          created_at: Time,
+          display_order: Integer,
+          label: String,
+          updated_at: Time,
+          ?archived_at: Time,
+          ?metadata: ::Hash[Symbol, String],
+          ?write_permissions: HubspotSDK::Models::CRM::PipelineStage::write_permissions
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          archived: bool,
+          created_at: Time,
+          display_order: Integer,
+          label: String,
+          updated_at: Time,
+          archived_at: Time,
+          metadata: ::Hash[Symbol, String],
+          write_permissions: HubspotSDK::Models::CRM::PipelineStage::write_permissions
+        }
+
+        type write_permissions =
+          :CRM_PERMISSIONS_ENFORCEMENT | :READ_ONLY | :INTERNAL_ONLY
+
+        module WritePermissions
+          extend HubspotSDK::Internal::Type::Enum
+
+          CRM_PERMISSIONS_ENFORCEMENT: :CRM_PERMISSIONS_ENFORCEMENT
+          READ_ONLY: :READ_ONLY
+          INTERNAL_ONLY: :INTERNAL_ONLY
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PipelineStage::write_permissions]
+        end
+      end
+    end
+  end
+end

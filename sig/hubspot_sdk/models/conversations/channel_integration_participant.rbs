@@ -1,0 +1,29 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type channel_integration_participant =
+        {
+          delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
+          name: String
+        }
+
+      class ChannelIntegrationParticipant < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        def initialize: (
+          delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
+          ?name: String
+        ) -> void
+
+        def to_hash: -> {
+          delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
+          name: String
+        }
+      end
+    end
+  end
+end

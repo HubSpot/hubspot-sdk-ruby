@@ -1,0 +1,63 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type location_attachment =
+        {
+          latitude: Float,
+          longitude: Float,
+          type: HubspotSDK::Models::Conversations::LocationAttachment::type_,
+          address: String,
+          name: String,
+          url: String
+        }
+
+      class LocationAttachment < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor latitude: Float
+
+        attr_accessor longitude: Float
+
+        attr_accessor type: HubspotSDK::Models::Conversations::LocationAttachment::type_
+
+        attr_reader address: String?
+
+        def address=: (String) -> String
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader url: String?
+
+        def url=: (String) -> String
+
+        def initialize: (
+          latitude: Float,
+          longitude: Float,
+          type: HubspotSDK::Models::Conversations::LocationAttachment::type_,
+          ?address: String,
+          ?name: String,
+          ?url: String
+        ) -> void
+
+        def to_hash: -> {
+          latitude: Float,
+          longitude: Float,
+          type: HubspotSDK::Models::Conversations::LocationAttachment::type_,
+          address: String,
+          name: String,
+          url: String
+        }
+
+        type type_ = :LOCATION
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          LOCATION: :LOCATION
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::LocationAttachment::type_]
+        end
+      end
+    end
+  end
+end

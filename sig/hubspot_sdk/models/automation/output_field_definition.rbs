@@ -1,0 +1,20 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type output_field_definition =
+        { type_definition: HubspotSDK::Automation::FieldTypeDefinition }
+
+      class OutputFieldDefinition < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor type_definition: HubspotSDK::Automation::FieldTypeDefinition
+
+        def initialize: (
+          type_definition: HubspotSDK::Automation::FieldTypeDefinition
+        ) -> void
+
+        def to_hash: -> {
+          type_definition: HubspotSDK::Automation::FieldTypeDefinition
+        }
+      end
+    end
+  end
+end

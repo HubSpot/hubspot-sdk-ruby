@@ -1,0 +1,47 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type limit_and_usage_for_object_type =
+        {
+          limit: Integer,
+          object_type_id: String,
+          percentage: Float,
+          plural_label: String,
+          singular_label: String,
+          usage: Integer
+        }
+
+      class LimitAndUsageForObjectType < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor limit: Integer
+
+        attr_accessor object_type_id: String
+
+        attr_accessor percentage: Float
+
+        attr_accessor plural_label: String
+
+        attr_accessor singular_label: String
+
+        attr_accessor usage: Integer
+
+        def initialize: (
+          limit: Integer,
+          object_type_id: String,
+          percentage: Float,
+          plural_label: String,
+          singular_label: String,
+          usage: Integer
+        ) -> void
+
+        def to_hash: -> {
+          limit: Integer,
+          object_type_id: String,
+          percentage: Float,
+          plural_label: String,
+          singular_label: String,
+          usage: Integer
+        }
+      end
+    end
+  end
+end

@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type workflow_create_params =
+        {
+          api_flow_create_request: HubspotSDK::Models::Automation::api_flow_create_request
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class WorkflowCreateParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        def api_flow_create_request: -> HubspotSDK::Models::Automation::api_flow_create_request
+
+        def api_flow_create_request=: (
+          HubspotSDK::Models::Automation::api_flow_create_request _
+        ) -> HubspotSDK::Models::Automation::api_flow_create_request
+
+        def initialize: (
+          api_flow_create_request: HubspotSDK::Models::Automation::api_flow_create_request,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          api_flow_create_request: HubspotSDK::Models::Automation::api_flow_create_request,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

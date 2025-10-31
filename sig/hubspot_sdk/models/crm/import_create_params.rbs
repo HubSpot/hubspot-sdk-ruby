@@ -1,0 +1,36 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type import_create_params =
+        { files: HubspotSDK::Internal::file_input, import_request: String }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class ImportCreateParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_reader files: HubspotSDK::Internal::file_input?
+
+        def files=: (
+          HubspotSDK::Internal::file_input
+        ) -> HubspotSDK::Internal::file_input
+
+        attr_reader import_request: String?
+
+        def import_request=: (String) -> String
+
+        def initialize: (
+          ?files: HubspotSDK::Internal::file_input,
+          ?import_request: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          files: HubspotSDK::Internal::file_input,
+          import_request: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

@@ -1,0 +1,75 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type public_email_content =
+        {
+          flex_areas: ::Hash[Symbol, top],
+          plain_text_version: String,
+          smart_fields: ::Hash[Symbol, top],
+          style_settings: HubspotSDK::Marketing::PublicEmailStyleSettings,
+          template_path: String,
+          theme_settings_values: ::Hash[Symbol, top],
+          widget_containers: ::Hash[Symbol, top],
+          widgets: ::Hash[Symbol, top]
+        }
+
+      class PublicEmailContent < HubspotSDK::Internal::Type::BaseModel
+        attr_reader flex_areas: ::Hash[Symbol, top]?
+
+        def flex_areas=: (::Hash[Symbol, top]) -> ::Hash[Symbol, top]
+
+        attr_reader plain_text_version: String?
+
+        def plain_text_version=: (String) -> String
+
+        attr_reader smart_fields: ::Hash[Symbol, top]?
+
+        def smart_fields=: (::Hash[Symbol, top]) -> ::Hash[Symbol, top]
+
+        attr_reader style_settings: HubspotSDK::Marketing::PublicEmailStyleSettings?
+
+        def style_settings=: (
+          HubspotSDK::Marketing::PublicEmailStyleSettings
+        ) -> HubspotSDK::Marketing::PublicEmailStyleSettings
+
+        attr_reader template_path: String?
+
+        def template_path=: (String) -> String
+
+        attr_reader theme_settings_values: ::Hash[Symbol, top]?
+
+        def theme_settings_values=: (::Hash[Symbol, top]) -> ::Hash[Symbol, top]
+
+        attr_reader widget_containers: ::Hash[Symbol, top]?
+
+        def widget_containers=: (::Hash[Symbol, top]) -> ::Hash[Symbol, top]
+
+        attr_reader widgets: ::Hash[Symbol, top]?
+
+        def widgets=: (::Hash[Symbol, top]) -> ::Hash[Symbol, top]
+
+        def initialize: (
+          ?flex_areas: ::Hash[Symbol, top],
+          ?plain_text_version: String,
+          ?smart_fields: ::Hash[Symbol, top],
+          ?style_settings: HubspotSDK::Marketing::PublicEmailStyleSettings,
+          ?template_path: String,
+          ?theme_settings_values: ::Hash[Symbol, top],
+          ?widget_containers: ::Hash[Symbol, top],
+          ?widgets: ::Hash[Symbol, top]
+        ) -> void
+
+        def to_hash: -> {
+          flex_areas: ::Hash[Symbol, top],
+          plain_text_version: String,
+          smart_fields: ::Hash[Symbol, top],
+          style_settings: HubspotSDK::Marketing::PublicEmailStyleSettings,
+          template_path: String,
+          theme_settings_values: ::Hash[Symbol, top],
+          widget_containers: ::Hash[Symbol, top],
+          widgets: ::Hash[Symbol, top]
+        }
+      end
+    end
+  end
+end

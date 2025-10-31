@@ -1,0 +1,16 @@
+module HubspotSDK
+  module Models
+    module Settings
+      type central_exchange_rates_information =
+        { central_exchange_rates_enabled: bool }
+
+      class CentralExchangeRatesInformation < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor central_exchange_rates_enabled: bool
+
+        def initialize: (central_exchange_rates_enabled: bool) -> void
+
+        def to_hash: -> { central_exchange_rates_enabled: bool }
+      end
+    end
+  end
+end

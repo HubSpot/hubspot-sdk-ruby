@@ -1,0 +1,61 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class Objects
+        class GoalTargets
+          attr_reader batch: HubspotSDK::Resources::CRM::Objects::GoalTargets::Batch
+
+          def create: (
+            properties: ::Hash[Symbol, String],
+            ?associations: ::Array[HubspotSDK::CRM::PublicAssociationsForObject],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::CRM::CreatedResponseSimplePublicObject
+
+          def update: (
+            String goal_target_id,
+            properties: ::Hash[Symbol, String],
+            ?id_property: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::CRM::SimplePublicObject
+
+          def list: (
+            ?after: String,
+            ?archived: bool,
+            ?associations: ::Array[String],
+            ?limit: Integer,
+            ?properties: ::Array[String],
+            ?properties_with_history: ::Array[String],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Internal::Page[HubspotSDK::CRM::SimplePublicObjectWithAssociations]
+
+          def delete: (
+            String goal_target_id,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def get: (
+            String goal_target_id,
+            ?archived: bool,
+            ?associations: ::Array[String],
+            ?id_property: String,
+            ?properties: ::Array[String],
+            ?properties_with_history: ::Array[String],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::CRM::SimplePublicObjectWithAssociations
+
+          def search: (
+            ?after: String,
+            ?filter_groups: ::Array[HubspotSDK::CRM::FilterGroup],
+            ?limit: Integer,
+            ?properties: ::Array[String],
+            ?query: String,
+            ?sorts: ::Array[String],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

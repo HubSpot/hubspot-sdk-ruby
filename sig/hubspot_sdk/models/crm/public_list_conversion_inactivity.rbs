@@ -1,0 +1,54 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type public_list_conversion_inactivity =
+        {
+          conversion_type: HubspotSDK::Models::CRM::PublicListConversionInactivity::conversion_type,
+          offset: Integer,
+          time_unit: HubspotSDK::Models::CRM::PublicListConversionInactivity::time_unit
+        }
+
+      class PublicListConversionInactivity < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor conversion_type: HubspotSDK::Models::CRM::PublicListConversionInactivity::conversion_type
+
+        attr_accessor offset: Integer
+
+        attr_accessor time_unit: HubspotSDK::Models::CRM::PublicListConversionInactivity::time_unit
+
+        def initialize: (
+          conversion_type: HubspotSDK::Models::CRM::PublicListConversionInactivity::conversion_type,
+          offset: Integer,
+          time_unit: HubspotSDK::Models::CRM::PublicListConversionInactivity::time_unit
+        ) -> void
+
+        def to_hash: -> {
+          conversion_type: HubspotSDK::Models::CRM::PublicListConversionInactivity::conversion_type,
+          offset: Integer,
+          time_unit: HubspotSDK::Models::CRM::PublicListConversionInactivity::time_unit
+        }
+
+        type conversion_type = :INACTIVITY
+
+        module ConversionType
+          extend HubspotSDK::Internal::Type::Enum
+
+          INACTIVITY: :INACTIVITY
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PublicListConversionInactivity::conversion_type]
+        end
+
+        type time_unit = :DAY | :WEEK | :MONTH
+
+        module TimeUnit
+          extend HubspotSDK::Internal::Type::Enum
+
+          DAY: :DAY
+          WEEK: :WEEK
+          MONTH: :MONTH
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PublicListConversionInactivity::time_unit]
+        end
+      end
+    end
+  end
+end

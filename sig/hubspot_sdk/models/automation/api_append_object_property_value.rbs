@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type api_append_object_property_value =
+        {
+          append_property_name: String,
+          type: HubspotSDK::Models::Automation::APIAppendObjectPropertyValue::type_
+        }
+
+      class APIAppendObjectPropertyValue < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor append_property_name: String
+
+        attr_accessor type: HubspotSDK::Models::Automation::APIAppendObjectPropertyValue::type_
+
+        def initialize: (
+          append_property_name: String,
+          type: HubspotSDK::Models::Automation::APIAppendObjectPropertyValue::type_
+        ) -> void
+
+        def to_hash: -> {
+          append_property_name: String,
+          type: HubspotSDK::Models::Automation::APIAppendObjectPropertyValue::type_
+        }
+
+        type type_ = :APPEND_OBJECT_PROPERTY
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          APPEND_OBJECT_PROPERTY: :APPEND_OBJECT_PROPERTY
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIAppendObjectPropertyValue::type_]
+        end
+      end
+    end
+  end
+end

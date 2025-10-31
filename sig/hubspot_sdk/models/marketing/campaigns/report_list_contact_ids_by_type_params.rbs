@@ -1,0 +1,58 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      module Campaigns
+        type report_list_contact_ids_by_type_params =
+          {
+            campaign_guid: String,
+            after: String,
+            end_date: String,
+            limit: Integer,
+            start_date: String
+          }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class ReportListContactIDsByTypeParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor campaign_guid: String
+
+          attr_reader after: String?
+
+          def after=: (String) -> String
+
+          attr_reader end_date: String?
+
+          def end_date=: (String) -> String
+
+          attr_reader limit: Integer?
+
+          def limit=: (Integer) -> Integer
+
+          attr_reader start_date: String?
+
+          def start_date=: (String) -> String
+
+          def initialize: (
+            campaign_guid: String,
+            ?after: String,
+            ?end_date: String,
+            ?limit: Integer,
+            ?start_date: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            campaign_guid: String,
+            after: String,
+            end_date: String,
+            limit: Integer,
+            start_date: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

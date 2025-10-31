@@ -1,0 +1,18 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type collection_response_public_audit_info_no_paging =
+        { results: ::Array[HubspotSDK::CRM::PublicAuditInfo] }
+
+      class CollectionResponsePublicAuditInfoNoPaging < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubspotSDK::CRM::PublicAuditInfo]
+
+        def initialize: (
+          results: ::Array[HubspotSDK::CRM::PublicAuditInfo]
+        ) -> void
+
+        def to_hash: -> { results: ::Array[HubspotSDK::CRM::PublicAuditInfo] }
+      end
+    end
+  end
+end

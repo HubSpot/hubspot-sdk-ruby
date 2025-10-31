@@ -1,0 +1,50 @@
+module HubspotSDK
+  module Models
+    type public_ranged_number_property_operation =
+      {
+        include_objects_with_no_value_set: bool,
+        lower_bound: Integer,
+        operation_type: HubspotSDK::Models::PublicRangedNumberPropertyOperation::operation_type,
+        operator: String,
+        upper_bound: Integer
+      }
+
+    class PublicRangedNumberPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      attr_accessor include_objects_with_no_value_set: bool
+
+      attr_accessor lower_bound: Integer
+
+      attr_accessor operation_type: HubspotSDK::Models::PublicRangedNumberPropertyOperation::operation_type
+
+      attr_accessor operator: String
+
+      attr_accessor upper_bound: Integer
+
+      def initialize: (
+        include_objects_with_no_value_set: bool,
+        lower_bound: Integer,
+        operation_type: HubspotSDK::Models::PublicRangedNumberPropertyOperation::operation_type,
+        operator: String,
+        upper_bound: Integer
+      ) -> void
+
+      def to_hash: -> {
+        include_objects_with_no_value_set: bool,
+        lower_bound: Integer,
+        operation_type: HubspotSDK::Models::PublicRangedNumberPropertyOperation::operation_type,
+        operator: String,
+        upper_bound: Integer
+      }
+
+      type operation_type = :NUMBER_RANGED
+
+      module OperationType
+        extend HubspotSDK::Internal::Type::Enum
+
+        NUMBER_RANGED: :NUMBER_RANGED
+
+        def self?.values: -> ::Array[HubspotSDK::Models::PublicRangedNumberPropertyOperation::operation_type]
+      end
+    end
+  end
+end

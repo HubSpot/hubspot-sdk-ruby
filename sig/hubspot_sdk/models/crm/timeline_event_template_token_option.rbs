@@ -1,0 +1,18 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type timeline_event_template_token_option =
+        { label: String, value: String }
+
+      class TimelineEventTemplateTokenOption < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor label: String
+
+        attr_accessor value: String
+
+        def initialize: (label: String, value: String) -> void
+
+        def to_hash: -> { label: String, value: String }
+      end
+    end
+  end
+end

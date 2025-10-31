@@ -1,0 +1,57 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type public_sequence_enrollment_response =
+        {
+          id: String,
+          enrolled_at: Time,
+          enrolled_by: String,
+          enrolled_by_email: String,
+          sequence_id: String,
+          sequence_name: String,
+          to_email: String,
+          updated_at: Time
+        }
+
+      class PublicSequenceEnrollmentResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor enrolled_at: Time
+
+        attr_accessor enrolled_by: String
+
+        attr_accessor enrolled_by_email: String
+
+        attr_accessor sequence_id: String
+
+        attr_accessor sequence_name: String
+
+        attr_accessor to_email: String
+
+        attr_accessor updated_at: Time
+
+        def initialize: (
+          id: String,
+          enrolled_at: Time,
+          enrolled_by: String,
+          enrolled_by_email: String,
+          sequence_id: String,
+          sequence_name: String,
+          to_email: String,
+          updated_at: Time
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          enrolled_at: Time,
+          enrolled_by: String,
+          enrolled_by_email: String,
+          sequence_id: String,
+          sequence_name: String,
+          to_email: String,
+          updated_at: Time
+        }
+      end
+    end
+  end
+end

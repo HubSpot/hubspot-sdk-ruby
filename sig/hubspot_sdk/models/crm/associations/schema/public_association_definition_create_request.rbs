@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Associations
+        module Schema
+          type public_association_definition_create_request =
+            { label: String, name: String, inverse_label: String }
+
+          class PublicAssociationDefinitionCreateRequest < HubspotSDK::Internal::Type::BaseModel
+            attr_accessor label: String
+
+            attr_accessor name: String
+
+            attr_reader inverse_label: String?
+
+            def inverse_label=: (String) -> String
+
+            def initialize: (
+              label: String,
+              name: String,
+              ?inverse_label: String
+            ) -> void
+
+            def to_hash: -> {
+              label: String,
+              name: String,
+              inverse_label: String
+            }
+          end
+        end
+      end
+    end
+  end
+end

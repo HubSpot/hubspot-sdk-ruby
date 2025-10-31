@@ -1,0 +1,52 @@
+module HubspotSDK
+  module Models
+    module Scheduler
+      type external_link_form_field =
+        {
+          field_type: String,
+          is_custom: bool,
+          is_required: bool,
+          label: String,
+          name: String,
+          options: ::Array[HubspotSDK::Scheduler::ExternalOption],
+          type: String
+        }
+
+      class ExternalLinkFormField < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor field_type: String
+
+        attr_accessor is_custom: bool
+
+        attr_accessor is_required: bool
+
+        attr_accessor label: String
+
+        attr_accessor name: String
+
+        attr_accessor options: ::Array[HubspotSDK::Scheduler::ExternalOption]
+
+        attr_accessor type: String
+
+        def initialize: (
+          field_type: String,
+          is_custom: bool,
+          is_required: bool,
+          label: String,
+          name: String,
+          options: ::Array[HubspotSDK::Scheduler::ExternalOption],
+          type: String
+        ) -> void
+
+        def to_hash: -> {
+          field_type: String,
+          is_custom: bool,
+          is_required: bool,
+          label: String,
+          name: String,
+          options: ::Array[HubspotSDK::Scheduler::ExternalOption],
+          type: String
+        }
+      end
+    end
+  end
+end

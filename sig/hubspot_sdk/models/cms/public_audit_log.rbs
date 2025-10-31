@@ -1,0 +1,124 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type public_audit_log =
+        {
+          event: HubspotSDK::Models::Cms::PublicAuditLog::event,
+          full_name: String,
+          object_id_: String,
+          object_name: String,
+          object_type: HubspotSDK::Models::Cms::PublicAuditLog::object_type,
+          timestamp: Time,
+          user_id: String,
+          meta: top
+        }
+
+      class PublicAuditLog < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor event: HubspotSDK::Models::Cms::PublicAuditLog::event
+
+        attr_accessor full_name: String
+
+        attr_accessor object_id_: String
+
+        attr_accessor object_name: String
+
+        attr_accessor object_type: HubspotSDK::Models::Cms::PublicAuditLog::object_type
+
+        attr_accessor timestamp: Time
+
+        attr_accessor user_id: String
+
+        attr_reader meta: top?
+
+        def meta=: (top) -> top
+
+        def initialize: (
+          event: HubspotSDK::Models::Cms::PublicAuditLog::event,
+          full_name: String,
+          object_id_: String,
+          object_name: String,
+          object_type: HubspotSDK::Models::Cms::PublicAuditLog::object_type,
+          timestamp: Time,
+          user_id: String,
+          ?meta: top
+        ) -> void
+
+        def to_hash: -> {
+          event: HubspotSDK::Models::Cms::PublicAuditLog::event,
+          full_name: String,
+          object_id_: String,
+          object_name: String,
+          object_type: HubspotSDK::Models::Cms::PublicAuditLog::object_type,
+          timestamp: Time,
+          user_id: String,
+          meta: top
+        }
+
+        type event =
+          :CREATED | :UPDATED | :PUBLISHED | :DELETED | :UNPUBLISHED | :RESTORE
+
+        module Event
+          extend HubspotSDK::Internal::Type::Enum
+
+          CREATED: :CREATED
+          UPDATED: :UPDATED
+          PUBLISHED: :PUBLISHED
+          DELETED: :DELETED
+          UNPUBLISHED: :UNPUBLISHED
+          RESTORE: :RESTORE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::PublicAuditLog::event]
+        end
+
+        type object_type =
+          :BLOG
+          | :BLOG_POST
+          | :LANDING_PAGE
+          | :WEBSITE_PAGE
+          | :TEMPLATE
+          | :MODULE
+          | :GLOBAL_MODULE
+          | :SERVERLESS_FUNCTION
+          | :DOMAIN
+          | :URL_MAPPING
+          | :EMAIL
+          | :CONTENT_SETTINGS
+          | :HUBDB_TABLE
+          | :KNOWLEDGE_BASE_ARTICLE
+          | :KNOWLEDGE_BASE
+          | :THEME
+          | :CSS
+          | :JS
+          | :CTA
+          | :FILE
+
+        module ObjectType
+          extend HubspotSDK::Internal::Type::Enum
+
+          BLOG: :BLOG
+          BLOG_POST: :BLOG_POST
+          LANDING_PAGE: :LANDING_PAGE
+          WEBSITE_PAGE: :WEBSITE_PAGE
+          TEMPLATE: :TEMPLATE
+          MODULE: :MODULE
+          GLOBAL_MODULE: :GLOBAL_MODULE
+          SERVERLESS_FUNCTION: :SERVERLESS_FUNCTION
+          DOMAIN: :DOMAIN
+          URL_MAPPING: :URL_MAPPING
+          EMAIL: :EMAIL
+          CONTENT_SETTINGS: :CONTENT_SETTINGS
+          HUBDB_TABLE: :HUBDB_TABLE
+          KNOWLEDGE_BASE_ARTICLE: :KNOWLEDGE_BASE_ARTICLE
+          KNOWLEDGE_BASE: :KNOWLEDGE_BASE
+          THEME: :THEME
+          CSS: :CSS
+          JS: :JS
+          CTA: :CTA
+          FILE: :FILE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::PublicAuditLog::object_type]
+        end
+      end
+    end
+  end
+end

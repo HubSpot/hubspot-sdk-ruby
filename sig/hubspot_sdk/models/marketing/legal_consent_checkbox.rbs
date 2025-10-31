@@ -1,0 +1,28 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type legal_consent_checkbox =
+        { label: String, required: bool, subscription_type_id: Integer }
+
+      class LegalConsentCheckbox < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor label: String
+
+        attr_accessor required: bool
+
+        attr_accessor subscription_type_id: Integer
+
+        def initialize: (
+          label: String,
+          required: bool,
+          subscription_type_id: Integer
+        ) -> void
+
+        def to_hash: -> {
+          label: String,
+          required: bool,
+          subscription_type_id: Integer
+        }
+      end
+    end
+  end
+end

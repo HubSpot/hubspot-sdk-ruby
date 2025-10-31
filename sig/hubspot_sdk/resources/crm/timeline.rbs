@@ -1,0 +1,15 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class Timeline
+        attr_reader events: HubspotSDK::Resources::CRM::Timeline::Events
+
+        attr_reader templates: HubspotSDK::Resources::CRM::Timeline::Templates
+
+        attr_reader tokens: HubspotSDK::Resources::CRM::Timeline::Tokens
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

@@ -1,0 +1,36 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type integrator_object_creation_request =
+        {
+          media_types: ::Array[HubspotSDK::Models::Cms::IntegratorObjectCreationRequest::media_type]
+        }
+
+      class IntegratorObjectCreationRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor media_types: ::Array[HubspotSDK::Models::Cms::IntegratorObjectCreationRequest::media_type]
+
+        def initialize: (
+          media_types: ::Array[HubspotSDK::Models::Cms::IntegratorObjectCreationRequest::media_type]
+        ) -> void
+
+        def to_hash: -> {
+          media_types: ::Array[HubspotSDK::Models::Cms::IntegratorObjectCreationRequest::media_type]
+        }
+
+        type media_type = :VIDEO | :AUDIO | :DOCUMENT | :OTHER | :IMAGE
+
+        module MediaType
+          extend HubspotSDK::Internal::Type::Enum
+
+          VIDEO: :VIDEO
+          AUDIO: :AUDIO
+          DOCUMENT: :DOCUMENT
+          OTHER: :OTHER
+          IMAGE: :IMAGE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::IntegratorObjectCreationRequest::media_type]
+        end
+      end
+    end
+  end
+end
