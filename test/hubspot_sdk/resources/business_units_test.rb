@@ -9,7 +9,7 @@ class HubspotSDK::Test::Resources::BusinessUnitsTest < HubspotSDK::Test::Resourc
     response = @hubspot.business_units.get_by_user_id("userId")
 
     assert_pattern do
-      response => HubspotSDK::Models::BusinessUnits::BusinessUnitGetByUserIDResponse
+      response => HubspotSDK::BusinessUnits::CollectionResponsePublicBusinessUnitNoPaging
     end
 
     assert_pattern do

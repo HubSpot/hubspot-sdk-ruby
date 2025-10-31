@@ -12,7 +12,6 @@ module HubspotSDK
             )
           end
 
-        # Which days of the week to allow enrollments.
         sig do
           returns(
             T::Array[
@@ -30,8 +29,6 @@ module HubspotSDK
         end
         attr_writer :time_of_day
 
-        # The type of enrollment schedule this is, can be: "DAILY", "WEEKLY",
-        # "MONTHLY_SPECIFIC_DAYS", "MONTHLY_RELATIVE_DAYS", "YEARLY"
         sig do
           returns(
             HubspotSDK::Automation::APIWeeklyEnrollmentSchedule::Type::OrSymbol
@@ -50,14 +47,7 @@ module HubspotSDK
               HubspotSDK::Automation::APIWeeklyEnrollmentSchedule::Type::OrSymbol
           ).returns(T.attached_class)
         end
-        def self.new(
-          # Which days of the week to allow enrollments.
-          days_of_week:,
-          time_of_day:,
-          # The type of enrollment schedule this is, can be: "DAILY", "WEEKLY",
-          # "MONTHLY_SPECIFIC_DAYS", "MONTHLY_RELATIVE_DAYS", "YEARLY"
-          type:
-        )
+        def self.new(days_of_week:, time_of_day:, type:)
         end
 
         sig do
@@ -135,8 +125,6 @@ module HubspotSDK
           end
         end
 
-        # The type of enrollment schedule this is, can be: "DAILY", "WEEKLY",
-        # "MONTHLY_SPECIFIC_DAYS", "MONTHLY_RELATIVE_DAYS", "YEARLY"
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

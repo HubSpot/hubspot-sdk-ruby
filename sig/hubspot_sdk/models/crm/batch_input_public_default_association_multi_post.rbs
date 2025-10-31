@@ -1,0 +1,20 @@
+module HubspotSDK
+  module Models
+    module CRM
+      type batch_input_public_default_association_multi_post =
+        { inputs: ::Array[HubspotSDK::CRM::PublicDefaultAssociationMultiPost] }
+
+      class BatchInputPublicDefaultAssociationMultiPost < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubspotSDK::CRM::PublicDefaultAssociationMultiPost]
+
+        def initialize: (
+          inputs: ::Array[HubspotSDK::CRM::PublicDefaultAssociationMultiPost]
+        ) -> void
+
+        def to_hash: -> {
+          inputs: ::Array[HubspotSDK::CRM::PublicDefaultAssociationMultiPost]
+        }
+      end
+    end
+  end
+end

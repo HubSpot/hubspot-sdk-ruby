@@ -12,7 +12,6 @@ module HubspotSDK
             )
           end
 
-        # Which days of the month to run this workflow on.
         sig { returns(T::Array[Integer]) }
         attr_accessor :days_of_month
 
@@ -24,8 +23,6 @@ module HubspotSDK
         end
         attr_writer :time_of_day
 
-        # The type of enrollment schedule this is, can be: "DAILY", "WEEKLY",
-        # "MONTHLY_SPECIFIC_DAYS", "MONTHLY_RELATIVE_DAYS", "YEARLY"
         sig do
           returns(
             HubspotSDK::Automation::APIMonthlySpecificDaysEnrollmentSchedule::Type::OrSymbol
@@ -41,14 +38,7 @@ module HubspotSDK
               HubspotSDK::Automation::APIMonthlySpecificDaysEnrollmentSchedule::Type::OrSymbol
           ).returns(T.attached_class)
         end
-        def self.new(
-          # Which days of the month to run this workflow on.
-          days_of_month:,
-          time_of_day:,
-          # The type of enrollment schedule this is, can be: "DAILY", "WEEKLY",
-          # "MONTHLY_SPECIFIC_DAYS", "MONTHLY_RELATIVE_DAYS", "YEARLY"
-          type:
-        )
+        def self.new(days_of_month:, time_of_day:, type:)
         end
 
         sig do
@@ -64,8 +54,6 @@ module HubspotSDK
         def to_hash
         end
 
-        # The type of enrollment schedule this is, can be: "DAILY", "WEEKLY",
-        # "MONTHLY_SPECIFIC_DAYS", "MONTHLY_RELATIVE_DAYS", "YEARLY"
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

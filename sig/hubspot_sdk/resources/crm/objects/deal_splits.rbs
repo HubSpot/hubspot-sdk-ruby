@@ -6,12 +6,12 @@ module HubspotSDK
           def batch_read: (
             inputs: ::Array[HubspotSDK::PublicObjectID],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Models::CRM::Objects::DealSplitBatchReadResponse
+          ) -> HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits
 
           def batch_upsert: (
-            inputs: ::Array[HubspotSDK::CRM::Objects::DealSplitBatchUpsertParams::Input],
+            inputs: ::Array[HubspotSDK::CRM::Objects::PublicDealSplitsCreateRequest],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Models::CRM::Objects::DealSplitBatchUpsertResponse
+          ) -> HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

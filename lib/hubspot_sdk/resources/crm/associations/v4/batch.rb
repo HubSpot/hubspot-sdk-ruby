@@ -10,15 +10,15 @@ module HubspotSDK
             #
             # @overload create(to_object_type, from_object_type:, inputs:, request_options: {})
             #
-            # @param to_object_type [String] Path param: Type of the fromObject for this association definition (ex. "0-1")
+            # @param to_object_type [String] Path param:
             #
-            # @param from_object_type [String] Path param: Type of the toObject for this association definition (ex. "0-2")
+            # @param from_object_type [String] Path param:
             #
-            # @param inputs [Array<HubspotSDK::Models::CRM::Associations::PublicAssociationMultiPost>] Body param:
+            # @param inputs [Array<HubspotSDK::Models::CRM::PublicAssociationMultiPost>] Body param:
             #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::CRM::Associations::BatchResponseLabelsBetweenObjectPair]
+            # @return [HubspotSDK::Models::CRM::BatchResponseLabelsBetweenObjectPair]
             #
             # @see HubspotSDK::Models::CRM::Associations::V4::BatchCreateParams
             def create(to_object_type, params)
@@ -31,7 +31,7 @@ module HubspotSDK
                 method: :post,
                 path: ["crm/v4/associations/%1$s/%2$s/batch/create", from_object_type, to_object_type],
                 body: parsed,
-                model: HubspotSDK::CRM::Associations::BatchResponseLabelsBetweenObjectPair,
+                model: HubspotSDK::CRM::BatchResponseLabelsBetweenObjectPair,
                 options: options
               )
             end
@@ -40,15 +40,15 @@ module HubspotSDK
             #
             # @overload delete(to_object_type, from_object_type:, inputs:, request_options: {})
             #
-            # @param to_object_type [String] Path param: Type of the toObject for this association definition.
+            # @param to_object_type [String] Path param:
             #
-            # @param from_object_type [String] Path param: Type of the fromObject for this association definition.
+            # @param from_object_type [String] Path param:
             #
-            # @param inputs [Array<HubspotSDK::Models::CRM::Associations::PublicAssociationMultiArchive>] Body param:
+            # @param inputs [Array<HubspotSDK::Models::CRM::PublicAssociationMultiArchive>] Body param:
             #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::CRM::Associations::BatchResponseVoid]
+            # @return [HubspotSDK::Models::CRM::BatchResponseVoid]
             #
             # @see HubspotSDK::Models::CRM::Associations::V4::BatchDeleteParams
             def delete(to_object_type, params)
@@ -61,7 +61,7 @@ module HubspotSDK
                 method: :post,
                 path: ["crm/v4/associations/%1$s/%2$s/batch/archive", from_object_type, to_object_type],
                 body: parsed,
-                model: HubspotSDK::CRM::Associations::BatchResponseVoid,
+                model: HubspotSDK::CRM::BatchResponseVoid,
                 options: options
               )
             end
@@ -70,11 +70,11 @@ module HubspotSDK
             #
             # @overload create_default(to_object_type, from_object_type:, inputs:, request_options: {})
             #
-            # @param to_object_type [String] Path param: Type of the fromObject for this association definition (ex. "0-1")
+            # @param to_object_type [String] Path param:
             #
-            # @param from_object_type [String] Path param: Type of the toObject for this association definition (ex. "0-2")
+            # @param from_object_type [String] Path param:
             #
-            # @param inputs [Array<HubspotSDK::Models::CRM::Associations::PublicDefaultAssociationMultiPost>] Body param:
+            # @param inputs [Array<HubspotSDK::Models::CRM::PublicDefaultAssociationMultiPost>] Body param:
             #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
@@ -105,15 +105,15 @@ module HubspotSDK
             #
             # @overload delete_labels(to_object_type, from_object_type:, inputs:, request_options: {})
             #
-            # @param to_object_type [String] Path param: Type of the toObject for this association definition.
+            # @param to_object_type [String] Path param:
             #
-            # @param from_object_type [String] Path param: Type of the fromObject for this association definition.
+            # @param from_object_type [String] Path param:
             #
-            # @param inputs [Array<HubspotSDK::Models::CRM::Associations::PublicAssociationMultiPost>] Body param:
+            # @param inputs [Array<HubspotSDK::Models::CRM::PublicAssociationMultiPost>] Body param:
             #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::CRM::Associations::BatchResponseVoid]
+            # @return [HubspotSDK::Models::CRM::BatchResponseVoid]
             #
             # @see HubspotSDK::Models::CRM::Associations::V4::BatchDeleteLabelsParams
             def delete_labels(to_object_type, params)
@@ -130,7 +130,7 @@ module HubspotSDK
                   to_object_type
                 ],
                 body: parsed,
-                model: HubspotSDK::CRM::Associations::BatchResponseVoid,
+                model: HubspotSDK::CRM::BatchResponseVoid,
                 options: options
               )
             end
@@ -143,15 +143,15 @@ module HubspotSDK
             #
             # @overload get(to_object_type, from_object_type:, inputs:, request_options: {})
             #
-            # @param to_object_type [String] Path param: Type of the toObject for this association definition.
+            # @param to_object_type [String] Path param:
             #
-            # @param from_object_type [String] Path param: Type of the fromObject for this association definition.
+            # @param from_object_type [String] Path param:
             #
-            # @param inputs [Array<HubspotSDK::Models::CRM::Associations::PublicFetchAssociationsBatchRequest>] Body param:
+            # @param inputs [Array<HubspotSDK::Models::CRM::PublicFetchAssociationsBatchRequest>] Body param:
             #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::CRM::Associations::BatchResponsePublicAssociationMultiWithLabel]
+            # @return [HubspotSDK::Models::CRM::BatchResponsePublicAssociationMultiWithLabel]
             #
             # @see HubspotSDK::Models::CRM::Associations::V4::BatchGetParams
             def get(to_object_type, params)
@@ -164,7 +164,7 @@ module HubspotSDK
                 method: :post,
                 path: ["crm/v4/associations/%1$s/%2$s/batch/read", from_object_type, to_object_type],
                 body: parsed,
-                model: HubspotSDK::CRM::Associations::BatchResponsePublicAssociationMultiWithLabel,
+                model: HubspotSDK::CRM::BatchResponsePublicAssociationMultiWithLabel,
                 options: options
               )
             end

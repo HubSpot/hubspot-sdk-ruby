@@ -5,24 +5,19 @@ module HubspotSDK
     module Automation
       class APIFlowBatchFetchMigrationFlowIDCoordinate < HubspotSDK::Internal::Type::BaseModel
         # @!attribute flow_migration_statuses
-        #   The flowId from the V4 API
         #
         #   @return [String]
         required :flow_migration_statuses, String, api_name: :flowMigrationStatuses
 
         # @!attribute type
-        #   The type of input this is, can be FLOW_ID or WORKFLOW_ID
         #
         #   @return [Symbol, HubspotSDK::Models::Automation::APIFlowBatchFetchMigrationFlowIDCoordinate::Type]
         required :type, enum: -> { HubspotSDK::Automation::APIFlowBatchFetchMigrationFlowIDCoordinate::Type }
 
         # @!method initialize(flow_migration_statuses:, type:)
-        #   @param flow_migration_statuses [String] The flowId from the V4 API
-        #
-        #   @param type [Symbol, HubspotSDK::Models::Automation::APIFlowBatchFetchMigrationFlowIDCoordinate::Type] The type of input this is, can be FLOW_ID or WORKFLOW_ID
+        #   @param flow_migration_statuses [String]
+        #   @param type [Symbol, HubspotSDK::Models::Automation::APIFlowBatchFetchMigrationFlowIDCoordinate::Type]
 
-        # The type of input this is, can be FLOW_ID or WORKFLOW_ID
-        #
         # @see HubspotSDK::Models::Automation::APIFlowBatchFetchMigrationFlowIDCoordinate#type
         module Type
           extend HubspotSDK::Internal::Type::Enum

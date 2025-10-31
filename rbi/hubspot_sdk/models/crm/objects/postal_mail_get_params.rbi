@@ -16,40 +16,30 @@ module HubspotSDK
               )
             end
 
-          # Whether to return only results that have been archived.
           sig { returns(T.nilable(T::Boolean)) }
           attr_reader :archived
 
           sig { params(archived: T::Boolean).void }
           attr_writer :archived
 
-          # A comma separated list of object types to retrieve associated IDs for. If any of
-          # the specified associations do not exist, they will be ignored.
           sig { returns(T.nilable(T::Array[String])) }
           attr_reader :associations
 
           sig { params(associations: T::Array[String]).void }
           attr_writer :associations
 
-          # The name of a property whose values are unique for this object
           sig { returns(T.nilable(String)) }
           attr_reader :id_property
 
           sig { params(id_property: String).void }
           attr_writer :id_property
 
-          # A comma separated list of the properties to be returned in the response. If any
-          # of the specified properties are not present on the requested object(s), they
-          # will be ignored.
           sig { returns(T.nilable(T::Array[String])) }
           attr_reader :properties
 
           sig { params(properties: T::Array[String]).void }
           attr_writer :properties
 
-          # A comma separated list of the properties to be returned along with their history
-          # of previous values. If any of the specified properties are not present on the
-          # requested object(s), they will be ignored.
           sig { returns(T.nilable(T::Array[String])) }
           attr_reader :properties_with_history
 
@@ -67,20 +57,10 @@ module HubspotSDK
             ).returns(T.attached_class)
           end
           def self.new(
-            # Whether to return only results that have been archived.
             archived: nil,
-            # A comma separated list of object types to retrieve associated IDs for. If any of
-            # the specified associations do not exist, they will be ignored.
             associations: nil,
-            # The name of a property whose values are unique for this object
             id_property: nil,
-            # A comma separated list of the properties to be returned in the response. If any
-            # of the specified properties are not present on the requested object(s), they
-            # will be ignored.
             properties: nil,
-            # A comma separated list of the properties to be returned along with their history
-            # of previous values. If any of the specified properties are not present on the
-            # requested object(s), they will be ignored.
             properties_with_history: nil,
             request_options: {}
           )

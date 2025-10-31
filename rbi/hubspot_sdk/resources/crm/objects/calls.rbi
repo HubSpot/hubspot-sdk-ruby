@@ -42,7 +42,7 @@ module HubspotSDK
             ).returns(HubspotSDK::CRM::SimplePublicObject)
           end
           def update(
-            # Path param: The ID of the call.
+            # Path param:
             call_id,
             # Body param: Key value pairs representing the properties of the object.
             properties:,
@@ -100,11 +100,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(
-            # The ID of the call.
-            call_id,
-            request_options: {}
-          )
+          def delete(call_id, request_options: {})
           end
 
           # Read an Object identified by `{callId}`. `{callId}` refers to the internal
@@ -123,7 +119,6 @@ module HubspotSDK
             ).returns(HubspotSDK::CRM::SimplePublicObjectWithAssociations)
           end
           def get(
-            # The ID of the call.
             call_id,
             # Whether to return only results that have been archived.
             archived: nil,

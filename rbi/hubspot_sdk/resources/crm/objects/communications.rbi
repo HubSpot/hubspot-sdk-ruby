@@ -45,7 +45,7 @@ module HubspotSDK
             ).returns(HubspotSDK::CRM::SimplePublicObject)
           end
           def update(
-            # Path param: The ID of the communication to update.
+            # Path param:
             communication_id,
             # Body param: Key value pairs representing the properties of the object.
             properties:,
@@ -104,11 +104,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(
-            # The ID of the message to update.
-            communication_id,
-            request_options: {}
-          )
+          def delete(communication_id, request_options: {})
           end
 
           # Read an Object identified by `{communicationId}`. `{communicationId}` refers to
@@ -127,7 +123,6 @@ module HubspotSDK
             ).returns(HubspotSDK::CRM::SimplePublicObjectWithAssociations)
           end
           def get(
-            # The ID of the message to retrieve.
             communication_id,
             # Whether to return only results that have been archived.
             archived: nil,

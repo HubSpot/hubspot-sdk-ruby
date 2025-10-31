@@ -5,35 +5,18 @@ module HubspotSDK
     class Cms
       class Blogs
         class Settings
-          # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::SettingListParams} for more details.
-          #
-          # Get the list of Blogs. Supports paging and filtering. This method would be
-          # useful for an integration that examined these models and used an external
-          # service to suggest edits.
-          #
           # @overload list(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
           #
-          # @param after [String] The cursor token value to get the next set of results. You can get this from the
-          #
-          # @param archived [Boolean] Specifies whether to return archived Blogs. Defaults to `false`.
-          #
-          # @param created_after [Time] Only return Blogs created after the specified time.
-          #
-          # @param created_at [Time] Only return Blogs created at exactly the specified time.
-          #
-          # @param created_before [Time] Only return Blogs created before the specified time.
-          #
-          # @param limit [Integer] The maximum number of results to return. Default is 100.
-          #
-          # @param sort [Array<String>] Specifies which fields to use for sorting results. Valid fields are `name` and `
-          #
-          # @param updated_after [Time] Only return Blogs last updated after the specified time.
-          #
-          # @param updated_at [Time] Only return Blogs last updated at exactly the specified time.
-          #
-          # @param updated_before [Time] Only return Blogs last updated before the specified time.
-          #
+          # @param after [String]
+          # @param archived [Boolean]
+          # @param created_after [Time]
+          # @param created_at [Time]
+          # @param created_before [Time]
+          # @param limit [Integer]
+          # @param sort [Array<String>]
+          # @param updated_after [Time]
+          # @param updated_at [Time]
+          # @param updated_before [Time]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::Blogs::Blog>]
@@ -58,8 +41,6 @@ module HubspotSDK
             )
           end
 
-          # Attach a blog to a multi-language group.
-          #
           # @overload attach_to_lang_group(id:, language:, primary_id:, primary_language: nil, request_options: {})
           #
           # @param id [String] ID of the object to add to a multi-language group.
@@ -86,8 +67,6 @@ module HubspotSDK
             )
           end
 
-          # Create a new language variation from an existing blog
-          #
           # @overload create_language_variation(id:, language: nil, primary_language: nil, slug: nil, request_options: {})
           #
           # @param id [String] ID of blog to clone.
@@ -114,8 +93,6 @@ module HubspotSDK
             )
           end
 
-          # Detach a blog from a multi-language group.
-          #
           # @overload detach_from_lang_group(id:, request_options: {})
           #
           # @param id [String] ID of the object to remove from a multi-language group.
@@ -136,12 +113,9 @@ module HubspotSDK
             )
           end
 
-          # Retrieve the Blog object identified by the id in the path.
-          #
           # @overload get(blog_id, request_options: {})
           #
-          # @param blog_id [String] The Blog id.
-          #
+          # @param blog_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Cms::Blogs::Blog]
@@ -156,14 +130,10 @@ module HubspotSDK
             )
           end
 
-          # Retrieves a previous version of a Blog
-          #
           # @overload get_revision(revision_id, blog_id:, request_options: {})
           #
-          # @param revision_id [String] The Blog version id.
-          #
-          # @param blog_id [String] The Blog id.
-          #
+          # @param revision_id [String]
+          # @param blog_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Cms::Blogs::VersionBlog]
@@ -183,21 +153,12 @@ module HubspotSDK
             )
           end
 
-          # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::SettingListRevisionsParams} for more details.
-          #
-          # Retrieves all the previous versions of a Blog
-          #
           # @overload list_revisions(blog_id, after: nil, before: nil, limit: nil, request_options: {})
           #
-          # @param blog_id [String] The Blog id.
-          #
-          # @param after [String] The cursor token value to get the next set of results. You can get this from the
-          #
+          # @param blog_id [String]
+          # @param after [String]
           # @param before [String]
-          #
-          # @param limit [Integer] The maximum number of results to return. Default is 100.
-          #
+          # @param limit [Integer]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Cms::Blogs::CollectionResponseWithTotalVersionBlog]
@@ -214,8 +175,6 @@ module HubspotSDK
             )
           end
 
-          # Set a blog as the primary language of a multi-language group.
-          #
           # @overload set_new_lang_primary(id:, request_options: {})
           #
           # @param id [String] ID of object to set as primary in multi-language group.
@@ -238,8 +197,6 @@ module HubspotSDK
 
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Cms::Blogs::SettingUpdateLanguagesParams} for more details.
-          #
-          # Explicitly set new languages for each blog in a multi-language group.
           #
           # @overload update_languages(languages:, primary_id:, request_options: {})
           #

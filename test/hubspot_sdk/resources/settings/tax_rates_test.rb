@@ -9,12 +9,12 @@ class HubspotSDK::Test::Resources::Settings::TaxRatesTest < HubspotSDK::Test::Re
     response = @hubspot.settings.tax_rates.list
 
     assert_pattern do
-      response => HubspotSDK::Models::Settings::TaxRateListResponse
+      response => HubspotSDK::Settings::CollectionResponsePublicTaxRateGroupForwardPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::Settings::TaxRateListResponse::Result]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Settings::PublicTaxRateGroup]),
         paging: HubspotSDK::ForwardPaging | nil
       }
     end
@@ -26,7 +26,7 @@ class HubspotSDK::Test::Resources::Settings::TaxRatesTest < HubspotSDK::Test::Re
     response = @hubspot.settings.tax_rates.get("taxRateGroupId")
 
     assert_pattern do
-      response => HubspotSDK::Models::Settings::TaxRateGetResponse
+      response => HubspotSDK::Settings::PublicTaxRateGroup
     end
 
     assert_pattern do

@@ -13,6 +13,7 @@ module HubspotSDK
               )
             end
 
+          # The URL used to retrieve authenticated call recordings.
           sig { returns(String) }
           attr_accessor :url_to_retrieve_authed_recording
 
@@ -21,7 +22,10 @@ module HubspotSDK
               T.attached_class
             )
           end
-          def self.new(url_to_retrieve_authed_recording:)
+          def self.new(
+            # The URL used to retrieve authenticated call recordings.
+            url_to_retrieve_authed_recording:
+          )
           end
 
           sig { override.returns({ url_to_retrieve_authed_recording: String }) }

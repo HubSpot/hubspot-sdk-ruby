@@ -5,9 +5,6 @@ module HubspotSDK
     class Cms
       class Blogs
         class Settings
-          # Get the list of Blogs. Supports paging and filtering. This method would be
-          # useful for an integration that examined these models and used an external
-          # service to suggest edits.
           sig do
             params(
               after: String,
@@ -24,33 +21,20 @@ module HubspotSDK
             ).returns(HubspotSDK::Internal::Page[HubspotSDK::Cms::Blogs::Blog])
           end
           def list(
-            # The cursor token value to get the next set of results. You can get this from the
-            # `paging.next.after` JSON property of a paged response containing more results.
             after: nil,
-            # Specifies whether to return archived Blogs. Defaults to `false`.
             archived: nil,
-            # Only return Blogs created after the specified time.
             created_after: nil,
-            # Only return Blogs created at exactly the specified time.
             created_at: nil,
-            # Only return Blogs created before the specified time.
             created_before: nil,
-            # The maximum number of results to return. Default is 100.
             limit: nil,
-            # Specifies which fields to use for sorting results. Valid fields are `name` and
-            # `id`
             sort: nil,
-            # Only return Blogs last updated after the specified time.
             updated_after: nil,
-            # Only return Blogs last updated at exactly the specified time.
             updated_at: nil,
-            # Only return Blogs last updated before the specified time.
             updated_before: nil,
             request_options: {}
           )
           end
 
-          # Attach a blog to a multi-language group.
           sig do
             params(
               id: String,
@@ -73,7 +57,6 @@ module HubspotSDK
           )
           end
 
-          # Create a new language variation from an existing blog
           sig do
             params(
               id: String,
@@ -96,7 +79,6 @@ module HubspotSDK
           )
           end
 
-          # Detach a blog from a multi-language group.
           sig do
             params(
               id: String,
@@ -110,21 +92,15 @@ module HubspotSDK
           )
           end
 
-          # Retrieve the Blog object identified by the id in the path.
           sig do
             params(
               blog_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Cms::Blogs::Blog)
           end
-          def get(
-            # The Blog id.
-            blog_id,
-            request_options: {}
-          )
+          def get(blog_id, request_options: {})
           end
 
-          # Retrieves a previous version of a Blog
           sig do
             params(
               revision_id: String,
@@ -132,16 +108,9 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Cms::Blogs::VersionBlog)
           end
-          def get_revision(
-            # The Blog version id.
-            revision_id,
-            # The Blog id.
-            blog_id:,
-            request_options: {}
-          )
+          def get_revision(revision_id, blog_id:, request_options: {})
           end
 
-          # Retrieves all the previous versions of a Blog
           sig do
             params(
               blog_id: String,
@@ -154,19 +123,14 @@ module HubspotSDK
             )
           end
           def list_revisions(
-            # The Blog id.
             blog_id,
-            # The cursor token value to get the next set of results. You can get this from the
-            # `paging.next.after` JSON property of a paged response containing more results.
             after: nil,
             before: nil,
-            # The maximum number of results to return. Default is 100.
             limit: nil,
             request_options: {}
           )
           end
 
-          # Set a blog as the primary language of a multi-language group.
           sig do
             params(
               id: String,
@@ -180,7 +144,6 @@ module HubspotSDK
           )
           end
 
-          # Explicitly set new languages for each blog in a multi-language group.
           sig do
             params(
               languages: T::Hash[Symbol, String],

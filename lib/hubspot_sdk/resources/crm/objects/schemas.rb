@@ -8,10 +8,6 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::CRM::Objects::SchemaCreateParams} for more details.
           #
-          # Define a new object schema, along with custom properties and associations. The
-          # entire object schema, including its object type ID, properties, and associations
-          # will be returned in the response.
-          #
           # @overload create(associated_objects:, labels:, name:, properties:, required_properties:, description: nil, primary_display_property: nil, searchable_properties: nil, secondary_display_properties: nil, request_options: {})
           #
           # @param associated_objects [Array<String>] Associations defined for this object type.
@@ -51,8 +47,6 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::CRM::Objects::SchemaUpdateParams} for more details.
           #
-          # Update the details for an existing object schema.
-          #
           # @overload update(object_type, clear_description: nil, description: nil, labels: nil, primary_display_property: nil, required_properties: nil, restorable: nil, searchable_properties: nil, secondary_display_properties: nil, request_options: {})
           #
           # @param object_type [String] Fully qualified name or object type ID of your schema.
@@ -89,8 +83,6 @@ module HubspotSDK
             )
           end
 
-          # Returns all object schemas that have been defined for your account.
-          #
           # @overload list(archived: nil, request_options: {})
           #
           # @param archived [Boolean] Whether to return only results that have been archived.
@@ -111,9 +103,6 @@ module HubspotSDK
             )
           end
 
-          # Deletes a schema. Any existing records of this schema must be deleted **first**.
-          # Otherwise this call will fail.
-          #
           # @overload delete(object_type, archived: nil, request_options: {})
           #
           # @param object_type [String] Fully qualified name or object type ID of your schema.
@@ -136,9 +125,6 @@ module HubspotSDK
             )
           end
 
-          # Defines a new association between the primary schema's object type and other
-          # object types.
-          #
           # @overload create_association(object_type, from_object_type_id:, to_object_type_id:, name: nil, request_options: {})
           #
           # @param object_type [String] Fully qualified name or object type ID of your schema.
@@ -151,7 +137,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::Objects::SchemaCreateAssociationResponse]
+          # @return [HubspotSDK::Models::Events::AssociationDefinition]
           #
           # @see HubspotSDK::Models::CRM::Objects::SchemaCreateAssociationParams
           def create_association(object_type, params)
@@ -160,13 +146,11 @@ module HubspotSDK
               method: :post,
               path: ["crm-object-schemas/v3/schemas/%1$s/associations", object_type],
               body: parsed,
-              model: HubspotSDK::Models::CRM::Objects::SchemaCreateAssociationResponse,
+              model: HubspotSDK::Events::AssociationDefinition,
               options: options
             )
           end
 
-          # Removes an existing association from a schema.
-          #
           # @overload delete_association(association_identifier, object_type:, request_options: {})
           #
           # @param association_identifier [String] Unique ID of the association to remove.
@@ -196,8 +180,6 @@ module HubspotSDK
             )
           end
 
-          # Returns an existing object schema.
-          #
           # @overload get(object_type, request_options: {})
           #
           # @param object_type [String] Fully qualified name or object type ID of your schema.

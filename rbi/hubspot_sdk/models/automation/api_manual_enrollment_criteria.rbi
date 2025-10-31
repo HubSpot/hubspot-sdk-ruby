@@ -12,12 +12,9 @@ module HubspotSDK
             )
           end
 
-        # Whether or not the same object can enroll in this workflow twice.
         sig { returns(T::Boolean) }
         attr_accessor :should_re_enroll
 
-        # The type of enrollment criteria this is, this can be "LIST_BASED",
-        # "EVENT_BASED", or "MANUAL".
         sig do
           returns(
             HubspotSDK::Automation::APIManualEnrollmentCriteria::Type::OrSymbol
@@ -32,13 +29,7 @@ module HubspotSDK
               HubspotSDK::Automation::APIManualEnrollmentCriteria::Type::OrSymbol
           ).returns(T.attached_class)
         end
-        def self.new(
-          # Whether or not the same object can enroll in this workflow twice.
-          should_re_enroll:,
-          # The type of enrollment criteria this is, this can be "LIST_BASED",
-          # "EVENT_BASED", or "MANUAL".
-          type:
-        )
+        def self.new(should_re_enroll:, type:)
         end
 
         sig do
@@ -53,8 +44,6 @@ module HubspotSDK
         def to_hash
         end
 
-        # The type of enrollment criteria this is, this can be "LIST_BASED",
-        # "EVENT_BASED", or "MANUAL".
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

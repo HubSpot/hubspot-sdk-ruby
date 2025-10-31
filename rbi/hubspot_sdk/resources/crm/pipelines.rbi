@@ -77,7 +77,7 @@ module HubspotSDK
         def list(object_type, request_options: {})
         end
 
-        # Delete the pipeline identified by `{pipelineId}`.
+        # Delete a pipeline
         sig do
           params(
             pipeline_id: String,
@@ -123,9 +123,7 @@ module HubspotSDK
         def get_audit(pipeline_id, object_type:, request_options: {})
         end
 
-        # Replace all the properties of an existing pipeline with the values provided.
-        # This will overwrite any existing pipeline stages. The updated pipeline will be
-        # returned in the response.
+        # Replace a pipeline
         sig do
           params(
             pipeline_id: String,

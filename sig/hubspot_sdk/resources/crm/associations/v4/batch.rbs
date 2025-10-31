@@ -7,37 +7,37 @@ module HubspotSDK
             def create: (
               String to_object_type,
               from_object_type: String,
-              inputs: ::Array[HubspotSDK::CRM::Associations::PublicAssociationMultiPost],
+              inputs: ::Array[HubspotSDK::CRM::PublicAssociationMultiPost],
               ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::CRM::Associations::BatchResponseLabelsBetweenObjectPair
+            ) -> HubspotSDK::CRM::BatchResponseLabelsBetweenObjectPair
 
             def delete: (
               String to_object_type,
               from_object_type: String,
-              inputs: ::Array[HubspotSDK::CRM::Associations::PublicAssociationMultiArchive],
+              inputs: ::Array[HubspotSDK::CRM::PublicAssociationMultiArchive],
               ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::CRM::Associations::BatchResponseVoid
+            ) -> HubspotSDK::CRM::BatchResponseVoid
 
             def create_default: (
               String to_object_type,
               from_object_type: String,
-              inputs: ::Array[HubspotSDK::CRM::Associations::PublicDefaultAssociationMultiPost],
+              inputs: ::Array[HubspotSDK::CRM::PublicDefaultAssociationMultiPost],
               ?request_options: HubspotSDK::request_opts
             ) -> HubspotSDK::CRM::BatchResponsePublicDefaultAssociation
 
             def delete_labels: (
               String to_object_type,
               from_object_type: String,
-              inputs: ::Array[HubspotSDK::CRM::Associations::PublicAssociationMultiPost],
+              inputs: ::Array[HubspotSDK::CRM::PublicAssociationMultiPost],
               ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::CRM::Associations::BatchResponseVoid
+            ) -> HubspotSDK::CRM::BatchResponseVoid
 
             def get: (
               String to_object_type,
               from_object_type: String,
-              inputs: ::Array[HubspotSDK::CRM::Associations::PublicFetchAssociationsBatchRequest],
+              inputs: ::Array[HubspotSDK::CRM::PublicFetchAssociationsBatchRequest],
               ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::CRM::Associations::BatchResponsePublicAssociationMultiWithLabel
+            ) -> HubspotSDK::CRM::BatchResponsePublicAssociationMultiWithLabel
 
             def initialize: (client: HubspotSDK::Client) -> void
           end

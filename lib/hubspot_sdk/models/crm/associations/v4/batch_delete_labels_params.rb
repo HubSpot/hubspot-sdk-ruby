@@ -6,7 +6,7 @@ module HubspotSDK
       module Associations
         module V4
           # @see HubspotSDK::Resources::CRM::Associations::V4::Batch#delete_labels
-          class BatchDeleteLabelsParams < HubspotSDK::Models::CRM::Associations::BatchInputPublicAssociationMultiPost
+          class BatchDeleteLabelsParams < HubspotSDK::Models::CRM::BatchInputPublicAssociationMultiPost
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

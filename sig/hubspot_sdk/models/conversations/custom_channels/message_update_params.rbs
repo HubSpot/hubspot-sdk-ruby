@@ -3,50 +3,26 @@ module HubspotSDK
     module Conversations
       module CustomChannels
         type message_update_params =
-          {
-            channel_id: String,
-            status_type: HubspotSDK::Models::Conversations::CustomChannels::MessageUpdateParams::status_type,
-            error_message: String
-          }
+          { channel_id: String }
           & HubspotSDK::Internal::Type::request_parameters
 
-        class MessageUpdateParams < HubspotSDK::Internal::Type::BaseModel
+        class MessageUpdateParams < HubspotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          attr_accessor channel_id: String
+          def channel_id: -> String
 
-          attr_accessor status_type: HubspotSDK::Models::Conversations::CustomChannels::MessageUpdateParams::status_type
-
-          attr_reader error_message: String?
-
-          def error_message=: (String) -> String
+          def channel_id=: (String _) -> String
 
           def initialize: (
             channel_id: String,
-            status_type: HubspotSDK::Models::Conversations::CustomChannels::MessageUpdateParams::status_type,
-            ?error_message: String,
             ?request_options: HubspotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
             channel_id: String,
-            status_type: HubspotSDK::Models::Conversations::CustomChannels::MessageUpdateParams::status_type,
-            error_message: String,
             request_options: HubspotSDK::RequestOptions
           }
-
-          type status_type = :SENT | :FAILED | :READ
-
-          module StatusType
-            extend HubspotSDK::Internal::Type::Enum
-
-            SENT: :SENT
-            FAILED: :FAILED
-            READ: :READ
-
-            def self?.values: -> ::Array[HubspotSDK::Models::Conversations::CustomChannels::MessageUpdateParams::status_type]
-          end
         end
       end
     end

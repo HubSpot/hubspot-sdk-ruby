@@ -1,0 +1,39 @@
+module HubspotSDK
+  module Models
+    module Events
+      type combo_event_rule =
+        {
+          count: Integer,
+          event_type_id: String,
+          property_filters: ::Array[HubspotSDK::Events::PropertyFilter],
+          lookback_window_days: Integer
+        }
+
+      class ComboEventRule < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor count: Integer
+
+        attr_accessor event_type_id: String
+
+        attr_accessor property_filters: ::Array[HubspotSDK::Events::PropertyFilter]
+
+        attr_reader lookback_window_days: Integer?
+
+        def lookback_window_days=: (Integer) -> Integer
+
+        def initialize: (
+          count: Integer,
+          event_type_id: String,
+          property_filters: ::Array[HubspotSDK::Events::PropertyFilter],
+          ?lookback_window_days: Integer
+        ) -> void
+
+        def to_hash: -> {
+          count: Integer,
+          event_type_id: String,
+          property_filters: ::Array[HubspotSDK::Events::PropertyFilter],
+          lookback_window_days: Integer
+        }
+      end
+    end
+  end
+end

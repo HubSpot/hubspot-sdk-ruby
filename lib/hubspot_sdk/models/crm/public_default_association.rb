@@ -8,10 +8,8 @@ module HubspotSDK
         #   Defines the type, direction, and details of the relationship between two CRM
         #   objects.
         #
-        #   @return [HubspotSDK::Models::CRM::Associations::AssociationSpec1]
-        required :association_spec,
-                 -> { HubspotSDK::CRM::Associations::AssociationSpec1 },
-                 api_name: :associationSpec
+        #   @return [HubspotSDK::Models::AssociationSpec]
+        required :association_spec, -> { HubspotSDK::AssociationSpec }, api_name: :associationSpec
 
         # @!attribute from
         #
@@ -27,7 +25,7 @@ module HubspotSDK
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::CRM::PublicDefaultAssociation} for more details.
         #
-        #   @param association_spec [HubspotSDK::Models::CRM::Associations::AssociationSpec1] Defines the type, direction, and details of the relationship between two CRM obj
+        #   @param association_spec [HubspotSDK::Models::AssociationSpec] Defines the type, direction, and details of the relationship between two CRM obj
         #
         #   @param from [HubspotSDK::Models::PublicObjectID]
         #

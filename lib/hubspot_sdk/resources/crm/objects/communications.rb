@@ -44,7 +44,7 @@ module HubspotSDK
           #
           # @overload update(communication_id, properties:, id_property: nil, request_options: {})
           #
-          # @param communication_id [String] Path param: The ID of the communication to update.
+          # @param communication_id [String] Path param:
           #
           # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
           #
@@ -109,8 +109,7 @@ module HubspotSDK
           #
           # @overload delete(communication_id, request_options: {})
           #
-          # @param communication_id [String] The ID of the message to update.
-          #
+          # @param communication_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -135,7 +134,7 @@ module HubspotSDK
           #
           # @overload get(communication_id, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
-          # @param communication_id [String] The ID of the message to retrieve.
+          # @param communication_id [String]
           #
           # @param archived [Boolean] Whether to return only results that have been archived.
           #

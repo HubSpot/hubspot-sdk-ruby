@@ -12,7 +12,6 @@ module HubspotSDK
             )
           end
 
-        # The list filter branch that represents the enrollment trigger to this flow.
         sig do
           returns(
             T.any(
@@ -29,8 +28,6 @@ module HubspotSDK
         end
         attr_accessor :list_filter_branch
 
-        # A list of filter branches to listen for in order to re-enroll objects into this
-        # workflow.
         sig do
           returns(
             T::Array[
@@ -49,12 +46,9 @@ module HubspotSDK
         end
         attr_accessor :re_enrollment_triggers_filter_branches
 
-        # Whether or not the same object can enroll in this workflow twice.
         sig { returns(T::Boolean) }
         attr_accessor :should_re_enroll
 
-        # The type of enrollment criteria this is, this can be "LIST_BASED",
-        # "EVENT_BASED", or "MANUAL".
         sig do
           returns(
             HubspotSDK::Automation::APIListBasedEnrollmentCriteria::Type::OrSymbol
@@ -62,8 +56,6 @@ module HubspotSDK
         end
         attr_accessor :type
 
-        # Whether or not to remove objects from this workflow if they stop meeting the
-        # enrollment criteria.
         sig { returns(T::Boolean) }
         attr_accessor :un_enroll_objects_not_meeting_criteria
 
@@ -100,18 +92,10 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The list filter branch that represents the enrollment trigger to this flow.
           list_filter_branch:,
-          # A list of filter branches to listen for in order to re-enroll objects into this
-          # workflow.
           re_enrollment_triggers_filter_branches:,
-          # Whether or not the same object can enroll in this workflow twice.
           should_re_enroll:,
-          # The type of enrollment criteria this is, this can be "LIST_BASED",
-          # "EVENT_BASED", or "MANUAL".
           type:,
-          # Whether or not to remove objects from this workflow if they stop meeting the
-          # enrollment criteria.
           un_enroll_objects_not_meeting_criteria:
         )
         end
@@ -153,7 +137,6 @@ module HubspotSDK
         def to_hash
         end
 
-        # The list filter branch that represents the enrollment trigger to this flow.
         module ListFilterBranch
           extend HubspotSDK::Internal::Type::Union
 
@@ -210,8 +193,6 @@ module HubspotSDK
           end
         end
 
-        # The type of enrollment criteria this is, this can be "LIST_BASED",
-        # "EVENT_BASED", or "MANUAL".
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

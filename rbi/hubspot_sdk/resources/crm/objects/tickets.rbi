@@ -101,11 +101,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(
-            # The ID of the ticket to delete.
-            ticket_id,
-            request_options: {}
-          )
+          def delete(ticket_id, request_options: {})
           end
 
           # Read an Object identified by `{ticketId}`. `{ticketId}` refers to the internal
@@ -124,7 +120,6 @@ module HubspotSDK
             ).returns(HubspotSDK::CRM::SimplePublicObjectWithAssociations)
           end
           def get(
-            # The ID of the ticket.
             ticket_id,
             # Whether to return only results that have been archived.
             archived: nil,

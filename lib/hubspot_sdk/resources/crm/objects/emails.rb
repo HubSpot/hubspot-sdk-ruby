@@ -164,6 +164,9 @@ module HubspotSDK
             )
           end
 
+          # Perform a search for emails based on the provided query parameters and return
+          # matching results.
+          #
           # @overload search(after: nil, filter_groups: nil, limit: nil, properties: nil, query: nil, sorts: nil, request_options: {})
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.

@@ -12,11 +12,9 @@ module HubspotSDK
             )
           end
 
-        # The ID for this action.
         sig { returns(String) }
         attr_accessor :action_id
 
-        # The HTTP method to use when calling the webhook URL
         sig do
           returns(HubspotSDK::Automation::APIWebhookAction::Method::OrSymbol)
         end
@@ -25,18 +23,14 @@ module HubspotSDK
         sig { returns(T::Array[HubspotSDK::Automation::APIInputVariable]) }
         attr_accessor :query_params
 
-        # The type of action this is, can be: "STATIC_BRANCH", "LIST_BRANCH",
-        # "AB_TEST_BRANCH", "CUSTOM_CODE", "WEBHOOK", or "SINGLE_CONNECTION"
         sig do
           returns(HubspotSDK::Automation::APIWebhookAction::Type::OrSymbol)
         end
         attr_accessor :type
 
-        # The URL to call each time this action is executed.
         sig { returns(String) }
         attr_accessor :webhook_url
 
-        # The type of auth to use when calling the webhook endpoint.
         sig do
           returns(
             T.nilable(
@@ -85,17 +79,11 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The ID for this action.
           action_id:,
-          # The HTTP method to use when calling the webhook URL
           method_:,
           query_params:,
-          # The type of action this is, can be: "STATIC_BRANCH", "LIST_BRANCH",
-          # "AB_TEST_BRANCH", "CUSTOM_CODE", "WEBHOOK", or "SINGLE_CONNECTION"
           type:,
-          # The URL to call each time this action is executed.
           webhook_url:,
-          # The type of auth to use when calling the webhook endpoint.
           auth_settings: nil,
           connection: nil
         )
@@ -122,7 +110,6 @@ module HubspotSDK
         def to_hash
         end
 
-        # The HTTP method to use when calling the webhook URL
         module Method
           extend HubspotSDK::Internal::Type::Enum
 
@@ -189,8 +176,6 @@ module HubspotSDK
           end
         end
 
-        # The type of action this is, can be: "STATIC_BRANCH", "LIST_BRANCH",
-        # "AB_TEST_BRANCH", "CUSTOM_CODE", "WEBHOOK", or "SINGLE_CONNECTION"
         module Type
           extend HubspotSDK::Internal::Type::Enum
 
@@ -217,7 +202,6 @@ module HubspotSDK
           end
         end
 
-        # The type of auth to use when calling the webhook endpoint.
         module AuthSettings
           extend HubspotSDK::Internal::Type::Union
 

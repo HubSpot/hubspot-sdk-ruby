@@ -26,9 +26,8 @@ module HubspotSDK
 
         # @!attribute errors
         #
-        #   @return [Array<HubspotSDK::Models::CRM::Associations::StandardError1>, nil]
-        optional :errors,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Associations::StandardError1] }
+        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
+        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
 
         # @!attribute links
         #
@@ -50,7 +49,7 @@ module HubspotSDK
         #   @param results [Array<HubspotSDK::Models::CRM::PublicDefaultAssociation>]
         #   @param started_at [Time]
         #   @param status [Symbol, HubspotSDK::Models::CRM::BatchResponsePublicDefaultAssociation::Status]
-        #   @param errors [Array<HubspotSDK::Models::CRM::Associations::StandardError1>]
+        #   @param errors [Array<HubspotSDK::Models::StandardError>]
         #   @param links [Hash{Symbol=>String}]
         #   @param num_errors [Integer]
         #   @param requested_at [Time]

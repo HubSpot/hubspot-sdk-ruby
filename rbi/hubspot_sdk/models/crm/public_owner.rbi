@@ -9,33 +9,41 @@ module HubspotSDK
             T.any(HubspotSDK::CRM::PublicOwner, HubspotSDK::Internal::AnyHash)
           end
 
+        # The unique identifier of the owner.
         sig { returns(String) }
         attr_accessor :id
 
+        # Indicates whether the owner is archived.
         sig { returns(T::Boolean) }
         attr_accessor :archived
 
+        # The date and time when the owner was created.
         sig { returns(Time) }
         attr_accessor :created_at
 
+        # The type of the owner, which can be either PERSON or QUEUE.
         sig { returns(HubspotSDK::CRM::PublicOwner::Type::TaggedSymbol) }
         attr_accessor :type
 
+        # The date and time when the owner was last updated.
         sig { returns(Time) }
         attr_accessor :updated_at
 
+        # The email address of the owner.
         sig { returns(T.nilable(String)) }
         attr_reader :email
 
         sig { params(email: String).void }
         attr_writer :email
 
+        # The first name of the owner.
         sig { returns(T.nilable(String)) }
         attr_reader :first_name
 
         sig { params(first_name: String).void }
         attr_writer :first_name
 
+        # The last name of the owner.
         sig { returns(T.nilable(String)) }
         attr_reader :last_name
 
@@ -50,12 +58,14 @@ module HubspotSDK
         end
         attr_writer :teams
 
+        # The user ID of the owner.
         sig { returns(T.nilable(Integer)) }
         attr_reader :user_id
 
         sig { params(user_id: Integer).void }
         attr_writer :user_id
 
+        # The user ID of the owner, including inactive users.
         sig { returns(T.nilable(Integer)) }
         attr_reader :user_id_including_inactive
 
@@ -78,16 +88,26 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # The unique identifier of the owner.
           id:,
+          # Indicates whether the owner is archived.
           archived:,
+          # The date and time when the owner was created.
           created_at:,
+          # The type of the owner, which can be either PERSON or QUEUE.
           type:,
+          # The date and time when the owner was last updated.
           updated_at:,
+          # The email address of the owner.
           email: nil,
+          # The first name of the owner.
           first_name: nil,
+          # The last name of the owner.
           last_name: nil,
           teams: nil,
+          # The user ID of the owner.
           user_id: nil,
+          # The user ID of the owner, including inactive users.
           user_id_including_inactive: nil
         )
         end
@@ -112,6 +132,7 @@ module HubspotSDK
         def to_hash
         end
 
+        # The type of the owner, which can be either PERSON or QUEUE.
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

@@ -78,15 +78,14 @@ module HubspotSDK
               description: String,
               display_order: Integer,
               field_type:
-                HubspotSDK::Cms::MediaBridge::PropertyUpdateParams::FieldType::OrSymbol,
+                HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::OrSymbol,
               form_field: T::Boolean,
               group_name: String,
               has_unique_value: T::Boolean,
               hidden: T::Boolean,
               label: String,
               options: T::Array[HubspotSDK::OptionInput::OrHash],
-              type:
-                HubspotSDK::Cms::MediaBridge::PropertyUpdateParams::Type::OrSymbol,
+              type: HubspotSDK::Cms::MediaBridgePropertyUpdate::Type::OrSymbol,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Property)
           end
@@ -129,9 +128,7 @@ module HubspotSDK
               object_type: String,
               app_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Models::Cms::MediaBridge::PropertyListResponse
-            )
+            ).returns(HubspotSDK::Cms::CollectionResponsePropertyNoPaging)
           end
           def list(object_type, app_id:, request_options: {})
           end

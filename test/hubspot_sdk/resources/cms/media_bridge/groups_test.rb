@@ -29,7 +29,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::GroupsTest < HubspotSDK::Te
     response = @hubspot.cms.media_bridge.groups.list("objectType", app_id: "appId")
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::MediaBridge::GroupListResponse
+      response => HubspotSDK::Cms::CollectionResponsePropertyGroupNoPaging
     end
 
     assert_pattern do

@@ -87,7 +87,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::MediaBridge::SchemaCreateAssociationResponse]
+          # @return [HubspotSDK::Models::Events::AssociationDefinition]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::SchemaCreateAssociationParams
           def create_association(object_type, params)
@@ -100,7 +100,7 @@ module HubspotSDK
               method: :post,
               path: ["media-bridge/v1/%1$s/schemas/%2$s/associations", app_id, object_type],
               body: parsed,
-              model: HubspotSDK::Models::Cms::MediaBridge::SchemaCreateAssociationResponse,
+              model: HubspotSDK::Events::AssociationDefinition,
               options: options
             )
           end

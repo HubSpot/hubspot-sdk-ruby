@@ -12,7 +12,7 @@ module HubspotSDK
               params(
                 user_id: Integer,
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::CRM::Associations::ReportCreationResponse)
+              ).returns(HubspotSDK::CRM::ReportCreationResponse)
             end
             def get_high_usage_report(user_id, request_options: {})
             end

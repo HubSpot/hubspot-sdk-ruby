@@ -12,11 +12,7 @@ module HubspotSDK
             )
           end
 
-        sig do
-          returns(
-            T::Array[HubspotSDK::CRM::Associations::AssociationSpecWithLabel1]
-          )
-        end
+        sig { returns(T::Array[HubspotSDK::CRM::AssociationSpecWithLabel]) }
         attr_accessor :association_types
 
         sig { returns(String) }
@@ -25,9 +21,7 @@ module HubspotSDK
         sig do
           params(
             association_types:
-              T::Array[
-                HubspotSDK::CRM::Associations::AssociationSpecWithLabel1::OrHash
-              ],
+              T::Array[HubspotSDK::CRM::AssociationSpecWithLabel::OrHash],
             to_object_id: String
           ).returns(T.attached_class)
         end
@@ -38,9 +32,7 @@ module HubspotSDK
           override.returns(
             {
               association_types:
-                T::Array[
-                  HubspotSDK::CRM::Associations::AssociationSpecWithLabel1
-                ],
+                T::Array[HubspotSDK::CRM::AssociationSpecWithLabel],
               to_object_id: String
             }
           )

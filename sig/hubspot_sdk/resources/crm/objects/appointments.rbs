@@ -1,0 +1,11 @@
+module HubspotSDK
+  module Resources
+    class CRM
+      class Objects
+        class Appointments
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

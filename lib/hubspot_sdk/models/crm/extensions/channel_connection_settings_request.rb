@@ -6,21 +6,18 @@ module HubspotSDK
       module Extensions
         class ChannelConnectionSettingsRequest < HubspotSDK::Internal::Type::BaseModel
           # @!attribute is_ready
-          #   If true, this app will be considered to support channel connection
           #
           #   @return [Boolean]
           required :is_ready, HubspotSDK::Internal::Type::Boolean, api_name: :isReady
 
           # @!attribute url
-          #   The URL to fetch phone numbers available for channel connection
           #
           #   @return [String]
           required :url, String
 
           # @!method initialize(is_ready:, url:)
-          #   @param is_ready [Boolean] If true, this app will be considered to support channel connection
-          #
-          #   @param url [String] The URL to fetch phone numbers available for channel connection
+          #   @param is_ready [Boolean]
+          #   @param url [String]
         end
       end
     end

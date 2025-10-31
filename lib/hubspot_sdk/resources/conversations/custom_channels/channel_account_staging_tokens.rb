@@ -21,7 +21,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountStagingTokenUpdateResponse]
+          # @return [HubspotSDK::Models::Conversations::PublicChannelAccountStagingToken]
           #
           # @see HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountStagingTokenUpdateParams
           def update(account_token, params)
@@ -39,7 +39,7 @@ module HubspotSDK
                 account_token
               ],
               body: parsed,
-              model: HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountStagingTokenUpdateResponse,
+              model: HubspotSDK::Conversations::PublicChannelAccountStagingToken,
               options: options
             )
           end

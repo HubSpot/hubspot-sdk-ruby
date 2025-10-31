@@ -40,9 +40,6 @@ module HubspotSDK
         # as the `paging.next.after` JSON property of a paged response containing more
         # results.
         after: nil,
-        # Pagination cursor for backward navigation. Retrieves events occurring before the
-        # specified cursor position. Note: Currently only forward pagination with after is
-        # supported.
         before: nil,
         # The event type name. You can retrieve available event types using the
         # [event types endpoint](#get-%2Fevents%2Fv3%2Fevents%2Fevent-types).

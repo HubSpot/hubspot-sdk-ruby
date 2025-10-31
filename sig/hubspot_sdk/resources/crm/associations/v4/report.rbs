@@ -7,7 +7,7 @@ module HubspotSDK
             def get_high_usage_report: (
               Integer user_id,
               ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::CRM::Associations::ReportCreationResponse
+            ) -> HubspotSDK::CRM::ReportCreationResponse
 
             def initialize: (client: HubspotSDK::Client) -> void
           end

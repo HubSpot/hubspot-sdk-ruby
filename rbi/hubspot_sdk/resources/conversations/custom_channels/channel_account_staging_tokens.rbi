@@ -17,7 +17,7 @@ module HubspotSDK
                 HubspotSDK::Conversations::PublicDeliveryIdentifier::OrHash,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountStagingTokenUpdateResponse
+              HubspotSDK::Conversations::PublicChannelAccountStagingToken
             )
           end
           def update(

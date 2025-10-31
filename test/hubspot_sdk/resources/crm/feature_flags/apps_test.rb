@@ -9,15 +9,15 @@ class HubspotSDK::Test::Resources::CRM::FeatureFlags::AppsTest < HubspotSDK::Tes
     response = @hubspot.crm.feature_flags.apps.update("flagName", app_id: 0, default_state: :OFF)
 
     assert_pattern do
-      response => HubspotSDK::Models::CRM::FeatureFlags::AppUpdateResponse
+      response => HubspotSDK::CRM::FlagResponse
     end
 
     assert_pattern do
       response => {
         app_id: Integer,
-        default_state: HubspotSDK::Models::CRM::FeatureFlags::AppUpdateResponse::DefaultState,
+        default_state: HubspotSDK::CRM::FlagResponse::DefaultState,
         flag_name: String,
-        override_state: HubspotSDK::Models::CRM::FeatureFlags::AppUpdateResponse::OverrideState | nil
+        override_state: HubspotSDK::CRM::FlagResponse::OverrideState | nil
       }
     end
   end
@@ -28,15 +28,15 @@ class HubspotSDK::Test::Resources::CRM::FeatureFlags::AppsTest < HubspotSDK::Tes
     response = @hubspot.crm.feature_flags.apps.delete("flagName", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse
+      response => HubspotSDK::CRM::FlagResponse
     end
 
     assert_pattern do
       response => {
         app_id: Integer,
-        default_state: HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse::DefaultState,
+        default_state: HubspotSDK::CRM::FlagResponse::DefaultState,
         flag_name: String,
-        override_state: HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse::OverrideState | nil
+        override_state: HubspotSDK::CRM::FlagResponse::OverrideState | nil
       }
     end
   end
@@ -47,15 +47,15 @@ class HubspotSDK::Test::Resources::CRM::FeatureFlags::AppsTest < HubspotSDK::Tes
     response = @hubspot.crm.feature_flags.apps.get("flagName", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::Models::CRM::FeatureFlags::AppGetResponse
+      response => HubspotSDK::CRM::FlagResponse
     end
 
     assert_pattern do
       response => {
         app_id: Integer,
-        default_state: HubspotSDK::Models::CRM::FeatureFlags::AppGetResponse::DefaultState,
+        default_state: HubspotSDK::CRM::FlagResponse::DefaultState,
         flag_name: String,
-        override_state: HubspotSDK::Models::CRM::FeatureFlags::AppGetResponse::OverrideState | nil
+        override_state: HubspotSDK::CRM::FlagResponse::OverrideState | nil
       }
     end
   end
@@ -66,12 +66,12 @@ class HubspotSDK::Test::Resources::CRM::FeatureFlags::AppsTest < HubspotSDK::Tes
     response = @hubspot.crm.feature_flags.apps.list_portals("flagName", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::Models::CRM::FeatureFlags::AppListPortalsResponse
+      response => HubspotSDK::CRM::PortalFlagStateBatchResponse
     end
 
     assert_pattern do
       response => {
-        portal_flag_states: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::CRM::FeatureFlags::AppListPortalsResponse::PortalFlagState])
+        portal_flag_states: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PortalFlagStateResponse])
       }
     end
   end

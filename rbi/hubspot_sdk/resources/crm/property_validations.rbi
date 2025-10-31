@@ -9,7 +9,9 @@ module HubspotSDK
           params(
             object_type_id: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Models::CRM::PropertyValidationListResponse)
+          ).returns(
+            HubspotSDK::CRM::CollectionResponsePublicPropertyValidationRuleMapNoPaging
+          )
         end
         def list(object_type_id, request_options: {})
         end
@@ -20,7 +22,9 @@ module HubspotSDK
             property_name: String,
             object_type_id: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Models::CRM::PropertyValidationGetResponse)
+          ).returns(
+            HubspotSDK::CRM::CollectionResponsePublicPropertyValidationRuleNoPaging
+          )
         end
         def get(property_name, object_type_id:, request_options: {})
         end

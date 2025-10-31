@@ -6,7 +6,6 @@ module HubspotSDK
       class Objects
         class PartnerClients
           class Batch
-            # Read a batch of objects by internal ID, or unique property values
             sig do
               params(
                 inputs: T::Array[HubspotSDK::CRM::SimplePublicObjectID::OrHash],
@@ -25,7 +24,7 @@ module HubspotSDK
               # Body param: Key-value pairs for setting properties for the new object and their
               # histories.
               properties_with_history:,
-              # Query param: Whether to return only results that have been archived.
+              # Query param:
               archived: nil,
               # Body param: When using a custom unique value property to retrieve records, the
               # name of the property. Do not include this parameter if retrieving by record ID.
@@ -34,7 +33,6 @@ module HubspotSDK
             )
             end
 
-            # Update a batch of objects
             sig do
               params(
                 inputs:

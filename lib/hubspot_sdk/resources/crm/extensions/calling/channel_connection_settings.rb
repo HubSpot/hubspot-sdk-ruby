@@ -6,18 +6,11 @@ module HubspotSDK
       class Extensions
         class Calling
           class ChannelConnectionSettings
-            # Configure
-            # [channel connection settings](https://developers.hubspot.com/docs/guides/api/crm/extensions/third-party-calling#create-channel-connection-settings)
-            # for the app.
-            #
             # @overload create(app_id, is_ready:, url:, request_options: {})
             #
-            # @param app_id [Integer] The ID of the app.
-            #
-            # @param is_ready [Boolean] If true, this app will be considered to support channel connection
-            #
-            # @param url [String] The URL to fetch phone numbers available for channel connection
-            #
+            # @param app_id [Integer]
+            # @param is_ready [Boolean]
+            # @param url [String]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [HubspotSDK::Models::CRM::Extensions::ChannelConnectionSettingsResponse]
@@ -35,18 +28,11 @@ module HubspotSDK
               )
             end
 
-            # Update existing
-            # [channel connection settings](https://developers.hubspot.com/docs/guides/api/crm/extensions/third-party-calling#manage-the-webhook-settings-for-channel-connection)
-            # for your app.
-            #
             # @overload update(app_id, is_ready: nil, url: nil, request_options: {})
             #
-            # @param app_id [Integer] The ID of the app.
-            #
-            # @param is_ready [Boolean] If true, this app will be considered to support channel connection
-            #
-            # @param url [String] The URL to fetch phone numbers available for channel connection
-            #
+            # @param app_id [Integer]
+            # @param is_ready [Boolean]
+            # @param url [String]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [HubspotSDK::Models::CRM::Extensions::ChannelConnectionSettingsResponse]
@@ -64,14 +50,9 @@ module HubspotSDK
               )
             end
 
-            # Delete the
-            # [channel connection settings](https://developers.hubspot.com/docs/guides/api/crm/extensions/third-party-calling#delete-existing-channel-connection-settings)
-            # for the app.
-            #
             # @overload delete(app_id, request_options: {})
             #
-            # @param app_id [Integer] The ID of the app.
-            #
+            # @param app_id [Integer]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [nil]
@@ -86,13 +67,9 @@ module HubspotSDK
               )
             end
 
-            # Retrieve the settings related to the app's
-            # [channel connection](https://developers.hubspot.com/docs/guides/api/crm/extensions/third-party-calling#fetch-existing-channel-connection-settings).
-            #
             # @overload get(app_id, request_options: {})
             #
-            # @param app_id [Integer] The ID of the app.
-            #
+            # @param app_id [Integer]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [HubspotSDK::Models::CRM::Extensions::ChannelConnectionSettingsResponse]

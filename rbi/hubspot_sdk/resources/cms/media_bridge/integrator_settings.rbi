@@ -11,12 +11,10 @@ module HubspotSDK
               app_id: String,
               media_types:
                 T::Array[
-                  HubspotSDK::Cms::MediaBridge::IntegratorSettingCreateObjectDefinitionParams::MediaType::OrSymbol
+                  HubspotSDK::Cms::IntegratorObjectCreationRequest::MediaType::OrSymbol
                 ],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateObjectDefinitionResponse
-            )
+            ).returns(HubspotSDK::Cms::BulkIntegratorObjectCreationResponse)
           end
           def create_object_definition(
             app_id,
@@ -29,13 +27,10 @@ module HubspotSDK
           sig do
             params(
               app_id: String,
-              endpoints:
-                HubspotSDK::Cms::MediaBridge::IntegratorSettingCreateOembedDomainParams::Endpoints::OrHash,
+              endpoints: HubspotSDK::Cms::Endpoints::OrHash,
               portal_id: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateOembedDomainResponse
-            )
+            ).returns(HubspotSDK::Cms::IntegratorOEmbedDomainModel)
           end
           def create_oembed_domain(
             app_id,
@@ -60,9 +55,7 @@ module HubspotSDK
             params(
               app_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetEventVisibilitySettingsResponse
-            )
+            ).returns(HubspotSDK::Cms::EventVisibilityResponse)
           end
           def get_event_visibility_settings(app_id, request_options: {})
           end
@@ -73,9 +66,7 @@ module HubspotSDK
               media_type: String,
               app_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetObjectDefinitionsByMediaTypeResponse
-            )
+            ).returns(HubspotSDK::Cms::ObjectDefinitionResponse)
           end
           def get_object_definitions_by_media_type(
             media_type,
@@ -90,9 +81,7 @@ module HubspotSDK
               o_embed_domain_id: String,
               app_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetOembedDomainResponse
-            )
+            ).returns(HubspotSDK::Cms::IntegratorOEmbedDomainModel)
           end
           def get_oembed_domain(o_embed_domain_id, app_id:, request_options: {})
           end
@@ -102,9 +91,7 @@ module HubspotSDK
             params(
               app_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingListOembedDomainsResponse
-            )
+            ).returns(HubspotSDK::Cms::OEmbedDomainsCollectionResponse)
           end
           def list_oembed_domains(app_id, request_options: {})
           end
@@ -117,9 +104,7 @@ module HubspotSDK
               updated_at: Integer,
               name: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingRegisterAppNameResponse
-            )
+            ).returns(HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse)
           end
           def register_app_name(
             app_id,
@@ -137,9 +122,7 @@ module HubspotSDK
               updated_at: Integer,
               name: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateAppNameResponse
-            )
+            ).returns(HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse)
           end
           def update_app_name(
             app_id,
@@ -154,15 +137,13 @@ module HubspotSDK
             params(
               app_id: String,
               event_type:
-                HubspotSDK::Cms::MediaBridge::IntegratorSettingUpdateEventVisibilitySettingsParams::EventType::OrSymbol,
+                HubspotSDK::Cms::EventVisibilityChange::EventType::OrSymbol,
               updated_at: Integer,
               show_in_reporting: T::Boolean,
               show_in_timeline: T::Boolean,
               show_in_workflows: T::Boolean,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateEventVisibilitySettingsResponse
-            )
+            ).returns(HubspotSDK::Cms::EventVisibilityChange)
           end
           def update_event_visibility_settings(
             app_id,
@@ -180,13 +161,10 @@ module HubspotSDK
             params(
               o_embed_domain_id: String,
               app_id: String,
-              endpoints:
-                HubspotSDK::Cms::MediaBridge::IntegratorSettingUpdateOembedDomainParams::Endpoints::OrHash,
+              endpoints: HubspotSDK::Cms::Endpoints::OrHash,
               portal_id: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateOembedDomainResponse
-            )
+            ).returns(HubspotSDK::Cms::IntegratorOEmbedDomainModel)
           end
           def update_oembed_domain(
             # Path param:

@@ -25,9 +25,6 @@ module HubspotSDK
         optional :after, String
 
         # @!attribute before
-        #   Pagination cursor for backward navigation. Retrieves events occurring before the
-        #   specified cursor position. Note: Currently only forward pagination with after is
-        #   supported.
         #
         #   @return [String, nil]
         optional :before, String
@@ -97,7 +94,7 @@ module HubspotSDK
         #
         #   @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
-        #   @param before [String] Pagination cursor for backward navigation. Retrieves events occurring before the
+        #   @param before [String]
         #
         #   @param event_type [String] The event type name. You can retrieve available event types using the [event typ
         #

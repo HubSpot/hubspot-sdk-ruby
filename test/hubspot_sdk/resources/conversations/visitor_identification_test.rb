@@ -10,7 +10,7 @@ class HubspotSDK::Test::Resources::Conversations::VisitorIdentificationTest < Hu
       @hubspot.conversations.visitor_identification.generate_token(email: "visitor-email@example.com")
 
     assert_pattern do
-      response => HubspotSDK::Models::Conversations::VisitorIdentificationGenerateTokenResponse
+      response => HubspotSDK::Conversations::IdentificationTokenResponse
     end
 
     assert_pattern do

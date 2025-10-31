@@ -19,6 +19,7 @@ module HubspotSDK
         end
         attr_accessor :association_category
 
+        # The ID representing the type of association.
         sig { returns(Integer) }
         attr_accessor :association_type_id
 
@@ -48,6 +49,7 @@ module HubspotSDK
         end
         def self.new(
           association_category:,
+          # The ID representing the type of association.
           association_type_id:,
           name:,
           object_type_id:,

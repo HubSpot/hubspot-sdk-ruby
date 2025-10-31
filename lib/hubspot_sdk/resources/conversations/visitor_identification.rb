@@ -8,10 +8,6 @@ module HubspotSDK
         # {HubspotSDK::Models::Conversations::VisitorIdentificationGenerateTokenParams}
         # for more details.
         #
-        # Generates a new visitor identification token. This token will be unique every
-        # time this endpoint is called, even if called with the same email address. This
-        # token is temporary and will expire after 12 hours
-        #
         # @overload generate_token(email:, first_name: nil, last_name: nil, request_options: {})
         #
         # @param email [String] The email of the visitor that you wish to identify
@@ -22,7 +18,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Conversations::VisitorIdentificationGenerateTokenResponse]
+        # @return [HubspotSDK::Models::Conversations::IdentificationTokenResponse]
         #
         # @see HubspotSDK::Models::Conversations::VisitorIdentificationGenerateTokenParams
         def generate_token(params)
@@ -32,7 +28,7 @@ module HubspotSDK
             method: :post,
             path: "visitor-identification/v3/tokens/create",
             body: parsed,
-            model: HubspotSDK::Models::Conversations::VisitorIdentificationGenerateTokenResponse,
+            model: HubspotSDK::Conversations::IdentificationTokenResponse,
             options: options
           )
         end

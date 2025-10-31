@@ -3,66 +3,15 @@ module HubspotSDK
     module Cms
       module MediaBridge
         type integrator_setting_update_event_visibility_settings_params =
-          {
-            event_type: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateEventVisibilitySettingsParams::event_type,
-            updated_at: Integer,
-            show_in_reporting: bool,
-            show_in_timeline: bool,
-            show_in_workflows: bool
-          }
-          & HubspotSDK::Internal::Type::request_parameters
+          {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class IntegratorSettingUpdateEventVisibilitySettingsParams < HubspotSDK::Internal::Type::BaseModel
+        class IntegratorSettingUpdateEventVisibilitySettingsParams < HubspotSDK::Models::Cms::EventVisibilityChange
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          attr_accessor event_type: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateEventVisibilitySettingsParams::event_type
+          def initialize: (?request_options: HubspotSDK::request_opts) -> void
 
-          attr_accessor updated_at: Integer
-
-          attr_reader show_in_reporting: bool?
-
-          def show_in_reporting=: (bool) -> bool
-
-          attr_reader show_in_timeline: bool?
-
-          def show_in_timeline=: (bool) -> bool
-
-          attr_reader show_in_workflows: bool?
-
-          def show_in_workflows=: (bool) -> bool
-
-          def initialize: (
-            event_type: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateEventVisibilitySettingsParams::event_type,
-            updated_at: Integer,
-            ?show_in_reporting: bool,
-            ?show_in_timeline: bool,
-            ?show_in_workflows: bool,
-            ?request_options: HubspotSDK::request_opts
-          ) -> void
-
-          def to_hash: -> {
-            event_type: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateEventVisibilitySettingsParams::event_type,
-            updated_at: Integer,
-            show_in_reporting: bool,
-            show_in_timeline: bool,
-            show_in_workflows: bool,
-            request_options: HubspotSDK::RequestOptions
-          }
-
-          type event_type =
-            :ALL | :MEDIA_PLAYS | :MEDIA_PLAYS_PERCENT | :ATTENTION_SPAN
-
-          module EventType
-            extend HubspotSDK::Internal::Type::Enum
-
-            ALL: :ALL
-            MEDIA_PLAYS: :MEDIA_PLAYS
-            MEDIA_PLAYS_PERCENT: :MEDIA_PLAYS_PERCENT
-            ATTENTION_SPAN: :ATTENTION_SPAN
-
-            def self?.values: -> ::Array[HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateEventVisibilitySettingsParams::event_type]
-          end
+          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
         end
       end
     end

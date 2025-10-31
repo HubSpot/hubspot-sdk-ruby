@@ -7,9 +7,9 @@ module HubspotSDK
         class Batch
           # @overload create(to_object_type, from_object_type:, inputs:, request_options: {})
           #
-          # @param to_object_type [String] Path param: The type of the object to which associations will be created.
+          # @param to_object_type [String] Path param:
           #
-          # @param from_object_type [String] Path param: The type of the object from which associations will be created.
+          # @param from_object_type [String] Path param:
           #
           # @param inputs [Array<HubspotSDK::Models::CRM::PublicAssociation>] Body param:
           #
@@ -35,9 +35,9 @@ module HubspotSDK
 
           # @overload delete(to_object_type, from_object_type:, inputs:, request_options: {})
           #
-          # @param to_object_type [String] Path param: The type of the object to which associations will be removed.
+          # @param to_object_type [String] Path param:
           #
-          # @param from_object_type [String] Path param: The type of the object from which associations will be removed.
+          # @param from_object_type [String] Path param:
           #
           # @param inputs [Array<HubspotSDK::Models::CRM::PublicAssociation>] Body param:
           #
@@ -63,9 +63,9 @@ module HubspotSDK
 
           # @overload get(to_object_type, from_object_type:, inputs:, request_options: {})
           #
-          # @param to_object_type [String] Path param: The type of the object to which associations will be read.
+          # @param to_object_type [String] Path param:
           #
-          # @param from_object_type [String] Path param: The type of the object from which associations will be read.
+          # @param from_object_type [String] Path param:
           #
           # @param inputs [Array<HubspotSDK::Models::PublicObjectID>] Body param:
           #

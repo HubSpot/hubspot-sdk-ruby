@@ -3,56 +3,15 @@ module HubspotSDK
     module Cms
       module MediaBridge
         type integrator_setting_create_oembed_domain_params =
-          {
-            endpoints: HubspotSDK::Cms::MediaBridge::IntegratorSettingCreateOembedDomainParams::Endpoints,
-            portal_id: Integer
-          }
-          & HubspotSDK::Internal::Type::request_parameters
+          {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class IntegratorSettingCreateOembedDomainParams < HubspotSDK::Internal::Type::BaseModel
+        class IntegratorSettingCreateOembedDomainParams < HubspotSDK::Models::Cms::IntegratorOEmbedDomainRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          attr_accessor endpoints: HubspotSDK::Cms::MediaBridge::IntegratorSettingCreateOembedDomainParams::Endpoints
+          def initialize: (?request_options: HubspotSDK::request_opts) -> void
 
-          attr_reader portal_id: Integer?
-
-          def portal_id=: (Integer) -> Integer
-
-          def initialize: (
-            endpoints: HubspotSDK::Cms::MediaBridge::IntegratorSettingCreateOembedDomainParams::Endpoints,
-            ?portal_id: Integer,
-            ?request_options: HubspotSDK::request_opts
-          ) -> void
-
-          def to_hash: -> {
-            endpoints: HubspotSDK::Cms::MediaBridge::IntegratorSettingCreateOembedDomainParams::Endpoints,
-            portal_id: Integer,
-            request_options: HubspotSDK::RequestOptions
-          }
-
-          type endpoints =
-            { discovery: bool, schemes: ::Array[String], url: String }
-
-          class Endpoints < HubspotSDK::Internal::Type::BaseModel
-            attr_accessor discovery: bool
-
-            attr_accessor schemes: ::Array[String]
-
-            attr_accessor url: String
-
-            def initialize: (
-              discovery: bool,
-              schemes: ::Array[String],
-              url: String
-            ) -> void
-
-            def to_hash: -> {
-              discovery: bool,
-              schemes: ::Array[String],
-              url: String
-            }
-          end
+          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
         end
       end
     end

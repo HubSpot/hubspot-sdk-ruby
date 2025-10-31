@@ -15,7 +15,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::EventsTest < HubspotSDK::Te
       )
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::MediaBridge::EventCreateAttentionSpanEventResponse
+      response => HubspotSDK::Cms::AttentionSpanEvent
     end
 
     assert_pattern do
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::EventsTest < HubspotSDK::Te
         media_bridge_object_coordinates: String,
         media_bridge_object_type_id: String,
         media_name: String,
-        media_type: HubspotSDK::Models::Cms::MediaBridge::EventCreateAttentionSpanEventResponse::MediaType,
+        media_type: HubspotSDK::Cms::AttentionSpanEvent::MediaType,
         occurred_timestamp: Integer,
         percent_range: String,
         portal_id: Integer,
@@ -55,7 +55,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::EventsTest < HubspotSDK::Te
       )
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedEventResponse
+      response => HubspotSDK::Cms::MediaPlayedEvent
     end
 
     assert_pattern do
@@ -65,12 +65,12 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::EventsTest < HubspotSDK::Te
         media_bridge_object_coordinates: String,
         media_bridge_object_type_id: String,
         media_name: String,
-        media_type: HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedEventResponse::MediaType,
+        media_type: HubspotSDK::Cms::MediaPlayedEvent::MediaType,
         occurred_timestamp: Integer,
         portal_id: Integer,
         provider_id: Integer,
         session_id: String,
-        state: HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedEventResponse::State,
+        state: HubspotSDK::Cms::MediaPlayedEvent::State,
         iframe_url: String | nil,
         media_url: String | nil,
         page_id: Integer | nil,
@@ -93,7 +93,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::EventsTest < HubspotSDK::Te
       )
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedPercentEventResponse
+      response => HubspotSDK::Cms::MediaPlayedPercentageEvent
     end
 
     assert_pattern do
@@ -103,7 +103,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::EventsTest < HubspotSDK::Te
         media_bridge_object_coordinates: String,
         media_bridge_object_type_id: String,
         media_name: String,
-        media_type: HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedPercentEventResponse::MediaType,
+        media_type: HubspotSDK::Cms::MediaPlayedPercentageEvent::MediaType,
         occurred_timestamp: Integer,
         played_percent: Integer,
         portal_id: Integer,

@@ -14,9 +14,9 @@ module HubspotSDK
             ).returns(HubspotSDK::CRM::BatchResponsePublicAssociation)
           end
           def create(
-            # Path param: The type of the object to which associations will be created.
+            # Path param:
             to_object_type,
-            # Path param: The type of the object from which associations will be created.
+            # Path param:
             from_object_type:,
             # Body param:
             inputs:,
@@ -33,9 +33,9 @@ module HubspotSDK
             ).void
           end
           def delete(
-            # Path param: The type of the object to which associations will be removed.
+            # Path param:
             to_object_type,
-            # Path param: The type of the object from which associations will be removed.
+            # Path param:
             from_object_type:,
             # Body param:
             inputs:,
@@ -52,9 +52,9 @@ module HubspotSDK
             ).returns(HubspotSDK::CRM::BatchResponsePublicAssociationMulti)
           end
           def get(
-            # Path param: The type of the object to which associations will be read.
+            # Path param:
             to_object_type,
-            # Path param: The type of the object from which associations will be read.
+            # Path param:
             from_object_type:,
             # Body param:
             inputs:,

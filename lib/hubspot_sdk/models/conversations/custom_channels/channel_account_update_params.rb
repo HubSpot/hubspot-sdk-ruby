@@ -5,7 +5,7 @@ module HubspotSDK
     module Conversations
       module CustomChannels
         # @see HubspotSDK::Resources::Conversations::CustomChannels::ChannelAccounts#update
-        class ChannelAccountUpdateParams < HubspotSDK::Internal::Type::BaseModel
+        class ChannelAccountUpdateParams < HubspotSDK::Models::Conversations::PublicChannelAccountUpdateRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
@@ -14,20 +14,8 @@ module HubspotSDK
           #   @return [String]
           required :channel_id, String
 
-          # @!attribute authorized
-          #
-          #   @return [Boolean, nil]
-          optional :authorized, HubspotSDK::Internal::Type::Boolean
-
-          # @!attribute name
-          #
-          #   @return [String, nil]
-          optional :name, String
-
-          # @!method initialize(channel_id:, authorized: nil, name: nil, request_options: {})
+          # @!method initialize(channel_id:, request_options: {})
           #   @param channel_id [String]
-          #   @param authorized [Boolean]
-          #   @param name [String]
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end

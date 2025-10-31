@@ -13,26 +13,26 @@ class HubspotSDK::Test::Resources::Events::EventDefinitionsTest < HubspotSDK::Te
       )
 
     assert_pattern do
-      response => HubspotSDK::Models::Events::EventDefinitionCreateResponse
+      response => HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
     end
 
     assert_pattern do
       response => {
         id: String,
         archived: HubspotSDK::Internal::Type::Boolean,
-        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::Events::EventDefinitionCreateResponse::Association]),
+        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::AssociationDefinition]),
         fully_qualified_name: String,
-        labels: HubspotSDK::Models::Events::EventDefinitionCreateResponse::Labels,
+        labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels,
         name: String,
         object_type_id: String,
         properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property]),
-        combo_event_rules: HubspotSDK::Models::Events::EventDefinitionCreateResponse::ComboEventRules | nil,
+        combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch | nil,
         created_at: Time | nil,
         created_user_id: Integer | nil,
         description: String | nil,
         primary_object: String | nil,
         primary_object_id: String | nil,
-        tracking_type: HubspotSDK::Models::Events::EventDefinitionCreateResponse::TrackingType | nil
+        tracking_type: HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType | nil
       }
     end
   end
@@ -43,26 +43,26 @@ class HubspotSDK::Test::Resources::Events::EventDefinitionsTest < HubspotSDK::Te
     response = @hubspot.events.event_definitions.update("eventName")
 
     assert_pattern do
-      response => HubspotSDK::Models::Events::EventDefinitionUpdateResponse
+      response => HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
     end
 
     assert_pattern do
       response => {
         id: String,
         archived: HubspotSDK::Internal::Type::Boolean,
-        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::Events::EventDefinitionUpdateResponse::Association]),
+        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::AssociationDefinition]),
         fully_qualified_name: String,
-        labels: HubspotSDK::Models::Events::EventDefinitionUpdateResponse::Labels,
+        labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels,
         name: String,
         object_type_id: String,
         properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property]),
-        combo_event_rules: HubspotSDK::Models::Events::EventDefinitionUpdateResponse::ComboEventRules | nil,
+        combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch | nil,
         created_at: Time | nil,
         created_user_id: Integer | nil,
         description: String | nil,
         primary_object: String | nil,
         primary_object_id: String | nil,
-        tracking_type: HubspotSDK::Models::Events::EventDefinitionUpdateResponse::TrackingType | nil
+        tracking_type: HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType | nil
       }
     end
   end
@@ -80,26 +80,26 @@ class HubspotSDK::Test::Resources::Events::EventDefinitionsTest < HubspotSDK::Te
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Models::Events::EventDefinitionListResponse
+      row => HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
     end
 
     assert_pattern do
       row => {
         id: String,
         archived: HubspotSDK::Internal::Type::Boolean,
-        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::Events::EventDefinitionListResponse::Association]),
+        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::AssociationDefinition]),
         fully_qualified_name: String,
-        labels: HubspotSDK::Models::Events::EventDefinitionListResponse::Labels,
+        labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels,
         name: String,
         object_type_id: String,
         properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property]),
-        combo_event_rules: HubspotSDK::Models::Events::EventDefinitionListResponse::ComboEventRules | nil,
+        combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch | nil,
         created_at: Time | nil,
         created_user_id: Integer | nil,
         description: String | nil,
         primary_object: String | nil,
         primary_object_id: String | nil,
-        tracking_type: HubspotSDK::Models::Events::EventDefinitionListResponse::TrackingType | nil
+        tracking_type: HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType | nil
       }
     end
   end
@@ -171,26 +171,26 @@ class HubspotSDK::Test::Resources::Events::EventDefinitionsTest < HubspotSDK::Te
     response = @hubspot.events.event_definitions.get("eventName")
 
     assert_pattern do
-      response => HubspotSDK::Models::Events::EventDefinitionGetResponse
+      response => HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
     end
 
     assert_pattern do
       response => {
         id: String,
         archived: HubspotSDK::Internal::Type::Boolean,
-        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::Events::EventDefinitionGetResponse::Association]),
+        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::AssociationDefinition]),
         fully_qualified_name: String,
-        labels: HubspotSDK::Models::Events::EventDefinitionGetResponse::Labels,
+        labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels,
         name: String,
         object_type_id: String,
         properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property]),
-        combo_event_rules: HubspotSDK::Models::Events::EventDefinitionGetResponse::ComboEventRules | nil,
+        combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch | nil,
         created_at: Time | nil,
         created_user_id: Integer | nil,
         description: String | nil,
         primary_object: String | nil,
         primary_object_id: String | nil,
-        tracking_type: HubspotSDK::Models::Events::EventDefinitionGetResponse::TrackingType | nil
+        tracking_type: HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType | nil
       }
     end
   end

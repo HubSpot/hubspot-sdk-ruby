@@ -46,7 +46,7 @@ module HubspotSDK
           #
           # @overload update(contact_id, properties:, request_options: {})
           #
-          # @param contact_id [String] The ID of the contact to update.
+          # @param contact_id [String]
           #
           # @param properties [Hash{Symbol=>String}] Key value pairs representing the properties of the object.
           #
@@ -111,8 +111,7 @@ module HubspotSDK
           #
           # @overload delete(contact_id, request_options: {})
           #
-          # @param contact_id [String] The ID of the contact to delete.
-          #
+          # @param contact_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -164,7 +163,7 @@ module HubspotSDK
           #
           # @overload get(contact_id, archived: nil, associations: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
-          # @param contact_id [String] The ID of the contact to retrieve.
+          # @param contact_id [String]
           #
           # @param archived [Boolean] Whether to return only results that have been archived.
           #

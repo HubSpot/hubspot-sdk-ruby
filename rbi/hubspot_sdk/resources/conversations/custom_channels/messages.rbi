@@ -12,33 +12,33 @@ module HubspotSDK
               attachments:
                 T::Array[
                   T.any(
-                    HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsFileAttachment::OrHash,
-                    HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsLocationAttachment::OrHash,
-                    HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsContactAttachment::OrHash,
-                    HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsUnsupportedContentAttachment::OrHash,
-                    HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsMessageHeaderAttachment::OrHash,
-                    HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsQuickRepliesAttachment::OrHash,
-                    HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Attachment::ConversationsCustomchannelsSocialMetadataIntegrationAttachment::OrHash
+                    HubspotSDK::Conversations::FileAttachment::OrHash,
+                    HubspotSDK::Conversations::LocationAttachment::OrHash,
+                    HubspotSDK::Conversations::ContactAttachment::OrHash,
+                    HubspotSDK::Conversations::UnsupportedContentAttachment::OrHash,
+                    HubspotSDK::Conversations::MessageHeaderAttachment::OrHash,
+                    HubspotSDK::Conversations::QuickRepliesAttachment::OrHash,
+                    HubspotSDK::Conversations::SocialMetadataIntegrationAttachment::OrHash
                   )
                 ],
               channel_account_id: String,
               integration_thread_id: String,
               message_direction:
-                HubspotSDK::Conversations::CustomChannels::MessageCreateParams::MessageDirection::OrSymbol,
+                HubspotSDK::Conversations::ChannelIntegrationMessageEgg::MessageDirection::OrSymbol,
               recipients:
                 T::Array[
-                  HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Recipient::OrHash
+                  HubspotSDK::Conversations::ChannelIntegrationParticipant::OrHash
                 ],
               senders:
                 T::Array[
-                  HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Sender::OrHash
+                  HubspotSDK::Conversations::ChannelIntegrationParticipant::OrHash
                 ],
               text: String,
               timestamp: Time,
               in_reply_to_id: String,
               integration_idempotency_id: String,
               pre_resolved_contacts:
-                HubspotSDK::Conversations::CustomChannels::MessageCreateParams::PreResolvedContacts::OrHash,
+                HubspotSDK::Conversations::PreResolvedContacts::OrHash,
               rich_text: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Conversations::PublicConversationsMessage)
@@ -69,7 +69,7 @@ module HubspotSDK
               message_id: String,
               channel_id: String,
               status_type:
-                HubspotSDK::Conversations::CustomChannels::MessageUpdateParams::StatusType::OrSymbol,
+                HubspotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::OrSymbol,
               error_message: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Conversations::PublicConversationsMessage)

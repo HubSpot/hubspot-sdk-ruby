@@ -12,15 +12,15 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4::BatchTest < HubspotSDK
         from_object_type: "fromObjectType",
         inputs: [
           {
-            from: {id: "37295"},
-            to: {id: "37295"},
+            from: {id: "id"},
+            to: {id: "id"},
             types: [{associationCategory: :HUBSPOT_DEFINED, associationTypeId: 0}]
           }
         ]
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::Associations::BatchResponseLabelsBetweenObjectPair
+      response => HubspotSDK::CRM::BatchResponseLabelsBetweenObjectPair
     end
 
     assert_pattern do
@@ -28,8 +28,8 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4::BatchTest < HubspotSDK
         completed_at: Time,
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::LabelsBetweenObjectPair]),
         started_at: Time,
-        status: HubspotSDK::CRM::Associations::BatchResponseLabelsBetweenObjectPair::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Associations::StandardError1]) | nil,
+        status: HubspotSDK::CRM::BatchResponseLabelsBetweenObjectPair::Status,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
@@ -44,11 +44,11 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4::BatchTest < HubspotSDK
       @hubspot.crm.associations.v4.batch.delete(
         "toObjectType",
         from_object_type: "fromObjectType",
-        inputs: [{from: {id: "37295"}, to: [{id: "37295"}]}]
+        inputs: [{from: {id: "id"}, to: [{id: "id"}]}]
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::Associations::BatchResponseVoid
+      response => HubspotSDK::CRM::BatchResponseVoid
     end
 
     assert_pattern do
@@ -56,8 +56,8 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4::BatchTest < HubspotSDK
         completed_at: Time,
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::Unknown]),
         started_at: Time,
-        status: HubspotSDK::CRM::Associations::BatchResponseVoid::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Associations::StandardError1]) | nil,
+        status: HubspotSDK::CRM::BatchResponseVoid::Status,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
@@ -72,7 +72,7 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4::BatchTest < HubspotSDK
       @hubspot.crm.associations.v4.batch.create_default(
         "toObjectType",
         from_object_type: "fromObjectType",
-        inputs: [{from: {id: "37295"}, to: {id: "37295"}}]
+        inputs: [{from: {id: "id"}, to: {id: "id"}}]
       )
 
     assert_pattern do
@@ -85,7 +85,7 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4::BatchTest < HubspotSDK
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicDefaultAssociation]),
         started_at: Time,
         status: HubspotSDK::CRM::BatchResponsePublicDefaultAssociation::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Associations::StandardError1]) | nil,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
@@ -102,15 +102,15 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4::BatchTest < HubspotSDK
         from_object_type: "fromObjectType",
         inputs: [
           {
-            from: {id: "37295"},
-            to: {id: "37295"},
+            from: {id: "id"},
+            to: {id: "id"},
             types: [{associationCategory: :HUBSPOT_DEFINED, associationTypeId: 0}]
           }
         ]
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::Associations::BatchResponseVoid
+      response => HubspotSDK::CRM::BatchResponseVoid
     end
 
     assert_pattern do
@@ -118,8 +118,8 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4::BatchTest < HubspotSDK
         completed_at: Time,
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::Unknown]),
         started_at: Time,
-        status: HubspotSDK::CRM::Associations::BatchResponseVoid::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Associations::StandardError1]) | nil,
+        status: HubspotSDK::CRM::BatchResponseVoid::Status,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
@@ -138,16 +138,16 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4::BatchTest < HubspotSDK
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::Associations::BatchResponsePublicAssociationMultiWithLabel
+      response => HubspotSDK::CRM::BatchResponsePublicAssociationMultiWithLabel
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Associations::PublicAssociationMultiWithLabel]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicAssociationMultiWithLabel]),
         started_at: Time,
-        status: HubspotSDK::CRM::Associations::BatchResponsePublicAssociationMultiWithLabel::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Associations::StandardError1]) | nil,
+        status: HubspotSDK::CRM::BatchResponsePublicAssociationMultiWithLabel::Status,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil

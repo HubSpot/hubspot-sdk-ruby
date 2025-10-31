@@ -9,7 +9,7 @@ class HubspotSDK::Test::Resources::CRM::ObjectLibrary::EnablementTest < HubspotS
     response = @hubspot.crm.object_library.enablement.list
 
     assert_pattern do
-      response => HubspotSDK::Models::CRM::ObjectLibrary::EnablementListResponse
+      response => HubspotSDK::CRM::PortalObjectTypeEnablementPublicResponse
     end
 
     assert_pattern do
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::CRM::ObjectLibrary::EnablementTest < HubspotS
     response = @hubspot.crm.object_library.enablement.get("objectTypeId")
 
     assert_pattern do
-      response => HubspotSDK::Models::CRM::ObjectLibrary::EnablementGetResponse
+      response => HubspotSDK::CRM::ObjectTypeEnablementPublicResponse
     end
 
     assert_pattern do

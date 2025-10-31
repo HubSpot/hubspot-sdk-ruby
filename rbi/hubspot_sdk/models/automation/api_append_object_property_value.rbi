@@ -12,14 +12,9 @@ module HubspotSDK
             )
           end
 
-        # The name of the property to append data from
         sig { returns(String) }
         attr_accessor :append_property_name
 
-        # This is the type of input value. This can be one of: "FIELD_DATA",
-        # "OBJECT_PROPERTY", "STATIC_VALUE", "RELATIVE_DATETIME", "TIMESTAMP",
-        # "INCREMENT", "FETCHED_OBJECT_PROPERTY", "APPEND_OBJECT_PROPERTY",
-        # "STATIC_APPEND_VALUE", "ENROLLMENT_EVENT_PROPERTY"
         sig do
           returns(
             HubspotSDK::Automation::APIAppendObjectPropertyValue::Type::OrSymbol
@@ -34,15 +29,7 @@ module HubspotSDK
               HubspotSDK::Automation::APIAppendObjectPropertyValue::Type::OrSymbol
           ).returns(T.attached_class)
         end
-        def self.new(
-          # The name of the property to append data from
-          append_property_name:,
-          # This is the type of input value. This can be one of: "FIELD_DATA",
-          # "OBJECT_PROPERTY", "STATIC_VALUE", "RELATIVE_DATETIME", "TIMESTAMP",
-          # "INCREMENT", "FETCHED_OBJECT_PROPERTY", "APPEND_OBJECT_PROPERTY",
-          # "STATIC_APPEND_VALUE", "ENROLLMENT_EVENT_PROPERTY"
-          type:
-        )
+        def self.new(append_property_name:, type:)
         end
 
         sig do
@@ -57,10 +44,6 @@ module HubspotSDK
         def to_hash
         end
 
-        # This is the type of input value. This can be one of: "FIELD_DATA",
-        # "OBJECT_PROPERTY", "STATIC_VALUE", "RELATIVE_DATETIME", "TIMESTAMP",
-        # "INCREMENT", "FETCHED_OBJECT_PROPERTY", "APPEND_OBJECT_PROPERTY",
-        # "STATIC_APPEND_VALUE", "ENROLLMENT_EVENT_PROPERTY"
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

@@ -8,9 +8,7 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::CRM::Pipelines::StageCreateParams} for more details.
           #
-          # Create a new stage associated with the pipeline identified by `{pipelineId}`.
-          # The entire stage object, including its unique ID, will be returned in the
-          # response.
+          # Create a pipeline stage
           #
           # @overload create(pipeline_id, object_type:, display_order:, label:, metadata: nil, request_options: {})
           #
@@ -46,11 +44,6 @@ module HubspotSDK
 
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::CRM::Pipelines::StageUpdateParams} for more details.
-          #
-          # Perform a partial update of the pipeline stage identified by `{stageId}`
-          # associated with the pipeline identified by `{pipelineId}`. Any properties not
-          # included in this update will keep their existing values. The updated stage will
-          # be returned in the response.
           #
           # @overload update(stage_id, object_type:, pipeline_id:, archived: nil, display_order: nil, label: nil, metadata: nil, request_options: {})
           #
@@ -117,8 +110,7 @@ module HubspotSDK
             )
           end
 
-          # Delete the pipeline stage identified by `{stageId}` associated with the pipeline
-          # identified by `{pipelineId}`.
+          # Delete a pipeline stage
           #
           # @overload delete(stage_id, object_type:, pipeline_id:, request_options: {})
           #
@@ -148,8 +140,7 @@ module HubspotSDK
             )
           end
 
-          # Return the stage identified by `{stageId}` associated with the pipeline
-          # identified by `{pipelineId}`.
+          # Return a pipeline stage by ID
           #
           # @overload get(stage_id, object_type:, pipeline_id:, request_options: {})
           #

@@ -12,25 +12,18 @@ module HubspotSDK
             )
           end
 
-        # The ID for this action.
         sig { returns(String) }
         attr_accessor :action_id
 
-        # The ID of the actionType to use.
         sig { returns(String) }
         attr_accessor :action_type_id
 
-        # The version of this actionType to use.
         sig { returns(Integer) }
         attr_accessor :action_type_version
 
-        # The fields to pass into this action. Different action types accept different
-        # fields.
         sig { returns(T::Hash[Symbol, T.anything]) }
         attr_accessor :fields
 
-        # The type of action this is, can be: "STATIC_BRANCH", "LIST_BRANCH",
-        # "AB_TEST_BRANCH", "CUSTOM_CODE", "WEBHOOK", or "SINGLE_CONNECTION"
         sig do
           returns(
             HubspotSDK::Automation::APISingleConnectionAction::Type::OrSymbol
@@ -58,17 +51,10 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The ID for this action.
           action_id:,
-          # The ID of the actionType to use.
           action_type_id:,
-          # The version of this actionType to use.
           action_type_version:,
-          # The fields to pass into this action. Different action types accept different
-          # fields.
           fields:,
-          # The type of action this is, can be: "STATIC_BRANCH", "LIST_BRANCH",
-          # "AB_TEST_BRANCH", "CUSTOM_CODE", "WEBHOOK", or "SINGLE_CONNECTION"
           type:,
           connection: nil
         )
@@ -90,8 +76,6 @@ module HubspotSDK
         def to_hash
         end
 
-        # The type of action this is, can be: "STATIC_BRANCH", "LIST_BRANCH",
-        # "AB_TEST_BRANCH", "CUSTOM_CODE", "WEBHOOK", or "SINGLE_CONNECTION"
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

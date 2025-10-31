@@ -4,18 +4,13 @@ module HubspotSDK
   module Resources
     class Conversations
       class VisitorIdentification
-        # Generates a new visitor identification token. This token will be unique every
-        # time this endpoint is called, even if called with the same email address. This
-        # token is temporary and will expire after 12 hours
         sig do
           params(
             email: String,
             first_name: String,
             last_name: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(
-            HubspotSDK::Models::Conversations::VisitorIdentificationGenerateTokenResponse
-          )
+          ).returns(HubspotSDK::Conversations::IdentificationTokenResponse)
         end
         def generate_token(
           # The email of the visitor that you wish to identify

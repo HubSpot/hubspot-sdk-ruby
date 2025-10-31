@@ -6,7 +6,7 @@ module HubspotSDK
       class Objects
         class Deals
           class Batch
-            # Create a batch of deals
+            # Create multiple deals in a single request.
             #
             # @overload create(inputs:, request_options: {})
             #
@@ -27,7 +27,7 @@ module HubspotSDK
               )
             end
 
-            # Update a batch of deals by internal ID, or unique property values
+            # Update multiple deals using their internal IDs or unique property values.
             #
             # @overload update(inputs:, request_options: {})
             #
@@ -48,7 +48,7 @@ module HubspotSDK
               )
             end
 
-            # Archive a batch of deals by ID
+            # Archive multiple deals using their IDs.
             #
             # @overload delete(inputs:, request_options: {})
             #

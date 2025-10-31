@@ -29,7 +29,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::AuditLogListResponse>]
+        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::PublicAuditLog>]
         #
         # @see HubspotSDK::Models::Cms::AuditLogListParams
         def list(params = {})
@@ -44,7 +44,7 @@ module HubspotSDK
               user_id: "userId"
             ),
             page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Models::Cms::AuditLogListResponse,
+            model: HubspotSDK::Cms::PublicAuditLog,
             options: options
           )
         end

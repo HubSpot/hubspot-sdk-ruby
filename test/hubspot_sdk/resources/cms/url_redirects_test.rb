@@ -14,7 +14,7 @@ class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::Res
       )
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::URLRedirectCreateResponse
+      response => HubspotSDK::Cms::URLMapping
     end
 
     assert_pattern do
@@ -56,7 +56,7 @@ class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::Res
       )
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::URLRedirectUpdateResponse
+      response => HubspotSDK::Cms::URLMapping
     end
 
     assert_pattern do
@@ -91,7 +91,7 @@ class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::Res
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Models::Cms::URLRedirectListResponse
+      row => HubspotSDK::Cms::URLMapping
     end
 
     assert_pattern do
@@ -129,7 +129,7 @@ class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::Res
     response = @hubspot.cms.url_redirects.get("urlRedirectId")
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::URLRedirectGetResponse
+      response => HubspotSDK::Cms::URLMapping
     end
 
     assert_pattern do

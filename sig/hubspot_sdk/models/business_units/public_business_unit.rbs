@@ -1,0 +1,36 @@
+module HubspotSDK
+  module Models
+    module BusinessUnits
+      type public_business_unit =
+        {
+          id: String,
+          name: String,
+          logo_metadata: HubspotSDK::BusinessUnits::PublicBusinessUnitLogoMetadata
+        }
+
+      class PublicBusinessUnit < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor name: String
+
+        attr_reader logo_metadata: HubspotSDK::BusinessUnits::PublicBusinessUnitLogoMetadata?
+
+        def logo_metadata=: (
+          HubspotSDK::BusinessUnits::PublicBusinessUnitLogoMetadata
+        ) -> HubspotSDK::BusinessUnits::PublicBusinessUnitLogoMetadata
+
+        def initialize: (
+          id: String,
+          name: String,
+          ?logo_metadata: HubspotSDK::BusinessUnits::PublicBusinessUnitLogoMetadata
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          name: String,
+          logo_metadata: HubspotSDK::BusinessUnits::PublicBusinessUnitLogoMetadata
+        }
+      end
+    end
+  end
+end

@@ -12,47 +12,35 @@ module HubspotSDK
             )
           end
 
+        sig { returns(String) }
+        attr_accessor :id
+
+        sig { returns(T::Boolean) }
+        attr_accessor :active
+
         sig { returns(T::Boolean) }
         attr_accessor :archived
 
-        # The ID of the channel account.
-        sig { returns(T.nilable(String)) }
-        attr_reader :id
+        sig { returns(T::Boolean) }
+        attr_accessor :authorized
 
-        sig { params(id: String).void }
-        attr_writer :id
+        sig { returns(String) }
+        attr_accessor :channel_id
 
-        # Whether the channel account is turned on.
-        sig { returns(T.nilable(T::Boolean)) }
-        attr_reader :active
+        sig { returns(Time) }
+        attr_accessor :created_at
 
-        sig { params(active: T::Boolean).void }
-        attr_writer :active
+        sig { returns(String) }
+        attr_accessor :inbox_id
+
+        sig { returns(String) }
+        attr_accessor :name
 
         sig { returns(T.nilable(Time)) }
         attr_reader :archived_at
 
         sig { params(archived_at: Time).void }
         attr_writer :archived_at
-
-        sig { returns(T.nilable(T::Boolean)) }
-        attr_reader :authorized
-
-        sig { params(authorized: T::Boolean).void }
-        attr_writer :authorized
-
-        # The ID of the channel that the channel account is an instance of.
-        sig { returns(T.nilable(String)) }
-        attr_reader :channel_id
-
-        sig { params(channel_id: String).void }
-        attr_writer :channel_id
-
-        sig { returns(T.nilable(Time)) }
-        attr_reader :created_at
-
-        sig { params(created_at: Time).void }
-        attr_writer :created_at
 
         sig do
           returns(
@@ -69,68 +57,49 @@ module HubspotSDK
         end
         attr_writer :delivery_identifier
 
-        # The ID of the conversations inbox that contains the channel account.
-        sig { returns(T.nilable(String)) }
-        attr_reader :inbox_id
-
-        sig { params(inbox_id: String).void }
-        attr_writer :inbox_id
-
-        # The name of the channel account.
-        sig { returns(T.nilable(String)) }
-        attr_reader :name
-
-        sig { params(name: String).void }
-        attr_writer :name
-
         sig do
           params(
-            archived: T::Boolean,
             id: String,
             active: T::Boolean,
-            archived_at: Time,
+            archived: T::Boolean,
             authorized: T::Boolean,
             channel_id: String,
             created_at: Time,
-            delivery_identifier:
-              HubspotSDK::Conversations::PublicDeliveryIdentifier::OrHash,
             inbox_id: String,
-            name: String
+            name: String,
+            archived_at: Time,
+            delivery_identifier:
+              HubspotSDK::Conversations::PublicDeliveryIdentifier::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
+          id:,
+          active:,
           archived:,
-          # The ID of the channel account.
-          id: nil,
-          # Whether the channel account is turned on.
-          active: nil,
+          authorized:,
+          channel_id:,
+          created_at:,
+          inbox_id:,
+          name:,
           archived_at: nil,
-          authorized: nil,
-          # The ID of the channel that the channel account is an instance of.
-          channel_id: nil,
-          created_at: nil,
-          delivery_identifier: nil,
-          # The ID of the conversations inbox that contains the channel account.
-          inbox_id: nil,
-          # The name of the channel account.
-          name: nil
+          delivery_identifier: nil
         )
         end
 
         sig do
           override.returns(
             {
-              archived: T::Boolean,
               id: String,
               active: T::Boolean,
-              archived_at: Time,
+              archived: T::Boolean,
               authorized: T::Boolean,
               channel_id: String,
               created_at: Time,
-              delivery_identifier:
-                HubspotSDK::Conversations::PublicDeliveryIdentifier,
               inbox_id: String,
-              name: String
+              name: String,
+              archived_at: Time,
+              delivery_identifier:
+                HubspotSDK::Conversations::PublicDeliveryIdentifier
             }
           )
         end

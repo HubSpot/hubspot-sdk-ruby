@@ -9,27 +9,18 @@ module HubspotSDK
         include HubspotSDK::Internal::Type::RequestParameters
 
         # @!attribute after
-        #   The paging cursor token of the last successfully read resource will be returned
-        #   as the `paging.next.after` JSON property of a paged response containing more
-        #   results.
         #
         #   @return [String, nil]
         optional :after, String
 
         # @!attribute limit
-        #   The maximum number of results to display per page.
         #
         #   @return [Integer, nil]
         optional :limit, Integer
 
         # @!method initialize(after: nil, limit: nil, request_options: {})
-        #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Automation::WorkflowListParams} for more details.
-        #
-        #   @param after [String] The paging cursor token of the last successfully read resource will be returned
-        #
-        #   @param limit [Integer] The maximum number of results to display per page.
-        #
+        #   @param after [String]
+        #   @param limit [Integer]
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end

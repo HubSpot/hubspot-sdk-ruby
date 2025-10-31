@@ -10,8 +10,6 @@ module HubspotSDK
             # {HubspotSDK::Models::CRM::Objects::PartnerClients::BatchBatchGetParams} for more
             # details.
             #
-            # Read a batch of objects by internal ID, or unique property values
-            #
             # @overload batch_get(inputs:, properties:, properties_with_history:, archived: nil, id_property: nil, request_options: {})
             #
             # @param inputs [Array<HubspotSDK::Models::CRM::SimplePublicObjectID>] Body param:
@@ -20,7 +18,7 @@ module HubspotSDK
             #
             # @param properties_with_history [Array<String>] Body param: Key-value pairs for setting properties for the new object and their
             #
-            # @param archived [Boolean] Query param: Whether to return only results that have been archived.
+            # @param archived [Boolean] Query param:
             #
             # @param id_property [String] Body param: When using a custom unique value property to retrieve records, the n
             #
@@ -42,8 +40,6 @@ module HubspotSDK
               )
             end
 
-            # Update a batch of objects
-            #
             # @overload batch_update(inputs:, request_options: {})
             #
             # @param inputs [Array<HubspotSDK::Models::CRM::SimplePublicObjectBatchInput>]

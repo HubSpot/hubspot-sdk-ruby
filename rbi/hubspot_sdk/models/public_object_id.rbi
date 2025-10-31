@@ -8,15 +8,11 @@ module HubspotSDK
           T.any(HubspotSDK::PublicObjectID, HubspotSDK::Internal::AnyHash)
         end
 
-      # The unique ID that identifies an object.
       sig { returns(String) }
       attr_accessor :id
 
       sig { params(id: String).returns(T.attached_class) }
-      def self.new(
-        # The unique ID that identifies an object.
-        id:
-      )
+      def self.new(id:)
       end
 
       sig { override.returns({ id: String }) }

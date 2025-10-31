@@ -1,0 +1,20 @@
+module HubspotSDK
+  module Models
+    module BusinessUnits
+      type collection_response_public_business_unit_no_paging =
+        { results: ::Array[HubspotSDK::Marketing::PublicBusinessUnit] }
+
+      class CollectionResponsePublicBusinessUnitNoPaging < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubspotSDK::Marketing::PublicBusinessUnit]
+
+        def initialize: (
+          results: ::Array[HubspotSDK::Marketing::PublicBusinessUnit]
+        ) -> void
+
+        def to_hash: -> {
+          results: ::Array[HubspotSDK::Marketing::PublicBusinessUnit]
+        }
+      end
+    end
+  end
+end

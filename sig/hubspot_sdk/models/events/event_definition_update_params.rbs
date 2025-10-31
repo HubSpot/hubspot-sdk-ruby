@@ -2,32 +2,15 @@ module HubspotSDK
   module Models
     module Events
       type event_definition_update_params =
-        { description: String, label: String }
-        & HubspotSDK::Internal::Type::request_parameters
+        {  } & HubspotSDK::Internal::Type::request_parameters
 
-      class EventDefinitionUpdateParams < HubspotSDK::Internal::Type::BaseModel
+      class EventDefinitionUpdateParams < HubspotSDK::Models::Events::ExternalBehavioralEventTypeDefinitionPatch
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
-        attr_reader description: String?
+        def initialize: (?request_options: HubspotSDK::request_opts) -> void
 
-        def description=: (String) -> String
-
-        attr_reader label: String?
-
-        def label=: (String) -> String
-
-        def initialize: (
-          ?description: String,
-          ?label: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> void
-
-        def to_hash: -> {
-          description: String,
-          label: String,
-          request_options: HubspotSDK::RequestOptions
-        }
+        def to_hash: -> { request_options: HubspotSDK::RequestOptions }
       end
     end
   end

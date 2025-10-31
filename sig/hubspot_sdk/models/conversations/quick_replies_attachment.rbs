@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type quick_replies_attachment =
+        {
+          quick_replies: ::Array[HubspotSDK::Conversations::QuickReply],
+          type: HubspotSDK::Models::Conversations::QuickRepliesAttachment::type_
+        }
+
+      class QuickRepliesAttachment < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor quick_replies: ::Array[HubspotSDK::Conversations::QuickReply]
+
+        attr_accessor type: HubspotSDK::Models::Conversations::QuickRepliesAttachment::type_
+
+        def initialize: (
+          quick_replies: ::Array[HubspotSDK::Conversations::QuickReply],
+          type: HubspotSDK::Models::Conversations::QuickRepliesAttachment::type_
+        ) -> void
+
+        def to_hash: -> {
+          quick_replies: ::Array[HubspotSDK::Conversations::QuickReply],
+          type: HubspotSDK::Models::Conversations::QuickRepliesAttachment::type_
+        }
+
+        type type_ = :QUICK_REPLIES
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          QUICK_REPLIES: :QUICK_REPLIES
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::QuickRepliesAttachment::type_]
+        end
+      end
+    end
+  end
+end

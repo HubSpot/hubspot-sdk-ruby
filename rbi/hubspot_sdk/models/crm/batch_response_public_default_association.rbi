@@ -28,19 +28,10 @@ module HubspotSDK
         end
         attr_accessor :status
 
-        sig do
-          returns(
-            T.nilable(T::Array[HubspotSDK::CRM::Associations::StandardError1])
-          )
-        end
+        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
         attr_reader :errors
 
-        sig do
-          params(
-            errors:
-              T::Array[HubspotSDK::CRM::Associations::StandardError1::OrHash]
-          ).void
-        end
+        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
         attr_writer :errors
 
         sig { returns(T.nilable(T::Hash[Symbol, String])) }
@@ -69,8 +60,7 @@ module HubspotSDK
             started_at: Time,
             status:
               HubspotSDK::CRM::BatchResponsePublicDefaultAssociation::Status::OrSymbol,
-            errors:
-              T::Array[HubspotSDK::CRM::Associations::StandardError1::OrHash],
+            errors: T::Array[HubspotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
             requested_at: Time
@@ -96,7 +86,7 @@ module HubspotSDK
               started_at: Time,
               status:
                 HubspotSDK::CRM::BatchResponsePublicDefaultAssociation::Status::TaggedSymbol,
-              errors: T::Array[HubspotSDK::CRM::Associations::StandardError1],
+              errors: T::Array[HubspotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
               requested_at: Time

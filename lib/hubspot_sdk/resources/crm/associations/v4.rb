@@ -15,14 +15,10 @@ module HubspotSDK
           #
           # @overload create(to_object_id, from_object_type:, from_object_id:, to_object_type:, request_options: {})
           #
-          # @param to_object_id [String] The unique identifier of the target object for the default association.
-          #
-          # @param from_object_type [String] The type of the source object for the default association.
-          #
-          # @param from_object_id [String] The unique identifier of the source object for the default association.
-          #
-          # @param to_object_type [String] The type of the target object for the default association.
-          #
+          # @param to_object_id [String]
+          # @param from_object_type [String]
+          # @param from_object_id [String]
+          # @param to_object_type [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::CRM::BatchResponsePublicDefaultAssociation]
@@ -68,7 +64,7 @@ module HubspotSDK
           #
           # @param to_object_type [String] Path param:
           #
-          # @param body [Array<HubspotSDK::Models::AssociationSpec>] Body param:
+          # @param body [Array<HubspotSDK::Models::CRM::Associations::AssociationSpec1>] Body param:
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

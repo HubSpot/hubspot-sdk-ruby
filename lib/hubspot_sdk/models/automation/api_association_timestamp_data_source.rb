@@ -12,6 +12,7 @@ module HubspotSDK
                  api_name: :associationCategory
 
         # @!attribute association_type_id
+        #   The ID representing the type of association.
         #
         #   @return [Integer]
         required :association_type_id, Integer, api_name: :associationTypeId
@@ -33,9 +34,13 @@ module HubspotSDK
 
         # @!method initialize(association_category:, association_type_id:, name:, object_type_id:, type:)
         #   @param association_category [Symbol, HubspotSDK::Models::Automation::APIAssociationTimestampDataSource::AssociationCategory]
-        #   @param association_type_id [Integer]
+        #
+        #   @param association_type_id [Integer] The ID representing the type of association.
+        #
         #   @param name [String]
+        #
         #   @param object_type_id [String]
+        #
         #   @param type [Symbol, HubspotSDK::Models::Automation::APIAssociationTimestampDataSource::Type]
 
         # @see HubspotSDK::Models::Automation::APIAssociationTimestampDataSource#association_category

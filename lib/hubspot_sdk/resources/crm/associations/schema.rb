@@ -8,8 +8,6 @@ module HubspotSDK
           # @return [HubspotSDK::Resources::CRM::Associations::Schema::V4]
           attr_reader :v4
 
-          # List all the valid association types available between two object types
-          #
           # @overload list(to_object_type, from_object_type:, request_options: {})
           #
           # @param to_object_type [String]

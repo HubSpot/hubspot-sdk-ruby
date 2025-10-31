@@ -79,7 +79,7 @@ module HubspotSDK
           #
           # @param display_order [Integer] Body param:
           #
-          # @param field_type [Symbol, HubspotSDK::Models::Cms::MediaBridge::PropertyUpdateParams::FieldType] Body param:
+          # @param field_type [Symbol, HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::FieldType] Body param:
           #
           # @param form_field [Boolean] Body param:
           #
@@ -93,7 +93,7 @@ module HubspotSDK
           #
           # @param options [Array<HubspotSDK::Models::OptionInput>] Body param:
           #
-          # @param type [Symbol, HubspotSDK::Models::Cms::MediaBridge::PropertyUpdateParams::Type] Body param:
+          # @param type [Symbol, HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::Type] Body param:
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -127,7 +127,7 @@ module HubspotSDK
           # @param app_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::MediaBridge::PropertyListResponse]
+          # @return [HubspotSDK::Models::Cms::CollectionResponsePropertyNoPaging]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::PropertyListParams
           def list(object_type, params)
@@ -139,7 +139,7 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["media-bridge/v1/%1$s/properties/%2$s", app_id, object_type],
-              model: HubspotSDK::Models::Cms::MediaBridge::PropertyListResponse,
+              model: HubspotSDK::Cms::CollectionResponsePropertyNoPaging,
               options: options
             )
           end

@@ -7,7 +7,7 @@ module HubspotSDK
             object_type: String,
             object_id_: String,
             to_object_type: String,
-            body: ::Array[HubspotSDK::AssociationSpec]
+            body: ::Array[HubspotSDK::CRM::Associations::AssociationSpec1]
           }
           & HubspotSDK::Internal::Type::request_parameters
 
@@ -21,13 +21,13 @@ module HubspotSDK
 
           attr_accessor to_object_type: String
 
-          attr_accessor body: ::Array[HubspotSDK::AssociationSpec]
+          attr_accessor body: ::Array[HubspotSDK::CRM::Associations::AssociationSpec1]
 
           def initialize: (
             object_type: String,
             object_id_: String,
             to_object_type: String,
-            body: ::Array[HubspotSDK::AssociationSpec],
+            body: ::Array[HubspotSDK::CRM::Associations::AssociationSpec1],
             ?request_options: HubspotSDK::request_opts
           ) -> void
 
@@ -35,7 +35,7 @@ module HubspotSDK
             object_type: String,
             object_id_: String,
             to_object_type: String,
-            body: ::Array[HubspotSDK::AssociationSpec],
+            body: ::Array[HubspotSDK::CRM::Associations::AssociationSpec1],
             request_options: HubspotSDK::RequestOptions
           }
         end
