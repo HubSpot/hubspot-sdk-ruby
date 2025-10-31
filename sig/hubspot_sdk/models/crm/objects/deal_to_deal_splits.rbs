@@ -1,0 +1,26 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Objects
+        type deal_to_deal_splits =
+          { id: String, splits: ::Array[HubspotSDK::CRM::SimplePublicObject] }
+
+        class DealToDealSplits < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_accessor splits: ::Array[HubspotSDK::CRM::SimplePublicObject]
+
+          def initialize: (
+            id: String,
+            splits: ::Array[HubspotSDK::CRM::SimplePublicObject]
+          ) -> void
+
+          def to_hash: -> {
+            id: String,
+            splits: ::Array[HubspotSDK::CRM::SimplePublicObject]
+          }
+        end
+      end
+    end
+  end
+end

@@ -10,12 +10,12 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
       @hubspot.cms.media_bridge.integrator_settings.create_object_definition("appId", media_types: [:VIDEO])
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateObjectDefinitionResponse
+      response => HubspotSDK::Cms::BulkIntegratorObjectCreationResponse
     end
 
     assert_pattern do
       response => {
-        created_objects: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateObjectDefinitionResponse::CreatedObject])
+        created_objects: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::IntegratorObjectCreationResponse])
       }
     end
   end
@@ -30,7 +30,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
       )
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateOembedDomainResponse
+      response => HubspotSDK::Cms::IntegratorOEmbedDomainModel
     end
 
     assert_pattern do
@@ -39,7 +39,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
         app_id: Integer,
         created_at: Integer,
         deleted_at: Integer,
-        endpoints: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateOembedDomainResponse::Endpoints,
+        endpoints: HubspotSDK::Cms::Endpoints,
         portal_id: Integer,
         updated_at: Integer
       }
@@ -62,15 +62,13 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
     response = @hubspot.cms.media_bridge.integrator_settings.get_event_visibility_settings("appId")
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetEventVisibilitySettingsResponse
+      response => HubspotSDK::Cms::EventVisibilityResponse
     end
 
     assert_pattern do
       response => {
         created_at: Time,
-        visibility_settings: ^(HubspotSDK::Internal::Type::ArrayOf[
-          HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetEventVisibilitySettingsResponse::VisibilitySetting
-        ])
+        visibility_settings: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::EventVisibilityChange])
       }
     end
   end
@@ -85,18 +83,16 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
       )
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetObjectDefinitionsByMediaTypeResponse
+      response => HubspotSDK::Cms::ObjectDefinitionResponse
     end
 
     assert_pattern do
       response => {
         object_type_id: String,
         object_type_name: String,
-        properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetObjectDefinitionsByMediaTypeResponse::Property]),
-        property_groups: ^(HubspotSDK::Internal::Type::ArrayOf[
-          HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetObjectDefinitionsByMediaTypeResponse::PropertyGroup
-        ]),
-        schema: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetObjectDefinitionsByMediaTypeResponse::Schema | nil
+        properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::PropertyDefinition]),
+        property_groups: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::GroupView]),
+        schema: HubspotSDK::Cms::InboundDBObjectType | nil
       }
     end
   end
@@ -108,7 +104,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
       @hubspot.cms.media_bridge.integrator_settings.get_oembed_domain("oEmbedDomainId", app_id: "appId")
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetOembedDomainResponse
+      response => HubspotSDK::Cms::IntegratorOEmbedDomainModel
     end
 
     assert_pattern do
@@ -117,7 +113,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
         app_id: Integer,
         created_at: Integer,
         deleted_at: Integer,
-        endpoints: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetOembedDomainResponse::Endpoints,
+        endpoints: HubspotSDK::Cms::Endpoints,
         portal_id: Integer,
         updated_at: Integer
       }
@@ -130,12 +126,12 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
     response = @hubspot.cms.media_bridge.integrator_settings.list_oembed_domains("appId")
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingListOembedDomainsResponse
+      response => HubspotSDK::Cms::OEmbedDomainsCollectionResponse
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingListOembedDomainsResponse::Result]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::IntegratorOEmbedDomainModel]),
         total_count: Integer | nil
       }
     end
@@ -147,7 +143,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
     response = @hubspot.cms.media_bridge.integrator_settings.register_app_name("appId", updated_at: 0)
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingRegisterAppNameResponse
+      response => HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse
     end
 
     assert_pattern do
@@ -164,7 +160,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
     response = @hubspot.cms.media_bridge.integrator_settings.update_app_name("appId", updated_at: 0)
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateAppNameResponse
+      response => HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse
     end
 
     assert_pattern do
@@ -186,12 +182,12 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
       )
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateEventVisibilitySettingsResponse
+      response => HubspotSDK::Cms::EventVisibilityChange
     end
 
     assert_pattern do
       response => {
-        event_type: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateEventVisibilitySettingsResponse::EventType,
+        event_type: HubspotSDK::Cms::EventVisibilityChange::EventType,
         updated_at: Integer,
         show_in_reporting: HubspotSDK::Internal::Type::Boolean | nil,
         show_in_timeline: HubspotSDK::Internal::Type::Boolean | nil,
@@ -211,7 +207,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
       )
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateOembedDomainResponse
+      response => HubspotSDK::Cms::IntegratorOEmbedDomainModel
     end
 
     assert_pattern do
@@ -220,7 +216,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
         app_id: Integer,
         created_at: Integer,
         deleted_at: Integer,
-        endpoints: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateOembedDomainResponse::Endpoints,
+        endpoints: HubspotSDK::Cms::Endpoints,
         portal_id: Integer,
         updated_at: Integer
       }

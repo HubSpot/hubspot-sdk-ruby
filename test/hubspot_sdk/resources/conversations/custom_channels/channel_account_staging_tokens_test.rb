@@ -15,7 +15,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccount
       )
 
     assert_pattern do
-      response => HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountStagingTokenUpdateResponse
+      response => HubspotSDK::Conversations::PublicChannelAccountStagingToken
     end
 
     assert_pattern do

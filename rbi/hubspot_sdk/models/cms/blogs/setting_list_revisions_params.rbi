@@ -16,8 +16,6 @@ module HubspotSDK
               )
             end
 
-          # The cursor token value to get the next set of results. You can get this from the
-          # `paging.next.after` JSON property of a paged response containing more results.
           sig { returns(T.nilable(String)) }
           attr_reader :after
 
@@ -30,7 +28,6 @@ module HubspotSDK
           sig { params(before: String).void }
           attr_writer :before
 
-          # The maximum number of results to return. Default is 100.
           sig { returns(T.nilable(Integer)) }
           attr_reader :limit
 
@@ -45,15 +42,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
-          def self.new(
-            # The cursor token value to get the next set of results. You can get this from the
-            # `paging.next.after` JSON property of a paged response containing more results.
-            after: nil,
-            before: nil,
-            # The maximum number of results to return. Default is 100.
-            limit: nil,
-            request_options: {}
-          )
+          def self.new(after: nil, before: nil, limit: nil, request_options: {})
           end
 
           sig do

@@ -140,6 +140,8 @@ module HubspotSDK
           )
           end
 
+          # Perform a search for emails based on the provided query parameters and return
+          # matching results.
           sig do
             params(
               after: String,

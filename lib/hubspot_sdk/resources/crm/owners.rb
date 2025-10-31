@@ -4,21 +4,14 @@ module HubspotSDK
   module Resources
     class CRM
       class Owners
-        # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::CRM::OwnerListParams} for more details.
-        #
         # Retrieve a paginated list of owners available in the account.
         #
         # @overload list(after: nil, archived: nil, email: nil, limit: nil, request_options: {})
         #
-        # @param after [String] The paging cursor token of the last successfully read resource will be returned
-        #
-        # @param archived [Boolean] Whether to return only results that have been archived.
-        #
-        # @param email [String] Filter by email address (optional).
-        #
-        # @param limit [Integer] The maximum number of results to display per page.
-        #
+        # @param after [String]
+        # @param archived [Boolean]
+        # @param email [String]
+        # @param limit [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::CRM::PublicOwner>]
@@ -40,12 +33,9 @@ module HubspotSDK
         #
         # @overload get(owner_id, archived: nil, id_property: nil, request_options: {})
         #
-        # @param owner_id [Integer] The unique identifier of the owner to be retrieved.
-        #
-        # @param archived [Boolean] Whether to return only results that have been archived.
-        #
-        # @param id_property [Symbol, HubspotSDK::Models::CRM::OwnerGetParams::IDProperty] Specifies whether to use 'id' or 'userId' as the identifier for the owner.
-        #
+        # @param owner_id [Integer]
+        # @param archived [Boolean]
+        # @param id_property [Symbol, HubspotSDK::Models::CRM::OwnerGetParams::IDProperty]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::CRM::PublicOwner]

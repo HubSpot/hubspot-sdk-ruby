@@ -60,15 +60,15 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
       )
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::MediaBridge::SchemaCreateAssociationResponse
+      response => HubspotSDK::Events::AssociationDefinition
     end
 
     assert_pattern do
       response => {
         id: Integer,
         allows_custom_labels: HubspotSDK::Internal::Type::Boolean,
-        cardinality: HubspotSDK::Models::Cms::MediaBridge::SchemaCreateAssociationResponse::Cardinality,
-        category: HubspotSDK::Models::Cms::MediaBridge::SchemaCreateAssociationResponse::Category,
+        cardinality: HubspotSDK::Events::AssociationDefinition::Cardinality,
+        category: HubspotSDK::Events::AssociationDefinition::Category,
         from_object_type_id: String,
         has_all_associated_objects: HubspotSDK::Internal::Type::Boolean,
         has_cascading_deletes: HubspotSDK::Internal::Type::Boolean,
@@ -76,7 +76,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
         has_user_enforced_max_to_object_ids: HubspotSDK::Internal::Type::Boolean,
         hidden: HubspotSDK::Internal::Type::Boolean,
         inverse_allows_custom_labels: HubspotSDK::Internal::Type::Boolean,
-        inverse_cardinality: HubspotSDK::Models::Cms::MediaBridge::SchemaCreateAssociationResponse::InverseCardinality,
+        inverse_cardinality: HubspotSDK::Events::AssociationDefinition::InverseCardinality,
         inverse_has_all_associated_objects: HubspotSDK::Internal::Type::Boolean,
         inverse_id: Integer,
         inverse_name: String,
@@ -87,10 +87,10 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
         name: String,
         portal_unique_identifier: String,
         to_object_type_id: String,
-        from_object_type: HubspotSDK::Models::Cms::MediaBridge::SchemaCreateAssociationResponse::FromObjectType | nil,
+        from_object_type: HubspotSDK::Events::AssociationDefinition::FromObjectType | nil,
         inverse_label: String | nil,
         label: String | nil,
-        to_object_type: HubspotSDK::Models::Cms::MediaBridge::SchemaCreateAssociationResponse::ToObjectType | nil
+        to_object_type: HubspotSDK::Events::AssociationDefinition::ToObjectType | nil
       }
     end
   end
@@ -122,7 +122,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
     assert_pattern do
       response => {
         id: String,
-        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Objects::ObjectSchema::Association]),
+        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::AssociationDefinition]),
         labels: HubspotSDK::ObjectTypeDefinitionLabels,
         name: String,
         properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property]),

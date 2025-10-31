@@ -9,12 +9,12 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4::ReportTest < HubspotSD
     response = @hubspot.crm.associations.v4.report.get_high_usage_report(0)
 
     assert_pattern do
-      response => HubspotSDK::CRM::Associations::ReportCreationResponse
+      response => HubspotSDK::CRM::ReportCreationResponse
     end
 
     assert_pattern do
       response => {
-        enqueue_time: HubspotSDK::CRM::Associations::DateTime,
+        enqueue_time: HubspotSDK::CRM::DateTime,
         user_email: String,
         user_id: Integer
       }

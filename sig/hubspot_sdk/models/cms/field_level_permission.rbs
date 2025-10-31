@@ -1,0 +1,15 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type field_level_permission = { access_level: String }
+
+      class FieldLevelPermission < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor access_level: String
+
+        def initialize: (access_level: String) -> void
+
+        def to_hash: -> { access_level: String }
+      end
+    end
+  end
+end

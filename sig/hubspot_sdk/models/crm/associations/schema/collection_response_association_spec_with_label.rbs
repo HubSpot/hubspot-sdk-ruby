@@ -1,0 +1,35 @@
+module HubspotSDK
+  module Models
+    module CRM
+      module Associations
+        module Schema
+          type collection_response_association_spec_with_label =
+            {
+              results: ::Array[HubspotSDK::CRM::AssociationSpecWithLabel],
+              paging: HubspotSDK::Marketing::Paging
+            }
+
+          class CollectionResponseAssociationSpecWithLabel < HubspotSDK::Internal::Type::BaseModel
+            attr_accessor results: ::Array[HubspotSDK::CRM::AssociationSpecWithLabel]
+
+            attr_reader paging: HubspotSDK::Marketing::Paging?
+
+            def paging=: (
+              HubspotSDK::Marketing::Paging
+            ) -> HubspotSDK::Marketing::Paging
+
+            def initialize: (
+              results: ::Array[HubspotSDK::CRM::AssociationSpecWithLabel],
+              ?paging: HubspotSDK::Marketing::Paging
+            ) -> void
+
+            def to_hash: -> {
+              results: ::Array[HubspotSDK::CRM::AssociationSpecWithLabel],
+              paging: HubspotSDK::Marketing::Paging
+            }
+          end
+        end
+      end
+    end
+  end
+end

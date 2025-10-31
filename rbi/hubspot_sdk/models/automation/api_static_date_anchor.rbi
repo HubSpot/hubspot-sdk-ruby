@@ -12,25 +12,19 @@ module HubspotSDK
             )
           end
 
-        # The day of the date to anchor on
         sig { returns(Integer) }
         attr_accessor :day_of_month
 
-        # The month of the date to anchor on
         sig do
           returns(HubspotSDK::Automation::APIStaticDateAnchor::Month::OrSymbol)
         end
         attr_accessor :month
 
-        # The type of event anchor this is, can be: "CONTACT_PROPERTY_ANCHOR" or
-        # "STATIC_DATE_ANCHOR"
         sig do
           returns(HubspotSDK::Automation::APIStaticDateAnchor::Type::OrSymbol)
         end
         attr_accessor :type
 
-        # The year of the date to anchor on. If this is not provided then this flow will
-        # re-run each year.
         sig { returns(T.nilable(Integer)) }
         attr_reader :year
 
@@ -45,18 +39,7 @@ module HubspotSDK
             year: Integer
           ).returns(T.attached_class)
         end
-        def self.new(
-          # The day of the date to anchor on
-          day_of_month:,
-          # The month of the date to anchor on
-          month:,
-          # The type of event anchor this is, can be: "CONTACT_PROPERTY_ANCHOR" or
-          # "STATIC_DATE_ANCHOR"
-          type:,
-          # The year of the date to anchor on. If this is not provided then this flow will
-          # re-run each year.
-          year: nil
-        )
+        def self.new(day_of_month:, month:, type:, year: nil)
         end
 
         sig do
@@ -73,7 +56,6 @@ module HubspotSDK
         def to_hash
         end
 
-        # The month of the date to anchor on
         module Month
           extend HubspotSDK::Internal::Type::Enum
 
@@ -155,8 +137,6 @@ module HubspotSDK
           end
         end
 
-        # The type of event anchor this is, can be: "CONTACT_PROPERTY_ANCHOR" or
-        # "STATIC_DATE_ANCHOR"
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

@@ -9,7 +9,7 @@ class HubspotSDK::Test::Resources::Cms::SourceCodeTest < HubspotSDK::Test::Resou
     response = @hubspot.cms.source_code.create("path", environment: "environment")
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::SourceCodeCreateResponse
+      response => HubspotSDK::Cms::AssetFileMetadata
     end
 
     assert_pattern do
@@ -89,7 +89,7 @@ class HubspotSDK::Test::Resources::Cms::SourceCodeTest < HubspotSDK::Test::Resou
     response = @hubspot.cms.source_code.get_metadata("path", environment: "environment")
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::SourceCodeGetMetadataResponse
+      response => HubspotSDK::Cms::AssetFileMetadata
     end
 
     assert_pattern do
@@ -112,7 +112,7 @@ class HubspotSDK::Test::Resources::Cms::SourceCodeTest < HubspotSDK::Test::Resou
     response = @hubspot.cms.source_code.upsert("path", environment: "environment")
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::SourceCodeUpsertResponse
+      response => HubspotSDK::Cms::AssetFileMetadata
     end
 
     assert_pattern do

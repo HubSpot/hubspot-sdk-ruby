@@ -6,7 +6,7 @@ module HubspotSDK
       class Objects
         class Listings
           class Batch
-            # Create a batch of listings
+            # Create multiple listings in a single request.
             sig do
               params(
                 inputs:
@@ -19,7 +19,7 @@ module HubspotSDK
             def create(inputs:, request_options: {})
             end
 
-            # Update a batch of listings by internal ID, or unique property values
+            # Update multiple listings using their internal IDs or unique property values.
             sig do
               params(
                 inputs:
@@ -32,7 +32,7 @@ module HubspotSDK
             def update(inputs:, request_options: {})
             end
 
-            # Archive a batch of listings by ID
+            # Archive multiple listings by their IDs.
             sig do
               params(
                 inputs: T::Array[HubspotSDK::CRM::SimplePublicObjectID::OrHash],

@@ -1,0 +1,139 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type media_played_event =
+        {
+          contact_id: Integer,
+          media_bridge_id: Integer,
+          media_bridge_object_coordinates: String,
+          media_bridge_object_type_id: String,
+          media_name: String,
+          media_type: HubspotSDK::Models::Cms::MediaPlayedEvent::media_type,
+          occurred_timestamp: Integer,
+          portal_id: Integer,
+          provider_id: Integer,
+          session_id: String,
+          state: HubspotSDK::Models::Cms::MediaPlayedEvent::state,
+          iframe_url: String,
+          media_url: String,
+          page_id: Integer,
+          page_name: String,
+          page_object_coordinates: String,
+          page_url: String
+        }
+
+      class MediaPlayedEvent < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor contact_id: Integer
+
+        attr_accessor media_bridge_id: Integer
+
+        attr_accessor media_bridge_object_coordinates: String
+
+        attr_accessor media_bridge_object_type_id: String
+
+        attr_accessor media_name: String
+
+        attr_accessor media_type: HubspotSDK::Models::Cms::MediaPlayedEvent::media_type
+
+        attr_accessor occurred_timestamp: Integer
+
+        attr_accessor portal_id: Integer
+
+        attr_accessor provider_id: Integer
+
+        attr_accessor session_id: String
+
+        attr_accessor state: HubspotSDK::Models::Cms::MediaPlayedEvent::state
+
+        attr_reader iframe_url: String?
+
+        def iframe_url=: (String) -> String
+
+        attr_reader media_url: String?
+
+        def media_url=: (String) -> String
+
+        attr_reader page_id: Integer?
+
+        def page_id=: (Integer) -> Integer
+
+        attr_reader page_name: String?
+
+        def page_name=: (String) -> String
+
+        attr_reader page_object_coordinates: String?
+
+        def page_object_coordinates=: (String) -> String
+
+        attr_reader page_url: String?
+
+        def page_url=: (String) -> String
+
+        def initialize: (
+          contact_id: Integer,
+          media_bridge_id: Integer,
+          media_bridge_object_coordinates: String,
+          media_bridge_object_type_id: String,
+          media_name: String,
+          media_type: HubspotSDK::Models::Cms::MediaPlayedEvent::media_type,
+          occurred_timestamp: Integer,
+          portal_id: Integer,
+          provider_id: Integer,
+          session_id: String,
+          state: HubspotSDK::Models::Cms::MediaPlayedEvent::state,
+          ?iframe_url: String,
+          ?media_url: String,
+          ?page_id: Integer,
+          ?page_name: String,
+          ?page_object_coordinates: String,
+          ?page_url: String
+        ) -> void
+
+        def to_hash: -> {
+          contact_id: Integer,
+          media_bridge_id: Integer,
+          media_bridge_object_coordinates: String,
+          media_bridge_object_type_id: String,
+          media_name: String,
+          media_type: HubspotSDK::Models::Cms::MediaPlayedEvent::media_type,
+          occurred_timestamp: Integer,
+          portal_id: Integer,
+          provider_id: Integer,
+          session_id: String,
+          state: HubspotSDK::Models::Cms::MediaPlayedEvent::state,
+          iframe_url: String,
+          media_url: String,
+          page_id: Integer,
+          page_name: String,
+          page_object_coordinates: String,
+          page_url: String
+        }
+
+        type media_type = :VIDEO | :AUDIO | :DOCUMENT | :OTHER | :IMAGE
+
+        module MediaType
+          extend HubspotSDK::Internal::Type::Enum
+
+          VIDEO: :VIDEO
+          AUDIO: :AUDIO
+          DOCUMENT: :DOCUMENT
+          OTHER: :OTHER
+          IMAGE: :IMAGE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::MediaPlayedEvent::media_type]
+        end
+
+        type state = :STARTED | :VIEWED
+
+        module State
+          extend HubspotSDK::Internal::Type::Enum
+
+          STARTED: :STARTED
+          VIEWED: :VIEWED
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::MediaPlayedEvent::state]
+        end
+      end
+    end
+  end
+end

@@ -6,15 +6,10 @@ module HubspotSDK
       class Extensions
         class Calling
           class RecordingSettings
-            # Register an external URL that HubSpot will use to retrieve
-            # [call recordings](https://developers.hubspot.com/docs/guides/apps/extensions/calling-extensions/recordings-and-transcriptions#register-your-app-s-endpoint-with-hubspot-using-the-calling-settings-api).
-            #
             # @overload create(app_id, url_to_retrieve_authed_recording:, request_options: {})
             #
-            # @param app_id [Integer] The ID of the app.
-            #
+            # @param app_id [Integer]
             # @param url_to_retrieve_authed_recording [String]
-            #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [HubspotSDK::Models::CRM::Extensions::RecordingSettingsResponse]
@@ -31,15 +26,10 @@ module HubspotSDK
               )
             end
 
-            # Update the URL that HubSpot will use to retrieve
-            # [call recordings](https://developers.hubspot.com/docs/guides/apps/extensions/calling-extensions/recordings-and-transcriptions#register-your-app-s-endpoint-with-hubspot-using-the-calling-settings-api).
-            #
             # @overload update(app_id, url_to_retrieve_authed_recording: nil, request_options: {})
             #
-            # @param app_id [Integer] The ID of the app.
-            #
+            # @param app_id [Integer]
             # @param url_to_retrieve_authed_recording [String]
-            #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [HubspotSDK::Models::CRM::Extensions::RecordingSettingsResponse]
@@ -56,13 +46,9 @@ module HubspotSDK
               )
             end
 
-            # Retrieve the URL that is registered for
-            # [call recording](https://developers.hubspot.com/docs/guides/apps/extensions/calling-extensions/recordings-and-transcriptions#register-your-app-s-endpoint-with-hubspot-using-the-calling-settings-api).
-            #
             # @overload get(app_id, request_options: {})
             #
-            # @param app_id [Integer] The ID of the app.
-            #
+            # @param app_id [Integer]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [HubspotSDK::Models::CRM::Extensions::RecordingSettingsResponse]
@@ -77,9 +63,6 @@ module HubspotSDK
               )
             end
 
-            # Mark a call recording as ready for transcription, specifying the call by its ID
-            # (`engagementid`).
-            #
             # @overload mark_ready(engagement_id:, request_options: {})
             #
             # @param engagement_id [Integer]

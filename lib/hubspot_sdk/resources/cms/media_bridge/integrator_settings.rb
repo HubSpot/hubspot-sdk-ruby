@@ -10,10 +10,10 @@ module HubspotSDK
           # @overload create_object_definition(app_id, media_types:, request_options: {})
           #
           # @param app_id [String]
-          # @param media_types [Array<Symbol, HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateObjectDefinitionParams::MediaType>]
+          # @param media_types [Array<Symbol, HubspotSDK::Models::Cms::IntegratorObjectCreationRequest::MediaType>]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateObjectDefinitionResponse]
+          # @return [HubspotSDK::Models::Cms::BulkIntegratorObjectCreationResponse]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateObjectDefinitionParams
           def create_object_definition(app_id, params)
@@ -23,7 +23,7 @@ module HubspotSDK
               method: :post,
               path: ["media-bridge/v1/%1$s/settings/object-definitions", app_id],
               body: parsed,
-              model: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateObjectDefinitionResponse,
+              model: HubspotSDK::Cms::BulkIntegratorObjectCreationResponse,
               options: options
             )
           end
@@ -33,11 +33,11 @@ module HubspotSDK
           # @overload create_oembed_domain(app_id, endpoints:, portal_id: nil, request_options: {})
           #
           # @param app_id [String]
-          # @param endpoints [HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateOembedDomainParams::Endpoints]
+          # @param endpoints [HubspotSDK::Models::Cms::Endpoints]
           # @param portal_id [Integer]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateOembedDomainResponse]
+          # @return [HubspotSDK::Models::Cms::IntegratorOEmbedDomainModel]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateOembedDomainParams
           def create_oembed_domain(app_id, params)
@@ -47,7 +47,7 @@ module HubspotSDK
               method: :post,
               path: ["media-bridge/v1/%1$s/settings/oembed-domains", app_id],
               body: parsed,
-              model: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingCreateOembedDomainResponse,
+              model: HubspotSDK::Cms::IntegratorOEmbedDomainModel,
               options: options
             )
           end
@@ -78,14 +78,14 @@ module HubspotSDK
           # @param app_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetEventVisibilitySettingsResponse]
+          # @return [HubspotSDK::Models::Cms::EventVisibilityResponse]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetEventVisibilitySettingsParams
           def get_event_visibility_settings(app_id, params = {})
             @client.request(
               method: :get,
               path: ["media-bridge/v1/%1$s/settings/event-visibility", app_id],
-              model: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetEventVisibilitySettingsResponse,
+              model: HubspotSDK::Cms::EventVisibilityResponse,
               options: params[:request_options]
             )
           end
@@ -98,7 +98,7 @@ module HubspotSDK
           # @param app_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetObjectDefinitionsByMediaTypeResponse]
+          # @return [HubspotSDK::Models::Cms::ObjectDefinitionResponse]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetObjectDefinitionsByMediaTypeParams
           def get_object_definitions_by_media_type(media_type, params)
@@ -111,7 +111,7 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["media-bridge/v1/%1$s/settings/object-definitions/%2$s", app_id, media_type],
-              model: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetObjectDefinitionsByMediaTypeResponse,
+              model: HubspotSDK::Cms::ObjectDefinitionResponse,
               options: options
             )
           end
@@ -124,7 +124,7 @@ module HubspotSDK
           # @param app_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetOembedDomainResponse]
+          # @return [HubspotSDK::Models::Cms::IntegratorOEmbedDomainModel]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetOembedDomainParams
           def get_oembed_domain(o_embed_domain_id, params)
@@ -137,7 +137,7 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["media-bridge/v1/%1$s/settings/oembed-domains/%2$s", app_id, o_embed_domain_id],
-              model: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetOembedDomainResponse,
+              model: HubspotSDK::Cms::IntegratorOEmbedDomainModel,
               options: options
             )
           end
@@ -149,14 +149,14 @@ module HubspotSDK
           # @param app_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingListOembedDomainsResponse]
+          # @return [HubspotSDK::Models::Cms::OEmbedDomainsCollectionResponse]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingListOembedDomainsParams
           def list_oembed_domains(app_id, params = {})
             @client.request(
               method: :get,
               path: ["media-bridge/v1/%1$s/settings/oembed-domains", app_id],
-              model: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingListOembedDomainsResponse,
+              model: HubspotSDK::Cms::OEmbedDomainsCollectionResponse,
               options: params[:request_options]
             )
           end
@@ -173,7 +173,7 @@ module HubspotSDK
           # @param name [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingRegisterAppNameResponse]
+          # @return [HubspotSDK::Models::Cms::MediaBridgeProviderRegistrationResponse]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingRegisterAppNameParams
           def register_app_name(app_id, params)
@@ -183,7 +183,7 @@ module HubspotSDK
               method: :post,
               path: ["media-bridge/v1/%1$s/settings/register", app_id],
               body: parsed,
-              model: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingRegisterAppNameResponse,
+              model: HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse,
               options: options
             )
           end
@@ -198,7 +198,7 @@ module HubspotSDK
           # @param name [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateAppNameResponse]
+          # @return [HubspotSDK::Models::Cms::MediaBridgeProviderRegistrationResponse]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateAppNameParams
           def update_app_name(app_id, params)
@@ -207,7 +207,7 @@ module HubspotSDK
               method: :put,
               path: ["media-bridge/v1/%1$s/settings", app_id],
               body: parsed,
-              model: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateAppNameResponse,
+              model: HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse,
               options: options
             )
           end
@@ -217,14 +217,14 @@ module HubspotSDK
           # @overload update_event_visibility_settings(app_id, event_type:, updated_at:, show_in_reporting: nil, show_in_timeline: nil, show_in_workflows: nil, request_options: {})
           #
           # @param app_id [String]
-          # @param event_type [Symbol, HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateEventVisibilitySettingsParams::EventType]
+          # @param event_type [Symbol, HubspotSDK::Models::Cms::EventVisibilityChange::EventType]
           # @param updated_at [Integer]
           # @param show_in_reporting [Boolean]
           # @param show_in_timeline [Boolean]
           # @param show_in_workflows [Boolean]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateEventVisibilitySettingsResponse]
+          # @return [HubspotSDK::Models::Cms::EventVisibilityChange]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateEventVisibilitySettingsParams
           def update_event_visibility_settings(app_id, params)
@@ -234,7 +234,7 @@ module HubspotSDK
               method: :patch,
               path: ["media-bridge/v1/%1$s/settings/event-visibility", app_id],
               body: parsed,
-              model: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateEventVisibilitySettingsResponse,
+              model: HubspotSDK::Cms::EventVisibilityChange,
               options: options
             )
           end
@@ -247,13 +247,13 @@ module HubspotSDK
           #
           # @param app_id [String] Path param:
           #
-          # @param endpoints [HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateOembedDomainParams::Endpoints] Body param:
+          # @param endpoints [HubspotSDK::Models::Cms::Endpoints] Body param:
           #
           # @param portal_id [Integer] Body param:
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateOembedDomainResponse]
+          # @return [HubspotSDK::Models::Cms::IntegratorOEmbedDomainModel]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateOembedDomainParams
           def update_oembed_domain(o_embed_domain_id, params)
@@ -267,7 +267,7 @@ module HubspotSDK
               method: :patch,
               path: ["media-bridge/v1/%1$s/settings/oembed-domains/%2$s", app_id, o_embed_domain_id],
               body: parsed,
-              model: HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingUpdateOembedDomainResponse,
+              model: HubspotSDK::Cms::IntegratorOEmbedDomainModel,
               options: options
             )
           end

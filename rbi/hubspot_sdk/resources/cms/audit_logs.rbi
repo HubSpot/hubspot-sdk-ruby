@@ -16,11 +16,7 @@ module HubspotSDK
             sort: T::Array[String],
             user_id: T::Array[String],
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(
-            HubspotSDK::Internal::Page[
-              HubspotSDK::Models::Cms::AuditLogListResponse
-            ]
-          )
+          ).returns(HubspotSDK::Internal::Page[HubspotSDK::Cms::PublicAuditLog])
         end
         def list(
           # Timestamp after which audit logs will be returned

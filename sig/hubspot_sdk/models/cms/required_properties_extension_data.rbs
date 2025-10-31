@@ -1,0 +1,15 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type required_properties_extension_data = { is_required_property: bool }
+
+      class RequiredPropertiesExtensionData < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor is_required_property: bool
+
+        def initialize: (is_required_property: bool) -> void
+
+        def to_hash: -> { is_required_property: bool }
+      end
+    end
+  end
+end

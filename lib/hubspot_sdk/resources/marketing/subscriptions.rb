@@ -25,16 +25,11 @@ module HubspotSDK
           )
         end
 
-        # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Marketing::SubscriptionGetEmailStatusParams} for more
-        # details.
-        #
         # Returns a list of subscriptions and their status for a given contact.
         #
         # @overload get_email_status(email_address, request_options: {})
         #
-        # @param email_address [String] The email address of the contact whose subscription statuses are being retrieved
-        #
+        # @param email_address [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Marketing::PublicSubscriptionStatusesResponse]

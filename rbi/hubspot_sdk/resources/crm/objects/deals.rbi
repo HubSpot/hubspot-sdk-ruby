@@ -42,7 +42,7 @@ module HubspotSDK
             ).returns(HubspotSDK::CRM::SimplePublicObject)
           end
           def update(
-            # Path param:
+            # Path param: The unique identifier of the deal to be updated.
             deal_id,
             # Body param: Key value pairs representing the properties of the object.
             properties:,
@@ -100,7 +100,11 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(deal_id, request_options: {})
+          def delete(
+            # The unique identifier of the deal to be archived.
+            deal_id,
+            request_options: {}
+          )
           end
 
           # Read an Object identified by `{dealId}`. `{dealId}` refers to the internal
@@ -119,6 +123,7 @@ module HubspotSDK
             ).returns(HubspotSDK::CRM::SimplePublicObjectWithAssociations)
           end
           def get(
+            # The unique identifier of the deal to be retrieved.
             deal_id,
             # Whether to return only results that have been archived.
             archived: nil,
@@ -139,7 +144,7 @@ module HubspotSDK
           )
           end
 
-          # Merge two deals with same type
+          # Combine two deals of the same type into a single deal.
           sig do
             params(
               object_id_to_merge: String,
@@ -154,6 +159,7 @@ module HubspotSDK
           )
           end
 
+          # Search for deals using specified criteria and filters.
           sig do
             params(
               after: String,

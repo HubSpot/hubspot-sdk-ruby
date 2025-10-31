@@ -9,12 +9,12 @@ class HubspotSDK::Test::Resources::CRM::PropertyValidationsTest < HubspotSDK::Te
     response = @hubspot.crm.property_validations.list("objectTypeId")
 
     assert_pattern do
-      response => HubspotSDK::Models::CRM::PropertyValidationListResponse
+      response => HubspotSDK::CRM::CollectionResponsePublicPropertyValidationRuleMapNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::CRM::PropertyValidationListResponse::Result])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicPropertyValidationRuleMap])
       }
     end
   end
@@ -25,12 +25,12 @@ class HubspotSDK::Test::Resources::CRM::PropertyValidationsTest < HubspotSDK::Te
     response = @hubspot.crm.property_validations.get("propertyName", object_type_id: "objectTypeId")
 
     assert_pattern do
-      response => HubspotSDK::Models::CRM::PropertyValidationGetResponse
+      response => HubspotSDK::CRM::CollectionResponsePublicPropertyValidationRuleNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::CRM::PropertyValidationGetResponse::Result])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicPropertyValidationRule])
       }
     end
   end

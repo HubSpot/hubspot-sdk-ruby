@@ -25,7 +25,9 @@ module HubspotSDK
           sig { returns(String) }
           attr_accessor :to_object_type
 
-          sig { returns(T::Array[HubspotSDK::AssociationSpec]) }
+          sig do
+            returns(T::Array[HubspotSDK::CRM::Associations::AssociationSpec1])
+          end
           attr_accessor :body
 
           sig do
@@ -33,7 +35,10 @@ module HubspotSDK
               object_type: String,
               object_id_: String,
               to_object_type: String,
-              body: T::Array[HubspotSDK::AssociationSpec::OrHash],
+              body:
+                T::Array[
+                  HubspotSDK::CRM::Associations::AssociationSpec1::OrHash
+                ],
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
@@ -52,7 +57,7 @@ module HubspotSDK
                 object_type: String,
                 object_id_: String,
                 to_object_type: String,
-                body: T::Array[HubspotSDK::AssociationSpec],
+                body: T::Array[HubspotSDK::CRM::Associations::AssociationSpec1],
                 request_options: HubspotSDK::RequestOptions
               }
             )

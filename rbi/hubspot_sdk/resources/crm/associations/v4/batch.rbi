@@ -12,18 +12,14 @@ module HubspotSDK
                 to_object_type: String,
                 from_object_type: String,
                 inputs:
-                  T::Array[
-                    HubspotSDK::CRM::Associations::PublicAssociationMultiPost::OrHash
-                  ],
+                  T::Array[HubspotSDK::CRM::PublicAssociationMultiPost::OrHash],
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(
-                HubspotSDK::CRM::Associations::BatchResponseLabelsBetweenObjectPair
-              )
+              ).returns(HubspotSDK::CRM::BatchResponseLabelsBetweenObjectPair)
             end
             def create(
-              # Path param: Type of the fromObject for this association definition (ex. "0-1")
+              # Path param:
               to_object_type,
-              # Path param: Type of the toObject for this association definition (ex. "0-2")
+              # Path param:
               from_object_type:,
               # Body param:
               inputs:,
@@ -38,15 +34,15 @@ module HubspotSDK
                 from_object_type: String,
                 inputs:
                   T::Array[
-                    HubspotSDK::CRM::Associations::PublicAssociationMultiArchive::OrHash
+                    HubspotSDK::CRM::PublicAssociationMultiArchive::OrHash
                   ],
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::CRM::Associations::BatchResponseVoid)
+              ).returns(HubspotSDK::CRM::BatchResponseVoid)
             end
             def delete(
-              # Path param: Type of the toObject for this association definition.
+              # Path param:
               to_object_type,
-              # Path param: Type of the fromObject for this association definition.
+              # Path param:
               from_object_type:,
               # Body param:
               inputs:,
@@ -61,15 +57,15 @@ module HubspotSDK
                 from_object_type: String,
                 inputs:
                   T::Array[
-                    HubspotSDK::CRM::Associations::PublicDefaultAssociationMultiPost::OrHash
+                    HubspotSDK::CRM::PublicDefaultAssociationMultiPost::OrHash
                   ],
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(HubspotSDK::CRM::BatchResponsePublicDefaultAssociation)
             end
             def create_default(
-              # Path param: Type of the fromObject for this association definition (ex. "0-1")
+              # Path param:
               to_object_type,
-              # Path param: Type of the toObject for this association definition (ex. "0-2")
+              # Path param:
               from_object_type:,
               # Body param:
               inputs:,
@@ -84,16 +80,14 @@ module HubspotSDK
                 to_object_type: String,
                 from_object_type: String,
                 inputs:
-                  T::Array[
-                    HubspotSDK::CRM::Associations::PublicAssociationMultiPost::OrHash
-                  ],
+                  T::Array[HubspotSDK::CRM::PublicAssociationMultiPost::OrHash],
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::CRM::Associations::BatchResponseVoid)
+              ).returns(HubspotSDK::CRM::BatchResponseVoid)
             end
             def delete_labels(
-              # Path param: Type of the toObject for this association definition.
+              # Path param:
               to_object_type,
-              # Path param: Type of the fromObject for this association definition.
+              # Path param:
               from_object_type:,
               # Body param:
               inputs:,
@@ -112,17 +106,17 @@ module HubspotSDK
                 from_object_type: String,
                 inputs:
                   T::Array[
-                    HubspotSDK::CRM::Associations::PublicFetchAssociationsBatchRequest::OrHash
+                    HubspotSDK::CRM::PublicFetchAssociationsBatchRequest::OrHash
                   ],
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(
-                HubspotSDK::CRM::Associations::BatchResponsePublicAssociationMultiWithLabel
+                HubspotSDK::CRM::BatchResponsePublicAssociationMultiWithLabel
               )
             end
             def get(
-              # Path param: Type of the toObject for this association definition.
+              # Path param:
               to_object_type,
-              # Path param: Type of the fromObject for this association definition.
+              # Path param:
               from_object_type:,
               # Body param:
               inputs:,

@@ -6,18 +6,18 @@ class HubspotSDK::Test::Resources::CRM::Objects::DealSplitsTest < HubspotSDK::Te
   def test_batch_read_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.crm.objects.deal_splits.batch_read(inputs: [{id: "37295"}])
+    response = @hubspot.crm.objects.deal_splits.batch_read(inputs: [{id: "id"}])
 
     assert_pattern do
-      response => HubspotSDK::Models::CRM::Objects::DealSplitBatchReadResponse
+      response => HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::CRM::Objects::DealSplitBatchReadResponse::Result]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Objects::DealToDealSplits]),
         started_at: Time,
-        status: HubspotSDK::Models::CRM::Objects::DealSplitBatchReadResponse::Status,
+        status: HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits::Status,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
@@ -31,15 +31,15 @@ class HubspotSDK::Test::Resources::CRM::Objects::DealSplitsTest < HubspotSDK::Te
       @hubspot.crm.objects.deal_splits.batch_upsert(inputs: [{id: 0, splits: [{ownerId: 0, percentage: 0}]}])
 
     assert_pattern do
-      response => HubspotSDK::Models::CRM::Objects::DealSplitBatchUpsertResponse
+      response => HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::CRM::Objects::DealSplitBatchUpsertResponse::Result]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Objects::DealToDealSplits]),
         started_at: Time,
-        status: HubspotSDK::Models::CRM::Objects::DealSplitBatchUpsertResponse::Status,
+        status: HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits::Status,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }

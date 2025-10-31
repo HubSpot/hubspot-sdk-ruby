@@ -6,35 +6,18 @@ module HubspotSDK
       class Extensions
         class Calling
           class Settings
-            # Some parameter documentations has been truncated, see
-            # {HubspotSDK::Models::CRM::Extensions::Calling::SettingCreateParams} for more
-            # details.
-            #
-            # Set the menu label, target iframe URL, and dimensions for your calling
-            # extension.
-            #
             # @overload create(app_id, name:, url:, height: nil, is_ready: nil, supports_custom_objects: nil, supports_inbound_calling: nil, uses_calling_window: nil, uses_remote: nil, width: nil, request_options: {})
             #
-            # @param app_id [Integer] The ID of the app.
-            #
-            # @param name [String] The name of your calling service to display to users.
-            #
-            # @param url [String] The URL to your phone/calling UI, built with the [Calling SDK](#).
-            #
-            # @param height [Integer] The target height of the iframe that will contain your phone/calling UI.
-            #
-            # @param is_ready [Boolean] When true, this indicates that your calling app is ready for production. Users w
-            #
-            # @param supports_custom_objects [Boolean] When true, users will be able to click to dial from custom objects.
-            #
-            # @param supports_inbound_calling [Boolean] When true, this indicates that your calling app supports inbound calling within
-            #
-            # @param uses_calling_window [Boolean] When false, this indicates that your calling app does not require the use of the
-            #
-            # @param uses_remote [Boolean] When false, this indicates that your calling app does not use the anchored calli
-            #
-            # @param width [Integer] The target width of the iframe that will contain your phone/calling UI.
-            #
+            # @param app_id [Integer]
+            # @param name [String]
+            # @param url [String]
+            # @param height [Integer]
+            # @param is_ready [Boolean]
+            # @param supports_custom_objects [Boolean]
+            # @param supports_inbound_calling [Boolean]
+            # @param uses_calling_window [Boolean]
+            # @param uses_remote [Boolean]
+            # @param width [Integer]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [HubspotSDK::Models::Webhooks::SettingsResponse]
@@ -51,34 +34,18 @@ module HubspotSDK
               )
             end
 
-            # Some parameter documentations has been truncated, see
-            # {HubspotSDK::Models::CRM::Extensions::Calling::SettingUpdateParams} for more
-            # details.
-            #
-            # Update existing calling extension settings.
-            #
             # @overload update(app_id, height: nil, is_ready: nil, name: nil, supports_custom_objects: nil, supports_inbound_calling: nil, url: nil, uses_calling_window: nil, uses_remote: nil, width: nil, request_options: {})
             #
-            # @param app_id [Integer] The ID of the app.
-            #
-            # @param height [Integer] The target height of the iframe that will contain your phone/calling UI.
-            #
-            # @param is_ready [Boolean] When true, this indicates that your calling app is ready for production. Users w
-            #
-            # @param name [String] The name of your calling service to display to users.
-            #
-            # @param supports_custom_objects [Boolean] When true, users will be able to click to dial from custom objects.
-            #
-            # @param supports_inbound_calling [Boolean] When true, this indicates that your calling app supports inbound calling within
-            #
-            # @param url [String] The URL to your phone/calling UI, built with the [Calling SDK](#).
-            #
-            # @param uses_calling_window [Boolean] When false, this indicates that your calling app does not require the use of the
-            #
-            # @param uses_remote [Boolean] When false, this indicates that your calling app does not use the anchored calli
-            #
-            # @param width [Integer] The target width of the iframe that will contain your phone/calling UI.
-            #
+            # @param app_id [Integer]
+            # @param height [Integer]
+            # @param is_ready [Boolean]
+            # @param name [String]
+            # @param supports_custom_objects [Boolean]
+            # @param supports_inbound_calling [Boolean]
+            # @param url [String]
+            # @param uses_calling_window [Boolean]
+            # @param uses_remote [Boolean]
+            # @param width [Integer]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [HubspotSDK::Models::Webhooks::SettingsResponse]
@@ -95,13 +62,9 @@ module HubspotSDK
               )
             end
 
-            # Delete a calling extension. This will remove your service as an option for all
-            # connected accounts.
-            #
             # @overload delete(app_id, request_options: {})
             #
-            # @param app_id [Integer] The ID of the app.
-            #
+            # @param app_id [Integer]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [nil]
@@ -116,12 +79,9 @@ module HubspotSDK
               )
             end
 
-            # Retrieve the settings configured for the app.
-            #
             # @overload get(app_id, request_options: {})
             #
-            # @param app_id [Integer] The ID of the app.
-            #
+            # @param app_id [Integer]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [HubspotSDK::Models::Webhooks::SettingsResponse]

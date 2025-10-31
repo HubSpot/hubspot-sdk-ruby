@@ -22,13 +22,9 @@ module HubspotSDK
             ).returns(HubspotSDK::CRM::BatchResponsePublicDefaultAssociation)
           end
           def create(
-            # The unique identifier of the target object for the default association.
             to_object_id,
-            # The type of the source object for the default association.
             from_object_type:,
-            # The unique identifier of the source object for the default association.
             from_object_id:,
-            # The type of the target object for the default association.
             to_object_type:,
             request_options: {}
           )
@@ -41,7 +37,10 @@ module HubspotSDK
               object_type: String,
               object_id_: String,
               to_object_type: String,
-              body: T::Array[HubspotSDK::AssociationSpec::OrHash],
+              body:
+                T::Array[
+                  HubspotSDK::CRM::Associations::AssociationSpec1::OrHash
+                ],
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::CRM::CreatedResponseLabelsBetweenObjectPair)
           end

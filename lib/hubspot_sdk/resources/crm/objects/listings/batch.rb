@@ -6,7 +6,7 @@ module HubspotSDK
       class Objects
         class Listings
           class Batch
-            # Create a batch of listings
+            # Create multiple listings in a single request.
             #
             # @overload create(inputs:, request_options: {})
             #
@@ -27,7 +27,7 @@ module HubspotSDK
               )
             end
 
-            # Update a batch of listings by internal ID, or unique property values
+            # Update multiple listings using their internal IDs or unique property values.
             #
             # @overload update(inputs:, request_options: {})
             #
@@ -48,7 +48,7 @@ module HubspotSDK
               )
             end
 
-            # Archive a batch of listings by ID
+            # Archive multiple listings by their IDs.
             #
             # @overload delete(inputs:, request_options: {})
             #

@@ -15,10 +15,6 @@ module HubspotSDK
         sig { returns(T::Array[HubspotSDK::PublicUnifiedEventsFilterBranch]) }
         attr_accessor :event_filter_branches
 
-        # If you want to listen to list-membership events (an object was added to a list,
-        # an object was removed from a list) you need to use this
-        # `listMembershipFilterBranches` property instead of `eventFilterBranches`,
-        # because list membership events work differently.
         sig do
           returns(
             T::Array[
@@ -37,12 +33,9 @@ module HubspotSDK
         end
         attr_accessor :list_membership_filter_branches
 
-        # Whether or not the same object can enroll in this workflow twice.
         sig { returns(T::Boolean) }
         attr_accessor :should_re_enroll
 
-        # The type of enrollment criteria this is, this can be "LIST_BASED",
-        # "EVENT_BASED", or "MANUAL".
         sig do
           returns(
             HubspotSDK::Automation::APIEventBasedEnrollmentCriteria::Type::OrSymbol
@@ -50,7 +43,6 @@ module HubspotSDK
         end
         attr_accessor :type
 
-        # List-based criteria to further refine which contacts will enroll in this flow.
         sig do
           returns(
             T.nilable(
@@ -121,17 +113,9 @@ module HubspotSDK
         end
         def self.new(
           event_filter_branches:,
-          # If you want to listen to list-membership events (an object was added to a list,
-          # an object was removed from a list) you need to use this
-          # `listMembershipFilterBranches` property instead of `eventFilterBranches`,
-          # because list membership events work differently.
           list_membership_filter_branches:,
-          # Whether or not the same object can enroll in this workflow twice.
           should_re_enroll:,
-          # The type of enrollment criteria this is, this can be "LIST_BASED",
-          # "EVENT_BASED", or "MANUAL".
           type:,
-          # List-based criteria to further refine which contacts will enroll in this flow.
           refinement_criteria: nil
         )
         end
@@ -202,8 +186,6 @@ module HubspotSDK
           end
         end
 
-        # The type of enrollment criteria this is, this can be "LIST_BASED",
-        # "EVENT_BASED", or "MANUAL".
         module Type
           extend HubspotSDK::Internal::Type::Enum
 
@@ -233,7 +215,6 @@ module HubspotSDK
           end
         end
 
-        # List-based criteria to further refine which contacts will enroll in this flow.
         module RefinementCriteria
           extend HubspotSDK::Internal::Type::Union
 

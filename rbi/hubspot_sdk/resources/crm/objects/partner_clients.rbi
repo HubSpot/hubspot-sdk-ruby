@@ -17,11 +17,6 @@ module HubspotSDK
           end
           attr_reader :batch
 
-          # Perform a partial update of an Object identified by `{objectId}`. `{objectId}`
-          # refers to the internal object ID by default, or optionally any unique property
-          # value as specified by the `idProperty` query param. Provided property values
-          # will be overwritten. Read-only and non-existent properties will be ignored.
-          # Properties values can be cleared by passing an empty string.
           sig do
             params(
               partner_client_id: String,
@@ -35,14 +30,12 @@ module HubspotSDK
             partner_client_id,
             # Body param: Key value pairs representing the properties of the object.
             properties:,
-            # Query param: The name of a property whose values are unique for this object
+            # Query param:
             id_property: nil,
             request_options: {}
           )
           end
 
-          # Read a page of objects. Control what is returned via the `properties` query
-          # param.
           sig do
             params(
               after: String,
@@ -59,34 +52,16 @@ module HubspotSDK
             )
           end
           def list(
-            # The paging cursor token of the last successfully read resource will be returned
-            # as the `paging.next.after` JSON property of a paged response containing more
-            # results.
             after: nil,
-            # Whether to return only results that have been archived.
             archived: nil,
-            # A comma separated list of object types to retrieve associated IDs for. If any of
-            # the specified associations do not exist, they will be ignored.
             associations: nil,
-            # The maximum number of results to display per page.
             limit: nil,
-            # A comma separated list of the properties to be returned in the response. If any
-            # of the specified properties are not present on the requested object(s), they
-            # will be ignored.
             properties: nil,
-            # A comma separated list of the properties to be returned along with their history
-            # of previous values. If any of the specified properties are not present on the
-            # requested object(s), they will be ignored. Usage of this parameter will reduce
-            # the maximum number of partner clients that can be read by a single request.
             properties_with_history: nil,
             request_options: {}
           )
           end
 
-          # Read an Object identified by `{objectId}`. `{objectId}` refers to the internal
-          # object ID by default, or optionally any unique property value as specified by
-          # the `idProperty` query param. Control what is returned via the `properties`
-          # query param.
           sig do
             params(
               partner_client_id: String,
@@ -100,20 +75,10 @@ module HubspotSDK
           end
           def get(
             partner_client_id,
-            # Whether to return only results that have been archived.
             archived: nil,
-            # A comma separated list of object types to retrieve associated IDs for. If any of
-            # the specified associations do not exist, they will be ignored.
             associations: nil,
-            # The name of a property whose values are unique for this object
             id_property: nil,
-            # A comma separated list of the properties to be returned in the response. If any
-            # of the specified properties are not present on the requested object(s), they
-            # will be ignored.
             properties: nil,
-            # A comma separated list of the properties to be returned along with their history
-            # of previous values. If any of the specified properties are not present on the
-            # requested object(s), they will be ignored.
             properties_with_history: nil,
             request_options: {}
           )

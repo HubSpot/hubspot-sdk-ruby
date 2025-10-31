@@ -45,7 +45,7 @@ module HubspotSDK
             ).returns(HubspotSDK::CRM::SimplePublicObject)
           end
           def update(
-            # Path param: The unique identifier for the goal target to be updated.
+            # Path param:
             goal_target_id,
             # Body param: Key value pairs representing the properties of the object.
             properties:,
@@ -104,11 +104,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(
-            # The unique identifier for the goal target to be deleted.
-            goal_target_id,
-            request_options: {}
-          )
+          def delete(goal_target_id, request_options: {})
           end
 
           # Read an Object identified by `{goalTargetId}`. `{goalTargetId}` refers to the
@@ -127,7 +123,6 @@ module HubspotSDK
             ).returns(HubspotSDK::CRM::SimplePublicObjectWithAssociations)
           end
           def get(
-            # The unique identifier for the goal target.
             goal_target_id,
             # Whether to return only results that have been archived.
             archived: nil,

@@ -12,7 +12,6 @@ module HubspotSDK
             )
           end
 
-        # The name of this branch
         sig { returns(T.nilable(String)) }
         attr_reader :branch_name
 
@@ -27,8 +26,6 @@ module HubspotSDK
         end
         attr_writer :connection
 
-        # The list criteria that determine when to execute this branch. The first matching
-        # branch will execute.
         sig do
           returns(
             T.nilable(
@@ -81,14 +78,7 @@ module HubspotSDK
               )
           ).returns(T.attached_class)
         end
-        def self.new(
-          # The name of this branch
-          branch_name: nil,
-          connection: nil,
-          # The list criteria that determine when to execute this branch. The first matching
-          # branch will execute.
-          filter_branch: nil
-        )
+        def self.new(branch_name: nil, connection: nil, filter_branch: nil)
         end
 
         sig do
@@ -113,8 +103,6 @@ module HubspotSDK
         def to_hash
         end
 
-        # The list criteria that determine when to execute this branch. The first matching
-        # branch will execute.
         module FilterBranch
           extend HubspotSDK::Internal::Type::Union
 

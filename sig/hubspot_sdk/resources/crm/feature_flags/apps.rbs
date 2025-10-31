@@ -6,22 +6,22 @@ module HubspotSDK
           def update: (
             String flag_name,
             app_id: Integer,
-            default_state: HubspotSDK::Models::CRM::FeatureFlags::AppUpdateParams::default_state,
-            ?override_state: HubspotSDK::Models::CRM::FeatureFlags::AppUpdateParams::override_state,
+            default_state: HubspotSDK::Models::CRM::FlagPutRequest::default_state,
+            ?override_state: HubspotSDK::Models::CRM::FlagPutRequest::override_state,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Models::CRM::FeatureFlags::AppUpdateResponse
+          ) -> HubspotSDK::CRM::FlagResponse
 
           def delete: (
             String flag_name,
             app_id: Integer,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Models::CRM::FeatureFlags::AppDeleteResponse
+          ) -> HubspotSDK::CRM::FlagResponse
 
           def get: (
             String flag_name,
             app_id: Integer,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Models::CRM::FeatureFlags::AppGetResponse
+          ) -> HubspotSDK::CRM::FlagResponse
 
           def list_portals: (
             String flag_name,
@@ -29,7 +29,7 @@ module HubspotSDK
             ?limit: Integer,
             ?start_portal_id: Integer,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Models::CRM::FeatureFlags::AppListPortalsResponse
+          ) -> HubspotSDK::CRM::PortalFlagStateBatchResponse
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

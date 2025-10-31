@@ -4,8 +4,6 @@ module HubspotSDK
   module Resources
     class Automation
       class Workflows
-        # Create a new workflow.
-        #
         # @overload create(api_flow_create_request:, request_options: {})
         #
         # @param api_flow_create_request [HubspotSDK::Automation::APIFlowCreateRequest]
@@ -23,14 +21,10 @@ module HubspotSDK
           )
         end
 
-        # Update a workflow by ID.
-        #
         # @overload update(flow_id, api_flow_put_request:, request_options: {})
         #
-        # @param flow_id [String] The ID of the workflow.
-        #
+        # @param flow_id [String]
         # @param api_flow_put_request [HubspotSDK::Automation::APIFlowPutRequest]
-        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Automation::APIContactFlow, HubspotSDK::Models::Automation::APIPlatformFlow]
@@ -45,17 +39,10 @@ module HubspotSDK
           )
         end
 
-        # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Automation::WorkflowListParams} for more details.
-        #
-        # Retrieve all workflows from an account.
-        #
         # @overload list(after: nil, limit: nil, request_options: {})
         #
-        # @param after [String] The paging cursor token of the last successfully read resource will be returned
-        #
-        # @param limit [Integer] The maximum number of results to display per page.
-        #
+        # @param after [String]
+        # @param limit [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Automation::APIFlowListing>]
@@ -73,14 +60,9 @@ module HubspotSDK
           )
         end
 
-        # Fully delete a workflow by ID. Deleted workflows cannot be restored via the API.
-        # If you need to restore an accidentally deleted flow, you'll need to contact
-        # support.
-        #
         # @overload delete(flow_id, request_options: {})
         #
-        # @param flow_id [Integer] The ID of the workflow to delete.
-        #
+        # @param flow_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
@@ -95,8 +77,6 @@ module HubspotSDK
           )
         end
 
-        # Retrieve a batch of workflows by ID.
-        #
         # @overload batch_get(inputs:, request_options: {})
         #
         # @param inputs [Array<HubspotSDK::Models::Automation::APIFlowBatchFetchFlowIDCoordinate>]
@@ -116,8 +96,6 @@ module HubspotSDK
           )
         end
 
-        # Retrieve the IDs of v3 workflows that have been migrated to the v4 API.
-        #
         # @overload batch_get_id_mappings(inputs:, request_options: {})
         #
         # @param inputs [Array<HubspotSDK::Models::Automation::APIFlowBatchFetchMigrationFlowIDCoordinate, HubspotSDK::Models::Automation::APIFlowBatchFetchMigrationWorkflowIDCoordinate>]
@@ -137,12 +115,9 @@ module HubspotSDK
           )
         end
 
-        # Retrieve all details for a specific workflow by ID.
-        #
         # @overload get(flow_id, request_options: {})
         #
-        # @param flow_id [String] The ID of the workflow to retrieve.
-        #
+        # @param flow_id [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Automation::APIContactFlow, HubspotSDK::Models::Automation::APIPlatformFlow]
@@ -157,22 +132,12 @@ module HubspotSDK
           )
         end
 
-        # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Automation::WorkflowListEmailCampaignsParams} for more
-        # details.
-        #
-        # Retrieve emails sent by a workflow by ID.
-        #
         # @overload list_email_campaigns(after: nil, before: nil, flow_id: nil, limit: nil, request_options: {})
         #
-        # @param after [String] The paging cursor token of the last successfully read resource will be returned
-        #
+        # @param after [String]
         # @param before [String]
-        #
-        # @param flow_id [Array<String>] The ID of the workflow.
-        #
-        # @param limit [Integer] The maximum number of results to display per page.
-        #
+        # @param flow_id [Array<String>]
+        # @param limit [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Automation::CollectionResponseAPIFlowEmailCampaign]

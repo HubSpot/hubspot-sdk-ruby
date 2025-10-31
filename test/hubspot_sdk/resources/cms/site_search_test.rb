@@ -9,14 +9,14 @@ class HubspotSDK::Test::Resources::Cms::SiteSearchTest < HubspotSDK::Test::Resou
     response = @hubspot.cms.site_search.get_indexed_data("contentId")
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::SiteSearchGetIndexedDataResponse
+      response => HubspotSDK::Cms::IndexedData
     end
 
     assert_pattern do
       response => {
         id: String,
-        fields: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Models::Cms::SiteSearchGetIndexedDataResponse::Field]),
-        type: HubspotSDK::Models::Cms::SiteSearchGetIndexedDataResponse::Type
+        fields: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::IndexedField]),
+        type: HubspotSDK::Cms::IndexedData::Type
       }
     end
   end
@@ -27,7 +27,7 @@ class HubspotSDK::Test::Resources::Cms::SiteSearchTest < HubspotSDK::Test::Resou
     response = @hubspot.cms.site_search.search
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::SiteSearchSearchResponse
+      response => HubspotSDK::Cms::PublicSearchResults
     end
 
     assert_pattern do
@@ -35,7 +35,7 @@ class HubspotSDK::Test::Resources::Cms::SiteSearchTest < HubspotSDK::Test::Resou
         limit: Integer,
         offset: Integer,
         page: Integer,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::Cms::SiteSearchSearchResponse::Result]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ContentSearchResult]),
         total: Integer,
         search_term: String | nil
       }

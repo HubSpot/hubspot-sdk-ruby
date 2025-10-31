@@ -8,7 +8,6 @@ module HubspotSDK
           sig { returns(HubspotSDK::Resources::CRM::Associations::Schema::V4) }
           attr_reader :v4
 
-          # List all the valid association types available between two object types
           sig do
             params(
               to_object_type: String,

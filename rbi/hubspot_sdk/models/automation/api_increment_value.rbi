@@ -12,14 +12,9 @@ module HubspotSDK
             )
           end
 
-        # The amount be which to increment
         sig { returns(Float) }
         attr_accessor :increment_amount
 
-        # This is the type of input value. This can be one of: "FIELD_DATA",
-        # "OBJECT_PROPERTY", "STATIC_VALUE", "RELATIVE_DATETIME", "TIMESTAMP",
-        # "INCREMENT", "FETCHED_OBJECT_PROPERTY", "APPEND_OBJECT_PROPERTY",
-        # "STATIC_APPEND_VALUE", "ENROLLMENT_EVENT_PROPERTY"
         sig do
           returns(HubspotSDK::Automation::APIIncrementValue::Type::OrSymbol)
         end
@@ -31,15 +26,7 @@ module HubspotSDK
             type: HubspotSDK::Automation::APIIncrementValue::Type::OrSymbol
           ).returns(T.attached_class)
         end
-        def self.new(
-          # The amount be which to increment
-          increment_amount:,
-          # This is the type of input value. This can be one of: "FIELD_DATA",
-          # "OBJECT_PROPERTY", "STATIC_VALUE", "RELATIVE_DATETIME", "TIMESTAMP",
-          # "INCREMENT", "FETCHED_OBJECT_PROPERTY", "APPEND_OBJECT_PROPERTY",
-          # "STATIC_APPEND_VALUE", "ENROLLMENT_EVENT_PROPERTY"
-          type:
-        )
+        def self.new(increment_amount:, type:)
         end
 
         sig do
@@ -53,10 +40,6 @@ module HubspotSDK
         def to_hash
         end
 
-        # This is the type of input value. This can be one of: "FIELD_DATA",
-        # "OBJECT_PROPERTY", "STATIC_VALUE", "RELATIVE_DATETIME", "TIMESTAMP",
-        # "INCREMENT", "FETCHED_OBJECT_PROPERTY", "APPEND_OBJECT_PROPERTY",
-        # "STATIC_APPEND_VALUE", "ENROLLMENT_EVENT_PROPERTY"
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

@@ -12,7 +12,6 @@ module HubspotSDK
             )
           end
 
-        # Where in the request this auth key should be located: "HEADER" or "QUERY_PARAM"
         sig do
           returns(
             HubspotSDK::Automation::APIAuthKeyWebhookAuthSettings::Location::OrSymbol
@@ -20,15 +19,12 @@ module HubspotSDK
         end
         attr_accessor :location
 
-        # The name to use for this auth key.
         sig { returns(String) }
         attr_accessor :name
 
-        # The secret to pass through in this auth key.
         sig { returns(String) }
         attr_accessor :secret_name
 
-        # The type of webhook auth settings this is, can be: "AUTH_KEY" or "SIGNATURE"
         sig do
           returns(
             HubspotSDK::Automation::APIAuthKeyWebhookAuthSettings::Type::OrSymbol
@@ -46,16 +42,7 @@ module HubspotSDK
               HubspotSDK::Automation::APIAuthKeyWebhookAuthSettings::Type::OrSymbol
           ).returns(T.attached_class)
         end
-        def self.new(
-          # Where in the request this auth key should be located: "HEADER" or "QUERY_PARAM"
-          location:,
-          # The name to use for this auth key.
-          name:,
-          # The secret to pass through in this auth key.
-          secret_name:,
-          # The type of webhook auth settings this is, can be: "AUTH_KEY" or "SIGNATURE"
-          type:
-        )
+        def self.new(location:, name:, secret_name:, type:)
         end
 
         sig do
@@ -73,7 +60,6 @@ module HubspotSDK
         def to_hash
         end
 
-        # Where in the request this auth key should be located: "HEADER" or "QUERY_PARAM"
         module Location
           extend HubspotSDK::Internal::Type::Enum
 
@@ -108,7 +94,6 @@ module HubspotSDK
           end
         end
 
-        # The type of webhook auth settings this is, can be: "AUTH_KEY" or "SIGNATURE"
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

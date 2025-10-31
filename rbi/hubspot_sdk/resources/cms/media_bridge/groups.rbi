@@ -37,7 +37,7 @@ module HubspotSDK
               object_type: String,
               app_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Models::Cms::MediaBridge::GroupListResponse)
+            ).returns(HubspotSDK::Cms::CollectionResponsePropertyGroupNoPaging)
           end
           def list(object_type, app_id:, request_options: {})
           end

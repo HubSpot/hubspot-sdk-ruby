@@ -5,9 +5,6 @@ module HubspotSDK
     class CRM
       class Objects
         class Schemas
-          # Define a new object schema, along with custom properties and associations. The
-          # entire object schema, including its object type ID, properties, and associations
-          # will be returned in the response.
           sig do
             params(
               associated_objects: T::Array[String],
@@ -50,7 +47,6 @@ module HubspotSDK
           )
           end
 
-          # Update the details for an existing object schema.
           sig do
             params(
               object_type: String,
@@ -88,7 +84,6 @@ module HubspotSDK
           )
           end
 
-          # Returns all object schemas that have been defined for your account.
           sig do
             params(
               archived: T::Boolean,
@@ -102,8 +97,6 @@ module HubspotSDK
           )
           end
 
-          # Deletes a schema. Any existing records of this schema must be deleted **first**.
-          # Otherwise this call will fail.
           sig do
             params(
               object_type: String,
@@ -120,8 +113,6 @@ module HubspotSDK
           )
           end
 
-          # Defines a new association between the primary schema's object type and other
-          # object types.
           sig do
             params(
               object_type: String,
@@ -129,9 +120,7 @@ module HubspotSDK
               to_object_type_id: String,
               name: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Models::CRM::Objects::SchemaCreateAssociationResponse
-            )
+            ).returns(HubspotSDK::Events::AssociationDefinition)
           end
           def create_association(
             # Fully qualified name or object type ID of your schema.
@@ -143,7 +132,6 @@ module HubspotSDK
           )
           end
 
-          # Removes an existing association from a schema.
           sig do
             params(
               association_identifier: String,
@@ -160,7 +148,6 @@ module HubspotSDK
           )
           end
 
-          # Returns an existing object schema.
           sig do
             params(
               object_type: String,

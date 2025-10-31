@@ -24,7 +24,7 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4Test < HubspotSDK::Test:
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicDefaultAssociation]),
         started_at: Time,
         status: HubspotSDK::CRM::BatchResponsePublicDefaultAssociation::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Associations::StandardError1]) | nil,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
@@ -76,7 +76,7 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4Test < HubspotSDK::Test:
 
     assert_pattern do
       row => {
-        association_types: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Associations::AssociationSpecWithLabel1]),
+        association_types: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::AssociationSpecWithLabel]),
         to_object_id: String
       }
     end

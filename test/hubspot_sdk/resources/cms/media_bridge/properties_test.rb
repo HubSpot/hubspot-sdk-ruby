@@ -101,12 +101,12 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::PropertiesTest < HubspotSDK
     response = @hubspot.cms.media_bridge.properties.list("objectType", app_id: "appId")
 
     assert_pattern do
-      response => HubspotSDK::Models::Cms::MediaBridge::PropertyListResponse
+      response => HubspotSDK::Cms::CollectionResponsePropertyNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Models::Cms::MediaBridge::PropertyListResponse::Result])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Property1])
       }
     end
   end

@@ -10,11 +10,9 @@ module HubspotSDK
             # {HubspotSDK::Models::CRM::Extensions::VideoConferencing::SettingUpdateParams}
             # for more details.
             #
-            # Updates the settings for a video conference application with the specified ID.
-            #
             # @overload update(app_id, create_meeting_url:, delete_meeting_url: nil, fetch_accounts_uri: nil, update_meeting_url: nil, user_verify_url: nil, request_options: {})
             #
-            # @param app_id [Integer] The ID of the video conference application. This is the identifier of the applic
+            # @param app_id [Integer]
             #
             # @param create_meeting_url [String] The URL that HubSpot will send requests to create a new video conference.
             #
@@ -43,16 +41,9 @@ module HubspotSDK
               )
             end
 
-            # Some parameter documentations has been truncated, see
-            # {HubspotSDK::Models::CRM::Extensions::VideoConferencing::SettingDeleteParams}
-            # for more details.
-            #
-            # Deletes the settings for a video conference application with the specified ID.
-            #
             # @overload delete(app_id, request_options: {})
             #
-            # @param app_id [Integer] The ID of the video conference application. This is the identifier of the applic
-            #
+            # @param app_id [Integer]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [nil]
@@ -67,16 +58,9 @@ module HubspotSDK
               )
             end
 
-            # Some parameter documentations has been truncated, see
-            # {HubspotSDK::Models::CRM::Extensions::VideoConferencing::SettingGetParams} for
-            # more details.
-            #
-            # Return the settings for a video conference application with the specified ID.
-            #
             # @overload get(app_id, request_options: {})
             #
-            # @param app_id [Integer] The ID of the video conference application. This is the identifier of the applic
-            #
+            # @param app_id [Integer]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [HubspotSDK::Models::CRM::Extensions::ExternalSettings]

@@ -5,9 +5,7 @@ module HubspotSDK
     class CRM
       class Pipelines
         class Stages
-          # Create a new stage associated with the pipeline identified by `{pipelineId}`.
-          # The entire stage object, including its unique ID, will be returned in the
-          # response.
+          # Create a pipeline stage
           sig do
             params(
               pipeline_id: String,
@@ -45,10 +43,6 @@ module HubspotSDK
           )
           end
 
-          # Perform a partial update of the pipeline stage identified by `{stageId}`
-          # associated with the pipeline identified by `{pipelineId}`. Any properties not
-          # included in this update will keep their existing values. The updated stage will
-          # be returned in the response.
           sig do
             params(
               stage_id: String,
@@ -103,8 +97,7 @@ module HubspotSDK
           def list(pipeline_id, object_type:, request_options: {})
           end
 
-          # Delete the pipeline stage identified by `{stageId}` associated with the pipeline
-          # identified by `{pipelineId}`.
+          # Delete a pipeline stage
           sig do
             params(
               stage_id: String,
@@ -116,8 +109,7 @@ module HubspotSDK
           def delete(stage_id, object_type:, pipeline_id:, request_options: {})
           end
 
-          # Return the stage identified by `{stageId}` associated with the pipeline
-          # identified by `{pipelineId}`.
+          # Return a pipeline stage by ID
           sig do
             params(
               stage_id: String,

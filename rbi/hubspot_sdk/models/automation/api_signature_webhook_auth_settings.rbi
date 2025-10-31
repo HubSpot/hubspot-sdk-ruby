@@ -12,11 +12,9 @@ module HubspotSDK
             )
           end
 
-        # The appId that this signature will be generated for.
         sig { returns(Integer) }
         attr_accessor :app_id
 
-        # The type of webhook auth settings this is, can be: "AUTH_KEY" or "SIGNATURE"
         sig do
           returns(
             HubspotSDK::Automation::APISignatureWebhookAuthSettings::Type::OrSymbol
@@ -31,12 +29,7 @@ module HubspotSDK
               HubspotSDK::Automation::APISignatureWebhookAuthSettings::Type::OrSymbol
           ).returns(T.attached_class)
         end
-        def self.new(
-          # The appId that this signature will be generated for.
-          app_id:,
-          # The type of webhook auth settings this is, can be: "AUTH_KEY" or "SIGNATURE"
-          type:
-        )
+        def self.new(app_id:, type:)
         end
 
         sig do
@@ -51,7 +44,6 @@ module HubspotSDK
         def to_hash
         end
 
-        # The type of webhook auth settings this is, can be: "AUTH_KEY" or "SIGNATURE"
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

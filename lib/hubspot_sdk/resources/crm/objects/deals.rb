@@ -43,7 +43,7 @@ module HubspotSDK
           #
           # @overload update(deal_id, properties:, id_property: nil, request_options: {})
           #
-          # @param deal_id [String] Path param:
+          # @param deal_id [String] Path param: The unique identifier of the deal to be updated.
           #
           # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
           #
@@ -107,7 +107,8 @@ module HubspotSDK
           #
           # @overload delete(deal_id, request_options: {})
           #
-          # @param deal_id [String]
+          # @param deal_id [String] The unique identifier of the deal to be archived.
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -132,7 +133,7 @@ module HubspotSDK
           #
           # @overload get(deal_id, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
-          # @param deal_id [String]
+          # @param deal_id [String] The unique identifier of the deal to be retrieved.
           #
           # @param archived [Boolean] Whether to return only results that have been archived.
           #
@@ -163,7 +164,7 @@ module HubspotSDK
             )
           end
 
-          # Merge two deals with same type
+          # Combine two deals of the same type into a single deal.
           #
           # @overload merge(object_id_to_merge:, primary_object_id:, request_options: {})
           #
@@ -185,6 +186,8 @@ module HubspotSDK
             )
           end
 
+          # Search for deals using specified criteria and filters.
+          #
           # @overload search(after: nil, filter_groups: nil, limit: nil, properties: nil, query: nil, sorts: nil, request_options: {})
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.

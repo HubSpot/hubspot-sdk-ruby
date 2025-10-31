@@ -104,7 +104,7 @@ class HubspotSDK::Test::Resources::Automation::WorkflowsTest < HubspotSDK::Test:
 
     response =
       @hubspot.automation.workflows.batch_get_id_mappings(
-        inputs: [{flowMigrationStatuses: "12345", type: :FLOW_ID}]
+        inputs: [{flowMigrationStatuses: "flowMigrationStatuses", type: :FLOW_ID}]
       )
 
     assert_pattern do

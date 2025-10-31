@@ -1,0 +1,43 @@
+module HubspotSDK
+  module Models
+    module Events
+      type combo_event_rule_branch =
+        {
+          composing_rules: ::Array[HubspotSDK::Events::ComboEventRule],
+          operation_type: HubspotSDK::Models::Events::ComboEventRuleBranch::operation_type,
+          rule_branches: ::Array[HubspotSDK::Events::ComboEventRuleBranch]
+        }
+
+      class ComboEventRuleBranch < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor composing_rules: ::Array[HubspotSDK::Events::ComboEventRule]
+
+        attr_accessor operation_type: HubspotSDK::Models::Events::ComboEventRuleBranch::operation_type
+
+        attr_accessor rule_branches: ::Array[HubspotSDK::Events::ComboEventRuleBranch]
+
+        def initialize: (
+          composing_rules: ::Array[HubspotSDK::Events::ComboEventRule],
+          operation_type: HubspotSDK::Models::Events::ComboEventRuleBranch::operation_type,
+          rule_branches: ::Array[HubspotSDK::Events::ComboEventRuleBranch]
+        ) -> void
+
+        def to_hash: -> {
+          composing_rules: ::Array[HubspotSDK::Events::ComboEventRule],
+          operation_type: HubspotSDK::Models::Events::ComboEventRuleBranch::operation_type,
+          rule_branches: ::Array[HubspotSDK::Events::ComboEventRuleBranch]
+        }
+
+        type operation_type = :AND | :OR
+
+        module OperationType
+          extend HubspotSDK::Internal::Type::Enum
+
+          AND: :AND
+          OR: :OR
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::ComboEventRuleBranch::operation_type]
+        end
+      end
+    end
+  end
+end

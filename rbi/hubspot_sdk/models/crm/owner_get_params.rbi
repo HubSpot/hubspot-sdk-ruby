@@ -15,14 +15,12 @@ module HubspotSDK
             )
           end
 
-        # Whether to return only results that have been archived.
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :archived
 
         sig { params(archived: T::Boolean).void }
         attr_writer :archived
 
-        # Specifies whether to use 'id' or 'userId' as the identifier for the owner.
         sig do
           returns(
             T.nilable(HubspotSDK::CRM::OwnerGetParams::IDProperty::OrSymbol)
@@ -44,13 +42,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
-        def self.new(
-          # Whether to return only results that have been archived.
-          archived: nil,
-          # Specifies whether to use 'id' or 'userId' as the identifier for the owner.
-          id_property: nil,
-          request_options: {}
-        )
+        def self.new(archived: nil, id_property: nil, request_options: {})
         end
 
         sig do
@@ -66,7 +58,6 @@ module HubspotSDK
         def to_hash
         end
 
-        # Specifies whether to use 'id' or 'userId' as the identifier for the owner.
         module IDProperty
           extend HubspotSDK::Internal::Type::Enum
 

@@ -12,7 +12,6 @@ module HubspotSDK
             )
           end
 
-        # Currently only EXECUTION_TIME is supported.
         sig do
           returns(
             HubspotSDK::Automation::APITimestampValue::TimestampType::OrSymbol
@@ -20,10 +19,6 @@ module HubspotSDK
         end
         attr_accessor :timestamp_type
 
-        # This is the type of input value. This can be one of: "FIELD_DATA",
-        # "OBJECT_PROPERTY", "STATIC_VALUE", "RELATIVE_DATETIME", "TIMESTAMP",
-        # "INCREMENT", "FETCHED_OBJECT_PROPERTY", "APPEND_OBJECT_PROPERTY",
-        # "STATIC_APPEND_VALUE", "ENROLLMENT_EVENT_PROPERTY"
         sig do
           returns(HubspotSDK::Automation::APITimestampValue::Type::OrSymbol)
         end
@@ -36,15 +31,7 @@ module HubspotSDK
             type: HubspotSDK::Automation::APITimestampValue::Type::OrSymbol
           ).returns(T.attached_class)
         end
-        def self.new(
-          # Currently only EXECUTION_TIME is supported.
-          timestamp_type:,
-          # This is the type of input value. This can be one of: "FIELD_DATA",
-          # "OBJECT_PROPERTY", "STATIC_VALUE", "RELATIVE_DATETIME", "TIMESTAMP",
-          # "INCREMENT", "FETCHED_OBJECT_PROPERTY", "APPEND_OBJECT_PROPERTY",
-          # "STATIC_APPEND_VALUE", "ENROLLMENT_EVENT_PROPERTY"
-          type:
-        )
+        def self.new(timestamp_type:, type:)
         end
 
         sig do
@@ -59,7 +46,6 @@ module HubspotSDK
         def to_hash
         end
 
-        # Currently only EXECUTION_TIME is supported.
         module TimestampType
           extend HubspotSDK::Internal::Type::Enum
 
@@ -89,10 +75,6 @@ module HubspotSDK
           end
         end
 
-        # This is the type of input value. This can be one of: "FIELD_DATA",
-        # "OBJECT_PROPERTY", "STATIC_VALUE", "RELATIVE_DATETIME", "TIMESTAMP",
-        # "INCREMENT", "FETCHED_OBJECT_PROPERTY", "APPEND_OBJECT_PROPERTY",
-        # "STATIC_APPEND_VALUE", "ENROLLMENT_EVENT_PROPERTY"
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

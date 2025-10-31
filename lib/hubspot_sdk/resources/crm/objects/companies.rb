@@ -134,7 +134,7 @@ module HubspotSDK
           #
           # @overload get(company_id, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
-          # @param company_id [String] The ID of the company
+          # @param company_id [String]
           #
           # @param archived [Boolean] Whether to return only results that have been archived.
           #

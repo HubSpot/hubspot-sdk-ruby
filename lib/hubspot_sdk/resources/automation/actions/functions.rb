@@ -32,7 +32,7 @@ module HubspotSDK
             )
           end
 
-          # Archive a function for a definition
+          # Archive a function for a specific definition.
           #
           # @overload delete(function_id, app_id:, definition_id:, function_type:, request_options: {})
           #
@@ -260,7 +260,7 @@ module HubspotSDK
           # {HubspotSDK::Models::Automation::Actions::FunctionGetByFunctionTypeParams} for
           # more details.
           #
-          # Retrieve functions by a type for a given definition
+          # Retrieve functions of a specific type for a given definition.
           #
           # @overload get_by_function_type(function_type, app_id:, definition_id:, request_options: {})
           #

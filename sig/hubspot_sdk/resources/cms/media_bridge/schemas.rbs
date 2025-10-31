@@ -29,7 +29,7 @@ module HubspotSDK
             to_object_type_id: String,
             ?name: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Models::Cms::MediaBridge::SchemaCreateAssociationResponse
+          ) -> HubspotSDK::Events::AssociationDefinition
 
           def delete_association: (
             String association_id,

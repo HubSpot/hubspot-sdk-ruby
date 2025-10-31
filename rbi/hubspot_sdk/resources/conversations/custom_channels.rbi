@@ -36,9 +36,7 @@ module HubspotSDK
             channel_logo_url: String,
             webhook_url: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(
-            HubspotSDK::Models::Conversations::CustomChannelCreateResponse
-          )
+          ).returns(HubspotSDK::Conversations::PublicChannelIntegrationChannel)
         end
         def create(
           capabilities:,
@@ -63,9 +61,7 @@ module HubspotSDK
             name: T.anything,
             webhook_url: T.anything,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(
-            HubspotSDK::Models::Conversations::CustomChannelUpdateResponse
-          )
+          ).returns(HubspotSDK::Conversations::PublicChannelIntegrationChannel)
         end
         def update(
           channel_id,
@@ -82,7 +78,7 @@ module HubspotSDK
         # Retrieve all custom channels associated with the app.
         sig do
           params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-            HubspotSDK::Models::Conversations::CustomChannelListResponse
+            HubspotSDK::Conversations::CollectionResponseWithTotalPublicChannelIntegrationChannelForwardPaging
           )
         end
         def list(request_options: {})
@@ -104,7 +100,7 @@ module HubspotSDK
           params(
             channel_id: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Models::Conversations::CustomChannelGetResponse)
+          ).returns(HubspotSDK::Conversations::PublicChannelIntegrationChannel)
         end
         def get(channel_id, request_options: {})
         end

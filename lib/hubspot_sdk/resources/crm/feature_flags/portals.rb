@@ -18,11 +18,11 @@ module HubspotSDK
           #
           # @param flag_name [String] Path param: The name of the flag, either `hs-release-app-cards` or `hs-hide-crm-
           #
-          # @param flag_state [Symbol, HubspotSDK::Models::CRM::FeatureFlags::PortalUpdateParams::FlagState] Body param:
+          # @param flag_state [Symbol, HubspotSDK::Models::CRM::PortalFlagStatePutRequest::FlagState] Body param:
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::FeatureFlags::PortalUpdateResponse]
+          # @return [HubspotSDK::Models::CRM::PortalFlagStateResponse]
           #
           # @see HubspotSDK::Models::CRM::FeatureFlags::PortalUpdateParams
           def update(portal_id, params)
@@ -39,7 +39,7 @@ module HubspotSDK
               method: :put,
               path: ["feature-flags/v3/%1$s/flags/%2$s/portals/%3$s", app_id, flag_name, portal_id],
               body: parsed,
-              model: HubspotSDK::Models::CRM::FeatureFlags::PortalUpdateResponse,
+              model: HubspotSDK::CRM::PortalFlagStateResponse,
               options: options
             )
           end
@@ -57,7 +57,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::FeatureFlags::PortalDeleteResponse]
+          # @return [HubspotSDK::Models::CRM::PortalFlagStateResponse]
           #
           # @see HubspotSDK::Models::CRM::FeatureFlags::PortalDeleteParams
           def delete(portal_id, params)
@@ -73,7 +73,7 @@ module HubspotSDK
             @client.request(
               method: :delete,
               path: ["feature-flags/v3/%1$s/flags/%2$s/portals/%3$s", app_id, flag_name, portal_id],
-              model: HubspotSDK::Models::CRM::FeatureFlags::PortalDeleteResponse,
+              model: HubspotSDK::CRM::PortalFlagStateResponse,
               options: options
             )
           end
@@ -95,7 +95,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::FeatureFlags::PortalBatchDeleteResponse]
+          # @return [HubspotSDK::Models::CRM::PortalFlagStateBatchResponse]
           #
           # @see HubspotSDK::Models::CRM::FeatureFlags::PortalBatchDeleteParams
           def batch_delete(flag_name, params)
@@ -108,7 +108,7 @@ module HubspotSDK
               method: :post,
               path: ["feature-flags/v3/%1$s/flags/%2$s/portals/batch/delete", app_id, flag_name],
               body: parsed,
-              model: HubspotSDK::Models::CRM::FeatureFlags::PortalBatchDeleteResponse,
+              model: HubspotSDK::CRM::PortalFlagStateBatchResponse,
               options: options
             )
           end
@@ -126,11 +126,11 @@ module HubspotSDK
           #
           # @param app_id [Integer] Path param: The ID of the app.
           #
-          # @param portal_states [Array<HubspotSDK::Models::CRM::FeatureFlags::PortalBatchUpsertParams::PortalState>] Body param:
+          # @param portal_states [Array<HubspotSDK::Models::CRM::BatchPortalEntry>] Body param:
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::FeatureFlags::PortalBatchUpsertResponse]
+          # @return [HubspotSDK::Models::CRM::PortalFlagStateBatchResponse]
           #
           # @see HubspotSDK::Models::CRM::FeatureFlags::PortalBatchUpsertParams
           def batch_upsert(flag_name, params)
@@ -143,7 +143,7 @@ module HubspotSDK
               method: :post,
               path: ["feature-flags/v3/%1$s/flags/%2$s/portals/batch/upsert", app_id, flag_name],
               body: parsed,
-              model: HubspotSDK::Models::CRM::FeatureFlags::PortalBatchUpsertResponse,
+              model: HubspotSDK::CRM::PortalFlagStateBatchResponse,
               options: options
             )
           end
@@ -160,7 +160,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::FeatureFlags::PortalGetResponse]
+          # @return [HubspotSDK::Models::CRM::PortalFlagStateResponse]
           #
           # @see HubspotSDK::Models::CRM::FeatureFlags::PortalGetParams
           def get(portal_id, params)
@@ -176,7 +176,7 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["feature-flags/v3/%1$s/flags/%2$s/portals/%3$s", app_id, flag_name, portal_id],
-              model: HubspotSDK::Models::CRM::FeatureFlags::PortalGetResponse,
+              model: HubspotSDK::CRM::PortalFlagStateResponse,
               options: options
             )
           end

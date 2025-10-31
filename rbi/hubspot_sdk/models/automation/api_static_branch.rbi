@@ -12,8 +12,6 @@ module HubspotSDK
             )
           end
 
-        # If value to check for. If the value of the `inputValue` matches this
-        # `branchValue` than this `connection` will get traversed.
         sig { returns(String) }
         attr_accessor :branch_value
 
@@ -31,12 +29,7 @@ module HubspotSDK
             connection: HubspotSDK::Automation::APIConnection::OrHash
           ).returns(T.attached_class)
         end
-        def self.new(
-          # If value to check for. If the value of the `inputValue` matches this
-          # `branchValue` than this `connection` will get traversed.
-          branch_value:,
-          connection: nil
-        )
+        def self.new(branch_value:, connection: nil)
         end
 
         sig do

@@ -1,0 +1,80 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type object_type_definition_patch =
+        {
+          clear_description: bool,
+          allows_sensitive_properties: bool,
+          description: String,
+          labels: HubspotSDK::ObjectTypeDefinitionLabels,
+          primary_display_property: String,
+          required_properties: ::Array[String],
+          restorable: bool,
+          searchable_properties: ::Array[String],
+          secondary_display_properties: ::Array[String]
+        }
+
+      class ObjectTypeDefinitionPatch < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor clear_description: bool
+
+        attr_reader allows_sensitive_properties: bool?
+
+        def allows_sensitive_properties=: (bool) -> bool
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader labels: HubspotSDK::ObjectTypeDefinitionLabels?
+
+        def labels=: (
+          HubspotSDK::ObjectTypeDefinitionLabels
+        ) -> HubspotSDK::ObjectTypeDefinitionLabels
+
+        attr_reader primary_display_property: String?
+
+        def primary_display_property=: (String) -> String
+
+        attr_reader required_properties: ::Array[String]?
+
+        def required_properties=: (::Array[String]) -> ::Array[String]
+
+        attr_reader restorable: bool?
+
+        def restorable=: (bool) -> bool
+
+        attr_reader searchable_properties: ::Array[String]?
+
+        def searchable_properties=: (::Array[String]) -> ::Array[String]
+
+        attr_reader secondary_display_properties: ::Array[String]?
+
+        def secondary_display_properties=: (::Array[String]) -> ::Array[String]
+
+        def initialize: (
+          clear_description: bool,
+          ?allows_sensitive_properties: bool,
+          ?description: String,
+          ?labels: HubspotSDK::ObjectTypeDefinitionLabels,
+          ?primary_display_property: String,
+          ?required_properties: ::Array[String],
+          ?restorable: bool,
+          ?searchable_properties: ::Array[String],
+          ?secondary_display_properties: ::Array[String]
+        ) -> void
+
+        def to_hash: -> {
+          clear_description: bool,
+          allows_sensitive_properties: bool,
+          description: String,
+          labels: HubspotSDK::ObjectTypeDefinitionLabels,
+          primary_display_property: String,
+          required_properties: ::Array[String],
+          restorable: bool,
+          searchable_properties: ::Array[String],
+          secondary_display_properties: ::Array[String]
+        }
+      end
+    end
+  end
+end

@@ -10,8 +10,6 @@ module HubspotSDK
           include HubspotSDK::Internal::Type::RequestParameters
 
           # @!attribute after
-          #   The cursor token value to get the next set of results. You can get this from the
-          #   `paging.next.after` JSON property of a paged response containing more results.
           #
           #   @return [String, nil]
           optional :after, String
@@ -22,21 +20,14 @@ module HubspotSDK
           optional :before, String
 
           # @!attribute limit
-          #   The maximum number of results to return. Default is 100.
           #
           #   @return [Integer, nil]
           optional :limit, Integer
 
           # @!method initialize(after: nil, before: nil, limit: nil, request_options: {})
-          #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Cms::Blogs::SettingListRevisionsParams} for more details.
-          #
-          #   @param after [String] The cursor token value to get the next set of results. You can get this from the
-          #
+          #   @param after [String]
           #   @param before [String]
-          #
-          #   @param limit [Integer] The maximum number of results to return. Default is 100.
-          #
+          #   @param limit [Integer]
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end

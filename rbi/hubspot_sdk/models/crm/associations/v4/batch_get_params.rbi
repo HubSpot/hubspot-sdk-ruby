@@ -5,7 +5,7 @@ module HubspotSDK
     module CRM
       module Associations
         module V4
-          class BatchGetParams < HubspotSDK::Models::CRM::Associations::BatchInputPublicFetchAssociationsBatchRequest
+          class BatchGetParams < HubspotSDK::Models::CRM::BatchInputPublicFetchAssociationsBatchRequest
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

@@ -5,17 +5,17 @@ module HubspotSDK
         class Messages
           def create: (
             String channel_id,
-            attachments: ::Array[HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::attachment],
+            attachments: ::Array[HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::attachment],
             channel_account_id: String,
             integration_thread_id: String,
-            message_direction: HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams::message_direction,
-            recipients: ::Array[HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Recipient],
-            senders: ::Array[HubspotSDK::Conversations::CustomChannels::MessageCreateParams::Sender],
+            message_direction: HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::message_direction,
+            recipients: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant],
+            senders: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant],
             text: String,
             timestamp: Time,
             ?in_reply_to_id: String,
             ?integration_idempotency_id: String,
-            ?pre_resolved_contacts: HubspotSDK::Conversations::CustomChannels::MessageCreateParams::PreResolvedContacts,
+            ?pre_resolved_contacts: HubspotSDK::Conversations::PreResolvedContacts,
             ?rich_text: String,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Conversations::PublicConversationsMessage
@@ -23,7 +23,7 @@ module HubspotSDK
           def update: (
             String message_id,
             channel_id: String,
-            status_type: HubspotSDK::Models::Conversations::CustomChannels::MessageUpdateParams::status_type,
+            status_type: HubspotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest::status_type,
             ?error_message: String,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Conversations::PublicConversationsMessage

@@ -24,7 +24,7 @@ module HubspotSDK
           )
           end
 
-          # Archive a function for a definition
+          # Archive a function for a specific definition.
           sig do
             params(
               function_id: String,
@@ -144,7 +144,7 @@ module HubspotSDK
           )
           end
 
-          # Retrieve functions by a type for a given definition
+          # Retrieve functions of a specific type for a given definition.
           sig do
             params(
               function_type:

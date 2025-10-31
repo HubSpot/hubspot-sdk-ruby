@@ -11,14 +11,14 @@ module HubspotSDK
         # @param object_type_id [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CRM::PropertyValidationListResponse]
+        # @return [HubspotSDK::Models::CRM::CollectionResponsePublicPropertyValidationRuleMapNoPaging]
         #
         # @see HubspotSDK::Models::CRM::PropertyValidationListParams
         def list(object_type_id, params = {})
           @client.request(
             method: :get,
             path: ["crm/v3/property-validations/%1$s", object_type_id],
-            model: HubspotSDK::Models::CRM::PropertyValidationListResponse,
+            model: HubspotSDK::CRM::CollectionResponsePublicPropertyValidationRuleMapNoPaging,
             options: params[:request_options]
           )
         end
@@ -31,7 +31,7 @@ module HubspotSDK
         # @param object_type_id [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CRM::PropertyValidationGetResponse]
+        # @return [HubspotSDK::Models::CRM::CollectionResponsePublicPropertyValidationRuleNoPaging]
         #
         # @see HubspotSDK::Models::CRM::PropertyValidationGetParams
         def get(property_name, params)
@@ -43,7 +43,7 @@ module HubspotSDK
           @client.request(
             method: :get,
             path: ["crm/v3/property-validations/%1$s/%2$s", object_type_id, property_name],
-            model: HubspotSDK::Models::CRM::PropertyValidationGetResponse,
+            model: HubspotSDK::CRM::CollectionResponsePublicPropertyValidationRuleNoPaging,
             options: options
           )
         end

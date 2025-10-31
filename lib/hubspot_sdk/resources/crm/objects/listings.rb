@@ -44,7 +44,7 @@ module HubspotSDK
           #
           # @overload update(listing_id, properties:, id_property: nil, request_options: {})
           #
-          # @param listing_id [String] Path param:
+          # @param listing_id [String] Path param: The unique identifier of the listing to be updated.
           #
           # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
           #
@@ -109,7 +109,8 @@ module HubspotSDK
           #
           # @overload delete(listing_id, request_options: {})
           #
-          # @param listing_id [String]
+          # @param listing_id [String] The unique identifier of the listing to be archived.
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -134,7 +135,7 @@ module HubspotSDK
           #
           # @overload get(listing_id, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
-          # @param listing_id [String]
+          # @param listing_id [String] The unique identifier of the listing to be retrieved.
           #
           # @param archived [Boolean] Whether to return only results that have been archived.
           #
@@ -165,6 +166,9 @@ module HubspotSDK
             )
           end
 
+          # Execute a search query to find listings based on specified filters and
+          # properties.
+          #
           # @overload search(after: nil, filter_groups: nil, limit: nil, properties: nil, query: nil, sorts: nil, request_options: {})
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.

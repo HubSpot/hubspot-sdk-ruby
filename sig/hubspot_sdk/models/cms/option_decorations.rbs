@@ -1,0 +1,15 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type option_decorations = { color: String }
+
+      class OptionDecorations < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor color: String
+
+        def initialize: (color: String) -> void
+
+        def to_hash: -> { color: String }
+      end
+    end
+  end
+end

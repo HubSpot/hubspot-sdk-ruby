@@ -12,11 +12,9 @@ module HubspotSDK
             )
           end
 
-        # The ID for this action.
         sig { returns(String) }
         attr_accessor :action_id
 
-        # The input value to branch off of.
         sig do
           returns(
             T.any(
@@ -38,8 +36,6 @@ module HubspotSDK
         sig { returns(T::Array[HubspotSDK::Automation::APIStaticBranch]) }
         attr_accessor :static_branches
 
-        # The type of action this is, can be: "STATIC_BRANCH", "LIST_BRANCH",
-        # "AB_TEST_BRANCH", "CUSTOM_CODE", "WEBHOOK", or "SINGLE_CONNECTION"
         sig do
           returns(HubspotSDK::Automation::APIStaticBranchAction::Type::OrSymbol)
         end
@@ -55,8 +51,6 @@ module HubspotSDK
         end
         attr_writer :default_branch
 
-        # The name of the default branch, the branch that gets executed if `inputValue`
-        # does not match any of the `staticBranches`.
         sig { returns(T.nilable(String)) }
         attr_reader :default_branch_name
 
@@ -87,17 +81,11 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The ID for this action.
           action_id:,
-          # The input value to branch off of.
           input_value:,
           static_branches:,
-          # The type of action this is, can be: "STATIC_BRANCH", "LIST_BRANCH",
-          # "AB_TEST_BRANCH", "CUSTOM_CODE", "WEBHOOK", or "SINGLE_CONNECTION"
           type:,
           default_branch: nil,
-          # The name of the default branch, the branch that gets executed if `inputValue`
-          # does not match any of the `staticBranches`.
           default_branch_name: nil
         )
         end
@@ -131,7 +119,6 @@ module HubspotSDK
         def to_hash
         end
 
-        # The input value to branch off of.
         module InputValue
           extend HubspotSDK::Internal::Type::Union
 
@@ -162,8 +149,6 @@ module HubspotSDK
           end
         end
 
-        # The type of action this is, can be: "STATIC_BRANCH", "LIST_BRANCH",
-        # "AB_TEST_BRANCH", "CUSTOM_CODE", "WEBHOOK", or "SINGLE_CONNECTION"
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

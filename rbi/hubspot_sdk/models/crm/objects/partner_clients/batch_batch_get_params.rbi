@@ -17,7 +17,6 @@ module HubspotSDK
                 )
               end
 
-            # Whether to return only results that have been archived.
             sig { returns(T.nilable(T::Boolean)) }
             attr_reader :archived
 
@@ -30,11 +29,7 @@ module HubspotSDK
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(T.attached_class)
             end
-            def self.new(
-              # Whether to return only results that have been archived.
-              archived: nil,
-              request_options: {}
-            )
+            def self.new(archived: nil, request_options: {})
             end
 
             sig do

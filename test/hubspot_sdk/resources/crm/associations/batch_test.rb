@@ -53,7 +53,7 @@ class HubspotSDK::Test::Resources::CRM::Associations::BatchTest < HubspotSDK::Te
       @hubspot.crm.associations.batch.get(
         "toObjectType",
         from_object_type: "fromObjectType",
-        inputs: [{id: "37295"}]
+        inputs: [{id: "id"}]
       )
 
     assert_pattern do

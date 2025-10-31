@@ -19,7 +19,7 @@ module HubspotSDK
       #
       # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubspotSDK::Models::BusinessUnits::BusinessUnitGetByUserIDResponse]
+      # @return [HubspotSDK::Models::BusinessUnits::CollectionResponsePublicBusinessUnitNoPaging]
       #
       # @see HubspotSDK::Models::BusinessUnits::BusinessUnitGetByUserIDParams
       def get_by_user_id(user_id, params = {})
@@ -28,7 +28,7 @@ module HubspotSDK
           method: :get,
           path: ["business-units/v3/business-units/user/%1$s", user_id],
           query: parsed,
-          model: HubspotSDK::Models::BusinessUnits::BusinessUnitGetByUserIDResponse,
+          model: HubspotSDK::BusinessUnits::CollectionResponsePublicBusinessUnitNoPaging,
           options: options
         )
       end

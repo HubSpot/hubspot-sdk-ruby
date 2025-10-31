@@ -5,7 +5,6 @@ module HubspotSDK
     module Automation
       class APIWeeklyEnrollmentSchedule < HubspotSDK::Internal::Type::BaseModel
         # @!attribute days_of_week
-        #   Which days of the week to allow enrollments.
         #
         #   @return [Array<Symbol, HubspotSDK::Models::Automation::APIWeeklyEnrollmentSchedule::DaysOfWeek>]
         required :days_of_week,
@@ -20,21 +19,14 @@ module HubspotSDK
         required :time_of_day, -> { HubspotSDK::Automation::APITimeOfDay }, api_name: :timeOfDay
 
         # @!attribute type
-        #   The type of enrollment schedule this is, can be: "DAILY", "WEEKLY",
-        #   "MONTHLY_SPECIFIC_DAYS", "MONTHLY_RELATIVE_DAYS", "YEARLY"
         #
         #   @return [Symbol, HubspotSDK::Models::Automation::APIWeeklyEnrollmentSchedule::Type]
         required :type, enum: -> { HubspotSDK::Automation::APIWeeklyEnrollmentSchedule::Type }
 
         # @!method initialize(days_of_week:, time_of_day:, type:)
-        #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Automation::APIWeeklyEnrollmentSchedule} for more details.
-        #
-        #   @param days_of_week [Array<Symbol, HubspotSDK::Models::Automation::APIWeeklyEnrollmentSchedule::DaysOfWeek>] Which days of the week to allow enrollments.
-        #
+        #   @param days_of_week [Array<Symbol, HubspotSDK::Models::Automation::APIWeeklyEnrollmentSchedule::DaysOfWeek>]
         #   @param time_of_day [HubspotSDK::Models::Automation::APITimeOfDay]
-        #
-        #   @param type [Symbol, HubspotSDK::Models::Automation::APIWeeklyEnrollmentSchedule::Type] The type of enrollment schedule this is, can be: "DAILY", "WEEKLY", "MONTHLY_SPE
+        #   @param type [Symbol, HubspotSDK::Models::Automation::APIWeeklyEnrollmentSchedule::Type]
 
         module DaysOfWeek
           extend HubspotSDK::Internal::Type::Enum
@@ -51,9 +43,6 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # The type of enrollment schedule this is, can be: "DAILY", "WEEKLY",
-        # "MONTHLY_SPECIFIC_DAYS", "MONTHLY_RELATIVE_DAYS", "YEARLY"
-        #
         # @see HubspotSDK::Models::Automation::APIWeeklyEnrollmentSchedule#type
         module Type
           extend HubspotSDK::Internal::Type::Enum

@@ -6,7 +6,7 @@ module HubspotSDK
       class Objects
         class PostalMail
           class Batch
-            # Create a batch of postal mail
+            # Create a batch of postal mail objects.
             sig do
               params(
                 inputs:
@@ -19,7 +19,7 @@ module HubspotSDK
             def create(inputs:, request_options: {})
             end
 
-            # Update a batch of postal mail by internal ID, or unique property values
+            # Update multiple postal mail objects in a single request.
             sig do
               params(
                 inputs:
@@ -32,7 +32,7 @@ module HubspotSDK
             def update(inputs:, request_options: {})
             end
 
-            # Archive a batch of postal mail by ID
+            # Archive a batch of postal mail objects using their IDs.
             sig do
               params(
                 inputs: T::Array[HubspotSDK::CRM::SimplePublicObjectID::OrHash],
@@ -42,8 +42,8 @@ module HubspotSDK
             def delete(inputs:, request_options: {})
             end
 
-            # Retrieve records by record ID or include the `idProperty` parameter to retrieve
-            # records by a custom unique value property.
+            # Retrieve multiple postal mail objects using their internal IDs or unique
+            # property values.
             sig do
               params(
                 inputs: T::Array[HubspotSDK::CRM::SimplePublicObjectID::OrHash],
@@ -62,7 +62,7 @@ module HubspotSDK
               # Body param: Key-value pairs for setting properties for the new object and their
               # histories.
               properties_with_history:,
-              # Query param: Whether to return only results that have been archived.
+              # Query param:
               archived: nil,
               # Body param: When using a custom unique value property to retrieve records, the
               # name of the property. Do not include this parameter if retrieving by record ID.
@@ -71,8 +71,8 @@ module HubspotSDK
             )
             end
 
-            # Create or update records identified by a unique property value as specified by
-            # the `idProperty` query param. `idProperty` query param refers to a property
+            # Create or update postal mails identified by a unique property value as specified
+            # by the `idProperty` query param. `idProperty` query param refers to a property
             # whose values are unique for the object.
             sig do
               params(

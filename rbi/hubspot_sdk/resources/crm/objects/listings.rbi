@@ -43,7 +43,7 @@ module HubspotSDK
             ).returns(HubspotSDK::CRM::SimplePublicObject)
           end
           def update(
-            # Path param:
+            # Path param: The unique identifier of the listing to be updated.
             listing_id,
             # Body param: Key value pairs representing the properties of the object.
             properties:,
@@ -102,7 +102,11 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(listing_id, request_options: {})
+          def delete(
+            # The unique identifier of the listing to be archived.
+            listing_id,
+            request_options: {}
+          )
           end
 
           # Read an Object identified by `{listingId}`. `{listingId}` refers to the internal
@@ -121,6 +125,7 @@ module HubspotSDK
             ).returns(HubspotSDK::CRM::SimplePublicObjectWithAssociations)
           end
           def get(
+            # The unique identifier of the listing to be retrieved.
             listing_id,
             # Whether to return only results that have been archived.
             archived: nil,
@@ -141,6 +146,8 @@ module HubspotSDK
           )
           end
 
+          # Execute a search query to find listings based on specified filters and
+          # properties.
           sig do
             params(
               after: String,

@@ -44,7 +44,7 @@ module HubspotSDK
           #
           # @overload update(goal_target_id, properties:, id_property: nil, request_options: {})
           #
-          # @param goal_target_id [String] Path param: The unique identifier for the goal target to be updated.
+          # @param goal_target_id [String] Path param:
           #
           # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
           #
@@ -109,8 +109,7 @@ module HubspotSDK
           #
           # @overload delete(goal_target_id, request_options: {})
           #
-          # @param goal_target_id [String] The unique identifier for the goal target to be deleted.
-          #
+          # @param goal_target_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -135,7 +134,7 @@ module HubspotSDK
           #
           # @overload get(goal_target_id, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
-          # @param goal_target_id [String] The unique identifier for the goal target.
+          # @param goal_target_id [String]
           #
           # @param archived [Boolean] Whether to return only results that have been archived.
           #

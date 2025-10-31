@@ -12,7 +12,6 @@ module HubspotSDK
             )
           end
 
-        # Can be either "LAST_DAY_OF_MONTH" or "FIRST_MONDAY_OF_MONTH"
         sig do
           returns(
             HubspotSDK::Automation::APIMonthlyRelativeDaysEnrollmentSchedule::MonthlyRelativeDays::OrSymbol
@@ -28,8 +27,6 @@ module HubspotSDK
         end
         attr_writer :time_of_day
 
-        # The type of enrollment schedule this is, can be: "DAILY", "WEEKLY",
-        # "MONTHLY_SPECIFIC_DAYS", "MONTHLY_RELATIVE_DAYS", "YEARLY"
         sig do
           returns(
             HubspotSDK::Automation::APIMonthlyRelativeDaysEnrollmentSchedule::Type::OrSymbol
@@ -46,14 +43,7 @@ module HubspotSDK
               HubspotSDK::Automation::APIMonthlyRelativeDaysEnrollmentSchedule::Type::OrSymbol
           ).returns(T.attached_class)
         end
-        def self.new(
-          # Can be either "LAST_DAY_OF_MONTH" or "FIRST_MONDAY_OF_MONTH"
-          monthly_relative_days:,
-          time_of_day:,
-          # The type of enrollment schedule this is, can be: "DAILY", "WEEKLY",
-          # "MONTHLY_SPECIFIC_DAYS", "MONTHLY_RELATIVE_DAYS", "YEARLY"
-          type:
-        )
+        def self.new(monthly_relative_days:, time_of_day:, type:)
         end
 
         sig do
@@ -70,7 +60,6 @@ module HubspotSDK
         def to_hash
         end
 
-        # Can be either "LAST_DAY_OF_MONTH" or "FIRST_MONDAY_OF_MONTH"
         module MonthlyRelativeDays
           extend HubspotSDK::Internal::Type::Enum
 
@@ -105,8 +94,6 @@ module HubspotSDK
           end
         end
 
-        # The type of enrollment schedule this is, can be: "DAILY", "WEEKLY",
-        # "MONTHLY_SPECIFIC_DAYS", "MONTHLY_RELATIVE_DAYS", "YEARLY"
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

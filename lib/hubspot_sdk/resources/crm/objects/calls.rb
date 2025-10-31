@@ -43,7 +43,7 @@ module HubspotSDK
           #
           # @overload update(call_id, properties:, id_property: nil, request_options: {})
           #
-          # @param call_id [String] Path param: The ID of the call.
+          # @param call_id [String] Path param:
           #
           # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
           #
@@ -107,8 +107,7 @@ module HubspotSDK
           #
           # @overload delete(call_id, request_options: {})
           #
-          # @param call_id [String] The ID of the call.
-          #
+          # @param call_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -133,7 +132,7 @@ module HubspotSDK
           #
           # @overload get(call_id, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
-          # @param call_id [String] The ID of the call.
+          # @param call_id [String]
           #
           # @param archived [Boolean] Whether to return only results that have been archived.
           #

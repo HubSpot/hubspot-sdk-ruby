@@ -15,9 +15,6 @@ module HubspotSDK
             )
           end
 
-        # The paging cursor token of the last successfully read resource will be returned
-        # as the `paging.next.after` JSON property of a paged response containing more
-        # results.
         sig { returns(T.nilable(String)) }
         attr_reader :after
 
@@ -30,14 +27,12 @@ module HubspotSDK
         sig { params(before: String).void }
         attr_writer :before
 
-        # The ID of the workflow.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :flow_id
 
         sig { params(flow_id: T::Array[String]).void }
         attr_writer :flow_id
 
-        # The maximum number of results to display per page.
         sig { returns(T.nilable(Integer)) }
         attr_reader :limit
 
@@ -54,14 +49,9 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The paging cursor token of the last successfully read resource will be returned
-          # as the `paging.next.after` JSON property of a paged response containing more
-          # results.
           after: nil,
           before: nil,
-          # The ID of the workflow.
           flow_id: nil,
-          # The maximum number of results to display per page.
           limit: nil,
           request_options: {}
         )

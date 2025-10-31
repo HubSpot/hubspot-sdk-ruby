@@ -20,7 +20,7 @@ module HubspotSDK
         # @param precedence [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::URLRedirectCreateResponse]
+        # @return [HubspotSDK::Models::Cms::URLMapping]
         #
         # @see HubspotSDK::Models::Cms::URLRedirectCreateParams
         def create(params)
@@ -29,7 +29,7 @@ module HubspotSDK
             method: :post,
             path: "cms/v3/url-redirects/",
             body: parsed,
-            model: HubspotSDK::Models::Cms::URLRedirectCreateResponse,
+            model: HubspotSDK::Cms::URLMapping,
             options: options
           )
         end
@@ -71,7 +71,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::URLRedirectUpdateResponse]
+        # @return [HubspotSDK::Models::Cms::URLMapping]
         #
         # @see HubspotSDK::Models::Cms::URLRedirectUpdateParams
         def update(url_redirect_id, params)
@@ -80,7 +80,7 @@ module HubspotSDK
             method: :patch,
             path: ["cms/v3/url-redirects/%1$s", url_redirect_id],
             body: parsed,
-            model: HubspotSDK::Models::Cms::URLRedirectUpdateResponse,
+            model: HubspotSDK::Cms::URLMapping,
             options: options
           )
         end
@@ -115,7 +115,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::URLRedirectListResponse>]
+        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::URLMapping>]
         #
         # @see HubspotSDK::Models::Cms::URLRedirectListParams
         def list(params = {})
@@ -132,7 +132,7 @@ module HubspotSDK
               updated_before: "updatedBefore"
             ),
             page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Models::Cms::URLRedirectListResponse,
+            model: HubspotSDK::Cms::URLMapping,
             options: options
           )
         end
@@ -165,14 +165,14 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::URLRedirectGetResponse]
+        # @return [HubspotSDK::Models::Cms::URLMapping]
         #
         # @see HubspotSDK::Models::Cms::URLRedirectGetParams
         def get(url_redirect_id, params = {})
           @client.request(
             method: :get,
             path: ["cms/v3/url-redirects/%1$s", url_redirect_id],
-            model: HubspotSDK::Models::Cms::URLRedirectGetResponse,
+            model: HubspotSDK::Cms::URLMapping,
             options: params[:request_options]
           )
         end

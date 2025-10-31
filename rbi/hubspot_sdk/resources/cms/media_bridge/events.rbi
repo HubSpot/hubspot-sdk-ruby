@@ -9,7 +9,7 @@ module HubspotSDK
           sig do
             params(
               media_type:
-                HubspotSDK::Cms::MediaBridge::EventCreateAttentionSpanEventParams::MediaType::OrSymbol,
+                HubspotSDK::Cms::AttentionSpanEventRequest::MediaType::OrSymbol,
               occurred_timestamp: Integer,
               raw_data_map: T::Hash[Symbol, Integer],
               session_id: String,
@@ -17,7 +17,7 @@ module HubspotSDK
               contact_id: Integer,
               contact_utk: String,
               derived_values:
-                HubspotSDK::Cms::MediaBridge::EventCreateAttentionSpanEventParams::DerivedValues::OrHash,
+                HubspotSDK::Cms::AttentionSpanCalculatedValues::OrHash,
               external_id: String,
               media_bridge_id: Integer,
               media_name: String,
@@ -27,9 +27,7 @@ module HubspotSDK
               page_url: String,
               raw_data_string: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Models::Cms::MediaBridge::EventCreateAttentionSpanEventResponse
-            )
+            ).returns(HubspotSDK::Cms::AttentionSpanEvent)
           end
           def create_attention_span_event(
             media_type:,
@@ -56,11 +54,10 @@ module HubspotSDK
           sig do
             params(
               media_type:
-                HubspotSDK::Cms::MediaBridge::EventCreateMediaPlayedEventParams::MediaType::OrSymbol,
+                HubspotSDK::Cms::MediaPlayedEventRequest::MediaType::OrSymbol,
               occurred_timestamp: Integer,
               session_id: String,
-              state:
-                HubspotSDK::Cms::MediaBridge::EventCreateMediaPlayedEventParams::State::OrSymbol,
+              state: HubspotSDK::Cms::MediaPlayedEventRequest::State::OrSymbol,
               _hsenc: String,
               contact_id: Integer,
               contact_utk: String,
@@ -73,9 +70,7 @@ module HubspotSDK
               page_name: String,
               page_url: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedEventResponse
-            )
+            ).returns(HubspotSDK::Cms::MediaPlayedEvent)
           end
           def create_media_played_event(
             media_type:,
@@ -102,7 +97,7 @@ module HubspotSDK
           sig do
             params(
               media_type:
-                HubspotSDK::Cms::MediaBridge::EventCreateMediaPlayedPercentEventParams::MediaType::OrSymbol,
+                HubspotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::OrSymbol,
               occurred_timestamp: Integer,
               played_percent: Integer,
               session_id: String,
@@ -117,9 +112,7 @@ module HubspotSDK
               page_name: String,
               page_url: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedPercentEventResponse
-            )
+            ).returns(HubspotSDK::Cms::MediaPlayedPercentageEvent)
           end
           def create_media_played_percent_event(
             media_type:,

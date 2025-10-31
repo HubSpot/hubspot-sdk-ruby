@@ -12,36 +12,26 @@ module HubspotSDK
             )
           end
 
-        # The ID for this action.
         sig { returns(String) }
         attr_accessor :action_id
 
         sig { returns(T::Array[HubspotSDK::Automation::APIInputVariable]) }
         attr_accessor :input_fields
 
-        # The list of output fields that this custom action makes available to the rest of
-        # the flow.
         sig do
           returns(T::Array[HubspotSDK::Automation::APIEnumerationOutputField])
         end
         attr_accessor :output_fields
 
-        # The runtime to use to execute the source code. Supported runtimes are:
-        # "NODE16X", "NODE20X", "PYTHON39"
         sig { returns(String) }
         attr_accessor :runtime
 
-        # The names of any "secrets" setup in this portal that will be used in this
-        # action.
         sig { returns(T::Array[String]) }
         attr_accessor :secret_names
 
-        # The source code to execute when this action executes.
         sig { returns(String) }
         attr_accessor :source_code
 
-        # The type of action this is, can be: "STATIC_BRANCH", "LIST_BRANCH",
-        # "AB_TEST_BRANCH", "CUSTOM_CODE", "WEBHOOK", or "SINGLE_CONNECTION"
         sig do
           returns(HubspotSDK::Automation::APICustomCodeAction::Type::OrSymbol)
         end
@@ -72,22 +62,12 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The ID for this action.
           action_id:,
           input_fields:,
-          # The list of output fields that this custom action makes available to the rest of
-          # the flow.
           output_fields:,
-          # The runtime to use to execute the source code. Supported runtimes are:
-          # "NODE16X", "NODE20X", "PYTHON39"
           runtime:,
-          # The names of any "secrets" setup in this portal that will be used in this
-          # action.
           secret_names:,
-          # The source code to execute when this action executes.
           source_code:,
-          # The type of action this is, can be: "STATIC_BRANCH", "LIST_BRANCH",
-          # "AB_TEST_BRANCH", "CUSTOM_CODE", "WEBHOOK", or "SINGLE_CONNECTION"
           type:,
           connection: nil
         )
@@ -111,8 +91,6 @@ module HubspotSDK
         def to_hash
         end
 
-        # The type of action this is, can be: "STATIC_BRANCH", "LIST_BRANCH",
-        # "AB_TEST_BRANCH", "CUSTOM_CODE", "WEBHOOK", or "SINGLE_CONNECTION"
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

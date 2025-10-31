@@ -12,11 +12,9 @@ module HubspotSDK
             )
           end
 
-        # The flowId from the V4 API
         sig { returns(String) }
         attr_accessor :flow_migration_statuses
 
-        # The type of input this is, can be FLOW_ID or WORKFLOW_ID
         sig do
           returns(
             HubspotSDK::Automation::APIFlowBatchFetchMigrationFlowIDCoordinate::Type::OrSymbol
@@ -31,12 +29,7 @@ module HubspotSDK
               HubspotSDK::Automation::APIFlowBatchFetchMigrationFlowIDCoordinate::Type::OrSymbol
           ).returns(T.attached_class)
         end
-        def self.new(
-          # The flowId from the V4 API
-          flow_migration_statuses:,
-          # The type of input this is, can be FLOW_ID or WORKFLOW_ID
-          type:
-        )
+        def self.new(flow_migration_statuses:, type:)
         end
 
         sig do
@@ -51,7 +44,6 @@ module HubspotSDK
         def to_hash
         end
 
-        # The type of input this is, can be FLOW_ID or WORKFLOW_ID
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

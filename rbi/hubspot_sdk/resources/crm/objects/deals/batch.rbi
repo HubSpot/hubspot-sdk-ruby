@@ -6,7 +6,7 @@ module HubspotSDK
       class Objects
         class Deals
           class Batch
-            # Create a batch of deals
+            # Create multiple deals in a single request.
             sig do
               params(
                 inputs:
@@ -19,7 +19,7 @@ module HubspotSDK
             def create(inputs:, request_options: {})
             end
 
-            # Update a batch of deals by internal ID, or unique property values
+            # Update multiple deals using their internal IDs or unique property values.
             sig do
               params(
                 inputs:
@@ -32,7 +32,7 @@ module HubspotSDK
             def update(inputs:, request_options: {})
             end
 
-            # Archive a batch of deals by ID
+            # Archive multiple deals using their IDs.
             sig do
               params(
                 inputs: T::Array[HubspotSDK::CRM::SimplePublicObjectID::OrHash],

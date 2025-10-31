@@ -121,7 +121,6 @@ module HubspotSDK
             ).returns(HubspotSDK::CRM::SimplePublicObjectWithAssociations)
           end
           def get(
-            # The ID of the company
             company_id,
             # Whether to return only results that have been archived.
             archived: nil,

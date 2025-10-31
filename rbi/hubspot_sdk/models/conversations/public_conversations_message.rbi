@@ -21,7 +21,16 @@ module HubspotSDK
         sig do
           returns(
             T::Array[
-              HubspotSDK::Conversations::PublicConversationsMessage::Attachment::Variants
+              T.any(
+                HubspotSDK::Conversations::PublicFile,
+                HubspotSDK::Conversations::PublicLocation,
+                HubspotSDK::Conversations::PublicContact,
+                HubspotSDK::Conversations::PublicUnsupportedContent,
+                HubspotSDK::Conversations::PublicMessageHeader,
+                HubspotSDK::Conversations::PublicQuickReplies,
+                HubspotSDK::Conversations::PublicWhatsAppTemplateMetadata,
+                HubspotSDK::Conversations::PublicSocialMetadataAttachment
+              )
             ]
           )
         end
@@ -52,7 +61,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Conversations::PublicConversationsMessage::Direction::TaggedSymbol
+            HubspotSDK::Conversations::PublicConversationsMessage::Direction::OrSymbol
           )
         end
         attr_accessor :direction
@@ -68,14 +77,14 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Conversations::PublicConversationsMessage::TruncationStatus::TaggedSymbol
+            HubspotSDK::Conversations::PublicConversationsMessage::TruncationStatus::OrSymbol
           )
         end
         attr_accessor :truncation_status
 
         sig do
           returns(
-            HubspotSDK::Conversations::PublicConversationsMessage::Type::TaggedSymbol
+            HubspotSDK::Conversations::PublicConversationsMessage::Type::OrSymbol
           )
         end
         attr_accessor :type
@@ -187,7 +196,16 @@ module HubspotSDK
               archived: T::Boolean,
               attachments:
                 T::Array[
-                  HubspotSDK::Conversations::PublicConversationsMessage::Attachment::Variants
+                  T.any(
+                    HubspotSDK::Conversations::PublicFile,
+                    HubspotSDK::Conversations::PublicLocation,
+                    HubspotSDK::Conversations::PublicContact,
+                    HubspotSDK::Conversations::PublicUnsupportedContent,
+                    HubspotSDK::Conversations::PublicMessageHeader,
+                    HubspotSDK::Conversations::PublicQuickReplies,
+                    HubspotSDK::Conversations::PublicWhatsAppTemplateMetadata,
+                    HubspotSDK::Conversations::PublicSocialMetadataAttachment
+                  )
                 ],
               channel_account_id: String,
               channel_id: String,
@@ -196,14 +214,14 @@ module HubspotSDK
               created_at: Time,
               created_by: String,
               direction:
-                HubspotSDK::Conversations::PublicConversationsMessage::Direction::TaggedSymbol,
+                HubspotSDK::Conversations::PublicConversationsMessage::Direction::OrSymbol,
               recipients: T::Array[HubspotSDK::Conversations::PublicRecipient],
               senders: T::Array[HubspotSDK::Conversations::PublicSender],
               text: String,
               truncation_status:
-                HubspotSDK::Conversations::PublicConversationsMessage::TruncationStatus::TaggedSymbol,
+                HubspotSDK::Conversations::PublicConversationsMessage::TruncationStatus::OrSymbol,
               type:
-                HubspotSDK::Conversations::PublicConversationsMessage::Type::TaggedSymbol,
+                HubspotSDK::Conversations::PublicConversationsMessage::Type::OrSymbol,
               in_reply_to_id: String,
               rich_text: String,
               status: HubspotSDK::Conversations::PublicMessageStatus,

@@ -11,19 +11,13 @@ module HubspotSDK
           # @return [HubspotSDK::Resources::CRM::Objects::PartnerClients::Batch]
           attr_reader :batch
 
-          # Perform a partial update of an Object identified by `{objectId}`. `{objectId}`
-          # refers to the internal object ID by default, or optionally any unique property
-          # value as specified by the `idProperty` query param. Provided property values
-          # will be overwritten. Read-only and non-existent properties will be ignored.
-          # Properties values can be cleared by passing an empty string.
-          #
           # @overload update(partner_client_id, properties:, id_property: nil, request_options: {})
           #
           # @param partner_client_id [String] Path param:
           #
           # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
           #
-          # @param id_property [String] Query param: The name of a property whose values are unique for this object
+          # @param id_property [String] Query param:
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -43,26 +37,14 @@ module HubspotSDK
             )
           end
 
-          # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::Objects::PartnerClientListParams} for more details.
-          #
-          # Read a page of objects. Control what is returned via the `properties` query
-          # param.
-          #
           # @overload list(after: nil, archived: nil, associations: nil, limit: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
-          # @param after [String] The paging cursor token of the last successfully read resource will be returned
-          #
-          # @param archived [Boolean] Whether to return only results that have been archived.
-          #
-          # @param associations [Array<String>] A comma separated list of object types to retrieve associated IDs for. If any of
-          #
-          # @param limit [Integer] The maximum number of results to display per page.
-          #
-          # @param properties [Array<String>] A comma separated list of the properties to be returned in the response. If any
-          #
-          # @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
-          #
+          # @param after [String]
+          # @param archived [Boolean]
+          # @param associations [Array<String>]
+          # @param limit [Integer]
+          # @param properties [Array<String>]
+          # @param properties_with_history [Array<String>]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::CRM::SimplePublicObjectWithAssociations>]
@@ -80,28 +62,14 @@ module HubspotSDK
             )
           end
 
-          # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::Objects::PartnerClientGetParams} for more details.
-          #
-          # Read an Object identified by `{objectId}`. `{objectId}` refers to the internal
-          # object ID by default, or optionally any unique property value as specified by
-          # the `idProperty` query param. Control what is returned via the `properties`
-          # query param.
-          #
           # @overload get(partner_client_id, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
           # @param partner_client_id [String]
-          #
-          # @param archived [Boolean] Whether to return only results that have been archived.
-          #
-          # @param associations [Array<String>] A comma separated list of object types to retrieve associated IDs for. If any of
-          #
-          # @param id_property [String] The name of a property whose values are unique for this object
-          #
-          # @param properties [Array<String>] A comma separated list of the properties to be returned in the response. If any
-          #
-          # @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
-          #
+          # @param archived [Boolean]
+          # @param associations [Array<String>]
+          # @param id_property [String]
+          # @param properties [Array<String>]
+          # @param properties_with_history [Array<String>]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::CRM::SimplePublicObjectWithAssociations]

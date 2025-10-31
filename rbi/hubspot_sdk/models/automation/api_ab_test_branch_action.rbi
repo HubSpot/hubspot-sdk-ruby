@@ -12,15 +12,12 @@ module HubspotSDK
             )
           end
 
-        # The ID for this action.
         sig { returns(String) }
         attr_accessor :action_id
 
         sig { returns(T::Array[HubspotSDK::Automation::APIConnection]) }
         attr_accessor :test_branches
 
-        # The type of action this is, can be: "STATIC_BRANCH", "LIST_BRANCH",
-        # "AB_TEST_BRANCH", "CUSTOM_CODE", "WEBHOOK", or "SINGLE_CONNECTION"
         sig do
           returns(HubspotSDK::Automation::APIAbTestBranchAction::Type::OrSymbol)
         end
@@ -34,14 +31,7 @@ module HubspotSDK
             type: HubspotSDK::Automation::APIAbTestBranchAction::Type::OrSymbol
           ).returns(T.attached_class)
         end
-        def self.new(
-          # The ID for this action.
-          action_id:,
-          test_branches:,
-          # The type of action this is, can be: "STATIC_BRANCH", "LIST_BRANCH",
-          # "AB_TEST_BRANCH", "CUSTOM_CODE", "WEBHOOK", or "SINGLE_CONNECTION"
-          type:
-        )
+        def self.new(action_id:, test_branches:, type:)
         end
 
         sig do
@@ -57,8 +47,6 @@ module HubspotSDK
         def to_hash
         end
 
-        # The type of action this is, can be: "STATIC_BRANCH", "LIST_BRANCH",
-        # "AB_TEST_BRANCH", "CUSTOM_CODE", "WEBHOOK", or "SINGLE_CONNECTION"
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

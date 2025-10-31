@@ -62,6 +62,8 @@ module HubspotSDK
         sig { params(metadata: T::Hash[Symbol, String]).void }
         attr_writer :metadata
 
+        # Defines the level of write access for the pipeline stage, with possible values
+        # being CRM_PERMISSIONS_ENFORCEMENT, READ_ONLY, or INTERNAL_ONLY.
         sig do
           returns(
             T.nilable(
@@ -126,6 +128,8 @@ module HubspotSDK
           # has been closed by a member of your Support team. Possible values are `OPEN` or
           # `CLOSED`.
           metadata: nil,
+          # Defines the level of write access for the pipeline stage, with possible values
+          # being CRM_PERMISSIONS_ENFORCEMENT, READ_ONLY, or INTERNAL_ONLY.
           write_permissions: nil
         )
         end
@@ -149,6 +153,8 @@ module HubspotSDK
         def to_hash
         end
 
+        # Defines the level of write access for the pipeline stage, with possible values
+        # being CRM_PERMISSIONS_ENFORCEMENT, READ_ONLY, or INTERNAL_ONLY.
         module WritePermissions
           extend HubspotSDK::Internal::Type::Enum
 

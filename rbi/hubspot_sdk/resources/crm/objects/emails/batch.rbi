@@ -6,7 +6,8 @@ module HubspotSDK
       class Objects
         class Emails
           class Batch
-            # Create a batch of emails
+            # Create a batch of emails with specified properties and return the created
+            # objects.
             sig do
               params(
                 inputs:
@@ -19,7 +20,7 @@ module HubspotSDK
             def create(inputs:, request_options: {})
             end
 
-            # Update a batch of emails by internal ID, or unique property values
+            # Update a batch of emails using their internal IDs or unique property values.
             sig do
               params(
                 inputs:
@@ -32,7 +33,7 @@ module HubspotSDK
             def update(inputs:, request_options: {})
             end
 
-            # Archive a batch of emails by ID
+            # Archive a batch of emails identified by their IDs.
             sig do
               params(
                 inputs: T::Array[HubspotSDK::CRM::SimplePublicObjectID::OrHash],

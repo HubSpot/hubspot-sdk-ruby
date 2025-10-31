@@ -15,15 +15,9 @@ module HubspotSDK
           ).returns(HubspotSDK::Internal::Page[HubspotSDK::CRM::PublicOwner])
         end
         def list(
-          # The paging cursor token of the last successfully read resource will be returned
-          # as the `paging.next.after` JSON property of a paged response containing more
-          # results (optional).
           after: nil,
-          # Whether to return only results that have been archived.
           archived: nil,
-          # Filter by email address (optional).
           email: nil,
-          # The maximum number of results to display per page.
           limit: nil,
           request_options: {}
         )
@@ -38,15 +32,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::CRM::PublicOwner)
         end
-        def get(
-          # The unique identifier of the owner to be retrieved.
-          owner_id,
-          # Whether to return only results that have been archived.
-          archived: nil,
-          # Specifies whether to use 'id' or 'userId' as the identifier for the owner.
-          id_property: nil,
-          request_options: {}
-        )
+        def get(owner_id, archived: nil, id_property: nil, request_options: {})
         end
 
         # @api private

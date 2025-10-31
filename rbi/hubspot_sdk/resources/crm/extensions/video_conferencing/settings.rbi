@@ -6,7 +6,6 @@ module HubspotSDK
       class Extensions
         class VideoConferencing
           class Settings
-            # Updates the settings for a video conference application with the specified ID.
             sig do
               params(
                 app_id: Integer,
@@ -19,8 +18,6 @@ module HubspotSDK
               ).returns(HubspotSDK::CRM::Extensions::ExternalSettings)
             end
             def update(
-              # The ID of the video conference application. This is the identifier of the
-              # application created in your HubSpot developer portal.
               app_id,
               # The URL that HubSpot will send requests to create a new video conference.
               create_meeting_url:,
@@ -38,34 +35,22 @@ module HubspotSDK
             )
             end
 
-            # Deletes the settings for a video conference application with the specified ID.
             sig do
               params(
                 app_id: Integer,
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).void
             end
-            def delete(
-              # The ID of the video conference application. This is the identifier of the
-              # application created in your HubSpot developer portal.
-              app_id,
-              request_options: {}
-            )
+            def delete(app_id, request_options: {})
             end
 
-            # Return the settings for a video conference application with the specified ID.
             sig do
               params(
                 app_id: Integer,
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(HubspotSDK::CRM::Extensions::ExternalSettings)
             end
-            def get(
-              # The ID of the video conference application. This is the identifier of the
-              # application created in your HubSpot developer portal.
-              app_id,
-              request_options: {}
-            )
+            def get(app_id, request_options: {})
             end
 
             # @api private

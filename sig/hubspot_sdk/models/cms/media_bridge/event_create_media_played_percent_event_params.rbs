@@ -3,125 +3,15 @@ module HubspotSDK
     module Cms
       module MediaBridge
         type event_create_media_played_percent_event_params =
-          {
-            media_type: HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedPercentEventParams::media_type,
-            occurred_timestamp: Integer,
-            played_percent: Integer,
-            session_id: String,
-            _hsenc: String,
-            contact_id: Integer,
-            contact_utk: String,
-            external_id: String,
-            media_bridge_id: Integer,
-            media_name: String,
-            media_url: String,
-            page_id: Integer,
-            page_name: String,
-            page_url: String
-          }
-          & HubspotSDK::Internal::Type::request_parameters
+          {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class EventCreateMediaPlayedPercentEventParams < HubspotSDK::Internal::Type::BaseModel
+        class EventCreateMediaPlayedPercentEventParams < HubspotSDK::Models::Cms::MediaPlayedPercentageEventRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          attr_accessor media_type: HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedPercentEventParams::media_type
+          def initialize: (?request_options: HubspotSDK::request_opts) -> void
 
-          attr_accessor occurred_timestamp: Integer
-
-          attr_accessor played_percent: Integer
-
-          attr_accessor session_id: String
-
-          attr_reader _hsenc: String?
-
-          def _hsenc=: (String) -> String
-
-          attr_reader contact_id: Integer?
-
-          def contact_id=: (Integer) -> Integer
-
-          attr_reader contact_utk: String?
-
-          def contact_utk=: (String) -> String
-
-          attr_reader external_id: String?
-
-          def external_id=: (String) -> String
-
-          attr_reader media_bridge_id: Integer?
-
-          def media_bridge_id=: (Integer) -> Integer
-
-          attr_reader media_name: String?
-
-          def media_name=: (String) -> String
-
-          attr_reader media_url: String?
-
-          def media_url=: (String) -> String
-
-          attr_reader page_id: Integer?
-
-          def page_id=: (Integer) -> Integer
-
-          attr_reader page_name: String?
-
-          def page_name=: (String) -> String
-
-          attr_reader page_url: String?
-
-          def page_url=: (String) -> String
-
-          def initialize: (
-            media_type: HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedPercentEventParams::media_type,
-            occurred_timestamp: Integer,
-            played_percent: Integer,
-            session_id: String,
-            ?_hsenc: String,
-            ?contact_id: Integer,
-            ?contact_utk: String,
-            ?external_id: String,
-            ?media_bridge_id: Integer,
-            ?media_name: String,
-            ?media_url: String,
-            ?page_id: Integer,
-            ?page_name: String,
-            ?page_url: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> void
-
-          def to_hash: -> {
-            media_type: HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedPercentEventParams::media_type,
-            occurred_timestamp: Integer,
-            played_percent: Integer,
-            session_id: String,
-            _hsenc: String,
-            contact_id: Integer,
-            contact_utk: String,
-            external_id: String,
-            media_bridge_id: Integer,
-            media_name: String,
-            media_url: String,
-            page_id: Integer,
-            page_name: String,
-            page_url: String,
-            request_options: HubspotSDK::RequestOptions
-          }
-
-          type media_type = :VIDEO | :AUDIO | :DOCUMENT | :OTHER | :IMAGE
-
-          module MediaType
-            extend HubspotSDK::Internal::Type::Enum
-
-            VIDEO: :VIDEO
-            AUDIO: :AUDIO
-            DOCUMENT: :DOCUMENT
-            OTHER: :OTHER
-            IMAGE: :IMAGE
-
-            def self?.values: -> ::Array[HubspotSDK::Models::Cms::MediaBridge::EventCreateMediaPlayedPercentEventParams::media_type]
-          end
+          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
         end
       end
     end

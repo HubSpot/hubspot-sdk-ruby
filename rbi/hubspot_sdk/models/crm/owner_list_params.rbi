@@ -15,30 +15,24 @@ module HubspotSDK
             )
           end
 
-        # The paging cursor token of the last successfully read resource will be returned
-        # as the `paging.next.after` JSON property of a paged response containing more
-        # results (optional).
         sig { returns(T.nilable(String)) }
         attr_reader :after
 
         sig { params(after: String).void }
         attr_writer :after
 
-        # Whether to return only results that have been archived.
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :archived
 
         sig { params(archived: T::Boolean).void }
         attr_writer :archived
 
-        # Filter by email address (optional).
         sig { returns(T.nilable(String)) }
         attr_reader :email
 
         sig { params(email: String).void }
         attr_writer :email
 
-        # The maximum number of results to display per page.
         sig { returns(T.nilable(Integer)) }
         attr_reader :limit
 
@@ -55,15 +49,9 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The paging cursor token of the last successfully read resource will be returned
-          # as the `paging.next.after` JSON property of a paged response containing more
-          # results (optional).
           after: nil,
-          # Whether to return only results that have been archived.
           archived: nil,
-          # Filter by email address (optional).
           email: nil,
-          # The maximum number of results to display per page.
           limit: nil,
           request_options: {}
         )

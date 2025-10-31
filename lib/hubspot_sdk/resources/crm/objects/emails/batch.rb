@@ -6,7 +6,8 @@ module HubspotSDK
       class Objects
         class Emails
           class Batch
-            # Create a batch of emails
+            # Create a batch of emails with specified properties and return the created
+            # objects.
             #
             # @overload create(inputs:, request_options: {})
             #
@@ -27,7 +28,7 @@ module HubspotSDK
               )
             end
 
-            # Update a batch of emails by internal ID, or unique property values
+            # Update a batch of emails using their internal IDs or unique property values.
             #
             # @overload update(inputs:, request_options: {})
             #
@@ -48,7 +49,7 @@ module HubspotSDK
               )
             end
 
-            # Archive a batch of emails by ID
+            # Archive a batch of emails identified by their IDs.
             #
             # @overload delete(inputs:, request_options: {})
             #

@@ -16,7 +16,6 @@ module HubspotSDK
               )
             end
 
-          # The name of a property whose values are unique for this object
           sig { returns(T.nilable(String)) }
           attr_reader :id_property
 
@@ -29,11 +28,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
-          def self.new(
-            # The name of a property whose values are unique for this object
-            id_property: nil,
-            request_options: {}
-          )
+          def self.new(id_property: nil, request_options: {})
           end
 
           sig do

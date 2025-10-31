@@ -68,6 +68,8 @@ module HubspotSDK
         optional :metadata, HubspotSDK::Internal::Type::HashOf[String]
 
         # @!attribute write_permissions
+        #   Defines the level of write access for the pipeline stage, with possible values
+        #   being CRM_PERMISSIONS_ENFORCEMENT, READ_ONLY, or INTERNAL_ONLY.
         #
         #   @return [Symbol, HubspotSDK::Models::CRM::PipelineStage::WritePermissions, nil]
         optional :write_permissions,
@@ -96,8 +98,11 @@ module HubspotSDK
         #
         #   @param metadata [Hash{Symbol=>String}] A JSON object containing properties that are not present on all object pipelines
         #
-        #   @param write_permissions [Symbol, HubspotSDK::Models::CRM::PipelineStage::WritePermissions]
+        #   @param write_permissions [Symbol, HubspotSDK::Models::CRM::PipelineStage::WritePermissions] Defines the level of write access for the pipeline stage, with possible values b
 
+        # Defines the level of write access for the pipeline stage, with possible values
+        # being CRM_PERMISSIONS_ENFORCEMENT, READ_ONLY, or INTERNAL_ONLY.
+        #
         # @see HubspotSDK::Models::CRM::PipelineStage#write_permissions
         module WritePermissions
           extend HubspotSDK::Internal::Type::Enum

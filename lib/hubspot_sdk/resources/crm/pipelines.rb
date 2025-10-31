@@ -105,7 +105,7 @@ module HubspotSDK
           )
         end
 
-        # Delete the pipeline identified by `{pipelineId}`.
+        # Delete a pipeline
         #
         # @overload delete(pipeline_id, object_type:, validate_deal_stage_usages_before_delete: nil, validate_references_before_delete: nil, request_options: {})
         #
@@ -194,9 +194,7 @@ module HubspotSDK
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::CRM::PipelineReplaceParams} for more details.
         #
-        # Replace all the properties of an existing pipeline with the values provided.
-        # This will overwrite any existing pipeline stages. The updated pipeline will be
-        # returned in the response.
+        # Replace a pipeline
         #
         # @overload replace(pipeline_id, object_type:, display_order:, label:, stages:, validate_deal_stage_usages_before_delete: nil, validate_references_before_delete: nil, request_options: {})
         #

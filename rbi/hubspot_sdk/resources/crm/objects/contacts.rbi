@@ -44,7 +44,6 @@ module HubspotSDK
             ).returns(HubspotSDK::CRM::SimplePublicObject)
           end
           def update(
-            # The ID of the contact to update.
             contact_id,
             # Key value pairs representing the properties of the object.
             properties:,
@@ -105,11 +104,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(
-            # The ID of the contact to delete.
-            contact_id,
-            request_options: {}
-          )
+          def delete(contact_id, request_options: {})
           end
 
           # Permanently delete a contact and all associated content to follow GDPR. Use
@@ -146,7 +141,6 @@ module HubspotSDK
             ).returns(HubspotSDK::CRM::SimplePublicObjectWithAssociations)
           end
           def get(
-            # The ID of the contact to retrieve.
             contact_id,
             # Whether to return only results that have been archived.
             archived: nil,

@@ -23,12 +23,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Marketing::PublicSubscriptionStatusesResponse)
         end
-        def get_email_status(
-          # The email address of the contact whose subscription statuses are being
-          # retrieved.
-          email_address,
-          request_options: {}
-        )
+        def get_email_status(email_address, request_options: {})
         end
 
         # Subscribes a contact to the given subscription type. This API is not valid to

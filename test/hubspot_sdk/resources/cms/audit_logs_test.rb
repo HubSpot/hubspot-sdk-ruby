@@ -16,16 +16,16 @@ class HubspotSDK::Test::Resources::Cms::AuditLogsTest < HubspotSDK::Test::Resour
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Models::Cms::AuditLogListResponse
+      row => HubspotSDK::Cms::PublicAuditLog
     end
 
     assert_pattern do
       row => {
-        event: HubspotSDK::Models::Cms::AuditLogListResponse::Event,
+        event: HubspotSDK::Cms::PublicAuditLog::Event,
         full_name: String,
         object_id_: String,
         object_name: String,
-        object_type: HubspotSDK::Models::Cms::AuditLogListResponse::ObjectType,
+        object_type: HubspotSDK::Cms::PublicAuditLog::ObjectType,
         timestamp: Time,
         user_id: String,
         meta: HubspotSDK::Internal::Type::Unknown | nil

@@ -19,7 +19,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::SiteSearchGetIndexedDataResponse]
+        # @return [HubspotSDK::Models::Cms::IndexedData]
         #
         # @see HubspotSDK::Models::Cms::SiteSearchGetIndexedDataParams
         def get_indexed_data(content_id, params = {})
@@ -28,7 +28,7 @@ module HubspotSDK
             method: :get,
             path: ["cms/v3/site-search/indexed-data/%1$s", content_id],
             query: parsed,
-            model: HubspotSDK::Models::Cms::SiteSearchGetIndexedDataResponse,
+            model: HubspotSDK::Cms::IndexedData,
             options: options
           )
         end
@@ -77,7 +77,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::SiteSearchSearchResponse]
+        # @return [HubspotSDK::Models::Cms::PublicSearchResults]
         #
         # @see HubspotSDK::Models::Cms::SiteSearchSearchParams
         def search(params = {})
@@ -95,7 +95,7 @@ module HubspotSDK
               popularity_boost: "popularityBoost",
               table_id: "tableId"
             ),
-            model: HubspotSDK::Models::Cms::SiteSearchSearchResponse,
+            model: HubspotSDK::Cms::PublicSearchResults,
             options: options
           )
         end

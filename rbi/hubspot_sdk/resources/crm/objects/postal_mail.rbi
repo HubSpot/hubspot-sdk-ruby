@@ -10,9 +10,8 @@ module HubspotSDK
           end
           attr_reader :batch
 
-          # Create a postal mail with the given properties and return a copy of the object,
-          # including the ID. Documentation and examples for creating standard postal mail
-          # is provided.
+          # Create a postal mail object with the given properties and return a copy of the
+          # object, including the ID.
           sig do
             params(
               properties: T::Hash[Symbol, String],
@@ -29,13 +28,6 @@ module HubspotSDK
           )
           end
 
-          # Perform a partial update of an Object identified by `{postalMailId}`or
-          # optionally a unique property value as specified by the `idProperty` query param.
-          # `{postalMailId}` refers to the internal object ID by default, and the
-          # `idProperty` query param refers to a property whose values are unique for the
-          # object. Provided property values will be overwritten. Read-only and non-existent
-          # properties will result in an error. Properties values can be cleared by passing
-          # an empty string.
           sig do
             params(
               postal_mail_id: String,
@@ -49,14 +41,12 @@ module HubspotSDK
             postal_mail_id,
             # Body param: Key value pairs representing the properties of the object.
             properties:,
-            # Query param: The name of a property whose values are unique for this object
+            # Query param:
             id_property: nil,
             request_options: {}
           )
           end
 
-          # Read a page of postal mail. Control what is returned via the `properties` query
-          # param.
           sig do
             params(
               after: String,
@@ -73,31 +63,17 @@ module HubspotSDK
             )
           end
           def list(
-            # The paging cursor token of the last successfully read resource will be returned
-            # as the `paging.next.after` JSON property of a paged response containing more
-            # results.
             after: nil,
-            # Whether to return only results that have been archived.
             archived: nil,
-            # A comma separated list of object types to retrieve associated IDs for. If any of
-            # the specified associations do not exist, they will be ignored.
             associations: nil,
-            # The maximum number of results to display per page.
             limit: nil,
-            # A comma separated list of the properties to be returned in the response. If any
-            # of the specified properties are not present on the requested object(s), they
-            # will be ignored.
             properties: nil,
-            # A comma separated list of the properties to be returned along with their history
-            # of previous values. If any of the specified properties are not present on the
-            # requested object(s), they will be ignored. Usage of this parameter will reduce
-            # the maximum number of postal mail that can be read by a single request.
             properties_with_history: nil,
             request_options: {}
           )
           end
 
-          # Move an Object identified by `{postalMailId}` to the recycling bin.
+          # Move the postal mail object with the ID `{postalMailId}` to the recycling bin.
           sig do
             params(
               postal_mail_id: String,
@@ -107,10 +83,6 @@ module HubspotSDK
           def delete(postal_mail_id, request_options: {})
           end
 
-          # Read an Object identified by `{postalMailId}`. `{postalMailId}` refers to the
-          # internal object ID by default, or optionally any unique property value as
-          # specified by the `idProperty` query param. Control what is returned via the
-          # `properties` query param.
           sig do
             params(
               postal_mail_id: String,
@@ -124,25 +96,16 @@ module HubspotSDK
           end
           def get(
             postal_mail_id,
-            # Whether to return only results that have been archived.
             archived: nil,
-            # A comma separated list of object types to retrieve associated IDs for. If any of
-            # the specified associations do not exist, they will be ignored.
             associations: nil,
-            # The name of a property whose values are unique for this object
             id_property: nil,
-            # A comma separated list of the properties to be returned in the response. If any
-            # of the specified properties are not present on the requested object(s), they
-            # will be ignored.
             properties: nil,
-            # A comma separated list of the properties to be returned along with their history
-            # of previous values. If any of the specified properties are not present on the
-            # requested object(s), they will be ignored.
             properties_with_history: nil,
             request_options: {}
           )
           end
 
+          # Search for postal mail objects using specific criteria in the request.
           sig do
             params(
               after: String,

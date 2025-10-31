@@ -13,7 +13,7 @@ module HubspotSDK
             environment: String,
             file: HubspotSDK::Internal::FileInput,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Models::Cms::SourceCodeCreateResponse)
+          ).returns(HubspotSDK::Cms::AssetFileMetadata)
         end
         def create(
           # Path param: The file system location of the file.
@@ -95,7 +95,7 @@ module HubspotSDK
             environment: String,
             properties: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Models::Cms::SourceCodeGetMetadataResponse)
+          ).returns(HubspotSDK::Cms::AssetFileMetadata)
         end
         def get_metadata(
           # Path param: The file system location of the file.
@@ -116,7 +116,7 @@ module HubspotSDK
             environment: String,
             file: HubspotSDK::Internal::FileInput,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Models::Cms::SourceCodeUpsertResponse)
+          ).returns(HubspotSDK::Cms::AssetFileMetadata)
         end
         def upsert(
           # Path param: The file system location of the file.

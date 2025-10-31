@@ -13,7 +13,7 @@ module HubspotSDK
             type:
               HubspotSDK::Cms::SiteSearchGetIndexedDataParams::Type::OrSymbol,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Models::Cms::SiteSearchGetIndexedDataResponse)
+          ).returns(HubspotSDK::Cms::IndexedData)
         end
         def get_indexed_data(
           # ID of the target document when searching for indexed properties.
@@ -49,7 +49,7 @@ module HubspotSDK
             type:
               T::Array[HubspotSDK::Cms::SiteSearchSearchParams::Type::OrSymbol],
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Models::Cms::SiteSearchSearchResponse)
+          ).returns(HubspotSDK::Cms::PublicSearchResults)
         end
         def search(
           # Specifies whether or not you are showing autocomplete results. Defaults to
