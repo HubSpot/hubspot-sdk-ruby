@@ -10,7 +10,7 @@ class HubspotSDK::Test::Resources::Scheduler::Meetings::CalendarTest < HubspotSD
       @hubspot.scheduler.meetings.calendar.create(
         associations: [
           {
-            to: {id: "id"},
+            to: {id: "37295"},
             types: [{associationCategory: :HUBSPOT_DEFINED, associationTypeId: 0}]
           }
         ],

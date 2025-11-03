@@ -1,0 +1,82 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Associations
+        type batch_response_public_association_multi_with_label =
+          {
+            completed_at: Time,
+            results: ::Array[HubspotSDK::Crm::Associations::PublicAssociationMultiWithLabel],
+            started_at: Time,
+            status: HubspotSDK::Models::Crm::Associations::BatchResponsePublicAssociationMultiWithLabel::status,
+            errors: ::Array[HubspotSDK::Crm::Associations::StandardError1],
+            links: ::Hash[Symbol, String],
+            num_errors: Integer,
+            requested_at: Time
+          }
+
+        class BatchResponsePublicAssociationMultiWithLabel < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor completed_at: Time
+
+          attr_accessor results: ::Array[HubspotSDK::Crm::Associations::PublicAssociationMultiWithLabel]
+
+          attr_accessor started_at: Time
+
+          attr_accessor status: HubspotSDK::Models::Crm::Associations::BatchResponsePublicAssociationMultiWithLabel::status
+
+          attr_reader errors: ::Array[HubspotSDK::Crm::Associations::StandardError1]?
+
+          def errors=: (
+            ::Array[HubspotSDK::Crm::Associations::StandardError1]
+          ) -> ::Array[HubspotSDK::Crm::Associations::StandardError1]
+
+          attr_reader links: ::Hash[Symbol, String]?
+
+          def links=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
+
+          attr_reader num_errors: Integer?
+
+          def num_errors=: (Integer) -> Integer
+
+          attr_reader requested_at: Time?
+
+          def requested_at=: (Time) -> Time
+
+          def initialize: (
+            completed_at: Time,
+            results: ::Array[HubspotSDK::Crm::Associations::PublicAssociationMultiWithLabel],
+            started_at: Time,
+            status: HubspotSDK::Models::Crm::Associations::BatchResponsePublicAssociationMultiWithLabel::status,
+            ?errors: ::Array[HubspotSDK::Crm::Associations::StandardError1],
+            ?links: ::Hash[Symbol, String],
+            ?num_errors: Integer,
+            ?requested_at: Time
+          ) -> void
+
+          def to_hash: -> {
+            completed_at: Time,
+            results: ::Array[HubspotSDK::Crm::Associations::PublicAssociationMultiWithLabel],
+            started_at: Time,
+            status: HubspotSDK::Models::Crm::Associations::BatchResponsePublicAssociationMultiWithLabel::status,
+            errors: ::Array[HubspotSDK::Crm::Associations::StandardError1],
+            links: ::Hash[Symbol, String],
+            num_errors: Integer,
+            requested_at: Time
+          }
+
+          type status = :PENDING | :PROCESSING | :CANCELED | :COMPLETE
+
+          module Status
+            extend HubspotSDK::Internal::Type::Enum
+
+            PENDING: :PENDING
+            PROCESSING: :PROCESSING
+            CANCELED: :CANCELED
+            COMPLETE: :COMPLETE
+
+            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Associations::BatchResponsePublicAssociationMultiWithLabel::status]
+          end
+        end
+      end
+    end
+  end
+end

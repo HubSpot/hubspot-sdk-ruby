@@ -64,7 +64,7 @@ module HubspotSDK
           #
           # @param to_object_type [String] Path param:
           #
-          # @param body [Array<HubspotSDK::Models::Crm::Associations::AssociationSpec1>] Body param:
+          # @param body [Array<HubspotSDK::Models::AssociationSpec>] Body param:
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

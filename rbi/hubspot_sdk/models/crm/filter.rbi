@@ -107,6 +107,16 @@ module HubspotSDK
               :NOT_HAS_PROPERTY,
               HubspotSDK::Crm::Filter::Operator::TaggedSymbol
             )
+          CONTAINS_TOKEN =
+            T.let(
+              :CONTAINS_TOKEN,
+              HubspotSDK::Crm::Filter::Operator::TaggedSymbol
+            )
+          NOT_CONTAINS_TOKEN =
+            T.let(
+              :NOT_CONTAINS_TOKEN,
+              HubspotSDK::Crm::Filter::Operator::TaggedSymbol
+            )
 
           sig do
             override.returns(

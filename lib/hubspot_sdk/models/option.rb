@@ -3,63 +3,53 @@
 module HubspotSDK
   module Models
     class Option < HubspotSDK::Internal::Type::BaseModel
-      # @!attribute description
-      #   A description of the option.
-      #
-      #   @return [String]
-      required :description, String
-
-      # @!attribute display_order
-      #   The position of the item relative to others in the list.
-      #
-      #   @return [Integer]
-      required :display_order, Integer, api_name: :displayOrder
-
-      # @!attribute double_data
-      #
-      #   @return [Float]
-      required :double_data, Float, api_name: :doubleData
-
       # @!attribute hidden
-      #   Whether the option is displayed in HubSpot's UI.
+      #   Hidden options will not be displayed in HubSpot.
       #
       #   @return [Boolean]
       required :hidden, HubspotSDK::Internal::Type::Boolean
 
       # @!attribute label
-      #   A user-friendly label that identifies the option.
+      #   A human-readable option label that will be shown in HubSpot.
       #
       #   @return [String]
       required :label, String
 
-      # @!attribute read_only
-      #   Whether the option is read-only.
-      #
-      #   @return [Boolean]
-      required :read_only, HubspotSDK::Internal::Type::Boolean, api_name: :readOnly
-
       # @!attribute value
-      #   The actual value of the option.
+      #   The internal value of the option, which must be used when setting the property
+      #   value through the API.
       #
       #   @return [String]
       required :value, String
 
-      # @!method initialize(description:, display_order:, double_data:, hidden:, label:, read_only:, value:)
-      #   A HubSpot property option
+      # @!attribute description
+      #   A description of the option.
+      #
+      #   @return [String, nil]
+      optional :description, String
+
+      # @!attribute display_order
+      #   Options are displayed in order starting with the lowest positive integer value.
+      #   Values of -1 will cause the option to be displayed after any positive values.
+      #
+      #   @return [Integer, nil]
+      optional :display_order, Integer, api_name: :displayOrder
+
+      # @!method initialize(hidden:, label:, value:, description: nil, display_order: nil)
+      #   Some parameter documentations has been truncated, see
+      #   {HubspotSDK::Models::Option} for more details.
+      #
+      #   The options available when a property is an enumeration
+      #
+      #   @param hidden [Boolean] Hidden options will not be displayed in HubSpot.
+      #
+      #   @param label [String] A human-readable option label that will be shown in HubSpot.
+      #
+      #   @param value [String] The internal value of the option, which must be used when setting the property v
       #
       #   @param description [String] A description of the option.
       #
-      #   @param display_order [Integer] The position of the item relative to others in the list.
-      #
-      #   @param double_data [Float]
-      #
-      #   @param hidden [Boolean] Whether the option is displayed in HubSpot's UI.
-      #
-      #   @param label [String] A user-friendly label that identifies the option.
-      #
-      #   @param read_only [Boolean] Whether the option is read-only.
-      #
-      #   @param value [String] The actual value of the option.
+      #   @param display_order [Integer] Options are displayed in order starting with the lowest positive integer value.
     end
   end
 end

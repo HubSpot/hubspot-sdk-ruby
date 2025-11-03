@@ -6,8 +6,8 @@ module HubspotSDK
           file_id: String,
           file_usage_type: String,
           type: HubspotSDK::Models::Conversations::PublicFile::type_,
-          name: String,
-          url: String
+          url: String,
+          name: String
         }
 
       class PublicFile < HubspotSDK::Internal::Type::BaseModel
@@ -17,28 +17,26 @@ module HubspotSDK
 
         attr_accessor type: HubspotSDK::Models::Conversations::PublicFile::type_
 
+        attr_accessor url: String
+
         attr_reader name: String?
 
         def name=: (String) -> String
-
-        attr_reader url: String?
-
-        def url=: (String) -> String
 
         def initialize: (
           file_id: String,
           file_usage_type: String,
           type: HubspotSDK::Models::Conversations::PublicFile::type_,
-          ?name: String,
-          ?url: String
+          url: String,
+          ?name: String
         ) -> void
 
         def to_hash: -> {
           file_id: String,
           file_usage_type: String,
           type: HubspotSDK::Models::Conversations::PublicFile::type_,
-          name: String,
-          url: String
+          url: String,
+          name: String
         }
 
         type type_ = :FILE

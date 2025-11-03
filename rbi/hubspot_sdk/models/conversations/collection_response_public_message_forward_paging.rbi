@@ -32,7 +32,7 @@ module HubspotSDK
             results:
               T::Array[
                 T.any(
-                  HubspotSDK::Conversations::PublicConversationsMessage::OrHash,
+                  HubspotSDK::Conversations::ConversationsPublicConversationsMessage::OrHash,
                   HubspotSDK::Conversations::PublicComment::OrHash,
                   HubspotSDK::Conversations::PublicWelcomeMessage::OrHash,
                   HubspotSDK::Conversations::PublicAssignmentMessage::OrHash,
@@ -66,7 +66,7 @@ module HubspotSDK
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Conversations::PublicConversationsMessage,
+                HubspotSDK::Conversations::ConversationsPublicConversationsMessage,
                 HubspotSDK::Conversations::PublicComment,
                 HubspotSDK::Conversations::PublicWelcomeMessage,
                 HubspotSDK::Conversations::PublicAssignmentMessage,

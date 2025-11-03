@@ -55,6 +55,8 @@ module HubspotSDK
 
   Automation = HubspotSDK::Models::Automation
 
+  AutomationActionsOption = HubspotSDK::Models::AutomationActionsOption
+
   BatchInputPropertyCreate = HubspotSDK::Models::BatchInputPropertyCreate
 
   BatchInputPropertyName = HubspotSDK::Models::BatchInputPropertyName

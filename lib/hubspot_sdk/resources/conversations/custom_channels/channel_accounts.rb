@@ -17,7 +17,7 @@ module HubspotSDK
           # @param delivery_identifier [HubspotSDK::Models::Conversations::PublicDeliveryIdentifier]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Conversations::PublicChannelAccount]
+          # @return [HubspotSDK::Models::Conversations::ConversationsPublicChannelAccount]
           #
           # @see HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountCreateParams
           def create(channel_id, params)
@@ -27,7 +27,7 @@ module HubspotSDK
               method: :post,
               path: ["conversations/v3/custom-channels/%1$s/channel-accounts", channel_id],
               body: parsed,
-              model: HubspotSDK::Conversations::PublicChannelAccount,
+              model: HubspotSDK::Conversations::ConversationsPublicChannelAccount,
               options: options
             )
           end
@@ -47,7 +47,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Conversations::PublicChannelAccount]
+          # @return [HubspotSDK::Models::Conversations::ConversationsPublicChannelAccount]
           #
           # @see HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountUpdateParams
           def update(channel_account_id, params)
@@ -65,7 +65,7 @@ module HubspotSDK
                 channel_account_id
               ],
               body: parsed,
-              model: HubspotSDK::Conversations::PublicChannelAccount,
+              model: HubspotSDK::Conversations::ConversationsPublicChannelAccount,
               options: options
             )
           end
@@ -99,7 +99,7 @@ module HubspotSDK
           # @param channel_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Conversations::PublicChannelAccount]
+          # @return [HubspotSDK::Models::Conversations::ConversationsPublicChannelAccount]
           #
           # @see HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountGetParams
           def get(channel_account_id, params)
@@ -115,7 +115,7 @@ module HubspotSDK
                 channel_id,
                 channel_account_id
               ],
-              model: HubspotSDK::Conversations::PublicChannelAccount,
+              model: HubspotSDK::Conversations::ConversationsPublicChannelAccount,
               options: options
             )
           end

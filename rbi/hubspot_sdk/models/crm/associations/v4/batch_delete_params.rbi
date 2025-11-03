@@ -5,7 +5,7 @@ module HubspotSDK
     module Crm
       module Associations
         module V4
-          class BatchDeleteParams < HubspotSDK::Models::Crm::BatchInputPublicAssociationMultiArchive
+          class BatchDeleteParams < HubspotSDK::Models::Crm::Associations::BatchInputPublicAssociationMultiArchive
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

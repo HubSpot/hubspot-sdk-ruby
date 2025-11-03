@@ -12,9 +12,13 @@ module HubspotSDK
                 to_object_type: String,
                 from_object_type: String,
                 inputs:
-                  T::Array[HubspotSDK::Crm::PublicAssociationMultiPost::OrHash],
+                  T::Array[
+                    HubspotSDK::Crm::Associations::PublicAssociationMultiPost::OrHash
+                  ],
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::Crm::BatchResponseLabelsBetweenObjectPair)
+              ).returns(
+                HubspotSDK::Crm::Associations::BatchResponseLabelsBetweenObjectPair
+              )
             end
             def create(
               # Path param:
@@ -34,10 +38,10 @@ module HubspotSDK
                 from_object_type: String,
                 inputs:
                   T::Array[
-                    HubspotSDK::Crm::PublicAssociationMultiArchive::OrHash
+                    HubspotSDK::Crm::Associations::PublicAssociationMultiArchive::OrHash
                   ],
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::Crm::BatchResponseVoid)
+              ).returns(HubspotSDK::Crm::Associations::BatchResponseVoid)
             end
             def delete(
               # Path param:
@@ -57,7 +61,7 @@ module HubspotSDK
                 from_object_type: String,
                 inputs:
                   T::Array[
-                    HubspotSDK::Crm::PublicDefaultAssociationMultiPost::OrHash
+                    HubspotSDK::Crm::Associations::PublicDefaultAssociationMultiPost::OrHash
                   ],
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(HubspotSDK::Crm::BatchResponsePublicDefaultAssociation)
@@ -80,9 +84,11 @@ module HubspotSDK
                 to_object_type: String,
                 from_object_type: String,
                 inputs:
-                  T::Array[HubspotSDK::Crm::PublicAssociationMultiPost::OrHash],
+                  T::Array[
+                    HubspotSDK::Crm::Associations::PublicAssociationMultiPost::OrHash
+                  ],
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::Crm::BatchResponseVoid)
+              ).returns(HubspotSDK::Crm::Associations::BatchResponseVoid)
             end
             def delete_labels(
               # Path param:
@@ -106,11 +112,11 @@ module HubspotSDK
                 from_object_type: String,
                 inputs:
                   T::Array[
-                    HubspotSDK::Crm::PublicFetchAssociationsBatchRequest::OrHash
+                    HubspotSDK::Crm::Associations::PublicFetchAssociationsBatchRequest::OrHash
                   ],
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(
-                HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel
+                HubspotSDK::Crm::Associations::BatchResponsePublicAssociationMultiWithLabel
               )
             end
             def get(

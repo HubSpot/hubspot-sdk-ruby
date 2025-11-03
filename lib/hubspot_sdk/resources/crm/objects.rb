@@ -4,9 +4,6 @@ module HubspotSDK
   module Resources
     class Crm
       class Objects
-        # @return [HubspotSDK::Resources::Crm::Objects::Appointments]
-        attr_reader :appointments
-
         # @return [HubspotSDK::Resources::Crm::Objects::Calls]
         attr_reader :calls
 
@@ -114,7 +111,6 @@ module HubspotSDK
         # @param client [HubspotSDK::Client]
         def initialize(client:)
           @client = client
-          @appointments = HubspotSDK::Resources::Crm::Objects::Appointments.new(client: client)
           @calls = HubspotSDK::Resources::Crm::Objects::Calls.new(client: client)
           @carts = HubspotSDK::Resources::Crm::Objects::Carts.new(client: client)
           @commerce_payments = HubspotSDK::Resources::Crm::Objects::CommercePayments.new(client: client)

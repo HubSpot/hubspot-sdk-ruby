@@ -1,0 +1,89 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type pages_content_language_variation =
+        {
+          id: Integer,
+          archived_in_dashboard: bool,
+          author_name: String,
+          campaign: String,
+          created: Time,
+          name: String,
+          password: String,
+          public_access_rules: ::Array[top],
+          public_access_rules_enabled: bool,
+          publish_date: Time,
+          slug: String,
+          state: String,
+          updated: Time,
+          tag_ids: ::Array[Integer]
+        }
+
+      class PagesContentLanguageVariation < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: Integer
+
+        attr_accessor archived_in_dashboard: bool
+
+        attr_accessor author_name: String
+
+        attr_accessor campaign: String
+
+        attr_accessor created: Time
+
+        attr_accessor name: String
+
+        attr_accessor password: String
+
+        attr_accessor public_access_rules: ::Array[top]
+
+        attr_accessor public_access_rules_enabled: bool
+
+        attr_accessor publish_date: Time
+
+        attr_accessor slug: String
+
+        attr_accessor state: String
+
+        attr_accessor updated: Time
+
+        attr_reader tag_ids: ::Array[Integer]?
+
+        def tag_ids=: (::Array[Integer]) -> ::Array[Integer]
+
+        def initialize: (
+          id: Integer,
+          archived_in_dashboard: bool,
+          author_name: String,
+          campaign: String,
+          created: Time,
+          name: String,
+          password: String,
+          public_access_rules: ::Array[top],
+          public_access_rules_enabled: bool,
+          publish_date: Time,
+          slug: String,
+          state: String,
+          updated: Time,
+          ?tag_ids: ::Array[Integer]
+        ) -> void
+
+        def to_hash: -> {
+          id: Integer,
+          archived_in_dashboard: bool,
+          author_name: String,
+          campaign: String,
+          created: Time,
+          name: String,
+          password: String,
+          public_access_rules: ::Array[top],
+          public_access_rules_enabled: bool,
+          publish_date: Time,
+          slug: String,
+          state: String,
+          updated: Time,
+          tag_ids: ::Array[Integer]
+        }
+      end
+    end
+  end
+end

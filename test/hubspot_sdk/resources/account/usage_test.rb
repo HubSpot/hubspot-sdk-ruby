@@ -15,7 +15,7 @@ class HubspotSDK::Test::Resources::Account::UsageTest < HubspotSDK::Test::Resour
     assert_pattern do
       response => {
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Account::APIUsage]),
-        paging: HubspotSDK::Marketing::Paging | nil
+        paging: HubspotSDK::Marketing::EmailsPaging | nil
       }
     end
   end

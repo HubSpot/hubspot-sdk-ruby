@@ -22,8 +22,8 @@ module HubspotSDK
         # @!attribute paging
         #   Contains information pagination of results.
         #
-        #   @return [HubspotSDK::Models::Marketing::Paging, nil]
-        optional :paging, -> { HubspotSDK::Marketing::Paging }
+        #   @return [HubspotSDK::Models::Marketing::EmailsPaging, nil]
+        optional :paging, -> { HubspotSDK::Marketing::EmailsPaging }
 
         # @!method initialize(results:, total:, type:, paging: nil)
         #   @param results [Array<Object>]
@@ -32,7 +32,7 @@ module HubspotSDK
         #
         #   @param type [Symbol, HubspotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::Type]
         #
-        #   @param paging [HubspotSDK::Models::Marketing::Paging] Contains information pagination of results.
+        #   @param paging [HubspotSDK::Models::Marketing::EmailsPaging] Contains information pagination of results.
 
         # @see HubspotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3#type
         module Type

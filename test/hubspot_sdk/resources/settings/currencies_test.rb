@@ -28,7 +28,7 @@ class HubspotSDK::Test::Resources::Settings::CurrenciesTest < HubspotSDK::Test::
   def test_batch_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.settings.currencies.batch_get(inputs: [{id: "id"}])
+    response = @hubspot.settings.currencies.batch_get(inputs: [{id: "37295"}])
 
     assert_pattern do
       response => HubspotSDK::Settings::BatchResponseExchangeRate

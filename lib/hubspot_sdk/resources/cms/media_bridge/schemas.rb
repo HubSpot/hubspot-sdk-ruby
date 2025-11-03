@@ -34,7 +34,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::Objects::ObjectTypeDefinition]
+          # @return [HubspotSDK::Models::Crm::Objects::ObjectsSchemasObjectTypeDefinition]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::SchemaUpdateParams
           def update(object_type, params)
@@ -47,7 +47,7 @@ module HubspotSDK
               method: :patch,
               path: ["media-bridge/v1/%1$s/schemas/%2$s", app_id, object_type],
               body: parsed,
-              model: HubspotSDK::Crm::Objects::ObjectTypeDefinition,
+              model: HubspotSDK::Crm::Objects::ObjectsSchemasObjectTypeDefinition,
               options: options
             )
           end

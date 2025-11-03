@@ -3,19 +3,23 @@ module HubspotSDK
     module Crm
       type public_export_list_request =
         {
+          associated_object_type: ::Array[String],
           export_internal_values_options: ::Array[HubspotSDK::Models::Crm::PublicExportListRequest::export_internal_values_option],
           export_name: String,
           export_type: HubspotSDK::Models::Crm::PublicExportListRequest::export_type,
           format_: HubspotSDK::Models::Crm::PublicExportListRequest::format_,
+          include_labeled_associations: bool,
+          include_primary_display_property_for_associated_objects: bool,
           language: HubspotSDK::Models::Crm::PublicExportListRequest::language,
           list_id: String,
           object_properties: ::Array[String],
           object_type: String,
-          override_associated_objects_per_definition_per_row_limit: bool,
-          associated_object_type: String
+          override_associated_objects_per_definition_per_row_limit: bool
         }
 
       class PublicExportListRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor associated_object_type: ::Array[String]
+
         attr_accessor export_internal_values_options: ::Array[HubspotSDK::Models::Crm::PublicExportListRequest::export_internal_values_option]
 
         attr_accessor export_name: String
@@ -23,6 +27,10 @@ module HubspotSDK
         attr_accessor export_type: HubspotSDK::Models::Crm::PublicExportListRequest::export_type
 
         attr_accessor format_: HubspotSDK::Models::Crm::PublicExportListRequest::format_
+
+        attr_accessor include_labeled_associations: bool
+
+        attr_accessor include_primary_display_property_for_associated_objects: bool
 
         attr_accessor language: HubspotSDK::Models::Crm::PublicExportListRequest::language
 
@@ -34,34 +42,34 @@ module HubspotSDK
 
         attr_accessor override_associated_objects_per_definition_per_row_limit: bool
 
-        attr_reader associated_object_type: String?
-
-        def associated_object_type=: (String) -> String
-
         def initialize: (
+          associated_object_type: ::Array[String],
           export_internal_values_options: ::Array[HubspotSDK::Models::Crm::PublicExportListRequest::export_internal_values_option],
           export_name: String,
           export_type: HubspotSDK::Models::Crm::PublicExportListRequest::export_type,
           format_: HubspotSDK::Models::Crm::PublicExportListRequest::format_,
+          include_labeled_associations: bool,
+          include_primary_display_property_for_associated_objects: bool,
           language: HubspotSDK::Models::Crm::PublicExportListRequest::language,
           list_id: String,
           object_properties: ::Array[String],
           object_type: String,
-          override_associated_objects_per_definition_per_row_limit: bool,
-          ?associated_object_type: String
+          override_associated_objects_per_definition_per_row_limit: bool
         ) -> void
 
         def to_hash: -> {
+          associated_object_type: ::Array[String],
           export_internal_values_options: ::Array[HubspotSDK::Models::Crm::PublicExportListRequest::export_internal_values_option],
           export_name: String,
           export_type: HubspotSDK::Models::Crm::PublicExportListRequest::export_type,
           format_: HubspotSDK::Models::Crm::PublicExportListRequest::format_,
+          include_labeled_associations: bool,
+          include_primary_display_property_for_associated_objects: bool,
           language: HubspotSDK::Models::Crm::PublicExportListRequest::language,
           list_id: String,
           object_properties: ::Array[String],
           object_type: String,
-          override_associated_objects_per_definition_per_row_limit: bool,
-          associated_object_type: String
+          override_associated_objects_per_definition_per_row_limit: bool
         }
 
         type export_internal_values_option = :NAMES | :VALUES

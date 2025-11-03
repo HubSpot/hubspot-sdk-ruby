@@ -20,8 +20,8 @@ module HubspotSDK
           # @!attribute paging
           #   Contains information pagination of results.
           #
-          #   @return [HubspotSDK::Models::Marketing::Paging, nil]
-          optional :paging, -> { HubspotSDK::Marketing::Paging }
+          #   @return [HubspotSDK::Models::Marketing::EmailsPaging, nil]
+          optional :paging, -> { HubspotSDK::Marketing::EmailsPaging }
 
           # @!method initialize(results:, total:, paging: nil)
           #   Response object for collections of blog post versions with pagination
@@ -31,7 +31,7 @@ module HubspotSDK
           #
           #   @param total [Integer] Total number of blog post versions.
           #
-          #   @param paging [HubspotSDK::Models::Marketing::Paging] Contains information pagination of results.
+          #   @param paging [HubspotSDK::Models::Marketing::EmailsPaging] Contains information pagination of results.
         end
       end
     end

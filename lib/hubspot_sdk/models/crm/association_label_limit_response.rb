@@ -12,9 +12,9 @@ module HubspotSDK
         # @!attribute from_object_type
         #   Defines an object type.
         #
-        #   @return [HubspotSDK::Models::Crm::Objects::ObjectTypeDefinition]
+        #   @return [HubspotSDK::Models::Crm::Objects::ObjectsSchemasObjectTypeDefinition]
         required :from_object_type,
-                 -> { HubspotSDK::Crm::Objects::ObjectTypeDefinition },
+                 -> { HubspotSDK::Crm::Objects::ObjectsSchemasObjectTypeDefinition },
                  api_name: :fromObjectType
 
         # @!attribute limit
@@ -30,11 +30,9 @@ module HubspotSDK
         # @!attribute to_object_type
         #   Defines an object type.
         #
-        #   @return [HubspotSDK::Models::Crm::Objects::ObjectTypeDefinition]
+        #   @return [HubspotSDK::Models::Crm::Objects::ObjectsSchemasObjectTypeDefinition]
         required :to_object_type,
-                 -> {
-                   HubspotSDK::Crm::Objects::ObjectTypeDefinition
-                 },
+                 -> { HubspotSDK::Crm::Objects::ObjectsSchemasObjectTypeDefinition },
                  api_name: :toObjectType
 
         # @!attribute usage
@@ -45,13 +43,13 @@ module HubspotSDK
         # @!method initialize(all_labels:, from_object_type:, limit:, percentage:, to_object_type:, usage:)
         #   @param all_labels [Array<String>]
         #
-        #   @param from_object_type [HubspotSDK::Models::Crm::Objects::ObjectTypeDefinition] Defines an object type.
+        #   @param from_object_type [HubspotSDK::Models::Crm::Objects::ObjectsSchemasObjectTypeDefinition] Defines an object type.
         #
         #   @param limit [Integer]
         #
         #   @param percentage [Float]
         #
-        #   @param to_object_type [HubspotSDK::Models::Crm::Objects::ObjectTypeDefinition] Defines an object type.
+        #   @param to_object_type [HubspotSDK::Models::Crm::Objects::ObjectsSchemasObjectTypeDefinition] Defines an object type.
         #
         #   @param usage [Integer]
       end

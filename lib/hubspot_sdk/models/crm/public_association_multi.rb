@@ -19,8 +19,8 @@ module HubspotSDK
         # @!attribute paging
         #   Contains information pagination of results.
         #
-        #   @return [HubspotSDK::Models::Marketing::Paging, nil]
-        optional :paging, -> { HubspotSDK::Marketing::Paging }
+        #   @return [HubspotSDK::Models::Marketing::EmailsPaging, nil]
+        optional :paging, -> { HubspotSDK::Marketing::EmailsPaging }
 
         # @!method initialize(from:, to:, paging: nil)
         #   Some parameter documentations has been truncated, see
@@ -30,7 +30,7 @@ module HubspotSDK
         #
         #   @param to [Array<HubspotSDK::Models::Crm::AssociatedID>] The IDs of objects that are associated with the object identified by the ID in '
         #
-        #   @param paging [HubspotSDK::Models::Marketing::Paging] Contains information pagination of results.
+        #   @param paging [HubspotSDK::Models::Marketing::EmailsPaging] Contains information pagination of results.
       end
     end
   end

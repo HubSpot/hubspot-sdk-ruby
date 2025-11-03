@@ -2,48 +2,42 @@ module HubspotSDK
   module Models
     type option =
       {
-        description: String,
-        display_order: Integer,
-        double_data: Float,
         hidden: bool,
         label: String,
-        read_only: bool,
-        value: String
+        value: String,
+        description: String,
+        display_order: Integer
       }
 
     class Option < HubspotSDK::Internal::Type::BaseModel
-      attr_accessor description: String
-
-      attr_accessor display_order: Integer
-
-      attr_accessor double_data: Float
-
       attr_accessor hidden: bool
 
       attr_accessor label: String
 
-      attr_accessor read_only: bool
-
       attr_accessor value: String
 
+      attr_reader description: String?
+
+      def description=: (String) -> String
+
+      attr_reader display_order: Integer?
+
+      def display_order=: (Integer) -> Integer
+
       def initialize: (
-        description: String,
-        display_order: Integer,
-        double_data: Float,
         hidden: bool,
         label: String,
-        read_only: bool,
-        value: String
+        value: String,
+        ?description: String,
+        ?display_order: Integer
       ) -> void
 
       def to_hash: -> {
-        description: String,
-        display_order: Integer,
-        double_data: Float,
         hidden: bool,
         label: String,
-        read_only: bool,
-        value: String
+        value: String,
+        description: String,
+        display_order: Integer
       }
     end
   end

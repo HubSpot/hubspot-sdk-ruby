@@ -134,7 +134,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::LeadsTest < HubspotSDK::Test::R
       response => {
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         total: Integer,
-        paging: HubspotSDK::Marketing::Paging | nil
+        paging: HubspotSDK::Marketing::EmailsPaging | nil
       }
     end
   end

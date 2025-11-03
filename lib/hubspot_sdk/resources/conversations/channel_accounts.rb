@@ -29,14 +29,14 @@ module HubspotSDK
         # @param channel_account_id [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Conversations::PublicChannelAccount]
+        # @return [HubspotSDK::Models::Conversations::ConversationsPublicChannelAccount]
         #
         # @see HubspotSDK::Models::Conversations::ChannelAccountGetParams
         def get(channel_account_id, params = {})
           @client.request(
             method: :get,
             path: ["conversations/v3/conversations/channel-accounts/%1$s", channel_account_id],
-            model: HubspotSDK::Conversations::PublicChannelAccount,
+            model: HubspotSDK::Conversations::ConversationsPublicChannelAccount,
             options: params[:request_options]
           )
         end

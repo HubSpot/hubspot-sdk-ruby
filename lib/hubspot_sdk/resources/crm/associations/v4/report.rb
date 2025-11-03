@@ -14,14 +14,14 @@ module HubspotSDK
             # @param user_id [Integer]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::Crm::ReportCreationResponse]
+            # @return [HubspotSDK::Models::Crm::Associations::ReportCreationResponse]
             #
             # @see HubspotSDK::Models::Crm::Associations::V4::ReportGetHighUsageReportParams
             def get_high_usage_report(user_id, params = {})
               @client.request(
                 method: :post,
                 path: ["crm/v4/associations/usage/high-usage-report/%1$s", user_id],
-                model: HubspotSDK::Crm::ReportCreationResponse,
+                model: HubspotSDK::Crm::Associations::ReportCreationResponse,
                 options: params[:request_options]
               )
             end

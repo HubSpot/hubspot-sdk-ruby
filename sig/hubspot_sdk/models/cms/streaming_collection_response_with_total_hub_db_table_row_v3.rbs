@@ -6,7 +6,7 @@ module HubspotSDK
           results: ::Array[top],
           total: Integer,
           type: HubspotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::type_,
-          paging: HubspotSDK::Marketing::Paging
+          paging: HubspotSDK::Marketing::EmailsPaging
         }
 
       class StreamingCollectionResponseWithTotalHubDBTableRowV3 < HubspotSDK::Internal::Type::BaseModel
@@ -16,24 +16,24 @@ module HubspotSDK
 
         attr_accessor type: HubspotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::type_
 
-        attr_reader paging: HubspotSDK::Marketing::Paging?
+        attr_reader paging: HubspotSDK::Marketing::EmailsPaging?
 
         def paging=: (
-          HubspotSDK::Marketing::Paging
-        ) -> HubspotSDK::Marketing::Paging
+          HubspotSDK::Marketing::EmailsPaging
+        ) -> HubspotSDK::Marketing::EmailsPaging
 
         def initialize: (
           results: ::Array[top],
           total: Integer,
           type: HubspotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::type_,
-          ?paging: HubspotSDK::Marketing::Paging
+          ?paging: HubspotSDK::Marketing::EmailsPaging
         ) -> void
 
         def to_hash: -> {
           results: ::Array[top],
           total: Integer,
           type: HubspotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::type_,
-          paging: HubspotSDK::Marketing::Paging
+          paging: HubspotSDK::Marketing::EmailsPaging
         }
 
         type type_ = :STREAMING

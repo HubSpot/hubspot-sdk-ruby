@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Associations
+        type report_creation_response =
+          {
+            enqueue_time: HubspotSDK::Crm::Associations::DateTime,
+            user_email: String,
+            user_id: Integer
+          }
+
+        class ReportCreationResponse < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor enqueue_time: HubspotSDK::Crm::Associations::DateTime
+
+          attr_accessor user_email: String
+
+          attr_accessor user_id: Integer
+
+          def initialize: (
+            enqueue_time: HubspotSDK::Crm::Associations::DateTime,
+            user_email: String,
+            user_id: Integer
+          ) -> void
+
+          def to_hash: -> {
+            enqueue_time: HubspotSDK::Crm::Associations::DateTime,
+            user_email: String,
+            user_id: Integer
+          }
+        end
+      end
+    end
+  end
+end

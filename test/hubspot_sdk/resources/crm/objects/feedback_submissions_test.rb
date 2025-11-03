@@ -71,7 +71,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::FeedbackSubmissionsTest < Hubsp
       response => {
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         total: Integer,
-        paging: HubspotSDK::Marketing::Paging | nil
+        paging: HubspotSDK::Marketing::EmailsPaging | nil
       }
     end
   end

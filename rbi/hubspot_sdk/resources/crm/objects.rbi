@@ -4,9 +4,6 @@ module HubspotSDK
   module Resources
     class Crm
       class Objects
-        sig { returns(HubspotSDK::Resources::Crm::Objects::Appointments) }
-        attr_reader :appointments
-
         sig { returns(HubspotSDK::Resources::Crm::Objects::Calls) }
         attr_reader :calls
 

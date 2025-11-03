@@ -9,7 +9,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
     response = @hubspot.cms.media_bridge.schemas.update("objectType", app_id: "appId")
 
     assert_pattern do
-      response => HubspotSDK::Crm::Objects::ObjectTypeDefinition
+      response => HubspotSDK::Crm::Objects::ObjectsSchemasObjectTypeDefinition
     end
 
     assert_pattern do

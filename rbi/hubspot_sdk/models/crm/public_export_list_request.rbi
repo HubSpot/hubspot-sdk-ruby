@@ -12,6 +12,9 @@ module HubspotSDK
             )
           end
 
+        sig { returns(T::Array[String]) }
+        attr_accessor :associated_object_type
+
         sig do
           returns(
             T::Array[
@@ -36,6 +39,12 @@ module HubspotSDK
         end
         attr_accessor :format_
 
+        sig { returns(T::Boolean) }
+        attr_accessor :include_labeled_associations
+
+        sig { returns(T::Boolean) }
+        attr_accessor :include_primary_display_property_for_associated_objects
+
         sig do
           returns(HubspotSDK::Crm::PublicExportListRequest::Language::OrSymbol)
         end
@@ -53,14 +62,9 @@ module HubspotSDK
         sig { returns(T::Boolean) }
         attr_accessor :override_associated_objects_per_definition_per_row_limit
 
-        sig { returns(T.nilable(String)) }
-        attr_reader :associated_object_type
-
-        sig { params(associated_object_type: String).void }
-        attr_writer :associated_object_type
-
         sig do
           params(
+            associated_object_type: T::Array[String],
             export_internal_values_options:
               T::Array[
                 HubspotSDK::Crm::PublicExportListRequest::ExportInternalValuesOption::OrSymbol
@@ -69,33 +73,36 @@ module HubspotSDK
             export_type:
               HubspotSDK::Crm::PublicExportListRequest::ExportType::OrSymbol,
             format_: HubspotSDK::Crm::PublicExportListRequest::Format::OrSymbol,
+            include_labeled_associations: T::Boolean,
+            include_primary_display_property_for_associated_objects: T::Boolean,
             language:
               HubspotSDK::Crm::PublicExportListRequest::Language::OrSymbol,
             list_id: String,
             object_properties: T::Array[String],
             object_type: String,
-            override_associated_objects_per_definition_per_row_limit:
-              T::Boolean,
-            associated_object_type: String
+            override_associated_objects_per_definition_per_row_limit: T::Boolean
           ).returns(T.attached_class)
         end
         def self.new(
+          associated_object_type:,
           export_internal_values_options:,
           export_name:,
           export_type:,
           format_:,
+          include_labeled_associations:,
+          include_primary_display_property_for_associated_objects:,
           language:,
           list_id:,
           object_properties:,
           object_type:,
-          override_associated_objects_per_definition_per_row_limit:,
-          associated_object_type: nil
+          override_associated_objects_per_definition_per_row_limit:
         )
         end
 
         sig do
           override.returns(
             {
+              associated_object_type: T::Array[String],
               export_internal_values_options:
                 T::Array[
                   HubspotSDK::Crm::PublicExportListRequest::ExportInternalValuesOption::OrSymbol
@@ -105,14 +112,16 @@ module HubspotSDK
                 HubspotSDK::Crm::PublicExportListRequest::ExportType::OrSymbol,
               format_:
                 HubspotSDK::Crm::PublicExportListRequest::Format::OrSymbol,
+              include_labeled_associations: T::Boolean,
+              include_primary_display_property_for_associated_objects:
+                T::Boolean,
               language:
                 HubspotSDK::Crm::PublicExportListRequest::Language::OrSymbol,
               list_id: String,
               object_properties: T::Array[String],
               object_type: String,
               override_associated_objects_per_definition_per_row_limit:
-                T::Boolean,
-              associated_object_type: String
+                T::Boolean
             }
           )
         end

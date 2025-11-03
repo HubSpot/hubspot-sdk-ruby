@@ -66,6 +66,8 @@ module HubspotSDK
           NOT_IN = :NOT_IN
           HAS_PROPERTY = :HAS_PROPERTY
           NOT_HAS_PROPERTY = :NOT_HAS_PROPERTY
+          CONTAINS_TOKEN = :CONTAINS_TOKEN
+          NOT_CONTAINS_TOKEN = :NOT_CONTAINS_TOKEN
 
           # @!method self.values
           #   @return [Array<Symbol>]

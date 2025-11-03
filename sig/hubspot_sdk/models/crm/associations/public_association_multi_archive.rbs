@@ -1,0 +1,29 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Associations
+        type public_association_multi_archive =
+          {
+            from: HubspotSDK::PublicObjectID,
+            to: ::Array[HubspotSDK::PublicObjectID]
+          }
+
+        class PublicAssociationMultiArchive < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor from: HubspotSDK::PublicObjectID
+
+          attr_accessor to: ::Array[HubspotSDK::PublicObjectID]
+
+          def initialize: (
+            from: HubspotSDK::PublicObjectID,
+            to: ::Array[HubspotSDK::PublicObjectID]
+          ) -> void
+
+          def to_hash: -> {
+            from: HubspotSDK::PublicObjectID,
+            to: ::Array[HubspotSDK::PublicObjectID]
+          }
+        end
+      end
+    end
+  end
+end

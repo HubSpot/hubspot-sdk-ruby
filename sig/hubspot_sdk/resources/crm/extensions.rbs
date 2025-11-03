@@ -8,8 +8,6 @@ module HubspotSDK
 
         attr_reader video_conferencing: HubspotSDK::Resources::Crm::Extensions::VideoConferencing
 
-        attr_reader videoconferencing: HubspotSDK::Resources::Crm::Extensions::Videoconferencing
-
         def initialize: (client: HubspotSDK::Client) -> void
       end
     end

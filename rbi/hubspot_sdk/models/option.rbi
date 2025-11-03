@@ -8,72 +8,68 @@ module HubspotSDK
           T.any(HubspotSDK::Option, HubspotSDK::Internal::AnyHash)
         end
 
-      # A description of the option.
-      sig { returns(String) }
-      attr_accessor :description
-
-      # The position of the item relative to others in the list.
-      sig { returns(Integer) }
-      attr_accessor :display_order
-
-      sig { returns(Float) }
-      attr_accessor :double_data
-
-      # Whether the option is displayed in HubSpot's UI.
+      # Hidden options will not be displayed in HubSpot.
       sig { returns(T::Boolean) }
       attr_accessor :hidden
 
-      # A user-friendly label that identifies the option.
+      # A human-readable option label that will be shown in HubSpot.
       sig { returns(String) }
       attr_accessor :label
 
-      # Whether the option is read-only.
-      sig { returns(T::Boolean) }
-      attr_accessor :read_only
-
-      # The actual value of the option.
+      # The internal value of the option, which must be used when setting the property
+      # value through the API.
       sig { returns(String) }
       attr_accessor :value
 
-      # A HubSpot property option
+      # A description of the option.
+      sig { returns(T.nilable(String)) }
+      attr_reader :description
+
+      sig { params(description: String).void }
+      attr_writer :description
+
+      # Options are displayed in order starting with the lowest positive integer value.
+      # Values of -1 will cause the option to be displayed after any positive values.
+      sig { returns(T.nilable(Integer)) }
+      attr_reader :display_order
+
+      sig { params(display_order: Integer).void }
+      attr_writer :display_order
+
+      # The options available when a property is an enumeration
       sig do
         params(
-          description: String,
-          display_order: Integer,
-          double_data: Float,
           hidden: T::Boolean,
           label: String,
-          read_only: T::Boolean,
-          value: String
+          value: String,
+          description: String,
+          display_order: Integer
         ).returns(T.attached_class)
       end
       def self.new(
-        # A description of the option.
-        description:,
-        # The position of the item relative to others in the list.
-        display_order:,
-        double_data:,
-        # Whether the option is displayed in HubSpot's UI.
+        # Hidden options will not be displayed in HubSpot.
         hidden:,
-        # A user-friendly label that identifies the option.
+        # A human-readable option label that will be shown in HubSpot.
         label:,
-        # Whether the option is read-only.
-        read_only:,
-        # The actual value of the option.
-        value:
+        # The internal value of the option, which must be used when setting the property
+        # value through the API.
+        value:,
+        # A description of the option.
+        description: nil,
+        # Options are displayed in order starting with the lowest positive integer value.
+        # Values of -1 will cause the option to be displayed after any positive values.
+        display_order: nil
       )
       end
 
       sig do
         override.returns(
           {
-            description: String,
-            display_order: Integer,
-            double_data: Float,
             hidden: T::Boolean,
             label: String,
-            read_only: T::Boolean,
-            value: String
+            value: String,
+            description: String,
+            display_order: Integer
           }
         )
       end

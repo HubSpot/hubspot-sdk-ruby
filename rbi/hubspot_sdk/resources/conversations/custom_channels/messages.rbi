@@ -41,7 +41,9 @@ module HubspotSDK
                 HubspotSDK::Conversations::PreResolvedContacts::OrHash,
               rich_text: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Conversations::PublicConversationsMessage)
+            ).returns(
+              HubspotSDK::Conversations::ConversationsPublicConversationsMessage
+            )
           end
           def create(
             channel_id,
@@ -72,7 +74,9 @@ module HubspotSDK
                 HubspotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::OrSymbol,
               error_message: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Conversations::PublicConversationsMessage)
+            ).returns(
+              HubspotSDK::Conversations::ConversationsPublicConversationsMessage
+            )
           end
           def update(
             # Path param:
@@ -93,7 +97,9 @@ module HubspotSDK
               message_id: String,
               channel_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Conversations::PublicConversationsMessage)
+            ).returns(
+              HubspotSDK::Conversations::ConversationsPublicConversationsMessage
+            )
           end
           def get(message_id, channel_id:, request_options: {})
           end

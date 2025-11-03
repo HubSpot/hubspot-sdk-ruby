@@ -17,17 +17,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::DefinitionsTest < Hubspo
             typeDefinition: {
               externalOptions: true,
               name: "name",
-              options: [
-                {
-                  description: "",
-                  displayOrder: 0,
-                  doubleData: 0,
-                  hidden: false,
-                  label: "",
-                  readOnly: false,
-                  value: ""
-                }
-              ],
+              options: [{hidden: false, label: "Option A", value: "A"}],
               type: :string
             }
           }

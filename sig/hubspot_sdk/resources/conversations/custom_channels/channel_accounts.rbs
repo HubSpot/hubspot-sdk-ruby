@@ -10,7 +10,7 @@ module HubspotSDK
             name: String,
             ?delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Conversations::PublicChannelAccount
+          ) -> HubspotSDK::Conversations::ConversationsPublicChannelAccount
 
           def update: (
             String channel_account_id,
@@ -18,7 +18,7 @@ module HubspotSDK
             ?authorized: bool,
             ?name: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Conversations::PublicChannelAccount
+          ) -> HubspotSDK::Conversations::ConversationsPublicChannelAccount
 
           def list: (
             String channel_id,
@@ -29,7 +29,7 @@ module HubspotSDK
             String channel_account_id,
             channel_id: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Conversations::PublicChannelAccount
+          ) -> HubspotSDK::Conversations::ConversationsPublicChannelAccount
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

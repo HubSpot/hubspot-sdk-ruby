@@ -26,15 +26,14 @@ module HubspotSDK
 
           # @!attribute body
           #
-          #   @return [Array<HubspotSDK::Models::Crm::Associations::AssociationSpec1>]
-          required :body,
-                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Associations::AssociationSpec1] }
+          #   @return [Array<HubspotSDK::Models::AssociationSpec>]
+          required :body, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AssociationSpec] }
 
           # @!method initialize(object_type:, object_id_:, to_object_type:, body:, request_options: {})
           #   @param object_type [String]
           #   @param object_id_ [String]
           #   @param to_object_type [String]
-          #   @param body [Array<HubspotSDK::Models::Crm::Associations::AssociationSpec1>]
+          #   @param body [Array<HubspotSDK::Models::AssociationSpec>]
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end

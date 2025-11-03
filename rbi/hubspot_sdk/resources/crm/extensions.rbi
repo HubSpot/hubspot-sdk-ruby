@@ -15,11 +15,6 @@ module HubspotSDK
         end
         attr_reader :video_conferencing
 
-        sig do
-          returns(HubspotSDK::Resources::Crm::Extensions::Videoconferencing)
-        end
-        attr_reader :videoconferencing
-
         # @api private
         sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
         def self.new(client:)

@@ -15,7 +15,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccount
       )
 
     assert_pattern do
-      response => HubspotSDK::Conversations::PublicChannelAccount
+      response => HubspotSDK::Conversations::ConversationsPublicChannelAccount
     end
 
     assert_pattern do
@@ -44,7 +44,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccount
       )
 
     assert_pattern do
-      response => HubspotSDK::Conversations::PublicChannelAccount
+      response => HubspotSDK::Conversations::ConversationsPublicChannelAccount
     end
 
     assert_pattern do
@@ -74,7 +74,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccount
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::PublicChannelAccount]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::ConversationsPublicChannelAccount]),
         total: Integer,
         paging: HubspotSDK::ForwardPaging | nil
       }
@@ -88,7 +88,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccount
       @hubspot.conversations.custom_channels.channel_accounts.get("channelAccountId", channel_id: "channelId")
 
     assert_pattern do
-      response => HubspotSDK::Conversations::PublicChannelAccount
+      response => HubspotSDK::Conversations::ConversationsPublicChannelAccount
     end
 
     assert_pattern do

@@ -63,7 +63,7 @@ module HubspotSDK
               translations:
                 T::Hash[
                   Symbol,
-                  HubspotSDK::Cms::ContentLanguageVariation::OrHash
+                  HubspotSDK::Cms::PagesContentLanguageVariation::OrHash
                 ],
               updated: Time,
               updated_by_id: String,
@@ -264,7 +264,7 @@ module HubspotSDK
               translations:
                 T::Hash[
                   Symbol,
-                  HubspotSDK::Cms::ContentLanguageVariation::OrHash
+                  HubspotSDK::Cms::PagesContentLanguageVariation::OrHash
                 ],
               updated: Time,
               updated_by_id: String,
@@ -912,7 +912,7 @@ module HubspotSDK
               translations:
                 T::Hash[
                   Symbol,
-                  HubspotSDK::Cms::ContentLanguageVariation::OrHash
+                  HubspotSDK::Cms::PagesContentLanguageVariation::OrHash
                 ],
               updated: Time,
               updated_by_id: String,

@@ -5,9 +5,6 @@ module HubspotSDK
     class Crm
       class Associations
         class Schema
-          # @return [HubspotSDK::Resources::Crm::Associations::Schema::V4]
-          attr_reader :v4
-
           # @overload list(to_object_type, from_object_type:, request_options: {})
           #
           # @param to_object_type [String]
@@ -36,7 +33,6 @@ module HubspotSDK
           # @param client [HubspotSDK::Client]
           def initialize(client:)
             @client = client
-            @v4 = HubspotSDK::Resources::Crm::Associations::Schema::V4.new(client: client)
           end
         end
       end
