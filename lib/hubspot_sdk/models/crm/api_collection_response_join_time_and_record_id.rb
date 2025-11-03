@@ -12,8 +12,8 @@ module HubspotSDK
         # @!attribute paging
         #   Contains information pagination of results.
         #
-        #   @return [HubspotSDK::Models::Marketing::Paging, nil]
-        optional :paging, -> { HubspotSDK::Marketing::Paging }
+        #   @return [HubspotSDK::Models::Marketing::EmailsPaging, nil]
+        optional :paging, -> { HubspotSDK::Marketing::EmailsPaging }
 
         # @!attribute total
         #
@@ -23,7 +23,7 @@ module HubspotSDK
         # @!method initialize(results:, paging: nil, total: nil)
         #   @param results [Array<HubspotSDK::Models::Crm::JoinTimeAndRecordID>]
         #
-        #   @param paging [HubspotSDK::Models::Marketing::Paging] Contains information pagination of results.
+        #   @param paging [HubspotSDK::Models::Marketing::EmailsPaging] Contains information pagination of results.
         #
         #   @param total [Integer]
       end

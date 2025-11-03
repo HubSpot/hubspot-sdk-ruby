@@ -20,7 +20,7 @@ module HubspotSDK
             object_type: String,
             object_id_: String,
             to_object_type: String,
-            body: ::Array[HubspotSDK::Crm::Associations::AssociationSpec1],
+            body: ::Array[HubspotSDK::AssociationSpec],
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Crm::CreatedResponseLabelsBetweenObjectPair
 

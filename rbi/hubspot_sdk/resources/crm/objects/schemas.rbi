@@ -59,7 +59,9 @@ module HubspotSDK
               searchable_properties: T::Array[String],
               secondary_display_properties: T::Array[String],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::Objects::ObjectTypeDefinition)
+            ).returns(
+              HubspotSDK::Crm::Objects::ObjectsSchemasObjectTypeDefinition
+            )
           end
           def update(
             # Fully qualified name or object type ID of your schema.

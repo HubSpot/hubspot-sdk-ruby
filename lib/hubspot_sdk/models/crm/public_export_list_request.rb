@@ -4,6 +4,13 @@ module HubspotSDK
   module Models
     module Crm
       class PublicExportListRequest < HubspotSDK::Internal::Type::BaseModel
+        # @!attribute associated_object_type
+        #
+        #   @return [Array<String>]
+        required :associated_object_type,
+                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 api_name: :associatedObjectType
+
         # @!attribute export_internal_values_options
         #
         #   @return [Array<Symbol, HubspotSDK::Models::Crm::PublicExportListRequest::ExportInternalValuesOption>]
@@ -29,6 +36,20 @@ module HubspotSDK
         #
         #   @return [Symbol, HubspotSDK::Models::Crm::PublicExportListRequest::Format]
         required :format_, enum: -> { HubspotSDK::Crm::PublicExportListRequest::Format }, api_name: :format
+
+        # @!attribute include_labeled_associations
+        #
+        #   @return [Boolean]
+        required :include_labeled_associations,
+                 HubspotSDK::Internal::Type::Boolean,
+                 api_name: :includeLabeledAssociations
+
+        # @!attribute include_primary_display_property_for_associated_objects
+        #
+        #   @return [Boolean]
+        required :include_primary_display_property_for_associated_objects,
+                 HubspotSDK::Internal::Type::Boolean,
+                 api_name: :includePrimaryDisplayPropertyForAssociatedObjects
 
         # @!attribute language
         #
@@ -57,22 +78,19 @@ module HubspotSDK
                  HubspotSDK::Internal::Type::Boolean,
                  api_name: :overrideAssociatedObjectsPerDefinitionPerRowLimit
 
-        # @!attribute associated_object_type
-        #
-        #   @return [String, nil]
-        optional :associated_object_type, String, api_name: :associatedObjectType
-
-        # @!method initialize(export_internal_values_options:, export_name:, export_type:, format_:, language:, list_id:, object_properties:, object_type:, override_associated_objects_per_definition_per_row_limit:, associated_object_type: nil)
+        # @!method initialize(associated_object_type:, export_internal_values_options:, export_name:, export_type:, format_:, include_labeled_associations:, include_primary_display_property_for_associated_objects:, language:, list_id:, object_properties:, object_type:, override_associated_objects_per_definition_per_row_limit:)
+        #   @param associated_object_type [Array<String>]
         #   @param export_internal_values_options [Array<Symbol, HubspotSDK::Models::Crm::PublicExportListRequest::ExportInternalValuesOption>]
         #   @param export_name [String]
         #   @param export_type [Symbol, HubspotSDK::Models::Crm::PublicExportListRequest::ExportType]
         #   @param format_ [Symbol, HubspotSDK::Models::Crm::PublicExportListRequest::Format]
+        #   @param include_labeled_associations [Boolean]
+        #   @param include_primary_display_property_for_associated_objects [Boolean]
         #   @param language [Symbol, HubspotSDK::Models::Crm::PublicExportListRequest::Language]
         #   @param list_id [String]
         #   @param object_properties [Array<String>]
         #   @param object_type [String]
         #   @param override_associated_objects_per_definition_per_row_limit [Boolean]
-        #   @param associated_object_type [String]
 
         module ExportInternalValuesOption
           extend HubspotSDK::Internal::Type::Enum

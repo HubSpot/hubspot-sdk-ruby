@@ -112,7 +112,7 @@ module HubspotSDK
           #
           # @param translated_from_id [String] ID of the primary page this object was translated from.
           #
-          # @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::ContentLanguageVariation}]
+          # @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::PagesContentLanguageVariation}]
           #
           # @param updated [Time]
           #
@@ -253,7 +253,7 @@ module HubspotSDK
           #
           # @param translated_from_id [String] Body param: ID of the primary page this object was translated from.
           #
-          # @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::ContentLanguageVariation}] Body param:
+          # @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::PagesContentLanguageVariation}] Body param:
           #
           # @param updated [Time] Body param:
           #
@@ -1000,7 +1000,7 @@ module HubspotSDK
           #
           # @param translated_from_id [String] ID of the primary page this object was translated from.
           #
-          # @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::ContentLanguageVariation}]
+          # @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::PagesContentLanguageVariation}]
           #
           # @param updated [Time]
           #

@@ -82,7 +82,7 @@ class HubspotSDK::Test::Resources::Crm::PropertiesTest < HubspotSDK::Test::Resou
     assert_pattern do
       response => {
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property]),
-        paging: HubspotSDK::Marketing::Paging | nil
+        paging: HubspotSDK::Marketing::EmailsPaging | nil
       }
     end
   end

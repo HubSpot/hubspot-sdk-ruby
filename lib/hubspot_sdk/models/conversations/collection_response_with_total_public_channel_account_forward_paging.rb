@@ -6,9 +6,9 @@ module HubspotSDK
       class CollectionResponseWithTotalPublicChannelAccountForwardPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Conversations::PublicChannelAccount>]
+        #   @return [Array<HubspotSDK::Models::Conversations::ConversationsPublicChannelAccount>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::PublicChannelAccount] }
+                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::ConversationsPublicChannelAccount] }
 
         # @!attribute total
         #
@@ -21,7 +21,7 @@ module HubspotSDK
         optional :paging, -> { HubspotSDK::ForwardPaging }
 
         # @!method initialize(results:, total:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Conversations::PublicChannelAccount>]
+        #   @param results [Array<HubspotSDK::Models::Conversations::ConversationsPublicChannelAccount>]
         #   @param total [Integer]
         #   @param paging [HubspotSDK::Models::ForwardPaging]
       end

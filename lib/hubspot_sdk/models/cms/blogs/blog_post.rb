@@ -353,9 +353,9 @@ module HubspotSDK
 
           # @!attribute translations
           #
-          #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::ContentLanguageVariation}]
+          #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::PagesContentLanguageVariation}]
           required :translations,
-                   -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::ContentLanguageVariation] }
+                   -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::PagesContentLanguageVariation] }
 
           # @!attribute updated
           #
@@ -509,7 +509,7 @@ module HubspotSDK
           #
           #   @param translated_from_id [String] ID of the primary blog post that this post was translated from.
           #
-          #   @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::ContentLanguageVariation}]
+          #   @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::PagesContentLanguageVariation}]
           #
           #   @param updated [Time]
           #

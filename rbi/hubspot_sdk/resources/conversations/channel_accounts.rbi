@@ -18,7 +18,9 @@ module HubspotSDK
           params(
             channel_account_id: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Conversations::PublicChannelAccount)
+          ).returns(
+            HubspotSDK::Conversations::ConversationsPublicChannelAccount
+          )
         end
         def get(channel_account_id, request_options: {})
         end

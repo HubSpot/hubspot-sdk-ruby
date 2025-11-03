@@ -9,7 +9,7 @@ module HubspotSDK
         def get: (
           String channel_account_id,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Conversations::PublicChannelAccount
+        ) -> HubspotSDK::Conversations::ConversationsPublicChannelAccount
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

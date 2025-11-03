@@ -14,7 +14,7 @@ class HubspotSDK::Test::Resources::Conversations::ChannelAccountsTest < HubspotS
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::PublicChannelAccount]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::ConversationsPublicChannelAccount]),
         total: Integer,
         paging: HubspotSDK::ForwardPaging | nil
       }
@@ -27,7 +27,7 @@ class HubspotSDK::Test::Resources::Conversations::ChannelAccountsTest < HubspotS
     response = @hubspot.conversations.channel_accounts.get("channelAccountId")
 
     assert_pattern do
-      response => HubspotSDK::Conversations::PublicChannelAccount
+      response => HubspotSDK::Conversations::ConversationsPublicChannelAccount
     end
 
     assert_pattern do

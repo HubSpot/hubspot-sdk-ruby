@@ -18,8 +18,13 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :file_usage_type
 
-        sig { returns(HubspotSDK::Conversations::PublicFile::Type::OrSymbol) }
+        sig do
+          returns(HubspotSDK::Conversations::PublicFile::Type::TaggedSymbol)
+        end
         attr_accessor :type
+
+        sig { returns(String) }
+        attr_accessor :url
 
         sig { returns(T.nilable(String)) }
         attr_reader :name
@@ -27,22 +32,16 @@ module HubspotSDK
         sig { params(name: String).void }
         attr_writer :name
 
-        sig { returns(T.nilable(String)) }
-        attr_reader :url
-
-        sig { params(url: String).void }
-        attr_writer :url
-
         sig do
           params(
             file_id: String,
             file_usage_type: String,
             type: HubspotSDK::Conversations::PublicFile::Type::OrSymbol,
-            name: String,
-            url: String
+            url: String,
+            name: String
           ).returns(T.attached_class)
         end
-        def self.new(file_id:, file_usage_type:, type:, name: nil, url: nil)
+        def self.new(file_id:, file_usage_type:, type:, url:, name: nil)
         end
 
         sig do
@@ -50,9 +49,9 @@ module HubspotSDK
             {
               file_id: String,
               file_usage_type: String,
-              type: HubspotSDK::Conversations::PublicFile::Type::OrSymbol,
-              name: String,
-              url: String
+              type: HubspotSDK::Conversations::PublicFile::Type::TaggedSymbol,
+              url: String,
+              name: String
             }
           )
         end

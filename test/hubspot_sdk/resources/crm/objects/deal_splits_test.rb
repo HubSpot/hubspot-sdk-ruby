@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::DealSplitsTest < HubspotSDK::Te
   def test_batch_read_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.crm.objects.deal_splits.batch_read(inputs: [{id: "id"}])
+    response = @hubspot.crm.objects.deal_splits.batch_read(inputs: [{id: "37295"}])
 
     assert_pattern do
       response => HubspotSDK::Crm::Objects::BatchResponseDealToDealSplits

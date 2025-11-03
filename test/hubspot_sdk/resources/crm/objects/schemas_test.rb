@@ -55,7 +55,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::SchemasTest < HubspotSDK::Test:
     response = @hubspot.crm.objects.schemas.update("objectType")
 
     assert_pattern do
-      response => HubspotSDK::Crm::Objects::ObjectTypeDefinition
+      response => HubspotSDK::Crm::Objects::ObjectsSchemasObjectTypeDefinition
     end
 
     assert_pattern do

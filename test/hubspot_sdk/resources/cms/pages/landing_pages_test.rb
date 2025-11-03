@@ -331,7 +331,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
         template_path: String,
         theme_settings_values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
         translated_from_id: String,
-        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::ContentLanguageVariation]),
+        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::PagesContentLanguageVariation]),
         updated: Time,
         updated_by_id: String,
         url: String,
@@ -410,7 +410,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
         template_path: String,
         theme_settings_values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
         translated_from_id: String,
-        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::ContentLanguageVariation]),
+        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::PagesContentLanguageVariation]),
         updated: Time,
         updated_by_id: String,
         url: String,
@@ -507,7 +507,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
         template_path: String,
         theme_settings_values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
         translated_from_id: String,
-        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::ContentLanguageVariation]),
+        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::PagesContentLanguageVariation]),
         updated: Time,
         updated_by_id: String,
         url: String,
@@ -583,7 +583,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
         template_path: String,
         theme_settings_values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
         translated_from_id: String,
-        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::ContentLanguageVariation]),
+        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::PagesContentLanguageVariation]),
         updated: Time,
         updated_by_id: String,
         url: String,
@@ -873,7 +873,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
         template_path: String,
         theme_settings_values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
         translated_from_id: String,
-        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::ContentLanguageVariation]),
+        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::PagesContentLanguageVariation]),
         updated: Time,
         updated_by_id: String,
         url: String,
@@ -995,7 +995,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
         template_path: String,
         theme_settings_values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
         translated_from_id: String,
-        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::ContentLanguageVariation]),
+        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::PagesContentLanguageVariation]),
         updated: Time,
         updated_by_id: String,
         url: String,
@@ -1088,7 +1088,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
         template_path: String,
         theme_settings_values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
         translated_from_id: String,
-        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::ContentLanguageVariation]),
+        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::PagesContentLanguageVariation]),
         updated: Time,
         updated_by_id: String,
         url: String,
@@ -1193,7 +1193,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
       response => {
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::VersionContentFolder]),
         total: Integer,
-        paging: HubspotSDK::Marketing::Paging | nil
+        paging: HubspotSDK::Marketing::EmailsPaging | nil
       }
     end
   end
@@ -1229,7 +1229,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
       response => {
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::VersionPage]),
         total: Integer,
-        paging: HubspotSDK::Marketing::Paging | nil
+        paging: HubspotSDK::Marketing::EmailsPaging | nil
       }
     end
   end
@@ -1348,7 +1348,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
         template_path: String,
         theme_settings_values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
         translated_from_id: String,
-        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::ContentLanguageVariation]),
+        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::PagesContentLanguageVariation]),
         updated: Time,
         updated_by_id: String,
         url: String,
@@ -1420,7 +1420,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
         template_path: String,
         theme_settings_values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
         translated_from_id: String,
-        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::ContentLanguageVariation]),
+        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::PagesContentLanguageVariation]),
         updated: Time,
         updated_by_id: String,
         url: String,
@@ -1662,7 +1662,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
         template_path: String,
         theme_settings_values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
         translated_from_id: String,
-        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::ContentLanguageVariation]),
+        translations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::PagesContentLanguageVariation]),
         updated: Time,
         updated_by_id: String,
         url: String,

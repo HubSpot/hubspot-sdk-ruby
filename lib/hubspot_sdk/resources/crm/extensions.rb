@@ -13,9 +13,6 @@ module HubspotSDK
         # @return [HubspotSDK::Resources::Crm::Extensions::VideoConferencing]
         attr_reader :video_conferencing
 
-        # @return [HubspotSDK::Resources::Crm::Extensions::Videoconferencing]
-        attr_reader :videoconferencing
-
         # @api private
         #
         # @param client [HubspotSDK::Client]
@@ -24,7 +21,6 @@ module HubspotSDK
           @calling = HubspotSDK::Resources::Crm::Extensions::Calling.new(client: client)
           @cards = HubspotSDK::Resources::Crm::Extensions::Cards.new(client: client)
           @video_conferencing = HubspotSDK::Resources::Crm::Extensions::VideoConferencing.new(client: client)
-          @videoconferencing = HubspotSDK::Resources::Crm::Extensions::Videoconferencing.new(client: client)
         end
       end
     end

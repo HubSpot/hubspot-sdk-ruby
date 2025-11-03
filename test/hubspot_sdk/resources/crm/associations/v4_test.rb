@@ -24,7 +24,7 @@ class HubspotSDK::Test::Resources::Crm::Associations::V4Test < HubspotSDK::Test:
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicDefaultAssociation]),
         started_at: Time,
         status: HubspotSDK::Crm::BatchResponsePublicDefaultAssociation::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Associations::StandardError1]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil

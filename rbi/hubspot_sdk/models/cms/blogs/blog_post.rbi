@@ -235,7 +235,9 @@ module HubspotSDK
           attr_accessor :translated_from_id
 
           sig do
-            returns(T::Hash[Symbol, HubspotSDK::Cms::ContentLanguageVariation])
+            returns(
+              T::Hash[Symbol, HubspotSDK::Cms::PagesContentLanguageVariation]
+            )
           end
           attr_accessor :translations
 
@@ -326,7 +328,7 @@ module HubspotSDK
               translations:
                 T::Hash[
                   Symbol,
-                  HubspotSDK::Cms::ContentLanguageVariation::OrHash
+                  HubspotSDK::Cms::PagesContentLanguageVariation::OrHash
                 ],
               updated: Time,
               updated_by_id: String,
@@ -521,7 +523,10 @@ module HubspotSDK
                 theme_settings_values: T::Hash[Symbol, T.anything],
                 translated_from_id: String,
                 translations:
-                  T::Hash[Symbol, HubspotSDK::Cms::ContentLanguageVariation],
+                  T::Hash[
+                    Symbol,
+                    HubspotSDK::Cms::PagesContentLanguageVariation
+                  ],
                 updated: Time,
                 updated_by_id: String,
                 url: String,

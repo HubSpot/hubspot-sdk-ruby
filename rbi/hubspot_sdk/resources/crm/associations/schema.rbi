@@ -5,9 +5,6 @@ module HubspotSDK
     class Crm
       class Associations
         class Schema
-          sig { returns(HubspotSDK::Resources::Crm::Associations::Schema::V4) }
-          attr_reader :v4
-
           sig do
             params(
               to_object_type: String,

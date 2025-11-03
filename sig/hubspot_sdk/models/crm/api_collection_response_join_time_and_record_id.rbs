@@ -4,18 +4,18 @@ module HubspotSDK
       type api_collection_response_join_time_and_record_id =
         {
           results: ::Array[HubspotSDK::Crm::JoinTimeAndRecordID],
-          paging: HubspotSDK::Marketing::Paging,
+          paging: HubspotSDK::Marketing::EmailsPaging,
           total: Integer
         }
 
       class APICollectionResponseJoinTimeAndRecordID < HubspotSDK::Internal::Type::BaseModel
         attr_accessor results: ::Array[HubspotSDK::Crm::JoinTimeAndRecordID]
 
-        attr_reader paging: HubspotSDK::Marketing::Paging?
+        attr_reader paging: HubspotSDK::Marketing::EmailsPaging?
 
         def paging=: (
-          HubspotSDK::Marketing::Paging
-        ) -> HubspotSDK::Marketing::Paging
+          HubspotSDK::Marketing::EmailsPaging
+        ) -> HubspotSDK::Marketing::EmailsPaging
 
         attr_reader total: Integer?
 
@@ -23,13 +23,13 @@ module HubspotSDK
 
         def initialize: (
           results: ::Array[HubspotSDK::Crm::JoinTimeAndRecordID],
-          ?paging: HubspotSDK::Marketing::Paging,
+          ?paging: HubspotSDK::Marketing::EmailsPaging,
           ?total: Integer
         ) -> void
 
         def to_hash: -> {
           results: ::Array[HubspotSDK::Crm::JoinTimeAndRecordID],
-          paging: HubspotSDK::Marketing::Paging,
+          paging: HubspotSDK::Marketing::EmailsPaging,
           total: Integer
         }
       end

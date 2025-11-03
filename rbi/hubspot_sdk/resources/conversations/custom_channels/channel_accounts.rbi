@@ -16,7 +16,9 @@ module HubspotSDK
               delivery_identifier:
                 HubspotSDK::Conversations::PublicDeliveryIdentifier::OrHash,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Conversations::PublicChannelAccount)
+            ).returns(
+              HubspotSDK::Conversations::ConversationsPublicChannelAccount
+            )
           end
           def create(
             channel_id,
@@ -37,7 +39,9 @@ module HubspotSDK
               authorized: T::Boolean,
               name: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Conversations::PublicChannelAccount)
+            ).returns(
+              HubspotSDK::Conversations::ConversationsPublicChannelAccount
+            )
           end
           def update(
             # Path param:
@@ -72,7 +76,9 @@ module HubspotSDK
               channel_account_id: String,
               channel_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Conversations::PublicChannelAccount)
+            ).returns(
+              HubspotSDK::Conversations::ConversationsPublicChannelAccount
+            )
           end
           def get(channel_account_id, channel_id:, request_options: {})
           end

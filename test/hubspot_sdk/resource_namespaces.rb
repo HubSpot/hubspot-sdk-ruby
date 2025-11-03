@@ -10,9 +10,6 @@ module HubspotSDK
       end
 
       module Associations
-        module Schema
-        end
-
         module V4
         end
       end
@@ -88,9 +85,6 @@ module HubspotSDK
 
       module Crm
         module Associations
-          module Schema
-          end
-
           module V4
           end
         end
@@ -452,9 +446,6 @@ module HubspotSDK
       module Scheduler
         module Meetings
         end
-      end
-
-      module Schema
       end
 
       module Sequences

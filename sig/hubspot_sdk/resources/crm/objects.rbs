@@ -2,8 +2,6 @@ module HubspotSDK
   module Resources
     class Crm
       class Objects
-        attr_reader appointments: HubspotSDK::Resources::Crm::Objects::Appointments
-
         attr_reader calls: HubspotSDK::Resources::Crm::Objects::Calls
 
         attr_reader carts: HubspotSDK::Resources::Crm::Objects::Carts

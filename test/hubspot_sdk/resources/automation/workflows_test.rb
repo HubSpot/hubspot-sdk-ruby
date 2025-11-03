@@ -152,7 +152,7 @@ class HubspotSDK::Test::Resources::Automation::WorkflowsTest < HubspotSDK::Test:
     assert_pattern do
       response => {
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::APIFlowEmailCampaign]),
-        paging: HubspotSDK::Marketing::Paging | nil
+        paging: HubspotSDK::Marketing::EmailsPaging | nil
       }
     end
   end

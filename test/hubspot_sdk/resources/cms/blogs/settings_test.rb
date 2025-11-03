@@ -157,7 +157,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::SettingsTest < HubspotSDK::Test::
       response => {
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Blogs::VersionBlog]),
         total: Integer,
-        paging: HubspotSDK::Marketing::Paging | nil
+        paging: HubspotSDK::Marketing::EmailsPaging | nil
       }
     end
   end

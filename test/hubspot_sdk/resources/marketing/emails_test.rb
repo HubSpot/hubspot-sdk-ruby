@@ -568,7 +568,7 @@ class HubspotSDK::Test::Resources::Marketing::EmailsTest < HubspotSDK::Test::Res
       response => {
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::VersionPublicEmail]),
         total: Integer,
-        paging: HubspotSDK::Marketing::Paging | nil
+        paging: HubspotSDK::Marketing::EmailsPaging | nil
       }
     end
   end

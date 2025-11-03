@@ -3,26 +3,26 @@ module HubspotSDK
     module Crm
       type public_default_association =
         {
-          association_spec: HubspotSDK::AssociationSpec,
+          association_spec: HubspotSDK::Crm::Associations::AssociationSpec1,
           from: HubspotSDK::PublicObjectID,
           to: HubspotSDK::PublicObjectID
         }
 
       class PublicDefaultAssociation < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor association_spec: HubspotSDK::AssociationSpec
+        attr_accessor association_spec: HubspotSDK::Crm::Associations::AssociationSpec1
 
         attr_accessor from: HubspotSDK::PublicObjectID
 
         attr_accessor to: HubspotSDK::PublicObjectID
 
         def initialize: (
-          association_spec: HubspotSDK::AssociationSpec,
+          association_spec: HubspotSDK::Crm::Associations::AssociationSpec1,
           from: HubspotSDK::PublicObjectID,
           to: HubspotSDK::PublicObjectID
         ) -> void
 
         def to_hash: -> {
-          association_spec: HubspotSDK::AssociationSpec,
+          association_spec: HubspotSDK::Crm::Associations::AssociationSpec1,
           from: HubspotSDK::PublicObjectID,
           to: HubspotSDK::PublicObjectID
         }

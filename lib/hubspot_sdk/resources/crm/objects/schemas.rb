@@ -69,7 +69,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::Objects::ObjectTypeDefinition]
+          # @return [HubspotSDK::Models::Crm::Objects::ObjectsSchemasObjectTypeDefinition]
           #
           # @see HubspotSDK::Models::Crm::Objects::SchemaUpdateParams
           def update(object_type, params = {})
@@ -78,7 +78,7 @@ module HubspotSDK
               method: :patch,
               path: ["crm-object-schemas/v3/schemas/%1$s", object_type],
               body: parsed,
-              model: HubspotSDK::Crm::Objects::ObjectTypeDefinition,
+              model: HubspotSDK::Crm::Objects::ObjectsSchemasObjectTypeDefinition,
               options: options
             )
           end

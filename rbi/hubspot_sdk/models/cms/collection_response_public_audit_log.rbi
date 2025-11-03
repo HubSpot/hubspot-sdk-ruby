@@ -16,17 +16,17 @@ module HubspotSDK
         attr_accessor :results
 
         # Contains information pagination of results.
-        sig { returns(T.nilable(HubspotSDK::Marketing::Paging)) }
+        sig { returns(T.nilable(HubspotSDK::Marketing::EmailsPaging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::Marketing::Paging::OrHash).void }
+        sig { params(paging: HubspotSDK::Marketing::EmailsPaging::OrHash).void }
         attr_writer :paging
 
         # The collection of audit logs.
         sig do
           params(
             results: T::Array[HubspotSDK::Cms::PublicAuditLog::OrHash],
-            paging: HubspotSDK::Marketing::Paging::OrHash
+            paging: HubspotSDK::Marketing::EmailsPaging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -40,7 +40,7 @@ module HubspotSDK
           override.returns(
             {
               results: T::Array[HubspotSDK::Cms::PublicAuditLog],
-              paging: HubspotSDK::Marketing::Paging
+              paging: HubspotSDK::Marketing::EmailsPaging
             }
           )
         end

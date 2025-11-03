@@ -14,11 +14,14 @@ module HubspotSDK
 
         # Defines the type, direction, and details of the relationship between two CRM
         # objects.
-        sig { returns(HubspotSDK::AssociationSpec) }
+        sig { returns(HubspotSDK::Crm::Associations::AssociationSpec1) }
         attr_reader :association_spec
 
         sig do
-          params(association_spec: HubspotSDK::AssociationSpec::OrHash).void
+          params(
+            association_spec:
+              HubspotSDK::Crm::Associations::AssociationSpec1::OrHash
+          ).void
         end
         attr_writer :association_spec
 
@@ -36,7 +39,8 @@ module HubspotSDK
 
         sig do
           params(
-            association_spec: HubspotSDK::AssociationSpec::OrHash,
+            association_spec:
+              HubspotSDK::Crm::Associations::AssociationSpec1::OrHash,
             from: HubspotSDK::PublicObjectID::OrHash,
             to: HubspotSDK::PublicObjectID::OrHash
           ).returns(T.attached_class)
@@ -53,7 +57,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              association_spec: HubspotSDK::AssociationSpec,
+              association_spec: HubspotSDK::Crm::Associations::AssociationSpec1,
               from: HubspotSDK::PublicObjectID,
               to: HubspotSDK::PublicObjectID
             }

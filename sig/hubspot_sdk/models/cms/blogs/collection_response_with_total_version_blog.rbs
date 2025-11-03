@@ -6,7 +6,7 @@ module HubspotSDK
           {
             results: ::Array[HubspotSDK::Cms::Blogs::VersionBlog],
             total: Integer,
-            paging: HubspotSDK::Marketing::Paging
+            paging: HubspotSDK::Marketing::EmailsPaging
           }
 
         class CollectionResponseWithTotalVersionBlog < HubspotSDK::Internal::Type::BaseModel
@@ -14,22 +14,22 @@ module HubspotSDK
 
           attr_accessor total: Integer
 
-          attr_reader paging: HubspotSDK::Marketing::Paging?
+          attr_reader paging: HubspotSDK::Marketing::EmailsPaging?
 
           def paging=: (
-            HubspotSDK::Marketing::Paging
-          ) -> HubspotSDK::Marketing::Paging
+            HubspotSDK::Marketing::EmailsPaging
+          ) -> HubspotSDK::Marketing::EmailsPaging
 
           def initialize: (
             results: ::Array[HubspotSDK::Cms::Blogs::VersionBlog],
             total: Integer,
-            ?paging: HubspotSDK::Marketing::Paging
+            ?paging: HubspotSDK::Marketing::EmailsPaging
           ) -> void
 
           def to_hash: -> {
             results: ::Array[HubspotSDK::Cms::Blogs::VersionBlog],
             total: Integer,
-            paging: HubspotSDK::Marketing::Paging
+            paging: HubspotSDK::Marketing::EmailsPaging
           }
         end
       end

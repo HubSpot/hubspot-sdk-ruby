@@ -16,13 +16,15 @@ module HubspotSDK
         attr_accessor :all_labels
 
         # Defines an object type.
-        sig { returns(HubspotSDK::Crm::Objects::ObjectTypeDefinition) }
+        sig do
+          returns(HubspotSDK::Crm::Objects::ObjectsSchemasObjectTypeDefinition)
+        end
         attr_reader :from_object_type
 
         sig do
           params(
             from_object_type:
-              HubspotSDK::Crm::Objects::ObjectTypeDefinition::OrHash
+              HubspotSDK::Crm::Objects::ObjectsSchemasObjectTypeDefinition::OrHash
           ).void
         end
         attr_writer :from_object_type
@@ -34,13 +36,15 @@ module HubspotSDK
         attr_accessor :percentage
 
         # Defines an object type.
-        sig { returns(HubspotSDK::Crm::Objects::ObjectTypeDefinition) }
+        sig do
+          returns(HubspotSDK::Crm::Objects::ObjectsSchemasObjectTypeDefinition)
+        end
         attr_reader :to_object_type
 
         sig do
           params(
             to_object_type:
-              HubspotSDK::Crm::Objects::ObjectTypeDefinition::OrHash
+              HubspotSDK::Crm::Objects::ObjectsSchemasObjectTypeDefinition::OrHash
           ).void
         end
         attr_writer :to_object_type
@@ -52,11 +56,11 @@ module HubspotSDK
           params(
             all_labels: T::Array[String],
             from_object_type:
-              HubspotSDK::Crm::Objects::ObjectTypeDefinition::OrHash,
+              HubspotSDK::Crm::Objects::ObjectsSchemasObjectTypeDefinition::OrHash,
             limit: Integer,
             percentage: Float,
             to_object_type:
-              HubspotSDK::Crm::Objects::ObjectTypeDefinition::OrHash,
+              HubspotSDK::Crm::Objects::ObjectsSchemasObjectTypeDefinition::OrHash,
             usage: Integer
           ).returns(T.attached_class)
         end
@@ -76,10 +80,12 @@ module HubspotSDK
           override.returns(
             {
               all_labels: T::Array[String],
-              from_object_type: HubspotSDK::Crm::Objects::ObjectTypeDefinition,
+              from_object_type:
+                HubspotSDK::Crm::Objects::ObjectsSchemasObjectTypeDefinition,
               limit: Integer,
               percentage: Float,
-              to_object_type: HubspotSDK::Crm::Objects::ObjectTypeDefinition,
+              to_object_type:
+                HubspotSDK::Crm::Objects::ObjectsSchemasObjectTypeDefinition,
               usage: Integer
             }
           )

@@ -14,7 +14,7 @@ class HubspotSDK::Test::Resources::Conversations::MessagesTest < HubspotSDK::Tes
 
     assert_pattern do
       case response
-      in HubspotSDK::Conversations::PublicConversationsMessage
+      in HubspotSDK::Conversations::ConversationsPublicConversationsMessage
       in HubspotSDK::Conversations::PublicComment
       in HubspotSDK::Conversations::PublicWelcomeMessage
       in HubspotSDK::Conversations::PublicAssignmentMessage
@@ -52,7 +52,7 @@ class HubspotSDK::Test::Resources::Conversations::MessagesTest < HubspotSDK::Tes
 
     assert_pattern do
       case response
-      in HubspotSDK::Conversations::PublicConversationsMessage
+      in HubspotSDK::Conversations::ConversationsPublicConversationsMessage
       in HubspotSDK::Conversations::PublicComment
       in HubspotSDK::Conversations::PublicWelcomeMessage
       in HubspotSDK::Conversations::PublicAssignmentMessage
