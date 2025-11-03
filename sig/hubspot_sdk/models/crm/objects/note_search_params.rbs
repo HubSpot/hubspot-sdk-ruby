@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type note_search_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class NoteSearchParams < HubspotSDK::Models::CRM::PublicObjectSearchRequest
+        class NoteSearchParams < HubspotSDK::Models::Crm::PublicObjectSearchRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

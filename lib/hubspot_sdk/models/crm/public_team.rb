@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicTeam < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #

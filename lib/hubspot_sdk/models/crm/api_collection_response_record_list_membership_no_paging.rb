@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class APICollectionResponseRecordListMembershipNoPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::CRM::RecordListMembership>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::RecordListMembership] }
+        #   @return [Array<HubspotSDK::Models::Crm::RecordListMembership>]
+        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::RecordListMembership] }
 
         # @!attribute total
         #
@@ -15,7 +15,7 @@ module HubspotSDK
         optional :total, Integer
 
         # @!method initialize(results:, total: nil)
-        #   @param results [Array<HubspotSDK::Models::CRM::RecordListMembership>]
+        #   @param results [Array<HubspotSDK::Models::Crm::RecordListMembership>]
         #   @param total [Integer]
       end
     end

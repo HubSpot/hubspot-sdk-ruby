@@ -2,19 +2,19 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PortalFlagStatePutRequest < HubspotSDK::Internal::Type::BaseModel
         # @!attribute flag_state
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PortalFlagStatePutRequest::FlagState]
+        #   @return [Symbol, HubspotSDK::Models::Crm::PortalFlagStatePutRequest::FlagState]
         required :flag_state,
-                 enum: -> { HubspotSDK::CRM::PortalFlagStatePutRequest::FlagState },
+                 enum: -> { HubspotSDK::Crm::PortalFlagStatePutRequest::FlagState },
                  api_name: :flagState
 
         # @!method initialize(flag_state:)
-        #   @param flag_state [Symbol, HubspotSDK::Models::CRM::PortalFlagStatePutRequest::FlagState]
+        #   @param flag_state [Symbol, HubspotSDK::Models::Crm::PortalFlagStatePutRequest::FlagState]
 
-        # @see HubspotSDK::Models::CRM::PortalFlagStatePutRequest#flag_state
+        # @see HubspotSDK::Models::Crm::PortalFlagStatePutRequest#flag_state
         module FlagState
           extend HubspotSDK::Internal::Type::Enum
 

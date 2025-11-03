@@ -2,18 +2,18 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CollectionResponseObjectTypeNearOrAtAssociationLimitNoPaging < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::CollectionResponseObjectTypeNearOrAtAssociationLimitNoPaging,
+              HubspotSDK::Crm::CollectionResponseObjectTypeNearOrAtAssociationLimitNoPaging,
               HubspotSDK::Internal::AnyHash
             )
           end
 
         sig do
-          returns(T::Array[HubspotSDK::CRM::ObjectTypeNearOrAtAssociationLimit])
+          returns(T::Array[HubspotSDK::Crm::ObjectTypeNearOrAtAssociationLimit])
         end
         attr_accessor :results
 
@@ -21,7 +21,7 @@ module HubspotSDK
           params(
             results:
               T::Array[
-                HubspotSDK::CRM::ObjectTypeNearOrAtAssociationLimit::OrHash
+                HubspotSDK::Crm::ObjectTypeNearOrAtAssociationLimit::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -32,7 +32,7 @@ module HubspotSDK
           override.returns(
             {
               results:
-                T::Array[HubspotSDK::CRM::ObjectTypeNearOrAtAssociationLimit]
+                T::Array[HubspotSDK::Crm::ObjectTypeNearOrAtAssociationLimit]
             }
           )
         end

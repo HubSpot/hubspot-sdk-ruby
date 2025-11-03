@@ -4,7 +4,7 @@ module HubspotSDK
       type marketing_event_public_default_response_v2 =
         {
           created_at: Time,
-          custom_properties: ::Array[HubspotSDK::Marketing::CRMPropertyWrapper],
+          custom_properties: ::Array[HubspotSDK::Marketing::CrmPropertyWrapper],
           event_name: String,
           object_id_: String,
           updated_at: Time,
@@ -22,7 +22,7 @@ module HubspotSDK
       class MarketingEventPublicDefaultResponseV2 < HubspotSDK::Internal::Type::BaseModel
         attr_accessor created_at: Time
 
-        attr_accessor custom_properties: ::Array[HubspotSDK::Marketing::CRMPropertyWrapper]
+        attr_accessor custom_properties: ::Array[HubspotSDK::Marketing::CrmPropertyWrapper]
 
         attr_accessor event_name: String
 
@@ -70,7 +70,7 @@ module HubspotSDK
 
         def initialize: (
           created_at: Time,
-          custom_properties: ::Array[HubspotSDK::Marketing::CRMPropertyWrapper],
+          custom_properties: ::Array[HubspotSDK::Marketing::CrmPropertyWrapper],
           event_name: String,
           object_id_: String,
           updated_at: Time,
@@ -87,7 +87,7 @@ module HubspotSDK
 
         def to_hash: -> {
           created_at: Time,
-          custom_properties: ::Array[HubspotSDK::Marketing::CRMPropertyWrapper],
+          custom_properties: ::Array[HubspotSDK::Marketing::CrmPropertyWrapper],
           event_name: String,
           object_id_: String,
           updated_at: Time,

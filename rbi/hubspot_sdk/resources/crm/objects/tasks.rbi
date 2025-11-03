@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
         class Tasks
-          sig { returns(HubspotSDK::Resources::CRM::Objects::Tasks::Batch) }
+          sig { returns(HubspotSDK::Resources::Crm::Objects::Tasks::Batch) }
           attr_reader :batch
 
           # Create a task with the given properties and return a copy of the object,
@@ -15,9 +15,9 @@ module HubspotSDK
             params(
               properties: T::Hash[Symbol, String],
               associations:
-                T::Array[HubspotSDK::CRM::PublicAssociationsForObject::OrHash],
+                T::Array[HubspotSDK::Crm::PublicAssociationsForObject::OrHash],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::CreatedResponseSimplePublicObject)
+            ).returns(HubspotSDK::Crm::CreatedResponseSimplePublicObject)
           end
           def create(
             # Key-value pairs for setting properties for the new object.
@@ -39,7 +39,7 @@ module HubspotSDK
               properties: T::Hash[Symbol, String],
               id_property: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::SimplePublicObject)
+            ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
           def update(
             # Path param:
@@ -64,7 +64,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
               HubspotSDK::Internal::Page[
-                HubspotSDK::CRM::SimplePublicObjectWithAssociations
+                HubspotSDK::Crm::SimplePublicObjectWithAssociations
               ]
             )
           end
@@ -116,7 +116,7 @@ module HubspotSDK
               properties: T::Array[String],
               properties_with_history: T::Array[String],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::SimplePublicObjectWithAssociations)
+            ).returns(HubspotSDK::Crm::SimplePublicObjectWithAssociations)
           end
           def get(
             task_id,
@@ -142,14 +142,14 @@ module HubspotSDK
           sig do
             params(
               after: String,
-              filter_groups: T::Array[HubspotSDK::CRM::FilterGroup::OrHash],
+              filter_groups: T::Array[HubspotSDK::Crm::FilterGroup::OrHash],
               limit: Integer,
               properties: T::Array[String],
               query: String,
               sorts: T::Array[String],
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject
+              HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
             )
           end
           def search(

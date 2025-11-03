@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type at_limit_record_sample = { label: String, object_id_: Integer }
 
       class AtLimitRecordSample < HubspotSDK::Internal::Type::BaseModel

@@ -2,19 +2,19 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class PublicCardFetchBody < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::PublicCardFetchBody,
+                HubspotSDK::Crm::Extensions::PublicCardFetchBody,
                 HubspotSDK::Internal::AnyHash
               )
             end
 
           sig do
-            returns(T::Array[HubspotSDK::CRM::Extensions::CardObjectTypeBody])
+            returns(T::Array[HubspotSDK::Crm::Extensions::CardObjectTypeBody])
           end
           attr_accessor :object_types
 
@@ -25,7 +25,7 @@ module HubspotSDK
             params(
               object_types:
                 T::Array[
-                  HubspotSDK::CRM::Extensions::CardObjectTypeBody::OrHash
+                  HubspotSDK::Crm::Extensions::CardObjectTypeBody::OrHash
                 ],
               target_url: String
             ).returns(T.attached_class)
@@ -37,7 +37,7 @@ module HubspotSDK
             override.returns(
               {
                 object_types:
-                  T::Array[HubspotSDK::CRM::Extensions::CardObjectTypeBody],
+                  T::Array[HubspotSDK::Crm::Extensions::CardObjectTypeBody],
                 target_url: String
               }
             )

@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Extensions
         class Calling
           class Settings
@@ -22,9 +22,9 @@ module HubspotSDK
             #
             # @return [HubspotSDK::Models::Webhooks::SettingsResponse]
             #
-            # @see HubspotSDK::Models::CRM::Extensions::Calling::SettingCreateParams
+            # @see HubspotSDK::Models::Crm::Extensions::Calling::SettingCreateParams
             def create(app_id, params)
-              parsed, options = HubspotSDK::CRM::Extensions::Calling::SettingCreateParams.dump_request(params)
+              parsed, options = HubspotSDK::Crm::Extensions::Calling::SettingCreateParams.dump_request(params)
               @client.request(
                 method: :post,
                 path: ["crm/v3/extensions/calling/%1$s/settings", app_id],
@@ -50,9 +50,9 @@ module HubspotSDK
             #
             # @return [HubspotSDK::Models::Webhooks::SettingsResponse]
             #
-            # @see HubspotSDK::Models::CRM::Extensions::Calling::SettingUpdateParams
+            # @see HubspotSDK::Models::Crm::Extensions::Calling::SettingUpdateParams
             def update(app_id, params = {})
-              parsed, options = HubspotSDK::CRM::Extensions::Calling::SettingUpdateParams.dump_request(params)
+              parsed, options = HubspotSDK::Crm::Extensions::Calling::SettingUpdateParams.dump_request(params)
               @client.request(
                 method: :patch,
                 path: ["crm/v3/extensions/calling/%1$s/settings", app_id],
@@ -69,7 +69,7 @@ module HubspotSDK
             #
             # @return [nil]
             #
-            # @see HubspotSDK::Models::CRM::Extensions::Calling::SettingDeleteParams
+            # @see HubspotSDK::Models::Crm::Extensions::Calling::SettingDeleteParams
             def delete(app_id, params = {})
               @client.request(
                 method: :delete,
@@ -86,7 +86,7 @@ module HubspotSDK
             #
             # @return [HubspotSDK::Models::Webhooks::SettingsResponse]
             #
-            # @see HubspotSDK::Models::CRM::Extensions::Calling::SettingGetParams
+            # @see HubspotSDK::Models::Crm::Extensions::Calling::SettingGetParams
             def get(app_id, params = {})
               @client.request(
                 method: :get,

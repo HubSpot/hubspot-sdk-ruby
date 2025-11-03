@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         class PublicObjectSearchRequest < HubspotSDK::Internal::Type::BaseModel
           # @!attribute after
@@ -14,9 +14,9 @@ module HubspotSDK
           # @!attribute filter_groups
           #   Up to 6 groups of filters defining additional query criteria.
           #
-          #   @return [Array<HubspotSDK::Models::CRM::FilterGroup>]
+          #   @return [Array<HubspotSDK::Models::Crm::FilterGroup>]
           required :filter_groups,
-                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::FilterGroup] },
+                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::FilterGroup] },
                    api_name: :filterGroups
 
           # @!attribute limit
@@ -48,7 +48,7 @@ module HubspotSDK
           #
           #   @param after [String] A paging cursor token for retrieving subsequent pages.
           #
-          #   @param filter_groups [Array<HubspotSDK::Models::CRM::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
+          #   @param filter_groups [Array<HubspotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
           #
           #   @param limit [Integer] The maximum results to return, up to 200 objects.
           #

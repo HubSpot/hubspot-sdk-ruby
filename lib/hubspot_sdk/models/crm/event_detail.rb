@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class EventDetail < HubspotSDK::Internal::Type::BaseModel
         # @!attribute details
         #   The details Markdown rendered as HTML.

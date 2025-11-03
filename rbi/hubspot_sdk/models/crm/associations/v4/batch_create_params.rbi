@@ -2,17 +2,17 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         module V4
-          class BatchCreateParams < HubspotSDK::Models::CRM::BatchInputPublicAssociationMultiPost
+          class BatchCreateParams < HubspotSDK::Models::Crm::BatchInputPublicAssociationMultiPost
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Associations::V4::BatchCreateParams,
+                  HubspotSDK::Crm::Associations::V4::BatchCreateParams,
                   HubspotSDK::Internal::AnyHash
                 )
               end

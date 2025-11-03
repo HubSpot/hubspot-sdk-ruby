@@ -1,17 +1,17 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type created_response_property_group =
         {
           created_resource_id: String,
-          entity: HubspotSDK::CRM::PropertyGroup,
+          entity: HubspotSDK::Crm::PropertyGroup,
           location: String
         }
 
       class CreatedResponsePropertyGroup < HubspotSDK::Internal::Type::BaseModel
         attr_accessor created_resource_id: String
 
-        attr_accessor entity: HubspotSDK::CRM::PropertyGroup
+        attr_accessor entity: HubspotSDK::Crm::PropertyGroup
 
         attr_reader location: String?
 
@@ -19,13 +19,13 @@ module HubspotSDK
 
         def initialize: (
           created_resource_id: String,
-          entity: HubspotSDK::CRM::PropertyGroup,
+          entity: HubspotSDK::Crm::PropertyGroup,
           ?location: String
         ) -> void
 
         def to_hash: -> {
           created_resource_id: String,
-          entity: HubspotSDK::CRM::PropertyGroup,
+          entity: HubspotSDK::Crm::PropertyGroup,
           location: String
         }
       end

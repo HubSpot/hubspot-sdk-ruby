@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class AssociatedID < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::CRM::AssociatedID, HubspotSDK::Internal::AnyHash)
+            T.any(HubspotSDK::Crm::AssociatedID, HubspotSDK::Internal::AnyHash)
           end
 
         # The ID for the association type.

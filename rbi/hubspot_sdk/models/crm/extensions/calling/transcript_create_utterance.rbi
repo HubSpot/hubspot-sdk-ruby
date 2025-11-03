@@ -2,14 +2,14 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module Calling
           class TranscriptCreateUtterance < HubspotSDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Extensions::Calling::TranscriptCreateUtterance,
+                  HubspotSDK::Crm::Extensions::Calling::TranscriptCreateUtterance,
                   HubspotSDK::Internal::AnyHash
                 )
               end
@@ -17,12 +17,12 @@ module HubspotSDK
             sig { returns(Integer) }
             attr_accessor :end_time_millis
 
-            sig { returns(HubspotSDK::CRM::Extensions::Calling::Speaker) }
+            sig { returns(HubspotSDK::Crm::Extensions::Calling::Speaker) }
             attr_reader :speaker
 
             sig do
               params(
-                speaker: HubspotSDK::CRM::Extensions::Calling::Speaker::OrHash
+                speaker: HubspotSDK::Crm::Extensions::Calling::Speaker::OrHash
               ).void
             end
             attr_writer :speaker
@@ -42,7 +42,7 @@ module HubspotSDK
             sig do
               params(
                 end_time_millis: Integer,
-                speaker: HubspotSDK::CRM::Extensions::Calling::Speaker::OrHash,
+                speaker: HubspotSDK::Crm::Extensions::Calling::Speaker::OrHash,
                 start_time_millis: Integer,
                 text: String,
                 language_code: String
@@ -61,7 +61,7 @@ module HubspotSDK
               override.returns(
                 {
                   end_time_millis: Integer,
-                  speaker: HubspotSDK::CRM::Extensions::Calling::Speaker,
+                  speaker: HubspotSDK::Crm::Extensions::Calling::Speaker,
                   start_time_millis: Integer,
                   text: String,
                   language_code: String

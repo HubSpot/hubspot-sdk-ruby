@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class Filter < HubspotSDK::Internal::Type::BaseModel
         # @!attribute operator
         #   The comparison operator used in the filter, such as "EQ" or "GT".
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::Filter::Operator]
-        required :operator, enum: -> { HubspotSDK::CRM::Filter::Operator }
+        #   @return [Symbol, HubspotSDK::Models::Crm::Filter::Operator]
+        required :operator, enum: -> { HubspotSDK::Crm::Filter::Operator }
 
         # @!attribute property_name
         #   The name of the property to apply the filter to.
@@ -39,7 +39,7 @@ module HubspotSDK
         #   filter on, the operator to use (such as equals, greater than, or contains), and
         #   the value(s) to compare against.
         #
-        #   @param operator [Symbol, HubspotSDK::Models::CRM::Filter::Operator] The comparison operator used in the filter, such as "EQ" or "GT".
+        #   @param operator [Symbol, HubspotSDK::Models::Crm::Filter::Operator] The comparison operator used in the filter, such as "EQ" or "GT".
         #
         #   @param property_name [String] The name of the property to apply the filter to.
         #
@@ -51,7 +51,7 @@ module HubspotSDK
 
         # The comparison operator used in the filter, such as "EQ" or "GT".
         #
-        # @see HubspotSDK::Models::CRM::Filter#operator
+        # @see HubspotSDK::Models::Crm::Filter#operator
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 

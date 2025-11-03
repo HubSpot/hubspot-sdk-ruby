@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         type recording_settings_response =
           { url_to_retrieve_authed_recording: String }

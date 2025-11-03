@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         class PublicDealSplitsCreateRequest < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Objects::PublicDealSplitsCreateRequest,
+                HubspotSDK::Crm::Objects::PublicDealSplitsCreateRequest,
                 HubspotSDK::Internal::AnyHash
               )
             end
@@ -17,7 +17,7 @@ module HubspotSDK
           attr_accessor :id
 
           sig do
-            returns(T::Array[HubspotSDK::CRM::Objects::PublicDealSplitInput])
+            returns(T::Array[HubspotSDK::Crm::Objects::PublicDealSplitInput])
           end
           attr_accessor :splits
 
@@ -25,7 +25,7 @@ module HubspotSDK
             params(
               id: Integer,
               splits:
-                T::Array[HubspotSDK::CRM::Objects::PublicDealSplitInput::OrHash]
+                T::Array[HubspotSDK::Crm::Objects::PublicDealSplitInput::OrHash]
             ).returns(T.attached_class)
           end
           def self.new(id:, splits:)
@@ -35,7 +35,7 @@ module HubspotSDK
             override.returns(
               {
                 id: Integer,
-                splits: T::Array[HubspotSDK::CRM::Objects::PublicDealSplitInput]
+                splits: T::Array[HubspotSDK::Crm::Objects::PublicDealSplitInput]
               }
             )
           end

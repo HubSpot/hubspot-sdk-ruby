@@ -2,18 +2,18 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CollectionResponseSimplePublicObjectWithAssociations < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::CollectionResponseSimplePublicObjectWithAssociations,
+              HubspotSDK::Crm::CollectionResponseSimplePublicObjectWithAssociations,
               HubspotSDK::Internal::AnyHash
             )
           end
 
         sig do
-          returns(T::Array[HubspotSDK::CRM::SimplePublicObjectWithAssociations])
+          returns(T::Array[HubspotSDK::Crm::SimplePublicObjectWithAssociations])
         end
         attr_accessor :results
 
@@ -28,7 +28,7 @@ module HubspotSDK
           params(
             results:
               T::Array[
-                HubspotSDK::CRM::SimplePublicObjectWithAssociations::OrHash
+                HubspotSDK::Crm::SimplePublicObjectWithAssociations::OrHash
               ],
             paging: HubspotSDK::Marketing::Paging::OrHash
           ).returns(T.attached_class)
@@ -44,7 +44,7 @@ module HubspotSDK
           override.returns(
             {
               results:
-                T::Array[HubspotSDK::CRM::SimplePublicObjectWithAssociations],
+                T::Array[HubspotSDK::Crm::SimplePublicObjectWithAssociations],
               paging: HubspotSDK::Marketing::Paging
             }
           )

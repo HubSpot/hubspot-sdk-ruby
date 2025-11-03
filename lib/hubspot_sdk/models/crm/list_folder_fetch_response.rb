@@ -2,15 +2,15 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ListFolderFetchResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute folder
         #
-        #   @return [HubspotSDK::Models::CRM::PublicListFolder]
-        required :folder, -> { HubspotSDK::CRM::PublicListFolder }
+        #   @return [HubspotSDK::Models::Crm::PublicListFolder]
+        required :folder, -> { HubspotSDK::Crm::PublicListFolder }
 
         # @!method initialize(folder:)
-        #   @param folder [HubspotSDK::Models::CRM::PublicListFolder]
+        #   @param folder [HubspotSDK::Models::Crm::PublicListFolder]
       end
     end
   end

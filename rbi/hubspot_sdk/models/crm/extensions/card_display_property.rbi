@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class CardDisplayProperty < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::CardDisplayProperty,
+                HubspotSDK::Crm::Extensions::CardDisplayProperty,
                 HubspotSDK::Internal::AnyHash
               )
             end
@@ -16,7 +16,7 @@ module HubspotSDK
           # Type of data represented by this property.
           sig do
             returns(
-              HubspotSDK::CRM::Extensions::CardDisplayProperty::DataType::OrSymbol
+              HubspotSDK::Crm::Extensions::CardDisplayProperty::DataType::OrSymbol
             )
           end
           attr_accessor :data_type
@@ -31,18 +31,18 @@ module HubspotSDK
 
           # An array of available options that can be displayed. Only used in when
           # `dataType` is `STATUS`.
-          sig { returns(T::Array[HubspotSDK::CRM::Extensions::DisplayOption]) }
+          sig { returns(T::Array[HubspotSDK::Crm::Extensions::DisplayOption]) }
           attr_accessor :options
 
           # Definition for a card display property.
           sig do
             params(
               data_type:
-                HubspotSDK::CRM::Extensions::CardDisplayProperty::DataType::OrSymbol,
+                HubspotSDK::Crm::Extensions::CardDisplayProperty::DataType::OrSymbol,
               label: String,
               name: String,
               options:
-                T::Array[HubspotSDK::CRM::Extensions::DisplayOption::OrHash]
+                T::Array[HubspotSDK::Crm::Extensions::DisplayOption::OrHash]
             ).returns(T.attached_class)
           end
           def self.new(
@@ -62,10 +62,10 @@ module HubspotSDK
             override.returns(
               {
                 data_type:
-                  HubspotSDK::CRM::Extensions::CardDisplayProperty::DataType::OrSymbol,
+                  HubspotSDK::Crm::Extensions::CardDisplayProperty::DataType::OrSymbol,
                 label: String,
                 name: String,
-                options: T::Array[HubspotSDK::CRM::Extensions::DisplayOption]
+                options: T::Array[HubspotSDK::Crm::Extensions::DisplayOption]
               }
             )
           end
@@ -80,7 +80,7 @@ module HubspotSDK
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::CRM::Extensions::CardDisplayProperty::DataType
+                  HubspotSDK::Crm::Extensions::CardDisplayProperty::DataType
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -88,53 +88,53 @@ module HubspotSDK
             BOOLEAN =
               T.let(
                 :BOOLEAN,
-                HubspotSDK::CRM::Extensions::CardDisplayProperty::DataType::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardDisplayProperty::DataType::TaggedSymbol
               )
             CURRENCY =
               T.let(
                 :CURRENCY,
-                HubspotSDK::CRM::Extensions::CardDisplayProperty::DataType::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardDisplayProperty::DataType::TaggedSymbol
               )
             DATE =
               T.let(
                 :DATE,
-                HubspotSDK::CRM::Extensions::CardDisplayProperty::DataType::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardDisplayProperty::DataType::TaggedSymbol
               )
             DATETIME =
               T.let(
                 :DATETIME,
-                HubspotSDK::CRM::Extensions::CardDisplayProperty::DataType::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardDisplayProperty::DataType::TaggedSymbol
               )
             EMAIL =
               T.let(
                 :EMAIL,
-                HubspotSDK::CRM::Extensions::CardDisplayProperty::DataType::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardDisplayProperty::DataType::TaggedSymbol
               )
             LINK =
               T.let(
                 :LINK,
-                HubspotSDK::CRM::Extensions::CardDisplayProperty::DataType::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardDisplayProperty::DataType::TaggedSymbol
               )
             NUMERIC =
               T.let(
                 :NUMERIC,
-                HubspotSDK::CRM::Extensions::CardDisplayProperty::DataType::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardDisplayProperty::DataType::TaggedSymbol
               )
             STRING =
               T.let(
                 :STRING,
-                HubspotSDK::CRM::Extensions::CardDisplayProperty::DataType::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardDisplayProperty::DataType::TaggedSymbol
               )
             STATUS =
               T.let(
                 :STATUS,
-                HubspotSDK::CRM::Extensions::CardDisplayProperty::DataType::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardDisplayProperty::DataType::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::CRM::Extensions::CardDisplayProperty::DataType::TaggedSymbol
+                  HubspotSDK::Crm::Extensions::CardDisplayProperty::DataType::TaggedSymbol
                 ]
               )
             end

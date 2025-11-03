@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class IntegratorObjectResult < HubspotSDK::Internal::Type::BaseModel
           # @!attribute id
@@ -12,9 +12,9 @@ module HubspotSDK
 
           # @!attribute actions
           #
-          #   @return [Array<HubspotSDK::Models::CRM::Extensions::ActionHookActionBody, HubspotSDK::Models::CRM::Extensions::IFrameActionBody>]
+          #   @return [Array<HubspotSDK::Models::Crm::Extensions::ActionHookActionBody, HubspotSDK::Models::Crm::Extensions::IFrameActionBody>]
           required :actions,
-                   -> { HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::CRM::Extensions::IntegratorObjectResult::Action] }
+                   -> { HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Crm::Extensions::IntegratorObjectResult::Action] }
 
           # @!attribute title
           #
@@ -23,8 +23,8 @@ module HubspotSDK
 
           # @!attribute tokens
           #
-          #   @return [Array<HubspotSDK::Models::CRM::Extensions::ObjectToken>]
-          required :tokens, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Extensions::ObjectToken] }
+          #   @return [Array<HubspotSDK::Models::Crm::Extensions::ObjectToken>]
+          required :tokens, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Extensions::ObjectToken] }
 
           # @!attribute link_url
           #
@@ -33,20 +33,20 @@ module HubspotSDK
 
           # @!method initialize(id:, actions:, title:, tokens:, link_url: nil)
           #   @param id [String]
-          #   @param actions [Array<HubspotSDK::Models::CRM::Extensions::ActionHookActionBody, HubspotSDK::Models::CRM::Extensions::IFrameActionBody>]
+          #   @param actions [Array<HubspotSDK::Models::Crm::Extensions::ActionHookActionBody, HubspotSDK::Models::Crm::Extensions::IFrameActionBody>]
           #   @param title [String]
-          #   @param tokens [Array<HubspotSDK::Models::CRM::Extensions::ObjectToken>]
+          #   @param tokens [Array<HubspotSDK::Models::Crm::Extensions::ObjectToken>]
           #   @param link_url [String]
 
           module Action
             extend HubspotSDK::Internal::Type::Union
 
-            variant -> { HubspotSDK::CRM::Extensions::ActionHookActionBody }
+            variant -> { HubspotSDK::Crm::Extensions::ActionHookActionBody }
 
-            variant -> { HubspotSDK::CRM::Extensions::IFrameActionBody }
+            variant -> { HubspotSDK::Crm::Extensions::IFrameActionBody }
 
             # @!method self.variants
-            #   @return [Array(HubspotSDK::Models::CRM::Extensions::ActionHookActionBody, HubspotSDK::Models::CRM::Extensions::IFrameActionBody)]
+            #   @return [Array(HubspotSDK::Models::Crm::Extensions::ActionHookActionBody, HubspotSDK::Models::Crm::Extensions::IFrameActionBody)]
           end
         end
       end

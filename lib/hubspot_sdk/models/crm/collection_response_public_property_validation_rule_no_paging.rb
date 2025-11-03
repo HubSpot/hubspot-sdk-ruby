@@ -2,17 +2,17 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::PropertyValidations#get
+    module Crm
+      # @see HubspotSDK::Resources::Crm::PropertyValidations#get
       class CollectionResponsePublicPropertyValidationRuleNoPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::CRM::PublicPropertyValidationRule>]
+        #   @return [Array<HubspotSDK::Models::Crm::PublicPropertyValidationRule>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicPropertyValidationRule] }
+                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicPropertyValidationRule] }
 
         # @!method initialize(results:)
-        #   @param results [Array<HubspotSDK::Models::CRM::PublicPropertyValidationRule>]
+        #   @param results [Array<HubspotSDK::Models::Crm::PublicPropertyValidationRule>]
       end
     end
   end

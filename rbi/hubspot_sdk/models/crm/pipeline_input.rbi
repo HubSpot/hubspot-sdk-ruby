@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PipelineInput < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::CRM::PipelineInput, HubspotSDK::Internal::AnyHash)
+            T.any(HubspotSDK::Crm::PipelineInput, HubspotSDK::Internal::AnyHash)
           end
 
         # The order for displaying this pipeline. If two pipelines have a matching
@@ -19,7 +19,7 @@ module HubspotSDK
         attr_accessor :label
 
         # Pipeline stage inputs used to create the new or replacement pipeline.
-        sig { returns(T::Array[HubspotSDK::CRM::PipelineStageInput]) }
+        sig { returns(T::Array[HubspotSDK::Crm::PipelineStageInput]) }
         attr_accessor :stages
 
         # An input used to create or replace a pipeline's definition.
@@ -27,7 +27,7 @@ module HubspotSDK
           params(
             display_order: Integer,
             label: String,
-            stages: T::Array[HubspotSDK::CRM::PipelineStageInput::OrHash]
+            stages: T::Array[HubspotSDK::Crm::PipelineStageInput::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(
@@ -46,7 +46,7 @@ module HubspotSDK
             {
               display_order: Integer,
               label: String,
-              stages: T::Array[HubspotSDK::CRM::PipelineStageInput]
+              stages: T::Array[HubspotSDK::Crm::PipelineStageInput]
             }
           )
         end

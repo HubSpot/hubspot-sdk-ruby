@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ImportTemplate < HubspotSDK::Internal::Type::BaseModel
         # @!attribute template_id
         #
@@ -11,16 +11,16 @@ module HubspotSDK
 
         # @!attribute template_type
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::ImportTemplate::TemplateType]
+        #   @return [Symbol, HubspotSDK::Models::Crm::ImportTemplate::TemplateType]
         required :template_type,
-                 enum: -> { HubspotSDK::CRM::ImportTemplate::TemplateType },
+                 enum: -> { HubspotSDK::Crm::ImportTemplate::TemplateType },
                  api_name: :templateType
 
         # @!method initialize(template_id:, template_type:)
         #   @param template_id [Integer]
-        #   @param template_type [Symbol, HubspotSDK::Models::CRM::ImportTemplate::TemplateType]
+        #   @param template_type [Symbol, HubspotSDK::Models::Crm::ImportTemplate::TemplateType]
 
-        # @see HubspotSDK::Models::CRM::ImportTemplate#template_type
+        # @see HubspotSDK::Models::Crm::ImportTemplate#template_type
         module TemplateType
           extend HubspotSDK::Internal::Type::Enum
 

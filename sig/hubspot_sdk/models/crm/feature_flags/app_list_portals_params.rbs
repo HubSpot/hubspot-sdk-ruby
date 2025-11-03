@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module FeatureFlags
         type app_list_portals_params =
           { app_id: Integer, limit: Integer, start_portal_id: Integer }

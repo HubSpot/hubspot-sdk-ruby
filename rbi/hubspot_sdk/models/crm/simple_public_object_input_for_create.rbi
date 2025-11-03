@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class SimplePublicObjectInputForCreate < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::SimplePublicObjectInputForCreate,
+              HubspotSDK::Crm::SimplePublicObjectInputForCreate,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -18,7 +18,7 @@ module HubspotSDK
 
         sig do
           returns(
-            T.nilable(T::Array[HubspotSDK::CRM::PublicAssociationsForObject])
+            T.nilable(T::Array[HubspotSDK::Crm::PublicAssociationsForObject])
           )
         end
         attr_reader :associations
@@ -26,7 +26,7 @@ module HubspotSDK
         sig do
           params(
             associations:
-              T::Array[HubspotSDK::CRM::PublicAssociationsForObject::OrHash]
+              T::Array[HubspotSDK::Crm::PublicAssociationsForObject::OrHash]
           ).void
         end
         attr_writer :associations
@@ -38,7 +38,7 @@ module HubspotSDK
           params(
             properties: T::Hash[Symbol, String],
             associations:
-              T::Array[HubspotSDK::CRM::PublicAssociationsForObject::OrHash]
+              T::Array[HubspotSDK::Crm::PublicAssociationsForObject::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(
@@ -53,7 +53,7 @@ module HubspotSDK
             {
               properties: T::Hash[Symbol, String],
               associations:
-                T::Array[HubspotSDK::CRM::PublicAssociationsForObject]
+                T::Array[HubspotSDK::Crm::PublicAssociationsForObject]
             }
           )
         end

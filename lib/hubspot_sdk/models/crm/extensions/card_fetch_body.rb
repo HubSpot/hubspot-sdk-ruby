@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class CardFetchBody < HubspotSDK::Internal::Type::BaseModel
           # @!attribute object_types
@@ -10,10 +10,10 @@ module HubspotSDK
           #   call your data fetch URL whenever a user visits a record page of the types
           #   defined here.
           #
-          #   @return [Array<HubspotSDK::Models::CRM::Extensions::CardObjectTypeBody>]
+          #   @return [Array<HubspotSDK::Models::Crm::Extensions::CardObjectTypeBody>]
           required :object_types,
                    -> {
-                     HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Extensions::CardObjectTypeBody]
+                     HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Extensions::CardObjectTypeBody]
                    },
                    api_name: :objectTypes
 
@@ -27,9 +27,9 @@ module HubspotSDK
 
           # @!attribute card_type
           #
-          #   @return [Symbol, HubspotSDK::Models::CRM::Extensions::CardFetchBody::CardType, nil]
+          #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::CardFetchBody::CardType, nil]
           optional :card_type,
-                   enum: -> { HubspotSDK::CRM::Extensions::CardFetchBody::CardType },
+                   enum: -> { HubspotSDK::Crm::Extensions::CardFetchBody::CardType },
                    api_name: :cardType
 
           # @!attribute serverless_function
@@ -39,19 +39,19 @@ module HubspotSDK
 
           # @!method initialize(object_types:, target_url:, card_type: nil, serverless_function: nil)
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::CRM::Extensions::CardFetchBody} for more details.
+          #   {HubspotSDK::Models::Crm::Extensions::CardFetchBody} for more details.
           #
           #   Configuration for this card's data fetch request.
           #
-          #   @param object_types [Array<HubspotSDK::Models::CRM::Extensions::CardObjectTypeBody>] An array of CRM object types where this card should be displayed. HubSpot will c
+          #   @param object_types [Array<HubspotSDK::Models::Crm::Extensions::CardObjectTypeBody>] An array of CRM object types where this card should be displayed. HubSpot will c
           #
           #   @param target_url [String] URL to a service endpoints that will respond with card details. HubSpot will cal
           #
-          #   @param card_type [Symbol, HubspotSDK::Models::CRM::Extensions::CardFetchBody::CardType]
+          #   @param card_type [Symbol, HubspotSDK::Models::Crm::Extensions::CardFetchBody::CardType]
           #
           #   @param serverless_function [String]
 
-          # @see HubspotSDK::Models::CRM::Extensions::CardFetchBody#card_type
+          # @see HubspotSDK::Models::Crm::Extensions::CardFetchBody#card_type
           module CardType
             extend HubspotSDK::Internal::Type::Enum
 

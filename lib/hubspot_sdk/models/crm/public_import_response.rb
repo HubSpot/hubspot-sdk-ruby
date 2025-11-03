@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Imports#create
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Imports#create
       class PublicImportResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #
@@ -24,8 +24,8 @@ module HubspotSDK
 
         # @!attribute metadata
         #
-        #   @return [HubspotSDK::Models::CRM::PublicImportMetadata]
-        required :metadata, -> { HubspotSDK::CRM::PublicImportMetadata }
+        #   @return [HubspotSDK::Models::Crm::PublicImportMetadata]
+        required :metadata, -> { HubspotSDK::Crm::PublicImportMetadata }
 
         # @!attribute opt_out_import
         #   Whether or not the import is a list of people disqualified from receiving
@@ -37,8 +37,8 @@ module HubspotSDK
         # @!attribute state
         #   The status of the import.
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PublicImportResponse::State]
-        required :state, enum: -> { HubspotSDK::CRM::PublicImportResponse::State }
+        #   @return [Symbol, HubspotSDK::Models::Crm::PublicImportResponse::State]
+        required :state, enum: -> { HubspotSDK::Crm::PublicImportResponse::State }
 
         # @!attribute updated_at
         #
@@ -57,19 +57,19 @@ module HubspotSDK
 
         # @!attribute import_source
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PublicImportResponse::ImportSource, nil]
+        #   @return [Symbol, HubspotSDK::Models::Crm::PublicImportResponse::ImportSource, nil]
         optional :import_source,
-                 enum: -> { HubspotSDK::CRM::PublicImportResponse::ImportSource },
+                 enum: -> { HubspotSDK::Crm::PublicImportResponse::ImportSource },
                  api_name: :importSource
 
         # @!attribute import_template
         #
-        #   @return [HubspotSDK::Models::CRM::ImportTemplate, nil]
-        optional :import_template, -> { HubspotSDK::CRM::ImportTemplate }, api_name: :importTemplate
+        #   @return [HubspotSDK::Models::Crm::ImportTemplate, nil]
+        optional :import_template, -> { HubspotSDK::Crm::ImportTemplate }, api_name: :importTemplate
 
         # @!method initialize(id:, created_at:, mapped_object_type_ids:, metadata:, opt_out_import:, state:, updated_at:, import_name: nil, import_request_json: nil, import_source: nil, import_template: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::PublicImportResponse} for more details.
+        #   {HubspotSDK::Models::Crm::PublicImportResponse} for more details.
         #
         #   @param id [String]
         #
@@ -77,11 +77,11 @@ module HubspotSDK
         #
         #   @param mapped_object_type_ids [Array<String>]
         #
-        #   @param metadata [HubspotSDK::Models::CRM::PublicImportMetadata]
+        #   @param metadata [HubspotSDK::Models::Crm::PublicImportMetadata]
         #
         #   @param opt_out_import [Boolean] Whether or not the import is a list of people disqualified from receiving emails
         #
-        #   @param state [Symbol, HubspotSDK::Models::CRM::PublicImportResponse::State] The status of the import.
+        #   @param state [Symbol, HubspotSDK::Models::Crm::PublicImportResponse::State] The status of the import.
         #
         #   @param updated_at [Time]
         #
@@ -89,13 +89,13 @@ module HubspotSDK
         #
         #   @param import_request_json [Object]
         #
-        #   @param import_source [Symbol, HubspotSDK::Models::CRM::PublicImportResponse::ImportSource]
+        #   @param import_source [Symbol, HubspotSDK::Models::Crm::PublicImportResponse::ImportSource]
         #
-        #   @param import_template [HubspotSDK::Models::CRM::ImportTemplate]
+        #   @param import_template [HubspotSDK::Models::Crm::ImportTemplate]
 
         # The status of the import.
         #
-        # @see HubspotSDK::Models::CRM::PublicImportResponse#state
+        # @see HubspotSDK::Models::Crm::PublicImportResponse#state
         module State
           extend HubspotSDK::Internal::Type::Enum
 
@@ -111,7 +111,7 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::CRM::PublicImportResponse#import_source
+        # @see HubspotSDK::Models::Crm::PublicImportResponse#import_source
         module ImportSource
           extend HubspotSDK::Internal::Type::Enum
 

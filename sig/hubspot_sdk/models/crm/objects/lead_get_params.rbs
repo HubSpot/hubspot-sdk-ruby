@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type lead_get_params =
           {

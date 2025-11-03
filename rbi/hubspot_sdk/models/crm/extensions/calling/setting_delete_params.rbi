@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module Calling
           class SettingDeleteParams < HubspotSDK::Internal::Type::BaseModel
@@ -12,7 +12,7 @@ module HubspotSDK
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Extensions::Calling::SettingDeleteParams,
+                  HubspotSDK::Crm::Extensions::Calling::SettingDeleteParams,
                   HubspotSDK::Internal::AnyHash
                 )
               end

@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class AssociationLabelLimitResponse < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::AssociationLabelLimitResponse,
+              HubspotSDK::Crm::AssociationLabelLimitResponse,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -16,13 +16,13 @@ module HubspotSDK
         attr_accessor :all_labels
 
         # Defines an object type.
-        sig { returns(HubspotSDK::CRM::Objects::ObjectTypeDefinition) }
+        sig { returns(HubspotSDK::Crm::Objects::ObjectTypeDefinition) }
         attr_reader :from_object_type
 
         sig do
           params(
             from_object_type:
-              HubspotSDK::CRM::Objects::ObjectTypeDefinition::OrHash
+              HubspotSDK::Crm::Objects::ObjectTypeDefinition::OrHash
           ).void
         end
         attr_writer :from_object_type
@@ -34,13 +34,13 @@ module HubspotSDK
         attr_accessor :percentage
 
         # Defines an object type.
-        sig { returns(HubspotSDK::CRM::Objects::ObjectTypeDefinition) }
+        sig { returns(HubspotSDK::Crm::Objects::ObjectTypeDefinition) }
         attr_reader :to_object_type
 
         sig do
           params(
             to_object_type:
-              HubspotSDK::CRM::Objects::ObjectTypeDefinition::OrHash
+              HubspotSDK::Crm::Objects::ObjectTypeDefinition::OrHash
           ).void
         end
         attr_writer :to_object_type
@@ -52,11 +52,11 @@ module HubspotSDK
           params(
             all_labels: T::Array[String],
             from_object_type:
-              HubspotSDK::CRM::Objects::ObjectTypeDefinition::OrHash,
+              HubspotSDK::Crm::Objects::ObjectTypeDefinition::OrHash,
             limit: Integer,
             percentage: Float,
             to_object_type:
-              HubspotSDK::CRM::Objects::ObjectTypeDefinition::OrHash,
+              HubspotSDK::Crm::Objects::ObjectTypeDefinition::OrHash,
             usage: Integer
           ).returns(T.attached_class)
         end
@@ -76,10 +76,10 @@ module HubspotSDK
           override.returns(
             {
               all_labels: T::Array[String],
-              from_object_type: HubspotSDK::CRM::Objects::ObjectTypeDefinition,
+              from_object_type: HubspotSDK::Crm::Objects::ObjectTypeDefinition,
               limit: Integer,
               percentage: Float,
-              to_object_type: HubspotSDK::CRM::Objects::ObjectTypeDefinition,
+              to_object_type: HubspotSDK::Crm::Objects::ObjectTypeDefinition,
               usage: Integer
             }
           )

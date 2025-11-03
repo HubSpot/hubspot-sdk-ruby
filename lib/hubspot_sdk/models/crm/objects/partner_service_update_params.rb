@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
-        # @see HubspotSDK::Resources::CRM::Objects::PartnerServices#update
-        class PartnerServiceUpdateParams < HubspotSDK::Models::CRM::SimplePublicObjectInput
+        # @see HubspotSDK::Resources::Crm::Objects::PartnerServices#update
+        class PartnerServiceUpdateParams < HubspotSDK::Models::Crm::SimplePublicObjectInput
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

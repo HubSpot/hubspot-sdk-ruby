@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class RecordListMembership < HubspotSDK::Internal::Type::BaseModel
         # @!attribute first_added_timestamp
         #

@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicDefaultAssociation < HubspotSDK::Internal::Type::BaseModel
         # @!attribute association_spec
         #   Defines the type, direction, and details of the relationship between two CRM
@@ -23,7 +23,7 @@ module HubspotSDK
 
         # @!method initialize(association_spec:, from:, to:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::PublicDefaultAssociation} for more details.
+        #   {HubspotSDK::Models::Crm::PublicDefaultAssociation} for more details.
         #
         #   @param association_spec [HubspotSDK::Models::AssociationSpec] Defines the type, direction, and details of the relationship between two CRM obj
         #

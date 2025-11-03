@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
-        # @see HubspotSDK::Resources::CRM::Associations::V4#delete
+        # @see HubspotSDK::Resources::Crm::Associations::V4#delete
         class V4DeleteParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters

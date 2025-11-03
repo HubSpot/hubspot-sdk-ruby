@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type created_response_property =
         {
           created_resource_id: String,

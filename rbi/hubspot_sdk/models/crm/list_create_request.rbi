@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ListCreateRequest < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::ListCreateRequest,
+              HubspotSDK::Crm::ListCreateRequest,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -76,23 +76,23 @@ module HubspotSDK
         sig { params(list_folder_id: Integer).void }
         attr_writer :list_folder_id
 
-        sig { returns(T.nilable(HubspotSDK::CRM::PublicListPermissions)) }
+        sig { returns(T.nilable(HubspotSDK::Crm::PublicListPermissions)) }
         attr_reader :list_permissions
 
         sig do
           params(
-            list_permissions: HubspotSDK::CRM::PublicListPermissions::OrHash
+            list_permissions: HubspotSDK::Crm::PublicListPermissions::OrHash
           ).void
         end
         attr_writer :list_permissions
 
-        sig { returns(T.nilable(HubspotSDK::CRM::PublicMembershipSettings)) }
+        sig { returns(T.nilable(HubspotSDK::Crm::PublicMembershipSettings)) }
         attr_reader :membership_settings
 
         sig do
           params(
             membership_settings:
-              HubspotSDK::CRM::PublicMembershipSettings::OrHash
+              HubspotSDK::Crm::PublicMembershipSettings::OrHash
           ).void
         end
         attr_writer :membership_settings
@@ -116,9 +116,9 @@ module HubspotSDK
                 HubspotSDK::PublicAssociationFilterBranch::OrHash
               ),
             list_folder_id: Integer,
-            list_permissions: HubspotSDK::CRM::PublicListPermissions::OrHash,
+            list_permissions: HubspotSDK::Crm::PublicListPermissions::OrHash,
             membership_settings:
-              HubspotSDK::CRM::PublicMembershipSettings::OrHash
+              HubspotSDK::Crm::PublicMembershipSettings::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -160,8 +160,8 @@ module HubspotSDK
                   HubspotSDK::PublicAssociationFilterBranch
                 ),
               list_folder_id: Integer,
-              list_permissions: HubspotSDK::CRM::PublicListPermissions,
-              membership_settings: HubspotSDK::CRM::PublicMembershipSettings
+              list_permissions: HubspotSDK::Crm::PublicListPermissions,
+              membership_settings: HubspotSDK::Crm::PublicMembershipSettings
             }
           )
         end
@@ -188,7 +188,7 @@ module HubspotSDK
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::ListCreateRequest::FilterBranch::Variants
+                HubspotSDK::Crm::ListCreateRequest::FilterBranch::Variants
               ]
             )
           end

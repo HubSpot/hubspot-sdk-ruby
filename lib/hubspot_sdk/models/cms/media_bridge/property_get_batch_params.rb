@@ -5,7 +5,7 @@ module HubspotSDK
     module Cms
       module MediaBridge
         # @see HubspotSDK::Resources::Cms::MediaBridge::Properties#get_batch
-        class PropertyGetBatchParams < HubspotSDK::Models::CRM::BatchReadInputPropertyName
+        class PropertyGetBatchParams < HubspotSDK::Models::Crm::BatchReadInputPropertyName
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

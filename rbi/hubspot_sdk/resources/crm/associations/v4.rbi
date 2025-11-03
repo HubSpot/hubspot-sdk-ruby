@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Associations
         class V4
-          sig { returns(HubspotSDK::Resources::CRM::Associations::V4::Batch) }
+          sig { returns(HubspotSDK::Resources::Crm::Associations::V4::Batch) }
           attr_reader :batch
 
-          sig { returns(HubspotSDK::Resources::CRM::Associations::V4::Report) }
+          sig { returns(HubspotSDK::Resources::Crm::Associations::V4::Report) }
           attr_reader :report
 
           # Create the default (most generic) association type between two object types
@@ -19,7 +19,7 @@ module HubspotSDK
               from_object_id: String,
               to_object_type: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::BatchResponsePublicDefaultAssociation)
+            ).returns(HubspotSDK::Crm::BatchResponsePublicDefaultAssociation)
           end
           def create(
             to_object_id,
@@ -39,10 +39,10 @@ module HubspotSDK
               to_object_type: String,
               body:
                 T::Array[
-                  HubspotSDK::CRM::Associations::AssociationSpec1::OrHash
+                  HubspotSDK::Crm::Associations::AssociationSpec1::OrHash
                 ],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::CreatedResponseLabelsBetweenObjectPair)
+            ).returns(HubspotSDK::Crm::CreatedResponseLabelsBetweenObjectPair)
           end
           def update(
             # Path param:
@@ -70,7 +70,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
               HubspotSDK::Internal::Page[
-                HubspotSDK::CRM::MultiAssociatedObjectWithLabel
+                HubspotSDK::Crm::MultiAssociatedObjectWithLabel
               ]
             )
           end

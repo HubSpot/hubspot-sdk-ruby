@@ -2,17 +2,17 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         module Contacts
-          class BatchCreateParams < HubspotSDK::Models::CRM::BatchInputSimplePublicObjectBatchInputForCreate
+          class BatchCreateParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectBatchInputForCreate
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Objects::Contacts::BatchCreateParams,
+                  HubspotSDK::Crm::Objects::Contacts::BatchCreateParams,
                   HubspotSDK::Internal::AnyHash
                 )
               end

@@ -2,15 +2,15 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Associations
-        sig { returns(HubspotSDK::Resources::CRM::Associations::Batch) }
+        sig { returns(HubspotSDK::Resources::Crm::Associations::Batch) }
         attr_reader :batch
 
-        sig { returns(HubspotSDK::Resources::CRM::Associations::Schema) }
+        sig { returns(HubspotSDK::Resources::Crm::Associations::Schema) }
         attr_reader :schema
 
-        sig { returns(HubspotSDK::Resources::CRM::Associations::V4) }
+        sig { returns(HubspotSDK::Resources::Crm::Associations::V4) }
         attr_reader :v4
 
         # @api private

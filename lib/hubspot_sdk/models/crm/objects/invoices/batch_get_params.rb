@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         module Invoices
-          # @see HubspotSDK::Resources::CRM::Objects::Invoices::Batch#get
-          class BatchGetParams < HubspotSDK::Models::CRM::BatchReadInputSimplePublicObjectID
+          # @see HubspotSDK::Resources::Crm::Objects::Invoices::Batch#get
+          class BatchGetParams < HubspotSDK::Models::Crm::BatchReadInputSimplePublicObjectID
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

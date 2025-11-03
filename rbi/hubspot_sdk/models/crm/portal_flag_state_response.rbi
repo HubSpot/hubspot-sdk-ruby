@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PortalFlagStateResponse < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PortalFlagStateResponse,
+              HubspotSDK::Crm::PortalFlagStateResponse,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -20,7 +20,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::CRM::PortalFlagStateResponse::FlagState::TaggedSymbol
+            HubspotSDK::Crm::PortalFlagStateResponse::FlagState::TaggedSymbol
           )
         end
         attr_accessor :flag_state
@@ -33,7 +33,7 @@ module HubspotSDK
             app_id: Integer,
             flag_name: String,
             flag_state:
-              HubspotSDK::CRM::PortalFlagStateResponse::FlagState::OrSymbol,
+              HubspotSDK::Crm::PortalFlagStateResponse::FlagState::OrSymbol,
             portal_id: Integer
           ).returns(T.attached_class)
         end
@@ -46,7 +46,7 @@ module HubspotSDK
               app_id: Integer,
               flag_name: String,
               flag_state:
-                HubspotSDK::CRM::PortalFlagStateResponse::FlagState::TaggedSymbol,
+                HubspotSDK::Crm::PortalFlagStateResponse::FlagState::TaggedSymbol,
               portal_id: Integer
             }
           )
@@ -59,30 +59,30 @@ module HubspotSDK
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::CRM::PortalFlagStateResponse::FlagState)
+              T.all(Symbol, HubspotSDK::Crm::PortalFlagStateResponse::FlagState)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           OFF =
             T.let(
               :OFF,
-              HubspotSDK::CRM::PortalFlagStateResponse::FlagState::TaggedSymbol
+              HubspotSDK::Crm::PortalFlagStateResponse::FlagState::TaggedSymbol
             )
           ON =
             T.let(
               :ON,
-              HubspotSDK::CRM::PortalFlagStateResponse::FlagState::TaggedSymbol
+              HubspotSDK::Crm::PortalFlagStateResponse::FlagState::TaggedSymbol
             )
           ABSENT =
             T.let(
               :ABSENT,
-              HubspotSDK::CRM::PortalFlagStateResponse::FlagState::TaggedSymbol
+              HubspotSDK::Crm::PortalFlagStateResponse::FlagState::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::PortalFlagStateResponse::FlagState::TaggedSymbol
+                HubspotSDK::Crm::PortalFlagStateResponse::FlagState::TaggedSymbol
               ]
             )
           end

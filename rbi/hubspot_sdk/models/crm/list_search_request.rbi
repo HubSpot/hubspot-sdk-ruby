@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ListSearchRequest < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::ListSearchRequest,
+              HubspotSDK::Crm::ListSearchRequest,
               HubspotSDK::Internal::AnyHash
             )
           end

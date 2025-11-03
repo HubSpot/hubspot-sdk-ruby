@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
         class FeedbackSubmissions
           sig do
             returns(
-              HubspotSDK::Resources::CRM::Objects::FeedbackSubmissions::Batch
+              HubspotSDK::Resources::Crm::Objects::FeedbackSubmissions::Batch
             )
           end
           attr_reader :batch
@@ -25,7 +25,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
               HubspotSDK::Internal::Page[
-                HubspotSDK::CRM::SimplePublicObjectWithAssociations
+                HubspotSDK::Crm::SimplePublicObjectWithAssociations
               ]
             )
           end
@@ -67,7 +67,7 @@ module HubspotSDK
               properties: T::Array[String],
               properties_with_history: T::Array[String],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::SimplePublicObjectWithAssociations)
+            ).returns(HubspotSDK::Crm::SimplePublicObjectWithAssociations)
           end
           def get(
             feedback_submission_id,
@@ -93,14 +93,14 @@ module HubspotSDK
           sig do
             params(
               after: String,
-              filter_groups: T::Array[HubspotSDK::CRM::FilterGroup::OrHash],
+              filter_groups: T::Array[HubspotSDK::Crm::FilterGroup::OrHash],
               limit: Integer,
               properties: T::Array[String],
               query: String,
               sorts: T::Array[String],
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject
+              HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
             )
           end
           def search(

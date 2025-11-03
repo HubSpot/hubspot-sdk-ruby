@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Lists
         type folder_create_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class FolderCreateParams < HubspotSDK::Models::CRM::ListFolderCreateRequest
+        class FolderCreateParams < HubspotSDK::Models::Crm::ListFolderCreateRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

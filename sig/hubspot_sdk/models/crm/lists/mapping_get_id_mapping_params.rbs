@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Lists
         type mapping_get_id_mapping_params =
           { legacy_list_id: String }

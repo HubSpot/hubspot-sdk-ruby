@@ -1,12 +1,12 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type public_owner =
         {
           id: String,
           archived: bool,
           created_at: Time,
-          type: HubspotSDK::Models::CRM::PublicOwner::type_,
+          type: HubspotSDK::Models::Crm::PublicOwner::type_,
           updated_at: Time,
           email: String,
           first_name: String,
@@ -23,7 +23,7 @@ module HubspotSDK
 
         attr_accessor created_at: Time
 
-        attr_accessor type: HubspotSDK::Models::CRM::PublicOwner::type_
+        attr_accessor type: HubspotSDK::Models::Crm::PublicOwner::type_
 
         attr_accessor updated_at: Time
 
@@ -57,7 +57,7 @@ module HubspotSDK
           id: String,
           archived: bool,
           created_at: Time,
-          type: HubspotSDK::Models::CRM::PublicOwner::type_,
+          type: HubspotSDK::Models::Crm::PublicOwner::type_,
           updated_at: Time,
           ?email: String,
           ?first_name: String,
@@ -71,7 +71,7 @@ module HubspotSDK
           id: String,
           archived: bool,
           created_at: Time,
-          type: HubspotSDK::Models::CRM::PublicOwner::type_,
+          type: HubspotSDK::Models::Crm::PublicOwner::type_,
           updated_at: Time,
           email: String,
           first_name: String,
@@ -89,7 +89,7 @@ module HubspotSDK
           PERSON: :PERSON
           QUEUE: :QUEUE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PublicOwner::type_]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicOwner::type_]
         end
       end
     end

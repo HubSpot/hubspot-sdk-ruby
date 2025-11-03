@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
-        # @see HubspotSDK::Resources::CRM::Extensions::Cards#get
+        # @see HubspotSDK::Resources::Crm::Extensions::Cards#get
         class CardGetParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters

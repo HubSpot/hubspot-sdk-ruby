@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchResponsePublicAssociation < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::BatchResponsePublicAssociation,
+              HubspotSDK::Crm::BatchResponsePublicAssociation,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -15,7 +15,7 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :completed_at
 
-        sig { returns(T::Array[HubspotSDK::CRM::PublicAssociation]) }
+        sig { returns(T::Array[HubspotSDK::Crm::PublicAssociation]) }
         attr_accessor :results
 
         sig { returns(Time) }
@@ -23,7 +23,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::CRM::BatchResponsePublicAssociation::Status::TaggedSymbol
+            HubspotSDK::Crm::BatchResponsePublicAssociation::Status::TaggedSymbol
           )
         end
         attr_accessor :status
@@ -55,10 +55,10 @@ module HubspotSDK
         sig do
           params(
             completed_at: Time,
-            results: T::Array[HubspotSDK::CRM::PublicAssociation::OrHash],
+            results: T::Array[HubspotSDK::Crm::PublicAssociation::OrHash],
             started_at: Time,
             status:
-              HubspotSDK::CRM::BatchResponsePublicAssociation::Status::OrSymbol,
+              HubspotSDK::Crm::BatchResponsePublicAssociation::Status::OrSymbol,
             errors: T::Array[HubspotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
@@ -81,10 +81,10 @@ module HubspotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubspotSDK::CRM::PublicAssociation],
+              results: T::Array[HubspotSDK::Crm::PublicAssociation],
               started_at: Time,
               status:
-                HubspotSDK::CRM::BatchResponsePublicAssociation::Status::TaggedSymbol,
+                HubspotSDK::Crm::BatchResponsePublicAssociation::Status::TaggedSymbol,
               errors: T::Array[HubspotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
@@ -102,7 +102,7 @@ module HubspotSDK
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CRM::BatchResponsePublicAssociation::Status
+                HubspotSDK::Crm::BatchResponsePublicAssociation::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -110,28 +110,28 @@ module HubspotSDK
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::CRM::BatchResponsePublicAssociation::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponsePublicAssociation::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::CRM::BatchResponsePublicAssociation::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponsePublicAssociation::Status::TaggedSymbol
             )
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::CRM::BatchResponsePublicAssociation::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponsePublicAssociation::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::CRM::BatchResponsePublicAssociation::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponsePublicAssociation::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::BatchResponsePublicAssociation::Status::TaggedSymbol
+                HubspotSDK::Crm::BatchResponsePublicAssociation::Status::TaggedSymbol
               ]
             )
           end

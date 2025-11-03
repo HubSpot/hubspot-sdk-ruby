@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         module Calls
-          # @see HubspotSDK::Resources::CRM::Objects::Calls::Batch#upsert
-          class BatchUpsertParams < HubspotSDK::Models::CRM::BatchInputSimplePublicObjectBatchInputUpsert
+          # @see HubspotSDK::Resources::Crm::Objects::Calls::Batch#upsert
+          class BatchUpsertParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectBatchInputUpsert
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

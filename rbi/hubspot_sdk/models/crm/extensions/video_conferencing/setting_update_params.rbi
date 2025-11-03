@@ -2,17 +2,17 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module VideoConferencing
-          class SettingUpdateParams < HubspotSDK::Models::CRM::Extensions::ExternalSettings
+          class SettingUpdateParams < HubspotSDK::Models::Crm::Extensions::ExternalSettings
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Extensions::VideoConferencing::SettingUpdateParams,
+                  HubspotSDK::Crm::Extensions::VideoConferencing::SettingUpdateParams,
                   HubspotSDK::Internal::AnyHash
                 )
               end

@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicMembershipSettings < HubspotSDK::Internal::Type::BaseModel
         # @!attribute include_unassigned
         #

@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type portal_flag_state_batch_delete_request =
         { portal_ids: ::Array[Integer] }
 

@@ -1,17 +1,17 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type batch_input_public_association =
-        { inputs: ::Array[HubspotSDK::CRM::PublicAssociation] }
+        { inputs: ::Array[HubspotSDK::Crm::PublicAssociation] }
 
       class BatchInputPublicAssociation < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor inputs: ::Array[HubspotSDK::CRM::PublicAssociation]
+        attr_accessor inputs: ::Array[HubspotSDK::Crm::PublicAssociation]
 
         def initialize: (
-          inputs: ::Array[HubspotSDK::CRM::PublicAssociation]
+          inputs: ::Array[HubspotSDK::Crm::PublicAssociation]
         ) -> void
 
-        def to_hash: -> { inputs: ::Array[HubspotSDK::CRM::PublicAssociation] }
+        def to_hash: -> { inputs: ::Array[HubspotSDK::Crm::PublicAssociation] }
       end
     end
   end

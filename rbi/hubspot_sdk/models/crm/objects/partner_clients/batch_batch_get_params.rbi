@@ -2,17 +2,17 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         module PartnerClients
-          class BatchBatchGetParams < HubspotSDK::Models::CRM::BatchReadInputSimplePublicObjectID
+          class BatchBatchGetParams < HubspotSDK::Models::Crm::BatchReadInputSimplePublicObjectID
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Objects::PartnerClients::BatchBatchGetParams,
+                  HubspotSDK::Crm::Objects::PartnerClients::BatchBatchGetParams,
                   HubspotSDK::Internal::AnyHash
                 )
               end

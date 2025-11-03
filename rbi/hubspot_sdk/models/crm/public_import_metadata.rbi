@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicImportMetadata < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PublicImportMetadata,
+              HubspotSDK::Crm::PublicImportMetadata,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -21,7 +21,7 @@ module HubspotSDK
         attr_accessor :file_ids
 
         # The lists containing the imported objects.
-        sig { returns(T::Array[HubspotSDK::CRM::PublicObjectListRecord]) }
+        sig { returns(T::Array[HubspotSDK::Crm::PublicObjectListRecord]) }
         attr_accessor :object_lists
 
         sig do
@@ -29,7 +29,7 @@ module HubspotSDK
             counters: T::Hash[Symbol, Integer],
             file_ids: T::Array[String],
             object_lists:
-              T::Array[HubspotSDK::CRM::PublicObjectListRecord::OrHash]
+              T::Array[HubspotSDK::Crm::PublicObjectListRecord::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(
@@ -47,7 +47,7 @@ module HubspotSDK
             {
               counters: T::Hash[Symbol, Integer],
               file_ids: T::Array[String],
-              object_lists: T::Array[HubspotSDK::CRM::PublicObjectListRecord]
+              object_lists: T::Array[HubspotSDK::Crm::PublicObjectListRecord]
             }
           )
         end

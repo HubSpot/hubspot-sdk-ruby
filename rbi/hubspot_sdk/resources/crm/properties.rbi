@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Properties
-        sig { returns(HubspotSDK::Resources::CRM::Properties::Batch) }
+        sig { returns(HubspotSDK::Resources::Crm::Properties::Batch) }
         attr_reader :batch
 
-        sig { returns(HubspotSDK::Resources::CRM::Properties::Groups) }
+        sig { returns(HubspotSDK::Resources::Crm::Properties::Groups) }
         attr_reader :groups
 
         # Create and return a copy of a new property for the specified object type.
@@ -31,7 +31,7 @@ module HubspotSDK
             options: T::Array[HubspotSDK::OptionInput::OrHash],
             referenced_object_type: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::CreatedResponseProperty)
+          ).returns(HubspotSDK::Crm::CreatedResponseProperty)
         end
         def create(
           object_type,
@@ -63,13 +63,13 @@ module HubspotSDK
             calculation_formula: String,
             description: String,
             display_order: Integer,
-            field_type: HubspotSDK::CRM::PropertyUpdate::FieldType::OrSymbol,
+            field_type: HubspotSDK::Crm::PropertyUpdate::FieldType::OrSymbol,
             form_field: T::Boolean,
             group_name: String,
             hidden: T::Boolean,
             label: String,
             options: T::Array[HubspotSDK::OptionInput::OrHash],
-            type: HubspotSDK::CRM::PropertyUpdate::Type::OrSymbol,
+            type: HubspotSDK::Crm::PropertyUpdate::Type::OrSymbol,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Property)
         end
@@ -112,7 +112,7 @@ module HubspotSDK
             archived: T::Boolean,
             properties: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::CollectionResponseProperty)
+          ).returns(HubspotSDK::Crm::CollectionResponseProperty)
         end
         def list(
           object_type,

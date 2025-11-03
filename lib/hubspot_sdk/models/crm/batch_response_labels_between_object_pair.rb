@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchResponseLabelsBetweenObjectPair < HubspotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #
@@ -11,8 +11,8 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::CRM::LabelsBetweenObjectPair>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::LabelsBetweenObjectPair] }
+        #   @return [Array<HubspotSDK::Models::Crm::LabelsBetweenObjectPair>]
+        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::LabelsBetweenObjectPair] }
 
         # @!attribute started_at
         #
@@ -21,8 +21,8 @@ module HubspotSDK
 
         # @!attribute status
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::BatchResponseLabelsBetweenObjectPair::Status]
-        required :status, enum: -> { HubspotSDK::CRM::BatchResponseLabelsBetweenObjectPair::Status }
+        #   @return [Symbol, HubspotSDK::Models::Crm::BatchResponseLabelsBetweenObjectPair::Status]
+        required :status, enum: -> { HubspotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status }
 
         # @!attribute errors
         #
@@ -46,15 +46,15 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
         #   @param completed_at [Time]
-        #   @param results [Array<HubspotSDK::Models::CRM::LabelsBetweenObjectPair>]
+        #   @param results [Array<HubspotSDK::Models::Crm::LabelsBetweenObjectPair>]
         #   @param started_at [Time]
-        #   @param status [Symbol, HubspotSDK::Models::CRM::BatchResponseLabelsBetweenObjectPair::Status]
+        #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponseLabelsBetweenObjectPair::Status]
         #   @param errors [Array<HubspotSDK::Models::StandardError>]
         #   @param links [Hash{Symbol=>String}]
         #   @param num_errors [Integer]
         #   @param requested_at [Time]
 
-        # @see HubspotSDK::Models::CRM::BatchResponseLabelsBetweenObjectPair#status
+        # @see HubspotSDK::Models::Crm::BatchResponseLabelsBetweenObjectPair#status
         module Status
           extend HubspotSDK::Internal::Type::Enum
 

@@ -2,7 +2,7 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::OwnersTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::OwnersTest < HubspotSDK::Test::ResourceTest
   def test_list
     skip("Prism tests are disabled")
 
@@ -16,7 +16,7 @@ class HubspotSDK::Test::Resources::CRM::OwnersTest < HubspotSDK::Test::ResourceT
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::CRM::PublicOwner
+      row => HubspotSDK::Crm::PublicOwner
     end
 
     assert_pattern do
@@ -24,7 +24,7 @@ class HubspotSDK::Test::Resources::CRM::OwnersTest < HubspotSDK::Test::ResourceT
         id: String,
         archived: HubspotSDK::Internal::Type::Boolean,
         created_at: Time,
-        type: HubspotSDK::CRM::PublicOwner::Type,
+        type: HubspotSDK::Crm::PublicOwner::Type,
         updated_at: Time,
         email: String | nil,
         first_name: String | nil,
@@ -42,7 +42,7 @@ class HubspotSDK::Test::Resources::CRM::OwnersTest < HubspotSDK::Test::ResourceT
     response = @hubspot.crm.owners.get(0)
 
     assert_pattern do
-      response => HubspotSDK::CRM::PublicOwner
+      response => HubspotSDK::Crm::PublicOwner
     end
 
     assert_pattern do
@@ -50,7 +50,7 @@ class HubspotSDK::Test::Resources::CRM::OwnersTest < HubspotSDK::Test::ResourceT
         id: String,
         archived: HubspotSDK::Internal::Type::Boolean,
         created_at: Time,
-        type: HubspotSDK::CRM::PublicOwner::Type,
+        type: HubspotSDK::Crm::PublicOwner::Type,
         updated_at: Time,
         email: String | nil,
         first_name: String | nil,

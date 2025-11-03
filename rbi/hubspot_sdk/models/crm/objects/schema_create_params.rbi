@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
-        class SchemaCreateParams < HubspotSDK::Models::CRM::Objects::ObjectSchemaEgg
+        class SchemaCreateParams < HubspotSDK::Models::Crm::Objects::ObjectSchemaEgg
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Objects::SchemaCreateParams,
+                HubspotSDK::Crm::Objects::SchemaCreateParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

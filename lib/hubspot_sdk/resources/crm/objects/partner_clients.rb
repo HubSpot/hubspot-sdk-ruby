@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
         class PartnerClients
-          # @return [HubspotSDK::Resources::CRM::Objects::PartnerClients::Associations]
+          # @return [HubspotSDK::Resources::Crm::Objects::PartnerClients::Associations]
           attr_reader :associations
 
-          # @return [HubspotSDK::Resources::CRM::Objects::PartnerClients::Batch]
+          # @return [HubspotSDK::Resources::Crm::Objects::PartnerClients::Batch]
           attr_reader :batch
 
           # @overload update(partner_client_id, properties:, id_property: nil, request_options: {})
@@ -21,18 +21,18 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::SimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
           #
-          # @see HubspotSDK::Models::CRM::Objects::PartnerClientUpdateParams
+          # @see HubspotSDK::Models::Crm::Objects::PartnerClientUpdateParams
           def update(partner_client_id, params)
-            parsed, options = HubspotSDK::CRM::Objects::PartnerClientUpdateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::PartnerClientUpdateParams.dump_request(params)
             query_params = [:id_property]
             @client.request(
               method: :patch,
               path: ["crm/v3/objects/partner_clients/%1$s", partner_client_id],
               query: parsed.slice(*query_params).transform_keys(id_property: "idProperty"),
               body: parsed.except(*query_params),
-              model: HubspotSDK::CRM::SimplePublicObject,
+              model: HubspotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
@@ -47,17 +47,17 @@ module HubspotSDK
           # @param properties_with_history [Array<String>]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::CRM::SimplePublicObjectWithAssociations>]
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
           #
-          # @see HubspotSDK::Models::CRM::Objects::PartnerClientListParams
+          # @see HubspotSDK::Models::Crm::Objects::PartnerClientListParams
           def list(params = {})
-            parsed, options = HubspotSDK::CRM::Objects::PartnerClientListParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::PartnerClientListParams.dump_request(params)
             @client.request(
               method: :get,
               path: "crm/v3/objects/partner_clients",
               query: parsed.transform_keys(properties_with_history: "propertiesWithHistory"),
               page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::CRM::SimplePublicObjectWithAssociations,
+              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -72,11 +72,11 @@ module HubspotSDK
           # @param properties_with_history [Array<String>]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::SimplePublicObjectWithAssociations]
+          # @return [HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations]
           #
-          # @see HubspotSDK::Models::CRM::Objects::PartnerClientGetParams
+          # @see HubspotSDK::Models::Crm::Objects::PartnerClientGetParams
           def get(partner_client_id, params = {})
-            parsed, options = HubspotSDK::CRM::Objects::PartnerClientGetParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::PartnerClientGetParams.dump_request(params)
             @client.request(
               method: :get,
               path: ["crm/v3/objects/partner_clients/%1$s", partner_client_id],
@@ -84,7 +84,7 @@ module HubspotSDK
                 id_property: "idProperty",
                 properties_with_history: "propertiesWithHistory"
               ),
-              model: HubspotSDK::CRM::SimplePublicObjectWithAssociations,
+              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -93,7 +93,7 @@ module HubspotSDK
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.
           #
-          # @param filter_groups [Array<HubspotSDK::Models::CRM::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
+          # @param filter_groups [Array<HubspotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
           #
           # @param limit [Integer] The maximum results to return, up to 200 objects.
           #
@@ -105,16 +105,16 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::CollectionResponseWithTotalSimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
           #
-          # @see HubspotSDK::Models::CRM::Objects::PartnerClientSearchParams
+          # @see HubspotSDK::Models::Crm::Objects::PartnerClientSearchParams
           def search(params = {})
-            parsed, options = HubspotSDK::CRM::Objects::PartnerClientSearchParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::PartnerClientSearchParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/v3/objects/partner_clients/search",
               body: parsed,
-              model: HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject,
+              model: HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
               options: options
             )
           end
@@ -124,8 +124,8 @@ module HubspotSDK
           # @param client [HubspotSDK::Client]
           def initialize(client:)
             @client = client
-            @associations = HubspotSDK::Resources::CRM::Objects::PartnerClients::Associations.new(client: client)
-            @batch = HubspotSDK::Resources::CRM::Objects::PartnerClients::Batch.new(client: client)
+            @associations = HubspotSDK::Resources::Crm::Objects::PartnerClients::Associations.new(client: client)
+            @batch = HubspotSDK::Resources::Crm::Objects::PartnerClients::Batch.new(client: client)
           end
         end
       end

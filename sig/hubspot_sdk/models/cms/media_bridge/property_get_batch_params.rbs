@@ -5,7 +5,7 @@ module HubspotSDK
         type property_get_batch_params =
           { app_id: String } & HubspotSDK::Internal::Type::request_parameters
 
-        class PropertyGetBatchParams < HubspotSDK::Models::CRM::BatchReadInputPropertyName
+        class PropertyGetBatchParams < HubspotSDK::Models::Crm::BatchReadInputPropertyName
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

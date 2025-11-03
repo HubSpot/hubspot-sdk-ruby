@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CreatedResponseLabelsBetweenObjectPair < HubspotSDK::Internal::Type::BaseModel
         # @!attribute created_resource_id
         #
@@ -11,8 +11,8 @@ module HubspotSDK
 
         # @!attribute entity
         #
-        #   @return [HubspotSDK::Models::CRM::LabelsBetweenObjectPair]
-        required :entity, -> { HubspotSDK::CRM::LabelsBetweenObjectPair }
+        #   @return [HubspotSDK::Models::Crm::LabelsBetweenObjectPair]
+        required :entity, -> { HubspotSDK::Crm::LabelsBetweenObjectPair }
 
         # @!attribute location
         #
@@ -21,7 +21,7 @@ module HubspotSDK
 
         # @!method initialize(created_resource_id:, entity:, location: nil)
         #   @param created_resource_id [String]
-        #   @param entity [HubspotSDK::Models::CRM::LabelsBetweenObjectPair]
+        #   @param entity [HubspotSDK::Models::Crm::LabelsBetweenObjectPair]
         #   @param location [String]
       end
     end

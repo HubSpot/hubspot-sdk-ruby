@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         module PartnerClients
           class AssociationDeleteParams < HubspotSDK::Internal::Type::BaseModel
@@ -12,7 +12,7 @@ module HubspotSDK
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Objects::PartnerClients::AssociationDeleteParams,
+                  HubspotSDK::Crm::Objects::PartnerClients::AssociationDeleteParams,
                   HubspotSDK::Internal::AnyHash
                 )
               end

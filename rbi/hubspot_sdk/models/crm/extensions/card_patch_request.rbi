@@ -2,50 +2,50 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class CardPatchRequest < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::CardPatchRequest,
+                HubspotSDK::Crm::Extensions::CardPatchRequest,
                 HubspotSDK::Internal::AnyHash
               )
             end
 
           # Configuration for custom user actions on cards.
-          sig { returns(T.nilable(HubspotSDK::CRM::Extensions::CardActions)) }
+          sig { returns(T.nilable(HubspotSDK::Crm::Extensions::CardActions)) }
           attr_reader :actions
 
           sig do
             params(
-              actions: HubspotSDK::CRM::Extensions::CardActions::OrHash
+              actions: HubspotSDK::Crm::Extensions::CardActions::OrHash
             ).void
           end
           attr_writer :actions
 
           # Configuration for displayed info on a card
           sig do
-            returns(T.nilable(HubspotSDK::CRM::Extensions::CardDisplayBody))
+            returns(T.nilable(HubspotSDK::Crm::Extensions::CardDisplayBody))
           end
           attr_reader :display_
 
           sig do
             params(
-              display_: HubspotSDK::CRM::Extensions::CardDisplayBody::OrHash
+              display_: HubspotSDK::Crm::Extensions::CardDisplayBody::OrHash
             ).void
           end
           attr_writer :display_
 
           # Variant of CardFetchBody with fields as optional for patches
           sig do
-            returns(T.nilable(HubspotSDK::CRM::Extensions::CardFetchBodyPatch))
+            returns(T.nilable(HubspotSDK::Crm::Extensions::CardFetchBodyPatch))
           end
           attr_reader :fetch
 
           sig do
             params(
-              fetch: HubspotSDK::CRM::Extensions::CardFetchBodyPatch::OrHash
+              fetch: HubspotSDK::Crm::Extensions::CardFetchBodyPatch::OrHash
             ).void
           end
           attr_writer :fetch
@@ -60,9 +60,9 @@ module HubspotSDK
           # Body for a patch with optional fields
           sig do
             params(
-              actions: HubspotSDK::CRM::Extensions::CardActions::OrHash,
-              display_: HubspotSDK::CRM::Extensions::CardDisplayBody::OrHash,
-              fetch: HubspotSDK::CRM::Extensions::CardFetchBodyPatch::OrHash,
+              actions: HubspotSDK::Crm::Extensions::CardActions::OrHash,
+              display_: HubspotSDK::Crm::Extensions::CardDisplayBody::OrHash,
+              fetch: HubspotSDK::Crm::Extensions::CardFetchBodyPatch::OrHash,
               title: String
             ).returns(T.attached_class)
           end
@@ -81,9 +81,9 @@ module HubspotSDK
           sig do
             override.returns(
               {
-                actions: HubspotSDK::CRM::Extensions::CardActions,
-                display_: HubspotSDK::CRM::Extensions::CardDisplayBody,
-                fetch: HubspotSDK::CRM::Extensions::CardFetchBodyPatch,
+                actions: HubspotSDK::Crm::Extensions::CardActions,
+                display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
+                fetch: HubspotSDK::Crm::Extensions::CardFetchBodyPatch,
                 title: String
               }
             )

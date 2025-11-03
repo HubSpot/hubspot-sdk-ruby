@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Lists
         class Mapping
           # This API allows translation of a batch of legacy list id's to list id's. This
@@ -14,16 +14,16 @@ module HubspotSDK
           # @param body [Array<String>]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::PublicBatchMigrationMapping]
+          # @return [HubspotSDK::Models::Crm::PublicBatchMigrationMapping]
           #
-          # @see HubspotSDK::Models::CRM::Lists::MappingBatchCreateIDMappingParams
+          # @see HubspotSDK::Models::Crm::Lists::MappingBatchCreateIDMappingParams
           def batch_create_id_mapping(params)
-            parsed, options = HubspotSDK::CRM::Lists::MappingBatchCreateIDMappingParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Lists::MappingBatchCreateIDMappingParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/v3/lists/idmapping",
               body: parsed[:body],
-              model: HubspotSDK::CRM::PublicBatchMigrationMapping,
+              model: HubspotSDK::Crm::PublicBatchMigrationMapping,
               options: options
             )
           end
@@ -37,16 +37,16 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::PublicMigrationMapping]
+          # @return [HubspotSDK::Models::Crm::PublicMigrationMapping]
           #
-          # @see HubspotSDK::Models::CRM::Lists::MappingGetIDMappingParams
+          # @see HubspotSDK::Models::Crm::Lists::MappingGetIDMappingParams
           def get_id_mapping(params = {})
-            parsed, options = HubspotSDK::CRM::Lists::MappingGetIDMappingParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Lists::MappingGetIDMappingParams.dump_request(params)
             @client.request(
               method: :get,
               path: "crm/v3/lists/idmapping",
               query: parsed.transform_keys(legacy_list_id: "legacyListId"),
-              model: HubspotSDK::CRM::PublicMigrationMapping,
+              model: HubspotSDK::Crm::PublicMigrationMapping,
               options: options
             )
           end

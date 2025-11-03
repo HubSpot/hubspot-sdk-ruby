@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Timeline::EventsTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Timeline::EventsTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
@@ -13,7 +13,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::EventsTest < HubspotSDK::Test:
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::TimelineEventResponse
+      response => HubspotSDK::Crm::TimelineEventResponse
     end
 
     assert_pattern do
@@ -27,7 +27,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::EventsTest < HubspotSDK::Test:
         email: String | nil,
         extra_data: HubspotSDK::Internal::Type::Unknown | nil,
         object_id_: String | nil,
-        timeline_i_frame: HubspotSDK::CRM::TimelineEventIFrame | nil,
+        timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame | nil,
         timestamp: Time | nil,
         utk: String | nil
       }
@@ -56,7 +56,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::EventsTest < HubspotSDK::Test:
     response = @hubspot.crm.timeline.events.get("eventId", event_template_id: "eventTemplateId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::TimelineEventResponse
+      response => HubspotSDK::Crm::TimelineEventResponse
     end
 
     assert_pattern do
@@ -70,7 +70,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::EventsTest < HubspotSDK::Test:
         email: String | nil,
         extra_data: HubspotSDK::Internal::Type::Unknown | nil,
         object_id_: String | nil,
-        timeline_i_frame: HubspotSDK::CRM::TimelineEventIFrame | nil,
+        timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame | nil,
         timestamp: Time | nil,
         utk: String | nil
       }
@@ -83,7 +83,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::EventsTest < HubspotSDK::Test:
     response = @hubspot.crm.timeline.events.get_detail("eventId", event_template_id: "eventTemplateId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::EventDetail
+      response => HubspotSDK::Crm::EventDetail
     end
 
     assert_pattern do

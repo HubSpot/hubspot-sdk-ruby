@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicObjectListSearchResult < HubspotSDK::Internal::Type::BaseModel
         # @!attribute additional_properties
         #   The name and value of any additional properties that exist for this list and
@@ -87,7 +87,7 @@ module HubspotSDK
 
         # @!method initialize(additional_properties:, list_id:, list_version:, name:, object_type_id:, processing_status:, processing_type:, created_at: nil, created_by_id: nil, deleted_at: nil, filters_updated_at: nil, updated_at: nil, updated_by_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::PublicObjectListSearchResult} for more details.
+        #   {HubspotSDK::Models::Crm::PublicObjectListSearchResult} for more details.
         #
         #   @param additional_properties [Hash{Symbol=>String}] The name and value of any additional properties that exist for this list and tha
         #

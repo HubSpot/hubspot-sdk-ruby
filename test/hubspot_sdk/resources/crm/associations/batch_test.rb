@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Associations::BatchTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Associations::BatchTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
@@ -14,15 +14,15 @@ class HubspotSDK::Test::Resources::CRM::Associations::BatchTest < HubspotSDK::Te
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::BatchResponsePublicAssociation
+      response => HubspotSDK::Crm::BatchResponsePublicAssociation
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicAssociation]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociation]),
         started_at: Time,
-        status: HubspotSDK::CRM::BatchResponsePublicAssociation::Status,
+        status: HubspotSDK::Crm::BatchResponsePublicAssociation::Status,
         errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
@@ -57,15 +57,15 @@ class HubspotSDK::Test::Resources::CRM::Associations::BatchTest < HubspotSDK::Te
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::BatchResponsePublicAssociationMulti
+      response => HubspotSDK::Crm::BatchResponsePublicAssociationMulti
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicAssociationMulti]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociationMulti]),
         started_at: Time,
-        status: HubspotSDK::CRM::BatchResponsePublicAssociationMulti::Status,
+        status: HubspotSDK::Crm::BatchResponsePublicAssociationMulti::Status,
         errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,

@@ -1,17 +1,17 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type created_response_simple_public_object =
         {
           created_resource_id: String,
-          entity: HubspotSDK::CRM::SimplePublicObject,
+          entity: HubspotSDK::Crm::SimplePublicObject,
           location: String
         }
 
       class CreatedResponseSimplePublicObject < HubspotSDK::Internal::Type::BaseModel
         attr_accessor created_resource_id: String
 
-        attr_accessor entity: HubspotSDK::CRM::SimplePublicObject
+        attr_accessor entity: HubspotSDK::Crm::SimplePublicObject
 
         attr_reader location: String?
 
@@ -19,13 +19,13 @@ module HubspotSDK
 
         def initialize: (
           created_resource_id: String,
-          entity: HubspotSDK::CRM::SimplePublicObject,
+          entity: HubspotSDK::Crm::SimplePublicObject,
           ?location: String
         ) -> void
 
         def to_hash: -> {
           created_resource_id: String,
-          entity: HubspotSDK::CRM::SimplePublicObject,
+          entity: HubspotSDK::Crm::SimplePublicObject,
           location: String
         }
       end

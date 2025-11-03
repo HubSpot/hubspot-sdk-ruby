@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class TimelineEventResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   Identifier for the event. This should be unique to the app and event template.
@@ -66,8 +66,8 @@ module HubspotSDK
 
         # @!attribute timeline_i_frame
         #
-        #   @return [HubspotSDK::Models::CRM::TimelineEventIFrame, nil]
-        optional :timeline_i_frame, -> { HubspotSDK::CRM::TimelineEventIFrame }, api_name: :timelineIFrame
+        #   @return [HubspotSDK::Models::Crm::TimelineEventIFrame, nil]
+        optional :timeline_i_frame, -> { HubspotSDK::Crm::TimelineEventIFrame }, api_name: :timelineIFrame
 
         # @!attribute timestamp
         #   The time the event occurred. If not passed in, the curren time will be assumed.
@@ -86,7 +86,7 @@ module HubspotSDK
 
         # @!method initialize(id:, event_template_id:, object_type:, tokens:, created_at: nil, domain: nil, email: nil, extra_data: nil, object_id_: nil, timeline_i_frame: nil, timestamp: nil, utk: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::TimelineEventResponse} for more details.
+        #   {HubspotSDK::Models::Crm::TimelineEventResponse} for more details.
         #
         #   The current state of the timeline event.
         #
@@ -108,7 +108,7 @@ module HubspotSDK
         #
         #   @param object_id_ [String] The CRM object identifier. This is required for every event other than contacts
         #
-        #   @param timeline_i_frame [HubspotSDK::Models::CRM::TimelineEventIFrame]
+        #   @param timeline_i_frame [HubspotSDK::Models::Crm::TimelineEventIFrame]
         #
         #   @param timestamp [Time] The time the event occurred. If not passed in, the curren time will be assumed.
         #

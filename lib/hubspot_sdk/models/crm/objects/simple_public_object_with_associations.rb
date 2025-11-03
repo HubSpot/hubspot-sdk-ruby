@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         class SimplePublicObjectWithAssociations < HubspotSDK::Internal::Type::BaseModel
           # @!attribute id
@@ -44,9 +44,9 @@ module HubspotSDK
           # @!attribute associations
           #   A list defining relationships with other objects.
           #
-          #   @return [Hash{Symbol=>HubspotSDK::Models::CRM::CollectionResponseAssociatedID}, nil]
+          #   @return [Hash{Symbol=>HubspotSDK::Models::Crm::CollectionResponseAssociatedID}, nil]
           optional :associations,
-                   -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::CRM::CollectionResponseAssociatedID] }
+                   -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Crm::CollectionResponseAssociatedID] }
 
           # @!attribute object_write_trace_id
           #
@@ -57,10 +57,10 @@ module HubspotSDK
           #   Key-value pairs representing the properties of the object along with their
           #   history.
           #
-          #   @return [Hash{Symbol=>Array<HubspotSDK::Models::CRM::ValueWithTimestamp>}, nil]
+          #   @return [Hash{Symbol=>Array<HubspotSDK::Models::Crm::ValueWithTimestamp>}, nil]
           optional :properties_with_history,
                    -> {
-                     HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::ValueWithTimestamp]]
+                     HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]
                    },
                    api_name: :propertiesWithHistory
 
@@ -71,7 +71,7 @@ module HubspotSDK
 
           # @!method initialize(id:, archived:, created_at:, properties:, updated_at:, archived_at: nil, associations: nil, object_write_trace_id: nil, properties_with_history: nil, url: nil)
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::CRM::Objects::SimplePublicObjectWithAssociations} for more
+          #   {HubspotSDK::Models::Crm::Objects::SimplePublicObjectWithAssociations} for more
           #   details.
           #
           #   Represents a CRM object along with its properties, timestamps, and a set of
@@ -89,11 +89,11 @@ module HubspotSDK
           #
           #   @param archived_at [Time] The timestamp when the object was archived, in ISO 8601 format.
           #
-          #   @param associations [Hash{Symbol=>HubspotSDK::Models::CRM::CollectionResponseAssociatedID}] A list defining relationships with other objects.
+          #   @param associations [Hash{Symbol=>HubspotSDK::Models::Crm::CollectionResponseAssociatedID}] A list defining relationships with other objects.
           #
           #   @param object_write_trace_id [String]
           #
-          #   @param properties_with_history [Hash{Symbol=>Array<HubspotSDK::Models::CRM::ValueWithTimestamp>}] Key-value pairs representing the properties of the object along with their histo
+          #   @param properties_with_history [Hash{Symbol=>Array<HubspotSDK::Models::Crm::ValueWithTimestamp>}] Key-value pairs representing the properties of the object along with their histo
           #
           #   @param url [String]
         end

@@ -2,19 +2,19 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class AssociationSpecWithLabel < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::AssociationSpecWithLabel,
+              HubspotSDK::Crm::AssociationSpecWithLabel,
               HubspotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::CRM::AssociationSpecWithLabel::Category::TaggedSymbol
+            HubspotSDK::Crm::AssociationSpecWithLabel::Category::TaggedSymbol
           )
         end
         attr_accessor :category
@@ -31,7 +31,7 @@ module HubspotSDK
         sig do
           params(
             category:
-              HubspotSDK::CRM::AssociationSpecWithLabel::Category::OrSymbol,
+              HubspotSDK::Crm::AssociationSpecWithLabel::Category::OrSymbol,
             type_id: Integer,
             label: String
           ).returns(T.attached_class)
@@ -43,7 +43,7 @@ module HubspotSDK
           override.returns(
             {
               category:
-                HubspotSDK::CRM::AssociationSpecWithLabel::Category::TaggedSymbol,
+                HubspotSDK::Crm::AssociationSpecWithLabel::Category::TaggedSymbol,
               type_id: Integer,
               label: String
             }
@@ -57,30 +57,30 @@ module HubspotSDK
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::CRM::AssociationSpecWithLabel::Category)
+              T.all(Symbol, HubspotSDK::Crm::AssociationSpecWithLabel::Category)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           HUBSPOT_DEFINED =
             T.let(
               :HUBSPOT_DEFINED,
-              HubspotSDK::CRM::AssociationSpecWithLabel::Category::TaggedSymbol
+              HubspotSDK::Crm::AssociationSpecWithLabel::Category::TaggedSymbol
             )
           USER_DEFINED =
             T.let(
               :USER_DEFINED,
-              HubspotSDK::CRM::AssociationSpecWithLabel::Category::TaggedSymbol
+              HubspotSDK::Crm::AssociationSpecWithLabel::Category::TaggedSymbol
             )
           INTEGRATOR_DEFINED =
             T.let(
               :INTEGRATOR_DEFINED,
-              HubspotSDK::CRM::AssociationSpecWithLabel::Category::TaggedSymbol
+              HubspotSDK::Crm::AssociationSpecWithLabel::Category::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::AssociationSpecWithLabel::Category::TaggedSymbol
+                HubspotSDK::Crm::AssociationSpecWithLabel::Category::TaggedSymbol
               ]
             )
           end

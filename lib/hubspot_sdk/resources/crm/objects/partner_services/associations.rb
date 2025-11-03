@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
         class PartnerServices
           class Associations
@@ -16,11 +16,11 @@ module HubspotSDK
             # @param to_object_id [String]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::CRM::SimplePublicObjectWithAssociations]
+            # @return [HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations]
             #
-            # @see HubspotSDK::Models::CRM::Objects::PartnerServices::AssociationUpdateParams
+            # @see HubspotSDK::Models::Crm::Objects::PartnerServices::AssociationUpdateParams
             def update(association_type, params)
-              parsed, options = HubspotSDK::CRM::Objects::PartnerServices::AssociationUpdateParams.dump_request(params)
+              parsed, options = HubspotSDK::Crm::Objects::PartnerServices::AssociationUpdateParams.dump_request(params)
               partner_service_id =
                 parsed.delete(:partner_service_id) do
                   raise ArgumentError.new("missing required path argument #{_1}")
@@ -42,13 +42,13 @@ module HubspotSDK
                   to_object_id,
                   association_type
                 ],
-                model: HubspotSDK::CRM::SimplePublicObjectWithAssociations,
+                model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
                 options: options
               )
             end
 
             # Some parameter documentations has been truncated, see
-            # {HubspotSDK::Models::CRM::Objects::PartnerServices::AssociationListParams} for
+            # {HubspotSDK::Models::Crm::Objects::PartnerServices::AssociationListParams} for
             # more details.
             #
             # List associations of a partner service by type
@@ -67,11 +67,11 @@ module HubspotSDK
             #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::CRM::AssociatedID>]
+            # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::AssociatedID>]
             #
-            # @see HubspotSDK::Models::CRM::Objects::PartnerServices::AssociationListParams
+            # @see HubspotSDK::Models::Crm::Objects::PartnerServices::AssociationListParams
             def list(to_object_type, params)
-              parsed, options = HubspotSDK::CRM::Objects::PartnerServices::AssociationListParams.dump_request(params)
+              parsed, options = HubspotSDK::Crm::Objects::PartnerServices::AssociationListParams.dump_request(params)
               partner_service_id =
                 parsed.delete(:partner_service_id) do
                   raise ArgumentError.new("missing required path argument #{_1}")
@@ -85,7 +85,7 @@ module HubspotSDK
                 ],
                 query: parsed.transform_keys(include_fa: "includeFA"),
                 page: HubspotSDK::Internal::Page,
-                model: HubspotSDK::CRM::AssociatedID,
+                model: HubspotSDK::Crm::AssociatedID,
                 options: options
               )
             end
@@ -102,9 +102,9 @@ module HubspotSDK
             #
             # @return [nil]
             #
-            # @see HubspotSDK::Models::CRM::Objects::PartnerServices::AssociationDeleteParams
+            # @see HubspotSDK::Models::Crm::Objects::PartnerServices::AssociationDeleteParams
             def delete(association_type, params)
-              parsed, options = HubspotSDK::CRM::Objects::PartnerServices::AssociationDeleteParams.dump_request(params)
+              parsed, options = HubspotSDK::Crm::Objects::PartnerServices::AssociationDeleteParams.dump_request(params)
               partner_service_id =
                 parsed.delete(:partner_service_id) do
                   raise ArgumentError.new("missing required path argument #{_1}")

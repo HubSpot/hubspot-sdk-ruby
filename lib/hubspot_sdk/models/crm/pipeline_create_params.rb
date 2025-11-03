@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Pipelines#create
-      class PipelineCreateParams < HubspotSDK::Models::CRM::PipelineInput
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Pipelines#create
+      class PipelineCreateParams < HubspotSDK::Models::Crm::PipelineInput
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 

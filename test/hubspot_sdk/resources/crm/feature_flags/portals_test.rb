@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::FeatureFlags::PortalsTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::FeatureFlags::PortalsTest < HubspotSDK::Test::ResourceTest
   def test_update_required_params
     skip("Prism tests are disabled")
 
@@ -10,14 +10,14 @@ class HubspotSDK::Test::Resources::CRM::FeatureFlags::PortalsTest < HubspotSDK::
       @hubspot.crm.feature_flags.portals.update(0, app_id: 0, flag_name: "flagName", flag_state: :OFF)
 
     assert_pattern do
-      response => HubspotSDK::CRM::PortalFlagStateResponse
+      response => HubspotSDK::Crm::PortalFlagStateResponse
     end
 
     assert_pattern do
       response => {
         app_id: Integer,
         flag_name: String,
-        flag_state: HubspotSDK::CRM::PortalFlagStateResponse::FlagState,
+        flag_state: HubspotSDK::Crm::PortalFlagStateResponse::FlagState,
         portal_id: Integer
       }
     end
@@ -29,14 +29,14 @@ class HubspotSDK::Test::Resources::CRM::FeatureFlags::PortalsTest < HubspotSDK::
     response = @hubspot.crm.feature_flags.portals.delete(0, app_id: 0, flag_name: "flagName")
 
     assert_pattern do
-      response => HubspotSDK::CRM::PortalFlagStateResponse
+      response => HubspotSDK::Crm::PortalFlagStateResponse
     end
 
     assert_pattern do
       response => {
         app_id: Integer,
         flag_name: String,
-        flag_state: HubspotSDK::CRM::PortalFlagStateResponse::FlagState,
+        flag_state: HubspotSDK::Crm::PortalFlagStateResponse::FlagState,
         portal_id: Integer
       }
     end
@@ -48,12 +48,12 @@ class HubspotSDK::Test::Resources::CRM::FeatureFlags::PortalsTest < HubspotSDK::
     response = @hubspot.crm.feature_flags.portals.batch_delete("flagName", app_id: 0, portal_ids: [0])
 
     assert_pattern do
-      response => HubspotSDK::CRM::PortalFlagStateBatchResponse
+      response => HubspotSDK::Crm::PortalFlagStateBatchResponse
     end
 
     assert_pattern do
       response => {
-        portal_flag_states: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PortalFlagStateResponse])
+        portal_flag_states: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PortalFlagStateResponse])
       }
     end
   end
@@ -69,12 +69,12 @@ class HubspotSDK::Test::Resources::CRM::FeatureFlags::PortalsTest < HubspotSDK::
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::PortalFlagStateBatchResponse
+      response => HubspotSDK::Crm::PortalFlagStateBatchResponse
     end
 
     assert_pattern do
       response => {
-        portal_flag_states: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PortalFlagStateResponse])
+        portal_flag_states: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PortalFlagStateResponse])
       }
     end
   end
@@ -85,14 +85,14 @@ class HubspotSDK::Test::Resources::CRM::FeatureFlags::PortalsTest < HubspotSDK::
     response = @hubspot.crm.feature_flags.portals.get(0, app_id: 0, flag_name: "flagName")
 
     assert_pattern do
-      response => HubspotSDK::CRM::PortalFlagStateResponse
+      response => HubspotSDK::Crm::PortalFlagStateResponse
     end
 
     assert_pattern do
       response => {
         app_id: Integer,
         flag_name: String,
-        flag_state: HubspotSDK::CRM::PortalFlagStateResponse::FlagState,
+        flag_state: HubspotSDK::Crm::PortalFlagStateResponse::FlagState,
         portal_id: Integer
       }
     end

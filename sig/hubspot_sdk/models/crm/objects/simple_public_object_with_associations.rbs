@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type simple_public_object_with_associations =
           {
@@ -10,9 +10,9 @@ module HubspotSDK
             properties: ::Hash[Symbol, String?],
             updated_at: Time,
             archived_at: Time,
-            associations: ::Hash[Symbol, HubspotSDK::CRM::CollectionResponseAssociatedID],
+            associations: ::Hash[Symbol, HubspotSDK::Crm::CollectionResponseAssociatedID],
             object_write_trace_id: String,
-            properties_with_history: ::Hash[Symbol, ::Array[HubspotSDK::CRM::ValueWithTimestamp]],
+            properties_with_history: ::Hash[Symbol, ::Array[HubspotSDK::Crm::ValueWithTimestamp]],
             url: String
           }
 
@@ -31,21 +31,21 @@ module HubspotSDK
 
           def archived_at=: (Time) -> Time
 
-          attr_reader associations: ::Hash[Symbol, HubspotSDK::CRM::CollectionResponseAssociatedID]?
+          attr_reader associations: ::Hash[Symbol, HubspotSDK::Crm::CollectionResponseAssociatedID]?
 
           def associations=: (
-            ::Hash[Symbol, HubspotSDK::CRM::CollectionResponseAssociatedID]
-          ) -> ::Hash[Symbol, HubspotSDK::CRM::CollectionResponseAssociatedID]
+            ::Hash[Symbol, HubspotSDK::Crm::CollectionResponseAssociatedID]
+          ) -> ::Hash[Symbol, HubspotSDK::Crm::CollectionResponseAssociatedID]
 
           attr_reader object_write_trace_id: String?
 
           def object_write_trace_id=: (String) -> String
 
-          attr_reader properties_with_history: ::Hash[Symbol, ::Array[HubspotSDK::CRM::ValueWithTimestamp]]?
+          attr_reader properties_with_history: ::Hash[Symbol, ::Array[HubspotSDK::Crm::ValueWithTimestamp]]?
 
           def properties_with_history=: (
-            ::Hash[Symbol, ::Array[HubspotSDK::CRM::ValueWithTimestamp]]
-          ) -> ::Hash[Symbol, ::Array[HubspotSDK::CRM::ValueWithTimestamp]]
+            ::Hash[Symbol, ::Array[HubspotSDK::Crm::ValueWithTimestamp]]
+          ) -> ::Hash[Symbol, ::Array[HubspotSDK::Crm::ValueWithTimestamp]]
 
           attr_reader url: String?
 
@@ -58,9 +58,9 @@ module HubspotSDK
             properties: ::Hash[Symbol, String?],
             updated_at: Time,
             ?archived_at: Time,
-            ?associations: ::Hash[Symbol, HubspotSDK::CRM::CollectionResponseAssociatedID],
+            ?associations: ::Hash[Symbol, HubspotSDK::Crm::CollectionResponseAssociatedID],
             ?object_write_trace_id: String,
-            ?properties_with_history: ::Hash[Symbol, ::Array[HubspotSDK::CRM::ValueWithTimestamp]],
+            ?properties_with_history: ::Hash[Symbol, ::Array[HubspotSDK::Crm::ValueWithTimestamp]],
             ?url: String
           ) -> void
 
@@ -71,9 +71,9 @@ module HubspotSDK
             properties: ::Hash[Symbol, String?],
             updated_at: Time,
             archived_at: Time,
-            associations: ::Hash[Symbol, HubspotSDK::CRM::CollectionResponseAssociatedID],
+            associations: ::Hash[Symbol, HubspotSDK::Crm::CollectionResponseAssociatedID],
             object_write_trace_id: String,
-            properties_with_history: ::Hash[Symbol, ::Array[HubspotSDK::CRM::ValueWithTimestamp]],
+            properties_with_history: ::Hash[Symbol, ::Array[HubspotSDK::Crm::ValueWithTimestamp]],
             url: String
           }
         end

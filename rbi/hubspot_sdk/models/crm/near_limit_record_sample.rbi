@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class NearLimitRecordSample < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::NearLimitRecordSample,
+              HubspotSDK::Crm::NearLimitRecordSample,
               HubspotSDK::Internal::AnyHash
             )
           end

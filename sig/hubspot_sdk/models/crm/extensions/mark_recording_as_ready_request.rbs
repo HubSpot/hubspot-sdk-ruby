@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         type mark_recording_as_ready_request = { engagement_id: Integer }
 

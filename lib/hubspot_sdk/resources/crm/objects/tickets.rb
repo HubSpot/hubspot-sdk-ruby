@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
         class Tickets
-          # @return [HubspotSDK::Resources::CRM::Objects::Tickets::Batch]
+          # @return [HubspotSDK::Resources::Crm::Objects::Tickets::Batch]
           attr_reader :batch
 
           # Create a ticket with the given properties and return a copy of the object,
@@ -16,20 +16,20 @@ module HubspotSDK
           #
           # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
           #
-          # @param associations [Array<HubspotSDK::Models::CRM::PublicAssociationsForObject>]
+          # @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::CreatedResponseSimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::CreatedResponseSimplePublicObject]
           #
-          # @see HubspotSDK::Models::CRM::Objects::TicketCreateParams
+          # @see HubspotSDK::Models::Crm::Objects::TicketCreateParams
           def create(params)
-            parsed, options = HubspotSDK::CRM::Objects::TicketCreateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::TicketCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/v3/objects/tickets",
               body: parsed,
-              model: HubspotSDK::CRM::CreatedResponseSimplePublicObject,
+              model: HubspotSDK::Crm::CreatedResponseSimplePublicObject,
               options: options
             )
           end
@@ -51,24 +51,24 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::SimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
           #
-          # @see HubspotSDK::Models::CRM::Objects::TicketUpdateParams
+          # @see HubspotSDK::Models::Crm::Objects::TicketUpdateParams
           def update(ticket_id, params)
-            parsed, options = HubspotSDK::CRM::Objects::TicketUpdateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::TicketUpdateParams.dump_request(params)
             query_params = [:id_property]
             @client.request(
               method: :patch,
               path: ["crm/v3/objects/tickets/%1$s", ticket_id],
               query: parsed.slice(*query_params).transform_keys(id_property: "idProperty"),
               body: parsed.except(*query_params),
-              model: HubspotSDK::CRM::SimplePublicObject,
+              model: HubspotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::Objects::TicketListParams} for more details.
+          # {HubspotSDK::Models::Crm::Objects::TicketListParams} for more details.
           #
           # Read a page of tickets. Control what is returned via the `properties` query
           # param.
@@ -89,17 +89,17 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::CRM::SimplePublicObjectWithAssociations>]
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
           #
-          # @see HubspotSDK::Models::CRM::Objects::TicketListParams
+          # @see HubspotSDK::Models::Crm::Objects::TicketListParams
           def list(params = {})
-            parsed, options = HubspotSDK::CRM::Objects::TicketListParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::TicketListParams.dump_request(params)
             @client.request(
               method: :get,
               path: "crm/v3/objects/tickets",
               query: parsed.transform_keys(properties_with_history: "propertiesWithHistory"),
               page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::CRM::SimplePublicObjectWithAssociations,
+              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -113,7 +113,7 @@ module HubspotSDK
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::CRM::Objects::TicketDeleteParams
+          # @see HubspotSDK::Models::Crm::Objects::TicketDeleteParams
           def delete(ticket_id, params = {})
             @client.request(
               method: :delete,
@@ -124,7 +124,7 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::Objects::TicketGetParams} for more details.
+          # {HubspotSDK::Models::Crm::Objects::TicketGetParams} for more details.
           #
           # Read an Object identified by `{ticketId}`. `{ticketId}` refers to the internal
           # object ID by default, or optionally any unique property value as specified by
@@ -147,11 +147,11 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::SimplePublicObjectWithAssociations]
+          # @return [HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations]
           #
-          # @see HubspotSDK::Models::CRM::Objects::TicketGetParams
+          # @see HubspotSDK::Models::Crm::Objects::TicketGetParams
           def get(ticket_id, params = {})
-            parsed, options = HubspotSDK::CRM::Objects::TicketGetParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::TicketGetParams.dump_request(params)
             @client.request(
               method: :get,
               path: ["crm/v3/objects/tickets/%1$s", ticket_id],
@@ -159,7 +159,7 @@ module HubspotSDK
                 id_property: "idProperty",
                 properties_with_history: "propertiesWithHistory"
               ),
-              model: HubspotSDK::CRM::SimplePublicObjectWithAssociations,
+              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -172,16 +172,16 @@ module HubspotSDK
           # @param primary_object_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::SimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
           #
-          # @see HubspotSDK::Models::CRM::Objects::TicketMergeParams
+          # @see HubspotSDK::Models::Crm::Objects::TicketMergeParams
           def merge(params)
-            parsed, options = HubspotSDK::CRM::Objects::TicketMergeParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::TicketMergeParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/v3/objects/tickets/merge",
               body: parsed,
-              model: HubspotSDK::CRM::SimplePublicObject,
+              model: HubspotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
@@ -194,7 +194,7 @@ module HubspotSDK
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.
           #
-          # @param filter_groups [Array<HubspotSDK::Models::CRM::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
+          # @param filter_groups [Array<HubspotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
           #
           # @param limit [Integer] The maximum results to return, up to 200 objects.
           #
@@ -206,16 +206,16 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::CollectionResponseWithTotalSimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
           #
-          # @see HubspotSDK::Models::CRM::Objects::TicketSearchParams
+          # @see HubspotSDK::Models::Crm::Objects::TicketSearchParams
           def search(params = {})
-            parsed, options = HubspotSDK::CRM::Objects::TicketSearchParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::TicketSearchParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/v3/objects/tickets/search",
               body: parsed,
-              model: HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject,
+              model: HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
               options: options
             )
           end
@@ -225,7 +225,7 @@ module HubspotSDK
           # @param client [HubspotSDK::Client]
           def initialize(client:)
             @client = client
-            @batch = HubspotSDK::Resources::CRM::Objects::Tickets::Batch.new(client: client)
+            @batch = HubspotSDK::Resources::Crm::Objects::Tickets::Batch.new(client: client)
           end
         end
       end

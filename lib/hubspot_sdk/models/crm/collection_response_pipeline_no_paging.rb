@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Pipelines#list
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Pipelines#list
       class CollectionResponsePipelineNoPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::CRM::Pipeline>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Pipeline] }
+        #   @return [Array<HubspotSDK::Models::Crm::Pipeline>]
+        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Pipeline] }
 
         # @!method initialize(results:)
-        #   @param results [Array<HubspotSDK::Models::CRM::Pipeline>]
+        #   @param results [Array<HubspotSDK::Models::Crm::Pipeline>]
       end
     end
   end

@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Properties#list
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Properties#list
       class CollectionResponseProperty < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #

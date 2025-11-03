@@ -2,14 +2,14 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class CardObjectTypeBody < HubspotSDK::Internal::Type::BaseModel
           # @!attribute name
           #   A CRM object type where this card should be displayed.
           #
-          #   @return [Symbol, HubspotSDK::Models::CRM::Extensions::CardObjectTypeBody::Name]
-          required :name, enum: -> { HubspotSDK::CRM::Extensions::CardObjectTypeBody::Name }
+          #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::CardObjectTypeBody::Name]
+          required :name, enum: -> { HubspotSDK::Crm::Extensions::CardObjectTypeBody::Name }
 
           # @!attribute properties_to_send
           #   An array of properties that should be sent to this card's target URL when the
@@ -23,15 +23,15 @@ module HubspotSDK
 
           # @!method initialize(name:, properties_to_send:)
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::CRM::Extensions::CardObjectTypeBody} for more details.
+          #   {HubspotSDK::Models::Crm::Extensions::CardObjectTypeBody} for more details.
           #
-          #   @param name [Symbol, HubspotSDK::Models::CRM::Extensions::CardObjectTypeBody::Name] A CRM object type where this card should be displayed.
+          #   @param name [Symbol, HubspotSDK::Models::Crm::Extensions::CardObjectTypeBody::Name] A CRM object type where this card should be displayed.
           #
           #   @param properties_to_send [Array<String>] An array of properties that should be sent to this card's target URL when the da
 
           # A CRM object type where this card should be displayed.
           #
-          # @see HubspotSDK::Models::CRM::Extensions::CardObjectTypeBody#name
+          # @see HubspotSDK::Models::Crm::Extensions::CardObjectTypeBody#name
           module Name
             extend HubspotSDK::Internal::Type::Enum
 

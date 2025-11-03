@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicObjectListRecord < HubspotSDK::Internal::Type::BaseModel
         # @!attribute list_id
         #   The ID of the list containing the imported objects.

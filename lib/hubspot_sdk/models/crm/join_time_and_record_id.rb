@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class JoinTimeAndRecordID < HubspotSDK::Internal::Type::BaseModel
         # @!attribute membership_timestamp
         #

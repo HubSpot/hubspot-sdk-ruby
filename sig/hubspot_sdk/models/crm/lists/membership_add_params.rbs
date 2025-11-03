@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Lists
         type membership_add_params =
           { body: ::Array[String] }

@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type timeline_event =
         {
           event_template_id: String,
@@ -10,7 +10,7 @@ module HubspotSDK
           email: String,
           extra_data: top,
           object_id_: String,
-          timeline_i_frame: HubspotSDK::CRM::TimelineEventIFrame,
+          timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame,
           timestamp: Time,
           utk: String
         }
@@ -40,11 +40,11 @@ module HubspotSDK
 
         def object_id_=: (String) -> String
 
-        attr_reader timeline_i_frame: HubspotSDK::CRM::TimelineEventIFrame?
+        attr_reader timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame?
 
         def timeline_i_frame=: (
-          HubspotSDK::CRM::TimelineEventIFrame
-        ) -> HubspotSDK::CRM::TimelineEventIFrame
+          HubspotSDK::Crm::TimelineEventIFrame
+        ) -> HubspotSDK::Crm::TimelineEventIFrame
 
         attr_reader timestamp: Time?
 
@@ -62,7 +62,7 @@ module HubspotSDK
           ?email: String,
           ?extra_data: top,
           ?object_id_: String,
-          ?timeline_i_frame: HubspotSDK::CRM::TimelineEventIFrame,
+          ?timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame,
           ?timestamp: Time,
           ?utk: String
         ) -> void
@@ -75,7 +75,7 @@ module HubspotSDK
           email: String,
           extra_data: top,
           object_id_: String,
-          timeline_i_frame: HubspotSDK::CRM::TimelineEventIFrame,
+          timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame,
           timestamp: Time,
           utk: String
         }

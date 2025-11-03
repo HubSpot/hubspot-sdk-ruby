@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type timeline_event_template_token_option =
         { label: String, value: String }
 

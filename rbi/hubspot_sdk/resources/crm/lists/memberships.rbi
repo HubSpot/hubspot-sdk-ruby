@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Lists
         class Memberships
           # Fetch the memberships of a list in order sorted by the `recordId` of the records
@@ -22,7 +22,7 @@ module HubspotSDK
               limit: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Internal::Page[HubspotSDK::CRM::JoinTimeAndRecordID]
+              HubspotSDK::Internal::Page[HubspotSDK::Crm::JoinTimeAndRecordID]
             )
           end
           def list(
@@ -56,7 +56,7 @@ module HubspotSDK
               list_id: String,
               body: T::Array[String],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::MembershipsUpdateResponse)
+            ).returns(HubspotSDK::Crm::MembershipsUpdateResponse)
           end
           def add(
             # The **ILS ID** of the `MANUAL` or `SNAPSHOT` list.
@@ -106,7 +106,7 @@ module HubspotSDK
               record_ids_to_add: T::Array[String],
               record_ids_to_remove: T::Array[String],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::MembershipsUpdateResponse)
+            ).returns(HubspotSDK::Crm::MembershipsUpdateResponse)
           end
           def add_and_remove(
             # The **ILS ID** of the `MANUAL` or `SNAPSHOT` list.
@@ -124,7 +124,7 @@ module HubspotSDK
               object_type_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::CRM::APICollectionResponseRecordListMembershipNoPaging
+              HubspotSDK::Crm::APICollectionResponseRecordListMembershipNoPaging
             )
           end
           def get_lists(
@@ -153,7 +153,7 @@ module HubspotSDK
               limit: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Internal::Page[HubspotSDK::CRM::JoinTimeAndRecordID]
+              HubspotSDK::Internal::Page[HubspotSDK::Crm::JoinTimeAndRecordID]
             )
           end
           def get_page_ordered_by_added_to_list_date(
@@ -187,7 +187,7 @@ module HubspotSDK
               list_id: String,
               body: T::Array[String],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::MembershipsUpdateResponse)
+            ).returns(HubspotSDK::Crm::MembershipsUpdateResponse)
           end
           def remove(
             # The **ILS ID** of the `MANUAL` or `SNAPSHOT` list.

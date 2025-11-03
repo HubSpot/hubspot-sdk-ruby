@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Extensions
         class Cards
           # Defines a new card that will become active on an account when this app is
@@ -10,12 +10,12 @@ module HubspotSDK
           sig do
             params(
               app_id: Integer,
-              actions: HubspotSDK::CRM::Extensions::CardActions::OrHash,
-              display_: HubspotSDK::CRM::Extensions::CardDisplayBody::OrHash,
-              fetch: HubspotSDK::CRM::Extensions::CardFetchBody::OrHash,
+              actions: HubspotSDK::Crm::Extensions::CardActions::OrHash,
+              display_: HubspotSDK::Crm::Extensions::CardDisplayBody::OrHash,
+              fetch: HubspotSDK::Crm::Extensions::CardFetchBody::OrHash,
               title: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::Extensions::PublicCardResponse)
+            ).returns(HubspotSDK::Crm::Extensions::PublicCardResponse)
           end
           def create(
             # The ID of the target app.
@@ -37,12 +37,12 @@ module HubspotSDK
             params(
               card_id: String,
               app_id: Integer,
-              actions: HubspotSDK::CRM::Extensions::CardActions::OrHash,
-              display_: HubspotSDK::CRM::Extensions::CardDisplayBody::OrHash,
-              fetch: HubspotSDK::CRM::Extensions::CardFetchBodyPatch::OrHash,
+              actions: HubspotSDK::Crm::Extensions::CardActions::OrHash,
+              display_: HubspotSDK::Crm::Extensions::CardDisplayBody::OrHash,
+              fetch: HubspotSDK::Crm::Extensions::CardFetchBodyPatch::OrHash,
               title: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::Extensions::PublicCardResponse)
+            ).returns(HubspotSDK::Crm::Extensions::PublicCardResponse)
           end
           def update(
             # Path param: The ID of the card to update.
@@ -66,7 +66,7 @@ module HubspotSDK
             params(
               app_id: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::Extensions::PublicCardListResponse)
+            ).returns(HubspotSDK::Crm::Extensions::PublicCardListResponse)
           end
           def list(
             # The ID of the target app.
@@ -100,7 +100,7 @@ module HubspotSDK
               card_id: String,
               app_id: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::Extensions::PublicCardResponse)
+            ).returns(HubspotSDK::Crm::Extensions::PublicCardResponse)
           end
           def get(
             # The ID of the target card.
@@ -116,7 +116,7 @@ module HubspotSDK
           # response to the data fetch request.
           sig do
             params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-              HubspotSDK::CRM::Extensions::IntegratorCardPayloadResponse
+              HubspotSDK::Crm::Extensions::IntegratorCardPayloadResponse
             )
           end
           def get_sample_response(request_options: {})

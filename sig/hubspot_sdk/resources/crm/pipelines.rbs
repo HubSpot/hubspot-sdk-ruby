@@ -1,16 +1,16 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Pipelines
-        attr_reader stages: HubspotSDK::Resources::CRM::Pipelines::Stages
+        attr_reader stages: HubspotSDK::Resources::Crm::Pipelines::Stages
 
         def create: (
           String object_type,
           display_order: Integer,
           label: String,
-          stages: ::Array[HubspotSDK::CRM::PipelineStageInput],
+          stages: ::Array[HubspotSDK::Crm::PipelineStageInput],
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::CRM::Pipeline
+        ) -> HubspotSDK::Crm::Pipeline
 
         def update: (
           String pipeline_id,
@@ -21,12 +21,12 @@ module HubspotSDK
           ?display_order: Integer,
           ?label: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::CRM::Pipeline
+        ) -> HubspotSDK::Crm::Pipeline
 
         def list: (
           String object_type,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::CRM::CollectionResponsePipelineNoPaging
+        ) -> HubspotSDK::Crm::CollectionResponsePipelineNoPaging
 
         def delete: (
           String pipeline_id,
@@ -40,24 +40,24 @@ module HubspotSDK
           String pipeline_id,
           object_type: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::CRM::Pipeline
+        ) -> HubspotSDK::Crm::Pipeline
 
         def get_audit: (
           String pipeline_id,
           object_type: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::CRM::CollectionResponsePublicAuditInfoNoPaging
+        ) -> HubspotSDK::Crm::CollectionResponsePublicAuditInfoNoPaging
 
         def replace: (
           String pipeline_id,
           object_type: String,
           display_order: Integer,
           label: String,
-          stages: ::Array[HubspotSDK::CRM::PipelineStageInput],
+          stages: ::Array[HubspotSDK::Crm::PipelineStageInput],
           ?validate_deal_stage_usages_before_delete: bool,
           ?validate_references_before_delete: bool,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::CRM::Pipeline
+        ) -> HubspotSDK::Crm::Pipeline
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

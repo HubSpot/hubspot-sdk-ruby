@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CreatedResponseSimplePublicObject < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::CreatedResponseSimplePublicObject,
+              HubspotSDK::Crm::CreatedResponseSimplePublicObject,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -17,10 +17,10 @@ module HubspotSDK
         attr_accessor :created_resource_id
 
         # A simple public object.
-        sig { returns(HubspotSDK::CRM::SimplePublicObject) }
+        sig { returns(HubspotSDK::Crm::SimplePublicObject) }
         attr_reader :entity
 
-        sig { params(entity: HubspotSDK::CRM::SimplePublicObject::OrHash).void }
+        sig { params(entity: HubspotSDK::Crm::SimplePublicObject::OrHash).void }
         attr_writer :entity
 
         # The URL location of the newly created resource.
@@ -33,7 +33,7 @@ module HubspotSDK
         sig do
           params(
             created_resource_id: String,
-            entity: HubspotSDK::CRM::SimplePublicObject::OrHash,
+            entity: HubspotSDK::Crm::SimplePublicObject::OrHash,
             location: String
           ).returns(T.attached_class)
         end
@@ -51,7 +51,7 @@ module HubspotSDK
           override.returns(
             {
               created_resource_id: String,
-              entity: HubspotSDK::CRM::SimplePublicObject,
+              entity: HubspotSDK::Crm::SimplePublicObject,
               location: String
             }
           )

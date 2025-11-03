@@ -1,12 +1,12 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         module Services
           type batch_delete_params =
             {  } & HubspotSDK::Internal::Type::request_parameters
 
-          class BatchDeleteParams < HubspotSDK::Models::CRM::BatchInputSimplePublicObjectID
+          class BatchDeleteParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectID
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

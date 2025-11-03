@@ -34,7 +34,7 @@ module HubspotSDK
     sig { returns(HubspotSDK::Resources::Conversations) }
     attr_reader :conversations
 
-    sig { returns(HubspotSDK::Resources::CRM) }
+    sig { returns(HubspotSDK::Resources::Crm) }
     attr_reader :crm
 
     sig { returns(HubspotSDK::Resources::Events) }

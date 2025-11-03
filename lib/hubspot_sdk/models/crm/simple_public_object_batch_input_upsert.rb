@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class SimplePublicObjectBatchInputUpsert < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique ID of the object.

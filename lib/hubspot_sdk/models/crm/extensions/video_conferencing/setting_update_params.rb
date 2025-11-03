@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module VideoConferencing
-          # @see HubspotSDK::Resources::CRM::Extensions::VideoConferencing::Settings#update
-          class SettingUpdateParams < HubspotSDK::Models::CRM::Extensions::ExternalSettings
+          # @see HubspotSDK::Resources::Crm::Extensions::VideoConferencing::Settings#update
+          class SettingUpdateParams < HubspotSDK::Models::Crm::Extensions::ExternalSettings
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

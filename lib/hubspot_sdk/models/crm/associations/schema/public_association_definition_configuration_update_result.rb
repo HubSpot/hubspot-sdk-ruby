@@ -2,15 +2,15 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         module Schema
           class PublicAssociationDefinitionConfigurationUpdateResult < HubspotSDK::Internal::Type::BaseModel
             # @!attribute category
             #
-            #   @return [Symbol, HubspotSDK::Models::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category]
+            #   @return [Symbol, HubspotSDK::Models::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category]
             required :category,
-                     enum: -> { HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category }
+                     enum: -> { HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category }
 
             # @!attribute type_id
             #
@@ -23,11 +23,11 @@ module HubspotSDK
             optional :user_enforced_max_to_object_ids, Integer, api_name: :userEnforcedMaxToObjectIds
 
             # @!method initialize(category:, type_id:, user_enforced_max_to_object_ids: nil)
-            #   @param category [Symbol, HubspotSDK::Models::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category]
+            #   @param category [Symbol, HubspotSDK::Models::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category]
             #   @param type_id [Integer]
             #   @param user_enforced_max_to_object_ids [Integer]
 
-            # @see HubspotSDK::Models::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult#category
+            # @see HubspotSDK::Models::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult#category
             module Category
               extend HubspotSDK::Internal::Type::Enum
 

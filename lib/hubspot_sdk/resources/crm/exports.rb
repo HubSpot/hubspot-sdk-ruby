@@ -2,18 +2,18 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Exports
         # Begins exporting CRM data for the portal as specified in the request body
         #
         # @overload create(public_export_request:, request_options: {})
         #
-        # @param public_export_request [HubspotSDK::CRM::PublicExportRequest]
+        # @param public_export_request [HubspotSDK::Crm::PublicExportRequest]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::TaskLocator]
         #
-        # @see HubspotSDK::Models::CRM::ExportCreateParams
+        # @see HubspotSDK::Models::Crm::ExportCreateParams
         def create(params)
           @client.request(
             method: :post,
@@ -31,14 +31,14 @@ module HubspotSDK
         # @param task_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CRM::ActionResponseWithSingleResultUri]
+        # @return [HubspotSDK::Models::Crm::ActionResponseWithSingleResultUri]
         #
-        # @see HubspotSDK::Models::CRM::ExportGetStatusParams
+        # @see HubspotSDK::Models::Crm::ExportGetStatusParams
         def get_status(task_id, params = {})
           @client.request(
             method: :get,
             path: ["crm/v3/exports/export/async/tasks/%1$s/status", task_id],
-            model: HubspotSDK::CRM::ActionResponseWithSingleResultUri,
+            model: HubspotSDK::Crm::ActionResponseWithSingleResultUri,
             options: params[:request_options]
           )
         end

@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
-        # @see HubspotSDK::Resources::CRM::Objects::Schemas#update
-        class SchemaUpdateParams < HubspotSDK::Models::CRM::Objects::ObjectTypeDefinitionPatch
+        # @see HubspotSDK::Resources::Crm::Objects::Schemas#update
+        class SchemaUpdateParams < HubspotSDK::Models::Crm::Objects::ObjectTypeDefinitionPatch
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

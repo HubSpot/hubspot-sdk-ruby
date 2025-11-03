@@ -2,18 +2,18 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchInputSimplePublicObjectBatchInputUpsert < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::BatchInputSimplePublicObjectBatchInputUpsert,
+              HubspotSDK::Crm::BatchInputSimplePublicObjectBatchInputUpsert,
               HubspotSDK::Internal::AnyHash
             )
           end
 
         sig do
-          returns(T::Array[HubspotSDK::CRM::SimplePublicObjectBatchInputUpsert])
+          returns(T::Array[HubspotSDK::Crm::SimplePublicObjectBatchInputUpsert])
         end
         attr_accessor :inputs
 
@@ -21,7 +21,7 @@ module HubspotSDK
           params(
             inputs:
               T::Array[
-                HubspotSDK::CRM::SimplePublicObjectBatchInputUpsert::OrHash
+                HubspotSDK::Crm::SimplePublicObjectBatchInputUpsert::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -32,7 +32,7 @@ module HubspotSDK
           override.returns(
             {
               inputs:
-                T::Array[HubspotSDK::CRM::SimplePublicObjectBatchInputUpsert]
+                T::Array[HubspotSDK::Crm::SimplePublicObjectBatchInputUpsert]
             }
           )
         end

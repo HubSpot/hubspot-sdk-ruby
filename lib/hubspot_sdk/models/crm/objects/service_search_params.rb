@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
-        # @see HubspotSDK::Resources::CRM::Objects::Services#search
-        class ServiceSearchParams < HubspotSDK::Models::CRM::PublicObjectSearchRequest
+        # @see HubspotSDK::Resources::Crm::Objects::Services#search
+        class ServiceSearchParams < HubspotSDK::Models::Crm::PublicObjectSearchRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

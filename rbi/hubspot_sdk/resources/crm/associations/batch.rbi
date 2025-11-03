@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Associations
         class Batch
           sig do
             params(
               to_object_type: String,
               from_object_type: String,
-              inputs: T::Array[HubspotSDK::CRM::PublicAssociation::OrHash],
+              inputs: T::Array[HubspotSDK::Crm::PublicAssociation::OrHash],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::BatchResponsePublicAssociation)
+            ).returns(HubspotSDK::Crm::BatchResponsePublicAssociation)
           end
           def create(
             # Path param:
@@ -28,7 +28,7 @@ module HubspotSDK
             params(
               to_object_type: String,
               from_object_type: String,
-              inputs: T::Array[HubspotSDK::CRM::PublicAssociation::OrHash],
+              inputs: T::Array[HubspotSDK::Crm::PublicAssociation::OrHash],
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
@@ -49,7 +49,7 @@ module HubspotSDK
               from_object_type: String,
               inputs: T::Array[HubspotSDK::PublicObjectID::OrHash],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::BatchResponsePublicAssociationMulti)
+            ).returns(HubspotSDK::Crm::BatchResponsePublicAssociationMulti)
           end
           def get(
             # Path param:

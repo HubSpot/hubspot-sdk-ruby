@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type service_create_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class ServiceCreateParams < HubspotSDK::Models::CRM::SimplePublicObjectInputForCreate
+        class ServiceCreateParams < HubspotSDK::Models::Crm::SimplePublicObjectInputForCreate
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

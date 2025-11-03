@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         class ObjectSchemaEgg < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Objects::ObjectSchemaEgg,
+                HubspotSDK::Crm::Objects::ObjectSchemaEgg,
                 HubspotSDK::Internal::AnyHash
               )
             end
@@ -32,7 +32,7 @@ module HubspotSDK
           # Properties defined for this object type.
           sig do
             returns(
-              T::Array[HubspotSDK::CRM::Objects::ObjectTypePropertyCreate]
+              T::Array[HubspotSDK::Crm::Objects::ObjectTypePropertyCreate]
             )
           end
           attr_accessor :properties
@@ -80,7 +80,7 @@ module HubspotSDK
               name: String,
               properties:
                 T::Array[
-                  HubspotSDK::CRM::Objects::ObjectTypePropertyCreate::OrHash
+                  HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::OrHash
                 ],
               required_properties: T::Array[String],
               description: String,
@@ -120,7 +120,7 @@ module HubspotSDK
                 labels: HubspotSDK::ObjectTypeDefinitionLabels,
                 name: String,
                 properties:
-                  T::Array[HubspotSDK::CRM::Objects::ObjectTypePropertyCreate],
+                  T::Array[HubspotSDK::Crm::Objects::ObjectTypePropertyCreate],
                 required_properties: T::Array[String],
                 description: String,
                 primary_display_property: String,

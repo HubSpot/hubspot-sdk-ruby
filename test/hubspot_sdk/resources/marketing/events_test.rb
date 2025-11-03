@@ -51,7 +51,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     assert_pattern do
       response => {
         created_at: Time,
-        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::CRMPropertyWrapper]),
+        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::CrmPropertyWrapper]),
         event_name: String,
         object_id_: String,
         updated_at: Time,
@@ -87,7 +87,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     assert_pattern do
       row => {
         created_at: Time,
-        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::CRMPropertyWrapper]),
+        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::CrmPropertyWrapper]),
         event_name: String,
         object_id_: String,
         updated_at: Time,
@@ -231,7 +231,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     assert_pattern do
       response => {
         created_at: Time,
-        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::CRMPropertyWrapper]),
+        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::CrmPropertyWrapper]),
         event_name: String,
         object_id_: String,
         updated_at: Time,

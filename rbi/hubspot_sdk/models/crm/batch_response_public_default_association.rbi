@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchResponsePublicDefaultAssociation < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::BatchResponsePublicDefaultAssociation,
+              HubspotSDK::Crm::BatchResponsePublicDefaultAssociation,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -15,7 +15,7 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :completed_at
 
-        sig { returns(T::Array[HubspotSDK::CRM::PublicDefaultAssociation]) }
+        sig { returns(T::Array[HubspotSDK::Crm::PublicDefaultAssociation]) }
         attr_accessor :results
 
         sig { returns(Time) }
@@ -23,7 +23,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::CRM::BatchResponsePublicDefaultAssociation::Status::TaggedSymbol
+            HubspotSDK::Crm::BatchResponsePublicDefaultAssociation::Status::TaggedSymbol
           )
         end
         attr_accessor :status
@@ -56,10 +56,10 @@ module HubspotSDK
           params(
             completed_at: Time,
             results:
-              T::Array[HubspotSDK::CRM::PublicDefaultAssociation::OrHash],
+              T::Array[HubspotSDK::Crm::PublicDefaultAssociation::OrHash],
             started_at: Time,
             status:
-              HubspotSDK::CRM::BatchResponsePublicDefaultAssociation::Status::OrSymbol,
+              HubspotSDK::Crm::BatchResponsePublicDefaultAssociation::Status::OrSymbol,
             errors: T::Array[HubspotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
@@ -82,10 +82,10 @@ module HubspotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubspotSDK::CRM::PublicDefaultAssociation],
+              results: T::Array[HubspotSDK::Crm::PublicDefaultAssociation],
               started_at: Time,
               status:
-                HubspotSDK::CRM::BatchResponsePublicDefaultAssociation::Status::TaggedSymbol,
+                HubspotSDK::Crm::BatchResponsePublicDefaultAssociation::Status::TaggedSymbol,
               errors: T::Array[HubspotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
@@ -103,7 +103,7 @@ module HubspotSDK
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CRM::BatchResponsePublicDefaultAssociation::Status
+                HubspotSDK::Crm::BatchResponsePublicDefaultAssociation::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -111,28 +111,28 @@ module HubspotSDK
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::CRM::BatchResponsePublicDefaultAssociation::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponsePublicDefaultAssociation::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::CRM::BatchResponsePublicDefaultAssociation::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponsePublicDefaultAssociation::Status::TaggedSymbol
             )
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::CRM::BatchResponsePublicDefaultAssociation::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponsePublicDefaultAssociation::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::CRM::BatchResponsePublicDefaultAssociation::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponsePublicDefaultAssociation::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::BatchResponsePublicDefaultAssociation::Status::TaggedSymbol
+                HubspotSDK::Crm::BatchResponsePublicDefaultAssociation::Status::TaggedSymbol
               ]
             )
           end

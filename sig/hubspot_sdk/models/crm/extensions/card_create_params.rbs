@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         type card_create_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class CardCreateParams < HubspotSDK::Models::CRM::Extensions::CardCreateRequest
+        class CardCreateParams < HubspotSDK::Models::Crm::Extensions::CardCreateRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

@@ -1,12 +1,12 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         module GoalTargets
           type batch_upsert_params =
             {  } & HubspotSDK::Internal::Type::request_parameters
 
-          class BatchUpsertParams < HubspotSDK::Models::CRM::BatchInputSimplePublicObjectBatchInputUpsert
+          class BatchUpsertParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectBatchInputUpsert
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

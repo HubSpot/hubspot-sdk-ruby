@@ -2,14 +2,14 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         module Schema
           class BatchResponsePublicAssociationDefinitionUserConfiguration < HubspotSDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration,
+                  HubspotSDK::Crm::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration,
                   HubspotSDK::Internal::AnyHash
                 )
               end
@@ -20,7 +20,7 @@ module HubspotSDK
             sig do
               returns(
                 T::Array[
-                  HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionUserConfiguration
+                  HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionUserConfiguration
                 ]
               )
             end
@@ -31,7 +31,7 @@ module HubspotSDK
 
             sig do
               returns(
-                HubspotSDK::CRM::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::OrSymbol
+                HubspotSDK::Crm::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::OrSymbol
               )
             end
             attr_accessor :status
@@ -67,11 +67,11 @@ module HubspotSDK
                 completed_at: Time,
                 results:
                   T::Array[
-                    HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionUserConfiguration::OrHash
+                    HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionUserConfiguration::OrHash
                   ],
                 started_at: Time,
                 status:
-                  HubspotSDK::CRM::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::OrSymbol,
+                  HubspotSDK::Crm::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::OrSymbol,
                 errors: T::Array[HubspotSDK::StandardError::OrHash],
                 links: T::Hash[Symbol, String],
                 num_errors: Integer,
@@ -96,11 +96,11 @@ module HubspotSDK
                   completed_at: Time,
                   results:
                     T::Array[
-                      HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionUserConfiguration
+                      HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionUserConfiguration
                     ],
                   started_at: Time,
                   status:
-                    HubspotSDK::CRM::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::OrSymbol,
+                    HubspotSDK::Crm::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::OrSymbol,
                   errors: T::Array[HubspotSDK::StandardError],
                   links: T::Hash[Symbol, String],
                   num_errors: Integer,
@@ -118,7 +118,7 @@ module HubspotSDK
                 T.type_alias do
                   T.all(
                     Symbol,
-                    HubspotSDK::CRM::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status
+                    HubspotSDK::Crm::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status
                   )
                 end
               OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -126,28 +126,28 @@ module HubspotSDK
               PENDING =
                 T.let(
                   :PENDING,
-                  HubspotSDK::CRM::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::TaggedSymbol
+                  HubspotSDK::Crm::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::TaggedSymbol
                 )
               PROCESSING =
                 T.let(
                   :PROCESSING,
-                  HubspotSDK::CRM::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::TaggedSymbol
+                  HubspotSDK::Crm::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::TaggedSymbol
                 )
               CANCELED =
                 T.let(
                   :CANCELED,
-                  HubspotSDK::CRM::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::TaggedSymbol
+                  HubspotSDK::Crm::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::TaggedSymbol
                 )
               COMPLETE =
                 T.let(
                   :COMPLETE,
-                  HubspotSDK::CRM::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::TaggedSymbol
+                  HubspotSDK::Crm::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::TaggedSymbol
                 )
 
               sig do
                 override.returns(
                   T::Array[
-                    HubspotSDK::CRM::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::TaggedSymbol
+                    HubspotSDK::Crm::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::TaggedSymbol
                   ]
                 )
               end

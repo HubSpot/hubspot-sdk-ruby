@@ -2,14 +2,14 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         module Schema
           class CollectionResponsePublicAssociationDefinitionUserConfiguration < HubspotSDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Associations::Schema::CollectionResponsePublicAssociationDefinitionUserConfiguration,
+                  HubspotSDK::Crm::Associations::Schema::CollectionResponsePublicAssociationDefinitionUserConfiguration,
                   HubspotSDK::Internal::AnyHash
                 )
               end
@@ -17,7 +17,7 @@ module HubspotSDK
             sig do
               returns(
                 T::Array[
-                  HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionUserConfiguration
+                  HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionUserConfiguration
                 ]
               )
             end
@@ -34,7 +34,7 @@ module HubspotSDK
               params(
                 results:
                   T::Array[
-                    HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionUserConfiguration::OrHash
+                    HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionUserConfiguration::OrHash
                   ],
                 paging: HubspotSDK::Marketing::Paging::OrHash
               ).returns(T.attached_class)
@@ -51,7 +51,7 @@ module HubspotSDK
                 {
                   results:
                     T::Array[
-                      HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionUserConfiguration
+                      HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionUserConfiguration
                     ],
                   paging: HubspotSDK::Marketing::Paging
                 }

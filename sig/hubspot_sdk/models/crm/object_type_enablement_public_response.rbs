@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type object_type_enablement_public_response = { enablement: bool }
 
       class ObjectTypeEnablementPublicResponse < HubspotSDK::Internal::Type::BaseModel

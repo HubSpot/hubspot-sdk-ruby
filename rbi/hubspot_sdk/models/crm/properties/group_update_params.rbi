@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Properties
         class GroupUpdateParams < HubspotSDK::Models::PropertyGroupUpdate
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
@@ -11,7 +11,7 @@ module HubspotSDK
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Properties::GroupUpdateParams,
+                HubspotSDK::Crm::Properties::GroupUpdateParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
         class Calls
           class Batch
@@ -14,19 +14,19 @@ module HubspotSDK
             #
             # @overload create(inputs:, request_options: {})
             #
-            # @param inputs [Array<HubspotSDK::Models::CRM::SimplePublicObjectBatchInputForCreate>]
+            # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInputForCreate>]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::CRM::BatchResponseSimplePublicObject]
+            # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicObject]
             #
-            # @see HubspotSDK::Models::CRM::Objects::Calls::BatchCreateParams
+            # @see HubspotSDK::Models::Crm::Objects::Calls::BatchCreateParams
             def create(params)
-              parsed, options = HubspotSDK::CRM::Objects::Calls::BatchCreateParams.dump_request(params)
+              parsed, options = HubspotSDK::Crm::Objects::Calls::BatchCreateParams.dump_request(params)
               @client.request(
                 method: :post,
                 path: "crm/v3/objects/calls/batch/create",
                 body: parsed,
-                model: HubspotSDK::CRM::BatchResponseSimplePublicObject,
+                model: HubspotSDK::Crm::BatchResponseSimplePublicObject,
                 options: options
               )
             end
@@ -35,19 +35,19 @@ module HubspotSDK
             #
             # @overload update(inputs:, request_options: {})
             #
-            # @param inputs [Array<HubspotSDK::Models::CRM::SimplePublicObjectBatchInput>]
+            # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInput>]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::CRM::BatchResponseSimplePublicObject]
+            # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicObject]
             #
-            # @see HubspotSDK::Models::CRM::Objects::Calls::BatchUpdateParams
+            # @see HubspotSDK::Models::Crm::Objects::Calls::BatchUpdateParams
             def update(params)
-              parsed, options = HubspotSDK::CRM::Objects::Calls::BatchUpdateParams.dump_request(params)
+              parsed, options = HubspotSDK::Crm::Objects::Calls::BatchUpdateParams.dump_request(params)
               @client.request(
                 method: :post,
                 path: "crm/v3/objects/calls/batch/update",
                 body: parsed,
-                model: HubspotSDK::CRM::BatchResponseSimplePublicObject,
+                model: HubspotSDK::Crm::BatchResponseSimplePublicObject,
                 options: options
               )
             end
@@ -59,14 +59,14 @@ module HubspotSDK
             #
             # @overload delete(inputs:, request_options: {})
             #
-            # @param inputs [Array<HubspotSDK::Models::CRM::SimplePublicObjectID>]
+            # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectID>]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [nil]
             #
-            # @see HubspotSDK::Models::CRM::Objects::Calls::BatchDeleteParams
+            # @see HubspotSDK::Models::Crm::Objects::Calls::BatchDeleteParams
             def delete(params)
-              parsed, options = HubspotSDK::CRM::Objects::Calls::BatchDeleteParams.dump_request(params)
+              parsed, options = HubspotSDK::Crm::Objects::Calls::BatchDeleteParams.dump_request(params)
               @client.request(
                 method: :post,
                 path: "crm/v3/objects/calls/batch/archive",
@@ -77,13 +77,13 @@ module HubspotSDK
             end
 
             # Some parameter documentations has been truncated, see
-            # {HubspotSDK::Models::CRM::Objects::Calls::BatchGetParams} for more details.
+            # {HubspotSDK::Models::Crm::Objects::Calls::BatchGetParams} for more details.
             #
             # Retrieve a batch of calls by ID.
             #
             # @overload get(inputs:, properties:, properties_with_history:, archived: nil, id_property: nil, request_options: {})
             #
-            # @param inputs [Array<HubspotSDK::Models::CRM::SimplePublicObjectID>] Body param:
+            # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectID>] Body param:
             #
             # @param properties [Array<String>] Body param: Key-value pairs for setting properties for the new object.
             #
@@ -95,18 +95,18 @@ module HubspotSDK
             #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::CRM::BatchResponseSimplePublicObject]
+            # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicObject]
             #
-            # @see HubspotSDK::Models::CRM::Objects::Calls::BatchGetParams
+            # @see HubspotSDK::Models::Crm::Objects::Calls::BatchGetParams
             def get(params)
-              parsed, options = HubspotSDK::CRM::Objects::Calls::BatchGetParams.dump_request(params)
+              parsed, options = HubspotSDK::Crm::Objects::Calls::BatchGetParams.dump_request(params)
               query_params = [:archived]
               @client.request(
                 method: :post,
                 path: "crm/v3/objects/calls/batch/read",
                 query: parsed.slice(*query_params),
                 body: parsed.except(*query_params),
-                model: HubspotSDK::CRM::BatchResponseSimplePublicObject,
+                model: HubspotSDK::Crm::BatchResponseSimplePublicObject,
                 options: options
               )
             end
@@ -117,19 +117,19 @@ module HubspotSDK
             #
             # @overload upsert(inputs:, request_options: {})
             #
-            # @param inputs [Array<HubspotSDK::Models::CRM::SimplePublicObjectBatchInputUpsert>]
+            # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInputUpsert>]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::CRM::BatchResponseSimplePublicUpsertObject]
+            # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicUpsertObject]
             #
-            # @see HubspotSDK::Models::CRM::Objects::Calls::BatchUpsertParams
+            # @see HubspotSDK::Models::Crm::Objects::Calls::BatchUpsertParams
             def upsert(params)
-              parsed, options = HubspotSDK::CRM::Objects::Calls::BatchUpsertParams.dump_request(params)
+              parsed, options = HubspotSDK::Crm::Objects::Calls::BatchUpsertParams.dump_request(params)
               @client.request(
                 method: :post,
                 path: "crm/v3/objects/calls/batch/upsert",
                 body: parsed,
-                model: HubspotSDK::CRM::BatchResponseSimplePublicUpsertObject,
+                model: HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject,
                 options: options
               )
             end

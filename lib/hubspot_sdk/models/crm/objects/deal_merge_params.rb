@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
-        # @see HubspotSDK::Resources::CRM::Objects::Deals#merge
-        class DealMergeParams < HubspotSDK::Models::CRM::PublicMergeInput
+        # @see HubspotSDK::Resources::Crm::Objects::Deals#merge
+        class DealMergeParams < HubspotSDK::Models::Crm::PublicMergeInput
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

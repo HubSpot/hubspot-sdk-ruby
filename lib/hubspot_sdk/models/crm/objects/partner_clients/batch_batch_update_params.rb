@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         module PartnerClients
-          # @see HubspotSDK::Resources::CRM::Objects::PartnerClients::Batch#batch_update
-          class BatchBatchUpdateParams < HubspotSDK::Models::CRM::BatchInputSimplePublicObjectBatchInput
+          # @see HubspotSDK::Resources::Crm::Objects::PartnerClients::Batch#batch_update
+          class BatchBatchUpdateParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectBatchInput
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

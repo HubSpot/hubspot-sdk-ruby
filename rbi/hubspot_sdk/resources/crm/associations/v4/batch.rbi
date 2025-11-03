@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Associations
         class V4
           class Batch
@@ -12,9 +12,9 @@ module HubspotSDK
                 to_object_type: String,
                 from_object_type: String,
                 inputs:
-                  T::Array[HubspotSDK::CRM::PublicAssociationMultiPost::OrHash],
+                  T::Array[HubspotSDK::Crm::PublicAssociationMultiPost::OrHash],
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::CRM::BatchResponseLabelsBetweenObjectPair)
+              ).returns(HubspotSDK::Crm::BatchResponseLabelsBetweenObjectPair)
             end
             def create(
               # Path param:
@@ -34,10 +34,10 @@ module HubspotSDK
                 from_object_type: String,
                 inputs:
                   T::Array[
-                    HubspotSDK::CRM::PublicAssociationMultiArchive::OrHash
+                    HubspotSDK::Crm::PublicAssociationMultiArchive::OrHash
                   ],
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::CRM::BatchResponseVoid)
+              ).returns(HubspotSDK::Crm::BatchResponseVoid)
             end
             def delete(
               # Path param:
@@ -57,10 +57,10 @@ module HubspotSDK
                 from_object_type: String,
                 inputs:
                   T::Array[
-                    HubspotSDK::CRM::PublicDefaultAssociationMultiPost::OrHash
+                    HubspotSDK::Crm::PublicDefaultAssociationMultiPost::OrHash
                   ],
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::CRM::BatchResponsePublicDefaultAssociation)
+              ).returns(HubspotSDK::Crm::BatchResponsePublicDefaultAssociation)
             end
             def create_default(
               # Path param:
@@ -80,9 +80,9 @@ module HubspotSDK
                 to_object_type: String,
                 from_object_type: String,
                 inputs:
-                  T::Array[HubspotSDK::CRM::PublicAssociationMultiPost::OrHash],
+                  T::Array[HubspotSDK::Crm::PublicAssociationMultiPost::OrHash],
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::CRM::BatchResponseVoid)
+              ).returns(HubspotSDK::Crm::BatchResponseVoid)
             end
             def delete_labels(
               # Path param:
@@ -106,11 +106,11 @@ module HubspotSDK
                 from_object_type: String,
                 inputs:
                   T::Array[
-                    HubspotSDK::CRM::PublicFetchAssociationsBatchRequest::OrHash
+                    HubspotSDK::Crm::PublicFetchAssociationsBatchRequest::OrHash
                   ],
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(
-                HubspotSDK::CRM::BatchResponsePublicAssociationMultiWithLabel
+                HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel
               )
             end
             def get(

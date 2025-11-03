@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ListScheduleConversionParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
@@ -10,7 +10,7 @@ module HubspotSDK
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::ListScheduleConversionParams,
+              HubspotSDK::Crm::ListScheduleConversionParams,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -18,8 +18,8 @@ module HubspotSDK
         sig do
           returns(
             T.any(
-              HubspotSDK::CRM::PublicListConversionDate,
-              HubspotSDK::CRM::PublicListConversionInactivity
+              HubspotSDK::Crm::PublicListConversionDate,
+              HubspotSDK::Crm::PublicListConversionInactivity
             )
           )
         end
@@ -29,8 +29,8 @@ module HubspotSDK
           params(
             public_list_conversion_time:
               T.any(
-                HubspotSDK::CRM::PublicListConversionDate::OrHash,
-                HubspotSDK::CRM::PublicListConversionInactivity::OrHash
+                HubspotSDK::Crm::PublicListConversionDate::OrHash,
+                HubspotSDK::Crm::PublicListConversionInactivity::OrHash
               ),
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
@@ -43,8 +43,8 @@ module HubspotSDK
             {
               public_list_conversion_time:
                 T.any(
-                  HubspotSDK::CRM::PublicListConversionDate,
-                  HubspotSDK::CRM::PublicListConversionInactivity
+                  HubspotSDK::Crm::PublicListConversionDate,
+                  HubspotSDK::Crm::PublicListConversionInactivity
                 ),
               request_options: HubspotSDK::RequestOptions
             }

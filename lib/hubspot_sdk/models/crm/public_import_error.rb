@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicImportError < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #
@@ -16,13 +16,13 @@ module HubspotSDK
 
         # @!attribute error_type
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PublicImportError::ErrorType]
-        required :error_type, enum: -> { HubspotSDK::CRM::PublicImportError::ErrorType }, api_name: :errorType
+        #   @return [Symbol, HubspotSDK::Models::Crm::PublicImportError::ErrorType]
+        required :error_type, enum: -> { HubspotSDK::Crm::PublicImportError::ErrorType }, api_name: :errorType
 
         # @!attribute source_data
         #
-        #   @return [HubspotSDK::Models::CRM::ImportRowCore]
-        required :source_data, -> { HubspotSDK::CRM::ImportRowCore }, api_name: :sourceData
+        #   @return [HubspotSDK::Models::Crm::ImportRowCore]
+        required :source_data, -> { HubspotSDK::Crm::ImportRowCore }, api_name: :sourceData
 
         # @!attribute error_message
         #
@@ -61,10 +61,10 @@ module HubspotSDK
 
         # @!attribute object_type
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PublicImportError::ObjectType, nil]
+        #   @return [Symbol, HubspotSDK::Models::Crm::PublicImportError::ObjectType, nil]
         optional :object_type,
                  enum: -> {
-                   HubspotSDK::CRM::PublicImportError::ObjectType
+                   HubspotSDK::Crm::PublicImportError::ObjectType
                  },
                  api_name: :objectType
 
@@ -75,15 +75,15 @@ module HubspotSDK
 
         # @!method initialize(id:, created_at:, error_type:, source_data:, error_message: nil, extra_context: nil, invalid_property_value: nil, invalid_value: nil, invalid_value_to_display: nil, known_column_number: nil, object_type: nil, object_type_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::PublicImportError} for more details.
+        #   {HubspotSDK::Models::Crm::PublicImportError} for more details.
         #
         #   @param id [String]
         #
         #   @param created_at [Integer]
         #
-        #   @param error_type [Symbol, HubspotSDK::Models::CRM::PublicImportError::ErrorType]
+        #   @param error_type [Symbol, HubspotSDK::Models::Crm::PublicImportError::ErrorType]
         #
-        #   @param source_data [HubspotSDK::Models::CRM::ImportRowCore]
+        #   @param source_data [HubspotSDK::Models::Crm::ImportRowCore]
         #
         #   @param error_message [String]
         #
@@ -97,11 +97,11 @@ module HubspotSDK
         #
         #   @param known_column_number [Integer]
         #
-        #   @param object_type [Symbol, HubspotSDK::Models::CRM::PublicImportError::ObjectType]
+        #   @param object_type [Symbol, HubspotSDK::Models::Crm::PublicImportError::ObjectType]
         #
         #   @param object_type_id [String]
 
-        # @see HubspotSDK::Models::CRM::PublicImportError#error_type
+        # @see HubspotSDK::Models::Crm::PublicImportError#error_type
         module ErrorType
           extend HubspotSDK::Internal::Type::Enum
 
@@ -174,7 +174,7 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::CRM::PublicImportError#object_type
+        # @see HubspotSDK::Models::Crm::PublicImportError#object_type
         module ObjectType
           extend HubspotSDK::Internal::Type::Enum
 

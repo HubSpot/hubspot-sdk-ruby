@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicObjectList < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PublicObjectList,
+              HubspotSDK::Crm::PublicObjectList,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -59,7 +59,7 @@ module HubspotSDK
 
         sig do
           returns(
-            T.nilable(HubspotSDK::CRM::PublicObjectList::FilterBranch::Variants)
+            T.nilable(HubspotSDK::Crm::PublicObjectList::FilterBranch::Variants)
           )
         end
         attr_reader :filter_branch
@@ -88,23 +88,23 @@ module HubspotSDK
         sig { params(filters_updated_at: Time).void }
         attr_writer :filters_updated_at
 
-        sig { returns(T.nilable(HubspotSDK::CRM::PublicListPermissions)) }
+        sig { returns(T.nilable(HubspotSDK::Crm::PublicListPermissions)) }
         attr_reader :list_permissions
 
         sig do
           params(
-            list_permissions: HubspotSDK::CRM::PublicListPermissions::OrHash
+            list_permissions: HubspotSDK::Crm::PublicListPermissions::OrHash
           ).void
         end
         attr_writer :list_permissions
 
-        sig { returns(T.nilable(HubspotSDK::CRM::PublicMembershipSettings)) }
+        sig { returns(T.nilable(HubspotSDK::Crm::PublicMembershipSettings)) }
         attr_reader :membership_settings
 
         sig do
           params(
             membership_settings:
-              HubspotSDK::CRM::PublicMembershipSettings::OrHash
+              HubspotSDK::Crm::PublicMembershipSettings::OrHash
           ).void
         end
         attr_writer :membership_settings
@@ -154,9 +154,9 @@ module HubspotSDK
                 HubspotSDK::PublicAssociationFilterBranch::OrHash
               ),
             filters_updated_at: Time,
-            list_permissions: HubspotSDK::CRM::PublicListPermissions::OrHash,
+            list_permissions: HubspotSDK::Crm::PublicListPermissions::OrHash,
             membership_settings:
-              HubspotSDK::CRM::PublicMembershipSettings::OrHash,
+              HubspotSDK::Crm::PublicMembershipSettings::OrHash,
             size: Integer,
             updated_at: Time,
             updated_by_id: String
@@ -208,10 +208,10 @@ module HubspotSDK
               created_by_id: String,
               deleted_at: Time,
               filter_branch:
-                HubspotSDK::CRM::PublicObjectList::FilterBranch::Variants,
+                HubspotSDK::Crm::PublicObjectList::FilterBranch::Variants,
               filters_updated_at: Time,
-              list_permissions: HubspotSDK::CRM::PublicListPermissions,
-              membership_settings: HubspotSDK::CRM::PublicMembershipSettings,
+              list_permissions: HubspotSDK::Crm::PublicListPermissions,
+              membership_settings: HubspotSDK::Crm::PublicMembershipSettings,
               size: Integer,
               updated_at: Time,
               updated_by_id: String
@@ -241,7 +241,7 @@ module HubspotSDK
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::PublicObjectList::FilterBranch::Variants
+                HubspotSDK::Crm::PublicObjectList::FilterBranch::Variants
               ]
             )
           end

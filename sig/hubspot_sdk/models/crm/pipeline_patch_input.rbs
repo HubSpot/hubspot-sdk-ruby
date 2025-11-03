@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type pipeline_patch_input =
         { archived: bool, display_order: Integer, label: String }
 

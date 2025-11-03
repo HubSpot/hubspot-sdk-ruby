@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class PropertyValidations
         # Read all properties with validation rules for a given object.
         sig do
@@ -10,7 +10,7 @@ module HubspotSDK
             object_type_id: String,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::CRM::CollectionResponsePublicPropertyValidationRuleMapNoPaging
+            HubspotSDK::Crm::CollectionResponsePublicPropertyValidationRuleMapNoPaging
           )
         end
         def list(object_type_id, request_options: {})
@@ -23,7 +23,7 @@ module HubspotSDK
             object_type_id: String,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::CRM::CollectionResponsePublicPropertyValidationRuleNoPaging
+            HubspotSDK::Crm::CollectionResponsePublicPropertyValidationRuleNoPaging
           )
         end
         def get(property_name, object_type_id:, request_options: {})

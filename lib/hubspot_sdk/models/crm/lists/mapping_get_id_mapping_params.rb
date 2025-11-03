@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Lists
-        # @see HubspotSDK::Resources::CRM::Lists::Mapping#get_id_mapping
+        # @see HubspotSDK::Resources::Crm::Lists::Mapping#get_id_mapping
         class MappingGetIDMappingParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters

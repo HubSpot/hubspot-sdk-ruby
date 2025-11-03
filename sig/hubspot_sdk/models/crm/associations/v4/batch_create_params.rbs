@@ -1,13 +1,13 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         module V4
           type batch_create_params =
             { from_object_type: String }
             & HubspotSDK::Internal::Type::request_parameters
 
-          class BatchCreateParams < HubspotSDK::Models::CRM::BatchInputPublicAssociationMultiPost
+          class BatchCreateParams < HubspotSDK::Models::Crm::BatchInputPublicAssociationMultiPost
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

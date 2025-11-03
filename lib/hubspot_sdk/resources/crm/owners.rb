@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Owners
         # Retrieve a paginated list of owners available in the account.
         #
@@ -14,17 +14,17 @@ module HubspotSDK
         # @param limit [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::CRM::PublicOwner>]
+        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::PublicOwner>]
         #
-        # @see HubspotSDK::Models::CRM::OwnerListParams
+        # @see HubspotSDK::Models::Crm::OwnerListParams
         def list(params = {})
-          parsed, options = HubspotSDK::CRM::OwnerListParams.dump_request(params)
+          parsed, options = HubspotSDK::Crm::OwnerListParams.dump_request(params)
           @client.request(
             method: :get,
             path: "crm/v3/owners/",
             query: parsed,
             page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::CRM::PublicOwner,
+            model: HubspotSDK::Crm::PublicOwner,
             options: options
           )
         end
@@ -35,19 +35,19 @@ module HubspotSDK
         #
         # @param owner_id [Integer]
         # @param archived [Boolean]
-        # @param id_property [Symbol, HubspotSDK::Models::CRM::OwnerGetParams::IDProperty]
+        # @param id_property [Symbol, HubspotSDK::Models::Crm::OwnerGetParams::IDProperty]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CRM::PublicOwner]
+        # @return [HubspotSDK::Models::Crm::PublicOwner]
         #
-        # @see HubspotSDK::Models::CRM::OwnerGetParams
+        # @see HubspotSDK::Models::Crm::OwnerGetParams
         def get(owner_id, params = {})
-          parsed, options = HubspotSDK::CRM::OwnerGetParams.dump_request(params)
+          parsed, options = HubspotSDK::Crm::OwnerGetParams.dump_request(params)
           @client.request(
             method: :get,
             path: ["crm/v3/owners/%1$s", owner_id],
             query: parsed.transform_keys(id_property: "idProperty"),
-            model: HubspotSDK::CRM::PublicOwner,
+            model: HubspotSDK::Crm::PublicOwner,
             options: options
           )
         end

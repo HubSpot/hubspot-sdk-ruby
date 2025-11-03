@@ -86,7 +86,7 @@ module HubspotSDK
       module Courses
       end
 
-      module CRM
+      module Crm
         module Associations
           module Schema
           end

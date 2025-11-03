@@ -1,6 +1,6 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Extensions
         class Calling
           class RecordingSettings
@@ -8,18 +8,18 @@ module HubspotSDK
               Integer app_id,
               url_to_retrieve_authed_recording: String,
               ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::CRM::Extensions::RecordingSettingsResponse
+            ) -> HubspotSDK::Crm::Extensions::RecordingSettingsResponse
 
             def update: (
               Integer app_id,
               ?url_to_retrieve_authed_recording: String,
               ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::CRM::Extensions::RecordingSettingsResponse
+            ) -> HubspotSDK::Crm::Extensions::RecordingSettingsResponse
 
             def get: (
               Integer app_id,
               ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::CRM::Extensions::RecordingSettingsResponse
+            ) -> HubspotSDK::Crm::Extensions::RecordingSettingsResponse
 
             def mark_ready: (
               engagement_id: Integer,

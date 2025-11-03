@@ -2,22 +2,22 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchInputPublicAssociation < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::BatchInputPublicAssociation,
+              HubspotSDK::Crm::BatchInputPublicAssociation,
               HubspotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::CRM::PublicAssociation]) }
+        sig { returns(T::Array[HubspotSDK::Crm::PublicAssociation]) }
         attr_accessor :inputs
 
         sig do
           params(
-            inputs: T::Array[HubspotSDK::CRM::PublicAssociation::OrHash]
+            inputs: T::Array[HubspotSDK::Crm::PublicAssociation::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(inputs:)
@@ -25,7 +25,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { inputs: T::Array[HubspotSDK::CRM::PublicAssociation] }
+            { inputs: T::Array[HubspotSDK::Crm::PublicAssociation] }
           )
         end
         def to_hash

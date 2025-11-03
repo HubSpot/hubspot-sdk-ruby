@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ListFilterUpdateRequest < HubspotSDK::Internal::Type::BaseModel
         # @!attribute filter_branch
         #
         #   @return [HubspotSDK::Models::PublicOrFilterBranch, HubspotSDK::Models::PublicAndFilterBranch, HubspotSDK::Models::PublicNotAllFilterBranch, HubspotSDK::Models::PublicNotAnyFilterBranch, HubspotSDK::Models::PublicRestrictedFilterBranch, HubspotSDK::Models::PublicUnifiedEventsFilterBranch, HubspotSDK::Models::PublicPropertyAssociationFilterBranch, HubspotSDK::Models::PublicAssociationFilterBranch]
         required :filter_branch,
-                 union: -> { HubspotSDK::CRM::ListFilterUpdateRequest::FilterBranch },
+                 union: -> { HubspotSDK::Crm::ListFilterUpdateRequest::FilterBranch },
                  api_name: :filterBranch
 
         # @!method initialize(filter_branch:)
@@ -16,7 +16,7 @@ module HubspotSDK
         #
         #   @param filter_branch [HubspotSDK::Models::PublicOrFilterBranch, HubspotSDK::Models::PublicAndFilterBranch, HubspotSDK::Models::PublicNotAllFilterBranch, HubspotSDK::Models::PublicNotAnyFilterBranch, HubspotSDK::Models::PublicRestrictedFilterBranch, HubspotSDK::Models::PublicUnifiedEventsFilterBranch, HubspotSDK::Models::PublicPropertyAssociationFilterBranch, HubspotSDK::Models::PublicAssociationFilterBranch]
 
-        # @see HubspotSDK::Models::CRM::ListFilterUpdateRequest#filter_branch
+        # @see HubspotSDK::Models::Crm::ListFilterUpdateRequest#filter_branch
         module FilterBranch
           extend HubspotSDK::Internal::Type::Union
 

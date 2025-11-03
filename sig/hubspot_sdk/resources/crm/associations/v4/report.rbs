@@ -1,13 +1,13 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Associations
         class V4
           class Report
             def get_high_usage_report: (
               Integer user_id,
               ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::CRM::ReportCreationResponse
+            ) -> HubspotSDK::Crm::ReportCreationResponse
 
             def initialize: (client: HubspotSDK::Client) -> void
           end

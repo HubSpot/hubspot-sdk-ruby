@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type public_property_validation_rule =
         { rule_arguments: ::Array[String], rule_type: String }
 

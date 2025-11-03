@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Lists
         class Mapping
           # This API allows translation of a batch of legacy list id's to list id's. This
@@ -12,7 +12,7 @@ module HubspotSDK
             params(
               body: T::Array[String],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::PublicBatchMigrationMapping)
+            ).returns(HubspotSDK::Crm::PublicBatchMigrationMapping)
           end
           def batch_create_id_mapping(body:, request_options: {})
           end
@@ -23,7 +23,7 @@ module HubspotSDK
             params(
               legacy_list_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::PublicMigrationMapping)
+            ).returns(HubspotSDK::Crm::PublicMigrationMapping)
           end
           def get_id_mapping(
             # The legacy list id from lists v1 API.

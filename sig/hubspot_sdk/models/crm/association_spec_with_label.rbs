@@ -1,15 +1,15 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type association_spec_with_label =
         {
-          category: HubspotSDK::Models::CRM::AssociationSpecWithLabel::category,
+          category: HubspotSDK::Models::Crm::AssociationSpecWithLabel::category,
           type_id: Integer,
           label: String
         }
 
       class AssociationSpecWithLabel < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor category: HubspotSDK::Models::CRM::AssociationSpecWithLabel::category
+        attr_accessor category: HubspotSDK::Models::Crm::AssociationSpecWithLabel::category
 
         attr_accessor type_id: Integer
 
@@ -18,13 +18,13 @@ module HubspotSDK
         def label=: (String) -> String
 
         def initialize: (
-          category: HubspotSDK::Models::CRM::AssociationSpecWithLabel::category,
+          category: HubspotSDK::Models::Crm::AssociationSpecWithLabel::category,
           type_id: Integer,
           ?label: String
         ) -> void
 
         def to_hash: -> {
-          category: HubspotSDK::Models::CRM::AssociationSpecWithLabel::category,
+          category: HubspotSDK::Models::Crm::AssociationSpecWithLabel::category,
           type_id: Integer,
           label: String
         }
@@ -38,7 +38,7 @@ module HubspotSDK
           USER_DEFINED: :USER_DEFINED
           INTEGRATOR_DEFINED: :INTEGRATOR_DEFINED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::AssociationSpecWithLabel::category]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::AssociationSpecWithLabel::category]
         end
       end
     end

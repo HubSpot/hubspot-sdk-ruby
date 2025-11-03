@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class OwnerGetParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
@@ -10,7 +10,7 @@ module HubspotSDK
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::OwnerGetParams,
+              HubspotSDK::Crm::OwnerGetParams,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -23,14 +23,14 @@ module HubspotSDK
 
         sig do
           returns(
-            T.nilable(HubspotSDK::CRM::OwnerGetParams::IDProperty::OrSymbol)
+            T.nilable(HubspotSDK::Crm::OwnerGetParams::IDProperty::OrSymbol)
           )
         end
         attr_reader :id_property
 
         sig do
           params(
-            id_property: HubspotSDK::CRM::OwnerGetParams::IDProperty::OrSymbol
+            id_property: HubspotSDK::Crm::OwnerGetParams::IDProperty::OrSymbol
           ).void
         end
         attr_writer :id_property
@@ -38,7 +38,7 @@ module HubspotSDK
         sig do
           params(
             archived: T::Boolean,
-            id_property: HubspotSDK::CRM::OwnerGetParams::IDProperty::OrSymbol,
+            id_property: HubspotSDK::Crm::OwnerGetParams::IDProperty::OrSymbol,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
@@ -50,7 +50,7 @@ module HubspotSDK
             {
               archived: T::Boolean,
               id_property:
-                HubspotSDK::CRM::OwnerGetParams::IDProperty::OrSymbol,
+                HubspotSDK::Crm::OwnerGetParams::IDProperty::OrSymbol,
               request_options: HubspotSDK::RequestOptions
             }
           )
@@ -63,25 +63,25 @@ module HubspotSDK
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::CRM::OwnerGetParams::IDProperty)
+              T.all(Symbol, HubspotSDK::Crm::OwnerGetParams::IDProperty)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           ID =
             T.let(
               :id,
-              HubspotSDK::CRM::OwnerGetParams::IDProperty::TaggedSymbol
+              HubspotSDK::Crm::OwnerGetParams::IDProperty::TaggedSymbol
             )
           USER_ID =
             T.let(
               :userId,
-              HubspotSDK::CRM::OwnerGetParams::IDProperty::TaggedSymbol
+              HubspotSDK::Crm::OwnerGetParams::IDProperty::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::OwnerGetParams::IDProperty::TaggedSymbol
+                HubspotSDK::Crm::OwnerGetParams::IDProperty::TaggedSymbol
               ]
             )
           end

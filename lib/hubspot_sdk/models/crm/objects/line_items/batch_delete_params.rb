@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         module LineItems
-          # @see HubspotSDK::Resources::CRM::Objects::LineItems::Batch#delete
-          class BatchDeleteParams < HubspotSDK::Models::CRM::BatchInputSimplePublicObjectID
+          # @see HubspotSDK::Resources::Crm::Objects::LineItems::Batch#delete
+          class BatchDeleteParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectID
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

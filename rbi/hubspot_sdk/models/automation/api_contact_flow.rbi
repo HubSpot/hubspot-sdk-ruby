@@ -33,7 +33,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Automation::APIContactFlow::CRMObjectCreationStatus::TaggedSymbol
+            HubspotSDK::Automation::APIContactFlow::CrmObjectCreationStatus::TaggedSymbol
           )
         end
         attr_accessor :crm_object_creation_status
@@ -230,7 +230,7 @@ module HubspotSDK
             can_enroll_from_salesforce: T::Boolean,
             created_at: Time,
             crm_object_creation_status:
-              HubspotSDK::Automation::APIContactFlow::CRMObjectCreationStatus::OrSymbol,
+              HubspotSDK::Automation::APIContactFlow::CrmObjectCreationStatus::OrSymbol,
             custom_properties: T::Hash[Symbol, String],
             data_sources:
               T::Array[
@@ -335,7 +335,7 @@ module HubspotSDK
               can_enroll_from_salesforce: T::Boolean,
               created_at: Time,
               crm_object_creation_status:
-                HubspotSDK::Automation::APIContactFlow::CRMObjectCreationStatus::TaggedSymbol,
+                HubspotSDK::Automation::APIContactFlow::CrmObjectCreationStatus::TaggedSymbol,
               custom_properties: T::Hash[Symbol, String],
               data_sources:
                 T::Array[
@@ -395,14 +395,14 @@ module HubspotSDK
           end
         end
 
-        module CRMObjectCreationStatus
+        module CrmObjectCreationStatus
           extend HubspotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Automation::APIContactFlow::CRMObjectCreationStatus
+                HubspotSDK::Automation::APIContactFlow::CrmObjectCreationStatus
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -410,18 +410,18 @@ module HubspotSDK
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::Automation::APIContactFlow::CRMObjectCreationStatus::TaggedSymbol
+              HubspotSDK::Automation::APIContactFlow::CrmObjectCreationStatus::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::Automation::APIContactFlow::CRMObjectCreationStatus::TaggedSymbol
+              HubspotSDK::Automation::APIContactFlow::CrmObjectCreationStatus::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::APIContactFlow::CRMObjectCreationStatus::TaggedSymbol
+                HubspotSDK::Automation::APIContactFlow::CrmObjectCreationStatus::TaggedSymbol
               ]
             )
           end

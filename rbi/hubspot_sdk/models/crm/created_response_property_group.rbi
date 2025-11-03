@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CreatedResponsePropertyGroup < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::CreatedResponsePropertyGroup,
+              HubspotSDK::Crm::CreatedResponsePropertyGroup,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -16,10 +16,10 @@ module HubspotSDK
         attr_accessor :created_resource_id
 
         # An ID for a group of properties
-        sig { returns(HubspotSDK::CRM::PropertyGroup) }
+        sig { returns(HubspotSDK::Crm::PropertyGroup) }
         attr_reader :entity
 
-        sig { params(entity: HubspotSDK::CRM::PropertyGroup::OrHash).void }
+        sig { params(entity: HubspotSDK::Crm::PropertyGroup::OrHash).void }
         attr_writer :entity
 
         sig { returns(T.nilable(String)) }
@@ -31,7 +31,7 @@ module HubspotSDK
         sig do
           params(
             created_resource_id: String,
-            entity: HubspotSDK::CRM::PropertyGroup::OrHash,
+            entity: HubspotSDK::Crm::PropertyGroup::OrHash,
             location: String
           ).returns(T.attached_class)
         end
@@ -47,7 +47,7 @@ module HubspotSDK
           override.returns(
             {
               created_resource_id: String,
-              entity: HubspotSDK::CRM::PropertyGroup,
+              entity: HubspotSDK::Crm::PropertyGroup,
               location: String
             }
           )

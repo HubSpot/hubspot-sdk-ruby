@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
-        class CompanyMergeParams < HubspotSDK::Models::CRM::PublicMergeInput
+        class CompanyMergeParams < HubspotSDK::Models::Crm::PublicMergeInput
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Objects::CompanyMergeParams,
+                HubspotSDK::Crm::Objects::CompanyMergeParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

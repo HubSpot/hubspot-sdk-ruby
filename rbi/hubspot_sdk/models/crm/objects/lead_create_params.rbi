@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
-        class LeadCreateParams < HubspotSDK::Models::CRM::SimplePublicObjectInputForCreate
+        class LeadCreateParams < HubspotSDK::Models::Crm::SimplePublicObjectInputForCreate
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Objects::LeadCreateParams,
+                HubspotSDK::Crm::Objects::LeadCreateParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

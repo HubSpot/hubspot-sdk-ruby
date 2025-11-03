@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchResponseSimplePublicObject < HubspotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   The timestamp when the batch processing was completed, in ISO 8601 format.
@@ -12,8 +12,8 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::CRM::SimplePublicObject>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::SimplePublicObject] }
+        #   @return [Array<HubspotSDK::Models::Crm::SimplePublicObject>]
+        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject] }
 
         # @!attribute started_at
         #   The timestamp when the batch processing began, in ISO 8601 format.
@@ -25,8 +25,8 @@ module HubspotSDK
         #   The status of the batch processing request: "PENDING", "PROCESSING",
         #   "CANCELLED", or "COMPLETE"
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::BatchResponseSimplePublicObject::Status]
-        required :status, enum: -> { HubspotSDK::CRM::BatchResponseSimplePublicObject::Status }
+        #   @return [Symbol, HubspotSDK::Models::Crm::BatchResponseSimplePublicObject::Status]
+        required :status, enum: -> { HubspotSDK::Crm::BatchResponseSimplePublicObject::Status }
 
         # @!attribute errors
         #
@@ -52,17 +52,17 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::BatchResponseSimplePublicObject} for more details.
+        #   {HubspotSDK::Models::Crm::BatchResponseSimplePublicObject} for more details.
         #
         #   A public object batch response object
         #
         #   @param completed_at [Time] The timestamp when the batch processing was completed, in ISO 8601 format.
         #
-        #   @param results [Array<HubspotSDK::Models::CRM::SimplePublicObject>]
+        #   @param results [Array<HubspotSDK::Models::Crm::SimplePublicObject>]
         #
         #   @param started_at [Time] The timestamp when the batch processing began, in ISO 8601 format.
         #
-        #   @param status [Symbol, HubspotSDK::Models::CRM::BatchResponseSimplePublicObject::Status] The status of the batch processing request: "PENDING", "PROCESSING", "CANCELLED"
+        #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponseSimplePublicObject::Status] The status of the batch processing request: "PENDING", "PROCESSING", "CANCELLED"
         #
         #   @param errors [Array<HubspotSDK::Models::StandardError>]
         #
@@ -75,7 +75,7 @@ module HubspotSDK
         # The status of the batch processing request: "PENDING", "PROCESSING",
         # "CANCELLED", or "COMPLETE"
         #
-        # @see HubspotSDK::Models::CRM::BatchResponseSimplePublicObject#status
+        # @see HubspotSDK::Models::Crm::BatchResponseSimplePublicObject#status
         module Status
           extend HubspotSDK::Internal::Type::Enum
 

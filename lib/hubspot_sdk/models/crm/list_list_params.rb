@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Lists#list
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Lists#list
       class ListListParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
@@ -24,7 +24,7 @@ module HubspotSDK
 
         # @!method initialize(include_filters: nil, list_ids: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::ListListParams} for more details.
+        #   {HubspotSDK::Models::Crm::ListListParams} for more details.
         #
         #   @param include_filters [Boolean] A flag indicating whether or not the response object list definitions should inc
         #

@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
-        # @see HubspotSDK::Resources::CRM::Extensions::Cards#update
-        class CardUpdateParams < HubspotSDK::Models::CRM::Extensions::CardPatchRequest
+        # @see HubspotSDK::Resources::Crm::Extensions::Cards#update
+        class CardUpdateParams < HubspotSDK::Models::Crm::Extensions::CardPatchRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

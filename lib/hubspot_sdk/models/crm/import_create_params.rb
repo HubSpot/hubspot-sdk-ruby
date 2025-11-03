@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Imports#create
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Imports#create
       class ImportCreateParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters

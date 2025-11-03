@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type object_type_near_or_at_association_limit =
         {
           has_records_at_limit: bool,

@@ -1,17 +1,17 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Lists
         class Mapping
           def batch_create_id_mapping: (
             body: ::Array[String],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::PublicBatchMigrationMapping
+          ) -> HubspotSDK::Crm::PublicBatchMigrationMapping
 
           def get_id_mapping: (
             ?legacy_list_id: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::PublicMigrationMapping
+          ) -> HubspotSDK::Crm::PublicMigrationMapping
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

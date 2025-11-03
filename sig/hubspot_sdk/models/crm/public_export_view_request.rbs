@@ -1,30 +1,30 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type public_export_view_request =
         {
-          export_internal_values_options: ::Array[HubspotSDK::Models::CRM::PublicExportViewRequest::export_internal_values_option],
+          export_internal_values_options: ::Array[HubspotSDK::Models::Crm::PublicExportViewRequest::export_internal_values_option],
           export_name: String,
-          export_type: HubspotSDK::Models::CRM::PublicExportViewRequest::export_type,
-          format_: HubspotSDK::Models::CRM::PublicExportViewRequest::format_,
-          language: HubspotSDK::Models::CRM::PublicExportViewRequest::language,
+          export_type: HubspotSDK::Models::Crm::PublicExportViewRequest::export_type,
+          format_: HubspotSDK::Models::Crm::PublicExportViewRequest::format_,
+          language: HubspotSDK::Models::Crm::PublicExportViewRequest::language,
           object_properties: ::Array[String],
           object_type: String,
           override_associated_objects_per_definition_per_row_limit: bool,
           associated_object_type: String,
-          public_crm_search_request: HubspotSDK::CRM::PublicCRMSearchRequest
+          public_crm_search_request: HubspotSDK::Crm::PublicCrmSearchRequest
         }
 
       class PublicExportViewRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor export_internal_values_options: ::Array[HubspotSDK::Models::CRM::PublicExportViewRequest::export_internal_values_option]
+        attr_accessor export_internal_values_options: ::Array[HubspotSDK::Models::Crm::PublicExportViewRequest::export_internal_values_option]
 
         attr_accessor export_name: String
 
-        attr_accessor export_type: HubspotSDK::Models::CRM::PublicExportViewRequest::export_type
+        attr_accessor export_type: HubspotSDK::Models::Crm::PublicExportViewRequest::export_type
 
-        attr_accessor format_: HubspotSDK::Models::CRM::PublicExportViewRequest::format_
+        attr_accessor format_: HubspotSDK::Models::Crm::PublicExportViewRequest::format_
 
-        attr_accessor language: HubspotSDK::Models::CRM::PublicExportViewRequest::language
+        attr_accessor language: HubspotSDK::Models::Crm::PublicExportViewRequest::language
 
         attr_accessor object_properties: ::Array[String]
 
@@ -36,36 +36,36 @@ module HubspotSDK
 
         def associated_object_type=: (String) -> String
 
-        attr_reader public_crm_search_request: HubspotSDK::CRM::PublicCRMSearchRequest?
+        attr_reader public_crm_search_request: HubspotSDK::Crm::PublicCrmSearchRequest?
 
         def public_crm_search_request=: (
-          HubspotSDK::CRM::PublicCRMSearchRequest
-        ) -> HubspotSDK::CRM::PublicCRMSearchRequest
+          HubspotSDK::Crm::PublicCrmSearchRequest
+        ) -> HubspotSDK::Crm::PublicCrmSearchRequest
 
         def initialize: (
-          export_internal_values_options: ::Array[HubspotSDK::Models::CRM::PublicExportViewRequest::export_internal_values_option],
+          export_internal_values_options: ::Array[HubspotSDK::Models::Crm::PublicExportViewRequest::export_internal_values_option],
           export_name: String,
-          export_type: HubspotSDK::Models::CRM::PublicExportViewRequest::export_type,
-          format_: HubspotSDK::Models::CRM::PublicExportViewRequest::format_,
-          language: HubspotSDK::Models::CRM::PublicExportViewRequest::language,
+          export_type: HubspotSDK::Models::Crm::PublicExportViewRequest::export_type,
+          format_: HubspotSDK::Models::Crm::PublicExportViewRequest::format_,
+          language: HubspotSDK::Models::Crm::PublicExportViewRequest::language,
           object_properties: ::Array[String],
           object_type: String,
           override_associated_objects_per_definition_per_row_limit: bool,
           ?associated_object_type: String,
-          ?public_crm_search_request: HubspotSDK::CRM::PublicCRMSearchRequest
+          ?public_crm_search_request: HubspotSDK::Crm::PublicCrmSearchRequest
         ) -> void
 
         def to_hash: -> {
-          export_internal_values_options: ::Array[HubspotSDK::Models::CRM::PublicExportViewRequest::export_internal_values_option],
+          export_internal_values_options: ::Array[HubspotSDK::Models::Crm::PublicExportViewRequest::export_internal_values_option],
           export_name: String,
-          export_type: HubspotSDK::Models::CRM::PublicExportViewRequest::export_type,
-          format_: HubspotSDK::Models::CRM::PublicExportViewRequest::format_,
-          language: HubspotSDK::Models::CRM::PublicExportViewRequest::language,
+          export_type: HubspotSDK::Models::Crm::PublicExportViewRequest::export_type,
+          format_: HubspotSDK::Models::Crm::PublicExportViewRequest::format_,
+          language: HubspotSDK::Models::Crm::PublicExportViewRequest::language,
           object_properties: ::Array[String],
           object_type: String,
           override_associated_objects_per_definition_per_row_limit: bool,
           associated_object_type: String,
-          public_crm_search_request: HubspotSDK::CRM::PublicCRMSearchRequest
+          public_crm_search_request: HubspotSDK::Crm::PublicCrmSearchRequest
         }
 
         type export_internal_values_option = :NAMES | :VALUES
@@ -76,7 +76,7 @@ module HubspotSDK
           NAMES: :NAMES
           VALUES: :VALUES
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PublicExportViewRequest::export_internal_values_option]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicExportViewRequest::export_internal_values_option]
         end
 
         type export_type = :VIEW
@@ -86,7 +86,7 @@ module HubspotSDK
 
           VIEW: :VIEW
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PublicExportViewRequest::export_type]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicExportViewRequest::export_type]
         end
 
         type format_ = :XLS | :XLSX | :CSV
@@ -98,7 +98,7 @@ module HubspotSDK
           XLSX: :XLSX
           CSV: :CSV
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PublicExportViewRequest::format_]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicExportViewRequest::format_]
         end
 
         type language =
@@ -135,7 +135,7 @@ module HubspotSDK
           DA_DK: :DA_DK
           NO: :NO
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PublicExportViewRequest::language]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicExportViewRequest::language]
         end
       end
     end

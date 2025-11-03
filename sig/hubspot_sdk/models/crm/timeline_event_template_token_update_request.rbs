@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type timeline_event_template_token_update_request =
         {
           label: String,
           object_property_name: String,
-          options: ::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption]
+          options: ::Array[HubspotSDK::Crm::TimelineEventTemplateTokenOption]
         }
 
       class TimelineEventTemplateTokenUpdateRequest < HubspotSDK::Internal::Type::BaseModel
@@ -15,22 +15,22 @@ module HubspotSDK
 
         def object_property_name=: (String) -> String
 
-        attr_reader options: ::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption]?
+        attr_reader options: ::Array[HubspotSDK::Crm::TimelineEventTemplateTokenOption]?
 
         def options=: (
-          ::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption]
-        ) -> ::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption]
+          ::Array[HubspotSDK::Crm::TimelineEventTemplateTokenOption]
+        ) -> ::Array[HubspotSDK::Crm::TimelineEventTemplateTokenOption]
 
         def initialize: (
           label: String,
           ?object_property_name: String,
-          ?options: ::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption]
+          ?options: ::Array[HubspotSDK::Crm::TimelineEventTemplateTokenOption]
         ) -> void
 
         def to_hash: -> {
           label: String,
           object_property_name: String,
-          options: ::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption]
+          options: ::Array[HubspotSDK::Crm::TimelineEventTemplateTokenOption]
         }
       end
     end

@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Associations
         class Schema
-          # @return [HubspotSDK::Resources::CRM::Associations::Schema::V4]
+          # @return [HubspotSDK::Resources::Crm::Associations::Schema::V4]
           attr_reader :v4
 
           # @overload list(to_object_type, from_object_type:, request_options: {})
@@ -14,11 +14,11 @@ module HubspotSDK
           # @param from_object_type [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::Associations::CollectionResponsePublicAssociationDefinitionNoPaging]
+          # @return [HubspotSDK::Models::Crm::Associations::CollectionResponsePublicAssociationDefinitionNoPaging]
           #
-          # @see HubspotSDK::Models::CRM::Associations::SchemaListParams
+          # @see HubspotSDK::Models::Crm::Associations::SchemaListParams
           def list(to_object_type, params)
-            parsed, options = HubspotSDK::CRM::Associations::SchemaListParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Associations::SchemaListParams.dump_request(params)
             from_object_type =
               parsed.delete(:from_object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -26,7 +26,7 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["crm/v3/associations/%1$s/%2$s/types", from_object_type, to_object_type],
-              model: HubspotSDK::CRM::Associations::CollectionResponsePublicAssociationDefinitionNoPaging,
+              model: HubspotSDK::Crm::Associations::CollectionResponsePublicAssociationDefinitionNoPaging,
               options: options
             )
           end
@@ -36,7 +36,7 @@ module HubspotSDK
           # @param client [HubspotSDK::Client]
           def initialize(client:)
             @client = client
-            @v4 = HubspotSDK::Resources::CRM::Associations::Schema::V4.new(client: client)
+            @v4 = HubspotSDK::Resources::Crm::Associations::Schema::V4.new(client: client)
           end
         end
       end

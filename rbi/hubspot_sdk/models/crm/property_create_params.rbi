@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PropertyCreateParams < HubspotSDK::Models::PropertyCreate
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
@@ -10,7 +10,7 @@ module HubspotSDK
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PropertyCreateParams,
+              HubspotSDK::Crm::PropertyCreateParams,
               HubspotSDK::Internal::AnyHash
             )
           end

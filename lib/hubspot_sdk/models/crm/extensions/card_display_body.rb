@@ -2,24 +2,24 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class CardDisplayBody < HubspotSDK::Internal::Type::BaseModel
           # @!attribute properties
           #   Card display properties. These will will be rendered as "label : value" pairs in
           #   the card UI. See the [example card](#) in the overview docs for more details.
           #
-          #   @return [Array<HubspotSDK::Models::CRM::Extensions::CardDisplayProperty>]
+          #   @return [Array<HubspotSDK::Models::Crm::Extensions::CardDisplayProperty>]
           required :properties,
-                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Extensions::CardDisplayProperty] }
+                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Extensions::CardDisplayProperty] }
 
           # @!method initialize(properties:)
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::CRM::Extensions::CardDisplayBody} for more details.
+          #   {HubspotSDK::Models::Crm::Extensions::CardDisplayBody} for more details.
           #
           #   Configuration for displayed info on a card
           #
-          #   @param properties [Array<HubspotSDK::Models::CRM::Extensions::CardDisplayProperty>] Card display properties. These will will be rendered as "label : value" pairs in
+          #   @param properties [Array<HubspotSDK::Models::Crm::Extensions::CardDisplayProperty>] Card display properties. These will will be rendered as "label : value" pairs in
         end
       end
     end

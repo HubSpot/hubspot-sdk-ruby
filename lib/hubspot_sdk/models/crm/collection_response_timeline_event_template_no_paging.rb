@@ -2,15 +2,15 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CollectionResponseTimelineEventTemplateNoPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::CRM::TimelineEventTemplate>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::TimelineEventTemplate] }
+        #   @return [Array<HubspotSDK::Models::Crm::TimelineEventTemplate>]
+        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::TimelineEventTemplate] }
 
         # @!method initialize(results:)
-        #   @param results [Array<HubspotSDK::Models::CRM::TimelineEventTemplate>]
+        #   @param results [Array<HubspotSDK::Models::Crm::TimelineEventTemplate>]
       end
     end
   end

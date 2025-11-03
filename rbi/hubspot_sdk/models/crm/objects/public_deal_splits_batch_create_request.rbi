@@ -2,20 +2,20 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         class PublicDealSplitsBatchCreateRequest < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Objects::PublicDealSplitsBatchCreateRequest,
+                HubspotSDK::Crm::Objects::PublicDealSplitsBatchCreateRequest,
                 HubspotSDK::Internal::AnyHash
               )
             end
 
           sig do
             returns(
-              T::Array[HubspotSDK::CRM::Objects::PublicDealSplitsCreateRequest]
+              T::Array[HubspotSDK::Crm::Objects::PublicDealSplitsCreateRequest]
             )
           end
           attr_accessor :inputs
@@ -24,7 +24,7 @@ module HubspotSDK
             params(
               inputs:
                 T::Array[
-                  HubspotSDK::CRM::Objects::PublicDealSplitsCreateRequest::OrHash
+                  HubspotSDK::Crm::Objects::PublicDealSplitsCreateRequest::OrHash
                 ]
             ).returns(T.attached_class)
           end
@@ -36,7 +36,7 @@ module HubspotSDK
               {
                 inputs:
                   T::Array[
-                    HubspotSDK::CRM::Objects::PublicDealSplitsCreateRequest
+                    HubspotSDK::Crm::Objects::PublicDealSplitsCreateRequest
                   ]
               }
             )

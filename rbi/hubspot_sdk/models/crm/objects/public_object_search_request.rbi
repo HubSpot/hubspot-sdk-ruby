@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         class PublicObjectSearchRequest < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Objects::PublicObjectSearchRequest,
+                HubspotSDK::Crm::Objects::PublicObjectSearchRequest,
                 HubspotSDK::Internal::AnyHash
               )
             end
@@ -18,7 +18,7 @@ module HubspotSDK
           attr_accessor :after
 
           # Up to 6 groups of filters defining additional query criteria.
-          sig { returns(T::Array[HubspotSDK::CRM::FilterGroup]) }
+          sig { returns(T::Array[HubspotSDK::Crm::FilterGroup]) }
           attr_accessor :filter_groups
 
           # The maximum results to return, up to 200 objects.
@@ -44,7 +44,7 @@ module HubspotSDK
           sig do
             params(
               after: String,
-              filter_groups: T::Array[HubspotSDK::CRM::FilterGroup::OrHash],
+              filter_groups: T::Array[HubspotSDK::Crm::FilterGroup::OrHash],
               limit: Integer,
               properties: T::Array[String],
               sorts: T::Array[String],
@@ -71,7 +71,7 @@ module HubspotSDK
             override.returns(
               {
                 after: String,
-                filter_groups: T::Array[HubspotSDK::CRM::FilterGroup],
+                filter_groups: T::Array[HubspotSDK::Crm::FilterGroup],
                 limit: Integer,
                 properties: T::Array[String],
                 sorts: T::Array[String],

@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class TimelineEvent < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::CRM::TimelineEvent, HubspotSDK::Internal::AnyHash)
+            T.any(HubspotSDK::Crm::TimelineEvent, HubspotSDK::Internal::AnyHash)
           end
 
         # The event template ID.
@@ -59,12 +59,12 @@ module HubspotSDK
         sig { params(object_id_: String).void }
         attr_writer :object_id_
 
-        sig { returns(T.nilable(HubspotSDK::CRM::TimelineEventIFrame)) }
+        sig { returns(T.nilable(HubspotSDK::Crm::TimelineEventIFrame)) }
         attr_reader :timeline_i_frame
 
         sig do
           params(
-            timeline_i_frame: HubspotSDK::CRM::TimelineEventIFrame::OrHash
+            timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame::OrHash
           ).void
         end
         attr_writer :timeline_i_frame
@@ -96,7 +96,7 @@ module HubspotSDK
             email: String,
             extra_data: T.anything,
             object_id_: String,
-            timeline_i_frame: HubspotSDK::CRM::TimelineEventIFrame::OrHash,
+            timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame::OrHash,
             timestamp: Time,
             utk: String
           ).returns(T.attached_class)
@@ -144,7 +144,7 @@ module HubspotSDK
               email: String,
               extra_data: T.anything,
               object_id_: String,
-              timeline_i_frame: HubspotSDK::CRM::TimelineEventIFrame,
+              timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame,
               timestamp: Time,
               utk: String
             }

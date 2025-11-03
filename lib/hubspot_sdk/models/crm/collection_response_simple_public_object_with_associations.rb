@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CollectionResponseSimplePublicObjectWithAssociations < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::CRM::SimplePublicObjectWithAssociations>]
+        #   @return [Array<HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::SimplePublicObjectWithAssociations] }
+                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObjectWithAssociations] }
 
         # @!attribute paging
         #   Contains information pagination of results.
@@ -17,7 +17,7 @@ module HubspotSDK
         optional :paging, -> { HubspotSDK::Marketing::Paging }
 
         # @!method initialize(results:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::CRM::SimplePublicObjectWithAssociations>]
+        #   @param results [Array<HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
         #
         #   @param paging [HubspotSDK::Models::Marketing::Paging] Contains information pagination of results.
       end

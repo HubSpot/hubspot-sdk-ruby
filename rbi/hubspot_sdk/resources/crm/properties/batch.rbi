@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Properties
         class Batch
           # Create a batch of properties using the same rules as when creating an individual
@@ -37,7 +37,7 @@ module HubspotSDK
               archived: T::Boolean,
               inputs: T::Array[HubspotSDK::PropertyName::OrHash],
               data_sensitivity:
-                HubspotSDK::CRM::BatchReadInputPropertyName::DataSensitivity::OrSymbol,
+                HubspotSDK::Crm::BatchReadInputPropertyName::DataSensitivity::OrSymbol,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::BatchResponseProperty)
           end

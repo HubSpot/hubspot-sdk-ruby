@@ -2,14 +2,14 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::ImportsTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::ImportsTest < HubspotSDK::Test::ResourceTest
   def test_create
     skip("Prism tests are disabled")
 
     response = @hubspot.crm.imports.create
 
     assert_pattern do
-      response => HubspotSDK::CRM::PublicImportResponse
+      response => HubspotSDK::Crm::PublicImportResponse
     end
 
     assert_pattern do
@@ -17,14 +17,14 @@ class HubspotSDK::Test::Resources::CRM::ImportsTest < HubspotSDK::Test::Resource
         id: String,
         created_at: Time,
         mapped_object_type_ids: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        metadata: HubspotSDK::CRM::PublicImportMetadata,
+        metadata: HubspotSDK::Crm::PublicImportMetadata,
         opt_out_import: HubspotSDK::Internal::Type::Boolean,
-        state: HubspotSDK::CRM::PublicImportResponse::State,
+        state: HubspotSDK::Crm::PublicImportResponse::State,
         updated_at: Time,
         import_name: String | nil,
         import_request_json: HubspotSDK::Internal::Type::Unknown | nil,
-        import_source: HubspotSDK::CRM::PublicImportResponse::ImportSource | nil,
-        import_template: HubspotSDK::CRM::ImportTemplate | nil
+        import_source: HubspotSDK::Crm::PublicImportResponse::ImportSource | nil,
+        import_template: HubspotSDK::Crm::ImportTemplate | nil
       }
     end
   end
@@ -42,7 +42,7 @@ class HubspotSDK::Test::Resources::CRM::ImportsTest < HubspotSDK::Test::Resource
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::CRM::PublicImportResponse
+      row => HubspotSDK::Crm::PublicImportResponse
     end
 
     assert_pattern do
@@ -50,14 +50,14 @@ class HubspotSDK::Test::Resources::CRM::ImportsTest < HubspotSDK::Test::Resource
         id: String,
         created_at: Time,
         mapped_object_type_ids: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        metadata: HubspotSDK::CRM::PublicImportMetadata,
+        metadata: HubspotSDK::Crm::PublicImportMetadata,
         opt_out_import: HubspotSDK::Internal::Type::Boolean,
-        state: HubspotSDK::CRM::PublicImportResponse::State,
+        state: HubspotSDK::Crm::PublicImportResponse::State,
         updated_at: Time,
         import_name: String | nil,
         import_request_json: HubspotSDK::Internal::Type::Unknown | nil,
-        import_source: HubspotSDK::CRM::PublicImportResponse::ImportSource | nil,
-        import_template: HubspotSDK::CRM::ImportTemplate | nil
+        import_source: HubspotSDK::Crm::PublicImportResponse::ImportSource | nil,
+        import_template: HubspotSDK::Crm::ImportTemplate | nil
       }
     end
   end
@@ -88,7 +88,7 @@ class HubspotSDK::Test::Resources::CRM::ImportsTest < HubspotSDK::Test::Resource
     response = @hubspot.crm.imports.get(0)
 
     assert_pattern do
-      response => HubspotSDK::CRM::PublicImportResponse
+      response => HubspotSDK::Crm::PublicImportResponse
     end
 
     assert_pattern do
@@ -96,14 +96,14 @@ class HubspotSDK::Test::Resources::CRM::ImportsTest < HubspotSDK::Test::Resource
         id: String,
         created_at: Time,
         mapped_object_type_ids: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        metadata: HubspotSDK::CRM::PublicImportMetadata,
+        metadata: HubspotSDK::Crm::PublicImportMetadata,
         opt_out_import: HubspotSDK::Internal::Type::Boolean,
-        state: HubspotSDK::CRM::PublicImportResponse::State,
+        state: HubspotSDK::Crm::PublicImportResponse::State,
         updated_at: Time,
         import_name: String | nil,
         import_request_json: HubspotSDK::Internal::Type::Unknown | nil,
-        import_source: HubspotSDK::CRM::PublicImportResponse::ImportSource | nil,
-        import_template: HubspotSDK::CRM::ImportTemplate | nil
+        import_source: HubspotSDK::Crm::PublicImportResponse::ImportSource | nil,
+        import_template: HubspotSDK::Crm::ImportTemplate | nil
       }
     end
   end
@@ -114,12 +114,12 @@ class HubspotSDK::Test::Resources::CRM::ImportsTest < HubspotSDK::Test::Resource
     response = @hubspot.crm.imports.list_errors(0)
 
     assert_pattern do
-      response => HubspotSDK::CRM::CollectionResponsePublicImportErrorForwardPaging
+      response => HubspotSDK::Crm::CollectionResponsePublicImportErrorForwardPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicImportError]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicImportError]),
         paging: HubspotSDK::ForwardPaging | nil
       }
     end

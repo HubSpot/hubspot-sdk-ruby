@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CollectionResponseProperty < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::CollectionResponseProperty,
+              HubspotSDK::Crm::CollectionResponseProperty,
               HubspotSDK::Internal::AnyHash
             )
           end

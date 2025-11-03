@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Timeline::TokensTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Timeline::TokensTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
@@ -16,17 +16,17 @@ class HubspotSDK::Test::Resources::CRM::Timeline::TokensTest < HubspotSDK::Test:
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::TimelineEventTemplateToken
+      response => HubspotSDK::Crm::TimelineEventTemplateToken
     end
 
     assert_pattern do
       response => {
         label: String,
         name: String,
-        type: HubspotSDK::CRM::TimelineEventTemplateToken::Type,
+        type: HubspotSDK::Crm::TimelineEventTemplateToken::Type,
         created_at: Time | nil,
         object_property_name: String | nil,
-        options: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::TimelineEventTemplateTokenOption]) | nil,
+        options: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::TimelineEventTemplateTokenOption]) | nil,
         updated_at: Time | nil
       }
     end
@@ -44,17 +44,17 @@ class HubspotSDK::Test::Resources::CRM::Timeline::TokensTest < HubspotSDK::Test:
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::TimelineEventTemplateToken
+      response => HubspotSDK::Crm::TimelineEventTemplateToken
     end
 
     assert_pattern do
       response => {
         label: String,
         name: String,
-        type: HubspotSDK::CRM::TimelineEventTemplateToken::Type,
+        type: HubspotSDK::Crm::TimelineEventTemplateToken::Type,
         created_at: Time | nil,
         object_property_name: String | nil,
-        options: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::TimelineEventTemplateTokenOption]) | nil,
+        options: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::TimelineEventTemplateTokenOption]) | nil,
         updated_at: Time | nil
       }
     end

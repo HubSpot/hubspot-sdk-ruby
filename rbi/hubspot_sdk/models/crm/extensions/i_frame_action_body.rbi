@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class IFrameActionBody < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::IFrameActionBody,
+                HubspotSDK::Crm::Extensions::IFrameActionBody,
                 HubspotSDK::Internal::AnyHash
               )
             end
@@ -21,7 +21,7 @@ module HubspotSDK
 
           sig do
             returns(
-              HubspotSDK::CRM::Extensions::IFrameActionBody::Type::TaggedSymbol
+              HubspotSDK::Crm::Extensions::IFrameActionBody::Type::TaggedSymbol
             )
           end
           attr_accessor :type
@@ -43,7 +43,7 @@ module HubspotSDK
               height: Integer,
               property_names_included: T::Array[String],
               type:
-                HubspotSDK::CRM::Extensions::IFrameActionBody::Type::OrSymbol,
+                HubspotSDK::Crm::Extensions::IFrameActionBody::Type::OrSymbol,
               url: String,
               width: Integer,
               label: String
@@ -65,7 +65,7 @@ module HubspotSDK
                 height: Integer,
                 property_names_included: T::Array[String],
                 type:
-                  HubspotSDK::CRM::Extensions::IFrameActionBody::Type::TaggedSymbol,
+                  HubspotSDK::Crm::Extensions::IFrameActionBody::Type::TaggedSymbol,
                 url: String,
                 width: Integer,
                 label: String
@@ -82,7 +82,7 @@ module HubspotSDK
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::CRM::Extensions::IFrameActionBody::Type
+                  HubspotSDK::Crm::Extensions::IFrameActionBody::Type
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -90,13 +90,13 @@ module HubspotSDK
             IFRAME =
               T.let(
                 :IFRAME,
-                HubspotSDK::CRM::Extensions::IFrameActionBody::Type::TaggedSymbol
+                HubspotSDK::Crm::Extensions::IFrameActionBody::Type::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::CRM::Extensions::IFrameActionBody::Type::TaggedSymbol
+                  HubspotSDK::Crm::Extensions::IFrameActionBody::Type::TaggedSymbol
                 ]
               )
             end

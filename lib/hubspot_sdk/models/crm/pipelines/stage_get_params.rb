@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Pipelines
-        # @see HubspotSDK::Resources::CRM::Pipelines::Stages#get
+        # @see HubspotSDK::Resources::Crm::Pipelines::Stages#get
         class StageGetParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters

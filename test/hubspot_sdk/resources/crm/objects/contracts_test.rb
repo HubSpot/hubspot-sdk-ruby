@@ -2,20 +2,20 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Objects::ContractsTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Objects::ContractsTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
     response = @hubspot.crm.objects.contracts.create(properties: {foo: "string"})
 
     assert_pattern do
-      response => HubspotSDK::CRM::CreatedResponseSimplePublicObject
+      response => HubspotSDK::Crm::CreatedResponseSimplePublicObject
     end
 
     assert_pattern do
       response => {
         created_resource_id: String,
-        entity: HubspotSDK::CRM::SimplePublicObject,
+        entity: HubspotSDK::Crm::SimplePublicObject,
         location: String | nil
       }
     end
@@ -39,7 +39,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContractsTest < HubspotSDK::Tes
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::SimplePublicObject
+      response => HubspotSDK::Crm::SimplePublicObject
     end
 
     assert_pattern do
@@ -51,7 +51,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContractsTest < HubspotSDK::Tes
         archived: HubspotSDK::Internal::Type::Boolean | nil,
         archived_at: Time | nil,
         object_write_trace_id: String | nil,
-        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::ValueWithTimestamp]]) | nil
+        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil
       }
     end
   end
@@ -69,7 +69,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContractsTest < HubspotSDK::Tes
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::CRM::SimplePublicObjectWithAssociations
+      row => HubspotSDK::Crm::SimplePublicObjectWithAssociations
     end
 
     assert_pattern do
@@ -80,9 +80,9 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContractsTest < HubspotSDK::Tes
         updated_at: Time,
         archived: HubspotSDK::Internal::Type::Boolean | nil,
         archived_at: Time | nil,
-        associations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::CRM::CollectionResponseAssociatedID]) | nil,
+        associations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Crm::CollectionResponseAssociatedID]) | nil,
         object_write_trace_id: String | nil,
-        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::ValueWithTimestamp]]) | nil
+        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil
       }
     end
   end
@@ -103,7 +103,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContractsTest < HubspotSDK::Tes
     response = @hubspot.crm.objects.contracts.get("contractId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
+      response => HubspotSDK::Crm::SimplePublicObjectWithAssociations
     end
 
     assert_pattern do
@@ -114,9 +114,9 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContractsTest < HubspotSDK::Tes
         updated_at: Time,
         archived: HubspotSDK::Internal::Type::Boolean | nil,
         archived_at: Time | nil,
-        associations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::CRM::CollectionResponseAssociatedID]) | nil,
+        associations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Crm::CollectionResponseAssociatedID]) | nil,
         object_write_trace_id: String | nil,
-        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::ValueWithTimestamp]]) | nil
+        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil
       }
     end
   end
@@ -127,12 +127,12 @@ class HubspotSDK::Test::Resources::CRM::Objects::ContractsTest < HubspotSDK::Tes
     response = @hubspot.crm.objects.contracts.search
 
     assert_pattern do
-      response => HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject
+      response => HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::SimplePublicObject]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         total: Integer,
         paging: HubspotSDK::Marketing::Paging | nil
       }

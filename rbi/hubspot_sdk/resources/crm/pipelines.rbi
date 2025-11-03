@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Pipelines
-        sig { returns(HubspotSDK::Resources::CRM::Pipelines::Stages) }
+        sig { returns(HubspotSDK::Resources::Crm::Pipelines::Stages) }
         attr_reader :stages
 
         # Create a new pipeline with the provided property values. The entire pipeline
@@ -14,9 +14,9 @@ module HubspotSDK
             object_type: String,
             display_order: Integer,
             label: String,
-            stages: T::Array[HubspotSDK::CRM::PipelineStageInput::OrHash],
+            stages: T::Array[HubspotSDK::Crm::PipelineStageInput::OrHash],
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::Pipeline)
+          ).returns(HubspotSDK::Crm::Pipeline)
         end
         def create(
           object_type,
@@ -43,7 +43,7 @@ module HubspotSDK
             display_order: Integer,
             label: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::Pipeline)
+          ).returns(HubspotSDK::Crm::Pipeline)
         end
         def update(
           # Path param:
@@ -72,7 +72,7 @@ module HubspotSDK
           params(
             object_type: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::CollectionResponsePipelineNoPaging)
+          ).returns(HubspotSDK::Crm::CollectionResponsePipelineNoPaging)
         end
         def list(object_type, request_options: {})
         end
@@ -106,7 +106,7 @@ module HubspotSDK
             pipeline_id: String,
             object_type: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::Pipeline)
+          ).returns(HubspotSDK::Crm::Pipeline)
         end
         def get(pipeline_id, object_type:, request_options: {})
         end
@@ -118,7 +118,7 @@ module HubspotSDK
             pipeline_id: String,
             object_type: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::CollectionResponsePublicAuditInfoNoPaging)
+          ).returns(HubspotSDK::Crm::CollectionResponsePublicAuditInfoNoPaging)
         end
         def get_audit(pipeline_id, object_type:, request_options: {})
         end
@@ -130,11 +130,11 @@ module HubspotSDK
             object_type: String,
             display_order: Integer,
             label: String,
-            stages: T::Array[HubspotSDK::CRM::PipelineStageInput::OrHash],
+            stages: T::Array[HubspotSDK::Crm::PipelineStageInput::OrHash],
             validate_deal_stage_usages_before_delete: T::Boolean,
             validate_references_before_delete: T::Boolean,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::Pipeline)
+          ).returns(HubspotSDK::Crm::Pipeline)
         end
         def replace(
           # Path param:

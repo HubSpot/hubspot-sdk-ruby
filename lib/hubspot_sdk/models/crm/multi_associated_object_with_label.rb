@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class MultiAssociatedObjectWithLabel < HubspotSDK::Internal::Type::BaseModel
         # @!attribute association_types
         #
-        #   @return [Array<HubspotSDK::Models::CRM::AssociationSpecWithLabel>]
+        #   @return [Array<HubspotSDK::Models::Crm::AssociationSpecWithLabel>]
         required :association_types,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::AssociationSpecWithLabel] },
+                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::AssociationSpecWithLabel] },
                  api_name: :associationTypes
 
         # @!attribute to_object_id
@@ -17,7 +17,7 @@ module HubspotSDK
         required :to_object_id, String, api_name: :toObjectId
 
         # @!method initialize(association_types:, to_object_id:)
-        #   @param association_types [Array<HubspotSDK::Models::CRM::AssociationSpecWithLabel>]
+        #   @param association_types [Array<HubspotSDK::Models::Crm::AssociationSpecWithLabel>]
         #   @param to_object_id [String]
       end
     end

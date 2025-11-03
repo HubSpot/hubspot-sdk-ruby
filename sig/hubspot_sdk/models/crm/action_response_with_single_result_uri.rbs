@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type action_response_with_single_result_uri =
         {
           completed_at: Time,
           started_at: Time,
-          status: HubspotSDK::Models::CRM::ActionResponseWithSingleResultUri::status,
+          status: HubspotSDK::Models::Crm::ActionResponseWithSingleResultUri::status,
           errors: ::Array[HubspotSDK::StandardError],
           links: ::Hash[Symbol, String],
           num_errors: Integer,
@@ -18,7 +18,7 @@ module HubspotSDK
 
         attr_accessor started_at: Time
 
-        attr_accessor status: HubspotSDK::Models::CRM::ActionResponseWithSingleResultUri::status
+        attr_accessor status: HubspotSDK::Models::Crm::ActionResponseWithSingleResultUri::status
 
         attr_reader errors: ::Array[HubspotSDK::StandardError]?
 
@@ -45,7 +45,7 @@ module HubspotSDK
         def initialize: (
           completed_at: Time,
           started_at: Time,
-          status: HubspotSDK::Models::CRM::ActionResponseWithSingleResultUri::status,
+          status: HubspotSDK::Models::Crm::ActionResponseWithSingleResultUri::status,
           ?errors: ::Array[HubspotSDK::StandardError],
           ?links: ::Hash[Symbol, String],
           ?num_errors: Integer,
@@ -56,7 +56,7 @@ module HubspotSDK
         def to_hash: -> {
           completed_at: Time,
           started_at: Time,
-          status: HubspotSDK::Models::CRM::ActionResponseWithSingleResultUri::status,
+          status: HubspotSDK::Models::Crm::ActionResponseWithSingleResultUri::status,
           errors: ::Array[HubspotSDK::StandardError],
           links: ::Hash[Symbol, String],
           num_errors: Integer,
@@ -74,7 +74,7 @@ module HubspotSDK
           CANCELED: :CANCELED
           COMPLETE: :COMPLETE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::ActionResponseWithSingleResultUri::status]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::ActionResponseWithSingleResultUri::status]
         end
       end
     end

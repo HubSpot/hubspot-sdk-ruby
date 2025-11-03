@@ -1,6 +1,6 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
         class PartnerClients
           class Associations
@@ -10,7 +10,7 @@ module HubspotSDK
               to_object_type: String,
               to_object_id: String,
               ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::CRM::SimplePublicObjectWithAssociations
+            ) -> HubspotSDK::Crm::SimplePublicObjectWithAssociations
 
             def list: (
               String to_object_type,
@@ -19,7 +19,7 @@ module HubspotSDK
               ?include_fa: bool,
               ?limit: Integer,
               ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::Internal::Page[HubspotSDK::CRM::AssociatedID]
+            ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::AssociatedID]
 
             def delete: (
               String association_type,

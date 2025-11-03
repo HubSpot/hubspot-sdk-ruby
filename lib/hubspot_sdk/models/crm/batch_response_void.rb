@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchResponseVoid < HubspotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #
@@ -21,8 +21,8 @@ module HubspotSDK
 
         # @!attribute status
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::BatchResponseVoid::Status]
-        required :status, enum: -> { HubspotSDK::CRM::BatchResponseVoid::Status }
+        #   @return [Symbol, HubspotSDK::Models::Crm::BatchResponseVoid::Status]
+        required :status, enum: -> { HubspotSDK::Crm::BatchResponseVoid::Status }
 
         # @!attribute errors
         #
@@ -48,13 +48,13 @@ module HubspotSDK
         #   @param completed_at [Time]
         #   @param results [Array<Object>]
         #   @param started_at [Time]
-        #   @param status [Symbol, HubspotSDK::Models::CRM::BatchResponseVoid::Status]
+        #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponseVoid::Status]
         #   @param errors [Array<HubspotSDK::Models::StandardError>]
         #   @param links [Hash{Symbol=>String}]
         #   @param num_errors [Integer]
         #   @param requested_at [Time]
 
-        # @see HubspotSDK::Models::CRM::BatchResponseVoid#status
+        # @see HubspotSDK::Models::Crm::BatchResponseVoid#status
         module Status
           extend HubspotSDK::Internal::Type::Enum
 

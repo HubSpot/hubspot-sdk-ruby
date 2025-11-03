@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicPropertyValidationRule < HubspotSDK::Internal::Type::BaseModel
         # @!attribute rule_arguments
         #

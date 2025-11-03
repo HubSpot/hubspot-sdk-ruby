@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Lists
-        # @see HubspotSDK::Resources::CRM::Lists::Folders#move_list
-        class FolderMoveListParams < HubspotSDK::Models::CRM::ListMoveRequest
+        # @see HubspotSDK::Resources::Crm::Lists::Folders#move_list
+        class FolderMoveListParams < HubspotSDK::Models::Crm::ListMoveRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

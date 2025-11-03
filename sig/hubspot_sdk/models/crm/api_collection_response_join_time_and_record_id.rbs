@@ -1,15 +1,15 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type api_collection_response_join_time_and_record_id =
         {
-          results: ::Array[HubspotSDK::CRM::JoinTimeAndRecordID],
+          results: ::Array[HubspotSDK::Crm::JoinTimeAndRecordID],
           paging: HubspotSDK::Marketing::Paging,
           total: Integer
         }
 
       class APICollectionResponseJoinTimeAndRecordID < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::CRM::JoinTimeAndRecordID]
+        attr_accessor results: ::Array[HubspotSDK::Crm::JoinTimeAndRecordID]
 
         attr_reader paging: HubspotSDK::Marketing::Paging?
 
@@ -22,13 +22,13 @@ module HubspotSDK
         def total=: (Integer) -> Integer
 
         def initialize: (
-          results: ::Array[HubspotSDK::CRM::JoinTimeAndRecordID],
+          results: ::Array[HubspotSDK::Crm::JoinTimeAndRecordID],
           ?paging: HubspotSDK::Marketing::Paging,
           ?total: Integer
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubspotSDK::CRM::JoinTimeAndRecordID],
+          results: ::Array[HubspotSDK::Crm::JoinTimeAndRecordID],
           paging: HubspotSDK::Marketing::Paging,
           total: Integer
         }

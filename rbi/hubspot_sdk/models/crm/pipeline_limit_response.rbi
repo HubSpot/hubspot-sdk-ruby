@@ -2,36 +2,36 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PipelineLimitResponse < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PipelineLimitResponse,
+              HubspotSDK::Crm::PipelineLimitResponse,
               HubspotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(HubspotSDK::CRM::CustomObjectRecordLimitResponse) }
+        sig { returns(HubspotSDK::Crm::CustomObjectRecordLimitResponse) }
         attr_reader :custom_object_types
 
         sig do
           params(
             custom_object_types:
-              HubspotSDK::CRM::CustomObjectRecordLimitResponse::OrHash
+              HubspotSDK::Crm::CustomObjectRecordLimitResponse::OrHash
           ).void
         end
         attr_writer :custom_object_types
 
-        sig { returns(T::Array[HubspotSDK::CRM::LimitAndUsageForObjectType]) }
+        sig { returns(T::Array[HubspotSDK::Crm::LimitAndUsageForObjectType]) }
         attr_accessor :hubspot_defined_object_types
 
         sig do
           params(
             custom_object_types:
-              HubspotSDK::CRM::CustomObjectRecordLimitResponse::OrHash,
+              HubspotSDK::Crm::CustomObjectRecordLimitResponse::OrHash,
             hubspot_defined_object_types:
-              T::Array[HubspotSDK::CRM::LimitAndUsageForObjectType::OrHash]
+              T::Array[HubspotSDK::Crm::LimitAndUsageForObjectType::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(custom_object_types:, hubspot_defined_object_types:)
@@ -41,9 +41,9 @@ module HubspotSDK
           override.returns(
             {
               custom_object_types:
-                HubspotSDK::CRM::CustomObjectRecordLimitResponse,
+                HubspotSDK::Crm::CustomObjectRecordLimitResponse,
               hubspot_defined_object_types:
-                T::Array[HubspotSDK::CRM::LimitAndUsageForObjectType]
+                T::Array[HubspotSDK::Crm::LimitAndUsageForObjectType]
             }
           )
         end

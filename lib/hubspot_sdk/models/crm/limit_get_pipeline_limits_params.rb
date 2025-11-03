@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Limits#get_pipeline_limits
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Limits#get_pipeline_limits
       class LimitGetPipelineLimitsParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters

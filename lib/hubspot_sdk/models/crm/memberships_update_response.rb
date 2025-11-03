@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class MembershipsUpdateResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute record_ids_missing
         #   The IDs of the records that were `missing` (e.g. did not exist in the portal)
@@ -24,7 +24,7 @@ module HubspotSDK
 
         # @!method initialize(record_ids_missing:, record_ids_removed:, records_ids_added:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::MembershipsUpdateResponse} for more details.
+        #   {HubspotSDK::Models::Crm::MembershipsUpdateResponse} for more details.
         #
         #   The IDs of the records that were `added`, `removed`, and/or found to be
         #   `missing` as a result of the membership update request.

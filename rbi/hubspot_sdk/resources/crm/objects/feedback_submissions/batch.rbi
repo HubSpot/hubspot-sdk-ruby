@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
         class FeedbackSubmissions
           class Batch
@@ -10,13 +10,13 @@ module HubspotSDK
             # records by a custom unique value property.
             sig do
               params(
-                inputs: T::Array[HubspotSDK::CRM::SimplePublicObjectID::OrHash],
+                inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
                 properties: T::Array[String],
                 properties_with_history: T::Array[String],
                 archived: T::Boolean,
                 id_property: String,
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::CRM::BatchResponseSimplePublicObject)
+              ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
             end
             def get(
               # Body param:

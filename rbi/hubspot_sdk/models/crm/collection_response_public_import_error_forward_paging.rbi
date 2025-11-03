@@ -2,17 +2,17 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CollectionResponsePublicImportErrorForwardPaging < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::CollectionResponsePublicImportErrorForwardPaging,
+              HubspotSDK::Crm::CollectionResponsePublicImportErrorForwardPaging,
               HubspotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::CRM::PublicImportError]) }
+        sig { returns(T::Array[HubspotSDK::Crm::PublicImportError]) }
         attr_accessor :results
 
         sig { returns(T.nilable(HubspotSDK::ForwardPaging)) }
@@ -23,7 +23,7 @@ module HubspotSDK
 
         sig do
           params(
-            results: T::Array[HubspotSDK::CRM::PublicImportError::OrHash],
+            results: T::Array[HubspotSDK::Crm::PublicImportError::OrHash],
             paging: HubspotSDK::ForwardPaging::OrHash
           ).returns(T.attached_class)
         end
@@ -33,7 +33,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              results: T::Array[HubspotSDK::CRM::PublicImportError],
+              results: T::Array[HubspotSDK::Crm::PublicImportError],
               paging: HubspotSDK::ForwardPaging
             }
           )

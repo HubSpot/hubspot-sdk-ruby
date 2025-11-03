@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchResponseTimelineEventResponseWithErrors < HubspotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #
@@ -11,8 +11,8 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::CRM::TimelineEventResponse>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::TimelineEventResponse] }
+        #   @return [Array<HubspotSDK::Models::Crm::TimelineEventResponse>]
+        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::TimelineEventResponse] }
 
         # @!attribute started_at
         #
@@ -21,8 +21,8 @@ module HubspotSDK
 
         # @!attribute status
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::BatchResponseTimelineEventResponseWithErrors::Status]
-        required :status, enum: -> { HubspotSDK::CRM::BatchResponseTimelineEventResponseWithErrors::Status }
+        #   @return [Symbol, HubspotSDK::Models::Crm::BatchResponseTimelineEventResponseWithErrors::Status]
+        required :status, enum: -> { HubspotSDK::Crm::BatchResponseTimelineEventResponseWithErrors::Status }
 
         # @!attribute errors
         #
@@ -46,15 +46,15 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
         #   @param completed_at [Time]
-        #   @param results [Array<HubspotSDK::Models::CRM::TimelineEventResponse>]
+        #   @param results [Array<HubspotSDK::Models::Crm::TimelineEventResponse>]
         #   @param started_at [Time]
-        #   @param status [Symbol, HubspotSDK::Models::CRM::BatchResponseTimelineEventResponseWithErrors::Status]
+        #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponseTimelineEventResponseWithErrors::Status]
         #   @param errors [Array<HubspotSDK::Models::StandardError>]
         #   @param links [Hash{Symbol=>String}]
         #   @param num_errors [Integer]
         #   @param requested_at [Time]
 
-        # @see HubspotSDK::Models::CRM::BatchResponseTimelineEventResponseWithErrors#status
+        # @see HubspotSDK::Models::Crm::BatchResponseTimelineEventResponseWithErrors#status
         module Status
           extend HubspotSDK::Internal::Type::Enum
 

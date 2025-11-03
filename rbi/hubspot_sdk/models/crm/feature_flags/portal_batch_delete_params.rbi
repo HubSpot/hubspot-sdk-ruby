@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module FeatureFlags
-        class PortalBatchDeleteParams < HubspotSDK::Models::CRM::PortalFlagStateBatchDeleteRequest
+        class PortalBatchDeleteParams < HubspotSDK::Models::Crm::PortalFlagStateBatchDeleteRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::FeatureFlags::PortalBatchDeleteParams,
+                HubspotSDK::Crm::FeatureFlags::PortalBatchDeleteParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class AppUninstalls
         # Use this endpoint to uninstall your app from a customer's HubSpot account. If
         # successful, this endpoint will return a 204 and the customer will receive an

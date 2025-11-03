@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicAuditInfo < HubspotSDK::Internal::Type::BaseModel
         # @!attribute action
         #   The action performed that triggered the audit event.

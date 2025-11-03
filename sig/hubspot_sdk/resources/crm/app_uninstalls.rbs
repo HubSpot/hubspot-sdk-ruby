@@ -1,6 +1,6 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class AppUninstalls
         def uninstall: (?request_options: HubspotSDK::request_opts) -> nil
 

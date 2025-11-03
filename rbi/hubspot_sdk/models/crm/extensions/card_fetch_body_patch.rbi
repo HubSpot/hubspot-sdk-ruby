@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class CardFetchBodyPatch < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::CardFetchBodyPatch,
+                HubspotSDK::Crm::Extensions::CardFetchBodyPatch,
                 HubspotSDK::Internal::AnyHash
               )
             end
@@ -17,14 +17,14 @@ module HubspotSDK
           # call your target URL whenever a user visits a record page of the types defined
           # here.
           sig do
-            returns(T::Array[HubspotSDK::CRM::Extensions::CardObjectTypeBody])
+            returns(T::Array[HubspotSDK::Crm::Extensions::CardObjectTypeBody])
           end
           attr_accessor :object_types
 
           sig do
             returns(
               T.nilable(
-                HubspotSDK::CRM::Extensions::CardFetchBodyPatch::CardType::OrSymbol
+                HubspotSDK::Crm::Extensions::CardFetchBodyPatch::CardType::OrSymbol
               )
             )
           end
@@ -33,7 +33,7 @@ module HubspotSDK
           sig do
             params(
               card_type:
-                HubspotSDK::CRM::Extensions::CardFetchBodyPatch::CardType::OrSymbol
+                HubspotSDK::Crm::Extensions::CardFetchBodyPatch::CardType::OrSymbol
             ).void
           end
           attr_writer :card_type
@@ -58,10 +58,10 @@ module HubspotSDK
             params(
               object_types:
                 T::Array[
-                  HubspotSDK::CRM::Extensions::CardObjectTypeBody::OrHash
+                  HubspotSDK::Crm::Extensions::CardObjectTypeBody::OrHash
                 ],
               card_type:
-                HubspotSDK::CRM::Extensions::CardFetchBodyPatch::CardType::OrSymbol,
+                HubspotSDK::Crm::Extensions::CardFetchBodyPatch::CardType::OrSymbol,
               serverless_function: String,
               target_url: String
             ).returns(T.attached_class)
@@ -84,9 +84,9 @@ module HubspotSDK
             override.returns(
               {
                 object_types:
-                  T::Array[HubspotSDK::CRM::Extensions::CardObjectTypeBody],
+                  T::Array[HubspotSDK::Crm::Extensions::CardObjectTypeBody],
                 card_type:
-                  HubspotSDK::CRM::Extensions::CardFetchBodyPatch::CardType::OrSymbol,
+                  HubspotSDK::Crm::Extensions::CardFetchBodyPatch::CardType::OrSymbol,
                 serverless_function: String,
                 target_url: String
               }
@@ -102,7 +102,7 @@ module HubspotSDK
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::CRM::Extensions::CardFetchBodyPatch::CardType
+                  HubspotSDK::Crm::Extensions::CardFetchBodyPatch::CardType
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -110,18 +110,18 @@ module HubspotSDK
             EXTERNAL =
               T.let(
                 :EXTERNAL,
-                HubspotSDK::CRM::Extensions::CardFetchBodyPatch::CardType::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardFetchBodyPatch::CardType::TaggedSymbol
               )
             SERVERLESS =
               T.let(
                 :SERVERLESS,
-                HubspotSDK::CRM::Extensions::CardFetchBodyPatch::CardType::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardFetchBodyPatch::CardType::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::CRM::Extensions::CardFetchBodyPatch::CardType::TaggedSymbol
+                  HubspotSDK::Crm::Extensions::CardFetchBodyPatch::CardType::TaggedSymbol
                 ]
               )
             end

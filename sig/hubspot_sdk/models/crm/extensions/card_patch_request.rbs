@@ -1,49 +1,49 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         type card_patch_request =
           {
-            actions: HubspotSDK::CRM::Extensions::CardActions,
-            display_: HubspotSDK::CRM::Extensions::CardDisplayBody,
-            fetch: HubspotSDK::CRM::Extensions::CardFetchBodyPatch,
+            actions: HubspotSDK::Crm::Extensions::CardActions,
+            display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
+            fetch: HubspotSDK::Crm::Extensions::CardFetchBodyPatch,
             title: String
           }
 
         class CardPatchRequest < HubspotSDK::Internal::Type::BaseModel
-          attr_reader actions: HubspotSDK::CRM::Extensions::CardActions?
+          attr_reader actions: HubspotSDK::Crm::Extensions::CardActions?
 
           def actions=: (
-            HubspotSDK::CRM::Extensions::CardActions
-          ) -> HubspotSDK::CRM::Extensions::CardActions
+            HubspotSDK::Crm::Extensions::CardActions
+          ) -> HubspotSDK::Crm::Extensions::CardActions
 
-          attr_reader display_: HubspotSDK::CRM::Extensions::CardDisplayBody?
+          attr_reader display_: HubspotSDK::Crm::Extensions::CardDisplayBody?
 
           def display_=: (
-            HubspotSDK::CRM::Extensions::CardDisplayBody
-          ) -> HubspotSDK::CRM::Extensions::CardDisplayBody
+            HubspotSDK::Crm::Extensions::CardDisplayBody
+          ) -> HubspotSDK::Crm::Extensions::CardDisplayBody
 
-          attr_reader fetch: HubspotSDK::CRM::Extensions::CardFetchBodyPatch?
+          attr_reader fetch: HubspotSDK::Crm::Extensions::CardFetchBodyPatch?
 
           def fetch=: (
-            HubspotSDK::CRM::Extensions::CardFetchBodyPatch
-          ) -> HubspotSDK::CRM::Extensions::CardFetchBodyPatch
+            HubspotSDK::Crm::Extensions::CardFetchBodyPatch
+          ) -> HubspotSDK::Crm::Extensions::CardFetchBodyPatch
 
           attr_reader title: String?
 
           def title=: (String) -> String
 
           def initialize: (
-            ?actions: HubspotSDK::CRM::Extensions::CardActions,
-            ?display_: HubspotSDK::CRM::Extensions::CardDisplayBody,
-            ?fetch: HubspotSDK::CRM::Extensions::CardFetchBodyPatch,
+            ?actions: HubspotSDK::Crm::Extensions::CardActions,
+            ?display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
+            ?fetch: HubspotSDK::Crm::Extensions::CardFetchBodyPatch,
             ?title: String
           ) -> void
 
           def to_hash: -> {
-            actions: HubspotSDK::CRM::Extensions::CardActions,
-            display_: HubspotSDK::CRM::Extensions::CardDisplayBody,
-            fetch: HubspotSDK::CRM::Extensions::CardFetchBodyPatch,
+            actions: HubspotSDK::Crm::Extensions::CardActions,
+            display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
+            fetch: HubspotSDK::Crm::Extensions::CardFetchBodyPatch,
             title: String
           }
         end

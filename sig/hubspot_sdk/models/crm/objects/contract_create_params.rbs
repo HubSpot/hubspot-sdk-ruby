@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type contract_create_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class ContractCreateParams < HubspotSDK::Models::CRM::SimplePublicObjectInputForCreate
+        class ContractCreateParams < HubspotSDK::Models::Crm::SimplePublicObjectInputForCreate
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

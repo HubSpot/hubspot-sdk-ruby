@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         module Schema
           class PublicAssociationDefinitionUpdateRequest < HubspotSDK::Internal::Type::BaseModel

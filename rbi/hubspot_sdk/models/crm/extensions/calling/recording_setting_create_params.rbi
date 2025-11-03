@@ -2,17 +2,17 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module Calling
-          class RecordingSettingCreateParams < HubspotSDK::Models::CRM::Extensions::RecordingSettingsRequest
+          class RecordingSettingCreateParams < HubspotSDK::Models::Crm::Extensions::RecordingSettingsRequest
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Extensions::Calling::RecordingSettingCreateParams,
+                  HubspotSDK::Crm::Extensions::Calling::RecordingSettingCreateParams,
                   HubspotSDK::Internal::AnyHash
                 )
               end

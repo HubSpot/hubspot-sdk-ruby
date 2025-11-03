@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicAssociationMultiPost < HubspotSDK::Internal::Type::BaseModel
         # @!attribute from
         #

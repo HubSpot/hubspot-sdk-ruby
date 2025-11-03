@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ImportRowCore < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::CRM::ImportRowCore, HubspotSDK::Internal::AnyHash)
+            T.any(HubspotSDK::Crm::ImportRowCore, HubspotSDK::Internal::AnyHash)
           end
 
         sig { returns(T::Boolean) }

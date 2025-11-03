@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class TimelineEventIFrame < HubspotSDK::Internal::Type::BaseModel
         # @!attribute header_label
         #   The label of the modal window that displays the iframe contents.

@@ -1,13 +1,13 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type batch_response_deal_to_deal_splits =
           {
             completed_at: Time,
-            results: ::Array[HubspotSDK::CRM::Objects::DealToDealSplits],
+            results: ::Array[HubspotSDK::Crm::Objects::DealToDealSplits],
             started_at: Time,
-            status: HubspotSDK::Models::CRM::Objects::BatchResponseDealToDealSplits::status,
+            status: HubspotSDK::Models::Crm::Objects::BatchResponseDealToDealSplits::status,
             links: ::Hash[Symbol, String],
             requested_at: Time
           }
@@ -15,11 +15,11 @@ module HubspotSDK
         class BatchResponseDealToDealSplits < HubspotSDK::Internal::Type::BaseModel
           attr_accessor completed_at: Time
 
-          attr_accessor results: ::Array[HubspotSDK::CRM::Objects::DealToDealSplits]
+          attr_accessor results: ::Array[HubspotSDK::Crm::Objects::DealToDealSplits]
 
           attr_accessor started_at: Time
 
-          attr_accessor status: HubspotSDK::Models::CRM::Objects::BatchResponseDealToDealSplits::status
+          attr_accessor status: HubspotSDK::Models::Crm::Objects::BatchResponseDealToDealSplits::status
 
           attr_reader links: ::Hash[Symbol, String]?
 
@@ -31,18 +31,18 @@ module HubspotSDK
 
           def initialize: (
             completed_at: Time,
-            results: ::Array[HubspotSDK::CRM::Objects::DealToDealSplits],
+            results: ::Array[HubspotSDK::Crm::Objects::DealToDealSplits],
             started_at: Time,
-            status: HubspotSDK::Models::CRM::Objects::BatchResponseDealToDealSplits::status,
+            status: HubspotSDK::Models::Crm::Objects::BatchResponseDealToDealSplits::status,
             ?links: ::Hash[Symbol, String],
             ?requested_at: Time
           ) -> void
 
           def to_hash: -> {
             completed_at: Time,
-            results: ::Array[HubspotSDK::CRM::Objects::DealToDealSplits],
+            results: ::Array[HubspotSDK::Crm::Objects::DealToDealSplits],
             started_at: Time,
-            status: HubspotSDK::Models::CRM::Objects::BatchResponseDealToDealSplits::status,
+            status: HubspotSDK::Models::Crm::Objects::BatchResponseDealToDealSplits::status,
             links: ::Hash[Symbol, String],
             requested_at: Time
           }
@@ -57,7 +57,7 @@ module HubspotSDK
             CANCELED: :CANCELED
             COMPLETE: :COMPLETE
 
-            def self?.values: -> ::Array[HubspotSDK::Models::CRM::Objects::BatchResponseDealToDealSplits::status]
+            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Objects::BatchResponseDealToDealSplits::status]
           end
         end
       end

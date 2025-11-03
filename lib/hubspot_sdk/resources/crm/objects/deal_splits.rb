@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
         class DealSplits
           # Read a batch of deal split objects by their associated deal object internal ID
@@ -12,16 +12,16 @@ module HubspotSDK
           # @param inputs [Array<HubspotSDK::Models::PublicObjectID>]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::Objects::BatchResponseDealToDealSplits]
+          # @return [HubspotSDK::Models::Crm::Objects::BatchResponseDealToDealSplits]
           #
-          # @see HubspotSDK::Models::CRM::Objects::DealSplitBatchReadParams
+          # @see HubspotSDK::Models::Crm::Objects::DealSplitBatchReadParams
           def batch_read(params)
-            parsed, options = HubspotSDK::CRM::Objects::DealSplitBatchReadParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::DealSplitBatchReadParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/v3/objects/deals/splits/batch/read",
               body: parsed,
-              model: HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits,
+              model: HubspotSDK::Crm::Objects::BatchResponseDealToDealSplits,
               options: options
             )
           end
@@ -32,19 +32,19 @@ module HubspotSDK
           #
           # @overload batch_upsert(inputs:, request_options: {})
           #
-          # @param inputs [Array<HubspotSDK::Models::CRM::Objects::PublicDealSplitsCreateRequest>]
+          # @param inputs [Array<HubspotSDK::Models::Crm::Objects::PublicDealSplitsCreateRequest>]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::Objects::BatchResponseDealToDealSplits]
+          # @return [HubspotSDK::Models::Crm::Objects::BatchResponseDealToDealSplits]
           #
-          # @see HubspotSDK::Models::CRM::Objects::DealSplitBatchUpsertParams
+          # @see HubspotSDK::Models::Crm::Objects::DealSplitBatchUpsertParams
           def batch_upsert(params)
-            parsed, options = HubspotSDK::CRM::Objects::DealSplitBatchUpsertParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::DealSplitBatchUpsertParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/v3/objects/deals/splits/batch/upsert",
               body: parsed,
-              model: HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits,
+              model: HubspotSDK::Crm::Objects::BatchResponseDealToDealSplits,
               options: options
             )
           end

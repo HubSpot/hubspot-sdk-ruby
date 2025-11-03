@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class TimelineEventTemplateToken < HubspotSDK::Internal::Type::BaseModel
         # @!attribute label
         #   Used for list segmentation and reporting.
@@ -22,8 +22,8 @@ module HubspotSDK
         #   The data type of the token. You can currently choose from [string, number, date,
         #   enumeration].
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::TimelineEventTemplateToken::Type]
-        required :type, enum: -> { HubspotSDK::CRM::TimelineEventTemplateToken::Type }
+        #   @return [Symbol, HubspotSDK::Models::Crm::TimelineEventTemplateToken::Type]
+        required :type, enum: -> { HubspotSDK::Crm::TimelineEventTemplateToken::Type }
 
         # @!attribute created_at
         #   The date and time that the Event Template Token was created, as an ISO 8601
@@ -43,9 +43,9 @@ module HubspotSDK
         # @!attribute options
         #   If type is `enumeration`, we should have a list of options to choose from.
         #
-        #   @return [Array<HubspotSDK::Models::CRM::TimelineEventTemplateTokenOption>, nil]
+        #   @return [Array<HubspotSDK::Models::Crm::TimelineEventTemplateTokenOption>, nil]
         optional :options,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::TimelineEventTemplateTokenOption] }
+                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::TimelineEventTemplateTokenOption] }
 
         # @!attribute updated_at
         #   The date and time that the Event Template Token was last updated, as an ISO 8601
@@ -56,7 +56,7 @@ module HubspotSDK
 
         # @!method initialize(label:, name:, type:, created_at: nil, object_property_name: nil, options: nil, updated_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::TimelineEventTemplateToken} for more details.
+        #   {HubspotSDK::Models::Crm::TimelineEventTemplateToken} for more details.
         #
         #   State of the token definition.
         #
@@ -64,20 +64,20 @@ module HubspotSDK
         #
         #   @param name [String] The name of the token referenced in the templates. This must be unique for the s
         #
-        #   @param type [Symbol, HubspotSDK::Models::CRM::TimelineEventTemplateToken::Type] The data type of the token. You can currently choose from [string, number, date,
+        #   @param type [Symbol, HubspotSDK::Models::Crm::TimelineEventTemplateToken::Type] The data type of the token. You can currently choose from [string, number, date,
         #
         #   @param created_at [Time] The date and time that the Event Template Token was created, as an ISO 8601 time
         #
         #   @param object_property_name [String] The name of the CRM object property. This will populate the CRM object property
         #
-        #   @param options [Array<HubspotSDK::Models::CRM::TimelineEventTemplateTokenOption>] If type is `enumeration`, we should have a list of options to choose from.
+        #   @param options [Array<HubspotSDK::Models::Crm::TimelineEventTemplateTokenOption>] If type is `enumeration`, we should have a list of options to choose from.
         #
         #   @param updated_at [Time] The date and time that the Event Template Token was last updated, as an ISO 8601
 
         # The data type of the token. You can currently choose from [string, number, date,
         # enumeration].
         #
-        # @see HubspotSDK::Models::CRM::TimelineEventTemplateToken#type
+        # @see HubspotSDK::Models::Crm::TimelineEventTemplateToken#type
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

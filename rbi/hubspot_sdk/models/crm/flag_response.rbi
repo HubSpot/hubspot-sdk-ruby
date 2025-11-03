@@ -2,18 +2,18 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class FlagResponse < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::CRM::FlagResponse, HubspotSDK::Internal::AnyHash)
+            T.any(HubspotSDK::Crm::FlagResponse, HubspotSDK::Internal::AnyHash)
           end
 
         sig { returns(Integer) }
         attr_accessor :app_id
 
         sig do
-          returns(HubspotSDK::CRM::FlagResponse::DefaultState::TaggedSymbol)
+          returns(HubspotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol)
         end
         attr_accessor :default_state
 
@@ -23,7 +23,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::CRM::FlagResponse::OverrideState::TaggedSymbol
+              HubspotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
             )
           )
         end
@@ -32,7 +32,7 @@ module HubspotSDK
         sig do
           params(
             override_state:
-              HubspotSDK::CRM::FlagResponse::OverrideState::OrSymbol
+              HubspotSDK::Crm::FlagResponse::OverrideState::OrSymbol
           ).void
         end
         attr_writer :override_state
@@ -41,10 +41,10 @@ module HubspotSDK
           params(
             app_id: Integer,
             default_state:
-              HubspotSDK::CRM::FlagResponse::DefaultState::OrSymbol,
+              HubspotSDK::Crm::FlagResponse::DefaultState::OrSymbol,
             flag_name: String,
             override_state:
-              HubspotSDK::CRM::FlagResponse::OverrideState::OrSymbol
+              HubspotSDK::Crm::FlagResponse::OverrideState::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(app_id:, default_state:, flag_name:, override_state: nil)
@@ -55,10 +55,10 @@ module HubspotSDK
             {
               app_id: Integer,
               default_state:
-                HubspotSDK::CRM::FlagResponse::DefaultState::TaggedSymbol,
+                HubspotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol,
               flag_name: String,
               override_state:
-                HubspotSDK::CRM::FlagResponse::OverrideState::TaggedSymbol
+                HubspotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
             }
           )
         end
@@ -70,30 +70,30 @@ module HubspotSDK
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::CRM::FlagResponse::DefaultState)
+              T.all(Symbol, HubspotSDK::Crm::FlagResponse::DefaultState)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           OFF =
             T.let(
               :OFF,
-              HubspotSDK::CRM::FlagResponse::DefaultState::TaggedSymbol
+              HubspotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol
             )
           ON =
             T.let(
               :ON,
-              HubspotSDK::CRM::FlagResponse::DefaultState::TaggedSymbol
+              HubspotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol
             )
           ABSENT =
             T.let(
               :ABSENT,
-              HubspotSDK::CRM::FlagResponse::DefaultState::TaggedSymbol
+              HubspotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::FlagResponse::DefaultState::TaggedSymbol
+                HubspotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol
               ]
             )
           end
@@ -106,30 +106,30 @@ module HubspotSDK
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::CRM::FlagResponse::OverrideState)
+              T.all(Symbol, HubspotSDK::Crm::FlagResponse::OverrideState)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           OFF =
             T.let(
               :OFF,
-              HubspotSDK::CRM::FlagResponse::OverrideState::TaggedSymbol
+              HubspotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
             )
           ON =
             T.let(
               :ON,
-              HubspotSDK::CRM::FlagResponse::OverrideState::TaggedSymbol
+              HubspotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
             )
           ABSENT =
             T.let(
               :ABSENT,
-              HubspotSDK::CRM::FlagResponse::OverrideState::TaggedSymbol
+              HubspotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::FlagResponse::OverrideState::TaggedSymbol
+                HubspotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
               ]
             )
           end

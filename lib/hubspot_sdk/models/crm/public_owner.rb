@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Owners#list
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Owners#list
       class PublicOwner < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier of the owner.
@@ -26,8 +26,8 @@ module HubspotSDK
         # @!attribute type
         #   The type of the owner, which can be either PERSON or QUEUE.
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PublicOwner::Type]
-        required :type, enum: -> { HubspotSDK::CRM::PublicOwner::Type }
+        #   @return [Symbol, HubspotSDK::Models::Crm::PublicOwner::Type]
+        required :type, enum: -> { HubspotSDK::Crm::PublicOwner::Type }
 
         # @!attribute updated_at
         #   The date and time when the owner was last updated.
@@ -77,7 +77,7 @@ module HubspotSDK
         #
         #   @param created_at [Time] The date and time when the owner was created.
         #
-        #   @param type [Symbol, HubspotSDK::Models::CRM::PublicOwner::Type] The type of the owner, which can be either PERSON or QUEUE.
+        #   @param type [Symbol, HubspotSDK::Models::Crm::PublicOwner::Type] The type of the owner, which can be either PERSON or QUEUE.
         #
         #   @param updated_at [Time] The date and time when the owner was last updated.
         #
@@ -95,7 +95,7 @@ module HubspotSDK
 
         # The type of the owner, which can be either PERSON or QUEUE.
         #
-        # @see HubspotSDK::Models::CRM::PublicOwner#type
+        # @see HubspotSDK::Models::Crm::PublicOwner#type
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

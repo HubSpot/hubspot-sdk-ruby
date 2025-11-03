@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
         class PartnerServices
           class Associations
@@ -14,7 +14,7 @@ module HubspotSDK
                 to_object_type: String,
                 to_object_id: String,
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::CRM::SimplePublicObjectWithAssociations)
+              ).returns(HubspotSDK::Crm::SimplePublicObjectWithAssociations)
             end
             def update(
               association_type,
@@ -35,7 +35,7 @@ module HubspotSDK
                 limit: Integer,
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(
-                HubspotSDK::Internal::Page[HubspotSDK::CRM::AssociatedID]
+                HubspotSDK::Internal::Page[HubspotSDK::Crm::AssociatedID]
               )
             end
             def list(

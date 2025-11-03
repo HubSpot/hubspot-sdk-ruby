@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ListSearchRequest < HubspotSDK::Internal::Type::BaseModel
         # @!attribute additional_properties
         #   The property names of any additional list properties to include in the response.
@@ -71,7 +71,7 @@ module HubspotSDK
 
         # @!method initialize(additional_properties: nil, count: nil, list_ids: nil, offset: nil, processing_types: nil, query: nil, sort: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::ListSearchRequest} for more details.
+        #   {HubspotSDK::Models::Crm::ListSearchRequest} for more details.
         #
         #   The request object used for searching through lists.
         #

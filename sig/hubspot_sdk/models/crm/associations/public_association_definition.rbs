@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         type public_association_definition = { id: String, name: String }
 

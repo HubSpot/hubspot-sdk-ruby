@@ -1,12 +1,12 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type batch_response_public_association =
         {
           completed_at: Time,
-          results: ::Array[HubspotSDK::CRM::PublicAssociation],
+          results: ::Array[HubspotSDK::Crm::PublicAssociation],
           started_at: Time,
-          status: HubspotSDK::Models::CRM::BatchResponsePublicAssociation::status,
+          status: HubspotSDK::Models::Crm::BatchResponsePublicAssociation::status,
           errors: ::Array[HubspotSDK::StandardError],
           links: ::Hash[Symbol, String],
           num_errors: Integer,
@@ -16,11 +16,11 @@ module HubspotSDK
       class BatchResponsePublicAssociation < HubspotSDK::Internal::Type::BaseModel
         attr_accessor completed_at: Time
 
-        attr_accessor results: ::Array[HubspotSDK::CRM::PublicAssociation]
+        attr_accessor results: ::Array[HubspotSDK::Crm::PublicAssociation]
 
         attr_accessor started_at: Time
 
-        attr_accessor status: HubspotSDK::Models::CRM::BatchResponsePublicAssociation::status
+        attr_accessor status: HubspotSDK::Models::Crm::BatchResponsePublicAssociation::status
 
         attr_reader errors: ::Array[HubspotSDK::StandardError]?
 
@@ -42,9 +42,9 @@ module HubspotSDK
 
         def initialize: (
           completed_at: Time,
-          results: ::Array[HubspotSDK::CRM::PublicAssociation],
+          results: ::Array[HubspotSDK::Crm::PublicAssociation],
           started_at: Time,
-          status: HubspotSDK::Models::CRM::BatchResponsePublicAssociation::status,
+          status: HubspotSDK::Models::Crm::BatchResponsePublicAssociation::status,
           ?errors: ::Array[HubspotSDK::StandardError],
           ?links: ::Hash[Symbol, String],
           ?num_errors: Integer,
@@ -53,9 +53,9 @@ module HubspotSDK
 
         def to_hash: -> {
           completed_at: Time,
-          results: ::Array[HubspotSDK::CRM::PublicAssociation],
+          results: ::Array[HubspotSDK::Crm::PublicAssociation],
           started_at: Time,
-          status: HubspotSDK::Models::CRM::BatchResponsePublicAssociation::status,
+          status: HubspotSDK::Models::Crm::BatchResponsePublicAssociation::status,
           errors: ::Array[HubspotSDK::StandardError],
           links: ::Hash[Symbol, String],
           num_errors: Integer,
@@ -72,7 +72,7 @@ module HubspotSDK
           CANCELED: :CANCELED
           COMPLETE: :COMPLETE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::BatchResponsePublicAssociation::status]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::BatchResponsePublicAssociation::status]
         end
       end
     end

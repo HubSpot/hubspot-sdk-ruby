@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type timeline_event_template_update_request =
         {
           id: String,
           name: String,
-          tokens: ::Array[HubspotSDK::CRM::TimelineEventTemplateToken],
+          tokens: ::Array[HubspotSDK::Crm::TimelineEventTemplateToken],
           detail_template: String,
           header_template: String
         }
@@ -15,7 +15,7 @@ module HubspotSDK
 
         attr_accessor name: String
 
-        attr_accessor tokens: ::Array[HubspotSDK::CRM::TimelineEventTemplateToken]
+        attr_accessor tokens: ::Array[HubspotSDK::Crm::TimelineEventTemplateToken]
 
         attr_reader detail_template: String?
 
@@ -28,7 +28,7 @@ module HubspotSDK
         def initialize: (
           id: String,
           name: String,
-          tokens: ::Array[HubspotSDK::CRM::TimelineEventTemplateToken],
+          tokens: ::Array[HubspotSDK::Crm::TimelineEventTemplateToken],
           ?detail_template: String,
           ?header_template: String
         ) -> void
@@ -36,7 +36,7 @@ module HubspotSDK
         def to_hash: -> {
           id: String,
           name: String,
-          tokens: ::Array[HubspotSDK::CRM::TimelineEventTemplateToken],
+          tokens: ::Array[HubspotSDK::Crm::TimelineEventTemplateToken],
           detail_template: String,
           header_template: String
         }

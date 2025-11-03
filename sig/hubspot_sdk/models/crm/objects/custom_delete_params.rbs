@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type custom_delete_params =
           { object_type: String }

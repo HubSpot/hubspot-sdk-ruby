@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Properties
-        # @see HubspotSDK::Resources::CRM::Properties::Groups#delete
+        # @see HubspotSDK::Resources::Crm::Properties::Groups#delete
         class GroupDeleteParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters

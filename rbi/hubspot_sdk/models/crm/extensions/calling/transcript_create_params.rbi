@@ -2,17 +2,17 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module Calling
-          class TranscriptCreateParams < HubspotSDK::Models::CRM::Extensions::Calling::TranscriptCreateRequest
+          class TranscriptCreateParams < HubspotSDK::Models::Crm::Extensions::Calling::TranscriptCreateRequest
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Extensions::Calling::TranscriptCreateParams,
+                  HubspotSDK::Crm::Extensions::Calling::TranscriptCreateParams,
                   HubspotSDK::Internal::AnyHash
                 )
               end

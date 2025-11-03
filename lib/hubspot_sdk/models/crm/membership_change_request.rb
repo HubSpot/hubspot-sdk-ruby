@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class MembershipChangeRequest < HubspotSDK::Internal::Type::BaseModel
         # @!attribute record_ids_to_add
         #

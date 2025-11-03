@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchInputSimplePublicObjectBatchInput < HubspotSDK::Internal::Type::BaseModel
         # @!attribute inputs
         #
-        #   @return [Array<HubspotSDK::Models::CRM::SimplePublicObjectBatchInput>]
+        #   @return [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInput>]
         required :inputs,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::SimplePublicObjectBatchInput] }
+                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObjectBatchInput] }
 
         # @!method initialize(inputs:)
-        #   @param inputs [Array<HubspotSDK::Models::CRM::SimplePublicObjectBatchInput>]
+        #   @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInput>]
       end
     end
   end

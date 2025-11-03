@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         module PartnerServices
-          # @see HubspotSDK::Resources::CRM::Objects::PartnerServices::Associations#list
+          # @see HubspotSDK::Resources::Crm::Objects::PartnerServices::Associations#list
           class AssociationListParams < HubspotSDK::Internal::Type::BaseModel
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
@@ -36,7 +36,7 @@ module HubspotSDK
 
             # @!method initialize(partner_service_id:, after: nil, include_fa: nil, limit: nil, request_options: {})
             #   Some parameter documentations has been truncated, see
-            #   {HubspotSDK::Models::CRM::Objects::PartnerServices::AssociationListParams} for
+            #   {HubspotSDK::Models::Crm::Objects::PartnerServices::AssociationListParams} for
             #   more details.
             #
             #   @param partner_service_id [String]

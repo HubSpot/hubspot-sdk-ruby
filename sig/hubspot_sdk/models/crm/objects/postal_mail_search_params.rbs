@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type postal_mail_search_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class PostalMailSearchParams < HubspotSDK::Models::CRM::PublicObjectSearchRequest
+        class PostalMailSearchParams < HubspotSDK::Models::Crm::PublicObjectSearchRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

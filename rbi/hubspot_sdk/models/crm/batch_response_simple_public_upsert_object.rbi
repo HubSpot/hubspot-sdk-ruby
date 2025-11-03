@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchResponseSimplePublicUpsertObject < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::BatchResponseSimplePublicUpsertObject,
+              HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -16,7 +16,7 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :completed_at
 
-        sig { returns(T::Array[HubspotSDK::CRM::SimplePublicUpsertObject]) }
+        sig { returns(T::Array[HubspotSDK::Crm::SimplePublicUpsertObject]) }
         attr_accessor :results
 
         # The timestamp when the batch process began execution, in ISO 8601 format.
@@ -27,7 +27,7 @@ module HubspotSDK
         # "CANCELED", or "COMPLETE".
         sig do
           returns(
-            HubspotSDK::CRM::BatchResponseSimplePublicUpsertObject::Status::TaggedSymbol
+            HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject::Status::TaggedSymbol
           )
         end
         attr_accessor :status
@@ -64,10 +64,10 @@ module HubspotSDK
           params(
             completed_at: Time,
             results:
-              T::Array[HubspotSDK::CRM::SimplePublicUpsertObject::OrHash],
+              T::Array[HubspotSDK::Crm::SimplePublicUpsertObject::OrHash],
             started_at: Time,
             status:
-              HubspotSDK::CRM::BatchResponseSimplePublicUpsertObject::Status::OrSymbol,
+              HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject::Status::OrSymbol,
             errors: T::Array[HubspotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
@@ -96,10 +96,10 @@ module HubspotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubspotSDK::CRM::SimplePublicUpsertObject],
+              results: T::Array[HubspotSDK::Crm::SimplePublicUpsertObject],
               started_at: Time,
               status:
-                HubspotSDK::CRM::BatchResponseSimplePublicUpsertObject::Status::TaggedSymbol,
+                HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject::Status::TaggedSymbol,
               errors: T::Array[HubspotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
@@ -119,7 +119,7 @@ module HubspotSDK
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CRM::BatchResponseSimplePublicUpsertObject::Status
+                HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -127,28 +127,28 @@ module HubspotSDK
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::CRM::BatchResponseSimplePublicUpsertObject::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::CRM::BatchResponseSimplePublicUpsertObject::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject::Status::TaggedSymbol
             )
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::CRM::BatchResponseSimplePublicUpsertObject::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::CRM::BatchResponseSimplePublicUpsertObject::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::BatchResponseSimplePublicUpsertObject::Status::TaggedSymbol
+                HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject::Status::TaggedSymbol
               ]
             )
           end

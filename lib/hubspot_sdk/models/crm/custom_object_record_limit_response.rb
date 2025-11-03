@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CustomObjectRecordLimitResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute by_object_type
         #
-        #   @return [Array<HubspotSDK::Models::CRM::UsageForObjectType>]
+        #   @return [Array<HubspotSDK::Models::Crm::UsageForObjectType>]
         required :by_object_type,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::UsageForObjectType] },
+                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::UsageForObjectType] },
                  api_name: :byObjectType
 
         # @!attribute overall_limit
@@ -27,7 +27,7 @@ module HubspotSDK
         required :overall_usage, Integer, api_name: :overallUsage
 
         # @!method initialize(by_object_type:, overall_limit:, overall_percentage:, overall_usage:)
-        #   @param by_object_type [Array<HubspotSDK::Models::CRM::UsageForObjectType>]
+        #   @param by_object_type [Array<HubspotSDK::Models::Crm::UsageForObjectType>]
         #   @param overall_limit [Integer]
         #   @param overall_percentage [Float]
         #   @param overall_usage [Integer]

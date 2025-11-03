@@ -2,15 +2,15 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         module Schema
           class PublicAssociationDefinitionConfigurationCreateRequest < HubspotSDK::Internal::Type::BaseModel
             # @!attribute category
             #
-            #   @return [Symbol, HubspotSDK::Models::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationCreateRequest::Category]
+            #   @return [Symbol, HubspotSDK::Models::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationCreateRequest::Category]
             required :category,
-                     enum: -> { HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationCreateRequest::Category }
+                     enum: -> { HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationCreateRequest::Category }
 
             # @!attribute max_to_object_ids
             #
@@ -23,11 +23,11 @@ module HubspotSDK
             required :type_id, Integer, api_name: :typeId
 
             # @!method initialize(category:, max_to_object_ids:, type_id:)
-            #   @param category [Symbol, HubspotSDK::Models::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationCreateRequest::Category]
+            #   @param category [Symbol, HubspotSDK::Models::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationCreateRequest::Category]
             #   @param max_to_object_ids [Integer]
             #   @param type_id [Integer]
 
-            # @see HubspotSDK::Models::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationCreateRequest#category
+            # @see HubspotSDK::Models::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationCreateRequest#category
             module Category
               extend HubspotSDK::Internal::Type::Enum
 

@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
-        # @see HubspotSDK::Resources::CRM::Objects::Schemas#create
+        # @see HubspotSDK::Resources::Crm::Objects::Schemas#create
         class ObjectSchema < HubspotSDK::Internal::Type::BaseModel
           # @!attribute id
           #   A unique ID for this schema's object type. Will be defined as
@@ -116,7 +116,7 @@ module HubspotSDK
 
           # @!method initialize(id:, associations:, labels:, name:, properties:, required_properties:, archived: nil, created_at: nil, created_by_user_id: nil, description: nil, fully_qualified_name: nil, object_type_id: nil, primary_display_property: nil, searchable_properties: nil, secondary_display_properties: nil, updated_at: nil, updated_by_user_id: nil)
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::CRM::Objects::ObjectSchema} for more details.
+          #   {HubspotSDK::Models::Crm::Objects::ObjectSchema} for more details.
           #
           #   Defines an object schema, including its properties and associations.
           #

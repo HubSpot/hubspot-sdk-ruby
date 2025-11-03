@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type public_list_folder =
         {
           id: String,
           child_lists: ::Array[Integer],
-          child_nodes: ::Array[HubspotSDK::CRM::PublicListFolder],
+          child_nodes: ::Array[HubspotSDK::Crm::PublicListFolder],
           parent_folder_id: String,
           created_at: Time,
           name: String,
@@ -19,7 +19,7 @@ module HubspotSDK
 
         attr_accessor child_lists: ::Array[Integer]
 
-        attr_accessor child_nodes: ::Array[HubspotSDK::CRM::PublicListFolder]
+        attr_accessor child_nodes: ::Array[HubspotSDK::Crm::PublicListFolder]
 
         attr_accessor parent_folder_id: String
 
@@ -46,7 +46,7 @@ module HubspotSDK
         def initialize: (
           id: String,
           child_lists: ::Array[Integer],
-          child_nodes: ::Array[HubspotSDK::CRM::PublicListFolder],
+          child_nodes: ::Array[HubspotSDK::Crm::PublicListFolder],
           parent_folder_id: String,
           ?created_at: Time,
           ?name: String,
@@ -58,7 +58,7 @@ module HubspotSDK
         def to_hash: -> {
           id: String,
           child_lists: ::Array[Integer],
-          child_nodes: ::Array[HubspotSDK::CRM::PublicListFolder],
+          child_nodes: ::Array[HubspotSDK::Crm::PublicListFolder],
           parent_folder_id: String,
           created_at: Time,
           name: String,

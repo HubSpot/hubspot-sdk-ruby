@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module FeatureFlags
         type portal_get_params =
           { app_id: Integer, flag_name: String }

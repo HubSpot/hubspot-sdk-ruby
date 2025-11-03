@@ -2,20 +2,20 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Properties::GroupsTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Properties::GroupsTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
     response = @hubspot.crm.properties.groups.create("objectType", label: "label", name: "name")
 
     assert_pattern do
-      response => HubspotSDK::CRM::CreatedResponsePropertyGroup
+      response => HubspotSDK::Crm::CreatedResponsePropertyGroup
     end
 
     assert_pattern do
       response => {
         created_resource_id: String,
-        entity: HubspotSDK::CRM::PropertyGroup,
+        entity: HubspotSDK::Crm::PropertyGroup,
         location: String | nil
       }
     end
@@ -27,7 +27,7 @@ class HubspotSDK::Test::Resources::CRM::Properties::GroupsTest < HubspotSDK::Tes
     response = @hubspot.crm.properties.groups.update("groupName", object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::CRM::PropertyGroup
+      response => HubspotSDK::Crm::PropertyGroup
     end
 
     assert_pattern do
@@ -46,12 +46,12 @@ class HubspotSDK::Test::Resources::CRM::Properties::GroupsTest < HubspotSDK::Tes
     response = @hubspot.crm.properties.groups.list("objectType")
 
     assert_pattern do
-      response => HubspotSDK::CRM::CollectionResponsePropertyGroup
+      response => HubspotSDK::Crm::CollectionResponsePropertyGroup
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PropertyGroup]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PropertyGroup]),
         paging: HubspotSDK::Marketing::Paging | nil
       }
     end
@@ -73,7 +73,7 @@ class HubspotSDK::Test::Resources::CRM::Properties::GroupsTest < HubspotSDK::Tes
     response = @hubspot.crm.properties.groups.get("groupName", object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::CRM::PropertyGroup
+      response => HubspotSDK::Crm::PropertyGroup
     end
 
     assert_pattern do

@@ -2,24 +2,24 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchInputTimelineEvent < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::BatchInputTimelineEvent,
+              HubspotSDK::Crm::BatchInputTimelineEvent,
               HubspotSDK::Internal::AnyHash
             )
           end
 
         # A collection of timeline events we want to create.
-        sig { returns(T::Array[HubspotSDK::CRM::TimelineEvent]) }
+        sig { returns(T::Array[HubspotSDK::Crm::TimelineEvent]) }
         attr_accessor :inputs
 
         # Used to create timeline events in batches.
         sig do
           params(
-            inputs: T::Array[HubspotSDK::CRM::TimelineEvent::OrHash]
+            inputs: T::Array[HubspotSDK::Crm::TimelineEvent::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(
@@ -29,7 +29,7 @@ module HubspotSDK
         end
 
         sig do
-          override.returns({ inputs: T::Array[HubspotSDK::CRM::TimelineEvent] })
+          override.returns({ inputs: T::Array[HubspotSDK::Crm::TimelineEvent] })
         end
         def to_hash
         end

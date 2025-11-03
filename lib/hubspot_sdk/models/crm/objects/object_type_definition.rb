@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
-        # @see HubspotSDK::Resources::CRM::Objects::Schemas#update
+        # @see HubspotSDK::Resources::Crm::Objects::Schemas#update
         class ObjectTypeDefinition < HubspotSDK::Internal::Type::BaseModel
           # @!attribute id
           #   A unique ID for this object type. Will be defined as {meta-type}-{unique ID}.
@@ -97,7 +97,7 @@ module HubspotSDK
 
           # @!method initialize(id:, labels:, name:, required_properties:, archived: nil, created_at: nil, description: nil, fully_qualified_name: nil, object_type_id: nil, portal_id: nil, primary_display_property: nil, searchable_properties: nil, secondary_display_properties: nil, updated_at: nil)
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::CRM::Objects::ObjectTypeDefinition} for more details.
+          #   {HubspotSDK::Models::Crm::Objects::ObjectTypeDefinition} for more details.
           #
           #   Defines an object type.
           #

@@ -2,15 +2,15 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      class PipelineUpdateParams < HubspotSDK::Models::CRM::PipelinePatchInput
+    module Crm
+      class PipelineUpdateParams < HubspotSDK::Models::Crm::PipelinePatchInput
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PipelineUpdateParams,
+              HubspotSDK::Crm::PipelineUpdateParams,
               HubspotSDK::Internal::AnyHash
             )
           end

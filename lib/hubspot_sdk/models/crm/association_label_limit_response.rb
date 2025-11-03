@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class AssociationLabelLimitResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute all_labels
         #
@@ -12,9 +12,9 @@ module HubspotSDK
         # @!attribute from_object_type
         #   Defines an object type.
         #
-        #   @return [HubspotSDK::Models::CRM::Objects::ObjectTypeDefinition]
+        #   @return [HubspotSDK::Models::Crm::Objects::ObjectTypeDefinition]
         required :from_object_type,
-                 -> { HubspotSDK::CRM::Objects::ObjectTypeDefinition },
+                 -> { HubspotSDK::Crm::Objects::ObjectTypeDefinition },
                  api_name: :fromObjectType
 
         # @!attribute limit
@@ -30,10 +30,10 @@ module HubspotSDK
         # @!attribute to_object_type
         #   Defines an object type.
         #
-        #   @return [HubspotSDK::Models::CRM::Objects::ObjectTypeDefinition]
+        #   @return [HubspotSDK::Models::Crm::Objects::ObjectTypeDefinition]
         required :to_object_type,
                  -> {
-                   HubspotSDK::CRM::Objects::ObjectTypeDefinition
+                   HubspotSDK::Crm::Objects::ObjectTypeDefinition
                  },
                  api_name: :toObjectType
 
@@ -45,13 +45,13 @@ module HubspotSDK
         # @!method initialize(all_labels:, from_object_type:, limit:, percentage:, to_object_type:, usage:)
         #   @param all_labels [Array<String>]
         #
-        #   @param from_object_type [HubspotSDK::Models::CRM::Objects::ObjectTypeDefinition] Defines an object type.
+        #   @param from_object_type [HubspotSDK::Models::Crm::Objects::ObjectTypeDefinition] Defines an object type.
         #
         #   @param limit [Integer]
         #
         #   @param percentage [Float]
         #
-        #   @param to_object_type [HubspotSDK::Models::CRM::Objects::ObjectTypeDefinition] Defines an object type.
+        #   @param to_object_type [HubspotSDK::Models::Crm::Objects::ObjectTypeDefinition] Defines an object type.
         #
         #   @param usage [Integer]
       end

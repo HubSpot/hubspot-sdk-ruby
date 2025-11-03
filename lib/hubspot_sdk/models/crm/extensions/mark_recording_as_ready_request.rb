@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class MarkRecordingAsReadyRequest < HubspotSDK::Internal::Type::BaseModel
           # @!attribute engagement_id

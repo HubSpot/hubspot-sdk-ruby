@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Extensions
         class VideoConferencing
           class Settings
             # Some parameter documentations has been truncated, see
-            # {HubspotSDK::Models::CRM::Extensions::VideoConferencing::SettingUpdateParams}
+            # {HubspotSDK::Models::Crm::Extensions::VideoConferencing::SettingUpdateParams}
             # for more details.
             #
             # @overload update(app_id, create_meeting_url:, delete_meeting_url: nil, fetch_accounts_uri: nil, update_meeting_url: nil, user_verify_url: nil, request_options: {})
@@ -26,17 +26,17 @@ module HubspotSDK
             #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::CRM::Extensions::ExternalSettings]
+            # @return [HubspotSDK::Models::Crm::Extensions::ExternalSettings]
             #
-            # @see HubspotSDK::Models::CRM::Extensions::VideoConferencing::SettingUpdateParams
+            # @see HubspotSDK::Models::Crm::Extensions::VideoConferencing::SettingUpdateParams
             def update(app_id, params)
               parsed, options =
-                HubspotSDK::CRM::Extensions::VideoConferencing::SettingUpdateParams.dump_request(params)
+                HubspotSDK::Crm::Extensions::VideoConferencing::SettingUpdateParams.dump_request(params)
               @client.request(
                 method: :put,
                 path: ["crm/v3/extensions/videoconferencing/settings/%1$s", app_id],
                 body: parsed,
-                model: HubspotSDK::CRM::Extensions::ExternalSettings,
+                model: HubspotSDK::Crm::Extensions::ExternalSettings,
                 options: options
               )
             end
@@ -48,7 +48,7 @@ module HubspotSDK
             #
             # @return [nil]
             #
-            # @see HubspotSDK::Models::CRM::Extensions::VideoConferencing::SettingDeleteParams
+            # @see HubspotSDK::Models::Crm::Extensions::VideoConferencing::SettingDeleteParams
             def delete(app_id, params = {})
               @client.request(
                 method: :delete,
@@ -63,14 +63,14 @@ module HubspotSDK
             # @param app_id [Integer]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::CRM::Extensions::ExternalSettings]
+            # @return [HubspotSDK::Models::Crm::Extensions::ExternalSettings]
             #
-            # @see HubspotSDK::Models::CRM::Extensions::VideoConferencing::SettingGetParams
+            # @see HubspotSDK::Models::Crm::Extensions::VideoConferencing::SettingGetParams
             def get(app_id, params = {})
               @client.request(
                 method: :get,
                 path: ["crm/v3/extensions/videoconferencing/settings/%1$s", app_id],
-                model: HubspotSDK::CRM::Extensions::ExternalSettings,
+                model: HubspotSDK::Crm::Extensions::ExternalSettings,
                 options: params[:request_options]
               )
             end

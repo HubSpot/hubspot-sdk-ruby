@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class JoinTimeAndRecordID < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::JoinTimeAndRecordID,
+              HubspotSDK::Crm::JoinTimeAndRecordID,
               HubspotSDK::Internal::AnyHash
             )
           end

@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class ExternalSettings < HubspotSDK::Internal::Type::BaseModel
           # @!attribute create_meeting_url
@@ -39,7 +39,7 @@ module HubspotSDK
 
           # @!method initialize(create_meeting_url:, delete_meeting_url: nil, fetch_accounts_uri: nil, update_meeting_url: nil, user_verify_url: nil)
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::CRM::Extensions::ExternalSettings} for more details.
+          #   {HubspotSDK::Models::Crm::Extensions::ExternalSettings} for more details.
           #
           #   The URLs of the various actions provided by the video conferencing application.
           #   All URLs must use the `https` protocol.

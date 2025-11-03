@@ -1,10 +1,10 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Properties
-        attr_reader batch: HubspotSDK::Resources::CRM::Properties::Batch
+        attr_reader batch: HubspotSDK::Resources::Crm::Properties::Batch
 
-        attr_reader groups: HubspotSDK::Resources::CRM::Properties::Groups
+        attr_reader groups: HubspotSDK::Resources::Crm::Properties::Groups
 
         def create: (
           String object_type,
@@ -24,7 +24,7 @@ module HubspotSDK
           ?options: ::Array[HubspotSDK::OptionInput],
           ?referenced_object_type: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::CRM::CreatedResponseProperty
+        ) -> HubspotSDK::Crm::CreatedResponseProperty
 
         def update: (
           String property_name,
@@ -32,13 +32,13 @@ module HubspotSDK
           ?calculation_formula: String,
           ?description: String,
           ?display_order: Integer,
-          ?field_type: HubspotSDK::Models::CRM::PropertyUpdate::field_type,
+          ?field_type: HubspotSDK::Models::Crm::PropertyUpdate::field_type,
           ?form_field: bool,
           ?group_name: String,
           ?hidden: bool,
           ?label: String,
           ?options: ::Array[HubspotSDK::OptionInput],
-          ?type: HubspotSDK::Models::CRM::PropertyUpdate::type_,
+          ?type: HubspotSDK::Models::Crm::PropertyUpdate::type_,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Property
 
@@ -47,7 +47,7 @@ module HubspotSDK
           ?archived: bool,
           ?properties: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::CRM::CollectionResponseProperty
+        ) -> HubspotSDK::Crm::CollectionResponseProperty
 
         def delete: (
           String property_name,

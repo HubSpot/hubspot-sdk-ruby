@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module FeatureFlags
         type app_update_params =
           { app_id: Integer } & HubspotSDK::Internal::Type::request_parameters
 
-        class AppUpdateParams < HubspotSDK::Models::CRM::FlagPutRequest
+        class AppUpdateParams < HubspotSDK::Models::Crm::FlagPutRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

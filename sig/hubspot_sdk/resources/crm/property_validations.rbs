@@ -1,17 +1,17 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class PropertyValidations
         def list: (
           String object_type_id,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::CRM::CollectionResponsePublicPropertyValidationRuleMapNoPaging
+        ) -> HubspotSDK::Crm::CollectionResponsePublicPropertyValidationRuleMapNoPaging
 
         def get: (
           String property_name,
           object_type_id: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::CRM::CollectionResponsePublicPropertyValidationRuleNoPaging
+        ) -> HubspotSDK::Crm::CollectionResponsePublicPropertyValidationRuleNoPaging
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

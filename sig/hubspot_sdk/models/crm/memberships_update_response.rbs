@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type memberships_update_response =
         {
           record_ids_missing: ::Array[String],

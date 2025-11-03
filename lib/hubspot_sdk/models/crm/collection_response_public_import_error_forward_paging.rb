@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Imports#list_errors
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Imports#list_errors
       class CollectionResponsePublicImportErrorForwardPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::CRM::PublicImportError>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicImportError] }
+        #   @return [Array<HubspotSDK::Models::Crm::PublicImportError>]
+        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicImportError] }
 
         # @!attribute paging
         #
@@ -16,7 +16,7 @@ module HubspotSDK
         optional :paging, -> { HubspotSDK::ForwardPaging }
 
         # @!method initialize(results:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::CRM::PublicImportError>]
+        #   @param results [Array<HubspotSDK::Models::Crm::PublicImportError>]
         #   @param paging [HubspotSDK::Models::ForwardPaging]
       end
     end

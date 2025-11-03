@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Lists
-        class FolderMoveListParams < HubspotSDK::Models::CRM::ListMoveRequest
+        class FolderMoveListParams < HubspotSDK::Models::Crm::ListMoveRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Lists::FolderMoveListParams,
+                HubspotSDK::Crm::Lists::FolderMoveListParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

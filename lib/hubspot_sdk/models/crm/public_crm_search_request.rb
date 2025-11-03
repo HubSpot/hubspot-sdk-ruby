@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      class PublicCRMSearchRequest < HubspotSDK::Internal::Type::BaseModel
+    module Crm
+      class PublicCrmSearchRequest < HubspotSDK::Internal::Type::BaseModel
         # @!attribute filters
         #
-        #   @return [Array<HubspotSDK::Models::CRM::Filter>]
-        required :filters, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Filter] }
+        #   @return [Array<HubspotSDK::Models::Crm::Filter>]
+        required :filters, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Filter] }
 
         # @!attribute query
         #
@@ -20,7 +20,7 @@ module HubspotSDK
         required :sorts, HubspotSDK::Internal::Type::ArrayOf[String]
 
         # @!method initialize(filters:, query:, sorts:)
-        #   @param filters [Array<HubspotSDK::Models::CRM::Filter>]
+        #   @param filters [Array<HubspotSDK::Models::Crm::Filter>]
         #   @param query [String]
         #   @param sorts [Array<String>]
       end

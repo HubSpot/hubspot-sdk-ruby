@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Lists
-        # @see HubspotSDK::Resources::CRM::Lists::Memberships#add_and_remove
-        class MembershipAddAndRemoveParams < HubspotSDK::Models::CRM::MembershipChangeRequest
+        # @see HubspotSDK::Resources::Crm::Lists::Memberships#add_and_remove
+        class MembershipAddAndRemoveParams < HubspotSDK::Models::Crm::MembershipChangeRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

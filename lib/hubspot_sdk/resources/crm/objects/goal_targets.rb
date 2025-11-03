@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
         class GoalTargets
-          # @return [HubspotSDK::Resources::CRM::Objects::GoalTargets::Batch]
+          # @return [HubspotSDK::Resources::Crm::Objects::GoalTargets::Batch]
           attr_reader :batch
 
           # Create a goal target with the given properties and return a copy of the object,
@@ -16,20 +16,20 @@ module HubspotSDK
           #
           # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
           #
-          # @param associations [Array<HubspotSDK::Models::CRM::PublicAssociationsForObject>]
+          # @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::CreatedResponseSimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::CreatedResponseSimplePublicObject]
           #
-          # @see HubspotSDK::Models::CRM::Objects::GoalTargetCreateParams
+          # @see HubspotSDK::Models::Crm::Objects::GoalTargetCreateParams
           def create(params)
-            parsed, options = HubspotSDK::CRM::Objects::GoalTargetCreateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::GoalTargetCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/v3/objects/goal_targets",
               body: parsed,
-              model: HubspotSDK::CRM::CreatedResponseSimplePublicObject,
+              model: HubspotSDK::Crm::CreatedResponseSimplePublicObject,
               options: options
             )
           end
@@ -52,24 +52,24 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::SimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
           #
-          # @see HubspotSDK::Models::CRM::Objects::GoalTargetUpdateParams
+          # @see HubspotSDK::Models::Crm::Objects::GoalTargetUpdateParams
           def update(goal_target_id, params)
-            parsed, options = HubspotSDK::CRM::Objects::GoalTargetUpdateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::GoalTargetUpdateParams.dump_request(params)
             query_params = [:id_property]
             @client.request(
               method: :patch,
               path: ["crm/v3/objects/goal_targets/%1$s", goal_target_id],
               query: parsed.slice(*query_params).transform_keys(id_property: "idProperty"),
               body: parsed.except(*query_params),
-              model: HubspotSDK::CRM::SimplePublicObject,
+              model: HubspotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::Objects::GoalTargetListParams} for more details.
+          # {HubspotSDK::Models::Crm::Objects::GoalTargetListParams} for more details.
           #
           # Read a page of goal targets. Control what is returned via the `properties` query
           # param.
@@ -90,17 +90,17 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::CRM::SimplePublicObjectWithAssociations>]
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
           #
-          # @see HubspotSDK::Models::CRM::Objects::GoalTargetListParams
+          # @see HubspotSDK::Models::Crm::Objects::GoalTargetListParams
           def list(params = {})
-            parsed, options = HubspotSDK::CRM::Objects::GoalTargetListParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::GoalTargetListParams.dump_request(params)
             @client.request(
               method: :get,
               path: "crm/v3/objects/goal_targets",
               query: parsed.transform_keys(properties_with_history: "propertiesWithHistory"),
               page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::CRM::SimplePublicObjectWithAssociations,
+              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -114,7 +114,7 @@ module HubspotSDK
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::CRM::Objects::GoalTargetDeleteParams
+          # @see HubspotSDK::Models::Crm::Objects::GoalTargetDeleteParams
           def delete(goal_target_id, params = {})
             @client.request(
               method: :delete,
@@ -125,7 +125,7 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::Objects::GoalTargetGetParams} for more details.
+          # {HubspotSDK::Models::Crm::Objects::GoalTargetGetParams} for more details.
           #
           # Read an Object identified by `{goalTargetId}`. `{goalTargetId}` refers to the
           # internal object ID by default, or optionally any unique property value as
@@ -148,11 +148,11 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::SimplePublicObjectWithAssociations]
+          # @return [HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations]
           #
-          # @see HubspotSDK::Models::CRM::Objects::GoalTargetGetParams
+          # @see HubspotSDK::Models::Crm::Objects::GoalTargetGetParams
           def get(goal_target_id, params = {})
-            parsed, options = HubspotSDK::CRM::Objects::GoalTargetGetParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::GoalTargetGetParams.dump_request(params)
             @client.request(
               method: :get,
               path: ["crm/v3/objects/goal_targets/%1$s", goal_target_id],
@@ -160,7 +160,7 @@ module HubspotSDK
                 id_property: "idProperty",
                 properties_with_history: "propertiesWithHistory"
               ),
-              model: HubspotSDK::CRM::SimplePublicObjectWithAssociations,
+              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -171,7 +171,7 @@ module HubspotSDK
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.
           #
-          # @param filter_groups [Array<HubspotSDK::Models::CRM::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
+          # @param filter_groups [Array<HubspotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
           #
           # @param limit [Integer] The maximum results to return, up to 200 objects.
           #
@@ -183,16 +183,16 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::CollectionResponseWithTotalSimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
           #
-          # @see HubspotSDK::Models::CRM::Objects::GoalTargetSearchParams
+          # @see HubspotSDK::Models::Crm::Objects::GoalTargetSearchParams
           def search(params = {})
-            parsed, options = HubspotSDK::CRM::Objects::GoalTargetSearchParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::GoalTargetSearchParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/v3/objects/goal_targets/search",
               body: parsed,
-              model: HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject,
+              model: HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
               options: options
             )
           end
@@ -202,7 +202,7 @@ module HubspotSDK
           # @param client [HubspotSDK::Client]
           def initialize(client:)
             @client = client
-            @batch = HubspotSDK::Resources::CRM::Objects::GoalTargets::Batch.new(client: client)
+            @batch = HubspotSDK::Resources::Crm::Objects::GoalTargets::Batch.new(client: client)
           end
         end
       end

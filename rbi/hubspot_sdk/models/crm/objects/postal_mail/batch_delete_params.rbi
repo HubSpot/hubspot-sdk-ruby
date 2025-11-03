@@ -2,17 +2,17 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         module PostalMail
-          class BatchDeleteParams < HubspotSDK::Models::CRM::BatchInputSimplePublicObjectID
+          class BatchDeleteParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectID
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Objects::PostalMail::BatchDeleteParams,
+                  HubspotSDK::Crm::Objects::PostalMail::BatchDeleteParams,
                   HubspotSDK::Internal::AnyHash
                 )
               end

@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
-        class BatchDeleteParams < HubspotSDK::Models::CRM::BatchInputPublicAssociation
+        class BatchDeleteParams < HubspotSDK::Models::Crm::BatchInputPublicAssociation
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Associations::BatchDeleteParams,
+                HubspotSDK::Crm::Associations::BatchDeleteParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

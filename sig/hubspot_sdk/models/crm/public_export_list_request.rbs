@@ -1,13 +1,13 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type public_export_list_request =
         {
-          export_internal_values_options: ::Array[HubspotSDK::Models::CRM::PublicExportListRequest::export_internal_values_option],
+          export_internal_values_options: ::Array[HubspotSDK::Models::Crm::PublicExportListRequest::export_internal_values_option],
           export_name: String,
-          export_type: HubspotSDK::Models::CRM::PublicExportListRequest::export_type,
-          format_: HubspotSDK::Models::CRM::PublicExportListRequest::format_,
-          language: HubspotSDK::Models::CRM::PublicExportListRequest::language,
+          export_type: HubspotSDK::Models::Crm::PublicExportListRequest::export_type,
+          format_: HubspotSDK::Models::Crm::PublicExportListRequest::format_,
+          language: HubspotSDK::Models::Crm::PublicExportListRequest::language,
           list_id: String,
           object_properties: ::Array[String],
           object_type: String,
@@ -16,15 +16,15 @@ module HubspotSDK
         }
 
       class PublicExportListRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor export_internal_values_options: ::Array[HubspotSDK::Models::CRM::PublicExportListRequest::export_internal_values_option]
+        attr_accessor export_internal_values_options: ::Array[HubspotSDK::Models::Crm::PublicExportListRequest::export_internal_values_option]
 
         attr_accessor export_name: String
 
-        attr_accessor export_type: HubspotSDK::Models::CRM::PublicExportListRequest::export_type
+        attr_accessor export_type: HubspotSDK::Models::Crm::PublicExportListRequest::export_type
 
-        attr_accessor format_: HubspotSDK::Models::CRM::PublicExportListRequest::format_
+        attr_accessor format_: HubspotSDK::Models::Crm::PublicExportListRequest::format_
 
-        attr_accessor language: HubspotSDK::Models::CRM::PublicExportListRequest::language
+        attr_accessor language: HubspotSDK::Models::Crm::PublicExportListRequest::language
 
         attr_accessor list_id: String
 
@@ -39,11 +39,11 @@ module HubspotSDK
         def associated_object_type=: (String) -> String
 
         def initialize: (
-          export_internal_values_options: ::Array[HubspotSDK::Models::CRM::PublicExportListRequest::export_internal_values_option],
+          export_internal_values_options: ::Array[HubspotSDK::Models::Crm::PublicExportListRequest::export_internal_values_option],
           export_name: String,
-          export_type: HubspotSDK::Models::CRM::PublicExportListRequest::export_type,
-          format_: HubspotSDK::Models::CRM::PublicExportListRequest::format_,
-          language: HubspotSDK::Models::CRM::PublicExportListRequest::language,
+          export_type: HubspotSDK::Models::Crm::PublicExportListRequest::export_type,
+          format_: HubspotSDK::Models::Crm::PublicExportListRequest::format_,
+          language: HubspotSDK::Models::Crm::PublicExportListRequest::language,
           list_id: String,
           object_properties: ::Array[String],
           object_type: String,
@@ -52,11 +52,11 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
-          export_internal_values_options: ::Array[HubspotSDK::Models::CRM::PublicExportListRequest::export_internal_values_option],
+          export_internal_values_options: ::Array[HubspotSDK::Models::Crm::PublicExportListRequest::export_internal_values_option],
           export_name: String,
-          export_type: HubspotSDK::Models::CRM::PublicExportListRequest::export_type,
-          format_: HubspotSDK::Models::CRM::PublicExportListRequest::format_,
-          language: HubspotSDK::Models::CRM::PublicExportListRequest::language,
+          export_type: HubspotSDK::Models::Crm::PublicExportListRequest::export_type,
+          format_: HubspotSDK::Models::Crm::PublicExportListRequest::format_,
+          language: HubspotSDK::Models::Crm::PublicExportListRequest::language,
           list_id: String,
           object_properties: ::Array[String],
           object_type: String,
@@ -72,7 +72,7 @@ module HubspotSDK
           NAMES: :NAMES
           VALUES: :VALUES
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PublicExportListRequest::export_internal_values_option]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicExportListRequest::export_internal_values_option]
         end
 
         type export_type = :LIST
@@ -82,7 +82,7 @@ module HubspotSDK
 
           LIST: :LIST
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PublicExportListRequest::export_type]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicExportListRequest::export_type]
         end
 
         type format_ = :XLS | :XLSX | :CSV
@@ -94,7 +94,7 @@ module HubspotSDK
           XLSX: :XLSX
           CSV: :CSV
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PublicExportListRequest::format_]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicExportListRequest::format_]
         end
 
         type language =
@@ -131,7 +131,7 @@ module HubspotSDK
           DA_DK: :DA_DK
           NO: :NO
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PublicExportListRequest::language]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicExportListRequest::language]
         end
       end
     end

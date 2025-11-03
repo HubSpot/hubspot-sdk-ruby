@@ -2,7 +2,7 @@
 
 require_relative "../../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Extensions::Calling::RecordingSettingsTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Extensions::Calling::RecordingSettingsTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
@@ -13,7 +13,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::RecordingSettingsTe
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::Extensions::RecordingSettingsResponse
+      response => HubspotSDK::Crm::Extensions::RecordingSettingsResponse
     end
 
     assert_pattern do
@@ -29,7 +29,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::RecordingSettingsTe
     response = @hubspot.crm.extensions.calling.recording_settings.update(0)
 
     assert_pattern do
-      response => HubspotSDK::CRM::Extensions::RecordingSettingsResponse
+      response => HubspotSDK::Crm::Extensions::RecordingSettingsResponse
     end
 
     assert_pattern do
@@ -45,7 +45,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::RecordingSettingsTe
     response = @hubspot.crm.extensions.calling.recording_settings.get(0)
 
     assert_pattern do
-      response => HubspotSDK::CRM::Extensions::RecordingSettingsResponse
+      response => HubspotSDK::Crm::Extensions::RecordingSettingsResponse
     end
 
     assert_pattern do

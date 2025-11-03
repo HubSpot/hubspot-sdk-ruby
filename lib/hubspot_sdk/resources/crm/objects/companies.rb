@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
         class Companies
-          # @return [HubspotSDK::Resources::CRM::Objects::Companies::Batch]
+          # @return [HubspotSDK::Resources::Crm::Objects::Companies::Batch]
           attr_reader :batch
 
           # Create a single company. Include a `properties` object to define
@@ -18,20 +18,20 @@ module HubspotSDK
           #
           # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
           #
-          # @param associations [Array<HubspotSDK::Models::CRM::PublicAssociationsForObject>]
+          # @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::CreatedResponseSimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::CreatedResponseSimplePublicObject]
           #
-          # @see HubspotSDK::Models::CRM::Objects::CompanyCreateParams
+          # @see HubspotSDK::Models::Crm::Objects::CompanyCreateParams
           def create(params)
-            parsed, options = HubspotSDK::CRM::Objects::CompanyCreateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::CompanyCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/v3/objects/companies",
               body: parsed,
-              model: HubspotSDK::CRM::CreatedResponseSimplePublicObject,
+              model: HubspotSDK::Crm::CreatedResponseSimplePublicObject,
               options: options
             )
           end
@@ -51,24 +51,24 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::SimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
           #
-          # @see HubspotSDK::Models::CRM::Objects::CompanyUpdateParams
+          # @see HubspotSDK::Models::Crm::Objects::CompanyUpdateParams
           def update(company_id, params)
-            parsed, options = HubspotSDK::CRM::Objects::CompanyUpdateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::CompanyUpdateParams.dump_request(params)
             query_params = [:id_property]
             @client.request(
               method: :patch,
               path: ["crm/v3/objects/companies/%1$s", company_id],
               query: parsed.slice(*query_params).transform_keys(id_property: "idProperty"),
               body: parsed.except(*query_params),
-              model: HubspotSDK::CRM::SimplePublicObject,
+              model: HubspotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::Objects::CompanyListParams} for more details.
+          # {HubspotSDK::Models::Crm::Objects::CompanyListParams} for more details.
           #
           # Retrieve all companies, using query parameters to control the information that
           # gets returned.
@@ -89,17 +89,17 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::CRM::SimplePublicObjectWithAssociations>]
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
           #
-          # @see HubspotSDK::Models::CRM::Objects::CompanyListParams
+          # @see HubspotSDK::Models::Crm::Objects::CompanyListParams
           def list(params = {})
-            parsed, options = HubspotSDK::CRM::Objects::CompanyListParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::CompanyListParams.dump_request(params)
             @client.request(
               method: :get,
               path: "crm/v3/objects/companies",
               query: parsed.transform_keys(properties_with_history: "propertiesWithHistory"),
               page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::CRM::SimplePublicObjectWithAssociations,
+              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -115,7 +115,7 @@ module HubspotSDK
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::CRM::Objects::CompanyDeleteParams
+          # @see HubspotSDK::Models::Crm::Objects::CompanyDeleteParams
           def delete(company_id, params = {})
             @client.request(
               method: :delete,
@@ -126,7 +126,7 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::Objects::CompanyGetParams} for more details.
+          # {HubspotSDK::Models::Crm::Objects::CompanyGetParams} for more details.
           #
           # Retrieve a company by its ID (`companyId`) or by a unique property
           # (`idProperty`). You can specify what is returned using the `properties` query
@@ -148,11 +148,11 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::SimplePublicObjectWithAssociations]
+          # @return [HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations]
           #
-          # @see HubspotSDK::Models::CRM::Objects::CompanyGetParams
+          # @see HubspotSDK::Models::Crm::Objects::CompanyGetParams
           def get(company_id, params = {})
-            parsed, options = HubspotSDK::CRM::Objects::CompanyGetParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::CompanyGetParams.dump_request(params)
             @client.request(
               method: :get,
               path: ["crm/v3/objects/companies/%1$s", company_id],
@@ -160,7 +160,7 @@ module HubspotSDK
                 id_property: "idProperty",
                 properties_with_history: "propertiesWithHistory"
               ),
-              model: HubspotSDK::CRM::SimplePublicObjectWithAssociations,
+              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -174,16 +174,16 @@ module HubspotSDK
           # @param primary_object_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::SimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
           #
-          # @see HubspotSDK::Models::CRM::Objects::CompanyMergeParams
+          # @see HubspotSDK::Models::Crm::Objects::CompanyMergeParams
           def merge(params)
-            parsed, options = HubspotSDK::CRM::Objects::CompanyMergeParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::CompanyMergeParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/v3/objects/companies/merge",
               body: parsed,
-              model: HubspotSDK::CRM::SimplePublicObject,
+              model: HubspotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
@@ -196,7 +196,7 @@ module HubspotSDK
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.
           #
-          # @param filter_groups [Array<HubspotSDK::Models::CRM::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
+          # @param filter_groups [Array<HubspotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
           #
           # @param limit [Integer] The maximum results to return, up to 200 objects.
           #
@@ -208,16 +208,16 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::CollectionResponseWithTotalSimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
           #
-          # @see HubspotSDK::Models::CRM::Objects::CompanySearchParams
+          # @see HubspotSDK::Models::Crm::Objects::CompanySearchParams
           def search(params = {})
-            parsed, options = HubspotSDK::CRM::Objects::CompanySearchParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Objects::CompanySearchParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/v3/objects/companies/search",
               body: parsed,
-              model: HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject,
+              model: HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
               options: options
             )
           end
@@ -227,7 +227,7 @@ module HubspotSDK
           # @param client [HubspotSDK::Client]
           def initialize(client:)
             @client = client
-            @batch = HubspotSDK::Resources::CRM::Objects::Companies::Batch.new(client: client)
+            @batch = HubspotSDK::Resources::Crm::Objects::Companies::Batch.new(client: client)
           end
         end
       end

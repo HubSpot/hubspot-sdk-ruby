@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module Calling
           type channel_connection_setting_get_params =

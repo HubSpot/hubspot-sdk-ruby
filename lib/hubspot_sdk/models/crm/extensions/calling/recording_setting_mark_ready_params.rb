@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module Calling
-          # @see HubspotSDK::Resources::CRM::Extensions::Calling::RecordingSettings#mark_ready
-          class RecordingSettingMarkReadyParams < HubspotSDK::Models::CRM::Extensions::MarkRecordingAsReadyRequest
+          # @see HubspotSDK::Resources::Crm::Extensions::Calling::RecordingSettings#mark_ready
+          class RecordingSettingMarkReadyParams < HubspotSDK::Models::Crm::Extensions::MarkRecordingAsReadyRequest
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

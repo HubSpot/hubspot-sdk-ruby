@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Lists#search
-      class ListSearchParams < HubspotSDK::Models::CRM::ListSearchRequest
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Lists#search
+      class ListSearchParams < HubspotSDK::Models::Crm::ListSearchRequest
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 

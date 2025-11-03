@@ -1,24 +1,24 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type batch_portal_entry =
         {
-          flag_state: HubspotSDK::Models::CRM::BatchPortalEntry::flag_state,
+          flag_state: HubspotSDK::Models::Crm::BatchPortalEntry::flag_state,
           portal_id: Integer
         }
 
       class BatchPortalEntry < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor flag_state: HubspotSDK::Models::CRM::BatchPortalEntry::flag_state
+        attr_accessor flag_state: HubspotSDK::Models::Crm::BatchPortalEntry::flag_state
 
         attr_accessor portal_id: Integer
 
         def initialize: (
-          flag_state: HubspotSDK::Models::CRM::BatchPortalEntry::flag_state,
+          flag_state: HubspotSDK::Models::Crm::BatchPortalEntry::flag_state,
           portal_id: Integer
         ) -> void
 
         def to_hash: -> {
-          flag_state: HubspotSDK::Models::CRM::BatchPortalEntry::flag_state,
+          flag_state: HubspotSDK::Models::Crm::BatchPortalEntry::flag_state,
           portal_id: Integer
         }
 
@@ -31,7 +31,7 @@ module HubspotSDK
           ON: :ON
           ABSENT: :ABSENT
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::BatchPortalEntry::flag_state]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::BatchPortalEntry::flag_state]
         end
       end
     end

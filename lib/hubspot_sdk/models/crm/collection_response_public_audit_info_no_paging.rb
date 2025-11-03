@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Pipelines#get_audit
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Pipelines#get_audit
       class CollectionResponsePublicAuditInfoNoPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::CRM::PublicAuditInfo>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicAuditInfo] }
+        #   @return [Array<HubspotSDK::Models::Crm::PublicAuditInfo>]
+        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAuditInfo] }
 
         # @!method initialize(results:)
-        #   @param results [Array<HubspotSDK::Models::CRM::PublicAuditInfo>]
+        #   @param results [Array<HubspotSDK::Models::Crm::PublicAuditInfo>]
       end
     end
   end

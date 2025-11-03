@@ -2,15 +2,15 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      class ListCreateParams < HubspotSDK::Models::CRM::ListCreateRequest
+    module Crm
+      class ListCreateParams < HubspotSDK::Models::Crm::ListCreateRequest
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::ListCreateParams,
+              HubspotSDK::Crm::ListCreateParams,
               HubspotSDK::Internal::AnyHash
             )
           end

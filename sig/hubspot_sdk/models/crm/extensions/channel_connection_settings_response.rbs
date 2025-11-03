@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         type channel_connection_settings_response =
           { created_at: Time, is_ready: bool, updated_at: Time, url: String }

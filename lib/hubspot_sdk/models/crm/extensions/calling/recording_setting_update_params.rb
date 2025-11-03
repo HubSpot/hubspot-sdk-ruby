@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module Calling
-          # @see HubspotSDK::Resources::CRM::Extensions::Calling::RecordingSettings#update
-          class RecordingSettingUpdateParams < HubspotSDK::Models::CRM::Extensions::RecordingSettingsPatchRequest
+          # @see HubspotSDK::Resources::Crm::Extensions::Calling::RecordingSettings#update
+          class RecordingSettingUpdateParams < HubspotSDK::Models::Crm::Extensions::RecordingSettingsPatchRequest
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

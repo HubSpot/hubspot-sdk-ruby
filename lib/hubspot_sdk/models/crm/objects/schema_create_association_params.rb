@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
-        # @see HubspotSDK::Resources::CRM::Objects::Schemas#create_association
+        # @see HubspotSDK::Resources::Crm::Objects::Schemas#create_association
         class SchemaCreateAssociationParams < HubspotSDK::Models::AssociationDefinitionEgg
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters

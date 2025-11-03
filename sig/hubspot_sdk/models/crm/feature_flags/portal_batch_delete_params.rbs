@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module FeatureFlags
         type portal_batch_delete_params =
           { app_id: Integer } & HubspotSDK::Internal::Type::request_parameters
 
-        class PortalBatchDeleteParams < HubspotSDK::Models::CRM::PortalFlagStateBatchDeleteRequest
+        class PortalBatchDeleteParams < HubspotSDK::Models::Crm::PortalFlagStateBatchDeleteRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

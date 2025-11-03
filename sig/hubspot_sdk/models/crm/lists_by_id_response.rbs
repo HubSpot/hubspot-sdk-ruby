@@ -1,17 +1,17 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type lists_by_id_response =
-        { lists: ::Array[HubspotSDK::CRM::PublicObjectList] }
+        { lists: ::Array[HubspotSDK::Crm::PublicObjectList] }
 
       class ListsByIDResponse < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor lists: ::Array[HubspotSDK::CRM::PublicObjectList]
+        attr_accessor lists: ::Array[HubspotSDK::Crm::PublicObjectList]
 
         def initialize: (
-          lists: ::Array[HubspotSDK::CRM::PublicObjectList]
+          lists: ::Array[HubspotSDK::Crm::PublicObjectList]
         ) -> void
 
-        def to_hash: -> { lists: ::Array[HubspotSDK::CRM::PublicObjectList] }
+        def to_hash: -> { lists: ::Array[HubspotSDK::Crm::PublicObjectList] }
       end
     end
   end

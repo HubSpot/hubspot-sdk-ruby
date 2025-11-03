@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Lists
-        # @see HubspotSDK::Resources::CRM::Lists::Folders#rename
+        # @see HubspotSDK::Resources::Crm::Lists::Folders#rename
         class FolderRenameParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters

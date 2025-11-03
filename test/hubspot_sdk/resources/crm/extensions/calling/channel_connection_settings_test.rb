@@ -2,7 +2,7 @@
 
 require_relative "../../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Extensions::Calling::ChannelConnectionSettingsTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Extensions::Calling::ChannelConnectionSettingsTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
@@ -10,7 +10,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::ChannelConnectionSe
       @hubspot.crm.extensions.calling.channel_connection_settings.create(0, is_ready: true, url: "url")
 
     assert_pattern do
-      response => HubspotSDK::CRM::Extensions::ChannelConnectionSettingsResponse
+      response => HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
     end
 
     assert_pattern do
@@ -29,7 +29,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::ChannelConnectionSe
     response = @hubspot.crm.extensions.calling.channel_connection_settings.update(0)
 
     assert_pattern do
-      response => HubspotSDK::CRM::Extensions::ChannelConnectionSettingsResponse
+      response => HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
     end
 
     assert_pattern do
@@ -58,7 +58,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::ChannelConnectionSe
     response = @hubspot.crm.extensions.calling.channel_connection_settings.get(0)
 
     assert_pattern do
-      response => HubspotSDK::CRM::Extensions::ChannelConnectionSettingsResponse
+      response => HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
     end
 
     assert_pattern do

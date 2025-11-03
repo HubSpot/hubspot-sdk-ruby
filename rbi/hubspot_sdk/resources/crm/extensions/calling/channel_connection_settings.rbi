@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Extensions
         class Calling
           class ChannelConnectionSettings
@@ -13,7 +13,7 @@ module HubspotSDK
                 url: String,
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(
-                HubspotSDK::CRM::Extensions::ChannelConnectionSettingsResponse
+                HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
               )
             end
             def create(app_id, is_ready:, url:, request_options: {})
@@ -26,7 +26,7 @@ module HubspotSDK
                 url: String,
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(
-                HubspotSDK::CRM::Extensions::ChannelConnectionSettingsResponse
+                HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
               )
             end
             def update(app_id, is_ready: nil, url: nil, request_options: {})
@@ -46,7 +46,7 @@ module HubspotSDK
                 app_id: Integer,
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(
-                HubspotSDK::CRM::Extensions::ChannelConnectionSettingsResponse
+                HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
               )
             end
             def get(app_id, request_options: {})

@@ -1,20 +1,20 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
         class Schemas
           def create: (
             associated_objects: ::Array[String],
             labels: HubspotSDK::ObjectTypeDefinitionLabels,
             name: String,
-            properties: ::Array[HubspotSDK::CRM::Objects::ObjectTypePropertyCreate],
+            properties: ::Array[HubspotSDK::Crm::Objects::ObjectTypePropertyCreate],
             required_properties: ::Array[String],
             ?description: String,
             ?primary_display_property: String,
             ?searchable_properties: ::Array[String],
             ?secondary_display_properties: ::Array[String],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::Objects::ObjectSchema
+          ) -> HubspotSDK::Crm::Objects::ObjectSchema
 
           def update: (
             String object_type,
@@ -27,7 +27,7 @@ module HubspotSDK
             ?searchable_properties: ::Array[String],
             ?secondary_display_properties: ::Array[String],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::Objects::ObjectTypeDefinition
+          ) -> HubspotSDK::Crm::Objects::ObjectTypeDefinition
 
           def list: (
             ?archived: bool,
@@ -57,7 +57,7 @@ module HubspotSDK
           def get: (
             String object_type,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::Objects::ObjectSchema
+          ) -> HubspotSDK::Crm::Objects::ObjectSchema
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PortalFlagStateResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute app_id
         #
@@ -16,9 +16,9 @@ module HubspotSDK
 
         # @!attribute flag_state
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PortalFlagStateResponse::FlagState]
+        #   @return [Symbol, HubspotSDK::Models::Crm::PortalFlagStateResponse::FlagState]
         required :flag_state,
-                 enum: -> { HubspotSDK::CRM::PortalFlagStateResponse::FlagState },
+                 enum: -> { HubspotSDK::Crm::PortalFlagStateResponse::FlagState },
                  api_name: :flagState
 
         # @!attribute portal_id
@@ -29,10 +29,10 @@ module HubspotSDK
         # @!method initialize(app_id:, flag_name:, flag_state:, portal_id:)
         #   @param app_id [Integer]
         #   @param flag_name [String]
-        #   @param flag_state [Symbol, HubspotSDK::Models::CRM::PortalFlagStateResponse::FlagState]
+        #   @param flag_state [Symbol, HubspotSDK::Models::Crm::PortalFlagStateResponse::FlagState]
         #   @param portal_id [Integer]
 
-        # @see HubspotSDK::Models::CRM::PortalFlagStateResponse#flag_state
+        # @see HubspotSDK::Models::Crm::PortalFlagStateResponse#flag_state
         module FlagState
           extend HubspotSDK::Internal::Type::Enum
 

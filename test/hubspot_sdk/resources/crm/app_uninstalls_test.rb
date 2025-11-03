@@ -2,7 +2,7 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::AppUninstallsTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::AppUninstallsTest < HubspotSDK::Test::ResourceTest
   def test_uninstall
     skip("Prism tests are disabled")
 

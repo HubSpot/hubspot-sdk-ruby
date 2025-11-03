@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::AppUninstalls#uninstall
+    module Crm
+      # @see HubspotSDK::Resources::Crm::AppUninstalls#uninstall
       class AppUninstallUninstallParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters

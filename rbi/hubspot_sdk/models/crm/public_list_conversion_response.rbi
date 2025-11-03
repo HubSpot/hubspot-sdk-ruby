@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicListConversionResponse < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PublicListConversionResponse,
+              HubspotSDK::Crm::PublicListConversionResponse,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -24,7 +24,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::CRM::PublicListConversionResponse::RequestedConversionTime::Variants
+              HubspotSDK::Crm::PublicListConversionResponse::RequestedConversionTime::Variants
             )
           )
         end
@@ -34,8 +34,8 @@ module HubspotSDK
           params(
             requested_conversion_time:
               T.any(
-                HubspotSDK::CRM::PublicListConversionDate::OrHash,
-                HubspotSDK::CRM::PublicListConversionInactivity::OrHash
+                HubspotSDK::Crm::PublicListConversionDate::OrHash,
+                HubspotSDK::Crm::PublicListConversionInactivity::OrHash
               )
           ).void
         end
@@ -47,8 +47,8 @@ module HubspotSDK
             converted_at: Time,
             requested_conversion_time:
               T.any(
-                HubspotSDK::CRM::PublicListConversionDate::OrHash,
-                HubspotSDK::CRM::PublicListConversionInactivity::OrHash
+                HubspotSDK::Crm::PublicListConversionDate::OrHash,
+                HubspotSDK::Crm::PublicListConversionInactivity::OrHash
               )
           ).returns(T.attached_class)
         end
@@ -65,7 +65,7 @@ module HubspotSDK
               list_id: String,
               converted_at: Time,
               requested_conversion_time:
-                HubspotSDK::CRM::PublicListConversionResponse::RequestedConversionTime::Variants
+                HubspotSDK::Crm::PublicListConversionResponse::RequestedConversionTime::Variants
             }
           )
         end
@@ -78,15 +78,15 @@ module HubspotSDK
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::PublicListConversionDate,
-                HubspotSDK::CRM::PublicListConversionInactivity
+                HubspotSDK::Crm::PublicListConversionDate,
+                HubspotSDK::Crm::PublicListConversionInactivity
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::PublicListConversionResponse::RequestedConversionTime::Variants
+                HubspotSDK::Crm::PublicListConversionResponse::RequestedConversionTime::Variants
               ]
             )
           end

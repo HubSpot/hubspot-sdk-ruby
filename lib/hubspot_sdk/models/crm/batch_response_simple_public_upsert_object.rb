@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchResponseSimplePublicUpsertObject < HubspotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   The timestamp when the batch process was completed, in ISO 8601 format.
@@ -12,8 +12,8 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::CRM::SimplePublicUpsertObject>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::SimplePublicUpsertObject] }
+        #   @return [Array<HubspotSDK::Models::Crm::SimplePublicUpsertObject>]
+        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicUpsertObject] }
 
         # @!attribute started_at
         #   The timestamp when the batch process began execution, in ISO 8601 format.
@@ -25,8 +25,8 @@ module HubspotSDK
         #   The status of the batch processing request. Can be: "PENDING", "PROCESSING",
         #   "CANCELED", or "COMPLETE".
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::BatchResponseSimplePublicUpsertObject::Status]
-        required :status, enum: -> { HubspotSDK::CRM::BatchResponseSimplePublicUpsertObject::Status }
+        #   @return [Symbol, HubspotSDK::Models::Crm::BatchResponseSimplePublicUpsertObject::Status]
+        required :status, enum: -> { HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject::Status }
 
         # @!attribute errors
         #
@@ -52,7 +52,7 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::BatchResponseSimplePublicUpsertObject} for more
+        #   {HubspotSDK::Models::Crm::BatchResponseSimplePublicUpsertObject} for more
         #   details.
         #
         #   Represents the result of a batch upsert operation, including the operation’s
@@ -60,11 +60,11 @@ module HubspotSDK
         #
         #   @param completed_at [Time] The timestamp when the batch process was completed, in ISO 8601 format.
         #
-        #   @param results [Array<HubspotSDK::Models::CRM::SimplePublicUpsertObject>]
+        #   @param results [Array<HubspotSDK::Models::Crm::SimplePublicUpsertObject>]
         #
         #   @param started_at [Time] The timestamp when the batch process began execution, in ISO 8601 format.
         #
-        #   @param status [Symbol, HubspotSDK::Models::CRM::BatchResponseSimplePublicUpsertObject::Status] The status of the batch processing request. Can be: "PENDING", "PROCESSING", "CA
+        #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponseSimplePublicUpsertObject::Status] The status of the batch processing request. Can be: "PENDING", "PROCESSING", "CA
         #
         #   @param errors [Array<HubspotSDK::Models::StandardError>]
         #
@@ -77,7 +77,7 @@ module HubspotSDK
         # The status of the batch processing request. Can be: "PENDING", "PROCESSING",
         # "CANCELED", or "COMPLETE".
         #
-        # @see HubspotSDK::Models::CRM::BatchResponseSimplePublicUpsertObject#status
+        # @see HubspotSDK::Models::Crm::BatchResponseSimplePublicUpsertObject#status
         module Status
           extend HubspotSDK::Internal::Type::Enum
 

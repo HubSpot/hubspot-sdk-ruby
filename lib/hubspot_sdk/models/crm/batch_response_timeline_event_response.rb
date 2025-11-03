@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchResponseTimelineEventResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   The time the request was completed.
@@ -13,8 +13,8 @@ module HubspotSDK
         # @!attribute results
         #   Successfully created events.
         #
-        #   @return [Array<HubspotSDK::Models::CRM::TimelineEventResponse>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::TimelineEventResponse] }
+        #   @return [Array<HubspotSDK::Models::Crm::TimelineEventResponse>]
+        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::TimelineEventResponse] }
 
         # @!attribute started_at
         #   The time the request began processing.
@@ -25,8 +25,8 @@ module HubspotSDK
         # @!attribute status
         #   The status of the batch response. Should always be COMPLETED if processed.
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::BatchResponseTimelineEventResponse::Status]
-        required :status, enum: -> { HubspotSDK::CRM::BatchResponseTimelineEventResponse::Status }
+        #   @return [Symbol, HubspotSDK::Models::Crm::BatchResponseTimelineEventResponse::Status]
+        required :status, enum: -> { HubspotSDK::Crm::BatchResponseTimelineEventResponse::Status }
 
         # @!attribute links
         #
@@ -44,11 +44,11 @@ module HubspotSDK
         #
         #   @param completed_at [Time] The time the request was completed.
         #
-        #   @param results [Array<HubspotSDK::Models::CRM::TimelineEventResponse>] Successfully created events.
+        #   @param results [Array<HubspotSDK::Models::Crm::TimelineEventResponse>] Successfully created events.
         #
         #   @param started_at [Time] The time the request began processing.
         #
-        #   @param status [Symbol, HubspotSDK::Models::CRM::BatchResponseTimelineEventResponse::Status] The status of the batch response. Should always be COMPLETED if processed.
+        #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponseTimelineEventResponse::Status] The status of the batch response. Should always be COMPLETED if processed.
         #
         #   @param links [Hash{Symbol=>String}]
         #
@@ -56,7 +56,7 @@ module HubspotSDK
 
         # The status of the batch response. Should always be COMPLETED if processed.
         #
-        # @see HubspotSDK::Models::CRM::BatchResponseTimelineEventResponse#status
+        # @see HubspotSDK::Models::Crm::BatchResponseTimelineEventResponse#status
         module Status
           extend HubspotSDK::Internal::Type::Enum
 

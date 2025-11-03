@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
-        class ServiceUpdateParams < HubspotSDK::Models::CRM::SimplePublicObjectInput
+        class ServiceUpdateParams < HubspotSDK::Models::Crm::SimplePublicObjectInput
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Objects::ServiceUpdateParams,
+                HubspotSDK::Crm::Objects::ServiceUpdateParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

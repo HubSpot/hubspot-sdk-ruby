@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicMigrationMapping < HubspotSDK::Internal::Type::BaseModel
         # @!attribute legacy_list_id
         #   The legacy list id for the list

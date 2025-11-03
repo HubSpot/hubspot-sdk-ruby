@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Pipelines#get_audit
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Pipelines#get_audit
       class PipelineGetAuditParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters

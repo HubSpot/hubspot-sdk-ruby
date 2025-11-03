@@ -2,46 +2,46 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class CardCreateRequest < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::CardCreateRequest,
+                HubspotSDK::Crm::Extensions::CardCreateRequest,
                 HubspotSDK::Internal::AnyHash
               )
             end
 
           # Configuration for custom user actions on cards.
-          sig { returns(HubspotSDK::CRM::Extensions::CardActions) }
+          sig { returns(HubspotSDK::Crm::Extensions::CardActions) }
           attr_reader :actions
 
           sig do
             params(
-              actions: HubspotSDK::CRM::Extensions::CardActions::OrHash
+              actions: HubspotSDK::Crm::Extensions::CardActions::OrHash
             ).void
           end
           attr_writer :actions
 
           # Configuration for displayed info on a card
-          sig { returns(HubspotSDK::CRM::Extensions::CardDisplayBody) }
+          sig { returns(HubspotSDK::Crm::Extensions::CardDisplayBody) }
           attr_reader :display_
 
           sig do
             params(
-              display_: HubspotSDK::CRM::Extensions::CardDisplayBody::OrHash
+              display_: HubspotSDK::Crm::Extensions::CardDisplayBody::OrHash
             ).void
           end
           attr_writer :display_
 
           # Configuration for this card's data fetch request.
-          sig { returns(HubspotSDK::CRM::Extensions::CardFetchBody) }
+          sig { returns(HubspotSDK::Crm::Extensions::CardFetchBody) }
           attr_reader :fetch
 
           sig do
             params(
-              fetch: HubspotSDK::CRM::Extensions::CardFetchBody::OrHash
+              fetch: HubspotSDK::Crm::Extensions::CardFetchBody::OrHash
             ).void
           end
           attr_writer :fetch
@@ -53,9 +53,9 @@ module HubspotSDK
           # State of card definition to be created
           sig do
             params(
-              actions: HubspotSDK::CRM::Extensions::CardActions::OrHash,
-              display_: HubspotSDK::CRM::Extensions::CardDisplayBody::OrHash,
-              fetch: HubspotSDK::CRM::Extensions::CardFetchBody::OrHash,
+              actions: HubspotSDK::Crm::Extensions::CardActions::OrHash,
+              display_: HubspotSDK::Crm::Extensions::CardDisplayBody::OrHash,
+              fetch: HubspotSDK::Crm::Extensions::CardFetchBody::OrHash,
               title: String
             ).returns(T.attached_class)
           end
@@ -74,9 +74,9 @@ module HubspotSDK
           sig do
             override.returns(
               {
-                actions: HubspotSDK::CRM::Extensions::CardActions,
-                display_: HubspotSDK::CRM::Extensions::CardDisplayBody,
-                fetch: HubspotSDK::CRM::Extensions::CardFetchBody,
+                actions: HubspotSDK::Crm::Extensions::CardActions,
+                display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
+                fetch: HubspotSDK::Crm::Extensions::CardFetchBody,
                 title: String
               }
             )

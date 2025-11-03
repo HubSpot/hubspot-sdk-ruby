@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicMergeInput < HubspotSDK::Internal::Type::BaseModel
         # @!attribute object_id_to_merge
         #

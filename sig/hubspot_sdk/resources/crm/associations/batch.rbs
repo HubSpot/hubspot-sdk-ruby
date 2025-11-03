@@ -1,19 +1,19 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Associations
         class Batch
           def create: (
             String to_object_type,
             from_object_type: String,
-            inputs: ::Array[HubspotSDK::CRM::PublicAssociation],
+            inputs: ::Array[HubspotSDK::Crm::PublicAssociation],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::BatchResponsePublicAssociation
+          ) -> HubspotSDK::Crm::BatchResponsePublicAssociation
 
           def delete: (
             String to_object_type,
             from_object_type: String,
-            inputs: ::Array[HubspotSDK::CRM::PublicAssociation],
+            inputs: ::Array[HubspotSDK::Crm::PublicAssociation],
             ?request_options: HubspotSDK::request_opts
           ) -> nil
 
@@ -22,7 +22,7 @@ module HubspotSDK
             from_object_type: String,
             inputs: ::Array[HubspotSDK::PublicObjectID],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::BatchResponsePublicAssociationMulti
+          ) -> HubspotSDK::Crm::BatchResponsePublicAssociationMulti
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

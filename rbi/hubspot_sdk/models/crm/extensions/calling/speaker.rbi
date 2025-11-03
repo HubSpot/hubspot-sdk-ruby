@@ -2,14 +2,14 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module Calling
           class Speaker < HubspotSDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Extensions::Calling::Speaker,
+                  HubspotSDK::Crm::Extensions::Calling::Speaker,
                   HubspotSDK::Internal::AnyHash
                 )
               end

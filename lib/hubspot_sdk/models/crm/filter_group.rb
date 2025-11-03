@@ -2,15 +2,15 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class FilterGroup < HubspotSDK::Internal::Type::BaseModel
         # @!attribute filters
         #
-        #   @return [Array<HubspotSDK::Models::CRM::Filter>]
-        required :filters, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Filter] }
+        #   @return [Array<HubspotSDK::Models::Crm::Filter>]
+        required :filters, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Filter] }
 
         # @!method initialize(filters:)
-        #   @param filters [Array<HubspotSDK::Models::CRM::Filter>]
+        #   @param filters [Array<HubspotSDK::Models::Crm::Filter>]
       end
     end
   end

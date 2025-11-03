@@ -2,15 +2,15 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Timeline
-        # @return [HubspotSDK::Resources::CRM::Timeline::Events]
+        # @return [HubspotSDK::Resources::Crm::Timeline::Events]
         attr_reader :events
 
-        # @return [HubspotSDK::Resources::CRM::Timeline::Templates]
+        # @return [HubspotSDK::Resources::Crm::Timeline::Templates]
         attr_reader :templates
 
-        # @return [HubspotSDK::Resources::CRM::Timeline::Tokens]
+        # @return [HubspotSDK::Resources::Crm::Timeline::Tokens]
         attr_reader :tokens
 
         # @api private
@@ -18,9 +18,9 @@ module HubspotSDK
         # @param client [HubspotSDK::Client]
         def initialize(client:)
           @client = client
-          @events = HubspotSDK::Resources::CRM::Timeline::Events.new(client: client)
-          @templates = HubspotSDK::Resources::CRM::Timeline::Templates.new(client: client)
-          @tokens = HubspotSDK::Resources::CRM::Timeline::Tokens.new(client: client)
+          @events = HubspotSDK::Resources::Crm::Timeline::Events.new(client: client)
+          @templates = HubspotSDK::Resources::Crm::Timeline::Templates.new(client: client)
+          @tokens = HubspotSDK::Resources::Crm::Timeline::Tokens.new(client: client)
         end
       end
     end

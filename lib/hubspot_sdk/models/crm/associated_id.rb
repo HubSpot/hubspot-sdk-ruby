@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class AssociatedID < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The ID for the association type.

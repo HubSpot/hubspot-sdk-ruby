@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type list_update_name_params =
         { include_filters: bool, list_name: String }
         & HubspotSDK::Internal::Type::request_parameters

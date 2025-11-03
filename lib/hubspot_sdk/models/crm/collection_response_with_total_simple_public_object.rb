@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CollectionResponseWithTotalSimplePublicObject < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::CRM::SimplePublicObject>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::SimplePublicObject] }
+        #   @return [Array<HubspotSDK::Models::Crm::SimplePublicObject>]
+        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject] }
 
         # @!attribute total
         #   The number of available results
@@ -22,7 +22,7 @@ module HubspotSDK
         optional :paging, -> { HubspotSDK::Marketing::Paging }
 
         # @!method initialize(results:, total:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::CRM::SimplePublicObject>]
+        #   @param results [Array<HubspotSDK::Models::Crm::SimplePublicObject>]
         #
         #   @param total [Integer] The number of available results
         #

@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class LimitGetRecordLimitsParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
@@ -10,7 +10,7 @@ module HubspotSDK
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::LimitGetRecordLimitsParams,
+              HubspotSDK::Crm::LimitGetRecordLimitsParams,
               HubspotSDK::Internal::AnyHash
             )
           end

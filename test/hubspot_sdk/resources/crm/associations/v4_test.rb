@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Associations::V4Test < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Associations::V4Test < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
@@ -15,15 +15,15 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4Test < HubspotSDK::Test:
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::BatchResponsePublicDefaultAssociation
+      response => HubspotSDK::Crm::BatchResponsePublicDefaultAssociation
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicDefaultAssociation]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicDefaultAssociation]),
         started_at: Time,
-        status: HubspotSDK::CRM::BatchResponsePublicDefaultAssociation::Status,
+        status: HubspotSDK::Crm::BatchResponsePublicDefaultAssociation::Status,
         errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
@@ -45,13 +45,13 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4Test < HubspotSDK::Test:
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::CreatedResponseLabelsBetweenObjectPair
+      response => HubspotSDK::Crm::CreatedResponseLabelsBetweenObjectPair
     end
 
     assert_pattern do
       response => {
         created_resource_id: String,
-        entity: HubspotSDK::CRM::LabelsBetweenObjectPair,
+        entity: HubspotSDK::Crm::LabelsBetweenObjectPair,
         location: String | nil
       }
     end
@@ -71,12 +71,12 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4Test < HubspotSDK::Test:
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::CRM::MultiAssociatedObjectWithLabel
+      row => HubspotSDK::Crm::MultiAssociatedObjectWithLabel
     end
 
     assert_pattern do
       row => {
-        association_types: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::AssociationSpecWithLabel]),
+        association_types: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::AssociationSpecWithLabel]),
         to_object_id: String
       }
     end

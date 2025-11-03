@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module Calling
-          # @see HubspotSDK::Resources::CRM::Extensions::Calling::Transcripts#create
+          # @see HubspotSDK::Resources::Crm::Extensions::Calling::Transcripts#create
           class TranscriptCreateResponse < HubspotSDK::Internal::Type::BaseModel
             # @!attribute id
             #

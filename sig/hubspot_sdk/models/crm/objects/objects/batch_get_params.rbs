@@ -1,12 +1,12 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         module Objects
           type batch_get_params =
             { archived: bool } & HubspotSDK::Internal::Type::request_parameters
 
-          class BatchGetParams < HubspotSDK::Models::CRM::BatchReadInputSimplePublicObjectID
+          class BatchGetParams < HubspotSDK::Models::Crm::BatchReadInputSimplePublicObjectID
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

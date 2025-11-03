@@ -1,27 +1,27 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class FeatureFlags
         class Apps
           def update: (
             String flag_name,
             app_id: Integer,
-            default_state: HubspotSDK::Models::CRM::FlagPutRequest::default_state,
-            ?override_state: HubspotSDK::Models::CRM::FlagPutRequest::override_state,
+            default_state: HubspotSDK::Models::Crm::FlagPutRequest::default_state,
+            ?override_state: HubspotSDK::Models::Crm::FlagPutRequest::override_state,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::FlagResponse
+          ) -> HubspotSDK::Crm::FlagResponse
 
           def delete: (
             String flag_name,
             app_id: Integer,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::FlagResponse
+          ) -> HubspotSDK::Crm::FlagResponse
 
           def get: (
             String flag_name,
             app_id: Integer,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::FlagResponse
+          ) -> HubspotSDK::Crm::FlagResponse
 
           def list_portals: (
             String flag_name,
@@ -29,7 +29,7 @@ module HubspotSDK
             ?limit: Integer,
             ?start_portal_id: Integer,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::PortalFlagStateBatchResponse
+          ) -> HubspotSDK::Crm::PortalFlagStateBatchResponse
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

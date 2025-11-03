@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Objects::FeedbackSubmissionsTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Objects::FeedbackSubmissionsTest < HubspotSDK::Test::ResourceTest
   def test_list
     skip("Prism tests are disabled")
 
@@ -16,7 +16,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::FeedbackSubmissionsTest < Hubsp
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::CRM::SimplePublicObjectWithAssociations
+      row => HubspotSDK::Crm::SimplePublicObjectWithAssociations
     end
 
     assert_pattern do
@@ -27,9 +27,9 @@ class HubspotSDK::Test::Resources::CRM::Objects::FeedbackSubmissionsTest < Hubsp
         updated_at: Time,
         archived: HubspotSDK::Internal::Type::Boolean | nil,
         archived_at: Time | nil,
-        associations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::CRM::CollectionResponseAssociatedID]) | nil,
+        associations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Crm::CollectionResponseAssociatedID]) | nil,
         object_write_trace_id: String | nil,
-        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::ValueWithTimestamp]]) | nil
+        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil
       }
     end
   end
@@ -40,7 +40,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::FeedbackSubmissionsTest < Hubsp
     response = @hubspot.crm.objects.feedback_submissions.get("feedbackSubmissionId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
+      response => HubspotSDK::Crm::SimplePublicObjectWithAssociations
     end
 
     assert_pattern do
@@ -51,9 +51,9 @@ class HubspotSDK::Test::Resources::CRM::Objects::FeedbackSubmissionsTest < Hubsp
         updated_at: Time,
         archived: HubspotSDK::Internal::Type::Boolean | nil,
         archived_at: Time | nil,
-        associations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::CRM::CollectionResponseAssociatedID]) | nil,
+        associations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Crm::CollectionResponseAssociatedID]) | nil,
         object_write_trace_id: String | nil,
-        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::ValueWithTimestamp]]) | nil
+        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil
       }
     end
   end
@@ -64,12 +64,12 @@ class HubspotSDK::Test::Resources::CRM::Objects::FeedbackSubmissionsTest < Hubsp
     response = @hubspot.crm.objects.feedback_submissions.search
 
     assert_pattern do
-      response => HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject
+      response => HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::SimplePublicObject]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         total: Integer,
         paging: HubspotSDK::Marketing::Paging | nil
       }

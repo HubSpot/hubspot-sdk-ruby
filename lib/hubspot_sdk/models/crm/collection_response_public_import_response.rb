@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CollectionResponsePublicImportResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::CRM::PublicImportResponse>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicImportResponse] }
+        #   @return [Array<HubspotSDK::Models::Crm::PublicImportResponse>]
+        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicImportResponse] }
 
         # @!attribute paging
         #   Contains information pagination of results.
@@ -16,7 +16,7 @@ module HubspotSDK
         optional :paging, -> { HubspotSDK::Marketing::Paging }
 
         # @!method initialize(results:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::CRM::PublicImportResponse>]
+        #   @param results [Array<HubspotSDK::Models::Crm::PublicImportResponse>]
         #
         #   @param paging [HubspotSDK::Models::Marketing::Paging] Contains information pagination of results.
       end

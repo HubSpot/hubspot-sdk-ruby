@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PipelineStageInput < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PipelineStageInput,
+              HubspotSDK::Crm::PipelineStageInput,
               HubspotSDK::Internal::AnyHash
             )
           end

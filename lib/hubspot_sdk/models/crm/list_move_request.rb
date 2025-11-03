@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ListMoveRequest < HubspotSDK::Internal::Type::BaseModel
         # @!attribute list_id
         #   The Id of the list to move.

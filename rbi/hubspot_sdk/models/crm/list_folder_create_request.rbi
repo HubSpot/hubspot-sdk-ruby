@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ListFolderCreateRequest < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::ListFolderCreateRequest,
+              HubspotSDK::Crm::ListFolderCreateRequest,
               HubspotSDK::Internal::AnyHash
             )
           end

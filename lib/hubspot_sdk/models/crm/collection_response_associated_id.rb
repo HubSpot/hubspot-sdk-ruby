@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CollectionResponseAssociatedID < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::CRM::AssociatedID>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::AssociatedID] }
+        #   @return [Array<HubspotSDK::Models::Crm::AssociatedID>]
+        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::AssociatedID] }
 
         # @!attribute paging
         #   Contains information pagination of results.
@@ -16,7 +16,7 @@ module HubspotSDK
         optional :paging, -> { HubspotSDK::Marketing::Paging }
 
         # @!method initialize(results:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::CRM::AssociatedID>]
+        #   @param results [Array<HubspotSDK::Models::Crm::AssociatedID>]
         #
         #   @param paging [HubspotSDK::Models::Marketing::Paging] Contains information pagination of results.
       end

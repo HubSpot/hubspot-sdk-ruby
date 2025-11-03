@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type schema_create_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class SchemaCreateParams < HubspotSDK::Models::CRM::Objects::ObjectSchemaEgg
+        class SchemaCreateParams < HubspotSDK::Models::Crm::Objects::ObjectSchemaEgg
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

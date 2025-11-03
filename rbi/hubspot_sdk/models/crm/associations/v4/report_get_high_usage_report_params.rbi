@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         module V4
           class ReportGetHighUsageReportParams < HubspotSDK::Internal::Type::BaseModel
@@ -12,7 +12,7 @@ module HubspotSDK
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Associations::V4::ReportGetHighUsageReportParams,
+                  HubspotSDK::Crm::Associations::V4::ReportGetHighUsageReportParams,
                   HubspotSDK::Internal::AnyHash
                 )
               end

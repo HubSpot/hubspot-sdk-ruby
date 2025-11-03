@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type import_list_params =
         { after: String, before: String, limit: Integer }
         & HubspotSDK::Internal::Type::request_parameters

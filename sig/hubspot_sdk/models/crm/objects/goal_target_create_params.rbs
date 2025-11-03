@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type goal_target_create_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class GoalTargetCreateParams < HubspotSDK::Models::CRM::SimplePublicObjectInputForCreate
+        class GoalTargetCreateParams < HubspotSDK::Models::Crm::SimplePublicObjectInputForCreate
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

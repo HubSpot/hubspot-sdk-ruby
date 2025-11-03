@@ -2,19 +2,19 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         module Schema
           class CollectionResponseAssociationSpecWithLabel < HubspotSDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Associations::Schema::CollectionResponseAssociationSpecWithLabel,
+                  HubspotSDK::Crm::Associations::Schema::CollectionResponseAssociationSpecWithLabel,
                   HubspotSDK::Internal::AnyHash
                 )
               end
 
-            sig { returns(T::Array[HubspotSDK::CRM::AssociationSpecWithLabel]) }
+            sig { returns(T::Array[HubspotSDK::Crm::AssociationSpecWithLabel]) }
             attr_accessor :results
 
             # Contains information pagination of results.
@@ -27,7 +27,7 @@ module HubspotSDK
             sig do
               params(
                 results:
-                  T::Array[HubspotSDK::CRM::AssociationSpecWithLabel::OrHash],
+                  T::Array[HubspotSDK::Crm::AssociationSpecWithLabel::OrHash],
                 paging: HubspotSDK::Marketing::Paging::OrHash
               ).returns(T.attached_class)
             end
@@ -41,7 +41,7 @@ module HubspotSDK
             sig do
               override.returns(
                 {
-                  results: T::Array[HubspotSDK::CRM::AssociationSpecWithLabel],
+                  results: T::Array[HubspotSDK::Crm::AssociationSpecWithLabel],
                   paging: HubspotSDK::Marketing::Paging
                 }
               )

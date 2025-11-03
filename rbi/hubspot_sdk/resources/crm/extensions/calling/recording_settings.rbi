@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Extensions
         class Calling
           class RecordingSettings
@@ -11,7 +11,7 @@ module HubspotSDK
                 app_id: Integer,
                 url_to_retrieve_authed_recording: String,
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::CRM::Extensions::RecordingSettingsResponse)
+              ).returns(HubspotSDK::Crm::Extensions::RecordingSettingsResponse)
             end
             def create(
               app_id,
@@ -25,7 +25,7 @@ module HubspotSDK
                 app_id: Integer,
                 url_to_retrieve_authed_recording: String,
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::CRM::Extensions::RecordingSettingsResponse)
+              ).returns(HubspotSDK::Crm::Extensions::RecordingSettingsResponse)
             end
             def update(
               app_id,
@@ -38,7 +38,7 @@ module HubspotSDK
               params(
                 app_id: Integer,
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::CRM::Extensions::RecordingSettingsResponse)
+              ).returns(HubspotSDK::Crm::Extensions::RecordingSettingsResponse)
             end
             def get(app_id, request_options: {})
             end

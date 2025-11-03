@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
-        # @see HubspotSDK::Resources::CRM::Extensions::Cards#create
+        # @see HubspotSDK::Resources::Crm::Extensions::Cards#create
         class PublicCardResponse < HubspotSDK::Internal::Type::BaseModel
           # @!attribute id
           #
@@ -14,26 +14,26 @@ module HubspotSDK
           # @!attribute actions
           #   Configuration for custom user actions on cards.
           #
-          #   @return [HubspotSDK::Models::CRM::Extensions::CardActions]
-          required :actions, -> { HubspotSDK::CRM::Extensions::CardActions }
+          #   @return [HubspotSDK::Models::Crm::Extensions::CardActions]
+          required :actions, -> { HubspotSDK::Crm::Extensions::CardActions }
 
           # @!attribute audit_history
           #
-          #   @return [Array<HubspotSDK::Models::CRM::Extensions::CardAuditResponse>]
+          #   @return [Array<HubspotSDK::Models::Crm::Extensions::CardAuditResponse>]
           required :audit_history,
-                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Extensions::CardAuditResponse] },
+                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Extensions::CardAuditResponse] },
                    api_name: :auditHistory
 
           # @!attribute display_
           #   Configuration for displayed info on a card
           #
-          #   @return [HubspotSDK::Models::CRM::Extensions::CardDisplayBody]
-          required :display_, -> { HubspotSDK::CRM::Extensions::CardDisplayBody }, api_name: :display
+          #   @return [HubspotSDK::Models::Crm::Extensions::CardDisplayBody]
+          required :display_, -> { HubspotSDK::Crm::Extensions::CardDisplayBody }, api_name: :display
 
           # @!attribute fetch
           #
-          #   @return [HubspotSDK::Models::CRM::Extensions::PublicCardFetchBody]
-          required :fetch, -> { HubspotSDK::CRM::Extensions::PublicCardFetchBody }
+          #   @return [HubspotSDK::Models::Crm::Extensions::PublicCardFetchBody]
+          required :fetch, -> { HubspotSDK::Crm::Extensions::PublicCardFetchBody }
 
           # @!attribute title
           #
@@ -53,13 +53,13 @@ module HubspotSDK
           # @!method initialize(id:, actions:, audit_history:, display_:, fetch:, title:, created_at: nil, updated_at: nil)
           #   @param id [String]
           #
-          #   @param actions [HubspotSDK::Models::CRM::Extensions::CardActions] Configuration for custom user actions on cards.
+          #   @param actions [HubspotSDK::Models::Crm::Extensions::CardActions] Configuration for custom user actions on cards.
           #
-          #   @param audit_history [Array<HubspotSDK::Models::CRM::Extensions::CardAuditResponse>]
+          #   @param audit_history [Array<HubspotSDK::Models::Crm::Extensions::CardAuditResponse>]
           #
-          #   @param display_ [HubspotSDK::Models::CRM::Extensions::CardDisplayBody] Configuration for displayed info on a card
+          #   @param display_ [HubspotSDK::Models::Crm::Extensions::CardDisplayBody] Configuration for displayed info on a card
           #
-          #   @param fetch [HubspotSDK::Models::CRM::Extensions::PublicCardFetchBody]
+          #   @param fetch [HubspotSDK::Models::Crm::Extensions::PublicCardFetchBody]
           #
           #   @param title [String]
           #

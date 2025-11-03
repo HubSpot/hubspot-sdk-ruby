@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class FlagResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute app_id
         #
@@ -11,10 +11,10 @@ module HubspotSDK
 
         # @!attribute default_state
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::FlagResponse::DefaultState]
+        #   @return [Symbol, HubspotSDK::Models::Crm::FlagResponse::DefaultState]
         required :default_state,
                  enum: -> {
-                   HubspotSDK::CRM::FlagResponse::DefaultState
+                   HubspotSDK::Crm::FlagResponse::DefaultState
                  },
                  api_name: :defaultState
 
@@ -25,18 +25,18 @@ module HubspotSDK
 
         # @!attribute override_state
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::FlagResponse::OverrideState, nil]
+        #   @return [Symbol, HubspotSDK::Models::Crm::FlagResponse::OverrideState, nil]
         optional :override_state,
-                 enum: -> { HubspotSDK::CRM::FlagResponse::OverrideState },
+                 enum: -> { HubspotSDK::Crm::FlagResponse::OverrideState },
                  api_name: :overrideState
 
         # @!method initialize(app_id:, default_state:, flag_name:, override_state: nil)
         #   @param app_id [Integer]
-        #   @param default_state [Symbol, HubspotSDK::Models::CRM::FlagResponse::DefaultState]
+        #   @param default_state [Symbol, HubspotSDK::Models::Crm::FlagResponse::DefaultState]
         #   @param flag_name [String]
-        #   @param override_state [Symbol, HubspotSDK::Models::CRM::FlagResponse::OverrideState]
+        #   @param override_state [Symbol, HubspotSDK::Models::Crm::FlagResponse::OverrideState]
 
-        # @see HubspotSDK::Models::CRM::FlagResponse#default_state
+        # @see HubspotSDK::Models::Crm::FlagResponse#default_state
         module DefaultState
           extend HubspotSDK::Internal::Type::Enum
 
@@ -48,7 +48,7 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::CRM::FlagResponse#override_state
+        # @see HubspotSDK::Models::Crm::FlagResponse#override_state
         module OverrideState
           extend HubspotSDK::Internal::Type::Enum
 

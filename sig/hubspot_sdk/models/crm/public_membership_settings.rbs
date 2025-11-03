@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type public_membership_settings =
         { include_unassigned: bool, membership_team_id: Integer }
 

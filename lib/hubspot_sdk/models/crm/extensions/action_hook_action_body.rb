@@ -2,14 +2,14 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class ActionHookActionBody < HubspotSDK::Internal::Type::BaseModel
           # @!attribute http_method
           #
-          #   @return [Symbol, HubspotSDK::Models::CRM::Extensions::ActionHookActionBody::HTTPMethod]
+          #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::ActionHookActionBody::HTTPMethod]
           required :http_method,
-                   enum: -> { HubspotSDK::CRM::Extensions::ActionHookActionBody::HTTPMethod },
+                   enum: -> { HubspotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod },
                    api_name: :httpMethod
 
           # @!attribute property_names_included
@@ -21,8 +21,8 @@ module HubspotSDK
 
           # @!attribute type
           #
-          #   @return [Symbol, HubspotSDK::Models::CRM::Extensions::ActionHookActionBody::Type]
-          required :type, enum: -> { HubspotSDK::CRM::Extensions::ActionHookActionBody::Type }
+          #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::ActionHookActionBody::Type]
+          required :type, enum: -> { HubspotSDK::Crm::Extensions::ActionHookActionBody::Type }
 
           # @!attribute url
           #
@@ -31,8 +31,8 @@ module HubspotSDK
 
           # @!attribute confirmation
           #
-          #   @return [HubspotSDK::Models::CRM::Extensions::ActionConfirmationBody, nil]
-          optional :confirmation, -> { HubspotSDK::CRM::Extensions::ActionConfirmationBody }
+          #   @return [HubspotSDK::Models::Crm::Extensions::ActionConfirmationBody, nil]
+          optional :confirmation, -> { HubspotSDK::Crm::Extensions::ActionConfirmationBody }
 
           # @!attribute label
           #
@@ -40,14 +40,14 @@ module HubspotSDK
           optional :label, String
 
           # @!method initialize(http_method:, property_names_included:, type:, url:, confirmation: nil, label: nil)
-          #   @param http_method [Symbol, HubspotSDK::Models::CRM::Extensions::ActionHookActionBody::HTTPMethod]
+          #   @param http_method [Symbol, HubspotSDK::Models::Crm::Extensions::ActionHookActionBody::HTTPMethod]
           #   @param property_names_included [Array<String>]
-          #   @param type [Symbol, HubspotSDK::Models::CRM::Extensions::ActionHookActionBody::Type]
+          #   @param type [Symbol, HubspotSDK::Models::Crm::Extensions::ActionHookActionBody::Type]
           #   @param url [String]
-          #   @param confirmation [HubspotSDK::Models::CRM::Extensions::ActionConfirmationBody]
+          #   @param confirmation [HubspotSDK::Models::Crm::Extensions::ActionConfirmationBody]
           #   @param label [String]
 
-          # @see HubspotSDK::Models::CRM::Extensions::ActionHookActionBody#http_method
+          # @see HubspotSDK::Models::Crm::Extensions::ActionHookActionBody#http_method
           module HTTPMethod
             extend HubspotSDK::Internal::Type::Enum
 
@@ -65,7 +65,7 @@ module HubspotSDK
             #   @return [Array<Symbol>]
           end
 
-          # @see HubspotSDK::Models::CRM::Extensions::ActionHookActionBody#type
+          # @see HubspotSDK::Models::Crm::Extensions::ActionHookActionBody#type
           module Type
             extend HubspotSDK::Internal::Type::Enum
 

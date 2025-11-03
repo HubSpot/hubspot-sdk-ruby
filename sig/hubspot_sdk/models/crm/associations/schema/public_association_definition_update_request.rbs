@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         module Schema
           type public_association_definition_update_request =

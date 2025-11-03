@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
-        # @see HubspotSDK::Resources::CRM::Objects::Listings#create
-        class ListingCreateParams < HubspotSDK::Models::CRM::SimplePublicObjectInputForCreate
+        # @see HubspotSDK::Resources::Crm::Objects::Listings#create
+        class ListingCreateParams < HubspotSDK::Models::Crm::SimplePublicObjectInputForCreate
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

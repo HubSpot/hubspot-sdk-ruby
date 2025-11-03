@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         type card_update_params =
           { app_id: Integer } & HubspotSDK::Internal::Type::request_parameters
 
-        class CardUpdateParams < HubspotSDK::Models::CRM::Extensions::CardPatchRequest
+        class CardUpdateParams < HubspotSDK::Models::Crm::Extensions::CardPatchRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

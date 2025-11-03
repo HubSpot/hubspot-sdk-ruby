@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Owners#get
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Owners#get
       class OwnerGetParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
@@ -15,12 +15,12 @@ module HubspotSDK
 
         # @!attribute id_property
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::OwnerGetParams::IDProperty, nil]
-        optional :id_property, enum: -> { HubspotSDK::CRM::OwnerGetParams::IDProperty }
+        #   @return [Symbol, HubspotSDK::Models::Crm::OwnerGetParams::IDProperty, nil]
+        optional :id_property, enum: -> { HubspotSDK::Crm::OwnerGetParams::IDProperty }
 
         # @!method initialize(archived: nil, id_property: nil, request_options: {})
         #   @param archived [Boolean]
-        #   @param id_property [Symbol, HubspotSDK::Models::CRM::OwnerGetParams::IDProperty]
+        #   @param id_property [Symbol, HubspotSDK::Models::Crm::OwnerGetParams::IDProperty]
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
 
         module IDProperty

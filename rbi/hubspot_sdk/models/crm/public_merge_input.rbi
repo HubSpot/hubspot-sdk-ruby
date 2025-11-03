@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicMergeInput < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PublicMergeInput,
+              HubspotSDK::Crm::PublicMergeInput,
               HubspotSDK::Internal::AnyHash
             )
           end

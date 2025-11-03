@@ -1,15 +1,15 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type collection_response_with_total_simple_public_object =
         {
-          results: ::Array[HubspotSDK::CRM::SimplePublicObject],
+          results: ::Array[HubspotSDK::Crm::SimplePublicObject],
           total: Integer,
           paging: HubspotSDK::Marketing::Paging
         }
 
       class CollectionResponseWithTotalSimplePublicObject < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::CRM::SimplePublicObject]
+        attr_accessor results: ::Array[HubspotSDK::Crm::SimplePublicObject]
 
         attr_accessor total: Integer
 
@@ -20,13 +20,13 @@ module HubspotSDK
         ) -> HubspotSDK::Marketing::Paging
 
         def initialize: (
-          results: ::Array[HubspotSDK::CRM::SimplePublicObject],
+          results: ::Array[HubspotSDK::Crm::SimplePublicObject],
           total: Integer,
           ?paging: HubspotSDK::Marketing::Paging
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubspotSDK::CRM::SimplePublicObject],
+          results: ::Array[HubspotSDK::Crm::SimplePublicObject],
           total: Integer,
           paging: HubspotSDK::Marketing::Paging
         }

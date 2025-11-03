@@ -1,18 +1,18 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type collection_response_association_label_limit_response_no_paging =
-        { results: ::Array[HubspotSDK::CRM::AssociationLabelLimitResponse] }
+        { results: ::Array[HubspotSDK::Crm::AssociationLabelLimitResponse] }
 
       class CollectionResponseAssociationLabelLimitResponseNoPaging < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::CRM::AssociationLabelLimitResponse]
+        attr_accessor results: ::Array[HubspotSDK::Crm::AssociationLabelLimitResponse]
 
         def initialize: (
-          results: ::Array[HubspotSDK::CRM::AssociationLabelLimitResponse]
+          results: ::Array[HubspotSDK::Crm::AssociationLabelLimitResponse]
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubspotSDK::CRM::AssociationLabelLimitResponse]
+          results: ::Array[HubspotSDK::Crm::AssociationLabelLimitResponse]
         }
       end
     end

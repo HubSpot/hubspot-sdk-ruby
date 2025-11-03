@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicMigrationMapping < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PublicMigrationMapping,
+              HubspotSDK::Crm::PublicMigrationMapping,
               HubspotSDK::Internal::AnyHash
             )
           end

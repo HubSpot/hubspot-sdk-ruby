@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module FeatureFlags
         type portal_batch_upsert_params =
           { app_id: Integer } & HubspotSDK::Internal::Type::request_parameters
 
-        class PortalBatchUpsertParams < HubspotSDK::Models::CRM::PortalFlagStateBatchPutRequest
+        class PortalBatchUpsertParams < HubspotSDK::Models::Crm::PortalFlagStateBatchPutRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

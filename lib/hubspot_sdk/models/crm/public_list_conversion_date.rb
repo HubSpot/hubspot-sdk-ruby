@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicListConversionDate < HubspotSDK::Internal::Type::BaseModel
         # @!attribute conversion_type
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PublicListConversionDate::ConversionType]
+        #   @return [Symbol, HubspotSDK::Models::Crm::PublicListConversionDate::ConversionType]
         required :conversion_type,
-                 enum: -> { HubspotSDK::CRM::PublicListConversionDate::ConversionType },
+                 enum: -> { HubspotSDK::Crm::PublicListConversionDate::ConversionType },
                  api_name: :conversionType
 
         # @!attribute day
@@ -27,12 +27,12 @@ module HubspotSDK
         required :year, Integer
 
         # @!method initialize(conversion_type:, day:, month:, year:)
-        #   @param conversion_type [Symbol, HubspotSDK::Models::CRM::PublicListConversionDate::ConversionType]
+        #   @param conversion_type [Symbol, HubspotSDK::Models::Crm::PublicListConversionDate::ConversionType]
         #   @param day [Integer]
         #   @param month [Integer]
         #   @param year [Integer]
 
-        # @see HubspotSDK::Models::CRM::PublicListConversionDate#conversion_type
+        # @see HubspotSDK::Models::Crm::PublicListConversionDate#conversion_type
         module ConversionType
           extend HubspotSDK::Internal::Type::Enum
 

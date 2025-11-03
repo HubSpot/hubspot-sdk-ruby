@@ -2,7 +2,7 @@
 
 require_relative "../../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Associations::V4::BatchTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Associations::V4::BatchTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
@@ -20,15 +20,15 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4::BatchTest < HubspotSDK
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::BatchResponseLabelsBetweenObjectPair
+      response => HubspotSDK::Crm::BatchResponseLabelsBetweenObjectPair
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::LabelsBetweenObjectPair]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::LabelsBetweenObjectPair]),
         started_at: Time,
-        status: HubspotSDK::CRM::BatchResponseLabelsBetweenObjectPair::Status,
+        status: HubspotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status,
         errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
@@ -48,7 +48,7 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4::BatchTest < HubspotSDK
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::BatchResponseVoid
+      response => HubspotSDK::Crm::BatchResponseVoid
     end
 
     assert_pattern do
@@ -56,7 +56,7 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4::BatchTest < HubspotSDK
         completed_at: Time,
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::Unknown]),
         started_at: Time,
-        status: HubspotSDK::CRM::BatchResponseVoid::Status,
+        status: HubspotSDK::Crm::BatchResponseVoid::Status,
         errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
@@ -76,15 +76,15 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4::BatchTest < HubspotSDK
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::BatchResponsePublicDefaultAssociation
+      response => HubspotSDK::Crm::BatchResponsePublicDefaultAssociation
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicDefaultAssociation]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicDefaultAssociation]),
         started_at: Time,
-        status: HubspotSDK::CRM::BatchResponsePublicDefaultAssociation::Status,
+        status: HubspotSDK::Crm::BatchResponsePublicDefaultAssociation::Status,
         errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
@@ -110,7 +110,7 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4::BatchTest < HubspotSDK
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::BatchResponseVoid
+      response => HubspotSDK::Crm::BatchResponseVoid
     end
 
     assert_pattern do
@@ -118,7 +118,7 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4::BatchTest < HubspotSDK
         completed_at: Time,
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::Unknown]),
         started_at: Time,
-        status: HubspotSDK::CRM::BatchResponseVoid::Status,
+        status: HubspotSDK::Crm::BatchResponseVoid::Status,
         errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
@@ -138,15 +138,15 @@ class HubspotSDK::Test::Resources::CRM::Associations::V4::BatchTest < HubspotSDK
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::BatchResponsePublicAssociationMultiWithLabel
+      response => HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicAssociationMultiWithLabel]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociationMultiWithLabel]),
         started_at: Time,
-        status: HubspotSDK::CRM::BatchResponsePublicAssociationMultiWithLabel::Status,
+        status: HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status,
         errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,

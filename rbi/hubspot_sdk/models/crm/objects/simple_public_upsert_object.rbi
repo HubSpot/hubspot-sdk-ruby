@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         class SimplePublicUpsertObject < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Objects::SimplePublicUpsertObject,
+                HubspotSDK::Crm::Objects::SimplePublicUpsertObject,
                 HubspotSDK::Internal::AnyHash
               )
             end
@@ -55,7 +55,7 @@ module HubspotSDK
           sig do
             returns(
               T.nilable(
-                T::Hash[Symbol, T::Array[HubspotSDK::CRM::ValueWithTimestamp]]
+                T::Hash[Symbol, T::Array[HubspotSDK::Crm::ValueWithTimestamp]]
               )
             )
           end
@@ -66,7 +66,7 @@ module HubspotSDK
               properties_with_history:
                 T::Hash[
                   Symbol,
-                  T::Array[HubspotSDK::CRM::ValueWithTimestamp::OrHash]
+                  T::Array[HubspotSDK::Crm::ValueWithTimestamp::OrHash]
                 ]
             ).void
           end
@@ -92,7 +92,7 @@ module HubspotSDK
               properties_with_history:
                 T::Hash[
                   Symbol,
-                  T::Array[HubspotSDK::CRM::ValueWithTimestamp::OrHash]
+                  T::Array[HubspotSDK::Crm::ValueWithTimestamp::OrHash]
                 ],
               url: String
             ).returns(T.attached_class)
@@ -134,7 +134,7 @@ module HubspotSDK
                 properties_with_history:
                   T::Hash[
                     Symbol,
-                    T::Array[HubspotSDK::CRM::ValueWithTimestamp]
+                    T::Array[HubspotSDK::Crm::ValueWithTimestamp]
                   ],
                 url: String
               }

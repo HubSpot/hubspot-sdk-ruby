@@ -1,20 +1,20 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type batch_input_public_fetch_associations_batch_request =
         {
-          inputs: ::Array[HubspotSDK::CRM::PublicFetchAssociationsBatchRequest]
+          inputs: ::Array[HubspotSDK::Crm::PublicFetchAssociationsBatchRequest]
         }
 
       class BatchInputPublicFetchAssociationsBatchRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor inputs: ::Array[HubspotSDK::CRM::PublicFetchAssociationsBatchRequest]
+        attr_accessor inputs: ::Array[HubspotSDK::Crm::PublicFetchAssociationsBatchRequest]
 
         def initialize: (
-          inputs: ::Array[HubspotSDK::CRM::PublicFetchAssociationsBatchRequest]
+          inputs: ::Array[HubspotSDK::Crm::PublicFetchAssociationsBatchRequest]
         ) -> void
 
         def to_hash: -> {
-          inputs: ::Array[HubspotSDK::CRM::PublicFetchAssociationsBatchRequest]
+          inputs: ::Array[HubspotSDK::Crm::PublicFetchAssociationsBatchRequest]
         }
       end
     end

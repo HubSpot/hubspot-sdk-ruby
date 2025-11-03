@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Lists
-        class MembershipAddAndRemoveParams < HubspotSDK::Models::CRM::MembershipChangeRequest
+        class MembershipAddAndRemoveParams < HubspotSDK::Models::Crm::MembershipChangeRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Lists::MembershipAddAndRemoveParams,
+                HubspotSDK::Crm::Lists::MembershipAddAndRemoveParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Lists
         class Folders
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::Lists::FolderCreateParams} for more details.
+          # {HubspotSDK::Models::Crm::Lists::FolderCreateParams} for more details.
           #
           # Creates a folder with the given information.
           #
@@ -18,16 +18,16 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::ListFolderCreateResponse]
+          # @return [HubspotSDK::Models::Crm::ListFolderCreateResponse]
           #
-          # @see HubspotSDK::Models::CRM::Lists::FolderCreateParams
+          # @see HubspotSDK::Models::Crm::Lists::FolderCreateParams
           def create(params)
-            parsed, options = HubspotSDK::CRM::Lists::FolderCreateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Lists::FolderCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/v3/lists/folders",
               body: parsed,
-              model: HubspotSDK::CRM::ListFolderCreateResponse,
+              model: HubspotSDK::Crm::ListFolderCreateResponse,
               options: options
             )
           end
@@ -42,7 +42,7 @@ module HubspotSDK
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::CRM::Lists::FolderDeleteParams
+          # @see HubspotSDK::Models::Crm::Lists::FolderDeleteParams
           def delete(folder_id, params = {})
             @client.request(
               method: :delete,
@@ -62,16 +62,16 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::ListFolderFetchResponse]
+          # @return [HubspotSDK::Models::Crm::ListFolderFetchResponse]
           #
-          # @see HubspotSDK::Models::CRM::Lists::FolderGetParams
+          # @see HubspotSDK::Models::Crm::Lists::FolderGetParams
           def get(params = {})
-            parsed, options = HubspotSDK::CRM::Lists::FolderGetParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Lists::FolderGetParams.dump_request(params)
             @client.request(
               method: :get,
               path: "crm/v3/lists/folders",
               query: parsed.transform_keys(folder_id: "folderId"),
-              model: HubspotSDK::CRM::ListFolderFetchResponse,
+              model: HubspotSDK::Crm::ListFolderFetchResponse,
               options: options
             )
           end
@@ -87,11 +87,11 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::ListFolderFetchResponse]
+          # @return [HubspotSDK::Models::Crm::ListFolderFetchResponse]
           #
-          # @see HubspotSDK::Models::CRM::Lists::FolderMoveParams
+          # @see HubspotSDK::Models::Crm::Lists::FolderMoveParams
           def move(new_parent_folder_id, params)
-            parsed, options = HubspotSDK::CRM::Lists::FolderMoveParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Lists::FolderMoveParams.dump_request(params)
             folder_id =
               parsed.delete(:folder_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -99,7 +99,7 @@ module HubspotSDK
             @client.request(
               method: :put,
               path: ["crm/v3/lists/folders/%1$s/move/%2$s", folder_id, new_parent_folder_id],
-              model: HubspotSDK::CRM::ListFolderFetchResponse,
+              model: HubspotSDK::Crm::ListFolderFetchResponse,
               options: options
             )
           end
@@ -116,9 +116,9 @@ module HubspotSDK
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::CRM::Lists::FolderMoveListParams
+          # @see HubspotSDK::Models::Crm::Lists::FolderMoveListParams
           def move_list(params)
-            parsed, options = HubspotSDK::CRM::Lists::FolderMoveListParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Lists::FolderMoveListParams.dump_request(params)
             @client.request(
               method: :put,
               path: "crm/v3/lists/folders/move-list",
@@ -138,16 +138,16 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::ListFolderFetchResponse]
+          # @return [HubspotSDK::Models::Crm::ListFolderFetchResponse]
           #
-          # @see HubspotSDK::Models::CRM::Lists::FolderRenameParams
+          # @see HubspotSDK::Models::Crm::Lists::FolderRenameParams
           def rename(folder_id, params = {})
-            parsed, options = HubspotSDK::CRM::Lists::FolderRenameParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Lists::FolderRenameParams.dump_request(params)
             @client.request(
               method: :put,
               path: ["crm/v3/lists/folders/%1$s/rename", folder_id],
               query: parsed.transform_keys(new_folder_name: "newFolderName"),
-              model: HubspotSDK::CRM::ListFolderFetchResponse,
+              model: HubspotSDK::Crm::ListFolderFetchResponse,
               options: options
             )
           end

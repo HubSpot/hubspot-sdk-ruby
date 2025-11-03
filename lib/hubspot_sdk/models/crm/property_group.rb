@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PropertyGroup < HubspotSDK::Internal::Type::BaseModel
         # @!attribute archived
         #
@@ -32,7 +32,7 @@ module HubspotSDK
 
         # @!method initialize(archived:, display_order:, label:, name:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::PropertyGroup} for more details.
+        #   {HubspotSDK::Models::Crm::PropertyGroup} for more details.
         #
         #   An ID for a group of properties
         #

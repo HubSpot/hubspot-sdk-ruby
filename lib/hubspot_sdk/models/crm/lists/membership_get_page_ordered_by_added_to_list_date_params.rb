@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Lists
-        # @see HubspotSDK::Resources::CRM::Lists::Memberships#get_page_ordered_by_added_to_list_date
+        # @see HubspotSDK::Resources::Crm::Lists::Memberships#get_page_ordered_by_added_to_list_date
         class MembershipGetPageOrderedByAddedToListDateParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
@@ -37,7 +37,7 @@ module HubspotSDK
 
           # @!method initialize(after: nil, before: nil, limit: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::CRM::Lists::MembershipGetPageOrderedByAddedToListDateParams}
+          #   {HubspotSDK::Models::Crm::Lists::MembershipGetPageOrderedByAddedToListDateParams}
           #   for more details.
           #
           #   @param after [String] The paging offset token for the page that comes `after` the previously requested

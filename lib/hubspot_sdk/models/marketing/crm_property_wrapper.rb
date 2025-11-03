@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Marketing
-      class CRMPropertyWrapper < HubspotSDK::Internal::Type::BaseModel
+      class CrmPropertyWrapper < HubspotSDK::Internal::Type::BaseModel
         # @!attribute name
         #
         #   @return [String]

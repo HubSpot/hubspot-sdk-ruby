@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class ActionConfirmationBody < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::ActionConfirmationBody,
+                HubspotSDK::Crm::Extensions::ActionConfirmationBody,
                 HubspotSDK::Internal::AnyHash
               )
             end

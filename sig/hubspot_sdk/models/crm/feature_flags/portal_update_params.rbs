@@ -1,12 +1,12 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module FeatureFlags
         type portal_update_params =
           { app_id: Integer, flag_name: String }
           & HubspotSDK::Internal::Type::request_parameters
 
-        class PortalUpdateParams < HubspotSDK::Models::CRM::PortalFlagStatePutRequest
+        class PortalUpdateParams < HubspotSDK::Models::Crm::PortalFlagStatePutRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

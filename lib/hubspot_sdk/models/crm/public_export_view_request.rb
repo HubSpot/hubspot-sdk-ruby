@@ -2,14 +2,14 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicExportViewRequest < HubspotSDK::Internal::Type::BaseModel
         # @!attribute export_internal_values_options
         #
-        #   @return [Array<Symbol, HubspotSDK::Models::CRM::PublicExportViewRequest::ExportInternalValuesOption>]
+        #   @return [Array<Symbol, HubspotSDK::Models::Crm::PublicExportViewRequest::ExportInternalValuesOption>]
         required :export_internal_values_options,
                  -> {
-                   HubspotSDK::Internal::Type::ArrayOf[enum: HubspotSDK::CRM::PublicExportViewRequest::ExportInternalValuesOption]
+                   HubspotSDK::Internal::Type::ArrayOf[enum: HubspotSDK::Crm::PublicExportViewRequest::ExportInternalValuesOption]
                  },
                  api_name: :exportInternalValuesOptions
 
@@ -20,20 +20,20 @@ module HubspotSDK
 
         # @!attribute export_type
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PublicExportViewRequest::ExportType]
+        #   @return [Symbol, HubspotSDK::Models::Crm::PublicExportViewRequest::ExportType]
         required :export_type,
-                 enum: -> { HubspotSDK::CRM::PublicExportViewRequest::ExportType },
+                 enum: -> { HubspotSDK::Crm::PublicExportViewRequest::ExportType },
                  api_name: :exportType
 
         # @!attribute format_
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PublicExportViewRequest::Format]
-        required :format_, enum: -> { HubspotSDK::CRM::PublicExportViewRequest::Format }, api_name: :format
+        #   @return [Symbol, HubspotSDK::Models::Crm::PublicExportViewRequest::Format]
+        required :format_, enum: -> { HubspotSDK::Crm::PublicExportViewRequest::Format }, api_name: :format
 
         # @!attribute language
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PublicExportViewRequest::Language]
-        required :language, enum: -> { HubspotSDK::CRM::PublicExportViewRequest::Language }
+        #   @return [Symbol, HubspotSDK::Models::Crm::PublicExportViewRequest::Language]
+        required :language, enum: -> { HubspotSDK::Crm::PublicExportViewRequest::Language }
 
         # @!attribute object_properties
         #
@@ -59,22 +59,22 @@ module HubspotSDK
 
         # @!attribute public_crm_search_request
         #
-        #   @return [HubspotSDK::Models::CRM::PublicCRMSearchRequest, nil]
+        #   @return [HubspotSDK::Models::Crm::PublicCrmSearchRequest, nil]
         optional :public_crm_search_request,
-                 -> { HubspotSDK::CRM::PublicCRMSearchRequest },
+                 -> { HubspotSDK::Crm::PublicCrmSearchRequest },
                  api_name: :publicCrmSearchRequest
 
         # @!method initialize(export_internal_values_options:, export_name:, export_type:, format_:, language:, object_properties:, object_type:, override_associated_objects_per_definition_per_row_limit:, associated_object_type: nil, public_crm_search_request: nil)
-        #   @param export_internal_values_options [Array<Symbol, HubspotSDK::Models::CRM::PublicExportViewRequest::ExportInternalValuesOption>]
+        #   @param export_internal_values_options [Array<Symbol, HubspotSDK::Models::Crm::PublicExportViewRequest::ExportInternalValuesOption>]
         #   @param export_name [String]
-        #   @param export_type [Symbol, HubspotSDK::Models::CRM::PublicExportViewRequest::ExportType]
-        #   @param format_ [Symbol, HubspotSDK::Models::CRM::PublicExportViewRequest::Format]
-        #   @param language [Symbol, HubspotSDK::Models::CRM::PublicExportViewRequest::Language]
+        #   @param export_type [Symbol, HubspotSDK::Models::Crm::PublicExportViewRequest::ExportType]
+        #   @param format_ [Symbol, HubspotSDK::Models::Crm::PublicExportViewRequest::Format]
+        #   @param language [Symbol, HubspotSDK::Models::Crm::PublicExportViewRequest::Language]
         #   @param object_properties [Array<String>]
         #   @param object_type [String]
         #   @param override_associated_objects_per_definition_per_row_limit [Boolean]
         #   @param associated_object_type [String]
-        #   @param public_crm_search_request [HubspotSDK::Models::CRM::PublicCRMSearchRequest]
+        #   @param public_crm_search_request [HubspotSDK::Models::Crm::PublicCrmSearchRequest]
 
         module ExportInternalValuesOption
           extend HubspotSDK::Internal::Type::Enum
@@ -86,7 +86,7 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::CRM::PublicExportViewRequest#export_type
+        # @see HubspotSDK::Models::Crm::PublicExportViewRequest#export_type
         module ExportType
           extend HubspotSDK::Internal::Type::Enum
 
@@ -96,7 +96,7 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::CRM::PublicExportViewRequest#format_
+        # @see HubspotSDK::Models::Crm::PublicExportViewRequest#format_
         module Format
           extend HubspotSDK::Internal::Type::Enum
 
@@ -108,7 +108,7 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::CRM::PublicExportViewRequest#language
+        # @see HubspotSDK::Models::Crm::PublicExportViewRequest#language
         module Language
           extend HubspotSDK::Internal::Type::Enum
 

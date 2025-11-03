@@ -33,7 +33,7 @@ module HubspotSDK
 
   module Conversations = HubspotSDK::Models::Conversations
 
-  module CRM = HubspotSDK::Models::CRM
+  module Crm = HubspotSDK::Models::Crm
 
   class Error = HubspotSDK::Models::Error
 

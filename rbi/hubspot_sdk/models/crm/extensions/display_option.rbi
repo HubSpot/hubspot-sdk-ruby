@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class DisplayOption < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::DisplayOption,
+                HubspotSDK::Crm::Extensions::DisplayOption,
                 HubspotSDK::Internal::AnyHash
               )
             end
@@ -23,7 +23,7 @@ module HubspotSDK
 
           # The type of status.
           sig do
-            returns(HubspotSDK::CRM::Extensions::DisplayOption::Type::OrSymbol)
+            returns(HubspotSDK::Crm::Extensions::DisplayOption::Type::OrSymbol)
           end
           attr_accessor :type
 
@@ -32,7 +32,7 @@ module HubspotSDK
             params(
               label: String,
               name: String,
-              type: HubspotSDK::CRM::Extensions::DisplayOption::Type::OrSymbol
+              type: HubspotSDK::Crm::Extensions::DisplayOption::Type::OrSymbol
             ).returns(T.attached_class)
           end
           def self.new(
@@ -50,7 +50,7 @@ module HubspotSDK
               {
                 label: String,
                 name: String,
-                type: HubspotSDK::CRM::Extensions::DisplayOption::Type::OrSymbol
+                type: HubspotSDK::Crm::Extensions::DisplayOption::Type::OrSymbol
               }
             )
           end
@@ -63,40 +63,40 @@ module HubspotSDK
 
             TaggedSymbol =
               T.type_alias do
-                T.all(Symbol, HubspotSDK::CRM::Extensions::DisplayOption::Type)
+                T.all(Symbol, HubspotSDK::Crm::Extensions::DisplayOption::Type)
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
 
             DEFAULT =
               T.let(
                 :DEFAULT,
-                HubspotSDK::CRM::Extensions::DisplayOption::Type::TaggedSymbol
+                HubspotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
               )
             SUCCESS =
               T.let(
                 :SUCCESS,
-                HubspotSDK::CRM::Extensions::DisplayOption::Type::TaggedSymbol
+                HubspotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
               )
             WARNING =
               T.let(
                 :WARNING,
-                HubspotSDK::CRM::Extensions::DisplayOption::Type::TaggedSymbol
+                HubspotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
               )
             DANGER =
               T.let(
                 :DANGER,
-                HubspotSDK::CRM::Extensions::DisplayOption::Type::TaggedSymbol
+                HubspotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
               )
             INFO =
               T.let(
                 :INFO,
-                HubspotSDK::CRM::Extensions::DisplayOption::Type::TaggedSymbol
+                HubspotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::CRM::Extensions::DisplayOption::Type::TaggedSymbol
+                  HubspotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
                 ]
               )
             end

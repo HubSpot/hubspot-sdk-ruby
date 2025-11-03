@@ -21,7 +21,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::PropertyGroup]
+          # @return [HubspotSDK::Models::Crm::PropertyGroup]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::GroupCreateParams
           def create(object_type, params)
@@ -34,7 +34,7 @@ module HubspotSDK
               method: :post,
               path: ["media-bridge/v1/%1$s/properties/%2$s/groups", app_id, object_type],
               body: parsed,
-              model: HubspotSDK::CRM::PropertyGroup,
+              model: HubspotSDK::Crm::PropertyGroup,
               options: options
             )
           end
@@ -103,7 +103,7 @@ module HubspotSDK
           # @param object_type [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::PropertyGroup]
+          # @return [HubspotSDK::Models::Crm::PropertyGroup]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::GroupGetByNameParams
           def get_by_name(group_name, params)
@@ -119,7 +119,7 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["media-bridge/v1/%1$s/properties/%2$s/groups/%3$s", app_id, object_type, group_name],
-              model: HubspotSDK::CRM::PropertyGroup,
+              model: HubspotSDK::Crm::PropertyGroup,
               options: options
             )
           end
@@ -140,7 +140,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::PropertyGroup]
+          # @return [HubspotSDK::Models::Crm::PropertyGroup]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::GroupUpdateByNameParams
           def update_by_name(group_name, params)
@@ -157,7 +157,7 @@ module HubspotSDK
               method: :patch,
               path: ["media-bridge/v1/%1$s/properties/%2$s/groups/%3$s", app_id, object_type, group_name],
               body: parsed,
-              model: HubspotSDK::CRM::PropertyGroup,
+              model: HubspotSDK::Crm::PropertyGroup,
               options: options
             )
           end

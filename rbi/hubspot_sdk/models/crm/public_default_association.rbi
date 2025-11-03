@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicDefaultAssociation < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PublicDefaultAssociation,
+              HubspotSDK::Crm::PublicDefaultAssociation,
               HubspotSDK::Internal::AnyHash
             )
           end

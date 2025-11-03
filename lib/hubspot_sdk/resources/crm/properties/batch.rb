@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Properties
         class Batch
           # Create a batch of properties using the same rules as when creating an individual
@@ -16,9 +16,9 @@ module HubspotSDK
           #
           # @return [HubspotSDK::Models::BatchResponseProperty]
           #
-          # @see HubspotSDK::Models::CRM::Properties::BatchCreateParams
+          # @see HubspotSDK::Models::Crm::Properties::BatchCreateParams
           def create(object_type, params)
-            parsed, options = HubspotSDK::CRM::Properties::BatchCreateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Properties::BatchCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["crm/v3/properties/%1$s/batch/create", object_type],
@@ -40,9 +40,9 @@ module HubspotSDK
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::CRM::Properties::BatchDeleteParams
+          # @see HubspotSDK::Models::Crm::Properties::BatchDeleteParams
           def delete(object_type, params)
-            parsed, options = HubspotSDK::CRM::Properties::BatchDeleteParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Properties::BatchDeleteParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["crm/v3/properties/%1$s/batch/archive", object_type],
@@ -59,14 +59,14 @@ module HubspotSDK
           # @param object_type [String]
           # @param archived [Boolean]
           # @param inputs [Array<HubspotSDK::Models::PropertyName>]
-          # @param data_sensitivity [Symbol, HubspotSDK::Models::CRM::BatchReadInputPropertyName::DataSensitivity]
+          # @param data_sensitivity [Symbol, HubspotSDK::Models::Crm::BatchReadInputPropertyName::DataSensitivity]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::BatchResponseProperty]
           #
-          # @see HubspotSDK::Models::CRM::Properties::BatchGetParams
+          # @see HubspotSDK::Models::Crm::Properties::BatchGetParams
           def get(object_type, params)
-            parsed, options = HubspotSDK::CRM::Properties::BatchGetParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Properties::BatchGetParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["crm/v3/properties/%1$s/batch/read", object_type],

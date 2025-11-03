@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Imports
         # Begins importing data from the specified file resources. This uploads the
         # corresponding file and uses the import request object to convert rows in the
@@ -14,23 +14,23 @@ module HubspotSDK
         # @param import_request [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CRM::PublicImportResponse]
+        # @return [HubspotSDK::Models::Crm::PublicImportResponse]
         #
-        # @see HubspotSDK::Models::CRM::ImportCreateParams
+        # @see HubspotSDK::Models::Crm::ImportCreateParams
         def create(params = {})
-          parsed, options = HubspotSDK::CRM::ImportCreateParams.dump_request(params)
+          parsed, options = HubspotSDK::Crm::ImportCreateParams.dump_request(params)
           @client.request(
             method: :post,
             path: "crm/v3/imports/",
             headers: {"content-type" => "multipart/form-data"},
             body: parsed,
-            model: HubspotSDK::CRM::PublicImportResponse,
+            model: HubspotSDK::Crm::PublicImportResponse,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::CRM::ImportListParams} for more details.
+        # {HubspotSDK::Models::Crm::ImportListParams} for more details.
         #
         # Returns a paged list of active imports for this account.
         #
@@ -44,17 +44,17 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::CRM::PublicImportResponse>]
+        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::PublicImportResponse>]
         #
-        # @see HubspotSDK::Models::CRM::ImportListParams
+        # @see HubspotSDK::Models::Crm::ImportListParams
         def list(params = {})
-          parsed, options = HubspotSDK::CRM::ImportListParams.dump_request(params)
+          parsed, options = HubspotSDK::Crm::ImportListParams.dump_request(params)
           @client.request(
             method: :get,
             path: "crm/v3/imports/",
             query: parsed,
             page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::CRM::PublicImportResponse,
+            model: HubspotSDK::Crm::PublicImportResponse,
             options: options
           )
         end
@@ -68,7 +68,7 @@ module HubspotSDK
         #
         # @return [HubspotSDK::Models::ActionResponse]
         #
-        # @see HubspotSDK::Models::CRM::ImportCancelParams
+        # @see HubspotSDK::Models::Crm::ImportCancelParams
         def cancel(import_id, params = {})
           @client.request(
             method: :post,
@@ -85,20 +85,20 @@ module HubspotSDK
         # @param import_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CRM::PublicImportResponse]
+        # @return [HubspotSDK::Models::Crm::PublicImportResponse]
         #
-        # @see HubspotSDK::Models::CRM::ImportGetParams
+        # @see HubspotSDK::Models::Crm::ImportGetParams
         def get(import_id, params = {})
           @client.request(
             method: :get,
             path: ["crm/v3/imports/%1$s", import_id],
-            model: HubspotSDK::CRM::PublicImportResponse,
+            model: HubspotSDK::Crm::PublicImportResponse,
             options: params[:request_options]
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::CRM::ImportListErrorsParams} for more details.
+        # {HubspotSDK::Models::Crm::ImportListErrorsParams} for more details.
         #
         # @overload list_errors(import_id, after: nil, include_error_message: nil, include_row_data: nil, limit: nil, request_options: {})
         #
@@ -114,11 +114,11 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CRM::CollectionResponsePublicImportErrorForwardPaging]
+        # @return [HubspotSDK::Models::Crm::CollectionResponsePublicImportErrorForwardPaging]
         #
-        # @see HubspotSDK::Models::CRM::ImportListErrorsParams
+        # @see HubspotSDK::Models::Crm::ImportListErrorsParams
         def list_errors(import_id, params = {})
-          parsed, options = HubspotSDK::CRM::ImportListErrorsParams.dump_request(params)
+          parsed, options = HubspotSDK::Crm::ImportListErrorsParams.dump_request(params)
           @client.request(
             method: :get,
             path: ["crm/v3/imports/%1$s/errors", import_id],
@@ -126,7 +126,7 @@ module HubspotSDK
               include_error_message: "includeErrorMessage",
               include_row_data: "includeRowData"
             ),
-            model: HubspotSDK::CRM::CollectionResponsePublicImportErrorForwardPaging,
+            model: HubspotSDK::Crm::CollectionResponsePublicImportErrorForwardPaging,
             options: options
           )
         end

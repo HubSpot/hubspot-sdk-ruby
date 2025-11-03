@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ImportRowCore < HubspotSDK::Internal::Type::BaseModel
         # @!attribute contains_encrypted_properties
         #

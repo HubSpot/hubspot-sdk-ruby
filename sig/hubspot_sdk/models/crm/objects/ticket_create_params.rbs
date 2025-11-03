@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type ticket_create_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class TicketCreateParams < HubspotSDK::Models::CRM::SimplePublicObjectInputForCreate
+        class TicketCreateParams < HubspotSDK::Models::Crm::SimplePublicObjectInputForCreate
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

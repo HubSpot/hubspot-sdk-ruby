@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Properties
-        # @see HubspotSDK::Resources::CRM::Properties::Groups#update
+        # @see HubspotSDK::Resources::Crm::Properties::Groups#update
         class GroupUpdateParams < HubspotSDK::Models::PropertyGroupUpdate
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters

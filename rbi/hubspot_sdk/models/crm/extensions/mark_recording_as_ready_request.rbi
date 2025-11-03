@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class MarkRecordingAsReadyRequest < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::MarkRecordingAsReadyRequest,
+                HubspotSDK::Crm::Extensions::MarkRecordingAsReadyRequest,
                 HubspotSDK::Internal::AnyHash
               )
             end

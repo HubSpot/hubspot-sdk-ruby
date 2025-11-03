@@ -2,15 +2,15 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchInputPublicAssociation < HubspotSDK::Internal::Type::BaseModel
         # @!attribute inputs
         #
-        #   @return [Array<HubspotSDK::Models::CRM::PublicAssociation>]
-        required :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicAssociation] }
+        #   @return [Array<HubspotSDK::Models::Crm::PublicAssociation>]
+        required :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociation] }
 
         # @!method initialize(inputs:)
-        #   @param inputs [Array<HubspotSDK::Models::CRM::PublicAssociation>]
+        #   @param inputs [Array<HubspotSDK::Models::Crm::PublicAssociation>]
       end
     end
   end

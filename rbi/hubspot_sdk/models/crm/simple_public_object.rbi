@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class SimplePublicObject < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::SimplePublicObject,
+              HubspotSDK::Crm::SimplePublicObject,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -53,7 +53,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              T::Hash[Symbol, T::Array[HubspotSDK::CRM::ValueWithTimestamp]]
+              T::Hash[Symbol, T::Array[HubspotSDK::Crm::ValueWithTimestamp]]
             )
           )
         end
@@ -64,7 +64,7 @@ module HubspotSDK
             properties_with_history:
               T::Hash[
                 Symbol,
-                T::Array[HubspotSDK::CRM::ValueWithTimestamp::OrHash]
+                T::Array[HubspotSDK::Crm::ValueWithTimestamp::OrHash]
               ]
           ).void
         end
@@ -83,7 +83,7 @@ module HubspotSDK
             properties_with_history:
               T::Hash[
                 Symbol,
-                T::Array[HubspotSDK::CRM::ValueWithTimestamp::OrHash]
+                T::Array[HubspotSDK::Crm::ValueWithTimestamp::OrHash]
               ]
           ).returns(T.attached_class)
         end
@@ -118,7 +118,7 @@ module HubspotSDK
               archived_at: Time,
               object_write_trace_id: String,
               properties_with_history:
-                T::Hash[Symbol, T::Array[HubspotSDK::CRM::ValueWithTimestamp]]
+                T::Hash[Symbol, T::Array[HubspotSDK::Crm::ValueWithTimestamp]]
             }
           )
         end

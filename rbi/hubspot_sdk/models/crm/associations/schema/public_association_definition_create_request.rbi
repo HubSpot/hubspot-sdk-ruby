@@ -2,14 +2,14 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         module Schema
           class PublicAssociationDefinitionCreateRequest < HubspotSDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionCreateRequest,
+                  HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionCreateRequest,
                   HubspotSDK::Internal::AnyHash
                 )
               end

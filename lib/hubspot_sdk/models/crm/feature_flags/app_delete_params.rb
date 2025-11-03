@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module FeatureFlags
-        # @see HubspotSDK::Resources::CRM::FeatureFlags::Apps#delete
+        # @see HubspotSDK::Resources::Crm::FeatureFlags::Apps#delete
         class AppDeleteParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters

@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Pipelines
         class Stages
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::Pipelines::StageCreateParams} for more details.
+          # {HubspotSDK::Models::Crm::Pipelines::StageCreateParams} for more details.
           #
           # Create a pipeline stage
           #
@@ -24,11 +24,11 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::PipelineStage]
+          # @return [HubspotSDK::Models::Crm::PipelineStage]
           #
-          # @see HubspotSDK::Models::CRM::Pipelines::StageCreateParams
+          # @see HubspotSDK::Models::Crm::Pipelines::StageCreateParams
           def create(pipeline_id, params)
-            parsed, options = HubspotSDK::CRM::Pipelines::StageCreateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Pipelines::StageCreateParams.dump_request(params)
             object_type =
               parsed.delete(:object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -37,13 +37,13 @@ module HubspotSDK
               method: :post,
               path: ["crm/v3/pipelines/%1$s/%2$s/stages", object_type, pipeline_id],
               body: parsed,
-              model: HubspotSDK::CRM::PipelineStage,
+              model: HubspotSDK::Crm::PipelineStage,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::Pipelines::StageUpdateParams} for more details.
+          # {HubspotSDK::Models::Crm::Pipelines::StageUpdateParams} for more details.
           #
           # @overload update(stage_id, object_type:, pipeline_id:, archived: nil, display_order: nil, label: nil, metadata: nil, request_options: {})
           #
@@ -63,11 +63,11 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::PipelineStage]
+          # @return [HubspotSDK::Models::Crm::PipelineStage]
           #
-          # @see HubspotSDK::Models::CRM::Pipelines::StageUpdateParams
+          # @see HubspotSDK::Models::Crm::Pipelines::StageUpdateParams
           def update(stage_id, params)
-            parsed, options = HubspotSDK::CRM::Pipelines::StageUpdateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Pipelines::StageUpdateParams.dump_request(params)
             object_type =
               parsed.delete(:object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -80,7 +80,7 @@ module HubspotSDK
               method: :patch,
               path: ["crm/v3/pipelines/%1$s/%2$s/stages/%3$s", object_type, pipeline_id, stage_id],
               body: parsed,
-              model: HubspotSDK::CRM::PipelineStage,
+              model: HubspotSDK::Crm::PipelineStage,
               options: options
             )
           end
@@ -93,11 +93,11 @@ module HubspotSDK
           # @param object_type [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::CollectionResponsePipelineStageNoPaging]
+          # @return [HubspotSDK::Models::Crm::CollectionResponsePipelineStageNoPaging]
           #
-          # @see HubspotSDK::Models::CRM::Pipelines::StageListParams
+          # @see HubspotSDK::Models::Crm::Pipelines::StageListParams
           def list(pipeline_id, params)
-            parsed, options = HubspotSDK::CRM::Pipelines::StageListParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Pipelines::StageListParams.dump_request(params)
             object_type =
               parsed.delete(:object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -105,7 +105,7 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["crm/v3/pipelines/%1$s/%2$s/stages", object_type, pipeline_id],
-              model: HubspotSDK::CRM::CollectionResponsePipelineStageNoPaging,
+              model: HubspotSDK::Crm::CollectionResponsePipelineStageNoPaging,
               options: options
             )
           end
@@ -121,9 +121,9 @@ module HubspotSDK
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::CRM::Pipelines::StageDeleteParams
+          # @see HubspotSDK::Models::Crm::Pipelines::StageDeleteParams
           def delete(stage_id, params)
-            parsed, options = HubspotSDK::CRM::Pipelines::StageDeleteParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Pipelines::StageDeleteParams.dump_request(params)
             object_type =
               parsed.delete(:object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -149,11 +149,11 @@ module HubspotSDK
           # @param pipeline_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::PipelineStage]
+          # @return [HubspotSDK::Models::Crm::PipelineStage]
           #
-          # @see HubspotSDK::Models::CRM::Pipelines::StageGetParams
+          # @see HubspotSDK::Models::Crm::Pipelines::StageGetParams
           def get(stage_id, params)
-            parsed, options = HubspotSDK::CRM::Pipelines::StageGetParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Pipelines::StageGetParams.dump_request(params)
             object_type =
               parsed.delete(:object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -165,7 +165,7 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["crm/v3/pipelines/%1$s/%2$s/stages/%3$s", object_type, pipeline_id, stage_id],
-              model: HubspotSDK::CRM::PipelineStage,
+              model: HubspotSDK::Crm::PipelineStage,
               options: options
             )
           end
@@ -180,11 +180,11 @@ module HubspotSDK
           # @param pipeline_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::CollectionResponsePublicAuditInfoNoPaging]
+          # @return [HubspotSDK::Models::Crm::CollectionResponsePublicAuditInfoNoPaging]
           #
-          # @see HubspotSDK::Models::CRM::Pipelines::StageGetAuditParams
+          # @see HubspotSDK::Models::Crm::Pipelines::StageGetAuditParams
           def get_audit(stage_id, params)
-            parsed, options = HubspotSDK::CRM::Pipelines::StageGetAuditParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Pipelines::StageGetAuditParams.dump_request(params)
             object_type =
               parsed.delete(:object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -196,13 +196,13 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["crm/v3/pipelines/%1$s/%2$s/stages/%3$s/audit", object_type, pipeline_id, stage_id],
-              model: HubspotSDK::CRM::CollectionResponsePublicAuditInfoNoPaging,
+              model: HubspotSDK::Crm::CollectionResponsePublicAuditInfoNoPaging,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::Pipelines::StageReplaceParams} for more details.
+          # {HubspotSDK::Models::Crm::Pipelines::StageReplaceParams} for more details.
           #
           # Replace all the properties of an existing pipeline stage with the values
           # provided. The updated stage will be returned in the response.
@@ -223,11 +223,11 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::PipelineStage]
+          # @return [HubspotSDK::Models::Crm::PipelineStage]
           #
-          # @see HubspotSDK::Models::CRM::Pipelines::StageReplaceParams
+          # @see HubspotSDK::Models::Crm::Pipelines::StageReplaceParams
           def replace(stage_id, params)
-            parsed, options = HubspotSDK::CRM::Pipelines::StageReplaceParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Pipelines::StageReplaceParams.dump_request(params)
             object_type =
               parsed.delete(:object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -240,7 +240,7 @@ module HubspotSDK
               method: :put,
               path: ["crm/v3/pipelines/%1$s/%2$s/stages/%3$s", object_type, pipeline_id, stage_id],
               body: parsed,
-              model: HubspotSDK::CRM::PipelineStage,
+              model: HubspotSDK::Crm::PipelineStage,
               options: options
             )
           end

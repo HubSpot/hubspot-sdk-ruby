@@ -1,20 +1,20 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type portal_flag_state_batch_response =
         {
-          portal_flag_states: ::Array[HubspotSDK::CRM::PortalFlagStateResponse]
+          portal_flag_states: ::Array[HubspotSDK::Crm::PortalFlagStateResponse]
         }
 
       class PortalFlagStateBatchResponse < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor portal_flag_states: ::Array[HubspotSDK::CRM::PortalFlagStateResponse]
+        attr_accessor portal_flag_states: ::Array[HubspotSDK::Crm::PortalFlagStateResponse]
 
         def initialize: (
-          portal_flag_states: ::Array[HubspotSDK::CRM::PortalFlagStateResponse]
+          portal_flag_states: ::Array[HubspotSDK::Crm::PortalFlagStateResponse]
         ) -> void
 
         def to_hash: -> {
-          portal_flag_states: ::Array[HubspotSDK::CRM::PortalFlagStateResponse]
+          portal_flag_states: ::Array[HubspotSDK::Crm::PortalFlagStateResponse]
         }
       end
     end

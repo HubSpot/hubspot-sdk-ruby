@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class TimelineEventTemplateCreateRequest < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::TimelineEventTemplateCreateRequest,
+              HubspotSDK::Crm::TimelineEventTemplateCreateRequest,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -23,7 +23,7 @@ module HubspotSDK
 
         # A collection of tokens that can be used as custom properties on the event and to
         # create fully fledged CRM objects.
-        sig { returns(T::Array[HubspotSDK::CRM::TimelineEventTemplateToken]) }
+        sig { returns(T::Array[HubspotSDK::Crm::TimelineEventTemplateToken]) }
         attr_accessor :tokens
 
         # This uses Markdown syntax with Handlebars and event-specific data to render HTML
@@ -48,7 +48,7 @@ module HubspotSDK
             name: String,
             object_type: String,
             tokens:
-              T::Array[HubspotSDK::CRM::TimelineEventTemplateToken::OrHash],
+              T::Array[HubspotSDK::Crm::TimelineEventTemplateToken::OrHash],
             detail_template: String,
             header_template: String
           ).returns(T.attached_class)
@@ -76,7 +76,7 @@ module HubspotSDK
             {
               name: String,
               object_type: String,
-              tokens: T::Array[HubspotSDK::CRM::TimelineEventTemplateToken],
+              tokens: T::Array[HubspotSDK::Crm::TimelineEventTemplateToken],
               detail_template: String,
               header_template: String
             }

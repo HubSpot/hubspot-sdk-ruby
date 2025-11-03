@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Pipelines
-        class StageCreateParams < HubspotSDK::Models::CRM::PipelineStageInput
+        class StageCreateParams < HubspotSDK::Models::Crm::PipelineStageInput
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Pipelines::StageCreateParams,
+                HubspotSDK::Crm::Pipelines::StageCreateParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

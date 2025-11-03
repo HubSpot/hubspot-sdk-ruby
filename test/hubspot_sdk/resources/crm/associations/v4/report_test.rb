@@ -2,19 +2,19 @@
 
 require_relative "../../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Associations::V4::ReportTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Associations::V4::ReportTest < HubspotSDK::Test::ResourceTest
   def test_get_high_usage_report
     skip("Prism tests are disabled")
 
     response = @hubspot.crm.associations.v4.report.get_high_usage_report(0)
 
     assert_pattern do
-      response => HubspotSDK::CRM::ReportCreationResponse
+      response => HubspotSDK::Crm::ReportCreationResponse
     end
 
     assert_pattern do
       response => {
-        enqueue_time: HubspotSDK::CRM::DateTime,
+        enqueue_time: HubspotSDK::Crm::DateTime,
         user_email: String,
         user_id: Integer
       }

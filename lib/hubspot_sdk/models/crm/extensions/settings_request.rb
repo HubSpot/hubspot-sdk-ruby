@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class SettingsRequest < HubspotSDK::Internal::Type::BaseModel
           # @!attribute name

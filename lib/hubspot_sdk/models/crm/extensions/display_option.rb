@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class DisplayOption < HubspotSDK::Internal::Type::BaseModel
           # @!attribute label
@@ -20,8 +20,8 @@ module HubspotSDK
           # @!attribute type
           #   The type of status.
           #
-          #   @return [Symbol, HubspotSDK::Models::CRM::Extensions::DisplayOption::Type]
-          required :type, enum: -> { HubspotSDK::CRM::Extensions::DisplayOption::Type }
+          #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::DisplayOption::Type]
+          required :type, enum: -> { HubspotSDK::Crm::Extensions::DisplayOption::Type }
 
           # @!method initialize(label:, name:, type:)
           #   Option definition for STATUS dataTypes.
@@ -30,11 +30,11 @@ module HubspotSDK
           #
           #   @param name [String] JSON-friendly unique name for option.
           #
-          #   @param type [Symbol, HubspotSDK::Models::CRM::Extensions::DisplayOption::Type] The type of status.
+          #   @param type [Symbol, HubspotSDK::Models::Crm::Extensions::DisplayOption::Type] The type of status.
 
           # The type of status.
           #
-          # @see HubspotSDK::Models::CRM::Extensions::DisplayOption#type
+          # @see HubspotSDK::Models::Crm::Extensions::DisplayOption#type
           module Type
             extend HubspotSDK::Internal::Type::Enum
 

@@ -2,14 +2,14 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class UserGetParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::CRM::UserGetParams, HubspotSDK::Internal::AnyHash)
+            T.any(HubspotSDK::Crm::UserGetParams, HubspotSDK::Internal::AnyHash)
           end
 
         # Whether to return only results that have been archived.

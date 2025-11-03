@@ -2,24 +2,24 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ListsByIDResponse < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::ListsByIDResponse,
+              HubspotSDK::Crm::ListsByIDResponse,
               HubspotSDK::Internal::AnyHash
             )
           end
 
         # The object list definitions.
-        sig { returns(T::Array[HubspotSDK::CRM::PublicObjectList]) }
+        sig { returns(T::Array[HubspotSDK::Crm::PublicObjectList]) }
         attr_accessor :lists
 
         # The response object containing the lists found for a multi-list fetch.
         sig do
           params(
-            lists: T::Array[HubspotSDK::CRM::PublicObjectList::OrHash]
+            lists: T::Array[HubspotSDK::Crm::PublicObjectList::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(
@@ -30,7 +30,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { lists: T::Array[HubspotSDK::CRM::PublicObjectList] }
+            { lists: T::Array[HubspotSDK::Crm::PublicObjectList] }
           )
         end
         def to_hash

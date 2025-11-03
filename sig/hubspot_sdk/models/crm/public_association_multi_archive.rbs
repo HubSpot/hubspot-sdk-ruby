@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type public_association_multi_archive =
         {
           from: HubspotSDK::PublicObjectID,
