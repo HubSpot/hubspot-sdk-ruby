@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module FeatureFlags
-        # @see HubspotSDK::Resources::CRM::FeatureFlags::Portals#get
+        # @see HubspotSDK::Resources::Crm::FeatureFlags::Portals#get
         class PortalGetParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters

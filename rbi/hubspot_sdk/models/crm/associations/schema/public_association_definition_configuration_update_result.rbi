@@ -2,21 +2,21 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         module Schema
           class PublicAssociationDefinitionConfigurationUpdateResult < HubspotSDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult,
+                  HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult,
                   HubspotSDK::Internal::AnyHash
                 )
               end
 
             sig do
               returns(
-                HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::OrSymbol
+                HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::OrSymbol
               )
             end
             attr_accessor :category
@@ -33,7 +33,7 @@ module HubspotSDK
             sig do
               params(
                 category:
-                  HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::OrSymbol,
+                  HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::OrSymbol,
                 type_id: Integer,
                 user_enforced_max_to_object_ids: Integer
               ).returns(T.attached_class)
@@ -49,7 +49,7 @@ module HubspotSDK
               override.returns(
                 {
                   category:
-                    HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::OrSymbol,
+                    HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::OrSymbol,
                   type_id: Integer,
                   user_enforced_max_to_object_ids: Integer
                 }
@@ -65,7 +65,7 @@ module HubspotSDK
                 T.type_alias do
                   T.all(
                     Symbol,
-                    HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category
+                    HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category
                   )
                 end
               OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -73,23 +73,23 @@ module HubspotSDK
               HUBSPOT_DEFINED =
                 T.let(
                   :HUBSPOT_DEFINED,
-                  HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::TaggedSymbol
+                  HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::TaggedSymbol
                 )
               USER_DEFINED =
                 T.let(
                   :USER_DEFINED,
-                  HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::TaggedSymbol
+                  HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::TaggedSymbol
                 )
               INTEGRATOR_DEFINED =
                 T.let(
                   :INTEGRATOR_DEFINED,
-                  HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::TaggedSymbol
+                  HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::TaggedSymbol
                 )
 
               sig do
                 override.returns(
                   T::Array[
-                    HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::TaggedSymbol
+                    HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::TaggedSymbol
                   ]
                 )
               end

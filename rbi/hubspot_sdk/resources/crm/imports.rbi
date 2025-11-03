@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Imports
         # Begins importing data from the specified file resources. This uploads the
         # corresponding file and uses the import request object to convert rows in the
@@ -12,7 +12,7 @@ module HubspotSDK
             files: HubspotSDK::Internal::FileInput,
             import_request: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::PublicImportResponse)
+          ).returns(HubspotSDK::Crm::PublicImportResponse)
         end
         def create(files: nil, import_request: nil, request_options: {})
         end
@@ -25,7 +25,7 @@ module HubspotSDK
             limit: Integer,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Internal::Page[HubspotSDK::CRM::PublicImportResponse]
+            HubspotSDK::Internal::Page[HubspotSDK::Crm::PublicImportResponse]
           )
         end
         def list(
@@ -55,7 +55,7 @@ module HubspotSDK
           params(
             import_id: Integer,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::PublicImportResponse)
+          ).returns(HubspotSDK::Crm::PublicImportResponse)
         end
         def get(import_id, request_options: {})
         end
@@ -69,7 +69,7 @@ module HubspotSDK
             limit: Integer,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::CRM::CollectionResponsePublicImportErrorForwardPaging
+            HubspotSDK::Crm::CollectionResponsePublicImportErrorForwardPaging
           )
         end
         def list_errors(

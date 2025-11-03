@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicAssociationMulti < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PublicAssociationMulti,
+              HubspotSDK::Crm::PublicAssociationMulti,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -20,7 +20,7 @@ module HubspotSDK
 
         # The IDs of objects that are associated with the object identified by the ID in
         # 'from'.
-        sig { returns(T::Array[HubspotSDK::CRM::AssociatedID]) }
+        sig { returns(T::Array[HubspotSDK::Crm::AssociatedID]) }
         attr_accessor :to
 
         # Contains information pagination of results.
@@ -33,7 +33,7 @@ module HubspotSDK
         sig do
           params(
             from: HubspotSDK::PublicObjectID::OrHash,
-            to: T::Array[HubspotSDK::CRM::AssociatedID::OrHash],
+            to: T::Array[HubspotSDK::Crm::AssociatedID::OrHash],
             paging: HubspotSDK::Marketing::Paging::OrHash
           ).returns(T.attached_class)
         end
@@ -51,7 +51,7 @@ module HubspotSDK
           override.returns(
             {
               from: HubspotSDK::PublicObjectID,
-              to: T::Array[HubspotSDK::CRM::AssociatedID],
+              to: T::Array[HubspotSDK::Crm::AssociatedID],
               paging: HubspotSDK::Marketing::Paging
             }
           )

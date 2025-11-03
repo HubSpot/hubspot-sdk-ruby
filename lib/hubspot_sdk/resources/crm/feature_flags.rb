@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class FeatureFlags
-        # @return [HubspotSDK::Resources::CRM::FeatureFlags::Apps]
+        # @return [HubspotSDK::Resources::Crm::FeatureFlags::Apps]
         attr_reader :apps
 
-        # @return [HubspotSDK::Resources::CRM::FeatureFlags::Portals]
+        # @return [HubspotSDK::Resources::Crm::FeatureFlags::Portals]
         attr_reader :portals
 
         # @api private
@@ -15,8 +15,8 @@ module HubspotSDK
         # @param client [HubspotSDK::Client]
         def initialize(client:)
           @client = client
-          @apps = HubspotSDK::Resources::CRM::FeatureFlags::Apps.new(client: client)
-          @portals = HubspotSDK::Resources::CRM::FeatureFlags::Portals.new(client: client)
+          @apps = HubspotSDK::Resources::Crm::FeatureFlags::Apps.new(client: client)
+          @portals = HubspotSDK::Resources::Crm::FeatureFlags::Portals.new(client: client)
         end
       end
     end

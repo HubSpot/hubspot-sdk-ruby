@@ -2,14 +2,14 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         class SimplePublicObjectBatchInputForCreate < HubspotSDK::Internal::Type::BaseModel
           # @!attribute associations
           #
-          #   @return [Array<HubspotSDK::Models::CRM::PublicAssociationsForObject>]
+          #   @return [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
           required :associations,
-                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicAssociationsForObject] }
+                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociationsForObject] }
 
           # @!attribute properties
           #
@@ -22,7 +22,7 @@ module HubspotSDK
           optional :object_write_trace_id, String, api_name: :objectWriteTraceId
 
           # @!method initialize(associations:, properties:, object_write_trace_id: nil)
-          #   @param associations [Array<HubspotSDK::Models::CRM::PublicAssociationsForObject>]
+          #   @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
           #   @param properties [Hash{Symbol=>String}]
           #   @param object_write_trace_id [String]
         end

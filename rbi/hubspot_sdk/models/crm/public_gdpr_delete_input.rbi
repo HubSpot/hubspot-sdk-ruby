@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicGdprDeleteInput < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PublicGdprDeleteInput,
+              HubspotSDK::Crm::PublicGdprDeleteInput,
               HubspotSDK::Internal::AnyHash
             )
           end

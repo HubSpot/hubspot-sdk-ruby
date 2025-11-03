@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Limits#get_custom_property_limits
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Limits#get_custom_property_limits
       class LimitGetCustomPropertyLimitsParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters

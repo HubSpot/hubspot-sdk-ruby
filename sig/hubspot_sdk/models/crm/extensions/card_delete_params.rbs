@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         type card_delete_params =
           { app_id: Integer } & HubspotSDK::Internal::Type::request_parameters

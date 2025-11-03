@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class OptionInput < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::CRM::OptionInput, HubspotSDK::Internal::AnyHash)
+            T.any(HubspotSDK::Crm::OptionInput, HubspotSDK::Internal::AnyHash)
           end
 
         # If true, the option will not be shown in forms, bots, or meeting scheduling

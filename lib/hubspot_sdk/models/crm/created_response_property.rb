@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Properties#create
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Properties#create
       class CreatedResponseProperty < HubspotSDK::Internal::Type::BaseModel
         # @!attribute created_resource_id
         #

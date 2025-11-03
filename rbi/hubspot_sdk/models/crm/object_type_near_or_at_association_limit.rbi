@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ObjectTypeNearOrAtAssociationLimit < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::ObjectTypeNearOrAtAssociationLimit,
+              HubspotSDK::Crm::ObjectTypeNearOrAtAssociationLimit,
               HubspotSDK::Internal::AnyHash
             )
           end

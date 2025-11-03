@@ -1,14 +1,14 @@
 module HubspotSDK
   module Models
-    module CRM
-      type list_fetch_response = { list: HubspotSDK::CRM::PublicObjectList }
+    module Crm
+      type list_fetch_response = { list: HubspotSDK::Crm::PublicObjectList }
 
       class ListFetchResponse < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor list: HubspotSDK::CRM::PublicObjectList
+        attr_accessor list: HubspotSDK::Crm::PublicObjectList
 
-        def initialize: (list: HubspotSDK::CRM::PublicObjectList) -> void
+        def initialize: (list: HubspotSDK::Crm::PublicObjectList) -> void
 
-        def to_hash: -> { list: HubspotSDK::CRM::PublicObjectList }
+        def to_hash: -> { list: HubspotSDK::Crm::PublicObjectList }
       end
     end
   end

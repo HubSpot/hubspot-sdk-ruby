@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module FeatureFlags
-        # @see HubspotSDK::Resources::CRM::FeatureFlags::Portals#batch_upsert
-        class PortalBatchUpsertParams < HubspotSDK::Models::CRM::PortalFlagStateBatchPutRequest
+        # @see HubspotSDK::Resources::Crm::FeatureFlags::Portals#batch_upsert
+        class PortalBatchUpsertParams < HubspotSDK::Models::Crm::PortalFlagStateBatchPutRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

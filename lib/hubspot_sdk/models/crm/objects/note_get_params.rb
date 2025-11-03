@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
-        # @see HubspotSDK::Resources::CRM::Objects::Notes#get
+        # @see HubspotSDK::Resources::Crm::Objects::Notes#get
         class NoteGetParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
@@ -46,7 +46,7 @@ module HubspotSDK
 
           # @!method initialize(archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::CRM::Objects::NoteGetParams} for more details.
+          #   {HubspotSDK::Models::Crm::Objects::NoteGetParams} for more details.
           #
           #   @param archived [Boolean] Whether to return only results that have been archived.
           #

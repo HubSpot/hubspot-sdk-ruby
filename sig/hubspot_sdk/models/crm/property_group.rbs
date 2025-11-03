@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type property_group =
         { archived: bool, display_order: Integer, label: String, name: String }
 

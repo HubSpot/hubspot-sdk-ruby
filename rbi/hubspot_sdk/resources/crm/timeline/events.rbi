@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Timeline
         class Events
           # Send a single instance of event data to a specified event type.
@@ -15,11 +15,11 @@ module HubspotSDK
               email: String,
               extra_data: T.anything,
               object_id_: String,
-              timeline_i_frame: HubspotSDK::CRM::TimelineEventIFrame::OrHash,
+              timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame::OrHash,
               timestamp: Time,
               utk: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::TimelineEventResponse)
+            ).returns(HubspotSDK::Crm::TimelineEventResponse)
           end
           def create(
             # The event template ID.
@@ -62,7 +62,7 @@ module HubspotSDK
           # or add them if they don't exist.
           sig do
             params(
-              inputs: T::Array[HubspotSDK::CRM::TimelineEvent::OrHash],
+              inputs: T::Array[HubspotSDK::Crm::TimelineEvent::OrHash],
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
@@ -79,7 +79,7 @@ module HubspotSDK
               event_id: String,
               event_template_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::TimelineEventResponse)
+            ).returns(HubspotSDK::Crm::TimelineEventResponse)
           end
           def get(
             # The event ID.
@@ -96,7 +96,7 @@ module HubspotSDK
               event_id: String,
               event_template_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::EventDetail)
+            ).returns(HubspotSDK::Crm::EventDetail)
           end
           def get_detail(
             # The event ID.

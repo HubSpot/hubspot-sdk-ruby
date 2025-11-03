@@ -2,17 +2,17 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         module PostalMail
-          class BatchUpdateParams < HubspotSDK::Models::CRM::BatchInputSimplePublicObjectBatchInput
+          class BatchUpdateParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectBatchInput
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Objects::PostalMail::BatchUpdateParams,
+                  HubspotSDK::Crm::Objects::PostalMail::BatchUpdateParams,
                   HubspotSDK::Internal::AnyHash
                 )
               end

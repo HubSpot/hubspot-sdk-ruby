@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Lists#get_schedule_conversion
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Lists#get_schedule_conversion
       class ListGetScheduleConversionParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters

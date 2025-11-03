@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module FeatureFlags
-        # @see HubspotSDK::Resources::CRM::FeatureFlags::Apps#list_portals
+        # @see HubspotSDK::Resources::Crm::FeatureFlags::Apps#list_portals
         class AppListPortalsParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters

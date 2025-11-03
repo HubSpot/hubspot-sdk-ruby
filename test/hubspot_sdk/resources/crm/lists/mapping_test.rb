@@ -2,19 +2,19 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Lists::MappingTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Lists::MappingTest < HubspotSDK::Test::ResourceTest
   def test_batch_create_id_mapping_required_params
     skip("Prism tests are disabled")
 
     response = @hubspot.crm.lists.mapping.batch_create_id_mapping(body: ["string"])
 
     assert_pattern do
-      response => HubspotSDK::CRM::PublicBatchMigrationMapping
+      response => HubspotSDK::Crm::PublicBatchMigrationMapping
     end
 
     assert_pattern do
       response => {
-        legacy_list_ids_to_ids_mapping: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicMigrationMapping]),
+        legacy_list_ids_to_ids_mapping: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicMigrationMapping]),
         missing_legacy_list_ids: ^(HubspotSDK::Internal::Type::ArrayOf[String])
       }
     end
@@ -26,7 +26,7 @@ class HubspotSDK::Test::Resources::CRM::Lists::MappingTest < HubspotSDK::Test::R
     response = @hubspot.crm.lists.mapping.get_id_mapping
 
     assert_pattern do
-      response => HubspotSDK::CRM::PublicMigrationMapping
+      response => HubspotSDK::Crm::PublicMigrationMapping
     end
 
     assert_pattern do

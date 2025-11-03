@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Extensions
         class VideoConferencing
           class Settings
@@ -15,7 +15,7 @@ module HubspotSDK
                 update_meeting_url: String,
                 user_verify_url: String,
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::CRM::Extensions::ExternalSettings)
+              ).returns(HubspotSDK::Crm::Extensions::ExternalSettings)
             end
             def update(
               app_id,
@@ -48,7 +48,7 @@ module HubspotSDK
               params(
                 app_id: Integer,
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::CRM::Extensions::ExternalSettings)
+              ).returns(HubspotSDK::Crm::Extensions::ExternalSettings)
             end
             def get(app_id, request_options: {})
             end

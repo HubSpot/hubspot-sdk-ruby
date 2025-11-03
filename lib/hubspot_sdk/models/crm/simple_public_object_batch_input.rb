@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class SimplePublicObjectBatchInput < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The id to be updated. This can be the object id, or the unique property value of
@@ -31,7 +31,7 @@ module HubspotSDK
 
         # @!method initialize(id:, properties:, id_property: nil, object_write_trace_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::SimplePublicObjectBatchInput} for more details.
+        #   {HubspotSDK::Models::Crm::SimplePublicObjectBatchInput} for more details.
         #
         #   Contains an array of CRM object records to be processed in a batch operation,
         #   each defined by their ID and properties.

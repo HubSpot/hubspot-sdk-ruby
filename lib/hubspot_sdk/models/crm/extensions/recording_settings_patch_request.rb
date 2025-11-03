@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class RecordingSettingsPatchRequest < HubspotSDK::Internal::Type::BaseModel
           # @!attribute url_to_retrieve_authed_recording

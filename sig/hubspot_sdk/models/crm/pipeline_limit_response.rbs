@@ -1,25 +1,25 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type pipeline_limit_response =
         {
-          custom_object_types: HubspotSDK::CRM::CustomObjectRecordLimitResponse,
-          hubspot_defined_object_types: ::Array[HubspotSDK::CRM::LimitAndUsageForObjectType]
+          custom_object_types: HubspotSDK::Crm::CustomObjectRecordLimitResponse,
+          hubspot_defined_object_types: ::Array[HubspotSDK::Crm::LimitAndUsageForObjectType]
         }
 
       class PipelineLimitResponse < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor custom_object_types: HubspotSDK::CRM::CustomObjectRecordLimitResponse
+        attr_accessor custom_object_types: HubspotSDK::Crm::CustomObjectRecordLimitResponse
 
-        attr_accessor hubspot_defined_object_types: ::Array[HubspotSDK::CRM::LimitAndUsageForObjectType]
+        attr_accessor hubspot_defined_object_types: ::Array[HubspotSDK::Crm::LimitAndUsageForObjectType]
 
         def initialize: (
-          custom_object_types: HubspotSDK::CRM::CustomObjectRecordLimitResponse,
-          hubspot_defined_object_types: ::Array[HubspotSDK::CRM::LimitAndUsageForObjectType]
+          custom_object_types: HubspotSDK::Crm::CustomObjectRecordLimitResponse,
+          hubspot_defined_object_types: ::Array[HubspotSDK::Crm::LimitAndUsageForObjectType]
         ) -> void
 
         def to_hash: -> {
-          custom_object_types: HubspotSDK::CRM::CustomObjectRecordLimitResponse,
-          hubspot_defined_object_types: ::Array[HubspotSDK::CRM::LimitAndUsageForObjectType]
+          custom_object_types: HubspotSDK::Crm::CustomObjectRecordLimitResponse,
+          hubspot_defined_object_types: ::Array[HubspotSDK::Crm::LimitAndUsageForObjectType]
         }
       end
     end

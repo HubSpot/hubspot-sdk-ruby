@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type membership_change_request =
         {
           record_ids_to_add: ::Array[String],

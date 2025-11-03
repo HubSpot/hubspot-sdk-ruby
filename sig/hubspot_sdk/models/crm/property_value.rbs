@@ -1,9 +1,9 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type property_value =
         {
-          data_sensitivity: HubspotSDK::Models::CRM::PropertyValue::data_sensitivity,
+          data_sensitivity: HubspotSDK::Models::Crm::PropertyValue::data_sensitivity,
           is_encrypted: bool,
           is_large_value: bool,
           name: String,
@@ -11,7 +11,7 @@ module HubspotSDK
           request_id: String,
           selected_by_user: bool,
           selected_by_user_timestamp: Integer,
-          source: HubspotSDK::Models::CRM::PropertyValue::source,
+          source: HubspotSDK::Models::Crm::PropertyValue::source,
           source_id: String,
           source_label: String,
           source_metadata: String,
@@ -24,7 +24,7 @@ module HubspotSDK
         }
 
       class PropertyValue < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor data_sensitivity: HubspotSDK::Models::CRM::PropertyValue::data_sensitivity
+        attr_accessor data_sensitivity: HubspotSDK::Models::Crm::PropertyValue::data_sensitivity
 
         attr_accessor is_encrypted: bool
 
@@ -40,7 +40,7 @@ module HubspotSDK
 
         attr_accessor selected_by_user_timestamp: Integer
 
-        attr_accessor source: HubspotSDK::Models::CRM::PropertyValue::source
+        attr_accessor source: HubspotSDK::Models::Crm::PropertyValue::source
 
         attr_accessor source_id: String
 
@@ -61,7 +61,7 @@ module HubspotSDK
         attr_accessor value: String
 
         def initialize: (
-          data_sensitivity: HubspotSDK::Models::CRM::PropertyValue::data_sensitivity,
+          data_sensitivity: HubspotSDK::Models::Crm::PropertyValue::data_sensitivity,
           is_encrypted: bool,
           is_large_value: bool,
           name: String,
@@ -69,7 +69,7 @@ module HubspotSDK
           request_id: String,
           selected_by_user: bool,
           selected_by_user_timestamp: Integer,
-          source: HubspotSDK::Models::CRM::PropertyValue::source,
+          source: HubspotSDK::Models::Crm::PropertyValue::source,
           source_id: String,
           source_label: String,
           source_metadata: String,
@@ -82,7 +82,7 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
-          data_sensitivity: HubspotSDK::Models::CRM::PropertyValue::data_sensitivity,
+          data_sensitivity: HubspotSDK::Models::Crm::PropertyValue::data_sensitivity,
           is_encrypted: bool,
           is_large_value: bool,
           name: String,
@@ -90,7 +90,7 @@ module HubspotSDK
           request_id: String,
           selected_by_user: bool,
           selected_by_user_timestamp: Integer,
-          source: HubspotSDK::Models::CRM::PropertyValue::source,
+          source: HubspotSDK::Models::Crm::PropertyValue::source,
           source_id: String,
           source_label: String,
           source_metadata: String,
@@ -111,7 +111,7 @@ module HubspotSDK
           STANDARD: :standard
           HIGH: :high
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PropertyValue::data_sensitivity]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PropertyValue::data_sensitivity]
         end
 
         type source =
@@ -302,7 +302,7 @@ module HubspotSDK
           INTENT: :INTENT
           PROSPECTING_AGENT: :PROSPECTING_AGENT
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PropertyValue::source]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PropertyValue::source]
         end
       end
     end

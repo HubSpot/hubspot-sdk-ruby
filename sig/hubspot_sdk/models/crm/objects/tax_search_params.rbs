@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type tax_search_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class TaxSearchParams < HubspotSDK::Models::CRM::PublicObjectSearchRequest
+        class TaxSearchParams < HubspotSDK::Models::Crm::PublicObjectSearchRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Timeline
-        class TemplateUpdateParams < HubspotSDK::Models::CRM::TimelineEventTemplateUpdateRequest
+        class TemplateUpdateParams < HubspotSDK::Models::Crm::TimelineEventTemplateUpdateRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Timeline::TemplateUpdateParams,
+                HubspotSDK::Crm::Timeline::TemplateUpdateParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

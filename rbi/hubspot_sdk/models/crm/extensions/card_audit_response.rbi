@@ -2,20 +2,20 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class CardAuditResponse < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::CardAuditResponse,
+                HubspotSDK::Crm::Extensions::CardAuditResponse,
                 HubspotSDK::Internal::AnyHash
               )
             end
 
           sig do
             returns(
-              HubspotSDK::CRM::Extensions::CardAuditResponse::ActionType::TaggedSymbol
+              HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol
             )
           end
           attr_accessor :action_type
@@ -25,7 +25,7 @@ module HubspotSDK
 
           sig do
             returns(
-              HubspotSDK::CRM::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
+              HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
             )
           end
           attr_accessor :auth_source
@@ -42,10 +42,10 @@ module HubspotSDK
           sig do
             params(
               action_type:
-                HubspotSDK::CRM::Extensions::CardAuditResponse::ActionType::OrSymbol,
+                HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType::OrSymbol,
               application_id: Integer,
               auth_source:
-                HubspotSDK::CRM::Extensions::CardAuditResponse::AuthSource::OrSymbol,
+                HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource::OrSymbol,
               changed_at: Integer,
               initiating_user_id: Integer,
               object_type_id: Integer
@@ -65,10 +65,10 @@ module HubspotSDK
             override.returns(
               {
                 action_type:
-                  HubspotSDK::CRM::Extensions::CardAuditResponse::ActionType::TaggedSymbol,
+                  HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol,
                 application_id: Integer,
                 auth_source:
-                  HubspotSDK::CRM::Extensions::CardAuditResponse::AuthSource::TaggedSymbol,
+                  HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol,
                 changed_at: Integer,
                 initiating_user_id: Integer,
                 object_type_id: Integer
@@ -85,7 +85,7 @@ module HubspotSDK
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::CRM::Extensions::CardAuditResponse::ActionType
+                  HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -93,23 +93,23 @@ module HubspotSDK
             CREATE =
               T.let(
                 :CREATE,
-                HubspotSDK::CRM::Extensions::CardAuditResponse::ActionType::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol
               )
             UPDATE =
               T.let(
                 :UPDATE,
-                HubspotSDK::CRM::Extensions::CardAuditResponse::ActionType::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol
               )
             DELETE =
               T.let(
                 :DELETE,
-                HubspotSDK::CRM::Extensions::CardAuditResponse::ActionType::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::CRM::Extensions::CardAuditResponse::ActionType::TaggedSymbol
+                  HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol
                 ]
               )
             end
@@ -124,7 +124,7 @@ module HubspotSDK
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::CRM::Extensions::CardAuditResponse::AuthSource
+                  HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -132,23 +132,23 @@ module HubspotSDK
             INTERNAL =
               T.let(
                 :INTERNAL,
-                HubspotSDK::CRM::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
               )
             APP =
               T.let(
                 :APP,
-                HubspotSDK::CRM::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
               )
             EXTERNAL =
               T.let(
                 :EXTERNAL,
-                HubspotSDK::CRM::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::CRM::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
+                  HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
                 ]
               )
             end

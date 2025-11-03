@@ -1,14 +1,14 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type collection_response_simple_public_object_with_associations =
         {
-          results: ::Array[HubspotSDK::CRM::SimplePublicObjectWithAssociations],
+          results: ::Array[HubspotSDK::Crm::SimplePublicObjectWithAssociations],
           paging: HubspotSDK::Marketing::Paging
         }
 
       class CollectionResponseSimplePublicObjectWithAssociations < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::CRM::SimplePublicObjectWithAssociations]
+        attr_accessor results: ::Array[HubspotSDK::Crm::SimplePublicObjectWithAssociations]
 
         attr_reader paging: HubspotSDK::Marketing::Paging?
 
@@ -17,12 +17,12 @@ module HubspotSDK
         ) -> HubspotSDK::Marketing::Paging
 
         def initialize: (
-          results: ::Array[HubspotSDK::CRM::SimplePublicObjectWithAssociations],
+          results: ::Array[HubspotSDK::Crm::SimplePublicObjectWithAssociations],
           ?paging: HubspotSDK::Marketing::Paging
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubspotSDK::CRM::SimplePublicObjectWithAssociations],
+          results: ::Array[HubspotSDK::Crm::SimplePublicObjectWithAssociations],
           paging: HubspotSDK::Marketing::Paging
         }
       end

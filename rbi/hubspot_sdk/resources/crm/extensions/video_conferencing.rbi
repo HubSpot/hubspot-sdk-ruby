@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Extensions
         class VideoConferencing
           sig do
             returns(
-              HubspotSDK::Resources::CRM::Extensions::VideoConferencing::Settings
+              HubspotSDK::Resources::Crm::Extensions::VideoConferencing::Settings
             )
           end
           attr_reader :settings

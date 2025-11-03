@@ -2,14 +2,14 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicExportListRequest < HubspotSDK::Internal::Type::BaseModel
         # @!attribute export_internal_values_options
         #
-        #   @return [Array<Symbol, HubspotSDK::Models::CRM::PublicExportListRequest::ExportInternalValuesOption>]
+        #   @return [Array<Symbol, HubspotSDK::Models::Crm::PublicExportListRequest::ExportInternalValuesOption>]
         required :export_internal_values_options,
                  -> {
-                   HubspotSDK::Internal::Type::ArrayOf[enum: HubspotSDK::CRM::PublicExportListRequest::ExportInternalValuesOption]
+                   HubspotSDK::Internal::Type::ArrayOf[enum: HubspotSDK::Crm::PublicExportListRequest::ExportInternalValuesOption]
                  },
                  api_name: :exportInternalValuesOptions
 
@@ -20,20 +20,20 @@ module HubspotSDK
 
         # @!attribute export_type
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PublicExportListRequest::ExportType]
+        #   @return [Symbol, HubspotSDK::Models::Crm::PublicExportListRequest::ExportType]
         required :export_type,
-                 enum: -> { HubspotSDK::CRM::PublicExportListRequest::ExportType },
+                 enum: -> { HubspotSDK::Crm::PublicExportListRequest::ExportType },
                  api_name: :exportType
 
         # @!attribute format_
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PublicExportListRequest::Format]
-        required :format_, enum: -> { HubspotSDK::CRM::PublicExportListRequest::Format }, api_name: :format
+        #   @return [Symbol, HubspotSDK::Models::Crm::PublicExportListRequest::Format]
+        required :format_, enum: -> { HubspotSDK::Crm::PublicExportListRequest::Format }, api_name: :format
 
         # @!attribute language
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PublicExportListRequest::Language]
-        required :language, enum: -> { HubspotSDK::CRM::PublicExportListRequest::Language }
+        #   @return [Symbol, HubspotSDK::Models::Crm::PublicExportListRequest::Language]
+        required :language, enum: -> { HubspotSDK::Crm::PublicExportListRequest::Language }
 
         # @!attribute list_id
         #
@@ -63,11 +63,11 @@ module HubspotSDK
         optional :associated_object_type, String, api_name: :associatedObjectType
 
         # @!method initialize(export_internal_values_options:, export_name:, export_type:, format_:, language:, list_id:, object_properties:, object_type:, override_associated_objects_per_definition_per_row_limit:, associated_object_type: nil)
-        #   @param export_internal_values_options [Array<Symbol, HubspotSDK::Models::CRM::PublicExportListRequest::ExportInternalValuesOption>]
+        #   @param export_internal_values_options [Array<Symbol, HubspotSDK::Models::Crm::PublicExportListRequest::ExportInternalValuesOption>]
         #   @param export_name [String]
-        #   @param export_type [Symbol, HubspotSDK::Models::CRM::PublicExportListRequest::ExportType]
-        #   @param format_ [Symbol, HubspotSDK::Models::CRM::PublicExportListRequest::Format]
-        #   @param language [Symbol, HubspotSDK::Models::CRM::PublicExportListRequest::Language]
+        #   @param export_type [Symbol, HubspotSDK::Models::Crm::PublicExportListRequest::ExportType]
+        #   @param format_ [Symbol, HubspotSDK::Models::Crm::PublicExportListRequest::Format]
+        #   @param language [Symbol, HubspotSDK::Models::Crm::PublicExportListRequest::Language]
         #   @param list_id [String]
         #   @param object_properties [Array<String>]
         #   @param object_type [String]
@@ -84,7 +84,7 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::CRM::PublicExportListRequest#export_type
+        # @see HubspotSDK::Models::Crm::PublicExportListRequest#export_type
         module ExportType
           extend HubspotSDK::Internal::Type::Enum
 
@@ -94,7 +94,7 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::CRM::PublicExportListRequest#format_
+        # @see HubspotSDK::Models::Crm::PublicExportListRequest#format_
         module Format
           extend HubspotSDK::Internal::Type::Enum
 
@@ -106,7 +106,7 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::CRM::PublicExportListRequest#language
+        # @see HubspotSDK::Models::Crm::PublicExportListRequest#language
         module Language
           extend HubspotSDK::Internal::Type::Enum
 

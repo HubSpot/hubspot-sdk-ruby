@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type contact_delete_params =
           {  } & HubspotSDK::Internal::Type::request_parameters

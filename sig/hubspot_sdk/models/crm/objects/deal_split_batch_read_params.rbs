@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type deal_split_batch_read_params =
           {  } & HubspotSDK::Internal::Type::request_parameters

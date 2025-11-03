@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ListFolderCreateRequest < HubspotSDK::Internal::Type::BaseModel
         # @!attribute name
         #   The name of the folder to be created.
@@ -19,7 +19,7 @@ module HubspotSDK
 
         # @!method initialize(name:, parent_folder_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::ListFolderCreateRequest} for more details.
+        #   {HubspotSDK::Models::Crm::ListFolderCreateRequest} for more details.
         #
         #   @param name [String] The name of the folder to be created.
         #

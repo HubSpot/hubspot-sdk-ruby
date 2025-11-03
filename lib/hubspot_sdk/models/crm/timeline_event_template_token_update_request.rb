@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class TimelineEventTemplateTokenUpdateRequest < HubspotSDK::Internal::Type::BaseModel
         # @!attribute label
         #   Used for list segmentation and reporting.
@@ -21,13 +21,13 @@ module HubspotSDK
         # @!attribute options
         #   If type is `enumeration`, we should have a list of options to choose from.
         #
-        #   @return [Array<HubspotSDK::Models::CRM::TimelineEventTemplateTokenOption>, nil]
+        #   @return [Array<HubspotSDK::Models::Crm::TimelineEventTemplateTokenOption>, nil]
         optional :options,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::TimelineEventTemplateTokenOption] }
+                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::TimelineEventTemplateTokenOption] }
 
         # @!method initialize(label:, object_property_name: nil, options: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::TimelineEventTemplateTokenUpdateRequest} for more
+        #   {HubspotSDK::Models::Crm::TimelineEventTemplateTokenUpdateRequest} for more
         #   details.
         #
         #   State of the token definition for update requests.
@@ -36,7 +36,7 @@ module HubspotSDK
         #
         #   @param object_property_name [String] The name of the CRM object property. This will populate the CRM object property
         #
-        #   @param options [Array<HubspotSDK::Models::CRM::TimelineEventTemplateTokenOption>] If type is `enumeration`, we should have a list of options to choose from.
+        #   @param options [Array<HubspotSDK::Models::Crm::TimelineEventTemplateTokenOption>] If type is `enumeration`, we should have a list of options to choose from.
       end
     end
   end

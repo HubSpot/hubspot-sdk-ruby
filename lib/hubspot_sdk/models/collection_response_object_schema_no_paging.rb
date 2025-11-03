@@ -5,11 +5,11 @@ module HubspotSDK
     class CollectionResponseObjectSchemaNoPaging < HubspotSDK::Internal::Type::BaseModel
       # @!attribute results
       #
-      #   @return [Array<HubspotSDK::Models::CRM::Objects::ObjectSchema>]
-      required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Objects::ObjectSchema] }
+      #   @return [Array<HubspotSDK::Models::Crm::Objects::ObjectSchema>]
+      required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Objects::ObjectSchema] }
 
       # @!method initialize(results:)
-      #   @param results [Array<HubspotSDK::Models::CRM::Objects::ObjectSchema>]
+      #   @param results [Array<HubspotSDK::Models::Crm::Objects::ObjectSchema>]
     end
   end
 end

@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicObjectList < HubspotSDK::Internal::Type::BaseModel
         # @!attribute list_id
         #   The **ILS ID** of the list.
@@ -62,7 +62,7 @@ module HubspotSDK
         #
         #   @return [HubspotSDK::Models::PublicOrFilterBranch, HubspotSDK::Models::PublicAndFilterBranch, HubspotSDK::Models::PublicNotAllFilterBranch, HubspotSDK::Models::PublicNotAnyFilterBranch, HubspotSDK::Models::PublicRestrictedFilterBranch, HubspotSDK::Models::PublicUnifiedEventsFilterBranch, HubspotSDK::Models::PublicPropertyAssociationFilterBranch, HubspotSDK::Models::PublicAssociationFilterBranch, nil]
         optional :filter_branch,
-                 union: -> { HubspotSDK::CRM::PublicObjectList::FilterBranch },
+                 union: -> { HubspotSDK::Crm::PublicObjectList::FilterBranch },
                  api_name: :filterBranch
 
         # @!attribute filters_updated_at
@@ -73,14 +73,14 @@ module HubspotSDK
 
         # @!attribute list_permissions
         #
-        #   @return [HubspotSDK::Models::CRM::PublicListPermissions, nil]
-        optional :list_permissions, -> { HubspotSDK::CRM::PublicListPermissions }, api_name: :listPermissions
+        #   @return [HubspotSDK::Models::Crm::PublicListPermissions, nil]
+        optional :list_permissions, -> { HubspotSDK::Crm::PublicListPermissions }, api_name: :listPermissions
 
         # @!attribute membership_settings
         #
-        #   @return [HubspotSDK::Models::CRM::PublicMembershipSettings, nil]
+        #   @return [HubspotSDK::Models::Crm::PublicMembershipSettings, nil]
         optional :membership_settings,
-                 -> { HubspotSDK::CRM::PublicMembershipSettings },
+                 -> { HubspotSDK::Crm::PublicMembershipSettings },
                  api_name: :membershipSettings
 
         # @!attribute size
@@ -126,9 +126,9 @@ module HubspotSDK
         #
         #   @param filters_updated_at [Time] The time when the filters for this list were last updated.
         #
-        #   @param list_permissions [HubspotSDK::Models::CRM::PublicListPermissions]
+        #   @param list_permissions [HubspotSDK::Models::Crm::PublicListPermissions]
         #
-        #   @param membership_settings [HubspotSDK::Models::CRM::PublicMembershipSettings]
+        #   @param membership_settings [HubspotSDK::Models::Crm::PublicMembershipSettings]
         #
         #   @param size [Integer] Size of the list
         #
@@ -136,7 +136,7 @@ module HubspotSDK
         #
         #   @param updated_by_id [String] The ID of the user that last updated the list.
 
-        # @see HubspotSDK::Models::CRM::PublicObjectList#filter_branch
+        # @see HubspotSDK::Models::Crm::PublicObjectList#filter_branch
         module FilterBranch
           extend HubspotSDK::Internal::Type::Union
 

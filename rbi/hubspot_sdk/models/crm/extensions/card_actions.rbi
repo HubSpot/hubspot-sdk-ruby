@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class CardActions < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::CardActions,
+                HubspotSDK::Crm::Extensions::CardActions,
                 HubspotSDK::Internal::AnyHash
               )
             end

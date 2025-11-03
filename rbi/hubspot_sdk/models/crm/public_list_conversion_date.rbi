@@ -2,19 +2,19 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicListConversionDate < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PublicListConversionDate,
+              HubspotSDK::Crm::PublicListConversionDate,
               HubspotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::CRM::PublicListConversionDate::ConversionType::OrSymbol
+            HubspotSDK::Crm::PublicListConversionDate::ConversionType::OrSymbol
           )
         end
         attr_accessor :conversion_type
@@ -31,7 +31,7 @@ module HubspotSDK
         sig do
           params(
             conversion_type:
-              HubspotSDK::CRM::PublicListConversionDate::ConversionType::OrSymbol,
+              HubspotSDK::Crm::PublicListConversionDate::ConversionType::OrSymbol,
             day: Integer,
             month: Integer,
             year: Integer
@@ -44,7 +44,7 @@ module HubspotSDK
           override.returns(
             {
               conversion_type:
-                HubspotSDK::CRM::PublicListConversionDate::ConversionType::OrSymbol,
+                HubspotSDK::Crm::PublicListConversionDate::ConversionType::OrSymbol,
               day: Integer,
               month: Integer,
               year: Integer
@@ -61,7 +61,7 @@ module HubspotSDK
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CRM::PublicListConversionDate::ConversionType
+                HubspotSDK::Crm::PublicListConversionDate::ConversionType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -69,13 +69,13 @@ module HubspotSDK
           CONVERSION_DATE =
             T.let(
               :CONVERSION_DATE,
-              HubspotSDK::CRM::PublicListConversionDate::ConversionType::TaggedSymbol
+              HubspotSDK::Crm::PublicListConversionDate::ConversionType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::PublicListConversionDate::ConversionType::TaggedSymbol
+                HubspotSDK::Crm::PublicListConversionDate::ConversionType::TaggedSymbol
               ]
             )
           end

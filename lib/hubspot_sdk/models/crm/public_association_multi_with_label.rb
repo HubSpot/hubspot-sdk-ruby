@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicAssociationMultiWithLabel < HubspotSDK::Internal::Type::BaseModel
         # @!attribute from
         #
@@ -11,8 +11,8 @@ module HubspotSDK
 
         # @!attribute to
         #
-        #   @return [Array<HubspotSDK::Models::CRM::MultiAssociatedObjectWithLabel>]
-        required :to, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::MultiAssociatedObjectWithLabel] }
+        #   @return [Array<HubspotSDK::Models::Crm::MultiAssociatedObjectWithLabel>]
+        required :to, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::MultiAssociatedObjectWithLabel] }
 
         # @!attribute paging
         #   Contains information pagination of results.
@@ -23,7 +23,7 @@ module HubspotSDK
         # @!method initialize(from:, to:, paging: nil)
         #   @param from [HubspotSDK::Models::PublicObjectID]
         #
-        #   @param to [Array<HubspotSDK::Models::CRM::MultiAssociatedObjectWithLabel>]
+        #   @param to [Array<HubspotSDK::Models::Crm::MultiAssociatedObjectWithLabel>]
         #
         #   @param paging [HubspotSDK::Models::Marketing::Paging] Contains information pagination of results.
       end

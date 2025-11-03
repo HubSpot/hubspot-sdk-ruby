@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module Calling
-          # @see HubspotSDK::Resources::CRM::Extensions::Calling::Transcripts#get
+          # @see HubspotSDK::Resources::Crm::Extensions::Calling::Transcripts#get
           class TranscriptResponse < HubspotSDK::Internal::Type::BaseModel
             # @!attribute id
             #
@@ -24,17 +24,17 @@ module HubspotSDK
 
             # @!attribute transcript_source
             #
-            #   @return [Symbol, HubspotSDK::Models::CRM::Extensions::Calling::TranscriptResponse::TranscriptSource]
+            #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource]
             required :transcript_source,
-                     enum: -> { HubspotSDK::CRM::Extensions::Calling::TranscriptResponse::TranscriptSource },
+                     enum: -> { HubspotSDK::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource },
                      api_name: :transcriptSource
 
             # @!attribute transcript_utterances
             #
-            #   @return [Array<HubspotSDK::Models::CRM::Extensions::Calling::TranscriptUtterance>]
+            #   @return [Array<HubspotSDK::Models::Crm::Extensions::Calling::TranscriptUtterance>]
             required :transcript_utterances,
                      -> {
-                       HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Extensions::Calling::TranscriptUtterance]
+                       HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Extensions::Calling::TranscriptUtterance]
                      },
                      api_name: :transcriptUtterances
 
@@ -47,11 +47,11 @@ module HubspotSDK
             #   @param id [String]
             #   @param created_at [Time]
             #   @param engagement_id [Integer]
-            #   @param transcript_source [Symbol, HubspotSDK::Models::CRM::Extensions::Calling::TranscriptResponse::TranscriptSource]
-            #   @param transcript_utterances [Array<HubspotSDK::Models::CRM::Extensions::Calling::TranscriptUtterance>]
+            #   @param transcript_source [Symbol, HubspotSDK::Models::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource]
+            #   @param transcript_utterances [Array<HubspotSDK::Models::Crm::Extensions::Calling::TranscriptUtterance>]
             #   @param updated_at [Time]
 
-            # @see HubspotSDK::Models::CRM::Extensions::Calling::TranscriptResponse#transcript_source
+            # @see HubspotSDK::Models::Crm::Extensions::Calling::TranscriptResponse#transcript_source
             module TranscriptSource
               extend HubspotSDK::Internal::Type::Enum
 

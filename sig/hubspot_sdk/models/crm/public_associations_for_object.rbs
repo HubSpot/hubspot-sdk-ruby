@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type public_associations_for_object =
         {
           to: HubspotSDK::PublicObjectID,

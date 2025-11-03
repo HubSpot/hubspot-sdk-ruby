@@ -1,10 +1,10 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class FeatureFlags
-        attr_reader apps: HubspotSDK::Resources::CRM::FeatureFlags::Apps
+        attr_reader apps: HubspotSDK::Resources::Crm::FeatureFlags::Apps
 
-        attr_reader portals: HubspotSDK::Resources::CRM::FeatureFlags::Portals
+        attr_reader portals: HubspotSDK::Resources::Crm::FeatureFlags::Portals
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

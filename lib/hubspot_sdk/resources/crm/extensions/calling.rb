@@ -2,19 +2,19 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Extensions
         class Calling
-          # @return [HubspotSDK::Resources::CRM::Extensions::Calling::ChannelConnectionSettings]
+          # @return [HubspotSDK::Resources::Crm::Extensions::Calling::ChannelConnectionSettings]
           attr_reader :channel_connection_settings
 
-          # @return [HubspotSDK::Resources::CRM::Extensions::Calling::RecordingSettings]
+          # @return [HubspotSDK::Resources::Crm::Extensions::Calling::RecordingSettings]
           attr_reader :recording_settings
 
-          # @return [HubspotSDK::Resources::CRM::Extensions::Calling::Settings]
+          # @return [HubspotSDK::Resources::Crm::Extensions::Calling::Settings]
           attr_reader :settings
 
-          # @return [HubspotSDK::Resources::CRM::Extensions::Calling::Transcripts]
+          # @return [HubspotSDK::Resources::Crm::Extensions::Calling::Transcripts]
           attr_reader :transcripts
 
           # @api private
@@ -23,11 +23,11 @@ module HubspotSDK
           def initialize(client:)
             @client = client
             @channel_connection_settings =
-              HubspotSDK::Resources::CRM::Extensions::Calling::ChannelConnectionSettings.new(client: client)
+              HubspotSDK::Resources::Crm::Extensions::Calling::ChannelConnectionSettings.new(client: client)
             @recording_settings =
-              HubspotSDK::Resources::CRM::Extensions::Calling::RecordingSettings.new(client: client)
-            @settings = HubspotSDK::Resources::CRM::Extensions::Calling::Settings.new(client: client)
-            @transcripts = HubspotSDK::Resources::CRM::Extensions::Calling::Transcripts.new(client: client)
+              HubspotSDK::Resources::Crm::Extensions::Calling::RecordingSettings.new(client: client)
+            @settings = HubspotSDK::Resources::Crm::Extensions::Calling::Settings.new(client: client)
+            @transcripts = HubspotSDK::Resources::Crm::Extensions::Calling::Transcripts.new(client: client)
           end
         end
       end

@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type limit_get_calculated_property_limits_params =
         {  } & HubspotSDK::Internal::Type::request_parameters
 

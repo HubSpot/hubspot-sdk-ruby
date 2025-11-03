@@ -2,19 +2,19 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Lists
-        # @return [HubspotSDK::Resources::CRM::Lists::Folders]
+        # @return [HubspotSDK::Resources::Crm::Lists::Folders]
         attr_reader :folders
 
-        # @return [HubspotSDK::Resources::CRM::Lists::Mapping]
+        # @return [HubspotSDK::Resources::Crm::Lists::Mapping]
         attr_reader :mapping
 
-        # @return [HubspotSDK::Resources::CRM::Lists::Memberships]
+        # @return [HubspotSDK::Resources::Crm::Lists::Memberships]
         attr_reader :memberships
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::CRM::ListCreateParams} for more details.
+        # {HubspotSDK::Models::Crm::ListCreateParams} for more details.
         #
         # Create a new list with the provided object list definition.
         #
@@ -32,28 +32,28 @@ module HubspotSDK
         #
         # @param list_folder_id [Integer] The ID of the folder that the list should be created in. If left blank, then the
         #
-        # @param list_permissions [HubspotSDK::Models::CRM::PublicListPermissions]
+        # @param list_permissions [HubspotSDK::Models::Crm::PublicListPermissions]
         #
-        # @param membership_settings [HubspotSDK::Models::CRM::PublicMembershipSettings]
+        # @param membership_settings [HubspotSDK::Models::Crm::PublicMembershipSettings]
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CRM::ListCreateResponse]
+        # @return [HubspotSDK::Models::Crm::ListCreateResponse]
         #
-        # @see HubspotSDK::Models::CRM::ListCreateParams
+        # @see HubspotSDK::Models::Crm::ListCreateParams
         def create(params)
-          parsed, options = HubspotSDK::CRM::ListCreateParams.dump_request(params)
+          parsed, options = HubspotSDK::Crm::ListCreateParams.dump_request(params)
           @client.request(
             method: :post,
             path: "crm/v3/lists/",
             body: parsed,
-            model: HubspotSDK::CRM::ListCreateResponse,
+            model: HubspotSDK::Crm::ListCreateResponse,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::CRM::ListListParams} for more details.
+        # {HubspotSDK::Models::Crm::ListListParams} for more details.
         #
         # Fetch multiple lists in a single request by **ILS list ID**. The response will
         # include the definitions of all lists that exist for the `listIds` provided.
@@ -66,16 +66,16 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CRM::ListsByIDResponse]
+        # @return [HubspotSDK::Models::Crm::ListsByIDResponse]
         #
-        # @see HubspotSDK::Models::CRM::ListListParams
+        # @see HubspotSDK::Models::Crm::ListListParams
         def list(params = {})
-          parsed, options = HubspotSDK::CRM::ListListParams.dump_request(params)
+          parsed, options = HubspotSDK::Crm::ListListParams.dump_request(params)
           @client.request(
             method: :get,
             path: "crm/v3/lists/",
             query: parsed.transform_keys(include_filters: "includeFilters", list_ids: "listIds"),
-            model: HubspotSDK::CRM::ListsByIDResponse,
+            model: HubspotSDK::Crm::ListsByIDResponse,
             options: options
           )
         end
@@ -92,7 +92,7 @@ module HubspotSDK
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::CRM::ListDeleteParams
+        # @see HubspotSDK::Models::Crm::ListDeleteParams
         def delete(list_id, params = {})
           @client.request(
             method: :delete,
@@ -112,7 +112,7 @@ module HubspotSDK
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::CRM::ListDeleteScheduleConversionParams
+        # @see HubspotSDK::Models::Crm::ListDeleteScheduleConversionParams
         def delete_schedule_conversion(list_id, params = {})
           @client.request(
             method: :delete,
@@ -123,7 +123,7 @@ module HubspotSDK
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::CRM::ListGetParams} for more details.
+        # {HubspotSDK::Models::Crm::ListGetParams} for more details.
         #
         # Fetch a single list by **ILS list ID**.
         #
@@ -135,22 +135,22 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CRM::ListFetchResponse]
+        # @return [HubspotSDK::Models::Crm::ListFetchResponse]
         #
-        # @see HubspotSDK::Models::CRM::ListGetParams
+        # @see HubspotSDK::Models::Crm::ListGetParams
         def get(list_id, params = {})
-          parsed, options = HubspotSDK::CRM::ListGetParams.dump_request(params)
+          parsed, options = HubspotSDK::Crm::ListGetParams.dump_request(params)
           @client.request(
             method: :get,
             path: ["crm/v3/lists/%1$s", list_id],
             query: parsed.transform_keys(include_filters: "includeFilters"),
-            model: HubspotSDK::CRM::ListFetchResponse,
+            model: HubspotSDK::Crm::ListFetchResponse,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::CRM::ListGetByObjectTypeIDAndNameParams} for more details.
+        # {HubspotSDK::Models::Crm::ListGetByObjectTypeIDAndNameParams} for more details.
         #
         # Fetch a single list by list name and object type.
         #
@@ -164,11 +164,11 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CRM::ListFetchResponse]
+        # @return [HubspotSDK::Models::Crm::ListFetchResponse]
         #
-        # @see HubspotSDK::Models::CRM::ListGetByObjectTypeIDAndNameParams
+        # @see HubspotSDK::Models::Crm::ListGetByObjectTypeIDAndNameParams
         def get_by_object_type_id_and_name(list_name, params)
-          parsed, options = HubspotSDK::CRM::ListGetByObjectTypeIDAndNameParams.dump_request(params)
+          parsed, options = HubspotSDK::Crm::ListGetByObjectTypeIDAndNameParams.dump_request(params)
           object_type_id =
             parsed.delete(:object_type_id) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -177,7 +177,7 @@ module HubspotSDK
             method: :get,
             path: ["crm/v3/lists/object-type-id/%1$s/name/%2$s", object_type_id, list_name],
             query: parsed.transform_keys(include_filters: "includeFilters"),
-            model: HubspotSDK::CRM::ListFetchResponse,
+            model: HubspotSDK::Crm::ListFetchResponse,
             options: options
           )
         end
@@ -191,14 +191,14 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CRM::PublicListConversionResponse]
+        # @return [HubspotSDK::Models::Crm::PublicListConversionResponse]
         #
-        # @see HubspotSDK::Models::CRM::ListGetScheduleConversionParams
+        # @see HubspotSDK::Models::Crm::ListGetScheduleConversionParams
         def get_schedule_conversion(list_id, params = {})
           @client.request(
             method: :get,
             path: ["crm/v3/lists/%1$s/schedule-conversion", list_id],
-            model: HubspotSDK::CRM::PublicListConversionResponse,
+            model: HubspotSDK::Crm::PublicListConversionResponse,
             options: params[:request_options]
           )
         end
@@ -214,7 +214,7 @@ module HubspotSDK
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::CRM::ListRestoreParams
+        # @see HubspotSDK::Models::Crm::ListRestoreParams
         def restore(list_id, params = {})
           @client.request(
             method: :put,
@@ -232,15 +232,15 @@ module HubspotSDK
         #
         # @param list_id [String] The ID of the list to schedule the conversion for.
         #
-        # @param public_list_conversion_time [HubspotSDK::CRM::PublicListConversionTime]
+        # @param public_list_conversion_time [HubspotSDK::Crm::PublicListConversionTime]
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CRM::PublicListConversionResponse]
+        # @return [HubspotSDK::Models::Crm::PublicListConversionResponse]
         #
-        # @see HubspotSDK::Models::CRM::ListScheduleConversionParams
+        # @see HubspotSDK::Models::Crm::ListScheduleConversionParams
         def schedule_conversion(list_id, params)
-          parsed, options = HubspotSDK::CRM::ListScheduleConversionParams.dump_request(params)
+          parsed, options = HubspotSDK::Crm::ListScheduleConversionParams.dump_request(params)
           case parsed
           in {public_list_conversion_time: Hash => union, **rest}
             parsed = {**rest, **union}
@@ -250,13 +250,13 @@ module HubspotSDK
             method: :put,
             path: ["crm/v3/lists/%1$s/schedule-conversion", list_id],
             body: parsed,
-            model: HubspotSDK::CRM::PublicListConversionResponse,
+            model: HubspotSDK::Crm::PublicListConversionResponse,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::CRM::ListSearchParams} for more details.
+        # {HubspotSDK::Models::Crm::ListSearchParams} for more details.
         #
         # Search lists by list name or page through all lists by providing an empty
         # `query` value.
@@ -279,22 +279,22 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CRM::ListSearchResponse]
+        # @return [HubspotSDK::Models::Crm::ListSearchResponse]
         #
-        # @see HubspotSDK::Models::CRM::ListSearchParams
+        # @see HubspotSDK::Models::Crm::ListSearchParams
         def search(params = {})
-          parsed, options = HubspotSDK::CRM::ListSearchParams.dump_request(params)
+          parsed, options = HubspotSDK::Crm::ListSearchParams.dump_request(params)
           @client.request(
             method: :post,
             path: "crm/v3/lists/search",
             body: parsed,
-            model: HubspotSDK::CRM::ListSearchResponse,
+            model: HubspotSDK::Crm::ListSearchResponse,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::CRM::ListUpdateFiltersParams} for more details.
+        # {HubspotSDK::Models::Crm::ListUpdateFiltersParams} for more details.
         #
         # Update the filter branch definition of a `DYNAMIC` list. Once updated, the list
         # memberships will be re-evaluated and updated to match the new definition.
@@ -309,24 +309,24 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CRM::ListUpdateResponse]
+        # @return [HubspotSDK::Models::Crm::ListUpdateResponse]
         #
-        # @see HubspotSDK::Models::CRM::ListUpdateFiltersParams
+        # @see HubspotSDK::Models::Crm::ListUpdateFiltersParams
         def update_filters(list_id, params)
-          parsed, options = HubspotSDK::CRM::ListUpdateFiltersParams.dump_request(params)
+          parsed, options = HubspotSDK::Crm::ListUpdateFiltersParams.dump_request(params)
           query_params = [:enroll_objects_in_workflows]
           @client.request(
             method: :put,
             path: ["crm/v3/lists/%1$s/update-list-filters", list_id],
             query: parsed.slice(*query_params).transform_keys(enroll_objects_in_workflows: "enrollObjectsInWorkflows"),
             body: parsed.except(*query_params),
-            model: HubspotSDK::CRM::ListUpdateResponse,
+            model: HubspotSDK::Crm::ListUpdateResponse,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::CRM::ListUpdateNameParams} for more details.
+        # {HubspotSDK::Models::Crm::ListUpdateNameParams} for more details.
         #
         # Update the name of a list. The name must be globally unique relative to all
         # other public lists in the portal.
@@ -341,16 +341,16 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CRM::ListUpdateResponse]
+        # @return [HubspotSDK::Models::Crm::ListUpdateResponse]
         #
-        # @see HubspotSDK::Models::CRM::ListUpdateNameParams
+        # @see HubspotSDK::Models::Crm::ListUpdateNameParams
         def update_name(list_id, params = {})
-          parsed, options = HubspotSDK::CRM::ListUpdateNameParams.dump_request(params)
+          parsed, options = HubspotSDK::Crm::ListUpdateNameParams.dump_request(params)
           @client.request(
             method: :put,
             path: ["crm/v3/lists/%1$s/update-list-name", list_id],
             query: parsed.transform_keys(include_filters: "includeFilters", list_name: "listName"),
-            model: HubspotSDK::CRM::ListUpdateResponse,
+            model: HubspotSDK::Crm::ListUpdateResponse,
             options: options
           )
         end
@@ -360,9 +360,9 @@ module HubspotSDK
         # @param client [HubspotSDK::Client]
         def initialize(client:)
           @client = client
-          @folders = HubspotSDK::Resources::CRM::Lists::Folders.new(client: client)
-          @mapping = HubspotSDK::Resources::CRM::Lists::Mapping.new(client: client)
-          @memberships = HubspotSDK::Resources::CRM::Lists::Memberships.new(client: client)
+          @folders = HubspotSDK::Resources::Crm::Lists::Folders.new(client: client)
+          @mapping = HubspotSDK::Resources::Crm::Lists::Mapping.new(client: client)
+          @memberships = HubspotSDK::Resources::Crm::Lists::Memberships.new(client: client)
         end
       end
     end

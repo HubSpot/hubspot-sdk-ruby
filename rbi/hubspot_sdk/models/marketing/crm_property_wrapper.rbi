@@ -3,11 +3,11 @@
 module HubspotSDK
   module Models
     module Marketing
-      class CRMPropertyWrapper < HubspotSDK::Internal::Type::BaseModel
+      class CrmPropertyWrapper < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::CRMPropertyWrapper,
+              HubspotSDK::Marketing::CrmPropertyWrapper,
               HubspotSDK::Internal::AnyHash
             )
           end

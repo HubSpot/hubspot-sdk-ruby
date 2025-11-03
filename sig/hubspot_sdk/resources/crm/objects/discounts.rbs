@@ -1,22 +1,22 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
         class Discounts
-          attr_reader batch: HubspotSDK::Resources::CRM::Objects::Discounts::Batch
+          attr_reader batch: HubspotSDK::Resources::Crm::Objects::Discounts::Batch
 
           def create: (
             properties: ::Hash[Symbol, String],
-            ?associations: ::Array[HubspotSDK::CRM::PublicAssociationsForObject],
+            ?associations: ::Array[HubspotSDK::Crm::PublicAssociationsForObject],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::CreatedResponseSimplePublicObject
+          ) -> HubspotSDK::Crm::CreatedResponseSimplePublicObject
 
           def update: (
             String discount_id,
             properties: ::Hash[Symbol, String],
             ?id_property: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::SimplePublicObject
+          ) -> HubspotSDK::Crm::SimplePublicObject
 
           def list: (
             ?after: String,
@@ -26,7 +26,7 @@ module HubspotSDK
             ?properties: ::Array[String],
             ?properties_with_history: ::Array[String],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Internal::Page[HubspotSDK::CRM::SimplePublicObjectWithAssociations]
+          ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::SimplePublicObjectWithAssociations]
 
           def delete: (
             String discount_id,
@@ -41,17 +41,17 @@ module HubspotSDK
             ?properties: ::Array[String],
             ?properties_with_history: ::Array[String],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::SimplePublicObjectWithAssociations
+          ) -> HubspotSDK::Crm::SimplePublicObjectWithAssociations
 
           def search: (
             ?after: String,
-            ?filter_groups: ::Array[HubspotSDK::CRM::FilterGroup],
+            ?filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
             ?limit: Integer,
             ?properties: ::Array[String],
             ?query: String,
             ?sorts: ::Array[String],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject
+          ) -> HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

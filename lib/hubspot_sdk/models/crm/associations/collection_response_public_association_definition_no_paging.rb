@@ -2,18 +2,18 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
-        # @see HubspotSDK::Resources::CRM::Associations::Schema#list
+        # @see HubspotSDK::Resources::Crm::Associations::Schema#list
         class CollectionResponsePublicAssociationDefinitionNoPaging < HubspotSDK::Internal::Type::BaseModel
           # @!attribute results
           #
-          #   @return [Array<HubspotSDK::Models::CRM::Associations::PublicAssociationDefinition>]
+          #   @return [Array<HubspotSDK::Models::Crm::Associations::PublicAssociationDefinition>]
           required :results,
-                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Associations::PublicAssociationDefinition] }
+                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Associations::PublicAssociationDefinition] }
 
           # @!method initialize(results:)
-          #   @param results [Array<HubspotSDK::Models::CRM::Associations::PublicAssociationDefinition>]
+          #   @param results [Array<HubspotSDK::Models::Crm::Associations::PublicAssociationDefinition>]
         end
       end
     end

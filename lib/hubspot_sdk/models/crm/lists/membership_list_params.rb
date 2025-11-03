@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Lists
-        # @see HubspotSDK::Resources::CRM::Lists::Memberships#list
+        # @see HubspotSDK::Resources::Crm::Lists::Memberships#list
         class MembershipListParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
@@ -37,7 +37,7 @@ module HubspotSDK
 
           # @!method initialize(after: nil, before: nil, limit: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::CRM::Lists::MembershipListParams} for more details.
+          #   {HubspotSDK::Models::Crm::Lists::MembershipListParams} for more details.
           #
           #   @param after [String] The paging offset token for the page that comes `after` the previously requested
           #

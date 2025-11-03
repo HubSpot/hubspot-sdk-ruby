@@ -1,12 +1,12 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module Calling
           type setting_update_params =
             {  } & HubspotSDK::Internal::Type::request_parameters
 
-          class SettingUpdateParams < HubspotSDK::Models::CRM::Extensions::SettingsPatchRequest
+          class SettingUpdateParams < HubspotSDK::Models::Crm::Extensions::SettingsPatchRequest
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

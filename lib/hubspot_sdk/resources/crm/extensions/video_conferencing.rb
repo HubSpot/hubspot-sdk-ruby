@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Extensions
         class VideoConferencing
-          # @return [HubspotSDK::Resources::CRM::Extensions::VideoConferencing::Settings]
+          # @return [HubspotSDK::Resources::Crm::Extensions::VideoConferencing::Settings]
           attr_reader :settings
 
           # @api private
@@ -13,7 +13,7 @@ module HubspotSDK
           # @param client [HubspotSDK::Client]
           def initialize(client:)
             @client = client
-            @settings = HubspotSDK::Resources::CRM::Extensions::VideoConferencing::Settings.new(client: client)
+            @settings = HubspotSDK::Resources::Crm::Extensions::VideoConferencing::Settings.new(client: client)
           end
         end
       end

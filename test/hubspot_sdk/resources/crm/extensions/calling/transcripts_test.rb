@@ -2,7 +2,7 @@
 
 require_relative "../../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Extensions::Calling::TranscriptsTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Extensions::Calling::TranscriptsTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
@@ -20,7 +20,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::TranscriptsTest < H
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::Extensions::Calling::TranscriptCreateResponse
+      response => HubspotSDK::Crm::Extensions::Calling::TranscriptCreateResponse
     end
 
     assert_pattern do
@@ -46,7 +46,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::TranscriptsTest < H
     response = @hubspot.crm.extensions.calling.transcripts.get("transcriptId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::Extensions::Calling::TranscriptResponse
+      response => HubspotSDK::Crm::Extensions::Calling::TranscriptResponse
     end
 
     assert_pattern do
@@ -54,8 +54,8 @@ class HubspotSDK::Test::Resources::CRM::Extensions::Calling::TranscriptsTest < H
         id: String,
         created_at: Time,
         engagement_id: Integer,
-        transcript_source: HubspotSDK::CRM::Extensions::Calling::TranscriptResponse::TranscriptSource,
-        transcript_utterances: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Extensions::Calling::TranscriptUtterance]),
+        transcript_source: HubspotSDK::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource,
+        transcript_utterances: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Extensions::Calling::TranscriptUtterance]),
         updated_at: Time
       }
     end

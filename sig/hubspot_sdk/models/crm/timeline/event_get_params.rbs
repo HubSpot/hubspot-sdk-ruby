@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Timeline
         type event_get_params =
           { event_template_id: String }

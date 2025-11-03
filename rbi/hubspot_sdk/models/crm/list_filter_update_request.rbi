@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ListFilterUpdateRequest < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::ListFilterUpdateRequest,
+              HubspotSDK::Crm::ListFilterUpdateRequest,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -87,7 +87,7 @@ module HubspotSDK
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::ListFilterUpdateRequest::FilterBranch::Variants
+                HubspotSDK::Crm::ListFilterUpdateRequest::FilterBranch::Variants
               ]
             )
           end

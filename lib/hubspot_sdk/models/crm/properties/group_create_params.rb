@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Properties
-        # @see HubspotSDK::Resources::CRM::Properties::Groups#create
+        # @see HubspotSDK::Resources::Crm::Properties::Groups#create
         class GroupCreateParams < HubspotSDK::Models::PropertyGroupCreate
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters

@@ -2,15 +2,15 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      class ListUpdateFiltersParams < HubspotSDK::Models::CRM::ListFilterUpdateRequest
+    module Crm
+      class ListUpdateFiltersParams < HubspotSDK::Models::Crm::ListFilterUpdateRequest
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::ListUpdateFiltersParams,
+              HubspotSDK::Crm::ListUpdateFiltersParams,
               HubspotSDK::Internal::AnyHash
             )
           end

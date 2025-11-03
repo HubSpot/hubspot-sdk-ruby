@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Associations
         class Batch
           # @overload create(to_object_type, from_object_type:, inputs:, request_options: {})
@@ -11,15 +11,15 @@ module HubspotSDK
           #
           # @param from_object_type [String] Path param:
           #
-          # @param inputs [Array<HubspotSDK::Models::CRM::PublicAssociation>] Body param:
+          # @param inputs [Array<HubspotSDK::Models::Crm::PublicAssociation>] Body param:
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::BatchResponsePublicAssociation]
+          # @return [HubspotSDK::Models::Crm::BatchResponsePublicAssociation]
           #
-          # @see HubspotSDK::Models::CRM::Associations::BatchCreateParams
+          # @see HubspotSDK::Models::Crm::Associations::BatchCreateParams
           def create(to_object_type, params)
-            parsed, options = HubspotSDK::CRM::Associations::BatchCreateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Associations::BatchCreateParams.dump_request(params)
             from_object_type =
               parsed.delete(:from_object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -28,7 +28,7 @@ module HubspotSDK
               method: :post,
               path: ["crm/v3/associations/%1$s/%2$s/batch/create", from_object_type, to_object_type],
               body: parsed,
-              model: HubspotSDK::CRM::BatchResponsePublicAssociation,
+              model: HubspotSDK::Crm::BatchResponsePublicAssociation,
               options: options
             )
           end
@@ -39,15 +39,15 @@ module HubspotSDK
           #
           # @param from_object_type [String] Path param:
           #
-          # @param inputs [Array<HubspotSDK::Models::CRM::PublicAssociation>] Body param:
+          # @param inputs [Array<HubspotSDK::Models::Crm::PublicAssociation>] Body param:
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::CRM::Associations::BatchDeleteParams
+          # @see HubspotSDK::Models::Crm::Associations::BatchDeleteParams
           def delete(to_object_type, params)
-            parsed, options = HubspotSDK::CRM::Associations::BatchDeleteParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Associations::BatchDeleteParams.dump_request(params)
             from_object_type =
               parsed.delete(:from_object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -71,11 +71,11 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::BatchResponsePublicAssociationMulti]
+          # @return [HubspotSDK::Models::Crm::BatchResponsePublicAssociationMulti]
           #
-          # @see HubspotSDK::Models::CRM::Associations::BatchGetParams
+          # @see HubspotSDK::Models::Crm::Associations::BatchGetParams
           def get(to_object_type, params)
-            parsed, options = HubspotSDK::CRM::Associations::BatchGetParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Associations::BatchGetParams.dump_request(params)
             from_object_type =
               parsed.delete(:from_object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -84,7 +84,7 @@ module HubspotSDK
               method: :post,
               path: ["crm/v3/associations/%1$s/%2$s/batch/read", from_object_type, to_object_type],
               body: parsed,
-              model: HubspotSDK::CRM::BatchResponsePublicAssociationMulti,
+              model: HubspotSDK::Crm::BatchResponsePublicAssociationMulti,
               options: options
             )
           end

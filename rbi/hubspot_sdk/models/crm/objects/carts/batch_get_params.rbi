@@ -2,17 +2,17 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         module Carts
-          class BatchGetParams < HubspotSDK::Models::CRM::BatchReadInputSimplePublicObjectID
+          class BatchGetParams < HubspotSDK::Models::Crm::BatchReadInputSimplePublicObjectID
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Objects::Carts::BatchGetParams,
+                  HubspotSDK::Crm::Objects::Carts::BatchGetParams,
                   HubspotSDK::Internal::AnyHash
                 )
               end

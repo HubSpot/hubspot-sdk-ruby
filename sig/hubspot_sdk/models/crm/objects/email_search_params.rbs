@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type email_search_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class EmailSearchParams < HubspotSDK::Models::CRM::PublicObjectSearchRequest
+        class EmailSearchParams < HubspotSDK::Models::Crm::PublicObjectSearchRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

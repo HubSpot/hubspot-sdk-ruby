@@ -2,21 +2,21 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Extensions
-        sig { returns(HubspotSDK::Resources::CRM::Extensions::Calling) }
+        sig { returns(HubspotSDK::Resources::Crm::Extensions::Calling) }
         attr_reader :calling
 
-        sig { returns(HubspotSDK::Resources::CRM::Extensions::Cards) }
+        sig { returns(HubspotSDK::Resources::Crm::Extensions::Cards) }
         attr_reader :cards
 
         sig do
-          returns(HubspotSDK::Resources::CRM::Extensions::VideoConferencing)
+          returns(HubspotSDK::Resources::Crm::Extensions::VideoConferencing)
         end
         attr_reader :video_conferencing
 
         sig do
-          returns(HubspotSDK::Resources::CRM::Extensions::Videoconferencing)
+          returns(HubspotSDK::Resources::Crm::Extensions::Videoconferencing)
         end
         attr_reader :videoconferencing
 

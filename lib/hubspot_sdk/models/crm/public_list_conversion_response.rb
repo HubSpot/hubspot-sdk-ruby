@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Lists#get_schedule_conversion
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Lists#get_schedule_conversion
       class PublicListConversionResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute list_id
         #
@@ -17,26 +17,26 @@ module HubspotSDK
 
         # @!attribute requested_conversion_time
         #
-        #   @return [HubspotSDK::Models::CRM::PublicListConversionDate, HubspotSDK::Models::CRM::PublicListConversionInactivity, nil]
+        #   @return [HubspotSDK::Models::Crm::PublicListConversionDate, HubspotSDK::Models::Crm::PublicListConversionInactivity, nil]
         optional :requested_conversion_time,
-                 union: -> { HubspotSDK::CRM::PublicListConversionResponse::RequestedConversionTime },
+                 union: -> { HubspotSDK::Crm::PublicListConversionResponse::RequestedConversionTime },
                  api_name: :requestedConversionTime
 
         # @!method initialize(list_id:, converted_at: nil, requested_conversion_time: nil)
         #   @param list_id [String]
         #   @param converted_at [Time]
-        #   @param requested_conversion_time [HubspotSDK::Models::CRM::PublicListConversionDate, HubspotSDK::Models::CRM::PublicListConversionInactivity]
+        #   @param requested_conversion_time [HubspotSDK::Models::Crm::PublicListConversionDate, HubspotSDK::Models::Crm::PublicListConversionInactivity]
 
-        # @see HubspotSDK::Models::CRM::PublicListConversionResponse#requested_conversion_time
+        # @see HubspotSDK::Models::Crm::PublicListConversionResponse#requested_conversion_time
         module RequestedConversionTime
           extend HubspotSDK::Internal::Type::Union
 
-          variant -> { HubspotSDK::CRM::PublicListConversionDate }
+          variant -> { HubspotSDK::Crm::PublicListConversionDate }
 
-          variant -> { HubspotSDK::CRM::PublicListConversionInactivity }
+          variant -> { HubspotSDK::Crm::PublicListConversionInactivity }
 
           # @!method self.variants
-          #   @return [Array(HubspotSDK::Models::CRM::PublicListConversionDate, HubspotSDK::Models::CRM::PublicListConversionInactivity)]
+          #   @return [Array(HubspotSDK::Models::Crm::PublicListConversionDate, HubspotSDK::Models::Crm::PublicListConversionInactivity)]
         end
       end
     end

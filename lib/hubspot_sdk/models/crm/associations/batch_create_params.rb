@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
-        # @see HubspotSDK::Resources::CRM::Associations::Batch#create
-        class BatchCreateParams < HubspotSDK::Models::CRM::BatchInputPublicAssociation
+        # @see HubspotSDK::Resources::Crm::Associations::Batch#create
+        class BatchCreateParams < HubspotSDK::Models::Crm::BatchInputPublicAssociation
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

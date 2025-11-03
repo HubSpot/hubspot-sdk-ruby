@@ -1,12 +1,12 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type commerce_payment_update_params =
           { id_property: String }
           & HubspotSDK::Internal::Type::request_parameters
 
-        class CommercePaymentUpdateParams < HubspotSDK::Models::CRM::SimplePublicObjectInput
+        class CommercePaymentUpdateParams < HubspotSDK::Models::Crm::SimplePublicObjectInput
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

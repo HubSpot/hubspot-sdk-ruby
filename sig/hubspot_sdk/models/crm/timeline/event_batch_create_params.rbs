@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Timeline
         type event_batch_create_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class EventBatchCreateParams < HubspotSDK::Models::CRM::BatchInputTimelineEvent
+        class EventBatchCreateParams < HubspotSDK::Models::Crm::BatchInputTimelineEvent
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

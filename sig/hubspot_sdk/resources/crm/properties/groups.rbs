@@ -1,6 +1,6 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Properties
         class Groups
           def create: (
@@ -9,7 +9,7 @@ module HubspotSDK
             name: String,
             ?display_order: Integer,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::CreatedResponsePropertyGroup
+          ) -> HubspotSDK::Crm::CreatedResponsePropertyGroup
 
           def update: (
             String group_name,
@@ -17,12 +17,12 @@ module HubspotSDK
             ?display_order: Integer,
             ?label: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::PropertyGroup
+          ) -> HubspotSDK::Crm::PropertyGroup
 
           def list: (
             String object_type,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::CollectionResponsePropertyGroup
+          ) -> HubspotSDK::Crm::CollectionResponsePropertyGroup
 
           def delete: (
             String group_name,
@@ -34,7 +34,7 @@ module HubspotSDK
             String group_name,
             object_type: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::PropertyGroup
+          ) -> HubspotSDK::Crm::PropertyGroup
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

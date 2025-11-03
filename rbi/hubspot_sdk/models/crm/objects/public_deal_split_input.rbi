@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         class PublicDealSplitInput < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Objects::PublicDealSplitInput,
+                HubspotSDK::Crm::Objects::PublicDealSplitInput,
                 HubspotSDK::Internal::AnyHash
               )
             end

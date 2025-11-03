@@ -1,19 +1,19 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Imports
         def create: (
           ?files: HubspotSDK::Internal::file_input,
           ?import_request: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::CRM::PublicImportResponse
+        ) -> HubspotSDK::Crm::PublicImportResponse
 
         def list: (
           ?after: String,
           ?before: String,
           ?limit: Integer,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::CRM::PublicImportResponse]
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::PublicImportResponse]
 
         def cancel: (
           Integer import_id,
@@ -23,7 +23,7 @@ module HubspotSDK
         def get: (
           Integer import_id,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::CRM::PublicImportResponse
+        ) -> HubspotSDK::Crm::PublicImportResponse
 
         def list_errors: (
           Integer import_id,
@@ -32,7 +32,7 @@ module HubspotSDK
           ?include_row_data: bool,
           ?limit: Integer,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::CRM::CollectionResponsePublicImportErrorForwardPaging
+        ) -> HubspotSDK::Crm::CollectionResponsePublicImportErrorForwardPaging
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CreatedResponsePropertyGroup < HubspotSDK::Internal::Type::BaseModel
         # @!attribute created_resource_id
         #
@@ -12,8 +12,8 @@ module HubspotSDK
         # @!attribute entity
         #   An ID for a group of properties
         #
-        #   @return [HubspotSDK::Models::CRM::PropertyGroup]
-        required :entity, -> { HubspotSDK::CRM::PropertyGroup }
+        #   @return [HubspotSDK::Models::Crm::PropertyGroup]
+        required :entity, -> { HubspotSDK::Crm::PropertyGroup }
 
         # @!attribute location
         #
@@ -23,7 +23,7 @@ module HubspotSDK
         # @!method initialize(created_resource_id:, entity:, location: nil)
         #   @param created_resource_id [String]
         #
-        #   @param entity [HubspotSDK::Models::CRM::PropertyGroup] An ID for a group of properties
+        #   @param entity [HubspotSDK::Models::Crm::PropertyGroup] An ID for a group of properties
         #
         #   @param location [String]
       end

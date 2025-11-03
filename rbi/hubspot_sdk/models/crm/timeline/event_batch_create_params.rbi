@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Timeline
-        class EventBatchCreateParams < HubspotSDK::Models::CRM::BatchInputTimelineEvent
+        class EventBatchCreateParams < HubspotSDK::Models::Crm::BatchInputTimelineEvent
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Timeline::EventBatchCreateParams,
+                HubspotSDK::Crm::Timeline::EventBatchCreateParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

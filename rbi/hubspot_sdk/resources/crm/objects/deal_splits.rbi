@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
         class DealSplits
           # Read a batch of deal split objects by their associated deal object internal ID
@@ -10,7 +10,7 @@ module HubspotSDK
             params(
               inputs: T::Array[HubspotSDK::PublicObjectID::OrHash],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits)
+            ).returns(HubspotSDK::Crm::Objects::BatchResponseDealToDealSplits)
           end
           def batch_read(inputs:, request_options: {})
           end
@@ -22,10 +22,10 @@ module HubspotSDK
             params(
               inputs:
                 T::Array[
-                  HubspotSDK::CRM::Objects::PublicDealSplitsCreateRequest::OrHash
+                  HubspotSDK::Crm::Objects::PublicDealSplitsCreateRequest::OrHash
                 ],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits)
+            ).returns(HubspotSDK::Crm::Objects::BatchResponseDealToDealSplits)
           end
           def batch_upsert(inputs:, request_options: {})
           end

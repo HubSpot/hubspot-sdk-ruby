@@ -2,7 +2,7 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::PipelinesTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::PipelinesTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
@@ -15,7 +15,7 @@ class HubspotSDK::Test::Resources::CRM::PipelinesTest < HubspotSDK::Test::Resour
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::Pipeline
+      response => HubspotSDK::Crm::Pipeline
     end
 
     assert_pattern do
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::CRM::PipelinesTest < HubspotSDK::Test::Resour
         created_at: Time,
         display_order: Integer,
         label: String,
-        stages: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PipelineStage]),
+        stages: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PipelineStage]),
         updated_at: Time,
         archived_at: Time | nil
       }
@@ -38,7 +38,7 @@ class HubspotSDK::Test::Resources::CRM::PipelinesTest < HubspotSDK::Test::Resour
     response = @hubspot.crm.pipelines.update("pipelineId", object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::CRM::Pipeline
+      response => HubspotSDK::Crm::Pipeline
     end
 
     assert_pattern do
@@ -48,7 +48,7 @@ class HubspotSDK::Test::Resources::CRM::PipelinesTest < HubspotSDK::Test::Resour
         created_at: Time,
         display_order: Integer,
         label: String,
-        stages: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PipelineStage]),
+        stages: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PipelineStage]),
         updated_at: Time,
         archived_at: Time | nil
       }
@@ -61,12 +61,12 @@ class HubspotSDK::Test::Resources::CRM::PipelinesTest < HubspotSDK::Test::Resour
     response = @hubspot.crm.pipelines.list("objectType")
 
     assert_pattern do
-      response => HubspotSDK::CRM::CollectionResponsePipelineNoPaging
+      response => HubspotSDK::Crm::CollectionResponsePipelineNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Pipeline])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Pipeline])
       }
     end
   end
@@ -87,7 +87,7 @@ class HubspotSDK::Test::Resources::CRM::PipelinesTest < HubspotSDK::Test::Resour
     response = @hubspot.crm.pipelines.get("pipelineId", object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::CRM::Pipeline
+      response => HubspotSDK::Crm::Pipeline
     end
 
     assert_pattern do
@@ -97,7 +97,7 @@ class HubspotSDK::Test::Resources::CRM::PipelinesTest < HubspotSDK::Test::Resour
         created_at: Time,
         display_order: Integer,
         label: String,
-        stages: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PipelineStage]),
+        stages: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PipelineStage]),
         updated_at: Time,
         archived_at: Time | nil
       }
@@ -110,12 +110,12 @@ class HubspotSDK::Test::Resources::CRM::PipelinesTest < HubspotSDK::Test::Resour
     response = @hubspot.crm.pipelines.get_audit("pipelineId", object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::CRM::CollectionResponsePublicAuditInfoNoPaging
+      response => HubspotSDK::Crm::CollectionResponsePublicAuditInfoNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicAuditInfo])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAuditInfo])
       }
     end
   end
@@ -133,7 +133,7 @@ class HubspotSDK::Test::Resources::CRM::PipelinesTest < HubspotSDK::Test::Resour
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::Pipeline
+      response => HubspotSDK::Crm::Pipeline
     end
 
     assert_pattern do
@@ -143,7 +143,7 @@ class HubspotSDK::Test::Resources::CRM::PipelinesTest < HubspotSDK::Test::Resour
         created_at: Time,
         display_order: Integer,
         label: String,
-        stages: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PipelineStage]),
+        stages: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PipelineStage]),
         updated_at: Time,
         archived_at: Time | nil
       }

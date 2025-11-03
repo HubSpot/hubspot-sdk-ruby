@@ -2,14 +2,14 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         class SimplePublicObjectInputForCreate < HubspotSDK::Internal::Type::BaseModel
           # @!attribute associations
           #
-          #   @return [Array<HubspotSDK::Models::CRM::PublicAssociationsForObject>]
+          #   @return [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
           required :associations,
-                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicAssociationsForObject] }
+                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociationsForObject] }
 
           # @!attribute properties
           #   Key-value pairs for setting properties for the new object.
@@ -22,7 +22,7 @@ module HubspotSDK
           #   to be set and optional associations to link the new record with other CRM
           #   objects.
           #
-          #   @param associations [Array<HubspotSDK::Models::CRM::PublicAssociationsForObject>]
+          #   @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
           #
           #   @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
         end

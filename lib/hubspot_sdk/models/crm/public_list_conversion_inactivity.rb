@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicListConversionInactivity < HubspotSDK::Internal::Type::BaseModel
         # @!attribute conversion_type
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PublicListConversionInactivity::ConversionType]
+        #   @return [Symbol, HubspotSDK::Models::Crm::PublicListConversionInactivity::ConversionType]
         required :conversion_type,
-                 enum: -> { HubspotSDK::CRM::PublicListConversionInactivity::ConversionType },
+                 enum: -> { HubspotSDK::Crm::PublicListConversionInactivity::ConversionType },
                  api_name: :conversionType
 
         # @!attribute offset
@@ -18,17 +18,17 @@ module HubspotSDK
 
         # @!attribute time_unit
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PublicListConversionInactivity::TimeUnit]
+        #   @return [Symbol, HubspotSDK::Models::Crm::PublicListConversionInactivity::TimeUnit]
         required :time_unit,
-                 enum: -> { HubspotSDK::CRM::PublicListConversionInactivity::TimeUnit },
+                 enum: -> { HubspotSDK::Crm::PublicListConversionInactivity::TimeUnit },
                  api_name: :timeUnit
 
         # @!method initialize(conversion_type:, offset:, time_unit:)
-        #   @param conversion_type [Symbol, HubspotSDK::Models::CRM::PublicListConversionInactivity::ConversionType]
+        #   @param conversion_type [Symbol, HubspotSDK::Models::Crm::PublicListConversionInactivity::ConversionType]
         #   @param offset [Integer]
-        #   @param time_unit [Symbol, HubspotSDK::Models::CRM::PublicListConversionInactivity::TimeUnit]
+        #   @param time_unit [Symbol, HubspotSDK::Models::Crm::PublicListConversionInactivity::TimeUnit]
 
-        # @see HubspotSDK::Models::CRM::PublicListConversionInactivity#conversion_type
+        # @see HubspotSDK::Models::Crm::PublicListConversionInactivity#conversion_type
         module ConversionType
           extend HubspotSDK::Internal::Type::Enum
 
@@ -38,7 +38,7 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::CRM::PublicListConversionInactivity#time_unit
+        # @see HubspotSDK::Models::Crm::PublicListConversionInactivity#time_unit
         module TimeUnit
           extend HubspotSDK::Internal::Type::Enum
 

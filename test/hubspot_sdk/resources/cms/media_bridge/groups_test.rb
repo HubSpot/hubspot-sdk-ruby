@@ -10,7 +10,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::GroupsTest < HubspotSDK::Te
       @hubspot.cms.media_bridge.groups.create("objectType", app_id: "appId", label: "label", name: "name")
 
     assert_pattern do
-      response => HubspotSDK::CRM::PropertyGroup
+      response => HubspotSDK::Crm::PropertyGroup
     end
 
     assert_pattern do
@@ -34,7 +34,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::GroupsTest < HubspotSDK::Te
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PropertyGroup])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PropertyGroup])
       }
     end
   end
@@ -57,7 +57,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::GroupsTest < HubspotSDK::Te
       @hubspot.cms.media_bridge.groups.get_by_name("groupName", app_id: "appId", object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::CRM::PropertyGroup
+      response => HubspotSDK::Crm::PropertyGroup
     end
 
     assert_pattern do
@@ -77,7 +77,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::GroupsTest < HubspotSDK::Te
       @hubspot.cms.media_bridge.groups.update_by_name("groupName", app_id: "appId", object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::CRM::PropertyGroup
+      response => HubspotSDK::Crm::PropertyGroup
     end
 
     assert_pattern do

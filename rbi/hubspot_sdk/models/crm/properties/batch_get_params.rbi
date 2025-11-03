@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Properties
-        class BatchGetParams < HubspotSDK::Models::CRM::BatchReadInputPropertyName
+        class BatchGetParams < HubspotSDK::Models::Crm::BatchReadInputPropertyName
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Properties::BatchGetParams,
+                HubspotSDK::Crm::Properties::BatchGetParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         class DealToDealSplits < HubspotSDK::Internal::Type::BaseModel
           # @!attribute id
@@ -12,12 +12,12 @@ module HubspotSDK
 
           # @!attribute splits
           #
-          #   @return [Array<HubspotSDK::Models::CRM::SimplePublicObject>]
-          required :splits, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::SimplePublicObject] }
+          #   @return [Array<HubspotSDK::Models::Crm::SimplePublicObject>]
+          required :splits, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject] }
 
           # @!method initialize(id:, splits:)
           #   @param id [String]
-          #   @param splits [Array<HubspotSDK::Models::CRM::SimplePublicObject>]
+          #   @param splits [Array<HubspotSDK::Models::Crm::SimplePublicObject>]
         end
       end
     end

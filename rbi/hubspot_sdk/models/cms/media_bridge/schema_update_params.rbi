@@ -4,7 +4,7 @@ module HubspotSDK
   module Models
     module Cms
       module MediaBridge
-        class SchemaUpdateParams < HubspotSDK::Models::CRM::Objects::ObjectTypeDefinitionPatch
+        class SchemaUpdateParams < HubspotSDK::Models::Crm::Objects::ObjectTypeDefinitionPatch
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

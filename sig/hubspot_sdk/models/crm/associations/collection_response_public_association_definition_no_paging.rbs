@@ -1,21 +1,21 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         type collection_response_public_association_definition_no_paging =
           {
-            results: ::Array[HubspotSDK::CRM::Associations::PublicAssociationDefinition]
+            results: ::Array[HubspotSDK::Crm::Associations::PublicAssociationDefinition]
           }
 
         class CollectionResponsePublicAssociationDefinitionNoPaging < HubspotSDK::Internal::Type::BaseModel
-          attr_accessor results: ::Array[HubspotSDK::CRM::Associations::PublicAssociationDefinition]
+          attr_accessor results: ::Array[HubspotSDK::Crm::Associations::PublicAssociationDefinition]
 
           def initialize: (
-            results: ::Array[HubspotSDK::CRM::Associations::PublicAssociationDefinition]
+            results: ::Array[HubspotSDK::Crm::Associations::PublicAssociationDefinition]
           ) -> void
 
           def to_hash: -> {
-            results: ::Array[HubspotSDK::CRM::Associations::PublicAssociationDefinition]
+            results: ::Array[HubspotSDK::Crm::Associations::PublicAssociationDefinition]
           }
         end
       end

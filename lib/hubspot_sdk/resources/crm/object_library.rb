@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class ObjectLibrary
-        # @return [HubspotSDK::Resources::CRM::ObjectLibrary::Enablement]
+        # @return [HubspotSDK::Resources::Crm::ObjectLibrary::Enablement]
         attr_reader :enablement
 
         # @api private
@@ -12,7 +12,7 @@ module HubspotSDK
         # @param client [HubspotSDK::Client]
         def initialize(client:)
           @client = client
-          @enablement = HubspotSDK::Resources::CRM::ObjectLibrary::Enablement.new(client: client)
+          @enablement = HubspotSDK::Resources::Crm::ObjectLibrary::Enablement.new(client: client)
         end
       end
     end

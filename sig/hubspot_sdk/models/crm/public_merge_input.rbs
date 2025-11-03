@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type public_merge_input =
         { object_id_to_merge: String, primary_object_id: String }
 

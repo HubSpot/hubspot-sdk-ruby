@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
-        # @see HubspotSDK::Resources::CRM::Associations::V4#update
+        # @see HubspotSDK::Resources::Crm::Associations::V4#update
         class V4UpdateParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
@@ -26,15 +26,15 @@ module HubspotSDK
 
           # @!attribute body
           #
-          #   @return [Array<HubspotSDK::Models::CRM::Associations::AssociationSpec1>]
+          #   @return [Array<HubspotSDK::Models::Crm::Associations::AssociationSpec1>]
           required :body,
-                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Associations::AssociationSpec1] }
+                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Associations::AssociationSpec1] }
 
           # @!method initialize(object_type:, object_id_:, to_object_type:, body:, request_options: {})
           #   @param object_type [String]
           #   @param object_id_ [String]
           #   @param to_object_type [String]
-          #   @param body [Array<HubspotSDK::Models::CRM::Associations::AssociationSpec1>]
+          #   @param body [Array<HubspotSDK::Models::Crm::Associations::AssociationSpec1>]
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end

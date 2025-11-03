@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Pipelines::StagesTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Pipelines::StagesTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
@@ -15,7 +15,7 @@ class HubspotSDK::Test::Resources::CRM::Pipelines::StagesTest < HubspotSDK::Test
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::PipelineStage
+      response => HubspotSDK::Crm::PipelineStage
     end
 
     assert_pattern do
@@ -28,7 +28,7 @@ class HubspotSDK::Test::Resources::CRM::Pipelines::StagesTest < HubspotSDK::Test
         updated_at: Time,
         archived_at: Time | nil,
         metadata: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        write_permissions: HubspotSDK::CRM::PipelineStage::WritePermissions | nil
+        write_permissions: HubspotSDK::Crm::PipelineStage::WritePermissions | nil
       }
     end
   end
@@ -40,7 +40,7 @@ class HubspotSDK::Test::Resources::CRM::Pipelines::StagesTest < HubspotSDK::Test
       @hubspot.crm.pipelines.stages.update("stageId", object_type: "objectType", pipeline_id: "pipelineId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::PipelineStage
+      response => HubspotSDK::Crm::PipelineStage
     end
 
     assert_pattern do
@@ -53,7 +53,7 @@ class HubspotSDK::Test::Resources::CRM::Pipelines::StagesTest < HubspotSDK::Test
         updated_at: Time,
         archived_at: Time | nil,
         metadata: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        write_permissions: HubspotSDK::CRM::PipelineStage::WritePermissions | nil
+        write_permissions: HubspotSDK::Crm::PipelineStage::WritePermissions | nil
       }
     end
   end
@@ -64,12 +64,12 @@ class HubspotSDK::Test::Resources::CRM::Pipelines::StagesTest < HubspotSDK::Test
     response = @hubspot.crm.pipelines.stages.list("pipelineId", object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::CRM::CollectionResponsePipelineStageNoPaging
+      response => HubspotSDK::Crm::CollectionResponsePipelineStageNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PipelineStage])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PipelineStage])
       }
     end
   end
@@ -92,7 +92,7 @@ class HubspotSDK::Test::Resources::CRM::Pipelines::StagesTest < HubspotSDK::Test
       @hubspot.crm.pipelines.stages.get("stageId", object_type: "objectType", pipeline_id: "pipelineId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::PipelineStage
+      response => HubspotSDK::Crm::PipelineStage
     end
 
     assert_pattern do
@@ -105,7 +105,7 @@ class HubspotSDK::Test::Resources::CRM::Pipelines::StagesTest < HubspotSDK::Test
         updated_at: Time,
         archived_at: Time | nil,
         metadata: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        write_permissions: HubspotSDK::CRM::PipelineStage::WritePermissions | nil
+        write_permissions: HubspotSDK::Crm::PipelineStage::WritePermissions | nil
       }
     end
   end
@@ -117,12 +117,12 @@ class HubspotSDK::Test::Resources::CRM::Pipelines::StagesTest < HubspotSDK::Test
       @hubspot.crm.pipelines.stages.get_audit("stageId", object_type: "objectType", pipeline_id: "pipelineId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::CollectionResponsePublicAuditInfoNoPaging
+      response => HubspotSDK::Crm::CollectionResponsePublicAuditInfoNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicAuditInfo])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAuditInfo])
       }
     end
   end
@@ -140,7 +140,7 @@ class HubspotSDK::Test::Resources::CRM::Pipelines::StagesTest < HubspotSDK::Test
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::PipelineStage
+      response => HubspotSDK::Crm::PipelineStage
     end
 
     assert_pattern do
@@ -153,7 +153,7 @@ class HubspotSDK::Test::Resources::CRM::Pipelines::StagesTest < HubspotSDK::Test
         updated_at: Time,
         archived_at: Time | nil,
         metadata: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        write_permissions: HubspotSDK::CRM::PipelineStage::WritePermissions | nil
+        write_permissions: HubspotSDK::Crm::PipelineStage::WritePermissions | nil
       }
     end
   end

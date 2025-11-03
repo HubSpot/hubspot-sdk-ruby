@@ -29,9 +29,9 @@ module HubspotSDK
 
         # @!attribute crm_object_creation_status
         #
-        #   @return [Symbol, HubspotSDK::Models::Automation::APIPlatformFlow::CRMObjectCreationStatus]
+        #   @return [Symbol, HubspotSDK::Models::Automation::APIPlatformFlow::CrmObjectCreationStatus]
         required :crm_object_creation_status,
-                 enum: -> { HubspotSDK::Automation::APIPlatformFlow::CRMObjectCreationStatus },
+                 enum: -> { HubspotSDK::Automation::APIPlatformFlow::CrmObjectCreationStatus },
                  api_name: :crmObjectCreationStatus
 
         # @!attribute custom_properties
@@ -140,7 +140,7 @@ module HubspotSDK
         #   @param actions [Array<HubspotSDK::Models::Automation::APIStaticBranchAction, HubspotSDK::Models::Automation::APIListBranchAction, HubspotSDK::Models::Automation::APIAbTestBranchAction, HubspotSDK::Models::Automation::APICustomCodeAction, HubspotSDK::Models::Automation::APIWebhookAction, HubspotSDK::Models::Automation::APISingleConnectionAction>]
         #   @param blocked_dates [Array<HubspotSDK::Models::Automation::APIBlockedDate>]
         #   @param created_at [Time]
-        #   @param crm_object_creation_status [Symbol, HubspotSDK::Models::Automation::APIPlatformFlow::CRMObjectCreationStatus]
+        #   @param crm_object_creation_status [Symbol, HubspotSDK::Models::Automation::APIPlatformFlow::CrmObjectCreationStatus]
         #   @param custom_properties [Hash{Symbol=>String}]
         #   @param data_sources [Array<HubspotSDK::Models::Automation::APIAssociationDataSource, HubspotSDK::Models::Automation::APIAssociationTimestampDataSource, HubspotSDK::Models::Automation::APIStaticPropertyFilterDataSource, HubspotSDK::Models::Automation::APIEnrolledRecordPropertyFilterDataSource, HubspotSDK::Models::Automation::APIDatasetFieldPropertyFilterDataSource, HubspotSDK::Models::Automation::APIEnrolledArgumentPropertyFilterDataSource>]
         #   @param flow_type [Symbol, HubspotSDK::Models::Automation::APIPlatformFlow::FlowType]
@@ -179,7 +179,7 @@ module HubspotSDK
         end
 
         # @see HubspotSDK::Models::Automation::APIPlatformFlow#crm_object_creation_status
-        module CRMObjectCreationStatus
+        module CrmObjectCreationStatus
           extend HubspotSDK::Internal::Type::Enum
 
           PENDING = :PENDING

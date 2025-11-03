@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Owners
         # Retrieve a paginated list of owners available in the account.
         sig do
@@ -12,7 +12,7 @@ module HubspotSDK
             email: String,
             limit: Integer,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Internal::Page[HubspotSDK::CRM::PublicOwner])
+          ).returns(HubspotSDK::Internal::Page[HubspotSDK::Crm::PublicOwner])
         end
         def list(
           after: nil,
@@ -28,9 +28,9 @@ module HubspotSDK
           params(
             owner_id: Integer,
             archived: T::Boolean,
-            id_property: HubspotSDK::CRM::OwnerGetParams::IDProperty::OrSymbol,
+            id_property: HubspotSDK::Crm::OwnerGetParams::IDProperty::OrSymbol,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::PublicOwner)
+          ).returns(HubspotSDK::Crm::PublicOwner)
         end
         def get(owner_id, archived: nil, id_property: nil, request_options: {})
         end

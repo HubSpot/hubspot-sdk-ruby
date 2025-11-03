@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchResponsePublicAssociationMultiWithLabel < HubspotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #
@@ -11,9 +11,9 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::CRM::PublicAssociationMultiWithLabel>]
+        #   @return [Array<HubspotSDK::Models::Crm::PublicAssociationMultiWithLabel>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicAssociationMultiWithLabel] }
+                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociationMultiWithLabel] }
 
         # @!attribute started_at
         #
@@ -22,8 +22,8 @@ module HubspotSDK
 
         # @!attribute status
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::BatchResponsePublicAssociationMultiWithLabel::Status]
-        required :status, enum: -> { HubspotSDK::CRM::BatchResponsePublicAssociationMultiWithLabel::Status }
+        #   @return [Symbol, HubspotSDK::Models::Crm::BatchResponsePublicAssociationMultiWithLabel::Status]
+        required :status, enum: -> { HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status }
 
         # @!attribute errors
         #
@@ -47,15 +47,15 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
         #   @param completed_at [Time]
-        #   @param results [Array<HubspotSDK::Models::CRM::PublicAssociationMultiWithLabel>]
+        #   @param results [Array<HubspotSDK::Models::Crm::PublicAssociationMultiWithLabel>]
         #   @param started_at [Time]
-        #   @param status [Symbol, HubspotSDK::Models::CRM::BatchResponsePublicAssociationMultiWithLabel::Status]
+        #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponsePublicAssociationMultiWithLabel::Status]
         #   @param errors [Array<HubspotSDK::Models::StandardError>]
         #   @param links [Hash{Symbol=>String}]
         #   @param num_errors [Integer]
         #   @param requested_at [Time]
 
-        # @see HubspotSDK::Models::CRM::BatchResponsePublicAssociationMultiWithLabel#status
+        # @see HubspotSDK::Models::Crm::BatchResponsePublicAssociationMultiWithLabel#status
         module Status
           extend HubspotSDK::Internal::Type::Enum
 

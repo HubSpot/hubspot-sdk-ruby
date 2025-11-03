@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ObjectTypeDefinition < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::ObjectTypeDefinition,
+              HubspotSDK::Crm::ObjectTypeDefinition,
               HubspotSDK::Internal::AnyHash
             )
           end

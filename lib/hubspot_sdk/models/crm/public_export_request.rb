@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module PublicExportRequest
         extend HubspotSDK::Internal::Type::Union
 
-        variant -> { HubspotSDK::CRM::PublicExportViewRequest }
+        variant -> { HubspotSDK::Crm::PublicExportViewRequest }
 
-        variant -> { HubspotSDK::CRM::PublicExportListRequest }
+        variant -> { HubspotSDK::Crm::PublicExportListRequest }
 
         # @!method self.variants
-        #   @return [Array(HubspotSDK::Models::CRM::PublicExportViewRequest, HubspotSDK::Models::CRM::PublicExportListRequest)]
+        #   @return [Array(HubspotSDK::Models::Crm::PublicExportViewRequest, HubspotSDK::Models::Crm::PublicExportListRequest)]
       end
     end
   end

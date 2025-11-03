@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Properties::BatchTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Properties::BatchTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 

@@ -1,25 +1,25 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         type association_spec1 =
           {
-            association_category: HubspotSDK::Models::CRM::Associations::AssociationSpec1::association_category,
+            association_category: HubspotSDK::Models::Crm::Associations::AssociationSpec1::association_category,
             association_type_id: Integer
           }
 
         class AssociationSpec1 < HubspotSDK::Internal::Type::BaseModel
-          attr_accessor association_category: HubspotSDK::Models::CRM::Associations::AssociationSpec1::association_category
+          attr_accessor association_category: HubspotSDK::Models::Crm::Associations::AssociationSpec1::association_category
 
           attr_accessor association_type_id: Integer
 
           def initialize: (
-            association_category: HubspotSDK::Models::CRM::Associations::AssociationSpec1::association_category,
+            association_category: HubspotSDK::Models::Crm::Associations::AssociationSpec1::association_category,
             association_type_id: Integer
           ) -> void
 
           def to_hash: -> {
-            association_category: HubspotSDK::Models::CRM::Associations::AssociationSpec1::association_category,
+            association_category: HubspotSDK::Models::Crm::Associations::AssociationSpec1::association_category,
             association_type_id: Integer
           }
 
@@ -33,7 +33,7 @@ module HubspotSDK
             USER_DEFINED: :USER_DEFINED
             INTEGRATOR_DEFINED: :INTEGRATOR_DEFINED
 
-            def self?.values: -> ::Array[HubspotSDK::Models::CRM::Associations::AssociationSpec1::association_category]
+            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Associations::AssociationSpec1::association_category]
           end
         end
       end

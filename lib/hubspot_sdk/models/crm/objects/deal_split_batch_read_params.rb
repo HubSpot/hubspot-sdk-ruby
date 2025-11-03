@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
-        # @see HubspotSDK::Resources::CRM::Objects::DealSplits#batch_read
+        # @see HubspotSDK::Resources::Crm::Objects::DealSplits#batch_read
         class DealSplitBatchReadParams < HubspotSDK::Models::BatchInputPublicObjectID
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters

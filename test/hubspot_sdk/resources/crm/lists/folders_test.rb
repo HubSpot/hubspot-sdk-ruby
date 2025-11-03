@@ -2,19 +2,19 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Lists::FoldersTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Lists::FoldersTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
     response = @hubspot.crm.lists.folders.create(name: "name")
 
     assert_pattern do
-      response => HubspotSDK::CRM::ListFolderCreateResponse
+      response => HubspotSDK::Crm::ListFolderCreateResponse
     end
 
     assert_pattern do
       response => {
-        folder: HubspotSDK::CRM::PublicListFolder
+        folder: HubspotSDK::Crm::PublicListFolder
       }
     end
   end
@@ -35,12 +35,12 @@ class HubspotSDK::Test::Resources::CRM::Lists::FoldersTest < HubspotSDK::Test::R
     response = @hubspot.crm.lists.folders.get
 
     assert_pattern do
-      response => HubspotSDK::CRM::ListFolderFetchResponse
+      response => HubspotSDK::Crm::ListFolderFetchResponse
     end
 
     assert_pattern do
       response => {
-        folder: HubspotSDK::CRM::PublicListFolder
+        folder: HubspotSDK::Crm::PublicListFolder
       }
     end
   end
@@ -51,12 +51,12 @@ class HubspotSDK::Test::Resources::CRM::Lists::FoldersTest < HubspotSDK::Test::R
     response = @hubspot.crm.lists.folders.move("newParentFolderId", folder_id: "folderId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::ListFolderFetchResponse
+      response => HubspotSDK::Crm::ListFolderFetchResponse
     end
 
     assert_pattern do
       response => {
-        folder: HubspotSDK::CRM::PublicListFolder
+        folder: HubspotSDK::Crm::PublicListFolder
       }
     end
   end
@@ -77,12 +77,12 @@ class HubspotSDK::Test::Resources::CRM::Lists::FoldersTest < HubspotSDK::Test::R
     response = @hubspot.crm.lists.folders.rename("folderId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::ListFolderFetchResponse
+      response => HubspotSDK::Crm::ListFolderFetchResponse
     end
 
     assert_pattern do
       response => {
-        folder: HubspotSDK::CRM::PublicListFolder
+        folder: HubspotSDK::Crm::PublicListFolder
       }
     end
   end

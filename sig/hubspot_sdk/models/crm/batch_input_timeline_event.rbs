@@ -1,17 +1,17 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type batch_input_timeline_event =
-        { inputs: ::Array[HubspotSDK::CRM::TimelineEvent] }
+        { inputs: ::Array[HubspotSDK::Crm::TimelineEvent] }
 
       class BatchInputTimelineEvent < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor inputs: ::Array[HubspotSDK::CRM::TimelineEvent]
+        attr_accessor inputs: ::Array[HubspotSDK::Crm::TimelineEvent]
 
         def initialize: (
-          inputs: ::Array[HubspotSDK::CRM::TimelineEvent]
+          inputs: ::Array[HubspotSDK::Crm::TimelineEvent]
         ) -> void
 
-        def to_hash: -> { inputs: ::Array[HubspotSDK::CRM::TimelineEvent] }
+        def to_hash: -> { inputs: ::Array[HubspotSDK::Crm::TimelineEvent] }
       end
     end
   end

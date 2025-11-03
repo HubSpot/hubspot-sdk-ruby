@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Extensions
         class Calling
           class ChannelConnectionSettings
@@ -13,17 +13,17 @@ module HubspotSDK
             # @param url [String]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::CRM::Extensions::ChannelConnectionSettingsResponse]
+            # @return [HubspotSDK::Models::Crm::Extensions::ChannelConnectionSettingsResponse]
             #
-            # @see HubspotSDK::Models::CRM::Extensions::Calling::ChannelConnectionSettingCreateParams
+            # @see HubspotSDK::Models::Crm::Extensions::Calling::ChannelConnectionSettingCreateParams
             def create(app_id, params)
               parsed, options =
-                HubspotSDK::CRM::Extensions::Calling::ChannelConnectionSettingCreateParams.dump_request(params)
+                HubspotSDK::Crm::Extensions::Calling::ChannelConnectionSettingCreateParams.dump_request(params)
               @client.request(
                 method: :post,
                 path: ["crm/v3/extensions/calling/%1$s/settings/channel-connection", app_id],
                 body: parsed,
-                model: HubspotSDK::CRM::Extensions::ChannelConnectionSettingsResponse,
+                model: HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse,
                 options: options
               )
             end
@@ -35,17 +35,17 @@ module HubspotSDK
             # @param url [String]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::CRM::Extensions::ChannelConnectionSettingsResponse]
+            # @return [HubspotSDK::Models::Crm::Extensions::ChannelConnectionSettingsResponse]
             #
-            # @see HubspotSDK::Models::CRM::Extensions::Calling::ChannelConnectionSettingUpdateParams
+            # @see HubspotSDK::Models::Crm::Extensions::Calling::ChannelConnectionSettingUpdateParams
             def update(app_id, params = {})
               parsed, options =
-                HubspotSDK::CRM::Extensions::Calling::ChannelConnectionSettingUpdateParams.dump_request(params)
+                HubspotSDK::Crm::Extensions::Calling::ChannelConnectionSettingUpdateParams.dump_request(params)
               @client.request(
                 method: :patch,
                 path: ["crm/v3/extensions/calling/%1$s/settings/channel-connection", app_id],
                 body: parsed,
-                model: HubspotSDK::CRM::Extensions::ChannelConnectionSettingsResponse,
+                model: HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse,
                 options: options
               )
             end
@@ -57,7 +57,7 @@ module HubspotSDK
             #
             # @return [nil]
             #
-            # @see HubspotSDK::Models::CRM::Extensions::Calling::ChannelConnectionSettingDeleteParams
+            # @see HubspotSDK::Models::Crm::Extensions::Calling::ChannelConnectionSettingDeleteParams
             def delete(app_id, params = {})
               @client.request(
                 method: :delete,
@@ -72,14 +72,14 @@ module HubspotSDK
             # @param app_id [Integer]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::CRM::Extensions::ChannelConnectionSettingsResponse]
+            # @return [HubspotSDK::Models::Crm::Extensions::ChannelConnectionSettingsResponse]
             #
-            # @see HubspotSDK::Models::CRM::Extensions::Calling::ChannelConnectionSettingGetParams
+            # @see HubspotSDK::Models::Crm::Extensions::Calling::ChannelConnectionSettingGetParams
             def get(app_id, params = {})
               @client.request(
                 method: :get,
                 path: ["crm/v3/extensions/calling/%1$s/settings/channel-connection", app_id],
-                model: HubspotSDK::CRM::Extensions::ChannelConnectionSettingsResponse,
+                model: HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse,
                 options: params[:request_options]
               )
             end

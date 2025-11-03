@@ -2,15 +2,15 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CollectionResponsePipelineStageNoPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::CRM::PipelineStage>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PipelineStage] }
+        #   @return [Array<HubspotSDK::Models::Crm::PipelineStage>]
+        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PipelineStage] }
 
         # @!method initialize(results:)
-        #   @param results [Array<HubspotSDK::Models::CRM::PipelineStage>]
+        #   @param results [Array<HubspotSDK::Models::Crm::PipelineStage>]
       end
     end
   end

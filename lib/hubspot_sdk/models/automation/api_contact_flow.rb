@@ -36,9 +36,9 @@ module HubspotSDK
 
         # @!attribute crm_object_creation_status
         #
-        #   @return [Symbol, HubspotSDK::Models::Automation::APIContactFlow::CRMObjectCreationStatus]
+        #   @return [Symbol, HubspotSDK::Models::Automation::APIContactFlow::CrmObjectCreationStatus]
         required :crm_object_creation_status,
-                 enum: -> { HubspotSDK::Automation::APIContactFlow::CRMObjectCreationStatus },
+                 enum: -> { HubspotSDK::Automation::APIContactFlow::CrmObjectCreationStatus },
                  api_name: :crmObjectCreationStatus
 
         # @!attribute custom_properties
@@ -169,7 +169,7 @@ module HubspotSDK
         #   @param blocked_dates [Array<HubspotSDK::Models::Automation::APIBlockedDate>]
         #   @param can_enroll_from_salesforce [Boolean]
         #   @param created_at [Time]
-        #   @param crm_object_creation_status [Symbol, HubspotSDK::Models::Automation::APIContactFlow::CRMObjectCreationStatus]
+        #   @param crm_object_creation_status [Symbol, HubspotSDK::Models::Automation::APIContactFlow::CrmObjectCreationStatus]
         #   @param custom_properties [Hash{Symbol=>String}]
         #   @param data_sources [Array<HubspotSDK::Models::Automation::APIAssociationDataSource, HubspotSDK::Models::Automation::APIAssociationTimestampDataSource, HubspotSDK::Models::Automation::APIStaticPropertyFilterDataSource, HubspotSDK::Models::Automation::APIEnrolledRecordPropertyFilterDataSource, HubspotSDK::Models::Automation::APIDatasetFieldPropertyFilterDataSource, HubspotSDK::Models::Automation::APIEnrolledArgumentPropertyFilterDataSource>]
         #   @param flow_type [Symbol, HubspotSDK::Models::Automation::APIContactFlow::FlowType]
@@ -211,7 +211,7 @@ module HubspotSDK
         end
 
         # @see HubspotSDK::Models::Automation::APIContactFlow#crm_object_creation_status
-        module CRMObjectCreationStatus
+        module CrmObjectCreationStatus
           extend HubspotSDK::Internal::Type::Enum
 
           PENDING = :PENDING

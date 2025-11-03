@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicTeam < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::CRM::PublicTeam, HubspotSDK::Internal::AnyHash)
+            T.any(HubspotSDK::Crm::PublicTeam, HubspotSDK::Internal::AnyHash)
           end
 
         sig { returns(String) }

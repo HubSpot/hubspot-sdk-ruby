@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class CardObjectTypeBody < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::CardObjectTypeBody,
+                HubspotSDK::Crm::Extensions::CardObjectTypeBody,
                 HubspotSDK::Internal::AnyHash
               )
             end
@@ -16,7 +16,7 @@ module HubspotSDK
           # A CRM object type where this card should be displayed.
           sig do
             returns(
-              HubspotSDK::CRM::Extensions::CardObjectTypeBody::Name::OrSymbol
+              HubspotSDK::Crm::Extensions::CardObjectTypeBody::Name::OrSymbol
             )
           end
           attr_accessor :name
@@ -30,7 +30,7 @@ module HubspotSDK
           sig do
             params(
               name:
-                HubspotSDK::CRM::Extensions::CardObjectTypeBody::Name::OrSymbol,
+                HubspotSDK::Crm::Extensions::CardObjectTypeBody::Name::OrSymbol,
               properties_to_send: T::Array[String]
             ).returns(T.attached_class)
           end
@@ -48,7 +48,7 @@ module HubspotSDK
             override.returns(
               {
                 name:
-                  HubspotSDK::CRM::Extensions::CardObjectTypeBody::Name::OrSymbol,
+                  HubspotSDK::Crm::Extensions::CardObjectTypeBody::Name::OrSymbol,
                 properties_to_send: T::Array[String]
               }
             )
@@ -64,7 +64,7 @@ module HubspotSDK
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::CRM::Extensions::CardObjectTypeBody::Name
+                  HubspotSDK::Crm::Extensions::CardObjectTypeBody::Name
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -72,33 +72,33 @@ module HubspotSDK
             CONTACTS =
               T.let(
                 :contacts,
-                HubspotSDK::CRM::Extensions::CardObjectTypeBody::Name::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardObjectTypeBody::Name::TaggedSymbol
               )
             DEALS =
               T.let(
                 :deals,
-                HubspotSDK::CRM::Extensions::CardObjectTypeBody::Name::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardObjectTypeBody::Name::TaggedSymbol
               )
             COMPANIES =
               T.let(
                 :companies,
-                HubspotSDK::CRM::Extensions::CardObjectTypeBody::Name::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardObjectTypeBody::Name::TaggedSymbol
               )
             TICKETS =
               T.let(
                 :tickets,
-                HubspotSDK::CRM::Extensions::CardObjectTypeBody::Name::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardObjectTypeBody::Name::TaggedSymbol
               )
             MARKETING_EVENTS =
               T.let(
                 :marketing_events,
-                HubspotSDK::CRM::Extensions::CardObjectTypeBody::Name::TaggedSymbol
+                HubspotSDK::Crm::Extensions::CardObjectTypeBody::Name::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::CRM::Extensions::CardObjectTypeBody::Name::TaggedSymbol
+                  HubspotSDK::Crm::Extensions::CardObjectTypeBody::Name::TaggedSymbol
                 ]
               )
             end

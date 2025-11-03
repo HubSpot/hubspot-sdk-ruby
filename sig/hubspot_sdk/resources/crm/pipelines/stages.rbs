@@ -1,6 +1,6 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Pipelines
         class Stages
           def create: (
@@ -10,7 +10,7 @@ module HubspotSDK
             label: String,
             ?metadata: ::Hash[Symbol, String],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::PipelineStage
+          ) -> HubspotSDK::Crm::PipelineStage
 
           def update: (
             String stage_id,
@@ -21,13 +21,13 @@ module HubspotSDK
             ?label: String,
             ?metadata: ::Hash[Symbol, String],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::PipelineStage
+          ) -> HubspotSDK::Crm::PipelineStage
 
           def list: (
             String pipeline_id,
             object_type: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::CollectionResponsePipelineStageNoPaging
+          ) -> HubspotSDK::Crm::CollectionResponsePipelineStageNoPaging
 
           def delete: (
             String stage_id,
@@ -41,14 +41,14 @@ module HubspotSDK
             object_type: String,
             pipeline_id: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::PipelineStage
+          ) -> HubspotSDK::Crm::PipelineStage
 
           def get_audit: (
             String stage_id,
             object_type: String,
             pipeline_id: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::CollectionResponsePublicAuditInfoNoPaging
+          ) -> HubspotSDK::Crm::CollectionResponsePublicAuditInfoNoPaging
 
           def replace: (
             String stage_id,
@@ -58,7 +58,7 @@ module HubspotSDK
             label: String,
             ?metadata: ::Hash[Symbol, String],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::PipelineStage
+          ) -> HubspotSDK::Crm::PipelineStage
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

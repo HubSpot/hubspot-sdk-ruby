@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchResponsePublicAssociationMultiWithLabel < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::BatchResponsePublicAssociationMultiWithLabel,
+              HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -16,7 +16,7 @@ module HubspotSDK
         attr_accessor :completed_at
 
         sig do
-          returns(T::Array[HubspotSDK::CRM::PublicAssociationMultiWithLabel])
+          returns(T::Array[HubspotSDK::Crm::PublicAssociationMultiWithLabel])
         end
         attr_accessor :results
 
@@ -25,7 +25,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::CRM::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
+            HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
           )
         end
         attr_accessor :status
@@ -59,11 +59,11 @@ module HubspotSDK
             completed_at: Time,
             results:
               T::Array[
-                HubspotSDK::CRM::PublicAssociationMultiWithLabel::OrHash
+                HubspotSDK::Crm::PublicAssociationMultiWithLabel::OrHash
               ],
             started_at: Time,
             status:
-              HubspotSDK::CRM::BatchResponsePublicAssociationMultiWithLabel::Status::OrSymbol,
+              HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::OrSymbol,
             errors: T::Array[HubspotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
@@ -87,10 +87,10 @@ module HubspotSDK
             {
               completed_at: Time,
               results:
-                T::Array[HubspotSDK::CRM::PublicAssociationMultiWithLabel],
+                T::Array[HubspotSDK::Crm::PublicAssociationMultiWithLabel],
               started_at: Time,
               status:
-                HubspotSDK::CRM::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol,
+                HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol,
               errors: T::Array[HubspotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
@@ -108,7 +108,7 @@ module HubspotSDK
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CRM::BatchResponsePublicAssociationMultiWithLabel::Status
+                HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -116,28 +116,28 @@ module HubspotSDK
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::CRM::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::CRM::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
             )
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::CRM::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::CRM::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
+                HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
               ]
             )
           end

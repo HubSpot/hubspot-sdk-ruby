@@ -2,15 +2,15 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Lists
-        sig { returns(HubspotSDK::Resources::CRM::Lists::Folders) }
+        sig { returns(HubspotSDK::Resources::Crm::Lists::Folders) }
         attr_reader :folders
 
-        sig { returns(HubspotSDK::Resources::CRM::Lists::Mapping) }
+        sig { returns(HubspotSDK::Resources::Crm::Lists::Mapping) }
         attr_reader :mapping
 
-        sig { returns(HubspotSDK::Resources::CRM::Lists::Memberships) }
+        sig { returns(HubspotSDK::Resources::Crm::Lists::Memberships) }
         attr_reader :memberships
 
         # Create a new list with the provided object list definition.
@@ -32,11 +32,11 @@ module HubspotSDK
                 HubspotSDK::PublicAssociationFilterBranch::OrHash
               ),
             list_folder_id: Integer,
-            list_permissions: HubspotSDK::CRM::PublicListPermissions::OrHash,
+            list_permissions: HubspotSDK::Crm::PublicListPermissions::OrHash,
             membership_settings:
-              HubspotSDK::CRM::PublicMembershipSettings::OrHash,
+              HubspotSDK::Crm::PublicMembershipSettings::OrHash,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::ListCreateResponse)
+          ).returns(HubspotSDK::Crm::ListCreateResponse)
         end
         def create(
           # The name of the list, which must be globally unique across all public lists in
@@ -66,7 +66,7 @@ module HubspotSDK
             include_filters: T::Boolean,
             list_ids: T::Array[String],
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::ListsByIDResponse)
+          ).returns(HubspotSDK::Crm::ListsByIDResponse)
         end
         def list(
           # A flag indicating whether or not the response object list definitions should
@@ -115,7 +115,7 @@ module HubspotSDK
             list_id: String,
             include_filters: T::Boolean,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::ListFetchResponse)
+          ).returns(HubspotSDK::Crm::ListFetchResponse)
         end
         def get(
           # The **ILS ID** of the list to fetch.
@@ -135,7 +135,7 @@ module HubspotSDK
             object_type_id: String,
             include_filters: T::Boolean,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::ListFetchResponse)
+          ).returns(HubspotSDK::Crm::ListFetchResponse)
         end
         def get_by_object_type_id_and_name(
           # Path param: The name of the list to fetch. This is **not** case sensitive.
@@ -158,7 +158,7 @@ module HubspotSDK
           params(
             list_id: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::PublicListConversionResponse)
+          ).returns(HubspotSDK::Crm::PublicListConversionResponse)
         end
         def get_schedule_conversion(
           # The ID of the list to schedule the conversion for.
@@ -189,9 +189,9 @@ module HubspotSDK
           params(
             list_id: String,
             public_list_conversion_time:
-              HubspotSDK::CRM::PublicListConversionTime,
+              HubspotSDK::Crm::PublicListConversionTime,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::PublicListConversionResponse)
+          ).returns(HubspotSDK::Crm::PublicListConversionResponse)
         end
         def schedule_conversion(
           # The ID of the list to schedule the conversion for.
@@ -213,7 +213,7 @@ module HubspotSDK
             query: String,
             sort: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::ListSearchResponse)
+          ).returns(HubspotSDK::Crm::ListSearchResponse)
         end
         def search(
           # The property names of any additional list properties to include in the response.
@@ -273,7 +273,7 @@ module HubspotSDK
               ),
             enroll_objects_in_workflows: T::Boolean,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::ListUpdateResponse)
+          ).returns(HubspotSDK::Crm::ListUpdateResponse)
         end
         def update_filters(
           # Path param: The **ILS ID** of the list to update.
@@ -296,7 +296,7 @@ module HubspotSDK
             include_filters: T::Boolean,
             list_name: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CRM::ListUpdateResponse)
+          ).returns(HubspotSDK::Crm::ListUpdateResponse)
         end
         def update_name(
           # The **ILS ID** of the list to update.

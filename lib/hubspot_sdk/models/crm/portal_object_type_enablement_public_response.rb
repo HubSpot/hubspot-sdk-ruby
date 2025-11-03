@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PortalObjectTypeEnablementPublicResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute enablement_by_object_type_id
         #

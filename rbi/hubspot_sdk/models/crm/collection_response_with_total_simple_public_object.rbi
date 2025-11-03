@@ -2,17 +2,17 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CollectionResponseWithTotalSimplePublicObject < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject,
+              HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
               HubspotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::CRM::SimplePublicObject]) }
+        sig { returns(T::Array[HubspotSDK::Crm::SimplePublicObject]) }
         attr_accessor :results
 
         # The number of available results
@@ -28,7 +28,7 @@ module HubspotSDK
 
         sig do
           params(
-            results: T::Array[HubspotSDK::CRM::SimplePublicObject::OrHash],
+            results: T::Array[HubspotSDK::Crm::SimplePublicObject::OrHash],
             total: Integer,
             paging: HubspotSDK::Marketing::Paging::OrHash
           ).returns(T.attached_class)
@@ -45,7 +45,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              results: T::Array[HubspotSDK::CRM::SimplePublicObject],
+              results: T::Array[HubspotSDK::Crm::SimplePublicObject],
               total: Integer,
               paging: HubspotSDK::Marketing::Paging
             }

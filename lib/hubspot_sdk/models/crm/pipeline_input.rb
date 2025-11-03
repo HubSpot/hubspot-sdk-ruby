@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PipelineInput < HubspotSDK::Internal::Type::BaseModel
         # @!attribute display_order
         #   The order for displaying this pipeline. If two pipelines have a matching
@@ -20,12 +20,12 @@ module HubspotSDK
         # @!attribute stages
         #   Pipeline stage inputs used to create the new or replacement pipeline.
         #
-        #   @return [Array<HubspotSDK::Models::CRM::PipelineStageInput>]
-        required :stages, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PipelineStageInput] }
+        #   @return [Array<HubspotSDK::Models::Crm::PipelineStageInput>]
+        required :stages, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PipelineStageInput] }
 
         # @!method initialize(display_order:, label:, stages:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::PipelineInput} for more details.
+        #   {HubspotSDK::Models::Crm::PipelineInput} for more details.
         #
         #   An input used to create or replace a pipeline's definition.
         #
@@ -33,7 +33,7 @@ module HubspotSDK
         #
         #   @param label [String] A unique label used to organize pipelines in HubSpot's UI
         #
-        #   @param stages [Array<HubspotSDK::Models::CRM::PipelineStageInput>] Pipeline stage inputs used to create the new or replacement pipeline.
+        #   @param stages [Array<HubspotSDK::Models::Crm::PipelineStageInput>] Pipeline stage inputs used to create the new or replacement pipeline.
       end
     end
   end

@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         class DealSplitBatchReadParams < HubspotSDK::Models::BatchInputPublicObjectID
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
@@ -11,7 +11,7 @@ module HubspotSDK
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Objects::DealSplitBatchReadParams,
+                HubspotSDK::Crm::Objects::DealSplitBatchReadParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

@@ -1,6 +1,6 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Extensions
         class VideoConferencing
           class Settings
@@ -12,7 +12,7 @@ module HubspotSDK
               ?update_meeting_url: String,
               ?user_verify_url: String,
               ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::CRM::Extensions::ExternalSettings
+            ) -> HubspotSDK::Crm::Extensions::ExternalSettings
 
             def delete: (
               Integer app_id,
@@ -22,7 +22,7 @@ module HubspotSDK
             def get: (
               Integer app_id,
               ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::CRM::Extensions::ExternalSettings
+            ) -> HubspotSDK::Crm::Extensions::ExternalSettings
 
             def initialize: (client: HubspotSDK::Client) -> void
           end

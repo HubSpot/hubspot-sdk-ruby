@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ValueWithTimestamp < HubspotSDK::Internal::Type::BaseModel
         # @!attribute source_type
         #   The property type.

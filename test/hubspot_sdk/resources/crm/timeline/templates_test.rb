@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Timeline::TemplatesTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Timeline::TemplatesTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
@@ -19,7 +19,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::TemplatesTest < HubspotSDK::Te
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::TimelineEventTemplate
+      response => HubspotSDK::Crm::TimelineEventTemplate
     end
 
     assert_pattern do
@@ -27,7 +27,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::TemplatesTest < HubspotSDK::Te
         id: String,
         name: String,
         object_type: String,
-        tokens: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::TimelineEventTemplateToken]),
+        tokens: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::TimelineEventTemplateToken]),
         created_at: Time | nil,
         detail_template: String | nil,
         header_template: String | nil,
@@ -53,7 +53,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::TemplatesTest < HubspotSDK::Te
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::TimelineEventTemplate
+      response => HubspotSDK::Crm::TimelineEventTemplate
     end
 
     assert_pattern do
@@ -61,7 +61,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::TemplatesTest < HubspotSDK::Te
         id: String,
         name: String,
         object_type: String,
-        tokens: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::TimelineEventTemplateToken]),
+        tokens: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::TimelineEventTemplateToken]),
         created_at: Time | nil,
         detail_template: String | nil,
         header_template: String | nil,
@@ -76,12 +76,12 @@ class HubspotSDK::Test::Resources::CRM::Timeline::TemplatesTest < HubspotSDK::Te
     response = @hubspot.crm.timeline.templates.list(0)
 
     assert_pattern do
-      response => HubspotSDK::CRM::CollectionResponseTimelineEventTemplateNoPaging
+      response => HubspotSDK::Crm::CollectionResponseTimelineEventTemplateNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::TimelineEventTemplate])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::TimelineEventTemplate])
       }
     end
   end
@@ -102,7 +102,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::TemplatesTest < HubspotSDK::Te
     response = @hubspot.crm.timeline.templates.get("eventTemplateId", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::CRM::TimelineEventTemplate
+      response => HubspotSDK::Crm::TimelineEventTemplate
     end
 
     assert_pattern do
@@ -110,7 +110,7 @@ class HubspotSDK::Test::Resources::CRM::Timeline::TemplatesTest < HubspotSDK::Te
         id: String,
         name: String,
         object_type: String,
-        tokens: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::TimelineEventTemplateToken]),
+        tokens: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::TimelineEventTemplateToken]),
         created_at: Time | nil,
         detail_template: String | nil,
         header_template: String | nil,

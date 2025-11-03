@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PropertyGroup < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::CRM::PropertyGroup, HubspotSDK::Internal::AnyHash)
+            T.any(HubspotSDK::Crm::PropertyGroup, HubspotSDK::Internal::AnyHash)
           end
 
         sig { returns(T::Boolean) }

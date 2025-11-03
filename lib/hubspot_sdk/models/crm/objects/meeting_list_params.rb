@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
-        # @see HubspotSDK::Resources::CRM::Objects::Meetings#list
+        # @see HubspotSDK::Resources::Crm::Objects::Meetings#list
         class MeetingListParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
@@ -55,7 +55,7 @@ module HubspotSDK
 
           # @!method initialize(after: nil, archived: nil, associations: nil, limit: nil, properties: nil, properties_with_history: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::CRM::Objects::MeetingListParams} for more details.
+          #   {HubspotSDK::Models::Crm::Objects::MeetingListParams} for more details.
           #
           #   @param after [String] The paging cursor token of the last successfully read resource will be returned
           #

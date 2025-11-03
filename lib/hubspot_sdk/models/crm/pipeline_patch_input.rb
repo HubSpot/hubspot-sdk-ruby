@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PipelinePatchInput < HubspotSDK::Internal::Type::BaseModel
         # @!attribute archived
         #   Whether the pipeline is archived. This property should only be provided when
@@ -27,7 +27,7 @@ module HubspotSDK
 
         # @!method initialize(archived: nil, display_order: nil, label: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::PipelinePatchInput} for more details.
+        #   {HubspotSDK::Models::Crm::PipelinePatchInput} for more details.
         #
         #   An input used to update some properties on a pipeline definition.
         #

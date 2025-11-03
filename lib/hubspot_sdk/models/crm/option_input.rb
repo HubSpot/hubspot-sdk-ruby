@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class OptionInput < HubspotSDK::Internal::Type::BaseModel
         # @!attribute hidden
         #   If true, the option will not be shown in forms, bots, or meeting scheduling
@@ -40,7 +40,7 @@ module HubspotSDK
 
         # @!method initialize(hidden:, label:, value:, description: nil, display_order: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::OptionInput} for more details.
+        #   {HubspotSDK::Models::Crm::OptionInput} for more details.
         #
         #   @param hidden [Boolean] If true, the option will not be shown in forms, bots, or meeting scheduling page
         #

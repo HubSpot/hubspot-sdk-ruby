@@ -2,26 +2,26 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Extensions
         class Calling
           class Transcripts
             # @overload create(engagement_id:, transcript_create_utterances:, request_options: {})
             #
             # @param engagement_id [Integer]
-            # @param transcript_create_utterances [Array<HubspotSDK::Models::CRM::Extensions::Calling::TranscriptCreateUtterance>]
+            # @param transcript_create_utterances [Array<HubspotSDK::Models::Crm::Extensions::Calling::TranscriptCreateUtterance>]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::CRM::Extensions::Calling::TranscriptCreateResponse]
+            # @return [HubspotSDK::Models::Crm::Extensions::Calling::TranscriptCreateResponse]
             #
-            # @see HubspotSDK::Models::CRM::Extensions::Calling::TranscriptCreateParams
+            # @see HubspotSDK::Models::Crm::Extensions::Calling::TranscriptCreateParams
             def create(params)
-              parsed, options = HubspotSDK::CRM::Extensions::Calling::TranscriptCreateParams.dump_request(params)
+              parsed, options = HubspotSDK::Crm::Extensions::Calling::TranscriptCreateParams.dump_request(params)
               @client.request(
                 method: :post,
                 path: "crm/v3/extensions/calling/transcripts",
                 body: parsed,
-                model: HubspotSDK::CRM::Extensions::Calling::TranscriptCreateResponse,
+                model: HubspotSDK::Crm::Extensions::Calling::TranscriptCreateResponse,
                 options: options
               )
             end
@@ -33,7 +33,7 @@ module HubspotSDK
             #
             # @return [nil]
             #
-            # @see HubspotSDK::Models::CRM::Extensions::Calling::TranscriptDeleteParams
+            # @see HubspotSDK::Models::Crm::Extensions::Calling::TranscriptDeleteParams
             def delete(transcript_id, params = {})
               @client.request(
                 method: :delete,
@@ -48,14 +48,14 @@ module HubspotSDK
             # @param transcript_id [String]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::CRM::Extensions::Calling::TranscriptResponse]
+            # @return [HubspotSDK::Models::Crm::Extensions::Calling::TranscriptResponse]
             #
-            # @see HubspotSDK::Models::CRM::Extensions::Calling::TranscriptGetParams
+            # @see HubspotSDK::Models::Crm::Extensions::Calling::TranscriptGetParams
             def get(transcript_id, params = {})
               @client.request(
                 method: :get,
                 path: ["crm/v3/extensions/calling/transcripts/%1$s", transcript_id],
-                model: HubspotSDK::CRM::Extensions::Calling::TranscriptResponse,
+                model: HubspotSDK::Crm::Extensions::Calling::TranscriptResponse,
                 options: params[:request_options]
               )
             end

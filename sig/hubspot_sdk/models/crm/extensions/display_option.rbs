@@ -1,12 +1,12 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         type display_option =
           {
             label: String,
             name: String,
-            type: HubspotSDK::Models::CRM::Extensions::DisplayOption::type_
+            type: HubspotSDK::Models::Crm::Extensions::DisplayOption::type_
           }
 
         class DisplayOption < HubspotSDK::Internal::Type::BaseModel
@@ -14,18 +14,18 @@ module HubspotSDK
 
           attr_accessor name: String
 
-          attr_accessor type: HubspotSDK::Models::CRM::Extensions::DisplayOption::type_
+          attr_accessor type: HubspotSDK::Models::Crm::Extensions::DisplayOption::type_
 
           def initialize: (
             label: String,
             name: String,
-            type: HubspotSDK::Models::CRM::Extensions::DisplayOption::type_
+            type: HubspotSDK::Models::Crm::Extensions::DisplayOption::type_
           ) -> void
 
           def to_hash: -> {
             label: String,
             name: String,
-            type: HubspotSDK::Models::CRM::Extensions::DisplayOption::type_
+            type: HubspotSDK::Models::Crm::Extensions::DisplayOption::type_
           }
 
           type type_ = :DEFAULT | :SUCCESS | :WARNING | :DANGER | :INFO
@@ -39,7 +39,7 @@ module HubspotSDK
             DANGER: :DANGER
             INFO: :INFO
 
-            def self?.values: -> ::Array[HubspotSDK::Models::CRM::Extensions::DisplayOption::type_]
+            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::DisplayOption::type_]
           end
         end
       end

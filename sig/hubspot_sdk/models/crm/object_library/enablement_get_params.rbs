@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module ObjectLibrary
         type enablement_get_params =
           {  } & HubspotSDK::Internal::Type::request_parameters

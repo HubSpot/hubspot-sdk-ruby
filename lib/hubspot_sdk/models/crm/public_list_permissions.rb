@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicListPermissions < HubspotSDK::Internal::Type::BaseModel
         # @!attribute teams_with_edit_access
         #

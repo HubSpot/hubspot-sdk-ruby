@@ -2,21 +2,21 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module PublicListConversionTime
         extend HubspotSDK::Internal::Type::Union
 
         Variants =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PublicListConversionDate,
-              HubspotSDK::CRM::PublicListConversionInactivity
+              HubspotSDK::Crm::PublicListConversionDate,
+              HubspotSDK::Crm::PublicListConversionInactivity
             )
           end
 
         sig do
           override.returns(
-            T::Array[HubspotSDK::CRM::PublicListConversionTime::Variants]
+            T::Array[HubspotSDK::Crm::PublicListConversionTime::Variants]
           )
         end
         def self.variants

@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class SimplePublicObjectBatchInputForCreate < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::SimplePublicObjectBatchInputForCreate,
+              HubspotSDK::Crm::SimplePublicObjectBatchInputForCreate,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -17,7 +17,7 @@ module HubspotSDK
 
         sig do
           returns(
-            T.nilable(T::Array[HubspotSDK::CRM::PublicAssociationsForObject])
+            T.nilable(T::Array[HubspotSDK::Crm::PublicAssociationsForObject])
           )
         end
         attr_reader :associations
@@ -25,7 +25,7 @@ module HubspotSDK
         sig do
           params(
             associations:
-              T::Array[HubspotSDK::CRM::PublicAssociationsForObject::OrHash]
+              T::Array[HubspotSDK::Crm::PublicAssociationsForObject::OrHash]
           ).void
         end
         attr_writer :associations
@@ -40,7 +40,7 @@ module HubspotSDK
           params(
             properties: T::Hash[Symbol, String],
             associations:
-              T::Array[HubspotSDK::CRM::PublicAssociationsForObject::OrHash],
+              T::Array[HubspotSDK::Crm::PublicAssociationsForObject::OrHash],
             object_write_trace_id: String
           ).returns(T.attached_class)
         end
@@ -52,7 +52,7 @@ module HubspotSDK
             {
               properties: T::Hash[Symbol, String],
               associations:
-                T::Array[HubspotSDK::CRM::PublicAssociationsForObject],
+                T::Array[HubspotSDK::Crm::PublicAssociationsForObject],
               object_write_trace_id: String
             }
           )

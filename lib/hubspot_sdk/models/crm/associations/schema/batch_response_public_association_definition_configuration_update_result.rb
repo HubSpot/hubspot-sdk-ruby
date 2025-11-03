@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         module Schema
           class BatchResponsePublicAssociationDefinitionConfigurationUpdateResult < HubspotSDK::Internal::Type::BaseModel
@@ -13,9 +13,9 @@ module HubspotSDK
 
             # @!attribute results
             #
-            #   @return [Array<HubspotSDK::Models::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult>]
+            #   @return [Array<HubspotSDK::Models::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult>]
             required :results,
-                     -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult] }
+                     -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult] }
 
             # @!attribute started_at
             #
@@ -24,9 +24,9 @@ module HubspotSDK
 
             # @!attribute status
             #
-            #   @return [Symbol, HubspotSDK::Models::CRM::Associations::Schema::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult::Status]
+            #   @return [Symbol, HubspotSDK::Models::Crm::Associations::Schema::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult::Status]
             required :status,
-                     enum: -> { HubspotSDK::CRM::Associations::Schema::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult::Status }
+                     enum: -> { HubspotSDK::Crm::Associations::Schema::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult::Status }
 
             # @!attribute errors
             #
@@ -50,15 +50,15 @@ module HubspotSDK
 
             # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
             #   @param completed_at [Time]
-            #   @param results [Array<HubspotSDK::Models::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult>]
+            #   @param results [Array<HubspotSDK::Models::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult>]
             #   @param started_at [Time]
-            #   @param status [Symbol, HubspotSDK::Models::CRM::Associations::Schema::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult::Status]
+            #   @param status [Symbol, HubspotSDK::Models::Crm::Associations::Schema::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult::Status]
             #   @param errors [Array<HubspotSDK::Models::StandardError>]
             #   @param links [Hash{Symbol=>String}]
             #   @param num_errors [Integer]
             #   @param requested_at [Time]
 
-            # @see HubspotSDK::Models::CRM::Associations::Schema::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult#status
+            # @see HubspotSDK::Models::Crm::Associations::Schema::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult#status
             module Status
               extend HubspotSDK::Internal::Type::Enum
 

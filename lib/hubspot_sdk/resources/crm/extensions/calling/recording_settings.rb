@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Extensions
         class Calling
           class RecordingSettings
@@ -12,16 +12,16 @@ module HubspotSDK
             # @param url_to_retrieve_authed_recording [String]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::CRM::Extensions::RecordingSettingsResponse]
+            # @return [HubspotSDK::Models::Crm::Extensions::RecordingSettingsResponse]
             #
-            # @see HubspotSDK::Models::CRM::Extensions::Calling::RecordingSettingCreateParams
+            # @see HubspotSDK::Models::Crm::Extensions::Calling::RecordingSettingCreateParams
             def create(app_id, params)
-              parsed, options = HubspotSDK::CRM::Extensions::Calling::RecordingSettingCreateParams.dump_request(params)
+              parsed, options = HubspotSDK::Crm::Extensions::Calling::RecordingSettingCreateParams.dump_request(params)
               @client.request(
                 method: :post,
                 path: ["crm/v3/extensions/calling/%1$s/settings/recording", app_id],
                 body: parsed,
-                model: HubspotSDK::CRM::Extensions::RecordingSettingsResponse,
+                model: HubspotSDK::Crm::Extensions::RecordingSettingsResponse,
                 options: options
               )
             end
@@ -32,16 +32,16 @@ module HubspotSDK
             # @param url_to_retrieve_authed_recording [String]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::CRM::Extensions::RecordingSettingsResponse]
+            # @return [HubspotSDK::Models::Crm::Extensions::RecordingSettingsResponse]
             #
-            # @see HubspotSDK::Models::CRM::Extensions::Calling::RecordingSettingUpdateParams
+            # @see HubspotSDK::Models::Crm::Extensions::Calling::RecordingSettingUpdateParams
             def update(app_id, params = {})
-              parsed, options = HubspotSDK::CRM::Extensions::Calling::RecordingSettingUpdateParams.dump_request(params)
+              parsed, options = HubspotSDK::Crm::Extensions::Calling::RecordingSettingUpdateParams.dump_request(params)
               @client.request(
                 method: :patch,
                 path: ["crm/v3/extensions/calling/%1$s/settings/recording", app_id],
                 body: parsed,
-                model: HubspotSDK::CRM::Extensions::RecordingSettingsResponse,
+                model: HubspotSDK::Crm::Extensions::RecordingSettingsResponse,
                 options: options
               )
             end
@@ -51,14 +51,14 @@ module HubspotSDK
             # @param app_id [Integer]
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::CRM::Extensions::RecordingSettingsResponse]
+            # @return [HubspotSDK::Models::Crm::Extensions::RecordingSettingsResponse]
             #
-            # @see HubspotSDK::Models::CRM::Extensions::Calling::RecordingSettingGetParams
+            # @see HubspotSDK::Models::Crm::Extensions::Calling::RecordingSettingGetParams
             def get(app_id, params = {})
               @client.request(
                 method: :get,
                 path: ["crm/v3/extensions/calling/%1$s/settings/recording", app_id],
-                model: HubspotSDK::CRM::Extensions::RecordingSettingsResponse,
+                model: HubspotSDK::Crm::Extensions::RecordingSettingsResponse,
                 options: params[:request_options]
               )
             end
@@ -70,10 +70,10 @@ module HubspotSDK
             #
             # @return [nil]
             #
-            # @see HubspotSDK::Models::CRM::Extensions::Calling::RecordingSettingMarkReadyParams
+            # @see HubspotSDK::Models::Crm::Extensions::Calling::RecordingSettingMarkReadyParams
             def mark_ready(params)
               parsed, options =
-                HubspotSDK::CRM::Extensions::Calling::RecordingSettingMarkReadyParams.dump_request(params)
+                HubspotSDK::Crm::Extensions::Calling::RecordingSettingMarkReadyParams.dump_request(params)
               @client.request(
                 method: :post,
                 path: "crm/v3/extensions/calling/recordings/ready",

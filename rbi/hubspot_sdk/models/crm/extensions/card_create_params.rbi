@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
-        class CardCreateParams < HubspotSDK::Models::CRM::Extensions::CardCreateRequest
+        class CardCreateParams < HubspotSDK::Models::Crm::Extensions::CardCreateRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::CardCreateParams,
+                HubspotSDK::Crm::Extensions::CardCreateParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

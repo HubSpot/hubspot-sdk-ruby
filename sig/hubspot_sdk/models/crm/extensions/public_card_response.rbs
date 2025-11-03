@@ -1,14 +1,14 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         type public_card_response =
           {
             id: String,
-            actions: HubspotSDK::CRM::Extensions::CardActions,
-            audit_history: ::Array[HubspotSDK::CRM::Extensions::CardAuditResponse],
-            display_: HubspotSDK::CRM::Extensions::CardDisplayBody,
-            fetch: HubspotSDK::CRM::Extensions::PublicCardFetchBody,
+            actions: HubspotSDK::Crm::Extensions::CardActions,
+            audit_history: ::Array[HubspotSDK::Crm::Extensions::CardAuditResponse],
+            display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
+            fetch: HubspotSDK::Crm::Extensions::PublicCardFetchBody,
             title: String,
             created_at: Time,
             updated_at: Time
@@ -17,13 +17,13 @@ module HubspotSDK
         class PublicCardResponse < HubspotSDK::Internal::Type::BaseModel
           attr_accessor id: String
 
-          attr_accessor actions: HubspotSDK::CRM::Extensions::CardActions
+          attr_accessor actions: HubspotSDK::Crm::Extensions::CardActions
 
-          attr_accessor audit_history: ::Array[HubspotSDK::CRM::Extensions::CardAuditResponse]
+          attr_accessor audit_history: ::Array[HubspotSDK::Crm::Extensions::CardAuditResponse]
 
-          attr_accessor display_: HubspotSDK::CRM::Extensions::CardDisplayBody
+          attr_accessor display_: HubspotSDK::Crm::Extensions::CardDisplayBody
 
-          attr_accessor fetch: HubspotSDK::CRM::Extensions::PublicCardFetchBody
+          attr_accessor fetch: HubspotSDK::Crm::Extensions::PublicCardFetchBody
 
           attr_accessor title: String
 
@@ -37,10 +37,10 @@ module HubspotSDK
 
           def initialize: (
             id: String,
-            actions: HubspotSDK::CRM::Extensions::CardActions,
-            audit_history: ::Array[HubspotSDK::CRM::Extensions::CardAuditResponse],
-            display_: HubspotSDK::CRM::Extensions::CardDisplayBody,
-            fetch: HubspotSDK::CRM::Extensions::PublicCardFetchBody,
+            actions: HubspotSDK::Crm::Extensions::CardActions,
+            audit_history: ::Array[HubspotSDK::Crm::Extensions::CardAuditResponse],
+            display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
+            fetch: HubspotSDK::Crm::Extensions::PublicCardFetchBody,
             title: String,
             ?created_at: Time,
             ?updated_at: Time
@@ -48,10 +48,10 @@ module HubspotSDK
 
           def to_hash: -> {
             id: String,
-            actions: HubspotSDK::CRM::Extensions::CardActions,
-            audit_history: ::Array[HubspotSDK::CRM::Extensions::CardAuditResponse],
-            display_: HubspotSDK::CRM::Extensions::CardDisplayBody,
-            fetch: HubspotSDK::CRM::Extensions::PublicCardFetchBody,
+            actions: HubspotSDK::Crm::Extensions::CardActions,
+            audit_history: ::Array[HubspotSDK::Crm::Extensions::CardAuditResponse],
+            display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
+            fetch: HubspotSDK::Crm::Extensions::PublicCardFetchBody,
             title: String,
             created_at: Time,
             updated_at: Time

@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class SimplePublicObjectInput < HubspotSDK::Internal::Type::BaseModel
         # @!attribute properties
         #   Key value pairs representing the properties of the object.

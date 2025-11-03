@@ -2,19 +2,19 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
         class PartnerClients
           class Batch
             sig do
               params(
-                inputs: T::Array[HubspotSDK::CRM::SimplePublicObjectID::OrHash],
+                inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
                 properties: T::Array[String],
                 properties_with_history: T::Array[String],
                 archived: T::Boolean,
                 id_property: String,
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::CRM::BatchResponseSimplePublicObject)
+              ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
             end
             def batch_get(
               # Body param:
@@ -37,10 +37,10 @@ module HubspotSDK
               params(
                 inputs:
                   T::Array[
-                    HubspotSDK::CRM::SimplePublicObjectBatchInput::OrHash
+                    HubspotSDK::Crm::SimplePublicObjectBatchInput::OrHash
                   ],
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::CRM::BatchResponseSimplePublicObject)
+              ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
             end
             def batch_update(inputs:, request_options: {})
             end

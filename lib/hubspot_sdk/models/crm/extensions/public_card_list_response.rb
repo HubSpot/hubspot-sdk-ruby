@@ -2,18 +2,18 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
-        # @see HubspotSDK::Resources::CRM::Extensions::Cards#list
+        # @see HubspotSDK::Resources::Crm::Extensions::Cards#list
         class PublicCardListResponse < HubspotSDK::Internal::Type::BaseModel
           # @!attribute results
           #
-          #   @return [Array<HubspotSDK::Models::CRM::Extensions::PublicCardResponse>]
+          #   @return [Array<HubspotSDK::Models::Crm::Extensions::PublicCardResponse>]
           required :results,
-                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Extensions::PublicCardResponse] }
+                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Extensions::PublicCardResponse] }
 
           # @!method initialize(results:)
-          #   @param results [Array<HubspotSDK::Models::CRM::Extensions::PublicCardResponse>]
+          #   @param results [Array<HubspotSDK::Models::Crm::Extensions::PublicCardResponse>]
         end
       end
     end

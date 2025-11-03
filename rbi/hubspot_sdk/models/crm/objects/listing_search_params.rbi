@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
-        class ListingSearchParams < HubspotSDK::Models::CRM::PublicObjectSearchRequest
+        class ListingSearchParams < HubspotSDK::Models::Crm::PublicObjectSearchRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Objects::ListingSearchParams,
+                HubspotSDK::Crm::Objects::ListingSearchParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

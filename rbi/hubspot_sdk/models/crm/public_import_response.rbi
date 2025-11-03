@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicImportResponse < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PublicImportResponse,
+              HubspotSDK::Crm::PublicImportResponse,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -21,11 +21,11 @@ module HubspotSDK
         sig { returns(T::Array[String]) }
         attr_accessor :mapped_object_type_ids
 
-        sig { returns(HubspotSDK::CRM::PublicImportMetadata) }
+        sig { returns(HubspotSDK::Crm::PublicImportMetadata) }
         attr_reader :metadata
 
         sig do
-          params(metadata: HubspotSDK::CRM::PublicImportMetadata::OrHash).void
+          params(metadata: HubspotSDK::Crm::PublicImportMetadata::OrHash).void
         end
         attr_writer :metadata
 
@@ -36,7 +36,7 @@ module HubspotSDK
 
         # The status of the import.
         sig do
-          returns(HubspotSDK::CRM::PublicImportResponse::State::TaggedSymbol)
+          returns(HubspotSDK::Crm::PublicImportResponse::State::TaggedSymbol)
         end
         attr_accessor :state
 
@@ -58,7 +58,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::CRM::PublicImportResponse::ImportSource::TaggedSymbol
+              HubspotSDK::Crm::PublicImportResponse::ImportSource::TaggedSymbol
             )
           )
         end
@@ -67,16 +67,16 @@ module HubspotSDK
         sig do
           params(
             import_source:
-              HubspotSDK::CRM::PublicImportResponse::ImportSource::OrSymbol
+              HubspotSDK::Crm::PublicImportResponse::ImportSource::OrSymbol
           ).void
         end
         attr_writer :import_source
 
-        sig { returns(T.nilable(HubspotSDK::CRM::ImportTemplate)) }
+        sig { returns(T.nilable(HubspotSDK::Crm::ImportTemplate)) }
         attr_reader :import_template
 
         sig do
-          params(import_template: HubspotSDK::CRM::ImportTemplate::OrHash).void
+          params(import_template: HubspotSDK::Crm::ImportTemplate::OrHash).void
         end
         attr_writer :import_template
 
@@ -85,15 +85,15 @@ module HubspotSDK
             id: String,
             created_at: Time,
             mapped_object_type_ids: T::Array[String],
-            metadata: HubspotSDK::CRM::PublicImportMetadata::OrHash,
+            metadata: HubspotSDK::Crm::PublicImportMetadata::OrHash,
             opt_out_import: T::Boolean,
-            state: HubspotSDK::CRM::PublicImportResponse::State::OrSymbol,
+            state: HubspotSDK::Crm::PublicImportResponse::State::OrSymbol,
             updated_at: Time,
             import_name: String,
             import_request_json: T.anything,
             import_source:
-              HubspotSDK::CRM::PublicImportResponse::ImportSource::OrSymbol,
-            import_template: HubspotSDK::CRM::ImportTemplate::OrHash
+              HubspotSDK::Crm::PublicImportResponse::ImportSource::OrSymbol,
+            import_template: HubspotSDK::Crm::ImportTemplate::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -120,15 +120,15 @@ module HubspotSDK
               id: String,
               created_at: Time,
               mapped_object_type_ids: T::Array[String],
-              metadata: HubspotSDK::CRM::PublicImportMetadata,
+              metadata: HubspotSDK::Crm::PublicImportMetadata,
               opt_out_import: T::Boolean,
-              state: HubspotSDK::CRM::PublicImportResponse::State::TaggedSymbol,
+              state: HubspotSDK::Crm::PublicImportResponse::State::TaggedSymbol,
               updated_at: Time,
               import_name: String,
               import_request_json: T.anything,
               import_source:
-                HubspotSDK::CRM::PublicImportResponse::ImportSource::TaggedSymbol,
-              import_template: HubspotSDK::CRM::ImportTemplate
+                HubspotSDK::Crm::PublicImportResponse::ImportSource::TaggedSymbol,
+              import_template: HubspotSDK::Crm::ImportTemplate
             }
           )
         end
@@ -141,50 +141,50 @@ module HubspotSDK
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::CRM::PublicImportResponse::State)
+              T.all(Symbol, HubspotSDK::Crm::PublicImportResponse::State)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           STARTED =
             T.let(
               :STARTED,
-              HubspotSDK::CRM::PublicImportResponse::State::TaggedSymbol
+              HubspotSDK::Crm::PublicImportResponse::State::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::CRM::PublicImportResponse::State::TaggedSymbol
+              HubspotSDK::Crm::PublicImportResponse::State::TaggedSymbol
             )
           DONE =
             T.let(
               :DONE,
-              HubspotSDK::CRM::PublicImportResponse::State::TaggedSymbol
+              HubspotSDK::Crm::PublicImportResponse::State::TaggedSymbol
             )
           FAILED =
             T.let(
               :FAILED,
-              HubspotSDK::CRM::PublicImportResponse::State::TaggedSymbol
+              HubspotSDK::Crm::PublicImportResponse::State::TaggedSymbol
             )
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::CRM::PublicImportResponse::State::TaggedSymbol
+              HubspotSDK::Crm::PublicImportResponse::State::TaggedSymbol
             )
           DEFERRED =
             T.let(
               :DEFERRED,
-              HubspotSDK::CRM::PublicImportResponse::State::TaggedSymbol
+              HubspotSDK::Crm::PublicImportResponse::State::TaggedSymbol
             )
           REVERTED =
             T.let(
               :REVERTED,
-              HubspotSDK::CRM::PublicImportResponse::State::TaggedSymbol
+              HubspotSDK::Crm::PublicImportResponse::State::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::PublicImportResponse::State::TaggedSymbol
+                HubspotSDK::Crm::PublicImportResponse::State::TaggedSymbol
               ]
             )
           end
@@ -197,45 +197,45 @@ module HubspotSDK
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::CRM::PublicImportResponse::ImportSource)
+              T.all(Symbol, HubspotSDK::Crm::PublicImportResponse::ImportSource)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           API =
             T.let(
               :API,
-              HubspotSDK::CRM::PublicImportResponse::ImportSource::TaggedSymbol
+              HubspotSDK::Crm::PublicImportResponse::ImportSource::TaggedSymbol
             )
           CRM_UI =
             T.let(
               :CRM_UI,
-              HubspotSDK::CRM::PublicImportResponse::ImportSource::TaggedSymbol
+              HubspotSDK::Crm::PublicImportResponse::ImportSource::TaggedSymbol
             )
           IMPORT =
             T.let(
               :IMPORT,
-              HubspotSDK::CRM::PublicImportResponse::ImportSource::TaggedSymbol
+              HubspotSDK::Crm::PublicImportResponse::ImportSource::TaggedSymbol
             )
           MOBILE_ANDROID =
             T.let(
               :MOBILE_ANDROID,
-              HubspotSDK::CRM::PublicImportResponse::ImportSource::TaggedSymbol
+              HubspotSDK::Crm::PublicImportResponse::ImportSource::TaggedSymbol
             )
           MOBILE_IOS =
             T.let(
               :MOBILE_IOS,
-              HubspotSDK::CRM::PublicImportResponse::ImportSource::TaggedSymbol
+              HubspotSDK::Crm::PublicImportResponse::ImportSource::TaggedSymbol
             )
           SALESFORCE =
             T.let(
               :SALESFORCE,
-              HubspotSDK::CRM::PublicImportResponse::ImportSource::TaggedSymbol
+              HubspotSDK::Crm::PublicImportResponse::ImportSource::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::PublicImportResponse::ImportSource::TaggedSymbol
+                HubspotSDK::Crm::PublicImportResponse::ImportSource::TaggedSymbol
               ]
             )
           end

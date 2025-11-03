@@ -1,26 +1,26 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type collection_response_public_owner_forward_paging =
         {
-          results: ::Array[HubspotSDK::CRM::PublicOwner],
+          results: ::Array[HubspotSDK::Crm::PublicOwner],
           paging: HubspotSDK::ForwardPaging
         }
 
       class CollectionResponsePublicOwnerForwardPaging < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::CRM::PublicOwner]
+        attr_accessor results: ::Array[HubspotSDK::Crm::PublicOwner]
 
         attr_reader paging: HubspotSDK::ForwardPaging?
 
         def paging=: (HubspotSDK::ForwardPaging) -> HubspotSDK::ForwardPaging
 
         def initialize: (
-          results: ::Array[HubspotSDK::CRM::PublicOwner],
+          results: ::Array[HubspotSDK::Crm::PublicOwner],
           ?paging: HubspotSDK::ForwardPaging
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubspotSDK::CRM::PublicOwner],
+          results: ::Array[HubspotSDK::Crm::PublicOwner],
           paging: HubspotSDK::ForwardPaging
         }
       end

@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class NearLimitRecordSample < HubspotSDK::Internal::Type::BaseModel
         # @!attribute label
         #

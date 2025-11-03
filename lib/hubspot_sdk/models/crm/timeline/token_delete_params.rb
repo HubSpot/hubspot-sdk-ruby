@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Timeline
-        # @see HubspotSDK::Resources::CRM::Timeline::Tokens#delete
+        # @see HubspotSDK::Resources::Crm::Timeline::Tokens#delete
         class TokenDeleteParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters

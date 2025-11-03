@@ -2,7 +2,7 @@
 
 require_relative "../../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Objects::Objects::BatchTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Objects::Objects::BatchTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
@@ -10,15 +10,15 @@ class HubspotSDK::Test::Resources::CRM::Objects::Objects::BatchTest < HubspotSDK
       @hubspot.crm.objects.objects.batch.create("objectType", inputs: [{properties: {foo: "string"}}])
 
     assert_pattern do
-      response => HubspotSDK::CRM::BatchResponseSimplePublicObject
+      response => HubspotSDK::Crm::BatchResponseSimplePublicObject
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::SimplePublicObject]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         started_at: Time,
-        status: HubspotSDK::CRM::BatchResponseSimplePublicObject::Status,
+        status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
         errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
@@ -37,15 +37,15 @@ class HubspotSDK::Test::Resources::CRM::Objects::Objects::BatchTest < HubspotSDK
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::BatchResponseSimplePublicObject
+      response => HubspotSDK::Crm::BatchResponseSimplePublicObject
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::SimplePublicObject]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         started_at: Time,
-        status: HubspotSDK::CRM::BatchResponseSimplePublicObject::Status,
+        status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
         errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
@@ -76,15 +76,15 @@ class HubspotSDK::Test::Resources::CRM::Objects::Objects::BatchTest < HubspotSDK
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::BatchResponseSimplePublicObject
+      response => HubspotSDK::Crm::BatchResponseSimplePublicObject
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::SimplePublicObject]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         started_at: Time,
-        status: HubspotSDK::CRM::BatchResponseSimplePublicObject::Status,
+        status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
         errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
@@ -103,15 +103,15 @@ class HubspotSDK::Test::Resources::CRM::Objects::Objects::BatchTest < HubspotSDK
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::BatchResponseSimplePublicUpsertObject
+      response => HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::SimplePublicUpsertObject]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicUpsertObject]),
         started_at: Time,
-        status: HubspotSDK::CRM::BatchResponseSimplePublicUpsertObject::Status,
+        status: HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject::Status,
         errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,

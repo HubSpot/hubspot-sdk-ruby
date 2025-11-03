@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class TimelineEventTemplate < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The template ID.
@@ -27,8 +27,8 @@ module HubspotSDK
         #   A collection of tokens that can be used as custom properties on the event and to
         #   create fully fledged CRM objects.
         #
-        #   @return [Array<HubspotSDK::Models::CRM::TimelineEventTemplateToken>]
-        required :tokens, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::TimelineEventTemplateToken] }
+        #   @return [Array<HubspotSDK::Models::Crm::TimelineEventTemplateToken>]
+        required :tokens, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::TimelineEventTemplateToken] }
 
         # @!attribute created_at
         #   The date and time that the Event Template was created, as an ISO 8601 timestamp.
@@ -60,7 +60,7 @@ module HubspotSDK
 
         # @!method initialize(id:, name:, object_type:, tokens:, created_at: nil, detail_template: nil, header_template: nil, updated_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::TimelineEventTemplate} for more details.
+        #   {HubspotSDK::Models::Crm::TimelineEventTemplate} for more details.
         #
         #   The current state of the template definition.
         #
@@ -70,7 +70,7 @@ module HubspotSDK
         #
         #   @param object_type [String] The type of CRM object this template is for. [Contacts, companies, tickets, and
         #
-        #   @param tokens [Array<HubspotSDK::Models::CRM::TimelineEventTemplateToken>] A collection of tokens that can be used as custom properties on the event and to
+        #   @param tokens [Array<HubspotSDK::Models::Crm::TimelineEventTemplateToken>] A collection of tokens that can be used as custom properties on the event and to
         #
         #   @param created_at [Time] The date and time that the Event Template was created, as an ISO 8601 timestamp.
         #

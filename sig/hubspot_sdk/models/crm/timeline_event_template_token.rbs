@@ -1,14 +1,14 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type timeline_event_template_token =
         {
           label: String,
           name: String,
-          type: HubspotSDK::Models::CRM::TimelineEventTemplateToken::type_,
+          type: HubspotSDK::Models::Crm::TimelineEventTemplateToken::type_,
           created_at: Time,
           object_property_name: String,
-          options: ::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption],
+          options: ::Array[HubspotSDK::Crm::TimelineEventTemplateTokenOption],
           updated_at: Time
         }
 
@@ -17,7 +17,7 @@ module HubspotSDK
 
         attr_accessor name: String
 
-        attr_accessor type: HubspotSDK::Models::CRM::TimelineEventTemplateToken::type_
+        attr_accessor type: HubspotSDK::Models::Crm::TimelineEventTemplateToken::type_
 
         attr_reader created_at: Time?
 
@@ -27,11 +27,11 @@ module HubspotSDK
 
         def object_property_name=: (String) -> String
 
-        attr_reader options: ::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption]?
+        attr_reader options: ::Array[HubspotSDK::Crm::TimelineEventTemplateTokenOption]?
 
         def options=: (
-          ::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption]
-        ) -> ::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption]
+          ::Array[HubspotSDK::Crm::TimelineEventTemplateTokenOption]
+        ) -> ::Array[HubspotSDK::Crm::TimelineEventTemplateTokenOption]
 
         attr_reader updated_at: Time?
 
@@ -40,20 +40,20 @@ module HubspotSDK
         def initialize: (
           label: String,
           name: String,
-          type: HubspotSDK::Models::CRM::TimelineEventTemplateToken::type_,
+          type: HubspotSDK::Models::Crm::TimelineEventTemplateToken::type_,
           ?created_at: Time,
           ?object_property_name: String,
-          ?options: ::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption],
+          ?options: ::Array[HubspotSDK::Crm::TimelineEventTemplateTokenOption],
           ?updated_at: Time
         ) -> void
 
         def to_hash: -> {
           label: String,
           name: String,
-          type: HubspotSDK::Models::CRM::TimelineEventTemplateToken::type_,
+          type: HubspotSDK::Models::Crm::TimelineEventTemplateToken::type_,
           created_at: Time,
           object_property_name: String,
-          options: ::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption],
+          options: ::Array[HubspotSDK::Crm::TimelineEventTemplateTokenOption],
           updated_at: Time
         }
 
@@ -67,7 +67,7 @@ module HubspotSDK
           NUMBER: :number
           STRING: :string
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::TimelineEventTemplateToken::type_]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::TimelineEventTemplateToken::type_]
         end
       end
     end

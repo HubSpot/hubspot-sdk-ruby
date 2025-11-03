@@ -1,16 +1,16 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         module Schema
           type collection_response_public_association_definition_user_configuration =
             {
-              results: ::Array[HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionUserConfiguration],
+              results: ::Array[HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionUserConfiguration],
               paging: HubspotSDK::Marketing::Paging
             }
 
           class CollectionResponsePublicAssociationDefinitionUserConfiguration < HubspotSDK::Internal::Type::BaseModel
-            attr_accessor results: ::Array[HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionUserConfiguration]
+            attr_accessor results: ::Array[HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionUserConfiguration]
 
             attr_reader paging: HubspotSDK::Marketing::Paging?
 
@@ -19,12 +19,12 @@ module HubspotSDK
             ) -> HubspotSDK::Marketing::Paging
 
             def initialize: (
-              results: ::Array[HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionUserConfiguration],
+              results: ::Array[HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionUserConfiguration],
               ?paging: HubspotSDK::Marketing::Paging
             ) -> void
 
             def to_hash: -> {
-              results: ::Array[HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionUserConfiguration],
+              results: ::Array[HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionUserConfiguration],
               paging: HubspotSDK::Marketing::Paging
             }
           end

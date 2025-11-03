@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class FeatureFlags
         class Portals
           # Specify an account-level flag state for a specific HubSpot account.
@@ -12,9 +12,9 @@ module HubspotSDK
               app_id: Integer,
               flag_name: String,
               flag_state:
-                HubspotSDK::CRM::PortalFlagStatePutRequest::FlagState::OrSymbol,
+                HubspotSDK::Crm::PortalFlagStatePutRequest::FlagState::OrSymbol,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::PortalFlagStateResponse)
+            ).returns(HubspotSDK::Crm::PortalFlagStateResponse)
           end
           def update(
             # Path param: The ID of the account that installed the app.
@@ -38,7 +38,7 @@ module HubspotSDK
               app_id: Integer,
               flag_name: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::PortalFlagStateResponse)
+            ).returns(HubspotSDK::Crm::PortalFlagStateResponse)
           end
           def delete(
             # The ID of the account that installed the app.
@@ -59,7 +59,7 @@ module HubspotSDK
               app_id: Integer,
               portal_ids: T::Array[Integer],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::PortalFlagStateBatchResponse)
+            ).returns(HubspotSDK::Crm::PortalFlagStateBatchResponse)
           end
           def batch_delete(
             # Path param: The name of the flag, either `hs-release-app-cards` or
@@ -80,9 +80,9 @@ module HubspotSDK
               flag_name: String,
               app_id: Integer,
               portal_states:
-                T::Array[HubspotSDK::CRM::BatchPortalEntry::OrHash],
+                T::Array[HubspotSDK::Crm::BatchPortalEntry::OrHash],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::PortalFlagStateBatchResponse)
+            ).returns(HubspotSDK::Crm::PortalFlagStateBatchResponse)
           end
           def batch_upsert(
             # Path param: The name of the flag, either `hs-release-app-cards` or
@@ -103,7 +103,7 @@ module HubspotSDK
               app_id: Integer,
               flag_name: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::PortalFlagStateResponse)
+            ).returns(HubspotSDK::Crm::PortalFlagStateResponse)
           end
           def get(
             # The ID of the account that installed the app.

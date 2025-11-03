@@ -2,17 +2,17 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CustomObjectRecordLimitResponse < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::CustomObjectRecordLimitResponse,
+              HubspotSDK::Crm::CustomObjectRecordLimitResponse,
               HubspotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::CRM::UsageForObjectType]) }
+        sig { returns(T::Array[HubspotSDK::Crm::UsageForObjectType]) }
         attr_accessor :by_object_type
 
         sig { returns(Integer) }
@@ -27,7 +27,7 @@ module HubspotSDK
         sig do
           params(
             by_object_type:
-              T::Array[HubspotSDK::CRM::UsageForObjectType::OrHash],
+              T::Array[HubspotSDK::Crm::UsageForObjectType::OrHash],
             overall_limit: Integer,
             overall_percentage: Float,
             overall_usage: Integer
@@ -44,7 +44,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              by_object_type: T::Array[HubspotSDK::CRM::UsageForObjectType],
+              by_object_type: T::Array[HubspotSDK::Crm::UsageForObjectType],
               overall_limit: Integer,
               overall_percentage: Float,
               overall_usage: Integer

@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module ObjectLibrary
-        # @see HubspotSDK::Resources::CRM::ObjectLibrary::Enablement#get
+        # @see HubspotSDK::Resources::Crm::ObjectLibrary::Enablement#get
         class EnablementGetParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters

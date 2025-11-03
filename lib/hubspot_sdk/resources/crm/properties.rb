@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Properties
-        # @return [HubspotSDK::Resources::CRM::Properties::Batch]
+        # @return [HubspotSDK::Resources::Crm::Properties::Batch]
         attr_reader :batch
 
-        # @return [HubspotSDK::Resources::CRM::Properties::Groups]
+        # @return [HubspotSDK::Resources::Crm::Properties::Groups]
         attr_reader :groups
 
         # Create and return a copy of a new property for the specified object type.
@@ -32,22 +32,22 @@ module HubspotSDK
         # @param referenced_object_type [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CRM::CreatedResponseProperty]
+        # @return [HubspotSDK::Models::Crm::CreatedResponseProperty]
         #
-        # @see HubspotSDK::Models::CRM::PropertyCreateParams
+        # @see HubspotSDK::Models::Crm::PropertyCreateParams
         def create(object_type, params)
-          parsed, options = HubspotSDK::CRM::PropertyCreateParams.dump_request(params)
+          parsed, options = HubspotSDK::Crm::PropertyCreateParams.dump_request(params)
           @client.request(
             method: :post,
             path: ["crm/v3/properties/%1$s", object_type],
             body: parsed,
-            model: HubspotSDK::CRM::CreatedResponseProperty,
+            model: HubspotSDK::Crm::CreatedResponseProperty,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::CRM::PropertyUpdateParams} for more details.
+        # {HubspotSDK::Models::Crm::PropertyUpdateParams} for more details.
         #
         # Perform a partial update of a property identified by { propertyName }. Provided
         # fields will be overwritten.
@@ -64,7 +64,7 @@ module HubspotSDK
         #
         # @param display_order [Integer] Body param: Properties are displayed in order starting with the lowest positive
         #
-        # @param field_type [Symbol, HubspotSDK::Models::CRM::PropertyUpdate::FieldType] Body param: Controls how the property appears in HubSpot.
+        # @param field_type [Symbol, HubspotSDK::Models::Crm::PropertyUpdate::FieldType] Body param: Controls how the property appears in HubSpot.
         #
         # @param form_field [Boolean] Body param: Whether or not the property can be used in a HubSpot form.
         #
@@ -76,15 +76,15 @@ module HubspotSDK
         #
         # @param options [Array<HubspotSDK::Models::OptionInput>] Body param: A list of valid options for the property.
         #
-        # @param type [Symbol, HubspotSDK::Models::CRM::PropertyUpdate::Type] Body param: The data type of the property.
+        # @param type [Symbol, HubspotSDK::Models::Crm::PropertyUpdate::Type] Body param: The data type of the property.
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Property]
         #
-        # @see HubspotSDK::Models::CRM::PropertyUpdateParams
+        # @see HubspotSDK::Models::Crm::PropertyUpdateParams
         def update(property_name, params)
-          parsed, options = HubspotSDK::CRM::PropertyUpdateParams.dump_request(params)
+          parsed, options = HubspotSDK::Crm::PropertyUpdateParams.dump_request(params)
           object_type =
             parsed.delete(:object_type) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -110,16 +110,16 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CRM::CollectionResponseProperty]
+        # @return [HubspotSDK::Models::Crm::CollectionResponseProperty]
         #
-        # @see HubspotSDK::Models::CRM::PropertyListParams
+        # @see HubspotSDK::Models::Crm::PropertyListParams
         def list(object_type, params = {})
-          parsed, options = HubspotSDK::CRM::PropertyListParams.dump_request(params)
+          parsed, options = HubspotSDK::Crm::PropertyListParams.dump_request(params)
           @client.request(
             method: :get,
             path: ["crm/v3/properties/%1$s", object_type],
             query: parsed,
-            model: HubspotSDK::CRM::CollectionResponseProperty,
+            model: HubspotSDK::Crm::CollectionResponseProperty,
             options: options
           )
         end
@@ -134,9 +134,9 @@ module HubspotSDK
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::CRM::PropertyDeleteParams
+        # @see HubspotSDK::Models::Crm::PropertyDeleteParams
         def delete(property_name, params)
-          parsed, options = HubspotSDK::CRM::PropertyDeleteParams.dump_request(params)
+          parsed, options = HubspotSDK::Crm::PropertyDeleteParams.dump_request(params)
           object_type =
             parsed.delete(:object_type) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -165,9 +165,9 @@ module HubspotSDK
         #
         # @return [HubspotSDK::Models::Property]
         #
-        # @see HubspotSDK::Models::CRM::PropertyGetParams
+        # @see HubspotSDK::Models::Crm::PropertyGetParams
         def get(property_name, params)
-          parsed, options = HubspotSDK::CRM::PropertyGetParams.dump_request(params)
+          parsed, options = HubspotSDK::Crm::PropertyGetParams.dump_request(params)
           object_type =
             parsed.delete(:object_type) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -186,8 +186,8 @@ module HubspotSDK
         # @param client [HubspotSDK::Client]
         def initialize(client:)
           @client = client
-          @batch = HubspotSDK::Resources::CRM::Properties::Batch.new(client: client)
-          @groups = HubspotSDK::Resources::CRM::Properties::Groups.new(client: client)
+          @batch = HubspotSDK::Resources::Crm::Properties::Batch.new(client: client)
+          @groups = HubspotSDK::Resources::Crm::Properties::Groups.new(client: client)
         end
       end
     end

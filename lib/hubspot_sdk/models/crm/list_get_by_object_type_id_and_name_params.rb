@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Lists#get_by_object_type_id_and_name
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Lists#get_by_object_type_id_and_name
       class ListGetByObjectTypeIDAndNameParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
@@ -23,7 +23,7 @@ module HubspotSDK
 
         # @!method initialize(object_type_id:, include_filters: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::ListGetByObjectTypeIDAndNameParams} for more details.
+        #   {HubspotSDK::Models::Crm::ListGetByObjectTypeIDAndNameParams} for more details.
         #
         #   @param object_type_id [String]
         #

@@ -19,7 +19,7 @@ module HubspotSDK
               searchable_properties: T::Array[String],
               secondary_display_properties: T::Array[String],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::Objects::ObjectTypeDefinition)
+            ).returns(HubspotSDK::Crm::Objects::ObjectTypeDefinition)
           end
           def update(
             # Path param:
@@ -109,7 +109,7 @@ module HubspotSDK
               object_type: String,
               app_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::Objects::ObjectSchema)
+            ).returns(HubspotSDK::Crm::Objects::ObjectSchema)
           end
           def get(object_type, app_id:, request_options: {})
           end

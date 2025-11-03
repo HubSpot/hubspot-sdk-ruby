@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicExportListRequest < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PublicExportListRequest,
+              HubspotSDK::Crm::PublicExportListRequest,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -15,7 +15,7 @@ module HubspotSDK
         sig do
           returns(
             T::Array[
-              HubspotSDK::CRM::PublicExportListRequest::ExportInternalValuesOption::OrSymbol
+              HubspotSDK::Crm::PublicExportListRequest::ExportInternalValuesOption::OrSymbol
             ]
           )
         end
@@ -26,18 +26,18 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::CRM::PublicExportListRequest::ExportType::OrSymbol
+            HubspotSDK::Crm::PublicExportListRequest::ExportType::OrSymbol
           )
         end
         attr_accessor :export_type
 
         sig do
-          returns(HubspotSDK::CRM::PublicExportListRequest::Format::OrSymbol)
+          returns(HubspotSDK::Crm::PublicExportListRequest::Format::OrSymbol)
         end
         attr_accessor :format_
 
         sig do
-          returns(HubspotSDK::CRM::PublicExportListRequest::Language::OrSymbol)
+          returns(HubspotSDK::Crm::PublicExportListRequest::Language::OrSymbol)
         end
         attr_accessor :language
 
@@ -63,14 +63,14 @@ module HubspotSDK
           params(
             export_internal_values_options:
               T::Array[
-                HubspotSDK::CRM::PublicExportListRequest::ExportInternalValuesOption::OrSymbol
+                HubspotSDK::Crm::PublicExportListRequest::ExportInternalValuesOption::OrSymbol
               ],
             export_name: String,
             export_type:
-              HubspotSDK::CRM::PublicExportListRequest::ExportType::OrSymbol,
-            format_: HubspotSDK::CRM::PublicExportListRequest::Format::OrSymbol,
+              HubspotSDK::Crm::PublicExportListRequest::ExportType::OrSymbol,
+            format_: HubspotSDK::Crm::PublicExportListRequest::Format::OrSymbol,
             language:
-              HubspotSDK::CRM::PublicExportListRequest::Language::OrSymbol,
+              HubspotSDK::Crm::PublicExportListRequest::Language::OrSymbol,
             list_id: String,
             object_properties: T::Array[String],
             object_type: String,
@@ -98,15 +98,15 @@ module HubspotSDK
             {
               export_internal_values_options:
                 T::Array[
-                  HubspotSDK::CRM::PublicExportListRequest::ExportInternalValuesOption::OrSymbol
+                  HubspotSDK::Crm::PublicExportListRequest::ExportInternalValuesOption::OrSymbol
                 ],
               export_name: String,
               export_type:
-                HubspotSDK::CRM::PublicExportListRequest::ExportType::OrSymbol,
+                HubspotSDK::Crm::PublicExportListRequest::ExportType::OrSymbol,
               format_:
-                HubspotSDK::CRM::PublicExportListRequest::Format::OrSymbol,
+                HubspotSDK::Crm::PublicExportListRequest::Format::OrSymbol,
               language:
-                HubspotSDK::CRM::PublicExportListRequest::Language::OrSymbol,
+                HubspotSDK::Crm::PublicExportListRequest::Language::OrSymbol,
               list_id: String,
               object_properties: T::Array[String],
               object_type: String,
@@ -126,7 +126,7 @@ module HubspotSDK
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CRM::PublicExportListRequest::ExportInternalValuesOption
+                HubspotSDK::Crm::PublicExportListRequest::ExportInternalValuesOption
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -134,18 +134,18 @@ module HubspotSDK
           NAMES =
             T.let(
               :NAMES,
-              HubspotSDK::CRM::PublicExportListRequest::ExportInternalValuesOption::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::ExportInternalValuesOption::TaggedSymbol
             )
           VALUES =
             T.let(
               :VALUES,
-              HubspotSDK::CRM::PublicExportListRequest::ExportInternalValuesOption::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::ExportInternalValuesOption::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::PublicExportListRequest::ExportInternalValuesOption::TaggedSymbol
+                HubspotSDK::Crm::PublicExportListRequest::ExportInternalValuesOption::TaggedSymbol
               ]
             )
           end
@@ -160,7 +160,7 @@ module HubspotSDK
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CRM::PublicExportListRequest::ExportType
+                HubspotSDK::Crm::PublicExportListRequest::ExportType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -168,13 +168,13 @@ module HubspotSDK
           LIST =
             T.let(
               :LIST,
-              HubspotSDK::CRM::PublicExportListRequest::ExportType::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::ExportType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::PublicExportListRequest::ExportType::TaggedSymbol
+                HubspotSDK::Crm::PublicExportListRequest::ExportType::TaggedSymbol
               ]
             )
           end
@@ -187,30 +187,30 @@ module HubspotSDK
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::CRM::PublicExportListRequest::Format)
+              T.all(Symbol, HubspotSDK::Crm::PublicExportListRequest::Format)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           XLS =
             T.let(
               :XLS,
-              HubspotSDK::CRM::PublicExportListRequest::Format::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::Format::TaggedSymbol
             )
           XLSX =
             T.let(
               :XLSX,
-              HubspotSDK::CRM::PublicExportListRequest::Format::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::Format::TaggedSymbol
             )
           CSV =
             T.let(
               :CSV,
-              HubspotSDK::CRM::PublicExportListRequest::Format::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::Format::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::PublicExportListRequest::Format::TaggedSymbol
+                HubspotSDK::Crm::PublicExportListRequest::Format::TaggedSymbol
               ]
             )
           end
@@ -223,85 +223,85 @@ module HubspotSDK
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::CRM::PublicExportListRequest::Language)
+              T.all(Symbol, HubspotSDK::Crm::PublicExportListRequest::Language)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           EN =
             T.let(
               :EN,
-              HubspotSDK::CRM::PublicExportListRequest::Language::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
           DE =
             T.let(
               :DE,
-              HubspotSDK::CRM::PublicExportListRequest::Language::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
           ES =
             T.let(
               :ES,
-              HubspotSDK::CRM::PublicExportListRequest::Language::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
           FR =
             T.let(
               :FR,
-              HubspotSDK::CRM::PublicExportListRequest::Language::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
           JA =
             T.let(
               :JA,
-              HubspotSDK::CRM::PublicExportListRequest::Language::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
           NL =
             T.let(
               :NL,
-              HubspotSDK::CRM::PublicExportListRequest::Language::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
           PT_BR =
             T.let(
               :PT_BR,
-              HubspotSDK::CRM::PublicExportListRequest::Language::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
           IT =
             T.let(
               :IT,
-              HubspotSDK::CRM::PublicExportListRequest::Language::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
           PL =
             T.let(
               :PL,
-              HubspotSDK::CRM::PublicExportListRequest::Language::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
           SV =
             T.let(
               :SV,
-              HubspotSDK::CRM::PublicExportListRequest::Language::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
           FI =
             T.let(
               :FI,
-              HubspotSDK::CRM::PublicExportListRequest::Language::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
           ZH_TW =
             T.let(
               :ZH_TW,
-              HubspotSDK::CRM::PublicExportListRequest::Language::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
           DA_DK =
             T.let(
               :DA_DK,
-              HubspotSDK::CRM::PublicExportListRequest::Language::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
           NO =
             T.let(
               :NO,
-              HubspotSDK::CRM::PublicExportListRequest::Language::TaggedSymbol
+              HubspotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::PublicExportListRequest::Language::TaggedSymbol
+                HubspotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
               ]
             )
           end

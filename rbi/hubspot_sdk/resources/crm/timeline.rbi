@@ -2,15 +2,15 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Timeline
-        sig { returns(HubspotSDK::Resources::CRM::Timeline::Events) }
+        sig { returns(HubspotSDK::Resources::Crm::Timeline::Events) }
         attr_reader :events
 
-        sig { returns(HubspotSDK::Resources::CRM::Timeline::Templates) }
+        sig { returns(HubspotSDK::Resources::Crm::Timeline::Templates) }
         attr_reader :templates
 
-        sig { returns(HubspotSDK::Resources::CRM::Timeline::Tokens) }
+        sig { returns(HubspotSDK::Resources::Crm::Timeline::Tokens) }
         attr_reader :tokens
 
         # @api private

@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Pipelines
-        # @see HubspotSDK::Resources::CRM::Pipelines::Stages#delete
+        # @see HubspotSDK::Resources::Crm::Pipelines::Stages#delete
         class StageDeleteParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters

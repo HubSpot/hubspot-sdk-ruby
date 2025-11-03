@@ -12,12 +12,12 @@ module HubspotSDK
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::CRM::PropertyGroup]) }
+        sig { returns(T::Array[HubspotSDK::Crm::PropertyGroup]) }
         attr_accessor :results
 
         sig do
           params(
-            results: T::Array[HubspotSDK::CRM::PropertyGroup::OrHash]
+            results: T::Array[HubspotSDK::Crm::PropertyGroup::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(results:)
@@ -25,7 +25,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { results: T::Array[HubspotSDK::CRM::PropertyGroup] }
+            { results: T::Array[HubspotSDK::Crm::PropertyGroup] }
           )
         end
         def to_hash

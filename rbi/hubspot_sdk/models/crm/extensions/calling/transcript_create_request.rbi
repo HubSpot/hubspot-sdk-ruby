@@ -2,14 +2,14 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module Calling
           class TranscriptCreateRequest < HubspotSDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Extensions::Calling::TranscriptCreateRequest,
+                  HubspotSDK::Crm::Extensions::Calling::TranscriptCreateRequest,
                   HubspotSDK::Internal::AnyHash
                 )
               end
@@ -20,7 +20,7 @@ module HubspotSDK
             sig do
               returns(
                 T::Array[
-                  HubspotSDK::CRM::Extensions::Calling::TranscriptCreateUtterance
+                  HubspotSDK::Crm::Extensions::Calling::TranscriptCreateUtterance
                 ]
               )
             end
@@ -31,7 +31,7 @@ module HubspotSDK
                 engagement_id: Integer,
                 transcript_create_utterances:
                   T::Array[
-                    HubspotSDK::CRM::Extensions::Calling::TranscriptCreateUtterance::OrHash
+                    HubspotSDK::Crm::Extensions::Calling::TranscriptCreateUtterance::OrHash
                   ]
               ).returns(T.attached_class)
             end
@@ -44,7 +44,7 @@ module HubspotSDK
                   engagement_id: Integer,
                   transcript_create_utterances:
                     T::Array[
-                      HubspotSDK::CRM::Extensions::Calling::TranscriptCreateUtterance
+                      HubspotSDK::Crm::Extensions::Calling::TranscriptCreateUtterance
                     ]
                 }
               )

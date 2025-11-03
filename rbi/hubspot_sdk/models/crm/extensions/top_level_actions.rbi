@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class TopLevelActions < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::TopLevelActions,
+                HubspotSDK::Crm::Extensions::TopLevelActions,
                 HubspotSDK::Internal::AnyHash
               )
             end
@@ -16,7 +16,7 @@ module HubspotSDK
           sig do
             returns(
               T::Array[
-                HubspotSDK::CRM::Extensions::TopLevelActions::Secondary::Variants
+                HubspotSDK::Crm::Extensions::TopLevelActions::Secondary::Variants
               ]
             )
           end
@@ -25,7 +25,7 @@ module HubspotSDK
           sig do
             returns(
               T.nilable(
-                HubspotSDK::CRM::Extensions::TopLevelActions::Primary::Variants
+                HubspotSDK::Crm::Extensions::TopLevelActions::Primary::Variants
               )
             )
           end
@@ -35,21 +35,21 @@ module HubspotSDK
             params(
               primary:
                 T.any(
-                  HubspotSDK::CRM::Extensions::ActionHookActionBody::OrHash,
-                  HubspotSDK::CRM::Extensions::IFrameActionBody::OrHash
+                  HubspotSDK::Crm::Extensions::ActionHookActionBody::OrHash,
+                  HubspotSDK::Crm::Extensions::IFrameActionBody::OrHash
                 )
             ).void
           end
           attr_writer :primary
 
           sig do
-            returns(T.nilable(HubspotSDK::CRM::Extensions::IFrameActionBody))
+            returns(T.nilable(HubspotSDK::Crm::Extensions::IFrameActionBody))
           end
           attr_reader :settings
 
           sig do
             params(
-              settings: HubspotSDK::CRM::Extensions::IFrameActionBody::OrHash
+              settings: HubspotSDK::Crm::Extensions::IFrameActionBody::OrHash
             ).void
           end
           attr_writer :settings
@@ -59,16 +59,16 @@ module HubspotSDK
               secondary:
                 T::Array[
                   T.any(
-                    HubspotSDK::CRM::Extensions::ActionHookActionBody::OrHash,
-                    HubspotSDK::CRM::Extensions::IFrameActionBody::OrHash
+                    HubspotSDK::Crm::Extensions::ActionHookActionBody::OrHash,
+                    HubspotSDK::Crm::Extensions::IFrameActionBody::OrHash
                   )
                 ],
               primary:
                 T.any(
-                  HubspotSDK::CRM::Extensions::ActionHookActionBody::OrHash,
-                  HubspotSDK::CRM::Extensions::IFrameActionBody::OrHash
+                  HubspotSDK::Crm::Extensions::ActionHookActionBody::OrHash,
+                  HubspotSDK::Crm::Extensions::IFrameActionBody::OrHash
                 ),
-              settings: HubspotSDK::CRM::Extensions::IFrameActionBody::OrHash
+              settings: HubspotSDK::Crm::Extensions::IFrameActionBody::OrHash
             ).returns(T.attached_class)
           end
           def self.new(secondary:, primary: nil, settings: nil)
@@ -79,11 +79,11 @@ module HubspotSDK
               {
                 secondary:
                   T::Array[
-                    HubspotSDK::CRM::Extensions::TopLevelActions::Secondary::Variants
+                    HubspotSDK::Crm::Extensions::TopLevelActions::Secondary::Variants
                   ],
                 primary:
-                  HubspotSDK::CRM::Extensions::TopLevelActions::Primary::Variants,
-                settings: HubspotSDK::CRM::Extensions::IFrameActionBody
+                  HubspotSDK::Crm::Extensions::TopLevelActions::Primary::Variants,
+                settings: HubspotSDK::Crm::Extensions::IFrameActionBody
               }
             )
           end
@@ -96,15 +96,15 @@ module HubspotSDK
             Variants =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Extensions::ActionHookActionBody,
-                  HubspotSDK::CRM::Extensions::IFrameActionBody
+                  HubspotSDK::Crm::Extensions::ActionHookActionBody,
+                  HubspotSDK::Crm::Extensions::IFrameActionBody
                 )
               end
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::CRM::Extensions::TopLevelActions::Secondary::Variants
+                  HubspotSDK::Crm::Extensions::TopLevelActions::Secondary::Variants
                 ]
               )
             end
@@ -118,15 +118,15 @@ module HubspotSDK
             Variants =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Extensions::ActionHookActionBody,
-                  HubspotSDK::CRM::Extensions::IFrameActionBody
+                  HubspotSDK::Crm::Extensions::ActionHookActionBody,
+                  HubspotSDK::Crm::Extensions::IFrameActionBody
                 )
               end
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::CRM::Extensions::TopLevelActions::Primary::Variants
+                  HubspotSDK::Crm::Extensions::TopLevelActions::Primary::Variants
                 ]
               )
             end

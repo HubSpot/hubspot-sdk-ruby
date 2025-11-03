@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type import_row_core =
         {
           contains_encrypted_properties: bool,

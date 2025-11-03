@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Lists#update_filters
-      class ListUpdateFiltersParams < HubspotSDK::Models::CRM::ListFilterUpdateRequest
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Lists#update_filters
+      class ListUpdateFiltersParams < HubspotSDK::Models::Crm::ListFilterUpdateRequest
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
@@ -18,7 +18,7 @@ module HubspotSDK
 
         # @!method initialize(enroll_objects_in_workflows: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::ListUpdateFiltersParams} for more details.
+        #   {HubspotSDK::Models::Crm::ListUpdateFiltersParams} for more details.
         #
         #   @param enroll_objects_in_workflows [Boolean] A flag indicating whether or not the memberships added to the list as a result o
         #

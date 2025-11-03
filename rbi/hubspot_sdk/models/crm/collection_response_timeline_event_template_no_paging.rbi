@@ -2,22 +2,22 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CollectionResponseTimelineEventTemplateNoPaging < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::CollectionResponseTimelineEventTemplateNoPaging,
+              HubspotSDK::Crm::CollectionResponseTimelineEventTemplateNoPaging,
               HubspotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::CRM::TimelineEventTemplate]) }
+        sig { returns(T::Array[HubspotSDK::Crm::TimelineEventTemplate]) }
         attr_accessor :results
 
         sig do
           params(
-            results: T::Array[HubspotSDK::CRM::TimelineEventTemplate::OrHash]
+            results: T::Array[HubspotSDK::Crm::TimelineEventTemplate::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(results:)
@@ -25,7 +25,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { results: T::Array[HubspotSDK::CRM::TimelineEventTemplate] }
+            { results: T::Array[HubspotSDK::Crm::TimelineEventTemplate] }
           )
         end
         def to_hash

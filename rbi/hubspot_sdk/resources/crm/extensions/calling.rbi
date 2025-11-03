@@ -2,31 +2,31 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Extensions
         class Calling
           sig do
             returns(
-              HubspotSDK::Resources::CRM::Extensions::Calling::ChannelConnectionSettings
+              HubspotSDK::Resources::Crm::Extensions::Calling::ChannelConnectionSettings
             )
           end
           attr_reader :channel_connection_settings
 
           sig do
             returns(
-              HubspotSDK::Resources::CRM::Extensions::Calling::RecordingSettings
+              HubspotSDK::Resources::Crm::Extensions::Calling::RecordingSettings
             )
           end
           attr_reader :recording_settings
 
           sig do
-            returns(HubspotSDK::Resources::CRM::Extensions::Calling::Settings)
+            returns(HubspotSDK::Resources::Crm::Extensions::Calling::Settings)
           end
           attr_reader :settings
 
           sig do
             returns(
-              HubspotSDK::Resources::CRM::Extensions::Calling::Transcripts
+              HubspotSDK::Resources::Crm::Extensions::Calling::Transcripts
             )
           end
           attr_reader :transcripts

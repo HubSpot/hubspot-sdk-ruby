@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class SettingsRequest < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::SettingsRequest,
+                HubspotSDK::Crm::Extensions::SettingsRequest,
                 HubspotSDK::Internal::AnyHash
               )
             end

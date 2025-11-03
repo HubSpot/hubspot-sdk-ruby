@@ -1,44 +1,44 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type association_label_limit_response =
         {
           all_labels: ::Array[String],
-          from_object_type: HubspotSDK::CRM::Objects::ObjectTypeDefinition,
+          from_object_type: HubspotSDK::Crm::Objects::ObjectTypeDefinition,
           limit: Integer,
           percentage: Float,
-          to_object_type: HubspotSDK::CRM::Objects::ObjectTypeDefinition,
+          to_object_type: HubspotSDK::Crm::Objects::ObjectTypeDefinition,
           usage: Integer
         }
 
       class AssociationLabelLimitResponse < HubspotSDK::Internal::Type::BaseModel
         attr_accessor all_labels: ::Array[String]
 
-        attr_accessor from_object_type: HubspotSDK::CRM::Objects::ObjectTypeDefinition
+        attr_accessor from_object_type: HubspotSDK::Crm::Objects::ObjectTypeDefinition
 
         attr_accessor limit: Integer
 
         attr_accessor percentage: Float
 
-        attr_accessor to_object_type: HubspotSDK::CRM::Objects::ObjectTypeDefinition
+        attr_accessor to_object_type: HubspotSDK::Crm::Objects::ObjectTypeDefinition
 
         attr_accessor usage: Integer
 
         def initialize: (
           all_labels: ::Array[String],
-          from_object_type: HubspotSDK::CRM::Objects::ObjectTypeDefinition,
+          from_object_type: HubspotSDK::Crm::Objects::ObjectTypeDefinition,
           limit: Integer,
           percentage: Float,
-          to_object_type: HubspotSDK::CRM::Objects::ObjectTypeDefinition,
+          to_object_type: HubspotSDK::Crm::Objects::ObjectTypeDefinition,
           usage: Integer
         ) -> void
 
         def to_hash: -> {
           all_labels: ::Array[String],
-          from_object_type: HubspotSDK::CRM::Objects::ObjectTypeDefinition,
+          from_object_type: HubspotSDK::Crm::Objects::ObjectTypeDefinition,
           limit: Integer,
           percentage: Float,
-          to_object_type: HubspotSDK::CRM::Objects::ObjectTypeDefinition,
+          to_object_type: HubspotSDK::Crm::Objects::ObjectTypeDefinition,
           usage: Integer
         }
       end

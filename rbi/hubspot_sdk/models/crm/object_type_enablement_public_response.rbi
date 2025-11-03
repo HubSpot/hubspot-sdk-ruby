@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ObjectTypeEnablementPublicResponse < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::ObjectTypeEnablementPublicResponse,
+              HubspotSDK::Crm::ObjectTypeEnablementPublicResponse,
               HubspotSDK::Internal::AnyHash
             )
           end

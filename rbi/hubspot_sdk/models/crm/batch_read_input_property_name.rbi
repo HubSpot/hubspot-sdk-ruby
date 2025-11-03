@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchReadInputPropertyName < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::BatchReadInputPropertyName,
+              HubspotSDK::Crm::BatchReadInputPropertyName,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -21,7 +21,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::CRM::BatchReadInputPropertyName::DataSensitivity::OrSymbol
+              HubspotSDK::Crm::BatchReadInputPropertyName::DataSensitivity::OrSymbol
             )
           )
         end
@@ -30,7 +30,7 @@ module HubspotSDK
         sig do
           params(
             data_sensitivity:
-              HubspotSDK::CRM::BatchReadInputPropertyName::DataSensitivity::OrSymbol
+              HubspotSDK::Crm::BatchReadInputPropertyName::DataSensitivity::OrSymbol
           ).void
         end
         attr_writer :data_sensitivity
@@ -40,7 +40,7 @@ module HubspotSDK
             archived: T::Boolean,
             inputs: T::Array[HubspotSDK::PropertyName::OrHash],
             data_sensitivity:
-              HubspotSDK::CRM::BatchReadInputPropertyName::DataSensitivity::OrSymbol
+              HubspotSDK::Crm::BatchReadInputPropertyName::DataSensitivity::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(archived:, inputs:, data_sensitivity: nil)
@@ -52,7 +52,7 @@ module HubspotSDK
               archived: T::Boolean,
               inputs: T::Array[HubspotSDK::PropertyName],
               data_sensitivity:
-                HubspotSDK::CRM::BatchReadInputPropertyName::DataSensitivity::OrSymbol
+                HubspotSDK::Crm::BatchReadInputPropertyName::DataSensitivity::OrSymbol
             }
           )
         end
@@ -66,7 +66,7 @@ module HubspotSDK
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CRM::BatchReadInputPropertyName::DataSensitivity
+                HubspotSDK::Crm::BatchReadInputPropertyName::DataSensitivity
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -74,23 +74,23 @@ module HubspotSDK
           NON_SENSITIVE =
             T.let(
               :non_sensitive,
-              HubspotSDK::CRM::BatchReadInputPropertyName::DataSensitivity::TaggedSymbol
+              HubspotSDK::Crm::BatchReadInputPropertyName::DataSensitivity::TaggedSymbol
             )
           SENSITIVE =
             T.let(
               :sensitive,
-              HubspotSDK::CRM::BatchReadInputPropertyName::DataSensitivity::TaggedSymbol
+              HubspotSDK::Crm::BatchReadInputPropertyName::DataSensitivity::TaggedSymbol
             )
           HIGHLY_SENSITIVE =
             T.let(
               :highly_sensitive,
-              HubspotSDK::CRM::BatchReadInputPropertyName::DataSensitivity::TaggedSymbol
+              HubspotSDK::Crm::BatchReadInputPropertyName::DataSensitivity::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::BatchReadInputPropertyName::DataSensitivity::TaggedSymbol
+                HubspotSDK::Crm::BatchReadInputPropertyName::DataSensitivity::TaggedSymbol
               ]
             )
           end

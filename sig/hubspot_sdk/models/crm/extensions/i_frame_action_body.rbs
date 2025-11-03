@@ -1,12 +1,12 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         type i_frame_action_body =
           {
             height: Integer,
             property_names_included: ::Array[String],
-            type: HubspotSDK::Models::CRM::Extensions::IFrameActionBody::type_,
+            type: HubspotSDK::Models::Crm::Extensions::IFrameActionBody::type_,
             url: String,
             width: Integer,
             label: String
@@ -17,7 +17,7 @@ module HubspotSDK
 
           attr_accessor property_names_included: ::Array[String]
 
-          attr_accessor type: HubspotSDK::Models::CRM::Extensions::IFrameActionBody::type_
+          attr_accessor type: HubspotSDK::Models::Crm::Extensions::IFrameActionBody::type_
 
           attr_accessor url: String
 
@@ -30,7 +30,7 @@ module HubspotSDK
           def initialize: (
             height: Integer,
             property_names_included: ::Array[String],
-            type: HubspotSDK::Models::CRM::Extensions::IFrameActionBody::type_,
+            type: HubspotSDK::Models::Crm::Extensions::IFrameActionBody::type_,
             url: String,
             width: Integer,
             ?label: String
@@ -39,7 +39,7 @@ module HubspotSDK
           def to_hash: -> {
             height: Integer,
             property_names_included: ::Array[String],
-            type: HubspotSDK::Models::CRM::Extensions::IFrameActionBody::type_,
+            type: HubspotSDK::Models::Crm::Extensions::IFrameActionBody::type_,
             url: String,
             width: Integer,
             label: String
@@ -52,7 +52,7 @@ module HubspotSDK
 
             IFRAME: :IFRAME
 
-            def self?.values: -> ::Array[HubspotSDK::Models::CRM::Extensions::IFrameActionBody::type_]
+            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::IFrameActionBody::type_]
           end
         end
       end

@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Timeline
         type template_update_params =
           { app_id: Integer } & HubspotSDK::Internal::Type::request_parameters
 
-        class TemplateUpdateParams < HubspotSDK::Models::CRM::TimelineEventTemplateUpdateRequest
+        class TemplateUpdateParams < HubspotSDK::Models::Crm::TimelineEventTemplateUpdateRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

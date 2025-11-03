@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicFetchAssociationsBatchRequest < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PublicFetchAssociationsBatchRequest,
+              HubspotSDK::Crm::PublicFetchAssociationsBatchRequest,
               HubspotSDK::Internal::AnyHash
             )
           end

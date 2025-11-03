@@ -9,7 +9,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
     response = @hubspot.cms.media_bridge.schemas.update("objectType", app_id: "appId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::Objects::ObjectTypeDefinition
+      response => HubspotSDK::Crm::Objects::ObjectTypeDefinition
     end
 
     assert_pattern do
@@ -43,7 +43,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Objects::ObjectSchema])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Objects::ObjectSchema])
       }
     end
   end
@@ -116,7 +116,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
     response = @hubspot.cms.media_bridge.schemas.get("objectType", app_id: "appId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::Objects::ObjectSchema
+      response => HubspotSDK::Crm::Objects::ObjectSchema
     end
 
     assert_pattern do

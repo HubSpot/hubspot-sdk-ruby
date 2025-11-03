@@ -2,18 +2,18 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         module Schema
           class BatchInputPublicAssociationDefinitionConfigurationUpdateRequest < HubspotSDK::Internal::Type::BaseModel
             # @!attribute inputs
             #
-            #   @return [Array<HubspotSDK::Models::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest>]
+            #   @return [Array<HubspotSDK::Models::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest>]
             required :inputs,
-                     -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest] }
+                     -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest] }
 
             # @!method initialize(inputs:)
-            #   @param inputs [Array<HubspotSDK::Models::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest>]
+            #   @param inputs [Array<HubspotSDK::Models::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest>]
           end
         end
       end

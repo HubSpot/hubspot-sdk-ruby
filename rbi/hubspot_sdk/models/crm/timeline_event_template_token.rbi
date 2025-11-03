@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class TimelineEventTemplateToken < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::TimelineEventTemplateToken,
+              HubspotSDK::Crm::TimelineEventTemplateToken,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -25,7 +25,7 @@ module HubspotSDK
         # The data type of the token. You can currently choose from [string, number, date,
         # enumeration].
         sig do
-          returns(HubspotSDK::CRM::TimelineEventTemplateToken::Type::OrSymbol)
+          returns(HubspotSDK::Crm::TimelineEventTemplateToken::Type::OrSymbol)
         end
         attr_accessor :type
 
@@ -50,7 +50,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              T::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption]
+              T::Array[HubspotSDK::Crm::TimelineEventTemplateTokenOption]
             )
           )
         end
@@ -60,7 +60,7 @@ module HubspotSDK
           params(
             options:
               T::Array[
-                HubspotSDK::CRM::TimelineEventTemplateTokenOption::OrHash
+                HubspotSDK::Crm::TimelineEventTemplateTokenOption::OrHash
               ]
           ).void
         end
@@ -79,12 +79,12 @@ module HubspotSDK
           params(
             label: String,
             name: String,
-            type: HubspotSDK::CRM::TimelineEventTemplateToken::Type::OrSymbol,
+            type: HubspotSDK::Crm::TimelineEventTemplateToken::Type::OrSymbol,
             created_at: Time,
             object_property_name: String,
             options:
               T::Array[
-                HubspotSDK::CRM::TimelineEventTemplateTokenOption::OrHash
+                HubspotSDK::Crm::TimelineEventTemplateTokenOption::OrHash
               ],
             updated_at: Time
           ).returns(T.attached_class)
@@ -119,11 +119,11 @@ module HubspotSDK
             {
               label: String,
               name: String,
-              type: HubspotSDK::CRM::TimelineEventTemplateToken::Type::OrSymbol,
+              type: HubspotSDK::Crm::TimelineEventTemplateToken::Type::OrSymbol,
               created_at: Time,
               object_property_name: String,
               options:
-                T::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption],
+                T::Array[HubspotSDK::Crm::TimelineEventTemplateTokenOption],
               updated_at: Time
             }
           )
@@ -138,35 +138,35 @@ module HubspotSDK
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::CRM::TimelineEventTemplateToken::Type)
+              T.all(Symbol, HubspotSDK::Crm::TimelineEventTemplateToken::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           DATE =
             T.let(
               :date,
-              HubspotSDK::CRM::TimelineEventTemplateToken::Type::TaggedSymbol
+              HubspotSDK::Crm::TimelineEventTemplateToken::Type::TaggedSymbol
             )
           ENUMERATION =
             T.let(
               :enumeration,
-              HubspotSDK::CRM::TimelineEventTemplateToken::Type::TaggedSymbol
+              HubspotSDK::Crm::TimelineEventTemplateToken::Type::TaggedSymbol
             )
           NUMBER =
             T.let(
               :number,
-              HubspotSDK::CRM::TimelineEventTemplateToken::Type::TaggedSymbol
+              HubspotSDK::Crm::TimelineEventTemplateToken::Type::TaggedSymbol
             )
           STRING =
             T.let(
               :string,
-              HubspotSDK::CRM::TimelineEventTemplateToken::Type::TaggedSymbol
+              HubspotSDK::Crm::TimelineEventTemplateToken::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::TimelineEventTemplateToken::Type::TaggedSymbol
+                HubspotSDK::Crm::TimelineEventTemplateToken::Type::TaggedSymbol
               ]
             )
           end

@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchResponseTimelineEventResponseWithErrors < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::BatchResponseTimelineEventResponseWithErrors,
+              HubspotSDK::Crm::BatchResponseTimelineEventResponseWithErrors,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -15,7 +15,7 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :completed_at
 
-        sig { returns(T::Array[HubspotSDK::CRM::TimelineEventResponse]) }
+        sig { returns(T::Array[HubspotSDK::Crm::TimelineEventResponse]) }
         attr_accessor :results
 
         sig { returns(Time) }
@@ -23,7 +23,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::CRM::BatchResponseTimelineEventResponseWithErrors::Status::OrSymbol
+            HubspotSDK::Crm::BatchResponseTimelineEventResponseWithErrors::Status::OrSymbol
           )
         end
         attr_accessor :status
@@ -55,10 +55,10 @@ module HubspotSDK
         sig do
           params(
             completed_at: Time,
-            results: T::Array[HubspotSDK::CRM::TimelineEventResponse::OrHash],
+            results: T::Array[HubspotSDK::Crm::TimelineEventResponse::OrHash],
             started_at: Time,
             status:
-              HubspotSDK::CRM::BatchResponseTimelineEventResponseWithErrors::Status::OrSymbol,
+              HubspotSDK::Crm::BatchResponseTimelineEventResponseWithErrors::Status::OrSymbol,
             errors: T::Array[HubspotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
@@ -81,10 +81,10 @@ module HubspotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubspotSDK::CRM::TimelineEventResponse],
+              results: T::Array[HubspotSDK::Crm::TimelineEventResponse],
               started_at: Time,
               status:
-                HubspotSDK::CRM::BatchResponseTimelineEventResponseWithErrors::Status::OrSymbol,
+                HubspotSDK::Crm::BatchResponseTimelineEventResponseWithErrors::Status::OrSymbol,
               errors: T::Array[HubspotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
@@ -102,7 +102,7 @@ module HubspotSDK
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CRM::BatchResponseTimelineEventResponseWithErrors::Status
+                HubspotSDK::Crm::BatchResponseTimelineEventResponseWithErrors::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -110,28 +110,28 @@ module HubspotSDK
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::CRM::BatchResponseTimelineEventResponseWithErrors::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseTimelineEventResponseWithErrors::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::CRM::BatchResponseTimelineEventResponseWithErrors::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseTimelineEventResponseWithErrors::Status::TaggedSymbol
             )
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::CRM::BatchResponseTimelineEventResponseWithErrors::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseTimelineEventResponseWithErrors::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::CRM::BatchResponseTimelineEventResponseWithErrors::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseTimelineEventResponseWithErrors::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::BatchResponseTimelineEventResponseWithErrors::Status::TaggedSymbol
+                HubspotSDK::Crm::BatchResponseTimelineEventResponseWithErrors::Status::TaggedSymbol
               ]
             )
           end

@@ -10,7 +10,7 @@ module HubspotSDK
             name: String,
             ?display_order: Integer,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::PropertyGroup
+          ) -> HubspotSDK::Crm::PropertyGroup
 
           def list: (
             String object_type,
@@ -30,7 +30,7 @@ module HubspotSDK
             app_id: String,
             object_type: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::PropertyGroup
+          ) -> HubspotSDK::Crm::PropertyGroup
 
           def update_by_name: (
             String group_name,
@@ -39,7 +39,7 @@ module HubspotSDK
             ?display_order: Integer,
             ?label: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::PropertyGroup
+          ) -> HubspotSDK::Crm::PropertyGroup
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

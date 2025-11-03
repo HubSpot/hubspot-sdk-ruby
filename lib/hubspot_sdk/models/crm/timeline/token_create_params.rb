@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Timeline
-        # @see HubspotSDK::Resources::CRM::Timeline::Tokens#create
-        class TokenCreateParams < HubspotSDK::Models::CRM::TimelineEventTemplateToken
+        # @see HubspotSDK::Resources::Crm::Timeline::Tokens#create
+        class TokenCreateParams < HubspotSDK::Models::Crm::TimelineEventTemplateToken
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

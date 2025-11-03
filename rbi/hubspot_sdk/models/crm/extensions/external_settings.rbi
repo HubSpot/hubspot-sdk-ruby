@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class ExternalSettings < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::ExternalSettings,
+                HubspotSDK::Crm::Extensions::ExternalSettings,
                 HubspotSDK::Internal::AnyHash
               )
             end

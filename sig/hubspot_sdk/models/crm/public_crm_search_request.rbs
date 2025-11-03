@@ -1,28 +1,28 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type public_crm_search_request =
         {
-          filters: ::Array[HubspotSDK::CRM::Filter],
+          filters: ::Array[HubspotSDK::Crm::Filter],
           query: String,
           sorts: ::Array[String]
         }
 
-      class PublicCRMSearchRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor filters: ::Array[HubspotSDK::CRM::Filter]
+      class PublicCrmSearchRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor filters: ::Array[HubspotSDK::Crm::Filter]
 
         attr_accessor query: String
 
         attr_accessor sorts: ::Array[String]
 
         def initialize: (
-          filters: ::Array[HubspotSDK::CRM::Filter],
+          filters: ::Array[HubspotSDK::Crm::Filter],
           query: String,
           sorts: ::Array[String]
         ) -> void
 
         def to_hash: -> {
-          filters: ::Array[HubspotSDK::CRM::Filter],
+          filters: ::Array[HubspotSDK::Crm::Filter],
           query: String,
           sorts: ::Array[String]
         }

@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
-        # @see HubspotSDK::Resources::CRM::Objects::DealSplits#batch_read
+        # @see HubspotSDK::Resources::Crm::Objects::DealSplits#batch_read
         class BatchResponseDealToDealSplits < HubspotSDK::Internal::Type::BaseModel
           # @!attribute completed_at
           #
@@ -13,8 +13,8 @@ module HubspotSDK
 
           # @!attribute results
           #
-          #   @return [Array<HubspotSDK::Models::CRM::Objects::DealToDealSplits>]
-          required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Objects::DealToDealSplits] }
+          #   @return [Array<HubspotSDK::Models::Crm::Objects::DealToDealSplits>]
+          required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Objects::DealToDealSplits] }
 
           # @!attribute started_at
           #
@@ -23,8 +23,8 @@ module HubspotSDK
 
           # @!attribute status
           #
-          #   @return [Symbol, HubspotSDK::Models::CRM::Objects::BatchResponseDealToDealSplits::Status]
-          required :status, enum: -> { HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits::Status }
+          #   @return [Symbol, HubspotSDK::Models::Crm::Objects::BatchResponseDealToDealSplits::Status]
+          required :status, enum: -> { HubspotSDK::Crm::Objects::BatchResponseDealToDealSplits::Status }
 
           # @!attribute links
           #
@@ -38,13 +38,13 @@ module HubspotSDK
 
           # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
           #   @param completed_at [Time]
-          #   @param results [Array<HubspotSDK::Models::CRM::Objects::DealToDealSplits>]
+          #   @param results [Array<HubspotSDK::Models::Crm::Objects::DealToDealSplits>]
           #   @param started_at [Time]
-          #   @param status [Symbol, HubspotSDK::Models::CRM::Objects::BatchResponseDealToDealSplits::Status]
+          #   @param status [Symbol, HubspotSDK::Models::Crm::Objects::BatchResponseDealToDealSplits::Status]
           #   @param links [Hash{Symbol=>String}]
           #   @param requested_at [Time]
 
-          # @see HubspotSDK::Models::CRM::Objects::BatchResponseDealToDealSplits#status
+          # @see HubspotSDK::Models::Crm::Objects::BatchResponseDealToDealSplits#status
           module Status
             extend HubspotSDK::Internal::Type::Enum
 

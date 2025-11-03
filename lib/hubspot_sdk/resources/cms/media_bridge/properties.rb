@@ -276,7 +276,7 @@ module HubspotSDK
           #
           # @param inputs [Array<HubspotSDK::Models::PropertyName>] Body param:
           #
-          # @param data_sensitivity [Symbol, HubspotSDK::Models::CRM::BatchReadInputPropertyName::DataSensitivity] Body param:
+          # @param data_sensitivity [Symbol, HubspotSDK::Models::Crm::BatchReadInputPropertyName::DataSensitivity] Body param:
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

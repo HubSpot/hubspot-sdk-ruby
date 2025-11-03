@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type limit_get_association_records_limits_from_objects_params =
         {  } & HubspotSDK::Internal::Type::request_parameters
 

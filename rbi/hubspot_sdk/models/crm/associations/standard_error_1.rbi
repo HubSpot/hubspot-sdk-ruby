@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         class StandardError1 < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Associations::StandardError1,
+                HubspotSDK::Crm::Associations::StandardError1,
                 HubspotSDK::Internal::AnyHash
               )
             end

@@ -2,7 +2,7 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::ExportsTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::ExportsTest < HubspotSDK::Test::ResourceTest
   def test_create
     skip("Prism tests are disabled")
 
@@ -26,14 +26,14 @@ class HubspotSDK::Test::Resources::CRM::ExportsTest < HubspotSDK::Test::Resource
     response = @hubspot.crm.exports.get_status(0)
 
     assert_pattern do
-      response => HubspotSDK::CRM::ActionResponseWithSingleResultUri
+      response => HubspotSDK::Crm::ActionResponseWithSingleResultUri
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
         started_at: Time,
-        status: HubspotSDK::CRM::ActionResponseWithSingleResultUri::Status,
+        status: HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status,
         errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,

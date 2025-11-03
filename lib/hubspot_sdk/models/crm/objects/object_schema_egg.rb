@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         class ObjectSchemaEgg < HubspotSDK::Internal::Type::BaseModel
           # @!attribute associated_objects
@@ -27,9 +27,9 @@ module HubspotSDK
           # @!attribute properties
           #   Properties defined for this object type.
           #
-          #   @return [Array<HubspotSDK::Models::CRM::Objects::ObjectTypePropertyCreate>]
+          #   @return [Array<HubspotSDK::Models::Crm::Objects::ObjectTypePropertyCreate>]
           required :properties,
-                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Objects::ObjectTypePropertyCreate] }
+                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Objects::ObjectTypePropertyCreate] }
 
           # @!attribute required_properties
           #   The names of properties that should be **required** when creating an object of
@@ -72,7 +72,7 @@ module HubspotSDK
 
           # @!method initialize(associated_objects:, labels:, name:, properties:, required_properties:, description: nil, primary_display_property: nil, searchable_properties: nil, secondary_display_properties: nil)
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::CRM::Objects::ObjectSchemaEgg} for more details.
+          #   {HubspotSDK::Models::Crm::Objects::ObjectSchemaEgg} for more details.
           #
           #   Defines a new object type, its properties, and associations.
           #
@@ -82,7 +82,7 @@ module HubspotSDK
           #
           #   @param name [String] A unique name for this object. For internal use only.
           #
-          #   @param properties [Array<HubspotSDK::Models::CRM::Objects::ObjectTypePropertyCreate>] Properties defined for this object type.
+          #   @param properties [Array<HubspotSDK::Models::Crm::Objects::ObjectTypePropertyCreate>] Properties defined for this object type.
           #
           #   @param required_properties [Array<String>] The names of properties that should be **required** when creating an object of t
           #

@@ -2,7 +2,7 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
@@ -14,12 +14,12 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::ListCreateResponse
+      response => HubspotSDK::Crm::ListCreateResponse
     end
 
     assert_pattern do
       response => {
-        list: HubspotSDK::CRM::PublicObjectList
+        list: HubspotSDK::Crm::PublicObjectList
       }
     end
   end
@@ -30,12 +30,12 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.list
 
     assert_pattern do
-      response => HubspotSDK::CRM::ListsByIDResponse
+      response => HubspotSDK::Crm::ListsByIDResponse
     end
 
     assert_pattern do
       response => {
-        lists: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicObjectList])
+        lists: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicObjectList])
       }
     end
   end
@@ -66,12 +66,12 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.get("listId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::ListFetchResponse
+      response => HubspotSDK::Crm::ListFetchResponse
     end
 
     assert_pattern do
       response => {
-        list: HubspotSDK::CRM::PublicObjectList
+        list: HubspotSDK::Crm::PublicObjectList
       }
     end
   end
@@ -82,12 +82,12 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.get_by_object_type_id_and_name("listName", object_type_id: "objectTypeId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::ListFetchResponse
+      response => HubspotSDK::Crm::ListFetchResponse
     end
 
     assert_pattern do
       response => {
-        list: HubspotSDK::CRM::PublicObjectList
+        list: HubspotSDK::Crm::PublicObjectList
       }
     end
   end
@@ -98,14 +98,14 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.get_schedule_conversion("listId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::PublicListConversionResponse
+      response => HubspotSDK::Crm::PublicListConversionResponse
     end
 
     assert_pattern do
       response => {
         list_id: String,
         converted_at: Time | nil,
-        requested_conversion_time: HubspotSDK::CRM::PublicListConversionResponse::RequestedConversionTime | nil
+        requested_conversion_time: HubspotSDK::Crm::PublicListConversionResponse::RequestedConversionTime | nil
       }
     end
   end
@@ -133,14 +133,14 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::PublicListConversionResponse
+      response => HubspotSDK::Crm::PublicListConversionResponse
     end
 
     assert_pattern do
       response => {
         list_id: String,
         converted_at: Time | nil,
-        requested_conversion_time: HubspotSDK::CRM::PublicListConversionResponse::RequestedConversionTime | nil
+        requested_conversion_time: HubspotSDK::Crm::PublicListConversionResponse::RequestedConversionTime | nil
       }
     end
   end
@@ -151,13 +151,13 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.search
 
     assert_pattern do
-      response => HubspotSDK::CRM::ListSearchResponse
+      response => HubspotSDK::Crm::ListSearchResponse
     end
 
     assert_pattern do
       response => {
         has_more: HubspotSDK::Internal::Type::Boolean,
-        lists: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicObjectListSearchResult]),
+        lists: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicObjectListSearchResult]),
         offset: Integer,
         total: Integer
       }
@@ -358,12 +358,12 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::ListUpdateResponse
+      response => HubspotSDK::Crm::ListUpdateResponse
     end
 
     assert_pattern do
       response => {
-        updated_list: HubspotSDK::CRM::PublicObjectList | nil
+        updated_list: HubspotSDK::Crm::PublicObjectList | nil
       }
     end
   end
@@ -374,12 +374,12 @@ class HubspotSDK::Test::Resources::CRM::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.update_name("listId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::ListUpdateResponse
+      response => HubspotSDK::Crm::ListUpdateResponse
     end
 
     assert_pattern do
       response => {
-        updated_list: HubspotSDK::CRM::PublicObjectList | nil
+        updated_list: HubspotSDK::Crm::PublicObjectList | nil
       }
     end
   end

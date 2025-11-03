@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Timeline
         class Templates
           # Event templates define the general structure for a custom timeline event, and
@@ -29,11 +29,11 @@ module HubspotSDK
               name: String,
               object_type: String,
               tokens:
-                T::Array[HubspotSDK::CRM::TimelineEventTemplateToken::OrHash],
+                T::Array[HubspotSDK::Crm::TimelineEventTemplateToken::OrHash],
               detail_template: String,
               header_template: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::TimelineEventTemplate)
+            ).returns(HubspotSDK::Crm::TimelineEventTemplate)
           end
           def create(
             # The ID of the target app.
@@ -64,11 +64,11 @@ module HubspotSDK
               id: String,
               name: String,
               tokens:
-                T::Array[HubspotSDK::CRM::TimelineEventTemplateToken::OrHash],
+                T::Array[HubspotSDK::Crm::TimelineEventTemplateToken::OrHash],
               detail_template: String,
               header_template: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::TimelineEventTemplate)
+            ).returns(HubspotSDK::Crm::TimelineEventTemplate)
           end
           def update(
             # Path param: The event template ID.
@@ -98,7 +98,7 @@ module HubspotSDK
               app_id: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::CRM::CollectionResponseTimelineEventTemplateNoPaging
+              HubspotSDK::Crm::CollectionResponseTimelineEventTemplateNoPaging
             )
           end
           def list(
@@ -131,7 +131,7 @@ module HubspotSDK
               event_template_id: String,
               app_id: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::TimelineEventTemplate)
+            ).returns(HubspotSDK::Crm::TimelineEventTemplate)
           end
           def get(
             # The event template ID.

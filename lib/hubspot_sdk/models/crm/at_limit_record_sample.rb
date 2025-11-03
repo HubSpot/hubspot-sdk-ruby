@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class AtLimitRecordSample < HubspotSDK::Internal::Type::BaseModel
         # @!attribute label
         #

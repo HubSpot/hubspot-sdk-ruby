@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class LabelsBetweenObjectPair < HubspotSDK::Internal::Type::BaseModel
         # @!attribute from_object_id
         #

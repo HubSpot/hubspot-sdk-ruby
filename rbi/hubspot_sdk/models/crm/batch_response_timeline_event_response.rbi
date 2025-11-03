@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchResponseTimelineEventResponse < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::BatchResponseTimelineEventResponse,
+              HubspotSDK::Crm::BatchResponseTimelineEventResponse,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -17,7 +17,7 @@ module HubspotSDK
         attr_accessor :completed_at
 
         # Successfully created events.
-        sig { returns(T::Array[HubspotSDK::CRM::TimelineEventResponse]) }
+        sig { returns(T::Array[HubspotSDK::Crm::TimelineEventResponse]) }
         attr_accessor :results
 
         # The time the request began processing.
@@ -27,7 +27,7 @@ module HubspotSDK
         # The status of the batch response. Should always be COMPLETED if processed.
         sig do
           returns(
-            HubspotSDK::CRM::BatchResponseTimelineEventResponse::Status::OrSymbol
+            HubspotSDK::Crm::BatchResponseTimelineEventResponse::Status::OrSymbol
           )
         end
         attr_accessor :status
@@ -49,10 +49,10 @@ module HubspotSDK
         sig do
           params(
             completed_at: Time,
-            results: T::Array[HubspotSDK::CRM::TimelineEventResponse::OrHash],
+            results: T::Array[HubspotSDK::Crm::TimelineEventResponse::OrHash],
             started_at: Time,
             status:
-              HubspotSDK::CRM::BatchResponseTimelineEventResponse::Status::OrSymbol,
+              HubspotSDK::Crm::BatchResponseTimelineEventResponse::Status::OrSymbol,
             links: T::Hash[Symbol, String],
             requested_at: Time
           ).returns(T.attached_class)
@@ -76,10 +76,10 @@ module HubspotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubspotSDK::CRM::TimelineEventResponse],
+              results: T::Array[HubspotSDK::Crm::TimelineEventResponse],
               started_at: Time,
               status:
-                HubspotSDK::CRM::BatchResponseTimelineEventResponse::Status::OrSymbol,
+                HubspotSDK::Crm::BatchResponseTimelineEventResponse::Status::OrSymbol,
               links: T::Hash[Symbol, String],
               requested_at: Time
             }
@@ -96,7 +96,7 @@ module HubspotSDK
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CRM::BatchResponseTimelineEventResponse::Status
+                HubspotSDK::Crm::BatchResponseTimelineEventResponse::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -104,28 +104,28 @@ module HubspotSDK
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::CRM::BatchResponseTimelineEventResponse::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseTimelineEventResponse::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::CRM::BatchResponseTimelineEventResponse::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseTimelineEventResponse::Status::TaggedSymbol
             )
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::CRM::BatchResponseTimelineEventResponse::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseTimelineEventResponse::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::CRM::BatchResponseTimelineEventResponse::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseTimelineEventResponse::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::BatchResponseTimelineEventResponse::Status::TaggedSymbol
+                HubspotSDK::Crm::BatchResponseTimelineEventResponse::Status::TaggedSymbol
               ]
             )
           end

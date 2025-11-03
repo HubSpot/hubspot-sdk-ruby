@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type export_get_status_params =
         {  } & HubspotSDK::Internal::Type::request_parameters
 

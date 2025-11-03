@@ -1,15 +1,15 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type list_folder_create_response =
-        { folder: HubspotSDK::CRM::PublicListFolder }
+        { folder: HubspotSDK::Crm::PublicListFolder }
 
       class ListFolderCreateResponse < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor folder: HubspotSDK::CRM::PublicListFolder
+        attr_accessor folder: HubspotSDK::Crm::PublicListFolder
 
-        def initialize: (folder: HubspotSDK::CRM::PublicListFolder) -> void
+        def initialize: (folder: HubspotSDK::Crm::PublicListFolder) -> void
 
-        def to_hash: -> { folder: HubspotSDK::CRM::PublicListFolder }
+        def to_hash: -> { folder: HubspotSDK::Crm::PublicListFolder }
       end
     end
   end

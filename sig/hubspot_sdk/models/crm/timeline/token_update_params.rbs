@@ -1,12 +1,12 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Timeline
         type token_update_params =
           { app_id: Integer, event_template_id: String }
           & HubspotSDK::Internal::Type::request_parameters
 
-        class TokenUpdateParams < HubspotSDK::Models::CRM::TimelineEventTemplateTokenUpdateRequest
+        class TokenUpdateParams < HubspotSDK::Models::Crm::TimelineEventTemplateTokenUpdateRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

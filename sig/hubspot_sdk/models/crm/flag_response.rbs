@@ -1,39 +1,39 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type flag_response =
         {
           app_id: Integer,
-          default_state: HubspotSDK::Models::CRM::FlagResponse::default_state,
+          default_state: HubspotSDK::Models::Crm::FlagResponse::default_state,
           flag_name: String,
-          override_state: HubspotSDK::Models::CRM::FlagResponse::override_state
+          override_state: HubspotSDK::Models::Crm::FlagResponse::override_state
         }
 
       class FlagResponse < HubspotSDK::Internal::Type::BaseModel
         attr_accessor app_id: Integer
 
-        attr_accessor default_state: HubspotSDK::Models::CRM::FlagResponse::default_state
+        attr_accessor default_state: HubspotSDK::Models::Crm::FlagResponse::default_state
 
         attr_accessor flag_name: String
 
-        attr_reader override_state: HubspotSDK::Models::CRM::FlagResponse::override_state?
+        attr_reader override_state: HubspotSDK::Models::Crm::FlagResponse::override_state?
 
         def override_state=: (
-          HubspotSDK::Models::CRM::FlagResponse::override_state
-        ) -> HubspotSDK::Models::CRM::FlagResponse::override_state
+          HubspotSDK::Models::Crm::FlagResponse::override_state
+        ) -> HubspotSDK::Models::Crm::FlagResponse::override_state
 
         def initialize: (
           app_id: Integer,
-          default_state: HubspotSDK::Models::CRM::FlagResponse::default_state,
+          default_state: HubspotSDK::Models::Crm::FlagResponse::default_state,
           flag_name: String,
-          ?override_state: HubspotSDK::Models::CRM::FlagResponse::override_state
+          ?override_state: HubspotSDK::Models::Crm::FlagResponse::override_state
         ) -> void
 
         def to_hash: -> {
           app_id: Integer,
-          default_state: HubspotSDK::Models::CRM::FlagResponse::default_state,
+          default_state: HubspotSDK::Models::Crm::FlagResponse::default_state,
           flag_name: String,
-          override_state: HubspotSDK::Models::CRM::FlagResponse::override_state
+          override_state: HubspotSDK::Models::Crm::FlagResponse::override_state
         }
 
         type default_state = :OFF | :ON | :ABSENT
@@ -45,7 +45,7 @@ module HubspotSDK
           ON: :ON
           ABSENT: :ABSENT
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::FlagResponse::default_state]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::FlagResponse::default_state]
         end
 
         type override_state = :OFF | :ON | :ABSENT
@@ -57,7 +57,7 @@ module HubspotSDK
           ON: :ON
           ABSENT: :ABSENT
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::FlagResponse::override_state]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::FlagResponse::override_state]
         end
       end
     end

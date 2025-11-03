@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class AssociationSpecWithLabel < HubspotSDK::Internal::Type::BaseModel
         # @!attribute category
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::AssociationSpecWithLabel::Category]
-        required :category, enum: -> { HubspotSDK::CRM::AssociationSpecWithLabel::Category }
+        #   @return [Symbol, HubspotSDK::Models::Crm::AssociationSpecWithLabel::Category]
+        required :category, enum: -> { HubspotSDK::Crm::AssociationSpecWithLabel::Category }
 
         # @!attribute type_id
         #
@@ -20,11 +20,11 @@ module HubspotSDK
         optional :label, String
 
         # @!method initialize(category:, type_id:, label: nil)
-        #   @param category [Symbol, HubspotSDK::Models::CRM::AssociationSpecWithLabel::Category]
+        #   @param category [Symbol, HubspotSDK::Models::Crm::AssociationSpecWithLabel::Category]
         #   @param type_id [Integer]
         #   @param label [String]
 
-        # @see HubspotSDK::Models::CRM::AssociationSpecWithLabel#category
+        # @see HubspotSDK::Models::Crm::AssociationSpecWithLabel#category
         module Category
           extend HubspotSDK::Internal::Type::Enum
 

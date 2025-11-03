@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Extensions::CardsTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Extensions::CardsTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
@@ -28,16 +28,16 @@ class HubspotSDK::Test::Resources::CRM::Extensions::CardsTest < HubspotSDK::Test
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::Extensions::PublicCardResponse
+      response => HubspotSDK::Crm::Extensions::PublicCardResponse
     end
 
     assert_pattern do
       response => {
         id: String,
-        actions: HubspotSDK::CRM::Extensions::CardActions,
-        audit_history: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Extensions::CardAuditResponse]),
-        display_: HubspotSDK::CRM::Extensions::CardDisplayBody,
-        fetch: HubspotSDK::CRM::Extensions::PublicCardFetchBody,
+        actions: HubspotSDK::Crm::Extensions::CardActions,
+        audit_history: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Extensions::CardAuditResponse]),
+        display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
+        fetch: HubspotSDK::Crm::Extensions::PublicCardFetchBody,
         title: String,
         created_at: Time | nil,
         updated_at: Time | nil
@@ -51,16 +51,16 @@ class HubspotSDK::Test::Resources::CRM::Extensions::CardsTest < HubspotSDK::Test
     response = @hubspot.crm.extensions.cards.update("cardId", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::CRM::Extensions::PublicCardResponse
+      response => HubspotSDK::Crm::Extensions::PublicCardResponse
     end
 
     assert_pattern do
       response => {
         id: String,
-        actions: HubspotSDK::CRM::Extensions::CardActions,
-        audit_history: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Extensions::CardAuditResponse]),
-        display_: HubspotSDK::CRM::Extensions::CardDisplayBody,
-        fetch: HubspotSDK::CRM::Extensions::PublicCardFetchBody,
+        actions: HubspotSDK::Crm::Extensions::CardActions,
+        audit_history: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Extensions::CardAuditResponse]),
+        display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
+        fetch: HubspotSDK::Crm::Extensions::PublicCardFetchBody,
         title: String,
         created_at: Time | nil,
         updated_at: Time | nil
@@ -74,12 +74,12 @@ class HubspotSDK::Test::Resources::CRM::Extensions::CardsTest < HubspotSDK::Test
     response = @hubspot.crm.extensions.cards.list(0)
 
     assert_pattern do
-      response => HubspotSDK::CRM::Extensions::PublicCardListResponse
+      response => HubspotSDK::Crm::Extensions::PublicCardListResponse
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Extensions::PublicCardResponse])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Extensions::PublicCardResponse])
       }
     end
   end
@@ -100,16 +100,16 @@ class HubspotSDK::Test::Resources::CRM::Extensions::CardsTest < HubspotSDK::Test
     response = @hubspot.crm.extensions.cards.get("cardId", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::CRM::Extensions::PublicCardResponse
+      response => HubspotSDK::Crm::Extensions::PublicCardResponse
     end
 
     assert_pattern do
       response => {
         id: String,
-        actions: HubspotSDK::CRM::Extensions::CardActions,
-        audit_history: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Extensions::CardAuditResponse]),
-        display_: HubspotSDK::CRM::Extensions::CardDisplayBody,
-        fetch: HubspotSDK::CRM::Extensions::PublicCardFetchBody,
+        actions: HubspotSDK::Crm::Extensions::CardActions,
+        audit_history: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Extensions::CardAuditResponse]),
+        display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
+        fetch: HubspotSDK::Crm::Extensions::PublicCardFetchBody,
         title: String,
         created_at: Time | nil,
         updated_at: Time | nil
@@ -123,7 +123,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::CardsTest < HubspotSDK::Test
     response = @hubspot.crm.extensions.cards.get_sample_response
 
     assert_pattern do
-      response => HubspotSDK::CRM::Extensions::IntegratorCardPayloadResponse
+      response => HubspotSDK::Crm::Extensions::IntegratorCardPayloadResponse
     end
 
     assert_pattern do
@@ -131,9 +131,9 @@ class HubspotSDK::Test::Resources::CRM::Extensions::CardsTest < HubspotSDK::Test
         total_count: Integer,
         all_items_link_url: String | nil,
         card_label: String | nil,
-        response_version: HubspotSDK::CRM::Extensions::IntegratorCardPayloadResponse::ResponseVersion | nil,
-        sections: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Extensions::IntegratorObjectResult]) | nil,
-        top_level_actions: HubspotSDK::CRM::Extensions::TopLevelActions | nil
+        response_version: HubspotSDK::Crm::Extensions::IntegratorCardPayloadResponse::ResponseVersion | nil,
+        sections: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Extensions::IntegratorObjectResult]) | nil,
+        top_level_actions: HubspotSDK::Crm::Extensions::TopLevelActions | nil
       }
     end
   end

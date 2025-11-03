@@ -2,26 +2,26 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ListFetchResponse < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::ListFetchResponse,
+              HubspotSDK::Crm::ListFetchResponse,
               HubspotSDK::Internal::AnyHash
             )
           end
 
         # An object list definition.
-        sig { returns(HubspotSDK::CRM::PublicObjectList) }
+        sig { returns(HubspotSDK::Crm::PublicObjectList) }
         attr_reader :list
 
-        sig { params(list: HubspotSDK::CRM::PublicObjectList::OrHash).void }
+        sig { params(list: HubspotSDK::Crm::PublicObjectList::OrHash).void }
         attr_writer :list
 
         # The response for a list fetch request.
         sig do
-          params(list: HubspotSDK::CRM::PublicObjectList::OrHash).returns(
+          params(list: HubspotSDK::Crm::PublicObjectList::OrHash).returns(
             T.attached_class
           )
         end
@@ -31,7 +31,7 @@ module HubspotSDK
         )
         end
 
-        sig { override.returns({ list: HubspotSDK::CRM::PublicObjectList }) }
+        sig { override.returns({ list: HubspotSDK::Crm::PublicObjectList }) }
         def to_hash
         end
       end

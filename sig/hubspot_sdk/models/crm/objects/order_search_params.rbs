@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type order_search_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class OrderSearchParams < HubspotSDK::Models::CRM::PublicObjectSearchRequest
+        class OrderSearchParams < HubspotSDK::Models::Crm::PublicObjectSearchRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

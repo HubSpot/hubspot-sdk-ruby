@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class ObjectLibrary
-        sig { returns(HubspotSDK::Resources::CRM::ObjectLibrary::Enablement) }
+        sig { returns(HubspotSDK::Resources::Crm::ObjectLibrary::Enablement) }
         attr_reader :enablement
 
         # @api private

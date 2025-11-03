@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Properties
-        # @see HubspotSDK::Resources::CRM::Properties::Batch#get
-        class BatchGetParams < HubspotSDK::Models::CRM::BatchReadInputPropertyName
+        # @see HubspotSDK::Resources::Crm::Properties::Batch#get
+        class BatchGetParams < HubspotSDK::Models::Crm::BatchReadInputPropertyName
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

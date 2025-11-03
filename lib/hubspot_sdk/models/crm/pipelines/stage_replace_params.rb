@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Pipelines
-        # @see HubspotSDK::Resources::CRM::Pipelines::Stages#replace
-        class StageReplaceParams < HubspotSDK::Models::CRM::PipelineStageInput
+        # @see HubspotSDK::Resources::Crm::Pipelines::Stages#replace
+        class StageReplaceParams < HubspotSDK::Models::Crm::PipelineStageInput
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

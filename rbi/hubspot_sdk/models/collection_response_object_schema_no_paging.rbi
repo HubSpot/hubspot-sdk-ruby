@@ -11,12 +11,12 @@ module HubspotSDK
           )
         end
 
-      sig { returns(T::Array[HubspotSDK::CRM::Objects::ObjectSchema]) }
+      sig { returns(T::Array[HubspotSDK::Crm::Objects::ObjectSchema]) }
       attr_accessor :results
 
       sig do
         params(
-          results: T::Array[HubspotSDK::CRM::Objects::ObjectSchema::OrHash]
+          results: T::Array[HubspotSDK::Crm::Objects::ObjectSchema::OrHash]
         ).returns(T.attached_class)
       end
       def self.new(results:)
@@ -24,7 +24,7 @@ module HubspotSDK
 
       sig do
         override.returns(
-          { results: T::Array[HubspotSDK::CRM::Objects::ObjectSchema] }
+          { results: T::Array[HubspotSDK::Crm::Objects::ObjectSchema] }
         )
       end
       def to_hash

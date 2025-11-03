@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type simple_public_object_input = { properties: ::Hash[Symbol, String] }
 
       class SimplePublicObjectInput < HubspotSDK::Internal::Type::BaseModel

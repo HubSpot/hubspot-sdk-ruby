@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Lists#get
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Lists#get
       class ListGetParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
@@ -18,7 +18,7 @@ module HubspotSDK
 
         # @!method initialize(include_filters: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::ListGetParams} for more details.
+        #   {HubspotSDK::Models::Crm::ListGetParams} for more details.
         #
         #   @param include_filters [Boolean] A flag indicating whether or not the response object list definition should incl
         #

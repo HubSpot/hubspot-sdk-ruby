@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class FeatureFlags
         class Apps
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::FeatureFlags::AppUpdateParams} for more details.
+          # {HubspotSDK::Models::Crm::FeatureFlags::AppUpdateParams} for more details.
           #
           # Set a feature flag for an app. For example, update the `hs-hide-crm-cards`
           # flag's `defaultState` to `ON` to hide classic CRM cards from new installs.
@@ -17,17 +17,17 @@ module HubspotSDK
           #
           # @param app_id [Integer] Path param: The ID of the app.
           #
-          # @param default_state [Symbol, HubspotSDK::Models::CRM::FlagPutRequest::DefaultState] Body param:
+          # @param default_state [Symbol, HubspotSDK::Models::Crm::FlagPutRequest::DefaultState] Body param:
           #
-          # @param override_state [Symbol, HubspotSDK::Models::CRM::FlagPutRequest::OverrideState] Body param:
+          # @param override_state [Symbol, HubspotSDK::Models::Crm::FlagPutRequest::OverrideState] Body param:
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::FlagResponse]
+          # @return [HubspotSDK::Models::Crm::FlagResponse]
           #
-          # @see HubspotSDK::Models::CRM::FeatureFlags::AppUpdateParams
+          # @see HubspotSDK::Models::Crm::FeatureFlags::AppUpdateParams
           def update(flag_name, params)
-            parsed, options = HubspotSDK::CRM::FeatureFlags::AppUpdateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::FeatureFlags::AppUpdateParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -36,7 +36,7 @@ module HubspotSDK
               method: :put,
               path: ["feature-flags/v3/%1$s/flags/%2$s", app_id, flag_name],
               body: parsed,
-              model: HubspotSDK::CRM::FlagResponse,
+              model: HubspotSDK::Crm::FlagResponse,
               options: options
             )
           end
@@ -52,11 +52,11 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::FlagResponse]
+          # @return [HubspotSDK::Models::Crm::FlagResponse]
           #
-          # @see HubspotSDK::Models::CRM::FeatureFlags::AppDeleteParams
+          # @see HubspotSDK::Models::Crm::FeatureFlags::AppDeleteParams
           def delete(flag_name, params)
-            parsed, options = HubspotSDK::CRM::FeatureFlags::AppDeleteParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::FeatureFlags::AppDeleteParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -64,7 +64,7 @@ module HubspotSDK
             @client.request(
               method: :delete,
               path: ["feature-flags/v3/%1$s/flags/%2$s", app_id, flag_name],
-              model: HubspotSDK::CRM::FlagResponse,
+              model: HubspotSDK::Crm::FlagResponse,
               options: options
             )
           end
@@ -80,11 +80,11 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::FlagResponse]
+          # @return [HubspotSDK::Models::Crm::FlagResponse]
           #
-          # @see HubspotSDK::Models::CRM::FeatureFlags::AppGetParams
+          # @see HubspotSDK::Models::Crm::FeatureFlags::AppGetParams
           def get(flag_name, params)
-            parsed, options = HubspotSDK::CRM::FeatureFlags::AppGetParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::FeatureFlags::AppGetParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -92,13 +92,13 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["feature-flags/v3/%1$s/flags/%2$s", app_id, flag_name],
-              model: HubspotSDK::CRM::FlagResponse,
+              model: HubspotSDK::Crm::FlagResponse,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::FeatureFlags::AppListPortalsParams} for more details.
+          # {HubspotSDK::Models::Crm::FeatureFlags::AppListPortalsParams} for more details.
           #
           # Retrieve a list of HubSpot accounts with an account-level flag setting for the
           # specified app. No request body is included.
@@ -115,11 +115,11 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::PortalFlagStateBatchResponse]
+          # @return [HubspotSDK::Models::Crm::PortalFlagStateBatchResponse]
           #
-          # @see HubspotSDK::Models::CRM::FeatureFlags::AppListPortalsParams
+          # @see HubspotSDK::Models::Crm::FeatureFlags::AppListPortalsParams
           def list_portals(flag_name, params)
-            parsed, options = HubspotSDK::CRM::FeatureFlags::AppListPortalsParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::FeatureFlags::AppListPortalsParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -128,7 +128,7 @@ module HubspotSDK
               method: :get,
               path: ["feature-flags/v3/%1$s/flags/%2$s/portals", app_id, flag_name],
               query: parsed.transform_keys(start_portal_id: "startPortalId"),
-              model: HubspotSDK::CRM::PortalFlagStateBatchResponse,
+              model: HubspotSDK::Crm::PortalFlagStateBatchResponse,
               options: options
             )
           end

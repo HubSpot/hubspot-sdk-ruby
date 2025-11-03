@@ -2,7 +2,7 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::PropertiesTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::PropertiesTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
@@ -17,7 +17,7 @@ class HubspotSDK::Test::Resources::CRM::PropertiesTest < HubspotSDK::Test::Resou
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::CreatedResponseProperty
+      response => HubspotSDK::Crm::CreatedResponseProperty
     end
 
     assert_pattern do
@@ -76,7 +76,7 @@ class HubspotSDK::Test::Resources::CRM::PropertiesTest < HubspotSDK::Test::Resou
     response = @hubspot.crm.properties.list("objectType")
 
     assert_pattern do
-      response => HubspotSDK::CRM::CollectionResponseProperty
+      response => HubspotSDK::Crm::CollectionResponseProperty
     end
 
     assert_pattern do

@@ -2,25 +2,25 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CollectionResponseAssociationLabelLimitResponseNoPaging < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::CollectionResponseAssociationLabelLimitResponseNoPaging,
+              HubspotSDK::Crm::CollectionResponseAssociationLabelLimitResponseNoPaging,
               HubspotSDK::Internal::AnyHash
             )
           end
 
         sig do
-          returns(T::Array[HubspotSDK::CRM::AssociationLabelLimitResponse])
+          returns(T::Array[HubspotSDK::Crm::AssociationLabelLimitResponse])
         end
         attr_accessor :results
 
         sig do
           params(
             results:
-              T::Array[HubspotSDK::CRM::AssociationLabelLimitResponse::OrHash]
+              T::Array[HubspotSDK::Crm::AssociationLabelLimitResponse::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(results:)
@@ -29,7 +29,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              results: T::Array[HubspotSDK::CRM::AssociationLabelLimitResponse]
+              results: T::Array[HubspotSDK::Crm::AssociationLabelLimitResponse]
             }
           )
         end

@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class TimelineEventTemplateTokenUpdateRequest < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::TimelineEventTemplateTokenUpdateRequest,
+              HubspotSDK::Crm::TimelineEventTemplateTokenUpdateRequest,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -29,7 +29,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              T::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption]
+              T::Array[HubspotSDK::Crm::TimelineEventTemplateTokenOption]
             )
           )
         end
@@ -39,7 +39,7 @@ module HubspotSDK
           params(
             options:
               T::Array[
-                HubspotSDK::CRM::TimelineEventTemplateTokenOption::OrHash
+                HubspotSDK::Crm::TimelineEventTemplateTokenOption::OrHash
               ]
           ).void
         end
@@ -52,7 +52,7 @@ module HubspotSDK
             object_property_name: String,
             options:
               T::Array[
-                HubspotSDK::CRM::TimelineEventTemplateTokenOption::OrHash
+                HubspotSDK::Crm::TimelineEventTemplateTokenOption::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -74,7 +74,7 @@ module HubspotSDK
               label: String,
               object_property_name: String,
               options:
-                T::Array[HubspotSDK::CRM::TimelineEventTemplateTokenOption]
+                T::Array[HubspotSDK::Crm::TimelineEventTemplateTokenOption]
             }
           )
         end

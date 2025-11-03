@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Extensions
         class Cards
           # Defines a new card that will become active on an account when this app is
@@ -12,32 +12,32 @@ module HubspotSDK
           #
           # @param app_id [Integer] The ID of the target app.
           #
-          # @param actions [HubspotSDK::Models::CRM::Extensions::CardActions] Configuration for custom user actions on cards.
+          # @param actions [HubspotSDK::Models::Crm::Extensions::CardActions] Configuration for custom user actions on cards.
           #
-          # @param display_ [HubspotSDK::Models::CRM::Extensions::CardDisplayBody] Configuration for displayed info on a card
+          # @param display_ [HubspotSDK::Models::Crm::Extensions::CardDisplayBody] Configuration for displayed info on a card
           #
-          # @param fetch [HubspotSDK::Models::CRM::Extensions::CardFetchBody] Configuration for this card's data fetch request.
+          # @param fetch [HubspotSDK::Models::Crm::Extensions::CardFetchBody] Configuration for this card's data fetch request.
           #
           # @param title [String] The top-level title for this card. Displayed to users in the CRM UI.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::Extensions::PublicCardResponse]
+          # @return [HubspotSDK::Models::Crm::Extensions::PublicCardResponse]
           #
-          # @see HubspotSDK::Models::CRM::Extensions::CardCreateParams
+          # @see HubspotSDK::Models::Crm::Extensions::CardCreateParams
           def create(app_id, params)
-            parsed, options = HubspotSDK::CRM::Extensions::CardCreateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Extensions::CardCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["crm/v3/extensions/cards-dev/%1$s", app_id],
               body: parsed,
-              model: HubspotSDK::CRM::Extensions::PublicCardResponse,
+              model: HubspotSDK::Crm::Extensions::PublicCardResponse,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::Extensions::CardUpdateParams} for more details.
+          # {HubspotSDK::Models::Crm::Extensions::CardUpdateParams} for more details.
           #
           # Update a card definition with new details.
           #
@@ -47,21 +47,21 @@ module HubspotSDK
           #
           # @param app_id [Integer] Path param: The ID of the target app.
           #
-          # @param actions [HubspotSDK::Models::CRM::Extensions::CardActions] Body param: Configuration for custom user actions on cards.
+          # @param actions [HubspotSDK::Models::Crm::Extensions::CardActions] Body param: Configuration for custom user actions on cards.
           #
-          # @param display_ [HubspotSDK::Models::CRM::Extensions::CardDisplayBody] Body param: Configuration for displayed info on a card
+          # @param display_ [HubspotSDK::Models::Crm::Extensions::CardDisplayBody] Body param: Configuration for displayed info on a card
           #
-          # @param fetch [HubspotSDK::Models::CRM::Extensions::CardFetchBodyPatch] Body param: Variant of CardFetchBody with fields as optional for patches
+          # @param fetch [HubspotSDK::Models::Crm::Extensions::CardFetchBodyPatch] Body param: Variant of CardFetchBody with fields as optional for patches
           #
           # @param title [String] Body param: The top-level title for this card. Displayed to users in the CRM UI.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::Extensions::PublicCardResponse]
+          # @return [HubspotSDK::Models::Crm::Extensions::PublicCardResponse]
           #
-          # @see HubspotSDK::Models::CRM::Extensions::CardUpdateParams
+          # @see HubspotSDK::Models::Crm::Extensions::CardUpdateParams
           def update(card_id, params)
-            parsed, options = HubspotSDK::CRM::Extensions::CardUpdateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Extensions::CardUpdateParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -70,7 +70,7 @@ module HubspotSDK
               method: :patch,
               path: ["crm/v3/extensions/cards-dev/%1$s/%2$s", app_id, card_id],
               body: parsed,
-              model: HubspotSDK::CRM::Extensions::PublicCardResponse,
+              model: HubspotSDK::Crm::Extensions::PublicCardResponse,
               options: options
             )
           end
@@ -83,14 +83,14 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::Extensions::PublicCardListResponse]
+          # @return [HubspotSDK::Models::Crm::Extensions::PublicCardListResponse]
           #
-          # @see HubspotSDK::Models::CRM::Extensions::CardListParams
+          # @see HubspotSDK::Models::Crm::Extensions::CardListParams
           def list(app_id, params = {})
             @client.request(
               method: :get,
               path: ["crm/v3/extensions/cards-dev/%1$s", app_id],
-              model: HubspotSDK::CRM::Extensions::PublicCardListResponse,
+              model: HubspotSDK::Crm::Extensions::PublicCardListResponse,
               options: params[:request_options]
             )
           end
@@ -109,9 +109,9 @@ module HubspotSDK
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::CRM::Extensions::CardDeleteParams
+          # @see HubspotSDK::Models::Crm::Extensions::CardDeleteParams
           def delete(card_id, params)
-            parsed, options = HubspotSDK::CRM::Extensions::CardDeleteParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Extensions::CardDeleteParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -134,11 +134,11 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::Extensions::PublicCardResponse]
+          # @return [HubspotSDK::Models::Crm::Extensions::PublicCardResponse]
           #
-          # @see HubspotSDK::Models::CRM::Extensions::CardGetParams
+          # @see HubspotSDK::Models::Crm::Extensions::CardGetParams
           def get(card_id, params)
-            parsed, options = HubspotSDK::CRM::Extensions::CardGetParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Extensions::CardGetParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -146,7 +146,7 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["crm/v3/extensions/cards-dev/%1$s/%2$s", app_id, card_id],
-              model: HubspotSDK::CRM::Extensions::PublicCardResponse,
+              model: HubspotSDK::Crm::Extensions::PublicCardResponse,
               options: options
             )
           end
@@ -159,14 +159,14 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::Extensions::IntegratorCardPayloadResponse]
+          # @return [HubspotSDK::Models::Crm::Extensions::IntegratorCardPayloadResponse]
           #
-          # @see HubspotSDK::Models::CRM::Extensions::CardGetSampleResponseParams
+          # @see HubspotSDK::Models::Crm::Extensions::CardGetSampleResponseParams
           def get_sample_response(params = {})
             @client.request(
               method: :get,
               path: "crm/v3/extensions/cards-dev/sample-response",
-              model: HubspotSDK::CRM::Extensions::IntegratorCardPayloadResponse,
+              model: HubspotSDK::Crm::Extensions::IntegratorCardPayloadResponse,
               options: params[:request_options]
             )
           end

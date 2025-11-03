@@ -1,12 +1,12 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Pipelines
         type stage_update_params =
           { object_type: String, pipeline_id: String }
           & HubspotSDK::Internal::Type::request_parameters
 
-        class StageUpdateParams < HubspotSDK::Models::CRM::PipelineStagePatchInput
+        class StageUpdateParams < HubspotSDK::Models::Crm::PipelineStagePatchInput
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

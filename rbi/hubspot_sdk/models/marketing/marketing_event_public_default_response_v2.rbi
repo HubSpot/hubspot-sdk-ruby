@@ -15,7 +15,7 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :created_at
 
-        sig { returns(T::Array[HubspotSDK::Marketing::CRMPropertyWrapper]) }
+        sig { returns(T::Array[HubspotSDK::Marketing::CrmPropertyWrapper]) }
         attr_accessor :custom_properties
 
         sig { returns(String) }
@@ -85,7 +85,7 @@ module HubspotSDK
           params(
             created_at: Time,
             custom_properties:
-              T::Array[HubspotSDK::Marketing::CRMPropertyWrapper::OrHash],
+              T::Array[HubspotSDK::Marketing::CrmPropertyWrapper::OrHash],
             event_name: String,
             object_id_: String,
             updated_at: Time,
@@ -123,7 +123,7 @@ module HubspotSDK
             {
               created_at: Time,
               custom_properties:
-                T::Array[HubspotSDK::Marketing::CRMPropertyWrapper],
+                T::Array[HubspotSDK::Marketing::CrmPropertyWrapper],
               event_name: String,
               object_id_: String,
               updated_at: Time,

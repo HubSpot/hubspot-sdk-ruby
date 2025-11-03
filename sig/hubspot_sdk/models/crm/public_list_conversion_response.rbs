@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type public_list_conversion_response =
         {
           list_id: String,
           converted_at: Time,
-          requested_conversion_time: HubspotSDK::Models::CRM::PublicListConversionResponse::requested_conversion_time
+          requested_conversion_time: HubspotSDK::Models::Crm::PublicListConversionResponse::requested_conversion_time
         }
 
       class PublicListConversionResponse < HubspotSDK::Internal::Type::BaseModel
@@ -15,32 +15,32 @@ module HubspotSDK
 
         def converted_at=: (Time) -> Time
 
-        attr_reader requested_conversion_time: HubspotSDK::Models::CRM::PublicListConversionResponse::requested_conversion_time?
+        attr_reader requested_conversion_time: HubspotSDK::Models::Crm::PublicListConversionResponse::requested_conversion_time?
 
         def requested_conversion_time=: (
-          HubspotSDK::Models::CRM::PublicListConversionResponse::requested_conversion_time
-        ) -> HubspotSDK::Models::CRM::PublicListConversionResponse::requested_conversion_time
+          HubspotSDK::Models::Crm::PublicListConversionResponse::requested_conversion_time
+        ) -> HubspotSDK::Models::Crm::PublicListConversionResponse::requested_conversion_time
 
         def initialize: (
           list_id: String,
           ?converted_at: Time,
-          ?requested_conversion_time: HubspotSDK::Models::CRM::PublicListConversionResponse::requested_conversion_time
+          ?requested_conversion_time: HubspotSDK::Models::Crm::PublicListConversionResponse::requested_conversion_time
         ) -> void
 
         def to_hash: -> {
           list_id: String,
           converted_at: Time,
-          requested_conversion_time: HubspotSDK::Models::CRM::PublicListConversionResponse::requested_conversion_time
+          requested_conversion_time: HubspotSDK::Models::Crm::PublicListConversionResponse::requested_conversion_time
         }
 
         type requested_conversion_time =
-          HubspotSDK::CRM::PublicListConversionDate
-          | HubspotSDK::CRM::PublicListConversionInactivity
+          HubspotSDK::Crm::PublicListConversionDate
+          | HubspotSDK::Crm::PublicListConversionInactivity
 
         module RequestedConversionTime
           extend HubspotSDK::Internal::Type::Union
 
-          def self?.variants: -> ::Array[HubspotSDK::Models::CRM::PublicListConversionResponse::requested_conversion_time]
+          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicListConversionResponse::requested_conversion_time]
         end
       end
     end

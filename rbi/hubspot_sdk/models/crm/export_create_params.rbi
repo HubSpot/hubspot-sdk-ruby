@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ExportCreateParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
@@ -10,7 +10,7 @@ module HubspotSDK
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::ExportCreateParams,
+              HubspotSDK::Crm::ExportCreateParams,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -18,8 +18,8 @@ module HubspotSDK
         sig do
           returns(
             T.any(
-              HubspotSDK::CRM::PublicExportViewRequest,
-              HubspotSDK::CRM::PublicExportListRequest
+              HubspotSDK::Crm::PublicExportViewRequest,
+              HubspotSDK::Crm::PublicExportListRequest
             )
           )
         end
@@ -29,8 +29,8 @@ module HubspotSDK
           params(
             public_export_request:
               T.any(
-                HubspotSDK::CRM::PublicExportViewRequest::OrHash,
-                HubspotSDK::CRM::PublicExportListRequest::OrHash
+                HubspotSDK::Crm::PublicExportViewRequest::OrHash,
+                HubspotSDK::Crm::PublicExportListRequest::OrHash
               ),
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
@@ -43,8 +43,8 @@ module HubspotSDK
             {
               public_export_request:
                 T.any(
-                  HubspotSDK::CRM::PublicExportViewRequest,
-                  HubspotSDK::CRM::PublicExportListRequest
+                  HubspotSDK::Crm::PublicExportViewRequest,
+                  HubspotSDK::Crm::PublicExportListRequest
                 ),
               request_options: HubspotSDK::RequestOptions
             }

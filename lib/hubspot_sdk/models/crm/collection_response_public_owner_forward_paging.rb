@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CollectionResponsePublicOwnerForwardPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::CRM::PublicOwner>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicOwner] }
+        #   @return [Array<HubspotSDK::Models::Crm::PublicOwner>]
+        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicOwner] }
 
         # @!attribute paging
         #
@@ -15,7 +15,7 @@ module HubspotSDK
         optional :paging, -> { HubspotSDK::ForwardPaging }
 
         # @!method initialize(results:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::CRM::PublicOwner>]
+        #   @param results [Array<HubspotSDK::Models::Crm::PublicOwner>]
         #   @param paging [HubspotSDK::Models::ForwardPaging]
       end
     end

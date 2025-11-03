@@ -1,13 +1,13 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type object_schema_egg =
           {
             associated_objects: ::Array[String],
             labels: HubspotSDK::ObjectTypeDefinitionLabels,
             name: String,
-            properties: ::Array[HubspotSDK::CRM::Objects::ObjectTypePropertyCreate],
+            properties: ::Array[HubspotSDK::Crm::Objects::ObjectTypePropertyCreate],
             required_properties: ::Array[String],
             description: String,
             primary_display_property: String,
@@ -22,7 +22,7 @@ module HubspotSDK
 
           attr_accessor name: String
 
-          attr_accessor properties: ::Array[HubspotSDK::CRM::Objects::ObjectTypePropertyCreate]
+          attr_accessor properties: ::Array[HubspotSDK::Crm::Objects::ObjectTypePropertyCreate]
 
           attr_accessor required_properties: ::Array[String]
 
@@ -48,7 +48,7 @@ module HubspotSDK
             associated_objects: ::Array[String],
             labels: HubspotSDK::ObjectTypeDefinitionLabels,
             name: String,
-            properties: ::Array[HubspotSDK::CRM::Objects::ObjectTypePropertyCreate],
+            properties: ::Array[HubspotSDK::Crm::Objects::ObjectTypePropertyCreate],
             required_properties: ::Array[String],
             ?description: String,
             ?primary_display_property: String,
@@ -60,7 +60,7 @@ module HubspotSDK
             associated_objects: ::Array[String],
             labels: HubspotSDK::ObjectTypeDefinitionLabels,
             name: String,
-            properties: ::Array[HubspotSDK::CRM::Objects::ObjectTypePropertyCreate],
+            properties: ::Array[HubspotSDK::Crm::Objects::ObjectTypePropertyCreate],
             required_properties: ::Array[String],
             description: String,
             primary_display_property: String,

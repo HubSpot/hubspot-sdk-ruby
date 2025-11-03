@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Limits#get_custom_object_type_limits
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Limits#get_custom_object_type_limits
       class CustomObjectLimitResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute limit
         #

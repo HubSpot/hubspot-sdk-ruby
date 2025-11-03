@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PropertyUpdate < HubspotSDK::Internal::Type::BaseModel
         # @!attribute calculation_formula
         #   Represents a formula that is used to compute a calculated property.
@@ -27,8 +27,8 @@ module HubspotSDK
         # @!attribute field_type
         #   Controls how the property appears in HubSpot.
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PropertyUpdate::FieldType, nil]
-        optional :field_type, enum: -> { HubspotSDK::CRM::PropertyUpdate::FieldType }, api_name: :fieldType
+        #   @return [Symbol, HubspotSDK::Models::Crm::PropertyUpdate::FieldType, nil]
+        optional :field_type, enum: -> { HubspotSDK::Crm::PropertyUpdate::FieldType }, api_name: :fieldType
 
         # @!attribute form_field
         #   Whether or not the property can be used in a HubSpot form.
@@ -63,12 +63,12 @@ module HubspotSDK
         # @!attribute type
         #   The data type of the property.
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PropertyUpdate::Type, nil]
-        optional :type, enum: -> { HubspotSDK::CRM::PropertyUpdate::Type }
+        #   @return [Symbol, HubspotSDK::Models::Crm::PropertyUpdate::Type, nil]
+        optional :type, enum: -> { HubspotSDK::Crm::PropertyUpdate::Type }
 
         # @!method initialize(calculation_formula: nil, description: nil, display_order: nil, field_type: nil, form_field: nil, group_name: nil, hidden: nil, label: nil, options: nil, type: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::PropertyUpdate} for more details.
+        #   {HubspotSDK::Models::Crm::PropertyUpdate} for more details.
         #
         #   @param calculation_formula [String] Represents a formula that is used to compute a calculated property.
         #
@@ -76,7 +76,7 @@ module HubspotSDK
         #
         #   @param display_order [Integer] Properties are displayed in order starting with the lowest positive integer valu
         #
-        #   @param field_type [Symbol, HubspotSDK::Models::CRM::PropertyUpdate::FieldType] Controls how the property appears in HubSpot.
+        #   @param field_type [Symbol, HubspotSDK::Models::Crm::PropertyUpdate::FieldType] Controls how the property appears in HubSpot.
         #
         #   @param form_field [Boolean] Whether or not the property can be used in a HubSpot form.
         #
@@ -88,11 +88,11 @@ module HubspotSDK
         #
         #   @param options [Array<HubspotSDK::Models::OptionInput>] A list of valid options for the property.
         #
-        #   @param type [Symbol, HubspotSDK::Models::CRM::PropertyUpdate::Type] The data type of the property.
+        #   @param type [Symbol, HubspotSDK::Models::Crm::PropertyUpdate::Type] The data type of the property.
 
         # Controls how the property appears in HubSpot.
         #
-        # @see HubspotSDK::Models::CRM::PropertyUpdate#field_type
+        # @see HubspotSDK::Models::Crm::PropertyUpdate#field_type
         module FieldType
           extend HubspotSDK::Internal::Type::Enum
 
@@ -115,7 +115,7 @@ module HubspotSDK
 
         # The data type of the property.
         #
-        # @see HubspotSDK::Models::CRM::PropertyUpdate#type
+        # @see HubspotSDK::Models::Crm::PropertyUpdate#type
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type deal_split_batch_upsert_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class DealSplitBatchUpsertParams < HubspotSDK::Models::CRM::Objects::PublicDealSplitsBatchCreateRequest
+        class DealSplitBatchUpsertParams < HubspotSDK::Models::Crm::Objects::PublicDealSplitsBatchCreateRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

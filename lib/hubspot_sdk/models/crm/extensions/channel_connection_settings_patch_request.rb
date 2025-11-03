@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class ChannelConnectionSettingsPatchRequest < HubspotSDK::Internal::Type::BaseModel
           # @!attribute is_ready

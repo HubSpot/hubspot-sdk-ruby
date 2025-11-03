@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class PublicCardResponse < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::PublicCardResponse,
+                HubspotSDK::Crm::Extensions::PublicCardResponse,
                 HubspotSDK::Internal::AnyHash
               )
             end
@@ -17,38 +17,38 @@ module HubspotSDK
           attr_accessor :id
 
           # Configuration for custom user actions on cards.
-          sig { returns(HubspotSDK::CRM::Extensions::CardActions) }
+          sig { returns(HubspotSDK::Crm::Extensions::CardActions) }
           attr_reader :actions
 
           sig do
             params(
-              actions: HubspotSDK::CRM::Extensions::CardActions::OrHash
+              actions: HubspotSDK::Crm::Extensions::CardActions::OrHash
             ).void
           end
           attr_writer :actions
 
           sig do
-            returns(T::Array[HubspotSDK::CRM::Extensions::CardAuditResponse])
+            returns(T::Array[HubspotSDK::Crm::Extensions::CardAuditResponse])
           end
           attr_accessor :audit_history
 
           # Configuration for displayed info on a card
-          sig { returns(HubspotSDK::CRM::Extensions::CardDisplayBody) }
+          sig { returns(HubspotSDK::Crm::Extensions::CardDisplayBody) }
           attr_reader :display_
 
           sig do
             params(
-              display_: HubspotSDK::CRM::Extensions::CardDisplayBody::OrHash
+              display_: HubspotSDK::Crm::Extensions::CardDisplayBody::OrHash
             ).void
           end
           attr_writer :display_
 
-          sig { returns(HubspotSDK::CRM::Extensions::PublicCardFetchBody) }
+          sig { returns(HubspotSDK::Crm::Extensions::PublicCardFetchBody) }
           attr_reader :fetch
 
           sig do
             params(
-              fetch: HubspotSDK::CRM::Extensions::PublicCardFetchBody::OrHash
+              fetch: HubspotSDK::Crm::Extensions::PublicCardFetchBody::OrHash
             ).void
           end
           attr_writer :fetch
@@ -71,13 +71,13 @@ module HubspotSDK
           sig do
             params(
               id: String,
-              actions: HubspotSDK::CRM::Extensions::CardActions::OrHash,
+              actions: HubspotSDK::Crm::Extensions::CardActions::OrHash,
               audit_history:
                 T::Array[
-                  HubspotSDK::CRM::Extensions::CardAuditResponse::OrHash
+                  HubspotSDK::Crm::Extensions::CardAuditResponse::OrHash
                 ],
-              display_: HubspotSDK::CRM::Extensions::CardDisplayBody::OrHash,
-              fetch: HubspotSDK::CRM::Extensions::PublicCardFetchBody::OrHash,
+              display_: HubspotSDK::Crm::Extensions::CardDisplayBody::OrHash,
+              fetch: HubspotSDK::Crm::Extensions::PublicCardFetchBody::OrHash,
               title: String,
               created_at: Time,
               updated_at: Time
@@ -101,11 +101,11 @@ module HubspotSDK
             override.returns(
               {
                 id: String,
-                actions: HubspotSDK::CRM::Extensions::CardActions,
+                actions: HubspotSDK::Crm::Extensions::CardActions,
                 audit_history:
-                  T::Array[HubspotSDK::CRM::Extensions::CardAuditResponse],
-                display_: HubspotSDK::CRM::Extensions::CardDisplayBody,
-                fetch: HubspotSDK::CRM::Extensions::PublicCardFetchBody,
+                  T::Array[HubspotSDK::Crm::Extensions::CardAuditResponse],
+                display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
+                fetch: HubspotSDK::Crm::Extensions::PublicCardFetchBody,
                 title: String,
                 created_at: Time,
                 updated_at: Time

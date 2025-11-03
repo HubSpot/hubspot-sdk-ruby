@@ -2,17 +2,17 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class APICollectionResponseRecordListMembershipNoPaging < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::APICollectionResponseRecordListMembershipNoPaging,
+              HubspotSDK::Crm::APICollectionResponseRecordListMembershipNoPaging,
               HubspotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::CRM::RecordListMembership]) }
+        sig { returns(T::Array[HubspotSDK::Crm::RecordListMembership]) }
         attr_accessor :results
 
         sig { returns(T.nilable(Integer)) }
@@ -23,7 +23,7 @@ module HubspotSDK
 
         sig do
           params(
-            results: T::Array[HubspotSDK::CRM::RecordListMembership::OrHash],
+            results: T::Array[HubspotSDK::Crm::RecordListMembership::OrHash],
             total: Integer
           ).returns(T.attached_class)
         end
@@ -33,7 +33,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              results: T::Array[HubspotSDK::CRM::RecordListMembership],
+              results: T::Array[HubspotSDK::Crm::RecordListMembership],
               total: Integer
             }
           )

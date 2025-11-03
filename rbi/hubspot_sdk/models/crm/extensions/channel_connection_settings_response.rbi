@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class ChannelConnectionSettingsResponse < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::ChannelConnectionSettingsResponse,
+                HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse,
                 HubspotSDK::Internal::AnyHash
               )
             end

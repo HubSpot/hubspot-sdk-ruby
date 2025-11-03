@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class FeatureFlags
         class Portals
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::FeatureFlags::PortalUpdateParams} for more details.
+          # {HubspotSDK::Models::Crm::FeatureFlags::PortalUpdateParams} for more details.
           #
           # Specify an account-level flag state for a specific HubSpot account.
           #
@@ -18,15 +18,15 @@ module HubspotSDK
           #
           # @param flag_name [String] Path param: The name of the flag, either `hs-release-app-cards` or `hs-hide-crm-
           #
-          # @param flag_state [Symbol, HubspotSDK::Models::CRM::PortalFlagStatePutRequest::FlagState] Body param:
+          # @param flag_state [Symbol, HubspotSDK::Models::Crm::PortalFlagStatePutRequest::FlagState] Body param:
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::PortalFlagStateResponse]
+          # @return [HubspotSDK::Models::Crm::PortalFlagStateResponse]
           #
-          # @see HubspotSDK::Models::CRM::FeatureFlags::PortalUpdateParams
+          # @see HubspotSDK::Models::Crm::FeatureFlags::PortalUpdateParams
           def update(portal_id, params)
-            parsed, options = HubspotSDK::CRM::FeatureFlags::PortalUpdateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::FeatureFlags::PortalUpdateParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -39,7 +39,7 @@ module HubspotSDK
               method: :put,
               path: ["feature-flags/v3/%1$s/flags/%2$s/portals/%3$s", app_id, flag_name, portal_id],
               body: parsed,
-              model: HubspotSDK::CRM::PortalFlagStateResponse,
+              model: HubspotSDK::Crm::PortalFlagStateResponse,
               options: options
             )
           end
@@ -57,11 +57,11 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::PortalFlagStateResponse]
+          # @return [HubspotSDK::Models::Crm::PortalFlagStateResponse]
           #
-          # @see HubspotSDK::Models::CRM::FeatureFlags::PortalDeleteParams
+          # @see HubspotSDK::Models::Crm::FeatureFlags::PortalDeleteParams
           def delete(portal_id, params)
-            parsed, options = HubspotSDK::CRM::FeatureFlags::PortalDeleteParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::FeatureFlags::PortalDeleteParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -73,13 +73,13 @@ module HubspotSDK
             @client.request(
               method: :delete,
               path: ["feature-flags/v3/%1$s/flags/%2$s/portals/%3$s", app_id, flag_name, portal_id],
-              model: HubspotSDK::CRM::PortalFlagStateResponse,
+              model: HubspotSDK::Crm::PortalFlagStateResponse,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::FeatureFlags::PortalBatchDeleteParams} for more
+          # {HubspotSDK::Models::Crm::FeatureFlags::PortalBatchDeleteParams} for more
           # details.
           #
           # Delete an account-level flag state for multiple HubSpot accounts at once. Use
@@ -95,11 +95,11 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::PortalFlagStateBatchResponse]
+          # @return [HubspotSDK::Models::Crm::PortalFlagStateBatchResponse]
           #
-          # @see HubspotSDK::Models::CRM::FeatureFlags::PortalBatchDeleteParams
+          # @see HubspotSDK::Models::Crm::FeatureFlags::PortalBatchDeleteParams
           def batch_delete(flag_name, params)
-            parsed, options = HubspotSDK::CRM::FeatureFlags::PortalBatchDeleteParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::FeatureFlags::PortalBatchDeleteParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -108,13 +108,13 @@ module HubspotSDK
               method: :post,
               path: ["feature-flags/v3/%1$s/flags/%2$s/portals/batch/delete", app_id, flag_name],
               body: parsed,
-              model: HubspotSDK::CRM::PortalFlagStateBatchResponse,
+              model: HubspotSDK::Crm::PortalFlagStateBatchResponse,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::FeatureFlags::PortalBatchUpsertParams} for more
+          # {HubspotSDK::Models::Crm::FeatureFlags::PortalBatchUpsertParams} for more
           # details.
           #
           # Set the portal flag state for multiple HubSpot accounts at once. Use this
@@ -126,15 +126,15 @@ module HubspotSDK
           #
           # @param app_id [Integer] Path param: The ID of the app.
           #
-          # @param portal_states [Array<HubspotSDK::Models::CRM::BatchPortalEntry>] Body param:
+          # @param portal_states [Array<HubspotSDK::Models::Crm::BatchPortalEntry>] Body param:
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::PortalFlagStateBatchResponse]
+          # @return [HubspotSDK::Models::Crm::PortalFlagStateBatchResponse]
           #
-          # @see HubspotSDK::Models::CRM::FeatureFlags::PortalBatchUpsertParams
+          # @see HubspotSDK::Models::Crm::FeatureFlags::PortalBatchUpsertParams
           def batch_upsert(flag_name, params)
-            parsed, options = HubspotSDK::CRM::FeatureFlags::PortalBatchUpsertParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::FeatureFlags::PortalBatchUpsertParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -143,7 +143,7 @@ module HubspotSDK
               method: :post,
               path: ["feature-flags/v3/%1$s/flags/%2$s/portals/batch/upsert", app_id, flag_name],
               body: parsed,
-              model: HubspotSDK::CRM::PortalFlagStateBatchResponse,
+              model: HubspotSDK::Crm::PortalFlagStateBatchResponse,
               options: options
             )
           end
@@ -160,11 +160,11 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::PortalFlagStateResponse]
+          # @return [HubspotSDK::Models::Crm::PortalFlagStateResponse]
           #
-          # @see HubspotSDK::Models::CRM::FeatureFlags::PortalGetParams
+          # @see HubspotSDK::Models::Crm::FeatureFlags::PortalGetParams
           def get(portal_id, params)
-            parsed, options = HubspotSDK::CRM::FeatureFlags::PortalGetParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::FeatureFlags::PortalGetParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -176,7 +176,7 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["feature-flags/v3/%1$s/flags/%2$s/portals/%3$s", app_id, flag_name, portal_id],
-              model: HubspotSDK::CRM::PortalFlagStateResponse,
+              model: HubspotSDK::Crm::PortalFlagStateResponse,
               options: options
             )
           end

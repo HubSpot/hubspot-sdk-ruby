@@ -2,17 +2,17 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      class PublicCRMSearchRequest < HubspotSDK::Internal::Type::BaseModel
+    module Crm
+      class PublicCrmSearchRequest < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PublicCRMSearchRequest,
+              HubspotSDK::Crm::PublicCrmSearchRequest,
               HubspotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::CRM::Filter]) }
+        sig { returns(T::Array[HubspotSDK::Crm::Filter]) }
         attr_accessor :filters
 
         sig { returns(String) }
@@ -23,7 +23,7 @@ module HubspotSDK
 
         sig do
           params(
-            filters: T::Array[HubspotSDK::CRM::Filter::OrHash],
+            filters: T::Array[HubspotSDK::Crm::Filter::OrHash],
             query: String,
             sorts: T::Array[String]
           ).returns(T.attached_class)
@@ -34,7 +34,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              filters: T::Array[HubspotSDK::CRM::Filter],
+              filters: T::Array[HubspotSDK::Crm::Filter],
               query: String,
               sorts: T::Array[String]
             }

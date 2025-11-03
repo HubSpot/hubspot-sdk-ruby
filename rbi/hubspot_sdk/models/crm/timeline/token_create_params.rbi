@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Timeline
-        class TokenCreateParams < HubspotSDK::Models::CRM::TimelineEventTemplateToken
+        class TokenCreateParams < HubspotSDK::Models::Crm::TimelineEventTemplateToken
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Timeline::TokenCreateParams,
+                HubspotSDK::Crm::Timeline::TokenCreateParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

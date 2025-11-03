@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Lists
         class Memberships
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::Lists::MembershipListParams} for more details.
+          # {HubspotSDK::Models::Crm::Lists::MembershipListParams} for more details.
           #
           # Fetch the memberships of a list in order sorted by the `recordId` of the records
           # in the list.
@@ -30,17 +30,17 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::CRM::JoinTimeAndRecordID>]
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::JoinTimeAndRecordID>]
           #
-          # @see HubspotSDK::Models::CRM::Lists::MembershipListParams
+          # @see HubspotSDK::Models::Crm::Lists::MembershipListParams
           def list(list_id, params = {})
-            parsed, options = HubspotSDK::CRM::Lists::MembershipListParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Lists::MembershipListParams.dump_request(params)
             @client.request(
               method: :get,
               path: ["crm/v3/lists/%1$s/memberships", list_id],
               query: parsed,
               page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::CRM::JoinTimeAndRecordID,
+              model: HubspotSDK::Crm::JoinTimeAndRecordID,
               options: options
             )
           end
@@ -59,22 +59,22 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::MembershipsUpdateResponse]
+          # @return [HubspotSDK::Models::Crm::MembershipsUpdateResponse]
           #
-          # @see HubspotSDK::Models::CRM::Lists::MembershipAddParams
+          # @see HubspotSDK::Models::Crm::Lists::MembershipAddParams
           def add(list_id, params)
-            parsed, options = HubspotSDK::CRM::Lists::MembershipAddParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Lists::MembershipAddParams.dump_request(params)
             @client.request(
               method: :put,
               path: ["crm/v3/lists/%1$s/memberships/add", list_id],
               body: parsed[:body],
-              model: HubspotSDK::CRM::MembershipsUpdateResponse,
+              model: HubspotSDK::Crm::MembershipsUpdateResponse,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::Lists::MembershipAddAllFromListParams} for more
+          # {HubspotSDK::Models::Crm::Lists::MembershipAddAllFromListParams} for more
           # details.
           #
           # Add all of the records from a _source list_ (specified by the `sourceListId`) to
@@ -100,9 +100,9 @@ module HubspotSDK
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::CRM::Lists::MembershipAddAllFromListParams
+          # @see HubspotSDK::Models::Crm::Lists::MembershipAddAllFromListParams
           def add_all_from_list(source_list_id, params)
-            parsed, options = HubspotSDK::CRM::Lists::MembershipAddAllFromListParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Lists::MembershipAddAllFromListParams.dump_request(params)
             list_id =
               parsed.delete(:list_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -131,16 +131,16 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::MembershipsUpdateResponse]
+          # @return [HubspotSDK::Models::Crm::MembershipsUpdateResponse]
           #
-          # @see HubspotSDK::Models::CRM::Lists::MembershipAddAndRemoveParams
+          # @see HubspotSDK::Models::Crm::Lists::MembershipAddAndRemoveParams
           def add_and_remove(list_id, params)
-            parsed, options = HubspotSDK::CRM::Lists::MembershipAddAndRemoveParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Lists::MembershipAddAndRemoveParams.dump_request(params)
             @client.request(
               method: :put,
               path: ["crm/v3/lists/%1$s/memberships/add-and-remove", list_id],
               body: parsed,
-              model: HubspotSDK::CRM::MembershipsUpdateResponse,
+              model: HubspotSDK::Crm::MembershipsUpdateResponse,
               options: options
             )
           end
@@ -155,11 +155,11 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::APICollectionResponseRecordListMembershipNoPaging]
+          # @return [HubspotSDK::Models::Crm::APICollectionResponseRecordListMembershipNoPaging]
           #
-          # @see HubspotSDK::Models::CRM::Lists::MembershipGetListsParams
+          # @see HubspotSDK::Models::Crm::Lists::MembershipGetListsParams
           def get_lists(record_id, params)
-            parsed, options = HubspotSDK::CRM::Lists::MembershipGetListsParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Lists::MembershipGetListsParams.dump_request(params)
             object_type_id =
               parsed.delete(:object_type_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -167,13 +167,13 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["crm/v3/lists/records/%1$s/%2$s/memberships", object_type_id, record_id],
-              model: HubspotSDK::CRM::APICollectionResponseRecordListMembershipNoPaging,
+              model: HubspotSDK::Crm::APICollectionResponseRecordListMembershipNoPaging,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::Lists::MembershipGetPageOrderedByAddedToListDateParams}
+          # {HubspotSDK::Models::Crm::Lists::MembershipGetPageOrderedByAddedToListDateParams}
           # for more details.
           #
           # Fetch the memberships of a list in order sorted by the time the records were
@@ -198,18 +198,18 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::CRM::JoinTimeAndRecordID>]
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::JoinTimeAndRecordID>]
           #
-          # @see HubspotSDK::Models::CRM::Lists::MembershipGetPageOrderedByAddedToListDateParams
+          # @see HubspotSDK::Models::Crm::Lists::MembershipGetPageOrderedByAddedToListDateParams
           def get_page_ordered_by_added_to_list_date(list_id, params = {})
             parsed, options =
-              HubspotSDK::CRM::Lists::MembershipGetPageOrderedByAddedToListDateParams.dump_request(params)
+              HubspotSDK::Crm::Lists::MembershipGetPageOrderedByAddedToListDateParams.dump_request(params)
             @client.request(
               method: :get,
               path: ["crm/v3/lists/%1$s/memberships/join-order", list_id],
               query: parsed,
               page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::CRM::JoinTimeAndRecordID,
+              model: HubspotSDK::Crm::JoinTimeAndRecordID,
               options: options
             )
           end
@@ -228,16 +228,16 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::MembershipsUpdateResponse]
+          # @return [HubspotSDK::Models::Crm::MembershipsUpdateResponse]
           #
-          # @see HubspotSDK::Models::CRM::Lists::MembershipRemoveParams
+          # @see HubspotSDK::Models::Crm::Lists::MembershipRemoveParams
           def remove(list_id, params)
-            parsed, options = HubspotSDK::CRM::Lists::MembershipRemoveParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Lists::MembershipRemoveParams.dump_request(params)
             @client.request(
               method: :put,
               path: ["crm/v3/lists/%1$s/memberships/remove", list_id],
               body: parsed[:body],
-              model: HubspotSDK::CRM::MembershipsUpdateResponse,
+              model: HubspotSDK::Crm::MembershipsUpdateResponse,
               options: options
             )
           end
@@ -258,7 +258,7 @@ module HubspotSDK
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::CRM::Lists::MembershipRemoveAllParams
+          # @see HubspotSDK::Models::Crm::Lists::MembershipRemoveAllParams
           def remove_all(list_id, params = {})
             @client.request(
               method: :delete,

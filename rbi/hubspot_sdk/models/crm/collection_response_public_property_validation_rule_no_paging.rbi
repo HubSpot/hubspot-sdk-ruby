@@ -2,23 +2,23 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CollectionResponsePublicPropertyValidationRuleNoPaging < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::CollectionResponsePublicPropertyValidationRuleNoPaging,
+              HubspotSDK::Crm::CollectionResponsePublicPropertyValidationRuleNoPaging,
               HubspotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::CRM::PublicPropertyValidationRule]) }
+        sig { returns(T::Array[HubspotSDK::Crm::PublicPropertyValidationRule]) }
         attr_accessor :results
 
         sig do
           params(
             results:
-              T::Array[HubspotSDK::CRM::PublicPropertyValidationRule::OrHash]
+              T::Array[HubspotSDK::Crm::PublicPropertyValidationRule::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(results:)
@@ -26,7 +26,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { results: T::Array[HubspotSDK::CRM::PublicPropertyValidationRule] }
+            { results: T::Array[HubspotSDK::Crm::PublicPropertyValidationRule] }
           )
         end
         def to_hash

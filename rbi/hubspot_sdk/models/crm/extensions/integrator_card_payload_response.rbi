@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class IntegratorCardPayloadResponse < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::IntegratorCardPayloadResponse,
+                HubspotSDK::Crm::Extensions::IntegratorCardPayloadResponse,
                 HubspotSDK::Internal::AnyHash
               )
             end
@@ -37,7 +37,7 @@ module HubspotSDK
           sig do
             returns(
               T.nilable(
-                HubspotSDK::CRM::Extensions::IntegratorCardPayloadResponse::ResponseVersion::TaggedSymbol
+                HubspotSDK::Crm::Extensions::IntegratorCardPayloadResponse::ResponseVersion::TaggedSymbol
               )
             )
           end
@@ -46,7 +46,7 @@ module HubspotSDK
           sig do
             params(
               response_version:
-                HubspotSDK::CRM::Extensions::IntegratorCardPayloadResponse::ResponseVersion::OrSymbol
+                HubspotSDK::Crm::Extensions::IntegratorCardPayloadResponse::ResponseVersion::OrSymbol
             ).void
           end
           attr_writer :response_version
@@ -55,7 +55,7 @@ module HubspotSDK
           sig do
             returns(
               T.nilable(
-                T::Array[HubspotSDK::CRM::Extensions::IntegratorObjectResult]
+                T::Array[HubspotSDK::Crm::Extensions::IntegratorObjectResult]
               )
             )
           end
@@ -65,21 +65,21 @@ module HubspotSDK
             params(
               sections:
                 T::Array[
-                  HubspotSDK::CRM::Extensions::IntegratorObjectResult::OrHash
+                  HubspotSDK::Crm::Extensions::IntegratorObjectResult::OrHash
                 ]
             ).void
           end
           attr_writer :sections
 
           sig do
-            returns(T.nilable(HubspotSDK::CRM::Extensions::TopLevelActions))
+            returns(T.nilable(HubspotSDK::Crm::Extensions::TopLevelActions))
           end
           attr_reader :top_level_actions
 
           sig do
             params(
               top_level_actions:
-                HubspotSDK::CRM::Extensions::TopLevelActions::OrHash
+                HubspotSDK::Crm::Extensions::TopLevelActions::OrHash
             ).void
           end
           attr_writer :top_level_actions
@@ -92,13 +92,13 @@ module HubspotSDK
               all_items_link_url: String,
               card_label: String,
               response_version:
-                HubspotSDK::CRM::Extensions::IntegratorCardPayloadResponse::ResponseVersion::OrSymbol,
+                HubspotSDK::Crm::Extensions::IntegratorCardPayloadResponse::ResponseVersion::OrSymbol,
               sections:
                 T::Array[
-                  HubspotSDK::CRM::Extensions::IntegratorObjectResult::OrHash
+                  HubspotSDK::Crm::Extensions::IntegratorObjectResult::OrHash
                 ],
               top_level_actions:
-                HubspotSDK::CRM::Extensions::TopLevelActions::OrHash
+                HubspotSDK::Crm::Extensions::TopLevelActions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
@@ -125,10 +125,10 @@ module HubspotSDK
                 all_items_link_url: String,
                 card_label: String,
                 response_version:
-                  HubspotSDK::CRM::Extensions::IntegratorCardPayloadResponse::ResponseVersion::TaggedSymbol,
+                  HubspotSDK::Crm::Extensions::IntegratorCardPayloadResponse::ResponseVersion::TaggedSymbol,
                 sections:
-                  T::Array[HubspotSDK::CRM::Extensions::IntegratorObjectResult],
-                top_level_actions: HubspotSDK::CRM::Extensions::TopLevelActions
+                  T::Array[HubspotSDK::Crm::Extensions::IntegratorObjectResult],
+                top_level_actions: HubspotSDK::Crm::Extensions::TopLevelActions
               }
             )
           end
@@ -142,7 +142,7 @@ module HubspotSDK
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::CRM::Extensions::IntegratorCardPayloadResponse::ResponseVersion
+                  HubspotSDK::Crm::Extensions::IntegratorCardPayloadResponse::ResponseVersion
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -150,18 +150,18 @@ module HubspotSDK
             V1 =
               T.let(
                 :v1,
-                HubspotSDK::CRM::Extensions::IntegratorCardPayloadResponse::ResponseVersion::TaggedSymbol
+                HubspotSDK::Crm::Extensions::IntegratorCardPayloadResponse::ResponseVersion::TaggedSymbol
               )
             V3 =
               T.let(
                 :v3,
-                HubspotSDK::CRM::Extensions::IntegratorCardPayloadResponse::ResponseVersion::TaggedSymbol
+                HubspotSDK::Crm::Extensions::IntegratorCardPayloadResponse::ResponseVersion::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::CRM::Extensions::IntegratorCardPayloadResponse::ResponseVersion::TaggedSymbol
+                  HubspotSDK::Crm::Extensions::IntegratorCardPayloadResponse::ResponseVersion::TaggedSymbol
                 ]
               )
             end

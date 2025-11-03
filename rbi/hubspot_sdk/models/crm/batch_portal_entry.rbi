@@ -2,17 +2,17 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchPortalEntry < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::BatchPortalEntry,
+              HubspotSDK::Crm::BatchPortalEntry,
               HubspotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(HubspotSDK::CRM::BatchPortalEntry::FlagState::OrSymbol) }
+        sig { returns(HubspotSDK::Crm::BatchPortalEntry::FlagState::OrSymbol) }
         attr_accessor :flag_state
 
         sig { returns(Integer) }
@@ -20,7 +20,7 @@ module HubspotSDK
 
         sig do
           params(
-            flag_state: HubspotSDK::CRM::BatchPortalEntry::FlagState::OrSymbol,
+            flag_state: HubspotSDK::Crm::BatchPortalEntry::FlagState::OrSymbol,
             portal_id: Integer
           ).returns(T.attached_class)
         end
@@ -31,7 +31,7 @@ module HubspotSDK
           override.returns(
             {
               flag_state:
-                HubspotSDK::CRM::BatchPortalEntry::FlagState::OrSymbol,
+                HubspotSDK::Crm::BatchPortalEntry::FlagState::OrSymbol,
               portal_id: Integer
             }
           )
@@ -44,30 +44,30 @@ module HubspotSDK
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::CRM::BatchPortalEntry::FlagState)
+              T.all(Symbol, HubspotSDK::Crm::BatchPortalEntry::FlagState)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           OFF =
             T.let(
               :OFF,
-              HubspotSDK::CRM::BatchPortalEntry::FlagState::TaggedSymbol
+              HubspotSDK::Crm::BatchPortalEntry::FlagState::TaggedSymbol
             )
           ON =
             T.let(
               :ON,
-              HubspotSDK::CRM::BatchPortalEntry::FlagState::TaggedSymbol
+              HubspotSDK::Crm::BatchPortalEntry::FlagState::TaggedSymbol
             )
           ABSENT =
             T.let(
               :ABSENT,
-              HubspotSDK::CRM::BatchPortalEntry::FlagState::TaggedSymbol
+              HubspotSDK::Crm::BatchPortalEntry::FlagState::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::BatchPortalEntry::FlagState::TaggedSymbol
+                HubspotSDK::Crm::BatchPortalEntry::FlagState::TaggedSymbol
               ]
             )
           end

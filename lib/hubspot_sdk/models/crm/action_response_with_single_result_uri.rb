@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Exports#get_status
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Exports#get_status
       class ActionResponseWithSingleResultUri < HubspotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #
@@ -17,8 +17,8 @@ module HubspotSDK
 
         # @!attribute status
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::ActionResponseWithSingleResultUri::Status]
-        required :status, enum: -> { HubspotSDK::CRM::ActionResponseWithSingleResultUri::Status }
+        #   @return [Symbol, HubspotSDK::Models::Crm::ActionResponseWithSingleResultUri::Status]
+        required :status, enum: -> { HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status }
 
         # @!attribute errors
         #
@@ -48,14 +48,14 @@ module HubspotSDK
         # @!method initialize(completed_at:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil, result: nil)
         #   @param completed_at [Time]
         #   @param started_at [Time]
-        #   @param status [Symbol, HubspotSDK::Models::CRM::ActionResponseWithSingleResultUri::Status]
+        #   @param status [Symbol, HubspotSDK::Models::Crm::ActionResponseWithSingleResultUri::Status]
         #   @param errors [Array<HubspotSDK::Models::StandardError>]
         #   @param links [Hash{Symbol=>String}]
         #   @param num_errors [Integer]
         #   @param requested_at [Time]
         #   @param result [String]
 
-        # @see HubspotSDK::Models::CRM::ActionResponseWithSingleResultUri#status
+        # @see HubspotSDK::Models::Crm::ActionResponseWithSingleResultUri#status
         module Status
           extend HubspotSDK::Internal::Type::Enum
 

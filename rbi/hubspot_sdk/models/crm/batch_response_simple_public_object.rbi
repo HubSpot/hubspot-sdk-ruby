@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchResponseSimplePublicObject < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::BatchResponseSimplePublicObject,
+              HubspotSDK::Crm::BatchResponseSimplePublicObject,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -16,7 +16,7 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :completed_at
 
-        sig { returns(T::Array[HubspotSDK::CRM::SimplePublicObject]) }
+        sig { returns(T::Array[HubspotSDK::Crm::SimplePublicObject]) }
         attr_accessor :results
 
         # The timestamp when the batch processing began, in ISO 8601 format.
@@ -27,7 +27,7 @@ module HubspotSDK
         # "CANCELLED", or "COMPLETE"
         sig do
           returns(
-            HubspotSDK::CRM::BatchResponseSimplePublicObject::Status::TaggedSymbol
+            HubspotSDK::Crm::BatchResponseSimplePublicObject::Status::TaggedSymbol
           )
         end
         attr_accessor :status
@@ -62,10 +62,10 @@ module HubspotSDK
         sig do
           params(
             completed_at: Time,
-            results: T::Array[HubspotSDK::CRM::SimplePublicObject::OrHash],
+            results: T::Array[HubspotSDK::Crm::SimplePublicObject::OrHash],
             started_at: Time,
             status:
-              HubspotSDK::CRM::BatchResponseSimplePublicObject::Status::OrSymbol,
+              HubspotSDK::Crm::BatchResponseSimplePublicObject::Status::OrSymbol,
             errors: T::Array[HubspotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
@@ -94,10 +94,10 @@ module HubspotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubspotSDK::CRM::SimplePublicObject],
+              results: T::Array[HubspotSDK::Crm::SimplePublicObject],
               started_at: Time,
               status:
-                HubspotSDK::CRM::BatchResponseSimplePublicObject::Status::TaggedSymbol,
+                HubspotSDK::Crm::BatchResponseSimplePublicObject::Status::TaggedSymbol,
               errors: T::Array[HubspotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
@@ -117,7 +117,7 @@ module HubspotSDK
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CRM::BatchResponseSimplePublicObject::Status
+                HubspotSDK::Crm::BatchResponseSimplePublicObject::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -125,28 +125,28 @@ module HubspotSDK
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::CRM::BatchResponseSimplePublicObject::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseSimplePublicObject::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::CRM::BatchResponseSimplePublicObject::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseSimplePublicObject::Status::TaggedSymbol
             )
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::CRM::BatchResponseSimplePublicObject::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseSimplePublicObject::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::CRM::BatchResponseSimplePublicObject::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseSimplePublicObject::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::BatchResponseSimplePublicObject::Status::TaggedSymbol
+                HubspotSDK::Crm::BatchResponseSimplePublicObject::Status::TaggedSymbol
               ]
             )
           end

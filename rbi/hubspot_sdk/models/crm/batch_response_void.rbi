@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchResponseVoid < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::BatchResponseVoid,
+              HubspotSDK::Crm::BatchResponseVoid,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -22,7 +22,7 @@ module HubspotSDK
         attr_accessor :started_at
 
         sig do
-          returns(HubspotSDK::CRM::BatchResponseVoid::Status::TaggedSymbol)
+          returns(HubspotSDK::Crm::BatchResponseVoid::Status::TaggedSymbol)
         end
         attr_accessor :status
 
@@ -55,7 +55,7 @@ module HubspotSDK
             completed_at: Time,
             results: T::Array[T.anything],
             started_at: Time,
-            status: HubspotSDK::CRM::BatchResponseVoid::Status::OrSymbol,
+            status: HubspotSDK::Crm::BatchResponseVoid::Status::OrSymbol,
             errors: T::Array[HubspotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
@@ -80,7 +80,7 @@ module HubspotSDK
               completed_at: Time,
               results: T::Array[T.anything],
               started_at: Time,
-              status: HubspotSDK::CRM::BatchResponseVoid::Status::TaggedSymbol,
+              status: HubspotSDK::Crm::BatchResponseVoid::Status::TaggedSymbol,
               errors: T::Array[HubspotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
@@ -96,34 +96,34 @@ module HubspotSDK
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::CRM::BatchResponseVoid::Status)
+              T.all(Symbol, HubspotSDK::Crm::BatchResponseVoid::Status)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::CRM::BatchResponseVoid::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseVoid::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::CRM::BatchResponseVoid::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseVoid::Status::TaggedSymbol
             )
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::CRM::BatchResponseVoid::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseVoid::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::CRM::BatchResponseVoid::Status::TaggedSymbol
+              HubspotSDK::Crm::BatchResponseVoid::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::CRM::BatchResponseVoid::Status::TaggedSymbol]
+              T::Array[HubspotSDK::Crm::BatchResponseVoid::Status::TaggedSymbol]
             )
           end
           def self.values

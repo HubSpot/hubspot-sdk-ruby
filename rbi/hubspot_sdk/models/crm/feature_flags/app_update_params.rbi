@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module FeatureFlags
-        class AppUpdateParams < HubspotSDK::Models::CRM::FlagPutRequest
+        class AppUpdateParams < HubspotSDK::Models::Crm::FlagPutRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::FeatureFlags::AppUpdateParams,
+                HubspotSDK::Crm::FeatureFlags::AppUpdateParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

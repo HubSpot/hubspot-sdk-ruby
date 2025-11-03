@@ -1,6 +1,6 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Owners
         def list: (
           ?after: String,
@@ -8,14 +8,14 @@ module HubspotSDK
           ?email: String,
           ?limit: Integer,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::CRM::PublicOwner]
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::PublicOwner]
 
         def get: (
           Integer owner_id,
           ?archived: bool,
-          ?id_property: HubspotSDK::Models::CRM::OwnerGetParams::id_property,
+          ?id_property: HubspotSDK::Models::Crm::OwnerGetParams::id_property,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::CRM::PublicOwner
+        ) -> HubspotSDK::Crm::PublicOwner
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

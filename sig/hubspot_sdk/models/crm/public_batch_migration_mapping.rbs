@@ -1,24 +1,24 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type public_batch_migration_mapping =
         {
-          legacy_list_ids_to_ids_mapping: ::Array[HubspotSDK::CRM::PublicMigrationMapping],
+          legacy_list_ids_to_ids_mapping: ::Array[HubspotSDK::Crm::PublicMigrationMapping],
           missing_legacy_list_ids: ::Array[String]
         }
 
       class PublicBatchMigrationMapping < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor legacy_list_ids_to_ids_mapping: ::Array[HubspotSDK::CRM::PublicMigrationMapping]
+        attr_accessor legacy_list_ids_to_ids_mapping: ::Array[HubspotSDK::Crm::PublicMigrationMapping]
 
         attr_accessor missing_legacy_list_ids: ::Array[String]
 
         def initialize: (
-          legacy_list_ids_to_ids_mapping: ::Array[HubspotSDK::CRM::PublicMigrationMapping],
+          legacy_list_ids_to_ids_mapping: ::Array[HubspotSDK::Crm::PublicMigrationMapping],
           missing_legacy_list_ids: ::Array[String]
         ) -> void
 
         def to_hash: -> {
-          legacy_list_ids_to_ids_mapping: ::Array[HubspotSDK::CRM::PublicMigrationMapping],
+          legacy_list_ids_to_ids_mapping: ::Array[HubspotSDK::Crm::PublicMigrationMapping],
           missing_legacy_list_ids: ::Array[String]
         }
       end

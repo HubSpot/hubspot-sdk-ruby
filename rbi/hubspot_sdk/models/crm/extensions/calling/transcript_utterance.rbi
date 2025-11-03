@@ -2,14 +2,14 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module Calling
           class TranscriptUtterance < HubspotSDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Extensions::Calling::TranscriptUtterance,
+                  HubspotSDK::Crm::Extensions::Calling::TranscriptUtterance,
                   HubspotSDK::Internal::AnyHash
                 )
               end
@@ -33,13 +33,13 @@ module HubspotSDK
             attr_writer :language_code
 
             sig do
-              returns(T.nilable(HubspotSDK::CRM::Extensions::Calling::Speaker))
+              returns(T.nilable(HubspotSDK::Crm::Extensions::Calling::Speaker))
             end
             attr_reader :speaker
 
             sig do
               params(
-                speaker: HubspotSDK::CRM::Extensions::Calling::Speaker::OrHash
+                speaker: HubspotSDK::Crm::Extensions::Calling::Speaker::OrHash
               ).void
             end
             attr_writer :speaker
@@ -51,7 +51,7 @@ module HubspotSDK
                 start_time_millis: Integer,
                 text: String,
                 language_code: String,
-                speaker: HubspotSDK::CRM::Extensions::Calling::Speaker::OrHash
+                speaker: HubspotSDK::Crm::Extensions::Calling::Speaker::OrHash
               ).returns(T.attached_class)
             end
             def self.new(
@@ -72,7 +72,7 @@ module HubspotSDK
                   start_time_millis: Integer,
                   text: String,
                   language_code: String,
-                  speaker: HubspotSDK::CRM::Extensions::Calling::Speaker
+                  speaker: HubspotSDK::Crm::Extensions::Calling::Speaker
                 }
               )
             end

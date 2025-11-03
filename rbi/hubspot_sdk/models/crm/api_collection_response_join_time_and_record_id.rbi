@@ -2,17 +2,17 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class APICollectionResponseJoinTimeAndRecordID < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::APICollectionResponseJoinTimeAndRecordID,
+              HubspotSDK::Crm::APICollectionResponseJoinTimeAndRecordID,
               HubspotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::CRM::JoinTimeAndRecordID]) }
+        sig { returns(T::Array[HubspotSDK::Crm::JoinTimeAndRecordID]) }
         attr_accessor :results
 
         # Contains information pagination of results.
@@ -30,7 +30,7 @@ module HubspotSDK
 
         sig do
           params(
-            results: T::Array[HubspotSDK::CRM::JoinTimeAndRecordID::OrHash],
+            results: T::Array[HubspotSDK::Crm::JoinTimeAndRecordID::OrHash],
             paging: HubspotSDK::Marketing::Paging::OrHash,
             total: Integer
           ).returns(T.attached_class)
@@ -46,7 +46,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              results: T::Array[HubspotSDK::CRM::JoinTimeAndRecordID],
+              results: T::Array[HubspotSDK::Crm::JoinTimeAndRecordID],
               paging: HubspotSDK::Marketing::Paging,
               total: Integer
             }

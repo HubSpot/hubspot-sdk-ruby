@@ -2,14 +2,14 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         module Schema
           class BatchInputPublicAssociationDefinitionConfigurationUpdateRequest < HubspotSDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Associations::Schema::BatchInputPublicAssociationDefinitionConfigurationUpdateRequest,
+                  HubspotSDK::Crm::Associations::Schema::BatchInputPublicAssociationDefinitionConfigurationUpdateRequest,
                   HubspotSDK::Internal::AnyHash
                 )
               end
@@ -17,7 +17,7 @@ module HubspotSDK
             sig do
               returns(
                 T::Array[
-                  HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest
+                  HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest
                 ]
               )
             end
@@ -27,7 +27,7 @@ module HubspotSDK
               params(
                 inputs:
                   T::Array[
-                    HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest::OrHash
+                    HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest::OrHash
                   ]
               ).returns(T.attached_class)
             end
@@ -39,7 +39,7 @@ module HubspotSDK
                 {
                   inputs:
                     T::Array[
-                      HubspotSDK::CRM::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest
+                      HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest
                     ]
                 }
               )

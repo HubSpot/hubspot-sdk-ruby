@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         class AssociationSpec1 < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Associations::AssociationSpec1,
+                HubspotSDK::Crm::Associations::AssociationSpec1,
                 HubspotSDK::Internal::AnyHash
               )
             end
@@ -16,7 +16,7 @@ module HubspotSDK
           # The category of the association, such as "HUBSPOT_DEFINED".
           sig do
             returns(
-              HubspotSDK::CRM::Associations::AssociationSpec1::AssociationCategory::OrSymbol
+              HubspotSDK::Crm::Associations::AssociationSpec1::AssociationCategory::OrSymbol
             )
           end
           attr_accessor :association_category
@@ -30,7 +30,7 @@ module HubspotSDK
           sig do
             params(
               association_category:
-                HubspotSDK::CRM::Associations::AssociationSpec1::AssociationCategory::OrSymbol,
+                HubspotSDK::Crm::Associations::AssociationSpec1::AssociationCategory::OrSymbol,
               association_type_id: Integer
             ).returns(T.attached_class)
           end
@@ -46,7 +46,7 @@ module HubspotSDK
             override.returns(
               {
                 association_category:
-                  HubspotSDK::CRM::Associations::AssociationSpec1::AssociationCategory::OrSymbol,
+                  HubspotSDK::Crm::Associations::AssociationSpec1::AssociationCategory::OrSymbol,
                 association_type_id: Integer
               }
             )
@@ -62,7 +62,7 @@ module HubspotSDK
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::CRM::Associations::AssociationSpec1::AssociationCategory
+                  HubspotSDK::Crm::Associations::AssociationSpec1::AssociationCategory
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -70,23 +70,23 @@ module HubspotSDK
             HUBSPOT_DEFINED =
               T.let(
                 :HUBSPOT_DEFINED,
-                HubspotSDK::CRM::Associations::AssociationSpec1::AssociationCategory::TaggedSymbol
+                HubspotSDK::Crm::Associations::AssociationSpec1::AssociationCategory::TaggedSymbol
               )
             USER_DEFINED =
               T.let(
                 :USER_DEFINED,
-                HubspotSDK::CRM::Associations::AssociationSpec1::AssociationCategory::TaggedSymbol
+                HubspotSDK::Crm::Associations::AssociationSpec1::AssociationCategory::TaggedSymbol
               )
             INTEGRATOR_DEFINED =
               T.let(
                 :INTEGRATOR_DEFINED,
-                HubspotSDK::CRM::Associations::AssociationSpec1::AssociationCategory::TaggedSymbol
+                HubspotSDK::Crm::Associations::AssociationSpec1::AssociationCategory::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::CRM::Associations::AssociationSpec1::AssociationCategory::TaggedSymbol
+                  HubspotSDK::Crm::Associations::AssociationSpec1::AssociationCategory::TaggedSymbol
                 ]
               )
             end

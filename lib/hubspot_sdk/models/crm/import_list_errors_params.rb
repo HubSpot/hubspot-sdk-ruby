@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Imports#list_errors
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Imports#list_errors
       class ImportListErrorsParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
@@ -36,7 +36,7 @@ module HubspotSDK
 
         # @!method initialize(after: nil, include_error_message: nil, include_row_data: nil, limit: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::ImportListErrorsParams} for more details.
+        #   {HubspotSDK::Models::Crm::ImportListErrorsParams} for more details.
         #
         #   @param after [String] The paging cursor token of the last successfully read resource will be returned
         #

@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type public_object_list_search_result =
         {
           additional_properties: ::Hash[Symbol, String],

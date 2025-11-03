@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class FeatureFlags
-        sig { returns(HubspotSDK::Resources::CRM::FeatureFlags::Apps) }
+        sig { returns(HubspotSDK::Resources::Crm::FeatureFlags::Apps) }
         attr_reader :apps
 
-        sig { returns(HubspotSDK::Resources::CRM::FeatureFlags::Portals) }
+        sig { returns(HubspotSDK::Resources::Crm::FeatureFlags::Portals) }
         attr_reader :portals
 
         # @api private

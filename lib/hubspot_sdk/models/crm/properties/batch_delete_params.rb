@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Properties
-        # @see HubspotSDK::Resources::CRM::Properties::Batch#delete
+        # @see HubspotSDK::Resources::Crm::Properties::Batch#delete
         class BatchDeleteParams < HubspotSDK::Models::BatchInputPropertyName
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters

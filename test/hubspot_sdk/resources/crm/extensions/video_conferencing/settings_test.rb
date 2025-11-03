@@ -2,7 +2,7 @@
 
 require_relative "../../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Extensions::VideoConferencing::SettingsTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Extensions::VideoConferencing::SettingsTest < HubspotSDK::Test::ResourceTest
   def test_update_required_params
     skip("Prism tests are disabled")
 
@@ -13,7 +13,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::VideoConferencing::SettingsT
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::Extensions::ExternalSettings
+      response => HubspotSDK::Crm::Extensions::ExternalSettings
     end
 
     assert_pattern do
@@ -43,7 +43,7 @@ class HubspotSDK::Test::Resources::CRM::Extensions::VideoConferencing::SettingsT
     response = @hubspot.crm.extensions.video_conferencing.settings.get(0)
 
     assert_pattern do
-      response => HubspotSDK::CRM::Extensions::ExternalSettings
+      response => HubspotSDK::Crm::Extensions::ExternalSettings
     end
 
     assert_pattern do

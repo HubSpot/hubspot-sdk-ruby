@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         class V4UpdateParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
@@ -11,7 +11,7 @@ module HubspotSDK
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Associations::V4UpdateParams,
+                HubspotSDK::Crm::Associations::V4UpdateParams,
                 HubspotSDK::Internal::AnyHash
               )
             end
@@ -26,7 +26,7 @@ module HubspotSDK
           attr_accessor :to_object_type
 
           sig do
-            returns(T::Array[HubspotSDK::CRM::Associations::AssociationSpec1])
+            returns(T::Array[HubspotSDK::Crm::Associations::AssociationSpec1])
           end
           attr_accessor :body
 
@@ -37,7 +37,7 @@ module HubspotSDK
               to_object_type: String,
               body:
                 T::Array[
-                  HubspotSDK::CRM::Associations::AssociationSpec1::OrHash
+                  HubspotSDK::Crm::Associations::AssociationSpec1::OrHash
                 ],
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
@@ -57,7 +57,7 @@ module HubspotSDK
                 object_type: String,
                 object_id_: String,
                 to_object_type: String,
-                body: T::Array[HubspotSDK::CRM::Associations::AssociationSpec1],
+                body: T::Array[HubspotSDK::Crm::Associations::AssociationSpec1],
                 request_options: HubspotSDK::RequestOptions
               }
             )

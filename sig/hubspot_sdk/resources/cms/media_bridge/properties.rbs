@@ -81,7 +81,7 @@ module HubspotSDK
             app_id: String,
             archived: bool,
             inputs: ::Array[HubspotSDK::PropertyName],
-            ?data_sensitivity: HubspotSDK::Models::CRM::BatchReadInputPropertyName::data_sensitivity,
+            ?data_sensitivity: HubspotSDK::Models::Crm::BatchReadInputPropertyName::data_sensitivity,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::BatchResponseProperty
 

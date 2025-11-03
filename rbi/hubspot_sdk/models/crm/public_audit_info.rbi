@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicAuditInfo < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PublicAuditInfo,
+              HubspotSDK::Crm::PublicAuditInfo,
               HubspotSDK::Internal::AnyHash
             )
           end

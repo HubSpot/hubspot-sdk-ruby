@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module VideoConferencing
-          # @see HubspotSDK::Resources::CRM::Extensions::VideoConferencing::Settings#delete
+          # @see HubspotSDK::Resources::Crm::Extensions::VideoConferencing::Settings#delete
           class SettingDeleteParams < HubspotSDK::Internal::Type::BaseModel
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters

@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class CardActions < HubspotSDK::Internal::Type::BaseModel
           # @!attribute base_urls
@@ -15,7 +15,7 @@ module HubspotSDK
 
           # @!method initialize(base_urls:)
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::CRM::Extensions::CardActions} for more details.
+          #   {HubspotSDK::Models::Crm::Extensions::CardActions} for more details.
           #
           #   Configuration for custom user actions on cards.
           #

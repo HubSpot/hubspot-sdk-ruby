@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type pipeline_stage =
         {
           id: String,
@@ -11,7 +11,7 @@ module HubspotSDK
           updated_at: Time,
           archived_at: Time,
           metadata: ::Hash[Symbol, String],
-          write_permissions: HubspotSDK::Models::CRM::PipelineStage::write_permissions
+          write_permissions: HubspotSDK::Models::Crm::PipelineStage::write_permissions
         }
 
       class PipelineStage < HubspotSDK::Internal::Type::BaseModel
@@ -35,11 +35,11 @@ module HubspotSDK
 
         def metadata=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
 
-        attr_reader write_permissions: HubspotSDK::Models::CRM::PipelineStage::write_permissions?
+        attr_reader write_permissions: HubspotSDK::Models::Crm::PipelineStage::write_permissions?
 
         def write_permissions=: (
-          HubspotSDK::Models::CRM::PipelineStage::write_permissions
-        ) -> HubspotSDK::Models::CRM::PipelineStage::write_permissions
+          HubspotSDK::Models::Crm::PipelineStage::write_permissions
+        ) -> HubspotSDK::Models::Crm::PipelineStage::write_permissions
 
         def initialize: (
           id: String,
@@ -50,7 +50,7 @@ module HubspotSDK
           updated_at: Time,
           ?archived_at: Time,
           ?metadata: ::Hash[Symbol, String],
-          ?write_permissions: HubspotSDK::Models::CRM::PipelineStage::write_permissions
+          ?write_permissions: HubspotSDK::Models::Crm::PipelineStage::write_permissions
         ) -> void
 
         def to_hash: -> {
@@ -62,7 +62,7 @@ module HubspotSDK
           updated_at: Time,
           archived_at: Time,
           metadata: ::Hash[Symbol, String],
-          write_permissions: HubspotSDK::Models::CRM::PipelineStage::write_permissions
+          write_permissions: HubspotSDK::Models::Crm::PipelineStage::write_permissions
         }
 
         type write_permissions =
@@ -75,7 +75,7 @@ module HubspotSDK
           READ_ONLY: :READ_ONLY
           INTERNAL_ONLY: :INTERNAL_ONLY
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::PipelineStage::write_permissions]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PipelineStage::write_permissions]
         end
       end
     end

@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Limits#get_association_records_limits_from_objects
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Limits#get_association_records_limits_from_objects
       class LimitGetAssociationRecordsLimitsFromObjectsParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters

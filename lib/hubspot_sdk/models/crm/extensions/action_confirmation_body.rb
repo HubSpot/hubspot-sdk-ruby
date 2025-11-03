@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class ActionConfirmationBody < HubspotSDK::Internal::Type::BaseModel
           # @!attribute cancel_button_label

@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CollectionResponsePropertyGroup < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::CRM::PropertyGroup>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PropertyGroup] }
+        #   @return [Array<HubspotSDK::Models::Crm::PropertyGroup>]
+        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PropertyGroup] }
 
         # @!attribute paging
         #   Contains information pagination of results.
@@ -16,7 +16,7 @@ module HubspotSDK
         optional :paging, -> { HubspotSDK::Marketing::Paging }
 
         # @!method initialize(results:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::CRM::PropertyGroup>]
+        #   @param results [Array<HubspotSDK::Models::Crm::PropertyGroup>]
         #
         #   @param paging [HubspotSDK::Models::Marketing::Paging] Contains information pagination of results.
       end

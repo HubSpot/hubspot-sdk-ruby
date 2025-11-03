@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type ticket_merge_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class TicketMergeParams < HubspotSDK::Models::CRM::PublicMergeInput
+        class TicketMergeParams < HubspotSDK::Models::Crm::PublicMergeInput
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

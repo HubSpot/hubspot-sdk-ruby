@@ -2,9 +2,9 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
-        # @see HubspotSDK::Resources::CRM::Objects::Tasks#list
+        # @see HubspotSDK::Resources::Crm::Objects::Tasks#list
         class TaskListParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
@@ -55,7 +55,7 @@ module HubspotSDK
 
           # @!method initialize(after: nil, archived: nil, associations: nil, limit: nil, properties: nil, properties_with_history: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::CRM::Objects::TaskListParams} for more details.
+          #   {HubspotSDK::Models::Crm::Objects::TaskListParams} for more details.
           #
           #   @param after [String] The paging cursor token of the last successfully read resource will be returned
           #

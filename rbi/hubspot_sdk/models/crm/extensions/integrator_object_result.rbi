@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class IntegratorObjectResult < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::IntegratorObjectResult,
+                HubspotSDK::Crm::Extensions::IntegratorObjectResult,
                 HubspotSDK::Internal::AnyHash
               )
             end
@@ -19,7 +19,7 @@ module HubspotSDK
           sig do
             returns(
               T::Array[
-                HubspotSDK::CRM::Extensions::IntegratorObjectResult::Action::Variants
+                HubspotSDK::Crm::Extensions::IntegratorObjectResult::Action::Variants
               ]
             )
           end
@@ -28,7 +28,7 @@ module HubspotSDK
           sig { returns(String) }
           attr_accessor :title
 
-          sig { returns(T::Array[HubspotSDK::CRM::Extensions::ObjectToken]) }
+          sig { returns(T::Array[HubspotSDK::Crm::Extensions::ObjectToken]) }
           attr_accessor :tokens
 
           sig { returns(T.nilable(String)) }
@@ -43,13 +43,13 @@ module HubspotSDK
               actions:
                 T::Array[
                   T.any(
-                    HubspotSDK::CRM::Extensions::ActionHookActionBody::OrHash,
-                    HubspotSDK::CRM::Extensions::IFrameActionBody::OrHash
+                    HubspotSDK::Crm::Extensions::ActionHookActionBody::OrHash,
+                    HubspotSDK::Crm::Extensions::IFrameActionBody::OrHash
                   )
                 ],
               title: String,
               tokens:
-                T::Array[HubspotSDK::CRM::Extensions::ObjectToken::OrHash],
+                T::Array[HubspotSDK::Crm::Extensions::ObjectToken::OrHash],
               link_url: String
             ).returns(T.attached_class)
           end
@@ -62,10 +62,10 @@ module HubspotSDK
                 id: String,
                 actions:
                   T::Array[
-                    HubspotSDK::CRM::Extensions::IntegratorObjectResult::Action::Variants
+                    HubspotSDK::Crm::Extensions::IntegratorObjectResult::Action::Variants
                   ],
                 title: String,
-                tokens: T::Array[HubspotSDK::CRM::Extensions::ObjectToken],
+                tokens: T::Array[HubspotSDK::Crm::Extensions::ObjectToken],
                 link_url: String
               }
             )
@@ -79,15 +79,15 @@ module HubspotSDK
             Variants =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Extensions::ActionHookActionBody,
-                  HubspotSDK::CRM::Extensions::IFrameActionBody
+                  HubspotSDK::Crm::Extensions::ActionHookActionBody,
+                  HubspotSDK::Crm::Extensions::IFrameActionBody
                 )
               end
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::CRM::Extensions::IntegratorObjectResult::Action::Variants
+                  HubspotSDK::Crm::Extensions::IntegratorObjectResult::Action::Variants
                 ]
               )
             end

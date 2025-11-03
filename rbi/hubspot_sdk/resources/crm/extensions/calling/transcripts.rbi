@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Extensions
         class Calling
           class Transcripts
@@ -11,11 +11,11 @@ module HubspotSDK
                 engagement_id: Integer,
                 transcript_create_utterances:
                   T::Array[
-                    HubspotSDK::CRM::Extensions::Calling::TranscriptCreateUtterance::OrHash
+                    HubspotSDK::Crm::Extensions::Calling::TranscriptCreateUtterance::OrHash
                   ],
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(
-                HubspotSDK::CRM::Extensions::Calling::TranscriptCreateResponse
+                HubspotSDK::Crm::Extensions::Calling::TranscriptCreateResponse
               )
             end
             def create(
@@ -39,7 +39,7 @@ module HubspotSDK
                 transcript_id: String,
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(
-                HubspotSDK::CRM::Extensions::Calling::TranscriptResponse
+                HubspotSDK::Crm::Extensions::Calling::TranscriptResponse
               )
             end
             def get(transcript_id, request_options: {})

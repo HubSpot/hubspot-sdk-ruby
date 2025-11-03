@@ -158,7 +158,7 @@ module HubspotSDK
 
         type crm_object_creation_status = :PENDING | :COMPLETE
 
-        module CRMObjectCreationStatus
+        module CrmObjectCreationStatus
           extend HubspotSDK::Internal::Type::Enum
 
           PENDING: :PENDING

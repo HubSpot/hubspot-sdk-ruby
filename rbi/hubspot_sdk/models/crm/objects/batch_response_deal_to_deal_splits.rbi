@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         class BatchResponseDealToDealSplits < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits,
+                HubspotSDK::Crm::Objects::BatchResponseDealToDealSplits,
                 HubspotSDK::Internal::AnyHash
               )
             end
@@ -16,7 +16,7 @@ module HubspotSDK
           sig { returns(Time) }
           attr_accessor :completed_at
 
-          sig { returns(T::Array[HubspotSDK::CRM::Objects::DealToDealSplits]) }
+          sig { returns(T::Array[HubspotSDK::Crm::Objects::DealToDealSplits]) }
           attr_accessor :results
 
           sig { returns(Time) }
@@ -24,7 +24,7 @@ module HubspotSDK
 
           sig do
             returns(
-              HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits::Status::TaggedSymbol
+              HubspotSDK::Crm::Objects::BatchResponseDealToDealSplits::Status::TaggedSymbol
             )
           end
           attr_accessor :status
@@ -45,10 +45,10 @@ module HubspotSDK
             params(
               completed_at: Time,
               results:
-                T::Array[HubspotSDK::CRM::Objects::DealToDealSplits::OrHash],
+                T::Array[HubspotSDK::Crm::Objects::DealToDealSplits::OrHash],
               started_at: Time,
               status:
-                HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits::Status::OrSymbol,
+                HubspotSDK::Crm::Objects::BatchResponseDealToDealSplits::Status::OrSymbol,
               links: T::Hash[Symbol, String],
               requested_at: Time
             ).returns(T.attached_class)
@@ -67,10 +67,10 @@ module HubspotSDK
             override.returns(
               {
                 completed_at: Time,
-                results: T::Array[HubspotSDK::CRM::Objects::DealToDealSplits],
+                results: T::Array[HubspotSDK::Crm::Objects::DealToDealSplits],
                 started_at: Time,
                 status:
-                  HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits::Status::TaggedSymbol,
+                  HubspotSDK::Crm::Objects::BatchResponseDealToDealSplits::Status::TaggedSymbol,
                 links: T::Hash[Symbol, String],
                 requested_at: Time
               }
@@ -86,7 +86,7 @@ module HubspotSDK
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits::Status
+                  HubspotSDK::Crm::Objects::BatchResponseDealToDealSplits::Status
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -94,28 +94,28 @@ module HubspotSDK
             PENDING =
               T.let(
                 :PENDING,
-                HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits::Status::TaggedSymbol
+                HubspotSDK::Crm::Objects::BatchResponseDealToDealSplits::Status::TaggedSymbol
               )
             PROCESSING =
               T.let(
                 :PROCESSING,
-                HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits::Status::TaggedSymbol
+                HubspotSDK::Crm::Objects::BatchResponseDealToDealSplits::Status::TaggedSymbol
               )
             CANCELED =
               T.let(
                 :CANCELED,
-                HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits::Status::TaggedSymbol
+                HubspotSDK::Crm::Objects::BatchResponseDealToDealSplits::Status::TaggedSymbol
               )
             COMPLETE =
               T.let(
                 :COMPLETE,
-                HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits::Status::TaggedSymbol
+                HubspotSDK::Crm::Objects::BatchResponseDealToDealSplits::Status::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::CRM::Objects::BatchResponseDealToDealSplits::Status::TaggedSymbol
+                  HubspotSDK::Crm::Objects::BatchResponseDealToDealSplits::Status::TaggedSymbol
                 ]
               )
             end

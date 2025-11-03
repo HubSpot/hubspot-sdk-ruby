@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         class PublicDealSplitInput < HubspotSDK::Internal::Type::BaseModel
           # @!attribute owner_id

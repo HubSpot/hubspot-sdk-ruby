@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ObjectTypeNearOrAtAssociationLimit < HubspotSDK::Internal::Type::BaseModel
         # @!attribute has_records_at_limit
         #

@@ -2,17 +2,17 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module Calling
-          class ChannelConnectionSettingCreateParams < HubspotSDK::Models::CRM::Extensions::ChannelConnectionSettingsRequest
+          class ChannelConnectionSettingCreateParams < HubspotSDK::Models::Crm::Extensions::ChannelConnectionSettingsRequest
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Extensions::Calling::ChannelConnectionSettingCreateParams,
+                  HubspotSDK::Crm::Extensions::Calling::ChannelConnectionSettingCreateParams,
                   HubspotSDK::Internal::AnyHash
                 )
               end

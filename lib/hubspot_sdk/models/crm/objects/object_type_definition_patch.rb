@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         class ObjectTypeDefinitionPatch < HubspotSDK::Internal::Type::BaseModel
           # @!attribute clear_description
@@ -61,7 +61,7 @@ module HubspotSDK
 
           # @!method initialize(clear_description: nil, description: nil, labels: nil, primary_display_property: nil, required_properties: nil, restorable: nil, searchable_properties: nil, secondary_display_properties: nil)
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::CRM::Objects::ObjectTypeDefinitionPatch} for more details.
+          #   {HubspotSDK::Models::Crm::Objects::ObjectTypeDefinitionPatch} for more details.
           #
           #   Defines attributes to update on an object type.
           #

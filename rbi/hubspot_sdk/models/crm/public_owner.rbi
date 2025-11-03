@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicOwner < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::CRM::PublicOwner, HubspotSDK::Internal::AnyHash)
+            T.any(HubspotSDK::Crm::PublicOwner, HubspotSDK::Internal::AnyHash)
           end
 
         # The unique identifier of the owner.
@@ -22,7 +22,7 @@ module HubspotSDK
         attr_accessor :created_at
 
         # The type of the owner, which can be either PERSON or QUEUE.
-        sig { returns(HubspotSDK::CRM::PublicOwner::Type::TaggedSymbol) }
+        sig { returns(HubspotSDK::Crm::PublicOwner::Type::TaggedSymbol) }
         attr_accessor :type
 
         # The date and time when the owner was last updated.
@@ -77,7 +77,7 @@ module HubspotSDK
             id: String,
             archived: T::Boolean,
             created_at: Time,
-            type: HubspotSDK::CRM::PublicOwner::Type::OrSymbol,
+            type: HubspotSDK::Crm::PublicOwner::Type::OrSymbol,
             updated_at: Time,
             email: String,
             first_name: String,
@@ -118,7 +118,7 @@ module HubspotSDK
               id: String,
               archived: T::Boolean,
               created_at: Time,
-              type: HubspotSDK::CRM::PublicOwner::Type::TaggedSymbol,
+              type: HubspotSDK::Crm::PublicOwner::Type::TaggedSymbol,
               updated_at: Time,
               email: String,
               first_name: String,
@@ -137,17 +137,17 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::Enum
 
           TaggedSymbol =
-            T.type_alias { T.all(Symbol, HubspotSDK::CRM::PublicOwner::Type) }
+            T.type_alias { T.all(Symbol, HubspotSDK::Crm::PublicOwner::Type) }
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           PERSON =
-            T.let(:PERSON, HubspotSDK::CRM::PublicOwner::Type::TaggedSymbol)
+            T.let(:PERSON, HubspotSDK::Crm::PublicOwner::Type::TaggedSymbol)
           QUEUE =
-            T.let(:QUEUE, HubspotSDK::CRM::PublicOwner::Type::TaggedSymbol)
+            T.let(:QUEUE, HubspotSDK::Crm::PublicOwner::Type::TaggedSymbol)
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::CRM::PublicOwner::Type::TaggedSymbol]
+              T::Array[HubspotSDK::Crm::PublicOwner::Type::TaggedSymbol]
             )
           end
           def self.values

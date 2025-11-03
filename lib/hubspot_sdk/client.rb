@@ -39,7 +39,7 @@ module HubspotSDK
     # @return [HubspotSDK::Resources::Conversations]
     attr_reader :conversations
 
-    # @return [HubspotSDK::Resources::CRM]
+    # @return [HubspotSDK::Resources::Crm]
     attr_reader :crm
 
     # @return [HubspotSDK::Resources::Events]
@@ -120,7 +120,7 @@ module HubspotSDK
       @business_units = HubspotSDK::Resources::BusinessUnits.new(client: self)
       @cms = HubspotSDK::Resources::Cms.new(client: self)
       @conversations = HubspotSDK::Resources::Conversations.new(client: self)
-      @crm = HubspotSDK::Resources::CRM.new(client: self)
+      @crm = HubspotSDK::Resources::Crm.new(client: self)
       @events = HubspotSDK::Resources::Events.new(client: self)
       @files = HubspotSDK::Resources::Files.new(client: self)
       @marketing = HubspotSDK::Resources::Marketing.new(client: self)

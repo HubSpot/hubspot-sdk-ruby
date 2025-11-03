@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicAssociationMulti < HubspotSDK::Internal::Type::BaseModel
         # @!attribute from
         #
@@ -13,8 +13,8 @@ module HubspotSDK
         #   The IDs of objects that are associated with the object identified by the ID in
         #   'from'.
         #
-        #   @return [Array<HubspotSDK::Models::CRM::AssociatedID>]
-        required :to, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::AssociatedID] }
+        #   @return [Array<HubspotSDK::Models::Crm::AssociatedID>]
+        required :to, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::AssociatedID] }
 
         # @!attribute paging
         #   Contains information pagination of results.
@@ -24,11 +24,11 @@ module HubspotSDK
 
         # @!method initialize(from:, to:, paging: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::PublicAssociationMulti} for more details.
+        #   {HubspotSDK::Models::Crm::PublicAssociationMulti} for more details.
         #
         #   @param from [HubspotSDK::Models::PublicObjectID]
         #
-        #   @param to [Array<HubspotSDK::Models::CRM::AssociatedID>] The IDs of objects that are associated with the object identified by the ID in '
+        #   @param to [Array<HubspotSDK::Models::Crm::AssociatedID>] The IDs of objects that are associated with the object identified by the ID in '
         #
         #   @param paging [HubspotSDK::Models::Marketing::Paging] Contains information pagination of results.
       end

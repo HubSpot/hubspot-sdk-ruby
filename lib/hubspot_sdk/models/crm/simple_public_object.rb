@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class SimplePublicObject < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique ID of the object.
@@ -49,16 +49,16 @@ module HubspotSDK
         #   Key-value pairs representing the properties of the object along with their
         #   history.
         #
-        #   @return [Hash{Symbol=>Array<HubspotSDK::Models::CRM::ValueWithTimestamp>}, nil]
+        #   @return [Hash{Symbol=>Array<HubspotSDK::Models::Crm::ValueWithTimestamp>}, nil]
         optional :properties_with_history,
                  -> {
-                   HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::ValueWithTimestamp]]
+                   HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]
                  },
                  api_name: :propertiesWithHistory
 
         # @!method initialize(id:, created_at:, properties:, updated_at:, archived: nil, archived_at: nil, object_write_trace_id: nil, properties_with_history: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::SimplePublicObject} for more details.
+        #   {HubspotSDK::Models::Crm::SimplePublicObject} for more details.
         #
         #   A simple public object.
         #
@@ -76,7 +76,7 @@ module HubspotSDK
         #
         #   @param object_write_trace_id [String]
         #
-        #   @param properties_with_history [Hash{Symbol=>Array<HubspotSDK::Models::CRM::ValueWithTimestamp>}] Key-value pairs representing the properties of the object along with their histo
+        #   @param properties_with_history [Hash{Symbol=>Array<HubspotSDK::Models::Crm::ValueWithTimestamp>}] Key-value pairs representing the properties of the object along with their histo
       end
     end
   end

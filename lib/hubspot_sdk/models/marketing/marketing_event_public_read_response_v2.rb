@@ -12,9 +12,9 @@ module HubspotSDK
 
         # @!attribute custom_properties
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::CRMPropertyWrapper>]
+        #   @return [Array<HubspotSDK::Models::Marketing::CrmPropertyWrapper>]
         required :custom_properties,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::CRMPropertyWrapper] },
+                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::CrmPropertyWrapper] },
                  api_name: :customProperties
 
         # @!attribute event_name
@@ -109,7 +109,7 @@ module HubspotSDK
 
         # @!method initialize(created_at:, custom_properties:, event_name:, object_id_:, updated_at:, app_info: nil, attendees: nil, cancellations: nil, end_date_time: nil, event_cancelled: nil, event_completed: nil, event_description: nil, event_organizer: nil, event_status: nil, event_type: nil, event_url: nil, external_event_id: nil, no_shows: nil, registrants: nil, start_date_time: nil)
         #   @param created_at [Time]
-        #   @param custom_properties [Array<HubspotSDK::Models::Marketing::CRMPropertyWrapper>]
+        #   @param custom_properties [Array<HubspotSDK::Models::Marketing::CrmPropertyWrapper>]
         #   @param event_name [String]
         #   @param object_id_ [String]
         #   @param updated_at [Time]

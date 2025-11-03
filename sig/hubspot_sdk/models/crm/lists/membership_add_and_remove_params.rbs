@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Lists
         type membership_add_and_remove_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class MembershipAddAndRemoveParams < HubspotSDK::Models::CRM::MembershipChangeRequest
+        class MembershipAddAndRemoveParams < HubspotSDK::Models::Crm::MembershipChangeRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

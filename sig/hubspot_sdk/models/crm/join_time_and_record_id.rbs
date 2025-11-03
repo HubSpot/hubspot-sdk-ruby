@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type join_time_and_record_id =
         { membership_timestamp: Time, record_id: String }
 

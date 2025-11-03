@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Properties
         class Groups
           # Create and return a copy of a new property group.
@@ -13,7 +13,7 @@ module HubspotSDK
               name: String,
               display_order: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::CreatedResponsePropertyGroup)
+            ).returns(HubspotSDK::Crm::CreatedResponsePropertyGroup)
           end
           def create(
             object_type,
@@ -33,7 +33,7 @@ module HubspotSDK
               display_order: Integer,
               label: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::PropertyGroup)
+            ).returns(HubspotSDK::Crm::PropertyGroup)
           end
           def update(
             # Path param:
@@ -54,7 +54,7 @@ module HubspotSDK
             params(
               object_type: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::CollectionResponsePropertyGroup)
+            ).returns(HubspotSDK::Crm::CollectionResponsePropertyGroup)
           end
           def list(object_type, request_options: {})
           end
@@ -76,7 +76,7 @@ module HubspotSDK
               group_name: String,
               object_type: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::PropertyGroup)
+            ).returns(HubspotSDK::Crm::PropertyGroup)
           end
           def get(group_name, object_type:, request_options: {})
           end

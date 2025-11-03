@@ -1,12 +1,12 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type contract_update_params =
           { id_property: String }
           & HubspotSDK::Internal::Type::request_parameters
 
-        class ContractUpdateParams < HubspotSDK::Models::CRM::SimplePublicObjectInput
+        class ContractUpdateParams < HubspotSDK::Models::Crm::SimplePublicObjectInput
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

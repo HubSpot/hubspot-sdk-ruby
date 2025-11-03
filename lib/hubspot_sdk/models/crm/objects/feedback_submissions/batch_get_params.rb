@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         module FeedbackSubmissions
-          # @see HubspotSDK::Resources::CRM::Objects::FeedbackSubmissions::Batch#get
-          class BatchGetParams < HubspotSDK::Models::CRM::BatchReadInputSimplePublicObjectID
+          # @see HubspotSDK::Resources::Crm::Objects::FeedbackSubmissions::Batch#get
+          class BatchGetParams < HubspotSDK::Models::Crm::BatchReadInputSimplePublicObjectID
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

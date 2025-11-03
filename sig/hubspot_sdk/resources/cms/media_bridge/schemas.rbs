@@ -15,7 +15,7 @@ module HubspotSDK
             ?searchable_properties: ::Array[String],
             ?secondary_display_properties: ::Array[String],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::Objects::ObjectTypeDefinition
+          ) -> HubspotSDK::Crm::Objects::ObjectTypeDefinition
 
           def list: (
             String app_id,
@@ -42,7 +42,7 @@ module HubspotSDK
             String object_type,
             app_id: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::Objects::ObjectSchema
+          ) -> HubspotSDK::Crm::Objects::ObjectSchema
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

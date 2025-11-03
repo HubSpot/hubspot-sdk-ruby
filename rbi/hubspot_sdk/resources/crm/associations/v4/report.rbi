@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Associations
         class V4
           class Report
@@ -12,7 +12,7 @@ module HubspotSDK
               params(
                 user_id: Integer,
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::CRM::ReportCreationResponse)
+              ).returns(HubspotSDK::Crm::ReportCreationResponse)
             end
             def get_high_usage_report(user_id, request_options: {})
             end

@@ -1,10 +1,10 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type public_object_search_request =
         {
           after: String,
-          filter_groups: ::Array[HubspotSDK::CRM::FilterGroup],
+          filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
           limit: Integer,
           properties: ::Array[String],
           query: String,
@@ -16,11 +16,11 @@ module HubspotSDK
 
         def after=: (String) -> String
 
-        attr_reader filter_groups: ::Array[HubspotSDK::CRM::FilterGroup]?
+        attr_reader filter_groups: ::Array[HubspotSDK::Crm::FilterGroup]?
 
         def filter_groups=: (
-          ::Array[HubspotSDK::CRM::FilterGroup]
-        ) -> ::Array[HubspotSDK::CRM::FilterGroup]
+          ::Array[HubspotSDK::Crm::FilterGroup]
+        ) -> ::Array[HubspotSDK::Crm::FilterGroup]
 
         attr_reader limit: Integer?
 
@@ -40,7 +40,7 @@ module HubspotSDK
 
         def initialize: (
           ?after: String,
-          ?filter_groups: ::Array[HubspotSDK::CRM::FilterGroup],
+          ?filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
           ?limit: Integer,
           ?properties: ::Array[String],
           ?query: String,
@@ -49,7 +49,7 @@ module HubspotSDK
 
         def to_hash: -> {
           after: String,
-          filter_groups: ::Array[HubspotSDK::CRM::FilterGroup],
+          filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
           limit: Integer,
           properties: ::Array[String],
           query: String,

@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchReadInputPropertyName < HubspotSDK::Internal::Type::BaseModel
         # @!attribute archived
         #
@@ -16,17 +16,17 @@ module HubspotSDK
 
         # @!attribute data_sensitivity
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::BatchReadInputPropertyName::DataSensitivity, nil]
+        #   @return [Symbol, HubspotSDK::Models::Crm::BatchReadInputPropertyName::DataSensitivity, nil]
         optional :data_sensitivity,
-                 enum: -> { HubspotSDK::CRM::BatchReadInputPropertyName::DataSensitivity },
+                 enum: -> { HubspotSDK::Crm::BatchReadInputPropertyName::DataSensitivity },
                  api_name: :dataSensitivity
 
         # @!method initialize(archived:, inputs:, data_sensitivity: nil)
         #   @param archived [Boolean]
         #   @param inputs [Array<HubspotSDK::Models::PropertyName>]
-        #   @param data_sensitivity [Symbol, HubspotSDK::Models::CRM::BatchReadInputPropertyName::DataSensitivity]
+        #   @param data_sensitivity [Symbol, HubspotSDK::Models::Crm::BatchReadInputPropertyName::DataSensitivity]
 
-        # @see HubspotSDK::Models::CRM::BatchReadInputPropertyName#data_sensitivity
+        # @see HubspotSDK::Models::Crm::BatchReadInputPropertyName#data_sensitivity
         module DataSensitivity
           extend HubspotSDK::Internal::Type::Enum
 

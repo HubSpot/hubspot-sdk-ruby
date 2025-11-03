@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicImportMetadata < HubspotSDK::Internal::Type::BaseModel
         # @!attribute counters
         #   Summarized outcomes of each row a developer attempted to import into HubSpot.
@@ -19,9 +19,9 @@ module HubspotSDK
         # @!attribute object_lists
         #   The lists containing the imported objects.
         #
-        #   @return [Array<HubspotSDK::Models::CRM::PublicObjectListRecord>]
+        #   @return [Array<HubspotSDK::Models::Crm::PublicObjectListRecord>]
         required :object_lists,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicObjectListRecord] },
+                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicObjectListRecord] },
                  api_name: :objectLists
 
         # @!method initialize(counters:, file_ids:, object_lists:)
@@ -29,7 +29,7 @@ module HubspotSDK
         #
         #   @param file_ids [Array<String>] The IDs of files uploaded in the File Manager API.
         #
-        #   @param object_lists [Array<HubspotSDK::Models::CRM::PublicObjectListRecord>] The lists containing the imported objects.
+        #   @param object_lists [Array<HubspotSDK::Models::Crm::PublicObjectListRecord>] The lists containing the imported objects.
       end
     end
   end

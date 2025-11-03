@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Objects::SchemasTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Objects::SchemasTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
@@ -23,7 +23,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::SchemasTest < HubspotSDK::Test:
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::Objects::ObjectSchema
+      response => HubspotSDK::Crm::Objects::ObjectSchema
     end
 
     assert_pattern do
@@ -55,7 +55,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::SchemasTest < HubspotSDK::Test:
     response = @hubspot.crm.objects.schemas.update("objectType")
 
     assert_pattern do
-      response => HubspotSDK::CRM::Objects::ObjectTypeDefinition
+      response => HubspotSDK::Crm::Objects::ObjectTypeDefinition
     end
 
     assert_pattern do
@@ -89,7 +89,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::SchemasTest < HubspotSDK::Test:
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::Objects::ObjectSchema])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Objects::ObjectSchema])
       }
     end
   end
@@ -167,7 +167,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::SchemasTest < HubspotSDK::Test:
     response = @hubspot.crm.objects.schemas.get("objectType")
 
     assert_pattern do
-      response => HubspotSDK::CRM::Objects::ObjectSchema
+      response => HubspotSDK::Crm::Objects::ObjectSchema
     end
 
     assert_pattern do

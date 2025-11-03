@@ -2,10 +2,10 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module FeatureFlags
-        # @see HubspotSDK::Resources::CRM::FeatureFlags::Portals#update
-        class PortalUpdateParams < HubspotSDK::Models::CRM::PortalFlagStatePutRequest
+        # @see HubspotSDK::Resources::Crm::FeatureFlags::Portals#update
+        class PortalUpdateParams < HubspotSDK::Models::Crm::PortalFlagStatePutRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

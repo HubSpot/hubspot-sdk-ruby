@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PortalFlagStateBatchDeleteRequest < HubspotSDK::Internal::Type::BaseModel
         # @!attribute portal_ids
         #

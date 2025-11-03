@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PipelineStageInput < HubspotSDK::Internal::Type::BaseModel
         # @!attribute display_order
         #   The order for displaying this pipeline stage. If two pipeline stages have a
@@ -36,7 +36,7 @@ module HubspotSDK
 
         # @!method initialize(display_order:, label:, metadata: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::PipelineStageInput} for more details.
+        #   {HubspotSDK::Models::Crm::PipelineStageInput} for more details.
         #
         #   An input used to create or replace a pipeline stage's definition.
         #

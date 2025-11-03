@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type schema_delete_params =
           { archived: bool } & HubspotSDK::Internal::Type::request_parameters

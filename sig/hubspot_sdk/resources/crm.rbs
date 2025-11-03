@@ -1,37 +1,37 @@
 module HubspotSDK
   module Resources
-    class CRM
-      attr_reader app_uninstalls: HubspotSDK::Resources::CRM::AppUninstalls
+    class Crm
+      attr_reader app_uninstalls: HubspotSDK::Resources::Crm::AppUninstalls
 
-      attr_reader associations: HubspotSDK::Resources::CRM::Associations
+      attr_reader associations: HubspotSDK::Resources::Crm::Associations
 
-      attr_reader exports: HubspotSDK::Resources::CRM::Exports
+      attr_reader exports: HubspotSDK::Resources::Crm::Exports
 
-      attr_reader extensions: HubspotSDK::Resources::CRM::Extensions
+      attr_reader extensions: HubspotSDK::Resources::Crm::Extensions
 
-      attr_reader feature_flags: HubspotSDK::Resources::CRM::FeatureFlags
+      attr_reader feature_flags: HubspotSDK::Resources::Crm::FeatureFlags
 
-      attr_reader imports: HubspotSDK::Resources::CRM::Imports
+      attr_reader imports: HubspotSDK::Resources::Crm::Imports
 
-      attr_reader limits: HubspotSDK::Resources::CRM::Limits
+      attr_reader limits: HubspotSDK::Resources::Crm::Limits
 
-      attr_reader lists: HubspotSDK::Resources::CRM::Lists
+      attr_reader lists: HubspotSDK::Resources::Crm::Lists
 
-      attr_reader object_library: HubspotSDK::Resources::CRM::ObjectLibrary
+      attr_reader object_library: HubspotSDK::Resources::Crm::ObjectLibrary
 
-      attr_reader objects: HubspotSDK::Resources::CRM::Objects
+      attr_reader objects: HubspotSDK::Resources::Crm::Objects
 
-      attr_reader owners: HubspotSDK::Resources::CRM::Owners
+      attr_reader owners: HubspotSDK::Resources::Crm::Owners
 
-      attr_reader pipelines: HubspotSDK::Resources::CRM::Pipelines
+      attr_reader pipelines: HubspotSDK::Resources::Crm::Pipelines
 
-      attr_reader properties: HubspotSDK::Resources::CRM::Properties
+      attr_reader properties: HubspotSDK::Resources::Crm::Properties
 
-      attr_reader property_validations: HubspotSDK::Resources::CRM::PropertyValidations
+      attr_reader property_validations: HubspotSDK::Resources::Crm::PropertyValidations
 
-      attr_reader timeline: HubspotSDK::Resources::CRM::Timeline
+      attr_reader timeline: HubspotSDK::Resources::Crm::Timeline
 
-      attr_reader users: HubspotSDK::Resources::CRM::Users
+      attr_reader users: HubspotSDK::Resources::Crm::Users
 
       def initialize: (client: HubspotSDK::Client) -> void
     end

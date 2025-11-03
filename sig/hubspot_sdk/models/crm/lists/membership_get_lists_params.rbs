@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Lists
         type membership_get_lists_params =
           { object_type_id: String }

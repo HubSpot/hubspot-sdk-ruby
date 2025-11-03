@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class TimelineEventTemplateCreateRequest < HubspotSDK::Internal::Type::BaseModel
         # @!attribute name
         #   The template name.
@@ -21,8 +21,8 @@ module HubspotSDK
         #   A collection of tokens that can be used as custom properties on the event and to
         #   create fully fledged CRM objects.
         #
-        #   @return [Array<HubspotSDK::Models::CRM::TimelineEventTemplateToken>]
-        required :tokens, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::TimelineEventTemplateToken] }
+        #   @return [Array<HubspotSDK::Models::Crm::TimelineEventTemplateToken>]
+        required :tokens, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::TimelineEventTemplateToken] }
 
         # @!attribute detail_template
         #   This uses Markdown syntax with Handlebars and event-specific data to render HTML
@@ -40,7 +40,7 @@ module HubspotSDK
 
         # @!method initialize(name:, object_type:, tokens:, detail_template: nil, header_template: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::TimelineEventTemplateCreateRequest} for more details.
+        #   {HubspotSDK::Models::Crm::TimelineEventTemplateCreateRequest} for more details.
         #
         #   State of the template definition being created.
         #
@@ -48,7 +48,7 @@ module HubspotSDK
         #
         #   @param object_type [String] The type of CRM object this template is for. [Contacts, companies, tickets, and
         #
-        #   @param tokens [Array<HubspotSDK::Models::CRM::TimelineEventTemplateToken>] A collection of tokens that can be used as custom properties on the event and to
+        #   @param tokens [Array<HubspotSDK::Models::Crm::TimelineEventTemplateToken>] A collection of tokens that can be used as custom properties on the event and to
         #
         #   @param detail_template [String] This uses Markdown syntax with Handlebars and event-specific data to render HTML
         #

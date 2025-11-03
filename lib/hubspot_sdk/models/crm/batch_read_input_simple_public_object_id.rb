@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchReadInputSimplePublicObjectID < HubspotSDK::Internal::Type::BaseModel
         # @!attribute inputs
         #
-        #   @return [Array<HubspotSDK::Models::CRM::SimplePublicObjectID>]
-        required :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::SimplePublicObjectID] }
+        #   @return [Array<HubspotSDK::Models::Crm::SimplePublicObjectID>]
+        required :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObjectID] }
 
         # @!attribute properties
         #   Key-value pairs for setting properties for the new object.
@@ -32,13 +32,13 @@ module HubspotSDK
 
         # @!method initialize(inputs:, properties:, properties_with_history:, id_property: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::BatchReadInputSimplePublicObjectID} for more details.
+        #   {HubspotSDK::Models::Crm::BatchReadInputSimplePublicObjectID} for more details.
         #
         #   Specifies the input for reading a batch of CRM objects, including arrays of
         #   object IDs, requested property names (with optional history), and an optional
         #   unique identifying property.
         #
-        #   @param inputs [Array<HubspotSDK::Models::CRM::SimplePublicObjectID>]
+        #   @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectID>]
         #
         #   @param properties [Array<String>] Key-value pairs for setting properties for the new object.
         #

@@ -2,15 +2,15 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchInputSimplePublicObjectID < HubspotSDK::Internal::Type::BaseModel
         # @!attribute inputs
         #
-        #   @return [Array<HubspotSDK::Models::CRM::SimplePublicObjectID>]
-        required :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::SimplePublicObjectID] }
+        #   @return [Array<HubspotSDK::Models::Crm::SimplePublicObjectID>]
+        required :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObjectID] }
 
         # @!method initialize(inputs:)
-        #   @param inputs [Array<HubspotSDK::Models::CRM::SimplePublicObjectID>]
+        #   @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectID>]
       end
     end
   end

@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicPropertyValidationRule < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PublicPropertyValidationRule,
+              HubspotSDK::Crm::PublicPropertyValidationRule,
               HubspotSDK::Internal::AnyHash
             )
           end

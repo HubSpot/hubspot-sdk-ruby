@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class DateTime < HubspotSDK::Internal::Type::BaseModel
         # @!attribute date_only
         #

@@ -1,38 +1,38 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type association_record_limit_response =
         {
-          at_limit_from_record_samples: ::Array[HubspotSDK::CRM::AtLimitRecordSample],
+          at_limit_from_record_samples: ::Array[HubspotSDK::Crm::AtLimitRecordSample],
           limit: Integer,
-          near_limit_from_record_samples: ::Array[HubspotSDK::CRM::NearLimitRecordSample],
+          near_limit_from_record_samples: ::Array[HubspotSDK::Crm::NearLimitRecordSample],
           total_records_at_limit: Integer,
           total_records_near_limit: Integer
         }
 
       class AssociationRecordLimitResponse < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor at_limit_from_record_samples: ::Array[HubspotSDK::CRM::AtLimitRecordSample]
+        attr_accessor at_limit_from_record_samples: ::Array[HubspotSDK::Crm::AtLimitRecordSample]
 
         attr_accessor limit: Integer
 
-        attr_accessor near_limit_from_record_samples: ::Array[HubspotSDK::CRM::NearLimitRecordSample]
+        attr_accessor near_limit_from_record_samples: ::Array[HubspotSDK::Crm::NearLimitRecordSample]
 
         attr_accessor total_records_at_limit: Integer
 
         attr_accessor total_records_near_limit: Integer
 
         def initialize: (
-          at_limit_from_record_samples: ::Array[HubspotSDK::CRM::AtLimitRecordSample],
+          at_limit_from_record_samples: ::Array[HubspotSDK::Crm::AtLimitRecordSample],
           limit: Integer,
-          near_limit_from_record_samples: ::Array[HubspotSDK::CRM::NearLimitRecordSample],
+          near_limit_from_record_samples: ::Array[HubspotSDK::Crm::NearLimitRecordSample],
           total_records_at_limit: Integer,
           total_records_near_limit: Integer
         ) -> void
 
         def to_hash: -> {
-          at_limit_from_record_samples: ::Array[HubspotSDK::CRM::AtLimitRecordSample],
+          at_limit_from_record_samples: ::Array[HubspotSDK::Crm::AtLimitRecordSample],
           limit: Integer,
-          near_limit_from_record_samples: ::Array[HubspotSDK::CRM::NearLimitRecordSample],
+          near_limit_from_record_samples: ::Array[HubspotSDK::Crm::NearLimitRecordSample],
           total_records_at_limit: Integer,
           total_records_near_limit: Integer
         }

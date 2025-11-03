@@ -2,27 +2,27 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class FlagPutRequest < HubspotSDK::Internal::Type::BaseModel
         # @!attribute default_state
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::FlagPutRequest::DefaultState]
+        #   @return [Symbol, HubspotSDK::Models::Crm::FlagPutRequest::DefaultState]
         required :default_state,
-                 enum: -> { HubspotSDK::CRM::FlagPutRequest::DefaultState },
+                 enum: -> { HubspotSDK::Crm::FlagPutRequest::DefaultState },
                  api_name: :defaultState
 
         # @!attribute override_state
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::FlagPutRequest::OverrideState, nil]
+        #   @return [Symbol, HubspotSDK::Models::Crm::FlagPutRequest::OverrideState, nil]
         optional :override_state,
-                 enum: -> { HubspotSDK::CRM::FlagPutRequest::OverrideState },
+                 enum: -> { HubspotSDK::Crm::FlagPutRequest::OverrideState },
                  api_name: :overrideState
 
         # @!method initialize(default_state:, override_state: nil)
-        #   @param default_state [Symbol, HubspotSDK::Models::CRM::FlagPutRequest::DefaultState]
-        #   @param override_state [Symbol, HubspotSDK::Models::CRM::FlagPutRequest::OverrideState]
+        #   @param default_state [Symbol, HubspotSDK::Models::Crm::FlagPutRequest::DefaultState]
+        #   @param override_state [Symbol, HubspotSDK::Models::Crm::FlagPutRequest::OverrideState]
 
-        # @see HubspotSDK::Models::CRM::FlagPutRequest#default_state
+        # @see HubspotSDK::Models::Crm::FlagPutRequest#default_state
         module DefaultState
           extend HubspotSDK::Internal::Type::Enum
 
@@ -34,7 +34,7 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::CRM::FlagPutRequest#override_state
+        # @see HubspotSDK::Models::Crm::FlagPutRequest#override_state
         module OverrideState
           extend HubspotSDK::Internal::Type::Enum
 

@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type public_deal_split_input = { owner_id: Integer, percentage: Float }
 

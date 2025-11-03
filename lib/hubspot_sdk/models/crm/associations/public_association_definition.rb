@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Associations
         class PublicAssociationDefinition < HubspotSDK::Internal::Type::BaseModel
           # @!attribute id

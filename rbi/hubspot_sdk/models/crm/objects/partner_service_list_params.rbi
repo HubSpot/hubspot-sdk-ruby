@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         class PartnerServiceListParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
@@ -11,7 +11,7 @@ module HubspotSDK
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Objects::PartnerServiceListParams,
+                HubspotSDK::Crm::Objects::PartnerServiceListParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

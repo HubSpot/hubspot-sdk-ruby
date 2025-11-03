@@ -2,7 +2,7 @@
 
 require_relative "../../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Objects::PartnerClients::AssociationsTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Objects::PartnerClients::AssociationsTest < HubspotSDK::Test::ResourceTest
   def test_update_required_params
     skip("Prism tests are disabled")
 
@@ -15,7 +15,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::PartnerClients::AssociationsTes
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::SimplePublicObjectWithAssociations
+      response => HubspotSDK::Crm::SimplePublicObjectWithAssociations
     end
 
     assert_pattern do
@@ -26,9 +26,9 @@ class HubspotSDK::Test::Resources::CRM::Objects::PartnerClients::AssociationsTes
         updated_at: Time,
         archived: HubspotSDK::Internal::Type::Boolean | nil,
         archived_at: Time | nil,
-        associations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::CRM::CollectionResponseAssociatedID]) | nil,
+        associations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Crm::CollectionResponseAssociatedID]) | nil,
         object_write_trace_id: String | nil,
-        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::ValueWithTimestamp]]) | nil
+        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil
       }
     end
   end
@@ -50,7 +50,7 @@ class HubspotSDK::Test::Resources::CRM::Objects::PartnerClients::AssociationsTes
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::CRM::AssociatedID
+      row => HubspotSDK::Crm::AssociatedID
     end
 
     assert_pattern do

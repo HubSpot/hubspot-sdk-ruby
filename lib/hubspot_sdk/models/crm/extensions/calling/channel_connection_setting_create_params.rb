@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module Calling
-          # @see HubspotSDK::Resources::CRM::Extensions::Calling::ChannelConnectionSettings#create
-          class ChannelConnectionSettingCreateParams < HubspotSDK::Models::CRM::Extensions::ChannelConnectionSettingsRequest
+          # @see HubspotSDK::Resources::Crm::Extensions::Calling::ChannelConnectionSettings#create
+          class ChannelConnectionSettingCreateParams < HubspotSDK::Models::Crm::Extensions::ChannelConnectionSettingsRequest
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

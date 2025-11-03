@@ -2,22 +2,22 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CollectionResponsePipelineStageNoPaging < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::CollectionResponsePipelineStageNoPaging,
+              HubspotSDK::Crm::CollectionResponsePipelineStageNoPaging,
               HubspotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::CRM::PipelineStage]) }
+        sig { returns(T::Array[HubspotSDK::Crm::PipelineStage]) }
         attr_accessor :results
 
         sig do
           params(
-            results: T::Array[HubspotSDK::CRM::PipelineStage::OrHash]
+            results: T::Array[HubspotSDK::Crm::PipelineStage::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(results:)
@@ -25,7 +25,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { results: T::Array[HubspotSDK::CRM::PipelineStage] }
+            { results: T::Array[HubspotSDK::Crm::PipelineStage] }
           )
         end
         def to_hash

@@ -2,8 +2,8 @@
 
 module HubspotSDK
   module Models
-    module CRM
-      # @see HubspotSDK::Resources::CRM::Lists#search
+    module Crm
+      # @see HubspotSDK::Resources::Crm::Lists#search
       class ListSearchResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute has_more
         #   Whether or not there are more results to page through.
@@ -14,8 +14,8 @@ module HubspotSDK
         # @!attribute lists
         #   The lists that matched the search criteria.
         #
-        #   @return [Array<HubspotSDK::Models::CRM::PublicObjectListSearchResult>]
-        required :lists, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicObjectListSearchResult] }
+        #   @return [Array<HubspotSDK::Models::Crm::PublicObjectListSearchResult>]
+        required :lists, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicObjectListSearchResult] }
 
         # @!attribute offset
         #   Value to be passed in a future request to paginate through list search results.
@@ -35,7 +35,7 @@ module HubspotSDK
         #
         #   @param has_more [Boolean] Whether or not there are more results to page through.
         #
-        #   @param lists [Array<HubspotSDK::Models::CRM::PublicObjectListSearchResult>] The lists that matched the search criteria.
+        #   @param lists [Array<HubspotSDK::Models::Crm::PublicObjectListSearchResult>] The lists that matched the search criteria.
         #
         #   @param offset [Integer] Value to be passed in a future request to paginate through list search results.
         #

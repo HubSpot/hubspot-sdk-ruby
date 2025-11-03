@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class TimelineEventIFrame < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::TimelineEventIFrame,
+              HubspotSDK::Crm::TimelineEventIFrame,
               HubspotSDK::Internal::AnyHash
             )
           end

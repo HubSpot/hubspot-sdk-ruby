@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ActionResponseWithSingleResultUri < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::ActionResponseWithSingleResultUri,
+              HubspotSDK::Crm::ActionResponseWithSingleResultUri,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -20,7 +20,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::CRM::ActionResponseWithSingleResultUri::Status::TaggedSymbol
+            HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol
           )
         end
         attr_accessor :status
@@ -60,7 +60,7 @@ module HubspotSDK
             completed_at: Time,
             started_at: Time,
             status:
-              HubspotSDK::CRM::ActionResponseWithSingleResultUri::Status::OrSymbol,
+              HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status::OrSymbol,
             errors: T::Array[HubspotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
@@ -86,7 +86,7 @@ module HubspotSDK
               completed_at: Time,
               started_at: Time,
               status:
-                HubspotSDK::CRM::ActionResponseWithSingleResultUri::Status::TaggedSymbol,
+                HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol,
               errors: T::Array[HubspotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
@@ -105,7 +105,7 @@ module HubspotSDK
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CRM::ActionResponseWithSingleResultUri::Status
+                HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -113,28 +113,28 @@ module HubspotSDK
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::CRM::ActionResponseWithSingleResultUri::Status::TaggedSymbol
+              HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::CRM::ActionResponseWithSingleResultUri::Status::TaggedSymbol
+              HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol
             )
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::CRM::ActionResponseWithSingleResultUri::Status::TaggedSymbol
+              HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::CRM::ActionResponseWithSingleResultUri::Status::TaggedSymbol
+              HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::ActionResponseWithSingleResultUri::Status::TaggedSymbol
+                HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol
               ]
             )
           end

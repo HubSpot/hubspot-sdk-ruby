@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class ObjectToken < HubspotSDK::Internal::Type::BaseModel
           # @!attribute value
@@ -12,10 +12,10 @@ module HubspotSDK
 
           # @!attribute data_type
           #
-          #   @return [Symbol, HubspotSDK::Models::CRM::Extensions::ObjectToken::DataType, nil]
+          #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::ObjectToken::DataType, nil]
           optional :data_type,
                    enum: -> {
-                     HubspotSDK::CRM::Extensions::ObjectToken::DataType
+                     HubspotSDK::Crm::Extensions::ObjectToken::DataType
                    },
                    api_name: :dataType
 
@@ -31,11 +31,11 @@ module HubspotSDK
 
           # @!method initialize(value:, data_type: nil, label: nil, name: nil)
           #   @param value [String]
-          #   @param data_type [Symbol, HubspotSDK::Models::CRM::Extensions::ObjectToken::DataType]
+          #   @param data_type [Symbol, HubspotSDK::Models::Crm::Extensions::ObjectToken::DataType]
           #   @param label [String]
           #   @param name [String]
 
-          # @see HubspotSDK::Models::CRM::Extensions::ObjectToken#data_type
+          # @see HubspotSDK::Models::Crm::Extensions::ObjectToken#data_type
           module DataType
             extend HubspotSDK::Internal::Type::Enum
 

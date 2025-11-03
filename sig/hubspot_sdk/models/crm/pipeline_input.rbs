@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type pipeline_input =
         {
           display_order: Integer,
           label: String,
-          stages: ::Array[HubspotSDK::CRM::PipelineStageInput]
+          stages: ::Array[HubspotSDK::Crm::PipelineStageInput]
         }
 
       class PipelineInput < HubspotSDK::Internal::Type::BaseModel
@@ -13,18 +13,18 @@ module HubspotSDK
 
         attr_accessor label: String
 
-        attr_accessor stages: ::Array[HubspotSDK::CRM::PipelineStageInput]
+        attr_accessor stages: ::Array[HubspotSDK::Crm::PipelineStageInput]
 
         def initialize: (
           display_order: Integer,
           label: String,
-          stages: ::Array[HubspotSDK::CRM::PipelineStageInput]
+          stages: ::Array[HubspotSDK::Crm::PipelineStageInput]
         ) -> void
 
         def to_hash: -> {
           display_order: Integer,
           label: String,
-          stages: ::Array[HubspotSDK::CRM::PipelineStageInput]
+          stages: ::Array[HubspotSDK::Crm::PipelineStageInput]
         }
       end
     end

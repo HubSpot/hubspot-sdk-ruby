@@ -238,7 +238,7 @@ Or, equivalently:
 hubspot.crm.objects.contacts.create(properties: {email: "mark.s@lumon.industries"})
 
 # You can also splat a full Params class:
-params = HubspotSDK::CRM::Objects::ContactCreateParams.new(properties: {email: "mark.s@lumon.industries"})
+params = HubspotSDK::Crm::Objects::ContactCreateParams.new(properties: {email: "mark.s@lumon.industries"})
 hubspot.crm.objects.contacts.create(**params)
 ```
 

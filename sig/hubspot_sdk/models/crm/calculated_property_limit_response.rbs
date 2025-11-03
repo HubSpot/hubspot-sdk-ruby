@@ -1,16 +1,16 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type calculated_property_limit_response =
         {
-          by_object_type: ::Array[HubspotSDK::CRM::UsageForObjectType],
+          by_object_type: ::Array[HubspotSDK::Crm::UsageForObjectType],
           overall_limit: Integer,
           overall_percentage: Float,
           overall_usage: Integer
         }
 
       class CalculatedPropertyLimitResponse < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor by_object_type: ::Array[HubspotSDK::CRM::UsageForObjectType]
+        attr_accessor by_object_type: ::Array[HubspotSDK::Crm::UsageForObjectType]
 
         attr_accessor overall_limit: Integer
 
@@ -19,14 +19,14 @@ module HubspotSDK
         attr_accessor overall_usage: Integer
 
         def initialize: (
-          by_object_type: ::Array[HubspotSDK::CRM::UsageForObjectType],
+          by_object_type: ::Array[HubspotSDK::Crm::UsageForObjectType],
           overall_limit: Integer,
           overall_percentage: Float,
           overall_usage: Integer
         ) -> void
 
         def to_hash: -> {
-          by_object_type: ::Array[HubspotSDK::CRM::UsageForObjectType],
+          by_object_type: ::Array[HubspotSDK::Crm::UsageForObjectType],
           overall_limit: Integer,
           overall_percentage: Float,
           overall_usage: Integer

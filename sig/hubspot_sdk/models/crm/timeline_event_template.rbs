@@ -1,12 +1,12 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type timeline_event_template =
         {
           id: String,
           name: String,
           object_type: String,
-          tokens: ::Array[HubspotSDK::CRM::TimelineEventTemplateToken],
+          tokens: ::Array[HubspotSDK::Crm::TimelineEventTemplateToken],
           created_at: Time,
           detail_template: String,
           header_template: String,
@@ -20,7 +20,7 @@ module HubspotSDK
 
         attr_accessor object_type: String
 
-        attr_accessor tokens: ::Array[HubspotSDK::CRM::TimelineEventTemplateToken]
+        attr_accessor tokens: ::Array[HubspotSDK::Crm::TimelineEventTemplateToken]
 
         attr_reader created_at: Time?
 
@@ -42,7 +42,7 @@ module HubspotSDK
           id: String,
           name: String,
           object_type: String,
-          tokens: ::Array[HubspotSDK::CRM::TimelineEventTemplateToken],
+          tokens: ::Array[HubspotSDK::Crm::TimelineEventTemplateToken],
           ?created_at: Time,
           ?detail_template: String,
           ?header_template: String,
@@ -53,7 +53,7 @@ module HubspotSDK
           id: String,
           name: String,
           object_type: String,
-          tokens: ::Array[HubspotSDK::CRM::TimelineEventTemplateToken],
+          tokens: ::Array[HubspotSDK::Crm::TimelineEventTemplateToken],
           created_at: Time,
           detail_template: String,
           header_template: String,

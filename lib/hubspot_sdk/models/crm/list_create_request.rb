@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class ListCreateRequest < HubspotSDK::Internal::Type::BaseModel
         # @!attribute name
         #   The name of the list, which must be globally unique across all public lists in
@@ -34,7 +34,7 @@ module HubspotSDK
         #
         #   @return [HubspotSDK::Models::PublicOrFilterBranch, HubspotSDK::Models::PublicAndFilterBranch, HubspotSDK::Models::PublicNotAllFilterBranch, HubspotSDK::Models::PublicNotAnyFilterBranch, HubspotSDK::Models::PublicRestrictedFilterBranch, HubspotSDK::Models::PublicUnifiedEventsFilterBranch, HubspotSDK::Models::PublicPropertyAssociationFilterBranch, HubspotSDK::Models::PublicAssociationFilterBranch, nil]
         optional :filter_branch,
-                 union: -> { HubspotSDK::CRM::ListCreateRequest::FilterBranch },
+                 union: -> { HubspotSDK::Crm::ListCreateRequest::FilterBranch },
                  api_name: :filterBranch
 
         # @!attribute list_folder_id
@@ -46,19 +46,19 @@ module HubspotSDK
 
         # @!attribute list_permissions
         #
-        #   @return [HubspotSDK::Models::CRM::PublicListPermissions, nil]
-        optional :list_permissions, -> { HubspotSDK::CRM::PublicListPermissions }, api_name: :listPermissions
+        #   @return [HubspotSDK::Models::Crm::PublicListPermissions, nil]
+        optional :list_permissions, -> { HubspotSDK::Crm::PublicListPermissions }, api_name: :listPermissions
 
         # @!attribute membership_settings
         #
-        #   @return [HubspotSDK::Models::CRM::PublicMembershipSettings, nil]
+        #   @return [HubspotSDK::Models::Crm::PublicMembershipSettings, nil]
         optional :membership_settings,
-                 -> { HubspotSDK::CRM::PublicMembershipSettings },
+                 -> { HubspotSDK::Crm::PublicMembershipSettings },
                  api_name: :membershipSettings
 
         # @!method initialize(name:, object_type_id:, processing_type:, custom_properties: nil, filter_branch: nil, list_folder_id: nil, list_permissions: nil, membership_settings: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::ListCreateRequest} for more details.
+        #   {HubspotSDK::Models::Crm::ListCreateRequest} for more details.
         #
         #   The request object used when creating a new object list.
         #
@@ -74,11 +74,11 @@ module HubspotSDK
         #
         #   @param list_folder_id [Integer] The ID of the folder that the list should be created in. If left blank, then the
         #
-        #   @param list_permissions [HubspotSDK::Models::CRM::PublicListPermissions]
+        #   @param list_permissions [HubspotSDK::Models::Crm::PublicListPermissions]
         #
-        #   @param membership_settings [HubspotSDK::Models::CRM::PublicMembershipSettings]
+        #   @param membership_settings [HubspotSDK::Models::Crm::PublicMembershipSettings]
 
-        # @see HubspotSDK::Models::CRM::ListCreateRequest#filter_branch
+        # @see HubspotSDK::Models::Crm::ListCreateRequest#filter_branch
         module FilterBranch
           extend HubspotSDK::Internal::Type::Union
 

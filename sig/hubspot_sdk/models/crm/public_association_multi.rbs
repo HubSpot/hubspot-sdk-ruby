@@ -1,17 +1,17 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type public_association_multi =
         {
           from: HubspotSDK::PublicObjectID,
-          to: ::Array[HubspotSDK::CRM::AssociatedID],
+          to: ::Array[HubspotSDK::Crm::AssociatedID],
           paging: HubspotSDK::Marketing::Paging
         }
 
       class PublicAssociationMulti < HubspotSDK::Internal::Type::BaseModel
         attr_accessor from: HubspotSDK::PublicObjectID
 
-        attr_accessor to: ::Array[HubspotSDK::CRM::AssociatedID]
+        attr_accessor to: ::Array[HubspotSDK::Crm::AssociatedID]
 
         attr_reader paging: HubspotSDK::Marketing::Paging?
 
@@ -21,13 +21,13 @@ module HubspotSDK
 
         def initialize: (
           from: HubspotSDK::PublicObjectID,
-          to: ::Array[HubspotSDK::CRM::AssociatedID],
+          to: ::Array[HubspotSDK::Crm::AssociatedID],
           ?paging: HubspotSDK::Marketing::Paging
         ) -> void
 
         def to_hash: -> {
           from: HubspotSDK::PublicObjectID,
-          to: ::Array[HubspotSDK::CRM::AssociatedID],
+          to: ::Array[HubspotSDK::Crm::AssociatedID],
           paging: HubspotSDK::Marketing::Paging
         }
       end

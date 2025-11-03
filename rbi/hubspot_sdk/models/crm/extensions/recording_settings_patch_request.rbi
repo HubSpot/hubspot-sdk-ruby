@@ -2,13 +2,13 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class RecordingSettingsPatchRequest < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::RecordingSettingsPatchRequest,
+                HubspotSDK::Crm::Extensions::RecordingSettingsPatchRequest,
                 HubspotSDK::Internal::AnyHash
               )
             end

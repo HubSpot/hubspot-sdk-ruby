@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicAssociationMultiWithLabel < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PublicAssociationMultiWithLabel,
+              HubspotSDK::Crm::PublicAssociationMultiWithLabel,
               HubspotSDK::Internal::AnyHash
             )
           end
@@ -19,7 +19,7 @@ module HubspotSDK
         attr_writer :from
 
         sig do
-          returns(T::Array[HubspotSDK::CRM::MultiAssociatedObjectWithLabel])
+          returns(T::Array[HubspotSDK::Crm::MultiAssociatedObjectWithLabel])
         end
         attr_accessor :to
 
@@ -34,7 +34,7 @@ module HubspotSDK
           params(
             from: HubspotSDK::PublicObjectID::OrHash,
             to:
-              T::Array[HubspotSDK::CRM::MultiAssociatedObjectWithLabel::OrHash],
+              T::Array[HubspotSDK::Crm::MultiAssociatedObjectWithLabel::OrHash],
             paging: HubspotSDK::Marketing::Paging::OrHash
           ).returns(T.attached_class)
         end
@@ -50,7 +50,7 @@ module HubspotSDK
           override.returns(
             {
               from: HubspotSDK::PublicObjectID,
-              to: T::Array[HubspotSDK::CRM::MultiAssociatedObjectWithLabel],
+              to: T::Array[HubspotSDK::Crm::MultiAssociatedObjectWithLabel],
               paging: HubspotSDK::Marketing::Paging
             }
           )

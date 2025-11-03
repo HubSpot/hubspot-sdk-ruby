@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class IFrameActionBody < HubspotSDK::Internal::Type::BaseModel
           # @!attribute height
@@ -19,8 +19,8 @@ module HubspotSDK
 
           # @!attribute type
           #
-          #   @return [Symbol, HubspotSDK::Models::CRM::Extensions::IFrameActionBody::Type]
-          required :type, enum: -> { HubspotSDK::CRM::Extensions::IFrameActionBody::Type }
+          #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::IFrameActionBody::Type]
+          required :type, enum: -> { HubspotSDK::Crm::Extensions::IFrameActionBody::Type }
 
           # @!attribute url
           #
@@ -40,12 +40,12 @@ module HubspotSDK
           # @!method initialize(height:, property_names_included:, type:, url:, width:, label: nil)
           #   @param height [Integer]
           #   @param property_names_included [Array<String>]
-          #   @param type [Symbol, HubspotSDK::Models::CRM::Extensions::IFrameActionBody::Type]
+          #   @param type [Symbol, HubspotSDK::Models::Crm::Extensions::IFrameActionBody::Type]
           #   @param url [String]
           #   @param width [Integer]
           #   @param label [String]
 
-          # @see HubspotSDK::Models::CRM::Extensions::IFrameActionBody#type
+          # @see HubspotSDK::Models::Crm::Extensions::IFrameActionBody#type
           module Type
             extend HubspotSDK::Internal::Type::Enum
 

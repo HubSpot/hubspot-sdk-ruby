@@ -2,14 +2,14 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module Calling
           class TranscriptCreateResponse < HubspotSDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::CRM::Extensions::Calling::TranscriptCreateResponse,
+                  HubspotSDK::Crm::Extensions::Calling::TranscriptCreateResponse,
                   HubspotSDK::Internal::AnyHash
                 )
               end

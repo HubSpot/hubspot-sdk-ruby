@@ -1,6 +1,6 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Timeline
         class Events
           def create: (
@@ -11,14 +11,14 @@ module HubspotSDK
             ?email: String,
             ?extra_data: top,
             ?object_id_: String,
-            ?timeline_i_frame: HubspotSDK::CRM::TimelineEventIFrame,
+            ?timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame,
             ?timestamp: Time,
             ?utk: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::TimelineEventResponse
+          ) -> HubspotSDK::Crm::TimelineEventResponse
 
           def batch_create: (
-            inputs: ::Array[HubspotSDK::CRM::TimelineEvent],
+            inputs: ::Array[HubspotSDK::Crm::TimelineEvent],
             ?request_options: HubspotSDK::request_opts
           ) -> nil
 
@@ -26,13 +26,13 @@ module HubspotSDK
             String event_id,
             event_template_id: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::TimelineEventResponse
+          ) -> HubspotSDK::Crm::TimelineEventResponse
 
           def get_detail: (
             String event_id,
             event_template_id: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CRM::EventDetail
+          ) -> HubspotSDK::Crm::EventDetail
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

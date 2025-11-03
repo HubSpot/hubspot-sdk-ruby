@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Pipelines
         class StageGetParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
@@ -11,7 +11,7 @@ module HubspotSDK
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Pipelines::StageGetParams,
+                HubspotSDK::Crm::Pipelines::StageGetParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

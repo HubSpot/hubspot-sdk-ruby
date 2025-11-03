@@ -2,18 +2,18 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
         class PartnerClients
           sig do
             returns(
-              HubspotSDK::Resources::CRM::Objects::PartnerClients::Associations
+              HubspotSDK::Resources::Crm::Objects::PartnerClients::Associations
             )
           end
           attr_reader :associations
 
           sig do
-            returns(HubspotSDK::Resources::CRM::Objects::PartnerClients::Batch)
+            returns(HubspotSDK::Resources::Crm::Objects::PartnerClients::Batch)
           end
           attr_reader :batch
 
@@ -23,7 +23,7 @@ module HubspotSDK
               properties: T::Hash[Symbol, String],
               id_property: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::SimplePublicObject)
+            ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
           def update(
             # Path param:
@@ -47,7 +47,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
               HubspotSDK::Internal::Page[
-                HubspotSDK::CRM::SimplePublicObjectWithAssociations
+                HubspotSDK::Crm::SimplePublicObjectWithAssociations
               ]
             )
           end
@@ -71,7 +71,7 @@ module HubspotSDK
               properties: T::Array[String],
               properties_with_history: T::Array[String],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::SimplePublicObjectWithAssociations)
+            ).returns(HubspotSDK::Crm::SimplePublicObjectWithAssociations)
           end
           def get(
             partner_client_id,
@@ -87,14 +87,14 @@ module HubspotSDK
           sig do
             params(
               after: String,
-              filter_groups: T::Array[HubspotSDK::CRM::FilterGroup::OrHash],
+              filter_groups: T::Array[HubspotSDK::Crm::FilterGroup::OrHash],
               limit: Integer,
               properties: T::Array[String],
               query: String,
               sorts: T::Array[String],
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::CRM::CollectionResponseWithTotalSimplePublicObject
+              HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
             )
           end
           def search(

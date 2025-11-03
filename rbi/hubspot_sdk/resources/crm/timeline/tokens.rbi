@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Timeline
         class Tokens
           # Update an existing event type template with new tokens.
@@ -12,16 +12,16 @@ module HubspotSDK
               app_id: Integer,
               label: String,
               name: String,
-              type: HubspotSDK::CRM::TimelineEventTemplateToken::Type::OrSymbol,
+              type: HubspotSDK::Crm::TimelineEventTemplateToken::Type::OrSymbol,
               created_at: Time,
               object_property_name: String,
               options:
                 T::Array[
-                  HubspotSDK::CRM::TimelineEventTemplateTokenOption::OrHash
+                  HubspotSDK::Crm::TimelineEventTemplateTokenOption::OrHash
                 ],
               updated_at: Time,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::TimelineEventTemplateToken)
+            ).returns(HubspotSDK::Crm::TimelineEventTemplateToken)
           end
           def create(
             # Path param: The event template ID.
@@ -66,10 +66,10 @@ module HubspotSDK
               object_property_name: String,
               options:
                 T::Array[
-                  HubspotSDK::CRM::TimelineEventTemplateTokenOption::OrHash
+                  HubspotSDK::Crm::TimelineEventTemplateTokenOption::OrHash
                 ],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::TimelineEventTemplateToken)
+            ).returns(HubspotSDK::Crm::TimelineEventTemplateToken)
           end
           def update(
             # Path param: The token name.

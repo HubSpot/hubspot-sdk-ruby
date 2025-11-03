@@ -14,7 +14,7 @@ module HubspotSDK
               name: String,
               display_order: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::PropertyGroup)
+            ).returns(HubspotSDK::Crm::PropertyGroup)
           end
           def create(
             # Path param:
@@ -66,7 +66,7 @@ module HubspotSDK
               app_id: String,
               object_type: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::PropertyGroup)
+            ).returns(HubspotSDK::Crm::PropertyGroup)
           end
           def get_by_name(
             group_name,
@@ -85,7 +85,7 @@ module HubspotSDK
               display_order: Integer,
               label: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::PropertyGroup)
+            ).returns(HubspotSDK::Crm::PropertyGroup)
           end
           def update_by_name(
             # Path param:

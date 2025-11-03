@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module FeatureFlags
-        class PortalBatchUpsertParams < HubspotSDK::Models::CRM::PortalFlagStateBatchPutRequest
+        class PortalBatchUpsertParams < HubspotSDK::Models::Crm::PortalFlagStateBatchPutRequest
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::FeatureFlags::PortalBatchUpsertParams,
+                HubspotSDK::Crm::FeatureFlags::PortalBatchUpsertParams,
                 HubspotSDK::Internal::AnyHash
               )
             end

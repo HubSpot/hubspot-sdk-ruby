@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
         class Schemas
           sig do
@@ -12,7 +12,7 @@ module HubspotSDK
               name: String,
               properties:
                 T::Array[
-                  HubspotSDK::CRM::Objects::ObjectTypePropertyCreate::OrHash
+                  HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::OrHash
                 ],
               required_properties: T::Array[String],
               description: String,
@@ -20,7 +20,7 @@ module HubspotSDK
               searchable_properties: T::Array[String],
               secondary_display_properties: T::Array[String],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::Objects::ObjectSchema)
+            ).returns(HubspotSDK::Crm::Objects::ObjectSchema)
           end
           def create(
             # Associations defined for this object type.
@@ -59,7 +59,7 @@ module HubspotSDK
               searchable_properties: T::Array[String],
               secondary_display_properties: T::Array[String],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::Objects::ObjectTypeDefinition)
+            ).returns(HubspotSDK::Crm::Objects::ObjectTypeDefinition)
           end
           def update(
             # Fully qualified name or object type ID of your schema.
@@ -152,7 +152,7 @@ module HubspotSDK
             params(
               object_type: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::Objects::ObjectSchema)
+            ).returns(HubspotSDK::Crm::Objects::ObjectSchema)
           end
           def get(
             # Fully qualified name or object type ID of your schema.

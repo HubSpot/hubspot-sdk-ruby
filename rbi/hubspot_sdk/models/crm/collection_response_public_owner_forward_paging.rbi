@@ -2,17 +2,17 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CollectionResponsePublicOwnerForwardPaging < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::CollectionResponsePublicOwnerForwardPaging,
+              HubspotSDK::Crm::CollectionResponsePublicOwnerForwardPaging,
               HubspotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::CRM::PublicOwner]) }
+        sig { returns(T::Array[HubspotSDK::Crm::PublicOwner]) }
         attr_accessor :results
 
         sig { returns(T.nilable(HubspotSDK::ForwardPaging)) }
@@ -23,7 +23,7 @@ module HubspotSDK
 
         sig do
           params(
-            results: T::Array[HubspotSDK::CRM::PublicOwner::OrHash],
+            results: T::Array[HubspotSDK::Crm::PublicOwner::OrHash],
             paging: HubspotSDK::ForwardPaging::OrHash
           ).returns(T.attached_class)
         end
@@ -33,7 +33,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              results: T::Array[HubspotSDK::CRM::PublicOwner],
+              results: T::Array[HubspotSDK::Crm::PublicOwner],
               paging: HubspotSDK::ForwardPaging
             }
           )

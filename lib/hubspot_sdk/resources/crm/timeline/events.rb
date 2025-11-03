@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Timeline
         class Events
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::Timeline::EventCreateParams} for more details.
+          # {HubspotSDK::Models::Crm::Timeline::EventCreateParams} for more details.
           #
           # Send a single instance of event data to a specified event type.
           #
@@ -26,7 +26,7 @@ module HubspotSDK
           #
           # @param object_id_ [String] The CRM object identifier. This is required for every event other than contacts
           #
-          # @param timeline_i_frame [HubspotSDK::Models::CRM::TimelineEventIFrame]
+          # @param timeline_i_frame [HubspotSDK::Models::Crm::TimelineEventIFrame]
           #
           # @param timestamp [Time] The time the event occurred. If not passed in, the curren time will be assumed.
           #
@@ -34,16 +34,16 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::TimelineEventResponse]
+          # @return [HubspotSDK::Models::Crm::TimelineEventResponse]
           #
-          # @see HubspotSDK::Models::CRM::Timeline::EventCreateParams
+          # @see HubspotSDK::Models::Crm::Timeline::EventCreateParams
           def create(params)
-            parsed, options = HubspotSDK::CRM::Timeline::EventCreateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Timeline::EventCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: "integrators/timeline/v3/events",
               body: parsed,
-              model: HubspotSDK::CRM::TimelineEventResponse,
+              model: HubspotSDK::Crm::TimelineEventResponse,
               options: options
             )
           end
@@ -56,15 +56,15 @@ module HubspotSDK
           #
           # @overload batch_create(inputs:, request_options: {})
           #
-          # @param inputs [Array<HubspotSDK::Models::CRM::TimelineEvent>] A collection of timeline events we want to create.
+          # @param inputs [Array<HubspotSDK::Models::Crm::TimelineEvent>] A collection of timeline events we want to create.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::CRM::Timeline::EventBatchCreateParams
+          # @see HubspotSDK::Models::Crm::Timeline::EventBatchCreateParams
           def batch_create(params)
-            parsed, options = HubspotSDK::CRM::Timeline::EventBatchCreateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Timeline::EventBatchCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: "integrators/timeline/v3/events/batch/create",
@@ -84,11 +84,11 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::TimelineEventResponse]
+          # @return [HubspotSDK::Models::Crm::TimelineEventResponse]
           #
-          # @see HubspotSDK::Models::CRM::Timeline::EventGetParams
+          # @see HubspotSDK::Models::Crm::Timeline::EventGetParams
           def get(event_id, params)
-            parsed, options = HubspotSDK::CRM::Timeline::EventGetParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Timeline::EventGetParams.dump_request(params)
             event_template_id =
               parsed.delete(:event_template_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -96,7 +96,7 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["integrators/timeline/v3/events/%1$s/%2$s", event_template_id, event_id],
-              model: HubspotSDK::CRM::TimelineEventResponse,
+              model: HubspotSDK::Crm::TimelineEventResponse,
               options: options
             )
           end
@@ -111,11 +111,11 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::EventDetail]
+          # @return [HubspotSDK::Models::Crm::EventDetail]
           #
-          # @see HubspotSDK::Models::CRM::Timeline::EventGetDetailParams
+          # @see HubspotSDK::Models::Crm::Timeline::EventGetDetailParams
           def get_detail(event_id, params)
-            parsed, options = HubspotSDK::CRM::Timeline::EventGetDetailParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Timeline::EventGetDetailParams.dump_request(params)
             event_template_id =
               parsed.delete(:event_template_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -123,7 +123,7 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["integrators/timeline/v3/events/%1$s/%2$s/detail", event_template_id, event_id],
-              model: HubspotSDK::CRM::EventDetail,
+              model: HubspotSDK::Crm::EventDetail,
               options: options
             )
           end

@@ -1,10 +1,10 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type list_search_params =
         {  } & HubspotSDK::Internal::Type::request_parameters
 
-      class ListSearchParams < HubspotSDK::Models::CRM::ListSearchRequest
+      class ListSearchParams < HubspotSDK::Models::Crm::ListSearchRequest
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 

@@ -1,6 +1,6 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type list_search_request =
         {
           additional_properties: ::Array[String],

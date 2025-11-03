@@ -2,19 +2,19 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class PublicCardListResponse < HubspotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CRM::Extensions::PublicCardListResponse,
+                HubspotSDK::Crm::Extensions::PublicCardListResponse,
                 HubspotSDK::Internal::AnyHash
               )
             end
 
           sig do
-            returns(T::Array[HubspotSDK::CRM::Extensions::PublicCardResponse])
+            returns(T::Array[HubspotSDK::Crm::Extensions::PublicCardResponse])
           end
           attr_accessor :results
 
@@ -22,7 +22,7 @@ module HubspotSDK
             params(
               results:
                 T::Array[
-                  HubspotSDK::CRM::Extensions::PublicCardResponse::OrHash
+                  HubspotSDK::Crm::Extensions::PublicCardResponse::OrHash
                 ]
             ).returns(T.attached_class)
           end
@@ -33,7 +33,7 @@ module HubspotSDK
             override.returns(
               {
                 results:
-                  T::Array[HubspotSDK::CRM::Extensions::PublicCardResponse]
+                  T::Array[HubspotSDK::Crm::Extensions::PublicCardResponse]
               }
             )
           end

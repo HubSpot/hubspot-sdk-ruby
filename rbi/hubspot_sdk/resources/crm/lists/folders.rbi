@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Lists
         class Folders
           # Creates a folder with the given information.
@@ -11,7 +11,7 @@ module HubspotSDK
               name: String,
               parent_folder_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::ListFolderCreateResponse)
+            ).returns(HubspotSDK::Crm::ListFolderCreateResponse)
           end
           def create(
             # The name of the folder to be created.
@@ -44,7 +44,7 @@ module HubspotSDK
             params(
               folder_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::ListFolderFetchResponse)
+            ).returns(HubspotSDK::Crm::ListFolderFetchResponse)
           end
           def get(
             # The Id of the folder to retrieve.
@@ -60,7 +60,7 @@ module HubspotSDK
               new_parent_folder_id: String,
               folder_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::ListFolderFetchResponse)
+            ).returns(HubspotSDK::Crm::ListFolderFetchResponse)
           end
           def move(
             # The ID for the target parent folder.
@@ -94,7 +94,7 @@ module HubspotSDK
               folder_id: String,
               new_folder_name: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CRM::ListFolderFetchResponse)
+            ).returns(HubspotSDK::Crm::ListFolderFetchResponse)
           end
           def rename(
             # The ID of the folder to rename

@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module PublicListConversionTime
         extend HubspotSDK::Internal::Type::Union
 
-        variant -> { HubspotSDK::CRM::PublicListConversionDate }
+        variant -> { HubspotSDK::Crm::PublicListConversionDate }
 
-        variant -> { HubspotSDK::CRM::PublicListConversionInactivity }
+        variant -> { HubspotSDK::Crm::PublicListConversionInactivity }
 
         # @!method self.variants
-        #   @return [Array(HubspotSDK::Models::CRM::PublicListConversionDate, HubspotSDK::Models::CRM::PublicListConversionInactivity)]
+        #   @return [Array(HubspotSDK::Models::Crm::PublicListConversionDate, HubspotSDK::Models::Crm::PublicListConversionInactivity)]
       end
     end
   end

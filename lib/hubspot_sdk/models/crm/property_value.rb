@@ -2,15 +2,15 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PropertyValue < HubspotSDK::Internal::Type::BaseModel
         # @!attribute data_sensitivity
         #   The sensitivity level of the property, such as "non_sensitive", "sensitive", and
         #   "highly_sensitive".
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PropertyValue::DataSensitivity]
+        #   @return [Symbol, HubspotSDK::Models::Crm::PropertyValue::DataSensitivity]
         required :data_sensitivity,
-                 enum: -> { HubspotSDK::CRM::PropertyValue::DataSensitivity },
+                 enum: -> { HubspotSDK::Crm::PropertyValue::DataSensitivity },
                  api_name: :dataSensitivity
 
         # @!attribute is_encrypted
@@ -56,8 +56,8 @@ module HubspotSDK
         # @!attribute source
         #   The origin of the property value, such as "IMPORT" or "API".
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::PropertyValue::Source]
-        required :source, enum: -> { HubspotSDK::CRM::PropertyValue::Source }
+        #   @return [Symbol, HubspotSDK::Models::Crm::PropertyValue::Source]
+        required :source, enum: -> { HubspotSDK::Crm::PropertyValue::Source }
 
         # @!attribute source_id
         #   The ID of the property source indicating where it was created.
@@ -116,13 +116,13 @@ module HubspotSDK
 
         # @!method initialize(data_sensitivity:, is_encrypted:, is_large_value:, name:, persistence_timestamp:, request_id:, selected_by_user:, selected_by_user_timestamp:, source:, source_id:, source_label:, source_metadata:, source_vid:, timestamp:, unit:, updated_by_user_id:, use_timestamp_as_persistence_timestamp:, value:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CRM::PropertyValue} for more details.
+        #   {HubspotSDK::Models::Crm::PropertyValue} for more details.
         #
         #   Represents a single custom property of a marketing event, storing its name,
         #   value, metadata (like source, timestamp, and sensitivity), and related audit
         #   information for tracking changes.
         #
-        #   @param data_sensitivity [Symbol, HubspotSDK::Models::CRM::PropertyValue::DataSensitivity] The sensitivity level of the property, such as "non_sensitive", "sensitive", and
+        #   @param data_sensitivity [Symbol, HubspotSDK::Models::Crm::PropertyValue::DataSensitivity] The sensitivity level of the property, such as "non_sensitive", "sensitive", and
         #
         #   @param is_encrypted [Boolean] Whether the property value is encrypted.
         #
@@ -138,7 +138,7 @@ module HubspotSDK
         #
         #   @param selected_by_user_timestamp [Integer] The timestamp when the value was selected by a user, if applicable.
         #
-        #   @param source [Symbol, HubspotSDK::Models::CRM::PropertyValue::Source] The origin of the property value, such as "IMPORT" or "API".
+        #   @param source [Symbol, HubspotSDK::Models::Crm::PropertyValue::Source] The origin of the property value, such as "IMPORT" or "API".
         #
         #   @param source_id [String] The ID of the property source indicating where it was created.
         #
@@ -161,7 +161,7 @@ module HubspotSDK
         # The sensitivity level of the property, such as "non_sensitive", "sensitive", and
         # "highly_sensitive".
         #
-        # @see HubspotSDK::Models::CRM::PropertyValue#data_sensitivity
+        # @see HubspotSDK::Models::Crm::PropertyValue#data_sensitivity
         module DataSensitivity
           extend HubspotSDK::Internal::Type::Enum
 
@@ -175,7 +175,7 @@ module HubspotSDK
 
         # The origin of the property value, such as "IMPORT" or "API".
         #
-        # @see HubspotSDK::Models::CRM::PropertyValue#source
+        # @see HubspotSDK::Models::Crm::PropertyValue#source
         module Source
           extend HubspotSDK::Internal::Type::Enum
 

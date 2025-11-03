@@ -24,7 +24,7 @@ module HubspotSDK
 
     attr_reader conversations: HubspotSDK::Resources::Conversations
 
-    attr_reader crm: HubspotSDK::Resources::CRM
+    attr_reader crm: HubspotSDK::Resources::Crm
 
     attr_reader events: HubspotSDK::Resources::Events
 

@@ -2,23 +2,23 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchInputSimplePublicObjectBatchInput < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::BatchInputSimplePublicObjectBatchInput,
+              HubspotSDK::Crm::BatchInputSimplePublicObjectBatchInput,
               HubspotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::CRM::SimplePublicObjectBatchInput]) }
+        sig { returns(T::Array[HubspotSDK::Crm::SimplePublicObjectBatchInput]) }
         attr_accessor :inputs
 
         sig do
           params(
             inputs:
-              T::Array[HubspotSDK::CRM::SimplePublicObjectBatchInput::OrHash]
+              T::Array[HubspotSDK::Crm::SimplePublicObjectBatchInput::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(inputs:)
@@ -26,7 +26,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { inputs: T::Array[HubspotSDK::CRM::SimplePublicObjectBatchInput] }
+            { inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectBatchInput] }
           )
         end
         def to_hash

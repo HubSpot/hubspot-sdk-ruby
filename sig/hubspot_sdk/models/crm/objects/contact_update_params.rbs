@@ -1,11 +1,11 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Objects
         type contact_update_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class ContactUpdateParams < HubspotSDK::Models::CRM::SimplePublicObjectInput
+        class ContactUpdateParams < HubspotSDK::Models::Crm::SimplePublicObjectInput
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

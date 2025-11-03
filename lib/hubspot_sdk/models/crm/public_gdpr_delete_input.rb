@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicGdprDeleteInput < HubspotSDK::Internal::Type::BaseModel
         # @!attribute object_id_
         #

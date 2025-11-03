@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::CRM::Lists::MembershipsTest < HubspotSDK::Test::ResourceTest
+class HubspotSDK::Test::Resources::Crm::Lists::MembershipsTest < HubspotSDK::Test::ResourceTest
   def test_list
     skip("Prism tests are disabled")
 
@@ -16,7 +16,7 @@ class HubspotSDK::Test::Resources::CRM::Lists::MembershipsTest < HubspotSDK::Tes
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::CRM::JoinTimeAndRecordID
+      row => HubspotSDK::Crm::JoinTimeAndRecordID
     end
 
     assert_pattern do
@@ -33,7 +33,7 @@ class HubspotSDK::Test::Resources::CRM::Lists::MembershipsTest < HubspotSDK::Tes
     response = @hubspot.crm.lists.memberships.add("listId", body: ["string"])
 
     assert_pattern do
-      response => HubspotSDK::CRM::MembershipsUpdateResponse
+      response => HubspotSDK::Crm::MembershipsUpdateResponse
     end
 
     assert_pattern do
@@ -66,7 +66,7 @@ class HubspotSDK::Test::Resources::CRM::Lists::MembershipsTest < HubspotSDK::Tes
       )
 
     assert_pattern do
-      response => HubspotSDK::CRM::MembershipsUpdateResponse
+      response => HubspotSDK::Crm::MembershipsUpdateResponse
     end
 
     assert_pattern do
@@ -84,12 +84,12 @@ class HubspotSDK::Test::Resources::CRM::Lists::MembershipsTest < HubspotSDK::Tes
     response = @hubspot.crm.lists.memberships.get_lists("recordId", object_type_id: "objectTypeId")
 
     assert_pattern do
-      response => HubspotSDK::CRM::APICollectionResponseRecordListMembershipNoPaging
+      response => HubspotSDK::Crm::APICollectionResponseRecordListMembershipNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::RecordListMembership]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::RecordListMembership]),
         total: Integer | nil
       }
     end
@@ -108,7 +108,7 @@ class HubspotSDK::Test::Resources::CRM::Lists::MembershipsTest < HubspotSDK::Tes
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::CRM::JoinTimeAndRecordID
+      row => HubspotSDK::Crm::JoinTimeAndRecordID
     end
 
     assert_pattern do
@@ -125,7 +125,7 @@ class HubspotSDK::Test::Resources::CRM::Lists::MembershipsTest < HubspotSDK::Tes
     response = @hubspot.crm.lists.memberships.remove("listId", body: ["string"])
 
     assert_pattern do
-      response => HubspotSDK::CRM::MembershipsUpdateResponse
+      response => HubspotSDK::Crm::MembershipsUpdateResponse
     end
 
     assert_pattern do

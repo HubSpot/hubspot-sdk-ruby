@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchResponsePublicDefaultAssociation < HubspotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #
@@ -11,8 +11,8 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::CRM::PublicDefaultAssociation>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicDefaultAssociation] }
+        #   @return [Array<HubspotSDK::Models::Crm::PublicDefaultAssociation>]
+        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicDefaultAssociation] }
 
         # @!attribute started_at
         #
@@ -21,8 +21,8 @@ module HubspotSDK
 
         # @!attribute status
         #
-        #   @return [Symbol, HubspotSDK::Models::CRM::BatchResponsePublicDefaultAssociation::Status]
-        required :status, enum: -> { HubspotSDK::CRM::BatchResponsePublicDefaultAssociation::Status }
+        #   @return [Symbol, HubspotSDK::Models::Crm::BatchResponsePublicDefaultAssociation::Status]
+        required :status, enum: -> { HubspotSDK::Crm::BatchResponsePublicDefaultAssociation::Status }
 
         # @!attribute errors
         #
@@ -46,15 +46,15 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
         #   @param completed_at [Time]
-        #   @param results [Array<HubspotSDK::Models::CRM::PublicDefaultAssociation>]
+        #   @param results [Array<HubspotSDK::Models::Crm::PublicDefaultAssociation>]
         #   @param started_at [Time]
-        #   @param status [Symbol, HubspotSDK::Models::CRM::BatchResponsePublicDefaultAssociation::Status]
+        #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponsePublicDefaultAssociation::Status]
         #   @param errors [Array<HubspotSDK::Models::StandardError>]
         #   @param links [Hash{Symbol=>String}]
         #   @param num_errors [Integer]
         #   @param requested_at [Time]
 
-        # @see HubspotSDK::Models::CRM::BatchResponsePublicDefaultAssociation#status
+        # @see HubspotSDK::Models::Crm::BatchResponsePublicDefaultAssociation#status
         module Status
           extend HubspotSDK::Internal::Type::Enum
 

@@ -2,16 +2,16 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchInputPublicDefaultAssociationMultiPost < HubspotSDK::Internal::Type::BaseModel
         # @!attribute inputs
         #
-        #   @return [Array<HubspotSDK::Models::CRM::PublicDefaultAssociationMultiPost>]
+        #   @return [Array<HubspotSDK::Models::Crm::PublicDefaultAssociationMultiPost>]
         required :inputs,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CRM::PublicDefaultAssociationMultiPost] }
+                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicDefaultAssociationMultiPost] }
 
         # @!method initialize(inputs:)
-        #   @param inputs [Array<HubspotSDK::Models::CRM::PublicDefaultAssociationMultiPost>]
+        #   @param inputs [Array<HubspotSDK::Models::Crm::PublicDefaultAssociationMultiPost>]
       end
     end
   end

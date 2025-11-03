@@ -1,9 +1,9 @@
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       type filter =
         {
-          operator: HubspotSDK::Models::CRM::Filter::operator,
+          operator: HubspotSDK::Models::Crm::Filter::operator,
           property_name: String,
           high_value: String,
           value: String,
@@ -11,7 +11,7 @@ module HubspotSDK
         }
 
       class Filter < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor operator: HubspotSDK::Models::CRM::Filter::operator
+        attr_accessor operator: HubspotSDK::Models::Crm::Filter::operator
 
         attr_accessor property_name: String
 
@@ -28,7 +28,7 @@ module HubspotSDK
         def values=: (::Array[String]) -> ::Array[String]
 
         def initialize: (
-          operator: HubspotSDK::Models::CRM::Filter::operator,
+          operator: HubspotSDK::Models::Crm::Filter::operator,
           property_name: String,
           ?high_value: String,
           ?value: String,
@@ -36,7 +36,7 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
-          operator: HubspotSDK::Models::CRM::Filter::operator,
+          operator: HubspotSDK::Models::Crm::Filter::operator,
           property_name: String,
           high_value: String,
           value: String,
@@ -71,7 +71,7 @@ module HubspotSDK
           HAS_PROPERTY: :HAS_PROPERTY
           NOT_HAS_PROPERTY: :NOT_HAS_PROPERTY
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CRM::Filter::operator]
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::Filter::operator]
         end
       end
     end

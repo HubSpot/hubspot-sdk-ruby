@@ -2,12 +2,12 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class CustomObjectLimitResponse < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::CustomObjectLimitResponse,
+              HubspotSDK::Crm::CustomObjectLimitResponse,
               HubspotSDK::Internal::AnyHash
             )
           end

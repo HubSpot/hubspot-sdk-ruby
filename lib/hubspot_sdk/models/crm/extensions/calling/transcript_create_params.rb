@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module Calling
-          # @see HubspotSDK::Resources::CRM::Extensions::Calling::Transcripts#create
-          class TranscriptCreateParams < HubspotSDK::Models::CRM::Extensions::Calling::TranscriptCreateRequest
+          # @see HubspotSDK::Resources::Crm::Extensions::Calling::Transcripts#create
+          class TranscriptCreateParams < HubspotSDK::Models::Crm::Extensions::Calling::TranscriptCreateRequest
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

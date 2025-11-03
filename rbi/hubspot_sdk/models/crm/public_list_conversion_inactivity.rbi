@@ -2,19 +2,19 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class PublicListConversionInactivity < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::PublicListConversionInactivity,
+              HubspotSDK::Crm::PublicListConversionInactivity,
               HubspotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::CRM::PublicListConversionInactivity::ConversionType::OrSymbol
+            HubspotSDK::Crm::PublicListConversionInactivity::ConversionType::OrSymbol
           )
         end
         attr_accessor :conversion_type
@@ -24,7 +24,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::CRM::PublicListConversionInactivity::TimeUnit::OrSymbol
+            HubspotSDK::Crm::PublicListConversionInactivity::TimeUnit::OrSymbol
           )
         end
         attr_accessor :time_unit
@@ -32,10 +32,10 @@ module HubspotSDK
         sig do
           params(
             conversion_type:
-              HubspotSDK::CRM::PublicListConversionInactivity::ConversionType::OrSymbol,
+              HubspotSDK::Crm::PublicListConversionInactivity::ConversionType::OrSymbol,
             offset: Integer,
             time_unit:
-              HubspotSDK::CRM::PublicListConversionInactivity::TimeUnit::OrSymbol
+              HubspotSDK::Crm::PublicListConversionInactivity::TimeUnit::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(conversion_type:, offset:, time_unit:)
@@ -45,10 +45,10 @@ module HubspotSDK
           override.returns(
             {
               conversion_type:
-                HubspotSDK::CRM::PublicListConversionInactivity::ConversionType::OrSymbol,
+                HubspotSDK::Crm::PublicListConversionInactivity::ConversionType::OrSymbol,
               offset: Integer,
               time_unit:
-                HubspotSDK::CRM::PublicListConversionInactivity::TimeUnit::OrSymbol
+                HubspotSDK::Crm::PublicListConversionInactivity::TimeUnit::OrSymbol
             }
           )
         end
@@ -62,7 +62,7 @@ module HubspotSDK
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CRM::PublicListConversionInactivity::ConversionType
+                HubspotSDK::Crm::PublicListConversionInactivity::ConversionType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -70,13 +70,13 @@ module HubspotSDK
           INACTIVITY =
             T.let(
               :INACTIVITY,
-              HubspotSDK::CRM::PublicListConversionInactivity::ConversionType::TaggedSymbol
+              HubspotSDK::Crm::PublicListConversionInactivity::ConversionType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::PublicListConversionInactivity::ConversionType::TaggedSymbol
+                HubspotSDK::Crm::PublicListConversionInactivity::ConversionType::TaggedSymbol
               ]
             )
           end
@@ -91,7 +91,7 @@ module HubspotSDK
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CRM::PublicListConversionInactivity::TimeUnit
+                HubspotSDK::Crm::PublicListConversionInactivity::TimeUnit
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -99,23 +99,23 @@ module HubspotSDK
           DAY =
             T.let(
               :DAY,
-              HubspotSDK::CRM::PublicListConversionInactivity::TimeUnit::TaggedSymbol
+              HubspotSDK::Crm::PublicListConversionInactivity::TimeUnit::TaggedSymbol
             )
           WEEK =
             T.let(
               :WEEK,
-              HubspotSDK::CRM::PublicListConversionInactivity::TimeUnit::TaggedSymbol
+              HubspotSDK::Crm::PublicListConversionInactivity::TimeUnit::TaggedSymbol
             )
           MONTH =
             T.let(
               :MONTH,
-              HubspotSDK::CRM::PublicListConversionInactivity::TimeUnit::TaggedSymbol
+              HubspotSDK::Crm::PublicListConversionInactivity::TimeUnit::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CRM::PublicListConversionInactivity::TimeUnit::TaggedSymbol
+                HubspotSDK::Crm::PublicListConversionInactivity::TimeUnit::TaggedSymbol
               ]
             )
           end

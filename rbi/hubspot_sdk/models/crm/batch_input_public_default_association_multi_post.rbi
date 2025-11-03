@@ -2,18 +2,18 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       class BatchInputPublicDefaultAssociationMultiPost < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CRM::BatchInputPublicDefaultAssociationMultiPost,
+              HubspotSDK::Crm::BatchInputPublicDefaultAssociationMultiPost,
               HubspotSDK::Internal::AnyHash
             )
           end
 
         sig do
-          returns(T::Array[HubspotSDK::CRM::PublicDefaultAssociationMultiPost])
+          returns(T::Array[HubspotSDK::Crm::PublicDefaultAssociationMultiPost])
         end
         attr_accessor :inputs
 
@@ -21,7 +21,7 @@ module HubspotSDK
           params(
             inputs:
               T::Array[
-                HubspotSDK::CRM::PublicDefaultAssociationMultiPost::OrHash
+                HubspotSDK::Crm::PublicDefaultAssociationMultiPost::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -32,7 +32,7 @@ module HubspotSDK
           override.returns(
             {
               inputs:
-                T::Array[HubspotSDK::CRM::PublicDefaultAssociationMultiPost]
+                T::Array[HubspotSDK::Crm::PublicDefaultAssociationMultiPost]
             }
           )
         end

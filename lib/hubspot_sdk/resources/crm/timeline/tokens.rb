@@ -2,11 +2,11 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Timeline
         class Tokens
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::Timeline::TokenCreateParams} for more details.
+          # {HubspotSDK::Models::Crm::Timeline::TokenCreateParams} for more details.
           #
           # Update an existing event type template with new tokens.
           #
@@ -20,23 +20,23 @@ module HubspotSDK
           #
           # @param name [String] Body param: The name of the token referenced in the templates. This must be uniq
           #
-          # @param type [Symbol, HubspotSDK::Models::CRM::TimelineEventTemplateToken::Type] Body param: The data type of the token. You can currently choose from [string, n
+          # @param type [Symbol, HubspotSDK::Models::Crm::TimelineEventTemplateToken::Type] Body param: The data type of the token. You can currently choose from [string, n
           #
           # @param created_at [Time] Body param: The date and time that the Event Template Token was created, as an I
           #
           # @param object_property_name [String] Body param: The name of the CRM object property. This will populate the CRM obje
           #
-          # @param options [Array<HubspotSDK::Models::CRM::TimelineEventTemplateTokenOption>] Body param: If type is `enumeration`, we should have a list of options to choose
+          # @param options [Array<HubspotSDK::Models::Crm::TimelineEventTemplateTokenOption>] Body param: If type is `enumeration`, we should have a list of options to choose
           #
           # @param updated_at [Time] Body param: The date and time that the Event Template Token was last updated, as
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::TimelineEventTemplateToken]
+          # @return [HubspotSDK::Models::Crm::TimelineEventTemplateToken]
           #
-          # @see HubspotSDK::Models::CRM::Timeline::TokenCreateParams
+          # @see HubspotSDK::Models::Crm::Timeline::TokenCreateParams
           def create(event_template_id, params)
-            parsed, options = HubspotSDK::CRM::Timeline::TokenCreateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Timeline::TokenCreateParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -45,13 +45,13 @@ module HubspotSDK
               method: :post,
               path: ["integrators/timeline/v3/%1$s/event-templates/%2$s/tokens", app_id, event_template_id],
               body: parsed,
-              model: HubspotSDK::CRM::TimelineEventTemplateToken,
+              model: HubspotSDK::Crm::TimelineEventTemplateToken,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CRM::Timeline::TokenUpdateParams} for more details.
+          # {HubspotSDK::Models::Crm::Timeline::TokenUpdateParams} for more details.
           #
           # Update an event type template token, specified by token name.
           #
@@ -67,15 +67,15 @@ module HubspotSDK
           #
           # @param object_property_name [String] Body param: The name of the CRM object property. This will populate the CRM obje
           #
-          # @param options [Array<HubspotSDK::Models::CRM::TimelineEventTemplateTokenOption>] Body param: If type is `enumeration`, we should have a list of options to choose
+          # @param options [Array<HubspotSDK::Models::Crm::TimelineEventTemplateTokenOption>] Body param: If type is `enumeration`, we should have a list of options to choose
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CRM::TimelineEventTemplateToken]
+          # @return [HubspotSDK::Models::Crm::TimelineEventTemplateToken]
           #
-          # @see HubspotSDK::Models::CRM::Timeline::TokenUpdateParams
+          # @see HubspotSDK::Models::Crm::Timeline::TokenUpdateParams
           def update(token_name, params)
-            parsed, options = HubspotSDK::CRM::Timeline::TokenUpdateParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Timeline::TokenUpdateParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -93,7 +93,7 @@ module HubspotSDK
                 token_name
               ],
               body: parsed,
-              model: HubspotSDK::CRM::TimelineEventTemplateToken,
+              model: HubspotSDK::Crm::TimelineEventTemplateToken,
               options: options
             )
           end
@@ -112,9 +112,9 @@ module HubspotSDK
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::CRM::Timeline::TokenDeleteParams
+          # @see HubspotSDK::Models::Crm::Timeline::TokenDeleteParams
           def delete(token_name, params)
-            parsed, options = HubspotSDK::CRM::Timeline::TokenDeleteParams.dump_request(params)
+            parsed, options = HubspotSDK::Crm::Timeline::TokenDeleteParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")

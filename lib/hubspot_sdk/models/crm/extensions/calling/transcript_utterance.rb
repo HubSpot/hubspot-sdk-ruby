@@ -2,7 +2,7 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         module Calling
           class TranscriptUtterance < HubspotSDK::Internal::Type::BaseModel
@@ -33,8 +33,8 @@ module HubspotSDK
 
             # @!attribute speaker
             #
-            #   @return [HubspotSDK::Models::CRM::Extensions::Calling::Speaker, nil]
-            optional :speaker, -> { HubspotSDK::CRM::Extensions::Calling::Speaker }
+            #   @return [HubspotSDK::Models::Crm::Extensions::Calling::Speaker, nil]
+            optional :speaker, -> { HubspotSDK::Crm::Extensions::Calling::Speaker }
 
             # @!method initialize(id:, end_time_millis:, start_time_millis:, text:, language_code: nil, speaker: nil)
             #   @param id [String]
@@ -42,7 +42,7 @@ module HubspotSDK
             #   @param start_time_millis [Integer]
             #   @param text [String]
             #   @param language_code [String]
-            #   @param speaker [HubspotSDK::Models::CRM::Extensions::Calling::Speaker]
+            #   @param speaker [HubspotSDK::Models::Crm::Extensions::Calling::Speaker]
           end
         end
       end

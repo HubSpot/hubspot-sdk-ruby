@@ -2,14 +2,14 @@
 
 module HubspotSDK
   module Models
-    module CRM
+    module Crm
       module Extensions
         class CardAuditResponse < HubspotSDK::Internal::Type::BaseModel
           # @!attribute action_type
           #
-          #   @return [Symbol, HubspotSDK::Models::CRM::Extensions::CardAuditResponse::ActionType]
+          #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::CardAuditResponse::ActionType]
           required :action_type,
-                   enum: -> { HubspotSDK::CRM::Extensions::CardAuditResponse::ActionType },
+                   enum: -> { HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType },
                    api_name: :actionType
 
           # @!attribute application_id
@@ -19,9 +19,9 @@ module HubspotSDK
 
           # @!attribute auth_source
           #
-          #   @return [Symbol, HubspotSDK::Models::CRM::Extensions::CardAuditResponse::AuthSource]
+          #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::CardAuditResponse::AuthSource]
           required :auth_source,
-                   enum: -> { HubspotSDK::CRM::Extensions::CardAuditResponse::AuthSource },
+                   enum: -> { HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource },
                    api_name: :authSource
 
           # @!attribute changed_at
@@ -40,14 +40,14 @@ module HubspotSDK
           required :object_type_id, Integer, api_name: :objectTypeId
 
           # @!method initialize(action_type:, application_id:, auth_source:, changed_at:, initiating_user_id:, object_type_id:)
-          #   @param action_type [Symbol, HubspotSDK::Models::CRM::Extensions::CardAuditResponse::ActionType]
+          #   @param action_type [Symbol, HubspotSDK::Models::Crm::Extensions::CardAuditResponse::ActionType]
           #   @param application_id [Integer]
-          #   @param auth_source [Symbol, HubspotSDK::Models::CRM::Extensions::CardAuditResponse::AuthSource]
+          #   @param auth_source [Symbol, HubspotSDK::Models::Crm::Extensions::CardAuditResponse::AuthSource]
           #   @param changed_at [Integer]
           #   @param initiating_user_id [Integer]
           #   @param object_type_id [Integer]
 
-          # @see HubspotSDK::Models::CRM::Extensions::CardAuditResponse#action_type
+          # @see HubspotSDK::Models::Crm::Extensions::CardAuditResponse#action_type
           module ActionType
             extend HubspotSDK::Internal::Type::Enum
 
@@ -59,7 +59,7 @@ module HubspotSDK
             #   @return [Array<Symbol>]
           end
 
-          # @see HubspotSDK::Models::CRM::Extensions::CardAuditResponse#auth_source
+          # @see HubspotSDK::Models::Crm::Extensions::CardAuditResponse#auth_source
           module AuthSource
             extend HubspotSDK::Internal::Type::Enum
 

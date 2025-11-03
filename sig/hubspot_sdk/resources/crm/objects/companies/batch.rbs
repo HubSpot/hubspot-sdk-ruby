@@ -1,37 +1,37 @@
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
         class Companies
           class Batch
             def create: (
-              inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectBatchInputForCreate],
+              inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectBatchInputForCreate],
               ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::CRM::BatchResponseSimplePublicObject
+            ) -> HubspotSDK::Crm::BatchResponseSimplePublicObject
 
             def update: (
-              inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectBatchInput],
+              inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectBatchInput],
               ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::CRM::BatchResponseSimplePublicObject
+            ) -> HubspotSDK::Crm::BatchResponseSimplePublicObject
 
             def delete: (
-              inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectID],
+              inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectID],
               ?request_options: HubspotSDK::request_opts
             ) -> nil
 
             def get: (
-              inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectID],
+              inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectID],
               properties: ::Array[String],
               properties_with_history: ::Array[String],
               ?archived: bool,
               ?id_property: String,
               ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::CRM::BatchResponseSimplePublicObject
+            ) -> HubspotSDK::Crm::BatchResponseSimplePublicObject
 
             def upsert: (
-              inputs: ::Array[HubspotSDK::CRM::SimplePublicObjectBatchInputUpsert],
+              inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectBatchInputUpsert],
               ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::CRM::BatchResponseSimplePublicUpsertObject
+            ) -> HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject
 
             def initialize: (client: HubspotSDK::Client) -> void
           end

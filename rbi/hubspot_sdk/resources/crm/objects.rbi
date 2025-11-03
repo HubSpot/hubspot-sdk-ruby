@@ -2,113 +2,113 @@
 
 module HubspotSDK
   module Resources
-    class CRM
+    class Crm
       class Objects
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Appointments) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Appointments) }
         attr_reader :appointments
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Calls) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Calls) }
         attr_reader :calls
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Carts) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Carts) }
         attr_reader :carts
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::CommercePayments) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::CommercePayments) }
         attr_reader :commerce_payments
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Communications) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Communications) }
         attr_reader :communications
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Companies) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Companies) }
         attr_reader :companies
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Contacts) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Contacts) }
         attr_reader :contacts
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Contracts) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Contracts) }
         attr_reader :contracts
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Courses) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Courses) }
         attr_reader :courses
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Custom) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Custom) }
         attr_reader :custom
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::DealSplits) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::DealSplits) }
         attr_reader :deal_splits
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Deals) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Deals) }
         attr_reader :deals
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Discounts) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Discounts) }
         attr_reader :discounts
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Emails) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Emails) }
         attr_reader :emails
 
         sig do
-          returns(HubspotSDK::Resources::CRM::Objects::FeedbackSubmissions)
+          returns(HubspotSDK::Resources::Crm::Objects::FeedbackSubmissions)
         end
         attr_reader :feedback_submissions
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Fees) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Fees) }
         attr_reader :fees
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::GoalTargets) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::GoalTargets) }
         attr_reader :goal_targets
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Invoices) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Invoices) }
         attr_reader :invoices
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Leads) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Leads) }
         attr_reader :leads
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::LineItems) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::LineItems) }
         attr_reader :line_items
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Listings) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Listings) }
         attr_reader :listings
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Meetings) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Meetings) }
         attr_reader :meetings
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Notes) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Notes) }
         attr_reader :notes
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Objects) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Objects) }
         attr_reader :objects
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Orders) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Orders) }
         attr_reader :orders
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::PartnerClients) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::PartnerClients) }
         attr_reader :partner_clients
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::PartnerServices) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::PartnerServices) }
         attr_reader :partner_services
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::PostalMail) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::PostalMail) }
         attr_reader :postal_mail
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Products) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Products) }
         attr_reader :products
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Quotes) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Quotes) }
         attr_reader :quotes
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Schemas) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Schemas) }
         attr_reader :schemas
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Services) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Services) }
         attr_reader :services
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Tasks) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Tasks) }
         attr_reader :tasks
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Taxes) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Taxes) }
         attr_reader :taxes
 
-        sig { returns(HubspotSDK::Resources::CRM::Objects::Tickets) }
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Tickets) }
         attr_reader :tickets
 
         # @api private
