@@ -140,7 +140,7 @@ module HubspotSDK
         # @param limit [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Automation::CollectionResponseAPIFlowEmailCampaign]
+        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Automation::APIFlowEmailCampaign>]
         #
         # @see HubspotSDK::Models::Automation::WorkflowListEmailCampaignsParams
         def list_email_campaigns(params = {})
@@ -149,7 +149,8 @@ module HubspotSDK
             method: :get,
             path: "automation/v4/flows/email-campaigns",
             query: parsed.transform_keys(flow_id: "flowId"),
-            model: HubspotSDK::Automation::CollectionResponseAPIFlowEmailCampaign,
+            page: HubspotSDK::Internal::Page,
+            model: HubspotSDK::Automation::APIFlowEmailCampaign,
             options: options
           )
         end

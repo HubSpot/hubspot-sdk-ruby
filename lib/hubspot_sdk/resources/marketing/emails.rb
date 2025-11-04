@@ -416,7 +416,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::CollectionResponseWithTotalVersionPublicEmail]
+        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Marketing::VersionPublicEmail>]
         #
         # @see HubspotSDK::Models::Marketing::EmailListRevisionsParams
         def list_revisions(email_id, params = {})
@@ -425,7 +425,8 @@ module HubspotSDK
             method: :get,
             path: ["marketing/v3/emails/%1$s/revisions", email_id],
             query: parsed,
-            model: HubspotSDK::Marketing::CollectionResponseWithTotalVersionPublicEmail,
+            page: HubspotSDK::Internal::Page,
+            model: HubspotSDK::Marketing::VersionPublicEmail,
             options: options
           )
         end

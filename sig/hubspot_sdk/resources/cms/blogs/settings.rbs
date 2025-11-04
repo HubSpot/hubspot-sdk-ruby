@@ -55,7 +55,7 @@ module HubspotSDK
             ?before: String,
             ?limit: Integer,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::Blogs::CollectionResponseWithTotalVersionBlog
+          ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::Blogs::VersionBlog]
 
           def set_new_lang_primary: (
             id: String,

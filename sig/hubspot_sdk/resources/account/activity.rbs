@@ -10,14 +10,14 @@ module HubspotSDK
           ?occurred_before: Time,
           ?sort: ::Array[String],
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Account::CollectionResponsePublicAPIUserActionEventForwardPaging
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Account::PublicAPIUserActionEvent]
 
         def list_login_activities: (
           ?after: String,
           ?limit: Integer,
           ?user_id: Integer,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Account::CollectionResponsePublicLoginAuditForwardPaging
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Account::PublicLoginAudit]
 
         def list_security_activities: (
           ?after: String,
@@ -26,7 +26,7 @@ module HubspotSDK
           ?to_timestamp: Integer,
           ?user_id: Integer,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Account::CollectionResponseHydratedCriticalActionForwardPaging
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Account::HydratedCriticalAction]
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

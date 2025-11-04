@@ -680,7 +680,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::CollectionResponseWithTotalVersionPage]
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::VersionPage>]
           #
           # @see HubspotSDK::Models::Cms::Pages::SitePageListRevisionsParams
           def list_revisions(object_id_, params = {})
@@ -689,7 +689,8 @@ module HubspotSDK
               method: :get,
               path: ["cms/v3/pages/site-pages/%1$s/revisions", object_id_],
               query: parsed,
-              model: HubspotSDK::Cms::CollectionResponseWithTotalVersionPage,
+              page: HubspotSDK::Internal::Page,
+              model: HubspotSDK::Cms::VersionPage,
               options: options
             )
           end

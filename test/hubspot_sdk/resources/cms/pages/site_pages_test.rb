@@ -1039,14 +1039,22 @@ class HubspotSDK::Test::Resources::Cms::Pages::SitePagesTest < HubspotSDK::Test:
     response = @hubspot.cms.pages.site_pages.list_revisions("objectId")
 
     assert_pattern do
-      response => HubspotSDK::Cms::CollectionResponseWithTotalVersionPage
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Cms::VersionPage
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::VersionPage]),
-        total: Integer,
-        paging: HubspotSDK::Marketing::EmailsPaging | nil
+      row => {
+        id: String,
+        object: HubspotSDK::Cms::Page,
+        updated_at: Time,
+        user: HubspotSDK::VersionUser
       }
     end
   end

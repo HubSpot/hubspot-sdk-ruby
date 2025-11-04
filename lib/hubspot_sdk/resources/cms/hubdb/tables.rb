@@ -373,7 +373,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::CollectionResponseWithTotalHubDBTableV3ForwardPaging]
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::HubDBTableV3>]
           #
           # @see HubspotSDK::Models::Cms::Hubdb::TableListDraftParams
           def list_draft(params = {})
@@ -391,7 +391,8 @@ module HubspotSDK
                 updated_at: "updatedAt",
                 updated_before: "updatedBefore"
               ),
-              model: HubspotSDK::Cms::CollectionResponseWithTotalHubDBTableV3ForwardPaging,
+              page: HubspotSDK::Internal::Page,
+              model: HubspotSDK::Cms::HubDBTableV3,
               options: options
             )
           end

@@ -100,7 +100,7 @@ module HubspotSDK
             ?updated_at: Time,
             ?updated_before: Time,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::CollectionResponseWithTotalHubDBTableV3ForwardPaging
+          ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::HubDBTableV3]
 
           def publish_draft: (
             String table_id_or_name,

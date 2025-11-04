@@ -28,7 +28,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Account::CollectionResponsePublicAPIUserActionEventForwardPaging]
+        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Account::PublicAPIUserActionEvent>]
         #
         # @see HubspotSDK::Models::Account::ActivityListAuditLogsParams
         def list_audit_logs(params = {})
@@ -41,7 +41,8 @@ module HubspotSDK
               occurred_after: "occurredAfter",
               occurred_before: "occurredBefore"
             ),
-            model: HubspotSDK::Account::CollectionResponsePublicAPIUserActionEventForwardPaging,
+            page: HubspotSDK::Internal::Page,
+            model: HubspotSDK::Account::PublicAPIUserActionEvent,
             options: options
           )
         end
@@ -63,7 +64,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Account::CollectionResponsePublicLoginAuditForwardPaging]
+        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Account::PublicLoginAudit>]
         #
         # @see HubspotSDK::Models::Account::ActivityListLoginActivitiesParams
         def list_login_activities(params = {})
@@ -72,7 +73,8 @@ module HubspotSDK
             method: :get,
             path: "account-info/v3/activity/login",
             query: parsed.transform_keys(user_id: "userId"),
-            model: HubspotSDK::Account::CollectionResponsePublicLoginAuditForwardPaging,
+            page: HubspotSDK::Internal::Page,
+            model: HubspotSDK::Account::PublicLoginAudit,
             options: options
           )
         end
@@ -98,7 +100,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Account::CollectionResponseHydratedCriticalActionForwardPaging]
+        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Account::HydratedCriticalAction>]
         #
         # @see HubspotSDK::Models::Account::ActivityListSecurityActivitiesParams
         def list_security_activities(params = {})
@@ -111,7 +113,8 @@ module HubspotSDK
               to_timestamp: "toTimestamp",
               user_id: "userId"
             ),
-            model: HubspotSDK::Account::CollectionResponseHydratedCriticalActionForwardPaging,
+            page: HubspotSDK::Internal::Page,
+            model: HubspotSDK::Account::HydratedCriticalAction,
             options: options
           )
         end

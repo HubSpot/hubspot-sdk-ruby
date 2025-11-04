@@ -226,7 +226,7 @@ module HubspotSDK
             ?before: String,
             ?limit: Integer,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::CollectionResponseWithTotalVersionPage
+          ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::VersionPage]
 
           def publish_draft: (
             String object_id_,

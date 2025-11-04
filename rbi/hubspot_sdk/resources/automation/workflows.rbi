@@ -91,7 +91,9 @@ module HubspotSDK
             limit: Integer,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Automation::CollectionResponseAPIFlowEmailCampaign
+            HubspotSDK::Internal::Page[
+              HubspotSDK::Automation::APIFlowEmailCampaign
+            ]
           )
         end
         def list_email_campaigns(

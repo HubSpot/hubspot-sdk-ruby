@@ -65,7 +65,9 @@ module HubspotSDK
               start_date: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Marketing::CollectionResponseContactReferenceForwardPaging
+              HubspotSDK::Internal::Page[
+                HubspotSDK::Marketing::ContactReference
+              ]
             )
           end
           def list_contact_ids_by_type(

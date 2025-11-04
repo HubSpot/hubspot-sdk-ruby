@@ -48,7 +48,9 @@ module HubspotSDK
               state: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Marketing::CollectionResponseWithTotalParticipationBreakdownForwardPaging
+              HubspotSDK::Internal::Page[
+                HubspotSDK::Marketing::ParticipationBreakdown
+              ]
             )
           end
           def list_breakdown_by_contact(
@@ -77,7 +79,9 @@ module HubspotSDK
               state: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Marketing::CollectionResponseWithTotalParticipationBreakdownForwardPaging
+              HubspotSDK::Internal::Page[
+                HubspotSDK::Marketing::ParticipationBreakdown
+              ]
             )
           end
           def list_breakdown_by_external_account_and_event_id(
@@ -111,7 +115,9 @@ module HubspotSDK
               state: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Marketing::CollectionResponseWithTotalParticipationBreakdownForwardPaging
+              HubspotSDK::Internal::Page[
+                HubspotSDK::Marketing::ParticipationBreakdown
+              ]
             )
           end
           def list_breakdown_by_id(

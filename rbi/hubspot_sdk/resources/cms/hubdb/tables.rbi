@@ -274,9 +274,7 @@ module HubspotSDK
               updated_at: Time,
               updated_before: Time,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Cms::CollectionResponseWithTotalHubDBTableV3ForwardPaging
-            )
+            ).returns(HubspotSDK::Internal::Page[HubspotSDK::Cms::HubDBTableV3])
           end
           def list_draft(
             # The cursor token value to get the next set of results. You can get this from the

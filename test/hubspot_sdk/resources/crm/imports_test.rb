@@ -114,13 +114,30 @@ class HubspotSDK::Test::Resources::Crm::ImportsTest < HubspotSDK::Test::Resource
     response = @hubspot.crm.imports.list_errors(0)
 
     assert_pattern do
-      response => HubspotSDK::Crm::CollectionResponsePublicImportErrorForwardPaging
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Crm::PublicImportError
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicImportError]),
-        paging: HubspotSDK::ForwardPaging | nil
+      row => {
+        id: String,
+        created_at: Integer,
+        error_type: HubspotSDK::Crm::PublicImportError::ErrorType,
+        source_data: HubspotSDK::Crm::ImportRowCore,
+        error_message: String | nil,
+        extra_context: String | nil,
+        invalid_property_value: HubspotSDK::Marketing::PropertyValue | nil,
+        invalid_value: String | nil,
+        invalid_value_to_display: String | nil,
+        known_column_number: Integer | nil,
+        object_type: HubspotSDK::Crm::PublicImportError::ObjectType | nil,
+        object_type_id: String | nil
       }
     end
   end

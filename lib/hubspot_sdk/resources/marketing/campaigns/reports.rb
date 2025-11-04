@@ -96,7 +96,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::CollectionResponseContactReferenceForwardPaging]
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Marketing::ContactReference>]
           #
           # @see HubspotSDK::Models::Marketing::Campaigns::ReportListContactIDsByTypeParams
           def list_contact_ids_by_type(contact_type, params)
@@ -109,7 +109,8 @@ module HubspotSDK
               method: :get,
               path: ["marketing/v3/campaigns/%1$s/reports/contacts/%2$s", campaign_guid, contact_type],
               query: parsed.transform_keys(end_date: "endDate", start_date: "startDate"),
-              model: HubspotSDK::Marketing::CollectionResponseContactReferenceForwardPaging,
+              page: HubspotSDK::Internal::Page,
+              model: HubspotSDK::Marketing::ContactReference,
               options: options
             )
           end

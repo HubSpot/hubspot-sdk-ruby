@@ -119,7 +119,7 @@ module HubspotSDK
               limit: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Cms::Blogs::CollectionResponseWithTotalVersionBlog
+              HubspotSDK::Internal::Page[HubspotSDK::Cms::Blogs::VersionBlog]
             )
           end
           def list_revisions(

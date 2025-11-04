@@ -251,14 +251,38 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::TablesTest < HubspotSDK::Test::Re
     response = @hubspot.cms.hubdb.tables.list_draft
 
     assert_pattern do
-      response => HubspotSDK::Cms::CollectionResponseWithTotalHubDBTableV3ForwardPaging
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Cms::HubDBTableV3
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableV3]),
-        total: Integer,
-        paging: HubspotSDK::ForwardPaging | nil
+      row => {
+        deleted_at: Time,
+        label: String,
+        name: String,
+        id: String | nil,
+        allow_child_tables: HubspotSDK::Internal::Type::Boolean | nil,
+        allow_public_api_access: HubspotSDK::Internal::Type::Boolean | nil,
+        column_count: Integer | nil,
+        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]) | nil,
+        created_at: Time | nil,
+        created_by: HubspotSDK::Cms::SimpleUser | nil,
+        deleted: HubspotSDK::Internal::Type::Boolean | nil,
+        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]) | nil,
+        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean | nil,
+        is_ordered_manually: HubspotSDK::Internal::Type::Boolean | nil,
+        published: HubspotSDK::Internal::Type::Boolean | nil,
+        published_at: Time | nil,
+        row_count: Integer | nil,
+        updated_at: Time | nil,
+        updated_by: HubspotSDK::Cms::SimpleUser | nil,
+        use_for_pages: HubspotSDK::Internal::Type::Boolean | nil
       }
     end
   end

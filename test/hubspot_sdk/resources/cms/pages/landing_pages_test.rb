@@ -1186,14 +1186,22 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
     response = @hubspot.cms.pages.landing_pages.list_folder_revisions("objectId")
 
     assert_pattern do
-      response => HubspotSDK::Cms::CollectionResponseWithTotalVersionContentFolder
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Cms::VersionContentFolder
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::VersionContentFolder]),
-        total: Integer,
-        paging: HubspotSDK::Marketing::EmailsPaging | nil
+      row => {
+        id: String,
+        object: HubspotSDK::Cms::ContentFolder,
+        updated_at: Time,
+        user: HubspotSDK::VersionUser
       }
     end
   end
@@ -1204,14 +1212,25 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
     response = @hubspot.cms.pages.landing_pages.list_folders
 
     assert_pattern do
-      response => HubspotSDK::Cms::CollectionResponseWithTotalContentFolderForwardPaging
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Cms::ContentFolder
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ContentFolder]),
-        total: Integer,
-        paging: HubspotSDK::ForwardPaging | nil
+      row => {
+        id: String,
+        category: Integer,
+        created: Time,
+        deleted_at: Time,
+        name: String,
+        parent_folder_id: Integer,
+        updated: Time
       }
     end
   end
@@ -1222,14 +1241,22 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
     response = @hubspot.cms.pages.landing_pages.list_revisions("objectId")
 
     assert_pattern do
-      response => HubspotSDK::Cms::CollectionResponseWithTotalVersionPage
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Cms::VersionPage
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::VersionPage]),
-        total: Integer,
-        paging: HubspotSDK::Marketing::EmailsPaging | nil
+      row => {
+        id: String,
+        object: HubspotSDK::Cms::Page,
+        updated_at: Time,
+        user: HubspotSDK::VersionUser
       }
     end
   end

@@ -3,6 +3,7 @@
 module HubspotSDK
   module Models
     module Account
+      # @see HubspotSDK::Resources::Account::Activity#list_security_activities
       class HydratedCriticalAction < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique ID of the activity.

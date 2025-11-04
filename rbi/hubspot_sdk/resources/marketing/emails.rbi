@@ -374,7 +374,9 @@ module HubspotSDK
             limit: Integer,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Marketing::CollectionResponseWithTotalVersionPublicEmail
+            HubspotSDK::Internal::Page[
+              HubspotSDK::Marketing::VersionPublicEmail
+            ]
           )
         end
         def list_revisions(

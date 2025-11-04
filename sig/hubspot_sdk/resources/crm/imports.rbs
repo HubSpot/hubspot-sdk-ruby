@@ -32,7 +32,7 @@ module HubspotSDK
           ?include_row_data: bool,
           ?limit: Integer,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::CollectionResponsePublicImportErrorForwardPaging
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::PublicImportError]
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

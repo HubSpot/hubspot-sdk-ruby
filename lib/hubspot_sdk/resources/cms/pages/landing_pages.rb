@@ -863,7 +863,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::CollectionResponseWithTotalVersionContentFolder]
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::VersionContentFolder>]
           #
           # @see HubspotSDK::Models::Cms::Pages::LandingPageListFolderRevisionsParams
           def list_folder_revisions(object_id_, params = {})
@@ -872,7 +872,8 @@ module HubspotSDK
               method: :get,
               path: ["cms/v3/pages/landing-pages/folders/%1$s/revisions", object_id_],
               query: parsed,
-              model: HubspotSDK::Cms::CollectionResponseWithTotalVersionContentFolder,
+              page: HubspotSDK::Internal::Page,
+              model: HubspotSDK::Cms::VersionContentFolder,
               options: options
             )
           end
@@ -910,7 +911,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::CollectionResponseWithTotalContentFolderForwardPaging]
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::ContentFolder>]
           #
           # @see HubspotSDK::Models::Cms::Pages::LandingPageListFoldersParams
           def list_folders(params = {})
@@ -926,7 +927,8 @@ module HubspotSDK
                 updated_at: "updatedAt",
                 updated_before: "updatedBefore"
               ),
-              model: HubspotSDK::Cms::CollectionResponseWithTotalContentFolderForwardPaging,
+              page: HubspotSDK::Internal::Page,
+              model: HubspotSDK::Cms::ContentFolder,
               options: options
             )
           end
@@ -949,7 +951,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::CollectionResponseWithTotalVersionPage]
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::VersionPage>]
           #
           # @see HubspotSDK::Models::Cms::Pages::LandingPageListRevisionsParams
           def list_revisions(object_id_, params = {})
@@ -958,7 +960,8 @@ module HubspotSDK
               method: :get,
               path: ["cms/v3/pages/landing-pages/%1$s/revisions", object_id_],
               query: parsed,
-              model: HubspotSDK::Cms::CollectionResponseWithTotalVersionPage,
+              page: HubspotSDK::Internal::Page,
+              model: HubspotSDK::Cms::VersionPage,
               options: options
             )
           end

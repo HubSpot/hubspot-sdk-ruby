@@ -126,7 +126,7 @@ module HubspotSDK
           ?before: String,
           ?limit: Integer,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Marketing::CollectionResponseWithTotalVersionPublicEmail
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Marketing::VersionPublicEmail]
 
         def publish: (
           String email_id,

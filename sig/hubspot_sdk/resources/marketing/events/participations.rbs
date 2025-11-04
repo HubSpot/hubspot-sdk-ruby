@@ -20,7 +20,7 @@ module HubspotSDK
             ?limit: Integer,
             ?state: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::CollectionResponseWithTotalParticipationBreakdownForwardPaging
+          ) -> HubspotSDK::Internal::Page[HubspotSDK::Marketing::ParticipationBreakdown]
 
           def list_breakdown_by_external_account_and_event_id: (
             String external_event_id,
@@ -30,7 +30,7 @@ module HubspotSDK
             ?limit: Integer,
             ?state: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::CollectionResponseWithTotalParticipationBreakdownForwardPaging
+          ) -> HubspotSDK::Internal::Page[HubspotSDK::Marketing::ParticipationBreakdown]
 
           def list_breakdown_by_id: (
             Integer marketing_event_id,
@@ -39,7 +39,7 @@ module HubspotSDK
             ?limit: Integer,
             ?state: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::CollectionResponseWithTotalParticipationBreakdownForwardPaging
+          ) -> HubspotSDK::Internal::Page[HubspotSDK::Marketing::ParticipationBreakdown]
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

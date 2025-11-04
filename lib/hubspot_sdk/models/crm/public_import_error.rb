@@ -3,6 +3,7 @@
 module HubspotSDK
   module Models
     module Crm
+      # @see HubspotSDK::Resources::Crm::Imports#list_errors
       class PublicImportError < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #

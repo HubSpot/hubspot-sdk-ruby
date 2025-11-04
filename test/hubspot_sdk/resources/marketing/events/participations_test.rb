@@ -51,14 +51,22 @@ class HubspotSDK::Test::Resources::Marketing::Events::ParticipationsTest < Hubsp
     response = @hubspot.marketing.events.participations.list_breakdown_by_contact("contactIdentifier")
 
     assert_pattern do
-      response => HubspotSDK::Marketing::CollectionResponseWithTotalParticipationBreakdownForwardPaging
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Marketing::ParticipationBreakdown
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::ParticipationBreakdown]),
-        total: Integer,
-        paging: HubspotSDK::ForwardPaging | nil
+      row => {
+        id: String,
+        associations: HubspotSDK::Marketing::ParticipationAssociations,
+        created_at: Time,
+        properties: HubspotSDK::Marketing::ParticipationProperties
       }
     end
   end
@@ -73,14 +81,22 @@ class HubspotSDK::Test::Resources::Marketing::Events::ParticipationsTest < Hubsp
       )
 
     assert_pattern do
-      response => HubspotSDK::Marketing::CollectionResponseWithTotalParticipationBreakdownForwardPaging
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Marketing::ParticipationBreakdown
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::ParticipationBreakdown]),
-        total: Integer,
-        paging: HubspotSDK::ForwardPaging | nil
+      row => {
+        id: String,
+        associations: HubspotSDK::Marketing::ParticipationAssociations,
+        created_at: Time,
+        properties: HubspotSDK::Marketing::ParticipationProperties
       }
     end
   end
@@ -91,14 +107,22 @@ class HubspotSDK::Test::Resources::Marketing::Events::ParticipationsTest < Hubsp
     response = @hubspot.marketing.events.participations.list_breakdown_by_id(0)
 
     assert_pattern do
-      response => HubspotSDK::Marketing::CollectionResponseWithTotalParticipationBreakdownForwardPaging
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Marketing::ParticipationBreakdown
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::ParticipationBreakdown]),
-        total: Integer,
-        paging: HubspotSDK::ForwardPaging | nil
+      row => {
+        id: String,
+        associations: HubspotSDK::Marketing::ParticipationAssociations,
+        created_at: Time,
+        properties: HubspotSDK::Marketing::ParticipationProperties
       }
     end
   end

@@ -4,7 +4,6 @@ module HubspotSDK
   module Models
     module Cms
       module Blogs
-        # @see HubspotSDK::Resources::Cms::Blogs::Settings#list_revisions
         class CollectionResponseWithTotalVersionBlog < HubspotSDK::Internal::Type::BaseModel
           # @!attribute results
           #   Collection of blog versions.

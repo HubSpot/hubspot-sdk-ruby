@@ -26,7 +26,7 @@ module HubspotSDK
             ?limit: Integer,
             ?start_date: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::CollectionResponseContactReferenceForwardPaging
+          ) -> HubspotSDK::Internal::Page[HubspotSDK::Marketing::ContactReference]
 
           def initialize: (client: HubspotSDK::Client) -> void
         end
