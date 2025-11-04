@@ -135,9 +135,7 @@ module HubspotSDK
           # @overload gdpr_delete(object_id_:, id_property: nil, request_options: {})
           #
           # @param object_id_ [String]
-          #
-          # @param id_property [String] The name of a property whose values are unique for this object
-          #
+          # @param id_property [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]

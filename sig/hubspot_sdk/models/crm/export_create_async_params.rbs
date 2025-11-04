@@ -1,13 +1,13 @@
 module HubspotSDK
   module Models
     module Crm
-      type export_create_params =
+      type export_create_async_params =
         {
           public_export_request: HubspotSDK::Models::Crm::public_export_request
         }
         & HubspotSDK::Internal::Type::request_parameters
 
-      class ExportCreateParams < HubspotSDK::Internal::Type::BaseModel
+      class ExportCreateAsyncParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 

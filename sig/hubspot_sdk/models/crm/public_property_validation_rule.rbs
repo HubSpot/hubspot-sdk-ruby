@@ -2,19 +2,88 @@ module HubspotSDK
   module Models
     module Crm
       type public_property_validation_rule =
-        { rule_arguments: ::Array[String], rule_type: String }
+        {
+          rule_arguments: ::Array[String],
+          rule_type: HubspotSDK::Models::Crm::PublicPropertyValidationRule::rule_type
+        }
 
       class PublicPropertyValidationRule < HubspotSDK::Internal::Type::BaseModel
         attr_accessor rule_arguments: ::Array[String]
 
-        attr_accessor rule_type: String
+        attr_accessor rule_type: HubspotSDK::Models::Crm::PublicPropertyValidationRule::rule_type
 
         def initialize: (
           rule_arguments: ::Array[String],
-          rule_type: String
+          rule_type: HubspotSDK::Models::Crm::PublicPropertyValidationRule::rule_type
         ) -> void
 
-        def to_hash: -> { rule_arguments: ::Array[String], rule_type: String }
+        def to_hash: -> {
+          rule_arguments: ::Array[String],
+          rule_type: HubspotSDK::Models::Crm::PublicPropertyValidationRule::rule_type
+        }
+
+        type rule_type =
+          :FORMAT
+          | :ALPHANUMERIC
+          | :MAX_LENGTH
+          | :MIN_LENGTH
+          | :MIN_NUMBER
+          | :MAX_NUMBER
+          | :START_DATE
+          | :END_DATE
+          | :SPECIAL_CHARACTERS
+          | :WHITESPACE
+          | :DECIMAL
+          | :BEFORE_DURATION
+          | :AFTER_DURATION
+          | :DAYS_OF_WEEK
+          | :REGEX
+          | :START_DATETIME
+          | :END_DATETIME
+          | :BEFORE_DATETIME_DURATION
+          | :AFTER_DATETIME_DURATION
+          | :PHONE_NUMBER_WITH_EXPLICIT_COUNTRY_CODE
+          | :URL
+          | :URL_ALLOWED_DOMAINS
+          | :URL_BLOCKED_DOMAINS
+          | :EMAIL
+          | :EMAIL_ALLOWED_DOMAINS
+          | :EMAIL_BLOCKED_DOMAINS
+          | :DOMAIN
+
+        module RuleType
+          extend HubspotSDK::Internal::Type::Enum
+
+          FORMAT: :FORMAT
+          ALPHANUMERIC: :ALPHANUMERIC
+          MAX_LENGTH: :MAX_LENGTH
+          MIN_LENGTH: :MIN_LENGTH
+          MIN_NUMBER: :MIN_NUMBER
+          MAX_NUMBER: :MAX_NUMBER
+          START_DATE: :START_DATE
+          END_DATE: :END_DATE
+          SPECIAL_CHARACTERS: :SPECIAL_CHARACTERS
+          WHITESPACE: :WHITESPACE
+          DECIMAL: :DECIMAL
+          BEFORE_DURATION: :BEFORE_DURATION
+          AFTER_DURATION: :AFTER_DURATION
+          DAYS_OF_WEEK: :DAYS_OF_WEEK
+          REGEX: :REGEX
+          START_DATETIME: :START_DATETIME
+          END_DATETIME: :END_DATETIME
+          BEFORE_DATETIME_DURATION: :BEFORE_DATETIME_DURATION
+          AFTER_DATETIME_DURATION: :AFTER_DATETIME_DURATION
+          PHONE_NUMBER_WITH_EXPLICIT_COUNTRY_CODE: :PHONE_NUMBER_WITH_EXPLICIT_COUNTRY_CODE
+          URL: :URL
+          URL_ALLOWED_DOMAINS: :URL_ALLOWED_DOMAINS
+          URL_BLOCKED_DOMAINS: :URL_BLOCKED_DOMAINS
+          EMAIL: :EMAIL
+          EMAIL_ALLOWED_DOMAINS: :EMAIL_ALLOWED_DOMAINS
+          EMAIL_BLOCKED_DOMAINS: :EMAIL_BLOCKED_DOMAINS
+          DOMAIN: :DOMAIN
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicPropertyValidationRule::rule_type]
+        end
       end
     end
   end

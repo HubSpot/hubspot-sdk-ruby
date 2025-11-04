@@ -3,14 +3,14 @@
 module HubspotSDK
   module Models
     module Crm
-      class ExportCreateParams < HubspotSDK::Internal::Type::BaseModel
+      class ExportCreateAsyncParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::ExportCreateParams,
+              HubspotSDK::Crm::ExportCreateAsyncParams,
               HubspotSDK::Internal::AnyHash
             )
           end

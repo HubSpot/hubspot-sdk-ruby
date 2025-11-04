@@ -19,6 +19,22 @@ class HubspotSDK::Test::Resources::Crm::PropertyValidationsTest < HubspotSDK::Te
     end
   end
 
+  def test_crm_v3_property_validations_object_type_id_property_name_rule_type_rule_type_required_params
+    skip("Prism tests are disabled")
+
+    response =
+      @hubspot.crm.property_validations.crm_v3_property_validations_object_type_id_property_name_rule_type_rule_type(
+        :FORMAT,
+        object_type_id: "objectTypeId",
+        property_name: "propertyName",
+        rule_arguments: ["string"]
+      )
+
+    assert_pattern do
+      response => nil
+    end
+  end
+
   def test_get_required_params
     skip("Prism tests are disabled")
 

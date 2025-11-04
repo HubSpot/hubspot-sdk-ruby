@@ -6,7 +6,7 @@ module HubspotSDK
           {
             from: HubspotSDK::PublicObjectID,
             to: HubspotSDK::PublicObjectID,
-            types: ::Array[HubspotSDK::Crm::Associations::AssociationSpec1]
+            types: ::Array[HubspotSDK::AssociationSpec]
           }
 
         class PublicAssociationMultiPost < HubspotSDK::Internal::Type::BaseModel
@@ -14,18 +14,18 @@ module HubspotSDK
 
           attr_accessor to: HubspotSDK::PublicObjectID
 
-          attr_accessor types: ::Array[HubspotSDK::Crm::Associations::AssociationSpec1]
+          attr_accessor types: ::Array[HubspotSDK::AssociationSpec]
 
           def initialize: (
             from: HubspotSDK::PublicObjectID,
             to: HubspotSDK::PublicObjectID,
-            types: ::Array[HubspotSDK::Crm::Associations::AssociationSpec1]
+            types: ::Array[HubspotSDK::AssociationSpec]
           ) -> void
 
           def to_hash: -> {
             from: HubspotSDK::PublicObjectID,
             to: HubspotSDK::PublicObjectID,
-            types: ::Array[HubspotSDK::Crm::Associations::AssociationSpec1]
+            types: ::Array[HubspotSDK::AssociationSpec]
           }
         end
       end

@@ -15,7 +15,6 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :object_id_
 
-        # The name of a property whose values are unique for this object
         sig { returns(T.nilable(String)) }
         attr_reader :id_property
 
@@ -27,11 +26,7 @@ module HubspotSDK
             T.attached_class
           )
         end
-        def self.new(
-          object_id_:,
-          # The name of a property whose values are unique for this object
-          id_property: nil
-        )
+        def self.new(object_id_:, id_property: nil)
         end
 
         sig { override.returns({ object_id_: String, id_property: String }) }

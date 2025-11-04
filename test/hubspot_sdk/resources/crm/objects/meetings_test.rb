@@ -24,19 +24,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::MeetingsTest < HubspotSDK::Test
   def test_update_required_params
     skip("Prism tests are disabled")
 
-    response =
-      @hubspot.crm.objects.meetings.update(
-        "meetingId",
-        properties: {
-          property_checkbox: "false",
-          property_date: "1572480000000",
-          property_dropdown: "choice_b",
-          property_multiple_checkboxes: "chocolate;strawberry",
-          property_number: "17",
-          property_radio: "option_1",
-          property_string: "value"
-        }
-      )
+    response = @hubspot.crm.objects.meetings.update("meetingId", properties: {foo: "string"})
 
     assert_pattern do
       response => HubspotSDK::Crm::SimplePublicObject

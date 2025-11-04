@@ -24,16 +24,11 @@ module HubspotSDK
                  api_name: :propertiesWithHistory
 
         # @!attribute id_property
-        #   When using a custom unique value property to retrieve records, the name of the
-        #   property. Do not include this parameter if retrieving by record ID.
         #
         #   @return [String, nil]
         optional :id_property, String, api_name: :idProperty
 
         # @!method initialize(inputs:, properties:, properties_with_history:, id_property: nil)
-        #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::BatchReadInputSimplePublicObjectID} for more details.
-        #
         #   Specifies the input for reading a batch of CRM objects, including arrays of
         #   object IDs, requested property names (with optional history), and an optional
         #   unique identifying property.
@@ -44,7 +39,7 @@ module HubspotSDK
         #
         #   @param properties_with_history [Array<String>] Key-value pairs for setting properties for the new object and their histories.
         #
-        #   @param id_property [String] When using a custom unique value property to retrieve records, the name of the p
+        #   @param id_property [String]
       end
     end
   end
