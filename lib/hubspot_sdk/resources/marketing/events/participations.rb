@@ -81,7 +81,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::CollectionResponseWithTotalParticipationBreakdownForwardPaging]
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Marketing::ParticipationBreakdown>]
           #
           # @see HubspotSDK::Models::Marketing::Events::ParticipationListBreakdownByContactParams
           def list_breakdown_by_contact(contact_identifier, params = {})
@@ -94,7 +94,8 @@ module HubspotSDK
                 contact_identifier
               ],
               query: parsed,
-              model: HubspotSDK::Marketing::CollectionResponseWithTotalParticipationBreakdownForwardPaging,
+              page: HubspotSDK::Internal::Page,
+              model: HubspotSDK::Marketing::ParticipationBreakdown,
               options: options
             )
           end
@@ -122,7 +123,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::CollectionResponseWithTotalParticipationBreakdownForwardPaging]
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Marketing::ParticipationBreakdown>]
           #
           # @see HubspotSDK::Models::Marketing::Events::ParticipationListBreakdownByExternalAccountAndEventIDParams
           def list_breakdown_by_external_account_and_event_id(external_event_id, params)
@@ -142,7 +143,8 @@ module HubspotSDK
                 external_event_id
               ],
               query: parsed.transform_keys(contact_identifier: "contactIdentifier"),
-              model: HubspotSDK::Marketing::CollectionResponseWithTotalParticipationBreakdownForwardPaging,
+              page: HubspotSDK::Internal::Page,
+              model: HubspotSDK::Marketing::ParticipationBreakdown,
               options: options
             )
           end
@@ -168,7 +170,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::CollectionResponseWithTotalParticipationBreakdownForwardPaging]
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Marketing::ParticipationBreakdown>]
           #
           # @see HubspotSDK::Models::Marketing::Events::ParticipationListBreakdownByIDParams
           def list_breakdown_by_id(marketing_event_id, params = {})
@@ -178,7 +180,8 @@ module HubspotSDK
               method: :get,
               path: ["marketing/v3/marketing-events/participations/%1$s/breakdown", marketing_event_id],
               query: parsed.transform_keys(contact_identifier: "contactIdentifier"),
-              model: HubspotSDK::Marketing::CollectionResponseWithTotalParticipationBreakdownForwardPaging,
+              page: HubspotSDK::Internal::Page,
+              model: HubspotSDK::Marketing::ParticipationBreakdown,
               options: options
             )
           end

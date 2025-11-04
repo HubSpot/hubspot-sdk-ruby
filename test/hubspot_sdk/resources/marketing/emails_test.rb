@@ -561,14 +561,22 @@ class HubspotSDK::Test::Resources::Marketing::EmailsTest < HubspotSDK::Test::Res
     response = @hubspot.marketing.emails.list_revisions("emailId")
 
     assert_pattern do
-      response => HubspotSDK::Marketing::CollectionResponseWithTotalVersionPublicEmail
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Marketing::VersionPublicEmail
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::VersionPublicEmail]),
-        total: Integer,
-        paging: HubspotSDK::Marketing::EmailsPaging | nil
+      row => {
+        id: String,
+        object: HubspotSDK::Marketing::PublicEmail,
+        updated_at: Time,
+        user: HubspotSDK::VersionUser
       }
     end
   end

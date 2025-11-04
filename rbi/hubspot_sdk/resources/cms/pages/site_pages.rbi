@@ -706,7 +706,7 @@ module HubspotSDK
               before: String,
               limit: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::CollectionResponseWithTotalVersionPage)
+            ).returns(HubspotSDK::Internal::Page[HubspotSDK::Cms::VersionPage])
           end
           def list_revisions(
             # The Site Page id.

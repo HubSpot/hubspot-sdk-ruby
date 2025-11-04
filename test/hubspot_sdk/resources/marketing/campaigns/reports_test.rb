@@ -52,13 +52,19 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::ReportsTest < HubspotSD
       )
 
     assert_pattern do
-      response => HubspotSDK::Marketing::CollectionResponseContactReferenceForwardPaging
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Marketing::ContactReference
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::ContactReference]),
-        paging: HubspotSDK::ForwardPaging | nil
+      row => {
+        id: String
       }
     end
   end

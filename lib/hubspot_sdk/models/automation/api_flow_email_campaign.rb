@@ -3,6 +3,7 @@
 module HubspotSDK
   module Models
     module Automation
+      # @see HubspotSDK::Resources::Automation::Workflows#list_email_campaigns
       class APIFlowEmailCampaign < HubspotSDK::Internal::Type::BaseModel
         # @!attribute email_campaign_id
         #

@@ -241,7 +241,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3, HubspotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3]
+          # @return [HubspotSDK::Internal::Page<Object>]
           #
           # @see HubspotSDK::Models::Cms::Hubdb::RowListDraftParams
           def list_draft(table_id_or_name, params = {})
@@ -250,7 +250,8 @@ module HubspotSDK
               method: :get,
               path: ["cms/v3/hubdb/tables/%1$s/rows/draft", table_id_or_name],
               query: parsed,
-              model: HubspotSDK::Cms::UnifiedCollectionResponseWithTotalBaseHubDBTableRowV3,
+              page: HubspotSDK::Internal::Page,
+              model: HubspotSDK::Internal::Type::Unknown,
               options: options
             )
           end

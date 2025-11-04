@@ -114,7 +114,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::CollectionResponsePublicImportErrorForwardPaging]
+        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::PublicImportError>]
         #
         # @see HubspotSDK::Models::Crm::ImportListErrorsParams
         def list_errors(import_id, params = {})
@@ -126,7 +126,8 @@ module HubspotSDK
               include_error_message: "includeErrorMessage",
               include_row_data: "includeRowData"
             ),
-            model: HubspotSDK::Crm::CollectionResponsePublicImportErrorForwardPaging,
+            page: HubspotSDK::Internal::Page,
+            model: HubspotSDK::Crm::PublicImportError,
             options: options
           )
         end

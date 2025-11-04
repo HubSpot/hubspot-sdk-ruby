@@ -150,14 +150,22 @@ class HubspotSDK::Test::Resources::Cms::Blogs::SettingsTest < HubspotSDK::Test::
     response = @hubspot.cms.blogs.settings.list_revisions("blogId")
 
     assert_pattern do
-      response => HubspotSDK::Cms::Blogs::CollectionResponseWithTotalVersionBlog
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Cms::Blogs::VersionBlog
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Blogs::VersionBlog]),
-        total: Integer,
-        paging: HubspotSDK::Marketing::EmailsPaging | nil
+      row => {
+        id: String,
+        object: HubspotSDK::Cms::Blogs::Blog,
+        updated_at: Time,
+        user: HubspotSDK::VersionUser
       }
     end
   end

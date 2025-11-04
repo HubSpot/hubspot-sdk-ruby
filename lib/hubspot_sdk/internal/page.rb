@@ -10,8 +10,8 @@ module HubspotSDK
     #   end
     #
     # @example
-    #   page.auto_paging_each do |definition|
-    #     puts(definition)
+    #   page.auto_paging_each do |activity|
+    #     puts(activity)
     #   end
     class Page
       include HubspotSDK::Internal::Type::BasePage

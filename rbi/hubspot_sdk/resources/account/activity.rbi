@@ -18,7 +18,9 @@ module HubspotSDK
             sort: T::Array[String],
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Account::CollectionResponsePublicAPIUserActionEventForwardPaging
+            HubspotSDK::Internal::Page[
+              HubspotSDK::Account::PublicAPIUserActionEvent
+            ]
           )
         end
         def list_audit_logs(
@@ -50,7 +52,7 @@ module HubspotSDK
             user_id: Integer,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Account::CollectionResponsePublicLoginAuditForwardPaging
+            HubspotSDK::Internal::Page[HubspotSDK::Account::PublicLoginAudit]
           )
         end
         def list_login_activities(
@@ -76,7 +78,9 @@ module HubspotSDK
             user_id: Integer,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Account::CollectionResponseHydratedCriticalActionForwardPaging
+            HubspotSDK::Internal::Page[
+              HubspotSDK::Account::HydratedCriticalAction
+            ]
           )
         end
         def list_security_activities(

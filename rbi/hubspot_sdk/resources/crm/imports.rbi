@@ -69,7 +69,7 @@ module HubspotSDK
             limit: Integer,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Crm::CollectionResponsePublicImportErrorForwardPaging
+            HubspotSDK::Internal::Page[HubspotSDK::Crm::PublicImportError]
           )
         end
         def list_errors(

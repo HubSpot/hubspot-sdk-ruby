@@ -161,7 +161,7 @@ module HubspotSDK
           # @param limit [Integer]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::Blogs::CollectionResponseWithTotalVersionBlog]
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::Blogs::VersionBlog>]
           #
           # @see HubspotSDK::Models::Cms::Blogs::SettingListRevisionsParams
           def list_revisions(blog_id, params = {})
@@ -170,7 +170,8 @@ module HubspotSDK
               method: :get,
               path: ["cms/v3/blog-settings/settings/%1$s/revisions", blog_id],
               query: parsed,
-              model: HubspotSDK::Cms::Blogs::CollectionResponseWithTotalVersionBlog,
+              page: HubspotSDK::Internal::Page,
+              model: HubspotSDK::Cms::Blogs::VersionBlog,
               options: options
             )
           end

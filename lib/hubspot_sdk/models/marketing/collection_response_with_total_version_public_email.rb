@@ -3,7 +3,6 @@
 module HubspotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::Emails#list_revisions
       class CollectionResponseWithTotalVersionPublicEmail < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #   Collection of emails.

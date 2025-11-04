@@ -3,6 +3,7 @@
 module HubspotSDK
   module Models
     module Account
+      # @see HubspotSDK::Resources::Account::Activity#list_login_activities
       class PublicLoginAudit < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The login activity's unique ID.

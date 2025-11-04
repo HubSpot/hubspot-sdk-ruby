@@ -3,7 +3,6 @@
 module HubspotSDK
   module Models
     module Account
-      # @see HubspotSDK::Resources::Account::Activity#list_login_activities
       class CollectionResponsePublicLoginAuditForwardPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #

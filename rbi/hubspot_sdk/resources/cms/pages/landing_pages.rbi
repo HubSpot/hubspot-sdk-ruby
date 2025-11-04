@@ -836,7 +836,7 @@ module HubspotSDK
               limit: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Cms::CollectionResponseWithTotalVersionContentFolder
+              HubspotSDK::Internal::Page[HubspotSDK::Cms::VersionContentFolder]
             )
           end
           def list_folder_revisions(
@@ -870,7 +870,7 @@ module HubspotSDK
               updated_before: Time,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Cms::CollectionResponseWithTotalContentFolderForwardPaging
+              HubspotSDK::Internal::Page[HubspotSDK::Cms::ContentFolder]
             )
           end
           def list_folders(
@@ -910,7 +910,7 @@ module HubspotSDK
               before: String,
               limit: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::CollectionResponseWithTotalVersionPage)
+            ).returns(HubspotSDK::Internal::Page[HubspotSDK::Cms::VersionPage])
           end
           def list_revisions(
             # The Landing Page id.

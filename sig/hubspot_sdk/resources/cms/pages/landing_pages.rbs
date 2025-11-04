@@ -272,7 +272,7 @@ module HubspotSDK
             ?before: String,
             ?limit: Integer,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::CollectionResponseWithTotalVersionContentFolder
+          ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::VersionContentFolder]
 
           def list_folders: (
             ?after: String,
@@ -287,7 +287,7 @@ module HubspotSDK
             ?updated_at: Time,
             ?updated_before: Time,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::CollectionResponseWithTotalContentFolderForwardPaging
+          ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::ContentFolder]
 
           def list_revisions: (
             String object_id_,
@@ -295,7 +295,7 @@ module HubspotSDK
             ?before: String,
             ?limit: Integer,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::CollectionResponseWithTotalVersionPage
+          ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::VersionPage]
 
           def publish_draft: (
             String object_id_,

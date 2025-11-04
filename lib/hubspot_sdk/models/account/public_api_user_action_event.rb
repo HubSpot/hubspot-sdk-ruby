@@ -3,6 +3,7 @@
 module HubspotSDK
   module Models
     module Account
+      # @see HubspotSDK::Resources::Account::Activity#list_audit_logs
       class PublicAPIUserActionEvent < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique ID of the activity.

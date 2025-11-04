@@ -45,7 +45,7 @@ module HubspotSDK
           ?flow_id: ::Array[String],
           ?limit: Integer,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Automation::CollectionResponseAPIFlowEmailCampaign
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Automation::APIFlowEmailCampaign]
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

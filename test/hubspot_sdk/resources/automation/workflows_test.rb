@@ -146,13 +146,21 @@ class HubspotSDK::Test::Resources::Automation::WorkflowsTest < HubspotSDK::Test:
     response = @hubspot.automation.workflows.list_email_campaigns
 
     assert_pattern do
-      response => HubspotSDK::Automation::CollectionResponseAPIFlowEmailCampaign
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Automation::APIFlowEmailCampaign
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::APIFlowEmailCampaign]),
-        paging: HubspotSDK::Marketing::EmailsPaging | nil
+      row => {
+        email_campaign_id: String,
+        email_content_id: String,
+        flow_id: String
       }
     end
   end

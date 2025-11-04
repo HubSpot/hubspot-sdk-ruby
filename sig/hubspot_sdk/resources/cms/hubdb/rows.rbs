@@ -62,7 +62,7 @@ module HubspotSDK
             ?properties: ::Array[String],
             ?sort: ::Array[String],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Models::Cms::unified_collection_response_with_total_base_hub_db_table_row_v3
+          ) -> HubspotSDK::Internal::Page[top]
 
           def replace_draft: (
             String row_id,

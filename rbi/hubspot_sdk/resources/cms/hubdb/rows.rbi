@@ -179,9 +179,7 @@ module HubspotSDK
               properties: T::Array[String],
               sort: T::Array[String],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Cms::UnifiedCollectionResponseWithTotalBaseHubDBTableRowV3::Variants
-            )
+            ).returns(HubspotSDK::Internal::Page[T.anything])
           end
           def list_draft(
             # The ID or name of the table to query.

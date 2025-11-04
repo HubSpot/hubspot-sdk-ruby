@@ -3,7 +3,6 @@
 module HubspotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Imports#list_errors
       class CollectionResponsePublicImportErrorForwardPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
