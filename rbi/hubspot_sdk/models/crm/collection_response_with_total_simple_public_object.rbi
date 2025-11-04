@@ -15,7 +15,6 @@ module HubspotSDK
         sig { returns(T::Array[HubspotSDK::Crm::SimplePublicObject]) }
         attr_accessor :results
 
-        # The number of available results
         sig { returns(Integer) }
         attr_accessor :total
 
@@ -35,7 +34,6 @@ module HubspotSDK
         end
         def self.new(
           results:,
-          # The number of available results
           total:,
           # Contains information pagination of results.
           paging: nil

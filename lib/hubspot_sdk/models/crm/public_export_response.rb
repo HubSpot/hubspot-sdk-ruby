@@ -3,6 +3,7 @@
 module HubspotSDK
   module Models
     module Crm
+      # @see HubspotSDK::Resources::Crm::Exports#get
       class PublicExportResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #

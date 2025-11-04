@@ -3,10 +3,10 @@
 require_relative "../../test_helper"
 
 class HubspotSDK::Test::Resources::Crm::ExportsTest < HubspotSDK::Test::ResourceTest
-  def test_create
+  def test_create_async
     skip("Prism tests are disabled")
 
-    response = @hubspot.crm.exports.create
+    response = @hubspot.crm.exports.create_async
 
     assert_pattern do
       response => HubspotSDK::TaskLocator
@@ -16,6 +16,30 @@ class HubspotSDK::Test::Resources::Crm::ExportsTest < HubspotSDK::Test::Resource
       response => {
         id: String,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil
+      }
+    end
+  end
+
+  def test_get
+    skip("Prism tests are disabled")
+
+    response = @hubspot.crm.exports.get(0)
+
+    assert_pattern do
+      response => HubspotSDK::Crm::PublicExportResponse
+    end
+
+    assert_pattern do
+      response => {
+        id: String,
+        created_at: Time,
+        export_state: HubspotSDK::Crm::PublicExportResponse::ExportState,
+        export_type: HubspotSDK::Crm::PublicExportResponse::ExportType,
+        object_properties: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
+        object_type: String,
+        updated_at: Time,
+        export_name: String | nil,
+        record_count: Integer | nil
       }
     end
   end

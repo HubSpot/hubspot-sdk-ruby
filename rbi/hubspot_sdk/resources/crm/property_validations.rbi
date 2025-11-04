@@ -16,6 +16,29 @@ module HubspotSDK
         def list(object_type_id, request_options: {})
         end
 
+        sig do
+          params(
+            rule_type:
+              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::OrSymbol,
+            object_type_id: String,
+            property_name: String,
+            rule_arguments: T::Array[String],
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).void
+        end
+        def crm_v3_property_validations_object_type_id_property_name_rule_type_rule_type(
+          # Path param:
+          rule_type,
+          # Path param:
+          object_type_id:,
+          # Path param:
+          property_name:,
+          # Body param:
+          rule_arguments:,
+          request_options: {}
+        )
+        end
+
         # Read a property's validation rules identified by {propertyName}.
         sig do
           params(

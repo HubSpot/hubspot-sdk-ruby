@@ -18,13 +18,16 @@ module HubspotSDK
         sig { params(to: HubspotSDK::PublicObjectID::OrHash).void }
         attr_writer :to
 
-        sig { returns(T::Array[HubspotSDK::AssociationSpec]) }
+        sig do
+          returns(T::Array[HubspotSDK::Crm::Associations::AssociationSpec1])
+        end
         attr_accessor :types
 
         sig do
           params(
             to: HubspotSDK::PublicObjectID::OrHash,
-            types: T::Array[HubspotSDK::AssociationSpec::OrHash]
+            types:
+              T::Array[HubspotSDK::Crm::Associations::AssociationSpec1::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(to:, types:)
@@ -34,7 +37,7 @@ module HubspotSDK
           override.returns(
             {
               to: HubspotSDK::PublicObjectID,
-              types: T::Array[HubspotSDK::AssociationSpec]
+              types: T::Array[HubspotSDK::Crm::Associations::AssociationSpec1]
             }
           )
         end

@@ -10,7 +10,6 @@ module HubspotSDK
         required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject] }
 
         # @!attribute total
-        #   The number of available results
         #
         #   @return [Integer]
         required :total, Integer
@@ -24,7 +23,7 @@ module HubspotSDK
         # @!method initialize(results:, total:, paging: nil)
         #   @param results [Array<HubspotSDK::Models::Crm::SimplePublicObject>]
         #
-        #   @param total [Integer] The number of available results
+        #   @param total [Integer]
         #
         #   @param paging [HubspotSDK::Models::Marketing::EmailsPaging] Contains information pagination of results.
       end

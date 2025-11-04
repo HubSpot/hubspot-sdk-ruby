@@ -1,0 +1,16 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_property_validation_rule_update =
+        { rule_arguments: ::Array[String] }
+
+      class PublicPropertyValidationRuleUpdate < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor rule_arguments: ::Array[String]
+
+        def initialize: (rule_arguments: ::Array[String]) -> void
+
+        def to_hash: -> { rule_arguments: ::Array[String] }
+      end
+    end
+  end
+end

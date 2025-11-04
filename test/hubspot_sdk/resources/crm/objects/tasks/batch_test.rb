@@ -18,7 +18,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::Tasks::BatchTest < HubspotSDK::
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         started_at: Time,
         status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Associations::StandardError1]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
@@ -41,7 +41,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::Tasks::BatchTest < HubspotSDK::
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         started_at: Time,
         status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Associations::StandardError1]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
@@ -79,7 +79,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::Tasks::BatchTest < HubspotSDK::
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         started_at: Time,
         status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Associations::StandardError1]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
@@ -102,7 +102,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::Tasks::BatchTest < HubspotSDK::
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicUpsertObject]),
         started_at: Time,
         status: HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Associations::StandardError1]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil

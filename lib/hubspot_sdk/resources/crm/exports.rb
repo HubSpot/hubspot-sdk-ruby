@@ -6,19 +6,36 @@ module HubspotSDK
       class Exports
         # Begins exporting CRM data for the portal as specified in the request body
         #
-        # @overload create(public_export_request:, request_options: {})
+        # @overload create_async(public_export_request:, request_options: {})
         #
         # @param public_export_request [HubspotSDK::Crm::PublicExportRequest]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::TaskLocator]
         #
-        # @see HubspotSDK::Models::Crm::ExportCreateParams
-        def create(params)
+        # @see HubspotSDK::Models::Crm::ExportCreateAsyncParams
+        def create_async(params)
           @client.request(
             method: :post,
             path: "crm/v3/exports/export/async",
             model: HubspotSDK::TaskLocator,
+            options: params[:request_options]
+          )
+        end
+
+        # @overload get(export_id, request_options: {})
+        #
+        # @param export_id [Integer]
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Models::Crm::PublicExportResponse]
+        #
+        # @see HubspotSDK::Models::Crm::ExportGetParams
+        def get(export_id, params = {})
+          @client.request(
+            method: :get,
+            path: ["crm/v3/exports/export/%1$s", export_id],
+            model: HubspotSDK::Crm::PublicExportResponse,
             options: params[:request_options]
           )
         end

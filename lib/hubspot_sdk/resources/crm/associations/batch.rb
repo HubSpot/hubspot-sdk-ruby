@@ -33,11 +33,14 @@ module HubspotSDK
             )
           end
 
+          # This endpoint allows you to archive multiple associations between specified
+          # 'from' and 'to' object types in a single batch request.
+          #
           # @overload delete(to_object_type, from_object_type:, inputs:, request_options: {})
           #
-          # @param to_object_type [String] Path param:
+          # @param to_object_type [String] Path param: The type of the target object in the association.
           #
-          # @param from_object_type [String] Path param:
+          # @param from_object_type [String] Path param: The type of the source object in the association.
           #
           # @param inputs [Array<HubspotSDK::Models::Crm::PublicAssociation>] Body param:
           #

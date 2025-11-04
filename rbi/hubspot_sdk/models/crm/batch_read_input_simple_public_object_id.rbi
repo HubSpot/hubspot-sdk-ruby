@@ -23,8 +23,6 @@ module HubspotSDK
         sig { returns(T::Array[String]) }
         attr_accessor :properties_with_history
 
-        # When using a custom unique value property to retrieve records, the name of the
-        # property. Do not include this parameter if retrieving by record ID.
         sig { returns(T.nilable(String)) }
         attr_reader :id_property
 
@@ -48,8 +46,6 @@ module HubspotSDK
           properties:,
           # Key-value pairs for setting properties for the new object and their histories.
           properties_with_history:,
-          # When using a custom unique value property to retrieve records, the name of the
-          # property. Do not include this parameter if retrieving by record ID.
           id_property: nil
         )
         end

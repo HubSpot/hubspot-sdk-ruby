@@ -119,12 +119,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def gdpr_delete(
-            object_id_:,
-            # The name of a property whose values are unique for this object
-            id_property: nil,
-            request_options: {}
-          )
+          def gdpr_delete(object_id_:, id_property: nil, request_options: {})
           end
 
           # Retrieve a contact by its ID (`contactId`) or by a unique property

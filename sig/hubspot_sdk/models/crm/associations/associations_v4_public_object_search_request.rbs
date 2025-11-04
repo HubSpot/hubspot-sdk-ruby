@@ -1,0 +1,51 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Associations
+        type associations_v4_public_object_search_request =
+          {
+            after: String,
+            filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
+            limit: Integer,
+            properties: ::Array[String],
+            sorts: ::Array[String],
+            query: String
+          }
+
+        class AssociationsV4PublicObjectSearchRequest < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor after: String
+
+          attr_accessor filter_groups: ::Array[HubspotSDK::Crm::FilterGroup]
+
+          attr_accessor limit: Integer
+
+          attr_accessor properties: ::Array[String]
+
+          attr_accessor sorts: ::Array[String]
+
+          attr_reader query: String?
+
+          def query=: (String) -> String
+
+          def initialize: (
+            after: String,
+            filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
+            limit: Integer,
+            properties: ::Array[String],
+            sorts: ::Array[String],
+            ?query: String
+          ) -> void
+
+          def to_hash: -> {
+            after: String,
+            filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
+            limit: Integer,
+            properties: ::Array[String],
+            sorts: ::Array[String],
+            query: String
+          }
+        end
+      end
+    end
+  end
+end

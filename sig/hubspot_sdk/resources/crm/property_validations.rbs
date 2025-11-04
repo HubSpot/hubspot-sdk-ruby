@@ -7,6 +7,14 @@ module HubspotSDK
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Crm::CollectionResponsePublicPropertyValidationRuleMapNoPaging
 
+        def crm_v3_property_validations_object_type_id_property_name_rule_type_rule_type: (
+          HubspotSDK::Models::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::rule_type rule_type,
+          object_type_id: String,
+          property_name: String,
+          rule_arguments: ::Array[String],
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
         def get: (
           String property_name,
           object_type_id: String,

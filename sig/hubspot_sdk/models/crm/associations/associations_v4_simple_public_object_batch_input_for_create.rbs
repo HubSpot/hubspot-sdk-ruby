@@ -1,0 +1,36 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Associations
+        type associations_v4_simple_public_object_batch_input_for_create =
+          {
+            associations: ::Array[HubspotSDK::Crm::PublicAssociationsForObject],
+            properties: ::Hash[Symbol, String],
+            object_write_trace_id: String
+          }
+
+        class AssociationsV4SimplePublicObjectBatchInputForCreate < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor associations: ::Array[HubspotSDK::Crm::PublicAssociationsForObject]
+
+          attr_accessor properties: ::Hash[Symbol, String]
+
+          attr_reader object_write_trace_id: String?
+
+          def object_write_trace_id=: (String) -> String
+
+          def initialize: (
+            associations: ::Array[HubspotSDK::Crm::PublicAssociationsForObject],
+            properties: ::Hash[Symbol, String],
+            ?object_write_trace_id: String
+          ) -> void
+
+          def to_hash: -> {
+            associations: ::Array[HubspotSDK::Crm::PublicAssociationsForObject],
+            properties: ::Hash[Symbol, String],
+            object_write_trace_id: String
+          }
+        end
+      end
+    end
+  end
+end

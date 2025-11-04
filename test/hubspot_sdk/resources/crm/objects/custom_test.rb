@@ -25,19 +25,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::CustomTest < HubspotSDK::Test::
     skip("Prism tests are disabled")
 
     response =
-      @hubspot.crm.objects.custom.update(
-        "objectId",
-        object_type: "objectType",
-        properties: {
-          property_checkbox: "false",
-          property_date: "1572480000000",
-          property_dropdown: "choice_b",
-          property_multiple_checkboxes: "chocolate;strawberry",
-          property_number: "17",
-          property_radio: "option_1",
-          property_string: "value"
-        }
-      )
+      @hubspot.crm.objects.custom.update("objectId", object_type: "objectType", properties: {foo: "string"})
 
     assert_pattern do
       response => HubspotSDK::Crm::SimplePublicObject

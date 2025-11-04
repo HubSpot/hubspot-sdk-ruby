@@ -19,12 +19,16 @@ module HubspotSDK
         attr_accessor :created_at
 
         sig do
-          returns(HubspotSDK::Crm::PublicExportResponse::ExportState::OrSymbol)
+          returns(
+            HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
+          )
         end
         attr_accessor :export_state
 
         sig do
-          returns(HubspotSDK::Crm::PublicExportResponse::ExportType::OrSymbol)
+          returns(
+            HubspotSDK::Crm::PublicExportResponse::ExportType::TaggedSymbol
+          )
         end
         attr_accessor :export_type
 
@@ -83,9 +87,9 @@ module HubspotSDK
               id: String,
               created_at: Time,
               export_state:
-                HubspotSDK::Crm::PublicExportResponse::ExportState::OrSymbol,
+                HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol,
               export_type:
-                HubspotSDK::Crm::PublicExportResponse::ExportType::OrSymbol,
+                HubspotSDK::Crm::PublicExportResponse::ExportType::TaggedSymbol,
               object_properties: T::Array[String],
               object_type: String,
               updated_at: Time,

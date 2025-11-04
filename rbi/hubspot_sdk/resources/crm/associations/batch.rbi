@@ -24,6 +24,8 @@ module HubspotSDK
           )
           end
 
+          # This endpoint allows you to archive multiple associations between specified
+          # 'from' and 'to' object types in a single batch request.
           sig do
             params(
               to_object_type: String,
@@ -33,9 +35,9 @@ module HubspotSDK
             ).void
           end
           def delete(
-            # Path param:
+            # Path param: The type of the target object in the association.
             to_object_type,
-            # Path param:
+            # Path param: The type of the source object in the association.
             from_object_type:,
             # Body param:
             inputs:,

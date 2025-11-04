@@ -11,7 +11,16 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::TaskLocator)
         end
-        def create(public_export_request:, request_options: {})
+        def create_async(public_export_request:, request_options: {})
+        end
+
+        sig do
+          params(
+            export_id: Integer,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Crm::PublicExportResponse)
+        end
+        def get(export_id, request_options: {})
         end
 
         # Returns the status of the export with taskId, including the URL of the resulting
