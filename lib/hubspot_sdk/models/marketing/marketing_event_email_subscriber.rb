@@ -4,6 +4,11 @@ module HubspotSDK
   module Models
     module Marketing
       class MarketingEventEmailSubscriber < HubspotSDK::Internal::Type::BaseModel
+        # @!attribute contact_properties
+        #
+        #   @return [Hash{Symbol=>String}]
+        required :contact_properties, HubspotSDK::Internal::Type::HashOf[String], api_name: :contactProperties
+
         # @!attribute email
         #   The email address of the contact in HubSpot to associate with the event.
         #
@@ -16,25 +21,22 @@ module HubspotSDK
         #   @return [Integer]
         required :interaction_date_time, Integer, api_name: :interactionDateTime
 
-        # @!attribute contact_properties
-        #
-        #   @return [Hash{Symbol=>String}, nil]
-        optional :contact_properties, HubspotSDK::Internal::Type::HashOf[String], api_name: :contactProperties
-
         # @!attribute properties
         #
-        #   @return [Hash{Symbol=>String}, nil]
-        optional :properties, HubspotSDK::Internal::Type::HashOf[String]
+        #   @return [Hash{Symbol=>String}]
+        required :properties, HubspotSDK::Internal::Type::HashOf[String]
 
-        # @!method initialize(email:, interaction_date_time:, contact_properties: nil, properties: nil)
+        # @!method initialize(contact_properties:, email:, interaction_date_time:, properties:)
+        #   @param contact_properties [Hash{Symbol=>String}]
+        #
         #   @param email [String] The email address of the contact in HubSpot to associate with the event.
         #
         #   @param interaction_date_time [Integer] Timestamp in milliseconds at which the contact subscribed to the event.
         #
-        #   @param contact_properties [Hash{Symbol=>String}]
-        #
         #   @param properties [Hash{Symbol=>String}]
       end
     end
+
+    MarketingEventEmailSubscriber = Marketing::MarketingEventEmailSubscriber
   end
 end

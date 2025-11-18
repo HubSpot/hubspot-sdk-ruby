@@ -12,11 +12,11 @@ module HubspotSDK
           # including the ID. Documentation and examples for creating standard deals is
           # provided.
           #
-          # @overload create(properties:, associations: nil, request_options: {})
-          #
-          # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
+          # @overload create(associations:, properties:, request_options: {})
           #
           # @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
+          #
+          # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -43,7 +43,7 @@ module HubspotSDK
           #
           # @overload update(deal_id, properties:, id_property: nil, request_options: {})
           #
-          # @param deal_id [String] Path param: The unique identifier of the deal to be updated.
+          # @param deal_id [String] Path param:
           #
           # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
           #
@@ -107,8 +107,7 @@ module HubspotSDK
           #
           # @overload delete(deal_id, request_options: {})
           #
-          # @param deal_id [String] The unique identifier of the deal to be archived.
-          #
+          # @param deal_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -133,7 +132,7 @@ module HubspotSDK
           #
           # @overload get(deal_id, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
-          # @param deal_id [String] The unique identifier of the deal to be retrieved.
+          # @param deal_id [String]
           #
           # @param archived [Boolean] Whether to return only results that have been archived.
           #
@@ -164,12 +163,17 @@ module HubspotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Crm::Objects::DealMergeParams} for more details.
+          #
           # Combine two deals of the same type into a single deal.
           #
           # @overload merge(object_id_to_merge:, primary_object_id:, request_options: {})
           #
-          # @param object_id_to_merge [String]
-          # @param primary_object_id [String]
+          # @param object_id_to_merge [String] The unique identifier of the CRM object that will be merged into the primary obj
+          #
+          # @param primary_object_id [String] The unique identifier of the CRM object that will remain after the merge.
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::SimplePublicObject]
@@ -188,7 +192,7 @@ module HubspotSDK
 
           # Search for deals using specified criteria and filters.
           #
-          # @overload search(after: nil, filter_groups: nil, limit: nil, properties: nil, query: nil, sorts: nil, request_options: {})
+          # @overload search(after:, filter_groups:, limit:, properties:, sorts:, query: nil, request_options: {})
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.
           #
@@ -198,16 +202,16 @@ module HubspotSDK
           #
           # @param properties [Array<String>] A list of property names to include in the response.
           #
-          # @param query [String] The search query string, up to 3000 characters.
-          #
           # @param sorts [Array<String>] Specifies sorting order based on object properties.
+          #
+          # @param query [String] The search query string, up to 3000 characters.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
           #
           # @see HubspotSDK::Models::Crm::Objects::DealSearchParams
-          def search(params = {})
+          def search(params)
             parsed, options = HubspotSDK::Crm::Objects::DealSearchParams.dump_request(params)
             @client.request(
               method: :post,

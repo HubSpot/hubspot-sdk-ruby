@@ -4,22 +4,34 @@ module HubspotSDK
   module Resources
     class Settings
       class TaxRates
+        # Some parameter documentations has been truncated, see
+        # {HubspotSDK::Models::Settings::TaxRateListParams} for more details.
+        #
         # Retrieve a paginated list of all tax rates set up in the account tax rate
         # library
         #
-        # @overload list(request_options: {})
+        # @overload list(active: nil, after: nil, limit: nil, request_options: {})
+        #
+        # @param active [Boolean] Include inactive rates.
+        #
+        # @param after [String] The paging cursor token of the last successfully read resource will be returned
+        #
+        # @param limit [Integer] The maximum number of results to display per page.
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Settings::CollectionResponsePublicTaxRateGroupForwardPaging]
+        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Settings::PublicTaxRateGroup>]
         #
         # @see HubspotSDK::Models::Settings::TaxRateListParams
         def list(params = {})
+          parsed, options = HubspotSDK::Settings::TaxRateListParams.dump_request(params)
           @client.request(
             method: :get,
             path: "tax-rates/v1/tax-rates",
-            model: HubspotSDK::Settings::CollectionResponsePublicTaxRateGroupForwardPaging,
-            options: params[:request_options]
+            query: parsed,
+            page: HubspotSDK::Internal::Page,
+            model: HubspotSDK::Settings::PublicTaxRateGroup,
+            options: options
           )
         end
 
@@ -27,7 +39,8 @@ module HubspotSDK
         #
         # @overload get(tax_rate_group_id, request_options: {})
         #
-        # @param tax_rate_group_id [String]
+        # @param tax_rate_group_id [String] The ID of the tax rate to retrieve.
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Settings::PublicTaxRateGroup]

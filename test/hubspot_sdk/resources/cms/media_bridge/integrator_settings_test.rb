@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
     skip("Prism tests are disabled")
 
     response =
-      @hubspot.cms.media_bridge.integrator_settings.create_object_definition("appId", media_types: [:VIDEO])
+      @hubspot.cms.media_bridge.integrator_settings.create_object_definition(0, media_types: [:VIDEO])
 
     assert_pattern do
       response => HubspotSDK::Cms::BulkIntegratorObjectCreationResponse
@@ -25,7 +25,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
 
     response =
       @hubspot.cms.media_bridge.integrator_settings.create_oembed_domain(
-        "appId",
+        0,
         endpoints: {discovery: true, schemes: ["string"], url: "url"}
       )
 
@@ -49,7 +49,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
   def test_delete_oembed_domain
     skip("Prism tests are disabled")
 
-    response = @hubspot.cms.media_bridge.integrator_settings.delete_oembed_domain("appId")
+    response = @hubspot.cms.media_bridge.integrator_settings.delete_oembed_domain(0)
 
     assert_pattern do
       response => nil
@@ -59,7 +59,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
   def test_get_event_visibility_settings
     skip("Prism tests are disabled")
 
-    response = @hubspot.cms.media_bridge.integrator_settings.get_event_visibility_settings("appId")
+    response = @hubspot.cms.media_bridge.integrator_settings.get_event_visibility_settings(0)
 
     assert_pattern do
       response => HubspotSDK::Cms::EventVisibilityResponse
@@ -77,10 +77,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
     skip("Prism tests are disabled")
 
     response =
-      @hubspot.cms.media_bridge.integrator_settings.get_object_definitions_by_media_type(
-        "mediaType",
-        app_id: "appId"
-      )
+      @hubspot.cms.media_bridge.integrator_settings.get_object_definitions_by_media_type(:VIDEO, app_id: 0)
 
     assert_pattern do
       response => HubspotSDK::Cms::ObjectDefinitionResponse
@@ -100,8 +97,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
   def test_get_oembed_domain_required_params
     skip("Prism tests are disabled")
 
-    response =
-      @hubspot.cms.media_bridge.integrator_settings.get_oembed_domain("oEmbedDomainId", app_id: "appId")
+    response = @hubspot.cms.media_bridge.integrator_settings.get_oembed_domain("oEmbedDomainId", app_id: 0)
 
     assert_pattern do
       response => HubspotSDK::Cms::IntegratorOEmbedDomainModel
@@ -123,7 +119,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
   def test_list_oembed_domains
     skip("Prism tests are disabled")
 
-    response = @hubspot.cms.media_bridge.integrator_settings.list_oembed_domains("appId")
+    response = @hubspot.cms.media_bridge.integrator_settings.list_oembed_domains(0)
 
     assert_pattern do
       response => HubspotSDK::Cms::OEmbedDomainsCollectionResponse
@@ -140,7 +136,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
   def test_register_app_name_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.cms.media_bridge.integrator_settings.register_app_name("appId", updated_at: 0)
+    response = @hubspot.cms.media_bridge.integrator_settings.register_app_name(0, updated_at: 0)
 
     assert_pattern do
       response => HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse
@@ -157,7 +153,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
   def test_update_app_name_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.cms.media_bridge.integrator_settings.update_app_name("appId", updated_at: 0)
+    response = @hubspot.cms.media_bridge.integrator_settings.update_app_name(0, updated_at: 0)
 
     assert_pattern do
       response => HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse
@@ -176,7 +172,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
 
     response =
       @hubspot.cms.media_bridge.integrator_settings.update_event_visibility_settings(
-        "appId",
+        0,
         event_type: :ALL,
         updated_at: 0
       )
@@ -202,7 +198,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
     response =
       @hubspot.cms.media_bridge.integrator_settings.update_oembed_domain(
         "oEmbedDomainId",
-        app_id: "appId",
+        app_id: 0,
         endpoints: {discovery: true, schemes: ["string"], url: "url"}
       )
 

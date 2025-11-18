@@ -15,16 +15,59 @@ module HubspotSDK
             )
           end
 
+        # Include inactive rates.
+        sig { returns(T.nilable(T::Boolean)) }
+        attr_reader :active
+
+        sig { params(active: T::Boolean).void }
+        attr_writer :active
+
+        # The paging cursor token of the last successfully read resource will be returned
+        # as the paging.next.after JSON property of a paged response containing more
+        # results.
+        sig { returns(T.nilable(String)) }
+        attr_reader :after
+
+        sig { params(after: String).void }
+        attr_writer :after
+
+        # The maximum number of results to display per page.
+        sig { returns(T.nilable(Integer)) }
+        attr_reader :limit
+
+        sig { params(limit: Integer).void }
+        attr_writer :limit
+
         sig do
-          params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-            T.attached_class
-          )
+          params(
+            active: T::Boolean,
+            after: String,
+            limit: Integer,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(T.attached_class)
         end
-        def self.new(request_options: {})
+        def self.new(
+          # Include inactive rates.
+          active: nil,
+          # The paging cursor token of the last successfully read resource will be returned
+          # as the paging.next.after JSON property of a paged response containing more
+          # results.
+          after: nil,
+          # The maximum number of results to display per page.
+          limit: nil,
+          request_options: {}
+        )
         end
 
         sig do
-          override.returns({ request_options: HubspotSDK::RequestOptions })
+          override.returns(
+            {
+              active: T::Boolean,
+              after: String,
+              limit: Integer,
+              request_options: HubspotSDK::RequestOptions
+            }
+          )
         end
         def to_hash
         end

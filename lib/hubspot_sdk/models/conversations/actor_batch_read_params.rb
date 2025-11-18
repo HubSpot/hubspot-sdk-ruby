@@ -8,7 +8,15 @@ module HubspotSDK
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
-        # @!method initialize(request_options: {})
+        # @!attribute property
+        #   A specific property to include in the actor response.
+        #
+        #   @return [String, nil]
+        optional :property, String
+
+        # @!method initialize(property: nil, request_options: {})
+        #   @param property [String] A specific property to include in the actor response.
+        #
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end

@@ -155,6 +155,8 @@ module HubspotSDK
           #   @param updated_by_user_id [Integer]
         end
       end
+
+      ObjectSchema = Objects::ObjectSchema
     end
   end
 end

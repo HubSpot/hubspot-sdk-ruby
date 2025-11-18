@@ -1,0 +1,46 @@
+module HubspotSDK
+  module Resources
+    class Crm
+      class Associations
+        class Schema
+          class V4
+            class Configurations
+              def list: (
+                ?request_options: HubspotSDK::request_opts
+              ) -> HubspotSDK::Crm::Associations::Schema::CollectionResponsePublicAssociationDefinitionUserConfiguration
+
+              def batch_create: (
+                String to_object_type,
+                from_object_type: String,
+                inputs: ::Array[HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationCreateRequest],
+                ?request_options: HubspotSDK::request_opts
+              ) -> HubspotSDK::Crm::Associations::Schema::BatchResponsePublicAssociationDefinitionUserConfiguration
+
+              def batch_delete: (
+                String to_object_type,
+                from_object_type: String,
+                inputs: ::Array[HubspotSDK::Crm::Associations::Schema::PublicAssociationSpec],
+                ?request_options: HubspotSDK::request_opts
+              ) -> HubspotSDK::Crm::BatchResponseVoid
+
+              def batch_update: (
+                String to_object_type,
+                from_object_type: String,
+                inputs: ::Array[HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest],
+                ?request_options: HubspotSDK::request_opts
+              ) -> HubspotSDK::Crm::Associations::Schema::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult
+
+              def get_by_object_types: (
+                String to_object_type,
+                from_object_type: String,
+                ?request_options: HubspotSDK::request_opts
+              ) -> HubspotSDK::Crm::Associations::Schema::CollectionResponsePublicAssociationDefinitionUserConfiguration
+
+              def initialize: (client: HubspotSDK::Client) -> void
+            end
+          end
+        end
+      end
+    end
+  end
+end

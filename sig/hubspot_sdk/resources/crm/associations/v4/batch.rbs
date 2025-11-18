@@ -16,7 +16,7 @@ module HubspotSDK
               from_object_type: String,
               inputs: ::Array[HubspotSDK::Crm::Associations::PublicAssociationMultiArchive],
               ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::Crm::Associations::BatchResponseVoid
+            ) -> HubspotSDK::Crm::BatchResponseVoid
 
             def create_default: (
               String to_object_type,
@@ -30,7 +30,7 @@ module HubspotSDK
               from_object_type: String,
               inputs: ::Array[HubspotSDK::Crm::Associations::PublicAssociationMultiPost],
               ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::Crm::Associations::BatchResponseVoid
+            ) -> HubspotSDK::Crm::BatchResponseVoid
 
             def get: (
               String to_object_type,
@@ -38,6 +38,12 @@ module HubspotSDK
               inputs: ::Array[HubspotSDK::Crm::Associations::PublicFetchAssociationsBatchRequest],
               ?request_options: HubspotSDK::request_opts
             ) -> HubspotSDK::Crm::Associations::BatchResponsePublicAssociationMultiWithLabel
+
+            def upsert: (
+              String object_type,
+              inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectBatchInputUpsert],
+              ?request_options: HubspotSDK::request_opts
+            ) -> HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject
 
             def initialize: (client: HubspotSDK::Client) -> void
           end

@@ -35,17 +35,24 @@ module HubspotSDK
             params(
               object_type: String,
               archived: T::Boolean,
-              inputs: T::Array[HubspotSDK::PropertyName::OrHash],
               data_sensitivity:
-                HubspotSDK::Crm::BatchReadInputPropertyName::DataSensitivity::OrSymbol,
+                HubspotSDK::BatchReadInputPropertyName::DataSensitivity::OrSymbol,
+              inputs: T::Array[HubspotSDK::PropertyName::OrHash],
+              locale: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::BatchResponseProperty)
           end
           def get(
+            # Path param:
             object_type,
+            # Body param:
             archived:,
+            # Body param:
+            data_sensitivity:,
+            # Body param:
             inputs:,
-            data_sensitivity: nil,
+            # Query param:
+            locale: nil,
             request_options: {}
           )
           end

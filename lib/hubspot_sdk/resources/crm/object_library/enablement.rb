@@ -5,6 +5,9 @@ module HubspotSDK
     class Crm
       class ObjectLibrary
         class Enablement
+          # For all object types supporting enablement, returns whether they're enabled or
+          # disabled
+          #
           # @overload list(request_options: {})
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
@@ -21,9 +24,12 @@ module HubspotSDK
             )
           end
 
+          # Fetch whether object type is enabled
+          #
           # @overload get(object_type_id, request_options: {})
           #
-          # @param object_type_id [String]
+          # @param object_type_id [String] objectTypeId for the object type in question
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::ObjectTypeEnablementPublicResponse]

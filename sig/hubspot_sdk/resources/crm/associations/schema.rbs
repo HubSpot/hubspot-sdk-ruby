@@ -3,6 +3,8 @@ module HubspotSDK
     class Crm
       class Associations
         class Schema
+          attr_reader v4: HubspotSDK::Resources::Crm::Associations::Schema::V4
+
           def list: (
             String to_object_type,
             from_object_type: String,

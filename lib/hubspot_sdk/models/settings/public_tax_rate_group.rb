@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Settings
-      # @see HubspotSDK::Resources::Settings::TaxRates#get
+      # @see HubspotSDK::Resources::Settings::TaxRates#list
       class PublicTaxRateGroup < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #

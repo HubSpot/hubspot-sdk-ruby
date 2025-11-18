@@ -13,10 +13,18 @@ module HubspotSDK
         #   `hs_list_size`, `hs_last_record_added_at`, `hs_last_record_removed_at`,
         #   `hs_folder_name`, and `hs_list_reference_count`.
         #
-        #   @return [Array<String>, nil]
-        optional :additional_properties,
+        #   @return [Array<String>]
+        required :additional_properties,
                  HubspotSDK::Internal::Type::ArrayOf[String],
                  api_name: :additionalProperties
+
+        # @!attribute offset
+        #   Value used to paginate through lists. The `offset` provided in the response can
+        #   be used in the next request to fetch the next page of results. Defaults to `0`
+        #   if no offset is provided.
+        #
+        #   @return [Integer]
+        required :offset, Integer
 
         # @!attribute count
         #   The number of lists to include in the response. Defaults to `20` if no value is
@@ -35,14 +43,6 @@ module HubspotSDK
         #
         #   @return [Array<String>, nil]
         optional :list_ids, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :listIds
-
-        # @!attribute offset
-        #   Value used to paginate through lists. The `offset` provided in the response can
-        #   be used in the next request to fetch the next page of results. Defaults to `0`
-        #   if no offset is provided.
-        #
-        #   @return [Integer, nil]
-        optional :offset, Integer
 
         # @!attribute processing_types
         #   The `processingTypes` that will be used to filter results by `processingType`.
@@ -69,7 +69,7 @@ module HubspotSDK
         #   @return [String, nil]
         optional :sort, String
 
-        # @!method initialize(additional_properties: nil, count: nil, list_ids: nil, offset: nil, processing_types: nil, query: nil, sort: nil)
+        # @!method initialize(additional_properties:, offset:, count: nil, list_ids: nil, processing_types: nil, query: nil, sort: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Crm::ListSearchRequest} for more details.
         #
@@ -77,11 +77,11 @@ module HubspotSDK
         #
         #   @param additional_properties [Array<String>] The property names of any additional list properties to include in the response.
         #
+        #   @param offset [Integer] Value used to paginate through lists. The `offset` provided in the response can
+        #
         #   @param count [Integer] The number of lists to include in the response. Defaults to `20` if no value is
         #
         #   @param list_ids [Array<String>] The `listIds` that will be used to filter results by `listId`. If values are pro
-        #
-        #   @param offset [Integer] Value used to paginate through lists. The `offset` provided in the response can
         #
         #   @param processing_types [Array<String>] The `processingTypes` that will be used to filter results by `processingType`. I
         #

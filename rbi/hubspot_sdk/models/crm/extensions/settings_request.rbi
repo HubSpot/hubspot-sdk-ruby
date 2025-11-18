@@ -13,89 +13,68 @@ module HubspotSDK
               )
             end
 
+          sig { returns(Integer) }
+          attr_accessor :height
+
+          sig { returns(T::Boolean) }
+          attr_accessor :is_ready
+
           sig { returns(String) }
           attr_accessor :name
+
+          sig { returns(T::Boolean) }
+          attr_accessor :supports_custom_objects
+
+          sig { returns(T::Boolean) }
+          attr_accessor :supports_inbound_calling
 
           sig { returns(String) }
           attr_accessor :url
 
-          sig { returns(T.nilable(Integer)) }
-          attr_reader :height
+          sig { returns(T::Boolean) }
+          attr_accessor :uses_calling_window
 
-          sig { params(height: Integer).void }
-          attr_writer :height
+          sig { returns(T::Boolean) }
+          attr_accessor :uses_remote
 
-          sig { returns(T.nilable(T::Boolean)) }
-          attr_reader :is_ready
-
-          sig { params(is_ready: T::Boolean).void }
-          attr_writer :is_ready
-
-          sig { returns(T.nilable(T::Boolean)) }
-          attr_reader :supports_custom_objects
-
-          sig { params(supports_custom_objects: T::Boolean).void }
-          attr_writer :supports_custom_objects
-
-          sig { returns(T.nilable(T::Boolean)) }
-          attr_reader :supports_inbound_calling
-
-          sig { params(supports_inbound_calling: T::Boolean).void }
-          attr_writer :supports_inbound_calling
-
-          sig { returns(T.nilable(T::Boolean)) }
-          attr_reader :uses_calling_window
-
-          sig { params(uses_calling_window: T::Boolean).void }
-          attr_writer :uses_calling_window
-
-          sig { returns(T.nilable(T::Boolean)) }
-          attr_reader :uses_remote
-
-          sig { params(uses_remote: T::Boolean).void }
-          attr_writer :uses_remote
-
-          sig { returns(T.nilable(Integer)) }
-          attr_reader :width
-
-          sig { params(width: Integer).void }
-          attr_writer :width
+          sig { returns(Integer) }
+          attr_accessor :width
 
           sig do
             params(
-              name: String,
-              url: String,
               height: Integer,
               is_ready: T::Boolean,
+              name: String,
               supports_custom_objects: T::Boolean,
               supports_inbound_calling: T::Boolean,
+              url: String,
               uses_calling_window: T::Boolean,
               uses_remote: T::Boolean,
               width: Integer
             ).returns(T.attached_class)
           end
           def self.new(
+            height:,
+            is_ready:,
             name:,
+            supports_custom_objects:,
+            supports_inbound_calling:,
             url:,
-            height: nil,
-            is_ready: nil,
-            supports_custom_objects: nil,
-            supports_inbound_calling: nil,
-            uses_calling_window: nil,
-            uses_remote: nil,
-            width: nil
+            uses_calling_window:,
+            uses_remote:,
+            width:
           )
           end
 
           sig do
             override.returns(
               {
-                name: String,
-                url: String,
                 height: Integer,
                 is_ready: T::Boolean,
+                name: String,
                 supports_custom_objects: T::Boolean,
                 supports_inbound_calling: T::Boolean,
+                url: String,
                 uses_calling_window: T::Boolean,
                 uses_remote: T::Boolean,
                 width: Integer

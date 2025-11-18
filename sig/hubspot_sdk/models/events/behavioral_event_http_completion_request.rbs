@@ -4,16 +4,18 @@ module HubspotSDK
       type behavioral_event_http_completion_request =
         {
           event_name: String,
+          properties: ::Hash[Symbol, String],
           email: String,
           object_id_: String,
           occurred_at: Time,
-          properties: ::Hash[Symbol, String],
           utk: String,
           uuid: String
         }
 
       class BehavioralEventHTTPCompletionRequest < HubspotSDK::Internal::Type::BaseModel
         attr_accessor event_name: String
+
+        attr_accessor properties: ::Hash[Symbol, String]
 
         attr_reader email: String?
 
@@ -27,10 +29,6 @@ module HubspotSDK
 
         def occurred_at=: (Time) -> Time
 
-        attr_reader properties: ::Hash[Symbol, String]?
-
-        def properties=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
-
         attr_reader utk: String?
 
         def utk=: (String) -> String
@@ -41,20 +39,20 @@ module HubspotSDK
 
         def initialize: (
           event_name: String,
+          properties: ::Hash[Symbol, String],
           ?email: String,
           ?object_id_: String,
           ?occurred_at: Time,
-          ?properties: ::Hash[Symbol, String],
           ?utk: String,
           ?uuid: String
         ) -> void
 
         def to_hash: -> {
           event_name: String,
+          properties: ::Hash[Symbol, String],
           email: String,
           object_id_: String,
           occurred_at: Time,
-          properties: ::Hash[Symbol, String],
           utk: String,
           uuid: String
         }

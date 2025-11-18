@@ -36,11 +36,8 @@ module HubspotSDK
 
         # A key-value map of event-specific properties. The available properties depend on
         # the event type definition.
-        sig { returns(T.nilable(T::Hash[Symbol, String])) }
-        attr_reader :properties
-
-        sig { params(properties: T::Hash[Symbol, String]).void }
-        attr_writer :properties
+        sig { returns(T::Hash[Symbol, String]) }
+        attr_accessor :properties
 
         sig do
           params(
@@ -67,7 +64,7 @@ module HubspotSDK
           occurred_at:,
           # A key-value map of event-specific properties. The available properties depend on
           # the event type definition.
-          properties: nil
+          properties:
         )
         end
 

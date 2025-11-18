@@ -11,7 +11,7 @@ module HubspotSDK
           sig do
             params(
               account_token: String,
-              channel_id: String,
+              channel_id: Integer,
               account_name: String,
               delivery_identifier:
                 HubspotSDK::Conversations::PublicDeliveryIdentifier::OrHash,
@@ -21,9 +21,11 @@ module HubspotSDK
             )
           end
           def update(
-            # Path param:
+            # Path param: The unique token identifying the channel account staging token to
+            # update.
             account_token,
-            # Path param:
+            # Path param: The ID of the channel associated with the staging token being
+            # updated.
             channel_id:,
             # Body param:
             account_name:,

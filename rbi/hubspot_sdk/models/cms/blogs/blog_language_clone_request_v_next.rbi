@@ -3,6 +3,8 @@
 module HubspotSDK
   module Models
     module Cms
+      BlogLanguageCloneRequestVNext = Blogs::BlogLanguageCloneRequestVNext
+
       module Blogs
         class BlogLanguageCloneRequestVNext < HubspotSDK::Internal::Type::BaseModel
           OrHash =

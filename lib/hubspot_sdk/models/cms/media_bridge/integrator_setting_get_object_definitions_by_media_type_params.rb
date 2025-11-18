@@ -11,12 +11,34 @@ module HubspotSDK
 
           # @!attribute app_id
           #
-          #   @return [String]
-          required :app_id, String
+          #   @return [Integer]
+          required :app_id, Integer
 
-          # @!method initialize(app_id:, request_options: {})
-          #   @param app_id [String]
+          # @!attribute include_full_definition
+          #   Include the full definition in the response.
+          #
+          #   @return [Boolean, nil]
+          optional :include_full_definition, HubspotSDK::Internal::Type::Boolean
+
+          # @!method initialize(app_id:, include_full_definition: nil, request_options: {})
+          #   @param app_id [Integer]
+          #
+          #   @param include_full_definition [Boolean] Include the full definition in the response.
+          #
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+
+          module MediaType
+            extend HubspotSDK::Internal::Type::Enum
+
+            VIDEO = :VIDEO
+            AUDIO = :AUDIO
+            DOCUMENT = :DOCUMENT
+            OTHER = :OTHER
+            IMAGE = :IMAGE
+
+            # @!method self.values
+            #   @return [Array<Symbol>]
+          end
         end
       end
     end

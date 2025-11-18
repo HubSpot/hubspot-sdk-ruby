@@ -15,16 +15,16 @@ module HubspotSDK
           # with other CRM records.
           sig do
             params(
-              properties: T::Hash[Symbol, String],
               associations:
                 T::Array[HubspotSDK::Crm::PublicAssociationsForObject::OrHash],
+              properties: T::Hash[Symbol, String],
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::CreatedResponseSimplePublicObject)
           end
           def create(
+            associations:,
             # Key-value pairs for setting properties for the new object.
             properties:,
-            associations: nil,
             request_options: {}
           )
           end
@@ -40,13 +40,17 @@ module HubspotSDK
             params(
               contact_id: String,
               properties: T::Hash[Symbol, String],
+              id_property: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
           def update(
+            # Path param:
             contact_id,
-            # Key value pairs representing the properties of the object.
+            # Body param: Key value pairs representing the properties of the object.
             properties:,
+            # Query param: The name of a property whose values are unique for this object.
+            id_property: nil,
             request_options: {}
           )
           end
@@ -119,7 +123,13 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def gdpr_delete(object_id_:, id_property: nil, request_options: {})
+          def gdpr_delete(
+            # ID of the object
+            object_id_:,
+            # ID property
+            id_property: nil,
+            request_options: {}
+          )
           end
 
           # Retrieve a contact by its ID (`contactId`) or by a unique property
@@ -130,6 +140,7 @@ module HubspotSDK
               contact_id: String,
               archived: T::Boolean,
               associations: T::Array[String],
+              id_property: String,
               properties: T::Array[String],
               properties_with_history: T::Array[String],
               request_options: HubspotSDK::RequestOptions::OrHash
@@ -142,6 +153,8 @@ module HubspotSDK
             # A comma separated list of object types to retrieve associated IDs for. If any of
             # the specified associations do not exist, they will be ignored.
             associations: nil,
+            # The name of a property whose values are unique for this object
+            id_property: nil,
             # A comma separated list of the properties to be returned in the response. If any
             # of the specified properties are not present on the requested object(s), they
             # will be ignored.
@@ -164,7 +177,10 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
           def merge(
+            # The unique identifier of the CRM object that will be merged into the primary
+            # object.
             object_id_to_merge:,
+            # The unique identifier of the CRM object that will remain after the merge.
             primary_object_id:,
             request_options: {}
           )
@@ -179,8 +195,8 @@ module HubspotSDK
               filter_groups: T::Array[HubspotSDK::Crm::FilterGroup::OrHash],
               limit: Integer,
               properties: T::Array[String],
-              query: String,
               sorts: T::Array[String],
+              query: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
               HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
@@ -188,17 +204,17 @@ module HubspotSDK
           end
           def search(
             # A paging cursor token for retrieving subsequent pages.
-            after: nil,
+            after:,
             # Up to 6 groups of filters defining additional query criteria.
-            filter_groups: nil,
+            filter_groups:,
             # The maximum results to return, up to 200 objects.
-            limit: nil,
+            limit:,
             # A list of property names to include in the response.
-            properties: nil,
+            properties:,
+            # Specifies sorting order based on object properties.
+            sorts:,
             # The search query string, up to 3000 characters.
             query: nil,
-            # Specifies sorting order based on object properties.
-            sorts: nil,
             request_options: {}
           )
           end

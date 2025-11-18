@@ -3,6 +3,8 @@
 module HubspotSDK
   module Models
     module Cms
+      BlogPost = Blogs::BlogPost
+
       module Blogs
         class BlogPost < HubspotSDK::Internal::Type::BaseModel
           OrHash =

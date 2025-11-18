@@ -6,14 +6,15 @@ module HubspotSDK
           attr_reader batch: HubspotSDK::Resources::Crm::Objects::Contacts::Batch
 
           def create: (
+            associations: ::Array[HubspotSDK::Crm::PublicAssociationsForObject],
             properties: ::Hash[Symbol, String],
-            ?associations: ::Array[HubspotSDK::Crm::PublicAssociationsForObject],
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Crm::CreatedResponseSimplePublicObject
 
           def update: (
             String contact_id,
             properties: ::Hash[Symbol, String],
+            ?id_property: String,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Crm::SimplePublicObject
 
@@ -42,6 +43,7 @@ module HubspotSDK
             String contact_id,
             ?archived: bool,
             ?associations: ::Array[String],
+            ?id_property: String,
             ?properties: ::Array[String],
             ?properties_with_history: ::Array[String],
             ?request_options: HubspotSDK::request_opts
@@ -54,12 +56,12 @@ module HubspotSDK
           ) -> HubspotSDK::Crm::SimplePublicObject
 
           def search: (
-            ?after: String,
-            ?filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
-            ?limit: Integer,
-            ?properties: ::Array[String],
+            after: String,
+            filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
+            limit: Integer,
+            properties: ::Array[String],
+            sorts: ::Array[String],
             ?query: String,
-            ?sorts: ::Array[String],
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
 

@@ -5,13 +5,16 @@ module HubspotSDK
     class Cms
       class MediaBridge
         class Groups
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Cms::MediaBridge::GroupCreateParams} for more details.
+          #
           # Create a new property group for the specified object type.
           #
           # @overload create(object_type, app_id:, label:, name:, display_order: nil, request_options: {})
           #
-          # @param object_type [String] Path param:
+          # @param object_type [String] Path param: The object type to create the new property group for.
           #
-          # @param app_id [String] Path param:
+          # @param app_id [Integer] Path param: The appId for the media bridge app. It is possible to have multiple
           #
           # @param label [String] Body param:
           #
@@ -39,12 +42,17 @@ module HubspotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Cms::MediaBridge::GroupListParams} for more details.
+          #
           # Get the property groups for a specified object type.
           #
           # @overload list(object_type, app_id:, request_options: {})
           #
-          # @param object_type [String]
-          # @param app_id [String]
+          # @param object_type [String] The type of object to get the property groups for.
+          #
+          # @param app_id [Integer] The appId for the media bridge app. It is possible to have multiple apps in your
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Cms::CollectionResponsePropertyGroupNoPaging]
@@ -64,13 +72,20 @@ module HubspotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Cms::MediaBridge::GroupDeleteByNameParams} for more
+          # details.
+          #
           # Delete an existing property group by name
           #
           # @overload delete_by_name(group_name, app_id:, object_type:, request_options: {})
           #
-          # @param group_name [String]
-          # @param app_id [String]
-          # @param object_type [String]
+          # @param group_name [String] The name of the property group to be deleted.
+          #
+          # @param app_id [Integer] The appId for the media bridge app. It is possible to have multiple apps in your
+          #
+          # @param object_type [String] The object type for the property group
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -94,13 +109,19 @@ module HubspotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Cms::MediaBridge::GroupGetByNameParams} for more details.
+          #
           # Get the details of an existing property group by name.
           #
           # @overload get_by_name(group_name, app_id:, object_type:, request_options: {})
           #
-          # @param group_name [String]
-          # @param app_id [String]
-          # @param object_type [String]
+          # @param group_name [String] The name for the property group you want to get the details for.
+          #
+          # @param app_id [Integer] The appId for the media bridge app. It is possible to have multiple apps in your
+          #
+          # @param object_type [String] The object type for the property group.
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::PropertyGroup]
@@ -124,15 +145,19 @@ module HubspotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Cms::MediaBridge::GroupUpdateByNameParams} for more
+          # details.
+          #
           # Update an existing property group by name.
           #
           # @overload update_by_name(group_name, app_id:, object_type:, display_order: nil, label: nil, request_options: {})
           #
-          # @param group_name [String] Path param:
+          # @param group_name [String] Path param: The name of the property group to update.
           #
-          # @param app_id [String] Path param:
+          # @param app_id [Integer] Path param: The appId for the media bridge app. It is possible to have multiple
           #
-          # @param object_type [String] Path param:
+          # @param object_type [String] Path param: The object type for the property group.
           #
           # @param display_order [Integer] Body param:
           #

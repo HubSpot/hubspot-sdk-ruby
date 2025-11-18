@@ -4,11 +4,13 @@ module HubspotSDK
       class Actors
         def batch_read: (
           inputs: ::Array[String],
+          ?property: String,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Conversations::BatchResponsePublicActor
 
         def get: (
           String actor_id,
+          ?property: String,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Models::Conversations::public_actor
 

@@ -21,7 +21,9 @@ module HubspotSDK
         #
         # Creates a new marketing event in HubSpot
         #
-        # @overload create(event_name:, event_organizer:, external_account_id:, external_event_id:, custom_properties: nil, end_date_time: nil, event_cancelled: nil, event_completed: nil, event_description: nil, event_type: nil, event_url: nil, start_date_time: nil, request_options: {})
+        # @overload create(custom_properties:, event_name:, event_organizer:, external_account_id:, external_event_id:, end_date_time: nil, event_cancelled: nil, event_completed: nil, event_description: nil, event_type: nil, event_url: nil, start_date_time: nil, request_options: {})
+        #
+        # @param custom_properties [Array<HubspotSDK::Models::Marketing::PropertyValue>] A list of PropertyValues. These can be whatever kind of property names and value
         #
         # @param event_name [String] The name of the marketing event.
         #
@@ -30,8 +32,6 @@ module HubspotSDK
         # @param external_account_id [String] The accountId that is associated with this marketing event in the external event
         #
         # @param external_event_id [String] The id of the marketing event in the external event application.
-        #
-        # @param custom_properties [Array<HubspotSDK::Models::Marketing::PropertyValue>] A list of PropertyValues. These can be whatever kind of property names and value
         #
         # @param end_date_time [Time] The end date and time of the marketing event.
         #
@@ -441,7 +441,7 @@ module HubspotSDK
         #
         # Only Marketing Events created by the same app can be updated.
         #
-        # @overload update_by_external_event_id(external_event_id, external_account_id:, custom_properties: nil, end_date_time: nil, event_cancelled: nil, event_completed: nil, event_description: nil, event_name: nil, event_organizer: nil, event_type: nil, event_url: nil, start_date_time: nil, request_options: {})
+        # @overload update_by_external_event_id(external_event_id, external_account_id:, custom_properties:, end_date_time: nil, event_cancelled: nil, event_completed: nil, event_description: nil, event_name: nil, event_organizer: nil, event_type: nil, event_url: nil, start_date_time: nil, request_options: {})
         #
         # @param external_event_id [String] Path param: The id of the marketing event in the external event application
         #
@@ -516,9 +516,11 @@ module HubspotSDK
         # Upserts a marketing event If there is an existing marketing event with the
         # specified ID, it will be updated; otherwise a new event will be created.
         #
-        # @overload upsert_by_external_event_id(path_external_event_id, event_name:, event_organizer:, external_account_id:, body_external_event_id:, custom_properties: nil, end_date_time: nil, event_cancelled: nil, event_completed: nil, event_description: nil, event_type: nil, event_url: nil, start_date_time: nil, request_options: {})
+        # @overload upsert_by_external_event_id(path_external_event_id, custom_properties:, event_name:, event_organizer:, external_account_id:, body_external_event_id:, end_date_time: nil, event_cancelled: nil, event_completed: nil, event_description: nil, event_type: nil, event_url: nil, start_date_time: nil, request_options: {})
         #
         # @param path_external_event_id [String] The id of the marketing event in the external event application
+        #
+        # @param custom_properties [Array<HubspotSDK::Models::Marketing::PropertyValue>] A list of PropertyValues. These can be whatever kind of property names and value
         #
         # @param event_name [String] The name of the marketing event.
         #
@@ -527,8 +529,6 @@ module HubspotSDK
         # @param external_account_id [String] The accountId that is associated with this marketing event in the external event
         #
         # @param body_external_event_id [String] The id of the marketing event in the external event application.
-        #
-        # @param custom_properties [Array<HubspotSDK::Models::Marketing::PropertyValue>] A list of PropertyValues. These can be whatever kind of property names and value
         #
         # @param end_date_time [Time] The end date and time of the marketing event.
         #

@@ -19,6 +19,7 @@ module HubspotSDK
           ).returns(HubspotSDK::Crm::Pipeline)
         end
         def create(
+          # The object type of the pipeline being created (ex. deals or tickets)
           object_type,
           # The order for displaying this pipeline. If two pipelines have a matching
           # `displayOrder`, they will be sorted alphabetically by label.
@@ -46,13 +47,15 @@ module HubspotSDK
           ).returns(HubspotSDK::Crm::Pipeline)
         end
         def update(
-          # Path param:
+          # Path param: The unique identifier of the pipeline to be updated.
           pipeline_id,
-          # Path param:
+          # Path param: The object type of the pipeline being updated (ex. deals or tickets)
           object_type:,
-          # Query param:
+          # Query param: Indicates whether to validate deal stage usages before deleting the
+          # pipeline.
           validate_deal_stage_usages_before_delete: nil,
-          # Query param:
+          # Query param: Indicates whether to validate references before deleting the
+          # pipeline.
           validate_references_before_delete: nil,
           # Body param: Whether the pipeline is archived. This property should only be
           # provided when restoring an archived pipeline. If it's provided in any other
@@ -74,10 +77,14 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Crm::CollectionResponsePipelineNoPaging)
         end
-        def list(object_type, request_options: {})
+        def list(
+          # The object type of the pipelines being retrieved (ex. deals or tickets)
+          object_type,
+          request_options: {}
+        )
         end
 
-        # Delete a pipeline
+        # Delete a pipeline identified by its unique pipelineId
         sig do
           params(
             pipeline_id: String,
@@ -88,13 +95,15 @@ module HubspotSDK
           ).void
         end
         def delete(
-          # Path param:
+          # Path param: The unique identifier of the pipeline to be deleted.
           pipeline_id,
-          # Path param:
+          # Path param: The object type of the pipeline being deleted (ex. deals or tickets)
           object_type:,
-          # Query param:
+          # Query param: Indicates whether to validate deal stage usages before deleting the
+          # pipeline.
           validate_deal_stage_usages_before_delete: nil,
-          # Query param:
+          # Query param: Indicates whether to validate references before deleting the
+          # pipeline.
           validate_references_before_delete: nil,
           request_options: {}
         )
@@ -108,7 +117,13 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Crm::Pipeline)
         end
-        def get(pipeline_id, object_type:, request_options: {})
+        def get(
+          # The unique identifier of the pipeline to be retrieved.
+          pipeline_id,
+          # The object type of the pipeline being retrieved (ex. deals or tickets)
+          object_type:,
+          request_options: {}
+        )
         end
 
         # Return a reverse chronological list of all mutations that have occurred on the
@@ -120,10 +135,16 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Crm::CollectionResponsePublicAuditInfoNoPaging)
         end
-        def get_audit(pipeline_id, object_type:, request_options: {})
+        def get_audit(
+          # The unique identifier for the pipeline whose audit history is being retrieved.
+          pipeline_id,
+          # The object type of the pipeline audit being retrieved (ex. deals or tickets)
+          object_type:,
+          request_options: {}
+        )
         end
 
-        # Replace a pipeline
+        # Replace all properties of an existing pipeline with the provided values.
         sig do
           params(
             pipeline_id: String,
@@ -137,9 +158,10 @@ module HubspotSDK
           ).returns(HubspotSDK::Crm::Pipeline)
         end
         def replace(
-          # Path param:
+          # Path param: The unique identifier of the pipeline to be replaced.
           pipeline_id,
-          # Path param:
+          # Path param: The object type of the pipeline being replaced (ex. deals or
+          # tickets)
           object_type:,
           # Body param: The order for displaying this pipeline. If two pipelines have a
           # matching `displayOrder`, they will be sorted alphabetically by label.
@@ -149,9 +171,11 @@ module HubspotSDK
           # Body param: Pipeline stage inputs used to create the new or replacement
           # pipeline.
           stages:,
-          # Query param:
+          # Query param: Indicates whether to validate deal stage usages before deleting the
+          # pipeline.
           validate_deal_stage_usages_before_delete: nil,
-          # Query param:
+          # Query param: Indicates whether to validate references before deleting the
+          # pipeline.
           validate_references_before_delete: nil,
           request_options: {}
         )

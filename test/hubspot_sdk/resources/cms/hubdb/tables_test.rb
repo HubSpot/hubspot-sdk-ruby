@@ -6,7 +6,25 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::TablesTest < HubspotSDK::Test::Re
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.cms.hubdb.tables.create(label: "label", name: "name")
+    response =
+      @hubspot.cms.hubdb.tables.create(
+        allow_child_tables: true,
+        allow_public_api_access: true,
+        columns: [
+          {
+            id: 0,
+            label: "label",
+            name: "name",
+            options: [{hidden: false, label: "Option A", value: "A"}],
+            type: :NULL
+          }
+        ],
+        dynamic_meta_tags: {foo: 0},
+        enable_child_table_pages: true,
+        label: "label",
+        name: "name",
+        use_for_pages: true
+      )
 
     assert_pattern do
       response => HubspotSDK::Cms::HubDBTableV3
@@ -14,26 +32,26 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::TablesTest < HubspotSDK::Test::Re
 
     assert_pattern do
       response => {
+        id: String,
+        allow_child_tables: HubspotSDK::Internal::Type::Boolean,
+        allow_public_api_access: HubspotSDK::Internal::Type::Boolean,
+        column_count: Integer,
+        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]),
+        created_at: Time,
+        deleted: HubspotSDK::Internal::Type::Boolean,
         deleted_at: Time,
+        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]),
+        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean,
         label: String,
         name: String,
-        id: String | nil,
-        allow_child_tables: HubspotSDK::Internal::Type::Boolean | nil,
-        allow_public_api_access: HubspotSDK::Internal::Type::Boolean | nil,
-        column_count: Integer | nil,
-        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]) | nil,
-        created_at: Time | nil,
+        published: HubspotSDK::Internal::Type::Boolean,
+        published_at: Time,
+        row_count: Integer,
+        updated_at: Time,
+        use_for_pages: HubspotSDK::Internal::Type::Boolean,
         created_by: HubspotSDK::Cms::SimpleUser | nil,
-        deleted: HubspotSDK::Internal::Type::Boolean | nil,
-        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]) | nil,
-        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean | nil,
         is_ordered_manually: HubspotSDK::Internal::Type::Boolean | nil,
-        published: HubspotSDK::Internal::Type::Boolean | nil,
-        published_at: Time | nil,
-        row_count: Integer | nil,
-        updated_at: Time | nil,
-        updated_by: HubspotSDK::Cms::SimpleUser | nil,
-        use_for_pages: HubspotSDK::Internal::Type::Boolean | nil
+        updated_by: HubspotSDK::Cms::SimpleUser | nil
       }
     end
   end
@@ -56,26 +74,26 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::TablesTest < HubspotSDK::Test::Re
 
     assert_pattern do
       row => {
+        id: String,
+        allow_child_tables: HubspotSDK::Internal::Type::Boolean,
+        allow_public_api_access: HubspotSDK::Internal::Type::Boolean,
+        column_count: Integer,
+        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]),
+        created_at: Time,
+        deleted: HubspotSDK::Internal::Type::Boolean,
         deleted_at: Time,
+        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]),
+        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean,
         label: String,
         name: String,
-        id: String | nil,
-        allow_child_tables: HubspotSDK::Internal::Type::Boolean | nil,
-        allow_public_api_access: HubspotSDK::Internal::Type::Boolean | nil,
-        column_count: Integer | nil,
-        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]) | nil,
-        created_at: Time | nil,
+        published: HubspotSDK::Internal::Type::Boolean,
+        published_at: Time,
+        row_count: Integer,
+        updated_at: Time,
+        use_for_pages: HubspotSDK::Internal::Type::Boolean,
         created_by: HubspotSDK::Cms::SimpleUser | nil,
-        deleted: HubspotSDK::Internal::Type::Boolean | nil,
-        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]) | nil,
-        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean | nil,
         is_ordered_manually: HubspotSDK::Internal::Type::Boolean | nil,
-        published: HubspotSDK::Internal::Type::Boolean | nil,
-        published_at: Time | nil,
-        row_count: Integer | nil,
-        updated_at: Time | nil,
-        updated_by: HubspotSDK::Cms::SimpleUser | nil,
-        use_for_pages: HubspotSDK::Internal::Type::Boolean | nil
+        updated_by: HubspotSDK::Cms::SimpleUser | nil
       }
     end
   end
@@ -102,26 +120,26 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::TablesTest < HubspotSDK::Test::Re
 
     assert_pattern do
       response => {
+        id: String,
+        allow_child_tables: HubspotSDK::Internal::Type::Boolean,
+        allow_public_api_access: HubspotSDK::Internal::Type::Boolean,
+        column_count: Integer,
+        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]),
+        created_at: Time,
+        deleted: HubspotSDK::Internal::Type::Boolean,
         deleted_at: Time,
+        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]),
+        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean,
         label: String,
         name: String,
-        id: String | nil,
-        allow_child_tables: HubspotSDK::Internal::Type::Boolean | nil,
-        allow_public_api_access: HubspotSDK::Internal::Type::Boolean | nil,
-        column_count: Integer | nil,
-        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]) | nil,
-        created_at: Time | nil,
+        published: HubspotSDK::Internal::Type::Boolean,
+        published_at: Time,
+        row_count: Integer,
+        updated_at: Time,
+        use_for_pages: HubspotSDK::Internal::Type::Boolean,
         created_by: HubspotSDK::Cms::SimpleUser | nil,
-        deleted: HubspotSDK::Internal::Type::Boolean | nil,
-        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]) | nil,
-        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean | nil,
         is_ordered_manually: HubspotSDK::Internal::Type::Boolean | nil,
-        published: HubspotSDK::Internal::Type::Boolean | nil,
-        published_at: Time | nil,
-        row_count: Integer | nil,
-        updated_at: Time | nil,
-        updated_by: HubspotSDK::Cms::SimpleUser | nil,
-        use_for_pages: HubspotSDK::Internal::Type::Boolean | nil
+        updated_by: HubspotSDK::Cms::SimpleUser | nil
       }
     end
   end
@@ -167,26 +185,26 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::TablesTest < HubspotSDK::Test::Re
 
     assert_pattern do
       response => {
+        id: String,
+        allow_child_tables: HubspotSDK::Internal::Type::Boolean,
+        allow_public_api_access: HubspotSDK::Internal::Type::Boolean,
+        column_count: Integer,
+        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]),
+        created_at: Time,
+        deleted: HubspotSDK::Internal::Type::Boolean,
         deleted_at: Time,
+        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]),
+        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean,
         label: String,
         name: String,
-        id: String | nil,
-        allow_child_tables: HubspotSDK::Internal::Type::Boolean | nil,
-        allow_public_api_access: HubspotSDK::Internal::Type::Boolean | nil,
-        column_count: Integer | nil,
-        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]) | nil,
-        created_at: Time | nil,
+        published: HubspotSDK::Internal::Type::Boolean,
+        published_at: Time,
+        row_count: Integer,
+        updated_at: Time,
+        use_for_pages: HubspotSDK::Internal::Type::Boolean,
         created_by: HubspotSDK::Cms::SimpleUser | nil,
-        deleted: HubspotSDK::Internal::Type::Boolean | nil,
-        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]) | nil,
-        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean | nil,
         is_ordered_manually: HubspotSDK::Internal::Type::Boolean | nil,
-        published: HubspotSDK::Internal::Type::Boolean | nil,
-        published_at: Time | nil,
-        row_count: Integer | nil,
-        updated_at: Time | nil,
-        updated_by: HubspotSDK::Cms::SimpleUser | nil,
-        use_for_pages: HubspotSDK::Internal::Type::Boolean | nil
+        updated_by: HubspotSDK::Cms::SimpleUser | nil
       }
     end
   end
@@ -202,26 +220,26 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::TablesTest < HubspotSDK::Test::Re
 
     assert_pattern do
       response => {
+        id: String,
+        allow_child_tables: HubspotSDK::Internal::Type::Boolean,
+        allow_public_api_access: HubspotSDK::Internal::Type::Boolean,
+        column_count: Integer,
+        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]),
+        created_at: Time,
+        deleted: HubspotSDK::Internal::Type::Boolean,
         deleted_at: Time,
+        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]),
+        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean,
         label: String,
         name: String,
-        id: String | nil,
-        allow_child_tables: HubspotSDK::Internal::Type::Boolean | nil,
-        allow_public_api_access: HubspotSDK::Internal::Type::Boolean | nil,
-        column_count: Integer | nil,
-        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]) | nil,
-        created_at: Time | nil,
+        published: HubspotSDK::Internal::Type::Boolean,
+        published_at: Time,
+        row_count: Integer,
+        updated_at: Time,
+        use_for_pages: HubspotSDK::Internal::Type::Boolean,
         created_by: HubspotSDK::Cms::SimpleUser | nil,
-        deleted: HubspotSDK::Internal::Type::Boolean | nil,
-        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]) | nil,
-        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean | nil,
         is_ordered_manually: HubspotSDK::Internal::Type::Boolean | nil,
-        published: HubspotSDK::Internal::Type::Boolean | nil,
-        published_at: Time | nil,
-        row_count: Integer | nil,
-        updated_at: Time | nil,
-        updated_by: HubspotSDK::Cms::SimpleUser | nil,
-        use_for_pages: HubspotSDK::Internal::Type::Boolean | nil
+        updated_by: HubspotSDK::Cms::SimpleUser | nil
       }
     end
   end
@@ -263,26 +281,26 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::TablesTest < HubspotSDK::Test::Re
 
     assert_pattern do
       row => {
+        id: String,
+        allow_child_tables: HubspotSDK::Internal::Type::Boolean,
+        allow_public_api_access: HubspotSDK::Internal::Type::Boolean,
+        column_count: Integer,
+        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]),
+        created_at: Time,
+        deleted: HubspotSDK::Internal::Type::Boolean,
         deleted_at: Time,
+        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]),
+        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean,
         label: String,
         name: String,
-        id: String | nil,
-        allow_child_tables: HubspotSDK::Internal::Type::Boolean | nil,
-        allow_public_api_access: HubspotSDK::Internal::Type::Boolean | nil,
-        column_count: Integer | nil,
-        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]) | nil,
-        created_at: Time | nil,
+        published: HubspotSDK::Internal::Type::Boolean,
+        published_at: Time,
+        row_count: Integer,
+        updated_at: Time,
+        use_for_pages: HubspotSDK::Internal::Type::Boolean,
         created_by: HubspotSDK::Cms::SimpleUser | nil,
-        deleted: HubspotSDK::Internal::Type::Boolean | nil,
-        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]) | nil,
-        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean | nil,
         is_ordered_manually: HubspotSDK::Internal::Type::Boolean | nil,
-        published: HubspotSDK::Internal::Type::Boolean | nil,
-        published_at: Time | nil,
-        row_count: Integer | nil,
-        updated_at: Time | nil,
-        updated_by: HubspotSDK::Cms::SimpleUser | nil,
-        use_for_pages: HubspotSDK::Internal::Type::Boolean | nil
+        updated_by: HubspotSDK::Cms::SimpleUser | nil
       }
     end
   end
@@ -298,26 +316,26 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::TablesTest < HubspotSDK::Test::Re
 
     assert_pattern do
       response => {
+        id: String,
+        allow_child_tables: HubspotSDK::Internal::Type::Boolean,
+        allow_public_api_access: HubspotSDK::Internal::Type::Boolean,
+        column_count: Integer,
+        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]),
+        created_at: Time,
+        deleted: HubspotSDK::Internal::Type::Boolean,
         deleted_at: Time,
+        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]),
+        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean,
         label: String,
         name: String,
-        id: String | nil,
-        allow_child_tables: HubspotSDK::Internal::Type::Boolean | nil,
-        allow_public_api_access: HubspotSDK::Internal::Type::Boolean | nil,
-        column_count: Integer | nil,
-        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]) | nil,
-        created_at: Time | nil,
+        published: HubspotSDK::Internal::Type::Boolean,
+        published_at: Time,
+        row_count: Integer,
+        updated_at: Time,
+        use_for_pages: HubspotSDK::Internal::Type::Boolean,
         created_by: HubspotSDK::Cms::SimpleUser | nil,
-        deleted: HubspotSDK::Internal::Type::Boolean | nil,
-        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]) | nil,
-        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean | nil,
         is_ordered_manually: HubspotSDK::Internal::Type::Boolean | nil,
-        published: HubspotSDK::Internal::Type::Boolean | nil,
-        published_at: Time | nil,
-        row_count: Integer | nil,
-        updated_at: Time | nil,
-        updated_by: HubspotSDK::Cms::SimpleUser | nil,
-        use_for_pages: HubspotSDK::Internal::Type::Boolean | nil
+        updated_by: HubspotSDK::Cms::SimpleUser | nil
       }
     end
   end
@@ -333,26 +351,26 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::TablesTest < HubspotSDK::Test::Re
 
     assert_pattern do
       response => {
+        id: String,
+        allow_child_tables: HubspotSDK::Internal::Type::Boolean,
+        allow_public_api_access: HubspotSDK::Internal::Type::Boolean,
+        column_count: Integer,
+        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]),
+        created_at: Time,
+        deleted: HubspotSDK::Internal::Type::Boolean,
         deleted_at: Time,
+        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]),
+        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean,
         label: String,
         name: String,
-        id: String | nil,
-        allow_child_tables: HubspotSDK::Internal::Type::Boolean | nil,
-        allow_public_api_access: HubspotSDK::Internal::Type::Boolean | nil,
-        column_count: Integer | nil,
-        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]) | nil,
-        created_at: Time | nil,
+        published: HubspotSDK::Internal::Type::Boolean,
+        published_at: Time,
+        row_count: Integer,
+        updated_at: Time,
+        use_for_pages: HubspotSDK::Internal::Type::Boolean,
         created_by: HubspotSDK::Cms::SimpleUser | nil,
-        deleted: HubspotSDK::Internal::Type::Boolean | nil,
-        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]) | nil,
-        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean | nil,
         is_ordered_manually: HubspotSDK::Internal::Type::Boolean | nil,
-        published: HubspotSDK::Internal::Type::Boolean | nil,
-        published_at: Time | nil,
-        row_count: Integer | nil,
-        updated_at: Time | nil,
-        updated_by: HubspotSDK::Cms::SimpleUser | nil,
-        use_for_pages: HubspotSDK::Internal::Type::Boolean | nil
+        updated_by: HubspotSDK::Cms::SimpleUser | nil
       }
     end
   end
@@ -368,26 +386,26 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::TablesTest < HubspotSDK::Test::Re
 
     assert_pattern do
       response => {
+        id: String,
+        allow_child_tables: HubspotSDK::Internal::Type::Boolean,
+        allow_public_api_access: HubspotSDK::Internal::Type::Boolean,
+        column_count: Integer,
+        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]),
+        created_at: Time,
+        deleted: HubspotSDK::Internal::Type::Boolean,
         deleted_at: Time,
+        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]),
+        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean,
         label: String,
         name: String,
-        id: String | nil,
-        allow_child_tables: HubspotSDK::Internal::Type::Boolean | nil,
-        allow_public_api_access: HubspotSDK::Internal::Type::Boolean | nil,
-        column_count: Integer | nil,
-        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]) | nil,
-        created_at: Time | nil,
+        published: HubspotSDK::Internal::Type::Boolean,
+        published_at: Time,
+        row_count: Integer,
+        updated_at: Time,
+        use_for_pages: HubspotSDK::Internal::Type::Boolean,
         created_by: HubspotSDK::Cms::SimpleUser | nil,
-        deleted: HubspotSDK::Internal::Type::Boolean | nil,
-        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]) | nil,
-        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean | nil,
         is_ordered_manually: HubspotSDK::Internal::Type::Boolean | nil,
-        published: HubspotSDK::Internal::Type::Boolean | nil,
-        published_at: Time | nil,
-        row_count: Integer | nil,
-        updated_at: Time | nil,
-        updated_by: HubspotSDK::Cms::SimpleUser | nil,
-        use_for_pages: HubspotSDK::Internal::Type::Boolean | nil
+        updated_by: HubspotSDK::Cms::SimpleUser | nil
       }
     end
   end
@@ -395,7 +413,26 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::TablesTest < HubspotSDK::Test::Re
   def test_update_draft_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.cms.hubdb.tables.update_draft("tableIdOrName", label: "label", name: "name")
+    response =
+      @hubspot.cms.hubdb.tables.update_draft(
+        "tableIdOrName",
+        allow_child_tables: true,
+        allow_public_api_access: true,
+        columns: [
+          {
+            id: 0,
+            label: "label",
+            name: "name",
+            options: [{hidden: false, label: "Option A", value: "A"}],
+            type: :NULL
+          }
+        ],
+        dynamic_meta_tags: {foo: 0},
+        enable_child_table_pages: true,
+        label: "label",
+        name: "name",
+        use_for_pages: true
+      )
 
     assert_pattern do
       response => HubspotSDK::Cms::HubDBTableV3
@@ -403,26 +440,26 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::TablesTest < HubspotSDK::Test::Re
 
     assert_pattern do
       response => {
+        id: String,
+        allow_child_tables: HubspotSDK::Internal::Type::Boolean,
+        allow_public_api_access: HubspotSDK::Internal::Type::Boolean,
+        column_count: Integer,
+        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]),
+        created_at: Time,
+        deleted: HubspotSDK::Internal::Type::Boolean,
         deleted_at: Time,
+        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]),
+        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean,
         label: String,
         name: String,
-        id: String | nil,
-        allow_child_tables: HubspotSDK::Internal::Type::Boolean | nil,
-        allow_public_api_access: HubspotSDK::Internal::Type::Boolean | nil,
-        column_count: Integer | nil,
-        columns: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column]) | nil,
-        created_at: Time | nil,
+        published: HubspotSDK::Internal::Type::Boolean,
+        published_at: Time,
+        row_count: Integer,
+        updated_at: Time,
+        use_for_pages: HubspotSDK::Internal::Type::Boolean,
         created_by: HubspotSDK::Cms::SimpleUser | nil,
-        deleted: HubspotSDK::Internal::Type::Boolean | nil,
-        dynamic_meta_tags: ^(HubspotSDK::Internal::Type::HashOf[Integer]) | nil,
-        enable_child_table_pages: HubspotSDK::Internal::Type::Boolean | nil,
         is_ordered_manually: HubspotSDK::Internal::Type::Boolean | nil,
-        published: HubspotSDK::Internal::Type::Boolean | nil,
-        published_at: Time | nil,
-        row_count: Integer | nil,
-        updated_at: Time | nil,
-        updated_by: HubspotSDK::Cms::SimpleUser | nil,
-        use_for_pages: HubspotSDK::Internal::Type::Boolean | nil
+        updated_by: HubspotSDK::Cms::SimpleUser | nil
       }
     end
   end

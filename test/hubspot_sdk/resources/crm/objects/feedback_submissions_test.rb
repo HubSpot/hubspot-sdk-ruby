@@ -22,14 +22,15 @@ class HubspotSDK::Test::Resources::Crm::Objects::FeedbackSubmissionsTest < Hubsp
     assert_pattern do
       row => {
         id: String,
+        archived: HubspotSDK::Internal::Type::Boolean,
         created_at: Time,
         properties: ^(HubspotSDK::Internal::Type::HashOf[String, nil?: true]),
         updated_at: Time,
-        archived: HubspotSDK::Internal::Type::Boolean | nil,
         archived_at: Time | nil,
         associations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Crm::CollectionResponseAssociatedID]) | nil,
         object_write_trace_id: String | nil,
-        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil
+        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil,
+        url: String | nil
       }
     end
   end
@@ -46,22 +47,30 @@ class HubspotSDK::Test::Resources::Crm::Objects::FeedbackSubmissionsTest < Hubsp
     assert_pattern do
       response => {
         id: String,
+        archived: HubspotSDK::Internal::Type::Boolean,
         created_at: Time,
         properties: ^(HubspotSDK::Internal::Type::HashOf[String, nil?: true]),
         updated_at: Time,
-        archived: HubspotSDK::Internal::Type::Boolean | nil,
         archived_at: Time | nil,
         associations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Crm::CollectionResponseAssociatedID]) | nil,
         object_write_trace_id: String | nil,
-        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil
+        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil,
+        url: String | nil
       }
     end
   end
 
-  def test_search
+  def test_search_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.crm.objects.feedback_submissions.search
+    response =
+      @hubspot.crm.objects.feedback_submissions.search(
+        after: "after",
+        filter_groups: [{filters: [{operator: :EQ, propertyName: "propertyName"}]}],
+        limit: 0,
+        properties: ["string"],
+        sorts: ["string"]
+      )
 
     assert_pattern do
       response => HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
@@ -71,7 +80,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::FeedbackSubmissionsTest < Hubsp
       response => {
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         total: Integer,
-        paging: HubspotSDK::Marketing::EmailsPaging | nil
+        paging: HubspotSDK::Paging | nil
       }
     end
   end

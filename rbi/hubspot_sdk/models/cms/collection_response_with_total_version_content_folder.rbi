@@ -20,11 +20,10 @@ module HubspotSDK
         sig { returns(Integer) }
         attr_accessor :total
 
-        # Contains information pagination of results.
-        sig { returns(T.nilable(HubspotSDK::Marketing::EmailsPaging)) }
+        sig { returns(T.nilable(HubspotSDK::Paging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::Marketing::EmailsPaging::OrHash).void }
+        sig { params(paging: HubspotSDK::Paging::OrHash).void }
         attr_writer :paging
 
         # Response object for collections of content folder versions with pagination
@@ -33,7 +32,7 @@ module HubspotSDK
           params(
             results: T::Array[HubspotSDK::Cms::VersionContentFolder::OrHash],
             total: Integer,
-            paging: HubspotSDK::Marketing::EmailsPaging::OrHash
+            paging: HubspotSDK::Paging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -41,7 +40,6 @@ module HubspotSDK
           results:,
           # Total number of content folder versions.
           total:,
-          # Contains information pagination of results.
           paging: nil
         )
         end
@@ -51,7 +49,7 @@ module HubspotSDK
             {
               results: T::Array[HubspotSDK::Cms::VersionContentFolder],
               total: Integer,
-              paging: HubspotSDK::Marketing::EmailsPaging
+              paging: HubspotSDK::Paging
             }
           )
         end

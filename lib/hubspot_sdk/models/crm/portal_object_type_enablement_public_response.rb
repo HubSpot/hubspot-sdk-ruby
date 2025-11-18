@@ -5,6 +5,7 @@ module HubspotSDK
     module Crm
       class PortalObjectTypeEnablementPublicResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute enablement_by_object_type_id
+        #   A map of objectTypeId to whether that object type is enabled or not
         #
         #   @return [Hash{Symbol=>Boolean}]
         required :enablement_by_object_type_id,
@@ -12,7 +13,7 @@ module HubspotSDK
                  api_name: :enablementByObjectTypeId
 
         # @!method initialize(enablement_by_object_type_id:)
-        #   @param enablement_by_object_type_id [Hash{Symbol=>Boolean}]
+        #   @param enablement_by_object_type_id [Hash{Symbol=>Boolean}] A map of objectTypeId to whether that object type is enabled or not
       end
     end
   end

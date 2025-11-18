@@ -12,11 +12,15 @@ module HubspotSDK
             )
           end
 
+        # Whether the object type is enabled or not
         sig { returns(T::Boolean) }
         attr_accessor :enablement
 
         sig { params(enablement: T::Boolean).returns(T.attached_class) }
-        def self.new(enablement:)
+        def self.new(
+          # Whether the object type is enabled or not
+          enablement:
+        )
         end
 
         sig { override.returns({ enablement: T::Boolean }) }

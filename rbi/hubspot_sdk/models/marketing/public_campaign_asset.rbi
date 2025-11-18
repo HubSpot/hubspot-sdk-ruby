@@ -15,8 +15,11 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :id
 
-        sig { returns(T::Hash[Symbol, Float]) }
-        attr_accessor :metrics
+        sig { returns(T.nilable(T::Hash[Symbol, Float])) }
+        attr_reader :metrics
+
+        sig { params(metrics: T::Hash[Symbol, Float]).void }
+        attr_writer :metrics
 
         sig { returns(T.nilable(String)) }
         attr_reader :name
@@ -31,7 +34,7 @@ module HubspotSDK
             name: String
           ).returns(T.attached_class)
         end
-        def self.new(id:, metrics:, name: nil)
+        def self.new(id:, metrics: nil, name: nil)
         end
 
         sig do

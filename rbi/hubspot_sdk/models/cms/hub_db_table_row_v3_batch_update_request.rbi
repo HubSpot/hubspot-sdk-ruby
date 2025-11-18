@@ -12,26 +12,23 @@ module HubspotSDK
             )
           end
 
-        # The id of the table row
-        sig { returns(String) }
-        attr_accessor :id
+        # Specifies the value for the column child table id
+        sig { returns(Integer) }
+        attr_accessor :child_table_id
+
+        sig { returns(Integer) }
+        attr_accessor :display_index
 
         # List of key value pairs with the column name and column value
         sig { returns(T::Hash[Symbol, T.anything]) }
         attr_accessor :values
 
-        # Specifies the value for the column child table id
-        sig { returns(T.nilable(Integer)) }
-        attr_reader :child_table_id
+        # The id of the table row
+        sig { returns(T.nilable(String)) }
+        attr_reader :id
 
-        sig { params(child_table_id: Integer).void }
-        attr_writer :child_table_id
-
-        sig { returns(T.nilable(Integer)) }
-        attr_reader :display_index
-
-        sig { params(display_index: Integer).void }
-        attr_writer :display_index
+        sig { params(id: String).void }
+        attr_writer :id
 
         # Specifies the value for `hs_name` column, which will be used as title in the
         # dynamic pages
@@ -51,22 +48,22 @@ module HubspotSDK
 
         sig do
           params(
-            id: String,
-            values: T::Hash[Symbol, T.anything],
             child_table_id: Integer,
             display_index: Integer,
+            values: T::Hash[Symbol, T.anything],
+            id: String,
             name: String,
             path: String
           ).returns(T.attached_class)
         end
         def self.new(
-          # The id of the table row
-          id:,
+          # Specifies the value for the column child table id
+          child_table_id:,
+          display_index:,
           # List of key value pairs with the column name and column value
           values:,
-          # Specifies the value for the column child table id
-          child_table_id: nil,
-          display_index: nil,
+          # The id of the table row
+          id: nil,
           # Specifies the value for `hs_name` column, which will be used as title in the
           # dynamic pages
           name: nil,
@@ -79,10 +76,10 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              id: String,
-              values: T::Hash[Symbol, T.anything],
               child_table_id: Integer,
               display_index: Integer,
+              values: T::Hash[Symbol, T.anything],
+              id: String,
               name: String,
               path: String
             }

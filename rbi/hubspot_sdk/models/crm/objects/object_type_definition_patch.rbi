@@ -3,6 +3,8 @@
 module HubspotSDK
   module Models
     module Crm
+      ObjectTypeDefinitionPatch = Objects::ObjectTypeDefinitionPatch
+
       module Objects
         class ObjectTypeDefinitionPatch < HubspotSDK::Internal::Type::BaseModel
           OrHash =

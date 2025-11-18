@@ -1,5 +1,7 @@
 module HubspotSDK
   module Models
+    class MarketingEventSubscriber = Marketing::MarketingEventSubscriber
+
     module Marketing
       type marketing_event_subscriber =
         {
@@ -11,18 +13,14 @@ module HubspotSDK
       class MarketingEventSubscriber < HubspotSDK::Internal::Type::BaseModel
         attr_accessor interaction_date_time: Integer
 
-        attr_reader properties: ::Hash[Symbol, String]?
+        attr_accessor properties: ::Hash[Symbol, String]
 
-        def properties=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
-
-        attr_reader vid: Integer?
-
-        def vid=: (Integer) -> Integer
+        attr_accessor vid: Integer
 
         def initialize: (
           interaction_date_time: Integer,
-          ?properties: ::Hash[Symbol, String],
-          ?vid: Integer
+          properties: ::Hash[Symbol, String],
+          vid: Integer
         ) -> void
 
         def to_hash: -> {

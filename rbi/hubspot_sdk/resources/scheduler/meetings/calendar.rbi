@@ -7,6 +7,7 @@ module HubspotSDK
         class Calendar
           sig do
             params(
+              organizer_user_id: String,
               associations:
                 T::Array[
                   HubspotSDK::Scheduler::ExternalAssociationCreateRequest::OrHash
@@ -22,9 +23,15 @@ module HubspotSDK
             )
           end
           def create(
+            # Query param:
+            organizer_user_id:,
+            # Body param:
             associations:,
+            # Body param:
             email_reminder_schedule:,
+            # Body param:
             properties:,
+            # Body param:
             timezone:,
             request_options: {}
           )

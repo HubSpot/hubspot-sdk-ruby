@@ -1,11 +1,13 @@
 module HubspotSDK
   module Models
+    class MarketingEventDefaultResponse = Marketing::MarketingEventDefaultResponse
+
     module Marketing
       type marketing_event_default_response =
         {
+          custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
           event_name: String,
           event_organizer: String,
-          custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
           end_date_time: Time,
           event_cancelled: bool,
           event_completed: bool,
@@ -17,15 +19,11 @@ module HubspotSDK
         }
 
       class MarketingEventDefaultResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue]
+
         attr_accessor event_name: String
 
         attr_accessor event_organizer: String
-
-        attr_reader custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue]?
-
-        def custom_properties=: (
-          ::Array[HubspotSDK::Marketing::PropertyValue]
-        ) -> ::Array[HubspotSDK::Marketing::PropertyValue]
 
         attr_reader end_date_time: Time?
 
@@ -60,9 +58,9 @@ module HubspotSDK
         def start_date_time=: (Time) -> Time
 
         def initialize: (
+          custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
           event_name: String,
           event_organizer: String,
-          ?custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
           ?end_date_time: Time,
           ?event_cancelled: bool,
           ?event_completed: bool,
@@ -74,9 +72,9 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
+          custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
           event_name: String,
           event_organizer: String,
-          custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
           end_date_time: Time,
           event_cancelled: bool,
           event_completed: bool,

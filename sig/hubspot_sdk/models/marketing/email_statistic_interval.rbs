@@ -8,21 +8,13 @@ module HubspotSDK
         }
 
       class EmailStatisticInterval < HubspotSDK::Internal::Type::BaseModel
-        attr_reader aggregations: HubspotSDK::Marketing::EmailStatisticsData?
+        attr_accessor aggregations: HubspotSDK::Marketing::EmailStatisticsData
 
-        def aggregations=: (
-          HubspotSDK::Marketing::EmailStatisticsData
-        ) -> HubspotSDK::Marketing::EmailStatisticsData
-
-        attr_reader interval: HubspotSDK::Marketing::Interval?
-
-        def interval=: (
-          HubspotSDK::Marketing::Interval
-        ) -> HubspotSDK::Marketing::Interval
+        attr_accessor interval: HubspotSDK::Marketing::Interval
 
         def initialize: (
-          ?aggregations: HubspotSDK::Marketing::EmailStatisticsData,
-          ?interval: HubspotSDK::Marketing::Interval
+          aggregations: HubspotSDK::Marketing::EmailStatisticsData,
+          interval: HubspotSDK::Marketing::Interval
         ) -> void
 
         def to_hash: -> {

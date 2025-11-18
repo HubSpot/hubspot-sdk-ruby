@@ -9,18 +9,22 @@ module HubspotSDK
         include HubspotSDK::Internal::Type::RequestParameters
 
         # @!attribute from_object_type_id
+        #   objectTypeId of the object type on the "from" side of the association
         #
         #   @return [String, nil]
         optional :from_object_type_id, String
 
         # @!attribute to_object_type_id
+        #   objectTypeId of the object type on the "to" side of the association
         #
         #   @return [String, nil]
         optional :to_object_type_id, String
 
         # @!method initialize(from_object_type_id: nil, to_object_type_id: nil, request_options: {})
-        #   @param from_object_type_id [String]
-        #   @param to_object_type_id [String]
+        #   @param from_object_type_id [String] objectTypeId of the object type on the "from" side of the association
+        #
+        #   @param to_object_type_id [String] objectTypeId of the object type on the "to" side of the association
+        #
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end

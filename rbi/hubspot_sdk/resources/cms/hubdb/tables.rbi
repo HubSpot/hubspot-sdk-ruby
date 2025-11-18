@@ -9,36 +9,36 @@ module HubspotSDK
           # should be unique for each account.
           sig do
             params(
-              label: String,
-              name: String,
               allow_child_tables: T::Boolean,
               allow_public_api_access: T::Boolean,
               columns: T::Array[HubspotSDK::Cms::ColumnRequest::OrHash],
               dynamic_meta_tags: T::Hash[Symbol, Integer],
               enable_child_table_pages: T::Boolean,
+              label: String,
+              name: String,
               use_for_pages: T::Boolean,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Cms::HubDBTableV3)
           end
           def create(
+            # Specifies whether child tables can be created
+            allow_child_tables:,
+            # Specifies whether the table can be read by public without authorization
+            allow_public_api_access:,
+            # List of columns in the table
+            columns:,
+            # Specifies the key value pairs of the
+            # [metadata fields](https://developers.hubspot.com/docs/cms/guides/dynamic-pages/hubdb#dynamic-pages)
+            # with the associated column IDs.
+            dynamic_meta_tags:,
+            # Specifies creation of multi-level dynamic pages using child tables
+            enable_child_table_pages:,
             # Label of the table
             label:,
             # Name of the table
             name:,
-            # Specifies whether child tables can be created
-            allow_child_tables: nil,
-            # Specifies whether the table can be read by public without authorization
-            allow_public_api_access: nil,
-            # List of columns in the table
-            columns: nil,
-            # Specifies the key value pairs of the
-            # [metadata fields](https://developers.hubspot.com/docs/cms/guides/dynamic-pages/hubdb#dynamic-pages)
-            # with the associated column IDs.
-            dynamic_meta_tags: nil,
-            # Specifies creation of multi-level dynamic pages using child tables
-            enable_child_table_pages: nil,
             # Specifies whether the table can be used for creation of dynamic pages
-            use_for_pages: nil,
+            use_for_pages:,
             request_options: {}
           )
           end
@@ -373,49 +373,49 @@ module HubspotSDK
           sig do
             params(
               table_id_or_name: String,
-              label: String,
-              name: String,
-              archived: T::Boolean,
-              include_foreign_ids: T::Boolean,
-              is_get_localized_schema: T::Boolean,
               allow_child_tables: T::Boolean,
               allow_public_api_access: T::Boolean,
               columns: T::Array[HubspotSDK::Cms::ColumnRequest::OrHash],
               dynamic_meta_tags: T::Hash[Symbol, Integer],
               enable_child_table_pages: T::Boolean,
+              label: String,
+              name: String,
               use_for_pages: T::Boolean,
+              archived: T::Boolean,
+              include_foreign_ids: T::Boolean,
+              is_get_localized_schema: T::Boolean,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Cms::HubDBTableV3)
           end
           def update_draft(
             # Path param: The ID or name of the table to update.
             table_id_or_name,
+            # Body param: Specifies whether child tables can be created
+            allow_child_tables:,
+            # Body param: Specifies whether the table can be read by public without
+            # authorization
+            allow_public_api_access:,
+            # Body param: List of columns in the table
+            columns:,
+            # Body param: Specifies the key value pairs of the
+            # [metadata fields](https://developers.hubspot.com/docs/cms/guides/dynamic-pages/hubdb#dynamic-pages)
+            # with the associated column IDs.
+            dynamic_meta_tags:,
+            # Body param: Specifies creation of multi-level dynamic pages using child tables
+            enable_child_table_pages:,
             # Body param: Label of the table
             label:,
             # Body param: Name of the table
             name:,
+            # Body param: Specifies whether the table can be used for creation of dynamic
+            # pages
+            use_for_pages:,
             # Query param: Specifies whether to return archived tables. Defaults to `false`.
             archived: nil,
             # Query param: Set this to `true` to populate foreign ID values in the result.
             include_foreign_ids: nil,
             # Query param:
             is_get_localized_schema: nil,
-            # Body param: Specifies whether child tables can be created
-            allow_child_tables: nil,
-            # Body param: Specifies whether the table can be read by public without
-            # authorization
-            allow_public_api_access: nil,
-            # Body param: List of columns in the table
-            columns: nil,
-            # Body param: Specifies the key value pairs of the
-            # [metadata fields](https://developers.hubspot.com/docs/cms/guides/dynamic-pages/hubdb#dynamic-pages)
-            # with the associated column IDs.
-            dynamic_meta_tags: nil,
-            # Body param: Specifies creation of multi-level dynamic pages using child tables
-            enable_child_table_pages: nil,
-            # Body param: Specifies whether the table can be used for creation of dynamic
-            # pages
-            use_for_pages: nil,
             request_options: {}
           )
           end

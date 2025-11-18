@@ -1,5 +1,7 @@
 module HubspotSDK
   module Models
+    class MarketingEventIdentifiersResponse = Marketing::MarketingEventIdentifiersResponse
+
     module Marketing
       type marketing_event_identifiers_response =
         {

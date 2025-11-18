@@ -6,7 +6,7 @@ module HubspotSDK
       class Objects
         class Carts
           class Batch
-            # Create a batch of carts
+            # Create a batch of carts with specified properties and associations.
             #
             # @overload create(inputs:, request_options: {})
             #
@@ -27,7 +27,7 @@ module HubspotSDK
               )
             end
 
-            # Update a batch of carts by internal ID, or unique property values
+            # Update a batch of carts using their internal IDs or unique property values.
             #
             # @overload update(inputs:, request_options: {})
             #
@@ -48,7 +48,7 @@ module HubspotSDK
               )
             end
 
-            # Archive a batch of carts by ID
+            # Archive a batch of carts identified by their IDs.
             #
             # @overload delete(inputs:, request_options: {})
             #
@@ -85,7 +85,7 @@ module HubspotSDK
             #
             # @param archived [Boolean] Query param: Whether to return only results that have been archived.
             #
-            # @param id_property [String] Body param:
+            # @param id_property [String] Body param: A unique property used to identify objects instead of the default ID
             #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #

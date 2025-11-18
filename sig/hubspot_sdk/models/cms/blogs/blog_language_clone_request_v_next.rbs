@@ -1,6 +1,8 @@
 module HubspotSDK
   module Models
     module Cms
+      class BlogLanguageCloneRequestVNext = Blogs::BlogLanguageCloneRequestVNext
+
       module Blogs
         type blog_language_clone_request_v_next =
           {

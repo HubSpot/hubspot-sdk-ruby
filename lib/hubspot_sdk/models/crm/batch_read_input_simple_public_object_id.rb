@@ -24,6 +24,7 @@ module HubspotSDK
                  api_name: :propertiesWithHistory
 
         # @!attribute id_property
+        #   A unique property used to identify objects instead of the default ID.
         #
         #   @return [String, nil]
         optional :id_property, String, api_name: :idProperty
@@ -39,7 +40,7 @@ module HubspotSDK
         #
         #   @param properties_with_history [Array<String>] Key-value pairs for setting properties for the new object and their histories.
         #
-        #   @param id_property [String]
+        #   @param id_property [String] A unique property used to identify objects instead of the default ID.
       end
     end
   end

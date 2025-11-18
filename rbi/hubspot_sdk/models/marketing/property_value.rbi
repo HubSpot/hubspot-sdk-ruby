@@ -12,158 +12,93 @@ module HubspotSDK
             )
           end
 
-        # Name of custom property
-        sig { returns(String) }
-        attr_accessor :name
-
-        sig { returns(String) }
-        attr_accessor :source_upstream_deployable
-
-        # Custom property value
-        sig { returns(String) }
-        attr_accessor :value
-
         # The sensitivity level of the property, such as "non_sensitive", "sensitive", and
         # "highly_sensitive".
         sig do
           returns(
-            T.nilable(
-              HubspotSDK::Marketing::PropertyValue::DataSensitivity::OrSymbol
-            )
+            HubspotSDK::Marketing::PropertyValue::DataSensitivity::OrSymbol
           )
         end
-        attr_reader :data_sensitivity
-
-        sig do
-          params(
-            data_sensitivity:
-              HubspotSDK::Marketing::PropertyValue::DataSensitivity::OrSymbol
-          ).void
-        end
-        attr_writer :data_sensitivity
+        attr_accessor :data_sensitivity
 
         # Whether the property value is encrypted.
-        sig { returns(T.nilable(T::Boolean)) }
-        attr_reader :is_encrypted
+        sig { returns(T::Boolean) }
+        attr_accessor :is_encrypted
 
-        sig { params(is_encrypted: T::Boolean).void }
-        attr_writer :is_encrypted
+        sig { returns(T::Boolean) }
+        attr_accessor :is_large_value
 
-        sig { returns(T.nilable(T::Boolean)) }
-        attr_reader :is_large_value
+        # Name of custom property
+        sig { returns(String) }
+        attr_accessor :name
 
-        sig { params(is_large_value: T::Boolean).void }
-        attr_writer :is_large_value
-
-        sig { returns(T.nilable(Integer)) }
-        attr_reader :persistence_timestamp
-
-        sig { params(persistence_timestamp: Integer).void }
-        attr_writer :persistence_timestamp
+        sig { returns(Integer) }
+        attr_accessor :persistence_timestamp
 
         # A unique ID associated with this request.
-        sig { returns(T.nilable(String)) }
-        attr_reader :request_id
-
-        sig { params(request_id: String).void }
-        attr_writer :request_id
+        sig { returns(String) }
+        attr_accessor :request_id
 
         # Whether the value was selected by a user.
-        sig { returns(T.nilable(T::Boolean)) }
-        attr_reader :selected_by_user
-
-        sig { params(selected_by_user: T::Boolean).void }
-        attr_writer :selected_by_user
+        sig { returns(T::Boolean) }
+        attr_accessor :selected_by_user
 
         # The timestamp when the value was selected by a user, if applicable.
-        sig { returns(T.nilable(Integer)) }
-        attr_reader :selected_by_user_timestamp
-
-        sig { params(selected_by_user_timestamp: Integer).void }
-        attr_writer :selected_by_user_timestamp
+        sig { returns(Integer) }
+        attr_accessor :selected_by_user_timestamp
 
         # The origin of the property value, such as "IMPORT" or "API".
-        sig do
-          returns(
-            T.nilable(HubspotSDK::Marketing::PropertyValue::Source::OrSymbol)
-          )
-        end
-        attr_reader :source
-
-        sig do
-          params(
-            source: HubspotSDK::Marketing::PropertyValue::Source::OrSymbol
-          ).void
-        end
-        attr_writer :source
+        sig { returns(HubspotSDK::Marketing::PropertyValue::Source::OrSymbol) }
+        attr_accessor :source
 
         # The ID of the property source indicating where it was created.
-        sig { returns(T.nilable(String)) }
-        attr_reader :source_id
-
-        sig { params(source_id: String).void }
-        attr_writer :source_id
+        sig { returns(String) }
+        attr_accessor :source_id
 
         # A human-readable label.
-        sig { returns(T.nilable(String)) }
-        attr_reader :source_label
-
-        sig { params(source_label: String).void }
-        attr_writer :source_label
+        sig { returns(String) }
+        attr_accessor :source_label
 
         # Source metadata encoded as a base64 string. For example: `ZXhhbXBsZSBzdHJpbmc=`
-        sig { returns(T.nilable(String)) }
-        attr_reader :source_metadata
+        sig { returns(String) }
+        attr_accessor :source_metadata
 
-        sig { params(source_metadata: String).void }
-        attr_writer :source_metadata
+        sig { returns(String) }
+        attr_accessor :source_upstream_deployable
 
         # The unique identifier associated with the source.
-        sig { returns(T.nilable(T::Array[Integer])) }
-        attr_reader :source_vid
-
-        sig { params(source_vid: T::Array[Integer]).void }
-        attr_writer :source_vid
+        sig { returns(T::Array[Integer]) }
+        attr_accessor :source_vid
 
         # When the value was set, as a 64-bit integer.
-        sig { returns(T.nilable(Integer)) }
-        attr_reader :timestamp
-
-        sig { params(timestamp: Integer).void }
-        attr_writer :timestamp
+        sig { returns(Integer) }
+        attr_accessor :timestamp
 
         # The unit of measurement or context for the value.
-        sig { returns(T.nilable(String)) }
-        attr_reader :unit
-
-        sig { params(unit: String).void }
-        attr_writer :unit
+        sig { returns(String) }
+        attr_accessor :unit
 
         # The ID of the user who updated the property.
-        sig { returns(T.nilable(Integer)) }
-        attr_reader :updated_by_user_id
+        sig { returns(Integer) }
+        attr_accessor :updated_by_user_id
 
-        sig { params(updated_by_user_id: Integer).void }
-        attr_writer :updated_by_user_id
+        sig { returns(T::Boolean) }
+        attr_accessor :use_timestamp_as_persistence_timestamp
 
-        sig { returns(T.nilable(T::Boolean)) }
-        attr_reader :use_timestamp_as_persistence_timestamp
-
-        sig { params(use_timestamp_as_persistence_timestamp: T::Boolean).void }
-        attr_writer :use_timestamp_as_persistence_timestamp
+        # Custom property value
+        sig { returns(String) }
+        attr_accessor :value
 
         # Represents a single custom property of a marketing event, storing its name,
         # value, metadata (like source, timestamp, and sensitivity), and related audit
         # information for tracking changes.
         sig do
           params(
-            name: String,
-            source_upstream_deployable: String,
-            value: String,
             data_sensitivity:
               HubspotSDK::Marketing::PropertyValue::DataSensitivity::OrSymbol,
             is_encrypted: T::Boolean,
             is_large_value: T::Boolean,
+            name: String,
             persistence_timestamp: Integer,
             request_id: String,
             selected_by_user: T::Boolean,
@@ -172,62 +107,62 @@ module HubspotSDK
             source_id: String,
             source_label: String,
             source_metadata: String,
+            source_upstream_deployable: String,
             source_vid: T::Array[Integer],
             timestamp: Integer,
             unit: String,
             updated_by_user_id: Integer,
-            use_timestamp_as_persistence_timestamp: T::Boolean
+            use_timestamp_as_persistence_timestamp: T::Boolean,
+            value: String
           ).returns(T.attached_class)
         end
         def self.new(
-          # Name of custom property
-          name:,
-          source_upstream_deployable:,
-          # Custom property value
-          value:,
           # The sensitivity level of the property, such as "non_sensitive", "sensitive", and
           # "highly_sensitive".
-          data_sensitivity: nil,
+          data_sensitivity:,
           # Whether the property value is encrypted.
-          is_encrypted: nil,
-          is_large_value: nil,
-          persistence_timestamp: nil,
+          is_encrypted:,
+          is_large_value:,
+          # Name of custom property
+          name:,
+          persistence_timestamp:,
           # A unique ID associated with this request.
-          request_id: nil,
+          request_id:,
           # Whether the value was selected by a user.
-          selected_by_user: nil,
+          selected_by_user:,
           # The timestamp when the value was selected by a user, if applicable.
-          selected_by_user_timestamp: nil,
+          selected_by_user_timestamp:,
           # The origin of the property value, such as "IMPORT" or "API".
-          source: nil,
+          source:,
           # The ID of the property source indicating where it was created.
-          source_id: nil,
+          source_id:,
           # A human-readable label.
-          source_label: nil,
+          source_label:,
           # Source metadata encoded as a base64 string. For example: `ZXhhbXBsZSBzdHJpbmc=`
-          source_metadata: nil,
+          source_metadata:,
+          source_upstream_deployable:,
           # The unique identifier associated with the source.
-          source_vid: nil,
+          source_vid:,
           # When the value was set, as a 64-bit integer.
-          timestamp: nil,
+          timestamp:,
           # The unit of measurement or context for the value.
-          unit: nil,
+          unit:,
           # The ID of the user who updated the property.
-          updated_by_user_id: nil,
-          use_timestamp_as_persistence_timestamp: nil
+          updated_by_user_id:,
+          use_timestamp_as_persistence_timestamp:,
+          # Custom property value
+          value:
         )
         end
 
         sig do
           override.returns(
             {
-              name: String,
-              source_upstream_deployable: String,
-              value: String,
               data_sensitivity:
                 HubspotSDK::Marketing::PropertyValue::DataSensitivity::OrSymbol,
               is_encrypted: T::Boolean,
               is_large_value: T::Boolean,
+              name: String,
               persistence_timestamp: Integer,
               request_id: String,
               selected_by_user: T::Boolean,
@@ -236,11 +171,13 @@ module HubspotSDK
               source_id: String,
               source_label: String,
               source_metadata: String,
+              source_upstream_deployable: String,
               source_vid: T::Array[Integer],
               timestamp: Integer,
               unit: String,
               updated_by_user_id: Integer,
-              use_timestamp_as_persistence_timestamp: T::Boolean
+              use_timestamp_as_persistence_timestamp: T::Boolean,
+              value: String
             }
           )
         end

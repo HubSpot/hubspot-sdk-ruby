@@ -3,25 +3,25 @@ module HubspotSDK
     module Cms
       module MediaBridge
         type group_delete_by_name_params =
-          { app_id: String, object_type: String }
+          { app_id: Integer, object_type: String }
           & HubspotSDK::Internal::Type::request_parameters
 
         class GroupDeleteByNameParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          attr_accessor app_id: String
+          attr_accessor app_id: Integer
 
           attr_accessor object_type: String
 
           def initialize: (
-            app_id: String,
+            app_id: Integer,
             object_type: String,
             ?request_options: HubspotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
-            app_id: String,
+            app_id: Integer,
             object_type: String,
             request_options: HubspotSDK::RequestOptions
           }

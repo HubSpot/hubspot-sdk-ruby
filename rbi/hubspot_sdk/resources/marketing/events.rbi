@@ -21,12 +21,12 @@ module HubspotSDK
         # Creates a new marketing event in HubSpot
         sig do
           params(
+            custom_properties:
+              T::Array[HubspotSDK::Marketing::PropertyValue::OrHash],
             event_name: String,
             event_organizer: String,
             external_account_id: String,
             external_event_id: String,
-            custom_properties:
-              T::Array[HubspotSDK::Marketing::PropertyValue::OrHash],
             end_date_time: Time,
             event_cancelled: T::Boolean,
             event_completed: T::Boolean,
@@ -38,6 +38,15 @@ module HubspotSDK
           ).returns(HubspotSDK::Marketing::MarketingEventDefaultResponse)
         end
         def create(
+          # A list of PropertyValues. These can be whatever kind of property names and
+          # values you want. However, they must already exist on the HubSpot account's
+          # definition of the MarketingEvent Object. If they don't they will be filtered out
+          # and not set. In order to do this you'll need to create a new PropertyGroup on
+          # the HubSpot account's MarketingEvent object for your specific app and create the
+          # Custom Property you want to track on that HubSpot account. Do not create any new
+          # default properties on the MarketingEvent object as that will apply to all
+          # HubSpot accounts.
+          custom_properties:,
           # The name of the marketing event.
           event_name:,
           # The name of the organizer of the marketing event.
@@ -47,15 +56,6 @@ module HubspotSDK
           external_account_id:,
           # The id of the marketing event in the external event application.
           external_event_id:,
-          # A list of PropertyValues. These can be whatever kind of property names and
-          # values you want. However, they must already exist on the HubSpot account's
-          # definition of the MarketingEvent Object. If they don't they will be filtered out
-          # and not set. In order to do this you'll need to create a new PropertyGroup on
-          # the HubSpot account's MarketingEvent object for your specific app and create the
-          # Custom Property you want to track on that HubSpot account. Do not create any new
-          # default properties on the MarketingEvent object as that will apply to all
-          # HubSpot accounts.
-          custom_properties: nil,
           # The end date and time of the marketing event.
           end_date_time: nil,
           # Indicates if the marketing event has been cancelled. Defaults to `false`
@@ -383,7 +383,7 @@ module HubspotSDK
           # app and create the Custom Property you want to track on that HubSpot account. Do
           # not create any new default properties on the MarketingEvent object as that will
           # apply to all HubSpot accounts.
-          custom_properties: nil,
+          custom_properties:,
           # Body param: The end date and time of the marketing event.
           end_date_time: nil,
           # Body param: Indicates if the marketing event has been cancelled. Defaults to
@@ -432,12 +432,12 @@ module HubspotSDK
         sig do
           params(
             path_external_event_id: String,
+            custom_properties:
+              T::Array[HubspotSDK::Marketing::PropertyValue::OrHash],
             event_name: String,
             event_organizer: String,
             external_account_id: String,
             body_external_event_id: String,
-            custom_properties:
-              T::Array[HubspotSDK::Marketing::PropertyValue::OrHash],
             end_date_time: Time,
             event_cancelled: T::Boolean,
             event_completed: T::Boolean,
@@ -451,6 +451,15 @@ module HubspotSDK
         def upsert_by_external_event_id(
           # The id of the marketing event in the external event application
           path_external_event_id,
+          # A list of PropertyValues. These can be whatever kind of property names and
+          # values you want. However, they must already exist on the HubSpot account's
+          # definition of the MarketingEvent Object. If they don't they will be filtered out
+          # and not set. In order to do this you'll need to create a new PropertyGroup on
+          # the HubSpot account's MarketingEvent object for your specific app and create the
+          # Custom Property you want to track on that HubSpot account. Do not create any new
+          # default properties on the MarketingEvent object as that will apply to all
+          # HubSpot accounts.
+          custom_properties:,
           # The name of the marketing event.
           event_name:,
           # The name of the organizer of the marketing event.
@@ -460,15 +469,6 @@ module HubspotSDK
           external_account_id:,
           # The id of the marketing event in the external event application.
           body_external_event_id:,
-          # A list of PropertyValues. These can be whatever kind of property names and
-          # values you want. However, they must already exist on the HubSpot account's
-          # definition of the MarketingEvent Object. If they don't they will be filtered out
-          # and not set. In order to do this you'll need to create a new PropertyGroup on
-          # the HubSpot account's MarketingEvent object for your specific app and create the
-          # Custom Property you want to track on that HubSpot account. Do not create any new
-          # default properties on the MarketingEvent object as that will apply to all
-          # HubSpot accounts.
-          custom_properties: nil,
           # The end date and time of the marketing event.
           end_date_time: nil,
           # Indicates if the marketing event has been cancelled. Defaults to `false`

@@ -6,8 +6,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::GroupsTest < HubspotSDK::Te
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response =
-      @hubspot.cms.media_bridge.groups.create("objectType", app_id: "appId", label: "label", name: "name")
+    response = @hubspot.cms.media_bridge.groups.create("objectType", app_id: 0, label: "label", name: "name")
 
     assert_pattern do
       response => HubspotSDK::Crm::PropertyGroup
@@ -26,7 +25,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::GroupsTest < HubspotSDK::Te
   def test_list_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.cms.media_bridge.groups.list("objectType", app_id: "appId")
+    response = @hubspot.cms.media_bridge.groups.list("objectType", app_id: 0)
 
     assert_pattern do
       response => HubspotSDK::Cms::CollectionResponsePropertyGroupNoPaging
@@ -43,7 +42,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::GroupsTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hubspot.cms.media_bridge.groups.delete_by_name("groupName", app_id: "appId", object_type: "objectType")
+      @hubspot.cms.media_bridge.groups.delete_by_name("groupName", app_id: 0, object_type: "objectType")
 
     assert_pattern do
       response => nil
@@ -54,7 +53,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::GroupsTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hubspot.cms.media_bridge.groups.get_by_name("groupName", app_id: "appId", object_type: "objectType")
+      @hubspot.cms.media_bridge.groups.get_by_name("groupName", app_id: 0, object_type: "objectType")
 
     assert_pattern do
       response => HubspotSDK::Crm::PropertyGroup
@@ -74,7 +73,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::GroupsTest < HubspotSDK::Te
     skip("Prism tests are disabled")
 
     response =
-      @hubspot.cms.media_bridge.groups.update_by_name("groupName", app_id: "appId", object_type: "objectType")
+      @hubspot.cms.media_bridge.groups.update_by_name("groupName", app_id: 0, object_type: "objectType")
 
     assert_pattern do
       response => HubspotSDK::Crm::PropertyGroup

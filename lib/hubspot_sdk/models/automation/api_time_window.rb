@@ -11,15 +11,15 @@ module HubspotSDK
 
         # @!attribute end_time
         #
-        #   @return [HubspotSDK::Models::Automation::APITimeOfDay]
-        required :end_time, -> { HubspotSDK::Automation::APITimeOfDay }, api_name: :endTime
+        #   @return [HubspotSDK::Models::Automation::APITimeOfDay, nil]
+        optional :end_time, -> { HubspotSDK::Automation::APITimeOfDay }, api_name: :endTime
 
         # @!attribute start_time
         #
-        #   @return [HubspotSDK::Models::Automation::APITimeOfDay]
-        required :start_time, -> { HubspotSDK::Automation::APITimeOfDay }, api_name: :startTime
+        #   @return [HubspotSDK::Models::Automation::APITimeOfDay, nil]
+        optional :start_time, -> { HubspotSDK::Automation::APITimeOfDay }, api_name: :startTime
 
-        # @!method initialize(day:, end_time:, start_time:)
+        # @!method initialize(day:, end_time: nil, start_time: nil)
         #   @param day [Symbol, HubspotSDK::Models::Automation::APITimeWindow::Day]
         #   @param end_time [HubspotSDK::Models::Automation::APITimeOfDay]
         #   @param start_time [HubspotSDK::Models::Automation::APITimeOfDay]

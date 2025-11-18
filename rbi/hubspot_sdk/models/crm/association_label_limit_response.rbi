@@ -12,6 +12,7 @@ module HubspotSDK
             )
           end
 
+        # A list of all association labels.
         sig { returns(T::Array[String]) }
         attr_accessor :all_labels
 
@@ -29,9 +30,11 @@ module HubspotSDK
         end
         attr_writer :from_object_type
 
+        # The maximum number of association labels allowed.
         sig { returns(Integer) }
         attr_accessor :limit
 
+        # The percentage of the association label limit that has been used.
         sig { returns(Float) }
         attr_accessor :percentage
 
@@ -49,6 +52,7 @@ module HubspotSDK
         end
         attr_writer :to_object_type
 
+        # The current number of association labels used.
         sig { returns(Integer) }
         attr_accessor :usage
 
@@ -65,13 +69,17 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # A list of all association labels.
           all_labels:,
           # Defines an object type.
           from_object_type:,
+          # The maximum number of association labels allowed.
           limit:,
+          # The percentage of the association label limit that has been used.
           percentage:,
           # Defines an object type.
           to_object_type:,
+          # The current number of association labels used.
           usage:
         )
         end

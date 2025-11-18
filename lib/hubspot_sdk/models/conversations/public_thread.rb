@@ -10,6 +10,12 @@ module HubspotSDK
         #   @return [String]
         required :id, String
 
+        # @!attribute archived
+        #   Whether this thread is archived.
+        #
+        #   @return [Boolean]
+        required :archived, HubspotSDK::Internal::Type::Boolean
+
         # @!attribute associated_contact_id
         #   The ID of the associated Contact in the CRM. If the Contact for the thread has
         #   not yet been added or created, the `associatedContactId` returned will be a
@@ -52,12 +58,6 @@ module HubspotSDK
         #   @return [Symbol, HubspotSDK::Models::Conversations::PublicThread::Status]
         required :status, enum: -> { HubspotSDK::Conversations::PublicThread::Status }
 
-        # @!attribute archived
-        #   Whether this thread is archived.
-        #
-        #   @return [Boolean, nil]
-        optional :archived, HubspotSDK::Internal::Type::Boolean
-
         # @!attribute assigned_to
         #
         #   @return [String, nil]
@@ -94,11 +94,13 @@ module HubspotSDK
                  -> { HubspotSDK::Conversations::PublicThreadAssociations },
                  api_name: :threadAssociations
 
-        # @!method initialize(id:, associated_contact_id:, created_at:, inbox_id:, original_channel_account_id:, original_channel_id:, spam:, status:, archived: nil, assigned_to: nil, closed_at: nil, latest_message_received_timestamp: nil, latest_message_sent_timestamp: nil, latest_message_timestamp: nil, thread_associations: nil)
+        # @!method initialize(id:, archived:, associated_contact_id:, created_at:, inbox_id:, original_channel_account_id:, original_channel_id:, spam:, status:, assigned_to: nil, closed_at: nil, latest_message_received_timestamp: nil, latest_message_sent_timestamp: nil, latest_message_timestamp: nil, thread_associations: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Conversations::PublicThread} for more details.
         #
         #   @param id [String] The unique ID of the thread.
+        #
+        #   @param archived [Boolean] Whether this thread is archived.
         #
         #   @param associated_contact_id [String] The ID of the associated Contact in the CRM. If the Contact for the thread has n
         #
@@ -113,8 +115,6 @@ module HubspotSDK
         #   @param spam [Boolean] Whether the thread is marked as spam.
         #
         #   @param status [Symbol, HubspotSDK::Models::Conversations::PublicThread::Status] The thread's status: `OPEN` or `CLOSED`.
-        #
-        #   @param archived [Boolean] Whether this thread is archived.
         #
         #   @param assigned_to [String]
         #

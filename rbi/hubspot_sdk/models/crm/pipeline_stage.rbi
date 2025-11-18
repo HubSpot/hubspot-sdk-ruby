@@ -33,18 +33,6 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :label
 
-        # The date the pipeline stage was last updated.
-        sig { returns(Time) }
-        attr_accessor :updated_at
-
-        # The date the pipeline was archived. `archivedAt` will only be present if the
-        # pipeline is archived.
-        sig { returns(T.nilable(Time)) }
-        attr_reader :archived_at
-
-        sig { params(archived_at: Time).void }
-        attr_writer :archived_at
-
         # A JSON object containing properties that are not present on all object
         # pipelines.
         #
@@ -56,11 +44,20 @@ module HubspotSDK
         # (`{ "ticketState": "OPEN" }`), and represents whether the ticket remains open or
         # has been closed by a member of your Support team. Possible values are `OPEN` or
         # `CLOSED`.
-        sig { returns(T.nilable(T::Hash[Symbol, String])) }
-        attr_reader :metadata
+        sig { returns(T::Hash[Symbol, String]) }
+        attr_accessor :metadata
 
-        sig { params(metadata: T::Hash[Symbol, String]).void }
-        attr_writer :metadata
+        # The date the pipeline stage was last updated.
+        sig { returns(Time) }
+        attr_accessor :updated_at
+
+        # The date the pipeline was archived. `archivedAt` will only be present if the
+        # pipeline is archived.
+        sig { returns(T.nilable(Time)) }
+        attr_reader :archived_at
+
+        sig { params(archived_at: Time).void }
+        attr_writer :archived_at
 
         # Defines the level of write access for the pipeline stage, with possible values
         # being CRM_PERMISSIONS_ENFORCEMENT, READ_ONLY, or INTERNAL_ONLY.
@@ -89,9 +86,9 @@ module HubspotSDK
             created_at: Time,
             display_order: Integer,
             label: String,
+            metadata: T::Hash[Symbol, String],
             updated_at: Time,
             archived_at: Time,
-            metadata: T::Hash[Symbol, String],
             write_permissions:
               HubspotSDK::Crm::PipelineStage::WritePermissions::OrSymbol
           ).returns(T.attached_class)
@@ -111,11 +108,6 @@ module HubspotSDK
           # A label used to organize pipeline stages in HubSpot's UI. Each pipeline stage's
           # label must be unique within that pipeline.
           label:,
-          # The date the pipeline stage was last updated.
-          updated_at:,
-          # The date the pipeline was archived. `archivedAt` will only be present if the
-          # pipeline is archived.
-          archived_at: nil,
           # A JSON object containing properties that are not present on all object
           # pipelines.
           #
@@ -127,7 +119,12 @@ module HubspotSDK
           # (`{ "ticketState": "OPEN" }`), and represents whether the ticket remains open or
           # has been closed by a member of your Support team. Possible values are `OPEN` or
           # `CLOSED`.
-          metadata: nil,
+          metadata:,
+          # The date the pipeline stage was last updated.
+          updated_at:,
+          # The date the pipeline was archived. `archivedAt` will only be present if the
+          # pipeline is archived.
+          archived_at: nil,
           # Defines the level of write access for the pipeline stage, with possible values
           # being CRM_PERMISSIONS_ENFORCEMENT, READ_ONLY, or INTERNAL_ONLY.
           write_permissions: nil
@@ -142,9 +139,9 @@ module HubspotSDK
               created_at: Time,
               display_order: Integer,
               label: String,
+              metadata: T::Hash[Symbol, String],
               updated_at: Time,
               archived_at: Time,
-              metadata: T::Hash[Symbol, String],
               write_permissions:
                 HubspotSDK::Crm::PipelineStage::WritePermissions::TaggedSymbol
             }

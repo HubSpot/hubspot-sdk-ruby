@@ -3,7 +3,6 @@
 module HubspotSDK
   module Models
     module Settings
-      # @see HubspotSDK::Resources::Settings::Currencies#list_exchange_rates
       class CollectionResponseExchangeRateForwardPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #

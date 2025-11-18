@@ -44,8 +44,12 @@ module HubspotSDK
         ) -> HubspotSDK::Settings::CollectionResponseExchangeRateNoPaging
 
         def list_exchange_rates: (
+          ?after: String,
+          ?from_currency_code: HubspotSDK::Models::Settings::CurrencyListExchangeRatesParams::from_currency_code,
+          ?limit: Integer,
+          ?to_currency_code: HubspotSDK::Models::Settings::CurrencyListExchangeRatesParams::to_currency_code,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Settings::CollectionResponseExchangeRateForwardPaging
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Settings::ExchangeRate]
 
         def update_company_currency: (
           currency_code: HubspotSDK::Models::Settings::CompanyCurrencyUpdateRequest::currency_code,

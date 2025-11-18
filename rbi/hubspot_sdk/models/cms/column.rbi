@@ -9,6 +9,16 @@ module HubspotSDK
             T.any(HubspotSDK::Cms::Column, HubspotSDK::Internal::AnyHash)
           end
 
+        # Column Id
+        sig { returns(String) }
+        attr_accessor :id
+
+        sig { returns(T::Boolean) }
+        attr_accessor :deleted
+
+        sig { returns(String) }
+        attr_accessor :description
+
         # Label of the column
         sig { returns(String) }
         attr_accessor :label
@@ -20,13 +30,6 @@ module HubspotSDK
         # Type of the column
         sig { returns(HubspotSDK::Cms::Column::Type::TaggedSymbol) }
         attr_accessor :type
-
-        # Column Id
-        sig { returns(T.nilable(String)) }
-        attr_reader :id
-
-        sig { params(id: String).void }
-        attr_writer :id
 
         sig { returns(T.nilable(Time)) }
         attr_reader :created_at
@@ -45,18 +48,6 @@ module HubspotSDK
 
         sig { params(created_by_user_id: Integer).void }
         attr_writer :created_by_user_id
-
-        sig { returns(T.nilable(T::Boolean)) }
-        attr_reader :deleted
-
-        sig { params(deleted: T::Boolean).void }
-        attr_writer :deleted
-
-        sig { returns(T.nilable(String)) }
-        attr_reader :description
-
-        sig { params(description: String).void }
-        attr_writer :description
 
         # Foreign Column id
         sig { returns(T.nilable(Integer)) }
@@ -146,15 +137,15 @@ module HubspotSDK
 
         sig do
           params(
+            id: String,
+            deleted: T::Boolean,
+            description: String,
             label: String,
             name: String,
             type: HubspotSDK::Cms::Column::Type::OrSymbol,
-            id: String,
             created_at: Time,
             created_by: HubspotSDK::Cms::SimpleUser::OrHash,
             created_by_user_id: Integer,
-            deleted: T::Boolean,
-            description: String,
             foreign_column_id: Integer,
             foreign_ids: T::Array[HubspotSDK::Cms::ForeignID::OrHash],
             foreign_ids_by_id:
@@ -171,19 +162,19 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # Column Id
+          id:,
+          deleted:,
+          description:,
           # Label of the column
           label:,
           # Name of the column
           name:,
           # Type of the column
           type:,
-          # Column Id
-          id: nil,
           created_at: nil,
           created_by: nil,
           created_by_user_id: nil,
-          deleted: nil,
-          description: nil,
           # Foreign Column id
           foreign_column_id: nil,
           # Foreign Ids
@@ -209,15 +200,15 @@ module HubspotSDK
         sig do
           override.returns(
             {
+              id: String,
+              deleted: T::Boolean,
+              description: String,
               label: String,
               name: String,
               type: HubspotSDK::Cms::Column::Type::TaggedSymbol,
-              id: String,
               created_at: Time,
               created_by: HubspotSDK::Cms::SimpleUser,
               created_by_user_id: Integer,
-              deleted: T::Boolean,
-              description: String,
               foreign_column_id: Integer,
               foreign_ids: T::Array[HubspotSDK::Cms::ForeignID],
               foreign_ids_by_id: T::Hash[Symbol, HubspotSDK::Cms::ForeignID],

@@ -13,16 +13,16 @@ module HubspotSDK
           # provided.
           sig do
             params(
-              properties: T::Hash[Symbol, String],
               associations:
                 T::Array[HubspotSDK::Crm::PublicAssociationsForObject::OrHash],
+              properties: T::Hash[Symbol, String],
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::CreatedResponseSimplePublicObject)
           end
           def create(
+            associations:,
             # Key-value pairs for setting properties for the new object.
             properties:,
-            associations: nil,
             request_options: {}
           )
           end
@@ -42,7 +42,7 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
           def update(
-            # Path param: The unique identifier of the deal to be updated.
+            # Path param:
             deal_id,
             # Body param: Key value pairs representing the properties of the object.
             properties:,
@@ -100,11 +100,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(
-            # The unique identifier of the deal to be archived.
-            deal_id,
-            request_options: {}
-          )
+          def delete(deal_id, request_options: {})
           end
 
           # Read an Object identified by `{dealId}`. `{dealId}` refers to the internal
@@ -123,7 +119,6 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::SimplePublicObjectWithAssociations)
           end
           def get(
-            # The unique identifier of the deal to be retrieved.
             deal_id,
             # Whether to return only results that have been archived.
             archived: nil,
@@ -153,7 +148,10 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
           def merge(
+            # The unique identifier of the CRM object that will be merged into the primary
+            # object.
             object_id_to_merge:,
+            # The unique identifier of the CRM object that will remain after the merge.
             primary_object_id:,
             request_options: {}
           )
@@ -166,8 +164,8 @@ module HubspotSDK
               filter_groups: T::Array[HubspotSDK::Crm::FilterGroup::OrHash],
               limit: Integer,
               properties: T::Array[String],
-              query: String,
               sorts: T::Array[String],
+              query: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
               HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
@@ -175,17 +173,17 @@ module HubspotSDK
           end
           def search(
             # A paging cursor token for retrieving subsequent pages.
-            after: nil,
+            after:,
             # Up to 6 groups of filters defining additional query criteria.
-            filter_groups: nil,
+            filter_groups:,
             # The maximum results to return, up to 200 objects.
-            limit: nil,
+            limit:,
             # A list of property names to include in the response.
-            properties: nil,
+            properties:,
+            # Specifies sorting order based on object properties.
+            sorts:,
             # The search query string, up to 3000 characters.
             query: nil,
-            # Specifies sorting order based on object properties.
-            sorts: nil,
             request_options: {}
           )
           end

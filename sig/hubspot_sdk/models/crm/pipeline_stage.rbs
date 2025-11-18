@@ -8,9 +8,9 @@ module HubspotSDK
           created_at: Time,
           display_order: Integer,
           label: String,
+          metadata: ::Hash[Symbol, String],
           updated_at: Time,
           archived_at: Time,
-          metadata: ::Hash[Symbol, String],
           write_permissions: HubspotSDK::Models::Crm::PipelineStage::write_permissions
         }
 
@@ -25,15 +25,13 @@ module HubspotSDK
 
         attr_accessor label: String
 
+        attr_accessor metadata: ::Hash[Symbol, String]
+
         attr_accessor updated_at: Time
 
         attr_reader archived_at: Time?
 
         def archived_at=: (Time) -> Time
-
-        attr_reader metadata: ::Hash[Symbol, String]?
-
-        def metadata=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
 
         attr_reader write_permissions: HubspotSDK::Models::Crm::PipelineStage::write_permissions?
 
@@ -47,9 +45,9 @@ module HubspotSDK
           created_at: Time,
           display_order: Integer,
           label: String,
+          metadata: ::Hash[Symbol, String],
           updated_at: Time,
           ?archived_at: Time,
-          ?metadata: ::Hash[Symbol, String],
           ?write_permissions: HubspotSDK::Models::Crm::PipelineStage::write_permissions
         ) -> void
 
@@ -59,9 +57,9 @@ module HubspotSDK
           created_at: Time,
           display_order: Integer,
           label: String,
+          metadata: ::Hash[Symbol, String],
           updated_at: Time,
           archived_at: Time,
-          metadata: ::Hash[Symbol, String],
           write_permissions: HubspotSDK::Models::Crm::PipelineStage::write_permissions
         }
 

@@ -6,8 +6,23 @@ module HubspotSDK
       class BatchResponseHubDBTableRowV3 < HubspotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #
-        #   @return [Time, nil]
-        optional :completed_at, Time, api_name: :completedAt
+        #   @return [Time]
+        required :completed_at, Time, api_name: :completedAt
+
+        # @!attribute results
+        #
+        #   @return [Array<HubspotSDK::Models::Cms::HubDBTableRowV3>]
+        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3] }
+
+        # @!attribute started_at
+        #
+        #   @return [Time]
+        required :started_at, Time, api_name: :startedAt
+
+        # @!attribute status
+        #
+        #   @return [Symbol, HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::Status]
+        required :status, enum: -> { HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status }
 
         # @!attribute links
         #
@@ -19,28 +34,13 @@ module HubspotSDK
         #   @return [Time, nil]
         optional :requested_at, Time, api_name: :requestedAt
 
-        # @!attribute results
-        #
-        #   @return [Array<HubspotSDK::Models::Cms::HubDBTableRowV3>, nil]
-        optional :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3] }
-
-        # @!attribute started_at
-        #
-        #   @return [Time, nil]
-        optional :started_at, Time, api_name: :startedAt
-
-        # @!attribute status
-        #
-        #   @return [Symbol, HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::Status, nil]
-        optional :status, enum: -> { HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status }
-
-        # @!method initialize(completed_at: nil, links: nil, requested_at: nil, results: nil, started_at: nil, status: nil)
+        # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
         #   @param completed_at [Time]
-        #   @param links [Hash{Symbol=>String}]
-        #   @param requested_at [Time]
         #   @param results [Array<HubspotSDK::Models::Cms::HubDBTableRowV3>]
         #   @param started_at [Time]
         #   @param status [Symbol, HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::Status]
+        #   @param links [Hash{Symbol=>String}]
+        #   @param requested_at [Time]
 
         # @see HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3#status
         module Status

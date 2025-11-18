@@ -12,15 +12,19 @@ module HubspotSDK
             )
           end
 
+        # The primary identifier of the record.
         sig { returns(String) }
         attr_accessor :label
 
+        # The unique identifier for the object.
         sig { returns(Integer) }
         attr_accessor :object_id_
 
+        # The percentage of the limit that has been used.
         sig { returns(Float) }
         attr_accessor :percentage
 
+        # The number of records currently in use.
         sig { returns(Integer) }
         attr_accessor :usage
 
@@ -32,7 +36,16 @@ module HubspotSDK
             usage: Integer
           ).returns(T.attached_class)
         end
-        def self.new(label:, object_id_:, percentage:, usage:)
+        def self.new(
+          # The primary identifier of the record.
+          label:,
+          # The unique identifier for the object.
+          object_id_:,
+          # The percentage of the limit that has been used.
+          percentage:,
+          # The number of records currently in use.
+          usage:
+        )
         end
 
         sig do

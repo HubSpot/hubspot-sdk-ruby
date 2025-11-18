@@ -3,11 +3,15 @@ module HubspotSDK
     class Conversations
       class Channels
         def list: (
+          ?after: String,
+          ?default_page_length: Integer,
+          ?limit: Integer,
+          ?sort: ::Array[String],
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Conversations::CollectionResponseWithTotalPublicChannelForwardPaging
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Conversations::PublicChannel]
 
         def get: (
-          String channel_id,
+          Integer channel_id,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Conversations::PublicChannel
 

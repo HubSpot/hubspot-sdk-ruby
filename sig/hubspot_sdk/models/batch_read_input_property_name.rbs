@@ -1,0 +1,42 @@
+module HubspotSDK
+  module Models
+    type batch_read_input_property_name =
+      {
+        archived: bool,
+        data_sensitivity: HubspotSDK::Models::BatchReadInputPropertyName::data_sensitivity,
+        inputs: ::Array[HubspotSDK::PropertyName]
+      }
+
+    class BatchReadInputPropertyName < HubspotSDK::Internal::Type::BaseModel
+      attr_accessor archived: bool
+
+      attr_accessor data_sensitivity: HubspotSDK::Models::BatchReadInputPropertyName::data_sensitivity
+
+      attr_accessor inputs: ::Array[HubspotSDK::PropertyName]
+
+      def initialize: (
+        archived: bool,
+        data_sensitivity: HubspotSDK::Models::BatchReadInputPropertyName::data_sensitivity,
+        inputs: ::Array[HubspotSDK::PropertyName]
+      ) -> void
+
+      def to_hash: -> {
+        archived: bool,
+        data_sensitivity: HubspotSDK::Models::BatchReadInputPropertyName::data_sensitivity,
+        inputs: ::Array[HubspotSDK::PropertyName]
+      }
+
+      type data_sensitivity = :non_sensitive | :sensitive | :highly_sensitive
+
+      module DataSensitivity
+        extend HubspotSDK::Internal::Type::Enum
+
+        NON_SENSITIVE: :non_sensitive
+        SENSITIVE: :sensitive
+        HIGHLY_SENSITIVE: :highly_sensitive
+
+        def self?.values: -> ::Array[HubspotSDK::Models::BatchReadInputPropertyName::data_sensitivity]
+      end
+    end
+  end
+end

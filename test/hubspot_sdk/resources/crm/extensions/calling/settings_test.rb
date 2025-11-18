@@ -6,7 +6,19 @@ class HubspotSDK::Test::Resources::Crm::Extensions::Calling::SettingsTest < Hubs
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.crm.extensions.calling.settings.create(0, name: "name", url: "url")
+    response =
+      @hubspot.crm.extensions.calling.settings.create(
+        0,
+        height: 0,
+        is_ready: true,
+        name: "name",
+        supports_custom_objects: true,
+        supports_inbound_calling: true,
+        url: "url",
+        uses_calling_window: true,
+        uses_remote: true,
+        width: 0
+      )
 
     assert_pattern do
       response => HubspotSDK::Webhooks::SettingsResponse

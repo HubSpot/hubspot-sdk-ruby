@@ -169,13 +169,26 @@ class HubspotSDK::Test::Resources::Settings::CurrenciesTest < HubspotSDK::Test::
     response = @hubspot.settings.currencies.list_exchange_rates
 
     assert_pattern do
-      response => HubspotSDK::Settings::CollectionResponseExchangeRateForwardPaging
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Settings::ExchangeRate
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Settings::ExchangeRate]),
-        paging: HubspotSDK::ForwardPaging | nil
+      row => {
+        id: String,
+        conversion_rate: Float,
+        created_at: Time,
+        effective_at: Time,
+        from_currency_code: HubspotSDK::Settings::ExchangeRate::FromCurrencyCode,
+        to_currency_code: HubspotSDK::Settings::ExchangeRate::ToCurrencyCode,
+        updated_at: Time,
+        visible_in_ui: HubspotSDK::Internal::Type::Boolean
       }
     end
   end

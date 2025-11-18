@@ -14,12 +14,12 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::Rows::BatchTest < HubspotSDK::Tes
 
     assert_pattern do
       response => {
-        completed_at: Time | nil,
+        completed_at: Time,
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]),
+        started_at: Time,
+        status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        requested_at: Time | nil,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]) | nil,
-        started_at: Time | nil,
-        status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status | nil
+        requested_at: Time | nil
       }
     end
   end
@@ -27,7 +27,11 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::Rows::BatchTest < HubspotSDK::Tes
   def test_create_batch_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.cms.hubdb.rows.batch.create_batch("tableIdOrName", inputs: [{values: {foo: {}}}])
+    response =
+      @hubspot.cms.hubdb.rows.batch.create_batch(
+        "tableIdOrName",
+        inputs: [{childTableId: 0, displayIndex: 0, values: {foo: {}}}]
+      )
 
     assert_pattern do
       response => HubspotSDK::Cms::BatchResponseHubDBTableRowV3
@@ -35,12 +39,12 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::Rows::BatchTest < HubspotSDK::Tes
 
     assert_pattern do
       response => {
-        completed_at: Time | nil,
+        completed_at: Time,
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]),
+        started_at: Time,
+        status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        requested_at: Time | nil,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]) | nil,
-        started_at: Time | nil,
-        status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status | nil
+        requested_at: Time | nil
       }
     end
   end
@@ -56,12 +60,12 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::Rows::BatchTest < HubspotSDK::Tes
 
     assert_pattern do
       response => {
-        completed_at: Time | nil,
+        completed_at: Time,
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]),
+        started_at: Time,
+        status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        requested_at: Time | nil,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]) | nil,
-        started_at: Time | nil,
-        status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status | nil
+        requested_at: Time | nil
       }
     end
   end
@@ -77,12 +81,12 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::Rows::BatchTest < HubspotSDK::Tes
 
     assert_pattern do
       response => {
-        completed_at: Time | nil,
+        completed_at: Time,
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]),
+        started_at: Time,
+        status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        requested_at: Time | nil,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]) | nil,
-        started_at: Time | nil,
-        status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status | nil
+        requested_at: Time | nil
       }
     end
   end
@@ -101,7 +105,10 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::Rows::BatchTest < HubspotSDK::Tes
     skip("Prism tests are disabled")
 
     response =
-      @hubspot.cms.hubdb.rows.batch.replace_batch("tableIdOrName", inputs: [{id: "id", values: {foo: {}}}])
+      @hubspot.cms.hubdb.rows.batch.replace_batch(
+        "tableIdOrName",
+        inputs: [{childTableId: 0, displayIndex: 0, values: {foo: {}}}]
+      )
 
     assert_pattern do
       response => HubspotSDK::Cms::BatchResponseHubDBTableRowV3
@@ -109,12 +116,12 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::Rows::BatchTest < HubspotSDK::Tes
 
     assert_pattern do
       response => {
-        completed_at: Time | nil,
+        completed_at: Time,
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]),
+        started_at: Time,
+        status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        requested_at: Time | nil,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]) | nil,
-        started_at: Time | nil,
-        status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status | nil
+        requested_at: Time | nil
       }
     end
   end
@@ -123,7 +130,10 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::Rows::BatchTest < HubspotSDK::Tes
     skip("Prism tests are disabled")
 
     response =
-      @hubspot.cms.hubdb.rows.batch.update_batch("tableIdOrName", inputs: [{id: "id", values: {foo: {}}}])
+      @hubspot.cms.hubdb.rows.batch.update_batch(
+        "tableIdOrName",
+        inputs: [{childTableId: 0, displayIndex: 0, values: {foo: {}}}]
+      )
 
     assert_pattern do
       response => HubspotSDK::Cms::BatchResponseHubDBTableRowV3
@@ -131,12 +141,12 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::Rows::BatchTest < HubspotSDK::Tes
 
     assert_pattern do
       response => {
-        completed_at: Time | nil,
+        completed_at: Time,
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]),
+        started_at: Time,
+        status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        requested_at: Time | nil,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]) | nil,
-        started_at: Time | nil,
-        status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status | nil
+        requested_at: Time | nil
       }
     end
   end

@@ -5,7 +5,6 @@ module HubspotSDK
         {
           attachments: ::Array[HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::attachment],
           channel_account_id: String,
-          integration_thread_id: String,
           message_direction: HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::message_direction,
           recipients: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant],
           senders: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant],
@@ -13,6 +12,7 @@ module HubspotSDK
           timestamp: Time,
           in_reply_to_id: String,
           integration_idempotency_id: String,
+          integration_thread_id: String,
           pre_resolved_contacts: HubspotSDK::Conversations::PreResolvedContacts,
           rich_text: String
         }
@@ -21,8 +21,6 @@ module HubspotSDK
         attr_accessor attachments: ::Array[HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::attachment]
 
         attr_accessor channel_account_id: String
-
-        attr_accessor integration_thread_id: String
 
         attr_accessor message_direction: HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::message_direction
 
@@ -42,6 +40,10 @@ module HubspotSDK
 
         def integration_idempotency_id=: (String) -> String
 
+        attr_reader integration_thread_id: String?
+
+        def integration_thread_id=: (String) -> String
+
         attr_reader pre_resolved_contacts: HubspotSDK::Conversations::PreResolvedContacts?
 
         def pre_resolved_contacts=: (
@@ -55,7 +57,6 @@ module HubspotSDK
         def initialize: (
           attachments: ::Array[HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::attachment],
           channel_account_id: String,
-          integration_thread_id: String,
           message_direction: HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::message_direction,
           recipients: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant],
           senders: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant],
@@ -63,6 +64,7 @@ module HubspotSDK
           timestamp: Time,
           ?in_reply_to_id: String,
           ?integration_idempotency_id: String,
+          ?integration_thread_id: String,
           ?pre_resolved_contacts: HubspotSDK::Conversations::PreResolvedContacts,
           ?rich_text: String
         ) -> void
@@ -70,7 +72,6 @@ module HubspotSDK
         def to_hash: -> {
           attachments: ::Array[HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::attachment],
           channel_account_id: String,
-          integration_thread_id: String,
           message_direction: HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::message_direction,
           recipients: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant],
           senders: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant],
@@ -78,6 +79,7 @@ module HubspotSDK
           timestamp: Time,
           in_reply_to_id: String,
           integration_idempotency_id: String,
+          integration_thread_id: String,
           pre_resolved_contacts: HubspotSDK::Conversations::PreResolvedContacts,
           rich_text: String
         }

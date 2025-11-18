@@ -3,6 +3,8 @@
 module HubspotSDK
   module Models
     module Crm
+      ObjectTypePropertyCreate = Objects::ObjectTypePropertyCreate
+
       module Objects
         class ObjectTypePropertyCreate < HubspotSDK::Internal::Type::BaseModel
           OrHash =

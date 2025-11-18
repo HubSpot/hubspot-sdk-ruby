@@ -1,0 +1,26 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Associations
+        module Schema
+          type batch_input_public_association_definition_configuration_update_request =
+            {
+              inputs: ::Array[HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest]
+            }
+
+          class BatchInputPublicAssociationDefinitionConfigurationUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+            attr_accessor inputs: ::Array[HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest]
+
+            def initialize: (
+              inputs: ::Array[HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest]
+            ) -> void
+
+            def to_hash: -> {
+              inputs: ::Array[HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest]
+            }
+          end
+        end
+      end
+    end
+  end
+end

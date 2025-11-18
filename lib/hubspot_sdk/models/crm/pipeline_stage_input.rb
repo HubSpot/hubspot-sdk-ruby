@@ -31,10 +31,10 @@ module HubspotSDK
         #   has been closed by a member of your Support team. Possible values are `OPEN` or
         #   `CLOSED`.
         #
-        #   @return [Hash{Symbol=>String}, nil]
-        optional :metadata, HubspotSDK::Internal::Type::HashOf[String]
+        #   @return [Hash{Symbol=>String}]
+        required :metadata, HubspotSDK::Internal::Type::HashOf[String]
 
-        # @!method initialize(display_order:, label:, metadata: nil)
+        # @!method initialize(display_order:, label:, metadata:)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Crm::PipelineStageInput} for more details.
         #

@@ -4,11 +4,16 @@ module HubspotSDK
   module Models
     module Cms
       class HubDBTableRowV3BatchUpdateRequest < HubspotSDK::Internal::Type::BaseModel
-        # @!attribute id
-        #   The id of the table row
+        # @!attribute child_table_id
+        #   Specifies the value for the column child table id
         #
-        #   @return [String]
-        required :id, String
+        #   @return [Integer]
+        required :child_table_id, Integer, api_name: :childTableId
+
+        # @!attribute display_index
+        #
+        #   @return [Integer]
+        required :display_index, Integer, api_name: :displayIndex
 
         # @!attribute values
         #   List of key value pairs with the column name and column value
@@ -16,16 +21,11 @@ module HubspotSDK
         #   @return [Hash{Symbol=>Object}]
         required :values, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]
 
-        # @!attribute child_table_id
-        #   Specifies the value for the column child table id
+        # @!attribute id
+        #   The id of the table row
         #
-        #   @return [Integer, nil]
-        optional :child_table_id, Integer, api_name: :childTableId
-
-        # @!attribute display_index
-        #
-        #   @return [Integer, nil]
-        optional :display_index, Integer, api_name: :displayIndex
+        #   @return [String, nil]
+        optional :id, String
 
         # @!attribute name
         #   Specifies the value for `hs_name` column, which will be used as title in the
@@ -41,17 +41,17 @@ module HubspotSDK
         #   @return [String, nil]
         optional :path, String
 
-        # @!method initialize(id:, values:, child_table_id: nil, display_index: nil, name: nil, path: nil)
+        # @!method initialize(child_table_id:, display_index:, values:, id: nil, name: nil, path: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Cms::HubDBTableRowV3BatchUpdateRequest} for more details.
-        #
-        #   @param id [String] The id of the table row
-        #
-        #   @param values [Hash{Symbol=>Object}] List of key value pairs with the column name and column value
         #
         #   @param child_table_id [Integer] Specifies the value for the column child table id
         #
         #   @param display_index [Integer]
+        #
+        #   @param values [Hash{Symbol=>Object}] List of key value pairs with the column name and column value
+        #
+        #   @param id [String] The id of the table row
         #
         #   @param name [String] Specifies the value for `hs_name` column, which will be used as title in the dyn
         #

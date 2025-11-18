@@ -53,10 +53,11 @@ module HubspotSDK
           sig do
             params(
               object_type: String,
+              locale: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::CollectionResponsePropertyGroup)
           end
-          def list(object_type, request_options: {})
+          def list(object_type, locale: nil, request_options: {})
           end
 
           # Move a property group identified by {groupName} to the recycling bin.
@@ -75,10 +76,19 @@ module HubspotSDK
             params(
               group_name: String,
               object_type: String,
+              locale: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::PropertyGroup)
           end
-          def get(group_name, object_type:, request_options: {})
+          def get(
+            # Path param:
+            group_name,
+            # Path param:
+            object_type:,
+            # Query param:
+            locale: nil,
+            request_options: {}
+          )
           end
 
           # @api private

@@ -9,19 +9,19 @@ module HubspotSDK
         #
         # @overload create(email:, first_name: nil, last_name: nil, primary_team_id: nil, role_id: nil, secondary_team_ids: nil, send_welcome_email: nil, request_options: {})
         #
-        # @param email [String] The created user's email
+        # @param email [String] The user's email.
         #
-        # @param first_name [String]
+        # @param first_name [String] The user's first name.
         #
-        # @param last_name [String]
+        # @param last_name [String] The user's last name.
         #
-        # @param primary_team_id [String] The user's primary team
+        # @param primary_team_id [String] The user's primary team.
         #
-        # @param role_id [String] The user's role
+        # @param role_id [String] The user's role.
         #
-        # @param secondary_team_ids [Array<String>] The user's additional teams
+        # @param secondary_team_ids [Array<String>] The user's additional teams.
         #
-        # @param send_welcome_email [Boolean] Whether to send a welcome email
+        # @param send_welcome_email [Boolean] Whether to send a welcome email.
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -51,15 +51,15 @@ module HubspotSDK
         #
         # @param id_property [Symbol, HubspotSDK::Models::Settings::PublicUserUpdate::IDProperty] Query param: The name of a property with unique user values. Valid values are `U
         #
-        # @param first_name [String] Body param:
+        # @param first_name [String] Body param: The first name of the user.
         #
-        # @param last_name [String] Body param:
+        # @param last_name [String] Body param: The last name of the user.
         #
-        # @param primary_team_id [String] Body param: The user's primary team
+        # @param primary_team_id [String] Body param: The user's primary team.
         #
-        # @param role_id [String] Body param: The user's role
+        # @param role_id [String] Body param: The user's role.
         #
-        # @param secondary_team_ids [Array<String>] Body param: The user's additional teams
+        # @param secondary_team_ids [Array<String>] Body param: The user's additional teams.
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #

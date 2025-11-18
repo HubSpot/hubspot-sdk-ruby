@@ -7,6 +7,13 @@ module HubspotSDK
 
           attr_reader report: HubspotSDK::Resources::Crm::Associations::V4::Report
 
+          def merge: (
+            String object_type,
+            object_id_to_merge: String,
+            primary_object_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::SimplePublicObject
+
           def initialize: (client: HubspotSDK::Client) -> void
         end
       end

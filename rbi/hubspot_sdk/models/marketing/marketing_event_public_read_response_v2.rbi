@@ -2,6 +2,9 @@
 
 module HubspotSDK
   module Models
+    MarketingEventPublicReadResponseV2 =
+      Marketing::MarketingEventPublicReadResponseV2
+
     module Marketing
       class MarketingEventPublicReadResponseV2 < HubspotSDK::Internal::Type::BaseModel
         OrHash =

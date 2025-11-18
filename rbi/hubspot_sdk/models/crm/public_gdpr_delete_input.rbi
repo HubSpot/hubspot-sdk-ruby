@@ -12,9 +12,11 @@ module HubspotSDK
             )
           end
 
+        # ID of the object
         sig { returns(String) }
         attr_accessor :object_id_
 
+        # ID property
         sig { returns(T.nilable(String)) }
         attr_reader :id_property
 
@@ -26,7 +28,12 @@ module HubspotSDK
             T.attached_class
           )
         end
-        def self.new(object_id_:, id_property: nil)
+        def self.new(
+          # ID of the object
+          object_id_:,
+          # ID property
+          id_property: nil
+        )
         end
 
         sig { override.returns({ object_id_: String, id_property: String }) }

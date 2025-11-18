@@ -15,7 +15,7 @@ module HubspotSDK
         sig { returns(HubspotSDK::Automation::APITimeWindow::Day::OrSymbol) }
         attr_accessor :day
 
-        sig { returns(HubspotSDK::Automation::APITimeOfDay) }
+        sig { returns(T.nilable(HubspotSDK::Automation::APITimeOfDay)) }
         attr_reader :end_time
 
         sig do
@@ -23,7 +23,7 @@ module HubspotSDK
         end
         attr_writer :end_time
 
-        sig { returns(HubspotSDK::Automation::APITimeOfDay) }
+        sig { returns(T.nilable(HubspotSDK::Automation::APITimeOfDay)) }
         attr_reader :start_time
 
         sig do
@@ -38,7 +38,7 @@ module HubspotSDK
             start_time: HubspotSDK::Automation::APITimeOfDay::OrHash
           ).returns(T.attached_class)
         end
-        def self.new(day:, end_time:, start_time:)
+        def self.new(day:, end_time: nil, start_time: nil)
         end
 
         sig do

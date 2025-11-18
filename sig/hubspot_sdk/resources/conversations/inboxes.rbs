@@ -3,11 +3,17 @@ module HubspotSDK
     class Conversations
       class Inboxes
         def list: (
+          ?after: String,
+          ?archived: bool,
+          ?default_page_length: Integer,
+          ?limit: Integer,
+          ?sort: ::Array[String],
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Conversations::CollectionResponseWithTotalPublicInboxForwardPaging
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Conversations::PublicInbox]
 
         def get: (
-          String inbox_id,
+          Integer inbox_id,
+          ?archived: bool,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Conversations::PublicInbox
 

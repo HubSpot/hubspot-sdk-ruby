@@ -16,16 +16,85 @@ module HubspotSDK
               )
             end
 
+          sig { returns(T.nilable(String)) }
+          attr_reader :after
+
+          sig { params(after: String).void }
+          attr_writer :after
+
+          sig { returns(T.nilable(T::Boolean)) }
+          attr_reader :archived
+
+          sig { params(archived: T::Boolean).void }
+          attr_writer :archived
+
+          sig { returns(T.nilable(Integer)) }
+          attr_reader :default_page_length
+
+          sig { params(default_page_length: Integer).void }
+          attr_writer :default_page_length
+
+          sig { returns(T.nilable(T::Array[String])) }
+          attr_reader :delivery_identifier_type
+
+          sig { params(delivery_identifier_type: T::Array[String]).void }
+          attr_writer :delivery_identifier_type
+
+          sig { returns(T.nilable(T::Array[String])) }
+          attr_reader :delivery_identifier_value
+
+          sig { params(delivery_identifier_value: T::Array[String]).void }
+          attr_writer :delivery_identifier_value
+
+          sig { returns(T.nilable(Integer)) }
+          attr_reader :limit
+
+          sig { params(limit: Integer).void }
+          attr_writer :limit
+
+          sig { returns(T.nilable(T::Array[String])) }
+          attr_reader :sort
+
+          sig { params(sort: T::Array[String]).void }
+          attr_writer :sort
+
           sig do
-            params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-              T.attached_class
-            )
+            params(
+              after: String,
+              archived: T::Boolean,
+              default_page_length: Integer,
+              delivery_identifier_type: T::Array[String],
+              delivery_identifier_value: T::Array[String],
+              limit: Integer,
+              sort: T::Array[String],
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(T.attached_class)
           end
-          def self.new(request_options: {})
+          def self.new(
+            after: nil,
+            archived: nil,
+            default_page_length: nil,
+            delivery_identifier_type: nil,
+            delivery_identifier_value: nil,
+            limit: nil,
+            sort: nil,
+            request_options: {}
+          )
           end
 
           sig do
-            override.returns({ request_options: HubspotSDK::RequestOptions })
+            override.returns(
+              {
+                after: String,
+                archived: T::Boolean,
+                default_page_length: Integer,
+                delivery_identifier_type: T::Array[String],
+                delivery_identifier_value: T::Array[String],
+                limit: Integer,
+                sort: T::Array[String],
+                request_options: HubspotSDK::RequestOptions
+              }
+            )
           end
           def to_hash
           end

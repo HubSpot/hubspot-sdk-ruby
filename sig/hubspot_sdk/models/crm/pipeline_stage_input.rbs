@@ -13,14 +13,12 @@ module HubspotSDK
 
         attr_accessor label: String
 
-        attr_reader metadata: ::Hash[Symbol, String]?
-
-        def metadata=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
+        attr_accessor metadata: ::Hash[Symbol, String]
 
         def initialize: (
           display_order: Integer,
           label: String,
-          ?metadata: ::Hash[Symbol, String]
+          metadata: ::Hash[Symbol, String]
         ) -> void
 
         def to_hash: -> {

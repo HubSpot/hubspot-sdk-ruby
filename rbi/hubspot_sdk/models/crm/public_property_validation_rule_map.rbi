@@ -12,9 +12,11 @@ module HubspotSDK
             )
           end
 
+        # The name of the property for which validation rules are defined.
         sig { returns(String) }
         attr_accessor :property_name
 
+        # A list of validation rules applicable to the property.
         sig { returns(T::Array[HubspotSDK::Crm::PublicPropertyValidationRule]) }
         attr_accessor :property_validation_rules
 
@@ -25,7 +27,12 @@ module HubspotSDK
               T::Array[HubspotSDK::Crm::PublicPropertyValidationRule::OrHash]
           ).returns(T.attached_class)
         end
-        def self.new(property_name:, property_validation_rules:)
+        def self.new(
+          # The name of the property for which validation rules are defined.
+          property_name:,
+          # A list of validation rules applicable to the property.
+          property_validation_rules:
+        )
         end
 
         sig do

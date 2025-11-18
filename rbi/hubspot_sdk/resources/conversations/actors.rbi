@@ -8,12 +8,15 @@ module HubspotSDK
         sig do
           params(
             inputs: T::Array[String],
+            property: String,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Conversations::BatchResponsePublicActor)
         end
         def batch_read(
-          # Strings to input.
+          # Body param: Strings to input.
           inputs:,
+          # Query param: A specific property to include in the actor response.
+          property: nil,
           request_options: {}
         )
         end
@@ -22,10 +25,17 @@ module HubspotSDK
         sig do
           params(
             actor_id: String,
+            property: String,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Conversations::PublicActor::Variants)
         end
-        def get(actor_id, request_options: {})
+        def get(
+          # The unique ID of the actor.
+          actor_id,
+          # A specific property to include in the actor response.
+          property: nil,
+          request_options: {}
+        )
         end
 
         # @api private

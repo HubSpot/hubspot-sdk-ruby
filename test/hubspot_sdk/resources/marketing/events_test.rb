@@ -8,6 +8,29 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
 
     response =
       @hubspot.marketing.events.create(
+        custom_properties: [
+          {
+            dataSensitivity: :none,
+            isEncrypted: true,
+            isLargeValue: true,
+            name: "name",
+            persistenceTimestamp: 0,
+            requestId: "requestId",
+            selectedByUser: true,
+            selectedByUserTimestamp: 0,
+            source: :UNKNOWN,
+            sourceId: "sourceId",
+            sourceLabel: "sourceLabel",
+            sourceMetadata: "sourceMetadata",
+            sourceUpstreamDeployable: "sourceUpstreamDeployable",
+            sourceVid: [0],
+            timestamp: 0,
+            unit: "unit",
+            updatedByUserId: 0,
+            useTimestampAsPersistenceTimestamp: true,
+            value: "value"
+          }
+        ],
         event_name: "eventName",
         event_organizer: "eventOrganizer",
         external_account_id: "externalAccountId",
@@ -20,9 +43,9 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
 
     assert_pattern do
       response => {
+        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PropertyValue]),
         event_name: String,
         event_organizer: String,
-        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PropertyValue]) | nil,
         end_date_time: Time | nil,
         event_cancelled: HubspotSDK::Internal::Type::Boolean | nil,
         event_completed: HubspotSDK::Internal::Type::Boolean | nil,
@@ -41,7 +64,29 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     response =
       @hubspot.marketing.events.update(
         "objectId",
-        custom_properties: [{name: "", sourceUpstreamDeployable: "sourceUpstreamDeployable", value: ""}]
+        custom_properties: [
+          {
+            dataSensitivity: :none,
+            isEncrypted: true,
+            isLargeValue: true,
+            name: "name",
+            persistenceTimestamp: 0,
+            requestId: "requestId",
+            selectedByUser: true,
+            selectedByUserTimestamp: 0,
+            source: :UNKNOWN,
+            sourceId: "sourceId",
+            sourceLabel: "sourceLabel",
+            sourceMetadata: "sourceMetadata",
+            sourceUpstreamDeployable: "sourceUpstreamDeployable",
+            sourceVid: [0],
+            timestamp: 0,
+            unit: "unit",
+            updatedByUserId: 0,
+            useTimestampAsPersistenceTimestamp: true,
+            value: "value"
+          }
+        ]
       )
 
     assert_pattern do
@@ -135,9 +180,9 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
 
     assert_pattern do
       response => {
+        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PropertyValue]),
         event_name: String,
         event_organizer: String,
-        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PropertyValue]) | nil,
         end_date_time: Time | nil,
         event_cancelled: HubspotSDK::Internal::Type::Boolean | nil,
         event_completed: HubspotSDK::Internal::Type::Boolean | nil,
@@ -167,9 +212,9 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
 
     assert_pattern do
       response => {
+        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PropertyValue]),
         event_name: String,
         event_organizer: String,
-        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PropertyValue]) | nil,
         end_date_time: Time | nil,
         event_cancelled: HubspotSDK::Internal::Type::Boolean | nil,
         event_completed: HubspotSDK::Internal::Type::Boolean | nil,
@@ -273,13 +318,13 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
         attendees: Integer,
         cancellations: Integer,
         created_at: Time,
+        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PropertyValue]),
         event_name: String,
         event_organizer: String,
         external_event_id: String,
         no_shows: Integer,
         registrants: Integer,
         updated_at: Time,
-        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PropertyValue]) | nil,
         end_date_time: Time | nil,
         event_cancelled: HubspotSDK::Internal::Type::Boolean | nil,
         event_completed: HubspotSDK::Internal::Type::Boolean | nil,
@@ -332,7 +377,29 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
       @hubspot.marketing.events.update_batch(
         inputs: [
           {
-            customProperties: [{name: "", sourceUpstreamDeployable: "sourceUpstreamDeployable", value: ""}],
+            customProperties: [
+              {
+                dataSensitivity: :none,
+                isEncrypted: true,
+                isLargeValue: true,
+                name: "name",
+                persistenceTimestamp: 0,
+                requestId: "requestId",
+                selectedByUser: true,
+                selectedByUserTimestamp: 0,
+                source: :UNKNOWN,
+                sourceId: "sourceId",
+                sourceLabel: "sourceLabel",
+                sourceMetadata: "sourceMetadata",
+                sourceUpstreamDeployable: "sourceUpstreamDeployable",
+                sourceVid: [0],
+                timestamp: 0,
+                unit: "unit",
+                updatedByUserId: 0,
+                useTimestampAsPersistenceTimestamp: true,
+                value: "value"
+              }
+            ],
             objectId: "objectId"
           }
         ]
@@ -360,7 +427,30 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     response =
       @hubspot.marketing.events.update_by_external_event_id(
         "externalEventId",
-        external_account_id: "externalAccountId"
+        external_account_id: "externalAccountId",
+        custom_properties: [
+          {
+            dataSensitivity: :none,
+            isEncrypted: true,
+            isLargeValue: true,
+            name: "name",
+            persistenceTimestamp: 0,
+            requestId: "requestId",
+            selectedByUser: true,
+            selectedByUserTimestamp: 0,
+            source: :UNKNOWN,
+            sourceId: "sourceId",
+            sourceLabel: "sourceLabel",
+            sourceMetadata: "sourceMetadata",
+            sourceUpstreamDeployable: "sourceUpstreamDeployable",
+            sourceVid: [0],
+            timestamp: 0,
+            unit: "unit",
+            updatedByUserId: 0,
+            useTimestampAsPersistenceTimestamp: true,
+            value: "value"
+          }
+        ]
       )
 
     assert_pattern do
@@ -371,10 +461,10 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
       response => {
         id: String,
         created_at: Time,
+        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PropertyValue]),
         event_name: String,
         event_organizer: String,
         updated_at: Time,
-        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PropertyValue]) | nil,
         end_date_time: Time | nil,
         event_cancelled: HubspotSDK::Internal::Type::Boolean | nil,
         event_completed: HubspotSDK::Internal::Type::Boolean | nil,
@@ -394,6 +484,29 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
       @hubspot.marketing.events.upsert_batch(
         inputs: [
           {
+            customProperties: [
+              {
+                dataSensitivity: :none,
+                isEncrypted: true,
+                isLargeValue: true,
+                name: "name",
+                persistenceTimestamp: 0,
+                requestId: "requestId",
+                selectedByUser: true,
+                selectedByUserTimestamp: 0,
+                source: :UNKNOWN,
+                sourceId: "sourceId",
+                sourceLabel: "sourceLabel",
+                sourceMetadata: "sourceMetadata",
+                sourceUpstreamDeployable: "sourceUpstreamDeployable",
+                sourceVid: [0],
+                timestamp: 0,
+                unit: "unit",
+                updatedByUserId: 0,
+                useTimestampAsPersistenceTimestamp: true,
+                value: "value"
+              }
+            ],
             eventName: "eventName",
             eventOrganizer: "eventOrganizer",
             externalAccountId: "externalAccountId",
@@ -426,6 +539,29 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     response =
       @hubspot.marketing.events.upsert_by_external_event_id(
         "externalEventId",
+        custom_properties: [
+          {
+            dataSensitivity: :none,
+            isEncrypted: true,
+            isLargeValue: true,
+            name: "name",
+            persistenceTimestamp: 0,
+            requestId: "requestId",
+            selectedByUser: true,
+            selectedByUserTimestamp: 0,
+            source: :UNKNOWN,
+            sourceId: "sourceId",
+            sourceLabel: "sourceLabel",
+            sourceMetadata: "sourceMetadata",
+            sourceUpstreamDeployable: "sourceUpstreamDeployable",
+            sourceVid: [0],
+            timestamp: 0,
+            unit: "unit",
+            updatedByUserId: 0,
+            useTimestampAsPersistenceTimestamp: true,
+            value: "value"
+          }
+        ],
         event_name: "eventName",
         event_organizer: "eventOrganizer",
         external_account_id: "externalAccountId",
@@ -440,10 +576,10 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
       response => {
         id: String,
         created_at: Time,
+        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PropertyValue]),
         event_name: String,
         event_organizer: String,
         updated_at: Time,
-        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PropertyValue]) | nil,
         end_date_time: Time | nil,
         event_cancelled: HubspotSDK::Internal::Type::Boolean | nil,
         event_completed: HubspotSDK::Internal::Type::Boolean | nil,
@@ -464,7 +600,14 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
         "subscriberState",
         external_event_id: "externalEventId",
         external_account_id: "externalAccountId",
-        inputs: [{email: "email", interactionDateTime: 0}]
+        inputs: [
+          {
+            contactProperties: {foo: "string"},
+            email: "email",
+            interactionDateTime: 0,
+            properties: {foo: "string"}
+          }
+        ]
       )
 
     assert_pattern do
@@ -480,7 +623,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
         "subscriberState",
         external_event_id: "externalEventId",
         external_account_id: "externalAccountId",
-        inputs: [{interactionDateTime: 0}]
+        inputs: [{interactionDateTime: 0, properties: {foo: "string"}, vid: 0}]
       )
 
     assert_pattern do

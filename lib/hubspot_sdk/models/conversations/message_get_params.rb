@@ -10,11 +10,20 @@ module HubspotSDK
 
         # @!attribute thread_id
         #
-        #   @return [String]
-        required :thread_id, String
+        #   @return [Integer]
+        required :thread_id, Integer
 
-        # @!method initialize(thread_id:, request_options: {})
-        #   @param thread_id [String]
+        # @!attribute property
+        #   A specific property to include in the message response.
+        #
+        #   @return [String, nil]
+        optional :property, String
+
+        # @!method initialize(thread_id:, property: nil, request_options: {})
+        #   @param thread_id [Integer]
+        #
+        #   @param property [String] A specific property to include in the message response.
+        #
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end

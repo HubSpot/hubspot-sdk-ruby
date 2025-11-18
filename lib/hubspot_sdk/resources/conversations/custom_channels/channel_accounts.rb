@@ -10,14 +10,19 @@ module HubspotSDK
           #
           # @overload create(channel_id, authorized:, inbox_id:, name:, delivery_identifier: nil, request_options: {})
           #
-          # @param channel_id [String]
+          # @param channel_id [Integer] The ID of the channel for which the account is being created.
+          #
           # @param authorized [Boolean]
+          #
           # @param inbox_id [String]
+          #
           # @param name [String]
+          #
           # @param delivery_identifier [HubspotSDK::Models::Conversations::PublicDeliveryIdentifier]
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Conversations::ConversationsPublicChannelAccount]
+          # @return [HubspotSDK::Models::Conversations::PublicChannelAccount]
           #
           # @see HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountCreateParams
           def create(channel_id, params)
@@ -27,7 +32,7 @@ module HubspotSDK
               method: :post,
               path: ["conversations/v3/custom-channels/%1$s/channel-accounts", channel_id],
               body: parsed,
-              model: HubspotSDK::Conversations::ConversationsPublicChannelAccount,
+              model: HubspotSDK::Conversations::PublicChannelAccount,
               options: options
             )
           end
@@ -37,9 +42,9 @@ module HubspotSDK
           #
           # @overload update(channel_account_id, channel_id:, authorized: nil, name: nil, request_options: {})
           #
-          # @param channel_account_id [String] Path param:
+          # @param channel_account_id [Integer] Path param: The channel account to update
           #
-          # @param channel_id [String] Path param:
+          # @param channel_id [Integer] Path param: The channel to update
           #
           # @param authorized [Boolean] Body param:
           #
@@ -47,7 +52,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Conversations::ConversationsPublicChannelAccount]
+          # @return [HubspotSDK::Models::Conversations::PublicChannelAccount]
           #
           # @see HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountUpdateParams
           def update(channel_account_id, params)
@@ -65,41 +70,64 @@ module HubspotSDK
                 channel_account_id
               ],
               body: parsed,
-              model: HubspotSDK::Conversations::ConversationsPublicChannelAccount,
+              model: HubspotSDK::Conversations::PublicChannelAccount,
               options: options
             )
           end
 
           # Retrieve a list of accounts for a custom channel.
           #
-          # @overload list(channel_id, request_options: {})
+          # @overload list(channel_id, after: nil, archived: nil, default_page_length: nil, delivery_identifier_type: nil, delivery_identifier_value: nil, limit: nil, sort: nil, request_options: {})
           #
-          # @param channel_id [String]
+          # @param channel_id [Integer]
+          # @param after [String]
+          # @param archived [Boolean]
+          # @param default_page_length [Integer]
+          # @param delivery_identifier_type [Array<String>]
+          # @param delivery_identifier_value [Array<String>]
+          # @param limit [Integer]
+          # @param sort [Array<String>]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Conversations::CollectionResponseWithTotalPublicChannelAccountForwardPaging]
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Conversations::PublicChannelAccount>]
           #
           # @see HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams
           def list(channel_id, params = {})
+            parsed, options =
+              HubspotSDK::Conversations::CustomChannels::ChannelAccountListParams.dump_request(params)
             @client.request(
               method: :get,
               path: ["conversations/v3/custom-channels/%1$s/channel-accounts", channel_id],
-              model: HubspotSDK::Conversations::CollectionResponseWithTotalPublicChannelAccountForwardPaging,
-              options: params[:request_options]
+              query: parsed.transform_keys(
+                default_page_length: "defaultPageLength",
+                delivery_identifier_type: "deliveryIdentifierType",
+                delivery_identifier_value: "deliveryIdentifierValue"
+              ),
+              page: HubspotSDK::Internal::Page,
+              model: HubspotSDK::Conversations::PublicChannelAccount,
+              options: options
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountGetParams} for
+          # more details.
+          #
           # Retrieve the details for a specific channel account. This contains all the
           # metadata about your channel account, including its channel, associated inbox id,
           # and delivery identifier information.
           #
-          # @overload get(channel_account_id, channel_id:, request_options: {})
+          # @overload get(channel_account_id, channel_id:, archived: nil, request_options: {})
           #
-          # @param channel_account_id [String]
-          # @param channel_id [String]
+          # @param channel_account_id [Integer] Path param: The ID of the channel account to retrieve.
+          #
+          # @param channel_id [Integer] Path param: The ID of the channel associated with the account being retrieved.
+          #
+          # @param archived [Boolean] Query param: Filter results to include only archived or non-archived channel acc
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Conversations::ConversationsPublicChannelAccount]
+          # @return [HubspotSDK::Models::Conversations::PublicChannelAccount]
           #
           # @see HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountGetParams
           def get(channel_account_id, params)
@@ -115,7 +143,8 @@ module HubspotSDK
                 channel_id,
                 channel_account_id
               ],
-              model: HubspotSDK::Conversations::ConversationsPublicChannelAccount,
+              query: parsed,
+              model: HubspotSDK::Conversations::PublicChannelAccount,
               options: options
             )
           end

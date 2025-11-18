@@ -11,13 +11,12 @@ module HubspotSDK
 
         # @!attribute types
         #
-        #   @return [Array<HubspotSDK::Models::Crm::Associations::AssociationSpec1>]
-        required :types,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Associations::AssociationSpec1] }
+        #   @return [Array<HubspotSDK::Models::AssociationSpec>]
+        required :types, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AssociationSpec] }
 
         # @!method initialize(to:, types:)
         #   @param to [HubspotSDK::Models::PublicObjectID]
-        #   @param types [Array<HubspotSDK::Models::Crm::Associations::AssociationSpec1>]
+        #   @param types [Array<HubspotSDK::Models::AssociationSpec>]
       end
     end
   end

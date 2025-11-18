@@ -6,15 +6,15 @@ module HubspotSDK
       class EmailStatisticInterval < HubspotSDK::Internal::Type::BaseModel
         # @!attribute aggregations
         #
-        #   @return [HubspotSDK::Models::Marketing::EmailStatisticsData, nil]
-        optional :aggregations, -> { HubspotSDK::Marketing::EmailStatisticsData }
+        #   @return [HubspotSDK::Models::Marketing::EmailStatisticsData]
+        required :aggregations, -> { HubspotSDK::Marketing::EmailStatisticsData }
 
         # @!attribute interval
         #
-        #   @return [HubspotSDK::Models::Marketing::Interval, nil]
-        optional :interval, -> { HubspotSDK::Marketing::Interval }
+        #   @return [HubspotSDK::Models::Marketing::Interval]
+        required :interval, -> { HubspotSDK::Marketing::Interval }
 
-        # @!method initialize(aggregations: nil, interval: nil)
+        # @!method initialize(aggregations:, interval:)
         #   @param aggregations [HubspotSDK::Models::Marketing::EmailStatisticsData]
         #   @param interval [HubspotSDK::Models::Marketing::Interval]
       end

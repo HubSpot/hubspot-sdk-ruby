@@ -23,9 +23,13 @@ module HubspotSDK
           )
         end
 
+        # Retrieve detailed information about a specific CRM export, including its current
+        # state and properties.
+        #
         # @overload get(export_id, request_options: {})
         #
-        # @param export_id [Integer]
+        # @param export_id [Integer] The unique ID of the export to retrieve.
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Crm::PublicExportResponse]
@@ -45,7 +49,8 @@ module HubspotSDK
         #
         # @overload get_status(task_id, request_options: {})
         #
-        # @param task_id [Integer]
+        # @param task_id [Integer] The unique ID of the export.
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Crm::ActionResponseWithSingleResultUri]

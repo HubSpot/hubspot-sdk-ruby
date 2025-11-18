@@ -17,20 +17,25 @@ module HubspotSDK
         required :filters, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Filter] }
 
         # @!attribute sorts
+        #   Defines the order in which the CRM records should be returned.
         #
         #   @return [Array<String>]
         required :sorts, HubspotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute query
+        #   The search query string, to filter CRM records.
         #
         #   @return [String, nil]
         optional :query, String
 
         # @!method initialize(filter_groups:, filters:, sorts:, query: nil)
         #   @param filter_groups [Array<HubspotSDK::Models::Crm::FilterGroup>]
+        #
         #   @param filters [Array<HubspotSDK::Models::Crm::Filter>]
-        #   @param sorts [Array<String>]
-        #   @param query [String]
+        #
+        #   @param sorts [Array<String>] Defines the order in which the CRM records should be returned.
+        #
+        #   @param query [String] The search query string, to filter CRM records.
       end
     end
   end

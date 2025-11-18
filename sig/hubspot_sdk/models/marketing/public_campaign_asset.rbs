@@ -7,7 +7,9 @@ module HubspotSDK
       class PublicCampaignAsset < HubspotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
-        attr_accessor metrics: ::Hash[Symbol, Float]
+        attr_reader metrics: ::Hash[Symbol, Float]?
+
+        def metrics=: (::Hash[Symbol, Float]) -> ::Hash[Symbol, Float]
 
         attr_reader name: String?
 
@@ -15,7 +17,7 @@ module HubspotSDK
 
         def initialize: (
           id: String,
-          metrics: ::Hash[Symbol, Float],
+          ?metrics: ::Hash[Symbol, Float],
           ?name: String
         ) -> void
 

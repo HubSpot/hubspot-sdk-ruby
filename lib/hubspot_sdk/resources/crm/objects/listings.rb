@@ -12,11 +12,11 @@ module HubspotSDK
           # including the ID. Documentation and examples for creating standard listings is
           # provided.
           #
-          # @overload create(properties:, associations: nil, request_options: {})
-          #
-          # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
+          # @overload create(associations:, properties:, request_options: {})
           #
           # @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
+          #
+          # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -44,7 +44,7 @@ module HubspotSDK
           #
           # @overload update(listing_id, properties:, id_property: nil, request_options: {})
           #
-          # @param listing_id [String] Path param: The unique identifier of the listing to be updated.
+          # @param listing_id [String] Path param:
           #
           # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
           #
@@ -109,8 +109,7 @@ module HubspotSDK
           #
           # @overload delete(listing_id, request_options: {})
           #
-          # @param listing_id [String] The unique identifier of the listing to be archived.
-          #
+          # @param listing_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -135,7 +134,7 @@ module HubspotSDK
           #
           # @overload get(listing_id, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
-          # @param listing_id [String] The unique identifier of the listing to be retrieved.
+          # @param listing_id [String]
           #
           # @param archived [Boolean] Whether to return only results that have been archived.
           #
@@ -169,7 +168,7 @@ module HubspotSDK
           # Execute a search query to find listings based on specified filters and
           # properties.
           #
-          # @overload search(after: nil, filter_groups: nil, limit: nil, properties: nil, query: nil, sorts: nil, request_options: {})
+          # @overload search(after:, filter_groups:, limit:, properties:, sorts:, query: nil, request_options: {})
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.
           #
@@ -179,16 +178,16 @@ module HubspotSDK
           #
           # @param properties [Array<String>] A list of property names to include in the response.
           #
-          # @param query [String] The search query string, up to 3000 characters.
-          #
           # @param sorts [Array<String>] Specifies sorting order based on object properties.
+          #
+          # @param query [String] The search query string, up to 3000 characters.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
           #
           # @see HubspotSDK::Models::Crm::Objects::ListingSearchParams
-          def search(params = {})
+          def search(params)
             parsed, options = HubspotSDK::Crm::Objects::ListingSearchParams.dump_request(params)
             @client.request(
               method: :post,

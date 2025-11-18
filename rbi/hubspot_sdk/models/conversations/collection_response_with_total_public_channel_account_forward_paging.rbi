@@ -13,11 +13,7 @@ module HubspotSDK
           end
 
         sig do
-          returns(
-            T::Array[
-              HubspotSDK::Conversations::ConversationsPublicChannelAccount
-            ]
-          )
+          returns(T::Array[HubspotSDK::Conversations::PublicChannelAccount])
         end
         attr_accessor :results
 
@@ -33,9 +29,7 @@ module HubspotSDK
         sig do
           params(
             results:
-              T::Array[
-                HubspotSDK::Conversations::ConversationsPublicChannelAccount::OrHash
-              ],
+              T::Array[HubspotSDK::Conversations::PublicChannelAccount::OrHash],
             total: Integer,
             paging: HubspotSDK::ForwardPaging::OrHash
           ).returns(T.attached_class)
@@ -47,9 +41,7 @@ module HubspotSDK
           override.returns(
             {
               results:
-                T::Array[
-                  HubspotSDK::Conversations::ConversationsPublicChannelAccount
-                ],
+                T::Array[HubspotSDK::Conversations::PublicChannelAccount],
               total: Integer,
               paging: HubspotSDK::ForwardPaging
             }

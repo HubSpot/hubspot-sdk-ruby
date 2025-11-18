@@ -19,19 +19,27 @@ module HubspotSDK
           sig { returns(String) }
           attr_accessor :object_type
 
+          sig { returns(T.nilable(String)) }
+          attr_reader :locale
+
+          sig { params(locale: String).void }
+          attr_writer :locale
+
           sig do
             params(
               object_type: String,
+              locale: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
-          def self.new(object_type:, request_options: {})
+          def self.new(object_type:, locale: nil, request_options: {})
           end
 
           sig do
             override.returns(
               {
                 object_type: String,
+                locale: String,
                 request_options: HubspotSDK::RequestOptions
               }
             )

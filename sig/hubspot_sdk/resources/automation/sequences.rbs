@@ -5,11 +5,16 @@ module HubspotSDK
         attr_reader enrollments: HubspotSDK::Resources::Automation::Sequences::Enrollments
 
         def list: (
+          user_id: String,
+          ?after: String,
+          ?limit: Integer,
+          ?name: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Automation::CollectionResponseWithTotalPublicSequenceLiteResponseForwardPaging
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Automation::PublicSequenceLiteResponse]
 
         def get: (
           String sequence_id,
+          user_id: String,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Automation::PublicSequenceResponse
 

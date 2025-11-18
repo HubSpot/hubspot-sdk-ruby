@@ -14,7 +14,11 @@ module HubspotSDK
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(HubspotSDK::Crm::Associations::ReportCreationResponse)
             end
-            def get_high_usage_report(user_id, request_options: {})
+            def request_high_usage_report(
+              # The user for the report
+              user_id,
+              request_options: {}
+            )
             end
 
             # @api private

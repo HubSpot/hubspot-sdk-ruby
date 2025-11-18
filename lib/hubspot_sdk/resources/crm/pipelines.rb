@@ -15,7 +15,7 @@ module HubspotSDK
         #
         # @overload create(object_type, display_order:, label:, stages:, request_options: {})
         #
-        # @param object_type [String]
+        # @param object_type [String] The object type of the pipeline being created (ex. deals or tickets)
         #
         # @param display_order [Integer] The order for displaying this pipeline. If two pipelines have a matching `displa
         #
@@ -47,13 +47,13 @@ module HubspotSDK
         #
         # @overload update(pipeline_id, object_type:, validate_deal_stage_usages_before_delete: nil, validate_references_before_delete: nil, archived: nil, display_order: nil, label: nil, request_options: {})
         #
-        # @param pipeline_id [String] Path param:
+        # @param pipeline_id [String] Path param: The unique identifier of the pipeline to be updated.
         #
-        # @param object_type [String] Path param:
+        # @param object_type [String] Path param: The object type of the pipeline being updated (ex. deals or tickets)
         #
-        # @param validate_deal_stage_usages_before_delete [Boolean] Query param:
+        # @param validate_deal_stage_usages_before_delete [Boolean] Query param: Indicates whether to validate deal stage usages before deleting the
         #
-        # @param validate_references_before_delete [Boolean] Query param:
+        # @param validate_references_before_delete [Boolean] Query param: Indicates whether to validate references before deleting the pipeli
         #
         # @param archived [Boolean] Body param: Whether the pipeline is archived. This property should only be provi
         #
@@ -90,7 +90,8 @@ module HubspotSDK
         #
         # @overload list(object_type, request_options: {})
         #
-        # @param object_type [String]
+        # @param object_type [String] The object type of the pipelines being retrieved (ex. deals or tickets)
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Crm::CollectionResponsePipelineNoPaging]
@@ -105,17 +106,20 @@ module HubspotSDK
           )
         end
 
-        # Delete a pipeline
+        # Some parameter documentations has been truncated, see
+        # {HubspotSDK::Models::Crm::PipelineDeleteParams} for more details.
+        #
+        # Delete a pipeline identified by its unique pipelineId
         #
         # @overload delete(pipeline_id, object_type:, validate_deal_stage_usages_before_delete: nil, validate_references_before_delete: nil, request_options: {})
         #
-        # @param pipeline_id [String] Path param:
+        # @param pipeline_id [String] Path param: The unique identifier of the pipeline to be deleted.
         #
-        # @param object_type [String] Path param:
+        # @param object_type [String] Path param: The object type of the pipeline being deleted (ex. deals or tickets)
         #
-        # @param validate_deal_stage_usages_before_delete [Boolean] Query param:
+        # @param validate_deal_stage_usages_before_delete [Boolean] Query param: Indicates whether to validate deal stage usages before deleting the
         #
-        # @param validate_references_before_delete [Boolean] Query param:
+        # @param validate_references_before_delete [Boolean] Query param: Indicates whether to validate references before deleting the pipeli
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -144,8 +148,10 @@ module HubspotSDK
         #
         # @overload get(pipeline_id, object_type:, request_options: {})
         #
-        # @param pipeline_id [String]
-        # @param object_type [String]
+        # @param pipeline_id [String] The unique identifier of the pipeline to be retrieved.
+        #
+        # @param object_type [String] The object type of the pipeline being retrieved (ex. deals or tickets)
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Crm::Pipeline]
@@ -170,8 +176,10 @@ module HubspotSDK
         #
         # @overload get_audit(pipeline_id, object_type:, request_options: {})
         #
-        # @param pipeline_id [String]
-        # @param object_type [String]
+        # @param pipeline_id [String] The unique identifier for the pipeline whose audit history is being retrieved.
+        #
+        # @param object_type [String] The object type of the pipeline audit being retrieved (ex. deals or tickets)
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Crm::CollectionResponsePublicAuditInfoNoPaging]
@@ -194,13 +202,13 @@ module HubspotSDK
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Crm::PipelineReplaceParams} for more details.
         #
-        # Replace a pipeline
+        # Replace all properties of an existing pipeline with the provided values.
         #
         # @overload replace(pipeline_id, object_type:, display_order:, label:, stages:, validate_deal_stage_usages_before_delete: nil, validate_references_before_delete: nil, request_options: {})
         #
-        # @param pipeline_id [String] Path param:
+        # @param pipeline_id [String] Path param: The unique identifier of the pipeline to be replaced.
         #
-        # @param object_type [String] Path param:
+        # @param object_type [String] Path param: The object type of the pipeline being replaced (ex. deals or tickets
         #
         # @param display_order [Integer] Body param: The order for displaying this pipeline. If two pipelines have a matc
         #
@@ -208,9 +216,9 @@ module HubspotSDK
         #
         # @param stages [Array<HubspotSDK::Models::Crm::PipelineStageInput>] Body param: Pipeline stage inputs used to create the new or replacement pipeline
         #
-        # @param validate_deal_stage_usages_before_delete [Boolean] Query param:
+        # @param validate_deal_stage_usages_before_delete [Boolean] Query param: Indicates whether to validate deal stage usages before deleting the
         #
-        # @param validate_references_before_delete [Boolean] Query param:
+        # @param validate_references_before_delete [Boolean] Query param: Indicates whether to validate references before deleting the pipeli
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #

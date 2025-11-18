@@ -12,33 +12,35 @@ module HubspotSDK
             )
           end
 
+        # The first name of the user.
         sig { returns(T.nilable(String)) }
         attr_reader :first_name
 
         sig { params(first_name: String).void }
         attr_writer :first_name
 
+        # The last name of the user.
         sig { returns(T.nilable(String)) }
         attr_reader :last_name
 
         sig { params(last_name: String).void }
         attr_writer :last_name
 
-        # The user's primary team
+        # The user's primary team.
         sig { returns(T.nilable(String)) }
         attr_reader :primary_team_id
 
         sig { params(primary_team_id: String).void }
         attr_writer :primary_team_id
 
-        # The user's role
+        # The user's role.
         sig { returns(T.nilable(String)) }
         attr_reader :role_id
 
         sig { params(role_id: String).void }
         attr_writer :role_id
 
-        # The user's additional teams
+        # The user's additional teams.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :secondary_team_ids
 
@@ -56,13 +58,15 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # The first name of the user.
           first_name: nil,
+          # The last name of the user.
           last_name: nil,
-          # The user's primary team
+          # The user's primary team.
           primary_team_id: nil,
-          # The user's role
+          # The user's role.
           role_id: nil,
-          # The user's additional teams
+          # The user's additional teams.
           secondary_team_ids: nil
         )
         end

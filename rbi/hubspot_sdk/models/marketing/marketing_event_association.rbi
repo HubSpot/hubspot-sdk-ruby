@@ -2,6 +2,8 @@
 
 module HubspotSDK
   module Models
+    MarketingEventAssociation = Marketing::MarketingEventAssociation
+
     module Marketing
       class MarketingEventAssociation < HubspotSDK::Internal::Type::BaseModel
         OrHash =

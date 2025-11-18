@@ -5,13 +5,13 @@ module HubspotSDK
         {
           id: String,
           created_at: Time,
+          label: String,
           name: String,
           order: Integer,
           type: String,
           updated_at: Time,
           created_by: HubspotSDK::Cms::SimpleUser,
           created_by_user_id: Integer,
-          label: String,
           updated_by: HubspotSDK::Cms::SimpleUser,
           updated_by_user_id: Integer
         }
@@ -20,6 +20,8 @@ module HubspotSDK
         attr_accessor id: String
 
         attr_accessor created_at: Time
+
+        attr_accessor label: String
 
         attr_accessor name: String
 
@@ -39,10 +41,6 @@ module HubspotSDK
 
         def created_by_user_id=: (Integer) -> Integer
 
-        attr_reader label: String?
-
-        def label=: (String) -> String
-
         attr_reader updated_by: HubspotSDK::Cms::SimpleUser?
 
         def updated_by=: (
@@ -56,13 +54,13 @@ module HubspotSDK
         def initialize: (
           id: String,
           created_at: Time,
+          label: String,
           name: String,
           order: Integer,
           type: String,
           updated_at: Time,
           ?created_by: HubspotSDK::Cms::SimpleUser,
           ?created_by_user_id: Integer,
-          ?label: String,
           ?updated_by: HubspotSDK::Cms::SimpleUser,
           ?updated_by_user_id: Integer
         ) -> void
@@ -70,13 +68,13 @@ module HubspotSDK
         def to_hash: -> {
           id: String,
           created_at: Time,
+          label: String,
           name: String,
           order: Integer,
           type: String,
           updated_at: Time,
           created_by: HubspotSDK::Cms::SimpleUser,
           created_by_user_id: Integer,
-          label: String,
           updated_by: HubspotSDK::Cms::SimpleUser,
           updated_by_user_id: Integer
         }

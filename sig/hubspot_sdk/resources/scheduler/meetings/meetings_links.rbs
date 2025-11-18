@@ -4,8 +4,13 @@ module HubspotSDK
       class Meetings
         class MeetingsLinks
           def list: (
+            ?after: String,
+            ?limit: Integer,
+            ?name: String,
+            ?organizer_user_id: String,
+            ?type: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Scheduler::CollectionResponseWithTotalExternalLinkMetadataForwardPaging
+          ) -> HubspotSDK::Internal::Page[HubspotSDK::Scheduler::ExternalLinkMetadata]
 
           def book: (
             duration: Integer,
@@ -24,11 +29,14 @@ module HubspotSDK
 
           def get_availability_by_slug: (
             String slug,
+            timezone: String,
+            ?month_offset: Integer,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Scheduler::ExternalLinkAvailabilityAndBusyTimes
 
           def get_booking_info_by_slug: (
             String slug,
+            timezone: String,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Scheduler::ExternalBookingInfo
 

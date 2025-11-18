@@ -45,6 +45,8 @@ module HubspotSDK
         def list: (
           String object_type,
           ?archived: bool,
+          ?data_sensitivity: HubspotSDK::Models::Crm::PropertyListParams::data_sensitivity,
+          ?locale: String,
           ?properties: String,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Crm::CollectionResponseProperty
@@ -59,6 +61,8 @@ module HubspotSDK
           String property_name,
           object_type: String,
           ?archived: bool,
+          ?data_sensitivity: HubspotSDK::Models::Crm::PropertyGetParams::data_sensitivity,
+          ?locale: String,
           ?properties: String,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Property

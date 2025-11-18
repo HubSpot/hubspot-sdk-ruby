@@ -13,25 +13,19 @@ module HubspotSDK
           end
 
         # The ID of the channel.
-        sig { returns(T.nilable(String)) }
-        attr_reader :id
-
-        sig { params(id: String).void }
-        attr_writer :id
+        sig { returns(String) }
+        attr_accessor :id
 
         # The name of the channel.
-        sig { returns(T.nilable(String)) }
-        attr_reader :name
-
-        sig { params(name: String).void }
-        attr_writer :name
+        sig { returns(String) }
+        attr_accessor :name
 
         sig { params(id: String, name: String).returns(T.attached_class) }
         def self.new(
           # The ID of the channel.
-          id: nil,
+          id:,
           # The name of the channel.
-          name: nil
+          name:
         )
         end
 

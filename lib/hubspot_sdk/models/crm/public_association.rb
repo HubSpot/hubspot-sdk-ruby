@@ -15,14 +15,17 @@ module HubspotSDK
         required :to, -> { HubspotSDK::PublicObjectID }
 
         # @!attribute type
+        #   The type of association between the 'from' and 'to' objects.
         #
         #   @return [String]
         required :type, String
 
         # @!method initialize(from:, to:, type:)
         #   @param from [HubspotSDK::Models::PublicObjectID]
+        #
         #   @param to [HubspotSDK::Models::PublicObjectID]
-        #   @param type [String]
+        #
+        #   @param type [String] The type of association between the 'from' and 'to' objects.
       end
     end
   end

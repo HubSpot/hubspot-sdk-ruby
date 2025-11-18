@@ -1,14 +1,16 @@
 module HubspotSDK
   module Models
+    class MarketingEventPublicDefaultResponse = Marketing::MarketingEventPublicDefaultResponse
+
     module Marketing
       type marketing_event_public_default_response =
         {
           id: String,
           created_at: Time,
+          custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
           event_name: String,
           event_organizer: String,
           updated_at: Time,
-          custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
           end_date_time: Time,
           event_cancelled: bool,
           event_completed: bool,
@@ -24,17 +26,13 @@ module HubspotSDK
 
         attr_accessor created_at: Time
 
+        attr_accessor custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue]
+
         attr_accessor event_name: String
 
         attr_accessor event_organizer: String
 
         attr_accessor updated_at: Time
-
-        attr_reader custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue]?
-
-        def custom_properties=: (
-          ::Array[HubspotSDK::Marketing::PropertyValue]
-        ) -> ::Array[HubspotSDK::Marketing::PropertyValue]
 
         attr_reader end_date_time: Time?
 
@@ -71,10 +69,10 @@ module HubspotSDK
         def initialize: (
           id: String,
           created_at: Time,
+          custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
           event_name: String,
           event_organizer: String,
           updated_at: Time,
-          ?custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
           ?end_date_time: Time,
           ?event_cancelled: bool,
           ?event_completed: bool,
@@ -88,10 +86,10 @@ module HubspotSDK
         def to_hash: -> {
           id: String,
           created_at: Time,
+          custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
           event_name: String,
           event_organizer: String,
           updated_at: Time,
-          custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
           end_date_time: Time,
           event_cancelled: bool,
           event_completed: bool,

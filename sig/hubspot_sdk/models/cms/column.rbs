@@ -3,15 +3,15 @@ module HubspotSDK
     module Cms
       type column =
         {
+          id: String,
+          deleted: bool,
+          description: String,
           label: String,
           name: String,
           type: HubspotSDK::Models::Cms::Column::type_,
-          id: String,
           created_at: Time,
           created_by: HubspotSDK::Cms::SimpleUser,
           created_by_user_id: Integer,
-          deleted: bool,
-          description: String,
           foreign_column_id: Integer,
           foreign_ids: ::Array[HubspotSDK::Cms::ForeignID],
           foreign_ids_by_id: ::Hash[Symbol, HubspotSDK::Cms::ForeignID],
@@ -26,15 +26,17 @@ module HubspotSDK
         }
 
       class Column < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor deleted: bool
+
+        attr_accessor description: String
+
         attr_accessor label: String
 
         attr_accessor name: String
 
         attr_accessor type: HubspotSDK::Models::Cms::Column::type_
-
-        attr_reader id: String?
-
-        def id=: (String) -> String
 
         attr_reader created_at: Time?
 
@@ -49,14 +51,6 @@ module HubspotSDK
         attr_reader created_by_user_id: Integer?
 
         def created_by_user_id=: (Integer) -> Integer
-
-        attr_reader deleted: bool?
-
-        def deleted=: (bool) -> bool
-
-        attr_reader description: String?
-
-        def description=: (String) -> String
 
         attr_reader foreign_column_id: Integer?
 
@@ -113,15 +107,15 @@ module HubspotSDK
         def width=: (Integer) -> Integer
 
         def initialize: (
+          id: String,
+          deleted: bool,
+          description: String,
           label: String,
           name: String,
           type: HubspotSDK::Models::Cms::Column::type_,
-          ?id: String,
           ?created_at: Time,
           ?created_by: HubspotSDK::Cms::SimpleUser,
           ?created_by_user_id: Integer,
-          ?deleted: bool,
-          ?description: String,
           ?foreign_column_id: Integer,
           ?foreign_ids: ::Array[HubspotSDK::Cms::ForeignID],
           ?foreign_ids_by_id: ::Hash[Symbol, HubspotSDK::Cms::ForeignID],
@@ -136,15 +130,15 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
+          id: String,
+          deleted: bool,
+          description: String,
           label: String,
           name: String,
           type: HubspotSDK::Models::Cms::Column::type_,
-          id: String,
           created_at: Time,
           created_by: HubspotSDK::Cms::SimpleUser,
           created_by_user_id: Integer,
-          deleted: bool,
-          description: String,
           foreign_column_id: Integer,
           foreign_ids: ::Array[HubspotSDK::Cms::ForeignID],
           foreign_ids_by_id: ::Hash[Symbol, HubspotSDK::Cms::ForeignID],

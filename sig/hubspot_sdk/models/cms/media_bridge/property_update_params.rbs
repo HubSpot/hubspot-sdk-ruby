@@ -3,29 +3,29 @@ module HubspotSDK
     module Cms
       module MediaBridge
         type property_update_params =
-          { app_id: String, object_type: String }
+          { app_id: Integer, object_type: String }
           & HubspotSDK::Internal::Type::request_parameters
 
         class PropertyUpdateParams < HubspotSDK::Models::Cms::MediaBridgePropertyUpdate
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def app_id: -> String
+          def app_id: -> Integer
 
-          def app_id=: (String _) -> String
+          def app_id=: (Integer _) -> Integer
 
           def object_type: -> String
 
           def object_type=: (String _) -> String
 
           def initialize: (
-            app_id: String,
+            app_id: Integer,
             object_type: String,
             ?request_options: HubspotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
-            app_id: String,
+            app_id: Integer,
             object_type: String,
             request_options: HubspotSDK::RequestOptions
           }

@@ -95,6 +95,8 @@ module HubspotSDK
           #   @param secondary_display_properties [Array<String>] The names of secondary properties for this object. These will be displayed as se
         end
       end
+
+      ObjectSchemaEgg = Objects::ObjectSchemaEgg
     end
   end
 end

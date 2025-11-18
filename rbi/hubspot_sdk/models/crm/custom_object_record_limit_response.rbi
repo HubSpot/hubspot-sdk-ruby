@@ -15,12 +15,15 @@ module HubspotSDK
         sig { returns(T::Array[HubspotSDK::Crm::UsageForObjectType]) }
         attr_accessor :by_object_type
 
+        # The maximum number of custom object records allowed.
         sig { returns(Integer) }
         attr_accessor :overall_limit
 
+        # The percentage of the overall custom object record limit that has been used.
         sig { returns(Float) }
         attr_accessor :overall_percentage
 
+        # The total number of custom object records currently in use.
         sig { returns(Integer) }
         attr_accessor :overall_usage
 
@@ -35,8 +38,11 @@ module HubspotSDK
         end
         def self.new(
           by_object_type:,
+          # The maximum number of custom object records allowed.
           overall_limit:,
+          # The percentage of the overall custom object record limit that has been used.
           overall_percentage:,
+          # The total number of custom object records currently in use.
           overall_usage:
         )
         end

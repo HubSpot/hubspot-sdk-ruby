@@ -5,6 +5,8 @@ module HubspotSDK
     class Crm
       class Associations
         class Batch
+          # This endpoint allows you to create multiple associations between specified
+          # 'from' and 'to' object types in a single batch request.
           sig do
             params(
               to_object_type: String,
@@ -14,9 +16,9 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::BatchResponsePublicAssociation)
           end
           def create(
-            # Path param:
+            # Path param: The type of the target object in the association.
             to_object_type,
-            # Path param:
+            # Path param: The type of the source object in the association.
             from_object_type:,
             # Body param:
             inputs:,
@@ -45,6 +47,8 @@ module HubspotSDK
           )
           end
 
+          # This endpoint allows you to retrieve multiple associations between specified
+          # 'from' and 'to' object types in a single batch request.
           sig do
             params(
               to_object_type: String,
@@ -54,9 +58,9 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::BatchResponsePublicAssociationMulti)
           end
           def get(
-            # Path param:
+            # Path param: The type of the target object in the association.
             to_object_type,
-            # Path param:
+            # Path param: The type of the source object in the association.
             from_object_type:,
             # Body param:
             inputs:,

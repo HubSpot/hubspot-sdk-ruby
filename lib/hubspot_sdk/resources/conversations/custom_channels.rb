@@ -43,15 +43,22 @@ module HubspotSDK
         # Update the capabilities for an existing. You can also use it to update the
         # channel's webhookUri and its channelAccountConnectionRedirectUrl.
         #
-        # @overload update(channel_id, capabilities:, channel_description:, channel_logo_url:, channel_account_connection_redirect_url: nil, name: nil, webhook_url: nil, request_options: {})
+        # @overload update(channel_id, capabilities:, channel_account_connection_redirect_url:, channel_description:, channel_logo_url:, name:, webhook_url:, request_options: {})
         #
-        # @param channel_id [String]
+        # @param channel_id [Integer] The ID of the channel to update.
+        #
         # @param capabilities [Hash{Symbol=>Object}]
-        # @param channel_description [Object]
-        # @param channel_logo_url [Object]
+        #
         # @param channel_account_connection_redirect_url [Object]
+        #
+        # @param channel_description [Object]
+        #
+        # @param channel_logo_url [Object]
+        #
         # @param name [Object]
+        #
         # @param webhook_url [Object]
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Conversations::PublicChannelIntegrationChannel]
@@ -68,21 +75,35 @@ module HubspotSDK
           )
         end
 
+        # Some parameter documentations has been truncated, see
+        # {HubspotSDK::Models::Conversations::CustomChannelListParams} for more details.
+        #
         # Retrieve all custom channels associated with the app.
         #
-        # @overload list(request_options: {})
+        # @overload list(after: nil, default_page_length: nil, limit: nil, sort: nil, request_options: {})
+        #
+        # @param after [String] The paging cursor token of the last successfully read resource will be returned
+        #
+        # @param default_page_length [Integer] Specify the default number of results to return per page.
+        #
+        # @param limit [Integer] The maximum number of results to display per page.
+        #
+        # @param sort [Array<String>] Specify the sorting order for the results.
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Conversations::CollectionResponseWithTotalPublicChannelIntegrationChannelForwardPaging]
+        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Conversations::PublicChannelIntegrationChannel>]
         #
         # @see HubspotSDK::Models::Conversations::CustomChannelListParams
         def list(params = {})
+          parsed, options = HubspotSDK::Conversations::CustomChannelListParams.dump_request(params)
           @client.request(
             method: :get,
             path: "conversations/v3/custom-channels/",
-            model: HubspotSDK::Conversations::CollectionResponseWithTotalPublicChannelIntegrationChannelForwardPaging,
-            options: params[:request_options]
+            query: parsed.transform_keys(default_page_length: "defaultPageLength"),
+            page: HubspotSDK::Internal::Page,
+            model: HubspotSDK::Conversations::PublicChannelIntegrationChannel,
+            options: options
           )
         end
 
@@ -90,7 +111,7 @@ module HubspotSDK
         #
         # @overload delete(channel_id, request_options: {})
         #
-        # @param channel_id [String]
+        # @param channel_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
@@ -110,7 +131,7 @@ module HubspotSDK
         #
         # @overload get(channel_id, request_options: {})
         #
-        # @param channel_id [String]
+        # @param channel_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Conversations::PublicChannelIntegrationChannel]

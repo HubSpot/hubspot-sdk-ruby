@@ -5,7 +5,7 @@ module HubspotSDK
         class ChannelAccountStagingTokens
           def update: (
             String account_token,
-            channel_id: String,
+            channel_id: Integer,
             account_name: String,
             delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
             ?request_options: HubspotSDK::request_opts

@@ -21,14 +21,15 @@ class HubspotSDK::Test::Resources::Crm::Objects::PartnerClients::AssociationsTes
     assert_pattern do
       response => {
         id: String,
+        archived: HubspotSDK::Internal::Type::Boolean,
         created_at: Time,
         properties: ^(HubspotSDK::Internal::Type::HashOf[String, nil?: true]),
         updated_at: Time,
-        archived: HubspotSDK::Internal::Type::Boolean | nil,
         archived_at: Time | nil,
         associations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Crm::CollectionResponseAssociatedID]) | nil,
         object_write_trace_id: String | nil,
-        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil
+        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil,
+        url: String | nil
       }
     end
   end

@@ -3,13 +3,21 @@ module HubspotSDK
     class Conversations
       class ChannelAccounts
         def list: (
+          ?after: String,
+          ?archived: bool,
+          ?channel_id: ::Array[Integer],
+          ?default_page_length: Integer,
+          ?inbox_id: ::Array[Integer],
+          ?limit: Integer,
+          ?sort: ::Array[String],
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Conversations::CollectionResponseWithTotalPublicChannelAccountForwardPaging
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Conversations::PublicChannelAccount]
 
         def get: (
-          String channel_account_id,
+          Integer channel_account_id,
+          ?archived: bool,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Conversations::ConversationsPublicChannelAccount
+        ) -> HubspotSDK::Conversations::PublicChannelAccount
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

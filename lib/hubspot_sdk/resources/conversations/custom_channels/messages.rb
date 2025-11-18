@@ -7,21 +7,34 @@ module HubspotSDK
         class Messages
           # Publish a message over your custom channel
           #
-          # @overload create(channel_id, attachments:, channel_account_id:, integration_thread_id:, message_direction:, recipients:, senders:, text:, timestamp:, in_reply_to_id: nil, integration_idempotency_id: nil, pre_resolved_contacts: nil, rich_text: nil, request_options: {})
+          # @overload create(channel_id, attachments:, channel_account_id:, message_direction:, recipients:, senders:, text:, timestamp:, in_reply_to_id: nil, integration_idempotency_id: nil, integration_thread_id: nil, pre_resolved_contacts: nil, rich_text: nil, request_options: {})
           #
-          # @param channel_id [String]
+          # @param channel_id [Integer] The channel the message will be sent over
+          #
           # @param attachments [Array<HubspotSDK::Models::Conversations::FileAttachment, HubspotSDK::Models::Conversations::LocationAttachment, HubspotSDK::Models::Conversations::ContactAttachment, HubspotSDK::Models::Conversations::UnsupportedContentAttachment, HubspotSDK::Models::Conversations::MessageHeaderAttachment, HubspotSDK::Models::Conversations::QuickRepliesAttachment, HubspotSDK::Models::Conversations::SocialMetadataIntegrationAttachment>]
+          #
           # @param channel_account_id [String]
-          # @param integration_thread_id [String]
+          #
           # @param message_direction [Symbol, HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::MessageDirection]
+          #
           # @param recipients [Array<HubspotSDK::Models::Conversations::ChannelIntegrationParticipant>]
+          #
           # @param senders [Array<HubspotSDK::Models::Conversations::ChannelIntegrationParticipant>]
+          #
           # @param text [String]
+          #
           # @param timestamp [Time]
+          #
           # @param in_reply_to_id [String]
+          #
           # @param integration_idempotency_id [String]
+          #
+          # @param integration_thread_id [String]
+          #
           # @param pre_resolved_contacts [HubspotSDK::Models::Conversations::PreResolvedContacts]
+          #
           # @param rich_text [String]
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Conversations::ConversationsPublicConversationsMessage]
@@ -44,9 +57,9 @@ module HubspotSDK
           #
           # @overload update(message_id, channel_id:, status_type:, error_message: nil, request_options: {})
           #
-          # @param message_id [String] Path param:
+          # @param message_id [String] Path param: The id of the message
           #
-          # @param channel_id [String] Path param:
+          # @param channel_id [Integer] Path param: The channel the message was sent over
           #
           # @param status_type [Symbol, HubspotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType] Body param: Valid status are SENT, FAILED, and READ
           #
@@ -76,8 +89,10 @@ module HubspotSDK
           #
           # @overload get(message_id, channel_id:, request_options: {})
           #
-          # @param message_id [String]
-          # @param channel_id [String]
+          # @param message_id [String] The id of the message
+          #
+          # @param channel_id [Integer] The channel the message was sent over
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Conversations::ConversationsPublicConversationsMessage]

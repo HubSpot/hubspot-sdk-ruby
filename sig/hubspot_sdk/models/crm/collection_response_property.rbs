@@ -2,28 +2,23 @@ module HubspotSDK
   module Models
     module Crm
       type collection_response_property =
-        {
-          results: ::Array[HubspotSDK::Property],
-          paging: HubspotSDK::Marketing::EmailsPaging
-        }
+        { results: ::Array[HubspotSDK::Property], paging: HubspotSDK::Paging }
 
       class CollectionResponseProperty < HubspotSDK::Internal::Type::BaseModel
         attr_accessor results: ::Array[HubspotSDK::Property]
 
-        attr_reader paging: HubspotSDK::Marketing::EmailsPaging?
+        attr_reader paging: HubspotSDK::Paging?
 
-        def paging=: (
-          HubspotSDK::Marketing::EmailsPaging
-        ) -> HubspotSDK::Marketing::EmailsPaging
+        def paging=: (HubspotSDK::Paging) -> HubspotSDK::Paging
 
         def initialize: (
           results: ::Array[HubspotSDK::Property],
-          ?paging: HubspotSDK::Marketing::EmailsPaging
+          ?paging: HubspotSDK::Paging
         ) -> void
 
         def to_hash: -> {
           results: ::Array[HubspotSDK::Property],
-          paging: HubspotSDK::Marketing::EmailsPaging
+          paging: HubspotSDK::Paging
         }
       end
     end

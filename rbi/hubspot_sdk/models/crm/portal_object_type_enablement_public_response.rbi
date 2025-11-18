@@ -12,6 +12,7 @@ module HubspotSDK
             )
           end
 
+        # A map of objectTypeId to whether that object type is enabled or not
         sig { returns(T::Hash[Symbol, T::Boolean]) }
         attr_accessor :enablement_by_object_type_id
 
@@ -20,7 +21,10 @@ module HubspotSDK
             enablement_by_object_type_id: T::Hash[Symbol, T::Boolean]
           ).returns(T.attached_class)
         end
-        def self.new(enablement_by_object_type_id:)
+        def self.new(
+          # A map of objectTypeId to whether that object type is enabled or not
+          enablement_by_object_type_id:
+        )
         end
 
         sig do

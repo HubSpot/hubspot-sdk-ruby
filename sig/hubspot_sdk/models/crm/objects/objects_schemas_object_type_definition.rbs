@@ -1,6 +1,8 @@
 module HubspotSDK
   module Models
     module Crm
+      class ObjectsSchemasObjectTypeDefinition = Objects::ObjectsSchemasObjectTypeDefinition
+
       module Objects
         type objects_schemas_object_type_definition =
           {

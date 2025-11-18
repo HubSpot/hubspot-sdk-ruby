@@ -10,6 +10,12 @@ module HubspotSDK
         #   @return [String]
         required :id, String
 
+        # @!attribute archived
+        #   Whether the object is archived.
+        #
+        #   @return [Boolean]
+        required :archived, HubspotSDK::Internal::Type::Boolean
+
         # @!attribute created_at
         #   The timestamp when the object was created, in ISO 8601 format.
         #
@@ -28,12 +34,6 @@ module HubspotSDK
         #   @return [Time]
         required :updated_at, Time, api_name: :updatedAt
 
-        # @!attribute archived
-        #   Whether the object is archived.
-        #
-        #   @return [Boolean, nil]
-        optional :archived, HubspotSDK::Internal::Type::Boolean
-
         # @!attribute archived_at
         #   The timestamp when the object was archived, in ISO 8601 format.
         #
@@ -41,6 +41,7 @@ module HubspotSDK
         optional :archived_at, Time, api_name: :archivedAt
 
         # @!attribute object_write_trace_id
+        #   A unique identifier for tracing the creation request.
         #
         #   @return [String, nil]
         optional :object_write_trace_id, String, api_name: :objectWriteTraceId
@@ -56,7 +57,12 @@ module HubspotSDK
                  },
                  api_name: :propertiesWithHistory
 
-        # @!method initialize(id:, created_at:, properties:, updated_at:, archived: nil, archived_at: nil, object_write_trace_id: nil, properties_with_history: nil)
+        # @!attribute url
+        #
+        #   @return [String, nil]
+        optional :url, String
+
+        # @!method initialize(id:, archived:, created_at:, properties:, updated_at:, archived_at: nil, object_write_trace_id: nil, properties_with_history: nil, url: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Crm::SimplePublicObject} for more details.
         #
@@ -64,19 +70,21 @@ module HubspotSDK
         #
         #   @param id [String] The unique ID of the object.
         #
+        #   @param archived [Boolean] Whether the object is archived.
+        #
         #   @param created_at [Time] The timestamp when the object was created, in ISO 8601 format.
         #
         #   @param properties [Hash{Symbol=>String, nil}] Key-value pairs representing the properties of the object.
         #
         #   @param updated_at [Time] The timestamp when the object was last updated, in ISO 8601 format.
         #
-        #   @param archived [Boolean] Whether the object is archived.
-        #
         #   @param archived_at [Time] The timestamp when the object was archived, in ISO 8601 format.
         #
-        #   @param object_write_trace_id [String]
+        #   @param object_write_trace_id [String] A unique identifier for tracing the creation request.
         #
         #   @param properties_with_history [Hash{Symbol=>Array<HubspotSDK::Models::Crm::ValueWithTimestamp>}] Key-value pairs representing the properties of the object along with their histo
+        #
+        #   @param url [String]
       end
     end
   end

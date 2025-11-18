@@ -38,19 +38,6 @@ module HubspotSDK
         #   @return [String]
         required :label, String
 
-        # @!attribute updated_at
-        #   The date the pipeline stage was last updated.
-        #
-        #   @return [Time]
-        required :updated_at, Time, api_name: :updatedAt
-
-        # @!attribute archived_at
-        #   The date the pipeline was archived. `archivedAt` will only be present if the
-        #   pipeline is archived.
-        #
-        #   @return [Time, nil]
-        optional :archived_at, Time, api_name: :archivedAt
-
         # @!attribute metadata
         #   A JSON object containing properties that are not present on all object
         #   pipelines.
@@ -64,8 +51,21 @@ module HubspotSDK
         #   has been closed by a member of your Support team. Possible values are `OPEN` or
         #   `CLOSED`.
         #
-        #   @return [Hash{Symbol=>String}, nil]
-        optional :metadata, HubspotSDK::Internal::Type::HashOf[String]
+        #   @return [Hash{Symbol=>String}]
+        required :metadata, HubspotSDK::Internal::Type::HashOf[String]
+
+        # @!attribute updated_at
+        #   The date the pipeline stage was last updated.
+        #
+        #   @return [Time]
+        required :updated_at, Time, api_name: :updatedAt
+
+        # @!attribute archived_at
+        #   The date the pipeline was archived. `archivedAt` will only be present if the
+        #   pipeline is archived.
+        #
+        #   @return [Time, nil]
+        optional :archived_at, Time, api_name: :archivedAt
 
         # @!attribute write_permissions
         #   Defines the level of write access for the pipeline stage, with possible values
@@ -76,7 +76,7 @@ module HubspotSDK
                  enum: -> { HubspotSDK::Crm::PipelineStage::WritePermissions },
                  api_name: :writePermissions
 
-        # @!method initialize(id:, archived:, created_at:, display_order:, label:, updated_at:, archived_at: nil, metadata: nil, write_permissions: nil)
+        # @!method initialize(id:, archived:, created_at:, display_order:, label:, metadata:, updated_at:, archived_at: nil, write_permissions: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Crm::PipelineStage} for more details.
         #
@@ -92,11 +92,11 @@ module HubspotSDK
         #
         #   @param label [String] A label used to organize pipeline stages in HubSpot's UI. Each pipeline stage's
         #
+        #   @param metadata [Hash{Symbol=>String}] A JSON object containing properties that are not present on all object pipelines
+        #
         #   @param updated_at [Time] The date the pipeline stage was last updated.
         #
         #   @param archived_at [Time] The date the pipeline was archived. `archivedAt` will only be present if the pip
-        #
-        #   @param metadata [Hash{Symbol=>String}] A JSON object containing properties that are not present on all object pipelines
         #
         #   @param write_permissions [Symbol, HubspotSDK::Models::Crm::PipelineStage::WritePermissions] Defines the level of write access for the pipeline stage, with possible values b
 

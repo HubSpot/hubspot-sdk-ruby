@@ -13,6 +13,7 @@ module HubspotSDK
                  api_name: :atLimitFromRecordSamples
 
         # @!attribute limit
+        #   The maximum number of associations allowed for records.
         #
         #   @return [Integer]
         required :limit, Integer
@@ -25,21 +26,27 @@ module HubspotSDK
                  api_name: :nearLimitFromRecordSamples
 
         # @!attribute total_records_at_limit
+        #   The total number of records that have reached their association limit.
         #
         #   @return [Integer]
         required :total_records_at_limit, Integer, api_name: :totalRecordsAtLimit
 
         # @!attribute total_records_near_limit
+        #   The total number of records that are approaching their association limit.
         #
         #   @return [Integer]
         required :total_records_near_limit, Integer, api_name: :totalRecordsNearLimit
 
         # @!method initialize(at_limit_from_record_samples:, limit:, near_limit_from_record_samples:, total_records_at_limit:, total_records_near_limit:)
         #   @param at_limit_from_record_samples [Array<HubspotSDK::Models::Crm::AtLimitRecordSample>]
-        #   @param limit [Integer]
+        #
+        #   @param limit [Integer] The maximum number of associations allowed for records.
+        #
         #   @param near_limit_from_record_samples [Array<HubspotSDK::Models::Crm::NearLimitRecordSample>]
-        #   @param total_records_at_limit [Integer]
-        #   @param total_records_near_limit [Integer]
+        #
+        #   @param total_records_at_limit [Integer] The total number of records that have reached their association limit.
+        #
+        #   @param total_records_near_limit [Integer] The total number of records that are approaching their association limit.
       end
     end
   end

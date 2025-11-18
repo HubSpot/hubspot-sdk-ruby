@@ -9,14 +9,25 @@ class HubspotSDK::Test::Resources::Conversations::InboxesTest < HubspotSDK::Test
     response = @hubspot.conversations.inboxes.list
 
     assert_pattern do
-      response => HubspotSDK::Conversations::CollectionResponseWithTotalPublicInboxForwardPaging
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Conversations::PublicInbox
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::PublicInbox]),
-        total: Integer,
-        paging: HubspotSDK::ForwardPaging | nil
+      row => {
+        id: String,
+        archived: HubspotSDK::Internal::Type::Boolean,
+        created_at: Time,
+        name: String,
+        type: String,
+        updated_at: Time,
+        archived_at: Time | nil
       }
     end
   end
@@ -24,7 +35,7 @@ class HubspotSDK::Test::Resources::Conversations::InboxesTest < HubspotSDK::Test
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hubspot.conversations.inboxes.get("inboxId")
+    response = @hubspot.conversations.inboxes.get(0)
 
     assert_pattern do
       response => HubspotSDK::Conversations::PublicInbox
@@ -32,13 +43,13 @@ class HubspotSDK::Test::Resources::Conversations::InboxesTest < HubspotSDK::Test
 
     assert_pattern do
       response => {
+        id: String,
         archived: HubspotSDK::Internal::Type::Boolean,
+        created_at: Time,
+        name: String,
         type: String,
-        id: String | nil,
-        archived_at: Time | nil,
-        created_at: Time | nil,
-        name: String | nil,
-        updated_at: Time | nil
+        updated_at: Time,
+        archived_at: Time | nil
       }
     end
   end

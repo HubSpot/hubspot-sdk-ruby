@@ -41,6 +41,8 @@ module HubspotSDK
           #   @param slug [String] Path to this blog.
         end
       end
+
+      BlogLanguageCloneRequestVNext = Blogs::BlogLanguageCloneRequestVNext
     end
   end
 end

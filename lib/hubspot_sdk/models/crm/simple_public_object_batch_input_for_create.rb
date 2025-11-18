@@ -4,26 +4,30 @@ module HubspotSDK
   module Models
     module Crm
       class SimplePublicObjectBatchInputForCreate < HubspotSDK::Internal::Type::BaseModel
+        # @!attribute associations
+        #
+        #   @return [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
+        required :associations,
+                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociationsForObject] }
+
         # @!attribute properties
+        #   Key-value pairs representing the properties of the object.
         #
         #   @return [Hash{Symbol=>String}]
         required :properties, HubspotSDK::Internal::Type::HashOf[String]
 
-        # @!attribute associations
-        #
-        #   @return [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>, nil]
-        optional :associations,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociationsForObject] }
-
         # @!attribute object_write_trace_id
+        #   A unique identifier for tracing the creation request.
         #
         #   @return [String, nil]
         optional :object_write_trace_id, String, api_name: :objectWriteTraceId
 
-        # @!method initialize(properties:, associations: nil, object_write_trace_id: nil)
-        #   @param properties [Hash{Symbol=>String}]
+        # @!method initialize(associations:, properties:, object_write_trace_id: nil)
         #   @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
-        #   @param object_write_trace_id [String]
+        #
+        #   @param properties [Hash{Symbol=>String}] Key-value pairs representing the properties of the object.
+        #
+        #   @param object_write_trace_id [String] A unique identifier for tracing the creation request.
       end
     end
   end

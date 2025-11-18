@@ -32,9 +32,6 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :channel_account_id
 
-        sig { returns(String) }
-        attr_accessor :integration_thread_id
-
         sig do
           returns(
             HubspotSDK::Conversations::ChannelIntegrationMessageEgg::MessageDirection::OrSymbol
@@ -74,6 +71,12 @@ module HubspotSDK
         sig { params(integration_idempotency_id: String).void }
         attr_writer :integration_idempotency_id
 
+        sig { returns(T.nilable(String)) }
+        attr_reader :integration_thread_id
+
+        sig { params(integration_thread_id: String).void }
+        attr_writer :integration_thread_id
+
         sig do
           returns(T.nilable(HubspotSDK::Conversations::PreResolvedContacts))
         end
@@ -108,7 +111,6 @@ module HubspotSDK
                 )
               ],
             channel_account_id: String,
-            integration_thread_id: String,
             message_direction:
               HubspotSDK::Conversations::ChannelIntegrationMessageEgg::MessageDirection::OrSymbol,
             recipients:
@@ -123,6 +125,7 @@ module HubspotSDK
             timestamp: Time,
             in_reply_to_id: String,
             integration_idempotency_id: String,
+            integration_thread_id: String,
             pre_resolved_contacts:
               HubspotSDK::Conversations::PreResolvedContacts::OrHash,
             rich_text: String
@@ -131,7 +134,6 @@ module HubspotSDK
         def self.new(
           attachments:,
           channel_account_id:,
-          integration_thread_id:,
           message_direction:,
           recipients:,
           senders:,
@@ -139,6 +141,7 @@ module HubspotSDK
           timestamp:,
           in_reply_to_id: nil,
           integration_idempotency_id: nil,
+          integration_thread_id: nil,
           pre_resolved_contacts: nil,
           rich_text: nil
         )
@@ -160,7 +163,6 @@ module HubspotSDK
                   )
                 ],
               channel_account_id: String,
-              integration_thread_id: String,
               message_direction:
                 HubspotSDK::Conversations::ChannelIntegrationMessageEgg::MessageDirection::OrSymbol,
               recipients:
@@ -175,6 +177,7 @@ module HubspotSDK
               timestamp: Time,
               in_reply_to_id: String,
               integration_idempotency_id: String,
+              integration_thread_id: String,
               pre_resolved_contacts:
                 HubspotSDK::Conversations::PreResolvedContacts,
               rich_text: String

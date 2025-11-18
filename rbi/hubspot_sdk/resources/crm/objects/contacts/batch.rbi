@@ -75,7 +75,8 @@ module HubspotSDK
               properties_with_history:,
               # Query param: Whether to return only results that have been archived.
               archived: nil,
-              # Body param:
+              # Body param: A unique property used to identify objects instead of the default
+              # ID.
               id_property: nil,
               request_options: {}
             )

@@ -29,6 +29,11 @@ module HubspotSDK
         #   @return [Time]
         required :hs_timestamp, Time
 
+        # @!attribute hubspot_owner_id
+        #
+        #   @return [String]
+        required :hubspot_owner_id, String
+
         # @!attribute hs_activity_type
         #
         #   @return [String, nil]
@@ -64,17 +69,13 @@ module HubspotSDK
         #   @return [String, nil]
         optional :hs_meeting_location_type, String
 
-        # @!attribute hubspot_owner_id
-        #
-        #   @return [String, nil]
-        optional :hubspot_owner_id, String
-
-        # @!method initialize(hs_meeting_end_time:, hs_meeting_outcome:, hs_meeting_start_time:, hs_meeting_title:, hs_timestamp:, hs_activity_type: nil, hs_attachment_ids: nil, hs_attendee_owner_ids: nil, hs_internal_meeting_notes: nil, hs_meeting_body: nil, hs_meeting_location: nil, hs_meeting_location_type: nil, hubspot_owner_id: nil)
+        # @!method initialize(hs_meeting_end_time:, hs_meeting_outcome:, hs_meeting_start_time:, hs_meeting_title:, hs_timestamp:, hubspot_owner_id:, hs_activity_type: nil, hs_attachment_ids: nil, hs_attendee_owner_ids: nil, hs_internal_meeting_notes: nil, hs_meeting_body: nil, hs_meeting_location: nil, hs_meeting_location_type: nil)
         #   @param hs_meeting_end_time [Time]
         #   @param hs_meeting_outcome [String]
         #   @param hs_meeting_start_time [Time]
         #   @param hs_meeting_title [String]
         #   @param hs_timestamp [Time]
+        #   @param hubspot_owner_id [String]
         #   @param hs_activity_type [String]
         #   @param hs_attachment_ids [Array<String>]
         #   @param hs_attendee_owner_ids [Array<String>]
@@ -82,7 +83,6 @@ module HubspotSDK
         #   @param hs_meeting_body [String]
         #   @param hs_meeting_location [String]
         #   @param hs_meeting_location_type [String]
-        #   @param hubspot_owner_id [String]
       end
     end
   end

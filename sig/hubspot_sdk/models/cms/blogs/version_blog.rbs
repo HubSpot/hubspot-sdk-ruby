@@ -1,6 +1,8 @@
 module HubspotSDK
   module Models
     module Cms
+      class VersionBlog = Blogs::VersionBlog
+
       module Blogs
         type version_blog =
           {

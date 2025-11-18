@@ -4,6 +4,7 @@ module HubspotSDK
       class Sequences
         class Enrollments
           def enroll: (
+            user_id: String,
             contact_id: String,
             sender_email: String,
             sequence_id: String,

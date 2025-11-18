@@ -54,12 +54,18 @@ module HubspotSDK
 
           # Read a provided list of properties.
           #
-          # @overload get(object_type, archived:, inputs:, data_sensitivity: nil, request_options: {})
+          # @overload get(object_type, archived:, data_sensitivity:, inputs:, locale: nil, request_options: {})
           #
-          # @param object_type [String]
-          # @param archived [Boolean]
-          # @param inputs [Array<HubspotSDK::Models::PropertyName>]
-          # @param data_sensitivity [Symbol, HubspotSDK::Models::Crm::BatchReadInputPropertyName::DataSensitivity]
+          # @param object_type [String] Path param:
+          #
+          # @param archived [Boolean] Body param:
+          #
+          # @param data_sensitivity [Symbol, HubspotSDK::Models::BatchReadInputPropertyName::DataSensitivity] Body param:
+          #
+          # @param inputs [Array<HubspotSDK::Models::PropertyName>] Body param:
+          #
+          # @param locale [String] Query param:
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::BatchResponseProperty]
@@ -67,10 +73,12 @@ module HubspotSDK
           # @see HubspotSDK::Models::Crm::Properties::BatchGetParams
           def get(object_type, params)
             parsed, options = HubspotSDK::Crm::Properties::BatchGetParams.dump_request(params)
+            query_params = [:locale]
             @client.request(
               method: :post,
               path: ["crm/v3/properties/%1$s/batch/read", object_type],
-              body: parsed,
+              query: parsed.slice(*query_params),
+              body: parsed.except(*query_params),
               model: HubspotSDK::BatchResponseProperty,
               options: options
             )

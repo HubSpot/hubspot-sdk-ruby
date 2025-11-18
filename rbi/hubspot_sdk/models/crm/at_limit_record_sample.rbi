@@ -12,16 +12,23 @@ module HubspotSDK
             )
           end
 
+        # The label associated with a record that is at its limit.
         sig { returns(String) }
         attr_accessor :label
 
+        # The objectId of the object that is at its limit.
         sig { returns(Integer) }
         attr_accessor :object_id_
 
         sig do
           params(label: String, object_id_: Integer).returns(T.attached_class)
         end
-        def self.new(label:, object_id_:)
+        def self.new(
+          # The label associated with a record that is at its limit.
+          label:,
+          # The objectId of the object that is at its limit.
+          object_id_:
+        )
         end
 
         sig { override.returns({ label: String, object_id_: Integer }) }

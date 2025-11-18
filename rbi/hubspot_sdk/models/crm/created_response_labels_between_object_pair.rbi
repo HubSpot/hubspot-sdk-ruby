@@ -12,6 +12,7 @@ module HubspotSDK
             )
           end
 
+        # The unique identifier of the newly created resource.
         sig { returns(String) }
         attr_accessor :created_resource_id
 
@@ -23,6 +24,7 @@ module HubspotSDK
         end
         attr_writer :entity
 
+        # The URL location of the newly created resource.
         sig { returns(T.nilable(String)) }
         attr_reader :location
 
@@ -36,7 +38,13 @@ module HubspotSDK
             location: String
           ).returns(T.attached_class)
         end
-        def self.new(created_resource_id:, entity:, location: nil)
+        def self.new(
+          # The unique identifier of the newly created resource.
+          created_resource_id:,
+          entity:,
+          # The URL location of the newly created resource.
+          location: nil
+        )
         end
 
         sig do

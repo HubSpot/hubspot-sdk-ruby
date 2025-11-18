@@ -45,6 +45,8 @@ module HubspotSDK
           #   @param user [HubspotSDK::Models::VersionUser] Model definition for a version user. Contains addition information about the use
         end
       end
+
+      VersionBlog = Blogs::VersionBlog
     end
   end
 end

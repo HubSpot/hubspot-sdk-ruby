@@ -1,5 +1,7 @@
 module HubspotSDK
   module Models
+    class MarketingEventExternalUniqueIdentifier = Marketing::MarketingEventExternalUniqueIdentifier
+
     module Marketing
       type marketing_event_external_unique_identifier =
         {

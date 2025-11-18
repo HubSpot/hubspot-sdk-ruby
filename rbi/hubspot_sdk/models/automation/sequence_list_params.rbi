@@ -15,16 +15,55 @@ module HubspotSDK
             )
           end
 
+        sig { returns(String) }
+        attr_accessor :user_id
+
+        sig { returns(T.nilable(String)) }
+        attr_reader :after
+
+        sig { params(after: String).void }
+        attr_writer :after
+
+        sig { returns(T.nilable(Integer)) }
+        attr_reader :limit
+
+        sig { params(limit: Integer).void }
+        attr_writer :limit
+
+        sig { returns(T.nilable(String)) }
+        attr_reader :name
+
+        sig { params(name: String).void }
+        attr_writer :name
+
         sig do
-          params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-            T.attached_class
-          )
+          params(
+            user_id: String,
+            after: String,
+            limit: Integer,
+            name: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(T.attached_class)
         end
-        def self.new(request_options: {})
+        def self.new(
+          user_id:,
+          after: nil,
+          limit: nil,
+          name: nil,
+          request_options: {}
+        )
         end
 
         sig do
-          override.returns({ request_options: HubspotSDK::RequestOptions })
+          override.returns(
+            {
+              user_id: String,
+              after: String,
+              limit: Integer,
+              name: String,
+              request_options: HubspotSDK::RequestOptions
+            }
+          )
         end
         def to_hash
         end

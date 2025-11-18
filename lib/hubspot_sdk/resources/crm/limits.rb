@@ -8,8 +8,10 @@ module HubspotSDK
         #
         # @overload get_association_label_limits(from_object_type_id: nil, to_object_type_id: nil, request_options: {})
         #
-        # @param from_object_type_id [String]
-        # @param to_object_type_id [String]
+        # @param from_object_type_id [String] objectTypeId of the object type on the "from" side of the association
+        #
+        # @param to_object_type_id [String] objectTypeId of the object type on the "to" side of the association
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Crm::CollectionResponseAssociationLabelLimitResponseNoPaging]
@@ -33,8 +35,10 @@ module HubspotSDK
         #
         # @overload get_association_records_limits_by_object_type(to_object_type_id, from_object_type_id:, request_options: {})
         #
-        # @param to_object_type_id [String]
-        # @param from_object_type_id [String]
+        # @param to_object_type_id [String] objectTypeId of the object type on the "to" side of the association
+        #
+        # @param from_object_type_id [String] objectTypeId of the object type on the "from" side of the association
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Crm::AssociationRecordLimitResponse]
@@ -78,7 +82,8 @@ module HubspotSDK
         #
         # @overload get_association_records_limits_to_objects(from_object_type_id, request_options: {})
         #
-        # @param from_object_type_id [String]
+        # @param from_object_type_id [String] objectTypeId of the object type on the "from" side of the association
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Crm::CollectionResponseObjectTypeNearOrAtAssociationLimitNoPaging]

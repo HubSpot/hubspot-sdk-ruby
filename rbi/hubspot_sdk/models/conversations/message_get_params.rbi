@@ -15,21 +15,38 @@ module HubspotSDK
             )
           end
 
-        sig { returns(String) }
+        sig { returns(Integer) }
         attr_accessor :thread_id
+
+        # A specific property to include in the message response.
+        sig { returns(T.nilable(String)) }
+        attr_reader :property
+
+        sig { params(property: String).void }
+        attr_writer :property
 
         sig do
           params(
-            thread_id: String,
+            thread_id: Integer,
+            property: String,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
-        def self.new(thread_id:, request_options: {})
+        def self.new(
+          thread_id:,
+          # A specific property to include in the message response.
+          property: nil,
+          request_options: {}
+        )
         end
 
         sig do
           override.returns(
-            { thread_id: String, request_options: HubspotSDK::RequestOptions }
+            {
+              thread_id: Integer,
+              property: String,
+              request_options: HubspotSDK::RequestOptions
+            }
           )
         end
         def to_hash

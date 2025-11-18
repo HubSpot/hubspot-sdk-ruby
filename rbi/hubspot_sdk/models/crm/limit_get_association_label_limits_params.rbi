@@ -15,12 +15,14 @@ module HubspotSDK
             )
           end
 
+        # objectTypeId of the object type on the "from" side of the association
         sig { returns(T.nilable(String)) }
         attr_reader :from_object_type_id
 
         sig { params(from_object_type_id: String).void }
         attr_writer :from_object_type_id
 
+        # objectTypeId of the object type on the "to" side of the association
         sig { returns(T.nilable(String)) }
         attr_reader :to_object_type_id
 
@@ -35,7 +37,9 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # objectTypeId of the object type on the "from" side of the association
           from_object_type_id: nil,
+          # objectTypeId of the object type on the "to" side of the association
           to_object_type_id: nil,
           request_options: {}
         )

@@ -11,15 +11,15 @@ module HubspotSDK
 
         # @!attribute metrics
         #
-        #   @return [Hash{Symbol=>Float}]
-        required :metrics, HubspotSDK::Internal::Type::HashOf[Float]
+        #   @return [Hash{Symbol=>Float}, nil]
+        optional :metrics, HubspotSDK::Internal::Type::HashOf[Float]
 
         # @!attribute name
         #
         #   @return [String, nil]
         optional :name, String
 
-        # @!method initialize(id:, metrics:, name: nil)
+        # @!method initialize(id:, metrics: nil, name: nil)
         #   @param id [String]
         #   @param metrics [Hash{Symbol=>Float}]
         #   @param name [String]

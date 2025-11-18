@@ -21,6 +21,7 @@ module HubspotSDK
 
           def list: (
             String object_type,
+            ?locale: String,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Crm::CollectionResponsePropertyGroup
 
@@ -33,6 +34,7 @@ module HubspotSDK
           def get: (
             String group_name,
             object_type: String,
+            ?locale: String,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Crm::PropertyGroup
 

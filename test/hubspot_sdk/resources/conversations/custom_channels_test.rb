@@ -31,10 +31,13 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannelsTest < HubspotSD
 
     response =
       @hubspot.conversations.custom_channels.update(
-        "channelId",
+        0,
         capabilities: {foo: {}},
+        channel_account_connection_redirect_url: {},
         channel_description: {},
-        channel_logo_url: {}
+        channel_logo_url: {},
+        name: {},
+        webhook_url: {}
       )
 
     assert_pattern do
@@ -61,14 +64,26 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannelsTest < HubspotSD
     response = @hubspot.conversations.custom_channels.list
 
     assert_pattern do
-      response => HubspotSDK::Conversations::CollectionResponseWithTotalPublicChannelIntegrationChannelForwardPaging
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Conversations::PublicChannelIntegrationChannel
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::PublicChannelIntegrationChannel]),
-        total: Integer,
-        paging: HubspotSDK::ForwardPaging | nil
+      row => {
+        id: String,
+        capabilities: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
+        created_at: Time,
+        name: String,
+        channel_account_connection_redirect_url: String | nil,
+        channel_description: String | nil,
+        channel_logo_url: String | nil,
+        webhook_url: String | nil
       }
     end
   end
@@ -76,7 +91,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannelsTest < HubspotSD
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hubspot.conversations.custom_channels.delete("channelId")
+    response = @hubspot.conversations.custom_channels.delete(0)
 
     assert_pattern do
       response => nil
@@ -86,7 +101,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannelsTest < HubspotSD
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hubspot.conversations.custom_channels.get("channelId")
+    response = @hubspot.conversations.custom_channels.get(0)
 
     assert_pattern do
       response => HubspotSDK::Conversations::PublicChannelIntegrationChannel

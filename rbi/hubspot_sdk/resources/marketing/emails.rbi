@@ -321,12 +321,27 @@ module HubspotSDK
         sig do
           params(
             email_id: String,
+            archived: T::Boolean,
+            included_properties: T::Array[String],
+            include_stats: T::Boolean,
+            marketing_campaign_names: T::Boolean,
+            workflow_names: T::Boolean,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Marketing::PublicEmail)
         end
         def get_ab_test_variation(
           # The ID of an A/B marketing email.
           email_id,
+          # Boolean variable to request archived email
+          archived: nil,
+          # List of properties to be returned in the API response
+          included_properties: nil,
+          # Boolean variable to request stats to be returned in response
+          include_stats: nil,
+          # Boolean variable to request name of the campaign in response
+          marketing_campaign_names: nil,
+          # Boolean variable to request name of the associated workflows in response
+          workflow_names: nil,
           request_options: {}
         )
         end

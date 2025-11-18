@@ -11,11 +11,11 @@ module HubspotSDK
           # Create a postal mail object with the given properties and return a copy of the
           # object, including the ID.
           #
-          # @overload create(properties:, associations: nil, request_options: {})
-          #
-          # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
+          # @overload create(associations:, properties:, request_options: {})
           #
           # @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
+          #
+          # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -132,7 +132,7 @@ module HubspotSDK
 
           # Search for postal mail objects using specific criteria in the request.
           #
-          # @overload search(after: nil, filter_groups: nil, limit: nil, properties: nil, query: nil, sorts: nil, request_options: {})
+          # @overload search(after:, filter_groups:, limit:, properties:, sorts:, query: nil, request_options: {})
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.
           #
@@ -142,16 +142,16 @@ module HubspotSDK
           #
           # @param properties [Array<String>] A list of property names to include in the response.
           #
-          # @param query [String] The search query string, up to 3000 characters.
-          #
           # @param sorts [Array<String>] Specifies sorting order based on object properties.
+          #
+          # @param query [String] The search query string, up to 3000 characters.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
           #
           # @see HubspotSDK::Models::Crm::Objects::PostalMailSearchParams
-          def search(params = {})
+          def search(params)
             parsed, options = HubspotSDK::Crm::Objects::PostalMailSearchParams.dump_request(params)
             @client.request(
               method: :post,

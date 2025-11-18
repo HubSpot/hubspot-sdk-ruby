@@ -1379,6 +1379,8 @@ module HubspotSDK
           end
         end
       end
+
+      BlogPost = Blogs::BlogPost
     end
   end
 end

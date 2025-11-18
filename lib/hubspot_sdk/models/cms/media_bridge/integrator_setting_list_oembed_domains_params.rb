@@ -9,7 +9,15 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          # @!method initialize(request_options: {})
+          # @!attribute domain_portal_id
+          #   Filter response by Hub ID.
+          #
+          #   @return [Integer, nil]
+          optional :domain_portal_id, Integer
+
+          # @!method initialize(domain_portal_id: nil, request_options: {})
+          #   @param domain_portal_id [Integer] Filter response by Hub ID.
+          #
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end

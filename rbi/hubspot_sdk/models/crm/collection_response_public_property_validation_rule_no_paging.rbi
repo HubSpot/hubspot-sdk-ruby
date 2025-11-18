@@ -12,6 +12,9 @@ module HubspotSDK
             )
           end
 
+        # Collection of validation rules configured for the specified property. Each rule
+        # defines a constraint that property values must satisfy (e.g., format
+        # requirements, length limits, allowed values).
         sig { returns(T::Array[HubspotSDK::Crm::PublicPropertyValidationRule]) }
         attr_accessor :results
 
@@ -21,7 +24,12 @@ module HubspotSDK
               T::Array[HubspotSDK::Crm::PublicPropertyValidationRule::OrHash]
           ).returns(T.attached_class)
         end
-        def self.new(results:)
+        def self.new(
+          # Collection of validation rules configured for the specified property. Each rule
+          # defines a constraint that property values must satisfy (e.g., format
+          # requirements, length limits, allowed values).
+          results:
+        )
         end
 
         sig do

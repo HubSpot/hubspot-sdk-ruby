@@ -33,11 +33,8 @@ module HubspotSDK
         # (`{ "ticketState": "OPEN" }`), and represents whether the ticket remains open or
         # has been closed by a member of your Support team. Possible values are `OPEN` or
         # `CLOSED`.
-        sig { returns(T.nilable(T::Hash[Symbol, String])) }
-        attr_reader :metadata
-
-        sig { params(metadata: T::Hash[Symbol, String]).void }
-        attr_writer :metadata
+        sig { returns(T::Hash[Symbol, String]) }
+        attr_accessor :metadata
 
         # An input used to create or replace a pipeline stage's definition.
         sig do
@@ -65,7 +62,7 @@ module HubspotSDK
           # (`{ "ticketState": "OPEN" }`), and represents whether the ticket remains open or
           # has been closed by a member of your Support team. Possible values are `OPEN` or
           # `CLOSED`.
-          metadata: nil
+          metadata:
         )
         end
 

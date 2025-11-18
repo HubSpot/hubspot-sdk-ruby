@@ -12,12 +12,15 @@ module HubspotSDK
             )
           end
 
+        # The maximum number of custom objects allowed.
         sig { returns(Integer) }
         attr_accessor :limit
 
+        # The percentage of the custom object limit that is currently used.
         sig { returns(Float) }
         attr_accessor :percentage
 
+        # The current number of custom objects used.
         sig { returns(Integer) }
         attr_accessor :usage
 
@@ -26,7 +29,14 @@ module HubspotSDK
             T.attached_class
           )
         end
-        def self.new(limit:, percentage:, usage:)
+        def self.new(
+          # The maximum number of custom objects allowed.
+          limit:,
+          # The percentage of the custom object limit that is currently used.
+          percentage:,
+          # The current number of custom objects used.
+          usage:
+        )
         end
 
         sig do

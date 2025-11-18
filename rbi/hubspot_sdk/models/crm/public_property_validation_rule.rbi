@@ -12,9 +12,13 @@ module HubspotSDK
             )
           end
 
+        # A list of arguments that define the specific conditions or parameters for the
+        # validation rule.
         sig { returns(T::Array[String]) }
         attr_accessor :rule_arguments
 
+        # The category of validation applied to the property, such as FORMAT,
+        # ALPHANUMERIC, or MAX_LENGTH.
         sig do
           returns(
             HubspotSDK::Crm::PublicPropertyValidationRule::RuleType::TaggedSymbol
@@ -29,7 +33,14 @@ module HubspotSDK
               HubspotSDK::Crm::PublicPropertyValidationRule::RuleType::OrSymbol
           ).returns(T.attached_class)
         end
-        def self.new(rule_arguments:, rule_type:)
+        def self.new(
+          # A list of arguments that define the specific conditions or parameters for the
+          # validation rule.
+          rule_arguments:,
+          # The category of validation applied to the property, such as FORMAT,
+          # ALPHANUMERIC, or MAX_LENGTH.
+          rule_type:
+        )
         end
 
         sig do
@@ -44,6 +55,8 @@ module HubspotSDK
         def to_hash
         end
 
+        # The category of validation applied to the property, such as FORMAT,
+        # ALPHANUMERIC, or MAX_LENGTH.
         module RuleType
           extend HubspotSDK::Internal::Type::Enum
 

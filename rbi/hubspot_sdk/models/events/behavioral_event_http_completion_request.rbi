@@ -20,6 +20,12 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :event_name
 
+        # The event properties to update. Takes the format of key-value pairs (property
+        # internal name and property value). Learn more about
+        # [HubSpot's default event properties](https://developers.hubspot.com/docs/guides/api/analytics-and-events/custom-events/custom-event-definitions#hubspot-s-default-event-properties).
+        sig { returns(T::Hash[Symbol, String]) }
+        attr_accessor :properties
+
         # The visitor's email address. Used for associating the event data with a CRM
         # record.
         sig { returns(T.nilable(String)) }
@@ -43,15 +49,6 @@ module HubspotSDK
         sig { params(occurred_at: Time).void }
         attr_writer :occurred_at
 
-        # The event properties to update. Takes the format of key-value pairs (property
-        # internal name and property value). Learn more about
-        # [HubSpot's default event properties](https://developers.hubspot.com/docs/guides/api/analytics-and-events/custom-events/custom-event-definitions#hubspot-s-default-event-properties).
-        sig { returns(T.nilable(T::Hash[Symbol, String])) }
-        attr_reader :properties
-
-        sig { params(properties: T::Hash[Symbol, String]).void }
-        attr_writer :properties
-
         # The visitor's usertoken. Used for associating the event data with a CRM record.
         sig { returns(T.nilable(String)) }
         attr_reader :utk
@@ -71,10 +68,10 @@ module HubspotSDK
         sig do
           params(
             event_name: String,
+            properties: T::Hash[Symbol, String],
             email: String,
             object_id_: String,
             occurred_at: Time,
-            properties: T::Hash[Symbol, String],
             utk: String,
             uuid: String
           ).returns(T.attached_class)
@@ -86,6 +83,10 @@ module HubspotSDK
           # or in
           # [HubSpot's UI](https://knowledge.hubspot.com/reports/create-custom-behavioral-events-with-the-code-wizard#find-internal-name).
           event_name:,
+          # The event properties to update. Takes the format of key-value pairs (property
+          # internal name and property value). Learn more about
+          # [HubSpot's default event properties](https://developers.hubspot.com/docs/guides/api/analytics-and-events/custom-events/custom-event-definitions#hubspot-s-default-event-properties).
+          properties:,
           # The visitor's email address. Used for associating the event data with a CRM
           # record.
           email: nil,
@@ -94,10 +95,6 @@ module HubspotSDK
           # The time when this event occurred. If this isn't set, the current time will be
           # used.
           occurred_at: nil,
-          # The event properties to update. Takes the format of key-value pairs (property
-          # internal name and property value). Learn more about
-          # [HubSpot's default event properties](https://developers.hubspot.com/docs/guides/api/analytics-and-events/custom-events/custom-event-definitions#hubspot-s-default-event-properties).
-          properties: nil,
           # The visitor's usertoken. Used for associating the event data with a CRM record.
           utk: nil,
           # Include a universally unique identifier to assign a unique ID to the event
@@ -111,10 +108,10 @@ module HubspotSDK
           override.returns(
             {
               event_name: String,
+              properties: T::Hash[Symbol, String],
               email: String,
               object_id_: String,
               occurred_at: Time,
-              properties: T::Hash[Symbol, String],
               utk: String,
               uuid: String
             }

@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
   def test_update_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.cms.media_bridge.schemas.update("objectType", app_id: "appId")
+    response = @hubspot.cms.media_bridge.schemas.update("objectType", app_id: 0)
 
     assert_pattern do
       response => HubspotSDK::Crm::Objects::ObjectsSchemasObjectTypeDefinition
@@ -35,7 +35,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
   def test_list
     skip("Prism tests are disabled")
 
-    response = @hubspot.cms.media_bridge.schemas.list("appId")
+    response = @hubspot.cms.media_bridge.schemas.list(0)
 
     assert_pattern do
       response => HubspotSDK::CollectionResponseObjectSchemaNoPaging
@@ -54,7 +54,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
     response =
       @hubspot.cms.media_bridge.schemas.create_association(
         "objectType",
-        app_id: "appId",
+        app_id: 0,
         from_object_type_id: "fromObjectTypeId",
         to_object_type_id: "toObjectTypeId"
       )
@@ -101,7 +101,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
     response =
       @hubspot.cms.media_bridge.schemas.delete_association(
         "associationId",
-        app_id: "appId",
+        app_id: 0,
         object_type: "objectType"
       )
 
@@ -113,7 +113,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.cms.media_bridge.schemas.get("objectType", app_id: "appId")
+    response = @hubspot.cms.media_bridge.schemas.get("objectType", app_id: 0)
 
     assert_pattern do
       response => HubspotSDK::Crm::Objects::ObjectSchema

@@ -26,7 +26,7 @@ class HubspotSDK::Test::Resources::EventsTest < HubspotSDK::Test::ResourceTest
         object_id_: String,
         object_type: String,
         occurred_at: Time,
-        properties: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil
+        properties: ^(HubspotSDK::Internal::Type::HashOf[String])
       }
     end
   end

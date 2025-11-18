@@ -13,9 +13,12 @@ module HubspotSDK
               )
             end
 
+          # The unique identifier for the object whose associations are being fetched.
           sig { returns(String) }
           attr_accessor :id
 
+          # A paging cursor token used to retrieve the next set of results in a paginated
+          # response.
           sig { returns(T.nilable(String)) }
           attr_reader :after
 
@@ -23,7 +26,13 @@ module HubspotSDK
           attr_writer :after
 
           sig { params(id: String, after: String).returns(T.attached_class) }
-          def self.new(id:, after: nil)
+          def self.new(
+            # The unique identifier for the object whose associations are being fetched.
+            id:,
+            # A paging cursor token used to retrieve the next set of results in a paginated
+            # response.
+            after: nil
+          )
           end
 
           sig { override.returns({ id: String, after: String }) }

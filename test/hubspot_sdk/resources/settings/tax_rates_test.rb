@@ -9,13 +9,25 @@ class HubspotSDK::Test::Resources::Settings::TaxRatesTest < HubspotSDK::Test::Re
     response = @hubspot.settings.tax_rates.list
 
     assert_pattern do
-      response => HubspotSDK::Settings::CollectionResponsePublicTaxRateGroupForwardPaging
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Settings::PublicTaxRateGroup
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Settings::PublicTaxRateGroup]),
-        paging: HubspotSDK::ForwardPaging | nil
+      row => {
+        id: String,
+        active: HubspotSDK::Internal::Type::Boolean,
+        created_at: Time,
+        label: String,
+        name: String,
+        percentage_rate: Float,
+        updated_at: Time
       }
     end
   end

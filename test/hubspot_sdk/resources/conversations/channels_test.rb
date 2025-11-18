@@ -9,14 +9,20 @@ class HubspotSDK::Test::Resources::Conversations::ChannelsTest < HubspotSDK::Tes
     response = @hubspot.conversations.channels.list
 
     assert_pattern do
-      response => HubspotSDK::Conversations::CollectionResponseWithTotalPublicChannelForwardPaging
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Conversations::PublicChannel
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::PublicChannel]),
-        total: Integer,
-        paging: HubspotSDK::ForwardPaging | nil
+      row => {
+        id: String,
+        name: String
       }
     end
   end
@@ -24,7 +30,7 @@ class HubspotSDK::Test::Resources::Conversations::ChannelsTest < HubspotSDK::Tes
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hubspot.conversations.channels.get("channelId")
+    response = @hubspot.conversations.channels.get(0)
 
     assert_pattern do
       response => HubspotSDK::Conversations::PublicChannel
@@ -32,8 +38,8 @@ class HubspotSDK::Test::Resources::Conversations::ChannelsTest < HubspotSDK::Tes
 
     assert_pattern do
       response => {
-        id: String | nil,
-        name: String | nil
+        id: String,
+        name: String
       }
     end
   end

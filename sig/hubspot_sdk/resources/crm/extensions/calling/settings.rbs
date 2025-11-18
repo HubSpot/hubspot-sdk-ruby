@@ -6,15 +6,15 @@ module HubspotSDK
           class Settings
             def create: (
               Integer app_id,
+              height: Integer,
+              is_ready: bool,
               name: String,
+              supports_custom_objects: bool,
+              supports_inbound_calling: bool,
               url: String,
-              ?height: Integer,
-              ?is_ready: bool,
-              ?supports_custom_objects: bool,
-              ?supports_inbound_calling: bool,
-              ?uses_calling_window: bool,
-              ?uses_remote: bool,
-              ?width: Integer,
+              uses_calling_window: bool,
+              uses_remote: bool,
+              width: Integer,
               ?request_options: HubspotSDK::request_opts
             ) -> HubspotSDK::Webhooks::SettingsResponse
 

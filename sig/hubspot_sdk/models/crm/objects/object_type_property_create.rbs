@@ -1,6 +1,8 @@
 module HubspotSDK
   module Models
     module Crm
+      class ObjectTypePropertyCreate = Objects::ObjectTypePropertyCreate
+
       module Objects
         type object_type_property_create =
           {

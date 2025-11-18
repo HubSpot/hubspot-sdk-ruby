@@ -3,7 +3,6 @@
 module HubspotSDK
   module Models
     module Automation
-      # @see HubspotSDK::Resources::Automation::Sequences#list
       class CollectionResponseWithTotalPublicSequenceLiteResponseForwardPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #

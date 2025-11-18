@@ -10,17 +10,15 @@ module HubspotSDK
         required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Files::File] }
 
         # @!attribute paging
-        #   Contains information pagination of results.
         #
-        #   @return [HubspotSDK::Models::Marketing::EmailsPaging, nil]
-        optional :paging, -> { HubspotSDK::Marketing::EmailsPaging }
+        #   @return [HubspotSDK::Models::Paging, nil]
+        optional :paging, -> { HubspotSDK::Paging }
 
         # @!method initialize(results:, paging: nil)
         #   Collections of files
         #
         #   @param results [Array<HubspotSDK::Models::Files::File>]
-        #
-        #   @param paging [HubspotSDK::Models::Marketing::EmailsPaging] Contains information pagination of results.
+        #   @param paging [HubspotSDK::Models::Paging]
       end
     end
   end

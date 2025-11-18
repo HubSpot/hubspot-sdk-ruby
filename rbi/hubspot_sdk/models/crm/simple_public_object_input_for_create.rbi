@@ -12,48 +12,36 @@ module HubspotSDK
             )
           end
 
+        sig { returns(T::Array[HubspotSDK::Crm::PublicAssociationsForObject]) }
+        attr_accessor :associations
+
         # Key-value pairs for setting properties for the new object.
         sig { returns(T::Hash[Symbol, String]) }
         attr_accessor :properties
-
-        sig do
-          returns(
-            T.nilable(T::Array[HubspotSDK::Crm::PublicAssociationsForObject])
-          )
-        end
-        attr_reader :associations
-
-        sig do
-          params(
-            associations:
-              T::Array[HubspotSDK::Crm::PublicAssociationsForObject::OrHash]
-          ).void
-        end
-        attr_writer :associations
 
         # Is the input object used to create a new CRM object, containing the properties
         # to be set and optional associations to link the new record with other CRM
         # objects.
         sig do
           params(
-            properties: T::Hash[Symbol, String],
             associations:
-              T::Array[HubspotSDK::Crm::PublicAssociationsForObject::OrHash]
+              T::Array[HubspotSDK::Crm::PublicAssociationsForObject::OrHash],
+            properties: T::Hash[Symbol, String]
           ).returns(T.attached_class)
         end
         def self.new(
+          associations:,
           # Key-value pairs for setting properties for the new object.
-          properties:,
-          associations: nil
+          properties:
         )
         end
 
         sig do
           override.returns(
             {
-              properties: T::Hash[Symbol, String],
               associations:
-                T::Array[HubspotSDK::Crm::PublicAssociationsForObject]
+                T::Array[HubspotSDK::Crm::PublicAssociationsForObject],
+              properties: T::Hash[Symbol, String]
             }
           )
         end

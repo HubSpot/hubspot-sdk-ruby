@@ -4,32 +4,40 @@ module HubspotSDK
       class CustomChannels
         class ChannelAccounts
           def create: (
-            String channel_id,
+            Integer channel_id,
             authorized: bool,
             inbox_id: String,
             name: String,
             ?delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Conversations::ConversationsPublicChannelAccount
+          ) -> HubspotSDK::Conversations::PublicChannelAccount
 
           def update: (
-            String channel_account_id,
-            channel_id: String,
+            Integer channel_account_id,
+            channel_id: Integer,
             ?authorized: bool,
             ?name: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Conversations::ConversationsPublicChannelAccount
+          ) -> HubspotSDK::Conversations::PublicChannelAccount
 
           def list: (
-            String channel_id,
+            Integer channel_id,
+            ?after: String,
+            ?archived: bool,
+            ?default_page_length: Integer,
+            ?delivery_identifier_type: ::Array[String],
+            ?delivery_identifier_value: ::Array[String],
+            ?limit: Integer,
+            ?sort: ::Array[String],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Conversations::CollectionResponseWithTotalPublicChannelAccountForwardPaging
+          ) -> HubspotSDK::Internal::Page[HubspotSDK::Conversations::PublicChannelAccount]
 
           def get: (
-            String channel_account_id,
-            channel_id: String,
+            Integer channel_account_id,
+            channel_id: Integer,
+            ?archived: bool,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Conversations::ConversationsPublicChannelAccount
+          ) -> HubspotSDK::Conversations::PublicChannelAccount
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

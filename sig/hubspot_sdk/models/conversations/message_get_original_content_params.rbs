@@ -2,21 +2,28 @@ module HubspotSDK
   module Models
     module Conversations
       type message_get_original_content_params =
-        { thread_id: String } & HubspotSDK::Internal::Type::request_parameters
+        { thread_id: Integer, property: String }
+        & HubspotSDK::Internal::Type::request_parameters
 
       class MessageGetOriginalContentParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
-        attr_accessor thread_id: String
+        attr_accessor thread_id: Integer
+
+        attr_reader property: String?
+
+        def property=: (String) -> String
 
         def initialize: (
-          thread_id: String,
+          thread_id: Integer,
+          ?property: String,
           ?request_options: HubspotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
-          thread_id: String,
+          thread_id: Integer,
+          property: String,
           request_options: HubspotSDK::RequestOptions
         }
       end

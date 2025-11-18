@@ -3,23 +3,23 @@ module HubspotSDK
     module Cms
       module MediaBridge
         type property_create_batch_params =
-          { app_id: String } & HubspotSDK::Internal::Type::request_parameters
+          { app_id: Integer } & HubspotSDK::Internal::Type::request_parameters
 
         class PropertyCreateBatchParams < HubspotSDK::Models::BatchInputPropertyCreate
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def app_id: -> String
+          def app_id: -> Integer
 
-          def app_id=: (String _) -> String
+          def app_id=: (Integer _) -> Integer
 
           def initialize: (
-            app_id: String,
+            app_id: Integer,
             ?request_options: HubspotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
-            app_id: String,
+            app_id: Integer,
             request_options: HubspotSDK::RequestOptions
           }
         end

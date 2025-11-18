@@ -12,9 +12,9 @@ module HubspotSDK
           #
           # @overload update(object_type, app_id:, clear_description: nil, description: nil, labels: nil, primary_display_property: nil, required_properties: nil, restorable: nil, searchable_properties: nil, secondary_display_properties: nil, request_options: {})
           #
-          # @param object_type [String] Path param:
+          # @param object_type [String] Path param: The object type that you want to update the schema for.
           #
-          # @param app_id [String] Path param:
+          # @param app_id [Integer] Path param: The appId for the media bridge app. It is possible to have multiple
           #
           # @param clear_description [Boolean] Body param:
           #
@@ -52,32 +52,44 @@ module HubspotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Cms::MediaBridge::SchemaListParams} for more details.
+          #
           # Get the schemas for all object types.
           #
-          # @overload list(app_id, request_options: {})
+          # @overload list(app_id, archived: nil, request_options: {})
           #
-          # @param app_id [String]
+          # @param app_id [Integer] The appId for the media bridge app. It is possible to have multiple apps in your
+          #
+          # @param archived [Boolean] Whether to return only results that have been archived.
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::CollectionResponseObjectSchemaNoPaging]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::SchemaListParams
           def list(app_id, params = {})
+            parsed, options = HubspotSDK::Cms::MediaBridge::SchemaListParams.dump_request(params)
             @client.request(
               method: :get,
               path: ["media-bridge/v1/%1$s/schemas", app_id],
+              query: parsed,
               model: HubspotSDK::CollectionResponseObjectSchemaNoPaging,
-              options: params[:request_options]
+              options: options
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Cms::MediaBridge::SchemaCreateAssociationParams} for more
+          # details.
+          #
           # Create a new association definition for the specified object type.
           #
           # @overload create_association(object_type, app_id:, from_object_type_id:, to_object_type_id:, name: nil, request_options: {})
           #
-          # @param object_type [String] Path param:
+          # @param object_type [String] Path param: The object type to create the definition for
           #
-          # @param app_id [String] Path param:
+          # @param app_id [Integer] Path param: The appId for the media bridge app. It is possible to have multiple
           #
           # @param from_object_type_id [String] Body param:
           #
@@ -105,13 +117,20 @@ module HubspotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Cms::MediaBridge::SchemaDeleteAssociationParams} for more
+          # details.
+          #
           # Delete an existing association definition for an object type.
           #
           # @overload delete_association(association_id, app_id:, object_type:, request_options: {})
           #
-          # @param association_id [String]
-          # @param app_id [String]
-          # @param object_type [String]
+          # @param association_id [String] The ID of the association definition to be deleted.
+          #
+          # @param app_id [Integer] The appId for the media bridge app. It is possible to have multiple apps in your
+          #
+          # @param object_type [String] The object type for the definition that you want to delete.
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -140,12 +159,17 @@ module HubspotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Cms::MediaBridge::SchemaGetParams} for more details.
+          #
           # Get the schema for a specified object type.
           #
           # @overload get(object_type, app_id:, request_options: {})
           #
-          # @param object_type [String]
-          # @param app_id [String]
+          # @param object_type [String] The object type to get the schema for.
+          #
+          # @param app_id [Integer] The appId for the media bridge app. It is possible to have multiple apps in your
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::Objects::ObjectSchema]

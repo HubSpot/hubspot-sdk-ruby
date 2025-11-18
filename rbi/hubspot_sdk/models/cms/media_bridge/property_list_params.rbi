@@ -16,21 +16,49 @@ module HubspotSDK
               )
             end
 
-          sig { returns(String) }
+          sig { returns(Integer) }
           attr_accessor :app_id
+
+          # Whether to return only results that have been archived.
+          sig { returns(T.nilable(T::Boolean)) }
+          attr_reader :archived
+
+          sig { params(archived: T::Boolean).void }
+          attr_writer :archived
+
+          # Filter the response to the specified properties.
+          sig { returns(T.nilable(String)) }
+          attr_reader :properties
+
+          sig { params(properties: String).void }
+          attr_writer :properties
 
           sig do
             params(
-              app_id: String,
+              app_id: Integer,
+              archived: T::Boolean,
+              properties: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
-          def self.new(app_id:, request_options: {})
+          def self.new(
+            app_id:,
+            # Whether to return only results that have been archived.
+            archived: nil,
+            # Filter the response to the specified properties.
+            properties: nil,
+            request_options: {}
+          )
           end
 
           sig do
             override.returns(
-              { app_id: String, request_options: HubspotSDK::RequestOptions }
+              {
+                app_id: Integer,
+                archived: T::Boolean,
+                properties: String,
+                request_options: HubspotSDK::RequestOptions
+              }
             )
           end
           def to_hash

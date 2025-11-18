@@ -8,14 +8,14 @@ module HubspotSDK
           hs_meeting_start_time: Time,
           hs_meeting_title: String,
           hs_timestamp: Time,
+          hubspot_owner_id: String,
           hs_activity_type: String,
           hs_attachment_ids: ::Array[String],
           hs_attendee_owner_ids: ::Array[String],
           hs_internal_meeting_notes: String,
           hs_meeting_body: String,
           hs_meeting_location: String,
-          hs_meeting_location_type: String,
-          hubspot_owner_id: String
+          hs_meeting_location_type: String
         }
 
       class ExternalCalendarMeetingEventCreateProperties < HubspotSDK::Internal::Type::BaseModel
@@ -28,6 +28,8 @@ module HubspotSDK
         attr_accessor hs_meeting_title: String
 
         attr_accessor hs_timestamp: Time
+
+        attr_accessor hubspot_owner_id: String
 
         attr_reader hs_activity_type: String?
 
@@ -57,24 +59,20 @@ module HubspotSDK
 
         def hs_meeting_location_type=: (String) -> String
 
-        attr_reader hubspot_owner_id: String?
-
-        def hubspot_owner_id=: (String) -> String
-
         def initialize: (
           hs_meeting_end_time: Time,
           hs_meeting_outcome: String,
           hs_meeting_start_time: Time,
           hs_meeting_title: String,
           hs_timestamp: Time,
+          hubspot_owner_id: String,
           ?hs_activity_type: String,
           ?hs_attachment_ids: ::Array[String],
           ?hs_attendee_owner_ids: ::Array[String],
           ?hs_internal_meeting_notes: String,
           ?hs_meeting_body: String,
           ?hs_meeting_location: String,
-          ?hs_meeting_location_type: String,
-          ?hubspot_owner_id: String
+          ?hs_meeting_location_type: String
         ) -> void
 
         def to_hash: -> {
@@ -83,14 +81,14 @@ module HubspotSDK
           hs_meeting_start_time: Time,
           hs_meeting_title: String,
           hs_timestamp: Time,
+          hubspot_owner_id: String,
           hs_activity_type: String,
           hs_attachment_ids: ::Array[String],
           hs_attendee_owner_ids: ::Array[String],
           hs_internal_meeting_notes: String,
           hs_meeting_body: String,
           hs_meeting_location: String,
-          hs_meeting_location_type: String,
-          hubspot_owner_id: String
+          hs_meeting_location_type: String
         }
       end
     end

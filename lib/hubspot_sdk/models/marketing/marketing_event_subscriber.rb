@@ -12,15 +12,15 @@ module HubspotSDK
 
         # @!attribute properties
         #
-        #   @return [Hash{Symbol=>String}, nil]
-        optional :properties, HubspotSDK::Internal::Type::HashOf[String]
+        #   @return [Hash{Symbol=>String}]
+        required :properties, HubspotSDK::Internal::Type::HashOf[String]
 
         # @!attribute vid
         #
-        #   @return [Integer, nil]
-        optional :vid, Integer
+        #   @return [Integer]
+        required :vid, Integer
 
-        # @!method initialize(interaction_date_time:, properties: nil, vid: nil)
+        # @!method initialize(interaction_date_time:, properties:, vid:)
         #   @param interaction_date_time [Integer] Timestamp in milliseconds at which the contact subscribed to the event.
         #
         #   @param properties [Hash{Symbol=>String}]
@@ -28,5 +28,7 @@ module HubspotSDK
         #   @param vid [Integer]
       end
     end
+
+    MarketingEventSubscriber = Marketing::MarketingEventSubscriber
   end
 end

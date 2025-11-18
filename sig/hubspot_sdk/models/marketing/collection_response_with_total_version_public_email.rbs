@@ -5,7 +5,7 @@ module HubspotSDK
         {
           results: ::Array[HubspotSDK::Marketing::VersionPublicEmail],
           total: Integer,
-          paging: HubspotSDK::Marketing::EmailsPaging
+          paging: HubspotSDK::Paging
         }
 
       class CollectionResponseWithTotalVersionPublicEmail < HubspotSDK::Internal::Type::BaseModel
@@ -13,22 +13,20 @@ module HubspotSDK
 
         attr_accessor total: Integer
 
-        attr_reader paging: HubspotSDK::Marketing::EmailsPaging?
+        attr_reader paging: HubspotSDK::Paging?
 
-        def paging=: (
-          HubspotSDK::Marketing::EmailsPaging
-        ) -> HubspotSDK::Marketing::EmailsPaging
+        def paging=: (HubspotSDK::Paging) -> HubspotSDK::Paging
 
         def initialize: (
           results: ::Array[HubspotSDK::Marketing::VersionPublicEmail],
           total: Integer,
-          ?paging: HubspotSDK::Marketing::EmailsPaging
+          ?paging: HubspotSDK::Paging
         ) -> void
 
         def to_hash: -> {
           results: ::Array[HubspotSDK::Marketing::VersionPublicEmail],
           total: Integer,
-          paging: HubspotSDK::Marketing::EmailsPaging
+          paging: HubspotSDK::Paging
         }
       end
     end

@@ -8,6 +8,7 @@ class HubspotSDK::Test::Resources::Automation::Sequences::EnrollmentsTest < Hubs
 
     response =
       @hubspot.automation.sequences.enrollments.enroll(
+        user_id: "userId",
         contact_id: "contactId",
         sender_email: "senderEmail",
         sequence_id: "sequenceId"

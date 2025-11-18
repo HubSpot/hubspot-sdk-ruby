@@ -3,7 +3,6 @@
 module HubspotSDK
   module Models
     module Settings
-      # @see HubspotSDK::Resources::Settings::TaxRates#list
       class CollectionResponsePublicTaxRateGroupForwardPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #

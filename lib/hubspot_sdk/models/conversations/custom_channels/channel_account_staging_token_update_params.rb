@@ -11,11 +11,11 @@ module HubspotSDK
 
           # @!attribute channel_id
           #
-          #   @return [String]
-          required :channel_id, String
+          #   @return [Integer]
+          required :channel_id, Integer
 
           # @!method initialize(channel_id:, request_options: {})
-          #   @param channel_id [String]
+          #   @param channel_id [Integer]
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end

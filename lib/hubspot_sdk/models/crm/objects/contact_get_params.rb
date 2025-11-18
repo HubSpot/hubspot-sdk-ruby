@@ -22,6 +22,12 @@ module HubspotSDK
           #   @return [Array<String>, nil]
           optional :associations, HubspotSDK::Internal::Type::ArrayOf[String]
 
+          # @!attribute id_property
+          #   The name of a property whose values are unique for this object
+          #
+          #   @return [String, nil]
+          optional :id_property, String
+
           # @!attribute properties
           #   A comma separated list of the properties to be returned in the response. If any
           #   of the specified properties are not present on the requested object(s), they
@@ -38,13 +44,15 @@ module HubspotSDK
           #   @return [Array<String>, nil]
           optional :properties_with_history, HubspotSDK::Internal::Type::ArrayOf[String]
 
-          # @!method initialize(archived: nil, associations: nil, properties: nil, properties_with_history: nil, request_options: {})
+          # @!method initialize(archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
           #   {HubspotSDK::Models::Crm::Objects::ContactGetParams} for more details.
           #
           #   @param archived [Boolean] Whether to return only results that have been archived.
           #
           #   @param associations [Array<String>] A comma separated list of object types to retrieve associated IDs for. If any of
+          #
+          #   @param id_property [String] The name of a property whose values are unique for this object
           #
           #   @param properties [Array<String>] A comma separated list of the properties to be returned in the response. If any
           #

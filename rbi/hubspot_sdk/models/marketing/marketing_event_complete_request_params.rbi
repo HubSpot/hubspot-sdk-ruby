@@ -2,6 +2,9 @@
 
 module HubspotSDK
   module Models
+    MarketingEventCompleteRequestParams =
+      Marketing::MarketingEventCompleteRequestParams
+
     module Marketing
       class MarketingEventCompleteRequestParams < HubspotSDK::Internal::Type::BaseModel
         OrHash =

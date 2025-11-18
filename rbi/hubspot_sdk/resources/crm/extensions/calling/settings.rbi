@@ -9,12 +9,12 @@ module HubspotSDK
             sig do
               params(
                 app_id: Integer,
-                name: String,
-                url: String,
                 height: Integer,
                 is_ready: T::Boolean,
+                name: String,
                 supports_custom_objects: T::Boolean,
                 supports_inbound_calling: T::Boolean,
+                url: String,
                 uses_calling_window: T::Boolean,
                 uses_remote: T::Boolean,
                 width: Integer,
@@ -23,15 +23,15 @@ module HubspotSDK
             end
             def create(
               app_id,
+              height:,
+              is_ready:,
               name:,
+              supports_custom_objects:,
+              supports_inbound_calling:,
               url:,
-              height: nil,
-              is_ready: nil,
-              supports_custom_objects: nil,
-              supports_inbound_calling: nil,
-              uses_calling_window: nil,
-              uses_remote: nil,
-              width: nil,
+              uses_calling_window:,
+              uses_remote:,
+              width:,
               request_options: {}
             )
             end

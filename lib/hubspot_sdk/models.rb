@@ -65,6 +65,8 @@ module HubspotSDK
 
   BatchInputString = HubspotSDK::Models::BatchInputString
 
+  BatchReadInputPropertyName = HubspotSDK::Models::BatchReadInputPropertyName
+
   BatchResponseProperty = HubspotSDK::Models::BatchResponseProperty
 
   BusinessUnits = HubspotSDK::Models::BusinessUnits

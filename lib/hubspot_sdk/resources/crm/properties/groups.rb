@@ -65,20 +65,23 @@ module HubspotSDK
           # Read all existing property groups for the specified object type and HubSpot
           # account.
           #
-          # @overload list(object_type, request_options: {})
+          # @overload list(object_type, locale: nil, request_options: {})
           #
           # @param object_type [String]
+          # @param locale [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::CollectionResponsePropertyGroup]
           #
           # @see HubspotSDK::Models::Crm::Properties::GroupListParams
           def list(object_type, params = {})
+            parsed, options = HubspotSDK::Crm::Properties::GroupListParams.dump_request(params)
             @client.request(
               method: :get,
               path: ["crm/v3/properties/%1$s/groups", object_type],
+              query: parsed,
               model: HubspotSDK::Crm::CollectionResponsePropertyGroup,
-              options: params[:request_options]
+              options: options
             )
           end
 
@@ -109,10 +112,14 @@ module HubspotSDK
 
           # Read a property group identified by {groupName}.
           #
-          # @overload get(group_name, object_type:, request_options: {})
+          # @overload get(group_name, object_type:, locale: nil, request_options: {})
           #
-          # @param group_name [String]
-          # @param object_type [String]
+          # @param group_name [String] Path param:
+          #
+          # @param object_type [String] Path param:
+          #
+          # @param locale [String] Query param:
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::PropertyGroup]
@@ -127,6 +134,7 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["crm/v3/properties/%1$s/groups/%2$s", object_type, group_name],
+              query: parsed,
               model: HubspotSDK::Crm::PropertyGroup,
               options: options
             )

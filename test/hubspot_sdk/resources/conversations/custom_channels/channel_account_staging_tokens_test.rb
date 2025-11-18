@@ -9,7 +9,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccount
     response =
       @hubspot.conversations.custom_channels.channel_account_staging_tokens.update(
         "accountToken",
-        channel_id: "channelId",
+        channel_id: 0,
         account_name: "accountName",
         delivery_identifier: {type: "type", value: "value"}
       )

@@ -11,11 +11,20 @@ module HubspotSDK
 
           # @!attribute channel_id
           #
-          #   @return [String]
-          required :channel_id, String
+          #   @return [Integer]
+          required :channel_id, Integer
 
-          # @!method initialize(channel_id:, request_options: {})
-          #   @param channel_id [String]
+          # @!attribute archived
+          #   Filter results to include only archived or non-archived channel accounts.
+          #
+          #   @return [Boolean, nil]
+          optional :archived, HubspotSDK::Internal::Type::Boolean
+
+          # @!method initialize(channel_id:, archived: nil, request_options: {})
+          #   @param channel_id [Integer]
+          #
+          #   @param archived [Boolean] Filter results to include only archived or non-archived channel accounts.
+          #
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end

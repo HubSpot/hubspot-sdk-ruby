@@ -910,6 +910,8 @@ module HubspotSDK
           end
         end
       end
+
+      BlogAuthor = Blogs::BlogAuthor
     end
   end
 end

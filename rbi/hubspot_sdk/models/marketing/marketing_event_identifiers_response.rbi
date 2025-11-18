@@ -2,6 +2,9 @@
 
 module HubspotSDK
   module Models
+    MarketingEventIdentifiersResponse =
+      Marketing::MarketingEventIdentifiersResponse
+
     module Marketing
       class MarketingEventIdentifiersResponse < HubspotSDK::Internal::Type::BaseModel
         OrHash =

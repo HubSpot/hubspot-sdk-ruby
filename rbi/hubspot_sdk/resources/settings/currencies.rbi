@@ -77,7 +77,11 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Settings::ExchangeRate)
         end
-        def get_exchange_rate_by_id(exchange_rate_id, request_options: {})
+        def get_exchange_rate_by_id(
+          # The ID of the exchange rate to retrieve.
+          exchange_rate_id,
+          request_options: {}
+        )
         end
 
         # Retrieve a list of all available currency codes and their names.
@@ -100,11 +104,33 @@ module HubspotSDK
 
         # Get a list of exchange rates
         sig do
-          params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-            HubspotSDK::Settings::CollectionResponseExchangeRateForwardPaging
+          params(
+            after: String,
+            from_currency_code:
+              HubspotSDK::Settings::CurrencyListExchangeRatesParams::FromCurrencyCode::OrSymbol,
+            limit: Integer,
+            to_currency_code:
+              HubspotSDK::Settings::CurrencyListExchangeRatesParams::ToCurrencyCode::OrSymbol,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(
+            HubspotSDK::Internal::Page[HubspotSDK::Settings::ExchangeRate]
           )
         end
-        def list_exchange_rates(request_options: {})
+        def list_exchange_rates(
+          # The paging cursor token of the last successfully read resource will be returned
+          # as the `paging.next.after` JSON property of a paged response containing more
+          # results.
+          after: nil,
+          # Filters the response to only include exchange rates set from the specified
+          # currency.
+          from_currency_code: nil,
+          # The maximum number of results to display per page.
+          limit: nil,
+          # Filters the response to only include exchange rates set to the specified
+          # currency.
+          to_currency_code: nil,
+          request_options: {}
+        )
         end
 
         # Set or update the primary company currency.
@@ -128,6 +154,7 @@ module HubspotSDK
           ).returns(HubspotSDK::Settings::ExchangeRate)
         end
         def update_exchange_rate(
+          # The unique identifier of the exchange rate to be updated.
           exchange_rate_id,
           conversion_rate:,
           effective_at: nil,

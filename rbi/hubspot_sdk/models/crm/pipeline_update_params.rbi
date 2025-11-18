@@ -18,6 +18,7 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :object_type
 
+        # Indicates whether to validate deal stage usages before deleting the pipeline.
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :validate_deal_stage_usages_before_delete
 
@@ -26,6 +27,7 @@ module HubspotSDK
         end
         attr_writer :validate_deal_stage_usages_before_delete
 
+        # Indicates whether to validate references before deleting the pipeline.
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :validate_references_before_delete
 
@@ -42,7 +44,9 @@ module HubspotSDK
         end
         def self.new(
           object_type:,
+          # Indicates whether to validate deal stage usages before deleting the pipeline.
           validate_deal_stage_usages_before_delete: nil,
+          # Indicates whether to validate references before deleting the pipeline.
           validate_references_before_delete: nil,
           request_options: {}
         )
