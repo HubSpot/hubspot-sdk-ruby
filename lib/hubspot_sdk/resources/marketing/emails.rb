@@ -331,9 +331,19 @@ module HubspotSDK
         # email is variation A (master) it will return variation B (variant) and vice
         # versa.
         #
-        # @overload get_ab_test_variation(email_id, request_options: {})
+        # @overload get_ab_test_variation(email_id, archived: nil, included_properties: nil, include_stats: nil, marketing_campaign_names: nil, workflow_names: nil, request_options: {})
         #
         # @param email_id [String] The ID of an A/B marketing email.
+        #
+        # @param archived [Boolean] Boolean variable to request archived email
+        #
+        # @param included_properties [Array<String>] List of properties to be returned in the API response
+        #
+        # @param include_stats [Boolean] Boolean variable to request stats to be returned in response
+        #
+        # @param marketing_campaign_names [Boolean] Boolean variable to request name of the campaign in response
+        #
+        # @param workflow_names [Boolean] Boolean variable to request name of the associated workflows in response
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -341,11 +351,18 @@ module HubspotSDK
         #
         # @see HubspotSDK::Models::Marketing::EmailGetAbTestVariationParams
         def get_ab_test_variation(email_id, params = {})
+          parsed, options = HubspotSDK::Marketing::EmailGetAbTestVariationParams.dump_request(params)
           @client.request(
             method: :get,
             path: ["marketing/v3/emails/%1$s/ab-test/get-variation", email_id],
+            query: parsed.transform_keys(
+              included_properties: "includedProperties",
+              include_stats: "includeStats",
+              marketing_campaign_names: "marketingCampaignNames",
+              workflow_names: "workflowNames"
+            ),
             model: HubspotSDK::Marketing::PublicEmail,
-            options: params[:request_options]
+            options: options
           )
         end
 

@@ -41,6 +41,8 @@ module HubspotSDK
           #   @param primary_language [String] Primary language in multi-language group.
         end
       end
+
+      BlogAuthorCloneRequestVNext = Blogs::BlogAuthorCloneRequestVNext
     end
   end
 end

@@ -12,9 +12,12 @@ module HubspotSDK
             )
           end
 
+        # The unique identifier of the CRM object that will be merged into the primary
+        # object.
         sig { returns(String) }
         attr_accessor :object_id_to_merge
 
+        # The unique identifier of the CRM object that will remain after the merge.
         sig { returns(String) }
         attr_accessor :primary_object_id
 
@@ -23,7 +26,13 @@ module HubspotSDK
             T.attached_class
           )
         end
-        def self.new(object_id_to_merge:, primary_object_id:)
+        def self.new(
+          # The unique identifier of the CRM object that will be merged into the primary
+          # object.
+          object_id_to_merge:,
+          # The unique identifier of the CRM object that will remain after the merge.
+          primary_object_id:
+        )
         end
 
         sig do

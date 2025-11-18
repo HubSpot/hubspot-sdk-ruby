@@ -49,7 +49,13 @@ class HubspotSDK::Test::Resources::Crm::Properties::BatchTest < HubspotSDK::Test
   def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.crm.properties.batch.get("objectType", archived: true, inputs: [{name: "name"}])
+    response =
+      @hubspot.crm.properties.batch.get(
+        "objectType",
+        archived: true,
+        data_sensitivity: :non_sensitive,
+        inputs: [{name: "name"}]
+      )
 
     assert_pattern do
       response => HubspotSDK::BatchResponseProperty

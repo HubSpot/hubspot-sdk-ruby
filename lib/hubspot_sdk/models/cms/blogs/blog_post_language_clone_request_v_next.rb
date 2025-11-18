@@ -25,6 +25,8 @@ module HubspotSDK
           #   @param language [String] Target language of new variant.
         end
       end
+
+      BlogPostLanguageCloneRequestVNext = Blogs::BlogPostLanguageCloneRequestVNext
     end
   end
 end

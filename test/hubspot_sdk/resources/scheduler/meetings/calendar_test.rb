@@ -8,6 +8,7 @@ class HubspotSDK::Test::Resources::Scheduler::Meetings::CalendarTest < HubspotSD
 
     response =
       @hubspot.scheduler.meetings.calendar.create(
+        organizer_user_id: "organizerUserId",
         associations: [
           {
             to: {id: "37295"},
@@ -23,7 +24,8 @@ class HubspotSDK::Test::Resources::Scheduler::Meetings::CalendarTest < HubspotSD
           hs_meeting_outcome: "hs_meeting_outcome",
           hs_meeting_start_time: "2019-12-27T18:11:19.117Z",
           hs_meeting_title: "hs_meeting_title",
-          hs_timestamp: "2019-12-27T18:11:19.117Z"
+          hs_timestamp: "2019-12-27T18:11:19.117Z",
+          hubspot_owner_id: "hubspot_owner_id"
         },
         timezone: "timezone"
       )

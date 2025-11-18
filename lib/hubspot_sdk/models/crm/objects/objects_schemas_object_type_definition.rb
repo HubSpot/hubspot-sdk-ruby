@@ -131,6 +131,8 @@ module HubspotSDK
           #   @param updated_at [Time] When the object type was last updated.
         end
       end
+
+      ObjectsSchemasObjectTypeDefinition = Objects::ObjectsSchemasObjectTypeDefinition
     end
   end
 end

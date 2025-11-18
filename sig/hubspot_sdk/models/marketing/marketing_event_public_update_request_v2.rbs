@@ -1,5 +1,7 @@
 module HubspotSDK
   module Models
+    class MarketingEventPublicUpdateRequestV2 = Marketing::MarketingEventPublicUpdateRequestV2
+
     module Marketing
       type marketing_event_public_update_request_v2 =
         {

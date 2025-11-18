@@ -2,15 +2,56 @@ module HubspotSDK
   module Models
     module Marketing
       type email_get_ab_test_variation_params =
-        {  } & HubspotSDK::Internal::Type::request_parameters
+        {
+          archived: bool,
+          included_properties: ::Array[String],
+          include_stats: bool,
+          marketing_campaign_names: bool,
+          workflow_names: bool
+        }
+        & HubspotSDK::Internal::Type::request_parameters
 
       class EmailGetAbTestVariationParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
-        def initialize: (?request_options: HubspotSDK::request_opts) -> void
+        attr_reader archived: bool?
 
-        def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+        def archived=: (bool) -> bool
+
+        attr_reader included_properties: ::Array[String]?
+
+        def included_properties=: (::Array[String]) -> ::Array[String]
+
+        attr_reader include_stats: bool?
+
+        def include_stats=: (bool) -> bool
+
+        attr_reader marketing_campaign_names: bool?
+
+        def marketing_campaign_names=: (bool) -> bool
+
+        attr_reader workflow_names: bool?
+
+        def workflow_names=: (bool) -> bool
+
+        def initialize: (
+          ?archived: bool,
+          ?included_properties: ::Array[String],
+          ?include_stats: bool,
+          ?marketing_campaign_names: bool,
+          ?workflow_names: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          archived: bool,
+          included_properties: ::Array[String],
+          include_stats: bool,
+          marketing_campaign_names: bool,
+          workflow_names: bool,
+          request_options: HubspotSDK::RequestOptions
+        }
       end
     end
   end

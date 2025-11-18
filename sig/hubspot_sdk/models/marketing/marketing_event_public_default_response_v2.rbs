@@ -1,5 +1,7 @@
 module HubspotSDK
   module Models
+    class MarketingEventPublicDefaultResponseV2 = Marketing::MarketingEventPublicDefaultResponseV2
+
     module Marketing
       type marketing_event_public_default_response_v2 =
         {

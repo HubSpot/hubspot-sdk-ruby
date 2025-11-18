@@ -15,6 +15,7 @@ module HubspotSDK
         sig { returns(T::Array[HubspotSDK::Crm::AssociationSpecWithLabel]) }
         attr_accessor :association_types
 
+        # The unique identifier for the target object in the association.
         sig { returns(String) }
         attr_accessor :to_object_id
 
@@ -25,7 +26,11 @@ module HubspotSDK
             to_object_id: String
           ).returns(T.attached_class)
         end
-        def self.new(association_types:, to_object_id:)
+        def self.new(
+          association_types:,
+          # The unique identifier for the target object in the association.
+          to_object_id:
+        )
         end
 
         sig do

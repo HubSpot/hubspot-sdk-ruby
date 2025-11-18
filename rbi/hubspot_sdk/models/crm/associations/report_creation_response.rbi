@@ -23,9 +23,11 @@ module HubspotSDK
           end
           attr_writer :enqueue_time
 
+          # Email of the user
           sig { returns(String) }
           attr_accessor :user_email
 
+          # ID of the user
           sig { returns(Integer) }
           attr_accessor :user_id
 
@@ -36,7 +38,13 @@ module HubspotSDK
               user_id: Integer
             ).returns(T.attached_class)
           end
-          def self.new(enqueue_time:, user_email:, user_id:)
+          def self.new(
+            enqueue_time:,
+            # Email of the user
+            user_email:,
+            # ID of the user
+            user_id:
+          )
           end
 
           sig do

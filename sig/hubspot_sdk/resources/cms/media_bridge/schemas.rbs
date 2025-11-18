@@ -5,7 +5,7 @@ module HubspotSDK
         class Schemas
           def update: (
             String object_type,
-            app_id: String,
+            app_id: Integer,
             ?clear_description: bool,
             ?description: String,
             ?labels: HubspotSDK::ObjectTypeDefinitionLabels,
@@ -18,13 +18,14 @@ module HubspotSDK
           ) -> HubspotSDK::Crm::Objects::ObjectsSchemasObjectTypeDefinition
 
           def list: (
-            String app_id,
+            Integer app_id,
+            ?archived: bool,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::CollectionResponseObjectSchemaNoPaging
 
           def create_association: (
             String object_type,
-            app_id: String,
+            app_id: Integer,
             from_object_type_id: String,
             to_object_type_id: String,
             ?name: String,
@@ -33,14 +34,14 @@ module HubspotSDK
 
           def delete_association: (
             String association_id,
-            app_id: String,
+            app_id: Integer,
             object_type: String,
             ?request_options: HubspotSDK::request_opts
           ) -> nil
 
           def get: (
             String object_type,
-            app_id: String,
+            app_id: Integer,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Crm::Objects::ObjectSchema
 

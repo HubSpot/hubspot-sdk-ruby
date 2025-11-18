@@ -7,7 +7,7 @@ module HubspotSDK
           results: ::Array[HubspotSDK::Crm::SimplePublicObject],
           started_at: Time,
           status: HubspotSDK::Models::Crm::BatchResponseSimplePublicObject::status,
-          errors: ::Array[HubspotSDK::Crm::Associations::StandardError1],
+          errors: ::Array[HubspotSDK::StandardError],
           links: ::Hash[Symbol, String],
           num_errors: Integer,
           requested_at: Time
@@ -22,11 +22,11 @@ module HubspotSDK
 
         attr_accessor status: HubspotSDK::Models::Crm::BatchResponseSimplePublicObject::status
 
-        attr_reader errors: ::Array[HubspotSDK::Crm::Associations::StandardError1]?
+        attr_reader errors: ::Array[HubspotSDK::StandardError]?
 
         def errors=: (
-          ::Array[HubspotSDK::Crm::Associations::StandardError1]
-        ) -> ::Array[HubspotSDK::Crm::Associations::StandardError1]
+          ::Array[HubspotSDK::StandardError]
+        ) -> ::Array[HubspotSDK::StandardError]
 
         attr_reader links: ::Hash[Symbol, String]?
 
@@ -45,7 +45,7 @@ module HubspotSDK
           results: ::Array[HubspotSDK::Crm::SimplePublicObject],
           started_at: Time,
           status: HubspotSDK::Models::Crm::BatchResponseSimplePublicObject::status,
-          ?errors: ::Array[HubspotSDK::Crm::Associations::StandardError1],
+          ?errors: ::Array[HubspotSDK::StandardError],
           ?links: ::Hash[Symbol, String],
           ?num_errors: Integer,
           ?requested_at: Time
@@ -56,7 +56,7 @@ module HubspotSDK
           results: ::Array[HubspotSDK::Crm::SimplePublicObject],
           started_at: Time,
           status: HubspotSDK::Models::Crm::BatchResponseSimplePublicObject::status,
-          errors: ::Array[HubspotSDK::Crm::Associations::StandardError1],
+          errors: ::Array[HubspotSDK::StandardError],
           links: ::Hash[Symbol, String],
           num_errors: Integer,
           requested_at: Time

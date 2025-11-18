@@ -2,6 +2,9 @@
 
 module HubspotSDK
   module Models
+    MarketingEventUpdateRequestParams =
+      Marketing::MarketingEventUpdateRequestParams
+
     module Marketing
       class MarketingEventUpdateRequestParams < HubspotSDK::Internal::Type::BaseModel
         OrHash =
@@ -20,18 +23,8 @@ module HubspotSDK
         # Custom Property you want to track on that HubSpot account. Do not create any new
         # default properties on the MarketingEvent object as that will apply to all
         # HubSpot accounts.
-        sig do
-          returns(T.nilable(T::Array[HubspotSDK::Marketing::PropertyValue]))
-        end
-        attr_reader :custom_properties
-
-        sig do
-          params(
-            custom_properties:
-              T::Array[HubspotSDK::Marketing::PropertyValue::OrHash]
-          ).void
-        end
-        attr_writer :custom_properties
+        sig { returns(T::Array[HubspotSDK::Marketing::PropertyValue]) }
+        attr_accessor :custom_properties
 
         # The end date and time of the marketing event.
         sig { returns(T.nilable(Time)) }
@@ -121,7 +114,7 @@ module HubspotSDK
           # Custom Property you want to track on that HubSpot account. Do not create any new
           # default properties on the MarketingEvent object as that will apply to all
           # HubSpot accounts.
-          custom_properties: nil,
+          custom_properties:,
           # The end date and time of the marketing event.
           end_date_time: nil,
           # Indicates if the marketing event has been cancelled. Defaults to `false`

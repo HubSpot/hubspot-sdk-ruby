@@ -5,17 +5,17 @@ module HubspotSDK
     module Cms
       module MediaBridge
         # @see HubspotSDK::Resources::Cms::MediaBridge::Properties#get_batch
-        class PropertyGetBatchParams < HubspotSDK::Models::Crm::BatchReadInputPropertyName
+        class PropertyGetBatchParams < HubspotSDK::Models::BatchReadInputPropertyName
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
           # @!attribute app_id
           #
-          #   @return [String]
-          required :app_id, String
+          #   @return [Integer]
+          required :app_id, Integer
 
           # @!method initialize(app_id:, request_options: {})
-          #   @param app_id [String]
+          #   @param app_id [Integer]
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end

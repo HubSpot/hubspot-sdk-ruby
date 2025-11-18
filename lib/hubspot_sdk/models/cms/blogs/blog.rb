@@ -900,6 +900,8 @@ module HubspotSDK
           end
         end
       end
+
+      Blog = Blogs::Blog
     end
   end
 end

@@ -2,6 +2,8 @@
 
 module HubspotSDK
   module Models
+    MarketingEventSubscriber = Marketing::MarketingEventSubscriber
+
     module Marketing
       class MarketingEventSubscriber < HubspotSDK::Internal::Type::BaseModel
         OrHash =
@@ -16,17 +18,11 @@ module HubspotSDK
         sig { returns(Integer) }
         attr_accessor :interaction_date_time
 
-        sig { returns(T.nilable(T::Hash[Symbol, String])) }
-        attr_reader :properties
+        sig { returns(T::Hash[Symbol, String]) }
+        attr_accessor :properties
 
-        sig { params(properties: T::Hash[Symbol, String]).void }
-        attr_writer :properties
-
-        sig { returns(T.nilable(Integer)) }
-        attr_reader :vid
-
-        sig { params(vid: Integer).void }
-        attr_writer :vid
+        sig { returns(Integer) }
+        attr_accessor :vid
 
         sig do
           params(
@@ -38,8 +34,8 @@ module HubspotSDK
         def self.new(
           # Timestamp in milliseconds at which the contact subscribed to the event.
           interaction_date_time:,
-          properties: nil,
-          vid: nil
+          properties:,
+          vid:
         )
         end
 

@@ -3,23 +3,44 @@ module HubspotSDK
     module Cms
       module MediaBridge
         type integrator_setting_get_object_definitions_by_media_type_params =
-          { app_id: String } & HubspotSDK::Internal::Type::request_parameters
+          { app_id: Integer, include_full_definition: bool }
+          & HubspotSDK::Internal::Type::request_parameters
 
         class IntegratorSettingGetObjectDefinitionsByMediaTypeParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          attr_accessor app_id: String
+          attr_accessor app_id: Integer
+
+          attr_reader include_full_definition: bool?
+
+          def include_full_definition=: (bool) -> bool
 
           def initialize: (
-            app_id: String,
+            app_id: Integer,
+            ?include_full_definition: bool,
             ?request_options: HubspotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
-            app_id: String,
+            app_id: Integer,
+            include_full_definition: bool,
             request_options: HubspotSDK::RequestOptions
           }
+
+          type media_type = :VIDEO | :AUDIO | :DOCUMENT | :OTHER | :IMAGE
+
+          module MediaType
+            extend HubspotSDK::Internal::Type::Enum
+
+            VIDEO: :VIDEO
+            AUDIO: :AUDIO
+            DOCUMENT: :DOCUMENT
+            OTHER: :OTHER
+            IMAGE: :IMAGE
+
+            def self?.values: -> ::Array[HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetObjectDefinitionsByMediaTypeParams::media_type]
+          end
         end
       end
     end

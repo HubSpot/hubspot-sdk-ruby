@@ -32,19 +32,10 @@ module HubspotSDK
         end
         attr_accessor :status
 
-        sig do
-          returns(
-            T.nilable(T::Array[HubspotSDK::Crm::Associations::StandardError1])
-          )
-        end
+        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
         attr_reader :errors
 
-        sig do
-          params(
-            errors:
-              T::Array[HubspotSDK::Crm::Associations::StandardError1::OrHash]
-          ).void
-        end
+        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
         attr_writer :errors
 
         # An object containing relevant links related to the batch request.
@@ -54,6 +45,7 @@ module HubspotSDK
         sig { params(links: T::Hash[Symbol, String]).void }
         attr_writer :links
 
+        # The number of errors encountered during the batch processing.
         sig { returns(T.nilable(Integer)) }
         attr_reader :num_errors
 
@@ -75,8 +67,7 @@ module HubspotSDK
             started_at: Time,
             status:
               HubspotSDK::Crm::BatchResponseSimplePublicObject::Status::OrSymbol,
-            errors:
-              T::Array[HubspotSDK::Crm::Associations::StandardError1::OrHash],
+            errors: T::Array[HubspotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
             requested_at: Time
@@ -94,6 +85,7 @@ module HubspotSDK
           errors: nil,
           # An object containing relevant links related to the batch request.
           links: nil,
+          # The number of errors encountered during the batch processing.
           num_errors: nil,
           # The timestamp when the batch request was initially made, in ISO 8601 format.
           requested_at: nil
@@ -108,7 +100,7 @@ module HubspotSDK
               started_at: Time,
               status:
                 HubspotSDK::Crm::BatchResponseSimplePublicObject::Status::TaggedSymbol,
-              errors: T::Array[HubspotSDK::Crm::Associations::StandardError1],
+              errors: T::Array[HubspotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
               requested_at: Time

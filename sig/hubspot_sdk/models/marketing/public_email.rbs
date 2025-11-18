@@ -3,15 +3,8 @@ module HubspotSDK
     module Marketing
       type public_email =
         {
+          is_ab: bool,
           id: String,
-          content: HubspotSDK::Marketing::PublicEmailContent,
-          from: HubspotSDK::Marketing::PublicEmailFromDetails,
-          name: String,
-          send_on_publish: bool,
-          state: HubspotSDK::Models::Marketing::PublicEmail::state,
-          subcategory: String,
-          subject: String,
-          to: HubspotSDK::Marketing::PublicEmailToDetails,
           active_domain: String,
           all_email_campaign_ids: ::Array[String],
           archived: bool,
@@ -20,6 +13,7 @@ module HubspotSDK
           campaign_name: String,
           campaign_utm: String,
           cloned_from: String,
+          content: HubspotSDK::Marketing::PublicEmailContent,
           created_at: Time,
           created_by_id: String,
           deleted_at: Time,
@@ -28,11 +22,12 @@ module HubspotSDK
           feedback_survey_id: String,
           folder_id: Integer,
           :folder_id_v2 => Integer,
-          is_ab: bool,
+          from: HubspotSDK::Marketing::PublicEmailFromDetails,
           is_published: bool,
           is_transactional: bool,
           jitter_send_time: bool,
           language: HubspotSDK::Models::Marketing::PublicEmail::language,
+          name: String,
           preview_key: String,
           primary_email_campaign_id: String,
           publish_date: Time,
@@ -41,10 +36,15 @@ module HubspotSDK
           published_by_id: String,
           published_by_name: String,
           rss_data: HubspotSDK::Marketing::PublicRssEmailDetails,
+          send_on_publish: bool,
+          state: HubspotSDK::Models::Marketing::PublicEmail::state,
           stats: HubspotSDK::Marketing::EmailStatisticsData,
+          subcategory: String,
+          subject: String,
           subscription_details: HubspotSDK::Marketing::PublicEmailSubscriptionDetails,
           teams_with_access: ::Array[String],
           testing: HubspotSDK::Marketing::PublicEmailTestingDetails,
+          to: HubspotSDK::Marketing::PublicEmailToDetails,
           type: HubspotSDK::Models::Marketing::PublicEmail::type_,
           unpublished_at: Time,
           updated_at: Time,
@@ -55,23 +55,11 @@ module HubspotSDK
         }
 
       class PublicEmail < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor id: String
+        attr_accessor is_ab: bool
 
-        attr_accessor content: HubspotSDK::Marketing::PublicEmailContent
+        attr_reader id: String?
 
-        attr_accessor from: HubspotSDK::Marketing::PublicEmailFromDetails
-
-        attr_accessor name: String
-
-        attr_accessor send_on_publish: bool
-
-        attr_accessor state: HubspotSDK::Models::Marketing::PublicEmail::state
-
-        attr_accessor subcategory: String
-
-        attr_accessor subject: String
-
-        attr_accessor to: HubspotSDK::Marketing::PublicEmailToDetails
+        def id=: (String) -> String
 
         attr_reader active_domain: String?
 
@@ -104,6 +92,12 @@ module HubspotSDK
         attr_reader cloned_from: String?
 
         def cloned_from=: (String) -> String
+
+        attr_reader content: HubspotSDK::Marketing::PublicEmailContent?
+
+        def content=: (
+          HubspotSDK::Marketing::PublicEmailContent
+        ) -> HubspotSDK::Marketing::PublicEmailContent
 
         attr_reader created_at: Time?
 
@@ -139,9 +133,11 @@ module HubspotSDK
 
         def folder_id_v2=: (Integer) -> Integer
 
-        attr_reader is_ab: bool?
+        attr_reader from: HubspotSDK::Marketing::PublicEmailFromDetails?
 
-        def is_ab=: (bool) -> bool
+        def from=: (
+          HubspotSDK::Marketing::PublicEmailFromDetails
+        ) -> HubspotSDK::Marketing::PublicEmailFromDetails
 
         attr_reader is_published: bool?
 
@@ -160,6 +156,10 @@ module HubspotSDK
         def language=: (
           HubspotSDK::Models::Marketing::PublicEmail::language
         ) -> HubspotSDK::Models::Marketing::PublicEmail::language
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
 
         attr_reader preview_key: String?
 
@@ -195,11 +195,29 @@ module HubspotSDK
           HubspotSDK::Marketing::PublicRssEmailDetails
         ) -> HubspotSDK::Marketing::PublicRssEmailDetails
 
+        attr_reader send_on_publish: bool?
+
+        def send_on_publish=: (bool) -> bool
+
+        attr_reader state: HubspotSDK::Models::Marketing::PublicEmail::state?
+
+        def state=: (
+          HubspotSDK::Models::Marketing::PublicEmail::state
+        ) -> HubspotSDK::Models::Marketing::PublicEmail::state
+
         attr_reader stats: HubspotSDK::Marketing::EmailStatisticsData?
 
         def stats=: (
           HubspotSDK::Marketing::EmailStatisticsData
         ) -> HubspotSDK::Marketing::EmailStatisticsData
+
+        attr_reader subcategory: String?
+
+        def subcategory=: (String) -> String
+
+        attr_reader subject: String?
+
+        def subject=: (String) -> String
 
         attr_reader subscription_details: HubspotSDK::Marketing::PublicEmailSubscriptionDetails?
 
@@ -216,6 +234,12 @@ module HubspotSDK
         def testing=: (
           HubspotSDK::Marketing::PublicEmailTestingDetails
         ) -> HubspotSDK::Marketing::PublicEmailTestingDetails
+
+        attr_reader to: HubspotSDK::Marketing::PublicEmailToDetails?
+
+        def to=: (
+          HubspotSDK::Marketing::PublicEmailToDetails
+        ) -> HubspotSDK::Marketing::PublicEmailToDetails
 
         attr_reader type: HubspotSDK::Models::Marketing::PublicEmail::type_?
 
@@ -250,15 +274,8 @@ module HubspotSDK
         def workflow_names=: (::Array[String]) -> ::Array[String]
 
         def initialize: (
-          id: String,
-          content: HubspotSDK::Marketing::PublicEmailContent,
-          from: HubspotSDK::Marketing::PublicEmailFromDetails,
-          name: String,
-          send_on_publish: bool,
-          state: HubspotSDK::Models::Marketing::PublicEmail::state,
-          subcategory: String,
-          subject: String,
-          to: HubspotSDK::Marketing::PublicEmailToDetails,
+          is_ab: bool,
+          ?id: String,
           ?active_domain: String,
           ?all_email_campaign_ids: ::Array[String],
           ?archived: bool,
@@ -267,6 +284,7 @@ module HubspotSDK
           ?campaign_name: String,
           ?campaign_utm: String,
           ?cloned_from: String,
+          ?content: HubspotSDK::Marketing::PublicEmailContent,
           ?created_at: Time,
           ?created_by_id: String,
           ?deleted_at: Time,
@@ -275,11 +293,12 @@ module HubspotSDK
           ?feedback_survey_id: String,
           ?folder_id: Integer,
           ?folder_id_v2: Integer,
-          ?is_ab: bool,
+          ?from: HubspotSDK::Marketing::PublicEmailFromDetails,
           ?is_published: bool,
           ?is_transactional: bool,
           ?jitter_send_time: bool,
           ?language: HubspotSDK::Models::Marketing::PublicEmail::language,
+          ?name: String,
           ?preview_key: String,
           ?primary_email_campaign_id: String,
           ?publish_date: Time,
@@ -288,10 +307,15 @@ module HubspotSDK
           ?published_by_id: String,
           ?published_by_name: String,
           ?rss_data: HubspotSDK::Marketing::PublicRssEmailDetails,
+          ?send_on_publish: bool,
+          ?state: HubspotSDK::Models::Marketing::PublicEmail::state,
           ?stats: HubspotSDK::Marketing::EmailStatisticsData,
+          ?subcategory: String,
+          ?subject: String,
           ?subscription_details: HubspotSDK::Marketing::PublicEmailSubscriptionDetails,
           ?teams_with_access: ::Array[String],
           ?testing: HubspotSDK::Marketing::PublicEmailTestingDetails,
+          ?to: HubspotSDK::Marketing::PublicEmailToDetails,
           ?type: HubspotSDK::Models::Marketing::PublicEmail::type_,
           ?unpublished_at: Time,
           ?updated_at: Time,
@@ -302,15 +326,8 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
+          is_ab: bool,
           id: String,
-          content: HubspotSDK::Marketing::PublicEmailContent,
-          from: HubspotSDK::Marketing::PublicEmailFromDetails,
-          name: String,
-          send_on_publish: bool,
-          state: HubspotSDK::Models::Marketing::PublicEmail::state,
-          subcategory: String,
-          subject: String,
-          to: HubspotSDK::Marketing::PublicEmailToDetails,
           active_domain: String,
           all_email_campaign_ids: ::Array[String],
           archived: bool,
@@ -319,6 +336,7 @@ module HubspotSDK
           campaign_name: String,
           campaign_utm: String,
           cloned_from: String,
+          content: HubspotSDK::Marketing::PublicEmailContent,
           created_at: Time,
           created_by_id: String,
           deleted_at: Time,
@@ -327,11 +345,12 @@ module HubspotSDK
           feedback_survey_id: String,
           folder_id: Integer,
           :folder_id_v2 => Integer,
-          is_ab: bool,
+          from: HubspotSDK::Marketing::PublicEmailFromDetails,
           is_published: bool,
           is_transactional: bool,
           jitter_send_time: bool,
           language: HubspotSDK::Models::Marketing::PublicEmail::language,
+          name: String,
           preview_key: String,
           primary_email_campaign_id: String,
           publish_date: Time,
@@ -340,10 +359,15 @@ module HubspotSDK
           published_by_id: String,
           published_by_name: String,
           rss_data: HubspotSDK::Marketing::PublicRssEmailDetails,
+          send_on_publish: bool,
+          state: HubspotSDK::Models::Marketing::PublicEmail::state,
           stats: HubspotSDK::Marketing::EmailStatisticsData,
+          subcategory: String,
+          subject: String,
           subscription_details: HubspotSDK::Marketing::PublicEmailSubscriptionDetails,
           teams_with_access: ::Array[String],
           testing: HubspotSDK::Marketing::PublicEmailTestingDetails,
+          to: HubspotSDK::Marketing::PublicEmailToDetails,
           type: HubspotSDK::Models::Marketing::PublicEmail::type_,
           unpublished_at: Time,
           updated_at: Time,
@@ -352,79 +376,6 @@ module HubspotSDK
           webversion: HubspotSDK::Marketing::PublicWebversionDetails,
           workflow_names: ::Array[String]
         }
-
-        type state =
-          :AUTOMATED
-          | :AUTOMATED_DRAFT
-          | :AUTOMATED_SENDING
-          | :AUTOMATED_FOR_FORM
-          | :AUTOMATED_FOR_FORM_BUFFER
-          | :AUTOMATED_FOR_FORM_DRAFT
-          | :AUTOMATED_FOR_FORM_LEGACY
-          | :BLOG_EMAIL_DRAFT
-          | :BLOG_EMAIL_PUBLISHED
-          | :DRAFT
-          | :DRAFT_AB
-          | :DRAFT_AB_VARIANT
-          | :ERROR
-          | :LOSER_AB_VARIANT
-          | :PAGE_STUB
-          | :PRE_PROCESSING
-          | :PROCESSING
-          | :PUBLISHED
-          | :PUBLISHED_AB
-          | :PUBLISHED_AB_VARIANT
-          | :PUBLISHED_OR_SCHEDULED
-          | :RSS_TO_EMAIL_DRAFT
-          | :RSS_TO_EMAIL_PUBLISHED
-          | :SCHEDULED
-          | :SCHEDULED_AB
-          | :SCHEDULED_OR_PUBLISHED
-          | :AUTOMATED_AB
-          | :AUTOMATED_AB_VARIANT
-          | :AUTOMATED_DRAFT_AB
-          | :AUTOMATED_DRAFT_ABVARIANT
-          | :AUTOMATED_LOSER_ABVARIANT
-          | :AGENT_GENERATED
-
-        module State
-          extend HubspotSDK::Internal::Type::Enum
-
-          AUTOMATED: :AUTOMATED
-          AUTOMATED_DRAFT: :AUTOMATED_DRAFT
-          AUTOMATED_SENDING: :AUTOMATED_SENDING
-          AUTOMATED_FOR_FORM: :AUTOMATED_FOR_FORM
-          AUTOMATED_FOR_FORM_BUFFER: :AUTOMATED_FOR_FORM_BUFFER
-          AUTOMATED_FOR_FORM_DRAFT: :AUTOMATED_FOR_FORM_DRAFT
-          AUTOMATED_FOR_FORM_LEGACY: :AUTOMATED_FOR_FORM_LEGACY
-          BLOG_EMAIL_DRAFT: :BLOG_EMAIL_DRAFT
-          BLOG_EMAIL_PUBLISHED: :BLOG_EMAIL_PUBLISHED
-          DRAFT: :DRAFT
-          DRAFT_AB: :DRAFT_AB
-          DRAFT_AB_VARIANT: :DRAFT_AB_VARIANT
-          ERROR: :ERROR
-          LOSER_AB_VARIANT: :LOSER_AB_VARIANT
-          PAGE_STUB: :PAGE_STUB
-          PRE_PROCESSING: :PRE_PROCESSING
-          PROCESSING: :PROCESSING
-          PUBLISHED: :PUBLISHED
-          PUBLISHED_AB: :PUBLISHED_AB
-          PUBLISHED_AB_VARIANT: :PUBLISHED_AB_VARIANT
-          PUBLISHED_OR_SCHEDULED: :PUBLISHED_OR_SCHEDULED
-          RSS_TO_EMAIL_DRAFT: :RSS_TO_EMAIL_DRAFT
-          RSS_TO_EMAIL_PUBLISHED: :RSS_TO_EMAIL_PUBLISHED
-          SCHEDULED: :SCHEDULED
-          SCHEDULED_AB: :SCHEDULED_AB
-          SCHEDULED_OR_PUBLISHED: :SCHEDULED_OR_PUBLISHED
-          AUTOMATED_AB: :AUTOMATED_AB
-          AUTOMATED_AB_VARIANT: :AUTOMATED_AB_VARIANT
-          AUTOMATED_DRAFT_AB: :AUTOMATED_DRAFT_AB
-          AUTOMATED_DRAFT_ABVARIANT: :AUTOMATED_DRAFT_ABVARIANT
-          AUTOMATED_LOSER_ABVARIANT: :AUTOMATED_LOSER_ABVARIANT
-          AGENT_GENERATED: :AGENT_GENERATED
-
-          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::PublicEmail::state]
-        end
 
         type email_template_mode = :DESIGN_MANAGER | :DRAG_AND_DROP
 
@@ -2026,6 +1977,79 @@ module HubspotSDK
           ZU_ZA: :"zu-za"
 
           def self?.values: -> ::Array[HubspotSDK::Models::Marketing::PublicEmail::language]
+        end
+
+        type state =
+          :AUTOMATED
+          | :AUTOMATED_DRAFT
+          | :AUTOMATED_SENDING
+          | :AUTOMATED_FOR_FORM
+          | :AUTOMATED_FOR_FORM_BUFFER
+          | :AUTOMATED_FOR_FORM_DRAFT
+          | :AUTOMATED_FOR_FORM_LEGACY
+          | :BLOG_EMAIL_DRAFT
+          | :BLOG_EMAIL_PUBLISHED
+          | :DRAFT
+          | :DRAFT_AB
+          | :DRAFT_AB_VARIANT
+          | :ERROR
+          | :LOSER_AB_VARIANT
+          | :PAGE_STUB
+          | :PRE_PROCESSING
+          | :PROCESSING
+          | :PUBLISHED
+          | :PUBLISHED_AB
+          | :PUBLISHED_AB_VARIANT
+          | :PUBLISHED_OR_SCHEDULED
+          | :RSS_TO_EMAIL_DRAFT
+          | :RSS_TO_EMAIL_PUBLISHED
+          | :SCHEDULED
+          | :SCHEDULED_AB
+          | :SCHEDULED_OR_PUBLISHED
+          | :AUTOMATED_AB
+          | :AUTOMATED_AB_VARIANT
+          | :AUTOMATED_DRAFT_AB
+          | :AUTOMATED_DRAFT_ABVARIANT
+          | :AUTOMATED_LOSER_ABVARIANT
+          | :AGENT_GENERATED
+
+        module State
+          extend HubspotSDK::Internal::Type::Enum
+
+          AUTOMATED: :AUTOMATED
+          AUTOMATED_DRAFT: :AUTOMATED_DRAFT
+          AUTOMATED_SENDING: :AUTOMATED_SENDING
+          AUTOMATED_FOR_FORM: :AUTOMATED_FOR_FORM
+          AUTOMATED_FOR_FORM_BUFFER: :AUTOMATED_FOR_FORM_BUFFER
+          AUTOMATED_FOR_FORM_DRAFT: :AUTOMATED_FOR_FORM_DRAFT
+          AUTOMATED_FOR_FORM_LEGACY: :AUTOMATED_FOR_FORM_LEGACY
+          BLOG_EMAIL_DRAFT: :BLOG_EMAIL_DRAFT
+          BLOG_EMAIL_PUBLISHED: :BLOG_EMAIL_PUBLISHED
+          DRAFT: :DRAFT
+          DRAFT_AB: :DRAFT_AB
+          DRAFT_AB_VARIANT: :DRAFT_AB_VARIANT
+          ERROR: :ERROR
+          LOSER_AB_VARIANT: :LOSER_AB_VARIANT
+          PAGE_STUB: :PAGE_STUB
+          PRE_PROCESSING: :PRE_PROCESSING
+          PROCESSING: :PROCESSING
+          PUBLISHED: :PUBLISHED
+          PUBLISHED_AB: :PUBLISHED_AB
+          PUBLISHED_AB_VARIANT: :PUBLISHED_AB_VARIANT
+          PUBLISHED_OR_SCHEDULED: :PUBLISHED_OR_SCHEDULED
+          RSS_TO_EMAIL_DRAFT: :RSS_TO_EMAIL_DRAFT
+          RSS_TO_EMAIL_PUBLISHED: :RSS_TO_EMAIL_PUBLISHED
+          SCHEDULED: :SCHEDULED
+          SCHEDULED_AB: :SCHEDULED_AB
+          SCHEDULED_OR_PUBLISHED: :SCHEDULED_OR_PUBLISHED
+          AUTOMATED_AB: :AUTOMATED_AB
+          AUTOMATED_AB_VARIANT: :AUTOMATED_AB_VARIANT
+          AUTOMATED_DRAFT_AB: :AUTOMATED_DRAFT_AB
+          AUTOMATED_DRAFT_ABVARIANT: :AUTOMATED_DRAFT_ABVARIANT
+          AUTOMATED_LOSER_ABVARIANT: :AUTOMATED_LOSER_ABVARIANT
+          AGENT_GENERATED: :AGENT_GENERATED
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::PublicEmail::state]
         end
 
         type type_ =

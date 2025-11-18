@@ -7,7 +7,20 @@ class HubspotSDK::Test::Resources::Crm::Objects::Custom::BatchTest < HubspotSDK:
     skip("Prism tests are disabled")
 
     response =
-      @hubspot.crm.objects.custom.batch.create("objectType", inputs: [{properties: {foo: "string"}}])
+      @hubspot.crm.objects.custom.batch.create(
+        "objectType",
+        inputs: [
+          {
+            associations: [
+              {
+                to: {id: "37295"},
+                types: [{associationCategory: :HUBSPOT_DEFINED, associationTypeId: 0}]
+              }
+            ],
+            properties: {foo: "string"}
+          }
+        ]
+      )
 
     assert_pattern do
       response => HubspotSDK::Crm::BatchResponseSimplePublicObject
@@ -19,7 +32,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::Custom::BatchTest < HubspotSDK:
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         started_at: Time,
         status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Associations::StandardError1]) | nil,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
@@ -46,7 +59,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::Custom::BatchTest < HubspotSDK:
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         started_at: Time,
         status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Associations::StandardError1]) | nil,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
@@ -85,7 +98,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::Custom::BatchTest < HubspotSDK:
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         started_at: Time,
         status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Associations::StandardError1]) | nil,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
@@ -112,7 +125,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::Custom::BatchTest < HubspotSDK:
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicUpsertObject]),
         started_at: Time,
         status: HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Associations::StandardError1]) | nil,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil

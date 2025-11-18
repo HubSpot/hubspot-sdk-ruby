@@ -5,7 +5,7 @@ module HubspotSDK
         class Groups
           def create: (
             String object_type,
-            app_id: String,
+            app_id: Integer,
             label: String,
             name: String,
             ?display_order: Integer,
@@ -14,27 +14,27 @@ module HubspotSDK
 
           def list: (
             String object_type,
-            app_id: String,
+            app_id: Integer,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Cms::CollectionResponsePropertyGroupNoPaging
 
           def delete_by_name: (
             String group_name,
-            app_id: String,
+            app_id: Integer,
             object_type: String,
             ?request_options: HubspotSDK::request_opts
           ) -> nil
 
           def get_by_name: (
             String group_name,
-            app_id: String,
+            app_id: Integer,
             object_type: String,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Crm::PropertyGroup
 
           def update_by_name: (
             String group_name,
-            app_id: String,
+            app_id: Integer,
             object_type: String,
             ?display_order: Integer,
             ?label: String,

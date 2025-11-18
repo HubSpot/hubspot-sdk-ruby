@@ -11,21 +11,36 @@ module HubspotSDK
 
         # Retrieve a list of sequences that belong to a specific user.
         sig do
-          params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-            HubspotSDK::Automation::CollectionResponseWithTotalPublicSequenceLiteResponseForwardPaging
+          params(
+            user_id: String,
+            after: String,
+            limit: Integer,
+            name: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(
+            HubspotSDK::Internal::Page[
+              HubspotSDK::Automation::PublicSequenceLiteResponse
+            ]
           )
         end
-        def list(request_options: {})
+        def list(
+          user_id:,
+          after: nil,
+          limit: nil,
+          name: nil,
+          request_options: {}
+        )
         end
 
         # Retrieve details of a specific sequence by its ID.
         sig do
           params(
             sequence_id: String,
+            user_id: String,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Automation::PublicSequenceResponse)
         end
-        def get(sequence_id, request_options: {})
+        def get(sequence_id, user_id:, request_options: {})
         end
 
         # @api private

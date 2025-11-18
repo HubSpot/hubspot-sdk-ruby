@@ -3,7 +3,7 @@ module HubspotSDK
     module Crm
       module Properties
         type group_get_params =
-          { object_type: String }
+          { object_type: String, locale: String }
           & HubspotSDK::Internal::Type::request_parameters
 
         class GroupGetParams < HubspotSDK::Internal::Type::BaseModel
@@ -12,13 +12,19 @@ module HubspotSDK
 
           attr_accessor object_type: String
 
+          attr_reader locale: String?
+
+          def locale=: (String) -> String
+
           def initialize: (
             object_type: String,
+            ?locale: String,
             ?request_options: HubspotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
             object_type: String,
+            locale: String,
             request_options: HubspotSDK::RequestOptions
           }
         end

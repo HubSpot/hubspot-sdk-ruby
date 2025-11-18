@@ -261,15 +261,15 @@ module HubspotSDK
         # Search lists by list name or page through all lists by providing an empty
         # `query` value.
         #
-        # @overload search(additional_properties: nil, count: nil, list_ids: nil, offset: nil, processing_types: nil, query: nil, sort: nil, request_options: {})
+        # @overload search(additional_properties:, offset:, count: nil, list_ids: nil, processing_types: nil, query: nil, sort: nil, request_options: {})
         #
         # @param additional_properties [Array<String>] The property names of any additional list properties to include in the response.
+        #
+        # @param offset [Integer] Value used to paginate through lists. The `offset` provided in the response can
         #
         # @param count [Integer] The number of lists to include in the response. Defaults to `20` if no value is
         #
         # @param list_ids [Array<String>] The `listIds` that will be used to filter results by `listId`. If values are pro
-        #
-        # @param offset [Integer] Value used to paginate through lists. The `offset` provided in the response can
         #
         # @param processing_types [Array<String>] The `processingTypes` that will be used to filter results by `processingType`. I
         #
@@ -282,7 +282,7 @@ module HubspotSDK
         # @return [HubspotSDK::Models::Crm::ListSearchResponse]
         #
         # @see HubspotSDK::Models::Crm::ListSearchParams
-        def search(params = {})
+        def search(params)
           parsed, options = HubspotSDK::Crm::ListSearchParams.dump_request(params)
           @client.request(
             method: :post,

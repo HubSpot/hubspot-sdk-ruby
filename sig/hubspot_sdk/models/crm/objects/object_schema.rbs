@@ -1,6 +1,8 @@
 module HubspotSDK
   module Models
     module Crm
+      class ObjectSchema = Objects::ObjectSchema
+
       module Objects
         type object_schema =
           {

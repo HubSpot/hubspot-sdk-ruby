@@ -15,16 +15,33 @@ module HubspotSDK
             )
           end
 
+        # Whether to include archived channel accounts in the response.
+        sig { returns(T.nilable(T::Boolean)) }
+        attr_reader :archived
+
+        sig { params(archived: T::Boolean).void }
+        attr_writer :archived
+
         sig do
-          params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-            T.attached_class
-          )
+          params(
+            archived: T::Boolean,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(T.attached_class)
         end
-        def self.new(request_options: {})
+        def self.new(
+          # Whether to include archived channel accounts in the response.
+          archived: nil,
+          request_options: {}
+        )
         end
 
         sig do
-          override.returns({ request_options: HubspotSDK::RequestOptions })
+          override.returns(
+            {
+              archived: T::Boolean,
+              request_options: HubspotSDK::RequestOptions
+            }
+          )
         end
         def to_hash
         end

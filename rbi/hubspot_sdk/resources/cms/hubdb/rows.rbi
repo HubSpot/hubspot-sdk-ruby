@@ -14,9 +14,9 @@ module HubspotSDK
           sig do
             params(
               table_id_or_name: String,
-              values: T::Hash[Symbol, T.anything],
               child_table_id: Integer,
               display_index: Integer,
+              values: T::Hash[Symbol, T.anything],
               name: String,
               path: String,
               request_options: HubspotSDK::RequestOptions::OrHash
@@ -25,11 +25,11 @@ module HubspotSDK
           def create(
             # The ID or name of the target table.
             table_id_or_name,
+            # Specifies the value for the column child table id
+            child_table_id:,
+            display_index:,
             # List of key value pairs with the column name and column value
             values:,
-            # Specifies the value for the column child table id
-            child_table_id: nil,
-            display_index: nil,
             # Specifies the value for `hs_name` column, which will be used as title in the
             # dynamic pages
             name: nil,
@@ -209,9 +209,9 @@ module HubspotSDK
             params(
               row_id: String,
               table_id_or_name: String,
-              values: T::Hash[Symbol, T.anything],
               child_table_id: Integer,
               display_index: Integer,
+              values: T::Hash[Symbol, T.anything],
               name: String,
               path: String,
               request_options: HubspotSDK::RequestOptions::OrHash
@@ -222,12 +222,12 @@ module HubspotSDK
             row_id,
             # Path param: The ID or name of the table
             table_id_or_name:,
+            # Body param: Specifies the value for the column child table id
+            child_table_id:,
+            # Body param:
+            display_index:,
             # Body param: List of key value pairs with the column name and column value
             values:,
-            # Body param: Specifies the value for the column child table id
-            child_table_id: nil,
-            # Body param:
-            display_index: nil,
             # Body param: Specifies the value for `hs_name` column, which will be used as
             # title in the dynamic pages
             name: nil,
@@ -246,9 +246,9 @@ module HubspotSDK
             params(
               row_id: String,
               table_id_or_name: String,
-              values: T::Hash[Symbol, T.anything],
               child_table_id: Integer,
               display_index: Integer,
+              values: T::Hash[Symbol, T.anything],
               name: String,
               path: String,
               request_options: HubspotSDK::RequestOptions::OrHash
@@ -259,12 +259,12 @@ module HubspotSDK
             row_id,
             # Path param: The ID or name of the table
             table_id_or_name:,
+            # Body param: Specifies the value for the column child table id
+            child_table_id:,
+            # Body param:
+            display_index:,
             # Body param: List of key value pairs with the column name and column value
             values:,
-            # Body param: Specifies the value for the column child table id
-            child_table_id: nil,
-            # Body param:
-            display_index: nil,
             # Body param: Specifies the value for `hs_name` column, which will be used as
             # title in the dynamic pages
             name: nil,

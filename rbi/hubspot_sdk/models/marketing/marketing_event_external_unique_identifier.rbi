@@ -2,6 +2,9 @@
 
 module HubspotSDK
   module Models
+    MarketingEventExternalUniqueIdentifier =
+      Marketing::MarketingEventExternalUniqueIdentifier
+
     module Marketing
       class MarketingEventExternalUniqueIdentifier < HubspotSDK::Internal::Type::BaseModel
         OrHash =

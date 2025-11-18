@@ -5,6 +5,8 @@ module HubspotSDK
     class Crm
       class ObjectLibrary
         class Enablement
+          # For all object types supporting enablement, returns whether they're enabled or
+          # disabled
           sig do
             params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
               HubspotSDK::Crm::PortalObjectTypeEnablementPublicResponse
@@ -13,13 +15,18 @@ module HubspotSDK
           def list(request_options: {})
           end
 
+          # Fetch whether object type is enabled
           sig do
             params(
               object_type_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::ObjectTypeEnablementPublicResponse)
           end
-          def get(object_type_id, request_options: {})
+          def get(
+            # objectTypeId for the object type in question
+            object_type_id,
+            request_options: {}
+          )
           end
 
           # @api private

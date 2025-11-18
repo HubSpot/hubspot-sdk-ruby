@@ -2,6 +2,8 @@
 
 module HubspotSDK
   module Models
+    MarketingEventEmailSubscriber = Marketing::MarketingEventEmailSubscriber
+
     module Marketing
       class MarketingEventEmailSubscriber < HubspotSDK::Internal::Type::BaseModel
         OrHash =
@@ -12,6 +14,9 @@ module HubspotSDK
             )
           end
 
+        sig { returns(T::Hash[Symbol, String]) }
+        attr_accessor :contact_properties
+
         # The email address of the contact in HubSpot to associate with the event.
         sig { returns(String) }
         attr_accessor :email
@@ -20,42 +25,33 @@ module HubspotSDK
         sig { returns(Integer) }
         attr_accessor :interaction_date_time
 
-        sig { returns(T.nilable(T::Hash[Symbol, String])) }
-        attr_reader :contact_properties
-
-        sig { params(contact_properties: T::Hash[Symbol, String]).void }
-        attr_writer :contact_properties
-
-        sig { returns(T.nilable(T::Hash[Symbol, String])) }
-        attr_reader :properties
-
-        sig { params(properties: T::Hash[Symbol, String]).void }
-        attr_writer :properties
+        sig { returns(T::Hash[Symbol, String]) }
+        attr_accessor :properties
 
         sig do
           params(
+            contact_properties: T::Hash[Symbol, String],
             email: String,
             interaction_date_time: Integer,
-            contact_properties: T::Hash[Symbol, String],
             properties: T::Hash[Symbol, String]
           ).returns(T.attached_class)
         end
         def self.new(
+          contact_properties:,
           # The email address of the contact in HubSpot to associate with the event.
           email:,
           # Timestamp in milliseconds at which the contact subscribed to the event.
           interaction_date_time:,
-          contact_properties: nil,
-          properties: nil
+          properties:
         )
         end
 
         sig do
           override.returns(
             {
+              contact_properties: T::Hash[Symbol, String],
               email: String,
               interaction_date_time: Integer,
-              contact_properties: T::Hash[Symbol, String],
               properties: T::Hash[Symbol, String]
             }
           )

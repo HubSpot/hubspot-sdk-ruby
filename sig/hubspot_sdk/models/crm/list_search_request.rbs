@@ -4,18 +4,18 @@ module HubspotSDK
       type list_search_request =
         {
           additional_properties: ::Array[String],
+          offset: Integer,
           count: Integer,
           list_ids: ::Array[String],
-          offset: Integer,
           processing_types: ::Array[String],
           query: String,
           sort: String
         }
 
       class ListSearchRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_reader additional_properties: ::Array[String]?
+        attr_accessor additional_properties: ::Array[String]
 
-        def additional_properties=: (::Array[String]) -> ::Array[String]
+        attr_accessor offset: Integer
 
         attr_reader count: Integer?
 
@@ -24,10 +24,6 @@ module HubspotSDK
         attr_reader list_ids: ::Array[String]?
 
         def list_ids=: (::Array[String]) -> ::Array[String]
-
-        attr_reader offset: Integer?
-
-        def offset=: (Integer) -> Integer
 
         attr_reader processing_types: ::Array[String]?
 
@@ -42,10 +38,10 @@ module HubspotSDK
         def sort=: (String) -> String
 
         def initialize: (
-          ?additional_properties: ::Array[String],
+          additional_properties: ::Array[String],
+          offset: Integer,
           ?count: Integer,
           ?list_ids: ::Array[String],
-          ?offset: Integer,
           ?processing_types: ::Array[String],
           ?query: String,
           ?sort: String
@@ -53,9 +49,9 @@ module HubspotSDK
 
         def to_hash: -> {
           additional_properties: ::Array[String],
+          offset: Integer,
           count: Integer,
           list_ids: ::Array[String],
-          offset: Integer,
           processing_types: ::Array[String],
           query: String,
           sort: String

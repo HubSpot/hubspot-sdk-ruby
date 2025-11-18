@@ -19,17 +19,19 @@ module HubspotSDK
           ).returns(HubspotSDK::Settings::PublicUser)
         end
         def create(
-          # The created user's email
+          # The user's email.
           email:,
+          # The user's first name.
           first_name: nil,
+          # The user's last name.
           last_name: nil,
-          # The user's primary team
+          # The user's primary team.
           primary_team_id: nil,
-          # The user's role
+          # The user's role.
           role_id: nil,
-          # The user's additional teams
+          # The user's additional teams.
           secondary_team_ids: nil,
-          # Whether to send a welcome email
+          # Whether to send a welcome email.
           send_welcome_email: nil,
           request_options: {}
         )
@@ -56,15 +58,15 @@ module HubspotSDK
           # Query param: The name of a property with unique user values. Valid values are
           # `USER_ID`(default) or `EMAIL`
           id_property: nil,
-          # Body param:
+          # Body param: The first name of the user.
           first_name: nil,
-          # Body param:
+          # Body param: The last name of the user.
           last_name: nil,
-          # Body param: The user's primary team
+          # Body param: The user's primary team.
           primary_team_id: nil,
-          # Body param: The user's role
+          # Body param: The user's role.
           role_id: nil,
-          # Body param: The user's additional teams
+          # Body param: The user's additional teams.
           secondary_team_ids: nil,
           request_options: {}
         )

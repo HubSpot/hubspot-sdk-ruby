@@ -12,24 +12,14 @@ module HubspotSDK
             )
           end
 
+        sig { returns(T::Array[HubspotSDK::Crm::PublicAssociationsForObject]) }
+        attr_accessor :associations
+
+        # Key-value pairs representing the properties of the object.
         sig { returns(T::Hash[Symbol, String]) }
         attr_accessor :properties
 
-        sig do
-          returns(
-            T.nilable(T::Array[HubspotSDK::Crm::PublicAssociationsForObject])
-          )
-        end
-        attr_reader :associations
-
-        sig do
-          params(
-            associations:
-              T::Array[HubspotSDK::Crm::PublicAssociationsForObject::OrHash]
-          ).void
-        end
-        attr_writer :associations
-
+        # A unique identifier for tracing the creation request.
         sig { returns(T.nilable(String)) }
         attr_reader :object_write_trace_id
 
@@ -38,21 +28,27 @@ module HubspotSDK
 
         sig do
           params(
-            properties: T::Hash[Symbol, String],
             associations:
               T::Array[HubspotSDK::Crm::PublicAssociationsForObject::OrHash],
+            properties: T::Hash[Symbol, String],
             object_write_trace_id: String
           ).returns(T.attached_class)
         end
-        def self.new(properties:, associations: nil, object_write_trace_id: nil)
+        def self.new(
+          associations:,
+          # Key-value pairs representing the properties of the object.
+          properties:,
+          # A unique identifier for tracing the creation request.
+          object_write_trace_id: nil
+        )
         end
 
         sig do
           override.returns(
             {
-              properties: T::Hash[Symbol, String],
               associations:
                 T::Array[HubspotSDK::Crm::PublicAssociationsForObject],
+              properties: T::Hash[Symbol, String],
               object_write_trace_id: String
             }
           )

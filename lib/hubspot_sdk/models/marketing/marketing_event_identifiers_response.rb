@@ -37,5 +37,7 @@ module HubspotSDK
         #   @param external_account_id [String]
       end
     end
+
+    MarketingEventIdentifiersResponse = Marketing::MarketingEventIdentifiersResponse
   end
 end

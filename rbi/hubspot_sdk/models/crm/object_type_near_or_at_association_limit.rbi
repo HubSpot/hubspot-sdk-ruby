@@ -12,18 +12,23 @@ module HubspotSDK
             )
           end
 
+        # Indicates whether there are records that have reached the association limit.
         sig { returns(T::Boolean) }
         attr_accessor :has_records_at_limit
 
+        # Indicates whether there are records that are approaching the association limit.
         sig { returns(T::Boolean) }
         attr_accessor :has_records_near_limit
 
+        # The unique identifier for the object type.
         sig { returns(String) }
         attr_accessor :object_type_id
 
+        # The plural form of the label for the object type.
         sig { returns(String) }
         attr_accessor :plural_label
 
+        # The singular form of the label for the object type.
         sig { returns(String) }
         attr_accessor :singular_label
 
@@ -37,10 +42,15 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # Indicates whether there are records that have reached the association limit.
           has_records_at_limit:,
+          # Indicates whether there are records that are approaching the association limit.
           has_records_near_limit:,
+          # The unique identifier for the object type.
           object_type_id:,
+          # The plural form of the label for the object type.
           plural_label:,
+          # The singular form of the label for the object type.
           singular_label:
         )
         end

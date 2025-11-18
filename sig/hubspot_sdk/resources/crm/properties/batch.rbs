@@ -18,8 +18,9 @@ module HubspotSDK
           def get: (
             String object_type,
             archived: bool,
+            data_sensitivity: HubspotSDK::Models::BatchReadInputPropertyName::data_sensitivity,
             inputs: ::Array[HubspotSDK::PropertyName],
-            ?data_sensitivity: HubspotSDK::Models::Crm::BatchReadInputPropertyName::data_sensitivity,
+            ?locale: String,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::BatchResponseProperty
 

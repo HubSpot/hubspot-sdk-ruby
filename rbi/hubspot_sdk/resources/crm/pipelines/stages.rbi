@@ -5,7 +5,7 @@ module HubspotSDK
     class Crm
       class Pipelines
         class Stages
-          # Create a pipeline stage
+          # Create a new stage within the specified pipeline.
           sig do
             params(
               pipeline_id: String,
@@ -17,9 +17,10 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::PipelineStage)
           end
           def create(
-            # Path param:
+            # Path param: The unique identifier of the pipeline to which the stage will be
+            # added.
             pipeline_id,
-            # Path param:
+            # Path param: The object type of the stage being created (ex. deals or tickets)
             object_type:,
             # Body param: The order for displaying this pipeline stage. If two pipeline stages
             # have a matching `displayOrder`, they will be sorted alphabetically by label.
@@ -38,38 +39,32 @@ module HubspotSDK
             # (`{ "ticketState": "OPEN" }`), and represents whether the ticket remains open or
             # has been closed by a member of your Support team. Possible values are `OPEN` or
             # `CLOSED`.
-            metadata: nil,
+            metadata:,
             request_options: {}
           )
           end
 
+          # Perform a partial update on a specific stage of a pipeline.
           sig do
             params(
               stage_id: String,
               object_type: String,
               pipeline_id: String,
+              metadata: T::Hash[Symbol, String],
               archived: T::Boolean,
               display_order: Integer,
               label: String,
-              metadata: T::Hash[Symbol, String],
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::PipelineStage)
           end
           def update(
-            # Path param:
+            # Path param: The unique identifier of the stage to be updated in the pipeline.
             stage_id,
-            # Path param:
+            # Path param: The object type of the stage being updated (ex. deals or tickets)
             object_type:,
-            # Path param:
+            # Path param: The unique identifier of the pipeline containing the stage to be
+            # updated.
             pipeline_id:,
-            # Body param: Whether the pipeline is archived.
-            archived: nil,
-            # Body param: The order for displaying this pipeline stage. If two pipeline stages
-            # have a matching `displayOrder`, they will be sorted alphabetically by label.
-            display_order: nil,
-            # Body param: A label used to organize pipeline stages in HubSpot's UI. Each
-            # pipeline stage's label must be unique within that pipeline.
-            label: nil,
             # Body param: A JSON object containing properties that are not present on all
             # object pipelines.
             #
@@ -81,7 +76,15 @@ module HubspotSDK
             # (`{ "ticketState": "OPEN" }`), and represents whether the ticket remains open or
             # has been closed by a member of your Support team. Possible values are `OPEN` or
             # `CLOSED`.
-            metadata: nil,
+            metadata:,
+            # Body param: Whether the pipeline is archived.
+            archived: nil,
+            # Body param: The order for displaying this pipeline stage. If two pipeline stages
+            # have a matching `displayOrder`, they will be sorted alphabetically by label.
+            display_order: nil,
+            # Body param: A label used to organize pipeline stages in HubSpot's UI. Each
+            # pipeline stage's label must be unique within that pipeline.
+            label: nil,
             request_options: {}
           )
           end
@@ -94,10 +97,16 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::CollectionResponsePipelineStageNoPaging)
           end
-          def list(pipeline_id, object_type:, request_options: {})
+          def list(
+            # The unique identifier of the pipeline whose stages are being retrieved.
+            pipeline_id,
+            # The object type of the stages being retrieved (ex. deals or tickets)
+            object_type:,
+            request_options: {}
+          )
           end
 
-          # Delete a pipeline stage
+          # Delete a specific stage from a pipeline.
           sig do
             params(
               stage_id: String,
@@ -106,10 +115,18 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(stage_id, object_type:, pipeline_id:, request_options: {})
+          def delete(
+            # The unique identifier of the stage to be deleted from the pipeline.
+            stage_id,
+            # The object type of the stage being deleted (ex. deals or tickets)
+            object_type:,
+            # The unique identifier of the pipeline from which the stage will be deleted.
+            pipeline_id:,
+            request_options: {}
+          )
           end
 
-          # Return a pipeline stage by ID
+          # Retrieve a specific stage from a pipeline using its ID.
           sig do
             params(
               stage_id: String,
@@ -118,7 +135,15 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::PipelineStage)
           end
-          def get(stage_id, object_type:, pipeline_id:, request_options: {})
+          def get(
+            # The unique identifier of the stage to be retrieved from the pipeline.
+            stage_id,
+            # The object type of the stage being retrieved (ex. deals or tickets)
+            object_type:,
+            # The unique identifier of the pipeline containing the stage to be retrieved.
+            pipeline_id:,
+            request_options: {}
+          )
           end
 
           # Return a reverse chronological list of all mutations that have occurred on the
@@ -134,7 +159,9 @@ module HubspotSDK
             )
           end
           def get_audit(
+            # The unique identifier for the pipeline stage being audited.
             stage_id,
+            # The object type of the stage audit being retrieved (ex. deals or tickets)
             object_type:,
             pipeline_id:,
             request_options: {}
@@ -155,11 +182,11 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::PipelineStage)
           end
           def replace(
-            # Path param:
+            # Path param: The unique identifier of the stage to be replaced in the pipeline.
             stage_id,
-            # Path param:
+            # Path param: The object type of the pipeline being updated (ex. deals or tickets)
             object_type:,
-            # Path param:
+            # Path param: The unique identifier of the pipeline to which the stage belongs.
             pipeline_id:,
             # Body param: The order for displaying this pipeline stage. If two pipeline stages
             # have a matching `displayOrder`, they will be sorted alphabetically by label.
@@ -178,7 +205,7 @@ module HubspotSDK
             # (`{ "ticketState": "OPEN" }`), and represents whether the ticket remains open or
             # has been closed by a member of your Support team. Possible values are `OPEN` or
             # `CLOSED`.
-            metadata: nil,
+            metadata:,
             request_options: {}
           )
           end

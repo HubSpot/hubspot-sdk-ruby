@@ -5,6 +5,8 @@ module HubspotSDK
     class Settings
       class Currencies
         class CentralFxRates
+          # Create a new currency with central exchange rates in the portal. Unsupported
+          # currencies cannot be added here.
           sig do
             params(
               currency_code:
@@ -15,6 +17,8 @@ module HubspotSDK
           def create_currency(currency_code:, request_options: {})
           end
 
+          # Retrieve details on whether the central exchange rates feature is enabled for
+          # the portal.
           sig do
             params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
               HubspotSDK::Settings::CentralExchangeRatesInformation
@@ -23,6 +27,8 @@ module HubspotSDK
           def get_information(request_options: {})
           end
 
+          # Retrieve a list of currency codes that are not supported by the central exchange
+          # rates. Unsupported currencies will need to be manually updated.
           sig do
             params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
               HubspotSDK::Settings::CollectionResponseCurrencyCodeInfoNoPaging

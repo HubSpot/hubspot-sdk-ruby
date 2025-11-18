@@ -5,11 +5,15 @@ module HubspotSDK
     module Crm
       class PublicPropertyValidationRule < HubspotSDK::Internal::Type::BaseModel
         # @!attribute rule_arguments
+        #   A list of arguments that define the specific conditions or parameters for the
+        #   validation rule.
         #
         #   @return [Array<String>]
         required :rule_arguments, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :ruleArguments
 
         # @!attribute rule_type
+        #   The category of validation applied to the property, such as FORMAT,
+        #   ALPHANUMERIC, or MAX_LENGTH.
         #
         #   @return [Symbol, HubspotSDK::Models::Crm::PublicPropertyValidationRule::RuleType]
         required :rule_type,
@@ -17,9 +21,16 @@ module HubspotSDK
                  api_name: :ruleType
 
         # @!method initialize(rule_arguments:, rule_type:)
-        #   @param rule_arguments [Array<String>]
-        #   @param rule_type [Symbol, HubspotSDK::Models::Crm::PublicPropertyValidationRule::RuleType]
+        #   Some parameter documentations has been truncated, see
+        #   {HubspotSDK::Models::Crm::PublicPropertyValidationRule} for more details.
+        #
+        #   @param rule_arguments [Array<String>] A list of arguments that define the specific conditions or parameters for the va
+        #
+        #   @param rule_type [Symbol, HubspotSDK::Models::Crm::PublicPropertyValidationRule::RuleType] The category of validation applied to the property, such as FORMAT, ALPHANUMERIC
 
+        # The category of validation applied to the property, such as FORMAT,
+        # ALPHANUMERIC, or MAX_LENGTH.
+        #
         # @see HubspotSDK::Models::Crm::PublicPropertyValidationRule#rule_type
         module RuleType
           extend HubspotSDK::Internal::Type::Enum

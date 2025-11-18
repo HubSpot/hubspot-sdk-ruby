@@ -94,5 +94,7 @@ module HubspotSDK
         #   @param start_date_time [Time]
       end
     end
+
+    MarketingEventPublicDefaultResponseV2 = Marketing::MarketingEventPublicDefaultResponseV2
   end
 end

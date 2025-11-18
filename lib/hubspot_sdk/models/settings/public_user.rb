@@ -6,23 +6,25 @@ module HubspotSDK
       # @see HubspotSDK::Resources::Settings::Users#create
       class PublicUser < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
-        #   The user's unique ID
+        #   The user's unique ID.
         #
         #   @return [String]
         required :id, String
 
         # @!attribute email
-        #   The user's email
+        #   The user's email.
         #
         #   @return [String]
         required :email, String
 
         # @!attribute first_name
+        #   The user's first name.
         #
         #   @return [String, nil]
         optional :first_name, String, api_name: :firstName
 
         # @!attribute last_name
+        #   The user's last name.
         #
         #   @return [String, nil]
         optional :last_name, String, api_name: :lastName
@@ -34,54 +36,61 @@ module HubspotSDK
         optional :primary_team_id, String, api_name: :primaryTeamId
 
         # @!attribute role_id
-        #   The user's role
+        #   The user's role.
         #
         #   @return [String, nil]
         optional :role_id, String, api_name: :roleId
 
         # @!attribute role_ids
+        #   A list of role IDs assigned to the user.
         #
         #   @return [Array<String>, nil]
         optional :role_ids, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :roleIds
 
         # @!attribute secondary_team_ids
-        #   The user's additional teams
+        #   The user's additional teams.
         #
         #   @return [Array<String>, nil]
         optional :secondary_team_ids, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :secondaryTeamIds
 
         # @!attribute send_welcome_email
+        #   Whether a welcome email was sent to the user. This value will only be populated
+        #   in response to a provisioning request. Subsequent queries will be false.
         #
         #   @return [Boolean, nil]
         optional :send_welcome_email, HubspotSDK::Internal::Type::Boolean, api_name: :sendWelcomeEmail
 
         # @!attribute super_admin
+        #   Whether the user has super admin privileges.
         #
         #   @return [Boolean, nil]
         optional :super_admin, HubspotSDK::Internal::Type::Boolean, api_name: :superAdmin
 
         # @!method initialize(id:, email:, first_name: nil, last_name: nil, primary_team_id: nil, role_id: nil, role_ids: nil, secondary_team_ids: nil, send_welcome_email: nil, super_admin: nil)
+        #   Some parameter documentations has been truncated, see
+        #   {HubspotSDK::Models::Settings::PublicUser} for more details.
+        #
         #   A user
         #
-        #   @param id [String] The user's unique ID
+        #   @param id [String] The user's unique ID.
         #
-        #   @param email [String] The user's email
+        #   @param email [String] The user's email.
         #
-        #   @param first_name [String]
+        #   @param first_name [String] The user's first name.
         #
-        #   @param last_name [String]
+        #   @param last_name [String] The user's last name.
         #
         #   @param primary_team_id [String] The user's primary team
         #
-        #   @param role_id [String] The user's role
+        #   @param role_id [String] The user's role.
         #
-        #   @param role_ids [Array<String>]
+        #   @param role_ids [Array<String>] A list of role IDs assigned to the user.
         #
-        #   @param secondary_team_ids [Array<String>] The user's additional teams
+        #   @param secondary_team_ids [Array<String>] The user's additional teams.
         #
-        #   @param send_welcome_email [Boolean]
+        #   @param send_welcome_email [Boolean] Whether a welcome email was sent to the user. This value will only be populated
         #
-        #   @param super_admin [Boolean]
+        #   @param super_admin [Boolean] Whether the user has super admin privileges.
       end
     end
   end

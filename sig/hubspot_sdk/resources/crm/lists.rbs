@@ -66,10 +66,10 @@ module HubspotSDK
         ) -> HubspotSDK::Crm::PublicListConversionResponse
 
         def search: (
-          ?additional_properties: ::Array[String],
+          additional_properties: ::Array[String],
+          offset: Integer,
           ?count: Integer,
           ?list_ids: ::Array[String],
-          ?offset: Integer,
           ?processing_types: ::Array[String],
           ?query: String,
           ?sort: String,

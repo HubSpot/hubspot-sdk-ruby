@@ -1,6 +1,8 @@
 module HubspotSDK
   module Models
     module Cms
+      class BlogAuthor = Blogs::BlogAuthor
+
       module Blogs
         type blog_author =
           {

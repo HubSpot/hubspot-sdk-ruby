@@ -16,12 +16,12 @@ module HubspotSDK
               )
             end
 
-          sig { returns(String) }
+          sig { returns(Integer) }
           attr_accessor :channel_id
 
           sig do
             params(
-              channel_id: String,
+              channel_id: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
@@ -31,7 +31,7 @@ module HubspotSDK
           sig do
             override.returns(
               {
-                channel_id: String,
+                channel_id: Integer,
                 request_options: HubspotSDK::RequestOptions
               }
             )

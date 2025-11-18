@@ -106,6 +106,11 @@ module HubspotSDK
 
         def get_ab_test_variation: (
           String email_id,
+          ?archived: bool,
+          ?included_properties: ::Array[String],
+          ?include_stats: bool,
+          ?marketing_campaign_names: bool,
+          ?workflow_names: bool,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Marketing::PublicEmail
 

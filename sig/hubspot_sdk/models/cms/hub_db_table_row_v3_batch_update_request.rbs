@@ -3,26 +3,24 @@ module HubspotSDK
     module Cms
       type hub_db_table_row_v3_batch_update_request =
         {
-          id: String,
-          values: ::Hash[Symbol, top],
           child_table_id: Integer,
           display_index: Integer,
+          values: ::Hash[Symbol, top],
+          id: String,
           name: String,
           path: String
         }
 
       class HubDBTableRowV3BatchUpdateRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor id: String
+        attr_accessor child_table_id: Integer
+
+        attr_accessor display_index: Integer
 
         attr_accessor values: ::Hash[Symbol, top]
 
-        attr_reader child_table_id: Integer?
+        attr_reader id: String?
 
-        def child_table_id=: (Integer) -> Integer
-
-        attr_reader display_index: Integer?
-
-        def display_index=: (Integer) -> Integer
+        def id=: (String) -> String
 
         attr_reader name: String?
 
@@ -33,19 +31,19 @@ module HubspotSDK
         def path=: (String) -> String
 
         def initialize: (
-          id: String,
+          child_table_id: Integer,
+          display_index: Integer,
           values: ::Hash[Symbol, top],
-          ?child_table_id: Integer,
-          ?display_index: Integer,
+          ?id: String,
           ?name: String,
           ?path: String
         ) -> void
 
         def to_hash: -> {
-          id: String,
-          values: ::Hash[Symbol, top],
           child_table_id: Integer,
           display_index: Integer,
+          values: ::Hash[Symbol, top],
+          id: String,
           name: String,
           path: String
         }

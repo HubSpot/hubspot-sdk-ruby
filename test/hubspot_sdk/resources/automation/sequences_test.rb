@@ -3,28 +3,38 @@
 require_relative "../../test_helper"
 
 class HubspotSDK::Test::Resources::Automation::SequencesTest < HubspotSDK::Test::ResourceTest
-  def test_list
+  def test_list_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.automation.sequences.list
+    response = @hubspot.automation.sequences.list(user_id: "userId")
 
     assert_pattern do
-      response => HubspotSDK::Automation::CollectionResponseWithTotalPublicSequenceLiteResponseForwardPaging
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Automation::PublicSequenceLiteResponse
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicSequenceLiteResponse]),
-        total: Integer,
-        paging: HubspotSDK::ForwardPaging | nil
+      row => {
+        id: String,
+        created_at: Time,
+        name: String,
+        updated_at: Time,
+        user_id: String,
+        folder_id: String | nil
       }
     end
   end
 
-  def test_get
+  def test_get_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.automation.sequences.get("sequenceId")
+    response = @hubspot.automation.sequences.get("sequenceId", user_id: "userId")
 
     assert_pattern do
       response => HubspotSDK::Automation::PublicSequenceResponse

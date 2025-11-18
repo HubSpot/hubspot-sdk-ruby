@@ -1,6 +1,8 @@
 module HubspotSDK
   module Models
     module Cms
+      class Blog = Blogs::Blog
+
       module Blogs
         type blog =
           {

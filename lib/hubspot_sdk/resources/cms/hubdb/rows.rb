@@ -15,15 +15,15 @@ module HubspotSDK
           # the table. Use the `/publish` endpoint to push these changes to published
           # version.
           #
-          # @overload create(table_id_or_name, values:, child_table_id: nil, display_index: nil, name: nil, path: nil, request_options: {})
+          # @overload create(table_id_or_name, child_table_id:, display_index:, values:, name: nil, path: nil, request_options: {})
           #
           # @param table_id_or_name [String] The ID or name of the target table.
-          #
-          # @param values [Hash{Symbol=>Object}] List of key value pairs with the column name and column value
           #
           # @param child_table_id [Integer] Specifies the value for the column child table id
           #
           # @param display_index [Integer]
+          #
+          # @param values [Hash{Symbol=>Object}] List of key value pairs with the column name and column value
           #
           # @param name [String] Specifies the value for `hs_name` column, which will be used as title in the dyn
           #
@@ -264,17 +264,17 @@ module HubspotSDK
           # define that value, it will be deleted. See the "Create a row" endpoint for
           # instructions on how to format the JSON row definitions.
           #
-          # @overload replace_draft(row_id, table_id_or_name:, values:, child_table_id: nil, display_index: nil, name: nil, path: nil, request_options: {})
+          # @overload replace_draft(row_id, table_id_or_name:, child_table_id:, display_index:, values:, name: nil, path: nil, request_options: {})
           #
           # @param row_id [String] Path param: The ID of the row
           #
           # @param table_id_or_name [String] Path param: The ID or name of the table
           #
-          # @param values [Hash{Symbol=>Object}] Body param: List of key value pairs with the column name and column value
-          #
           # @param child_table_id [Integer] Body param: Specifies the value for the column child table id
           #
           # @param display_index [Integer] Body param:
+          #
+          # @param values [Hash{Symbol=>Object}] Body param: List of key value pairs with the column name and column value
           #
           # @param name [String] Body param: Specifies the value for `hs_name` column, which will be used as titl
           #
@@ -308,17 +308,17 @@ module HubspotSDK
           # be specified. See the "Create a row" endpoint for instructions on how to format
           # the JSON row definitions.
           #
-          # @overload update_draft(row_id, table_id_or_name:, values:, child_table_id: nil, display_index: nil, name: nil, path: nil, request_options: {})
+          # @overload update_draft(row_id, table_id_or_name:, child_table_id:, display_index:, values:, name: nil, path: nil, request_options: {})
           #
           # @param row_id [String] Path param: The ID of the row
           #
           # @param table_id_or_name [String] Path param: The ID or name of the table
           #
-          # @param values [Hash{Symbol=>Object}] Body param: List of key value pairs with the column name and column value
-          #
           # @param child_table_id [Integer] Body param: Specifies the value for the column child table id
           #
           # @param display_index [Integer] Body param:
+          #
+          # @param values [Hash{Symbol=>Object}] Body param: List of key value pairs with the column name and column value
           #
           # @param name [String] Body param: Specifies the value for `hs_name` column, which will be used as titl
           #

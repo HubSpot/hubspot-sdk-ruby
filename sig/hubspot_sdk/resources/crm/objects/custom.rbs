@@ -7,8 +7,8 @@ module HubspotSDK
 
           def create: (
             String object_type,
+            associations: ::Array[HubspotSDK::Crm::PublicAssociationsForObject],
             properties: ::Hash[Symbol, String],
-            ?associations: ::Array[HubspotSDK::Crm::PublicAssociationsForObject],
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Crm::CreatedResponseSimplePublicObject
 
@@ -57,12 +57,12 @@ module HubspotSDK
 
           def search: (
             String object_type,
-            ?after: String,
-            ?filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
-            ?limit: Integer,
-            ?properties: ::Array[String],
+            after: String,
+            filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
+            limit: Integer,
+            properties: ::Array[String],
+            sorts: ::Array[String],
             ?query: String,
-            ?sorts: ::Array[String],
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
 

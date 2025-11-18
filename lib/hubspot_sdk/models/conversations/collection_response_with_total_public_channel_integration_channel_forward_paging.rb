@@ -3,7 +3,6 @@
 module HubspotSDK
   module Models
     module Conversations
-      # @see HubspotSDK::Resources::Conversations::CustomChannels#list
       class CollectionResponseWithTotalPublicChannelIntegrationChannelForwardPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #

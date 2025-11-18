@@ -11,7 +11,8 @@ class HubspotSDK::Test::Resources::Crm::Pipelines::StagesTest < HubspotSDK::Test
         "pipelineId",
         object_type: "objectType",
         display_order: 1,
-        label: "Done"
+        label: "Done",
+        metadata: {ticketState: "CLOSED"}
       )
 
     assert_pattern do
@@ -25,9 +26,9 @@ class HubspotSDK::Test::Resources::Crm::Pipelines::StagesTest < HubspotSDK::Test
         created_at: Time,
         display_order: Integer,
         label: String,
+        metadata: ^(HubspotSDK::Internal::Type::HashOf[String]),
         updated_at: Time,
         archived_at: Time | nil,
-        metadata: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         write_permissions: HubspotSDK::Crm::PipelineStage::WritePermissions | nil
       }
     end
@@ -37,7 +38,12 @@ class HubspotSDK::Test::Resources::Crm::Pipelines::StagesTest < HubspotSDK::Test
     skip("Prism tests are disabled")
 
     response =
-      @hubspot.crm.pipelines.stages.update("stageId", object_type: "objectType", pipeline_id: "pipelineId")
+      @hubspot.crm.pipelines.stages.update(
+        "stageId",
+        object_type: "objectType",
+        pipeline_id: "pipelineId",
+        metadata: {ticketState: "CLOSED"}
+      )
 
     assert_pattern do
       response => HubspotSDK::Crm::PipelineStage
@@ -50,9 +56,9 @@ class HubspotSDK::Test::Resources::Crm::Pipelines::StagesTest < HubspotSDK::Test
         created_at: Time,
         display_order: Integer,
         label: String,
+        metadata: ^(HubspotSDK::Internal::Type::HashOf[String]),
         updated_at: Time,
         archived_at: Time | nil,
-        metadata: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         write_permissions: HubspotSDK::Crm::PipelineStage::WritePermissions | nil
       }
     end
@@ -102,9 +108,9 @@ class HubspotSDK::Test::Resources::Crm::Pipelines::StagesTest < HubspotSDK::Test
         created_at: Time,
         display_order: Integer,
         label: String,
+        metadata: ^(HubspotSDK::Internal::Type::HashOf[String]),
         updated_at: Time,
         archived_at: Time | nil,
-        metadata: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         write_permissions: HubspotSDK::Crm::PipelineStage::WritePermissions | nil
       }
     end
@@ -136,7 +142,8 @@ class HubspotSDK::Test::Resources::Crm::Pipelines::StagesTest < HubspotSDK::Test
         object_type: "objectType",
         pipeline_id: "pipelineId",
         display_order: 1,
-        label: "Done"
+        label: "Done",
+        metadata: {ticketState: "CLOSED"}
       )
 
     assert_pattern do
@@ -150,9 +157,9 @@ class HubspotSDK::Test::Resources::Crm::Pipelines::StagesTest < HubspotSDK::Test
         created_at: Time,
         display_order: Integer,
         label: String,
+        metadata: ^(HubspotSDK::Internal::Type::HashOf[String]),
         updated_at: Time,
         archived_at: Time | nil,
-        metadata: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         write_permissions: HubspotSDK::Crm::PipelineStage::WritePermissions | nil
       }
     end

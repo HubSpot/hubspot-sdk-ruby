@@ -14,6 +14,14 @@ module HubspotSDK
         #   @return [String]
         required :event_name, String, api_name: :eventName
 
+        # @!attribute properties
+        #   The event properties to update. Takes the format of key-value pairs (property
+        #   internal name and property value). Learn more about
+        #   [HubSpot's default event properties](https://developers.hubspot.com/docs/guides/api/analytics-and-events/custom-events/custom-event-definitions#hubspot-s-default-event-properties).
+        #
+        #   @return [Hash{Symbol=>String}]
+        required :properties, HubspotSDK::Internal::Type::HashOf[String]
+
         # @!attribute email
         #   The visitor's email address. Used for associating the event data with a CRM
         #   record.
@@ -34,14 +42,6 @@ module HubspotSDK
         #   @return [Time, nil]
         optional :occurred_at, Time, api_name: :occurredAt
 
-        # @!attribute properties
-        #   The event properties to update. Takes the format of key-value pairs (property
-        #   internal name and property value). Learn more about
-        #   [HubSpot's default event properties](https://developers.hubspot.com/docs/guides/api/analytics-and-events/custom-events/custom-event-definitions#hubspot-s-default-event-properties).
-        #
-        #   @return [Hash{Symbol=>String}, nil]
-        optional :properties, HubspotSDK::Internal::Type::HashOf[String]
-
         # @!attribute utk
         #   The visitor's usertoken. Used for associating the event data with a CRM record.
         #
@@ -56,20 +56,20 @@ module HubspotSDK
         #   @return [String, nil]
         optional :uuid, String
 
-        # @!method initialize(event_name:, email: nil, object_id_: nil, occurred_at: nil, properties: nil, utk: nil, uuid: nil)
+        # @!method initialize(event_name:, properties:, email: nil, object_id_: nil, occurred_at: nil, utk: nil, uuid: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Events::BehavioralEventHTTPCompletionRequest} for more
         #   details.
         #
         #   @param event_name [String] The internal name of the event (`pe<portalID>_eventName`). Can be retrieved thro
         #
+        #   @param properties [Hash{Symbol=>String}] The event properties to update. Takes the format of key-value pairs (property in
+        #
         #   @param email [String] The visitor's email address. Used for associating the event data with a CRM reco
         #
         #   @param object_id_ [String] The ID of the object that completed the event (e.g., contact ID or visitor ID).
         #
         #   @param occurred_at [Time] The time when this event occurred. If this isn't set, the current time will be u
-        #
-        #   @param properties [Hash{Symbol=>String}] The event properties to update. Takes the format of key-value pairs (property in
         #
         #   @param utk [String] The visitor's usertoken. Used for associating the event data with a CRM record.
         #

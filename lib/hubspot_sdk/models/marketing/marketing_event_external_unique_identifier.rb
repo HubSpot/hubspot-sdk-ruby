@@ -35,5 +35,7 @@ module HubspotSDK
         #   @param external_event_id [String] The id of the marketing event in the external event application.
       end
     end
+
+    MarketingEventExternalUniqueIdentifier = Marketing::MarketingEventExternalUniqueIdentifier
   end
 end

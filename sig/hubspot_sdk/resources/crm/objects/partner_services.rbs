@@ -35,12 +35,12 @@ module HubspotSDK
           ) -> HubspotSDK::Crm::SimplePublicObjectWithAssociations
 
           def search: (
-            ?after: String,
-            ?filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
-            ?limit: Integer,
-            ?properties: ::Array[String],
+            after: String,
+            filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
+            limit: Integer,
+            properties: ::Array[String],
+            sorts: ::Array[String],
             ?query: String,
-            ?sorts: ::Array[String],
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
 

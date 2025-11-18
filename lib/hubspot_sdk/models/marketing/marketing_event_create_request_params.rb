@@ -4,6 +4,21 @@ module HubspotSDK
   module Models
     module Marketing
       class MarketingEventCreateRequestParams < HubspotSDK::Internal::Type::BaseModel
+        # @!attribute custom_properties
+        #   A list of PropertyValues. These can be whatever kind of property names and
+        #   values you want. However, they must already exist on the HubSpot account's
+        #   definition of the MarketingEvent Object. If they don't they will be filtered out
+        #   and not set. In order to do this you'll need to create a new PropertyGroup on
+        #   the HubSpot account's MarketingEvent object for your specific app and create the
+        #   Custom Property you want to track on that HubSpot account. Do not create any new
+        #   default properties on the MarketingEvent object as that will apply to all
+        #   HubSpot accounts.
+        #
+        #   @return [Array<HubspotSDK::Models::Marketing::PropertyValue>]
+        required :custom_properties,
+                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PropertyValue] },
+                 api_name: :customProperties
+
         # @!attribute event_name
         #   The name of the marketing event.
         #
@@ -28,21 +43,6 @@ module HubspotSDK
         #
         #   @return [String]
         required :external_event_id, String, api_name: :externalEventId
-
-        # @!attribute custom_properties
-        #   A list of PropertyValues. These can be whatever kind of property names and
-        #   values you want. However, they must already exist on the HubSpot account's
-        #   definition of the MarketingEvent Object. If they don't they will be filtered out
-        #   and not set. In order to do this you'll need to create a new PropertyGroup on
-        #   the HubSpot account's MarketingEvent object for your specific app and create the
-        #   Custom Property you want to track on that HubSpot account. Do not create any new
-        #   default properties on the MarketingEvent object as that will apply to all
-        #   HubSpot accounts.
-        #
-        #   @return [Array<HubspotSDK::Models::Marketing::PropertyValue>, nil]
-        optional :custom_properties,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PropertyValue] },
-                 api_name: :customProperties
 
         # @!attribute end_date_time
         #   The end date and time of the marketing event.
@@ -87,10 +87,12 @@ module HubspotSDK
         #   @return [Time, nil]
         optional :start_date_time, Time, api_name: :startDateTime
 
-        # @!method initialize(event_name:, event_organizer:, external_account_id:, external_event_id:, custom_properties: nil, end_date_time: nil, event_cancelled: nil, event_completed: nil, event_description: nil, event_type: nil, event_url: nil, start_date_time: nil)
+        # @!method initialize(custom_properties:, event_name:, event_organizer:, external_account_id:, external_event_id:, end_date_time: nil, event_cancelled: nil, event_completed: nil, event_description: nil, event_type: nil, event_url: nil, start_date_time: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Marketing::MarketingEventCreateRequestParams} for more
         #   details.
+        #
+        #   @param custom_properties [Array<HubspotSDK::Models::Marketing::PropertyValue>] A list of PropertyValues. These can be whatever kind of property names and value
         #
         #   @param event_name [String] The name of the marketing event.
         #
@@ -99,8 +101,6 @@ module HubspotSDK
         #   @param external_account_id [String] The accountId that is associated with this marketing event in the external event
         #
         #   @param external_event_id [String] The id of the marketing event in the external event application.
-        #
-        #   @param custom_properties [Array<HubspotSDK::Models::Marketing::PropertyValue>] A list of PropertyValues. These can be whatever kind of property names and value
         #
         #   @param end_date_time [Time] The end date and time of the marketing event.
         #
@@ -117,5 +117,7 @@ module HubspotSDK
         #   @param start_date_time [Time] The start date and time of the marketing event.
       end
     end
+
+    MarketingEventCreateRequestParams = Marketing::MarketingEventCreateRequestParams
   end
 end

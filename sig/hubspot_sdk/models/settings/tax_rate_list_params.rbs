@@ -2,15 +2,38 @@ module HubspotSDK
   module Models
     module Settings
       type tax_rate_list_params =
-        {  } & HubspotSDK::Internal::Type::request_parameters
+        { active: bool, after: String, limit: Integer }
+        & HubspotSDK::Internal::Type::request_parameters
 
       class TaxRateListParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
-        def initialize: (?request_options: HubspotSDK::request_opts) -> void
+        attr_reader active: bool?
 
-        def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+        def active=: (bool) -> bool
+
+        attr_reader after: String?
+
+        def after=: (String) -> String
+
+        attr_reader limit: Integer?
+
+        def limit=: (Integer) -> Integer
+
+        def initialize: (
+          ?active: bool,
+          ?after: String,
+          ?limit: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          active: bool,
+          after: String,
+          limit: Integer,
+          request_options: HubspotSDK::RequestOptions
+        }
       end
     end
   end

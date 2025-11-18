@@ -4,6 +4,7 @@ module HubspotSDK
       type public_thread =
         {
           id: String,
+          archived: bool,
           associated_contact_id: String,
           created_at: Time,
           inbox_id: String,
@@ -11,7 +12,6 @@ module HubspotSDK
           original_channel_id: String,
           spam: bool,
           status: HubspotSDK::Models::Conversations::PublicThread::status,
-          archived: bool,
           assigned_to: String,
           closed_at: Time,
           latest_message_received_timestamp: Time,
@@ -22,6 +22,8 @@ module HubspotSDK
 
       class PublicThread < HubspotSDK::Internal::Type::BaseModel
         attr_accessor id: String
+
+        attr_accessor archived: bool
 
         attr_accessor associated_contact_id: String
 
@@ -36,10 +38,6 @@ module HubspotSDK
         attr_accessor spam: bool
 
         attr_accessor status: HubspotSDK::Models::Conversations::PublicThread::status
-
-        attr_reader archived: bool?
-
-        def archived=: (bool) -> bool
 
         attr_reader assigned_to: String?
 
@@ -69,6 +67,7 @@ module HubspotSDK
 
         def initialize: (
           id: String,
+          archived: bool,
           associated_contact_id: String,
           created_at: Time,
           inbox_id: String,
@@ -76,7 +75,6 @@ module HubspotSDK
           original_channel_id: String,
           spam: bool,
           status: HubspotSDK::Models::Conversations::PublicThread::status,
-          ?archived: bool,
           ?assigned_to: String,
           ?closed_at: Time,
           ?latest_message_received_timestamp: Time,
@@ -87,6 +85,7 @@ module HubspotSDK
 
         def to_hash: -> {
           id: String,
+          archived: bool,
           associated_contact_id: String,
           created_at: Time,
           inbox_id: String,
@@ -94,7 +93,6 @@ module HubspotSDK
           original_channel_id: String,
           spam: bool,
           status: HubspotSDK::Models::Conversations::PublicThread::status,
-          archived: bool,
           assigned_to: String,
           closed_at: Time,
           latest_message_received_timestamp: Time,

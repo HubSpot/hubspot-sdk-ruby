@@ -6,15 +6,15 @@ module HubspotSDK
       class Extensions
         class Calling
           class Settings
-            # @overload create(app_id, name:, url:, height: nil, is_ready: nil, supports_custom_objects: nil, supports_inbound_calling: nil, uses_calling_window: nil, uses_remote: nil, width: nil, request_options: {})
+            # @overload create(app_id, height:, is_ready:, name:, supports_custom_objects:, supports_inbound_calling:, url:, uses_calling_window:, uses_remote:, width:, request_options: {})
             #
             # @param app_id [Integer]
-            # @param name [String]
-            # @param url [String]
             # @param height [Integer]
             # @param is_ready [Boolean]
+            # @param name [String]
             # @param supports_custom_objects [Boolean]
             # @param supports_inbound_calling [Boolean]
+            # @param url [String]
             # @param uses_calling_window [Boolean]
             # @param uses_remote [Boolean]
             # @param width [Integer]

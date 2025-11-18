@@ -7,9 +7,9 @@ module HubspotSDK
 
           def create: (
             String table_id_or_name,
+            child_table_id: Integer,
+            display_index: Integer,
             values: ::Hash[Symbol, top],
-            ?child_table_id: Integer,
-            ?display_index: Integer,
             ?name: String,
             ?path: String,
             ?request_options: HubspotSDK::request_opts
@@ -67,9 +67,9 @@ module HubspotSDK
           def replace_draft: (
             String row_id,
             table_id_or_name: String,
+            child_table_id: Integer,
+            display_index: Integer,
             values: ::Hash[Symbol, top],
-            ?child_table_id: Integer,
-            ?display_index: Integer,
             ?name: String,
             ?path: String,
             ?request_options: HubspotSDK::request_opts
@@ -78,9 +78,9 @@ module HubspotSDK
           def update_draft: (
             String row_id,
             table_id_or_name: String,
+            child_table_id: Integer,
+            display_index: Integer,
             values: ::Hash[Symbol, top],
-            ?child_table_id: Integer,
-            ?display_index: Integer,
             ?name: String,
             ?path: String,
             ?request_options: HubspotSDK::request_opts

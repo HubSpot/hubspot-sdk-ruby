@@ -6,13 +6,20 @@ module HubspotSDK
       # @see HubspotSDK::Resources::Crm::PropertyValidations#get
       class CollectionResponsePublicPropertyValidationRuleNoPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
+        #   Collection of validation rules configured for the specified property. Each rule
+        #   defines a constraint that property values must satisfy (e.g., format
+        #   requirements, length limits, allowed values).
         #
         #   @return [Array<HubspotSDK::Models::Crm::PublicPropertyValidationRule>]
         required :results,
                  -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicPropertyValidationRule] }
 
         # @!method initialize(results:)
-        #   @param results [Array<HubspotSDK::Models::Crm::PublicPropertyValidationRule>]
+        #   Some parameter documentations has been truncated, see
+        #   {HubspotSDK::Models::Crm::CollectionResponsePublicPropertyValidationRuleNoPaging}
+        #   for more details.
+        #
+        #   @param results [Array<HubspotSDK::Models::Crm::PublicPropertyValidationRule>] Collection of validation rules configured for the specified property. Each rule
       end
     end
   end

@@ -9,6 +9,7 @@ module HubspotSDK
           # details.
           sig do
             params(
+              user_id: String,
               contact_id: String,
               sender_email: String,
               sequence_id: String,
@@ -19,9 +20,15 @@ module HubspotSDK
             )
           end
           def enroll(
+            # Query param:
+            user_id:,
+            # Body param:
             contact_id:,
+            # Body param:
             sender_email:,
+            # Body param:
             sequence_id:,
+            # Body param:
             sender_alias_address: nil,
             request_options: {}
           )

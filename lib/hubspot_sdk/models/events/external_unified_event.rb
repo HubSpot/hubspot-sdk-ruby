@@ -41,10 +41,10 @@ module HubspotSDK
         #   A key-value map of event-specific properties. The available properties depend on
         #   the event type definition.
         #
-        #   @return [Hash{Symbol=>String}, nil]
-        optional :properties, HubspotSDK::Internal::Type::HashOf[String]
+        #   @return [Hash{Symbol=>String}]
+        required :properties, HubspotSDK::Internal::Type::HashOf[String]
 
-        # @!method initialize(id:, event_type:, object_id_:, object_type:, occurred_at:, properties: nil)
+        # @!method initialize(id:, event_type:, object_id_:, object_type:, occurred_at:, properties:)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Events::ExternalUnifiedEvent} for more details.
         #

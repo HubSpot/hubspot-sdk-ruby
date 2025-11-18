@@ -8,13 +8,13 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Pipelines::StageCreateParams} for more details.
           #
-          # Create a pipeline stage
+          # Create a new stage within the specified pipeline.
           #
-          # @overload create(pipeline_id, object_type:, display_order:, label:, metadata: nil, request_options: {})
+          # @overload create(pipeline_id, object_type:, display_order:, label:, metadata:, request_options: {})
           #
-          # @param pipeline_id [String] Path param:
+          # @param pipeline_id [String] Path param: The unique identifier of the pipeline to which the stage will be add
           #
-          # @param object_type [String] Path param:
+          # @param object_type [String] Path param: The object type of the stage being created (ex. deals or tickets)
           #
           # @param display_order [Integer] Body param: The order for displaying this pipeline stage. If two pipeline stages
           #
@@ -45,21 +45,23 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Pipelines::StageUpdateParams} for more details.
           #
-          # @overload update(stage_id, object_type:, pipeline_id:, archived: nil, display_order: nil, label: nil, metadata: nil, request_options: {})
+          # Perform a partial update on a specific stage of a pipeline.
           #
-          # @param stage_id [String] Path param:
+          # @overload update(stage_id, object_type:, pipeline_id:, metadata:, archived: nil, display_order: nil, label: nil, request_options: {})
           #
-          # @param object_type [String] Path param:
+          # @param stage_id [String] Path param: The unique identifier of the stage to be updated in the pipeline.
           #
-          # @param pipeline_id [String] Path param:
+          # @param object_type [String] Path param: The object type of the stage being updated (ex. deals or tickets)
+          #
+          # @param pipeline_id [String] Path param: The unique identifier of the pipeline containing the stage to be upd
+          #
+          # @param metadata [Hash{Symbol=>String}] Body param: A JSON object containing properties that are not present on all obje
           #
           # @param archived [Boolean] Body param: Whether the pipeline is archived.
           #
           # @param display_order [Integer] Body param: The order for displaying this pipeline stage. If two pipeline stages
           #
           # @param label [String] Body param: A label used to organize pipeline stages in HubSpot's UI. Each pipel
-          #
-          # @param metadata [Hash{Symbol=>String}] Body param: A JSON object containing properties that are not present on all obje
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -89,8 +91,10 @@ module HubspotSDK
           #
           # @overload list(pipeline_id, object_type:, request_options: {})
           #
-          # @param pipeline_id [String]
-          # @param object_type [String]
+          # @param pipeline_id [String] The unique identifier of the pipeline whose stages are being retrieved.
+          #
+          # @param object_type [String] The object type of the stages being retrieved (ex. deals or tickets)
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::CollectionResponsePipelineStageNoPaging]
@@ -110,13 +114,16 @@ module HubspotSDK
             )
           end
 
-          # Delete a pipeline stage
+          # Delete a specific stage from a pipeline.
           #
           # @overload delete(stage_id, object_type:, pipeline_id:, request_options: {})
           #
-          # @param stage_id [String]
-          # @param object_type [String]
-          # @param pipeline_id [String]
+          # @param stage_id [String] The unique identifier of the stage to be deleted from the pipeline.
+          #
+          # @param object_type [String] The object type of the stage being deleted (ex. deals or tickets)
+          #
+          # @param pipeline_id [String] The unique identifier of the pipeline from which the stage will be deleted.
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -140,13 +147,16 @@ module HubspotSDK
             )
           end
 
-          # Return a pipeline stage by ID
+          # Retrieve a specific stage from a pipeline using its ID.
           #
           # @overload get(stage_id, object_type:, pipeline_id:, request_options: {})
           #
-          # @param stage_id [String]
-          # @param object_type [String]
-          # @param pipeline_id [String]
+          # @param stage_id [String] The unique identifier of the stage to be retrieved from the pipeline.
+          #
+          # @param object_type [String] The object type of the stage being retrieved (ex. deals or tickets)
+          #
+          # @param pipeline_id [String] The unique identifier of the pipeline containing the stage to be retrieved.
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::PipelineStage]
@@ -175,9 +185,12 @@ module HubspotSDK
           #
           # @overload get_audit(stage_id, object_type:, pipeline_id:, request_options: {})
           #
-          # @param stage_id [String]
-          # @param object_type [String]
+          # @param stage_id [String] The unique identifier for the pipeline stage being audited.
+          #
+          # @param object_type [String] The object type of the stage audit being retrieved (ex. deals or tickets)
+          #
           # @param pipeline_id [String]
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::CollectionResponsePublicAuditInfoNoPaging]
@@ -207,13 +220,13 @@ module HubspotSDK
           # Replace all the properties of an existing pipeline stage with the values
           # provided. The updated stage will be returned in the response.
           #
-          # @overload replace(stage_id, object_type:, pipeline_id:, display_order:, label:, metadata: nil, request_options: {})
+          # @overload replace(stage_id, object_type:, pipeline_id:, display_order:, label:, metadata:, request_options: {})
           #
-          # @param stage_id [String] Path param:
+          # @param stage_id [String] Path param: The unique identifier of the stage to be replaced in the pipeline.
           #
-          # @param object_type [String] Path param:
+          # @param object_type [String] Path param: The object type of the pipeline being updated (ex. deals or tickets)
           #
-          # @param pipeline_id [String] Path param:
+          # @param pipeline_id [String] Path param: The unique identifier of the pipeline to which the stage belongs.
           #
           # @param display_order [Integer] Body param: The order for displaying this pipeline stage. If two pipeline stages
           #

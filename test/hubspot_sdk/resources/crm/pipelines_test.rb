@@ -11,7 +11,10 @@ class HubspotSDK::Test::Resources::Crm::PipelinesTest < HubspotSDK::Test::Resour
         "objectType",
         display_order: 0,
         label: "My replaced pipeline",
-        stages: [{displayOrder: 0, label: "In Progress"}, {displayOrder: 1, label: "Done"}]
+        stages: [
+          {displayOrder: 0, label: "In Progress", metadata: {ticketState: "OPEN"}},
+          {displayOrder: 1, label: "Done", metadata: {ticketState: "CLOSED"}}
+        ]
       )
 
     assert_pattern do
@@ -129,7 +132,10 @@ class HubspotSDK::Test::Resources::Crm::PipelinesTest < HubspotSDK::Test::Resour
         object_type: "objectType",
         display_order: 0,
         label: "My replaced pipeline",
-        stages: [{displayOrder: 0, label: "In Progress"}, {displayOrder: 1, label: "Done"}]
+        stages: [
+          {displayOrder: 0, label: "In Progress", metadata: {ticketState: "OPEN"}},
+          {displayOrder: 1, label: "Done", metadata: {ticketState: "CLOSED"}}
+        ]
       )
 
     assert_pattern do

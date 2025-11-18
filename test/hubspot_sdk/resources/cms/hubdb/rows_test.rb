@@ -6,7 +6,8 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.cms.hubdb.rows.create("tableIdOrName", values: {foo: {}})
+    response =
+      @hubspot.cms.hubdb.rows.create("tableIdOrName", child_table_id: 0, display_index: 0, values: {foo: {}})
 
     assert_pattern do
       response => HubspotSDK::Cms::HubDBTableRowV3
@@ -14,14 +15,14 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
 
     assert_pattern do
       response => {
-        values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
-        id: String | nil,
-        child_table_id: String | nil,
-        created_at: Time | nil,
-        name: String | nil,
-        path: String | nil,
-        published_at: Time | nil,
-        updated_at: Time | nil
+        id: String,
+        child_table_id: String,
+        created_at: Time,
+        name: String,
+        path: String,
+        published_at: Time,
+        updated_at: Time,
+        values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown])
       }
     end
   end
@@ -54,14 +55,14 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
 
     assert_pattern do
       response => {
-        values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
-        id: String | nil,
-        child_table_id: String | nil,
-        created_at: Time | nil,
-        name: String | nil,
-        path: String | nil,
-        published_at: Time | nil,
-        updated_at: Time | nil
+        id: String,
+        child_table_id: String,
+        created_at: Time,
+        name: String,
+        path: String,
+        published_at: Time,
+        updated_at: Time,
+        values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown])
       }
     end
   end
@@ -87,14 +88,14 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
 
     assert_pattern do
       response => {
-        values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
-        id: String | nil,
-        child_table_id: String | nil,
-        created_at: Time | nil,
-        name: String | nil,
-        path: String | nil,
-        published_at: Time | nil,
-        updated_at: Time | nil
+        id: String,
+        child_table_id: String,
+        created_at: Time,
+        name: String,
+        path: String,
+        published_at: Time,
+        updated_at: Time,
+        values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown])
       }
     end
   end
@@ -110,14 +111,14 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
 
     assert_pattern do
       response => {
-        values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
-        id: String | nil,
-        child_table_id: String | nil,
-        created_at: Time | nil,
-        name: String | nil,
-        path: String | nil,
-        published_at: Time | nil,
-        updated_at: Time | nil
+        id: String,
+        child_table_id: String,
+        created_at: Time,
+        name: String,
+        path: String,
+        published_at: Time,
+        updated_at: Time,
+        values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown])
       }
     end
   end
@@ -146,6 +147,8 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
       @hubspot.cms.hubdb.rows.replace_draft(
         "321669910225",
         table_id_or_name: "tableIdOrName",
+        child_table_id: 0,
+        display_index: 0,
         values: {foo: {}}
       )
 
@@ -155,14 +158,14 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
 
     assert_pattern do
       response => {
-        values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
-        id: String | nil,
-        child_table_id: String | nil,
-        created_at: Time | nil,
-        name: String | nil,
-        path: String | nil,
-        published_at: Time | nil,
-        updated_at: Time | nil
+        id: String,
+        child_table_id: String,
+        created_at: Time,
+        name: String,
+        path: String,
+        published_at: Time,
+        updated_at: Time,
+        values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown])
       }
     end
   end
@@ -174,6 +177,8 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
       @hubspot.cms.hubdb.rows.update_draft(
         "321669910225",
         table_id_or_name: "tableIdOrName",
+        child_table_id: 0,
+        display_index: 0,
         values: {foo: {}}
       )
 
@@ -183,14 +188,14 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
 
     assert_pattern do
       response => {
-        values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
-        id: String | nil,
-        child_table_id: String | nil,
-        created_at: Time | nil,
-        name: String | nil,
-        path: String | nil,
-        published_at: Time | nil,
-        updated_at: Time | nil
+        id: String,
+        child_table_id: String,
+        created_at: Time,
+        name: String,
+        path: String,
+        published_at: Time,
+        updated_at: Time,
+        values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown])
       }
     end
   end

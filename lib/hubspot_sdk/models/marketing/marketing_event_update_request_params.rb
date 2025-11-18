@@ -14,8 +14,8 @@ module HubspotSDK
         #   default properties on the MarketingEvent object as that will apply to all
         #   HubSpot accounts.
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::PropertyValue>, nil]
-        optional :custom_properties,
+        #   @return [Array<HubspotSDK::Models::Marketing::PropertyValue>]
+        required :custom_properties,
                  -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PropertyValue] },
                  api_name: :customProperties
 
@@ -74,7 +74,7 @@ module HubspotSDK
         #   @return [Time, nil]
         optional :start_date_time, Time, api_name: :startDateTime
 
-        # @!method initialize(custom_properties: nil, end_date_time: nil, event_cancelled: nil, event_completed: nil, event_description: nil, event_name: nil, event_organizer: nil, event_type: nil, event_url: nil, start_date_time: nil)
+        # @!method initialize(custom_properties:, end_date_time: nil, event_cancelled: nil, event_completed: nil, event_description: nil, event_name: nil, event_organizer: nil, event_type: nil, event_url: nil, start_date_time: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Marketing::MarketingEventUpdateRequestParams} for more
         #   details.
@@ -100,5 +100,7 @@ module HubspotSDK
         #   @param start_date_time [Time] The start date and time of the marketing event.
       end
     end
+
+    MarketingEventUpdateRequestParams = Marketing::MarketingEventUpdateRequestParams
   end
 end

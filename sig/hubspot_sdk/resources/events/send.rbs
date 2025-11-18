@@ -4,10 +4,10 @@ module HubspotSDK
       class Send
         def send_: (
           event_name: String,
+          properties: ::Hash[Symbol, String],
           ?email: String,
           ?object_id_: String,
           ?occurred_at: Time,
-          ?properties: ::Hash[Symbol, String],
           ?utk: String,
           ?uuid: String,
           ?request_options: HubspotSDK::request_opts

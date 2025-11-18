@@ -3,15 +3,32 @@ module HubspotSDK
     module Cms
       module MediaBridge
         type integrator_setting_delete_oembed_domain_params =
-          {  } & HubspotSDK::Internal::Type::request_parameters
+          { id: Integer, domain_portal_id: Integer }
+          & HubspotSDK::Internal::Type::request_parameters
 
         class IntegratorSettingDeleteOembedDomainParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+          attr_reader id: Integer?
 
-          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+          def id=: (Integer) -> Integer
+
+          attr_reader domain_portal_id: Integer?
+
+          def domain_portal_id=: (Integer) -> Integer
+
+          def initialize: (
+            ?id: Integer,
+            ?domain_portal_id: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            id: Integer,
+            domain_portal_id: Integer,
+            request_options: HubspotSDK::RequestOptions
+          }
         end
       end
     end

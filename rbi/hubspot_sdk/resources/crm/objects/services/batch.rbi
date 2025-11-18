@@ -6,7 +6,7 @@ module HubspotSDK
       class Objects
         class Services
           class Batch
-            # Create a batch of services
+            # Create a batch of objects
             sig do
               params(
                 inputs:
@@ -19,7 +19,7 @@ module HubspotSDK
             def create(inputs:, request_options: {})
             end
 
-            # Update a batch of services by internal ID, or unique property values
+            # Update a batch of objects
             sig do
               params(
                 inputs:
@@ -32,7 +32,7 @@ module HubspotSDK
             def update(inputs:, request_options: {})
             end
 
-            # Archive a batch of services by ID
+            # Archive a batch of objects
             sig do
               params(
                 inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
@@ -64,7 +64,8 @@ module HubspotSDK
               properties_with_history:,
               # Query param: Whether to return only results that have been archived.
               archived: nil,
-              # Body param:
+              # Body param: A unique property used to identify objects instead of the default
+              # ID.
               id_property: nil,
               request_options: {}
             )

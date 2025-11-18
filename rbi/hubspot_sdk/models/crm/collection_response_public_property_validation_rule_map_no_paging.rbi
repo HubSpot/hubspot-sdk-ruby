@@ -12,6 +12,8 @@ module HubspotSDK
             )
           end
 
+        # Collection of properties with their validation rules. Each item maps a property
+        # name to its configured validation rules for the specified object type.
         sig do
           returns(T::Array[HubspotSDK::Crm::PublicPropertyValidationRuleMap])
         end
@@ -23,7 +25,11 @@ module HubspotSDK
               T::Array[HubspotSDK::Crm::PublicPropertyValidationRuleMap::OrHash]
           ).returns(T.attached_class)
         end
-        def self.new(results:)
+        def self.new(
+          # Collection of properties with their validation rules. Each item maps a property
+          # name to its configured validation rules for the specified object type.
+          results:
+        )
         end
 
         sig do

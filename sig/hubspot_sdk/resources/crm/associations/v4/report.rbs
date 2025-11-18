@@ -4,7 +4,7 @@ module HubspotSDK
       class Associations
         class V4
           class Report
-            def get_high_usage_report: (
+            def request_high_usage_report: (
               Integer user_id,
               ?request_options: HubspotSDK::request_opts
             ) -> HubspotSDK::Crm::Associations::ReportCreationResponse

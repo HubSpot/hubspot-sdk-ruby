@@ -13,12 +13,17 @@ module HubspotSDK
               )
             end
 
+          # Indicates whether the DateTime value represents only a date without a time
+          # component.
           sig { returns(T::Boolean) }
           attr_accessor :date_only
 
+          # The integer value representing the shift in minutes from UTC for the DateTime
+          # value.
           sig { returns(Integer) }
           attr_accessor :time_zone_shift
 
+          # The integer value representing a specific point in time.
           sig { returns(Integer) }
           attr_accessor :value
 
@@ -29,7 +34,16 @@ module HubspotSDK
               value: Integer
             ).returns(T.attached_class)
           end
-          def self.new(date_only:, time_zone_shift:, value:)
+          def self.new(
+            # Indicates whether the DateTime value represents only a date without a time
+            # component.
+            date_only:,
+            # The integer value representing the shift in minutes from UTC for the DateTime
+            # value.
+            time_zone_shift:,
+            # The integer value representing a specific point in time.
+            value:
+          )
           end
 
           sig do

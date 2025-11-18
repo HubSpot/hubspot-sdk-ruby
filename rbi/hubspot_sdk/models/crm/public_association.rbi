@@ -24,6 +24,7 @@ module HubspotSDK
         sig { params(to: HubspotSDK::PublicObjectID::OrHash).void }
         attr_writer :to
 
+        # The type of association between the 'from' and 'to' objects.
         sig { returns(String) }
         attr_accessor :type
 
@@ -34,7 +35,12 @@ module HubspotSDK
             type: String
           ).returns(T.attached_class)
         end
-        def self.new(from:, to:, type:)
+        def self.new(
+          from:,
+          to:,
+          # The type of association between the 'from' and 'to' objects.
+          type:
+        )
         end
 
         sig do

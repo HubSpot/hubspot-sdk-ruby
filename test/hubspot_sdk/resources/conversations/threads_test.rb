@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Conversations::ThreadsTest < HubspotSDK::Test
   def test_update
     skip("Prism tests are disabled")
 
-    response = @hubspot.conversations.threads.update("threadId")
+    response = @hubspot.conversations.threads.update(0)
 
     assert_pattern do
       response => HubspotSDK::Conversations::PublicThread
@@ -15,6 +15,7 @@ class HubspotSDK::Test::Resources::Conversations::ThreadsTest < HubspotSDK::Test
     assert_pattern do
       response => {
         id: String,
+        archived: HubspotSDK::Internal::Type::Boolean,
         associated_contact_id: String,
         created_at: Time,
         inbox_id: String,
@@ -22,7 +23,6 @@ class HubspotSDK::Test::Resources::Conversations::ThreadsTest < HubspotSDK::Test
         original_channel_id: String,
         spam: HubspotSDK::Internal::Type::Boolean,
         status: HubspotSDK::Conversations::PublicThread::Status,
-        archived: HubspotSDK::Internal::Type::Boolean | nil,
         assigned_to: String | nil,
         closed_at: Time | nil,
         latest_message_received_timestamp: Time | nil,
@@ -39,13 +39,33 @@ class HubspotSDK::Test::Resources::Conversations::ThreadsTest < HubspotSDK::Test
     response = @hubspot.conversations.threads.list
 
     assert_pattern do
-      response => HubspotSDK::Conversations::CollectionResponsePublicThreadForwardPaging
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Conversations::PublicThread
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::PublicThread]),
-        paging: HubspotSDK::ForwardPaging | nil
+      row => {
+        id: String,
+        archived: HubspotSDK::Internal::Type::Boolean,
+        associated_contact_id: String,
+        created_at: Time,
+        inbox_id: String,
+        original_channel_account_id: String,
+        original_channel_id: String,
+        spam: HubspotSDK::Internal::Type::Boolean,
+        status: HubspotSDK::Conversations::PublicThread::Status,
+        assigned_to: String | nil,
+        closed_at: Time | nil,
+        latest_message_received_timestamp: Time | nil,
+        latest_message_sent_timestamp: Time | nil,
+        latest_message_timestamp: Time | nil,
+        thread_associations: HubspotSDK::Conversations::PublicThreadAssociations | nil
       }
     end
   end
@@ -53,7 +73,7 @@ class HubspotSDK::Test::Resources::Conversations::ThreadsTest < HubspotSDK::Test
   def test_delete
     skip("Prism tests are disabled")
 
-    response = @hubspot.conversations.threads.delete("threadId")
+    response = @hubspot.conversations.threads.delete(0)
 
     assert_pattern do
       response => nil
@@ -63,7 +83,7 @@ class HubspotSDK::Test::Resources::Conversations::ThreadsTest < HubspotSDK::Test
   def test_get
     skip("Prism tests are disabled")
 
-    response = @hubspot.conversations.threads.get("threadId")
+    response = @hubspot.conversations.threads.get(0)
 
     assert_pattern do
       response => HubspotSDK::Conversations::PublicThread
@@ -72,6 +92,7 @@ class HubspotSDK::Test::Resources::Conversations::ThreadsTest < HubspotSDK::Test
     assert_pattern do
       response => {
         id: String,
+        archived: HubspotSDK::Internal::Type::Boolean,
         associated_contact_id: String,
         created_at: Time,
         inbox_id: String,
@@ -79,7 +100,6 @@ class HubspotSDK::Test::Resources::Conversations::ThreadsTest < HubspotSDK::Test
         original_channel_id: String,
         spam: HubspotSDK::Internal::Type::Boolean,
         status: HubspotSDK::Conversations::PublicThread::Status,
-        archived: HubspotSDK::Internal::Type::Boolean | nil,
         assigned_to: String | nil,
         closed_at: Time | nil,
         latest_message_received_timestamp: Time | nil,

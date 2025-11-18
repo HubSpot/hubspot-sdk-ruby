@@ -14,17 +14,17 @@ module HubspotSDK
           sig do
             params(
               object_type: String,
-              properties: T::Hash[Symbol, String],
               associations:
                 T::Array[HubspotSDK::Crm::PublicAssociationsForObject::OrHash],
+              properties: T::Hash[Symbol, String],
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::CreatedResponseSimplePublicObject)
           end
           def create(
             object_type,
+            associations:,
             # Key-value pairs for setting properties for the new object.
             properties:,
-            associations: nil,
             request_options: {}
           )
           end
@@ -159,8 +159,8 @@ module HubspotSDK
               filter_groups: T::Array[HubspotSDK::Crm::FilterGroup::OrHash],
               limit: Integer,
               properties: T::Array[String],
-              query: String,
               sorts: T::Array[String],
+              query: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
               HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
@@ -169,17 +169,17 @@ module HubspotSDK
           def search(
             object_type,
             # A paging cursor token for retrieving subsequent pages.
-            after: nil,
+            after:,
             # Up to 6 groups of filters defining additional query criteria.
-            filter_groups: nil,
+            filter_groups:,
             # The maximum results to return, up to 200 objects.
-            limit: nil,
+            limit:,
             # A list of property names to include in the response.
-            properties: nil,
+            properties:,
+            # Specifies sorting order based on object properties.
+            sorts:,
             # The search query string, up to 3000 characters.
             query: nil,
-            # Specifies sorting order based on object properties.
-            sorts: nil,
             request_options: {}
           )
           end

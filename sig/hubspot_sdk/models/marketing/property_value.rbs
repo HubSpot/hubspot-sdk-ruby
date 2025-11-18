@@ -3,12 +3,10 @@ module HubspotSDK
     module Marketing
       type property_value =
         {
-          name: String,
-          source_upstream_deployable: String,
-          value: String,
           data_sensitivity: HubspotSDK::Models::Marketing::PropertyValue::data_sensitivity,
           is_encrypted: bool,
           is_large_value: bool,
+          name: String,
           persistence_timestamp: Integer,
           request_id: String,
           selected_by_user: bool,
@@ -17,117 +15,59 @@ module HubspotSDK
           source_id: String,
           source_label: String,
           source_metadata: String,
+          source_upstream_deployable: String,
           source_vid: ::Array[Integer],
           timestamp: Integer,
           unit: String,
           updated_by_user_id: Integer,
-          use_timestamp_as_persistence_timestamp: bool
+          use_timestamp_as_persistence_timestamp: bool,
+          value: String
         }
 
       class PropertyValue < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor data_sensitivity: HubspotSDK::Models::Marketing::PropertyValue::data_sensitivity
+
+        attr_accessor is_encrypted: bool
+
+        attr_accessor is_large_value: bool
+
         attr_accessor name: String
+
+        attr_accessor persistence_timestamp: Integer
+
+        attr_accessor request_id: String
+
+        attr_accessor selected_by_user: bool
+
+        attr_accessor selected_by_user_timestamp: Integer
+
+        attr_accessor source: HubspotSDK::Models::Marketing::PropertyValue::source
+
+        attr_accessor source_id: String
+
+        attr_accessor source_label: String
+
+        attr_accessor source_metadata: String
 
         attr_accessor source_upstream_deployable: String
 
+        attr_accessor source_vid: ::Array[Integer]
+
+        attr_accessor timestamp: Integer
+
+        attr_accessor unit: String
+
+        attr_accessor updated_by_user_id: Integer
+
+        attr_accessor use_timestamp_as_persistence_timestamp: bool
+
         attr_accessor value: String
 
-        attr_reader data_sensitivity: HubspotSDK::Models::Marketing::PropertyValue::data_sensitivity?
-
-        def data_sensitivity=: (
-          HubspotSDK::Models::Marketing::PropertyValue::data_sensitivity
-        ) -> HubspotSDK::Models::Marketing::PropertyValue::data_sensitivity
-
-        attr_reader is_encrypted: bool?
-
-        def is_encrypted=: (bool) -> bool
-
-        attr_reader is_large_value: bool?
-
-        def is_large_value=: (bool) -> bool
-
-        attr_reader persistence_timestamp: Integer?
-
-        def persistence_timestamp=: (Integer) -> Integer
-
-        attr_reader request_id: String?
-
-        def request_id=: (String) -> String
-
-        attr_reader selected_by_user: bool?
-
-        def selected_by_user=: (bool) -> bool
-
-        attr_reader selected_by_user_timestamp: Integer?
-
-        def selected_by_user_timestamp=: (Integer) -> Integer
-
-        attr_reader source: HubspotSDK::Models::Marketing::PropertyValue::source?
-
-        def source=: (
-          HubspotSDK::Models::Marketing::PropertyValue::source
-        ) -> HubspotSDK::Models::Marketing::PropertyValue::source
-
-        attr_reader source_id: String?
-
-        def source_id=: (String) -> String
-
-        attr_reader source_label: String?
-
-        def source_label=: (String) -> String
-
-        attr_reader source_metadata: String?
-
-        def source_metadata=: (String) -> String
-
-        attr_reader source_vid: ::Array[Integer]?
-
-        def source_vid=: (::Array[Integer]) -> ::Array[Integer]
-
-        attr_reader timestamp: Integer?
-
-        def timestamp=: (Integer) -> Integer
-
-        attr_reader unit: String?
-
-        def unit=: (String) -> String
-
-        attr_reader updated_by_user_id: Integer?
-
-        def updated_by_user_id=: (Integer) -> Integer
-
-        attr_reader use_timestamp_as_persistence_timestamp: bool?
-
-        def use_timestamp_as_persistence_timestamp=: (bool) -> bool
-
         def initialize: (
-          name: String,
-          source_upstream_deployable: String,
-          value: String,
-          ?data_sensitivity: HubspotSDK::Models::Marketing::PropertyValue::data_sensitivity,
-          ?is_encrypted: bool,
-          ?is_large_value: bool,
-          ?persistence_timestamp: Integer,
-          ?request_id: String,
-          ?selected_by_user: bool,
-          ?selected_by_user_timestamp: Integer,
-          ?source: HubspotSDK::Models::Marketing::PropertyValue::source,
-          ?source_id: String,
-          ?source_label: String,
-          ?source_metadata: String,
-          ?source_vid: ::Array[Integer],
-          ?timestamp: Integer,
-          ?unit: String,
-          ?updated_by_user_id: Integer,
-          ?use_timestamp_as_persistence_timestamp: bool
-        ) -> void
-
-        def to_hash: -> {
-          name: String,
-          source_upstream_deployable: String,
-          value: String,
           data_sensitivity: HubspotSDK::Models::Marketing::PropertyValue::data_sensitivity,
           is_encrypted: bool,
           is_large_value: bool,
+          name: String,
           persistence_timestamp: Integer,
           request_id: String,
           selected_by_user: bool,
@@ -136,11 +76,35 @@ module HubspotSDK
           source_id: String,
           source_label: String,
           source_metadata: String,
+          source_upstream_deployable: String,
           source_vid: ::Array[Integer],
           timestamp: Integer,
           unit: String,
           updated_by_user_id: Integer,
-          use_timestamp_as_persistence_timestamp: bool
+          use_timestamp_as_persistence_timestamp: bool,
+          value: String
+        ) -> void
+
+        def to_hash: -> {
+          data_sensitivity: HubspotSDK::Models::Marketing::PropertyValue::data_sensitivity,
+          is_encrypted: bool,
+          is_large_value: bool,
+          name: String,
+          persistence_timestamp: Integer,
+          request_id: String,
+          selected_by_user: bool,
+          selected_by_user_timestamp: Integer,
+          source: HubspotSDK::Models::Marketing::PropertyValue::source,
+          source_id: String,
+          source_label: String,
+          source_metadata: String,
+          source_upstream_deployable: String,
+          source_vid: ::Array[Integer],
+          timestamp: Integer,
+          unit: String,
+          updated_by_user_id: Integer,
+          use_timestamp_as_persistence_timestamp: bool,
+          value: String
         }
 
         type data_sensitivity = :none | :standard | :high

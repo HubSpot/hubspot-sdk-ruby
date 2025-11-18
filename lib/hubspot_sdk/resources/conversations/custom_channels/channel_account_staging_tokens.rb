@@ -5,15 +5,19 @@ module HubspotSDK
     class Conversations
       class CustomChannels
         class ChannelAccountStagingTokens
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountStagingTokenUpdateParams}
+          # for more details.
+          #
           # Update a channel account staging token's account name and delivery identifier.
           # This information will be applied to the channel account created from this
           # staging token. This is used for public apps.
           #
           # @overload update(account_token, channel_id:, account_name:, delivery_identifier:, request_options: {})
           #
-          # @param account_token [String] Path param:
+          # @param account_token [String] Path param: The unique token identifying the channel account staging token to up
           #
-          # @param channel_id [String] Path param:
+          # @param channel_id [Integer] Path param: The ID of the channel associated with the staging token being update
           #
           # @param account_name [String] Body param:
           #

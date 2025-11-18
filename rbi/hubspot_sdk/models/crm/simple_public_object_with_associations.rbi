@@ -16,6 +16,10 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :id
 
+        # Whether the object is archived.
+        sig { returns(T::Boolean) }
+        attr_accessor :archived
+
         # The timestamp when the object was created, in ISO 8601 format.
         sig { returns(Time) }
         attr_accessor :created_at
@@ -27,13 +31,6 @@ module HubspotSDK
         # The timestamp when the object was last updated, in ISO 8601 format.
         sig { returns(Time) }
         attr_accessor :updated_at
-
-        # Whether the object is archived.
-        sig { returns(T.nilable(T::Boolean)) }
-        attr_reader :archived
-
-        sig { params(archived: T::Boolean).void }
-        attr_writer :archived
 
         # The timestamp when the object was archived, in ISO 8601 format.
         sig { returns(T.nilable(Time)) }
@@ -63,6 +60,7 @@ module HubspotSDK
         end
         attr_writer :associations
 
+        # A unique identifier for tracing the creation request.
         sig { returns(T.nilable(String)) }
         attr_reader :object_write_trace_id
 
@@ -91,15 +89,21 @@ module HubspotSDK
         end
         attr_writer :properties_with_history
 
+        sig { returns(T.nilable(String)) }
+        attr_reader :url
+
+        sig { params(url: String).void }
+        attr_writer :url
+
         # Represents a CRM object along with its properties, timestamps, and a set of
         # associated object IDs grouped by association type.
         sig do
           params(
             id: String,
+            archived: T::Boolean,
             created_at: Time,
             properties: T::Hash[Symbol, T.nilable(String)],
             updated_at: Time,
-            archived: T::Boolean,
             archived_at: Time,
             associations:
               T::Hash[
@@ -111,28 +115,31 @@ module HubspotSDK
               T::Hash[
                 Symbol,
                 T::Array[HubspotSDK::Crm::ValueWithTimestamp::OrHash]
-              ]
+              ],
+            url: String
           ).returns(T.attached_class)
         end
         def self.new(
           # The unique ID of the object.
           id:,
+          # Whether the object is archived.
+          archived:,
           # The timestamp when the object was created, in ISO 8601 format.
           created_at:,
           # Key value pairs representing the properties of the object.
           properties:,
           # The timestamp when the object was last updated, in ISO 8601 format.
           updated_at:,
-          # Whether the object is archived.
-          archived: nil,
           # The timestamp when the object was archived, in ISO 8601 format.
           archived_at: nil,
           # A list defining relationships with other objects.
           associations: nil,
+          # A unique identifier for tracing the creation request.
           object_write_trace_id: nil,
           # Key-value pairs representing the properties of the object along with their
           # history.
-          properties_with_history: nil
+          properties_with_history: nil,
+          url: nil
         )
         end
 
@@ -140,10 +147,10 @@ module HubspotSDK
           override.returns(
             {
               id: String,
+              archived: T::Boolean,
               created_at: Time,
               properties: T::Hash[Symbol, T.nilable(String)],
               updated_at: Time,
-              archived: T::Boolean,
               archived_at: Time,
               associations:
                 T::Hash[
@@ -152,7 +159,8 @@ module HubspotSDK
                 ],
               object_write_trace_id: String,
               properties_with_history:
-                T::Hash[Symbol, T::Array[HubspotSDK::Crm::ValueWithTimestamp]]
+                T::Hash[Symbol, T::Array[HubspotSDK::Crm::ValueWithTimestamp]],
+              url: String
             }
           )
         end

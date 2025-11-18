@@ -11,11 +11,7 @@ module HubspotSDK
           # Creates a new draft HubDB table given a JSON schema. The table name and label
           # should be unique for each account.
           #
-          # @overload create(label:, name:, allow_child_tables: nil, allow_public_api_access: nil, columns: nil, dynamic_meta_tags: nil, enable_child_table_pages: nil, use_for_pages: nil, request_options: {})
-          #
-          # @param label [String] Label of the table
-          #
-          # @param name [String] Name of the table
+          # @overload create(allow_child_tables:, allow_public_api_access:, columns:, dynamic_meta_tags:, enable_child_table_pages:, label:, name:, use_for_pages:, request_options: {})
           #
           # @param allow_child_tables [Boolean] Specifies whether child tables can be created
           #
@@ -26,6 +22,10 @@ module HubspotSDK
           # @param dynamic_meta_tags [Hash{Symbol=>Integer}] Specifies the key value pairs of the [metadata fields](https://developers.hubspo
           #
           # @param enable_child_table_pages [Boolean] Specifies creation of multi-level dynamic pages using child tables
+          #
+          # @param label [String] Label of the table
+          #
+          # @param name [String] Name of the table
           #
           # @param use_for_pages [Boolean] Specifies whether the table can be used for creation of dynamic pages
           #
@@ -486,19 +486,9 @@ module HubspotSDK
           # adding/removing/updating a column. If you do not include an already existing
           # column in the request, it will be deleted.
           #
-          # @overload update_draft(table_id_or_name, label:, name:, archived: nil, include_foreign_ids: nil, is_get_localized_schema: nil, allow_child_tables: nil, allow_public_api_access: nil, columns: nil, dynamic_meta_tags: nil, enable_child_table_pages: nil, use_for_pages: nil, request_options: {})
+          # @overload update_draft(table_id_or_name, allow_child_tables:, allow_public_api_access:, columns:, dynamic_meta_tags:, enable_child_table_pages:, label:, name:, use_for_pages:, archived: nil, include_foreign_ids: nil, is_get_localized_schema: nil, request_options: {})
           #
           # @param table_id_or_name [String] Path param: The ID or name of the table to update.
-          #
-          # @param label [String] Body param: Label of the table
-          #
-          # @param name [String] Body param: Name of the table
-          #
-          # @param archived [Boolean] Query param: Specifies whether to return archived tables. Defaults to `false`.
-          #
-          # @param include_foreign_ids [Boolean] Query param: Set this to `true` to populate foreign ID values in the result.
-          #
-          # @param is_get_localized_schema [Boolean] Query param:
           #
           # @param allow_child_tables [Boolean] Body param: Specifies whether child tables can be created
           #
@@ -510,7 +500,17 @@ module HubspotSDK
           #
           # @param enable_child_table_pages [Boolean] Body param: Specifies creation of multi-level dynamic pages using child tables
           #
+          # @param label [String] Body param: Label of the table
+          #
+          # @param name [String] Body param: Name of the table
+          #
           # @param use_for_pages [Boolean] Body param: Specifies whether the table can be used for creation of dynamic page
+          #
+          # @param archived [Boolean] Query param: Specifies whether to return archived tables. Defaults to `false`.
+          #
+          # @param include_foreign_ids [Boolean] Query param: Set this to `true` to populate foreign ID values in the result.
+          #
+          # @param is_get_localized_schema [Boolean] Query param:
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

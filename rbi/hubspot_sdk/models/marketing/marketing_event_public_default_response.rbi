@@ -2,6 +2,9 @@
 
 module HubspotSDK
   module Models
+    MarketingEventPublicDefaultResponse =
+      Marketing::MarketingEventPublicDefaultResponse
+
     module Marketing
       class MarketingEventPublicDefaultResponse < HubspotSDK::Internal::Type::BaseModel
         OrHash =
@@ -18,6 +21,17 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :created_at
 
+        # A list of PropertyValues. These can be whatever kind of property names and
+        # values you want. However, they must already exist on the HubSpot account's
+        # definition of the MarketingEvent Object. If they don't they will be filtered out
+        # and not set. In order to do this you'll need to create a new PropertyGroup on
+        # the HubSpot account's MarketingEvent object for your specific app and create the
+        # Custom Property you want to track on that HubSpot account. Do not create any new
+        # default properties on the MarketingEvent object as that will apply to all
+        # HubSpot accounts.
+        sig { returns(T::Array[HubspotSDK::Marketing::PropertyValue]) }
+        attr_accessor :custom_properties
+
         # The name of the marketing event.
         sig { returns(String) }
         attr_accessor :event_name
@@ -28,27 +42,6 @@ module HubspotSDK
 
         sig { returns(Time) }
         attr_accessor :updated_at
-
-        # A list of PropertyValues. These can be whatever kind of property names and
-        # values you want. However, they must already exist on the HubSpot account's
-        # definition of the MarketingEvent Object. If they don't they will be filtered out
-        # and not set. In order to do this you'll need to create a new PropertyGroup on
-        # the HubSpot account's MarketingEvent object for your specific app and create the
-        # Custom Property you want to track on that HubSpot account. Do not create any new
-        # default properties on the MarketingEvent object as that will apply to all
-        # HubSpot accounts.
-        sig do
-          returns(T.nilable(T::Array[HubspotSDK::Marketing::PropertyValue]))
-        end
-        attr_reader :custom_properties
-
-        sig do
-          params(
-            custom_properties:
-              T::Array[HubspotSDK::Marketing::PropertyValue::OrHash]
-          ).void
-        end
-        attr_writer :custom_properties
 
         # The end date and time of the marketing event.
         sig { returns(T.nilable(Time)) }
@@ -109,11 +102,11 @@ module HubspotSDK
           params(
             id: String,
             created_at: Time,
+            custom_properties:
+              T::Array[HubspotSDK::Marketing::PropertyValue::OrHash],
             event_name: String,
             event_organizer: String,
             updated_at: Time,
-            custom_properties:
-              T::Array[HubspotSDK::Marketing::PropertyValue::OrHash],
             end_date_time: Time,
             event_cancelled: T::Boolean,
             event_completed: T::Boolean,
@@ -127,11 +120,6 @@ module HubspotSDK
         def self.new(
           id:,
           created_at:,
-          # The name of the marketing event.
-          event_name:,
-          # The name of the organizer of the marketing event.
-          event_organizer:,
-          updated_at:,
           # A list of PropertyValues. These can be whatever kind of property names and
           # values you want. However, they must already exist on the HubSpot account's
           # definition of the MarketingEvent Object. If they don't they will be filtered out
@@ -140,7 +128,12 @@ module HubspotSDK
           # Custom Property you want to track on that HubSpot account. Do not create any new
           # default properties on the MarketingEvent object as that will apply to all
           # HubSpot accounts.
-          custom_properties: nil,
+          custom_properties:,
+          # The name of the marketing event.
+          event_name:,
+          # The name of the organizer of the marketing event.
+          event_organizer:,
+          updated_at:,
           # The end date and time of the marketing event.
           end_date_time: nil,
           # Indicates if the marketing event has been cancelled.
@@ -164,10 +157,10 @@ module HubspotSDK
             {
               id: String,
               created_at: Time,
+              custom_properties: T::Array[HubspotSDK::Marketing::PropertyValue],
               event_name: String,
               event_organizer: String,
               updated_at: Time,
-              custom_properties: T::Array[HubspotSDK::Marketing::PropertyValue],
               end_date_time: Time,
               event_cancelled: T::Boolean,
               event_completed: T::Boolean,

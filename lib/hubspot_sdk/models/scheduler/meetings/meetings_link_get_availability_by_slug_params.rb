@@ -9,7 +9,23 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          # @!method initialize(request_options: {})
+          # @!attribute timezone
+          #   Return times in response based on specified time zone.
+          #
+          #   @return [String]
+          required :timezone, String
+
+          # @!attribute month_offset
+          #   Get times for a different month.
+          #
+          #   @return [Integer, nil]
+          optional :month_offset, Integer
+
+          # @!method initialize(timezone:, month_offset: nil, request_options: {})
+          #   @param timezone [String] Return times in response based on specified time zone.
+          #
+          #   @param month_offset [Integer] Get times for a different month.
+          #
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end

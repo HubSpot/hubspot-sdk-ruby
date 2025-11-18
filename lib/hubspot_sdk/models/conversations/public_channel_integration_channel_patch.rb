@@ -9,6 +9,13 @@ module HubspotSDK
         #   @return [Hash{Symbol=>Object}]
         required :capabilities, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]
 
+        # @!attribute channel_account_connection_redirect_url
+        #
+        #   @return [Object]
+        required :channel_account_connection_redirect_url,
+                 HubspotSDK::Internal::Type::Unknown,
+                 api_name: :channelAccountConnectionRedirectUrl
+
         # @!attribute channel_description
         #
         #   @return [Object]
@@ -19,28 +26,21 @@ module HubspotSDK
         #   @return [Object]
         required :channel_logo_url, HubspotSDK::Internal::Type::Unknown, api_name: :channelLogoUrl
 
-        # @!attribute channel_account_connection_redirect_url
-        #
-        #   @return [Object, nil]
-        optional :channel_account_connection_redirect_url,
-                 HubspotSDK::Internal::Type::Unknown,
-                 api_name: :channelAccountConnectionRedirectUrl
-
         # @!attribute name
         #
-        #   @return [Object, nil]
-        optional :name, HubspotSDK::Internal::Type::Unknown
+        #   @return [Object]
+        required :name, HubspotSDK::Internal::Type::Unknown
 
         # @!attribute webhook_url
         #
-        #   @return [Object, nil]
-        optional :webhook_url, HubspotSDK::Internal::Type::Unknown, api_name: :webhookUrl
+        #   @return [Object]
+        required :webhook_url, HubspotSDK::Internal::Type::Unknown, api_name: :webhookUrl
 
-        # @!method initialize(capabilities:, channel_description:, channel_logo_url:, channel_account_connection_redirect_url: nil, name: nil, webhook_url: nil)
+        # @!method initialize(capabilities:, channel_account_connection_redirect_url:, channel_description:, channel_logo_url:, name:, webhook_url:)
         #   @param capabilities [Hash{Symbol=>Object}]
+        #   @param channel_account_connection_redirect_url [Object]
         #   @param channel_description [Object]
         #   @param channel_logo_url [Object]
-        #   @param channel_account_connection_redirect_url [Object]
         #   @param name [Object]
         #   @param webhook_url [Object]
       end

@@ -18,9 +18,11 @@ module HubspotSDK
         sig { returns(T::Array[HubspotSDK::Crm::Filter]) }
         attr_accessor :filters
 
+        # Defines the order in which the CRM records should be returned.
         sig { returns(T::Array[String]) }
         attr_accessor :sorts
 
+        # The search query string, to filter CRM records.
         sig { returns(T.nilable(String)) }
         attr_reader :query
 
@@ -35,7 +37,14 @@ module HubspotSDK
             query: String
           ).returns(T.attached_class)
         end
-        def self.new(filter_groups:, filters:, sorts:, query: nil)
+        def self.new(
+          filter_groups:,
+          filters:,
+          # Defines the order in which the CRM records should be returned.
+          sorts:,
+          # The search query string, to filter CRM records.
+          query: nil
+        )
         end
 
         sig do

@@ -2,6 +2,9 @@
 
 module HubspotSDK
   module Models
+    MarketingEventPublicUpdateRequestFullV2 =
+      Marketing::MarketingEventPublicUpdateRequestFullV2
+
     module Marketing
       class MarketingEventPublicUpdateRequestFullV2 < HubspotSDK::Internal::Type::BaseModel
         OrHash =

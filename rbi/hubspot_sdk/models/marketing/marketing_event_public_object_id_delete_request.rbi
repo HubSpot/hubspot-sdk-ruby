@@ -2,6 +2,9 @@
 
 module HubspotSDK
   module Models
+    MarketingEventPublicObjectIDDeleteRequest =
+      Marketing::MarketingEventPublicObjectIDDeleteRequest
+
     module Marketing
       class MarketingEventPublicObjectIDDeleteRequest < HubspotSDK::Internal::Type::BaseModel
         OrHash =

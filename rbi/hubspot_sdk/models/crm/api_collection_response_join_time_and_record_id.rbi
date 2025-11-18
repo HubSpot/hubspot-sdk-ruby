@@ -15,11 +15,10 @@ module HubspotSDK
         sig { returns(T::Array[HubspotSDK::Crm::JoinTimeAndRecordID]) }
         attr_accessor :results
 
-        # Contains information pagination of results.
-        sig { returns(T.nilable(HubspotSDK::Marketing::EmailsPaging)) }
+        sig { returns(T.nilable(HubspotSDK::Paging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::Marketing::EmailsPaging::OrHash).void }
+        sig { params(paging: HubspotSDK::Paging::OrHash).void }
         attr_writer :paging
 
         sig { returns(T.nilable(Integer)) }
@@ -31,23 +30,18 @@ module HubspotSDK
         sig do
           params(
             results: T::Array[HubspotSDK::Crm::JoinTimeAndRecordID::OrHash],
-            paging: HubspotSDK::Marketing::EmailsPaging::OrHash,
+            paging: HubspotSDK::Paging::OrHash,
             total: Integer
           ).returns(T.attached_class)
         end
-        def self.new(
-          results:,
-          # Contains information pagination of results.
-          paging: nil,
-          total: nil
-        )
+        def self.new(results:, paging: nil, total: nil)
         end
 
         sig do
           override.returns(
             {
               results: T::Array[HubspotSDK::Crm::JoinTimeAndRecordID],
-              paging: HubspotSDK::Marketing::EmailsPaging,
+              paging: HubspotSDK::Paging,
               total: Integer
             }
           )

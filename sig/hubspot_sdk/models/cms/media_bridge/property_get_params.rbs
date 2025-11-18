@@ -3,26 +3,43 @@ module HubspotSDK
     module Cms
       module MediaBridge
         type property_get_params =
-          { app_id: String, object_type: String }
+          {
+            app_id: Integer,
+            object_type: String,
+            archived: bool,
+            properties: String
+          }
           & HubspotSDK::Internal::Type::request_parameters
 
         class PropertyGetParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          attr_accessor app_id: String
+          attr_accessor app_id: Integer
 
           attr_accessor object_type: String
 
+          attr_reader archived: bool?
+
+          def archived=: (bool) -> bool
+
+          attr_reader properties: String?
+
+          def properties=: (String) -> String
+
           def initialize: (
-            app_id: String,
+            app_id: Integer,
             object_type: String,
+            ?archived: bool,
+            ?properties: String,
             ?request_options: HubspotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
-            app_id: String,
+            app_id: Integer,
             object_type: String,
+            archived: bool,
+            properties: String,
             request_options: HubspotSDK::RequestOptions
           }
         end

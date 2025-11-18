@@ -9,7 +9,7 @@ module HubspotSDK
           sig do
             params(
               object_type: String,
-              app_id: String,
+              app_id: Integer,
               clear_description: T::Boolean,
               description: String,
               labels: HubspotSDK::ObjectTypeDefinitionLabels::OrHash,
@@ -24,9 +24,10 @@ module HubspotSDK
             )
           end
           def update(
-            # Path param:
+            # Path param: The object type that you want to update the schema for.
             object_type,
-            # Path param:
+            # Path param: The appId for the media bridge app. It is possible to have multiple
+            # apps in your developer account that use the media bridge.
             app_id:,
             # Body param:
             clear_description: nil,
@@ -55,18 +56,26 @@ module HubspotSDK
           # Get the schemas for all object types.
           sig do
             params(
-              app_id: String,
+              app_id: Integer,
+              archived: T::Boolean,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::CollectionResponseObjectSchemaNoPaging)
           end
-          def list(app_id, request_options: {})
+          def list(
+            # The appId for the media bridge app. It is possible to have multiple apps in your
+            # developer account that use the media bridge.
+            app_id,
+            # Whether to return only results that have been archived.
+            archived: nil,
+            request_options: {}
+          )
           end
 
           # Create a new association definition for the specified object type.
           sig do
             params(
               object_type: String,
-              app_id: String,
+              app_id: Integer,
               from_object_type_id: String,
               to_object_type_id: String,
               name: String,
@@ -74,9 +83,10 @@ module HubspotSDK
             ).returns(HubspotSDK::Events::AssociationDefinition)
           end
           def create_association(
-            # Path param:
+            # Path param: The object type to create the definition for
             object_type,
-            # Path param:
+            # Path param: The appId for the media bridge app. It is possible to have multiple
+            # apps in your developer account that use the media bridge.
             app_id:,
             # Body param:
             from_object_type_id:,
@@ -92,14 +102,18 @@ module HubspotSDK
           sig do
             params(
               association_id: String,
-              app_id: String,
+              app_id: Integer,
               object_type: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
           def delete_association(
+            # The ID of the association definition to be deleted.
             association_id,
+            # The appId for the media bridge app. It is possible to have multiple apps in your
+            # developer account that use the media bridge.
             app_id:,
+            # The object type for the definition that you want to delete.
             object_type:,
             request_options: {}
           )
@@ -109,11 +123,18 @@ module HubspotSDK
           sig do
             params(
               object_type: String,
-              app_id: String,
+              app_id: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::Objects::ObjectSchema)
           end
-          def get(object_type, app_id:, request_options: {})
+          def get(
+            # The object type to get the schema for.
+            object_type,
+            # The appId for the media bridge app. It is possible to have multiple apps in your
+            # developer account that use the media bridge.
+            app_id:,
+            request_options: {}
+          )
           end
 
           # @api private

@@ -145,10 +145,10 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     end
   end
 
-  def test_search
+  def test_search_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.crm.lists.search
+    response = @hubspot.crm.lists.search(additional_properties: ["hs_list_size_week_delta"], offset: 0)
 
     assert_pattern do
       response => HubspotSDK::Crm::ListSearchResponse

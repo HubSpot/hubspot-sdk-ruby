@@ -31,5 +31,7 @@ module HubspotSDK
         #   @param external_event_id [String]
       end
     end
+
+    MarketingEventAssociation = Marketing::MarketingEventAssociation
   end
 end

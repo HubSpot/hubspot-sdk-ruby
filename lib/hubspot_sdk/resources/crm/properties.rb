@@ -100,11 +100,15 @@ module HubspotSDK
 
         # Read all existing properties for the specified object type and HubSpot account.
         #
-        # @overload list(object_type, archived: nil, properties: nil, request_options: {})
+        # @overload list(object_type, archived: nil, data_sensitivity: nil, locale: nil, properties: nil, request_options: {})
         #
         # @param object_type [String]
         #
         # @param archived [Boolean] Whether to return only results that have been archived.
+        #
+        # @param data_sensitivity [Symbol, HubspotSDK::Models::Crm::PropertyListParams::DataSensitivity]
+        #
+        # @param locale [String]
         #
         # @param properties [String]
         #
@@ -118,7 +122,7 @@ module HubspotSDK
           @client.request(
             method: :get,
             path: ["crm/v3/properties/%1$s", object_type],
-            query: parsed,
+            query: parsed.transform_keys(data_sensitivity: "dataSensitivity"),
             model: HubspotSDK::Crm::CollectionResponseProperty,
             options: options
           )
@@ -151,13 +155,17 @@ module HubspotSDK
 
         # Read a property identified by {propertyName}.
         #
-        # @overload get(property_name, object_type:, archived: nil, properties: nil, request_options: {})
+        # @overload get(property_name, object_type:, archived: nil, data_sensitivity: nil, locale: nil, properties: nil, request_options: {})
         #
         # @param property_name [String] Path param:
         #
         # @param object_type [String] Path param:
         #
         # @param archived [Boolean] Query param: Whether to return only results that have been archived.
+        #
+        # @param data_sensitivity [Symbol, HubspotSDK::Models::Crm::PropertyGetParams::DataSensitivity] Query param:
+        #
+        # @param locale [String] Query param:
         #
         # @param properties [String] Query param:
         #
@@ -175,7 +183,7 @@ module HubspotSDK
           @client.request(
             method: :get,
             path: ["crm/v3/properties/%1$s/%2$s", object_type, property_name],
-            query: parsed,
+            query: parsed.transform_keys(data_sensitivity: "dataSensitivity"),
             model: HubspotSDK::Property,
             options: options
           )

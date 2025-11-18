@@ -16,6 +16,10 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :id
 
+        # Whether this thread is archived.
+        sig { returns(T::Boolean) }
+        attr_accessor :archived
+
         # The ID of the associated Contact in the CRM. If the Contact for the thread has
         # not yet been added or created, the `associatedContactId` returned will be a
         # visitorID and cannot be used to search for the Contact in the CRM.
@@ -45,13 +49,6 @@ module HubspotSDK
           returns(HubspotSDK::Conversations::PublicThread::Status::TaggedSymbol)
         end
         attr_accessor :status
-
-        # Whether this thread is archived.
-        sig { returns(T.nilable(T::Boolean)) }
-        attr_reader :archived
-
-        sig { params(archived: T::Boolean).void }
-        attr_writer :archived
 
         sig { returns(T.nilable(String)) }
         attr_reader :assigned_to
@@ -105,6 +102,7 @@ module HubspotSDK
         sig do
           params(
             id: String,
+            archived: T::Boolean,
             associated_contact_id: String,
             created_at: Time,
             inbox_id: String,
@@ -112,7 +110,6 @@ module HubspotSDK
             original_channel_id: String,
             spam: T::Boolean,
             status: HubspotSDK::Conversations::PublicThread::Status::OrSymbol,
-            archived: T::Boolean,
             assigned_to: String,
             closed_at: Time,
             latest_message_received_timestamp: Time,
@@ -125,6 +122,8 @@ module HubspotSDK
         def self.new(
           # The unique ID of the thread.
           id:,
+          # Whether this thread is archived.
+          archived:,
           # The ID of the associated Contact in the CRM. If the Contact for the thread has
           # not yet been added or created, the `associatedContactId` returned will be a
           # visitorID and cannot be used to search for the Contact in the CRM.
@@ -139,8 +138,6 @@ module HubspotSDK
           spam:,
           # The thread's status: `OPEN` or `CLOSED`.
           status:,
-          # Whether this thread is archived.
-          archived: nil,
           assigned_to: nil,
           # When the thread was closed. Only set if the thread is closed.
           closed_at: nil,
@@ -158,6 +155,7 @@ module HubspotSDK
           override.returns(
             {
               id: String,
+              archived: T::Boolean,
               associated_contact_id: String,
               created_at: Time,
               inbox_id: String,
@@ -166,7 +164,6 @@ module HubspotSDK
               spam: T::Boolean,
               status:
                 HubspotSDK::Conversations::PublicThread::Status::TaggedSymbol,
-              archived: T::Boolean,
               assigned_to: String,
               closed_at: Time,
               latest_message_received_timestamp: Time,

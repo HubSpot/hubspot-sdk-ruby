@@ -16,6 +16,12 @@ module HubspotSDK
         #   @return [Time]
         required :created_at, Time, api_name: :createdAt
 
+        # @!attribute label
+        #   A user-friendly label that identifies the option.
+        #
+        #   @return [String]
+        required :label, String
+
         # @!attribute name
         #   An internal name assigned to the option, distinct from the label.
         #
@@ -50,12 +56,6 @@ module HubspotSDK
         #   @return [Integer, nil]
         optional :created_by_user_id, Integer, api_name: :createdByUserId
 
-        # @!attribute label
-        #   A user-friendly label that identifies the option.
-        #
-        #   @return [String, nil]
-        optional :label, String
-
         # @!attribute updated_by
         #
         #   @return [HubspotSDK::Models::Cms::SimpleUser, nil]
@@ -67,12 +67,14 @@ module HubspotSDK
         #   @return [Integer, nil]
         optional :updated_by_user_id, Integer, api_name: :updatedByUserId
 
-        # @!method initialize(id:, created_at:, name:, order:, type:, updated_at:, created_by: nil, created_by_user_id: nil, label: nil, updated_by: nil, updated_by_user_id: nil)
+        # @!method initialize(id:, created_at:, label:, name:, order:, type:, updated_at:, created_by: nil, created_by_user_id: nil, updated_by: nil, updated_by_user_id: nil)
         #   A HubSpot property option
         #
         #   @param id [String] The unique ID of the option.
         #
         #   @param created_at [Time] The timestamp when the option was created, in ISO 8601 format.
+        #
+        #   @param label [String] A user-friendly label that identifies the option.
         #
         #   @param name [String] An internal name assigned to the option, distinct from the label.
         #
@@ -85,8 +87,6 @@ module HubspotSDK
         #   @param created_by [HubspotSDK::Models::Cms::SimpleUser]
         #
         #   @param created_by_user_id [Integer] The ID of the user who created the option.
-        #
-        #   @param label [String] A user-friendly label that identifies the option.
         #
         #   @param updated_by [HubspotSDK::Models::Cms::SimpleUser]
         #

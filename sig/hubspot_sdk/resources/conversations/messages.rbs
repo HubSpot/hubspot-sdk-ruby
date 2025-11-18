@@ -3,25 +3,32 @@ module HubspotSDK
     class Conversations
       class Messages
         def create: (
-          String thread_id,
+          Integer thread_id,
           public_message_egg: HubspotSDK::Models::Conversations::PublicMessageEgg,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Models::Conversations::public_message
 
         def list: (
-          String thread_id,
+          Integer thread_id,
+          ?after: String,
+          ?archived: bool,
+          ?limit: Integer,
+          ?property: String,
+          ?sort: ::Array[String],
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Conversations::CollectionResponsePublicMessageForwardPaging
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Models::Conversations::CollectionResponsePublicMessageForwardPaging::result]
 
         def get: (
           String message_id,
-          thread_id: String,
+          thread_id: Integer,
+          ?property: String,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Models::Conversations::public_message
 
         def get_original_content: (
           String message_id,
-          thread_id: String,
+          thread_id: Integer,
+          ?property: String,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Conversations::PublicMessageContent
 

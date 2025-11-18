@@ -13,5 +13,7 @@ module HubspotSDK
         #   @param object_id_ [String]
       end
     end
+
+    MarketingEventPublicObjectIDDeleteRequest = Marketing::MarketingEventPublicObjectIDDeleteRequest
   end
 end

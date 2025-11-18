@@ -3,15 +3,56 @@ module HubspotSDK
     module Scheduler
       module Meetings
         type meetings_link_list_params =
-          {  } & HubspotSDK::Internal::Type::request_parameters
+          {
+            after: String,
+            limit: Integer,
+            name: String,
+            organizer_user_id: String,
+            type: String
+          }
+          & HubspotSDK::Internal::Type::request_parameters
 
         class MeetingsLinkListParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+          attr_reader after: String?
 
-          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+          def after=: (String) -> String
+
+          attr_reader limit: Integer?
+
+          def limit=: (Integer) -> Integer
+
+          attr_reader name: String?
+
+          def name=: (String) -> String
+
+          attr_reader organizer_user_id: String?
+
+          def organizer_user_id=: (String) -> String
+
+          attr_reader type: String?
+
+          def type=: (String) -> String
+
+          def initialize: (
+            ?after: String,
+            ?limit: Integer,
+            ?name: String,
+            ?organizer_user_id: String,
+            ?type: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            after: String,
+            limit: Integer,
+            name: String,
+            organizer_user_id: String,
+            type: String,
+            request_options: HubspotSDK::RequestOptions
+          }
         end
       end
     end

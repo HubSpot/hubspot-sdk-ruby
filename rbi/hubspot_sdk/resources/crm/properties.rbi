@@ -110,6 +110,9 @@ module HubspotSDK
           params(
             object_type: String,
             archived: T::Boolean,
+            data_sensitivity:
+              HubspotSDK::Crm::PropertyListParams::DataSensitivity::OrSymbol,
+            locale: String,
             properties: String,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Crm::CollectionResponseProperty)
@@ -118,6 +121,8 @@ module HubspotSDK
           object_type,
           # Whether to return only results that have been archived.
           archived: nil,
+          data_sensitivity: nil,
+          locale: nil,
           properties: nil,
           request_options: {}
         )
@@ -140,6 +145,9 @@ module HubspotSDK
             property_name: String,
             object_type: String,
             archived: T::Boolean,
+            data_sensitivity:
+              HubspotSDK::Crm::PropertyGetParams::DataSensitivity::OrSymbol,
+            locale: String,
             properties: String,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Property)
@@ -151,6 +159,10 @@ module HubspotSDK
           object_type:,
           # Query param: Whether to return only results that have been archived.
           archived: nil,
+          # Query param:
+          data_sensitivity: nil,
+          # Query param:
+          locale: nil,
           # Query param:
           properties: nil,
           request_options: {}

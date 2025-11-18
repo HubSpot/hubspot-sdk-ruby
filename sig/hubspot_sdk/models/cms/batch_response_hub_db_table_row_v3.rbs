@@ -4,17 +4,21 @@ module HubspotSDK
       type batch_response_hub_db_table_row_v3 =
         {
           completed_at: Time,
-          links: ::Hash[Symbol, String],
-          requested_at: Time,
           results: ::Array[HubspotSDK::Cms::HubDBTableRowV3],
           started_at: Time,
-          status: HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::status
+          status: HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::status,
+          links: ::Hash[Symbol, String],
+          requested_at: Time
         }
 
       class BatchResponseHubDBTableRowV3 < HubspotSDK::Internal::Type::BaseModel
-        attr_reader completed_at: Time?
+        attr_accessor completed_at: Time
 
-        def completed_at=: (Time) -> Time
+        attr_accessor results: ::Array[HubspotSDK::Cms::HubDBTableRowV3]
+
+        attr_accessor started_at: Time
+
+        attr_accessor status: HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::status
 
         attr_reader links: ::Hash[Symbol, String]?
 
@@ -24,38 +28,22 @@ module HubspotSDK
 
         def requested_at=: (Time) -> Time
 
-        attr_reader results: ::Array[HubspotSDK::Cms::HubDBTableRowV3]?
-
-        def results=: (
-          ::Array[HubspotSDK::Cms::HubDBTableRowV3]
-        ) -> ::Array[HubspotSDK::Cms::HubDBTableRowV3]
-
-        attr_reader started_at: Time?
-
-        def started_at=: (Time) -> Time
-
-        attr_reader status: HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::status?
-
-        def status=: (
-          HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::status
-        ) -> HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::status
-
         def initialize: (
-          ?completed_at: Time,
+          completed_at: Time,
+          results: ::Array[HubspotSDK::Cms::HubDBTableRowV3],
+          started_at: Time,
+          status: HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::status,
           ?links: ::Hash[Symbol, String],
-          ?requested_at: Time,
-          ?results: ::Array[HubspotSDK::Cms::HubDBTableRowV3],
-          ?started_at: Time,
-          ?status: HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::status
+          ?requested_at: Time
         ) -> void
 
         def to_hash: -> {
           completed_at: Time,
-          links: ::Hash[Symbol, String],
-          requested_at: Time,
           results: ::Array[HubspotSDK::Cms::HubDBTableRowV3],
           started_at: Time,
-          status: HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::status
+          status: HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::status,
+          links: ::Hash[Symbol, String],
+          requested_at: Time
         }
 
         type status = :PENDING | :PROCESSING | :CANCELED | :COMPLETE

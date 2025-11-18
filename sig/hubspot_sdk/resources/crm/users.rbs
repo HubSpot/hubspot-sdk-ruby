@@ -5,8 +5,8 @@ module HubspotSDK
         attr_reader batch: HubspotSDK::Resources::Crm::Users::Batch
 
         def create: (
+          associations: ::Array[HubspotSDK::Crm::PublicAssociationsForObject],
           properties: ::Hash[Symbol, String],
-          ?associations: ::Array[HubspotSDK::Crm::PublicAssociationsForObject],
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Crm::CreatedResponseSimplePublicObject
 
@@ -43,12 +43,12 @@ module HubspotSDK
         ) -> HubspotSDK::Crm::SimplePublicObjectWithAssociations
 
         def search: (
-          ?after: String,
-          ?filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
-          ?limit: Integer,
-          ?properties: ::Array[String],
+          after: String,
+          filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
+          limit: Integer,
+          properties: ::Array[String],
+          sorts: ::Array[String],
           ?query: String,
-          ?sorts: ::Array[String],
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
 

@@ -5,12 +5,13 @@ module HubspotSDK
     module Crm
       class ObjectTypeEnablementPublicResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute enablement
+        #   Whether the object type is enabled or not
         #
         #   @return [Boolean]
         required :enablement, HubspotSDK::Internal::Type::Boolean
 
         # @!method initialize(enablement:)
-        #   @param enablement [Boolean]
+        #   @param enablement [Boolean] Whether the object type is enabled or not
       end
     end
   end

@@ -13,9 +13,16 @@ module HubspotSDK
             HubspotSDK::Crm::CollectionResponsePublicPropertyValidationRuleMapNoPaging
           )
         end
-        def list(object_type_id, request_options: {})
+        def list(
+          # The ID of the object type for which all property validation rules are being
+          # retrieved.
+          object_type_id,
+          request_options: {}
+        )
         end
 
+        # Update a specific validation rule for a property identified by its name and rule
+        # type.
         sig do
           params(
             rule_type:
@@ -27,13 +34,16 @@ module HubspotSDK
           ).void
         end
         def crm_v3_property_validations_object_type_id_property_name_rule_type_rule_type(
-          # Path param:
+          # Path param: The type of validation rule being updated, such as FORMAT,
+          # ALPHANUMERIC, or MAX_LENGTH.
           rule_type,
-          # Path param:
+          # Path param: The ID of the object type to which the property belongs.
           object_type_id:,
-          # Path param:
+          # Path param: The name of the property for which the validation rule is being
+          # updated.
           property_name:,
-          # Body param:
+          # Body param: A list of arguments that define the constraints for the validation
+          # rule.
           rule_arguments:,
           request_options: {}
         )
@@ -49,7 +59,13 @@ module HubspotSDK
             HubspotSDK::Crm::CollectionResponsePublicPropertyValidationRuleNoPaging
           )
         end
-        def get(property_name, object_type_id:, request_options: {})
+        def get(
+          # The name of the property whose validation rules are being retrieved.
+          property_name,
+          # The ID of the object type to which the property belongs.
+          object_type_id:,
+          request_options: {}
+        )
         end
 
         # @api private

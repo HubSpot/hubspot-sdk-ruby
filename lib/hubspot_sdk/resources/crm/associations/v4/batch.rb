@@ -10,9 +10,9 @@ module HubspotSDK
             #
             # @overload create(to_object_type, from_object_type:, inputs:, request_options: {})
             #
-            # @param to_object_type [String] Path param:
+            # @param to_object_type [String] Path param: The type of the to Object
             #
-            # @param from_object_type [String] Path param:
+            # @param from_object_type [String] Path param: The type of the from Object
             #
             # @param inputs [Array<HubspotSDK::Models::Crm::Associations::PublicAssociationMultiPost>] Body param:
             #
@@ -36,19 +36,22 @@ module HubspotSDK
               )
             end
 
+            # Some parameter documentations has been truncated, see
+            # {HubspotSDK::Models::Crm::Associations::V4::BatchDeleteParams} for more details.
+            #
             # Batch delete associations for objects
             #
             # @overload delete(to_object_type, from_object_type:, inputs:, request_options: {})
             #
-            # @param to_object_type [String] Path param:
+            # @param to_object_type [String] Path param: Specifies the type of the target object in the batch association del
             #
-            # @param from_object_type [String] Path param:
+            # @param from_object_type [String] Path param: Specifies the type of the source object in the batch association del
             #
             # @param inputs [Array<HubspotSDK::Models::Crm::Associations::PublicAssociationMultiArchive>] Body param:
             #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::Crm::Associations::BatchResponseVoid]
+            # @return [HubspotSDK::Models::Crm::BatchResponseVoid]
             #
             # @see HubspotSDK::Models::Crm::Associations::V4::BatchDeleteParams
             def delete(to_object_type, params)
@@ -61,7 +64,7 @@ module HubspotSDK
                 method: :post,
                 path: ["crm/v4/associations/%1$s/%2$s/batch/archive", from_object_type, to_object_type],
                 body: parsed,
-                model: HubspotSDK::Crm::Associations::BatchResponseVoid,
+                model: HubspotSDK::Crm::BatchResponseVoid,
                 options: options
               )
             end
@@ -70,9 +73,9 @@ module HubspotSDK
             #
             # @overload create_default(to_object_type, from_object_type:, inputs:, request_options: {})
             #
-            # @param to_object_type [String] Path param:
+            # @param to_object_type [String] Path param: Specifies the type of the target object in the association.
             #
-            # @param from_object_type [String] Path param:
+            # @param from_object_type [String] Path param: Specifies the type of the source object in the association.
             #
             # @param inputs [Array<HubspotSDK::Models::Crm::Associations::PublicDefaultAssociationMultiPost>] Body param:
             #
@@ -105,15 +108,15 @@ module HubspotSDK
             #
             # @overload delete_labels(to_object_type, from_object_type:, inputs:, request_options: {})
             #
-            # @param to_object_type [String] Path param:
+            # @param to_object_type [String] Path param: The type of the to Object
             #
-            # @param from_object_type [String] Path param:
+            # @param from_object_type [String] Path param: The type of the from Object
             #
             # @param inputs [Array<HubspotSDK::Models::Crm::Associations::PublicAssociationMultiPost>] Body param:
             #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::Crm::Associations::BatchResponseVoid]
+            # @return [HubspotSDK::Models::Crm::BatchResponseVoid]
             #
             # @see HubspotSDK::Models::Crm::Associations::V4::BatchDeleteLabelsParams
             def delete_labels(to_object_type, params)
@@ -130,7 +133,7 @@ module HubspotSDK
                   to_object_type
                 ],
                 body: parsed,
-                model: HubspotSDK::Crm::Associations::BatchResponseVoid,
+                model: HubspotSDK::Crm::BatchResponseVoid,
                 options: options
               )
             end
@@ -143,9 +146,9 @@ module HubspotSDK
             #
             # @overload get(to_object_type, from_object_type:, inputs:, request_options: {})
             #
-            # @param to_object_type [String] Path param:
+            # @param to_object_type [String] Path param: The type of the to Object
             #
-            # @param from_object_type [String] Path param:
+            # @param from_object_type [String] Path param: The type of the from Object
             #
             # @param inputs [Array<HubspotSDK::Models::Crm::Associations::PublicFetchAssociationsBatchRequest>] Body param:
             #
@@ -165,6 +168,31 @@ module HubspotSDK
                 path: ["crm/v4/associations/%1$s/%2$s/batch/read", from_object_type, to_object_type],
                 body: parsed,
                 model: HubspotSDK::Crm::Associations::BatchResponsePublicAssociationMultiWithLabel,
+                options: options
+              )
+            end
+
+            # Upsert a batch of CRM objects, creating new records or updating existing ones
+            # based on their internal IDs or unique property values.
+            #
+            # @overload upsert(object_type, inputs:, request_options: {})
+            #
+            # @param object_type [String] Specifies the type of CRM object to upsert in the batch operation.
+            #
+            # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInputUpsert>]
+            #
+            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            #
+            # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicUpsertObject]
+            #
+            # @see HubspotSDK::Models::Crm::Associations::V4::BatchUpsertParams
+            def upsert(object_type, params)
+              parsed, options = HubspotSDK::Crm::Associations::V4::BatchUpsertParams.dump_request(params)
+              @client.request(
+                method: :post,
+                path: ["crm/v4/objects/%1$s/batch/upsert", object_type],
+                body: parsed,
+                model: HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject,
                 options: options
               )
             end

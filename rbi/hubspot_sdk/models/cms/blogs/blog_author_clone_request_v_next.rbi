@@ -3,6 +3,8 @@
 module HubspotSDK
   module Models
     module Cms
+      BlogAuthorCloneRequestVNext = Blogs::BlogAuthorCloneRequestVNext
+
       module Blogs
         class BlogAuthorCloneRequestVNext < HubspotSDK::Internal::Type::BaseModel
           OrHash =

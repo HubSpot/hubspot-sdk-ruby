@@ -3,15 +3,30 @@ module HubspotSDK
     module Scheduler
       module Meetings
         type meetings_link_get_availability_by_slug_params =
-          {  } & HubspotSDK::Internal::Type::request_parameters
+          { timezone: String, month_offset: Integer }
+          & HubspotSDK::Internal::Type::request_parameters
 
         class MeetingsLinkGetAvailabilityBySlugParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+          attr_accessor timezone: String
 
-          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+          attr_reader month_offset: Integer?
+
+          def month_offset=: (Integer) -> Integer
+
+          def initialize: (
+            timezone: String,
+            ?month_offset: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            timezone: String,
+            month_offset: Integer,
+            request_options: HubspotSDK::RequestOptions
+          }
         end
       end
     end

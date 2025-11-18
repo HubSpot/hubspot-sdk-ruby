@@ -8,7 +8,7 @@ module HubspotSDK
           # Publish a message over your custom channel
           sig do
             params(
-              channel_id: String,
+              channel_id: Integer,
               attachments:
                 T::Array[
                   T.any(
@@ -22,7 +22,6 @@ module HubspotSDK
                   )
                 ],
               channel_account_id: String,
-              integration_thread_id: String,
               message_direction:
                 HubspotSDK::Conversations::ChannelIntegrationMessageEgg::MessageDirection::OrSymbol,
               recipients:
@@ -37,6 +36,7 @@ module HubspotSDK
               timestamp: Time,
               in_reply_to_id: String,
               integration_idempotency_id: String,
+              integration_thread_id: String,
               pre_resolved_contacts:
                 HubspotSDK::Conversations::PreResolvedContacts::OrHash,
               rich_text: String,
@@ -46,10 +46,10 @@ module HubspotSDK
             )
           end
           def create(
+            # The channel the message will be sent over
             channel_id,
             attachments:,
             channel_account_id:,
-            integration_thread_id:,
             message_direction:,
             recipients:,
             senders:,
@@ -57,6 +57,7 @@ module HubspotSDK
             timestamp:,
             in_reply_to_id: nil,
             integration_idempotency_id: nil,
+            integration_thread_id: nil,
             pre_resolved_contacts: nil,
             rich_text: nil,
             request_options: {}
@@ -69,7 +70,7 @@ module HubspotSDK
           sig do
             params(
               message_id: String,
-              channel_id: String,
+              channel_id: Integer,
               status_type:
                 HubspotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::OrSymbol,
               error_message: String,
@@ -79,9 +80,9 @@ module HubspotSDK
             )
           end
           def update(
-            # Path param:
+            # Path param: The id of the message
             message_id,
-            # Path param:
+            # Path param: The channel the message was sent over
             channel_id:,
             # Body param: Valid status are SENT, FAILED, and READ
             status_type:,
@@ -95,13 +96,19 @@ module HubspotSDK
           sig do
             params(
               message_id: String,
-              channel_id: String,
+              channel_id: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
               HubspotSDK::Conversations::ConversationsPublicConversationsMessage
             )
           end
-          def get(message_id, channel_id:, request_options: {})
+          def get(
+            # The id of the message
+            message_id,
+            # The channel the message was sent over
+            channel_id:,
+            request_options: {}
+          )
           end
 
           # @api private

@@ -11,14 +11,22 @@ module HubspotSDK
       class APITimeWindow < HubspotSDK::Internal::Type::BaseModel
         attr_accessor day: HubspotSDK::Models::Automation::APITimeWindow::day
 
-        attr_accessor end_time: HubspotSDK::Automation::APITimeOfDay
+        attr_reader end_time: HubspotSDK::Automation::APITimeOfDay?
 
-        attr_accessor start_time: HubspotSDK::Automation::APITimeOfDay
+        def end_time=: (
+          HubspotSDK::Automation::APITimeOfDay
+        ) -> HubspotSDK::Automation::APITimeOfDay
+
+        attr_reader start_time: HubspotSDK::Automation::APITimeOfDay?
+
+        def start_time=: (
+          HubspotSDK::Automation::APITimeOfDay
+        ) -> HubspotSDK::Automation::APITimeOfDay
 
         def initialize: (
           day: HubspotSDK::Models::Automation::APITimeWindow::day,
-          end_time: HubspotSDK::Automation::APITimeOfDay,
-          start_time: HubspotSDK::Automation::APITimeOfDay
+          ?end_time: HubspotSDK::Automation::APITimeOfDay,
+          ?start_time: HubspotSDK::Automation::APITimeOfDay
         ) -> void
 
         def to_hash: -> {

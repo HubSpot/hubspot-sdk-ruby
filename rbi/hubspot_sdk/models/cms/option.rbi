@@ -17,6 +17,10 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :created_at
 
+        # A user-friendly label that identifies the option.
+        sig { returns(String) }
+        attr_accessor :label
+
         # An internal name assigned to the option, distinct from the label.
         sig { returns(String) }
         attr_accessor :name
@@ -45,13 +49,6 @@ module HubspotSDK
         sig { params(created_by_user_id: Integer).void }
         attr_writer :created_by_user_id
 
-        # A user-friendly label that identifies the option.
-        sig { returns(T.nilable(String)) }
-        attr_reader :label
-
-        sig { params(label: String).void }
-        attr_writer :label
-
         sig { returns(T.nilable(HubspotSDK::Cms::SimpleUser)) }
         attr_reader :updated_by
 
@@ -70,13 +67,13 @@ module HubspotSDK
           params(
             id: String,
             created_at: Time,
+            label: String,
             name: String,
             order: Integer,
             type: String,
             updated_at: Time,
             created_by: HubspotSDK::Cms::SimpleUser::OrHash,
             created_by_user_id: Integer,
-            label: String,
             updated_by: HubspotSDK::Cms::SimpleUser::OrHash,
             updated_by_user_id: Integer
           ).returns(T.attached_class)
@@ -86,6 +83,8 @@ module HubspotSDK
           id:,
           # The timestamp when the option was created, in ISO 8601 format.
           created_at:,
+          # A user-friendly label that identifies the option.
+          label:,
           # An internal name assigned to the option, distinct from the label.
           name:,
           order:,
@@ -96,8 +95,6 @@ module HubspotSDK
           created_by: nil,
           # The ID of the user who created the option.
           created_by_user_id: nil,
-          # A user-friendly label that identifies the option.
-          label: nil,
           updated_by: nil,
           # The ID of the user who last updated the option.
           updated_by_user_id: nil
@@ -109,13 +106,13 @@ module HubspotSDK
             {
               id: String,
               created_at: Time,
+              label: String,
               name: String,
               order: Integer,
               type: String,
               updated_at: Time,
               created_by: HubspotSDK::Cms::SimpleUser,
               created_by_user_id: Integer,
-              label: String,
               updated_by: HubspotSDK::Cms::SimpleUser,
               updated_by_user_id: Integer
             }

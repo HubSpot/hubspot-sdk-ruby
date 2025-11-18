@@ -15,16 +15,30 @@ module HubspotSDK
             )
           end
 
+        # A specific property to include in the actor response.
+        sig { returns(T.nilable(String)) }
+        attr_reader :property
+
+        sig { params(property: String).void }
+        attr_writer :property
+
         sig do
-          params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-            T.attached_class
-          )
+          params(
+            property: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(T.attached_class)
         end
-        def self.new(request_options: {})
+        def self.new(
+          # A specific property to include in the actor response.
+          property: nil,
+          request_options: {}
+        )
         end
 
         sig do
-          override.returns({ request_options: HubspotSDK::RequestOptions })
+          override.returns(
+            { property: String, request_options: HubspotSDK::RequestOptions }
+          )
         end
         def to_hash
         end

@@ -17,11 +17,10 @@ module HubspotSDK
         end
         attr_accessor :results
 
-        # Contains information pagination of results.
-        sig { returns(T.nilable(HubspotSDK::Marketing::EmailsPaging)) }
+        sig { returns(T.nilable(HubspotSDK::Paging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::Marketing::EmailsPaging::OrHash).void }
+        sig { params(paging: HubspotSDK::Paging::OrHash).void }
         attr_writer :paging
 
         sig do
@@ -30,14 +29,10 @@ module HubspotSDK
               T::Array[
                 HubspotSDK::Crm::SimplePublicObjectWithAssociations::OrHash
               ],
-            paging: HubspotSDK::Marketing::EmailsPaging::OrHash
+            paging: HubspotSDK::Paging::OrHash
           ).returns(T.attached_class)
         end
-        def self.new(
-          results:,
-          # Contains information pagination of results.
-          paging: nil
-        )
+        def self.new(results:, paging: nil)
         end
 
         sig do
@@ -45,7 +40,7 @@ module HubspotSDK
             {
               results:
                 T::Array[HubspotSDK::Crm::SimplePublicObjectWithAssociations],
-              paging: HubspotSDK::Marketing::EmailsPaging
+              paging: HubspotSDK::Paging
             }
           )
         end

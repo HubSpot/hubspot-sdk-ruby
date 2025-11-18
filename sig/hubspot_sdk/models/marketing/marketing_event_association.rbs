@@ -1,5 +1,7 @@
 module HubspotSDK
   module Models
+    class MarketingEventAssociation = Marketing::MarketingEventAssociation
+
     module Marketing
       type marketing_event_association =
         {

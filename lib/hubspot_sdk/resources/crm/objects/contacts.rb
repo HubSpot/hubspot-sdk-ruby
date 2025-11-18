@@ -14,11 +14,11 @@ module HubspotSDK
           # [associations](https://developers.hubspot.com/docs/guides/api/crm/associations/associations-v4)
           # with other CRM records.
           #
-          # @overload create(properties:, associations: nil, request_options: {})
-          #
-          # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
+          # @overload create(associations:, properties:, request_options: {})
           #
           # @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
+          #
+          # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -44,11 +44,13 @@ module HubspotSDK
           # values will be overwritten. Read-only and non-existent properties will result in
           # an error. Properties values can be cleared by passing an empty string.
           #
-          # @overload update(contact_id, properties:, request_options: {})
+          # @overload update(contact_id, properties:, id_property: nil, request_options: {})
           #
-          # @param contact_id [String]
+          # @param contact_id [String] Path param:
           #
-          # @param properties [Hash{Symbol=>String}] Key value pairs representing the properties of the object.
+          # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
+          #
+          # @param id_property [String] Query param: The name of a property whose values are unique for this object.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -57,10 +59,12 @@ module HubspotSDK
           # @see HubspotSDK::Models::Crm::Objects::ContactUpdateParams
           def update(contact_id, params)
             parsed, options = HubspotSDK::Crm::Objects::ContactUpdateParams.dump_request(params)
+            query_params = [:id_property]
             @client.request(
               method: :patch,
               path: ["crm/v3/objects/contacts/%1$s", contact_id],
-              body: parsed,
+              query: parsed.slice(*query_params).transform_keys(id_property: "idProperty"),
+              body: parsed.except(*query_params),
               model: HubspotSDK::Crm::SimplePublicObject,
               options: options
             )
@@ -134,8 +138,10 @@ module HubspotSDK
           #
           # @overload gdpr_delete(object_id_:, id_property: nil, request_options: {})
           #
-          # @param object_id_ [String]
-          # @param id_property [String]
+          # @param object_id_ [String] ID of the object
+          #
+          # @param id_property [String] ID property
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -159,13 +165,15 @@ module HubspotSDK
           # (`idProperty`). You can specify what is returned using the `properties` query
           # parameter.
           #
-          # @overload get(contact_id, archived: nil, associations: nil, properties: nil, properties_with_history: nil, request_options: {})
+          # @overload get(contact_id, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
           # @param contact_id [String]
           #
           # @param archived [Boolean] Whether to return only results that have been archived.
           #
           # @param associations [Array<String>] A comma separated list of object types to retrieve associated IDs for. If any of
+          #
+          # @param id_property [String] The name of a property whose values are unique for this object
           #
           # @param properties [Array<String>] A comma separated list of the properties to be returned in the response. If any
           #
@@ -181,19 +189,27 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["crm/v3/objects/contacts/%1$s", contact_id],
-              query: parsed.transform_keys(properties_with_history: "propertiesWithHistory"),
+              query: parsed.transform_keys(
+                id_property: "idProperty",
+                properties_with_history: "propertiesWithHistory"
+              ),
               model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Crm::Objects::ContactMergeParams} for more details.
+          #
           # Merge two contact records. Learn more about
           # [merging records](https://knowledge.hubspot.com/records/merge-records).
           #
           # @overload merge(object_id_to_merge:, primary_object_id:, request_options: {})
           #
-          # @param object_id_to_merge [String]
-          # @param primary_object_id [String]
+          # @param object_id_to_merge [String] The unique identifier of the CRM object that will be merged into the primary obj
+          #
+          # @param primary_object_id [String] The unique identifier of the CRM object that will remain after the merge.
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::SimplePublicObject]
@@ -214,7 +230,7 @@ module HubspotSDK
           # and sorting results. Learn more about
           # [CRM search](https://developers.hubspot.com/docs/guides/api/crm/search#make-a-search-request).
           #
-          # @overload search(after: nil, filter_groups: nil, limit: nil, properties: nil, query: nil, sorts: nil, request_options: {})
+          # @overload search(after:, filter_groups:, limit:, properties:, sorts:, query: nil, request_options: {})
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.
           #
@@ -224,16 +240,16 @@ module HubspotSDK
           #
           # @param properties [Array<String>] A list of property names to include in the response.
           #
-          # @param query [String] The search query string, up to 3000 characters.
-          #
           # @param sorts [Array<String>] Specifies sorting order based on object properties.
+          #
+          # @param query [String] The search query string, up to 3000 characters.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
           #
           # @see HubspotSDK::Models::Crm::Objects::ContactSearchParams
-          def search(params = {})
+          def search(params)
             parsed, options = HubspotSDK::Crm::Objects::ContactSearchParams.dump_request(params)
             @client.request(
               method: :post,

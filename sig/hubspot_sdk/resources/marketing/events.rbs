@@ -11,11 +11,11 @@ module HubspotSDK
         attr_reader settings: HubspotSDK::Resources::Marketing::Events::Settings
 
         def create: (
+          custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
           event_name: String,
           event_organizer: String,
           external_account_id: String,
           external_event_id: String,
-          ?custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
           ?end_date_time: Time,
           ?event_cancelled: bool,
           ?event_completed: bool,
@@ -110,7 +110,7 @@ module HubspotSDK
         def update_by_external_event_id: (
           String external_event_id,
           external_account_id: String,
-          ?custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
+          custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
           ?end_date_time: Time,
           ?event_cancelled: bool,
           ?event_completed: bool,
@@ -130,11 +130,11 @@ module HubspotSDK
 
         def upsert_by_external_event_id: (
           String path_external_event_id,
+          custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
           event_name: String,
           event_organizer: String,
           external_account_id: String,
           body_external_event_id: String,
-          ?custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
           ?end_date_time: Time,
           ?event_cancelled: bool,
           ?event_completed: bool,

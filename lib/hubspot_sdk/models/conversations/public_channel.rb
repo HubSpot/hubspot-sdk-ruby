@@ -7,16 +7,16 @@ module HubspotSDK
         # @!attribute id
         #   The ID of the channel.
         #
-        #   @return [String, nil]
-        optional :id, String
+        #   @return [String]
+        required :id, String
 
         # @!attribute name
         #   The name of the channel.
         #
-        #   @return [String, nil]
-        optional :name, String
+        #   @return [String]
+        required :name, String
 
-        # @!method initialize(id: nil, name: nil)
+        # @!method initialize(id:, name:)
         #   @param id [String] The ID of the channel.
         #
         #   @param name [String] The name of the channel.

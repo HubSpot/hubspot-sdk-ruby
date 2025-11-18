@@ -7,44 +7,32 @@ module HubspotSDK
           filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
           limit: Integer,
           properties: ::Array[String],
-          query: String,
-          sorts: ::Array[String]
+          sorts: ::Array[String],
+          query: String
         }
 
       class PublicObjectSearchRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_reader after: String?
+        attr_accessor after: String
 
-        def after=: (String) -> String
+        attr_accessor filter_groups: ::Array[HubspotSDK::Crm::FilterGroup]
 
-        attr_reader filter_groups: ::Array[HubspotSDK::Crm::FilterGroup]?
+        attr_accessor limit: Integer
 
-        def filter_groups=: (
-          ::Array[HubspotSDK::Crm::FilterGroup]
-        ) -> ::Array[HubspotSDK::Crm::FilterGroup]
+        attr_accessor properties: ::Array[String]
 
-        attr_reader limit: Integer?
-
-        def limit=: (Integer) -> Integer
-
-        attr_reader properties: ::Array[String]?
-
-        def properties=: (::Array[String]) -> ::Array[String]
+        attr_accessor sorts: ::Array[String]
 
         attr_reader query: String?
 
         def query=: (String) -> String
 
-        attr_reader sorts: ::Array[String]?
-
-        def sorts=: (::Array[String]) -> ::Array[String]
-
         def initialize: (
-          ?after: String,
-          ?filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
-          ?limit: Integer,
-          ?properties: ::Array[String],
-          ?query: String,
-          ?sorts: ::Array[String]
+          after: String,
+          filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
+          limit: Integer,
+          properties: ::Array[String],
+          sorts: ::Array[String],
+          ?query: String
         ) -> void
 
         def to_hash: -> {
@@ -52,8 +40,8 @@ module HubspotSDK
           filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
           limit: Integer,
           properties: ::Array[String],
-          query: String,
-          sorts: ::Array[String]
+          sorts: ::Array[String],
+          query: String
         }
       end
     end

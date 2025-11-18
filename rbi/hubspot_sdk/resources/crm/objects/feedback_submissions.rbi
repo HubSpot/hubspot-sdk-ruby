@@ -90,14 +90,16 @@ module HubspotSDK
           )
           end
 
+          # Execute a search to retrieve feedback submissions based on defined filters,
+          # properties, and sorting options.
           sig do
             params(
               after: String,
               filter_groups: T::Array[HubspotSDK::Crm::FilterGroup::OrHash],
               limit: Integer,
               properties: T::Array[String],
-              query: String,
               sorts: T::Array[String],
+              query: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(
               HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
@@ -105,17 +107,17 @@ module HubspotSDK
           end
           def search(
             # A paging cursor token for retrieving subsequent pages.
-            after: nil,
+            after:,
             # Up to 6 groups of filters defining additional query criteria.
-            filter_groups: nil,
+            filter_groups:,
             # The maximum results to return, up to 200 objects.
-            limit: nil,
+            limit:,
             # A list of property names to include in the response.
-            properties: nil,
+            properties:,
+            # Specifies sorting order based on object properties.
+            sorts:,
             # The search query string, up to 3000 characters.
             query: nil,
-            # Specifies sorting order based on object properties.
-            sorts: nil,
             request_options: {}
           )
           end

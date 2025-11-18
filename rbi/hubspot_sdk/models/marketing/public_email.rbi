@@ -12,60 +12,15 @@ module HubspotSDK
             )
           end
 
-        # The email ID.
-        sig { returns(String) }
-        attr_accessor :id
-
-        # Data structure representing the content of the email.
-        sig { returns(HubspotSDK::Marketing::PublicEmailContent) }
-        attr_reader :content
-
-        sig do
-          params(
-            content: HubspotSDK::Marketing::PublicEmailContent::OrHash
-          ).void
-        end
-        attr_writer :content
-
-        # Data structure representing the from fields on the email.
-        sig { returns(HubspotSDK::Marketing::PublicEmailFromDetails) }
-        attr_reader :from
-
-        sig do
-          params(
-            from: HubspotSDK::Marketing::PublicEmailFromDetails::OrHash
-          ).void
-        end
-        attr_writer :from
-
-        # The name of the email, as displayed on the email dashboard.
-        sig { returns(String) }
-        attr_accessor :name
-
-        # Determines whether the email will be sent immediately on publish.
         sig { returns(T::Boolean) }
-        attr_accessor :send_on_publish
+        attr_accessor :is_ab
 
-        # The email state.
-        sig { returns(HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol) }
-        attr_accessor :state
+        # The email ID.
+        sig { returns(T.nilable(String)) }
+        attr_reader :id
 
-        # The email subcategory.
-        sig { returns(String) }
-        attr_accessor :subcategory
-
-        # The subject of the email.
-        sig { returns(String) }
-        attr_accessor :subject
-
-        # Data structure representing the to fields of the email.
-        sig { returns(HubspotSDK::Marketing::PublicEmailToDetails) }
-        attr_reader :to
-
-        sig do
-          params(to: HubspotSDK::Marketing::PublicEmailToDetails::OrHash).void
-        end
-        attr_writer :to
+        sig { params(id: String).void }
+        attr_writer :id
 
         # The active domain of the email.
         sig { returns(T.nilable(String)) }
@@ -120,6 +75,17 @@ module HubspotSDK
 
         sig { params(cloned_from: String).void }
         attr_writer :cloned_from
+
+        # Data structure representing the content of the email.
+        sig { returns(T.nilable(HubspotSDK::Marketing::PublicEmailContent)) }
+        attr_reader :content
+
+        sig do
+          params(
+            content: HubspotSDK::Marketing::PublicEmailContent::OrHash
+          ).void
+        end
+        attr_writer :content
 
         # The date and time of the email's creation, in ISO8601 representation.
         sig { returns(T.nilable(Time)) }
@@ -184,11 +150,18 @@ module HubspotSDK
         sig { params(folder_id_v2: Integer).void }
         attr_writer :folder_id_v2
 
-        sig { returns(T.nilable(T::Boolean)) }
-        attr_reader :is_ab
+        # Data structure representing the from fields on the email.
+        sig do
+          returns(T.nilable(HubspotSDK::Marketing::PublicEmailFromDetails))
+        end
+        attr_reader :from
 
-        sig { params(is_ab: T::Boolean).void }
-        attr_writer :is_ab
+        sig do
+          params(
+            from: HubspotSDK::Marketing::PublicEmailFromDetails::OrHash
+          ).void
+        end
+        attr_writer :from
 
         # Returns the published status of the email. This is read only.
         sig { returns(T.nilable(T::Boolean)) }
@@ -225,6 +198,13 @@ module HubspotSDK
           ).void
         end
         attr_writer :language
+
+        # The name of the email, as displayed on the email dashboard.
+        sig { returns(T.nilable(String)) }
+        attr_reader :name
+
+        sig { params(name: String).void }
+        attr_writer :name
 
         sig { returns(T.nilable(String)) }
         attr_reader :preview_key
@@ -285,6 +265,28 @@ module HubspotSDK
         end
         attr_writer :rss_data
 
+        # Determines whether the email will be sent immediately on publish.
+        sig { returns(T.nilable(T::Boolean)) }
+        attr_reader :send_on_publish
+
+        sig { params(send_on_publish: T::Boolean).void }
+        attr_writer :send_on_publish
+
+        # The email state.
+        sig do
+          returns(
+            T.nilable(HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol)
+          )
+        end
+        attr_reader :state
+
+        sig do
+          params(
+            state: HubspotSDK::Marketing::PublicEmail::State::OrSymbol
+          ).void
+        end
+        attr_writer :state
+
         sig { returns(T.nilable(HubspotSDK::Marketing::EmailStatisticsData)) }
         attr_reader :stats
 
@@ -292,6 +294,20 @@ module HubspotSDK
           params(stats: HubspotSDK::Marketing::EmailStatisticsData::OrHash).void
         end
         attr_writer :stats
+
+        # The email subcategory.
+        sig { returns(T.nilable(String)) }
+        attr_reader :subcategory
+
+        sig { params(subcategory: String).void }
+        attr_writer :subcategory
+
+        # The subject of the email.
+        sig { returns(T.nilable(String)) }
+        attr_reader :subject
+
+        sig { params(subject: String).void }
+        attr_writer :subject
 
         # Data structure representing the subscription fields of the email.
         sig do
@@ -327,6 +343,15 @@ module HubspotSDK
           ).void
         end
         attr_writer :testing
+
+        # Data structure representing the to fields of the email.
+        sig { returns(T.nilable(HubspotSDK::Marketing::PublicEmailToDetails)) }
+        attr_reader :to
+
+        sig do
+          params(to: HubspotSDK::Marketing::PublicEmailToDetails::OrHash).void
+        end
+        attr_writer :to
 
         # The email type, this is derived from other properties on the email such as
         # subcategory.
@@ -390,15 +415,8 @@ module HubspotSDK
         # A marketing email
         sig do
           params(
+            is_ab: T::Boolean,
             id: String,
-            content: HubspotSDK::Marketing::PublicEmailContent::OrHash,
-            from: HubspotSDK::Marketing::PublicEmailFromDetails::OrHash,
-            name: String,
-            send_on_publish: T::Boolean,
-            state: HubspotSDK::Marketing::PublicEmail::State::OrSymbol,
-            subcategory: String,
-            subject: String,
-            to: HubspotSDK::Marketing::PublicEmailToDetails::OrHash,
             active_domain: String,
             all_email_campaign_ids: T::Array[String],
             archived: T::Boolean,
@@ -407,6 +425,7 @@ module HubspotSDK
             campaign_name: String,
             campaign_utm: String,
             cloned_from: String,
+            content: HubspotSDK::Marketing::PublicEmailContent::OrHash,
             created_at: Time,
             created_by_id: String,
             deleted_at: Time,
@@ -416,11 +435,12 @@ module HubspotSDK
             feedback_survey_id: String,
             folder_id: Integer,
             folder_id_v2: Integer,
-            is_ab: T::Boolean,
+            from: HubspotSDK::Marketing::PublicEmailFromDetails::OrHash,
             is_published: T::Boolean,
             is_transactional: T::Boolean,
             jitter_send_time: T::Boolean,
             language: HubspotSDK::Marketing::PublicEmail::Language::OrSymbol,
+            name: String,
             preview_key: String,
             primary_email_campaign_id: String,
             publish_date: Time,
@@ -429,11 +449,16 @@ module HubspotSDK
             published_by_id: String,
             published_by_name: String,
             rss_data: HubspotSDK::Marketing::PublicRssEmailDetails::OrHash,
+            send_on_publish: T::Boolean,
+            state: HubspotSDK::Marketing::PublicEmail::State::OrSymbol,
             stats: HubspotSDK::Marketing::EmailStatisticsData::OrHash,
+            subcategory: String,
+            subject: String,
             subscription_details:
               HubspotSDK::Marketing::PublicEmailSubscriptionDetails::OrHash,
             teams_with_access: T::Array[String],
             testing: HubspotSDK::Marketing::PublicEmailTestingDetails::OrHash,
+            to: HubspotSDK::Marketing::PublicEmailToDetails::OrHash,
             type: HubspotSDK::Marketing::PublicEmail::Type::OrSymbol,
             unpublished_at: Time,
             updated_at: Time,
@@ -444,24 +469,9 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          is_ab:,
           # The email ID.
-          id:,
-          # Data structure representing the content of the email.
-          content:,
-          # Data structure representing the from fields on the email.
-          from:,
-          # The name of the email, as displayed on the email dashboard.
-          name:,
-          # Determines whether the email will be sent immediately on publish.
-          send_on_publish:,
-          # The email state.
-          state:,
-          # The email subcategory.
-          subcategory:,
-          # The subject of the email.
-          subject:,
-          # Data structure representing the to fields of the email.
-          to:,
+          id: nil,
           # The active domain of the email.
           active_domain: nil,
           # List of emailCampaignIds.
@@ -476,6 +486,8 @@ module HubspotSDK
           campaign_utm: nil,
           # The ID of the email this email was cloned from.
           cloned_from: nil,
+          # Data structure representing the content of the email.
+          content: nil,
           # The date and time of the email's creation, in ISO8601 representation.
           created_at: nil,
           # The id of the user who created the email.
@@ -488,13 +500,16 @@ module HubspotSDK
           feedback_survey_id: nil,
           folder_id: nil,
           folder_id_v2: nil,
-          is_ab: nil,
+          # Data structure representing the from fields on the email.
+          from: nil,
           # Returns the published status of the email. This is read only.
           is_published: nil,
           # Returns whether the email is a transactional email or not. This is read only.
           is_transactional: nil,
           jitter_send_time: nil,
           language: nil,
+          # The name of the email, as displayed on the email dashboard.
+          name: nil,
           preview_key: nil,
           primary_email_campaign_id: nil,
           # The date and time the email is scheduled for, in ISO8601 representation. This is
@@ -510,12 +525,22 @@ module HubspotSDK
           published_by_name: nil,
           # RSS related data if it is a blog or rss email.
           rss_data: nil,
+          # Determines whether the email will be sent immediately on publish.
+          send_on_publish: nil,
+          # The email state.
+          state: nil,
           stats: nil,
+          # The email subcategory.
+          subcategory: nil,
+          # The subject of the email.
+          subject: nil,
           # Data structure representing the subscription fields of the email.
           subscription_details: nil,
           teams_with_access: nil,
           # AB testing related data. This property is only returned for AB type emails.
           testing: nil,
+          # Data structure representing the to fields of the email.
+          to: nil,
           # The email type, this is derived from other properties on the email such as
           # subcategory.
           type: nil,
@@ -534,15 +559,8 @@ module HubspotSDK
         sig do
           override.returns(
             {
+              is_ab: T::Boolean,
               id: String,
-              content: HubspotSDK::Marketing::PublicEmailContent,
-              from: HubspotSDK::Marketing::PublicEmailFromDetails,
-              name: String,
-              send_on_publish: T::Boolean,
-              state: HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol,
-              subcategory: String,
-              subject: String,
-              to: HubspotSDK::Marketing::PublicEmailToDetails,
               active_domain: String,
               all_email_campaign_ids: T::Array[String],
               archived: T::Boolean,
@@ -551,6 +569,7 @@ module HubspotSDK
               campaign_name: String,
               campaign_utm: String,
               cloned_from: String,
+              content: HubspotSDK::Marketing::PublicEmailContent,
               created_at: Time,
               created_by_id: String,
               deleted_at: Time,
@@ -560,12 +579,13 @@ module HubspotSDK
               feedback_survey_id: String,
               folder_id: Integer,
               folder_id_v2: Integer,
-              is_ab: T::Boolean,
+              from: HubspotSDK::Marketing::PublicEmailFromDetails,
               is_published: T::Boolean,
               is_transactional: T::Boolean,
               jitter_send_time: T::Boolean,
               language:
                 HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol,
+              name: String,
               preview_key: String,
               primary_email_campaign_id: String,
               publish_date: Time,
@@ -574,11 +594,16 @@ module HubspotSDK
               published_by_id: String,
               published_by_name: String,
               rss_data: HubspotSDK::Marketing::PublicRssEmailDetails,
+              send_on_publish: T::Boolean,
+              state: HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol,
               stats: HubspotSDK::Marketing::EmailStatisticsData,
+              subcategory: String,
+              subject: String,
               subscription_details:
                 HubspotSDK::Marketing::PublicEmailSubscriptionDetails,
               teams_with_access: T::Array[String],
               testing: HubspotSDK::Marketing::PublicEmailTestingDetails,
+              to: HubspotSDK::Marketing::PublicEmailToDetails,
               type: HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol,
               unpublished_at: Time,
               updated_at: Time,
@@ -590,186 +615,6 @@ module HubspotSDK
           )
         end
         def to_hash
-        end
-
-        # The email state.
-        module State
-          extend HubspotSDK::Internal::Type::Enum
-
-          TaggedSymbol =
-            T.type_alias do
-              T.all(Symbol, HubspotSDK::Marketing::PublicEmail::State)
-            end
-          OrSymbol = T.type_alias { T.any(Symbol, String) }
-
-          AUTOMATED =
-            T.let(
-              :AUTOMATED,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          AUTOMATED_DRAFT =
-            T.let(
-              :AUTOMATED_DRAFT,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          AUTOMATED_SENDING =
-            T.let(
-              :AUTOMATED_SENDING,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          AUTOMATED_FOR_FORM =
-            T.let(
-              :AUTOMATED_FOR_FORM,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          AUTOMATED_FOR_FORM_BUFFER =
-            T.let(
-              :AUTOMATED_FOR_FORM_BUFFER,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          AUTOMATED_FOR_FORM_DRAFT =
-            T.let(
-              :AUTOMATED_FOR_FORM_DRAFT,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          AUTOMATED_FOR_FORM_LEGACY =
-            T.let(
-              :AUTOMATED_FOR_FORM_LEGACY,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          BLOG_EMAIL_DRAFT =
-            T.let(
-              :BLOG_EMAIL_DRAFT,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          BLOG_EMAIL_PUBLISHED =
-            T.let(
-              :BLOG_EMAIL_PUBLISHED,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          DRAFT =
-            T.let(
-              :DRAFT,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          DRAFT_AB =
-            T.let(
-              :DRAFT_AB,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          DRAFT_AB_VARIANT =
-            T.let(
-              :DRAFT_AB_VARIANT,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          ERROR =
-            T.let(
-              :ERROR,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          LOSER_AB_VARIANT =
-            T.let(
-              :LOSER_AB_VARIANT,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          PAGE_STUB =
-            T.let(
-              :PAGE_STUB,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          PRE_PROCESSING =
-            T.let(
-              :PRE_PROCESSING,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          PROCESSING =
-            T.let(
-              :PROCESSING,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          PUBLISHED =
-            T.let(
-              :PUBLISHED,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          PUBLISHED_AB =
-            T.let(
-              :PUBLISHED_AB,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          PUBLISHED_AB_VARIANT =
-            T.let(
-              :PUBLISHED_AB_VARIANT,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          PUBLISHED_OR_SCHEDULED =
-            T.let(
-              :PUBLISHED_OR_SCHEDULED,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          RSS_TO_EMAIL_DRAFT =
-            T.let(
-              :RSS_TO_EMAIL_DRAFT,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          RSS_TO_EMAIL_PUBLISHED =
-            T.let(
-              :RSS_TO_EMAIL_PUBLISHED,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          SCHEDULED =
-            T.let(
-              :SCHEDULED,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          SCHEDULED_AB =
-            T.let(
-              :SCHEDULED_AB,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          SCHEDULED_OR_PUBLISHED =
-            T.let(
-              :SCHEDULED_OR_PUBLISHED,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          AUTOMATED_AB =
-            T.let(
-              :AUTOMATED_AB,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          AUTOMATED_AB_VARIANT =
-            T.let(
-              :AUTOMATED_AB_VARIANT,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          AUTOMATED_DRAFT_AB =
-            T.let(
-              :AUTOMATED_DRAFT_AB,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          AUTOMATED_DRAFT_ABVARIANT =
-            T.let(
-              :AUTOMATED_DRAFT_ABVARIANT,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          AUTOMATED_LOSER_ABVARIANT =
-            T.let(
-              :AUTOMATED_LOSER_ABVARIANT,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          AGENT_GENERATED =
-            T.let(
-              :AGENT_GENERATED,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-
-          sig do
-            override.returns(
-              T::Array[HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol]
-            )
-          end
-          def self.values
-          end
         end
 
         module EmailTemplateMode
@@ -4776,6 +4621,186 @@ module HubspotSDK
               T::Array[
                 HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
               ]
+            )
+          end
+          def self.values
+          end
+        end
+
+        # The email state.
+        module State
+          extend HubspotSDK::Internal::Type::Enum
+
+          TaggedSymbol =
+            T.type_alias do
+              T.all(Symbol, HubspotSDK::Marketing::PublicEmail::State)
+            end
+          OrSymbol = T.type_alias { T.any(Symbol, String) }
+
+          AUTOMATED =
+            T.let(
+              :AUTOMATED,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          AUTOMATED_DRAFT =
+            T.let(
+              :AUTOMATED_DRAFT,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          AUTOMATED_SENDING =
+            T.let(
+              :AUTOMATED_SENDING,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          AUTOMATED_FOR_FORM =
+            T.let(
+              :AUTOMATED_FOR_FORM,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          AUTOMATED_FOR_FORM_BUFFER =
+            T.let(
+              :AUTOMATED_FOR_FORM_BUFFER,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          AUTOMATED_FOR_FORM_DRAFT =
+            T.let(
+              :AUTOMATED_FOR_FORM_DRAFT,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          AUTOMATED_FOR_FORM_LEGACY =
+            T.let(
+              :AUTOMATED_FOR_FORM_LEGACY,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          BLOG_EMAIL_DRAFT =
+            T.let(
+              :BLOG_EMAIL_DRAFT,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          BLOG_EMAIL_PUBLISHED =
+            T.let(
+              :BLOG_EMAIL_PUBLISHED,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          DRAFT =
+            T.let(
+              :DRAFT,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          DRAFT_AB =
+            T.let(
+              :DRAFT_AB,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          DRAFT_AB_VARIANT =
+            T.let(
+              :DRAFT_AB_VARIANT,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          ERROR =
+            T.let(
+              :ERROR,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          LOSER_AB_VARIANT =
+            T.let(
+              :LOSER_AB_VARIANT,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          PAGE_STUB =
+            T.let(
+              :PAGE_STUB,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          PRE_PROCESSING =
+            T.let(
+              :PRE_PROCESSING,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          PROCESSING =
+            T.let(
+              :PROCESSING,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          PUBLISHED =
+            T.let(
+              :PUBLISHED,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          PUBLISHED_AB =
+            T.let(
+              :PUBLISHED_AB,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          PUBLISHED_AB_VARIANT =
+            T.let(
+              :PUBLISHED_AB_VARIANT,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          PUBLISHED_OR_SCHEDULED =
+            T.let(
+              :PUBLISHED_OR_SCHEDULED,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          RSS_TO_EMAIL_DRAFT =
+            T.let(
+              :RSS_TO_EMAIL_DRAFT,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          RSS_TO_EMAIL_PUBLISHED =
+            T.let(
+              :RSS_TO_EMAIL_PUBLISHED,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          SCHEDULED =
+            T.let(
+              :SCHEDULED,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          SCHEDULED_AB =
+            T.let(
+              :SCHEDULED_AB,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          SCHEDULED_OR_PUBLISHED =
+            T.let(
+              :SCHEDULED_OR_PUBLISHED,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          AUTOMATED_AB =
+            T.let(
+              :AUTOMATED_AB,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          AUTOMATED_AB_VARIANT =
+            T.let(
+              :AUTOMATED_AB_VARIANT,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          AUTOMATED_DRAFT_AB =
+            T.let(
+              :AUTOMATED_DRAFT_AB,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          AUTOMATED_DRAFT_ABVARIANT =
+            T.let(
+              :AUTOMATED_DRAFT_ABVARIANT,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          AUTOMATED_LOSER_ABVARIANT =
+            T.let(
+              :AUTOMATED_LOSER_ABVARIANT,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          AGENT_GENERATED =
+            T.let(
+              :AGENT_GENERATED,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+
+          sig do
+            override.returns(
+              T::Array[HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol]
             )
           end
           def self.values

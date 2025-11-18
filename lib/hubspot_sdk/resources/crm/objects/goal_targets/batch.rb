@@ -87,7 +87,7 @@ module HubspotSDK
             #
             # @param archived [Boolean] Query param: Whether to return only results that have been archived.
             #
-            # @param id_property [String] Body param:
+            # @param id_property [String] Body param: A unique property used to identify objects instead of the default ID
             #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #

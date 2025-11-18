@@ -1,6 +1,8 @@
 module HubspotSDK
   module Models
     module Crm
+      class ObjectTypeDefinitionPatch = Objects::ObjectTypeDefinitionPatch
+
       module Objects
         type object_type_definition_patch =
           {

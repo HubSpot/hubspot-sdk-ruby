@@ -9,14 +9,28 @@ class HubspotSDK::Test::Resources::Scheduler::Meetings::MeetingsLinksTest < Hubs
     response = @hubspot.scheduler.meetings.meetings_links.list
 
     assert_pattern do
-      response => HubspotSDK::Scheduler::CollectionResponseWithTotalExternalLinkMetadataForwardPaging
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Scheduler::ExternalLinkMetadata
     end
 
     assert_pattern do
-      response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Scheduler::ExternalLinkMetadata]),
-        total: Integer,
-        paging: HubspotSDK::ForwardPaging | nil
+      row => {
+        id: String,
+        created_at: Time,
+        default_link: HubspotSDK::Internal::Type::Boolean,
+        link: String,
+        organizer_user_id: String,
+        slug: String,
+        type: String,
+        user_ids_of_link_members: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
+        name: String | nil,
+        updated_at: Time | nil
       }
     end
   end
@@ -62,10 +76,11 @@ class HubspotSDK::Test::Resources::Scheduler::Meetings::MeetingsLinksTest < Hubs
     end
   end
 
-  def test_get_availability_by_slug
+  def test_get_availability_by_slug_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.scheduler.meetings.meetings_links.get_availability_by_slug("slug")
+    response =
+      @hubspot.scheduler.meetings.meetings_links.get_availability_by_slug("slug", timezone: "timezone")
 
     assert_pattern do
       response => HubspotSDK::Scheduler::ExternalLinkAvailabilityAndBusyTimes
@@ -79,10 +94,11 @@ class HubspotSDK::Test::Resources::Scheduler::Meetings::MeetingsLinksTest < Hubs
     end
   end
 
-  def test_get_booking_info_by_slug
+  def test_get_booking_info_by_slug_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.scheduler.meetings.meetings_links.get_booking_info_by_slug("slug")
+    response =
+      @hubspot.scheduler.meetings.meetings_links.get_booking_info_by_slug("slug", timezone: "timezone")
 
     assert_pattern do
       response => HubspotSDK::Scheduler::ExternalBookingInfo

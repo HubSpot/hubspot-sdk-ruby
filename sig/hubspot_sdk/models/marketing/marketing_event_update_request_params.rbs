@@ -1,5 +1,7 @@
 module HubspotSDK
   module Models
+    class MarketingEventUpdateRequestParams = Marketing::MarketingEventUpdateRequestParams
+
     module Marketing
       type marketing_event_update_request_params =
         {
@@ -16,11 +18,7 @@ module HubspotSDK
         }
 
       class MarketingEventUpdateRequestParams < HubspotSDK::Internal::Type::BaseModel
-        attr_reader custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue]?
-
-        def custom_properties=: (
-          ::Array[HubspotSDK::Marketing::PropertyValue]
-        ) -> ::Array[HubspotSDK::Marketing::PropertyValue]
+        attr_accessor custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue]
 
         attr_reader end_date_time: Time?
 
@@ -59,7 +57,7 @@ module HubspotSDK
         def start_date_time=: (Time) -> Time
 
         def initialize: (
-          ?custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
+          custom_properties: ::Array[HubspotSDK::Marketing::PropertyValue],
           ?end_date_time: Time,
           ?event_cancelled: bool,
           ?event_completed: bool,

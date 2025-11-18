@@ -3,13 +3,15 @@ module HubspotSDK
     module Crm
       type pipeline_stage_patch_input =
         {
+          metadata: ::Hash[Symbol, String],
           archived: bool,
           display_order: Integer,
-          label: String,
-          metadata: ::Hash[Symbol, String]
+          label: String
         }
 
       class PipelineStagePatchInput < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor metadata: ::Hash[Symbol, String]
+
         attr_reader archived: bool?
 
         def archived=: (bool) -> bool
@@ -22,22 +24,18 @@ module HubspotSDK
 
         def label=: (String) -> String
 
-        attr_reader metadata: ::Hash[Symbol, String]?
-
-        def metadata=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
-
         def initialize: (
+          metadata: ::Hash[Symbol, String],
           ?archived: bool,
           ?display_order: Integer,
-          ?label: String,
-          ?metadata: ::Hash[Symbol, String]
+          ?label: String
         ) -> void
 
         def to_hash: -> {
+          metadata: ::Hash[Symbol, String],
           archived: bool,
           display_order: Integer,
-          label: String,
-          metadata: ::Hash[Symbol, String]
+          label: String
         }
       end
     end

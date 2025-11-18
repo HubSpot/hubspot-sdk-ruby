@@ -15,15 +15,18 @@ module HubspotSDK
         sig { returns(T::Array[HubspotSDK::Crm::AtLimitRecordSample]) }
         attr_accessor :at_limit_from_record_samples
 
+        # The maximum number of associations allowed for records.
         sig { returns(Integer) }
         attr_accessor :limit
 
         sig { returns(T::Array[HubspotSDK::Crm::NearLimitRecordSample]) }
         attr_accessor :near_limit_from_record_samples
 
+        # The total number of records that have reached their association limit.
         sig { returns(Integer) }
         attr_accessor :total_records_at_limit
 
+        # The total number of records that are approaching their association limit.
         sig { returns(Integer) }
         attr_accessor :total_records_near_limit
 
@@ -40,9 +43,12 @@ module HubspotSDK
         end
         def self.new(
           at_limit_from_record_samples:,
+          # The maximum number of associations allowed for records.
           limit:,
           near_limit_from_record_samples:,
+          # The total number of records that have reached their association limit.
           total_records_at_limit:,
+          # The total number of records that are approaching their association limit.
           total_records_near_limit:
         )
         end

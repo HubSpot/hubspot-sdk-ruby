@@ -9,17 +9,17 @@ module HubspotSDK
         #
         # Send data for a single event completion.
         #
-        # @overload send_(event_name:, email: nil, object_id_: nil, occurred_at: nil, properties: nil, utk: nil, uuid: nil, request_options: {})
+        # @overload send_(event_name:, properties:, email: nil, object_id_: nil, occurred_at: nil, utk: nil, uuid: nil, request_options: {})
         #
         # @param event_name [String] The internal name of the event (`pe<portalID>_eventName`). Can be retrieved thro
+        #
+        # @param properties [Hash{Symbol=>String}] The event properties to update. Takes the format of key-value pairs (property in
         #
         # @param email [String] The visitor's email address. Used for associating the event data with a CRM reco
         #
         # @param object_id_ [String] The ID of the object that completed the event (e.g., contact ID or visitor ID).
         #
         # @param occurred_at [Time] The time when this event occurred. If this isn't set, the current time will be u
-        #
-        # @param properties [Hash{Symbol=>String}] The event properties to update. Takes the format of key-value pairs (property in
         #
         # @param utk [String] The visitor's usertoken. Used for associating the event data with a CRM record.
         #

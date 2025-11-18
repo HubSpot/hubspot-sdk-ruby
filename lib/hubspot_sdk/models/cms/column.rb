@@ -4,6 +4,22 @@ module HubspotSDK
   module Models
     module Cms
       class Column < HubspotSDK::Internal::Type::BaseModel
+        # @!attribute id
+        #   Column Id
+        #
+        #   @return [String]
+        required :id, String
+
+        # @!attribute deleted
+        #
+        #   @return [Boolean]
+        required :deleted, HubspotSDK::Internal::Type::Boolean
+
+        # @!attribute description
+        #
+        #   @return [String]
+        required :description, String
+
         # @!attribute label
         #   Label of the column
         #
@@ -22,12 +38,6 @@ module HubspotSDK
         #   @return [Symbol, HubspotSDK::Models::Cms::Column::Type]
         required :type, enum: -> { HubspotSDK::Cms::Column::Type }
 
-        # @!attribute id
-        #   Column Id
-        #
-        #   @return [String, nil]
-        optional :id, String
-
         # @!attribute created_at
         #
         #   @return [Time, nil]
@@ -42,16 +52,6 @@ module HubspotSDK
         #
         #   @return [Integer, nil]
         optional :created_by_user_id, Integer, api_name: :createdByUserId
-
-        # @!attribute deleted
-        #
-        #   @return [Boolean, nil]
-        optional :deleted, HubspotSDK::Internal::Type::Boolean
-
-        # @!attribute description
-        #
-        #   @return [String, nil]
-        optional :description, String
 
         # @!attribute foreign_column_id
         #   Foreign Column id
@@ -122,24 +122,24 @@ module HubspotSDK
         #   @return [Integer, nil]
         optional :width, Integer
 
-        # @!method initialize(label:, name:, type:, id: nil, created_at: nil, created_by: nil, created_by_user_id: nil, deleted: nil, description: nil, foreign_column_id: nil, foreign_ids: nil, foreign_ids_by_id: nil, foreign_ids_by_name: nil, foreign_table_id: nil, option_count: nil, options: nil, updated_at: nil, updated_by: nil, updated_by_user_id: nil, width: nil)
+        # @!method initialize(id:, deleted:, description:, label:, name:, type:, created_at: nil, created_by: nil, created_by_user_id: nil, foreign_column_id: nil, foreign_ids: nil, foreign_ids_by_id: nil, foreign_ids_by_name: nil, foreign_table_id: nil, option_count: nil, options: nil, updated_at: nil, updated_by: nil, updated_by_user_id: nil, width: nil)
+        #   @param id [String] Column Id
+        #
+        #   @param deleted [Boolean]
+        #
+        #   @param description [String]
+        #
         #   @param label [String] Label of the column
         #
         #   @param name [String] Name of the column
         #
         #   @param type [Symbol, HubspotSDK::Models::Cms::Column::Type] Type of the column
         #
-        #   @param id [String] Column Id
-        #
         #   @param created_at [Time]
         #
         #   @param created_by [HubspotSDK::Models::Cms::SimpleUser]
         #
         #   @param created_by_user_id [Integer]
-        #
-        #   @param deleted [Boolean]
-        #
-        #   @param description [String]
         #
         #   @param foreign_column_id [Integer] Foreign Column id
         #

@@ -4,26 +4,24 @@ module HubspotSDK
       type collection_response_public_campaign_asset =
         {
           results: ::Array[HubspotSDK::Marketing::PublicCampaignAsset],
-          paging: HubspotSDK::Marketing::EmailsPaging
+          paging: HubspotSDK::Paging
         }
 
       class CollectionResponsePublicCampaignAsset < HubspotSDK::Internal::Type::BaseModel
         attr_accessor results: ::Array[HubspotSDK::Marketing::PublicCampaignAsset]
 
-        attr_reader paging: HubspotSDK::Marketing::EmailsPaging?
+        attr_reader paging: HubspotSDK::Paging?
 
-        def paging=: (
-          HubspotSDK::Marketing::EmailsPaging
-        ) -> HubspotSDK::Marketing::EmailsPaging
+        def paging=: (HubspotSDK::Paging) -> HubspotSDK::Paging
 
         def initialize: (
           results: ::Array[HubspotSDK::Marketing::PublicCampaignAsset],
-          ?paging: HubspotSDK::Marketing::EmailsPaging
+          ?paging: HubspotSDK::Paging
         ) -> void
 
         def to_hash: -> {
           results: ::Array[HubspotSDK::Marketing::PublicCampaignAsset],
-          paging: HubspotSDK::Marketing::EmailsPaging
+          paging: HubspotSDK::Paging
         }
       end
     end

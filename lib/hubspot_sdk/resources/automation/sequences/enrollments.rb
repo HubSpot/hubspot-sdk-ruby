@@ -8,12 +8,18 @@ module HubspotSDK
           # Enroll a contact into a sequence using the specified user ID and sequence
           # details.
           #
-          # @overload enroll(contact_id:, sender_email:, sequence_id:, sender_alias_address: nil, request_options: {})
+          # @overload enroll(user_id:, contact_id:, sender_email:, sequence_id:, sender_alias_address: nil, request_options: {})
           #
-          # @param contact_id [String]
-          # @param sender_email [String]
-          # @param sequence_id [String]
-          # @param sender_alias_address [String]
+          # @param user_id [String] Query param:
+          #
+          # @param contact_id [String] Body param:
+          #
+          # @param sender_email [String] Body param:
+          #
+          # @param sequence_id [String] Body param:
+          #
+          # @param sender_alias_address [String] Body param:
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Automation::PublicSequenceEnrollmentLiteResponse]
@@ -21,10 +27,12 @@ module HubspotSDK
           # @see HubspotSDK::Models::Automation::Sequences::EnrollmentEnrollParams
           def enroll(params)
             parsed, options = HubspotSDK::Automation::Sequences::EnrollmentEnrollParams.dump_request(params)
+            query_params = [:user_id]
             @client.request(
               method: :post,
               path: "automation/v4/sequences/enrollments",
-              body: parsed,
+              query: parsed.slice(*query_params).transform_keys(user_id: "userId"),
+              body: parsed.except(*query_params),
               model: HubspotSDK::Automation::PublicSequenceEnrollmentLiteResponse,
               options: options
             )

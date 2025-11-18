@@ -3,6 +3,7 @@
 module HubspotSDK
   module Models
     module Automation
+      # @see HubspotSDK::Resources::Automation::Sequences#list
       class PublicSequenceLiteResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #

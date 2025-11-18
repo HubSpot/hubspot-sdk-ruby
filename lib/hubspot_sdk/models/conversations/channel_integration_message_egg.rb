@@ -15,11 +15,6 @@ module HubspotSDK
         #   @return [String]
         required :channel_account_id, String, api_name: :channelAccountId
 
-        # @!attribute integration_thread_id
-        #
-        #   @return [String]
-        required :integration_thread_id, String, api_name: :integrationThreadId
-
         # @!attribute message_direction
         #
         #   @return [Symbol, HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::MessageDirection]
@@ -59,6 +54,11 @@ module HubspotSDK
         #   @return [String, nil]
         optional :integration_idempotency_id, String, api_name: :integrationIdempotencyId
 
+        # @!attribute integration_thread_id
+        #
+        #   @return [String, nil]
+        optional :integration_thread_id, String, api_name: :integrationThreadId
+
         # @!attribute pre_resolved_contacts
         #
         #   @return [HubspotSDK::Models::Conversations::PreResolvedContacts, nil]
@@ -71,10 +71,9 @@ module HubspotSDK
         #   @return [String, nil]
         optional :rich_text, String, api_name: :richText
 
-        # @!method initialize(attachments:, channel_account_id:, integration_thread_id:, message_direction:, recipients:, senders:, text:, timestamp:, in_reply_to_id: nil, integration_idempotency_id: nil, pre_resolved_contacts: nil, rich_text: nil)
+        # @!method initialize(attachments:, channel_account_id:, message_direction:, recipients:, senders:, text:, timestamp:, in_reply_to_id: nil, integration_idempotency_id: nil, integration_thread_id: nil, pre_resolved_contacts: nil, rich_text: nil)
         #   @param attachments [Array<HubspotSDK::Models::Conversations::FileAttachment, HubspotSDK::Models::Conversations::LocationAttachment, HubspotSDK::Models::Conversations::ContactAttachment, HubspotSDK::Models::Conversations::UnsupportedContentAttachment, HubspotSDK::Models::Conversations::MessageHeaderAttachment, HubspotSDK::Models::Conversations::QuickRepliesAttachment, HubspotSDK::Models::Conversations::SocialMetadataIntegrationAttachment>]
         #   @param channel_account_id [String]
-        #   @param integration_thread_id [String]
         #   @param message_direction [Symbol, HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::MessageDirection]
         #   @param recipients [Array<HubspotSDK::Models::Conversations::ChannelIntegrationParticipant>]
         #   @param senders [Array<HubspotSDK::Models::Conversations::ChannelIntegrationParticipant>]
@@ -82,6 +81,7 @@ module HubspotSDK
         #   @param timestamp [Time]
         #   @param in_reply_to_id [String]
         #   @param integration_idempotency_id [String]
+        #   @param integration_thread_id [String]
         #   @param pre_resolved_contacts [HubspotSDK::Models::Conversations::PreResolvedContacts]
         #   @param rich_text [String]
 

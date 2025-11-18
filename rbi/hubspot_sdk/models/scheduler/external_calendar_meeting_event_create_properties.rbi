@@ -27,6 +27,9 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :hs_timestamp
 
+        sig { returns(String) }
+        attr_accessor :hubspot_owner_id
+
         sig { returns(T.nilable(String)) }
         attr_reader :hs_activity_type
 
@@ -69,12 +72,6 @@ module HubspotSDK
         sig { params(hs_meeting_location_type: String).void }
         attr_writer :hs_meeting_location_type
 
-        sig { returns(T.nilable(String)) }
-        attr_reader :hubspot_owner_id
-
-        sig { params(hubspot_owner_id: String).void }
-        attr_writer :hubspot_owner_id
-
         sig do
           params(
             hs_meeting_end_time: Time,
@@ -82,14 +79,14 @@ module HubspotSDK
             hs_meeting_start_time: Time,
             hs_meeting_title: String,
             hs_timestamp: Time,
+            hubspot_owner_id: String,
             hs_activity_type: String,
             hs_attachment_ids: T::Array[String],
             hs_attendee_owner_ids: T::Array[String],
             hs_internal_meeting_notes: String,
             hs_meeting_body: String,
             hs_meeting_location: String,
-            hs_meeting_location_type: String,
-            hubspot_owner_id: String
+            hs_meeting_location_type: String
           ).returns(T.attached_class)
         end
         def self.new(
@@ -98,14 +95,14 @@ module HubspotSDK
           hs_meeting_start_time:,
           hs_meeting_title:,
           hs_timestamp:,
+          hubspot_owner_id:,
           hs_activity_type: nil,
           hs_attachment_ids: nil,
           hs_attendee_owner_ids: nil,
           hs_internal_meeting_notes: nil,
           hs_meeting_body: nil,
           hs_meeting_location: nil,
-          hs_meeting_location_type: nil,
-          hubspot_owner_id: nil
+          hs_meeting_location_type: nil
         )
         end
 
@@ -117,14 +114,14 @@ module HubspotSDK
               hs_meeting_start_time: Time,
               hs_meeting_title: String,
               hs_timestamp: Time,
+              hubspot_owner_id: String,
               hs_activity_type: String,
               hs_attachment_ids: T::Array[String],
               hs_attendee_owner_ids: T::Array[String],
               hs_internal_meeting_notes: String,
               hs_meeting_body: String,
               hs_meeting_location: String,
-              hs_meeting_location_type: String,
-              hubspot_owner_id: String
+              hs_meeting_location_type: String
             }
           )
         end

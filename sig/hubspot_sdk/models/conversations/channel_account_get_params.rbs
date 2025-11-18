@@ -2,15 +2,25 @@ module HubspotSDK
   module Models
     module Conversations
       type channel_account_get_params =
-        {  } & HubspotSDK::Internal::Type::request_parameters
+        { archived: bool } & HubspotSDK::Internal::Type::request_parameters
 
       class ChannelAccountGetParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
-        def initialize: (?request_options: HubspotSDK::request_opts) -> void
+        attr_reader archived: bool?
 
-        def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+        def archived=: (bool) -> bool
+
+        def initialize: (
+          ?archived: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          archived: bool,
+          request_options: HubspotSDK::RequestOptions
+        }
       end
     end
   end

@@ -4,6 +4,7 @@ module HubspotSDK
       class Meetings
         class Calendar
           def create: (
+            organizer_user_id: String,
             associations: ::Array[HubspotSDK::Scheduler::ExternalAssociationCreateRequest],
             email_reminder_schedule: HubspotSDK::Scheduler::ExternalEmailReminderSchedule,
             properties: HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties,

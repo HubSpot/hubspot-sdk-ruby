@@ -4,14 +4,14 @@ module HubspotSDK
       class Hubdb
         class Tables
           def create: (
+            allow_child_tables: bool,
+            allow_public_api_access: bool,
+            columns: ::Array[HubspotSDK::Cms::ColumnRequest],
+            dynamic_meta_tags: ::Hash[Symbol, Integer],
+            enable_child_table_pages: bool,
             label: String,
             name: String,
-            ?allow_child_tables: bool,
-            ?allow_public_api_access: bool,
-            ?columns: ::Array[HubspotSDK::Cms::ColumnRequest],
-            ?dynamic_meta_tags: ::Hash[Symbol, Integer],
-            ?enable_child_table_pages: bool,
-            ?use_for_pages: bool,
+            use_for_pages: bool,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Cms::HubDBTableV3
 
@@ -122,17 +122,17 @@ module HubspotSDK
 
           def update_draft: (
             String table_id_or_name,
+            allow_child_tables: bool,
+            allow_public_api_access: bool,
+            columns: ::Array[HubspotSDK::Cms::ColumnRequest],
+            dynamic_meta_tags: ::Hash[Symbol, Integer],
+            enable_child_table_pages: bool,
             label: String,
             name: String,
+            use_for_pages: bool,
             ?archived: bool,
             ?include_foreign_ids: bool,
             ?is_get_localized_schema: bool,
-            ?allow_child_tables: bool,
-            ?allow_public_api_access: bool,
-            ?columns: ::Array[HubspotSDK::Cms::ColumnRequest],
-            ?dynamic_meta_tags: ::Hash[Symbol, Integer],
-            ?enable_child_table_pages: bool,
-            ?use_for_pages: bool,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Cms::HubDBTableV3
 

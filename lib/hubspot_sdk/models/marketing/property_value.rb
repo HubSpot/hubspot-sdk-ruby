@@ -4,16 +4,114 @@ module HubspotSDK
   module Models
     module Marketing
       class PropertyValue < HubspotSDK::Internal::Type::BaseModel
+        # @!attribute data_sensitivity
+        #   The sensitivity level of the property, such as "non_sensitive", "sensitive", and
+        #   "highly_sensitive".
+        #
+        #   @return [Symbol, HubspotSDK::Models::Marketing::PropertyValue::DataSensitivity]
+        required :data_sensitivity,
+                 enum: -> { HubspotSDK::Marketing::PropertyValue::DataSensitivity },
+                 api_name: :dataSensitivity
+
+        # @!attribute is_encrypted
+        #   Whether the property value is encrypted.
+        #
+        #   @return [Boolean]
+        required :is_encrypted, HubspotSDK::Internal::Type::Boolean, api_name: :isEncrypted
+
+        # @!attribute is_large_value
+        #
+        #   @return [Boolean]
+        required :is_large_value, HubspotSDK::Internal::Type::Boolean, api_name: :isLargeValue
+
         # @!attribute name
         #   Name of custom property
         #
         #   @return [String]
         required :name, String
 
+        # @!attribute persistence_timestamp
+        #
+        #   @return [Integer]
+        required :persistence_timestamp, Integer, api_name: :persistenceTimestamp
+
+        # @!attribute request_id
+        #   A unique ID associated with this request.
+        #
+        #   @return [String]
+        required :request_id, String, api_name: :requestId
+
+        # @!attribute selected_by_user
+        #   Whether the value was selected by a user.
+        #
+        #   @return [Boolean]
+        required :selected_by_user, HubspotSDK::Internal::Type::Boolean, api_name: :selectedByUser
+
+        # @!attribute selected_by_user_timestamp
+        #   The timestamp when the value was selected by a user, if applicable.
+        #
+        #   @return [Integer]
+        required :selected_by_user_timestamp, Integer, api_name: :selectedByUserTimestamp
+
+        # @!attribute source
+        #   The origin of the property value, such as "IMPORT" or "API".
+        #
+        #   @return [Symbol, HubspotSDK::Models::Marketing::PropertyValue::Source]
+        required :source, enum: -> { HubspotSDK::Marketing::PropertyValue::Source }
+
+        # @!attribute source_id
+        #   The ID of the property source indicating where it was created.
+        #
+        #   @return [String]
+        required :source_id, String, api_name: :sourceId
+
+        # @!attribute source_label
+        #   A human-readable label.
+        #
+        #   @return [String]
+        required :source_label, String, api_name: :sourceLabel
+
+        # @!attribute source_metadata
+        #   Source metadata encoded as a base64 string. For example: `ZXhhbXBsZSBzdHJpbmc=`
+        #
+        #   @return [String]
+        required :source_metadata, String, api_name: :sourceMetadata
+
         # @!attribute source_upstream_deployable
         #
         #   @return [String]
         required :source_upstream_deployable, String, api_name: :sourceUpstreamDeployable
+
+        # @!attribute source_vid
+        #   The unique identifier associated with the source.
+        #
+        #   @return [Array<Integer>]
+        required :source_vid, HubspotSDK::Internal::Type::ArrayOf[Integer], api_name: :sourceVid
+
+        # @!attribute timestamp
+        #   When the value was set, as a 64-bit integer.
+        #
+        #   @return [Integer]
+        required :timestamp, Integer
+
+        # @!attribute unit
+        #   The unit of measurement or context for the value.
+        #
+        #   @return [String]
+        required :unit, String
+
+        # @!attribute updated_by_user_id
+        #   The ID of the user who updated the property.
+        #
+        #   @return [Integer]
+        required :updated_by_user_id, Integer, api_name: :updatedByUserId
+
+        # @!attribute use_timestamp_as_persistence_timestamp
+        #
+        #   @return [Boolean]
+        required :use_timestamp_as_persistence_timestamp,
+                 HubspotSDK::Internal::Type::Boolean,
+                 api_name: :useTimestampAsPersistenceTimestamp
 
         # @!attribute value
         #   Custom property value
@@ -21,105 +119,7 @@ module HubspotSDK
         #   @return [String]
         required :value, String
 
-        # @!attribute data_sensitivity
-        #   The sensitivity level of the property, such as "non_sensitive", "sensitive", and
-        #   "highly_sensitive".
-        #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::PropertyValue::DataSensitivity, nil]
-        optional :data_sensitivity,
-                 enum: -> { HubspotSDK::Marketing::PropertyValue::DataSensitivity },
-                 api_name: :dataSensitivity
-
-        # @!attribute is_encrypted
-        #   Whether the property value is encrypted.
-        #
-        #   @return [Boolean, nil]
-        optional :is_encrypted, HubspotSDK::Internal::Type::Boolean, api_name: :isEncrypted
-
-        # @!attribute is_large_value
-        #
-        #   @return [Boolean, nil]
-        optional :is_large_value, HubspotSDK::Internal::Type::Boolean, api_name: :isLargeValue
-
-        # @!attribute persistence_timestamp
-        #
-        #   @return [Integer, nil]
-        optional :persistence_timestamp, Integer, api_name: :persistenceTimestamp
-
-        # @!attribute request_id
-        #   A unique ID associated with this request.
-        #
-        #   @return [String, nil]
-        optional :request_id, String, api_name: :requestId
-
-        # @!attribute selected_by_user
-        #   Whether the value was selected by a user.
-        #
-        #   @return [Boolean, nil]
-        optional :selected_by_user, HubspotSDK::Internal::Type::Boolean, api_name: :selectedByUser
-
-        # @!attribute selected_by_user_timestamp
-        #   The timestamp when the value was selected by a user, if applicable.
-        #
-        #   @return [Integer, nil]
-        optional :selected_by_user_timestamp, Integer, api_name: :selectedByUserTimestamp
-
-        # @!attribute source
-        #   The origin of the property value, such as "IMPORT" or "API".
-        #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::PropertyValue::Source, nil]
-        optional :source, enum: -> { HubspotSDK::Marketing::PropertyValue::Source }
-
-        # @!attribute source_id
-        #   The ID of the property source indicating where it was created.
-        #
-        #   @return [String, nil]
-        optional :source_id, String, api_name: :sourceId
-
-        # @!attribute source_label
-        #   A human-readable label.
-        #
-        #   @return [String, nil]
-        optional :source_label, String, api_name: :sourceLabel
-
-        # @!attribute source_metadata
-        #   Source metadata encoded as a base64 string. For example: `ZXhhbXBsZSBzdHJpbmc=`
-        #
-        #   @return [String, nil]
-        optional :source_metadata, String, api_name: :sourceMetadata
-
-        # @!attribute source_vid
-        #   The unique identifier associated with the source.
-        #
-        #   @return [Array<Integer>, nil]
-        optional :source_vid, HubspotSDK::Internal::Type::ArrayOf[Integer], api_name: :sourceVid
-
-        # @!attribute timestamp
-        #   When the value was set, as a 64-bit integer.
-        #
-        #   @return [Integer, nil]
-        optional :timestamp, Integer
-
-        # @!attribute unit
-        #   The unit of measurement or context for the value.
-        #
-        #   @return [String, nil]
-        optional :unit, String
-
-        # @!attribute updated_by_user_id
-        #   The ID of the user who updated the property.
-        #
-        #   @return [Integer, nil]
-        optional :updated_by_user_id, Integer, api_name: :updatedByUserId
-
-        # @!attribute use_timestamp_as_persistence_timestamp
-        #
-        #   @return [Boolean, nil]
-        optional :use_timestamp_as_persistence_timestamp,
-                 HubspotSDK::Internal::Type::Boolean,
-                 api_name: :useTimestampAsPersistenceTimestamp
-
-        # @!method initialize(name:, source_upstream_deployable:, value:, data_sensitivity: nil, is_encrypted: nil, is_large_value: nil, persistence_timestamp: nil, request_id: nil, selected_by_user: nil, selected_by_user_timestamp: nil, source: nil, source_id: nil, source_label: nil, source_metadata: nil, source_vid: nil, timestamp: nil, unit: nil, updated_by_user_id: nil, use_timestamp_as_persistence_timestamp: nil)
+        # @!method initialize(data_sensitivity:, is_encrypted:, is_large_value:, name:, persistence_timestamp:, request_id:, selected_by_user:, selected_by_user_timestamp:, source:, source_id:, source_label:, source_metadata:, source_upstream_deployable:, source_vid:, timestamp:, unit:, updated_by_user_id:, use_timestamp_as_persistence_timestamp:, value:)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Marketing::PropertyValue} for more details.
         #
@@ -127,17 +127,13 @@ module HubspotSDK
         #   value, metadata (like source, timestamp, and sensitivity), and related audit
         #   information for tracking changes.
         #
-        #   @param name [String] Name of custom property
-        #
-        #   @param source_upstream_deployable [String]
-        #
-        #   @param value [String] Custom property value
-        #
         #   @param data_sensitivity [Symbol, HubspotSDK::Models::Marketing::PropertyValue::DataSensitivity] The sensitivity level of the property, such as "non_sensitive", "sensitive", and
         #
         #   @param is_encrypted [Boolean] Whether the property value is encrypted.
         #
         #   @param is_large_value [Boolean]
+        #
+        #   @param name [String] Name of custom property
         #
         #   @param persistence_timestamp [Integer]
         #
@@ -155,6 +151,8 @@ module HubspotSDK
         #
         #   @param source_metadata [String] Source metadata encoded as a base64 string. For example: `ZXhhbXBsZSBzdHJpbmc=`
         #
+        #   @param source_upstream_deployable [String]
+        #
         #   @param source_vid [Array<Integer>] The unique identifier associated with the source.
         #
         #   @param timestamp [Integer] When the value was set, as a 64-bit integer.
@@ -164,6 +162,8 @@ module HubspotSDK
         #   @param updated_by_user_id [Integer] The ID of the user who updated the property.
         #
         #   @param use_timestamp_as_persistence_timestamp [Boolean]
+        #
+        #   @param value [String] Custom property value
 
         # The sensitivity level of the property, such as "non_sensitive", "sensitive", and
         # "highly_sensitive".

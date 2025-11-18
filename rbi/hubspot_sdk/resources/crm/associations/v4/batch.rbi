@@ -21,9 +21,9 @@ module HubspotSDK
               )
             end
             def create(
-              # Path param:
+              # Path param: The type of the to Object
               to_object_type,
-              # Path param:
+              # Path param: The type of the from Object
               from_object_type:,
               # Body param:
               inputs:,
@@ -41,12 +41,14 @@ module HubspotSDK
                     HubspotSDK::Crm::Associations::PublicAssociationMultiArchive::OrHash
                   ],
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::Crm::Associations::BatchResponseVoid)
+              ).returns(HubspotSDK::Crm::BatchResponseVoid)
             end
             def delete(
-              # Path param:
+              # Path param: Specifies the type of the target object in the batch association
+              # deletion.
               to_object_type,
-              # Path param:
+              # Path param: Specifies the type of the source object in the batch association
+              # deletion.
               from_object_type:,
               # Body param:
               inputs:,
@@ -67,9 +69,9 @@ module HubspotSDK
               ).returns(HubspotSDK::Crm::BatchResponsePublicDefaultAssociation)
             end
             def create_default(
-              # Path param:
+              # Path param: Specifies the type of the target object in the association.
               to_object_type,
-              # Path param:
+              # Path param: Specifies the type of the source object in the association.
               from_object_type:,
               # Body param:
               inputs:,
@@ -88,12 +90,12 @@ module HubspotSDK
                     HubspotSDK::Crm::Associations::PublicAssociationMultiPost::OrHash
                   ],
                 request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::Crm::Associations::BatchResponseVoid)
+              ).returns(HubspotSDK::Crm::BatchResponseVoid)
             end
             def delete_labels(
-              # Path param:
+              # Path param: The type of the to Object
               to_object_type,
-              # Path param:
+              # Path param: The type of the from Object
               from_object_type:,
               # Body param:
               inputs:,
@@ -120,11 +122,31 @@ module HubspotSDK
               )
             end
             def get(
-              # Path param:
+              # Path param: The type of the to Object
               to_object_type,
-              # Path param:
+              # Path param: The type of the from Object
               from_object_type:,
               # Body param:
+              inputs:,
+              request_options: {}
+            )
+            end
+
+            # Upsert a batch of CRM objects, creating new records or updating existing ones
+            # based on their internal IDs or unique property values.
+            sig do
+              params(
+                object_type: String,
+                inputs:
+                  T::Array[
+                    HubspotSDK::Crm::SimplePublicObjectBatchInputUpsert::OrHash
+                  ],
+                request_options: HubspotSDK::RequestOptions::OrHash
+              ).returns(HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject)
+            end
+            def upsert(
+              # Specifies the type of CRM object to upsert in the batch operation.
+              object_type,
               inputs:,
               request_options: {}
             )

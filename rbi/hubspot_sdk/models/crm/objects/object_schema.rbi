@@ -3,6 +3,8 @@
 module HubspotSDK
   module Models
     module Crm
+      ObjectSchema = Objects::ObjectSchema
+
       module Objects
         class ObjectSchema < HubspotSDK::Internal::Type::BaseModel
           OrHash =

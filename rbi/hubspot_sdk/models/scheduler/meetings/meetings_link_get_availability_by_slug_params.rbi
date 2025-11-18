@@ -16,16 +16,41 @@ module HubspotSDK
               )
             end
 
+          # Return times in response based on specified time zone.
+          sig { returns(String) }
+          attr_accessor :timezone
+
+          # Get times for a different month.
+          sig { returns(T.nilable(Integer)) }
+          attr_reader :month_offset
+
+          sig { params(month_offset: Integer).void }
+          attr_writer :month_offset
+
           sig do
-            params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-              T.attached_class
-            )
+            params(
+              timezone: String,
+              month_offset: Integer,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(T.attached_class)
           end
-          def self.new(request_options: {})
+          def self.new(
+            # Return times in response based on specified time zone.
+            timezone:,
+            # Get times for a different month.
+            month_offset: nil,
+            request_options: {}
+          )
           end
 
           sig do
-            override.returns({ request_options: HubspotSDK::RequestOptions })
+            override.returns(
+              {
+                timezone: String,
+                month_offset: Integer,
+                request_options: HubspotSDK::RequestOptions
+              }
+            )
           end
           def to_hash
           end

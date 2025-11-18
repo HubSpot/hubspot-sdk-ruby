@@ -16,12 +16,12 @@ module HubspotSDK
               )
             end
 
-          sig { returns(String) }
+          sig { returns(Integer) }
           attr_accessor :app_id
 
           sig do
             params(
-              app_id: String,
+              app_id: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
@@ -30,7 +30,7 @@ module HubspotSDK
 
           sig do
             override.returns(
-              { app_id: String, request_options: HubspotSDK::RequestOptions }
+              { app_id: Integer, request_options: HubspotSDK::RequestOptions }
             )
           end
           def to_hash

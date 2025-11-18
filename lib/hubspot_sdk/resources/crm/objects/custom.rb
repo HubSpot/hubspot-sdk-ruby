@@ -12,13 +12,13 @@ module HubspotSDK
           # including the ID. Documentation and examples for creating standard objects is
           # provided.
           #
-          # @overload create(object_type, properties:, associations: nil, request_options: {})
+          # @overload create(object_type, associations:, properties:, request_options: {})
           #
           # @param object_type [String]
           #
-          # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
-          #
           # @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
+          #
+          # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -186,13 +186,19 @@ module HubspotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Crm::Objects::CustomMergeParams} for more details.
+          #
           # Merge two objects with same type
           #
           # @overload merge(object_type, object_id_to_merge:, primary_object_id:, request_options: {})
           #
           # @param object_type [String]
-          # @param object_id_to_merge [String]
-          # @param primary_object_id [String]
+          #
+          # @param object_id_to_merge [String] The unique identifier of the CRM object that will be merged into the primary obj
+          #
+          # @param primary_object_id [String] The unique identifier of the CRM object that will remain after the merge.
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::SimplePublicObject]
@@ -209,7 +215,7 @@ module HubspotSDK
             )
           end
 
-          # @overload search(object_type, after: nil, filter_groups: nil, limit: nil, properties: nil, query: nil, sorts: nil, request_options: {})
+          # @overload search(object_type, after:, filter_groups:, limit:, properties:, sorts:, query: nil, request_options: {})
           #
           # @param object_type [String]
           #
@@ -221,16 +227,16 @@ module HubspotSDK
           #
           # @param properties [Array<String>] A list of property names to include in the response.
           #
-          # @param query [String] The search query string, up to 3000 characters.
-          #
           # @param sorts [Array<String>] Specifies sorting order based on object properties.
+          #
+          # @param query [String] The search query string, up to 3000 characters.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
           #
           # @see HubspotSDK::Models::Crm::Objects::CustomSearchParams
-          def search(object_type, params = {})
+          def search(object_type, params)
             parsed, options = HubspotSDK::Crm::Objects::CustomSearchParams.dump_request(params)
             @client.request(
               method: :post,

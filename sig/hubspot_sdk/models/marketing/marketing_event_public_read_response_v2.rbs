@@ -1,5 +1,7 @@
 module HubspotSDK
   module Models
+    class MarketingEventPublicReadResponseV2 = Marketing::MarketingEventPublicReadResponseV2
+
     module Marketing
       type marketing_event_public_read_response_v2 =
         {

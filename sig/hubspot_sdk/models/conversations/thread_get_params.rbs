@@ -2,15 +2,54 @@ module HubspotSDK
   module Models
     module Conversations
       type thread_get_params =
-        {  } & HubspotSDK::Internal::Type::request_parameters
+        {
+          archived: bool,
+          association: ::Array[HubspotSDK::Models::Conversations::ThreadGetParams::association],
+          property: String
+        }
+        & HubspotSDK::Internal::Type::request_parameters
 
       class ThreadGetParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
-        def initialize: (?request_options: HubspotSDK::request_opts) -> void
+        attr_reader archived: bool?
 
-        def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+        def archived=: (bool) -> bool
+
+        attr_reader association: ::Array[HubspotSDK::Models::Conversations::ThreadGetParams::association]?
+
+        def association=: (
+          ::Array[HubspotSDK::Models::Conversations::ThreadGetParams::association]
+        ) -> ::Array[HubspotSDK::Models::Conversations::ThreadGetParams::association]
+
+        attr_reader property: String?
+
+        def property=: (String) -> String
+
+        def initialize: (
+          ?archived: bool,
+          ?association: ::Array[HubspotSDK::Models::Conversations::ThreadGetParams::association],
+          ?property: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          archived: bool,
+          association: ::Array[HubspotSDK::Models::Conversations::ThreadGetParams::association],
+          property: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+
+        type association = :TICKET
+
+        module Association
+          extend HubspotSDK::Internal::Type::Enum
+
+          TICKET: :TICKET
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::ThreadGetParams::association]
+        end
       end
     end
   end

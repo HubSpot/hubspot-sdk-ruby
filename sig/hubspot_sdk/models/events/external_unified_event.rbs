@@ -22,9 +22,7 @@ module HubspotSDK
 
         attr_accessor occurred_at: Time
 
-        attr_reader properties: ::Hash[Symbol, String]?
-
-        def properties=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
+        attr_accessor properties: ::Hash[Symbol, String]
 
         def initialize: (
           id: String,
@@ -32,7 +30,7 @@ module HubspotSDK
           object_id_: String,
           object_type: String,
           occurred_at: Time,
-          ?properties: ::Hash[Symbol, String]
+          properties: ::Hash[Symbol, String]
         ) -> void
 
         def to_hash: -> {

@@ -14,8 +14,14 @@ module HubspotSDK
           #   @return [String]
           required :object_type, String
 
-          # @!method initialize(object_type:, request_options: {})
+          # @!attribute locale
+          #
+          #   @return [String, nil]
+          optional :locale, String
+
+          # @!method initialize(object_type:, locale: nil, request_options: {})
           #   @param object_type [String]
+          #   @param locale [String]
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end

@@ -69,5 +69,7 @@ module HubspotSDK
         #   @param start_date_time [Time]
       end
     end
+
+    MarketingEventPublicUpdateRequestFullV2 = Marketing::MarketingEventPublicUpdateRequestFullV2
   end
 end

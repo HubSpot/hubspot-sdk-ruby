@@ -229,6 +229,8 @@ module HubspotSDK
           end
         end
       end
+
+      ObjectTypePropertyCreate = Objects::ObjectTypePropertyCreate
     end
   end
 end

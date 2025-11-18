@@ -23,6 +23,7 @@ module HubspotSDK
         sig { returns(T::Array[String]) }
         attr_accessor :properties_with_history
 
+        # A unique property used to identify objects instead of the default ID.
         sig { returns(T.nilable(String)) }
         attr_reader :id_property
 
@@ -46,6 +47,7 @@ module HubspotSDK
           properties:,
           # Key-value pairs for setting properties for the new object and their histories.
           properties_with_history:,
+          # A unique property used to identify objects instead of the default ID.
           id_property: nil
         )
         end

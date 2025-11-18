@@ -4,21 +4,35 @@ module HubspotSDK
   module Resources
     class Conversations
       class Channels
+        # Some parameter documentations has been truncated, see
+        # {HubspotSDK::Models::Conversations::ChannelListParams} for more details.
+        #
         # Retrieve a list of channels, with optional filters and sorting.
         #
-        # @overload list(request_options: {})
+        # @overload list(after: nil, default_page_length: nil, limit: nil, sort: nil, request_options: {})
+        #
+        # @param after [String] The paging cursor token of the last successfully read resource will be returned
+        #
+        # @param default_page_length [Integer] The default number of results to display per page.
+        #
+        # @param limit [Integer] The maximum number of results to display per page.
+        #
+        # @param sort [Array<String>] Specify the sort order for the channels.
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Conversations::CollectionResponseWithTotalPublicChannelForwardPaging]
+        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Conversations::PublicChannel>]
         #
         # @see HubspotSDK::Models::Conversations::ChannelListParams
         def list(params = {})
+          parsed, options = HubspotSDK::Conversations::ChannelListParams.dump_request(params)
           @client.request(
             method: :get,
             path: "conversations/v3/conversations/channels",
-            model: HubspotSDK::Conversations::CollectionResponseWithTotalPublicChannelForwardPaging,
-            options: params[:request_options]
+            query: parsed.transform_keys(default_page_length: "defaultPageLength"),
+            page: HubspotSDK::Internal::Page,
+            model: HubspotSDK::Conversations::PublicChannel,
+            options: options
           )
         end
 
@@ -26,7 +40,8 @@ module HubspotSDK
         #
         # @overload get(channel_id, request_options: {})
         #
-        # @param channel_id [String]
+        # @param channel_id [Integer] The unique ID of the channel.
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Conversations::PublicChannel]

@@ -16,16 +16,25 @@ module HubspotSDK
               )
             end
 
+          sig { returns(String) }
+          attr_accessor :organizer_user_id
+
           sig do
-            params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-              T.attached_class
-            )
+            params(
+              organizer_user_id: String,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(T.attached_class)
           end
-          def self.new(request_options: {})
+          def self.new(organizer_user_id:, request_options: {})
           end
 
           sig do
-            override.returns({ request_options: HubspotSDK::RequestOptions })
+            override.returns(
+              {
+                organizer_user_id: String,
+                request_options: HubspotSDK::RequestOptions
+              }
+            )
           end
           def to_hash
           end

@@ -5,59 +5,16 @@ module HubspotSDK
     module Marketing
       # @see HubspotSDK::Resources::Marketing::Emails#create
       class PublicEmail < HubspotSDK::Internal::Type::BaseModel
+        # @!attribute is_ab
+        #
+        #   @return [Boolean]
+        required :is_ab, HubspotSDK::Internal::Type::Boolean, api_name: :isAb
+
         # @!attribute id
         #   The email ID.
         #
-        #   @return [String]
-        required :id, String
-
-        # @!attribute content
-        #   Data structure representing the content of the email.
-        #
-        #   @return [HubspotSDK::Models::Marketing::PublicEmailContent]
-        required :content, -> { HubspotSDK::Marketing::PublicEmailContent }
-
-        # @!attribute from
-        #   Data structure representing the from fields on the email.
-        #
-        #   @return [HubspotSDK::Models::Marketing::PublicEmailFromDetails]
-        required :from, -> { HubspotSDK::Marketing::PublicEmailFromDetails }
-
-        # @!attribute name
-        #   The name of the email, as displayed on the email dashboard.
-        #
-        #   @return [String]
-        required :name, String
-
-        # @!attribute send_on_publish
-        #   Determines whether the email will be sent immediately on publish.
-        #
-        #   @return [Boolean]
-        required :send_on_publish, HubspotSDK::Internal::Type::Boolean, api_name: :sendOnPublish
-
-        # @!attribute state
-        #   The email state.
-        #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::PublicEmail::State]
-        required :state, enum: -> { HubspotSDK::Marketing::PublicEmail::State }
-
-        # @!attribute subcategory
-        #   The email subcategory.
-        #
-        #   @return [String]
-        required :subcategory, String
-
-        # @!attribute subject
-        #   The subject of the email.
-        #
-        #   @return [String]
-        required :subject, String
-
-        # @!attribute to
-        #   Data structure representing the to fields of the email.
-        #
-        #   @return [HubspotSDK::Models::Marketing::PublicEmailToDetails]
-        required :to, -> { HubspotSDK::Marketing::PublicEmailToDetails }
+        #   @return [String, nil]
+        optional :id, String
 
         # @!attribute active_domain
         #   The active domain of the email.
@@ -107,6 +64,12 @@ module HubspotSDK
         #   @return [String, nil]
         optional :cloned_from, String, api_name: :clonedFrom
 
+        # @!attribute content
+        #   Data structure representing the content of the email.
+        #
+        #   @return [HubspotSDK::Models::Marketing::PublicEmailContent, nil]
+        optional :content, -> { HubspotSDK::Marketing::PublicEmailContent }
+
         # @!attribute created_at
         #   The date and time of the email's creation, in ISO8601 representation.
         #
@@ -153,10 +116,11 @@ module HubspotSDK
         #   @return [Integer, nil]
         optional :folder_id_v2, Integer, api_name: :folderIdV2
 
-        # @!attribute is_ab
+        # @!attribute from
+        #   Data structure representing the from fields on the email.
         #
-        #   @return [Boolean, nil]
-        optional :is_ab, HubspotSDK::Internal::Type::Boolean, api_name: :isAb
+        #   @return [HubspotSDK::Models::Marketing::PublicEmailFromDetails, nil]
+        optional :from, -> { HubspotSDK::Marketing::PublicEmailFromDetails }
 
         # @!attribute is_published
         #   Returns the published status of the email. This is read only.
@@ -179,6 +143,12 @@ module HubspotSDK
         #
         #   @return [Symbol, HubspotSDK::Models::Marketing::PublicEmail::Language, nil]
         optional :language, enum: -> { HubspotSDK::Marketing::PublicEmail::Language }
+
+        # @!attribute name
+        #   The name of the email, as displayed on the email dashboard.
+        #
+        #   @return [String, nil]
+        optional :name, String
 
         # @!attribute preview_key
         #
@@ -227,10 +197,34 @@ module HubspotSDK
         #   @return [HubspotSDK::Models::Marketing::PublicRssEmailDetails, nil]
         optional :rss_data, -> { HubspotSDK::Marketing::PublicRssEmailDetails }, api_name: :rssData
 
+        # @!attribute send_on_publish
+        #   Determines whether the email will be sent immediately on publish.
+        #
+        #   @return [Boolean, nil]
+        optional :send_on_publish, HubspotSDK::Internal::Type::Boolean, api_name: :sendOnPublish
+
+        # @!attribute state
+        #   The email state.
+        #
+        #   @return [Symbol, HubspotSDK::Models::Marketing::PublicEmail::State, nil]
+        optional :state, enum: -> { HubspotSDK::Marketing::PublicEmail::State }
+
         # @!attribute stats
         #
         #   @return [HubspotSDK::Models::Marketing::EmailStatisticsData, nil]
         optional :stats, -> { HubspotSDK::Marketing::EmailStatisticsData }
+
+        # @!attribute subcategory
+        #   The email subcategory.
+        #
+        #   @return [String, nil]
+        optional :subcategory, String
+
+        # @!attribute subject
+        #   The subject of the email.
+        #
+        #   @return [String, nil]
+        optional :subject, String
 
         # @!attribute subscription_details
         #   Data structure representing the subscription fields of the email.
@@ -250,6 +244,12 @@ module HubspotSDK
         #
         #   @return [HubspotSDK::Models::Marketing::PublicEmailTestingDetails, nil]
         optional :testing, -> { HubspotSDK::Marketing::PublicEmailTestingDetails }
+
+        # @!attribute to
+        #   Data structure representing the to fields of the email.
+        #
+        #   @return [HubspotSDK::Models::Marketing::PublicEmailToDetails, nil]
+        optional :to, -> { HubspotSDK::Marketing::PublicEmailToDetails }
 
         # @!attribute type
         #   The email type, this is derived from other properties on the email such as
@@ -291,29 +291,15 @@ module HubspotSDK
         #   @return [Array<String>, nil]
         optional :workflow_names, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :workflowNames
 
-        # @!method initialize(id:, content:, from:, name:, send_on_publish:, state:, subcategory:, subject:, to:, active_domain: nil, all_email_campaign_ids: nil, archived: nil, business_unit_id: nil, campaign: nil, campaign_name: nil, campaign_utm: nil, cloned_from: nil, created_at: nil, created_by_id: nil, deleted_at: nil, email_campaign_group_id: nil, email_template_mode: nil, feedback_survey_id: nil, folder_id: nil, folder_id_v2: nil, is_ab: nil, is_published: nil, is_transactional: nil, jitter_send_time: nil, language: nil, preview_key: nil, primary_email_campaign_id: nil, publish_date: nil, published_at: nil, published_by_email: nil, published_by_id: nil, published_by_name: nil, rss_data: nil, stats: nil, subscription_details: nil, teams_with_access: nil, testing: nil, type: nil, unpublished_at: nil, updated_at: nil, updated_by_id: nil, users_with_access: nil, webversion: nil, workflow_names: nil)
+        # @!method initialize(is_ab:, id: nil, active_domain: nil, all_email_campaign_ids: nil, archived: nil, business_unit_id: nil, campaign: nil, campaign_name: nil, campaign_utm: nil, cloned_from: nil, content: nil, created_at: nil, created_by_id: nil, deleted_at: nil, email_campaign_group_id: nil, email_template_mode: nil, feedback_survey_id: nil, folder_id: nil, folder_id_v2: nil, from: nil, is_published: nil, is_transactional: nil, jitter_send_time: nil, language: nil, name: nil, preview_key: nil, primary_email_campaign_id: nil, publish_date: nil, published_at: nil, published_by_email: nil, published_by_id: nil, published_by_name: nil, rss_data: nil, send_on_publish: nil, state: nil, stats: nil, subcategory: nil, subject: nil, subscription_details: nil, teams_with_access: nil, testing: nil, to: nil, type: nil, unpublished_at: nil, updated_at: nil, updated_by_id: nil, users_with_access: nil, webversion: nil, workflow_names: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Marketing::PublicEmail} for more details.
         #
         #   A marketing email
         #
+        #   @param is_ab [Boolean]
+        #
         #   @param id [String] The email ID.
-        #
-        #   @param content [HubspotSDK::Models::Marketing::PublicEmailContent] Data structure representing the content of the email.
-        #
-        #   @param from [HubspotSDK::Models::Marketing::PublicEmailFromDetails] Data structure representing the from fields on the email.
-        #
-        #   @param name [String] The name of the email, as displayed on the email dashboard.
-        #
-        #   @param send_on_publish [Boolean] Determines whether the email will be sent immediately on publish.
-        #
-        #   @param state [Symbol, HubspotSDK::Models::Marketing::PublicEmail::State] The email state.
-        #
-        #   @param subcategory [String] The email subcategory.
-        #
-        #   @param subject [String] The subject of the email.
-        #
-        #   @param to [HubspotSDK::Models::Marketing::PublicEmailToDetails] Data structure representing the to fields of the email.
         #
         #   @param active_domain [String] The active domain of the email.
         #
@@ -331,6 +317,8 @@ module HubspotSDK
         #
         #   @param cloned_from [String] The ID of the email this email was cloned from.
         #
+        #   @param content [HubspotSDK::Models::Marketing::PublicEmailContent] Data structure representing the content of the email.
+        #
         #   @param created_at [Time] The date and time of the email's creation, in ISO8601 representation.
         #
         #   @param created_by_id [String] The id of the user who created the email.
@@ -347,7 +335,7 @@ module HubspotSDK
         #
         #   @param folder_id_v2 [Integer]
         #
-        #   @param is_ab [Boolean]
+        #   @param from [HubspotSDK::Models::Marketing::PublicEmailFromDetails] Data structure representing the from fields on the email.
         #
         #   @param is_published [Boolean] Returns the published status of the email. This is read only.
         #
@@ -356,6 +344,8 @@ module HubspotSDK
         #   @param jitter_send_time [Boolean]
         #
         #   @param language [Symbol, HubspotSDK::Models::Marketing::PublicEmail::Language]
+        #
+        #   @param name [String] The name of the email, as displayed on the email dashboard.
         #
         #   @param preview_key [String]
         #
@@ -373,13 +363,23 @@ module HubspotSDK
         #
         #   @param rss_data [HubspotSDK::Models::Marketing::PublicRssEmailDetails] RSS related data if it is a blog or rss email.
         #
+        #   @param send_on_publish [Boolean] Determines whether the email will be sent immediately on publish.
+        #
+        #   @param state [Symbol, HubspotSDK::Models::Marketing::PublicEmail::State] The email state.
+        #
         #   @param stats [HubspotSDK::Models::Marketing::EmailStatisticsData]
+        #
+        #   @param subcategory [String] The email subcategory.
+        #
+        #   @param subject [String] The subject of the email.
         #
         #   @param subscription_details [HubspotSDK::Models::Marketing::PublicEmailSubscriptionDetails] Data structure representing the subscription fields of the email.
         #
         #   @param teams_with_access [Array<String>]
         #
         #   @param testing [HubspotSDK::Models::Marketing::PublicEmailTestingDetails] AB testing related data. This property is only returned for AB type emails.
+        #
+        #   @param to [HubspotSDK::Models::Marketing::PublicEmailToDetails] Data structure representing the to fields of the email.
         #
         #   @param type [Symbol, HubspotSDK::Models::Marketing::PublicEmail::Type] The email type, this is derived from other properties on the email such as subca
         #
@@ -394,49 +394,6 @@ module HubspotSDK
         #   @param webversion [HubspotSDK::Models::Marketing::PublicWebversionDetails]
         #
         #   @param workflow_names [Array<String>] Names of workflows in which the email is used within a "send email" action.
-
-        # The email state.
-        #
-        # @see HubspotSDK::Models::Marketing::PublicEmail#state
-        module State
-          extend HubspotSDK::Internal::Type::Enum
-
-          AUTOMATED = :AUTOMATED
-          AUTOMATED_DRAFT = :AUTOMATED_DRAFT
-          AUTOMATED_SENDING = :AUTOMATED_SENDING
-          AUTOMATED_FOR_FORM = :AUTOMATED_FOR_FORM
-          AUTOMATED_FOR_FORM_BUFFER = :AUTOMATED_FOR_FORM_BUFFER
-          AUTOMATED_FOR_FORM_DRAFT = :AUTOMATED_FOR_FORM_DRAFT
-          AUTOMATED_FOR_FORM_LEGACY = :AUTOMATED_FOR_FORM_LEGACY
-          BLOG_EMAIL_DRAFT = :BLOG_EMAIL_DRAFT
-          BLOG_EMAIL_PUBLISHED = :BLOG_EMAIL_PUBLISHED
-          DRAFT = :DRAFT
-          DRAFT_AB = :DRAFT_AB
-          DRAFT_AB_VARIANT = :DRAFT_AB_VARIANT
-          ERROR = :ERROR
-          LOSER_AB_VARIANT = :LOSER_AB_VARIANT
-          PAGE_STUB = :PAGE_STUB
-          PRE_PROCESSING = :PRE_PROCESSING
-          PROCESSING = :PROCESSING
-          PUBLISHED = :PUBLISHED
-          PUBLISHED_AB = :PUBLISHED_AB
-          PUBLISHED_AB_VARIANT = :PUBLISHED_AB_VARIANT
-          PUBLISHED_OR_SCHEDULED = :PUBLISHED_OR_SCHEDULED
-          RSS_TO_EMAIL_DRAFT = :RSS_TO_EMAIL_DRAFT
-          RSS_TO_EMAIL_PUBLISHED = :RSS_TO_EMAIL_PUBLISHED
-          SCHEDULED = :SCHEDULED
-          SCHEDULED_AB = :SCHEDULED_AB
-          SCHEDULED_OR_PUBLISHED = :SCHEDULED_OR_PUBLISHED
-          AUTOMATED_AB = :AUTOMATED_AB
-          AUTOMATED_AB_VARIANT = :AUTOMATED_AB_VARIANT
-          AUTOMATED_DRAFT_AB = :AUTOMATED_DRAFT_AB
-          AUTOMATED_DRAFT_ABVARIANT = :AUTOMATED_DRAFT_ABVARIANT
-          AUTOMATED_LOSER_ABVARIANT = :AUTOMATED_LOSER_ABVARIANT
-          AGENT_GENERATED = :AGENT_GENERATED
-
-          # @!method self.values
-          #   @return [Array<Symbol>]
-        end
 
         # @see HubspotSDK::Models::Marketing::PublicEmail#email_template_mode
         module EmailTemplateMode
@@ -1244,6 +1201,49 @@ module HubspotSDK
           ZH_TW = :"zh-tw"
           ZU = :zu
           ZU_ZA = :"zu-za"
+
+          # @!method self.values
+          #   @return [Array<Symbol>]
+        end
+
+        # The email state.
+        #
+        # @see HubspotSDK::Models::Marketing::PublicEmail#state
+        module State
+          extend HubspotSDK::Internal::Type::Enum
+
+          AUTOMATED = :AUTOMATED
+          AUTOMATED_DRAFT = :AUTOMATED_DRAFT
+          AUTOMATED_SENDING = :AUTOMATED_SENDING
+          AUTOMATED_FOR_FORM = :AUTOMATED_FOR_FORM
+          AUTOMATED_FOR_FORM_BUFFER = :AUTOMATED_FOR_FORM_BUFFER
+          AUTOMATED_FOR_FORM_DRAFT = :AUTOMATED_FOR_FORM_DRAFT
+          AUTOMATED_FOR_FORM_LEGACY = :AUTOMATED_FOR_FORM_LEGACY
+          BLOG_EMAIL_DRAFT = :BLOG_EMAIL_DRAFT
+          BLOG_EMAIL_PUBLISHED = :BLOG_EMAIL_PUBLISHED
+          DRAFT = :DRAFT
+          DRAFT_AB = :DRAFT_AB
+          DRAFT_AB_VARIANT = :DRAFT_AB_VARIANT
+          ERROR = :ERROR
+          LOSER_AB_VARIANT = :LOSER_AB_VARIANT
+          PAGE_STUB = :PAGE_STUB
+          PRE_PROCESSING = :PRE_PROCESSING
+          PROCESSING = :PROCESSING
+          PUBLISHED = :PUBLISHED
+          PUBLISHED_AB = :PUBLISHED_AB
+          PUBLISHED_AB_VARIANT = :PUBLISHED_AB_VARIANT
+          PUBLISHED_OR_SCHEDULED = :PUBLISHED_OR_SCHEDULED
+          RSS_TO_EMAIL_DRAFT = :RSS_TO_EMAIL_DRAFT
+          RSS_TO_EMAIL_PUBLISHED = :RSS_TO_EMAIL_PUBLISHED
+          SCHEDULED = :SCHEDULED
+          SCHEDULED_AB = :SCHEDULED_AB
+          SCHEDULED_OR_PUBLISHED = :SCHEDULED_OR_PUBLISHED
+          AUTOMATED_AB = :AUTOMATED_AB
+          AUTOMATED_AB_VARIANT = :AUTOMATED_AB_VARIANT
+          AUTOMATED_DRAFT_AB = :AUTOMATED_DRAFT_AB
+          AUTOMATED_DRAFT_ABVARIANT = :AUTOMATED_DRAFT_ABVARIANT
+          AUTOMATED_LOSER_ABVARIANT = :AUTOMATED_LOSER_ABVARIANT
+          AGENT_GENERATED = :AGENT_GENERATED
 
           # @!method self.values
           #   @return [Array<Symbol>]

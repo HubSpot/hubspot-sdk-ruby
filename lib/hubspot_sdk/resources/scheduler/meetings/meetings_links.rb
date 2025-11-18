@@ -5,21 +5,38 @@ module HubspotSDK
     class Scheduler
       class Meetings
         class MeetingsLinks
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Scheduler::Meetings::MeetingsLinkListParams} for more
+          # details.
+          #
           # Get a paged list meeting scheduling pages
           #
-          # @overload list(request_options: {})
+          # @overload list(after: nil, limit: nil, name: nil, organizer_user_id: nil, type: nil, request_options: {})
+          #
+          # @param after [String] The paging cursor token of the last successfully read resource will be returned
+          #
+          # @param limit [Integer] The maximum number of results to display per page.
+          #
+          # @param name [String] Retrieve scheduling pages with a specified name.
+          #
+          # @param organizer_user_id [String] Filter the response to scheduling pages created by the specified user.
+          #
+          # @param type [String] Filter the response to the specific type of meeting.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Scheduler::CollectionResponseWithTotalExternalLinkMetadataForwardPaging]
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Scheduler::ExternalLinkMetadata>]
           #
           # @see HubspotSDK::Models::Scheduler::Meetings::MeetingsLinkListParams
           def list(params = {})
+            parsed, options = HubspotSDK::Scheduler::Meetings::MeetingsLinkListParams.dump_request(params)
             @client.request(
               method: :get,
               path: "scheduler/v3/meetings/meeting-links",
-              model: HubspotSDK::Scheduler::CollectionResponseWithTotalExternalLinkMetadataForwardPaging,
-              options: params[:request_options]
+              query: parsed.transform_keys(organizer_user_id: "organizerUserId"),
+              page: HubspotSDK::Internal::Page,
+              model: HubspotSDK::Scheduler::ExternalLinkMetadata,
+              options: options
             )
           end
 
@@ -56,39 +73,53 @@ module HubspotSDK
 
           # Get the next availability times for a meeting page.
           #
-          # @overload get_availability_by_slug(slug, request_options: {})
+          # @overload get_availability_by_slug(slug, timezone:, month_offset: nil, request_options: {})
           #
-          # @param slug [String]
+          # @param slug [String] The path for the meeting page that you want the available times for.
+          #
+          # @param timezone [String] Return times in response based on specified time zone.
+          #
+          # @param month_offset [Integer] Get times for a different month.
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Scheduler::ExternalLinkAvailabilityAndBusyTimes]
           #
           # @see HubspotSDK::Models::Scheduler::Meetings::MeetingsLinkGetAvailabilityBySlugParams
-          def get_availability_by_slug(slug, params = {})
+          def get_availability_by_slug(slug, params)
+            parsed, options =
+              HubspotSDK::Scheduler::Meetings::MeetingsLinkGetAvailabilityBySlugParams.dump_request(params)
             @client.request(
               method: :get,
               path: ["scheduler/v3/meetings/meeting-links/book/availability-page/%1$s", slug],
+              query: parsed.transform_keys(month_offset: "monthOffset"),
               model: HubspotSDK::Scheduler::ExternalLinkAvailabilityAndBusyTimes,
-              options: params[:request_options]
+              options: options
             )
           end
 
           # Get details about the initial information necessary for a meeting scheduler.
           #
-          # @overload get_booking_info_by_slug(slug, request_options: {})
+          # @overload get_booking_info_by_slug(slug, timezone:, request_options: {})
           #
-          # @param slug [String]
+          # @param slug [String] The path to the scheduling page that you want the information for.
+          #
+          # @param timezone [String] Return times in response based on specified time zone.
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Scheduler::ExternalBookingInfo]
           #
           # @see HubspotSDK::Models::Scheduler::Meetings::MeetingsLinkGetBookingInfoBySlugParams
-          def get_booking_info_by_slug(slug, params = {})
+          def get_booking_info_by_slug(slug, params)
+            parsed, options =
+              HubspotSDK::Scheduler::Meetings::MeetingsLinkGetBookingInfoBySlugParams.dump_request(params)
             @client.request(
               method: :get,
               path: ["scheduler/v3/meetings/meeting-links/book/%1$s", slug],
+              query: parsed,
               model: HubspotSDK::Scheduler::ExternalBookingInfo,
-              options: params[:request_options]
+              options: options
             )
           end
 

@@ -12,21 +12,27 @@ module HubspotSDK
             )
           end
 
+        # The maximum allowed count for the object type.
         sig { returns(Integer) }
         attr_accessor :limit
 
+        # The unique identifier for the object type.
         sig { returns(String) }
         attr_accessor :object_type_id
 
+        # The percentage of the limit that has been used.
         sig { returns(Float) }
         attr_accessor :percentage
 
+        # The plural label for the object type.
         sig { returns(String) }
         attr_accessor :plural_label
 
+        # The singular label for the object type.
         sig { returns(String) }
         attr_accessor :singular_label
 
+        # The current usage count for the object type.
         sig { returns(Integer) }
         attr_accessor :usage
 
@@ -41,11 +47,17 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # The maximum allowed count for the object type.
           limit:,
+          # The unique identifier for the object type.
           object_type_id:,
+          # The percentage of the limit that has been used.
           percentage:,
+          # The plural label for the object type.
           plural_label:,
+          # The singular label for the object type.
           singular_label:,
+          # The current usage count for the object type.
           usage:
         )
         end

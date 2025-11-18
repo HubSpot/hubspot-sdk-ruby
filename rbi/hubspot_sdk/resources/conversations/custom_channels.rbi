@@ -53,41 +53,62 @@ module HubspotSDK
         # channel's webhookUri and its channelAccountConnectionRedirectUrl.
         sig do
           params(
-            channel_id: String,
+            channel_id: Integer,
             capabilities: T::Hash[Symbol, T.anything],
+            channel_account_connection_redirect_url: T.anything,
             channel_description: T.anything,
             channel_logo_url: T.anything,
-            channel_account_connection_redirect_url: T.anything,
             name: T.anything,
             webhook_url: T.anything,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Conversations::PublicChannelIntegrationChannel)
         end
         def update(
+          # The ID of the channel to update.
           channel_id,
           capabilities:,
+          channel_account_connection_redirect_url:,
           channel_description:,
           channel_logo_url:,
-          channel_account_connection_redirect_url: nil,
-          name: nil,
-          webhook_url: nil,
+          name:,
+          webhook_url:,
           request_options: {}
         )
         end
 
         # Retrieve all custom channels associated with the app.
         sig do
-          params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-            HubspotSDK::Conversations::CollectionResponseWithTotalPublicChannelIntegrationChannelForwardPaging
+          params(
+            after: String,
+            default_page_length: Integer,
+            limit: Integer,
+            sort: T::Array[String],
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(
+            HubspotSDK::Internal::Page[
+              HubspotSDK::Conversations::PublicChannelIntegrationChannel
+            ]
           )
         end
-        def list(request_options: {})
+        def list(
+          # The paging cursor token of the last successfully read resource will be returned
+          # as the `paging.next.after` JSON property of a paged response containing more
+          # results.
+          after: nil,
+          # Specify the default number of results to return per page.
+          default_page_length: nil,
+          # The maximum number of results to display per page.
+          limit: nil,
+          # Specify the sorting order for the results.
+          sort: nil,
+          request_options: {}
+        )
         end
 
         # Archive an existing registered custom channel
         sig do
           params(
-            channel_id: String,
+            channel_id: Integer,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).void
         end
@@ -98,7 +119,7 @@ module HubspotSDK
         # channel's current capabilties and other configuration metadata
         sig do
           params(
-            channel_id: String,
+            channel_id: Integer,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Conversations::PublicChannelIntegrationChannel)
         end

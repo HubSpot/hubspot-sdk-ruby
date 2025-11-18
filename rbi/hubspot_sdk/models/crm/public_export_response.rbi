@@ -12,12 +12,15 @@ module HubspotSDK
             )
           end
 
+        # The unique ID of the export.
         sig { returns(String) }
         attr_accessor :id
 
+        # The timestamp when the export was created, in ISO 8601 format.
         sig { returns(Time) }
         attr_accessor :created_at
 
+        # The current state of the export process.
         sig do
           returns(
             HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
@@ -25,6 +28,7 @@ module HubspotSDK
         end
         attr_accessor :export_state
 
+        # The type of export, which can be either VIEW or LIST.
         sig do
           returns(
             HubspotSDK::Crm::PublicExportResponse::ExportType::TaggedSymbol
@@ -32,21 +36,26 @@ module HubspotSDK
         end
         attr_accessor :export_type
 
+        # The list of properties exported for the associated object.
         sig { returns(T::Array[String]) }
         attr_accessor :object_properties
 
+        # The associated CRM object being exported.
         sig { returns(String) }
         attr_accessor :object_type
 
+        # The timestamp when the export was last updated, in ISO 8601 format.
         sig { returns(Time) }
         attr_accessor :updated_at
 
+        # The name assigned to the export.
         sig { returns(T.nilable(String)) }
         attr_reader :export_name
 
         sig { params(export_name: String).void }
         attr_writer :export_name
 
+        # The total number of records included in the export.
         sig { returns(T.nilable(Integer)) }
         attr_reader :record_count
 
@@ -69,14 +78,23 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # The unique ID of the export.
           id:,
+          # The timestamp when the export was created, in ISO 8601 format.
           created_at:,
+          # The current state of the export process.
           export_state:,
+          # The type of export, which can be either VIEW or LIST.
           export_type:,
+          # The list of properties exported for the associated object.
           object_properties:,
+          # The associated CRM object being exported.
           object_type:,
+          # The timestamp when the export was last updated, in ISO 8601 format.
           updated_at:,
+          # The name assigned to the export.
           export_name: nil,
+          # The total number of records included in the export.
           record_count: nil
         )
         end
@@ -101,6 +119,7 @@ module HubspotSDK
         def to_hash
         end
 
+        # The current state of the export process.
         module ExportState
           extend HubspotSDK::Internal::Type::Enum
 
@@ -167,6 +186,7 @@ module HubspotSDK
           end
         end
 
+        # The type of export, which can be either VIEW or LIST.
         module ExportType
           extend HubspotSDK::Internal::Type::Enum
 

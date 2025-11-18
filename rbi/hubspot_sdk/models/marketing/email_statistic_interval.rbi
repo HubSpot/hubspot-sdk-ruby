@@ -12,7 +12,7 @@ module HubspotSDK
             )
           end
 
-        sig { returns(T.nilable(HubspotSDK::Marketing::EmailStatisticsData)) }
+        sig { returns(HubspotSDK::Marketing::EmailStatisticsData) }
         attr_reader :aggregations
 
         sig do
@@ -22,7 +22,7 @@ module HubspotSDK
         end
         attr_writer :aggregations
 
-        sig { returns(T.nilable(HubspotSDK::Marketing::Interval)) }
+        sig { returns(HubspotSDK::Marketing::Interval) }
         attr_reader :interval
 
         sig { params(interval: HubspotSDK::Marketing::Interval::OrHash).void }
@@ -34,7 +34,7 @@ module HubspotSDK
             interval: HubspotSDK::Marketing::Interval::OrHash
           ).returns(T.attached_class)
         end
-        def self.new(aggregations: nil, interval: nil)
+        def self.new(aggregations:, interval:)
         end
 
         sig do

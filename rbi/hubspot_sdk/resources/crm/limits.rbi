@@ -15,7 +15,9 @@ module HubspotSDK
           )
         end
         def get_association_label_limits(
+          # objectTypeId of the object type on the "from" side of the association
           from_object_type_id: nil,
+          # objectTypeId of the object type on the "to" side of the association
           to_object_type_id: nil,
           request_options: {}
         )
@@ -30,7 +32,9 @@ module HubspotSDK
           ).returns(HubspotSDK::Crm::AssociationRecordLimitResponse)
         end
         def get_association_records_limits_by_object_type(
+          # objectTypeId of the object type on the "to" side of the association
           to_object_type_id,
+          # objectTypeId of the object type on the "from" side of the association
           from_object_type_id:,
           request_options: {}
         )
@@ -56,6 +60,7 @@ module HubspotSDK
           )
         end
         def get_association_records_limits_to_objects(
+          # objectTypeId of the object type on the "from" side of the association
           from_object_type_id,
           request_options: {}
         )

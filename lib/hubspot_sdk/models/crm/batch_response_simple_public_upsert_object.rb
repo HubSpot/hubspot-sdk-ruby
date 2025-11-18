@@ -30,9 +30,8 @@ module HubspotSDK
 
         # @!attribute errors
         #
-        #   @return [Array<HubspotSDK::Models::Crm::Associations::StandardError1>, nil]
-        optional :errors,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Associations::StandardError1] }
+        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
+        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
 
         # @!attribute links
         #   An object containing relevant links related to the batch request.
@@ -41,6 +40,7 @@ module HubspotSDK
         optional :links, HubspotSDK::Internal::Type::HashOf[String]
 
         # @!attribute num_errors
+        #   The number of errors
         #
         #   @return [Integer, nil]
         optional :num_errors, Integer, api_name: :numErrors
@@ -67,11 +67,11 @@ module HubspotSDK
         #
         #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponseSimplePublicUpsertObject::Status] The status of the batch processing request. Can be: "PENDING", "PROCESSING", "CA
         #
-        #   @param errors [Array<HubspotSDK::Models::Crm::Associations::StandardError1>]
+        #   @param errors [Array<HubspotSDK::Models::StandardError>]
         #
         #   @param links [Hash{Symbol=>String}] An object containing relevant links related to the batch request.
         #
-        #   @param num_errors [Integer]
+        #   @param num_errors [Integer] The number of errors
         #
         #   @param requested_at [Time] The timestamp when the batch process was initiated, in ISO 8601 format.
 
