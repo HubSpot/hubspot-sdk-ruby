@@ -1,0 +1,20 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type public_actor =
+        HubspotSDK::Conversations::AgentActor
+        | HubspotSDK::Conversations::BotActor
+        | HubspotSDK::Conversations::IntegratorActor
+        | HubspotSDK::Conversations::SystemActor
+        | HubspotSDK::Conversations::VisitorActor
+        | HubspotSDK::Conversations::EmailActor
+        | HubspotSDK::Conversations::LlmActor
+
+      module PublicActor
+        extend HubspotSDK::Internal::Type::Union
+
+        def self?.variants: -> ::Array[HubspotSDK::Models::Conversations::public_actor]
+      end
+    end
+  end
+end

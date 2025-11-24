@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type public_thread_associations = { associated_ticket_id: String }
+
+      class PublicThreadAssociations < HubspotSDK::Internal::Type::BaseModel
+        attr_reader associated_ticket_id: String?
+
+        def associated_ticket_id=: (String) -> String
+
+        def initialize: (?associated_ticket_id: String) -> void
+
+        def to_hash: -> { associated_ticket_id: String }
+      end
+    end
+  end
+end

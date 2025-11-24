@@ -19,26 +19,26 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::MessagesTest <
       )
 
     assert_pattern do
-      response => HubspotSDK::Conversations::PublicConversationsMessage
+      response => HubspotSDK::Conversations::ConversationsPublicConversationsMessage
     end
 
     assert_pattern do
       response => {
         id: String,
         archived: HubspotSDK::Internal::Type::Boolean,
-        attachments: ^(HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Conversations::PublicConversationsMessage::Attachment]),
+        attachments: ^(HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Conversations::ConversationsPublicConversationsMessage::Attachment]),
         channel_account_id: String,
         channel_id: String,
         client: HubspotSDK::Conversations::PublicClient,
         conversations_thread_id: String,
         created_at: Time,
         created_by: String,
-        direction: HubspotSDK::Conversations::PublicConversationsMessage::Direction,
+        direction: HubspotSDK::Conversations::ConversationsPublicConversationsMessage::Direction,
         recipients: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::PublicRecipient]),
         senders: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::PublicSender]),
         text: String,
-        truncation_status: HubspotSDK::Conversations::PublicConversationsMessage::TruncationStatus,
-        type: HubspotSDK::Conversations::PublicConversationsMessage::Type,
+        truncation_status: HubspotSDK::Conversations::ConversationsPublicConversationsMessage::TruncationStatus,
+        type: HubspotSDK::Conversations::ConversationsPublicConversationsMessage::Type,
         in_reply_to_id: String | nil,
         rich_text: String | nil,
         status: HubspotSDK::Conversations::PublicMessageStatus | nil,
@@ -55,26 +55,26 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::MessagesTest <
       @hubspot.conversations.custom_channels.messages.update("messageId", channel_id: 0, status_type: :FAILED)
 
     assert_pattern do
-      response => HubspotSDK::Conversations::PublicConversationsMessage
+      response => HubspotSDK::Conversations::ConversationsPublicConversationsMessage
     end
 
     assert_pattern do
       response => {
         id: String,
         archived: HubspotSDK::Internal::Type::Boolean,
-        attachments: ^(HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Conversations::PublicConversationsMessage::Attachment]),
+        attachments: ^(HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Conversations::ConversationsPublicConversationsMessage::Attachment]),
         channel_account_id: String,
         channel_id: String,
         client: HubspotSDK::Conversations::PublicClient,
         conversations_thread_id: String,
         created_at: Time,
         created_by: String,
-        direction: HubspotSDK::Conversations::PublicConversationsMessage::Direction,
+        direction: HubspotSDK::Conversations::ConversationsPublicConversationsMessage::Direction,
         recipients: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::PublicRecipient]),
         senders: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::PublicSender]),
         text: String,
-        truncation_status: HubspotSDK::Conversations::PublicConversationsMessage::TruncationStatus,
-        type: HubspotSDK::Conversations::PublicConversationsMessage::Type,
+        truncation_status: HubspotSDK::Conversations::ConversationsPublicConversationsMessage::TruncationStatus,
+        type: HubspotSDK::Conversations::ConversationsPublicConversationsMessage::Type,
         in_reply_to_id: String | nil,
         rich_text: String | nil,
         status: HubspotSDK::Conversations::PublicMessageStatus | nil,
@@ -90,26 +90,26 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::MessagesTest <
     response = @hubspot.conversations.custom_channels.messages.get("messageId", channel_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::Conversations::PublicConversationsMessage
+      response => HubspotSDK::Conversations::ConversationsPublicConversationsMessage
     end
 
     assert_pattern do
       response => {
         id: String,
         archived: HubspotSDK::Internal::Type::Boolean,
-        attachments: ^(HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Conversations::PublicConversationsMessage::Attachment]),
+        attachments: ^(HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Conversations::ConversationsPublicConversationsMessage::Attachment]),
         channel_account_id: String,
         channel_id: String,
         client: HubspotSDK::Conversations::PublicClient,
         conversations_thread_id: String,
         created_at: Time,
         created_by: String,
-        direction: HubspotSDK::Conversations::PublicConversationsMessage::Direction,
+        direction: HubspotSDK::Conversations::ConversationsPublicConversationsMessage::Direction,
         recipients: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::PublicRecipient]),
         senders: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::PublicSender]),
         text: String,
-        truncation_status: HubspotSDK::Conversations::PublicConversationsMessage::TruncationStatus,
-        type: HubspotSDK::Conversations::PublicConversationsMessage::Type,
+        truncation_status: HubspotSDK::Conversations::ConversationsPublicConversationsMessage::TruncationStatus,
+        type: HubspotSDK::Conversations::ConversationsPublicConversationsMessage::Type,
         in_reply_to_id: String | nil,
         rich_text: String | nil,
         status: HubspotSDK::Conversations::PublicMessageStatus | nil,

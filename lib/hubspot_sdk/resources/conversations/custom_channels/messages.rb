@@ -37,7 +37,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Conversations::PublicConversationsMessage]
+          # @return [HubspotSDK::Models::Conversations::ConversationsPublicConversationsMessage]
           #
           # @see HubspotSDK::Models::Conversations::CustomChannels::MessageCreateParams
           def create(channel_id, params)
@@ -46,7 +46,7 @@ module HubspotSDK
               method: :post,
               path: ["conversations/v3/custom-channels/%1$s/messages", channel_id],
               body: parsed,
-              model: HubspotSDK::Conversations::PublicConversationsMessage,
+              model: HubspotSDK::Conversations::ConversationsPublicConversationsMessage,
               options: options
             )
           end
@@ -67,7 +67,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Conversations::PublicConversationsMessage]
+          # @return [HubspotSDK::Models::Conversations::ConversationsPublicConversationsMessage]
           #
           # @see HubspotSDK::Models::Conversations::CustomChannels::MessageUpdateParams
           def update(message_id, params)
@@ -80,7 +80,7 @@ module HubspotSDK
               method: :patch,
               path: ["conversations/v3/custom-channels/%1$s/messages/%2$s", channel_id, message_id],
               body: parsed,
-              model: HubspotSDK::Conversations::PublicConversationsMessage,
+              model: HubspotSDK::Conversations::ConversationsPublicConversationsMessage,
               options: options
             )
           end
@@ -95,7 +95,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Conversations::PublicConversationsMessage]
+          # @return [HubspotSDK::Models::Conversations::ConversationsPublicConversationsMessage]
           #
           # @see HubspotSDK::Models::Conversations::CustomChannels::MessageGetParams
           def get(message_id, params)
@@ -107,7 +107,7 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["conversations/v3/custom-channels/%1$s/messages/%2$s", channel_id, message_id],
-              model: HubspotSDK::Conversations::PublicConversationsMessage,
+              model: HubspotSDK::Conversations::ConversationsPublicConversationsMessage,
               options: options
             )
           end

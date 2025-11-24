@@ -1,0 +1,26 @@
+module HubspotSDK
+  module Resources
+    class Crm
+      class Subscriptions
+        def cancel: (
+          Integer object_id_,
+          ?request_options: HubspotSDK::request_opts
+        ) -> StringIO
+
+        def pause: (
+          Integer object_id_,
+          ?pause_reason: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> StringIO
+
+        def unpause: (
+          Integer object_id_,
+          proposed_next_billing_date: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> StringIO
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

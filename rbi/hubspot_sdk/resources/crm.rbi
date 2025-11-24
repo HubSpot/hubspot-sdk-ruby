@@ -45,6 +45,9 @@ module HubspotSDK
       sig { returns(HubspotSDK::Resources::Crm::PropertyValidations) }
       attr_reader :property_validations
 
+      sig { returns(HubspotSDK::Resources::Crm::Subscriptions) }
+      attr_reader :subscriptions
+
       sig { returns(HubspotSDK::Resources::Crm::Timeline) }
       attr_reader :timeline
 

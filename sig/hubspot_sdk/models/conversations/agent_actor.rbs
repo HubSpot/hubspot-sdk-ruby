@@ -1,0 +1,58 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type agent_actor =
+        {
+          id: String,
+          type: HubspotSDK::Models::Conversations::AgentActor::type_,
+          avatar: String,
+          email: String,
+          name: String
+        }
+
+      class AgentActor < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor type: HubspotSDK::Models::Conversations::AgentActor::type_
+
+        attr_reader avatar: String?
+
+        def avatar=: (String) -> String
+
+        attr_reader email: String?
+
+        def email=: (String) -> String
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        def initialize: (
+          id: String,
+          type: HubspotSDK::Models::Conversations::AgentActor::type_,
+          ?avatar: String,
+          ?email: String,
+          ?name: String
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          type: HubspotSDK::Models::Conversations::AgentActor::type_,
+          avatar: String,
+          email: String,
+          name: String
+        }
+
+        type type_ = :AGENT
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          AGENT: :AGENT
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::AgentActor::type_]
+        end
+      end
+    end
+  end
+end

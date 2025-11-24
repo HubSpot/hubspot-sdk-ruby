@@ -1,0 +1,19 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type public_message =
+        HubspotSDK::Conversations::ConversationsPublicConversationsMessage
+        | HubspotSDK::Conversations::PublicComment
+        | HubspotSDK::Conversations::PublicWelcomeMessage
+        | HubspotSDK::Conversations::PublicAssignmentMessage
+        | HubspotSDK::Conversations::PublicThreadStatusChange
+        | HubspotSDK::Conversations::PublicThreadInboxChange
+
+      module PublicMessage
+        extend HubspotSDK::Internal::Type::Union
+
+        def self?.variants: -> ::Array[HubspotSDK::Models::Conversations::public_message]
+      end
+    end
+  end
+end

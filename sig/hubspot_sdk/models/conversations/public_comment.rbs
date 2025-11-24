@@ -1,0 +1,110 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type public_comment =
+        {
+          id: String,
+          archived: bool,
+          attachments: ::Array[HubspotSDK::Models::Conversations::PublicComment::attachment],
+          client: HubspotSDK::Conversations::PublicClient,
+          conversations_thread_id: String,
+          created_at: Time,
+          created_by: String,
+          recipients: ::Array[HubspotSDK::Conversations::PublicRecipient],
+          rich_text: String,
+          senders: ::Array[HubspotSDK::Conversations::PublicSender],
+          text: String,
+          type: HubspotSDK::Models::Conversations::PublicComment::type_,
+          updated_at: Time
+        }
+
+      class PublicComment < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor archived: bool
+
+        attr_accessor attachments: ::Array[HubspotSDK::Models::Conversations::PublicComment::attachment]
+
+        attr_accessor client: HubspotSDK::Conversations::PublicClient
+
+        attr_accessor conversations_thread_id: String
+
+        attr_accessor created_at: Time
+
+        attr_accessor created_by: String
+
+        attr_accessor recipients: ::Array[HubspotSDK::Conversations::PublicRecipient]
+
+        attr_accessor rich_text: String
+
+        attr_accessor senders: ::Array[HubspotSDK::Conversations::PublicSender]
+
+        attr_accessor text: String
+
+        attr_accessor type: HubspotSDK::Models::Conversations::PublicComment::type_
+
+        attr_reader updated_at: Time?
+
+        def updated_at=: (Time) -> Time
+
+        def initialize: (
+          id: String,
+          archived: bool,
+          attachments: ::Array[HubspotSDK::Models::Conversations::PublicComment::attachment],
+          client: HubspotSDK::Conversations::PublicClient,
+          conversations_thread_id: String,
+          created_at: Time,
+          created_by: String,
+          recipients: ::Array[HubspotSDK::Conversations::PublicRecipient],
+          rich_text: String,
+          senders: ::Array[HubspotSDK::Conversations::PublicSender],
+          text: String,
+          type: HubspotSDK::Models::Conversations::PublicComment::type_,
+          ?updated_at: Time
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          archived: bool,
+          attachments: ::Array[HubspotSDK::Models::Conversations::PublicComment::attachment],
+          client: HubspotSDK::Conversations::PublicClient,
+          conversations_thread_id: String,
+          created_at: Time,
+          created_by: String,
+          recipients: ::Array[HubspotSDK::Conversations::PublicRecipient],
+          rich_text: String,
+          senders: ::Array[HubspotSDK::Conversations::PublicSender],
+          text: String,
+          type: HubspotSDK::Models::Conversations::PublicComment::type_,
+          updated_at: Time
+        }
+
+        type attachment =
+          HubspotSDK::Conversations::PublicFile
+          | HubspotSDK::Conversations::PublicLocation
+          | HubspotSDK::Conversations::PublicContact
+          | HubspotSDK::Conversations::PublicUnsupportedContent
+          | HubspotSDK::Conversations::PublicMessageHeader
+          | HubspotSDK::Conversations::PublicQuickReplies
+          | HubspotSDK::Conversations::PublicWhatsAppTemplateMetadata
+          | HubspotSDK::Conversations::PublicSocialMetadataAttachment
+
+        module Attachment
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Conversations::PublicComment::attachment]
+        end
+
+        type type_ = :COMMENT
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          COMMENT: :COMMENT
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicComment::type_]
+        end
+      end
+    end
+  end
+end

@@ -58,6 +58,8 @@ module HubspotSDK
 
         attr_reader products: HubspotSDK::Resources::Crm::Objects::Products
 
+        attr_reader projects: HubspotSDK::Resources::Crm::Objects::Projects
+
         attr_reader quotes: HubspotSDK::Resources::Crm::Objects::Quotes
 
         attr_reader schemas: HubspotSDK::Resources::Crm::Objects::Schemas

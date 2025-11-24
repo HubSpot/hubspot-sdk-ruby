@@ -1,0 +1,44 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type public_thread_update_request =
+        {
+          archived: bool,
+          status: HubspotSDK::Models::Conversations::PublicThreadUpdateRequest::status
+        }
+
+      class PublicThreadUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_reader archived: bool?
+
+        def archived=: (bool) -> bool
+
+        attr_reader status: HubspotSDK::Models::Conversations::PublicThreadUpdateRequest::status?
+
+        def status=: (
+          HubspotSDK::Models::Conversations::PublicThreadUpdateRequest::status
+        ) -> HubspotSDK::Models::Conversations::PublicThreadUpdateRequest::status
+
+        def initialize: (
+          ?archived: bool,
+          ?status: HubspotSDK::Models::Conversations::PublicThreadUpdateRequest::status
+        ) -> void
+
+        def to_hash: -> {
+          archived: bool,
+          status: HubspotSDK::Models::Conversations::PublicThreadUpdateRequest::status
+        }
+
+        type status = :CLOSED | :OPEN
+
+        module Status
+          extend HubspotSDK::Internal::Type::Enum
+
+          CLOSED: :CLOSED
+          OPEN: :OPEN
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicThreadUpdateRequest::status]
+        end
+      end
+    end
+  end
+end
