@@ -29,9 +29,9 @@ module HubspotSDK
           ALL = :ALL
           ALL_INCLUDE_EMPTY = :ALL_INCLUDE_EMPTY
           ANY = :ANY
+          ANY_INCLUDE_EMPTY = :ANY_INCLUDE_EMPTY
           NONE = :NONE
           NONE_EXCLUDE_EMPTY = :NONE_EXCLUDE_EMPTY
-          ANY_INCLUDE_EMPTY = :ANY_INCLUDE_EMPTY
 
           # @!method self.values
           #   @return [Array<Symbol>]

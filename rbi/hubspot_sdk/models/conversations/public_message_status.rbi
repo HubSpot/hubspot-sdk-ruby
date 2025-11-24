@@ -70,14 +70,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          SENT =
-            T.let(
-              :SENT,
-              HubspotSDK::Conversations::PublicMessageStatus::StatusType::TaggedSymbol
-            )
           FAILED =
             T.let(
               :FAILED,
+              HubspotSDK::Conversations::PublicMessageStatus::StatusType::TaggedSymbol
+            )
+          READ =
+            T.let(
+              :READ,
               HubspotSDK::Conversations::PublicMessageStatus::StatusType::TaggedSymbol
             )
           RECEIVED =
@@ -85,9 +85,9 @@ module HubspotSDK
               :RECEIVED,
               HubspotSDK::Conversations::PublicMessageStatus::StatusType::TaggedSymbol
             )
-          READ =
+          SENT =
             T.let(
-              :READ,
+              :SENT,
               HubspotSDK::Conversations::PublicMessageStatus::StatusType::TaggedSymbol
             )
 

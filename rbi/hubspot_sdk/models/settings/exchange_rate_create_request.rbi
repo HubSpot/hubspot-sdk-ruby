@@ -12,9 +12,12 @@ module HubspotSDK
             )
           end
 
+        # The conversion rate between the to and from currency code of this exchange rate.
         sig { returns(Float) }
         attr_accessor :conversion_rate
 
+        # This represents the three-letter currency code (such as USD for US Dollar) of
+        # the currency you want to convert from.
         sig do
           returns(
             HubspotSDK::Settings::ExchangeRateCreateRequest::FromCurrencyCode::OrSymbol
@@ -22,6 +25,7 @@ module HubspotSDK
         end
         attr_accessor :from_currency_code
 
+        # The date the exchange rate is in effect.
         sig { returns(T.nilable(Time)) }
         attr_reader :effective_at
 
@@ -36,7 +40,15 @@ module HubspotSDK
             effective_at: Time
           ).returns(T.attached_class)
         end
-        def self.new(conversion_rate:, from_currency_code:, effective_at: nil)
+        def self.new(
+          # The conversion rate between the to and from currency code of this exchange rate.
+          conversion_rate:,
+          # This represents the three-letter currency code (such as USD for US Dollar) of
+          # the currency you want to convert from.
+          from_currency_code:,
+          # The date the exchange rate is in effect.
+          effective_at: nil
+        )
         end
 
         sig do
@@ -52,6 +64,8 @@ module HubspotSDK
         def to_hash
         end
 
+        # This represents the three-letter currency code (such as USD for US Dollar) of
+        # the currency you want to convert from.
         module FromCurrencyCode
           extend HubspotSDK::Internal::Type::Enum
 

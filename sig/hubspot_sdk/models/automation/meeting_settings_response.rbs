@@ -33,13 +33,13 @@ module HubspotSDK
           def self?.values: -> ::Array[HubspotSDK::Models::Automation::MeetingSettingsResponse::criteria]
         end
 
-        type selling_strategy = :LEAD_BASED | :ACCOUNT_BASED
+        type selling_strategy = :ACCOUNT_BASED | :LEAD_BASED
 
         module SellingStrategy
           extend HubspotSDK::Internal::Type::Enum
 
-          LEAD_BASED: :LEAD_BASED
           ACCOUNT_BASED: :ACCOUNT_BASED
+          LEAD_BASED: :LEAD_BASED
 
           def self?.values: -> ::Array[HubspotSDK::Models::Automation::MeetingSettingsResponse::selling_strategy]
         end

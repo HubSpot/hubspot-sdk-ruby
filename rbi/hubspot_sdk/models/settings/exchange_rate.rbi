@@ -12,18 +12,24 @@ module HubspotSDK
             )
           end
 
+        # A unique identifier for the exchange rate
         sig { returns(String) }
         attr_accessor :id
 
+        # The conversion rate between the to and from currency code of this exchange rate.
         sig { returns(Float) }
         attr_accessor :conversion_rate
 
+        # The date the exchange rate was created.
         sig { returns(Time) }
         attr_accessor :created_at
 
+        # The date the exchange rate is in effect.
         sig { returns(Time) }
         attr_accessor :effective_at
 
+        # This represents the three-letter currency code (such as USD for US Dollar) of
+        # the currency you are converting from.
         sig do
           returns(
             HubspotSDK::Settings::ExchangeRate::FromCurrencyCode::TaggedSymbol
@@ -31,6 +37,8 @@ module HubspotSDK
         end
         attr_accessor :from_currency_code
 
+        # This represents the three-letter currency code (such as USD for US Dollar) of
+        # the currency you are converting to.
         sig do
           returns(
             HubspotSDK::Settings::ExchangeRate::ToCurrencyCode::TaggedSymbol
@@ -38,9 +46,11 @@ module HubspotSDK
         end
         attr_accessor :to_currency_code
 
+        # The date the exchange rate was last updated.
         sig { returns(Time) }
         attr_accessor :updated_at
 
+        # This indicates if the exchange rate is shown in the MultiCurrency settings page.
         sig { returns(T::Boolean) }
         attr_accessor :visible_in_ui
 
@@ -59,13 +69,23 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # A unique identifier for the exchange rate
           id:,
+          # The conversion rate between the to and from currency code of this exchange rate.
           conversion_rate:,
+          # The date the exchange rate was created.
           created_at:,
+          # The date the exchange rate is in effect.
           effective_at:,
+          # This represents the three-letter currency code (such as USD for US Dollar) of
+          # the currency you are converting from.
           from_currency_code:,
+          # This represents the three-letter currency code (such as USD for US Dollar) of
+          # the currency you are converting to.
           to_currency_code:,
+          # The date the exchange rate was last updated.
           updated_at:,
+          # This indicates if the exchange rate is shown in the MultiCurrency settings page.
           visible_in_ui:
         )
         end
@@ -89,6 +109,8 @@ module HubspotSDK
         def to_hash
         end
 
+        # This represents the three-letter currency code (such as USD for US Dollar) of
+        # the currency you are converting from.
         module FromCurrencyCode
           extend HubspotSDK::Internal::Type::Enum
 
@@ -993,6 +1015,8 @@ module HubspotSDK
           end
         end
 
+        # This represents the three-letter currency code (such as USD for US Dollar) of
+        # the currency you are converting to.
         module ToCurrencyCode
           extend HubspotSDK::Internal::Type::Enum
 

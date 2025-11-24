@@ -179,14 +179,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          VISITED_URL =
-            T.let(
-              :VISITED_URL,
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
-            )
           CLICKED_ELEMENT =
             T.let(
               :CLICKED_ELEMENT,
+              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
+            )
+          COMBO_EVENT =
+            T.let(
+              :COMBO_EVENT,
               HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
             )
           CUSTOM_SCRIPT =
@@ -194,14 +194,14 @@ module HubspotSDK
               :CUSTOM_SCRIPT,
               HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
             )
-          MANUAL =
-            T.let(
-              :MANUAL,
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
-            )
           IMPORT =
             T.let(
               :IMPORT,
+              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
+            )
+          MANUAL =
+            T.let(
+              :MANUAL,
               HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
             )
           PROPERTY_CHANGE =
@@ -209,9 +209,9 @@ module HubspotSDK
               :PROPERTY_CHANGE,
               HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
             )
-          COMBO_EVENT =
+          VISITED_URL =
             T.let(
-              :COMBO_EVENT,
+              :VISITED_URL,
               HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
             )
           WEBHOOK =

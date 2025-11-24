@@ -136,14 +136,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          INCLUSIVE =
-            T.let(
-              :INCLUSIVE,
-              HubspotSDK::Events::TimePointOperation::EndpointBehavior::TaggedSymbol
-            )
           EXCLUSIVE =
             T.let(
               :EXCLUSIVE,
+              HubspotSDK::Events::TimePointOperation::EndpointBehavior::TaggedSymbol
+            )
+          INCLUSIVE =
+            T.let(
+              :INCLUSIVE,
               HubspotSDK::Events::TimePointOperation::EndpointBehavior::TaggedSymbol
             )
 
@@ -167,14 +167,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          IS_BEFORE =
-            T.let(
-              :IS_BEFORE,
-              HubspotSDK::Events::TimePointOperation::Operator::TaggedSymbol
-            )
           IS_AFTER =
             T.let(
               :IS_AFTER,
+              HubspotSDK::Events::TimePointOperation::Operator::TaggedSymbol
+            )
+          IS_BEFORE =
+            T.let(
+              :IS_BEFORE,
               HubspotSDK::Events::TimePointOperation::Operator::TaggedSymbol
             )
 
@@ -201,9 +201,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          VALUE =
+          ANNIVERSARY =
             T.let(
-              :VALUE,
+              :ANNIVERSARY,
+              HubspotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
+            )
+          ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION =
+            T.let(
+              :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION,
               HubspotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
             )
           UPDATED_AT =
@@ -211,19 +216,14 @@ module HubspotSDK
               :UPDATED_AT,
               HubspotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
             )
-          ANNIVERSARY =
+          VALUE =
             T.let(
-              :ANNIVERSARY,
+              :VALUE,
               HubspotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
             )
           VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION =
             T.let(
               :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION,
-              HubspotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
-            )
-          ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION =
-            T.let(
-              :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION,
               HubspotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
             )
 

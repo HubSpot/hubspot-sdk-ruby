@@ -74,13 +74,13 @@ module HubspotSDK
           default_value: String
         }
 
-        type lower_bound_endpoint_behavior = :INCLUSIVE | :EXCLUSIVE
+        type lower_bound_endpoint_behavior = :EXCLUSIVE | :INCLUSIVE
 
         module LowerBoundEndpointBehavior
           extend HubspotSDK::Internal::Type::Enum
 
-          INCLUSIVE: :INCLUSIVE
           EXCLUSIVE: :EXCLUSIVE
+          INCLUSIVE: :INCLUSIVE
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::RangedTimeOperation::lower_bound_endpoint_behavior]
         end
@@ -108,20 +108,20 @@ module HubspotSDK
         end
 
         type property_parser =
-          :VALUE
-          | :UPDATED_AT
-          | :ANNIVERSARY
-          | :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION
+          :ANNIVERSARY
           | :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION
+          | :UPDATED_AT
+          | :VALUE
+          | :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION
 
         module PropertyParser
           extend HubspotSDK::Internal::Type::Enum
 
-          VALUE: :VALUE
-          UPDATED_AT: :UPDATED_AT
           ANNIVERSARY: :ANNIVERSARY
-          VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION: :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION
           ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION: :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION
+          UPDATED_AT: :UPDATED_AT
+          VALUE: :VALUE
+          VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION: :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::RangedTimeOperation::property_parser]
         end
@@ -136,13 +136,13 @@ module HubspotSDK
           def self?.values: -> ::Array[HubspotSDK::Models::Events::RangedTimeOperation::property_type]
         end
 
-        type upper_bound_endpoint_behavior = :INCLUSIVE | :EXCLUSIVE
+        type upper_bound_endpoint_behavior = :EXCLUSIVE | :INCLUSIVE
 
         module UpperBoundEndpointBehavior
           extend HubspotSDK::Internal::Type::Enum
 
-          INCLUSIVE: :INCLUSIVE
           EXCLUSIVE: :EXCLUSIVE
+          INCLUSIVE: :INCLUSIVE
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::RangedTimeOperation::upper_bound_endpoint_behavior]
         end

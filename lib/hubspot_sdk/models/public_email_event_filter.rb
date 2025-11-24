@@ -67,19 +67,19 @@ module HubspotSDK
       module Operator
         extend HubspotSDK::Internal::Type::Enum
 
+        BOUNCED = :BOUNCED
         LINK_CLICKED = :LINK_CLICKED
         MARKED_SPAM = :MARKED_SPAM
         OPENED = :OPENED
         OPENED_BUT_LINK_NOT_CLICKED = :OPENED_BUT_LINK_NOT_CLICKED
         OPENED_BUT_NOT_REPLIED = :OPENED_BUT_NOT_REPLIED
-        REPLIED = :REPLIED
-        UNSUBSCRIBED = :UNSUBSCRIBED
-        BOUNCED = :BOUNCED
         RECEIVED = :RECEIVED
         RECEIVED_BUT_NOT_OPENED = :RECEIVED_BUT_NOT_OPENED
+        REPLIED = :REPLIED
         SENT = :SENT
         SENT_BUT_LINK_NOT_CLICKED = :SENT_BUT_LINK_NOT_CLICKED
         SENT_BUT_NOT_RECEIVED = :SENT_BUT_NOT_RECEIVED
+        UNSUBSCRIBED = :UNSUBSCRIBED
 
         # @!method self.values
         #   @return [Array<Symbol>]

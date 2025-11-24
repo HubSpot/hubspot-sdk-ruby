@@ -229,11 +229,6 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          VIDEO =
-            T.let(
-              :VIDEO,
-              HubspotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol
-            )
           AUDIO =
             T.let(
               :AUDIO,
@@ -244,14 +239,19 @@ module HubspotSDK
               :DOCUMENT,
               HubspotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol
             )
+          IMAGE =
+            T.let(
+              :IMAGE,
+              HubspotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol
+            )
           OTHER =
             T.let(
               :OTHER,
               HubspotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol
             )
-          IMAGE =
+          VIDEO =
             T.let(
-              :IMAGE,
+              :VIDEO,
               HubspotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol
             )
 

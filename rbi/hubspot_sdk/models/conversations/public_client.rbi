@@ -61,14 +61,14 @@ module HubspotSDK
               :HUBSPOT,
               HubspotSDK::Conversations::PublicClient::ClientType::TaggedSymbol
             )
-          SYSTEM =
-            T.let(
-              :SYSTEM,
-              HubspotSDK::Conversations::PublicClient::ClientType::TaggedSymbol
-            )
           INTEGRATION =
             T.let(
               :INTEGRATION,
+              HubspotSDK::Conversations::PublicClient::ClientType::TaggedSymbol
+            )
+          SYSTEM =
+            T.let(
+              :SYSTEM,
               HubspotSDK::Conversations::PublicClient::ClientType::TaggedSymbol
             )
           UNKNOWN =

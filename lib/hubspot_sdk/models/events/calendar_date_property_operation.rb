@@ -78,10 +78,10 @@ module HubspotSDK
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
+          IN_LAST_TIME_UNIT = :IN_LAST_TIME_UNIT
+          IN_NEXT_TIME_UNIT = :IN_NEXT_TIME_UNIT
           IN_THIS_TIME_UNIT = :IN_THIS_TIME_UNIT
           IN_THIS_TIME_UNIT_SO_FAR = :IN_THIS_TIME_UNIT_SO_FAR
-          IN_NEXT_TIME_UNIT = :IN_NEXT_TIME_UNIT
-          IN_LAST_TIME_UNIT = :IN_LAST_TIME_UNIT
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -102,9 +102,9 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::Enum
 
           DAY = :DAY
-          WEEK = :WEEK
           MONTH = :MONTH
           QUARTER = :QUARTER
+          WEEK = :WEEK
           YEAR = :YEAR
 
           # @!method self.values
@@ -115,18 +115,18 @@ module HubspotSDK
         module FiscalYearStart
           extend HubspotSDK::Internal::Type::Enum
 
-          JANUARY = :JANUARY
-          FEBRUARY = :FEBRUARY
-          MARCH = :MARCH
           APRIL = :APRIL
-          MAY = :MAY
-          JUNE = :JUNE
-          JULY = :JULY
           AUGUST = :AUGUST
-          SEPTEMBER = :SEPTEMBER
-          OCTOBER = :OCTOBER
-          NOVEMBER = :NOVEMBER
           DECEMBER = :DECEMBER
+          FEBRUARY = :FEBRUARY
+          JANUARY = :JANUARY
+          JULY = :JULY
+          JUNE = :JUNE
+          MARCH = :MARCH
+          MAY = :MAY
+          NOVEMBER = :NOVEMBER
+          OCTOBER = :OCTOBER
+          SEPTEMBER = :SEPTEMBER
 
           # @!method self.values
           #   @return [Array<Symbol>]

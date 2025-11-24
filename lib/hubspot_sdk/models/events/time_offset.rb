@@ -30,8 +30,8 @@ module HubspotSDK
         module OffsetDirection
           extend HubspotSDK::Internal::Type::Enum
 
-          PAST = :PAST
           FUTURE = :FUTURE
+          PAST = :PAST
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -41,10 +41,10 @@ module HubspotSDK
         module TimeUnit
           extend HubspotSDK::Internal::Type::Enum
 
-          WEEKS = :WEEKS
           DAYS = :DAYS
           HOURS = :HOURS
           MINUTES = :MINUTES
+          WEEKS = :WEEKS
 
           # @!method self.values
           #   @return [Array<Symbol>]

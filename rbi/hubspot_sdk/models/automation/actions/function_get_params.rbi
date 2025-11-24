@@ -72,6 +72,16 @@ module HubspotSDK
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
 
+            POST_ACTION_EXECUTION =
+              T.let(
+                :POST_ACTION_EXECUTION,
+                HubspotSDK::Automation::Actions::FunctionGetParams::FunctionType::TaggedSymbol
+              )
+            POST_FETCH_OPTIONS =
+              T.let(
+                :POST_FETCH_OPTIONS,
+                HubspotSDK::Automation::Actions::FunctionGetParams::FunctionType::TaggedSymbol
+              )
             PRE_ACTION_EXECUTION =
               T.let(
                 :PRE_ACTION_EXECUTION,
@@ -80,16 +90,6 @@ module HubspotSDK
             PRE_FETCH_OPTIONS =
               T.let(
                 :PRE_FETCH_OPTIONS,
-                HubspotSDK::Automation::Actions::FunctionGetParams::FunctionType::TaggedSymbol
-              )
-            POST_FETCH_OPTIONS =
-              T.let(
-                :POST_FETCH_OPTIONS,
-                HubspotSDK::Automation::Actions::FunctionGetParams::FunctionType::TaggedSymbol
-              )
-            POST_ACTION_EXECUTION =
-              T.let(
-                :POST_ACTION_EXECUTION,
                 HubspotSDK::Automation::Actions::FunctionGetParams::FunctionType::TaggedSymbol
               )
 

@@ -106,25 +106,25 @@ module HubspotSDK
         }
 
         type tracking_type =
-          :VISITED_URL
-          | :CLICKED_ELEMENT
-          | :CUSTOM_SCRIPT
-          | :MANUAL
-          | :IMPORT
-          | :PROPERTY_CHANGE
+          :CLICKED_ELEMENT
           | :COMBO_EVENT
+          | :CUSTOM_SCRIPT
+          | :IMPORT
+          | :MANUAL
+          | :PROPERTY_CHANGE
+          | :VISITED_URL
           | :WEBHOOK
 
         module TrackingType
           extend HubspotSDK::Internal::Type::Enum
 
-          VISITED_URL: :VISITED_URL
           CLICKED_ELEMENT: :CLICKED_ELEMENT
-          CUSTOM_SCRIPT: :CUSTOM_SCRIPT
-          MANUAL: :MANUAL
-          IMPORT: :IMPORT
-          PROPERTY_CHANGE: :PROPERTY_CHANGE
           COMBO_EVENT: :COMBO_EVENT
+          CUSTOM_SCRIPT: :CUSTOM_SCRIPT
+          IMPORT: :IMPORT
+          MANUAL: :MANUAL
+          PROPERTY_CHANGE: :PROPERTY_CHANGE
+          VISITED_URL: :VISITED_URL
           WEBHOOK: :WEBHOOK
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::tracking_type]

@@ -65,11 +65,6 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          SENT =
-            T.let(
-              :SENT,
-              HubspotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::TaggedSymbol
-            )
           FAILED =
             T.let(
               :FAILED,
@@ -78,6 +73,11 @@ module HubspotSDK
           READ =
             T.let(
               :READ,
+              HubspotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::TaggedSymbol
+            )
+          SENT =
+            T.let(
+              :SENT,
               HubspotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::TaggedSymbol
             )
 

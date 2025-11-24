@@ -5,11 +5,14 @@ module HubspotSDK
     module Settings
       class ExchangeRateCreateRequest < HubspotSDK::Internal::Type::BaseModel
         # @!attribute conversion_rate
+        #   The conversion rate between the to and from currency code of this exchange rate.
         #
         #   @return [Float]
         required :conversion_rate, Float, api_name: :conversionRate
 
         # @!attribute from_currency_code
+        #   This represents the three-letter currency code (such as USD for US Dollar) of
+        #   the currency you want to convert from.
         #
         #   @return [Symbol, HubspotSDK::Models::Settings::ExchangeRateCreateRequest::FromCurrencyCode]
         required :from_currency_code,
@@ -17,15 +20,24 @@ module HubspotSDK
                  api_name: :fromCurrencyCode
 
         # @!attribute effective_at
+        #   The date the exchange rate is in effect.
         #
         #   @return [Time, nil]
         optional :effective_at, Time, api_name: :effectiveAt
 
         # @!method initialize(conversion_rate:, from_currency_code:, effective_at: nil)
-        #   @param conversion_rate [Float]
-        #   @param from_currency_code [Symbol, HubspotSDK::Models::Settings::ExchangeRateCreateRequest::FromCurrencyCode]
-        #   @param effective_at [Time]
+        #   Some parameter documentations has been truncated, see
+        #   {HubspotSDK::Models::Settings::ExchangeRateCreateRequest} for more details.
+        #
+        #   @param conversion_rate [Float] The conversion rate between the to and from currency code of this exchange rate.
+        #
+        #   @param from_currency_code [Symbol, HubspotSDK::Models::Settings::ExchangeRateCreateRequest::FromCurrencyCode] This represents the three-letter currency code (such as USD for US Dollar) of th
+        #
+        #   @param effective_at [Time] The date the exchange rate is in effect.
 
+        # This represents the three-letter currency code (such as USD for US Dollar) of
+        # the currency you want to convert from.
+        #
         # @see HubspotSDK::Models::Settings::ExchangeRateCreateRequest#from_currency_code
         module FromCurrencyCode
           extend HubspotSDK::Internal::Type::Enum

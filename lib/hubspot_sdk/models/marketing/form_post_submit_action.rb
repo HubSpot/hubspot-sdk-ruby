@@ -34,8 +34,8 @@ module HubspotSDK
         module Type
           extend HubspotSDK::Internal::Type::Enum
 
-          THANK_YOU = :thank_you
           REDIRECT_URL = :redirect_url
+          THANK_YOU = :thank_you
 
           # @!method self.values
           #   @return [Array<Symbol>]

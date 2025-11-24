@@ -162,7 +162,7 @@ class HubspotSDK::Test::Resources::Files::FilesTest < HubspotSDK::Test::Resource
   def test_import_from_url_async_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.files.files.import_from_url_async(access: :PUBLIC_INDEXABLE, url: "url")
+    response = @hubspot.files.files.import_from_url_async(access: :HIDDEN_INDEXABLE, url: "url")
 
     assert_pattern do
       response => HubspotSDK::Files::ImportFromURLTaskLocator

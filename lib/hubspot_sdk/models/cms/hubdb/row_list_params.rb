@@ -17,6 +17,7 @@ module HubspotSDK
           optional :after, String
 
           # @!attribute archived
+          #   Specifies whether to include archived rows in the response.
           #
           #   @return [Boolean, nil]
           optional :archived, HubspotSDK::Internal::Type::Boolean
@@ -28,6 +29,7 @@ module HubspotSDK
           optional :limit, Integer
 
           # @!attribute offset
+          #   The number of rows to skip before starting to return results.
           #
           #   @return [Integer, nil]
           optional :offset, Integer
@@ -52,11 +54,11 @@ module HubspotSDK
           #
           #   @param after [String] The cursor token value to get the next set of results. You can get this from the
           #
-          #   @param archived [Boolean]
+          #   @param archived [Boolean] Specifies whether to include archived rows in the response.
           #
           #   @param limit [Integer] The maximum number of results to return. Default is `1000`.
           #
-          #   @param offset [Integer]
+          #   @param offset [Integer] The number of rows to skip before starting to return results.
           #
           #   @param properties [Array<String>] Specify the column names to get results containing only the required columns ins
           #

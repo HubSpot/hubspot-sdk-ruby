@@ -77,88 +77,88 @@ module HubspotSDK
         }
 
         type ab_sample_size_default =
-          :master
-          | :variant
+          :automated_loser_variant
+          | :automated_master
+          | :automated_variant
           | :loser_variant
           | :mab_master
           | :mab_variant
-          | :automated_master
-          | :automated_variant
-          | :automated_loser_variant
+          | :master
+          | :variant
 
         module AbSampleSizeDefault
           extend HubspotSDK::Internal::Type::Enum
 
-          MASTER: :master
-          VARIANT: :variant
+          AUTOMATED_LOSER_VARIANT: :automated_loser_variant
+          AUTOMATED_MASTER: :automated_master
+          AUTOMATED_VARIANT: :automated_variant
           LOSER_VARIANT: :loser_variant
           MAB_MASTER: :mab_master
           MAB_VARIANT: :mab_variant
-          AUTOMATED_MASTER: :automated_master
-          AUTOMATED_VARIANT: :automated_variant
-          AUTOMATED_LOSER_VARIANT: :automated_loser_variant
+          MASTER: :master
+          VARIANT: :variant
 
           def self?.values: -> ::Array[HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sample_size_default]
         end
 
         type ab_sampling_default =
-          :master
-          | :variant
+          :automated_loser_variant
+          | :automated_master
+          | :automated_variant
           | :loser_variant
           | :mab_master
           | :mab_variant
-          | :automated_master
-          | :automated_variant
-          | :automated_loser_variant
+          | :master
+          | :variant
 
         module AbSamplingDefault
           extend HubspotSDK::Internal::Type::Enum
 
-          MASTER: :master
-          VARIANT: :variant
+          AUTOMATED_LOSER_VARIANT: :automated_loser_variant
+          AUTOMATED_MASTER: :automated_master
+          AUTOMATED_VARIANT: :automated_variant
           LOSER_VARIANT: :loser_variant
           MAB_MASTER: :mab_master
           MAB_VARIANT: :mab_variant
-          AUTOMATED_MASTER: :automated_master
-          AUTOMATED_VARIANT: :automated_variant
-          AUTOMATED_LOSER_VARIANT: :automated_loser_variant
+          MASTER: :master
+          VARIANT: :variant
 
           def self?.values: -> ::Array[HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sampling_default]
         end
 
         type ab_status =
-          :master
-          | :variant
+          :automated_loser_variant
+          | :automated_master
+          | :automated_variant
           | :loser_variant
           | :mab_master
           | :mab_variant
-          | :automated_master
-          | :automated_variant
-          | :automated_loser_variant
+          | :master
+          | :variant
 
         module AbStatus
           extend HubspotSDK::Internal::Type::Enum
 
-          MASTER: :master
-          VARIANT: :variant
+          AUTOMATED_LOSER_VARIANT: :automated_loser_variant
+          AUTOMATED_MASTER: :automated_master
+          AUTOMATED_VARIANT: :automated_variant
           LOSER_VARIANT: :loser_variant
           MAB_MASTER: :mab_master
           MAB_VARIANT: :mab_variant
-          AUTOMATED_MASTER: :automated_master
-          AUTOMATED_VARIANT: :automated_variant
-          AUTOMATED_LOSER_VARIANT: :automated_loser_variant
+          MASTER: :master
+          VARIANT: :variant
 
           def self?.values: -> ::Array[HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_status]
         end
 
         type ab_success_metric =
-          :CLICKS_BY_OPENS | :CLICKS_BY_DELIVERED | :OPENS_BY_DELIVERED
+          :CLICKS_BY_DELIVERED | :CLICKS_BY_OPENS | :OPENS_BY_DELIVERED
 
         module AbSuccessMetric
           extend HubspotSDK::Internal::Type::Enum
 
-          CLICKS_BY_OPENS: :CLICKS_BY_OPENS
           CLICKS_BY_DELIVERED: :CLICKS_BY_DELIVERED
+          CLICKS_BY_OPENS: :CLICKS_BY_OPENS
           OPENS_BY_DELIVERED: :OPENS_BY_DELIVERED
 
           def self?.values: -> ::Array[HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_success_metric]

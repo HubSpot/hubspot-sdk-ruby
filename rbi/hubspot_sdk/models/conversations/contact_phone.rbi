@@ -63,14 +63,14 @@ module HubspotSDK
               :CELL,
               HubspotSDK::Conversations::ContactPhone::Type::TaggedSymbol
             )
-          MAIN =
-            T.let(
-              :MAIN,
-              HubspotSDK::Conversations::ContactPhone::Type::TaggedSymbol
-            )
           HOME =
             T.let(
               :HOME,
+              HubspotSDK::Conversations::ContactPhone::Type::TaggedSymbol
+            )
+          MAIN =
+            T.let(
+              :MAIN,
               HubspotSDK::Conversations::ContactPhone::Type::TaggedSymbol
             )
           WORK =

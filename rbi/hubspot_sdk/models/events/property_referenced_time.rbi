@@ -89,9 +89,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          VALUE =
+          ANNIVERSARY =
             T.let(
-              :VALUE,
+              :ANNIVERSARY,
+              HubspotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
+            )
+          ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION =
+            T.let(
+              :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION,
               HubspotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
             )
           UPDATED_AT =
@@ -99,19 +104,14 @@ module HubspotSDK
               :UPDATED_AT,
               HubspotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
             )
-          ANNIVERSARY =
+          VALUE =
             T.let(
-              :ANNIVERSARY,
+              :VALUE,
               HubspotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
             )
           VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION =
             T.let(
               :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION,
-              HubspotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
-            )
-          ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION =
-            T.let(
-              :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION,
               HubspotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
             )
 
@@ -172,14 +172,14 @@ module HubspotSDK
               :CUSTOM,
               HubspotSDK::Events::PropertyReferencedTime::TimezoneSource::TaggedSymbol
             )
-          USER =
-            T.let(
-              :USER,
-              HubspotSDK::Events::PropertyReferencedTime::TimezoneSource::TaggedSymbol
-            )
           PORTAL =
             T.let(
               :PORTAL,
+              HubspotSDK::Events::PropertyReferencedTime::TimezoneSource::TaggedSymbol
+            )
+          USER =
+            T.let(
+              :USER,
               HubspotSDK::Events::PropertyReferencedTime::TimezoneSource::TaggedSymbol
             )
 

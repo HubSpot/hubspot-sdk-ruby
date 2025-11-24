@@ -27,7 +27,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::FunctionsTest < HubspotS
         "functionId",
         app_id: 0,
         definition_id: "definitionId",
-        function_type: :PRE_ACTION_EXECUTION
+        function_type: :POST_ACTION_EXECUTION
       )
 
     assert_pattern do
@@ -43,7 +43,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::FunctionsTest < HubspotS
         "functionId",
         app_id: 0,
         definition_id: "definitionId",
-        function_type: :PRE_ACTION_EXECUTION,
+        function_type: :POST_ACTION_EXECUTION,
         body: "body"
       )
 
@@ -64,7 +64,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::FunctionsTest < HubspotS
 
     response =
       @hubspot.automation.actions.functions.create_or_replace_by_function_type(
-        :PRE_ACTION_EXECUTION,
+        :POST_ACTION_EXECUTION,
         app_id: 0,
         definition_id: "definitionId",
         body: "body"
@@ -87,7 +87,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::FunctionsTest < HubspotS
 
     response =
       @hubspot.automation.actions.functions.delete_by_function_type(
-        :PRE_ACTION_EXECUTION,
+        :POST_ACTION_EXECUTION,
         app_id: 0,
         definition_id: "definitionId"
       )
@@ -105,7 +105,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::FunctionsTest < HubspotS
         "functionId",
         app_id: 0,
         definition_id: "definitionId",
-        function_type: :PRE_ACTION_EXECUTION
+        function_type: :POST_ACTION_EXECUTION
       )
 
     assert_pattern do
@@ -126,7 +126,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::FunctionsTest < HubspotS
 
     response =
       @hubspot.automation.actions.functions.get_by_function_type(
-        :PRE_ACTION_EXECUTION,
+        :POST_ACTION_EXECUTION,
         app_id: 0,
         definition_id: "definitionId"
       )

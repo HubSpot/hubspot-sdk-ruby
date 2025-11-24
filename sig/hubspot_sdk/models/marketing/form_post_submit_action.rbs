@@ -22,13 +22,13 @@ module HubspotSDK
           value: String
         }
 
-        type type_ = :thank_you | :redirect_url
+        type type_ = :redirect_url | :thank_you
 
         module Type
           extend HubspotSDK::Internal::Type::Enum
 
-          THANK_YOU: :thank_you
           REDIRECT_URL: :redirect_url
+          THANK_YOU: :thank_you
 
           def self?.values: -> ::Array[HubspotSDK::Models::Marketing::FormPostSubmitAction::type_]
         end

@@ -8,7 +8,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::EventsTest < HubspotSDK::Te
 
     response =
       @hubspot.cms.media_bridge.events.create_attention_span_event(
-        media_type: :VIDEO,
+        media_type: :AUDIO,
         occurred_timestamp: 0,
         raw_data_map: {foo: 0},
         session_id: "sessionId"
@@ -48,7 +48,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::EventsTest < HubspotSDK::Te
 
     response =
       @hubspot.cms.media_bridge.events.create_media_played_event(
-        media_type: :VIDEO,
+        media_type: :AUDIO,
         occurred_timestamp: 0,
         session_id: "sessionId",
         state: :STARTED
@@ -86,7 +86,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::EventsTest < HubspotSDK::Te
 
     response =
       @hubspot.cms.media_bridge.events.create_media_played_percent_event(
-        media_type: :VIDEO,
+        media_type: :AUDIO,
         occurred_timestamp: 0,
         played_percent: 0,
         session_id: "sessionId"

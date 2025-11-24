@@ -23,8 +23,8 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::Enum
 
           GLOBAL = :GLOBAL
-          OBJECT_TYPE = :OBJECT_TYPE
           HAVEN_BRANCH = :HAVEN_BRANCH
+          OBJECT_TYPE = :OBJECT_TYPE
           PORTAL = :PORTAL
 
           # @!method self.values

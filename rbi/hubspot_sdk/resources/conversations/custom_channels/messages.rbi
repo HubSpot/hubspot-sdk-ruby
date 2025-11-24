@@ -41,9 +41,7 @@ module HubspotSDK
                 HubspotSDK::Conversations::PreResolvedContacts::OrHash,
               rich_text: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Conversations::ConversationsPublicConversationsMessage
-            )
+            ).returns(HubspotSDK::Conversations::PublicConversationsMessage)
           end
           def create(
             # The channel the message will be sent over
@@ -75,9 +73,7 @@ module HubspotSDK
                 HubspotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::OrSymbol,
               error_message: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Conversations::ConversationsPublicConversationsMessage
-            )
+            ).returns(HubspotSDK::Conversations::PublicConversationsMessage)
           end
           def update(
             # Path param: The id of the message
@@ -98,9 +94,7 @@ module HubspotSDK
               message_id: String,
               channel_id: Integer,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(
-              HubspotSDK::Conversations::ConversationsPublicConversationsMessage
-            )
+            ).returns(HubspotSDK::Conversations::PublicConversationsMessage)
           end
           def get(
             # The id of the message

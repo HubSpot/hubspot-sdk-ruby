@@ -131,16 +131,6 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          PUBLIC_INDEXABLE =
-            T.let(
-              :PUBLIC_INDEXABLE,
-              HubspotSDK::Files::FileUpdateInput::Access::TaggedSymbol
-            )
-          PUBLIC_NOT_INDEXABLE =
-            T.let(
-              :PUBLIC_NOT_INDEXABLE,
-              HubspotSDK::Files::FileUpdateInput::Access::TaggedSymbol
-            )
           HIDDEN_INDEXABLE =
             T.let(
               :HIDDEN_INDEXABLE,
@@ -156,14 +146,24 @@ module HubspotSDK
               :HIDDEN_PRIVATE,
               HubspotSDK::Files::FileUpdateInput::Access::TaggedSymbol
             )
+          HIDDEN_SENSITIVE =
+            T.let(
+              :HIDDEN_SENSITIVE,
+              HubspotSDK::Files::FileUpdateInput::Access::TaggedSymbol
+            )
           PRIVATE =
             T.let(
               :PRIVATE,
               HubspotSDK::Files::FileUpdateInput::Access::TaggedSymbol
             )
-          HIDDEN_SENSITIVE =
+          PUBLIC_INDEXABLE =
             T.let(
-              :HIDDEN_SENSITIVE,
+              :PUBLIC_INDEXABLE,
+              HubspotSDK::Files::FileUpdateInput::Access::TaggedSymbol
+            )
+          PUBLIC_NOT_INDEXABLE =
+            T.let(
+              :PUBLIC_NOT_INDEXABLE,
               HubspotSDK::Files::FileUpdateInput::Access::TaggedSymbol
             )
           SENSITIVE =

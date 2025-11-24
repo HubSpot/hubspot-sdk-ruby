@@ -166,14 +166,14 @@ module HubspotSDK
               :CRM_PERMISSIONS_ENFORCEMENT,
               HubspotSDK::Crm::PipelineStage::WritePermissions::TaggedSymbol
             )
-          READ_ONLY =
-            T.let(
-              :READ_ONLY,
-              HubspotSDK::Crm::PipelineStage::WritePermissions::TaggedSymbol
-            )
           INTERNAL_ONLY =
             T.let(
               :INTERNAL_ONLY,
+              HubspotSDK::Crm::PipelineStage::WritePermissions::TaggedSymbol
+            )
+          READ_ONLY =
+            T.let(
+              :READ_ONLY,
               HubspotSDK::Crm::PipelineStage::WritePermissions::TaggedSymbol
             )
 

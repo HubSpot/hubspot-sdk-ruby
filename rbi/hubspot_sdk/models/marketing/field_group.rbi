@@ -204,14 +204,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          TEXT =
-            T.let(
-              :text,
-              HubspotSDK::Marketing::FieldGroup::RichTextType::TaggedSymbol
-            )
           IMAGE =
             T.let(
               :image,
+              HubspotSDK::Marketing::FieldGroup::RichTextType::TaggedSymbol
+            )
+          TEXT =
+            T.let(
+              :text,
               HubspotSDK::Marketing::FieldGroup::RichTextType::TaggedSymbol
             )
 

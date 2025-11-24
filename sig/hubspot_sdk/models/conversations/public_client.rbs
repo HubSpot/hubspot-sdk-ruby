@@ -24,14 +24,14 @@ module HubspotSDK
           integration_app_id: Integer
         }
 
-        type client_type = :HUBSPOT | :SYSTEM | :INTEGRATION | :UNKNOWN
+        type client_type = :HUBSPOT | :INTEGRATION | :SYSTEM | :UNKNOWN
 
         module ClientType
           extend HubspotSDK::Internal::Type::Enum
 
           HUBSPOT: :HUBSPOT
-          SYSTEM: :SYSTEM
           INTEGRATION: :INTEGRATION
+          SYSTEM: :SYSTEM
           UNKNOWN: :UNKNOWN
 
           def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicClient::client_type]

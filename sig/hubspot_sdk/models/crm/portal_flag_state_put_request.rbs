@@ -17,14 +17,14 @@ module HubspotSDK
           flag_state: HubspotSDK::Models::Crm::PortalFlagStatePutRequest::flag_state
         }
 
-        type flag_state = :OFF | :ON | :ABSENT
+        type flag_state = :ABSENT | :OFF | :ON
 
         module FlagState
           extend HubspotSDK::Internal::Type::Enum
 
+          ABSENT: :ABSENT
           OFF: :OFF
           ON: :ON
-          ABSENT: :ABSENT
 
           def self?.values: -> ::Array[HubspotSDK::Models::Crm::PortalFlagStatePutRequest::flag_state]
         end

@@ -55,25 +55,25 @@ module HubspotSDK
             def self?.values: -> ::Array[HubspotSDK::Models::Marketing::Subscriptions::PublicWideStatus::channel]
           end
 
-          type status = :SUBSCRIBED | :UNSUBSCRIBED | :NOT_SPECIFIED
+          type status = :NOT_SPECIFIED | :SUBSCRIBED | :UNSUBSCRIBED
 
           module Status
             extend HubspotSDK::Internal::Type::Enum
 
+            NOT_SPECIFIED: :NOT_SPECIFIED
             SUBSCRIBED: :SUBSCRIBED
             UNSUBSCRIBED: :UNSUBSCRIBED
-            NOT_SPECIFIED: :NOT_SPECIFIED
 
             def self?.values: -> ::Array[HubspotSDK::Models::Marketing::Subscriptions::PublicWideStatus::status]
           end
 
-          type wide_status_type = :PORTAL_WIDE | :BUSINESS_UNIT_WIDE
+          type wide_status_type = :BUSINESS_UNIT_WIDE | :PORTAL_WIDE
 
           module WideStatusType
             extend HubspotSDK::Internal::Type::Enum
 
-            PORTAL_WIDE: :PORTAL_WIDE
             BUSINESS_UNIT_WIDE: :BUSINESS_UNIT_WIDE
+            PORTAL_WIDE: :PORTAL_WIDE
 
             def self?.values: -> ::Array[HubspotSDK::Models::Marketing::Subscriptions::PublicWideStatus::wide_status_type]
           end

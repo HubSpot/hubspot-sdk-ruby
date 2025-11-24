@@ -11,7 +11,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::Posts::BatchTest < HubspotSDK::Te
         inputs: [
           {
             id: "id",
-            abStatus: :master,
+            abStatus: :automated_loser_variant,
             abTestId: "abTestId",
             archivedAt: 0,
             archivedInDashboard: true,

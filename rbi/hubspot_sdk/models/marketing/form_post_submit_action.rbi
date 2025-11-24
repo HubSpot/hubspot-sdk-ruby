@@ -61,14 +61,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          THANK_YOU =
-            T.let(
-              :thank_you,
-              HubspotSDK::Marketing::FormPostSubmitAction::Type::TaggedSymbol
-            )
           REDIRECT_URL =
             T.let(
               :redirect_url,
+              HubspotSDK::Marketing::FormPostSubmitAction::Type::TaggedSymbol
+            )
+          THANK_YOU =
+            T.let(
+              :thank_you,
               HubspotSDK::Marketing::FormPostSubmitAction::Type::TaggedSymbol
             )
 

@@ -72,14 +72,14 @@ module HubspotSDK
           submit_size: String
         }
 
-        type submit_alignment = :left | :right | :center
+        type submit_alignment = :center | :left | :right
 
         module SubmitAlignment
           extend HubspotSDK::Internal::Type::Enum
 
+          CENTER: :center
           LEFT: :left
           RIGHT: :right
-          CENTER: :center
 
           def self?.values: -> ::Array[HubspotSDK::Models::Marketing::FormStyle::submit_alignment]
         end

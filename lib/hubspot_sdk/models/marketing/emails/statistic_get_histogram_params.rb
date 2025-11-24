@@ -48,15 +48,15 @@ module HubspotSDK
           module Interval
             extend HubspotSDK::Internal::Type::Enum
 
-            YEAR = :YEAR
-            QUARTER = :QUARTER
-            MONTH = :MONTH
-            WEEK = :WEEK
             DAY = :DAY
             HOUR = :HOUR
-            QUARTER_HOUR = :QUARTER_HOUR
             MINUTE = :MINUTE
+            MONTH = :MONTH
+            QUARTER = :QUARTER
+            QUARTER_HOUR = :QUARTER_HOUR
             SECOND = :SECOND
+            WEEK = :WEEK
+            YEAR = :YEAR
 
             # @!method self.values
             #   @return [Array<Symbol>]

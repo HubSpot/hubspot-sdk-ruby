@@ -12,9 +12,12 @@ module HubspotSDK
             )
           end
 
+        # The updated conversion rate between the to and from currency code of this
+        # exchange rate.
         sig { returns(Float) }
         attr_accessor :conversion_rate
 
+        # The date the exchange rate is in effect.
         sig { returns(T.nilable(Time)) }
         attr_reader :effective_at
 
@@ -26,7 +29,13 @@ module HubspotSDK
             T.attached_class
           )
         end
-        def self.new(conversion_rate:, effective_at: nil)
+        def self.new(
+          # The updated conversion rate between the to and from currency code of this
+          # exchange rate.
+          conversion_rate:,
+          # The date the exchange rate is in effect.
+          effective_at: nil
+        )
         end
 
         sig { override.returns({ conversion_rate: Float, effective_at: Time }) }

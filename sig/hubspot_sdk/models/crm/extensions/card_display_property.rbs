@@ -41,8 +41,8 @@ module HubspotSDK
             | :EMAIL
             | :LINK
             | :NUMERIC
-            | :STRING
             | :STATUS
+            | :STRING
 
           module DataType
             extend HubspotSDK::Internal::Type::Enum
@@ -54,8 +54,8 @@ module HubspotSDK
             EMAIL: :EMAIL
             LINK: :LINK
             NUMERIC: :NUMERIC
-            STRING: :STRING
             STATUS: :STATUS
+            STRING: :STRING
 
             def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::CardDisplayProperty::data_type]
           end

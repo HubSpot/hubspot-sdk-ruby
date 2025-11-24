@@ -47,6 +47,7 @@ module HubspotSDK
         optional :limit, Integer
 
         # @!attribute sort
+        #   Specifies the order in which the domains are returned.
         #
         #   @return [Array<String>, nil]
         optional :sort, HubspotSDK::Internal::Type::ArrayOf[String]
@@ -85,7 +86,7 @@ module HubspotSDK
         #
         #   @param limit [Integer] Maximum number of results per page.
         #
-        #   @param sort [Array<String>]
+        #   @param sort [Array<String>] Specifies the order in which the domains are returned.
         #
         #   @param updated_after [Time] Only return domains updated after this date.
         #

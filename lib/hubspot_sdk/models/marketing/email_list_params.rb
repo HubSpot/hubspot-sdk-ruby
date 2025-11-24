@@ -75,6 +75,21 @@ module HubspotSDK
         #   @return [Boolean, nil]
         optional :marketing_campaign_names, HubspotSDK::Internal::Type::Boolean
 
+        # @!attribute published_after
+        #
+        #   @return [Time, nil]
+        optional :published_after, Time
+
+        # @!attribute published_at
+        #
+        #   @return [Time, nil]
+        optional :published_at, Time
+
+        # @!attribute published_before
+        #
+        #   @return [Time, nil]
+        optional :published_before, Time
+
         # @!attribute sort
         #   Specifies which fields to use for sorting results. Valid fields are `name`,
         #   `createdAt`, `updatedAt`, `createdBy`, `updatedBy`. `createdAt` will be used by
@@ -114,7 +129,7 @@ module HubspotSDK
         #   @return [Boolean, nil]
         optional :workflow_names, HubspotSDK::Internal::Type::Boolean
 
-        # @!method initialize(after: nil, archived: nil, campaign: nil, created_after: nil, created_at: nil, created_before: nil, included_properties: nil, include_stats: nil, is_published: nil, limit: nil, marketing_campaign_names: nil, sort: nil, type: nil, updated_after: nil, updated_at: nil, updated_before: nil, workflow_names: nil, request_options: {})
+        # @!method initialize(after: nil, archived: nil, campaign: nil, created_after: nil, created_at: nil, created_before: nil, included_properties: nil, include_stats: nil, is_published: nil, limit: nil, marketing_campaign_names: nil, published_after: nil, published_at: nil, published_before: nil, sort: nil, type: nil, updated_after: nil, updated_at: nil, updated_before: nil, workflow_names: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Marketing::EmailListParams} for more details.
         #
@@ -140,6 +155,12 @@ module HubspotSDK
         #
         #   @param marketing_campaign_names [Boolean] Include the names for any associated marketing campaigns.
         #
+        #   @param published_after [Time]
+        #
+        #   @param published_at [Time]
+        #
+        #   @param published_before [Time]
+        #
         #   @param sort [Array<String>] Specifies which fields to use for sorting results. Valid fields are `name`, `cre
         #
         #   @param type [Symbol, HubspotSDK::Models::Marketing::EmailListParams::Type] Email types to be filtered by. Multiple types can be included. All emails will b
@@ -160,36 +181,36 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::Enum
 
           AB_EMAIL = :AB_EMAIL
-          BATCH_EMAIL = :BATCH_EMAIL
-          LOCALTIME_EMAIL = :LOCALTIME_EMAIL
           AUTOMATED_AB_EMAIL = :AUTOMATED_AB_EMAIL
+          AUTOMATED_EMAIL = :AUTOMATED_EMAIL
+          BATCH_EMAIL = :BATCH_EMAIL
           BLOG_EMAIL = :BLOG_EMAIL
           BLOG_EMAIL_CHILD = :BLOG_EMAIL_CHILD
-          RSS_EMAIL = :RSS_EMAIL
-          RSS_EMAIL_CHILD = :RSS_EMAIL_CHILD
-          RESUBSCRIBE_EMAIL = :RESUBSCRIBE_EMAIL
-          OPTIN_EMAIL = :OPTIN_EMAIL
-          OPTIN_FOLLOWUP_EMAIL = :OPTIN_FOLLOWUP_EMAIL
-          AUTOMATED_EMAIL = :AUTOMATED_EMAIL
           FEEDBACK_CES_EMAIL = :FEEDBACK_CES_EMAIL
           FEEDBACK_CUSTOM_EMAIL = :FEEDBACK_CUSTOM_EMAIL
           FEEDBACK_CUSTOM_SURVEY_EMAIL = :FEEDBACK_CUSTOM_SURVEY_EMAIL
           FEEDBACK_NPS_EMAIL = :FEEDBACK_NPS_EMAIL
           FOLLOWUP_EMAIL = :FOLLOWUP_EMAIL
           LEADFLOW_EMAIL = :LEADFLOW_EMAIL
-          SINGLE_SEND_API = :SINGLE_SEND_API
+          LOCALTIME_EMAIL = :LOCALTIME_EMAIL
           MARKETING_SINGLE_SEND_API = :MARKETING_SINGLE_SEND_API
+          MEMBERSHIP_EMAIL_VERIFICATION_EMAIL = :MEMBERSHIP_EMAIL_VERIFICATION_EMAIL
+          MEMBERSHIP_FOLLOW_UP_EMAIL = :MEMBERSHIP_FOLLOW_UP_EMAIL
+          MEMBERSHIP_OTP_LOGIN_EMAIL = :MEMBERSHIP_OTP_LOGIN_EMAIL
+          MEMBERSHIP_PASSWORD_RESET_EMAIL = :MEMBERSHIP_PASSWORD_RESET_EMAIL
+          MEMBERSHIP_PASSWORD_SAVED_EMAIL = :MEMBERSHIP_PASSWORD_SAVED_EMAIL
+          MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL = :MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL
+          MEMBERSHIP_REGISTRATION_EMAIL = :MEMBERSHIP_REGISTRATION_EMAIL
+          MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL = :MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL
+          MEMBERSHIP_VERIFICATION_EMAIL = :MEMBERSHIP_VERIFICATION_EMAIL
+          OPTIN_EMAIL = :OPTIN_EMAIL
+          OPTIN_FOLLOWUP_EMAIL = :OPTIN_FOLLOWUP_EMAIL
+          RESUBSCRIBE_EMAIL = :RESUBSCRIBE_EMAIL
+          RSS_EMAIL = :RSS_EMAIL
+          RSS_EMAIL_CHILD = :RSS_EMAIL_CHILD
+          SINGLE_SEND_API = :SINGLE_SEND_API
           SMTP_TOKEN = :SMTP_TOKEN
           TICKET_EMAIL = :TICKET_EMAIL
-          MEMBERSHIP_REGISTRATION_EMAIL = :MEMBERSHIP_REGISTRATION_EMAIL
-          MEMBERSHIP_PASSWORD_SAVED_EMAIL = :MEMBERSHIP_PASSWORD_SAVED_EMAIL
-          MEMBERSHIP_PASSWORD_RESET_EMAIL = :MEMBERSHIP_PASSWORD_RESET_EMAIL
-          MEMBERSHIP_EMAIL_VERIFICATION_EMAIL = :MEMBERSHIP_EMAIL_VERIFICATION_EMAIL
-          MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL = :MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL
-          MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL = :MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL
-          MEMBERSHIP_OTP_LOGIN_EMAIL = :MEMBERSHIP_OTP_LOGIN_EMAIL
-          MEMBERSHIP_FOLLOW_UP_EMAIL = :MEMBERSHIP_FOLLOW_UP_EMAIL
-          MEMBERSHIP_VERIFICATION_EMAIL = :MEMBERSHIP_VERIFICATION_EMAIL
 
           # @!method self.values
           #   @return [Array<Symbol>]

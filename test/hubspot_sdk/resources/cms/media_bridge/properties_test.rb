@@ -216,7 +216,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::PropertiesTest < HubspotSDK
         "objectType",
         app_id: 0,
         archived: true,
-        data_sensitivity: :non_sensitive,
+        data_sensitivity: :highly_sensitive,
         inputs: [{name: "name"}]
       )
 

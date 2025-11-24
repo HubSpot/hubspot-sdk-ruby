@@ -159,7 +159,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::CustomTest < HubspotSDK::Test::
       @hubspot.crm.objects.custom.search(
         "objectType",
         after: "after",
-        filter_groups: [{filters: [{operator: :EQ, propertyName: "propertyName"}]}],
+        filter_groups: [{filters: [{operator: :BETWEEN, propertyName: "propertyName"}]}],
         limit: 0,
         properties: ["string"],
         sorts: ["string"]

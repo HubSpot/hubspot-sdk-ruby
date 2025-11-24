@@ -37,14 +37,14 @@ module HubspotSDK
           def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicListConversionInactivity::conversion_type]
         end
 
-        type time_unit = :DAY | :WEEK | :MONTH
+        type time_unit = :DAY | :MONTH | :WEEK
 
         module TimeUnit
           extend HubspotSDK::Internal::Type::Enum
 
           DAY: :DAY
-          WEEK: :WEEK
           MONTH: :MONTH
+          WEEK: :WEEK
 
           def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicListConversionInactivity::time_unit]
         end

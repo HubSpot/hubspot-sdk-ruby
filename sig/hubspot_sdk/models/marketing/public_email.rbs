@@ -430,25 +430,25 @@ module HubspotSDK
           | :"ar-tn"
           | :"ar-ye"
           | :as
+          | :"as-in"
           | :asa
           | :"asa-tz"
           | :ast
           | :"ast-es"
-          | :"as-in"
           | :az
           | :"az-az"
           | :bas
           | :"bas-cm"
           | :be
+          | :"be-by"
           | :bem
           | :"bem-zm"
           | :bez
           | :"bez-tz"
-          | :"be-by"
           | :bg
+          | :"bg-bg"
           | :bgc
           | :"bgc-in"
-          | :"bg-bg"
           | :bho
           | :"bho-in"
           | :bm
@@ -460,9 +460,9 @@ module HubspotSDK
           | :"bo-cn"
           | :"bo-in"
           | :br
+          | :"br-fr"
           | :brx
           | :"brx-in"
-          | :"br-fr"
           | :bs
           | :"bs-ba"
           | :ca
@@ -474,9 +474,9 @@ module HubspotSDK
           | :"ccp-bd"
           | :"ccp-in"
           | :ce
+          | :"ce-ru"
           | :ceb
           | :"ceb-ph"
-          | :"ce-ru"
           | :cgg
           | :"cgg-ug"
           | :chr
@@ -493,10 +493,10 @@ module HubspotSDK
           | :cy
           | :"cy-gb"
           | :da
-          | :dav
-          | :"dav-ke"
           | :"da-dk"
           | :"da-gl"
+          | :dav
+          | :"dav-ke"
           | :de
           | :"de-at"
           | :"de-be"
@@ -610,6 +610,7 @@ module HubspotSDK
           | :"en-pk"
           | :"en-pn"
           | :"en-pr"
+          | :"en-pt"
           | :"en-pw"
           | :"en-rw"
           | :"en-sb"
@@ -695,15 +696,13 @@ module HubspotSDK
           | :"ff-sl"
           | :"ff-sn"
           | :fi
+          | :"fi-fi"
           | :fil
           | :"fil-ph"
-          | :"fi-fi"
           | :fo
           | :"fo-dk"
           | :"fo-fo"
           | :fr
-          | :frr
-          | :"frr-de"
           | :"fr-be"
           | :"fr-bf"
           | :"fr-bi"
@@ -750,6 +749,8 @@ module HubspotSDK
           | :"fr-vu"
           | :"fr-wf"
           | :"fr-yt"
+          | :frr
+          | :"frr-de"
           | :fur
           | :"fur-it"
           | :fy
@@ -766,17 +767,17 @@ module HubspotSDK
           | :"gsw-fr"
           | :"gsw-li"
           | :gu
+          | :"gu-in"
           | :guz
           | :"guz-ke"
-          | :"gu-in"
           | :gv
           | :"gv-im"
           | :ha
-          | :haw
-          | :"haw-us"
           | :"ha-gh"
           | :"ha-ne"
           | :"ha-ng"
+          | :haw
+          | :"haw-us"
           | :he
           | :"he-il"
           | :hi
@@ -793,11 +794,11 @@ module HubspotSDK
           | :ia
           | :"ia-001"
           | :id
+          | :"id-id"
           | :ig
           | :"ig-ng"
           | :ii
           | :"ii-cn"
-          | :"id-id"
           | :is
           | :"is-is"
           | :it
@@ -809,53 +810,52 @@ module HubspotSDK
           | :"ja-jp"
           | :jgo
           | :"jgo-cm"
-          | :yi
-          | :"yi-001"
           | :jmc
           | :"jmc-tz"
           | :jv
           | :"jv-id"
           | :ka
+          | :"ka-ge"
           | :kab
           | :"kab-dz"
           | :kam
           | :"kam-ke"
-          | :"ka-ge"
           | :kde
           | :"kde-tz"
           | :kea
           | :"kea-cv"
           | :kgp
           | :"kgp-br"
+          | :kh
           | :khq
           | :"khq-ml"
           | :ki
           | :"ki-ke"
           | :kk
+          | :"kk-kz"
           | :kkj
           | :"kkj-cm"
-          | :"kk-kz"
           | :kl
+          | :"kl-gl"
           | :kln
           | :"kln-ke"
-          | :"kl-gl"
           | :km
           | :"km-kh"
           | :kn
           | :"kn-in"
           | :ko
-          | :kok
-          | :"kok-in"
           | :"ko-kp"
           | :"ko-kr"
+          | :kok
+          | :"kok-in"
           | :ks
+          | :"ks-in"
           | :ksb
           | :"ksb-tz"
           | :ksf
           | :"ksf-cm"
           | :ksh
           | :"ksh-de"
-          | :"ks-in"
           | :ku
           | :"ku-tr"
           | :kw
@@ -883,11 +883,11 @@ module HubspotSDK
           | :lt
           | :"lt-lt"
           | :lu
+          | :"lu-cd"
           | :luo
           | :"luo-ke"
           | :luy
           | :"luy-ke"
-          | :"lu-cd"
           | :lv
           | :"lv-lv"
           | :mai
@@ -902,11 +902,11 @@ module HubspotSDK
           | :mfe
           | :"mfe-mu"
           | :mg
+          | :"mg-mg"
           | :mgh
           | :"mgh-mz"
           | :mgo
           | :"mgo-cm"
-          | :"mg-mg"
           | :mi
           | :"mi-nz"
           | :mk
@@ -914,9 +914,9 @@ module HubspotSDK
           | :ml
           | :"ml-in"
           | :mn
+          | :"mn-mn"
           | :mni
           | :"mni-in"
-          | :"mn-mn"
           | :mr
           | :"mr-in"
           | :ms
@@ -938,10 +938,10 @@ module HubspotSDK
           | :"nb-no"
           | :"nb-sj"
           | :nd
+          | :"nd-zw"
           | :nds
           | :"nds-de"
           | :"nds-nl"
-          | :"nd-zw"
           | :ne
           | :"ne-in"
           | :"ne-np"
@@ -958,9 +958,9 @@ module HubspotSDK
           | :nmg
           | :"nmg-cm"
           | :nn
+          | :"nn-no"
           | :nnh
           | :"nnh-cm"
-          | :"nn-no"
           | :no
           | :"no-no"
           | :nus
@@ -1016,10 +1016,10 @@ module HubspotSDK
           | :rn
           | :"rn-bi"
           | :ro
-          | :rof
-          | :"rof-tz"
           | :"ro-md"
           | :"ro-ro"
+          | :rof
+          | :"rof-tz"
           | :ru
           | :"ru-by"
           | :"ru-kg"
@@ -1028,17 +1028,17 @@ module HubspotSDK
           | :"ru-ru"
           | :"ru-ua"
           | :rw
+          | :"rw-rw"
           | :rwk
           | :"rwk-tz"
-          | :"rw-rw"
           | :sa
+          | :"sa-in"
           | :sah
           | :"sah-ru"
           | :saq
           | :"saq-ke"
           | :sat
           | :"sat-in"
-          | :"sa-in"
           | :sbp
           | :"sbp-tz"
           | :sc
@@ -1047,13 +1047,13 @@ module HubspotSDK
           | :"sd-in"
           | :"sd-pk"
           | :se
+          | :"se-fi"
+          | :"se-no"
+          | :"se-se"
           | :seh
           | :"seh-mz"
           | :ses
           | :"ses-ml"
-          | :"se-fi"
-          | :"se-no"
-          | :"se-se"
           | :sg
           | :"sg-cf"
           | :shi
@@ -1103,10 +1103,10 @@ module HubspotSDK
           | :"ta-my"
           | :"ta-sg"
           | :te
+          | :"te-in"
           | :teo
           | :"teo-ke"
           | :"teo-ug"
-          | :"te-in"
           | :tg
           | :"tg-tj"
           | :th
@@ -1118,9 +1118,9 @@ module HubspotSDK
           | :"tk-tm"
           | :tl
           | :to
+          | :"to-to"
           | :tok
           | :"tok-001"
-          | :"to-to"
           | :tr
           | :"tr-cy"
           | :"tr-tr"
@@ -1158,6 +1158,8 @@ module HubspotSDK
           | :"xog-ug"
           | :yav
           | :"yav-cm"
+          | :yi
+          | :"yi-001"
           | :yo
           | :"yo-bj"
           | :"yo-ng"
@@ -1225,25 +1227,25 @@ module HubspotSDK
           AR_TN: :"ar-tn"
           AR_YE: :"ar-ye"
           AS: :as
+          AS_IN: :"as-in"
           ASA: :asa
           ASA_TZ: :"asa-tz"
           AST: :ast
           AST_ES: :"ast-es"
-          AS_IN: :"as-in"
           AZ: :az
           AZ_AZ: :"az-az"
           BAS: :bas
           BAS_CM: :"bas-cm"
           BE: :be
+          BE_BY: :"be-by"
           BEM: :bem
           BEM_ZM: :"bem-zm"
           BEZ: :bez
           BEZ_TZ: :"bez-tz"
-          BE_BY: :"be-by"
           BG: :bg
+          BG_BG: :"bg-bg"
           BGC: :bgc
           BGC_IN: :"bgc-in"
-          BG_BG: :"bg-bg"
           BHO: :bho
           BHO_IN: :"bho-in"
           BM: :bm
@@ -1255,9 +1257,9 @@ module HubspotSDK
           BO_CN: :"bo-cn"
           BO_IN: :"bo-in"
           BR: :br
+          BR_FR: :"br-fr"
           BRX: :brx
           BRX_IN: :"brx-in"
-          BR_FR: :"br-fr"
           BS: :bs
           BS_BA: :"bs-ba"
           CA: :ca
@@ -1269,9 +1271,9 @@ module HubspotSDK
           CCP_BD: :"ccp-bd"
           CCP_IN: :"ccp-in"
           CE: :ce
+          CE_RU: :"ce-ru"
           CEB: :ceb
           CEB_PH: :"ceb-ph"
-          CE_RU: :"ce-ru"
           CGG: :cgg
           CGG_UG: :"cgg-ug"
           CHR: :chr
@@ -1288,10 +1290,10 @@ module HubspotSDK
           CY: :cy
           CY_GB: :"cy-gb"
           DA: :da
-          DAV: :dav
-          DAV_KE: :"dav-ke"
           DA_DK: :"da-dk"
           DA_GL: :"da-gl"
+          DAV: :dav
+          DAV_KE: :"dav-ke"
           DE: :de
           DE_AT: :"de-at"
           DE_BE: :"de-be"
@@ -1405,6 +1407,7 @@ module HubspotSDK
           EN_PK: :"en-pk"
           EN_PN: :"en-pn"
           EN_PR: :"en-pr"
+          EN_PT: :"en-pt"
           EN_PW: :"en-pw"
           EN_RW: :"en-rw"
           EN_SB: :"en-sb"
@@ -1490,15 +1493,13 @@ module HubspotSDK
           FF_SL: :"ff-sl"
           FF_SN: :"ff-sn"
           FI: :fi
+          FI_FI: :"fi-fi"
           FIL: :fil
           FIL_PH: :"fil-ph"
-          FI_FI: :"fi-fi"
           FO: :fo
           FO_DK: :"fo-dk"
           FO_FO: :"fo-fo"
           FR: :fr
-          FRR: :frr
-          FRR_DE: :"frr-de"
           FR_BE: :"fr-be"
           FR_BF: :"fr-bf"
           FR_BI: :"fr-bi"
@@ -1545,6 +1546,8 @@ module HubspotSDK
           FR_VU: :"fr-vu"
           FR_WF: :"fr-wf"
           FR_YT: :"fr-yt"
+          FRR: :frr
+          FRR_DE: :"frr-de"
           FUR: :fur
           FUR_IT: :"fur-it"
           FY: :fy
@@ -1561,17 +1564,17 @@ module HubspotSDK
           GSW_FR: :"gsw-fr"
           GSW_LI: :"gsw-li"
           GU: :gu
+          GU_IN: :"gu-in"
           GUZ: :guz
           GUZ_KE: :"guz-ke"
-          GU_IN: :"gu-in"
           GV: :gv
           GV_IM: :"gv-im"
           HA: :ha
-          HAW: :haw
-          HAW_US: :"haw-us"
           HA_GH: :"ha-gh"
           HA_NE: :"ha-ne"
           HA_NG: :"ha-ng"
+          HAW: :haw
+          HAW_US: :"haw-us"
           HE: :he
           HE_IL: :"he-il"
           HI: :hi
@@ -1588,11 +1591,11 @@ module HubspotSDK
           IA: :ia
           IA_001: :"ia-001"
           ID: :id
+          ID_ID: :"id-id"
           IG: :ig
           IG_NG: :"ig-ng"
           II: :ii
           II_CN: :"ii-cn"
-          ID_ID: :"id-id"
           IS: :is
           IS_IS: :"is-is"
           IT: :it
@@ -1604,53 +1607,52 @@ module HubspotSDK
           JA_JP: :"ja-jp"
           JGO: :jgo
           JGO_CM: :"jgo-cm"
-          YI: :yi
-          YI_001: :"yi-001"
           JMC: :jmc
           JMC_TZ: :"jmc-tz"
           JV: :jv
           JV_ID: :"jv-id"
           KA: :ka
+          KA_GE: :"ka-ge"
           KAB: :kab
           KAB_DZ: :"kab-dz"
           KAM: :kam
           KAM_KE: :"kam-ke"
-          KA_GE: :"ka-ge"
           KDE: :kde
           KDE_TZ: :"kde-tz"
           KEA: :kea
           KEA_CV: :"kea-cv"
           KGP: :kgp
           KGP_BR: :"kgp-br"
+          KH: :kh
           KHQ: :khq
           KHQ_ML: :"khq-ml"
           KI: :ki
           KI_KE: :"ki-ke"
           KK: :kk
+          KK_KZ: :"kk-kz"
           KKJ: :kkj
           KKJ_CM: :"kkj-cm"
-          KK_KZ: :"kk-kz"
           KL: :kl
+          KL_GL: :"kl-gl"
           KLN: :kln
           KLN_KE: :"kln-ke"
-          KL_GL: :"kl-gl"
           KM: :km
           KM_KH: :"km-kh"
           KN: :kn
           KN_IN: :"kn-in"
           KO: :ko
-          KOK: :kok
-          KOK_IN: :"kok-in"
           KO_KP: :"ko-kp"
           KO_KR: :"ko-kr"
+          KOK: :kok
+          KOK_IN: :"kok-in"
           KS: :ks
+          KS_IN: :"ks-in"
           KSB: :ksb
           KSB_TZ: :"ksb-tz"
           KSF: :ksf
           KSF_CM: :"ksf-cm"
           KSH: :ksh
           KSH_DE: :"ksh-de"
-          KS_IN: :"ks-in"
           KU: :ku
           KU_TR: :"ku-tr"
           KW: :kw
@@ -1678,11 +1680,11 @@ module HubspotSDK
           LT: :lt
           LT_LT: :"lt-lt"
           LU: :lu
+          LU_CD: :"lu-cd"
           LUO: :luo
           LUO_KE: :"luo-ke"
           LUY: :luy
           LUY_KE: :"luy-ke"
-          LU_CD: :"lu-cd"
           LV: :lv
           LV_LV: :"lv-lv"
           MAI: :mai
@@ -1697,11 +1699,11 @@ module HubspotSDK
           MFE: :mfe
           MFE_MU: :"mfe-mu"
           MG: :mg
+          MG_MG: :"mg-mg"
           MGH: :mgh
           MGH_MZ: :"mgh-mz"
           MGO: :mgo
           MGO_CM: :"mgo-cm"
-          MG_MG: :"mg-mg"
           MI: :mi
           MI_NZ: :"mi-nz"
           MK: :mk
@@ -1709,9 +1711,9 @@ module HubspotSDK
           ML: :ml
           ML_IN: :"ml-in"
           MN: :mn
+          MN_MN: :"mn-mn"
           MNI: :mni
           MNI_IN: :"mni-in"
-          MN_MN: :"mn-mn"
           MR: :mr
           MR_IN: :"mr-in"
           MS: :ms
@@ -1733,10 +1735,10 @@ module HubspotSDK
           NB_NO: :"nb-no"
           NB_SJ: :"nb-sj"
           ND: :nd
+          ND_ZW: :"nd-zw"
           NDS: :nds
           NDS_DE: :"nds-de"
           NDS_NL: :"nds-nl"
-          ND_ZW: :"nd-zw"
           NE: :ne
           NE_IN: :"ne-in"
           NE_NP: :"ne-np"
@@ -1753,9 +1755,9 @@ module HubspotSDK
           NMG: :nmg
           NMG_CM: :"nmg-cm"
           NN: :nn
+          NN_NO: :"nn-no"
           NNH: :nnh
           NNH_CM: :"nnh-cm"
-          NN_NO: :"nn-no"
           NO: :no
           NO_NO: :"no-no"
           NUS: :nus
@@ -1811,10 +1813,10 @@ module HubspotSDK
           RN: :rn
           RN_BI: :"rn-bi"
           RO: :ro
-          ROF: :rof
-          ROF_TZ: :"rof-tz"
           RO_MD: :"ro-md"
           RO_RO: :"ro-ro"
+          ROF: :rof
+          ROF_TZ: :"rof-tz"
           RU: :ru
           RU_BY: :"ru-by"
           RU_KG: :"ru-kg"
@@ -1823,17 +1825,17 @@ module HubspotSDK
           RU_RU: :"ru-ru"
           RU_UA: :"ru-ua"
           RW: :rw
+          RW_RW: :"rw-rw"
           RWK: :rwk
           RWK_TZ: :"rwk-tz"
-          RW_RW: :"rw-rw"
           SA: :sa
+          SA_IN: :"sa-in"
           SAH: :sah
           SAH_RU: :"sah-ru"
           SAQ: :saq
           SAQ_KE: :"saq-ke"
           SAT: :sat
           SAT_IN: :"sat-in"
-          SA_IN: :"sa-in"
           SBP: :sbp
           SBP_TZ: :"sbp-tz"
           SC: :sc
@@ -1842,13 +1844,13 @@ module HubspotSDK
           SD_IN: :"sd-in"
           SD_PK: :"sd-pk"
           SE: :se
+          SE_FI: :"se-fi"
+          SE_NO: :"se-no"
+          SE_SE: :"se-se"
           SEH: :seh
           SEH_MZ: :"seh-mz"
           SES: :ses
           SES_ML: :"ses-ml"
-          SE_FI: :"se-fi"
-          SE_NO: :"se-no"
-          SE_SE: :"se-se"
           SG: :sg
           SG_CF: :"sg-cf"
           SHI: :shi
@@ -1898,10 +1900,10 @@ module HubspotSDK
           TA_MY: :"ta-my"
           TA_SG: :"ta-sg"
           TE: :te
+          TE_IN: :"te-in"
           TEO: :teo
           TEO_KE: :"teo-ke"
           TEO_UG: :"teo-ug"
-          TE_IN: :"te-in"
           TG: :tg
           TG_TJ: :"tg-tj"
           TH: :th
@@ -1913,9 +1915,9 @@ module HubspotSDK
           TK_TM: :"tk-tm"
           TL: :tl
           TO: :to
+          TO_TO: :"to-to"
           TOK: :tok
           TOK_001: :"tok-001"
-          TO_TO: :"to-to"
           TR: :tr
           TR_CY: :"tr-cy"
           TR_TR: :"tr-tr"
@@ -1953,6 +1955,8 @@ module HubspotSDK
           XOG_UG: :"xog-ug"
           YAV: :yav
           YAV_CM: :"yav-cm"
+          YI: :yi
+          YI_001: :"yi-001"
           YO: :yo
           YO_BJ: :"yo-bj"
           YO_NG: :"yo-ng"
@@ -1980,13 +1984,19 @@ module HubspotSDK
         end
 
         type state =
-          :AUTOMATED
+          :AGENT_GENERATED
+          | :AUTOMATED
+          | :AUTOMATED_AB
+          | :AUTOMATED_AB_VARIANT
           | :AUTOMATED_DRAFT
-          | :AUTOMATED_SENDING
+          | :AUTOMATED_DRAFT_AB
+          | :AUTOMATED_DRAFT_ABVARIANT
           | :AUTOMATED_FOR_FORM
           | :AUTOMATED_FOR_FORM_BUFFER
           | :AUTOMATED_FOR_FORM_DRAFT
           | :AUTOMATED_FOR_FORM_LEGACY
+          | :AUTOMATED_LOSER_ABVARIANT
+          | :AUTOMATED_SENDING
           | :BLOG_EMAIL_DRAFT
           | :BLOG_EMAIL_PUBLISHED
           | :DRAFT
@@ -2006,23 +2016,23 @@ module HubspotSDK
           | :SCHEDULED
           | :SCHEDULED_AB
           | :SCHEDULED_OR_PUBLISHED
-          | :AUTOMATED_AB
-          | :AUTOMATED_AB_VARIANT
-          | :AUTOMATED_DRAFT_AB
-          | :AUTOMATED_DRAFT_ABVARIANT
-          | :AUTOMATED_LOSER_ABVARIANT
-          | :AGENT_GENERATED
 
         module State
           extend HubspotSDK::Internal::Type::Enum
 
+          AGENT_GENERATED: :AGENT_GENERATED
           AUTOMATED: :AUTOMATED
+          AUTOMATED_AB: :AUTOMATED_AB
+          AUTOMATED_AB_VARIANT: :AUTOMATED_AB_VARIANT
           AUTOMATED_DRAFT: :AUTOMATED_DRAFT
-          AUTOMATED_SENDING: :AUTOMATED_SENDING
+          AUTOMATED_DRAFT_AB: :AUTOMATED_DRAFT_AB
+          AUTOMATED_DRAFT_ABVARIANT: :AUTOMATED_DRAFT_ABVARIANT
           AUTOMATED_FOR_FORM: :AUTOMATED_FOR_FORM
           AUTOMATED_FOR_FORM_BUFFER: :AUTOMATED_FOR_FORM_BUFFER
           AUTOMATED_FOR_FORM_DRAFT: :AUTOMATED_FOR_FORM_DRAFT
           AUTOMATED_FOR_FORM_LEGACY: :AUTOMATED_FOR_FORM_LEGACY
+          AUTOMATED_LOSER_ABVARIANT: :AUTOMATED_LOSER_ABVARIANT
+          AUTOMATED_SENDING: :AUTOMATED_SENDING
           BLOG_EMAIL_DRAFT: :BLOG_EMAIL_DRAFT
           BLOG_EMAIL_PUBLISHED: :BLOG_EMAIL_PUBLISHED
           DRAFT: :DRAFT
@@ -2042,83 +2052,77 @@ module HubspotSDK
           SCHEDULED: :SCHEDULED
           SCHEDULED_AB: :SCHEDULED_AB
           SCHEDULED_OR_PUBLISHED: :SCHEDULED_OR_PUBLISHED
-          AUTOMATED_AB: :AUTOMATED_AB
-          AUTOMATED_AB_VARIANT: :AUTOMATED_AB_VARIANT
-          AUTOMATED_DRAFT_AB: :AUTOMATED_DRAFT_AB
-          AUTOMATED_DRAFT_ABVARIANT: :AUTOMATED_DRAFT_ABVARIANT
-          AUTOMATED_LOSER_ABVARIANT: :AUTOMATED_LOSER_ABVARIANT
-          AGENT_GENERATED: :AGENT_GENERATED
 
           def self?.values: -> ::Array[HubspotSDK::Models::Marketing::PublicEmail::state]
         end
 
         type type_ =
           :AB_EMAIL
-          | :BATCH_EMAIL
-          | :LOCALTIME_EMAIL
           | :AUTOMATED_AB_EMAIL
+          | :AUTOMATED_EMAIL
+          | :BATCH_EMAIL
           | :BLOG_EMAIL
           | :BLOG_EMAIL_CHILD
-          | :RSS_EMAIL
-          | :RSS_EMAIL_CHILD
-          | :RESUBSCRIBE_EMAIL
-          | :OPTIN_EMAIL
-          | :OPTIN_FOLLOWUP_EMAIL
-          | :AUTOMATED_EMAIL
           | :FEEDBACK_CES_EMAIL
           | :FEEDBACK_CUSTOM_EMAIL
           | :FEEDBACK_CUSTOM_SURVEY_EMAIL
           | :FEEDBACK_NPS_EMAIL
           | :FOLLOWUP_EMAIL
           | :LEADFLOW_EMAIL
-          | :SINGLE_SEND_API
+          | :LOCALTIME_EMAIL
           | :MARKETING_SINGLE_SEND_API
+          | :MEMBERSHIP_EMAIL_VERIFICATION_EMAIL
+          | :MEMBERSHIP_FOLLOW_UP_EMAIL
+          | :MEMBERSHIP_OTP_LOGIN_EMAIL
+          | :MEMBERSHIP_PASSWORD_RESET_EMAIL
+          | :MEMBERSHIP_PASSWORD_SAVED_EMAIL
+          | :MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL
+          | :MEMBERSHIP_REGISTRATION_EMAIL
+          | :MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL
+          | :MEMBERSHIP_VERIFICATION_EMAIL
+          | :OPTIN_EMAIL
+          | :OPTIN_FOLLOWUP_EMAIL
+          | :RESUBSCRIBE_EMAIL
+          | :RSS_EMAIL
+          | :RSS_EMAIL_CHILD
+          | :SINGLE_SEND_API
           | :SMTP_TOKEN
           | :TICKET_EMAIL
-          | :MEMBERSHIP_REGISTRATION_EMAIL
-          | :MEMBERSHIP_PASSWORD_SAVED_EMAIL
-          | :MEMBERSHIP_PASSWORD_RESET_EMAIL
-          | :MEMBERSHIP_EMAIL_VERIFICATION_EMAIL
-          | :MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL
-          | :MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL
-          | :MEMBERSHIP_OTP_LOGIN_EMAIL
-          | :MEMBERSHIP_FOLLOW_UP_EMAIL
-          | :MEMBERSHIP_VERIFICATION_EMAIL
 
         module Type
           extend HubspotSDK::Internal::Type::Enum
 
           AB_EMAIL: :AB_EMAIL
-          BATCH_EMAIL: :BATCH_EMAIL
-          LOCALTIME_EMAIL: :LOCALTIME_EMAIL
           AUTOMATED_AB_EMAIL: :AUTOMATED_AB_EMAIL
+          AUTOMATED_EMAIL: :AUTOMATED_EMAIL
+          BATCH_EMAIL: :BATCH_EMAIL
           BLOG_EMAIL: :BLOG_EMAIL
           BLOG_EMAIL_CHILD: :BLOG_EMAIL_CHILD
-          RSS_EMAIL: :RSS_EMAIL
-          RSS_EMAIL_CHILD: :RSS_EMAIL_CHILD
-          RESUBSCRIBE_EMAIL: :RESUBSCRIBE_EMAIL
-          OPTIN_EMAIL: :OPTIN_EMAIL
-          OPTIN_FOLLOWUP_EMAIL: :OPTIN_FOLLOWUP_EMAIL
-          AUTOMATED_EMAIL: :AUTOMATED_EMAIL
           FEEDBACK_CES_EMAIL: :FEEDBACK_CES_EMAIL
           FEEDBACK_CUSTOM_EMAIL: :FEEDBACK_CUSTOM_EMAIL
           FEEDBACK_CUSTOM_SURVEY_EMAIL: :FEEDBACK_CUSTOM_SURVEY_EMAIL
           FEEDBACK_NPS_EMAIL: :FEEDBACK_NPS_EMAIL
           FOLLOWUP_EMAIL: :FOLLOWUP_EMAIL
           LEADFLOW_EMAIL: :LEADFLOW_EMAIL
-          SINGLE_SEND_API: :SINGLE_SEND_API
+          LOCALTIME_EMAIL: :LOCALTIME_EMAIL
           MARKETING_SINGLE_SEND_API: :MARKETING_SINGLE_SEND_API
+          MEMBERSHIP_EMAIL_VERIFICATION_EMAIL: :MEMBERSHIP_EMAIL_VERIFICATION_EMAIL
+          MEMBERSHIP_FOLLOW_UP_EMAIL: :MEMBERSHIP_FOLLOW_UP_EMAIL
+          MEMBERSHIP_OTP_LOGIN_EMAIL: :MEMBERSHIP_OTP_LOGIN_EMAIL
+          MEMBERSHIP_PASSWORD_RESET_EMAIL: :MEMBERSHIP_PASSWORD_RESET_EMAIL
+          MEMBERSHIP_PASSWORD_SAVED_EMAIL: :MEMBERSHIP_PASSWORD_SAVED_EMAIL
+          MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL: :MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL
+          MEMBERSHIP_REGISTRATION_EMAIL: :MEMBERSHIP_REGISTRATION_EMAIL
+          MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL: :MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL
+          MEMBERSHIP_VERIFICATION_EMAIL: :MEMBERSHIP_VERIFICATION_EMAIL
+          OPTIN_EMAIL: :OPTIN_EMAIL
+          OPTIN_FOLLOWUP_EMAIL: :OPTIN_FOLLOWUP_EMAIL
+          RESUBSCRIBE_EMAIL: :RESUBSCRIBE_EMAIL
+          RSS_EMAIL: :RSS_EMAIL
+          RSS_EMAIL_CHILD: :RSS_EMAIL_CHILD
+          SINGLE_SEND_API: :SINGLE_SEND_API
           SMTP_TOKEN: :SMTP_TOKEN
           TICKET_EMAIL: :TICKET_EMAIL
-          MEMBERSHIP_REGISTRATION_EMAIL: :MEMBERSHIP_REGISTRATION_EMAIL
-          MEMBERSHIP_PASSWORD_SAVED_EMAIL: :MEMBERSHIP_PASSWORD_SAVED_EMAIL
-          MEMBERSHIP_PASSWORD_RESET_EMAIL: :MEMBERSHIP_PASSWORD_RESET_EMAIL
-          MEMBERSHIP_EMAIL_VERIFICATION_EMAIL: :MEMBERSHIP_EMAIL_VERIFICATION_EMAIL
-          MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL: :MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL
-          MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL: :MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL
-          MEMBERSHIP_OTP_LOGIN_EMAIL: :MEMBERSHIP_OTP_LOGIN_EMAIL
-          MEMBERSHIP_FOLLOW_UP_EMAIL: :MEMBERSHIP_FOLLOW_UP_EMAIL
-          MEMBERSHIP_VERIFICATION_EMAIL: :MEMBERSHIP_VERIFICATION_EMAIL
 
           def self?.values: -> ::Array[HubspotSDK::Models::Marketing::PublicEmail::type_]
         end

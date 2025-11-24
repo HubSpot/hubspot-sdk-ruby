@@ -68,9 +68,11 @@ module HubspotSDK
             # The cursor token value to get the next set of results. You can get this from the
             # `paging.next.after` JSON property of a paged response containing more results.
             after: nil,
+            # Specifies whether to include archived rows in the response.
             archived: nil,
             # The maximum number of results to return. Default is `1000`.
             limit: nil,
+            # The number of rows to skip before starting to return results.
             offset: nil,
             # Specify the column names to get results containing only the required columns
             # instead of all column details.
@@ -96,7 +98,7 @@ module HubspotSDK
             row_id,
             # Path param: The ID or name of the table
             table_id_or_name:,
-            # Query param:
+            # Query param: The name for the cloned row.
             name: nil,
             request_options: {}
           )
@@ -135,7 +137,7 @@ module HubspotSDK
             row_id,
             # Path param: The ID or name of the table
             table_id_or_name:,
-            # Query param:
+            # Query param: Specifies whether to return an archived row. Defaults to `false`.
             archived: nil,
             request_options: {}
           )
@@ -155,7 +157,7 @@ module HubspotSDK
             row_id,
             # Path param: The ID or name of the table
             table_id_or_name:,
-            # Query param:
+            # Query param: Set this to `true` to return an archived row. Defaults to `false`.
             archived: nil,
             request_options: {}
           )
@@ -187,9 +189,11 @@ module HubspotSDK
             # The cursor token value to get the next set of results. You can get this from the
             # `paging.next.after` JSON property of a paged response containing more results.
             after: nil,
+            # Specifies whether to return archived rows. Defaults to `false`.
             archived: nil,
             # The maximum number of results to return. Default is `1000`.
             limit: nil,
+            # The number of rows to skip before starting to return results.
             offset: nil,
             # Specify the column names to get results containing only the required columns
             # instead of all column details. If you want to include multiple columns in the

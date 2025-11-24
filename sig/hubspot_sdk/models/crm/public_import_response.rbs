@@ -80,24 +80,24 @@ module HubspotSDK
         }
 
         type state =
-          :STARTED
-          | :PROCESSING
+          :CANCELED
+          | :DEFERRED
           | :DONE
           | :FAILED
-          | :CANCELED
-          | :DEFERRED
+          | :PROCESSING
           | :REVERTED
+          | :STARTED
 
         module State
           extend HubspotSDK::Internal::Type::Enum
 
-          STARTED: :STARTED
-          PROCESSING: :PROCESSING
-          DONE: :DONE
-          FAILED: :FAILED
           CANCELED: :CANCELED
           DEFERRED: :DEFERRED
+          DONE: :DONE
+          FAILED: :FAILED
+          PROCESSING: :PROCESSING
           REVERTED: :REVERTED
+          STARTED: :STARTED
 
           def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicImportResponse::state]
         end

@@ -18,14 +18,24 @@ module HubspotSDK
         # encoded in them changes over time. It's recommended to allow for tokens to be up
         # to 300 characters to account for any potential changes.
         #
-        # @overload create_access_token(client_id: nil, client_secret: nil, code: nil, grant_type: nil, redirect_uri: nil, refresh_token: nil, request_options: {})
+        # @overload create_access_token(body_client_secret: nil, body_refresh_token: nil, client_id: nil, code: nil, code_verifier: nil, grant_type: nil, redirect_uri: nil, scope: nil, request_options: {})
         #
-        # @param client_id [String]
-        # @param client_secret [String]
-        # @param code [String]
-        # @param grant_type [Symbol, HubspotSDK::Models::Auth::OAuthCreateAccessTokenParams::GrantType]
-        # @param redirect_uri [String]
-        # @param refresh_token [String]
+        # @param body_client_secret [String] Body param:
+        #
+        # @param body_refresh_token [String] Body param:
+        #
+        # @param client_id [String] Body param:
+        #
+        # @param code [String] Body param:
+        #
+        # @param code_verifier [String] Body param:
+        #
+        # @param grant_type [Symbol, HubspotSDK::Models::Auth::OAuthCreateAccessTokenParams::GrantType] Body param:
+        #
+        # @param redirect_uri [String] Body param:
+        #
+        # @param scope [String] Body param:
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Auth::TokenResponseIf]
@@ -33,16 +43,23 @@ module HubspotSDK
         # @see HubspotSDK::Models::Auth::OAuthCreateAccessTokenParams
         def create_access_token(params = {})
           parsed, options = HubspotSDK::Auth::OAuthCreateAccessTokenParams.dump_request(params)
+          query_params = [:query_client_secret, :query_refresh_token]
           @client.request(
             method: :post,
             path: "oauth/v1/token",
+            query: parsed.slice(*query_params).transform_keys(
+              query_client_secret: "client_secret",
+              query_refresh_token: "refresh_token"
+            ),
             headers: {"content-type" => "application/x-www-form-urlencoded"},
-            body: parsed,
+            body: parsed.except(*query_params),
             model: HubspotSDK::Auth::TokenResponseIf,
             options: options
           )
         end
 
+        # @deprecated
+        #
         # Delete a refresh token, typically after a user uninstalls your app. Access
         # tokens generated with the refresh token will not be affected.
         #
@@ -67,6 +84,8 @@ module HubspotSDK
           )
         end
 
+        # @deprecated
+        #
         # Retrieve a token's metadata, including the email address of the user that the
         # token was created for and the ID of the account it's associated with.
         #
@@ -92,6 +111,8 @@ module HubspotSDK
           )
         end
 
+        # @deprecated
+        #
         # Retrieve a refresh token's metadata, including the email address of the user
         # that the token was created for and the ID of the account it's associated with.
         # Learn more about

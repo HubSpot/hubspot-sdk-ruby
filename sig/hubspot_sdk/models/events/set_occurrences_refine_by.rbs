@@ -26,9 +26,9 @@ module HubspotSDK
           :ALL
           | :ALL_INCLUDE_EMPTY
           | :ANY
+          | :ANY_INCLUDE_EMPTY
           | :NONE
           | :NONE_EXCLUDE_EMPTY
-          | :ANY_INCLUDE_EMPTY
 
         module SetType
           extend HubspotSDK::Internal::Type::Enum
@@ -36,9 +36,9 @@ module HubspotSDK
           ALL: :ALL
           ALL_INCLUDE_EMPTY: :ALL_INCLUDE_EMPTY
           ANY: :ANY
+          ANY_INCLUDE_EMPTY: :ANY_INCLUDE_EMPTY
           NONE: :NONE
           NONE_EXCLUDE_EMPTY: :NONE_EXCLUDE_EMPTY
-          ANY_INCLUDE_EMPTY: :ANY_INCLUDE_EMPTY
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::SetOccurrencesRefineBy::set_type]
         end

@@ -75,19 +75,9 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          LANDING_PAGE =
-            T.let(
-              :LANDING_PAGE,
-              HubspotSDK::Cms::SiteSearchGetIndexedDataParams::Type::TaggedSymbol
-            )
           BLOG_POST =
             T.let(
               :BLOG_POST,
-              HubspotSDK::Cms::SiteSearchGetIndexedDataParams::Type::TaggedSymbol
-            )
-          SITE_PAGE =
-            T.let(
-              :SITE_PAGE,
               HubspotSDK::Cms::SiteSearchGetIndexedDataParams::Type::TaggedSymbol
             )
           KNOWLEDGE_ARTICLE =
@@ -95,9 +85,19 @@ module HubspotSDK
               :KNOWLEDGE_ARTICLE,
               HubspotSDK::Cms::SiteSearchGetIndexedDataParams::Type::TaggedSymbol
             )
+          LANDING_PAGE =
+            T.let(
+              :LANDING_PAGE,
+              HubspotSDK::Cms::SiteSearchGetIndexedDataParams::Type::TaggedSymbol
+            )
           LISTING_PAGE =
             T.let(
               :LISTING_PAGE,
+              HubspotSDK::Cms::SiteSearchGetIndexedDataParams::Type::TaggedSymbol
+            )
+          SITE_PAGE =
+            T.let(
+              :SITE_PAGE,
               HubspotSDK::Cms::SiteSearchGetIndexedDataParams::Type::TaggedSymbol
             )
 

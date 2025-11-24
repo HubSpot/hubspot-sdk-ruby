@@ -75,14 +75,14 @@ module HubspotSDK
                   :HUBSPOT_DEFINED,
                   HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::TaggedSymbol
                 )
-              USER_DEFINED =
-                T.let(
-                  :USER_DEFINED,
-                  HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::TaggedSymbol
-                )
               INTEGRATOR_DEFINED =
                 T.let(
                   :INTEGRATOR_DEFINED,
+                  HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::TaggedSymbol
+                )
+              USER_DEFINED =
+                T.let(
+                  :USER_DEFINED,
                   HubspotSDK::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateResult::Category::TaggedSymbol
                 )
 

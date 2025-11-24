@@ -38,20 +38,20 @@ module HubspotSDK
         }
 
         type reference_type =
-          :VALUE
-          | :UPDATED_AT
-          | :ANNIVERSARY
-          | :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION
+          :ANNIVERSARY
           | :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION
+          | :UPDATED_AT
+          | :VALUE
+          | :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION
 
         module ReferenceType
           extend HubspotSDK::Internal::Type::Enum
 
-          VALUE: :VALUE
-          UPDATED_AT: :UPDATED_AT
           ANNIVERSARY: :ANNIVERSARY
-          VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION: :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION
           ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION: :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION
+          UPDATED_AT: :UPDATED_AT
+          VALUE: :VALUE
+          VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION: :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::PropertyReferencedTime::reference_type]
         end
@@ -66,14 +66,14 @@ module HubspotSDK
           def self?.values: -> ::Array[HubspotSDK::Models::Events::PropertyReferencedTime::time_type]
         end
 
-        type timezone_source = :CUSTOM | :USER | :PORTAL
+        type timezone_source = :CUSTOM | :PORTAL | :USER
 
         module TimezoneSource
           extend HubspotSDK::Internal::Type::Enum
 
           CUSTOM: :CUSTOM
-          USER: :USER
           PORTAL: :PORTAL
+          USER: :USER
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::PropertyReferencedTime::timezone_source]
         end

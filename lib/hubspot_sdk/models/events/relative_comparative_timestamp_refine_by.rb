@@ -28,8 +28,8 @@ module HubspotSDK
         module Comparison
           extend HubspotSDK::Internal::Type::Enum
 
-          BEFORE = :BEFORE
           AFTER = :AFTER
+          BEFORE = :BEFORE
 
           # @!method self.values
           #   @return [Array<Symbol>]

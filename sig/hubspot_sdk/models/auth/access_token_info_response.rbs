@@ -11,6 +11,8 @@ module HubspotSDK
           token_type: String,
           user_id: Integer,
           hub_domain: String,
+          is_private_distribution: bool,
+          signed_access_token: HubspotSDK::Auth::SignedAccessToken,
           user: String
         }
 
@@ -33,6 +35,16 @@ module HubspotSDK
 
         def hub_domain=: (String) -> String
 
+        attr_reader is_private_distribution: bool?
+
+        def is_private_distribution=: (bool) -> bool
+
+        attr_reader signed_access_token: HubspotSDK::Auth::SignedAccessToken?
+
+        def signed_access_token=: (
+          HubspotSDK::Auth::SignedAccessToken
+        ) -> HubspotSDK::Auth::SignedAccessToken
+
         attr_reader user: String?
 
         def user=: (String) -> String
@@ -46,6 +58,8 @@ module HubspotSDK
           token_type: String,
           user_id: Integer,
           ?hub_domain: String,
+          ?is_private_distribution: bool,
+          ?signed_access_token: HubspotSDK::Auth::SignedAccessToken,
           ?user: String
         ) -> void
 
@@ -58,6 +72,8 @@ module HubspotSDK
           token_type: String,
           user_id: Integer,
           hub_domain: String,
+          is_private_distribution: bool,
+          signed_access_token: HubspotSDK::Auth::SignedAccessToken,
           user: String
         }
       end

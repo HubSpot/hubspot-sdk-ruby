@@ -53,7 +53,7 @@ class HubspotSDK::Test::Resources::Crm::Properties::BatchTest < HubspotSDK::Test
       @hubspot.crm.properties.batch.get(
         "objectType",
         archived: true,
-        data_sensitivity: :non_sensitive,
+        data_sensitivity: :highly_sensitive,
         inputs: [{name: "name"}]
       )
 

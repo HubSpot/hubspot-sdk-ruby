@@ -65,39 +65,9 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          JANUARY =
-            T.let(
-              :JANUARY,
-              HubspotSDK::Automation::APIStaticDateAnchor::Month::TaggedSymbol
-            )
-          FEBRUARY =
-            T.let(
-              :FEBRUARY,
-              HubspotSDK::Automation::APIStaticDateAnchor::Month::TaggedSymbol
-            )
-          MARCH =
-            T.let(
-              :MARCH,
-              HubspotSDK::Automation::APIStaticDateAnchor::Month::TaggedSymbol
-            )
           APRIL =
             T.let(
               :APRIL,
-              HubspotSDK::Automation::APIStaticDateAnchor::Month::TaggedSymbol
-            )
-          MAY =
-            T.let(
-              :MAY,
-              HubspotSDK::Automation::APIStaticDateAnchor::Month::TaggedSymbol
-            )
-          JUNE =
-            T.let(
-              :JUNE,
-              HubspotSDK::Automation::APIStaticDateAnchor::Month::TaggedSymbol
-            )
-          JULY =
-            T.let(
-              :JULY,
               HubspotSDK::Automation::APIStaticDateAnchor::Month::TaggedSymbol
             )
           AUGUST =
@@ -105,14 +75,39 @@ module HubspotSDK
               :AUGUST,
               HubspotSDK::Automation::APIStaticDateAnchor::Month::TaggedSymbol
             )
-          SEPTEMBER =
+          DECEMBER =
             T.let(
-              :SEPTEMBER,
+              :DECEMBER,
               HubspotSDK::Automation::APIStaticDateAnchor::Month::TaggedSymbol
             )
-          OCTOBER =
+          FEBRUARY =
             T.let(
-              :OCTOBER,
+              :FEBRUARY,
+              HubspotSDK::Automation::APIStaticDateAnchor::Month::TaggedSymbol
+            )
+          JANUARY =
+            T.let(
+              :JANUARY,
+              HubspotSDK::Automation::APIStaticDateAnchor::Month::TaggedSymbol
+            )
+          JULY =
+            T.let(
+              :JULY,
+              HubspotSDK::Automation::APIStaticDateAnchor::Month::TaggedSymbol
+            )
+          JUNE =
+            T.let(
+              :JUNE,
+              HubspotSDK::Automation::APIStaticDateAnchor::Month::TaggedSymbol
+            )
+          MARCH =
+            T.let(
+              :MARCH,
+              HubspotSDK::Automation::APIStaticDateAnchor::Month::TaggedSymbol
+            )
+          MAY =
+            T.let(
+              :MAY,
               HubspotSDK::Automation::APIStaticDateAnchor::Month::TaggedSymbol
             )
           NOVEMBER =
@@ -120,9 +115,14 @@ module HubspotSDK
               :NOVEMBER,
               HubspotSDK::Automation::APIStaticDateAnchor::Month::TaggedSymbol
             )
-          DECEMBER =
+          OCTOBER =
             T.let(
-              :DECEMBER,
+              :OCTOBER,
+              HubspotSDK::Automation::APIStaticDateAnchor::Month::TaggedSymbol
+            )
+          SEPTEMBER =
+            T.let(
+              :SEPTEMBER,
               HubspotSDK::Automation::APIStaticDateAnchor::Month::TaggedSymbol
             )
 

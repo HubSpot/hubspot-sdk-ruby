@@ -49,6 +49,9 @@ module HubspotSDK
         required :user_id, String, api_name: :userId
 
         # @!attribute meta
+        #   Supplementary metadata associated with the audit log entry. It provides
+        #   additional context about the audited event (ex: rows deleted/updated for a HubDB
+        #   event, the specific fields that were changed for a Content Settings event).
         #
         #   @return [Object, nil]
         optional :meta, HubspotSDK::Internal::Type::Unknown
@@ -71,7 +74,7 @@ module HubspotSDK
         #
         #   @param user_id [String] The ID of the user who caused the event.
         #
-        #   @param meta [Object]
+        #   @param meta [Object] Supplementary metadata associated with the audit log entry. It provides addition
 
         # The type of event that took place (CREATED, UPDATED, PUBLISHED, DELETED,
         # UNPUBLISHED).
@@ -81,11 +84,11 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::Enum
 
           CREATED = :CREATED
-          UPDATED = :UPDATED
-          PUBLISHED = :PUBLISHED
           DELETED = :DELETED
-          UNPUBLISHED = :UNPUBLISHED
+          PUBLISHED = :PUBLISHED
           RESTORE = :RESTORE
+          UNPUBLISHED = :UNPUBLISHED
+          UPDATED = :UPDATED
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -99,24 +102,24 @@ module HubspotSDK
 
           BLOG = :BLOG
           BLOG_POST = :BLOG_POST
-          LANDING_PAGE = :LANDING_PAGE
-          WEBSITE_PAGE = :WEBSITE_PAGE
-          TEMPLATE = :TEMPLATE
-          MODULE = :MODULE
-          GLOBAL_MODULE = :GLOBAL_MODULE
-          SERVERLESS_FUNCTION = :SERVERLESS_FUNCTION
-          DOMAIN = :DOMAIN
-          URL_MAPPING = :URL_MAPPING
-          EMAIL = :EMAIL
           CONTENT_SETTINGS = :CONTENT_SETTINGS
-          HUBDB_TABLE = :HUBDB_TABLE
-          KNOWLEDGE_BASE_ARTICLE = :KNOWLEDGE_BASE_ARTICLE
-          KNOWLEDGE_BASE = :KNOWLEDGE_BASE
-          THEME = :THEME
           CSS = :CSS
-          JS = :JS
           CTA = :CTA
+          DOMAIN = :DOMAIN
+          EMAIL = :EMAIL
           FILE = :FILE
+          GLOBAL_MODULE = :GLOBAL_MODULE
+          HUBDB_TABLE = :HUBDB_TABLE
+          JS = :JS
+          KNOWLEDGE_BASE = :KNOWLEDGE_BASE
+          KNOWLEDGE_BASE_ARTICLE = :KNOWLEDGE_BASE_ARTICLE
+          LANDING_PAGE = :LANDING_PAGE
+          MODULE = :MODULE
+          SERVERLESS_FUNCTION = :SERVERLESS_FUNCTION
+          TEMPLATE = :TEMPLATE
+          THEME = :THEME
+          URL_MAPPING = :URL_MAPPING
+          WEBSITE_PAGE = :WEBSITE_PAGE
 
           # @!method self.values
           #   @return [Array<Symbol>]

@@ -25,18 +25,18 @@ module HubspotSDK
         }
 
         type function_type =
-          :PRE_ACTION_EXECUTION
-          | :PRE_FETCH_OPTIONS
+          :POST_ACTION_EXECUTION
           | :POST_FETCH_OPTIONS
-          | :POST_ACTION_EXECUTION
+          | :PRE_ACTION_EXECUTION
+          | :PRE_FETCH_OPTIONS
 
         module FunctionType
           extend HubspotSDK::Internal::Type::Enum
 
+          POST_ACTION_EXECUTION: :POST_ACTION_EXECUTION
+          POST_FETCH_OPTIONS: :POST_FETCH_OPTIONS
           PRE_ACTION_EXECUTION: :PRE_ACTION_EXECUTION
           PRE_FETCH_OPTIONS: :PRE_FETCH_OPTIONS
-          POST_FETCH_OPTIONS: :POST_FETCH_OPTIONS
-          POST_ACTION_EXECUTION: :POST_ACTION_EXECUTION
 
           def self?.values: -> ::Array[HubspotSDK::Models::Automation::PublicActionFunctionIdentifier::function_type]
         end

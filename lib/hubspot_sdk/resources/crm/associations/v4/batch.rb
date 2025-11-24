@@ -172,31 +172,6 @@ module HubspotSDK
               )
             end
 
-            # Upsert a batch of CRM objects, creating new records or updating existing ones
-            # based on their internal IDs or unique property values.
-            #
-            # @overload upsert(object_type, inputs:, request_options: {})
-            #
-            # @param object_type [String] Specifies the type of CRM object to upsert in the batch operation.
-            #
-            # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInputUpsert>]
-            #
-            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-            #
-            # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicUpsertObject]
-            #
-            # @see HubspotSDK::Models::Crm::Associations::V4::BatchUpsertParams
-            def upsert(object_type, params)
-              parsed, options = HubspotSDK::Crm::Associations::V4::BatchUpsertParams.dump_request(params)
-              @client.request(
-                method: :post,
-                path: ["crm/v4/objects/%1$s/batch/upsert", object_type],
-                body: parsed,
-                model: HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject,
-                options: options
-              )
-            end
-
             # @api private
             #
             # @param client [HubspotSDK::Client]

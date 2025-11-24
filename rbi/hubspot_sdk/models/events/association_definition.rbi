@@ -316,14 +316,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          ONE_TO_ONE =
-            T.let(
-              :ONE_TO_ONE,
-              HubspotSDK::Events::AssociationDefinition::Cardinality::TaggedSymbol
-            )
           ONE_TO_MANY =
             T.let(
               :ONE_TO_MANY,
+              HubspotSDK::Events::AssociationDefinition::Cardinality::TaggedSymbol
+            )
+          ONE_TO_ONE =
+            T.let(
+              :ONE_TO_ONE,
               HubspotSDK::Events::AssociationDefinition::Cardinality::TaggedSymbol
             )
 
@@ -354,14 +354,14 @@ module HubspotSDK
               :HUBSPOT_DEFINED,
               HubspotSDK::Events::AssociationDefinition::Category::TaggedSymbol
             )
-          USER_DEFINED =
-            T.let(
-              :USER_DEFINED,
-              HubspotSDK::Events::AssociationDefinition::Category::TaggedSymbol
-            )
           INTEGRATOR_DEFINED =
             T.let(
               :INTEGRATOR_DEFINED,
+              HubspotSDK::Events::AssociationDefinition::Category::TaggedSymbol
+            )
+          USER_DEFINED =
+            T.let(
+              :USER_DEFINED,
               HubspotSDK::Events::AssociationDefinition::Category::TaggedSymbol
             )
 
@@ -390,14 +390,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          ONE_TO_ONE =
-            T.let(
-              :ONE_TO_ONE,
-              HubspotSDK::Events::AssociationDefinition::InverseCardinality::TaggedSymbol
-            )
           ONE_TO_MANY =
             T.let(
               :ONE_TO_MANY,
+              HubspotSDK::Events::AssociationDefinition::InverseCardinality::TaggedSymbol
+            )
+          ONE_TO_ONE =
+            T.let(
+              :ONE_TO_ONE,
               HubspotSDK::Events::AssociationDefinition::InverseCardinality::TaggedSymbol
             )
 
@@ -425,144 +425,19 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          CONTACT =
+          ABANDONED_CART =
             T.let(
-              :CONTACT,
+              :ABANDONED_CART,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          COMPANY =
+          ACCEPTANCE_TEST =
             T.let(
-              :COMPANY,
+              :ACCEPTANCE_TEST,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          DEAL =
+          AD =
             T.let(
-              :DEAL,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          ENGAGEMENT =
-            T.let(
-              :ENGAGEMENT,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          TICKET =
-            T.let(
-              :TICKET,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          OWNER =
-            T.let(
-              :OWNER,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          PRODUCT =
-            T.let(
-              :PRODUCT,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          LINE_ITEM =
-            T.let(
-              :LINE_ITEM,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          BET_DELIVERABLE_SERVICE =
-            T.let(
-              :BET_DELIVERABLE_SERVICE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          CONTENT =
-            T.let(
-              :CONTENT,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          CONVERSATION =
-            T.let(
-              :CONVERSATION,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          BET_ALERT =
-            T.let(
-              :BET_ALERT,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          PORTAL =
-            T.let(
-              :PORTAL,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          QUOTE =
-            T.let(
-              :QUOTE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          FORM_SUBMISSION_INBOUNDDB =
-            T.let(
-              :FORM_SUBMISSION_INBOUNDDB,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          QUOTA =
-            T.let(
-              :QUOTA,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          UNSUBSCRIBE =
-            T.let(
-              :UNSUBSCRIBE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          COMMUNICATION =
-            T.let(
-              :COMMUNICATION,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          FEEDBACK_SUBMISSION =
-            T.let(
-              :FEEDBACK_SUBMISSION,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          ATTRIBUTION =
-            T.let(
-              :ATTRIBUTION,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          SALESFORCE_SYNC_ERROR =
-            T.let(
-              :SALESFORCE_SYNC_ERROR,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          RESTORABLE_CRM_OBJECT =
-            T.let(
-              :RESTORABLE_CRM_OBJECT,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          HUB =
-            T.let(
-              :HUB,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          LANDING_PAGE =
-            T.let(
-              :LANDING_PAGE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          PRODUCT_OR_FOLDER =
-            T.let(
-              :PRODUCT_OR_FOLDER,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          TASK =
-            T.let(
-              :TASK,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          FORM =
-            T.let(
-              :FORM,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          MARKETING_EMAIL =
-            T.let(
-              :MARKETING_EMAIL,
+              :AD,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
           AD_ACCOUNT =
@@ -580,239 +455,14 @@ module HubspotSDK
               :AD_GROUP,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          AD =
+          AI_FORECAST =
             T.let(
-              :AD,
+              :AI_FORECAST,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          KEYWORD =
+          ALL_PAGES =
             T.let(
-              :KEYWORD,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          CAMPAIGN =
-            T.let(
-              :CAMPAIGN,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          SOCIAL_CHANNEL =
-            T.let(
-              :SOCIAL_CHANNEL,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          SOCIAL_POST =
-            T.let(
-              :SOCIAL_POST,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          SITE_PAGE =
-            T.let(
-              :SITE_PAGE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          BLOG_POST =
-            T.let(
-              :BLOG_POST,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          IMPORT =
-            T.let(
-              :IMPORT,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          EXPORT =
-            T.let(
-              :EXPORT,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          CTA =
-            T.let(
-              :CTA,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          TASK_TEMPLATE =
-            T.let(
-              :TASK_TEMPLATE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          AUTOMATION_PLATFORM_FLOW =
-            T.let(
-              :AUTOMATION_PLATFORM_FLOW,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          OBJECT_LIST =
-            T.let(
-              :OBJECT_LIST,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          NOTE =
-            T.let(
-              :NOTE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          MEETING_EVENT =
-            T.let(
-              :MEETING_EVENT,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          CALL =
-            T.let(
-              :CALL,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          EMAIL =
-            T.let(
-              :EMAIL,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          PUBLISHING_TASK =
-            T.let(
-              :PUBLISHING_TASK,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          CONVERSATION_SESSION =
-            T.let(
-              :CONVERSATION_SESSION,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          CONTACT_CREATE_ATTRIBUTION =
-            T.let(
-              :CONTACT_CREATE_ATTRIBUTION,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          INVOICE =
-            T.let(
-              :INVOICE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          MARKETING_EVENT =
-            T.let(
-              :MARKETING_EVENT,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          CONVERSATION_INBOX =
-            T.let(
-              :CONVERSATION_INBOX,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          CHATFLOW =
-            T.let(
-              :CHATFLOW,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          MEDIA_BRIDGE =
-            T.let(
-              :MEDIA_BRIDGE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          SEQUENCE =
-            T.let(
-              :SEQUENCE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          SEQUENCE_STEP =
-            T.let(
-              :SEQUENCE_STEP,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          FORECAST =
-            T.let(
-              :FORECAST,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          SNIPPET =
-            T.let(
-              :SNIPPET,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          TEMPLATE =
-            T.let(
-              :TEMPLATE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          DEAL_CREATE_ATTRIBUTION =
-            T.let(
-              :DEAL_CREATE_ATTRIBUTION,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          QUOTE_TEMPLATE =
-            T.let(
-              :QUOTE_TEMPLATE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          QUOTE_MODULE =
-            T.let(
-              :QUOTE_MODULE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          QUOTE_MODULE_FIELD =
-            T.let(
-              :QUOTE_MODULE_FIELD,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          QUOTE_FIELD =
-            T.let(
-              :QUOTE_FIELD,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          SEQUENCE_ENROLLMENT =
-            T.let(
-              :SEQUENCE_ENROLLMENT,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          SUBSCRIPTION =
-            T.let(
-              :SUBSCRIPTION,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          ACCEPTANCE_TEST =
-            T.let(
-              :ACCEPTANCE_TEST,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          SOCIAL_BROADCAST =
-            T.let(
-              :SOCIAL_BROADCAST,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          DEAL_SPLIT =
-            T.let(
-              :DEAL_SPLIT,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          DEAL_REGISTRATION =
-            T.let(
-              :DEAL_REGISTRATION,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          GOAL_TARGET =
-            T.let(
-              :GOAL_TARGET,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          GOAL_TARGET_GROUP =
-            T.let(
-              :GOAL_TARGET_GROUP,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          PORTAL_OBJECT_SYNC_MESSAGE =
-            T.let(
-              :PORTAL_OBJECT_SYNC_MESSAGE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          FILE_MANAGER_FILE =
-            T.let(
-              :FILE_MANAGER_FILE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          FILE_MANAGER_FOLDER =
-            T.let(
-              :FILE_MANAGER_FOLDER,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          SEQUENCE_STEP_ENROLLMENT =
-            T.let(
-              :SEQUENCE_STEP_ENROLLMENT,
+              :ALL_PAGES,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
           APPROVAL =
@@ -825,44 +475,194 @@ module HubspotSDK
               :APPROVAL_STEP,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
+          ATTRIBUTION =
+            T.let(
+              :ATTRIBUTION,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          AUDIENCE =
+            T.let(
+              :AUDIENCE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          AUTOMATION_JOURNEY =
+            T.let(
+              :AUTOMATION_JOURNEY,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          AUTOMATION_PLATFORM_FLOW =
+            T.let(
+              :AUTOMATION_PLATFORM_FLOW,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          AUTOMATION_PLATFORM_FLOW_ACTION =
+            T.let(
+              :AUTOMATION_PLATFORM_FLOW_ACTION,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          BET_ALERT =
+            T.let(
+              :BET_ALERT,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          BET_DELIVERABLE_SERVICE =
+            T.let(
+              :BET_DELIVERABLE_SERVICE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          BLOG_LISTING_PAGE =
+            T.let(
+              :BLOG_LISTING_PAGE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          BLOG_POST =
+            T.let(
+              :BLOG_POST,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CALL =
+            T.let(
+              :CALL,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CAMPAIGN =
+            T.let(
+              :CAMPAIGN,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CAMPAIGN_BUDGET_ITEM =
+            T.let(
+              :CAMPAIGN_BUDGET_ITEM,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CAMPAIGN_SPEND_ITEM =
+            T.let(
+              :CAMPAIGN_SPEND_ITEM,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CAMPAIGN_STEP =
+            T.let(
+              :CAMPAIGN_STEP,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CAMPAIGN_TEMPLATE =
+            T.let(
+              :CAMPAIGN_TEMPLATE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CAMPAIGN_TEMPLATE_STEP =
+            T.let(
+              :CAMPAIGN_TEMPLATE_STEP,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CART =
+            T.let(
+              :CART,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CASE_STUDY =
+            T.let(
+              :CASE_STUDY,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CHATFLOW =
+            T.let(
+              :CHATFLOW,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CLIP =
+            T.let(
+              :CLIP,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CMS_URL =
+            T.let(
+              :CMS_URL,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          COMBO_EVENT_CONFIGURATION =
+            T.let(
+              :COMBO_EVENT_CONFIGURATION,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          COMMERCE_PAYMENT =
+            T.let(
+              :COMMERCE_PAYMENT,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          COMMUNICATION =
+            T.let(
+              :COMMUNICATION,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          COMPANY =
+            T.let(
+              :COMPANY,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CONTACT =
+            T.let(
+              :CONTACT,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CONTACT_CREATE_ATTRIBUTION =
+            T.let(
+              :CONTACT_CREATE_ATTRIBUTION,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CONTENT =
+            T.let(
+              :CONTENT,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CONTENT_AUDIT =
+            T.let(
+              :CONTENT_AUDIT,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CONTENT_AUDIT_PAGE =
+            T.let(
+              :CONTENT_AUDIT_PAGE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CONVERSATION =
+            T.let(
+              :CONVERSATION,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CONVERSATION_INBOX =
+            T.let(
+              :CONVERSATION_INBOX,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CONVERSATION_SESSION =
+            T.let(
+              :CONVERSATION_SESSION,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CRM_OBJECTS_DUMMY_TYPE =
+            T.let(
+              :CRM_OBJECTS_DUMMY_TYPE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CRM_PIPELINES_DUMMY_TYPE =
+            T.let(
+              :CRM_PIPELINES_DUMMY_TYPE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          CTA =
+            T.let(
+              :CTA,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
           CTA_VARIANT =
             T.let(
               :CTA_VARIANT,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          SALES_DOCUMENT =
+          DATA_PRIVACY_CONSENT =
             T.let(
-              :SALES_DOCUMENT,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          DISCOUNT =
-            T.let(
-              :DISCOUNT,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          FEE =
-            T.let(
-              :FEE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          TAX =
-            T.let(
-              :TAX,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          MARKETING_CALENDAR =
-            T.let(
-              :MARKETING_CALENDAR,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          PERMISSIONS_TESTING =
-            T.let(
-              :PERMISSIONS_TESTING,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          PRIVACY_SCANNER_COOKIE =
-            T.let(
-              :PRIVACY_SCANNER_COOKIE,
+              :DATA_PRIVACY_CONSENT,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
           DATA_SYNC_STATE =
@@ -870,19 +670,274 @@ module HubspotSDK
               :DATA_SYNC_STATE,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          WEB_INTERACTIVE =
+          DEAL =
             T.let(
-              :WEB_INTERACTIVE,
+              :DEAL,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          PLAYBOOK =
+          DEAL_CREATE_ATTRIBUTION =
             T.let(
-              :PLAYBOOK,
+              :DEAL_CREATE_ATTRIBUTION,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          DEAL_REGISTRATION =
+            T.let(
+              :DEAL_REGISTRATION,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          DEAL_SPLIT =
+            T.let(
+              :DEAL_SPLIT,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          DISCOUNT =
+            T.let(
+              :DISCOUNT,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          DISCOUNT_CODE =
+            T.let(
+              :DISCOUNT_CODE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          DISCOUNT_TEMPLATE =
+            T.let(
+              :DISCOUNT_TEMPLATE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          EMAIL =
+            T.let(
+              :EMAIL,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          ENGAGEMENT =
+            T.let(
+              :ENGAGEMENT,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          EXPORT =
+            T.let(
+              :EXPORT,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          EXTERNAL_WEB_URL =
+            T.let(
+              :EXTERNAL_WEB_URL,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          FEE =
+            T.let(
+              :FEE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          FEEDBACK_SUBMISSION =
+            T.let(
+              :FEEDBACK_SUBMISSION,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          FEEDBACK_SURVEY =
+            T.let(
+              :FEEDBACK_SURVEY,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          FILE_MANAGER_FILE =
+            T.let(
+              :FILE_MANAGER_FILE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          FILE_MANAGER_FOLDER =
+            T.let(
+              :FILE_MANAGER_FOLDER,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
           FOLDER =
             T.let(
               :FOLDER,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          FORECAST =
+            T.let(
+              :FORECAST,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          FORM =
+            T.let(
+              :FORM,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          FORM_SUBMISSION_INBOUNDDB =
+            T.let(
+              :FORM_SUBMISSION_INBOUNDDB,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          GOAL_TARGET =
+            T.let(
+              :GOAL_TARGET,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          GOAL_TARGET_GROUP =
+            T.let(
+              :GOAL_TARGET_GROUP,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          GOAL_TEMPLATE =
+            T.let(
+              :GOAL_TEMPLATE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          GSC_PROPERTY =
+            T.let(
+              :GSC_PROPERTY,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          HUB =
+            T.let(
+              :HUB,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          IMPORT =
+            T.let(
+              :IMPORT,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          INVOICE =
+            T.let(
+              :INVOICE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          KEYWORD =
+            T.let(
+              :KEYWORD,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          KNOWLEDGE_ARTICLE =
+            T.let(
+              :KNOWLEDGE_ARTICLE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          LANDING_PAGE =
+            T.let(
+              :LANDING_PAGE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          LEAD =
+            T.let(
+              :LEAD,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          LINE_ITEM =
+            T.let(
+              :LINE_ITEM,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          MARKETING_CALENDAR =
+            T.let(
+              :MARKETING_CALENDAR,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          MARKETING_CAMPAIGN_UTM =
+            T.let(
+              :MARKETING_CAMPAIGN_UTM,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          MARKETING_EMAIL =
+            T.let(
+              :MARKETING_EMAIL,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          MARKETING_EVENT =
+            T.let(
+              :MARKETING_EVENT,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          MARKETING_EVENT_ATTENDANCE =
+            T.let(
+              :MARKETING_EVENT_ATTENDANCE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          MARKETING_SMS =
+            T.let(
+              :MARKETING_SMS,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          MEDIA_BRIDGE =
+            T.let(
+              :MEDIA_BRIDGE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          MEETING_EVENT =
+            T.let(
+              :MEETING_EVENT,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          MIC =
+            T.let(
+              :MIC,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          NOTE =
+            T.let(
+              :NOTE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          OBJECT_LIST =
+            T.let(
+              :OBJECT_LIST,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          ORDER =
+            T.let(
+              :ORDER,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          OWNER =
+            T.let(
+              :OWNER,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          PARTNER_ACCOUNT =
+            T.let(
+              :PARTNER_ACCOUNT,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          PARTNER_CLIENT =
+            T.let(
+              :PARTNER_CLIENT,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          PARTNER_CLIENT_REVENUE =
+            T.let(
+              :PARTNER_CLIENT_REVENUE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          PARTNER_SERVICE =
+            T.let(
+              :PARTNER_SERVICE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          PAYMENT_LINK =
+            T.let(
+              :PAYMENT_LINK,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          PAYMENT_SCHEDULE =
+            T.let(
+              :PAYMENT_SCHEDULE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          PAYMENT_SCHEDULE_INSTALLMENT =
+            T.let(
+              :PAYMENT_SCHEDULE_INSTALLMENT,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          PERMISSIONS_TESTING =
+            T.let(
+              :PERMISSIONS_TESTING,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          PLAYBOOK =
+            T.let(
+              :PLAYBOOK,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
           PLAYBOOK_QUESTION =
@@ -900,24 +955,59 @@ module HubspotSDK
               :PLAYBOOK_SUBMISSION_ANSWER,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          COMMERCE_PAYMENT =
+          PLAYLIST =
             T.let(
-              :COMMERCE_PAYMENT,
+              :PLAYLIST,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          GSC_PROPERTY =
+          PLAYLIST_FOLDER =
             T.let(
-              :GSC_PROPERTY,
+              :PLAYLIST_FOLDER,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          SOX_PROTECTED_DUMMY_TYPE =
+          PODCAST_EPISODE =
             T.let(
-              :SOX_PROTECTED_DUMMY_TYPE,
+              :PODCAST_EPISODE,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          BLOG_LISTING_PAGE =
+          PORTAL =
             T.let(
-              :BLOG_LISTING_PAGE,
+              :PORTAL,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          PORTAL_OBJECT_SYNC_MESSAGE =
+            T.let(
+              :PORTAL_OBJECT_SYNC_MESSAGE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          POSTAL_MAIL =
+            T.let(
+              :POSTAL_MAIL,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          PRIVACY_SCANNER_COOKIE =
+            T.let(
+              :PRIVACY_SCANNER_COOKIE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          PRODUCT =
+            T.let(
+              :PRODUCT,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          PRODUCT_OR_FOLDER =
+            T.let(
+              :PRODUCT_OR_FOLDER,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          PROPERTY_INFO =
+            T.let(
+              :PROPERTY_INFO,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          PUBLISHING_TASK =
+            T.let(
+              :PUBLISHING_TASK,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
           QUARANTINED_SUBMISSION =
@@ -925,39 +1015,54 @@ module HubspotSDK
               :QUARANTINED_SUBMISSION,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          PAYMENT_SCHEDULE =
+          QUOTA =
             T.let(
-              :PAYMENT_SCHEDULE,
+              :QUOTA,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          PAYMENT_SCHEDULE_INSTALLMENT =
+          QUOTE =
             T.let(
-              :PAYMENT_SCHEDULE_INSTALLMENT,
+              :QUOTE,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          MARKETING_CAMPAIGN_UTM =
+          QUOTE_FIELD =
             T.let(
-              :MARKETING_CAMPAIGN_UTM,
+              :QUOTE_FIELD,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          DISCOUNT_TEMPLATE =
+          QUOTE_MODULE =
             T.let(
-              :DISCOUNT_TEMPLATE,
+              :QUOTE_MODULE,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          DISCOUNT_CODE =
+          QUOTE_MODULE_FIELD =
             T.let(
-              :DISCOUNT_CODE,
+              :QUOTE_MODULE_FIELD,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          FEEDBACK_SURVEY =
+          QUOTE_TEMPLATE =
             T.let(
-              :FEEDBACK_SURVEY,
+              :QUOTE_TEMPLATE,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          CMS_URL =
+          RESTORABLE_CRM_OBJECT =
             T.let(
-              :CMS_URL,
+              :RESTORABLE_CRM_OBJECT,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          ROSTER =
+            T.let(
+              :ROSTER,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          ROSTER_MEMBER =
+            T.let(
+              :ROSTER_MEMBER,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          SALES_DOCUMENT =
+            T.let(
+              :SALES_DOCUMENT,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
           SALES_TASK =
@@ -970,34 +1075,9 @@ module HubspotSDK
               :SALES_WORKLOAD,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          USER =
+          SALESFORCE_SYNC_ERROR =
             T.let(
-              :USER,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          POSTAL_MAIL =
-            T.let(
-              :POSTAL_MAIL,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          SCHEMAS_BACKEND_TEST =
-            T.let(
-              :SCHEMAS_BACKEND_TEST,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          PAYMENT_LINK =
-            T.let(
-              :PAYMENT_LINK,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          SUBMISSION_TAG =
-            T.let(
-              :SUBMISSION_TAG,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          CAMPAIGN_STEP =
-            T.let(
-              :CAMPAIGN_STEP,
+              :SALESFORCE_SYNC_ERROR,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
           SCHEDULING_PAGE =
@@ -1005,89 +1085,129 @@ module HubspotSDK
               :SCHEDULING_PAGE,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
+          SCHEMAS_BACKEND_TEST =
+            T.let(
+              :SCHEMAS_BACKEND_TEST,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          SCORE_CONFIGURATION =
+            T.let(
+              :SCORE_CONFIGURATION,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          SEQUENCE =
+            T.let(
+              :SEQUENCE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          SEQUENCE_ENROLLMENT =
+            T.let(
+              :SEQUENCE_ENROLLMENT,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          SEQUENCE_STEP =
+            T.let(
+              :SEQUENCE_STEP,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          SEQUENCE_STEP_ENROLLMENT =
+            T.let(
+              :SEQUENCE_STEP_ENROLLMENT,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          SERVICE =
+            T.let(
+              :SERVICE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          SITE_PAGE =
+            T.let(
+              :SITE_PAGE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          SNIPPET =
+            T.let(
+              :SNIPPET,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          SOCIAL_BROADCAST =
+            T.let(
+              :SOCIAL_BROADCAST,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          SOCIAL_CHANNEL =
+            T.let(
+              :SOCIAL_CHANNEL,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          SOCIAL_POST =
+            T.let(
+              :SOCIAL_POST,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          SOCIAL_PROFILE =
+            T.let(
+              :SOCIAL_PROFILE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
+          SOX_PROTECTED_DUMMY_TYPE =
+            T.let(
+              :SOX_PROTECTED_DUMMY_TYPE,
+              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
+            )
           SOX_PROTECTED_TEST_TYPE =
             T.let(
               :SOX_PROTECTED_TEST_TYPE,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          ORDER =
+          SUBMISSION_TAG =
             T.let(
-              :ORDER,
+              :SUBMISSION_TAG,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          MARKETING_SMS =
+          SUBSCRIPTION =
             T.let(
-              :MARKETING_SMS,
+              :SUBSCRIPTION,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          PARTNER_ACCOUNT =
+          TASK =
             T.let(
-              :PARTNER_ACCOUNT,
+              :TASK,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          CAMPAIGN_TEMPLATE =
+          TASK_TEMPLATE =
             T.let(
-              :CAMPAIGN_TEMPLATE,
+              :TASK_TEMPLATE,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          CAMPAIGN_TEMPLATE_STEP =
+          TAX =
             T.let(
-              :CAMPAIGN_TEMPLATE_STEP,
+              :TAX,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          PLAYLIST =
+          TEMPLATE =
             T.let(
-              :PLAYLIST,
+              :TEMPLATE,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          CLIP =
+          TICKET =
             T.let(
-              :CLIP,
+              :TICKET,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          CAMPAIGN_BUDGET_ITEM =
+          UNKNOWN =
             T.let(
-              :CAMPAIGN_BUDGET_ITEM,
+              :UNKNOWN,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          CAMPAIGN_SPEND_ITEM =
+          UNSUBSCRIBE =
             T.let(
-              :CAMPAIGN_SPEND_ITEM,
+              :UNSUBSCRIBE,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          MIC =
+          USER =
             T.let(
-              :MIC,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          CONTENT_AUDIT =
-            T.let(
-              :CONTENT_AUDIT,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          CONTENT_AUDIT_PAGE =
-            T.let(
-              :CONTENT_AUDIT_PAGE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          PLAYLIST_FOLDER =
-            T.let(
-              :PLAYLIST_FOLDER,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          LEAD =
-            T.let(
-              :LEAD,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          ABANDONED_CART =
-            T.let(
-              :ABANDONED_CART,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          EXTERNAL_WEB_URL =
-            T.let(
-              :EXTERNAL_WEB_URL,
+              :USER,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
           VIEW =
@@ -1100,129 +1220,9 @@ module HubspotSDK
               :VIEW_BLOCK,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
-          ROSTER =
+          WEB_INTERACTIVE =
             T.let(
-              :ROSTER,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          CART =
-            T.let(
-              :CART,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          AUTOMATION_PLATFORM_FLOW_ACTION =
-            T.let(
-              :AUTOMATION_PLATFORM_FLOW_ACTION,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          SOCIAL_PROFILE =
-            T.let(
-              :SOCIAL_PROFILE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          PARTNER_CLIENT =
-            T.let(
-              :PARTNER_CLIENT,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          ROSTER_MEMBER =
-            T.let(
-              :ROSTER_MEMBER,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          MARKETING_EVENT_ATTENDANCE =
-            T.let(
-              :MARKETING_EVENT_ATTENDANCE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          ALL_PAGES =
-            T.let(
-              :ALL_PAGES,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          AI_FORECAST =
-            T.let(
-              :AI_FORECAST,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          CRM_PIPELINES_DUMMY_TYPE =
-            T.let(
-              :CRM_PIPELINES_DUMMY_TYPE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          KNOWLEDGE_ARTICLE =
-            T.let(
-              :KNOWLEDGE_ARTICLE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          PROPERTY_INFO =
-            T.let(
-              :PROPERTY_INFO,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          DATA_PRIVACY_CONSENT =
-            T.let(
-              :DATA_PRIVACY_CONSENT,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          GOAL_TEMPLATE =
-            T.let(
-              :GOAL_TEMPLATE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          SCORE_CONFIGURATION =
-            T.let(
-              :SCORE_CONFIGURATION,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          AUDIENCE =
-            T.let(
-              :AUDIENCE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          PARTNER_CLIENT_REVENUE =
-            T.let(
-              :PARTNER_CLIENT_REVENUE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          AUTOMATION_JOURNEY =
-            T.let(
-              :AUTOMATION_JOURNEY,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          COMBO_EVENT_CONFIGURATION =
-            T.let(
-              :COMBO_EVENT_CONFIGURATION,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          CRM_OBJECTS_DUMMY_TYPE =
-            T.let(
-              :CRM_OBJECTS_DUMMY_TYPE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          CASE_STUDY =
-            T.let(
-              :CASE_STUDY,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          SERVICE =
-            T.let(
-              :SERVICE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          PODCAST_EPISODE =
-            T.let(
-              :PODCAST_EPISODE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          PARTNER_SERVICE =
-            T.let(
-              :PARTNER_SERVICE,
-              HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
-            )
-          UNKNOWN =
-            T.let(
-              :UNKNOWN,
+              :WEB_INTERACTIVE,
               HubspotSDK::Events::AssociationDefinition::FromObjectType::TaggedSymbol
             )
 
@@ -1250,144 +1250,19 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          CONTACT =
+          ABANDONED_CART =
             T.let(
-              :CONTACT,
+              :ABANDONED_CART,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          COMPANY =
+          ACCEPTANCE_TEST =
             T.let(
-              :COMPANY,
+              :ACCEPTANCE_TEST,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          DEAL =
+          AD =
             T.let(
-              :DEAL,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          ENGAGEMENT =
-            T.let(
-              :ENGAGEMENT,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          TICKET =
-            T.let(
-              :TICKET,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          OWNER =
-            T.let(
-              :OWNER,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          PRODUCT =
-            T.let(
-              :PRODUCT,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          LINE_ITEM =
-            T.let(
-              :LINE_ITEM,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          BET_DELIVERABLE_SERVICE =
-            T.let(
-              :BET_DELIVERABLE_SERVICE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          CONTENT =
-            T.let(
-              :CONTENT,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          CONVERSATION =
-            T.let(
-              :CONVERSATION,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          BET_ALERT =
-            T.let(
-              :BET_ALERT,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          PORTAL =
-            T.let(
-              :PORTAL,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          QUOTE =
-            T.let(
-              :QUOTE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          FORM_SUBMISSION_INBOUNDDB =
-            T.let(
-              :FORM_SUBMISSION_INBOUNDDB,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          QUOTA =
-            T.let(
-              :QUOTA,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          UNSUBSCRIBE =
-            T.let(
-              :UNSUBSCRIBE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          COMMUNICATION =
-            T.let(
-              :COMMUNICATION,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          FEEDBACK_SUBMISSION =
-            T.let(
-              :FEEDBACK_SUBMISSION,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          ATTRIBUTION =
-            T.let(
-              :ATTRIBUTION,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          SALESFORCE_SYNC_ERROR =
-            T.let(
-              :SALESFORCE_SYNC_ERROR,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          RESTORABLE_CRM_OBJECT =
-            T.let(
-              :RESTORABLE_CRM_OBJECT,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          HUB =
-            T.let(
-              :HUB,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          LANDING_PAGE =
-            T.let(
-              :LANDING_PAGE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          PRODUCT_OR_FOLDER =
-            T.let(
-              :PRODUCT_OR_FOLDER,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          TASK =
-            T.let(
-              :TASK,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          FORM =
-            T.let(
-              :FORM,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          MARKETING_EMAIL =
-            T.let(
-              :MARKETING_EMAIL,
+              :AD,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
           AD_ACCOUNT =
@@ -1405,239 +1280,14 @@ module HubspotSDK
               :AD_GROUP,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          AD =
+          AI_FORECAST =
             T.let(
-              :AD,
+              :AI_FORECAST,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          KEYWORD =
+          ALL_PAGES =
             T.let(
-              :KEYWORD,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          CAMPAIGN =
-            T.let(
-              :CAMPAIGN,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          SOCIAL_CHANNEL =
-            T.let(
-              :SOCIAL_CHANNEL,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          SOCIAL_POST =
-            T.let(
-              :SOCIAL_POST,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          SITE_PAGE =
-            T.let(
-              :SITE_PAGE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          BLOG_POST =
-            T.let(
-              :BLOG_POST,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          IMPORT =
-            T.let(
-              :IMPORT,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          EXPORT =
-            T.let(
-              :EXPORT,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          CTA =
-            T.let(
-              :CTA,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          TASK_TEMPLATE =
-            T.let(
-              :TASK_TEMPLATE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          AUTOMATION_PLATFORM_FLOW =
-            T.let(
-              :AUTOMATION_PLATFORM_FLOW,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          OBJECT_LIST =
-            T.let(
-              :OBJECT_LIST,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          NOTE =
-            T.let(
-              :NOTE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          MEETING_EVENT =
-            T.let(
-              :MEETING_EVENT,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          CALL =
-            T.let(
-              :CALL,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          EMAIL =
-            T.let(
-              :EMAIL,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          PUBLISHING_TASK =
-            T.let(
-              :PUBLISHING_TASK,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          CONVERSATION_SESSION =
-            T.let(
-              :CONVERSATION_SESSION,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          CONTACT_CREATE_ATTRIBUTION =
-            T.let(
-              :CONTACT_CREATE_ATTRIBUTION,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          INVOICE =
-            T.let(
-              :INVOICE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          MARKETING_EVENT =
-            T.let(
-              :MARKETING_EVENT,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          CONVERSATION_INBOX =
-            T.let(
-              :CONVERSATION_INBOX,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          CHATFLOW =
-            T.let(
-              :CHATFLOW,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          MEDIA_BRIDGE =
-            T.let(
-              :MEDIA_BRIDGE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          SEQUENCE =
-            T.let(
-              :SEQUENCE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          SEQUENCE_STEP =
-            T.let(
-              :SEQUENCE_STEP,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          FORECAST =
-            T.let(
-              :FORECAST,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          SNIPPET =
-            T.let(
-              :SNIPPET,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          TEMPLATE =
-            T.let(
-              :TEMPLATE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          DEAL_CREATE_ATTRIBUTION =
-            T.let(
-              :DEAL_CREATE_ATTRIBUTION,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          QUOTE_TEMPLATE =
-            T.let(
-              :QUOTE_TEMPLATE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          QUOTE_MODULE =
-            T.let(
-              :QUOTE_MODULE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          QUOTE_MODULE_FIELD =
-            T.let(
-              :QUOTE_MODULE_FIELD,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          QUOTE_FIELD =
-            T.let(
-              :QUOTE_FIELD,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          SEQUENCE_ENROLLMENT =
-            T.let(
-              :SEQUENCE_ENROLLMENT,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          SUBSCRIPTION =
-            T.let(
-              :SUBSCRIPTION,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          ACCEPTANCE_TEST =
-            T.let(
-              :ACCEPTANCE_TEST,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          SOCIAL_BROADCAST =
-            T.let(
-              :SOCIAL_BROADCAST,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          DEAL_SPLIT =
-            T.let(
-              :DEAL_SPLIT,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          DEAL_REGISTRATION =
-            T.let(
-              :DEAL_REGISTRATION,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          GOAL_TARGET =
-            T.let(
-              :GOAL_TARGET,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          GOAL_TARGET_GROUP =
-            T.let(
-              :GOAL_TARGET_GROUP,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          PORTAL_OBJECT_SYNC_MESSAGE =
-            T.let(
-              :PORTAL_OBJECT_SYNC_MESSAGE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          FILE_MANAGER_FILE =
-            T.let(
-              :FILE_MANAGER_FILE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          FILE_MANAGER_FOLDER =
-            T.let(
-              :FILE_MANAGER_FOLDER,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          SEQUENCE_STEP_ENROLLMENT =
-            T.let(
-              :SEQUENCE_STEP_ENROLLMENT,
+              :ALL_PAGES,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
           APPROVAL =
@@ -1650,44 +1300,194 @@ module HubspotSDK
               :APPROVAL_STEP,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
+          ATTRIBUTION =
+            T.let(
+              :ATTRIBUTION,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          AUDIENCE =
+            T.let(
+              :AUDIENCE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          AUTOMATION_JOURNEY =
+            T.let(
+              :AUTOMATION_JOURNEY,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          AUTOMATION_PLATFORM_FLOW =
+            T.let(
+              :AUTOMATION_PLATFORM_FLOW,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          AUTOMATION_PLATFORM_FLOW_ACTION =
+            T.let(
+              :AUTOMATION_PLATFORM_FLOW_ACTION,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          BET_ALERT =
+            T.let(
+              :BET_ALERT,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          BET_DELIVERABLE_SERVICE =
+            T.let(
+              :BET_DELIVERABLE_SERVICE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          BLOG_LISTING_PAGE =
+            T.let(
+              :BLOG_LISTING_PAGE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          BLOG_POST =
+            T.let(
+              :BLOG_POST,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CALL =
+            T.let(
+              :CALL,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CAMPAIGN =
+            T.let(
+              :CAMPAIGN,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CAMPAIGN_BUDGET_ITEM =
+            T.let(
+              :CAMPAIGN_BUDGET_ITEM,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CAMPAIGN_SPEND_ITEM =
+            T.let(
+              :CAMPAIGN_SPEND_ITEM,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CAMPAIGN_STEP =
+            T.let(
+              :CAMPAIGN_STEP,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CAMPAIGN_TEMPLATE =
+            T.let(
+              :CAMPAIGN_TEMPLATE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CAMPAIGN_TEMPLATE_STEP =
+            T.let(
+              :CAMPAIGN_TEMPLATE_STEP,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CART =
+            T.let(
+              :CART,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CASE_STUDY =
+            T.let(
+              :CASE_STUDY,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CHATFLOW =
+            T.let(
+              :CHATFLOW,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CLIP =
+            T.let(
+              :CLIP,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CMS_URL =
+            T.let(
+              :CMS_URL,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          COMBO_EVENT_CONFIGURATION =
+            T.let(
+              :COMBO_EVENT_CONFIGURATION,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          COMMERCE_PAYMENT =
+            T.let(
+              :COMMERCE_PAYMENT,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          COMMUNICATION =
+            T.let(
+              :COMMUNICATION,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          COMPANY =
+            T.let(
+              :COMPANY,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CONTACT =
+            T.let(
+              :CONTACT,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CONTACT_CREATE_ATTRIBUTION =
+            T.let(
+              :CONTACT_CREATE_ATTRIBUTION,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CONTENT =
+            T.let(
+              :CONTENT,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CONTENT_AUDIT =
+            T.let(
+              :CONTENT_AUDIT,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CONTENT_AUDIT_PAGE =
+            T.let(
+              :CONTENT_AUDIT_PAGE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CONVERSATION =
+            T.let(
+              :CONVERSATION,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CONVERSATION_INBOX =
+            T.let(
+              :CONVERSATION_INBOX,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CONVERSATION_SESSION =
+            T.let(
+              :CONVERSATION_SESSION,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CRM_OBJECTS_DUMMY_TYPE =
+            T.let(
+              :CRM_OBJECTS_DUMMY_TYPE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CRM_PIPELINES_DUMMY_TYPE =
+            T.let(
+              :CRM_PIPELINES_DUMMY_TYPE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          CTA =
+            T.let(
+              :CTA,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
           CTA_VARIANT =
             T.let(
               :CTA_VARIANT,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          SALES_DOCUMENT =
+          DATA_PRIVACY_CONSENT =
             T.let(
-              :SALES_DOCUMENT,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          DISCOUNT =
-            T.let(
-              :DISCOUNT,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          FEE =
-            T.let(
-              :FEE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          TAX =
-            T.let(
-              :TAX,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          MARKETING_CALENDAR =
-            T.let(
-              :MARKETING_CALENDAR,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          PERMISSIONS_TESTING =
-            T.let(
-              :PERMISSIONS_TESTING,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          PRIVACY_SCANNER_COOKIE =
-            T.let(
-              :PRIVACY_SCANNER_COOKIE,
+              :DATA_PRIVACY_CONSENT,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
           DATA_SYNC_STATE =
@@ -1695,19 +1495,274 @@ module HubspotSDK
               :DATA_SYNC_STATE,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          WEB_INTERACTIVE =
+          DEAL =
             T.let(
-              :WEB_INTERACTIVE,
+              :DEAL,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          PLAYBOOK =
+          DEAL_CREATE_ATTRIBUTION =
             T.let(
-              :PLAYBOOK,
+              :DEAL_CREATE_ATTRIBUTION,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          DEAL_REGISTRATION =
+            T.let(
+              :DEAL_REGISTRATION,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          DEAL_SPLIT =
+            T.let(
+              :DEAL_SPLIT,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          DISCOUNT =
+            T.let(
+              :DISCOUNT,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          DISCOUNT_CODE =
+            T.let(
+              :DISCOUNT_CODE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          DISCOUNT_TEMPLATE =
+            T.let(
+              :DISCOUNT_TEMPLATE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          EMAIL =
+            T.let(
+              :EMAIL,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          ENGAGEMENT =
+            T.let(
+              :ENGAGEMENT,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          EXPORT =
+            T.let(
+              :EXPORT,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          EXTERNAL_WEB_URL =
+            T.let(
+              :EXTERNAL_WEB_URL,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          FEE =
+            T.let(
+              :FEE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          FEEDBACK_SUBMISSION =
+            T.let(
+              :FEEDBACK_SUBMISSION,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          FEEDBACK_SURVEY =
+            T.let(
+              :FEEDBACK_SURVEY,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          FILE_MANAGER_FILE =
+            T.let(
+              :FILE_MANAGER_FILE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          FILE_MANAGER_FOLDER =
+            T.let(
+              :FILE_MANAGER_FOLDER,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
           FOLDER =
             T.let(
               :FOLDER,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          FORECAST =
+            T.let(
+              :FORECAST,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          FORM =
+            T.let(
+              :FORM,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          FORM_SUBMISSION_INBOUNDDB =
+            T.let(
+              :FORM_SUBMISSION_INBOUNDDB,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          GOAL_TARGET =
+            T.let(
+              :GOAL_TARGET,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          GOAL_TARGET_GROUP =
+            T.let(
+              :GOAL_TARGET_GROUP,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          GOAL_TEMPLATE =
+            T.let(
+              :GOAL_TEMPLATE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          GSC_PROPERTY =
+            T.let(
+              :GSC_PROPERTY,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          HUB =
+            T.let(
+              :HUB,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          IMPORT =
+            T.let(
+              :IMPORT,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          INVOICE =
+            T.let(
+              :INVOICE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          KEYWORD =
+            T.let(
+              :KEYWORD,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          KNOWLEDGE_ARTICLE =
+            T.let(
+              :KNOWLEDGE_ARTICLE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          LANDING_PAGE =
+            T.let(
+              :LANDING_PAGE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          LEAD =
+            T.let(
+              :LEAD,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          LINE_ITEM =
+            T.let(
+              :LINE_ITEM,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          MARKETING_CALENDAR =
+            T.let(
+              :MARKETING_CALENDAR,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          MARKETING_CAMPAIGN_UTM =
+            T.let(
+              :MARKETING_CAMPAIGN_UTM,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          MARKETING_EMAIL =
+            T.let(
+              :MARKETING_EMAIL,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          MARKETING_EVENT =
+            T.let(
+              :MARKETING_EVENT,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          MARKETING_EVENT_ATTENDANCE =
+            T.let(
+              :MARKETING_EVENT_ATTENDANCE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          MARKETING_SMS =
+            T.let(
+              :MARKETING_SMS,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          MEDIA_BRIDGE =
+            T.let(
+              :MEDIA_BRIDGE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          MEETING_EVENT =
+            T.let(
+              :MEETING_EVENT,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          MIC =
+            T.let(
+              :MIC,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          NOTE =
+            T.let(
+              :NOTE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          OBJECT_LIST =
+            T.let(
+              :OBJECT_LIST,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          ORDER =
+            T.let(
+              :ORDER,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          OWNER =
+            T.let(
+              :OWNER,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          PARTNER_ACCOUNT =
+            T.let(
+              :PARTNER_ACCOUNT,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          PARTNER_CLIENT =
+            T.let(
+              :PARTNER_CLIENT,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          PARTNER_CLIENT_REVENUE =
+            T.let(
+              :PARTNER_CLIENT_REVENUE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          PARTNER_SERVICE =
+            T.let(
+              :PARTNER_SERVICE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          PAYMENT_LINK =
+            T.let(
+              :PAYMENT_LINK,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          PAYMENT_SCHEDULE =
+            T.let(
+              :PAYMENT_SCHEDULE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          PAYMENT_SCHEDULE_INSTALLMENT =
+            T.let(
+              :PAYMENT_SCHEDULE_INSTALLMENT,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          PERMISSIONS_TESTING =
+            T.let(
+              :PERMISSIONS_TESTING,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          PLAYBOOK =
+            T.let(
+              :PLAYBOOK,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
           PLAYBOOK_QUESTION =
@@ -1725,24 +1780,59 @@ module HubspotSDK
               :PLAYBOOK_SUBMISSION_ANSWER,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          COMMERCE_PAYMENT =
+          PLAYLIST =
             T.let(
-              :COMMERCE_PAYMENT,
+              :PLAYLIST,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          GSC_PROPERTY =
+          PLAYLIST_FOLDER =
             T.let(
-              :GSC_PROPERTY,
+              :PLAYLIST_FOLDER,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          SOX_PROTECTED_DUMMY_TYPE =
+          PODCAST_EPISODE =
             T.let(
-              :SOX_PROTECTED_DUMMY_TYPE,
+              :PODCAST_EPISODE,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          BLOG_LISTING_PAGE =
+          PORTAL =
             T.let(
-              :BLOG_LISTING_PAGE,
+              :PORTAL,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          PORTAL_OBJECT_SYNC_MESSAGE =
+            T.let(
+              :PORTAL_OBJECT_SYNC_MESSAGE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          POSTAL_MAIL =
+            T.let(
+              :POSTAL_MAIL,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          PRIVACY_SCANNER_COOKIE =
+            T.let(
+              :PRIVACY_SCANNER_COOKIE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          PRODUCT =
+            T.let(
+              :PRODUCT,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          PRODUCT_OR_FOLDER =
+            T.let(
+              :PRODUCT_OR_FOLDER,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          PROPERTY_INFO =
+            T.let(
+              :PROPERTY_INFO,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          PUBLISHING_TASK =
+            T.let(
+              :PUBLISHING_TASK,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
           QUARANTINED_SUBMISSION =
@@ -1750,39 +1840,54 @@ module HubspotSDK
               :QUARANTINED_SUBMISSION,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          PAYMENT_SCHEDULE =
+          QUOTA =
             T.let(
-              :PAYMENT_SCHEDULE,
+              :QUOTA,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          PAYMENT_SCHEDULE_INSTALLMENT =
+          QUOTE =
             T.let(
-              :PAYMENT_SCHEDULE_INSTALLMENT,
+              :QUOTE,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          MARKETING_CAMPAIGN_UTM =
+          QUOTE_FIELD =
             T.let(
-              :MARKETING_CAMPAIGN_UTM,
+              :QUOTE_FIELD,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          DISCOUNT_TEMPLATE =
+          QUOTE_MODULE =
             T.let(
-              :DISCOUNT_TEMPLATE,
+              :QUOTE_MODULE,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          DISCOUNT_CODE =
+          QUOTE_MODULE_FIELD =
             T.let(
-              :DISCOUNT_CODE,
+              :QUOTE_MODULE_FIELD,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          FEEDBACK_SURVEY =
+          QUOTE_TEMPLATE =
             T.let(
-              :FEEDBACK_SURVEY,
+              :QUOTE_TEMPLATE,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          CMS_URL =
+          RESTORABLE_CRM_OBJECT =
             T.let(
-              :CMS_URL,
+              :RESTORABLE_CRM_OBJECT,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          ROSTER =
+            T.let(
+              :ROSTER,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          ROSTER_MEMBER =
+            T.let(
+              :ROSTER_MEMBER,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          SALES_DOCUMENT =
+            T.let(
+              :SALES_DOCUMENT,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
           SALES_TASK =
@@ -1795,34 +1900,9 @@ module HubspotSDK
               :SALES_WORKLOAD,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          USER =
+          SALESFORCE_SYNC_ERROR =
             T.let(
-              :USER,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          POSTAL_MAIL =
-            T.let(
-              :POSTAL_MAIL,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          SCHEMAS_BACKEND_TEST =
-            T.let(
-              :SCHEMAS_BACKEND_TEST,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          PAYMENT_LINK =
-            T.let(
-              :PAYMENT_LINK,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          SUBMISSION_TAG =
-            T.let(
-              :SUBMISSION_TAG,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          CAMPAIGN_STEP =
-            T.let(
-              :CAMPAIGN_STEP,
+              :SALESFORCE_SYNC_ERROR,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
           SCHEDULING_PAGE =
@@ -1830,89 +1910,129 @@ module HubspotSDK
               :SCHEDULING_PAGE,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
+          SCHEMAS_BACKEND_TEST =
+            T.let(
+              :SCHEMAS_BACKEND_TEST,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          SCORE_CONFIGURATION =
+            T.let(
+              :SCORE_CONFIGURATION,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          SEQUENCE =
+            T.let(
+              :SEQUENCE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          SEQUENCE_ENROLLMENT =
+            T.let(
+              :SEQUENCE_ENROLLMENT,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          SEQUENCE_STEP =
+            T.let(
+              :SEQUENCE_STEP,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          SEQUENCE_STEP_ENROLLMENT =
+            T.let(
+              :SEQUENCE_STEP_ENROLLMENT,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          SERVICE =
+            T.let(
+              :SERVICE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          SITE_PAGE =
+            T.let(
+              :SITE_PAGE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          SNIPPET =
+            T.let(
+              :SNIPPET,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          SOCIAL_BROADCAST =
+            T.let(
+              :SOCIAL_BROADCAST,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          SOCIAL_CHANNEL =
+            T.let(
+              :SOCIAL_CHANNEL,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          SOCIAL_POST =
+            T.let(
+              :SOCIAL_POST,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          SOCIAL_PROFILE =
+            T.let(
+              :SOCIAL_PROFILE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
+          SOX_PROTECTED_DUMMY_TYPE =
+            T.let(
+              :SOX_PROTECTED_DUMMY_TYPE,
+              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
+            )
           SOX_PROTECTED_TEST_TYPE =
             T.let(
               :SOX_PROTECTED_TEST_TYPE,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          ORDER =
+          SUBMISSION_TAG =
             T.let(
-              :ORDER,
+              :SUBMISSION_TAG,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          MARKETING_SMS =
+          SUBSCRIPTION =
             T.let(
-              :MARKETING_SMS,
+              :SUBSCRIPTION,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          PARTNER_ACCOUNT =
+          TASK =
             T.let(
-              :PARTNER_ACCOUNT,
+              :TASK,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          CAMPAIGN_TEMPLATE =
+          TASK_TEMPLATE =
             T.let(
-              :CAMPAIGN_TEMPLATE,
+              :TASK_TEMPLATE,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          CAMPAIGN_TEMPLATE_STEP =
+          TAX =
             T.let(
-              :CAMPAIGN_TEMPLATE_STEP,
+              :TAX,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          PLAYLIST =
+          TEMPLATE =
             T.let(
-              :PLAYLIST,
+              :TEMPLATE,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          CLIP =
+          TICKET =
             T.let(
-              :CLIP,
+              :TICKET,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          CAMPAIGN_BUDGET_ITEM =
+          UNKNOWN =
             T.let(
-              :CAMPAIGN_BUDGET_ITEM,
+              :UNKNOWN,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          CAMPAIGN_SPEND_ITEM =
+          UNSUBSCRIBE =
             T.let(
-              :CAMPAIGN_SPEND_ITEM,
+              :UNSUBSCRIBE,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          MIC =
+          USER =
             T.let(
-              :MIC,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          CONTENT_AUDIT =
-            T.let(
-              :CONTENT_AUDIT,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          CONTENT_AUDIT_PAGE =
-            T.let(
-              :CONTENT_AUDIT_PAGE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          PLAYLIST_FOLDER =
-            T.let(
-              :PLAYLIST_FOLDER,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          LEAD =
-            T.let(
-              :LEAD,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          ABANDONED_CART =
-            T.let(
-              :ABANDONED_CART,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          EXTERNAL_WEB_URL =
-            T.let(
-              :EXTERNAL_WEB_URL,
+              :USER,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
           VIEW =
@@ -1925,129 +2045,9 @@ module HubspotSDK
               :VIEW_BLOCK,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
-          ROSTER =
+          WEB_INTERACTIVE =
             T.let(
-              :ROSTER,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          CART =
-            T.let(
-              :CART,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          AUTOMATION_PLATFORM_FLOW_ACTION =
-            T.let(
-              :AUTOMATION_PLATFORM_FLOW_ACTION,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          SOCIAL_PROFILE =
-            T.let(
-              :SOCIAL_PROFILE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          PARTNER_CLIENT =
-            T.let(
-              :PARTNER_CLIENT,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          ROSTER_MEMBER =
-            T.let(
-              :ROSTER_MEMBER,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          MARKETING_EVENT_ATTENDANCE =
-            T.let(
-              :MARKETING_EVENT_ATTENDANCE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          ALL_PAGES =
-            T.let(
-              :ALL_PAGES,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          AI_FORECAST =
-            T.let(
-              :AI_FORECAST,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          CRM_PIPELINES_DUMMY_TYPE =
-            T.let(
-              :CRM_PIPELINES_DUMMY_TYPE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          KNOWLEDGE_ARTICLE =
-            T.let(
-              :KNOWLEDGE_ARTICLE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          PROPERTY_INFO =
-            T.let(
-              :PROPERTY_INFO,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          DATA_PRIVACY_CONSENT =
-            T.let(
-              :DATA_PRIVACY_CONSENT,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          GOAL_TEMPLATE =
-            T.let(
-              :GOAL_TEMPLATE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          SCORE_CONFIGURATION =
-            T.let(
-              :SCORE_CONFIGURATION,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          AUDIENCE =
-            T.let(
-              :AUDIENCE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          PARTNER_CLIENT_REVENUE =
-            T.let(
-              :PARTNER_CLIENT_REVENUE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          AUTOMATION_JOURNEY =
-            T.let(
-              :AUTOMATION_JOURNEY,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          COMBO_EVENT_CONFIGURATION =
-            T.let(
-              :COMBO_EVENT_CONFIGURATION,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          CRM_OBJECTS_DUMMY_TYPE =
-            T.let(
-              :CRM_OBJECTS_DUMMY_TYPE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          CASE_STUDY =
-            T.let(
-              :CASE_STUDY,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          SERVICE =
-            T.let(
-              :SERVICE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          PODCAST_EPISODE =
-            T.let(
-              :PODCAST_EPISODE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          PARTNER_SERVICE =
-            T.let(
-              :PARTNER_SERVICE,
-              HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
-            )
-          UNKNOWN =
-            T.let(
-              :UNKNOWN,
+              :WEB_INTERACTIVE,
               HubspotSDK::Events::AssociationDefinition::ToObjectType::TaggedSymbol
             )
 

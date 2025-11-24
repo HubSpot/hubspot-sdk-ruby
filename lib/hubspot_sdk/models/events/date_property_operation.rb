@@ -68,18 +68,18 @@ module HubspotSDK
         module Month
           extend HubspotSDK::Internal::Type::Enum
 
-          JAN = :JAN
-          FEB = :FEB
-          MAR = :MAR
           APR = :APR
-          MAY = :MAY
-          JUN = :JUN
-          JUL = :JUL
           AUG = :AUG
-          SEP = :SEP
-          OCT = :OCT
-          NOV = :NOV
           DEC = :DEC
+          FEB = :FEB
+          JAN = :JAN
+          JUL = :JUL
+          JUN = :JUN
+          MAR = :MAR
+          MAY = :MAY
+          NOV = :NOV
+          OCT = :OCT
+          SEP = :SEP
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -89,9 +89,9 @@ module HubspotSDK
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
-          EQUAL = :EQUAL
-          BEFORE = :BEFORE
           AFTER = :AFTER
+          BEFORE = :BEFORE
+          EQUAL = :EQUAL
 
           # @!method self.values
           #   @return [Array<Symbol>]

@@ -68,10 +68,10 @@ module HubspotSDK
         module AccountType
           extend HubspotSDK::Internal::Type::Enum
 
-          STANDARD = :STANDARD
+          APP_DEVELOPER = :APP_DEVELOPER
           DEVELOPER_TEST = :DEVELOPER_TEST
           SANDBOX = :SANDBOX
-          APP_DEVELOPER = :APP_DEVELOPER
+          STANDARD = :STANDARD
 
           # @!method self.values
           #   @return [Array<Symbol>]

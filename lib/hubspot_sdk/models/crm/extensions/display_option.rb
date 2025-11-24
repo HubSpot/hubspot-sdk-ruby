@@ -38,11 +38,11 @@ module HubspotSDK
           module Type
             extend HubspotSDK::Internal::Type::Enum
 
+            DANGER = :DANGER
             DEFAULT = :DEFAULT
+            INFO = :INFO
             SUCCESS = :SUCCESS
             WARNING = :WARNING
-            DANGER = :DANGER
-            INFO = :INFO
 
             # @!method self.values
             #   @return [Array<Symbol>]

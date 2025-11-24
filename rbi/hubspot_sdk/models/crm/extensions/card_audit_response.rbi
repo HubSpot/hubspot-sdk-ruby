@@ -95,14 +95,14 @@ module HubspotSDK
                 :CREATE,
                 HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol
               )
-            UPDATE =
-              T.let(
-                :UPDATE,
-                HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol
-              )
             DELETE =
               T.let(
                 :DELETE,
+                HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol
+              )
+            UPDATE =
+              T.let(
+                :UPDATE,
                 HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol
               )
 
@@ -129,11 +129,6 @@ module HubspotSDK
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-            INTERNAL =
-              T.let(
-                :INTERNAL,
-                HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
-              )
             APP =
               T.let(
                 :APP,
@@ -142,6 +137,11 @@ module HubspotSDK
             EXTERNAL =
               T.let(
                 :EXTERNAL,
+                HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
+              )
+            INTERNAL =
+              T.let(
+                :INTERNAL,
                 HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
               )
 

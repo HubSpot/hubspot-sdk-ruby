@@ -12,9 +12,11 @@ module HubspotSDK
             )
           end
 
+        # The three-letter code representing a specific currency (ex. USD).
         sig { returns(String) }
         attr_accessor :currency_code
 
+        # The full name of the currency (ex. US Dollar).
         sig { returns(String) }
         attr_accessor :currency_name
 
@@ -23,7 +25,12 @@ module HubspotSDK
             T.attached_class
           )
         end
-        def self.new(currency_code:, currency_name:)
+        def self.new(
+          # The three-letter code representing a specific currency (ex. USD).
+          currency_code:,
+          # The full name of the currency (ex. US Dollar).
+          currency_name:
+        )
         end
 
         sig do

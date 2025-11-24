@@ -36,11 +36,11 @@ module HubspotSDK
         module AttendanceState
           extend HubspotSDK::Internal::Type::Enum
 
-          REGISTERED = :REGISTERED
           ATTENDED = :ATTENDED
           CANCELLED = :CANCELLED
           EMPTY = :EMPTY
           NO_SHOW = :NO_SHOW
+          REGISTERED = :REGISTERED
 
           # @!method self.values
           #   @return [Array<Symbol>]

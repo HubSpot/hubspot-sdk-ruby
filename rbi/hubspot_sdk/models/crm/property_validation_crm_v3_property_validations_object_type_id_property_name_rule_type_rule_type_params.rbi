@@ -55,64 +55,9 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          FORMAT =
+          AFTER_DATETIME_DURATION =
             T.let(
-              :FORMAT,
-              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
-            )
-          ALPHANUMERIC =
-            T.let(
-              :ALPHANUMERIC,
-              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
-            )
-          MAX_LENGTH =
-            T.let(
-              :MAX_LENGTH,
-              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
-            )
-          MIN_LENGTH =
-            T.let(
-              :MIN_LENGTH,
-              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
-            )
-          MIN_NUMBER =
-            T.let(
-              :MIN_NUMBER,
-              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
-            )
-          MAX_NUMBER =
-            T.let(
-              :MAX_NUMBER,
-              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
-            )
-          START_DATE =
-            T.let(
-              :START_DATE,
-              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
-            )
-          END_DATE =
-            T.let(
-              :END_DATE,
-              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
-            )
-          SPECIAL_CHARACTERS =
-            T.let(
-              :SPECIAL_CHARACTERS,
-              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
-            )
-          WHITESPACE =
-            T.let(
-              :WHITESPACE,
-              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
-            )
-          DECIMAL =
-            T.let(
-              :DECIMAL,
-              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
-            )
-          BEFORE_DURATION =
-            T.let(
-              :BEFORE_DURATION,
+              :AFTER_DATETIME_DURATION,
               HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
             )
           AFTER_DURATION =
@@ -120,24 +65,9 @@ module HubspotSDK
               :AFTER_DURATION,
               HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
             )
-          DAYS_OF_WEEK =
+          ALPHANUMERIC =
             T.let(
-              :DAYS_OF_WEEK,
-              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
-            )
-          REGEX =
-            T.let(
-              :REGEX,
-              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
-            )
-          START_DATETIME =
-            T.let(
-              :START_DATETIME,
-              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
-            )
-          END_DATETIME =
-            T.let(
-              :END_DATETIME,
+              :ALPHANUMERIC,
               HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
             )
           BEFORE_DATETIME_DURATION =
@@ -145,29 +75,24 @@ module HubspotSDK
               :BEFORE_DATETIME_DURATION,
               HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
             )
-          AFTER_DATETIME_DURATION =
+          BEFORE_DURATION =
             T.let(
-              :AFTER_DATETIME_DURATION,
+              :BEFORE_DURATION,
               HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
             )
-          PHONE_NUMBER_WITH_EXPLICIT_COUNTRY_CODE =
+          DAYS_OF_WEEK =
             T.let(
-              :PHONE_NUMBER_WITH_EXPLICIT_COUNTRY_CODE,
+              :DAYS_OF_WEEK,
               HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
             )
-          URL =
+          DECIMAL =
             T.let(
-              :URL,
+              :DECIMAL,
               HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
             )
-          URL_ALLOWED_DOMAINS =
+          DOMAIN =
             T.let(
-              :URL_ALLOWED_DOMAINS,
-              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
-            )
-          URL_BLOCKED_DOMAINS =
-            T.let(
-              :URL_BLOCKED_DOMAINS,
+              :DOMAIN,
               HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
             )
           EMAIL =
@@ -185,9 +110,84 @@ module HubspotSDK
               :EMAIL_BLOCKED_DOMAINS,
               HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
             )
-          DOMAIN =
+          END_DATE =
             T.let(
-              :DOMAIN,
+              :END_DATE,
+              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
+            )
+          END_DATETIME =
+            T.let(
+              :END_DATETIME,
+              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
+            )
+          FORMAT =
+            T.let(
+              :FORMAT,
+              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
+            )
+          MAX_LENGTH =
+            T.let(
+              :MAX_LENGTH,
+              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
+            )
+          MAX_NUMBER =
+            T.let(
+              :MAX_NUMBER,
+              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
+            )
+          MIN_LENGTH =
+            T.let(
+              :MIN_LENGTH,
+              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
+            )
+          MIN_NUMBER =
+            T.let(
+              :MIN_NUMBER,
+              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
+            )
+          PHONE_NUMBER_WITH_EXPLICIT_COUNTRY_CODE =
+            T.let(
+              :PHONE_NUMBER_WITH_EXPLICIT_COUNTRY_CODE,
+              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
+            )
+          REGEX =
+            T.let(
+              :REGEX,
+              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
+            )
+          SPECIAL_CHARACTERS =
+            T.let(
+              :SPECIAL_CHARACTERS,
+              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
+            )
+          START_DATE =
+            T.let(
+              :START_DATE,
+              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
+            )
+          START_DATETIME =
+            T.let(
+              :START_DATETIME,
+              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
+            )
+          URL =
+            T.let(
+              :URL,
+              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
+            )
+          URL_ALLOWED_DOMAINS =
+            T.let(
+              :URL_ALLOWED_DOMAINS,
+              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
+            )
+          URL_BLOCKED_DOMAINS =
+            T.let(
+              :URL_BLOCKED_DOMAINS,
+              HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
+            )
+          WHITESPACE =
+            T.let(
+              :WHITESPACE,
               HubspotSDK::Crm::PropertyValidationCrmV3PropertyValidationsObjectTypeIDPropertyNameRuleTypeRuleTypeParams::RuleType::TaggedSymbol
             )
 

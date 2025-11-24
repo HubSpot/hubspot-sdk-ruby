@@ -32,8 +32,8 @@ module HubspotSDK
         module MonthlyRelativeDays
           extend HubspotSDK::Internal::Type::Enum
 
-          LAST_DAY_OF_MONTH = :LAST_DAY_OF_MONTH
           FIRST_MONDAY_OF_MONTH = :FIRST_MONDAY_OF_MONTH
+          LAST_DAY_OF_MONTH = :LAST_DAY_OF_MONTH
 
           # @!method self.values
           #   @return [Array<Symbol>]

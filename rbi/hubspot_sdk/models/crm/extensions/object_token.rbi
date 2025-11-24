@@ -118,14 +118,14 @@ module HubspotSDK
                 :NUMERIC,
                 HubspotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
               )
-            STRING =
-              T.let(
-                :STRING,
-                HubspotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
-              )
             STATUS =
               T.let(
                 :STATUS,
+                HubspotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
+              )
+            STRING =
+              T.let(
+                :STRING,
                 HubspotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
               )
 

@@ -49,13 +49,13 @@ module HubspotSDK
           default_value: String
         }
 
-        type operator = :UPDATED_IN_LAST_X_DAYS | :NOT_UPDATED_IN_LAST_X_DAYS
+        type operator = :NOT_UPDATED_IN_LAST_X_DAYS | :UPDATED_IN_LAST_X_DAYS
 
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
-          UPDATED_IN_LAST_X_DAYS: :UPDATED_IN_LAST_X_DAYS
           NOT_UPDATED_IN_LAST_X_DAYS: :NOT_UPDATED_IN_LAST_X_DAYS
+          UPDATED_IN_LAST_X_DAYS: :UPDATED_IN_LAST_X_DAYS
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::RollingPropertyUpdatedOperation::operator]
         end

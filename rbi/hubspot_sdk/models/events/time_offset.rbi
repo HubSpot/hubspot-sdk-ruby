@@ -53,14 +53,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          PAST =
-            T.let(
-              :PAST,
-              HubspotSDK::Events::TimeOffset::OffsetDirection::TaggedSymbol
-            )
           FUTURE =
             T.let(
               :FUTURE,
+              HubspotSDK::Events::TimeOffset::OffsetDirection::TaggedSymbol
+            )
+          PAST =
+            T.let(
+              :PAST,
               HubspotSDK::Events::TimeOffset::OffsetDirection::TaggedSymbol
             )
 
@@ -84,11 +84,6 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          WEEKS =
-            T.let(
-              :WEEKS,
-              HubspotSDK::Events::TimeOffset::TimeUnit::TaggedSymbol
-            )
           DAYS =
             T.let(:DAYS, HubspotSDK::Events::TimeOffset::TimeUnit::TaggedSymbol)
           HOURS =
@@ -99,6 +94,11 @@ module HubspotSDK
           MINUTES =
             T.let(
               :MINUTES,
+              HubspotSDK::Events::TimeOffset::TimeUnit::TaggedSymbol
+            )
+          WEEKS =
+            T.let(
+              :WEEKS,
               HubspotSDK::Events::TimeOffset::TimeUnit::TaggedSymbol
             )
 

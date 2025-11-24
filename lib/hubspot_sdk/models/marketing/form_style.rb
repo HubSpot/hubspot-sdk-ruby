@@ -86,9 +86,9 @@ module HubspotSDK
         module SubmitAlignment
           extend HubspotSDK::Internal::Type::Enum
 
+          CENTER = :center
           LEFT = :left
           RIGHT = :right
-          CENTER = :center
 
           # @!method self.values
           #   @return [Array<Symbol>]

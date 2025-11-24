@@ -28,20 +28,20 @@ module HubspotSDK
         }
 
         type type_ =
-          :LANDING_PAGE
-          | :BLOG_POST
-          | :SITE_PAGE
+          :BLOG_POST
           | :KNOWLEDGE_ARTICLE
+          | :LANDING_PAGE
           | :LISTING_PAGE
+          | :SITE_PAGE
 
         module Type
           extend HubspotSDK::Internal::Type::Enum
 
-          LANDING_PAGE: :LANDING_PAGE
           BLOG_POST: :BLOG_POST
-          SITE_PAGE: :SITE_PAGE
           KNOWLEDGE_ARTICLE: :KNOWLEDGE_ARTICLE
+          LANDING_PAGE: :LANDING_PAGE
           LISTING_PAGE: :LISTING_PAGE
+          SITE_PAGE: :SITE_PAGE
 
           def self?.values: -> ::Array[HubspotSDK::Models::Cms::IndexedData::type_]
         end

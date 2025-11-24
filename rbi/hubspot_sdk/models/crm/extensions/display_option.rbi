@@ -67,9 +67,19 @@ module HubspotSDK
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
 
+            DANGER =
+              T.let(
+                :DANGER,
+                HubspotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
+              )
             DEFAULT =
               T.let(
                 :DEFAULT,
+                HubspotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
+              )
+            INFO =
+              T.let(
+                :INFO,
                 HubspotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
               )
             SUCCESS =
@@ -80,16 +90,6 @@ module HubspotSDK
             WARNING =
               T.let(
                 :WARNING,
-                HubspotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
-              )
-            DANGER =
-              T.let(
-                :DANGER,
-                HubspotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
-              )
-            INFO =
-              T.let(
-                :INFO,
                 HubspotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
               )
 

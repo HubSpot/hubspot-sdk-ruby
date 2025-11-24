@@ -173,16 +173,6 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          IS_EQUAL_TO =
-            T.let(
-              :IS_EQUAL_TO,
-              HubspotSDK::Events::MultiStringPropertyOperation::Operator::TaggedSymbol
-            )
-          IS_NOT_EQUAL_TO =
-            T.let(
-              :IS_NOT_EQUAL_TO,
-              HubspotSDK::Events::MultiStringPropertyOperation::Operator::TaggedSymbol
-            )
           CONTAINS =
             T.let(
               :CONTAINS,
@@ -193,14 +183,24 @@ module HubspotSDK
               :DOES_NOT_CONTAIN,
               HubspotSDK::Events::MultiStringPropertyOperation::Operator::TaggedSymbol
             )
-          STARTS_WITH =
-            T.let(
-              :STARTS_WITH,
-              HubspotSDK::Events::MultiStringPropertyOperation::Operator::TaggedSymbol
-            )
           ENDS_WITH =
             T.let(
               :ENDS_WITH,
+              HubspotSDK::Events::MultiStringPropertyOperation::Operator::TaggedSymbol
+            )
+          IS_EQUAL_TO =
+            T.let(
+              :IS_EQUAL_TO,
+              HubspotSDK::Events::MultiStringPropertyOperation::Operator::TaggedSymbol
+            )
+          IS_NOT_EQUAL_TO =
+            T.let(
+              :IS_NOT_EQUAL_TO,
+              HubspotSDK::Events::MultiStringPropertyOperation::Operator::TaggedSymbol
+            )
+          STARTS_WITH =
+            T.let(
+              :STARTS_WITH,
               HubspotSDK::Events::MultiStringPropertyOperation::Operator::TaggedSymbol
             )
 

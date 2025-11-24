@@ -101,9 +101,9 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          STANDARD =
+          APP_DEVELOPER =
             T.let(
-              :STANDARD,
+              :APP_DEVELOPER,
               HubspotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol
             )
           DEVELOPER_TEST =
@@ -116,9 +116,9 @@ module HubspotSDK
               :SANDBOX,
               HubspotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol
             )
-          APP_DEVELOPER =
+          STANDARD =
             T.let(
-              :APP_DEVELOPER,
+              :STANDARD,
               HubspotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol
             )
 

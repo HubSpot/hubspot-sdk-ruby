@@ -44,10 +44,10 @@ module HubspotSDK
         module Size
           extend HubspotSDK::Internal::Type::Enum
 
-          THUMB = :thumb
           ICON = :icon
           MEDIUM = :medium
           PREVIEW = :preview
+          THUMB = :thumb
 
           # @!method self.values
           #   @return [Array<Symbol>]

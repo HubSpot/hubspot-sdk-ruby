@@ -23,6 +23,7 @@ module HubspotSDK
           optional :archived, HubspotSDK::Internal::Type::Boolean
 
           # @!attribute content_type
+          #   Specifies the content type for the response.
           #
           #   @return [String, nil]
           optional :content_type, String
@@ -46,6 +47,7 @@ module HubspotSDK
           optional :created_before, Time
 
           # @!attribute is_get_localized_schema
+          #   Indicates whether to retrieve the localized schema.
           #
           #   @return [Boolean, nil]
           optional :is_get_localized_schema, HubspotSDK::Internal::Type::Boolean
@@ -90,7 +92,7 @@ module HubspotSDK
           #
           #   @param archived [Boolean] Specifies whether to return archived tables. Defaults to `false`.
           #
-          #   @param content_type [String]
+          #   @param content_type [String] Specifies the content type for the response.
           #
           #   @param created_after [Time] Only return tables created after the specified time.
           #
@@ -98,7 +100,7 @@ module HubspotSDK
           #
           #   @param created_before [Time] Only return tables created before the specified time.
           #
-          #   @param is_get_localized_schema [Boolean]
+          #   @param is_get_localized_schema [Boolean] Indicates whether to retrieve the localized schema.
           #
           #   @param limit [Integer] The maximum number of results to return. Default is 1000.
           #

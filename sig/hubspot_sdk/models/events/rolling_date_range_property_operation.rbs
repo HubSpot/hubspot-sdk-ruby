@@ -56,16 +56,16 @@ module HubspotSDK
 
         type operator =
           :IS_LESS_THAN_X_DAYS_AGO
-          | :IS_MORE_THAN_X_DAYS_AGO
           | :IS_LESS_THAN_X_DAYS_FROM_NOW
+          | :IS_MORE_THAN_X_DAYS_AGO
           | :IS_MORE_THAN_X_DAYS_FROM_NOW
 
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
           IS_LESS_THAN_X_DAYS_AGO: :IS_LESS_THAN_X_DAYS_AGO
-          IS_MORE_THAN_X_DAYS_AGO: :IS_MORE_THAN_X_DAYS_AGO
           IS_LESS_THAN_X_DAYS_FROM_NOW: :IS_LESS_THAN_X_DAYS_FROM_NOW
+          IS_MORE_THAN_X_DAYS_AGO: :IS_MORE_THAN_X_DAYS_AGO
           IS_MORE_THAN_X_DAYS_FROM_NOW: :IS_MORE_THAN_X_DAYS_FROM_NOW
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::RollingDateRangePropertyOperation::operator]

@@ -234,36 +234,36 @@ module HubspotSDK
             T.type_alias { T.all(Symbol, HubspotSDK::Cms::Column::Type) }
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          NULL = T.let(:NULL, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          TEXT = T.let(:TEXT, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          NUMBER = T.let(:NUMBER, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          URL = T.let(:URL, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          IMAGE = T.let(:IMAGE, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          SELECT = T.let(:SELECT, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          MULTISELECT =
-            T.let(:MULTISELECT, HubspotSDK::Cms::Column::Type::TaggedSymbol)
           BOOLEAN = T.let(:BOOLEAN, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          LOCATION =
-            T.let(:LOCATION, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+          CODE = T.let(:CODE, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+          COMPOSITE =
+            T.let(:COMPOSITE, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+          CTA = T.let(:CTA, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+          CURRENCY =
+            T.let(:CURRENCY, HubspotSDK::Cms::Column::Type::TaggedSymbol)
           DATE = T.let(:DATE, HubspotSDK::Cms::Column::Type::TaggedSymbol)
           DATETIME =
             T.let(:DATETIME, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          CURRENCY =
-            T.let(:CURRENCY, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          RICHTEXT =
-            T.let(:RICHTEXT, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+          EMBED = T.let(:EMBED, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+          FILE = T.let(:FILE, HubspotSDK::Cms::Column::Type::TaggedSymbol)
           FOREIGN_ID =
             T.let(:FOREIGN_ID, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          VIDEO = T.let(:VIDEO, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          CTA = T.let(:CTA, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          FILE = T.let(:FILE, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          JSON = T.let(:JSON, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          COMPOSITE =
-            T.let(:COMPOSITE, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          CODE = T.let(:CODE, HubspotSDK::Cms::Column::Type::TaggedSymbol)
           HUBSPOT_VIDEO =
             T.let(:HUBSPOT_VIDEO, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          EMBED = T.let(:EMBED, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+          IMAGE = T.let(:IMAGE, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+          JSON = T.let(:JSON, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+          LOCATION =
+            T.let(:LOCATION, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+          MULTISELECT =
+            T.let(:MULTISELECT, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+          NULL = T.let(:NULL, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+          NUMBER = T.let(:NUMBER, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+          RICHTEXT =
+            T.let(:RICHTEXT, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+          SELECT = T.let(:SELECT, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+          TEXT = T.let(:TEXT, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+          URL = T.let(:URL, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+          VIDEO = T.let(:VIDEO, HubspotSDK::Cms::Column::Type::TaggedSymbol)
 
           sig do
             override.returns(

@@ -98,6 +98,11 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
+          HIGHLY_SENSITIVE =
+            T.let(
+              :highly_sensitive,
+              HubspotSDK::Crm::PropertyListParams::DataSensitivity::TaggedSymbol
+            )
           NON_SENSITIVE =
             T.let(
               :non_sensitive,
@@ -106,11 +111,6 @@ module HubspotSDK
           SENSITIVE =
             T.let(
               :sensitive,
-              HubspotSDK::Crm::PropertyListParams::DataSensitivity::TaggedSymbol
-            )
-          HIGHLY_SENSITIVE =
-            T.let(
-              :highly_sensitive,
               HubspotSDK::Crm::PropertyListParams::DataSensitivity::TaggedSymbol
             )
 

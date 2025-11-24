@@ -67,14 +67,14 @@ module HubspotSDK
           def self?.values: -> ::Array[HubspotSDK::Models::Events::IndexedTimePoint::time_type]
         end
 
-        type timezone_source = :CUSTOM | :USER | :PORTAL
+        type timezone_source = :CUSTOM | :PORTAL | :USER
 
         module TimezoneSource
           extend HubspotSDK::Internal::Type::Enum
 
           CUSTOM: :CUSTOM
-          USER: :USER
           PORTAL: :PORTAL
+          USER: :USER
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::IndexedTimePoint::timezone_source]
         end

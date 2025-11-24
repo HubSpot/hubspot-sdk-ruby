@@ -23,8 +23,8 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::Enum
 
           CELL = :CELL
-          MAIN = :MAIN
           HOME = :HOME
+          MAIN = :MAIN
           WORK = :WORK
 
           # @!method self.values

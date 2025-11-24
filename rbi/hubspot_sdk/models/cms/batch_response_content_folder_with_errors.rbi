@@ -125,16 +125,6 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          PENDING =
-            T.let(
-              :PENDING,
-              HubspotSDK::Cms::BatchResponseContentFolderWithErrors::Status::TaggedSymbol
-            )
-          PROCESSING =
-            T.let(
-              :PROCESSING,
-              HubspotSDK::Cms::BatchResponseContentFolderWithErrors::Status::TaggedSymbol
-            )
           CANCELED =
             T.let(
               :CANCELED,
@@ -143,6 +133,16 @@ module HubspotSDK
           COMPLETE =
             T.let(
               :COMPLETE,
+              HubspotSDK::Cms::BatchResponseContentFolderWithErrors::Status::TaggedSymbol
+            )
+          PENDING =
+            T.let(
+              :PENDING,
+              HubspotSDK::Cms::BatchResponseContentFolderWithErrors::Status::TaggedSymbol
+            )
+          PROCESSING =
+            T.let(
+              :PROCESSING,
               HubspotSDK::Cms::BatchResponseContentFolderWithErrors::Status::TaggedSymbol
             )
 

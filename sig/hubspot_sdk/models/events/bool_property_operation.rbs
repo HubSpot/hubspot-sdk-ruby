@@ -50,18 +50,18 @@ module HubspotSDK
         }
 
         type operator =
-          :IS_EQUAL_TO
-          | :IS_NOT_EQUAL_TO
-          | :HAS_EVER_BEEN_EQUAL_TO
+          :HAS_EVER_BEEN_EQUAL_TO
           | :HAS_NEVER_BEEN_EQUAL_TO
+          | :IS_EQUAL_TO
+          | :IS_NOT_EQUAL_TO
 
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
-          IS_EQUAL_TO: :IS_EQUAL_TO
-          IS_NOT_EQUAL_TO: :IS_NOT_EQUAL_TO
           HAS_EVER_BEEN_EQUAL_TO: :HAS_EVER_BEEN_EQUAL_TO
           HAS_NEVER_BEEN_EQUAL_TO: :HAS_NEVER_BEEN_EQUAL_TO
+          IS_EQUAL_TO: :IS_EQUAL_TO
+          IS_NOT_EQUAL_TO: :IS_NOT_EQUAL_TO
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::BoolPropertyOperation::operator]
         end

@@ -26,14 +26,14 @@ module HubspotSDK
           type: HubspotSDK::Models::Conversations::ContactPhone::type_
         }
 
-        type type_ = :CELL | :MAIN | :HOME | :WORK
+        type type_ = :CELL | :HOME | :MAIN | :WORK
 
         module Type
           extend HubspotSDK::Internal::Type::Enum
 
           CELL: :CELL
-          MAIN: :MAIN
           HOME: :HOME
+          MAIN: :MAIN
           WORK: :WORK
 
           def self?.values: -> ::Array[HubspotSDK::Models::Conversations::ContactPhone::type_]

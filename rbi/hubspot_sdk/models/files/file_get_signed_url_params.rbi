@@ -89,11 +89,6 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          THUMB =
-            T.let(
-              :thumb,
-              HubspotSDK::Files::FileGetSignedURLParams::Size::TaggedSymbol
-            )
           ICON =
             T.let(
               :icon,
@@ -107,6 +102,11 @@ module HubspotSDK
           PREVIEW =
             T.let(
               :preview,
+              HubspotSDK::Files::FileGetSignedURLParams::Size::TaggedSymbol
+            )
+          THUMB =
+            T.let(
+              :thumb,
               HubspotSDK::Files::FileGetSignedURLParams::Size::TaggedSymbol
             )
 

@@ -81,28 +81,28 @@ module HubspotSDK
         module Type
           extend HubspotSDK::Internal::Type::Enum
 
-          NULL = :NULL
-          TEXT = :TEXT
-          NUMBER = :NUMBER
-          URL = :URL
-          IMAGE = :IMAGE
-          SELECT = :SELECT
-          MULTISELECT = :MULTISELECT
           BOOLEAN = :BOOLEAN
-          LOCATION = :LOCATION
+          CODE = :CODE
+          COMPOSITE = :COMPOSITE
+          CTA = :CTA
+          CURRENCY = :CURRENCY
           DATE = :DATE
           DATETIME = :DATETIME
-          CURRENCY = :CURRENCY
-          RICHTEXT = :RICHTEXT
-          FOREIGN_ID = :FOREIGN_ID
-          VIDEO = :VIDEO
-          CTA = :CTA
-          FILE = :FILE
-          JSON = :JSON
-          COMPOSITE = :COMPOSITE
-          CODE = :CODE
-          HUBSPOT_VIDEO = :HUBSPOT_VIDEO
           EMBED = :EMBED
+          FILE = :FILE
+          FOREIGN_ID = :FOREIGN_ID
+          HUBSPOT_VIDEO = :HUBSPOT_VIDEO
+          IMAGE = :IMAGE
+          JSON = :JSON
+          LOCATION = :LOCATION
+          MULTISELECT = :MULTISELECT
+          NULL = :NULL
+          NUMBER = :NUMBER
+          RICHTEXT = :RICHTEXT
+          SELECT = :SELECT
+          TEXT = :TEXT
+          URL = :URL
+          VIDEO = :VIDEO
 
           # @!method self.values
           #   @return [Array<Symbol>]

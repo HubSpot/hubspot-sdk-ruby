@@ -59,6 +59,7 @@ module HubspotSDK
         sig { params(limit: Integer).void }
         attr_writer :limit
 
+        # Specifies the order in which the domains are returned.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :sort
 
@@ -116,6 +117,7 @@ module HubspotSDK
           created_before: nil,
           # Maximum number of results per page.
           limit: nil,
+          # Specifies the order in which the domains are returned.
           sort: nil,
           # Only return domains updated after this date.
           updated_after: nil,

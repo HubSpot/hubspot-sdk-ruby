@@ -124,14 +124,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          PERSONAL_LINK =
-            T.let(
-              :PERSONAL_LINK,
-              HubspotSDK::Scheduler::ExternalBookingInfo::LinkType::TaggedSymbol
-            )
           GROUP_CALENDAR =
             T.let(
               :GROUP_CALENDAR,
+              HubspotSDK::Scheduler::ExternalBookingInfo::LinkType::TaggedSymbol
+            )
+          PERSONAL_LINK =
+            T.let(
+              :PERSONAL_LINK,
               HubspotSDK::Scheduler::ExternalBookingInfo::LinkType::TaggedSymbol
             )
           ROUND_ROBIN_CALENDAR =

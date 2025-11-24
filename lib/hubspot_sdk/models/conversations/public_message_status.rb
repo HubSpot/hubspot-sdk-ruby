@@ -26,10 +26,10 @@ module HubspotSDK
         module StatusType
           extend HubspotSDK::Internal::Type::Enum
 
-          SENT = :SENT
           FAILED = :FAILED
-          RECEIVED = :RECEIVED
           READ = :READ
+          RECEIVED = :RECEIVED
+          SENT = :SENT
 
           # @!method self.values
           #   @return [Array<Symbol>]

@@ -165,6 +165,11 @@ module HubspotSDK
           end
         OrSymbol = T.type_alias { T.any(Symbol, String) }
 
+        BOUNCED =
+          T.let(
+            :BOUNCED,
+            HubspotSDK::PublicEmailEventFilter::Operator::TaggedSymbol
+          )
         LINK_CLICKED =
           T.let(
             :LINK_CLICKED,
@@ -190,21 +195,6 @@ module HubspotSDK
             :OPENED_BUT_NOT_REPLIED,
             HubspotSDK::PublicEmailEventFilter::Operator::TaggedSymbol
           )
-        REPLIED =
-          T.let(
-            :REPLIED,
-            HubspotSDK::PublicEmailEventFilter::Operator::TaggedSymbol
-          )
-        UNSUBSCRIBED =
-          T.let(
-            :UNSUBSCRIBED,
-            HubspotSDK::PublicEmailEventFilter::Operator::TaggedSymbol
-          )
-        BOUNCED =
-          T.let(
-            :BOUNCED,
-            HubspotSDK::PublicEmailEventFilter::Operator::TaggedSymbol
-          )
         RECEIVED =
           T.let(
             :RECEIVED,
@@ -213,6 +203,11 @@ module HubspotSDK
         RECEIVED_BUT_NOT_OPENED =
           T.let(
             :RECEIVED_BUT_NOT_OPENED,
+            HubspotSDK::PublicEmailEventFilter::Operator::TaggedSymbol
+          )
+        REPLIED =
+          T.let(
+            :REPLIED,
             HubspotSDK::PublicEmailEventFilter::Operator::TaggedSymbol
           )
         SENT =
@@ -228,6 +223,11 @@ module HubspotSDK
         SENT_BUT_NOT_RECEIVED =
           T.let(
             :SENT_BUT_NOT_RECEIVED,
+            HubspotSDK::PublicEmailEventFilter::Operator::TaggedSymbol
+          )
+        UNSUBSCRIBED =
+          T.let(
+            :UNSUBSCRIBED,
             HubspotSDK::PublicEmailEventFilter::Operator::TaggedSymbol
           )
 

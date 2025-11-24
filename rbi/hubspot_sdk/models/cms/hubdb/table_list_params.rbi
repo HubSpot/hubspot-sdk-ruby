@@ -31,6 +31,7 @@ module HubspotSDK
           sig { params(archived: T::Boolean).void }
           attr_writer :archived
 
+          # Specifies the content type for the response.
           sig { returns(T.nilable(String)) }
           attr_reader :content_type
 
@@ -58,6 +59,7 @@ module HubspotSDK
           sig { params(created_before: Time).void }
           attr_writer :created_before
 
+          # Indicates whether to retrieve the localized schema for the tables.
           sig { returns(T.nilable(T::Boolean)) }
           attr_reader :is_get_localized_schema
 
@@ -124,6 +126,7 @@ module HubspotSDK
             after: nil,
             # Specifies whether to return archived tables. Defaults to `false`.
             archived: nil,
+            # Specifies the content type for the response.
             content_type: nil,
             # Only return tables created after the specified time.
             created_after: nil,
@@ -131,6 +134,7 @@ module HubspotSDK
             created_at: nil,
             # Only return tables created before the specified time.
             created_before: nil,
+            # Indicates whether to retrieve the localized schema for the tables.
             is_get_localized_schema: nil,
             # The maximum number of results to return. Default is 1000.
             limit: nil,

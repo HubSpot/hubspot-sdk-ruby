@@ -96,14 +96,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          LEAD_BASED =
-            T.let(
-              :LEAD_BASED,
-              HubspotSDK::Automation::EmailSettingsResponse::SellingStrategy::TaggedSymbol
-            )
           ACCOUNT_BASED =
             T.let(
               :ACCOUNT_BASED,
+              HubspotSDK::Automation::EmailSettingsResponse::SellingStrategy::TaggedSymbol
+            )
+          LEAD_BASED =
+            T.let(
+              :LEAD_BASED,
               HubspotSDK::Automation::EmailSettingsResponse::SellingStrategy::TaggedSymbol
             )
 

@@ -39,6 +39,22 @@ module HubspotSDK
         sig { params(hub_domain: String).void }
         attr_writer :hub_domain
 
+        sig { returns(T.nilable(T::Boolean)) }
+        attr_reader :is_private_distribution
+
+        sig { params(is_private_distribution: T::Boolean).void }
+        attr_writer :is_private_distribution
+
+        sig { returns(T.nilable(HubspotSDK::Auth::SignedAccessToken)) }
+        attr_reader :signed_access_token
+
+        sig do
+          params(
+            signed_access_token: HubspotSDK::Auth::SignedAccessToken::OrHash
+          ).void
+        end
+        attr_writer :signed_access_token
+
         sig { returns(T.nilable(String)) }
         attr_reader :user
 
@@ -55,6 +71,8 @@ module HubspotSDK
             token_type: String,
             user_id: Integer,
             hub_domain: String,
+            is_private_distribution: T::Boolean,
+            signed_access_token: HubspotSDK::Auth::SignedAccessToken::OrHash,
             user: String
           ).returns(T.attached_class)
         end
@@ -67,6 +85,8 @@ module HubspotSDK
           token_type:,
           user_id:,
           hub_domain: nil,
+          is_private_distribution: nil,
+          signed_access_token: nil,
           user: nil
         )
         end
@@ -82,6 +102,8 @@ module HubspotSDK
               token_type: String,
               user_id: Integer,
               hub_domain: String,
+              is_private_distribution: T::Boolean,
+              signed_access_token: HubspotSDK::Auth::SignedAccessToken,
               user: String
             }
           )

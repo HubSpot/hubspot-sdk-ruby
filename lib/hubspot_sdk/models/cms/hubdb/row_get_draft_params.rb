@@ -15,13 +15,16 @@ module HubspotSDK
           required :table_id_or_name, String
 
           # @!attribute archived
+          #   Set this to `true` to return an archived row. Defaults to `false`.
           #
           #   @return [Boolean, nil]
           optional :archived, HubspotSDK::Internal::Type::Boolean
 
           # @!method initialize(table_id_or_name:, archived: nil, request_options: {})
           #   @param table_id_or_name [String]
-          #   @param archived [Boolean]
+          #
+          #   @param archived [Boolean] Set this to `true` to return an archived row. Defaults to `false`.
+          #
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end

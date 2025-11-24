@@ -45,9 +45,9 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::Enum
 
           ALL = :ALL
+          ATTENTION_SPAN = :ATTENTION_SPAN
           MEDIA_PLAYS = :MEDIA_PLAYS
           MEDIA_PLAYS_PERCENT = :MEDIA_PLAYS_PERCENT
-          ATTENTION_SPAN = :ATTENTION_SPAN
 
           # @!method self.values
           #   @return [Array<Symbol>]

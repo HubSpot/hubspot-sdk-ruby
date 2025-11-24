@@ -12,6 +12,8 @@ module HubspotSDK
             )
           end
 
+        # This represents the three-letter currency code (such as USD for US Dollar) of
+        # the currency you want to convert from.
         sig do
           returns(
             HubspotSDK::Settings::CurrencyPairUpdate::FromCurrencyCode::OrSymbol
@@ -19,6 +21,8 @@ module HubspotSDK
         end
         attr_accessor :from_currency_code
 
+        # This represents the three-letter currency code (such as USD for US Dollar) of
+        # the currency you want to convert to.
         sig do
           returns(
             HubspotSDK::Settings::CurrencyPairUpdate::ToCurrencyCode::OrSymbol
@@ -26,6 +30,8 @@ module HubspotSDK
         end
         attr_accessor :to_currency_code
 
+        # This indicates if the currency pair is shown in the MultiCurrency settings page.
+        # Setting this to false will remove the currency pair from the settings page.
         sig { returns(T::Boolean) }
         attr_accessor :visible_in_ui
 
@@ -38,7 +44,17 @@ module HubspotSDK
             visible_in_ui: T::Boolean
           ).returns(T.attached_class)
         end
-        def self.new(from_currency_code:, to_currency_code:, visible_in_ui:)
+        def self.new(
+          # This represents the three-letter currency code (such as USD for US Dollar) of
+          # the currency you want to convert from.
+          from_currency_code:,
+          # This represents the three-letter currency code (such as USD for US Dollar) of
+          # the currency you want to convert to.
+          to_currency_code:,
+          # This indicates if the currency pair is shown in the MultiCurrency settings page.
+          # Setting this to false will remove the currency pair from the settings page.
+          visible_in_ui:
+        )
         end
 
         sig do
@@ -55,6 +71,8 @@ module HubspotSDK
         def to_hash
         end
 
+        # This represents the three-letter currency code (such as USD for US Dollar) of
+        # the currency you want to convert from.
         module FromCurrencyCode
           extend HubspotSDK::Internal::Type::Enum
 
@@ -959,6 +977,8 @@ module HubspotSDK
           end
         end
 
+        # This represents the three-letter currency code (such as USD for US Dollar) of
+        # the currency you want to convert to.
         module ToCurrencyCode
           extend HubspotSDK::Internal::Type::Enum
 

@@ -110,8 +110,8 @@ module HubspotSDK
         module RichTextType
           extend HubspotSDK::Internal::Type::Enum
 
-          TEXT = :text
           IMAGE = :image
+          TEXT = :text
 
           # @!method self.values
           #   @return [Array<Symbol>]

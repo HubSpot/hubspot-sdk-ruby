@@ -14,7 +14,12 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Settings::ExchangeRate)
           end
-          def create_currency(currency_code:, request_options: {})
+          def create_currency(
+            # The currency code being added to the HubSpot portal for use with central
+            # exchange rates.
+            currency_code:,
+            request_options: {}
+          )
           end
 
           # Retrieve details on whether the central exchange rates feature is enabled for

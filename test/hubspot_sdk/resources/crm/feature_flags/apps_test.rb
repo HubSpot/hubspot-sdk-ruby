@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Crm::FeatureFlags::AppsTest < HubspotSDK::Tes
   def test_update_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.crm.feature_flags.apps.update("flagName", app_id: 0, default_state: :OFF)
+    response = @hubspot.crm.feature_flags.apps.update("flagName", app_id: 0, default_state: :ABSENT)
 
     assert_pattern do
       response => HubspotSDK::Crm::FlagResponse

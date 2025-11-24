@@ -77,11 +77,6 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          REGISTERED =
-            T.let(
-              :REGISTERED,
-              HubspotSDK::Marketing::ParticipationProperties::AttendanceState::TaggedSymbol
-            )
           ATTENDED =
             T.let(
               :ATTENDED,
@@ -100,6 +95,11 @@ module HubspotSDK
           NO_SHOW =
             T.let(
               :NO_SHOW,
+              HubspotSDK::Marketing::ParticipationProperties::AttendanceState::TaggedSymbol
+            )
+          REGISTERED =
+            T.let(
+              :REGISTERED,
               HubspotSDK::Marketing::ParticipationProperties::AttendanceState::TaggedSymbol
             )
 

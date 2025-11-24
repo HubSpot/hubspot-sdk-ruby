@@ -169,8 +169,8 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::Enum
 
           NOT_TRUNCATED = :NOT_TRUNCATED
-          TRUNCATED_TO_MOST_RECENT_REPLY = :TRUNCATED_TO_MOST_RECENT_REPLY
           TRUNCATED = :TRUNCATED
+          TRUNCATED_TO_MOST_RECENT_REPLY = :TRUNCATED_TO_MOST_RECENT_REPLY
 
           # @!method self.values
           #   @return [Array<Symbol>]

@@ -62,8 +62,8 @@ module HubspotSDK
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
-          IS_BEFORE = :IS_BEFORE
           IS_AFTER = :IS_AFTER
+          IS_BEFORE = :IS_BEFORE
 
           # @!method self.values
           #   @return [Array<Symbol>]

@@ -41,15 +41,15 @@ module HubspotSDK
           request_options: HubspotSDK::RequestOptions
         }
 
-        type size = :thumb | :icon | :medium | :preview
+        type size = :icon | :medium | :preview | :thumb
 
         module Size
           extend HubspotSDK::Internal::Type::Enum
 
-          THUMB: :thumb
           ICON: :icon
           MEDIUM: :medium
           PREVIEW: :preview
+          THUMB: :thumb
 
           def self?.values: -> ::Array[HubspotSDK::Models::Files::FileGetSignedURLParams::size]
         end

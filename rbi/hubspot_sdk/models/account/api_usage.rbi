@@ -91,6 +91,21 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
+          CACHED =
+            T.let(
+              :CACHED,
+              HubspotSDK::Account::APIUsage::FetchStatus::TaggedSymbol
+            )
+          FAILURE =
+            T.let(
+              :FAILURE,
+              HubspotSDK::Account::APIUsage::FetchStatus::TaggedSymbol
+            )
+          NOTFOUND =
+            T.let(
+              :NOTFOUND,
+              HubspotSDK::Account::APIUsage::FetchStatus::TaggedSymbol
+            )
           SUCCESS =
             T.let(
               :SUCCESS,
@@ -99,21 +114,6 @@ module HubspotSDK
           TIMEOUT =
             T.let(
               :TIMEOUT,
-              HubspotSDK::Account::APIUsage::FetchStatus::TaggedSymbol
-            )
-          FAILURE =
-            T.let(
-              :FAILURE,
-              HubspotSDK::Account::APIUsage::FetchStatus::TaggedSymbol
-            )
-          CACHED =
-            T.let(
-              :CACHED,
-              HubspotSDK::Account::APIUsage::FetchStatus::TaggedSymbol
-            )
-          NOTFOUND =
-            T.let(
-              :NOTFOUND,
               HubspotSDK::Account::APIUsage::FetchStatus::TaggedSymbol
             )
 

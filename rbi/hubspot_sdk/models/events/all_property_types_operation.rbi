@@ -167,24 +167,24 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          IS_KNOWN =
-            T.let(
-              :IS_KNOWN,
-              HubspotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol
-            )
-          IS_UNKNOWN =
-            T.let(
-              :IS_UNKNOWN,
-              HubspotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol
-            )
           IS_BLANK =
             T.let(
               :IS_BLANK,
               HubspotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol
             )
+          IS_KNOWN =
+            T.let(
+              :IS_KNOWN,
+              HubspotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol
+            )
           IS_NOT_BLANK =
             T.let(
               :IS_NOT_BLANK,
+              HubspotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol
+            )
+          IS_UNKNOWN =
+            T.let(
+              :IS_UNKNOWN,
               HubspotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol
             )
 

@@ -68,6 +68,7 @@ module HubspotSDK
             after: nil,
             # Specifies whether to return archived tables. Defaults to `false`.
             archived: nil,
+            # Specifies the content type for the response.
             content_type: nil,
             # Only return tables created after the specified time.
             created_after: nil,
@@ -75,6 +76,7 @@ module HubspotSDK
             created_at: nil,
             # Only return tables created before the specified time.
             created_before: nil,
+            # Indicates whether to retrieve the localized schema for the tables.
             is_get_localized_schema: nil,
             # The maximum number of results to return. Default is 1000.
             limit: nil,
@@ -142,7 +144,13 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete_version(version_id, table_id_or_name:, request_options: {})
+          def delete_version(
+            # The ID of the specific version of the table to delete.
+            version_id,
+            # The ID or name of the table whose version is to be deleted.
+            table_id_or_name:,
+            request_options: {}
+          )
           end
 
           # Exports the published version of a table in a specified format.
@@ -202,6 +210,7 @@ module HubspotSDK
             archived: nil,
             # Set this to `true` to populate foreign ID values in the result.
             include_foreign_ids: nil,
+            # Indicates whether to retrieve the localized schema for the tables.
             is_get_localized_schema: nil,
             request_options: {}
           )
@@ -226,6 +235,7 @@ module HubspotSDK
             archived: nil,
             # Set this to `true` to populate foreign ID values in the result.
             include_foreign_ids: nil,
+            # Indicates whether to retrieve the localized schema for the table.
             is_get_localized_schema: nil,
             request_options: {}
           )
@@ -282,6 +292,7 @@ module HubspotSDK
             after: nil,
             # Specifies whether to return archived tables. Defaults to `false`.
             archived: nil,
+            # Specifies the content type for the response.
             content_type: nil,
             # Only return tables created after the specified time.
             created_after: nil,
@@ -289,6 +300,7 @@ module HubspotSDK
             created_at: nil,
             # Only return tables created before the specified time.
             created_before: nil,
+            # Indicates whether to retrieve the localized schema.
             is_get_localized_schema: nil,
             # The maximum number of results to return. Default is 1000.
             limit: nil,
@@ -414,7 +426,7 @@ module HubspotSDK
             archived: nil,
             # Query param: Set this to `true` to populate foreign ID values in the result.
             include_foreign_ids: nil,
-            # Query param:
+            # Query param: Indicates whether to retrieve the localized schema for the table.
             is_get_localized_schema: nil,
             request_options: {}
           )

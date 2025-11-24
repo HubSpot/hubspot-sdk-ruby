@@ -89,14 +89,19 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
+          CANVAS =
+            T.let(
+              :canvas,
+              HubspotSDK::Marketing::FormDisplayOptions::Theme::TaggedSymbol
+            )
           DEFAULT_STYLE =
             T.let(
               :default_style,
               HubspotSDK::Marketing::FormDisplayOptions::Theme::TaggedSymbol
             )
-          CANVAS =
+          LEGACY =
             T.let(
-              :canvas,
+              :legacy,
               HubspotSDK::Marketing::FormDisplayOptions::Theme::TaggedSymbol
             )
           LINEAR =
@@ -112,11 +117,6 @@ module HubspotSDK
           SHARP =
             T.let(
               :sharp,
-              HubspotSDK::Marketing::FormDisplayOptions::Theme::TaggedSymbol
-            )
-          LEGACY =
-            T.let(
-              :legacy,
               HubspotSDK::Marketing::FormDisplayOptions::Theme::TaggedSymbol
             )
 

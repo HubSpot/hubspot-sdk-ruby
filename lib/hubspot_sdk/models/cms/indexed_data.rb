@@ -44,11 +44,11 @@ module HubspotSDK
         module Type
           extend HubspotSDK::Internal::Type::Enum
 
-          LANDING_PAGE = :LANDING_PAGE
           BLOG_POST = :BLOG_POST
-          SITE_PAGE = :SITE_PAGE
           KNOWLEDGE_ARTICLE = :KNOWLEDGE_ARTICLE
+          LANDING_PAGE = :LANDING_PAGE
           LISTING_PAGE = :LISTING_PAGE
+          SITE_PAGE = :SITE_PAGE
 
           # @!method self.values
           #   @return [Array<Symbol>]

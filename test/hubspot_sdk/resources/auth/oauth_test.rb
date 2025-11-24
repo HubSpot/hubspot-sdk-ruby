@@ -14,11 +14,13 @@ class HubspotSDK::Test::Resources::Auth::OAuthTest < HubspotSDK::Test::ResourceT
 
     assert_pattern do
       response => {
-        access_token: String,
-        expires_in: Integer,
-        refresh_token: String,
-        token_type: String,
-        id_token: String | nil
+        access_token: String | nil,
+        expires_in: Integer | nil,
+        hub_id: Integer | nil,
+        id_token: String | nil,
+        scopes: ^(HubspotSDK::Internal::Type::ArrayOf[String]) | nil,
+        token_type: String | nil,
+        user_id: Integer | nil
       }
     end
   end
@@ -52,6 +54,8 @@ class HubspotSDK::Test::Resources::Auth::OAuthTest < HubspotSDK::Test::ResourceT
         token_type: String,
         user_id: Integer,
         hub_domain: String | nil,
+        is_private_distribution: HubspotSDK::Internal::Type::Boolean | nil,
+        signed_access_token: HubspotSDK::Auth::SignedAccessToken | nil,
         user: String | nil
       }
     end

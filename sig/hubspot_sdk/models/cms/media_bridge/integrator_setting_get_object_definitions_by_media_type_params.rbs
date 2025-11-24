@@ -28,16 +28,16 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions
           }
 
-          type media_type = :VIDEO | :AUDIO | :DOCUMENT | :OTHER | :IMAGE
+          type media_type = :AUDIO | :DOCUMENT | :IMAGE | :OTHER | :VIDEO
 
           module MediaType
             extend HubspotSDK::Internal::Type::Enum
 
-            VIDEO: :VIDEO
             AUDIO: :AUDIO
             DOCUMENT: :DOCUMENT
-            OTHER: :OTHER
             IMAGE: :IMAGE
+            OTHER: :OTHER
+            VIDEO: :VIDEO
 
             def self?.values: -> ::Array[HubspotSDK::Models::Cms::MediaBridge::IntegratorSettingGetObjectDefinitionsByMediaTypeParams::media_type]
           end

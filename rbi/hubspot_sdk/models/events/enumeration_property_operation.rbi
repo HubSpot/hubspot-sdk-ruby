@@ -98,26 +98,6 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          IS_ANY_OF =
-            T.let(
-              :IS_ANY_OF,
-              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
-            )
-          IS_NONE_OF =
-            T.let(
-              :IS_NONE_OF,
-              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
-            )
-          IS_EXACTLY =
-            T.let(
-              :IS_EXACTLY,
-              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
-            )
-          IS_NOT_EXACTLY =
-            T.let(
-              :IS_NOT_EXACTLY,
-              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
-            )
           CONTAINS_ALL =
             T.let(
               :CONTAINS_ALL,
@@ -133,19 +113,9 @@ module HubspotSDK
               :HAS_EVER_BEEN_ANY_OF,
               HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
             )
-          HAS_NEVER_BEEN_ANY_OF =
-            T.let(
-              :HAS_NEVER_BEEN_ANY_OF,
-              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
-            )
           HAS_EVER_BEEN_EXACTLY =
             T.let(
               :HAS_EVER_BEEN_EXACTLY,
-              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
-            )
-          HAS_NEVER_BEEN_EXACTLY =
-            T.let(
-              :HAS_NEVER_BEEN_EXACTLY,
               HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
             )
           HAS_EVER_CONTAINED_ALL =
@@ -153,9 +123,39 @@ module HubspotSDK
               :HAS_EVER_CONTAINED_ALL,
               HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
             )
+          HAS_NEVER_BEEN_ANY_OF =
+            T.let(
+              :HAS_NEVER_BEEN_ANY_OF,
+              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+            )
+          HAS_NEVER_BEEN_EXACTLY =
+            T.let(
+              :HAS_NEVER_BEEN_EXACTLY,
+              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+            )
           HAS_NEVER_CONTAINED_ALL =
             T.let(
               :HAS_NEVER_CONTAINED_ALL,
+              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+            )
+          IS_ANY_OF =
+            T.let(
+              :IS_ANY_OF,
+              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+            )
+          IS_EXACTLY =
+            T.let(
+              :IS_EXACTLY,
+              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+            )
+          IS_NONE_OF =
+            T.let(
+              :IS_NONE_OF,
+              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+            )
+          IS_NOT_EXACTLY =
+            T.let(
+              :IS_NOT_EXACTLY,
               HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
             )
 

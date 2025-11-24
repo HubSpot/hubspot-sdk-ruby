@@ -27,13 +27,13 @@ module HubspotSDK
           type: HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::type_
         }
 
-        type comparison = :BEFORE | :AFTER
+        type comparison = :AFTER | :BEFORE
 
         module Comparison
           extend HubspotSDK::Internal::Type::Enum
 
-          BEFORE: :BEFORE
           AFTER: :AFTER
+          BEFORE: :BEFORE
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::comparison]
         end

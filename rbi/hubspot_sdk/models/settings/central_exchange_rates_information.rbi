@@ -12,6 +12,7 @@ module HubspotSDK
             )
           end
 
+        # Indicates if central exchange rates is enabled for the portal or not.
         sig { returns(T::Boolean) }
         attr_accessor :central_exchange_rates_enabled
 
@@ -20,7 +21,10 @@ module HubspotSDK
             T.attached_class
           )
         end
-        def self.new(central_exchange_rates_enabled:)
+        def self.new(
+          # Indicates if central exchange rates is enabled for the portal or not.
+          central_exchange_rates_enabled:
+        )
         end
 
         sig { override.returns({ central_exchange_rates_enabled: T::Boolean }) }

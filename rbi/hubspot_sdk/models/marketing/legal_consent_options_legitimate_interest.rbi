@@ -77,14 +77,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          LEAD =
-            T.let(
-              :lead,
-              HubspotSDK::Marketing::LegalConsentOptionsLegitimateInterest::LawfulBasis::TaggedSymbol
-            )
           CLIENT =
             T.let(
               :client,
+              HubspotSDK::Marketing::LegalConsentOptionsLegitimateInterest::LawfulBasis::TaggedSymbol
+            )
+          LEAD =
+            T.let(
+              :lead,
               HubspotSDK::Marketing::LegalConsentOptionsLegitimateInterest::LawfulBasis::TaggedSymbol
             )
           OTHER =

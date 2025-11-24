@@ -45,12 +45,22 @@ module HubspotSDK
         #   @return [String, nil]
         optional :hub_domain, String
 
+        # @!attribute is_private_distribution
+        #
+        #   @return [Boolean, nil]
+        optional :is_private_distribution, HubspotSDK::Internal::Type::Boolean
+
+        # @!attribute signed_access_token
+        #
+        #   @return [HubspotSDK::Models::Auth::SignedAccessToken, nil]
+        optional :signed_access_token, -> { HubspotSDK::Auth::SignedAccessToken }
+
         # @!attribute user
         #
         #   @return [String, nil]
         optional :user, String
 
-        # @!method initialize(token:, app_id:, expires_in:, hub_id:, scopes:, token_type:, user_id:, hub_domain: nil, user: nil)
+        # @!method initialize(token:, app_id:, expires_in:, hub_id:, scopes:, token_type:, user_id:, hub_domain: nil, is_private_distribution: nil, signed_access_token: nil, user: nil)
         #   @param token [String]
         #   @param app_id [Integer]
         #   @param expires_in [Integer]
@@ -59,6 +69,8 @@ module HubspotSDK
         #   @param token_type [String]
         #   @param user_id [Integer]
         #   @param hub_domain [String]
+        #   @param is_private_distribution [Boolean]
+        #   @param signed_access_token [HubspotSDK::Models::Auth::SignedAccessToken]
         #   @param user [String]
       end
     end

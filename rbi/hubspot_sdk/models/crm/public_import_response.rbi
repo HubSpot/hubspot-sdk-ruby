@@ -145,14 +145,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          STARTED =
+          CANCELED =
             T.let(
-              :STARTED,
+              :CANCELED,
               HubspotSDK::Crm::PublicImportResponse::State::TaggedSymbol
             )
-          PROCESSING =
+          DEFERRED =
             T.let(
-              :PROCESSING,
+              :DEFERRED,
               HubspotSDK::Crm::PublicImportResponse::State::TaggedSymbol
             )
           DONE =
@@ -165,19 +165,19 @@ module HubspotSDK
               :FAILED,
               HubspotSDK::Crm::PublicImportResponse::State::TaggedSymbol
             )
-          CANCELED =
+          PROCESSING =
             T.let(
-              :CANCELED,
-              HubspotSDK::Crm::PublicImportResponse::State::TaggedSymbol
-            )
-          DEFERRED =
-            T.let(
-              :DEFERRED,
+              :PROCESSING,
               HubspotSDK::Crm::PublicImportResponse::State::TaggedSymbol
             )
           REVERTED =
             T.let(
               :REVERTED,
+              HubspotSDK::Crm::PublicImportResponse::State::TaggedSymbol
+            )
+          STARTED =
+            T.let(
+              :STARTED,
               HubspotSDK::Crm::PublicImportResponse::State::TaggedSymbol
             )
 

@@ -107,14 +107,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          IS_BEFORE =
-            T.let(
-              :IS_BEFORE,
-              HubspotSDK::Events::ComparativeDatePropertyOperation::Operator::TaggedSymbol
-            )
           IS_AFTER =
             T.let(
               :IS_AFTER,
+              HubspotSDK::Events::ComparativeDatePropertyOperation::Operator::TaggedSymbol
+            )
+          IS_BEFORE =
+            T.let(
+              :IS_BEFORE,
               HubspotSDK::Events::ComparativeDatePropertyOperation::Operator::TaggedSymbol
             )
 

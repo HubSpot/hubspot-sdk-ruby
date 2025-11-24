@@ -72,14 +72,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          LAST_DAY_OF_MONTH =
-            T.let(
-              :LAST_DAY_OF_MONTH,
-              HubspotSDK::Automation::APIMonthlyRelativeDaysEnrollmentSchedule::MonthlyRelativeDays::TaggedSymbol
-            )
           FIRST_MONDAY_OF_MONTH =
             T.let(
               :FIRST_MONDAY_OF_MONTH,
+              HubspotSDK::Automation::APIMonthlyRelativeDaysEnrollmentSchedule::MonthlyRelativeDays::TaggedSymbol
+            )
+          LAST_DAY_OF_MONTH =
+            T.let(
+              :LAST_DAY_OF_MONTH,
               HubspotSDK::Automation::APIMonthlyRelativeDaysEnrollmentSchedule::MonthlyRelativeDays::TaggedSymbol
             )
 

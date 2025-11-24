@@ -72,14 +72,9 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          EQ =
+          BETWEEN =
             T.let(
-              :eq,
-              HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
-            )
-          NEQ =
-            T.let(
-              :neq,
+              :between,
               HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
             )
           CONTAINS =
@@ -92,24 +87,9 @@ module HubspotSDK
               :doesnt_contain,
               HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
             )
-          STR_STARTS_WITH =
+          EQ =
             T.let(
-              :str_starts_with,
-              HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
-            )
-          STR_ENDS_WITH =
-            T.let(
-              :str_ends_with,
-              HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
-            )
-          LT =
-            T.let(
-              :lt,
-              HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
-            )
-          LTE =
-            T.let(
-              :lte,
+              :eq,
               HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
             )
           GT =
@@ -122,9 +102,24 @@ module HubspotSDK
               :gte,
               HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
             )
-          BETWEEN =
+          IS_NOT_EMPTY =
             T.let(
-              :between,
+              :is_not_empty,
+              HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
+            )
+          LT =
+            T.let(
+              :lt,
+              HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
+            )
+          LTE =
+            T.let(
+              :lte,
+              HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
+            )
+          NEQ =
+            T.let(
+              :neq,
               HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
             )
           NOT_BETWEEN =
@@ -132,34 +127,14 @@ module HubspotSDK
               :not_between,
               HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
             )
-          WITHIN_TIME_REVERSE =
-            T.let(
-              :within_time_reverse,
-              HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
-            )
-          WITHIN_TIME =
-            T.let(
-              :within_time,
-              HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
-            )
-          SET_ANY =
-            T.let(
-              :set_any,
-              HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
-            )
-          SET_NOT_ANY =
-            T.let(
-              :set_not_any,
-              HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
-            )
           SET_ALL =
             T.let(
               :set_all,
               HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
             )
-          SET_NOT_ALL =
+          SET_ANY =
             T.let(
-              :set_not_all,
+              :set_any,
               HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
             )
           SET_EQ =
@@ -172,9 +147,34 @@ module HubspotSDK
               :set_neq,
               HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
             )
-          IS_NOT_EMPTY =
+          SET_NOT_ALL =
             T.let(
-              :is_not_empty,
+              :set_not_all,
+              HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
+            )
+          SET_NOT_ANY =
+            T.let(
+              :set_not_any,
+              HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
+            )
+          STR_ENDS_WITH =
+            T.let(
+              :str_ends_with,
+              HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
+            )
+          STR_STARTS_WITH =
+            T.let(
+              :str_starts_with,
+              HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
+            )
+          WITHIN_TIME =
+            T.let(
+              :within_time,
+              HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
+            )
+          WITHIN_TIME_REVERSE =
+            T.let(
+              :within_time_reverse,
               HubspotSDK::Marketing::DependentFieldFilter::Operator::TaggedSymbol
             )
 

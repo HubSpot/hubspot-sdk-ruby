@@ -10,7 +10,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
       @hubspot.marketing.events.create(
         custom_properties: [
           {
-            dataSensitivity: :none,
+            dataSensitivity: :high,
             isEncrypted: true,
             isLargeValue: true,
             name: "name",
@@ -18,7 +18,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
             requestId: "requestId",
             selectedByUser: true,
             selectedByUserTimestamp: 0,
-            source: :UNKNOWN,
+            source: :ACADEMY,
             sourceId: "sourceId",
             sourceLabel: "sourceLabel",
             sourceMetadata: "sourceMetadata",
@@ -66,7 +66,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
         "objectId",
         custom_properties: [
           {
-            dataSensitivity: :none,
+            dataSensitivity: :high,
             isEncrypted: true,
             isLargeValue: true,
             name: "name",
@@ -74,7 +74,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
             requestId: "requestId",
             selectedByUser: true,
             selectedByUserTimestamp: 0,
-            source: :UNKNOWN,
+            source: :ACADEMY,
             sourceId: "sourceId",
             sourceLabel: "sourceLabel",
             sourceMetadata: "sourceMetadata",
@@ -379,7 +379,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
           {
             customProperties: [
               {
-                dataSensitivity: :none,
+                dataSensitivity: :high,
                 isEncrypted: true,
                 isLargeValue: true,
                 name: "name",
@@ -387,7 +387,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
                 requestId: "requestId",
                 selectedByUser: true,
                 selectedByUserTimestamp: 0,
-                source: :UNKNOWN,
+                source: :ACADEMY,
                 sourceId: "sourceId",
                 sourceLabel: "sourceLabel",
                 sourceMetadata: "sourceMetadata",
@@ -430,7 +430,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
         external_account_id: "externalAccountId",
         custom_properties: [
           {
-            dataSensitivity: :none,
+            dataSensitivity: :high,
             isEncrypted: true,
             isLargeValue: true,
             name: "name",
@@ -438,7 +438,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
             requestId: "requestId",
             selectedByUser: true,
             selectedByUserTimestamp: 0,
-            source: :UNKNOWN,
+            source: :ACADEMY,
             sourceId: "sourceId",
             sourceLabel: "sourceLabel",
             sourceMetadata: "sourceMetadata",
@@ -486,7 +486,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
           {
             customProperties: [
               {
-                dataSensitivity: :none,
+                dataSensitivity: :high,
                 isEncrypted: true,
                 isLargeValue: true,
                 name: "name",
@@ -494,7 +494,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
                 requestId: "requestId",
                 selectedByUser: true,
                 selectedByUserTimestamp: 0,
-                source: :UNKNOWN,
+                source: :ACADEMY,
                 sourceId: "sourceId",
                 sourceLabel: "sourceLabel",
                 sourceMetadata: "sourceMetadata",
@@ -541,7 +541,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
         "externalEventId",
         custom_properties: [
           {
-            dataSensitivity: :none,
+            dataSensitivity: :high,
             isEncrypted: true,
             isLargeValue: true,
             name: "name",
@@ -549,7 +549,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
             requestId: "requestId",
             selectedByUser: true,
             selectedByUserTimestamp: 0,
-            source: :UNKNOWN,
+            source: :ACADEMY,
             sourceId: "sourceId",
             sourceLabel: "sourceLabel",
             sourceMetadata: "sourceMetadata",

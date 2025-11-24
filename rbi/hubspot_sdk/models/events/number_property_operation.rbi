@@ -98,14 +98,19 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
+          HAS_EVER_BEEN_EQUAL_TO =
+            T.let(
+              :HAS_EVER_BEEN_EQUAL_TO,
+              HubspotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
+            )
+          HAS_NEVER_BEEN_EQUAL_TO =
+            T.let(
+              :HAS_NEVER_BEEN_EQUAL_TO,
+              HubspotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
+            )
           IS_EQUAL_TO =
             T.let(
               :IS_EQUAL_TO,
-              HubspotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
-            )
-          IS_NOT_EQUAL_TO =
-            T.let(
-              :IS_NOT_EQUAL_TO,
               HubspotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
             )
           IS_GREATER_THAN =
@@ -128,14 +133,9 @@ module HubspotSDK
               :IS_LESS_THAN_OR_EQUAL_TO,
               HubspotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
             )
-          HAS_EVER_BEEN_EQUAL_TO =
+          IS_NOT_EQUAL_TO =
             T.let(
-              :HAS_EVER_BEEN_EQUAL_TO,
-              HubspotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
-            )
-          HAS_NEVER_BEEN_EQUAL_TO =
-            T.let(
-              :HAS_NEVER_BEEN_EQUAL_TO,
+              :IS_NOT_EQUAL_TO,
               HubspotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
             )
 

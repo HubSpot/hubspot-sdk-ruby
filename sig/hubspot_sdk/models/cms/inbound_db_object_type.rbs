@@ -238,23 +238,23 @@ module HubspotSDK
         }
 
         type meta_type =
-          :HUBSPOT
-          | :INTEGRATION
-          | :PORTAL_SPECIFIC
-          | :CMS_HUBDB
+          :CMS_HUBDB
+          | :HUBSPOT
           | :HUBSPOT_EVENT
+          | :INTEGRATION
           | :INTEGRATION_EVENT
+          | :PORTAL_SPECIFIC
           | :PORTAL_SPECIFIC_EVENT
 
         module MetaType
           extend HubspotSDK::Internal::Type::Enum
 
-          HUBSPOT: :HUBSPOT
-          INTEGRATION: :INTEGRATION
-          PORTAL_SPECIFIC: :PORTAL_SPECIFIC
           CMS_HUBDB: :CMS_HUBDB
+          HUBSPOT: :HUBSPOT
           HUBSPOT_EVENT: :HUBSPOT_EVENT
+          INTEGRATION: :INTEGRATION
           INTEGRATION_EVENT: :INTEGRATION_EVENT
+          PORTAL_SPECIFIC: :PORTAL_SPECIFIC
           PORTAL_SPECIFIC_EVENT: :PORTAL_SPECIFIC_EVENT
 
           def self?.values: -> ::Array[HubspotSDK::Models::Cms::InboundDBObjectType::meta_type]

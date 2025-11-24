@@ -53,8 +53,12 @@ module HubspotSDK
           ).returns(HubspotSDK::Settings::ExchangeRate)
         end
         def create_exchange_rate(
+          # The conversion rate between the to and from currency code of this exchange rate.
           conversion_rate:,
+          # This represents the three-letter currency code (such as USD for US Dollar) of
+          # the currency you want to convert from.
           from_currency_code:,
+          # The date the exchange rate is in effect.
           effective_at: nil,
           request_options: {}
         )
@@ -141,7 +145,11 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Settings::CompanyCurrency)
         end
-        def update_company_currency(currency_code:, request_options: {})
+        def update_company_currency(
+          # The three-letter code representing a specific currency (ex. USD).
+          currency_code:,
+          request_options: {}
+        )
         end
 
         # Update an existing conversion rate, specified by its ID.
@@ -156,7 +164,10 @@ module HubspotSDK
         def update_exchange_rate(
           # The unique identifier of the exchange rate to be updated.
           exchange_rate_id,
+          # The updated conversion rate between the to and from currency code of this
+          # exchange rate.
           conversion_rate:,
+          # The date the exchange rate is in effect.
           effective_at: nil,
           request_options: {}
         )
@@ -175,8 +186,14 @@ module HubspotSDK
           ).void
         end
         def update_visibility(
+          # This represents the three-letter currency code (such as USD for US Dollar) of
+          # the currency you want to convert from.
           from_currency_code:,
+          # This represents the three-letter currency code (such as USD for US Dollar) of
+          # the currency you want to convert to.
           to_currency_code:,
+          # This indicates if the currency pair is shown in the MultiCurrency settings page.
+          # Setting this to false will remove the currency pair from the settings page.
           visible_in_ui:,
           request_options: {}
         )

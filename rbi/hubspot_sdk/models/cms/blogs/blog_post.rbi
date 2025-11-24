@@ -550,14 +550,19 @@ module HubspotSDK
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-            MASTER =
+            AUTOMATED_LOSER_VARIANT =
               T.let(
-                :master,
+                :automated_loser_variant,
                 HubspotSDK::Cms::Blogs::BlogPost::AbStatus::TaggedSymbol
               )
-            VARIANT =
+            AUTOMATED_MASTER =
               T.let(
-                :variant,
+                :automated_master,
+                HubspotSDK::Cms::Blogs::BlogPost::AbStatus::TaggedSymbol
+              )
+            AUTOMATED_VARIANT =
+              T.let(
+                :automated_variant,
                 HubspotSDK::Cms::Blogs::BlogPost::AbStatus::TaggedSymbol
               )
             LOSER_VARIANT =
@@ -575,19 +580,14 @@ module HubspotSDK
                 :mab_variant,
                 HubspotSDK::Cms::Blogs::BlogPost::AbStatus::TaggedSymbol
               )
-            AUTOMATED_MASTER =
+            MASTER =
               T.let(
-                :automated_master,
+                :master,
                 HubspotSDK::Cms::Blogs::BlogPost::AbStatus::TaggedSymbol
               )
-            AUTOMATED_VARIANT =
+            VARIANT =
               T.let(
-                :automated_variant,
-                HubspotSDK::Cms::Blogs::BlogPost::AbStatus::TaggedSymbol
-              )
-            AUTOMATED_LOSER_VARIANT =
-              T.let(
-                :automated_loser_variant,
+                :variant,
                 HubspotSDK::Cms::Blogs::BlogPost::AbStatus::TaggedSymbol
               )
 
@@ -623,6 +623,36 @@ module HubspotSDK
             CONTENT_TYPE_CATEGORY_1 =
               T.let(
                 :"1",
+                HubspotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::TaggedSymbol
+              )
+            CONTENT_TYPE_CATEGORY_10 =
+              T.let(
+                :"10",
+                HubspotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::TaggedSymbol
+              )
+            CONTENT_TYPE_CATEGORY_11 =
+              T.let(
+                :"11",
+                HubspotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::TaggedSymbol
+              )
+            CONTENT_TYPE_CATEGORY_12 =
+              T.let(
+                :"12",
+                HubspotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::TaggedSymbol
+              )
+            CONTENT_TYPE_CATEGORY_13 =
+              T.let(
+                :"13",
+                HubspotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::TaggedSymbol
+              )
+            CONTENT_TYPE_CATEGORY_14 =
+              T.let(
+                :"14",
+                HubspotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::TaggedSymbol
+              )
+            CONTENT_TYPE_CATEGORY_15 =
+              T.let(
+                :"15",
                 HubspotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::TaggedSymbol
               )
             CONTENT_TYPE_CATEGORY_2 =
@@ -665,36 +695,6 @@ module HubspotSDK
                 :"9",
                 HubspotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::TaggedSymbol
               )
-            CONTENT_TYPE_CATEGORY_10 =
-              T.let(
-                :"10",
-                HubspotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::TaggedSymbol
-              )
-            CONTENT_TYPE_CATEGORY_11 =
-              T.let(
-                :"11",
-                HubspotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::TaggedSymbol
-              )
-            CONTENT_TYPE_CATEGORY_12 =
-              T.let(
-                :"12",
-                HubspotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::TaggedSymbol
-              )
-            CONTENT_TYPE_CATEGORY_13 =
-              T.let(
-                :"13",
-                HubspotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::TaggedSymbol
-              )
-            CONTENT_TYPE_CATEGORY_14 =
-              T.let(
-                :"14",
-                HubspotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::TaggedSymbol
-              )
-            CONTENT_TYPE_CATEGORY_15 =
-              T.let(
-                :"15",
-                HubspotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::TaggedSymbol
-              )
 
             sig do
               override.returns(
@@ -723,14 +723,29 @@ module HubspotSDK
                 :AUTOMATED,
                 HubspotSDK::Cms::Blogs::BlogPost::CurrentState::TaggedSymbol
               )
+            AUTOMATED_AB =
+              T.let(
+                :AUTOMATED_AB,
+                HubspotSDK::Cms::Blogs::BlogPost::CurrentState::TaggedSymbol
+              )
+            AUTOMATED_AB_VARIANT =
+              T.let(
+                :AUTOMATED_AB_VARIANT,
+                HubspotSDK::Cms::Blogs::BlogPost::CurrentState::TaggedSymbol
+              )
             AUTOMATED_DRAFT =
               T.let(
                 :AUTOMATED_DRAFT,
                 HubspotSDK::Cms::Blogs::BlogPost::CurrentState::TaggedSymbol
               )
-            AUTOMATED_SENDING =
+            AUTOMATED_DRAFT_AB =
               T.let(
-                :AUTOMATED_SENDING,
+                :AUTOMATED_DRAFT_AB,
+                HubspotSDK::Cms::Blogs::BlogPost::CurrentState::TaggedSymbol
+              )
+            AUTOMATED_DRAFT_ABVARIANT =
+              T.let(
+                :AUTOMATED_DRAFT_ABVARIANT,
                 HubspotSDK::Cms::Blogs::BlogPost::CurrentState::TaggedSymbol
               )
             AUTOMATED_FOR_FORM =
@@ -751,6 +766,16 @@ module HubspotSDK
             AUTOMATED_FOR_FORM_LEGACY =
               T.let(
                 :AUTOMATED_FOR_FORM_LEGACY,
+                HubspotSDK::Cms::Blogs::BlogPost::CurrentState::TaggedSymbol
+              )
+            AUTOMATED_LOSER_ABVARIANT =
+              T.let(
+                :AUTOMATED_LOSER_ABVARIANT,
+                HubspotSDK::Cms::Blogs::BlogPost::CurrentState::TaggedSymbol
+              )
+            AUTOMATED_SENDING =
+              T.let(
+                :AUTOMATED_SENDING,
                 HubspotSDK::Cms::Blogs::BlogPost::CurrentState::TaggedSymbol
               )
             BLOG_EMAIL_DRAFT =
@@ -846,31 +871,6 @@ module HubspotSDK
             SCHEDULED_OR_PUBLISHED =
               T.let(
                 :SCHEDULED_OR_PUBLISHED,
-                HubspotSDK::Cms::Blogs::BlogPost::CurrentState::TaggedSymbol
-              )
-            AUTOMATED_AB =
-              T.let(
-                :AUTOMATED_AB,
-                HubspotSDK::Cms::Blogs::BlogPost::CurrentState::TaggedSymbol
-              )
-            AUTOMATED_AB_VARIANT =
-              T.let(
-                :AUTOMATED_AB_VARIANT,
-                HubspotSDK::Cms::Blogs::BlogPost::CurrentState::TaggedSymbol
-              )
-            AUTOMATED_DRAFT_AB =
-              T.let(
-                :AUTOMATED_DRAFT_AB,
-                HubspotSDK::Cms::Blogs::BlogPost::CurrentState::TaggedSymbol
-              )
-            AUTOMATED_DRAFT_ABVARIANT =
-              T.let(
-                :AUTOMATED_DRAFT_ABVARIANT,
-                HubspotSDK::Cms::Blogs::BlogPost::CurrentState::TaggedSymbol
-              )
-            AUTOMATED_LOSER_ABVARIANT =
-              T.let(
-                :AUTOMATED_LOSER_ABVARIANT,
                 HubspotSDK::Cms::Blogs::BlogPost::CurrentState::TaggedSymbol
               )
 
@@ -1691,11 +1691,6 @@ module HubspotSDK
                 :"en-er",
                 HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
               )
-            EN_FR =
-              T.let(
-                :"en-fr",
-                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
-              )
             EN_FI =
               T.let(
                 :"en-fi",
@@ -1714,6 +1709,11 @@ module HubspotSDK
             EN_FM =
               T.let(
                 :"en-fm",
+                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
+              )
+            EN_FR =
+              T.let(
+                :"en-fr",
                 HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
               )
             EN_GB =
@@ -2771,6 +2771,11 @@ module HubspotSDK
                 :he,
                 HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
               )
+            HE_IL =
+              T.let(
+                :"he-il",
+                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
+              )
             HI =
               T.let(
                 :hi,
@@ -2841,6 +2846,11 @@ module HubspotSDK
                 :id,
                 HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
               )
+            ID_ID =
+              T.let(
+                :"id-id",
+                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
+              )
             IG =
               T.let(
                 :ig,
@@ -2859,11 +2869,6 @@ module HubspotSDK
             II_CN =
               T.let(
                 :"ii-cn",
-                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
-              )
-            ID_ID =
-              T.let(
-                :"id-id",
                 HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
               )
             IS =
@@ -2901,11 +2906,6 @@ module HubspotSDK
                 :"it-va",
                 HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
               )
-            HE_IL =
-              T.let(
-                :"he-il",
-                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
-              )
             JA =
               T.let(
                 :ja,
@@ -2924,16 +2924,6 @@ module HubspotSDK
             JGO_CM =
               T.let(
                 :"jgo-cm",
-                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
-              )
-            YI =
-              T.let(
-                :yi,
-                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
-              )
-            YI_001 =
-              T.let(
-                :"yi-001",
                 HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
               )
             JMC =
@@ -3151,16 +3141,6 @@ module HubspotSDK
                 :"ksh-de",
                 HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
               )
-            KW =
-              T.let(
-                :kw,
-                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
-              )
-            KW_GB =
-              T.let(
-                :"kw-gb",
-                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
-              )
             KU =
               T.let(
                 :ku,
@@ -3169,6 +3149,16 @@ module HubspotSDK
             KU_TR =
               T.let(
                 :"ku-tr",
+                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
+              )
+            KW =
+              T.let(
+                :kw,
+                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
+              )
+            KW_GB =
+              T.let(
+                :"kw-gb",
                 HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
               )
             KY =
@@ -3601,14 +3591,14 @@ module HubspotSDK
                 :"nl-be",
                 HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
               )
-            NL_CH =
-              T.let(
-                :"nl-ch",
-                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
-              )
             NL_BQ =
               T.let(
                 :"nl-bq",
+                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
+              )
+            NL_CH =
+              T.let(
+                :"nl-ch",
                 HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
               )
             NL_CW =
@@ -4586,6 +4576,16 @@ module HubspotSDK
                 :"yav-cm",
                 HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
               )
+            YI =
+              T.let(
+                :yi,
+                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
+              )
+            YI_001 =
+              T.let(
+                :"yi-001",
+                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
+              )
             YO =
               T.let(
                 :yo,
@@ -4636,6 +4636,16 @@ module HubspotSDK
                 :"zh-cn",
                 HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
               )
+            ZH_HANS =
+              T.let(
+                :"zh-hans",
+                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
+              )
+            ZH_HANT =
+              T.let(
+                :"zh-hant",
+                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
+              )
             ZH_HK =
               T.let(
                 :"zh-hk",
@@ -4654,16 +4664,6 @@ module HubspotSDK
             ZH_TW =
               T.let(
                 :"zh-tw",
-                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
-              )
-            ZH_HANS =
-              T.let(
-                :"zh-hans",
-                HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
-              )
-            ZH_HANT =
-              T.let(
-                :"zh-hant",
                 HubspotSDK::Cms::Blogs::BlogPost::Language::TaggedSymbol
               )
             ZU =

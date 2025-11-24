@@ -157,14 +157,14 @@ module HubspotSDK
               :CUSTOM,
               HubspotSDK::Events::IndexedTimePoint::TimezoneSource::TaggedSymbol
             )
-          USER =
-            T.let(
-              :USER,
-              HubspotSDK::Events::IndexedTimePoint::TimezoneSource::TaggedSymbol
-            )
           PORTAL =
             T.let(
               :PORTAL,
+              HubspotSDK::Events::IndexedTimePoint::TimezoneSource::TaggedSymbol
+            )
+          USER =
+            T.let(
+              :USER,
               HubspotSDK::Events::IndexedTimePoint::TimezoneSource::TaggedSymbol
             )
 

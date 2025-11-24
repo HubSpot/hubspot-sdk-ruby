@@ -93,49 +93,9 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          CONTACT_PROPERTY_CHANGE =
+          COMPANY_ASSOCIATION_CHANGE =
             T.let(
-              :"contact.propertyChange",
-              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
-            )
-          COMPANY_PROPERTY_CHANGE =
-            T.let(
-              :"company.propertyChange",
-              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
-            )
-          DEAL_PROPERTY_CHANGE =
-            T.let(
-              :"deal.propertyChange",
-              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
-            )
-          TICKET_PROPERTY_CHANGE =
-            T.let(
-              :"ticket.propertyChange",
-              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
-            )
-          PRODUCT_PROPERTY_CHANGE =
-            T.let(
-              :"product.propertyChange",
-              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
-            )
-          LINE_ITEM_PROPERTY_CHANGE =
-            T.let(
-              :"line_item.propertyChange",
-              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
-            )
-          CONTACT_CREATION =
-            T.let(
-              :"contact.creation",
-              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
-            )
-          CONTACT_DELETION =
-            T.let(
-              :"contact.deletion",
-              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
-            )
-          CONTACT_PRIVACY_DELETION =
-            T.let(
-              :"contact.privacyDeletion",
+              :"company.associationChange",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
           COMPANY_CREATION =
@@ -148,44 +108,54 @@ module HubspotSDK
               :"company.deletion",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
-          DEAL_CREATION =
+          COMPANY_MERGE =
             T.let(
-              :"deal.creation",
+              :"company.merge",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
-          DEAL_DELETION =
+          COMPANY_PROPERTY_CHANGE =
             T.let(
-              :"deal.deletion",
+              :"company.propertyChange",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
-          TICKET_CREATION =
+          COMPANY_RESTORE =
             T.let(
-              :"ticket.creation",
+              :"company.restore",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
-          TICKET_DELETION =
+          CONTACT_ASSOCIATION_CHANGE =
             T.let(
-              :"ticket.deletion",
+              :"contact.associationChange",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
-          PRODUCT_CREATION =
+          CONTACT_CREATION =
             T.let(
-              :"product.creation",
+              :"contact.creation",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
-          PRODUCT_DELETION =
+          CONTACT_DELETION =
             T.let(
-              :"product.deletion",
+              :"contact.deletion",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
-          LINE_ITEM_CREATION =
+          CONTACT_MERGE =
             T.let(
-              :"line_item.creation",
+              :"contact.merge",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
-          LINE_ITEM_DELETION =
+          CONTACT_PRIVACY_DELETION =
             T.let(
-              :"line_item.deletion",
+              :"contact.privacyDeletion",
+              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
+            )
+          CONTACT_PROPERTY_CHANGE =
+            T.let(
+              :"contact.propertyChange",
+              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
+            )
+          CONTACT_RESTORE =
+            T.let(
+              :"contact.restore",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
           CONVERSATION_CREATION =
@@ -213,14 +183,19 @@ module HubspotSDK
               :"conversation.propertyChange",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
-          CONTACT_MERGE =
+          DEAL_ASSOCIATION_CHANGE =
             T.let(
-              :"contact.merge",
+              :"deal.associationChange",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
-          COMPANY_MERGE =
+          DEAL_CREATION =
             T.let(
-              :"company.merge",
+              :"deal.creation",
+              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
+            )
+          DEAL_DELETION =
+            T.let(
+              :"deal.deletion",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
           DEAL_MERGE =
@@ -228,29 +203,9 @@ module HubspotSDK
               :"deal.merge",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
-          TICKET_MERGE =
+          DEAL_PROPERTY_CHANGE =
             T.let(
-              :"ticket.merge",
-              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
-            )
-          PRODUCT_MERGE =
-            T.let(
-              :"product.merge",
-              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
-            )
-          LINE_ITEM_MERGE =
-            T.let(
-              :"line_item.merge",
-              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
-            )
-          CONTACT_RESTORE =
-            T.let(
-              :"contact.restore",
-              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
-            )
-          COMPANY_RESTORE =
-            T.let(
-              :"company.restore",
+              :"deal.propertyChange",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
           DEAL_RESTORE =
@@ -258,14 +213,29 @@ module HubspotSDK
               :"deal.restore",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
-          TICKET_RESTORE =
+          LINE_ITEM_ASSOCIATION_CHANGE =
             T.let(
-              :"ticket.restore",
+              :"line_item.associationChange",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
-          PRODUCT_RESTORE =
+          LINE_ITEM_CREATION =
             T.let(
-              :"product.restore",
+              :"line_item.creation",
+              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
+            )
+          LINE_ITEM_DELETION =
+            T.let(
+              :"line_item.deletion",
+              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
+            )
+          LINE_ITEM_MERGE =
+            T.let(
+              :"line_item.merge",
+              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
+            )
+          LINE_ITEM_PROPERTY_CHANGE =
+            T.let(
+              :"line_item.propertyChange",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
           LINE_ITEM_RESTORE =
@@ -273,34 +243,9 @@ module HubspotSDK
               :"line_item.restore",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
-          CONTACT_ASSOCIATION_CHANGE =
+          OBJECT_ASSOCIATION_CHANGE =
             T.let(
-              :"contact.associationChange",
-              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
-            )
-          COMPANY_ASSOCIATION_CHANGE =
-            T.let(
-              :"company.associationChange",
-              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
-            )
-          DEAL_ASSOCIATION_CHANGE =
-            T.let(
-              :"deal.associationChange",
-              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
-            )
-          TICKET_ASSOCIATION_CHANGE =
-            T.let(
-              :"ticket.associationChange",
-              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
-            )
-          LINE_ITEM_ASSOCIATION_CHANGE =
-            T.let(
-              :"line_item.associationChange",
-              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
-            )
-          OBJECT_PROPERTY_CHANGE =
-            T.let(
-              :"object.propertyChange",
+              :"object.associationChange",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
           OBJECT_CREATION =
@@ -318,14 +263,69 @@ module HubspotSDK
               :"object.merge",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
+          OBJECT_PROPERTY_CHANGE =
+            T.let(
+              :"object.propertyChange",
+              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
+            )
           OBJECT_RESTORE =
             T.let(
               :"object.restore",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
-          OBJECT_ASSOCIATION_CHANGE =
+          PRODUCT_CREATION =
             T.let(
-              :"object.associationChange",
+              :"product.creation",
+              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
+            )
+          PRODUCT_DELETION =
+            T.let(
+              :"product.deletion",
+              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
+            )
+          PRODUCT_MERGE =
+            T.let(
+              :"product.merge",
+              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
+            )
+          PRODUCT_PROPERTY_CHANGE =
+            T.let(
+              :"product.propertyChange",
+              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
+            )
+          PRODUCT_RESTORE =
+            T.let(
+              :"product.restore",
+              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
+            )
+          TICKET_ASSOCIATION_CHANGE =
+            T.let(
+              :"ticket.associationChange",
+              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
+            )
+          TICKET_CREATION =
+            T.let(
+              :"ticket.creation",
+              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
+            )
+          TICKET_DELETION =
+            T.let(
+              :"ticket.deletion",
+              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
+            )
+          TICKET_MERGE =
+            T.let(
+              :"ticket.merge",
+              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
+            )
+          TICKET_PROPERTY_CHANGE =
+            T.let(
+              :"ticket.propertyChange",
+              HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
+            )
+          TICKET_RESTORE =
+            T.let(
+              :"ticket.restore",
               HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::TaggedSymbol
             )
 

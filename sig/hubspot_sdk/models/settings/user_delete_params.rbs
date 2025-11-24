@@ -27,13 +27,13 @@ module HubspotSDK
           request_options: HubspotSDK::RequestOptions
         }
 
-        type id_property = :USER_ID | :EMAIL
+        type id_property = :EMAIL | :USER_ID
 
         module IDProperty
           extend HubspotSDK::Internal::Type::Enum
 
-          USER_ID: :USER_ID
           EMAIL: :EMAIL
+          USER_ID: :USER_ID
 
           def self?.values: -> ::Array[HubspotSDK::Models::Settings::UserDeleteParams::id_property]
         end

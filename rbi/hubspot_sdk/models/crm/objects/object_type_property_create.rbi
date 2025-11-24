@@ -282,14 +282,9 @@ module HubspotSDK
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-            STRING =
+            BOOL =
               T.let(
-                :string,
-                HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::Type::TaggedSymbol
-              )
-            NUMBER =
-              T.let(
-                :number,
+                :bool,
                 HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::Type::TaggedSymbol
               )
             DATE =
@@ -307,9 +302,14 @@ module HubspotSDK
                 :enumeration,
                 HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::Type::TaggedSymbol
               )
-            BOOL =
+            NUMBER =
               T.let(
-                :bool,
+                :number,
+                HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::Type::TaggedSymbol
+              )
+            STRING =
+              T.let(
+                :string,
                 HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::Type::TaggedSymbol
               )
 
@@ -337,24 +337,9 @@ module HubspotSDK
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-            UNFORMATTED =
-              T.let(
-                :unformatted,
-                HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
-              )
-            FORMATTED =
-              T.let(
-                :formatted,
-                HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
-              )
             CURRENCY =
               T.let(
                 :currency,
-                HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
-              )
-            PERCENTAGE =
-              T.let(
-                :percentage,
                 HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
               )
             DURATION =
@@ -362,9 +347,24 @@ module HubspotSDK
                 :duration,
                 HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
               )
+            FORMATTED =
+              T.let(
+                :formatted,
+                HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
+              )
+            PERCENTAGE =
+              T.let(
+                :percentage,
+                HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
+              )
             PROBABILITY =
               T.let(
                 :probability,
+                HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
+              )
+            UNFORMATTED =
+              T.let(
+                :unformatted,
                 HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
               )
 
@@ -392,14 +392,14 @@ module HubspotSDK
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-            DISPLAY_ORDER =
-              T.let(
-                :DISPLAY_ORDER,
-                HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::OptionSortStrategy::TaggedSymbol
-              )
             ALPHABETICAL =
               T.let(
                 :ALPHABETICAL,
+                HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::OptionSortStrategy::TaggedSymbol
+              )
+            DISPLAY_ORDER =
+              T.let(
+                :DISPLAY_ORDER,
                 HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::OptionSortStrategy::TaggedSymbol
               )
 
@@ -427,14 +427,9 @@ module HubspotSDK
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-            UNFORMATTED_SINGLE_LINE =
+            DOMAIN_NAME =
               T.let(
-                :unformatted_single_line,
-                HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
-              )
-            MULTI_LINE =
-              T.let(
-                :multi_line,
+                :domain_name,
                 HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
               )
             EMAIL =
@@ -442,19 +437,19 @@ module HubspotSDK
                 :email,
                 HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
               )
-            PHONE_NUMBER =
-              T.let(
-                :phone_number,
-                HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
-              )
-            DOMAIN_NAME =
-              T.let(
-                :domain_name,
-                HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
-              )
             IP_ADDRESS =
               T.let(
                 :ip_address,
+                HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
+              )
+            MULTI_LINE =
+              T.let(
+                :multi_line,
+                HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
+              )
+            PHONE_NUMBER =
+              T.let(
+                :phone_number,
                 HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
               )
             PHYSICAL_ADDRESS =
@@ -465,6 +460,11 @@ module HubspotSDK
             POSTAL_CODE =
               T.let(
                 :postal_code,
+                HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
+              )
+            UNFORMATTED_SINGLE_LINE =
+              T.let(
+                :unformatted_single_line,
                 HubspotSDK::Crm::Objects::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
               )
 

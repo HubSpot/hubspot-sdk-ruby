@@ -84,12 +84,12 @@ module HubspotSDK
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
-          IS_EQUAL_TO = :IS_EQUAL_TO
-          IS_NOT_EQUAL_TO = :IS_NOT_EQUAL_TO
           CONTAINS = :CONTAINS
           DOES_NOT_CONTAIN = :DOES_NOT_CONTAIN
-          STARTS_WITH = :STARTS_WITH
           ENDS_WITH = :ENDS_WITH
+          IS_EQUAL_TO = :IS_EQUAL_TO
+          IS_NOT_EQUAL_TO = :IS_NOT_EQUAL_TO
+          STARTS_WITH = :STARTS_WITH
 
           # @!method self.values
           #   @return [Array<Symbol>]

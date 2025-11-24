@@ -68,14 +68,14 @@ module HubspotSDK
           T.type_alias { T.all(Symbol, HubspotSDK::ActionResponse::Status) }
         OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-        PENDING =
-          T.let(:PENDING, HubspotSDK::ActionResponse::Status::TaggedSymbol)
-        PROCESSING =
-          T.let(:PROCESSING, HubspotSDK::ActionResponse::Status::TaggedSymbol)
         CANCELED =
           T.let(:CANCELED, HubspotSDK::ActionResponse::Status::TaggedSymbol)
         COMPLETE =
           T.let(:COMPLETE, HubspotSDK::ActionResponse::Status::TaggedSymbol)
+        PENDING =
+          T.let(:PENDING, HubspotSDK::ActionResponse::Status::TaggedSymbol)
+        PROCESSING =
+          T.let(:PROCESSING, HubspotSDK::ActionResponse::Status::TaggedSymbol)
 
         sig do
           override.returns(

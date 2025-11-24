@@ -6,26 +6,32 @@ module HubspotSDK
       # @see HubspotSDK::Resources::Settings::Currencies#create_exchange_rate
       class ExchangeRate < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
+        #   A unique identifier for the exchange rate
         #
         #   @return [String]
         required :id, String
 
         # @!attribute conversion_rate
+        #   The conversion rate between the to and from currency code of this exchange rate.
         #
         #   @return [Float]
         required :conversion_rate, Float, api_name: :conversionRate
 
         # @!attribute created_at
+        #   The date the exchange rate was created.
         #
         #   @return [Time]
         required :created_at, Time, api_name: :createdAt
 
         # @!attribute effective_at
+        #   The date the exchange rate is in effect.
         #
         #   @return [Time]
         required :effective_at, Time, api_name: :effectiveAt
 
         # @!attribute from_currency_code
+        #   This represents the three-letter currency code (such as USD for US Dollar) of
+        #   the currency you are converting from.
         #
         #   @return [Symbol, HubspotSDK::Models::Settings::ExchangeRate::FromCurrencyCode]
         required :from_currency_code,
@@ -33,6 +39,8 @@ module HubspotSDK
                  api_name: :fromCurrencyCode
 
         # @!attribute to_currency_code
+        #   This represents the three-letter currency code (such as USD for US Dollar) of
+        #   the currency you are converting to.
         #
         #   @return [Symbol, HubspotSDK::Models::Settings::ExchangeRate::ToCurrencyCode]
         required :to_currency_code,
@@ -40,25 +48,40 @@ module HubspotSDK
                  api_name: :toCurrencyCode
 
         # @!attribute updated_at
+        #   The date the exchange rate was last updated.
         #
         #   @return [Time]
         required :updated_at, Time, api_name: :updatedAt
 
         # @!attribute visible_in_ui
+        #   This indicates if the exchange rate is shown in the MultiCurrency settings page.
         #
         #   @return [Boolean]
         required :visible_in_ui, HubspotSDK::Internal::Type::Boolean, api_name: :visibleInUI
 
         # @!method initialize(id:, conversion_rate:, created_at:, effective_at:, from_currency_code:, to_currency_code:, updated_at:, visible_in_ui:)
-        #   @param id [String]
-        #   @param conversion_rate [Float]
-        #   @param created_at [Time]
-        #   @param effective_at [Time]
-        #   @param from_currency_code [Symbol, HubspotSDK::Models::Settings::ExchangeRate::FromCurrencyCode]
-        #   @param to_currency_code [Symbol, HubspotSDK::Models::Settings::ExchangeRate::ToCurrencyCode]
-        #   @param updated_at [Time]
-        #   @param visible_in_ui [Boolean]
+        #   Some parameter documentations has been truncated, see
+        #   {HubspotSDK::Models::Settings::ExchangeRate} for more details.
+        #
+        #   @param id [String] A unique identifier for the exchange rate
+        #
+        #   @param conversion_rate [Float] The conversion rate between the to and from currency code of this exchange rate.
+        #
+        #   @param created_at [Time] The date the exchange rate was created.
+        #
+        #   @param effective_at [Time] The date the exchange rate is in effect.
+        #
+        #   @param from_currency_code [Symbol, HubspotSDK::Models::Settings::ExchangeRate::FromCurrencyCode] This represents the three-letter currency code (such as USD for US Dollar) of th
+        #
+        #   @param to_currency_code [Symbol, HubspotSDK::Models::Settings::ExchangeRate::ToCurrencyCode] This represents the three-letter currency code (such as USD for US Dollar) of th
+        #
+        #   @param updated_at [Time] The date the exchange rate was last updated.
+        #
+        #   @param visible_in_ui [Boolean] This indicates if the exchange rate is shown in the MultiCurrency settings page.
 
+        # This represents the three-letter currency code (such as USD for US Dollar) of
+        # the currency you are converting from.
+        #
         # @see HubspotSDK::Models::Settings::ExchangeRate#from_currency_code
         module FromCurrencyCode
           extend HubspotSDK::Internal::Type::Enum
@@ -244,6 +267,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
+        # This represents the three-letter currency code (such as USD for US Dollar) of
+        # the currency you are converting to.
+        #
         # @see HubspotSDK::Models::Settings::ExchangeRate#to_currency_code
         module ToCurrencyCode
           extend HubspotSDK::Internal::Type::Enum

@@ -15,9 +15,11 @@ module HubspotSDK
         sig { returns(T::Array[T.anything]) }
         attr_accessor :results
 
+        # The total number of rows available in the collection.
         sig { returns(Integer) }
         attr_accessor :total
 
+        # Indicates the type of response, which is 'STREAMING' by default.
         sig do
           returns(
             HubspotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::Type::TaggedSymbol
@@ -40,7 +42,14 @@ module HubspotSDK
             paging: HubspotSDK::Paging::OrHash
           ).returns(T.attached_class)
         end
-        def self.new(results:, total:, type:, paging: nil)
+        def self.new(
+          results:,
+          # The total number of rows available in the collection.
+          total:,
+          # Indicates the type of response, which is 'STREAMING' by default.
+          type:,
+          paging: nil
+        )
         end
 
         sig do
@@ -57,6 +66,7 @@ module HubspotSDK
         def to_hash
         end
 
+        # Indicates the type of response, which is 'STREAMING' by default.
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

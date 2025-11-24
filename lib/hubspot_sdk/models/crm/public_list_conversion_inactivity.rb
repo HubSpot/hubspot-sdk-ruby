@@ -43,8 +43,8 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::Enum
 
           DAY = :DAY
-          WEEK = :WEEK
           MONTH = :MONTH
+          WEEK = :WEEK
 
           # @!method self.values
           #   @return [Array<Symbol>]

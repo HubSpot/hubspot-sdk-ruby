@@ -139,39 +139,9 @@ module HubspotSDK
           end
         OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-        JANUARY =
-          T.let(
-            :JANUARY,
-            HubspotSDK::PublicCalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
-          )
-        FEBRUARY =
-          T.let(
-            :FEBRUARY,
-            HubspotSDK::PublicCalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
-          )
-        MARCH =
-          T.let(
-            :MARCH,
-            HubspotSDK::PublicCalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
-          )
         APRIL =
           T.let(
             :APRIL,
-            HubspotSDK::PublicCalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
-          )
-        MAY =
-          T.let(
-            :MAY,
-            HubspotSDK::PublicCalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
-          )
-        JUNE =
-          T.let(
-            :JUNE,
-            HubspotSDK::PublicCalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
-          )
-        JULY =
-          T.let(
-            :JULY,
             HubspotSDK::PublicCalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
           )
         AUGUST =
@@ -179,14 +149,39 @@ module HubspotSDK
             :AUGUST,
             HubspotSDK::PublicCalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
           )
-        SEPTEMBER =
+        DECEMBER =
           T.let(
-            :SEPTEMBER,
+            :DECEMBER,
             HubspotSDK::PublicCalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
           )
-        OCTOBER =
+        FEBRUARY =
           T.let(
-            :OCTOBER,
+            :FEBRUARY,
+            HubspotSDK::PublicCalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+          )
+        JANUARY =
+          T.let(
+            :JANUARY,
+            HubspotSDK::PublicCalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+          )
+        JULY =
+          T.let(
+            :JULY,
+            HubspotSDK::PublicCalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+          )
+        JUNE =
+          T.let(
+            :JUNE,
+            HubspotSDK::PublicCalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+          )
+        MARCH =
+          T.let(
+            :MARCH,
+            HubspotSDK::PublicCalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+          )
+        MAY =
+          T.let(
+            :MAY,
             HubspotSDK::PublicCalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
           )
         NOVEMBER =
@@ -194,9 +189,14 @@ module HubspotSDK
             :NOVEMBER,
             HubspotSDK::PublicCalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
           )
-        DECEMBER =
+        OCTOBER =
           T.let(
-            :DECEMBER,
+            :OCTOBER,
+            HubspotSDK::PublicCalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+          )
+        SEPTEMBER =
+          T.let(
+            :SEPTEMBER,
             HubspotSDK::PublicCalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
           )
 

@@ -8,20 +8,30 @@ module HubspotSDK
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
+        # @!attribute body_client_secret
+        #
+        #   @return [String, nil]
+        optional :body_client_secret, String, api_name: :client_secret
+
+        # @!attribute body_refresh_token
+        #
+        #   @return [String, nil]
+        optional :body_refresh_token, String, api_name: :refresh_token
+
         # @!attribute client_id
         #
         #   @return [String, nil]
         optional :client_id, String
 
-        # @!attribute client_secret
-        #
-        #   @return [String, nil]
-        optional :client_secret, String
-
         # @!attribute code
         #
         #   @return [String, nil]
         optional :code, String
+
+        # @!attribute code_verifier
+        #
+        #   @return [String, nil]
+        optional :code_verifier, String
 
         # @!attribute grant_type
         #
@@ -33,24 +43,27 @@ module HubspotSDK
         #   @return [String, nil]
         optional :redirect_uri, String
 
-        # @!attribute refresh_token
+        # @!attribute scope
         #
         #   @return [String, nil]
-        optional :refresh_token, String
+        optional :scope, String
 
-        # @!method initialize(client_id: nil, client_secret: nil, code: nil, grant_type: nil, redirect_uri: nil, refresh_token: nil, request_options: {})
+        # @!method initialize(body_client_secret: nil, body_refresh_token: nil, client_id: nil, code: nil, code_verifier: nil, grant_type: nil, redirect_uri: nil, scope: nil, request_options: {})
+        #   @param body_client_secret [String]
+        #   @param body_refresh_token [String]
         #   @param client_id [String]
-        #   @param client_secret [String]
         #   @param code [String]
+        #   @param code_verifier [String]
         #   @param grant_type [Symbol, HubspotSDK::Models::Auth::OAuthCreateAccessTokenParams::GrantType]
         #   @param redirect_uri [String]
-        #   @param refresh_token [String]
+        #   @param scope [String]
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
 
         module GrantType
           extend HubspotSDK::Internal::Type::Enum
 
           AUTHORIZATION_CODE = :authorization_code
+          CLIENT_CREDENTIALS = :client_credentials
           REFRESH_TOKEN = :refresh_token
 
           # @!method self.values
