@@ -57,12 +57,12 @@ module HubspotSDK
         module Theme
           extend HubspotSDK::Internal::Type::Enum
 
-          DEFAULT_STYLE = :default_style
           CANVAS = :canvas
+          DEFAULT_STYLE = :default_style
+          LEGACY = :legacy
           LINEAR = :linear
           ROUND = :round
           SHARP = :sharp
-          LEGACY = :legacy
 
           # @!method self.values
           #   @return [Array<Symbol>]

@@ -19,6 +19,7 @@ module HubspotSDK
           sig { returns(String) }
           attr_accessor :table_id_or_name
 
+          # Set this to `true` to return an archived row. Defaults to `false`.
           sig { returns(T.nilable(T::Boolean)) }
           attr_reader :archived
 
@@ -32,7 +33,12 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
-          def self.new(table_id_or_name:, archived: nil, request_options: {})
+          def self.new(
+            table_id_or_name:,
+            # Set this to `true` to return an archived row. Defaults to `false`.
+            archived: nil,
+            request_options: {}
+          )
           end
 
           sig do

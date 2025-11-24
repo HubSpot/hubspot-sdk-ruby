@@ -51,6 +51,11 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
+          ABSENT =
+            T.let(
+              :ABSENT,
+              HubspotSDK::Crm::PortalFlagStatePutRequest::FlagState::TaggedSymbol
+            )
           OFF =
             T.let(
               :OFF,
@@ -59,11 +64,6 @@ module HubspotSDK
           ON =
             T.let(
               :ON,
-              HubspotSDK::Crm::PortalFlagStatePutRequest::FlagState::TaggedSymbol
-            )
-          ABSENT =
-            T.let(
-              :ABSENT,
               HubspotSDK::Crm::PortalFlagStatePutRequest::FlagState::TaggedSymbol
             )
 

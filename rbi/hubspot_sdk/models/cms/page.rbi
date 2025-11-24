@@ -525,15 +525,11 @@ module HubspotSDK
             T.type_alias { T.all(Symbol, HubspotSDK::Cms::Page::AbStatus) }
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          MASTER = T.let(:master, HubspotSDK::Cms::Page::AbStatus::TaggedSymbol)
-          VARIANT =
-            T.let(:variant, HubspotSDK::Cms::Page::AbStatus::TaggedSymbol)
-          LOSER_VARIANT =
-            T.let(:loser_variant, HubspotSDK::Cms::Page::AbStatus::TaggedSymbol)
-          MAB_MASTER =
-            T.let(:mab_master, HubspotSDK::Cms::Page::AbStatus::TaggedSymbol)
-          MAB_VARIANT =
-            T.let(:mab_variant, HubspotSDK::Cms::Page::AbStatus::TaggedSymbol)
+          AUTOMATED_LOSER_VARIANT =
+            T.let(
+              :automated_loser_variant,
+              HubspotSDK::Cms::Page::AbStatus::TaggedSymbol
+            )
           AUTOMATED_MASTER =
             T.let(
               :automated_master,
@@ -544,11 +540,15 @@ module HubspotSDK
               :automated_variant,
               HubspotSDK::Cms::Page::AbStatus::TaggedSymbol
             )
-          AUTOMATED_LOSER_VARIANT =
-            T.let(
-              :automated_loser_variant,
-              HubspotSDK::Cms::Page::AbStatus::TaggedSymbol
-            )
+          LOSER_VARIANT =
+            T.let(:loser_variant, HubspotSDK::Cms::Page::AbStatus::TaggedSymbol)
+          MAB_MASTER =
+            T.let(:mab_master, HubspotSDK::Cms::Page::AbStatus::TaggedSymbol)
+          MAB_VARIANT =
+            T.let(:mab_variant, HubspotSDK::Cms::Page::AbStatus::TaggedSymbol)
+          MASTER = T.let(:master, HubspotSDK::Cms::Page::AbStatus::TaggedSymbol)
+          VARIANT =
+            T.let(:variant, HubspotSDK::Cms::Page::AbStatus::TaggedSymbol)
 
           sig do
             override.returns(
@@ -578,6 +578,21 @@ module HubspotSDK
           CONTENT_TYPE_CATEGORY_1 =
             T.let(
               :"1",
+              HubspotSDK::Cms::Page::ContentTypeCategory::TaggedSymbol
+            )
+          CONTENT_TYPE_CATEGORY_10 =
+            T.let(
+              :"10",
+              HubspotSDK::Cms::Page::ContentTypeCategory::TaggedSymbol
+            )
+          CONTENT_TYPE_CATEGORY_11 =
+            T.let(
+              :"11",
+              HubspotSDK::Cms::Page::ContentTypeCategory::TaggedSymbol
+            )
+          CONTENT_TYPE_CATEGORY_12 =
+            T.let(
+              :"12",
               HubspotSDK::Cms::Page::ContentTypeCategory::TaggedSymbol
             )
           CONTENT_TYPE_CATEGORY_2 =
@@ -620,21 +635,6 @@ module HubspotSDK
               :"9",
               HubspotSDK::Cms::Page::ContentTypeCategory::TaggedSymbol
             )
-          CONTENT_TYPE_CATEGORY_10 =
-            T.let(
-              :"10",
-              HubspotSDK::Cms::Page::ContentTypeCategory::TaggedSymbol
-            )
-          CONTENT_TYPE_CATEGORY_11 =
-            T.let(
-              :"11",
-              HubspotSDK::Cms::Page::ContentTypeCategory::TaggedSymbol
-            )
-          CONTENT_TYPE_CATEGORY_12 =
-            T.let(
-              :"12",
-              HubspotSDK::Cms::Page::ContentTypeCategory::TaggedSymbol
-            )
 
           sig do
             override.returns(
@@ -655,14 +655,29 @@ module HubspotSDK
 
           AUTOMATED =
             T.let(:AUTOMATED, HubspotSDK::Cms::Page::CurrentState::TaggedSymbol)
+          AUTOMATED_AB =
+            T.let(
+              :AUTOMATED_AB,
+              HubspotSDK::Cms::Page::CurrentState::TaggedSymbol
+            )
+          AUTOMATED_AB_VARIANT =
+            T.let(
+              :AUTOMATED_AB_VARIANT,
+              HubspotSDK::Cms::Page::CurrentState::TaggedSymbol
+            )
           AUTOMATED_DRAFT =
             T.let(
               :AUTOMATED_DRAFT,
               HubspotSDK::Cms::Page::CurrentState::TaggedSymbol
             )
-          AUTOMATED_SENDING =
+          AUTOMATED_DRAFT_AB =
             T.let(
-              :AUTOMATED_SENDING,
+              :AUTOMATED_DRAFT_AB,
+              HubspotSDK::Cms::Page::CurrentState::TaggedSymbol
+            )
+          AUTOMATED_DRAFT_ABVARIANT =
+            T.let(
+              :AUTOMATED_DRAFT_ABVARIANT,
               HubspotSDK::Cms::Page::CurrentState::TaggedSymbol
             )
           AUTOMATED_FOR_FORM =
@@ -683,6 +698,16 @@ module HubspotSDK
           AUTOMATED_FOR_FORM_LEGACY =
             T.let(
               :AUTOMATED_FOR_FORM_LEGACY,
+              HubspotSDK::Cms::Page::CurrentState::TaggedSymbol
+            )
+          AUTOMATED_LOSER_ABVARIANT =
+            T.let(
+              :AUTOMATED_LOSER_ABVARIANT,
+              HubspotSDK::Cms::Page::CurrentState::TaggedSymbol
+            )
+          AUTOMATED_SENDING =
+            T.let(
+              :AUTOMATED_SENDING,
               HubspotSDK::Cms::Page::CurrentState::TaggedSymbol
             )
           BLOG_EMAIL_DRAFT =
@@ -760,31 +785,6 @@ module HubspotSDK
           SCHEDULED_OR_PUBLISHED =
             T.let(
               :SCHEDULED_OR_PUBLISHED,
-              HubspotSDK::Cms::Page::CurrentState::TaggedSymbol
-            )
-          AUTOMATED_AB =
-            T.let(
-              :AUTOMATED_AB,
-              HubspotSDK::Cms::Page::CurrentState::TaggedSymbol
-            )
-          AUTOMATED_AB_VARIANT =
-            T.let(
-              :AUTOMATED_AB_VARIANT,
-              HubspotSDK::Cms::Page::CurrentState::TaggedSymbol
-            )
-          AUTOMATED_DRAFT_AB =
-            T.let(
-              :AUTOMATED_DRAFT_AB,
-              HubspotSDK::Cms::Page::CurrentState::TaggedSymbol
-            )
-          AUTOMATED_DRAFT_ABVARIANT =
-            T.let(
-              :AUTOMATED_DRAFT_ABVARIANT,
-              HubspotSDK::Cms::Page::CurrentState::TaggedSymbol
-            )
-          AUTOMATED_LOSER_ABVARIANT =
-            T.let(
-              :AUTOMATED_LOSER_ABVARIANT,
               HubspotSDK::Cms::Page::CurrentState::TaggedSymbol
             )
 
@@ -1213,6 +1213,7 @@ module HubspotSDK
           HAW_US =
             T.let(:"haw-us", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           HE = T.let(:he, HubspotSDK::Cms::Page::Language::TaggedSymbol)
+          HE_IL = T.let(:"he-il", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           HI = T.let(:hi, HubspotSDK::Cms::Page::Language::TaggedSymbol)
           HI_IN = T.let(:"hi-in", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           HR = T.let(:hr, HubspotSDK::Cms::Page::Language::TaggedSymbol)
@@ -1229,11 +1230,11 @@ module HubspotSDK
           IA_001 =
             T.let(:"ia-001", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           ID = T.let(:id, HubspotSDK::Cms::Page::Language::TaggedSymbol)
+          ID_ID = T.let(:"id-id", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           IG = T.let(:ig, HubspotSDK::Cms::Page::Language::TaggedSymbol)
           IG_NG = T.let(:"ig-ng", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           II = T.let(:ii, HubspotSDK::Cms::Page::Language::TaggedSymbol)
           II_CN = T.let(:"ii-cn", HubspotSDK::Cms::Page::Language::TaggedSymbol)
-          ID_ID = T.let(:"id-id", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           IS = T.let(:is, HubspotSDK::Cms::Page::Language::TaggedSymbol)
           IS_IS = T.let(:"is-is", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           IT = T.let(:it, HubspotSDK::Cms::Page::Language::TaggedSymbol)
@@ -1241,15 +1242,11 @@ module HubspotSDK
           IT_IT = T.let(:"it-it", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           IT_SM = T.let(:"it-sm", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           IT_VA = T.let(:"it-va", HubspotSDK::Cms::Page::Language::TaggedSymbol)
-          HE_IL = T.let(:"he-il", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           JA = T.let(:ja, HubspotSDK::Cms::Page::Language::TaggedSymbol)
           JA_JP = T.let(:"ja-jp", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           JGO = T.let(:jgo, HubspotSDK::Cms::Page::Language::TaggedSymbol)
           JGO_CM =
             T.let(:"jgo-cm", HubspotSDK::Cms::Page::Language::TaggedSymbol)
-          YI = T.let(:yi, HubspotSDK::Cms::Page::Language::TaggedSymbol)
-          YI_001 =
-            T.let(:"yi-001", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           JMC = T.let(:jmc, HubspotSDK::Cms::Page::Language::TaggedSymbol)
           JMC_TZ =
             T.let(:"jmc-tz", HubspotSDK::Cms::Page::Language::TaggedSymbol)
@@ -1305,10 +1302,10 @@ module HubspotSDK
           KSH = T.let(:ksh, HubspotSDK::Cms::Page::Language::TaggedSymbol)
           KSH_DE =
             T.let(:"ksh-de", HubspotSDK::Cms::Page::Language::TaggedSymbol)
-          KW = T.let(:kw, HubspotSDK::Cms::Page::Language::TaggedSymbol)
-          KW_GB = T.let(:"kw-gb", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           KU = T.let(:ku, HubspotSDK::Cms::Page::Language::TaggedSymbol)
           KU_TR = T.let(:"ku-tr", HubspotSDK::Cms::Page::Language::TaggedSymbol)
+          KW = T.let(:kw, HubspotSDK::Cms::Page::Language::TaggedSymbol)
+          KW_GB = T.let(:"kw-gb", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           KY = T.let(:ky, HubspotSDK::Cms::Page::Language::TaggedSymbol)
           KY_KG = T.let(:"ky-kg", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           LAG = T.let(:lag, HubspotSDK::Cms::Page::Language::TaggedSymbol)
@@ -1414,8 +1411,8 @@ module HubspotSDK
           NL = T.let(:nl, HubspotSDK::Cms::Page::Language::TaggedSymbol)
           NL_AW = T.let(:"nl-aw", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           NL_BE = T.let(:"nl-be", HubspotSDK::Cms::Page::Language::TaggedSymbol)
-          NL_CH = T.let(:"nl-ch", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           NL_BQ = T.let(:"nl-bq", HubspotSDK::Cms::Page::Language::TaggedSymbol)
+          NL_CH = T.let(:"nl-ch", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           NL_CW = T.let(:"nl-cw", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           NL_LU = T.let(:"nl-lu", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           NL_NL = T.let(:"nl-nl", HubspotSDK::Cms::Page::Language::TaggedSymbol)
@@ -1637,6 +1634,9 @@ module HubspotSDK
           YAV = T.let(:yav, HubspotSDK::Cms::Page::Language::TaggedSymbol)
           YAV_CM =
             T.let(:"yav-cm", HubspotSDK::Cms::Page::Language::TaggedSymbol)
+          YI = T.let(:yi, HubspotSDK::Cms::Page::Language::TaggedSymbol)
+          YI_001 =
+            T.let(:"yi-001", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           YO = T.let(:yo, HubspotSDK::Cms::Page::Language::TaggedSymbol)
           YO_BJ = T.let(:"yo-bj", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           YO_NG = T.let(:"yo-ng", HubspotSDK::Cms::Page::Language::TaggedSymbol)
@@ -1650,14 +1650,14 @@ module HubspotSDK
             T.let(:"zgh-ma", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           ZH = T.let(:zh, HubspotSDK::Cms::Page::Language::TaggedSymbol)
           ZH_CN = T.let(:"zh-cn", HubspotSDK::Cms::Page::Language::TaggedSymbol)
-          ZH_HK = T.let(:"zh-hk", HubspotSDK::Cms::Page::Language::TaggedSymbol)
-          ZH_MO = T.let(:"zh-mo", HubspotSDK::Cms::Page::Language::TaggedSymbol)
-          ZH_SG = T.let(:"zh-sg", HubspotSDK::Cms::Page::Language::TaggedSymbol)
-          ZH_TW = T.let(:"zh-tw", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           ZH_HANS =
             T.let(:"zh-hans", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           ZH_HANT =
             T.let(:"zh-hant", HubspotSDK::Cms::Page::Language::TaggedSymbol)
+          ZH_HK = T.let(:"zh-hk", HubspotSDK::Cms::Page::Language::TaggedSymbol)
+          ZH_MO = T.let(:"zh-mo", HubspotSDK::Cms::Page::Language::TaggedSymbol)
+          ZH_SG = T.let(:"zh-sg", HubspotSDK::Cms::Page::Language::TaggedSymbol)
+          ZH_TW = T.let(:"zh-tw", HubspotSDK::Cms::Page::Language::TaggedSymbol)
           ZU = T.let(:zu, HubspotSDK::Cms::Page::Language::TaggedSymbol)
           ZU_ZA = T.let(:"zu-za", HubspotSDK::Cms::Page::Language::TaggedSymbol)
 

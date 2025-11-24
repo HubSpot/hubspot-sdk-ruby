@@ -27,13 +27,13 @@ module HubspotSDK
           type: HubspotSDK::Models::Automation::APIMonthlyRelativeDaysEnrollmentSchedule::type_
         }
 
-        type monthly_relative_days = :LAST_DAY_OF_MONTH | :FIRST_MONDAY_OF_MONTH
+        type monthly_relative_days = :FIRST_MONDAY_OF_MONTH | :LAST_DAY_OF_MONTH
 
         module MonthlyRelativeDays
           extend HubspotSDK::Internal::Type::Enum
 
-          LAST_DAY_OF_MONTH: :LAST_DAY_OF_MONTH
           FIRST_MONDAY_OF_MONTH: :FIRST_MONDAY_OF_MONTH
+          LAST_DAY_OF_MONTH: :LAST_DAY_OF_MONTH
 
           def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIMonthlyRelativeDaysEnrollmentSchedule::monthly_relative_days]
         end

@@ -91,14 +91,14 @@ module HubspotSDK
         module AbSampleSizeDefault
           extend HubspotSDK::Internal::Type::Enum
 
-          MASTER = :master
-          VARIANT = :variant
+          AUTOMATED_LOSER_VARIANT = :automated_loser_variant
+          AUTOMATED_MASTER = :automated_master
+          AUTOMATED_VARIANT = :automated_variant
           LOSER_VARIANT = :loser_variant
           MAB_MASTER = :mab_master
           MAB_VARIANT = :mab_variant
-          AUTOMATED_MASTER = :automated_master
-          AUTOMATED_VARIANT = :automated_variant
-          AUTOMATED_LOSER_VARIANT = :automated_loser_variant
+          MASTER = :master
+          VARIANT = :variant
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -111,14 +111,14 @@ module HubspotSDK
         module AbSamplingDefault
           extend HubspotSDK::Internal::Type::Enum
 
-          MASTER = :master
-          VARIANT = :variant
+          AUTOMATED_LOSER_VARIANT = :automated_loser_variant
+          AUTOMATED_MASTER = :automated_master
+          AUTOMATED_VARIANT = :automated_variant
           LOSER_VARIANT = :loser_variant
           MAB_MASTER = :mab_master
           MAB_VARIANT = :mab_variant
-          AUTOMATED_MASTER = :automated_master
-          AUTOMATED_VARIANT = :automated_variant
-          AUTOMATED_LOSER_VARIANT = :automated_loser_variant
+          MASTER = :master
+          VARIANT = :variant
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -130,14 +130,14 @@ module HubspotSDK
         module AbStatus
           extend HubspotSDK::Internal::Type::Enum
 
-          MASTER = :master
-          VARIANT = :variant
+          AUTOMATED_LOSER_VARIANT = :automated_loser_variant
+          AUTOMATED_MASTER = :automated_master
+          AUTOMATED_VARIANT = :automated_variant
           LOSER_VARIANT = :loser_variant
           MAB_MASTER = :mab_master
           MAB_VARIANT = :mab_variant
-          AUTOMATED_MASTER = :automated_master
-          AUTOMATED_VARIANT = :automated_variant
-          AUTOMATED_LOSER_VARIANT = :automated_loser_variant
+          MASTER = :master
+          VARIANT = :variant
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -149,8 +149,8 @@ module HubspotSDK
         module AbSuccessMetric
           extend HubspotSDK::Internal::Type::Enum
 
-          CLICKS_BY_OPENS = :CLICKS_BY_OPENS
           CLICKS_BY_DELIVERED = :CLICKS_BY_DELIVERED
+          CLICKS_BY_OPENS = :CLICKS_BY_OPENS
           OPENS_BY_DELIVERED = :OPENS_BY_DELIVERED
 
           # @!method self.values

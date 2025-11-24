@@ -68,15 +68,15 @@ module HubspotSDK
           def self?.variants: -> ::Array[HubspotSDK::Models::Events::AllPropertyTypesOperation::coalescing_refine_by]
         end
 
-        type operator = :IS_KNOWN | :IS_UNKNOWN | :IS_BLANK | :IS_NOT_BLANK
+        type operator = :IS_BLANK | :IS_KNOWN | :IS_NOT_BLANK | :IS_UNKNOWN
 
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
-          IS_KNOWN: :IS_KNOWN
-          IS_UNKNOWN: :IS_UNKNOWN
           IS_BLANK: :IS_BLANK
+          IS_KNOWN: :IS_KNOWN
           IS_NOT_BLANK: :IS_NOT_BLANK
+          IS_UNKNOWN: :IS_UNKNOWN
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::AllPropertyTypesOperation::operator]
         end

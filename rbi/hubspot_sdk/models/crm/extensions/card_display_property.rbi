@@ -120,14 +120,14 @@ module HubspotSDK
                 :NUMERIC,
                 HubspotSDK::Crm::Extensions::CardDisplayProperty::DataType::TaggedSymbol
               )
-            STRING =
-              T.let(
-                :STRING,
-                HubspotSDK::Crm::Extensions::CardDisplayProperty::DataType::TaggedSymbol
-              )
             STATUS =
               T.let(
                 :STATUS,
+                HubspotSDK::Crm::Extensions::CardDisplayProperty::DataType::TaggedSymbol
+              )
+            STRING =
+              T.let(
+                :STRING,
                 HubspotSDK::Crm::Extensions::CardDisplayProperty::DataType::TaggedSymbol
               )
 

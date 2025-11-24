@@ -40,17 +40,17 @@ module HubspotSDK
         }
 
         type theme =
-          :default_style | :canvas | :linear | :round | :sharp | :legacy
+          :canvas | :default_style | :legacy | :linear | :round | :sharp
 
         module Theme
           extend HubspotSDK::Internal::Type::Enum
 
-          DEFAULT_STYLE: :default_style
           CANVAS: :canvas
+          DEFAULT_STYLE: :default_style
+          LEGACY: :legacy
           LINEAR: :linear
           ROUND: :round
           SHARP: :sharp
-          LEGACY: :legacy
 
           def self?.values: -> ::Array[HubspotSDK::Models::Marketing::FormDisplayOptions::theme]
         end

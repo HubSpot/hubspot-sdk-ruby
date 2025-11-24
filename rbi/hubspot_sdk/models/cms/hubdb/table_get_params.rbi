@@ -30,6 +30,7 @@ module HubspotSDK
           sig { params(include_foreign_ids: T::Boolean).void }
           attr_writer :include_foreign_ids
 
+          # Indicates whether to retrieve the localized schema for the tables.
           sig { returns(T.nilable(T::Boolean)) }
           attr_reader :is_get_localized_schema
 
@@ -49,6 +50,7 @@ module HubspotSDK
             archived: nil,
             # Set this to `true` to populate foreign ID values in the result.
             include_foreign_ids: nil,
+            # Indicates whether to retrieve the localized schema for the tables.
             is_get_localized_schema: nil,
             request_options: {}
           )

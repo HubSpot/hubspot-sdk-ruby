@@ -77,39 +77,9 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          JANUARY =
-            T.let(
-              :JANUARY,
-              HubspotSDK::Automation::APIYearlyEnrollmentSchedule::Month::TaggedSymbol
-            )
-          FEBRUARY =
-            T.let(
-              :FEBRUARY,
-              HubspotSDK::Automation::APIYearlyEnrollmentSchedule::Month::TaggedSymbol
-            )
-          MARCH =
-            T.let(
-              :MARCH,
-              HubspotSDK::Automation::APIYearlyEnrollmentSchedule::Month::TaggedSymbol
-            )
           APRIL =
             T.let(
               :APRIL,
-              HubspotSDK::Automation::APIYearlyEnrollmentSchedule::Month::TaggedSymbol
-            )
-          MAY =
-            T.let(
-              :MAY,
-              HubspotSDK::Automation::APIYearlyEnrollmentSchedule::Month::TaggedSymbol
-            )
-          JUNE =
-            T.let(
-              :JUNE,
-              HubspotSDK::Automation::APIYearlyEnrollmentSchedule::Month::TaggedSymbol
-            )
-          JULY =
-            T.let(
-              :JULY,
               HubspotSDK::Automation::APIYearlyEnrollmentSchedule::Month::TaggedSymbol
             )
           AUGUST =
@@ -117,14 +87,39 @@ module HubspotSDK
               :AUGUST,
               HubspotSDK::Automation::APIYearlyEnrollmentSchedule::Month::TaggedSymbol
             )
-          SEPTEMBER =
+          DECEMBER =
             T.let(
-              :SEPTEMBER,
+              :DECEMBER,
               HubspotSDK::Automation::APIYearlyEnrollmentSchedule::Month::TaggedSymbol
             )
-          OCTOBER =
+          FEBRUARY =
             T.let(
-              :OCTOBER,
+              :FEBRUARY,
+              HubspotSDK::Automation::APIYearlyEnrollmentSchedule::Month::TaggedSymbol
+            )
+          JANUARY =
+            T.let(
+              :JANUARY,
+              HubspotSDK::Automation::APIYearlyEnrollmentSchedule::Month::TaggedSymbol
+            )
+          JULY =
+            T.let(
+              :JULY,
+              HubspotSDK::Automation::APIYearlyEnrollmentSchedule::Month::TaggedSymbol
+            )
+          JUNE =
+            T.let(
+              :JUNE,
+              HubspotSDK::Automation::APIYearlyEnrollmentSchedule::Month::TaggedSymbol
+            )
+          MARCH =
+            T.let(
+              :MARCH,
+              HubspotSDK::Automation::APIYearlyEnrollmentSchedule::Month::TaggedSymbol
+            )
+          MAY =
+            T.let(
+              :MAY,
               HubspotSDK::Automation::APIYearlyEnrollmentSchedule::Month::TaggedSymbol
             )
           NOVEMBER =
@@ -132,9 +127,14 @@ module HubspotSDK
               :NOVEMBER,
               HubspotSDK::Automation::APIYearlyEnrollmentSchedule::Month::TaggedSymbol
             )
-          DECEMBER =
+          OCTOBER =
             T.let(
-              :DECEMBER,
+              :OCTOBER,
+              HubspotSDK::Automation::APIYearlyEnrollmentSchedule::Month::TaggedSymbol
+            )
+          SEPTEMBER =
+            T.let(
+              :SEPTEMBER,
               HubspotSDK::Automation::APIYearlyEnrollmentSchedule::Month::TaggedSymbol
             )
 

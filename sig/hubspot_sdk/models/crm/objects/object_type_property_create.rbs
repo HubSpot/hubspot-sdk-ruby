@@ -135,74 +135,74 @@ module HubspotSDK
           }
 
           type type_ =
-            :string | :number | :date | :datetime | :enumeration | :bool
+            :bool | :date | :datetime | :enumeration | :number | :string
 
           module Type
             extend HubspotSDK::Internal::Type::Enum
 
-            STRING: :string
-            NUMBER: :number
+            BOOL: :bool
             DATE: :date
             DATETIME: :datetime
             ENUMERATION: :enumeration
-            BOOL: :bool
+            NUMBER: :number
+            STRING: :string
 
             def self?.values: -> ::Array[HubspotSDK::Models::Crm::Objects::ObjectTypePropertyCreate::type_]
           end
 
           type number_display_hint =
-            :unformatted
-            | :formatted
-            | :currency
-            | :percentage
+            :currency
             | :duration
+            | :formatted
+            | :percentage
             | :probability
+            | :unformatted
 
           module NumberDisplayHint
             extend HubspotSDK::Internal::Type::Enum
 
-            UNFORMATTED: :unformatted
-            FORMATTED: :formatted
             CURRENCY: :currency
-            PERCENTAGE: :percentage
             DURATION: :duration
+            FORMATTED: :formatted
+            PERCENTAGE: :percentage
             PROBABILITY: :probability
+            UNFORMATTED: :unformatted
 
             def self?.values: -> ::Array[HubspotSDK::Models::Crm::Objects::ObjectTypePropertyCreate::number_display_hint]
           end
 
-          type option_sort_strategy = :DISPLAY_ORDER | :ALPHABETICAL
+          type option_sort_strategy = :ALPHABETICAL | :DISPLAY_ORDER
 
           module OptionSortStrategy
             extend HubspotSDK::Internal::Type::Enum
 
-            DISPLAY_ORDER: :DISPLAY_ORDER
             ALPHABETICAL: :ALPHABETICAL
+            DISPLAY_ORDER: :DISPLAY_ORDER
 
             def self?.values: -> ::Array[HubspotSDK::Models::Crm::Objects::ObjectTypePropertyCreate::option_sort_strategy]
           end
 
           type text_display_hint =
-            :unformatted_single_line
-            | :multi_line
+            :domain_name
             | :email
-            | :phone_number
-            | :domain_name
             | :ip_address
+            | :multi_line
+            | :phone_number
             | :physical_address
             | :postal_code
+            | :unformatted_single_line
 
           module TextDisplayHint
             extend HubspotSDK::Internal::Type::Enum
 
-            UNFORMATTED_SINGLE_LINE: :unformatted_single_line
-            MULTI_LINE: :multi_line
-            EMAIL: :email
-            PHONE_NUMBER: :phone_number
             DOMAIN_NAME: :domain_name
+            EMAIL: :email
             IP_ADDRESS: :ip_address
+            MULTI_LINE: :multi_line
+            PHONE_NUMBER: :phone_number
             PHYSICAL_ADDRESS: :physical_address
             POSTAL_CODE: :postal_code
+            UNFORMATTED_SINGLE_LINE: :unformatted_single_line
 
             def self?.values: -> ::Array[HubspotSDK::Models::Crm::Objects::ObjectTypePropertyCreate::text_display_hint]
           end

@@ -5,6 +5,7 @@ module HubspotSDK
     module Settings
       class CompanyCurrencyUpdateRequest < HubspotSDK::Internal::Type::BaseModel
         # @!attribute currency_code
+        #   The three-letter code representing a specific currency (ex. USD).
         #
         #   @return [Symbol, HubspotSDK::Models::Settings::CompanyCurrencyUpdateRequest::CurrencyCode]
         required :currency_code,
@@ -12,8 +13,10 @@ module HubspotSDK
                  api_name: :currencyCode
 
         # @!method initialize(currency_code:)
-        #   @param currency_code [Symbol, HubspotSDK::Models::Settings::CompanyCurrencyUpdateRequest::CurrencyCode]
+        #   @param currency_code [Symbol, HubspotSDK::Models::Settings::CompanyCurrencyUpdateRequest::CurrencyCode] The three-letter code representing a specific currency (ex. USD).
 
+        # The three-letter code representing a specific currency (ex. USD).
+        #
         # @see HubspotSDK::Models::Settings::CompanyCurrencyUpdateRequest#currency_code
         module CurrencyCode
           extend HubspotSDK::Internal::Type::Enum

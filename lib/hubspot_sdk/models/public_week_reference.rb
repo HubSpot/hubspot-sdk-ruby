@@ -47,13 +47,13 @@ module HubspotSDK
       module DayOfWeek
         extend HubspotSDK::Internal::Type::Enum
 
-        MONDAY = :MONDAY
-        TUESDAY = :TUESDAY
-        WEDNESDAY = :WEDNESDAY
-        THURSDAY = :THURSDAY
         FRIDAY = :FRIDAY
+        MONDAY = :MONDAY
         SATURDAY = :SATURDAY
         SUNDAY = :SUNDAY
+        THURSDAY = :THURSDAY
+        TUESDAY = :TUESDAY
+        WEDNESDAY = :WEDNESDAY
 
         # @!method self.values
         #   @return [Array<Symbol>]

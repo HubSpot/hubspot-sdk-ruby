@@ -46,11 +46,11 @@ module HubspotSDK
         module ReferenceType
           extend HubspotSDK::Internal::Type::Enum
 
-          VALUE = :VALUE
-          UPDATED_AT = :UPDATED_AT
           ANNIVERSARY = :ANNIVERSARY
-          VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION = :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION
           ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION = :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION
+          UPDATED_AT = :UPDATED_AT
+          VALUE = :VALUE
+          VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION = :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -71,8 +71,8 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::Enum
 
           CUSTOM = :CUSTOM
-          USER = :USER
           PORTAL = :PORTAL
+          USER = :USER
 
           # @!method self.values
           #   @return [Array<Symbol>]

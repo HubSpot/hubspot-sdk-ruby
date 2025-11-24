@@ -25,8 +25,8 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::Enum
 
           HUBSPOT = :HUBSPOT
-          SYSTEM = :SYSTEM
           INTEGRATION = :INTEGRATION
+          SYSTEM = :SYSTEM
           UNKNOWN = :UNKNOWN
 
           # @!method self.values

@@ -865,6 +865,11 @@ module HubspotSDK
               :as,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          AS_IN =
+            T.let(
+              :"as-in",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           ASA =
             T.let(
               :asa,
@@ -883,11 +888,6 @@ module HubspotSDK
           AST_ES =
             T.let(
               :"ast-es",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          AS_IN =
-            T.let(
-              :"as-in",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           AZ =
@@ -915,6 +915,11 @@ module HubspotSDK
               :be,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          BE_BY =
+            T.let(
+              :"be-by",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           BEM =
             T.let(
               :bem,
@@ -935,14 +940,14 @@ module HubspotSDK
               :"bez-tz",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
-          BE_BY =
-            T.let(
-              :"be-by",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
           BG =
             T.let(
               :bg,
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
+          BG_BG =
+            T.let(
+              :"bg-bg",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           BGC =
@@ -953,11 +958,6 @@ module HubspotSDK
           BGC_IN =
             T.let(
               :"bgc-in",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          BG_BG =
-            T.let(
-              :"bg-bg",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           BHO =
@@ -1015,6 +1015,11 @@ module HubspotSDK
               :br,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          BR_FR =
+            T.let(
+              :"br-fr",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           BRX =
             T.let(
               :brx,
@@ -1023,11 +1028,6 @@ module HubspotSDK
           BRX_IN =
             T.let(
               :"brx-in",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          BR_FR =
-            T.let(
-              :"br-fr",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           BS =
@@ -1085,6 +1085,11 @@ module HubspotSDK
               :ce,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          CE_RU =
+            T.let(
+              :"ce-ru",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           CEB =
             T.let(
               :ceb,
@@ -1093,11 +1098,6 @@ module HubspotSDK
           CEB_PH =
             T.let(
               :"ceb-ph",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          CE_RU =
-            T.let(
-              :"ce-ru",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           CGG =
@@ -1180,16 +1180,6 @@ module HubspotSDK
               :da,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
-          DAV =
-            T.let(
-              :dav,
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          DAV_KE =
-            T.let(
-              :"dav-ke",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
           DA_DK =
             T.let(
               :"da-dk",
@@ -1198,6 +1188,16 @@ module HubspotSDK
           DA_GL =
             T.let(
               :"da-gl",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
+          DAV =
+            T.let(
+              :dav,
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
+          DAV_KE =
+            T.let(
+              :"dav-ke",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           DE =
@@ -1765,6 +1765,11 @@ module HubspotSDK
               :"en-pr",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          EN_PT =
+            T.let(
+              :"en-pt",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           EN_PW =
             T.let(
               :"en-pw",
@@ -2190,6 +2195,11 @@ module HubspotSDK
               :fi,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          FI_FI =
+            T.let(
+              :"fi-fi",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           FIL =
             T.let(
               :fil,
@@ -2198,11 +2208,6 @@ module HubspotSDK
           FIL_PH =
             T.let(
               :"fil-ph",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          FI_FI =
-            T.let(
-              :"fi-fi",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           FO =
@@ -2223,16 +2228,6 @@ module HubspotSDK
           FR =
             T.let(
               :fr,
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          FRR =
-            T.let(
-              :frr,
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          FRR_DE =
-            T.let(
-              :"frr-de",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           FR_BE =
@@ -2465,6 +2460,16 @@ module HubspotSDK
               :"fr-yt",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          FRR =
+            T.let(
+              :frr,
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
+          FRR_DE =
+            T.let(
+              :"frr-de",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           FUR =
             T.let(
               :fur,
@@ -2545,6 +2550,11 @@ module HubspotSDK
               :gu,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          GU_IN =
+            T.let(
+              :"gu-in",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           GUZ =
             T.let(
               :guz,
@@ -2553,11 +2563,6 @@ module HubspotSDK
           GUZ_KE =
             T.let(
               :"guz-ke",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          GU_IN =
-            T.let(
-              :"gu-in",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           GV =
@@ -2575,16 +2580,6 @@ module HubspotSDK
               :ha,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
-          HAW =
-            T.let(
-              :haw,
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          HAW_US =
-            T.let(
-              :"haw-us",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
           HA_GH =
             T.let(
               :"ha-gh",
@@ -2598,6 +2593,16 @@ module HubspotSDK
           HA_NG =
             T.let(
               :"ha-ng",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
+          HAW =
+            T.let(
+              :haw,
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
+          HAW_US =
+            T.let(
+              :"haw-us",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           HE =
@@ -2680,6 +2685,11 @@ module HubspotSDK
               :id,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          ID_ID =
+            T.let(
+              :"id-id",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           IG =
             T.let(
               :ig,
@@ -2698,11 +2708,6 @@ module HubspotSDK
           II_CN =
             T.let(
               :"ii-cn",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          ID_ID =
-            T.let(
-              :"id-id",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           IS =
@@ -2760,16 +2765,6 @@ module HubspotSDK
               :"jgo-cm",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
-          YI =
-            T.let(
-              :yi,
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          YI_001 =
-            T.let(
-              :"yi-001",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
           JMC =
             T.let(
               :jmc,
@@ -2795,6 +2790,11 @@ module HubspotSDK
               :ka,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          KA_GE =
+            T.let(
+              :"ka-ge",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           KAB =
             T.let(
               :kab,
@@ -2813,11 +2813,6 @@ module HubspotSDK
           KAM_KE =
             T.let(
               :"kam-ke",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          KA_GE =
-            T.let(
-              :"ka-ge",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           KDE =
@@ -2850,6 +2845,11 @@ module HubspotSDK
               :"kgp-br",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          KH =
+            T.let(
+              :kh,
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           KHQ =
             T.let(
               :khq,
@@ -2875,6 +2875,11 @@ module HubspotSDK
               :kk,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          KK_KZ =
+            T.let(
+              :"kk-kz",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           KKJ =
             T.let(
               :kkj,
@@ -2885,14 +2890,14 @@ module HubspotSDK
               :"kkj-cm",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
-          KK_KZ =
-            T.let(
-              :"kk-kz",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
           KL =
             T.let(
               :kl,
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
+          KL_GL =
+            T.let(
+              :"kl-gl",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           KLN =
@@ -2903,11 +2908,6 @@ module HubspotSDK
           KLN_KE =
             T.let(
               :"kln-ke",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          KL_GL =
-            T.let(
-              :"kl-gl",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           KM =
@@ -2935,16 +2935,6 @@ module HubspotSDK
               :ko,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
-          KOK =
-            T.let(
-              :kok,
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          KOK_IN =
-            T.let(
-              :"kok-in",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
           KO_KP =
             T.let(
               :"ko-kp",
@@ -2955,9 +2945,24 @@ module HubspotSDK
               :"ko-kr",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          KOK =
+            T.let(
+              :kok,
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
+          KOK_IN =
+            T.let(
+              :"kok-in",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           KS =
             T.let(
               :ks,
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
+          KS_IN =
+            T.let(
+              :"ks-in",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           KSB =
@@ -2988,11 +2993,6 @@ module HubspotSDK
           KSH_DE =
             T.let(
               :"ksh-de",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          KS_IN =
-            T.let(
-              :"ks-in",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           KU =
@@ -3130,6 +3130,11 @@ module HubspotSDK
               :lu,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          LU_CD =
+            T.let(
+              :"lu-cd",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           LUO =
             T.let(
               :luo,
@@ -3148,11 +3153,6 @@ module HubspotSDK
           LUY_KE =
             T.let(
               :"luy-ke",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          LU_CD =
-            T.let(
-              :"lu-cd",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           LV =
@@ -3225,6 +3225,11 @@ module HubspotSDK
               :mg,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          MG_MG =
+            T.let(
+              :"mg-mg",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           MGH =
             T.let(
               :mgh,
@@ -3243,11 +3248,6 @@ module HubspotSDK
           MGO_CM =
             T.let(
               :"mgo-cm",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          MG_MG =
-            T.let(
-              :"mg-mg",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           MI =
@@ -3285,6 +3285,11 @@ module HubspotSDK
               :mn,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          MN_MN =
+            T.let(
+              :"mn-mn",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           MNI =
             T.let(
               :mni,
@@ -3293,11 +3298,6 @@ module HubspotSDK
           MNI_IN =
             T.let(
               :"mni-in",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          MN_MN =
-            T.let(
-              :"mn-mn",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           MR =
@@ -3405,6 +3405,11 @@ module HubspotSDK
               :nd,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          ND_ZW =
+            T.let(
+              :"nd-zw",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           NDS =
             T.let(
               :nds,
@@ -3418,11 +3423,6 @@ module HubspotSDK
           NDS_NL =
             T.let(
               :"nds-nl",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          ND_ZW =
-            T.let(
-              :"nd-zw",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           NE =
@@ -3505,6 +3505,11 @@ module HubspotSDK
               :nn,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          NN_NO =
+            T.let(
+              :"nn-no",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           NNH =
             T.let(
               :nnh,
@@ -3513,11 +3518,6 @@ module HubspotSDK
           NNH_CM =
             T.let(
               :"nnh-cm",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          NN_NO =
-            T.let(
-              :"nn-no",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           NO =
@@ -3795,16 +3795,6 @@ module HubspotSDK
               :ro,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
-          ROF =
-            T.let(
-              :rof,
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          ROF_TZ =
-            T.let(
-              :"rof-tz",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
           RO_MD =
             T.let(
               :"ro-md",
@@ -3813,6 +3803,16 @@ module HubspotSDK
           RO_RO =
             T.let(
               :"ro-ro",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
+          ROF =
+            T.let(
+              :rof,
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
+          ROF_TZ =
+            T.let(
+              :"rof-tz",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           RU =
@@ -3855,6 +3855,11 @@ module HubspotSDK
               :rw,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          RW_RW =
+            T.let(
+              :"rw-rw",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           RWK =
             T.let(
               :rwk,
@@ -3865,14 +3870,14 @@ module HubspotSDK
               :"rwk-tz",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
-          RW_RW =
-            T.let(
-              :"rw-rw",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
           SA =
             T.let(
               :sa,
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
+          SA_IN =
+            T.let(
+              :"sa-in",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           SAH =
@@ -3903,11 +3908,6 @@ module HubspotSDK
           SAT_IN =
             T.let(
               :"sat-in",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          SA_IN =
-            T.let(
-              :"sa-in",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           SBP =
@@ -3950,6 +3950,21 @@ module HubspotSDK
               :se,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          SE_FI =
+            T.let(
+              :"se-fi",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
+          SE_NO =
+            T.let(
+              :"se-no",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
+          SE_SE =
+            T.let(
+              :"se-se",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           SEH =
             T.let(
               :seh,
@@ -3968,21 +3983,6 @@ module HubspotSDK
           SES_ML =
             T.let(
               :"ses-ml",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          SE_FI =
-            T.let(
-              :"se-fi",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          SE_NO =
-            T.let(
-              :"se-no",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          SE_SE =
-            T.let(
-              :"se-se",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           SG =
@@ -4230,6 +4230,11 @@ module HubspotSDK
               :te,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          TE_IN =
+            T.let(
+              :"te-in",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           TEO =
             T.let(
               :teo,
@@ -4243,11 +4248,6 @@ module HubspotSDK
           TEO_UG =
             T.let(
               :"teo-ug",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          TE_IN =
-            T.let(
-              :"te-in",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           TG =
@@ -4305,6 +4305,11 @@ module HubspotSDK
               :to,
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          TO_TO =
+            T.let(
+              :"to-to",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           TOK =
             T.let(
               :tok,
@@ -4313,11 +4318,6 @@ module HubspotSDK
           TOK_001 =
             T.let(
               :"tok-001",
-              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
-            )
-          TO_TO =
-            T.let(
-              :"to-to",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
           TR =
@@ -4505,6 +4505,16 @@ module HubspotSDK
               :"yav-cm",
               HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
             )
+          YI =
+            T.let(
+              :yi,
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
+          YI_001 =
+            T.let(
+              :"yi-001",
+              HubspotSDK::Marketing::PublicEmail::Language::TaggedSymbol
+            )
           YO =
             T.let(
               :yo,
@@ -4637,9 +4647,24 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
+          AGENT_GENERATED =
+            T.let(
+              :AGENT_GENERATED,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
           AUTOMATED =
             T.let(
               :AUTOMATED,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          AUTOMATED_AB =
+            T.let(
+              :AUTOMATED_AB,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          AUTOMATED_AB_VARIANT =
+            T.let(
+              :AUTOMATED_AB_VARIANT,
               HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
             )
           AUTOMATED_DRAFT =
@@ -4647,9 +4672,14 @@ module HubspotSDK
               :AUTOMATED_DRAFT,
               HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
             )
-          AUTOMATED_SENDING =
+          AUTOMATED_DRAFT_AB =
             T.let(
-              :AUTOMATED_SENDING,
+              :AUTOMATED_DRAFT_AB,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          AUTOMATED_DRAFT_ABVARIANT =
+            T.let(
+              :AUTOMATED_DRAFT_ABVARIANT,
               HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
             )
           AUTOMATED_FOR_FORM =
@@ -4670,6 +4700,16 @@ module HubspotSDK
           AUTOMATED_FOR_FORM_LEGACY =
             T.let(
               :AUTOMATED_FOR_FORM_LEGACY,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          AUTOMATED_LOSER_ABVARIANT =
+            T.let(
+              :AUTOMATED_LOSER_ABVARIANT,
+              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
+            )
+          AUTOMATED_SENDING =
+            T.let(
+              :AUTOMATED_SENDING,
               HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
             )
           BLOG_EMAIL_DRAFT =
@@ -4767,36 +4807,6 @@ module HubspotSDK
               :SCHEDULED_OR_PUBLISHED,
               HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
             )
-          AUTOMATED_AB =
-            T.let(
-              :AUTOMATED_AB,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          AUTOMATED_AB_VARIANT =
-            T.let(
-              :AUTOMATED_AB_VARIANT,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          AUTOMATED_DRAFT_AB =
-            T.let(
-              :AUTOMATED_DRAFT_AB,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          AUTOMATED_DRAFT_ABVARIANT =
-            T.let(
-              :AUTOMATED_DRAFT_ABVARIANT,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          AUTOMATED_LOSER_ABVARIANT =
-            T.let(
-              :AUTOMATED_LOSER_ABVARIANT,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
-          AGENT_GENERATED =
-            T.let(
-              :AGENT_GENERATED,
-              HubspotSDK::Marketing::PublicEmail::State::TaggedSymbol
-            )
 
           sig do
             override.returns(
@@ -4823,19 +4833,19 @@ module HubspotSDK
               :AB_EMAIL,
               HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
             )
-          BATCH_EMAIL =
-            T.let(
-              :BATCH_EMAIL,
-              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
-            )
-          LOCALTIME_EMAIL =
-            T.let(
-              :LOCALTIME_EMAIL,
-              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
-            )
           AUTOMATED_AB_EMAIL =
             T.let(
               :AUTOMATED_AB_EMAIL,
+              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
+            )
+          AUTOMATED_EMAIL =
+            T.let(
+              :AUTOMATED_EMAIL,
+              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
+            )
+          BATCH_EMAIL =
+            T.let(
+              :BATCH_EMAIL,
               HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
             )
           BLOG_EMAIL =
@@ -4846,36 +4856,6 @@ module HubspotSDK
           BLOG_EMAIL_CHILD =
             T.let(
               :BLOG_EMAIL_CHILD,
-              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
-            )
-          RSS_EMAIL =
-            T.let(
-              :RSS_EMAIL,
-              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
-            )
-          RSS_EMAIL_CHILD =
-            T.let(
-              :RSS_EMAIL_CHILD,
-              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
-            )
-          RESUBSCRIBE_EMAIL =
-            T.let(
-              :RESUBSCRIBE_EMAIL,
-              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
-            )
-          OPTIN_EMAIL =
-            T.let(
-              :OPTIN_EMAIL,
-              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
-            )
-          OPTIN_FOLLOWUP_EMAIL =
-            T.let(
-              :OPTIN_FOLLOWUP_EMAIL,
-              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
-            )
-          AUTOMATED_EMAIL =
-            T.let(
-              :AUTOMATED_EMAIL,
               HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
             )
           FEEDBACK_CES_EMAIL =
@@ -4908,14 +4888,89 @@ module HubspotSDK
               :LEADFLOW_EMAIL,
               HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
             )
-          SINGLE_SEND_API =
+          LOCALTIME_EMAIL =
             T.let(
-              :SINGLE_SEND_API,
+              :LOCALTIME_EMAIL,
               HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
             )
           MARKETING_SINGLE_SEND_API =
             T.let(
               :MARKETING_SINGLE_SEND_API,
+              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
+            )
+          MEMBERSHIP_EMAIL_VERIFICATION_EMAIL =
+            T.let(
+              :MEMBERSHIP_EMAIL_VERIFICATION_EMAIL,
+              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
+            )
+          MEMBERSHIP_FOLLOW_UP_EMAIL =
+            T.let(
+              :MEMBERSHIP_FOLLOW_UP_EMAIL,
+              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
+            )
+          MEMBERSHIP_OTP_LOGIN_EMAIL =
+            T.let(
+              :MEMBERSHIP_OTP_LOGIN_EMAIL,
+              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
+            )
+          MEMBERSHIP_PASSWORD_RESET_EMAIL =
+            T.let(
+              :MEMBERSHIP_PASSWORD_RESET_EMAIL,
+              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
+            )
+          MEMBERSHIP_PASSWORD_SAVED_EMAIL =
+            T.let(
+              :MEMBERSHIP_PASSWORD_SAVED_EMAIL,
+              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
+            )
+          MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL =
+            T.let(
+              :MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL,
+              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
+            )
+          MEMBERSHIP_REGISTRATION_EMAIL =
+            T.let(
+              :MEMBERSHIP_REGISTRATION_EMAIL,
+              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
+            )
+          MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL =
+            T.let(
+              :MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL,
+              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
+            )
+          MEMBERSHIP_VERIFICATION_EMAIL =
+            T.let(
+              :MEMBERSHIP_VERIFICATION_EMAIL,
+              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
+            )
+          OPTIN_EMAIL =
+            T.let(
+              :OPTIN_EMAIL,
+              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
+            )
+          OPTIN_FOLLOWUP_EMAIL =
+            T.let(
+              :OPTIN_FOLLOWUP_EMAIL,
+              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
+            )
+          RESUBSCRIBE_EMAIL =
+            T.let(
+              :RESUBSCRIBE_EMAIL,
+              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
+            )
+          RSS_EMAIL =
+            T.let(
+              :RSS_EMAIL,
+              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
+            )
+          RSS_EMAIL_CHILD =
+            T.let(
+              :RSS_EMAIL_CHILD,
+              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
+            )
+          SINGLE_SEND_API =
+            T.let(
+              :SINGLE_SEND_API,
               HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
             )
           SMTP_TOKEN =
@@ -4926,51 +4981,6 @@ module HubspotSDK
           TICKET_EMAIL =
             T.let(
               :TICKET_EMAIL,
-              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
-            )
-          MEMBERSHIP_REGISTRATION_EMAIL =
-            T.let(
-              :MEMBERSHIP_REGISTRATION_EMAIL,
-              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
-            )
-          MEMBERSHIP_PASSWORD_SAVED_EMAIL =
-            T.let(
-              :MEMBERSHIP_PASSWORD_SAVED_EMAIL,
-              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
-            )
-          MEMBERSHIP_PASSWORD_RESET_EMAIL =
-            T.let(
-              :MEMBERSHIP_PASSWORD_RESET_EMAIL,
-              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
-            )
-          MEMBERSHIP_EMAIL_VERIFICATION_EMAIL =
-            T.let(
-              :MEMBERSHIP_EMAIL_VERIFICATION_EMAIL,
-              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
-            )
-          MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL =
-            T.let(
-              :MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL,
-              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
-            )
-          MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL =
-            T.let(
-              :MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL,
-              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
-            )
-          MEMBERSHIP_OTP_LOGIN_EMAIL =
-            T.let(
-              :MEMBERSHIP_OTP_LOGIN_EMAIL,
-              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
-            )
-          MEMBERSHIP_FOLLOW_UP_EMAIL =
-            T.let(
-              :MEMBERSHIP_FOLLOW_UP_EMAIL,
-              HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
-            )
-          MEMBERSHIP_VERIFICATION_EMAIL =
-            T.let(
-              :MEMBERSHIP_VERIFICATION_EMAIL,
               HubspotSDK::Marketing::PublicEmail::Type::TaggedSymbol
             )
 

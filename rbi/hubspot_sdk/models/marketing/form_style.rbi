@@ -115,6 +115,11 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
+          CENTER =
+            T.let(
+              :center,
+              HubspotSDK::Marketing::FormStyle::SubmitAlignment::TaggedSymbol
+            )
           LEFT =
             T.let(
               :left,
@@ -123,11 +128,6 @@ module HubspotSDK
           RIGHT =
             T.let(
               :right,
-              HubspotSDK::Marketing::FormStyle::SubmitAlignment::TaggedSymbol
-            )
-          CENTER =
-            T.let(
-              :center,
               HubspotSDK::Marketing::FormStyle::SubmitAlignment::TaggedSymbol
             )
 

@@ -108,8 +108,8 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::Enum
 
           CRM_PERMISSIONS_ENFORCEMENT = :CRM_PERMISSIONS_ENFORCEMENT
-          READ_ONLY = :READ_ONLY
           INTERNAL_ONLY = :INTERNAL_ONLY
+          READ_ONLY = :READ_ONLY
 
           # @!method self.values
           #   @return [Array<Symbol>]

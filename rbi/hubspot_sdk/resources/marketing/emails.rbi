@@ -174,6 +174,9 @@ module HubspotSDK
             is_published: T::Boolean,
             limit: Integer,
             marketing_campaign_names: T::Boolean,
+            published_after: Time,
+            published_at: Time,
+            published_before: Time,
             sort: T::Array[String],
             type: HubspotSDK::Marketing::EmailListParams::Type::OrSymbol,
             updated_after: Time,
@@ -209,6 +212,9 @@ module HubspotSDK
           limit: nil,
           # Include the names for any associated marketing campaigns.
           marketing_campaign_names: nil,
+          published_after: nil,
+          published_at: nil,
+          published_before: nil,
           # Specifies which fields to use for sorting results. Valid fields are `name`,
           # `createdAt`, `updatedAt`, `createdBy`, `updatedBy`. `createdAt` will be used by
           # default.

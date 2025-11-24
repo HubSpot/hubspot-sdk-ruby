@@ -35,11 +35,11 @@ module HubspotSDK
           module Name
             extend HubspotSDK::Internal::Type::Enum
 
+            COMPANIES = :companies
             CONTACTS = :contacts
             DEALS = :deals
-            COMPANIES = :companies
-            TICKETS = :tickets
             MARKETING_EVENTS = :marketing_events
+            TICKETS = :tickets
 
             # @!method self.values
             #   @return [Array<Symbol>]

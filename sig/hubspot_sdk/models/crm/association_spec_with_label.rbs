@@ -29,14 +29,14 @@ module HubspotSDK
           label: String
         }
 
-        type category = :HUBSPOT_DEFINED | :USER_DEFINED | :INTEGRATOR_DEFINED
+        type category = :HUBSPOT_DEFINED | :INTEGRATOR_DEFINED | :USER_DEFINED
 
         module Category
           extend HubspotSDK::Internal::Type::Enum
 
           HUBSPOT_DEFINED: :HUBSPOT_DEFINED
-          USER_DEFINED: :USER_DEFINED
           INTEGRATOR_DEFINED: :INTEGRATOR_DEFINED
+          USER_DEFINED: :USER_DEFINED
 
           def self?.values: -> ::Array[HubspotSDK::Models::Crm::AssociationSpecWithLabel::category]
         end

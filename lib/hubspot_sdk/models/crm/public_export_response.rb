@@ -88,15 +88,15 @@ module HubspotSDK
         module ExportState
           extend HubspotSDK::Internal::Type::Enum
 
-          ENQUEUED = :ENQUEUED
-          PROCESSING = :PROCESSING
-          DONE = :DONE
-          FAILED = :FAILED
           CANCELED = :CANCELED
           CONFLICT = :CONFLICT
-          DELETED = :DELETED
           DEFERRED = :DEFERRED
+          DELETED = :DELETED
+          DONE = :DONE
+          ENQUEUED = :ENQUEUED
+          FAILED = :FAILED
           PENDING_APPROVAL = :PENDING_APPROVAL
+          PROCESSING = :PROCESSING
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -108,8 +108,8 @@ module HubspotSDK
         module ExportType
           extend HubspotSDK::Internal::Type::Enum
 
-          VIEW = :VIEW
           LIST = :LIST
+          VIEW = :VIEW
 
           # @!method self.values
           #   @return [Array<Symbol>]

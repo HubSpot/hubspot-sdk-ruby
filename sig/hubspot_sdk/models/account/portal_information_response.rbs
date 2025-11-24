@@ -58,15 +58,15 @@ module HubspotSDK
         }
 
         type account_type =
-          :STANDARD | :DEVELOPER_TEST | :SANDBOX | :APP_DEVELOPER
+          :APP_DEVELOPER | :DEVELOPER_TEST | :SANDBOX | :STANDARD
 
         module AccountType
           extend HubspotSDK::Internal::Type::Enum
 
-          STANDARD: :STANDARD
+          APP_DEVELOPER: :APP_DEVELOPER
           DEVELOPER_TEST: :DEVELOPER_TEST
           SANDBOX: :SANDBOX
-          APP_DEVELOPER: :APP_DEVELOPER
+          STANDARD: :STANDARD
 
           def self?.values: -> ::Array[HubspotSDK::Models::Account::PortalInformationResponse::account_type]
         end

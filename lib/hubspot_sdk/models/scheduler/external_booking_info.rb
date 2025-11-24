@@ -62,8 +62,8 @@ module HubspotSDK
         module LinkType
           extend HubspotSDK::Internal::Type::Enum
 
-          PERSONAL_LINK = :PERSONAL_LINK
           GROUP_CALENDAR = :GROUP_CALENDAR
+          PERSONAL_LINK = :PERSONAL_LINK
           ROUND_ROBIN_CALENDAR = :ROUND_ROBIN_CALENDAR
 
           # @!method self.values

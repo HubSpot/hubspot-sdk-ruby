@@ -156,11 +156,11 @@ module HubspotSDK
         module Type
           extend HubspotSDK::Internal::Type::Enum
 
-          LANDING_PAGE = :LANDING_PAGE
           BLOG_POST = :BLOG_POST
-          SITE_PAGE = :SITE_PAGE
           KNOWLEDGE_ARTICLE = :KNOWLEDGE_ARTICLE
+          LANDING_PAGE = :LANDING_PAGE
           LISTING_PAGE = :LISTING_PAGE
+          SITE_PAGE = :SITE_PAGE
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -545,6 +545,7 @@ module HubspotSDK
           HAW = :haw
           HAW_US = :"haw-us"
           HE = :he
+          HE_IL = :"he-il"
           HI = :hi
           HI_IN = :"hi-in"
           HR = :hr
@@ -559,11 +560,11 @@ module HubspotSDK
           IA = :ia
           IA_001 = :"ia-001"
           ID = :id
+          ID_ID = :"id-id"
           IG = :ig
           IG_NG = :"ig-ng"
           II = :ii
           II_CN = :"ii-cn"
-          ID_ID = :"id-id"
           IS = :is
           IS_IS = :"is-is"
           IT = :it
@@ -571,13 +572,10 @@ module HubspotSDK
           IT_IT = :"it-it"
           IT_SM = :"it-sm"
           IT_VA = :"it-va"
-          HE_IL = :"he-il"
           JA = :ja
           JA_JP = :"ja-jp"
           JGO = :jgo
           JGO_CM = :"jgo-cm"
-          YI = :yi
-          YI_001 = :"yi-001"
           JMC = :jmc
           JMC_TZ = :"jmc-tz"
           JV = :jv
@@ -621,10 +619,10 @@ module HubspotSDK
           KSF_CM = :"ksf-cm"
           KSH = :ksh
           KSH_DE = :"ksh-de"
-          KW = :kw
-          KW_GB = :"kw-gb"
           KU = :ku
           KU_TR = :"ku-tr"
+          KW = :kw
+          KW_GB = :"kw-gb"
           KY = :ky
           KY_KG = :"ky-kg"
           LAG = :lag
@@ -711,8 +709,8 @@ module HubspotSDK
           NL = :nl
           NL_AW = :"nl-aw"
           NL_BE = :"nl-be"
-          NL_CH = :"nl-ch"
           NL_BQ = :"nl-bq"
+          NL_CH = :"nl-ch"
           NL_CW = :"nl-cw"
           NL_LU = :"nl-lu"
           NL_NL = :"nl-nl"
@@ -908,6 +906,8 @@ module HubspotSDK
           XOG_UG = :"xog-ug"
           YAV = :yav
           YAV_CM = :"yav-cm"
+          YI = :yi
+          YI_001 = :"yi-001"
           YO = :yo
           YO_BJ = :"yo-bj"
           YO_NG = :"yo-ng"
@@ -918,12 +918,12 @@ module HubspotSDK
           ZGH_MA = :"zgh-ma"
           ZH = :zh
           ZH_CN = :"zh-cn"
+          ZH_HANS = :"zh-hans"
+          ZH_HANT = :"zh-hant"
           ZH_HK = :"zh-hk"
           ZH_MO = :"zh-mo"
           ZH_SG = :"zh-sg"
           ZH_TW = :"zh-tw"
-          ZH_HANS = :"zh-hans"
-          ZH_HANT = :"zh-hant"
           ZU = :zu
           ZU_ZA = :"zu-za"
 

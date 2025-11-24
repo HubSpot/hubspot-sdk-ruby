@@ -320,24 +320,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          HUBSPOT =
-            T.let(
-              :HUBSPOT,
-              HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
-            )
-          INTEGRATION =
-            T.let(
-              :INTEGRATION,
-              HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
-            )
-          PORTAL_SPECIFIC =
-            T.let(
-              :PORTAL_SPECIFIC,
-              HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
-            )
           CMS_HUBDB =
             T.let(
               :CMS_HUBDB,
+              HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
+            )
+          HUBSPOT =
+            T.let(
+              :HUBSPOT,
               HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
             )
           HUBSPOT_EVENT =
@@ -345,9 +335,19 @@ module HubspotSDK
               :HUBSPOT_EVENT,
               HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
             )
+          INTEGRATION =
+            T.let(
+              :INTEGRATION,
+              HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
+            )
           INTEGRATION_EVENT =
             T.let(
               :INTEGRATION_EVENT,
+              HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
+            )
+          PORTAL_SPECIFIC =
+            T.let(
+              :PORTAL_SPECIFIC,
               HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
             )
           PORTAL_SPECIFIC_EVENT =

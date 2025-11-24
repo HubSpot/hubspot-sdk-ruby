@@ -56,18 +56,18 @@ module HubspotSDK
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
-          IS_ANY_OF = :IS_ANY_OF
-          IS_NONE_OF = :IS_NONE_OF
-          IS_EXACTLY = :IS_EXACTLY
-          IS_NOT_EXACTLY = :IS_NOT_EXACTLY
           CONTAINS_ALL = :CONTAINS_ALL
           DOES_NOT_CONTAIN_ALL = :DOES_NOT_CONTAIN_ALL
           HAS_EVER_BEEN_ANY_OF = :HAS_EVER_BEEN_ANY_OF
-          HAS_NEVER_BEEN_ANY_OF = :HAS_NEVER_BEEN_ANY_OF
           HAS_EVER_BEEN_EXACTLY = :HAS_EVER_BEEN_EXACTLY
-          HAS_NEVER_BEEN_EXACTLY = :HAS_NEVER_BEEN_EXACTLY
           HAS_EVER_CONTAINED_ALL = :HAS_EVER_CONTAINED_ALL
+          HAS_NEVER_BEEN_ANY_OF = :HAS_NEVER_BEEN_ANY_OF
+          HAS_NEVER_BEEN_EXACTLY = :HAS_NEVER_BEEN_EXACTLY
           HAS_NEVER_CONTAINED_ALL = :HAS_NEVER_CONTAINED_ALL
+          IS_ANY_OF = :IS_ANY_OF
+          IS_EXACTLY = :IS_EXACTLY
+          IS_NONE_OF = :IS_NONE_OF
+          IS_NOT_EXACTLY = :IS_NOT_EXACTLY
 
           # @!method self.values
           #   @return [Array<Symbol>]

@@ -16,7 +16,7 @@ class HubspotSDK::Test::Resources::Crm::Extensions::CardsTest < HubspotSDK::Test
               dataType: :STRING,
               label: "Pets Name",
               name: "pet_name",
-              options: [{label: "label", name: "name", type: :DEFAULT}]
+              options: [{label: "label", name: "name", type: :DANGER}]
             }
           ]
         },

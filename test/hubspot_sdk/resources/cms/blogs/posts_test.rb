@@ -9,7 +9,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
     response =
       @hubspot.cms.blogs.posts.create(
         id: "id",
-        ab_status: :master,
+        ab_status: :automated_loser_variant,
         ab_test_id: "abTestId",
         archived_at: 0,
         archived_in_dashboard: true,
@@ -218,7 +218,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
       @hubspot.cms.blogs.posts.update(
         "objectId",
         id: "id",
-        ab_status: :master,
+        ab_status: :automated_loser_variant,
         ab_test_id: "abTestId",
         archived_at: 0,
         archived_in_dashboard: true,
@@ -1082,7 +1082,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
       @hubspot.cms.blogs.posts.update_draft(
         "objectId",
         id: "id",
-        ab_status: :master,
+        ab_status: :automated_loser_variant,
         ab_test_id: "abTestId",
         archived_at: 0,
         archived_in_dashboard: true,

@@ -58,14 +58,14 @@ module HubspotSDK
               :GLOBAL,
               HubspotSDK::Cms::PropertyDefinitionSource::Type::TaggedSymbol
             )
-          OBJECT_TYPE =
-            T.let(
-              :OBJECT_TYPE,
-              HubspotSDK::Cms::PropertyDefinitionSource::Type::TaggedSymbol
-            )
           HAVEN_BRANCH =
             T.let(
               :HAVEN_BRANCH,
+              HubspotSDK::Cms::PropertyDefinitionSource::Type::TaggedSymbol
+            )
+          OBJECT_TYPE =
+            T.let(
+              :OBJECT_TYPE,
               HubspotSDK::Cms::PropertyDefinitionSource::Type::TaggedSymbol
             )
           PORTAL =

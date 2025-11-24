@@ -5,12 +5,17 @@ module HubspotSDK
     class Settings
       class Currencies
         class CentralFxRates
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Settings::Currencies::CentralFxRateCreateCurrencyParams}
+          # for more details.
+          #
           # Create a new currency with central exchange rates in the portal. Unsupported
           # currencies cannot be added here.
           #
           # @overload create_currency(currency_code:, request_options: {})
           #
-          # @param currency_code [Symbol, HubspotSDK::Models::Settings::CurrencyCreateRequest::CurrencyCode]
+          # @param currency_code [Symbol, HubspotSDK::Models::Settings::CurrencyCreateRequest::CurrencyCode] The currency code being added to the HubSpot portal for use with central exchang
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Settings::ExchangeRate]

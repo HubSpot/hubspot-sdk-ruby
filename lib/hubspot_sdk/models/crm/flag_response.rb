@@ -40,9 +40,9 @@ module HubspotSDK
         module DefaultState
           extend HubspotSDK::Internal::Type::Enum
 
+          ABSENT = :ABSENT
           OFF = :OFF
           ON = :ON
-          ABSENT = :ABSENT
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -52,9 +52,9 @@ module HubspotSDK
         module OverrideState
           extend HubspotSDK::Internal::Type::Enum
 
+          ABSENT = :ABSENT
           OFF = :OFF
           ON = :ON
-          ABSENT = :ABSENT
 
           # @!method self.values
           #   @return [Array<Symbol>]

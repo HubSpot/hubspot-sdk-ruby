@@ -3,12 +3,14 @@ module HubspotSDK
     class Auth
       class OAuth
         def create_access_token: (
+          ?body_client_secret: String,
+          ?body_refresh_token: String,
           ?client_id: String,
-          ?client_secret: String,
           ?code: String,
+          ?code_verifier: String,
           ?grant_type: HubspotSDK::Models::Auth::OAuthCreateAccessTokenParams::grant_type,
           ?redirect_uri: String,
-          ?refresh_token: String,
+          ?scope: String,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Auth::TokenResponseIf
 

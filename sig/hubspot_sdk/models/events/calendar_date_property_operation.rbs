@@ -69,18 +69,18 @@ module HubspotSDK
         }
 
         type operator =
-          :IN_THIS_TIME_UNIT
-          | :IN_THIS_TIME_UNIT_SO_FAR
+          :IN_LAST_TIME_UNIT
           | :IN_NEXT_TIME_UNIT
-          | :IN_LAST_TIME_UNIT
+          | :IN_THIS_TIME_UNIT
+          | :IN_THIS_TIME_UNIT_SO_FAR
 
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
+          IN_LAST_TIME_UNIT: :IN_LAST_TIME_UNIT
+          IN_NEXT_TIME_UNIT: :IN_NEXT_TIME_UNIT
           IN_THIS_TIME_UNIT: :IN_THIS_TIME_UNIT
           IN_THIS_TIME_UNIT_SO_FAR: :IN_THIS_TIME_UNIT_SO_FAR
-          IN_NEXT_TIME_UNIT: :IN_NEXT_TIME_UNIT
-          IN_LAST_TIME_UNIT: :IN_LAST_TIME_UNIT
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::CalendarDatePropertyOperation::operator]
         end
@@ -95,49 +95,49 @@ module HubspotSDK
           def self?.values: -> ::Array[HubspotSDK::Models::Events::CalendarDatePropertyOperation::property_type]
         end
 
-        type time_unit = :DAY | :WEEK | :MONTH | :QUARTER | :YEAR
+        type time_unit = :DAY | :MONTH | :QUARTER | :WEEK | :YEAR
 
         module TimeUnit
           extend HubspotSDK::Internal::Type::Enum
 
           DAY: :DAY
-          WEEK: :WEEK
           MONTH: :MONTH
           QUARTER: :QUARTER
+          WEEK: :WEEK
           YEAR: :YEAR
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::CalendarDatePropertyOperation::time_unit]
         end
 
         type fiscal_year_start =
-          :JANUARY
-          | :FEBRUARY
-          | :MARCH
-          | :APRIL
-          | :MAY
-          | :JUNE
-          | :JULY
+          :APRIL
           | :AUGUST
-          | :SEPTEMBER
-          | :OCTOBER
-          | :NOVEMBER
           | :DECEMBER
+          | :FEBRUARY
+          | :JANUARY
+          | :JULY
+          | :JUNE
+          | :MARCH
+          | :MAY
+          | :NOVEMBER
+          | :OCTOBER
+          | :SEPTEMBER
 
         module FiscalYearStart
           extend HubspotSDK::Internal::Type::Enum
 
-          JANUARY: :JANUARY
-          FEBRUARY: :FEBRUARY
-          MARCH: :MARCH
           APRIL: :APRIL
-          MAY: :MAY
-          JUNE: :JUNE
-          JULY: :JULY
           AUGUST: :AUGUST
-          SEPTEMBER: :SEPTEMBER
-          OCTOBER: :OCTOBER
-          NOVEMBER: :NOVEMBER
           DECEMBER: :DECEMBER
+          FEBRUARY: :FEBRUARY
+          JANUARY: :JANUARY
+          JULY: :JULY
+          JUNE: :JUNE
+          MARCH: :MARCH
+          MAY: :MAY
+          NOVEMBER: :NOVEMBER
+          OCTOBER: :OCTOBER
+          SEPTEMBER: :SEPTEMBER
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::CalendarDatePropertyOperation::fiscal_year_start]
         end

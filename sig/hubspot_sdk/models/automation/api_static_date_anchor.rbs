@@ -35,34 +35,34 @@ module HubspotSDK
         }
 
         type month =
-          :JANUARY
-          | :FEBRUARY
-          | :MARCH
-          | :APRIL
-          | :MAY
-          | :JUNE
-          | :JULY
+          :APRIL
           | :AUGUST
-          | :SEPTEMBER
-          | :OCTOBER
-          | :NOVEMBER
           | :DECEMBER
+          | :FEBRUARY
+          | :JANUARY
+          | :JULY
+          | :JUNE
+          | :MARCH
+          | :MAY
+          | :NOVEMBER
+          | :OCTOBER
+          | :SEPTEMBER
 
         module Month
           extend HubspotSDK::Internal::Type::Enum
 
-          JANUARY: :JANUARY
-          FEBRUARY: :FEBRUARY
-          MARCH: :MARCH
           APRIL: :APRIL
-          MAY: :MAY
-          JUNE: :JUNE
-          JULY: :JULY
           AUGUST: :AUGUST
-          SEPTEMBER: :SEPTEMBER
-          OCTOBER: :OCTOBER
-          NOVEMBER: :NOVEMBER
           DECEMBER: :DECEMBER
+          FEBRUARY: :FEBRUARY
+          JANUARY: :JANUARY
+          JULY: :JULY
+          JUNE: :JUNE
+          MARCH: :MARCH
+          MAY: :MAY
+          NOVEMBER: :NOVEMBER
+          OCTOBER: :OCTOBER
+          SEPTEMBER: :SEPTEMBER
 
           def self?.values: -> ::Array[HubspotSDK::Models::Automation::APIStaticDateAnchor::month]
         end

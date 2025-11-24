@@ -12,6 +12,7 @@ module HubspotSDK
             )
           end
 
+        # The three-letter code representing a specific currency (ex. USD).
         sig do
           returns(
             HubspotSDK::Settings::CompanyCurrencyUpdateRequest::CurrencyCode::OrSymbol
@@ -25,7 +26,10 @@ module HubspotSDK
               HubspotSDK::Settings::CompanyCurrencyUpdateRequest::CurrencyCode::OrSymbol
           ).returns(T.attached_class)
         end
-        def self.new(currency_code:)
+        def self.new(
+          # The three-letter code representing a specific currency (ex. USD).
+          currency_code:
+        )
         end
 
         sig do
@@ -39,6 +43,7 @@ module HubspotSDK
         def to_hash
         end
 
+        # The three-letter code representing a specific currency (ex. USD).
         module CurrencyCode
           extend HubspotSDK::Internal::Type::Enum
 

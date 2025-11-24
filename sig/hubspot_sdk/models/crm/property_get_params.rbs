@@ -53,14 +53,14 @@ module HubspotSDK
           request_options: HubspotSDK::RequestOptions
         }
 
-        type data_sensitivity = :non_sensitive | :sensitive | :highly_sensitive
+        type data_sensitivity = :highly_sensitive | :non_sensitive | :sensitive
 
         module DataSensitivity
           extend HubspotSDK::Internal::Type::Enum
 
+          HIGHLY_SENSITIVE: :highly_sensitive
           NON_SENSITIVE: :non_sensitive
           SENSITIVE: :sensitive
-          HIGHLY_SENSITIVE: :highly_sensitive
 
           def self?.values: -> ::Array[HubspotSDK::Models::Crm::PropertyGetParams::data_sensitivity]
         end

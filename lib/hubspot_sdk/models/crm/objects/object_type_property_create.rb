@@ -168,12 +168,12 @@ module HubspotSDK
           module Type
             extend HubspotSDK::Internal::Type::Enum
 
-            STRING = :string
-            NUMBER = :number
+            BOOL = :bool
             DATE = :date
             DATETIME = :datetime
             ENUMERATION = :enumeration
-            BOOL = :bool
+            NUMBER = :number
+            STRING = :string
 
             # @!method self.values
             #   @return [Array<Symbol>]
@@ -185,12 +185,12 @@ module HubspotSDK
           module NumberDisplayHint
             extend HubspotSDK::Internal::Type::Enum
 
-            UNFORMATTED = :unformatted
-            FORMATTED = :formatted
             CURRENCY = :currency
-            PERCENTAGE = :percentage
             DURATION = :duration
+            FORMATTED = :formatted
+            PERCENTAGE = :percentage
             PROBABILITY = :probability
+            UNFORMATTED = :unformatted
 
             # @!method self.values
             #   @return [Array<Symbol>]
@@ -202,8 +202,8 @@ module HubspotSDK
           module OptionSortStrategy
             extend HubspotSDK::Internal::Type::Enum
 
-            DISPLAY_ORDER = :DISPLAY_ORDER
             ALPHABETICAL = :ALPHABETICAL
+            DISPLAY_ORDER = :DISPLAY_ORDER
 
             # @!method self.values
             #   @return [Array<Symbol>]
@@ -215,14 +215,14 @@ module HubspotSDK
           module TextDisplayHint
             extend HubspotSDK::Internal::Type::Enum
 
-            UNFORMATTED_SINGLE_LINE = :unformatted_single_line
-            MULTI_LINE = :multi_line
-            EMAIL = :email
-            PHONE_NUMBER = :phone_number
             DOMAIN_NAME = :domain_name
+            EMAIL = :email
             IP_ADDRESS = :ip_address
+            MULTI_LINE = :multi_line
+            PHONE_NUMBER = :phone_number
             PHYSICAL_ADDRESS = :physical_address
             POSTAL_CODE = :postal_code
+            UNFORMATTED_SINGLE_LINE = :unformatted_single_line
 
             # @!method self.values
             #   @return [Array<Symbol>]

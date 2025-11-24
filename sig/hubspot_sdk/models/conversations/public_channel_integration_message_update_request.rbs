@@ -24,14 +24,14 @@ module HubspotSDK
           error_message: String
         }
 
-        type status_type = :SENT | :FAILED | :READ
+        type status_type = :FAILED | :READ | :SENT
 
         module StatusType
           extend HubspotSDK::Internal::Type::Enum
 
-          SENT: :SENT
           FAILED: :FAILED
           READ: :READ
+          SENT: :SENT
 
           def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest::status_type]
         end

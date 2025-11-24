@@ -125,9 +125,9 @@ module HubspotSDK
           module Status
             extend HubspotSDK::Internal::Type::Enum
 
+            NOT_SPECIFIED = :NOT_SPECIFIED
             SUBSCRIBED = :SUBSCRIBED
             UNSUBSCRIBED = :UNSUBSCRIBED
-            NOT_SPECIFIED = :NOT_SPECIFIED
 
             # @!method self.values
             #   @return [Array<Symbol>]
@@ -142,13 +142,13 @@ module HubspotSDK
           module LegalBasis
             extend HubspotSDK::Internal::Type::Enum
 
-            LEGITIMATE_INTEREST_PQL = :LEGITIMATE_INTEREST_PQL
-            LEGITIMATE_INTEREST_CLIENT = :LEGITIMATE_INTEREST_CLIENT
-            PERFORMANCE_OF_CONTRACT = :PERFORMANCE_OF_CONTRACT
             CONSENT_WITH_NOTICE = :CONSENT_WITH_NOTICE
-            NON_GDPR = :NON_GDPR
-            PROCESS_AND_STORE = :PROCESS_AND_STORE
+            LEGITIMATE_INTEREST_CLIENT = :LEGITIMATE_INTEREST_CLIENT
             LEGITIMATE_INTEREST_OTHER = :LEGITIMATE_INTEREST_OTHER
+            LEGITIMATE_INTEREST_PQL = :LEGITIMATE_INTEREST_PQL
+            NON_GDPR = :NON_GDPR
+            PERFORMANCE_OF_CONTRACT = :PERFORMANCE_OF_CONTRACT
+            PROCESS_AND_STORE = :PROCESS_AND_STORE
 
             # @!method self.values
             #   @return [Array<Symbol>]
@@ -161,10 +161,10 @@ module HubspotSDK
           module SetStatusSuccessReason
             extend HubspotSDK::Internal::Type::Enum
 
-            RESUBSCRIBE_OCCURRED = :RESUBSCRIBE_OCCURRED
             NO_STATUS_CHANGE = :NO_STATUS_CHANGE
-            UNSUBSCRIBE_FROM_ALL_OCCURRED = :UNSUBSCRIBE_FROM_ALL_OCCURRED
             REQUESTED_CHANGE_OCCURRED = :REQUESTED_CHANGE_OCCURRED
+            RESUBSCRIBE_OCCURRED = :RESUBSCRIBE_OCCURRED
+            UNSUBSCRIBE_FROM_ALL_OCCURRED = :UNSUBSCRIBE_FROM_ALL_OCCURRED
 
             # @!method self.values
             #   @return [Array<Symbol>]

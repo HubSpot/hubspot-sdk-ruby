@@ -52,8 +52,8 @@ module HubspotSDK
             extend HubspotSDK::Internal::Type::Enum
 
             CREATE = :CREATE
-            UPDATE = :UPDATE
             DELETE = :DELETE
+            UPDATE = :UPDATE
 
             # @!method self.values
             #   @return [Array<Symbol>]
@@ -63,9 +63,9 @@ module HubspotSDK
           module AuthSource
             extend HubspotSDK::Internal::Type::Enum
 
-            INTERNAL = :INTERNAL
             APP = :APP
             EXTERNAL = :EXTERNAL
+            INTERNAL = :INTERNAL
 
             # @!method self.values
             #   @return [Array<Symbol>]

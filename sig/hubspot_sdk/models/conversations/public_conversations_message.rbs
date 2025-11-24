@@ -152,14 +152,14 @@ module HubspotSDK
         end
 
         type truncation_status =
-          :NOT_TRUNCATED | :TRUNCATED_TO_MOST_RECENT_REPLY | :TRUNCATED
+          :NOT_TRUNCATED | :TRUNCATED | :TRUNCATED_TO_MOST_RECENT_REPLY
 
         module TruncationStatus
           extend HubspotSDK::Internal::Type::Enum
 
           NOT_TRUNCATED: :NOT_TRUNCATED
-          TRUNCATED_TO_MOST_RECENT_REPLY: :TRUNCATED_TO_MOST_RECENT_REPLY
           TRUNCATED: :TRUNCATED
+          TRUNCATED_TO_MOST_RECENT_REPLY: :TRUNCATED_TO_MOST_RECENT_REPLY
 
           def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicConversationsMessage::truncation_status]
         end

@@ -7,7 +7,7 @@ class HubspotSDK::Test::Resources::Crm::FeatureFlags::PortalsTest < HubspotSDK::
     skip("Prism tests are disabled")
 
     response =
-      @hubspot.crm.feature_flags.portals.update(0, app_id: 0, flag_name: "flagName", flag_state: :OFF)
+      @hubspot.crm.feature_flags.portals.update(0, app_id: 0, flag_name: "flagName", flag_state: :ABSENT)
 
     assert_pattern do
       response => HubspotSDK::Crm::PortalFlagStateResponse
@@ -65,7 +65,7 @@ class HubspotSDK::Test::Resources::Crm::FeatureFlags::PortalsTest < HubspotSDK::
       @hubspot.crm.feature_flags.portals.batch_upsert(
         "flagName",
         app_id: 0,
-        portal_states: [{flagState: :OFF, portalId: 0}]
+        portal_states: [{flagState: :ABSENT, portalId: 0}]
       )
 
     assert_pattern do

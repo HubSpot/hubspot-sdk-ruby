@@ -12,6 +12,8 @@ module HubspotSDK
             )
           end
 
+        # The currency code being added to the HubSpot portal for use with central
+        # exchange rates.
         sig do
           returns(
             HubspotSDK::Settings::CurrencyCreateRequest::CurrencyCode::OrSymbol
@@ -25,7 +27,11 @@ module HubspotSDK
               HubspotSDK::Settings::CurrencyCreateRequest::CurrencyCode::OrSymbol
           ).returns(T.attached_class)
         end
-        def self.new(currency_code:)
+        def self.new(
+          # The currency code being added to the HubSpot portal for use with central
+          # exchange rates.
+          currency_code:
+        )
         end
 
         sig do
@@ -39,6 +45,8 @@ module HubspotSDK
         def to_hash
         end
 
+        # The currency code being added to the HubSpot portal for use with central
+        # exchange rates.
         module CurrencyCode
           extend HubspotSDK::Internal::Type::Enum
 

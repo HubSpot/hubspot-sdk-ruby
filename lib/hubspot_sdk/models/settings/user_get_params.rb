@@ -28,8 +28,8 @@ module HubspotSDK
         module IDProperty
           extend HubspotSDK::Internal::Type::Enum
 
-          USER_ID = :USER_ID
           EMAIL = :EMAIL
+          USER_ID = :USER_ID
 
           # @!method self.values
           #   @return [Array<Symbol>]

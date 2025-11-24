@@ -77,7 +77,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::IntegratorSettingsTest < Hu
     skip("Prism tests are disabled")
 
     response =
-      @hubspot.cms.media_bridge.integrator_settings.get_object_definitions_by_media_type(:VIDEO, app_id: 0)
+      @hubspot.cms.media_bridge.integrator_settings.get_object_definitions_by_media_type(:AUDIO, app_id: 0)
 
     assert_pattern do
       response => HubspotSDK::Cms::ObjectDefinitionResponse

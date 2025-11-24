@@ -98,14 +98,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          UPDATED_IN_LAST_X_DAYS =
-            T.let(
-              :UPDATED_IN_LAST_X_DAYS,
-              HubspotSDK::Events::RollingPropertyUpdatedOperation::Operator::TaggedSymbol
-            )
           NOT_UPDATED_IN_LAST_X_DAYS =
             T.let(
               :NOT_UPDATED_IN_LAST_X_DAYS,
+              HubspotSDK::Events::RollingPropertyUpdatedOperation::Operator::TaggedSymbol
+            )
+          UPDATED_IN_LAST_X_DAYS =
+            T.let(
+              :UPDATED_IN_LAST_X_DAYS,
               HubspotSDK::Events::RollingPropertyUpdatedOperation::Operator::TaggedSymbol
             )
 

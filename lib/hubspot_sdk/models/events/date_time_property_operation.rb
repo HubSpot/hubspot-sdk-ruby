@@ -64,11 +64,11 @@ module HubspotSDK
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
-          IS_BEFORE = :IS_BEFORE
           IS_AFTER = :IS_AFTER
-          IS_EQUAL_TO = :IS_EQUAL_TO
-          IS_BEFORE_DATE = :IS_BEFORE_DATE
           IS_AFTER_DATE = :IS_AFTER_DATE
+          IS_BEFORE = :IS_BEFORE
+          IS_BEFORE_DATE = :IS_BEFORE_DATE
+          IS_EQUAL_TO = :IS_EQUAL_TO
 
           # @!method self.values
           #   @return [Array<Symbol>]

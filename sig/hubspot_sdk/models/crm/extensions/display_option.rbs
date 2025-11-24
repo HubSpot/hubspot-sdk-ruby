@@ -28,16 +28,16 @@ module HubspotSDK
             type: HubspotSDK::Models::Crm::Extensions::DisplayOption::type_
           }
 
-          type type_ = :DEFAULT | :SUCCESS | :WARNING | :DANGER | :INFO
+          type type_ = :DANGER | :DEFAULT | :INFO | :SUCCESS | :WARNING
 
           module Type
             extend HubspotSDK::Internal::Type::Enum
 
+            DANGER: :DANGER
             DEFAULT: :DEFAULT
+            INFO: :INFO
             SUCCESS: :SUCCESS
             WARNING: :WARNING
-            DANGER: :DANGER
-            INFO: :INFO
 
             def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::DisplayOption::type_]
           end

@@ -24,16 +24,16 @@ module HubspotSDK
           }
 
           type name_ =
-            :contacts | :deals | :companies | :tickets | :marketing_events
+            :companies | :contacts | :deals | :marketing_events | :tickets
 
           module Name
             extend HubspotSDK::Internal::Type::Enum
 
+            COMPANIES: :companies
             CONTACTS: :contacts
             DEALS: :deals
-            COMPANIES: :companies
-            TICKETS: :tickets
             MARKETING_EVENTS: :marketing_events
+            TICKETS: :tickets
 
             def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::CardObjectTypeBody::name_]
           end

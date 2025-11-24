@@ -145,6 +145,11 @@ module HubspotSDK
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
 
+            NOT_SPECIFIED =
+              T.let(
+                :NOT_SPECIFIED,
+                HubspotSDK::Marketing::Subscriptions::PublicWideStatus::Status::TaggedSymbol
+              )
             SUBSCRIBED =
               T.let(
                 :SUBSCRIBED,
@@ -153,11 +158,6 @@ module HubspotSDK
             UNSUBSCRIBED =
               T.let(
                 :UNSUBSCRIBED,
-                HubspotSDK::Marketing::Subscriptions::PublicWideStatus::Status::TaggedSymbol
-              )
-            NOT_SPECIFIED =
-              T.let(
-                :NOT_SPECIFIED,
                 HubspotSDK::Marketing::Subscriptions::PublicWideStatus::Status::TaggedSymbol
               )
 
@@ -185,14 +185,14 @@ module HubspotSDK
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-            PORTAL_WIDE =
-              T.let(
-                :PORTAL_WIDE,
-                HubspotSDK::Marketing::Subscriptions::PublicWideStatus::WideStatusType::TaggedSymbol
-              )
             BUSINESS_UNIT_WIDE =
               T.let(
                 :BUSINESS_UNIT_WIDE,
+                HubspotSDK::Marketing::Subscriptions::PublicWideStatus::WideStatusType::TaggedSymbol
+              )
+            PORTAL_WIDE =
+              T.let(
+                :PORTAL_WIDE,
                 HubspotSDK::Marketing::Subscriptions::PublicWideStatus::WideStatusType::TaggedSymbol
               )
 

@@ -55,17 +55,17 @@ module HubspotSDK
         }
 
         type event =
-          :CREATED | :UPDATED | :PUBLISHED | :DELETED | :UNPUBLISHED | :RESTORE
+          :CREATED | :DELETED | :PUBLISHED | :RESTORE | :UNPUBLISHED | :UPDATED
 
         module Event
           extend HubspotSDK::Internal::Type::Enum
 
           CREATED: :CREATED
-          UPDATED: :UPDATED
-          PUBLISHED: :PUBLISHED
           DELETED: :DELETED
-          UNPUBLISHED: :UNPUBLISHED
+          PUBLISHED: :PUBLISHED
           RESTORE: :RESTORE
+          UNPUBLISHED: :UNPUBLISHED
+          UPDATED: :UPDATED
 
           def self?.values: -> ::Array[HubspotSDK::Models::Cms::PublicAuditLog::event]
         end
@@ -73,48 +73,48 @@ module HubspotSDK
         type object_type =
           :BLOG
           | :BLOG_POST
-          | :LANDING_PAGE
-          | :WEBSITE_PAGE
-          | :TEMPLATE
-          | :MODULE
-          | :GLOBAL_MODULE
-          | :SERVERLESS_FUNCTION
-          | :DOMAIN
-          | :URL_MAPPING
-          | :EMAIL
           | :CONTENT_SETTINGS
-          | :HUBDB_TABLE
-          | :KNOWLEDGE_BASE_ARTICLE
-          | :KNOWLEDGE_BASE
-          | :THEME
           | :CSS
-          | :JS
           | :CTA
+          | :DOMAIN
+          | :EMAIL
           | :FILE
+          | :GLOBAL_MODULE
+          | :HUBDB_TABLE
+          | :JS
+          | :KNOWLEDGE_BASE
+          | :KNOWLEDGE_BASE_ARTICLE
+          | :LANDING_PAGE
+          | :MODULE
+          | :SERVERLESS_FUNCTION
+          | :TEMPLATE
+          | :THEME
+          | :URL_MAPPING
+          | :WEBSITE_PAGE
 
         module ObjectType
           extend HubspotSDK::Internal::Type::Enum
 
           BLOG: :BLOG
           BLOG_POST: :BLOG_POST
-          LANDING_PAGE: :LANDING_PAGE
-          WEBSITE_PAGE: :WEBSITE_PAGE
-          TEMPLATE: :TEMPLATE
-          MODULE: :MODULE
-          GLOBAL_MODULE: :GLOBAL_MODULE
-          SERVERLESS_FUNCTION: :SERVERLESS_FUNCTION
-          DOMAIN: :DOMAIN
-          URL_MAPPING: :URL_MAPPING
-          EMAIL: :EMAIL
           CONTENT_SETTINGS: :CONTENT_SETTINGS
-          HUBDB_TABLE: :HUBDB_TABLE
-          KNOWLEDGE_BASE_ARTICLE: :KNOWLEDGE_BASE_ARTICLE
-          KNOWLEDGE_BASE: :KNOWLEDGE_BASE
-          THEME: :THEME
           CSS: :CSS
-          JS: :JS
           CTA: :CTA
+          DOMAIN: :DOMAIN
+          EMAIL: :EMAIL
           FILE: :FILE
+          GLOBAL_MODULE: :GLOBAL_MODULE
+          HUBDB_TABLE: :HUBDB_TABLE
+          JS: :JS
+          KNOWLEDGE_BASE: :KNOWLEDGE_BASE
+          KNOWLEDGE_BASE_ARTICLE: :KNOWLEDGE_BASE_ARTICLE
+          LANDING_PAGE: :LANDING_PAGE
+          MODULE: :MODULE
+          SERVERLESS_FUNCTION: :SERVERLESS_FUNCTION
+          TEMPLATE: :TEMPLATE
+          THEME: :THEME
+          URL_MAPPING: :URL_MAPPING
+          WEBSITE_PAGE: :WEBSITE_PAGE
 
           def self?.values: -> ::Array[HubspotSDK::Models::Cms::PublicAuditLog::object_type]
         end

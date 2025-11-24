@@ -65,11 +65,11 @@ module HubspotSDK
         module FetchStatus
           extend HubspotSDK::Internal::Type::Enum
 
+          CACHED = :CACHED
+          FAILURE = :FAILURE
+          NOTFOUND = :NOTFOUND
           SUCCESS = :SUCCESS
           TIMEOUT = :TIMEOUT
-          FAILURE = :FAILURE
-          CACHED = :CACHED
-          NOTFOUND = :NOTFOUND
 
           # @!method self.values
           #   @return [Array<Symbol>]

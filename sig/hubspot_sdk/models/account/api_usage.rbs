@@ -44,16 +44,16 @@ module HubspotSDK
           resets_at: Time
         }
 
-        type fetch_status = :SUCCESS | :TIMEOUT | :FAILURE | :CACHED | :NOTFOUND
+        type fetch_status = :CACHED | :FAILURE | :NOTFOUND | :SUCCESS | :TIMEOUT
 
         module FetchStatus
           extend HubspotSDK::Internal::Type::Enum
 
+          CACHED: :CACHED
+          FAILURE: :FAILURE
+          NOTFOUND: :NOTFOUND
           SUCCESS: :SUCCESS
           TIMEOUT: :TIMEOUT
-          FAILURE: :FAILURE
-          CACHED: :CACHED
-          NOTFOUND: :NOTFOUND
 
           def self?.values: -> ::Array[HubspotSDK::Models::Account::APIUsage::fetch_status]
         end

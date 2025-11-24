@@ -51,24 +51,24 @@ module HubspotSDK
         }
 
         type day_of_week =
-          :MONDAY
-          | :TUESDAY
-          | :WEDNESDAY
-          | :THURSDAY
-          | :FRIDAY
+          :FRIDAY
+          | :MONDAY
           | :SATURDAY
           | :SUNDAY
+          | :THURSDAY
+          | :TUESDAY
+          | :WEDNESDAY
 
         module DayOfWeek
           extend HubspotSDK::Internal::Type::Enum
 
-          MONDAY: :MONDAY
-          TUESDAY: :TUESDAY
-          WEDNESDAY: :WEDNESDAY
-          THURSDAY: :THURSDAY
           FRIDAY: :FRIDAY
+          MONDAY: :MONDAY
           SATURDAY: :SATURDAY
           SUNDAY: :SUNDAY
+          THURSDAY: :THURSDAY
+          TUESDAY: :TUESDAY
+          WEDNESDAY: :WEDNESDAY
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::WeekReference::day_of_week]
         end

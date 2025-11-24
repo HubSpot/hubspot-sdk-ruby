@@ -32,13 +32,13 @@ module HubspotSDK
           type: HubspotSDK::Models::Marketing::LegalConsentOptionsLegitimateInterest::type_
         }
 
-        type lawful_basis = :lead | :client | :other
+        type lawful_basis = :client | :lead | :other
 
         module LawfulBasis
           extend HubspotSDK::Internal::Type::Enum
 
-          LEAD: :lead
           CLIENT: :client
+          LEAD: :lead
           OTHER: :other
 
           def self?.values: -> ::Array[HubspotSDK::Models::Marketing::LegalConsentOptionsLegitimateInterest::lawful_basis]

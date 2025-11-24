@@ -37,16 +37,16 @@ module HubspotSDK
         }
 
         type attendance_state =
-          :REGISTERED | :ATTENDED | :CANCELLED | :EMPTY | :NO_SHOW
+          :ATTENDED | :CANCELLED | :EMPTY | :NO_SHOW | :REGISTERED
 
         module AttendanceState
           extend HubspotSDK::Internal::Type::Enum
 
-          REGISTERED: :REGISTERED
           ATTENDED: :ATTENDED
           CANCELLED: :CANCELLED
           EMPTY: :EMPTY
           NO_SHOW: :NO_SHOW
+          REGISTERED: :REGISTERED
 
           def self?.values: -> ::Array[HubspotSDK::Models::Marketing::ParticipationProperties::attendance_state]
         end

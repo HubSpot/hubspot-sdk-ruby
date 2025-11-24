@@ -47,6 +47,7 @@ module HubspotSDK
         optional :limit, Integer
 
         # @!attribute sort
+        #   A query parameter to specify the order in which the URL redirects are returned.
         #
         #   @return [Array<String>, nil]
         optional :sort, HubspotSDK::Internal::Type::ArrayOf[String]
@@ -85,7 +86,7 @@ module HubspotSDK
         #
         #   @param limit [Integer] Maximum number of result per page
         #
-        #   @param sort [Array<String>]
+        #   @param sort [Array<String>] A query parameter to specify the order in which the URL redirects are returned.
         #
         #   @param updated_after [Time] Only return redirects last updated after this date.
         #

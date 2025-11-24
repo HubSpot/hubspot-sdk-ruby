@@ -41,7 +41,7 @@ module HubspotSDK
         #
         # @overload update(url_redirect_id, id:, destination:, is_match_full_url:, is_match_query_string:, is_only_after_not_found:, is_pattern:, is_protocol_agnostic:, is_trailing_slash_optional:, precedence:, redirect_style:, route_prefix:, created: nil, updated: nil, request_options: {})
         #
-        # @param url_redirect_id [String]
+        # @param url_redirect_id [String] The ID of the target url redirect to update.
         #
         # @param id [String] The unique ID of this URL redirect.
         #
@@ -105,7 +105,7 @@ module HubspotSDK
         #
         # @param limit [Integer] Maximum number of result per page
         #
-        # @param sort [Array<String>]
+        # @param sort [Array<String>] A query parameter to specify the order in which the URL redirects are returned.
         #
         # @param updated_after [Time] Only return redirects last updated after this date.
         #

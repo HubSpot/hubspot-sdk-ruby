@@ -38,8 +38,8 @@ module HubspotSDK
         module LawfulBasis
           extend HubspotSDK::Internal::Type::Enum
 
-          LEAD = :lead
           CLIENT = :client
+          LEAD = :lead
           OTHER = :other
 
           # @!method self.values

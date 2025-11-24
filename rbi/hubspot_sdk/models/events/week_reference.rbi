@@ -95,29 +95,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          MONDAY =
-            T.let(
-              :MONDAY,
-              HubspotSDK::Events::WeekReference::DayOfWeek::TaggedSymbol
-            )
-          TUESDAY =
-            T.let(
-              :TUESDAY,
-              HubspotSDK::Events::WeekReference::DayOfWeek::TaggedSymbol
-            )
-          WEDNESDAY =
-            T.let(
-              :WEDNESDAY,
-              HubspotSDK::Events::WeekReference::DayOfWeek::TaggedSymbol
-            )
-          THURSDAY =
-            T.let(
-              :THURSDAY,
-              HubspotSDK::Events::WeekReference::DayOfWeek::TaggedSymbol
-            )
           FRIDAY =
             T.let(
               :FRIDAY,
+              HubspotSDK::Events::WeekReference::DayOfWeek::TaggedSymbol
+            )
+          MONDAY =
+            T.let(
+              :MONDAY,
               HubspotSDK::Events::WeekReference::DayOfWeek::TaggedSymbol
             )
           SATURDAY =
@@ -128,6 +113,21 @@ module HubspotSDK
           SUNDAY =
             T.let(
               :SUNDAY,
+              HubspotSDK::Events::WeekReference::DayOfWeek::TaggedSymbol
+            )
+          THURSDAY =
+            T.let(
+              :THURSDAY,
+              HubspotSDK::Events::WeekReference::DayOfWeek::TaggedSymbol
+            )
+          TUESDAY =
+            T.let(
+              :TUESDAY,
+              HubspotSDK::Events::WeekReference::DayOfWeek::TaggedSymbol
+            )
+          WEDNESDAY =
+            T.let(
+              :WEDNESDAY,
               HubspotSDK::Events::WeekReference::DayOfWeek::TaggedSymbol
             )
 

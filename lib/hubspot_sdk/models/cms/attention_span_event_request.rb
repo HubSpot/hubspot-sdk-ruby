@@ -112,11 +112,11 @@ module HubspotSDK
         module MediaType
           extend HubspotSDK::Internal::Type::Enum
 
-          VIDEO = :VIDEO
           AUDIO = :AUDIO
           DOCUMENT = :DOCUMENT
-          OTHER = :OTHER
           IMAGE = :IMAGE
+          OTHER = :OTHER
+          VIDEO = :VIDEO
 
           # @!method self.values
           #   @return [Array<Symbol>]

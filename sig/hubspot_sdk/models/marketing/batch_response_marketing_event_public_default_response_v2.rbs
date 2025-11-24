@@ -46,15 +46,15 @@ module HubspotSDK
           requested_at: Time
         }
 
-        type status = :PENDING | :PROCESSING | :CANCELED | :COMPLETE
+        type status = :CANCELED | :COMPLETE | :PENDING | :PROCESSING
 
         module Status
           extend HubspotSDK::Internal::Type::Enum
 
-          PENDING: :PENDING
-          PROCESSING: :PROCESSING
           CANCELED: :CANCELED
           COMPLETE: :COMPLETE
+          PENDING: :PENDING
+          PROCESSING: :PROCESSING
 
           def self?.values: -> ::Array[HubspotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2::status]
         end

@@ -24,7 +24,7 @@ class HubspotSDK::Test::Resources::Crm::PropertyValidationsTest < HubspotSDK::Te
 
     response =
       @hubspot.crm.property_validations.crm_v3_property_validations_object_type_id_property_name_rule_type_rule_type(
-        :FORMAT,
+        :AFTER_DATETIME_DURATION,
         object_type_id: "objectTypeId",
         property_name: "propertyName",
         rule_arguments: ["string"]

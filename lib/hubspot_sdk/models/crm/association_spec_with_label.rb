@@ -29,8 +29,8 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::Enum
 
           HUBSPOT_DEFINED = :HUBSPOT_DEFINED
-          USER_DEFINED = :USER_DEFINED
           INTEGRATOR_DEFINED = :INTEGRATOR_DEFINED
+          USER_DEFINED = :USER_DEFINED
 
           # @!method self.values
           #   @return [Array<Symbol>]

@@ -30,9 +30,9 @@ module HubspotSDK
         module StatusType
           extend HubspotSDK::Internal::Type::Enum
 
-          SENT = :SENT
           FAILED = :FAILED
           READ = :READ
+          SENT = :SENT
 
           # @!method self.values
           #   @return [Array<Symbol>]

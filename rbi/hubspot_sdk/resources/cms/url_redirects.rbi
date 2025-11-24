@@ -56,6 +56,7 @@ module HubspotSDK
           ).returns(HubspotSDK::Cms::URLMapping)
         end
         def update(
+          # The ID of the target url redirect to update.
           url_redirect_id,
           # The unique ID of this URL redirect.
           id:,
@@ -124,6 +125,7 @@ module HubspotSDK
           created_before: nil,
           # Maximum number of result per page
           limit: nil,
+          # A query parameter to specify the order in which the URL redirects are returned.
           sort: nil,
           # Only return redirects last updated after this date.
           updated_after: nil,

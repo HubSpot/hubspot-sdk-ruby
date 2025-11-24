@@ -56,16 +56,16 @@ module HubspotSDK
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
-          IS_EQUAL_TO = :IS_EQUAL_TO
-          IS_NOT_EQUAL_TO = :IS_NOT_EQUAL_TO
           CONTAINS = :CONTAINS
           DOES_NOT_CONTAIN = :DOES_NOT_CONTAIN
-          STARTS_WITH = :STARTS_WITH
           ENDS_WITH = :ENDS_WITH
           HAS_EVER_BEEN_EQUAL_TO = :HAS_EVER_BEEN_EQUAL_TO
-          HAS_NEVER_BEEN_EQUAL_TO = :HAS_NEVER_BEEN_EQUAL_TO
           HAS_EVER_CONTAINED = :HAS_EVER_CONTAINED
+          HAS_NEVER_BEEN_EQUAL_TO = :HAS_NEVER_BEEN_EQUAL_TO
           HAS_NEVER_CONTAINED = :HAS_NEVER_CONTAINED
+          IS_EQUAL_TO = :IS_EQUAL_TO
+          IS_NOT_EQUAL_TO = :IS_NOT_EQUAL_TO
+          STARTS_WITH = :STARTS_WITH
 
           # @!method self.values
           #   @return [Array<Symbol>]

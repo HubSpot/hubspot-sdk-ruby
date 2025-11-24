@@ -69,6 +69,11 @@ module HubspotSDK
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
 
+            COMPANIES =
+              T.let(
+                :companies,
+                HubspotSDK::Crm::Extensions::CardObjectTypeBody::Name::TaggedSymbol
+              )
             CONTACTS =
               T.let(
                 :contacts,
@@ -79,19 +84,14 @@ module HubspotSDK
                 :deals,
                 HubspotSDK::Crm::Extensions::CardObjectTypeBody::Name::TaggedSymbol
               )
-            COMPANIES =
+            MARKETING_EVENTS =
               T.let(
-                :companies,
+                :marketing_events,
                 HubspotSDK::Crm::Extensions::CardObjectTypeBody::Name::TaggedSymbol
               )
             TICKETS =
               T.let(
                 :tickets,
-                HubspotSDK::Crm::Extensions::CardObjectTypeBody::Name::TaggedSymbol
-              )
-            MARKETING_EVENTS =
-              T.let(
-                :marketing_events,
                 HubspotSDK::Crm::Extensions::CardObjectTypeBody::Name::TaggedSymbol
               )
 

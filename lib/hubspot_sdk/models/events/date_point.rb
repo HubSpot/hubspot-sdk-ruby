@@ -83,8 +83,8 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::Enum
 
           CUSTOM = :CUSTOM
-          USER = :USER
           PORTAL = :PORTAL
+          USER = :USER
 
           # @!method self.values
           #   @return [Array<Symbol>]

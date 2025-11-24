@@ -27,26 +27,26 @@ module HubspotSDK
           time_unit: HubspotSDK::Models::Events::TimeOffset::time_unit
         }
 
-        type offset_direction = :PAST | :FUTURE
+        type offset_direction = :FUTURE | :PAST
 
         module OffsetDirection
           extend HubspotSDK::Internal::Type::Enum
 
-          PAST: :PAST
           FUTURE: :FUTURE
+          PAST: :PAST
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::TimeOffset::offset_direction]
         end
 
-        type time_unit = :WEEKS | :DAYS | :HOURS | :MINUTES
+        type time_unit = :DAYS | :HOURS | :MINUTES | :WEEKS
 
         module TimeUnit
           extend HubspotSDK::Internal::Type::Enum
 
-          WEEKS: :WEEKS
           DAYS: :DAYS
           HOURS: :HOURS
           MINUTES: :MINUTES
+          WEEKS: :WEEKS
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::TimeOffset::time_unit]
         end

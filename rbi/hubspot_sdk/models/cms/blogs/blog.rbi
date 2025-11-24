@@ -1825,6 +1825,11 @@ module HubspotSDK
               )
             HE =
               T.let(:he, HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            HE_IL =
+              T.let(
+                :"he-il",
+                HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             HI =
               T.let(:hi, HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             HI_IN =
@@ -1874,6 +1879,11 @@ module HubspotSDK
               )
             ID =
               T.let(:id, HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            ID_ID =
+              T.let(
+                :"id-id",
+                HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             IG =
               T.let(:ig, HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             IG_NG =
@@ -1886,11 +1896,6 @@ module HubspotSDK
             II_CN =
               T.let(
                 :"ii-cn",
-                HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
-              )
-            ID_ID =
-              T.let(
-                :"id-id",
                 HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
             IS =
@@ -1922,11 +1927,6 @@ module HubspotSDK
                 :"it-va",
                 HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
-            HE_IL =
-              T.let(
-                :"he-il",
-                HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
-              )
             JA =
               T.let(:ja, HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             JA_JP =
@@ -1939,13 +1939,6 @@ module HubspotSDK
             JGO_CM =
               T.let(
                 :"jgo-cm",
-                HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
-              )
-            YI =
-              T.let(:yi, HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
-            YI_001 =
-              T.let(
-                :"yi-001",
                 HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
             JMC =
@@ -2100,18 +2093,18 @@ module HubspotSDK
                 :"ksh-de",
                 HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
-            KW =
-              T.let(:kw, HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
-            KW_GB =
-              T.let(
-                :"kw-gb",
-                HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
-              )
             KU =
               T.let(:ku, HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             KU_TR =
               T.let(
                 :"ku-tr",
+                HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
+            KW =
+              T.let(:kw, HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            KW_GB =
+              T.let(
+                :"kw-gb",
                 HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
             KY =
@@ -2433,14 +2426,14 @@ module HubspotSDK
                 :"nl-be",
                 HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
-            NL_CH =
-              T.let(
-                :"nl-ch",
-                HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
-              )
             NL_BQ =
               T.let(
                 :"nl-bq",
+                HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
+            NL_CH =
+              T.let(
+                :"nl-ch",
                 HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
             NL_CW =
@@ -3202,6 +3195,13 @@ module HubspotSDK
                 :"yav-cm",
                 HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
+            YI =
+              T.let(:yi, HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            YI_001 =
+              T.let(
+                :"yi-001",
+                HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             YO =
               T.let(:yo, HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             YO_BJ =
@@ -3240,6 +3240,16 @@ module HubspotSDK
                 :"zh-cn",
                 HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
+            ZH_HANS =
+              T.let(
+                :"zh-hans",
+                HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
+            ZH_HANT =
+              T.let(
+                :"zh-hant",
+                HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             ZH_HK =
               T.let(
                 :"zh-hk",
@@ -3258,16 +3268,6 @@ module HubspotSDK
             ZH_TW =
               T.let(
                 :"zh-tw",
-                HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
-              )
-            ZH_HANS =
-              T.let(
-                :"zh-hans",
-                HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
-              )
-            ZH_HANT =
-              T.let(
-                :"zh-hant",
                 HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
             ZU =

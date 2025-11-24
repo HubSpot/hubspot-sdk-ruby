@@ -10,7 +10,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::DefinitionsTest < Hubspo
       @hubspot.automation.actions.definitions.create(
         0,
         action_url: "actionUrl",
-        functions: [{functionSource: "functionSource", functionType: :PRE_ACTION_EXECUTION}],
+        functions: [{functionSource: "functionSource", functionType: :POST_ACTION_EXECUTION}],
         input_fields: [
           {
             isRequired: true,
@@ -18,7 +18,7 @@ class HubspotSDK::Test::Resources::Automation::Actions::DefinitionsTest < Hubspo
               externalOptions: true,
               name: "name",
               options: [{hidden: false, label: "Option A", value: "A"}],
-              type: :string
+              type: :bool
             }
           }
         ],

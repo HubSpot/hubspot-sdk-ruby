@@ -73,6 +73,11 @@ module HubspotSDK
               :ANY,
               HubspotSDK::Events::SetOccurrencesRefineBy::SetType::TaggedSymbol
             )
+          ANY_INCLUDE_EMPTY =
+            T.let(
+              :ANY_INCLUDE_EMPTY,
+              HubspotSDK::Events::SetOccurrencesRefineBy::SetType::TaggedSymbol
+            )
           NONE =
             T.let(
               :NONE,
@@ -81,11 +86,6 @@ module HubspotSDK
           NONE_EXCLUDE_EMPTY =
             T.let(
               :NONE_EXCLUDE_EMPTY,
-              HubspotSDK::Events::SetOccurrencesRefineBy::SetType::TaggedSymbol
-            )
-          ANY_INCLUDE_EMPTY =
-            T.let(
-              :ANY_INCLUDE_EMPTY,
               HubspotSDK::Events::SetOccurrencesRefineBy::SetType::TaggedSymbol
             )
 

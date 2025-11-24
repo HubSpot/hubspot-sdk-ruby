@@ -153,6 +153,11 @@ module HubspotSDK
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
 
+            NOT_SPECIFIED =
+              T.let(
+                :NOT_SPECIFIED,
+                HubspotSDK::Marketing::Subscriptions::PartialPublicStatusRequest::StatusState::TaggedSymbol
+              )
             SUBSCRIBED =
               T.let(
                 :SUBSCRIBED,
@@ -161,11 +166,6 @@ module HubspotSDK
             UNSUBSCRIBED =
               T.let(
                 :UNSUBSCRIBED,
-                HubspotSDK::Marketing::Subscriptions::PartialPublicStatusRequest::StatusState::TaggedSymbol
-              )
-            NOT_SPECIFIED =
-              T.let(
-                :NOT_SPECIFIED,
                 HubspotSDK::Marketing::Subscriptions::PartialPublicStatusRequest::StatusState::TaggedSymbol
               )
 
@@ -196,9 +196,9 @@ module HubspotSDK
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-            LEGITIMATE_INTEREST_PQL =
+            CONSENT_WITH_NOTICE =
               T.let(
-                :LEGITIMATE_INTEREST_PQL,
+                :CONSENT_WITH_NOTICE,
                 HubspotSDK::Marketing::Subscriptions::PartialPublicStatusRequest::LegalBasis::TaggedSymbol
               )
             LEGITIMATE_INTEREST_CLIENT =
@@ -206,14 +206,14 @@ module HubspotSDK
                 :LEGITIMATE_INTEREST_CLIENT,
                 HubspotSDK::Marketing::Subscriptions::PartialPublicStatusRequest::LegalBasis::TaggedSymbol
               )
-            PERFORMANCE_OF_CONTRACT =
+            LEGITIMATE_INTEREST_OTHER =
               T.let(
-                :PERFORMANCE_OF_CONTRACT,
+                :LEGITIMATE_INTEREST_OTHER,
                 HubspotSDK::Marketing::Subscriptions::PartialPublicStatusRequest::LegalBasis::TaggedSymbol
               )
-            CONSENT_WITH_NOTICE =
+            LEGITIMATE_INTEREST_PQL =
               T.let(
-                :CONSENT_WITH_NOTICE,
+                :LEGITIMATE_INTEREST_PQL,
                 HubspotSDK::Marketing::Subscriptions::PartialPublicStatusRequest::LegalBasis::TaggedSymbol
               )
             NON_GDPR =
@@ -221,14 +221,14 @@ module HubspotSDK
                 :NON_GDPR,
                 HubspotSDK::Marketing::Subscriptions::PartialPublicStatusRequest::LegalBasis::TaggedSymbol
               )
+            PERFORMANCE_OF_CONTRACT =
+              T.let(
+                :PERFORMANCE_OF_CONTRACT,
+                HubspotSDK::Marketing::Subscriptions::PartialPublicStatusRequest::LegalBasis::TaggedSymbol
+              )
             PROCESS_AND_STORE =
               T.let(
                 :PROCESS_AND_STORE,
-                HubspotSDK::Marketing::Subscriptions::PartialPublicStatusRequest::LegalBasis::TaggedSymbol
-              )
-            LEGITIMATE_INTEREST_OTHER =
-              T.let(
-                :LEGITIMATE_INTEREST_OTHER,
                 HubspotSDK::Marketing::Subscriptions::PartialPublicStatusRequest::LegalBasis::TaggedSymbol
               )
 

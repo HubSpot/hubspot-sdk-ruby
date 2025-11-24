@@ -188,14 +188,19 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          MASTER =
+          AUTOMATED_LOSER_VARIANT =
             T.let(
-              :master,
+              :automated_loser_variant,
               HubspotSDK::Marketing::PublicEmailTestingDetails::AbSampleSizeDefault::TaggedSymbol
             )
-          VARIANT =
+          AUTOMATED_MASTER =
             T.let(
-              :variant,
+              :automated_master,
+              HubspotSDK::Marketing::PublicEmailTestingDetails::AbSampleSizeDefault::TaggedSymbol
+            )
+          AUTOMATED_VARIANT =
+            T.let(
+              :automated_variant,
               HubspotSDK::Marketing::PublicEmailTestingDetails::AbSampleSizeDefault::TaggedSymbol
             )
           LOSER_VARIANT =
@@ -213,19 +218,14 @@ module HubspotSDK
               :mab_variant,
               HubspotSDK::Marketing::PublicEmailTestingDetails::AbSampleSizeDefault::TaggedSymbol
             )
-          AUTOMATED_MASTER =
+          MASTER =
             T.let(
-              :automated_master,
+              :master,
               HubspotSDK::Marketing::PublicEmailTestingDetails::AbSampleSizeDefault::TaggedSymbol
             )
-          AUTOMATED_VARIANT =
+          VARIANT =
             T.let(
-              :automated_variant,
-              HubspotSDK::Marketing::PublicEmailTestingDetails::AbSampleSizeDefault::TaggedSymbol
-            )
-          AUTOMATED_LOSER_VARIANT =
-            T.let(
-              :automated_loser_variant,
+              :variant,
               HubspotSDK::Marketing::PublicEmailTestingDetails::AbSampleSizeDefault::TaggedSymbol
             )
 
@@ -254,14 +254,19 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          MASTER =
+          AUTOMATED_LOSER_VARIANT =
             T.let(
-              :master,
+              :automated_loser_variant,
               HubspotSDK::Marketing::PublicEmailTestingDetails::AbSamplingDefault::TaggedSymbol
             )
-          VARIANT =
+          AUTOMATED_MASTER =
             T.let(
-              :variant,
+              :automated_master,
+              HubspotSDK::Marketing::PublicEmailTestingDetails::AbSamplingDefault::TaggedSymbol
+            )
+          AUTOMATED_VARIANT =
+            T.let(
+              :automated_variant,
               HubspotSDK::Marketing::PublicEmailTestingDetails::AbSamplingDefault::TaggedSymbol
             )
           LOSER_VARIANT =
@@ -279,19 +284,14 @@ module HubspotSDK
               :mab_variant,
               HubspotSDK::Marketing::PublicEmailTestingDetails::AbSamplingDefault::TaggedSymbol
             )
-          AUTOMATED_MASTER =
+          MASTER =
             T.let(
-              :automated_master,
+              :master,
               HubspotSDK::Marketing::PublicEmailTestingDetails::AbSamplingDefault::TaggedSymbol
             )
-          AUTOMATED_VARIANT =
+          VARIANT =
             T.let(
-              :automated_variant,
-              HubspotSDK::Marketing::PublicEmailTestingDetails::AbSamplingDefault::TaggedSymbol
-            )
-          AUTOMATED_LOSER_VARIANT =
-            T.let(
-              :automated_loser_variant,
+              :variant,
               HubspotSDK::Marketing::PublicEmailTestingDetails::AbSamplingDefault::TaggedSymbol
             )
 
@@ -319,14 +319,19 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          MASTER =
+          AUTOMATED_LOSER_VARIANT =
             T.let(
-              :master,
+              :automated_loser_variant,
               HubspotSDK::Marketing::PublicEmailTestingDetails::AbStatus::TaggedSymbol
             )
-          VARIANT =
+          AUTOMATED_MASTER =
             T.let(
-              :variant,
+              :automated_master,
+              HubspotSDK::Marketing::PublicEmailTestingDetails::AbStatus::TaggedSymbol
+            )
+          AUTOMATED_VARIANT =
+            T.let(
+              :automated_variant,
               HubspotSDK::Marketing::PublicEmailTestingDetails::AbStatus::TaggedSymbol
             )
           LOSER_VARIANT =
@@ -344,19 +349,14 @@ module HubspotSDK
               :mab_variant,
               HubspotSDK::Marketing::PublicEmailTestingDetails::AbStatus::TaggedSymbol
             )
-          AUTOMATED_MASTER =
+          MASTER =
             T.let(
-              :automated_master,
+              :master,
               HubspotSDK::Marketing::PublicEmailTestingDetails::AbStatus::TaggedSymbol
             )
-          AUTOMATED_VARIANT =
+          VARIANT =
             T.let(
-              :automated_variant,
-              HubspotSDK::Marketing::PublicEmailTestingDetails::AbStatus::TaggedSymbol
-            )
-          AUTOMATED_LOSER_VARIANT =
-            T.let(
-              :automated_loser_variant,
+              :variant,
               HubspotSDK::Marketing::PublicEmailTestingDetails::AbStatus::TaggedSymbol
             )
 
@@ -384,14 +384,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          CLICKS_BY_OPENS =
-            T.let(
-              :CLICKS_BY_OPENS,
-              HubspotSDK::Marketing::PublicEmailTestingDetails::AbSuccessMetric::TaggedSymbol
-            )
           CLICKS_BY_DELIVERED =
             T.let(
               :CLICKS_BY_DELIVERED,
+              HubspotSDK::Marketing::PublicEmailTestingDetails::AbSuccessMetric::TaggedSymbol
+            )
+          CLICKS_BY_OPENS =
+            T.let(
+              :CLICKS_BY_OPENS,
               HubspotSDK::Marketing::PublicEmailTestingDetails::AbSuccessMetric::TaggedSymbol
             )
           OPENS_BY_DELIVERED =

@@ -14,6 +14,9 @@ module HubspotSDK
           is_published: bool,
           limit: Integer,
           marketing_campaign_names: bool,
+          published_after: Time,
+          published_at: Time,
+          published_before: Time,
           sort: ::Array[String],
           type: HubspotSDK::Models::Marketing::EmailListParams::type_,
           updated_after: Time,
@@ -71,6 +74,18 @@ module HubspotSDK
 
         def marketing_campaign_names=: (bool) -> bool
 
+        attr_reader published_after: Time?
+
+        def published_after=: (Time) -> Time
+
+        attr_reader published_at: Time?
+
+        def published_at=: (Time) -> Time
+
+        attr_reader published_before: Time?
+
+        def published_before=: (Time) -> Time
+
         attr_reader sort: ::Array[String]?
 
         def sort=: (::Array[String]) -> ::Array[String]
@@ -109,6 +124,9 @@ module HubspotSDK
           ?is_published: bool,
           ?limit: Integer,
           ?marketing_campaign_names: bool,
+          ?published_after: Time,
+          ?published_at: Time,
+          ?published_before: Time,
           ?sort: ::Array[String],
           ?type: HubspotSDK::Models::Marketing::EmailListParams::type_,
           ?updated_after: Time,
@@ -130,6 +148,9 @@ module HubspotSDK
           is_published: bool,
           limit: Integer,
           marketing_campaign_names: bool,
+          published_after: Time,
+          published_at: Time,
+          published_before: Time,
           sort: ::Array[String],
           type: HubspotSDK::Models::Marketing::EmailListParams::type_,
           updated_after: Time,
@@ -141,71 +162,71 @@ module HubspotSDK
 
         type type_ =
           :AB_EMAIL
-          | :BATCH_EMAIL
-          | :LOCALTIME_EMAIL
           | :AUTOMATED_AB_EMAIL
+          | :AUTOMATED_EMAIL
+          | :BATCH_EMAIL
           | :BLOG_EMAIL
           | :BLOG_EMAIL_CHILD
-          | :RSS_EMAIL
-          | :RSS_EMAIL_CHILD
-          | :RESUBSCRIBE_EMAIL
-          | :OPTIN_EMAIL
-          | :OPTIN_FOLLOWUP_EMAIL
-          | :AUTOMATED_EMAIL
           | :FEEDBACK_CES_EMAIL
           | :FEEDBACK_CUSTOM_EMAIL
           | :FEEDBACK_CUSTOM_SURVEY_EMAIL
           | :FEEDBACK_NPS_EMAIL
           | :FOLLOWUP_EMAIL
           | :LEADFLOW_EMAIL
-          | :SINGLE_SEND_API
+          | :LOCALTIME_EMAIL
           | :MARKETING_SINGLE_SEND_API
+          | :MEMBERSHIP_EMAIL_VERIFICATION_EMAIL
+          | :MEMBERSHIP_FOLLOW_UP_EMAIL
+          | :MEMBERSHIP_OTP_LOGIN_EMAIL
+          | :MEMBERSHIP_PASSWORD_RESET_EMAIL
+          | :MEMBERSHIP_PASSWORD_SAVED_EMAIL
+          | :MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL
+          | :MEMBERSHIP_REGISTRATION_EMAIL
+          | :MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL
+          | :MEMBERSHIP_VERIFICATION_EMAIL
+          | :OPTIN_EMAIL
+          | :OPTIN_FOLLOWUP_EMAIL
+          | :RESUBSCRIBE_EMAIL
+          | :RSS_EMAIL
+          | :RSS_EMAIL_CHILD
+          | :SINGLE_SEND_API
           | :SMTP_TOKEN
           | :TICKET_EMAIL
-          | :MEMBERSHIP_REGISTRATION_EMAIL
-          | :MEMBERSHIP_PASSWORD_SAVED_EMAIL
-          | :MEMBERSHIP_PASSWORD_RESET_EMAIL
-          | :MEMBERSHIP_EMAIL_VERIFICATION_EMAIL
-          | :MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL
-          | :MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL
-          | :MEMBERSHIP_OTP_LOGIN_EMAIL
-          | :MEMBERSHIP_FOLLOW_UP_EMAIL
-          | :MEMBERSHIP_VERIFICATION_EMAIL
 
         module Type
           extend HubspotSDK::Internal::Type::Enum
 
           AB_EMAIL: :AB_EMAIL
-          BATCH_EMAIL: :BATCH_EMAIL
-          LOCALTIME_EMAIL: :LOCALTIME_EMAIL
           AUTOMATED_AB_EMAIL: :AUTOMATED_AB_EMAIL
+          AUTOMATED_EMAIL: :AUTOMATED_EMAIL
+          BATCH_EMAIL: :BATCH_EMAIL
           BLOG_EMAIL: :BLOG_EMAIL
           BLOG_EMAIL_CHILD: :BLOG_EMAIL_CHILD
-          RSS_EMAIL: :RSS_EMAIL
-          RSS_EMAIL_CHILD: :RSS_EMAIL_CHILD
-          RESUBSCRIBE_EMAIL: :RESUBSCRIBE_EMAIL
-          OPTIN_EMAIL: :OPTIN_EMAIL
-          OPTIN_FOLLOWUP_EMAIL: :OPTIN_FOLLOWUP_EMAIL
-          AUTOMATED_EMAIL: :AUTOMATED_EMAIL
           FEEDBACK_CES_EMAIL: :FEEDBACK_CES_EMAIL
           FEEDBACK_CUSTOM_EMAIL: :FEEDBACK_CUSTOM_EMAIL
           FEEDBACK_CUSTOM_SURVEY_EMAIL: :FEEDBACK_CUSTOM_SURVEY_EMAIL
           FEEDBACK_NPS_EMAIL: :FEEDBACK_NPS_EMAIL
           FOLLOWUP_EMAIL: :FOLLOWUP_EMAIL
           LEADFLOW_EMAIL: :LEADFLOW_EMAIL
-          SINGLE_SEND_API: :SINGLE_SEND_API
+          LOCALTIME_EMAIL: :LOCALTIME_EMAIL
           MARKETING_SINGLE_SEND_API: :MARKETING_SINGLE_SEND_API
+          MEMBERSHIP_EMAIL_VERIFICATION_EMAIL: :MEMBERSHIP_EMAIL_VERIFICATION_EMAIL
+          MEMBERSHIP_FOLLOW_UP_EMAIL: :MEMBERSHIP_FOLLOW_UP_EMAIL
+          MEMBERSHIP_OTP_LOGIN_EMAIL: :MEMBERSHIP_OTP_LOGIN_EMAIL
+          MEMBERSHIP_PASSWORD_RESET_EMAIL: :MEMBERSHIP_PASSWORD_RESET_EMAIL
+          MEMBERSHIP_PASSWORD_SAVED_EMAIL: :MEMBERSHIP_PASSWORD_SAVED_EMAIL
+          MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL: :MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL
+          MEMBERSHIP_REGISTRATION_EMAIL: :MEMBERSHIP_REGISTRATION_EMAIL
+          MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL: :MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL
+          MEMBERSHIP_VERIFICATION_EMAIL: :MEMBERSHIP_VERIFICATION_EMAIL
+          OPTIN_EMAIL: :OPTIN_EMAIL
+          OPTIN_FOLLOWUP_EMAIL: :OPTIN_FOLLOWUP_EMAIL
+          RESUBSCRIBE_EMAIL: :RESUBSCRIBE_EMAIL
+          RSS_EMAIL: :RSS_EMAIL
+          RSS_EMAIL_CHILD: :RSS_EMAIL_CHILD
+          SINGLE_SEND_API: :SINGLE_SEND_API
           SMTP_TOKEN: :SMTP_TOKEN
           TICKET_EMAIL: :TICKET_EMAIL
-          MEMBERSHIP_REGISTRATION_EMAIL: :MEMBERSHIP_REGISTRATION_EMAIL
-          MEMBERSHIP_PASSWORD_SAVED_EMAIL: :MEMBERSHIP_PASSWORD_SAVED_EMAIL
-          MEMBERSHIP_PASSWORD_RESET_EMAIL: :MEMBERSHIP_PASSWORD_RESET_EMAIL
-          MEMBERSHIP_EMAIL_VERIFICATION_EMAIL: :MEMBERSHIP_EMAIL_VERIFICATION_EMAIL
-          MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL: :MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL
-          MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL: :MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL
-          MEMBERSHIP_OTP_LOGIN_EMAIL: :MEMBERSHIP_OTP_LOGIN_EMAIL
-          MEMBERSHIP_FOLLOW_UP_EMAIL: :MEMBERSHIP_FOLLOW_UP_EMAIL
-          MEMBERSHIP_VERIFICATION_EMAIL: :MEMBERSHIP_VERIFICATION_EMAIL
 
           def self?.values: -> ::Array[HubspotSDK::Models::Marketing::EmailListParams::type_]
         end

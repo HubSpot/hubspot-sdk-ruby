@@ -127,7 +127,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::OrdersTest < HubspotSDK::Test::
     response =
       @hubspot.crm.objects.orders.search(
         after: "after",
-        filter_groups: [{filters: [{operator: :EQ, propertyName: "propertyName"}]}],
+        filter_groups: [{filters: [{operator: :BETWEEN, propertyName: "propertyName"}]}],
         limit: 0,
         properties: ["string"],
         sorts: ["string"]

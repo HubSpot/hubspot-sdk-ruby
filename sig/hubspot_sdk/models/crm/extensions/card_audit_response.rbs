@@ -43,26 +43,26 @@ module HubspotSDK
             object_type_id: Integer
           }
 
-          type action_type = :CREATE | :UPDATE | :DELETE
+          type action_type = :CREATE | :DELETE | :UPDATE
 
           module ActionType
             extend HubspotSDK::Internal::Type::Enum
 
             CREATE: :CREATE
-            UPDATE: :UPDATE
             DELETE: :DELETE
+            UPDATE: :UPDATE
 
             def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::CardAuditResponse::action_type]
           end
 
-          type auth_source = :INTERNAL | :APP | :EXTERNAL
+          type auth_source = :APP | :EXTERNAL | :INTERNAL
 
           module AuthSource
             extend HubspotSDK::Internal::Type::Enum
 
-            INTERNAL: :INTERNAL
             APP: :APP
             EXTERNAL: :EXTERNAL
+            INTERNAL: :INTERNAL
 
             def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::CardAuditResponse::auth_source]
           end

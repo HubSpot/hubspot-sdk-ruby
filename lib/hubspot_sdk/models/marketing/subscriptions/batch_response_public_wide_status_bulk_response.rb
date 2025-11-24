@@ -69,10 +69,10 @@ module HubspotSDK
           module Status
             extend HubspotSDK::Internal::Type::Enum
 
-            PENDING = :PENDING
-            PROCESSING = :PROCESSING
             CANCELED = :CANCELED
             COMPLETE = :COMPLETE
+            PENDING = :PENDING
+            PROCESSING = :PROCESSING
 
             # @!method self.values
             #   @return [Array<Symbol>]

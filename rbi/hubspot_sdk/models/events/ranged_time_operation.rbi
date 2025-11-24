@@ -166,14 +166,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          INCLUSIVE =
-            T.let(
-              :INCLUSIVE,
-              HubspotSDK::Events::RangedTimeOperation::LowerBoundEndpointBehavior::TaggedSymbol
-            )
           EXCLUSIVE =
             T.let(
               :EXCLUSIVE,
+              HubspotSDK::Events::RangedTimeOperation::LowerBoundEndpointBehavior::TaggedSymbol
+            )
+          INCLUSIVE =
+            T.let(
+              :INCLUSIVE,
               HubspotSDK::Events::RangedTimeOperation::LowerBoundEndpointBehavior::TaggedSymbol
             )
 
@@ -254,9 +254,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          VALUE =
+          ANNIVERSARY =
             T.let(
-              :VALUE,
+              :ANNIVERSARY,
+              HubspotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
+            )
+          ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION =
+            T.let(
+              :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION,
               HubspotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
             )
           UPDATED_AT =
@@ -264,19 +269,14 @@ module HubspotSDK
               :UPDATED_AT,
               HubspotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
             )
-          ANNIVERSARY =
+          VALUE =
             T.let(
-              :ANNIVERSARY,
+              :VALUE,
               HubspotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
             )
           VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION =
             T.let(
               :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION,
-              HubspotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
-            )
-          ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION =
-            T.let(
-              :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION,
               HubspotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
             )
 
@@ -332,14 +332,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          INCLUSIVE =
-            T.let(
-              :INCLUSIVE,
-              HubspotSDK::Events::RangedTimeOperation::UpperBoundEndpointBehavior::TaggedSymbol
-            )
           EXCLUSIVE =
             T.let(
               :EXCLUSIVE,
+              HubspotSDK::Events::RangedTimeOperation::UpperBoundEndpointBehavior::TaggedSymbol
+            )
+          INCLUSIVE =
+            T.let(
+              :INCLUSIVE,
               HubspotSDK::Events::RangedTimeOperation::UpperBoundEndpointBehavior::TaggedSymbol
             )
 

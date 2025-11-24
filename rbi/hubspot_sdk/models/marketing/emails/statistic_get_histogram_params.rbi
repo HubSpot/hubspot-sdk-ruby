@@ -106,26 +106,6 @@ module HubspotSDK
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-            YEAR =
-              T.let(
-                :YEAR,
-                HubspotSDK::Marketing::Emails::StatisticGetHistogramParams::Interval::TaggedSymbol
-              )
-            QUARTER =
-              T.let(
-                :QUARTER,
-                HubspotSDK::Marketing::Emails::StatisticGetHistogramParams::Interval::TaggedSymbol
-              )
-            MONTH =
-              T.let(
-                :MONTH,
-                HubspotSDK::Marketing::Emails::StatisticGetHistogramParams::Interval::TaggedSymbol
-              )
-            WEEK =
-              T.let(
-                :WEEK,
-                HubspotSDK::Marketing::Emails::StatisticGetHistogramParams::Interval::TaggedSymbol
-              )
             DAY =
               T.let(
                 :DAY,
@@ -136,19 +116,39 @@ module HubspotSDK
                 :HOUR,
                 HubspotSDK::Marketing::Emails::StatisticGetHistogramParams::Interval::TaggedSymbol
               )
-            QUARTER_HOUR =
-              T.let(
-                :QUARTER_HOUR,
-                HubspotSDK::Marketing::Emails::StatisticGetHistogramParams::Interval::TaggedSymbol
-              )
             MINUTE =
               T.let(
                 :MINUTE,
                 HubspotSDK::Marketing::Emails::StatisticGetHistogramParams::Interval::TaggedSymbol
               )
+            MONTH =
+              T.let(
+                :MONTH,
+                HubspotSDK::Marketing::Emails::StatisticGetHistogramParams::Interval::TaggedSymbol
+              )
+            QUARTER =
+              T.let(
+                :QUARTER,
+                HubspotSDK::Marketing::Emails::StatisticGetHistogramParams::Interval::TaggedSymbol
+              )
+            QUARTER_HOUR =
+              T.let(
+                :QUARTER_HOUR,
+                HubspotSDK::Marketing::Emails::StatisticGetHistogramParams::Interval::TaggedSymbol
+              )
             SECOND =
               T.let(
                 :SECOND,
+                HubspotSDK::Marketing::Emails::StatisticGetHistogramParams::Interval::TaggedSymbol
+              )
+            WEEK =
+              T.let(
+                :WEEK,
+                HubspotSDK::Marketing::Emails::StatisticGetHistogramParams::Interval::TaggedSymbol
+              )
+            YEAR =
+              T.let(
+                :YEAR,
                 HubspotSDK::Marketing::Emails::StatisticGetHistogramParams::Interval::TaggedSymbol
               )
 

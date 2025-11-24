@@ -55,20 +55,20 @@ module HubspotSDK
         }
 
         type operator =
-          :IS_BEFORE
-          | :IS_AFTER
-          | :IS_EQUAL_TO
-          | :IS_BEFORE_DATE
+          :IS_AFTER
           | :IS_AFTER_DATE
+          | :IS_BEFORE
+          | :IS_BEFORE_DATE
+          | :IS_EQUAL_TO
 
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
-          IS_BEFORE: :IS_BEFORE
           IS_AFTER: :IS_AFTER
-          IS_EQUAL_TO: :IS_EQUAL_TO
-          IS_BEFORE_DATE: :IS_BEFORE_DATE
           IS_AFTER_DATE: :IS_AFTER_DATE
+          IS_BEFORE: :IS_BEFORE
+          IS_BEFORE_DATE: :IS_BEFORE_DATE
+          IS_EQUAL_TO: :IS_EQUAL_TO
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::DateTimePropertyOperation::operator]
         end

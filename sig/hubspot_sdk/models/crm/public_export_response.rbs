@@ -62,39 +62,39 @@ module HubspotSDK
         }
 
         type export_state =
-          :ENQUEUED
-          | :PROCESSING
-          | :DONE
-          | :FAILED
-          | :CANCELED
+          :CANCELED
           | :CONFLICT
-          | :DELETED
           | :DEFERRED
+          | :DELETED
+          | :DONE
+          | :ENQUEUED
+          | :FAILED
           | :PENDING_APPROVAL
+          | :PROCESSING
 
         module ExportState
           extend HubspotSDK::Internal::Type::Enum
 
-          ENQUEUED: :ENQUEUED
-          PROCESSING: :PROCESSING
-          DONE: :DONE
-          FAILED: :FAILED
           CANCELED: :CANCELED
           CONFLICT: :CONFLICT
-          DELETED: :DELETED
           DEFERRED: :DEFERRED
+          DELETED: :DELETED
+          DONE: :DONE
+          ENQUEUED: :ENQUEUED
+          FAILED: :FAILED
           PENDING_APPROVAL: :PENDING_APPROVAL
+          PROCESSING: :PROCESSING
 
           def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicExportResponse::export_state]
         end
 
-        type export_type = :VIEW | :LIST
+        type export_type = :LIST | :VIEW
 
         module ExportType
           extend HubspotSDK::Internal::Type::Enum
 
-          VIEW: :VIEW
           LIST: :LIST
+          VIEW: :VIEW
 
           def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicExportResponse::export_type]
         end

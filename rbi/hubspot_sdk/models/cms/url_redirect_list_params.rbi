@@ -59,6 +59,7 @@ module HubspotSDK
         sig { params(limit: Integer).void }
         attr_writer :limit
 
+        # A query parameter to specify the order in which the URL redirects are returned.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :sort
 
@@ -116,6 +117,7 @@ module HubspotSDK
           created_before: nil,
           # Maximum number of result per page
           limit: nil,
+          # A query parameter to specify the order in which the URL redirects are returned.
           sort: nil,
           # Only return redirects last updated after this date.
           updated_after: nil,

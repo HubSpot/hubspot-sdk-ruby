@@ -24,14 +24,14 @@ module HubspotSDK
           name: String
         }
 
-        type type_ = :GLOBAL | :OBJECT_TYPE | :HAVEN_BRANCH | :PORTAL
+        type type_ = :GLOBAL | :HAVEN_BRANCH | :OBJECT_TYPE | :PORTAL
 
         module Type
           extend HubspotSDK::Internal::Type::Enum
 
           GLOBAL: :GLOBAL
-          OBJECT_TYPE: :OBJECT_TYPE
           HAVEN_BRANCH: :HAVEN_BRANCH
+          OBJECT_TYPE: :OBJECT_TYPE
           PORTAL: :PORTAL
 
           def self?.values: -> ::Array[HubspotSDK::Models::Cms::PropertyDefinitionSource::type_]

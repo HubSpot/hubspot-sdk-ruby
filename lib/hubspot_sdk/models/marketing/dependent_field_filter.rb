@@ -42,27 +42,27 @@ module HubspotSDK
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
-          EQ = :eq
-          NEQ = :neq
+          BETWEEN = :between
           CONTAINS = :contains
           DOESNT_CONTAIN = :doesnt_contain
-          STR_STARTS_WITH = :str_starts_with
-          STR_ENDS_WITH = :str_ends_with
-          LT = :lt
-          LTE = :lte
+          EQ = :eq
           GT = :gt
           GTE = :gte
-          BETWEEN = :between
+          IS_NOT_EMPTY = :is_not_empty
+          LT = :lt
+          LTE = :lte
+          NEQ = :neq
           NOT_BETWEEN = :not_between
-          WITHIN_TIME_REVERSE = :within_time_reverse
-          WITHIN_TIME = :within_time
-          SET_ANY = :set_any
-          SET_NOT_ANY = :set_not_any
           SET_ALL = :set_all
-          SET_NOT_ALL = :set_not_all
+          SET_ANY = :set_any
           SET_EQ = :set_eq
           SET_NEQ = :set_neq
-          IS_NOT_EMPTY = :is_not_empty
+          SET_NOT_ALL = :set_not_all
+          SET_NOT_ANY = :set_not_any
+          STR_ENDS_WITH = :str_ends_with
+          STR_STARTS_WITH = :str_starts_with
+          WITHIN_TIME = :within_time
+          WITHIN_TIME_REVERSE = :within_time_reverse
 
           # @!method self.values
           #   @return [Array<Symbol>]

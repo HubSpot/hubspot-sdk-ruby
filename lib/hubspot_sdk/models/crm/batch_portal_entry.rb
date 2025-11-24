@@ -22,9 +22,9 @@ module HubspotSDK
         module FlagState
           extend HubspotSDK::Internal::Type::Enum
 
+          ABSENT = :ABSENT
           OFF = :OFF
           ON = :ON
-          ABSENT = :ABSENT
 
           # @!method self.values
           #   @return [Array<Symbol>]

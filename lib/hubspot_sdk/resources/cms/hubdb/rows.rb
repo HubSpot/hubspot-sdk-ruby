@@ -65,11 +65,11 @@ module HubspotSDK
           #
           # @param after [String] The cursor token value to get the next set of results. You can get this from the
           #
-          # @param archived [Boolean]
+          # @param archived [Boolean] Specifies whether to include archived rows in the response.
           #
           # @param limit [Integer] The maximum number of results to return. Default is `1000`.
           #
-          # @param offset [Integer]
+          # @param offset [Integer] The number of rows to skip before starting to return results.
           #
           # @param properties [Array<String>] Specify the column names to get results containing only the required columns ins
           #
@@ -100,7 +100,7 @@ module HubspotSDK
           #
           # @param table_id_or_name [String] Path param: The ID or name of the table
           #
-          # @param name [String] Query param:
+          # @param name [String] Query param: The name for the cloned row.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -159,7 +159,7 @@ module HubspotSDK
           #
           # @param table_id_or_name [String] Path param: The ID or name of the table
           #
-          # @param archived [Boolean] Query param:
+          # @param archived [Boolean] Query param: Specifies whether to return an archived row. Defaults to `false`.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -189,7 +189,7 @@ module HubspotSDK
           #
           # @param table_id_or_name [String] Path param: The ID or name of the table
           #
-          # @param archived [Boolean] Query param:
+          # @param archived [Boolean] Query param: Set this to `true` to return an archived row. Defaults to `false`.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -229,11 +229,11 @@ module HubspotSDK
           #
           # @param after [String] The cursor token value to get the next set of results. You can get this from the
           #
-          # @param archived [Boolean]
+          # @param archived [Boolean] Specifies whether to return archived rows. Defaults to `false`.
           #
           # @param limit [Integer] The maximum number of results to return. Default is `1000`.
           #
-          # @param offset [Integer]
+          # @param offset [Integer] The number of rows to skip before starting to return results.
           #
           # @param properties [Array<String>] Specify the column names to get results containing only the required columns ins
           #

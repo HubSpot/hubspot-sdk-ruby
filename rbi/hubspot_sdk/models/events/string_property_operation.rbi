@@ -98,16 +98,6 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          IS_EQUAL_TO =
-            T.let(
-              :IS_EQUAL_TO,
-              HubspotSDK::Events::StringPropertyOperation::Operator::TaggedSymbol
-            )
-          IS_NOT_EQUAL_TO =
-            T.let(
-              :IS_NOT_EQUAL_TO,
-              HubspotSDK::Events::StringPropertyOperation::Operator::TaggedSymbol
-            )
           CONTAINS =
             T.let(
               :CONTAINS,
@@ -116,11 +106,6 @@ module HubspotSDK
           DOES_NOT_CONTAIN =
             T.let(
               :DOES_NOT_CONTAIN,
-              HubspotSDK::Events::StringPropertyOperation::Operator::TaggedSymbol
-            )
-          STARTS_WITH =
-            T.let(
-              :STARTS_WITH,
               HubspotSDK::Events::StringPropertyOperation::Operator::TaggedSymbol
             )
           ENDS_WITH =
@@ -133,19 +118,34 @@ module HubspotSDK
               :HAS_EVER_BEEN_EQUAL_TO,
               HubspotSDK::Events::StringPropertyOperation::Operator::TaggedSymbol
             )
-          HAS_NEVER_BEEN_EQUAL_TO =
-            T.let(
-              :HAS_NEVER_BEEN_EQUAL_TO,
-              HubspotSDK::Events::StringPropertyOperation::Operator::TaggedSymbol
-            )
           HAS_EVER_CONTAINED =
             T.let(
               :HAS_EVER_CONTAINED,
               HubspotSDK::Events::StringPropertyOperation::Operator::TaggedSymbol
             )
+          HAS_NEVER_BEEN_EQUAL_TO =
+            T.let(
+              :HAS_NEVER_BEEN_EQUAL_TO,
+              HubspotSDK::Events::StringPropertyOperation::Operator::TaggedSymbol
+            )
           HAS_NEVER_CONTAINED =
             T.let(
               :HAS_NEVER_CONTAINED,
+              HubspotSDK::Events::StringPropertyOperation::Operator::TaggedSymbol
+            )
+          IS_EQUAL_TO =
+            T.let(
+              :IS_EQUAL_TO,
+              HubspotSDK::Events::StringPropertyOperation::Operator::TaggedSymbol
+            )
+          IS_NOT_EQUAL_TO =
+            T.let(
+              :IS_NOT_EQUAL_TO,
+              HubspotSDK::Events::StringPropertyOperation::Operator::TaggedSymbol
+            )
+          STARTS_WITH =
+            T.let(
+              :STARTS_WITH,
               HubspotSDK::Events::StringPropertyOperation::Operator::TaggedSymbol
             )
 

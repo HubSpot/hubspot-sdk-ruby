@@ -61,22 +61,22 @@ module HubspotSDK
         module TimeUnit
           extend HubspotSDK::Internal::Type::Enum
 
-          NANOS = :NANOS
-          MICROS = :MICROS
-          MILLIS = :MILLIS
-          SECONDS = :SECONDS
-          MINUTES = :MINUTES
-          HOURS = :HOURS
-          HALF_DAYS = :HALF_DAYS
-          DAYS = :DAYS
-          WEEKS = :WEEKS
-          MONTHS = :MONTHS
-          YEARS = :YEARS
-          DECADES = :DECADES
           CENTURIES = :CENTURIES
-          MILLENNIA = :MILLENNIA
+          DAYS = :DAYS
+          DECADES = :DECADES
           ERAS = :ERAS
           FOREVER = :FOREVER
+          HALF_DAYS = :HALF_DAYS
+          HOURS = :HOURS
+          MICROS = :MICROS
+          MILLENNIA = :MILLENNIA
+          MILLIS = :MILLIS
+          MINUTES = :MINUTES
+          MONTHS = :MONTHS
+          NANOS = :NANOS
+          SECONDS = :SECONDS
+          WEEKS = :WEEKS
+          YEARS = :YEARS
 
           # @!method self.values
           #   @return [Array<Symbol>]

@@ -80,9 +80,9 @@ module HubspotSDK
           module Status
             extend HubspotSDK::Internal::Type::Enum
 
+            NOT_SPECIFIED = :NOT_SPECIFIED
             SUBSCRIBED = :SUBSCRIBED
             UNSUBSCRIBED = :UNSUBSCRIBED
-            NOT_SPECIFIED = :NOT_SPECIFIED
 
             # @!method self.values
             #   @return [Array<Symbol>]
@@ -94,8 +94,8 @@ module HubspotSDK
           module WideStatusType
             extend HubspotSDK::Internal::Type::Enum
 
-            PORTAL_WIDE = :PORTAL_WIDE
             BUSINESS_UNIT_WIDE = :BUSINESS_UNIT_WIDE
+            PORTAL_WIDE = :PORTAL_WIDE
 
             # @!method self.values
             #   @return [Array<Symbol>]

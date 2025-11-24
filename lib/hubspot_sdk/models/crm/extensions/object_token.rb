@@ -46,8 +46,8 @@ module HubspotSDK
             EMAIL = :EMAIL
             LINK = :LINK
             NUMERIC = :NUMERIC
-            STRING = :STRING
             STATUS = :STATUS
+            STRING = :STRING
 
             # @!method self.values
             #   @return [Array<Symbol>]

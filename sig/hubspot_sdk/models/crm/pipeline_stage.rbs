@@ -64,14 +64,14 @@ module HubspotSDK
         }
 
         type write_permissions =
-          :CRM_PERMISSIONS_ENFORCEMENT | :READ_ONLY | :INTERNAL_ONLY
+          :CRM_PERMISSIONS_ENFORCEMENT | :INTERNAL_ONLY | :READ_ONLY
 
         module WritePermissions
           extend HubspotSDK::Internal::Type::Enum
 
           CRM_PERMISSIONS_ENFORCEMENT: :CRM_PERMISSIONS_ENFORCEMENT
-          READ_ONLY: :READ_ONLY
           INTERNAL_ONLY: :INTERNAL_ONLY
+          READ_ONLY: :READ_ONLY
 
           def self?.values: -> ::Array[HubspotSDK::Models::Crm::PipelineStage::write_permissions]
         end

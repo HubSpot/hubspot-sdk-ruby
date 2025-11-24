@@ -16,7 +16,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::TablesTest < HubspotSDK::Test::Re
             label: "label",
             name: "name",
             options: [{hidden: false, label: "Option A", value: "A"}],
-            type: :NULL
+            type: :BOOLEAN
           }
         ],
         dynamic_meta_tags: {foo: 0},
@@ -424,7 +424,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::TablesTest < HubspotSDK::Test::Re
             label: "label",
             name: "name",
             options: [{hidden: false, label: "Option A", value: "A"}],
-            type: :NULL
+            type: :BOOLEAN
           }
         ],
         dynamic_meta_tags: {foo: 0},

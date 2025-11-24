@@ -60,46 +60,46 @@ module HubspotSDK
         }
 
         type month =
-          :JAN
-          | :FEB
-          | :MAR
-          | :APR
-          | :MAY
-          | :JUN
-          | :JUL
+          :APR
           | :AUG
-          | :SEP
-          | :OCT
-          | :NOV
           | :DEC
+          | :FEB
+          | :JAN
+          | :JUL
+          | :JUN
+          | :MAR
+          | :MAY
+          | :NOV
+          | :OCT
+          | :SEP
 
         module Month
           extend HubspotSDK::Internal::Type::Enum
 
-          JAN: :JAN
-          FEB: :FEB
-          MAR: :MAR
           APR: :APR
-          MAY: :MAY
-          JUN: :JUN
-          JUL: :JUL
           AUG: :AUG
-          SEP: :SEP
-          OCT: :OCT
-          NOV: :NOV
           DEC: :DEC
+          FEB: :FEB
+          JAN: :JAN
+          JUL: :JUL
+          JUN: :JUN
+          MAR: :MAR
+          MAY: :MAY
+          NOV: :NOV
+          OCT: :OCT
+          SEP: :SEP
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::DatePropertyOperation::month]
         end
 
-        type operator = :EQUAL | :BEFORE | :AFTER
+        type operator = :AFTER | :BEFORE | :EQUAL
 
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
-          EQUAL: :EQUAL
-          BEFORE: :BEFORE
           AFTER: :AFTER
+          BEFORE: :BEFORE
+          EQUAL: :EQUAL
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::DatePropertyOperation::operator]
         end

@@ -70,14 +70,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          USER_ID =
-            T.let(
-              :USER_ID,
-              HubspotSDK::Settings::UserGetParams::IDProperty::TaggedSymbol
-            )
           EMAIL =
             T.let(
               :EMAIL,
+              HubspotSDK::Settings::UserGetParams::IDProperty::TaggedSymbol
+            )
+          USER_ID =
+            T.let(
+              :USER_ID,
               HubspotSDK::Settings::UserGetParams::IDProperty::TaggedSymbol
             )
 

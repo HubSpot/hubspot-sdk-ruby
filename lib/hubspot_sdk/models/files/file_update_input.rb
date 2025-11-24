@@ -76,13 +76,13 @@ module HubspotSDK
         module Access
           extend HubspotSDK::Internal::Type::Enum
 
-          PUBLIC_INDEXABLE = :PUBLIC_INDEXABLE
-          PUBLIC_NOT_INDEXABLE = :PUBLIC_NOT_INDEXABLE
           HIDDEN_INDEXABLE = :HIDDEN_INDEXABLE
           HIDDEN_NOT_INDEXABLE = :HIDDEN_NOT_INDEXABLE
           HIDDEN_PRIVATE = :HIDDEN_PRIVATE
-          PRIVATE = :PRIVATE
           HIDDEN_SENSITIVE = :HIDDEN_SENSITIVE
+          PRIVATE = :PRIVATE
+          PUBLIC_INDEXABLE = :PUBLIC_INDEXABLE
+          PUBLIC_NOT_INDEXABLE = :PUBLIC_NOT_INDEXABLE
           SENSITIVE = :SENSITIVE
 
           # @!method self.values

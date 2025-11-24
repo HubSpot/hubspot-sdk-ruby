@@ -56,13 +56,13 @@ module HubspotSDK
         }
 
         type link_type =
-          :PERSONAL_LINK | :GROUP_CALENDAR | :ROUND_ROBIN_CALENDAR
+          :GROUP_CALENDAR | :PERSONAL_LINK | :ROUND_ROBIN_CALENDAR
 
         module LinkType
           extend HubspotSDK::Internal::Type::Enum
 
-          PERSONAL_LINK: :PERSONAL_LINK
           GROUP_CALENDAR: :GROUP_CALENDAR
+          PERSONAL_LINK: :PERSONAL_LINK
           ROUND_ROBIN_CALENDAR: :ROUND_ROBIN_CALENDAR
 
           def self?.values: -> ::Array[HubspotSDK::Models::Scheduler::ExternalBookingInfo::link_type]

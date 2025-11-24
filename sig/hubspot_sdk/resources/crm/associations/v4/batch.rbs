@@ -39,12 +39,6 @@ module HubspotSDK
               ?request_options: HubspotSDK::request_opts
             ) -> HubspotSDK::Crm::Associations::BatchResponsePublicAssociationMultiWithLabel
 
-            def upsert: (
-              String object_type,
-              inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectBatchInputUpsert],
-              ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject
-
             def initialize: (client: HubspotSDK::Client) -> void
           end
         end

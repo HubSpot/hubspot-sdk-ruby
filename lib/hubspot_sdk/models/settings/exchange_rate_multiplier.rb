@@ -5,18 +5,25 @@ module HubspotSDK
     module Settings
       class ExchangeRateMultiplier < HubspotSDK::Internal::Type::BaseModel
         # @!attribute conversion_rate
+        #   The updated conversion rate between the to and from currency code of this
+        #   exchange rate.
         #
         #   @return [Float]
         required :conversion_rate, Float, api_name: :conversionRate
 
         # @!attribute effective_at
+        #   The date the exchange rate is in effect.
         #
         #   @return [Time, nil]
         optional :effective_at, Time, api_name: :effectiveAt
 
         # @!method initialize(conversion_rate:, effective_at: nil)
-        #   @param conversion_rate [Float]
-        #   @param effective_at [Time]
+        #   Some parameter documentations has been truncated, see
+        #   {HubspotSDK::Models::Settings::ExchangeRateMultiplier} for more details.
+        #
+        #   @param conversion_rate [Float] The updated conversion rate between the to and from currency code of this exchan
+        #
+        #   @param effective_at [Time] The date the exchange rate is in effect.
       end
     end
   end

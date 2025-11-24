@@ -63,6 +63,11 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
+          ABSENT =
+            T.let(
+              :ABSENT,
+              HubspotSDK::Crm::FlagPutRequest::DefaultState::TaggedSymbol
+            )
           OFF =
             T.let(
               :OFF,
@@ -71,11 +76,6 @@ module HubspotSDK
           ON =
             T.let(
               :ON,
-              HubspotSDK::Crm::FlagPutRequest::DefaultState::TaggedSymbol
-            )
-          ABSENT =
-            T.let(
-              :ABSENT,
               HubspotSDK::Crm::FlagPutRequest::DefaultState::TaggedSymbol
             )
 
@@ -99,6 +99,11 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
+          ABSENT =
+            T.let(
+              :ABSENT,
+              HubspotSDK::Crm::FlagPutRequest::OverrideState::TaggedSymbol
+            )
           OFF =
             T.let(
               :OFF,
@@ -107,11 +112,6 @@ module HubspotSDK
           ON =
             T.let(
               :ON,
-              HubspotSDK::Crm::FlagPutRequest::OverrideState::TaggedSymbol
-            )
-          ABSENT =
-            T.let(
-              :ABSENT,
               HubspotSDK::Crm::FlagPutRequest::OverrideState::TaggedSymbol
             )
 

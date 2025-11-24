@@ -56,13 +56,13 @@ module HubspotSDK
           default_value: String
         }
 
-        type operator = :IS_BEFORE | :IS_AFTER
+        type operator = :IS_AFTER | :IS_BEFORE
 
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
-          IS_BEFORE: :IS_BEFORE
           IS_AFTER: :IS_AFTER
+          IS_BEFORE: :IS_BEFORE
 
           def self?.values: -> ::Array[HubspotSDK::Models::Events::ComparativeDatePropertyOperation::operator]
         end

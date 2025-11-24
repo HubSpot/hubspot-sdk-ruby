@@ -56,8 +56,8 @@ module HubspotSDK
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
-          UPDATED_IN_LAST_X_DAYS = :UPDATED_IN_LAST_X_DAYS
           NOT_UPDATED_IN_LAST_X_DAYS = :NOT_UPDATED_IN_LAST_X_DAYS
+          UPDATED_IN_LAST_X_DAYS = :UPDATED_IN_LAST_X_DAYS
 
           # @!method self.values
           #   @return [Array<Symbol>]

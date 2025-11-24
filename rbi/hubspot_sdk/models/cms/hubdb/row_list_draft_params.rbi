@@ -24,6 +24,7 @@ module HubspotSDK
           sig { params(after: String).void }
           attr_writer :after
 
+          # Specifies whether to return archived rows. Defaults to `false`.
           sig { returns(T.nilable(T::Boolean)) }
           attr_reader :archived
 
@@ -37,6 +38,7 @@ module HubspotSDK
           sig { params(limit: Integer).void }
           attr_writer :limit
 
+          # The number of rows to skip before starting to return results.
           sig { returns(T.nilable(Integer)) }
           attr_reader :offset
 
@@ -74,9 +76,11 @@ module HubspotSDK
             # The cursor token value to get the next set of results. You can get this from the
             # `paging.next.after` JSON property of a paged response containing more results.
             after: nil,
+            # Specifies whether to return archived rows. Defaults to `false`.
             archived: nil,
             # The maximum number of results to return. Default is `1000`.
             limit: nil,
+            # The number of rows to skip before starting to return results.
             offset: nil,
             # Specify the column names to get results containing only the required columns
             # instead of all column details. If you want to include multiple columns in the

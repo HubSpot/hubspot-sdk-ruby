@@ -35,8 +35,8 @@ module HubspotSDK
         module SellingStrategy
           extend HubspotSDK::Internal::Type::Enum
 
-          LEAD_BASED = :LEAD_BASED
           ACCOUNT_BASED = :ACCOUNT_BASED
+          LEAD_BASED = :LEAD_BASED
 
           # @!method self.values
           #   @return [Array<Symbol>]

@@ -154,39 +154,9 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          NANOS =
+          CENTURIES =
             T.let(
-              :NANOS,
-              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
-            )
-          MICROS =
-            T.let(
-              :MICROS,
-              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
-            )
-          MILLIS =
-            T.let(
-              :MILLIS,
-              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
-            )
-          SECONDS =
-            T.let(
-              :SECONDS,
-              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
-            )
-          MINUTES =
-            T.let(
-              :MINUTES,
-              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
-            )
-          HOURS =
-            T.let(
-              :HOURS,
-              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
-            )
-          HALF_DAYS =
-            T.let(
-              :HALF_DAYS,
+              :CENTURIES,
               HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
             )
           DAYS =
@@ -194,34 +164,9 @@ module HubspotSDK
               :DAYS,
               HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
             )
-          WEEKS =
-            T.let(
-              :WEEKS,
-              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
-            )
-          MONTHS =
-            T.let(
-              :MONTHS,
-              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
-            )
-          YEARS =
-            T.let(
-              :YEARS,
-              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
-            )
           DECADES =
             T.let(
               :DECADES,
-              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
-            )
-          CENTURIES =
-            T.let(
-              :CENTURIES,
-              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
-            )
-          MILLENNIA =
-            T.let(
-              :MILLENNIA,
               HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
             )
           ERAS =
@@ -232,6 +177,61 @@ module HubspotSDK
           FOREVER =
             T.let(
               :FOREVER,
+              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
+            )
+          HALF_DAYS =
+            T.let(
+              :HALF_DAYS,
+              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
+            )
+          HOURS =
+            T.let(
+              :HOURS,
+              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
+            )
+          MICROS =
+            T.let(
+              :MICROS,
+              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
+            )
+          MILLENNIA =
+            T.let(
+              :MILLENNIA,
+              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
+            )
+          MILLIS =
+            T.let(
+              :MILLIS,
+              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
+            )
+          MINUTES =
+            T.let(
+              :MINUTES,
+              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
+            )
+          MONTHS =
+            T.let(
+              :MONTHS,
+              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
+            )
+          NANOS =
+            T.let(
+              :NANOS,
+              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
+            )
+          SECONDS =
+            T.let(
+              :SECONDS,
+              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
+            )
+          WEEKS =
+            T.let(
+              :WEEKS,
+              HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
+            )
+          YEARS =
+            T.let(
+              :YEARS,
               HubspotSDK::Automation::APITimeDelay::TimeUnit::TaggedSymbol
             )
 

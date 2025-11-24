@@ -155,7 +155,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::CompaniesTest < HubspotSDK::Tes
     response =
       @hubspot.crm.objects.companies.search(
         after: "after",
-        filter_groups: [{filters: [{operator: :EQ, propertyName: "propertyName"}]}],
+        filter_groups: [{filters: [{operator: :BETWEEN, propertyName: "propertyName"}]}],
         limit: 0,
         properties: ["string"],
         sorts: ["string"]

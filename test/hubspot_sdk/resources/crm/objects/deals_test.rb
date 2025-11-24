@@ -155,7 +155,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::DealsTest < HubspotSDK::Test::R
     response =
       @hubspot.crm.objects.deals.search(
         after: "after",
-        filter_groups: [{filters: [{operator: :EQ, propertyName: "propertyName"}]}],
+        filter_groups: [{filters: [{operator: :BETWEEN, propertyName: "propertyName"}]}],
         limit: 0,
         properties: ["string"],
         sorts: ["string"]

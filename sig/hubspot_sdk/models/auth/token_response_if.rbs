@@ -5,38 +5,60 @@ module HubspotSDK
         {
           access_token: String,
           expires_in: Integer,
-          refresh_token: String,
+          hub_id: Integer,
+          id_token: String,
+          scopes: ::Array[String],
           token_type: String,
-          id_token: String
+          user_id: Integer
         }
 
       class TokenResponseIf < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor access_token: String
+        attr_reader access_token: String?
 
-        attr_accessor expires_in: Integer
+        def access_token=: (String) -> String
 
-        attr_accessor refresh_token: String
+        attr_reader expires_in: Integer?
 
-        attr_accessor token_type: String
+        def expires_in=: (Integer) -> Integer
+
+        attr_reader hub_id: Integer?
+
+        def hub_id=: (Integer) -> Integer
 
         attr_reader id_token: String?
 
         def id_token=: (String) -> String
 
+        attr_reader scopes: ::Array[String]?
+
+        def scopes=: (::Array[String]) -> ::Array[String]
+
+        attr_reader token_type: String?
+
+        def token_type=: (String) -> String
+
+        attr_reader user_id: Integer?
+
+        def user_id=: (Integer) -> Integer
+
         def initialize: (
-          access_token: String,
-          expires_in: Integer,
-          refresh_token: String,
-          token_type: String,
-          ?id_token: String
+          ?access_token: String,
+          ?expires_in: Integer,
+          ?hub_id: Integer,
+          ?id_token: String,
+          ?scopes: ::Array[String],
+          ?token_type: String,
+          ?user_id: Integer
         ) -> void
 
         def to_hash: -> {
           access_token: String,
           expires_in: Integer,
-          refresh_token: String,
+          hub_id: Integer,
+          id_token: String,
+          scopes: ::Array[String],
           token_type: String,
-          id_token: String
+          user_id: Integer
         }
       end
     end

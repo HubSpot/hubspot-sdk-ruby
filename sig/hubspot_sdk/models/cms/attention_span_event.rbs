@@ -121,16 +121,16 @@ module HubspotSDK
           total_seconds_played: Integer
         }
 
-        type media_type = :VIDEO | :AUDIO | :DOCUMENT | :OTHER | :IMAGE
+        type media_type = :AUDIO | :DOCUMENT | :IMAGE | :OTHER | :VIDEO
 
         module MediaType
           extend HubspotSDK::Internal::Type::Enum
 
-          VIDEO: :VIDEO
           AUDIO: :AUDIO
           DOCUMENT: :DOCUMENT
-          OTHER: :OTHER
           IMAGE: :IMAGE
+          OTHER: :OTHER
+          VIDEO: :VIDEO
 
           def self?.values: -> ::Array[HubspotSDK::Models::Cms::AttentionSpanEvent::media_type]
         end

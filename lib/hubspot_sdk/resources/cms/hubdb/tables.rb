@@ -57,7 +57,7 @@ module HubspotSDK
           #
           # @param archived [Boolean] Specifies whether to return archived tables. Defaults to `false`.
           #
-          # @param content_type [String]
+          # @param content_type [String] Specifies the content type for the response.
           #
           # @param created_after [Time] Only return tables created after the specified time.
           #
@@ -65,7 +65,7 @@ module HubspotSDK
           #
           # @param created_before [Time] Only return tables created before the specified time.
           #
-          # @param is_get_localized_schema [Boolean]
+          # @param is_get_localized_schema [Boolean] Indicates whether to retrieve the localized schema for the tables.
           #
           # @param limit [Integer] The maximum number of results to return. Default is 1000.
           #
@@ -160,8 +160,10 @@ module HubspotSDK
           #
           # @overload delete_version(version_id, table_id_or_name:, request_options: {})
           #
-          # @param version_id [Integer]
-          # @param table_id_or_name [String]
+          # @param version_id [Integer] The ID of the specific version of the table to delete.
+          #
+          # @param table_id_or_name [String] The ID or name of the table whose version is to be deleted.
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -250,7 +252,7 @@ module HubspotSDK
           #
           # @param include_foreign_ids [Boolean] Set this to `true` to populate foreign ID values in the result.
           #
-          # @param is_get_localized_schema [Boolean]
+          # @param is_get_localized_schema [Boolean] Indicates whether to retrieve the localized schema for the tables.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -283,7 +285,7 @@ module HubspotSDK
           #
           # @param include_foreign_ids [Boolean] Set this to `true` to populate foreign ID values in the result.
           #
-          # @param is_get_localized_schema [Boolean]
+          # @param is_get_localized_schema [Boolean] Indicates whether to retrieve the localized schema for the table.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -351,7 +353,7 @@ module HubspotSDK
           #
           # @param archived [Boolean] Specifies whether to return archived tables. Defaults to `false`.
           #
-          # @param content_type [String]
+          # @param content_type [String] Specifies the content type for the response.
           #
           # @param created_after [Time] Only return tables created after the specified time.
           #
@@ -359,7 +361,7 @@ module HubspotSDK
           #
           # @param created_before [Time] Only return tables created before the specified time.
           #
-          # @param is_get_localized_schema [Boolean]
+          # @param is_get_localized_schema [Boolean] Indicates whether to retrieve the localized schema.
           #
           # @param limit [Integer] The maximum number of results to return. Default is 1000.
           #
@@ -510,7 +512,7 @@ module HubspotSDK
           #
           # @param include_foreign_ids [Boolean] Query param: Set this to `true` to populate foreign ID values in the result.
           #
-          # @param is_get_localized_schema [Boolean] Query param:
+          # @param is_get_localized_schema [Boolean] Query param: Indicates whether to retrieve the localized schema for the table.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

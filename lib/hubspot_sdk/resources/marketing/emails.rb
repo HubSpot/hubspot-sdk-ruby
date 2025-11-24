@@ -145,7 +145,7 @@ module HubspotSDK
         # The results can be filtered, allowing you to find a specific set of emails. See
         # the table below for a full list of filtering options.
         #
-        # @overload list(after: nil, archived: nil, campaign: nil, created_after: nil, created_at: nil, created_before: nil, included_properties: nil, include_stats: nil, is_published: nil, limit: nil, marketing_campaign_names: nil, sort: nil, type: nil, updated_after: nil, updated_at: nil, updated_before: nil, workflow_names: nil, request_options: {})
+        # @overload list(after: nil, archived: nil, campaign: nil, created_after: nil, created_at: nil, created_before: nil, included_properties: nil, include_stats: nil, is_published: nil, limit: nil, marketing_campaign_names: nil, published_after: nil, published_at: nil, published_before: nil, sort: nil, type: nil, updated_after: nil, updated_at: nil, updated_before: nil, workflow_names: nil, request_options: {})
         #
         # @param after [String] The cursor token value to get the next set of results. You can get this from the
         #
@@ -168,6 +168,12 @@ module HubspotSDK
         # @param limit [Integer] The maximum number of results to return. Default is 10.
         #
         # @param marketing_campaign_names [Boolean] Include the names for any associated marketing campaigns.
+        #
+        # @param published_after [Time]
+        #
+        # @param published_at [Time]
+        #
+        # @param published_before [Time]
         #
         # @param sort [Array<String>] Specifies which fields to use for sorting results. Valid fields are `name`, `cre
         #
@@ -199,6 +205,9 @@ module HubspotSDK
               include_stats: "includeStats",
               is_published: "isPublished",
               marketing_campaign_names: "marketingCampaignNames",
+              published_after: "publishedAfter",
+              published_at: "publishedAt",
+              published_before: "publishedBefore",
               updated_after: "updatedAfter",
               updated_at: "updatedAt",
               updated_before: "updatedBefore",

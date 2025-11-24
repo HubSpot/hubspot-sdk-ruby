@@ -55,19 +55,19 @@ module HubspotSDK
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
+          BETWEEN = :BETWEEN
+          CONTAINS_TOKEN = :CONTAINS_TOKEN
           EQ = :EQ
-          NEQ = :NEQ
-          LT = :LT
-          LTE = :LTE
           GT = :GT
           GTE = :GTE
-          BETWEEN = :BETWEEN
-          IN = :IN
-          NOT_IN = :NOT_IN
           HAS_PROPERTY = :HAS_PROPERTY
-          NOT_HAS_PROPERTY = :NOT_HAS_PROPERTY
-          CONTAINS_TOKEN = :CONTAINS_TOKEN
+          IN = :IN
+          LT = :LT
+          LTE = :LTE
+          NEQ = :NEQ
           NOT_CONTAINS_TOKEN = :NOT_CONTAINS_TOKEN
+          NOT_HAS_PROPERTY = :NOT_HAS_PROPERTY
+          NOT_IN = :NOT_IN
 
           # @!method self.values
           #   @return [Array<Symbol>]

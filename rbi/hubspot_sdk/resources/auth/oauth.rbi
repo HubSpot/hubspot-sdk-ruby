@@ -19,23 +19,35 @@ module HubspotSDK
         # to 300 characters to account for any potential changes.
         sig do
           params(
+            body_client_secret: String,
+            body_refresh_token: String,
             client_id: String,
-            client_secret: String,
             code: String,
+            code_verifier: String,
             grant_type:
               HubspotSDK::Auth::OAuthCreateAccessTokenParams::GrantType::OrSymbol,
             redirect_uri: String,
-            refresh_token: String,
+            scope: String,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Auth::TokenResponseIf)
         end
         def create_access_token(
+          # Body param:
+          body_client_secret: nil,
+          # Body param:
+          body_refresh_token: nil,
+          # Body param:
           client_id: nil,
-          client_secret: nil,
+          # Body param:
           code: nil,
+          # Body param:
+          code_verifier: nil,
+          # Body param:
           grant_type: nil,
+          # Body param:
           redirect_uri: nil,
-          refresh_token: nil,
+          # Body param:
+          scope: nil,
           request_options: {}
         )
         end

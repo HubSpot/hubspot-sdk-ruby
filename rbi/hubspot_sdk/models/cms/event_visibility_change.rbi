@@ -88,6 +88,11 @@ module HubspotSDK
               :ALL,
               HubspotSDK::Cms::EventVisibilityChange::EventType::TaggedSymbol
             )
+          ATTENTION_SPAN =
+            T.let(
+              :ATTENTION_SPAN,
+              HubspotSDK::Cms::EventVisibilityChange::EventType::TaggedSymbol
+            )
           MEDIA_PLAYS =
             T.let(
               :MEDIA_PLAYS,
@@ -96,11 +101,6 @@ module HubspotSDK
           MEDIA_PLAYS_PERCENT =
             T.let(
               :MEDIA_PLAYS_PERCENT,
-              HubspotSDK::Cms::EventVisibilityChange::EventType::TaggedSymbol
-            )
-          ATTENTION_SPAN =
-            T.let(
-              :ATTENTION_SPAN,
               HubspotSDK::Cms::EventVisibilityChange::EventType::TaggedSymbol
             )
 

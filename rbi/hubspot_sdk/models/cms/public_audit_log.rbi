@@ -43,6 +43,9 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :user_id
 
+        # Supplementary metadata associated with the audit log entry. It provides
+        # additional context about the audited event (ex: rows deleted/updated for a HubDB
+        # event, the specific fields that were changed for a Content Settings event).
         sig { returns(T.nilable(T.anything)) }
         attr_reader :meta
 
@@ -77,6 +80,9 @@ module HubspotSDK
           timestamp:,
           # The ID of the user who caused the event.
           user_id:,
+          # Supplementary metadata associated with the audit log entry. It provides
+          # additional context about the audited event (ex: rows deleted/updated for a HubDB
+          # event, the specific fields that were changed for a Content Settings event).
           meta: nil
         )
         end
@@ -115,9 +121,9 @@ module HubspotSDK
               :CREATED,
               HubspotSDK::Cms::PublicAuditLog::Event::TaggedSymbol
             )
-          UPDATED =
+          DELETED =
             T.let(
-              :UPDATED,
+              :DELETED,
               HubspotSDK::Cms::PublicAuditLog::Event::TaggedSymbol
             )
           PUBLISHED =
@@ -125,9 +131,9 @@ module HubspotSDK
               :PUBLISHED,
               HubspotSDK::Cms::PublicAuditLog::Event::TaggedSymbol
             )
-          DELETED =
+          RESTORE =
             T.let(
-              :DELETED,
+              :RESTORE,
               HubspotSDK::Cms::PublicAuditLog::Event::TaggedSymbol
             )
           UNPUBLISHED =
@@ -135,9 +141,9 @@ module HubspotSDK
               :UNPUBLISHED,
               HubspotSDK::Cms::PublicAuditLog::Event::TaggedSymbol
             )
-          RESTORE =
+          UPDATED =
             T.let(
-              :RESTORE,
+              :UPDATED,
               HubspotSDK::Cms::PublicAuditLog::Event::TaggedSymbol
             )
 
@@ -170,74 +176,9 @@ module HubspotSDK
               :BLOG_POST,
               HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
             )
-          LANDING_PAGE =
-            T.let(
-              :LANDING_PAGE,
-              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
-            )
-          WEBSITE_PAGE =
-            T.let(
-              :WEBSITE_PAGE,
-              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
-            )
-          TEMPLATE =
-            T.let(
-              :TEMPLATE,
-              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
-            )
-          MODULE =
-            T.let(
-              :MODULE,
-              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
-            )
-          GLOBAL_MODULE =
-            T.let(
-              :GLOBAL_MODULE,
-              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
-            )
-          SERVERLESS_FUNCTION =
-            T.let(
-              :SERVERLESS_FUNCTION,
-              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
-            )
-          DOMAIN =
-            T.let(
-              :DOMAIN,
-              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
-            )
-          URL_MAPPING =
-            T.let(
-              :URL_MAPPING,
-              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
-            )
-          EMAIL =
-            T.let(
-              :EMAIL,
-              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
-            )
           CONTENT_SETTINGS =
             T.let(
               :CONTENT_SETTINGS,
-              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
-            )
-          HUBDB_TABLE =
-            T.let(
-              :HUBDB_TABLE,
-              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
-            )
-          KNOWLEDGE_BASE_ARTICLE =
-            T.let(
-              :KNOWLEDGE_BASE_ARTICLE,
-              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
-            )
-          KNOWLEDGE_BASE =
-            T.let(
-              :KNOWLEDGE_BASE,
-              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
-            )
-          THEME =
-            T.let(
-              :THEME,
               HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
             )
           CSS =
@@ -245,19 +186,84 @@ module HubspotSDK
               :CSS,
               HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
             )
-          JS =
-            T.let(
-              :JS,
-              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
-            )
           CTA =
             T.let(
               :CTA,
               HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
             )
+          DOMAIN =
+            T.let(
+              :DOMAIN,
+              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
+            )
+          EMAIL =
+            T.let(
+              :EMAIL,
+              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
+            )
           FILE =
             T.let(
               :FILE,
+              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
+            )
+          GLOBAL_MODULE =
+            T.let(
+              :GLOBAL_MODULE,
+              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
+            )
+          HUBDB_TABLE =
+            T.let(
+              :HUBDB_TABLE,
+              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
+            )
+          JS =
+            T.let(
+              :JS,
+              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
+            )
+          KNOWLEDGE_BASE =
+            T.let(
+              :KNOWLEDGE_BASE,
+              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
+            )
+          KNOWLEDGE_BASE_ARTICLE =
+            T.let(
+              :KNOWLEDGE_BASE_ARTICLE,
+              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
+            )
+          LANDING_PAGE =
+            T.let(
+              :LANDING_PAGE,
+              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
+            )
+          MODULE =
+            T.let(
+              :MODULE,
+              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
+            )
+          SERVERLESS_FUNCTION =
+            T.let(
+              :SERVERLESS_FUNCTION,
+              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
+            )
+          TEMPLATE =
+            T.let(
+              :TEMPLATE,
+              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
+            )
+          THEME =
+            T.let(
+              :THEME,
+              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
+            )
+          URL_MAPPING =
+            T.let(
+              :URL_MAPPING,
+              HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
+            )
+          WEBSITE_PAGE =
+            T.let(
+              :WEBSITE_PAGE,
               HubspotSDK::Cms::PublicAuditLog::ObjectType::TaggedSymbol
             )
 

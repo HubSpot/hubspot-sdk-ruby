@@ -129,9 +129,9 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          LEGITIMATE_INTEREST_PQL =
+          CONSENT_WITH_NOTICE =
             T.let(
-              :LEGITIMATE_INTEREST_PQL,
+              :CONSENT_WITH_NOTICE,
               HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
             )
           LEGITIMATE_INTEREST_CLIENT =
@@ -139,14 +139,14 @@ module HubspotSDK
               :LEGITIMATE_INTEREST_CLIENT,
               HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
             )
-          PERFORMANCE_OF_CONTRACT =
+          LEGITIMATE_INTEREST_OTHER =
             T.let(
-              :PERFORMANCE_OF_CONTRACT,
+              :LEGITIMATE_INTEREST_OTHER,
               HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
             )
-          CONSENT_WITH_NOTICE =
+          LEGITIMATE_INTEREST_PQL =
             T.let(
-              :CONSENT_WITH_NOTICE,
+              :LEGITIMATE_INTEREST_PQL,
               HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
             )
           NON_GDPR =
@@ -154,14 +154,14 @@ module HubspotSDK
               :NON_GDPR,
               HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
             )
+          PERFORMANCE_OF_CONTRACT =
+            T.let(
+              :PERFORMANCE_OF_CONTRACT,
+              HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
+            )
           PROCESS_AND_STORE =
             T.let(
               :PROCESS_AND_STORE,
-              HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
-            )
-          LEGITIMATE_INTEREST_OTHER =
-            T.let(
-              :LEGITIMATE_INTEREST_OTHER,
               HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
             )
 

@@ -101,14 +101,14 @@ module HubspotSDK
               :DAY,
               HubspotSDK::Crm::PublicListConversionInactivity::TimeUnit::TaggedSymbol
             )
-          WEEK =
-            T.let(
-              :WEEK,
-              HubspotSDK::Crm::PublicListConversionInactivity::TimeUnit::TaggedSymbol
-            )
           MONTH =
             T.let(
               :MONTH,
+              HubspotSDK::Crm::PublicListConversionInactivity::TimeUnit::TaggedSymbol
+            )
+          WEEK =
+            T.let(
+              :WEEK,
               HubspotSDK::Crm::PublicListConversionInactivity::TimeUnit::TaggedSymbol
             )
 

@@ -9,7 +9,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::SitePagesTest < HubspotSDK::Test:
     response =
       @hubspot.cms.pages.site_pages.create(
         id: "id",
-        ab_status: :master,
+        ab_status: :automated_loser_variant,
         ab_test_id: "abTestId",
         archived_at: "2019-12-27T18:11:19.117Z",
         archived_in_dashboard: true,
@@ -148,7 +148,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::SitePagesTest < HubspotSDK::Test:
       @hubspot.cms.pages.site_pages.update(
         "objectId",
         id: "id",
-        ab_status: :master,
+        ab_status: :automated_loser_variant,
         ab_test_id: "abTestId",
         archived_at: "2019-12-27T18:11:19.117Z",
         archived_in_dashboard: true,
@@ -602,7 +602,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::SitePagesTest < HubspotSDK::Test:
         inputs: [
           {
             id: "id",
-            abStatus: :master,
+            abStatus: :automated_loser_variant,
             abTestId: "abTestId",
             archivedAt: "2019-12-27T18:11:19.117Z",
             archivedInDashboard: true,
@@ -1282,7 +1282,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::SitePagesTest < HubspotSDK::Test:
       @hubspot.cms.pages.site_pages.update_draft(
         "objectId",
         id: "id",
-        ab_status: :master,
+        ab_status: :automated_loser_variant,
         ab_test_id: "abTestId",
         archived_at: "2019-12-27T18:11:19.117Z",
         archived_in_dashboard: true,

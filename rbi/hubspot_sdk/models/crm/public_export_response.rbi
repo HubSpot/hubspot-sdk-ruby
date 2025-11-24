@@ -129,26 +129,6 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          ENQUEUED =
-            T.let(
-              :ENQUEUED,
-              HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
-            )
-          PROCESSING =
-            T.let(
-              :PROCESSING,
-              HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
-            )
-          DONE =
-            T.let(
-              :DONE,
-              HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
-            )
-          FAILED =
-            T.let(
-              :FAILED,
-              HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
-            )
           CANCELED =
             T.let(
               :CANCELED,
@@ -159,19 +139,39 @@ module HubspotSDK
               :CONFLICT,
               HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
             )
-          DELETED =
-            T.let(
-              :DELETED,
-              HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
-            )
           DEFERRED =
             T.let(
               :DEFERRED,
               HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
             )
+          DELETED =
+            T.let(
+              :DELETED,
+              HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
+            )
+          DONE =
+            T.let(
+              :DONE,
+              HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
+            )
+          ENQUEUED =
+            T.let(
+              :ENQUEUED,
+              HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
+            )
+          FAILED =
+            T.let(
+              :FAILED,
+              HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
+            )
           PENDING_APPROVAL =
             T.let(
               :PENDING_APPROVAL,
+              HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
+            )
+          PROCESSING =
+            T.let(
+              :PROCESSING,
               HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
             )
 
@@ -196,14 +196,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          VIEW =
-            T.let(
-              :VIEW,
-              HubspotSDK::Crm::PublicExportResponse::ExportType::TaggedSymbol
-            )
           LIST =
             T.let(
               :LIST,
+              HubspotSDK::Crm::PublicExportResponse::ExportType::TaggedSymbol
+            )
+          VIEW =
+            T.let(
+              :VIEW,
               HubspotSDK::Crm::PublicExportResponse::ExportType::TaggedSymbol
             )
 

@@ -109,14 +109,14 @@ module HubspotSDK
               :IS_LESS_THAN_X_DAYS_AGO,
               HubspotSDK::Events::RollingDateRangePropertyOperation::Operator::TaggedSymbol
             )
-          IS_MORE_THAN_X_DAYS_AGO =
-            T.let(
-              :IS_MORE_THAN_X_DAYS_AGO,
-              HubspotSDK::Events::RollingDateRangePropertyOperation::Operator::TaggedSymbol
-            )
           IS_LESS_THAN_X_DAYS_FROM_NOW =
             T.let(
               :IS_LESS_THAN_X_DAYS_FROM_NOW,
+              HubspotSDK::Events::RollingDateRangePropertyOperation::Operator::TaggedSymbol
+            )
+          IS_MORE_THAN_X_DAYS_AGO =
+            T.let(
+              :IS_MORE_THAN_X_DAYS_AGO,
               HubspotSDK::Events::RollingDateRangePropertyOperation::Operator::TaggedSymbol
             )
           IS_MORE_THAN_X_DAYS_FROM_NOW =

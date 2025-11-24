@@ -22,6 +22,7 @@ module HubspotSDK
           optional :include_foreign_ids, HubspotSDK::Internal::Type::Boolean
 
           # @!attribute is_get_localized_schema
+          #   Indicates whether to retrieve the localized schema for the tables.
           #
           #   @return [Boolean, nil]
           optional :is_get_localized_schema, HubspotSDK::Internal::Type::Boolean
@@ -34,7 +35,7 @@ module HubspotSDK
           #
           #   @param include_foreign_ids [Boolean] Set this to `true` to populate foreign ID values in the result.
           #
-          #   @param is_get_localized_schema [Boolean]
+          #   @param is_get_localized_schema [Boolean] Indicates whether to retrieve the localized schema for the tables.
           #
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end

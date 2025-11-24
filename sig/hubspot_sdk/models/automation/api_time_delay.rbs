@@ -69,42 +69,42 @@ module HubspotSDK
         end
 
         type time_unit =
-          :NANOS
-          | :MICROS
-          | :MILLIS
-          | :SECONDS
-          | :MINUTES
-          | :HOURS
-          | :HALF_DAYS
+          :CENTURIES
           | :DAYS
-          | :WEEKS
-          | :MONTHS
-          | :YEARS
           | :DECADES
-          | :CENTURIES
-          | :MILLENNIA
           | :ERAS
           | :FOREVER
+          | :HALF_DAYS
+          | :HOURS
+          | :MICROS
+          | :MILLENNIA
+          | :MILLIS
+          | :MINUTES
+          | :MONTHS
+          | :NANOS
+          | :SECONDS
+          | :WEEKS
+          | :YEARS
 
         module TimeUnit
           extend HubspotSDK::Internal::Type::Enum
 
-          NANOS: :NANOS
-          MICROS: :MICROS
-          MILLIS: :MILLIS
-          SECONDS: :SECONDS
-          MINUTES: :MINUTES
-          HOURS: :HOURS
-          HALF_DAYS: :HALF_DAYS
-          DAYS: :DAYS
-          WEEKS: :WEEKS
-          MONTHS: :MONTHS
-          YEARS: :YEARS
-          DECADES: :DECADES
           CENTURIES: :CENTURIES
-          MILLENNIA: :MILLENNIA
+          DAYS: :DAYS
+          DECADES: :DECADES
           ERAS: :ERAS
           FOREVER: :FOREVER
+          HALF_DAYS: :HALF_DAYS
+          HOURS: :HOURS
+          MICROS: :MICROS
+          MILLENNIA: :MILLENNIA
+          MILLIS: :MILLIS
+          MINUTES: :MINUTES
+          MONTHS: :MONTHS
+          NANOS: :NANOS
+          SECONDS: :SECONDS
+          WEEKS: :WEEKS
+          YEARS: :YEARS
 
           def self?.values: -> ::Array[HubspotSDK::Models::Automation::APITimeDelay::time_unit]
         end

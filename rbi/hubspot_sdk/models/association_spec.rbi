@@ -62,14 +62,14 @@ module HubspotSDK
             :HUBSPOT_DEFINED,
             HubspotSDK::AssociationSpec::AssociationCategory::TaggedSymbol
           )
-        USER_DEFINED =
-          T.let(
-            :USER_DEFINED,
-            HubspotSDK::AssociationSpec::AssociationCategory::TaggedSymbol
-          )
         INTEGRATOR_DEFINED =
           T.let(
             :INTEGRATOR_DEFINED,
+            HubspotSDK::AssociationSpec::AssociationCategory::TaggedSymbol
+          )
+        USER_DEFINED =
+          T.let(
+            :USER_DEFINED,
             HubspotSDK::AssociationSpec::AssociationCategory::TaggedSymbol
           )
 

@@ -95,16 +95,6 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          IS_EQUAL_TO =
-            T.let(
-              :IS_EQUAL_TO,
-              HubspotSDK::Events::BoolPropertyOperation::Operator::TaggedSymbol
-            )
-          IS_NOT_EQUAL_TO =
-            T.let(
-              :IS_NOT_EQUAL_TO,
-              HubspotSDK::Events::BoolPropertyOperation::Operator::TaggedSymbol
-            )
           HAS_EVER_BEEN_EQUAL_TO =
             T.let(
               :HAS_EVER_BEEN_EQUAL_TO,
@@ -113,6 +103,16 @@ module HubspotSDK
           HAS_NEVER_BEEN_EQUAL_TO =
             T.let(
               :HAS_NEVER_BEEN_EQUAL_TO,
+              HubspotSDK::Events::BoolPropertyOperation::Operator::TaggedSymbol
+            )
+          IS_EQUAL_TO =
+            T.let(
+              :IS_EQUAL_TO,
+              HubspotSDK::Events::BoolPropertyOperation::Operator::TaggedSymbol
+            )
+          IS_NOT_EQUAL_TO =
+            T.let(
+              :IS_NOT_EQUAL_TO,
               HubspotSDK::Events::BoolPropertyOperation::Operator::TaggedSymbol
             )
 

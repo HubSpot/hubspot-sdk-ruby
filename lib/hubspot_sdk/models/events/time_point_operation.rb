@@ -80,8 +80,8 @@ module HubspotSDK
         module EndpointBehavior
           extend HubspotSDK::Internal::Type::Enum
 
-          INCLUSIVE = :INCLUSIVE
           EXCLUSIVE = :EXCLUSIVE
+          INCLUSIVE = :INCLUSIVE
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -91,8 +91,8 @@ module HubspotSDK
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
-          IS_BEFORE = :IS_BEFORE
           IS_AFTER = :IS_AFTER
+          IS_BEFORE = :IS_BEFORE
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -102,11 +102,11 @@ module HubspotSDK
         module PropertyParser
           extend HubspotSDK::Internal::Type::Enum
 
-          VALUE = :VALUE
-          UPDATED_AT = :UPDATED_AT
           ANNIVERSARY = :ANNIVERSARY
-          VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION = :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION
           ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION = :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION
+          UPDATED_AT = :UPDATED_AT
+          VALUE = :VALUE
+          VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION = :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION
 
           # @!method self.values
           #   @return [Array<Symbol>]

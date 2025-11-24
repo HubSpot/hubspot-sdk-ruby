@@ -98,9 +98,9 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          LEGITIMATE_INTEREST_PQL =
+          CONSENT_WITH_NOTICE =
             T.let(
-              :LEGITIMATE_INTEREST_PQL,
+              :CONSENT_WITH_NOTICE,
               HubspotSDK::Marketing::PublicUpdateSubscriptionStatusRequest::LegalBasis::TaggedSymbol
             )
           LEGITIMATE_INTEREST_CLIENT =
@@ -108,14 +108,14 @@ module HubspotSDK
               :LEGITIMATE_INTEREST_CLIENT,
               HubspotSDK::Marketing::PublicUpdateSubscriptionStatusRequest::LegalBasis::TaggedSymbol
             )
-          PERFORMANCE_OF_CONTRACT =
+          LEGITIMATE_INTEREST_OTHER =
             T.let(
-              :PERFORMANCE_OF_CONTRACT,
+              :LEGITIMATE_INTEREST_OTHER,
               HubspotSDK::Marketing::PublicUpdateSubscriptionStatusRequest::LegalBasis::TaggedSymbol
             )
-          CONSENT_WITH_NOTICE =
+          LEGITIMATE_INTEREST_PQL =
             T.let(
-              :CONSENT_WITH_NOTICE,
+              :LEGITIMATE_INTEREST_PQL,
               HubspotSDK::Marketing::PublicUpdateSubscriptionStatusRequest::LegalBasis::TaggedSymbol
             )
           NON_GDPR =
@@ -123,14 +123,14 @@ module HubspotSDK
               :NON_GDPR,
               HubspotSDK::Marketing::PublicUpdateSubscriptionStatusRequest::LegalBasis::TaggedSymbol
             )
+          PERFORMANCE_OF_CONTRACT =
+            T.let(
+              :PERFORMANCE_OF_CONTRACT,
+              HubspotSDK::Marketing::PublicUpdateSubscriptionStatusRequest::LegalBasis::TaggedSymbol
+            )
           PROCESS_AND_STORE =
             T.let(
               :PROCESS_AND_STORE,
-              HubspotSDK::Marketing::PublicUpdateSubscriptionStatusRequest::LegalBasis::TaggedSymbol
-            )
-          LEGITIMATE_INTEREST_OTHER =
-            T.let(
-              :LEGITIMATE_INTEREST_OTHER,
               HubspotSDK::Marketing::PublicUpdateSubscriptionStatusRequest::LegalBasis::TaggedSymbol
             )
 

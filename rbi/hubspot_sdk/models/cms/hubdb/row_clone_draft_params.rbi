@@ -19,6 +19,7 @@ module HubspotSDK
           sig { returns(String) }
           attr_accessor :table_id_or_name
 
+          # The name for the cloned row.
           sig { returns(T.nilable(String)) }
           attr_reader :name
 
@@ -32,7 +33,12 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
-          def self.new(table_id_or_name:, name: nil, request_options: {})
+          def self.new(
+            table_id_or_name:,
+            # The name for the cloned row.
+            name: nil,
+            request_options: {}
+          )
           end
 
           sig do

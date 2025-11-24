@@ -86,20 +86,28 @@ module HubspotSDK
             T.type_alias { T.all(Symbol, HubspotSDK::Crm::Filter::Operator) }
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          EQ = T.let(:EQ, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
-          NEQ = T.let(:NEQ, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
-          LT = T.let(:LT, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
-          LTE = T.let(:LTE, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
-          GT = T.let(:GT, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
-          GTE = T.let(:GTE, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
           BETWEEN =
             T.let(:BETWEEN, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
-          IN = T.let(:IN, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
-          NOT_IN =
-            T.let(:NOT_IN, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
+          CONTAINS_TOKEN =
+            T.let(
+              :CONTAINS_TOKEN,
+              HubspotSDK::Crm::Filter::Operator::TaggedSymbol
+            )
+          EQ = T.let(:EQ, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
+          GT = T.let(:GT, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
+          GTE = T.let(:GTE, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
           HAS_PROPERTY =
             T.let(
               :HAS_PROPERTY,
+              HubspotSDK::Crm::Filter::Operator::TaggedSymbol
+            )
+          IN = T.let(:IN, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
+          LT = T.let(:LT, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
+          LTE = T.let(:LTE, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
+          NEQ = T.let(:NEQ, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
+          NOT_CONTAINS_TOKEN =
+            T.let(
+              :NOT_CONTAINS_TOKEN,
               HubspotSDK::Crm::Filter::Operator::TaggedSymbol
             )
           NOT_HAS_PROPERTY =
@@ -107,16 +115,8 @@ module HubspotSDK
               :NOT_HAS_PROPERTY,
               HubspotSDK::Crm::Filter::Operator::TaggedSymbol
             )
-          CONTAINS_TOKEN =
-            T.let(
-              :CONTAINS_TOKEN,
-              HubspotSDK::Crm::Filter::Operator::TaggedSymbol
-            )
-          NOT_CONTAINS_TOKEN =
-            T.let(
-              :NOT_CONTAINS_TOKEN,
-              HubspotSDK::Crm::Filter::Operator::TaggedSymbol
-            )
+          NOT_IN =
+            T.let(:NOT_IN, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
 
           sig do
             override.returns(

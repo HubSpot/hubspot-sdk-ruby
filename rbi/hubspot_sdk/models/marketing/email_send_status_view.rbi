@@ -141,16 +141,6 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          PENDING =
-            T.let(
-              :PENDING,
-              HubspotSDK::Marketing::EmailSendStatusView::Status::TaggedSymbol
-            )
-          PROCESSING =
-            T.let(
-              :PROCESSING,
-              HubspotSDK::Marketing::EmailSendStatusView::Status::TaggedSymbol
-            )
           CANCELED =
             T.let(
               :CANCELED,
@@ -159,6 +149,16 @@ module HubspotSDK
           COMPLETE =
             T.let(
               :COMPLETE,
+              HubspotSDK::Marketing::EmailSendStatusView::Status::TaggedSymbol
+            )
+          PENDING =
+            T.let(
+              :PENDING,
+              HubspotSDK::Marketing::EmailSendStatusView::Status::TaggedSymbol
+            )
+          PROCESSING =
+            T.let(
+              :PROCESSING,
               HubspotSDK::Marketing::EmailSendStatusView::Status::TaggedSymbol
             )
 
@@ -186,94 +186,19 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          SENT =
+          ADDRESS_LIST_BOMBED =
             T.let(
-              :SENT,
+              :ADDRESS_LIST_BOMBED,
               HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
             )
-          IDEMPOTENT_IGNORE =
+          ADDRESS_ONLY_ACCEPTED_ON_PROD =
             T.let(
-              :IDEMPOTENT_IGNORE,
+              :ADDRESS_ONLY_ACCEPTED_ON_PROD,
               HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
             )
-          QUEUED =
+          ADDRESS_OPTED_OUT =
             T.let(
-              :QUEUED,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          IDEMPOTENT_FAIL =
-            T.let(
-              :IDEMPOTENT_FAIL,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          THROTTLED =
-            T.let(
-              :THROTTLED,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          EMAIL_DISABLED =
-            T.let(
-              :EMAIL_DISABLED,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          PORTAL_SUSPENDED =
-            T.let(
-              :PORTAL_SUSPENDED,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          INVALID_TO_ADDRESS =
-            T.let(
-              :INVALID_TO_ADDRESS,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          BLOCKED_DOMAIN =
-            T.let(
-              :BLOCKED_DOMAIN,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          PREVIOUSLY_BOUNCED =
-            T.let(
-              :PREVIOUSLY_BOUNCED,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          EMAIL_UNCONFIRMED =
-            T.let(
-              :EMAIL_UNCONFIRMED,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          PREVIOUS_SPAM =
-            T.let(
-              :PREVIOUS_SPAM,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          PREVIOUSLY_UNSUBSCRIBED_MESSAGE =
-            T.let(
-              :PREVIOUSLY_UNSUBSCRIBED_MESSAGE,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          PREVIOUSLY_UNSUBSCRIBED_PORTAL =
-            T.let(
-              :PREVIOUSLY_UNSUBSCRIBED_PORTAL,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          INVALID_FROM_ADDRESS =
-            T.let(
-              :INVALID_FROM_ADDRESS,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          CAMPAIGN_CANCELLED =
-            T.let(
-              :CAMPAIGN_CANCELLED,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          VALIDATION_FAILED =
-            T.let(
-              :VALIDATION_FAILED,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          MTA_IGNORE =
-            T.let(
-              :MTA_IGNORE,
+              :ADDRESS_OPTED_OUT,
               HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
             )
           BLOCKED_ADDRESS =
@@ -281,9 +206,104 @@ module HubspotSDK
               :BLOCKED_ADDRESS,
               HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
             )
-          PORTAL_OVER_LIMIT =
+          BLOCKED_DOMAIN =
             T.let(
-              :PORTAL_OVER_LIMIT,
+              :BLOCKED_DOMAIN,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          CAMPAIGN_CANCELLED =
+            T.let(
+              :CAMPAIGN_CANCELLED,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          CANCELLED_ABUSE =
+            T.let(
+              :CANCELLED_ABUSE,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          CORRUPT_INPUT =
+            T.let(
+              :CORRUPT_INPUT,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          EMAIL_DISABLED =
+            T.let(
+              :EMAIL_DISABLED,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          EMAIL_UNCONFIRMED =
+            T.let(
+              :EMAIL_UNCONFIRMED,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          GDPR_DOI_ENABLED =
+            T.let(
+              :GDPR_DOI_ENABLED,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          GRAYMAIL_SUPPRESSED =
+            T.let(
+              :GRAYMAIL_SUPPRESSED,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          HUBL_LIMIT_EXCEEDED =
+            T.let(
+              :HUBL_LIMIT_EXCEEDED,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          IDEMPOTENT_FAIL =
+            T.let(
+              :IDEMPOTENT_FAIL,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          IDEMPOTENT_IGNORE =
+            T.let(
+              :IDEMPOTENT_IGNORE,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          INVALID_FROM_ADDRESS =
+            T.let(
+              :INVALID_FROM_ADDRESS,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          INVALID_TO_ADDRESS =
+            T.let(
+              :INVALID_TO_ADDRESS,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          LOW_CONTACT_QUALITY_SCORE =
+            T.let(
+              :LOW_CONTACT_QUALITY_SCORE,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          MISSING_CONTENT =
+            T.let(
+              :MISSING_CONTENT,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          MISSING_REQUIRED_PARAMETER =
+            T.let(
+              :MISSING_REQUIRED_PARAMETER,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          MISSING_TEMPLATE_PROPERTIES =
+            T.let(
+              :MISSING_TEMPLATE_PROPERTIES,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          MTA_IGNORE =
+            T.let(
+              :MTA_IGNORE,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          NON_MARKETABLE_CONTACT =
+            T.let(
+              :NON_MARKETABLE_CONTACT,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          PORTAL_AUTHENTICATION_FAILURE =
+            T.let(
+              :PORTAL_AUTHENTICATION_FAILURE,
               HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
             )
           PORTAL_EXPIRED =
@@ -296,29 +316,69 @@ module HubspotSDK
               :PORTAL_MISSING_MARKETING_SCOPE,
               HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
             )
-          MISSING_TEMPLATE_PROPERTIES =
+          PORTAL_NOT_AUTHORIZED_FOR_APPLICATION =
             T.let(
-              :MISSING_TEMPLATE_PROPERTIES,
+              :PORTAL_NOT_AUTHORIZED_FOR_APPLICATION,
               HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
             )
-          MISSING_REQUIRED_PARAMETER =
+          PORTAL_OVER_LIMIT =
             T.let(
-              :MISSING_REQUIRED_PARAMETER,
+              :PORTAL_OVER_LIMIT,
               HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
             )
-          PORTAL_AUTHENTICATION_FAILURE =
+          PORTAL_SUSPENDED =
             T.let(
-              :PORTAL_AUTHENTICATION_FAILURE,
+              :PORTAL_SUSPENDED,
               HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
             )
-          MISSING_CONTENT =
+          PREVIOUS_SPAM =
             T.let(
-              :MISSING_CONTENT,
+              :PREVIOUS_SPAM,
               HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
             )
-          CORRUPT_INPUT =
+          PREVIOUSLY_BOUNCED =
             T.let(
-              :CORRUPT_INPUT,
+              :PREVIOUSLY_BOUNCED,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          PREVIOUSLY_UNSUBSCRIBED_BRAND =
+            T.let(
+              :PREVIOUSLY_UNSUBSCRIBED_BRAND,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          PREVIOUSLY_UNSUBSCRIBED_BUSINESS_UNIT =
+            T.let(
+              :PREVIOUSLY_UNSUBSCRIBED_BUSINESS_UNIT,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          PREVIOUSLY_UNSUBSCRIBED_MESSAGE =
+            T.let(
+              :PREVIOUSLY_UNSUBSCRIBED_MESSAGE,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          PREVIOUSLY_UNSUBSCRIBED_PORTAL =
+            T.let(
+              :PREVIOUSLY_UNSUBSCRIBED_PORTAL,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          QUARANTINED_ADDRESS =
+            T.let(
+              :QUARANTINED_ADDRESS,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          QUEUED =
+            T.let(
+              :QUEUED,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          RECIPIENT_FATIGUE_SUPPRESSED =
+            T.let(
+              :RECIPIENT_FATIGUE_SUPPRESSED,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          SENT =
+            T.let(
+              :SENT,
               HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
             )
           TEMPLATE_RENDER_EXCEPTION =
@@ -326,9 +386,14 @@ module HubspotSDK
               :TEMPLATE_RENDER_EXCEPTION,
               HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
             )
-          GRAYMAIL_SUPPRESSED =
+          THROTTLED =
             T.let(
-              :GRAYMAIL_SUPPRESSED,
+              :THROTTLED,
+              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
+          TOO_MANY_RECIPIENTS =
+            T.let(
+              :TOO_MANY_RECIPIENTS,
               HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
             )
           UNCONFIGURED_SENDING_DOMAIN =
@@ -341,74 +406,9 @@ module HubspotSDK
               :UNDELIVERABLE,
               HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
             )
-          CANCELLED_ABUSE =
+          VALIDATION_FAILED =
             T.let(
-              :CANCELLED_ABUSE,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          QUARANTINED_ADDRESS =
-            T.let(
-              :QUARANTINED_ADDRESS,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          ADDRESS_ONLY_ACCEPTED_ON_PROD =
-            T.let(
-              :ADDRESS_ONLY_ACCEPTED_ON_PROD,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          PORTAL_NOT_AUTHORIZED_FOR_APPLICATION =
-            T.let(
-              :PORTAL_NOT_AUTHORIZED_FOR_APPLICATION,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          ADDRESS_LIST_BOMBED =
-            T.let(
-              :ADDRESS_LIST_BOMBED,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          ADDRESS_OPTED_OUT =
-            T.let(
-              :ADDRESS_OPTED_OUT,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          RECIPIENT_FATIGUE_SUPPRESSED =
-            T.let(
-              :RECIPIENT_FATIGUE_SUPPRESSED,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          TOO_MANY_RECIPIENTS =
-            T.let(
-              :TOO_MANY_RECIPIENTS,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          PREVIOUSLY_UNSUBSCRIBED_BRAND =
-            T.let(
-              :PREVIOUSLY_UNSUBSCRIBED_BRAND,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          NON_MARKETABLE_CONTACT =
-            T.let(
-              :NON_MARKETABLE_CONTACT,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          PREVIOUSLY_UNSUBSCRIBED_BUSINESS_UNIT =
-            T.let(
-              :PREVIOUSLY_UNSUBSCRIBED_BUSINESS_UNIT,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          GDPR_DOI_ENABLED =
-            T.let(
-              :GDPR_DOI_ENABLED,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          HUBL_LIMIT_EXCEEDED =
-            T.let(
-              :HUBL_LIMIT_EXCEEDED,
-              HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
-            )
-          LOW_CONTACT_QUALITY_SCORE =
-            T.let(
-              :LOW_CONTACT_QUALITY_SCORE,
+              :VALIDATION_FAILED,
               HubspotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
             )
 

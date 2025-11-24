@@ -99,13 +99,13 @@ module HubspotSDK
         module State
           extend HubspotSDK::Internal::Type::Enum
 
-          STARTED = :STARTED
-          PROCESSING = :PROCESSING
-          DONE = :DONE
-          FAILED = :FAILED
           CANCELED = :CANCELED
           DEFERRED = :DEFERRED
+          DONE = :DONE
+          FAILED = :FAILED
+          PROCESSING = :PROCESSING
           REVERTED = :REVERTED
+          STARTED = :STARTED
 
           # @!method self.values
           #   @return [Array<Symbol>]

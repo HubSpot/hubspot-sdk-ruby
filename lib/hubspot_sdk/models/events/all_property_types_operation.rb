@@ -78,10 +78,10 @@ module HubspotSDK
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 
-          IS_KNOWN = :IS_KNOWN
-          IS_UNKNOWN = :IS_UNKNOWN
           IS_BLANK = :IS_BLANK
+          IS_KNOWN = :IS_KNOWN
           IS_NOT_BLANK = :IS_NOT_BLANK
+          IS_UNKNOWN = :IS_UNKNOWN
 
           # @!method self.values
           #   @return [Array<Symbol>]

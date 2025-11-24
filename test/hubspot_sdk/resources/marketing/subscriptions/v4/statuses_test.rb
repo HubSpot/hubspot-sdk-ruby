@@ -10,7 +10,7 @@ class HubspotSDK::Test::Resources::Marketing::Subscriptions::V4::StatusesTest < 
       @hubspot.marketing.subscriptions.v4.statuses.update(
         "subscriberIdString",
         channel: :EMAIL,
-        status_state: :SUBSCRIBED,
+        status_state: :NOT_SPECIFIED,
         subscription_id: 0
       )
 
@@ -110,7 +110,7 @@ class HubspotSDK::Test::Resources::Marketing::Subscriptions::V4::StatusesTest < 
         inputs: [
           {
             channel: :EMAIL,
-            statusState: :SUBSCRIBED,
+            statusState: :NOT_SPECIFIED,
             subscriberIdString: "subscriberIdString",
             subscriptionId: 0
           }

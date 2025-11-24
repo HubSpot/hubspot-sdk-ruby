@@ -70,14 +70,14 @@ module HubspotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          BEFORE =
-            T.let(
-              :BEFORE,
-              HubspotSDK::Events::RelativeComparativeTimestampRefineBy::Comparison::TaggedSymbol
-            )
           AFTER =
             T.let(
               :AFTER,
+              HubspotSDK::Events::RelativeComparativeTimestampRefineBy::Comparison::TaggedSymbol
+            )
+          BEFORE =
+            T.let(
+              :BEFORE,
               HubspotSDK::Events::RelativeComparativeTimestampRefineBy::Comparison::TaggedSymbol
             )
 

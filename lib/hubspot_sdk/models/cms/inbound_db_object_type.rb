@@ -258,12 +258,12 @@ module HubspotSDK
         module MetaType
           extend HubspotSDK::Internal::Type::Enum
 
-          HUBSPOT = :HUBSPOT
-          INTEGRATION = :INTEGRATION
-          PORTAL_SPECIFIC = :PORTAL_SPECIFIC
           CMS_HUBDB = :CMS_HUBDB
+          HUBSPOT = :HUBSPOT
           HUBSPOT_EVENT = :HUBSPOT_EVENT
+          INTEGRATION = :INTEGRATION
           INTEGRATION_EVENT = :INTEGRATION_EVENT
+          PORTAL_SPECIFIC = :PORTAL_SPECIFIC
           PORTAL_SPECIFIC_EVENT = :PORTAL_SPECIFIC_EVENT
 
           # @!method self.values

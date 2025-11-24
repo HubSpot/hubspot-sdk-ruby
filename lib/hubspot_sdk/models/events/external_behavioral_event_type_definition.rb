@@ -108,13 +108,13 @@ module HubspotSDK
         module TrackingType
           extend HubspotSDK::Internal::Type::Enum
 
-          VISITED_URL = :VISITED_URL
           CLICKED_ELEMENT = :CLICKED_ELEMENT
-          CUSTOM_SCRIPT = :CUSTOM_SCRIPT
-          MANUAL = :MANUAL
-          IMPORT = :IMPORT
-          PROPERTY_CHANGE = :PROPERTY_CHANGE
           COMBO_EVENT = :COMBO_EVENT
+          CUSTOM_SCRIPT = :CUSTOM_SCRIPT
+          IMPORT = :IMPORT
+          MANUAL = :MANUAL
+          PROPERTY_CHANGE = :PROPERTY_CHANGE
+          VISITED_URL = :VISITED_URL
           WEBHOOK = :WEBHOOK
 
           # @!method self.values

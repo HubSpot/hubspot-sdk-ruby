@@ -34,18 +34,18 @@ module HubspotSDK
         module Month
           extend HubspotSDK::Internal::Type::Enum
 
-          JANUARY = :JANUARY
-          FEBRUARY = :FEBRUARY
-          MARCH = :MARCH
           APRIL = :APRIL
-          MAY = :MAY
-          JUNE = :JUNE
-          JULY = :JULY
           AUGUST = :AUGUST
-          SEPTEMBER = :SEPTEMBER
-          OCTOBER = :OCTOBER
-          NOVEMBER = :NOVEMBER
           DECEMBER = :DECEMBER
+          FEBRUARY = :FEBRUARY
+          JANUARY = :JANUARY
+          JULY = :JULY
+          JUNE = :JUNE
+          MARCH = :MARCH
+          MAY = :MAY
+          NOVEMBER = :NOVEMBER
+          OCTOBER = :OCTOBER
+          SEPTEMBER = :SEPTEMBER
 
           # @!method self.values
           #   @return [Array<Symbol>]

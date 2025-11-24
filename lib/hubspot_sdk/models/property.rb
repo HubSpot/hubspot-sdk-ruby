@@ -245,9 +245,9 @@ module HubspotSDK
       module DataSensitivity
         extend HubspotSDK::Internal::Type::Enum
 
+        HIGHLY_SENSITIVE = :highly_sensitive
         NON_SENSITIVE = :non_sensitive
         SENSITIVE = :sensitive
-        HIGHLY_SENSITIVE = :highly_sensitive
 
         # @!method self.values
         #   @return [Array<Symbol>]

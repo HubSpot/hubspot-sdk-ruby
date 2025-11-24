@@ -93,8 +93,8 @@ module HubspotSDK
         module SourceOfStatus
           extend HubspotSDK::Internal::Type::Enum
 
-          PORTAL_WIDE_STATUS = :PORTAL_WIDE_STATUS
           BRAND_WIDE_STATUS = :BRAND_WIDE_STATUS
+          PORTAL_WIDE_STATUS = :PORTAL_WIDE_STATUS
           SUBSCRIPTION_STATUS = :SUBSCRIPTION_STATUS
 
           # @!method self.values
@@ -107,8 +107,8 @@ module HubspotSDK
         module Status
           extend HubspotSDK::Internal::Type::Enum
 
-          SUBSCRIBED = :SUBSCRIBED
           NOT_SUBSCRIBED = :NOT_SUBSCRIBED
+          SUBSCRIBED = :SUBSCRIBED
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -120,13 +120,13 @@ module HubspotSDK
         module LegalBasis
           extend HubspotSDK::Internal::Type::Enum
 
-          LEGITIMATE_INTEREST_PQL = :LEGITIMATE_INTEREST_PQL
-          LEGITIMATE_INTEREST_CLIENT = :LEGITIMATE_INTEREST_CLIENT
-          PERFORMANCE_OF_CONTRACT = :PERFORMANCE_OF_CONTRACT
           CONSENT_WITH_NOTICE = :CONSENT_WITH_NOTICE
-          NON_GDPR = :NON_GDPR
-          PROCESS_AND_STORE = :PROCESS_AND_STORE
+          LEGITIMATE_INTEREST_CLIENT = :LEGITIMATE_INTEREST_CLIENT
           LEGITIMATE_INTEREST_OTHER = :LEGITIMATE_INTEREST_OTHER
+          LEGITIMATE_INTEREST_PQL = :LEGITIMATE_INTEREST_PQL
+          NON_GDPR = :NON_GDPR
+          PERFORMANCE_OF_CONTRACT = :PERFORMANCE_OF_CONTRACT
+          PROCESS_AND_STORE = :PROCESS_AND_STORE
 
           # @!method self.values
           #   @return [Array<Symbol>]
