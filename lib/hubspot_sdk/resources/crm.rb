@@ -45,6 +45,9 @@ module HubspotSDK
       # @return [HubspotSDK::Resources::Crm::PropertyValidations]
       attr_reader :property_validations
 
+      # @return [HubspotSDK::Resources::Crm::Subscriptions]
+      attr_reader :subscriptions
+
       # @return [HubspotSDK::Resources::Crm::Timeline]
       attr_reader :timeline
 
@@ -70,6 +73,7 @@ module HubspotSDK
         @pipelines = HubspotSDK::Resources::Crm::Pipelines.new(client: client)
         @properties = HubspotSDK::Resources::Crm::Properties.new(client: client)
         @property_validations = HubspotSDK::Resources::Crm::PropertyValidations.new(client: client)
+        @subscriptions = HubspotSDK::Resources::Crm::Subscriptions.new(client: client)
         @timeline = HubspotSDK::Resources::Crm::Timeline.new(client: client)
         @users = HubspotSDK::Resources::Crm::Users.new(client: client)
       end

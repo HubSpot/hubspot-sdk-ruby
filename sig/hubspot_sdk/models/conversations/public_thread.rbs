@@ -1,0 +1,117 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type public_thread =
+        {
+          id: String,
+          archived: bool,
+          associated_contact_id: String,
+          created_at: Time,
+          inbox_id: String,
+          original_channel_account_id: String,
+          original_channel_id: String,
+          spam: bool,
+          status: HubspotSDK::Models::Conversations::PublicThread::status,
+          assigned_to: String,
+          closed_at: Time,
+          latest_message_received_timestamp: Time,
+          latest_message_sent_timestamp: Time,
+          latest_message_timestamp: Time,
+          thread_associations: HubspotSDK::Conversations::PublicThreadAssociations
+        }
+
+      class PublicThread < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor archived: bool
+
+        attr_accessor associated_contact_id: String
+
+        attr_accessor created_at: Time
+
+        attr_accessor inbox_id: String
+
+        attr_accessor original_channel_account_id: String
+
+        attr_accessor original_channel_id: String
+
+        attr_accessor spam: bool
+
+        attr_accessor status: HubspotSDK::Models::Conversations::PublicThread::status
+
+        attr_reader assigned_to: String?
+
+        def assigned_to=: (String) -> String
+
+        attr_reader closed_at: Time?
+
+        def closed_at=: (Time) -> Time
+
+        attr_reader latest_message_received_timestamp: Time?
+
+        def latest_message_received_timestamp=: (Time) -> Time
+
+        attr_reader latest_message_sent_timestamp: Time?
+
+        def latest_message_sent_timestamp=: (Time) -> Time
+
+        attr_reader latest_message_timestamp: Time?
+
+        def latest_message_timestamp=: (Time) -> Time
+
+        attr_reader thread_associations: HubspotSDK::Conversations::PublicThreadAssociations?
+
+        def thread_associations=: (
+          HubspotSDK::Conversations::PublicThreadAssociations
+        ) -> HubspotSDK::Conversations::PublicThreadAssociations
+
+        def initialize: (
+          id: String,
+          archived: bool,
+          associated_contact_id: String,
+          created_at: Time,
+          inbox_id: String,
+          original_channel_account_id: String,
+          original_channel_id: String,
+          spam: bool,
+          status: HubspotSDK::Models::Conversations::PublicThread::status,
+          ?assigned_to: String,
+          ?closed_at: Time,
+          ?latest_message_received_timestamp: Time,
+          ?latest_message_sent_timestamp: Time,
+          ?latest_message_timestamp: Time,
+          ?thread_associations: HubspotSDK::Conversations::PublicThreadAssociations
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          archived: bool,
+          associated_contact_id: String,
+          created_at: Time,
+          inbox_id: String,
+          original_channel_account_id: String,
+          original_channel_id: String,
+          spam: bool,
+          status: HubspotSDK::Models::Conversations::PublicThread::status,
+          assigned_to: String,
+          closed_at: Time,
+          latest_message_received_timestamp: Time,
+          latest_message_sent_timestamp: Time,
+          latest_message_timestamp: Time,
+          thread_associations: HubspotSDK::Conversations::PublicThreadAssociations
+        }
+
+        type status = :CLOSED | :OPEN
+
+        module Status
+          extend HubspotSDK::Internal::Type::Enum
+
+          CLOSED: :CLOSED
+          OPEN: :OPEN
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicThread::status]
+        end
+      end
+    end
+  end
+end

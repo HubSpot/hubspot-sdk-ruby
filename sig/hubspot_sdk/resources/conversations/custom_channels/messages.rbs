@@ -18,7 +18,7 @@ module HubspotSDK
             ?pre_resolved_contacts: HubspotSDK::Conversations::PreResolvedContacts,
             ?rich_text: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Conversations::PublicConversationsMessage
+          ) -> HubspotSDK::Conversations::ConversationsPublicConversationsMessage
 
           def update: (
             String message_id,
@@ -26,13 +26,13 @@ module HubspotSDK
             status_type: HubspotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest::status_type,
             ?error_message: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Conversations::PublicConversationsMessage
+          ) -> HubspotSDK::Conversations::ConversationsPublicConversationsMessage
 
           def get: (
             String message_id,
             channel_id: Integer,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Conversations::PublicConversationsMessage
+          ) -> HubspotSDK::Conversations::ConversationsPublicConversationsMessage
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

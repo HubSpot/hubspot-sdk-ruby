@@ -1,0 +1,43 @@
+module HubspotSDK
+  module Resources
+    class Conversations
+      class Threads
+        def update: (
+          Integer thread_id,
+          ?body_archived: bool,
+          ?status: HubspotSDK::Models::Conversations::PublicThreadUpdateRequest::status,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Conversations::PublicThread
+
+        def list: (
+          ?after: String,
+          ?archived: bool,
+          ?associated_contact_id: Integer,
+          ?association: ::Array[HubspotSDK::Models::Conversations::ThreadListParams::association],
+          ?inbox_id: ::Array[Integer],
+          ?latest_message_timestamp_after: Time,
+          ?limit: Integer,
+          ?property: String,
+          ?sort: ::Array[String],
+          ?thread_status: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Conversations::PublicThread]
+
+        def delete: (
+          Integer thread_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def get: (
+          Integer thread_id,
+          ?archived: bool,
+          ?association: ::Array[HubspotSDK::Models::Conversations::ThreadGetParams::association],
+          ?property: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Conversations::PublicThread
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

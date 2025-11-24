@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type collection_response_with_total_public_channel_forward_paging =
+        {
+          results: ::Array[HubspotSDK::Conversations::PublicChannel],
+          total: Integer,
+          paging: HubspotSDK::ForwardPaging
+        }
+
+      class CollectionResponseWithTotalPublicChannelForwardPaging < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubspotSDK::Conversations::PublicChannel]
+
+        attr_accessor total: Integer
+
+        attr_reader paging: HubspotSDK::ForwardPaging?
+
+        def paging=: (HubspotSDK::ForwardPaging) -> HubspotSDK::ForwardPaging
+
+        def initialize: (
+          results: ::Array[HubspotSDK::Conversations::PublicChannel],
+          total: Integer,
+          ?paging: HubspotSDK::ForwardPaging
+        ) -> void
+
+        def to_hash: -> {
+          results: ::Array[HubspotSDK::Conversations::PublicChannel],
+          total: Integer,
+          paging: HubspotSDK::ForwardPaging
+        }
+      end
+    end
+  end
+end

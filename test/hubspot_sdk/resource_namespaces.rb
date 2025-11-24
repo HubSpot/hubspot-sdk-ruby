@@ -198,6 +198,9 @@ module HubspotSDK
           module Products
           end
 
+          module Projects
+          end
+
           module Quotes
           end
 
@@ -404,6 +407,9 @@ module HubspotSDK
         module Products
         end
 
+        module Projects
+        end
+
         module Quotes
         end
 
@@ -442,6 +448,9 @@ module HubspotSDK
       end
 
       module Products
+      end
+
+      module Projects
       end
 
       module Properties

@@ -1,0 +1,105 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type thread_list_params =
+        {
+          after: String,
+          archived: bool,
+          associated_contact_id: Integer,
+          association: ::Array[HubspotSDK::Models::Conversations::ThreadListParams::association],
+          inbox_id: ::Array[Integer],
+          latest_message_timestamp_after: Time,
+          limit: Integer,
+          property: String,
+          sort: ::Array[String],
+          thread_status: String
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class ThreadListParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_reader after: String?
+
+        def after=: (String) -> String
+
+        attr_reader archived: bool?
+
+        def archived=: (bool) -> bool
+
+        attr_reader associated_contact_id: Integer?
+
+        def associated_contact_id=: (Integer) -> Integer
+
+        attr_reader association: ::Array[HubspotSDK::Models::Conversations::ThreadListParams::association]?
+
+        def association=: (
+          ::Array[HubspotSDK::Models::Conversations::ThreadListParams::association]
+        ) -> ::Array[HubspotSDK::Models::Conversations::ThreadListParams::association]
+
+        attr_reader inbox_id: ::Array[Integer]?
+
+        def inbox_id=: (::Array[Integer]) -> ::Array[Integer]
+
+        attr_reader latest_message_timestamp_after: Time?
+
+        def latest_message_timestamp_after=: (Time) -> Time
+
+        attr_reader limit: Integer?
+
+        def limit=: (Integer) -> Integer
+
+        attr_reader property: String?
+
+        def property=: (String) -> String
+
+        attr_reader sort: ::Array[String]?
+
+        def sort=: (::Array[String]) -> ::Array[String]
+
+        attr_reader thread_status: String?
+
+        def thread_status=: (String) -> String
+
+        def initialize: (
+          ?after: String,
+          ?archived: bool,
+          ?associated_contact_id: Integer,
+          ?association: ::Array[HubspotSDK::Models::Conversations::ThreadListParams::association],
+          ?inbox_id: ::Array[Integer],
+          ?latest_message_timestamp_after: Time,
+          ?limit: Integer,
+          ?property: String,
+          ?sort: ::Array[String],
+          ?thread_status: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          after: String,
+          archived: bool,
+          associated_contact_id: Integer,
+          association: ::Array[HubspotSDK::Models::Conversations::ThreadListParams::association],
+          inbox_id: ::Array[Integer],
+          latest_message_timestamp_after: Time,
+          limit: Integer,
+          property: String,
+          sort: ::Array[String],
+          thread_status: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+
+        type association = :TICKET
+
+        module Association
+          extend HubspotSDK::Internal::Type::Enum
+
+          TICKET: :TICKET
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::ThreadListParams::association]
+        end
+      end
+    end
+  end
+end

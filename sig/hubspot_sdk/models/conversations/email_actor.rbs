@@ -1,0 +1,42 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type email_actor =
+        {
+          id: String,
+          email: String,
+          type: HubspotSDK::Models::Conversations::EmailActor::type_
+        }
+
+      class EmailActor < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor email: String
+
+        attr_accessor type: HubspotSDK::Models::Conversations::EmailActor::type_
+
+        def initialize: (
+          id: String,
+          email: String,
+          type: HubspotSDK::Models::Conversations::EmailActor::type_
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          email: String,
+          type: HubspotSDK::Models::Conversations::EmailActor::type_
+        }
+
+        type type_ = :EMAIL
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          EMAIL: :EMAIL
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::EmailActor::type_]
+        end
+      end
+    end
+  end
+end

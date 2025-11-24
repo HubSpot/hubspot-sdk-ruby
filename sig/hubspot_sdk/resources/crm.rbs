@@ -29,6 +29,8 @@ module HubspotSDK
 
       attr_reader property_validations: HubspotSDK::Resources::Crm::PropertyValidations
 
+      attr_reader subscriptions: HubspotSDK::Resources::Crm::Subscriptions
+
       attr_reader timeline: HubspotSDK::Resources::Crm::Timeline
 
       attr_reader users: HubspotSDK::Resources::Crm::Users
