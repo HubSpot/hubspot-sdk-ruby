@@ -42,7 +42,7 @@ module HubspotSDK
             path: ["conversations/v3/conversations/threads/%1$s/messages", thread_id],
             query: parsed,
             page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Conversations::CollectionResponsePublicMessageForwardPaging::Result,
+            model: HubspotSDK::Conversations::PublicMessage,
             options: options
           )
         end

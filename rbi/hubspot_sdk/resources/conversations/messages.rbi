@@ -25,7 +25,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(
             HubspotSDK::Internal::Page[
-              HubspotSDK::Conversations::CollectionResponsePublicMessageForwardPaging::Result::Variants
+              HubspotSDK::Conversations::PublicMessage::Variants
             ]
           )
         end
