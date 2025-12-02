@@ -13,11 +13,7 @@ module HubspotSDK
           end
 
         sig do
-          returns(
-            T::Array[
-              HubspotSDK::Conversations::CollectionResponsePublicMessageForwardPaging::Result::Variants
-            ]
-          )
+          returns(T::Array[HubspotSDK::Conversations::PublicMessage::Variants])
         end
         attr_accessor :results
 
@@ -50,40 +46,12 @@ module HubspotSDK
           override.returns(
             {
               results:
-                T::Array[
-                  HubspotSDK::Conversations::CollectionResponsePublicMessageForwardPaging::Result::Variants
-                ],
+                T::Array[HubspotSDK::Conversations::PublicMessage::Variants],
               paging: HubspotSDK::ForwardPaging
             }
           )
         end
         def to_hash
-        end
-
-        module Result
-          extend HubspotSDK::Internal::Type::Union
-
-          Variants =
-            T.type_alias do
-              T.any(
-                HubspotSDK::Conversations::ConversationsPublicConversationsMessage,
-                HubspotSDK::Conversations::PublicComment,
-                HubspotSDK::Conversations::PublicWelcomeMessage,
-                HubspotSDK::Conversations::PublicAssignmentMessage,
-                HubspotSDK::Conversations::PublicThreadStatusChange,
-                HubspotSDK::Conversations::PublicThreadInboxChange
-              )
-            end
-
-          sig do
-            override.returns(
-              T::Array[
-                HubspotSDK::Conversations::CollectionResponsePublicMessageForwardPaging::Result::Variants
-              ]
-            )
-          end
-          def self.variants
-          end
         end
       end
     end

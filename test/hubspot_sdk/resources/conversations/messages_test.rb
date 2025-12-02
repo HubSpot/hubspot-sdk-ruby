@@ -37,7 +37,7 @@ class HubspotSDK::Test::Resources::Conversations::MessagesTest < HubspotSDK::Tes
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Conversations::CollectionResponsePublicMessageForwardPaging::Result
+      row => HubspotSDK::Conversations::PublicMessage
     end
 
     assert_pattern do

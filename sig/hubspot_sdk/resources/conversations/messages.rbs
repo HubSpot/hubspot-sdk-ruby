@@ -16,7 +16,7 @@ module HubspotSDK
           ?property: String,
           ?sort: ::Array[String],
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Models::Conversations::CollectionResponsePublicMessageForwardPaging::result]
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Models::Conversations::public_message]
 
         def get: (
           String message_id,
