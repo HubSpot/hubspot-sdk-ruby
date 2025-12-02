@@ -4,8 +4,8 @@ module HubspotSDK
       type subtract_time =
         {
           operator: HubspotSDK::Models::Cms::SubtractTime::operator,
-          string_to_check: HubspotSDK::Models::Cms::expression,
-          inputs: ::Array[HubspotSDK::Models::Cms::expression],
+          string_to_check: ::Hash[Symbol, top],
+          inputs: ::Array[::Hash[Symbol, top]],
           property_name: String,
           value: Float
         }
@@ -13,13 +13,13 @@ module HubspotSDK
       class SubtractTime < HubspotSDK::Internal::Type::BaseModel
         attr_accessor operator: HubspotSDK::Models::Cms::SubtractTime::operator
 
-        attr_accessor string_to_check: HubspotSDK::Models::Cms::expression
+        attr_accessor string_to_check: ::Hash[Symbol, top]
 
-        attr_reader inputs: ::Array[HubspotSDK::Models::Cms::expression]?
+        attr_reader inputs: ::Array[::Hash[Symbol, top]]?
 
         def inputs=: (
-          ::Array[HubspotSDK::Models::Cms::expression]
-        ) -> ::Array[HubspotSDK::Models::Cms::expression]
+          ::Array[::Hash[Symbol, top]]
+        ) -> ::Array[::Hash[Symbol, top]]
 
         attr_reader property_name: String?
 
@@ -31,16 +31,16 @@ module HubspotSDK
 
         def initialize: (
           operator: HubspotSDK::Models::Cms::SubtractTime::operator,
-          string_to_check: HubspotSDK::Models::Cms::expression,
-          ?inputs: ::Array[HubspotSDK::Models::Cms::expression],
+          string_to_check: ::Hash[Symbol, top],
+          ?inputs: ::Array[::Hash[Symbol, top]],
           ?property_name: String,
           ?value: Float
         ) -> void
 
         def to_hash: -> {
           operator: HubspotSDK::Models::Cms::SubtractTime::operator,
-          string_to_check: HubspotSDK::Models::Cms::expression,
-          inputs: ::Array[HubspotSDK::Models::Cms::expression],
+          string_to_check: ::Hash[Symbol, top],
+          inputs: ::Array[::Hash[Symbol, top]],
           property_name: String,
           value: Float
         }

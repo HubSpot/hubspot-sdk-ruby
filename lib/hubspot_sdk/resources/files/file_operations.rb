@@ -109,9 +109,9 @@ module HubspotSDK
 
         # Retrieve a file by its path.
         #
-        # @overload get_by_path(path, properties: nil, request_options: {})
+        # @overload get_by_path(file_path, properties: nil, request_options: {})
         #
-        # @param path [String] The path of the file.
+        # @param file_path [String] The path of the file.
         #
         # @param properties [Array<String>] Properties to return in the response.
         #
@@ -120,11 +120,11 @@ module HubspotSDK
         # @return [HubspotSDK::Models::Files::FileStat]
         #
         # @see HubspotSDK::Models::Files::FileOperationGetByPathParams
-        def get_by_path(path, params = {})
+        def get_by_path(file_path, params = {})
           parsed, options = HubspotSDK::Files::FileOperationGetByPathParams.dump_request(params)
           @client.request(
             method: :get,
-            path: ["files/v3/files/stat/%1$s", path],
+            path: ["files/v3/files/stat/%1$s", file_path],
             query: parsed,
             model: HubspotSDK::Files::FileStat,
             options: options

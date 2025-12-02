@@ -98,7 +98,7 @@ class HubspotSDK::Test::Resources::Files::FileOperationsTest < HubspotSDK::Test:
   def test_get_by_path
     skip("Prism tests are disabled")
 
-    response = @hubspot.files.file_operations.get_by_path("path")
+    response = @hubspot.files.file_operations.get_by_path("file_path")
 
     assert_pattern do
       response => HubspotSDK::Files::FileStat

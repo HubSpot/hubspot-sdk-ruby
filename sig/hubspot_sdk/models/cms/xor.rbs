@@ -5,7 +5,7 @@ module HubspotSDK
         {
           enclosed_in_parentheses: bool,
           operator: HubspotSDK::Models::Cms::Xor::operator,
-          inputs: ::Array[HubspotSDK::Models::Cms::expression],
+          inputs: ::Array[::Hash[Symbol, top]],
           property_name: String,
           value: bool
         }
@@ -15,11 +15,11 @@ module HubspotSDK
 
         attr_accessor operator: HubspotSDK::Models::Cms::Xor::operator
 
-        attr_reader inputs: ::Array[HubspotSDK::Models::Cms::expression]?
+        attr_reader inputs: ::Array[::Hash[Symbol, top]]?
 
         def inputs=: (
-          ::Array[HubspotSDK::Models::Cms::expression]
-        ) -> ::Array[HubspotSDK::Models::Cms::expression]
+          ::Array[::Hash[Symbol, top]]
+        ) -> ::Array[::Hash[Symbol, top]]
 
         attr_reader property_name: String?
 
@@ -32,7 +32,7 @@ module HubspotSDK
         def initialize: (
           enclosed_in_parentheses: bool,
           operator: HubspotSDK::Models::Cms::Xor::operator,
-          ?inputs: ::Array[HubspotSDK::Models::Cms::expression],
+          ?inputs: ::Array[::Hash[Symbol, top]],
           ?property_name: String,
           ?value: bool
         ) -> void
@@ -40,7 +40,7 @@ module HubspotSDK
         def to_hash: -> {
           enclosed_in_parentheses: bool,
           operator: HubspotSDK::Models::Cms::Xor::operator,
-          inputs: ::Array[HubspotSDK::Models::Cms::expression],
+          inputs: ::Array[::Hash[Symbol, top]],
           property_name: String,
           value: bool
         }

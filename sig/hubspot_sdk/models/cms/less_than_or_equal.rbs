@@ -4,7 +4,7 @@ module HubspotSDK
       type less_than_or_equal =
         {
           operator: HubspotSDK::Models::Cms::LessThanOrEqual::operator,
-          inputs: ::Array[HubspotSDK::Models::Cms::expression],
+          inputs: ::Array[::Hash[Symbol, top]],
           property_name: String,
           value: bool
         }
@@ -12,11 +12,11 @@ module HubspotSDK
       class LessThanOrEqual < HubspotSDK::Internal::Type::BaseModel
         attr_accessor operator: HubspotSDK::Models::Cms::LessThanOrEqual::operator
 
-        attr_reader inputs: ::Array[HubspotSDK::Models::Cms::expression]?
+        attr_reader inputs: ::Array[::Hash[Symbol, top]]?
 
         def inputs=: (
-          ::Array[HubspotSDK::Models::Cms::expression]
-        ) -> ::Array[HubspotSDK::Models::Cms::expression]
+          ::Array[::Hash[Symbol, top]]
+        ) -> ::Array[::Hash[Symbol, top]]
 
         attr_reader property_name: String?
 
@@ -28,14 +28,14 @@ module HubspotSDK
 
         def initialize: (
           operator: HubspotSDK::Models::Cms::LessThanOrEqual::operator,
-          ?inputs: ::Array[HubspotSDK::Models::Cms::expression],
+          ?inputs: ::Array[::Hash[Symbol, top]],
           ?property_name: String,
           ?value: bool
         ) -> void
 
         def to_hash: -> {
           operator: HubspotSDK::Models::Cms::LessThanOrEqual::operator,
-          inputs: ::Array[HubspotSDK::Models::Cms::expression],
+          inputs: ::Array[::Hash[Symbol, top]],
           property_name: String,
           value: bool
         }

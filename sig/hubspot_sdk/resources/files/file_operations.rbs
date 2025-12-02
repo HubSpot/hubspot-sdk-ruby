@@ -31,7 +31,7 @@ module HubspotSDK
         ) -> HubspotSDK::Files::File
 
         def get_by_path: (
-          String path,
+          String file_path,
           ?properties: ::Array[String],
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Files::FileStat

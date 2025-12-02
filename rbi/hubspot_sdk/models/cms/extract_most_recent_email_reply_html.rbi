@@ -14,15 +14,15 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Cms::ExtractMostRecentEmailReplyHTML::Operator::TaggedSymbol
+            HubspotSDK::Cms::ExtractMostRecentEmailReplyHTML::Operator::OrSymbol
           )
         end
         attr_accessor :operator
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::Cms::Expression])) }
+        sig { returns(T.nilable(T::Array[T::Hash[Symbol, T.anything]])) }
         attr_reader :inputs
 
-        sig { params(inputs: T::Array[HubspotSDK::Cms::Expression]).void }
+        sig { params(inputs: T::Array[T::Hash[Symbol, T.anything]]).void }
         attr_writer :inputs
 
         sig { returns(T.nilable(String)) }
@@ -41,7 +41,7 @@ module HubspotSDK
           params(
             operator:
               HubspotSDK::Cms::ExtractMostRecentEmailReplyHTML::Operator::OrSymbol,
-            inputs: T::Array[HubspotSDK::Cms::Expression],
+            inputs: T::Array[T::Hash[Symbol, T.anything]],
             property_name: String,
             value: String
           ).returns(T.attached_class)
@@ -53,8 +53,8 @@ module HubspotSDK
           override.returns(
             {
               operator:
-                HubspotSDK::Cms::ExtractMostRecentEmailReplyHTML::Operator::TaggedSymbol,
-              inputs: T::Array[HubspotSDK::Cms::Expression],
+                HubspotSDK::Cms::ExtractMostRecentEmailReplyHTML::Operator::OrSymbol,
+              inputs: T::Array[T::Hash[Symbol, T.anything]],
               property_name: String,
               value: String
             }

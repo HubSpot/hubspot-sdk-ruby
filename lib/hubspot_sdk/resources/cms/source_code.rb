@@ -10,9 +10,9 @@ module HubspotSDK
         # multipart/form-data content type. Throws an error if a file already exists at
         # the specified path.
         #
-        # @overload create(path, environment:, file: nil, request_options: {})
+        # @overload create(file_path, environment:, file: nil, request_options: {})
         #
-        # @param path [String] Path param: The file system location of the file.
+        # @param file_path [String] Path param: The file system location of the file.
         #
         # @param environment [String] Path param: The environment of the file ("draft" or "published").
         #
@@ -23,7 +23,7 @@ module HubspotSDK
         # @return [HubspotSDK::Models::Cms::AssetFileMetadata]
         #
         # @see HubspotSDK::Models::Cms::SourceCodeCreateParams
-        def create(path, params)
+        def create(file_path, params)
           parsed, options = HubspotSDK::Cms::SourceCodeCreateParams.dump_request(params)
           environment =
             parsed.delete(:environment) do
@@ -31,7 +31,7 @@ module HubspotSDK
             end
           @client.request(
             method: :post,
-            path: ["cms/v3/source-code/%1$s/content/%2$s", environment, path],
+            path: ["cms/v3/source-code/%1$s/content/%2$s", environment, file_path],
             headers: {"content-type" => "multipart/form-data"},
             body: parsed,
             model: HubspotSDK::Cms::AssetFileMetadata,
@@ -41,9 +41,9 @@ module HubspotSDK
 
         # Deletes the file at the specified path in the specified environment.
         #
-        # @overload delete(path, environment:, request_options: {})
+        # @overload delete(file_path, environment:, request_options: {})
         #
-        # @param path [String] The file system location of the file.
+        # @param file_path [String] The file system location of the file.
         #
         # @param environment [String] The environment of the file ("draft" or "published").
         #
@@ -52,7 +52,7 @@ module HubspotSDK
         # @return [nil]
         #
         # @see HubspotSDK::Models::Cms::SourceCodeDeleteParams
-        def delete(path, params)
+        def delete(file_path, params)
           parsed, options = HubspotSDK::Cms::SourceCodeDeleteParams.dump_request(params)
           environment =
             parsed.delete(:environment) do
@@ -60,7 +60,7 @@ module HubspotSDK
             end
           @client.request(
             method: :delete,
-            path: ["cms/v3/source-code/%1$s/content/%2$s", environment, path],
+            path: ["cms/v3/source-code/%1$s/content/%2$s", environment, file_path],
             model: NilClass,
             options: options
           )
@@ -91,9 +91,9 @@ module HubspotSDK
         # Downloads the byte contents of the file at the specified path in the specified
         # environment.
         #
-        # @overload get(path, environment:, request_options: {})
+        # @overload get(file_path, environment:, request_options: {})
         #
-        # @param path [String] The file system location of the file.
+        # @param file_path [String] The file system location of the file.
         #
         # @param environment [String] The environment of the file ("draft" or "published").
         #
@@ -102,7 +102,7 @@ module HubspotSDK
         # @return [StringIO]
         #
         # @see HubspotSDK::Models::Cms::SourceCodeGetParams
-        def get(path, params)
+        def get(file_path, params)
           parsed, options = HubspotSDK::Cms::SourceCodeGetParams.dump_request(params)
           environment =
             parsed.delete(:environment) do
@@ -110,7 +110,7 @@ module HubspotSDK
             end
           @client.request(
             method: :get,
-            path: ["cms/v3/source-code/%1$s/content/%2$s", environment, path],
+            path: ["cms/v3/source-code/%1$s/content/%2$s", environment, file_path],
             headers: {"accept" => "application/octet-stream"},
             model: StringIO,
             options: options
@@ -141,9 +141,9 @@ module HubspotSDK
         # Gets the metadata object for the file at the specified path in the specified
         # environment.
         #
-        # @overload get_metadata(path, environment:, properties: nil, request_options: {})
+        # @overload get_metadata(file_path, environment:, properties: nil, request_options: {})
         #
-        # @param path [String] Path param: The file system location of the file.
+        # @param file_path [String] Path param: The file system location of the file.
         #
         # @param environment [String] Path param: The environment of the file ("draft" or "published").
         #
@@ -154,7 +154,7 @@ module HubspotSDK
         # @return [HubspotSDK::Models::Cms::AssetFileMetadata]
         #
         # @see HubspotSDK::Models::Cms::SourceCodeGetMetadataParams
-        def get_metadata(path, params)
+        def get_metadata(file_path, params)
           parsed, options = HubspotSDK::Cms::SourceCodeGetMetadataParams.dump_request(params)
           environment =
             parsed.delete(:environment) do
@@ -162,7 +162,7 @@ module HubspotSDK
             end
           @client.request(
             method: :get,
-            path: ["cms/v3/source-code/%1$s/metadata/%2$s", environment, path],
+            path: ["cms/v3/source-code/%1$s/metadata/%2$s", environment, file_path],
             query: parsed,
             model: HubspotSDK::Cms::AssetFileMetadata,
             options: options
@@ -172,9 +172,9 @@ module HubspotSDK
         # Upserts a file at the specified path in the specified environment. Accepts
         # multipart/form-data content type.
         #
-        # @overload upsert(path, environment:, file: nil, request_options: {})
+        # @overload upsert(file_path, environment:, file: nil, request_options: {})
         #
-        # @param path [String] Path param: The file system location of the file.
+        # @param file_path [String] Path param: The file system location of the file.
         #
         # @param environment [String] Path param: The environment of the file ("draft" or "published").
         #
@@ -185,7 +185,7 @@ module HubspotSDK
         # @return [HubspotSDK::Models::Cms::AssetFileMetadata]
         #
         # @see HubspotSDK::Models::Cms::SourceCodeUpsertParams
-        def upsert(path, params)
+        def upsert(file_path, params)
           parsed, options = HubspotSDK::Cms::SourceCodeUpsertParams.dump_request(params)
           environment =
             parsed.delete(:environment) do
@@ -193,7 +193,7 @@ module HubspotSDK
             end
           @client.request(
             method: :put,
-            path: ["cms/v3/source-code/%1$s/content/%2$s", environment, path],
+            path: ["cms/v3/source-code/%1$s/content/%2$s", environment, file_path],
             headers: {"content-type" => "multipart/form-data"},
             body: parsed,
             model: HubspotSDK::Cms::AssetFileMetadata,
@@ -204,9 +204,9 @@ module HubspotSDK
         # Validates the file contents passed to the endpoint given a specified path and
         # environment. Accepts multipart/form-data content type.
         #
-        # @overload validate(path, environment:, file: nil, request_options: {})
+        # @overload validate(file_path, environment:, file: nil, request_options: {})
         #
-        # @param path [String] Path param: The file system location of the file.
+        # @param file_path [String] Path param: The file system location of the file.
         #
         # @param environment [String] Path param:
         #
@@ -217,7 +217,7 @@ module HubspotSDK
         # @return [StringIO]
         #
         # @see HubspotSDK::Models::Cms::SourceCodeValidateParams
-        def validate(path, params)
+        def validate(file_path, params)
           parsed, options = HubspotSDK::Cms::SourceCodeValidateParams.dump_request(params)
           environment =
             parsed.delete(:environment) do
@@ -225,7 +225,7 @@ module HubspotSDK
             end
           @client.request(
             method: :post,
-            path: ["cms/v3/source-code/%1$s/validate/%2$s", environment, path],
+            path: ["cms/v3/source-code/%1$s/validate/%2$s", environment, file_path],
             headers: {"content-type" => "multipart/form-data", "accept" => "*/*"},
             body: parsed,
             model: StringIO,

@@ -6,7 +6,7 @@ class HubspotSDK::Test::Resources::Cms::SourceCodeTest < HubspotSDK::Test::Resou
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.cms.source_code.create("path", environment: "environment")
+    response = @hubspot.cms.source_code.create("file_path", environment: "environment")
 
     assert_pattern do
       response => HubspotSDK::Cms::AssetFileMetadata
@@ -29,7 +29,7 @@ class HubspotSDK::Test::Resources::Cms::SourceCodeTest < HubspotSDK::Test::Resou
   def test_delete_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.cms.source_code.delete("path", environment: "environment")
+    response = @hubspot.cms.source_code.delete("file_path", environment: "environment")
 
     assert_pattern do
       response => nil
@@ -56,7 +56,7 @@ class HubspotSDK::Test::Resources::Cms::SourceCodeTest < HubspotSDK::Test::Resou
   def test_get_required_params
     skip("Prism doesn't support application/octet-stream responses")
 
-    response = @hubspot.cms.source_code.get("path", environment: "environment")
+    response = @hubspot.cms.source_code.get("file_path", environment: "environment")
 
     assert_pattern do
       response => StringIO
@@ -86,7 +86,7 @@ class HubspotSDK::Test::Resources::Cms::SourceCodeTest < HubspotSDK::Test::Resou
   def test_get_metadata_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.cms.source_code.get_metadata("path", environment: "environment")
+    response = @hubspot.cms.source_code.get_metadata("file_path", environment: "environment")
 
     assert_pattern do
       response => HubspotSDK::Cms::AssetFileMetadata
@@ -109,7 +109,7 @@ class HubspotSDK::Test::Resources::Cms::SourceCodeTest < HubspotSDK::Test::Resou
   def test_upsert_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.cms.source_code.upsert("path", environment: "environment")
+    response = @hubspot.cms.source_code.upsert("file_path", environment: "environment")
 
     assert_pattern do
       response => HubspotSDK::Cms::AssetFileMetadata
@@ -132,7 +132,7 @@ class HubspotSDK::Test::Resources::Cms::SourceCodeTest < HubspotSDK::Test::Resou
   def test_validate_required_params
     skip("Prism tests are disabled")
 
-    response = @hubspot.cms.source_code.validate("path", environment: "environment")
+    response = @hubspot.cms.source_code.validate("file_path", environment: "environment")
 
     assert_pattern do
       response => StringIO

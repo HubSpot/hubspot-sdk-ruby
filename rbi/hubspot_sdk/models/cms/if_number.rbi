@@ -12,22 +12,22 @@ module HubspotSDK
         sig { returns(T::Boolean) }
         attr_accessor :enclosed_in_parentheses
 
-        sig { returns(HubspotSDK::Cms::Expression) }
+        sig { returns(T::Hash[Symbol, T.anything]) }
         attr_accessor :if_expression
 
-        sig { returns(HubspotSDK::Cms::IfNumber::Operator::TaggedSymbol) }
+        sig { returns(HubspotSDK::Cms::IfNumber::Operator::OrSymbol) }
         attr_accessor :operator
 
-        sig { returns(T.nilable(HubspotSDK::Cms::Expression)) }
+        sig { returns(T.nilable(T::Hash[Symbol, T.anything])) }
         attr_reader :else_expression
 
-        sig { params(else_expression: HubspotSDK::Cms::Expression).void }
+        sig { params(else_expression: T::Hash[Symbol, T.anything]).void }
         attr_writer :else_expression
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::Cms::Expression])) }
+        sig { returns(T.nilable(T::Array[T::Hash[Symbol, T.anything]])) }
         attr_reader :inputs
 
-        sig { params(inputs: T::Array[HubspotSDK::Cms::Expression]).void }
+        sig { params(inputs: T::Array[T::Hash[Symbol, T.anything]]).void }
         attr_writer :inputs
 
         sig { returns(T.nilable(String)) }
@@ -45,10 +45,10 @@ module HubspotSDK
         sig do
           params(
             enclosed_in_parentheses: T::Boolean,
-            if_expression: HubspotSDK::Cms::Expression,
+            if_expression: T::Hash[Symbol, T.anything],
             operator: HubspotSDK::Cms::IfNumber::Operator::OrSymbol,
-            else_expression: HubspotSDK::Cms::Expression,
-            inputs: T::Array[HubspotSDK::Cms::Expression],
+            else_expression: T::Hash[Symbol, T.anything],
+            inputs: T::Array[T::Hash[Symbol, T.anything]],
             property_name: String,
             value: Float
           ).returns(T.attached_class)
@@ -68,10 +68,10 @@ module HubspotSDK
           override.returns(
             {
               enclosed_in_parentheses: T::Boolean,
-              if_expression: HubspotSDK::Cms::Expression,
-              operator: HubspotSDK::Cms::IfNumber::Operator::TaggedSymbol,
-              else_expression: HubspotSDK::Cms::Expression,
-              inputs: T::Array[HubspotSDK::Cms::Expression],
+              if_expression: T::Hash[Symbol, T.anything],
+              operator: HubspotSDK::Cms::IfNumber::Operator::OrSymbol,
+              else_expression: T::Hash[Symbol, T.anything],
+              inputs: T::Array[T::Hash[Symbol, T.anything]],
               property_name: String,
               value: Float
             }

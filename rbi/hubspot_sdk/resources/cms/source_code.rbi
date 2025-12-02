@@ -9,7 +9,7 @@ module HubspotSDK
         # the specified path.
         sig do
           params(
-            path: String,
+            file_path: String,
             environment: String,
             file: HubspotSDK::Internal::FileInput,
             request_options: HubspotSDK::RequestOptions::OrHash
@@ -17,7 +17,7 @@ module HubspotSDK
         end
         def create(
           # Path param: The file system location of the file.
-          path,
+          file_path,
           # Path param: The environment of the file ("draft" or "published").
           environment:,
           # Body param:
@@ -29,14 +29,14 @@ module HubspotSDK
         # Deletes the file at the specified path in the specified environment.
         sig do
           params(
-            path: String,
+            file_path: String,
             environment: String,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).void
         end
         def delete(
           # The file system location of the file.
-          path,
+          file_path,
           # The environment of the file ("draft" or "published").
           environment:,
           request_options: {}
@@ -58,14 +58,14 @@ module HubspotSDK
         # environment.
         sig do
           params(
-            path: String,
+            file_path: String,
             environment: String,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(StringIO)
         end
         def get(
           # The file system location of the file.
-          path,
+          file_path,
           # The environment of the file ("draft" or "published").
           environment:,
           request_options: {}
@@ -91,7 +91,7 @@ module HubspotSDK
         # environment.
         sig do
           params(
-            path: String,
+            file_path: String,
             environment: String,
             properties: String,
             request_options: HubspotSDK::RequestOptions::OrHash
@@ -99,7 +99,7 @@ module HubspotSDK
         end
         def get_metadata(
           # Path param: The file system location of the file.
-          path,
+          file_path,
           # Path param: The environment of the file ("draft" or "published").
           environment:,
           # Query param:
@@ -112,7 +112,7 @@ module HubspotSDK
         # multipart/form-data content type.
         sig do
           params(
-            path: String,
+            file_path: String,
             environment: String,
             file: HubspotSDK::Internal::FileInput,
             request_options: HubspotSDK::RequestOptions::OrHash
@@ -120,7 +120,7 @@ module HubspotSDK
         end
         def upsert(
           # Path param: The file system location of the file.
-          path,
+          file_path,
           # Path param: The environment of the file ("draft" or "published").
           environment:,
           # Body param:
@@ -133,7 +133,7 @@ module HubspotSDK
         # environment. Accepts multipart/form-data content type.
         sig do
           params(
-            path: String,
+            file_path: String,
             environment: String,
             file: HubspotSDK::Internal::FileInput,
             request_options: HubspotSDK::RequestOptions::OrHash
@@ -141,7 +141,7 @@ module HubspotSDK
         end
         def validate(
           # Path param: The file system location of the file.
-          path,
+          file_path,
           # Path param:
           environment:,
           # Body param:

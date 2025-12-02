@@ -3,14 +3,14 @@ module HubspotSDK
     class Cms
       class SourceCode
         def create: (
-          String path,
+          String file_path,
           environment: String,
           ?file: HubspotSDK::Internal::file_input,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Cms::AssetFileMetadata
 
         def delete: (
-          String path,
+          String file_path,
           environment: String,
           ?request_options: HubspotSDK::request_opts
         ) -> nil
@@ -21,7 +21,7 @@ module HubspotSDK
         ) -> HubspotSDK::TaskLocator
 
         def get: (
-          String path,
+          String file_path,
           environment: String,
           ?request_options: HubspotSDK::request_opts
         ) -> StringIO
@@ -32,21 +32,21 @@ module HubspotSDK
         ) -> HubspotSDK::ActionResponse
 
         def get_metadata: (
-          String path,
+          String file_path,
           environment: String,
           ?properties: String,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Cms::AssetFileMetadata
 
         def upsert: (
-          String path,
+          String file_path,
           environment: String,
           ?file: HubspotSDK::Internal::file_input,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Cms::AssetFileMetadata
 
         def validate: (
-          String path,
+          String file_path,
           environment: String,
           ?file: HubspotSDK::Internal::file_input,
           ?request_options: HubspotSDK::request_opts
