@@ -1,0 +1,22 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module MediaBridge
+        type schema_list_response =
+          { results: ::Array[HubspotSDK::Crm::Objects::ObjectSchema] }
+
+        class SchemaListResponse < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor results: ::Array[HubspotSDK::Crm::Objects::ObjectSchema]
+
+          def initialize: (
+            results: ::Array[HubspotSDK::Crm::Objects::ObjectSchema]
+          ) -> void
+
+          def to_hash: -> {
+            results: ::Array[HubspotSDK::Crm::Objects::ObjectSchema]
+          }
+        end
+      end
+    end
+  end
+end

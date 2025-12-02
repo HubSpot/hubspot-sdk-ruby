@@ -59,7 +59,7 @@ module HubspotSDK
               app_id: Integer,
               archived: T::Boolean,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CollectionResponseObjectSchemaNoPaging)
+            ).returns(HubspotSDK::Models::Cms::MediaBridge::SchemaListResponse)
           end
           def list(
             # The appId for the media bridge app. It is possible to have multiple apps in your

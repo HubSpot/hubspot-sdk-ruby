@@ -84,7 +84,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::SchemasTest < HubspotSDK::Test:
     response = @hubspot.crm.objects.schemas.list
 
     assert_pattern do
-      response => HubspotSDK::CollectionResponseObjectSchemaNoPaging
+      response => HubspotSDK::Models::Crm::Objects::SchemaListResponse
     end
 
     assert_pattern do

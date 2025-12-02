@@ -90,7 +90,7 @@ module HubspotSDK
             params(
               archived: T::Boolean,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CollectionResponseObjectSchemaNoPaging)
+            ).returns(HubspotSDK::Models::Crm::Objects::SchemaListResponse)
           end
           def list(
             # Whether to return only results that have been archived.

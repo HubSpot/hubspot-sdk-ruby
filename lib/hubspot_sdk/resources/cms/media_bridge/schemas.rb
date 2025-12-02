@@ -65,7 +65,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CollectionResponseObjectSchemaNoPaging]
+          # @return [HubspotSDK::Models::Cms::MediaBridge::SchemaListResponse]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::SchemaListParams
           def list(app_id, params = {})
@@ -74,7 +74,7 @@ module HubspotSDK
               method: :get,
               path: ["media-bridge/v1/%1$s/schemas", app_id],
               query: parsed,
-              model: HubspotSDK::CollectionResponseObjectSchemaNoPaging,
+              model: HubspotSDK::Models::Cms::MediaBridge::SchemaListResponse,
               options: options
             )
           end
