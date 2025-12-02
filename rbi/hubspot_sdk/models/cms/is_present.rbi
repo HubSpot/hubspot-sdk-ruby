@@ -9,16 +9,16 @@ module HubspotSDK
             T.any(HubspotSDK::Cms::IsPresent, HubspotSDK::Internal::AnyHash)
           end
 
-        sig { returns(HubspotSDK::Cms::Expression) }
+        sig { returns(T::Hash[Symbol, T.anything]) }
         attr_accessor :expression_to_evaluate
 
-        sig { returns(HubspotSDK::Cms::IsPresent::Operator::TaggedSymbol) }
+        sig { returns(HubspotSDK::Cms::IsPresent::Operator::OrSymbol) }
         attr_accessor :operator
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::Cms::Expression])) }
+        sig { returns(T.nilable(T::Array[T::Hash[Symbol, T.anything]])) }
         attr_reader :inputs
 
-        sig { params(inputs: T::Array[HubspotSDK::Cms::Expression]).void }
+        sig { params(inputs: T::Array[T::Hash[Symbol, T.anything]]).void }
         attr_writer :inputs
 
         sig { returns(T.nilable(String)) }
@@ -35,9 +35,9 @@ module HubspotSDK
 
         sig do
           params(
-            expression_to_evaluate: HubspotSDK::Cms::Expression,
+            expression_to_evaluate: T::Hash[Symbol, T.anything],
             operator: HubspotSDK::Cms::IsPresent::Operator::OrSymbol,
-            inputs: T::Array[HubspotSDK::Cms::Expression],
+            inputs: T::Array[T::Hash[Symbol, T.anything]],
             property_name: String,
             value: T::Boolean
           ).returns(T.attached_class)
@@ -54,9 +54,9 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              expression_to_evaluate: HubspotSDK::Cms::Expression,
-              operator: HubspotSDK::Cms::IsPresent::Operator::TaggedSymbol,
-              inputs: T::Array[HubspotSDK::Cms::Expression],
+              expression_to_evaluate: T::Hash[Symbol, T.anything],
+              operator: HubspotSDK::Cms::IsPresent::Operator::OrSymbol,
+              inputs: T::Array[T::Hash[Symbol, T.anything]],
               property_name: String,
               value: T::Boolean
             }

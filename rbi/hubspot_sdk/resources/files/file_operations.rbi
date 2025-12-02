@@ -88,14 +88,14 @@ module HubspotSDK
         # Retrieve a file by its path.
         sig do
           params(
-            path: String,
+            file_path: String,
             properties: T::Array[String],
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Files::FileStat)
         end
         def get_by_path(
           # The path of the file.
-          path,
+          file_path,
           # Properties to return in the response.
           properties: nil,
           request_options: {}

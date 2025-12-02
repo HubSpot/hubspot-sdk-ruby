@@ -6,9 +6,9 @@ module HubspotSDK
       class IsPresent < HubspotSDK::Internal::Type::BaseModel
         # @!attribute expression_to_evaluate
         #
-        #   @return [HubspotSDK::Models::Cms::Expression]
+        #   @return [Hash{Symbol=>Object}]
         required :expression_to_evaluate,
-                 union: -> { HubspotSDK::Cms::Expression },
+                 HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown],
                  api_name: :expressionToEvaluate
 
         # @!attribute operator
@@ -18,8 +18,9 @@ module HubspotSDK
 
         # @!attribute inputs
         #
-        #   @return [Array<HubspotSDK::Models::Cms::Expression>, nil]
-        optional :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Cms::Expression] }
+        #   @return [Array<Hash{Symbol=>Object}>, nil]
+        optional :inputs,
+                 HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]]
 
         # @!attribute property_name
         #
@@ -32,9 +33,9 @@ module HubspotSDK
         optional :value, HubspotSDK::Internal::Type::Boolean
 
         # @!method initialize(expression_to_evaluate:, operator:, inputs: nil, property_name: nil, value: nil)
-        #   @param expression_to_evaluate [HubspotSDK::Models::Cms::Expression]
+        #   @param expression_to_evaluate [Hash{Symbol=>Object}]
         #   @param operator [Symbol, HubspotSDK::Models::Cms::IsPresent::Operator]
-        #   @param inputs [Array<HubspotSDK::Models::Cms::Expression>]
+        #   @param inputs [Array<Hash{Symbol=>Object}>]
         #   @param property_name [String]
         #   @param value [Boolean]
 

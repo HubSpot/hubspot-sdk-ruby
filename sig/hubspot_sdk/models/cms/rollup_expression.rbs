@@ -7,7 +7,7 @@ module HubspotSDK
           rollup_operator: String,
           source_object_type_id: String,
           source_property_name: String,
-          conditional_expression: HubspotSDK::Models::Cms::expression,
+          conditional_expression: ::Hash[Symbol, top],
           conditional_formula: String,
           empty_rollup_value: String,
           source_compare_by_property_name: String
@@ -22,11 +22,11 @@ module HubspotSDK
 
         attr_accessor source_property_name: String
 
-        attr_reader conditional_expression: HubspotSDK::Models::Cms::expression?
+        attr_reader conditional_expression: ::Hash[Symbol, top]?
 
         def conditional_expression=: (
-          HubspotSDK::Models::Cms::expression
-        ) -> HubspotSDK::Models::Cms::expression
+          ::Hash[Symbol, top]
+        ) -> ::Hash[Symbol, top]
 
         attr_reader conditional_formula: String?
 
@@ -45,7 +45,7 @@ module HubspotSDK
           rollup_operator: String,
           source_object_type_id: String,
           source_property_name: String,
-          ?conditional_expression: HubspotSDK::Models::Cms::expression,
+          ?conditional_expression: ::Hash[Symbol, top],
           ?conditional_formula: String,
           ?empty_rollup_value: String,
           ?source_compare_by_property_name: String
@@ -56,7 +56,7 @@ module HubspotSDK
           rollup_operator: String,
           source_object_type_id: String,
           source_property_name: String,
-          conditional_expression: HubspotSDK::Models::Cms::expression,
+          conditional_expression: ::Hash[Symbol, top],
           conditional_formula: String,
           empty_rollup_value: String,
           source_compare_by_property_name: String

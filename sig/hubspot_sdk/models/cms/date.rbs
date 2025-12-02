@@ -4,7 +4,7 @@ module HubspotSDK
       type date =
         {
           operator: HubspotSDK::Models::Cms::Date::operator,
-          inputs: ::Array[HubspotSDK::Models::Cms::expression],
+          inputs: ::Array[::Hash[Symbol, top]],
           property_name: String,
           value: Float
         }
@@ -12,11 +12,11 @@ module HubspotSDK
       class Date < HubspotSDK::Internal::Type::BaseModel
         attr_accessor operator: HubspotSDK::Models::Cms::Date::operator
 
-        attr_reader inputs: ::Array[HubspotSDK::Models::Cms::expression]?
+        attr_reader inputs: ::Array[::Hash[Symbol, top]]?
 
         def inputs=: (
-          ::Array[HubspotSDK::Models::Cms::expression]
-        ) -> ::Array[HubspotSDK::Models::Cms::expression]
+          ::Array[::Hash[Symbol, top]]
+        ) -> ::Array[::Hash[Symbol, top]]
 
         attr_reader property_name: String?
 
@@ -28,14 +28,14 @@ module HubspotSDK
 
         def initialize: (
           operator: HubspotSDK::Models::Cms::Date::operator,
-          ?inputs: ::Array[HubspotSDK::Models::Cms::expression],
+          ?inputs: ::Array[::Hash[Symbol, top]],
           ?property_name: String,
           ?value: Float
         ) -> void
 
         def to_hash: -> {
           operator: HubspotSDK::Models::Cms::Date::operator,
-          inputs: ::Array[HubspotSDK::Models::Cms::expression],
+          inputs: ::Array[::Hash[Symbol, top]],
           property_name: String,
           value: Float
         }

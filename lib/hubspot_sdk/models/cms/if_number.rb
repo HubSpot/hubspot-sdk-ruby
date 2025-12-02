@@ -13,8 +13,10 @@ module HubspotSDK
 
         # @!attribute if_expression
         #
-        #   @return [HubspotSDK::Models::Cms::Expression]
-        required :if_expression, union: -> { HubspotSDK::Cms::Expression }, api_name: :ifExpression
+        #   @return [Hash{Symbol=>Object}]
+        required :if_expression,
+                 HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown],
+                 api_name: :ifExpression
 
         # @!attribute operator
         #
@@ -23,13 +25,16 @@ module HubspotSDK
 
         # @!attribute else_expression
         #
-        #   @return [HubspotSDK::Models::Cms::Expression, nil]
-        optional :else_expression, union: -> { HubspotSDK::Cms::Expression }, api_name: :elseExpression
+        #   @return [Hash{Symbol=>Object}, nil]
+        optional :else_expression,
+                 HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown],
+                 api_name: :elseExpression
 
         # @!attribute inputs
         #
-        #   @return [Array<HubspotSDK::Models::Cms::Expression>, nil]
-        optional :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Cms::Expression] }
+        #   @return [Array<Hash{Symbol=>Object}>, nil]
+        optional :inputs,
+                 HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]]
 
         # @!attribute property_name
         #
@@ -43,10 +48,10 @@ module HubspotSDK
 
         # @!method initialize(enclosed_in_parentheses:, if_expression:, operator:, else_expression: nil, inputs: nil, property_name: nil, value: nil)
         #   @param enclosed_in_parentheses [Boolean]
-        #   @param if_expression [HubspotSDK::Models::Cms::Expression]
+        #   @param if_expression [Hash{Symbol=>Object}]
         #   @param operator [Symbol, HubspotSDK::Models::Cms::IfNumber::Operator]
-        #   @param else_expression [HubspotSDK::Models::Cms::Expression]
-        #   @param inputs [Array<HubspotSDK::Models::Cms::Expression>]
+        #   @param else_expression [Hash{Symbol=>Object}]
+        #   @param inputs [Array<Hash{Symbol=>Object}>]
         #   @param property_name [String]
         #   @param value [Float]
 

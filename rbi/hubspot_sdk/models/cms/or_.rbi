@@ -12,13 +12,13 @@ module HubspotSDK
         sig { returns(T::Boolean) }
         attr_accessor :enclosed_in_parentheses
 
-        sig { returns(HubspotSDK::Cms::Or::Operator::TaggedSymbol) }
+        sig { returns(HubspotSDK::Cms::Or::Operator::OrSymbol) }
         attr_accessor :operator
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::Cms::Expression])) }
+        sig { returns(T.nilable(T::Array[T::Hash[Symbol, T.anything]])) }
         attr_reader :inputs
 
-        sig { params(inputs: T::Array[HubspotSDK::Cms::Expression]).void }
+        sig { params(inputs: T::Array[T::Hash[Symbol, T.anything]]).void }
         attr_writer :inputs
 
         sig { returns(T.nilable(String)) }
@@ -37,7 +37,7 @@ module HubspotSDK
           params(
             enclosed_in_parentheses: T::Boolean,
             operator: HubspotSDK::Cms::Or::Operator::OrSymbol,
-            inputs: T::Array[HubspotSDK::Cms::Expression],
+            inputs: T::Array[T::Hash[Symbol, T.anything]],
             property_name: String,
             value: T::Boolean
           ).returns(T.attached_class)
@@ -55,8 +55,8 @@ module HubspotSDK
           override.returns(
             {
               enclosed_in_parentheses: T::Boolean,
-              operator: HubspotSDK::Cms::Or::Operator::TaggedSymbol,
-              inputs: T::Array[HubspotSDK::Cms::Expression],
+              operator: HubspotSDK::Cms::Or::Operator::OrSymbol,
+              inputs: T::Array[T::Hash[Symbol, T.anything]],
               property_name: String,
               value: T::Boolean
             }
