@@ -45,6 +45,8 @@ module HubspotSDK
 
   ActionResponse = HubspotSDK::Models::ActionResponse
 
+  APIError = HubspotSDK::Models::APIError
+
   AssociationDefinition = HubspotSDK::Models::AssociationDefinition
 
   AssociationDefinitionEgg = HubspotSDK::Models::AssociationDefinitionEgg
@@ -76,8 +78,6 @@ module HubspotSDK
   Conversations = HubspotSDK::Models::Conversations
 
   Crm = HubspotSDK::Models::Crm
-
-  Error = HubspotSDK::Models::Error
 
   ErrorDetail = HubspotSDK::Models::ErrorDetail
 

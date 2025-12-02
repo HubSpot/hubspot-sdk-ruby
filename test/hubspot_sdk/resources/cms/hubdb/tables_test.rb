@@ -256,7 +256,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::TablesTest < HubspotSDK::Test::Re
     assert_pattern do
       response => {
         duplicate_rows: Integer,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Error]),
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::APIError]),
         row_limit_exceeded: HubspotSDK::Internal::Type::Boolean,
         rows_imported: Integer
       }

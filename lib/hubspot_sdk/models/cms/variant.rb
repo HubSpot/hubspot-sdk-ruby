@@ -3,8 +3,9 @@
 module HubspotSDK
   module Models
     module Cms
-      # @type [HubspotSDK::Internal::Type::Converter]
-      Variant = HubspotSDK::Internal::Type::Unknown
+      class Variant < HubspotSDK::Internal::Type::BaseModel
+        # @!method initialize
+      end
     end
   end
 end

@@ -20,7 +20,7 @@ module HubspotSDK
         attr_accessor :display_index
 
         # List of key value pairs with the column name and column value
-        sig { returns(T::Hash[Symbol, T.anything]) }
+        sig { returns(T::Hash[Symbol, HubspotSDK::Cms::Variant]) }
         attr_accessor :values
 
         # Specifies the value for `hs_name` column, which will be used as title in the
@@ -43,7 +43,7 @@ module HubspotSDK
           params(
             child_table_id: Integer,
             display_index: Integer,
-            values: T::Hash[Symbol, T.anything],
+            values: T::Hash[Symbol, HubspotSDK::Cms::Variant::OrHash],
             name: String,
             path: String
           ).returns(T.attached_class)
@@ -68,7 +68,7 @@ module HubspotSDK
             {
               child_table_id: Integer,
               display_index: Integer,
-              values: T::Hash[Symbol, T.anything],
+              values: T::Hash[Symbol, HubspotSDK::Cms::Variant],
               name: String,
               path: String
             }

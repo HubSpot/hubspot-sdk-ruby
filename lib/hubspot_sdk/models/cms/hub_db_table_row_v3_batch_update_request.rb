@@ -18,8 +18,8 @@ module HubspotSDK
         # @!attribute values
         #   List of key value pairs with the column name and column value
         #
-        #   @return [Hash{Symbol=>Object}]
-        required :values, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]
+        #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::Variant}]
+        required :values, -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::Variant] }
 
         # @!attribute id
         #   The id of the table row
@@ -49,7 +49,7 @@ module HubspotSDK
         #
         #   @param display_index [Integer]
         #
-        #   @param values [Hash{Symbol=>Object}] List of key value pairs with the column name and column value
+        #   @param values [Hash{Symbol=>HubspotSDK::Models::Cms::Variant}] List of key value pairs with the column name and column value
         #
         #   @param id [String] The id of the table row
         #

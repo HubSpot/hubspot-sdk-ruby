@@ -13,8 +13,8 @@ module HubspotSDK
         # @!attribute errors
         #   List of errors during import
         #
-        #   @return [Array<HubspotSDK::Models::Error>]
-        required :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Error] }
+        #   @return [Array<HubspotSDK::Models::APIError>]
+        required :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::APIError] }
 
         # @!attribute row_limit_exceeded
         #   Specifies whether row limit exceeded during import
@@ -31,7 +31,7 @@ module HubspotSDK
         # @!method initialize(duplicate_rows:, errors:, row_limit_exceeded:, rows_imported:)
         #   @param duplicate_rows [Integer] Specifies number of duplicate rows
         #
-        #   @param errors [Array<HubspotSDK::Models::Error>] List of errors during import
+        #   @param errors [Array<HubspotSDK::Models::APIError>] List of errors during import
         #
         #   @param row_limit_exceeded [Boolean] Specifies whether row limit exceeded during import
         #

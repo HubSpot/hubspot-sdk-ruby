@@ -4,7 +4,7 @@ module HubspotSDK
       type import_result =
         {
           duplicate_rows: Integer,
-          errors: ::Array[HubspotSDK::Error],
+          errors: ::Array[HubspotSDK::APIError],
           row_limit_exceeded: bool,
           rows_imported: Integer
         }
@@ -12,7 +12,7 @@ module HubspotSDK
       class ImportResult < HubspotSDK::Internal::Type::BaseModel
         attr_accessor duplicate_rows: Integer
 
-        attr_accessor errors: ::Array[HubspotSDK::Error]
+        attr_accessor errors: ::Array[HubspotSDK::APIError]
 
         attr_accessor row_limit_exceeded: bool
 
@@ -20,14 +20,14 @@ module HubspotSDK
 
         def initialize: (
           duplicate_rows: Integer,
-          errors: ::Array[HubspotSDK::Error],
+          errors: ::Array[HubspotSDK::APIError],
           row_limit_exceeded: bool,
           rows_imported: Integer
         ) -> void
 
         def to_hash: -> {
           duplicate_rows: Integer,
-          errors: ::Array[HubspotSDK::Error],
+          errors: ::Array[HubspotSDK::APIError],
           row_limit_exceeded: bool,
           rows_imported: Integer
         }
