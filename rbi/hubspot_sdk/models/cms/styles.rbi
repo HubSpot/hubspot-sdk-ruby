@@ -49,16 +49,14 @@ module HubspotSDK
         attr_accessor :vertical_alignment
 
         sig do
-          returns(
-            T.nilable(T::Hash[Symbol, HubspotSDK::Cms::Blogs::BreakpointStyles])
-          )
+          returns(T.nilable(T::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles]))
         end
         attr_reader :breakpoint_styles
 
         sig do
           params(
             breakpoint_styles:
-              T::Hash[Symbol, HubspotSDK::Cms::Blogs::BreakpointStyles::OrHash]
+              T::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles::OrHash]
           ).void
         end
         attr_writer :breakpoint_styles
@@ -73,7 +71,7 @@ module HubspotSDK
             max_width_section_centering: Integer,
             vertical_alignment: String,
             breakpoint_styles:
-              T::Hash[Symbol, HubspotSDK::Cms::Blogs::BreakpointStyles::OrHash]
+              T::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(
@@ -100,7 +98,7 @@ module HubspotSDK
               max_width_section_centering: Integer,
               vertical_alignment: String,
               breakpoint_styles:
-                T::Hash[Symbol, HubspotSDK::Cms::Blogs::BreakpointStyles]
+                T::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles]
             }
           )
         end

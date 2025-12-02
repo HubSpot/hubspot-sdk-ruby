@@ -44,9 +44,9 @@ module HubspotSDK
 
         # @!attribute breakpoint_styles
         #
-        #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::Blogs::BreakpointStyles}, nil]
+        #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::BreakpointStyles}, nil]
         optional :breakpoint_styles,
-                 -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::Blogs::BreakpointStyles] },
+                 -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::BreakpointStyles] },
                  api_name: :breakpointStyles
 
         # @!method initialize(background_color:, background_gradient:, background_image:, flexbox_positioning:, force_full_width_section:, max_width_section_centering:, vertical_alignment:, breakpoint_styles: nil)
@@ -64,7 +64,7 @@ module HubspotSDK
         #
         #   @param vertical_alignment [String]
         #
-        #   @param breakpoint_styles [Hash{Symbol=>HubspotSDK::Models::Cms::Blogs::BreakpointStyles}]
+        #   @param breakpoint_styles [Hash{Symbol=>HubspotSDK::Models::Cms::BreakpointStyles}]
       end
     end
   end

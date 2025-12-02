@@ -10,7 +10,7 @@ module HubspotSDK
           force_full_width_section: bool,
           max_width_section_centering: Integer,
           vertical_alignment: String,
-          breakpoint_styles: ::Hash[Symbol, HubspotSDK::Cms::Blogs::BreakpointStyles]
+          breakpoint_styles: ::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles]
         }
 
       class Styles < HubspotSDK::Internal::Type::BaseModel
@@ -28,11 +28,11 @@ module HubspotSDK
 
         attr_accessor vertical_alignment: String
 
-        attr_reader breakpoint_styles: ::Hash[Symbol, HubspotSDK::Cms::Blogs::BreakpointStyles]?
+        attr_reader breakpoint_styles: ::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles]?
 
         def breakpoint_styles=: (
-          ::Hash[Symbol, HubspotSDK::Cms::Blogs::BreakpointStyles]
-        ) -> ::Hash[Symbol, HubspotSDK::Cms::Blogs::BreakpointStyles]
+          ::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles]
+        ) -> ::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles]
 
         def initialize: (
           background_color: HubspotSDK::Cms::RgbaColor,
@@ -42,7 +42,7 @@ module HubspotSDK
           force_full_width_section: bool,
           max_width_section_centering: Integer,
           vertical_alignment: String,
-          ?breakpoint_styles: ::Hash[Symbol, HubspotSDK::Cms::Blogs::BreakpointStyles]
+          ?breakpoint_styles: ::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles]
         ) -> void
 
         def to_hash: -> {
@@ -53,7 +53,7 @@ module HubspotSDK
           force_full_width_section: bool,
           max_width_section_centering: Integer,
           vertical_alignment: String,
-          breakpoint_styles: ::Hash[Symbol, HubspotSDK::Cms::Blogs::BreakpointStyles]
+          breakpoint_styles: ::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles]
         }
       end
     end
