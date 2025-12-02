@@ -5,7 +5,7 @@ module HubspotSDK
         {
           child_table_id: Integer,
           display_index: Integer,
-          values: ::Hash[Symbol, top],
+          values: ::Hash[Symbol, HubspotSDK::Cms::Variant],
           name: String,
           path: String
         }
@@ -15,7 +15,7 @@ module HubspotSDK
 
         attr_accessor display_index: Integer
 
-        attr_accessor values: ::Hash[Symbol, top]
+        attr_accessor values: ::Hash[Symbol, HubspotSDK::Cms::Variant]
 
         attr_reader name: String?
 
@@ -28,7 +28,7 @@ module HubspotSDK
         def initialize: (
           child_table_id: Integer,
           display_index: Integer,
-          values: ::Hash[Symbol, top],
+          values: ::Hash[Symbol, HubspotSDK::Cms::Variant],
           ?name: String,
           ?path: String
         ) -> void
@@ -36,7 +36,7 @@ module HubspotSDK
         def to_hash: -> {
           child_table_id: Integer,
           display_index: Integer,
-          values: ::Hash[Symbol, top],
+          values: ::Hash[Symbol, HubspotSDK::Cms::Variant],
           name: String,
           path: String
         }

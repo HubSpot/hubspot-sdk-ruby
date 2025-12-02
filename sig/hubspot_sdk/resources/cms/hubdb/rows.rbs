@@ -9,7 +9,7 @@ module HubspotSDK
             String table_id_or_name,
             child_table_id: Integer,
             display_index: Integer,
-            values: ::Hash[Symbol, top],
+            values: ::Hash[Symbol, HubspotSDK::Cms::Variant],
             ?name: String,
             ?path: String,
             ?request_options: HubspotSDK::request_opts
@@ -69,7 +69,7 @@ module HubspotSDK
             table_id_or_name: String,
             child_table_id: Integer,
             display_index: Integer,
-            values: ::Hash[Symbol, top],
+            values: ::Hash[Symbol, HubspotSDK::Cms::Variant],
             ?name: String,
             ?path: String,
             ?request_options: HubspotSDK::request_opts
@@ -80,7 +80,7 @@ module HubspotSDK
             table_id_or_name: String,
             child_table_id: Integer,
             display_index: Integer,
-            values: ::Hash[Symbol, top],
+            values: ::Hash[Symbol, HubspotSDK::Cms::Variant],
             ?name: String,
             ?path: String,
             ?request_options: HubspotSDK::request_opts

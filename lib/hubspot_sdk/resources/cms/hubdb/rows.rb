@@ -23,7 +23,7 @@ module HubspotSDK
           #
           # @param display_index [Integer]
           #
-          # @param values [Hash{Symbol=>Object}] List of key value pairs with the column name and column value
+          # @param values [Hash{Symbol=>HubspotSDK::Models::Cms::Variant}] List of key value pairs with the column name and column value
           #
           # @param name [String] Specifies the value for `hs_name` column, which will be used as title in the dyn
           #
@@ -274,7 +274,7 @@ module HubspotSDK
           #
           # @param display_index [Integer] Body param:
           #
-          # @param values [Hash{Symbol=>Object}] Body param: List of key value pairs with the column name and column value
+          # @param values [Hash{Symbol=>HubspotSDK::Models::Cms::Variant}] Body param: List of key value pairs with the column name and column value
           #
           # @param name [String] Body param: Specifies the value for `hs_name` column, which will be used as titl
           #
@@ -318,7 +318,7 @@ module HubspotSDK
           #
           # @param display_index [Integer] Body param:
           #
-          # @param values [Hash{Symbol=>Object}] Body param: List of key value pairs with the column name and column value
+          # @param values [Hash{Symbol=>HubspotSDK::Models::Cms::Variant}] Body param: List of key value pairs with the column name and column value
           #
           # @param name [String] Body param: Specifies the value for `hs_name` column, which will be used as titl
           #

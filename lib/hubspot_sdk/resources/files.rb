@@ -3,8 +3,8 @@
 module HubspotSDK
   module Resources
     class Files
-      # @return [HubspotSDK::Resources::Files::Files]
-      attr_reader :files
+      # @return [HubspotSDK::Resources::Files::FileOperations]
+      attr_reader :file_operations
 
       # @return [HubspotSDK::Resources::Files::Folders]
       attr_reader :folders
@@ -14,7 +14,7 @@ module HubspotSDK
       # @param client [HubspotSDK::Client]
       def initialize(client:)
         @client = client
-        @files = HubspotSDK::Resources::Files::Files.new(client: client)
+        @file_operations = HubspotSDK::Resources::Files::FileOperations.new(client: client)
         @folders = HubspotSDK::Resources::Files::Folders.new(client: client)
       end
     end

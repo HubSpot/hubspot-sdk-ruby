@@ -3,8 +3,8 @@
 module HubspotSDK
   module Resources
     class Files
-      sig { returns(HubspotSDK::Resources::Files::Files) }
-      attr_reader :files
+      sig { returns(HubspotSDK::Resources::Files::FileOperations) }
+      attr_reader :file_operations
 
       sig { returns(HubspotSDK::Resources::Files::Folders) }
       attr_reader :folders

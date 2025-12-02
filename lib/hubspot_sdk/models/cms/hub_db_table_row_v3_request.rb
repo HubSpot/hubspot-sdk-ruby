@@ -18,8 +18,8 @@ module HubspotSDK
         # @!attribute values
         #   List of key value pairs with the column name and column value
         #
-        #   @return [Hash{Symbol=>Object}]
-        required :values, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]
+        #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::Variant}]
+        required :values, -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::Variant] }
 
         # @!attribute name
         #   Specifies the value for `hs_name` column, which will be used as title in the
@@ -43,7 +43,7 @@ module HubspotSDK
         #
         #   @param display_index [Integer]
         #
-        #   @param values [Hash{Symbol=>Object}] List of key value pairs with the column name and column value
+        #   @param values [Hash{Symbol=>HubspotSDK::Models::Cms::Variant}] List of key value pairs with the column name and column value
         #
         #   @param name [String] Specifies the value for `hs_name` column, which will be used as title in the dyn
         #
