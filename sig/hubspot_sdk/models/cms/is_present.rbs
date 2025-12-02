@@ -3,21 +3,23 @@ module HubspotSDK
     module Cms
       type is_present =
         {
-          expression_to_evaluate: top,
+          expression_to_evaluate: HubspotSDK::Models::Cms::expression,
           operator: HubspotSDK::Models::Cms::IsPresent::operator,
-          inputs: ::Array[top],
+          inputs: ::Array[HubspotSDK::Models::Cms::expression],
           property_name: String,
           value: bool
         }
 
       class IsPresent < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor expression_to_evaluate: top
+        attr_accessor expression_to_evaluate: HubspotSDK::Models::Cms::expression
 
         attr_accessor operator: HubspotSDK::Models::Cms::IsPresent::operator
 
-        attr_reader inputs: ::Array[top]?
+        attr_reader inputs: ::Array[HubspotSDK::Models::Cms::expression]?
 
-        def inputs=: (::Array[top]) -> ::Array[top]
+        def inputs=: (
+          ::Array[HubspotSDK::Models::Cms::expression]
+        ) -> ::Array[HubspotSDK::Models::Cms::expression]
 
         attr_reader property_name: String?
 
@@ -28,17 +30,17 @@ module HubspotSDK
         def value=: (bool) -> bool
 
         def initialize: (
-          expression_to_evaluate: top,
+          expression_to_evaluate: HubspotSDK::Models::Cms::expression,
           operator: HubspotSDK::Models::Cms::IsPresent::operator,
-          ?inputs: ::Array[top],
+          ?inputs: ::Array[HubspotSDK::Models::Cms::expression],
           ?property_name: String,
           ?value: bool
         ) -> void
 
         def to_hash: -> {
-          expression_to_evaluate: top,
+          expression_to_evaluate: HubspotSDK::Models::Cms::expression,
           operator: HubspotSDK::Models::Cms::IsPresent::operator,
-          inputs: ::Array[top],
+          inputs: ::Array[HubspotSDK::Models::Cms::expression],
           property_name: String,
           value: bool
         }

@@ -11,8 +11,8 @@ module HubspotSDK
 
         # @!attribute inputs
         #
-        #   @return [Array<Object>, nil]
-        optional :inputs, HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::Unknown]
+        #   @return [Array<HubspotSDK::Models::Cms::Expression>, nil]
+        optional :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Cms::Expression] }
 
         # @!attribute property_name
         #
@@ -26,7 +26,7 @@ module HubspotSDK
 
         # @!method initialize(operator:, inputs: nil, property_name: nil, value: nil)
         #   @param operator [Symbol, HubspotSDK::Models::Cms::BooleanPropertyVariable::Operator]
-        #   @param inputs [Array<Object>]
+        #   @param inputs [Array<HubspotSDK::Models::Cms::Expression>]
         #   @param property_name [String]
         #   @param value [Boolean]
 

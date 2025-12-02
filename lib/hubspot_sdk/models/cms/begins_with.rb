@@ -11,13 +11,13 @@ module HubspotSDK
 
         # @!attribute string_to_check
         #
-        #   @return [Object]
-        required :string_to_check, HubspotSDK::Internal::Type::Unknown, api_name: :stringToCheck
+        #   @return [HubspotSDK::Models::Cms::Expression]
+        required :string_to_check, union: -> { HubspotSDK::Cms::Expression }, api_name: :stringToCheck
 
         # @!attribute inputs
         #
-        #   @return [Array<Object>, nil]
-        optional :inputs, HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::Unknown]
+        #   @return [Array<HubspotSDK::Models::Cms::Expression>, nil]
+        optional :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Cms::Expression] }
 
         # @!attribute property_name
         #
@@ -31,8 +31,8 @@ module HubspotSDK
 
         # @!method initialize(operator:, string_to_check:, inputs: nil, property_name: nil, value: nil)
         #   @param operator [Symbol, HubspotSDK::Models::Cms::BeginsWith::Operator]
-        #   @param string_to_check [Object]
-        #   @param inputs [Array<Object>]
+        #   @param string_to_check [HubspotSDK::Models::Cms::Expression]
+        #   @param inputs [Array<HubspotSDK::Models::Cms::Expression>]
         #   @param property_name [String]
         #   @param value [Boolean]
 
