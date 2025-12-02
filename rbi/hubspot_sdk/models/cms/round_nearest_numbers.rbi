@@ -17,94 +17,10 @@ module HubspotSDK
         end
         attr_accessor :operator
 
-        sig do
-          returns(
-            T.nilable(
-              T::Array[HubspotSDK::Cms::RoundNearestNumbers::Input::Variants]
-            )
-          )
-        end
+        sig { returns(T.nilable(T::Array[T.anything])) }
         attr_reader :inputs
 
-        sig do
-          params(
-            inputs:
-              T::Array[
-                T.any(
-                  HubspotSDK::Cms::ConstantBoolean,
-                  HubspotSDK::Cms::ConstantNumber,
-                  HubspotSDK::Cms::ConstantString,
-                  HubspotSDK::Cms::BooleanPropertyVariable,
-                  HubspotSDK::Cms::StringPropertyVariable,
-                  HubspotSDK::Cms::NumberPropertyVariable,
-                  HubspotSDK::Cms::TimestampOfPropertyVariable,
-                  HubspotSDK::Cms::BooleanTargetPropertyVariable,
-                  HubspotSDK::Cms::StringTargetPropertyVariable,
-                  HubspotSDK::Cms::NumberTargetPropertyVariable,
-                  HubspotSDK::Cms::TimestampOfTargetPropertyVariable,
-                  HubspotSDK::Cms::AddNumbers,
-                  HubspotSDK::Cms::SubtractNumbers,
-                  HubspotSDK::Cms::MultiplyNumbers,
-                  HubspotSDK::Cms::DivideNumbers,
-                  HubspotSDK::Cms::RoundDownNumbers,
-                  HubspotSDK::Cms::RoundUpNumbers,
-                  HubspotSDK::Cms::RoundNearestNumbers,
-                  HubspotSDK::Cms::UpperCase,
-                  HubspotSDK::Cms::LowerCase,
-                  HubspotSDK::Cms::ConcatStrings,
-                  HubspotSDK::Cms::Contains,
-                  HubspotSDK::Cms::BeginsWith,
-                  HubspotSDK::Cms::NumberToString,
-                  HubspotSDK::Cms::ParseNumber,
-                  HubspotSDK::Cms::FetchExchangeRate,
-                  HubspotSDK::Cms::FetchCurrencyDecimalPlaces,
-                  HubspotSDK::Cms::FetchSingleCurrencyPortalCurrency,
-                  HubspotSDK::Cms::DatedExchangeRate,
-                  HubspotSDK::Cms::PipelineProbability,
-                  HubspotSDK::Cms::MaxNumbers,
-                  HubspotSDK::Cms::MinNumbers,
-                  HubspotSDK::Cms::LessThan,
-                  HubspotSDK::Cms::LessThanOrEqual,
-                  HubspotSDK::Cms::MoreThan,
-                  HubspotSDK::Cms::MoreThanOrEqual,
-                  HubspotSDK::Cms::NumberEquals,
-                  HubspotSDK::Cms::StringEquals,
-                  HubspotSDK::Cms::IsPipelineStageClosed,
-                  HubspotSDK::Cms::Not,
-                  HubspotSDK::Cms::Date,
-                  HubspotSDK::Cms::Month,
-                  HubspotSDK::Cms::Year,
-                  HubspotSDK::Cms::Now,
-                  HubspotSDK::Cms::TimeBetween,
-                  HubspotSDK::Cms::PeriodToMonths,
-                  HubspotSDK::Cms::PeriodToWeeks,
-                  HubspotSDK::Cms::And,
-                  HubspotSDK::Cms::Or,
-                  HubspotSDK::Cms::Xor,
-                  HubspotSDK::Cms::IfString,
-                  HubspotSDK::Cms::IfNumber,
-                  HubspotSDK::Cms::IfBoolean,
-                  HubspotSDK::Cms::IsPresent,
-                  HubspotSDK::Cms::HasEmailReply,
-                  HubspotSDK::Cms::HasPlainTextEmailReply,
-                  HubspotSDK::Cms::ExtractMostRecentEmailReplyHTML,
-                  HubspotSDK::Cms::ExtractMostRecentEmailReplyText,
-                  HubspotSDK::Cms::ExtractMostRecentPlainTextEmailReply,
-                  HubspotSDK::Cms::SetContainsString,
-                  HubspotSDK::Cms::IsEngagementType,
-                  HubspotSDK::Cms::FormatFullName,
-                  HubspotSDK::Cms::AbsoluteValue,
-                  HubspotSDK::Cms::SquareRoot,
-                  HubspotSDK::Cms::Power,
-                  HubspotSDK::Cms::Substring,
-                  HubspotSDK::Cms::Euler,
-                  HubspotSDK::Cms::StringLength,
-                  HubspotSDK::Cms::AddTime,
-                  HubspotSDK::Cms::SubtractTime
-                )
-              ]
-          ).void
-        end
+        sig { params(inputs: T::Array[T.anything]).void }
         attr_writer :inputs
 
         sig { returns(T.nilable(String)) }
@@ -122,81 +38,7 @@ module HubspotSDK
         sig do
           params(
             operator: HubspotSDK::Cms::RoundNearestNumbers::Operator::OrSymbol,
-            inputs:
-              T::Array[
-                T.any(
-                  HubspotSDK::Cms::ConstantBoolean,
-                  HubspotSDK::Cms::ConstantNumber,
-                  HubspotSDK::Cms::ConstantString,
-                  HubspotSDK::Cms::BooleanPropertyVariable,
-                  HubspotSDK::Cms::StringPropertyVariable,
-                  HubspotSDK::Cms::NumberPropertyVariable,
-                  HubspotSDK::Cms::TimestampOfPropertyVariable,
-                  HubspotSDK::Cms::BooleanTargetPropertyVariable,
-                  HubspotSDK::Cms::StringTargetPropertyVariable,
-                  HubspotSDK::Cms::NumberTargetPropertyVariable,
-                  HubspotSDK::Cms::TimestampOfTargetPropertyVariable,
-                  HubspotSDK::Cms::AddNumbers,
-                  HubspotSDK::Cms::SubtractNumbers,
-                  HubspotSDK::Cms::MultiplyNumbers,
-                  HubspotSDK::Cms::DivideNumbers,
-                  HubspotSDK::Cms::RoundDownNumbers,
-                  HubspotSDK::Cms::RoundUpNumbers,
-                  HubspotSDK::Cms::RoundNearestNumbers,
-                  HubspotSDK::Cms::UpperCase,
-                  HubspotSDK::Cms::LowerCase,
-                  HubspotSDK::Cms::ConcatStrings,
-                  HubspotSDK::Cms::Contains,
-                  HubspotSDK::Cms::BeginsWith,
-                  HubspotSDK::Cms::NumberToString,
-                  HubspotSDK::Cms::ParseNumber,
-                  HubspotSDK::Cms::FetchExchangeRate,
-                  HubspotSDK::Cms::FetchCurrencyDecimalPlaces,
-                  HubspotSDK::Cms::FetchSingleCurrencyPortalCurrency,
-                  HubspotSDK::Cms::DatedExchangeRate,
-                  HubspotSDK::Cms::PipelineProbability,
-                  HubspotSDK::Cms::MaxNumbers,
-                  HubspotSDK::Cms::MinNumbers,
-                  HubspotSDK::Cms::LessThan,
-                  HubspotSDK::Cms::LessThanOrEqual,
-                  HubspotSDK::Cms::MoreThan,
-                  HubspotSDK::Cms::MoreThanOrEqual,
-                  HubspotSDK::Cms::NumberEquals,
-                  HubspotSDK::Cms::StringEquals,
-                  HubspotSDK::Cms::IsPipelineStageClosed,
-                  HubspotSDK::Cms::Not,
-                  HubspotSDK::Cms::Date,
-                  HubspotSDK::Cms::Month,
-                  HubspotSDK::Cms::Year,
-                  HubspotSDK::Cms::Now,
-                  HubspotSDK::Cms::TimeBetween,
-                  HubspotSDK::Cms::PeriodToMonths,
-                  HubspotSDK::Cms::PeriodToWeeks,
-                  HubspotSDK::Cms::And,
-                  HubspotSDK::Cms::Or,
-                  HubspotSDK::Cms::Xor,
-                  HubspotSDK::Cms::IfString,
-                  HubspotSDK::Cms::IfNumber,
-                  HubspotSDK::Cms::IfBoolean,
-                  HubspotSDK::Cms::IsPresent,
-                  HubspotSDK::Cms::HasEmailReply,
-                  HubspotSDK::Cms::HasPlainTextEmailReply,
-                  HubspotSDK::Cms::ExtractMostRecentEmailReplyHTML,
-                  HubspotSDK::Cms::ExtractMostRecentEmailReplyText,
-                  HubspotSDK::Cms::ExtractMostRecentPlainTextEmailReply,
-                  HubspotSDK::Cms::SetContainsString,
-                  HubspotSDK::Cms::IsEngagementType,
-                  HubspotSDK::Cms::FormatFullName,
-                  HubspotSDK::Cms::AbsoluteValue,
-                  HubspotSDK::Cms::SquareRoot,
-                  HubspotSDK::Cms::Power,
-                  HubspotSDK::Cms::Substring,
-                  HubspotSDK::Cms::Euler,
-                  HubspotSDK::Cms::StringLength,
-                  HubspotSDK::Cms::AddTime,
-                  HubspotSDK::Cms::SubtractTime
-                )
-              ],
+            inputs: T::Array[T.anything],
             property_name: String,
             value: Float
           ).returns(T.attached_class)
@@ -209,8 +51,7 @@ module HubspotSDK
             {
               operator:
                 HubspotSDK::Cms::RoundNearestNumbers::Operator::TaggedSymbol,
-              inputs:
-                T::Array[HubspotSDK::Cms::RoundNearestNumbers::Input::Variants],
+              inputs: T::Array[T.anything],
               property_name: String,
               value: Float
             }
@@ -242,94 +83,6 @@ module HubspotSDK
             )
           end
           def self.values
-          end
-        end
-
-        module Input
-          extend HubspotSDK::Internal::Type::Union
-
-          Variants =
-            T.type_alias do
-              T.any(
-                HubspotSDK::Cms::ConstantBoolean,
-                HubspotSDK::Cms::ConstantNumber,
-                HubspotSDK::Cms::ConstantString,
-                HubspotSDK::Cms::BooleanPropertyVariable,
-                HubspotSDK::Cms::StringPropertyVariable,
-                HubspotSDK::Cms::NumberPropertyVariable,
-                HubspotSDK::Cms::TimestampOfPropertyVariable,
-                HubspotSDK::Cms::BooleanTargetPropertyVariable,
-                HubspotSDK::Cms::StringTargetPropertyVariable,
-                HubspotSDK::Cms::NumberTargetPropertyVariable,
-                HubspotSDK::Cms::TimestampOfTargetPropertyVariable,
-                HubspotSDK::Cms::AddNumbers,
-                HubspotSDK::Cms::SubtractNumbers,
-                HubspotSDK::Cms::MultiplyNumbers,
-                HubspotSDK::Cms::DivideNumbers,
-                HubspotSDK::Cms::RoundDownNumbers,
-                HubspotSDK::Cms::RoundUpNumbers,
-                HubspotSDK::Cms::RoundNearestNumbers,
-                HubspotSDK::Cms::UpperCase,
-                HubspotSDK::Cms::LowerCase,
-                HubspotSDK::Cms::ConcatStrings,
-                HubspotSDK::Cms::Contains,
-                HubspotSDK::Cms::BeginsWith,
-                HubspotSDK::Cms::NumberToString,
-                HubspotSDK::Cms::ParseNumber,
-                HubspotSDK::Cms::FetchExchangeRate,
-                HubspotSDK::Cms::FetchCurrencyDecimalPlaces,
-                HubspotSDK::Cms::FetchSingleCurrencyPortalCurrency,
-                HubspotSDK::Cms::DatedExchangeRate,
-                HubspotSDK::Cms::PipelineProbability,
-                HubspotSDK::Cms::MaxNumbers,
-                HubspotSDK::Cms::MinNumbers,
-                HubspotSDK::Cms::LessThan,
-                HubspotSDK::Cms::LessThanOrEqual,
-                HubspotSDK::Cms::MoreThan,
-                HubspotSDK::Cms::MoreThanOrEqual,
-                HubspotSDK::Cms::NumberEquals,
-                HubspotSDK::Cms::StringEquals,
-                HubspotSDK::Cms::IsPipelineStageClosed,
-                HubspotSDK::Cms::Not,
-                HubspotSDK::Cms::Date,
-                HubspotSDK::Cms::Month,
-                HubspotSDK::Cms::Year,
-                HubspotSDK::Cms::Now,
-                HubspotSDK::Cms::TimeBetween,
-                HubspotSDK::Cms::PeriodToMonths,
-                HubspotSDK::Cms::PeriodToWeeks,
-                HubspotSDK::Cms::And,
-                HubspotSDK::Cms::Or,
-                HubspotSDK::Cms::Xor,
-                HubspotSDK::Cms::IfString,
-                HubspotSDK::Cms::IfNumber,
-                HubspotSDK::Cms::IfBoolean,
-                HubspotSDK::Cms::IsPresent,
-                HubspotSDK::Cms::HasEmailReply,
-                HubspotSDK::Cms::HasPlainTextEmailReply,
-                HubspotSDK::Cms::ExtractMostRecentEmailReplyHTML,
-                HubspotSDK::Cms::ExtractMostRecentEmailReplyText,
-                HubspotSDK::Cms::ExtractMostRecentPlainTextEmailReply,
-                HubspotSDK::Cms::SetContainsString,
-                HubspotSDK::Cms::IsEngagementType,
-                HubspotSDK::Cms::FormatFullName,
-                HubspotSDK::Cms::AbsoluteValue,
-                HubspotSDK::Cms::SquareRoot,
-                HubspotSDK::Cms::Power,
-                HubspotSDK::Cms::Substring,
-                HubspotSDK::Cms::Euler,
-                HubspotSDK::Cms::StringLength,
-                HubspotSDK::Cms::AddTime,
-                HubspotSDK::Cms::SubtractTime
-              )
-            end
-
-          sig do
-            override.returns(
-              T::Array[HubspotSDK::Cms::RoundNearestNumbers::Input::Variants]
-            )
-          end
-          def self.variants
           end
         end
       end
