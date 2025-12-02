@@ -32,7 +32,7 @@ module HubspotSDK
           def list: (
             ?archived: bool,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CollectionResponseObjectSchemaNoPaging
+          ) -> HubspotSDK::Models::Crm::Objects::SchemaListResponse
 
           def delete: (
             String object_type,

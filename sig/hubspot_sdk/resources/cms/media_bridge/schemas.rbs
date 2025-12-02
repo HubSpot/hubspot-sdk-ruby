@@ -21,7 +21,7 @@ module HubspotSDK
             Integer app_id,
             ?archived: bool,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CollectionResponseObjectSchemaNoPaging
+          ) -> HubspotSDK::Models::Cms::MediaBridge::SchemaListResponse
 
           def create_association: (
             String object_type,

@@ -38,7 +38,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::SchemasTest < HubspotSDK::T
     response = @hubspot.cms.media_bridge.schemas.list(0)
 
     assert_pattern do
-      response => HubspotSDK::CollectionResponseObjectSchemaNoPaging
+      response => HubspotSDK::Models::Cms::MediaBridge::SchemaListResponse
     end
 
     assert_pattern do

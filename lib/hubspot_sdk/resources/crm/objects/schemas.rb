@@ -89,7 +89,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CollectionResponseObjectSchemaNoPaging]
+          # @return [HubspotSDK::Models::Crm::Objects::SchemaListResponse]
           #
           # @see HubspotSDK::Models::Crm::Objects::SchemaListParams
           def list(params = {})
@@ -98,7 +98,7 @@ module HubspotSDK
               method: :get,
               path: "crm-object-schemas/v3/schemas",
               query: parsed,
-              model: HubspotSDK::CollectionResponseObjectSchemaNoPaging,
+              model: HubspotSDK::Models::Crm::Objects::SchemaListResponse,
               options: options
             )
           end

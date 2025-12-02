@@ -35,9 +35,6 @@ module HubspotSDK
 
   Cms = HubspotSDK::Models::Cms
 
-  CollectionResponseObjectSchemaNoPaging =
-    HubspotSDK::Models::CollectionResponseObjectSchemaNoPaging
-
   Conversations = HubspotSDK::Models::Conversations
 
   Crm = HubspotSDK::Models::Crm
