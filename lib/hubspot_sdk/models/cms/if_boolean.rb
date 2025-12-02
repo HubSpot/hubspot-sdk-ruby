@@ -13,8 +13,8 @@ module HubspotSDK
 
         # @!attribute if_expression
         #
-        #   @return [Object]
-        required :if_expression, HubspotSDK::Internal::Type::Unknown, api_name: :ifExpression
+        #   @return [HubspotSDK::Models::Cms::Expression]
+        required :if_expression, union: -> { HubspotSDK::Cms::Expression }, api_name: :ifExpression
 
         # @!attribute operator
         #
@@ -23,13 +23,13 @@ module HubspotSDK
 
         # @!attribute else_expression
         #
-        #   @return [Object, nil]
-        optional :else_expression, HubspotSDK::Internal::Type::Unknown, api_name: :elseExpression
+        #   @return [HubspotSDK::Models::Cms::Expression, nil]
+        optional :else_expression, union: -> { HubspotSDK::Cms::Expression }, api_name: :elseExpression
 
         # @!attribute inputs
         #
-        #   @return [Array<Object>, nil]
-        optional :inputs, HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::Unknown]
+        #   @return [Array<HubspotSDK::Models::Cms::Expression>, nil]
+        optional :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Cms::Expression] }
 
         # @!attribute property_name
         #
@@ -43,10 +43,10 @@ module HubspotSDK
 
         # @!method initialize(enclosed_in_parentheses:, if_expression:, operator:, else_expression: nil, inputs: nil, property_name: nil, value: nil)
         #   @param enclosed_in_parentheses [Boolean]
-        #   @param if_expression [Object]
+        #   @param if_expression [HubspotSDK::Models::Cms::Expression]
         #   @param operator [Symbol, HubspotSDK::Models::Cms::IfBoolean::Operator]
-        #   @param else_expression [Object]
-        #   @param inputs [Array<Object>]
+        #   @param else_expression [HubspotSDK::Models::Cms::Expression]
+        #   @param inputs [Array<HubspotSDK::Models::Cms::Expression>]
         #   @param property_name [String]
         #   @param value [Boolean]
 

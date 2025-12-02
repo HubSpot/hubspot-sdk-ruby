@@ -4,7 +4,7 @@ module HubspotSDK
       type dated_exchange_rate =
         {
           operator: HubspotSDK::Models::Cms::DatedExchangeRate::operator,
-          inputs: ::Array[top],
+          inputs: ::Array[HubspotSDK::Models::Cms::expression],
           property_name: String,
           value: Float
         }
@@ -12,9 +12,11 @@ module HubspotSDK
       class DatedExchangeRate < HubspotSDK::Internal::Type::BaseModel
         attr_accessor operator: HubspotSDK::Models::Cms::DatedExchangeRate::operator
 
-        attr_reader inputs: ::Array[top]?
+        attr_reader inputs: ::Array[HubspotSDK::Models::Cms::expression]?
 
-        def inputs=: (::Array[top]) -> ::Array[top]
+        def inputs=: (
+          ::Array[HubspotSDK::Models::Cms::expression]
+        ) -> ::Array[HubspotSDK::Models::Cms::expression]
 
         attr_reader property_name: String?
 
@@ -26,14 +28,14 @@ module HubspotSDK
 
         def initialize: (
           operator: HubspotSDK::Models::Cms::DatedExchangeRate::operator,
-          ?inputs: ::Array[top],
+          ?inputs: ::Array[HubspotSDK::Models::Cms::expression],
           ?property_name: String,
           ?value: Float
         ) -> void
 
         def to_hash: -> {
           operator: HubspotSDK::Models::Cms::DatedExchangeRate::operator,
-          inputs: ::Array[top],
+          inputs: ::Array[HubspotSDK::Models::Cms::expression],
           property_name: String,
           value: Float
         }

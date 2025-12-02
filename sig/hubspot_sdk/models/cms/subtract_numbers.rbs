@@ -5,7 +5,7 @@ module HubspotSDK
         {
           enclosed_in_parentheses: bool,
           operator: HubspotSDK::Models::Cms::SubtractNumbers::operator,
-          inputs: ::Array[top],
+          inputs: ::Array[HubspotSDK::Models::Cms::expression],
           property_name: String,
           value: Float
         }
@@ -15,9 +15,11 @@ module HubspotSDK
 
         attr_accessor operator: HubspotSDK::Models::Cms::SubtractNumbers::operator
 
-        attr_reader inputs: ::Array[top]?
+        attr_reader inputs: ::Array[HubspotSDK::Models::Cms::expression]?
 
-        def inputs=: (::Array[top]) -> ::Array[top]
+        def inputs=: (
+          ::Array[HubspotSDK::Models::Cms::expression]
+        ) -> ::Array[HubspotSDK::Models::Cms::expression]
 
         attr_reader property_name: String?
 
@@ -30,7 +32,7 @@ module HubspotSDK
         def initialize: (
           enclosed_in_parentheses: bool,
           operator: HubspotSDK::Models::Cms::SubtractNumbers::operator,
-          ?inputs: ::Array[top],
+          ?inputs: ::Array[HubspotSDK::Models::Cms::expression],
           ?property_name: String,
           ?value: Float
         ) -> void
@@ -38,7 +40,7 @@ module HubspotSDK
         def to_hash: -> {
           enclosed_in_parentheses: bool,
           operator: HubspotSDK::Models::Cms::SubtractNumbers::operator,
-          inputs: ::Array[top],
+          inputs: ::Array[HubspotSDK::Models::Cms::expression],
           property_name: String,
           value: Float
         }

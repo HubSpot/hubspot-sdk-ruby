@@ -12,10 +12,10 @@ module HubspotSDK
         sig { returns(HubspotSDK::Cms::LessThan::Operator::TaggedSymbol) }
         attr_accessor :operator
 
-        sig { returns(T.nilable(T::Array[T.anything])) }
+        sig { returns(T.nilable(T::Array[HubspotSDK::Cms::Expression])) }
         attr_reader :inputs
 
-        sig { params(inputs: T::Array[T.anything]).void }
+        sig { params(inputs: T::Array[HubspotSDK::Cms::Expression]).void }
         attr_writer :inputs
 
         sig { returns(T.nilable(String)) }
@@ -33,7 +33,7 @@ module HubspotSDK
         sig do
           params(
             operator: HubspotSDK::Cms::LessThan::Operator::OrSymbol,
-            inputs: T::Array[T.anything],
+            inputs: T::Array[HubspotSDK::Cms::Expression],
             property_name: String,
             value: T::Boolean
           ).returns(T.attached_class)
@@ -45,7 +45,7 @@ module HubspotSDK
           override.returns(
             {
               operator: HubspotSDK::Cms::LessThan::Operator::TaggedSymbol,
-              inputs: T::Array[T.anything],
+              inputs: T::Array[HubspotSDK::Cms::Expression],
               property_name: String,
               value: T::Boolean
             }

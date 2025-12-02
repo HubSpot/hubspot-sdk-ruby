@@ -19,10 +19,10 @@ module HubspotSDK
         end
         attr_accessor :operator
 
-        sig { returns(T.nilable(T::Array[T.anything])) }
+        sig { returns(T.nilable(T::Array[HubspotSDK::Cms::Expression])) }
         attr_reader :inputs
 
-        sig { params(inputs: T::Array[T.anything]).void }
+        sig { params(inputs: T::Array[HubspotSDK::Cms::Expression]).void }
         attr_writer :inputs
 
         sig { returns(T.nilable(String)) }
@@ -41,7 +41,7 @@ module HubspotSDK
           params(
             operator:
               HubspotSDK::Cms::BooleanPropertyVariable::Operator::OrSymbol,
-            inputs: T::Array[T.anything],
+            inputs: T::Array[HubspotSDK::Cms::Expression],
             property_name: String,
             value: T::Boolean
           ).returns(T.attached_class)
@@ -54,7 +54,7 @@ module HubspotSDK
             {
               operator:
                 HubspotSDK::Cms::BooleanPropertyVariable::Operator::TaggedSymbol,
-              inputs: T::Array[T.anything],
+              inputs: T::Array[HubspotSDK::Cms::Expression],
               property_name: String,
               value: T::Boolean
             }

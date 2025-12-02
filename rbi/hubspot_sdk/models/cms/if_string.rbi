@@ -12,22 +12,22 @@ module HubspotSDK
         sig { returns(T::Boolean) }
         attr_accessor :enclosed_in_parentheses
 
-        sig { returns(T.anything) }
+        sig { returns(HubspotSDK::Cms::Expression) }
         attr_accessor :if_expression
 
         sig { returns(HubspotSDK::Cms::IfString::Operator::TaggedSymbol) }
         attr_accessor :operator
 
-        sig { returns(T.nilable(T.anything)) }
+        sig { returns(T.nilable(HubspotSDK::Cms::Expression)) }
         attr_reader :else_expression
 
-        sig { params(else_expression: T.anything).void }
+        sig { params(else_expression: HubspotSDK::Cms::Expression).void }
         attr_writer :else_expression
 
-        sig { returns(T.nilable(T::Array[T.anything])) }
+        sig { returns(T.nilable(T::Array[HubspotSDK::Cms::Expression])) }
         attr_reader :inputs
 
-        sig { params(inputs: T::Array[T.anything]).void }
+        sig { params(inputs: T::Array[HubspotSDK::Cms::Expression]).void }
         attr_writer :inputs
 
         sig { returns(T.nilable(String)) }
@@ -45,10 +45,10 @@ module HubspotSDK
         sig do
           params(
             enclosed_in_parentheses: T::Boolean,
-            if_expression: T.anything,
+            if_expression: HubspotSDK::Cms::Expression,
             operator: HubspotSDK::Cms::IfString::Operator::OrSymbol,
-            else_expression: T.anything,
-            inputs: T::Array[T.anything],
+            else_expression: HubspotSDK::Cms::Expression,
+            inputs: T::Array[HubspotSDK::Cms::Expression],
             property_name: String,
             value: String
           ).returns(T.attached_class)
@@ -68,10 +68,10 @@ module HubspotSDK
           override.returns(
             {
               enclosed_in_parentheses: T::Boolean,
-              if_expression: T.anything,
+              if_expression: HubspotSDK::Cms::Expression,
               operator: HubspotSDK::Cms::IfString::Operator::TaggedSymbol,
-              else_expression: T.anything,
-              inputs: T::Array[T.anything],
+              else_expression: HubspotSDK::Cms::Expression,
+              inputs: T::Array[HubspotSDK::Cms::Expression],
               property_name: String,
               value: String
             }

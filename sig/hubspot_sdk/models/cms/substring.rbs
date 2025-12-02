@@ -4,8 +4,8 @@ module HubspotSDK
       type substring =
         {
           operator: HubspotSDK::Models::Cms::Substring::operator,
-          string_to_check: top,
-          inputs: ::Array[top],
+          string_to_check: HubspotSDK::Models::Cms::expression,
+          inputs: ::Array[HubspotSDK::Models::Cms::expression],
           property_name: String,
           value: String
         }
@@ -13,11 +13,13 @@ module HubspotSDK
       class Substring < HubspotSDK::Internal::Type::BaseModel
         attr_accessor operator: HubspotSDK::Models::Cms::Substring::operator
 
-        attr_accessor string_to_check: top
+        attr_accessor string_to_check: HubspotSDK::Models::Cms::expression
 
-        attr_reader inputs: ::Array[top]?
+        attr_reader inputs: ::Array[HubspotSDK::Models::Cms::expression]?
 
-        def inputs=: (::Array[top]) -> ::Array[top]
+        def inputs=: (
+          ::Array[HubspotSDK::Models::Cms::expression]
+        ) -> ::Array[HubspotSDK::Models::Cms::expression]
 
         attr_reader property_name: String?
 
@@ -29,16 +31,16 @@ module HubspotSDK
 
         def initialize: (
           operator: HubspotSDK::Models::Cms::Substring::operator,
-          string_to_check: top,
-          ?inputs: ::Array[top],
+          string_to_check: HubspotSDK::Models::Cms::expression,
+          ?inputs: ::Array[HubspotSDK::Models::Cms::expression],
           ?property_name: String,
           ?value: String
         ) -> void
 
         def to_hash: -> {
           operator: HubspotSDK::Models::Cms::Substring::operator,
-          string_to_check: top,
-          inputs: ::Array[top],
+          string_to_check: HubspotSDK::Models::Cms::expression,
+          inputs: ::Array[HubspotSDK::Models::Cms::expression],
           property_name: String,
           value: String
         }
