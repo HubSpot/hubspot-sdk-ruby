@@ -42,7 +42,7 @@ module HubspotSDK
         #
         # @overload update(user_id, properties:, id_property: nil, request_options: {})
         #
-        # @param user_id [String] Path param:
+        # @param user_id [String] Path param
         #
         # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
         #

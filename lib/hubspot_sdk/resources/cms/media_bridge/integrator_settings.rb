@@ -330,9 +330,9 @@ module HubspotSDK
           #
           # @param app_id [Integer] Path param: The appId for the media bridge app. It is possible to have multiple
           #
-          # @param endpoints [HubspotSDK::Models::Cms::Endpoints] Body param:
+          # @param endpoints [HubspotSDK::Models::Cms::Endpoints] Body param
           #
-          # @param portal_id [Integer] Body param:
+          # @param portal_id [Integer] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

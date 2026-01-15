@@ -37,15 +37,15 @@ module HubspotSDK
               )
             end
             def list(
-              # Path param:
+              # Path param
               to_object_type,
-              # Path param:
+              # Path param
               project_id:,
-              # Query param:
+              # Query param
               after: nil,
-              # Query param:
+              # Query param
               include_fa: nil,
-              # Query param:
+              # Query param
               limit: nil,
               request_options: {}
             )

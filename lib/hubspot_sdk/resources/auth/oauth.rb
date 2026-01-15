@@ -20,21 +20,21 @@ module HubspotSDK
         #
         # @overload create_access_token(body_client_secret: nil, body_refresh_token: nil, client_id: nil, code: nil, code_verifier: nil, grant_type: nil, redirect_uri: nil, scope: nil, request_options: {})
         #
-        # @param body_client_secret [String] Body param:
+        # @param body_client_secret [String] Body param
         #
-        # @param body_refresh_token [String] Body param:
+        # @param body_refresh_token [String] Body param
         #
-        # @param client_id [String] Body param:
+        # @param client_id [String] Body param
         #
-        # @param code [String] Body param:
+        # @param code [String] Body param
         #
-        # @param code_verifier [String] Body param:
+        # @param code_verifier [String] Body param
         #
-        # @param grant_type [Symbol, HubspotSDK::Models::Auth::OAuthCreateAccessTokenParams::GrantType] Body param:
+        # @param grant_type [Symbol, HubspotSDK::Models::Auth::OAuthCreateAccessTokenParams::GrantType] Body param
         #
-        # @param redirect_uri [String] Body param:
+        # @param redirect_uri [String] Body param
         #
-        # @param scope [String] Body param:
+        # @param scope [String] Body param
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #

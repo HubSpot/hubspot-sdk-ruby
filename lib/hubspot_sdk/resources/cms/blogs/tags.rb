@@ -52,7 +52,7 @@ module HubspotSDK
           #
           # @param id [String] Body param: The unique ID of the Blog Tag.
           #
-          # @param created [Time] Body param:
+          # @param created [Time] Body param
           #
           # @param deleted_at [Time] Body param: The timestamp (ISO8601 format) when this Blog Tag was deleted.
           #
@@ -62,7 +62,7 @@ module HubspotSDK
           #
           # @param translated_from_id [Integer] Body param: ID of the primary tag this object was translated from.
           #
-          # @param updated [Time] Body param:
+          # @param updated [Time] Body param
           #
           # @param archived [Boolean] Query param: Specifies whether to update deleted Blog Tags. Defaults to `false`.
           #

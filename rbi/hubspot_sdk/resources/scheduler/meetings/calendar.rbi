@@ -23,15 +23,15 @@ module HubspotSDK
             )
           end
           def create(
-            # Query param:
+            # Query param
             organizer_user_id:,
-            # Body param:
+            # Body param
             associations:,
-            # Body param:
+            # Body param
             email_reminder_schedule:,
-            # Body param:
+            # Body param
             properties:,
-            # Body param:
+            # Body param
             timezone:,
             request_options: {}
           )

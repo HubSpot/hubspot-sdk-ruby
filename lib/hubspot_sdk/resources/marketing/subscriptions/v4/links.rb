@@ -8,15 +8,15 @@ module HubspotSDK
           class Links
             # @overload create(channel:, subscriber_id_string:, business_unit_id: nil, language: nil, subscription_id: nil, request_options: {})
             #
-            # @param channel [Symbol, HubspotSDK::Models::Marketing::Subscriptions::LinkGenerationRequest::Channel] Query param:
+            # @param channel [Symbol, HubspotSDK::Models::Marketing::Subscriptions::LinkGenerationRequest::Channel] Query param
             #
-            # @param subscriber_id_string [String] Body param:
+            # @param subscriber_id_string [String] Body param
             #
-            # @param business_unit_id [Integer] Query param:
+            # @param business_unit_id [Integer] Query param
             #
-            # @param language [String] Body param:
+            # @param language [String] Body param
             #
-            # @param subscription_id [Integer] Body param:
+            # @param subscription_id [Integer] Body param
             #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #

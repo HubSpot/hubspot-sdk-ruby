@@ -8,7 +8,7 @@ module HubspotSDK
         #
         # @param inputs [Array<String>] Body param: Strings to input.
         #
-        # @param property [String] Query param:
+        # @param property [String] Query param
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #

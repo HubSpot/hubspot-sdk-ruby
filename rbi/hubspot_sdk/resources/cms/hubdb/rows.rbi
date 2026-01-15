@@ -228,7 +228,7 @@ module HubspotSDK
             table_id_or_name:,
             # Body param: Specifies the value for the column child table id
             child_table_id:,
-            # Body param:
+            # Body param
             display_index:,
             # Body param: List of key value pairs with the column name and column value
             values:,
@@ -265,7 +265,7 @@ module HubspotSDK
             table_id_or_name:,
             # Body param: Specifies the value for the column child table id
             child_table_id:,
-            # Body param:
+            # Body param
             display_index:,
             # Body param: List of key value pairs with the column name and column value
             values:,

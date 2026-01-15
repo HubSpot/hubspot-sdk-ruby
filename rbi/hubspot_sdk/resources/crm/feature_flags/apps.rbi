@@ -24,9 +24,9 @@ module HubspotSDK
             flag_name,
             # Path param: The ID of the app.
             app_id:,
-            # Body param:
+            # Body param
             default_state:,
-            # Body param:
+            # Body param
             override_state: nil,
             request_options: {}
           )

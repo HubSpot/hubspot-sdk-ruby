@@ -74,9 +74,9 @@ module HubspotSDK
           ).returns(HubspotSDK::Property)
         end
         def update(
-          # Path param:
+          # Path param
           property_name,
-          # Path param:
+          # Path param
           object_type:,
           # Body param: Represents a formula that is used to compute a calculated property.
           calculation_formula: nil,
@@ -153,17 +153,17 @@ module HubspotSDK
           ).returns(HubspotSDK::Property)
         end
         def get(
-          # Path param:
+          # Path param
           property_name,
-          # Path param:
+          # Path param
           object_type:,
           # Query param: Whether to return only results that have been archived.
           archived: nil,
-          # Query param:
+          # Query param
           data_sensitivity: nil,
-          # Query param:
+          # Query param
           locale: nil,
-          # Query param:
+          # Query param
           properties: nil,
           request_options: {}
         )

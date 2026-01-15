@@ -39,15 +39,15 @@ module HubspotSDK
               )
             end
             def list(
-              # Path param:
+              # Path param
               to_object_type,
-              # Path param:
+              # Path param
               partner_client_id:,
               # Query param: The paging cursor token of the last successfully read resource will
               # be returned as the `paging.next.after` JSON property of a paged response
               # containing more results.
               after: nil,
-              # Query param:
+              # Query param
               include_fa: nil,
               # Query param: The maximum number of results to display per page.
               limit: nil,

@@ -6,11 +6,11 @@ module HubspotSDK
       class Threads
         # @overload update(thread_id, body_archived: nil, status: nil, request_options: {})
         #
-        # @param thread_id [Integer] Path param:
+        # @param thread_id [Integer] Path param
         #
-        # @param body_archived [Boolean] Body param:
+        # @param body_archived [Boolean] Body param
         #
-        # @param status [Symbol, HubspotSDK::Models::Conversations::PublicThreadUpdateRequest::Status] Body param:
+        # @param status [Symbol, HubspotSDK::Models::Conversations::PublicThreadUpdateRequest::Status] Body param
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #

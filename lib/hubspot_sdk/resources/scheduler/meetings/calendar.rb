@@ -7,15 +7,15 @@ module HubspotSDK
         class Calendar
           # @overload create(organizer_user_id:, associations:, email_reminder_schedule:, properties:, timezone:, request_options: {})
           #
-          # @param organizer_user_id [String] Query param:
+          # @param organizer_user_id [String] Query param
           #
-          # @param associations [Array<HubspotSDK::Models::Scheduler::ExternalAssociationCreateRequest>] Body param:
+          # @param associations [Array<HubspotSDK::Models::Scheduler::ExternalAssociationCreateRequest>] Body param
           #
-          # @param email_reminder_schedule [HubspotSDK::Models::Scheduler::ExternalEmailReminderSchedule] Body param:
+          # @param email_reminder_schedule [HubspotSDK::Models::Scheduler::ExternalEmailReminderSchedule] Body param
           #
-          # @param properties [HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties] Body param:
+          # @param properties [HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties] Body param
           #
-          # @param timezone [String] Body param:
+          # @param timezone [String] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

@@ -36,7 +36,7 @@ module HubspotSDK
             #
             # @overload get(inputs:, properties:, properties_with_history:, archived: nil, id_property: nil, request_options: {})
             #
-            # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectID>] Body param:
+            # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectID>] Body param
             #
             # @param properties [Array<String>] Body param: Key-value pairs for setting properties for the new object.
             #

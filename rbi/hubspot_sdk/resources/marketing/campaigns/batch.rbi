@@ -71,7 +71,7 @@ module HubspotSDK
             )
           end
           def get(
-            # Body param:
+            # Body param
             inputs:,
             # Query param: End date to fetch asset metrics, formatted as YYYY-MM-DD. This date
             # is used to fetch the metrics associated with the assets for a specified period.

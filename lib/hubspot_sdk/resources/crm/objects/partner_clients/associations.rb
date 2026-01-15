@@ -55,13 +55,13 @@ module HubspotSDK
             #
             # @overload list(to_object_type, partner_client_id:, after: nil, include_fa: nil, limit: nil, request_options: {})
             #
-            # @param to_object_type [String] Path param:
+            # @param to_object_type [String] Path param
             #
-            # @param partner_client_id [String] Path param:
+            # @param partner_client_id [String] Path param
             #
             # @param after [String] Query param: The paging cursor token of the last successfully read resource will
             #
-            # @param include_fa [Boolean] Query param:
+            # @param include_fa [Boolean] Query param
             #
             # @param limit [Integer] Query param: The maximum number of results to display per page.
             #

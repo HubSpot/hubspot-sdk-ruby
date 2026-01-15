@@ -20,15 +20,15 @@ module HubspotSDK
                 )
               end
               def create_label(
-                # Path param:
+                # Path param
                 to_object_type,
-                # Path param:
+                # Path param
                 from_object_type:,
-                # Body param:
+                # Body param
                 label:,
-                # Body param:
+                # Body param
                 name:,
-                # Body param:
+                # Body param
                 inverse_label: nil,
                 request_options: {}
               )
@@ -77,15 +77,15 @@ module HubspotSDK
                 ).void
               end
               def update_label(
-                # Path param:
+                # Path param
                 to_object_type,
-                # Path param:
+                # Path param
                 from_object_type:,
-                # Body param:
+                # Body param
                 association_type_id:,
-                # Body param:
+                # Body param
                 label:,
-                # Body param:
+                # Body param
                 inverse_label: nil,
                 request_options: {}
               )

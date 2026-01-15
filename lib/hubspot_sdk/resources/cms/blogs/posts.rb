@@ -165,9 +165,9 @@ module HubspotSDK
           #
           # @param id [String] Body param: The unique ID of the blog post.
           #
-          # @param ab_status [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::AbStatus] Body param:
+          # @param ab_status [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::AbStatus] Body param
           #
-          # @param ab_test_id [String] Body param:
+          # @param ab_test_id [String] Body param
           #
           # @param archived_at [Integer] Body param: The timestamp (ISO8601 format) when this Blog Post was deleted.
           #
@@ -187,19 +187,19 @@ module HubspotSDK
           #
           # @param content_type_category [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::ContentTypeCategory] Body param: An ENUM descibing the type of this object. Should always be BLOG_POS
           #
-          # @param created [Time] Body param:
+          # @param created [Time] Body param
           #
           # @param created_by_id [String] Body param: The ID of the user that created the post.
           #
-          # @param currently_published [Boolean] Body param:
+          # @param currently_published [Boolean] Body param
           #
           # @param current_state [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::CurrentState] Body param: A generated ENUM descibing the current state of this Blog Post. Shou
           #
           # @param domain [String] Body param: The domain that the post lives on. If null, the post will default to
           #
-          # @param dynamic_page_data_source_id [String] Body param:
+          # @param dynamic_page_data_source_id [String] Body param
           #
-          # @param dynamic_page_data_source_type [Integer] Body param:
+          # @param dynamic_page_data_source_type [Integer] Body param
           #
           # @param dynamic_page_hub_db_table_id [String] Body param: For dynamic HubDB pages,
           #
@@ -213,7 +213,7 @@ module HubspotSDK
           #
           # @param featured_image_alt_text [String] Body param: Alt Text of the featuredImage.
           #
-          # @param folder_id [String] Body param:
+          # @param folder_id [String] Body param
           #
           # @param footer_html [String] Body param: Custom HTML for embed codes, javascript that should be placed before
           #
@@ -225,23 +225,23 @@ module HubspotSDK
           #
           # @param language [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::Language] Body param: The explicitly defined ISO 639 language code of the post. If null, t
           #
-          # @param layout_sections [Hash{Symbol=>HubspotSDK::Models::Cms::LayoutSection}] Body param:
+          # @param layout_sections [Hash{Symbol=>HubspotSDK::Models::Cms::LayoutSection}] Body param
           #
           # @param link_rel_canonical_url [String] Body param: Optional override to set the URL to be used in the rel=canonical lin
           #
-          # @param mab_experiment_id [String] Body param:
+          # @param mab_experiment_id [String] Body param
           #
           # @param meta_description [String] Body param: A description that goes in <meta> tag on the page.
           #
           # @param name [String] Body param: The internal name of the post.
           #
-          # @param page_expiry_date [Integer] Body param:
+          # @param page_expiry_date [Integer] Body param
           #
-          # @param page_expiry_enabled [Boolean] Body param:
+          # @param page_expiry_enabled [Boolean] Body param
           #
-          # @param page_expiry_redirect_id [Integer] Body param:
+          # @param page_expiry_redirect_id [Integer] Body param
           #
-          # @param page_expiry_redirect_url [String] Body param:
+          # @param page_expiry_redirect_url [String] Body param
           #
           # @param password [String] Body param: Set this to create a password protected page. Entering the password
           #
@@ -267,13 +267,13 @@ module HubspotSDK
           #
           # @param tag_ids [Array<Integer>] Body param: The IDs of the tags associated with this post.
           #
-          # @param theme_settings_values [Hash{Symbol=>Object}] Body param:
+          # @param theme_settings_values [Hash{Symbol=>Object}] Body param
           #
           # @param translated_from_id [String] Body param: ID of the primary blog post that this post was translated from.
           #
-          # @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::PagesContentLanguageVariation}] Body param:
+          # @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::PagesContentLanguageVariation}] Body param
           #
-          # @param updated [Time] Body param:
+          # @param updated [Time] Body param
           #
           # @param updated_by_id [String] Body param: The ID of the user that updated the post.
           #

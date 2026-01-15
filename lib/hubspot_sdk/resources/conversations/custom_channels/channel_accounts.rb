@@ -46,9 +46,9 @@ module HubspotSDK
           #
           # @param channel_id [Integer] Path param: The channel to update
           #
-          # @param authorized [Boolean] Body param:
+          # @param authorized [Boolean] Body param
           #
-          # @param name [String] Body param:
+          # @param name [String] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

@@ -44,13 +44,13 @@ module HubspotSDK
             budget_id,
             # Path param: Unique identifier for the campaign.
             campaign_guid:,
-            # Body param:
+            # Body param
             amount:,
-            # Body param:
+            # Body param
             name:,
-            # Body param:
+            # Body param
             order:,
-            # Body param:
+            # Body param
             description: nil,
             request_options: {}
           )

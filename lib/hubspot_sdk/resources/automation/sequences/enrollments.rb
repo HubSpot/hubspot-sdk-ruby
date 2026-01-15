@@ -10,15 +10,15 @@ module HubspotSDK
           #
           # @overload enroll(user_id:, contact_id:, sender_email:, sequence_id:, sender_alias_address: nil, request_options: {})
           #
-          # @param user_id [String] Query param:
+          # @param user_id [String] Query param
           #
-          # @param contact_id [String] Body param:
+          # @param contact_id [String] Body param
           #
-          # @param sender_email [String] Body param:
+          # @param sender_email [String] Body param
           #
-          # @param sequence_id [String] Body param:
+          # @param sequence_id [String] Body param
           #
-          # @param sender_alias_address [String] Body param:
+          # @param sender_alias_address [String] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

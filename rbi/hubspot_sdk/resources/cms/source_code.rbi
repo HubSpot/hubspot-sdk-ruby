@@ -20,7 +20,7 @@ module HubspotSDK
           file_path,
           # Path param: The environment of the file ("draft" or "published").
           environment:,
-          # Body param:
+          # Body param
           file: nil,
           request_options: {}
         )
@@ -102,7 +102,7 @@ module HubspotSDK
           file_path,
           # Path param: The environment of the file ("draft" or "published").
           environment:,
-          # Query param:
+          # Query param
           properties: nil,
           request_options: {}
         )
@@ -123,7 +123,7 @@ module HubspotSDK
           file_path,
           # Path param: The environment of the file ("draft" or "published").
           environment:,
-          # Body param:
+          # Body param
           file: nil,
           request_options: {}
         )
@@ -142,9 +142,9 @@ module HubspotSDK
         def validate(
           # Path param: The file system location of the file.
           file_path,
-          # Path param:
+          # Path param
           environment:,
-          # Body param:
+          # Body param
           file: nil,
           request_options: {}
         )

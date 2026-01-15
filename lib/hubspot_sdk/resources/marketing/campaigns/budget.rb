@@ -43,13 +43,13 @@ module HubspotSDK
           #
           # @param campaign_guid [String] Path param: Unique identifier for the campaign.
           #
-          # @param amount [Float] Body param:
+          # @param amount [Float] Body param
           #
-          # @param name [String] Body param:
+          # @param name [String] Body param
           #
-          # @param order [Integer] Body param:
+          # @param order [Integer] Body param
           #
-          # @param description [String] Body param:
+          # @param description [String] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

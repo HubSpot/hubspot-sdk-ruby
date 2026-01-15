@@ -14,7 +14,7 @@ module HubspotSDK
             #
             # @param from_object_type [String] Path param: The type of the from Object
             #
-            # @param inputs [Array<HubspotSDK::Models::Crm::Associations::PublicAssociationMultiPost>] Body param:
+            # @param inputs [Array<HubspotSDK::Models::Crm::Associations::PublicAssociationMultiPost>] Body param
             #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
@@ -47,7 +47,7 @@ module HubspotSDK
             #
             # @param from_object_type [String] Path param: Specifies the type of the source object in the batch association del
             #
-            # @param inputs [Array<HubspotSDK::Models::Crm::Associations::PublicAssociationMultiArchive>] Body param:
+            # @param inputs [Array<HubspotSDK::Models::Crm::Associations::PublicAssociationMultiArchive>] Body param
             #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
@@ -77,7 +77,7 @@ module HubspotSDK
             #
             # @param from_object_type [String] Path param: Specifies the type of the source object in the association.
             #
-            # @param inputs [Array<HubspotSDK::Models::Crm::Associations::PublicDefaultAssociationMultiPost>] Body param:
+            # @param inputs [Array<HubspotSDK::Models::Crm::Associations::PublicDefaultAssociationMultiPost>] Body param
             #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
@@ -112,7 +112,7 @@ module HubspotSDK
             #
             # @param from_object_type [String] Path param: The type of the from Object
             #
-            # @param inputs [Array<HubspotSDK::Models::Crm::Associations::PublicAssociationMultiPost>] Body param:
+            # @param inputs [Array<HubspotSDK::Models::Crm::Associations::PublicAssociationMultiPost>] Body param
             #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
@@ -150,7 +150,7 @@ module HubspotSDK
             #
             # @param from_object_type [String] Path param: The type of the from Object
             #
-            # @param inputs [Array<HubspotSDK::Models::Crm::Associations::PublicFetchAssociationsBatchRequest>] Body param:
+            # @param inputs [Array<HubspotSDK::Models::Crm::Associations::PublicFetchAssociationsBatchRequest>] Body param
             #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #

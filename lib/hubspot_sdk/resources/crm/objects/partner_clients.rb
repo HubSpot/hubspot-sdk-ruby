@@ -13,11 +13,11 @@ module HubspotSDK
 
           # @overload update(partner_client_id, properties:, id_property: nil, request_options: {})
           #
-          # @param partner_client_id [String] Path param:
+          # @param partner_client_id [String] Path param
           #
           # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
           #
-          # @param id_property [String] Query param:
+          # @param id_property [String] Query param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

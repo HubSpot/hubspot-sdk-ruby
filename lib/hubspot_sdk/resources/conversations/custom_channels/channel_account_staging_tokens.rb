@@ -19,9 +19,9 @@ module HubspotSDK
           #
           # @param channel_id [Integer] Path param: The ID of the channel associated with the staging token being update
           #
-          # @param account_name [String] Body param:
+          # @param account_name [String] Body param
           #
-          # @param delivery_identifier [HubspotSDK::Models::Conversations::PublicDeliveryIdentifier] Body param:
+          # @param delivery_identifier [HubspotSDK::Models::Conversations::PublicDeliveryIdentifier] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

@@ -22,11 +22,11 @@ module HubspotSDK
             # Path param: The appId for the media bridge app. It is possible to have multiple
             # apps in your developer account that use the media bridge.
             app_id:,
-            # Body param:
+            # Body param
             label:,
-            # Body param:
+            # Body param
             name:,
-            # Body param:
+            # Body param
             display_order: nil,
             request_options: {}
           )
@@ -111,9 +111,9 @@ module HubspotSDK
             app_id:,
             # Path param: The object type for the property group.
             object_type:,
-            # Body param:
+            # Body param
             display_order: nil,
-            # Body param:
+            # Body param
             label: nil,
             request_options: {}
           )

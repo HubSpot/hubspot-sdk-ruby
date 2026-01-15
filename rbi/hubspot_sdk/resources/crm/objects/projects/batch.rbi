@@ -55,14 +55,14 @@ module HubspotSDK
               ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
             end
             def get(
-              # Body param:
+              # Body param
               inputs:,
               # Body param: Key-value pairs for setting properties for the new object.
               properties:,
               # Body param: Key-value pairs for setting properties for the new object and their
               # histories.
               properties_with_history:,
-              # Query param:
+              # Query param
               archived: nil,
               # Body param: A unique property used to identify objects instead of the default
               # ID.

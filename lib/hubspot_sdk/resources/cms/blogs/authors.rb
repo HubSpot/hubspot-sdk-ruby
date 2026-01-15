@@ -79,7 +79,7 @@ module HubspotSDK
           #
           # @param bio [String] Body param: A short biography of the blog author.
           #
-          # @param created [Time] Body param:
+          # @param created [Time] Body param
           #
           # @param deleted_at [Time] Body param: The timestamp (ISO8601 format) when this Blog Author was deleted.
           #
@@ -89,21 +89,21 @@ module HubspotSDK
           #
           # @param facebook [String] Body param: URL to the Blog Author's Facebook page.
           #
-          # @param full_name [String] Body param:
+          # @param full_name [String] Body param
           #
           # @param language [Symbol, HubspotSDK::Models::Cms::Blogs::BlogAuthor::Language] Body param: The explicitly defined ISO 639 language code of the blog author.
           #
           # @param linkedin [String] Body param: URL to the blog author's LinkedIn page.
           #
-          # @param name [String] Body param:
+          # @param name [String] Body param
           #
-          # @param slug [String] Body param:
+          # @param slug [String] Body param
           #
           # @param translated_from_id [Integer] Body param: ID of the primary blog author this object was translated from.
           #
           # @param twitter [String] Body param: URL or username of the Twitter account associated with the Blog Auth
           #
-          # @param updated [Time] Body param:
+          # @param updated [Time] Body param
           #
           # @param website [String] Body param: URL to the website of the Blog Author.
           #

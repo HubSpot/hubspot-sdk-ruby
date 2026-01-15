@@ -31,11 +31,11 @@ module HubspotSDK
                 )
               end
               def batch_create(
-                # Path param:
+                # Path param
                 to_object_type,
-                # Path param:
+                # Path param
                 from_object_type:,
-                # Body param:
+                # Body param
                 inputs:,
                 request_options: {}
               )
@@ -53,11 +53,11 @@ module HubspotSDK
                 ).returns(HubspotSDK::Crm::BatchResponseVoid)
               end
               def batch_delete(
-                # Path param:
+                # Path param
                 to_object_type,
-                # Path param:
+                # Path param
                 from_object_type:,
-                # Body param:
+                # Body param
                 inputs:,
                 request_options: {}
               )
@@ -77,11 +77,11 @@ module HubspotSDK
                 )
               end
               def batch_update(
-                # Path param:
+                # Path param
                 to_object_type,
-                # Path param:
+                # Path param
                 from_object_type:,
-                # Body param:
+                # Body param
                 inputs:,
                 request_options: {}
               )

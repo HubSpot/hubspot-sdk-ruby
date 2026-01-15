@@ -85,19 +85,19 @@ module HubspotSDK
         #
         # @param active_domain [String] Body param: The active domain of the email.
         #
-        # @param business_unit_id [Integer] Body param:
+        # @param business_unit_id [Integer] Body param
         #
         # @param campaign [String] Body param: The ID of the campaign this email is associated to.
         #
         # @param content [HubspotSDK::Models::Marketing::PublicEmailContent] Body param: Data structure representing the content of the email.
         #
-        # @param folder_id_v2 [Integer] Body param:
+        # @param folder_id_v2 [Integer] Body param
         #
         # @param from [HubspotSDK::Models::Marketing::PublicEmailFromDetails] Body param: Data structure representing the from fields on the email.
         #
-        # @param jitter_send_time [Boolean] Body param:
+        # @param jitter_send_time [Boolean] Body param
         #
-        # @param language [Symbol, HubspotSDK::Models::Marketing::EmailUpdateRequest::Language] Body param:
+        # @param language [Symbol, HubspotSDK::Models::Marketing::EmailUpdateRequest::Language] Body param
         #
         # @param name [String] Body param: The name of the email, as displayed on the email dashboard.
         #
@@ -119,7 +119,7 @@ module HubspotSDK
         #
         # @param to [HubspotSDK::Models::Marketing::PublicEmailToDetails] Body param: Data structure representing the to fields of the email.
         #
-        # @param webversion [HubspotSDK::Models::Marketing::PublicWebversionDetails] Body param:
+        # @param webversion [HubspotSDK::Models::Marketing::PublicWebversionDetails] Body param
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #

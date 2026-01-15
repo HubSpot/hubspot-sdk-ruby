@@ -99,7 +99,7 @@ module HubspotSDK
             avatar:,
             # Body param: A short biography of the blog author.
             bio:,
-            # Body param:
+            # Body param
             created:,
             # Body param: The timestamp (ISO8601 format) when this Blog Author was deleted.
             deleted_at:,
@@ -109,22 +109,22 @@ module HubspotSDK
             email:,
             # Body param: URL to the Blog Author's Facebook page.
             facebook:,
-            # Body param:
+            # Body param
             full_name:,
             # Body param: The explicitly defined ISO 639 language code of the blog author.
             language:,
             # Body param: URL to the blog author's LinkedIn page.
             linkedin:,
-            # Body param:
+            # Body param
             name:,
-            # Body param:
+            # Body param
             slug:,
             # Body param: ID of the primary blog author this object was translated from.
             translated_from_id:,
             # Body param: URL or username of the Twitter account associated with the Blog
             # Author. This will be normalized into the Twitter url for said user.
             twitter:,
-            # Body param:
+            # Body param
             updated:,
             # Body param: URL to the website of the Blog Author.
             website:,

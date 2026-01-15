@@ -66,7 +66,7 @@ module HubspotSDK
             # Path param: The type of function. Can be `PRE_ACTION_EXECUTION`,
             # `PRE_FETCH_OPTIONS`, `POST_FETCH_OPTIONS`, `POST_ACTION_EXECUTION`.
             function_type:,
-            # Body param:
+            # Body param
             body:,
             request_options: {}
           )
@@ -91,7 +91,7 @@ module HubspotSDK
             app_id:,
             # Path param: The ID of the definition.
             definition_id:,
-            # Body param:
+            # Body param
             body:,
             request_options: {}
           )

@@ -26,11 +26,11 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
           def update(
-            # Path param:
+            # Path param
             partner_client_id,
             # Body param: Key value pairs representing the properties of the object.
             properties:,
-            # Query param:
+            # Query param
             id_property: nil,
             request_options: {}
           )

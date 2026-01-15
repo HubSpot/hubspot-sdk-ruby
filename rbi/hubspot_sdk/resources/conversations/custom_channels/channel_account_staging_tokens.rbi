@@ -27,9 +27,9 @@ module HubspotSDK
             # Path param: The ID of the channel associated with the staging token being
             # updated.
             channel_id:,
-            # Body param:
+            # Body param
             account_name:,
-            # Body param:
+            # Body param
             delivery_identifier:,
             request_options: {}
           )

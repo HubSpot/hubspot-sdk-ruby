@@ -43,7 +43,7 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
           def update(
-            # Path param:
+            # Path param
             contract_id,
             # Body param: Key value pairs representing the properties of the object.
             properties:,

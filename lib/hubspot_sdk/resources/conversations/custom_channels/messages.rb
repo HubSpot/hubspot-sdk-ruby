@@ -63,7 +63,7 @@ module HubspotSDK
           #
           # @param status_type [Symbol, HubspotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType] Body param: Valid status are SENT, FAILED, and READ
           #
-          # @param error_message [String] Body param:
+          # @param error_message [String] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

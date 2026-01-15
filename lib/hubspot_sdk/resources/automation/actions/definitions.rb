@@ -57,23 +57,23 @@ module HubspotSDK
           #
           # @param app_id [Integer] Path param: The ID of the app.
           #
-          # @param action_url [String] Body param:
+          # @param action_url [String] Body param
           #
-          # @param execution_rules [Array<HubspotSDK::Models::Automation::PublicExecutionTranslationRule>] Body param:
+          # @param execution_rules [Array<HubspotSDK::Models::Automation::PublicExecutionTranslationRule>] Body param
           #
-          # @param input_field_dependencies [Array<HubspotSDK::Models::Automation::PublicSingleFieldDependency, HubspotSDK::Models::Automation::PublicConditionalSingleFieldDependency>] Body param:
+          # @param input_field_dependencies [Array<HubspotSDK::Models::Automation::PublicSingleFieldDependency, HubspotSDK::Models::Automation::PublicConditionalSingleFieldDependency>] Body param
           #
-          # @param input_fields [Array<HubspotSDK::Models::Automation::InputFieldDefinition>] Body param:
+          # @param input_fields [Array<HubspotSDK::Models::Automation::InputFieldDefinition>] Body param
           #
-          # @param labels [Hash{Symbol=>HubspotSDK::Models::Automation::PublicActionLabels}] Body param:
+          # @param labels [Hash{Symbol=>HubspotSDK::Models::Automation::PublicActionLabels}] Body param
           #
-          # @param object_request_options [HubspotSDK::Models::Automation::PublicObjectRequestOptions] Body param:
+          # @param object_request_options [HubspotSDK::Models::Automation::PublicObjectRequestOptions] Body param
           #
-          # @param object_types [Array<String>] Body param:
+          # @param object_types [Array<String>] Body param
           #
-          # @param output_fields [Array<HubspotSDK::Models::Automation::OutputFieldDefinition>] Body param:
+          # @param output_fields [Array<HubspotSDK::Models::Automation::OutputFieldDefinition>] Body param
           #
-          # @param published [Boolean] Body param:
+          # @param published [Boolean] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

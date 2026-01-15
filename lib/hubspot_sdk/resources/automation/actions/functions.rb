@@ -89,7 +89,7 @@ module HubspotSDK
           #
           # @param function_type [Symbol, HubspotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType] Path param: The type of function. Can be `PRE_ACTION_EXECUTION`, `PRE_FETCH_OPTI
           #
-          # @param body [String] Body param:
+          # @param body [String] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -140,7 +140,7 @@ module HubspotSDK
           #
           # @param definition_id [String] Path param: The ID of the definition.
           #
-          # @param body [String] Body param:
+          # @param body [String] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

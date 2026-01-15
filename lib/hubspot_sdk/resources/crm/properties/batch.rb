@@ -56,15 +56,15 @@ module HubspotSDK
           #
           # @overload get(object_type, archived:, data_sensitivity:, inputs:, locale: nil, request_options: {})
           #
-          # @param object_type [String] Path param:
+          # @param object_type [String] Path param
           #
-          # @param archived [Boolean] Body param:
+          # @param archived [Boolean] Body param
           #
-          # @param data_sensitivity [Symbol, HubspotSDK::Models::BatchReadInputPropertyName::DataSensitivity] Body param:
+          # @param data_sensitivity [Symbol, HubspotSDK::Models::BatchReadInputPropertyName::DataSensitivity] Body param
           #
-          # @param inputs [Array<HubspotSDK::Models::PropertyName>] Body param:
+          # @param inputs [Array<HubspotSDK::Models::PropertyName>] Body param
           #
-          # @param locale [String] Query param:
+          # @param locale [String] Query param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

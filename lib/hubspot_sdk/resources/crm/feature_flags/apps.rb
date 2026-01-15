@@ -17,9 +17,9 @@ module HubspotSDK
           #
           # @param app_id [Integer] Path param: The ID of the app.
           #
-          # @param default_state [Symbol, HubspotSDK::Models::Crm::FlagPutRequest::DefaultState] Body param:
+          # @param default_state [Symbol, HubspotSDK::Models::Crm::FlagPutRequest::DefaultState] Body param
           #
-          # @param override_state [Symbol, HubspotSDK::Models::Crm::FlagPutRequest::OverrideState] Body param:
+          # @param override_state [Symbol, HubspotSDK::Models::Crm::FlagPutRequest::OverrideState] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

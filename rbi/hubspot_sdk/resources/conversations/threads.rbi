@@ -14,11 +14,11 @@ module HubspotSDK
           ).returns(HubspotSDK::Conversations::PublicThread)
         end
         def update(
-          # Path param:
+          # Path param
           thread_id,
-          # Body param:
+          # Body param
           body_archived: nil,
-          # Body param:
+          # Body param
           status: nil,
           request_options: {}
         )

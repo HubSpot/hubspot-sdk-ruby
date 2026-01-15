@@ -43,15 +43,15 @@ module HubspotSDK
             ).returns(HubspotSDK::BatchResponseProperty)
           end
           def get(
-            # Path param:
+            # Path param
             object_type,
-            # Body param:
+            # Body param
             archived:,
-            # Body param:
+            # Body param
             data_sensitivity:,
-            # Body param:
+            # Body param
             inputs:,
-            # Query param:
+            # Query param
             locale: nil,
             request_options: {}
           )

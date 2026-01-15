@@ -45,9 +45,9 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
           def update(
-            # Path param:
+            # Path param
             object_id_,
-            # Path param:
+            # Path param
             object_type:,
             # Body param: Key value pairs representing the properties of the object.
             properties:,
@@ -129,9 +129,9 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::SimplePublicObjectWithAssociations)
           end
           def get(
-            # Path param:
+            # Path param
             object_id_,
-            # Path param:
+            # Path param
             object_type:,
             # Query param: Whether to return only results that have been archived.
             archived: nil,

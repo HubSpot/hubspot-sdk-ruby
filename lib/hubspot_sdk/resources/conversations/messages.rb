@@ -49,11 +49,11 @@ module HubspotSDK
 
         # @overload get(message_id, thread_id:, property: nil, request_options: {})
         #
-        # @param message_id [String] Path param:
+        # @param message_id [String] Path param
         #
-        # @param thread_id [Integer] Path param:
+        # @param thread_id [Integer] Path param
         #
-        # @param property [String] Query param:
+        # @param property [String] Query param
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -77,11 +77,11 @@ module HubspotSDK
 
         # @overload get_original_content(message_id, thread_id:, property: nil, request_options: {})
         #
-        # @param message_id [String] Path param:
+        # @param message_id [String] Path param
         #
-        # @param thread_id [Integer] Path param:
+        # @param thread_id [Integer] Path param
         #
-        # @param property [String] Query param:
+        # @param property [String] Query param
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #

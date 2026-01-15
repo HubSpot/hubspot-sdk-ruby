@@ -170,24 +170,24 @@ module HubspotSDK
           #
           # @param category_id [Integer] Body param: ID of the type of object this is. Should always .
           #
-          # @param content_group_id [String] Body param:
+          # @param content_group_id [String] Body param
           #
           # @param content_type_category [Symbol, HubspotSDK::Models::Cms::Page::ContentTypeCategory] Body param: An ENUM descibing the type of this object. Should be either
           # LANDING\_
           #
-          # @param created [Time] Body param:
+          # @param created [Time] Body param
           #
           # @param created_by_id [String] Body param: The ID of the user that created this page.
           #
-          # @param currently_published [Boolean] Body param:
+          # @param currently_published [Boolean] Body param
           #
           # @param current_state [Symbol, HubspotSDK::Models::Cms::Page::CurrentState] Body param: A generated ENUM descibing the current state of this page.
           #
           # @param domain [String] Body param: The domain this page will resolve to. If null, the page will default
           #
-          # @param dynamic_page_data_source_id [String] Body param:
+          # @param dynamic_page_data_source_id [String] Body param
           #
-          # @param dynamic_page_data_source_type [Integer] Body param:
+          # @param dynamic_page_data_source_type [Integer] Body param
           #
           # @param dynamic_page_hub_db_table_id [String] Body param: The ID of the HubDB table this page references, if applicable
           #
@@ -211,7 +211,7 @@ module HubspotSDK
           #
           # @param language [Symbol, HubspotSDK::Models::Cms::Page::Language] Body param: The explicitly defined ISO 639 language code of the page. If null, t
           #
-          # @param layout_sections [Hash{Symbol=>HubspotSDK::Models::Cms::LayoutSection}] Body param:
+          # @param layout_sections [Hash{Symbol=>HubspotSDK::Models::Cms::LayoutSection}] Body param
           #
           # @param link_rel_canonical_url [String] Body param: Optional override to set the URL to be used in the rel=canonical lin
           #
@@ -249,13 +249,13 @@ module HubspotSDK
           #
           # @param template_path [String] Body param: String detailing the path of the template used for this page.
           #
-          # @param theme_settings_values [Hash{Symbol=>Object}] Body param:
+          # @param theme_settings_values [Hash{Symbol=>Object}] Body param
           #
           # @param translated_from_id [String] Body param: ID of the primary page this object was translated from.
           #
-          # @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::PagesContentLanguageVariation}] Body param:
+          # @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::PagesContentLanguageVariation}] Body param
           #
-          # @param updated [Time] Body param:
+          # @param updated [Time] Body param
           #
           # @param updated_by_id [String] Body param: The ID of the user that updated this page.
           #

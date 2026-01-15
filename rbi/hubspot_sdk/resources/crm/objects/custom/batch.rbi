@@ -59,9 +59,9 @@ module HubspotSDK
               ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
             end
             def get(
-              # Path param:
+              # Path param
               object_type,
-              # Body param:
+              # Body param
               inputs:,
               # Body param: Key-value pairs for setting properties for the new object.
               properties:,
