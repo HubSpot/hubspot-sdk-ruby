@@ -32,21 +32,21 @@ module HubspotSDK
           ).returns(HubspotSDK::Auth::TokenResponseIf)
         end
         def create_access_token(
-          # Body param:
+          # Body param
           body_client_secret: nil,
-          # Body param:
+          # Body param
           body_refresh_token: nil,
-          # Body param:
+          # Body param
           client_id: nil,
-          # Body param:
+          # Body param
           code: nil,
-          # Body param:
+          # Body param
           code_verifier: nil,
-          # Body param:
+          # Body param
           grant_type: nil,
-          # Body param:
+          # Body param
           redirect_uri: nil,
-          # Body param:
+          # Body param
           scope: nil,
           request_options: {}
         )

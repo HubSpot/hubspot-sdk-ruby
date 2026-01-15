@@ -9,15 +9,15 @@ module HubspotSDK
             class Definitions
               # @overload create_label(to_object_type, from_object_type:, label:, name:, inverse_label: nil, request_options: {})
               #
-              # @param to_object_type [String] Path param:
+              # @param to_object_type [String] Path param
               #
-              # @param from_object_type [String] Path param:
+              # @param from_object_type [String] Path param
               #
-              # @param label [String] Body param:
+              # @param label [String] Body param
               #
-              # @param name [String] Body param:
+              # @param name [String] Body param
               #
-              # @param inverse_label [String] Body param:
+              # @param inverse_label [String] Body param
               #
               # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
               #
@@ -100,15 +100,15 @@ module HubspotSDK
 
               # @overload update_label(to_object_type, from_object_type:, association_type_id:, label:, inverse_label: nil, request_options: {})
               #
-              # @param to_object_type [String] Path param:
+              # @param to_object_type [String] Path param
               #
-              # @param from_object_type [String] Path param:
+              # @param from_object_type [String] Path param
               #
-              # @param association_type_id [Integer] Body param:
+              # @param association_type_id [Integer] Body param
               #
-              # @param label [String] Body param:
+              # @param label [String] Body param
               #
-              # @param inverse_label [String] Body param:
+              # @param inverse_label [String] Body param
               #
               # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
               #

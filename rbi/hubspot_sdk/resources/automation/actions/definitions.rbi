@@ -96,23 +96,23 @@ module HubspotSDK
             definition_id,
             # Path param: The ID of the app.
             app_id:,
-            # Body param:
+            # Body param
             action_url: nil,
-            # Body param:
+            # Body param
             execution_rules: nil,
-            # Body param:
+            # Body param
             input_field_dependencies: nil,
-            # Body param:
+            # Body param
             input_fields: nil,
-            # Body param:
+            # Body param
             labels: nil,
-            # Body param:
+            # Body param
             object_request_options: nil,
-            # Body param:
+            # Body param
             object_types: nil,
-            # Body param:
+            # Body param
             output_fields: nil,
-            # Body param:
+            # Body param
             published: nil,
             request_options: {}
           )

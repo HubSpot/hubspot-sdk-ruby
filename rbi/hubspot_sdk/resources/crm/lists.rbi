@@ -278,7 +278,7 @@ module HubspotSDK
         def update_filters(
           # Path param: The **ILS ID** of the list to update.
           list_id,
-          # Body param:
+          # Body param
           filter_branch:,
           # Query param: A flag indicating whether or not the memberships added to the list
           # as a result of the filter change should be enrolled in workflows that are

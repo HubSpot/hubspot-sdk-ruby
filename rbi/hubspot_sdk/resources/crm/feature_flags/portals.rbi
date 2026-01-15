@@ -24,7 +24,7 @@ module HubspotSDK
             # Path param: The name of the flag, either `hs-release-app-cards` or
             # `hs-hide-crm-cards`.
             flag_name:,
-            # Body param:
+            # Body param
             flag_state:,
             request_options: {}
           )
@@ -67,7 +67,7 @@ module HubspotSDK
             flag_name,
             # Path param: The ID of the app.
             app_id:,
-            # Body param:
+            # Body param
             portal_ids:,
             request_options: {}
           )
@@ -90,7 +90,7 @@ module HubspotSDK
             flag_name,
             # Path param: The ID of the app.
             app_id:,
-            # Body param:
+            # Body param
             portal_states:,
             request_options: {}
           )

@@ -25,7 +25,7 @@ module HubspotSDK
               to_object_type,
               # Path param: The type of the from Object
               from_object_type:,
-              # Body param:
+              # Body param
               inputs:,
               request_options: {}
             )
@@ -50,7 +50,7 @@ module HubspotSDK
               # Path param: Specifies the type of the source object in the batch association
               # deletion.
               from_object_type:,
-              # Body param:
+              # Body param
               inputs:,
               request_options: {}
             )
@@ -73,7 +73,7 @@ module HubspotSDK
               to_object_type,
               # Path param: Specifies the type of the source object in the association.
               from_object_type:,
-              # Body param:
+              # Body param
               inputs:,
               request_options: {}
             )
@@ -97,7 +97,7 @@ module HubspotSDK
               to_object_type,
               # Path param: The type of the from Object
               from_object_type:,
-              # Body param:
+              # Body param
               inputs:,
               request_options: {}
             )
@@ -126,7 +126,7 @@ module HubspotSDK
               to_object_type,
               # Path param: The type of the from Object
               from_object_type:,
-              # Body param:
+              # Body param
               inputs:,
               request_options: {}
             )

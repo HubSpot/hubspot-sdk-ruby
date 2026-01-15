@@ -300,25 +300,25 @@ module HubspotSDK
             campaign:,
             # Body param: ID of the type of object this is. Should always .
             category_id:,
-            # Body param:
+            # Body param
             content_group_id:,
             # Body param: An ENUM descibing the type of this object. Should be either
             # LANDING_PAGE or SITE_PAGE.
             content_type_category:,
-            # Body param:
+            # Body param
             created:,
             # Body param: The ID of the user that created this page.
             created_by_id:,
-            # Body param:
+            # Body param
             currently_published:,
             # Body param: A generated ENUM descibing the current state of this page.
             current_state:,
             # Body param: The domain this page will resolve to. If null, the page will default
             # to the primary domain for this content type.
             domain:,
-            # Body param:
+            # Body param
             dynamic_page_data_source_id:,
-            # Body param:
+            # Body param
             dynamic_page_data_source_type:,
             # Body param: The ID of the HubDB table this page references, if applicable
             dynamic_page_hub_db_table_id:,
@@ -349,7 +349,7 @@ module HubspotSDK
             # Body param: The explicitly defined ISO 639 language code of the page. If null,
             # the page will default to the language of the Domain.
             language:,
-            # Body param:
+            # Body param
             layout_sections:,
             # Body param: Optional override to set the URL to be used in the rel=canonical
             # link tag on the page.
@@ -398,13 +398,13 @@ module HubspotSDK
             subcategory:,
             # Body param: String detailing the path of the template used for this page.
             template_path:,
-            # Body param:
+            # Body param
             theme_settings_values:,
             # Body param: ID of the primary page this object was translated from.
             translated_from_id:,
-            # Body param:
+            # Body param
             translations:,
-            # Body param:
+            # Body param
             updated:,
             # Body param: The ID of the user that updated this page.
             updated_by_id:,

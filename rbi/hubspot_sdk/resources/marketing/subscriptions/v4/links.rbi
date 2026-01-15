@@ -20,15 +20,15 @@ module HubspotSDK
               )
             end
             def create(
-              # Query param:
+              # Query param
               channel:,
-              # Body param:
+              # Body param
               subscriber_id_string:,
-              # Query param:
+              # Query param
               business_unit_id: nil,
-              # Body param:
+              # Body param
               language: nil,
-              # Body param:
+              # Body param
               subscription_id: nil,
               request_options: {}
             )

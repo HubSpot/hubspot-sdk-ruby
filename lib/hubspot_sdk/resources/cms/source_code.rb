@@ -16,7 +16,7 @@ module HubspotSDK
         #
         # @param environment [String] Path param: The environment of the file ("draft" or "published").
         #
-        # @param file [Pathname, StringIO, IO, String, HubspotSDK::FilePart] Body param:
+        # @param file [Pathname, StringIO, IO, String, HubspotSDK::FilePart] Body param
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -147,7 +147,7 @@ module HubspotSDK
         #
         # @param environment [String] Path param: The environment of the file ("draft" or "published").
         #
-        # @param properties [String] Query param:
+        # @param properties [String] Query param
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -178,7 +178,7 @@ module HubspotSDK
         #
         # @param environment [String] Path param: The environment of the file ("draft" or "published").
         #
-        # @param file [Pathname, StringIO, IO, String, HubspotSDK::FilePart] Body param:
+        # @param file [Pathname, StringIO, IO, String, HubspotSDK::FilePart] Body param
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -208,9 +208,9 @@ module HubspotSDK
         #
         # @param file_path [String] Path param: The file system location of the file.
         #
-        # @param environment [String] Path param:
+        # @param environment [String] Path param
         #
-        # @param file [Pathname, StringIO, IO, String, HubspotSDK::FilePart] Body param:
+        # @param file [Pathname, StringIO, IO, String, HubspotSDK::FilePart] Body param
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #

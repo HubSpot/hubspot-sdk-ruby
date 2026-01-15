@@ -25,11 +25,11 @@ module HubspotSDK
 
               # @overload batch_create(to_object_type, from_object_type:, inputs:, request_options: {})
               #
-              # @param to_object_type [String] Path param:
+              # @param to_object_type [String] Path param
               #
-              # @param from_object_type [String] Path param:
+              # @param from_object_type [String] Path param
               #
-              # @param inputs [Array<HubspotSDK::Models::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationCreateRequest>] Body param:
+              # @param inputs [Array<HubspotSDK::Models::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationCreateRequest>] Body param
               #
               # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
               #
@@ -58,11 +58,11 @@ module HubspotSDK
 
               # @overload batch_delete(to_object_type, from_object_type:, inputs:, request_options: {})
               #
-              # @param to_object_type [String] Path param:
+              # @param to_object_type [String] Path param
               #
-              # @param from_object_type [String] Path param:
+              # @param from_object_type [String] Path param
               #
-              # @param inputs [Array<HubspotSDK::Models::Crm::Associations::Schema::PublicAssociationSpec>] Body param:
+              # @param inputs [Array<HubspotSDK::Models::Crm::Associations::Schema::PublicAssociationSpec>] Body param
               #
               # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
               #
@@ -91,11 +91,11 @@ module HubspotSDK
 
               # @overload batch_update(to_object_type, from_object_type:, inputs:, request_options: {})
               #
-              # @param to_object_type [String] Path param:
+              # @param to_object_type [String] Path param
               #
-              # @param from_object_type [String] Path param:
+              # @param from_object_type [String] Path param
               #
-              # @param inputs [Array<HubspotSDK::Models::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest>] Body param:
+              # @param inputs [Array<HubspotSDK::Models::Crm::Associations::Schema::PublicAssociationDefinitionConfigurationUpdateRequest>] Body param
               #
               # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
               #

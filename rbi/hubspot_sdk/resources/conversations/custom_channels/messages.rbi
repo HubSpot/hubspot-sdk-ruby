@@ -86,7 +86,7 @@ module HubspotSDK
             channel_id:,
             # Body param: Valid status are SENT, FAILED, and READ
             status_type:,
-            # Body param:
+            # Body param
             error_message: nil,
             request_options: {}
           )

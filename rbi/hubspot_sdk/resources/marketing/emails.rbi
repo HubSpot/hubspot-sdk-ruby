@@ -117,19 +117,19 @@ module HubspotSDK
           body_archived: nil,
           # Body param: The active domain of the email.
           active_domain: nil,
-          # Body param:
+          # Body param
           business_unit_id: nil,
           # Body param: The ID of the campaign this email is associated to.
           campaign: nil,
           # Body param: Data structure representing the content of the email.
           content: nil,
-          # Body param:
+          # Body param
           folder_id_v2: nil,
           # Body param: Data structure representing the from fields on the email.
           from: nil,
-          # Body param:
+          # Body param
           jitter_send_time: nil,
-          # Body param:
+          # Body param
           language: nil,
           # Body param: The name of the email, as displayed on the email dashboard.
           name: nil,
@@ -153,7 +153,7 @@ module HubspotSDK
           testing: nil,
           # Body param: Data structure representing the to fields of the email.
           to: nil,
-          # Body param:
+          # Body param
           webversion: nil,
           request_options: {}
         )

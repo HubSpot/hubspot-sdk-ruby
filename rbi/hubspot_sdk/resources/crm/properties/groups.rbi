@@ -36,13 +36,13 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::PropertyGroup)
           end
           def update(
-            # Path param:
+            # Path param
             group_name,
-            # Path param:
+            # Path param
             object_type:,
-            # Body param:
+            # Body param
             display_order: nil,
-            # Body param:
+            # Body param
             label: nil,
             request_options: {}
           )
@@ -81,11 +81,11 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::PropertyGroup)
           end
           def get(
-            # Path param:
+            # Path param
             group_name,
-            # Path param:
+            # Path param
             object_type:,
-            # Query param:
+            # Query param
             locale: nil,
             request_options: {}
           )

@@ -49,11 +49,11 @@ module HubspotSDK
           ).returns(HubspotSDK::Conversations::PublicMessage::Variants)
         end
         def get(
-          # Path param:
+          # Path param
           message_id,
-          # Path param:
+          # Path param
           thread_id:,
-          # Query param:
+          # Query param
           property: nil,
           request_options: {}
         )
@@ -68,11 +68,11 @@ module HubspotSDK
           ).returns(HubspotSDK::Conversations::PublicMessageContent)
         end
         def get_original_content(
-          # Path param:
+          # Path param
           message_id,
-          # Path param:
+          # Path param
           thread_id:,
-          # Query param:
+          # Query param
           property: nil,
           request_options: {}
         )

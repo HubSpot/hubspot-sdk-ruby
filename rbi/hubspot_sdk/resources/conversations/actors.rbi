@@ -14,7 +14,7 @@ module HubspotSDK
         def batch_read(
           # Body param: Strings to input.
           inputs:,
-          # Query param:
+          # Query param
           property: nil,
           request_options: {}
         )

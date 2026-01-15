@@ -289,9 +289,9 @@ module HubspotSDK
             object_id_,
             # Body param: The unique ID of the blog post.
             id:,
-            # Body param:
+            # Body param
             ab_status:,
-            # Body param:
+            # Body param
             ab_test_id:,
             # Body param: The timestamp (ISO8601 format) when this Blog Post was deleted.
             archived_at:,
@@ -315,11 +315,11 @@ module HubspotSDK
             # Body param: An ENUM descibing the type of this object. Should always be
             # BLOG_POST.
             content_type_category:,
-            # Body param:
+            # Body param
             created:,
             # Body param: The ID of the user that created the post.
             created_by_id:,
-            # Body param:
+            # Body param
             currently_published:,
             # Body param: A generated ENUM descibing the current state of this Blog Post.
             # Should always match state.
@@ -327,9 +327,9 @@ module HubspotSDK
             # Body param: The domain that the post lives on. If null, the post will default to
             # the domain of the parent blog.
             domain:,
-            # Body param:
+            # Body param
             dynamic_page_data_source_id:,
-            # Body param:
+            # Body param
             dynamic_page_data_source_type:,
             # Body param: For dynamic HubDB pages, the ID of the HubDB table this post
             # references.
@@ -346,7 +346,7 @@ module HubspotSDK
             featured_image:,
             # Body param: Alt Text of the featuredImage.
             featured_image_alt_text:,
-            # Body param:
+            # Body param
             folder_id:,
             # Body param: Custom HTML for embed codes, javascript that should be placed before
             # the </body> tag of the page.
@@ -362,24 +362,24 @@ module HubspotSDK
             # Body param: The explicitly defined ISO 639 language code of the post. If null,
             # the post will default to the language of the parent blog.
             language:,
-            # Body param:
+            # Body param
             layout_sections:,
             # Body param: Optional override to set the URL to be used in the rel=canonical
             # link tag on the page.
             link_rel_canonical_url:,
-            # Body param:
+            # Body param
             mab_experiment_id:,
             # Body param: A description that goes in <meta> tag on the page.
             meta_description:,
             # Body param: The internal name of the post.
             name:,
-            # Body param:
+            # Body param
             page_expiry_date:,
-            # Body param:
+            # Body param
             page_expiry_enabled:,
-            # Body param:
+            # Body param
             page_expiry_redirect_id:,
-            # Body param:
+            # Body param
             page_expiry_redirect_url:,
             # Body param: Set this to create a password protected page. Entering the password
             # will be required to view the page.
@@ -409,13 +409,13 @@ module HubspotSDK
             state:,
             # Body param: The IDs of the tags associated with this post.
             tag_ids:,
-            # Body param:
+            # Body param
             theme_settings_values:,
             # Body param: ID of the primary blog post that this post was translated from.
             translated_from_id:,
-            # Body param:
+            # Body param
             translations:,
-            # Body param:
+            # Body param
             updated:,
             # Body param: The ID of the user that updated the post.
             updated_by_id:,

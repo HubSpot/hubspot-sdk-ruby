@@ -20,7 +20,7 @@ module HubspotSDK
             to_object_type,
             # Path param: The type of the source object in the association.
             from_object_type:,
-            # Body param:
+            # Body param
             inputs:,
             request_options: {}
           )
@@ -41,7 +41,7 @@ module HubspotSDK
             to_object_type,
             # Path param: The type of the source object in the association.
             from_object_type:,
-            # Body param:
+            # Body param
             inputs:,
             request_options: {}
           )
@@ -62,7 +62,7 @@ module HubspotSDK
             to_object_type,
             # Path param: The type of the source object in the association.
             from_object_type:,
-            # Body param:
+            # Body param
             inputs:,
             request_options: {}
           )

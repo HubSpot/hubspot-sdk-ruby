@@ -272,7 +272,7 @@ module HubspotSDK
           #
           # @param child_table_id [Integer] Body param: Specifies the value for the column child table id
           #
-          # @param display_index [Integer] Body param:
+          # @param display_index [Integer] Body param
           #
           # @param values [Hash{Symbol=>HubspotSDK::Models::Cms::Variant}] Body param: List of key value pairs with the column name and column value
           #
@@ -316,7 +316,7 @@ module HubspotSDK
           #
           # @param child_table_id [Integer] Body param: Specifies the value for the column child table id
           #
-          # @param display_index [Integer] Body param:
+          # @param display_index [Integer] Body param
           #
           # @param values [Hash{Symbol=>HubspotSDK::Models::Cms::Variant}] Body param: List of key value pairs with the column name and column value
           #

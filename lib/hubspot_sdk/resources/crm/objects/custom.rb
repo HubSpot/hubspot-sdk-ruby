@@ -45,9 +45,9 @@ module HubspotSDK
           #
           # @overload update(object_id_, object_type:, properties:, id_property: nil, request_options: {})
           #
-          # @param object_id_ [String] Path param:
+          # @param object_id_ [String] Path param
           #
-          # @param object_type [String] Path param:
+          # @param object_type [String] Path param
           #
           # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
           #
@@ -149,9 +149,9 @@ module HubspotSDK
           #
           # @overload get(object_id_, object_type:, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
-          # @param object_id_ [String] Path param:
+          # @param object_id_ [String] Path param
           #
-          # @param object_type [String] Path param:
+          # @param object_type [String] Path param
           #
           # @param archived [Boolean] Query param: Whether to return only results that have been archived.
           #

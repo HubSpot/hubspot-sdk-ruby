@@ -54,9 +54,9 @@ module HubspotSDK
         #
         # @overload update(property_name, object_type:, calculation_formula: nil, description: nil, display_order: nil, field_type: nil, form_field: nil, group_name: nil, hidden: nil, label: nil, options: nil, type: nil, request_options: {})
         #
-        # @param property_name [String] Path param:
+        # @param property_name [String] Path param
         #
-        # @param object_type [String] Path param:
+        # @param object_type [String] Path param
         #
         # @param calculation_formula [String] Body param: Represents a formula that is used to compute a calculated property.
         #
@@ -157,17 +157,17 @@ module HubspotSDK
         #
         # @overload get(property_name, object_type:, archived: nil, data_sensitivity: nil, locale: nil, properties: nil, request_options: {})
         #
-        # @param property_name [String] Path param:
+        # @param property_name [String] Path param
         #
-        # @param object_type [String] Path param:
+        # @param object_type [String] Path param
         #
         # @param archived [Boolean] Query param: Whether to return only results that have been archived.
         #
-        # @param data_sensitivity [Symbol, HubspotSDK::Models::Crm::PropertyGetParams::DataSensitivity] Query param:
+        # @param data_sensitivity [Symbol, HubspotSDK::Models::Crm::PropertyGetParams::DataSensitivity] Query param
         #
-        # @param locale [String] Query param:
+        # @param locale [String] Query param
         #
-        # @param properties [String] Query param:
+        # @param properties [String] Query param
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #

@@ -45,9 +45,9 @@ module HubspotSDK
             channel_account_id,
             # Path param: The channel to update
             channel_id:,
-            # Body param:
+            # Body param
             authorized: nil,
-            # Body param:
+            # Body param
             name: nil,
             request_options: {}
           )

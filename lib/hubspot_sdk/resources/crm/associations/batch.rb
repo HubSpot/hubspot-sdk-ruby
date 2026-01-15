@@ -14,7 +14,7 @@ module HubspotSDK
           #
           # @param from_object_type [String] Path param: The type of the source object in the association.
           #
-          # @param inputs [Array<HubspotSDK::Models::Crm::PublicAssociation>] Body param:
+          # @param inputs [Array<HubspotSDK::Models::Crm::PublicAssociation>] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -45,7 +45,7 @@ module HubspotSDK
           #
           # @param from_object_type [String] Path param: The type of the source object in the association.
           #
-          # @param inputs [Array<HubspotSDK::Models::Crm::PublicAssociation>] Body param:
+          # @param inputs [Array<HubspotSDK::Models::Crm::PublicAssociation>] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -76,7 +76,7 @@ module HubspotSDK
           #
           # @param from_object_type [String] Path param: The type of the source object in the association.
           #
-          # @param inputs [Array<HubspotSDK::Models::PublicObjectID>] Body param:
+          # @param inputs [Array<HubspotSDK::Models::PublicObjectID>] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

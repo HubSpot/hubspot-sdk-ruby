@@ -34,13 +34,13 @@ module HubspotSDK
           #
           # @overload update(group_name, object_type:, display_order: nil, label: nil, request_options: {})
           #
-          # @param group_name [String] Path param:
+          # @param group_name [String] Path param
           #
-          # @param object_type [String] Path param:
+          # @param object_type [String] Path param
           #
-          # @param display_order [Integer] Body param:
+          # @param display_order [Integer] Body param
           #
-          # @param label [String] Body param:
+          # @param label [String] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -114,11 +114,11 @@ module HubspotSDK
           #
           # @overload get(group_name, object_type:, locale: nil, request_options: {})
           #
-          # @param group_name [String] Path param:
+          # @param group_name [String] Path param
           #
-          # @param object_type [String] Path param:
+          # @param object_type [String] Path param
           #
-          # @param locale [String] Query param:
+          # @param locale [String] Query param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

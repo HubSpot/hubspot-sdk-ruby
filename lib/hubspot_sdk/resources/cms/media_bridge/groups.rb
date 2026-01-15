@@ -16,11 +16,11 @@ module HubspotSDK
           #
           # @param app_id [Integer] Path param: The appId for the media bridge app. It is possible to have multiple
           #
-          # @param label [String] Body param:
+          # @param label [String] Body param
           #
-          # @param name [String] Body param:
+          # @param name [String] Body param
           #
-          # @param display_order [Integer] Body param:
+          # @param display_order [Integer] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -159,9 +159,9 @@ module HubspotSDK
           #
           # @param object_type [String] Path param: The object type for the property group.
           #
-          # @param display_order [Integer] Body param:
+          # @param display_order [Integer] Body param
           #
-          # @param label [String] Body param:
+          # @param label [String] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

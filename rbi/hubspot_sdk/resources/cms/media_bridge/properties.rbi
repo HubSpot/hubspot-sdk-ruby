@@ -35,35 +35,35 @@ module HubspotSDK
             # Path param: The appId for the media bridge app. It is possible to have multiple
             # apps in your developer account that use the media bridge.
             app_id:,
-            # Body param:
+            # Body param
             field_type:,
-            # Body param:
+            # Body param
             group_name:,
-            # Body param:
+            # Body param
             label:,
-            # Body param:
+            # Body param
             name:,
-            # Body param:
+            # Body param
             type:,
-            # Body param:
+            # Body param
             calculation_formula: nil,
-            # Body param:
+            # Body param
             data_sensitivity: nil,
-            # Body param:
+            # Body param
             description: nil,
-            # Body param:
+            # Body param
             display_order: nil,
-            # Body param:
+            # Body param
             external_options: nil,
-            # Body param:
+            # Body param
             form_field: nil,
-            # Body param:
+            # Body param
             has_unique_value: nil,
-            # Body param:
+            # Body param
             hidden: nil,
-            # Body param:
+            # Body param
             options: nil,
-            # Body param:
+            # Body param
             referenced_object_type: nil,
             request_options: {}
           )
@@ -98,27 +98,27 @@ module HubspotSDK
             app_id:,
             # Path param: The object type for the property to be updated.
             object_type:,
-            # Body param:
+            # Body param
             calculation_formula: nil,
-            # Body param:
+            # Body param
             description: nil,
-            # Body param:
+            # Body param
             display_order: nil,
-            # Body param:
+            # Body param
             field_type: nil,
-            # Body param:
+            # Body param
             form_field: nil,
-            # Body param:
+            # Body param
             group_name: nil,
-            # Body param:
+            # Body param
             has_unique_value: nil,
-            # Body param:
+            # Body param
             hidden: nil,
-            # Body param:
+            # Body param
             label: nil,
-            # Body param:
+            # Body param
             options: nil,
-            # Body param:
+            # Body param
             type: nil,
             request_options: {}
           )
@@ -184,7 +184,7 @@ module HubspotSDK
             # Path param: The appId for the media bridge app. It is possible to have multiple
             # apps in your developer account that use the media bridge.
             app_id:,
-            # Body param:
+            # Body param
             inputs:,
             request_options: {}
           )
@@ -205,7 +205,7 @@ module HubspotSDK
             # Path param: The appId for the media bridge app. It is possible to have multiple
             # apps in your developer account that use the media bridge.
             app_id:,
-            # Body param:
+            # Body param
             inputs:,
             request_options: {}
           )
@@ -256,11 +256,11 @@ module HubspotSDK
             # Path param: The appId for the media bridge app. It is possible to have multiple
             # apps in your developer account that use the media bridge.
             app_id:,
-            # Body param:
+            # Body param
             archived:,
-            # Body param:
+            # Body param
             data_sensitivity:,
-            # Body param:
+            # Body param
             inputs:,
             request_options: {}
           )

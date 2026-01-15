@@ -43,7 +43,7 @@ module HubspotSDK
           #
           # @overload update(ticket_id, properties:, id_property: nil, request_options: {})
           #
-          # @param ticket_id [String] Path param:
+          # @param ticket_id [String] Path param
           #
           # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
           #

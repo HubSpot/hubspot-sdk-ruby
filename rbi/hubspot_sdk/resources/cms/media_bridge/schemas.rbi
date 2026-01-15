@@ -29,11 +29,11 @@ module HubspotSDK
             # Path param: The appId for the media bridge app. It is possible to have multiple
             # apps in your developer account that use the media bridge.
             app_id:,
-            # Body param:
+            # Body param
             clear_description: nil,
-            # Body param:
+            # Body param
             description: nil,
-            # Body param:
+            # Body param
             labels: nil,
             # Body param: The name of the primary property for this object. This will be
             # displayed as primary on the HubSpot record page for this object type.
@@ -41,7 +41,7 @@ module HubspotSDK
             # Body param: The names of properties that should be **required** when creating an
             # object of this type.
             required_properties: nil,
-            # Body param:
+            # Body param
             restorable: nil,
             # Body param: Names of properties that will be indexed for this object type in by
             # HubSpot's product search.
@@ -88,11 +88,11 @@ module HubspotSDK
             # Path param: The appId for the media bridge app. It is possible to have multiple
             # apps in your developer account that use the media bridge.
             app_id:,
-            # Body param:
+            # Body param
             from_object_type_id:,
-            # Body param:
+            # Body param
             to_object_type_id:,
-            # Body param:
+            # Body param
             name: nil,
             request_options: {}
           )

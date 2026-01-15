@@ -16,17 +16,17 @@ module HubspotSDK
           #
           # @param app_id [Integer] Path param: The appId for the media bridge app. It is possible to have multiple
           #
-          # @param clear_description [Boolean] Body param:
+          # @param clear_description [Boolean] Body param
           #
-          # @param description [String] Body param:
+          # @param description [String] Body param
           #
-          # @param labels [HubspotSDK::Models::ObjectTypeDefinitionLabels] Body param:
+          # @param labels [HubspotSDK::Models::ObjectTypeDefinitionLabels] Body param
           #
           # @param primary_display_property [String] Body param: The name of the primary property for this object. This will be displ
           #
           # @param required_properties [Array<String>] Body param: The names of properties that should be **required** when creating an
           #
-          # @param restorable [Boolean] Body param:
+          # @param restorable [Boolean] Body param
           #
           # @param searchable_properties [Array<String>] Body param: Names of properties that will be indexed for this object type in by
           #
@@ -91,11 +91,11 @@ module HubspotSDK
           #
           # @param app_id [Integer] Path param: The appId for the media bridge app. It is possible to have multiple
           #
-          # @param from_object_type_id [String] Body param:
+          # @param from_object_type_id [String] Body param
           #
-          # @param to_object_type_id [String] Body param:
+          # @param to_object_type_id [String] Body param
           #
-          # @param name [String] Body param:
+          # @param name [String] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

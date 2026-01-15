@@ -44,7 +44,7 @@ module HubspotSDK
           #
           # @overload update(commerce_payment_id, properties:, id_property: nil, request_options: {})
           #
-          # @param commerce_payment_id [String] Path param:
+          # @param commerce_payment_id [String] Path param
           #
           # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
           #

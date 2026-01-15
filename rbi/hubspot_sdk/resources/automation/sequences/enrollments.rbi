@@ -20,15 +20,15 @@ module HubspotSDK
             )
           end
           def enroll(
-            # Query param:
+            # Query param
             user_id:,
-            # Body param:
+            # Body param
             contact_id:,
-            # Body param:
+            # Body param
             sender_email:,
-            # Body param:
+            # Body param
             sequence_id:,
-            # Body param:
+            # Body param
             sender_alias_address: nil,
             request_options: {}
           )

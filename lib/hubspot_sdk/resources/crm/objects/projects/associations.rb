@@ -47,15 +47,15 @@ module HubspotSDK
 
             # @overload list(to_object_type, project_id:, after: nil, include_fa: nil, limit: nil, request_options: {})
             #
-            # @param to_object_type [String] Path param:
+            # @param to_object_type [String] Path param
             #
-            # @param project_id [String] Path param:
+            # @param project_id [String] Path param
             #
-            # @param after [String] Query param:
+            # @param after [String] Query param
             #
-            # @param include_fa [Boolean] Query param:
+            # @param include_fa [Boolean] Query param
             #
-            # @param limit [Integer] Query param:
+            # @param limit [Integer] Query param
             #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #

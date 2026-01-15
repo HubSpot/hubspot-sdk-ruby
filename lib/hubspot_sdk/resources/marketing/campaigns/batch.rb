@@ -88,7 +88,7 @@ module HubspotSDK
           #
           # @overload get(inputs:, end_date: nil, properties: nil, start_date: nil, request_options: {})
           #
-          # @param inputs [Array<HubspotSDK::Models::Marketing::PublicCampaignReadInput>] Body param:
+          # @param inputs [Array<HubspotSDK::Models::Marketing::PublicCampaignReadInput>] Body param
           #
           # @param end_date [String] Query param: End date to fetch asset metrics, formatted as YYYY-MM-DD. This date
           #

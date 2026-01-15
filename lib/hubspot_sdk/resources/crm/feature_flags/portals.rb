@@ -18,7 +18,7 @@ module HubspotSDK
           #
           # @param flag_name [String] Path param: The name of the flag, either `hs-release-app-cards` or `hs-hide-crm-
           #
-          # @param flag_state [Symbol, HubspotSDK::Models::Crm::PortalFlagStatePutRequest::FlagState] Body param:
+          # @param flag_state [Symbol, HubspotSDK::Models::Crm::PortalFlagStatePutRequest::FlagState] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -91,7 +91,7 @@ module HubspotSDK
           #
           # @param app_id [Integer] Path param: The ID of the app.
           #
-          # @param portal_ids [Array<Integer>] Body param:
+          # @param portal_ids [Array<Integer>] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -126,7 +126,7 @@ module HubspotSDK
           #
           # @param app_id [Integer] Path param: The ID of the app.
           #
-          # @param portal_states [Array<HubspotSDK::Models::Crm::BatchPortalEntry>] Body param:
+          # @param portal_states [Array<HubspotSDK::Models::Crm::BatchPortalEntry>] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

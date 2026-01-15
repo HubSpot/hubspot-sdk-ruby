@@ -184,9 +184,9 @@ module HubspotSDK
           # Query param: The accountId that is associated with this marketing event in the
           # external event application.
           external_account_id:,
-          # Body param:
+          # Body param
           end_date_time:,
-          # Body param:
+          # Body param
           start_date_time:,
           request_options: {}
         )
@@ -389,7 +389,7 @@ module HubspotSDK
           # Body param: Indicates if the marketing event has been cancelled. Defaults to
           # `false`
           event_cancelled: nil,
-          # Body param:
+          # Body param
           event_completed: nil,
           # Body param: The description of the marketing event.
           event_description: nil,

@@ -16,35 +16,35 @@ module HubspotSDK
           #
           # @param app_id [Integer] Path param: The appId for the media bridge app. It is possible to have multiple
           #
-          # @param field_type [Symbol, HubspotSDK::Models::PropertyCreate::FieldType] Body param:
+          # @param field_type [Symbol, HubspotSDK::Models::PropertyCreate::FieldType] Body param
           #
-          # @param group_name [String] Body param:
+          # @param group_name [String] Body param
           #
-          # @param label [String] Body param:
+          # @param label [String] Body param
           #
-          # @param name [String] Body param:
+          # @param name [String] Body param
           #
-          # @param type [Symbol, HubspotSDK::Models::PropertyCreate::Type] Body param:
+          # @param type [Symbol, HubspotSDK::Models::PropertyCreate::Type] Body param
           #
-          # @param calculation_formula [String] Body param:
+          # @param calculation_formula [String] Body param
           #
-          # @param data_sensitivity [Symbol, HubspotSDK::Models::PropertyCreate::DataSensitivity] Body param:
+          # @param data_sensitivity [Symbol, HubspotSDK::Models::PropertyCreate::DataSensitivity] Body param
           #
-          # @param description [String] Body param:
+          # @param description [String] Body param
           #
-          # @param display_order [Integer] Body param:
+          # @param display_order [Integer] Body param
           #
-          # @param external_options [Boolean] Body param:
+          # @param external_options [Boolean] Body param
           #
-          # @param form_field [Boolean] Body param:
+          # @param form_field [Boolean] Body param
           #
-          # @param has_unique_value [Boolean] Body param:
+          # @param has_unique_value [Boolean] Body param
           #
-          # @param hidden [Boolean] Body param:
+          # @param hidden [Boolean] Body param
           #
-          # @param options [Array<HubspotSDK::Models::OptionInput>] Body param:
+          # @param options [Array<HubspotSDK::Models::OptionInput>] Body param
           #
-          # @param referenced_object_type [String] Body param:
+          # @param referenced_object_type [String] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -79,27 +79,27 @@ module HubspotSDK
           #
           # @param object_type [String] Path param: The object type for the property to be updated.
           #
-          # @param calculation_formula [String] Body param:
+          # @param calculation_formula [String] Body param
           #
-          # @param description [String] Body param:
+          # @param description [String] Body param
           #
-          # @param display_order [Integer] Body param:
+          # @param display_order [Integer] Body param
           #
-          # @param field_type [Symbol, HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::FieldType] Body param:
+          # @param field_type [Symbol, HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::FieldType] Body param
           #
-          # @param form_field [Boolean] Body param:
+          # @param form_field [Boolean] Body param
           #
-          # @param group_name [String] Body param:
+          # @param group_name [String] Body param
           #
-          # @param has_unique_value [Boolean] Body param:
+          # @param has_unique_value [Boolean] Body param
           #
-          # @param hidden [Boolean] Body param:
+          # @param hidden [Boolean] Body param
           #
-          # @param label [String] Body param:
+          # @param label [String] Body param
           #
-          # @param options [Array<HubspotSDK::Models::OptionInput>] Body param:
+          # @param options [Array<HubspotSDK::Models::OptionInput>] Body param
           #
-          # @param type [Symbol, HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::Type] Body param:
+          # @param type [Symbol, HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::Type] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -208,7 +208,7 @@ module HubspotSDK
           #
           # @param app_id [Integer] Path param: The appId for the media bridge app. It is possible to have multiple
           #
-          # @param inputs [Array<HubspotSDK::Models::PropertyCreate>] Body param:
+          # @param inputs [Array<HubspotSDK::Models::PropertyCreate>] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -242,7 +242,7 @@ module HubspotSDK
           #
           # @param app_id [Integer] Path param: The appId for the media bridge app. It is possible to have multiple
           #
-          # @param inputs [Array<HubspotSDK::Models::PropertyName>] Body param:
+          # @param inputs [Array<HubspotSDK::Models::PropertyName>] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -316,11 +316,11 @@ module HubspotSDK
           #
           # @param app_id [Integer] Path param: The appId for the media bridge app. It is possible to have multiple
           #
-          # @param archived [Boolean] Body param:
+          # @param archived [Boolean] Body param
           #
-          # @param data_sensitivity [Symbol, HubspotSDK::Models::BatchReadInputPropertyName::DataSensitivity] Body param:
+          # @param data_sensitivity [Symbol, HubspotSDK::Models::BatchReadInputPropertyName::DataSensitivity] Body param
           #
-          # @param inputs [Array<HubspotSDK::Models::PropertyName>] Body param:
+          # @param inputs [Array<HubspotSDK::Models::PropertyName>] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

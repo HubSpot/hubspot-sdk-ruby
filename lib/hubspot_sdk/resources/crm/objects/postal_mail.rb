@@ -35,11 +35,11 @@ module HubspotSDK
 
           # @overload update(postal_mail_id, properties:, id_property: nil, request_options: {})
           #
-          # @param postal_mail_id [String] Path param:
+          # @param postal_mail_id [String] Path param
           #
           # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
           #
-          # @param id_property [String] Query param:
+          # @param id_property [String] Query param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
