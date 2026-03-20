@@ -4,6 +4,7 @@ module HubspotSDK
       module Objects
         type contact_list_params =
           {
+            object_type: String,
             after: String,
             archived: bool,
             associations: ::Array[String],
@@ -16,6 +17,8 @@ module HubspotSDK
         class ContactListParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor object_type: String
 
           attr_reader after: String?
 
@@ -42,6 +45,7 @@ module HubspotSDK
           def properties_with_history=: (::Array[String]) -> ::Array[String]
 
           def initialize: (
+            object_type: String,
             ?after: String,
             ?archived: bool,
             ?associations: ::Array[String],
@@ -52,6 +56,7 @@ module HubspotSDK
           ) -> void
 
           def to_hash: -> {
+            object_type: String,
             after: String,
             archived: bool,
             associations: ::Array[String],

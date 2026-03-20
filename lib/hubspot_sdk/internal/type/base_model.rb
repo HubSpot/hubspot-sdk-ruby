@@ -438,10 +438,11 @@ module HubspotSDK
         # @return [Hash{Symbol=>Object}]
         #
         # @example
-        #   # `ab_test_create_request_v_next` is a `HubspotSDK::AbTestCreateRequestVNext`
-        #   ab_test_create_request_v_next => {
-        #     content_id: content_id,
-        #     variation_name: variation_name
+        #   # `error` is a `HubspotSDK::Error`
+        #   error => {
+        #     category: category,
+        #     correlation_id: correlation_id,
+        #     message: message
         #   }
         def deconstruct_keys(keys)
           (keys || self.class.known_fields.keys)

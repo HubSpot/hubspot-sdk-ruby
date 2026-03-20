@@ -6,9 +6,12 @@ module HubspotSDK
       class Objects
         class Tasks
           class Batch
-            # Create a batch of tasks
+            # Create multiple tasks in a single request by providing a batch of task
+            # properties and associations. This endpoint allows for efficient task creation by
+            # processing multiple tasks together.
             sig do
               params(
+                object_type: String,
                 inputs:
                   T::Array[
                     HubspotSDK::Crm::SimplePublicObjectBatchInputForCreate::OrHash
@@ -16,12 +19,20 @@ module HubspotSDK
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
             end
-            def create(inputs:, request_options: {})
+            def create(
+              # Object type.
+              object_type,
+              inputs:,
+              request_options: {}
+            )
             end
 
-            # Update a batch of tasks by internal ID, or unique property values
+            # Update multiple tasks in a single request using their internal IDs or unique
+            # property values. This operation allows you to modify the properties of each task
+            # in the batch, ensuring efficient management of task data.
             sig do
               params(
+                object_type: String,
                 inputs:
                   T::Array[
                     HubspotSDK::Crm::SimplePublicObjectBatchInput::OrHash
@@ -29,23 +40,36 @@ module HubspotSDK
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
             end
-            def update(inputs:, request_options: {})
+            def update(
+              # Object type.
+              object_type,
+              inputs:,
+              request_options: {}
+            )
             end
 
-            # Archive a batch of tasks by ID
+            # Archive a batch of tasks by their IDs, moving them to the recycling bin. This
+            # operation requires a list of task IDs to be provided in the request body.
             sig do
               params(
+                object_type: String,
                 inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).void
             end
-            def delete(inputs:, request_options: {})
+            def delete(
+              # Object type.
+              object_type,
+              inputs:,
+              request_options: {}
+            )
             end
 
             # Retrieve records by record ID or include the `idProperty` parameter to retrieve
             # records by a custom unique value property.
             sig do
               params(
+                object_type: String,
                 inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
                 properties: T::Array[String],
                 properties_with_history: T::Array[String],
@@ -55,6 +79,8 @@ module HubspotSDK
               ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
             end
             def get(
+              # Path param: Object type.
+              object_type,
               # Body param
               inputs:,
               # Body param: Key-value pairs for setting properties for the new object.
@@ -64,8 +90,8 @@ module HubspotSDK
               properties_with_history:,
               # Query param: Whether to return only results that have been archived.
               archived: nil,
-              # Body param: A unique property used to identify objects instead of the default
-              # ID.
+              # Body param: When using a custom unique value property to retrieve records, the
+              # name of the property. Do not include this parameter if retrieving by record ID.
               id_property: nil,
               request_options: {}
             )
@@ -76,6 +102,7 @@ module HubspotSDK
             # whose values are unique for the object.
             sig do
               params(
+                object_type: String,
                 inputs:
                   T::Array[
                     HubspotSDK::Crm::SimplePublicObjectBatchInputUpsert::OrHash
@@ -83,7 +110,12 @@ module HubspotSDK
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject)
             end
-            def upsert(inputs:, request_options: {})
+            def upsert(
+              # Object type.
+              object_type,
+              inputs:,
+              request_options: {}
+            )
             end
 
             # @api private

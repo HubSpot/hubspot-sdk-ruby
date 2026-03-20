@@ -9,20 +9,20 @@ module HubspotSDK
         include HubspotSDK::Internal::Type::RequestParameters
 
         # @!attribute after
-        #   The cursor token value to get the next set of results. You can get this from the
-        #   `paging.next.after` JSON property of a paged response containing more results.
+        #   The paging cursor token of the last successfully read resource will be returned
+        #   as the `paging.next.after` JSON property of a paged response containing more
+        #   results.
         #
         #   @return [String, nil]
         optional :after, String
 
         # @!attribute limit
-        #   The maximum number of results to display per page. Max value of limit is 200.
+        #   The maximum number of results to display per page.
         #
         #   @return [Integer, nil]
         optional :limit, Integer
 
         # @!attribute user_id
-        #   The ID of a user, for retrieving user-specific logs.
         #
         #   @return [Integer, nil]
         optional :user_id, Integer
@@ -32,11 +32,11 @@ module HubspotSDK
         #   {HubspotSDK::Models::Account::ActivityListLoginActivitiesParams} for more
         #   details.
         #
-        #   @param after [String] The cursor token value to get the next set of results. You can get this from the
+        #   @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
-        #   @param limit [Integer] The maximum number of results to display per page. Max value of limit is 200.
+        #   @param limit [Integer] The maximum number of results to display per page.
         #
-        #   @param user_id [Integer] The ID of a user, for retrieving user-specific logs.
+        #   @param user_id [Integer]
         #
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
       end

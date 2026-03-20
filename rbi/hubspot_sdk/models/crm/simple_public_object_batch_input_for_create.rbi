@@ -15,17 +15,19 @@ module HubspotSDK
         sig { returns(T::Array[HubspotSDK::Crm::PublicAssociationsForObject]) }
         attr_accessor :associations
 
-        # Key-value pairs representing the properties of the object.
+        # Key value pairs representing the properties of the object.
         sig { returns(T::Hash[Symbol, String]) }
         attr_accessor :properties
 
-        # A unique identifier for tracing the creation request.
+        # An identifier used for tracing the creation or update request of the object.
         sig { returns(T.nilable(String)) }
         attr_reader :object_write_trace_id
 
         sig { params(object_write_trace_id: String).void }
         attr_writer :object_write_trace_id
 
+        # An input object that contains a collection of objects to be created together in
+        # a batch.
         sig do
           params(
             associations:
@@ -36,9 +38,9 @@ module HubspotSDK
         end
         def self.new(
           associations:,
-          # Key-value pairs representing the properties of the object.
+          # Key value pairs representing the properties of the object.
           properties:,
-          # A unique identifier for tracing the creation request.
+          # An identifier used for tracing the creation or update request of the object.
           object_write_trace_id: nil
         )
         end

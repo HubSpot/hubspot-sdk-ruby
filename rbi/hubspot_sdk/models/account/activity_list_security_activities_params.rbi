@@ -15,36 +15,34 @@ module HubspotSDK
             )
           end
 
-        # The cursor token value to get the next set of results. You can get this from the
-        # `paging.next.after` JSON property of a paged response containing more results.
+        # The paging cursor token of the last successfully read resource will be returned
+        # as the `paging.next.after` JSON property of a paged response containing more
+        # results.
         sig { returns(T.nilable(String)) }
         attr_reader :after
 
         sig { params(after: String).void }
         attr_writer :after
 
-        # The start time, for retrieving logs within a specific timeframe.
         sig { returns(T.nilable(Integer)) }
         attr_reader :from_timestamp
 
         sig { params(from_timestamp: Integer).void }
         attr_writer :from_timestamp
 
-        # The maximum number of results to display per page. Max value of limit is 200.
+        # The maximum number of results to display per page.
         sig { returns(T.nilable(Integer)) }
         attr_reader :limit
 
         sig { params(limit: Integer).void }
         attr_writer :limit
 
-        # The end time, for retrieving logs within a specific timeframe.
         sig { returns(T.nilable(Integer)) }
         attr_reader :to_timestamp
 
         sig { params(to_timestamp: Integer).void }
         attr_writer :to_timestamp
 
-        # The ID of a user, for retrieving user-specific logs.
         sig { returns(T.nilable(Integer)) }
         attr_reader :user_id
 
@@ -62,16 +60,14 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The cursor token value to get the next set of results. You can get this from the
-          # `paging.next.after` JSON property of a paged response containing more results.
+          # The paging cursor token of the last successfully read resource will be returned
+          # as the `paging.next.after` JSON property of a paged response containing more
+          # results.
           after: nil,
-          # The start time, for retrieving logs within a specific timeframe.
           from_timestamp: nil,
-          # The maximum number of results to display per page. Max value of limit is 200.
+          # The maximum number of results to display per page.
           limit: nil,
-          # The end time, for retrieving logs within a specific timeframe.
           to_timestamp: nil,
-          # The ID of a user, for retrieving user-specific logs.
           user_id: nil,
           request_options: {}
         )

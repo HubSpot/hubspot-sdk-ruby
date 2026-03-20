@@ -9,7 +9,7 @@ module HubspotSDK
             T.any(HubspotSDK::Crm::Filter, HubspotSDK::Internal::AnyHash)
           end
 
-        # The comparison operator used in the filter, such as "EQ" or "GT".
+        # null
         sig { returns(HubspotSDK::Crm::Filter::Operator::OrSymbol) }
         attr_accessor :operator
 
@@ -51,7 +51,7 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The comparison operator used in the filter, such as "EQ" or "GT".
+          # null
           operator:,
           # The name of the property to apply the filter to.
           property_name:,
@@ -78,7 +78,7 @@ module HubspotSDK
         def to_hash
         end
 
-        # The comparison operator used in the filter, such as "EQ" or "GT".
+        # null
         module Operator
           extend HubspotSDK::Internal::Type::Enum
 

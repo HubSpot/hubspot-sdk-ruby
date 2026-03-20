@@ -26,12 +26,9 @@ require "hubspot_sdk"
 
 hubspot = HubspotSDK::Client.new(access_token: "pat-na1-xxxxxxxx-xxxx")
 
-created_response_simple_public_object = hubspot.crm.objects.contacts.create(
-  associations: [{to: {id: "37295"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-  properties: {email: "mark.s@lumon.industries"}
-)
+page = hubspot.account.activity.list_audit_logs
 
-puts(created_response_simple_public_object.createdResourceId)
+puts(page.id)
 ```
 
 ### Pagination
@@ -41,15 +38,15 @@ List methods in the Hubspot API are paginated.
 This library provides auto-paginating iterators with each list response, so you do not have to request successive pages manually:
 
 ```ruby
-page = hubspot.crm.objects.contacts.list(limit: 100)
+page = hubspot.account.activity.list_audit_logs
 
 # Fetch single item from page.
-contact = page.results[0]
-puts(contact.id)
+activity = page.results[0]
+puts(activity.id)
 
 # Automatically fetches more pages as needed.
-page.auto_paging_each do |contact|
-  puts(contact.id)
+page.auto_paging_each do |activity|
+  puts(activity.id)
 end
 ```
 
@@ -62,38 +59,13 @@ if page.next_page?
 end
 ```
 
-### File uploads
-
-Request parameters that correspond to file uploads can be passed as raw contents, a [`Pathname`](https://rubyapi.org/3.2/o/pathname) instance, [`StringIO`](https://rubyapi.org/3.2/o/stringio), or more.
-
-```ruby
-require "pathname"
-
-# Use `Pathname` to send the filename and/or avoid paging a large file into memory:
-import_result = hubspot.cms.hubdb.tables.import_draft(file: Pathname("/path/to/file"))
-
-# Alternatively, pass file contents or a `StringIO` directly:
-import_result = hubspot.cms.hubdb.tables.import_draft(file: File.read("/path/to/file"))
-
-# Or, to control the filename and/or content type:
-file = HubspotSDK::FilePart.new(File.read("/path/to/file"), filename: "/path/to/file", content_type: "…")
-import_result = hubspot.cms.hubdb.tables.import_draft(file: file)
-
-puts(import_result.duplicateRows)
-```
-
-Note that you can also pass a raw `IO` descriptor, but this disables retries, as the library can't be sure if the descriptor is a file or pipe (which cannot be rewound).
-
 ### Handling errors
 
 When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `HubspotSDK::Errors::APIError` will be thrown:
 
 ```ruby
 begin
-  contact = hubspot.crm.objects.contacts.create(
-    associations: [{to: {id: "37295"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-    properties: {email: "mark.s@lumon.industries"}
-  )
+  activity = hubspot.account.activity.list_audit_logs
 rescue HubspotSDK::Errors::APIConnectionError => e
   puts("The server could not be reached")
   puts(e.cause)  # an underlying Exception, likely raised within `net/http`
@@ -136,11 +108,7 @@ hubspot = HubspotSDK::Client.new(
 )
 
 # Or, configure per-request:
-hubspot.crm.objects.contacts.create(
-  associations: [{to: {id: "37295"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-  properties: {email: "mark.s@lumon.industries"},
-  request_options: {max_retries: 5}
-)
+hubspot.account.activity.list_audit_logs(request_options: {max_retries: 5})
 ```
 
 ### Timeouts
@@ -154,11 +122,7 @@ hubspot = HubspotSDK::Client.new(
 )
 
 # Or, configure per-request:
-hubspot.crm.objects.contacts.create(
-  associations: [{to: {id: "37295"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-  properties: {email: "mark.s@lumon.industries"},
-  request_options: {timeout: 5}
-)
+hubspot.account.activity.list_audit_logs(request_options: {timeout: 5})
 ```
 
 On timeout, `HubspotSDK::Errors::APITimeoutError` is raised.
@@ -188,10 +152,8 @@ You can send undocumented parameters to any endpoint, and read undocumented resp
 Note: the `extra_` parameters of the same name overrides the documented parameters.
 
 ```ruby
-created_response_simple_public_object =
-  hubspot.crm.objects.contacts.create(
-    associations: [{to: {id: "37295"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-    properties: {email: "mark.s@lumon.industries"},
+page =
+  hubspot.account.activity.list_audit_logs(
     request_options: {
       extra_query: {my_query_parameter: value},
       extra_body: {my_body_parameter: value},
@@ -199,7 +161,7 @@ created_response_simple_public_object =
     }
   )
 
-puts(created_response_simple_public_object[:my_undocumented_property])
+puts(page[:my_undocumented_property])
 ```
 
 #### Undocumented request params
@@ -237,37 +199,18 @@ This library provides comprehensive [RBI](https://sorbet.org/docs/rbi) definitio
 You can provide typesafe request parameters like so:
 
 ```ruby
-hubspot.crm.objects.contacts.create(
-  associations: [
-    HubspotSDK::Crm::PublicAssociationsForObject.new(
-      to: HubspotSDK::PublicObjectID.new(id: "37295"),
-      types: [HubspotSDK::AssociationSpec.new(association_category: "HUBSPOT_DEFINED", association_type_id: 0)]
-    )
-  ],
-  properties: {email: "mark.s@lumon.industries"}
-)
+hubspot.account.activity.list_audit_logs
 ```
 
 Or, equivalently:
 
 ```ruby
 # Hashes work, but are not typesafe:
-hubspot.crm.objects.contacts.create(
-  associations: [{to: {id: "37295"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-  properties: {email: "mark.s@lumon.industries"}
-)
+hubspot.account.activity.list_audit_logs
 
 # You can also splat a full Params class:
-params = HubspotSDK::Crm::Objects::ContactCreateParams.new(
-  associations: [
-    HubspotSDK::Crm::PublicAssociationsForObject.new(
-      to: HubspotSDK::PublicObjectID.new(id: "37295"),
-      types: [HubspotSDK::AssociationSpec.new(association_category: "HUBSPOT_DEFINED", association_type_id: 0)]
-    )
-  ],
-  properties: {email: "mark.s@lumon.industries"}
-)
-hubspot.crm.objects.contacts.create(**params)
+params = HubspotSDK::Account::ActivityListAuditLogsParams.new
+hubspot.account.activity.list_audit_logs(**params)
 ```
 
 ### Enums
@@ -275,25 +218,23 @@ hubspot.crm.objects.contacts.create(**params)
 Since this library does not depend on `sorbet-runtime`, it cannot provide [`T::Enum`](https://sorbet.org/docs/tenum) instances. Instead, we provide "tagged symbols" instead, which is always a primitive at runtime:
 
 ```ruby
-# :authorization_code
-puts(HubspotSDK::Auth::OAuthCreateAccessTokenParams::GrantType::AUTHORIZATION_CODE)
+# :CACHED
+puts(HubspotSDK::Account::APIUsage::FetchStatus::CACHED)
 
-# Revealed type: `T.all(HubspotSDK::Auth::OAuthCreateAccessTokenParams::GrantType, Symbol)`
-T.reveal_type(HubspotSDK::Auth::OAuthCreateAccessTokenParams::GrantType::AUTHORIZATION_CODE)
+# Revealed type: `T.all(HubspotSDK::Account::APIUsage::FetchStatus, Symbol)`
+T.reveal_type(HubspotSDK::Account::APIUsage::FetchStatus::CACHED)
 ```
 
 Enum parameters have a "relaxed" type, so you can either pass in enum constants or their literal value:
 
 ```ruby
-# Using the enum constants preserves the tagged type information:
-hubspot.auth.oauth.create_access_token(
-  grant_type: HubspotSDK::Auth::OAuthCreateAccessTokenParams::GrantType::AUTHORIZATION_CODE,
+HubspotSDK::Account::APIUsage.new(
+  fetch_status: HubspotSDK::Account::APIUsage::FetchStatus::CACHED,
   # …
 )
 
-# Literal values are also permissible:
-hubspot.auth.oauth.create_access_token(
-  grant_type: :authorization_code,
+HubspotSDK::Account::APIUsage.new(
+  fetch_status: :CACHED,
   # …
 )
 ```

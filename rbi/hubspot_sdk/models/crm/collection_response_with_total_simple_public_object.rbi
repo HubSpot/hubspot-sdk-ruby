@@ -15,26 +15,28 @@ module HubspotSDK
         sig { returns(T::Array[HubspotSDK::Crm::SimplePublicObject]) }
         attr_accessor :results
 
-        # The total number of objects in the collection.
+        # The number of available results
         sig { returns(Integer) }
         attr_accessor :total
 
-        sig { returns(T.nilable(HubspotSDK::Paging)) }
+        sig { returns(T.nilable(HubspotSDK::Crm::Paging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::Paging::OrHash).void }
+        sig { params(paging: HubspotSDK::Crm::Paging::OrHash).void }
         attr_writer :paging
 
+        # Represents a list of simple objects returned from an API request, along with the
+        # total count of objects available.
         sig do
           params(
             results: T::Array[HubspotSDK::Crm::SimplePublicObject::OrHash],
             total: Integer,
-            paging: HubspotSDK::Paging::OrHash
+            paging: HubspotSDK::Crm::Paging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
           results:,
-          # The total number of objects in the collection.
+          # The number of available results
           total:,
           paging: nil
         )
@@ -45,7 +47,7 @@ module HubspotSDK
             {
               results: T::Array[HubspotSDK::Crm::SimplePublicObject],
               total: Integer,
-              paging: HubspotSDK::Paging
+              paging: HubspotSDK::Crm::Paging
             }
           )
         end

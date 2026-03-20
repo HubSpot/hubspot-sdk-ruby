@@ -4,13 +4,14 @@ require_relative "../../../test_helper"
 
 class HubspotSDK::Test::Resources::Crm::Objects::ContactsTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @hubspot.crm.objects.contacts.create(
+        "objectType",
         associations: [
           {
-            to: {id: "37295"},
+            to: {id: "id"},
             types: [{associationCategory: :HUBSPOT_DEFINED, associationTypeId: 0}]
           }
         ],
@@ -18,22 +19,29 @@ class HubspotSDK::Test::Resources::Crm::Objects::ContactsTest < HubspotSDK::Test
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::CreatedResponseSimplePublicObject
+      response => HubspotSDK::Crm::SimplePublicObject
     end
 
     assert_pattern do
       response => {
-        created_resource_id: String,
-        entity: HubspotSDK::Crm::SimplePublicObject,
-        location: String | nil
+        id: String,
+        archived: HubspotSDK::Internal::Type::Boolean,
+        created_at: Time,
+        properties: ^(HubspotSDK::Internal::Type::HashOf[String, nil?: true]),
+        updated_at: Time,
+        archived_at: Time | nil,
+        object_write_trace_id: String | nil,
+        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil,
+        url: String | nil
       }
     end
   end
 
   def test_update_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
-    response = @hubspot.crm.objects.contacts.update("contactId", properties: {foo: "string"})
+    response =
+      @hubspot.crm.objects.contacts.update("objectId", object_type: "objectType", properties: {foo: "string"})
 
     assert_pattern do
       response => HubspotSDK::Crm::SimplePublicObject
@@ -55,9 +63,9 @@ class HubspotSDK::Test::Resources::Crm::Objects::ContactsTest < HubspotSDK::Test
   end
 
   def test_list
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
-    response = @hubspot.crm.objects.contacts.list
+    response = @hubspot.crm.objects.contacts.list("objectType")
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -86,10 +94,10 @@ class HubspotSDK::Test::Resources::Crm::Objects::ContactsTest < HubspotSDK::Test
     end
   end
 
-  def test_delete
-    skip("Prism tests are disabled")
+  def test_delete_required_params
+    skip("Mock server tests are disabled")
 
-    response = @hubspot.crm.objects.contacts.delete("contactId")
+    response = @hubspot.crm.objects.contacts.delete("objectId", object_type: "objectType")
 
     assert_pattern do
       response => nil
@@ -97,19 +105,19 @@ class HubspotSDK::Test::Resources::Crm::Objects::ContactsTest < HubspotSDK::Test
   end
 
   def test_gdpr_delete_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
-    response = @hubspot.crm.objects.contacts.gdpr_delete(object_id_: "objectId")
+    response = @hubspot.crm.objects.contacts.gdpr_delete("objectType", object_id_: "objectId")
 
     assert_pattern do
       response => nil
     end
   end
 
-  def test_get
-    skip("Prism tests are disabled")
+  def test_get_required_params
+    skip("Mock server tests are disabled")
 
-    response = @hubspot.crm.objects.contacts.get("contactId")
+    response = @hubspot.crm.objects.contacts.get("objectId", object_type: "objectType")
 
     assert_pattern do
       response => HubspotSDK::Crm::SimplePublicObjectWithAssociations
@@ -132,10 +140,11 @@ class HubspotSDK::Test::Resources::Crm::Objects::ContactsTest < HubspotSDK::Test
   end
 
   def test_merge_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @hubspot.crm.objects.contacts.merge(
+        "objectType",
         object_id_to_merge: "objectIdToMerge",
         primary_object_id: "primaryObjectId"
       )
@@ -160,10 +169,11 @@ class HubspotSDK::Test::Resources::Crm::Objects::ContactsTest < HubspotSDK::Test
   end
 
   def test_search_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @hubspot.crm.objects.contacts.search(
+        "objectType",
         after: "after",
         filter_groups: [{filters: [{operator: :BETWEEN, propertyName: "propertyName"}]}],
         limit: 0,
@@ -179,7 +189,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::ContactsTest < HubspotSDK::Test
       response => {
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         total: Integer,
-        paging: HubspotSDK::Paging | nil
+        paging: HubspotSDK::Crm::Paging | nil
       }
     end
   end

@@ -12,22 +12,28 @@ module HubspotSDK
             )
           end
 
+        # Association category. Can be HUBSPOT_DEFINED, USER_DEFINED, INTEGRATOR_DEFINED
+        # or WORK
         sig do
-          returns(
-            HubspotSDK::Crm::AssociationSpecWithLabel::Category::TaggedSymbol
-          )
+          returns(HubspotSDK::Crm::AssociationSpecWithLabel::Category::OrSymbol)
         end
         attr_accessor :category
 
+        # An integer value used to uniquely identify a specific association type within
+        # its Association Category.
         sig { returns(Integer) }
         attr_accessor :type_id
 
+        # An optional descriptor that provides additional context about the relationship
+        # between associated records, such as "Mentor" and "Mentee".
         sig { returns(T.nilable(String)) }
         attr_reader :label
 
         sig { params(label: String).void }
         attr_writer :label
 
+        # Defines the type, direction, and details of the relationship between two CRM
+        # objects.
         sig do
           params(
             category:
@@ -36,14 +42,24 @@ module HubspotSDK
             label: String
           ).returns(T.attached_class)
         end
-        def self.new(category:, type_id:, label: nil)
+        def self.new(
+          # Association category. Can be HUBSPOT_DEFINED, USER_DEFINED, INTEGRATOR_DEFINED
+          # or WORK
+          category:,
+          # An integer value used to uniquely identify a specific association type within
+          # its Association Category.
+          type_id:,
+          # An optional descriptor that provides additional context about the relationship
+          # between associated records, such as "Mentor" and "Mentee".
+          label: nil
+        )
         end
 
         sig do
           override.returns(
             {
               category:
-                HubspotSDK::Crm::AssociationSpecWithLabel::Category::TaggedSymbol,
+                HubspotSDK::Crm::AssociationSpecWithLabel::Category::OrSymbol,
               type_id: Integer,
               label: String
             }
@@ -52,6 +68,8 @@ module HubspotSDK
         def to_hash
         end
 
+        # Association category. Can be HUBSPOT_DEFINED, USER_DEFINED, INTEGRATOR_DEFINED
+        # or WORK
         module Category
           extend HubspotSDK::Internal::Type::Enum
 
@@ -74,6 +92,11 @@ module HubspotSDK
           USER_DEFINED =
             T.let(
               :USER_DEFINED,
+              HubspotSDK::Crm::AssociationSpecWithLabel::Category::TaggedSymbol
+            )
+          WORK =
+            T.let(
+              :WORK,
               HubspotSDK::Crm::AssociationSpecWithLabel::Category::TaggedSymbol
             )
 

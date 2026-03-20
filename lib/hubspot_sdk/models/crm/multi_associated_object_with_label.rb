@@ -12,15 +12,18 @@ module HubspotSDK
                  api_name: :associationTypes
 
         # @!attribute to_object_id
-        #   The unique identifier for the target object in the association.
+        #   Target unique ID of the object.
         #
         #   @return [String]
         required :to_object_id, String, api_name: :toObjectId
 
         # @!method initialize(association_types:, to_object_id:)
+        #   Represents an object that is associated with multiple other objects, with
+        #   optional context.
+        #
         #   @param association_types [Array<HubspotSDK::Models::Crm::AssociationSpecWithLabel>]
         #
-        #   @param to_object_id [String] The unique identifier for the target object in the association.
+        #   @param to_object_id [String] Target unique ID of the object.
       end
     end
   end

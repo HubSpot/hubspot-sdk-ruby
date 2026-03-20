@@ -14,38 +14,44 @@ module HubspotSDK
 
         # Defines the type, direction, and details of the relationship between two CRM
         # objects.
-        sig { returns(HubspotSDK::AssociationSpec) }
+        sig { returns(HubspotSDK::Crm::AssociationSpec) }
         attr_reader :association_spec
 
         sig do
-          params(association_spec: HubspotSDK::AssociationSpec::OrHash).void
+          params(
+            association_spec: HubspotSDK::Crm::AssociationSpec::OrHash
+          ).void
         end
         attr_writer :association_spec
 
-        sig { returns(HubspotSDK::PublicObjectID) }
+        # Contains the Id of a Public Object
+        sig { returns(HubspotSDK::Crm::PublicObjectID) }
         attr_reader :from
 
-        sig { params(from: HubspotSDK::PublicObjectID::OrHash).void }
+        sig { params(from: HubspotSDK::Crm::PublicObjectID::OrHash).void }
         attr_writer :from
 
-        sig { returns(HubspotSDK::PublicObjectID) }
+        # Contains the Id of a Public Object
+        sig { returns(HubspotSDK::Crm::PublicObjectID) }
         attr_reader :to
 
-        sig { params(to: HubspotSDK::PublicObjectID::OrHash).void }
+        sig { params(to: HubspotSDK::Crm::PublicObjectID::OrHash).void }
         attr_writer :to
 
         sig do
           params(
-            association_spec: HubspotSDK::AssociationSpec::OrHash,
-            from: HubspotSDK::PublicObjectID::OrHash,
-            to: HubspotSDK::PublicObjectID::OrHash
+            association_spec: HubspotSDK::Crm::AssociationSpec::OrHash,
+            from: HubspotSDK::Crm::PublicObjectID::OrHash,
+            to: HubspotSDK::Crm::PublicObjectID::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
           # Defines the type, direction, and details of the relationship between two CRM
           # objects.
           association_spec:,
+          # Contains the Id of a Public Object
           from:,
+          # Contains the Id of a Public Object
           to:
         )
         end
@@ -53,9 +59,9 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              association_spec: HubspotSDK::AssociationSpec,
-              from: HubspotSDK::PublicObjectID,
-              to: HubspotSDK::PublicObjectID
+              association_spec: HubspotSDK::Crm::AssociationSpec,
+              from: HubspotSDK::Crm::PublicObjectID,
+              to: HubspotSDK::Crm::PublicObjectID
             }
           )
         end

@@ -9,7 +9,13 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          # @!method initialize(request_options: {})
+          # @!attribute object_type
+          #
+          #   @return [String]
+          required :object_type, String
+
+          # @!method initialize(object_type:, request_options: {})
+          #   @param object_type [String]
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end

@@ -20,8 +20,7 @@ module HubspotSDK
         sig { returns(T::Hash[Symbol, String]) }
         attr_accessor :properties
 
-        # The name of a unique identifier property, which can be used for identifying
-        # objects instead of the object ID.
+        # The name of a property whose values are unique for this object
         sig { returns(T.nilable(String)) }
         attr_reader :id_property
 
@@ -51,8 +50,7 @@ module HubspotSDK
           id:,
           # Key value pairs representing the properties of the object.
           properties:,
-          # The name of a unique identifier property, which can be used for identifying
-          # objects instead of the object ID.
+          # The name of a property whose values are unique for this object
           id_property: nil,
           # An identifier for tracing the creation request.
           object_write_trace_id: nil

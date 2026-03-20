@@ -19,41 +19,8 @@ module HubspotSDK
     sig { returns(HubspotSDK::Resources::Account) }
     attr_reader :account
 
-    sig { returns(HubspotSDK::Resources::Auth) }
-    attr_reader :auth
-
-    sig { returns(HubspotSDK::Resources::Automation) }
-    attr_reader :automation
-
-    sig { returns(HubspotSDK::Resources::BusinessUnits) }
-    attr_reader :business_units
-
-    sig { returns(HubspotSDK::Resources::Cms) }
-    attr_reader :cms
-
-    sig { returns(HubspotSDK::Resources::Conversations) }
-    attr_reader :conversations
-
     sig { returns(HubspotSDK::Resources::Crm) }
     attr_reader :crm
-
-    sig { returns(HubspotSDK::Resources::Events) }
-    attr_reader :events
-
-    sig { returns(HubspotSDK::Resources::Files) }
-    attr_reader :files
-
-    sig { returns(HubspotSDK::Resources::Marketing) }
-    attr_reader :marketing
-
-    sig { returns(HubspotSDK::Resources::Scheduler) }
-    attr_reader :scheduler
-
-    sig { returns(HubspotSDK::Resources::Settings) }
-    attr_reader :settings
-
-    sig { returns(HubspotSDK::Resources::Webhooks) }
-    attr_reader :webhooks
 
     # @api private
     sig { override.returns(T::Hash[String, String]) }

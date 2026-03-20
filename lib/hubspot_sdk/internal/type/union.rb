@@ -4,17 +4,6 @@ module HubspotSDK
   module Internal
     module Type
       # @api private
-      #
-      # @example
-      #   # `api_flow` is a `HubspotSDK::Automation::APIFlow`
-      #   case api_flow
-      #   when HubspotSDK::Automation::APIContactFlow
-      #     puts(api_flow.id)
-      #   when HubspotSDK::Automation::APIPlatformFlow
-      #     puts(api_flow.actions)
-      #   else
-      #     puts(api_flow)
-      #   end
       module Union
         include HubspotSDK::Internal::Type::Converter
         include HubspotSDK::Internal::Util::SorbetRuntimeSupport

@@ -3,59 +3,30 @@ module HubspotSDK
     module Crm
       module Objects
         type custom_get_params =
-          {
-            object_type: String,
-            archived: bool,
-            associations: ::Array[String],
-            id_property: String,
-            properties: ::Array[String],
-            properties_with_history: ::Array[String]
-          }
+          { object_type: String, archived: bool }
           & HubspotSDK::Internal::Type::request_parameters
 
-        class CustomGetParams < HubspotSDK::Internal::Type::BaseModel
+        class CustomGetParams < HubspotSDK::Models::Crm::BatchReadInputSimplePublicObjectID
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          attr_accessor object_type: String
+          def object_type: -> String
 
-          attr_reader archived: bool?
+          def object_type=: (String _) -> String
 
-          def archived=: (bool) -> bool
+          def archived: -> bool?
 
-          attr_reader associations: ::Array[String]?
-
-          def associations=: (::Array[String]) -> ::Array[String]
-
-          attr_reader id_property: String?
-
-          def id_property=: (String) -> String
-
-          attr_reader properties: ::Array[String]?
-
-          def properties=: (::Array[String]) -> ::Array[String]
-
-          attr_reader properties_with_history: ::Array[String]?
-
-          def properties_with_history=: (::Array[String]) -> ::Array[String]
+          def archived=: (bool _) -> bool
 
           def initialize: (
             object_type: String,
             ?archived: bool,
-            ?associations: ::Array[String],
-            ?id_property: String,
-            ?properties: ::Array[String],
-            ?properties_with_history: ::Array[String],
             ?request_options: HubspotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
             object_type: String,
             archived: bool,
-            associations: ::Array[String],
-            id_property: String,
-            properties: ::Array[String],
-            properties_with_history: ::Array[String],
             request_options: HubspotSDK::RequestOptions
           }
         end

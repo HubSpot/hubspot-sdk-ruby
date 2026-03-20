@@ -1,0 +1,41 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type association_spec =
+        {
+          association_category: HubspotSDK::Models::Crm::AssociationSpec::association_category,
+          association_type_id: Integer
+        }
+
+      class AssociationSpec < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor association_category: HubspotSDK::Models::Crm::AssociationSpec::association_category
+
+        attr_accessor association_type_id: Integer
+
+        def initialize: (
+          association_category: HubspotSDK::Models::Crm::AssociationSpec::association_category,
+          association_type_id: Integer
+        ) -> void
+
+        def to_hash: -> {
+          association_category: HubspotSDK::Models::Crm::AssociationSpec::association_category,
+          association_type_id: Integer
+        }
+
+        type association_category =
+          :HUBSPOT_DEFINED | :INTEGRATOR_DEFINED | :USER_DEFINED | :WORK
+
+        module AssociationCategory
+          extend HubspotSDK::Internal::Type::Enum
+
+          HUBSPOT_DEFINED: :HUBSPOT_DEFINED
+          INTEGRATOR_DEFINED: :INTEGRATOR_DEFINED
+          USER_DEFINED: :USER_DEFINED
+          WORK: :WORK
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::AssociationSpec::association_category]
+        end
+      end
+    end
+  end
+end

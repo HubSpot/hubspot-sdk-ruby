@@ -6,11 +6,13 @@ module HubspotSDK
           { object_type: String }
           & HubspotSDK::Internal::Type::request_parameters
 
-        class CustomDeleteParams < HubspotSDK::Internal::Type::BaseModel
+        class CustomDeleteParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectID
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          attr_accessor object_type: String
+          def object_type: -> String
+
+          def object_type=: (String _) -> String
 
           def initialize: (
             object_type: String,

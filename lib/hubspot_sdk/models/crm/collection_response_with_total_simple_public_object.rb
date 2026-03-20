@@ -10,22 +10,25 @@ module HubspotSDK
         required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject] }
 
         # @!attribute total
-        #   The total number of objects in the collection.
+        #   The number of available results
         #
         #   @return [Integer]
         required :total, Integer
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::Paging, nil]
-        optional :paging, -> { HubspotSDK::Paging }
+        #   @return [HubspotSDK::Models::Crm::Paging, nil]
+        optional :paging, -> { HubspotSDK::Crm::Paging }
 
         # @!method initialize(results:, total:, paging: nil)
+        #   Represents a list of simple objects returned from an API request, along with the
+        #   total count of objects available.
+        #
         #   @param results [Array<HubspotSDK::Models::Crm::SimplePublicObject>]
         #
-        #   @param total [Integer] The total number of objects in the collection.
+        #   @param total [Integer] The number of available results
         #
-        #   @param paging [HubspotSDK::Models::Paging]
+        #   @param paging [HubspotSDK::Models::Crm::Paging]
       end
     end
   end

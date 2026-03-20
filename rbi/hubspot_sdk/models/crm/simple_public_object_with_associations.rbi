@@ -60,7 +60,7 @@ module HubspotSDK
         end
         attr_writer :associations
 
-        # A unique identifier for tracing the creation request.
+        # An identifier used for tracing the creation or update request of the object.
         sig { returns(T.nilable(String)) }
         attr_reader :object_write_trace_id
 
@@ -89,6 +89,8 @@ module HubspotSDK
         end
         attr_writer :properties_with_history
 
+        # The URL on the API that provide direct navigation to the corresponding UI pages
+        # for the connectors.
         sig { returns(T.nilable(String)) }
         attr_reader :url
 
@@ -134,11 +136,13 @@ module HubspotSDK
           archived_at: nil,
           # A list defining relationships with other objects.
           associations: nil,
-          # A unique identifier for tracing the creation request.
+          # An identifier used for tracing the creation or update request of the object.
           object_write_trace_id: nil,
           # Key-value pairs representing the properties of the object along with their
           # history.
           properties_with_history: nil,
+          # The URL on the API that provide direct navigation to the corresponding UI pages
+          # for the connectors.
           url: nil
         )
         end

@@ -4,60 +4,68 @@ require_relative "../../../test_helper"
 
 class HubspotSDK::Test::Resources::Crm::Objects::CustomTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @hubspot.crm.objects.custom.create(
         "objectType",
-        associations: [
+        inputs: [
           {
-            to: {id: "37295"},
-            types: [{associationCategory: :HUBSPOT_DEFINED, associationTypeId: 0}]
+            associations: [
+              {
+                to: {id: "id"},
+                types: [{associationCategory: :HUBSPOT_DEFINED, associationTypeId: 0}]
+              }
+            ],
+            properties: {foo: "string"}
           }
-        ],
-        properties: {foo: "string"}
+        ]
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::CreatedResponseSimplePublicObject
+      response => HubspotSDK::Crm::BatchResponseSimplePublicObject
     end
 
     assert_pattern do
       response => {
-        created_resource_id: String,
-        entity: HubspotSDK::Crm::SimplePublicObject,
-        location: String | nil
+        completed_at: Time,
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
+        started_at: Time,
+        status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::StandardError]) | nil,
+        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        num_errors: Integer | nil,
+        requested_at: Time | nil
       }
     end
   end
 
   def test_update_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
-      @hubspot.crm.objects.custom.update("objectId", object_type: "objectType", properties: {foo: "string"})
+      @hubspot.crm.objects.custom.update("objectType", inputs: [{id: "id", properties: {foo: "string"}}])
 
     assert_pattern do
-      response => HubspotSDK::Crm::SimplePublicObject
+      response => HubspotSDK::Crm::BatchResponseSimplePublicObject
     end
 
     assert_pattern do
       response => {
-        id: String,
-        archived: HubspotSDK::Internal::Type::Boolean,
-        created_at: Time,
-        properties: ^(HubspotSDK::Internal::Type::HashOf[String, nil?: true]),
-        updated_at: Time,
-        archived_at: Time | nil,
-        object_write_trace_id: String | nil,
-        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil,
-        url: String | nil
+        completed_at: Time,
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
+        started_at: Time,
+        status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::StandardError]) | nil,
+        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        num_errors: Integer | nil,
+        requested_at: Time | nil
       }
     end
   end
 
   def test_list
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @hubspot.crm.objects.custom.list("objectType")
 
@@ -89,9 +97,9 @@ class HubspotSDK::Test::Resources::Crm::Objects::CustomTest < HubspotSDK::Test::
   end
 
   def test_delete_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
-    response = @hubspot.crm.objects.custom.delete("objectId", object_type: "objectType")
+    response = @hubspot.crm.objects.custom.delete("objectType", inputs: [{id: "430001"}])
 
     assert_pattern do
       response => nil
@@ -99,32 +107,36 @@ class HubspotSDK::Test::Resources::Crm::Objects::CustomTest < HubspotSDK::Test::
   end
 
   def test_get_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
-    response = @hubspot.crm.objects.custom.get("objectId", object_type: "objectType")
+    response =
+      @hubspot.crm.objects.custom.get(
+        "objectType",
+        inputs: [{id: "430001"}],
+        properties: ["string"],
+        properties_with_history: ["string"]
+      )
 
     assert_pattern do
-      response => HubspotSDK::Crm::SimplePublicObjectWithAssociations
+      response => HubspotSDK::Crm::BatchResponseSimplePublicObject
     end
 
     assert_pattern do
       response => {
-        id: String,
-        archived: HubspotSDK::Internal::Type::Boolean,
-        created_at: Time,
-        properties: ^(HubspotSDK::Internal::Type::HashOf[String, nil?: true]),
-        updated_at: Time,
-        archived_at: Time | nil,
-        associations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Crm::CollectionResponseAssociatedID]) | nil,
-        object_write_trace_id: String | nil,
-        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil,
-        url: String | nil
+        completed_at: Time,
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
+        started_at: Time,
+        status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::StandardError]) | nil,
+        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        num_errors: Integer | nil,
+        requested_at: Time | nil
       }
     end
   end
 
   def test_merge_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @hubspot.crm.objects.custom.merge(
@@ -153,7 +165,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::CustomTest < HubspotSDK::Test::
   end
 
   def test_search_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @hubspot.crm.objects.custom.search(
@@ -173,7 +185,31 @@ class HubspotSDK::Test::Resources::Crm::Objects::CustomTest < HubspotSDK::Test::
       response => {
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         total: Integer,
-        paging: HubspotSDK::Paging | nil
+        paging: HubspotSDK::Crm::Paging | nil
+      }
+    end
+  end
+
+  def test_upsert_required_params
+    skip("Mock server tests are disabled")
+
+    response =
+      @hubspot.crm.objects.custom.upsert("objectType", inputs: [{id: "id", properties: {foo: "string"}}])
+
+    assert_pattern do
+      response => HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject
+    end
+
+    assert_pattern do
+      response => {
+        completed_at: Time,
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicUpsertObject]),
+        started_at: Time,
+        status: HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject::Status,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::StandardError]) | nil,
+        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        num_errors: Integer | nil,
+        requested_at: Time | nil
       }
     end
   end

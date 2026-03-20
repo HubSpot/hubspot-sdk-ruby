@@ -5,7 +5,7 @@ module HubspotSDK
     module Crm
       module Objects
         # @see HubspotSDK::Resources::Crm::Objects::Custom#delete
-        class CustomDeleteParams < HubspotSDK::Internal::Type::BaseModel
+        class CustomDeleteParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectID
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

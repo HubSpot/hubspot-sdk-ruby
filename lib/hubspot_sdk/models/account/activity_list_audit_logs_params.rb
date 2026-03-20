@@ -9,7 +9,6 @@ module HubspotSDK
         include HubspotSDK::Internal::Type::RequestParameters
 
         # @!attribute acting_user_id
-        #   The ID of a user, for retrieving user-specific logs.
         #
         #   @return [Array<Integer>, nil]
         optional :acting_user_id, HubspotSDK::Internal::Type::ArrayOf[Integer]
@@ -22,6 +21,11 @@ module HubspotSDK
         #   @return [String, nil]
         optional :after, String
 
+        # @!attribute fill_final_timestamp
+        #
+        #   @return [Boolean, nil]
+        optional :fill_final_timestamp, HubspotSDK::Internal::Type::Boolean
+
         # @!attribute limit
         #   The maximum number of results to display per page.
         #
@@ -29,39 +33,37 @@ module HubspotSDK
         optional :limit, Integer
 
         # @!attribute occurred_after
-        #   A timestamp, as a starting point for retrieving activity logs.
         #
         #   @return [Time, nil]
         optional :occurred_after, Time
 
         # @!attribute occurred_before
-        #   A timestamp, as an end point for retrieving activity logs.
         #
         #   @return [Time, nil]
         optional :occurred_before, Time
 
         # @!attribute sort
-        #   Set to `occurredAt` to order results by the time of the event. By default,
-        #   events are ordered from oldest to newest.
         #
         #   @return [Array<String>, nil]
         optional :sort, HubspotSDK::Internal::Type::ArrayOf[String]
 
-        # @!method initialize(acting_user_id: nil, after: nil, limit: nil, occurred_after: nil, occurred_before: nil, sort: nil, request_options: {})
+        # @!method initialize(acting_user_id: nil, after: nil, fill_final_timestamp: nil, limit: nil, occurred_after: nil, occurred_before: nil, sort: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Account::ActivityListAuditLogsParams} for more details.
         #
-        #   @param acting_user_id [Array<Integer>] The ID of a user, for retrieving user-specific logs.
+        #   @param acting_user_id [Array<Integer>]
         #
         #   @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
+        #   @param fill_final_timestamp [Boolean]
+        #
         #   @param limit [Integer] The maximum number of results to display per page.
         #
-        #   @param occurred_after [Time] A timestamp, as a starting point for retrieving activity logs.
+        #   @param occurred_after [Time]
         #
-        #   @param occurred_before [Time] A timestamp, as an end point for retrieving activity logs.
+        #   @param occurred_before [Time]
         #
-        #   @param sort [Array<String>] Set to `occurredAt` to order results by the time of the event. By default, event
+        #   @param sort [Array<String>]
         #
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
       end

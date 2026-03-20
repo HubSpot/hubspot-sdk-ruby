@@ -47,7 +47,7 @@ module HubspotSDK
         optional :archived_at, Time, api_name: :archivedAt
 
         # @!attribute object_write_trace_id
-        #   A unique identifier for tracing the creation or update request.
+        #   An identifier for tracing the creation request.
         #
         #   @return [String, nil]
         optional :object_write_trace_id, String, api_name: :objectWriteTraceId
@@ -64,6 +64,7 @@ module HubspotSDK
                  api_name: :propertiesWithHistory
 
         # @!attribute url
+        #   The URL associated with the object.
         #
         #   @return [String, nil]
         optional :url, String
@@ -88,11 +89,11 @@ module HubspotSDK
         #
         #   @param archived_at [Time] The timestamp when the object was archived, in ISO 8601 format.
         #
-        #   @param object_write_trace_id [String] A unique identifier for tracing the creation or update request.
+        #   @param object_write_trace_id [String] An identifier for tracing the creation request.
         #
         #   @param properties_with_history [Hash{Symbol=>Array<HubspotSDK::Models::Crm::ValueWithTimestamp>}] Key-value pairs representing the properties of the object along with their histo
         #
-        #   @param url [String]
+        #   @param url [String] The URL associated with the object.
       end
     end
   end

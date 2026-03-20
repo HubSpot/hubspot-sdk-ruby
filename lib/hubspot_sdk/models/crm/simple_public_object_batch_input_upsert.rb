@@ -17,8 +17,7 @@ module HubspotSDK
         required :properties, HubspotSDK::Internal::Type::HashOf[String]
 
         # @!attribute id_property
-        #   The name of a unique identifier property, which can be used for identifying
-        #   objects instead of the object ID.
+        #   The name of a property whose values are unique for this object
         #
         #   @return [String, nil]
         optional :id_property, String, api_name: :idProperty
@@ -30,9 +29,6 @@ module HubspotSDK
         optional :object_write_trace_id, String, api_name: :objectWriteTraceId
 
         # @!method initialize(id:, properties:, id_property: nil, object_write_trace_id: nil)
-        #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::SimplePublicObjectBatchInputUpsert} for more details.
-        #
         #   Represents an object used in batch upsert operations, containing an object’s
         #   unique identifier, its properties, and optionally the unique property name and a
         #   write trace ID.
@@ -41,7 +37,7 @@ module HubspotSDK
         #
         #   @param properties [Hash{Symbol=>String}] Key value pairs representing the properties of the object.
         #
-        #   @param id_property [String] The name of a unique identifier property, which can be used for identifying obje
+        #   @param id_property [String] The name of a property whose values are unique for this object
         #
         #   @param object_write_trace_id [String] An identifier for tracing the creation request.
       end

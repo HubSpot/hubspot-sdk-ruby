@@ -4,7 +4,7 @@ module HubspotSDK
   module Models
     module Crm
       module Objects
-        class CustomUpdateParams < HubspotSDK::Models::Crm::SimplePublicObjectInput
+        class CustomUpdateParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectBatchInput
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
@@ -19,33 +19,19 @@ module HubspotSDK
           sig { returns(String) }
           attr_accessor :object_type
 
-          # The name of a property whose values are unique for this object
-          sig { returns(T.nilable(String)) }
-          attr_reader :id_property
-
-          sig { params(id_property: String).void }
-          attr_writer :id_property
-
           sig do
             params(
               object_type: String,
-              id_property: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
-          def self.new(
-            object_type:,
-            # The name of a property whose values are unique for this object
-            id_property: nil,
-            request_options: {}
-          )
+          def self.new(object_type:, request_options: {})
           end
 
           sig do
             override.returns(
               {
                 object_type: String,
-                id_property: String,
                 request_options: HubspotSDK::RequestOptions
               }
             )

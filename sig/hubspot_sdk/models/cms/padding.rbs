@@ -1,7 +1,0 @@
-module HubspotSDK
-  module Models
-    module Cms
-      Padding: HubspotSDK::Internal::Type::Converter
-    end
-  end
-end

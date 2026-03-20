@@ -16,6 +16,12 @@ module HubspotSDK
               )
             end
 
+          sig { returns(String) }
+          attr_accessor :object_type
+
+          sig { returns(String) }
+          attr_accessor :object_id_
+
           # Whether to return only results that have been archived.
           sig { returns(T.nilable(T::Boolean)) }
           attr_reader :archived
@@ -58,6 +64,8 @@ module HubspotSDK
 
           sig do
             params(
+              object_type: String,
+              object_id_: String,
               archived: T::Boolean,
               associations: T::Array[String],
               id_property: String,
@@ -67,6 +75,8 @@ module HubspotSDK
             ).returns(T.attached_class)
           end
           def self.new(
+            object_type:,
+            object_id_:,
             # Whether to return only results that have been archived.
             archived: nil,
             # A comma separated list of object types to retrieve associated IDs for. If any of
@@ -89,6 +99,8 @@ module HubspotSDK
           sig do
             override.returns(
               {
+                object_type: String,
+                object_id_: String,
                 archived: T::Boolean,
                 associations: T::Array[String],
                 id_property: String,

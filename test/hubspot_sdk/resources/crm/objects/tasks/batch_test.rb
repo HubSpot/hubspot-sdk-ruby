@@ -4,15 +4,16 @@ require_relative "../../../../test_helper"
 
 class HubspotSDK::Test::Resources::Crm::Objects::Tasks::BatchTest < HubspotSDK::Test::ResourceTest
   def test_create_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @hubspot.crm.objects.tasks.batch.create(
+        "objectType",
         inputs: [
           {
             associations: [
               {
-                to: {id: "37295"},
+                to: {id: "id"},
                 types: [{associationCategory: :HUBSPOT_DEFINED, associationTypeId: 0}]
               }
             ],
@@ -31,7 +32,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::Tasks::BatchTest < HubspotSDK::
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         started_at: Time,
         status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
@@ -40,9 +41,10 @@ class HubspotSDK::Test::Resources::Crm::Objects::Tasks::BatchTest < HubspotSDK::
   end
 
   def test_update_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
-    response = @hubspot.crm.objects.tasks.batch.update(inputs: [{id: "id", properties: {foo: "string"}}])
+    response =
+      @hubspot.crm.objects.tasks.batch.update("objectType", inputs: [{id: "id", properties: {foo: "string"}}])
 
     assert_pattern do
       response => HubspotSDK::Crm::BatchResponseSimplePublicObject
@@ -54,7 +56,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::Tasks::BatchTest < HubspotSDK::
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         started_at: Time,
         status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
@@ -63,9 +65,9 @@ class HubspotSDK::Test::Resources::Crm::Objects::Tasks::BatchTest < HubspotSDK::
   end
 
   def test_delete_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
-    response = @hubspot.crm.objects.tasks.batch.delete(inputs: [{id: "id"}])
+    response = @hubspot.crm.objects.tasks.batch.delete("objectType", inputs: [{id: "430001"}])
 
     assert_pattern do
       response => nil
@@ -73,11 +75,12 @@ class HubspotSDK::Test::Resources::Crm::Objects::Tasks::BatchTest < HubspotSDK::
   end
 
   def test_get_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @hubspot.crm.objects.tasks.batch.get(
-        inputs: [{id: "id"}],
+        "objectType",
+        inputs: [{id: "430001"}],
         properties: ["string"],
         properties_with_history: ["string"]
       )
@@ -92,7 +95,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::Tasks::BatchTest < HubspotSDK::
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         started_at: Time,
         status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
@@ -101,9 +104,10 @@ class HubspotSDK::Test::Resources::Crm::Objects::Tasks::BatchTest < HubspotSDK::
   end
 
   def test_upsert_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
-    response = @hubspot.crm.objects.tasks.batch.upsert(inputs: [{id: "id", properties: {foo: "string"}}])
+    response =
+      @hubspot.crm.objects.tasks.batch.upsert("objectType", inputs: [{id: "id", properties: {foo: "string"}}])
 
     assert_pattern do
       response => HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject
@@ -115,7 +119,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::Tasks::BatchTest < HubspotSDK::
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicUpsertObject]),
         started_at: Time,
         status: HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
+        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil

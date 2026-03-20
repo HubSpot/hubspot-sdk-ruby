@@ -3,15 +3,28 @@ module HubspotSDK
     module Crm
       module Objects
         type contact_delete_params =
-          {  } & HubspotSDK::Internal::Type::request_parameters
+          { object_type: String, object_id_: String }
+          & HubspotSDK::Internal::Type::request_parameters
 
         class ContactDeleteParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+          attr_accessor object_type: String
 
-          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+          attr_accessor object_id_: String
+
+          def initialize: (
+            object_type: String,
+            object_id_: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            object_type: String,
+            object_id_: String,
+            request_options: HubspotSDK::RequestOptions
+          }
         end
       end
     end

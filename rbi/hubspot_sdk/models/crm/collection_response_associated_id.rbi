@@ -15,16 +15,16 @@ module HubspotSDK
         sig { returns(T::Array[HubspotSDK::Crm::AssociatedID]) }
         attr_accessor :results
 
-        sig { returns(T.nilable(HubspotSDK::Paging)) }
+        sig { returns(T.nilable(HubspotSDK::Crm::Paging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::Paging::OrHash).void }
+        sig { params(paging: HubspotSDK::Crm::Paging::OrHash).void }
         attr_writer :paging
 
         sig do
           params(
             results: T::Array[HubspotSDK::Crm::AssociatedID::OrHash],
-            paging: HubspotSDK::Paging::OrHash
+            paging: HubspotSDK::Crm::Paging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(results:, paging: nil)
@@ -34,7 +34,7 @@ module HubspotSDK
           override.returns(
             {
               results: T::Array[HubspotSDK::Crm::AssociatedID],
-              paging: HubspotSDK::Paging
+              paging: HubspotSDK::Crm::Paging
             }
           )
         end

@@ -15,7 +15,6 @@ module HubspotSDK
             )
           end
 
-        # The ID of a user, for retrieving user-specific logs.
         sig { returns(T.nilable(T::Array[Integer])) }
         attr_reader :acting_user_id
 
@@ -31,6 +30,12 @@ module HubspotSDK
         sig { params(after: String).void }
         attr_writer :after
 
+        sig { returns(T.nilable(T::Boolean)) }
+        attr_reader :fill_final_timestamp
+
+        sig { params(fill_final_timestamp: T::Boolean).void }
+        attr_writer :fill_final_timestamp
+
         # The maximum number of results to display per page.
         sig { returns(T.nilable(Integer)) }
         attr_reader :limit
@@ -38,22 +43,18 @@ module HubspotSDK
         sig { params(limit: Integer).void }
         attr_writer :limit
 
-        # A timestamp, as a starting point for retrieving activity logs.
         sig { returns(T.nilable(Time)) }
         attr_reader :occurred_after
 
         sig { params(occurred_after: Time).void }
         attr_writer :occurred_after
 
-        # A timestamp, as an end point for retrieving activity logs.
         sig { returns(T.nilable(Time)) }
         attr_reader :occurred_before
 
         sig { params(occurred_before: Time).void }
         attr_writer :occurred_before
 
-        # Set to `occurredAt` to order results by the time of the event. By default,
-        # events are ordered from oldest to newest.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :sort
 
@@ -64,6 +65,7 @@ module HubspotSDK
           params(
             acting_user_id: T::Array[Integer],
             after: String,
+            fill_final_timestamp: T::Boolean,
             limit: Integer,
             occurred_after: Time,
             occurred_before: Time,
@@ -72,20 +74,16 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The ID of a user, for retrieving user-specific logs.
           acting_user_id: nil,
           # The paging cursor token of the last successfully read resource will be returned
           # as the `paging.next.after` JSON property of a paged response containing more
           # results.
           after: nil,
+          fill_final_timestamp: nil,
           # The maximum number of results to display per page.
           limit: nil,
-          # A timestamp, as a starting point for retrieving activity logs.
           occurred_after: nil,
-          # A timestamp, as an end point for retrieving activity logs.
           occurred_before: nil,
-          # Set to `occurredAt` to order results by the time of the event. By default,
-          # events are ordered from oldest to newest.
           sort: nil,
           request_options: {}
         )
@@ -96,6 +94,7 @@ module HubspotSDK
             {
               acting_user_id: T::Array[Integer],
               after: String,
+              fill_final_timestamp: T::Boolean,
               limit: Integer,
               occurred_after: Time,
               occurred_before: Time,

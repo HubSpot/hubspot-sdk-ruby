@@ -5,7 +5,7 @@ module HubspotSDK
     module Crm
       class Filter < HubspotSDK::Internal::Type::BaseModel
         # @!attribute operator
-        #   The comparison operator used in the filter, such as "EQ" or "GT".
+        #   null
         #
         #   @return [Symbol, HubspotSDK::Models::Crm::Filter::Operator]
         required :operator, enum: -> { HubspotSDK::Crm::Filter::Operator }
@@ -39,7 +39,7 @@ module HubspotSDK
         #   filter on, the operator to use (such as equals, greater than, or contains), and
         #   the value(s) to compare against.
         #
-        #   @param operator [Symbol, HubspotSDK::Models::Crm::Filter::Operator] The comparison operator used in the filter, such as "EQ" or "GT".
+        #   @param operator [Symbol, HubspotSDK::Models::Crm::Filter::Operator] null
         #
         #   @param property_name [String] The name of the property to apply the filter to.
         #
@@ -49,7 +49,7 @@ module HubspotSDK
         #
         #   @param values [Array<String>] The values to match against the property.
 
-        # The comparison operator used in the filter, such as "EQ" or "GT".
+        # null
         #
         # @see HubspotSDK::Models::Crm::Filter#operator
         module Operator

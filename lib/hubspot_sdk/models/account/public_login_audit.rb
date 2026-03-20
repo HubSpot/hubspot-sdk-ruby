@@ -42,6 +42,7 @@ module HubspotSDK
         optional :ip_address, String, api_name: :ipAddress
 
         # @!attribute location
+        #   The approximate location where the login activity originated.
         #
         #   @return [String, nil]
         optional :location, String
@@ -65,8 +66,6 @@ module HubspotSDK
         optional :user_id, Integer, api_name: :userId
 
         # @!method initialize(id:, login_at:, login_succeeded:, country_code: nil, email: nil, ip_address: nil, location: nil, region_code: nil, user_agent: nil, user_id: nil)
-        #   Details about the a particular login activity for a HubSpot account.
-        #
         #   @param id [String] The login activity's unique ID.
         #
         #   @param login_at [Time] The time the login took place.
@@ -79,7 +78,7 @@ module HubspotSDK
         #
         #   @param ip_address [String] IP address where the activity originated.
         #
-        #   @param location [String]
+        #   @param location [String] The approximate location where the login activity originated.
         #
         #   @param region_code [String] The approximate region code of the login.
         #

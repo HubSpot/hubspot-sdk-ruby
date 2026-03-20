@@ -12,13 +12,14 @@ module HubspotSDK
             )
           end
 
-        # Object ID
+        # The unique ID of the object.
         sig { returns(String) }
         attr_accessor :id
 
+        # Contains the Id of a Public Object
         sig { params(id: String).returns(T.attached_class) }
         def self.new(
-          # Object ID
+          # The unique ID of the object.
           id:
         )
         end

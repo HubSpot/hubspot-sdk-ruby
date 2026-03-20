@@ -9,6 +9,16 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
+          # @!attribute object_type
+          #
+          #   @return [String]
+          required :object_type, String
+
+          # @!attribute object_id_
+          #
+          #   @return [String]
+          required :object_id_, String
+
           # @!attribute archived
           #   Whether to return only results that have been archived.
           #
@@ -44,9 +54,13 @@ module HubspotSDK
           #   @return [Array<String>, nil]
           optional :properties_with_history, HubspotSDK::Internal::Type::ArrayOf[String]
 
-          # @!method initialize(archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
+          # @!method initialize(object_type:, object_id_:, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
           #   {HubspotSDK::Models::Crm::Objects::ContactGetParams} for more details.
+          #
+          #   @param object_type [String]
+          #
+          #   @param object_id_ [String]
           #
           #   @param archived [Boolean] Whether to return only results that have been archived.
           #

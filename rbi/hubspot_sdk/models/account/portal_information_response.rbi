@@ -14,7 +14,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol
+            HubspotSDK::Account::PortalInformationResponse::AccountType::OrSymbol
           )
         end
         attr_accessor :account_type
@@ -74,7 +74,7 @@ module HubspotSDK
           override.returns(
             {
               account_type:
-                HubspotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol,
+                HubspotSDK::Account::PortalInformationResponse::AccountType::OrSymbol,
               additional_currencies: T::Array[String],
               company_currency: String,
               data_hosting_location: String,

@@ -11,12 +11,12 @@ module HubspotSDK
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::Paging, nil]
-        optional :paging, -> { HubspotSDK::Paging }
+        #   @return [HubspotSDK::Models::Crm::Paging, nil]
+        optional :paging, -> { HubspotSDK::Crm::Paging }
 
         # @!method initialize(results:, paging: nil)
         #   @param results [Array<HubspotSDK::Models::Crm::AssociatedID>]
-        #   @param paging [HubspotSDK::Models::Paging]
+        #   @param paging [HubspotSDK::Models::Crm::Paging]
       end
     end
   end
