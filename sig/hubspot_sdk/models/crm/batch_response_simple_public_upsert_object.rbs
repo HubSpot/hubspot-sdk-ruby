@@ -7,7 +7,7 @@ module HubspotSDK
           results: ::Array[HubspotSDK::Crm::SimplePublicUpsertObject],
           started_at: Time,
           status: HubspotSDK::Models::Crm::BatchResponseSimplePublicUpsertObject::status,
-          errors: ::Array[HubspotSDK::StandardError],
+          errors: ::Array[HubspotSDK::Crm::StandardError],
           links: ::Hash[Symbol, String],
           num_errors: Integer,
           requested_at: Time
@@ -22,11 +22,11 @@ module HubspotSDK
 
         attr_accessor status: HubspotSDK::Models::Crm::BatchResponseSimplePublicUpsertObject::status
 
-        attr_reader errors: ::Array[HubspotSDK::StandardError]?
+        attr_reader errors: ::Array[HubspotSDK::Crm::StandardError]?
 
         def errors=: (
-          ::Array[HubspotSDK::StandardError]
-        ) -> ::Array[HubspotSDK::StandardError]
+          ::Array[HubspotSDK::Crm::StandardError]
+        ) -> ::Array[HubspotSDK::Crm::StandardError]
 
         attr_reader links: ::Hash[Symbol, String]?
 
@@ -45,7 +45,7 @@ module HubspotSDK
           results: ::Array[HubspotSDK::Crm::SimplePublicUpsertObject],
           started_at: Time,
           status: HubspotSDK::Models::Crm::BatchResponseSimplePublicUpsertObject::status,
-          ?errors: ::Array[HubspotSDK::StandardError],
+          ?errors: ::Array[HubspotSDK::Crm::StandardError],
           ?links: ::Hash[Symbol, String],
           ?num_errors: Integer,
           ?requested_at: Time
@@ -56,7 +56,7 @@ module HubspotSDK
           results: ::Array[HubspotSDK::Crm::SimplePublicUpsertObject],
           started_at: Time,
           status: HubspotSDK::Models::Crm::BatchResponseSimplePublicUpsertObject::status,
-          errors: ::Array[HubspotSDK::StandardError],
+          errors: ::Array[HubspotSDK::Crm::StandardError],
           links: ::Hash[Symbol, String],
           num_errors: Integer,
           requested_at: Time

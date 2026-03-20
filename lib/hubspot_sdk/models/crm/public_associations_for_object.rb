@@ -5,18 +5,20 @@ module HubspotSDK
     module Crm
       class PublicAssociationsForObject < HubspotSDK::Internal::Type::BaseModel
         # @!attribute to
+        #   Contains the Id of a Public Object
         #
-        #   @return [HubspotSDK::Models::PublicObjectID]
-        required :to, -> { HubspotSDK::PublicObjectID }
+        #   @return [HubspotSDK::Models::Crm::PublicObjectID]
+        required :to, -> { HubspotSDK::Crm::PublicObjectID }
 
         # @!attribute types
         #
-        #   @return [Array<HubspotSDK::Models::AssociationSpec>]
-        required :types, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AssociationSpec] }
+        #   @return [Array<HubspotSDK::Models::Crm::AssociationSpec>]
+        required :types, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::AssociationSpec] }
 
         # @!method initialize(to:, types:)
-        #   @param to [HubspotSDK::Models::PublicObjectID]
-        #   @param types [Array<HubspotSDK::Models::AssociationSpec>]
+        #   @param to [HubspotSDK::Models::Crm::PublicObjectID] Contains the Id of a Public Object
+        #
+        #   @param types [Array<HubspotSDK::Models::Crm::AssociationSpec>]
       end
     end
   end

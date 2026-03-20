@@ -23,8 +23,7 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :started_at
 
-        # The status of the batch processing request: "PENDING", "PROCESSING",
-        # "CANCELLED", or "COMPLETE"
+        # The status of the batch processing request. The expected value is "COMPLETE".
         sig do
           returns(
             HubspotSDK::Crm::BatchResponseSimplePublicObject::Status::TaggedSymbol
@@ -32,10 +31,12 @@ module HubspotSDK
         end
         attr_accessor :status
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
+        sig { returns(T.nilable(T::Array[HubspotSDK::Crm::StandardError])) }
         attr_reader :errors
 
-        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
+        sig do
+          params(errors: T::Array[HubspotSDK::Crm::StandardError::OrHash]).void
+        end
         attr_writer :errors
 
         # An object containing relevant links related to the batch request.
@@ -45,7 +46,7 @@ module HubspotSDK
         sig { params(links: T::Hash[Symbol, String]).void }
         attr_writer :links
 
-        # The number of errors encountered during the batch processing.
+        # The total number of errors that occurred during the batch operation.
         sig { returns(T.nilable(Integer)) }
         attr_reader :num_errors
 
@@ -67,7 +68,7 @@ module HubspotSDK
             started_at: Time,
             status:
               HubspotSDK::Crm::BatchResponseSimplePublicObject::Status::OrSymbol,
-            errors: T::Array[HubspotSDK::StandardError::OrHash],
+            errors: T::Array[HubspotSDK::Crm::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
             requested_at: Time
@@ -79,13 +80,12 @@ module HubspotSDK
           results:,
           # The timestamp when the batch processing began, in ISO 8601 format.
           started_at:,
-          # The status of the batch processing request: "PENDING", "PROCESSING",
-          # "CANCELLED", or "COMPLETE"
+          # The status of the batch processing request. The expected value is "COMPLETE".
           status:,
           errors: nil,
           # An object containing relevant links related to the batch request.
           links: nil,
-          # The number of errors encountered during the batch processing.
+          # The total number of errors that occurred during the batch operation.
           num_errors: nil,
           # The timestamp when the batch request was initially made, in ISO 8601 format.
           requested_at: nil
@@ -100,7 +100,7 @@ module HubspotSDK
               started_at: Time,
               status:
                 HubspotSDK::Crm::BatchResponseSimplePublicObject::Status::TaggedSymbol,
-              errors: T::Array[HubspotSDK::StandardError],
+              errors: T::Array[HubspotSDK::Crm::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
               requested_at: Time
@@ -110,8 +110,7 @@ module HubspotSDK
         def to_hash
         end
 
-        # The status of the batch processing request: "PENDING", "PROCESSING",
-        # "CANCELLED", or "COMPLETE"
+        # The status of the batch processing request. The expected value is "COMPLETE".
         module Status
           extend HubspotSDK::Internal::Type::Enum
 

@@ -5,19 +5,19 @@ module HubspotSDK
     class ErrorDetail < HubspotSDK::Internal::Type::BaseModel
       # @!attribute message
       #   A human readable message describing the error along with remediation steps where
-      #   appropriate.
+      #   appropriate
       #
       #   @return [String]
       required :message, String
 
       # @!attribute code
-      #   The status code associated with the error detail.
+      #   The status code associated with the error detail
       #
       #   @return [String, nil]
       optional :code, String
 
       # @!attribute context
-      #   Context about the error condition.
+      #   Context about the error condition
       #
       #   @return [Hash{Symbol=>Array<String>}, nil]
       optional :context, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[String]]
@@ -40,9 +40,9 @@ module HubspotSDK
       #
       #   @param message [String] A human readable message describing the error along with remediation steps where
       #
-      #   @param code [String] The status code associated with the error detail.
+      #   @param code [String] The status code associated with the error detail
       #
-      #   @param context [Hash{Symbol=>Array<String>}] Context about the error condition.
+      #   @param context [Hash{Symbol=>Array<String>}] Context about the error condition
       #
       #   @param in_ [String] The name of the field or parameter in which the error was found.
       #

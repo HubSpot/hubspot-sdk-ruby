@@ -17,16 +17,25 @@ module HubspotSDK
                 )
               end
 
+            sig { returns(String) }
+            attr_accessor :object_type
+
             sig do
               params(
+                object_type: String,
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(T.attached_class)
             end
-            def self.new(request_options: {})
+            def self.new(object_type:, request_options: {})
             end
 
             sig do
-              override.returns({ request_options: HubspotSDK::RequestOptions })
+              override.returns(
+                {
+                  object_type: String,
+                  request_options: HubspotSDK::RequestOptions
+                }
+              )
             end
             def to_hash
             end

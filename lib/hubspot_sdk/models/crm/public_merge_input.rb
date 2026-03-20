@@ -5,14 +5,15 @@ module HubspotSDK
     module Crm
       class PublicMergeInput < HubspotSDK::Internal::Type::BaseModel
         # @!attribute object_id_to_merge
-        #   The unique identifier of the CRM object that will be merged into the primary
-        #   object.
+        #   The object ID of the record that the merge will not set as the current value
+        #   after the merge.
         #
         #   @return [String]
         required :object_id_to_merge, String, api_name: :objectIdToMerge
 
         # @!attribute primary_object_id
-        #   The unique identifier of the CRM object that will remain after the merge.
+        #   The object ID of the record that the merge will generally set as the current
+        #   value after the merge.
         #
         #   @return [String]
         required :primary_object_id, String, api_name: :primaryObjectId
@@ -21,9 +22,11 @@ module HubspotSDK
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Crm::PublicMergeInput} for more details.
         #
-        #   @param object_id_to_merge [String] The unique identifier of the CRM object that will be merged into the primary obj
+        #   Input data for merging two records.
         #
-        #   @param primary_object_id [String] The unique identifier of the CRM object that will remain after the merge.
+        #   @param object_id_to_merge [String] The object ID of the record that the merge will not set as the current value aft
+        #
+        #   @param primary_object_id [String] The object ID of the record that the merge will generally set as the current val
       end
     end
   end

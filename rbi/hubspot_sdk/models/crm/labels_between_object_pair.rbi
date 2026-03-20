@@ -12,26 +12,26 @@ module HubspotSDK
             )
           end
 
-        # The ID of the source object in the association.
+        # Source unique ID of the object.
         sig { returns(String) }
         attr_accessor :from_object_id
 
-        # The type ID of the source object in the association.
+        # Source object type.
         sig { returns(String) }
         attr_accessor :from_object_type_id
 
-        # An array of labels associated with the relationship between the objects.
         sig { returns(T::Array[String]) }
         attr_accessor :labels
 
-        # The ID of the target object in the association.
+        # Target unique ID of the object.
         sig { returns(String) }
         attr_accessor :to_object_id
 
-        # The type ID of the target object in the association.
+        # Target object type.
         sig { returns(String) }
         attr_accessor :to_object_type_id
 
+        # The relationship descriptors applicable between two object types.
         sig do
           params(
             from_object_id: String,
@@ -42,15 +42,14 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The ID of the source object in the association.
+          # Source unique ID of the object.
           from_object_id:,
-          # The type ID of the source object in the association.
+          # Source object type.
           from_object_type_id:,
-          # An array of labels associated with the relationship between the objects.
           labels:,
-          # The ID of the target object in the association.
+          # Target unique ID of the object.
           to_object_id:,
-          # The type ID of the target object in the association.
+          # Target object type.
           to_object_type_id:
         )
         end

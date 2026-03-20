@@ -45,6 +45,7 @@ module HubspotSDK
         sig { params(ip_address: String).void }
         attr_writer :ip_address
 
+        # The approximate location where the login activity originated.
         sig { returns(T.nilable(String)) }
         attr_reader :location
 
@@ -72,7 +73,6 @@ module HubspotSDK
         sig { params(user_id: Integer).void }
         attr_writer :user_id
 
-        # Details about the a particular login activity for a HubSpot account.
         sig do
           params(
             id: String,
@@ -100,6 +100,7 @@ module HubspotSDK
           email: nil,
           # IP address where the activity originated.
           ip_address: nil,
+          # The approximate location where the login activity originated.
           location: nil,
           # The approximate region code of the login.
           region_code: nil,

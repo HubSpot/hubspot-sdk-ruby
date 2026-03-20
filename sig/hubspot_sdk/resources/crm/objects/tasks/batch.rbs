@@ -5,21 +5,25 @@ module HubspotSDK
         class Tasks
           class Batch
             def create: (
+              String object_type,
               inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectBatchInputForCreate],
               ?request_options: HubspotSDK::request_opts
             ) -> HubspotSDK::Crm::BatchResponseSimplePublicObject
 
             def update: (
+              String object_type,
               inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectBatchInput],
               ?request_options: HubspotSDK::request_opts
             ) -> HubspotSDK::Crm::BatchResponseSimplePublicObject
 
             def delete: (
+              String object_type,
               inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectID],
               ?request_options: HubspotSDK::request_opts
             ) -> nil
 
             def get: (
+              String object_type,
               inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectID],
               properties: ::Array[String],
               properties_with_history: ::Array[String],
@@ -29,6 +33,7 @@ module HubspotSDK
             ) -> HubspotSDK::Crm::BatchResponseSimplePublicObject
 
             def upsert: (
+              String object_type,
               inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectBatchInputUpsert],
               ?request_options: HubspotSDK::request_opts
             ) -> HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject

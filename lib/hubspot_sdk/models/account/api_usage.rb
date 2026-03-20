@@ -45,8 +45,6 @@ module HubspotSDK
         optional :resets_at, Time, api_name: :resetsAt
 
         # @!method initialize(collected_at:, current_usage:, fetch_status:, name:, usage_limit:, resets_at: nil)
-        #   API usage and limits information for a HubSpot account.
-        #
         #   @param collected_at [Time] Indicates when the cache was last updated.
         #
         #   @param current_usage [Integer] How many API calls an account has made for the current day.

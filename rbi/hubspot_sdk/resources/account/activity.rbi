@@ -12,6 +12,7 @@ module HubspotSDK
           params(
             acting_user_id: T::Array[Integer],
             after: String,
+            fill_final_timestamp: T::Boolean,
             limit: Integer,
             occurred_after: Time,
             occurred_before: Time,
@@ -24,20 +25,16 @@ module HubspotSDK
           )
         end
         def list_audit_logs(
-          # The ID of a user, for retrieving user-specific logs.
           acting_user_id: nil,
           # The paging cursor token of the last successfully read resource will be returned
           # as the `paging.next.after` JSON property of a paged response containing more
           # results.
           after: nil,
+          fill_final_timestamp: nil,
           # The maximum number of results to display per page.
           limit: nil,
-          # A timestamp, as a starting point for retrieving activity logs.
           occurred_after: nil,
-          # A timestamp, as an end point for retrieving activity logs.
           occurred_before: nil,
-          # Set to `occurredAt` to order results by the time of the event. By default,
-          # events are ordered from oldest to newest.
           sort: nil,
           request_options: {}
         )
@@ -56,12 +53,12 @@ module HubspotSDK
           )
         end
         def list_login_activities(
-          # The cursor token value to get the next set of results. You can get this from the
-          # `paging.next.after` JSON property of a paged response containing more results.
+          # The paging cursor token of the last successfully read resource will be returned
+          # as the `paging.next.after` JSON property of a paged response containing more
+          # results.
           after: nil,
-          # The maximum number of results to display per page. Max value of limit is 200.
+          # The maximum number of results to display per page.
           limit: nil,
-          # The ID of a user, for retrieving user-specific logs.
           user_id: nil,
           request_options: {}
         )
@@ -84,16 +81,14 @@ module HubspotSDK
           )
         end
         def list_security_activities(
-          # The cursor token value to get the next set of results. You can get this from the
-          # `paging.next.after` JSON property of a paged response containing more results.
+          # The paging cursor token of the last successfully read resource will be returned
+          # as the `paging.next.after` JSON property of a paged response containing more
+          # results.
           after: nil,
-          # The start time, for retrieving logs within a specific timeframe.
           from_timestamp: nil,
-          # The maximum number of results to display per page. Max value of limit is 200.
+          # The maximum number of results to display per page.
           limit: nil,
-          # The end time, for retrieving logs within a specific timeframe.
           to_timestamp: nil,
-          # The ID of a user, for retrieving user-specific logs.
           user_id: nil,
           request_options: {}
         )

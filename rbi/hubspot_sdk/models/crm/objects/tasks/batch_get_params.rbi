@@ -17,6 +17,9 @@ module HubspotSDK
                 )
               end
 
+            sig { returns(String) }
+            attr_accessor :object_type
+
             # Whether to return only results that have been archived.
             sig { returns(T.nilable(T::Boolean)) }
             attr_reader :archived
@@ -26,11 +29,13 @@ module HubspotSDK
 
             sig do
               params(
+                object_type: String,
                 archived: T::Boolean,
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(T.attached_class)
             end
             def self.new(
+              object_type:,
               # Whether to return only results that have been archived.
               archived: nil,
               request_options: {}
@@ -40,6 +45,7 @@ module HubspotSDK
             sig do
               override.returns(
                 {
+                  object_type: String,
                   archived: T::Boolean,
                   request_options: HubspotSDK::RequestOptions
                 }

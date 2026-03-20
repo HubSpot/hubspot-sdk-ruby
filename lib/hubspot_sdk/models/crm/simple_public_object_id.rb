@@ -5,13 +5,15 @@ module HubspotSDK
     module Crm
       class SimplePublicObjectID < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
-        #   Object ID
+        #   The unique ID of the object.
         #
         #   @return [String]
         required :id, String
 
         # @!method initialize(id:)
-        #   @param id [String] Object ID
+        #   Contains the Id of a Public Object
+        #
+        #   @param id [String] The unique ID of the object.
       end
     end
   end

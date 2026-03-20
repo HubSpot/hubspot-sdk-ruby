@@ -5,6 +5,7 @@ module HubspotSDK
         def list_audit_logs: (
           ?acting_user_id: ::Array[Integer],
           ?after: String,
+          ?fill_final_timestamp: bool,
           ?limit: Integer,
           ?occurred_after: Time,
           ?occurred_before: Time,

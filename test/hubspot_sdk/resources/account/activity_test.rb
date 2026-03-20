@@ -4,7 +4,7 @@ require_relative "../../test_helper"
 
 class HubspotSDK::Test::Resources::Account::ActivityTest < HubspotSDK::Test::ResourceTest
   def test_list_audit_logs
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @hubspot.account.activity.list_audit_logs
 
@@ -33,7 +33,7 @@ class HubspotSDK::Test::Resources::Account::ActivityTest < HubspotSDK::Test::Res
   end
 
   def test_list_login_activities
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @hubspot.account.activity.list_login_activities
 
@@ -65,7 +65,7 @@ class HubspotSDK::Test::Resources::Account::ActivityTest < HubspotSDK::Test::Res
   end
 
   def test_list_security_activities
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @hubspot.account.activity.list_security_activities
 
@@ -84,7 +84,7 @@ class HubspotSDK::Test::Resources::Account::ActivityTest < HubspotSDK::Test::Res
       row => {
         id: String,
         created_at: Time,
-        type: String,
+        type: HubspotSDK::Account::HydratedCriticalAction::Type,
         user_id: Integer,
         acting_user: String | nil,
         country_code: String | nil,

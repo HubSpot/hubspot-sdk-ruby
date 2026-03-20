@@ -12,19 +12,21 @@ module HubspotSDK
         # Learn more about
         # [activities included in audit log exports](https://knowledge.hubspot.com/account-management/view-and-export-account-activity-history-in-a-centralized-audit-log?hubs_content=knowledge.hubspot.com/account-management/view-and-export-account-activity-history&hubs_content-cta=centralized%20audit%20log#data-included-in-the-centralized-audit-log).
         #
-        # @overload list_audit_logs(acting_user_id: nil, after: nil, limit: nil, occurred_after: nil, occurred_before: nil, sort: nil, request_options: {})
+        # @overload list_audit_logs(acting_user_id: nil, after: nil, fill_final_timestamp: nil, limit: nil, occurred_after: nil, occurred_before: nil, sort: nil, request_options: {})
         #
-        # @param acting_user_id [Array<Integer>] The ID of a user, for retrieving user-specific logs.
+        # @param acting_user_id [Array<Integer>]
         #
         # @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
+        # @param fill_final_timestamp [Boolean]
+        #
         # @param limit [Integer] The maximum number of results to display per page.
         #
-        # @param occurred_after [Time] A timestamp, as a starting point for retrieving activity logs.
+        # @param occurred_after [Time]
         #
-        # @param occurred_before [Time] A timestamp, as an end point for retrieving activity logs.
+        # @param occurred_before [Time]
         #
-        # @param sort [Array<String>] Set to `occurredAt` to order results by the time of the event. By default, event
+        # @param sort [Array<String>]
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -33,11 +35,13 @@ module HubspotSDK
         # @see HubspotSDK::Models::Account::ActivityListAuditLogsParams
         def list_audit_logs(params = {})
           parsed, options = HubspotSDK::Account::ActivityListAuditLogsParams.dump_request(params)
+          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
-            path: "account-info/v3/activity/audit-logs",
-            query: parsed.transform_keys(
+            path: "account-info/2026-03/activity/audit-logs",
+            query: query.transform_keys(
               acting_user_id: "actingUserId",
+              fill_final_timestamp: "fillFinalTimestamp",
               occurred_after: "occurredAfter",
               occurred_before: "occurredBefore"
             ),
@@ -56,11 +60,11 @@ module HubspotSDK
         #
         # @overload list_login_activities(after: nil, limit: nil, user_id: nil, request_options: {})
         #
-        # @param after [String] The cursor token value to get the next set of results. You can get this from the
+        # @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
-        # @param limit [Integer] The maximum number of results to display per page. Max value of limit is 200.
+        # @param limit [Integer] The maximum number of results to display per page.
         #
-        # @param user_id [Integer] The ID of a user, for retrieving user-specific logs.
+        # @param user_id [Integer]
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -69,10 +73,11 @@ module HubspotSDK
         # @see HubspotSDK::Models::Account::ActivityListLoginActivitiesParams
         def list_login_activities(params = {})
           parsed, options = HubspotSDK::Account::ActivityListLoginActivitiesParams.dump_request(params)
+          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
-            path: "account-info/v3/activity/login",
-            query: parsed.transform_keys(user_id: "userId"),
+            path: "account-info/2026-03/activity/login",
+            query: query.transform_keys(user_id: "userId"),
             page: HubspotSDK::Internal::Page,
             model: HubspotSDK::Account::PublicLoginAudit,
             options: options
@@ -88,15 +93,15 @@ module HubspotSDK
         #
         # @overload list_security_activities(after: nil, from_timestamp: nil, limit: nil, to_timestamp: nil, user_id: nil, request_options: {})
         #
-        # @param after [String] The cursor token value to get the next set of results. You can get this from the
+        # @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
-        # @param from_timestamp [Integer] The start time, for retrieving logs within a specific timeframe.
+        # @param from_timestamp [Integer]
         #
-        # @param limit [Integer] The maximum number of results to display per page. Max value of limit is 200.
+        # @param limit [Integer] The maximum number of results to display per page.
         #
-        # @param to_timestamp [Integer] The end time, for retrieving logs within a specific timeframe.
+        # @param to_timestamp [Integer]
         #
-        # @param user_id [Integer] The ID of a user, for retrieving user-specific logs.
+        # @param user_id [Integer]
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -105,10 +110,11 @@ module HubspotSDK
         # @see HubspotSDK::Models::Account::ActivityListSecurityActivitiesParams
         def list_security_activities(params = {})
           parsed, options = HubspotSDK::Account::ActivityListSecurityActivitiesParams.dump_request(params)
+          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
-            path: "account-info/v3/activity/security",
-            query: parsed.transform_keys(
+            path: "account-info/2026-03/activity/security",
+            query: query.transform_keys(
               from_timestamp: "fromTimestamp",
               to_timestamp: "toTimestamp",
               user_id: "userId"

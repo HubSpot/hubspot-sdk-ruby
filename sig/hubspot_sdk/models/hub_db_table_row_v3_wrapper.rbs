@@ -1,5 +1,0 @@
-module HubspotSDK
-  module Models
-    HubDBTableRowV3Wrapper: HubspotSDK::Internal::Type::Converter
-  end
-end

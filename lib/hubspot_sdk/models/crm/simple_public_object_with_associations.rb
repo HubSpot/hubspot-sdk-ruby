@@ -48,7 +48,7 @@ module HubspotSDK
                  -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Crm::CollectionResponseAssociatedID] }
 
         # @!attribute object_write_trace_id
-        #   A unique identifier for tracing the creation request.
+        #   An identifier used for tracing the creation or update request of the object.
         #
         #   @return [String, nil]
         optional :object_write_trace_id, String, api_name: :objectWriteTraceId
@@ -65,6 +65,8 @@ module HubspotSDK
                  api_name: :propertiesWithHistory
 
         # @!attribute url
+        #   The URL on the API that provide direct navigation to the corresponding UI pages
+        #   for the connectors.
         #
         #   @return [String, nil]
         optional :url, String
@@ -90,11 +92,11 @@ module HubspotSDK
         #
         #   @param associations [Hash{Symbol=>HubspotSDK::Models::Crm::CollectionResponseAssociatedID}] A list defining relationships with other objects.
         #
-        #   @param object_write_trace_id [String] A unique identifier for tracing the creation request.
+        #   @param object_write_trace_id [String] An identifier used for tracing the creation or update request of the object.
         #
         #   @param properties_with_history [Hash{Symbol=>Array<HubspotSDK::Models::Crm::ValueWithTimestamp>}] Key-value pairs representing the properties of the object along with their histo
         #
-        #   @param url [String]
+        #   @param url [String] The URL on the API that provide direct navigation to the corresponding UI pages
       end
     end
   end

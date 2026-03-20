@@ -5,7 +5,7 @@ module HubspotSDK
         {
           results: ::Array[HubspotSDK::Crm::SimplePublicObject],
           total: Integer,
-          paging: HubspotSDK::Paging
+          paging: HubspotSDK::Crm::Paging
         }
 
       class CollectionResponseWithTotalSimplePublicObject < HubspotSDK::Internal::Type::BaseModel
@@ -13,20 +13,20 @@ module HubspotSDK
 
         attr_accessor total: Integer
 
-        attr_reader paging: HubspotSDK::Paging?
+        attr_reader paging: HubspotSDK::Crm::Paging?
 
-        def paging=: (HubspotSDK::Paging) -> HubspotSDK::Paging
+        def paging=: (HubspotSDK::Crm::Paging) -> HubspotSDK::Crm::Paging
 
         def initialize: (
           results: ::Array[HubspotSDK::Crm::SimplePublicObject],
           total: Integer,
-          ?paging: HubspotSDK::Paging
+          ?paging: HubspotSDK::Crm::Paging
         ) -> void
 
         def to_hash: -> {
           results: ::Array[HubspotSDK::Crm::SimplePublicObject],
           total: Integer,
-          paging: HubspotSDK::Paging
+          paging: HubspotSDK::Crm::Paging
         }
       end
     end

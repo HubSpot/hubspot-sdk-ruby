@@ -5,6 +5,7 @@ module HubspotSDK
         {
           acting_user_id: ::Array[Integer],
           after: String,
+          fill_final_timestamp: bool,
           limit: Integer,
           occurred_after: Time,
           occurred_before: Time,
@@ -23,6 +24,10 @@ module HubspotSDK
         attr_reader after: String?
 
         def after=: (String) -> String
+
+        attr_reader fill_final_timestamp: bool?
+
+        def fill_final_timestamp=: (bool) -> bool
 
         attr_reader limit: Integer?
 
@@ -43,6 +48,7 @@ module HubspotSDK
         def initialize: (
           ?acting_user_id: ::Array[Integer],
           ?after: String,
+          ?fill_final_timestamp: bool,
           ?limit: Integer,
           ?occurred_after: Time,
           ?occurred_before: Time,
@@ -53,6 +59,7 @@ module HubspotSDK
         def to_hash: -> {
           acting_user_id: ::Array[Integer],
           after: String,
+          fill_final_timestamp: bool,
           limit: Integer,
           occurred_after: Time,
           occurred_before: Time,

@@ -9,18 +9,18 @@ module HubspotSDK
         end
 
       # A human readable message describing the error along with remediation steps where
-      # appropriate.
+      # appropriate
       sig { returns(String) }
       attr_accessor :message
 
-      # The status code associated with the error detail.
+      # The status code associated with the error detail
       sig { returns(T.nilable(String)) }
       attr_reader :code
 
       sig { params(code: String).void }
       attr_writer :code
 
-      # Context about the error condition.
+      # Context about the error condition
       sig { returns(T.nilable(T::Hash[Symbol, T::Array[String]])) }
       attr_reader :context
 
@@ -52,11 +52,11 @@ module HubspotSDK
       end
       def self.new(
         # A human readable message describing the error along with remediation steps where
-        # appropriate.
+        # appropriate
         message:,
-        # The status code associated with the error detail.
+        # The status code associated with the error detail
         code: nil,
-        # Context about the error condition.
+        # Context about the error condition
         context: nil,
         # The name of the field or parameter in which the error was found.
         in_: nil,
