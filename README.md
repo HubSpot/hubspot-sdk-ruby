@@ -28,7 +28,7 @@ hubspot = HubspotSDK::Client.new(access_token: "pat-na1-xxxxxxxx-xxxx")
 
 simple_public_object = hubspot.crm.objects.contacts.create(
   associations: [{to: {id: "id"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-  properties: {associations: "string", email: "mark.s@lumon.industries"}
+  properties: {email: "mark.s@lumon.industries"}
 )
 
 puts(simple_public_object.id)
@@ -92,7 +92,7 @@ When the library is unable to connect to the API, or if the API returns a non-su
 begin
   contact = hubspot.crm.objects.contacts.create(
     associations: [{to: {id: "id"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-    properties: {associations: "string", email: "mark.s@lumon.industries"}
+    properties: {email: "mark.s@lumon.industries"}
   )
 rescue HubspotSDK::Errors::APIConnectionError => e
   puts("The server could not be reached")
@@ -138,7 +138,7 @@ hubspot = HubspotSDK::Client.new(
 # Or, configure per-request:
 hubspot.crm.objects.contacts.create(
   associations: [{to: {id: "id"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-  properties: {associations: "string", email: "mark.s@lumon.industries"},
+  properties: {email: "mark.s@lumon.industries"},
   request_options: {max_retries: 5}
 )
 ```
@@ -156,7 +156,7 @@ hubspot = HubspotSDK::Client.new(
 # Or, configure per-request:
 hubspot.crm.objects.contacts.create(
   associations: [{to: {id: "id"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-  properties: {associations: "string", email: "mark.s@lumon.industries"},
+  properties: {email: "mark.s@lumon.industries"},
   request_options: {timeout: 5}
 )
 ```
@@ -191,7 +191,7 @@ Note: the `extra_` parameters of the same name overrides the documented paramete
 simple_public_object =
   hubspot.crm.objects.contacts.create(
     associations: [{to: {id: "id"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-    properties: {associations: "string", email: "mark.s@lumon.industries"},
+    properties: {email: "mark.s@lumon.industries"},
     request_options: {
       extra_query: {my_query_parameter: value},
       extra_body: {my_body_parameter: value},
@@ -244,7 +244,7 @@ hubspot.crm.objects.contacts.create(
       types: [HubspotSDK::AssociationSpec.new(association_category: "HUBSPOT_DEFINED", association_type_id: 0)]
     )
   ],
-  properties: {associations: "string", email: "mark.s@lumon.industries"}
+  properties: {email: "mark.s@lumon.industries"}
 )
 ```
 
@@ -254,7 +254,7 @@ Or, equivalently:
 # Hashes work, but are not typesafe:
 hubspot.crm.objects.contacts.create(
   associations: [{to: {id: "id"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-  properties: {associations: "string", email: "mark.s@lumon.industries"}
+  properties: {email: "mark.s@lumon.industries"}
 )
 
 # You can also splat a full Params class:
@@ -265,7 +265,7 @@ params = HubspotSDK::Crm::Objects::ContactCreateParams.new(
       types: [HubspotSDK::AssociationSpec.new(association_category: "HUBSPOT_DEFINED", association_type_id: 0)]
     )
   ],
-  properties: {associations: "string", email: "mark.s@lumon.industries"}
+  properties: {email: "mark.s@lumon.industries"}
 )
 hubspot.crm.objects.contacts.create(**params)
 ```
