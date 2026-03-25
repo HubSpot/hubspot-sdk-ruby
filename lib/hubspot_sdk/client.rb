@@ -24,8 +24,35 @@ module HubspotSDK
     # @return [HubspotSDK::Resources::Account]
     attr_reader :account
 
+    # @return [HubspotSDK::Resources::Automation]
+    attr_reader :automation
+
+    # @return [HubspotSDK::Resources::Cms]
+    attr_reader :cms
+
     # @return [HubspotSDK::Resources::Crm]
     attr_reader :crm
+
+    # @return [HubspotSDK::Resources::DataStudio]
+    attr_reader :data_studio
+
+    # @return [HubspotSDK::Resources::Events]
+    attr_reader :events
+
+    # @return [HubspotSDK::Resources::Files]
+    attr_reader :files
+
+    # @return [HubspotSDK::Resources::Marketing]
+    attr_reader :marketing
+
+    # @return [HubspotSDK::Resources::Meta]
+    attr_reader :meta
+
+    # @return [HubspotSDK::Resources::Scheduler]
+    attr_reader :scheduler
+
+    # @return [HubspotSDK::Resources::Settings]
+    attr_reader :settings
 
     # @api private
     #
@@ -82,7 +109,16 @@ module HubspotSDK
       )
 
       @account = HubspotSDK::Resources::Account.new(client: self)
+      @automation = HubspotSDK::Resources::Automation.new(client: self)
+      @cms = HubspotSDK::Resources::Cms.new(client: self)
       @crm = HubspotSDK::Resources::Crm.new(client: self)
+      @data_studio = HubspotSDK::Resources::DataStudio.new(client: self)
+      @events = HubspotSDK::Resources::Events.new(client: self)
+      @files = HubspotSDK::Resources::Files.new(client: self)
+      @marketing = HubspotSDK::Resources::Marketing.new(client: self)
+      @meta = HubspotSDK::Resources::Meta.new(client: self)
+      @scheduler = HubspotSDK::Resources::Scheduler.new(client: self)
+      @settings = HubspotSDK::Resources::Settings.new(client: self)
     end
   end
 end

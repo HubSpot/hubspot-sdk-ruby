@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Models
+    module Settings
+      type currency_code_info = { currency_code: String, currency_name: String }
+
+      class CurrencyCodeInfo < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor currency_code: String
+
+        attr_accessor currency_name: String
+
+        def initialize: (currency_code: String, currency_name: String) -> void
+
+        def to_hash: -> { currency_code: String, currency_name: String }
+      end
+    end
+  end
+end

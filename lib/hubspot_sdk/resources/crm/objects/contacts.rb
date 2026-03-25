@@ -5,13 +5,13 @@ module HubspotSDK
     class Crm
       class Objects
         class Contacts
-          # Create a task with the given properties and return a copy of the object,
-          # including the ID. Documentation and examples for creating standard tasks is
+          # Create a CRM object with the given properties and return a copy of the object,
+          # including the ID. Documentation and examples for creating standard objects is
           # provided.
           #
           # @overload create(object_type, associations:, properties:, request_options: {})
           #
-          # @param object_type [String] Object type.
+          # @param object_type [String]
           #
           # @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
           #
@@ -33,8 +33,11 @@ module HubspotSDK
             )
           end
 
-          # Perform a partial update of an Object identified by `{taskId}`or optionally a
-          # unique property value as specified by the `idProperty` query param. `{taskId}`
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Crm::Objects::ContactUpdateParams} for more details.
+          #
+          # Perform a partial update of an Object identified by `{objectId}`or optionally a
+          # unique property value as specified by the `idProperty` query param. `{objectId}`
           # refers to the internal object ID by default, and the `idProperty` query param
           # refers to a property whose values are unique for the object. Provided property
           # values will be overwritten. Read-only and non-existent properties will result in
@@ -42,13 +45,13 @@ module HubspotSDK
           #
           # @overload update(object_id_, object_type:, properties:, id_property: nil, request_options: {})
           #
-          # @param object_id_ [String] Path param: Unique Task Id
+          # @param object_id_ [String] Path param
           #
-          # @param object_type [String] Path param: Object type.
+          # @param object_type [String] Path param
           #
           # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
           #
-          # @param id_property [String] Query param: The name of a property whose values are unique for this object
+          # @param id_property [String] Query param: The name of a property whose values are unique for this object type
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -76,11 +79,12 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::ContactListParams} for more details.
           #
-          # Read a page of tasks. Control what is returned via the `properties` query param.
+          # Read a page of objects. Control what is returned via the `properties` query
+          # param.
           #
           # @overload list(object_type, after: nil, archived: nil, associations: nil, limit: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
-          # @param object_type [String] Object type.
+          # @param object_type [String]
           #
           # @param after [String] The paging cursor token of the last successfully read resource will be returned
           #
@@ -112,14 +116,12 @@ module HubspotSDK
             )
           end
 
-          # Move an Object identified by `{taskId}` to the recycling bin.
+          # Move an Object identified by `{objectId}` to the recycling bin.
           #
           # @overload delete(object_id_, object_type:, request_options: {})
           #
-          # @param object_id_ [String] Unique Task Id
-          #
-          # @param object_type [String] Object type.
-          #
+          # @param object_id_ [String]
+          # @param object_type [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -142,9 +144,15 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::ContactGdprDeleteParams} for more details.
           #
+          # Permanently delete a contact and all associated content to follow GDPR. Use
+          # optional property `idProperty` set to `email` to identify contact by email
+          # address. If email address is not found, the email address will be added to a
+          # blocklist and prevent it from being used in the future. Learn more about
+          # [permanently deleting contacts](https://knowledge.hubspot.com/privacy-and-consent/how-do-i-perform-a-gdpr-delete-in-hubspot).
+          #
           # @overload gdpr_delete(object_type, object_id_:, id_property: nil, request_options: {})
           #
-          # @param object_type [String] Object type.
+          # @param object_type [String]
           #
           # @param object_id_ [String] The ID of the contact to permanently delete.
           #
@@ -169,22 +177,22 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::ContactGetParams} for more details.
           #
-          # Read an Object identified by `{taskId}`. `{taskId}` refers to the internal
+          # Read an Object identified by `{objectId}`. `{objectId}` refers to the internal
           # object ID by default, or optionally any unique property value as specified by
           # the `idProperty` query param. Control what is returned via the `properties`
           # query param.
           #
           # @overload get(object_id_, object_type:, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
-          # @param object_id_ [String] Path param: Unique Task Id
+          # @param object_id_ [String] Path param
           #
-          # @param object_type [String] Path param: Object type.
+          # @param object_type [String] Path param
           #
           # @param archived [Boolean] Query param: Whether to return only results that have been archived.
           #
           # @param associations [Array<String>] Query param: A comma separated list of object types to retrieve associated IDs f
           #
-          # @param id_property [String] Query param: The name of a property whose values are unique for this object
+          # @param id_property [String] Query param: The name of a property whose values are unique for this object type
           #
           # @param properties [Array<String>] Query param: A comma separated list of the properties to be returned in the resp
           #
@@ -217,9 +225,12 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::ContactMergeParams} for more details.
           #
+          # Merge two CRM objects of the same type by specifying one as the primary object
+          # and the other as the object to be merged into it.
+          #
           # @overload merge(object_type, object_id_to_merge:, primary_object_id:, request_options: {})
           #
-          # @param object_type [String] Object type.
+          # @param object_type [String]
           #
           # @param object_id_to_merge [String] The object ID of the record that the merge will not set as the current value aft
           #
@@ -241,13 +252,13 @@ module HubspotSDK
             )
           end
 
-          # Execute a search for tasks based on the provided criteria, including filters,
-          # properties, and sorting options. This allows for retrieving tasks that match
-          # specific conditions or property values.
+          # Execute a search query to find CRM objects of a given type, using specified
+          # filters and properties. The search can be customized with filters, sorting, and
+          # pagination options.
           #
           # @overload search(object_type, after:, filter_groups:, limit:, properties:, sorts:, query: nil, request_options: {})
           #
-          # @param object_type [String] Object type.
+          # @param object_type [String]
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.
           #

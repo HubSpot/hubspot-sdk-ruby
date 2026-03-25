@@ -1,0 +1,127 @@
+module HubspotSDK
+  module Models
+    module Files
+      type import_from_url_input =
+        {
+          access: HubspotSDK::Models::Files::ImportFromURLInput::access,
+          duplicate_validation_scope: HubspotSDK::Models::Files::ImportFromURLInput::duplicate_validation_scope,
+          duplicate_validation_strategy: HubspotSDK::Models::Files::ImportFromURLInput::duplicate_validation_strategy,
+          overwrite: bool,
+          expires_at: Time,
+          folder_id: String,
+          folder_path: String,
+          name: String,
+          ttl: String,
+          url: String
+        }
+
+      class ImportFromURLInput < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor access: HubspotSDK::Models::Files::ImportFromURLInput::access
+
+        attr_accessor duplicate_validation_scope: HubspotSDK::Models::Files::ImportFromURLInput::duplicate_validation_scope
+
+        attr_accessor duplicate_validation_strategy: HubspotSDK::Models::Files::ImportFromURLInput::duplicate_validation_strategy
+
+        attr_accessor overwrite: bool
+
+        attr_reader expires_at: Time?
+
+        def expires_at=: (Time) -> Time
+
+        attr_reader folder_id: String?
+
+        def folder_id=: (String) -> String
+
+        attr_reader folder_path: String?
+
+        def folder_path=: (String) -> String
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader ttl: String?
+
+        def ttl=: (String) -> String
+
+        attr_reader url: String?
+
+        def url=: (String) -> String
+
+        def initialize: (
+          access: HubspotSDK::Models::Files::ImportFromURLInput::access,
+          duplicate_validation_scope: HubspotSDK::Models::Files::ImportFromURLInput::duplicate_validation_scope,
+          duplicate_validation_strategy: HubspotSDK::Models::Files::ImportFromURLInput::duplicate_validation_strategy,
+          overwrite: bool,
+          ?expires_at: Time,
+          ?folder_id: String,
+          ?folder_path: String,
+          ?name: String,
+          ?ttl: String,
+          ?url: String
+        ) -> void
+
+        def to_hash: -> {
+          access: HubspotSDK::Models::Files::ImportFromURLInput::access,
+          duplicate_validation_scope: HubspotSDK::Models::Files::ImportFromURLInput::duplicate_validation_scope,
+          duplicate_validation_strategy: HubspotSDK::Models::Files::ImportFromURLInput::duplicate_validation_strategy,
+          overwrite: bool,
+          expires_at: Time,
+          folder_id: String,
+          folder_path: String,
+          name: String,
+          ttl: String,
+          url: String
+        }
+
+        type access =
+          :HIDDEN_INDEXABLE
+          | :HIDDEN_NOT_INDEXABLE
+          | :HIDDEN_PRIVATE
+          | :HIDDEN_SENSITIVE
+          | :PRIVATE
+          | :PUBLIC_INDEXABLE
+          | :PUBLIC_NOT_INDEXABLE
+          | :SENSITIVE
+
+        module Access
+          extend HubspotSDK::Internal::Type::Enum
+
+          HIDDEN_INDEXABLE: :HIDDEN_INDEXABLE
+          HIDDEN_NOT_INDEXABLE: :HIDDEN_NOT_INDEXABLE
+          HIDDEN_PRIVATE: :HIDDEN_PRIVATE
+          HIDDEN_SENSITIVE: :HIDDEN_SENSITIVE
+          PRIVATE: :PRIVATE
+          PUBLIC_INDEXABLE: :PUBLIC_INDEXABLE
+          PUBLIC_NOT_INDEXABLE: :PUBLIC_NOT_INDEXABLE
+          SENSITIVE: :SENSITIVE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Files::ImportFromURLInput::access]
+        end
+
+        type duplicate_validation_scope = :ENTIRE_PORTAL | :EXACT_FOLDER
+
+        module DuplicateValidationScope
+          extend HubspotSDK::Internal::Type::Enum
+
+          ENTIRE_PORTAL: :ENTIRE_PORTAL
+          EXACT_FOLDER: :EXACT_FOLDER
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Files::ImportFromURLInput::duplicate_validation_scope]
+        end
+
+        type duplicate_validation_strategy = :NONE | :REJECT | :RETURN_EXISTING
+
+        module DuplicateValidationStrategy
+          extend HubspotSDK::Internal::Type::Enum
+
+          NONE: :NONE
+          REJECT: :REJECT
+          RETURN_EXISTING: :RETURN_EXISTING
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Files::ImportFromURLInput::duplicate_validation_strategy]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,58 @@
+module HubspotSDK
+  module Models
+    module Events
+      type absolute_ranged_timestamp_refine_by =
+        {
+          lower_timestamp: Integer,
+          range_type: HubspotSDK::Models::Events::AbsoluteRangedTimestampRefineBy::range_type,
+          type: HubspotSDK::Models::Events::AbsoluteRangedTimestampRefineBy::type_,
+          upper_timestamp: Integer
+        }
+
+      class AbsoluteRangedTimestampRefineBy < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor lower_timestamp: Integer
+
+        attr_accessor range_type: HubspotSDK::Models::Events::AbsoluteRangedTimestampRefineBy::range_type
+
+        attr_accessor type: HubspotSDK::Models::Events::AbsoluteRangedTimestampRefineBy::type_
+
+        attr_accessor upper_timestamp: Integer
+
+        def initialize: (
+          lower_timestamp: Integer,
+          range_type: HubspotSDK::Models::Events::AbsoluteRangedTimestampRefineBy::range_type,
+          type: HubspotSDK::Models::Events::AbsoluteRangedTimestampRefineBy::type_,
+          upper_timestamp: Integer
+        ) -> void
+
+        def to_hash: -> {
+          lower_timestamp: Integer,
+          range_type: HubspotSDK::Models::Events::AbsoluteRangedTimestampRefineBy::range_type,
+          type: HubspotSDK::Models::Events::AbsoluteRangedTimestampRefineBy::type_,
+          upper_timestamp: Integer
+        }
+
+        type range_type = :BETWEEN | :NOT_BETWEEN
+
+        module RangeType
+          extend HubspotSDK::Internal::Type::Enum
+
+          BETWEEN: :BETWEEN
+          NOT_BETWEEN: :NOT_BETWEEN
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::AbsoluteRangedTimestampRefineBy::range_type]
+        end
+
+        type type_ = :AbsoluteRangedTimestampRefineBy
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          ABSOLUTE_RANGED_TIMESTAMP_REFINE_BY: :AbsoluteRangedTimestampRefineBy
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::AbsoluteRangedTimestampRefineBy::type_]
+        end
+      end
+    end
+  end
+end

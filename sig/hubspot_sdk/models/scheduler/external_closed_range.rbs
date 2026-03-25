@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Models
+    module Scheduler
+      type external_closed_range = { end_: Integer, start: Integer }
+
+      class ExternalClosedRange < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor end_: Integer
+
+        attr_accessor start: Integer
+
+        def initialize: (end_: Integer, start: Integer) -> void
+
+        def to_hash: -> { end_: Integer, start: Integer }
+      end
+    end
+  end
+end

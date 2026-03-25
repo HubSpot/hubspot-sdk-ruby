@@ -19,10 +19,10 @@ module HubspotSDK
         sig { returns(Integer) }
         attr_accessor :total
 
-        sig { returns(T.nilable(HubspotSDK::Crm::Paging)) }
+        sig { returns(T.nilable(HubspotSDK::Paging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::Crm::Paging::OrHash).void }
+        sig { params(paging: HubspotSDK::Paging::OrHash).void }
         attr_writer :paging
 
         # Represents a list of simple objects returned from an API request, along with the
@@ -31,7 +31,7 @@ module HubspotSDK
           params(
             results: T::Array[HubspotSDK::Crm::SimplePublicObject::OrHash],
             total: Integer,
-            paging: HubspotSDK::Crm::Paging::OrHash
+            paging: HubspotSDK::Paging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -47,7 +47,7 @@ module HubspotSDK
             {
               results: T::Array[HubspotSDK::Crm::SimplePublicObject],
               total: Integer,
-              paging: HubspotSDK::Crm::Paging
+              paging: HubspotSDK::Paging
             }
           )
         end

@@ -1,0 +1,16 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type public_action_definition_requires_object_response =
+        { requires_object: bool }
+
+      class PublicActionDefinitionRequiresObjectResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor requires_object: bool
+
+        def initialize: (requires_object: bool) -> void
+
+        def to_hash: -> { requires_object: bool }
+      end
+    end
+  end
+end

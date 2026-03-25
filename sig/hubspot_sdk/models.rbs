@@ -1,13 +1,41 @@
 module HubspotSDK
   module Account = HubspotSDK::Models::Account
 
+  class AssociationSpec = HubspotSDK::Models::AssociationSpec
+
+  module Automation = HubspotSDK::Models::Automation
+
+  module Cms = HubspotSDK::Models::Cms
+
   module Crm = HubspotSDK::Models::Crm
+
+  module DataStudio = HubspotSDK::Models::DataStudio
 
   class Error = HubspotSDK::Models::Error
 
   class ErrorDetail = HubspotSDK::Models::ErrorDetail
 
+  module Events = HubspotSDK::Models::Events
+
+  module Files = HubspotSDK::Models::Files
+
   class ForwardPaging = HubspotSDK::Models::ForwardPaging
 
+  module Marketing = HubspotSDK::Models::Marketing
+
+  module Meta = HubspotSDK::Models::Meta
+
   class NextPage = HubspotSDK::Models::NextPage
+
+  class Paging = HubspotSDK::Models::Paging
+
+  class PreviousPage = HubspotSDK::Models::PreviousPage
+
+  class PublicObjectID = HubspotSDK::Models::PublicObjectID
+
+  module Scheduler = HubspotSDK::Models::Scheduler
+
+  module Settings = HubspotSDK::Models::Settings
+
+  class StandardError = HubspotSDK::Models::StandardError
 end

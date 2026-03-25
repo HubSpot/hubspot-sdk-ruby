@@ -1,0 +1,30 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Blogs
+        type post_update_draft_params =
+          { object_id_: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class PostUpdateDraftParams < HubspotSDK::Models::Cms::Blogs::BlogPost
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def object_id_: -> String
+
+          def object_id_=: (String _) -> String
+
+          def initialize: (
+            object_id_: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            object_id_: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

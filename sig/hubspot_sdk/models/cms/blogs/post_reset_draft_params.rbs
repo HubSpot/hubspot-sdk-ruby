@@ -1,0 +1,28 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Blogs
+        type post_reset_draft_params =
+          { object_id_: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class PostResetDraftParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor object_id_: String
+
+          def initialize: (
+            object_id_: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            object_id_: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

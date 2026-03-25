@@ -62,7 +62,7 @@ module HubspotSDK
           # A comma separated list of the properties to be returned along with their history
           # of previous values. If any of the specified properties are not present on the
           # requested object(s), they will be ignored. Usage of this parameter will reduce
-          # the maximum number of tasks that can be read by a single request.
+          # the maximum number of objects that can be read by a single request.
           sig { returns(T.nilable(T::Array[String])) }
           attr_reader :properties_with_history
 
@@ -101,7 +101,7 @@ module HubspotSDK
             # A comma separated list of the properties to be returned along with their history
             # of previous values. If any of the specified properties are not present on the
             # requested object(s), they will be ignored. Usage of this parameter will reduce
-            # the maximum number of tasks that can be read by a single request.
+            # the maximum number of objects that can be read by a single request.
             properties_with_history: nil,
             request_options: {}
           )

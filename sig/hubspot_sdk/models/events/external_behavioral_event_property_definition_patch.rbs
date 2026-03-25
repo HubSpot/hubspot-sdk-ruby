@@ -1,0 +1,40 @@
+module HubspotSDK
+  module Models
+    module Events
+      type external_behavioral_event_property_definition_patch =
+        {
+          description: String,
+          label: String,
+          options: ::Array[HubspotSDK::Events::OptionInput]
+        }
+
+      class ExternalBehavioralEventPropertyDefinitionPatch < HubspotSDK::Internal::Type::BaseModel
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader label: String?
+
+        def label=: (String) -> String
+
+        attr_reader options: ::Array[HubspotSDK::Events::OptionInput]?
+
+        def options=: (
+          ::Array[HubspotSDK::Events::OptionInput]
+        ) -> ::Array[HubspotSDK::Events::OptionInput]
+
+        def initialize: (
+          ?description: String,
+          ?label: String,
+          ?options: ::Array[HubspotSDK::Events::OptionInput]
+        ) -> void
+
+        def to_hash: -> {
+          description: String,
+          label: String,
+          options: ::Array[HubspotSDK::Events::OptionInput]
+        }
+      end
+    end
+  end
+end

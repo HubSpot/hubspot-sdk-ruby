@@ -5,8 +5,8 @@ module HubspotSDK
     class Crm
       class Objects
         class Contacts
-          # Create a task with the given properties and return a copy of the object,
-          # including the ID. Documentation and examples for creating standard tasks is
+          # Create a CRM object with the given properties and return a copy of the object,
+          # including the ID. Documentation and examples for creating standard objects is
           # provided.
           sig do
             params(
@@ -18,7 +18,6 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
           def create(
-            # Object type.
             object_type,
             associations:,
             # Key-value pairs for setting properties for the new object.
@@ -27,8 +26,8 @@ module HubspotSDK
           )
           end
 
-          # Perform a partial update of an Object identified by `{taskId}`or optionally a
-          # unique property value as specified by the `idProperty` query param. `{taskId}`
+          # Perform a partial update of an Object identified by `{objectId}`or optionally a
+          # unique property value as specified by the `idProperty` query param. `{objectId}`
           # refers to the internal object ID by default, and the `idProperty` query param
           # refers to a property whose values are unique for the object. Provided property
           # values will be overwritten. Read-only and non-existent properties will result in
@@ -43,19 +42,20 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
           def update(
-            # Path param: Unique Task Id
+            # Path param
             object_id_,
-            # Path param: Object type.
+            # Path param
             object_type:,
             # Body param: Key value pairs representing the properties of the object.
             properties:,
-            # Query param: The name of a property whose values are unique for this object
+            # Query param: The name of a property whose values are unique for this object type
             id_property: nil,
             request_options: {}
           )
           end
 
-          # Read a page of tasks. Control what is returned via the `properties` query param.
+          # Read a page of objects. Control what is returned via the `properties` query
+          # param.
           sig do
             params(
               object_type: String,
@@ -73,7 +73,6 @@ module HubspotSDK
             )
           end
           def list(
-            # Object type.
             object_type,
             # The paging cursor token of the last successfully read resource will be returned
             # as the `paging.next.after` JSON property of a paged response containing more
@@ -93,13 +92,13 @@ module HubspotSDK
             # A comma separated list of the properties to be returned along with their history
             # of previous values. If any of the specified properties are not present on the
             # requested object(s), they will be ignored. Usage of this parameter will reduce
-            # the maximum number of tasks that can be read by a single request.
+            # the maximum number of objects that can be read by a single request.
             properties_with_history: nil,
             request_options: {}
           )
           end
 
-          # Move an Object identified by `{taskId}` to the recycling bin.
+          # Move an Object identified by `{objectId}` to the recycling bin.
           sig do
             params(
               object_id_: String,
@@ -107,15 +106,14 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(
-            # Unique Task Id
-            object_id_,
-            # Object type.
-            object_type:,
-            request_options: {}
-          )
+          def delete(object_id_, object_type:, request_options: {})
           end
 
+          # Permanently delete a contact and all associated content to follow GDPR. Use
+          # optional property `idProperty` set to `email` to identify contact by email
+          # address. If email address is not found, the email address will be added to a
+          # blocklist and prevent it from being used in the future. Learn more about
+          # [permanently deleting contacts](https://knowledge.hubspot.com/privacy-and-consent/how-do-i-perform-a-gdpr-delete-in-hubspot).
           sig do
             params(
               object_type: String,
@@ -125,7 +123,6 @@ module HubspotSDK
             ).void
           end
           def gdpr_delete(
-            # Object type.
             object_type,
             # The ID of the contact to permanently delete.
             object_id_:,
@@ -136,7 +133,7 @@ module HubspotSDK
           )
           end
 
-          # Read an Object identified by `{taskId}`. `{taskId}` refers to the internal
+          # Read an Object identified by `{objectId}`. `{objectId}` refers to the internal
           # object ID by default, or optionally any unique property value as specified by
           # the `idProperty` query param. Control what is returned via the `properties`
           # query param.
@@ -153,16 +150,16 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::SimplePublicObjectWithAssociations)
           end
           def get(
-            # Path param: Unique Task Id
+            # Path param
             object_id_,
-            # Path param: Object type.
+            # Path param
             object_type:,
             # Query param: Whether to return only results that have been archived.
             archived: nil,
             # Query param: A comma separated list of object types to retrieve associated IDs
             # for. If any of the specified associations do not exist, they will be ignored.
             associations: nil,
-            # Query param: The name of a property whose values are unique for this object
+            # Query param: The name of a property whose values are unique for this object type
             id_property: nil,
             # Query param: A comma separated list of the properties to be returned in the
             # response. If any of the specified properties are not present on the requested
@@ -176,6 +173,8 @@ module HubspotSDK
           )
           end
 
+          # Merge two CRM objects of the same type by specifying one as the primary object
+          # and the other as the object to be merged into it.
           sig do
             params(
               object_type: String,
@@ -185,7 +184,6 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
           def merge(
-            # Object type.
             object_type,
             # The object ID of the record that the merge will not set as the current value
             # after the merge.
@@ -197,9 +195,9 @@ module HubspotSDK
           )
           end
 
-          # Execute a search for tasks based on the provided criteria, including filters,
-          # properties, and sorting options. This allows for retrieving tasks that match
-          # specific conditions or property values.
+          # Execute a search query to find CRM objects of a given type, using specified
+          # filters and properties. The search can be customized with filters, sorting, and
+          # pagination options.
           sig do
             params(
               object_type: String,
@@ -215,7 +213,6 @@ module HubspotSDK
             )
           end
           def search(
-            # Object type.
             object_type,
             # A paging cursor token for retrieving subsequent pages.
             after:,

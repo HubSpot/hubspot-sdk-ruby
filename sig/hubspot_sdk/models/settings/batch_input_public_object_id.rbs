@@ -1,0 +1,16 @@
+module HubspotSDK
+  module Models
+    module Settings
+      type batch_input_public_object_id =
+        { inputs: ::Array[HubspotSDK::PublicObjectID] }
+
+      class BatchInputPublicObjectID < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubspotSDK::PublicObjectID]
+
+        def initialize: (inputs: ::Array[HubspotSDK::PublicObjectID]) -> void
+
+        def to_hash: -> { inputs: ::Array[HubspotSDK::PublicObjectID] }
+      end
+    end
+  end
+end

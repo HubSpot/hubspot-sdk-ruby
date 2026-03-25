@@ -1,0 +1,30 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      module Campaigns
+        type budget_create_params =
+          { campaign_guid: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class BudgetCreateParams < HubspotSDK::Models::Marketing::PublicBudgetItemInput
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def campaign_guid: -> String
+
+          def campaign_guid=: (String _) -> String
+
+          def initialize: (
+            campaign_guid: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            campaign_guid: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

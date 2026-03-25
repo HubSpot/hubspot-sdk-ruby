@@ -1,0 +1,9 @@
+module HubspotSDK
+  module Models
+    module Meta
+      module Origins
+        class IPRangeListSimpleResponse = String
+      end
+    end
+  end
+end

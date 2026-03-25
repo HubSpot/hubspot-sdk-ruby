@@ -1,0 +1,9 @@
+module HubspotSDK
+  module Resources
+    class Meta
+      attr_reader origins: HubspotSDK::Resources::Meta::Origins
+
+      def initialize: (client: HubspotSDK::Client) -> void
+    end
+  end
+end

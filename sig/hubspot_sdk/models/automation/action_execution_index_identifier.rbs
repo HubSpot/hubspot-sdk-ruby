@@ -1,0 +1,24 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type action_execution_index_identifier =
+        { action_execution_index: Integer, enrollment_id: Integer }
+
+      class ActionExecutionIndexIdentifier < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor action_execution_index: Integer
+
+        attr_accessor enrollment_id: Integer
+
+        def initialize: (
+          action_execution_index: Integer,
+          enrollment_id: Integer
+        ) -> void
+
+        def to_hash: -> {
+          action_execution_index: Integer,
+          enrollment_id: Integer
+        }
+      end
+    end
+  end
+end

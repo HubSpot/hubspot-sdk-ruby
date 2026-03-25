@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    module Scheduler
+      type external_calender_meeting_event_response =
+        {
+          id: String,
+          created_at: Time,
+          last_updated_at: Time,
+          properties: HubspotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties
+        }
+
+      class ExternalCalenderMeetingEventResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor created_at: Time
+
+        attr_accessor last_updated_at: Time
+
+        attr_accessor properties: HubspotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties
+
+        def initialize: (
+          id: String,
+          created_at: Time,
+          last_updated_at: Time,
+          properties: HubspotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          created_at: Time,
+          last_updated_at: Time,
+          properties: HubspotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties
+        }
+      end
+    end
+  end
+end

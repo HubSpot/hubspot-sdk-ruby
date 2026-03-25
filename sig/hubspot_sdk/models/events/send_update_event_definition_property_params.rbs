@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module Events
+      type send_update_event_definition_property_params =
+        { event_name: String, property_name: String }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class SendUpdateEventDefinitionPropertyParams < HubspotSDK::Models::Events::ExternalBehavioralEventPropertyDefinitionPatch
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        def event_name: -> String
+
+        def event_name=: (String _) -> String
+
+        def property_name: -> String
+
+        def property_name=: (String _) -> String
+
+        def initialize: (
+          event_name: String,
+          property_name: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          event_name: String,
+          property_name: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

@@ -1,0 +1,148 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type public_field_type_definition =
+        {
+          name: String,
+          options: ::Array[HubspotSDK::Automation::PublicOption],
+          type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::type_,
+          description: String,
+          field_type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::field_type,
+          help_text: String,
+          label: String,
+          options_url: String,
+          referenced_object_type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type
+        }
+
+      class PublicFieldTypeDefinition < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor name: String
+
+        attr_accessor options: ::Array[HubspotSDK::Automation::PublicOption]
+
+        attr_accessor type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::type_
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader field_type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::field_type?
+
+        def field_type=: (
+          HubspotSDK::Models::Automation::PublicFieldTypeDefinition::field_type
+        ) -> HubspotSDK::Models::Automation::PublicFieldTypeDefinition::field_type
+
+        attr_reader help_text: String?
+
+        def help_text=: (String) -> String
+
+        attr_reader label: String?
+
+        def label=: (String) -> String
+
+        attr_reader options_url: String?
+
+        def options_url=: (String) -> String
+
+        attr_reader referenced_object_type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type?
+
+        def referenced_object_type=: (
+          HubspotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type
+        ) -> HubspotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type
+
+        def initialize: (
+          name: String,
+          options: ::Array[HubspotSDK::Automation::PublicOption],
+          type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::type_,
+          ?description: String,
+          ?field_type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::field_type,
+          ?help_text: String,
+          ?label: String,
+          ?options_url: String,
+          ?referenced_object_type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type
+        ) -> void
+
+        def to_hash: -> {
+          name: String,
+          options: ::Array[HubspotSDK::Automation::PublicOption],
+          type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::type_,
+          description: String,
+          field_type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::field_type,
+          help_text: String,
+          label: String,
+          options_url: String,
+          referenced_object_type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type
+        }
+
+        type type_ =
+          :bool
+          | :date
+          | :datetime
+          | :enumeration
+          | :json
+          | :number
+          | :object_coordinates
+          | :phone_number
+          | :string
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          BOOL: :bool
+          DATE: :date
+          DATETIME: :datetime
+          ENUMERATION: :enumeration
+          JSON: :json
+          NUMBER: :number
+          OBJECT_COORDINATES: :object_coordinates
+          PHONE_NUMBER: :phone_number
+          STRING: :string
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::PublicFieldTypeDefinition::type_]
+        end
+
+        type field_type =
+          :booleancheckbox
+          | :calculation_equation
+          | :checkbox
+          | :date
+          | :file
+          | :html
+          | :number
+          | :phonenumber
+          | :radio
+          | :select
+          | :text
+          | :textarea
+
+        module FieldType
+          extend HubspotSDK::Internal::Type::Enum
+
+          BOOLEANCHECKBOX: :booleancheckbox
+          CALCULATION_EQUATION: :calculation_equation
+          CHECKBOX: :checkbox
+          DATE: :date
+          FILE: :file
+          HTML: :html
+          NUMBER: :number
+          PHONENUMBER: :phonenumber
+          RADIO: :radio
+          SELECT: :select
+          TEXT: :text
+          TEXTAREA: :textarea
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::PublicFieldTypeDefinition::field_type]
+        end
+
+        type referenced_object_type = :OWNER
+
+        module ReferencedObjectType
+          extend HubspotSDK::Internal::Type::Enum
+
+          OWNER: :OWNER
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type]
+        end
+      end
+    end
+  end
+end

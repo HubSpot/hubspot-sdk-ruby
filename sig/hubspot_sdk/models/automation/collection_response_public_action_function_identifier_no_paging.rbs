@@ -1,0 +1,22 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type collection_response_public_action_function_identifier_no_paging =
+        {
+          results: ::Array[HubspotSDK::Automation::PublicActionFunctionIdentifier]
+        }
+
+      class CollectionResponsePublicActionFunctionIdentifierNoPaging < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubspotSDK::Automation::PublicActionFunctionIdentifier]
+
+        def initialize: (
+          results: ::Array[HubspotSDK::Automation::PublicActionFunctionIdentifier]
+        ) -> void
+
+        def to_hash: -> {
+          results: ::Array[HubspotSDK::Automation::PublicActionFunctionIdentifier]
+        }
+      end
+    end
+  end
+end

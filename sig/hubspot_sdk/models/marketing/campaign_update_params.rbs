@@ -1,0 +1,28 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type campaign_update_params =
+        { campaign_guid: String }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class CampaignUpdateParams < HubspotSDK::Models::Marketing::PublicCampaignInput
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        def campaign_guid: -> String
+
+        def campaign_guid=: (String _) -> String
+
+        def initialize: (
+          campaign_guid: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          campaign_guid: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

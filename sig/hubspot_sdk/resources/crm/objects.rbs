@@ -6,8 +6,6 @@ module HubspotSDK
 
         attr_reader custom: HubspotSDK::Resources::Crm::Objects::Custom
 
-        attr_reader tasks: HubspotSDK::Resources::Crm::Objects::Tasks
-
         def initialize: (client: HubspotSDK::Client) -> void
       end
     end

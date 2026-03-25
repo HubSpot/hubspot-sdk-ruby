@@ -1,0 +1,92 @@
+module HubspotSDK
+  module Models
+    module Events
+      type comparative_number_property_operation =
+        {
+          comparison_property_name: String,
+          include_objects_with_no_value_set: bool,
+          operation_type: String,
+          operator: HubspotSDK::Models::Events::ComparativeNumberPropertyOperation::operator,
+          operator_name: String,
+          property_type: HubspotSDK::Models::Events::ComparativeNumberPropertyOperation::property_type,
+          default_value: String,
+          render_spec: String
+        }
+
+      class ComparativeNumberPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor comparison_property_name: String
+
+        attr_accessor include_objects_with_no_value_set: bool
+
+        attr_accessor operation_type: String
+
+        attr_accessor operator: HubspotSDK::Models::Events::ComparativeNumberPropertyOperation::operator
+
+        attr_accessor operator_name: String
+
+        attr_accessor property_type: HubspotSDK::Models::Events::ComparativeNumberPropertyOperation::property_type
+
+        attr_reader default_value: String?
+
+        def default_value=: (String) -> String
+
+        attr_reader render_spec: String?
+
+        def render_spec=: (String) -> String
+
+        def initialize: (
+          comparison_property_name: String,
+          include_objects_with_no_value_set: bool,
+          operation_type: String,
+          operator: HubspotSDK::Models::Events::ComparativeNumberPropertyOperation::operator,
+          operator_name: String,
+          property_type: HubspotSDK::Models::Events::ComparativeNumberPropertyOperation::property_type,
+          ?default_value: String,
+          ?render_spec: String
+        ) -> void
+
+        def to_hash: -> {
+          comparison_property_name: String,
+          include_objects_with_no_value_set: bool,
+          operation_type: String,
+          operator: HubspotSDK::Models::Events::ComparativeNumberPropertyOperation::operator,
+          operator_name: String,
+          property_type: HubspotSDK::Models::Events::ComparativeNumberPropertyOperation::property_type,
+          default_value: String,
+          render_spec: String
+        }
+
+        type operator =
+          :IS_EQUAL_TO
+          | :IS_GREATER_THAN
+          | :IS_GREATER_THAN_OR_EQUAL_TO
+          | :IS_LESS_THAN
+          | :IS_LESS_THAN_OR_EQUAL_TO
+          | :IS_NOT_EQUAL_TO
+
+        module Operator
+          extend HubspotSDK::Internal::Type::Enum
+
+          IS_EQUAL_TO: :IS_EQUAL_TO
+          IS_GREATER_THAN: :IS_GREATER_THAN
+          IS_GREATER_THAN_OR_EQUAL_TO: :IS_GREATER_THAN_OR_EQUAL_TO
+          IS_LESS_THAN: :IS_LESS_THAN
+          IS_LESS_THAN_OR_EQUAL_TO: :IS_LESS_THAN_OR_EQUAL_TO
+          IS_NOT_EQUAL_TO: :IS_NOT_EQUAL_TO
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::ComparativeNumberPropertyOperation::operator]
+        end
+
+        type property_type = :"number-comparative"
+
+        module PropertyType
+          extend HubspotSDK::Internal::Type::Enum
+
+          NUMBER_COMPARATIVE: :"number-comparative"
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::ComparativeNumberPropertyOperation::property_type]
+        end
+      end
+    end
+  end
+end

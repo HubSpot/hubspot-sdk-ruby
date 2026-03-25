@@ -1,0 +1,44 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type standalone_request_context =
+        {
+          chirp_ai_context_object: HubspotSDK::Automation::ChirpAIContextObject,
+          source: HubspotSDK::Models::Automation::StandaloneRequestContext::source,
+          trajectory_id: String
+        }
+
+      class StandaloneRequestContext < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor chirp_ai_context_object: HubspotSDK::Automation::ChirpAIContextObject
+
+        attr_accessor source: HubspotSDK::Models::Automation::StandaloneRequestContext::source
+
+        attr_reader trajectory_id: String?
+
+        def trajectory_id=: (String) -> String
+
+        def initialize: (
+          chirp_ai_context_object: HubspotSDK::Automation::ChirpAIContextObject,
+          source: HubspotSDK::Models::Automation::StandaloneRequestContext::source,
+          ?trajectory_id: String
+        ) -> void
+
+        def to_hash: -> {
+          chirp_ai_context_object: HubspotSDK::Automation::ChirpAIContextObject,
+          source: HubspotSDK::Models::Automation::StandaloneRequestContext::source,
+          trajectory_id: String
+        }
+
+        type source = :STANDALONE
+
+        module Source
+          extend HubspotSDK::Internal::Type::Enum
+
+          STANDALONE: :STANDALONE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::StandaloneRequestContext::source]
+        end
+      end
+    end
+  end
+end

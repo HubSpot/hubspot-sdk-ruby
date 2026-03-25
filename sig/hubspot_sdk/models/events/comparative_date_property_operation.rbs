@@ -1,0 +1,89 @@
+module HubspotSDK
+  module Models
+    module Events
+      type comparative_date_property_operation =
+        {
+          comparison_property_name: String,
+          include_objects_with_no_value_set: bool,
+          operation_type: String,
+          operator: HubspotSDK::Models::Events::ComparativeDatePropertyOperation::operator,
+          operator_name: String,
+          property_type: HubspotSDK::Models::Events::ComparativeDatePropertyOperation::property_type,
+          default_comparison_value: String,
+          default_value: String,
+          render_spec: String
+        }
+
+      class ComparativeDatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor comparison_property_name: String
+
+        attr_accessor include_objects_with_no_value_set: bool
+
+        attr_accessor operation_type: String
+
+        attr_accessor operator: HubspotSDK::Models::Events::ComparativeDatePropertyOperation::operator
+
+        attr_accessor operator_name: String
+
+        attr_accessor property_type: HubspotSDK::Models::Events::ComparativeDatePropertyOperation::property_type
+
+        attr_reader default_comparison_value: String?
+
+        def default_comparison_value=: (String) -> String
+
+        attr_reader default_value: String?
+
+        def default_value=: (String) -> String
+
+        attr_reader render_spec: String?
+
+        def render_spec=: (String) -> String
+
+        def initialize: (
+          comparison_property_name: String,
+          include_objects_with_no_value_set: bool,
+          operation_type: String,
+          operator: HubspotSDK::Models::Events::ComparativeDatePropertyOperation::operator,
+          operator_name: String,
+          property_type: HubspotSDK::Models::Events::ComparativeDatePropertyOperation::property_type,
+          ?default_comparison_value: String,
+          ?default_value: String,
+          ?render_spec: String
+        ) -> void
+
+        def to_hash: -> {
+          comparison_property_name: String,
+          include_objects_with_no_value_set: bool,
+          operation_type: String,
+          operator: HubspotSDK::Models::Events::ComparativeDatePropertyOperation::operator,
+          operator_name: String,
+          property_type: HubspotSDK::Models::Events::ComparativeDatePropertyOperation::property_type,
+          default_comparison_value: String,
+          default_value: String,
+          render_spec: String
+        }
+
+        type operator = :IS_AFTER | :IS_BEFORE
+
+        module Operator
+          extend HubspotSDK::Internal::Type::Enum
+
+          IS_AFTER: :IS_AFTER
+          IS_BEFORE: :IS_BEFORE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::ComparativeDatePropertyOperation::operator]
+        end
+
+        type property_type = :"datetime-comparative"
+
+        module PropertyType
+          extend HubspotSDK::Internal::Type::Enum
+
+          DATETIME_COMPARATIVE: :"datetime-comparative"
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::ComparativeDatePropertyOperation::property_type]
+        end
+      end
+    end
+  end
+end

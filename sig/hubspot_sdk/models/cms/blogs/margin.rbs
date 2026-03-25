@@ -1,0 +1,29 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Blogs
+        type margin =
+          {
+            bottom: HubspotSDK::Cms::Blogs::Size,
+            top: HubspotSDK::Cms::Blogs::Size
+          }
+
+        class Margin < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor bottom: HubspotSDK::Cms::Blogs::Size
+
+          attr_accessor top: HubspotSDK::Cms::Blogs::Size
+
+          def initialize: (
+            bottom: HubspotSDK::Cms::Blogs::Size,
+            top: HubspotSDK::Cms::Blogs::Size
+          ) -> void
+
+          def to_hash: -> {
+            bottom: HubspotSDK::Cms::Blogs::Size,
+            top: HubspotSDK::Cms::Blogs::Size
+          }
+        end
+      end
+    end
+  end
+end

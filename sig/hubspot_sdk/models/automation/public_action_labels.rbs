@@ -1,0 +1,86 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type public_action_labels =
+        {
+          action_name: String,
+          action_card_content: String,
+          action_description: String,
+          app_display_name: String,
+          execution_rules: ::Hash[Symbol, String],
+          input_field_descriptions: ::Hash[Symbol, String],
+          input_field_labels: ::Hash[Symbol, String],
+          input_field_option_labels: ::Hash[Symbol, ::Hash[Symbol, String]],
+          output_field_labels: ::Hash[Symbol, String]
+        }
+
+      class PublicActionLabels < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor action_name: String
+
+        attr_reader action_card_content: String?
+
+        def action_card_content=: (String) -> String
+
+        attr_reader action_description: String?
+
+        def action_description=: (String) -> String
+
+        attr_reader app_display_name: String?
+
+        def app_display_name=: (String) -> String
+
+        attr_reader execution_rules: ::Hash[Symbol, String]?
+
+        def execution_rules=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
+
+        attr_reader input_field_descriptions: ::Hash[Symbol, String]?
+
+        def input_field_descriptions=: (
+          ::Hash[Symbol, String]
+        ) -> ::Hash[Symbol, String]
+
+        attr_reader input_field_labels: ::Hash[Symbol, String]?
+
+        def input_field_labels=: (
+          ::Hash[Symbol, String]
+        ) -> ::Hash[Symbol, String]
+
+        attr_reader input_field_option_labels: ::Hash[Symbol, ::Hash[Symbol, String]]?
+
+        def input_field_option_labels=: (
+          ::Hash[Symbol, ::Hash[Symbol, String]]
+        ) -> ::Hash[Symbol, ::Hash[Symbol, String]]
+
+        attr_reader output_field_labels: ::Hash[Symbol, String]?
+
+        def output_field_labels=: (
+          ::Hash[Symbol, String]
+        ) -> ::Hash[Symbol, String]
+
+        def initialize: (
+          action_name: String,
+          ?action_card_content: String,
+          ?action_description: String,
+          ?app_display_name: String,
+          ?execution_rules: ::Hash[Symbol, String],
+          ?input_field_descriptions: ::Hash[Symbol, String],
+          ?input_field_labels: ::Hash[Symbol, String],
+          ?input_field_option_labels: ::Hash[Symbol, ::Hash[Symbol, String]],
+          ?output_field_labels: ::Hash[Symbol, String]
+        ) -> void
+
+        def to_hash: -> {
+          action_name: String,
+          action_card_content: String,
+          action_description: String,
+          app_display_name: String,
+          execution_rules: ::Hash[Symbol, String],
+          input_field_descriptions: ::Hash[Symbol, String],
+          input_field_labels: ::Hash[Symbol, String],
+          input_field_option_labels: ::Hash[Symbol, ::Hash[Symbol, String]],
+          output_field_labels: ::Hash[Symbol, String]
+        }
+      end
+    end
+  end
+end

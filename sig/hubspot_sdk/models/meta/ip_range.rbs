@@ -1,0 +1,61 @@
+module HubspotSDK
+  module Models
+    module Meta
+      type ip_range =
+        {
+          cidr: String,
+          description: String,
+          direction: HubspotSDK::Models::Meta::IPRange::direction,
+          service: HubspotSDK::Models::Meta::IPRange::service
+        }
+
+      class IPRange < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor cidr: String
+
+        attr_accessor description: String
+
+        attr_accessor direction: HubspotSDK::Models::Meta::IPRange::direction
+
+        attr_accessor service: HubspotSDK::Models::Meta::IPRange::service
+
+        def initialize: (
+          cidr: String,
+          description: String,
+          direction: HubspotSDK::Models::Meta::IPRange::direction,
+          service: HubspotSDK::Models::Meta::IPRange::service
+        ) -> void
+
+        def to_hash: -> {
+          cidr: String,
+          description: String,
+          direction: HubspotSDK::Models::Meta::IPRange::direction,
+          service: HubspotSDK::Models::Meta::IPRange::service
+        }
+
+        type direction = :EGRESS | :INGRESS
+
+        module Direction
+          extend HubspotSDK::Internal::Type::Enum
+
+          EGRESS: :EGRESS
+          INGRESS: :INGRESS
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Meta::IPRange::direction]
+        end
+
+        type service = :API | :DNS | :EMAIL | :WEB_SCRAPING
+
+        module Service
+          extend HubspotSDK::Internal::Type::Enum
+
+          API: :API
+          DNS: :DNS
+          EMAIL: :EMAIL
+          WEB_SCRAPING: :WEB_SCRAPING
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Meta::IPRange::service]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,52 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type array_field_schema =
+        {
+          items: HubspotSDK::Models::Automation::ArrayFieldSchema::items,
+          type: HubspotSDK::Models::Automation::ArrayFieldSchema::type_
+        }
+
+      class ArrayFieldSchema < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor items: HubspotSDK::Models::Automation::ArrayFieldSchema::items
+
+        attr_accessor type: HubspotSDK::Models::Automation::ArrayFieldSchema::type_
+
+        def initialize: (
+          items: HubspotSDK::Models::Automation::ArrayFieldSchema::items,
+          type: HubspotSDK::Models::Automation::ArrayFieldSchema::type_
+        ) -> void
+
+        def to_hash: -> {
+          items: HubspotSDK::Models::Automation::ArrayFieldSchema::items,
+          type: HubspotSDK::Models::Automation::ArrayFieldSchema::type_
+        }
+
+        type items =
+          HubspotSDK::Automation::IntegerFieldSchema
+          | HubspotSDK::Automation::LongFieldSchema
+          | HubspotSDK::Automation::DoubleFieldSchema
+          | HubspotSDK::Automation::StringFieldSchema
+          | HubspotSDK::Automation::BooleanFieldSchema
+          | HubspotSDK::Automation::ArrayFieldSchema
+          | HubspotSDK::Automation::ObjectFieldSchema
+
+        module Items
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Automation::ArrayFieldSchema::items]
+        end
+
+        type type_ = :ARRAY
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          ARRAY: :ARRAY
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::ArrayFieldSchema::type_]
+        end
+      end
+    end
+  end
+end

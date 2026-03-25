@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Resources
+    class Marketing
+      class Campaigns
+        class Batch
+          def create: (
+            inputs: ::Array[HubspotSDK::Marketing::PublicCampaignInput],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Marketing::BatchResponsePublicCampaign
+
+          def update: (
+            inputs: ::Array[HubspotSDK::Marketing::PublicCampaignBatchUpdateItem],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Marketing::BatchResponsePublicCampaign
+
+          def delete: (
+            inputs: ::Array[HubspotSDK::Marketing::PublicCampaignDeleteInput],
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def get: (
+            inputs: ::Array[HubspotSDK::Marketing::PublicCampaignReadInput],
+            ?end_date: String,
+            ?properties: ::Array[String],
+            ?start_date: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Marketing::BatchResponsePublicCampaignWithAssets
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

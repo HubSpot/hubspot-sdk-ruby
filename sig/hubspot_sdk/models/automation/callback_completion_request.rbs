@@ -1,0 +1,56 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type callback_completion_request =
+        {
+          output_fields: ::Hash[Symbol, String],
+          typed_outputs: top,
+          failure_reason_type: String,
+          request_context: HubspotSDK::Models::Automation::CallbackCompletionRequest::request_context
+        }
+
+      class CallbackCompletionRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor output_fields: ::Hash[Symbol, String]
+
+        attr_accessor typed_outputs: top
+
+        attr_reader failure_reason_type: String?
+
+        def failure_reason_type=: (String) -> String
+
+        attr_reader request_context: HubspotSDK::Models::Automation::CallbackCompletionRequest::request_context?
+
+        def request_context=: (
+          HubspotSDK::Models::Automation::CallbackCompletionRequest::request_context
+        ) -> HubspotSDK::Models::Automation::CallbackCompletionRequest::request_context
+
+        def initialize: (
+          output_fields: ::Hash[Symbol, String],
+          typed_outputs: top,
+          ?failure_reason_type: String,
+          ?request_context: HubspotSDK::Models::Automation::CallbackCompletionRequest::request_context
+        ) -> void
+
+        def to_hash: -> {
+          output_fields: ::Hash[Symbol, String],
+          typed_outputs: top,
+          failure_reason_type: String,
+          request_context: HubspotSDK::Models::Automation::CallbackCompletionRequest::request_context
+        }
+
+        type request_context =
+          HubspotSDK::Automation::WorkflowsRequestContext
+          | HubspotSDK::Automation::AgentRequestContext
+          | HubspotSDK::Automation::CopilotRequestContext
+          | HubspotSDK::Automation::StandaloneRequestContext
+          | HubspotSDK::Automation::TestRequestContext
+
+        module RequestContext
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Automation::CallbackCompletionRequest::request_context]
+        end
+      end
+    end
+  end
+end

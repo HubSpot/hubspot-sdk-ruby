@@ -1,0 +1,42 @@
+module HubspotSDK
+  module Models
+    module DataStudio
+      type media_type =
+        {
+          parameters: ::Hash[Symbol, String],
+          subtype: String,
+          type: String,
+          wildcard_subtype: bool,
+          wildcard_type: bool
+        }
+
+      class MediaType < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor parameters: ::Hash[Symbol, String]
+
+        attr_accessor subtype: String
+
+        attr_accessor type: String
+
+        attr_accessor wildcard_subtype: bool
+
+        attr_accessor wildcard_type: bool
+
+        def initialize: (
+          parameters: ::Hash[Symbol, String],
+          subtype: String,
+          type: String,
+          wildcard_subtype: bool,
+          wildcard_type: bool
+        ) -> void
+
+        def to_hash: -> {
+          parameters: ::Hash[Symbol, String],
+          subtype: String,
+          type: String,
+          wildcard_subtype: bool,
+          wildcard_type: bool
+        }
+      end
+    end
+  end
+end

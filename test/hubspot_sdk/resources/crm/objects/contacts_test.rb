@@ -189,7 +189,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::ContactsTest < HubspotSDK::Test
       response => {
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         total: Integer,
-        paging: HubspotSDK::Crm::Paging | nil
+        paging: HubspotSDK::Paging | nil
       }
     end
   end

@@ -1,0 +1,30 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type boolean_field_schema =
+        { type: HubspotSDK::Models::Automation::BooleanFieldSchema::type_ }
+
+      class BooleanFieldSchema < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor type: HubspotSDK::Models::Automation::BooleanFieldSchema::type_
+
+        def initialize: (
+          type: HubspotSDK::Models::Automation::BooleanFieldSchema::type_
+        ) -> void
+
+        def to_hash: -> {
+          type: HubspotSDK::Models::Automation::BooleanFieldSchema::type_
+        }
+
+        type type_ = :BOOLEAN
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          BOOLEAN: :BOOLEAN
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::BooleanFieldSchema::type_]
+        end
+      end
+    end
+  end
+end

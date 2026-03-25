@@ -1,0 +1,47 @@
+module HubspotSDK
+  module Models
+    module Cms
+      class BlogLanguageCloneRequestVNext = Blogs::BlogLanguageCloneRequestVNext
+
+      module Blogs
+        type blog_language_clone_request_v_next =
+          {
+            id: String,
+            language: String,
+            primary_language: String,
+            slug: String
+          }
+
+        class BlogLanguageCloneRequestVNext < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_reader language: String?
+
+          def language=: (String) -> String
+
+          attr_reader primary_language: String?
+
+          def primary_language=: (String) -> String
+
+          attr_reader slug: String?
+
+          def slug=: (String) -> String
+
+          def initialize: (
+            id: String,
+            ?language: String,
+            ?primary_language: String,
+            ?slug: String
+          ) -> void
+
+          def to_hash: -> {
+            id: String,
+            language: String,
+            primary_language: String,
+            slug: String
+          }
+        end
+      end
+    end
+  end
+end

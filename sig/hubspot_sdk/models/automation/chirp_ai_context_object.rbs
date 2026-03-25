@@ -1,0 +1,123 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type chirp_ai_context_object =
+        {
+          application_group: String,
+          application_id: String,
+          metadata: ::Hash[Symbol, String],
+          otel_context_holder: ::Hash[Symbol, String],
+          unstructured_sources: ::Array[HubspotSDK::Models::Automation::ChirpAIContextObject::unstructured_source],
+          compliance_ids: HubspotSDK::Automation::ComplianceIDs,
+          feature_id: String,
+          inference_id: String,
+          trajectory_id: String
+        }
+
+      class ChirpAIContextObject < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor application_group: String
+
+        attr_accessor application_id: String
+
+        attr_accessor metadata: ::Hash[Symbol, String]
+
+        attr_accessor otel_context_holder: ::Hash[Symbol, String]
+
+        attr_accessor unstructured_sources: ::Array[HubspotSDK::Models::Automation::ChirpAIContextObject::unstructured_source]
+
+        attr_reader compliance_ids: HubspotSDK::Automation::ComplianceIDs?
+
+        def compliance_ids=: (
+          HubspotSDK::Automation::ComplianceIDs
+        ) -> HubspotSDK::Automation::ComplianceIDs
+
+        attr_reader feature_id: String?
+
+        def feature_id=: (String) -> String
+
+        attr_reader inference_id: String?
+
+        def inference_id=: (String) -> String
+
+        attr_reader trajectory_id: String?
+
+        def trajectory_id=: (String) -> String
+
+        def initialize: (
+          application_group: String,
+          application_id: String,
+          metadata: ::Hash[Symbol, String],
+          otel_context_holder: ::Hash[Symbol, String],
+          unstructured_sources: ::Array[HubspotSDK::Models::Automation::ChirpAIContextObject::unstructured_source],
+          ?compliance_ids: HubspotSDK::Automation::ComplianceIDs,
+          ?feature_id: String,
+          ?inference_id: String,
+          ?trajectory_id: String
+        ) -> void
+
+        def to_hash: -> {
+          application_group: String,
+          application_id: String,
+          metadata: ::Hash[Symbol, String],
+          otel_context_holder: ::Hash[Symbol, String],
+          unstructured_sources: ::Array[HubspotSDK::Models::Automation::ChirpAIContextObject::unstructured_source],
+          compliance_ids: HubspotSDK::Automation::ComplianceIDs,
+          feature_id: String,
+          inference_id: String,
+          trajectory_id: String
+        }
+
+        type unstructured_source =
+          :NONE
+          | :USER_INPUT
+          | :LOGGED_EMAIL
+          | :VIDEO_CALL
+          | :AUDIO_CALL
+          | :CALL_TRANSCRIPT
+          | :MEETING_TRANSCRIPT
+          | :FORMS
+          | :FEEDBACK_SURVEY
+          | :PDF
+          | :QUOTE
+          | :INVOICE
+          | :OTHER_ATTACHMENT_DOC
+          | :WHATSAPP
+          | :SMS
+          | :CHAT
+          | :FACEBOOK_MESSENGER
+          | :CUSTOM_CHANNEL_OR_API
+          | :MANY
+          | :NOTE
+          | :DERIVED
+
+        module UnstructuredSource
+          extend HubspotSDK::Internal::Type::Enum
+
+          NONE: :NONE
+          USER_INPUT: :USER_INPUT
+          LOGGED_EMAIL: :LOGGED_EMAIL
+          VIDEO_CALL: :VIDEO_CALL
+          AUDIO_CALL: :AUDIO_CALL
+          CALL_TRANSCRIPT: :CALL_TRANSCRIPT
+          MEETING_TRANSCRIPT: :MEETING_TRANSCRIPT
+          FORMS: :FORMS
+          FEEDBACK_SURVEY: :FEEDBACK_SURVEY
+          PDF: :PDF
+          QUOTE: :QUOTE
+          INVOICE: :INVOICE
+          OTHER_ATTACHMENT_DOC: :OTHER_ATTACHMENT_DOC
+          WHATSAPP: :WHATSAPP
+          SMS: :SMS
+          CHAT: :CHAT
+          FACEBOOK_MESSENGER: :FACEBOOK_MESSENGER
+          CUSTOM_CHANNEL_OR_API: :CUSTOM_CHANNEL_OR_API
+          MANY: :MANY
+          NOTE: :NOTE
+          DERIVED: :DERIVED
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::ChirpAIContextObject::unstructured_source]
+        end
+      end
+    end
+  end
+end

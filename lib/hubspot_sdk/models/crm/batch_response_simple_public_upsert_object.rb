@@ -30,8 +30,8 @@ module HubspotSDK
 
         # @!attribute errors
         #
-        #   @return [Array<HubspotSDK::Models::Crm::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::StandardError] }
+        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
+        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
 
         # @!attribute links
         #   An object containing relevant links related to the batch request.
@@ -67,7 +67,7 @@ module HubspotSDK
         #
         #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponseSimplePublicUpsertObject::Status] The status of the batch processing request. Can be: "PENDING", "PROCESSING", "CA
         #
-        #   @param errors [Array<HubspotSDK::Models::Crm::StandardError>]
+        #   @param errors [Array<HubspotSDK::Models::StandardError>]
         #
         #   @param links [Hash{Symbol=>String}] An object containing relevant links related to the batch request.
         #

@@ -1,0 +1,9 @@
+module HubspotSDK
+  module Resources
+    class Cms
+      attr_reader blogs: HubspotSDK::Resources::Cms::Blogs
+
+      def initialize: (client: HubspotSDK::Client) -> void
+    end
+  end
+end

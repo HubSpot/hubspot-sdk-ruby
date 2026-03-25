@@ -28,7 +28,7 @@ class HubspotSDKTest < Minitest::Test
   end
 
   def test_client_default_request_default_retry_attempts
-    stub_request(:get, "http://localhost/account-info/2026-03/activity/audit-logs?hapikey").to_return_json(
+    stub_request(:get, "http://localhost/account-info/2026-03/details?hapikey").to_return_json(
       status: 500,
       body: {}
     )
@@ -36,14 +36,14 @@ class HubspotSDKTest < Minitest::Test
     hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
     assert_raises(HubspotSDK::Errors::InternalServerError) do
-      hubspot.account.activity.list_audit_logs
+      hubspot.account.get
     end
 
     assert_requested(:any, /./, times: 3)
   end
 
   def test_client_given_request_default_retry_attempts
-    stub_request(:get, "http://localhost/account-info/2026-03/activity/audit-logs?hapikey").to_return_json(
+    stub_request(:get, "http://localhost/account-info/2026-03/details?hapikey").to_return_json(
       status: 500,
       body: {}
     )
@@ -56,14 +56,14 @@ class HubspotSDKTest < Minitest::Test
       )
 
     assert_raises(HubspotSDK::Errors::InternalServerError) do
-      hubspot.account.activity.list_audit_logs
+      hubspot.account.get
     end
 
     assert_requested(:any, /./, times: 4)
   end
 
   def test_client_default_request_given_retry_attempts
-    stub_request(:get, "http://localhost/account-info/2026-03/activity/audit-logs?hapikey").to_return_json(
+    stub_request(:get, "http://localhost/account-info/2026-03/details?hapikey").to_return_json(
       status: 500,
       body: {}
     )
@@ -71,14 +71,14 @@ class HubspotSDKTest < Minitest::Test
     hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
     assert_raises(HubspotSDK::Errors::InternalServerError) do
-      hubspot.account.activity.list_audit_logs(request_options: {max_retries: 3})
+      hubspot.account.get(request_options: {max_retries: 3})
     end
 
     assert_requested(:any, /./, times: 4)
   end
 
   def test_client_given_request_given_retry_attempts
-    stub_request(:get, "http://localhost/account-info/2026-03/activity/audit-logs?hapikey").to_return_json(
+    stub_request(:get, "http://localhost/account-info/2026-03/details?hapikey").to_return_json(
       status: 500,
       body: {}
     )
@@ -91,14 +91,14 @@ class HubspotSDKTest < Minitest::Test
       )
 
     assert_raises(HubspotSDK::Errors::InternalServerError) do
-      hubspot.account.activity.list_audit_logs(request_options: {max_retries: 4})
+      hubspot.account.get(request_options: {max_retries: 4})
     end
 
     assert_requested(:any, /./, times: 5)
   end
 
   def test_client_retry_after_seconds
-    stub_request(:get, "http://localhost/account-info/2026-03/activity/audit-logs?hapikey").to_return_json(
+    stub_request(:get, "http://localhost/account-info/2026-03/details?hapikey").to_return_json(
       status: 500,
       headers: {"retry-after" => "1.3"},
       body: {}
@@ -112,7 +112,7 @@ class HubspotSDKTest < Minitest::Test
       )
 
     assert_raises(HubspotSDK::Errors::InternalServerError) do
-      hubspot.account.activity.list_audit_logs
+      hubspot.account.get
     end
 
     assert_requested(:any, /./, times: 2)
@@ -122,7 +122,7 @@ class HubspotSDKTest < Minitest::Test
   def test_client_retry_after_date
     time_now = Time.now
 
-    stub_request(:get, "http://localhost/account-info/2026-03/activity/audit-logs?hapikey").to_return_json(
+    stub_request(:get, "http://localhost/account-info/2026-03/details?hapikey").to_return_json(
       status: 500,
       headers: {"retry-after" => (time_now + 10).httpdate},
       body: {}
@@ -137,7 +137,7 @@ class HubspotSDKTest < Minitest::Test
 
     Thread.current.thread_variable_set(:time_now, time_now)
     assert_raises(HubspotSDK::Errors::InternalServerError) do
-      hubspot.account.activity.list_audit_logs
+      hubspot.account.get
     end
     Thread.current.thread_variable_set(:time_now, nil)
 
@@ -146,7 +146,7 @@ class HubspotSDKTest < Minitest::Test
   end
 
   def test_client_retry_after_ms
-    stub_request(:get, "http://localhost/account-info/2026-03/activity/audit-logs?hapikey").to_return_json(
+    stub_request(:get, "http://localhost/account-info/2026-03/details?hapikey").to_return_json(
       status: 500,
       headers: {"retry-after-ms" => "1300"},
       body: {}
@@ -160,7 +160,7 @@ class HubspotSDKTest < Minitest::Test
       )
 
     assert_raises(HubspotSDK::Errors::InternalServerError) do
-      hubspot.account.activity.list_audit_logs
+      hubspot.account.get
     end
 
     assert_requested(:any, /./, times: 2)
@@ -168,7 +168,7 @@ class HubspotSDKTest < Minitest::Test
   end
 
   def test_retry_count_header
-    stub_request(:get, "http://localhost/account-info/2026-03/activity/audit-logs?hapikey").to_return_json(
+    stub_request(:get, "http://localhost/account-info/2026-03/details?hapikey").to_return_json(
       status: 500,
       body: {}
     )
@@ -176,7 +176,7 @@ class HubspotSDKTest < Minitest::Test
     hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
     assert_raises(HubspotSDK::Errors::InternalServerError) do
-      hubspot.account.activity.list_audit_logs
+      hubspot.account.get
     end
 
     3.times do
@@ -185,7 +185,7 @@ class HubspotSDKTest < Minitest::Test
   end
 
   def test_omit_retry_count_header
-    stub_request(:get, "http://localhost/account-info/2026-03/activity/audit-logs?hapikey").to_return_json(
+    stub_request(:get, "http://localhost/account-info/2026-03/details?hapikey").to_return_json(
       status: 500,
       body: {}
     )
@@ -193,9 +193,7 @@ class HubspotSDKTest < Minitest::Test
     hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
     assert_raises(HubspotSDK::Errors::InternalServerError) do
-      hubspot.account.activity.list_audit_logs(
-        request_options: {extra_headers: {"x-stainless-retry-count" => nil}}
-      )
+      hubspot.account.get(request_options: {extra_headers: {"x-stainless-retry-count" => nil}})
     end
 
     assert_requested(:any, /./, times: 3) do
@@ -204,7 +202,7 @@ class HubspotSDKTest < Minitest::Test
   end
 
   def test_overwrite_retry_count_header
-    stub_request(:get, "http://localhost/account-info/2026-03/activity/audit-logs?hapikey").to_return_json(
+    stub_request(:get, "http://localhost/account-info/2026-03/details?hapikey").to_return_json(
       status: 500,
       body: {}
     )
@@ -212,16 +210,14 @@ class HubspotSDKTest < Minitest::Test
     hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
     assert_raises(HubspotSDK::Errors::InternalServerError) do
-      hubspot.account.activity.list_audit_logs(
-        request_options: {extra_headers: {"x-stainless-retry-count" => "42"}}
-      )
+      hubspot.account.get(request_options: {extra_headers: {"x-stainless-retry-count" => "42"}})
     end
 
     assert_requested(:any, /./, headers: {"x-stainless-retry-count" => "42"}, times: 3)
   end
 
   def test_client_redirect_307
-    stub_request(:get, "http://localhost/account-info/2026-03/activity/audit-logs?hapikey").to_return_json(
+    stub_request(:get, "http://localhost/account-info/2026-03/details?hapikey").to_return_json(
       status: 307,
       headers: {"location" => "/redirected"},
       body: {}
@@ -234,7 +230,7 @@ class HubspotSDKTest < Minitest::Test
     hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
     assert_raises(HubspotSDK::Errors::APIConnectionError) do
-      hubspot.account.activity.list_audit_logs(request_options: {extra_headers: {}})
+      hubspot.account.get(request_options: {extra_headers: {}})
     end
 
     recorded, = WebMock::RequestRegistry.instance.requested_signatures.hash.first
@@ -250,7 +246,7 @@ class HubspotSDKTest < Minitest::Test
   end
 
   def test_client_redirect_303
-    stub_request(:get, "http://localhost/account-info/2026-03/activity/audit-logs?hapikey").to_return_json(
+    stub_request(:get, "http://localhost/account-info/2026-03/details?hapikey").to_return_json(
       status: 303,
       headers: {"location" => "/redirected"},
       body: {}
@@ -263,7 +259,7 @@ class HubspotSDKTest < Minitest::Test
     hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
     assert_raises(HubspotSDK::Errors::APIConnectionError) do
-      hubspot.account.activity.list_audit_logs(request_options: {extra_headers: {}})
+      hubspot.account.get(request_options: {extra_headers: {}})
     end
 
     assert_requested(:get, "http://localhost/redirected", times: HubspotSDK::Client::MAX_REDIRECTS) do
@@ -274,7 +270,7 @@ class HubspotSDKTest < Minitest::Test
   end
 
   def test_client_redirect_auth_keep_same_origin
-    stub_request(:get, "http://localhost/account-info/2026-03/activity/audit-logs?hapikey").to_return_json(
+    stub_request(:get, "http://localhost/account-info/2026-03/details?hapikey").to_return_json(
       status: 307,
       headers: {"location" => "/redirected"},
       body: {}
@@ -287,9 +283,7 @@ class HubspotSDKTest < Minitest::Test
     hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
     assert_raises(HubspotSDK::Errors::APIConnectionError) do
-      hubspot.account.activity.list_audit_logs(
-        request_options: {extra_headers: {"authorization" => "Bearer xyz"}}
-      )
+      hubspot.account.get(request_options: {extra_headers: {"authorization" => "Bearer xyz"}})
     end
 
     recorded, = WebMock::RequestRegistry.instance.requested_signatures.hash.first
@@ -303,7 +297,7 @@ class HubspotSDKTest < Minitest::Test
   end
 
   def test_client_redirect_auth_strip_cross_origin
-    stub_request(:get, "http://localhost/account-info/2026-03/activity/audit-logs?hapikey").to_return_json(
+    stub_request(:get, "http://localhost/account-info/2026-03/details?hapikey").to_return_json(
       status: 307,
       headers: {"location" => "https://example.com/redirected"},
       body: {}
@@ -316,9 +310,7 @@ class HubspotSDKTest < Minitest::Test
     hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
     assert_raises(HubspotSDK::Errors::APIConnectionError) do
-      hubspot.account.activity.list_audit_logs(
-        request_options: {extra_headers: {"authorization" => "Bearer xyz"}}
-      )
+      hubspot.account.get(request_options: {extra_headers: {"authorization" => "Bearer xyz"}})
     end
 
     assert_requested(:any, "https://example.com/redirected", times: HubspotSDK::Client::MAX_REDIRECTS) do
@@ -328,14 +320,14 @@ class HubspotSDKTest < Minitest::Test
   end
 
   def test_default_headers
-    stub_request(:get, "http://localhost/account-info/2026-03/activity/audit-logs?hapikey").to_return_json(
+    stub_request(:get, "http://localhost/account-info/2026-03/details?hapikey").to_return_json(
       status: 200,
       body: {}
     )
 
     hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "pat-na1-xxxxxxxx-xxxx")
 
-    hubspot.account.activity.list_audit_logs
+    hubspot.account.get
 
     assert_requested(:any, /./) do |req|
       headers = req.headers.transform_keys(&:downcase).fetch_values("accept", "content-type")

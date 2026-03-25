@@ -18,7 +18,9 @@ module HubspotSDK
         attr_accessor :current_usage
 
         # Status of fetching the information, including if the data came from the cache.
-        sig { returns(HubspotSDK::Account::APIUsage::FetchStatus::OrSymbol) }
+        sig do
+          returns(HubspotSDK::Account::APIUsage::FetchStatus::TaggedSymbol)
+        end
         attr_accessor :fetch_status
 
         # Name of the limit type.
@@ -68,7 +70,7 @@ module HubspotSDK
               collected_at: Time,
               current_usage: Integer,
               fetch_status:
-                HubspotSDK::Account::APIUsage::FetchStatus::OrSymbol,
+                HubspotSDK::Account::APIUsage::FetchStatus::TaggedSymbol,
               name: String,
               usage_limit: Integer,
               resets_at: Time

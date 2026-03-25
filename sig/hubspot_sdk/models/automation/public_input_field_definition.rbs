@@ -1,0 +1,47 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type public_input_field_definition =
+        {
+          is_required: bool,
+          type_definition: HubspotSDK::Automation::PublicFieldTypeDefinition,
+          supported_value_types: ::Array[HubspotSDK::Models::Automation::PublicInputFieldDefinition::supported_value_type]
+        }
+
+      class PublicInputFieldDefinition < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor is_required: bool
+
+        attr_accessor type_definition: HubspotSDK::Automation::PublicFieldTypeDefinition
+
+        attr_reader supported_value_types: ::Array[HubspotSDK::Models::Automation::PublicInputFieldDefinition::supported_value_type]?
+
+        def supported_value_types=: (
+          ::Array[HubspotSDK::Models::Automation::PublicInputFieldDefinition::supported_value_type]
+        ) -> ::Array[HubspotSDK::Models::Automation::PublicInputFieldDefinition::supported_value_type]
+
+        def initialize: (
+          is_required: bool,
+          type_definition: HubspotSDK::Automation::PublicFieldTypeDefinition,
+          ?supported_value_types: ::Array[HubspotSDK::Models::Automation::PublicInputFieldDefinition::supported_value_type]
+        ) -> void
+
+        def to_hash: -> {
+          is_required: bool,
+          type_definition: HubspotSDK::Automation::PublicFieldTypeDefinition,
+          supported_value_types: ::Array[HubspotSDK::Models::Automation::PublicInputFieldDefinition::supported_value_type]
+        }
+
+        type supported_value_type = :STATIC_VALUE | :OBJECT_PROPERTY
+
+        module SupportedValueType
+          extend HubspotSDK::Internal::Type::Enum
+
+          STATIC_VALUE: :STATIC_VALUE
+          OBJECT_PROPERTY: :OBJECT_PROPERTY
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::PublicInputFieldDefinition::supported_value_type]
+        end
+      end
+    end
+  end
+end

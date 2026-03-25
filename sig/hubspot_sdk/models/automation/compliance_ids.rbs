@@ -1,0 +1,53 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type compliance_ids =
+        {
+          contact_ids: ::Array[HubspotSDK::Automation::ContactID],
+          portal_ids: ::Array[Integer],
+          user_ids: ::Array[Integer],
+          no_contact_id_reason: String,
+          no_portal_id_reason: String,
+          no_user_id_reason: String
+        }
+
+      class ComplianceIDs < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor contact_ids: ::Array[HubspotSDK::Automation::ContactID]
+
+        attr_accessor portal_ids: ::Array[Integer]
+
+        attr_accessor user_ids: ::Array[Integer]
+
+        attr_reader no_contact_id_reason: String?
+
+        def no_contact_id_reason=: (String) -> String
+
+        attr_reader no_portal_id_reason: String?
+
+        def no_portal_id_reason=: (String) -> String
+
+        attr_reader no_user_id_reason: String?
+
+        def no_user_id_reason=: (String) -> String
+
+        def initialize: (
+          contact_ids: ::Array[HubspotSDK::Automation::ContactID],
+          portal_ids: ::Array[Integer],
+          user_ids: ::Array[Integer],
+          ?no_contact_id_reason: String,
+          ?no_portal_id_reason: String,
+          ?no_user_id_reason: String
+        ) -> void
+
+        def to_hash: -> {
+          contact_ids: ::Array[HubspotSDK::Automation::ContactID],
+          portal_ids: ::Array[Integer],
+          user_ids: ::Array[Integer],
+          no_contact_id_reason: String,
+          no_portal_id_reason: String,
+          no_user_id_reason: String
+        }
+      end
+    end
+  end
+end

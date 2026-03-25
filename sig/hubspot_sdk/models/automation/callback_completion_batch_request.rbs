@@ -1,0 +1,61 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type callback_completion_batch_request =
+        {
+          callback_id: String,
+          output_fields: ::Hash[Symbol, String],
+          typed_outputs: top,
+          failure_reason_type: String,
+          request_context: HubspotSDK::Models::Automation::CallbackCompletionBatchRequest::request_context
+        }
+
+      class CallbackCompletionBatchRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor callback_id: String
+
+        attr_accessor output_fields: ::Hash[Symbol, String]
+
+        attr_accessor typed_outputs: top
+
+        attr_reader failure_reason_type: String?
+
+        def failure_reason_type=: (String) -> String
+
+        attr_reader request_context: HubspotSDK::Models::Automation::CallbackCompletionBatchRequest::request_context?
+
+        def request_context=: (
+          HubspotSDK::Models::Automation::CallbackCompletionBatchRequest::request_context
+        ) -> HubspotSDK::Models::Automation::CallbackCompletionBatchRequest::request_context
+
+        def initialize: (
+          callback_id: String,
+          output_fields: ::Hash[Symbol, String],
+          typed_outputs: top,
+          ?failure_reason_type: String,
+          ?request_context: HubspotSDK::Models::Automation::CallbackCompletionBatchRequest::request_context
+        ) -> void
+
+        def to_hash: -> {
+          callback_id: String,
+          output_fields: ::Hash[Symbol, String],
+          typed_outputs: top,
+          failure_reason_type: String,
+          request_context: HubspotSDK::Models::Automation::CallbackCompletionBatchRequest::request_context
+        }
+
+        type request_context =
+          HubspotSDK::Automation::WorkflowsRequestContext
+          | HubspotSDK::Automation::AgentRequestContext
+          | HubspotSDK::Automation::CopilotRequestContext
+          | HubspotSDK::Automation::StandaloneRequestContext
+          | HubspotSDK::Automation::TestRequestContext
+
+        module RequestContext
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Automation::CallbackCompletionBatchRequest::request_context]
+        end
+      end
+    end
+  end
+end
