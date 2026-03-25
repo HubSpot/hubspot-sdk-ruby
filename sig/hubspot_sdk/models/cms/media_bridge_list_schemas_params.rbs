@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type media_bridge_list_schemas_params =
+        { app_id: String, archived: bool }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class MediaBridgeListSchemasParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor app_id: String
+
+        attr_reader archived: bool?
+
+        def archived=: (bool) -> bool
+
+        def initialize: (
+          app_id: String,
+          ?archived: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          app_id: String,
+          archived: bool,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

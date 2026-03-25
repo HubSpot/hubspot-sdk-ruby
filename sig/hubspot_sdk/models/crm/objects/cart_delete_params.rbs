@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Objects
+        type cart_delete_params =
+          { cart_id: String } & HubspotSDK::Internal::Type::request_parameters
+
+        class CartDeleteParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor cart_id: String
+
+          def initialize: (
+            cart_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            cart_id: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

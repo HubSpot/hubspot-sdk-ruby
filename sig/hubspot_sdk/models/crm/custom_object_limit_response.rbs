@@ -1,0 +1,24 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type custom_object_limit_response =
+        { limit: Integer, percentage: Float, usage: Integer }
+
+      class CustomObjectLimitResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor limit: Integer
+
+        attr_accessor percentage: Float
+
+        attr_accessor usage: Integer
+
+        def initialize: (
+          limit: Integer,
+          percentage: Float,
+          usage: Integer
+        ) -> void
+
+        def to_hash: -> { limit: Integer, percentage: Float, usage: Integer }
+      end
+    end
+  end
+end

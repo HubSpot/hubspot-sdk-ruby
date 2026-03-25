@@ -1,0 +1,63 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type public_whats_app_template_metadata =
+        {
+          crm_object_ids: ::Hash[Symbol, Integer],
+          parameters: ::Hash[Symbol, String],
+          type: HubspotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata::type_,
+          content_id: Integer,
+          mapped_template_id: Integer,
+          root_mic_id: Integer
+        }
+
+      class PublicWhatsAppTemplateMetadata < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor crm_object_ids: ::Hash[Symbol, Integer]
+
+        attr_accessor parameters: ::Hash[Symbol, String]
+
+        attr_accessor type: HubspotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata::type_
+
+        attr_reader content_id: Integer?
+
+        def content_id=: (Integer) -> Integer
+
+        attr_reader mapped_template_id: Integer?
+
+        def mapped_template_id=: (Integer) -> Integer
+
+        attr_reader root_mic_id: Integer?
+
+        def root_mic_id=: (Integer) -> Integer
+
+        def initialize: (
+          crm_object_ids: ::Hash[Symbol, Integer],
+          parameters: ::Hash[Symbol, String],
+          type: HubspotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata::type_,
+          ?content_id: Integer,
+          ?mapped_template_id: Integer,
+          ?root_mic_id: Integer
+        ) -> void
+
+        def to_hash: -> {
+          crm_object_ids: ::Hash[Symbol, Integer],
+          parameters: ::Hash[Symbol, String],
+          type: HubspotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata::type_,
+          content_id: Integer,
+          mapped_template_id: Integer,
+          root_mic_id: Integer
+        }
+
+        type type_ = :WHATSAPP_TEMPLATE_METADATA
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          WHATSAPP_TEMPLATE_METADATA: :WHATSAPP_TEMPLATE_METADATA
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata::type_]
+        end
+      end
+    end
+  end
+end

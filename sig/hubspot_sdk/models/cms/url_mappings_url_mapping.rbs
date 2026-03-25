@@ -1,0 +1,278 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type url_mappings_url_mapping =
+        {
+          id: Integer,
+          cdn_purge_embargo_time: Integer,
+          content_group_id: Integer,
+          cos_object_type: HubspotSDK::Models::Cms::URLMappingsURLMapping::cos_object_type,
+          created: Integer,
+          created_by_id: Integer,
+          deleted_at: Integer,
+          destination: String,
+          internally_created: bool,
+          is_active: bool,
+          is_match_full_url: bool,
+          is_match_query_string: bool,
+          is_only_after_not_found: bool,
+          is_pattern: bool,
+          is_protocol_agnostic: bool,
+          is_regex: bool,
+          is_trailing_slash_optional: bool,
+          label: String,
+          name: String,
+          note: String,
+          portal_id: Integer,
+          precedence: Integer,
+          redirect_style: Integer,
+          route_prefix: String,
+          updated: Integer,
+          updated_by_id: Integer
+        }
+
+      class URLMappingsURLMapping < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: Integer
+
+        attr_accessor cdn_purge_embargo_time: Integer
+
+        attr_accessor content_group_id: Integer
+
+        attr_accessor cos_object_type: HubspotSDK::Models::Cms::URLMappingsURLMapping::cos_object_type
+
+        attr_accessor created: Integer
+
+        attr_accessor created_by_id: Integer
+
+        attr_accessor deleted_at: Integer
+
+        attr_accessor destination: String
+
+        attr_accessor internally_created: bool
+
+        attr_accessor is_active: bool
+
+        attr_accessor is_match_full_url: bool
+
+        attr_accessor is_match_query_string: bool
+
+        attr_accessor is_only_after_not_found: bool
+
+        attr_accessor is_pattern: bool
+
+        attr_accessor is_protocol_agnostic: bool
+
+        attr_accessor is_regex: bool
+
+        attr_accessor is_trailing_slash_optional: bool
+
+        attr_accessor label: String
+
+        attr_accessor name: String
+
+        attr_accessor note: String
+
+        attr_accessor portal_id: Integer
+
+        attr_accessor precedence: Integer
+
+        attr_accessor redirect_style: Integer
+
+        attr_accessor route_prefix: String
+
+        attr_accessor updated: Integer
+
+        attr_accessor updated_by_id: Integer
+
+        def initialize: (
+          id: Integer,
+          cdn_purge_embargo_time: Integer,
+          content_group_id: Integer,
+          cos_object_type: HubspotSDK::Models::Cms::URLMappingsURLMapping::cos_object_type,
+          created: Integer,
+          created_by_id: Integer,
+          deleted_at: Integer,
+          destination: String,
+          internally_created: bool,
+          is_active: bool,
+          is_match_full_url: bool,
+          is_match_query_string: bool,
+          is_only_after_not_found: bool,
+          is_pattern: bool,
+          is_protocol_agnostic: bool,
+          is_regex: bool,
+          is_trailing_slash_optional: bool,
+          label: String,
+          name: String,
+          note: String,
+          portal_id: Integer,
+          precedence: Integer,
+          redirect_style: Integer,
+          route_prefix: String,
+          updated: Integer,
+          updated_by_id: Integer
+        ) -> void
+
+        def to_hash: -> {
+          id: Integer,
+          cdn_purge_embargo_time: Integer,
+          content_group_id: Integer,
+          cos_object_type: HubspotSDK::Models::Cms::URLMappingsURLMapping::cos_object_type,
+          created: Integer,
+          created_by_id: Integer,
+          deleted_at: Integer,
+          destination: String,
+          internally_created: bool,
+          is_active: bool,
+          is_match_full_url: bool,
+          is_match_query_string: bool,
+          is_only_after_not_found: bool,
+          is_pattern: bool,
+          is_protocol_agnostic: bool,
+          is_regex: bool,
+          is_trailing_slash_optional: bool,
+          label: String,
+          name: String,
+          note: String,
+          portal_id: Integer,
+          precedence: Integer,
+          redirect_style: Integer,
+          route_prefix: String,
+          updated: Integer,
+          updated_by_id: Integer
+        }
+
+        type cos_object_type =
+          :ACCESS_GROUP_MEMBERSHIP
+          | :APP_PAGE
+          | :BLOCK
+          | :BLOG
+          | :BLOG_AUTHOR
+          | :BRAND_BUSINESS_UNIT
+          | :BRAND_SETTINGS
+          | :CONTACT_MEMBERSHIP
+          | :CONTENT
+          | :CONTENT_EMBED
+          | :CONTENT_FOLDER
+          | :CONTENT_GROUP
+          | :CRM_OBJECT
+          | :CRM_OBJECT_TYPE
+          | :CUSTOM_WIDGET
+          | :CUSTOMER_PORTAL
+          | :DATA_QUERY
+          | :DESIGN_FOLDER
+          | :DOMAIN
+          | :DOMAIN_SETTINGS
+          | :EMAIL_ADDRESS
+          | :EXTENSION_RESOURCE
+          | :FILE
+          | :FOLDER
+          | :FOLLOW_ME
+          | :FORM
+          | :GLOBAL_CONTENT
+          | :HUBDB_TABLE
+          | :HUBDB_TABLE_ROW
+          | :IMAGE
+          | :JS_PROJECT_COMPONENT
+          | :KNOWLEDGE_BASE
+          | :KNOWLEDGE_CATEGORY
+          | :KNOWLEDGE_CATEGORY_TRANSLATION
+          | :KNOWLEDGE_HOMEPAGE_CATEGORY
+          | :LAYOUT
+          | :LAYOUT_SECTION
+          | :LIST_MEMBERSHIP
+          | :MARKETPLACE_LISTING
+          | :PASSWORD_PROTECTED
+          | :PAYMENT
+          | :PERSONALIZATION_TOKEN
+          | :PLACEMENT
+          | :PROJECT
+          | :QUOTE_TEMPLATE
+          | :RAW_ASSET
+          | :REDIRECT_URL
+          | :SECTION
+          | :SERVERLESS_FUNCTION
+          | :SITE_MAP
+          | :SITE_MENU
+          | :SITE_SETTINGS
+          | :SUBSCRIPTIONS_SETTINGS
+          | :TAG
+          | :THEME
+          | :THEME_SETTINGS
+          | :UNRESTRICTED_ACCESS
+          | :URL_MAPPING
+          | :VIDEO_PLAYER
+          | :WIDGET
+          | :WORKFLOW
+
+        module CosObjectType
+          extend HubspotSDK::Internal::Type::Enum
+
+          ACCESS_GROUP_MEMBERSHIP: :ACCESS_GROUP_MEMBERSHIP
+          APP_PAGE: :APP_PAGE
+          BLOCK: :BLOCK
+          BLOG: :BLOG
+          BLOG_AUTHOR: :BLOG_AUTHOR
+          BRAND_BUSINESS_UNIT: :BRAND_BUSINESS_UNIT
+          BRAND_SETTINGS: :BRAND_SETTINGS
+          CONTACT_MEMBERSHIP: :CONTACT_MEMBERSHIP
+          CONTENT: :CONTENT
+          CONTENT_EMBED: :CONTENT_EMBED
+          CONTENT_FOLDER: :CONTENT_FOLDER
+          CONTENT_GROUP: :CONTENT_GROUP
+          CRM_OBJECT: :CRM_OBJECT
+          CRM_OBJECT_TYPE: :CRM_OBJECT_TYPE
+          CUSTOM_WIDGET: :CUSTOM_WIDGET
+          CUSTOMER_PORTAL: :CUSTOMER_PORTAL
+          DATA_QUERY: :DATA_QUERY
+          DESIGN_FOLDER: :DESIGN_FOLDER
+          DOMAIN: :DOMAIN
+          DOMAIN_SETTINGS: :DOMAIN_SETTINGS
+          EMAIL_ADDRESS: :EMAIL_ADDRESS
+          EXTENSION_RESOURCE: :EXTENSION_RESOURCE
+          FILE: :FILE
+          FOLDER: :FOLDER
+          FOLLOW_ME: :FOLLOW_ME
+          FORM: :FORM
+          GLOBAL_CONTENT: :GLOBAL_CONTENT
+          HUBDB_TABLE: :HUBDB_TABLE
+          HUBDB_TABLE_ROW: :HUBDB_TABLE_ROW
+          IMAGE: :IMAGE
+          JS_PROJECT_COMPONENT: :JS_PROJECT_COMPONENT
+          KNOWLEDGE_BASE: :KNOWLEDGE_BASE
+          KNOWLEDGE_CATEGORY: :KNOWLEDGE_CATEGORY
+          KNOWLEDGE_CATEGORY_TRANSLATION: :KNOWLEDGE_CATEGORY_TRANSLATION
+          KNOWLEDGE_HOMEPAGE_CATEGORY: :KNOWLEDGE_HOMEPAGE_CATEGORY
+          LAYOUT: :LAYOUT
+          LAYOUT_SECTION: :LAYOUT_SECTION
+          LIST_MEMBERSHIP: :LIST_MEMBERSHIP
+          MARKETPLACE_LISTING: :MARKETPLACE_LISTING
+          PASSWORD_PROTECTED: :PASSWORD_PROTECTED
+          PAYMENT: :PAYMENT
+          PERSONALIZATION_TOKEN: :PERSONALIZATION_TOKEN
+          PLACEMENT: :PLACEMENT
+          PROJECT: :PROJECT
+          QUOTE_TEMPLATE: :QUOTE_TEMPLATE
+          RAW_ASSET: :RAW_ASSET
+          REDIRECT_URL: :REDIRECT_URL
+          SECTION: :SECTION
+          SERVERLESS_FUNCTION: :SERVERLESS_FUNCTION
+          SITE_MAP: :SITE_MAP
+          SITE_MENU: :SITE_MENU
+          SITE_SETTINGS: :SITE_SETTINGS
+          SUBSCRIPTIONS_SETTINGS: :SUBSCRIPTIONS_SETTINGS
+          TAG: :TAG
+          THEME: :THEME
+          THEME_SETTINGS: :THEME_SETTINGS
+          UNRESTRICTED_ACCESS: :UNRESTRICTED_ACCESS
+          URL_MAPPING: :URL_MAPPING
+          VIDEO_PLAYER: :VIDEO_PLAYER
+          WIDGET: :WIDGET
+          WORKFLOW: :WORKFLOW
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::URLMappingsURLMapping::cos_object_type]
+        end
+      end
+    end
+  end
+end

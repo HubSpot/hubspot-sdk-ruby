@@ -1,0 +1,36 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      module Events
+        type attendance_create_by_event_id_and_email_params =
+          { object_id_: String, subscriber_state: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class AttendanceCreateByEventIDAndEmailParams < HubspotSDK::Models::Marketing::BatchInputMarketingEventEmailSubscriber
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def object_id_: -> String
+
+          def object_id_=: (String _) -> String
+
+          def subscriber_state: -> String
+
+          def subscriber_state=: (String _) -> String
+
+          def initialize: (
+            object_id_: String,
+            subscriber_state: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            object_id_: String,
+            subscriber_state: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

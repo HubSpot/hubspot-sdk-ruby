@@ -1,0 +1,91 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type list_create_request =
+        {
+          name: String,
+          object_type_id: String,
+          processing_type: String,
+          custom_properties: ::Hash[Symbol, String],
+          filter_branch: HubspotSDK::Models::Crm::ListCreateRequest::filter_branch,
+          list_folder_id: Integer,
+          list_permissions: HubspotSDK::Crm::PublicListPermissions,
+          membership_settings: HubspotSDK::Crm::PublicMembershipSettings
+        }
+
+      class ListCreateRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor name: String
+
+        attr_accessor object_type_id: String
+
+        attr_accessor processing_type: String
+
+        attr_reader custom_properties: ::Hash[Symbol, String]?
+
+        def custom_properties=: (
+          ::Hash[Symbol, String]
+        ) -> ::Hash[Symbol, String]
+
+        attr_reader filter_branch: HubspotSDK::Models::Crm::ListCreateRequest::filter_branch?
+
+        def filter_branch=: (
+          HubspotSDK::Models::Crm::ListCreateRequest::filter_branch
+        ) -> HubspotSDK::Models::Crm::ListCreateRequest::filter_branch
+
+        attr_reader list_folder_id: Integer?
+
+        def list_folder_id=: (Integer) -> Integer
+
+        attr_reader list_permissions: HubspotSDK::Crm::PublicListPermissions?
+
+        def list_permissions=: (
+          HubspotSDK::Crm::PublicListPermissions
+        ) -> HubspotSDK::Crm::PublicListPermissions
+
+        attr_reader membership_settings: HubspotSDK::Crm::PublicMembershipSettings?
+
+        def membership_settings=: (
+          HubspotSDK::Crm::PublicMembershipSettings
+        ) -> HubspotSDK::Crm::PublicMembershipSettings
+
+        def initialize: (
+          name: String,
+          object_type_id: String,
+          processing_type: String,
+          ?custom_properties: ::Hash[Symbol, String],
+          ?filter_branch: HubspotSDK::Models::Crm::ListCreateRequest::filter_branch,
+          ?list_folder_id: Integer,
+          ?list_permissions: HubspotSDK::Crm::PublicListPermissions,
+          ?membership_settings: HubspotSDK::Crm::PublicMembershipSettings
+        ) -> void
+
+        def to_hash: -> {
+          name: String,
+          object_type_id: String,
+          processing_type: String,
+          custom_properties: ::Hash[Symbol, String],
+          filter_branch: HubspotSDK::Models::Crm::ListCreateRequest::filter_branch,
+          list_folder_id: Integer,
+          list_permissions: HubspotSDK::Crm::PublicListPermissions,
+          membership_settings: HubspotSDK::Crm::PublicMembershipSettings
+        }
+
+        type filter_branch =
+          HubspotSDK::Crm::PublicOrFilterBranch
+          | HubspotSDK::Crm::PublicAndFilterBranch
+          | HubspotSDK::Crm::PublicNotAllFilterBranch
+          | HubspotSDK::Crm::PublicNotAnyFilterBranch
+          | HubspotSDK::Crm::PublicRestrictedFilterBranch
+          | HubspotSDK::Crm::PublicUnifiedEventsFilterBranch
+          | HubspotSDK::Crm::PublicPropertyAssociationFilterBranch
+          | HubspotSDK::Crm::PublicAssociationFilterBranch
+
+        module FilterBranch
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::ListCreateRequest::filter_branch]
+        end
+      end
+    end
+  end
+end

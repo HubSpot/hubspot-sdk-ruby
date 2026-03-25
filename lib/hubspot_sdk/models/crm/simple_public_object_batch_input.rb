@@ -5,8 +5,8 @@ module HubspotSDK
     module Crm
       class SimplePublicObjectBatchInput < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
-        #   The ID of the contact to update. This can be the object ID, or the unique
-        #   property value of the `idProperty` property.
+        #   The id to be updated. This can be the object id, or the unique property value of
+        #   the idProperty property
         #
         #   @return [String]
         required :id, String
@@ -18,7 +18,7 @@ module HubspotSDK
         required :properties, HubspotSDK::Internal::Type::HashOf[String]
 
         # @!attribute id_property
-        #   The name of a unique property, when identifying records by property.
+        #   The name of a property whose values are unique for this object
         #
         #   @return [String, nil]
         optional :id_property, String, api_name: :idProperty
@@ -36,11 +36,11 @@ module HubspotSDK
         #   Contains an array of CRM object records to be processed in a batch operation,
         #   each defined by their ID and properties.
         #
-        #   @param id [String] The ID of the contact to update. This can be the object ID, or the unique proper
+        #   @param id [String] The id to be updated. This can be the object id, or the unique property value of
         #
         #   @param properties [Hash{Symbol=>String}] Key-value pairs representing the properties of the object.
         #
-        #   @param id_property [String] The name of a unique property, when identifying records by property.
+        #   @param id_property [String] The name of a property whose values are unique for this object
         #
         #   @param object_write_trace_id [String] A unique identifier for tracing the request.
       end

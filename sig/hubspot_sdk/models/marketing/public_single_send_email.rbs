@@ -1,0 +1,53 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type public_single_send_email =
+        {
+          bcc: ::Array[String],
+          cc: ::Array[String],
+          reply_to: ::Array[String],
+          from: String,
+          send_id: String,
+          to: String
+        }
+
+      class PublicSingleSendEmail < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor bcc: ::Array[String]
+
+        attr_accessor cc: ::Array[String]
+
+        attr_accessor reply_to: ::Array[String]
+
+        attr_reader from: String?
+
+        def from=: (String) -> String
+
+        attr_reader send_id: String?
+
+        def send_id=: (String) -> String
+
+        attr_reader to: String?
+
+        def to=: (String) -> String
+
+        def initialize: (
+          bcc: ::Array[String],
+          cc: ::Array[String],
+          reply_to: ::Array[String],
+          ?from: String,
+          ?send_id: String,
+          ?to: String
+        ) -> void
+
+        def to_hash: -> {
+          bcc: ::Array[String],
+          cc: ::Array[String],
+          reply_to: ::Array[String],
+          from: String,
+          send_id: String,
+          to: String
+        }
+      end
+    end
+  end
+end

@@ -1,0 +1,74 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_indexed_time_point =
+        {
+          index_reference: HubspotSDK::Models::Crm::PublicIndexedTimePoint::index_reference,
+          time_type: HubspotSDK::Models::Crm::PublicIndexedTimePoint::time_type,
+          zone_id: String,
+          offset: HubspotSDK::Crm::PublicIndexOffset,
+          timezone_source: String
+        }
+
+      class PublicIndexedTimePoint < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor index_reference: HubspotSDK::Models::Crm::PublicIndexedTimePoint::index_reference
+
+        attr_accessor time_type: HubspotSDK::Models::Crm::PublicIndexedTimePoint::time_type
+
+        attr_accessor zone_id: String
+
+        attr_reader offset: HubspotSDK::Crm::PublicIndexOffset?
+
+        def offset=: (
+          HubspotSDK::Crm::PublicIndexOffset
+        ) -> HubspotSDK::Crm::PublicIndexOffset
+
+        attr_reader timezone_source: String?
+
+        def timezone_source=: (String) -> String
+
+        def initialize: (
+          index_reference: HubspotSDK::Models::Crm::PublicIndexedTimePoint::index_reference,
+          time_type: HubspotSDK::Models::Crm::PublicIndexedTimePoint::time_type,
+          zone_id: String,
+          ?offset: HubspotSDK::Crm::PublicIndexOffset,
+          ?timezone_source: String
+        ) -> void
+
+        def to_hash: -> {
+          index_reference: HubspotSDK::Models::Crm::PublicIndexedTimePoint::index_reference,
+          time_type: HubspotSDK::Models::Crm::PublicIndexedTimePoint::time_type,
+          zone_id: String,
+          offset: HubspotSDK::Crm::PublicIndexOffset,
+          timezone_source: String
+        }
+
+        type index_reference =
+          HubspotSDK::Crm::PublicNowReference
+          | HubspotSDK::Crm::PublicTodayReference
+          | HubspotSDK::Crm::PublicWeekReference
+          | HubspotSDK::Crm::PublicFiscalQuarterReference
+          | HubspotSDK::Crm::PublicFiscalYearReference
+          | HubspotSDK::Crm::PublicYearReference
+          | HubspotSDK::Crm::PublicQuarterReference
+          | HubspotSDK::Crm::PublicMonthReference
+
+        module IndexReference
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicIndexedTimePoint::index_reference]
+        end
+
+        type time_type = :INDEXED
+
+        module TimeType
+          extend HubspotSDK::Internal::Type::Enum
+
+          INDEXED: :INDEXED
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicIndexedTimePoint::time_type]
+        end
+      end
+    end
+  end
+end

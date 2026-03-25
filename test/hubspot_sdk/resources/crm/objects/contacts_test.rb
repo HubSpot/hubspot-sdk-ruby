@@ -8,7 +8,6 @@ class HubspotSDK::Test::Resources::Crm::Objects::ContactsTest < HubspotSDK::Test
 
     response =
       @hubspot.crm.objects.contacts.create(
-        "objectType",
         associations: [
           {
             to: {id: "id"},
@@ -40,8 +39,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::ContactsTest < HubspotSDK::Test
   def test_update_required_params
     skip("Mock server tests are disabled")
 
-    response =
-      @hubspot.crm.objects.contacts.update("objectId", object_type: "objectType", properties: {foo: "string"})
+    response = @hubspot.crm.objects.contacts.update("contactId", properties: {foo: "string"})
 
     assert_pattern do
       response => HubspotSDK::Crm::SimplePublicObject
@@ -65,7 +63,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::ContactsTest < HubspotSDK::Test
   def test_list
     skip("Mock server tests are disabled")
 
-    response = @hubspot.crm.objects.contacts.list("objectType")
+    response = @hubspot.crm.objects.contacts.list
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -94,10 +92,10 @@ class HubspotSDK::Test::Resources::Crm::Objects::ContactsTest < HubspotSDK::Test
     end
   end
 
-  def test_delete_required_params
+  def test_delete
     skip("Mock server tests are disabled")
 
-    response = @hubspot.crm.objects.contacts.delete("objectId", object_type: "objectType")
+    response = @hubspot.crm.objects.contacts.delete("contactId")
 
     assert_pattern do
       response => nil
@@ -107,17 +105,17 @@ class HubspotSDK::Test::Resources::Crm::Objects::ContactsTest < HubspotSDK::Test
   def test_gdpr_delete_required_params
     skip("Mock server tests are disabled")
 
-    response = @hubspot.crm.objects.contacts.gdpr_delete("objectType", object_id_: "objectId")
+    response = @hubspot.crm.objects.contacts.gdpr_delete(object_id_: "objectId")
 
     assert_pattern do
       response => nil
     end
   end
 
-  def test_get_required_params
+  def test_get
     skip("Mock server tests are disabled")
 
-    response = @hubspot.crm.objects.contacts.get("objectId", object_type: "objectType")
+    response = @hubspot.crm.objects.contacts.get("contactId")
 
     assert_pattern do
       response => HubspotSDK::Crm::SimplePublicObjectWithAssociations
@@ -144,7 +142,6 @@ class HubspotSDK::Test::Resources::Crm::Objects::ContactsTest < HubspotSDK::Test
 
     response =
       @hubspot.crm.objects.contacts.merge(
-        "objectType",
         object_id_to_merge: "objectIdToMerge",
         primary_object_id: "primaryObjectId"
       )
@@ -173,7 +170,6 @@ class HubspotSDK::Test::Resources::Crm::Objects::ContactsTest < HubspotSDK::Test
 
     response =
       @hubspot.crm.objects.contacts.search(
-        "objectType",
         after: "after",
         filter_groups: [{filters: [{operator: :BETWEEN, propertyName: "propertyName"}]}],
         limit: 0,

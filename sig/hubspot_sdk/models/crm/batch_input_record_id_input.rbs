@@ -1,0 +1,18 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type batch_input_record_id_input =
+        { inputs: ::Array[HubspotSDK::Crm::RecordIDInput] }
+
+      class BatchInputRecordIDInput < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubspotSDK::Crm::RecordIDInput]
+
+        def initialize: (
+          inputs: ::Array[HubspotSDK::Crm::RecordIDInput]
+        ) -> void
+
+        def to_hash: -> { inputs: ::Array[HubspotSDK::Crm::RecordIDInput] }
+      end
+    end
+  end
+end

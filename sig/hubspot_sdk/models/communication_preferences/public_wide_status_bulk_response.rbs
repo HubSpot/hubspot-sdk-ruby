@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module CommunicationPreferences
+      type public_wide_status_bulk_response =
+        {
+          subscriber_id_string: String,
+          wide_statuses: ::Array[HubspotSDK::CommunicationPreferences::PublicWideStatus]
+        }
+
+      class PublicWideStatusBulkResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor subscriber_id_string: String
+
+        attr_accessor wide_statuses: ::Array[HubspotSDK::CommunicationPreferences::PublicWideStatus]
+
+        def initialize: (
+          subscriber_id_string: String,
+          wide_statuses: ::Array[HubspotSDK::CommunicationPreferences::PublicWideStatus]
+        ) -> void
+
+        def to_hash: -> {
+          subscriber_id_string: String,
+          wide_statuses: ::Array[HubspotSDK::CommunicationPreferences::PublicWideStatus]
+        }
+      end
+    end
+  end
+end

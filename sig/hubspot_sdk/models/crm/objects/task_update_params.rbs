@@ -1,0 +1,36 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Objects
+        type task_update_params =
+          { task_id: String, id_property: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class TaskUpdateParams < HubspotSDK::Models::Crm::SimplePublicObjectInput
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def task_id: -> String
+
+          def task_id=: (String _) -> String
+
+          def id_property: -> String?
+
+          def id_property=: (String _) -> String
+
+          def initialize: (
+            task_id: String,
+            ?id_property: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            task_id: String,
+            id_property: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

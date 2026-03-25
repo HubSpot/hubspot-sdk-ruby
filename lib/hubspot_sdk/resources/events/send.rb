@@ -11,7 +11,7 @@ module HubspotSDK
         #
         # @param include_default_properties [Boolean]
         #
-        # @param label [String] Human readable label for the event for display in HubSpot's UI.
+        # @param label [String] Human readable label for the event. Used in HubSpot UI
         #
         # @param property_definitions [Array<HubspotSDK::Models::Events::ExternalBehavioralEventPropertyCreate>] List of custom properties on event
         #
@@ -19,9 +19,9 @@ module HubspotSDK
         #
         # @param description [String] A description of the event that will be shown as help text in HubSpot.
         #
-        # @param name [String] Internal event name, which must be used when referencing the event from the API.
+        # @param name [String] Internal event name, which must be used when referencing the event from this eve
         #
-        # @param primary_object [String] The object type to associate this event to. Can be one of `CONTACT`, `COMPANY`,
+        # @param primary_object [String] The object type to associate this event to. Can be one of CONTACT, COMPANY, DEAL
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -55,11 +55,11 @@ module HubspotSDK
         #
         # @param name [String] Internal property name, which must be used when referencing the property from th
         #
-        # @param options [Array<HubspotSDK::Models::Events::OptionInput>] A list of available options for the property if it is an enumeration. NOTE: This
+        # @param options [Array<HubspotSDK::Models::OptionInput>] A list of available options for the property if it is an enumeration. NOTE: This
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Events::Property]
+        # @return [HubspotSDK::Models::Property]
         #
         # @see HubspotSDK::Models::Events::SendCreateEventDefinitionPropertyParams
         def create_event_definition_property(event_name, params)
@@ -68,7 +68,7 @@ module HubspotSDK
             method: :post,
             path: ["events/custom/2026-03/event-definitions/%1$s/property", event_name],
             body: parsed,
-            model: HubspotSDK::Events::Property,
+            model: HubspotSDK::Property,
             options: options
           )
         end
@@ -172,19 +172,19 @@ module HubspotSDK
         #
         # @overload send_event(event_name:, properties:, email: nil, object_id_: nil, occurred_at: nil, utk: nil, uuid: nil, request_options: {})
         #
-        # @param event_name [String] The event's fully qualified name. This value (formatted as `pe{HubID}_{name}`) c
+        # @param event_name [String] Internal name of the event-type to trigger
         #
-        # @param properties [Hash{Symbol=>String}] The event properties to update. Takes the format of key-value pairs (property in
+        # @param properties [Hash{Symbol=>String}] Map of properties for the event in the format property internal name - property
         #
-        # @param email [String] The visitor's email address. Used for associating the event data with a CRM reco
+        # @param email [String] Email of visitor
         #
-        # @param object_id_ [String] The ID of the record for which the event occurred (e.g., contact ID or visitor I
+        # @param object_id_ [String] The object id that this event occurred on. Could be a contact id or a visitor id
         #
-        # @param occurred_at [Time] The time when this event occurred. If this isn't set, the current time will be u
+        # @param occurred_at [Time] The time when this event occurred (if any). If this isn't set, the current time
         #
-        # @param utk [String] The visitor's usertoken. Used for associating the event data with a CRM record.
+        # @param utk [String] User token
         #
-        # @param uuid [String] Include a universally unique identifier to assign a unique ID to the event occur
+        # @param uuid [String]
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -259,11 +259,11 @@ module HubspotSDK
         #
         # @param label [String] Body param: Human readable label for the property. Used in HubSpot UI
         #
-        # @param options [Array<HubspotSDK::Models::Events::OptionInput>] Body param: A list of available options for the property if it is an enumeration
+        # @param options [Array<HubspotSDK::Models::OptionInput>] Body param: A list of available options for the property if it is an enumeration
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Events::Property]
+        # @return [HubspotSDK::Models::Property]
         #
         # @see HubspotSDK::Models::Events::SendUpdateEventDefinitionPropertyParams
         def update_event_definition_property(property_name, params)
@@ -276,7 +276,7 @@ module HubspotSDK
             method: :patch,
             path: ["events/custom/2026-03/event-definitions/%1$s/property/%2$s", event_name, property_name],
             body: parsed,
-            model: HubspotSDK::Events::Property,
+            model: HubspotSDK::Property,
             options: options
           )
         end

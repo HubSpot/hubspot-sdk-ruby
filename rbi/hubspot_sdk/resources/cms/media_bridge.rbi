@@ -1,0 +1,831 @@
+# typed: strong
+
+module HubspotSDK
+  module Resources
+    class Cms
+      class MediaBridge
+        sig { returns(HubspotSDK::Resources::Cms::MediaBridge::Batch) }
+        attr_reader :batch
+
+        sig do
+          params(
+            create_mb_object_request:
+              T.any(
+                HubspotSDK::Cms::CreateVideoObjectRequest::OrHash,
+                HubspotSDK::Cms::CreateOtherObjectRequest::OrHash,
+                HubspotSDK::Cms::CreateAudioObjectRequest::OrHash,
+                HubspotSDK::Cms::CreateImageObjectRequest::OrHash,
+                HubspotSDK::Cms::CreateDocumentObjectRequest::OrHash
+              ),
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Cms::MediaBridgeObject)
+        end
+        def create(create_mb_object_request:, request_options: {})
+        end
+
+        sig do
+          params(
+            object_id_: Integer,
+            update_mb_object_request:
+              T.any(
+                HubspotSDK::Cms::UpdateVideoObjectRequest::OrHash,
+                HubspotSDK::Cms::UpdateOtherObjectRequest::OrHash,
+                HubspotSDK::Cms::UpdateAudioObjectRequest::OrHash,
+                HubspotSDK::Cms::UpdateImageObjectRequest::OrHash,
+                HubspotSDK::Cms::UpdateDocumentObjectRequest::OrHash
+              ),
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Cms::MediaBridgeObject)
+        end
+        def update(object_id_, update_mb_object_request:, request_options: {})
+        end
+
+        sig do
+          params(
+            media_type:
+              HubspotSDK::Cms::MediaBridgeListParams::MediaType::OrSymbol,
+            after: String,
+            limit: Integer,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(
+            HubspotSDK::Internal::Page[HubspotSDK::Cms::MediaBridgeObject]
+          )
+        end
+        def list(
+          media_type,
+          # The paging cursor token of the last successfully read resource will be returned
+          # as the `paging.next.after` JSON property of a paged response containing more
+          # results.
+          after: nil,
+          # The maximum number of results to display per page.
+          limit: nil,
+          request_options: {}
+        )
+        end
+
+        sig do
+          params(
+            object_id_: Integer,
+            media_type:
+              HubspotSDK::Cms::MediaBridgeDeleteParams::MediaType::OrSymbol,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).void
+        end
+        def delete(object_id_, media_type:, request_options: {})
+        end
+
+        # Create a new association definition for the specified object type.
+        sig do
+          params(
+            object_type: String,
+            app_id: String,
+            from_object_type_id: String,
+            to_object_type_id: String,
+            name: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Events::AssociationDefinition)
+        end
+        def create_association(
+          # Path param
+          object_type,
+          # Path param
+          app_id:,
+          # Body param
+          from_object_type_id:,
+          # Body param
+          to_object_type_id:,
+          # Body param
+          name: nil,
+          request_options: {}
+        )
+        end
+
+        # Create an event containing the viewers attention span details for the media.
+        sig do
+          params(
+            media_type:
+              HubspotSDK::Cms::AttentionSpanEventRequest::MediaType::OrSymbol,
+            occurred_timestamp: Integer,
+            raw_data_map: T::Hash[Symbol, Integer],
+            session_id: String,
+            _hsenc: String,
+            contact_id: Integer,
+            contact_utk: String,
+            derived_values:
+              HubspotSDK::Cms::AttentionSpanCalculatedValues::OrHash,
+            external_id: String,
+            external_play_context:
+              HubspotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext::OrSymbol,
+            media_bridge_id: Integer,
+            media_name: String,
+            media_url: String,
+            page_id: Integer,
+            page_name: String,
+            page_url: String,
+            raw_data_string: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(StringIO)
+        end
+        def create_attention_span_event(
+          media_type:,
+          occurred_timestamp:,
+          raw_data_map:,
+          session_id:,
+          _hsenc: nil,
+          contact_id: nil,
+          contact_utk: nil,
+          derived_values: nil,
+          external_id: nil,
+          external_play_context: nil,
+          media_bridge_id: nil,
+          media_name: nil,
+          media_url: nil,
+          page_id: nil,
+          page_name: nil,
+          page_url: nil,
+          raw_data_string: nil,
+          request_options: {}
+        )
+        end
+
+        # Create an event for when a user begins playing a piece of media.
+        sig do
+          params(
+            media_type:
+              HubspotSDK::Cms::MediaPlayedEventRequest::MediaType::OrSymbol,
+            occurred_timestamp: Integer,
+            session_id: String,
+            state: HubspotSDK::Cms::MediaPlayedEventRequest::State::OrSymbol,
+            _hsenc: String,
+            contact_id: Integer,
+            contact_utk: String,
+            external_id: String,
+            external_play_context:
+              HubspotSDK::Cms::MediaPlayedEventRequest::ExternalPlayContext::OrSymbol,
+            iframe_url: String,
+            media_bridge_id: Integer,
+            media_name: String,
+            media_url: String,
+            page_id: Integer,
+            page_name: String,
+            page_url: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(StringIO)
+        end
+        def create_media_played_event(
+          media_type:,
+          occurred_timestamp:,
+          session_id:,
+          state:,
+          _hsenc: nil,
+          contact_id: nil,
+          contact_utk: nil,
+          external_id: nil,
+          external_play_context: nil,
+          iframe_url: nil,
+          media_bridge_id: nil,
+          media_name: nil,
+          media_url: nil,
+          page_id: nil,
+          page_name: nil,
+          page_url: nil,
+          request_options: {}
+        )
+        end
+
+        # Create an event representing a user reaching quarterly milestones in a piece of
+        # media they're viewing.
+        sig do
+          params(
+            media_type:
+              HubspotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::OrSymbol,
+            occurred_timestamp: Integer,
+            played_percent: Integer,
+            session_id: String,
+            _hsenc: String,
+            contact_id: Integer,
+            contact_utk: String,
+            external_id: String,
+            external_play_context:
+              HubspotSDK::Cms::MediaPlayedPercentageEventRequest::ExternalPlayContext::OrSymbol,
+            media_bridge_id: Integer,
+            media_name: String,
+            media_url: String,
+            page_id: Integer,
+            page_name: String,
+            page_url: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(StringIO)
+        end
+        def create_media_played_percent_event(
+          media_type:,
+          occurred_timestamp:,
+          played_percent:,
+          session_id:,
+          _hsenc: nil,
+          contact_id: nil,
+          contact_utk: nil,
+          external_id: nil,
+          external_play_context: nil,
+          media_bridge_id: nil,
+          media_name: nil,
+          media_url: nil,
+          page_id: nil,
+          page_name: nil,
+          page_url: nil,
+          request_options: {}
+        )
+        end
+
+        # Create a new media object type
+        sig do
+          params(
+            app_id: String,
+            media_types:
+              T::Array[
+                HubspotSDK::Cms::IntegratorObjectCreationRequest::MediaType::OrSymbol
+              ],
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Cms::BulkIntegratorObjectCreationResponse)
+        end
+        def create_object_type(app_id, media_types:, request_options: {})
+        end
+
+        # Set up a new oEmbed domain for your media bridge app.
+        sig do
+          params(
+            app_id: String,
+            endpoints: HubspotSDK::Cms::Endpoints::OrHash,
+            portal_id: Integer,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Cms::IntegratorOEmbedDomainModel)
+        end
+        def create_oembed_domain(
+          app_id,
+          endpoints:,
+          portal_id: nil,
+          request_options: {}
+        )
+        end
+
+        # Create a new property for the specified media type
+        sig do
+          params(
+            object_type: String,
+            app_id: String,
+            field_type: HubspotSDK::PropertyCreate::FieldType::OrSymbol,
+            group_name: String,
+            label: String,
+            name: String,
+            type: HubspotSDK::PropertyCreate::Type::OrSymbol,
+            calculation_formula: String,
+            data_sensitivity:
+              HubspotSDK::PropertyCreate::DataSensitivity::OrSymbol,
+            description: String,
+            display_order: Integer,
+            external_options: T::Boolean,
+            form_field: T::Boolean,
+            has_unique_value: T::Boolean,
+            hidden: T::Boolean,
+            options: T::Array[HubspotSDK::OptionInput::OrHash],
+            referenced_object_type: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Property)
+        end
+        def create_property(
+          # Path param
+          object_type,
+          # Path param
+          app_id:,
+          # Body param
+          field_type:,
+          # Body param
+          group_name:,
+          # Body param
+          label:,
+          # Body param
+          name:,
+          # Body param
+          type:,
+          # Body param
+          calculation_formula: nil,
+          # Body param
+          data_sensitivity: nil,
+          # Body param
+          description: nil,
+          # Body param
+          display_order: nil,
+          # Body param
+          external_options: nil,
+          # Body param
+          form_field: nil,
+          # Body param
+          has_unique_value: nil,
+          # Body param
+          hidden: nil,
+          # Body param
+          options: nil,
+          # Body param
+          referenced_object_type: nil,
+          request_options: {}
+        )
+        end
+
+        # Create a new property group for the specified object type.
+        sig do
+          params(
+            object_type: String,
+            app_id: String,
+            label: String,
+            name: String,
+            display_order: Integer,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::PropertyGroup)
+        end
+        def create_property_group(
+          # Path param
+          object_type,
+          # Path param
+          app_id:,
+          # Body param
+          label:,
+          # Body param
+          name:,
+          # Body param
+          display_order: nil,
+          request_options: {}
+        )
+        end
+
+        sig do
+          params(
+            app_id: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Events::AssociationDefinition)
+        end
+        def create_video_association_definition(app_id, request_options: {})
+        end
+
+        # Delete an existing association definition for an object type.
+        sig do
+          params(
+            association_id: String,
+            app_id: String,
+            object_type: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).void
+        end
+        def delete_association(
+          association_id,
+          app_id:,
+          object_type:,
+          request_options: {}
+        )
+        end
+
+        # Delete an existing oEmbed domain.
+        sig do
+          params(
+            app_id: String,
+            id: Integer,
+            domain_portal_id: Integer,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).void
+        end
+        def delete_oembed_domain(
+          app_id,
+          id: nil,
+          domain_portal_id: nil,
+          request_options: {}
+        )
+        end
+
+        # Delete an existing property for an object type.
+        sig do
+          params(
+            property_name: String,
+            app_id: String,
+            object_type: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).void
+        end
+        def delete_property(
+          property_name,
+          app_id:,
+          object_type:,
+          request_options: {}
+        )
+        end
+
+        # Delete an existing property group by name
+        sig do
+          params(
+            group_name: String,
+            app_id: String,
+            object_type: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).void
+        end
+        def delete_property_group(
+          group_name,
+          app_id:,
+          object_type:,
+          request_options: {}
+        )
+        end
+
+        sig do
+          params(
+            object_id_: Integer,
+            media_type:
+              HubspotSDK::Cms::MediaBridgeGetParams::MediaType::OrSymbol,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Cms::MediaBridgeObject)
+        end
+        def get(object_id_, media_type:, request_options: {})
+        end
+
+        # Get the visibility settings for media bridge events for your apps.
+        sig do
+          params(
+            app_id: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Cms::EventVisibilityResponse)
+        end
+        def get_event_visibility_settings(app_id, request_options: {})
+        end
+
+        # Get the details for an existing oEmbed domain.
+        sig do
+          params(
+            o_embed_domain_id: String,
+            app_id: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Cms::IntegratorOEmbedDomainModel)
+        end
+        def get_oembed_domain(o_embed_domain_id, app_id:, request_options: {})
+        end
+
+        # Get the details for an existing property by name.
+        sig do
+          params(
+            property_name: String,
+            app_id: String,
+            object_type: String,
+            archived: T::Boolean,
+            properties: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Property)
+        end
+        def get_property(
+          # Path param
+          property_name,
+          # Path param
+          app_id:,
+          # Path param
+          object_type:,
+          # Query param: Whether to return only results that have been archived.
+          archived: nil,
+          # Query param
+          properties: nil,
+          request_options: {}
+        )
+        end
+
+        # Get the details of an existing property group by name.
+        sig do
+          params(
+            group_name: String,
+            app_id: String,
+            object_type: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::PropertyGroup)
+        end
+        def get_property_group(
+          group_name,
+          app_id:,
+          object_type:,
+          request_options: {}
+        )
+        end
+
+        # Get the schema for a specified object type.
+        sig do
+          params(
+            object_type: String,
+            app_id: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::ObjectSchema)
+        end
+        def get_schema(object_type, app_id:, request_options: {})
+        end
+
+        # Get the existing objects types that belong to the specified media type.
+        sig do
+          params(
+            media_type:
+              HubspotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::OrSymbol,
+            app_id: String,
+            include_full_definition: T::Boolean,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Cms::ObjectDefinitionResponse)
+        end
+        def list_object_types_by_media_type(
+          # Path param
+          media_type,
+          # Path param
+          app_id:,
+          # Query param
+          include_full_definition: nil,
+          request_options: {}
+        )
+        end
+
+        # Get the details for existing oEmbed domains for your app
+        sig do
+          params(
+            app_id: String,
+            domain_portal_id: Integer,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Cms::OEmbedDomainsCollectionResponse)
+        end
+        def list_oembed_domains(
+          app_id,
+          domain_portal_id: nil,
+          request_options: {}
+        )
+        end
+
+        # Get the existing properties defined for a media object type.
+        sig do
+          params(
+            object_type: String,
+            app_id: String,
+            archived: T::Boolean,
+            properties: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::CollectionResponsePropertyNoPaging)
+        end
+        def list_properties(
+          # Path param
+          object_type,
+          # Path param
+          app_id:,
+          # Query param: Whether to return only results that have been archived.
+          archived: nil,
+          # Query param
+          properties: nil,
+          request_options: {}
+        )
+        end
+
+        # Get the property groups for a specified object type.
+        sig do
+          params(
+            object_type: String,
+            app_id: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::CollectionResponsePropertyGroupNoPaging)
+        end
+        def list_property_groups(object_type, app_id:, request_options: {})
+        end
+
+        # Get the schemas for all object types.
+        sig do
+          params(
+            app_id: String,
+            archived: T::Boolean,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::CollectionResponseObjectSchemaNoPaging)
+        end
+        def list_schemas(
+          app_id,
+          # Whether to return only results that have been archived.
+          archived: nil,
+          request_options: {}
+        )
+        end
+
+        # Register the name that your app will display when a user is selecting media
+        # bridge items.
+        sig do
+          params(
+            app_id: String,
+            updated_at: Integer,
+            allow_import_on_disconnect: T::Boolean,
+            module_name: String,
+            name: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse)
+        end
+        def register_app_name(
+          app_id,
+          updated_at:,
+          allow_import_on_disconnect: nil,
+          module_name: nil,
+          name: nil,
+          request_options: {}
+        )
+        end
+
+        # Set the visibility settings for media bridge events created by your app.
+        sig do
+          params(
+            app_id: String,
+            event_type:
+              HubspotSDK::Cms::EventVisibilityChange::EventType::OrSymbol,
+            updated_at: Integer,
+            show_in_reporting: T::Boolean,
+            show_in_timeline: T::Boolean,
+            show_in_workflows: T::Boolean,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Cms::EventVisibilityChange)
+        end
+        def update_event_visibility_settings(
+          app_id,
+          event_type:,
+          updated_at:,
+          show_in_reporting: nil,
+          show_in_timeline: nil,
+          show_in_workflows: nil,
+          request_options: {}
+        )
+        end
+
+        # Update an existing oEmbed domain.
+        sig do
+          params(
+            o_embed_domain_id: String,
+            app_id: String,
+            endpoints: HubspotSDK::Cms::Endpoints::OrHash,
+            portal_id: Integer,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Cms::IntegratorOEmbedDomainModel)
+        end
+        def update_oembed_domain(
+          # Path param
+          o_embed_domain_id,
+          # Path param
+          app_id:,
+          # Body param
+          endpoints:,
+          # Body param
+          portal_id: nil,
+          request_options: {}
+        )
+        end
+
+        # Update an existing property for an object type.
+        sig do
+          params(
+            property_name: String,
+            app_id: String,
+            object_type: String,
+            calculation_formula: String,
+            description: String,
+            display_order: Integer,
+            field_type:
+              HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::OrSymbol,
+            form_field: T::Boolean,
+            group_name: String,
+            has_unique_value: T::Boolean,
+            hidden: T::Boolean,
+            label: String,
+            options: T::Array[HubspotSDK::OptionInput::OrHash],
+            type: HubspotSDK::Cms::MediaBridgePropertyUpdate::Type::OrSymbol,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Property)
+        end
+        def update_property(
+          # Path param
+          property_name,
+          # Path param
+          app_id:,
+          # Path param
+          object_type:,
+          # Body param
+          calculation_formula: nil,
+          # Body param
+          description: nil,
+          # Body param
+          display_order: nil,
+          # Body param
+          field_type: nil,
+          # Body param
+          form_field: nil,
+          # Body param
+          group_name: nil,
+          # Body param
+          has_unique_value: nil,
+          # Body param
+          hidden: nil,
+          # Body param
+          label: nil,
+          # Body param
+          options: nil,
+          # Body param
+          type: nil,
+          request_options: {}
+        )
+        end
+
+        # Update an existing property group by name.
+        sig do
+          params(
+            group_name: String,
+            app_id: String,
+            object_type: String,
+            display_order: Integer,
+            label: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::PropertyGroup)
+        end
+        def update_property_group(
+          # Path param
+          group_name,
+          # Path param
+          app_id:,
+          # Path param
+          object_type:,
+          # Body param
+          display_order: nil,
+          # Body param
+          label: nil,
+          request_options: {}
+        )
+        end
+
+        # Update the schema for an existing object type
+        sig do
+          params(
+            object_type: String,
+            app_id: String,
+            clear_description: T::Boolean,
+            allows_sensitive_properties: T::Boolean,
+            description: String,
+            labels: HubspotSDK::ObjectTypeDefinitionLabels::OrHash,
+            primary_display_property: String,
+            required_properties: T::Array[String],
+            restorable: T::Boolean,
+            searchable_properties: T::Array[String],
+            secondary_display_properties: T::Array[String],
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::ObjectTypeDefinition)
+        end
+        def update_schema(
+          # Path param
+          object_type,
+          # Path param
+          app_id:,
+          # Body param
+          clear_description:,
+          # Body param
+          allows_sensitive_properties: nil,
+          # Body param
+          description: nil,
+          # Body param
+          labels: nil,
+          # Body param
+          primary_display_property: nil,
+          # Body param
+          required_properties: nil,
+          # Body param
+          restorable: nil,
+          # Body param
+          searchable_properties: nil,
+          # Body param
+          secondary_display_properties: nil,
+          request_options: {}
+        )
+        end
+
+        # Update the name that your app will display when a user is selecting media bridge
+        # items.
+        sig do
+          params(
+            app_id: String,
+            updated_at: Integer,
+            allow_import_on_disconnect: T::Boolean,
+            module_name: String,
+            name: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse)
+        end
+        def update_settings(
+          app_id,
+          updated_at:,
+          allow_import_on_disconnect: nil,
+          module_name: nil,
+          name: nil,
+          request_options: {}
+        )
+        end
+
+        # @api private
+        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        def self.new(client:)
+        end
+      end
+    end
+  end
+end

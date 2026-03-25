@@ -1,0 +1,26 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type list_create_id_mapping_params =
+        { body: ::Array[String] }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class ListCreateIDMappingParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor body: ::Array[String]
+
+        def initialize: (
+          body: ::Array[String],
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          body: ::Array[String],
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

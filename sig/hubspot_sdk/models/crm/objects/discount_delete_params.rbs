@@ -1,0 +1,28 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Objects
+        type discount_delete_params =
+          { discount_id: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class DiscountDeleteParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor discount_id: String
+
+          def initialize: (
+            discount_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            discount_id: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

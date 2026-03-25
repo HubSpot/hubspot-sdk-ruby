@@ -1,11 +1,47 @@
 module HubspotSDK
   module Account = HubspotSDK::Models::Account
 
+  class ActionResponse = HubspotSDK::Models::ActionResponse
+
+  module AppWebhooks = HubspotSDK::Models::AppWebhooks
+
+  class AssociationDefinition = HubspotSDK::Models::AssociationDefinition
+
+  class AssociationDefinitionEgg = HubspotSDK::Models::AssociationDefinitionEgg
+
   class AssociationSpec = HubspotSDK::Models::AssociationSpec
+
+  module Auth = HubspotSDK::Models::Auth
 
   module Automation = HubspotSDK::Models::Automation
 
+  class AutomationActionsOption = HubspotSDK::Models::AutomationActionsOption
+
+  class BatchInputPropertyCreate = HubspotSDK::Models::BatchInputPropertyCreate
+
+  class BatchInputPropertyName = HubspotSDK::Models::BatchInputPropertyName
+
+  class BatchInputPublicObjectID = HubspotSDK::Models::BatchInputPublicObjectID
+
+  class BatchInputString = HubspotSDK::Models::BatchInputString
+
+  class BatchReadInputPropertyName = HubspotSDK::Models::BatchReadInputPropertyName
+
+  class BatchResponseProperty = HubspotSDK::Models::BatchResponseProperty
+
+  module BusinessUnits = HubspotSDK::Models::BusinessUnits
+
   module Cms = HubspotSDK::Models::Cms
+
+  class CollectionResponseObjectSchemaNoPaging = HubspotSDK::Models::CollectionResponseObjectSchemaNoPaging
+
+  class CollectionResponsePropertyGroupNoPaging = HubspotSDK::Models::CollectionResponsePropertyGroupNoPaging
+
+  class CollectionResponsePropertyNoPaging = HubspotSDK::Models::CollectionResponsePropertyNoPaging
+
+  module CommunicationPreferences = HubspotSDK::Models::CommunicationPreferences
+
+  module Conversations = HubspotSDK::Models::Conversations
 
   module Crm = HubspotSDK::Models::Crm
 
@@ -27,9 +63,37 @@ module HubspotSDK
 
   class NextPage = HubspotSDK::Models::NextPage
 
+  class ObjectSchema = HubspotSDK::Models::ObjectSchema
+
+  class ObjectTypeDefinition = HubspotSDK::Models::ObjectTypeDefinition
+
+  class ObjectTypeDefinitionLabels = HubspotSDK::Models::ObjectTypeDefinitionLabels
+
+  class ObjectTypeDefinitionPatch = HubspotSDK::Models::ObjectTypeDefinitionPatch
+
+  class Option = HubspotSDK::Models::Option
+
+  class OptionInput = HubspotSDK::Models::OptionInput
+
   class Paging = HubspotSDK::Models::Paging
 
   class PreviousPage = HubspotSDK::Models::PreviousPage
+
+  class Property = HubspotSDK::Models::Property
+
+  class PropertyCreate = HubspotSDK::Models::PropertyCreate
+
+  class PropertyGroup = HubspotSDK::Models::PropertyGroup
+
+  class PropertyGroupCreate = HubspotSDK::Models::PropertyGroupCreate
+
+  class PropertyGroupUpdate = HubspotSDK::Models::PropertyGroupUpdate
+
+  class PropertyModificationMetadata = HubspotSDK::Models::PropertyModificationMetadata
+
+  class PropertyName = HubspotSDK::Models::PropertyName
+
+  class PropertyValue = HubspotSDK::Models::PropertyValue
 
   class PublicObjectID = HubspotSDK::Models::PublicObjectID
 
@@ -38,4 +102,8 @@ module HubspotSDK
   module Settings = HubspotSDK::Models::Settings
 
   class StandardError = HubspotSDK::Models::StandardError
+
+  class TaskLocator = HubspotSDK::Models::TaskLocator
+
+  class VersionUser = HubspotSDK::Models::VersionUser
 end

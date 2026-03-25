@@ -22,7 +22,8 @@ module HubspotSDK
         required :started_at, Time, api_name: :startedAt
 
         # @!attribute status
-        #   The status of the batch processing request. The expected value is "COMPLETE".
+        #   The status of the batch processing request: "PENDING", "PROCESSING",
+        #   "CANCELLED", or "COMPLETE"
         #
         #   @return [Symbol, HubspotSDK::Models::Crm::BatchResponseSimplePublicObject::Status]
         required :status, enum: -> { HubspotSDK::Crm::BatchResponseSimplePublicObject::Status }
@@ -51,6 +52,9 @@ module HubspotSDK
         optional :requested_at, Time, api_name: :requestedAt
 
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
+        #   Some parameter documentations has been truncated, see
+        #   {HubspotSDK::Models::Crm::BatchResponseSimplePublicObject} for more details.
+        #
         #   A public object batch response object
         #
         #   @param completed_at [Time] The timestamp when the batch processing was completed, in ISO 8601 format.
@@ -59,7 +63,7 @@ module HubspotSDK
         #
         #   @param started_at [Time] The timestamp when the batch processing began, in ISO 8601 format.
         #
-        #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponseSimplePublicObject::Status] The status of the batch processing request. The expected value is "COMPLETE".
+        #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponseSimplePublicObject::Status] The status of the batch processing request: "PENDING", "PROCESSING", "CANCELLED"
         #
         #   @param errors [Array<HubspotSDK::Models::StandardError>]
         #
@@ -69,7 +73,8 @@ module HubspotSDK
         #
         #   @param requested_at [Time] The timestamp when the batch request was initially made, in ISO 8601 format.
 
-        # The status of the batch processing request. The expected value is "COMPLETE".
+        # The status of the batch processing request: "PENDING", "PROCESSING",
+        # "CANCELLED", or "COMPLETE"
         #
         # @see HubspotSDK::Models::Crm::BatchResponseSimplePublicObject#status
         module Status

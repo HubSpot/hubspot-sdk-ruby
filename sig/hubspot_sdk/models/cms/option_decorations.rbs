@@ -1,0 +1,65 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type option_decorations =
+        { color: HubspotSDK::Models::Cms::OptionDecorations::color }
+
+      class OptionDecorations < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor color: HubspotSDK::Models::Cms::OptionDecorations::color
+
+        def initialize: (
+          color: HubspotSDK::Models::Cms::OptionDecorations::color
+        ) -> void
+
+        def to_hash: -> {
+          color: HubspotSDK::Models::Cms::OptionDecorations::color
+        }
+
+        type color =
+          :BLACK
+          | :BLUE
+          | :BLUE_LIGHT
+          | :GRAY
+          | :GREEN
+          | :GREEN_LIGHT
+          | :ORANGE
+          | :ORANGE_LIGHT
+          | :PINK
+          | :PINK_LIGHT
+          | :PURPLE
+          | :PURPLE_LIGHT
+          | :RED
+          | :RED_LIGHT
+          | :TEAL
+          | :TEAL_LIGHT
+          | :YELLOW
+          | :YELLOW_LIGHT
+
+        module Color
+          extend HubspotSDK::Internal::Type::Enum
+
+          BLACK: :BLACK
+          BLUE: :BLUE
+          BLUE_LIGHT: :BLUE_LIGHT
+          GRAY: :GRAY
+          GREEN: :GREEN
+          GREEN_LIGHT: :GREEN_LIGHT
+          ORANGE: :ORANGE
+          ORANGE_LIGHT: :ORANGE_LIGHT
+          PINK: :PINK
+          PINK_LIGHT: :PINK_LIGHT
+          PURPLE: :PURPLE
+          PURPLE_LIGHT: :PURPLE_LIGHT
+          RED: :RED
+          RED_LIGHT: :RED_LIGHT
+          TEAL: :TEAL
+          TEAL_LIGHT: :TEAL_LIGHT
+          YELLOW: :YELLOW
+          YELLOW_LIGHT: :YELLOW_LIGHT
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::OptionDecorations::color]
+        end
+      end
+    end
+  end
+end

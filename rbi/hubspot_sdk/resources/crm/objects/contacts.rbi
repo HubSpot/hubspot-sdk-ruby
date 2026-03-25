@@ -5,12 +5,16 @@ module HubspotSDK
     class Crm
       class Objects
         class Contacts
-          # Create a CRM object with the given properties and return a copy of the object,
-          # including the ID. Documentation and examples for creating standard objects is
-          # provided.
+          sig { returns(HubspotSDK::Resources::Crm::Objects::Contacts::Batch) }
+          attr_reader :batch
+
+          # Create a single contact. Include a `properties` object to define
+          # [property values](https://developers.hubspot.com/docs/guides/api/crm/properties)
+          # for the contact, along with an `associations` array to define
+          # [associations](https://developers.hubspot.com/docs/guides/api/crm/associations/associations-v4)
+          # with other CRM records.
           sig do
             params(
-              object_type: String,
               associations:
                 T::Array[HubspotSDK::Crm::PublicAssociationsForObject::OrHash],
               properties: T::Hash[Symbol, String],
@@ -18,7 +22,6 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
           def create(
-            object_type,
             associations:,
             # Key-value pairs for setting properties for the new object.
             properties:,
@@ -26,16 +29,16 @@ module HubspotSDK
           )
           end
 
-          # Perform a partial update of an Object identified by `{objectId}`or optionally a
-          # unique property value as specified by the `idProperty` query param. `{objectId}`
-          # refers to the internal object ID by default, and the `idProperty` query param
-          # refers to a property whose values are unique for the object. Provided property
+          # Update an existing contact, identified by ID or email/unique property value. To
+          # identify a contact by ID, include the ID in the request URL path. To identify a
+          # contact by their email or other unique property, include the email/property
+          # value in the request URL path, and add the `idProperty` query parameter
+          # (`/crm/v3/objects/contacts/jon@website.com?idProperty=email`). Provided property
           # values will be overwritten. Read-only and non-existent properties will result in
           # an error. Properties values can be cleared by passing an empty string.
           sig do
             params(
-              object_id_: String,
-              object_type: String,
+              contact_id: String,
               properties: T::Hash[Symbol, String],
               id_property: String,
               request_options: HubspotSDK::RequestOptions::OrHash
@@ -43,9 +46,7 @@ module HubspotSDK
           end
           def update(
             # Path param
-            object_id_,
-            # Path param
-            object_type:,
+            contact_id,
             # Body param: Key value pairs representing the properties of the object.
             properties:,
             # Query param: The name of a property whose values are unique for this object type
@@ -54,11 +55,10 @@ module HubspotSDK
           )
           end
 
-          # Read a page of objects. Control what is returned via the `properties` query
-          # param.
+          # Retrieve all contacts, using query parameters to specify the information that
+          # gets returned.
           sig do
             params(
-              object_type: String,
               after: String,
               archived: T::Boolean,
               associations: T::Array[String],
@@ -73,7 +73,6 @@ module HubspotSDK
             )
           end
           def list(
-            object_type,
             # The paging cursor token of the last successfully read resource will be returned
             # as the `paging.next.after` JSON property of a paged response containing more
             # results.
@@ -98,15 +97,18 @@ module HubspotSDK
           )
           end
 
-          # Move an Object identified by `{objectId}` to the recycling bin.
+          # Delete a contact by ID. Deleted contacts can be restored within 90 days of
+          # deletion. Learn more about the
+          # [data impacted by contact deletions](https://knowledge.hubspot.com/privacy-and-consent/understand-restorable-and-permanent-contact-deletions)
+          # and how to
+          # [restore archived records](https://knowledge.hubspot.com/records/restore-deleted-records).
           sig do
             params(
-              object_id_: String,
-              object_type: String,
+              contact_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(object_id_, object_type:, request_options: {})
+          def delete(contact_id, request_options: {})
           end
 
           # Permanently delete a contact and all associated content to follow GDPR. Use
@@ -116,14 +118,12 @@ module HubspotSDK
           # [permanently deleting contacts](https://knowledge.hubspot.com/privacy-and-consent/how-do-i-perform-a-gdpr-delete-in-hubspot).
           sig do
             params(
-              object_type: String,
               object_id_: String,
               id_property: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
           def gdpr_delete(
-            object_type,
             # The ID of the contact to permanently delete.
             object_id_:,
             # The name of a property whose values are unique for this object. An alternative
@@ -133,14 +133,12 @@ module HubspotSDK
           )
           end
 
-          # Read an Object identified by `{objectId}`. `{objectId}` refers to the internal
-          # object ID by default, or optionally any unique property value as specified by
-          # the `idProperty` query param. Control what is returned via the `properties`
-          # query param.
+          # Retrieve a contact by its ID (`contactId`) or by a unique property
+          # (`idProperty`). You can specify what is returned using the `properties` query
+          # parameter.
           sig do
             params(
-              object_id_: String,
-              object_type: String,
+              contact_id: String,
               archived: T::Boolean,
               associations: T::Array[String],
               id_property: String,
@@ -150,57 +148,49 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::SimplePublicObjectWithAssociations)
           end
           def get(
-            # Path param
-            object_id_,
-            # Path param
-            object_type:,
-            # Query param: Whether to return only results that have been archived.
+            contact_id,
+            # Whether to return only results that have been archived.
             archived: nil,
-            # Query param: A comma separated list of object types to retrieve associated IDs
-            # for. If any of the specified associations do not exist, they will be ignored.
+            # A comma separated list of object types to retrieve associated IDs for. If any of
+            # the specified associations do not exist, they will be ignored.
             associations: nil,
-            # Query param: The name of a property whose values are unique for this object type
+            # The name of a property whose values are unique for this object type
             id_property: nil,
-            # Query param: A comma separated list of the properties to be returned in the
-            # response. If any of the specified properties are not present on the requested
-            # object(s), they will be ignored.
+            # A comma separated list of the properties to be returned in the response. If any
+            # of the specified properties are not present on the requested object(s), they
+            # will be ignored.
             properties: nil,
-            # Query param: A comma separated list of the properties to be returned along with
-            # their history of previous values. If any of the specified properties are not
-            # present on the requested object(s), they will be ignored.
+            # A comma separated list of the properties to be returned along with their history
+            # of previous values. If any of the specified properties are not present on the
+            # requested object(s), they will be ignored.
             properties_with_history: nil,
             request_options: {}
           )
           end
 
-          # Merge two CRM objects of the same type by specifying one as the primary object
-          # and the other as the object to be merged into it.
+          # Merge two contact records. Learn more about
+          # [merging records](https://knowledge.hubspot.com/records/merge-records).
           sig do
             params(
-              object_type: String,
               object_id_to_merge: String,
               primary_object_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
           def merge(
-            object_type,
-            # The object ID of the record that the merge will not set as the current value
-            # after the merge.
+            # The ID of the company to merge into the primary.
             object_id_to_merge:,
-            # The object ID of the record that the merge will generally set as the current
-            # value after the merge.
+            # The ID of the primary company, which the other will merge into.
             primary_object_id:,
             request_options: {}
           )
           end
 
-          # Execute a search query to find CRM objects of a given type, using specified
-          # filters and properties. The search can be customized with filters, sorting, and
-          # pagination options.
+          # Search for contacts by filtering on properties, searching through associations,
+          # and sorting results. Learn more about
+          # [CRM search](https://developers.hubspot.com/docs/guides/api/crm/search#make-a-search-request).
           sig do
             params(
-              object_type: String,
               after: String,
               filter_groups: T::Array[HubspotSDK::Crm::FilterGroup::OrHash],
               limit: Integer,
@@ -213,7 +203,6 @@ module HubspotSDK
             )
           end
           def search(
-            object_type,
             # A paging cursor token for retrieving subsequent pages.
             after:,
             # Up to 6 groups of filters defining additional query criteria.

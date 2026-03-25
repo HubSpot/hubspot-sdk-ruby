@@ -1,0 +1,39 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Extensions
+        type card_create_request =
+          {
+            actions: HubspotSDK::Crm::Extensions::CardActions,
+            display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
+            fetch: HubspotSDK::Crm::Extensions::CardFetchBody,
+            title: String
+          }
+
+        class CardCreateRequest < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor actions: HubspotSDK::Crm::Extensions::CardActions
+
+          attr_accessor display_: HubspotSDK::Crm::Extensions::CardDisplayBody
+
+          attr_accessor fetch: HubspotSDK::Crm::Extensions::CardFetchBody
+
+          attr_accessor title: String
+
+          def initialize: (
+            actions: HubspotSDK::Crm::Extensions::CardActions,
+            display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
+            fetch: HubspotSDK::Crm::Extensions::CardFetchBody,
+            title: String
+          ) -> void
+
+          def to_hash: -> {
+            actions: HubspotSDK::Crm::Extensions::CardActions,
+            display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
+            fetch: HubspotSDK::Crm::Extensions::CardFetchBody,
+            title: String
+          }
+        end
+      end
+    end
+  end
+end

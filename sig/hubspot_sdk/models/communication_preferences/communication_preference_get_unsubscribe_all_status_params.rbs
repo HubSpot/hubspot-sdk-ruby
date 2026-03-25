@@ -1,0 +1,57 @@
+module HubspotSDK
+  module Models
+    module CommunicationPreferences
+      type communication_preference_get_unsubscribe_all_status_params =
+        {
+          subscriber_id_string: String,
+          channel: HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetUnsubscribeAllStatusParams::channel,
+          business_unit_id: Integer,
+          verbose: bool
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class CommunicationPreferenceGetUnsubscribeAllStatusParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor subscriber_id_string: String
+
+        attr_accessor channel: HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetUnsubscribeAllStatusParams::channel
+
+        attr_reader business_unit_id: Integer?
+
+        def business_unit_id=: (Integer) -> Integer
+
+        attr_reader verbose: bool?
+
+        def verbose=: (bool) -> bool
+
+        def initialize: (
+          subscriber_id_string: String,
+          channel: HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetUnsubscribeAllStatusParams::channel,
+          ?business_unit_id: Integer,
+          ?verbose: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          subscriber_id_string: String,
+          channel: HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetUnsubscribeAllStatusParams::channel,
+          business_unit_id: Integer,
+          verbose: bool,
+          request_options: HubspotSDK::RequestOptions
+        }
+
+        type channel = :EMAIL
+
+        module Channel
+          extend HubspotSDK::Internal::Type::Enum
+
+          EMAIL: :EMAIL
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetUnsubscribeAllStatusParams::channel]
+        end
+      end
+    end
+  end
+end

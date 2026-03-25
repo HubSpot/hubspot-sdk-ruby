@@ -1,0 +1,38 @@
+module HubspotSDK
+  module Resources
+    class CommunicationPreferences
+      class Statuses
+        class Batch
+          def get_unsubscribe_all_statuses: (
+            channel: HubspotSDK::Models::BatchInputString::channel,
+            inputs: ::Array[String],
+            ?business_unit_id: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse
+
+          def read: (
+            channel: HubspotSDK::Models::BatchInputString::channel,
+            inputs: ::Array[String],
+            ?business_unit_id: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse
+
+          def unsubscribe_all: (
+            channel: HubspotSDK::Models::BatchInputString::channel,
+            inputs: ::Array[String],
+            ?business_unit_id: Integer,
+            ?verbose: bool,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::CommunicationPreferences::BatchResponsePublicBulkOptOutFromAllResponse
+
+          def update_statuses: (
+            inputs: ::Array[HubspotSDK::CommunicationPreferences::PublicStatusRequest],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::CommunicationPreferences::BatchResponsePublicStatus
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

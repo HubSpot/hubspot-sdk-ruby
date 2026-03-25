@@ -2,9 +2,13 @@ module HubspotSDK
   module Resources
     class Cms
       class Blogs
+        attr_reader authors: HubspotSDK::Resources::Cms::Blogs::Authors
+
         attr_reader posts: HubspotSDK::Resources::Cms::Blogs::Posts
 
         attr_reader settings: HubspotSDK::Resources::Cms::Blogs::Settings
+
+        attr_reader tags: HubspotSDK::Resources::Cms::Blogs::Tags
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

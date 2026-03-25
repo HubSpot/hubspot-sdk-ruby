@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_object_list_record = { list_id: String, object_type: String }
+
+      class PublicObjectListRecord < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor list_id: String
+
+        attr_accessor object_type: String
+
+        def initialize: (list_id: String, object_type: String) -> void
+
+        def to_hash: -> { list_id: String, object_type: String }
+      end
+    end
+  end
+end

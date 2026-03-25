@@ -1,0 +1,95 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type social_metadata =
+        {
+          media_type: HubspotSDK::Models::Conversations::SocialMetadata::media_type,
+          id: String,
+          description: String,
+          media_title: String,
+          media_url: String,
+          media_url_string: String,
+          thumbnail_url: String
+        }
+
+      class SocialMetadata < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor media_type: HubspotSDK::Models::Conversations::SocialMetadata::media_type
+
+        attr_reader id: String?
+
+        def id=: (String) -> String
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader media_title: String?
+
+        def media_title=: (String) -> String
+
+        attr_reader media_url: String?
+
+        def media_url=: (String) -> String
+
+        attr_reader media_url_string: String?
+
+        def media_url_string=: (String) -> String
+
+        attr_reader thumbnail_url: String?
+
+        def thumbnail_url=: (String) -> String
+
+        def initialize: (
+          media_type: HubspotSDK::Models::Conversations::SocialMetadata::media_type,
+          ?id: String,
+          ?description: String,
+          ?media_title: String,
+          ?media_url: String,
+          ?media_url_string: String,
+          ?thumbnail_url: String
+        ) -> void
+
+        def to_hash: -> {
+          media_type: HubspotSDK::Models::Conversations::SocialMetadata::media_type,
+          id: String,
+          description: String,
+          media_title: String,
+          media_url: String,
+          media_url_string: String,
+          thumbnail_url: String
+        }
+
+        type media_type =
+          :ARTICLE
+          | :AUDIO
+          | :CAROUSEL
+          | :DOCUMENT
+          | :GIF
+          | :LINK
+          | :NONE
+          | :PHOTO
+          | :POLL
+          | :STORY
+          | :VIDEO
+
+        module MediaType
+          extend HubspotSDK::Internal::Type::Enum
+
+          ARTICLE: :ARTICLE
+          AUDIO: :AUDIO
+          CAROUSEL: :CAROUSEL
+          DOCUMENT: :DOCUMENT
+          GIF: :GIF
+          LINK: :LINK
+          NONE: :NONE
+          PHOTO: :PHOTO
+          POLL: :POLL
+          STORY: :STORY
+          VIDEO: :VIDEO
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::SocialMetadata::media_type]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,46 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type constant_string =
+        {
+          operator: HubspotSDK::Models::Cms::ConstantString::operator,
+          property_name: String,
+          value: String
+        }
+
+      class ConstantString < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor operator: HubspotSDK::Models::Cms::ConstantString::operator
+
+        attr_reader property_name: String?
+
+        def property_name=: (String) -> String
+
+        attr_reader value: String?
+
+        def value=: (String) -> String
+
+        def initialize: (
+          operator: HubspotSDK::Models::Cms::ConstantString::operator,
+          ?property_name: String,
+          ?value: String
+        ) -> void
+
+        def to_hash: -> {
+          operator: HubspotSDK::Models::Cms::ConstantString::operator,
+          property_name: String,
+          value: String
+        }
+
+        type operator = :CONSTANT_STRING
+
+        module Operator
+          extend HubspotSDK::Internal::Type::Enum
+
+          CONSTANT_STRING: :CONSTANT_STRING
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::ConstantString::operator]
+        end
+      end
+    end
+  end
+end

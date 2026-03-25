@@ -17,7 +17,12 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
           end
-          def create(object_type, inputs:, request_options: {})
+          def create(
+            # The type of object.
+            object_type,
+            inputs:,
+            request_options: {}
+          )
           end
 
           # Update a batch of CRM objects by their internal IDs or unique property values,
@@ -30,7 +35,12 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
           end
-          def update(object_type, inputs:, request_options: {})
+          def update(
+            # The type of object.
+            object_type,
+            inputs:,
+            request_options: {}
+          )
           end
 
           # Read a page of objects. Control what is returned via the `properties` query
@@ -52,6 +62,7 @@ module HubspotSDK
             )
           end
           def list(
+            # The type of object.
             object_type,
             # The paging cursor token of the last successfully read resource will be returned
             # as the `paging.next.after` JSON property of a paged response containing more
@@ -86,7 +97,12 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(object_type, inputs:, request_options: {})
+          def delete(
+            # The type of object.
+            object_type,
+            inputs:,
+            request_options: {}
+          )
           end
 
           # Retrieve records by record ID or include the `idProperty` parameter to retrieve
@@ -103,7 +119,7 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
           end
           def get(
-            # Path param
+            # Path param: The type of object.
             object_type,
             # Body param
             inputs:,
@@ -132,12 +148,11 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
           def merge(
+            # The type of object.
             object_type,
-            # The object ID of the record that the merge will not set as the current value
-            # after the merge.
+            # The ID of the company to merge into the primary.
             object_id_to_merge:,
-            # The object ID of the record that the merge will generally set as the current
-            # value after the merge.
+            # The ID of the primary company, which the other will merge into.
             primary_object_id:,
             request_options: {}
           )
@@ -161,6 +176,7 @@ module HubspotSDK
             )
           end
           def search(
+            # The type of object.
             object_type,
             # A paging cursor token for retrieving subsequent pages.
             after:,
@@ -191,7 +207,12 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject)
           end
-          def upsert(object_type, inputs:, request_options: {})
+          def upsert(
+            # The type of object.
+            object_type,
+            inputs:,
+            request_options: {}
+          )
           end
 
           # @api private

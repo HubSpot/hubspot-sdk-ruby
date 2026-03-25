@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    type property_modification_metadata =
+      {
+        archivable: bool,
+        read_only_definition: bool,
+        read_only_value: bool,
+        read_only_options: bool
+      }
+
+    class PropertyModificationMetadata < HubspotSDK::Internal::Type::BaseModel
+      attr_accessor archivable: bool
+
+      attr_accessor read_only_definition: bool
+
+      attr_accessor read_only_value: bool
+
+      attr_reader read_only_options: bool?
+
+      def read_only_options=: (bool) -> bool
+
+      def initialize: (
+        archivable: bool,
+        read_only_definition: bool,
+        read_only_value: bool,
+        ?read_only_options: bool
+      ) -> void
+
+      def to_hash: -> {
+        archivable: bool,
+        read_only_definition: bool,
+        read_only_value: bool,
+        read_only_options: bool
+      }
+    end
+  end
+end

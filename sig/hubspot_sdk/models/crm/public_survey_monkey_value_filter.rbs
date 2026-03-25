@@ -1,0 +1,91 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_survey_monkey_value_filter =
+        {
+          filter_type: HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::filter_type,
+          operator: String,
+          survey_id: String,
+          survey_question: String,
+          value_comparison: HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::value_comparison,
+          survey_answer_col_id: String,
+          survey_answer_row_id: String
+        }
+
+      class PublicSurveyMonkeyValueFilter < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor filter_type: HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::filter_type
+
+        attr_accessor operator: String
+
+        attr_accessor survey_id: String
+
+        attr_accessor survey_question: String
+
+        attr_accessor value_comparison: HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::value_comparison
+
+        attr_reader survey_answer_col_id: String?
+
+        def survey_answer_col_id=: (String) -> String
+
+        attr_reader survey_answer_row_id: String?
+
+        def survey_answer_row_id=: (String) -> String
+
+        def initialize: (
+          filter_type: HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::filter_type,
+          operator: String,
+          survey_id: String,
+          survey_question: String,
+          value_comparison: HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::value_comparison,
+          ?survey_answer_col_id: String,
+          ?survey_answer_row_id: String
+        ) -> void
+
+        def to_hash: -> {
+          filter_type: HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::filter_type,
+          operator: String,
+          survey_id: String,
+          survey_question: String,
+          value_comparison: HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::value_comparison,
+          survey_answer_col_id: String,
+          survey_answer_row_id: String
+        }
+
+        type filter_type = :SURVEY_MONKEY_VALUE
+
+        module FilterType
+          extend HubspotSDK::Internal::Type::Enum
+
+          SURVEY_MONKEY_VALUE: :SURVEY_MONKEY_VALUE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::filter_type]
+        end
+
+        type value_comparison =
+          HubspotSDK::Crm::PublicBoolPropertyOperation
+          | HubspotSDK::Crm::PublicNumberPropertyOperation
+          | HubspotSDK::Crm::PublicStringPropertyOperation
+          | HubspotSDK::Crm::PublicDateTimePropertyOperation
+          | HubspotSDK::Crm::PublicRangedDatePropertyOperation
+          | HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation
+          | HubspotSDK::Crm::PublicComparativeDatePropertyOperation
+          | HubspotSDK::Crm::PublicRollingDateRangePropertyOperation
+          | HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation
+          | HubspotSDK::Crm::PublicEnumerationPropertyOperation
+          | HubspotSDK::Crm::PublicAllPropertyTypesOperation
+          | HubspotSDK::Crm::PublicRangedNumberPropertyOperation
+          | HubspotSDK::Crm::PublicMultiStringPropertyOperation
+          | HubspotSDK::Crm::PublicDatePropertyOperation
+          | HubspotSDK::Crm::PublicCalendarDatePropertyOperation
+          | HubspotSDK::Crm::PublicTimePointOperation
+          | HubspotSDK::Crm::PublicRangedTimeOperation
+
+        module ValueComparison
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::value_comparison]
+        end
+      end
+    end
+  end
+end

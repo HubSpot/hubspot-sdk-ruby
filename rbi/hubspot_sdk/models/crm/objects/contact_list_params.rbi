@@ -16,9 +16,6 @@ module HubspotSDK
               )
             end
 
-          sig { returns(String) }
-          attr_accessor :object_type
-
           # The paging cursor token of the last successfully read resource will be returned
           # as the `paging.next.after` JSON property of a paged response containing more
           # results.
@@ -71,7 +68,6 @@ module HubspotSDK
 
           sig do
             params(
-              object_type: String,
               after: String,
               archived: T::Boolean,
               associations: T::Array[String],
@@ -82,7 +78,6 @@ module HubspotSDK
             ).returns(T.attached_class)
           end
           def self.new(
-            object_type:,
             # The paging cursor token of the last successfully read resource will be returned
             # as the `paging.next.after` JSON property of a paged response containing more
             # results.
@@ -110,7 +105,6 @@ module HubspotSDK
           sig do
             override.returns(
               {
-                object_type: String,
                 after: String,
                 archived: T::Boolean,
                 associations: T::Array[String],

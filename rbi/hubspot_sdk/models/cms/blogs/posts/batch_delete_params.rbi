@@ -5,7 +5,7 @@ module HubspotSDK
     module Cms
       module Blogs
         module Posts
-          class BatchDeleteParams < HubspotSDK::Models::Cms::Blogs::BatchInputString
+          class BatchDeleteParams < HubspotSDK::Models::BatchInputString
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

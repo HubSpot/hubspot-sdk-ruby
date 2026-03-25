@@ -5,7 +5,7 @@ module HubspotSDK
     module Cms
       module Blogs
         module Posts
-          class BatchGetParams < HubspotSDK::Models::Cms::Blogs::BatchInputString
+          class BatchGetParams < HubspotSDK::Models::BatchInputString
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

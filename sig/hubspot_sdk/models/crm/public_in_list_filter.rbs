@@ -1,0 +1,51 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_in_list_filter =
+        {
+          filter_type: HubspotSDK::Models::Crm::PublicInListFilter::filter_type,
+          list_id: String,
+          operator: String,
+          metadata: HubspotSDK::Crm::PublicInListFilterMetadata
+        }
+
+      class PublicInListFilter < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor filter_type: HubspotSDK::Models::Crm::PublicInListFilter::filter_type
+
+        attr_accessor list_id: String
+
+        attr_accessor operator: String
+
+        attr_reader metadata: HubspotSDK::Crm::PublicInListFilterMetadata?
+
+        def metadata=: (
+          HubspotSDK::Crm::PublicInListFilterMetadata
+        ) -> HubspotSDK::Crm::PublicInListFilterMetadata
+
+        def initialize: (
+          filter_type: HubspotSDK::Models::Crm::PublicInListFilter::filter_type,
+          list_id: String,
+          operator: String,
+          ?metadata: HubspotSDK::Crm::PublicInListFilterMetadata
+        ) -> void
+
+        def to_hash: -> {
+          filter_type: HubspotSDK::Models::Crm::PublicInListFilter::filter_type,
+          list_id: String,
+          operator: String,
+          metadata: HubspotSDK::Crm::PublicInListFilterMetadata
+        }
+
+        type filter_type = :IN_LIST
+
+        module FilterType
+          extend HubspotSDK::Internal::Type::Enum
+
+          IN_LIST: :IN_LIST
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicInListFilter::filter_type]
+        end
+      end
+    end
+  end
+end

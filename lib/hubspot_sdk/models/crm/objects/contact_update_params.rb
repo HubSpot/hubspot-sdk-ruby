@@ -9,15 +9,10 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          # @!attribute object_type
+          # @!attribute contact_id
           #
           #   @return [String]
-          required :object_type, String
-
-          # @!attribute object_id_
-          #
-          #   @return [String]
-          required :object_id_, String
+          required :contact_id, String
 
           # @!attribute id_property
           #   The name of a property whose values are unique for this object type
@@ -25,10 +20,8 @@ module HubspotSDK
           #   @return [String, nil]
           optional :id_property, String
 
-          # @!method initialize(object_type:, object_id_:, id_property: nil, request_options: {})
-          #   @param object_type [String]
-          #
-          #   @param object_id_ [String]
+          # @!method initialize(contact_id:, id_property: nil, request_options: {})
+          #   @param contact_id [String]
           #
           #   @param id_property [String] The name of a property whose values are unique for this object type
           #

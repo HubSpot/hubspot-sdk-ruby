@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_import_metadata =
+        {
+          counters: ::Hash[Symbol, Integer],
+          file_ids: ::Array[String],
+          object_lists: ::Array[HubspotSDK::Crm::PublicObjectListRecord]
+        }
+
+      class PublicImportMetadata < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor counters: ::Hash[Symbol, Integer]
+
+        attr_accessor file_ids: ::Array[String]
+
+        attr_accessor object_lists: ::Array[HubspotSDK::Crm::PublicObjectListRecord]
+
+        def initialize: (
+          counters: ::Hash[Symbol, Integer],
+          file_ids: ::Array[String],
+          object_lists: ::Array[HubspotSDK::Crm::PublicObjectListRecord]
+        ) -> void
+
+        def to_hash: -> {
+          counters: ::Hash[Symbol, Integer],
+          file_ids: ::Array[String],
+          object_lists: ::Array[HubspotSDK::Crm::PublicObjectListRecord]
+        }
+      end
+    end
+  end
+end

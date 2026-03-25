@@ -1,0 +1,19 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Extensions
+        module Calling
+          type transcript_create_response = { id: String }
+
+          class TranscriptCreateResponse < HubspotSDK::Internal::Type::BaseModel
+            attr_accessor id: String
+
+            def initialize: (id: String) -> void
+
+            def to_hash: -> { id: String }
+          end
+        end
+      end
+    end
+  end
+end

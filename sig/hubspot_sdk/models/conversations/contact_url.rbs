@@ -1,0 +1,42 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type contact_url =
+        {
+          url: String,
+          type: HubspotSDK::Models::Conversations::ContactURL::type_
+        }
+
+      class ContactURL < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor url: String
+
+        attr_reader type: HubspotSDK::Models::Conversations::ContactURL::type_?
+
+        def type=: (
+          HubspotSDK::Models::Conversations::ContactURL::type_
+        ) -> HubspotSDK::Models::Conversations::ContactURL::type_
+
+        def initialize: (
+          url: String,
+          ?type: HubspotSDK::Models::Conversations::ContactURL::type_
+        ) -> void
+
+        def to_hash: -> {
+          url: String,
+          type: HubspotSDK::Models::Conversations::ContactURL::type_
+        }
+
+        type type_ = :HOME | :WORK
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          HOME: :HOME
+          WORK: :WORK
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::ContactURL::type_]
+        end
+      end
+    end
+  end
+end

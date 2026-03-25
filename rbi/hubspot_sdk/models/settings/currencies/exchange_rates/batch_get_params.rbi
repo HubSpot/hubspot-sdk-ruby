@@ -5,7 +5,7 @@ module HubspotSDK
     module Settings
       module Currencies
         module ExchangeRates
-          class BatchGetParams < HubspotSDK::Models::Settings::BatchInputPublicObjectID
+          class BatchGetParams < HubspotSDK::Models::BatchInputPublicObjectID
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type filtering_meta_data =
+        {
+          include_helpdesk_routable_teams_only: bool,
+          include_unconfirmed_users: bool,
+          list_processing_types: ::Array[String],
+          pipeline_ids: ::Array[String]
+        }
+
+      class FilteringMetaData < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor include_helpdesk_routable_teams_only: bool
+
+        attr_accessor include_unconfirmed_users: bool
+
+        attr_accessor list_processing_types: ::Array[String]
+
+        attr_accessor pipeline_ids: ::Array[String]
+
+        def initialize: (
+          include_helpdesk_routable_teams_only: bool,
+          include_unconfirmed_users: bool,
+          list_processing_types: ::Array[String],
+          pipeline_ids: ::Array[String]
+        ) -> void
+
+        def to_hash: -> {
+          include_helpdesk_routable_teams_only: bool,
+          include_unconfirmed_users: bool,
+          list_processing_types: ::Array[String],
+          pipeline_ids: ::Array[String]
+        }
+      end
+    end
+  end
+end

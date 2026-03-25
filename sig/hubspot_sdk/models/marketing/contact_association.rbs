@@ -1,0 +1,41 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type contact_association =
+        {
+          contact_id: String,
+          email: String,
+          firstname: String,
+          lastname: String
+        }
+
+      class ContactAssociation < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor contact_id: String
+
+        attr_accessor email: String
+
+        attr_reader firstname: String?
+
+        def firstname=: (String) -> String
+
+        attr_reader lastname: String?
+
+        def lastname=: (String) -> String
+
+        def initialize: (
+          contact_id: String,
+          email: String,
+          ?firstname: String,
+          ?lastname: String
+        ) -> void
+
+        def to_hash: -> {
+          contact_id: String,
+          email: String,
+          firstname: String,
+          lastname: String
+        }
+      end
+    end
+  end
+end

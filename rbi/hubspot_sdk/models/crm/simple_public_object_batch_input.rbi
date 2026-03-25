@@ -12,8 +12,8 @@ module HubspotSDK
             )
           end
 
-        # The ID of the contact to update. This can be the object ID, or the unique
-        # property value of the `idProperty` property.
+        # The id to be updated. This can be the object id, or the unique property value of
+        # the idProperty property
         sig { returns(String) }
         attr_accessor :id
 
@@ -21,7 +21,7 @@ module HubspotSDK
         sig { returns(T::Hash[Symbol, String]) }
         attr_accessor :properties
 
-        # The name of a unique property, when identifying records by property.
+        # The name of a property whose values are unique for this object
         sig { returns(T.nilable(String)) }
         attr_reader :id_property
 
@@ -46,12 +46,12 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The ID of the contact to update. This can be the object ID, or the unique
-          # property value of the `idProperty` property.
+          # The id to be updated. This can be the object id, or the unique property value of
+          # the idProperty property
           id:,
           # Key-value pairs representing the properties of the object.
           properties:,
-          # The name of a unique property, when identifying records by property.
+          # The name of a property whose values are unique for this object
           id_property: nil,
           # A unique identifier for tracing the request.
           object_write_trace_id: nil

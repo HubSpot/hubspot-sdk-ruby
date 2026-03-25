@@ -1,0 +1,22 @@
+module HubspotSDK
+  module Models
+    module CommunicationPreferences
+      type batch_input_public_status_request =
+        {
+          inputs: ::Array[HubspotSDK::CommunicationPreferences::PublicStatusRequest]
+        }
+
+      class BatchInputPublicStatusRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubspotSDK::CommunicationPreferences::PublicStatusRequest]
+
+        def initialize: (
+          inputs: ::Array[HubspotSDK::CommunicationPreferences::PublicStatusRequest]
+        ) -> void
+
+        def to_hash: -> {
+          inputs: ::Array[HubspotSDK::CommunicationPreferences::PublicStatusRequest]
+        }
+      end
+    end
+  end
+end

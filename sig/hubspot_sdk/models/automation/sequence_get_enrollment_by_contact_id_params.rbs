@@ -1,0 +1,25 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type sequence_get_enrollment_by_contact_id_params =
+        { contact_id: String } & HubspotSDK::Internal::Type::request_parameters
+
+      class SequenceGetEnrollmentByContactIDParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor contact_id: String
+
+        def initialize: (
+          contact_id: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          contact_id: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

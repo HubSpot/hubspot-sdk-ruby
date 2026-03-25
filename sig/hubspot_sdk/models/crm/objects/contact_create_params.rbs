@@ -3,26 +3,15 @@ module HubspotSDK
     module Crm
       module Objects
         type contact_create_params =
-          { object_type: String }
-          & HubspotSDK::Internal::Type::request_parameters
+          {  } & HubspotSDK::Internal::Type::request_parameters
 
         class ContactCreateParams < HubspotSDK::Models::Crm::SimplePublicObjectInputForCreate
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def object_type: -> String
+          def initialize: (?request_options: HubspotSDK::request_opts) -> void
 
-          def object_type=: (String _) -> String
-
-          def initialize: (
-            object_type: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> void
-
-          def to_hash: -> {
-            object_type: String,
-            request_options: HubspotSDK::RequestOptions
-          }
+          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
         end
       end
     end

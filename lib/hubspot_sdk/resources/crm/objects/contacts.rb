@@ -5,13 +5,16 @@ module HubspotSDK
     class Crm
       class Objects
         class Contacts
-          # Create a CRM object with the given properties and return a copy of the object,
-          # including the ID. Documentation and examples for creating standard objects is
-          # provided.
+          # @return [HubspotSDK::Resources::Crm::Objects::Contacts::Batch]
+          attr_reader :batch
+
+          # Create a single contact. Include a `properties` object to define
+          # [property values](https://developers.hubspot.com/docs/guides/api/crm/properties)
+          # for the contact, along with an `associations` array to define
+          # [associations](https://developers.hubspot.com/docs/guides/api/crm/associations/associations-v4)
+          # with other CRM records.
           #
-          # @overload create(object_type, associations:, properties:, request_options: {})
-          #
-          # @param object_type [String]
+          # @overload create(associations:, properties:, request_options: {})
           #
           # @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
           #
@@ -22,11 +25,11 @@ module HubspotSDK
           # @return [HubspotSDK::Models::Crm::SimplePublicObject]
           #
           # @see HubspotSDK::Models::Crm::Objects::ContactCreateParams
-          def create(object_type, params)
+          def create(params)
             parsed, options = HubspotSDK::Crm::Objects::ContactCreateParams.dump_request(params)
             @client.request(
               method: :post,
-              path: ["crm/objects/2026-03/%1$s", object_type],
+              path: "crm/objects/2026-03/contacts",
               body: parsed,
               model: HubspotSDK::Crm::SimplePublicObject,
               options: options
@@ -36,18 +39,17 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::ContactUpdateParams} for more details.
           #
-          # Perform a partial update of an Object identified by `{objectId}`or optionally a
-          # unique property value as specified by the `idProperty` query param. `{objectId}`
-          # refers to the internal object ID by default, and the `idProperty` query param
-          # refers to a property whose values are unique for the object. Provided property
+          # Update an existing contact, identified by ID or email/unique property value. To
+          # identify a contact by ID, include the ID in the request URL path. To identify a
+          # contact by their email or other unique property, include the email/property
+          # value in the request URL path, and add the `idProperty` query parameter
+          # (`/crm/v3/objects/contacts/jon@website.com?idProperty=email`). Provided property
           # values will be overwritten. Read-only and non-existent properties will result in
           # an error. Properties values can be cleared by passing an empty string.
           #
-          # @overload update(object_id_, object_type:, properties:, id_property: nil, request_options: {})
+          # @overload update(contact_id, properties:, id_property: nil, request_options: {})
           #
-          # @param object_id_ [String] Path param
-          #
-          # @param object_type [String] Path param
+          # @param contact_id [String] Path param
           #
           # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
           #
@@ -58,17 +60,13 @@ module HubspotSDK
           # @return [HubspotSDK::Models::Crm::SimplePublicObject]
           #
           # @see HubspotSDK::Models::Crm::Objects::ContactUpdateParams
-          def update(object_id_, params)
+          def update(contact_id, params)
             query_params = [:id_property]
             parsed, options = HubspotSDK::Crm::Objects::ContactUpdateParams.dump_request(params)
             query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
-            object_type =
-              parsed.delete(:object_type) do
-                raise ArgumentError.new("missing required path argument #{_1}")
-              end
             @client.request(
               method: :patch,
-              path: ["crm/objects/2026-03/%1$s/%2$s", object_type, object_id_],
+              path: ["crm/objects/2026-03/contacts/%1$s", contact_id],
               query: query.transform_keys(id_property: "idProperty"),
               body: parsed.except(*query_params),
               model: HubspotSDK::Crm::SimplePublicObject,
@@ -79,12 +77,10 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::ContactListParams} for more details.
           #
-          # Read a page of objects. Control what is returned via the `properties` query
-          # param.
+          # Retrieve all contacts, using query parameters to specify the information that
+          # gets returned.
           #
-          # @overload list(object_type, after: nil, archived: nil, associations: nil, limit: nil, properties: nil, properties_with_history: nil, request_options: {})
-          #
-          # @param object_type [String]
+          # @overload list(after: nil, archived: nil, associations: nil, limit: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
           # @param after [String] The paging cursor token of the last successfully read resource will be returned
           #
@@ -103,12 +99,12 @@ module HubspotSDK
           # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
           #
           # @see HubspotSDK::Models::Crm::Objects::ContactListParams
-          def list(object_type, params = {})
+          def list(params = {})
             parsed, options = HubspotSDK::Crm::Objects::ContactListParams.dump_request(params)
             query = HubspotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
-              path: ["crm/objects/2026-03/%1$s", object_type],
+              path: "crm/objects/2026-03/contacts",
               query: query.transform_keys(properties_with_history: "propertiesWithHistory"),
               page: HubspotSDK::Internal::Page,
               model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
@@ -116,28 +112,26 @@ module HubspotSDK
             )
           end
 
-          # Move an Object identified by `{objectId}` to the recycling bin.
+          # Delete a contact by ID. Deleted contacts can be restored within 90 days of
+          # deletion. Learn more about the
+          # [data impacted by contact deletions](https://knowledge.hubspot.com/privacy-and-consent/understand-restorable-and-permanent-contact-deletions)
+          # and how to
+          # [restore archived records](https://knowledge.hubspot.com/records/restore-deleted-records).
           #
-          # @overload delete(object_id_, object_type:, request_options: {})
+          # @overload delete(contact_id, request_options: {})
           #
-          # @param object_id_ [String]
-          # @param object_type [String]
+          # @param contact_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
           # @see HubspotSDK::Models::Crm::Objects::ContactDeleteParams
-          def delete(object_id_, params)
-            parsed, options = HubspotSDK::Crm::Objects::ContactDeleteParams.dump_request(params)
-            object_type =
-              parsed.delete(:object_type) do
-                raise ArgumentError.new("missing required path argument #{_1}")
-              end
+          def delete(contact_id, params = {})
             @client.request(
               method: :delete,
-              path: ["crm/objects/2026-03/%1$s/%2$s", object_type, object_id_],
+              path: ["crm/objects/2026-03/contacts/%1$s", contact_id],
               model: NilClass,
-              options: options
+              options: params[:request_options]
             )
           end
 
@@ -150,9 +144,7 @@ module HubspotSDK
           # blocklist and prevent it from being used in the future. Learn more about
           # [permanently deleting contacts](https://knowledge.hubspot.com/privacy-and-consent/how-do-i-perform-a-gdpr-delete-in-hubspot).
           #
-          # @overload gdpr_delete(object_type, object_id_:, id_property: nil, request_options: {})
-          #
-          # @param object_type [String]
+          # @overload gdpr_delete(object_id_:, id_property: nil, request_options: {})
           #
           # @param object_id_ [String] The ID of the contact to permanently delete.
           #
@@ -163,11 +155,11 @@ module HubspotSDK
           # @return [nil]
           #
           # @see HubspotSDK::Models::Crm::Objects::ContactGdprDeleteParams
-          def gdpr_delete(object_type, params)
+          def gdpr_delete(params)
             parsed, options = HubspotSDK::Crm::Objects::ContactGdprDeleteParams.dump_request(params)
             @client.request(
               method: :post,
-              path: ["crm/objects/2026-03/%1$s/gdpr-delete", object_type],
+              path: "crm/objects/2026-03/contacts/gdpr-delete",
               body: parsed,
               model: NilClass,
               options: options
@@ -177,42 +169,35 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::ContactGetParams} for more details.
           #
-          # Read an Object identified by `{objectId}`. `{objectId}` refers to the internal
-          # object ID by default, or optionally any unique property value as specified by
-          # the `idProperty` query param. Control what is returned via the `properties`
-          # query param.
+          # Retrieve a contact by its ID (`contactId`) or by a unique property
+          # (`idProperty`). You can specify what is returned using the `properties` query
+          # parameter.
           #
-          # @overload get(object_id_, object_type:, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
+          # @overload get(contact_id, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
-          # @param object_id_ [String] Path param
+          # @param contact_id [String]
           #
-          # @param object_type [String] Path param
+          # @param archived [Boolean] Whether to return only results that have been archived.
           #
-          # @param archived [Boolean] Query param: Whether to return only results that have been archived.
+          # @param associations [Array<String>] A comma separated list of object types to retrieve associated IDs for. If any of
           #
-          # @param associations [Array<String>] Query param: A comma separated list of object types to retrieve associated IDs f
+          # @param id_property [String] The name of a property whose values are unique for this object type
           #
-          # @param id_property [String] Query param: The name of a property whose values are unique for this object type
+          # @param properties [Array<String>] A comma separated list of the properties to be returned in the response. If any
           #
-          # @param properties [Array<String>] Query param: A comma separated list of the properties to be returned in the resp
-          #
-          # @param properties_with_history [Array<String>] Query param: A comma separated list of the properties to be returned along with
+          # @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations]
           #
           # @see HubspotSDK::Models::Crm::Objects::ContactGetParams
-          def get(object_id_, params)
+          def get(contact_id, params = {})
             parsed, options = HubspotSDK::Crm::Objects::ContactGetParams.dump_request(params)
             query = HubspotSDK::Internal::Util.encode_query_params(parsed)
-            object_type =
-              parsed.delete(:object_type) do
-                raise ArgumentError.new("missing required path argument #{_1}")
-              end
             @client.request(
               method: :get,
-              path: ["crm/objects/2026-03/%1$s/%2$s", object_type, object_id_],
+              path: ["crm/objects/2026-03/contacts/%1$s", contact_id],
               query: query.transform_keys(
                 id_property: "idProperty",
                 properties_with_history: "propertiesWithHistory"
@@ -222,43 +207,36 @@ module HubspotSDK
             )
           end
 
-          # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Objects::ContactMergeParams} for more details.
+          # Merge two contact records. Learn more about
+          # [merging records](https://knowledge.hubspot.com/records/merge-records).
           #
-          # Merge two CRM objects of the same type by specifying one as the primary object
-          # and the other as the object to be merged into it.
+          # @overload merge(object_id_to_merge:, primary_object_id:, request_options: {})
           #
-          # @overload merge(object_type, object_id_to_merge:, primary_object_id:, request_options: {})
+          # @param object_id_to_merge [String] The ID of the company to merge into the primary.
           #
-          # @param object_type [String]
-          #
-          # @param object_id_to_merge [String] The object ID of the record that the merge will not set as the current value aft
-          #
-          # @param primary_object_id [String] The object ID of the record that the merge will generally set as the current val
+          # @param primary_object_id [String] The ID of the primary company, which the other will merge into.
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::SimplePublicObject]
           #
           # @see HubspotSDK::Models::Crm::Objects::ContactMergeParams
-          def merge(object_type, params)
+          def merge(params)
             parsed, options = HubspotSDK::Crm::Objects::ContactMergeParams.dump_request(params)
             @client.request(
               method: :post,
-              path: ["crm/objects/2026-03/%1$s/merge", object_type],
+              path: "crm/objects/2026-03/contacts/merge",
               body: parsed,
               model: HubspotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
 
-          # Execute a search query to find CRM objects of a given type, using specified
-          # filters and properties. The search can be customized with filters, sorting, and
-          # pagination options.
+          # Search for contacts by filtering on properties, searching through associations,
+          # and sorting results. Learn more about
+          # [CRM search](https://developers.hubspot.com/docs/guides/api/crm/search#make-a-search-request).
           #
-          # @overload search(object_type, after:, filter_groups:, limit:, properties:, sorts:, query: nil, request_options: {})
-          #
-          # @param object_type [String]
+          # @overload search(after:, filter_groups:, limit:, properties:, sorts:, query: nil, request_options: {})
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.
           #
@@ -277,11 +255,11 @@ module HubspotSDK
           # @return [HubspotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
           #
           # @see HubspotSDK::Models::Crm::Objects::ContactSearchParams
-          def search(object_type, params)
+          def search(params)
             parsed, options = HubspotSDK::Crm::Objects::ContactSearchParams.dump_request(params)
             @client.request(
               method: :post,
-              path: ["crm/objects/2026-03/%1$s/search", object_type],
+              path: "crm/objects/2026-03/contacts/search",
               body: parsed,
               model: HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
               options: options
@@ -293,6 +271,7 @@ module HubspotSDK
           # @param client [HubspotSDK::Client]
           def initialize(client:)
             @client = client
+            @batch = HubspotSDK::Resources::Crm::Objects::Contacts::Batch.new(client: client)
           end
         end
       end

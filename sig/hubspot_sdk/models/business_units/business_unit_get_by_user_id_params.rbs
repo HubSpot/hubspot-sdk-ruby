@@ -1,0 +1,38 @@
+module HubspotSDK
+  module Models
+    module BusinessUnits
+      type business_unit_get_by_user_id_params =
+        { user_id: String, name: ::Array[String], properties: ::Array[String] }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class BusinessUnitGetByUserIDParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor user_id: String
+
+        attr_reader name: ::Array[String]?
+
+        def name=: (::Array[String]) -> ::Array[String]
+
+        attr_reader properties: ::Array[String]?
+
+        def properties=: (::Array[String]) -> ::Array[String]
+
+        def initialize: (
+          user_id: String,
+          ?name: ::Array[String],
+          ?properties: ::Array[String],
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          user_id: String,
+          name: ::Array[String],
+          properties: ::Array[String],
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

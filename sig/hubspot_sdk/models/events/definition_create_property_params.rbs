@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module Events
+      type definition_create_property_params =
+        { event_name: String } & HubspotSDK::Internal::Type::request_parameters
+
+      class DefinitionCreatePropertyParams < HubspotSDK::Models::Events::ExternalBehavioralEventPropertyCreate
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        def event_name: -> String
+
+        def event_name=: (String _) -> String
+
+        def initialize: (
+          event_name: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          event_name: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

@@ -438,10 +438,11 @@ module HubspotSDK
         # @return [Hash{Symbol=>Object}]
         #
         # @example
-        #   # `association_spec` is a `HubspotSDK::AssociationSpec`
-        #   association_spec => {
-        #     association_category: association_category,
-        #     association_type_id: association_type_id
+        #   # `action_response` is a `HubspotSDK::ActionResponse`
+        #   action_response => {
+        #     completed_at: completed_at,
+        #     started_at: started_at,
+        #     status: status
         #   }
         def deconstruct_keys(keys)
           (keys || self.class.known_fields.keys)

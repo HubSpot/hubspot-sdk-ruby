@@ -38,14 +38,10 @@ module HubspotSDK
 
         # A list of available options for the property if it is an enumeration. NOTE: This
         # field is only applicable for enumerated properties.
-        sig { returns(T.nilable(T::Array[HubspotSDK::Events::OptionInput])) }
+        sig { returns(T.nilable(T::Array[HubspotSDK::OptionInput])) }
         attr_reader :options
 
-        sig do
-          params(
-            options: T::Array[HubspotSDK::Events::OptionInput::OrHash]
-          ).void
-        end
+        sig { params(options: T::Array[HubspotSDK::OptionInput::OrHash]).void }
         attr_writer :options
 
         sig do
@@ -54,7 +50,7 @@ module HubspotSDK
             type: String,
             description: String,
             name: String,
-            options: T::Array[HubspotSDK::Events::OptionInput::OrHash]
+            options: T::Array[HubspotSDK::OptionInput::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(
@@ -81,7 +77,7 @@ module HubspotSDK
               type: String,
               description: String,
               name: String,
-              options: T::Array[HubspotSDK::Events::OptionInput]
+              options: T::Array[HubspotSDK::OptionInput]
             }
           )
         end

@@ -1,0 +1,60 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_today_reference =
+        {
+          reference_type: HubspotSDK::Models::Crm::PublicTodayReference::reference_type,
+          hour: Integer,
+          millisecond: Integer,
+          minute: Integer,
+          second: Integer
+        }
+
+      class PublicTodayReference < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor reference_type: HubspotSDK::Models::Crm::PublicTodayReference::reference_type
+
+        attr_reader hour: Integer?
+
+        def hour=: (Integer) -> Integer
+
+        attr_reader millisecond: Integer?
+
+        def millisecond=: (Integer) -> Integer
+
+        attr_reader minute: Integer?
+
+        def minute=: (Integer) -> Integer
+
+        attr_reader second: Integer?
+
+        def second=: (Integer) -> Integer
+
+        def initialize: (
+          reference_type: HubspotSDK::Models::Crm::PublicTodayReference::reference_type,
+          ?hour: Integer,
+          ?millisecond: Integer,
+          ?minute: Integer,
+          ?second: Integer
+        ) -> void
+
+        def to_hash: -> {
+          reference_type: HubspotSDK::Models::Crm::PublicTodayReference::reference_type,
+          hour: Integer,
+          millisecond: Integer,
+          minute: Integer,
+          second: Integer
+        }
+
+        type reference_type = :TODAY
+
+        module ReferenceType
+          extend HubspotSDK::Internal::Type::Enum
+
+          TODAY: :TODAY
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicTodayReference::reference_type]
+        end
+      end
+    end
+  end
+end

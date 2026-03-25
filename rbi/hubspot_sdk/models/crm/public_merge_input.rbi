@@ -12,13 +12,11 @@ module HubspotSDK
             )
           end
 
-        # The object ID of the record that the merge will not set as the current value
-        # after the merge.
+        # The ID of the company to merge into the primary.
         sig { returns(String) }
         attr_accessor :object_id_to_merge
 
-        # The object ID of the record that the merge will generally set as the current
-        # value after the merge.
+        # The ID of the primary company, which the other will merge into.
         sig { returns(String) }
         attr_accessor :primary_object_id
 
@@ -29,11 +27,9 @@ module HubspotSDK
           )
         end
         def self.new(
-          # The object ID of the record that the merge will not set as the current value
-          # after the merge.
+          # The ID of the company to merge into the primary.
           object_id_to_merge:,
-          # The object ID of the record that the merge will generally set as the current
-          # value after the merge.
+          # The ID of the primary company, which the other will merge into.
           primary_object_id:
         )
         end

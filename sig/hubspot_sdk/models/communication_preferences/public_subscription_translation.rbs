@@ -1,0 +1,47 @@
+module HubspotSDK
+  module Models
+    module CommunicationPreferences
+      type public_subscription_translation =
+        {
+          created_at: Integer,
+          description: String,
+          language_code: String,
+          name: String,
+          subscription_id: Integer,
+          updated_at: Integer
+        }
+
+      class PublicSubscriptionTranslation < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor created_at: Integer
+
+        attr_accessor description: String
+
+        attr_accessor language_code: String
+
+        attr_accessor name: String
+
+        attr_accessor subscription_id: Integer
+
+        attr_accessor updated_at: Integer
+
+        def initialize: (
+          created_at: Integer,
+          description: String,
+          language_code: String,
+          name: String,
+          subscription_id: Integer,
+          updated_at: Integer
+        ) -> void
+
+        def to_hash: -> {
+          created_at: Integer,
+          description: String,
+          language_code: String,
+          name: String,
+          subscription_id: Integer,
+          updated_at: Integer
+        }
+      end
+    end
+  end
+end

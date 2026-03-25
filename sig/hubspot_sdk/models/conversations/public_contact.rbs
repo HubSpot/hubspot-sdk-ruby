@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type public_contact =
+        {
+          contact_profile: HubspotSDK::Conversations::ContactProfile,
+          type: HubspotSDK::Models::Conversations::PublicContact::type_
+        }
+
+      class PublicContact < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor contact_profile: HubspotSDK::Conversations::ContactProfile
+
+        attr_accessor type: HubspotSDK::Models::Conversations::PublicContact::type_
+
+        def initialize: (
+          contact_profile: HubspotSDK::Conversations::ContactProfile,
+          type: HubspotSDK::Models::Conversations::PublicContact::type_
+        ) -> void
+
+        def to_hash: -> {
+          contact_profile: HubspotSDK::Conversations::ContactProfile,
+          type: HubspotSDK::Models::Conversations::PublicContact::type_
+        }
+
+        type type_ = :CONTACT
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          CONTACT: :CONTACT
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicContact::type_]
+        end
+      end
+    end
+  end
+end

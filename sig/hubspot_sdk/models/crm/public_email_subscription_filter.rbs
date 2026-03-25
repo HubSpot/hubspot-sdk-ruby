@@ -1,0 +1,49 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_email_subscription_filter =
+        {
+          accepted_statuses: ::Array[String],
+          filter_type: HubspotSDK::Models::Crm::PublicEmailSubscriptionFilter::filter_type,
+          subscription_ids: ::Array[String],
+          subscription_type: String
+        }
+
+      class PublicEmailSubscriptionFilter < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor accepted_statuses: ::Array[String]
+
+        attr_accessor filter_type: HubspotSDK::Models::Crm::PublicEmailSubscriptionFilter::filter_type
+
+        attr_accessor subscription_ids: ::Array[String]
+
+        attr_reader subscription_type: String?
+
+        def subscription_type=: (String) -> String
+
+        def initialize: (
+          accepted_statuses: ::Array[String],
+          filter_type: HubspotSDK::Models::Crm::PublicEmailSubscriptionFilter::filter_type,
+          subscription_ids: ::Array[String],
+          ?subscription_type: String
+        ) -> void
+
+        def to_hash: -> {
+          accepted_statuses: ::Array[String],
+          filter_type: HubspotSDK::Models::Crm::PublicEmailSubscriptionFilter::filter_type,
+          subscription_ids: ::Array[String],
+          subscription_type: String
+        }
+
+        type filter_type = :EMAIL_SUBSCRIPTION
+
+        module FilterType
+          extend HubspotSDK::Internal::Type::Enum
+
+          EMAIL_SUBSCRIPTION: :EMAIL_SUBSCRIPTION
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicEmailSubscriptionFilter::filter_type]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,52 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_rolling_date_range_property_operation =
+        {
+          include_objects_with_no_value_set: bool,
+          number_of_days: Integer,
+          operation_type: HubspotSDK::Models::Crm::PublicRollingDateRangePropertyOperation::operation_type,
+          operator: String,
+          requires_time_zone_conversion: bool
+        }
+
+      class PublicRollingDateRangePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor include_objects_with_no_value_set: bool
+
+        attr_accessor number_of_days: Integer
+
+        attr_accessor operation_type: HubspotSDK::Models::Crm::PublicRollingDateRangePropertyOperation::operation_type
+
+        attr_accessor operator: String
+
+        attr_accessor requires_time_zone_conversion: bool
+
+        def initialize: (
+          include_objects_with_no_value_set: bool,
+          number_of_days: Integer,
+          operation_type: HubspotSDK::Models::Crm::PublicRollingDateRangePropertyOperation::operation_type,
+          operator: String,
+          requires_time_zone_conversion: bool
+        ) -> void
+
+        def to_hash: -> {
+          include_objects_with_no_value_set: bool,
+          number_of_days: Integer,
+          operation_type: HubspotSDK::Models::Crm::PublicRollingDateRangePropertyOperation::operation_type,
+          operator: String,
+          requires_time_zone_conversion: bool
+        }
+
+        type operation_type = :ROLLING_DATE_RANGE
+
+        module OperationType
+          extend HubspotSDK::Internal::Type::Enum
+
+          ROLLING_DATE_RANGE: :ROLLING_DATE_RANGE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicRollingDateRangePropertyOperation::operation_type]
+        end
+      end
+    end
+  end
+end

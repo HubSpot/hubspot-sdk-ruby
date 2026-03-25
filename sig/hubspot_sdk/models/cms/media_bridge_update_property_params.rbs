@@ -1,0 +1,40 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type media_bridge_update_property_params =
+        { app_id: String, object_type: String, property_name: String }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class MediaBridgeUpdatePropertyParams < HubspotSDK::Models::Cms::MediaBridgePropertyUpdate
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        def app_id: -> String
+
+        def app_id=: (String _) -> String
+
+        def object_type: -> String
+
+        def object_type=: (String _) -> String
+
+        def property_name: -> String
+
+        def property_name=: (String _) -> String
+
+        def initialize: (
+          app_id: String,
+          object_type: String,
+          property_name: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          app_id: String,
+          object_type: String,
+          property_name: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

@@ -1,0 +1,30 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Extensions
+        type object_coordinates =
+          { object_id_: Integer, object_type_id: String, portal_id: Integer }
+
+        class ObjectCoordinates < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor object_id_: Integer
+
+          attr_accessor object_type_id: String
+
+          attr_accessor portal_id: Integer
+
+          def initialize: (
+            object_id_: Integer,
+            object_type_id: String,
+            portal_id: Integer
+          ) -> void
+
+          def to_hash: -> {
+            object_id_: Integer,
+            object_type_id: String,
+            portal_id: Integer
+          }
+        end
+      end
+    end
+  end
+end

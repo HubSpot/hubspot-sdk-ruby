@@ -1,0 +1,43 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type pipeline_stage_patch_input =
+        {
+          metadata: ::Hash[Symbol, String],
+          archived: bool,
+          display_order: Integer,
+          label: String
+        }
+
+      class PipelineStagePatchInput < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor metadata: ::Hash[Symbol, String]
+
+        attr_reader archived: bool?
+
+        def archived=: (bool) -> bool
+
+        attr_reader display_order: Integer?
+
+        def display_order=: (Integer) -> Integer
+
+        attr_reader label: String?
+
+        def label=: (String) -> String
+
+        def initialize: (
+          metadata: ::Hash[Symbol, String],
+          ?archived: bool,
+          ?display_order: Integer,
+          ?label: String
+        ) -> void
+
+        def to_hash: -> {
+          metadata: ::Hash[Symbol, String],
+          archived: bool,
+          display_order: Integer,
+          label: String
+        }
+      end
+    end
+  end
+end

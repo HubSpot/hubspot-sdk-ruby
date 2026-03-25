@@ -1,0 +1,80 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type batch_response_public_association_definition_user_configuration =
+        {
+          completed_at: Time,
+          results: ::Array[HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration],
+          started_at: Time,
+          status: HubspotSDK::Models::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration::status,
+          errors: ::Array[HubspotSDK::StandardError],
+          links: ::Hash[Symbol, String],
+          num_errors: Integer,
+          requested_at: Time
+        }
+
+      class BatchResponsePublicAssociationDefinitionUserConfiguration < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor completed_at: Time
+
+        attr_accessor results: ::Array[HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration]
+
+        attr_accessor started_at: Time
+
+        attr_accessor status: HubspotSDK::Models::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration::status
+
+        attr_reader errors: ::Array[HubspotSDK::StandardError]?
+
+        def errors=: (
+          ::Array[HubspotSDK::StandardError]
+        ) -> ::Array[HubspotSDK::StandardError]
+
+        attr_reader links: ::Hash[Symbol, String]?
+
+        def links=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
+
+        attr_reader num_errors: Integer?
+
+        def num_errors=: (Integer) -> Integer
+
+        attr_reader requested_at: Time?
+
+        def requested_at=: (Time) -> Time
+
+        def initialize: (
+          completed_at: Time,
+          results: ::Array[HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration],
+          started_at: Time,
+          status: HubspotSDK::Models::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration::status,
+          ?errors: ::Array[HubspotSDK::StandardError],
+          ?links: ::Hash[Symbol, String],
+          ?num_errors: Integer,
+          ?requested_at: Time
+        ) -> void
+
+        def to_hash: -> {
+          completed_at: Time,
+          results: ::Array[HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration],
+          started_at: Time,
+          status: HubspotSDK::Models::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration::status,
+          errors: ::Array[HubspotSDK::StandardError],
+          links: ::Hash[Symbol, String],
+          num_errors: Integer,
+          requested_at: Time
+        }
+
+        type status = :CANCELED | :COMPLETE | :PENDING | :PROCESSING
+
+        module Status
+          extend HubspotSDK::Internal::Type::Enum
+
+          CANCELED: :CANCELED
+          COMPLETE: :COMPLETE
+          PENDING: :PENDING
+          PROCESSING: :PROCESSING
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration::status]
+        end
+      end
+    end
+  end
+end

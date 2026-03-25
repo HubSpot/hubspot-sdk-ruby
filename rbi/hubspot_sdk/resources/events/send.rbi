@@ -22,20 +22,22 @@ module HubspotSDK
         end
         def create_event_definition(
           include_default_properties:,
-          # Human readable label for the event for display in HubSpot's UI.
+          # Human readable label for the event. Used in HubSpot UI
           label:,
           # List of custom properties on event
           property_definitions:,
           custom_matching_id: nil,
           # A description of the event that will be shown as help text in HubSpot.
           description: nil,
-          # Internal event name, which must be used when referencing the event from the API.
-          # If a name is not supplied, one will be generated based on the label. The name
-          # does not include the `pe<PORTAL_ID>_` prefix used when sending event
-          # completions.
+          # Internal event name, which must be used when referencing the event from this
+          # event definitions API. If a name is not supplied, one will be generated based on
+          # the label. The `name` value will also be used to automatically generate a
+          # `fullyQualifiedName` for the event definition, which you'll use when sending
+          # event completions to this event.
           name: nil,
-          # The object type to associate this event to. Can be one of `CONTACT`, `COMPANY`,
-          # `DEAL`, `TICKET`. If no value is supplied, will default to `CONTACT`.
+          # The object type to associate this event to. Can be one of CONTACT, COMPANY,
+          # DEAL, TICKET. If no primaryObject is supplied, we will default to associating
+          # the event to CONTACT objects.
           primary_object: nil,
           request_options: {}
         )
@@ -48,9 +50,9 @@ module HubspotSDK
             type: String,
             description: String,
             name: String,
-            options: T::Array[HubspotSDK::Events::OptionInput::OrHash],
+            options: T::Array[HubspotSDK::OptionInput::OrHash],
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Events::Property)
+          ).returns(HubspotSDK::Property)
         end
         def create_event_definition_property(
           event_name,
@@ -144,30 +146,21 @@ module HubspotSDK
           ).void
         end
         def send_event(
-          # The event's fully qualified name. This value (formatted as `pe{HubID}_{name}`)
-          # can be retrieved through the
-          # [event definitions API](https://developers.hubspot.com/docs/reference/api/analytics-and-events/custom-events/custom-event-definitions#get-%2Fevents%2Fv3%2Fevent-definitions)
-          # or in
-          # [HubSpot's UI](https://knowledge.hubspot.com/reports/create-custom-behavioral-events-with-the-code-wizard#find-internal-name).
+          # Internal name of the event-type to trigger
           event_name:,
-          # The event properties to update. Takes the format of key-value pairs (property
-          # internal name and property value). Learn more about
-          # [HubSpot's default event properties](https://developers.hubspot.com/docs/guides/api/analytics-and-events/custom-events/custom-event-definitions#hubspot-s-default-event-properties).
+          # Map of properties for the event in the format property internal name - property
+          # value
           properties:,
-          # The visitor's email address. Used for associating the event data with a CRM
-          # record.
+          # Email of visitor
           email: nil,
-          # The ID of the record for which the event occurred (e.g., contact ID or visitor
-          # ID).
+          # The object id that this event occurred on. Could be a contact id or a visitor
+          # id.
           object_id_: nil,
-          # The time when this event occurred. If this isn't set, the current time will be
-          # used.
+          # The time when this event occurred (if any). If this isn't set, the current time
+          # will be used
           occurred_at: nil,
-          # The visitor's usertoken. Used for associating the event data with a CRM record.
+          # User token
           utk: nil,
-          # Include a universally unique identifier to assign a unique ID to the event
-          # occurrence. Can be useful for matching data between HubSpot and other external
-          # systems.
           uuid: nil,
           request_options: {}
         )
@@ -209,9 +202,9 @@ module HubspotSDK
             event_name: String,
             description: String,
             label: String,
-            options: T::Array[HubspotSDK::Events::OptionInput::OrHash],
+            options: T::Array[HubspotSDK::OptionInput::OrHash],
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Events::Property)
+          ).returns(HubspotSDK::Property)
         end
         def update_event_definition_property(
           # Path param

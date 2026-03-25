@@ -1,0 +1,54 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_comparative_property_updated_operation =
+        {
+          comparison_property_name: String,
+          include_objects_with_no_value_set: bool,
+          operation_type: HubspotSDK::Models::Crm::PublicComparativePropertyUpdatedOperation::operation_type,
+          operator: String,
+          default_comparison_value: String
+        }
+
+      class PublicComparativePropertyUpdatedOperation < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor comparison_property_name: String
+
+        attr_accessor include_objects_with_no_value_set: bool
+
+        attr_accessor operation_type: HubspotSDK::Models::Crm::PublicComparativePropertyUpdatedOperation::operation_type
+
+        attr_accessor operator: String
+
+        attr_reader default_comparison_value: String?
+
+        def default_comparison_value=: (String) -> String
+
+        def initialize: (
+          comparison_property_name: String,
+          include_objects_with_no_value_set: bool,
+          operation_type: HubspotSDK::Models::Crm::PublicComparativePropertyUpdatedOperation::operation_type,
+          operator: String,
+          ?default_comparison_value: String
+        ) -> void
+
+        def to_hash: -> {
+          comparison_property_name: String,
+          include_objects_with_no_value_set: bool,
+          operation_type: HubspotSDK::Models::Crm::PublicComparativePropertyUpdatedOperation::operation_type,
+          operator: String,
+          default_comparison_value: String
+        }
+
+        type operation_type = :COMPARATIVE_PROPERTY_UPDATED
+
+        module OperationType
+          extend HubspotSDK::Internal::Type::Enum
+
+          COMPARATIVE_PROPERTY_UPDATED: :COMPARATIVE_PROPERTY_UPDATED
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicComparativePropertyUpdatedOperation::operation_type]
+        end
+      end
+    end
+  end
+end

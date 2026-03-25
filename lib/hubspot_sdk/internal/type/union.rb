@@ -4,6 +4,19 @@ module HubspotSDK
   module Internal
     module Type
       # @api private
+      #
+      # @example
+      #   # `create_mb_object_request` is a `HubspotSDK::Cms::CreateMBObjectRequest`
+      #   case create_mb_object_request
+      #   when HubspotSDK::Cms::CreateVideoObjectRequest
+      #     puts(create_mb_object_request.media_type)
+      #   when HubspotSDK::Cms::CreateOtherObjectRequest
+      #     puts(create_mb_object_request.title)
+      #   when HubspotSDK::Cms::CreateAudioObjectRequest
+      #     puts(create_mb_object_request.details_page_link)
+      #   else
+      #     puts(create_mb_object_request)
+      #   end
       module Union
         include HubspotSDK::Internal::Type::Converter
         include HubspotSDK::Internal::Util::SorbetRuntimeSupport

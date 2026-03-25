@@ -1,0 +1,76 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_property_association_in_list_filter =
+        {
+          coalescing_refine_by: HubspotSDK::Models::Crm::PublicPropertyAssociationInListFilter::coalescing_refine_by,
+          filter_type: HubspotSDK::Models::Crm::PublicPropertyAssociationInListFilter::filter_type,
+          list_id: String,
+          operator: String,
+          property_with_object_id: String,
+          to_object_type_id: String
+        }
+
+      class PublicPropertyAssociationInListFilter < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor coalescing_refine_by: HubspotSDK::Models::Crm::PublicPropertyAssociationInListFilter::coalescing_refine_by
+
+        attr_accessor filter_type: HubspotSDK::Models::Crm::PublicPropertyAssociationInListFilter::filter_type
+
+        attr_accessor list_id: String
+
+        attr_accessor operator: String
+
+        attr_accessor property_with_object_id: String
+
+        attr_reader to_object_type_id: String?
+
+        def to_object_type_id=: (String) -> String
+
+        def initialize: (
+          coalescing_refine_by: HubspotSDK::Models::Crm::PublicPropertyAssociationInListFilter::coalescing_refine_by,
+          filter_type: HubspotSDK::Models::Crm::PublicPropertyAssociationInListFilter::filter_type,
+          list_id: String,
+          operator: String,
+          property_with_object_id: String,
+          ?to_object_type_id: String
+        ) -> void
+
+        def to_hash: -> {
+          coalescing_refine_by: HubspotSDK::Models::Crm::PublicPropertyAssociationInListFilter::coalescing_refine_by,
+          filter_type: HubspotSDK::Models::Crm::PublicPropertyAssociationInListFilter::filter_type,
+          list_id: String,
+          operator: String,
+          property_with_object_id: String,
+          to_object_type_id: String
+        }
+
+        type coalescing_refine_by =
+          HubspotSDK::Crm::PublicNumOccurrencesRefineBy
+          | HubspotSDK::Crm::PublicSetOccurrencesRefineBy
+          | HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy
+          | HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy
+          | HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy
+          | HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy
+          | HubspotSDK::Crm::PublicAllHistoryRefineBy
+          | HubspotSDK::Crm::PublicTimePointOperation
+          | HubspotSDK::Crm::PublicRangedTimeOperation
+
+        module CoalescingRefineBy
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicPropertyAssociationInListFilter::coalescing_refine_by]
+        end
+
+        type filter_type = :PROPERTY_ASSOCIATION
+
+        module FilterType
+          extend HubspotSDK::Internal::Type::Enum
+
+          PROPERTY_ASSOCIATION: :PROPERTY_ASSOCIATION
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicPropertyAssociationInListFilter::filter_type]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type usage_for_object_type =
+        {
+          object_type_id: String,
+          plural_label: String,
+          singular_label: String,
+          usage: Integer
+        }
+
+      class UsageForObjectType < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor object_type_id: String
+
+        attr_accessor plural_label: String
+
+        attr_accessor singular_label: String
+
+        attr_accessor usage: Integer
+
+        def initialize: (
+          object_type_id: String,
+          plural_label: String,
+          singular_label: String,
+          usage: Integer
+        ) -> void
+
+        def to_hash: -> {
+          object_type_id: String,
+          plural_label: String,
+          singular_label: String,
+          usage: Integer
+        }
+      end
+    end
+  end
+end

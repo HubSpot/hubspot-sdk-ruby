@@ -1,0 +1,47 @@
+module HubspotSDK
+  module Resources
+    class Crm
+      class Associations
+        class Batch
+          def create: (
+            String to_object_id,
+            from_object_type: String,
+            from_object_id: String,
+            to_object_type: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::BatchResponsePublicDefaultAssociation
+
+          def delete: (
+            String to_object_type,
+            from_object_type: String,
+            inputs: ::Array[HubspotSDK::Crm::PublicAssociationMultiArchive],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::BatchResponseVoid
+
+          def create_default: (
+            String to_object_type,
+            from_object_type: String,
+            inputs: ::Array[HubspotSDK::Crm::PublicDefaultAssociationMultiPost],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::BatchResponsePublicDefaultAssociation
+
+          def delete_labels: (
+            String to_object_type,
+            from_object_type: String,
+            inputs: ::Array[HubspotSDK::Crm::PublicAssociationMultiPost],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::BatchResponseVoid
+
+          def get: (
+            String to_object_type,
+            from_object_type: String,
+            inputs: ::Array[HubspotSDK::Crm::PublicFetchAssociationsBatchRequest],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

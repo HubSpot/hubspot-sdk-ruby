@@ -1,0 +1,61 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type file_attachment =
+        {
+          file_id: String,
+          type: HubspotSDK::Models::Conversations::FileAttachment::type_,
+          file_usage_type: HubspotSDK::Models::Conversations::FileAttachment::file_usage_type
+        }
+
+      class FileAttachment < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor file_id: String
+
+        attr_accessor type: HubspotSDK::Models::Conversations::FileAttachment::type_
+
+        attr_reader file_usage_type: HubspotSDK::Models::Conversations::FileAttachment::file_usage_type?
+
+        def file_usage_type=: (
+          HubspotSDK::Models::Conversations::FileAttachment::file_usage_type
+        ) -> HubspotSDK::Models::Conversations::FileAttachment::file_usage_type
+
+        def initialize: (
+          file_id: String,
+          type: HubspotSDK::Models::Conversations::FileAttachment::type_,
+          ?file_usage_type: HubspotSDK::Models::Conversations::FileAttachment::file_usage_type
+        ) -> void
+
+        def to_hash: -> {
+          file_id: String,
+          type: HubspotSDK::Models::Conversations::FileAttachment::type_,
+          file_usage_type: HubspotSDK::Models::Conversations::FileAttachment::file_usage_type
+        }
+
+        type type_ = :FILE
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          FILE: :FILE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::FileAttachment::type_]
+        end
+
+        type file_usage_type =
+          :AUDIO | :IMAGE | :OTHER | :STICKER | :VOICE_RECORDING
+
+        module FileUsageType
+          extend HubspotSDK::Internal::Type::Enum
+
+          AUDIO: :AUDIO
+          IMAGE: :IMAGE
+          OTHER: :OTHER
+          STICKER: :STICKER
+          VOICE_RECORDING: :VOICE_RECORDING
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::FileAttachment::file_usage_type]
+        end
+      end
+    end
+  end
+end

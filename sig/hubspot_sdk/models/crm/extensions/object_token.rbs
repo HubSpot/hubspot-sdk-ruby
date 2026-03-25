@@ -1,0 +1,74 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Extensions
+        type object_token =
+          {
+            value: String,
+            data_type: HubspotSDK::Models::Crm::Extensions::ObjectToken::data_type,
+            label: String,
+            name: String
+          }
+
+        class ObjectToken < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor value: String
+
+          attr_reader data_type: HubspotSDK::Models::Crm::Extensions::ObjectToken::data_type?
+
+          def data_type=: (
+            HubspotSDK::Models::Crm::Extensions::ObjectToken::data_type
+          ) -> HubspotSDK::Models::Crm::Extensions::ObjectToken::data_type
+
+          attr_reader label: String?
+
+          def label=: (String) -> String
+
+          attr_reader name: String?
+
+          def name=: (String) -> String
+
+          def initialize: (
+            value: String,
+            ?data_type: HubspotSDK::Models::Crm::Extensions::ObjectToken::data_type,
+            ?label: String,
+            ?name: String
+          ) -> void
+
+          def to_hash: -> {
+            value: String,
+            data_type: HubspotSDK::Models::Crm::Extensions::ObjectToken::data_type,
+            label: String,
+            name: String
+          }
+
+          type data_type =
+            :BOOLEAN
+            | :CURRENCY
+            | :DATE
+            | :DATETIME
+            | :EMAIL
+            | :LINK
+            | :NUMERIC
+            | :STATUS
+            | :STRING
+
+          module DataType
+            extend HubspotSDK::Internal::Type::Enum
+
+            BOOLEAN: :BOOLEAN
+            CURRENCY: :CURRENCY
+            DATE: :DATE
+            DATETIME: :DATETIME
+            EMAIL: :EMAIL
+            LINK: :LINK
+            NUMERIC: :NUMERIC
+            STATUS: :STATUS
+            STRING: :STRING
+
+            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::ObjectToken::data_type]
+          end
+        end
+      end
+    end
+  end
+end

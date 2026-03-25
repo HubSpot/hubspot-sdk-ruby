@@ -24,8 +24,8 @@ module HubspotSDK
 
           # @!attribute user
           #
-          #   @return [HubspotSDK::Models::Cms::VersionUser]
-          required :user, -> { HubspotSDK::Cms::VersionUser }
+          #   @return [HubspotSDK::Models::VersionUser]
+          required :user, -> { HubspotSDK::VersionUser }
 
           # @!method initialize(id:, object:, updated_at:, user:)
           #   @param id [String]
@@ -34,7 +34,7 @@ module HubspotSDK
           #
           #   @param updated_at [Time] The timestamp (ISO8601 format) when this blog version was updated.
           #
-          #   @param user [HubspotSDK::Models::Cms::VersionUser]
+          #   @param user [HubspotSDK::Models::VersionUser]
         end
       end
 

@@ -1,0 +1,36 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Properties
+        type batch_get_params =
+          { object_type: String, locale: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class BatchGetParams < HubspotSDK::Models::BatchReadInputPropertyName
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def object_type: -> String
+
+          def object_type=: (String _) -> String
+
+          def locale: -> String?
+
+          def locale=: (String _) -> String
+
+          def initialize: (
+            object_type: String,
+            ?locale: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            object_type: String,
+            locale: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

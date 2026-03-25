@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_set_occurrences_refine_by =
+        {
+          set_type: String,
+          type: HubspotSDK::Models::Crm::PublicSetOccurrencesRefineBy::type_
+        }
+
+      class PublicSetOccurrencesRefineBy < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor set_type: String
+
+        attr_accessor type: HubspotSDK::Models::Crm::PublicSetOccurrencesRefineBy::type_
+
+        def initialize: (
+          set_type: String,
+          type: HubspotSDK::Models::Crm::PublicSetOccurrencesRefineBy::type_
+        ) -> void
+
+        def to_hash: -> {
+          set_type: String,
+          type: HubspotSDK::Models::Crm::PublicSetOccurrencesRefineBy::type_
+        }
+
+        type type_ = :SET_OCCURRENCES
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          SET_OCCURRENCES: :SET_OCCURRENCES
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicSetOccurrencesRefineBy::type_]
+        end
+      end
+    end
+  end
+end

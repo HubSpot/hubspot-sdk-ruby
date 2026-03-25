@@ -1,0 +1,48 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type association_spec_with_label =
+        {
+          category: HubspotSDK::Models::Crm::AssociationSpecWithLabel::category,
+          type_id: Integer,
+          label: String
+        }
+
+      class AssociationSpecWithLabel < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor category: HubspotSDK::Models::Crm::AssociationSpecWithLabel::category
+
+        attr_accessor type_id: Integer
+
+        attr_reader label: String?
+
+        def label=: (String) -> String
+
+        def initialize: (
+          category: HubspotSDK::Models::Crm::AssociationSpecWithLabel::category,
+          type_id: Integer,
+          ?label: String
+        ) -> void
+
+        def to_hash: -> {
+          category: HubspotSDK::Models::Crm::AssociationSpecWithLabel::category,
+          type_id: Integer,
+          label: String
+        }
+
+        type category =
+          :HUBSPOT_DEFINED | :INTEGRATOR_DEFINED | :USER_DEFINED | :WORK
+
+        module Category
+          extend HubspotSDK::Internal::Type::Enum
+
+          HUBSPOT_DEFINED: :HUBSPOT_DEFINED
+          INTEGRATOR_DEFINED: :INTEGRATOR_DEFINED
+          USER_DEFINED: :USER_DEFINED
+          WORK: :WORK
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::AssociationSpecWithLabel::category]
+        end
+      end
+    end
+  end
+end

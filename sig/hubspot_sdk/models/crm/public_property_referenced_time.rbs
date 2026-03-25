@@ -1,0 +1,54 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_property_referenced_time =
+        {
+          property: String,
+          reference_type: String,
+          time_type: HubspotSDK::Models::Crm::PublicPropertyReferencedTime::time_type,
+          zone_id: String,
+          timezone_source: String
+        }
+
+      class PublicPropertyReferencedTime < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor property: String
+
+        attr_accessor reference_type: String
+
+        attr_accessor time_type: HubspotSDK::Models::Crm::PublicPropertyReferencedTime::time_type
+
+        attr_accessor zone_id: String
+
+        attr_reader timezone_source: String?
+
+        def timezone_source=: (String) -> String
+
+        def initialize: (
+          property: String,
+          reference_type: String,
+          time_type: HubspotSDK::Models::Crm::PublicPropertyReferencedTime::time_type,
+          zone_id: String,
+          ?timezone_source: String
+        ) -> void
+
+        def to_hash: -> {
+          property: String,
+          reference_type: String,
+          time_type: HubspotSDK::Models::Crm::PublicPropertyReferencedTime::time_type,
+          zone_id: String,
+          timezone_source: String
+        }
+
+        type time_type = :PROPERTY_REFERENCED
+
+        module TimeType
+          extend HubspotSDK::Internal::Type::Enum
+
+          PROPERTY_REFERENCED: :PROPERTY_REFERENCED
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicPropertyReferencedTime::time_type]
+        end
+      end
+    end
+  end
+end

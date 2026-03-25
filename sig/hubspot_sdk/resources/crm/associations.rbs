@@ -1,0 +1,33 @@
+module HubspotSDK
+  module Resources
+    class Crm
+      class Associations
+        attr_reader batch: HubspotSDK::Resources::Crm::Associations::Batch
+
+        def delete_associations: (
+          String to_object_id,
+          object_type: String,
+          object_id_: String,
+          to_object_type: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def request_high_usage_report: (
+          Integer user_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Crm::ReportCreationResponse
+
+        def update_association_labels: (
+          String to_object_id,
+          object_type: String,
+          object_id_: String,
+          to_object_type: String,
+          body: ::Array[HubspotSDK::AssociationSpec],
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Crm::LabelsBetweenObjectPair
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

@@ -1,0 +1,64 @@
+module HubspotSDK
+  module Resources
+    class AppWebhooks
+      def batch_update_subscriptions: (
+        Integer app_id,
+        inputs: ::Array[HubspotSDK::AppWebhooks::SubscriptionBatchUpdateRequest],
+        ?request_options: HubspotSDK::request_opts
+      ) -> HubspotSDK::AppWebhooks::BatchResponseSubscriptionResponse
+
+      def create_subscription: (
+        Integer app_id,
+        active: bool,
+        event_type: HubspotSDK::Models::AppWebhooks::SubscriptionCreateRequest::event_type,
+        ?event_type_name: String,
+        ?object_type_id: String,
+        ?property_name: String,
+        ?request_options: HubspotSDK::request_opts
+      ) -> HubspotSDK::AppWebhooks::SubscriptionResponse
+
+      def delete_settings: (
+        Integer app_id,
+        ?request_options: HubspotSDK::request_opts
+      ) -> nil
+
+      def delete_subscription: (
+        Integer subscription_id,
+        app_id: Integer,
+        ?request_options: HubspotSDK::request_opts
+      ) -> nil
+
+      def get_settings: (
+        Integer app_id,
+        ?request_options: HubspotSDK::request_opts
+      ) -> HubspotSDK::Crm::Extensions::SettingsResponse
+
+      def get_subscription: (
+        Integer subscription_id,
+        app_id: Integer,
+        ?request_options: HubspotSDK::request_opts
+      ) -> HubspotSDK::AppWebhooks::SubscriptionResponse
+
+      def list_subscriptions: (
+        Integer app_id,
+        ?request_options: HubspotSDK::request_opts
+      ) -> HubspotSDK::AppWebhooks::SubscriptionListResponse
+
+      def update_settings: (
+        Integer app_id,
+        target_url: String,
+        throttling: HubspotSDK::AppWebhooks::ThrottlingSettings,
+        ?request_options: HubspotSDK::request_opts
+      ) -> HubspotSDK::Crm::Extensions::SettingsResponse
+
+      def update_subscription: (
+        Integer subscription_id,
+        app_id: Integer,
+        ?active: bool,
+        ?request_options: HubspotSDK::request_opts
+      ) -> HubspotSDK::AppWebhooks::SubscriptionResponse
+
+      def initialize: (client: HubspotSDK::Client) -> void
+    end
+  end
+end

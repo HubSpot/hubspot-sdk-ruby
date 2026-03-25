@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type limit_get_association_label_limits_params =
+        { from_object_type_id: String, to_object_type_id: String }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class LimitGetAssociationLabelLimitsParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_reader from_object_type_id: String?
+
+        def from_object_type_id=: (String) -> String
+
+        attr_reader to_object_type_id: String?
+
+        def to_object_type_id=: (String) -> String
+
+        def initialize: (
+          ?from_object_type_id: String,
+          ?to_object_type_id: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          from_object_type_id: String,
+          to_object_type_id: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

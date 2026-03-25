@@ -1,0 +1,86 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type public_sequence_settings_response =
+        {
+          id: String,
+          created_at: Time,
+          eligible_follow_up_days: HubspotSDK::Models::Automation::PublicSequenceSettingsResponse::eligible_follow_up_days,
+          individual_task_reminders_enabled: bool,
+          selling_strategy: HubspotSDK::Models::Automation::PublicSequenceSettingsResponse::selling_strategy,
+          send_window_end_minute: Integer,
+          send_window_start_minute: Integer,
+          task_reminder_minute: Integer,
+          updated_at: Time
+        }
+
+      class PublicSequenceSettingsResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor created_at: Time
+
+        attr_accessor eligible_follow_up_days: HubspotSDK::Models::Automation::PublicSequenceSettingsResponse::eligible_follow_up_days
+
+        attr_accessor individual_task_reminders_enabled: bool
+
+        attr_accessor selling_strategy: HubspotSDK::Models::Automation::PublicSequenceSettingsResponse::selling_strategy
+
+        attr_accessor send_window_end_minute: Integer
+
+        attr_accessor send_window_start_minute: Integer
+
+        attr_accessor task_reminder_minute: Integer
+
+        attr_accessor updated_at: Time
+
+        def initialize: (
+          id: String,
+          created_at: Time,
+          eligible_follow_up_days: HubspotSDK::Models::Automation::PublicSequenceSettingsResponse::eligible_follow_up_days,
+          individual_task_reminders_enabled: bool,
+          selling_strategy: HubspotSDK::Models::Automation::PublicSequenceSettingsResponse::selling_strategy,
+          send_window_end_minute: Integer,
+          send_window_start_minute: Integer,
+          task_reminder_minute: Integer,
+          updated_at: Time
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          created_at: Time,
+          eligible_follow_up_days: HubspotSDK::Models::Automation::PublicSequenceSettingsResponse::eligible_follow_up_days,
+          individual_task_reminders_enabled: bool,
+          selling_strategy: HubspotSDK::Models::Automation::PublicSequenceSettingsResponse::selling_strategy,
+          send_window_end_minute: Integer,
+          send_window_start_minute: Integer,
+          task_reminder_minute: Integer,
+          updated_at: Time
+        }
+
+        type eligible_follow_up_days =
+          :BUSINESS_DAYS | :EVERYDAY | :WEEKDAYS_ONLY
+
+        module EligibleFollowUpDays
+          extend HubspotSDK::Internal::Type::Enum
+
+          BUSINESS_DAYS: :BUSINESS_DAYS
+          EVERYDAY: :EVERYDAY
+          WEEKDAYS_ONLY: :WEEKDAYS_ONLY
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::PublicSequenceSettingsResponse::eligible_follow_up_days]
+        end
+
+        type selling_strategy = :ACCOUNT_BASED | :LEAD_BASED
+
+        module SellingStrategy
+          extend HubspotSDK::Internal::Type::Enum
+
+          ACCOUNT_BASED: :ACCOUNT_BASED
+          LEAD_BASED: :LEAD_BASED
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::PublicSequenceSettingsResponse::selling_strategy]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Objects
+        type ticket_delete_params =
+          { ticket_id: String } & HubspotSDK::Internal::Type::request_parameters
+
+        class TicketDeleteParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor ticket_id: String
+
+          def initialize: (
+            ticket_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            ticket_id: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

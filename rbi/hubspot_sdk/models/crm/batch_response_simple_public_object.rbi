@@ -23,7 +23,8 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :started_at
 
-        # The status of the batch processing request. The expected value is "COMPLETE".
+        # The status of the batch processing request: "PENDING", "PROCESSING",
+        # "CANCELLED", or "COMPLETE"
         sig do
           returns(
             HubspotSDK::Crm::BatchResponseSimplePublicObject::Status::TaggedSymbol
@@ -78,7 +79,8 @@ module HubspotSDK
           results:,
           # The timestamp when the batch processing began, in ISO 8601 format.
           started_at:,
-          # The status of the batch processing request. The expected value is "COMPLETE".
+          # The status of the batch processing request: "PENDING", "PROCESSING",
+          # "CANCELLED", or "COMPLETE"
           status:,
           errors: nil,
           # An object containing relevant links related to the batch request.
@@ -108,7 +110,8 @@ module HubspotSDK
         def to_hash
         end
 
-        # The status of the batch processing request. The expected value is "COMPLETE".
+        # The status of the batch processing request: "PENDING", "PROCESSING",
+        # "CANCELLED", or "COMPLETE"
         module Status
           extend HubspotSDK::Internal::Type::Enum
 

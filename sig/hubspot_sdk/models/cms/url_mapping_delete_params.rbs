@@ -1,0 +1,25 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type url_mapping_delete_params =
+        { id: Integer } & HubspotSDK::Internal::Type::request_parameters
+
+      class URLMappingDeleteParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor id: Integer
+
+        def initialize: (
+          id: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          id: Integer,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

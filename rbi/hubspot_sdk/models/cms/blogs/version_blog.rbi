@@ -28,10 +28,10 @@ module HubspotSDK
           sig { returns(Time) }
           attr_accessor :updated_at
 
-          sig { returns(HubspotSDK::Cms::VersionUser) }
+          sig { returns(HubspotSDK::VersionUser) }
           attr_reader :user
 
-          sig { params(user: HubspotSDK::Cms::VersionUser::OrHash).void }
+          sig { params(user: HubspotSDK::VersionUser::OrHash).void }
           attr_writer :user
 
           sig do
@@ -39,7 +39,7 @@ module HubspotSDK
               id: String,
               object: HubspotSDK::Cms::Blogs::Blog::OrHash,
               updated_at: Time,
-              user: HubspotSDK::Cms::VersionUser::OrHash
+              user: HubspotSDK::VersionUser::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
@@ -57,7 +57,7 @@ module HubspotSDK
                 id: String,
                 object: HubspotSDK::Cms::Blogs::Blog,
                 updated_at: Time,
-                user: HubspotSDK::Cms::VersionUser
+                user: HubspotSDK::VersionUser
               }
             )
           end

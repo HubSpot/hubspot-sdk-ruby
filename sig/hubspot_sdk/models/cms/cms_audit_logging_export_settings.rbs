@@ -1,0 +1,91 @@
+module HubspotSDK
+  module Models
+    class CmsAuditLoggingExportSettings = Cms::CmsAuditLoggingExportSettings
+
+    module Cms
+      type cms_audit_logging_export_settings =
+        {
+          email: String,
+          format_: HubspotSDK::Models::Cms::CmsAuditLoggingExportSettings::format_,
+          portal_id: Integer,
+          recipient_user_ids: ::Array[Integer],
+          should_mark_export_file_as_sensitive: bool,
+          type: String,
+          filters: HubspotSDK::Cms::CmsAuditLoggingExportFilters,
+          partition: Integer,
+          user_id: Integer,
+          user_time_zone: String
+        }
+
+      class CmsAuditLoggingExportSettings < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor email: String
+
+        attr_accessor format_: HubspotSDK::Models::Cms::CmsAuditLoggingExportSettings::format_
+
+        attr_accessor portal_id: Integer
+
+        attr_accessor recipient_user_ids: ::Array[Integer]
+
+        attr_accessor should_mark_export_file_as_sensitive: bool
+
+        attr_accessor type: String
+
+        attr_reader filters: HubspotSDK::Cms::CmsAuditLoggingExportFilters?
+
+        def filters=: (
+          HubspotSDK::Cms::CmsAuditLoggingExportFilters
+        ) -> HubspotSDK::Cms::CmsAuditLoggingExportFilters
+
+        attr_reader partition: Integer?
+
+        def partition=: (Integer) -> Integer
+
+        attr_reader user_id: Integer?
+
+        def user_id=: (Integer) -> Integer
+
+        attr_reader user_time_zone: String?
+
+        def user_time_zone=: (String) -> String
+
+        def initialize: (
+          email: String,
+          format_: HubspotSDK::Models::Cms::CmsAuditLoggingExportSettings::format_,
+          portal_id: Integer,
+          recipient_user_ids: ::Array[Integer],
+          should_mark_export_file_as_sensitive: bool,
+          type: String,
+          ?filters: HubspotSDK::Cms::CmsAuditLoggingExportFilters,
+          ?partition: Integer,
+          ?user_id: Integer,
+          ?user_time_zone: String
+        ) -> void
+
+        def to_hash: -> {
+          email: String,
+          format_: HubspotSDK::Models::Cms::CmsAuditLoggingExportSettings::format_,
+          portal_id: Integer,
+          recipient_user_ids: ::Array[Integer],
+          should_mark_export_file_as_sensitive: bool,
+          type: String,
+          filters: HubspotSDK::Cms::CmsAuditLoggingExportFilters,
+          partition: Integer,
+          user_id: Integer,
+          user_time_zone: String
+        }
+
+        type format_ = :CSV | :XLS | :XLSX
+
+        module Format
+          extend HubspotSDK::Internal::Type::Enum
+
+          CSV: :CSV
+          XLS: :XLS
+          XLSX: :XLSX
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::CmsAuditLoggingExportSettings::format_]
+        end
+      end
+    end
+  end
+end

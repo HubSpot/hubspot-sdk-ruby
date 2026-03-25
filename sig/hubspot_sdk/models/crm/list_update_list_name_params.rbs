@@ -1,0 +1,38 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type list_update_list_name_params =
+        { list_id: String, include_filters: bool, list_name: String }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class ListUpdateListNameParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor list_id: String
+
+        attr_reader include_filters: bool?
+
+        def include_filters=: (bool) -> bool
+
+        attr_reader list_name: String?
+
+        def list_name=: (String) -> String
+
+        def initialize: (
+          list_id: String,
+          ?include_filters: bool,
+          ?list_name: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          list_id: String,
+          include_filters: bool,
+          list_name: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

@@ -1,0 +1,56 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Extensions
+        type integrator_object_result =
+          {
+            id: String,
+            actions: ::Array[HubspotSDK::Models::Crm::Extensions::IntegratorObjectResult::action],
+            title: String,
+            tokens: ::Array[HubspotSDK::Crm::Extensions::ObjectToken],
+            link_url: String
+          }
+
+        class IntegratorObjectResult < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_accessor actions: ::Array[HubspotSDK::Models::Crm::Extensions::IntegratorObjectResult::action]
+
+          attr_accessor title: String
+
+          attr_accessor tokens: ::Array[HubspotSDK::Crm::Extensions::ObjectToken]
+
+          attr_reader link_url: String?
+
+          def link_url=: (String) -> String
+
+          def initialize: (
+            id: String,
+            actions: ::Array[HubspotSDK::Models::Crm::Extensions::IntegratorObjectResult::action],
+            title: String,
+            tokens: ::Array[HubspotSDK::Crm::Extensions::ObjectToken],
+            ?link_url: String
+          ) -> void
+
+          def to_hash: -> {
+            id: String,
+            actions: ::Array[HubspotSDK::Models::Crm::Extensions::IntegratorObjectResult::action],
+            title: String,
+            tokens: ::Array[HubspotSDK::Crm::Extensions::ObjectToken],
+            link_url: String
+          }
+
+          type action =
+            HubspotSDK::Crm::Extensions::ActionHookActionBody
+            | HubspotSDK::Crm::Extensions::IFrameActionBody
+
+          module Action
+            extend HubspotSDK::Internal::Type::Union
+
+            def self?.variants: -> ::Array[HubspotSDK::Models::Crm::Extensions::IntegratorObjectResult::action]
+          end
+        end
+      end
+    end
+  end
+end

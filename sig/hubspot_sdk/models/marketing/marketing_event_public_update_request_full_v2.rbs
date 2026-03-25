@@ -1,0 +1,85 @@
+module HubspotSDK
+  module Models
+    class MarketingEventPublicUpdateRequestFullV2 = Marketing::MarketingEventPublicUpdateRequestFullV2
+
+    module Marketing
+      type marketing_event_public_update_request_full_v2 =
+        {
+          custom_properties: ::Array[HubspotSDK::PropertyValue],
+          object_id_: String,
+          end_date_time: Time,
+          event_cancelled: bool,
+          event_description: String,
+          event_name: String,
+          event_organizer: String,
+          event_type: String,
+          event_url: String,
+          start_date_time: Time
+        }
+
+      class MarketingEventPublicUpdateRequestFullV2 < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor custom_properties: ::Array[HubspotSDK::PropertyValue]
+
+        attr_accessor object_id_: String
+
+        attr_reader end_date_time: Time?
+
+        def end_date_time=: (Time) -> Time
+
+        attr_reader event_cancelled: bool?
+
+        def event_cancelled=: (bool) -> bool
+
+        attr_reader event_description: String?
+
+        def event_description=: (String) -> String
+
+        attr_reader event_name: String?
+
+        def event_name=: (String) -> String
+
+        attr_reader event_organizer: String?
+
+        def event_organizer=: (String) -> String
+
+        attr_reader event_type: String?
+
+        def event_type=: (String) -> String
+
+        attr_reader event_url: String?
+
+        def event_url=: (String) -> String
+
+        attr_reader start_date_time: Time?
+
+        def start_date_time=: (Time) -> Time
+
+        def initialize: (
+          custom_properties: ::Array[HubspotSDK::PropertyValue],
+          object_id_: String,
+          ?end_date_time: Time,
+          ?event_cancelled: bool,
+          ?event_description: String,
+          ?event_name: String,
+          ?event_organizer: String,
+          ?event_type: String,
+          ?event_url: String,
+          ?start_date_time: Time
+        ) -> void
+
+        def to_hash: -> {
+          custom_properties: ::Array[HubspotSDK::PropertyValue],
+          object_id_: String,
+          end_date_time: Time,
+          event_cancelled: bool,
+          event_description: String,
+          event_name: String,
+          event_organizer: String,
+          event_type: String,
+          event_url: String,
+          start_date_time: Time
+        }
+      end
+    end
+  end
+end

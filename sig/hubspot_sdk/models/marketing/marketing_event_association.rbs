@@ -1,0 +1,43 @@
+module HubspotSDK
+  module Models
+    class MarketingEventAssociation = Marketing::MarketingEventAssociation
+
+    module Marketing
+      type marketing_event_association =
+        {
+          marketing_event_id: String,
+          name: String,
+          external_account_id: String,
+          external_event_id: String
+        }
+
+      class MarketingEventAssociation < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor marketing_event_id: String
+
+        attr_accessor name: String
+
+        attr_reader external_account_id: String?
+
+        def external_account_id=: (String) -> String
+
+        attr_reader external_event_id: String?
+
+        def external_event_id=: (String) -> String
+
+        def initialize: (
+          marketing_event_id: String,
+          name: String,
+          ?external_account_id: String,
+          ?external_event_id: String
+        ) -> void
+
+        def to_hash: -> {
+          marketing_event_id: String,
+          name: String,
+          external_account_id: String,
+          external_event_id: String
+        }
+      end
+    end
+  end
+end

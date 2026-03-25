@@ -1,0 +1,245 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type email_list_params =
+        {
+          after: String,
+          archived: bool,
+          campaign: String,
+          created_after: Time,
+          created_at: Time,
+          created_before: Time,
+          included_properties: ::Array[String],
+          include_stats: bool,
+          is_published: bool,
+          limit: Integer,
+          marketing_campaign_names: bool,
+          published_after: Time,
+          published_at: Time,
+          published_before: Time,
+          sort: ::Array[String],
+          type: HubspotSDK::Models::Marketing::EmailListParams::type_,
+          updated_after: Time,
+          updated_at: Time,
+          updated_before: Time,
+          variant_stats: bool,
+          workflow_names: bool
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class EmailListParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_reader after: String?
+
+        def after=: (String) -> String
+
+        attr_reader archived: bool?
+
+        def archived=: (bool) -> bool
+
+        attr_reader campaign: String?
+
+        def campaign=: (String) -> String
+
+        attr_reader created_after: Time?
+
+        def created_after=: (Time) -> Time
+
+        attr_reader created_at: Time?
+
+        def created_at=: (Time) -> Time
+
+        attr_reader created_before: Time?
+
+        def created_before=: (Time) -> Time
+
+        attr_reader included_properties: ::Array[String]?
+
+        def included_properties=: (::Array[String]) -> ::Array[String]
+
+        attr_reader include_stats: bool?
+
+        def include_stats=: (bool) -> bool
+
+        attr_reader is_published: bool?
+
+        def is_published=: (bool) -> bool
+
+        attr_reader limit: Integer?
+
+        def limit=: (Integer) -> Integer
+
+        attr_reader marketing_campaign_names: bool?
+
+        def marketing_campaign_names=: (bool) -> bool
+
+        attr_reader published_after: Time?
+
+        def published_after=: (Time) -> Time
+
+        attr_reader published_at: Time?
+
+        def published_at=: (Time) -> Time
+
+        attr_reader published_before: Time?
+
+        def published_before=: (Time) -> Time
+
+        attr_reader sort: ::Array[String]?
+
+        def sort=: (::Array[String]) -> ::Array[String]
+
+        attr_reader type: HubspotSDK::Models::Marketing::EmailListParams::type_?
+
+        def type=: (
+          HubspotSDK::Models::Marketing::EmailListParams::type_
+        ) -> HubspotSDK::Models::Marketing::EmailListParams::type_
+
+        attr_reader updated_after: Time?
+
+        def updated_after=: (Time) -> Time
+
+        attr_reader updated_at: Time?
+
+        def updated_at=: (Time) -> Time
+
+        attr_reader updated_before: Time?
+
+        def updated_before=: (Time) -> Time
+
+        attr_reader variant_stats: bool?
+
+        def variant_stats=: (bool) -> bool
+
+        attr_reader workflow_names: bool?
+
+        def workflow_names=: (bool) -> bool
+
+        def initialize: (
+          ?after: String,
+          ?archived: bool,
+          ?campaign: String,
+          ?created_after: Time,
+          ?created_at: Time,
+          ?created_before: Time,
+          ?included_properties: ::Array[String],
+          ?include_stats: bool,
+          ?is_published: bool,
+          ?limit: Integer,
+          ?marketing_campaign_names: bool,
+          ?published_after: Time,
+          ?published_at: Time,
+          ?published_before: Time,
+          ?sort: ::Array[String],
+          ?type: HubspotSDK::Models::Marketing::EmailListParams::type_,
+          ?updated_after: Time,
+          ?updated_at: Time,
+          ?updated_before: Time,
+          ?variant_stats: bool,
+          ?workflow_names: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          after: String,
+          archived: bool,
+          campaign: String,
+          created_after: Time,
+          created_at: Time,
+          created_before: Time,
+          included_properties: ::Array[String],
+          include_stats: bool,
+          is_published: bool,
+          limit: Integer,
+          marketing_campaign_names: bool,
+          published_after: Time,
+          published_at: Time,
+          published_before: Time,
+          sort: ::Array[String],
+          type: HubspotSDK::Models::Marketing::EmailListParams::type_,
+          updated_after: Time,
+          updated_at: Time,
+          updated_before: Time,
+          variant_stats: bool,
+          workflow_names: bool,
+          request_options: HubspotSDK::RequestOptions
+        }
+
+        type type_ =
+          :AB_EMAIL
+          | :AUTOMATED_AB_EMAIL
+          | :AUTOMATED_EMAIL
+          | :BATCH_EMAIL
+          | :BLOG_EMAIL
+          | :BLOG_EMAIL_CHILD
+          | :FEEDBACK_CES_EMAIL
+          | :FEEDBACK_CUSTOM_EMAIL
+          | :FEEDBACK_CUSTOM_SURVEY_EMAIL
+          | :FEEDBACK_NPS_EMAIL
+          | :FOLLOWUP_EMAIL
+          | :LEADFLOW_EMAIL
+          | :LOCALTIME_EMAIL
+          | :MANAGE_PREFERENCES_EMAIL
+          | :MARKETING_SINGLE_SEND_API
+          | :MEMBERSHIP_EMAIL_VERIFICATION_EMAIL
+          | :MEMBERSHIP_FOLLOW_UP_EMAIL
+          | :MEMBERSHIP_OTP_LOGIN_EMAIL
+          | :MEMBERSHIP_PASSWORD_RESET_EMAIL
+          | :MEMBERSHIP_PASSWORD_SAVED_EMAIL
+          | :MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL
+          | :MEMBERSHIP_REGISTRATION_EMAIL
+          | :MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL
+          | :MEMBERSHIP_VERIFICATION_EMAIL
+          | :OPTIN_EMAIL
+          | :OPTIN_FOLLOWUP_EMAIL
+          | :RESUBSCRIBE_EMAIL
+          | :RSS_EMAIL
+          | :RSS_EMAIL_CHILD
+          | :SINGLE_SEND_API
+          | :SMTP_TOKEN
+          | :TICKET_EMAIL
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          AB_EMAIL: :AB_EMAIL
+          AUTOMATED_AB_EMAIL: :AUTOMATED_AB_EMAIL
+          AUTOMATED_EMAIL: :AUTOMATED_EMAIL
+          BATCH_EMAIL: :BATCH_EMAIL
+          BLOG_EMAIL: :BLOG_EMAIL
+          BLOG_EMAIL_CHILD: :BLOG_EMAIL_CHILD
+          FEEDBACK_CES_EMAIL: :FEEDBACK_CES_EMAIL
+          FEEDBACK_CUSTOM_EMAIL: :FEEDBACK_CUSTOM_EMAIL
+          FEEDBACK_CUSTOM_SURVEY_EMAIL: :FEEDBACK_CUSTOM_SURVEY_EMAIL
+          FEEDBACK_NPS_EMAIL: :FEEDBACK_NPS_EMAIL
+          FOLLOWUP_EMAIL: :FOLLOWUP_EMAIL
+          LEADFLOW_EMAIL: :LEADFLOW_EMAIL
+          LOCALTIME_EMAIL: :LOCALTIME_EMAIL
+          MANAGE_PREFERENCES_EMAIL: :MANAGE_PREFERENCES_EMAIL
+          MARKETING_SINGLE_SEND_API: :MARKETING_SINGLE_SEND_API
+          MEMBERSHIP_EMAIL_VERIFICATION_EMAIL: :MEMBERSHIP_EMAIL_VERIFICATION_EMAIL
+          MEMBERSHIP_FOLLOW_UP_EMAIL: :MEMBERSHIP_FOLLOW_UP_EMAIL
+          MEMBERSHIP_OTP_LOGIN_EMAIL: :MEMBERSHIP_OTP_LOGIN_EMAIL
+          MEMBERSHIP_PASSWORD_RESET_EMAIL: :MEMBERSHIP_PASSWORD_RESET_EMAIL
+          MEMBERSHIP_PASSWORD_SAVED_EMAIL: :MEMBERSHIP_PASSWORD_SAVED_EMAIL
+          MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL: :MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL
+          MEMBERSHIP_REGISTRATION_EMAIL: :MEMBERSHIP_REGISTRATION_EMAIL
+          MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL: :MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL
+          MEMBERSHIP_VERIFICATION_EMAIL: :MEMBERSHIP_VERIFICATION_EMAIL
+          OPTIN_EMAIL: :OPTIN_EMAIL
+          OPTIN_FOLLOWUP_EMAIL: :OPTIN_FOLLOWUP_EMAIL
+          RESUBSCRIBE_EMAIL: :RESUBSCRIBE_EMAIL
+          RSS_EMAIL: :RSS_EMAIL
+          RSS_EMAIL_CHILD: :RSS_EMAIL_CHILD
+          SINGLE_SEND_API: :SINGLE_SEND_API
+          SMTP_TOKEN: :SMTP_TOKEN
+          TICKET_EMAIL: :TICKET_EMAIL
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::EmailListParams::type_]
+        end
+      end
+    end
+  end
+end

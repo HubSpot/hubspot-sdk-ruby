@@ -1,0 +1,49 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type object_schema_get_params =
+        {
+          object_type: String,
+          include_association_definitions: bool,
+          include_audit_metadata: bool,
+          include_property_definitions: bool
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class ObjectSchemaGetParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor object_type: String
+
+        attr_reader include_association_definitions: bool?
+
+        def include_association_definitions=: (bool) -> bool
+
+        attr_reader include_audit_metadata: bool?
+
+        def include_audit_metadata=: (bool) -> bool
+
+        attr_reader include_property_definitions: bool?
+
+        def include_property_definitions=: (bool) -> bool
+
+        def initialize: (
+          object_type: String,
+          ?include_association_definitions: bool,
+          ?include_audit_metadata: bool,
+          ?include_property_definitions: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          object_type: String,
+          include_association_definitions: bool,
+          include_audit_metadata: bool,
+          include_property_definitions: bool,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

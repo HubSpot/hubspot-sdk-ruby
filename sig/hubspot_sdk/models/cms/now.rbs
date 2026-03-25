@@ -1,0 +1,46 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type now =
+        {
+          operator: HubspotSDK::Models::Cms::Now::operator,
+          property_name: String,
+          value: Float
+        }
+
+      class Now < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor operator: HubspotSDK::Models::Cms::Now::operator
+
+        attr_reader property_name: String?
+
+        def property_name=: (String) -> String
+
+        attr_reader value: Float?
+
+        def value=: (Float) -> Float
+
+        def initialize: (
+          operator: HubspotSDK::Models::Cms::Now::operator,
+          ?property_name: String,
+          ?value: Float
+        ) -> void
+
+        def to_hash: -> {
+          operator: HubspotSDK::Models::Cms::Now::operator,
+          property_name: String,
+          value: Float
+        }
+
+        type operator = :NOW
+
+        module Operator
+          extend HubspotSDK::Internal::Type::Enum
+
+          NOW: :NOW
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::Now::operator]
+        end
+      end
+    end
+  end
+end

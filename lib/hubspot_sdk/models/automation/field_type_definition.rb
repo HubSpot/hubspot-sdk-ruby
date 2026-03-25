@@ -16,8 +16,8 @@ module HubspotSDK
 
         # @!attribute options
         #
-        #   @return [Array<HubspotSDK::Models::Events::Option>]
-        required :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::Option] }
+        #   @return [Array<HubspotSDK::Models::Option>]
+        required :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Option] }
 
         # @!attribute schema
         #
@@ -76,7 +76,7 @@ module HubspotSDK
         # @!method initialize(external_options:, name:, options:, schema:, type:, use_chirp:, description: nil, external_options_reference_type: nil, field_type: nil, help_text: nil, label: nil, options_url: nil, referenced_object_type: nil)
         #   @param external_options [Boolean]
         #   @param name [String]
-        #   @param options [Array<HubspotSDK::Models::Events::Option>]
+        #   @param options [Array<HubspotSDK::Models::Option>]
         #   @param schema [HubspotSDK::Models::Automation::IntegerFieldSchema, HubspotSDK::Models::Automation::LongFieldSchema, HubspotSDK::Models::Automation::DoubleFieldSchema, HubspotSDK::Models::Automation::StringFieldSchema, HubspotSDK::Models::Automation::BooleanFieldSchema, HubspotSDK::Models::Automation::ArrayFieldSchema, HubspotSDK::Models::Automation::ObjectFieldSchema]
         #   @param type [Symbol, HubspotSDK::Models::Automation::FieldTypeDefinition::Type]
         #   @param use_chirp [Boolean]

@@ -86,7 +86,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::SettingsTest < HubspotSDK::Test::
         id: String,
         object: HubspotSDK::Cms::Blogs::Blog,
         updated_at: Time,
-        user: HubspotSDK::Cms::VersionUser
+        user: HubspotSDK::VersionUser
       }
     end
   end
@@ -112,7 +112,7 @@ class HubspotSDK::Test::Resources::Cms::Blogs::SettingsTest < HubspotSDK::Test::
         id: String,
         object: HubspotSDK::Cms::Blogs::Blog,
         updated_at: Time,
-        user: HubspotSDK::Cms::VersionUser
+        user: HubspotSDK::VersionUser
       }
     end
   end

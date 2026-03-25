@@ -1,0 +1,75 @@
+module HubspotSDK
+  module Resources
+    class Crm
+      class ObjectSchemas
+        attr_reader batch: HubspotSDK::Resources::Crm::ObjectSchemas::Batch
+
+        def create: (
+          allows_sensitive_properties: bool,
+          associated_objects: ::Array[String],
+          labels: HubspotSDK::ObjectTypeDefinitionLabels,
+          name: String,
+          properties: ::Array[HubspotSDK::Crm::ObjectTypePropertyCreate],
+          required_properties: ::Array[String],
+          searchable_properties: ::Array[String],
+          secondary_display_properties: ::Array[String],
+          ?description: String,
+          ?primary_display_property: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::ObjectSchema
+
+        def update: (
+          String object_type,
+          clear_description: bool,
+          ?allows_sensitive_properties: bool,
+          ?description: String,
+          ?labels: HubspotSDK::ObjectTypeDefinitionLabels,
+          ?primary_display_property: String,
+          ?required_properties: ::Array[String],
+          ?restorable: bool,
+          ?searchable_properties: ::Array[String],
+          ?secondary_display_properties: ::Array[String],
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::ObjectTypeDefinition
+
+        def list: (
+          ?archived: bool,
+          ?include_association_definitions: bool,
+          ?include_audit_metadata: bool,
+          ?include_property_definitions: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::CollectionResponseObjectSchemaNoPaging
+
+        def delete: (
+          String object_type,
+          ?archived: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def create_association: (
+          String object_type,
+          from_object_type_id: String,
+          to_object_type_id: String,
+          ?name: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Events::AssociationDefinition
+
+        def delete_association: (
+          String association_identifier,
+          object_type: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def get: (
+          String object_type,
+          ?include_association_definitions: bool,
+          ?include_audit_metadata: bool,
+          ?include_property_definitions: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::ObjectSchema
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

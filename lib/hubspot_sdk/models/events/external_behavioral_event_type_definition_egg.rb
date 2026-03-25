@@ -12,7 +12,7 @@ module HubspotSDK
                  api_name: :includeDefaultProperties
 
         # @!attribute label
-        #   Human readable label for the event for display in HubSpot's UI.
+        #   Human readable label for the event. Used in HubSpot UI
         #
         #   @return [String]
         required :label, String
@@ -41,17 +41,19 @@ module HubspotSDK
         optional :description, String
 
         # @!attribute name
-        #   Internal event name, which must be used when referencing the event from the API.
-        #   If a name is not supplied, one will be generated based on the label. The name
-        #   does not include the `pe<PORTAL_ID>_` prefix used when sending event
-        #   completions.
+        #   Internal event name, which must be used when referencing the event from this
+        #   event definitions API. If a name is not supplied, one will be generated based on
+        #   the label. The `name` value will also be used to automatically generate a
+        #   `fullyQualifiedName` for the event definition, which you'll use when sending
+        #   event completions to this event.
         #
         #   @return [String, nil]
         optional :name, String
 
         # @!attribute primary_object
-        #   The object type to associate this event to. Can be one of `CONTACT`, `COMPANY`,
-        #   `DEAL`, `TICKET`. If no value is supplied, will default to `CONTACT`.
+        #   The object type to associate this event to. Can be one of CONTACT, COMPANY,
+        #   DEAL, TICKET. If no primaryObject is supplied, we will default to associating
+        #   the event to CONTACT objects.
         #
         #   @return [String, nil]
         optional :primary_object, String, api_name: :primaryObject
@@ -63,7 +65,7 @@ module HubspotSDK
         #
         #   @param include_default_properties [Boolean]
         #
-        #   @param label [String] Human readable label for the event for display in HubSpot's UI.
+        #   @param label [String] Human readable label for the event. Used in HubSpot UI
         #
         #   @param property_definitions [Array<HubspotSDK::Models::Events::ExternalBehavioralEventPropertyCreate>] List of custom properties on event
         #
@@ -71,9 +73,9 @@ module HubspotSDK
         #
         #   @param description [String] A description of the event that will be shown as help text in HubSpot.
         #
-        #   @param name [String] Internal event name, which must be used when referencing the event from the API.
+        #   @param name [String] Internal event name, which must be used when referencing the event from this eve
         #
-        #   @param primary_object [String] The object type to associate this event to. Can be one of `CONTACT`, `COMPANY`,
+        #   @param primary_object [String] The object type to associate this event to. Can be one of CONTACT, COMPANY, DEAL
       end
     end
   end

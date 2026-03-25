@@ -1,0 +1,69 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Extensions
+        type formatted_phone_number =
+          {
+            :e164_number => String,
+            phone_number_type: HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber::phone_number_type,
+            extension: String
+          }
+
+        class FormattedPhoneNumber < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor e164_number: String
+
+          attr_accessor phone_number_type: HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber::phone_number_type
+
+          attr_reader extension: String?
+
+          def extension=: (String) -> String
+
+          def initialize: (
+            e164_number: String,
+            phone_number_type: HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber::phone_number_type,
+            ?extension: String
+          ) -> void
+
+          def to_hash: -> {
+            :e164_number => String,
+            phone_number_type: HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber::phone_number_type,
+            extension: String
+          }
+
+          type phone_number_type =
+            :FIXED_LINE
+            | :FIXED_LINE_OR_MOBILE
+            | :MOBILE
+            | :PAGER
+            | :PERSONAL_NUMBER
+            | :PREMIUM_RATE
+            | :SHARED_COST
+            | :TOLL_FREE
+            | :UAN
+            | :UNKNOWN
+            | :VOICEMAIL
+            | :VOIP
+
+          module PhoneNumberType
+            extend HubspotSDK::Internal::Type::Enum
+
+            FIXED_LINE: :FIXED_LINE
+            FIXED_LINE_OR_MOBILE: :FIXED_LINE_OR_MOBILE
+            MOBILE: :MOBILE
+            PAGER: :PAGER
+            PERSONAL_NUMBER: :PERSONAL_NUMBER
+            PREMIUM_RATE: :PREMIUM_RATE
+            SHARED_COST: :SHARED_COST
+            TOLL_FREE: :TOLL_FREE
+            UAN: :UAN
+            UNKNOWN: :UNKNOWN
+            VOICEMAIL: :VOICEMAIL
+            VOIP: :VOIP
+
+            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber::phone_number_type]
+          end
+        end
+      end
+    end
+  end
+end

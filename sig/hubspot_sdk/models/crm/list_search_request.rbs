@@ -1,0 +1,65 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type list_search_request =
+        {
+          additional_properties: ::Array[String],
+          list_ids: ::Array[String],
+          offset: Integer,
+          processing_types: ::Array[String],
+          count: Integer,
+          object_type_id: String,
+          query: String,
+          sort: String
+        }
+
+      class ListSearchRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor additional_properties: ::Array[String]
+
+        attr_accessor list_ids: ::Array[String]
+
+        attr_accessor offset: Integer
+
+        attr_accessor processing_types: ::Array[String]
+
+        attr_reader count: Integer?
+
+        def count=: (Integer) -> Integer
+
+        attr_reader object_type_id: String?
+
+        def object_type_id=: (String) -> String
+
+        attr_reader query: String?
+
+        def query=: (String) -> String
+
+        attr_reader sort: String?
+
+        def sort=: (String) -> String
+
+        def initialize: (
+          additional_properties: ::Array[String],
+          list_ids: ::Array[String],
+          offset: Integer,
+          processing_types: ::Array[String],
+          ?count: Integer,
+          ?object_type_id: String,
+          ?query: String,
+          ?sort: String
+        ) -> void
+
+        def to_hash: -> {
+          additional_properties: ::Array[String],
+          list_ids: ::Array[String],
+          offset: Integer,
+          processing_types: ::Array[String],
+          count: Integer,
+          object_type_id: String,
+          query: String,
+          sort: String
+        }
+      end
+    end
+  end
+end

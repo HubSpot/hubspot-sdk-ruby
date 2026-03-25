@@ -1,0 +1,40 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type option_decorators_extension_data =
+        {
+          option_decorators: ::Hash[Symbol, HubspotSDK::Cms::OptionDecorations],
+          option_decorator_style: HubspotSDK::Models::Cms::OptionDecoratorsExtensionData::option_decorator_style
+        }
+
+      class OptionDecoratorsExtensionData < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor option_decorators: ::Hash[Symbol, HubspotSDK::Cms::OptionDecorations]
+
+        attr_accessor option_decorator_style: HubspotSDK::Models::Cms::OptionDecoratorsExtensionData::option_decorator_style
+
+        def initialize: (
+          option_decorators: ::Hash[Symbol, HubspotSDK::Cms::OptionDecorations],
+          option_decorator_style: HubspotSDK::Models::Cms::OptionDecoratorsExtensionData::option_decorator_style
+        ) -> void
+
+        def to_hash: -> {
+          option_decorators: ::Hash[Symbol, HubspotSDK::Cms::OptionDecorations],
+          option_decorator_style: HubspotSDK::Models::Cms::OptionDecoratorsExtensionData::option_decorator_style
+        }
+
+        type option_decorator_style =
+          :LABEL_ONLY | :LABEL_WITH_BADGE | :LABEL_WITH_COLOR
+
+        module OptionDecoratorStyle
+          extend HubspotSDK::Internal::Type::Enum
+
+          LABEL_ONLY: :LABEL_ONLY
+          LABEL_WITH_BADGE: :LABEL_WITH_BADGE
+          LABEL_WITH_COLOR: :LABEL_WITH_COLOR
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::OptionDecoratorsExtensionData::option_decorator_style]
+        end
+      end
+    end
+  end
+end

@@ -19,11 +19,26 @@ module HubspotSDK
     sig { returns(HubspotSDK::Resources::Account) }
     attr_reader :account
 
+    sig { returns(HubspotSDK::Resources::AppWebhooks) }
+    attr_reader :app_webhooks
+
+    sig { returns(HubspotSDK::Resources::Auth) }
+    attr_reader :auth
+
     sig { returns(HubspotSDK::Resources::Automation) }
     attr_reader :automation
 
+    sig { returns(HubspotSDK::Resources::BusinessUnits) }
+    attr_reader :business_units
+
     sig { returns(HubspotSDK::Resources::Cms) }
     attr_reader :cms
+
+    sig { returns(HubspotSDK::Resources::CommunicationPreferences) }
+    attr_reader :communication_preferences
+
+    sig { returns(HubspotSDK::Resources::Conversations) }
+    attr_reader :conversations
 
     sig { returns(HubspotSDK::Resources::Crm) }
     attr_reader :crm

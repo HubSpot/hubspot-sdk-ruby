@@ -1,0 +1,20 @@
+module HubspotSDK
+  module Models
+    module AppWebhooks
+      type subscription_list_response =
+        { results: ::Array[HubspotSDK::AppWebhooks::SubscriptionResponse] }
+
+      class SubscriptionListResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubspotSDK::AppWebhooks::SubscriptionResponse]
+
+        def initialize: (
+          results: ::Array[HubspotSDK::AppWebhooks::SubscriptionResponse]
+        ) -> void
+
+        def to_hash: -> {
+          results: ::Array[HubspotSDK::AppWebhooks::SubscriptionResponse]
+        }
+      end
+    end
+  end
+end

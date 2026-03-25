@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    class MarketingEventExternalUniqueIdentifier = Marketing::MarketingEventExternalUniqueIdentifier
+
+    module Marketing
+      type marketing_event_external_unique_identifier =
+        {
+          app_id: Integer,
+          external_account_id: String,
+          external_event_id: String
+        }
+
+      class MarketingEventExternalUniqueIdentifier < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor app_id: Integer
+
+        attr_accessor external_account_id: String
+
+        attr_accessor external_event_id: String
+
+        def initialize: (
+          app_id: Integer,
+          external_account_id: String,
+          external_event_id: String
+        ) -> void
+
+        def to_hash: -> {
+          app_id: Integer,
+          external_account_id: String,
+          external_event_id: String
+        }
+      end
+    end
+  end
+end

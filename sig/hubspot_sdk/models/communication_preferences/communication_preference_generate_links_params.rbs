@@ -1,0 +1,49 @@
+module HubspotSDK
+  module Models
+    module CommunicationPreferences
+      type communication_preference_generate_links_params =
+        {
+          channel: HubspotSDK::Models::CommunicationPreferences::LinkGenerationRequest::channel,
+          business_unit_id: Integer
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class CommunicationPreferenceGenerateLinksParams < HubspotSDK::Models::CommunicationPreferences::LinkGenerationRequest
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        def channel: -> HubspotSDK::Models::CommunicationPreferences::LinkGenerationRequest::channel
+
+        def channel=: (
+          HubspotSDK::Models::CommunicationPreferences::LinkGenerationRequest::channel _
+        ) -> HubspotSDK::Models::CommunicationPreferences::LinkGenerationRequest::channel
+
+        def business_unit_id: -> Integer?
+
+        def business_unit_id=: (Integer _) -> Integer
+
+        def initialize: (
+          channel: HubspotSDK::Models::CommunicationPreferences::LinkGenerationRequest::channel,
+          ?business_unit_id: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          channel: HubspotSDK::Models::CommunicationPreferences::LinkGenerationRequest::channel,
+          business_unit_id: Integer,
+          request_options: HubspotSDK::RequestOptions
+        }
+
+        type channel = :EMAIL
+
+        module Channel
+          extend HubspotSDK::Internal::Type::Enum
+
+          EMAIL: :EMAIL
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CommunicationPreferences::LinkGenerationRequest::channel]
+        end
+      end
+    end
+  end
+end

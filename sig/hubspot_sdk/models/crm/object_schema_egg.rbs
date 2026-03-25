@@ -1,0 +1,71 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type object_schema_egg =
+        {
+          allows_sensitive_properties: bool,
+          associated_objects: ::Array[String],
+          labels: HubspotSDK::ObjectTypeDefinitionLabels,
+          name: String,
+          properties: ::Array[HubspotSDK::Crm::ObjectTypePropertyCreate],
+          required_properties: ::Array[String],
+          searchable_properties: ::Array[String],
+          secondary_display_properties: ::Array[String],
+          description: String,
+          primary_display_property: String
+        }
+
+      class ObjectSchemaEgg < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor allows_sensitive_properties: bool
+
+        attr_accessor associated_objects: ::Array[String]
+
+        attr_accessor labels: HubspotSDK::ObjectTypeDefinitionLabels
+
+        attr_accessor name: String
+
+        attr_accessor properties: ::Array[HubspotSDK::Crm::ObjectTypePropertyCreate]
+
+        attr_accessor required_properties: ::Array[String]
+
+        attr_accessor searchable_properties: ::Array[String]
+
+        attr_accessor secondary_display_properties: ::Array[String]
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader primary_display_property: String?
+
+        def primary_display_property=: (String) -> String
+
+        def initialize: (
+          allows_sensitive_properties: bool,
+          associated_objects: ::Array[String],
+          labels: HubspotSDK::ObjectTypeDefinitionLabels,
+          name: String,
+          properties: ::Array[HubspotSDK::Crm::ObjectTypePropertyCreate],
+          required_properties: ::Array[String],
+          searchable_properties: ::Array[String],
+          secondary_display_properties: ::Array[String],
+          ?description: String,
+          ?primary_display_property: String
+        ) -> void
+
+        def to_hash: -> {
+          allows_sensitive_properties: bool,
+          associated_objects: ::Array[String],
+          labels: HubspotSDK::ObjectTypeDefinitionLabels,
+          name: String,
+          properties: ::Array[HubspotSDK::Crm::ObjectTypePropertyCreate],
+          required_properties: ::Array[String],
+          searchable_properties: ::Array[String],
+          secondary_display_properties: ::Array[String],
+          description: String,
+          primary_display_property: String
+        }
+      end
+    end
+  end
+end
