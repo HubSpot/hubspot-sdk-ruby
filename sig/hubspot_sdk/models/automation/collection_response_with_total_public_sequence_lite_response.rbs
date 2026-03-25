@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type collection_response_with_total_public_sequence_lite_response =
+        {
+          results: ::Array[HubspotSDK::Automation::PublicSequenceLiteResponse],
+          total: Integer,
+          paging: HubspotSDK::Paging
+        }
+
+      class CollectionResponseWithTotalPublicSequenceLiteResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubspotSDK::Automation::PublicSequenceLiteResponse]
+
+        attr_accessor total: Integer
+
+        attr_reader paging: HubspotSDK::Paging?
+
+        def paging=: (HubspotSDK::Paging) -> HubspotSDK::Paging
+
+        def initialize: (
+          results: ::Array[HubspotSDK::Automation::PublicSequenceLiteResponse],
+          total: Integer,
+          ?paging: HubspotSDK::Paging
+        ) -> void
+
+        def to_hash: -> {
+          results: ::Array[HubspotSDK::Automation::PublicSequenceLiteResponse],
+          total: Integer,
+          paging: HubspotSDK::Paging
+        }
+      end
+    end
+  end
+end

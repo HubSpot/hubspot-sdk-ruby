@@ -1,0 +1,86 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type create_image_object_request =
+        {
+          media_type: HubspotSDK::Models::Cms::CreateImageObjectRequest::media_type,
+          title: String,
+          details_page_link: String,
+          duration: Integer,
+          external_id: String,
+          file_url: String,
+          oembed_url: String,
+          poster_url: String,
+          thumbnail_url: String
+        }
+
+      class CreateImageObjectRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor media_type: HubspotSDK::Models::Cms::CreateImageObjectRequest::media_type
+
+        attr_accessor title: String
+
+        attr_reader details_page_link: String?
+
+        def details_page_link=: (String) -> String
+
+        attr_reader duration: Integer?
+
+        def duration=: (Integer) -> Integer
+
+        attr_reader external_id: String?
+
+        def external_id=: (String) -> String
+
+        attr_reader file_url: String?
+
+        def file_url=: (String) -> String
+
+        attr_reader oembed_url: String?
+
+        def oembed_url=: (String) -> String
+
+        attr_reader poster_url: String?
+
+        def poster_url=: (String) -> String
+
+        attr_reader thumbnail_url: String?
+
+        def thumbnail_url=: (String) -> String
+
+        def initialize: (
+          media_type: HubspotSDK::Models::Cms::CreateImageObjectRequest::media_type,
+          title: String,
+          ?details_page_link: String,
+          ?duration: Integer,
+          ?external_id: String,
+          ?file_url: String,
+          ?oembed_url: String,
+          ?poster_url: String,
+          ?thumbnail_url: String
+        ) -> void
+
+        def to_hash: -> {
+          media_type: HubspotSDK::Models::Cms::CreateImageObjectRequest::media_type,
+          title: String,
+          details_page_link: String,
+          duration: Integer,
+          external_id: String,
+          file_url: String,
+          oembed_url: String,
+          poster_url: String,
+          thumbnail_url: String
+        }
+
+        type media_type = :IMAGE
+
+        module MediaType
+          extend HubspotSDK::Internal::Type::Enum
+
+          IMAGE: :IMAGE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::CreateImageObjectRequest::media_type]
+        end
+      end
+    end
+  end
+end

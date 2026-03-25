@@ -1,0 +1,53 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type indexed_data =
+        {
+          id: String,
+          fields: ::Hash[Symbol, HubspotSDK::Cms::IndexedField],
+          type: HubspotSDK::Models::Cms::IndexedData::type_
+        }
+
+      class IndexedData < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor fields: ::Hash[Symbol, HubspotSDK::Cms::IndexedField]
+
+        attr_accessor type: HubspotSDK::Models::Cms::IndexedData::type_
+
+        def initialize: (
+          id: String,
+          fields: ::Hash[Symbol, HubspotSDK::Cms::IndexedField],
+          type: HubspotSDK::Models::Cms::IndexedData::type_
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          fields: ::Hash[Symbol, HubspotSDK::Cms::IndexedField],
+          type: HubspotSDK::Models::Cms::IndexedData::type_
+        }
+
+        type type_ =
+          :BLOG_POST
+          | :KNOWLEDGE_ARTICLE
+          | :LANDING_PAGE
+          | :LISTING_PAGE
+          | :SITE_PAGE
+          | :STRUCTURED_CONTENT
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          BLOG_POST: :BLOG_POST
+          KNOWLEDGE_ARTICLE: :KNOWLEDGE_ARTICLE
+          LANDING_PAGE: :LANDING_PAGE
+          LISTING_PAGE: :LISTING_PAGE
+          SITE_PAGE: :SITE_PAGE
+          STRUCTURED_CONTENT: :STRUCTURED_CONTENT
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::IndexedData::type_]
+        end
+      end
+    end
+  end
+end

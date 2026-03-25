@@ -1,0 +1,46 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type owner_list_params =
+        { after: String, archived: bool, email: String, limit: Integer }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class OwnerListParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_reader after: String?
+
+        def after=: (String) -> String
+
+        attr_reader archived: bool?
+
+        def archived=: (bool) -> bool
+
+        attr_reader email: String?
+
+        def email=: (String) -> String
+
+        attr_reader limit: Integer?
+
+        def limit=: (Integer) -> Integer
+
+        def initialize: (
+          ?after: String,
+          ?archived: bool,
+          ?email: String,
+          ?limit: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          after: String,
+          archived: bool,
+          email: String,
+          limit: Integer,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

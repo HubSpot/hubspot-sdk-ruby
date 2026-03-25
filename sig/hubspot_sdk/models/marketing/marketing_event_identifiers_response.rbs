@@ -1,0 +1,50 @@
+module HubspotSDK
+  module Models
+    class MarketingEventIdentifiersResponse = Marketing::MarketingEventIdentifiersResponse
+
+    module Marketing
+      type marketing_event_identifiers_response =
+        {
+          external_event_id: String,
+          marketing_event_name: String,
+          object_id_: String,
+          app_info: HubspotSDK::Marketing::AppInfo,
+          external_account_id: String
+        }
+
+      class MarketingEventIdentifiersResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor external_event_id: String
+
+        attr_accessor marketing_event_name: String
+
+        attr_accessor object_id_: String
+
+        attr_reader app_info: HubspotSDK::Marketing::AppInfo?
+
+        def app_info=: (
+          HubspotSDK::Marketing::AppInfo
+        ) -> HubspotSDK::Marketing::AppInfo
+
+        attr_reader external_account_id: String?
+
+        def external_account_id=: (String) -> String
+
+        def initialize: (
+          external_event_id: String,
+          marketing_event_name: String,
+          object_id_: String,
+          ?app_info: HubspotSDK::Marketing::AppInfo,
+          ?external_account_id: String
+        ) -> void
+
+        def to_hash: -> {
+          external_event_id: String,
+          marketing_event_name: String,
+          object_id_: String,
+          app_info: HubspotSDK::Marketing::AppInfo,
+          external_account_id: String
+        }
+      end
+    end
+  end
+end

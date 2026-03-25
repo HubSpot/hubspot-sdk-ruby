@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type public_email_from_details =
+        { custom_reply_to: String, from_name: String, reply_to: String }
+
+      class PublicEmailFromDetails < HubspotSDK::Internal::Type::BaseModel
+        attr_reader custom_reply_to: String?
+
+        def custom_reply_to=: (String) -> String
+
+        attr_reader from_name: String?
+
+        def from_name=: (String) -> String
+
+        attr_reader reply_to: String?
+
+        def reply_to=: (String) -> String
+
+        def initialize: (
+          ?custom_reply_to: String,
+          ?from_name: String,
+          ?reply_to: String
+        ) -> void
+
+        def to_hash: -> {
+          custom_reply_to: String,
+          from_name: String,
+          reply_to: String
+        }
+      end
+    end
+  end
+end

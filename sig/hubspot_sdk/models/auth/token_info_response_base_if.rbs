@@ -1,0 +1,15 @@
+module HubspotSDK
+  module Models
+    module Auth
+      type token_info_response_base_if = { active: bool }
+
+      class TokenInfoResponseBaseIf < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor active: bool
+
+        def initialize: (active: bool) -> void
+
+        def to_hash: -> { active: bool }
+      end
+    end
+  end
+end

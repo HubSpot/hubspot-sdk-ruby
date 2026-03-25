@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type record_id_with_memberships =
+        {
+          object_type_id: String,
+          record_id: String,
+          record_list_memberships: ::Array[HubspotSDK::Crm::RecordListMembership]
+        }
+
+      class RecordIDWithMemberships < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor object_type_id: String
+
+        attr_accessor record_id: String
+
+        attr_accessor record_list_memberships: ::Array[HubspotSDK::Crm::RecordListMembership]
+
+        def initialize: (
+          object_type_id: String,
+          record_id: String,
+          record_list_memberships: ::Array[HubspotSDK::Crm::RecordListMembership]
+        ) -> void
+
+        def to_hash: -> {
+          object_type_id: String,
+          record_id: String,
+          record_list_memberships: ::Array[HubspotSDK::Crm::RecordListMembership]
+        }
+      end
+    end
+  end
+end

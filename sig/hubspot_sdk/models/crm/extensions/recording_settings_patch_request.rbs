@@ -1,0 +1,20 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Extensions
+        type recording_settings_patch_request =
+          { url_to_retrieve_authed_recording: String }
+
+        class RecordingSettingsPatchRequest < HubspotSDK::Internal::Type::BaseModel
+          attr_reader url_to_retrieve_authed_recording: String?
+
+          def url_to_retrieve_authed_recording=: (String) -> String
+
+          def initialize: (?url_to_retrieve_authed_recording: String) -> void
+
+          def to_hash: -> { url_to_retrieve_authed_recording: String }
+        end
+      end
+    end
+  end
+end

@@ -19,9 +19,9 @@ module HubspotSDK
           type: String,
           ?description: String,
           ?name: String,
-          ?options: ::Array[HubspotSDK::Events::OptionInput],
+          ?options: ::Array[HubspotSDK::OptionInput],
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Events::Property
+        ) -> HubspotSDK::Property
 
         def delete_event_definition: (
           String event_name,
@@ -76,9 +76,9 @@ module HubspotSDK
           event_name: String,
           ?description: String,
           ?label: String,
-          ?options: ::Array[HubspotSDK::Events::OptionInput],
+          ?options: ::Array[HubspotSDK::OptionInput],
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Events::Property
+        ) -> HubspotSDK::Property
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

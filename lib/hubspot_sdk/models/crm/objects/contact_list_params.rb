@@ -9,11 +9,6 @@ module HubspotSDK
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          # @!attribute object_type
-          #
-          #   @return [String]
-          required :object_type, String
-
           # @!attribute after
           #   The paging cursor token of the last successfully read resource will be returned
           #   as the `paging.next.after` JSON property of a paged response containing more
@@ -58,11 +53,9 @@ module HubspotSDK
           #   @return [Array<String>, nil]
           optional :properties_with_history, HubspotSDK::Internal::Type::ArrayOf[String]
 
-          # @!method initialize(object_type:, after: nil, archived: nil, associations: nil, limit: nil, properties: nil, properties_with_history: nil, request_options: {})
+          # @!method initialize(after: nil, archived: nil, associations: nil, limit: nil, properties: nil, properties_with_history: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
           #   {HubspotSDK::Models::Crm::Objects::ContactListParams} for more details.
-          #
-          #   @param object_type [String]
           #
           #   @param after [String] The paging cursor token of the last successfully read resource will be returned
           #

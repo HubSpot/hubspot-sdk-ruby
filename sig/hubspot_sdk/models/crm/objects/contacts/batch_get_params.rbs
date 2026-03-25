@@ -1,0 +1,31 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Objects
+        module Contacts
+          type batch_get_params =
+            { archived: bool } & HubspotSDK::Internal::Type::request_parameters
+
+          class BatchGetParams < HubspotSDK::Models::Crm::BatchReadInputSimplePublicObjectID
+            extend HubspotSDK::Internal::Type::RequestParameters::Converter
+            include HubspotSDK::Internal::Type::RequestParameters
+
+            def archived: -> bool?
+
+            def archived=: (bool _) -> bool
+
+            def initialize: (
+              ?archived: bool,
+              ?request_options: HubspotSDK::request_opts
+            ) -> void
+
+            def to_hash: -> {
+              archived: bool,
+              request_options: HubspotSDK::RequestOptions
+            }
+          end
+        end
+      end
+    end
+  end
+end

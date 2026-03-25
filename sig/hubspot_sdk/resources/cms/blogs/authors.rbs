@@ -1,0 +1,117 @@
+module HubspotSDK
+  module Resources
+    class Cms
+      class Blogs
+        class Authors
+          attr_reader batch: HubspotSDK::Resources::Cms::Blogs::Authors::Batch
+
+          def create: (
+            id: String,
+            avatar: String,
+            bio: String,
+            created: Time,
+            deleted_at: Time,
+            display_name: String,
+            email: String,
+            facebook: String,
+            full_name: String,
+            language: HubspotSDK::Models::Cms::Blogs::BlogAuthor::language,
+            linkedin: String,
+            name: String,
+            slug: String,
+            translated_from_id: Integer,
+            twitter: String,
+            updated: Time,
+            website: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> StringIO
+
+          def update: (
+            String object_id_,
+            id: String,
+            avatar: String,
+            bio: String,
+            created: Time,
+            deleted_at: Time,
+            display_name: String,
+            email: String,
+            facebook: String,
+            full_name: String,
+            language: HubspotSDK::Models::Cms::Blogs::BlogAuthor::language,
+            linkedin: String,
+            name: String,
+            slug: String,
+            translated_from_id: Integer,
+            twitter: String,
+            updated: Time,
+            website: String,
+            ?archived: bool,
+            ?request_options: HubspotSDK::request_opts
+          ) -> StringIO
+
+          def list: (
+            ?after: String,
+            ?archived: bool,
+            ?created_after: Time,
+            ?created_at: Time,
+            ?created_before: Time,
+            ?limit: Integer,
+            ?property: String,
+            ?sort: ::Array[String],
+            ?updated_after: Time,
+            ?updated_at: Time,
+            ?updated_before: Time,
+            ?request_options: HubspotSDK::request_opts
+          ) -> StringIO
+
+          def delete: (
+            String object_id_,
+            ?archived: bool,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def attach_to_lang_group: (
+            id: String,
+            language: HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::language,
+            primary_id: String,
+            ?primary_language: HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language,
+            ?request_options: HubspotSDK::request_opts
+          ) -> StringIO
+
+          def create_language_variation: (
+            id: String,
+            blog_author: HubspotSDK::Cms::Blogs::BlogAuthor,
+            ?language: String,
+            ?primary_language: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> StringIO
+
+          def detach_from_lang_group: (
+            id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> StringIO
+
+          def get: (
+            String object_id_,
+            ?archived: bool,
+            ?property: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> StringIO
+
+          def set_new_lang_primary: (
+            id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def update_languages: (
+            languages: ::Hash[Symbol, HubspotSDK::Models::Cms::UpdateLanguagesRequestVNext::language],
+            primary_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> StringIO
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

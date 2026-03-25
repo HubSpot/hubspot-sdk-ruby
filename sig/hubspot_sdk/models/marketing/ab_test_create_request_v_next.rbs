@@ -1,0 +1,18 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type ab_test_create_request_v_next =
+        { content_id: String, variation_name: String }
+
+      class AbTestCreateRequestVNext < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor content_id: String
+
+        attr_accessor variation_name: String
+
+        def initialize: (content_id: String, variation_name: String) -> void
+
+        def to_hash: -> { content_id: String, variation_name: String }
+      end
+    end
+  end
+end

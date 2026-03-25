@@ -1,0 +1,30 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_all_history_refine_by =
+        { type: HubspotSDK::Models::Crm::PublicAllHistoryRefineBy::type_ }
+
+      class PublicAllHistoryRefineBy < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor type: HubspotSDK::Models::Crm::PublicAllHistoryRefineBy::type_
+
+        def initialize: (
+          type: HubspotSDK::Models::Crm::PublicAllHistoryRefineBy::type_
+        ) -> void
+
+        def to_hash: -> {
+          type: HubspotSDK::Models::Crm::PublicAllHistoryRefineBy::type_
+        }
+
+        type type_ = :ALL_HISTORY
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          ALL_HISTORY: :ALL_HISTORY
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicAllHistoryRefineBy::type_]
+        end
+      end
+    end
+  end
+end

@@ -6,7 +6,7 @@ module HubspotSDK
       module Blogs
         module Posts
           # @see HubspotSDK::Resources::Cms::Blogs::Posts::Batch#update
-          class BatchUpdateParams < HubspotSDK::Models::Cms::Blogs::BatchInputJsonNode
+          class BatchUpdateParams < HubspotSDK::Models::Cms::BatchInputJsonNode
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

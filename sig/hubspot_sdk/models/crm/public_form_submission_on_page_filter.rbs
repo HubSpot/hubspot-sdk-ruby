@@ -1,0 +1,112 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_form_submission_on_page_filter =
+        {
+          filter_type: HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::filter_type,
+          operator: HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::operator,
+          page_id: String,
+          coalescing_refine_by: HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::coalescing_refine_by,
+          form_id: String,
+          pruning_refine_by: HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::pruning_refine_by
+        }
+
+      class PublicFormSubmissionOnPageFilter < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor filter_type: HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::filter_type
+
+        attr_accessor operator: HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::operator
+
+        attr_accessor page_id: String
+
+        attr_reader coalescing_refine_by: HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::coalescing_refine_by?
+
+        def coalescing_refine_by=: (
+          HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::coalescing_refine_by
+        ) -> HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::coalescing_refine_by
+
+        attr_reader form_id: String?
+
+        def form_id=: (String) -> String
+
+        attr_reader pruning_refine_by: HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::pruning_refine_by?
+
+        def pruning_refine_by=: (
+          HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::pruning_refine_by
+        ) -> HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::pruning_refine_by
+
+        def initialize: (
+          filter_type: HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::filter_type,
+          operator: HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::operator,
+          page_id: String,
+          ?coalescing_refine_by: HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::coalescing_refine_by,
+          ?form_id: String,
+          ?pruning_refine_by: HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::pruning_refine_by
+        ) -> void
+
+        def to_hash: -> {
+          filter_type: HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::filter_type,
+          operator: HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::operator,
+          page_id: String,
+          coalescing_refine_by: HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::coalescing_refine_by,
+          form_id: String,
+          pruning_refine_by: HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::pruning_refine_by
+        }
+
+        type filter_type = :FORM_SUBMISSION_ON_PAGE
+
+        module FilterType
+          extend HubspotSDK::Internal::Type::Enum
+
+          FORM_SUBMISSION_ON_PAGE: :FORM_SUBMISSION_ON_PAGE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::filter_type]
+        end
+
+        type operator = :FILLED_OUT | :NOT_FILLED_OUT
+
+        module Operator
+          extend HubspotSDK::Internal::Type::Enum
+
+          FILLED_OUT: :FILLED_OUT
+          NOT_FILLED_OUT: :NOT_FILLED_OUT
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::operator]
+        end
+
+        type coalescing_refine_by =
+          HubspotSDK::Crm::PublicNumOccurrencesRefineBy
+          | HubspotSDK::Crm::PublicSetOccurrencesRefineBy
+          | HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy
+          | HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy
+          | HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy
+          | HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy
+          | HubspotSDK::Crm::PublicAllHistoryRefineBy
+          | HubspotSDK::Crm::PublicTimePointOperation
+          | HubspotSDK::Crm::PublicRangedTimeOperation
+
+        module CoalescingRefineBy
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::coalescing_refine_by]
+        end
+
+        type pruning_refine_by =
+          HubspotSDK::Crm::PublicNumOccurrencesRefineBy
+          | HubspotSDK::Crm::PublicSetOccurrencesRefineBy
+          | HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy
+          | HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy
+          | HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy
+          | HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy
+          | HubspotSDK::Crm::PublicAllHistoryRefineBy
+          | HubspotSDK::Crm::PublicTimePointOperation
+          | HubspotSDK::Crm::PublicRangedTimeOperation
+
+        module PruningRefineBy
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter::pruning_refine_by]
+        end
+      end
+    end
+  end
+end

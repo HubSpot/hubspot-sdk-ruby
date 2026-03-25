@@ -1,0 +1,43 @@
+module HubspotSDK
+  module Resources
+    class Crm
+      class Objects
+        class PartnerServices
+          def update: (
+            inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectBatchInput],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::BatchResponseSimplePublicObject
+
+          def list: (
+            String to_object_type,
+            partner_service_id: String,
+            ?after: String,
+            ?limit: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::MultiAssociatedObjectWithLabel]
+
+          def get: (
+            inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectID],
+            properties: ::Array[String],
+            properties_with_history: ::Array[String],
+            ?archived: bool,
+            ?id_property: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::BatchResponseSimplePublicObject
+
+          def search: (
+            after: String,
+            filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
+            limit: Integer,
+            properties: ::Array[String],
+            sorts: ::Array[String],
+            ?query: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

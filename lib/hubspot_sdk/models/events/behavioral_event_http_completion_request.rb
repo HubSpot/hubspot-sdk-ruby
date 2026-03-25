@@ -5,54 +5,45 @@ module HubspotSDK
     module Events
       class BehavioralEventHTTPCompletionRequest < HubspotSDK::Internal::Type::BaseModel
         # @!attribute event_name
-        #   The event's fully qualified name. This value (formatted as `pe{HubID}_{name}`)
-        #   can be retrieved through the
-        #   [event definitions API](https://developers.hubspot.com/docs/reference/api/analytics-and-events/custom-events/custom-event-definitions#get-%2Fevents%2Fv3%2Fevent-definitions)
-        #   or in
-        #   [HubSpot's UI](https://knowledge.hubspot.com/reports/create-custom-behavioral-events-with-the-code-wizard#find-internal-name).
+        #   Internal name of the event-type to trigger
         #
         #   @return [String]
         required :event_name, String, api_name: :eventName
 
         # @!attribute properties
-        #   The event properties to update. Takes the format of key-value pairs (property
-        #   internal name and property value). Learn more about
-        #   [HubSpot's default event properties](https://developers.hubspot.com/docs/guides/api/analytics-and-events/custom-events/custom-event-definitions#hubspot-s-default-event-properties).
+        #   Map of properties for the event in the format property internal name - property
+        #   value
         #
         #   @return [Hash{Symbol=>String}]
         required :properties, HubspotSDK::Internal::Type::HashOf[String]
 
         # @!attribute email
-        #   The visitor's email address. Used for associating the event data with a CRM
-        #   record.
+        #   Email of visitor
         #
         #   @return [String, nil]
         optional :email, String
 
         # @!attribute object_id_
-        #   The ID of the record for which the event occurred (e.g., contact ID or visitor
-        #   ID).
+        #   The object id that this event occurred on. Could be a contact id or a visitor
+        #   id.
         #
         #   @return [String, nil]
         optional :object_id_, String, api_name: :objectId
 
         # @!attribute occurred_at
-        #   The time when this event occurred. If this isn't set, the current time will be
-        #   used.
+        #   The time when this event occurred (if any). If this isn't set, the current time
+        #   will be used
         #
         #   @return [Time, nil]
         optional :occurred_at, Time, api_name: :occurredAt
 
         # @!attribute utk
-        #   The visitor's usertoken. Used for associating the event data with a CRM record.
+        #   User token
         #
         #   @return [String, nil]
         optional :utk, String
 
         # @!attribute uuid
-        #   Include a universally unique identifier to assign a unique ID to the event
-        #   occurrence. Can be useful for matching data between HubSpot and other external
-        #   systems.
         #
         #   @return [String, nil]
         optional :uuid, String
@@ -62,19 +53,19 @@ module HubspotSDK
         #   {HubspotSDK::Models::Events::BehavioralEventHTTPCompletionRequest} for more
         #   details.
         #
-        #   @param event_name [String] The event's fully qualified name. This value (formatted as `pe{HubID}_{name}`) c
+        #   @param event_name [String] Internal name of the event-type to trigger
         #
-        #   @param properties [Hash{Symbol=>String}] The event properties to update. Takes the format of key-value pairs (property in
+        #   @param properties [Hash{Symbol=>String}] Map of properties for the event in the format property internal name - property
         #
-        #   @param email [String] The visitor's email address. Used for associating the event data with a CRM reco
+        #   @param email [String] Email of visitor
         #
-        #   @param object_id_ [String] The ID of the record for which the event occurred (e.g., contact ID or visitor I
+        #   @param object_id_ [String] The object id that this event occurred on. Could be a contact id or a visitor id
         #
-        #   @param occurred_at [Time] The time when this event occurred. If this isn't set, the current time will be u
+        #   @param occurred_at [Time] The time when this event occurred (if any). If this isn't set, the current time
         #
-        #   @param utk [String] The visitor's usertoken. Used for associating the event data with a CRM record.
+        #   @param utk [String] User token
         #
-        #   @param uuid [String] Include a universally unique identifier to assign a unique ID to the event occur
+        #   @param uuid [String]
       end
     end
   end

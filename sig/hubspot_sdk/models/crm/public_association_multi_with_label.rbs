@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_association_multi_with_label =
+        {
+          from: HubspotSDK::PublicObjectID,
+          to: ::Array[HubspotSDK::Crm::MultiAssociatedObjectWithLabel],
+          paging: HubspotSDK::Paging
+        }
+
+      class PublicAssociationMultiWithLabel < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor from: HubspotSDK::PublicObjectID
+
+        attr_accessor to: ::Array[HubspotSDK::Crm::MultiAssociatedObjectWithLabel]
+
+        attr_reader paging: HubspotSDK::Paging?
+
+        def paging=: (HubspotSDK::Paging) -> HubspotSDK::Paging
+
+        def initialize: (
+          from: HubspotSDK::PublicObjectID,
+          to: ::Array[HubspotSDK::Crm::MultiAssociatedObjectWithLabel],
+          ?paging: HubspotSDK::Paging
+        ) -> void
+
+        def to_hash: -> {
+          from: HubspotSDK::PublicObjectID,
+          to: ::Array[HubspotSDK::Crm::MultiAssociatedObjectWithLabel],
+          paging: HubspotSDK::Paging
+        }
+      end
+    end
+  end
+end

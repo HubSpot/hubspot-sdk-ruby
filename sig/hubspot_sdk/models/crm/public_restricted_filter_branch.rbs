@@ -1,0 +1,94 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_restricted_filter_branch =
+        {
+          filter_branches: ::Array[HubspotSDK::Models::Crm::PublicRestrictedFilterBranch::filter_branch],
+          filter_branch_operator: String,
+          filter_branch_type: HubspotSDK::Models::Crm::PublicRestrictedFilterBranch::filter_branch_type,
+          filters: ::Array[HubspotSDK::Models::Crm::PublicRestrictedFilterBranch::filter]
+        }
+
+      class PublicRestrictedFilterBranch < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor filter_branches: ::Array[HubspotSDK::Models::Crm::PublicRestrictedFilterBranch::filter_branch]
+
+        attr_accessor filter_branch_operator: String
+
+        attr_accessor filter_branch_type: HubspotSDK::Models::Crm::PublicRestrictedFilterBranch::filter_branch_type
+
+        attr_accessor filters: ::Array[HubspotSDK::Models::Crm::PublicRestrictedFilterBranch::filter]
+
+        def initialize: (
+          filter_branches: ::Array[HubspotSDK::Models::Crm::PublicRestrictedFilterBranch::filter_branch],
+          filter_branch_operator: String,
+          filter_branch_type: HubspotSDK::Models::Crm::PublicRestrictedFilterBranch::filter_branch_type,
+          filters: ::Array[HubspotSDK::Models::Crm::PublicRestrictedFilterBranch::filter]
+        ) -> void
+
+        def to_hash: -> {
+          filter_branches: ::Array[HubspotSDK::Models::Crm::PublicRestrictedFilterBranch::filter_branch],
+          filter_branch_operator: String,
+          filter_branch_type: HubspotSDK::Models::Crm::PublicRestrictedFilterBranch::filter_branch_type,
+          filters: ::Array[HubspotSDK::Models::Crm::PublicRestrictedFilterBranch::filter]
+        }
+
+        type filter_branch =
+          HubspotSDK::Crm::PublicOrFilterBranch
+          | HubspotSDK::Crm::PublicAndFilterBranch
+          | HubspotSDK::Crm::PublicNotAllFilterBranch
+          | HubspotSDK::Crm::PublicNotAnyFilterBranch
+          | HubspotSDK::Crm::PublicRestrictedFilterBranch
+          | HubspotSDK::Crm::PublicUnifiedEventsFilterBranch
+          | HubspotSDK::Crm::PublicPropertyAssociationFilterBranch
+          | HubspotSDK::Crm::PublicAssociationFilterBranch
+
+        module FilterBranch
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicRestrictedFilterBranch::filter_branch]
+        end
+
+        type filter_branch_type = :RESTRICTED
+
+        module FilterBranchType
+          extend HubspotSDK::Internal::Type::Enum
+
+          RESTRICTED: :RESTRICTED
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicRestrictedFilterBranch::filter_branch_type]
+        end
+
+        type filter =
+          HubspotSDK::Crm::PublicPropertyFilter
+          | HubspotSDK::Crm::PublicAssociationInListFilter
+          | HubspotSDK::Crm::PublicPageViewAnalyticsFilter
+          | HubspotSDK::Crm::PublicCtaAnalyticsFilter
+          | HubspotSDK::Crm::PublicEventAnalyticsFilter
+          | HubspotSDK::Crm::PublicFormSubmissionFilter
+          | HubspotSDK::Crm::PublicFormSubmissionOnPageFilter
+          | HubspotSDK::Crm::PublicIntegrationEventFilter
+          | HubspotSDK::Crm::PublicEmailSubscriptionFilter
+          | HubspotSDK::Crm::PublicCommunicationSubscriptionFilter
+          | HubspotSDK::Crm::PublicCampaignInfluencedFilter
+          | HubspotSDK::Crm::PublicSurveyMonkeyFilter
+          | HubspotSDK::Crm::PublicSurveyMonkeyValueFilter
+          | HubspotSDK::Crm::PublicWebinarFilter
+          | HubspotSDK::Crm::PublicEmailEventFilter
+          | HubspotSDK::Crm::PublicPrivacyAnalyticsFilter
+          | HubspotSDK::Crm::PublicAdsSearchFilter
+          | HubspotSDK::Crm::PublicAdsTimeFilter
+          | HubspotSDK::Crm::PublicInListFilter
+          | HubspotSDK::Crm::PublicNumAssociationsFilter
+          | HubspotSDK::Crm::PublicUnifiedEventsFilter
+          | HubspotSDK::Crm::PublicPropertyAssociationInListFilter
+          | HubspotSDK::Crm::PublicConstantFilter
+
+        module Filter
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicRestrictedFilterBranch::filter]
+        end
+      end
+    end
+  end
+end

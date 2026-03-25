@@ -1,0 +1,106 @@
+# typed: strong
+
+module HubspotSDK
+  module Models
+    module Crm
+      class OwnerGetParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        OrHash =
+          T.type_alias do
+            T.any(
+              HubspotSDK::Crm::OwnerGetParams,
+              HubspotSDK::Internal::AnyHash
+            )
+          end
+
+        sig { returns(Integer) }
+        attr_accessor :owner_id
+
+        # Whether to return only results that have been archived.
+        sig { returns(T.nilable(T::Boolean)) }
+        attr_reader :archived
+
+        sig { params(archived: T::Boolean).void }
+        attr_writer :archived
+
+        sig do
+          returns(
+            T.nilable(HubspotSDK::Crm::OwnerGetParams::IDProperty::OrSymbol)
+          )
+        end
+        attr_reader :id_property
+
+        sig do
+          params(
+            id_property: HubspotSDK::Crm::OwnerGetParams::IDProperty::OrSymbol
+          ).void
+        end
+        attr_writer :id_property
+
+        sig do
+          params(
+            owner_id: Integer,
+            archived: T::Boolean,
+            id_property: HubspotSDK::Crm::OwnerGetParams::IDProperty::OrSymbol,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(T.attached_class)
+        end
+        def self.new(
+          owner_id:,
+          # Whether to return only results that have been archived.
+          archived: nil,
+          id_property: nil,
+          request_options: {}
+        )
+        end
+
+        sig do
+          override.returns(
+            {
+              owner_id: Integer,
+              archived: T::Boolean,
+              id_property:
+                HubspotSDK::Crm::OwnerGetParams::IDProperty::OrSymbol,
+              request_options: HubspotSDK::RequestOptions
+            }
+          )
+        end
+        def to_hash
+        end
+
+        module IDProperty
+          extend HubspotSDK::Internal::Type::Enum
+
+          TaggedSymbol =
+            T.type_alias do
+              T.all(Symbol, HubspotSDK::Crm::OwnerGetParams::IDProperty)
+            end
+          OrSymbol = T.type_alias { T.any(Symbol, String) }
+
+          ID =
+            T.let(
+              :id,
+              HubspotSDK::Crm::OwnerGetParams::IDProperty::TaggedSymbol
+            )
+          USER_ID =
+            T.let(
+              :userId,
+              HubspotSDK::Crm::OwnerGetParams::IDProperty::TaggedSymbol
+            )
+
+          sig do
+            override.returns(
+              T::Array[
+                HubspotSDK::Crm::OwnerGetParams::IDProperty::TaggedSymbol
+              ]
+            )
+          end
+          def self.values
+          end
+        end
+      end
+    end
+  end
+end

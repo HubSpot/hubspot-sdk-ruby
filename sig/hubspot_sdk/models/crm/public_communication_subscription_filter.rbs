@@ -1,0 +1,59 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_communication_subscription_filter =
+        {
+          accepted_opt_states: ::Array[String],
+          channel: String,
+          filter_type: HubspotSDK::Models::Crm::PublicCommunicationSubscriptionFilter::filter_type,
+          subscription_ids: ::Array[String],
+          subscription_type: String,
+          business_unit_id: String
+        }
+
+      class PublicCommunicationSubscriptionFilter < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor accepted_opt_states: ::Array[String]
+
+        attr_accessor channel: String
+
+        attr_accessor filter_type: HubspotSDK::Models::Crm::PublicCommunicationSubscriptionFilter::filter_type
+
+        attr_accessor subscription_ids: ::Array[String]
+
+        attr_accessor subscription_type: String
+
+        attr_reader business_unit_id: String?
+
+        def business_unit_id=: (String) -> String
+
+        def initialize: (
+          accepted_opt_states: ::Array[String],
+          channel: String,
+          filter_type: HubspotSDK::Models::Crm::PublicCommunicationSubscriptionFilter::filter_type,
+          subscription_ids: ::Array[String],
+          subscription_type: String,
+          ?business_unit_id: String
+        ) -> void
+
+        def to_hash: -> {
+          accepted_opt_states: ::Array[String],
+          channel: String,
+          filter_type: HubspotSDK::Models::Crm::PublicCommunicationSubscriptionFilter::filter_type,
+          subscription_ids: ::Array[String],
+          subscription_type: String,
+          business_unit_id: String
+        }
+
+        type filter_type = :COMMUNICATION_SUBSCRIPTION
+
+        module FilterType
+          extend HubspotSDK::Internal::Type::Enum
+
+          COMMUNICATION_SUBSCRIPTION: :COMMUNICATION_SUBSCRIPTION
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicCommunicationSubscriptionFilter::filter_type]
+        end
+      end
+    end
+  end
+end

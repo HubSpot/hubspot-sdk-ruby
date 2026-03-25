@@ -1,0 +1,18 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type media_bridge_provider_registration_response =
+        { app_id: Integer, name: String }
+
+      class MediaBridgeProviderRegistrationResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor app_id: Integer
+
+        attr_accessor name: String
+
+        def initialize: (app_id: Integer, name: String) -> void
+
+        def to_hash: -> { app_id: Integer, name: String }
+      end
+    end
+  end
+end

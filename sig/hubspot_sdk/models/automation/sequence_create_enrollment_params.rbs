@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type sequence_create_enrollment_params =
+        { user_id: String } & HubspotSDK::Internal::Type::request_parameters
+
+      class SequenceCreateEnrollmentParams < HubspotSDK::Models::Automation::PublicSequenceEnrollmentRequest
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        def user_id: -> String
+
+        def user_id=: (String _) -> String
+
+        def initialize: (
+          user_id: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          user_id: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

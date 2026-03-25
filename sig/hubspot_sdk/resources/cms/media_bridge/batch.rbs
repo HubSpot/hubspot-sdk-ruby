@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Resources
+    class Cms
+      class MediaBridge
+        class Batch
+          def create: (
+            String object_type,
+            app_id: String,
+            inputs: ::Array[HubspotSDK::PropertyCreate],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::BatchResponseProperty
+
+          def delete: (
+            String object_type,
+            app_id: String,
+            inputs: ::Array[HubspotSDK::PropertyName],
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def get: (
+            String object_type,
+            app_id: String,
+            archived: bool,
+            data_sensitivity: HubspotSDK::Models::BatchReadInputPropertyName::data_sensitivity,
+            inputs: ::Array[HubspotSDK::PropertyName],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::BatchResponseProperty
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

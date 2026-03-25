@@ -1,0 +1,11 @@
+module HubspotSDK
+  module Resources
+    class Conversations
+      attr_reader custom_channels: HubspotSDK::Resources::Conversations::CustomChannels
+
+      attr_reader visitor_identification: HubspotSDK::Resources::Conversations::VisitorIdentification
+
+      def initialize: (client: HubspotSDK::Client) -> void
+    end
+  end
+end

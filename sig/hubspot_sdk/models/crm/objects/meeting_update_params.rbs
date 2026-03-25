@@ -1,0 +1,36 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Objects
+        type meeting_update_params =
+          { meeting_id: String, id_property: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class MeetingUpdateParams < HubspotSDK::Models::Crm::SimplePublicObjectInput
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def meeting_id: -> String
+
+          def meeting_id=: (String _) -> String
+
+          def id_property: -> String?
+
+          def id_property=: (String _) -> String
+
+          def initialize: (
+            meeting_id: String,
+            ?id_property: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            meeting_id: String,
+            id_property: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type at_limit_record_sample = { label: String, object_id_: Integer }
+
+      class AtLimitRecordSample < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor label: String
+
+        attr_accessor object_id_: Integer
+
+        def initialize: (label: String, object_id_: Integer) -> void
+
+        def to_hash: -> { label: String, object_id_: Integer }
+      end
+    end
+  end
+end

@@ -36,7 +36,11 @@ module HubspotSDK
                 request_options: HubspotSDK::RequestOptions::OrHash
               ).returns(HubspotSDK::Settings::BatchResponseExchangeRate)
             end
-            def get(inputs:, request_options: {})
+            def get(
+              # An array of deal split inputs
+              inputs:,
+              request_options: {}
+            )
             end
 
             # @api private

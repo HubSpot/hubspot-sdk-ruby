@@ -1,0 +1,43 @@
+module HubspotSDK
+  module Resources
+    class Conversations
+      class CustomChannels
+        class Messages
+          def create: (
+            Integer channel_id,
+            attachments: ::Array[HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::attachment],
+            channel_account_id: String,
+            message_direction: HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::message_direction,
+            recipients: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant],
+            senders: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant],
+            text: String,
+            timestamp: Time,
+            ?associate_with_contact_id: Integer,
+            ?in_reply_to_id: String,
+            ?integration_idempotency_id: String,
+            ?integration_thread_id: String,
+            ?pre_resolved_contacts: HubspotSDK::Conversations::PreResolvedContacts,
+            ?rich_text: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Conversations::PublicConversationsMessage
+
+          def update: (
+            String message_id,
+            channel_id: Integer,
+            status_type: HubspotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest::status_type,
+            ?error_message: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Conversations::PublicConversationsMessage
+
+          def get: (
+            String message_id,
+            channel_id: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Conversations::PublicConversationsMessage
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

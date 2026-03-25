@@ -34,8 +34,8 @@ module HubspotSDK
         #   A list of available options for the property if it is an enumeration. NOTE: This
         #   field is only applicable for enumerated properties.
         #
-        #   @return [Array<HubspotSDK::Models::Events::OptionInput>, nil]
-        optional :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::OptionInput] }
+        #   @return [Array<HubspotSDK::Models::OptionInput>, nil]
+        optional :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::OptionInput] }
 
         # @!method initialize(label:, type:, description: nil, name: nil, options: nil)
         #   Some parameter documentations has been truncated, see
@@ -50,7 +50,7 @@ module HubspotSDK
         #
         #   @param name [String] Internal property name, which must be used when referencing the property from th
         #
-        #   @param options [Array<HubspotSDK::Models::Events::OptionInput>] A list of available options for the property if it is an enumeration. NOTE: This
+        #   @param options [Array<HubspotSDK::Models::OptionInput>] A list of available options for the property if it is an enumeration. NOTE: This
       end
     end
   end

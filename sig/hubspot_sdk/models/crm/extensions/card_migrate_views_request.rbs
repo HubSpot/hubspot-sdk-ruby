@@ -1,0 +1,36 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Extensions
+        type card_migrate_views_request =
+          {
+            app_card_id: Integer,
+            legacy_crm_card_id: Integer,
+            helpdesk_app_card_id: Integer
+          }
+
+        class CardMigrateViewsRequest < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor app_card_id: Integer
+
+          attr_accessor legacy_crm_card_id: Integer
+
+          attr_reader helpdesk_app_card_id: Integer?
+
+          def helpdesk_app_card_id=: (Integer) -> Integer
+
+          def initialize: (
+            app_card_id: Integer,
+            legacy_crm_card_id: Integer,
+            ?helpdesk_app_card_id: Integer
+          ) -> void
+
+          def to_hash: -> {
+            app_card_id: Integer,
+            legacy_crm_card_id: Integer,
+            helpdesk_app_card_id: Integer
+          }
+        end
+      end
+    end
+  end
+end

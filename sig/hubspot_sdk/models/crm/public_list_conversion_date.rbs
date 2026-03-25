@@ -1,0 +1,47 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_list_conversion_date =
+        {
+          conversion_type: HubspotSDK::Models::Crm::PublicListConversionDate::conversion_type,
+          day: Integer,
+          month: Integer,
+          year: Integer
+        }
+
+      class PublicListConversionDate < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor conversion_type: HubspotSDK::Models::Crm::PublicListConversionDate::conversion_type
+
+        attr_accessor day: Integer
+
+        attr_accessor month: Integer
+
+        attr_accessor year: Integer
+
+        def initialize: (
+          conversion_type: HubspotSDK::Models::Crm::PublicListConversionDate::conversion_type,
+          day: Integer,
+          month: Integer,
+          year: Integer
+        ) -> void
+
+        def to_hash: -> {
+          conversion_type: HubspotSDK::Models::Crm::PublicListConversionDate::conversion_type,
+          day: Integer,
+          month: Integer,
+          year: Integer
+        }
+
+        type conversion_type = :CONVERSION_DATE
+
+        module ConversionType
+          extend HubspotSDK::Internal::Type::Enum
+
+          CONVERSION_DATE: :CONVERSION_DATE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicListConversionDate::conversion_type]
+        end
+      end
+    end
+  end
+end

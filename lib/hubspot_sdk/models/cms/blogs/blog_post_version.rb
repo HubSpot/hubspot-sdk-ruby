@@ -22,14 +22,14 @@ module HubspotSDK
 
           # @!attribute user
           #
-          #   @return [HubspotSDK::Models::Cms::VersionUser]
-          required :user, -> { HubspotSDK::Cms::VersionUser }
+          #   @return [HubspotSDK::Models::VersionUser]
+          required :user, -> { HubspotSDK::VersionUser }
 
           # @!method initialize(id:, object:, updated_at:, user:)
           #   @param id [String]
           #   @param object [HubspotSDK::Models::Cms::Blogs::BlogPost]
           #   @param updated_at [Time]
-          #   @param user [HubspotSDK::Models::Cms::VersionUser]
+          #   @param user [HubspotSDK::Models::VersionUser]
         end
       end
 

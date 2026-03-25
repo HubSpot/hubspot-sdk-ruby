@@ -17,10 +17,7 @@ module HubspotSDK
             end
 
           sig { returns(String) }
-          attr_accessor :object_type
-
-          sig { returns(String) }
-          attr_accessor :object_id_
+          attr_accessor :contact_id
 
           # The name of a property whose values are unique for this object type
           sig { returns(T.nilable(String)) }
@@ -31,15 +28,13 @@ module HubspotSDK
 
           sig do
             params(
-              object_type: String,
-              object_id_: String,
+              contact_id: String,
               id_property: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
-            object_type:,
-            object_id_:,
+            contact_id:,
             # The name of a property whose values are unique for this object type
             id_property: nil,
             request_options: {}
@@ -49,8 +44,7 @@ module HubspotSDK
           sig do
             override.returns(
               {
-                object_type: String,
-                object_id_: String,
+                contact_id: String,
                 id_property: String,
                 request_options: HubspotSDK::RequestOptions
               }

@@ -1,0 +1,84 @@
+# typed: strong
+
+module HubspotSDK
+  module Resources
+    class Crm
+      class Objects
+        class GoalTargets
+          class Batch
+            # Create multiple goal targets in a single batch operation.
+            sig do
+              params(
+                inputs:
+                  T::Array[
+                    HubspotSDK::Crm::SimplePublicObjectBatchInputForCreate::OrHash
+                  ],
+                request_options: HubspotSDK::RequestOptions::OrHash
+              ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
+            end
+            def create(inputs:, request_options: {})
+            end
+
+            # Update multiple goal targets in a single batch operation using their internal
+            # IDs or unique property values.
+            sig do
+              params(
+                inputs:
+                  T::Array[
+                    HubspotSDK::Crm::SimplePublicObjectBatchInput::OrHash
+                  ],
+                request_options: HubspotSDK::RequestOptions::OrHash
+              ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
+            end
+            def update(inputs:, request_options: {})
+            end
+
+            # Archive multiple goal targets in a single batch operation using their IDs.
+            sig do
+              params(
+                inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
+                request_options: HubspotSDK::RequestOptions::OrHash
+              ).void
+            end
+            def delete(inputs:, request_options: {})
+            end
+
+            # Retrieve multiple goal targets with a single request. Goal targets are specified
+            # by ID.
+            sig do
+              params(
+                inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
+                properties: T::Array[String],
+                properties_with_history: T::Array[String],
+                archived: T::Boolean,
+                id_property: String,
+                request_options: HubspotSDK::RequestOptions::OrHash
+              ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
+            end
+            def get(
+              # Body param
+              inputs:,
+              # Body param: Key-value pairs for setting properties for the new object.
+              properties:,
+              # Body param: Key-value pairs for setting properties for the new object and their
+              # histories.
+              properties_with_history:,
+              # Query param: Whether to return only results that have been archived.
+              archived: nil,
+              # Body param: When using a custom unique value property to retrieve records, the
+              # name of the property. Do not include this parameter if retrieving by record ID.
+              id_property: nil,
+              request_options: {}
+            )
+            end
+
+            # @api private
+            sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+            def self.new(client:)
+            end
+          end
+        end
+      end
+    end
+  end
+end

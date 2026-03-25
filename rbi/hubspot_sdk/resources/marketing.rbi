@@ -6,6 +6,15 @@ module HubspotSDK
       sig { returns(HubspotSDK::Resources::Marketing::Campaigns) }
       attr_reader :campaigns
 
+      sig { returns(HubspotSDK::Resources::Marketing::Emails) }
+      attr_reader :emails
+
+      sig { returns(HubspotSDK::Resources::Marketing::Events) }
+      attr_reader :events
+
+      sig { returns(HubspotSDK::Resources::Marketing::Transactional) }
+      attr_reader :transactional
+
       # @api private
       sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
       def self.new(client:)

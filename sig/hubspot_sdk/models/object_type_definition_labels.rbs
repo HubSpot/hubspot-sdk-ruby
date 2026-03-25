@@ -1,0 +1,19 @@
+module HubspotSDK
+  module Models
+    type object_type_definition_labels = { plural: String, singular: String }
+
+    class ObjectTypeDefinitionLabels < HubspotSDK::Internal::Type::BaseModel
+      attr_reader plural: String?
+
+      def plural=: (String) -> String
+
+      attr_reader singular: String?
+
+      def singular=: (String) -> String
+
+      def initialize: (?plural: String, ?singular: String) -> void
+
+      def to_hash: -> { plural: String, singular: String }
+    end
+  end
+end

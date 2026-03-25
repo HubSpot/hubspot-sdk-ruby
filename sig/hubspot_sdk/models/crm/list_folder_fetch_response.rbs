@@ -1,0 +1,16 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type list_folder_fetch_response =
+        { folder: HubspotSDK::Crm::PublicListFolder }
+
+      class ListFolderFetchResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor folder: HubspotSDK::Crm::PublicListFolder
+
+        def initialize: (folder: HubspotSDK::Crm::PublicListFolder) -> void
+
+        def to_hash: -> { folder: HubspotSDK::Crm::PublicListFolder }
+      end
+    end
+  end
+end

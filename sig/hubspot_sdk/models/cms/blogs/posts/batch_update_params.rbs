@@ -6,7 +6,7 @@ module HubspotSDK
           type batch_update_params =
             { archived: bool } & HubspotSDK::Internal::Type::request_parameters
 
-          class BatchUpdateParams < HubspotSDK::Models::Cms::Blogs::BatchInputJsonNode
+          class BatchUpdateParams < HubspotSDK::Models::Cms::BatchInputJsonNode
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

@@ -8,11 +8,12 @@ module HubspotSDK
           T.any(HubspotSDK::PreviousPage, HubspotSDK::Internal::AnyHash)
         end
 
-      # A paging cursor token for retrieving previous pages.
+      # A string token used to identify the position before the current page in the
+      # pagination sequence.
       sig { returns(String) }
       attr_accessor :before
 
-      # A URL that can be used to retrieve the previous pages' results.
+      # A URL string that provides a direct link to the previous page of results.
       sig { returns(T.nilable(String)) }
       attr_reader :link
 
@@ -23,9 +24,10 @@ module HubspotSDK
       # in a paginated API response
       sig { params(before: String, link: String).returns(T.attached_class) }
       def self.new(
-        # A paging cursor token for retrieving previous pages.
+        # A string token used to identify the position before the current page in the
+        # pagination sequence.
         before:,
-        # A URL that can be used to retrieve the previous pages' results.
+        # A URL string that provides a direct link to the previous page of results.
         link: nil
       )
       end

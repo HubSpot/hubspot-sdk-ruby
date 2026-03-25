@@ -1,0 +1,217 @@
+# frozen_string_literal: true
+
+module HubspotSDK
+  module Resources
+    class Crm
+      class Objects
+        class Carts
+          # @return [HubspotSDK::Resources::Crm::Objects::Carts::Batch]
+          attr_reader :batch
+
+          # Create a single cart. Include a `properties` object to define
+          # [property values](https://developers.hubspot.com/docs/guides/api/crm/properties)
+          # for the {objectName}, along with an `associations` array to define
+          # [associations](https://developers.hubspot.com/docs/guides/api/crm/associations/associations-v4)
+          # with other records.
+          #
+          # @overload create(associations:, properties:, request_options: {})
+          #
+          # @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
+          #
+          # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
+          #
+          # @see HubspotSDK::Models::Crm::Objects::CartCreateParams
+          def create(params)
+            parsed, options = HubspotSDK::Crm::Objects::CartCreateParams.dump_request(params)
+            @client.request(
+              method: :post,
+              path: "crm/objects/2026-03/carts",
+              body: parsed,
+              model: HubspotSDK::Crm::SimplePublicObject,
+              options: options
+            )
+          end
+
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Crm::Objects::CartUpdateParams} for more details.
+          #
+          # Update a cart by ID (`objectId`) or unique property value (`idProperty`).
+          # Provided property values will be overwritten. Read-only and non-existent
+          # properties will result in an error. Properties values can be cleared by passing
+          # an empty string.
+          #
+          # @overload update(cart_id, properties:, id_property: nil, request_options: {})
+          #
+          # @param cart_id [String] Path param
+          #
+          # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
+          #
+          # @param id_property [String] Query param: The name of a property whose values are unique for this object type
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
+          #
+          # @see HubspotSDK::Models::Crm::Objects::CartUpdateParams
+          def update(cart_id, params)
+            query_params = [:id_property]
+            parsed, options = HubspotSDK::Crm::Objects::CartUpdateParams.dump_request(params)
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            @client.request(
+              method: :patch,
+              path: ["crm/objects/2026-03/carts/%1$s", cart_id],
+              query: query.transform_keys(id_property: "idProperty"),
+              body: parsed.except(*query_params),
+              model: HubspotSDK::Crm::SimplePublicObject,
+              options: options
+            )
+          end
+
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Crm::Objects::CartListParams} for more details.
+          #
+          # Retrieve all carts. Control what is returned via the `properties` query param.
+          #
+          # @overload list(after: nil, archived: nil, associations: nil, limit: nil, properties: nil, properties_with_history: nil, request_options: {})
+          #
+          # @param after [String] The paging cursor token of the last successfully read resource will be returned
+          #
+          # @param archived [Boolean] Whether to return only results that have been archived.
+          #
+          # @param associations [Array<String>] A comma separated list of object types to retrieve associated IDs for. If any of
+          #
+          # @param limit [Integer] The maximum number of results to display per page.
+          #
+          # @param properties [Array<String>] A comma separated list of the properties to be returned in the response. If any
+          #
+          # @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
+          #
+          # @see HubspotSDK::Models::Crm::Objects::CartListParams
+          def list(params = {})
+            parsed, options = HubspotSDK::Crm::Objects::CartListParams.dump_request(params)
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            @client.request(
+              method: :get,
+              path: "crm/objects/2026-03/carts",
+              query: query.transform_keys(properties_with_history: "propertiesWithHistory"),
+              page: HubspotSDK::Internal::Page,
+              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
+              options: options
+            )
+          end
+
+          # Archive a cart by ID. Deleted carts can be restored within 90 days of deletion.
+          # Learn more about
+          # [restoring records](https://knowledge.hubspot.com/records/restore-deleted-records).
+          #
+          # @overload delete(cart_id, request_options: {})
+          #
+          # @param cart_id [String]
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [nil]
+          #
+          # @see HubspotSDK::Models::Crm::Objects::CartDeleteParams
+          def delete(cart_id, params = {})
+            @client.request(
+              method: :delete,
+              path: ["crm/objects/2026-03/carts/%1$s", cart_id],
+              model: NilClass,
+              options: params[:request_options]
+            )
+          end
+
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Crm::Objects::CartGetParams} for more details.
+          #
+          # Retrieve a cart by its ID (`objectId`) or by a unique property (`idProperty`).
+          # Includes options for specifying what gets returned, such as the `properties`
+          # query parameter.
+          #
+          # @overload get(cart_id, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
+          #
+          # @param cart_id [String]
+          #
+          # @param archived [Boolean] Whether to return only results that have been archived.
+          #
+          # @param associations [Array<String>] A comma separated list of object types to retrieve associated IDs for. If any of
+          #
+          # @param id_property [String] The name of a property whose values are unique for this object type
+          #
+          # @param properties [Array<String>] A comma separated list of the properties to be returned in the response. If any
+          #
+          # @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations]
+          #
+          # @see HubspotSDK::Models::Crm::Objects::CartGetParams
+          def get(cart_id, params = {})
+            parsed, options = HubspotSDK::Crm::Objects::CartGetParams.dump_request(params)
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            @client.request(
+              method: :get,
+              path: ["crm/objects/2026-03/carts/%1$s", cart_id],
+              query: query.transform_keys(
+                id_property: "idProperty",
+                properties_with_history: "propertiesWithHistory"
+              ),
+              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
+              options: options
+            )
+          end
+
+          # Search for carts based on the specified search criteria, such as filters and
+          # properties, and retrieve the matching results.
+          #
+          # @overload search(after:, filter_groups:, limit:, properties:, sorts:, query: nil, request_options: {})
+          #
+          # @param after [String] A paging cursor token for retrieving subsequent pages.
+          #
+          # @param filter_groups [Array<HubspotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
+          #
+          # @param limit [Integer] The maximum results to return, up to 200 objects.
+          #
+          # @param properties [Array<String>] A list of property names to include in the response.
+          #
+          # @param sorts [Array<String>] Specifies sorting order based on object properties.
+          #
+          # @param query [String] The search query string, up to 3000 characters.
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [HubspotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
+          #
+          # @see HubspotSDK::Models::Crm::Objects::CartSearchParams
+          def search(params)
+            parsed, options = HubspotSDK::Crm::Objects::CartSearchParams.dump_request(params)
+            @client.request(
+              method: :post,
+              path: "crm/objects/2026-03/carts/search",
+              body: parsed,
+              model: HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
+              options: options
+            )
+          end
+
+          # @api private
+          #
+          # @param client [HubspotSDK::Client]
+          def initialize(client:)
+            @client = client
+            @batch = HubspotSDK::Resources::Crm::Objects::Carts::Batch.new(client: client)
+          end
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,88 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_association_in_list_filter =
+        {
+          association_category: String,
+          association_type_id: Integer,
+          coalescing_refine_by: HubspotSDK::Models::Crm::PublicAssociationInListFilter::coalescing_refine_by,
+          filter_type: HubspotSDK::Models::Crm::PublicAssociationInListFilter::filter_type,
+          list_id: String,
+          operator: String,
+          to_object_type: String,
+          to_object_type_id: String
+        }
+
+      class PublicAssociationInListFilter < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor association_category: String
+
+        attr_accessor association_type_id: Integer
+
+        attr_accessor coalescing_refine_by: HubspotSDK::Models::Crm::PublicAssociationInListFilter::coalescing_refine_by
+
+        attr_accessor filter_type: HubspotSDK::Models::Crm::PublicAssociationInListFilter::filter_type
+
+        attr_accessor list_id: String
+
+        attr_accessor operator: String
+
+        attr_reader to_object_type: String?
+
+        def to_object_type=: (String) -> String
+
+        attr_reader to_object_type_id: String?
+
+        def to_object_type_id=: (String) -> String
+
+        def initialize: (
+          association_category: String,
+          association_type_id: Integer,
+          coalescing_refine_by: HubspotSDK::Models::Crm::PublicAssociationInListFilter::coalescing_refine_by,
+          filter_type: HubspotSDK::Models::Crm::PublicAssociationInListFilter::filter_type,
+          list_id: String,
+          operator: String,
+          ?to_object_type: String,
+          ?to_object_type_id: String
+        ) -> void
+
+        def to_hash: -> {
+          association_category: String,
+          association_type_id: Integer,
+          coalescing_refine_by: HubspotSDK::Models::Crm::PublicAssociationInListFilter::coalescing_refine_by,
+          filter_type: HubspotSDK::Models::Crm::PublicAssociationInListFilter::filter_type,
+          list_id: String,
+          operator: String,
+          to_object_type: String,
+          to_object_type_id: String
+        }
+
+        type coalescing_refine_by =
+          HubspotSDK::Crm::PublicNumOccurrencesRefineBy
+          | HubspotSDK::Crm::PublicSetOccurrencesRefineBy
+          | HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy
+          | HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy
+          | HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy
+          | HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy
+          | HubspotSDK::Crm::PublicAllHistoryRefineBy
+          | HubspotSDK::Crm::PublicTimePointOperation
+          | HubspotSDK::Crm::PublicRangedTimeOperation
+
+        module CoalescingRefineBy
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicAssociationInListFilter::coalescing_refine_by]
+        end
+
+        type filter_type = :ASSOCIATION
+
+        module FilterType
+          extend HubspotSDK::Internal::Type::Enum
+
+          ASSOCIATION: :ASSOCIATION
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicAssociationInListFilter::filter_type]
+        end
+      end
+    end
+  end
+end

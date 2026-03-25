@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module AppWebhooks
+      type app_webhook_update_settings_params =
+        { app_id: Integer } & HubspotSDK::Internal::Type::request_parameters
+
+      class AppWebhookUpdateSettingsParams < HubspotSDK::Models::AppWebhooks::SettingsChangeRequest
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        def app_id: -> Integer
+
+        def app_id=: (Integer _) -> Integer
+
+        def initialize: (
+          app_id: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          app_id: Integer,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

@@ -1,0 +1,24 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type video_object =
+        { id: Integer, deeplink_url: String, file_id: Integer }
+
+      class VideoObject < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: Integer
+
+        attr_accessor deeplink_url: String
+
+        attr_accessor file_id: Integer
+
+        def initialize: (
+          id: Integer,
+          deeplink_url: String,
+          file_id: Integer
+        ) -> void
+
+        def to_hash: -> { id: Integer, deeplink_url: String, file_id: Integer }
+      end
+    end
+  end
+end

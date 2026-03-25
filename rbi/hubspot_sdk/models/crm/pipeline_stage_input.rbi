@@ -1,0 +1,83 @@
+# typed: strong
+
+module HubspotSDK
+  module Models
+    module Crm
+      class PipelineStageInput < HubspotSDK::Internal::Type::BaseModel
+        OrHash =
+          T.type_alias do
+            T.any(
+              HubspotSDK::Crm::PipelineStageInput,
+              HubspotSDK::Internal::AnyHash
+            )
+          end
+
+        sig { returns(Integer) }
+        attr_accessor :display_order
+
+        sig { returns(String) }
+        attr_accessor :label
+
+        # A JSON object containing properties that are not present on all object
+        # pipelines.
+        #
+        # For `deals` pipelines, the `probability` field is required
+        # (`{ "probability": 0.5 }`), and represents the likelihood a deal will close.
+        # Possible values are between 0.0 and 1.0 in increments of 0.1.
+        #
+        # For `tickets` pipelines, the `ticketState` field is optional
+        # (`{ "ticketState": "OPEN" }`), and represents whether the ticket remains open or
+        # has been closed by a member of your Support team. Possible values are `OPEN` or
+        # `CLOSED`.
+        sig { returns(T::Hash[Symbol, String]) }
+        attr_accessor :metadata
+
+        sig { returns(T.nilable(String)) }
+        attr_reader :stage_id
+
+        sig { params(stage_id: String).void }
+        attr_writer :stage_id
+
+        sig do
+          params(
+            display_order: Integer,
+            label: String,
+            metadata: T::Hash[Symbol, String],
+            stage_id: String
+          ).returns(T.attached_class)
+        end
+        def self.new(
+          display_order:,
+          label:,
+          # A JSON object containing properties that are not present on all object
+          # pipelines.
+          #
+          # For `deals` pipelines, the `probability` field is required
+          # (`{ "probability": 0.5 }`), and represents the likelihood a deal will close.
+          # Possible values are between 0.0 and 1.0 in increments of 0.1.
+          #
+          # For `tickets` pipelines, the `ticketState` field is optional
+          # (`{ "ticketState": "OPEN" }`), and represents whether the ticket remains open or
+          # has been closed by a member of your Support team. Possible values are `OPEN` or
+          # `CLOSED`.
+          metadata:,
+          stage_id: nil
+        )
+        end
+
+        sig do
+          override.returns(
+            {
+              display_order: Integer,
+              label: String,
+              metadata: T::Hash[Symbol, String],
+              stage_id: String
+            }
+          )
+        end
+        def to_hash
+        end
+      end
+    end
+  end
+end

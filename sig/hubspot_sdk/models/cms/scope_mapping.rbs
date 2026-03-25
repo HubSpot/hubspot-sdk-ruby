@@ -1,0 +1,61 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type scope_mapping =
+        {
+          access_level: HubspotSDK::Models::Cms::ScopeMapping::access_level,
+          request_action: HubspotSDK::Models::Cms::ScopeMapping::request_action,
+          scope_name: String
+        }
+
+      class ScopeMapping < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor access_level: HubspotSDK::Models::Cms::ScopeMapping::access_level
+
+        attr_accessor request_action: HubspotSDK::Models::Cms::ScopeMapping::request_action
+
+        attr_accessor scope_name: String
+
+        def initialize: (
+          access_level: HubspotSDK::Models::Cms::ScopeMapping::access_level,
+          request_action: HubspotSDK::Models::Cms::ScopeMapping::request_action,
+          scope_name: String
+        ) -> void
+
+        def to_hash: -> {
+          access_level: HubspotSDK::Models::Cms::ScopeMapping::access_level,
+          request_action: HubspotSDK::Models::Cms::ScopeMapping::request_action,
+          scope_name: String
+        }
+
+        type access_level = :ALL | :OWNED | :TEAM_OWNED | :UNASSIGNED
+
+        module AccessLevel
+          extend HubspotSDK::Internal::Type::Enum
+
+          ALL: :ALL
+          OWNED: :OWNED
+          TEAM_OWNED: :TEAM_OWNED
+          UNASSIGNED: :UNASSIGNED
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::ScopeMapping::access_level]
+        end
+
+        type request_action =
+          :COMMUNICATE | :DELETE | :EDIT | :EDIT_ASSOCIATION | :MERGE | :VIEW
+
+        module RequestAction
+          extend HubspotSDK::Internal::Type::Enum
+
+          COMMUNICATE: :COMMUNICATE
+          DELETE: :DELETE
+          EDIT: :EDIT
+          EDIT_ASSOCIATION: :EDIT_ASSOCIATION
+          MERGE: :MERGE
+          VIEW: :VIEW
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::ScopeMapping::request_action]
+        end
+      end
+    end
+  end
+end

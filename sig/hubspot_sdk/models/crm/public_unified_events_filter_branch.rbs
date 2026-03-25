@@ -1,0 +1,167 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_unified_events_filter_branch =
+        {
+          event_type_id: String,
+          filter_branches: ::Array[HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::filter_branch],
+          filter_branch_operator: String,
+          filter_branch_type: HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::filter_branch_type,
+          filters: ::Array[HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::filter],
+          operator: HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::operator,
+          coalescing_refine_by: HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::coalescing_refine_by,
+          pruning_refine_by: HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::pruning_refine_by
+        }
+
+      class PublicUnifiedEventsFilterBranch < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor event_type_id: String
+
+        attr_accessor filter_branches: ::Array[HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::filter_branch]
+
+        attr_accessor filter_branch_operator: String
+
+        attr_accessor filter_branch_type: HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::filter_branch_type
+
+        attr_accessor filters: ::Array[HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::filter]
+
+        attr_accessor operator: HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::operator
+
+        attr_reader coalescing_refine_by: HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::coalescing_refine_by?
+
+        def coalescing_refine_by=: (
+          HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::coalescing_refine_by
+        ) -> HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::coalescing_refine_by
+
+        attr_reader pruning_refine_by: HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::pruning_refine_by?
+
+        def pruning_refine_by=: (
+          HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::pruning_refine_by
+        ) -> HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::pruning_refine_by
+
+        def initialize: (
+          event_type_id: String,
+          filter_branches: ::Array[HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::filter_branch],
+          filter_branch_operator: String,
+          filter_branch_type: HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::filter_branch_type,
+          filters: ::Array[HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::filter],
+          operator: HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::operator,
+          ?coalescing_refine_by: HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::coalescing_refine_by,
+          ?pruning_refine_by: HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::pruning_refine_by
+        ) -> void
+
+        def to_hash: -> {
+          event_type_id: String,
+          filter_branches: ::Array[HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::filter_branch],
+          filter_branch_operator: String,
+          filter_branch_type: HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::filter_branch_type,
+          filters: ::Array[HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::filter],
+          operator: HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::operator,
+          coalescing_refine_by: HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::coalescing_refine_by,
+          pruning_refine_by: HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::pruning_refine_by
+        }
+
+        type filter_branch =
+          HubspotSDK::Crm::PublicOrFilterBranch
+          | HubspotSDK::Crm::PublicAndFilterBranch
+          | HubspotSDK::Crm::PublicNotAllFilterBranch
+          | HubspotSDK::Crm::PublicNotAnyFilterBranch
+          | HubspotSDK::Crm::PublicRestrictedFilterBranch
+          | HubspotSDK::Crm::PublicUnifiedEventsFilterBranch
+          | HubspotSDK::Crm::PublicPropertyAssociationFilterBranch
+          | HubspotSDK::Crm::PublicAssociationFilterBranch
+
+        module FilterBranch
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::filter_branch]
+        end
+
+        type filter_branch_type = :UNIFIED_EVENTS
+
+        module FilterBranchType
+          extend HubspotSDK::Internal::Type::Enum
+
+          UNIFIED_EVENTS: :UNIFIED_EVENTS
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::filter_branch_type]
+        end
+
+        type filter =
+          HubspotSDK::Crm::PublicPropertyFilter
+          | HubspotSDK::Crm::PublicAssociationInListFilter
+          | HubspotSDK::Crm::PublicPageViewAnalyticsFilter
+          | HubspotSDK::Crm::PublicCtaAnalyticsFilter
+          | HubspotSDK::Crm::PublicEventAnalyticsFilter
+          | HubspotSDK::Crm::PublicFormSubmissionFilter
+          | HubspotSDK::Crm::PublicFormSubmissionOnPageFilter
+          | HubspotSDK::Crm::PublicIntegrationEventFilter
+          | HubspotSDK::Crm::PublicEmailSubscriptionFilter
+          | HubspotSDK::Crm::PublicCommunicationSubscriptionFilter
+          | HubspotSDK::Crm::PublicCampaignInfluencedFilter
+          | HubspotSDK::Crm::PublicSurveyMonkeyFilter
+          | HubspotSDK::Crm::PublicSurveyMonkeyValueFilter
+          | HubspotSDK::Crm::PublicWebinarFilter
+          | HubspotSDK::Crm::PublicEmailEventFilter
+          | HubspotSDK::Crm::PublicPrivacyAnalyticsFilter
+          | HubspotSDK::Crm::PublicAdsSearchFilter
+          | HubspotSDK::Crm::PublicAdsTimeFilter
+          | HubspotSDK::Crm::PublicInListFilter
+          | HubspotSDK::Crm::PublicNumAssociationsFilter
+          | HubspotSDK::Crm::PublicUnifiedEventsFilter
+          | HubspotSDK::Crm::PublicPropertyAssociationInListFilter
+          | HubspotSDK::Crm::PublicConstantFilter
+
+        module Filter
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::filter]
+        end
+
+        type operator = :HAS_COMPLETED | :HAS_NOT_COMPLETED
+
+        module Operator
+          extend HubspotSDK::Internal::Type::Enum
+
+          HAS_COMPLETED: :HAS_COMPLETED
+          HAS_NOT_COMPLETED: :HAS_NOT_COMPLETED
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::operator]
+        end
+
+        type coalescing_refine_by =
+          HubspotSDK::Crm::PublicNumOccurrencesRefineBy
+          | HubspotSDK::Crm::PublicSetOccurrencesRefineBy
+          | HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy
+          | HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy
+          | HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy
+          | HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy
+          | HubspotSDK::Crm::PublicAllHistoryRefineBy
+          | HubspotSDK::Crm::PublicTimePointOperation
+          | HubspotSDK::Crm::PublicRangedTimeOperation
+
+        module CoalescingRefineBy
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::coalescing_refine_by]
+        end
+
+        type pruning_refine_by =
+          HubspotSDK::Crm::PublicNumOccurrencesRefineBy
+          | HubspotSDK::Crm::PublicSetOccurrencesRefineBy
+          | HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy
+          | HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy
+          | HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy
+          | HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy
+          | HubspotSDK::Crm::PublicAllHistoryRefineBy
+          | HubspotSDK::Crm::PublicTimePointOperation
+          | HubspotSDK::Crm::PublicRangedTimeOperation
+
+        module PruningRefineBy
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch::pruning_refine_by]
+        end
+      end
+    end
+  end
+end

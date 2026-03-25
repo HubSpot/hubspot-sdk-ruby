@@ -1,0 +1,57 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_date_property_operation =
+        {
+          day: Integer,
+          include_objects_with_no_value_set: bool,
+          month: String,
+          operation_type: HubspotSDK::Models::Crm::PublicDatePropertyOperation::operation_type,
+          operator: String,
+          year: Integer
+        }
+
+      class PublicDatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor day: Integer
+
+        attr_accessor include_objects_with_no_value_set: bool
+
+        attr_accessor month: String
+
+        attr_accessor operation_type: HubspotSDK::Models::Crm::PublicDatePropertyOperation::operation_type
+
+        attr_accessor operator: String
+
+        attr_accessor year: Integer
+
+        def initialize: (
+          day: Integer,
+          include_objects_with_no_value_set: bool,
+          month: String,
+          operation_type: HubspotSDK::Models::Crm::PublicDatePropertyOperation::operation_type,
+          operator: String,
+          year: Integer
+        ) -> void
+
+        def to_hash: -> {
+          day: Integer,
+          include_objects_with_no_value_set: bool,
+          month: String,
+          operation_type: HubspotSDK::Models::Crm::PublicDatePropertyOperation::operation_type,
+          operator: String,
+          year: Integer
+        }
+
+        type operation_type = :DATE
+
+        module OperationType
+          extend HubspotSDK::Internal::Type::Enum
+
+          DATE: :DATE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicDatePropertyOperation::operation_type]
+        end
+      end
+    end
+  end
+end

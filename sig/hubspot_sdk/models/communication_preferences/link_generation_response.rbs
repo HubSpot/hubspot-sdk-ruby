@@ -1,0 +1,39 @@
+module HubspotSDK
+  module Models
+    module CommunicationPreferences
+      type link_generation_response =
+        {
+          manage_preferences_url: String,
+          subscriber_id_string: String,
+          unsubscribe_all_url: String,
+          unsubscribe_single_url: String
+        }
+
+      class LinkGenerationResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor manage_preferences_url: String
+
+        attr_accessor subscriber_id_string: String
+
+        attr_accessor unsubscribe_all_url: String
+
+        attr_reader unsubscribe_single_url: String?
+
+        def unsubscribe_single_url=: (String) -> String
+
+        def initialize: (
+          manage_preferences_url: String,
+          subscriber_id_string: String,
+          unsubscribe_all_url: String,
+          ?unsubscribe_single_url: String
+        ) -> void
+
+        def to_hash: -> {
+          manage_preferences_url: String,
+          subscriber_id_string: String,
+          unsubscribe_all_url: String,
+          unsubscribe_single_url: String
+        }
+      end
+    end
+  end
+end

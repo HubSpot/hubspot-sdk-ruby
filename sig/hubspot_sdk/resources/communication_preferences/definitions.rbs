@@ -1,0 +1,15 @@
+module HubspotSDK
+  module Resources
+    class CommunicationPreferences
+      class Definitions
+        def list: (
+          ?business_unit_id: Integer,
+          ?include_translations: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::CommunicationPreferences::ActionResponseWithResultsSubscriptionDefinition
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

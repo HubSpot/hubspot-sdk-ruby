@@ -2,9 +2,71 @@ module HubspotSDK
   module Resources
     class Crm
       class Objects
+        attr_reader calls: HubspotSDK::Resources::Crm::Objects::Calls
+
+        attr_reader carts: HubspotSDK::Resources::Crm::Objects::Carts
+
+        attr_reader commerce_payments: HubspotSDK::Resources::Crm::Objects::CommercePayments
+
+        attr_reader communications: HubspotSDK::Resources::Crm::Objects::Communications
+
+        attr_reader companies: HubspotSDK::Resources::Crm::Objects::Companies
+
         attr_reader contacts: HubspotSDK::Resources::Crm::Objects::Contacts
 
+        attr_reader contracts: HubspotSDK::Resources::Crm::Objects::Contracts
+
+        attr_reader courses: HubspotSDK::Resources::Crm::Objects::Courses
+
         attr_reader custom: HubspotSDK::Resources::Crm::Objects::Custom
+
+        attr_reader deals: HubspotSDK::Resources::Crm::Objects::Deals
+
+        attr_reader discounts: HubspotSDK::Resources::Crm::Objects::Discounts
+
+        attr_reader emails: HubspotSDK::Resources::Crm::Objects::Emails
+
+        attr_reader feedback_submissions: HubspotSDK::Resources::Crm::Objects::FeedbackSubmissions
+
+        attr_reader fees: HubspotSDK::Resources::Crm::Objects::Fees
+
+        attr_reader goal_targets: HubspotSDK::Resources::Crm::Objects::GoalTargets
+
+        attr_reader invoices: HubspotSDK::Resources::Crm::Objects::Invoices
+
+        attr_reader leads: HubspotSDK::Resources::Crm::Objects::Leads
+
+        attr_reader line_items: HubspotSDK::Resources::Crm::Objects::LineItems
+
+        attr_reader listings: HubspotSDK::Resources::Crm::Objects::Listings
+
+        attr_reader meetings: HubspotSDK::Resources::Crm::Objects::Meetings
+
+        attr_reader notes: HubspotSDK::Resources::Crm::Objects::Notes
+
+        attr_reader orders: HubspotSDK::Resources::Crm::Objects::Orders
+
+        attr_reader partner_clients: HubspotSDK::Resources::Crm::Objects::PartnerClients
+
+        attr_reader partner_services: HubspotSDK::Resources::Crm::Objects::PartnerServices
+
+        attr_reader postal_mail: HubspotSDK::Resources::Crm::Objects::PostalMail
+
+        attr_reader products: HubspotSDK::Resources::Crm::Objects::Products
+
+        attr_reader quotes: HubspotSDK::Resources::Crm::Objects::Quotes
+
+        attr_reader services: HubspotSDK::Resources::Crm::Objects::Services
+
+        attr_reader subscriptions: HubspotSDK::Resources::Crm::Objects::Subscriptions
+
+        attr_reader tasks: HubspotSDK::Resources::Crm::Objects::Tasks
+
+        attr_reader taxes: HubspotSDK::Resources::Crm::Objects::Taxes
+
+        attr_reader tickets: HubspotSDK::Resources::Crm::Objects::Tickets
+
+        attr_reader users: HubspotSDK::Resources::Crm::Objects::Users
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

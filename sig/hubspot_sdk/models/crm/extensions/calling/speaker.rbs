@@ -1,0 +1,25 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Extensions
+        module Calling
+          type speaker = { id: String, name: String, email: String }
+
+          class Speaker < HubspotSDK::Internal::Type::BaseModel
+            attr_accessor id: String
+
+            attr_accessor name: String
+
+            attr_reader email: String?
+
+            def email=: (String) -> String
+
+            def initialize: (id: String, name: String, ?email: String) -> void
+
+            def to_hash: -> { id: String, name: String, email: String }
+          end
+        end
+      end
+    end
+  end
+end

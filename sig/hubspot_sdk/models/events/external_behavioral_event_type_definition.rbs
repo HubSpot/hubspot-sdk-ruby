@@ -10,7 +10,7 @@ module HubspotSDK
           labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels,
           name: String,
           object_type_id: String,
-          properties: ::Array[HubspotSDK::Events::Property],
+          properties: ::Array[HubspotSDK::Property],
           combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch,
           created_at: Time,
           created_user_id: Integer,
@@ -38,7 +38,7 @@ module HubspotSDK
 
         attr_accessor object_type_id: String
 
-        attr_accessor properties: ::Array[HubspotSDK::Events::Property]
+        attr_accessor properties: ::Array[HubspotSDK::Property]
 
         attr_reader combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch?
 
@@ -94,7 +94,7 @@ module HubspotSDK
           labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels,
           name: String,
           object_type_id: String,
-          properties: ::Array[HubspotSDK::Events::Property],
+          properties: ::Array[HubspotSDK::Property],
           ?combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch,
           ?created_at: Time,
           ?created_user_id: Integer,
@@ -115,7 +115,7 @@ module HubspotSDK
           labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels,
           name: String,
           object_type_id: String,
-          properties: ::Array[HubspotSDK::Events::Property],
+          properties: ::Array[HubspotSDK::Property],
           combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch,
           created_at: Time,
           created_user_id: Integer,

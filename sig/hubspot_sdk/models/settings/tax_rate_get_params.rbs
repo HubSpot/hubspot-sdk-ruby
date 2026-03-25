@@ -1,0 +1,26 @@
+module HubspotSDK
+  module Models
+    module Settings
+      type tax_rate_get_params =
+        { tax_rate_group_id: String }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class TaxRateGetParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor tax_rate_group_id: String
+
+        def initialize: (
+          tax_rate_group_id: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          tax_rate_group_id: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

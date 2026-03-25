@@ -1,0 +1,30 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_association_definition_update_request =
+        { association_type_id: Integer, label: String, inverse_label: String }
+
+      class PublicAssociationDefinitionUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor association_type_id: Integer
+
+        attr_accessor label: String
+
+        attr_reader inverse_label: String?
+
+        def inverse_label=: (String) -> String
+
+        def initialize: (
+          association_type_id: Integer,
+          label: String,
+          ?inverse_label: String
+        ) -> void
+
+        def to_hash: -> {
+          association_type_id: Integer,
+          label: String,
+          inverse_label: String
+        }
+      end
+    end
+  end
+end

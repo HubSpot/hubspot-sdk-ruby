@@ -1,0 +1,36 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Objects
+        type call_update_params =
+          { call_id: String, id_property: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class CallUpdateParams < HubspotSDK::Models::Crm::SimplePublicObjectInput
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def call_id: -> String
+
+          def call_id=: (String _) -> String
+
+          def id_property: -> String?
+
+          def id_property=: (String _) -> String
+
+          def initialize: (
+            call_id: String,
+            ?id_property: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            call_id: String,
+            id_property: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

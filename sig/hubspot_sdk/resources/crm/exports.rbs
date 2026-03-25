@@ -1,0 +1,24 @@
+module HubspotSDK
+  module Resources
+    class Crm
+      class Exports
+        def create_async: (
+          public_export_request: HubspotSDK::Models::Crm::public_export_request,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::TaskLocator
+
+        def get: (
+          Integer export_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Crm::PublicExportResponse
+
+        def get_status: (
+          Integer task_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Crm::ActionResponseWithSingleResultUri
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

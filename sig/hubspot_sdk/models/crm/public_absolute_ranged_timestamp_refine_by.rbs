@@ -1,0 +1,47 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_absolute_ranged_timestamp_refine_by =
+        {
+          lower_timestamp: Integer,
+          range_type: String,
+          type: HubspotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy::type_,
+          upper_timestamp: Integer
+        }
+
+      class PublicAbsoluteRangedTimestampRefineBy < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor lower_timestamp: Integer
+
+        attr_accessor range_type: String
+
+        attr_accessor type: HubspotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy::type_
+
+        attr_accessor upper_timestamp: Integer
+
+        def initialize: (
+          lower_timestamp: Integer,
+          range_type: String,
+          type: HubspotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy::type_,
+          upper_timestamp: Integer
+        ) -> void
+
+        def to_hash: -> {
+          lower_timestamp: Integer,
+          range_type: String,
+          type: HubspotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy::type_,
+          upper_timestamp: Integer
+        }
+
+        type type_ = :ABSOLUTE_RANGED
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          ABSOLUTE_RANGED: :ABSOLUTE_RANGED
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy::type_]
+        end
+      end
+    end
+  end
+end

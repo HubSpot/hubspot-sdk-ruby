@@ -1,0 +1,569 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_import_error =
+        {
+          id: String,
+          created_at: Integer,
+          error_type: HubspotSDK::Models::Crm::PublicImportError::error_type,
+          source_data: HubspotSDK::Crm::ImportRowCore,
+          error_message: String,
+          extra_context: String,
+          invalid_property_value: HubspotSDK::PropertyValue,
+          invalid_value: String,
+          invalid_value_to_display: String,
+          known_column_number: Integer,
+          object_type: HubspotSDK::Models::Crm::PublicImportError::object_type,
+          object_type_id: String
+        }
+
+      class PublicImportError < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor created_at: Integer
+
+        attr_accessor error_type: HubspotSDK::Models::Crm::PublicImportError::error_type
+
+        attr_accessor source_data: HubspotSDK::Crm::ImportRowCore
+
+        attr_reader error_message: String?
+
+        def error_message=: (String) -> String
+
+        attr_reader extra_context: String?
+
+        def extra_context=: (String) -> String
+
+        attr_reader invalid_property_value: HubspotSDK::PropertyValue?
+
+        def invalid_property_value=: (
+          HubspotSDK::PropertyValue
+        ) -> HubspotSDK::PropertyValue
+
+        attr_reader invalid_value: String?
+
+        def invalid_value=: (String) -> String
+
+        attr_reader invalid_value_to_display: String?
+
+        def invalid_value_to_display=: (String) -> String
+
+        attr_reader known_column_number: Integer?
+
+        def known_column_number=: (Integer) -> Integer
+
+        attr_reader object_type: HubspotSDK::Models::Crm::PublicImportError::object_type?
+
+        def object_type=: (
+          HubspotSDK::Models::Crm::PublicImportError::object_type
+        ) -> HubspotSDK::Models::Crm::PublicImportError::object_type
+
+        attr_reader object_type_id: String?
+
+        def object_type_id=: (String) -> String
+
+        def initialize: (
+          id: String,
+          created_at: Integer,
+          error_type: HubspotSDK::Models::Crm::PublicImportError::error_type,
+          source_data: HubspotSDK::Crm::ImportRowCore,
+          ?error_message: String,
+          ?extra_context: String,
+          ?invalid_property_value: HubspotSDK::PropertyValue,
+          ?invalid_value: String,
+          ?invalid_value_to_display: String,
+          ?known_column_number: Integer,
+          ?object_type: HubspotSDK::Models::Crm::PublicImportError::object_type,
+          ?object_type_id: String
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          created_at: Integer,
+          error_type: HubspotSDK::Models::Crm::PublicImportError::error_type,
+          source_data: HubspotSDK::Crm::ImportRowCore,
+          error_message: String,
+          extra_context: String,
+          invalid_property_value: HubspotSDK::PropertyValue,
+          invalid_value: String,
+          invalid_value_to_display: String,
+          known_column_number: Integer,
+          object_type: HubspotSDK::Models::Crm::PublicImportError::object_type,
+          object_type_id: String
+        }
+
+        type error_type =
+          :AMBIGUOUS_ENUMERATION_OPTION
+          | :ASSOCIATION_LABEL_NOT_FOUND
+          | :ASSOCIATION_LIMIT_EXCEEDED
+          | :ASSOCIATION_RECORD_NOT_FOUND
+          | :COLUMN_TOO_LARGE
+          | :COULD_NOT_FIND_BUSINESS_UNIT
+          | :COULD_NOT_FIND_OWNER
+          | :COULD_NOT_PARSE_DATE
+          | :COULD_NOT_PARSE_NUMBER
+          | :COULD_NOT_PARSE_ROW
+          | :COULD_NOT_PARSE_TERM
+          | :CREATE_ONLY_IMPORT
+          | :DUPLICATE_ALTERNATE_ID
+          | :DUPLICATE_ASSOCIATION_ID
+          | :DUPLICATE_EVENT
+          | :DUPLICATE_OBJECT_ID
+          | :DUPLICATE_RECORD_ID
+          | :DUPLICATE_ROW_CONTENT
+          | :DUPLICATE_UNIQUE_CREATION_KEY
+          | :DUPLICATE_UNIQUE_PROPERTY_VALUE
+          | :FAILED_TO_CREATE_ASSOCIATION
+          | :FAILED_TO_FIND_RECORD_FOR_ASSOCIATIONS
+          | :FAILED_TO_OPT_OUT_CONTACT
+          | :FAILED_TO_PROCESS_OBJECT_WITH_EMPTY_PROPERTY_VALUES
+          | :FAILED_VALIDATION
+          | :FILE_NOT_FOUND
+          | :GDPR_BLACKLISTED_EMAIL
+          | :INCORRECT_NUMBER_OF_COLUMNS
+          | :INVALID_ALTERNATE_ID
+          | :INVALID_ASSOCIATION_IDENTIFIER
+          | :INVALID_ASSOCIATION_KEY
+          | :INVALID_COLUMN_CONFIGURATION
+          | :INVALID_CUSTOM_PROPERTY_VALIDATION
+          | :INVALID_DOMAIN
+          | :INVALID_EMAIL
+          | :INVALID_ENUM_FILE_ID_OR_URL
+          | :INVALID_ENUMERATION_OPTION
+          | :INVALID_EVENT
+          | :INVALID_EVENT_TIMESTAMP
+          | :INVALID_FILE_TYPE
+          | :INVALID_NUMBER_SIZE
+          | :INVALID_OBJECT_ID
+          | :INVALID_RECORD_ID
+          | :INVALID_REQUIRED_PROPERTY
+          | :INVALID_SHEET_COUNT
+          | :INVALID_SPREADSHEET
+          | :LIMIT_EXCEEDED
+          | :MANY_ERRORS_IN_ROW
+          | :MISSING_EVENT_DEFINITION
+          | :MISSING_EVENT_TIMESTAMP
+          | :MISSING_OBJECT_DEFINITION
+          | :MISSING_REQUIRED_PROPERTY
+          | :MULTIPLE_COMPANIES_WITH_THIS_DOMAIN
+          | :MULTIPLE_OWNERS_FOUND
+          | :NO_OBJECT_ID_FROM_ASSOCIATION_IDENTIFIER
+          | :OUTSIDE_VALID_TERM_RANGE
+          | :OUTSIDE_VALID_TIME_RANGE
+          | :PORTAL_WIDE_CUSTOM_OBJECT_LIMIT_EXCEEDED
+          | :PROPERTY_DEFINITION_NOT_FOUND
+          | :PROPERTY_VALUE_NOT_FOUND
+          | :ROW_DATA_TOO_LARGE
+          | :SECONDARY_EMAIL_WRITE_FAILURE
+          | :UNKNOWN_ASSOCIATION_RECORD_ID
+          | :UNKNOWN_BAD_REQUEST
+          | :UNKNOWN_ERROR
+          | :UPDATE_ONLY_IMPORT
+
+        module ErrorType
+          extend HubspotSDK::Internal::Type::Enum
+
+          AMBIGUOUS_ENUMERATION_OPTION: :AMBIGUOUS_ENUMERATION_OPTION
+          ASSOCIATION_LABEL_NOT_FOUND: :ASSOCIATION_LABEL_NOT_FOUND
+          ASSOCIATION_LIMIT_EXCEEDED: :ASSOCIATION_LIMIT_EXCEEDED
+          ASSOCIATION_RECORD_NOT_FOUND: :ASSOCIATION_RECORD_NOT_FOUND
+          COLUMN_TOO_LARGE: :COLUMN_TOO_LARGE
+          COULD_NOT_FIND_BUSINESS_UNIT: :COULD_NOT_FIND_BUSINESS_UNIT
+          COULD_NOT_FIND_OWNER: :COULD_NOT_FIND_OWNER
+          COULD_NOT_PARSE_DATE: :COULD_NOT_PARSE_DATE
+          COULD_NOT_PARSE_NUMBER: :COULD_NOT_PARSE_NUMBER
+          COULD_NOT_PARSE_ROW: :COULD_NOT_PARSE_ROW
+          COULD_NOT_PARSE_TERM: :COULD_NOT_PARSE_TERM
+          CREATE_ONLY_IMPORT: :CREATE_ONLY_IMPORT
+          DUPLICATE_ALTERNATE_ID: :DUPLICATE_ALTERNATE_ID
+          DUPLICATE_ASSOCIATION_ID: :DUPLICATE_ASSOCIATION_ID
+          DUPLICATE_EVENT: :DUPLICATE_EVENT
+          DUPLICATE_OBJECT_ID: :DUPLICATE_OBJECT_ID
+          DUPLICATE_RECORD_ID: :DUPLICATE_RECORD_ID
+          DUPLICATE_ROW_CONTENT: :DUPLICATE_ROW_CONTENT
+          DUPLICATE_UNIQUE_CREATION_KEY: :DUPLICATE_UNIQUE_CREATION_KEY
+          DUPLICATE_UNIQUE_PROPERTY_VALUE: :DUPLICATE_UNIQUE_PROPERTY_VALUE
+          FAILED_TO_CREATE_ASSOCIATION: :FAILED_TO_CREATE_ASSOCIATION
+          FAILED_TO_FIND_RECORD_FOR_ASSOCIATIONS: :FAILED_TO_FIND_RECORD_FOR_ASSOCIATIONS
+          FAILED_TO_OPT_OUT_CONTACT: :FAILED_TO_OPT_OUT_CONTACT
+          FAILED_TO_PROCESS_OBJECT_WITH_EMPTY_PROPERTY_VALUES: :FAILED_TO_PROCESS_OBJECT_WITH_EMPTY_PROPERTY_VALUES
+          FAILED_VALIDATION: :FAILED_VALIDATION
+          FILE_NOT_FOUND: :FILE_NOT_FOUND
+          GDPR_BLACKLISTED_EMAIL: :GDPR_BLACKLISTED_EMAIL
+          INCORRECT_NUMBER_OF_COLUMNS: :INCORRECT_NUMBER_OF_COLUMNS
+          INVALID_ALTERNATE_ID: :INVALID_ALTERNATE_ID
+          INVALID_ASSOCIATION_IDENTIFIER: :INVALID_ASSOCIATION_IDENTIFIER
+          INVALID_ASSOCIATION_KEY: :INVALID_ASSOCIATION_KEY
+          INVALID_COLUMN_CONFIGURATION: :INVALID_COLUMN_CONFIGURATION
+          INVALID_CUSTOM_PROPERTY_VALIDATION: :INVALID_CUSTOM_PROPERTY_VALIDATION
+          INVALID_DOMAIN: :INVALID_DOMAIN
+          INVALID_EMAIL: :INVALID_EMAIL
+          INVALID_ENUM_FILE_ID_OR_URL: :INVALID_ENUM_FILE_ID_OR_URL
+          INVALID_ENUMERATION_OPTION: :INVALID_ENUMERATION_OPTION
+          INVALID_EVENT: :INVALID_EVENT
+          INVALID_EVENT_TIMESTAMP: :INVALID_EVENT_TIMESTAMP
+          INVALID_FILE_TYPE: :INVALID_FILE_TYPE
+          INVALID_NUMBER_SIZE: :INVALID_NUMBER_SIZE
+          INVALID_OBJECT_ID: :INVALID_OBJECT_ID
+          INVALID_RECORD_ID: :INVALID_RECORD_ID
+          INVALID_REQUIRED_PROPERTY: :INVALID_REQUIRED_PROPERTY
+          INVALID_SHEET_COUNT: :INVALID_SHEET_COUNT
+          INVALID_SPREADSHEET: :INVALID_SPREADSHEET
+          LIMIT_EXCEEDED: :LIMIT_EXCEEDED
+          MANY_ERRORS_IN_ROW: :MANY_ERRORS_IN_ROW
+          MISSING_EVENT_DEFINITION: :MISSING_EVENT_DEFINITION
+          MISSING_EVENT_TIMESTAMP: :MISSING_EVENT_TIMESTAMP
+          MISSING_OBJECT_DEFINITION: :MISSING_OBJECT_DEFINITION
+          MISSING_REQUIRED_PROPERTY: :MISSING_REQUIRED_PROPERTY
+          MULTIPLE_COMPANIES_WITH_THIS_DOMAIN: :MULTIPLE_COMPANIES_WITH_THIS_DOMAIN
+          MULTIPLE_OWNERS_FOUND: :MULTIPLE_OWNERS_FOUND
+          NO_OBJECT_ID_FROM_ASSOCIATION_IDENTIFIER: :NO_OBJECT_ID_FROM_ASSOCIATION_IDENTIFIER
+          OUTSIDE_VALID_TERM_RANGE: :OUTSIDE_VALID_TERM_RANGE
+          OUTSIDE_VALID_TIME_RANGE: :OUTSIDE_VALID_TIME_RANGE
+          PORTAL_WIDE_CUSTOM_OBJECT_LIMIT_EXCEEDED: :PORTAL_WIDE_CUSTOM_OBJECT_LIMIT_EXCEEDED
+          PROPERTY_DEFINITION_NOT_FOUND: :PROPERTY_DEFINITION_NOT_FOUND
+          PROPERTY_VALUE_NOT_FOUND: :PROPERTY_VALUE_NOT_FOUND
+          ROW_DATA_TOO_LARGE: :ROW_DATA_TOO_LARGE
+          SECONDARY_EMAIL_WRITE_FAILURE: :SECONDARY_EMAIL_WRITE_FAILURE
+          UNKNOWN_ASSOCIATION_RECORD_ID: :UNKNOWN_ASSOCIATION_RECORD_ID
+          UNKNOWN_BAD_REQUEST: :UNKNOWN_BAD_REQUEST
+          UNKNOWN_ERROR: :UNKNOWN_ERROR
+          UPDATE_ONLY_IMPORT: :UPDATE_ONLY_IMPORT
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicImportError::error_type]
+        end
+
+        type object_type =
+          :ABANDONED_CART
+          | :ACCEPTANCE_TEST
+          | :AD
+          | :AD_ACCOUNT
+          | :AD_CAMPAIGN
+          | :AD_GROUP
+          | :AI_FORECAST
+          | :ALL_PAGES
+          | :APPROVAL
+          | :APPROVAL_STEP
+          | :ATTRIBUTION
+          | :AUDIENCE
+          | :AUTOMATION_JOURNEY
+          | :AUTOMATION_PLATFORM_FLOW
+          | :AUTOMATION_PLATFORM_FLOW_ACTION
+          | :BET_ALERT
+          | :BET_DELIVERABLE_SERVICE
+          | :BLOG_LISTING_PAGE
+          | :BLOG_POST
+          | :CALL
+          | :CAMPAIGN
+          | :CAMPAIGN_BUDGET_ITEM
+          | :CAMPAIGN_SPEND_ITEM
+          | :CAMPAIGN_STEP
+          | :CAMPAIGN_TEMPLATE
+          | :CAMPAIGN_TEMPLATE_STEP
+          | :CART
+          | :CASE_STUDY
+          | :CHATFLOW
+          | :CLIP
+          | :CMS_URL
+          | :COMBO_EVENT_CONFIGURATION
+          | :COMMERCE_PAYMENT
+          | :COMMUNICATION
+          | :COMPANY
+          | :CONTACT
+          | :CONTACT_CREATE_ATTRIBUTION
+          | :CONTENT
+          | :CONTENT_AUDIT
+          | :CONTENT_AUDIT_PAGE
+          | :CONVERSATION
+          | :CONVERSATION_INBOX
+          | :CONVERSATION_SESSION
+          | :CRM_OBJECTS_DUMMY_TYPE
+          | :CRM_PIPELINES_DUMMY_TYPE
+          | :CTA
+          | :CTA_VARIANT
+          | :DATA_PRIVACY_CONSENT
+          | :DATA_SYNC_STATE
+          | :DEAL
+          | :DEAL_CREATE_ATTRIBUTION
+          | :DEAL_REGISTRATION
+          | :DEAL_SPLIT
+          | :DISCOUNT
+          | :DISCOUNT_CODE
+          | :DISCOUNT_TEMPLATE
+          | :EMAIL
+          | :ENGAGEMENT
+          | :EXPORT
+          | :EXTERNAL_WEB_URL
+          | :FEE
+          | :FEEDBACK_SUBMISSION
+          | :FEEDBACK_SURVEY
+          | :FILE_MANAGER_FILE
+          | :FILE_MANAGER_FOLDER
+          | :FOLDER
+          | :FORECAST
+          | :FORM
+          | :FORM_SUBMISSION_INBOUNDDB
+          | :GOAL_TARGET
+          | :GOAL_TARGET_GROUP
+          | :GOAL_TEMPLATE
+          | :GSC_PROPERTY
+          | :HUB
+          | :IMPORT
+          | :INVOICE
+          | :KEYWORD
+          | :KNOWLEDGE_ARTICLE
+          | :LANDING_PAGE
+          | :LEAD
+          | :LINE_ITEM
+          | :MARKETING_CALENDAR
+          | :MARKETING_CAMPAIGN_UTM
+          | :MARKETING_EMAIL
+          | :MARKETING_EVENT
+          | :MARKETING_EVENT_ATTENDANCE
+          | :MARKETING_SMS
+          | :MEDIA_BRIDGE
+          | :MEETING_EVENT
+          | :MIC
+          | :NOTE
+          | :OBJECT_LIST
+          | :ORDER
+          | :OWNER
+          | :PARTNER_ACCOUNT
+          | :PARTNER_CLIENT
+          | :PARTNER_CLIENT_REVENUE
+          | :PARTNER_SERVICE
+          | :PAYMENT_LINK
+          | :PAYMENT_SCHEDULE
+          | :PAYMENT_SCHEDULE_INSTALLMENT
+          | :PERMISSIONS_TESTING
+          | :PLAYBOOK
+          | :PLAYBOOK_QUESTION
+          | :PLAYBOOK_SUBMISSION
+          | :PLAYBOOK_SUBMISSION_ANSWER
+          | :PLAYLIST
+          | :PLAYLIST_FOLDER
+          | :PODCAST_EPISODE
+          | :PORTAL
+          | :PORTAL_OBJECT_SYNC_MESSAGE
+          | :POSTAL_MAIL
+          | :PRIVACY_SCANNER_COOKIE
+          | :PRODUCT
+          | :PRODUCT_OR_FOLDER
+          | :PROPERTY_INFO
+          | :PROSPECTING_AGENT_CONTACT_ASSIGNMENT
+          | :PUBLISHING_TASK
+          | :QUARANTINED_SUBMISSION
+          | :QUOTA
+          | :QUOTE
+          | :QUOTE_FIELD
+          | :QUOTE_MODULE
+          | :QUOTE_MODULE_FIELD
+          | :QUOTE_TEMPLATE
+          | :RESTORABLE_CRM_OBJECT
+          | :ROSTER
+          | :ROSTER_MEMBER
+          | :SALES_DOCUMENT
+          | :SALES_TASK
+          | :SALES_WORKLOAD
+          | :SALESFORCE_SYNC_ERROR
+          | :SCHEDULING_PAGE
+          | :SCHEMAS_BACKEND_TEST
+          | :SCORE_CONFIGURATION
+          | :SEQUENCE
+          | :SEQUENCE_ENROLLMENT
+          | :SEQUENCE_STEP
+          | :SEQUENCE_STEP_ENROLLMENT
+          | :SERVICE
+          | :SITE_PAGE
+          | :SNIPPET
+          | :SOCIAL_BROADCAST
+          | :SOCIAL_CHANNEL
+          | :SOCIAL_POST
+          | :SOCIAL_PROFILE
+          | :SOX_PROTECTED_DUMMY_TYPE
+          | :SOX_PROTECTED_TEST_TYPE
+          | :SUBMISSION_TAG
+          | :SUBSCRIPTION
+          | :TASK
+          | :TASK_TEMPLATE
+          | :TAX
+          | :TEMPLATE
+          | :TICKET
+          | :UNKNOWN
+          | :UNSUBSCRIBE
+          | :USER
+          | :VIEW
+          | :VIEW_BLOCK
+          | :WEB_INTERACTIVE
+
+        module ObjectType
+          extend HubspotSDK::Internal::Type::Enum
+
+          ABANDONED_CART: :ABANDONED_CART
+          ACCEPTANCE_TEST: :ACCEPTANCE_TEST
+          AD: :AD
+          AD_ACCOUNT: :AD_ACCOUNT
+          AD_CAMPAIGN: :AD_CAMPAIGN
+          AD_GROUP: :AD_GROUP
+          AI_FORECAST: :AI_FORECAST
+          ALL_PAGES: :ALL_PAGES
+          APPROVAL: :APPROVAL
+          APPROVAL_STEP: :APPROVAL_STEP
+          ATTRIBUTION: :ATTRIBUTION
+          AUDIENCE: :AUDIENCE
+          AUTOMATION_JOURNEY: :AUTOMATION_JOURNEY
+          AUTOMATION_PLATFORM_FLOW: :AUTOMATION_PLATFORM_FLOW
+          AUTOMATION_PLATFORM_FLOW_ACTION: :AUTOMATION_PLATFORM_FLOW_ACTION
+          BET_ALERT: :BET_ALERT
+          BET_DELIVERABLE_SERVICE: :BET_DELIVERABLE_SERVICE
+          BLOG_LISTING_PAGE: :BLOG_LISTING_PAGE
+          BLOG_POST: :BLOG_POST
+          CALL: :CALL
+          CAMPAIGN: :CAMPAIGN
+          CAMPAIGN_BUDGET_ITEM: :CAMPAIGN_BUDGET_ITEM
+          CAMPAIGN_SPEND_ITEM: :CAMPAIGN_SPEND_ITEM
+          CAMPAIGN_STEP: :CAMPAIGN_STEP
+          CAMPAIGN_TEMPLATE: :CAMPAIGN_TEMPLATE
+          CAMPAIGN_TEMPLATE_STEP: :CAMPAIGN_TEMPLATE_STEP
+          CART: :CART
+          CASE_STUDY: :CASE_STUDY
+          CHATFLOW: :CHATFLOW
+          CLIP: :CLIP
+          CMS_URL: :CMS_URL
+          COMBO_EVENT_CONFIGURATION: :COMBO_EVENT_CONFIGURATION
+          COMMERCE_PAYMENT: :COMMERCE_PAYMENT
+          COMMUNICATION: :COMMUNICATION
+          COMPANY: :COMPANY
+          CONTACT: :CONTACT
+          CONTACT_CREATE_ATTRIBUTION: :CONTACT_CREATE_ATTRIBUTION
+          CONTENT: :CONTENT
+          CONTENT_AUDIT: :CONTENT_AUDIT
+          CONTENT_AUDIT_PAGE: :CONTENT_AUDIT_PAGE
+          CONVERSATION: :CONVERSATION
+          CONVERSATION_INBOX: :CONVERSATION_INBOX
+          CONVERSATION_SESSION: :CONVERSATION_SESSION
+          CRM_OBJECTS_DUMMY_TYPE: :CRM_OBJECTS_DUMMY_TYPE
+          CRM_PIPELINES_DUMMY_TYPE: :CRM_PIPELINES_DUMMY_TYPE
+          CTA: :CTA
+          CTA_VARIANT: :CTA_VARIANT
+          DATA_PRIVACY_CONSENT: :DATA_PRIVACY_CONSENT
+          DATA_SYNC_STATE: :DATA_SYNC_STATE
+          DEAL: :DEAL
+          DEAL_CREATE_ATTRIBUTION: :DEAL_CREATE_ATTRIBUTION
+          DEAL_REGISTRATION: :DEAL_REGISTRATION
+          DEAL_SPLIT: :DEAL_SPLIT
+          DISCOUNT: :DISCOUNT
+          DISCOUNT_CODE: :DISCOUNT_CODE
+          DISCOUNT_TEMPLATE: :DISCOUNT_TEMPLATE
+          EMAIL: :EMAIL
+          ENGAGEMENT: :ENGAGEMENT
+          EXPORT: :EXPORT
+          EXTERNAL_WEB_URL: :EXTERNAL_WEB_URL
+          FEE: :FEE
+          FEEDBACK_SUBMISSION: :FEEDBACK_SUBMISSION
+          FEEDBACK_SURVEY: :FEEDBACK_SURVEY
+          FILE_MANAGER_FILE: :FILE_MANAGER_FILE
+          FILE_MANAGER_FOLDER: :FILE_MANAGER_FOLDER
+          FOLDER: :FOLDER
+          FORECAST: :FORECAST
+          FORM: :FORM
+          FORM_SUBMISSION_INBOUNDDB: :FORM_SUBMISSION_INBOUNDDB
+          GOAL_TARGET: :GOAL_TARGET
+          GOAL_TARGET_GROUP: :GOAL_TARGET_GROUP
+          GOAL_TEMPLATE: :GOAL_TEMPLATE
+          GSC_PROPERTY: :GSC_PROPERTY
+          HUB: :HUB
+          IMPORT: :IMPORT
+          INVOICE: :INVOICE
+          KEYWORD: :KEYWORD
+          KNOWLEDGE_ARTICLE: :KNOWLEDGE_ARTICLE
+          LANDING_PAGE: :LANDING_PAGE
+          LEAD: :LEAD
+          LINE_ITEM: :LINE_ITEM
+          MARKETING_CALENDAR: :MARKETING_CALENDAR
+          MARKETING_CAMPAIGN_UTM: :MARKETING_CAMPAIGN_UTM
+          MARKETING_EMAIL: :MARKETING_EMAIL
+          MARKETING_EVENT: :MARKETING_EVENT
+          MARKETING_EVENT_ATTENDANCE: :MARKETING_EVENT_ATTENDANCE
+          MARKETING_SMS: :MARKETING_SMS
+          MEDIA_BRIDGE: :MEDIA_BRIDGE
+          MEETING_EVENT: :MEETING_EVENT
+          MIC: :MIC
+          NOTE: :NOTE
+          OBJECT_LIST: :OBJECT_LIST
+          ORDER: :ORDER
+          OWNER: :OWNER
+          PARTNER_ACCOUNT: :PARTNER_ACCOUNT
+          PARTNER_CLIENT: :PARTNER_CLIENT
+          PARTNER_CLIENT_REVENUE: :PARTNER_CLIENT_REVENUE
+          PARTNER_SERVICE: :PARTNER_SERVICE
+          PAYMENT_LINK: :PAYMENT_LINK
+          PAYMENT_SCHEDULE: :PAYMENT_SCHEDULE
+          PAYMENT_SCHEDULE_INSTALLMENT: :PAYMENT_SCHEDULE_INSTALLMENT
+          PERMISSIONS_TESTING: :PERMISSIONS_TESTING
+          PLAYBOOK: :PLAYBOOK
+          PLAYBOOK_QUESTION: :PLAYBOOK_QUESTION
+          PLAYBOOK_SUBMISSION: :PLAYBOOK_SUBMISSION
+          PLAYBOOK_SUBMISSION_ANSWER: :PLAYBOOK_SUBMISSION_ANSWER
+          PLAYLIST: :PLAYLIST
+          PLAYLIST_FOLDER: :PLAYLIST_FOLDER
+          PODCAST_EPISODE: :PODCAST_EPISODE
+          PORTAL: :PORTAL
+          PORTAL_OBJECT_SYNC_MESSAGE: :PORTAL_OBJECT_SYNC_MESSAGE
+          POSTAL_MAIL: :POSTAL_MAIL
+          PRIVACY_SCANNER_COOKIE: :PRIVACY_SCANNER_COOKIE
+          PRODUCT: :PRODUCT
+          PRODUCT_OR_FOLDER: :PRODUCT_OR_FOLDER
+          PROPERTY_INFO: :PROPERTY_INFO
+          PROSPECTING_AGENT_CONTACT_ASSIGNMENT: :PROSPECTING_AGENT_CONTACT_ASSIGNMENT
+          PUBLISHING_TASK: :PUBLISHING_TASK
+          QUARANTINED_SUBMISSION: :QUARANTINED_SUBMISSION
+          QUOTA: :QUOTA
+          QUOTE: :QUOTE
+          QUOTE_FIELD: :QUOTE_FIELD
+          QUOTE_MODULE: :QUOTE_MODULE
+          QUOTE_MODULE_FIELD: :QUOTE_MODULE_FIELD
+          QUOTE_TEMPLATE: :QUOTE_TEMPLATE
+          RESTORABLE_CRM_OBJECT: :RESTORABLE_CRM_OBJECT
+          ROSTER: :ROSTER
+          ROSTER_MEMBER: :ROSTER_MEMBER
+          SALES_DOCUMENT: :SALES_DOCUMENT
+          SALES_TASK: :SALES_TASK
+          SALES_WORKLOAD: :SALES_WORKLOAD
+          SALESFORCE_SYNC_ERROR: :SALESFORCE_SYNC_ERROR
+          SCHEDULING_PAGE: :SCHEDULING_PAGE
+          SCHEMAS_BACKEND_TEST: :SCHEMAS_BACKEND_TEST
+          SCORE_CONFIGURATION: :SCORE_CONFIGURATION
+          SEQUENCE: :SEQUENCE
+          SEQUENCE_ENROLLMENT: :SEQUENCE_ENROLLMENT
+          SEQUENCE_STEP: :SEQUENCE_STEP
+          SEQUENCE_STEP_ENROLLMENT: :SEQUENCE_STEP_ENROLLMENT
+          SERVICE: :SERVICE
+          SITE_PAGE: :SITE_PAGE
+          SNIPPET: :SNIPPET
+          SOCIAL_BROADCAST: :SOCIAL_BROADCAST
+          SOCIAL_CHANNEL: :SOCIAL_CHANNEL
+          SOCIAL_POST: :SOCIAL_POST
+          SOCIAL_PROFILE: :SOCIAL_PROFILE
+          SOX_PROTECTED_DUMMY_TYPE: :SOX_PROTECTED_DUMMY_TYPE
+          SOX_PROTECTED_TEST_TYPE: :SOX_PROTECTED_TEST_TYPE
+          SUBMISSION_TAG: :SUBMISSION_TAG
+          SUBSCRIPTION: :SUBSCRIPTION
+          TASK: :TASK
+          TASK_TEMPLATE: :TASK_TEMPLATE
+          TAX: :TAX
+          TEMPLATE: :TEMPLATE
+          TICKET: :TICKET
+          UNKNOWN: :UNKNOWN
+          UNSUBSCRIBE: :UNSUBSCRIBE
+          USER: :USER
+          VIEW: :VIEW
+          VIEW_BLOCK: :VIEW_BLOCK
+          WEB_INTERACTIVE: :WEB_INTERACTIVE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicImportError::object_type]
+        end
+      end
+    end
+  end
+end

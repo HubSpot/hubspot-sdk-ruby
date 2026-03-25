@@ -1,0 +1,47 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_enumeration_property_operation =
+        {
+          include_objects_with_no_value_set: bool,
+          operation_type: HubspotSDK::Models::Crm::PublicEnumerationPropertyOperation::operation_type,
+          operator: String,
+          values: ::Array[String]
+        }
+
+      class PublicEnumerationPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor include_objects_with_no_value_set: bool
+
+        attr_accessor operation_type: HubspotSDK::Models::Crm::PublicEnumerationPropertyOperation::operation_type
+
+        attr_accessor operator: String
+
+        attr_accessor values: ::Array[String]
+
+        def initialize: (
+          include_objects_with_no_value_set: bool,
+          operation_type: HubspotSDK::Models::Crm::PublicEnumerationPropertyOperation::operation_type,
+          operator: String,
+          values: ::Array[String]
+        ) -> void
+
+        def to_hash: -> {
+          include_objects_with_no_value_set: bool,
+          operation_type: HubspotSDK::Models::Crm::PublicEnumerationPropertyOperation::operation_type,
+          operator: String,
+          values: ::Array[String]
+        }
+
+        type operation_type = :ENUMERATION
+
+        module OperationType
+          extend HubspotSDK::Internal::Type::Enum
+
+          ENUMERATION: :ENUMERATION
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicEnumerationPropertyOperation::operation_type]
+        end
+      end
+    end
+  end
+end

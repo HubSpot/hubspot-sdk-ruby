@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Extensions
+        type card_migrate_views_response = { message: String }
+
+        class CardMigrateViewsResponse < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor message: String
+
+          def initialize: (message: String) -> void
+
+          def to_hash: -> { message: String }
+        end
+      end
+    end
+  end
+end

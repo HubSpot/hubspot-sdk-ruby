@@ -1,0 +1,24 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_default_association_multi_post =
+        { from: HubspotSDK::PublicObjectID, to: HubspotSDK::PublicObjectID }
+
+      class PublicDefaultAssociationMultiPost < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor from: HubspotSDK::PublicObjectID
+
+        attr_accessor to: HubspotSDK::PublicObjectID
+
+        def initialize: (
+          from: HubspotSDK::PublicObjectID,
+          to: HubspotSDK::PublicObjectID
+        ) -> void
+
+        def to_hash: -> {
+          from: HubspotSDK::PublicObjectID,
+          to: HubspotSDK::PublicObjectID
+        }
+      end
+    end
+  end
+end

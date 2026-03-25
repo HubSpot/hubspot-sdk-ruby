@@ -1,0 +1,25 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type public_email_recipients =
+        { exclude: ::Array[String], include: ::Array[String] }
+
+      class PublicEmailRecipients < HubspotSDK::Internal::Type::BaseModel
+        attr_reader exclude: ::Array[String]?
+
+        def exclude=: (::Array[String]) -> ::Array[String]
+
+        attr_reader include: ::Array[String]?
+
+        def include=: (::Array[String]) -> ::Array[String]
+
+        def initialize: (
+          ?exclude: ::Array[String],
+          ?include: ::Array[String]
+        ) -> void
+
+        def to_hash: -> { exclude: ::Array[String], include: ::Array[String] }
+      end
+    end
+  end
+end

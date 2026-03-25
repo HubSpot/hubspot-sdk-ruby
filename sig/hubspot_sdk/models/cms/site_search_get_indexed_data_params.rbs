@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type site_search_get_indexed_data_params =
+        { content_id: String, type: String }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class SiteSearchGetIndexedDataParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor content_id: String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          content_id: String,
+          ?type: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          content_id: String,
+          type: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

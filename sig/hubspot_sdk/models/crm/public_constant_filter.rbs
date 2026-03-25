@@ -1,0 +1,44 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_constant_filter =
+        {
+          filter_type: HubspotSDK::Models::Crm::PublicConstantFilter::filter_type,
+          should_accept: bool,
+          source: String
+        }
+
+      class PublicConstantFilter < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor filter_type: HubspotSDK::Models::Crm::PublicConstantFilter::filter_type
+
+        attr_accessor should_accept: bool
+
+        attr_reader source: String?
+
+        def source=: (String) -> String
+
+        def initialize: (
+          filter_type: HubspotSDK::Models::Crm::PublicConstantFilter::filter_type,
+          should_accept: bool,
+          ?source: String
+        ) -> void
+
+        def to_hash: -> {
+          filter_type: HubspotSDK::Models::Crm::PublicConstantFilter::filter_type,
+          should_accept: bool,
+          source: String
+        }
+
+        type filter_type = :CONSTANT
+
+        module FilterType
+          extend HubspotSDK::Internal::Type::Enum
+
+          CONSTANT: :CONSTANT
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicConstantFilter::filter_type]
+        end
+      end
+    end
+  end
+end

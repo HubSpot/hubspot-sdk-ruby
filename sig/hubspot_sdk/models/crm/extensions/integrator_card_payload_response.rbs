@@ -1,0 +1,68 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Extensions
+        type integrator_card_payload_response =
+          {
+            response_version: HubspotSDK::Models::Crm::Extensions::IntegratorCardPayloadResponse::response_version,
+            sections: ::Array[HubspotSDK::Crm::Extensions::IntegratorObjectResult],
+            total_count: Integer,
+            all_items_link_url: String,
+            card_label: String,
+            top_level_actions: HubspotSDK::Crm::Extensions::TopLevelActions
+          }
+
+        class IntegratorCardPayloadResponse < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor response_version: HubspotSDK::Models::Crm::Extensions::IntegratorCardPayloadResponse::response_version
+
+          attr_accessor sections: ::Array[HubspotSDK::Crm::Extensions::IntegratorObjectResult]
+
+          attr_accessor total_count: Integer
+
+          attr_reader all_items_link_url: String?
+
+          def all_items_link_url=: (String) -> String
+
+          attr_reader card_label: String?
+
+          def card_label=: (String) -> String
+
+          attr_reader top_level_actions: HubspotSDK::Crm::Extensions::TopLevelActions?
+
+          def top_level_actions=: (
+            HubspotSDK::Crm::Extensions::TopLevelActions
+          ) -> HubspotSDK::Crm::Extensions::TopLevelActions
+
+          def initialize: (
+            response_version: HubspotSDK::Models::Crm::Extensions::IntegratorCardPayloadResponse::response_version,
+            sections: ::Array[HubspotSDK::Crm::Extensions::IntegratorObjectResult],
+            total_count: Integer,
+            ?all_items_link_url: String,
+            ?card_label: String,
+            ?top_level_actions: HubspotSDK::Crm::Extensions::TopLevelActions
+          ) -> void
+
+          def to_hash: -> {
+            response_version: HubspotSDK::Models::Crm::Extensions::IntegratorCardPayloadResponse::response_version,
+            sections: ::Array[HubspotSDK::Crm::Extensions::IntegratorObjectResult],
+            total_count: Integer,
+            all_items_link_url: String,
+            card_label: String,
+            top_level_actions: HubspotSDK::Crm::Extensions::TopLevelActions
+          }
+
+          type response_version = :v1 | :v3
+
+          module ResponseVersion
+            extend HubspotSDK::Internal::Type::Enum
+
+            V1: :v1
+            V3: :v3
+
+            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::IntegratorCardPayloadResponse::response_version]
+          end
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,48 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type association_update_association_labels_params =
+        {
+          object_type: String,
+          object_id_: String,
+          to_object_type: String,
+          to_object_id: String,
+          body: ::Array[HubspotSDK::AssociationSpec]
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class AssociationUpdateAssociationLabelsParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor object_type: String
+
+        attr_accessor object_id_: String
+
+        attr_accessor to_object_type: String
+
+        attr_accessor to_object_id: String
+
+        attr_accessor body: ::Array[HubspotSDK::AssociationSpec]
+
+        def initialize: (
+          object_type: String,
+          object_id_: String,
+          to_object_type: String,
+          to_object_id: String,
+          body: ::Array[HubspotSDK::AssociationSpec],
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          object_type: String,
+          object_id_: String,
+          to_object_type: String,
+          to_object_id: String,
+          body: ::Array[HubspotSDK::AssociationSpec],
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

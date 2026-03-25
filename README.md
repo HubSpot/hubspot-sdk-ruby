@@ -59,6 +59,28 @@ if page.next_page?
 end
 ```
 
+### File uploads
+
+Request parameters that correspond to file uploads can be passed as raw contents, a [`Pathname`](https://rubyapi.org/3.2/o/pathname) instance, [`StringIO`](https://rubyapi.org/3.2/o/stringio), or more.
+
+```ruby
+require "pathname"
+
+# Use `Pathname` to send the filename and/or avoid paging a large file into memory:
+asset_file_metadata = hubspot.cms.source_code.create(file: Pathname("/path/to/file"))
+
+# Alternatively, pass file contents or a `StringIO` directly:
+asset_file_metadata = hubspot.cms.source_code.create(file: File.read("/path/to/file"))
+
+# Or, to control the filename and/or content type:
+file = HubspotSDK::FilePart.new(File.read("/path/to/file"), filename: "/path/to/file", content_type: "…")
+asset_file_metadata = hubspot.cms.source_code.create(file: file)
+
+puts(asset_file_metadata.id)
+```
+
+Note that you can also pass a raw `IO` descriptor, but this disables retries, as the library can't be sure if the descriptor is a file or pipe (which cannot be rewound).
+
 ### Handling errors
 
 When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `HubspotSDK::Errors::APIError` will be thrown:
@@ -218,25 +240,25 @@ hubspot.account.get(**params)
 Since this library does not depend on `sorbet-runtime`, it cannot provide [`T::Enum`](https://sorbet.org/docs/tenum) instances. Instead, we provide "tagged symbols" instead, which is always a primitive at runtime:
 
 ```ruby
-# :POST_ACTION_EXECUTION
-puts(HubspotSDK::Automation::ActionDeleteParams::FunctionType::POST_ACTION_EXECUTION)
+# :"company.associationChange"
+puts(HubspotSDK::AppWebhooks::SubscriptionCreateRequest::EventType::COMPANY_ASSOCIATION_CHANGE)
 
-# Revealed type: `T.all(HubspotSDK::Automation::ActionDeleteParams::FunctionType, Symbol)`
-T.reveal_type(HubspotSDK::Automation::ActionDeleteParams::FunctionType::POST_ACTION_EXECUTION)
+# Revealed type: `T.all(HubspotSDK::AppWebhooks::SubscriptionCreateRequest::EventType, Symbol)`
+T.reveal_type(HubspotSDK::AppWebhooks::SubscriptionCreateRequest::EventType::COMPANY_ASSOCIATION_CHANGE)
 ```
 
 Enum parameters have a "relaxed" type, so you can either pass in enum constants or their literal value:
 
 ```ruby
 # Using the enum constants preserves the tagged type information:
-hubspot.automation.actions.delete(
-  function_type: HubspotSDK::Automation::ActionDeleteParams::FunctionType::POST_ACTION_EXECUTION,
+hubspot.app_webhooks.create_subscription(
+  event_type: HubspotSDK::AppWebhooks::SubscriptionCreateRequest::EventType::COMPANY_ASSOCIATION_CHANGE,
   # …
 )
 
 # Literal values are also permissible:
-hubspot.automation.actions.delete(
-  function_type: :POST_ACTION_EXECUTION,
+hubspot.app_webhooks.create_subscription(
+  event_type: :"company.associationChange",
   # …
 )
 ```

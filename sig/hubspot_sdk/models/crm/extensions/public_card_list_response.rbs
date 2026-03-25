@@ -1,0 +1,22 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Extensions
+        type public_card_list_response =
+          { results: ::Array[HubspotSDK::Crm::Extensions::PublicCardResponse] }
+
+        class PublicCardListResponse < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor results: ::Array[HubspotSDK::Crm::Extensions::PublicCardResponse]
+
+          def initialize: (
+            results: ::Array[HubspotSDK::Crm::Extensions::PublicCardResponse]
+          ) -> void
+
+          def to_hash: -> {
+            results: ::Array[HubspotSDK::Crm::Extensions::PublicCardResponse]
+          }
+        end
+      end
+    end
+  end
+end

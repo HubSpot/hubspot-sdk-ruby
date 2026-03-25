@@ -3,6 +3,12 @@
 module HubspotSDK
   module Resources
     class Events
+      sig { returns(HubspotSDK::Resources::Events::Definitions) }
+      attr_reader :definitions
+
+      sig { returns(HubspotSDK::Resources::Events::Occurrences) }
+      attr_reader :occurrences
+
       sig { returns(HubspotSDK::Resources::Events::Send) }
       attr_reader :send_
 

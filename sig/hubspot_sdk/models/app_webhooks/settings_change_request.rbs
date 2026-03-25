@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module AppWebhooks
+      type settings_change_request =
+        {
+          target_url: String,
+          throttling: HubspotSDK::AppWebhooks::ThrottlingSettings
+        }
+
+      class SettingsChangeRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor target_url: String
+
+        attr_accessor throttling: HubspotSDK::AppWebhooks::ThrottlingSettings
+
+        def initialize: (
+          target_url: String,
+          throttling: HubspotSDK::AppWebhooks::ThrottlingSettings
+        ) -> void
+
+        def to_hash: -> {
+          target_url: String,
+          throttling: HubspotSDK::AppWebhooks::ThrottlingSettings
+        }
+      end
+    end
+  end
+end

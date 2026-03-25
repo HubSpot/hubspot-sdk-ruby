@@ -1,0 +1,57 @@
+module HubspotSDK
+  module Models
+    type action_response =
+      {
+        completed_at: Time,
+        started_at: Time,
+        status: HubspotSDK::Models::ActionResponse::status,
+        links: ::Hash[Symbol, String],
+        requested_at: Time
+      }
+
+    class ActionResponse < HubspotSDK::Internal::Type::BaseModel
+      attr_accessor completed_at: Time
+
+      attr_accessor started_at: Time
+
+      attr_accessor status: HubspotSDK::Models::ActionResponse::status
+
+      attr_reader links: ::Hash[Symbol, String]?
+
+      def links=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
+
+      attr_reader requested_at: Time?
+
+      def requested_at=: (Time) -> Time
+
+      def initialize: (
+        completed_at: Time,
+        started_at: Time,
+        status: HubspotSDK::Models::ActionResponse::status,
+        ?links: ::Hash[Symbol, String],
+        ?requested_at: Time
+      ) -> void
+
+      def to_hash: -> {
+        completed_at: Time,
+        started_at: Time,
+        status: HubspotSDK::Models::ActionResponse::status,
+        links: ::Hash[Symbol, String],
+        requested_at: Time
+      }
+
+      type status = :CANCELED | :COMPLETE | :PENDING | :PROCESSING
+
+      module Status
+        extend HubspotSDK::Internal::Type::Enum
+
+        CANCELED: :CANCELED
+        COMPLETE: :COMPLETE
+        PENDING: :PENDING
+        PROCESSING: :PROCESSING
+
+        def self?.values: -> ::Array[HubspotSDK::Models::ActionResponse::status]
+      end
+    end
+  end
+end

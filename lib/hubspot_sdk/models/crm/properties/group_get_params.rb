@@ -1,0 +1,36 @@
+# frozen_string_literal: true
+
+module HubspotSDK
+  module Models
+    module Crm
+      module Properties
+        # @see HubspotSDK::Resources::Crm::Properties::Groups#get
+        class GroupGetParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          # @!attribute object_type
+          #
+          #   @return [String]
+          required :object_type, String
+
+          # @!attribute group_name
+          #
+          #   @return [String]
+          required :group_name, String
+
+          # @!attribute locale
+          #
+          #   @return [String, nil]
+          optional :locale, String
+
+          # @!method initialize(object_type:, group_name:, locale: nil, request_options: {})
+          #   @param object_type [String]
+          #   @param group_name [String]
+          #   @param locale [String]
+          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        end
+      end
+    end
+  end
+end

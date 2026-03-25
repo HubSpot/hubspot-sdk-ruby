@@ -1,0 +1,19 @@
+module HubspotSDK
+  module Resources
+    class Crm
+      class ObjectSchemas
+        class Batch
+          def get: (
+            include_association_definitions: bool,
+            include_audit_metadata: bool,
+            include_property_definitions: bool,
+            inputs: ::Array[String],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::CollectionResponseObjectSchemaNoPaging
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

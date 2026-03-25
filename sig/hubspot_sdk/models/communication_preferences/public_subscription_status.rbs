@@ -1,0 +1,119 @@
+module HubspotSDK
+  module Models
+    module CommunicationPreferences
+      type public_subscription_status =
+        {
+          id: String,
+          description: String,
+          name: String,
+          source_of_status: HubspotSDK::Models::CommunicationPreferences::PublicSubscriptionStatus::source_of_status,
+          status: HubspotSDK::Models::CommunicationPreferences::PublicSubscriptionStatus::status,
+          brand_id: Integer,
+          legal_basis: HubspotSDK::Models::CommunicationPreferences::PublicSubscriptionStatus::legal_basis,
+          legal_basis_explanation: String,
+          preference_group_name: String
+        }
+
+      class PublicSubscriptionStatus < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor description: String
+
+        attr_accessor name: String
+
+        attr_accessor source_of_status: HubspotSDK::Models::CommunicationPreferences::PublicSubscriptionStatus::source_of_status
+
+        attr_accessor status: HubspotSDK::Models::CommunicationPreferences::PublicSubscriptionStatus::status
+
+        attr_reader brand_id: Integer?
+
+        def brand_id=: (Integer) -> Integer
+
+        attr_reader legal_basis: HubspotSDK::Models::CommunicationPreferences::PublicSubscriptionStatus::legal_basis?
+
+        def legal_basis=: (
+          HubspotSDK::Models::CommunicationPreferences::PublicSubscriptionStatus::legal_basis
+        ) -> HubspotSDK::Models::CommunicationPreferences::PublicSubscriptionStatus::legal_basis
+
+        attr_reader legal_basis_explanation: String?
+
+        def legal_basis_explanation=: (String) -> String
+
+        attr_reader preference_group_name: String?
+
+        def preference_group_name=: (String) -> String
+
+        def initialize: (
+          id: String,
+          description: String,
+          name: String,
+          source_of_status: HubspotSDK::Models::CommunicationPreferences::PublicSubscriptionStatus::source_of_status,
+          status: HubspotSDK::Models::CommunicationPreferences::PublicSubscriptionStatus::status,
+          ?brand_id: Integer,
+          ?legal_basis: HubspotSDK::Models::CommunicationPreferences::PublicSubscriptionStatus::legal_basis,
+          ?legal_basis_explanation: String,
+          ?preference_group_name: String
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          description: String,
+          name: String,
+          source_of_status: HubspotSDK::Models::CommunicationPreferences::PublicSubscriptionStatus::source_of_status,
+          status: HubspotSDK::Models::CommunicationPreferences::PublicSubscriptionStatus::status,
+          brand_id: Integer,
+          legal_basis: HubspotSDK::Models::CommunicationPreferences::PublicSubscriptionStatus::legal_basis,
+          legal_basis_explanation: String,
+          preference_group_name: String
+        }
+
+        type source_of_status =
+          :BRAND_WIDE_STATUS | :PORTAL_WIDE_STATUS | :SUBSCRIPTION_STATUS
+
+        module SourceOfStatus
+          extend HubspotSDK::Internal::Type::Enum
+
+          BRAND_WIDE_STATUS: :BRAND_WIDE_STATUS
+          PORTAL_WIDE_STATUS: :PORTAL_WIDE_STATUS
+          SUBSCRIPTION_STATUS: :SUBSCRIPTION_STATUS
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CommunicationPreferences::PublicSubscriptionStatus::source_of_status]
+        end
+
+        type status = :NOT_SUBSCRIBED | :SUBSCRIBED
+
+        module Status
+          extend HubspotSDK::Internal::Type::Enum
+
+          NOT_SUBSCRIBED: :NOT_SUBSCRIBED
+          SUBSCRIBED: :SUBSCRIBED
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CommunicationPreferences::PublicSubscriptionStatus::status]
+        end
+
+        type legal_basis =
+          :CONSENT_WITH_NOTICE
+          | :LEGITIMATE_INTEREST_CLIENT
+          | :LEGITIMATE_INTEREST_OTHER
+          | :LEGITIMATE_INTEREST_PQL
+          | :NON_GDPR
+          | :PERFORMANCE_OF_CONTRACT
+          | :PROCESS_AND_STORE
+
+        module LegalBasis
+          extend HubspotSDK::Internal::Type::Enum
+
+          CONSENT_WITH_NOTICE: :CONSENT_WITH_NOTICE
+          LEGITIMATE_INTEREST_CLIENT: :LEGITIMATE_INTEREST_CLIENT
+          LEGITIMATE_INTEREST_OTHER: :LEGITIMATE_INTEREST_OTHER
+          LEGITIMATE_INTEREST_PQL: :LEGITIMATE_INTEREST_PQL
+          NON_GDPR: :NON_GDPR
+          PERFORMANCE_OF_CONTRACT: :PERFORMANCE_OF_CONTRACT
+          PROCESS_AND_STORE: :PROCESS_AND_STORE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::CommunicationPreferences::PublicSubscriptionStatus::legal_basis]
+        end
+      end
+    end
+  end
+end

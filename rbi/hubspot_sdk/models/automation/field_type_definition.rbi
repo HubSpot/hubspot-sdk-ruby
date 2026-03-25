@@ -18,7 +18,7 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :name
 
-        sig { returns(T::Array[HubspotSDK::Events::Option]) }
+        sig { returns(T::Array[HubspotSDK::Option]) }
         attr_accessor :options
 
         sig do
@@ -112,7 +112,7 @@ module HubspotSDK
           params(
             external_options: T::Boolean,
             name: String,
-            options: T::Array[HubspotSDK::Events::Option::OrHash],
+            options: T::Array[HubspotSDK::Option::OrHash],
             schema:
               T.any(
                 HubspotSDK::Automation::IntegerFieldSchema::OrHash,
@@ -158,7 +158,7 @@ module HubspotSDK
             {
               external_options: T::Boolean,
               name: String,
-              options: T::Array[HubspotSDK::Events::Option],
+              options: T::Array[HubspotSDK::Option],
               schema:
                 T.any(
                   HubspotSDK::Automation::IntegerFieldSchema,

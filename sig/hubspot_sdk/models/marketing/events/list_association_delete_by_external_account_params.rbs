@@ -1,0 +1,40 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      module Events
+        type list_association_delete_by_external_account_params =
+          {
+            external_account_id: String,
+            external_event_id: String,
+            list_id: String
+          }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class ListAssociationDeleteByExternalAccountParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor external_account_id: String
+
+          attr_accessor external_event_id: String
+
+          attr_accessor list_id: String
+
+          def initialize: (
+            external_account_id: String,
+            external_event_id: String,
+            list_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            external_account_id: String,
+            external_event_id: String,
+            list_id: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,47 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type public_channel_integration_channel_patch =
+        {
+          capabilities: ::Hash[Symbol, top],
+          channel_account_connection_redirect_url: top,
+          channel_description: top,
+          channel_logo_url: top,
+          name: top,
+          webhook_url: top
+        }
+
+      class PublicChannelIntegrationChannelPatch < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor capabilities: ::Hash[Symbol, top]
+
+        attr_accessor channel_account_connection_redirect_url: top
+
+        attr_accessor channel_description: top
+
+        attr_accessor channel_logo_url: top
+
+        attr_accessor name: top
+
+        attr_accessor webhook_url: top
+
+        def initialize: (
+          capabilities: ::Hash[Symbol, top],
+          channel_account_connection_redirect_url: top,
+          channel_description: top,
+          channel_logo_url: top,
+          name: top,
+          webhook_url: top
+        ) -> void
+
+        def to_hash: -> {
+          capabilities: ::Hash[Symbol, top],
+          channel_account_connection_redirect_url: top,
+          channel_description: top,
+          channel_logo_url: top,
+          name: top,
+          webhook_url: top
+        }
+      end
+    end
+  end
+end

@@ -8,38 +8,38 @@ module HubspotSDK
           T.any(HubspotSDK::StandardError, HubspotSDK::Internal::AnyHash)
         end
 
-      # Error category.
+      # The main category of the error.
       sig { returns(String) }
       attr_accessor :category
 
-      # Error context.
+      # Additional context-specific information related to the error.
       sig { returns(T::Hash[Symbol, T::Array[String]]) }
       attr_accessor :context
 
-      # List of error details.
+      # The detailed error objects.
       sig { returns(T::Array[HubspotSDK::ErrorDetail]) }
       attr_accessor :errors
 
-      # Error links.
+      # URLs linking to documentation or resources associated with the error.
       sig { returns(T::Hash[Symbol, String]) }
       attr_accessor :links
 
-      # Error message.
+      # A human-readable string describing the error and possible remediation steps.
       sig { returns(String) }
       attr_accessor :message
 
-      # Error status.
+      # The HTTP status code associated with the error.
       sig { returns(String) }
       attr_accessor :status
 
-      # Error ID.
+      # A unique ID for the error instance.
       sig { returns(T.nilable(String)) }
       attr_reader :id
 
       sig { params(id: String).void }
       attr_writer :id
 
-      # Error subcategory.
+      # A more specific error category within each main category.
       sig { returns(T.nilable(T.anything)) }
       attr_reader :sub_category
 
@@ -60,21 +60,21 @@ module HubspotSDK
         ).returns(T.attached_class)
       end
       def self.new(
-        # Error category.
+        # The main category of the error.
         category:,
-        # Error context.
+        # Additional context-specific information related to the error.
         context:,
-        # List of error details.
+        # The detailed error objects.
         errors:,
-        # Error links.
+        # URLs linking to documentation or resources associated with the error.
         links:,
-        # Error message.
+        # A human-readable string describing the error and possible remediation steps.
         message:,
-        # Error status.
+        # The HTTP status code associated with the error.
         status:,
-        # Error ID.
+        # A unique ID for the error instance.
         id: nil,
-        # Error subcategory.
+        # A more specific error category within each main category.
         sub_category: nil
       )
       end

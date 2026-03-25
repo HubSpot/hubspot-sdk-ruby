@@ -1,0 +1,62 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Extensions
+        module Calling
+          type transcript_response =
+            {
+              id: String,
+              created_at: Time,
+              engagement_id: Integer,
+              transcript_source: HubspotSDK::Models::Crm::Extensions::Calling::TranscriptResponse::transcript_source,
+              transcript_utterances: ::Array[HubspotSDK::Crm::Extensions::Calling::TranscriptUtterance],
+              updated_at: Time
+            }
+
+          class TranscriptResponse < HubspotSDK::Internal::Type::BaseModel
+            attr_accessor id: String
+
+            attr_accessor created_at: Time
+
+            attr_accessor engagement_id: Integer
+
+            attr_accessor transcript_source: HubspotSDK::Models::Crm::Extensions::Calling::TranscriptResponse::transcript_source
+
+            attr_accessor transcript_utterances: ::Array[HubspotSDK::Crm::Extensions::Calling::TranscriptUtterance]
+
+            attr_accessor updated_at: Time
+
+            def initialize: (
+              id: String,
+              created_at: Time,
+              engagement_id: Integer,
+              transcript_source: HubspotSDK::Models::Crm::Extensions::Calling::TranscriptResponse::transcript_source,
+              transcript_utterances: ::Array[HubspotSDK::Crm::Extensions::Calling::TranscriptUtterance],
+              updated_at: Time
+            ) -> void
+
+            def to_hash: -> {
+              id: String,
+              created_at: Time,
+              engagement_id: Integer,
+              transcript_source: HubspotSDK::Models::Crm::Extensions::Calling::TranscriptResponse::transcript_source,
+              transcript_utterances: ::Array[HubspotSDK::Crm::Extensions::Calling::TranscriptUtterance],
+              updated_at: Time
+            }
+
+            type transcript_source = :HUBSPOT_GENERATED | :INTEGRATOR_GENERATED
+
+            module TranscriptSource
+              extend HubspotSDK::Internal::Type::Enum
+
+              HUBSPOT_GENERATED: :HUBSPOT_GENERATED
+              INTEGRATOR_GENERATED: :INTEGRATOR_GENERATED
+
+              def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::Calling::TranscriptResponse::transcript_source]
+            end
+          end
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,30 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type list_remove_memberships_params =
+        { list_id: String, body: ::Array[String] }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class ListRemoveMembershipsParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor list_id: String
+
+        attr_accessor body: ::Array[String]
+
+        def initialize: (
+          list_id: String,
+          body: ::Array[String],
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          list_id: String,
+          body: ::Array[String],
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

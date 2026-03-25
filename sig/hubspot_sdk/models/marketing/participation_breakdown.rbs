@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type participation_breakdown =
+        {
+          id: String,
+          associations: HubspotSDK::Marketing::ParticipationAssociations,
+          created_at: Time,
+          properties: HubspotSDK::Marketing::ParticipationProperties
+        }
+
+      class ParticipationBreakdown < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor associations: HubspotSDK::Marketing::ParticipationAssociations
+
+        attr_accessor created_at: Time
+
+        attr_accessor properties: HubspotSDK::Marketing::ParticipationProperties
+
+        def initialize: (
+          id: String,
+          associations: HubspotSDK::Marketing::ParticipationAssociations,
+          created_at: Time,
+          properties: HubspotSDK::Marketing::ParticipationProperties
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          associations: HubspotSDK::Marketing::ParticipationAssociations,
+          created_at: Time,
+          properties: HubspotSDK::Marketing::ParticipationProperties
+        }
+      end
+    end
+  end
+end

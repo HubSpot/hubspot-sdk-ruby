@@ -1,0 +1,33 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type case_change_test_extension_data =
+        { mood: HubspotSDK::Models::Cms::CaseChangeTestExtensionData::mood }
+
+      class CaseChangeTestExtensionData < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor mood: HubspotSDK::Models::Cms::CaseChangeTestExtensionData::mood
+
+        def initialize: (
+          mood: HubspotSDK::Models::Cms::CaseChangeTestExtensionData::mood
+        ) -> void
+
+        def to_hash: -> {
+          mood: HubspotSDK::Models::Cms::CaseChangeTestExtensionData::mood
+        }
+
+        type mood = :ANGRY | :HAPPY | :SAD | :SARCASTIC
+
+        module Mood
+          extend HubspotSDK::Internal::Type::Enum
+
+          ANGRY: :ANGRY
+          HAPPY: :HAPPY
+          SAD: :SAD
+          SARCASTIC: :SARCASTIC
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::CaseChangeTestExtensionData::mood]
+        end
+      end
+    end
+  end
+end

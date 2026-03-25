@@ -3,23 +3,22 @@ module HubspotSDK
     class Crm
       class Objects
         class Contacts
+          attr_reader batch: HubspotSDK::Resources::Crm::Objects::Contacts::Batch
+
           def create: (
-            String object_type,
             associations: ::Array[HubspotSDK::Crm::PublicAssociationsForObject],
             properties: ::Hash[Symbol, String],
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Crm::SimplePublicObject
 
           def update: (
-            String object_id_,
-            object_type: String,
+            String contact_id,
             properties: ::Hash[Symbol, String],
             ?id_property: String,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Crm::SimplePublicObject
 
           def list: (
-            String object_type,
             ?after: String,
             ?archived: bool,
             ?associations: ::Array[String],
@@ -30,21 +29,18 @@ module HubspotSDK
           ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::SimplePublicObjectWithAssociations]
 
           def delete: (
-            String object_id_,
-            object_type: String,
+            String contact_id,
             ?request_options: HubspotSDK::request_opts
           ) -> nil
 
           def gdpr_delete: (
-            String object_type,
             object_id_: String,
             ?id_property: String,
             ?request_options: HubspotSDK::request_opts
           ) -> nil
 
           def get: (
-            String object_id_,
-            object_type: String,
+            String contact_id,
             ?archived: bool,
             ?associations: ::Array[String],
             ?id_property: String,
@@ -54,14 +50,12 @@ module HubspotSDK
           ) -> HubspotSDK::Crm::SimplePublicObjectWithAssociations
 
           def merge: (
-            String object_type,
             object_id_to_merge: String,
             primary_object_id: String,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Crm::SimplePublicObject
 
           def search: (
-            String object_type,
             after: String,
             filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
             limit: Integer,

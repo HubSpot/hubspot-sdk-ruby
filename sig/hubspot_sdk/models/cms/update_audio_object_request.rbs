@@ -1,0 +1,88 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type update_audio_object_request =
+        {
+          media_type: HubspotSDK::Models::Cms::UpdateAudioObjectRequest::media_type,
+          details_page_link: String,
+          duration: Integer,
+          external_id: String,
+          file_url: String,
+          oembed_url: String,
+          poster_url: String,
+          thumbnail_url: String,
+          title: String
+        }
+
+      class UpdateAudioObjectRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor media_type: HubspotSDK::Models::Cms::UpdateAudioObjectRequest::media_type
+
+        attr_reader details_page_link: String?
+
+        def details_page_link=: (String) -> String
+
+        attr_reader duration: Integer?
+
+        def duration=: (Integer) -> Integer
+
+        attr_reader external_id: String?
+
+        def external_id=: (String) -> String
+
+        attr_reader file_url: String?
+
+        def file_url=: (String) -> String
+
+        attr_reader oembed_url: String?
+
+        def oembed_url=: (String) -> String
+
+        attr_reader poster_url: String?
+
+        def poster_url=: (String) -> String
+
+        attr_reader thumbnail_url: String?
+
+        def thumbnail_url=: (String) -> String
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        def initialize: (
+          media_type: HubspotSDK::Models::Cms::UpdateAudioObjectRequest::media_type,
+          ?details_page_link: String,
+          ?duration: Integer,
+          ?external_id: String,
+          ?file_url: String,
+          ?oembed_url: String,
+          ?poster_url: String,
+          ?thumbnail_url: String,
+          ?title: String
+        ) -> void
+
+        def to_hash: -> {
+          media_type: HubspotSDK::Models::Cms::UpdateAudioObjectRequest::media_type,
+          details_page_link: String,
+          duration: Integer,
+          external_id: String,
+          file_url: String,
+          oembed_url: String,
+          poster_url: String,
+          thumbnail_url: String,
+          title: String
+        }
+
+        type media_type = :AUDIO
+
+        module MediaType
+          extend HubspotSDK::Internal::Type::Enum
+
+          AUDIO: :AUDIO
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::UpdateAudioObjectRequest::media_type]
+        end
+      end
+    end
+  end
+end

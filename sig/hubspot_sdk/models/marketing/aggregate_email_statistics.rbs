@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type aggregate_email_statistics =
+        {
+          aggregate: HubspotSDK::Marketing::EmailStatisticsData,
+          campaign_aggregations: ::Hash[Symbol, HubspotSDK::Marketing::EmailStatisticsData],
+          emails: ::Array[Integer]
+        }
+
+      class AggregateEmailStatistics < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor aggregate: HubspotSDK::Marketing::EmailStatisticsData
+
+        attr_accessor campaign_aggregations: ::Hash[Symbol, HubspotSDK::Marketing::EmailStatisticsData]
+
+        attr_accessor emails: ::Array[Integer]
+
+        def initialize: (
+          aggregate: HubspotSDK::Marketing::EmailStatisticsData,
+          campaign_aggregations: ::Hash[Symbol, HubspotSDK::Marketing::EmailStatisticsData],
+          emails: ::Array[Integer]
+        ) -> void
+
+        def to_hash: -> {
+          aggregate: HubspotSDK::Marketing::EmailStatisticsData,
+          campaign_aggregations: ::Hash[Symbol, HubspotSDK::Marketing::EmailStatisticsData],
+          emails: ::Array[Integer]
+        }
+      end
+    end
+  end
+end

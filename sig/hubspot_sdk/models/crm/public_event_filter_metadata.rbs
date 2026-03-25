@@ -1,0 +1,52 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_event_filter_metadata =
+        {
+          operation: HubspotSDK::Models::Crm::PublicEventFilterMetadata::operation,
+          property: String
+        }
+
+      class PublicEventFilterMetadata < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor operation: HubspotSDK::Models::Crm::PublicEventFilterMetadata::operation
+
+        attr_accessor property: String
+
+        def initialize: (
+          operation: HubspotSDK::Models::Crm::PublicEventFilterMetadata::operation,
+          property: String
+        ) -> void
+
+        def to_hash: -> {
+          operation: HubspotSDK::Models::Crm::PublicEventFilterMetadata::operation,
+          property: String
+        }
+
+        type operation =
+          HubspotSDK::Crm::PublicBoolPropertyOperation
+          | HubspotSDK::Crm::PublicNumberPropertyOperation
+          | HubspotSDK::Crm::PublicStringPropertyOperation
+          | HubspotSDK::Crm::PublicDateTimePropertyOperation
+          | HubspotSDK::Crm::PublicRangedDatePropertyOperation
+          | HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation
+          | HubspotSDK::Crm::PublicComparativeDatePropertyOperation
+          | HubspotSDK::Crm::PublicRollingDateRangePropertyOperation
+          | HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation
+          | HubspotSDK::Crm::PublicEnumerationPropertyOperation
+          | HubspotSDK::Crm::PublicAllPropertyTypesOperation
+          | HubspotSDK::Crm::PublicRangedNumberPropertyOperation
+          | HubspotSDK::Crm::PublicMultiStringPropertyOperation
+          | HubspotSDK::Crm::PublicDatePropertyOperation
+          | HubspotSDK::Crm::PublicCalendarDatePropertyOperation
+          | HubspotSDK::Crm::PublicTimePointOperation
+          | HubspotSDK::Crm::PublicRangedTimeOperation
+
+        module Operation
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicEventFilterMetadata::operation]
+        end
+      end
+    end
+  end
+end

@@ -1,7 +1,21 @@
 module HubspotSDK
   module Resources
     class Cms
+      attr_reader audit_logs: HubspotSDK::Resources::Cms::AuditLogs
+
       attr_reader blogs: HubspotSDK::Resources::Cms::Blogs
+
+      attr_reader domains: HubspotSDK::Resources::Cms::Domains
+
+      attr_reader media_bridge: HubspotSDK::Resources::Cms::MediaBridge
+
+      attr_reader site_search: HubspotSDK::Resources::Cms::SiteSearch
+
+      attr_reader source_code: HubspotSDK::Resources::Cms::SourceCode
+
+      attr_reader url_mappings: HubspotSDK::Resources::Cms::URLMappings
+
+      attr_reader url_redirects: HubspotSDK::Resources::Cms::URLRedirects
 
       def initialize: (client: HubspotSDK::Client) -> void
     end

@@ -1,0 +1,77 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type public_sequence_step_response =
+        {
+          id: String,
+          action_type: HubspotSDK::Models::Automation::PublicSequenceStepResponse::action_type,
+          created_at: Time,
+          delay_millis: Integer,
+          step_order: Integer,
+          updated_at: Time,
+          email_pattern: HubspotSDK::Automation::PublicEmailPatternResponse,
+          task_pattern: HubspotSDK::Automation::PublicTaskPatternResponse
+        }
+
+      class PublicSequenceStepResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor action_type: HubspotSDK::Models::Automation::PublicSequenceStepResponse::action_type
+
+        attr_accessor created_at: Time
+
+        attr_accessor delay_millis: Integer
+
+        attr_accessor step_order: Integer
+
+        attr_accessor updated_at: Time
+
+        attr_reader email_pattern: HubspotSDK::Automation::PublicEmailPatternResponse?
+
+        def email_pattern=: (
+          HubspotSDK::Automation::PublicEmailPatternResponse
+        ) -> HubspotSDK::Automation::PublicEmailPatternResponse
+
+        attr_reader task_pattern: HubspotSDK::Automation::PublicTaskPatternResponse?
+
+        def task_pattern=: (
+          HubspotSDK::Automation::PublicTaskPatternResponse
+        ) -> HubspotSDK::Automation::PublicTaskPatternResponse
+
+        def initialize: (
+          id: String,
+          action_type: HubspotSDK::Models::Automation::PublicSequenceStepResponse::action_type,
+          created_at: Time,
+          delay_millis: Integer,
+          step_order: Integer,
+          updated_at: Time,
+          ?email_pattern: HubspotSDK::Automation::PublicEmailPatternResponse,
+          ?task_pattern: HubspotSDK::Automation::PublicTaskPatternResponse
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          action_type: HubspotSDK::Models::Automation::PublicSequenceStepResponse::action_type,
+          created_at: Time,
+          delay_millis: Integer,
+          step_order: Integer,
+          updated_at: Time,
+          email_pattern: HubspotSDK::Automation::PublicEmailPatternResponse,
+          task_pattern: HubspotSDK::Automation::PublicTaskPatternResponse
+        }
+
+        type action_type = :EMAIL | :FINISH_ENROLLMENT | :TASK
+
+        module ActionType
+          extend HubspotSDK::Internal::Type::Enum
+
+          EMAIL: :EMAIL
+          FINISH_ENROLLMENT: :FINISH_ENROLLMENT
+          TASK: :TASK
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::PublicSequenceStepResponse::action_type]
+        end
+      end
+    end
+  end
+end

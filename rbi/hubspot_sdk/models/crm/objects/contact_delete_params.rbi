@@ -17,26 +17,21 @@ module HubspotSDK
             end
 
           sig { returns(String) }
-          attr_accessor :object_type
-
-          sig { returns(String) }
-          attr_accessor :object_id_
+          attr_accessor :contact_id
 
           sig do
             params(
-              object_type: String,
-              object_id_: String,
+              contact_id: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
-          def self.new(object_type:, object_id_:, request_options: {})
+          def self.new(contact_id:, request_options: {})
           end
 
           sig do
             override.returns(
               {
-                object_type: String,
-                object_id_: String,
+                contact_id: String,
                 request_options: HubspotSDK::RequestOptions
               }
             )

@@ -1,0 +1,80 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_index_offset =
+        {
+          days: Integer,
+          hours: Integer,
+          milliseconds: Integer,
+          minutes: Integer,
+          months: Integer,
+          quarters: Integer,
+          seconds: Integer,
+          weeks: Integer,
+          years: Integer
+        }
+
+      class PublicIndexOffset < HubspotSDK::Internal::Type::BaseModel
+        attr_reader days: Integer?
+
+        def days=: (Integer) -> Integer
+
+        attr_reader hours: Integer?
+
+        def hours=: (Integer) -> Integer
+
+        attr_reader milliseconds: Integer?
+
+        def milliseconds=: (Integer) -> Integer
+
+        attr_reader minutes: Integer?
+
+        def minutes=: (Integer) -> Integer
+
+        attr_reader months: Integer?
+
+        def months=: (Integer) -> Integer
+
+        attr_reader quarters: Integer?
+
+        def quarters=: (Integer) -> Integer
+
+        attr_reader seconds: Integer?
+
+        def seconds=: (Integer) -> Integer
+
+        attr_reader weeks: Integer?
+
+        def weeks=: (Integer) -> Integer
+
+        attr_reader years: Integer?
+
+        def years=: (Integer) -> Integer
+
+        def initialize: (
+          ?days: Integer,
+          ?hours: Integer,
+          ?milliseconds: Integer,
+          ?minutes: Integer,
+          ?months: Integer,
+          ?quarters: Integer,
+          ?seconds: Integer,
+          ?weeks: Integer,
+          ?years: Integer
+        ) -> void
+
+        def to_hash: -> {
+          days: Integer,
+          hours: Integer,
+          milliseconds: Integer,
+          minutes: Integer,
+          months: Integer,
+          quarters: Integer,
+          seconds: Integer,
+          weeks: Integer,
+          years: Integer
+        }
+      end
+    end
+  end
+end

@@ -1,0 +1,46 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Extensions
+        type company_caller_id =
+          {
+            caller_id_type: HubspotSDK::Models::Crm::Extensions::CompanyCallerID::caller_id_type,
+            object_coordinates: HubspotSDK::Crm::Extensions::ObjectCoordinates,
+            name: String
+          }
+
+        class CompanyCallerID < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor caller_id_type: HubspotSDK::Models::Crm::Extensions::CompanyCallerID::caller_id_type
+
+          attr_accessor object_coordinates: HubspotSDK::Crm::Extensions::ObjectCoordinates
+
+          attr_reader name: String?
+
+          def name=: (String) -> String
+
+          def initialize: (
+            caller_id_type: HubspotSDK::Models::Crm::Extensions::CompanyCallerID::caller_id_type,
+            object_coordinates: HubspotSDK::Crm::Extensions::ObjectCoordinates,
+            ?name: String
+          ) -> void
+
+          def to_hash: -> {
+            caller_id_type: HubspotSDK::Models::Crm::Extensions::CompanyCallerID::caller_id_type,
+            object_coordinates: HubspotSDK::Crm::Extensions::ObjectCoordinates,
+            name: String
+          }
+
+          type caller_id_type = :COMPANY
+
+          module CallerIDType
+            extend HubspotSDK::Internal::Type::Enum
+
+            COMPANY: :COMPANY
+
+            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::CompanyCallerID::caller_id_type]
+          end
+        end
+      end
+    end
+  end
+end

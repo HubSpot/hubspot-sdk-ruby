@@ -1,0 +1,72 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_list_folder =
+        {
+          id: String,
+          child_lists: ::Array[Integer],
+          child_nodes: ::Array[HubspotSDK::Crm::PublicListFolder],
+          parent_folder_id: String,
+          created_at: Time,
+          name: String,
+          updated_at: Time,
+          updated_contents_at: Time,
+          user_id: Integer
+        }
+
+      class PublicListFolder < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor child_lists: ::Array[Integer]
+
+        attr_accessor child_nodes: ::Array[HubspotSDK::Crm::PublicListFolder]
+
+        attr_accessor parent_folder_id: String
+
+        attr_reader created_at: Time?
+
+        def created_at=: (Time) -> Time
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader updated_at: Time?
+
+        def updated_at=: (Time) -> Time
+
+        attr_reader updated_contents_at: Time?
+
+        def updated_contents_at=: (Time) -> Time
+
+        attr_reader user_id: Integer?
+
+        def user_id=: (Integer) -> Integer
+
+        def initialize: (
+          id: String,
+          child_lists: ::Array[Integer],
+          child_nodes: ::Array[HubspotSDK::Crm::PublicListFolder],
+          parent_folder_id: String,
+          ?created_at: Time,
+          ?name: String,
+          ?updated_at: Time,
+          ?updated_contents_at: Time,
+          ?user_id: Integer
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          child_lists: ::Array[Integer],
+          child_nodes: ::Array[HubspotSDK::Crm::PublicListFolder],
+          parent_folder_id: String,
+          created_at: Time,
+          name: String,
+          updated_at: Time,
+          updated_contents_at: Time,
+          user_id: Integer
+        }
+      end
+    end
+  end
+end

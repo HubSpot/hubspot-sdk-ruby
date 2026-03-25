@@ -46,7 +46,8 @@ module HubspotSDK
 
             # @overload get(inputs:, request_options: {})
             #
-            # @param inputs [Array<HubspotSDK::Models::PublicObjectID>]
+            # @param inputs [Array<HubspotSDK::Models::PublicObjectID>] An array of deal split inputs
+            #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [HubspotSDK::Models::Settings::BatchResponseExchangeRate]

@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type object_schema_batch_read_request =
+        {
+          include_association_definitions: bool,
+          include_audit_metadata: bool,
+          include_property_definitions: bool,
+          inputs: ::Array[String]
+        }
+
+      class ObjectSchemaBatchReadRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor include_association_definitions: bool
+
+        attr_accessor include_audit_metadata: bool
+
+        attr_accessor include_property_definitions: bool
+
+        attr_accessor inputs: ::Array[String]
+
+        def initialize: (
+          include_association_definitions: bool,
+          include_audit_metadata: bool,
+          include_property_definitions: bool,
+          inputs: ::Array[String]
+        ) -> void
+
+        def to_hash: -> {
+          include_association_definitions: bool,
+          include_audit_metadata: bool,
+          include_property_definitions: bool,
+          inputs: ::Array[String]
+        }
+      end
+    end
+  end
+end

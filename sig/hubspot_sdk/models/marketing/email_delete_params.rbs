@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type email_delete_params =
+        { email_id: String, archived: bool }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class EmailDeleteParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor email_id: String
+
+        attr_reader archived: bool?
+
+        def archived=: (bool) -> bool
+
+        def initialize: (
+          email_id: String,
+          ?archived: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          email_id: String,
+          archived: bool,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

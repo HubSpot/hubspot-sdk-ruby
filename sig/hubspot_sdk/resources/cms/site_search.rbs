@@ -1,0 +1,38 @@
+module HubspotSDK
+  module Resources
+    class Cms
+      class SiteSearch
+        def get_indexed_data: (
+          String content_id,
+          ?type: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Cms::IndexedData
+
+        def search: (
+          ?analytics: bool,
+          ?autocomplete: bool,
+          ?boost_limit: Float,
+          ?boost_recent: String,
+          ?domain: ::Array[String],
+          ?group_id: ::Array[Integer],
+          ?hubdb_query: String,
+          ?language: HubspotSDK::Models::Cms::SiteSearchSearchParams::language,
+          ?length: HubspotSDK::Models::Cms::SiteSearchSearchParams::length,
+          ?limit: Integer,
+          ?match_prefix: bool,
+          ?offset: Integer,
+          ?path_prefix: ::Array[String],
+          ?popularity_boost: Float,
+          ?property: ::Array[String],
+          ?q: String,
+          ?table_id: Integer,
+          ?type: ::Array[String],
+          ?types: ::Array[HubspotSDK::Models::Cms::SiteSearchSearchParams::type_],
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Cms::PublicSearchResults
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

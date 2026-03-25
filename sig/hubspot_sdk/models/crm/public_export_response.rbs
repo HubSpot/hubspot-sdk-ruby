@@ -1,0 +1,104 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type public_export_response =
+        {
+          id: String,
+          created_at: Time,
+          export_state: HubspotSDK::Models::Crm::PublicExportResponse::export_state,
+          export_type: HubspotSDK::Models::Crm::PublicExportResponse::export_type,
+          object_properties: ::Array[String],
+          object_type: String,
+          updated_at: Time,
+          export_name: String,
+          record_count: Integer
+        }
+
+      class PublicExportResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor created_at: Time
+
+        attr_accessor export_state: HubspotSDK::Models::Crm::PublicExportResponse::export_state
+
+        attr_accessor export_type: HubspotSDK::Models::Crm::PublicExportResponse::export_type
+
+        attr_accessor object_properties: ::Array[String]
+
+        attr_accessor object_type: String
+
+        attr_accessor updated_at: Time
+
+        attr_reader export_name: String?
+
+        def export_name=: (String) -> String
+
+        attr_reader record_count: Integer?
+
+        def record_count=: (Integer) -> Integer
+
+        def initialize: (
+          id: String,
+          created_at: Time,
+          export_state: HubspotSDK::Models::Crm::PublicExportResponse::export_state,
+          export_type: HubspotSDK::Models::Crm::PublicExportResponse::export_type,
+          object_properties: ::Array[String],
+          object_type: String,
+          updated_at: Time,
+          ?export_name: String,
+          ?record_count: Integer
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          created_at: Time,
+          export_state: HubspotSDK::Models::Crm::PublicExportResponse::export_state,
+          export_type: HubspotSDK::Models::Crm::PublicExportResponse::export_type,
+          object_properties: ::Array[String],
+          object_type: String,
+          updated_at: Time,
+          export_name: String,
+          record_count: Integer
+        }
+
+        type export_state =
+          :CANCELED
+          | :CONFLICT
+          | :DEFERRED
+          | :DELETED
+          | :DONE
+          | :ENQUEUED
+          | :FAILED
+          | :PENDING_APPROVAL
+          | :PROCESSING
+
+        module ExportState
+          extend HubspotSDK::Internal::Type::Enum
+
+          CANCELED: :CANCELED
+          CONFLICT: :CONFLICT
+          DEFERRED: :DEFERRED
+          DELETED: :DELETED
+          DONE: :DONE
+          ENQUEUED: :ENQUEUED
+          FAILED: :FAILED
+          PENDING_APPROVAL: :PENDING_APPROVAL
+          PROCESSING: :PROCESSING
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicExportResponse::export_state]
+        end
+
+        type export_type = :LIST | :VIEW
+
+        module ExportType
+          extend HubspotSDK::Internal::Type::Enum
+
+          LIST: :LIST
+          VIEW: :VIEW
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicExportResponse::export_type]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,28 @@
+module HubspotSDK
+  module Models
+    module CommunicationPreferences
+      type communication_preference_update_status_params =
+        { subscriber_id_string: String }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class CommunicationPreferenceUpdateStatusParams < HubspotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        def subscriber_id_string: -> String
+
+        def subscriber_id_string=: (String _) -> String
+
+        def initialize: (
+          subscriber_id_string: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          subscriber_id_string: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

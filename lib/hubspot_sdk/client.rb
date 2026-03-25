@@ -24,11 +24,26 @@ module HubspotSDK
     # @return [HubspotSDK::Resources::Account]
     attr_reader :account
 
+    # @return [HubspotSDK::Resources::AppWebhooks]
+    attr_reader :app_webhooks
+
+    # @return [HubspotSDK::Resources::Auth]
+    attr_reader :auth
+
     # @return [HubspotSDK::Resources::Automation]
     attr_reader :automation
 
+    # @return [HubspotSDK::Resources::BusinessUnits]
+    attr_reader :business_units
+
     # @return [HubspotSDK::Resources::Cms]
     attr_reader :cms
+
+    # @return [HubspotSDK::Resources::CommunicationPreferences]
+    attr_reader :communication_preferences
+
+    # @return [HubspotSDK::Resources::Conversations]
+    attr_reader :conversations
 
     # @return [HubspotSDK::Resources::Crm]
     attr_reader :crm
@@ -109,8 +124,13 @@ module HubspotSDK
       )
 
       @account = HubspotSDK::Resources::Account.new(client: self)
+      @app_webhooks = HubspotSDK::Resources::AppWebhooks.new(client: self)
+      @auth = HubspotSDK::Resources::Auth.new(client: self)
       @automation = HubspotSDK::Resources::Automation.new(client: self)
+      @business_units = HubspotSDK::Resources::BusinessUnits.new(client: self)
       @cms = HubspotSDK::Resources::Cms.new(client: self)
+      @communication_preferences = HubspotSDK::Resources::CommunicationPreferences.new(client: self)
+      @conversations = HubspotSDK::Resources::Conversations.new(client: self)
       @crm = HubspotSDK::Resources::Crm.new(client: self)
       @data_studio = HubspotSDK::Resources::DataStudio.new(client: self)
       @events = HubspotSDK::Resources::Events.new(client: self)

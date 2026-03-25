@@ -1,0 +1,36 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      type custom_channel_get_params =
+        { channel_id: Integer, channel_account_id: Integer, archived: bool }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class CustomChannelGetParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor channel_id: Integer
+
+        attr_accessor channel_account_id: Integer
+
+        attr_reader archived: bool?
+
+        def archived=: (bool) -> bool
+
+        def initialize: (
+          channel_id: Integer,
+          channel_account_id: Integer,
+          ?archived: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          channel_id: Integer,
+          channel_account_id: Integer,
+          archived: bool,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

@@ -1,0 +1,46 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type timestamp_of_property_variable =
+        {
+          operator: HubspotSDK::Models::Cms::TimestampOfPropertyVariable::operator,
+          property_name: String,
+          value: String
+        }
+
+      class TimestampOfPropertyVariable < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor operator: HubspotSDK::Models::Cms::TimestampOfPropertyVariable::operator
+
+        attr_reader property_name: String?
+
+        def property_name=: (String) -> String
+
+        attr_reader value: String?
+
+        def value=: (String) -> String
+
+        def initialize: (
+          operator: HubspotSDK::Models::Cms::TimestampOfPropertyVariable::operator,
+          ?property_name: String,
+          ?value: String
+        ) -> void
+
+        def to_hash: -> {
+          operator: HubspotSDK::Models::Cms::TimestampOfPropertyVariable::operator,
+          property_name: String,
+          value: String
+        }
+
+        type operator = :TIMESTAMP_OF_PROPERTY_VARIABLE
+
+        module Operator
+          extend HubspotSDK::Internal::Type::Enum
+
+          TIMESTAMP_OF_PROPERTY_VARIABLE: :TIMESTAMP_OF_PROPERTY_VARIABLE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::TimestampOfPropertyVariable::operator]
+        end
+      end
+    end
+  end
+end

@@ -6,7 +6,7 @@ module HubspotSDK
           type batch_get_params =
             { archived: bool } & HubspotSDK::Internal::Type::request_parameters
 
-          class BatchGetParams < HubspotSDK::Models::Cms::Blogs::BatchInputString
+          class BatchGetParams < HubspotSDK::Models::BatchInputString
             extend HubspotSDK::Internal::Type::RequestParameters::Converter
             include HubspotSDK::Internal::Type::RequestParameters
 

@@ -5,7 +5,7 @@ module HubspotSDK
         {
           description: String,
           label: String,
-          options: ::Array[HubspotSDK::Events::OptionInput]
+          options: ::Array[HubspotSDK::OptionInput]
         }
 
       class ExternalBehavioralEventPropertyDefinitionPatch < HubspotSDK::Internal::Type::BaseModel
@@ -17,22 +17,22 @@ module HubspotSDK
 
         def label=: (String) -> String
 
-        attr_reader options: ::Array[HubspotSDK::Events::OptionInput]?
+        attr_reader options: ::Array[HubspotSDK::OptionInput]?
 
         def options=: (
-          ::Array[HubspotSDK::Events::OptionInput]
-        ) -> ::Array[HubspotSDK::Events::OptionInput]
+          ::Array[HubspotSDK::OptionInput]
+        ) -> ::Array[HubspotSDK::OptionInput]
 
         def initialize: (
           ?description: String,
           ?label: String,
-          ?options: ::Array[HubspotSDK::Events::OptionInput]
+          ?options: ::Array[HubspotSDK::OptionInput]
         ) -> void
 
         def to_hash: -> {
           description: String,
           label: String,
-          options: ::Array[HubspotSDK::Events::OptionInput]
+          options: ::Array[HubspotSDK::OptionInput]
         }
       end
     end

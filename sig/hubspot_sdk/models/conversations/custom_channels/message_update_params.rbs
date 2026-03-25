@@ -1,0 +1,36 @@
+module HubspotSDK
+  module Models
+    module Conversations
+      module CustomChannels
+        type message_update_params =
+          { channel_id: Integer, message_id: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class MessageUpdateParams < HubspotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def channel_id: -> Integer
+
+          def channel_id=: (Integer _) -> Integer
+
+          def message_id: -> String
+
+          def message_id=: (String _) -> String
+
+          def initialize: (
+            channel_id: Integer,
+            message_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            channel_id: Integer,
+            message_id: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,20 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type collection_response_public_property_validation_rule_no_paging =
+        { results: ::Array[HubspotSDK::Crm::PublicPropertyValidationRule] }
+
+      class CollectionResponsePublicPropertyValidationRuleNoPaging < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubspotSDK::Crm::PublicPropertyValidationRule]
+
+        def initialize: (
+          results: ::Array[HubspotSDK::Crm::PublicPropertyValidationRule]
+        ) -> void
+
+        def to_hash: -> {
+          results: ::Array[HubspotSDK::Crm::PublicPropertyValidationRule]
+        }
+      end
+    end
+  end
+end

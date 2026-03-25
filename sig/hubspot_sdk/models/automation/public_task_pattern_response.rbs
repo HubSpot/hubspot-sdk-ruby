@@ -1,0 +1,111 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type public_task_pattern_response =
+        {
+          id: String,
+          created_at: Time,
+          task_priority: HubspotSDK::Models::Automation::PublicTaskPatternResponse::task_priority,
+          task_type: HubspotSDK::Models::Automation::PublicTaskPatternResponse::task_type,
+          updated_at: Time,
+          notes: String,
+          queue_id: Integer,
+          subject: String,
+          template_id: Integer,
+          thread_email_to_step_order: Integer
+        }
+
+      class PublicTaskPatternResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor created_at: Time
+
+        attr_accessor task_priority: HubspotSDK::Models::Automation::PublicTaskPatternResponse::task_priority
+
+        attr_accessor task_type: HubspotSDK::Models::Automation::PublicTaskPatternResponse::task_type
+
+        attr_accessor updated_at: Time
+
+        attr_reader notes: String?
+
+        def notes=: (String) -> String
+
+        attr_reader queue_id: Integer?
+
+        def queue_id=: (Integer) -> Integer
+
+        attr_reader subject: String?
+
+        def subject=: (String) -> String
+
+        attr_reader template_id: Integer?
+
+        def template_id=: (Integer) -> Integer
+
+        attr_reader thread_email_to_step_order: Integer?
+
+        def thread_email_to_step_order=: (Integer) -> Integer
+
+        def initialize: (
+          id: String,
+          created_at: Time,
+          task_priority: HubspotSDK::Models::Automation::PublicTaskPatternResponse::task_priority,
+          task_type: HubspotSDK::Models::Automation::PublicTaskPatternResponse::task_type,
+          updated_at: Time,
+          ?notes: String,
+          ?queue_id: Integer,
+          ?subject: String,
+          ?template_id: Integer,
+          ?thread_email_to_step_order: Integer
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          created_at: Time,
+          task_priority: HubspotSDK::Models::Automation::PublicTaskPatternResponse::task_priority,
+          task_type: HubspotSDK::Models::Automation::PublicTaskPatternResponse::task_type,
+          updated_at: Time,
+          notes: String,
+          queue_id: Integer,
+          subject: String,
+          template_id: Integer,
+          thread_email_to_step_order: Integer
+        }
+
+        type task_priority = :HIGH | :LOW | :MEDIUM | :NONE
+
+        module TaskPriority
+          extend HubspotSDK::Internal::Type::Enum
+
+          HIGH: :HIGH
+          LOW: :LOW
+          MEDIUM: :MEDIUM
+          NONE: :NONE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::PublicTaskPatternResponse::task_priority]
+        end
+
+        type task_type =
+          :CALL
+          | :EMAIL
+          | :LINKED_IN_CONNECT
+          | :LINKED_IN_MESSAGE
+          | :MEETING
+          | :TODO
+
+        module TaskType
+          extend HubspotSDK::Internal::Type::Enum
+
+          CALL: :CALL
+          EMAIL: :EMAIL
+          LINKED_IN_CONNECT: :LINKED_IN_CONNECT
+          LINKED_IN_MESSAGE: :LINKED_IN_MESSAGE
+          MEETING: :MEETING
+          TODO: :TODO
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::PublicTaskPatternResponse::task_type]
+        end
+      end
+    end
+  end
+end

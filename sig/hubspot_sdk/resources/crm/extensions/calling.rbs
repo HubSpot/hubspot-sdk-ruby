@@ -1,0 +1,40 @@
+module HubspotSDK
+  module Resources
+    class Crm
+      class Extensions
+        class Calling
+          attr_reader transcripts: HubspotSDK::Resources::Crm::Extensions::Calling::Transcripts
+
+          def create: (
+            Integer app_id,
+            url_to_retrieve_authed_recording: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::Extensions::RecordingSettingsResponse
+
+          def update: (
+            Integer app_id,
+            ?url_to_retrieve_authed_recording: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::Extensions::RecordingSettingsResponse
+
+          def delete: (
+            Integer app_id,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def get: (
+            Integer app_id,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::Extensions::RecordingSettingsResponse
+
+          def mark_ready: (
+            engagement_id: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

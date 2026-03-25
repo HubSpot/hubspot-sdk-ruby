@@ -1,0 +1,21 @@
+module HubspotSDK
+  module Resources
+    class Crm
+      class DealSplits
+        class Batch
+          def read: (
+            inputs: ::Array[HubspotSDK::PublicObjectID],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::BatchResponseDealToDealSplits
+
+          def upsert: (
+            inputs: ::Array[HubspotSDK::Crm::PublicDealSplitsCreateRequest],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::BatchResponseDealToDealSplits
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end
