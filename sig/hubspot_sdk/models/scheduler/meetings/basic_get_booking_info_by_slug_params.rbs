@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module Scheduler
+      module Meetings
+        type basic_get_booking_info_by_slug_params =
+          { slug: String, timezone: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class BasicGetBookingInfoBySlugParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor slug: String
+
+          attr_accessor timezone: String
+
+          def initialize: (
+            slug: String,
+            timezone: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            slug: String,
+            timezone: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

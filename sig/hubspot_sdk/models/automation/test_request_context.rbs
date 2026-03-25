@@ -1,0 +1,30 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type test_request_context =
+        { source: HubspotSDK::Models::Automation::TestRequestContext::source }
+
+      class TestRequestContext < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor source: HubspotSDK::Models::Automation::TestRequestContext::source
+
+        def initialize: (
+          source: HubspotSDK::Models::Automation::TestRequestContext::source
+        ) -> void
+
+        def to_hash: -> {
+          source: HubspotSDK::Models::Automation::TestRequestContext::source
+        }
+
+        type source = :TEST
+
+        module Source
+          extend HubspotSDK::Internal::Type::Enum
+
+          TEST: :TEST
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::TestRequestContext::source]
+        end
+      end
+    end
+  end
+end

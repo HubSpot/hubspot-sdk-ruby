@@ -1,0 +1,36 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      module Campaigns
+        type spend_update_params =
+          { campaign_guid: String, spend_id: Integer }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class SpendUpdateParams < HubspotSDK::Models::Marketing::PublicSpendItemInput
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def campaign_guid: -> String
+
+          def campaign_guid=: (String _) -> String
+
+          def spend_id: -> Integer
+
+          def spend_id=: (Integer _) -> Integer
+
+          def initialize: (
+            campaign_guid: String,
+            spend_id: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            campaign_guid: String,
+            spend_id: Integer,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,28 @@
+module HubspotSDK
+  module Models
+    module Settings
+      module Currencies
+        type exchange_rate_get_exchange_rate_by_id_params =
+          { exchange_rate_id: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class ExchangeRateGetExchangeRateByIDParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor exchange_rate_id: String
+
+          def initialize: (
+            exchange_rate_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            exchange_rate_id: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

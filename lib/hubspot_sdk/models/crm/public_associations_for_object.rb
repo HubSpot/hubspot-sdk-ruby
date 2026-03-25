@@ -7,18 +7,18 @@ module HubspotSDK
         # @!attribute to
         #   Contains the Id of a Public Object
         #
-        #   @return [HubspotSDK::Models::Crm::PublicObjectID]
-        required :to, -> { HubspotSDK::Crm::PublicObjectID }
+        #   @return [HubspotSDK::Models::PublicObjectID]
+        required :to, -> { HubspotSDK::PublicObjectID }
 
         # @!attribute types
         #
-        #   @return [Array<HubspotSDK::Models::Crm::AssociationSpec>]
-        required :types, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::AssociationSpec] }
+        #   @return [Array<HubspotSDK::Models::AssociationSpec>]
+        required :types, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AssociationSpec] }
 
         # @!method initialize(to:, types:)
-        #   @param to [HubspotSDK::Models::Crm::PublicObjectID] Contains the Id of a Public Object
+        #   @param to [HubspotSDK::Models::PublicObjectID] Contains the Id of a Public Object
         #
-        #   @param types [Array<HubspotSDK::Models::Crm::AssociationSpec>]
+        #   @param types [Array<HubspotSDK::Models::AssociationSpec>]
       end
     end
   end

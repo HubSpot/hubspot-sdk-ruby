@@ -1,0 +1,24 @@
+module HubspotSDK
+  module Models
+    module Events
+      type external_primary_object_resolution_rule =
+        { event_property_name: String, target_object_property_name: String }
+
+      class ExternalPrimaryObjectResolutionRule < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor event_property_name: String
+
+        attr_accessor target_object_property_name: String
+
+        def initialize: (
+          event_property_name: String,
+          target_object_property_name: String
+        ) -> void
+
+        def to_hash: -> {
+          event_property_name: String,
+          target_object_property_name: String
+        }
+      end
+    end
+  end
+end

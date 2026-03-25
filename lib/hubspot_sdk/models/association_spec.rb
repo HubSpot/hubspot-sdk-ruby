@@ -1,0 +1,44 @@
+# frozen_string_literal: true
+
+module HubspotSDK
+  module Models
+    class AssociationSpec < HubspotSDK::Internal::Type::BaseModel
+      # @!attribute association_category
+      #   The category of the association, such as "HUBSPOT_DEFINED".
+      #
+      #   @return [Symbol, HubspotSDK::Models::AssociationSpec::AssociationCategory]
+      required :association_category,
+               enum: -> { HubspotSDK::AssociationSpec::AssociationCategory },
+               api_name: :associationCategory
+
+      # @!attribute association_type_id
+      #   The ID representing the specific type of association.
+      #
+      #   @return [Integer]
+      required :association_type_id, Integer, api_name: :associationTypeId
+
+      # @!method initialize(association_category:, association_type_id:)
+      #   Defines the type, direction, and details of the relationship between two CRM
+      #   objects.
+      #
+      #   @param association_category [Symbol, HubspotSDK::Models::AssociationSpec::AssociationCategory] The category of the association, such as "HUBSPOT_DEFINED".
+      #
+      #   @param association_type_id [Integer] The ID representing the specific type of association.
+
+      # The category of the association, such as "HUBSPOT_DEFINED".
+      #
+      # @see HubspotSDK::Models::AssociationSpec#association_category
+      module AssociationCategory
+        extend HubspotSDK::Internal::Type::Enum
+
+        HUBSPOT_DEFINED = :HUBSPOT_DEFINED
+        INTEGRATOR_DEFINED = :INTEGRATOR_DEFINED
+        USER_DEFINED = :USER_DEFINED
+        WORK = :WORK
+
+        # @!method self.values
+        #   @return [Array<Symbol>]
+      end
+    end
+  end
+end

@@ -1,0 +1,84 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Blogs
+        type layout_section =
+          {
+            cells: ::Array[HubspotSDK::Cms::Blogs::LayoutSection],
+            css_class: String,
+            css_id: String,
+            css_style: String,
+            label: String,
+            name: String,
+            params: ::Hash[Symbol, top],
+            row_meta_data: ::Array[HubspotSDK::Cms::Blogs::RowMetaData],
+            rows: ::Array[::Hash[Symbol, HubspotSDK::Cms::Blogs::LayoutSection]],
+            styles: HubspotSDK::Cms::Blogs::Styles,
+            type: String,
+            w: Integer,
+            x: Integer
+          }
+
+        class LayoutSection < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor cells: ::Array[HubspotSDK::Cms::Blogs::LayoutSection]
+
+          attr_accessor css_class: String
+
+          attr_accessor css_id: String
+
+          attr_accessor css_style: String
+
+          attr_accessor label: String
+
+          attr_accessor name: String
+
+          attr_accessor params: ::Hash[Symbol, top]
+
+          attr_accessor row_meta_data: ::Array[HubspotSDK::Cms::Blogs::RowMetaData]
+
+          attr_accessor rows: ::Array[::Hash[Symbol, HubspotSDK::Cms::Blogs::LayoutSection]]
+
+          attr_accessor styles: HubspotSDK::Cms::Blogs::Styles
+
+          attr_accessor type: String
+
+          attr_accessor w: Integer
+
+          attr_accessor x: Integer
+
+          def initialize: (
+            cells: ::Array[HubspotSDK::Cms::Blogs::LayoutSection],
+            css_class: String,
+            css_id: String,
+            css_style: String,
+            label: String,
+            name: String,
+            params: ::Hash[Symbol, top],
+            row_meta_data: ::Array[HubspotSDK::Cms::Blogs::RowMetaData],
+            rows: ::Array[::Hash[Symbol, HubspotSDK::Cms::Blogs::LayoutSection]],
+            styles: HubspotSDK::Cms::Blogs::Styles,
+            type: String,
+            w: Integer,
+            x: Integer
+          ) -> void
+
+          def to_hash: -> {
+            cells: ::Array[HubspotSDK::Cms::Blogs::LayoutSection],
+            css_class: String,
+            css_id: String,
+            css_style: String,
+            label: String,
+            name: String,
+            params: ::Hash[Symbol, top],
+            row_meta_data: ::Array[HubspotSDK::Cms::Blogs::RowMetaData],
+            rows: ::Array[::Hash[Symbol, HubspotSDK::Cms::Blogs::LayoutSection]],
+            styles: HubspotSDK::Cms::Blogs::Styles,
+            type: String,
+            w: Integer,
+            x: Integer
+          }
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,71 @@
+# typed: strong
+
+module HubspotSDK
+  module Resources
+    class Meta
+      class Origins
+        class IPRanges
+          # Retrieve a collection of IP ranges associated with specific services and
+          # directions, such as `EMAIL`, `API`, `DNS`, or `WEB_SCRAPING`. The response
+          # includes details like CIDR notation, description, and the direction of IP
+          # traffic.
+          sig do
+            params(
+              direction:
+                T::Array[
+                  HubspotSDK::Meta::Origins::IPRangeListParams::Direction::OrSymbol
+                ],
+              service:
+                T::Array[
+                  HubspotSDK::Meta::Origins::IPRangeListParams::Service::OrSymbol
+                ],
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(HubspotSDK::Meta::CollectionResponseIPRangeNoPaging)
+          end
+          def list(
+            # An array of traffic directions to filter the IP ranges. Valid values are
+            # `INGRESS` and `EGRESS`.
+            direction: nil,
+            # An array of service types to filter the IP ranges. Valid values include `EMAIL`,
+            # `API`, `DNS`, `WEB_SCRAPING`, and `TEST_SERVICE`.
+            service: nil,
+            request_options: {}
+          )
+          end
+
+          # Retrieve a simplified list of IP ranges for specified services and directions in
+          # plain text format. This endpoint provides a straightforward representation of IP
+          # ranges without additional metadata.
+          sig do
+            params(
+              direction:
+                T::Array[
+                  HubspotSDK::Meta::Origins::IPRangeListSimpleParams::Direction::OrSymbol
+                ],
+              service:
+                T::Array[
+                  HubspotSDK::Meta::Origins::IPRangeListSimpleParams::Service::OrSymbol
+                ],
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(String)
+          end
+          def list_simple(
+            # An array of directions to filter the IP ranges by. Valid values are `INGRESS`
+            # and `EGRESS`.
+            direction: nil,
+            # An array specifying the service types to filter by. Valid values include
+            # `EMAIL`, `API`, `DNS`, `WEB_SCRAPING`, and `TEST_SERVICE`.
+            service: nil,
+            request_options: {}
+          )
+          end
+
+          # @api private
+          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          def self.new(client:)
+          end
+        end
+      end
+    end
+  end
+end

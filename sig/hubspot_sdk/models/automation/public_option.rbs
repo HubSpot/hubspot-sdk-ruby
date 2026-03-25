@@ -1,0 +1,41 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type public_option =
+        {
+          label: String,
+          value: String,
+          description: String,
+          display_order: Integer
+        }
+
+      class PublicOption < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor label: String
+
+        attr_accessor value: String
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader display_order: Integer?
+
+        def display_order=: (Integer) -> Integer
+
+        def initialize: (
+          label: String,
+          value: String,
+          ?description: String,
+          ?display_order: Integer
+        ) -> void
+
+        def to_hash: -> {
+          label: String,
+          value: String,
+          description: String,
+          display_order: Integer
+        }
+      end
+    end
+  end
+end

@@ -3,6 +3,7 @@
 module HubspotSDK
   module Models
     module Account
+      # @see HubspotSDK::Resources::Account#get_daily_private_apps_usage
       class CollectionResponseAPIUsageNoPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #

@@ -31,12 +31,10 @@ module HubspotSDK
         end
         attr_accessor :status
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::Crm::StandardError])) }
+        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
         attr_reader :errors
 
-        sig do
-          params(errors: T::Array[HubspotSDK::Crm::StandardError::OrHash]).void
-        end
+        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
         attr_writer :errors
 
         # An object containing relevant links related to the batch request.
@@ -68,7 +66,7 @@ module HubspotSDK
             started_at: Time,
             status:
               HubspotSDK::Crm::BatchResponseSimplePublicObject::Status::OrSymbol,
-            errors: T::Array[HubspotSDK::Crm::StandardError::OrHash],
+            errors: T::Array[HubspotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
             requested_at: Time
@@ -100,7 +98,7 @@ module HubspotSDK
               started_at: Time,
               status:
                 HubspotSDK::Crm::BatchResponseSimplePublicObject::Status::TaggedSymbol,
-              errors: T::Array[HubspotSDK::Crm::StandardError],
+              errors: T::Array[HubspotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
               requested_at: Time

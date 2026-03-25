@@ -3,6 +3,14 @@ module HubspotSDK
     class Account
       attr_reader activity: HubspotSDK::Resources::Account::Activity
 
+      def get: (
+        ?request_options: HubspotSDK::request_opts
+      ) -> HubspotSDK::Account::PortalInformationResponse
+
+      def get_daily_private_apps_usage: (
+        ?request_options: HubspotSDK::request_opts
+      ) -> HubspotSDK::Account::CollectionResponseAPIUsageNoPaging
+
       def initialize: (client: HubspotSDK::Client) -> void
     end
   end

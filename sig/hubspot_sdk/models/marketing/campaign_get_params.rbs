@@ -1,0 +1,49 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type campaign_get_params =
+        {
+          campaign_guid: String,
+          end_date: String,
+          properties: ::Array[String],
+          start_date: String
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class CampaignGetParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor campaign_guid: String
+
+        attr_reader end_date: String?
+
+        def end_date=: (String) -> String
+
+        attr_reader properties: ::Array[String]?
+
+        def properties=: (::Array[String]) -> ::Array[String]
+
+        attr_reader start_date: String?
+
+        def start_date=: (String) -> String
+
+        def initialize: (
+          campaign_guid: String,
+          ?end_date: String,
+          ?properties: ::Array[String],
+          ?start_date: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          campaign_guid: String,
+          end_date: String,
+          properties: ::Array[String],
+          start_date: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

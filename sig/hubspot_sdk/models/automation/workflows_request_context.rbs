@@ -1,0 +1,53 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type workflows_request_context =
+        {
+          source: HubspotSDK::Models::Automation::WorkflowsRequestContext::source,
+          workflow_id: Integer,
+          action_execution_index_identifier: HubspotSDK::Automation::ActionExecutionIndexIdentifier,
+          action_id: Integer
+        }
+
+      class WorkflowsRequestContext < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor source: HubspotSDK::Models::Automation::WorkflowsRequestContext::source
+
+        attr_accessor workflow_id: Integer
+
+        attr_reader action_execution_index_identifier: HubspotSDK::Automation::ActionExecutionIndexIdentifier?
+
+        def action_execution_index_identifier=: (
+          HubspotSDK::Automation::ActionExecutionIndexIdentifier
+        ) -> HubspotSDK::Automation::ActionExecutionIndexIdentifier
+
+        attr_reader action_id: Integer?
+
+        def action_id=: (Integer) -> Integer
+
+        def initialize: (
+          source: HubspotSDK::Models::Automation::WorkflowsRequestContext::source,
+          workflow_id: Integer,
+          ?action_execution_index_identifier: HubspotSDK::Automation::ActionExecutionIndexIdentifier,
+          ?action_id: Integer
+        ) -> void
+
+        def to_hash: -> {
+          source: HubspotSDK::Models::Automation::WorkflowsRequestContext::source,
+          workflow_id: Integer,
+          action_execution_index_identifier: HubspotSDK::Automation::ActionExecutionIndexIdentifier,
+          action_id: Integer
+        }
+
+        type source = :WORKFLOWS
+
+        module Source
+          extend HubspotSDK::Internal::Type::Enum
+
+          WORKFLOWS: :WORKFLOWS
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::WorkflowsRequestContext::source]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,9 @@
+module HubspotSDK
+  module Resources
+    class Marketing
+      attr_reader campaigns: HubspotSDK::Resources::Marketing::Campaigns
+
+      def initialize: (client: HubspotSDK::Client) -> void
+    end
+  end
+end

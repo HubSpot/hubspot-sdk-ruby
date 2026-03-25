@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Models
+    type previous_page = { before: String, link: String }
+
+    class PreviousPage < HubspotSDK::Internal::Type::BaseModel
+      attr_accessor before: String
+
+      attr_reader link: String?
+
+      def link=: (String) -> String
+
+      def initialize: (before: String, ?link: String) -> void
+
+      def to_hash: -> { before: String, link: String }
+    end
+  end
+end

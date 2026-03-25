@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module Events
+      type collection_response_with_total_external_behavioral_event_type_definition =
+        {
+          results: ::Array[HubspotSDK::Events::ExternalBehavioralEventTypeDefinition],
+          total: Integer,
+          paging: HubspotSDK::Paging
+        }
+
+      class CollectionResponseWithTotalExternalBehavioralEventTypeDefinition < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubspotSDK::Events::ExternalBehavioralEventTypeDefinition]
+
+        attr_accessor total: Integer
+
+        attr_reader paging: HubspotSDK::Paging?
+
+        def paging=: (HubspotSDK::Paging) -> HubspotSDK::Paging
+
+        def initialize: (
+          results: ::Array[HubspotSDK::Events::ExternalBehavioralEventTypeDefinition],
+          total: Integer,
+          ?paging: HubspotSDK::Paging
+        ) -> void
+
+        def to_hash: -> {
+          results: ::Array[HubspotSDK::Events::ExternalBehavioralEventTypeDefinition],
+          total: Integer,
+          paging: HubspotSDK::Paging
+        }
+      end
+    end
+  end
+end

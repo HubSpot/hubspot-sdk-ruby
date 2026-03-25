@@ -1,0 +1,110 @@
+module HubspotSDK
+  module Models
+    module Scheduler
+      type external_calendar_meeting_event_create_properties =
+        {
+          hs_meeting_end_time: Time,
+          hs_meeting_outcome: String,
+          hs_meeting_start_time: Time,
+          hs_meeting_title: String,
+          hs_timestamp: Time,
+          hubspot_owner_id: String,
+          hs_activity_type: String,
+          hs_attachment_ids: ::Array[String],
+          hs_attendee_owner_ids: ::Array[String],
+          hs_internal_meeting_notes: String,
+          hs_meeting_body: String,
+          hs_meeting_location: String,
+          hs_meeting_location_type: HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties::hs_meeting_location_type
+        }
+
+      class ExternalCalendarMeetingEventCreateProperties < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor hs_meeting_end_time: Time
+
+        attr_accessor hs_meeting_outcome: String
+
+        attr_accessor hs_meeting_start_time: Time
+
+        attr_accessor hs_meeting_title: String
+
+        attr_accessor hs_timestamp: Time
+
+        attr_accessor hubspot_owner_id: String
+
+        attr_reader hs_activity_type: String?
+
+        def hs_activity_type=: (String) -> String
+
+        attr_reader hs_attachment_ids: ::Array[String]?
+
+        def hs_attachment_ids=: (::Array[String]) -> ::Array[String]
+
+        attr_reader hs_attendee_owner_ids: ::Array[String]?
+
+        def hs_attendee_owner_ids=: (::Array[String]) -> ::Array[String]
+
+        attr_reader hs_internal_meeting_notes: String?
+
+        def hs_internal_meeting_notes=: (String) -> String
+
+        attr_reader hs_meeting_body: String?
+
+        def hs_meeting_body=: (String) -> String
+
+        attr_reader hs_meeting_location: String?
+
+        def hs_meeting_location=: (String) -> String
+
+        attr_reader hs_meeting_location_type: HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties::hs_meeting_location_type?
+
+        def hs_meeting_location_type=: (
+          HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties::hs_meeting_location_type
+        ) -> HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties::hs_meeting_location_type
+
+        def initialize: (
+          hs_meeting_end_time: Time,
+          hs_meeting_outcome: String,
+          hs_meeting_start_time: Time,
+          hs_meeting_title: String,
+          hs_timestamp: Time,
+          hubspot_owner_id: String,
+          ?hs_activity_type: String,
+          ?hs_attachment_ids: ::Array[String],
+          ?hs_attendee_owner_ids: ::Array[String],
+          ?hs_internal_meeting_notes: String,
+          ?hs_meeting_body: String,
+          ?hs_meeting_location: String,
+          ?hs_meeting_location_type: HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties::hs_meeting_location_type
+        ) -> void
+
+        def to_hash: -> {
+          hs_meeting_end_time: Time,
+          hs_meeting_outcome: String,
+          hs_meeting_start_time: Time,
+          hs_meeting_title: String,
+          hs_timestamp: Time,
+          hubspot_owner_id: String,
+          hs_activity_type: String,
+          hs_attachment_ids: ::Array[String],
+          hs_attendee_owner_ids: ::Array[String],
+          hs_internal_meeting_notes: String,
+          hs_meeting_body: String,
+          hs_meeting_location: String,
+          hs_meeting_location_type: HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties::hs_meeting_location_type
+        }
+
+        type hs_meeting_location_type = :ADDRESS | :CUSTOM | :PHONE
+
+        module HsMeetingLocationType
+          extend HubspotSDK::Internal::Type::Enum
+
+          ADDRESS: :ADDRESS
+          CUSTOM: :CUSTOM
+          PHONE: :PHONE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties::hs_meeting_location_type]
+        end
+      end
+    end
+  end
+end

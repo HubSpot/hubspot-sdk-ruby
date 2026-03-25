@@ -1,0 +1,56 @@
+module HubspotSDK
+  module Models
+    module Events
+      type time_offset =
+        {
+          amount: Integer,
+          offset_direction: HubspotSDK::Models::Events::TimeOffset::offset_direction,
+          time_unit: HubspotSDK::Models::Events::TimeOffset::time_unit
+        }
+
+      class TimeOffset < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor amount: Integer
+
+        attr_accessor offset_direction: HubspotSDK::Models::Events::TimeOffset::offset_direction
+
+        attr_accessor time_unit: HubspotSDK::Models::Events::TimeOffset::time_unit
+
+        def initialize: (
+          amount: Integer,
+          offset_direction: HubspotSDK::Models::Events::TimeOffset::offset_direction,
+          time_unit: HubspotSDK::Models::Events::TimeOffset::time_unit
+        ) -> void
+
+        def to_hash: -> {
+          amount: Integer,
+          offset_direction: HubspotSDK::Models::Events::TimeOffset::offset_direction,
+          time_unit: HubspotSDK::Models::Events::TimeOffset::time_unit
+        }
+
+        type offset_direction = :FUTURE | :PAST
+
+        module OffsetDirection
+          extend HubspotSDK::Internal::Type::Enum
+
+          FUTURE: :FUTURE
+          PAST: :PAST
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::TimeOffset::offset_direction]
+        end
+
+        type time_unit = :DAYS | :HOURS | :MINUTES | :WEEKS
+
+        module TimeUnit
+          extend HubspotSDK::Internal::Type::Enum
+
+          DAYS: :DAYS
+          HOURS: :HOURS
+          MINUTES: :MINUTES
+          WEEKS: :WEEKS
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::TimeOffset::time_unit]
+        end
+      end
+    end
+  end
+end

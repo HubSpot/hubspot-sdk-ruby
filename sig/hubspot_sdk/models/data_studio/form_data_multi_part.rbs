@@ -1,0 +1,71 @@
+module HubspotSDK
+  module Models
+    module DataStudio
+      type form_data_multi_part =
+        {
+          body_parts: ::Array[HubspotSDK::DataStudio::BodyPart],
+          content_disposition: HubspotSDK::DataStudio::ContentDisposition,
+          entity: top,
+          fields: ::Hash[Symbol, ::Array[HubspotSDK::DataStudio::FormDataBodyPart]],
+          headers: ::Hash[Symbol, ::Array[String]],
+          media_type: HubspotSDK::DataStudio::MediaType,
+          message_body_workers: top,
+          parameterized_headers: ::Hash[Symbol, ::Array[HubspotSDK::DataStudio::ParameterizedHeader]],
+          providers: top,
+          parent: HubspotSDK::DataStudio::MultiPart
+        }
+
+      class FormDataMultiPart < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor body_parts: ::Array[HubspotSDK::DataStudio::BodyPart]
+
+        attr_accessor content_disposition: HubspotSDK::DataStudio::ContentDisposition
+
+        attr_accessor entity: top
+
+        attr_accessor fields: ::Hash[Symbol, ::Array[HubspotSDK::DataStudio::FormDataBodyPart]]
+
+        attr_accessor headers: ::Hash[Symbol, ::Array[String]]
+
+        attr_accessor media_type: HubspotSDK::DataStudio::MediaType
+
+        attr_accessor message_body_workers: top
+
+        attr_accessor parameterized_headers: ::Hash[Symbol, ::Array[HubspotSDK::DataStudio::ParameterizedHeader]]
+
+        attr_accessor providers: top
+
+        attr_reader parent: HubspotSDK::DataStudio::MultiPart?
+
+        def parent=: (
+          HubspotSDK::DataStudio::MultiPart
+        ) -> HubspotSDK::DataStudio::MultiPart
+
+        def initialize: (
+          body_parts: ::Array[HubspotSDK::DataStudio::BodyPart],
+          content_disposition: HubspotSDK::DataStudio::ContentDisposition,
+          entity: top,
+          fields: ::Hash[Symbol, ::Array[HubspotSDK::DataStudio::FormDataBodyPart]],
+          headers: ::Hash[Symbol, ::Array[String]],
+          media_type: HubspotSDK::DataStudio::MediaType,
+          message_body_workers: top,
+          parameterized_headers: ::Hash[Symbol, ::Array[HubspotSDK::DataStudio::ParameterizedHeader]],
+          providers: top,
+          ?parent: HubspotSDK::DataStudio::MultiPart
+        ) -> void
+
+        def to_hash: -> {
+          body_parts: ::Array[HubspotSDK::DataStudio::BodyPart],
+          content_disposition: HubspotSDK::DataStudio::ContentDisposition,
+          entity: top,
+          fields: ::Hash[Symbol, ::Array[HubspotSDK::DataStudio::FormDataBodyPart]],
+          headers: ::Hash[Symbol, ::Array[String]],
+          media_type: HubspotSDK::DataStudio::MediaType,
+          message_body_workers: top,
+          parameterized_headers: ::Hash[Symbol, ::Array[HubspotSDK::DataStudio::ParameterizedHeader]],
+          providers: top,
+          parent: HubspotSDK::DataStudio::MultiPart
+        }
+      end
+    end
+  end
+end

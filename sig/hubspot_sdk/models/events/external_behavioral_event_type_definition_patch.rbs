@@ -1,0 +1,22 @@
+module HubspotSDK
+  module Models
+    module Events
+      type external_behavioral_event_type_definition_patch =
+        { description: String, label: String }
+
+      class ExternalBehavioralEventTypeDefinitionPatch < HubspotSDK::Internal::Type::BaseModel
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader label: String?
+
+        def label=: (String) -> String
+
+        def initialize: (?description: String, ?label: String) -> void
+
+        def to_hash: -> { description: String, label: String }
+      end
+    end
+  end
+end

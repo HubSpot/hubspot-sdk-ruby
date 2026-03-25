@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module Scheduler
+      type external_link_availability_for_duration =
+        {
+          availabilities: ::Array[HubspotSDK::Scheduler::ExternalMeetingAvailability],
+          meeting_duration_millis: Integer
+        }
+
+      class ExternalLinkAvailabilityForDuration < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor availabilities: ::Array[HubspotSDK::Scheduler::ExternalMeetingAvailability]
+
+        attr_accessor meeting_duration_millis: Integer
+
+        def initialize: (
+          availabilities: ::Array[HubspotSDK::Scheduler::ExternalMeetingAvailability],
+          meeting_duration_millis: Integer
+        ) -> void
+
+        def to_hash: -> {
+          availabilities: ::Array[HubspotSDK::Scheduler::ExternalMeetingAvailability],
+          meeting_duration_millis: Integer
+        }
+      end
+    end
+  end
+end

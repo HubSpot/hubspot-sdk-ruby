@@ -1,0 +1,38 @@
+module HubspotSDK
+  module Models
+    module Scheduler
+      module Meetings
+        type basic_get_availability_by_slug_params =
+          { slug: String, timezone: String, month_offset: Integer }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class BasicGetAvailabilityBySlugParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor slug: String
+
+          attr_accessor timezone: String
+
+          attr_reader month_offset: Integer?
+
+          def month_offset=: (Integer) -> Integer
+
+          def initialize: (
+            slug: String,
+            timezone: String,
+            ?month_offset: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            slug: String,
+            timezone: String,
+            month_offset: Integer,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

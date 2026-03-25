@@ -26,9 +26,9 @@ require "hubspot_sdk"
 
 hubspot = HubspotSDK::Client.new(access_token: "pat-na1-xxxxxxxx-xxxx")
 
-page = hubspot.account.activity.list_audit_logs
+portal_information_response = hubspot.account.get
 
-puts(page.id)
+puts(portal_information_response.accountType)
 ```
 
 ### Pagination
@@ -65,7 +65,7 @@ When the library is unable to connect to the API, or if the API returns a non-su
 
 ```ruby
 begin
-  activity = hubspot.account.activity.list_audit_logs
+  account = hubspot.account.get
 rescue HubspotSDK::Errors::APIConnectionError => e
   puts("The server could not be reached")
   puts(e.cause)  # an underlying Exception, likely raised within `net/http`
@@ -108,7 +108,7 @@ hubspot = HubspotSDK::Client.new(
 )
 
 # Or, configure per-request:
-hubspot.account.activity.list_audit_logs(request_options: {max_retries: 5})
+hubspot.account.get(request_options: {max_retries: 5})
 ```
 
 ### Timeouts
@@ -122,7 +122,7 @@ hubspot = HubspotSDK::Client.new(
 )
 
 # Or, configure per-request:
-hubspot.account.activity.list_audit_logs(request_options: {timeout: 5})
+hubspot.account.get(request_options: {timeout: 5})
 ```
 
 On timeout, `HubspotSDK::Errors::APITimeoutError` is raised.
@@ -152,8 +152,8 @@ You can send undocumented parameters to any endpoint, and read undocumented resp
 Note: the `extra_` parameters of the same name overrides the documented parameters.
 
 ```ruby
-page =
-  hubspot.account.activity.list_audit_logs(
+portal_information_response =
+  hubspot.account.get(
     request_options: {
       extra_query: {my_query_parameter: value},
       extra_body: {my_body_parameter: value},
@@ -161,7 +161,7 @@ page =
     }
   )
 
-puts(page[:my_undocumented_property])
+puts(portal_information_response[:my_undocumented_property])
 ```
 
 #### Undocumented request params
@@ -199,18 +199,18 @@ This library provides comprehensive [RBI](https://sorbet.org/docs/rbi) definitio
 You can provide typesafe request parameters like so:
 
 ```ruby
-hubspot.account.activity.list_audit_logs
+hubspot.account.get
 ```
 
 Or, equivalently:
 
 ```ruby
 # Hashes work, but are not typesafe:
-hubspot.account.activity.list_audit_logs
+hubspot.account.get
 
 # You can also splat a full Params class:
-params = HubspotSDK::Account::ActivityListAuditLogsParams.new
-hubspot.account.activity.list_audit_logs(**params)
+params = HubspotSDK::Account::AccountGetParams.new
+hubspot.account.get(**params)
 ```
 
 ### Enums
@@ -218,23 +218,25 @@ hubspot.account.activity.list_audit_logs(**params)
 Since this library does not depend on `sorbet-runtime`, it cannot provide [`T::Enum`](https://sorbet.org/docs/tenum) instances. Instead, we provide "tagged symbols" instead, which is always a primitive at runtime:
 
 ```ruby
-# :CACHED
-puts(HubspotSDK::Account::APIUsage::FetchStatus::CACHED)
+# :POST_ACTION_EXECUTION
+puts(HubspotSDK::Automation::ActionDeleteParams::FunctionType::POST_ACTION_EXECUTION)
 
-# Revealed type: `T.all(HubspotSDK::Account::APIUsage::FetchStatus, Symbol)`
-T.reveal_type(HubspotSDK::Account::APIUsage::FetchStatus::CACHED)
+# Revealed type: `T.all(HubspotSDK::Automation::ActionDeleteParams::FunctionType, Symbol)`
+T.reveal_type(HubspotSDK::Automation::ActionDeleteParams::FunctionType::POST_ACTION_EXECUTION)
 ```
 
 Enum parameters have a "relaxed" type, so you can either pass in enum constants or their literal value:
 
 ```ruby
-HubspotSDK::Account::APIUsage.new(
-  fetch_status: HubspotSDK::Account::APIUsage::FetchStatus::CACHED,
+# Using the enum constants preserves the tagged type information:
+hubspot.automation.actions.delete(
+  function_type: HubspotSDK::Automation::ActionDeleteParams::FunctionType::POST_ACTION_EXECUTION,
   # …
 )
 
-HubspotSDK::Account::APIUsage.new(
-  fetch_status: :CACHED,
+# Literal values are also permissible:
+hubspot.automation.actions.delete(
+  function_type: :POST_ACTION_EXECUTION,
   # …
 )
 ```

@@ -1,0 +1,69 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Blogs
+        type size =
+          { units: HubspotSDK::Models::Cms::Blogs::Size::units, value: Float }
+
+        class Size < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor units: HubspotSDK::Models::Cms::Blogs::Size::units
+
+          attr_accessor value: Float
+
+          def initialize: (
+            units: HubspotSDK::Models::Cms::Blogs::Size::units,
+            value: Float
+          ) -> void
+
+          def to_hash: -> {
+            units: HubspotSDK::Models::Cms::Blogs::Size::units,
+            value: Float
+          }
+
+          type units =
+            :%
+            | :ch
+            | :cm
+            | :em
+            | :ex
+            | :in
+            | :lh
+            | :mm
+            | :pc
+            | :pt
+            | :px
+            | :Q
+            | :rem
+            | :vh
+            | :vmax
+            | :vmin
+            | :vw
+
+          module Units
+            extend HubspotSDK::Internal::Type::Enum
+
+            Unknown0: :%
+            CH: :ch
+            CM: :cm
+            EM: :em
+            EX: :ex
+            IN: :in
+            LH: :lh
+            MM: :mm
+            PC: :pc
+            PT: :pt
+            PX: :px
+            Q: :Q
+            REM: :rem
+            VH: :vh
+            VMAX: :vmax
+            VMIN: :vmin
+            VW: :vw
+
+            def self?.values: -> ::Array[HubspotSDK::Models::Cms::Blogs::Size::units]
+          end
+        end
+      end
+    end
+  end
+end

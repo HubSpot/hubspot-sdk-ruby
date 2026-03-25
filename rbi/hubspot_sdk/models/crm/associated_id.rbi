@@ -13,7 +13,7 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :id
 
-        # The type of association.
+        # The type of associations.
         sig { returns(String) }
         attr_accessor :type
 
@@ -22,7 +22,7 @@ module HubspotSDK
         def self.new(
           # The ID for the association type.
           id:,
-          # The type of association.
+          # The type of associations.
           type:
         )
         end

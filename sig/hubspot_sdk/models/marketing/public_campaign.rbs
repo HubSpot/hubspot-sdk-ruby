@@ -1,0 +1,42 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type public_campaign =
+        {
+          id: String,
+          business_units: ::Array[HubspotSDK::Marketing::PublicBusinessUnit],
+          created_at: Time,
+          properties: ::Hash[Symbol, String],
+          updated_at: Time
+        }
+
+      class PublicCampaign < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor business_units: ::Array[HubspotSDK::Marketing::PublicBusinessUnit]
+
+        attr_accessor created_at: Time
+
+        attr_accessor properties: ::Hash[Symbol, String]
+
+        attr_accessor updated_at: Time
+
+        def initialize: (
+          id: String,
+          business_units: ::Array[HubspotSDK::Marketing::PublicBusinessUnit],
+          created_at: Time,
+          properties: ::Hash[Symbol, String],
+          updated_at: Time
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          business_units: ::Array[HubspotSDK::Marketing::PublicBusinessUnit],
+          created_at: Time,
+          properties: ::Hash[Symbol, String],
+          updated_at: Time
+        }
+      end
+    end
+  end
+end

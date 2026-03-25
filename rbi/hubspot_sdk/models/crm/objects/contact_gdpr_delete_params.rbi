@@ -4,7 +4,7 @@ module HubspotSDK
   module Models
     module Crm
       module Objects
-        class ContactGdprDeleteParams < HubspotSDK::Models::Crm::PublicGdprDeleteInput
+        class ContactGdprDeleteParams < HubspotSDK::Models::Crm::Objects::PublicGdprDeleteInput
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

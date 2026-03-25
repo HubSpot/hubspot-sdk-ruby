@@ -1,0 +1,9 @@
+module HubspotSDK
+  module Resources
+    class Events
+      attr_reader send_: HubspotSDK::Resources::Events::Send
+
+      def initialize: (client: HubspotSDK::Client) -> void
+    end
+  end
+end

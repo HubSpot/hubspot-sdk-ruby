@@ -1,0 +1,62 @@
+module HubspotSDK
+  module Models
+    module Events
+      type external_behavioral_event_type_definition_egg =
+        {
+          include_default_properties: bool,
+          label: String,
+          property_definitions: ::Array[HubspotSDK::Events::ExternalBehavioralEventPropertyCreate],
+          custom_matching_id: HubspotSDK::Events::ExternalObjectResolutionMappingRequest,
+          description: String,
+          name: String,
+          primary_object: String
+        }
+
+      class ExternalBehavioralEventTypeDefinitionEgg < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor include_default_properties: bool
+
+        attr_accessor label: String
+
+        attr_accessor property_definitions: ::Array[HubspotSDK::Events::ExternalBehavioralEventPropertyCreate]
+
+        attr_reader custom_matching_id: HubspotSDK::Events::ExternalObjectResolutionMappingRequest?
+
+        def custom_matching_id=: (
+          HubspotSDK::Events::ExternalObjectResolutionMappingRequest
+        ) -> HubspotSDK::Events::ExternalObjectResolutionMappingRequest
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader primary_object: String?
+
+        def primary_object=: (String) -> String
+
+        def initialize: (
+          include_default_properties: bool,
+          label: String,
+          property_definitions: ::Array[HubspotSDK::Events::ExternalBehavioralEventPropertyCreate],
+          ?custom_matching_id: HubspotSDK::Events::ExternalObjectResolutionMappingRequest,
+          ?description: String,
+          ?name: String,
+          ?primary_object: String
+        ) -> void
+
+        def to_hash: -> {
+          include_default_properties: bool,
+          label: String,
+          property_definitions: ::Array[HubspotSDK::Events::ExternalBehavioralEventPropertyCreate],
+          custom_matching_id: HubspotSDK::Events::ExternalObjectResolutionMappingRequest,
+          description: String,
+          name: String,
+          primary_object: String
+        }
+      end
+    end
+  end
+end

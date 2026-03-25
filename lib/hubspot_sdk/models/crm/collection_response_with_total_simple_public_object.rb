@@ -17,8 +17,8 @@ module HubspotSDK
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::Crm::Paging, nil]
-        optional :paging, -> { HubspotSDK::Crm::Paging }
+        #   @return [HubspotSDK::Models::Paging, nil]
+        optional :paging, -> { HubspotSDK::Paging }
 
         # @!method initialize(results:, total:, paging: nil)
         #   Represents a list of simple objects returned from an API request, along with the
@@ -28,7 +28,7 @@ module HubspotSDK
         #
         #   @param total [Integer] The number of available results
         #
-        #   @param paging [HubspotSDK::Models::Crm::Paging]
+        #   @param paging [HubspotSDK::Models::Paging]
       end
     end
   end

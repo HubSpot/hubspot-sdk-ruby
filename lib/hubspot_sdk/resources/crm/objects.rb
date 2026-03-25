@@ -10,9 +10,6 @@ module HubspotSDK
         # @return [HubspotSDK::Resources::Crm::Objects::Custom]
         attr_reader :custom
 
-        # @return [HubspotSDK::Resources::Crm::Objects::Tasks]
-        attr_reader :tasks
-
         # @api private
         #
         # @param client [HubspotSDK::Client]
@@ -20,7 +17,6 @@ module HubspotSDK
           @client = client
           @contacts = HubspotSDK::Resources::Crm::Objects::Contacts.new(client: client)
           @custom = HubspotSDK::Resources::Crm::Objects::Custom.new(client: client)
-          @tasks = HubspotSDK::Resources::Crm::Objects::Tasks.new(client: client)
         end
       end
     end

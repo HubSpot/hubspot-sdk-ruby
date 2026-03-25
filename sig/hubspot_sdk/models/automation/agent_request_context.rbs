@@ -1,0 +1,49 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type agent_request_context =
+        {
+          agent_id: Integer,
+          chirp_ai_context_object: HubspotSDK::Automation::ChirpAIContextObject,
+          source: HubspotSDK::Models::Automation::AgentRequestContext::source,
+          trajectory_id: String
+        }
+
+      class AgentRequestContext < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor agent_id: Integer
+
+        attr_accessor chirp_ai_context_object: HubspotSDK::Automation::ChirpAIContextObject
+
+        attr_accessor source: HubspotSDK::Models::Automation::AgentRequestContext::source
+
+        attr_reader trajectory_id: String?
+
+        def trajectory_id=: (String) -> String
+
+        def initialize: (
+          agent_id: Integer,
+          chirp_ai_context_object: HubspotSDK::Automation::ChirpAIContextObject,
+          source: HubspotSDK::Models::Automation::AgentRequestContext::source,
+          ?trajectory_id: String
+        ) -> void
+
+        def to_hash: -> {
+          agent_id: Integer,
+          chirp_ai_context_object: HubspotSDK::Automation::ChirpAIContextObject,
+          source: HubspotSDK::Models::Automation::AgentRequestContext::source,
+          trajectory_id: String
+        }
+
+        type source = :AGENTS
+
+        module Source
+          extend HubspotSDK::Internal::Type::Enum
+
+          AGENTS: :AGENTS
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::AgentRequestContext::source]
+        end
+      end
+    end
+  end
+end

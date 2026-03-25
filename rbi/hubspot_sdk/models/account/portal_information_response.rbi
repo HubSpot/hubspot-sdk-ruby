@@ -12,9 +12,11 @@ module HubspotSDK
             )
           end
 
+        # The type of account, such as APP_DEVELOPER, DEVELOPER_TEST, SANDBOX, or
+        # STANDARD.
         sig do
           returns(
-            HubspotSDK::Account::PortalInformationResponse::AccountType::OrSymbol
+            HubspotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol
           )
         end
         attr_accessor :account_type
@@ -22,24 +24,31 @@ module HubspotSDK
         sig { returns(T::Array[String]) }
         attr_accessor :additional_currencies
 
+        # The primary currency used by the company.
         sig { returns(String) }
         attr_accessor :company_currency
 
+        # The location where the account's data is hosted.
         sig { returns(String) }
         attr_accessor :data_hosting_location
 
+        # The unique identifier for the HubSpot account.
         sig { returns(Integer) }
         attr_accessor :portal_id
 
+        # The time zone in which the account operates.
         sig { returns(String) }
         attr_accessor :time_zone
 
+        # The domain used for accessing the HubSpot user interface.
         sig { returns(String) }
         attr_accessor :ui_domain
 
+        # The time zone offset from UTC in hours and minutes.
         sig { returns(String) }
         attr_accessor :utc_offset
 
+        # The time zone offset from UTC in milliseconds.
         sig { returns(Integer) }
         attr_accessor :utc_offset_milliseconds
 
@@ -58,14 +67,23 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # The type of account, such as APP_DEVELOPER, DEVELOPER_TEST, SANDBOX, or
+          # STANDARD.
           account_type:,
           additional_currencies:,
+          # The primary currency used by the company.
           company_currency:,
+          # The location where the account's data is hosted.
           data_hosting_location:,
+          # The unique identifier for the HubSpot account.
           portal_id:,
+          # The time zone in which the account operates.
           time_zone:,
+          # The domain used for accessing the HubSpot user interface.
           ui_domain:,
+          # The time zone offset from UTC in hours and minutes.
           utc_offset:,
+          # The time zone offset from UTC in milliseconds.
           utc_offset_milliseconds:
         )
         end
@@ -74,7 +92,7 @@ module HubspotSDK
           override.returns(
             {
               account_type:
-                HubspotSDK::Account::PortalInformationResponse::AccountType::OrSymbol,
+                HubspotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol,
               additional_currencies: T::Array[String],
               company_currency: String,
               data_hosting_location: String,
@@ -89,6 +107,8 @@ module HubspotSDK
         def to_hash
         end
 
+        # The type of account, such as APP_DEVELOPER, DEVELOPER_TEST, SANDBOX, or
+        # STANDARD.
         module AccountType
           extend HubspotSDK::Internal::Type::Enum
 

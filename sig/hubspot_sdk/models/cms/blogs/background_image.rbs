@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Blogs
+        type background_image =
+          {
+            background_position: String,
+            background_size: String,
+            image_url: String
+          }
+
+        class BackgroundImage < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor background_position: String
+
+          attr_accessor background_size: String
+
+          attr_accessor image_url: String
+
+          def initialize: (
+            background_position: String,
+            background_size: String,
+            image_url: String
+          ) -> void
+
+          def to_hash: -> {
+            background_position: String,
+            background_size: String,
+            image_url: String
+          }
+        end
+      end
+    end
+  end
+end

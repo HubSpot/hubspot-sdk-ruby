@@ -1,0 +1,46 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type double_field_schema =
+        {
+          type: HubspotSDK::Models::Automation::DoubleFieldSchema::type_,
+          maximum: Float,
+          minimum: Float
+        }
+
+      class DoubleFieldSchema < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor type: HubspotSDK::Models::Automation::DoubleFieldSchema::type_
+
+        attr_reader maximum: Float?
+
+        def maximum=: (Float) -> Float
+
+        attr_reader minimum: Float?
+
+        def minimum=: (Float) -> Float
+
+        def initialize: (
+          type: HubspotSDK::Models::Automation::DoubleFieldSchema::type_,
+          ?maximum: Float,
+          ?minimum: Float
+        ) -> void
+
+        def to_hash: -> {
+          type: HubspotSDK::Models::Automation::DoubleFieldSchema::type_,
+          maximum: Float,
+          minimum: Float
+        }
+
+        type type_ = :DOUBLE
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          DOUBLE: :DOUBLE
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::DoubleFieldSchema::type_]
+        end
+      end
+    end
+  end
+end

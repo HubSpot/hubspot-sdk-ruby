@@ -1,0 +1,21 @@
+module HubspotSDK
+  module Models
+    module DataStudio
+      type parameterized_header =
+        { parameters: ::Hash[Symbol, String], value: String }
+
+      class ParameterizedHeader < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor parameters: ::Hash[Symbol, String]
+
+        attr_accessor value: String
+
+        def initialize: (
+          parameters: ::Hash[Symbol, String],
+          value: String
+        ) -> void
+
+        def to_hash: -> { parameters: ::Hash[Symbol, String], value: String }
+      end
+    end
+  end
+end

@@ -1,0 +1,46 @@
+module HubspotSDK
+  module Models
+    module Automation
+      type integer_field_schema =
+        {
+          type: HubspotSDK::Models::Automation::IntegerFieldSchema::type_,
+          maximum: Integer,
+          minimum: Integer
+        }
+
+      class IntegerFieldSchema < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor type: HubspotSDK::Models::Automation::IntegerFieldSchema::type_
+
+        attr_reader maximum: Integer?
+
+        def maximum=: (Integer) -> Integer
+
+        attr_reader minimum: Integer?
+
+        def minimum=: (Integer) -> Integer
+
+        def initialize: (
+          type: HubspotSDK::Models::Automation::IntegerFieldSchema::type_,
+          ?maximum: Integer,
+          ?minimum: Integer
+        ) -> void
+
+        def to_hash: -> {
+          type: HubspotSDK::Models::Automation::IntegerFieldSchema::type_,
+          maximum: Integer,
+          minimum: Integer
+        }
+
+        type type_ = :INTEGER
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          INTEGER: :INTEGER
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Automation::IntegerFieldSchema::type_]
+        end
+      end
+    end
+  end
+end

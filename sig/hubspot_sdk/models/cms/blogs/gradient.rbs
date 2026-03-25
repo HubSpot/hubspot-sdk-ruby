@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Blogs
+        type gradient =
+          {
+            angle: HubspotSDK::Cms::Blogs::Angle,
+            colors: ::Array[HubspotSDK::Cms::Blogs::ColorStop],
+            side_or_corner: HubspotSDK::Cms::Blogs::SideOrCorner
+          }
+
+        class Gradient < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor angle: HubspotSDK::Cms::Blogs::Angle
+
+          attr_accessor colors: ::Array[HubspotSDK::Cms::Blogs::ColorStop]
+
+          attr_accessor side_or_corner: HubspotSDK::Cms::Blogs::SideOrCorner
+
+          def initialize: (
+            angle: HubspotSDK::Cms::Blogs::Angle,
+            colors: ::Array[HubspotSDK::Cms::Blogs::ColorStop],
+            side_or_corner: HubspotSDK::Cms::Blogs::SideOrCorner
+          ) -> void
+
+          def to_hash: -> {
+            angle: HubspotSDK::Cms::Blogs::Angle,
+            colors: ::Array[HubspotSDK::Cms::Blogs::ColorStop],
+            side_or_corner: HubspotSDK::Cms::Blogs::SideOrCorner
+          }
+        end
+      end
+    end
+  end
+end

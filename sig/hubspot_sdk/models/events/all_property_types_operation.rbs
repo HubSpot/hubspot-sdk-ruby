@@ -1,0 +1,118 @@
+module HubspotSDK
+  module Models
+    module Events
+      type all_property_types_operation =
+        {
+          coalescing_refine_by: HubspotSDK::Models::Events::AllPropertyTypesOperation::coalescing_refine_by,
+          include_objects_with_no_value_set: bool,
+          operation_type: String,
+          operator: HubspotSDK::Models::Events::AllPropertyTypesOperation::operator,
+          operator_name: String,
+          property_type: HubspotSDK::Models::Events::AllPropertyTypesOperation::property_type,
+          default_value: String,
+          pruning_refine_by: HubspotSDK::Models::Events::AllPropertyTypesOperation::pruning_refine_by,
+          render_spec: String
+        }
+
+      class AllPropertyTypesOperation < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor coalescing_refine_by: HubspotSDK::Models::Events::AllPropertyTypesOperation::coalescing_refine_by
+
+        attr_accessor include_objects_with_no_value_set: bool
+
+        attr_accessor operation_type: String
+
+        attr_accessor operator: HubspotSDK::Models::Events::AllPropertyTypesOperation::operator
+
+        attr_accessor operator_name: String
+
+        attr_accessor property_type: HubspotSDK::Models::Events::AllPropertyTypesOperation::property_type
+
+        attr_reader default_value: String?
+
+        def default_value=: (String) -> String
+
+        attr_reader pruning_refine_by: HubspotSDK::Models::Events::AllPropertyTypesOperation::pruning_refine_by?
+
+        def pruning_refine_by=: (
+          HubspotSDK::Models::Events::AllPropertyTypesOperation::pruning_refine_by
+        ) -> HubspotSDK::Models::Events::AllPropertyTypesOperation::pruning_refine_by
+
+        attr_reader render_spec: String?
+
+        def render_spec=: (String) -> String
+
+        def initialize: (
+          coalescing_refine_by: HubspotSDK::Models::Events::AllPropertyTypesOperation::coalescing_refine_by,
+          include_objects_with_no_value_set: bool,
+          operation_type: String,
+          operator: HubspotSDK::Models::Events::AllPropertyTypesOperation::operator,
+          operator_name: String,
+          property_type: HubspotSDK::Models::Events::AllPropertyTypesOperation::property_type,
+          ?default_value: String,
+          ?pruning_refine_by: HubspotSDK::Models::Events::AllPropertyTypesOperation::pruning_refine_by,
+          ?render_spec: String
+        ) -> void
+
+        def to_hash: -> {
+          coalescing_refine_by: HubspotSDK::Models::Events::AllPropertyTypesOperation::coalescing_refine_by,
+          include_objects_with_no_value_set: bool,
+          operation_type: String,
+          operator: HubspotSDK::Models::Events::AllPropertyTypesOperation::operator,
+          operator_name: String,
+          property_type: HubspotSDK::Models::Events::AllPropertyTypesOperation::property_type,
+          default_value: String,
+          pruning_refine_by: HubspotSDK::Models::Events::AllPropertyTypesOperation::pruning_refine_by,
+          render_spec: String
+        }
+
+        type coalescing_refine_by =
+          HubspotSDK::Events::NumOccurrencesRefineBy
+          | HubspotSDK::Events::SetOccurrencesRefineBy
+
+        module CoalescingRefineBy
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Events::AllPropertyTypesOperation::coalescing_refine_by]
+        end
+
+        type operator = :IS_BLANK | :IS_KNOWN | :IS_NOT_BLANK | :IS_UNKNOWN
+
+        module Operator
+          extend HubspotSDK::Internal::Type::Enum
+
+          IS_BLANK: :IS_BLANK
+          IS_KNOWN: :IS_KNOWN
+          IS_NOT_BLANK: :IS_NOT_BLANK
+          IS_UNKNOWN: :IS_UNKNOWN
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::AllPropertyTypesOperation::operator]
+        end
+
+        type property_type = :alltypes
+
+        module PropertyType
+          extend HubspotSDK::Internal::Type::Enum
+
+          ALLTYPES: :alltypes
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::AllPropertyTypesOperation::property_type]
+        end
+
+        type pruning_refine_by =
+          HubspotSDK::Events::RelativeComparativeTimestampRefineBy
+          | HubspotSDK::Events::RelativeRangedTimestampRefineBy
+          | HubspotSDK::Events::AbsoluteComparativeTimestampRefineBy
+          | HubspotSDK::Events::AbsoluteRangedTimestampRefineBy
+          | HubspotSDK::Events::AllHistoryRefineBy
+          | HubspotSDK::Events::TimePointOperation
+          | HubspotSDK::Events::RangedTimeOperation
+
+        module PruningRefineBy
+          extend HubspotSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[HubspotSDK::Models::Events::AllPropertyTypesOperation::pruning_refine_by]
+        end
+      end
+    end
+  end
+end

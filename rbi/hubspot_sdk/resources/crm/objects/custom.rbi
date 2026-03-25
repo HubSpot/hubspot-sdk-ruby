@@ -5,9 +5,8 @@ module HubspotSDK
     class Crm
       class Objects
         class Custom
-          # Create multiple tasks in a single request by providing a batch of task
-          # properties and associations. This endpoint allows for efficient task creation by
-          # processing multiple tasks together.
+          # Create multiple CRM objects in a single request by specifying the object type
+          # and providing the necessary properties and associations for each object.
           sig do
             params(
               object_type: String,
@@ -18,17 +17,11 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
           end
-          def create(
-            # Object type.
-            object_type,
-            inputs:,
-            request_options: {}
-          )
+          def create(object_type, inputs:, request_options: {})
           end
 
-          # Update multiple tasks in a single request using their internal IDs or unique
-          # property values. This operation allows you to modify the properties of each task
-          # in the batch, ensuring efficient management of task data.
+          # Update a batch of CRM objects by their internal IDs or unique property values,
+          # allowing for efficient modifications of multiple records in a single request.
           sig do
             params(
               object_type: String,
@@ -37,15 +30,11 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
           end
-          def update(
-            # Object type.
-            object_type,
-            inputs:,
-            request_options: {}
-          )
+          def update(object_type, inputs:, request_options: {})
           end
 
-          # Read a page of tasks. Control what is returned via the `properties` query param.
+          # Read a page of objects. Control what is returned via the `properties` query
+          # param.
           sig do
             params(
               object_type: String,
@@ -63,7 +52,6 @@ module HubspotSDK
             )
           end
           def list(
-            # Object type.
             object_type,
             # The paging cursor token of the last successfully read resource will be returned
             # as the `paging.next.after` JSON property of a paged response containing more
@@ -83,14 +71,14 @@ module HubspotSDK
             # A comma separated list of the properties to be returned along with their history
             # of previous values. If any of the specified properties are not present on the
             # requested object(s), they will be ignored. Usage of this parameter will reduce
-            # the maximum number of tasks that can be read by a single request.
+            # the maximum number of objects that can be read by a single request.
             properties_with_history: nil,
             request_options: {}
           )
           end
 
-          # Archive a batch of tasks by their IDs, moving them to the recycling bin. This
-          # operation requires a list of task IDs to be provided in the request body.
+          # Archive a batch of objects by their unique IDs. This operation moves the
+          # specified objects to the recycling bin, effectively marking them as archived.
           sig do
             params(
               object_type: String,
@@ -98,12 +86,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(
-            # Object type.
-            object_type,
-            inputs:,
-            request_options: {}
-          )
+          def delete(object_type, inputs:, request_options: {})
           end
 
           # Retrieve records by record ID or include the `idProperty` parameter to retrieve
@@ -120,7 +103,7 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
           end
           def get(
-            # Path param: Object type.
+            # Path param
             object_type,
             # Body param
             inputs:,
@@ -138,6 +121,8 @@ module HubspotSDK
           )
           end
 
+          # Merge two CRM objects of the same type by specifying one as the primary object
+          # and the other as the object to be merged into it.
           sig do
             params(
               object_type: String,
@@ -147,7 +132,6 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
           def merge(
-            # Object type.
             object_type,
             # The object ID of the record that the merge will not set as the current value
             # after the merge.
@@ -159,9 +143,9 @@ module HubspotSDK
           )
           end
 
-          # Execute a search for tasks based on the provided criteria, including filters,
-          # properties, and sorting options. This allows for retrieving tasks that match
-          # specific conditions or property values.
+          # Execute a search query to find CRM objects of a given type, using specified
+          # filters and properties. The search can be customized with filters, sorting, and
+          # pagination options.
           sig do
             params(
               object_type: String,
@@ -177,7 +161,6 @@ module HubspotSDK
             )
           end
           def search(
-            # Object type.
             object_type,
             # A paging cursor token for retrieving subsequent pages.
             after:,
@@ -208,12 +191,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject)
           end
-          def upsert(
-            # Object type.
-            object_type,
-            inputs:,
-            request_options: {}
-          )
+          def upsert(object_type, inputs:, request_options: {})
           end
 
           # @api private

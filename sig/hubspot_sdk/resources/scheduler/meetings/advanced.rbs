@@ -1,0 +1,35 @@
+module HubspotSDK
+  module Resources
+    class Scheduler
+      class Meetings
+        class Advanced
+          def create: (
+            organizer_user_id: String,
+            associations: ::Array[HubspotSDK::Scheduler::ExternalAssociationCreateRequest],
+            email_reminder_schedule: HubspotSDK::Scheduler::ExternalEmailReminderSchedule,
+            properties: HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties,
+            timezone: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Scheduler::ExternalCalenderMeetingEventResponse
+
+          def book: (
+            duration: Integer,
+            email: String,
+            first_name: String,
+            form_fields: ::Array[HubspotSDK::Scheduler::ExternalBookingFormField],
+            last_name: String,
+            legal_consent_responses: ::Array[HubspotSDK::Scheduler::ExternalLegalConsentResponse],
+            likely_available_user_ids: ::Array[String],
+            slug: String,
+            start_time: Time,
+            ?locale: String,
+            ?timezone: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Scheduler::ExternalMeetingBookingResponse
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

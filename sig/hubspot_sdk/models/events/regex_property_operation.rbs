@@ -1,0 +1,87 @@
+module HubspotSDK
+  module Models
+    module Events
+      type regex_property_operation =
+        {
+          case_sensitive: bool,
+          include_objects_with_no_value_set: bool,
+          operation_type: String,
+          operator: HubspotSDK::Models::Events::RegexPropertyOperation::operator,
+          operator_name: String,
+          pattern: String,
+          property_type: HubspotSDK::Models::Events::RegexPropertyOperation::property_type,
+          default_value: String,
+          render_spec: String
+        }
+
+      class RegexPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor case_sensitive: bool
+
+        attr_accessor include_objects_with_no_value_set: bool
+
+        attr_accessor operation_type: String
+
+        attr_accessor operator: HubspotSDK::Models::Events::RegexPropertyOperation::operator
+
+        attr_accessor operator_name: String
+
+        attr_accessor pattern: String
+
+        attr_accessor property_type: HubspotSDK::Models::Events::RegexPropertyOperation::property_type
+
+        attr_reader default_value: String?
+
+        def default_value=: (String) -> String
+
+        attr_reader render_spec: String?
+
+        def render_spec=: (String) -> String
+
+        def initialize: (
+          case_sensitive: bool,
+          include_objects_with_no_value_set: bool,
+          operation_type: String,
+          operator: HubspotSDK::Models::Events::RegexPropertyOperation::operator,
+          operator_name: String,
+          pattern: String,
+          property_type: HubspotSDK::Models::Events::RegexPropertyOperation::property_type,
+          ?default_value: String,
+          ?render_spec: String
+        ) -> void
+
+        def to_hash: -> {
+          case_sensitive: bool,
+          include_objects_with_no_value_set: bool,
+          operation_type: String,
+          operator: HubspotSDK::Models::Events::RegexPropertyOperation::operator,
+          operator_name: String,
+          pattern: String,
+          property_type: HubspotSDK::Models::Events::RegexPropertyOperation::property_type,
+          default_value: String,
+          render_spec: String
+        }
+
+        type operator = :DOES_NOT_MATCH_REGEX | :MATCHES_REGEX
+
+        module Operator
+          extend HubspotSDK::Internal::Type::Enum
+
+          DOES_NOT_MATCH_REGEX: :DOES_NOT_MATCH_REGEX
+          MATCHES_REGEX: :MATCHES_REGEX
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::RegexPropertyOperation::operator]
+        end
+
+        type property_type = :regex
+
+        module PropertyType
+          extend HubspotSDK::Internal::Type::Enum
+
+          REGEX: :regex
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::RegexPropertyOperation::property_type]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,104 @@
+module HubspotSDK
+  module Models
+    module Events
+      type enumeration_property_operation =
+        {
+          include_objects_with_no_value_set: bool,
+          operation_type: String,
+          operator: HubspotSDK::Models::Events::EnumerationPropertyOperation::operator,
+          operator_name: String,
+          property_type: HubspotSDK::Models::Events::EnumerationPropertyOperation::property_type,
+          values: ::Array[String],
+          default_value: String,
+          render_spec: String
+        }
+
+      class EnumerationPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor include_objects_with_no_value_set: bool
+
+        attr_accessor operation_type: String
+
+        attr_accessor operator: HubspotSDK::Models::Events::EnumerationPropertyOperation::operator
+
+        attr_accessor operator_name: String
+
+        attr_accessor property_type: HubspotSDK::Models::Events::EnumerationPropertyOperation::property_type
+
+        attr_accessor values: ::Array[String]
+
+        attr_reader default_value: String?
+
+        def default_value=: (String) -> String
+
+        attr_reader render_spec: String?
+
+        def render_spec=: (String) -> String
+
+        def initialize: (
+          include_objects_with_no_value_set: bool,
+          operation_type: String,
+          operator: HubspotSDK::Models::Events::EnumerationPropertyOperation::operator,
+          operator_name: String,
+          property_type: HubspotSDK::Models::Events::EnumerationPropertyOperation::property_type,
+          values: ::Array[String],
+          ?default_value: String,
+          ?render_spec: String
+        ) -> void
+
+        def to_hash: -> {
+          include_objects_with_no_value_set: bool,
+          operation_type: String,
+          operator: HubspotSDK::Models::Events::EnumerationPropertyOperation::operator,
+          operator_name: String,
+          property_type: HubspotSDK::Models::Events::EnumerationPropertyOperation::property_type,
+          values: ::Array[String],
+          default_value: String,
+          render_spec: String
+        }
+
+        type operator =
+          :CONTAINS_ALL
+          | :DOES_NOT_CONTAIN_ALL
+          | :HAS_EVER_BEEN_ANY_OF
+          | :HAS_EVER_BEEN_EXACTLY
+          | :HAS_EVER_CONTAINED_ALL
+          | :HAS_NEVER_BEEN_ANY_OF
+          | :HAS_NEVER_BEEN_EXACTLY
+          | :HAS_NEVER_CONTAINED_ALL
+          | :IS_ANY_OF
+          | :IS_EXACTLY
+          | :IS_NONE_OF
+          | :IS_NOT_EXACTLY
+
+        module Operator
+          extend HubspotSDK::Internal::Type::Enum
+
+          CONTAINS_ALL: :CONTAINS_ALL
+          DOES_NOT_CONTAIN_ALL: :DOES_NOT_CONTAIN_ALL
+          HAS_EVER_BEEN_ANY_OF: :HAS_EVER_BEEN_ANY_OF
+          HAS_EVER_BEEN_EXACTLY: :HAS_EVER_BEEN_EXACTLY
+          HAS_EVER_CONTAINED_ALL: :HAS_EVER_CONTAINED_ALL
+          HAS_NEVER_BEEN_ANY_OF: :HAS_NEVER_BEEN_ANY_OF
+          HAS_NEVER_BEEN_EXACTLY: :HAS_NEVER_BEEN_EXACTLY
+          HAS_NEVER_CONTAINED_ALL: :HAS_NEVER_CONTAINED_ALL
+          IS_ANY_OF: :IS_ANY_OF
+          IS_EXACTLY: :IS_EXACTLY
+          IS_NONE_OF: :IS_NONE_OF
+          IS_NOT_EXACTLY: :IS_NOT_EXACTLY
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::EnumerationPropertyOperation::operator]
+        end
+
+        type property_type = :enumeration
+
+        module PropertyType
+          extend HubspotSDK::Internal::Type::Enum
+
+          ENUMERATION: :enumeration
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Events::EnumerationPropertyOperation::property_type]
+        end
+      end
+    end
+  end
+end

@@ -11,7 +11,7 @@ module HubspotSDK
         required :id, String
 
         # @!attribute type
-        #   The type of association.
+        #   The type of associations.
         #
         #   @return [String]
         required :type, String
@@ -21,7 +21,7 @@ module HubspotSDK
         #
         #   @param id [String] The ID for the association type.
         #
-        #   @param type [String] The type of association.
+        #   @param type [String] The type of associations.
       end
     end
   end

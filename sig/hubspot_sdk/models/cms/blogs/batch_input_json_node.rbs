@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Blogs
+        type batch_input_json_node = { inputs: ::Array[top] }
+
+        class BatchInputJsonNode < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor inputs: ::Array[top]
+
+          def initialize: (inputs: ::Array[top]) -> void
+
+          def to_hash: -> { inputs: ::Array[top] }
+        end
+      end
+    end
+  end
+end

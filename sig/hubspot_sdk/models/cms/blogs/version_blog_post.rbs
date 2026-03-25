@@ -1,0 +1,39 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Blogs
+        type version_blog_post =
+          {
+            id: String,
+            object: HubspotSDK::Cms::Blogs::BlogPost,
+            updated_at: Time,
+            user: HubspotSDK::Cms::VersionUser
+          }
+
+        class VersionBlogPost < HubspotSDK::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_accessor object: HubspotSDK::Cms::Blogs::BlogPost
+
+          attr_accessor updated_at: Time
+
+          attr_accessor user: HubspotSDK::Cms::VersionUser
+
+          def initialize: (
+            id: String,
+            object: HubspotSDK::Cms::Blogs::BlogPost,
+            updated_at: Time,
+            user: HubspotSDK::Cms::VersionUser
+          ) -> void
+
+          def to_hash: -> {
+            id: String,
+            object: HubspotSDK::Cms::Blogs::BlogPost,
+            updated_at: Time,
+            user: HubspotSDK::Cms::VersionUser
+          }
+        end
+      end
+    end
+  end
+end

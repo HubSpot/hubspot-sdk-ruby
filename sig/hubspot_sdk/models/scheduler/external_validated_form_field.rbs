@@ -1,0 +1,58 @@
+module HubspotSDK
+  module Models
+    module Scheduler
+      type external_validated_form_field =
+        {
+          is_custom: bool,
+          label: String,
+          name: String,
+          value: String,
+          field_type: String,
+          translated_label: String,
+          value_label: String
+        }
+
+      class ExternalValidatedFormField < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor is_custom: bool
+
+        attr_accessor label: String
+
+        attr_accessor name: String
+
+        attr_accessor value: String
+
+        attr_reader field_type: String?
+
+        def field_type=: (String) -> String
+
+        attr_reader translated_label: String?
+
+        def translated_label=: (String) -> String
+
+        attr_reader value_label: String?
+
+        def value_label=: (String) -> String
+
+        def initialize: (
+          is_custom: bool,
+          label: String,
+          name: String,
+          value: String,
+          ?field_type: String,
+          ?translated_label: String,
+          ?value_label: String
+        ) -> void
+
+        def to_hash: -> {
+          is_custom: bool,
+          label: String,
+          name: String,
+          value: String,
+          field_type: String,
+          translated_label: String,
+          value_label: String
+        }
+      end
+    end
+  end
+end

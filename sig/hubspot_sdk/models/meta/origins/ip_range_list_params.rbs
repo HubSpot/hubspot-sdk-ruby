@@ -1,0 +1,67 @@
+module HubspotSDK
+  module Models
+    module Meta
+      module Origins
+        type ip_range_list_params =
+          {
+            direction: ::Array[HubspotSDK::Models::Meta::Origins::IPRangeListParams::direction],
+            service: ::Array[HubspotSDK::Models::Meta::Origins::IPRangeListParams::service]
+          }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class IPRangeListParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_reader direction: ::Array[HubspotSDK::Models::Meta::Origins::IPRangeListParams::direction]?
+
+          def direction=: (
+            ::Array[HubspotSDK::Models::Meta::Origins::IPRangeListParams::direction]
+          ) -> ::Array[HubspotSDK::Models::Meta::Origins::IPRangeListParams::direction]
+
+          attr_reader service: ::Array[HubspotSDK::Models::Meta::Origins::IPRangeListParams::service]?
+
+          def service=: (
+            ::Array[HubspotSDK::Models::Meta::Origins::IPRangeListParams::service]
+          ) -> ::Array[HubspotSDK::Models::Meta::Origins::IPRangeListParams::service]
+
+          def initialize: (
+            ?direction: ::Array[HubspotSDK::Models::Meta::Origins::IPRangeListParams::direction],
+            ?service: ::Array[HubspotSDK::Models::Meta::Origins::IPRangeListParams::service],
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            direction: ::Array[HubspotSDK::Models::Meta::Origins::IPRangeListParams::direction],
+            service: ::Array[HubspotSDK::Models::Meta::Origins::IPRangeListParams::service],
+            request_options: HubspotSDK::RequestOptions
+          }
+
+          type direction = :INGRESS | :EGRESS
+
+          module Direction
+            extend HubspotSDK::Internal::Type::Enum
+
+            INGRESS: :INGRESS
+            EGRESS: :EGRESS
+
+            def self?.values: -> ::Array[HubspotSDK::Models::Meta::Origins::IPRangeListParams::direction]
+          end
+
+          type service = :EMAIL | :API | :DNS | :WEB_SCRAPING
+
+          module Service
+            extend HubspotSDK::Internal::Type::Enum
+
+            EMAIL: :EMAIL
+            API: :API
+            DNS: :DNS
+            WEB_SCRAPING: :WEB_SCRAPING
+
+            def self?.values: -> ::Array[HubspotSDK::Models::Meta::Origins::IPRangeListParams::service]
+          end
+        end
+      end
+    end
+  end
+end

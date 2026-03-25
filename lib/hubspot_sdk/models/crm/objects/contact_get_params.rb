@@ -33,7 +33,7 @@ module HubspotSDK
           optional :associations, HubspotSDK::Internal::Type::ArrayOf[String]
 
           # @!attribute id_property
-          #   The name of a property whose values are unique for this object
+          #   The name of a property whose values are unique for this object type
           #
           #   @return [String, nil]
           optional :id_property, String
@@ -66,7 +66,7 @@ module HubspotSDK
           #
           #   @param associations [Array<String>] A comma separated list of object types to retrieve associated IDs for. If any of
           #
-          #   @param id_property [String] The name of a property whose values are unique for this object
+          #   @param id_property [String] The name of a property whose values are unique for this object type
           #
           #   @param properties [Array<String>] A comma separated list of the properties to be returned in the response. If any
           #

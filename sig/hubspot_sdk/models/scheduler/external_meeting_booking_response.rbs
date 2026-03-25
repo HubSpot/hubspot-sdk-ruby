@@ -1,0 +1,100 @@
+module HubspotSDK
+  module Models
+    module Scheduler
+      type external_meeting_booking_response =
+        {
+          booking_timezone: String,
+          calendar_event_id: String,
+          contact_id: String,
+          duration: Integer,
+          end_: Time,
+          form_fields: ::Array[HubspotSDK::Scheduler::ExternalValidatedFormField],
+          guest_emails: ::Array[String],
+          is_offline: bool,
+          legal_consent_responses: ::Array[HubspotSDK::Scheduler::ExternalLegalConsentResponse],
+          start: Time,
+          subject: String,
+          locale: String,
+          location: String,
+          web_conference_meeting_id: String,
+          web_conference_url: String
+        }
+
+      class ExternalMeetingBookingResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor booking_timezone: String
+
+        attr_accessor calendar_event_id: String
+
+        attr_accessor contact_id: String
+
+        attr_accessor duration: Integer
+
+        attr_accessor end_: Time
+
+        attr_accessor form_fields: ::Array[HubspotSDK::Scheduler::ExternalValidatedFormField]
+
+        attr_accessor guest_emails: ::Array[String]
+
+        attr_accessor is_offline: bool
+
+        attr_accessor legal_consent_responses: ::Array[HubspotSDK::Scheduler::ExternalLegalConsentResponse]
+
+        attr_accessor start: Time
+
+        attr_accessor subject: String
+
+        attr_reader locale: String?
+
+        def locale=: (String) -> String
+
+        attr_reader location: String?
+
+        def location=: (String) -> String
+
+        attr_reader web_conference_meeting_id: String?
+
+        def web_conference_meeting_id=: (String) -> String
+
+        attr_reader web_conference_url: String?
+
+        def web_conference_url=: (String) -> String
+
+        def initialize: (
+          booking_timezone: String,
+          calendar_event_id: String,
+          contact_id: String,
+          duration: Integer,
+          end_: Time,
+          form_fields: ::Array[HubspotSDK::Scheduler::ExternalValidatedFormField],
+          guest_emails: ::Array[String],
+          is_offline: bool,
+          legal_consent_responses: ::Array[HubspotSDK::Scheduler::ExternalLegalConsentResponse],
+          start: Time,
+          subject: String,
+          ?locale: String,
+          ?location: String,
+          ?web_conference_meeting_id: String,
+          ?web_conference_url: String
+        ) -> void
+
+        def to_hash: -> {
+          booking_timezone: String,
+          calendar_event_id: String,
+          contact_id: String,
+          duration: Integer,
+          end_: Time,
+          form_fields: ::Array[HubspotSDK::Scheduler::ExternalValidatedFormField],
+          guest_emails: ::Array[String],
+          is_offline: bool,
+          legal_consent_responses: ::Array[HubspotSDK::Scheduler::ExternalLegalConsentResponse],
+          start: Time,
+          subject: String,
+          locale: String,
+          location: String,
+          web_conference_meeting_id: String,
+          web_conference_url: String
+        }
+      end
+    end
+  end
+end

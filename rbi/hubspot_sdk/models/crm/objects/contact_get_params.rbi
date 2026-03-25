@@ -37,7 +37,7 @@ module HubspotSDK
           sig { params(associations: T::Array[String]).void }
           attr_writer :associations
 
-          # The name of a property whose values are unique for this object
+          # The name of a property whose values are unique for this object type
           sig { returns(T.nilable(String)) }
           attr_reader :id_property
 
@@ -82,7 +82,7 @@ module HubspotSDK
             # A comma separated list of object types to retrieve associated IDs for. If any of
             # the specified associations do not exist, they will be ignored.
             associations: nil,
-            # The name of a property whose values are unique for this object
+            # The name of a property whose values are unique for this object type
             id_property: nil,
             # A comma separated list of the properties to be returned in the response. If any
             # of the specified properties are not present on the requested object(s), they

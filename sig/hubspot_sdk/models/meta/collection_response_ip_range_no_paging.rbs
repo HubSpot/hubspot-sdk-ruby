@@ -1,0 +1,16 @@
+module HubspotSDK
+  module Models
+    module Meta
+      type collection_response_ip_range_no_paging =
+        { results: ::Array[HubspotSDK::Meta::IPRange] }
+
+      class CollectionResponseIPRangeNoPaging < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubspotSDK::Meta::IPRange]
+
+        def initialize: (results: ::Array[HubspotSDK::Meta::IPRange]) -> void
+
+        def to_hash: -> { results: ::Array[HubspotSDK::Meta::IPRange] }
+      end
+    end
+  end
+end

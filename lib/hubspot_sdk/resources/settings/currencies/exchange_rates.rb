@@ -1,0 +1,178 @@
+# frozen_string_literal: true
+
+module HubspotSDK
+  module Resources
+    class Settings
+      class Currencies
+        class ExchangeRates
+          # @return [HubspotSDK::Resources::Settings::Currencies::ExchangeRates::Batch]
+          attr_reader :batch
+
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Settings::Currencies::ExchangeRateCreateExchangeRateParams}
+          # for more details.
+          #
+          # @overload create_exchange_rate(conversion_rate:, from_currency_code:, effective_at: nil, request_options: {})
+          #
+          # @param conversion_rate [Float] The conversion rate between the to and from currency code of this exchange rate.
+          #
+          # @param from_currency_code [Symbol, HubspotSDK::Models::Settings::ExchangeRateCreateRequest::FromCurrencyCode] This represents the three-letter currency code (such as USD for US Dollar) of th
+          #
+          # @param effective_at [Time] The date the exchange rate is in effect.
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [HubspotSDK::Models::Settings::ExchangeRate]
+          #
+          # @see HubspotSDK::Models::Settings::Currencies::ExchangeRateCreateExchangeRateParams
+          def create_exchange_rate(params)
+            parsed, options =
+              HubspotSDK::Settings::Currencies::ExchangeRateCreateExchangeRateParams.dump_request(params)
+            @client.request(
+              method: :post,
+              path: "settings/currencies/2026-03/exchange-rates",
+              body: parsed,
+              model: HubspotSDK::Settings::ExchangeRate,
+              options: options
+            )
+          end
+
+          # @overload get_exchange_rate_by_id(exchange_rate_id, request_options: {})
+          #
+          # @param exchange_rate_id [String]
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [HubspotSDK::Models::Settings::ExchangeRate]
+          #
+          # @see HubspotSDK::Models::Settings::Currencies::ExchangeRateGetExchangeRateByIDParams
+          def get_exchange_rate_by_id(exchange_rate_id, params = {})
+            @client.request(
+              method: :get,
+              path: ["settings/currencies/2026-03/exchange-rates/%1$s", exchange_rate_id],
+              model: HubspotSDK::Settings::ExchangeRate,
+              options: params[:request_options]
+            )
+          end
+
+          # @overload list_current_exchange_rates(request_options: {})
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [HubspotSDK::Models::Settings::CollectionResponseExchangeRateNoPaging]
+          #
+          # @see HubspotSDK::Models::Settings::Currencies::ExchangeRateListCurrentExchangeRatesParams
+          def list_current_exchange_rates(params = {})
+            @client.request(
+              method: :get,
+              path: "settings/currencies/2026-03/exchange-rates/current",
+              model: HubspotSDK::Settings::CollectionResponseExchangeRateNoPaging,
+              options: params[:request_options]
+            )
+          end
+
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams}
+          # for more details.
+          #
+          # @overload list_exchange_rates(after: nil, from_currency_code: nil, limit: nil, to_currency_code: nil, request_options: {})
+          #
+          # @param after [String] The paging cursor token of the last successfully read resource will be returned
+          #
+          # @param from_currency_code [Symbol, HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::FromCurrencyCode]
+          #
+          # @param limit [Integer] The maximum number of results to display per page.
+          #
+          # @param to_currency_code [Symbol, HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::ToCurrencyCode]
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Settings::ExchangeRate>]
+          #
+          # @see HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams
+          def list_exchange_rates(params = {})
+            parsed, options =
+              HubspotSDK::Settings::Currencies::ExchangeRateListExchangeRatesParams.dump_request(params)
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            @client.request(
+              method: :get,
+              path: "settings/currencies/2026-03/exchange-rates",
+              query: query.transform_keys(
+                from_currency_code: "fromCurrencyCode",
+                to_currency_code: "toCurrencyCode"
+              ),
+              page: HubspotSDK::Internal::Page,
+              model: HubspotSDK::Settings::ExchangeRate,
+              options: options
+            )
+          end
+
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Settings::Currencies::ExchangeRateUpdateExchangeRateParams}
+          # for more details.
+          #
+          # @overload update_exchange_rate(exchange_rate_id, conversion_rate:, effective_at: nil, request_options: {})
+          #
+          # @param exchange_rate_id [String]
+          #
+          # @param conversion_rate [Float] The updated conversion rate between the to and from currency code of this exchan
+          #
+          # @param effective_at [Time] The date the exchange rate is in effect.
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [HubspotSDK::Models::Settings::ExchangeRate]
+          #
+          # @see HubspotSDK::Models::Settings::Currencies::ExchangeRateUpdateExchangeRateParams
+          def update_exchange_rate(exchange_rate_id, params)
+            parsed, options =
+              HubspotSDK::Settings::Currencies::ExchangeRateUpdateExchangeRateParams.dump_request(params)
+            @client.request(
+              method: :patch,
+              path: ["settings/currencies/2026-03/exchange-rates/%1$s", exchange_rate_id],
+              body: parsed,
+              model: HubspotSDK::Settings::ExchangeRate,
+              options: options
+            )
+          end
+
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Settings::Currencies::ExchangeRateUpdateVisibilityParams}
+          # for more details.
+          #
+          # @overload update_visibility(from_currency_code:, to_currency_code:, visible_in_ui:, request_options: {})
+          #
+          # @param from_currency_code [Symbol, HubspotSDK::Models::Settings::CurrencyPairUpdate::FromCurrencyCode] This represents the three-letter currency code (such as USD for US Dollar) of th
+          #
+          # @param to_currency_code [Symbol, HubspotSDK::Models::Settings::CurrencyPairUpdate::ToCurrencyCode] This represents the three-letter currency code (such as USD for US Dollar) of th
+          #
+          # @param visible_in_ui [Boolean] This indicates if the currency pair is shown in the MultiCurrency settings page.
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [nil]
+          #
+          # @see HubspotSDK::Models::Settings::Currencies::ExchangeRateUpdateVisibilityParams
+          def update_visibility(params)
+            parsed, options =
+              HubspotSDK::Settings::Currencies::ExchangeRateUpdateVisibilityParams.dump_request(params)
+            @client.request(
+              method: :post,
+              path: "settings/currencies/2026-03/exchange-rates/update-visibility",
+              body: parsed,
+              model: NilClass,
+              options: options
+            )
+          end
+
+          # @api private
+          #
+          # @param client [HubspotSDK::Client]
+          def initialize(client:)
+            @client = client
+            @batch = HubspotSDK::Resources::Settings::Currencies::ExchangeRates::Batch.new(client: client)
+          end
+        end
+      end
+    end
+  end
+end
