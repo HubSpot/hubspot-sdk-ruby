@@ -28,7 +28,7 @@ hubspot = HubspotSDK::Client.new(access_token: "pat-na1-xxxxxxxx-xxxx")
 
 simple_public_object = hubspot.crm.objects.contacts.create(
   associations: [{to: {id: "id"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-  properties: {email: "mark.s@lumon.industries"}
+  properties: {associations: "string", email: "mark.s@lumon.industries"}
 )
 
 puts(simple_public_object.id)
@@ -244,7 +244,7 @@ hubspot.crm.objects.contacts.create(
       types: [HubspotSDK::AssociationSpec.new(association_category: "HUBSPOT_DEFINED", association_type_id: 0)]
     )
   ],
-  properties: {email: "mark.s@lumon.industries"}
+  properties: {associations: "string", email: "mark.s@lumon.industries"}
 )
 ```
 
@@ -254,7 +254,7 @@ Or, equivalently:
 # Hashes work, but are not typesafe:
 hubspot.crm.objects.contacts.create(
   associations: [{to: {id: "id"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-  properties: {email: "mark.s@lumon.industries"}
+  properties: {associations: "string", email: "mark.s@lumon.industries"}
 )
 
 # You can also splat a full Params class:
@@ -265,7 +265,7 @@ params = HubspotSDK::Crm::Objects::ContactCreateParams.new(
       types: [HubspotSDK::AssociationSpec.new(association_category: "HUBSPOT_DEFINED", association_type_id: 0)]
     )
   ],
-  properties: {email: "mark.s@lumon.industries"}
+  properties: {associations: "string", email: "mark.s@lumon.industries"}
 )
 hubspot.crm.objects.contacts.create(**params)
 ```
