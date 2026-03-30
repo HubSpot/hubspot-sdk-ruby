@@ -5,44 +5,60 @@ module HubspotSDK
     class Crm
       class Objects
         class PostalMail
-          # Create a batch of postal mail objects.
+          # @return [HubspotSDK::Resources::Crm::Objects::PostalMail::Batch]
+          attr_reader :batch
+
+          # Create a postal mail object with the given properties and return a copy of the
+          # object, including the ID.
           #
-          # @overload create(inputs:, request_options: {})
+          # @overload create(associations:, properties:, request_options: {})
           #
-          # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInputForCreate>]
+          # @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
+          #
+          # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
           #
           # @see HubspotSDK::Models::Crm::Objects::PostalMailCreateParams
           def create(params)
             parsed, options = HubspotSDK::Crm::Objects::PostalMailCreateParams.dump_request(params)
             @client.request(
               method: :post,
-              path: "crm/objects/2026-03/postal_mail/batch/create",
+              path: "crm/objects/2026-03/postal_mail",
               body: parsed,
-              model: HubspotSDK::Crm::BatchResponseSimplePublicObject,
+              model: HubspotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
 
-          # Update multiple postal mail objects in a single request.
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Crm::Objects::PostalMailUpdateParams} for more details.
           #
-          # @overload update(inputs:, request_options: {})
+          # @overload update(postal_mail_id, properties:, id_property: nil, request_options: {})
           #
-          # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInput>]
+          # @param postal_mail_id [String] Path param
+          #
+          # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
+          #
+          # @param id_property [String] Query param: The name of a property whose values are unique for this object type
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
           #
           # @see HubspotSDK::Models::Crm::Objects::PostalMailUpdateParams
-          def update(params)
+          def update(postal_mail_id, params)
+            query_params = [:id_property]
             parsed, options = HubspotSDK::Crm::Objects::PostalMailUpdateParams.dump_request(params)
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
-              method: :post,
-              path: "crm/objects/2026-03/postal_mail/batch/update",
-              body: parsed,
-              model: HubspotSDK::Crm::BatchResponseSimplePublicObject,
+              method: :patch,
+              path: ["crm/objects/2026-03/postal_mail/%1$s", postal_mail_id],
+              query: query.transform_keys(id_property: "idProperty"),
+              body: parsed.except(*query_params),
+              model: HubspotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
@@ -82,60 +98,58 @@ module HubspotSDK
             )
           end
 
-          # Archive a batch of postal mail objects using their IDs.
+          # Move the postal mail object with the ID `{postalMailId}` to the recycling bin.
           #
-          # @overload delete(inputs:, request_options: {})
+          # @overload delete(postal_mail_id, request_options: {})
           #
-          # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectID>]
+          # @param postal_mail_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
           # @see HubspotSDK::Models::Crm::Objects::PostalMailDeleteParams
-          def delete(params)
-            parsed, options = HubspotSDK::Crm::Objects::PostalMailDeleteParams.dump_request(params)
+          def delete(postal_mail_id, params = {})
             @client.request(
-              method: :post,
-              path: "crm/objects/2026-03/postal_mail/batch/archive",
-              body: parsed,
+              method: :delete,
+              path: ["crm/objects/2026-03/postal_mail/%1$s", postal_mail_id],
               model: NilClass,
-              options: options
+              options: params[:request_options]
             )
           end
 
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::PostalMailGetParams} for more details.
           #
-          # Retrieve multiple postal mail objects using their internal IDs or unique
-          # property values.
+          # @overload get(postal_mail_id, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
-          # @overload get(inputs:, properties:, properties_with_history:, archived: nil, id_property: nil, request_options: {})
+          # @param postal_mail_id [String]
           #
-          # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectID>] Body param
+          # @param archived [Boolean] Whether to return only results that have been archived.
           #
-          # @param properties [Array<String>] Body param: Key-value pairs for setting properties for the new object.
+          # @param associations [Array<String>] A comma separated list of object types to retrieve associated IDs for. If any of
           #
-          # @param properties_with_history [Array<String>] Body param: Key-value pairs for setting properties for the new object and their
+          # @param id_property [String] The name of a property whose values are unique for this object type
           #
-          # @param archived [Boolean] Query param: Whether to return only results that have been archived.
+          # @param properties [Array<String>] A comma separated list of the properties to be returned in the response. If any
           #
-          # @param id_property [String] Body param: When using a custom unique value property to retrieve records, the n
+          # @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations]
           #
           # @see HubspotSDK::Models::Crm::Objects::PostalMailGetParams
-          def get(params)
-            query_params = [:archived]
+          def get(postal_mail_id, params = {})
             parsed, options = HubspotSDK::Crm::Objects::PostalMailGetParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
-              method: :post,
-              path: "crm/objects/2026-03/postal_mail/batch/read",
-              query: query,
-              body: parsed.except(*query_params),
-              model: HubspotSDK::Crm::BatchResponseSimplePublicObject,
+              method: :get,
+              path: ["crm/objects/2026-03/postal_mail/%1$s", postal_mail_id],
+              query: query.transform_keys(
+                id_property: "idProperty",
+                properties_with_history: "propertiesWithHistory"
+              ),
+              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -172,34 +186,12 @@ module HubspotSDK
             )
           end
 
-          # Create or update postal mails identified by a unique property value as specified
-          # by the `idProperty` query param. `idProperty` query param refers to a property
-          # whose values are unique for the object.
-          #
-          # @overload upsert(inputs:, request_options: {})
-          #
-          # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInputUpsert>]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-          #
-          # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicUpsertObject]
-          #
-          # @see HubspotSDK::Models::Crm::Objects::PostalMailUpsertParams
-          def upsert(params)
-            parsed, options = HubspotSDK::Crm::Objects::PostalMailUpsertParams.dump_request(params)
-            @client.request(
-              method: :post,
-              path: "crm/objects/2026-03/postal_mail/batch/upsert",
-              body: parsed,
-              model: HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject,
-              options: options
-            )
-          end
-
           # @api private
           #
           # @param client [HubspotSDK::Client]
           def initialize(client:)
             @client = client
+            @batch = HubspotSDK::Resources::Crm::Objects::PostalMail::Batch.new(client: client)
           end
         end
       end

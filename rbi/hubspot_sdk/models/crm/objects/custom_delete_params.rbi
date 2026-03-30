@@ -4,7 +4,7 @@ module HubspotSDK
   module Models
     module Crm
       module Objects
-        class CustomDeleteParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectID
+        class CustomDeleteParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
@@ -19,19 +19,24 @@ module HubspotSDK
           sig { returns(String) }
           attr_accessor :object_type
 
+          sig { returns(String) }
+          attr_accessor :object_id_
+
           sig do
             params(
               object_type: String,
+              object_id_: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
-          def self.new(object_type:, request_options: {})
+          def self.new(object_type:, object_id_:, request_options: {})
           end
 
           sig do
             override.returns(
               {
                 object_type: String,
+                object_id_: String,
                 request_options: HubspotSDK::RequestOptions
               }
             )

@@ -3,10 +3,14 @@ module HubspotSDK
     class Crm
       class Objects
         class PartnerServices
+          attr_reader batch: HubspotSDK::Resources::Crm::Objects::PartnerServices::Batch
+
           def update: (
-            inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectBatchInput],
+            String partner_service_id,
+            properties: ::Hash[Symbol, String],
+            ?id_property: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::BatchResponseSimplePublicObject
+          ) -> HubspotSDK::Crm::SimplePublicObject
 
           def list: (
             String to_object_type,
@@ -17,13 +21,14 @@ module HubspotSDK
           ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::MultiAssociatedObjectWithLabel]
 
           def get: (
-            inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectID],
-            properties: ::Array[String],
-            properties_with_history: ::Array[String],
+            String partner_service_id,
             ?archived: bool,
+            ?associations: ::Array[String],
             ?id_property: String,
+            ?properties: ::Array[String],
+            ?properties_with_history: ::Array[String],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::BatchResponseSimplePublicObject
+          ) -> HubspotSDK::Crm::SimplePublicObjectWithAssociations
 
           def search: (
             after: String,

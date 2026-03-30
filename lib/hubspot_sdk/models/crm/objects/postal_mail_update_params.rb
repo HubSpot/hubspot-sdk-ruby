@@ -5,11 +5,26 @@ module HubspotSDK
     module Crm
       module Objects
         # @see HubspotSDK::Resources::Crm::Objects::PostalMail#update
-        class PostalMailUpdateParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectBatchInput
+        class PostalMailUpdateParams < HubspotSDK::Models::Crm::SimplePublicObjectInput
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          # @!method initialize(request_options: {})
+          # @!attribute postal_mail_id
+          #
+          #   @return [String]
+          required :postal_mail_id, String
+
+          # @!attribute id_property
+          #   The name of a property whose values are unique for this object type
+          #
+          #   @return [String, nil]
+          optional :id_property, String
+
+          # @!method initialize(postal_mail_id:, id_property: nil, request_options: {})
+          #   @param postal_mail_id [String]
+          #
+          #   @param id_property [String] The name of a property whose values are unique for this object type
+          #
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end

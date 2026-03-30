@@ -3,7 +3,7 @@ module HubspotSDK
     class Crm
       class Objects
         class Quotes
-          attr_reader basic: HubspotSDK::Resources::Crm::Objects::Quotes::Basic
+          attr_reader batch: HubspotSDK::Resources::Crm::Objects::Quotes::Batch
 
           def create: (
             associations: ::Array[HubspotSDK::Crm::PublicAssociationsForObject],

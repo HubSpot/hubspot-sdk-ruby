@@ -5,11 +5,17 @@ module HubspotSDK
     module Crm
       module Objects
         # @see HubspotSDK::Resources::Crm::Objects::Taxes#delete
-        class TaxDeleteParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectID
+        class TaxDeleteParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          # @!method initialize(request_options: {})
+          # @!attribute tax_id
+          #
+          #   @return [String]
+          required :tax_id, String
+
+          # @!method initialize(tax_id:, request_options: {})
+          #   @param tax_id [String]
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end

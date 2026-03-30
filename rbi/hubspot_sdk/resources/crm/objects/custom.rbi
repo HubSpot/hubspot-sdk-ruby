@@ -5,30 +5,56 @@ module HubspotSDK
     class Crm
       class Objects
         class Custom
-          # Create a batch of objects
+          sig { returns(HubspotSDK::Resources::Crm::Objects::Custom::Batch) }
+          attr_reader :batch
+
+          # Create a CRM object with the given properties and return a copy of the object,
+          # including the ID. Documentation and examples for creating standard objects is
+          # provided.
           sig do
             params(
               object_type: String,
-              inputs:
-                T::Array[
-                  HubspotSDK::Crm::SimplePublicObjectBatchInputForCreate::OrHash
-                ],
+              associations:
+                T::Array[HubspotSDK::Crm::PublicAssociationsForObject::OrHash],
+              properties: T::Hash[Symbol, String],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
+            ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
-          def create(object_type, inputs:, request_options: {})
+          def create(
+            object_type,
+            associations:,
+            # Key-value pairs for setting properties for the new object.
+            properties:,
+            request_options: {}
+          )
           end
 
-          # Update a batch of objects by internal ID, or unique property values
+          # Perform a partial update of an Object identified by `{objectId}`or optionally a
+          # unique property value as specified by the `idProperty` query param. `{objectId}`
+          # refers to the internal object ID by default, and the `idProperty` query param
+          # refers to a property whose values are unique for the object. Provided property
+          # values will be overwritten. Read-only and non-existent properties will result in
+          # an error. Properties values can be cleared by passing an empty string.
           sig do
             params(
+              object_id_: String,
               object_type: String,
-              inputs:
-                T::Array[HubspotSDK::Crm::SimplePublicObjectBatchInput::OrHash],
+              properties: T::Hash[Symbol, String],
+              id_property: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
+            ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
-          def update(object_type, inputs:, request_options: {})
+          def update(
+            # Path param
+            object_id_,
+            # Path param
+            object_type:,
+            # Body param: Key value pairs representing the properties of the object.
+            properties:,
+            # Query param: The name of a property whose values are unique for this object type
+            id_property: nil,
+            request_options: {}
+          )
           end
 
           # Read a page of objects. Control what is returned via the `properties` query
@@ -75,45 +101,53 @@ module HubspotSDK
           )
           end
 
-          # Archive a batch of objects by ID
+          # Move an Object identified by `{objectId}` to the recycling bin.
           sig do
             params(
+              object_id_: String,
               object_type: String,
-              inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(object_type, inputs:, request_options: {})
+          def delete(object_id_, object_type:, request_options: {})
           end
 
-          # Retrieve records by record ID or include the `idProperty` parameter to retrieve
-          # records by a custom unique value property.
+          # Read an Object identified by `{objectId}`. `{objectId}` refers to the internal
+          # object ID by default, or optionally any unique property value as specified by
+          # the `idProperty` query param. Control what is returned via the `properties`
+          # query param.
           sig do
             params(
+              object_id_: String,
               object_type: String,
-              inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
+              archived: T::Boolean,
+              associations: T::Array[String],
+              id_property: String,
               properties: T::Array[String],
               properties_with_history: T::Array[String],
-              archived: T::Boolean,
-              id_property: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
+            ).returns(HubspotSDK::Crm::SimplePublicObjectWithAssociations)
           end
           def get(
             # Path param
-            object_type,
-            # Body param
-            inputs:,
-            # Body param: Key-value pairs for setting properties for the new object.
-            properties:,
-            # Body param: Key-value pairs for setting properties for the new object and their
-            # histories.
-            properties_with_history:,
+            object_id_,
+            # Path param
+            object_type:,
             # Query param: Whether to return only results that have been archived.
             archived: nil,
-            # Body param: When using a custom unique value property to retrieve records, the
-            # name of the property. Do not include this parameter if retrieving by record ID.
+            # Query param: A comma separated list of object types to retrieve associated IDs
+            # for. If any of the specified associations do not exist, they will be ignored.
+            associations: nil,
+            # Query param: The name of a property whose values are unique for this object type
             id_property: nil,
+            # Query param: A comma separated list of the properties to be returned in the
+            # response. If any of the specified properties are not present on the requested
+            # object(s), they will be ignored.
+            properties: nil,
+            # Query param: A comma separated list of the properties to be returned along with
+            # their history of previous values. If any of the specified properties are not
+            # present on the requested object(s), they will be ignored.
+            properties_with_history: nil,
             request_options: {}
           )
           end
@@ -168,22 +202,6 @@ module HubspotSDK
             query: nil,
             request_options: {}
           )
-          end
-
-          # Create or update records identified by a unique property value as specified by
-          # the `idProperty` query param. `idProperty` query param refers to a property
-          # whose values are unique for the object.
-          sig do
-            params(
-              object_type: String,
-              inputs:
-                T::Array[
-                  HubspotSDK::Crm::SimplePublicObjectBatchInputUpsert::OrHash
-                ],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject)
-          end
-          def upsert(object_type, inputs:, request_options: {})
           end
 
           # @api private

@@ -5,7 +5,7 @@ module HubspotSDK
     module Crm
       module Objects
         # @see HubspotSDK::Resources::Crm::Objects::Custom#delete
-        class CustomDeleteParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectID
+        class CustomDeleteParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
@@ -14,8 +14,14 @@ module HubspotSDK
           #   @return [String]
           required :object_type, String
 
-          # @!method initialize(object_type:, request_options: {})
+          # @!attribute object_id_
+          #
+          #   @return [String]
+          required :object_id_, String
+
+          # @!method initialize(object_type:, object_id_:, request_options: {})
           #   @param object_type [String]
+          #   @param object_id_ [String]
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end

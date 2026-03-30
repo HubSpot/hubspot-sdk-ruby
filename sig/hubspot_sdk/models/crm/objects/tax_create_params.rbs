@@ -5,7 +5,7 @@ module HubspotSDK
         type tax_create_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class TaxCreateParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectBatchInputForCreate
+        class TaxCreateParams < HubspotSDK::Models::Crm::SimplePublicObjectInputForCreate
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

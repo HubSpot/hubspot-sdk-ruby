@@ -5,44 +5,68 @@ module HubspotSDK
     class Crm
       class Objects
         class Orders
-          # Create a batch of orders in the system.
+          # @return [HubspotSDK::Resources::Crm::Objects::Orders::Batch]
+          attr_reader :batch
+
+          # Create a order with the given properties and return a copy of the object,
+          # including the ID. Documentation and examples for creating standard orders is
+          # provided.
           #
-          # @overload create(inputs:, request_options: {})
+          # @overload create(associations:, properties:, request_options: {})
           #
-          # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInputForCreate>]
+          # @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
+          #
+          # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
           #
           # @see HubspotSDK::Models::Crm::Objects::OrderCreateParams
           def create(params)
             parsed, options = HubspotSDK::Crm::Objects::OrderCreateParams.dump_request(params)
             @client.request(
               method: :post,
-              path: "crm/objects/2026-03/orders/batch/create",
+              path: "crm/objects/2026-03/orders",
               body: parsed,
-              model: HubspotSDK::Crm::BatchResponseSimplePublicObject,
+              model: HubspotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
 
-          # Update a batch of orders using their internal IDs or unique property values.
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Crm::Objects::OrderUpdateParams} for more details.
           #
-          # @overload update(inputs:, request_options: {})
+          # Perform a partial update of an Object identified by `{orderId}`or optionally a
+          # unique property value as specified by the `idProperty` query param. `{orderId}`
+          # refers to the internal object ID by default, and the `idProperty` query param
+          # refers to a property whose values are unique for the object. Provided property
+          # values will be overwritten. Read-only and non-existent properties will result in
+          # an error. Properties values can be cleared by passing an empty string.
           #
-          # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInput>]
+          # @overload update(order_id, properties:, id_property: nil, request_options: {})
+          #
+          # @param order_id [String] Path param
+          #
+          # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
+          #
+          # @param id_property [String] Query param: The name of a property whose values are unique for this object type
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
           #
           # @see HubspotSDK::Models::Crm::Objects::OrderUpdateParams
-          def update(params)
+          def update(order_id, params)
+            query_params = [:id_property]
             parsed, options = HubspotSDK::Crm::Objects::OrderUpdateParams.dump_request(params)
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
-              method: :post,
-              path: "crm/objects/2026-03/orders/batch/update",
-              body: parsed,
-              model: HubspotSDK::Crm::BatchResponseSimplePublicObject,
+              method: :patch,
+              path: ["crm/objects/2026-03/orders/%1$s", order_id],
+              query: query.transform_keys(id_property: "idProperty"),
+              body: parsed.except(*query_params),
+              model: HubspotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
@@ -85,60 +109,63 @@ module HubspotSDK
             )
           end
 
-          # Archive a batch of orders identified by their IDs.
+          # Move an Object identified by `{orderId}` to the recycling bin.
           #
-          # @overload delete(inputs:, request_options: {})
+          # @overload delete(order_id, request_options: {})
           #
-          # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectID>]
+          # @param order_id [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
           # @see HubspotSDK::Models::Crm::Objects::OrderDeleteParams
-          def delete(params)
-            parsed, options = HubspotSDK::Crm::Objects::OrderDeleteParams.dump_request(params)
+          def delete(order_id, params = {})
             @client.request(
-              method: :post,
-              path: "crm/objects/2026-03/orders/batch/archive",
-              body: parsed,
+              method: :delete,
+              path: ["crm/objects/2026-03/orders/%1$s", order_id],
               model: NilClass,
-              options: options
+              options: params[:request_options]
             )
           end
 
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::OrderGetParams} for more details.
           #
-          # Retrieve records by record ID or include the `idProperty` parameter to retrieve
-          # records by a custom unique value property.
+          # Read an Object identified by `{orderId}`. `{orderId}` refers to the internal
+          # object ID by default, or optionally any unique property value as specified by
+          # the `idProperty` query param. Control what is returned via the `properties`
+          # query param.
           #
-          # @overload get(inputs:, properties:, properties_with_history:, archived: nil, id_property: nil, request_options: {})
+          # @overload get(order_id, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
-          # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectID>] Body param
+          # @param order_id [String]
           #
-          # @param properties [Array<String>] Body param: Key-value pairs for setting properties for the new object.
+          # @param archived [Boolean] Whether to return only results that have been archived.
           #
-          # @param properties_with_history [Array<String>] Body param: Key-value pairs for setting properties for the new object and their
+          # @param associations [Array<String>] A comma separated list of object types to retrieve associated IDs for. If any of
           #
-          # @param archived [Boolean] Query param: Whether to return only results that have been archived.
+          # @param id_property [String] The name of a property whose values are unique for this object type
           #
-          # @param id_property [String] Body param: When using a custom unique value property to retrieve records, the n
+          # @param properties [Array<String>] A comma separated list of the properties to be returned in the response. If any
+          #
+          # @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations]
           #
           # @see HubspotSDK::Models::Crm::Objects::OrderGetParams
-          def get(params)
-            query_params = [:archived]
+          def get(order_id, params = {})
             parsed, options = HubspotSDK::Crm::Objects::OrderGetParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
-              method: :post,
-              path: "crm/objects/2026-03/orders/batch/read",
-              query: query,
-              body: parsed.except(*query_params),
-              model: HubspotSDK::Crm::BatchResponseSimplePublicObject,
+              method: :get,
+              path: ["crm/objects/2026-03/orders/%1$s", order_id],
+              query: query.transform_keys(
+                id_property: "idProperty",
+                properties_with_history: "propertiesWithHistory"
+              ),
+              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -176,34 +203,12 @@ module HubspotSDK
             )
           end
 
-          # Create or update records identified by a unique property value as specified by
-          # the `idProperty` query param. `idProperty` query param refers to a property
-          # whose values are unique for the object.
-          #
-          # @overload upsert(inputs:, request_options: {})
-          #
-          # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInputUpsert>]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-          #
-          # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicUpsertObject]
-          #
-          # @see HubspotSDK::Models::Crm::Objects::OrderUpsertParams
-          def upsert(params)
-            parsed, options = HubspotSDK::Crm::Objects::OrderUpsertParams.dump_request(params)
-            @client.request(
-              method: :post,
-              path: "crm/objects/2026-03/orders/batch/upsert",
-              body: parsed,
-              model: HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject,
-              options: options
-            )
-          end
-
           # @api private
           #
           # @param client [HubspotSDK::Client]
           def initialize(client:)
             @client = client
+            @batch = HubspotSDK::Resources::Crm::Objects::Orders::Batch.new(client: client)
           end
         end
       end

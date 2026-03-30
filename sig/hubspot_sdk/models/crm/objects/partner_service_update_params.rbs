@@ -3,15 +3,32 @@ module HubspotSDK
     module Crm
       module Objects
         type partner_service_update_params =
-          {  } & HubspotSDK::Internal::Type::request_parameters
+          { partner_service_id: String, id_property: String }
+          & HubspotSDK::Internal::Type::request_parameters
 
-        class PartnerServiceUpdateParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectBatchInput
+        class PartnerServiceUpdateParams < HubspotSDK::Models::Crm::SimplePublicObjectInput
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+          def partner_service_id: -> String
 
-          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+          def partner_service_id=: (String _) -> String
+
+          def id_property: -> String?
+
+          def id_property=: (String _) -> String
+
+          def initialize: (
+            partner_service_id: String,
+            ?id_property: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            partner_service_id: String,
+            id_property: String,
+            request_options: HubspotSDK::RequestOptions
+          }
         end
       end
     end

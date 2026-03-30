@@ -2,117 +2,13 @@ module HubspotSDK
   module Resources
     class Automation
       class Actions
-        def create: (
-          Integer app_id,
-          action_url: String,
-          functions: ::Array[HubspotSDK::Automation::PublicActionFunction],
-          input_fields: ::Array[HubspotSDK::Automation::PublicInputFieldDefinition],
-          labels: ::Hash[Symbol, HubspotSDK::Automation::PublicActionLabels],
-          object_types: ::Array[String],
-          published: bool,
-          ?archived_at: Integer,
-          ?execution_rules: ::Array[HubspotSDK::Automation::PublicExecutionTranslationRule],
-          ?input_field_dependencies: ::Array[HubspotSDK::Models::Automation::PublicActionDefinitionEgg::input_field_dependency],
-          ?object_request_options: HubspotSDK::Automation::PublicObjectRequestOptions,
-          ?output_fields: ::Array[HubspotSDK::Automation::OutputFieldDefinition],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Automation::PublicActionDefinition
+        attr_reader callbacks: HubspotSDK::Resources::Automation::Actions::Callbacks
 
-        def update: (
-          String definition_id,
-          app_id: Integer,
-          ?action_url: String,
-          ?execution_rules: ::Array[HubspotSDK::Automation::PublicExecutionTranslationRule],
-          ?input_field_dependencies: ::Array[HubspotSDK::Models::Automation::PublicActionDefinitionPatch::input_field_dependency],
-          ?input_fields: ::Array[HubspotSDK::Automation::PublicInputFieldDefinition],
-          ?labels: ::Hash[Symbol, HubspotSDK::Automation::PublicActionLabels],
-          ?object_request_options: HubspotSDK::Automation::PublicObjectRequestOptions,
-          ?object_types: ::Array[String],
-          ?output_fields: ::Array[HubspotSDK::Automation::OutputFieldDefinition],
-          ?published: bool,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Automation::PublicActionDefinition
+        attr_reader definitions: HubspotSDK::Resources::Automation::Actions::Definitions
 
-        def list: (
-          String definition_id,
-          app_id: Integer,
-          ?after: String,
-          ?limit: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Automation::PublicActionRevision]
+        attr_reader functions: HubspotSDK::Resources::Automation::Actions::Functions
 
-        def delete: (
-          String function_id,
-          app_id: Integer,
-          definition_id: String,
-          function_type: HubspotSDK::Models::Automation::ActionDeleteParams::function_type,
-          ?request_options: HubspotSDK::request_opts
-        ) -> nil
-
-        def complete: (
-          String callback_id,
-          output_fields: ::Hash[Symbol, String],
-          typed_outputs: top,
-          ?failure_reason_type: String,
-          ?request_context: HubspotSDK::Models::Automation::CallbackCompletionRequest::request_context,
-          ?request_options: HubspotSDK::request_opts
-        ) -> nil
-
-        def complete_batch: (
-          inputs: ::Array[HubspotSDK::Automation::CallbackCompletionBatchRequest],
-          ?request_options: HubspotSDK::request_opts
-        ) -> nil
-
-        def create_or_replace: (
-          String function_id,
-          app_id: Integer,
-          definition_id: String,
-          function_type: HubspotSDK::Models::Automation::ActionCreateOrReplaceParams::function_type,
-          body: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Automation::PublicActionFunctionIdentifier
-
-        def create_or_replace_by_function_type: (
-          HubspotSDK::Models::Automation::ActionCreateOrReplaceByFunctionTypeParams::function_type function_type,
-          app_id: Integer,
-          definition_id: String,
-          body: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Automation::PublicActionFunctionIdentifier
-
-        def create_requires_object: (
-          String definition_id,
-          app_id: Integer,
-          requires_object: bool,
-          ?request_options: HubspotSDK::request_opts
-        ) -> nil
-
-        def delete_by_function_type: (
-          HubspotSDK::Models::Automation::ActionDeleteByFunctionTypeParams::function_type function_type,
-          app_id: Integer,
-          definition_id: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> nil
-
-        def get: (
-          String revision_id,
-          app_id: Integer,
-          definition_id: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Automation::PublicActionRevision
-
-        def get_by_function_type: (
-          HubspotSDK::Models::Automation::ActionGetByFunctionTypeParams::function_type function_type,
-          app_id: Integer,
-          definition_id: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Automation::PublicActionFunction
-
-        def get_requires_object: (
-          String definition_id,
-          app_id: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Automation::PublicActionDefinitionRequiresObjectResponse
+        attr_reader revisions: HubspotSDK::Resources::Automation::Actions::Revisions
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

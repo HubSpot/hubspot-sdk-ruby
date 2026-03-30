@@ -3,7 +3,6 @@
 module HubspotSDK
   module Models
     module Automation
-      # @see HubspotSDK::Resources::Automation::Actions#list
       class PublicActionRevision < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the action revision.

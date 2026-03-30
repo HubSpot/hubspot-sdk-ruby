@@ -3,15 +3,24 @@ module HubspotSDK
     module Crm
       module Objects
         type postal_mail_delete_params =
-          {  } & HubspotSDK::Internal::Type::request_parameters
+          { postal_mail_id: String }
+          & HubspotSDK::Internal::Type::request_parameters
 
-        class PostalMailDeleteParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectID
+        class PostalMailDeleteParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+          attr_accessor postal_mail_id: String
 
-          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+          def initialize: (
+            postal_mail_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            postal_mail_id: String,
+            request_options: HubspotSDK::RequestOptions
+          }
         end
       end
     end

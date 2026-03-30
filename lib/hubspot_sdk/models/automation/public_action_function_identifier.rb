@@ -3,7 +3,6 @@
 module HubspotSDK
   module Models
     module Automation
-      # @see HubspotSDK::Resources::Automation::Actions#create_or_replace
       class PublicActionFunctionIdentifier < HubspotSDK::Internal::Type::BaseModel
         # @!attribute function_type
         #   The type of function, with accepted values: POST_ACTION_EXECUTION,

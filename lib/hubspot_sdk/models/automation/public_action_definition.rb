@@ -3,7 +3,6 @@
 module HubspotSDK
   module Models
     module Automation
-      # @see HubspotSDK::Resources::Automation::Actions#create
       class PublicActionDefinition < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #

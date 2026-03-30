@@ -5,25 +5,43 @@ module HubspotSDK
     class Crm
       class Objects
         class PartnerServices
-          # Update multiple partner services using their internal IDs or unique property
-          # values. This operation allows for batch processing of updates, ensuring
-          # efficient synchronization of service data between HubSpot and other systems.
+          # @return [HubspotSDK::Resources::Crm::Objects::PartnerServices::Batch]
+          attr_reader :batch
+
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Crm::Objects::PartnerServiceUpdateParams} for more details.
           #
-          # @overload update(inputs:, request_options: {})
+          # Perform a partial update of an Object identified by `{partnerServiceId}`or
+          # optionally a unique property value as specified by the `idProperty` query param.
+          # `{partnerServiceId}` refers to the internal object ID by default, and the
+          # `idProperty` query param refers to a property whose values are unique for the
+          # object. Provided property values will be overwritten. Read-only and non-existent
+          # properties will result in an error. Properties values can be cleared by passing
+          # an empty string.
           #
-          # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInput>]
+          # @overload update(partner_service_id, properties:, id_property: nil, request_options: {})
+          #
+          # @param partner_service_id [String] Path param
+          #
+          # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
+          #
+          # @param id_property [String] Query param: The name of a property whose values are unique for this object type
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
           #
           # @see HubspotSDK::Models::Crm::Objects::PartnerServiceUpdateParams
-          def update(params)
+          def update(partner_service_id, params)
+            query_params = [:id_property]
             parsed, options = HubspotSDK::Crm::Objects::PartnerServiceUpdateParams.dump_request(params)
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
-              method: :post,
-              path: "crm/objects/2026-03/partner_services/batch/update",
-              body: parsed,
-              model: HubspotSDK::Crm::BatchResponseSimplePublicObject,
+              method: :patch,
+              path: ["crm/objects/2026-03/partner_services/%1$s", partner_service_id],
+              query: query.transform_keys(id_property: "idProperty"),
+              body: parsed.except(*query_params),
+              model: HubspotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
@@ -73,36 +91,41 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::PartnerServiceGetParams} for more details.
           #
-          # Retrieve records by record ID or include the `idProperty` parameter to retrieve
-          # records by a custom unique value property.
+          # Read an Object identified by `{partnerServiceId}`. `{partnerServiceId}` refers
+          # to the internal object ID by default, or optionally any unique property value as
+          # specified by the `idProperty` query param. Control what is returned via the
+          # `properties` query param.
           #
-          # @overload get(inputs:, properties:, properties_with_history:, archived: nil, id_property: nil, request_options: {})
+          # @overload get(partner_service_id, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
-          # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectID>] Body param
+          # @param partner_service_id [String]
           #
-          # @param properties [Array<String>] Body param: Key-value pairs for setting properties for the new object.
+          # @param archived [Boolean] Whether to return only results that have been archived.
           #
-          # @param properties_with_history [Array<String>] Body param: Key-value pairs for setting properties for the new object and their
+          # @param associations [Array<String>] A comma separated list of object types to retrieve associated IDs for. If any of
           #
-          # @param archived [Boolean] Query param: Whether to return only results that have been archived.
+          # @param id_property [String] The name of a property whose values are unique for this object type
           #
-          # @param id_property [String] Body param: When using a custom unique value property to retrieve records, the n
+          # @param properties [Array<String>] A comma separated list of the properties to be returned in the response. If any
+          #
+          # @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicObject]
+          # @return [HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations]
           #
           # @see HubspotSDK::Models::Crm::Objects::PartnerServiceGetParams
-          def get(params)
-            query_params = [:archived]
+          def get(partner_service_id, params = {})
             parsed, options = HubspotSDK::Crm::Objects::PartnerServiceGetParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
-              method: :post,
-              path: "crm/objects/2026-03/partner_services/batch/read",
-              query: query,
-              body: parsed.except(*query_params),
-              model: HubspotSDK::Crm::BatchResponseSimplePublicObject,
+              method: :get,
+              path: ["crm/objects/2026-03/partner_services/%1$s", partner_service_id],
+              query: query.transform_keys(
+                id_property: "idProperty",
+                properties_with_history: "propertiesWithHistory"
+              ),
+              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -146,6 +169,7 @@ module HubspotSDK
           # @param client [HubspotSDK::Client]
           def initialize(client:)
             @client = client
+            @batch = HubspotSDK::Resources::Crm::Objects::PartnerServices::Batch.new(client: client)
           end
         end
       end
