@@ -14,11 +14,6 @@ module HubspotSDK
         ?request_options: HubspotSDK::request_opts
       ) -> HubspotSDK::CommunicationPreferences::LinkGenerationResponse
 
-      def get_status_by_email: (
-        String email_address,
-        ?request_options: HubspotSDK::request_opts
-      ) -> HubspotSDK::CommunicationPreferences::PublicSubscriptionStatusesResponse
-
       def get_statuses: (
         String subscriber_id_string,
         channel: HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetStatusesParams::channel,
@@ -33,22 +28,6 @@ module HubspotSDK
         ?verbose: bool,
         ?request_options: HubspotSDK::request_opts
       ) -> HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus
-
-      def subscribe: (
-        email_address: String,
-        subscription_id: String,
-        ?legal_basis: HubspotSDK::Models::CommunicationPreferences::PublicUpdateSubscriptionStatusRequest::legal_basis,
-        ?legal_basis_explanation: String,
-        ?request_options: HubspotSDK::request_opts
-      ) -> HubspotSDK::CommunicationPreferences::PublicSubscriptionStatus
-
-      def unsubscribe: (
-        email_address: String,
-        subscription_id: String,
-        ?legal_basis: HubspotSDK::Models::CommunicationPreferences::PublicUpdateSubscriptionStatusRequest::legal_basis,
-        ?legal_basis_explanation: String,
-        ?request_options: HubspotSDK::request_opts
-      ) -> HubspotSDK::CommunicationPreferences::PublicSubscriptionStatus
 
       def unsubscribe_all: (
         String subscriber_id_string,

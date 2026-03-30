@@ -20,16 +20,43 @@ module HubspotSDK
         attr_reader :spend
 
         # Some parameter documentations has been truncated, see
+        # {HubspotSDK::Models::Marketing::CampaignCreateParams} for more details.
+        #
+        # Create a campaign with the specified properties and receive a copy of the
+        # campaign object, including its ID. Note that the 'hs_goal' property is
+        # deprecated and will be ignored if provided.
+        #
+        # @overload create(properties:, request_options: {})
+        #
+        # @param properties [Hash{Symbol=>String}] A collection of key-value pairs representing the properties of the campaign. Eac
+        #
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Models::Marketing::PublicCampaign]
+        #
+        # @see HubspotSDK::Models::Marketing::CampaignCreateParams
+        def create(params)
+          parsed, options = HubspotSDK::Marketing::CampaignCreateParams.dump_request(params)
+          @client.request(
+            method: :post,
+            path: "marketing/campaigns/2026-03",
+            body: parsed,
+            model: HubspotSDK::Marketing::PublicCampaign,
+            options: options
+          )
+        end
+
+        # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Marketing::CampaignUpdateParams} for more details.
         #
-        # Perform a partial update of a campaign identified by the specified ID. Provided
-        # property values will be overwritten. Read-only and non-existent properties will
-        # be ignored. Properties values can be cleared by passing an empty string. Note:
-        # The 'hs_goal' property is deprecated and will be ignored if provided.
+        # Perform a partial update of a campaign identified by the specified campaignGuid.
+        # Provided property values will be overwritten. Read-only and non-existent
+        # properties will cause 400 error. If an empty string is passed for any property
+        # in the Batch Update, it will reset that property's value.
         #
         # @overload update(campaign_guid, properties:, request_options: {})
         #
-        # @param campaign_guid [String] The unique identifier of the campaign to update.
+        # @param campaign_guid [String]
         #
         # @param properties [Hash{Symbol=>String}] A collection of key-value pairs representing the properties of the campaign. Eac
         #
@@ -49,13 +76,50 @@ module HubspotSDK
           )
         end
 
-        # Delete a specified campaign from the system. This operation removes the campaign
-        # identified by the provided campaignGuid from your HubSpot account.
+        # Some parameter documentations has been truncated, see
+        # {HubspotSDK::Models::Marketing::CampaignListParams} for more details.
+        #
+        # Retrieve a paginated list of campaigns from your HubSpot account. This endpoint
+        # allows you to specify sorting, pagination, and filtering options to tailor the
+        # results to your needs.
+        #
+        # @overload list(after: nil, limit: nil, name: nil, properties: nil, sort: nil, request_options: {})
+        #
+        # @param after [String] The paging cursor token of the last successfully read resource will be returned
+        #
+        # @param limit [Integer] The maximum number of results to display per page.
+        #
+        # @param name [String]
+        #
+        # @param properties [Array<String>]
+        #
+        # @param sort [String]
+        #
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Marketing::PublicCampaign>]
+        #
+        # @see HubspotSDK::Models::Marketing::CampaignListParams
+        def list(params = {})
+          parsed, options = HubspotSDK::Marketing::CampaignListParams.dump_request(params)
+          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          @client.request(
+            method: :get,
+            path: "marketing/campaigns/2026-03",
+            query: query,
+            page: HubspotSDK::Internal::Page,
+            model: HubspotSDK::Marketing::PublicCampaign,
+            options: options
+          )
+        end
+
+        # Delete a specified campaign from the system. This call will return a 204 No
+        # Content response regardless of whether the campaignGuid provided corresponds to
+        # an existing campaign or not.
         #
         # @overload delete(campaign_guid, request_options: {})
         #
-        # @param campaign_guid [String] The unique identifier of the campaign to delete.
-        #
+        # @param campaign_guid [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
@@ -70,21 +134,18 @@ module HubspotSDK
           )
         end
 
-        # Read a campaign identified by a specified internal ID. This endpoint allows you
-        # to retrieve detailed information about a specific marketing campaign using its
-        # unique identifier. It supports filtering the response by specific properties and
-        # date ranges.
+        # Get a campaign identified by a specific campaignGuid with the given properties.
+        # Along with the campaign information, it also returns information about assets.
+        # Depending on the query parameters used, this can also be used to return
+        # information about the corresponding assets' metrics. Metrics are available only
+        # if startDate and endDate are provided.
         #
         # @overload get(campaign_guid, end_date: nil, properties: nil, start_date: nil, request_options: {})
         #
-        # @param campaign_guid [String] The unique identifier of the campaign to retrieve.
-        #
-        # @param end_date [String] The end date for filtering campaign data, in YYYY-MM-DD format.
-        #
-        # @param properties [Array<String>] A comma-separated list of property names to include in the response.
-        #
-        # @param start_date [String] The start date for filtering campaign data, in YYYY-MM-DD format.
-        #
+        # @param campaign_guid [String]
+        # @param end_date [String]
+        # @param properties [Array<String>]
+        # @param start_date [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Marketing::PublicCampaignWithAssets]

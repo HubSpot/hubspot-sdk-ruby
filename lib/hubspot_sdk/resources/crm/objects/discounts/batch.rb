@@ -6,10 +6,6 @@ module HubspotSDK
       class Objects
         class Discounts
           class Batch
-            # Create multiple discounts in a single request by providing the necessary
-            # properties and associations for each discount. This operation returns a list of
-            # the created discounts, including their unique identifiers.
-            #
             # @overload create(inputs:, request_options: {})
             #
             # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInputForCreate>]
@@ -29,7 +25,7 @@ module HubspotSDK
               )
             end
 
-            # Update discounts
+            # Update a batch of discounts by internal ID, or unique property values
             #
             # @overload update(inputs:, request_options: {})
             #
@@ -50,8 +46,6 @@ module HubspotSDK
               )
             end
 
-            # Batch delete discounts
-            #
             # @overload delete(inputs:, request_options: {})
             #
             # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectID>]
@@ -74,7 +68,8 @@ module HubspotSDK
             # Some parameter documentations has been truncated, see
             # {HubspotSDK::Models::Crm::Objects::Discounts::BatchGetParams} for more details.
             #
-            # Batch retrieve discounts.
+            # Retrieve records by record ID or include the `idProperty` parameter to retrieve
+            # records by a custom unique value property.
             #
             # @overload get(inputs:, properties:, properties_with_history:, archived: nil, id_property: nil, request_options: {})
             #
@@ -107,9 +102,6 @@ module HubspotSDK
               )
             end
 
-            # Create and update a batch of discounts by a unique property. Discounts that
-            # don't exist will be created, while existing discounts will be updated.
-            #
             # @overload upsert(inputs:, request_options: {})
             #
             # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInputUpsert>]

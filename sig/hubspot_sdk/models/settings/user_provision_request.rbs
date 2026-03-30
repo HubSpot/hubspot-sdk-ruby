@@ -1,0 +1,62 @@
+module HubspotSDK
+  module Models
+    module Settings
+      type user_provision_request =
+        {
+          email: String,
+          send_welcome_email: bool,
+          first_name: String,
+          last_name: String,
+          primary_team_id: String,
+          role_id: String,
+          secondary_team_ids: ::Array[String]
+        }
+
+      class UserProvisionRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor email: String
+
+        attr_accessor send_welcome_email: bool
+
+        attr_reader first_name: String?
+
+        def first_name=: (String) -> String
+
+        attr_reader last_name: String?
+
+        def last_name=: (String) -> String
+
+        attr_reader primary_team_id: String?
+
+        def primary_team_id=: (String) -> String
+
+        attr_reader role_id: String?
+
+        def role_id=: (String) -> String
+
+        attr_reader secondary_team_ids: ::Array[String]?
+
+        def secondary_team_ids=: (::Array[String]) -> ::Array[String]
+
+        def initialize: (
+          email: String,
+          send_welcome_email: bool,
+          ?first_name: String,
+          ?last_name: String,
+          ?primary_team_id: String,
+          ?role_id: String,
+          ?secondary_team_ids: ::Array[String]
+        ) -> void
+
+        def to_hash: -> {
+          email: String,
+          send_welcome_email: bool,
+          first_name: String,
+          last_name: String,
+          primary_team_id: String,
+          role_id: String,
+          secondary_team_ids: ::Array[String]
+        }
+      end
+    end
+  end
+end

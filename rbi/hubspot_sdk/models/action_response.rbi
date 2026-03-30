@@ -21,7 +21,8 @@ module HubspotSDK
       sig { returns(HubspotSDK::ActionResponse::Status::TaggedSymbol) }
       attr_accessor :status
 
-      # A collection of related links associated with the action.
+      # A map of link names to associated URIs containing documentation about the error
+      # or recommended remediation steps
       sig { returns(T.nilable(T::Hash[Symbol, String])) }
       attr_reader :links
 
@@ -52,7 +53,8 @@ module HubspotSDK
         # The current status of the action, with possible values: CANCELED, COMPLETE,
         # PENDING, PROCESSING.
         status:,
-        # A collection of related links associated with the action.
+        # A map of link names to associated URIs containing documentation about the error
+        # or recommended remediation steps
         links: nil,
         # The timestamp indicating when the action was requested.
         requested_at: nil

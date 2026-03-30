@@ -29,7 +29,7 @@ module HubspotSDK
       optional :in_, String, api_name: :in
 
       # @!attribute sub_category
-      #   A specific category that contains more specific detail about the error.
+      #   A specific category that contains more specific detail about the error
       #
       #   @return [String, nil]
       optional :sub_category, String, api_name: :subCategory
@@ -46,7 +46,7 @@ module HubspotSDK
       #
       #   @param in_ [String] The name of the field or parameter in which the error was found.
       #
-      #   @param sub_category [String] A specific category that contains more specific detail about the error.
+      #   @param sub_category [String] A specific category that contains more specific detail about the error
     end
   end
 end

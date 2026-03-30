@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Marketing
-      class EmailCreateAbTestVariationParams < HubspotSDK::Models::Marketing::AbTestCreateRequestVNext
+      class EmailCreateAbTestVariationParams < HubspotSDK::Models::AbTestCreateRequestVNext
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 

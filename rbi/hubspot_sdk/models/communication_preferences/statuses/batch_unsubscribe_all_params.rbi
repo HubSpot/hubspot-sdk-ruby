@@ -16,21 +16,15 @@ module HubspotSDK
               )
             end
 
-          # A required string specifying the communication channel. Currently, only 'EMAIL'
-          # is supported.
           sig { returns(HubspotSDK::BatchInputString::Channel::OrSymbol) }
           attr_accessor :channel
 
-          # The ID of the business unit to which the operation applies. It is an optional
-          # parameter.
           sig { returns(T.nilable(Integer)) }
           attr_reader :business_unit_id
 
           sig { params(business_unit_id: Integer).void }
           attr_writer :business_unit_id
 
-          # A boolean indicating whether to include detailed information in the response.
-          # Defaults to false.
           sig { returns(T.nilable(T::Boolean)) }
           attr_reader :verbose
 
@@ -46,14 +40,8 @@ module HubspotSDK
             ).returns(T.attached_class)
           end
           def self.new(
-            # A required string specifying the communication channel. Currently, only 'EMAIL'
-            # is supported.
             channel:,
-            # The ID of the business unit to which the operation applies. It is an optional
-            # parameter.
             business_unit_id: nil,
-            # A boolean indicating whether to include detailed information in the response.
-            # Defaults to false.
             verbose: nil,
             request_options: {}
           )
@@ -72,8 +60,6 @@ module HubspotSDK
           def to_hash
           end
 
-          # A required string specifying the communication channel. Currently, only 'EMAIL'
-          # is supported.
           module Channel
             extend HubspotSDK::Internal::Type::Enum
 

@@ -2,53 +2,12 @@ module HubspotSDK
   module Resources
     class Events
       class Send
-        def create_event_definition: (
-          include_default_properties: bool,
-          label: String,
-          property_definitions: ::Array[HubspotSDK::Events::ExternalBehavioralEventPropertyCreate],
-          ?custom_matching_id: HubspotSDK::Events::ExternalObjectResolutionMappingRequest,
-          ?description: String,
-          ?name: String,
-          ?primary_object: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
-
-        def create_event_definition_property: (
-          String event_name,
-          label: String,
-          type: String,
-          ?description: String,
-          ?name: String,
-          ?options: ::Array[HubspotSDK::OptionInput],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Property
-
-        def delete_event_definition: (
-          String event_name,
+        def batch_send: (
+          inputs: ::Array[HubspotSDK::Events::BehavioralEventHTTPCompletionRequest],
           ?request_options: HubspotSDK::request_opts
         ) -> nil
 
-        def delete_event_definition_property: (
-          String property_name,
-          event_name: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> nil
-
-        def get_event_definition: (
-          String event_name,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
-
-        def list_event_definitions: (
-          ?after: String,
-          ?include_properties: bool,
-          ?limit: Integer,
-          ?search_string: String,
-          ?sort_order: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Events::ExternalBehavioralEventTypeDefinition]
-
-        def send_event: (
+        def send_: (
           event_name: String,
           properties: ::Hash[Symbol, String],
           ?email: String,
@@ -58,27 +17,6 @@ module HubspotSDK
           ?uuid: String,
           ?request_options: HubspotSDK::request_opts
         ) -> nil
-
-        def send_event_batch: (
-          inputs: ::Array[HubspotSDK::Events::BehavioralEventHTTPCompletionRequest],
-          ?request_options: HubspotSDK::request_opts
-        ) -> nil
-
-        def update_event_definition: (
-          String event_name,
-          ?description: String,
-          ?label: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
-
-        def update_event_definition_property: (
-          String property_name,
-          event_name: String,
-          ?description: String,
-          ?label: String,
-          ?options: ::Array[HubspotSDK::OptionInput],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Property
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

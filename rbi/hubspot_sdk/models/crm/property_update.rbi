@@ -26,9 +26,9 @@ module HubspotSDK
         sig { params(description: String).void }
         attr_writer :description
 
-        # Property groups are displayed in order starting with the lowest positive integer
-        # value. Values of -1 will cause the property group to be displayed after any
-        # positive values.
+        # Properties are displayed in order starting with the lowest positive integer
+        # value. Values of -1 will cause the Property to be displayed after any positive
+        # values.
         sig { returns(T.nilable(Integer)) }
         attr_reader :display_order
 
@@ -71,15 +71,14 @@ module HubspotSDK
         sig { params(hidden: T::Boolean).void }
         attr_writer :hidden
 
-        # A human-readable label that will be shown in HubSpot.
+        # A human-readable property label that will be shown in HubSpot.
         sig { returns(T.nilable(String)) }
         attr_reader :label
 
         sig { params(label: String).void }
         attr_writer :label
 
-        # A list of valid options for the property. This field is required for enumerated
-        # properties.
+        # A list of valid options for the property.
         sig { returns(T.nilable(T::Array[HubspotSDK::OptionInput])) }
         attr_reader :options
 
@@ -116,9 +115,9 @@ module HubspotSDK
           calculation_formula: nil,
           # A description of the property that will be shown as help text in HubSpot.
           description: nil,
-          # Property groups are displayed in order starting with the lowest positive integer
-          # value. Values of -1 will cause the property group to be displayed after any
-          # positive values.
+          # Properties are displayed in order starting with the lowest positive integer
+          # value. Values of -1 will cause the Property to be displayed after any positive
+          # values.
           display_order: nil,
           # Controls how the property appears in HubSpot.
           field_type: nil,
@@ -128,10 +127,9 @@ module HubspotSDK
           group_name: nil,
           # If true, the property won't be visible and can't be used in HubSpot.
           hidden: nil,
-          # A human-readable label that will be shown in HubSpot.
+          # A human-readable property label that will be shown in HubSpot.
           label: nil,
-          # A list of valid options for the property. This field is required for enumerated
-          # properties.
+          # A list of valid options for the property.
           options: nil,
           # The data type of the property.
           type: nil

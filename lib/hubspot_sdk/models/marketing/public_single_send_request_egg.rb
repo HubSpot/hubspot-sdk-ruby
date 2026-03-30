@@ -9,7 +9,7 @@ module HubspotSDK
         #   property value contains a name and value property. Each property will get set on
         #   the contact record and will be visible in the template under {{ contact.NAME }}.
         #   Use these properties when you want to set a contact property while you’re
-        #   sending the email. For example, when sending a reciept you may want to set a
+        #   sending the email. For example, when sending a receipt you may want to set a
         #   last_paid_date property, as the sending of the receipt will have information
         #   about the last payment.
         #
@@ -29,7 +29,7 @@ module HubspotSDK
                  api_name: :customProperties
 
         # @!attribute email_id
-        #   The content ID for the transactional email, which can be found in email tool UI.
+        #   The content ID for the email, which can be found in email tool UI.
         #
         #   @return [Integer]
         required :email_id, Integer, api_name: :emailId
@@ -47,7 +47,7 @@ module HubspotSDK
         #
         #   @param custom_properties [Hash{Symbol=>Object}] The customProperties field is a map of property values. Each property value cont
         #
-        #   @param email_id [Integer] The content ID for the transactional email, which can be found in email tool UI.
+        #   @param email_id [Integer] The content ID for the email, which can be found in email tool UI.
         #
         #   @param message [HubspotSDK::Models::Marketing::PublicSingleSendEmail]
       end

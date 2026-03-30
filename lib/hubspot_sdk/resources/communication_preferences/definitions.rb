@@ -4,18 +4,12 @@ module HubspotSDK
   module Resources
     class CommunicationPreferences
       class Definitions
-        # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::CommunicationPreferences::DefinitionListParams} for more
-        # details.
-        #
         # Get a list of subscription status definitions from the account.
         #
         # @overload list(business_unit_id: nil, include_translations: nil, request_options: {})
         #
-        # @param business_unit_id [Integer] The unique identifier of the business unit for which to retrieve the subscriptio
-        #
-        # @param include_translations [Boolean] A boolean indicating whether to include translations of the subscription definit
-        #
+        # @param business_unit_id [Integer]
+        # @param include_translations [Boolean]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::CommunicationPreferences::ActionResponseWithResultsSubscriptionDefinition]

@@ -29,20 +29,21 @@ module HubspotSDK
           end
           attr_accessor :sections
 
-          # The total number of cards that are sent in this response.
+          # The total number of card properties that will be sent in this response.
           sig { returns(Integer) }
           attr_accessor :total_count
 
-          # URL to a page the integrator has built that displays all details for the object
-          # cards. This URL will be displayed to users on the title of the card.
+          # URL to a page the integrator has built that displays all details for this card.
+          # This URL will be displayed to users under a `See more [x]` link if there are
+          # more than five items in your response, where `[x]` is the value of `itemLabel`.
           sig { returns(T.nilable(String)) }
           attr_reader :all_items_link_url
 
           sig { params(all_items_link_url: String).void }
           attr_writer :all_items_link_url
 
-          # The label to be used for the `allItemsLinkUrl` link (e.g. 'See more tickets')
-          # and the title of the card.
+          # The label to be used for the `allItemsLinkUrl` link (e.g. 'See more tickets').
+          # If not provided, this falls back to the card's title.
           sig { returns(T.nilable(String)) }
           attr_reader :card_label
 
@@ -82,13 +83,14 @@ module HubspotSDK
             response_version:,
             # A list of up to five valid card sub categories.
             sections:,
-            # The total number of cards that are sent in this response.
+            # The total number of card properties that will be sent in this response.
             total_count:,
-            # URL to a page the integrator has built that displays all details for the object
-            # cards. This URL will be displayed to users on the title of the card.
+            # URL to a page the integrator has built that displays all details for this card.
+            # This URL will be displayed to users under a `See more [x]` link if there are
+            # more than five items in your response, where `[x]` is the value of `itemLabel`.
             all_items_link_url: nil,
-            # The label to be used for the `allItemsLinkUrl` link (e.g. 'See more tickets')
-            # and the title of the card.
+            # The label to be used for the `allItemsLinkUrl` link (e.g. 'See more tickets').
+            # If not provided, this falls back to the card's title.
             card_label: nil,
             top_level_actions: nil
           )

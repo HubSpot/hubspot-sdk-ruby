@@ -1,0 +1,79 @@
+module HubspotSDK
+  module Models
+    module Settings
+      type public_user =
+        {
+          id: String,
+          email: String,
+          role_ids: ::Array[String],
+          super_admin: bool,
+          first_name: String,
+          last_name: String,
+          primary_team_id: String,
+          role_id: String,
+          secondary_team_ids: ::Array[String],
+          send_welcome_email: bool
+        }
+
+      class PublicUser < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor email: String
+
+        attr_accessor role_ids: ::Array[String]
+
+        attr_accessor super_admin: bool
+
+        attr_reader first_name: String?
+
+        def first_name=: (String) -> String
+
+        attr_reader last_name: String?
+
+        def last_name=: (String) -> String
+
+        attr_reader primary_team_id: String?
+
+        def primary_team_id=: (String) -> String
+
+        attr_reader role_id: String?
+
+        def role_id=: (String) -> String
+
+        attr_reader secondary_team_ids: ::Array[String]?
+
+        def secondary_team_ids=: (::Array[String]) -> ::Array[String]
+
+        attr_reader send_welcome_email: bool?
+
+        def send_welcome_email=: (bool) -> bool
+
+        def initialize: (
+          id: String,
+          email: String,
+          role_ids: ::Array[String],
+          super_admin: bool,
+          ?first_name: String,
+          ?last_name: String,
+          ?primary_team_id: String,
+          ?role_id: String,
+          ?secondary_team_ids: ::Array[String],
+          ?send_welcome_email: bool
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          email: String,
+          role_ids: ::Array[String],
+          super_admin: bool,
+          first_name: String,
+          last_name: String,
+          primary_team_id: String,
+          role_id: String,
+          secondary_team_ids: ::Array[String],
+          send_welcome_email: bool
+        }
+      end
+    end
+  end
+end

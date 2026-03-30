@@ -4,6 +4,7 @@ module HubspotSDK
   module Models
     module Crm
       module Extensions
+        # @see HubspotSDK::Resources::Crm::Extensions::Calling#create_inbound_call
         class CompletedThirdPartyCallResponse < HubspotSDK::Internal::Type::BaseModel
           # @!attribute caller_id_matches
           #

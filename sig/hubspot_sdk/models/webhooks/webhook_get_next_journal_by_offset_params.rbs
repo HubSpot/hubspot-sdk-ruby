@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module Webhooks
+      type webhook_get_next_journal_by_offset_params =
+        { offset: String, install_portal_id: Integer }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class WebhookGetNextJournalByOffsetParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor offset: String
+
+        attr_reader install_portal_id: Integer?
+
+        def install_portal_id=: (Integer) -> Integer
+
+        def initialize: (
+          offset: String,
+          ?install_portal_id: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          offset: String,
+          install_portal_id: Integer,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

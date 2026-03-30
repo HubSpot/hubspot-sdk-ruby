@@ -70,16 +70,16 @@ Request parameters that correspond to file uploads can be passed as raw contents
 require "pathname"
 
 # Use `Pathname` to send the filename and/or avoid paging a large file into memory:
-asset_file_metadata = hubspot.cms.source_code.create(file: Pathname("/path/to/file"))
+import_result = hubspot.cms.hubdb.tables.import_draft(file: Pathname("/path/to/file"))
 
 # Alternatively, pass file contents or a `StringIO` directly:
-asset_file_metadata = hubspot.cms.source_code.create(file: File.read("/path/to/file"))
+import_result = hubspot.cms.hubdb.tables.import_draft(file: File.read("/path/to/file"))
 
 # Or, to control the filename and/or content type:
 file = HubspotSDK::FilePart.new(File.read("/path/to/file"), filename: "/path/to/file", content_type: "…")
-asset_file_metadata = hubspot.cms.source_code.create(file: file)
+import_result = hubspot.cms.hubdb.tables.import_draft(file: file)
 
-puts(asset_file_metadata.id)
+puts(import_result.duplicateRows)
 ```
 
 Note that you can also pass a raw `IO` descriptor, but this disables retries, as the library can't be sure if the descriptor is a file or pipe (which cannot be rewound).
@@ -275,25 +275,25 @@ hubspot.crm.objects.contacts.create(**params)
 Since this library does not depend on `sorbet-runtime`, it cannot provide [`T::Enum`](https://sorbet.org/docs/tenum) instances. Instead, we provide "tagged symbols" instead, which is always a primitive at runtime:
 
 ```ruby
-# :"company.associationChange"
-puts(HubspotSDK::AppWebhooks::SubscriptionCreateRequest::EventType::COMPANY_ASSOCIATION_CHANGE)
+# :authorization_code
+puts(HubspotSDK::Auth::OAuthCreateTokenParams::GrantType::AUTHORIZATION_CODE)
 
-# Revealed type: `T.all(HubspotSDK::AppWebhooks::SubscriptionCreateRequest::EventType, Symbol)`
-T.reveal_type(HubspotSDK::AppWebhooks::SubscriptionCreateRequest::EventType::COMPANY_ASSOCIATION_CHANGE)
+# Revealed type: `T.all(HubspotSDK::Auth::OAuthCreateTokenParams::GrantType, Symbol)`
+T.reveal_type(HubspotSDK::Auth::OAuthCreateTokenParams::GrantType::AUTHORIZATION_CODE)
 ```
 
 Enum parameters have a "relaxed" type, so you can either pass in enum constants or their literal value:
 
 ```ruby
 # Using the enum constants preserves the tagged type information:
-hubspot.app_webhooks.create_subscription(
-  event_type: HubspotSDK::AppWebhooks::SubscriptionCreateRequest::EventType::COMPANY_ASSOCIATION_CHANGE,
+hubspot.auth.oauth.create_token(
+  grant_type: HubspotSDK::Auth::OAuthCreateTokenParams::GrantType::AUTHORIZATION_CODE,
   # …
 )
 
 # Literal values are also permissible:
-hubspot.app_webhooks.create_subscription(
-  event_type: :"company.associationChange",
+hubspot.auth.oauth.create_token(
+  grant_type: :authorization_code,
   # …
 )
 ```

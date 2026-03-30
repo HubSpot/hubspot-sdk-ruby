@@ -6,16 +6,14 @@ module HubspotSDK
       # @api private
       #
       # @example
-      #   # `create_mb_object_request` is a `HubspotSDK::Cms::CreateMBObjectRequest`
-      #   case create_mb_object_request
-      #   when HubspotSDK::Cms::CreateVideoObjectRequest
-      #     puts(create_mb_object_request.media_type)
-      #   when HubspotSDK::Cms::CreateOtherObjectRequest
-      #     puts(create_mb_object_request.title)
-      #   when HubspotSDK::Cms::CreateAudioObjectRequest
-      #     puts(create_mb_object_request.details_page_link)
+      #   # `unified_collection_response_with_total_base_hub_db_table_row_v3` is a `HubspotSDK::Cms::UnifiedCollectionResponseWithTotalBaseHubDBTableRowV3`
+      #   case unified_collection_response_with_total_base_hub_db_table_row_v3
+      #   when HubspotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3
+      #     puts(unified_collection_response_with_total_base_hub_db_table_row_v3.results)
+      #   when HubspotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3
+      #     puts(unified_collection_response_with_total_base_hub_db_table_row_v3.total)
       #   else
-      #     puts(create_mb_object_request)
+      #     puts(unified_collection_response_with_total_base_hub_db_table_row_v3)
       #   end
       module Union
         include HubspotSDK::Internal::Type::Converter

@@ -12,6 +12,7 @@ module HubspotSDK
               T.any(HubspotSDK::Cms::Blogs::Blog, HubspotSDK::Internal::AnyHash)
             end
 
+          # The unique ID of the Blog.
           sig { returns(String) }
           attr_accessor :id
 
@@ -19,6 +20,7 @@ module HubspotSDK
           sig { returns(String) }
           attr_accessor :absolute_url
 
+          # Boolean determining whether or not this blog allows public comments.
           sig { returns(T::Boolean) }
           attr_accessor :allow_comments
 
@@ -26,37 +28,48 @@ module HubspotSDK
           sig { returns(Time) }
           attr_accessor :created
 
-          # The timestamp (ISO8601 format) when this blog was deleted.
+          # The timestamp (ISO8601 format) when this Blog was deleted.
           sig { returns(Time) }
           attr_accessor :deleted_at
 
+          # The Description of this Blog.
           sig { returns(String) }
           attr_accessor :description
 
+          # The html title of this Blog.
           sig { returns(String) }
           attr_accessor :html_title
 
+          # The explicitly defined language of the Blog. If null, the Blog will default to
+          # the language of the Domain.
           sig { returns(HubspotSDK::Cms::Blogs::Blog::Language::TaggedSymbol) }
           attr_accessor :language
 
           sig { returns(String) }
           attr_accessor :listing_page_id
 
+          # The internal name of the blog.
           sig { returns(String) }
           attr_accessor :name
 
+          # Rules for require member registration to access private content.
           sig { returns(T::Array[T.anything]) }
           attr_accessor :public_access_rules
 
+          # Boolean to determine whether or not to respect publicAccessRules.
           sig { returns(T::Boolean) }
           attr_accessor :public_access_rules_enabled
 
+          # The public title of this Blog.
           sig { returns(String) }
           attr_accessor :public_title
 
+          # The path of the this blog. This field is appended to the domain to construct the
+          # url of this blog.
           sig { returns(String) }
           attr_accessor :slug
 
+          # ID of the primary Blog this object was translated from.
           sig { returns(String) }
           attr_accessor :translated_from_id
 
@@ -85,23 +98,36 @@ module HubspotSDK
             ).returns(T.attached_class)
           end
           def self.new(
+            # The unique ID of the Blog.
             id:,
             # Blog's root URL
             absolute_url:,
+            # Boolean determining whether or not this blog allows public comments.
             allow_comments:,
             # The timestamp (ISO8601 format) when this blog was created.
             created:,
-            # The timestamp (ISO8601 format) when this blog was deleted.
+            # The timestamp (ISO8601 format) when this Blog was deleted.
             deleted_at:,
+            # The Description of this Blog.
             description:,
+            # The html title of this Blog.
             html_title:,
+            # The explicitly defined language of the Blog. If null, the Blog will default to
+            # the language of the Domain.
             language:,
             listing_page_id:,
+            # The internal name of the blog.
             name:,
+            # Rules for require member registration to access private content.
             public_access_rules:,
+            # Boolean to determine whether or not to respect publicAccessRules.
             public_access_rules_enabled:,
+            # The public title of this Blog.
             public_title:,
+            # The path of the this blog. This field is appended to the domain to construct the
+            # url of this blog.
             slug:,
+            # ID of the primary Blog this object was translated from.
             translated_from_id:,
             # The timestamp (ISO8601 format) when this blog was updated.
             updated:
@@ -133,6 +159,8 @@ module HubspotSDK
           def to_hash
           end
 
+          # The explicitly defined language of the Blog. If null, the Blog will default to
+          # the language of the Domain.
           module Language
             extend HubspotSDK::Internal::Type::Enum
 

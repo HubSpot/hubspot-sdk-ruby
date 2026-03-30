@@ -19,8 +19,13 @@ module HubspotSDK
         # @return [HubspotSDK::Resources::Marketing::Events::Settings]
         attr_reader :settings
 
+        # @return [HubspotSDK::Resources::Marketing::Events::SubscriberState]
+        attr_reader :subscriber_state
+
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Marketing::EventCreateParams} for more details.
+        #
+        # Creates a new marketing event in HubSpot
         #
         # @overload create(custom_properties:, event_name:, event_organizer:, external_account_id:, external_event_id:, end_date_time: nil, event_cancelled: nil, event_completed: nil, event_description: nil, event_type: nil, event_url: nil, start_date_time: nil, request_options: {})
         #
@@ -67,6 +72,9 @@ module HubspotSDK
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Marketing::EventUpdateParams} for more details.
         #
+        # Updates the details of an existing Marketing Event identified by its objectId,
+        # if it exists.
+        #
         # @overload update(object_id_, custom_properties:, end_date_time: nil, event_cancelled: nil, event_description: nil, event_name: nil, event_organizer: nil, event_type: nil, event_url: nil, start_date_time: nil, request_options: {})
         #
         # @param object_id_ [String] The internal id of the marketing event in HubSpot.
@@ -105,6 +113,32 @@ module HubspotSDK
           )
         end
 
+        # @overload list(after: nil, limit: nil, request_options: {})
+        #
+        # @param after [String] The cursor indicating the position of the last retrieved item.
+        #
+        # @param limit [Integer] The limit for response size. The default value is 10, the max number is 100
+        #
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Marketing::MarketingEventPublicReadResponseV2>]
+        #
+        # @see HubspotSDK::Models::Marketing::EventListParams
+        def list(params = {})
+          parsed, options = HubspotSDK::Marketing::EventListParams.dump_request(params)
+          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          @client.request(
+            method: :get,
+            path: "marketing/marketing-events/2026-03",
+            query: query,
+            page: HubspotSDK::Internal::Page,
+            model: HubspotSDK::Marketing::MarketingEventPublicReadResponseV2,
+            options: options
+          )
+        end
+
+        # Deletes the existing Marketing Event with the specified objectId, if it exists.
+        #
         # @overload delete(object_id_, request_options: {})
         #
         # @param object_id_ [String] The internal id of the marketing event in HubSpot.
@@ -123,6 +157,13 @@ module HubspotSDK
           )
         end
 
+        # Deletes multiple Marketing Events from the portal based on their objectId, if
+        # they exist.
+        #
+        # Responses: 204: Returned if all specified Marketing Events were successfully
+        # deleted. 207: Returned if some objectIds did not correspond to any existing
+        # Marketing Events.
+        #
         # @overload delete_batch(inputs:, request_options: {})
         #
         # @param inputs [Array<HubspotSDK::Models::Marketing::MarketingEventPublicObjectIDDeleteRequest>]
@@ -143,6 +184,12 @@ module HubspotSDK
           )
         end
 
+        # Deletes multiple Marketing Events based on externalAccountId, externalEventId,
+        # and appId.
+        #
+        # Only Marketing Events created by the same apps will be deleted; events from
+        # other apps cannot be removed by this endpoint.
+        #
         # @overload delete_batch_by_external_event_id(inputs:, request_options: {})
         #
         # @param inputs [Array<HubspotSDK::Models::Marketing::MarketingEventExternalUniqueIdentifier>]
@@ -163,6 +210,11 @@ module HubspotSDK
           )
         end
 
+        # Deletes the existing Marketing Event with the specified externalAccountId,
+        # externalEventId, if it exists.
+        #
+        # Only Marketing Events created by the same app can be deleted.
+        #
         # @overload delete_by_external_event_id(external_event_id, external_account_id:, request_options: {})
         #
         # @param external_event_id [String]
@@ -184,6 +236,9 @@ module HubspotSDK
           )
         end
 
+        # Returns the details of a Marketing Event with the specified objectId, if it
+        # exists.
+        #
         # @overload get(object_id_, request_options: {})
         #
         # @param object_id_ [String] The internal id of the marketing event in HubSpot.
@@ -202,6 +257,12 @@ module HubspotSDK
           )
         end
 
+        # Returns the details of a Marketing Event with the specified externalAccountId,
+        # externalEventId, if it exists.
+        #
+        # Only Marketing Events created by the same app making the request can be
+        # retrieved.
+        #
         # @overload get_by_external_event_id(external_event_id, external_account_id:, request_options: {})
         #
         # @param external_event_id [String]
@@ -223,6 +284,11 @@ module HubspotSDK
           )
         end
 
+        # Retrieves Marketing Events where the externalEventId matches the value provided
+        # in the request, limited to events created by the app making the request.
+        #
+        # Marketing Events created by other apps will not be included in the results.
+        #
         # @overload search_by_external_event_id(q:, request_options: {})
         #
         # @param q [String]
@@ -243,6 +309,18 @@ module HubspotSDK
           )
         end
 
+        # This endpoint searches the portal for all Marketing Events whose externalEventId
+        # matches the value provided in the request.
+        #
+        # It retrieves the objectId and additional event details for each matching
+        # Marketing Event.
+        #
+        # Since multiple Marketing Events can have the same externalEventId, the endpoint
+        # returns all matching results.
+        #
+        # Note: Marketing Events become searchable by externalEventId a few minutes after
+        # creation.
+        #
         # @overload search_identifiers_by_external_event_id(external_event_id, request_options: {})
         #
         # @param external_event_id [String] The id of the marketing event in the external event application.
@@ -261,6 +339,9 @@ module HubspotSDK
           )
         end
 
+        # Updates multiple Marketing Events on the portal based on their objectId, if they
+        # exist.
+        #
         # @overload update_batch(inputs:, request_options: {})
         #
         # @param inputs [Array<HubspotSDK::Models::Marketing::MarketingEventPublicUpdateRequestFullV2>]
@@ -283,6 +364,11 @@ module HubspotSDK
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Marketing::EventUpdateByExternalEventIDParams} for more
         # details.
+        #
+        # Updates the details of an existing Marketing Event identified by its
+        # externalAccountId, externalEventId if it exists.
+        #
+        # Only Marketing Events created by the same app can be updated.
         #
         # @overload update_by_external_event_id(external_event_id, external_account_id:, custom_properties:, end_date_time: nil, event_cancelled: nil, event_completed: nil, event_description: nil, event_name: nil, event_organizer: nil, event_type: nil, event_url: nil, start_date_time: nil, request_options: {})
         #
@@ -329,6 +415,11 @@ module HubspotSDK
           )
         end
 
+        # Upserts multiple Marketing Events. If a Marketing Event with the specified ID
+        # already exists, it will be updated; otherwise, a new event will be created.
+        #
+        # Only Marketing Events originally created by the same app can be updated.
+        #
         # @overload upsert_batch(inputs:, request_options: {})
         #
         # @param inputs [Array<HubspotSDK::Models::Marketing::MarketingEventCreateRequestParams>]
@@ -351,6 +442,9 @@ module HubspotSDK
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Marketing::EventUpsertByExternalEventIDParams} for more
         # details.
+        #
+        # Upserts a marketing event If there is an existing marketing event with the
+        # specified ID, it will be updated; otherwise a new event will be created.
         #
         # @overload upsert_by_external_event_id(path_external_event_id, custom_properties:, event_name:, event_organizer:, external_account_id:, body_external_event_id:, end_date_time: nil, event_cancelled: nil, event_completed: nil, event_description: nil, event_type: nil, event_url: nil, start_date_time: nil, request_options: {})
         #
@@ -396,82 +490,6 @@ module HubspotSDK
           )
         end
 
-        # @overload upsert_subscriber_state_by_email(subscriber_state, external_event_id:, external_account_id:, inputs:, request_options: {})
-        #
-        # @param subscriber_state [String] Path param
-        #
-        # @param external_event_id [String] Path param
-        #
-        # @param external_account_id [String] Query param
-        #
-        # @param inputs [Array<HubspotSDK::Models::Marketing::MarketingEventEmailSubscriber>] Body param: List of marketing event details to create or update
-        #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-        #
-        # @return [StringIO]
-        #
-        # @see HubspotSDK::Models::Marketing::EventUpsertSubscriberStateByEmailParams
-        def upsert_subscriber_state_by_email(subscriber_state, params)
-          query_params = [:external_account_id]
-          parsed, options = HubspotSDK::Marketing::EventUpsertSubscriberStateByEmailParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
-          external_event_id =
-            parsed.delete(:external_event_id) do
-              raise ArgumentError.new("missing required path argument #{_1}")
-            end
-          @client.request(
-            method: :post,
-            path: [
-              "marketing/marketing-events/2026-03/events/%1$s/%2$s/email-upsert",
-              external_event_id,
-              subscriber_state
-            ],
-            query: query.transform_keys(external_account_id: "externalAccountId"),
-            headers: {"accept" => "*/*"},
-            body: parsed.except(*query_params),
-            model: StringIO,
-            options: options
-          )
-        end
-
-        # @overload upsert_subscriber_state_by_id(subscriber_state, external_event_id:, external_account_id:, inputs:, request_options: {})
-        #
-        # @param subscriber_state [String] Path param
-        #
-        # @param external_event_id [String] Path param
-        #
-        # @param external_account_id [String] Query param
-        #
-        # @param inputs [Array<HubspotSDK::Models::Marketing::MarketingEventSubscriber>] Body param: List of HubSpot contacts to subscribe to the marketing event
-        #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-        #
-        # @return [StringIO]
-        #
-        # @see HubspotSDK::Models::Marketing::EventUpsertSubscriberStateByIDParams
-        def upsert_subscriber_state_by_id(subscriber_state, params)
-          query_params = [:external_account_id]
-          parsed, options = HubspotSDK::Marketing::EventUpsertSubscriberStateByIDParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
-          external_event_id =
-            parsed.delete(:external_event_id) do
-              raise ArgumentError.new("missing required path argument #{_1}")
-            end
-          @client.request(
-            method: :post,
-            path: [
-              "marketing/marketing-events/2026-03/events/%1$s/%2$s/upsert",
-              external_event_id,
-              subscriber_state
-            ],
-            query: query.transform_keys(external_account_id: "externalAccountId"),
-            headers: {"accept" => "*/*"},
-            body: parsed.except(*query_params),
-            model: StringIO,
-            options: options
-          )
-        end
-
         # @api private
         #
         # @param client [HubspotSDK::Client]
@@ -482,6 +500,7 @@ module HubspotSDK
           @list_associations = HubspotSDK::Resources::Marketing::Events::ListAssociations.new(client: client)
           @participations = HubspotSDK::Resources::Marketing::Events::Participations.new(client: client)
           @settings = HubspotSDK::Resources::Marketing::Events::Settings.new(client: client)
+          @subscriber_state = HubspotSDK::Resources::Marketing::Events::SubscriberState.new(client: client)
         end
       end
     end

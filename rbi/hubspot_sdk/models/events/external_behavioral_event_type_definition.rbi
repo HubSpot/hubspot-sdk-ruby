@@ -244,6 +244,11 @@ module HubspotSDK
               :CUSTOM_SCRIPT,
               HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
             )
+          CUSTOM_SIGNAL =
+            T.let(
+              :CUSTOM_SIGNAL,
+              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
+            )
           IMPORT =
             T.let(
               :IMPORT,

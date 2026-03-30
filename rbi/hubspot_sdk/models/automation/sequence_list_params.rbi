@@ -15,13 +15,12 @@ module HubspotSDK
             )
           end
 
-        # The unique identifier of the user whose sequences are to be retrieved. This
-        # parameter is required.
         sig { returns(String) }
         attr_accessor :user_id
 
-        # The paging cursor token of the last successfully read resource. Use this for
-        # pagination to retrieve the next set of results.
+        # The paging cursor token of the last successfully read resource will be returned
+        # as the `paging.next.after` JSON property of a paged response containing more
+        # results.
         sig { returns(T.nilable(String)) }
         attr_reader :after
 
@@ -35,7 +34,6 @@ module HubspotSDK
         sig { params(limit: Integer).void }
         attr_writer :limit
 
-        # The name of the sequence to filter results by.
         sig { returns(T.nilable(String)) }
         attr_reader :name
 
@@ -52,15 +50,13 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The unique identifier of the user whose sequences are to be retrieved. This
-          # parameter is required.
           user_id:,
-          # The paging cursor token of the last successfully read resource. Use this for
-          # pagination to retrieve the next set of results.
+          # The paging cursor token of the last successfully read resource will be returned
+          # as the `paging.next.after` JSON property of a paged response containing more
+          # results.
           after: nil,
           # The maximum number of results to display per page.
           limit: nil,
-          # The name of the sequence to filter results by.
           name: nil,
           request_options: {}
         )

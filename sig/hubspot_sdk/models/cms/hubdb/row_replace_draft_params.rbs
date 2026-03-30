@@ -1,0 +1,36 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Hubdb
+        type row_replace_draft_params =
+          { table_id_or_name: String, row_id: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class RowReplaceDraftParams < HubspotSDK::Models::Cms::HubDBTableRowV3Request
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def table_id_or_name: -> String
+
+          def table_id_or_name=: (String _) -> String
+
+          def row_id: -> String
+
+          def row_id=: (String _) -> String
+
+          def initialize: (
+            table_id_or_name: String,
+            row_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            table_id_or_name: String,
+            row_id: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

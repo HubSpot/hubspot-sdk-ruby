@@ -17,9 +17,9 @@ module HubspotSDK
         optional :description, String
 
         # @!attribute display_order
-        #   Property groups are displayed in order starting with the lowest positive integer
-        #   value. Values of -1 will cause the property group to be displayed after any
-        #   positive values.
+        #   Properties are displayed in order starting with the lowest positive integer
+        #   value. Values of -1 will cause the Property to be displayed after any positive
+        #   values.
         #
         #   @return [Integer, nil]
         optional :display_order, Integer, api_name: :displayOrder
@@ -49,14 +49,13 @@ module HubspotSDK
         optional :hidden, HubspotSDK::Internal::Type::Boolean
 
         # @!attribute label
-        #   A human-readable label that will be shown in HubSpot.
+        #   A human-readable property label that will be shown in HubSpot.
         #
         #   @return [String, nil]
         optional :label, String
 
         # @!attribute options
-        #   A list of valid options for the property. This field is required for enumerated
-        #   properties.
+        #   A list of valid options for the property.
         #
         #   @return [Array<HubspotSDK::Models::OptionInput>, nil]
         optional :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::OptionInput] }
@@ -75,7 +74,7 @@ module HubspotSDK
         #
         #   @param description [String] A description of the property that will be shown as help text in HubSpot.
         #
-        #   @param display_order [Integer] Property groups are displayed in order starting with the lowest positive integer
+        #   @param display_order [Integer] Properties are displayed in order starting with the lowest positive integer valu
         #
         #   @param field_type [Symbol, HubspotSDK::Models::Crm::PropertyUpdate::FieldType] Controls how the property appears in HubSpot.
         #
@@ -85,9 +84,9 @@ module HubspotSDK
         #
         #   @param hidden [Boolean] If true, the property won't be visible and can't be used in HubSpot.
         #
-        #   @param label [String] A human-readable label that will be shown in HubSpot.
+        #   @param label [String] A human-readable property label that will be shown in HubSpot.
         #
-        #   @param options [Array<HubspotSDK::Models::OptionInput>] A list of valid options for the property. This field is required for enumerated
+        #   @param options [Array<HubspotSDK::Models::OptionInput>] A list of valid options for the property.
         #
         #   @param type [Symbol, HubspotSDK::Models::Crm::PropertyUpdate::Type] The data type of the property.
 

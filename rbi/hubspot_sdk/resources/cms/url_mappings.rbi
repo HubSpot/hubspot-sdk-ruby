@@ -10,56 +10,96 @@ module HubspotSDK
         # UrlMapping schema.
         sig do
           params(
-            id: String,
-            created: Time,
+            id: Integer,
+            cdn_purge_embargo_time: Integer,
+            content_group_id: Integer,
+            cos_object_type:
+              HubspotSDK::Cms::URLMappingsURLMapping::CosObjectType::OrSymbol,
+            created: Integer,
+            created_by_id: Integer,
+            deleted_at: Integer,
             destination: String,
+            internally_created: T::Boolean,
+            is_active: T::Boolean,
             is_match_full_url: T::Boolean,
             is_match_query_string: T::Boolean,
             is_only_after_not_found: T::Boolean,
             is_pattern: T::Boolean,
             is_protocol_agnostic: T::Boolean,
+            is_regex: T::Boolean,
             is_trailing_slash_optional: T::Boolean,
+            label: String,
+            name: String,
+            note: String,
+            portal_id: Integer,
             precedence: Integer,
             redirect_style: Integer,
             route_prefix: String,
-            updated: Time,
+            updated: Integer,
+            updated_by_id: Integer,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(StringIO)
         end
         def create(
-          # The unique ID of this URL redirect.
+          # The unique identifier for the URL mapping, represented as a 64-bit integer.
           id:,
-          # The date and time when the URL mapping was initially created.
+          # A Unix timestamp in milliseconds indicating the embargo time for CDN purge
+          # related to the URL mapping.
+          cdn_purge_embargo_time:,
+          # A 64-bit integer representing the content group associated with the URL mapping.
+          content_group_id:,
+          # A string representing the type of content object associated with the URL
+          # mapping. Valid values include various content types such as 'CONTENT', 'LAYOUT',
+          # 'FILE', etc.
+          cos_object_type:,
+          # A Unix timestamp in milliseconds indicating when the URL mapping was created.
           created:,
-          # The destination URL, where the target URL should be redirected if it matches the
-          # `routePrefix`.
+          # The identifier of the user who created the URL mapping.
+          created_by_id:,
+          # A Unix timestamp in milliseconds indicating when the URL mapping was deleted.
+          deleted_at:,
+          # The destination URL to which the routePrefix is redirected.
           destination:,
-          # Whether the `routePrefix` should match on the entire URL, including the domain.
+          # A boolean indicating if the URL mapping was created internally by the system.
+          internally_created:,
+          # A boolean indicating if the URL mapping is currently active.
+          is_active:,
+          # A boolean indicating if the full URL should be matched.
           is_match_full_url:,
-          # Whether the `routePrefix` should match on the entire URL path, including the
-          # query string.
+          # A boolean indicating if the query string should be matched.
           is_match_query_string:,
-          # Whether the URL redirect mapping should apply only if a live page on the URL
-          # isn't found. If False, the URL redirect mapping will take precedence over any
-          # existing page.
+          # A boolean indicating if the mapping should only be applied after a 404 Not Found
+          # response.
           is_only_after_not_found:,
-          # Whether the `routePrefix` should match based on pattern.
+          # A boolean indicating if the routePrefix is a pattern.
           is_pattern:,
-          # Whether the `routePrefix` should match both HTTP and HTTPS protocols.
+          # A boolean indicating if the mapping should ignore the URL protocol (http/https).
           is_protocol_agnostic:,
-          # Whether a trailing slash will be ignored.
+          # A boolean indicating if the routePrefix should be treated as a regular
+          # expression.
+          is_regex:,
+          # A boolean indicating if the trailing slash in the URL is optional.
           is_trailing_slash_optional:,
-          # Used to prioritize URL redirection. If a given URL matches more than one
-          # redirect, the one with the **lower** precedence will be used.
+          # A label for the URL mapping.
+          label:,
+          # The name of the URL mapping.
+          name:,
+          # A string containing notes about the URL mapping.
+          note:,
+          # The identifier for the HubSpot portal associated with this URL mapping.
+          portal_id:,
+          # An integer representing the precedence of the URL mapping, used to determine
+          # order of evaluation.
           precedence:,
-          # The type of redirect to create. Options include: 301 (permanent), 302
-          # (temporary), or 305 (proxy). Find more details
-          # [here](https://knowledge.hubspot.com/cos-general/how-to-redirect-a-hubspot-page).
+          # An integer representing the style of redirection used.
           redirect_style:,
-          # The target incoming URL, path, or pattern to match for redirection.
+          # The prefix of the URL path that is being mapped.
           route_prefix:,
-          # The date and time when the URL mapping was last modified.
+          # A Unix timestamp in milliseconds indicating when the URL mapping was last
+          # updated.
           updated:,
+          # The identifier of the user who last updated the URL mapping.
+          updated_by_id:,
           request_options: {}
         )
         end
@@ -85,11 +125,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).void
         end
-        def delete(
-          # The unique identifier of the URL mapping to delete. Must be an integer.
-          id,
-          request_options: {}
-        )
+        def delete(id, request_options: {})
         end
 
         # Retrieve a specific URL mapping by its unique identifier. This endpoint is
@@ -101,11 +137,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(StringIO)
         end
-        def get(
-          # The unique identifier of the URL mapping to retrieve. It must be an integer.
-          id,
-          request_options: {}
-        )
+        def get(id, request_options: {})
         end
 
         # @api private

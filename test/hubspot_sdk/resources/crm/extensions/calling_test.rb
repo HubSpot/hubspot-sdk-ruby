@@ -49,6 +49,31 @@ class HubspotSDK::Test::Resources::Crm::Extensions::CallingTest < HubspotSDK::Te
     end
   end
 
+  def test_create_inbound_call_required_params
+    skip("Mock server tests are disabled")
+
+    response =
+      @hubspot.crm.extensions.calling.create_inbound_call(
+        create_engagement: true,
+        engagement_properties: {foo: "string"},
+        external_call_id: "externalCallId",
+        final_call_status: :BUSY,
+        from_number: {e164Number: "e164Number", phoneNumberType: :FIXED_LINE},
+        potential_recipient_user_ids: [0],
+        to_number: {e164Number: "e164Number", phoneNumberType: :FIXED_LINE}
+      )
+
+    assert_pattern do
+      response => HubspotSDK::Crm::Extensions::CompletedThirdPartyCallResponse
+    end
+
+    assert_pattern do
+      response => {
+        caller_id_matches: ^(HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Crm::Extensions::CompletedThirdPartyCallResponse::CallerIDMatch])
+      }
+    end
+  end
+
   def test_get
     skip("Mock server tests are disabled")
 

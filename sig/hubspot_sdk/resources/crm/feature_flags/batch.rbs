@@ -1,0 +1,25 @@
+module HubspotSDK
+  module Resources
+    class Crm
+      class FeatureFlags
+        class Batch
+          def delete: (
+            String flag_name,
+            app_id: Integer,
+            portal_ids: ::Array[Integer],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::PortalFlagStateBatchResponse
+
+          def upsert: (
+            String flag_name,
+            app_id: Integer,
+            portal_states: ::Array[HubspotSDK::Crm::BatchPortalEntry],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::PortalFlagStateBatchResponse
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

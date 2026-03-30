@@ -5,6 +5,7 @@ module HubspotSDK
     module Automation
       class PublicFieldTypeDefinition < HubspotSDK::Internal::Type::BaseModel
         # @!attribute name
+        #   The internal name used to identify the field.
         #
         #   @return [String]
         required :name, String
@@ -15,16 +16,22 @@ module HubspotSDK
         required :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicOption] }
 
         # @!attribute type
+        #   The data type of the field, with accepted values including bool, date, datetime,
+        #   enumeration, json, number, object_coordinates, phone_number, and string.
         #
         #   @return [Symbol, HubspotSDK::Models::Automation::PublicFieldTypeDefinition::Type]
         required :type, enum: -> { HubspotSDK::Automation::PublicFieldTypeDefinition::Type }
 
         # @!attribute description
+        #   A detailed explanation of the field's purpose.
         #
         #   @return [String, nil]
         optional :description, String
 
         # @!attribute field_type
+        #   The type of field, with accepted values including booleancheckbox,
+        #   calculation_equation, checkbox, date, file, html, number, phonenumber, radio,
+        #   select, text, and textarea.
         #
         #   @return [Symbol, HubspotSDK::Models::Automation::PublicFieldTypeDefinition::FieldType, nil]
         optional :field_type,
@@ -32,21 +39,26 @@ module HubspotSDK
                  api_name: :fieldType
 
         # @!attribute help_text
+        #   Additional information or guidance about the field.
         #
         #   @return [String, nil]
         optional :help_text, String, api_name: :helpText
 
         # @!attribute label
+        #   A user-friendly name for the field.
         #
         #   @return [String, nil]
         optional :label, String
 
         # @!attribute options_url
+        #   A URL that provides options for the field.
         #
         #   @return [String, nil]
         optional :options_url, String, api_name: :optionsUrl
 
         # @!attribute referenced_object_type
+        #   The type of object that the field references, with accepted values including
+        #   OWNER.
         #
         #   @return [Symbol, HubspotSDK::Models::Automation::PublicFieldTypeDefinition::ReferencedObjectType, nil]
         optional :referenced_object_type,
@@ -54,16 +66,30 @@ module HubspotSDK
                  api_name: :referencedObjectType
 
         # @!method initialize(name:, options:, type:, description: nil, field_type: nil, help_text: nil, label: nil, options_url: nil, referenced_object_type: nil)
-        #   @param name [String]
+        #   Some parameter documentations has been truncated, see
+        #   {HubspotSDK::Models::Automation::PublicFieldTypeDefinition} for more details.
+        #
+        #   @param name [String] The internal name used to identify the field.
+        #
         #   @param options [Array<HubspotSDK::Models::Automation::PublicOption>]
-        #   @param type [Symbol, HubspotSDK::Models::Automation::PublicFieldTypeDefinition::Type]
-        #   @param description [String]
-        #   @param field_type [Symbol, HubspotSDK::Models::Automation::PublicFieldTypeDefinition::FieldType]
-        #   @param help_text [String]
-        #   @param label [String]
-        #   @param options_url [String]
-        #   @param referenced_object_type [Symbol, HubspotSDK::Models::Automation::PublicFieldTypeDefinition::ReferencedObjectType]
+        #
+        #   @param type [Symbol, HubspotSDK::Models::Automation::PublicFieldTypeDefinition::Type] The data type of the field, with accepted values including bool, date, datetime,
+        #
+        #   @param description [String] A detailed explanation of the field's purpose.
+        #
+        #   @param field_type [Symbol, HubspotSDK::Models::Automation::PublicFieldTypeDefinition::FieldType] The type of field, with accepted values including booleancheckbox, calculation_e
+        #
+        #   @param help_text [String] Additional information or guidance about the field.
+        #
+        #   @param label [String] A user-friendly name for the field.
+        #
+        #   @param options_url [String] A URL that provides options for the field.
+        #
+        #   @param referenced_object_type [Symbol, HubspotSDK::Models::Automation::PublicFieldTypeDefinition::ReferencedObjectType] The type of object that the field references, with accepted values including OWN
 
+        # The data type of the field, with accepted values including bool, date, datetime,
+        # enumeration, json, number, object_coordinates, phone_number, and string.
+        #
         # @see HubspotSDK::Models::Automation::PublicFieldTypeDefinition#type
         module Type
           extend HubspotSDK::Internal::Type::Enum
@@ -82,6 +108,10 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
+        # The type of field, with accepted values including booleancheckbox,
+        # calculation_equation, checkbox, date, file, html, number, phonenumber, radio,
+        # select, text, and textarea.
+        #
         # @see HubspotSDK::Models::Automation::PublicFieldTypeDefinition#field_type
         module FieldType
           extend HubspotSDK::Internal::Type::Enum
@@ -103,6 +133,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
+        # The type of object that the field references, with accepted values including
+        # OWNER.
+        #
         # @see HubspotSDK::Models::Automation::PublicFieldTypeDefinition#referenced_object_type
         module ReferencedObjectType
           extend HubspotSDK::Internal::Type::Enum

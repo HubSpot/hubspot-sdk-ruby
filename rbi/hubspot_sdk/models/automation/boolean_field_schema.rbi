@@ -12,6 +12,8 @@ module HubspotSDK
             )
           end
 
+        # Specifies the field type as BOOLEAN, indicating that the field can hold a true
+        # or false value.
         sig do
           returns(HubspotSDK::Automation::BooleanFieldSchema::Type::OrSymbol)
         end
@@ -22,7 +24,11 @@ module HubspotSDK
             type: HubspotSDK::Automation::BooleanFieldSchema::Type::OrSymbol
           ).returns(T.attached_class)
         end
-        def self.new(type:)
+        def self.new(
+          # Specifies the field type as BOOLEAN, indicating that the field can hold a true
+          # or false value.
+          type:
+        )
         end
 
         sig do
@@ -33,6 +39,8 @@ module HubspotSDK
         def to_hash
         end
 
+        # Specifies the field type as BOOLEAN, indicating that the field can hold a true
+        # or false value.
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

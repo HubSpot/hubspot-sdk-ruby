@@ -4,7 +4,7 @@ module HubspotSDK
   module Models
     module Cms
       # @see HubspotSDK::Resources::Cms::URLMappings#create
-      class URLMappingCreateParams < HubspotSDK::Models::Cms::URLMapping
+      class URLMappingCreateParams < HubspotSDK::Models::Cms::URLMappingsURLMapping
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 

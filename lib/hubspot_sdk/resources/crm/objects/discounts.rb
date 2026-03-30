@@ -8,7 +8,9 @@ module HubspotSDK
           # @return [HubspotSDK::Resources::Crm::Objects::Discounts::Batch]
           attr_reader :batch
 
-          # Create a discount
+          # Create a discount with the given properties and return a copy of the object,
+          # including the ID. Documentation and examples for creating standard discounts is
+          # provided.
           #
           # @overload create(associations:, properties:, request_options: {})
           #
@@ -73,8 +75,7 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::DiscountListParams} for more details.
           #
-          # Retrieve all discounts, using query parameters to specify the information that
-          # gets returned.
+          # List
           #
           # @overload list(after: nil, archived: nil, associations: nil, limit: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
@@ -108,7 +109,7 @@ module HubspotSDK
             )
           end
 
-          # Delete a discount.
+          # Archive
           #
           # @overload delete(discount_id, request_options: {})
           #
@@ -130,9 +131,10 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::DiscountGetParams} for more details.
           #
-          # Retrieve a discount by its ID (`objectId`) or by a unique property
-          # (`idProperty`). You can specify what is returned using the `properties` query
-          # parameter.
+          # Read an Object identified by `{discountId}`. `{discountId}` refers to the
+          # internal object ID by default, or optionally any unique property value as
+          # specified by the `idProperty` query param. Control what is returned via the
+          # `properties` query param.
           #
           # @overload get(discount_id, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
@@ -168,8 +170,6 @@ module HubspotSDK
             )
           end
 
-          # Search for a discount
-          #
           # @overload search(after:, filter_groups:, limit:, properties:, sorts:, query: nil, request_options: {})
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.

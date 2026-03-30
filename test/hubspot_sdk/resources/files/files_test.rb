@@ -3,6 +3,138 @@
 require_relative "../../test_helper"
 
 class HubspotSDK::Test::Resources::Files::FilesTest < HubspotSDK::Test::ResourceTest
+  def test_create_required_params
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.files.files.create(name: "name")
+
+    assert_pattern do
+      response => HubspotSDK::Files::Folder
+    end
+
+    assert_pattern do
+      response => {
+        id: String,
+        archived: HubspotSDK::Internal::Type::Boolean,
+        created_at: Time,
+        updated_at: Time,
+        archived_at: Time | nil,
+        name: String | nil,
+        parent_folder_id: String | nil,
+        path: String | nil
+      }
+    end
+  end
+
+  def test_update_required_params
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.files.files.update("321669910225", clear_expires: true)
+
+    assert_pattern do
+      response => HubspotSDK::Files::File
+    end
+
+    assert_pattern do
+      response => {
+        id: String,
+        archived: HubspotSDK::Internal::Type::Boolean,
+        created_at: Time,
+        updated_at: Time,
+        access: HubspotSDK::Files::File::Access | nil,
+        archived_at: Time | nil,
+        default_hosting_url: String | nil,
+        encoding: String | nil,
+        expires_at: Integer | nil,
+        extension: String | nil,
+        file_md5: String | nil,
+        height: Integer | nil,
+        is_usable_in_content: HubspotSDK::Internal::Type::Boolean | nil,
+        name: String | nil,
+        parent_folder_id: String | nil,
+        path: String | nil,
+        size: Integer | nil,
+        source_group: HubspotSDK::Files::File::SourceGroup | nil,
+        type: String | nil,
+        url: String | nil,
+        width: Integer | nil
+      }
+    end
+  end
+
+  def test_delete
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.files.files.delete("321669910225")
+
+    assert_pattern do
+      response => nil
+    end
+  end
+
+  def test_gdpr_delete
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.files.files.gdpr_delete("321669910225")
+
+    assert_pattern do
+      response => nil
+    end
+  end
+
+  def test_get
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.files.files.get("321669910225")
+
+    assert_pattern do
+      response => HubspotSDK::Files::File
+    end
+
+    assert_pattern do
+      response => {
+        id: String,
+        archived: HubspotSDK::Internal::Type::Boolean,
+        created_at: Time,
+        updated_at: Time,
+        access: HubspotSDK::Files::File::Access | nil,
+        archived_at: Time | nil,
+        default_hosting_url: String | nil,
+        encoding: String | nil,
+        expires_at: Integer | nil,
+        extension: String | nil,
+        file_md5: String | nil,
+        height: Integer | nil,
+        is_usable_in_content: HubspotSDK::Internal::Type::Boolean | nil,
+        name: String | nil,
+        parent_folder_id: String | nil,
+        path: String | nil,
+        size: Integer | nil,
+        source_group: HubspotSDK::Files::File::SourceGroup | nil,
+        type: String | nil,
+        url: String | nil,
+        width: Integer | nil
+      }
+    end
+  end
+
+  def test_get_by_path
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.files.files.get_by_path("path")
+
+    assert_pattern do
+      response => HubspotSDK::Files::FileStat
+    end
+
+    assert_pattern do
+      response => {
+        file: HubspotSDK::Files::File | nil,
+        folder: HubspotSDK::Files::Folder | nil
+      }
+    end
+  end
+
   def test_get_import_task_status
     skip("Mock server tests are disabled")
 
@@ -23,6 +155,29 @@ class HubspotSDK::Test::Resources::Files::FilesTest < HubspotSDK::Test::Resource
         num_errors: Integer | nil,
         requested_at: Time | nil,
         result: HubspotSDK::Files::File | nil
+      }
+    end
+  end
+
+  def test_get_signed_url
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.files.files.get_signed_url("321669910225")
+
+    assert_pattern do
+      response => HubspotSDK::Files::SignedURL
+    end
+
+    assert_pattern do
+      response => {
+        expires_at: Time,
+        url: String,
+        extension: String | nil,
+        height: Integer | nil,
+        name: String | nil,
+        size: Integer | nil,
+        type: String | nil,
+        width: Integer | nil
       }
     end
   end
@@ -50,6 +205,42 @@ class HubspotSDK::Test::Resources::Files::FilesTest < HubspotSDK::Test::Resource
     end
   end
 
+  def test_replace
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.files.files.replace("321669910225")
+
+    assert_pattern do
+      response => HubspotSDK::Files::File
+    end
+
+    assert_pattern do
+      response => {
+        id: String,
+        archived: HubspotSDK::Internal::Type::Boolean,
+        created_at: Time,
+        updated_at: Time,
+        access: HubspotSDK::Files::File::Access | nil,
+        archived_at: Time | nil,
+        default_hosting_url: String | nil,
+        encoding: String | nil,
+        expires_at: Integer | nil,
+        extension: String | nil,
+        file_md5: String | nil,
+        height: Integer | nil,
+        is_usable_in_content: HubspotSDK::Internal::Type::Boolean | nil,
+        name: String | nil,
+        parent_folder_id: String | nil,
+        path: String | nil,
+        size: Integer | nil,
+        source_group: HubspotSDK::Files::File::SourceGroup | nil,
+        type: String | nil,
+        url: String | nil,
+        width: Integer | nil
+      }
+    end
+  end
+
   def test_search
     skip("Mock server tests are disabled")
 
@@ -68,6 +259,42 @@ class HubspotSDK::Test::Resources::Files::FilesTest < HubspotSDK::Test::Resource
 
     assert_pattern do
       row => {
+        id: String,
+        archived: HubspotSDK::Internal::Type::Boolean,
+        created_at: Time,
+        updated_at: Time,
+        access: HubspotSDK::Files::File::Access | nil,
+        archived_at: Time | nil,
+        default_hosting_url: String | nil,
+        encoding: String | nil,
+        expires_at: Integer | nil,
+        extension: String | nil,
+        file_md5: String | nil,
+        height: Integer | nil,
+        is_usable_in_content: HubspotSDK::Internal::Type::Boolean | nil,
+        name: String | nil,
+        parent_folder_id: String | nil,
+        path: String | nil,
+        size: Integer | nil,
+        source_group: HubspotSDK::Files::File::SourceGroup | nil,
+        type: String | nil,
+        url: String | nil,
+        width: Integer | nil
+      }
+    end
+  end
+
+  def test_upload
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.files.files.upload
+
+    assert_pattern do
+      response => HubspotSDK::Files::File
+    end
+
+    assert_pattern do
+      response => {
         id: String,
         archived: HubspotSDK::Internal::Type::Boolean,
         created_at: Time,

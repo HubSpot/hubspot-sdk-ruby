@@ -15,7 +15,7 @@ module HubspotSDK
               )
             end
 
-          # The unique ID of the blog post.
+          # The unique ID of the Blog Post.
           sig { returns(String) }
           attr_accessor :id
 
@@ -44,25 +44,23 @@ module HubspotSDK
           sig { returns(T::Array[T::Hash[Symbol, T.anything]]) }
           attr_accessor :attached_stylesheets
 
-          # The name of the user who last published the blog post. For posts that haven't
-          # been published yet, this property will reflect the user who initially created
-          # the draft.
+          # The name of the user that updated this Blog Post.
           sig { returns(String) }
           attr_accessor :author_name
 
-          # The ID of the blog author associated with this post.
+          # The ID of the Blog Author associated with this Blog Post.
           sig { returns(String) }
           attr_accessor :blog_author_id
 
-          # The GUID of the marketing campaign the post is associated with.
+          # The GUID of the marketing campaign this Blog Post is a part of.
           sig { returns(String) }
           attr_accessor :campaign
 
-          # ID of the object type.
+          # ID of the type of object this is. Should always .
           sig { returns(Integer) }
           attr_accessor :category_id
 
-          # The ID of the post's parent blog.
+          # The ID of the parent Blog this Blog Post is associated with.
           sig { returns(String) }
           attr_accessor :content_group_id
 
@@ -78,7 +76,7 @@ module HubspotSDK
           sig { returns(Time) }
           attr_accessor :created
 
-          # The ID of the user that created the post.
+          # The ID of the user that created this Blog Post.
           sig { returns(String) }
           attr_accessor :created_by_id
 
@@ -93,8 +91,8 @@ module HubspotSDK
           end
           attr_accessor :current_state
 
-          # The domain that the post lives on. If null, the post will default to the domain
-          # of the parent blog.
+          # The domain this Blog Post will resolve to. If null, the Blog Post will default
+          # to the domain of the ParentBlog.
           sig { returns(String) }
           attr_accessor :domain
 
@@ -106,7 +104,7 @@ module HubspotSDK
           sig { returns(Integer) }
           attr_accessor :dynamic_page_data_source_type
 
-          # For dynamic HubDB pages, the ID of the HubDB table this post references.
+          # The ID of the HubDB table this Blog Post references, if applicable
           sig { returns(String) }
           attr_accessor :dynamic_page_hub_db_table_id
 
@@ -146,7 +144,7 @@ module HubspotSDK
           sig { returns(String) }
           attr_accessor :head_html
 
-          # The HTML title of the post.
+          # The html title of this Blog Post.
           sig { returns(String) }
           attr_accessor :html_title
 
@@ -154,15 +152,13 @@ module HubspotSDK
           sig { returns(T::Boolean) }
           attr_accessor :include_default_custom_css
 
-          # The explicitly defined ISO 639 language code of the post. If null, the post will
-          # default to the language of the parent blog.
+          # The explicitly defined ISO 639 language code of the Blog Post. If null, the Blog
+          # Post will default to the language of the ParentBlog.
           sig { returns(HubspotSDK::Cms::Blogs::BlogPost::Language::OrSymbol) }
           attr_accessor :language
 
           # A structure detailing the layout sections of the blog post.
-          sig do
-            returns(T::Hash[Symbol, HubspotSDK::Cms::Blogs::LayoutSection])
-          end
+          sig { returns(T::Hash[Symbol, HubspotSDK::Cms::LayoutSection]) }
           attr_accessor :layout_sections
 
           # Optional override to set the URL to be used in the rel=canonical link tag on the
@@ -178,7 +174,7 @@ module HubspotSDK
           sig { returns(String) }
           attr_accessor :meta_description
 
-          # The internal name of the post.
+          # The internal name of the Blog Post.
           sig { returns(String) }
           attr_accessor :name
 
@@ -202,7 +198,7 @@ module HubspotSDK
           attr_accessor :page_expiry_redirect_url
 
           # Set this to create a password protected page. Entering the password will be
-          # required to view the blog post.
+          # required to view the page.
           sig { returns(String) }
           attr_accessor :password
 
@@ -239,16 +235,16 @@ module HubspotSDK
           sig { returns(String) }
           attr_accessor :rss_summary
 
-          # The URL slug of the blog post. This field is appended to the domain to construct
-          # the url of this post.
+          # The path of the this blog post. This field is appended to the domain to
+          # construct the url of this post.
           sig { returns(String) }
           attr_accessor :slug
 
-          # An enumeration describing the current publish state of the post.
+          # An ENUM descibing the current state of this Blog Post.
           sig { returns(String) }
           attr_accessor :state
 
-          # The IDs of the tags associated with this post.
+          # List of IDs for the tags associated with this Blog Post.
           sig { returns(T::Array[Integer]) }
           attr_accessor :tag_ids
 
@@ -256,16 +252,14 @@ module HubspotSDK
           sig { returns(T::Hash[Symbol, T.anything]) }
           attr_accessor :theme_settings_values
 
-          # ID of the primary blog post that this post was translated from.
+          # ID of the primary blog post this object was translated from.
           sig { returns(String) }
           attr_accessor :translated_from_id
 
           # A map of translations for the blog post, each associated with a specific
           # language variation.
           sig do
-            returns(
-              T::Hash[Symbol, HubspotSDK::Cms::Blogs::ContentLanguageVariation]
-            )
+            returns(T::Hash[Symbol, HubspotSDK::Cms::ContentLanguageVariation])
           end
           attr_accessor :translations
 
@@ -273,7 +267,7 @@ module HubspotSDK
           sig { returns(Time) }
           attr_accessor :updated
 
-          # The ID of the user that updated the post.
+          # The ID of the user that updated this Blog Post.
           sig { returns(String) }
           attr_accessor :updated_by_id
 
@@ -281,7 +275,7 @@ module HubspotSDK
           sig { returns(String) }
           attr_accessor :url
 
-          # Boolean to determine if this post should use a featured image.
+          # Boolean to determine if this post should use a featuredImage.
           sig { returns(T::Boolean) }
           attr_accessor :use_featured_image
 
@@ -330,7 +324,7 @@ module HubspotSDK
               include_default_custom_css: T::Boolean,
               language: HubspotSDK::Cms::Blogs::BlogPost::Language::OrSymbol,
               layout_sections:
-                T::Hash[Symbol, HubspotSDK::Cms::Blogs::LayoutSection::OrHash],
+                T::Hash[Symbol, HubspotSDK::Cms::LayoutSection::OrHash],
               link_rel_canonical_url: String,
               mab_experiment_id: String,
               meta_description: String,
@@ -356,7 +350,7 @@ module HubspotSDK
               translations:
                 T::Hash[
                   Symbol,
-                  HubspotSDK::Cms::Blogs::ContentLanguageVariation::OrHash
+                  HubspotSDK::Cms::ContentLanguageVariation::OrHash
                 ],
               updated: Time,
               updated_by_id: String,
@@ -367,7 +361,7 @@ module HubspotSDK
             ).returns(T.attached_class)
           end
           def self.new(
-            # The unique ID of the blog post.
+            # The unique ID of the Blog Post.
             id:,
             # The status of the AB test associated with this blog post, if applicable
             #
@@ -384,37 +378,35 @@ module HubspotSDK
             # List of stylesheets to attach to this blog post. These stylesheets are attached
             # to just this page. Order of precedence is bottom to top, just like in the HTML.
             attached_stylesheets:,
-            # The name of the user who last published the blog post. For posts that haven't
-            # been published yet, this property will reflect the user who initially created
-            # the draft.
+            # The name of the user that updated this Blog Post.
             author_name:,
-            # The ID of the blog author associated with this post.
+            # The ID of the Blog Author associated with this Blog Post.
             blog_author_id:,
-            # The GUID of the marketing campaign the post is associated with.
+            # The GUID of the marketing campaign this Blog Post is a part of.
             campaign:,
-            # ID of the object type.
+            # ID of the type of object this is. Should always .
             category_id:,
-            # The ID of the post's parent blog.
+            # The ID of the parent Blog this Blog Post is associated with.
             content_group_id:,
             # An ENUM descibing the type of this object. Should always be BLOG_POST.
             content_type_category:,
             # The timestamp (ISO8601 format) when this Blog Post was created.
             created:,
-            # The ID of the user that created the post.
+            # The ID of the user that created this Blog Post.
             created_by_id:,
             # Whether the post is published (true or false)
             currently_published:,
             # A generated ENUM descibing the current state of this Blog Post. Should always
             # match state.
             current_state:,
-            # The domain that the post lives on. If null, the post will default to the domain
-            # of the parent blog.
+            # The domain this Blog Post will resolve to. If null, the Blog Post will default
+            # to the domain of the ParentBlog.
             domain:,
             # The identifier for the data source used by the dynamic page.
             dynamic_page_data_source_id:,
             # The type of data source used by the dynamic page.
             dynamic_page_data_source_type:,
-            # For dynamic HubDB pages, the ID of the HubDB table this post references.
+            # The ID of the HubDB table this Blog Post references, if applicable
             dynamic_page_hub_db_table_id:,
             # Boolean to determine whether or not the styles from the template should be
             # applied.
@@ -436,12 +428,12 @@ module HubspotSDK
             # Custom HTML for embed codes, javascript, etc. that goes in the <head> tag of the
             # page.
             head_html:,
-            # The HTML title of the post.
+            # The html title of this Blog Post.
             html_title:,
             # Boolean to determine whether or not the Primary CSS Files should be applied.
             include_default_custom_css:,
-            # The explicitly defined ISO 639 language code of the post. If null, the post will
-            # default to the language of the parent blog.
+            # The explicitly defined ISO 639 language code of the Blog Post. If null, the Blog
+            # Post will default to the language of the ParentBlog.
             language:,
             # A structure detailing the layout sections of the blog post.
             layout_sections:,
@@ -452,7 +444,7 @@ module HubspotSDK
             mab_experiment_id:,
             # A description that goes in <meta> tag on the page.
             meta_description:,
-            # The internal name of the post.
+            # The internal name of the Blog Post.
             name:,
             # The date at which this blog post should expire and begin redirecting to another
             # url or page.
@@ -466,7 +458,7 @@ module HubspotSDK
             # this or pageExpiryRedirectId.
             page_expiry_redirect_url:,
             # Set this to create a password protected page. Entering the password will be
-            # required to view the blog post.
+            # required to view the page.
             password:,
             # The HTML of the main post body.
             post_body:,
@@ -485,27 +477,27 @@ module HubspotSDK
             rss_body:,
             # The contents of the RSS summary for this Blog Post.
             rss_summary:,
-            # The URL slug of the blog post. This field is appended to the domain to construct
-            # the url of this post.
+            # The path of the this blog post. This field is appended to the domain to
+            # construct the url of this post.
             slug:,
-            # An enumeration describing the current publish state of the post.
+            # An ENUM descibing the current state of this Blog Post.
             state:,
-            # The IDs of the tags associated with this post.
+            # List of IDs for the tags associated with this Blog Post.
             tag_ids:,
             # A collection of settings specific to the theme applied to the blog post.
             theme_settings_values:,
-            # ID of the primary blog post that this post was translated from.
+            # ID of the primary blog post this object was translated from.
             translated_from_id:,
             # A map of translations for the blog post, each associated with a specific
             # language variation.
             translations:,
             # The timestamp (ISO8601 format) when this Blog Post was updated.
             updated:,
-            # The ID of the user that updated the post.
+            # The ID of the user that updated this Blog Post.
             updated_by_id:,
             # A generated field representing the URL of this blog post.
             url:,
-            # Boolean to determine if this post should use a featured image.
+            # Boolean to determine if this post should use a featuredImage.
             use_featured_image:,
             # A data structure containing the data for all the modules inside the containers
             # for this post. This will only be populated if the page has widget containers.
@@ -552,7 +544,7 @@ module HubspotSDK
                 include_default_custom_css: T::Boolean,
                 language: HubspotSDK::Cms::Blogs::BlogPost::Language::OrSymbol,
                 layout_sections:
-                  T::Hash[Symbol, HubspotSDK::Cms::Blogs::LayoutSection],
+                  T::Hash[Symbol, HubspotSDK::Cms::LayoutSection],
                 link_rel_canonical_url: String,
                 mab_experiment_id: String,
                 meta_description: String,
@@ -576,10 +568,7 @@ module HubspotSDK
                 theme_settings_values: T::Hash[Symbol, T.anything],
                 translated_from_id: String,
                 translations:
-                  T::Hash[
-                    Symbol,
-                    HubspotSDK::Cms::Blogs::ContentLanguageVariation
-                  ],
+                  T::Hash[Symbol, HubspotSDK::Cms::ContentLanguageVariation],
                 updated: Time,
                 updated_by_id: String,
                 url: String,
@@ -980,8 +969,8 @@ module HubspotSDK
             end
           end
 
-          # The explicitly defined ISO 639 language code of the post. If null, the post will
-          # default to the language of the parent blog.
+          # The explicitly defined ISO 639 language code of the Blog Post. If null, the Blog
+          # Post will default to the language of the ParentBlog.
           module Language
             extend HubspotSDK::Internal::Type::Enum
 

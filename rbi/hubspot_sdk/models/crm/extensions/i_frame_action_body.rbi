@@ -21,7 +21,7 @@ module HubspotSDK
           sig { returns(T::Array[String]) }
           attr_accessor :property_names_included
 
-          # Specifies the type of action, which is 'IFRAME' for iframe actions.
+          # The type of status.
           sig do
             returns(
               HubspotSDK::Crm::Extensions::IFrameActionBody::Type::TaggedSymbol
@@ -37,8 +37,7 @@ module HubspotSDK
           sig { returns(Integer) }
           attr_accessor :width
 
-          # The label for the button that opens the iframen as it will be displayed to
-          # users.
+          # The label for this property as you'd like it displayed to users.
           sig { returns(T.nilable(String)) }
           attr_reader :label
 
@@ -61,14 +60,13 @@ module HubspotSDK
             height:,
             # A list of property names that will be included on the url of the iframe.
             property_names_included:,
-            # Specifies the type of action, which is 'IFRAME' for iframe actions.
+            # The type of status.
             type:,
             # The URL endpoint that will be loaded in the iframe when triggered.
             url:,
             # The width of the iframe in pixels.
             width:,
-            # The label for the button that opens the iframen as it will be displayed to
-            # users.
+            # The label for this property as you'd like it displayed to users.
             label: nil
           )
           end
@@ -89,7 +87,7 @@ module HubspotSDK
           def to_hash
           end
 
-          # Specifies the type of action, which is 'IFRAME' for iframe actions.
+          # The type of status.
           module Type
             extend HubspotSDK::Internal::Type::Enum
 

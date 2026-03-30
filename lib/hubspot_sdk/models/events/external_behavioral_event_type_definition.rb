@@ -3,6 +3,7 @@
 module HubspotSDK
   module Models
     module Events
+      # @see HubspotSDK::Resources::Events::Definitions#create
       class ExternalBehavioralEventTypeDefinition < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #
@@ -132,6 +133,7 @@ module HubspotSDK
           CLICKED_ELEMENT = :CLICKED_ELEMENT
           COMBO_EVENT = :COMBO_EVENT
           CUSTOM_SCRIPT = :CUSTOM_SCRIPT
+          CUSTOM_SIGNAL = :CUSTOM_SIGNAL
           IMPORT = :IMPORT
           MANUAL = :MANUAL
           PROPERTY_CHANGE = :PROPERTY_CHANGE

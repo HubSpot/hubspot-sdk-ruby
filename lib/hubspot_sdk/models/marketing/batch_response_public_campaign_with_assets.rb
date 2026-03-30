@@ -5,7 +5,7 @@ module HubspotSDK
     module Marketing
       class BatchResponsePublicCampaignWithAssets < HubspotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
-        #   The date and time when the batch operation was completed, in ISO 8601 format.
+        #   The timestamp when the batch request processing was completed.
         #
         #   @return [Time]
         required :completed_at, Time, api_name: :completedAt
@@ -19,14 +19,14 @@ module HubspotSDK
                  -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicCampaignWithAssets] }
 
         # @!attribute started_at
-        #   The date and time when the batch operation started, in ISO 8601 format.
+        #   The timestamp when the processing of the batch request began.
         #
         #   @return [Time]
         required :started_at, Time, api_name: :startedAt
 
         # @!attribute status
-        #   The current status of the batch operation. Valid values include 'PENDING',
-        #   'PROCESSING', 'CANCELED', and 'COMPLETE'.
+        #   The current processing status of the batch operation, with possible values:
+        #   CANCELED, COMPLETE, PENDING, PROCESSING.
         #
         #   @return [Symbol, HubspotSDK::Models::Marketing::BatchResponsePublicCampaignWithAssets::Status]
         required :status, enum: -> { HubspotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status }
@@ -39,8 +39,7 @@ module HubspotSDK
         optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
 
         # @!attribute links
-        #   A map of link names to associated URIs that provide additional information about
-        #   the batch operation.
+        #   A collection of URLs linking to related resources or documentation.
         #
         #   @return [Hash{Symbol=>String}, nil]
         optional :links, HubspotSDK::Internal::Type::HashOf[String]
@@ -52,7 +51,7 @@ module HubspotSDK
         optional :num_errors, Integer, api_name: :numErrors
 
         # @!attribute requested_at
-        #   The date and time when the batch operation was requested, in ISO 8601 format.
+        #   The timestamp when the batch request was initially made.
         #
         #   @return [Time, nil]
         optional :requested_at, Time, api_name: :requestedAt
@@ -62,24 +61,24 @@ module HubspotSDK
         #   {HubspotSDK::Models::Marketing::BatchResponsePublicCampaignWithAssets} for more
         #   details.
         #
-        #   @param completed_at [Time] The date and time when the batch operation was completed, in ISO 8601 format.
+        #   @param completed_at [Time] The timestamp when the batch request processing was completed.
         #
         #   @param results [Array<HubspotSDK::Models::Marketing::PublicCampaignWithAssets>] An array of results from the batch operation, each representing a public campaig
         #
-        #   @param started_at [Time] The date and time when the batch operation started, in ISO 8601 format.
+        #   @param started_at [Time] The timestamp when the processing of the batch request began.
         #
-        #   @param status [Symbol, HubspotSDK::Models::Marketing::BatchResponsePublicCampaignWithAssets::Status] The current status of the batch operation. Valid values include 'PENDING', 'PROC
+        #   @param status [Symbol, HubspotSDK::Models::Marketing::BatchResponsePublicCampaignWithAssets::Status] The current processing status of the batch operation, with possible values: CANC
         #
         #   @param errors [Array<HubspotSDK::Models::StandardError>] An array of errors encountered during the batch operation, each described by a S
         #
-        #   @param links [Hash{Symbol=>String}] A map of link names to associated URIs that provide additional information about
+        #   @param links [Hash{Symbol=>String}] A collection of URLs linking to related resources or documentation.
         #
         #   @param num_errors [Integer] The number of errors encountered during the batch operation.
         #
-        #   @param requested_at [Time] The date and time when the batch operation was requested, in ISO 8601 format.
+        #   @param requested_at [Time] The timestamp when the batch request was initially made.
 
-        # The current status of the batch operation. Valid values include 'PENDING',
-        # 'PROCESSING', 'CANCELED', and 'COMPLETE'.
+        # The current processing status of the batch operation, with possible values:
+        # CANCELED, COMPLETE, PENDING, PROCESSING.
         #
         # @see HubspotSDK::Models::Marketing::BatchResponsePublicCampaignWithAssets#status
         module Status

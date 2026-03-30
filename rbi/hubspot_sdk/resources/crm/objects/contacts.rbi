@@ -8,11 +8,7 @@ module HubspotSDK
           sig { returns(HubspotSDK::Resources::Crm::Objects::Contacts::Batch) }
           attr_reader :batch
 
-          # Create a single contact. Include a `properties` object to define
-          # [property values](https://developers.hubspot.com/docs/guides/api/crm/properties)
-          # for the contact, along with an `associations` array to define
-          # [associations](https://developers.hubspot.com/docs/guides/api/crm/associations/associations-v4)
-          # with other CRM records.
+          # Create a contact
           sig do
             params(
               associations:
@@ -55,8 +51,6 @@ module HubspotSDK
           )
           end
 
-          # Retrieve all contacts, using query parameters to specify the information that
-          # gets returned.
           sig do
             params(
               after: String,
@@ -111,11 +105,6 @@ module HubspotSDK
           def delete(contact_id, request_options: {})
           end
 
-          # Permanently delete a contact and all associated content to follow GDPR. Use
-          # optional property `idProperty` set to `email` to identify contact by email
-          # address. If email address is not found, the email address will be added to a
-          # blocklist and prevent it from being used in the future. Learn more about
-          # [permanently deleting contacts](https://knowledge.hubspot.com/privacy-and-consent/how-do-i-perform-a-gdpr-delete-in-hubspot).
           sig do
             params(
               object_id_: String,
@@ -133,9 +122,6 @@ module HubspotSDK
           )
           end
 
-          # Retrieve a contact by its ID (`contactId`) or by a unique property
-          # (`idProperty`). You can specify what is returned using the `properties` query
-          # parameter.
           sig do
             params(
               contact_id: String,
@@ -168,8 +154,7 @@ module HubspotSDK
           )
           end
 
-          # Merge two contact records. Learn more about
-          # [merging records](https://knowledge.hubspot.com/records/merge-records).
+          # Merge two contacts
           sig do
             params(
               object_id_to_merge: String,

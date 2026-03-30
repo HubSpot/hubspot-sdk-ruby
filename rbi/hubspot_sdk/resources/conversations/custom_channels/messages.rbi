@@ -5,6 +5,7 @@ module HubspotSDK
     class Conversations
       class CustomChannels
         class Messages
+          # Publish a message over your custom channel
           sig do
             params(
               channel_id: Integer,
@@ -62,6 +63,9 @@ module HubspotSDK
           )
           end
 
+          # Update a message's status to indicate if it was successfully sent, failed to
+          # send, or was read. For failed messages, this can also include the error message
+          # for the failure.
           sig do
             params(
               message_id: String,
@@ -85,6 +89,7 @@ module HubspotSDK
           )
           end
 
+          # Get the details for a specific message sent over a custom channel
           sig do
             params(
               message_id: String,

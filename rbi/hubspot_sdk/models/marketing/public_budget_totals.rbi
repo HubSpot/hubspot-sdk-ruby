@@ -17,8 +17,8 @@ module HubspotSDK
         sig { returns(T::Array[HubspotSDK::Marketing::PublicBudgetItem]) }
         attr_accessor :budget_items
 
-        # The currency code used for budget and spending amounts. Valid values include
-        # standard currency codes such as 'USD', 'EUR', 'JPY', etc.
+        # The currency code used for the budget and spend amounts, following ISO 4217
+        # standards.
         sig do
           returns(
             HubspotSDK::Marketing::PublicBudgetTotals::CurrencyCode::TaggedSymbol
@@ -31,21 +31,22 @@ module HubspotSDK
         sig { returns(T::Array[HubspotSDK::Marketing::PublicSpendItem]) }
         attr_accessor :spend_items
 
-        # The total budget amount for the campaign, represented as a number.
+        # The total budget allocated for the campaign.
         sig { returns(T.nilable(Float)) }
         attr_reader :budget_total
 
         sig { params(budget_total: Float).void }
         attr_writer :budget_total
 
-        # The remaining budget for the campaign after spending, represented as a number.
+        # The remaining budget available for the campaign after accounting for all spend
+        # items.
         sig { returns(T.nilable(Float)) }
         attr_reader :remaining_budget
 
         sig { params(remaining_budget: Float).void }
         attr_writer :remaining_budget
 
-        # The total amount spent for the campaign, represented as a number.
+        # The total amount spent across all spend items in the campaign.
         sig { returns(T.nilable(Float)) }
         attr_reader :spend_total
 
@@ -69,17 +70,18 @@ module HubspotSDK
           # An array of budget items associated with the campaign. Each item is represented
           # by a PublicBudgetItem object.
           budget_items:,
-          # The currency code used for budget and spending amounts. Valid values include
-          # standard currency codes such as 'USD', 'EUR', 'JPY', etc.
+          # The currency code used for the budget and spend amounts, following ISO 4217
+          # standards.
           currency_code:,
           # An array of spend items associated with the campaign. Each item is represented
           # by a PublicSpendItem object.
           spend_items:,
-          # The total budget amount for the campaign, represented as a number.
+          # The total budget allocated for the campaign.
           budget_total: nil,
-          # The remaining budget for the campaign after spending, represented as a number.
+          # The remaining budget available for the campaign after accounting for all spend
+          # items.
           remaining_budget: nil,
-          # The total amount spent for the campaign, represented as a number.
+          # The total amount spent across all spend items in the campaign.
           spend_total: nil
         )
         end
@@ -100,8 +102,8 @@ module HubspotSDK
         def to_hash
         end
 
-        # The currency code used for budget and spending amounts. Valid values include
-        # standard currency codes such as 'USD', 'EUR', 'JPY', etc.
+        # The currency code used for the budget and spend amounts, following ISO 4217
+        # standards.
         module CurrencyCode
           extend HubspotSDK::Internal::Type::Enum
 

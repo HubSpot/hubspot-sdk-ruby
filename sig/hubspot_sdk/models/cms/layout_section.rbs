@@ -1,0 +1,82 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type layout_section =
+        {
+          cells: ::Array[HubspotSDK::Cms::LayoutSection],
+          css_class: String,
+          css_id: String,
+          css_style: String,
+          label: String,
+          name: String,
+          params: ::Hash[Symbol, top],
+          row_meta_data: ::Array[HubspotSDK::Cms::RowMetaData],
+          rows: ::Array[::Hash[Symbol, HubspotSDK::Cms::LayoutSection]],
+          styles: HubspotSDK::Cms::Styles,
+          type: String,
+          w: Integer,
+          x: Integer
+        }
+
+      class LayoutSection < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor cells: ::Array[HubspotSDK::Cms::LayoutSection]
+
+        attr_accessor css_class: String
+
+        attr_accessor css_id: String
+
+        attr_accessor css_style: String
+
+        attr_accessor label: String
+
+        attr_accessor name: String
+
+        attr_accessor params: ::Hash[Symbol, top]
+
+        attr_accessor row_meta_data: ::Array[HubspotSDK::Cms::RowMetaData]
+
+        attr_accessor rows: ::Array[::Hash[Symbol, HubspotSDK::Cms::LayoutSection]]
+
+        attr_accessor styles: HubspotSDK::Cms::Styles
+
+        attr_accessor type: String
+
+        attr_accessor w: Integer
+
+        attr_accessor x: Integer
+
+        def initialize: (
+          cells: ::Array[HubspotSDK::Cms::LayoutSection],
+          css_class: String,
+          css_id: String,
+          css_style: String,
+          label: String,
+          name: String,
+          params: ::Hash[Symbol, top],
+          row_meta_data: ::Array[HubspotSDK::Cms::RowMetaData],
+          rows: ::Array[::Hash[Symbol, HubspotSDK::Cms::LayoutSection]],
+          styles: HubspotSDK::Cms::Styles,
+          type: String,
+          w: Integer,
+          x: Integer
+        ) -> void
+
+        def to_hash: -> {
+          cells: ::Array[HubspotSDK::Cms::LayoutSection],
+          css_class: String,
+          css_id: String,
+          css_style: String,
+          label: String,
+          name: String,
+          params: ::Hash[Symbol, top],
+          row_meta_data: ::Array[HubspotSDK::Cms::RowMetaData],
+          rows: ::Array[::Hash[Symbol, HubspotSDK::Cms::LayoutSection]],
+          styles: HubspotSDK::Cms::Styles,
+          type: String,
+          w: Integer,
+          x: Integer
+        }
+      end
+    end
+  end
+end

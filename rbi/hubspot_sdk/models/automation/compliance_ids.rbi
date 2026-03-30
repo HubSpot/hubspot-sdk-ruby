@@ -21,18 +21,21 @@ module HubspotSDK
         sig { returns(T::Array[Integer]) }
         attr_accessor :user_ids
 
+        # The reason why no contact ID is available.
         sig { returns(T.nilable(String)) }
         attr_reader :no_contact_id_reason
 
         sig { params(no_contact_id_reason: String).void }
         attr_writer :no_contact_id_reason
 
+        # The reason why no portal ID is available.
         sig { returns(T.nilable(String)) }
         attr_reader :no_portal_id_reason
 
         sig { params(no_portal_id_reason: String).void }
         attr_writer :no_portal_id_reason
 
+        # The reason why no user ID is available.
         sig { returns(T.nilable(String)) }
         attr_reader :no_user_id_reason
 
@@ -53,8 +56,11 @@ module HubspotSDK
           contact_ids:,
           portal_ids:,
           user_ids:,
+          # The reason why no contact ID is available.
           no_contact_id_reason: nil,
+          # The reason why no portal ID is available.
           no_portal_id_reason: nil,
+          # The reason why no user ID is available.
           no_user_id_reason: nil
         )
         end

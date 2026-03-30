@@ -3,15 +3,24 @@ module HubspotSDK
     module Crm
       module Objects
         type listing_delete_params =
-          {  } & HubspotSDK::Internal::Type::request_parameters
+          { listing_id: String }
+          & HubspotSDK::Internal::Type::request_parameters
 
-        class ListingDeleteParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectID
+        class ListingDeleteParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+          attr_accessor listing_id: String
 
-          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+          def initialize: (
+            listing_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            listing_id: String,
+            request_options: HubspotSDK::RequestOptions
+          }
         end
       end
     end

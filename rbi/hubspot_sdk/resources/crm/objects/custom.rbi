@@ -5,8 +5,7 @@ module HubspotSDK
     class Crm
       class Objects
         class Custom
-          # Create multiple CRM objects in a single request by specifying the object type
-          # and providing the necessary properties and associations for each object.
+          # Create a batch of objects
           sig do
             params(
               object_type: String,
@@ -17,16 +16,10 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
           end
-          def create(
-            # The type of object.
-            object_type,
-            inputs:,
-            request_options: {}
-          )
+          def create(object_type, inputs:, request_options: {})
           end
 
-          # Update a batch of CRM objects by their internal IDs or unique property values,
-          # allowing for efficient modifications of multiple records in a single request.
+          # Update a batch of objects by internal ID, or unique property values
           sig do
             params(
               object_type: String,
@@ -35,12 +28,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
           end
-          def update(
-            # The type of object.
-            object_type,
-            inputs:,
-            request_options: {}
-          )
+          def update(object_type, inputs:, request_options: {})
           end
 
           # Read a page of objects. Control what is returned via the `properties` query
@@ -62,7 +50,6 @@ module HubspotSDK
             )
           end
           def list(
-            # The type of object.
             object_type,
             # The paging cursor token of the last successfully read resource will be returned
             # as the `paging.next.after` JSON property of a paged response containing more
@@ -88,8 +75,7 @@ module HubspotSDK
           )
           end
 
-          # Archive a batch of objects by their unique IDs. This operation moves the
-          # specified objects to the recycling bin, effectively marking them as archived.
+          # Archive a batch of objects by ID
           sig do
             params(
               object_type: String,
@@ -97,12 +83,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(
-            # The type of object.
-            object_type,
-            inputs:,
-            request_options: {}
-          )
+          def delete(object_type, inputs:, request_options: {})
           end
 
           # Retrieve records by record ID or include the `idProperty` parameter to retrieve
@@ -119,7 +100,7 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
           end
           def get(
-            # Path param: The type of object.
+            # Path param
             object_type,
             # Body param
             inputs:,
@@ -148,7 +129,6 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
           def merge(
-            # The type of object.
             object_type,
             # The ID of the company to merge into the primary.
             object_id_to_merge:,
@@ -158,9 +138,6 @@ module HubspotSDK
           )
           end
 
-          # Execute a search query to find CRM objects of a given type, using specified
-          # filters and properties. The search can be customized with filters, sorting, and
-          # pagination options.
           sig do
             params(
               object_type: String,
@@ -176,7 +153,6 @@ module HubspotSDK
             )
           end
           def search(
-            # The type of object.
             object_type,
             # A paging cursor token for retrieving subsequent pages.
             after:,
@@ -207,12 +183,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject)
           end
-          def upsert(
-            # The type of object.
-            object_type,
-            inputs:,
-            request_options: {}
-          )
+          def upsert(object_type, inputs:, request_options: {})
           end
 
           # @api private

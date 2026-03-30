@@ -6,11 +6,14 @@ module HubspotSDK
       module Extensions
         class FormattedPhoneNumber < HubspotSDK::Internal::Type::BaseModel
           # @!attribute e164_number
+          #   The phone number formatted in E.164 standard.
           #
           #   @return [String]
           required :e164_number, String, api_name: :e164Number
 
           # @!attribute phone_number_type
+          #   The type of phone number, with accepted values including FIXED_LINE, MOBILE,
+          #   VOIP, and others.
           #
           #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber::PhoneNumberType]
           required :phone_number_type,
@@ -18,15 +21,24 @@ module HubspotSDK
                    api_name: :phoneNumberType
 
           # @!attribute extension
+          #   The extension number associated with the phone number.
           #
           #   @return [String, nil]
           optional :extension, String
 
           # @!method initialize(e164_number:, phone_number_type:, extension: nil)
-          #   @param e164_number [String]
-          #   @param phone_number_type [Symbol, HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber::PhoneNumberType]
-          #   @param extension [String]
+          #   Some parameter documentations has been truncated, see
+          #   {HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber} for more details.
+          #
+          #   @param e164_number [String] The phone number formatted in E.164 standard.
+          #
+          #   @param phone_number_type [Symbol, HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber::PhoneNumberType] The type of phone number, with accepted values including FIXED_LINE, MOBILE, VOI
+          #
+          #   @param extension [String] The extension number associated with the phone number.
 
+          # The type of phone number, with accepted values including FIXED_LINE, MOBILE,
+          # VOIP, and others.
+          #
           # @see HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber#phone_number_type
           module PhoneNumberType
             extend HubspotSDK::Internal::Type::Enum

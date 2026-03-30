@@ -4,6 +4,8 @@ module HubspotSDK
   module Resources
     class Crm
       class PropertiesValidations
+        # Read all properties with validation rules for a given object.
+        #
         # @overload get_by_object_type_id(object_type_id, request_options: {})
         #
         # @param object_type_id [String]
@@ -21,6 +23,8 @@ module HubspotSDK
           )
         end
 
+        # Read a property's validation rules identified by {propertyName}.
+        #
         # @overload get_by_object_type_id_and_property_name(property_name, object_type_id:, request_options: {})
         #
         # @param property_name [String]
@@ -45,6 +49,9 @@ module HubspotSDK
           )
         end
 
+        # Retrieve a specific validation rule for a property identified by its name and
+        # rule type.
+        #
         # @overload get_by_object_type_id_property_name_and_rule_type(rule_type, object_type_id:, property_name:, request_options: {})
         #
         # @param rule_type [Symbol, HubspotSDK::Models::Crm::PropertiesValidationGetByObjectTypeIDPropertyNameAndRuleTypeParams::RuleType]
@@ -82,6 +89,9 @@ module HubspotSDK
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams}
         # for more details.
+        #
+        # Update a specific validation rule for a property identified by its name and rule
+        # type.
         #
         # @overload update_by_object_type_id_property_name_and_rule_type(rule_type, object_type_id:, property_name:, rule_arguments:, should_apply_normalization: nil, request_options: {})
         #

@@ -12,17 +12,20 @@ module HubspotSDK
             )
           end
 
+        # Indicates the field type as DOUBLE.
         sig do
           returns(HubspotSDK::Automation::DoubleFieldSchema::Type::OrSymbol)
         end
         attr_accessor :type
 
+        # The maximum allowable value for the double field.
         sig { returns(T.nilable(Float)) }
         attr_reader :maximum
 
         sig { params(maximum: Float).void }
         attr_writer :maximum
 
+        # The minimum allowable value for the double field.
         sig { returns(T.nilable(Float)) }
         attr_reader :minimum
 
@@ -36,7 +39,14 @@ module HubspotSDK
             minimum: Float
           ).returns(T.attached_class)
         end
-        def self.new(type:, maximum: nil, minimum: nil)
+        def self.new(
+          # Indicates the field type as DOUBLE.
+          type:,
+          # The maximum allowable value for the double field.
+          maximum: nil,
+          # The minimum allowable value for the double field.
+          minimum: nil
+        )
         end
 
         sig do
@@ -51,6 +61,7 @@ module HubspotSDK
         def to_hash
         end
 
+        # Indicates the field type as DOUBLE.
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

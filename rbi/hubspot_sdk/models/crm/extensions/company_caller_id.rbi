@@ -13,6 +13,7 @@ module HubspotSDK
               )
             end
 
+          # Specifies the type of caller ID, which is set to 'COMPANY' by default.
           sig do
             returns(
               HubspotSDK::Crm::Extensions::CompanyCallerID::CallerIDType::TaggedSymbol
@@ -31,6 +32,7 @@ module HubspotSDK
           end
           attr_writer :object_coordinates
 
+          # The name associated with the company caller ID.
           sig { returns(T.nilable(String)) }
           attr_reader :name
 
@@ -46,7 +48,13 @@ module HubspotSDK
               name: String
             ).returns(T.attached_class)
           end
-          def self.new(caller_id_type:, object_coordinates:, name: nil)
+          def self.new(
+            # Specifies the type of caller ID, which is set to 'COMPANY' by default.
+            caller_id_type:,
+            object_coordinates:,
+            # The name associated with the company caller ID.
+            name: nil
+          )
           end
 
           sig do
@@ -63,6 +71,7 @@ module HubspotSDK
           def to_hash
           end
 
+          # Specifies the type of caller ID, which is set to 'COMPANY' by default.
           module CallerIDType
             extend HubspotSDK::Internal::Type::Enum
 

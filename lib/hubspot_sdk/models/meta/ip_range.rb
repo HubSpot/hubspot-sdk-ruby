@@ -64,6 +64,7 @@ module HubspotSDK
           API = :API
           DNS = :DNS
           EMAIL = :EMAIL
+          TEST_SERVICE = :TEST_SERVICE
           WEB_SCRAPING = :WEB_SCRAPING
 
           # @!method self.values

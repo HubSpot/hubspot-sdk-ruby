@@ -7,104 +7,13 @@ module HubspotSDK
         # @return [HubspotSDK::Resources::Cms::MediaBridge::Batch]
         attr_reader :batch
 
-        # @overload create(create_mb_object_request:, request_options: {})
-        #
-        # @param create_mb_object_request [HubspotSDK::Models::Cms::CreateVideoObjectRequest, HubspotSDK::Models::Cms::CreateOtherObjectRequest, HubspotSDK::Models::Cms::CreateAudioObjectRequest, HubspotSDK::Models::Cms::CreateImageObjectRequest, HubspotSDK::Models::Cms::CreateDocumentObjectRequest]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-        #
-        # @return [HubspotSDK::Models::Cms::MediaBridgeObject]
-        #
-        # @see HubspotSDK::Models::Cms::MediaBridgeCreateParams
-        def create(params)
-          parsed, options = HubspotSDK::Cms::MediaBridgeCreateParams.dump_request(params)
-          @client.request(
-            method: :post,
-            path: "media-bridge/2026-03/objects",
-            body: parsed[:create_mb_object_request],
-            model: HubspotSDK::Cms::MediaBridgeObject,
-            options: options
-          )
-        end
-
-        # @overload update(object_id_, update_mb_object_request:, request_options: {})
-        #
-        # @param object_id_ [Integer]
-        # @param update_mb_object_request [HubspotSDK::Models::Cms::UpdateVideoObjectRequest, HubspotSDK::Models::Cms::UpdateOtherObjectRequest, HubspotSDK::Models::Cms::UpdateAudioObjectRequest, HubspotSDK::Models::Cms::UpdateImageObjectRequest, HubspotSDK::Models::Cms::UpdateDocumentObjectRequest]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-        #
-        # @return [HubspotSDK::Models::Cms::MediaBridgeObject]
-        #
-        # @see HubspotSDK::Models::Cms::MediaBridgeUpdateParams
-        def update(object_id_, params)
-          parsed, options = HubspotSDK::Cms::MediaBridgeUpdateParams.dump_request(params)
-          @client.request(
-            method: :patch,
-            path: ["media-bridge/2026-03/objects/%1$s", object_id_],
-            body: parsed[:update_mb_object_request],
-            model: HubspotSDK::Cms::MediaBridgeObject,
-            options: options
-          )
-        end
-
-        # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Cms::MediaBridgeListParams} for more details.
-        #
-        # @overload list(media_type, after: nil, limit: nil, request_options: {})
-        #
-        # @param media_type [Symbol, HubspotSDK::Models::Cms::MediaBridgeListParams::MediaType]
-        #
-        # @param after [String] The paging cursor token of the last successfully read resource will be returned
-        #
-        # @param limit [Integer] The maximum number of results to display per page.
-        #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-        #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::MediaBridgeObject>]
-        #
-        # @see HubspotSDK::Models::Cms::MediaBridgeListParams
-        def list(media_type, params = {})
-          parsed, options = HubspotSDK::Cms::MediaBridgeListParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
-          @client.request(
-            method: :get,
-            path: ["media-bridge/2026-03/objects/%1$s", media_type],
-            query: query,
-            page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Cms::MediaBridgeObject,
-            options: options
-          )
-        end
-
-        # @overload delete(object_id_, media_type:, request_options: {})
-        #
-        # @param object_id_ [Integer]
-        # @param media_type [Symbol, HubspotSDK::Models::Cms::MediaBridgeDeleteParams::MediaType]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-        #
-        # @return [nil]
-        #
-        # @see HubspotSDK::Models::Cms::MediaBridgeDeleteParams
-        def delete(object_id_, params)
-          parsed, options = HubspotSDK::Cms::MediaBridgeDeleteParams.dump_request(params)
-          media_type =
-            parsed.delete(:media_type) do
-              raise ArgumentError.new("missing required path argument #{_1}")
-            end
-          @client.request(
-            method: :delete,
-            path: ["media-bridge/2026-03/objects/%1$s/%2$s", media_type, object_id_],
-            model: NilClass,
-            options: options
-          )
-        end
-
         # Create a new association definition for the specified object type.
         #
         # @overload create_association(object_type, app_id:, from_object_type_id:, to_object_type_id:, name: nil, request_options: {})
         #
         # @param object_type [String] Path param
         #
-        # @param app_id [String] Path param
+        # @param app_id [Integer] Path param
         #
         # @param from_object_type_id [String] Body param
         #
@@ -114,7 +23,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Events::AssociationDefinition]
+        # @return [HubspotSDK::Models::AssociationDefinition]
         #
         # @see HubspotSDK::Models::Cms::MediaBridgeCreateAssociationParams
         def create_association(object_type, params)
@@ -127,7 +36,7 @@ module HubspotSDK
             method: :post,
             path: ["media-bridge/2026-03/%1$s/schemas/%2$s/associations", app_id, object_type],
             body: parsed,
-            model: HubspotSDK::Events::AssociationDefinition,
+            model: HubspotSDK::AssociationDefinition,
             options: options
           )
         end
@@ -155,7 +64,7 @@ module HubspotSDK
         # @param raw_data_string [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [StringIO]
+        # @return [HubspotSDK::Models::Cms::AttentionSpanEvent]
         #
         # @see HubspotSDK::Models::Cms::MediaBridgeCreateAttentionSpanEventParams
         def create_attention_span_event(params)
@@ -163,9 +72,8 @@ module HubspotSDK
           @client.request(
             method: :post,
             path: "media-bridge/2026-03/events/attention-span",
-            headers: {"accept" => "*/*"},
             body: parsed,
-            model: StringIO,
+            model: HubspotSDK::Cms::AttentionSpanEvent,
             options: options
           )
         end
@@ -192,7 +100,7 @@ module HubspotSDK
         # @param page_url [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [StringIO]
+        # @return [HubspotSDK::Models::Cms::MediaPlayedEvent]
         #
         # @see HubspotSDK::Models::Cms::MediaBridgeCreateMediaPlayedEventParams
         def create_media_played_event(params)
@@ -200,9 +108,8 @@ module HubspotSDK
           @client.request(
             method: :post,
             path: "media-bridge/2026-03/events/media-played",
-            headers: {"accept" => "*/*"},
             body: parsed,
-            model: StringIO,
+            model: HubspotSDK::Cms::MediaPlayedEvent,
             options: options
           )
         end
@@ -229,7 +136,7 @@ module HubspotSDK
         # @param page_url [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [StringIO]
+        # @return [HubspotSDK::Models::Cms::MediaPlayedPercentageEvent]
         #
         # @see HubspotSDK::Models::Cms::MediaBridgeCreateMediaPlayedPercentEventParams
         def create_media_played_percent_event(params)
@@ -237,9 +144,8 @@ module HubspotSDK
           @client.request(
             method: :post,
             path: "media-bridge/2026-03/events/media-played-percent",
-            headers: {"accept" => "*/*"},
             body: parsed,
-            model: StringIO,
+            model: HubspotSDK::Cms::MediaPlayedPercentageEvent,
             options: options
           )
         end
@@ -248,7 +154,7 @@ module HubspotSDK
         #
         # @overload create_object_type(app_id, media_types:, request_options: {})
         #
-        # @param app_id [String]
+        # @param app_id [Integer]
         # @param media_types [Array<Symbol, HubspotSDK::Models::Cms::IntegratorObjectCreationRequest::MediaType>]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -270,7 +176,7 @@ module HubspotSDK
         #
         # @overload create_oembed_domain(app_id, endpoints:, portal_id: nil, request_options: {})
         #
-        # @param app_id [String]
+        # @param app_id [Integer]
         # @param endpoints [HubspotSDK::Models::Cms::Endpoints]
         # @param portal_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
@@ -295,7 +201,7 @@ module HubspotSDK
         #
         # @param object_type [String] Path param
         #
-        # @param app_id [String] Path param
+        # @param app_id [Integer] Path param
         #
         # @param field_type [Symbol, HubspotSDK::Models::PropertyCreate::FieldType] Body param
         #
@@ -329,7 +235,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Property]
+        # @return [HubspotSDK::Models::Cms::Property]
         #
         # @see HubspotSDK::Models::Cms::MediaBridgeCreatePropertyParams
         def create_property(object_type, params)
@@ -342,7 +248,7 @@ module HubspotSDK
             method: :post,
             path: ["media-bridge/2026-03/%1$s/properties/%2$s", app_id, object_type],
             body: parsed,
-            model: HubspotSDK::Property,
+            model: HubspotSDK::Cms::Property,
             options: options
           )
         end
@@ -353,7 +259,7 @@ module HubspotSDK
         #
         # @param object_type [String] Path param
         #
-        # @param app_id [String] Path param
+        # @param app_id [Integer] Path param
         #
         # @param label [String] Body param
         #
@@ -383,17 +289,17 @@ module HubspotSDK
 
         # @overload create_video_association_definition(app_id, request_options: {})
         #
-        # @param app_id [String]
+        # @param app_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Events::AssociationDefinition]
+        # @return [HubspotSDK::Models::AssociationDefinition]
         #
         # @see HubspotSDK::Models::Cms::MediaBridgeCreateVideoAssociationDefinitionParams
         def create_video_association_definition(app_id, params = {})
           @client.request(
             method: :post,
             path: ["media-bridge/2026-03/%1$s/settings/video-association-definition", app_id],
-            model: HubspotSDK::Events::AssociationDefinition,
+            model: HubspotSDK::AssociationDefinition,
             options: params[:request_options]
           )
         end
@@ -403,7 +309,7 @@ module HubspotSDK
         # @overload delete_association(association_id, app_id:, object_type:, request_options: {})
         #
         # @param association_id [String]
-        # @param app_id [String]
+        # @param app_id [Integer]
         # @param object_type [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -437,7 +343,7 @@ module HubspotSDK
         #
         # @overload delete_oembed_domain(app_id, id: nil, domain_portal_id: nil, request_options: {})
         #
-        # @param app_id [String]
+        # @param app_id [Integer]
         # @param id [Integer]
         # @param domain_portal_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
@@ -462,7 +368,7 @@ module HubspotSDK
         # @overload delete_property(property_name, app_id:, object_type:, request_options: {})
         #
         # @param property_name [String]
-        # @param app_id [String]
+        # @param app_id [Integer]
         # @param object_type [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -492,7 +398,7 @@ module HubspotSDK
         # @overload delete_property_group(group_name, app_id:, object_type:, request_options: {})
         #
         # @param group_name [String]
-        # @param app_id [String]
+        # @param app_id [Integer]
         # @param object_type [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -517,34 +423,11 @@ module HubspotSDK
           )
         end
 
-        # @overload get(object_id_, media_type:, request_options: {})
-        #
-        # @param object_id_ [Integer]
-        # @param media_type [Symbol, HubspotSDK::Models::Cms::MediaBridgeGetParams::MediaType]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-        #
-        # @return [HubspotSDK::Models::Cms::MediaBridgeObject]
-        #
-        # @see HubspotSDK::Models::Cms::MediaBridgeGetParams
-        def get(object_id_, params)
-          parsed, options = HubspotSDK::Cms::MediaBridgeGetParams.dump_request(params)
-          media_type =
-            parsed.delete(:media_type) do
-              raise ArgumentError.new("missing required path argument #{_1}")
-            end
-          @client.request(
-            method: :get,
-            path: ["media-bridge/2026-03/objects/%1$s/%2$s", media_type, object_id_],
-            model: HubspotSDK::Cms::MediaBridgeObject,
-            options: options
-          )
-        end
-
         # Get the visibility settings for media bridge events for your apps.
         #
         # @overload get_event_visibility_settings(app_id, request_options: {})
         #
-        # @param app_id [String]
+        # @param app_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Cms::EventVisibilityResponse]
@@ -564,7 +447,7 @@ module HubspotSDK
         # @overload get_oembed_domain(o_embed_domain_id, app_id:, request_options: {})
         #
         # @param o_embed_domain_id [String]
-        # @param app_id [String]
+        # @param app_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Cms::IntegratorOEmbedDomainModel]
@@ -590,7 +473,7 @@ module HubspotSDK
         #
         # @param property_name [String] Path param
         #
-        # @param app_id [String] Path param
+        # @param app_id [Integer] Path param
         #
         # @param object_type [String] Path param
         #
@@ -600,7 +483,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Property]
+        # @return [HubspotSDK::Models::Cms::Property]
         #
         # @see HubspotSDK::Models::Cms::MediaBridgeGetPropertyParams
         def get_property(property_name, params)
@@ -618,7 +501,7 @@ module HubspotSDK
             method: :get,
             path: ["media-bridge/2026-03/%1$s/properties/%2$s/%3$s", app_id, object_type, property_name],
             query: query,
-            model: HubspotSDK::Property,
+            model: HubspotSDK::Cms::Property,
             options: options
           )
         end
@@ -628,7 +511,7 @@ module HubspotSDK
         # @overload get_property_group(group_name, app_id:, object_type:, request_options: {})
         #
         # @param group_name [String]
-        # @param app_id [String]
+        # @param app_id [Integer]
         # @param object_type [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -658,10 +541,10 @@ module HubspotSDK
         # @overload get_schema(object_type, app_id:, request_options: {})
         #
         # @param object_type [String]
-        # @param app_id [String]
+        # @param app_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::ObjectSchema]
+        # @return [HubspotSDK::Models::Cms::ObjectSchema]
         #
         # @see HubspotSDK::Models::Cms::MediaBridgeGetSchemaParams
         def get_schema(object_type, params)
@@ -673,7 +556,7 @@ module HubspotSDK
           @client.request(
             method: :get,
             path: ["media-bridge/2026-03/%1$s/schemas/%2$s", app_id, object_type],
-            model: HubspotSDK::ObjectSchema,
+            model: HubspotSDK::Cms::ObjectSchema,
             options: options
           )
         end
@@ -684,7 +567,7 @@ module HubspotSDK
         #
         # @param media_type [Symbol, HubspotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType] Path param
         #
-        # @param app_id [String] Path param
+        # @param app_id [Integer] Path param
         #
         # @param include_full_definition [Boolean] Query param
         #
@@ -713,7 +596,7 @@ module HubspotSDK
         #
         # @overload list_oembed_domains(app_id, domain_portal_id: nil, request_options: {})
         #
-        # @param app_id [String]
+        # @param app_id [Integer]
         # @param domain_portal_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -738,7 +621,7 @@ module HubspotSDK
         #
         # @param object_type [String] Path param
         #
-        # @param app_id [String] Path param
+        # @param app_id [Integer] Path param
         #
         # @param archived [Boolean] Query param: Whether to return only results that have been archived.
         #
@@ -746,7 +629,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CollectionResponsePropertyNoPaging]
+        # @return [HubspotSDK::Models::Cms::CollectionResponsePropertyNoPaging]
         #
         # @see HubspotSDK::Models::Cms::MediaBridgeListPropertiesParams
         def list_properties(object_type, params)
@@ -760,7 +643,7 @@ module HubspotSDK
             method: :get,
             path: ["media-bridge/2026-03/%1$s/properties/%2$s", app_id, object_type],
             query: query,
-            model: HubspotSDK::CollectionResponsePropertyNoPaging,
+            model: HubspotSDK::Cms::CollectionResponsePropertyNoPaging,
             options: options
           )
         end
@@ -770,7 +653,7 @@ module HubspotSDK
         # @overload list_property_groups(object_type, app_id:, request_options: {})
         #
         # @param object_type [String]
-        # @param app_id [String]
+        # @param app_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::CollectionResponsePropertyGroupNoPaging]
@@ -794,13 +677,13 @@ module HubspotSDK
         #
         # @overload list_schemas(app_id, archived: nil, request_options: {})
         #
-        # @param app_id [String]
+        # @param app_id [Integer]
         #
         # @param archived [Boolean] Whether to return only results that have been archived.
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CollectionResponseObjectSchemaNoPaging]
+        # @return [HubspotSDK::Models::Cms::CollectionResponseObjectSchemaNoPaging]
         #
         # @see HubspotSDK::Models::Cms::MediaBridgeListSchemasParams
         def list_schemas(app_id, params = {})
@@ -810,7 +693,7 @@ module HubspotSDK
             method: :get,
             path: ["media-bridge/2026-03/%1$s/schemas", app_id],
             query: query,
-            model: HubspotSDK::CollectionResponseObjectSchemaNoPaging,
+            model: HubspotSDK::Cms::CollectionResponseObjectSchemaNoPaging,
             options: options
           )
         end
@@ -822,7 +705,7 @@ module HubspotSDK
         #
         # @overload register_app_name(app_id, updated_at:, allow_import_on_disconnect: nil, module_name: nil, name: nil, request_options: {})
         #
-        # @param app_id [String]
+        # @param app_id [Integer]
         # @param updated_at [Integer]
         # @param allow_import_on_disconnect [Boolean]
         # @param module_name [String]
@@ -847,7 +730,7 @@ module HubspotSDK
         #
         # @overload update_event_visibility_settings(app_id, event_type:, updated_at:, show_in_reporting: nil, show_in_timeline: nil, show_in_workflows: nil, request_options: {})
         #
-        # @param app_id [String]
+        # @param app_id [Integer]
         # @param event_type [Symbol, HubspotSDK::Models::Cms::EventVisibilityChange::EventType]
         # @param updated_at [Integer]
         # @param show_in_reporting [Boolean]
@@ -875,7 +758,7 @@ module HubspotSDK
         #
         # @param o_embed_domain_id [String] Path param
         #
-        # @param app_id [String] Path param
+        # @param app_id [Integer] Path param
         #
         # @param endpoints [HubspotSDK::Models::Cms::Endpoints] Body param
         #
@@ -907,7 +790,7 @@ module HubspotSDK
         #
         # @param property_name [String] Path param
         #
-        # @param app_id [String] Path param
+        # @param app_id [Integer] Path param
         #
         # @param object_type [String] Path param
         #
@@ -935,7 +818,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Property]
+        # @return [HubspotSDK::Models::Cms::Property]
         #
         # @see HubspotSDK::Models::Cms::MediaBridgeUpdatePropertyParams
         def update_property(property_name, params)
@@ -952,7 +835,7 @@ module HubspotSDK
             method: :patch,
             path: ["media-bridge/2026-03/%1$s/properties/%2$s/%3$s", app_id, object_type, property_name],
             body: parsed,
-            model: HubspotSDK::Property,
+            model: HubspotSDK::Cms::Property,
             options: options
           )
         end
@@ -963,7 +846,7 @@ module HubspotSDK
         #
         # @param group_name [String] Path param
         #
-        # @param app_id [String] Path param
+        # @param app_id [Integer] Path param
         #
         # @param object_type [String] Path param
         #
@@ -1001,7 +884,7 @@ module HubspotSDK
         #
         # @param object_type [String] Path param
         #
-        # @param app_id [String] Path param
+        # @param app_id [Integer] Path param
         #
         # @param clear_description [Boolean] Body param
         #
@@ -1046,7 +929,7 @@ module HubspotSDK
         #
         # @overload update_settings(app_id, updated_at:, allow_import_on_disconnect: nil, module_name: nil, name: nil, request_options: {})
         #
-        # @param app_id [String]
+        # @param app_id [Integer]
         # @param updated_at [Integer]
         # @param allow_import_on_disconnect [Boolean]
         # @param module_name [String]

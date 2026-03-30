@@ -310,41 +310,10 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
     end
   end
 
-  def test_attach_to_lang_group_required_params
-    skip("Mock server tests are disabled")
-
-    response =
-      @hubspot.cms.blogs.posts.attach_to_lang_group(id: "id", language: :aa, primary_id: "primaryId")
-
-    assert_pattern do
-      response => StringIO
-    end
-  end
-
   def test_clone__required_params
     skip("Mock server tests are disabled")
 
     response = @hubspot.cms.blogs.posts.clone_(id: "id")
-
-    assert_pattern do
-      response => StringIO
-    end
-  end
-
-  def test_create_lang_variation_required_params
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.cms.blogs.posts.create_lang_variation(id: "id")
-
-    assert_pattern do
-      response => StringIO
-    end
-  end
-
-  def test_detach_from_lang_group_required_params
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.cms.blogs.posts.detach_from_lang_group(id: "id")
 
     assert_pattern do
       response => StringIO
@@ -371,20 +340,20 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
     end
   end
 
-  def test_get_previous_version_required_params
+  def test_list_authors
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.blogs.posts.get_previous_version("revisionId", object_id_: "objectId")
+    response = @hubspot.cms.blogs.posts.list_authors
 
     assert_pattern do
       response => StringIO
     end
   end
 
-  def test_get_previous_versions
+  def test_list_tags
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.blogs.posts.get_previous_versions("objectId")
+    response = @hubspot.cms.blogs.posts.list_tags
 
     assert_pattern do
       response => StringIO
@@ -401,6 +370,36 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
     end
   end
 
+  def test_query
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.cms.blogs.posts.query
+
+    assert_pattern do
+      response => StringIO
+    end
+  end
+
+  def test_query_authors
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.cms.blogs.posts.query_authors
+
+    assert_pattern do
+      response => StringIO
+    end
+  end
+
+  def test_query_tags
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.cms.blogs.posts.query_tags
+
+    assert_pattern do
+      response => StringIO
+    end
+  end
+
   def test_reset_draft
     skip("Mock server tests are disabled")
 
@@ -411,40 +410,10 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
     end
   end
 
-  def test_restore_previous_version_required_params
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.cms.blogs.posts.restore_previous_version("revisionId", object_id_: "objectId")
-
-    assert_pattern do
-      response => StringIO
-    end
-  end
-
-  def test_restore_previous_version_to_draft_required_params
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.cms.blogs.posts.restore_previous_version_to_draft(0, object_id_: "objectId")
-
-    assert_pattern do
-      response => StringIO
-    end
-  end
-
   def test_schedule_required_params
     skip("Mock server tests are disabled")
 
     response = @hubspot.cms.blogs.posts.schedule(id: "id", publish_date: "2019-12-27T18:11:19.117Z")
-
-    assert_pattern do
-      response => nil
-    end
-  end
-
-  def test_set_lang_primary_required_params
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.cms.blogs.posts.set_lang_primary(id: "id")
 
     assert_pattern do
       response => nil
@@ -589,16 +558,6 @@ class HubspotSDK::Test::Resources::Cms::Blogs::PostsTest < HubspotSDK::Test::Res
         widget_containers: {foo: {}},
         widgets: {foo: {}}
       )
-
-    assert_pattern do
-      response => StringIO
-    end
-  end
-
-  def test_update_langs_required_params
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.cms.blogs.posts.update_langs(languages: {foo: :aa}, primary_id: "primaryId")
 
     assert_pattern do
       response => StringIO

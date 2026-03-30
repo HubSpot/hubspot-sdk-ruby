@@ -37,23 +37,23 @@ module HubspotSDK
         sig { returns(T::Boolean) }
         attr_accessor :is_ssl_only
 
-        # Whether the domain is used for CMS blog posts. Deprecated
+        # Whether the domain is used for CMS blog posts.
         sig { returns(T::Boolean) }
         attr_accessor :is_used_for_blog_post
 
-        # Whether the domain is used for CMS email web pages. Deprecated
+        # Whether the domain is used for CMS email web pages.
         sig { returns(T::Boolean) }
         attr_accessor :is_used_for_email
 
-        # Whether the domain is used for CMS knowledge pages. Deprecated
+        # Whether the domain is used for CMS knowledge pages.
         sig { returns(T::Boolean) }
         attr_accessor :is_used_for_knowledge
 
-        # Whether the domain is used for CMS landing pages. Deprecated
+        # Whether the domain is used for CMS landing pages.
         sig { returns(T::Boolean) }
         attr_accessor :is_used_for_landing_page
 
-        # Whether the domain is used for CMS site pages. Deprecated
+        # Whether the domain is used for CMS site pages.
         sig { returns(T::Boolean) }
         attr_accessor :is_used_for_site_page
 
@@ -128,15 +128,15 @@ module HubspotSDK
           is_ssl_enabled:,
           # Indicates whether the domain is accessible only via SSL.
           is_ssl_only:,
-          # Whether the domain is used for CMS blog posts. Deprecated
+          # Whether the domain is used for CMS blog posts.
           is_used_for_blog_post:,
-          # Whether the domain is used for CMS email web pages. Deprecated
+          # Whether the domain is used for CMS email web pages.
           is_used_for_email:,
-          # Whether the domain is used for CMS knowledge pages. Deprecated
+          # Whether the domain is used for CMS knowledge pages.
           is_used_for_knowledge:,
-          # Whether the domain is used for CMS landing pages. Deprecated
+          # Whether the domain is used for CMS landing pages.
           is_used_for_landing_page:,
-          # Whether the domain is used for CMS site pages. Deprecated
+          # Whether the domain is used for CMS site pages.
           is_used_for_site_page:,
           # Indicates whether the domain has been manually marked as resolving.
           manually_marked_as_resolving:,

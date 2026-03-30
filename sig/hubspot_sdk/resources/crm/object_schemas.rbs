@@ -16,7 +16,7 @@ module HubspotSDK
           ?description: String,
           ?primary_display_property: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::ObjectSchema
+        ) -> HubspotSDK::Crm::ObjectSchema
 
         def update: (
           String object_type,
@@ -38,7 +38,7 @@ module HubspotSDK
           ?include_audit_metadata: bool,
           ?include_property_definitions: bool,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::CollectionResponseObjectSchemaNoPaging
+        ) -> HubspotSDK::Crm::CollectionResponseObjectSchemaNoPaging
 
         def delete: (
           String object_type,
@@ -52,7 +52,7 @@ module HubspotSDK
           to_object_type_id: String,
           ?name: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Events::AssociationDefinition
+        ) -> HubspotSDK::AssociationDefinition
 
         def delete_association: (
           String association_identifier,
@@ -66,7 +66,7 @@ module HubspotSDK
           ?include_audit_metadata: bool,
           ?include_property_definitions: bool,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::ObjectSchema
+        ) -> HubspotSDK::Crm::ObjectSchema
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

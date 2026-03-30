@@ -6,6 +6,8 @@ module HubspotSDK
       class Blogs
         class Authors
           class Batch
+            # Create the Blog Author objects detailed in the request body.
+            #
             # @overload create(inputs:, request_options: {})
             #
             # @param inputs [Array<HubspotSDK::Models::Cms::Blogs::BlogAuthor>] Blog authors to input.
@@ -27,6 +29,8 @@ module HubspotSDK
               )
             end
 
+            # Update the Blog Author objects identified in the request body.
+            #
             # @overload update(inputs:, archived: nil, request_options: {})
             #
             # @param inputs [Array<Object>] Body param: JSON nodes to input.
@@ -53,6 +57,8 @@ module HubspotSDK
               )
             end
 
+            # Delete the Blog Author objects identified in the request body.
+            #
             # @overload delete(inputs:, request_options: {})
             #
             # @param inputs [Array<String>] Strings to input.
@@ -74,6 +80,8 @@ module HubspotSDK
               )
             end
 
+            # Retrieve the Blog Author objects identified in the request body.
+            #
             # @overload get(inputs:, archived: nil, request_options: {})
             #
             # @param inputs [Array<String>] Body param: Strings to input.

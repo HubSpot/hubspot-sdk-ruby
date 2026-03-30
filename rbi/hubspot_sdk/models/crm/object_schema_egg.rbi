@@ -12,6 +12,8 @@ module HubspotSDK
             )
           end
 
+        # Determines if the object type can include properties that are marked as
+        # sensitive.
         sig { returns(T::Boolean) }
         attr_accessor :allows_sensitive_properties
 
@@ -50,6 +52,7 @@ module HubspotSDK
         sig { returns(T::Array[String]) }
         attr_accessor :secondary_display_properties
 
+        # A brief explanation of the object type.
         sig { returns(T.nilable(String)) }
         attr_reader :description
 
@@ -80,6 +83,8 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # Determines if the object type can include properties that are marked as
+          # sensitive.
           allows_sensitive_properties:,
           # Associations defined for this object type.
           associated_objects:,
@@ -97,6 +102,7 @@ module HubspotSDK
           # The names of secondary properties for this object. These will be displayed as
           # secondary on the HubSpot record page for this object type.
           secondary_display_properties:,
+          # A brief explanation of the object type.
           description: nil,
           # The name of the primary property for this object. This will be displayed as
           # primary on the HubSpot record page for this object type.

@@ -5,6 +5,17 @@ module HubspotSDK
     class Marketing
       class Events
         class Attendance
+          # Records the participation of multiple HubSpot contacts in a Marketing Event
+          # using their HubSpot contact IDs.
+          #
+          # Additional Functionality:
+          #
+          # - Adds a timeline event to the contacts.
+          #
+          # Allowed Properties: For the state "attend":
+          #
+          # - joinedAt
+          # - leftAt
           sig do
             params(
               subscriber_state: String,
@@ -28,6 +39,21 @@ module HubspotSDK
           )
           end
 
+          # Records the participation of multiple HubSpot contacts in a Marketing Event
+          # using their email addresses.
+          #
+          # If a contact does not exist, it will be automatically created. The
+          # contactProperties field is used exclusively for creating new contacts and will
+          # not update properties of existing contacts.
+          #
+          # Additional Functionality:
+          #
+          # - Adds a timeline event to the contacts.
+          #
+          # Allowed Properties: For the state "attend":
+          #
+          # - joinedAt
+          # - leftAt
           sig do
             params(
               subscriber_state: String,
@@ -53,6 +79,17 @@ module HubspotSDK
           )
           end
 
+          # Records the participation of multiple HubSpot contacts in a Marketing Event
+          # using their HubSpot contact IDs.
+          #
+          # Additional Functionality:
+          #
+          # - Adds a timeline event to the contacts.
+          #
+          # Allowed Properties: For the state "attend":
+          #
+          # - joinedAt
+          # - leftAt
           sig do
             params(
               subscriber_state: String,
@@ -78,6 +115,21 @@ module HubspotSDK
           )
           end
 
+          # Records the participation of multiple HubSpot contacts in a Marketing Event
+          # using their email addresses.
+          #
+          # If a contact does not exist, it will be automatically created. The
+          # contactProperties field is used exclusively for creating new contacts and will
+          # not update properties of existing contacts.
+          #
+          # Additional Functionality:
+          #
+          # - Adds a timeline event to the contacts.
+          #
+          # Allowed Properties: For the state "attend":
+          #
+          # - joinedAt
+          # - leftAt
           sig do
             params(
               subscriber_state: String,

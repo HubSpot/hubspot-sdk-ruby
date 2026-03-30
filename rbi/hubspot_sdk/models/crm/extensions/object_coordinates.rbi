@@ -13,12 +13,15 @@ module HubspotSDK
               )
             end
 
+          # The unique identifier for the object.
           sig { returns(Integer) }
           attr_accessor :object_id_
 
+          # The type identifier for the object.
           sig { returns(String) }
           attr_accessor :object_type_id
 
+          # The unique identifier for the portal.
           sig { returns(Integer) }
           attr_accessor :portal_id
 
@@ -29,7 +32,14 @@ module HubspotSDK
               portal_id: Integer
             ).returns(T.attached_class)
           end
-          def self.new(object_id_:, object_type_id:, portal_id:)
+          def self.new(
+            # The unique identifier for the object.
+            object_id_:,
+            # The type identifier for the object.
+            object_type_id:,
+            # The unique identifier for the portal.
+            portal_id:
+          )
           end
 
           sig do

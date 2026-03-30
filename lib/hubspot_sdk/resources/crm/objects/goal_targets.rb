@@ -37,8 +37,11 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::GoalTargetUpdateParams} for more details.
           #
-          # Update a goal target by ID (`objectId`) or unique property value (`idProperty`).
-          # Provided property values will be overwritten. Read-only and non-existent
+          # Perform a partial update of an Object identified by `{goalTargetId}`or
+          # optionally a unique property value as specified by the `idProperty` query param.
+          # `{goalTargetId}` refers to the internal object ID by default, and the
+          # `idProperty` query param refers to a property whose values are unique for the
+          # object. Provided property values will be overwritten. Read-only and non-existent
           # properties will result in an error. Properties values can be cleared by passing
           # an empty string.
           #
@@ -72,7 +75,7 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::GoalTargetListParams} for more details.
           #
-          # Retrieve all goal targets. Control what is returned via the `properties` query
+          # Read a page of goal targets. Control what is returned via the `properties` query
           # param.
           #
           # @overload list(after: nil, archived: nil, associations: nil, limit: nil, properties: nil, properties_with_history: nil, request_options: {})
@@ -107,7 +110,7 @@ module HubspotSDK
             )
           end
 
-          # Delete a goal target by ID.
+          # Delete a goal target by `{goalTargetId}` to the recycling bin.
           #
           # @overload delete(goal_target_id, request_options: {})
           #
@@ -129,10 +132,8 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::GoalTargetGetParams} for more details.
           #
-          # Read an Object identified by `{goalTargetId}`. `{goalTargetId}` refers to the
-          # internal object ID by default, or optionally any unique property value as
-          # specified by the `idProperty` query param. Control what is returned via the
-          # `properties` query param.
+          # Retrieve a goal target by its ID. You can specify what is returned using the
+          # `properties` query parameter.
           #
           # @overload get(goal_target_id, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #

@@ -12,14 +12,14 @@ module HubspotSDK
               object_type: String,
               inputs: T::Array[HubspotSDK::PropertyCreate::OrHash],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::BatchResponseProperty)
+            ).returns(HubspotSDK::Crm::BatchResponseProperty)
           end
           def create(object_type, inputs:, request_options: {})
           end
 
-          # Delete multiple properties in a single request. This method will return a 204 No
-          # Content response on success regardless of the initial state of the property
-          # (e.g. active, already archived, non-existent).
+          # Archive a provided list of properties. This method will return a 204 No Content
+          # response on success regardless of the initial state of the property (e.g.
+          # active, already archived, non-existent).
           sig do
             params(
               object_type: String,
@@ -30,7 +30,7 @@ module HubspotSDK
           def delete(object_type, inputs:, request_options: {})
           end
 
-          # Read a batch of properties.
+          # Read a provided list of properties.
           sig do
             params(
               object_type: String,
@@ -40,7 +40,7 @@ module HubspotSDK
               inputs: T::Array[HubspotSDK::PropertyName::OrHash],
               locale: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::BatchResponseProperty)
+            ).returns(HubspotSDK::Crm::BatchResponseProperty)
           end
           def get(
             # Path param

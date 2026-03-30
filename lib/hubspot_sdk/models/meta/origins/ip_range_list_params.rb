@@ -10,29 +10,20 @@ module HubspotSDK
           include HubspotSDK::Internal::Type::RequestParameters
 
           # @!attribute direction
-          #   An array of traffic directions to filter the IP ranges. Valid values are
-          #   `INGRESS` and `EGRESS`.
           #
           #   @return [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListParams::Direction>, nil]
           optional :direction,
                    -> { HubspotSDK::Internal::Type::ArrayOf[enum: HubspotSDK::Meta::Origins::IPRangeListParams::Direction] }
 
           # @!attribute service
-          #   An array of service types to filter the IP ranges. Valid values include `EMAIL`,
-          #   `API`, `DNS`, `WEB_SCRAPING`, and `TEST_SERVICE`.
           #
           #   @return [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListParams::Service>, nil]
           optional :service,
                    -> { HubspotSDK::Internal::Type::ArrayOf[enum: HubspotSDK::Meta::Origins::IPRangeListParams::Service] }
 
           # @!method initialize(direction: nil, service: nil, request_options: {})
-          #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Meta::Origins::IPRangeListParams} for more details.
-          #
-          #   @param direction [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListParams::Direction>] An array of traffic directions to filter the IP ranges. Valid values are `INGRES
-          #
-          #   @param service [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListParams::Service>] An array of service types to filter the IP ranges. Valid values include `EMAIL`,
-          #
+          #   @param direction [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListParams::Direction>]
+          #   @param service [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListParams::Service>]
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
 
           module Direction
@@ -52,6 +43,7 @@ module HubspotSDK
             API = :API
             DNS = :DNS
             WEB_SCRAPING = :WEB_SCRAPING
+            TEST_SERVICE = :TEST_SERVICE
 
             # @!method self.values
             #   @return [Array<Symbol>]

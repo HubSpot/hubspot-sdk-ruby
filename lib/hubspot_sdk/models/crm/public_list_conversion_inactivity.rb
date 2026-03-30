@@ -13,7 +13,9 @@ module HubspotSDK
                  api_name: :conversionType
 
         # @!attribute offset
-        #   The number of time units for the inactivity period.
+        #   Value used to paginate through lists. The `offset` provided in the response can
+        #   be used in the next request to fetch the next page of results. Defaults to `0`
+        #   if no offset is provided.
         #
         #   @return [Integer]
         required :offset, Integer
@@ -27,9 +29,12 @@ module HubspotSDK
                  api_name: :timeUnit
 
         # @!method initialize(conversion_type:, offset:, time_unit:)
+        #   Some parameter documentations has been truncated, see
+        #   {HubspotSDK::Models::Crm::PublicListConversionInactivity} for more details.
+        #
         #   @param conversion_type [Symbol, HubspotSDK::Models::Crm::PublicListConversionInactivity::ConversionType] Specifies the type of conversion (INACTIVITY).
         #
-        #   @param offset [Integer] The number of time units for the inactivity period.
+        #   @param offset [Integer] Value used to paginate through lists. The `offset` provided in the response can
         #
         #   @param time_unit [Symbol, HubspotSDK::Models::Crm::PublicListConversionInactivity::TimeUnit] The unit of time for the inactivity period, such as (DAY, MONTH, WEEK).
 

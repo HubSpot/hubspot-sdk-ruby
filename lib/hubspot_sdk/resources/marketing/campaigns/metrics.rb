@@ -5,18 +5,16 @@ module HubspotSDK
     class Marketing
       class Campaigns
         class Metrics
-          # Fetch the metrics for a specific marketing campaign using its unique identifier.
-          # This endpoint allows you to retrieve various performance metrics of the
-          # campaign, which can be useful for analyzing the effectiveness of your marketing
-          # efforts over a specified time period.
+          # This endpoint retrieves key attribution metrics for a specified campaign, such
+          # as sessions, new contacts, and influenced contacts.
           #
           # @overload get_attribution_metrics(campaign_guid, end_date: nil, start_date: nil, request_options: {})
           #
-          # @param campaign_guid [String] The unique identifier of the campaign for which metrics are being fetched.
+          # @param campaign_guid [String] The unique identifier of the campaign
           #
-          # @param end_date [String] The end date for fetching metrics, in YYYY-MM-DD format.
+          # @param end_date [String]
           #
-          # @param start_date [String] The start date for fetching metrics, in YYYY-MM-DD format.
+          # @param start_date [String]
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -36,20 +34,17 @@ module HubspotSDK
             )
           end
 
-          # Fetch revenue attribution report data for a specific campaign. This endpoint
-          # allows you to retrieve detailed revenue attribution information, which can be
-          # filtered by attribution model and date range. It is useful for analyzing the
-          # financial impact of marketing campaigns.
+          # Fetch revenue attribution report data for a specified campaign
           #
           # @overload get_revenue_attribution(campaign_guid, attribution_model: nil, end_date: nil, start_date: nil, request_options: {})
           #
-          # @param campaign_guid [String] The unique identifier of the campaign.
+          # @param campaign_guid [String] The unique identifier of the campaign
           #
-          # @param attribution_model [String] The model used to attribute revenue to the campaign.
+          # @param attribution_model [String]
           #
-          # @param end_date [String] End date to fetch attribution data, YYYY-MM-DD.
+          # @param end_date [String] End date to fetch attribution data, YYYY-MM-DD
           #
-          # @param start_date [String] Start date to fetch attribution data, YYYY-MM-DD.
+          # @param start_date [String] Start date to fetch attribution data, YYYY-MM-DD
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -77,24 +72,21 @@ module HubspotSDK
           # {HubspotSDK::Models::Marketing::Campaigns::MetricListContactIDsByTypeParams} for
           # more details.
           #
-          # Fetch the list of contact IDs for the specified campaign and contact type. This
-          # endpoint allows you to retrieve contact identifiers associated with a particular
-          # campaign, filtered by the type of contact. It is useful for analyzing or
-          # processing contacts involved in specific marketing campaigns.
+          # Fetch the list of contact IDs for the specified campaign and contact type
           #
           # @overload list_contact_ids_by_type(contact_type, campaign_guid:, after: nil, end_date: nil, limit: nil, start_date: nil, request_options: {})
           #
-          # @param contact_type [String] Path param: The type of contact to filter the list.
+          # @param contact_type [String] Path param: The type of contact to filter the list
           #
-          # @param campaign_guid [String] Path param: The unique identifier of the campaign.
+          # @param campaign_guid [String] Path param: The unique identifier of the campaign
           #
-          # @param after [String] Query param: The paging cursor token of the last successfully read resource, use
+          # @param after [String] Query param: The paging cursor token of the last successfully read resource will
           #
-          # @param end_date [String] Query param: The end date for filtering contacts, formatted as a string.
+          # @param end_date [String] Query param
           #
           # @param limit [Integer] Query param: The maximum number of results to display per page.
           #
-          # @param start_date [String] Query param: The start date for filtering contacts, formatted as a string.
+          # @param start_date [String] Query param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

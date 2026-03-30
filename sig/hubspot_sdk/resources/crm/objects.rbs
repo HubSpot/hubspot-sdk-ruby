@@ -44,6 +44,8 @@ module HubspotSDK
 
         attr_reader notes: HubspotSDK::Resources::Crm::Objects::Notes
 
+        attr_reader objects: HubspotSDK::Resources::Crm::Objects::Objects
+
         attr_reader orders: HubspotSDK::Resources::Crm::Objects::Orders
 
         attr_reader partner_clients: HubspotSDK::Resources::Crm::Objects::PartnerClients
@@ -53,6 +55,8 @@ module HubspotSDK
         attr_reader postal_mail: HubspotSDK::Resources::Crm::Objects::PostalMail
 
         attr_reader products: HubspotSDK::Resources::Crm::Objects::Products
+
+        attr_reader projects: HubspotSDK::Resources::Crm::Objects::Projects
 
         attr_reader quotes: HubspotSDK::Resources::Crm::Objects::Quotes
 

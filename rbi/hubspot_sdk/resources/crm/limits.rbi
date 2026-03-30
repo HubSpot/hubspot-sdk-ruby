@@ -4,6 +4,7 @@ module HubspotSDK
   module Resources
     class Crm
       class Limits
+        # Returns limits and usage for custom association labels
         sig do
           params(
             from_object_type_id: String,
@@ -20,6 +21,7 @@ module HubspotSDK
         )
         end
 
+        # Returns records approaching or at association limits between two objects
         sig do
           params(
             to_object_type_id: String,
@@ -34,6 +36,7 @@ module HubspotSDK
         )
         end
 
+        # Returns objects with records approaching or at association limits
         sig do
           params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
             HubspotSDK::Crm::CollectionResponseObjectTypeNearOrAtAssociationLimitNoPaging
@@ -42,6 +45,8 @@ module HubspotSDK
         def get_association_records_limits_from_objects(request_options: {})
         end
 
+        # Returns objects for which the from object has records approaching or at
+        # association limits
         sig do
           params(
             from_object_type_id: String,
@@ -56,6 +61,7 @@ module HubspotSDK
         )
         end
 
+        # Returns overall limit and per object usage for calculated properties
         sig do
           params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
             HubspotSDK::Crm::CalculatedPropertyLimitResponse
@@ -64,6 +70,7 @@ module HubspotSDK
         def get_calculated_property_limits(request_options: {})
         end
 
+        # Returns limits and usage for custom object schemas
         sig do
           params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
             HubspotSDK::Crm::CustomObjectLimitResponse
@@ -72,6 +79,7 @@ module HubspotSDK
         def get_custom_object_type_limits(request_options: {})
         end
 
+        # Returns limits and usage per object for custom properties
         sig do
           params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
             HubspotSDK::Crm::CustomPropertyLimitResponse
@@ -80,6 +88,7 @@ module HubspotSDK
         def get_custom_property_limits(request_options: {})
         end
 
+        # Returns limits and usage per object for pipelines
         sig do
           params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
             HubspotSDK::Crm::PipelineLimitResponse
@@ -88,6 +97,7 @@ module HubspotSDK
         def get_pipeline_limits(request_options: {})
         end
 
+        # Returns limits and usage per object for records
         sig do
           params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
             HubspotSDK::Crm::RecordLimitResponse

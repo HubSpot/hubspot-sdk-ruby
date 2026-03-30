@@ -73,8 +73,8 @@ module HubspotSDK
             # Some parameter documentations has been truncated, see
             # {HubspotSDK::Models::Crm::Objects::Emails::BatchGetParams} for more details.
             #
-            # Retrieve a batch of emails by record ID or include the `idProperty` parameter to
-            # retrieve records by a custom unique value property.
+            # Retrieve records by record ID or include the `idProperty` parameter to retrieve
+            # records by a custom unique value property.
             #
             # @overload get(inputs:, properties:, properties_with_history:, archived: nil, id_property: nil, request_options: {})
             #
@@ -107,8 +107,9 @@ module HubspotSDK
               )
             end
 
-            # Create and update a batch of emails by a unique property. Emails that don't
-            # exist will be created, while existing emails will be updated.
+            # Create or update records identified by a unique property value as specified by
+            # the `idProperty` query param. `idProperty` query param refers to a property
+            # whose values are unique for the object.
             #
             # @overload upsert(inputs:, request_options: {})
             #

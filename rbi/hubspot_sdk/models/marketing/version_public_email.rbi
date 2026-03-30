@@ -22,6 +22,7 @@ module HubspotSDK
         sig { params(object: HubspotSDK::Marketing::PublicEmail::OrHash).void }
         attr_writer :object
 
+        # The date and time of the last update to the email, in ISO8601 representation.
         sig { returns(Time) }
         attr_accessor :updated_at
 
@@ -43,6 +44,7 @@ module HubspotSDK
           # ID of this marketing email version.
           id:,
           object:,
+          # The date and time of the last update to the email, in ISO8601 representation.
           updated_at:,
           user:
         )

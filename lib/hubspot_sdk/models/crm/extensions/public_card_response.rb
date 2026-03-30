@@ -37,7 +37,7 @@ module HubspotSDK
           required :fetch, -> { HubspotSDK::Crm::Extensions::PublicCardFetchBody }
 
           # @!attribute title
-          #   The top-level title for this card, displayed to users in the CRM UI.
+          #   The top-level title for this card. Displayed to users in the CRM UI.
           #
           #   @return [String]
           required :title, String
@@ -68,7 +68,7 @@ module HubspotSDK
           #
           #   @param fetch [HubspotSDK::Models::Crm::Extensions::PublicCardFetchBody]
           #
-          #   @param title [String] The top-level title for this card, displayed to users in the CRM UI.
+          #   @param title [String] The top-level title for this card. Displayed to users in the CRM UI.
           #
           #   @param created_at [Time] The date and time when the card was created.
           #

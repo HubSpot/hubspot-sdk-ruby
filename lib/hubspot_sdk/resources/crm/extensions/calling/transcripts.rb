@@ -43,18 +43,32 @@ module HubspotSDK
               )
             end
 
+            # Some parameter documentations has been truncated, see
+            # {HubspotSDK::Models::Crm::Extensions::Calling::TranscriptCreateInboundCallParams}
+            # for more details.
+            #
             # @overload create_inbound_call(create_engagement:, engagement_properties:, external_call_id:, final_call_status:, from_number:, potential_recipient_user_ids:, to_number:, call_started_timestamp: nil, duration_seconds: nil, user_id: nil, request_options: {})
             #
-            # @param create_engagement [Boolean]
-            # @param engagement_properties [Hash{Symbol=>String}]
-            # @param external_call_id [String]
-            # @param final_call_status [Symbol, HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus]
+            # @param create_engagement [Boolean] Indicates whether an engagement should be created for the call.
+            #
+            # @param engagement_properties [Hash{Symbol=>String}] Contains additional properties related to the engagement.
+            #
+            # @param external_call_id [String] The unique identifier for the call from an external system.
+            #
+            # @param final_call_status [Symbol, HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus] The final status of the call, with accepted values including: BUSY, CALLING*CRM*
+            #
             # @param from_number [HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber]
+            #
             # @param potential_recipient_user_ids [Array<Integer>]
+            #
             # @param to_number [HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber]
-            # @param call_started_timestamp [Time]
-            # @param duration_seconds [Integer]
-            # @param user_id [Integer]
+            #
+            # @param call_started_timestamp [Time] The timestamp indicating when the call started, formatted as a date-time string.
+            #
+            # @param duration_seconds [Integer] The duration of the call in seconds.
+            #
+            # @param user_id [Integer] The ID of the user associated with the call.
+            #
             # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallResponse]

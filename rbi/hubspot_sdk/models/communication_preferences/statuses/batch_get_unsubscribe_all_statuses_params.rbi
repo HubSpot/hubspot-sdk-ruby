@@ -16,13 +16,9 @@ module HubspotSDK
               )
             end
 
-          # The communication channel to check the unsubscribe-all status for. Currently,
-          # only 'EMAIL' is supported. This parameter is required.
           sig { returns(HubspotSDK::BatchInputString::Channel::OrSymbol) }
           attr_accessor :channel
 
-          # The ID of the business unit for which the statuses are being retrieved. This is
-          # an optional parameter.
           sig { returns(T.nilable(Integer)) }
           attr_reader :business_unit_id
 
@@ -36,15 +32,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
-          def self.new(
-            # The communication channel to check the unsubscribe-all status for. Currently,
-            # only 'EMAIL' is supported. This parameter is required.
-            channel:,
-            # The ID of the business unit for which the statuses are being retrieved. This is
-            # an optional parameter.
-            business_unit_id: nil,
-            request_options: {}
-          )
+          def self.new(channel:, business_unit_id: nil, request_options: {})
           end
 
           sig do
@@ -59,8 +47,6 @@ module HubspotSDK
           def to_hash
           end
 
-          # The communication channel to check the unsubscribe-all status for. Currently,
-          # only 'EMAIL' is supported. This parameter is required.
           module Channel
             extend HubspotSDK::Internal::Type::Enum
 

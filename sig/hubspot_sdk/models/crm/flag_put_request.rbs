@@ -1,0 +1,55 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type flag_put_request =
+        {
+          default_state: HubspotSDK::Models::Crm::FlagPutRequest::default_state,
+          override_state: HubspotSDK::Models::Crm::FlagPutRequest::override_state
+        }
+
+      class FlagPutRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor default_state: HubspotSDK::Models::Crm::FlagPutRequest::default_state
+
+        attr_reader override_state: HubspotSDK::Models::Crm::FlagPutRequest::override_state?
+
+        def override_state=: (
+          HubspotSDK::Models::Crm::FlagPutRequest::override_state
+        ) -> HubspotSDK::Models::Crm::FlagPutRequest::override_state
+
+        def initialize: (
+          default_state: HubspotSDK::Models::Crm::FlagPutRequest::default_state,
+          ?override_state: HubspotSDK::Models::Crm::FlagPutRequest::override_state
+        ) -> void
+
+        def to_hash: -> {
+          default_state: HubspotSDK::Models::Crm::FlagPutRequest::default_state,
+          override_state: HubspotSDK::Models::Crm::FlagPutRequest::override_state
+        }
+
+        type default_state = :ABSENT | :OFF | :ON
+
+        module DefaultState
+          extend HubspotSDK::Internal::Type::Enum
+
+          ABSENT: :ABSENT
+          OFF: :OFF
+          ON: :ON
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::FlagPutRequest::default_state]
+        end
+
+        type override_state = :ABSENT | :OFF | :ON
+
+        module OverrideState
+          extend HubspotSDK::Internal::Type::Enum
+
+          ABSENT: :ABSENT
+          OFF: :OFF
+          ON: :ON
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Crm::FlagPutRequest::override_state]
+        end
+      end
+    end
+  end
+end

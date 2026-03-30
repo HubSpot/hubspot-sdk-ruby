@@ -23,7 +23,8 @@ module HubspotSDK
       required :status, enum: -> { HubspotSDK::ActionResponse::Status }
 
       # @!attribute links
-      #   A collection of related links associated with the action.
+      #   A map of link names to associated URIs containing documentation about the error
+      #   or recommended remediation steps
       #
       #   @return [Hash{Symbol=>String}, nil]
       optional :links, HubspotSDK::Internal::Type::HashOf[String]
@@ -44,7 +45,7 @@ module HubspotSDK
       #
       #   @param status [Symbol, HubspotSDK::Models::ActionResponse::Status] The current status of the action, with possible values: CANCELED, COMPLETE, PEND
       #
-      #   @param links [Hash{Symbol=>String}] A collection of related links associated with the action.
+      #   @param links [Hash{Symbol=>String}] A map of link names to associated URIs containing documentation about the error
       #
       #   @param requested_at [Time] The timestamp indicating when the action was requested.
 

@@ -5,6 +5,8 @@ module HubspotSDK
     module Crm
       class ObjectSchemaEgg < HubspotSDK::Internal::Type::BaseModel
         # @!attribute allows_sensitive_properties
+        #   Determines if the object type can include properties that are marked as
+        #   sensitive.
         #
         #   @return [Boolean]
         required :allows_sensitive_properties,
@@ -65,6 +67,7 @@ module HubspotSDK
                  api_name: :secondaryDisplayProperties
 
         # @!attribute description
+        #   A brief explanation of the object type.
         #
         #   @return [String, nil]
         optional :description, String
@@ -80,7 +83,7 @@ module HubspotSDK
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Crm::ObjectSchemaEgg} for more details.
         #
-        #   @param allows_sensitive_properties [Boolean]
+        #   @param allows_sensitive_properties [Boolean] Determines if the object type can include properties that are marked as sensitiv
         #
         #   @param associated_objects [Array<String>] Associations defined for this object type.
         #
@@ -96,7 +99,7 @@ module HubspotSDK
         #
         #   @param secondary_display_properties [Array<String>] The names of secondary properties for this object. These will be displayed as se
         #
-        #   @param description [String]
+        #   @param description [String] A brief explanation of the object type.
         #
         #   @param primary_display_property [String] The name of the primary property for this object. This will be displayed as prim
       end

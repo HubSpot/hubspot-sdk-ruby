@@ -12,6 +12,8 @@ module HubspotSDK
             )
           end
 
+        # The type of function, with accepted values: POST_ACTION_EXECUTION,
+        # POST_FETCH_OPTIONS, PRE_ACTION_EXECUTION, PRE_FETCH_OPTIONS.
         sig do
           returns(
             HubspotSDK::Automation::PublicActionFunctionIdentifier::FunctionType::TaggedSymbol
@@ -19,6 +21,7 @@ module HubspotSDK
         end
         attr_accessor :function_type
 
+        # The unique identifier for the function.
         sig { returns(T.nilable(String)) }
         attr_reader :id
 
@@ -32,7 +35,13 @@ module HubspotSDK
             id: String
           ).returns(T.attached_class)
         end
-        def self.new(function_type:, id: nil)
+        def self.new(
+          # The type of function, with accepted values: POST_ACTION_EXECUTION,
+          # POST_FETCH_OPTIONS, PRE_ACTION_EXECUTION, PRE_FETCH_OPTIONS.
+          function_type:,
+          # The unique identifier for the function.
+          id: nil
+        )
         end
 
         sig do
@@ -47,6 +56,8 @@ module HubspotSDK
         def to_hash
         end
 
+        # The type of function, with accepted values: POST_ACTION_EXECUTION,
+        # POST_FETCH_OPTIONS, PRE_ACTION_EXECUTION, PRE_FETCH_OPTIONS.
         module FunctionType
           extend HubspotSDK::Internal::Type::Enum
 

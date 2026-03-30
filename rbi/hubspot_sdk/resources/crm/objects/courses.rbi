@@ -52,7 +52,8 @@ module HubspotSDK
           )
           end
 
-          # Retrieve all courses.
+          # Read a page of courses. Control what is returned via the `properties` query
+          # param.
           sig do
             params(
               after: String,
@@ -93,7 +94,7 @@ module HubspotSDK
           )
           end
 
-          # Delete a course by ID.
+          # Move an Object identified by `{courseId}` to the recycling bin.
           sig do
             params(
               course_id: String,

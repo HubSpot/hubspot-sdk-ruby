@@ -1,0 +1,57 @@
+module HubspotSDK
+  module Resources
+    class Settings
+      class Users
+        def create: (
+          email: String,
+          send_welcome_email: bool,
+          ?first_name: String,
+          ?last_name: String,
+          ?primary_team_id: String,
+          ?role_id: String,
+          ?secondary_team_ids: ::Array[String],
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Settings::PublicUser
+
+        def update: (
+          String user_id,
+          ?id_property: HubspotSDK::Models::Settings::PublicUserUpdate::id_property,
+          ?first_name: String,
+          ?last_name: String,
+          ?primary_team_id: String,
+          ?role_id: String,
+          ?secondary_team_ids: ::Array[String],
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Settings::PublicUser
+
+        def list: (
+          ?after: String,
+          ?limit: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Settings::PublicUser]
+
+        def delete: (
+          String user_id,
+          ?id_property: HubspotSDK::Models::Settings::UserDeleteParams::id_property,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def get: (
+          String user_id,
+          ?id_property: HubspotSDK::Models::Settings::UserGetParams::id_property,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Settings::PublicUser
+
+        def list_roles: (
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Settings::CollectionResponsePublicPermissionSetNoPaging
+
+        def list_teams: (
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Settings::CollectionResponsePublicTeamNoPaging
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

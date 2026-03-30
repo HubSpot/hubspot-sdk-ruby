@@ -55,17 +55,6 @@ module HubspotSDK
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
 
-        def send_: (
-          event_name: String,
-          properties: ::Hash[Symbol, String],
-          ?email: String,
-          ?object_id_: String,
-          ?occurred_at: Time,
-          ?utk: String,
-          ?uuid: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> nil
-
         def send_batch: (
           inputs: ::Array[HubspotSDK::Events::BehavioralEventHTTPCompletionRequest],
           ?request_options: HubspotSDK::request_opts

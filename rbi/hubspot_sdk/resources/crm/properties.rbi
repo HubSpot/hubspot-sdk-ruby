@@ -83,9 +83,9 @@ module HubspotSDK
           # Body param: A description of the property that will be shown as help text in
           # HubSpot.
           description: nil,
-          # Body param: Property groups are displayed in order starting with the lowest
-          # positive integer value. Values of -1 will cause the property group to be
-          # displayed after any positive values.
+          # Body param: Properties are displayed in order starting with the lowest positive
+          # integer value. Values of -1 will cause the Property to be displayed after any
+          # positive values.
           display_order: nil,
           # Body param: Controls how the property appears in HubSpot.
           field_type: nil,
@@ -95,10 +95,9 @@ module HubspotSDK
           group_name: nil,
           # Body param: If true, the property won't be visible and can't be used in HubSpot.
           hidden: nil,
-          # Body param: A human-readable label that will be shown in HubSpot.
+          # Body param: A human-readable property label that will be shown in HubSpot.
           label: nil,
-          # Body param: A list of valid options for the property. This field is required for
-          # enumerated properties.
+          # Body param: A list of valid options for the property.
           options: nil,
           # Body param: The data type of the property.
           type: nil,
@@ -116,7 +115,7 @@ module HubspotSDK
             locale: String,
             properties: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CollectionResponsePropertyNoPaging)
+          ).returns(HubspotSDK::Crm::CollectionResponsePropertyNoPaging)
         end
         def list(
           object_type,
@@ -129,7 +128,7 @@ module HubspotSDK
         )
         end
 
-        # Delete an existing property.
+        # Move a property identified by {propertyName} to the recycling bin.
         sig do
           params(
             property_name: String,

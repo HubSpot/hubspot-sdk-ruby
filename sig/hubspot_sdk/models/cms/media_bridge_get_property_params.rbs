@@ -3,7 +3,7 @@ module HubspotSDK
     module Cms
       type media_bridge_get_property_params =
         {
-          app_id: String,
+          app_id: Integer,
           object_type: String,
           property_name: String,
           archived: bool,
@@ -15,7 +15,7 @@ module HubspotSDK
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
-        attr_accessor app_id: String
+        attr_accessor app_id: Integer
 
         attr_accessor object_type: String
 
@@ -30,7 +30,7 @@ module HubspotSDK
         def properties=: (String) -> String
 
         def initialize: (
-          app_id: String,
+          app_id: Integer,
           object_type: String,
           property_name: String,
           ?archived: bool,
@@ -39,7 +39,7 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
-          app_id: String,
+          app_id: Integer,
           object_type: String,
           property_name: String,
           archived: bool,

@@ -5,8 +5,8 @@ module HubspotSDK
     class Crm
       class AssociationsSchema
         class Limits
-          # Fetch all limits for CRM associations, which include details about cardinality
-          # limits (i.e., one-to-many vs one-to-one).
+          # Retrieve all configured association limits between objects, which include
+          # details about how different CRM object types are associated with each other.
           sig do
             params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
               HubspotSDK::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging
@@ -15,8 +15,8 @@ module HubspotSDK
           def list(request_options: {})
           end
 
-          # Batch delete limits defined for associations between two specified CRM object
-          # types.
+          # Batch delete limits that have been defined for association types between two
+          # object types.
           sig do
             params(
               to_object_type: String,
@@ -26,9 +26,9 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::BatchResponseVoid)
           end
           def batch_delete(
-            # Path param: The type of the target object in the association.
+            # Path param
             to_object_type,
-            # Path param: The type of the source object in the association.
+            # Path param
             from_object_type:,
             # Body param
             inputs:,
@@ -36,9 +36,8 @@ module HubspotSDK
           )
           end
 
-          # Update multiple association configurations between two specified CRM object
-          # types in a single batch operation. This defines details about cardinality limits
-          # (i.e., one-to-many vs one-to-one).
+          # Batch update association limits that have been configured between two object
+          # types.
           sig do
             params(
               to_object_type: String,
@@ -53,9 +52,9 @@ module HubspotSDK
             )
           end
           def batch_update(
-            # Path param: The type of the target object in the association.
+            # Path param
             to_object_type,
-            # Path param: The type of the source object in the association.
+            # Path param
             from_object_type:,
             # Body param
             inputs:,
@@ -63,8 +62,9 @@ module HubspotSDK
           )
           end
 
-          # Retrieve the cardinality limits for associations between two specified CRM
-          # object types (i.e., one-to-many vs one-to-one).
+          # Retrieve the configuration details for associations between two specified CRM
+          # object types. Use this endpoint to understand limits that have been set for
+          # specific association types.
           sig do
             params(
               to_object_type: String,
@@ -75,9 +75,7 @@ module HubspotSDK
             )
           end
           def get_by_object_types(
-            # The type of the target object in the association.
             to_object_type,
-            # The type of the source object in the association.
             from_object_type:,
             request_options: {}
           )

@@ -19,12 +19,8 @@ module HubspotSDK
                  api_name: :additionalProperties
 
         # @!attribute list_ids
-        #   The `listIds` that will be used to filter results by `listId`. If values are
-        #   provided, then the response will only include results that have a `listId` in
-        #   this array.
-        #
-        #   If no value is provided, or if an empty list is provided, then the results will
-        #   not be filtered by `listId`.
+        #   ILS list ids to be included in search results. If not specified, all lists
+        #   matching other criteria will be included
         #
         #   @return [Array<String>]
         required :list_ids, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :listIds
@@ -38,14 +34,8 @@ module HubspotSDK
         required :offset, Integer
 
         # @!attribute processing_types
-        #   The `processingTypes` that will be used to filter results by `processingType`.
-        #   If values are provided, then the response will only include results that have a
-        #   `processingType` in this array.
-        #
-        #   If no value is provided, or if an empty list is provided, then results will not
-        #   be filtered by `processingType`.
-        #
-        #   Valid `processingTypes` are: `MANUAL`, `SNAPSHOT`, or `DYNAMIC`.
+        #   List processing types to be included in search results. If not specified, all
+        #   lists with all processing types will be included.
         #
         #   @return [Array<String>]
         required :processing_types, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :processingTypes
@@ -81,11 +71,11 @@ module HubspotSDK
         #
         #   @param additional_properties [Array<String>] The property names of any additional list properties to include in the response.
         #
-        #   @param list_ids [Array<String>] The `listIds` that will be used to filter results by `listId`. If values are pro
+        #   @param list_ids [Array<String>] ILS list ids to be included in search results. If not specified, all lists match
         #
         #   @param offset [Integer] Value used to paginate through lists. The `offset` provided in the response can
         #
-        #   @param processing_types [Array<String>] The `processingTypes` that will be used to filter results by `processingType`. I
+        #   @param processing_types [Array<String>] List processing types to be included in search results. If not specified, all li
         #
         #   @param count [Integer] The number of lists to include in the response. Defaults to `20` if no value is
         #

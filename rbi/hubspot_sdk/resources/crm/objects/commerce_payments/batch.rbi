@@ -6,11 +6,8 @@ module HubspotSDK
       class Objects
         class CommercePayments
           class Batch
-            # Create a batch of payments The `inputs` array can contain a `properties` object
-            # to define property values for the record, along with an `associations` array to
-            # define
-            # [associations](https://developers.hubspot.com/docs/guides/api/crm/associations/associations-v4)
-            # with other CRM records.
+            # Create multiple commerce payment records in a single request, returning the
+            # details of each created payment, including their unique IDs.
             sig do
               params(
                 inputs:
@@ -23,10 +20,10 @@ module HubspotSDK
             def create(inputs:, request_options: {})
             end
 
-            # Update a batch of payments by ID (`objectId`) or unique property value
-            # (`idProperty`). Provided property values will be overwritten. Read-only and
-            # non-existent properties will result in an error. Properties values can be
-            # cleared by passing an empty string.
+            # Update multiple commerce payment records using their internal IDs or unique
+            # property values. This operation allows you to modify existing payment records in
+            # bulk by providing a list of records with their respective IDs and updated
+            # property values.
             sig do
               params(
                 inputs:
@@ -39,7 +36,8 @@ module HubspotSDK
             def update(inputs:, request_options: {})
             end
 
-            # Delete a batch of payments by ID.
+            # Archive a batch of commerce payments by their IDs. This operation moves the
+            # specified payments to the archive, making them inactive in the system.
             sig do
               params(
                 inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
@@ -49,8 +47,8 @@ module HubspotSDK
             def delete(inputs:, request_options: {})
             end
 
-            # Retrieve a batch of payments by ID (`objectId`) or unique property value
-            # (`idProperty`).
+            # Retrieve records by record ID or include the `idProperty` parameter to retrieve
+            # records by a custom unique value property.
             sig do
               params(
                 inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
@@ -78,8 +76,9 @@ module HubspotSDK
             )
             end
 
-            # Create and update a batch of payments by a unique property. Payments that don't
-            # exist will be created, while existing payments will be updated.
+            # Create or update records identified by a unique property value as specified by
+            # the `idProperty` query param. `idProperty` query param refers to a property
+            # whose values are unique for the object.
             sig do
               params(
                 inputs:

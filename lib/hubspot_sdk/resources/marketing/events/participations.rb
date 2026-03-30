@@ -9,6 +9,9 @@ module HubspotSDK
           # {HubspotSDK::Models::Marketing::Events::ParticipationGetByExternalAccountAndEventIDParams}
           # for more details.
           #
+          # Read Marketing event's participations counters by externalAccountId and
+          # externalEventId pair.
+          #
           # @overload get_by_external_account_and_event_id(external_event_id, external_account_id:, request_options: {})
           #
           # @param external_event_id [String] The id of the marketing event in the external event application.
@@ -39,6 +42,9 @@ module HubspotSDK
             )
           end
 
+          # Read Marketing event's participations counters by internal identifier
+          # marketingEventId.
+          #
           # @overload get_by_id(marketing_event_id, request_options: {})
           #
           # @param marketing_event_id [Integer] The internal id of the marketing event in HubSpot.
@@ -60,6 +66,8 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Marketing::Events::ParticipationListBreakdownByContactParams}
           # for more details.
+          #
+          # Read Contact's participations by identifier - email or internal id.
           #
           # @overload list_breakdown_by_contact(contact_identifier, after: nil, limit: nil, state: nil, request_options: {})
           #
@@ -96,6 +104,9 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Marketing::Events::ParticipationListBreakdownByExternalAccountAndEventIDParams}
           # for more details.
+          #
+          # Read Marketing event's participations breakdown with optional filters by
+          # externalAccountId and externalEventId pair.
           #
           # @overload list_breakdown_by_external_account_and_event_id(external_event_id, external_account_id:, after: nil, contact_identifier: nil, limit: nil, state: nil, request_options: {})
           #
@@ -143,6 +154,9 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Marketing::Events::ParticipationListBreakdownByIDParams}
           # for more details.
+          #
+          # Read Marketing event's participations breakdown with optional filters by
+          # internal identifier marketingEventId.
           #
           # @overload list_breakdown_by_id(marketing_event_id, after: nil, contact_identifier: nil, limit: nil, state: nil, request_options: {})
           #

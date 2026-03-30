@@ -44,16 +44,13 @@ module HubspotSDK
             )
           end
 
-          # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Associations::BatchDeleteParams} for more details.
-          #
           # Batch delete associations for objects
           #
           # @overload delete(to_object_type, from_object_type:, inputs:, request_options: {})
           #
-          # @param to_object_type [String] Path param: Specifies the type of the target object in the batch association del
+          # @param to_object_type [String] Path param
           #
-          # @param from_object_type [String] Path param: Specifies the type of the source object in the batch association del
+          # @param from_object_type [String] Path param
           #
           # @param inputs [Array<HubspotSDK::Models::Crm::PublicAssociationMultiArchive>] Body param
           #
@@ -77,14 +74,13 @@ module HubspotSDK
             )
           end
 
-          # Batch create the default (most generic) association type between two object
-          # types.
+          # Create the default (most generic) association type between two object types
           #
           # @overload create_default(to_object_type, from_object_type:, inputs:, request_options: {})
           #
-          # @param to_object_type [String] Path param: Specifies the type of the target object in the association.
+          # @param to_object_type [String] Path param
           #
-          # @param from_object_type [String] Path param: Specifies the type of the source object in the association.
+          # @param from_object_type [String] Path param
           #
           # @param inputs [Array<HubspotSDK::Models::Crm::PublicDefaultAssociationMultiPost>] Body param
           #
@@ -112,15 +108,14 @@ module HubspotSDK
             )
           end
 
-          # Batch remove specific labelled associations between records in bulk. Deleting an
-          # unlabeled association will also delete all labeled associations between those
-          # two objects
+          # Batch delete specific association labels for objects. Deleting an unlabeled
+          # association will also delete all labeled associations between those two objects
           #
           # @overload delete_labels(to_object_type, from_object_type:, inputs:, request_options: {})
           #
-          # @param to_object_type [String] Path param: The type of the to Object
+          # @param to_object_type [String] Path param
           #
-          # @param from_object_type [String] Path param: The type of the from Object
+          # @param from_object_type [String] Path param
           #
           # @param inputs [Array<HubspotSDK::Models::Crm::PublicAssociationMultiPost>] Body param
           #
@@ -156,9 +151,9 @@ module HubspotSDK
           #
           # @overload get(to_object_type, from_object_type:, inputs:, request_options: {})
           #
-          # @param to_object_type [String] Path param: The type of the to Object
+          # @param to_object_type [String] Path param
           #
-          # @param from_object_type [String] Path param: The type of the from Object
+          # @param from_object_type [String] Path param
           #
           # @param inputs [Array<HubspotSDK::Models::Crm::PublicFetchAssociationsBatchRequest>] Body param
           #

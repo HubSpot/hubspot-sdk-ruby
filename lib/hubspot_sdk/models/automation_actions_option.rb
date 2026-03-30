@@ -16,6 +16,7 @@ module HubspotSDK
       required :display_order, Integer, api_name: :displayOrder
 
       # @!attribute double_data
+      #   A numerical value associated with the option.
       #
       #   @return [Float]
       required :double_data, Float, api_name: :doubleData
@@ -51,7 +52,7 @@ module HubspotSDK
       #
       #   @param display_order [Integer] The position of the item relative to others in the list.
       #
-      #   @param double_data [Float]
+      #   @param double_data [Float] A numerical value associated with the option.
       #
       #   @param hidden [Boolean] Whether the option is displayed in HubSpot's UI.
       #

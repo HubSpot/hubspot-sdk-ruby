@@ -12,32 +12,31 @@ module HubspotSDK
             )
           end
 
-        # The unique identifier for the spend item, represented as a string.
+        # Unique identifier for the spend item.
         sig { returns(String) }
         attr_accessor :id
 
-        # The monetary amount of the spend item, represented as a number.
+        # The monetary value associated with the spend item.
         sig { returns(Float) }
         attr_accessor :amount
 
-        # A Unix timestamp in milliseconds indicating when the spend item was created.
+        # The timestamp indicating when the spend item was created.
         sig { returns(Integer) }
         attr_accessor :created_at
 
-        # The name of the spend item, represented as a string.
+        # The name assigned to the spend item.
         sig { returns(String) }
         attr_accessor :name
 
-        # An integer that specifies the order of the spend item.
+        # The sequence order of the spend item, where 0 is the oldest.
         sig { returns(Integer) }
         attr_accessor :order
 
-        # A Unix timestamp in milliseconds indicating when the spend item was last
-        # updated.
+        # The timestamp indicating when the spend item was last updated.
         sig { returns(Integer) }
         attr_accessor :updated_at
 
-        # A brief description of the spend item, represented as a string.
+        # A detailed explanation or notes about the spend item.
         sig { returns(T.nilable(String)) }
         attr_reader :description
 
@@ -56,20 +55,19 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The unique identifier for the spend item, represented as a string.
+          # Unique identifier for the spend item.
           id:,
-          # The monetary amount of the spend item, represented as a number.
+          # The monetary value associated with the spend item.
           amount:,
-          # A Unix timestamp in milliseconds indicating when the spend item was created.
+          # The timestamp indicating when the spend item was created.
           created_at:,
-          # The name of the spend item, represented as a string.
+          # The name assigned to the spend item.
           name:,
-          # An integer that specifies the order of the spend item.
+          # The sequence order of the spend item, where 0 is the oldest.
           order:,
-          # A Unix timestamp in milliseconds indicating when the spend item was last
-          # updated.
+          # The timestamp indicating when the spend item was last updated.
           updated_at:,
-          # A brief description of the spend item, represented as a string.
+          # A detailed explanation or notes about the spend item.
           description: nil
         )
         end

@@ -6,6 +6,8 @@ module HubspotSDK
       class Currencies
         class ExchangeRates
           class Batch
+            # Create multiple exchange rates in a single request.
+            #
             # @overload create(inputs:, request_options: {})
             #
             # @param inputs [Array<HubspotSDK::Models::Settings::ExchangeRateCreateRequest>]
@@ -25,6 +27,8 @@ module HubspotSDK
               )
             end
 
+            # Update the conversion rates for multiple exchange rates in a batch operation.
+            #
             # @overload update(inputs:, request_options: {})
             #
             # @param inputs [Array<HubspotSDK::Models::Settings::ExchangeRateUpdateRequest>]
@@ -44,6 +48,9 @@ module HubspotSDK
               )
             end
 
+            # Retrieve the details of multiple exchange rates in a single request, specified
+            # by their IDs.
+            #
             # @overload get(inputs:, request_options: {})
             #
             # @param inputs [Array<HubspotSDK::Models::PublicObjectID>] An array of deal split inputs

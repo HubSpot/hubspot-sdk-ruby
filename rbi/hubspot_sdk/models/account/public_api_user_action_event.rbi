@@ -12,7 +12,7 @@ module HubspotSDK
             )
           end
 
-        # The unique ID of the activity.
+        # The login activity's unique ID.
         sig { returns(String) }
         attr_accessor :id
 
@@ -62,7 +62,7 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The unique ID of the activity.
+          # The login activity's unique ID.
           id:,
           acting_user:,
           # The type of action taken.

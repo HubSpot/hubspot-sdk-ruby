@@ -134,6 +134,7 @@ module HubspotSDK
           | :CLICKED_ELEMENT
           | :COMBO_EVENT
           | :CUSTOM_SCRIPT
+          | :CUSTOM_SIGNAL
           | :IMPORT
           | :MANUAL
           | :PROPERTY_CHANGE
@@ -148,6 +149,7 @@ module HubspotSDK
           CLICKED_ELEMENT: :CLICKED_ELEMENT
           COMBO_EVENT: :COMBO_EVENT
           CUSTOM_SCRIPT: :CUSTOM_SCRIPT
+          CUSTOM_SIGNAL: :CUSTOM_SIGNAL
           IMPORT: :IMPORT
           MANUAL: :MANUAL
           PROPERTY_CHANGE: :PROPERTY_CHANGE

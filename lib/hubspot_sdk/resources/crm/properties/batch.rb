@@ -14,7 +14,7 @@ module HubspotSDK
           # @param inputs [Array<HubspotSDK::Models::PropertyCreate>]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::BatchResponseProperty]
+          # @return [HubspotSDK::Models::Crm::BatchResponseProperty]
           #
           # @see HubspotSDK::Models::Crm::Properties::BatchCreateParams
           def create(object_type, params)
@@ -23,14 +23,14 @@ module HubspotSDK
               method: :post,
               path: ["crm/properties/2026-03/%1$s/batch/create", object_type],
               body: parsed,
-              model: HubspotSDK::BatchResponseProperty,
+              model: HubspotSDK::Crm::BatchResponseProperty,
               options: options
             )
           end
 
-          # Delete multiple properties in a single request. This method will return a 204 No
-          # Content response on success regardless of the initial state of the property
-          # (e.g. active, already archived, non-existent).
+          # Archive a provided list of properties. This method will return a 204 No Content
+          # response on success regardless of the initial state of the property (e.g.
+          # active, already archived, non-existent).
           #
           # @overload delete(object_type, inputs:, request_options: {})
           #
@@ -52,7 +52,7 @@ module HubspotSDK
             )
           end
 
-          # Read a batch of properties.
+          # Read a provided list of properties.
           #
           # @overload get(object_type, archived:, data_sensitivity:, inputs:, locale: nil, request_options: {})
           #
@@ -68,7 +68,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::BatchResponseProperty]
+          # @return [HubspotSDK::Models::Crm::BatchResponseProperty]
           #
           # @see HubspotSDK::Models::Crm::Properties::BatchGetParams
           def get(object_type, params)
@@ -80,7 +80,7 @@ module HubspotSDK
               path: ["crm/properties/2026-03/%1$s/batch/read", object_type],
               query: query,
               body: parsed.except(*query_params),
-              model: HubspotSDK::BatchResponseProperty,
+              model: HubspotSDK::Crm::BatchResponseProperty,
               options: options
             )
           end

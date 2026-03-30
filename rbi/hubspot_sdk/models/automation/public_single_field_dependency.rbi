@@ -12,9 +12,11 @@ module HubspotSDK
             )
           end
 
+        # The name of the field that controls the dependency.
         sig { returns(String) }
         attr_accessor :controlling_field_name
 
+        # The type of dependency, with the default value being 'SINGLE_FIELD'.
         sig do
           returns(
             HubspotSDK::Automation::PublicSingleFieldDependency::DependencyType::OrSymbol
@@ -34,7 +36,9 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # The name of the field that controls the dependency.
           controlling_field_name:,
+          # The type of dependency, with the default value being 'SINGLE_FIELD'.
           dependency_type:,
           dependent_field_names:
         )
@@ -53,6 +57,7 @@ module HubspotSDK
         def to_hash
         end
 
+        # The type of dependency, with the default value being 'SINGLE_FIELD'.
         module DependencyType
           extend HubspotSDK::Internal::Type::Enum
 

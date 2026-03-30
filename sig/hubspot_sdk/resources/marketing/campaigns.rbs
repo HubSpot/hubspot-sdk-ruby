@@ -12,11 +12,25 @@ module HubspotSDK
 
         attr_reader spend: HubspotSDK::Resources::Marketing::Campaigns::Spend
 
+        def create: (
+          properties: ::Hash[Symbol, String],
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Marketing::PublicCampaign
+
         def update: (
           String campaign_guid,
           properties: ::Hash[Symbol, String],
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Marketing::PublicCampaign
+
+        def list: (
+          ?after: String,
+          ?limit: Integer,
+          ?name: String,
+          ?properties: ::Array[String],
+          ?sort: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Marketing::PublicCampaign]
 
         def delete: (
           String campaign_guid,

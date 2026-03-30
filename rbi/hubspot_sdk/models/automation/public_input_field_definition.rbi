@@ -12,6 +12,7 @@ module HubspotSDK
             )
           end
 
+        # Indicates whether the input field is mandatory.
         sig { returns(T::Boolean) }
         attr_accessor :is_required
 
@@ -58,7 +59,12 @@ module HubspotSDK
               ]
           ).returns(T.attached_class)
         end
-        def self.new(is_required:, type_definition:, supported_value_types: nil)
+        def self.new(
+          # Indicates whether the input field is mandatory.
+          is_required:,
+          type_definition:,
+          supported_value_types: nil
+        )
         end
 
         sig do

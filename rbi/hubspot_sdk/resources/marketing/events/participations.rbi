@@ -5,6 +5,8 @@ module HubspotSDK
     class Marketing
       class Events
         class Participations
+          # Read Marketing event's participations counters by externalAccountId and
+          # externalEventId pair.
           sig do
             params(
               external_event_id: String,
@@ -22,6 +24,8 @@ module HubspotSDK
           )
           end
 
+          # Read Marketing event's participations counters by internal identifier
+          # marketingEventId.
           sig do
             params(
               marketing_event_id: Integer,
@@ -35,6 +39,7 @@ module HubspotSDK
           )
           end
 
+          # Read Contact's participations by identifier - email or internal id.
           sig do
             params(
               contact_identifier: String,
@@ -62,6 +67,8 @@ module HubspotSDK
           )
           end
 
+          # Read Marketing event's participations breakdown with optional filters by
+          # externalAccountId and externalEventId pair.
           sig do
             params(
               external_event_id: String,
@@ -97,6 +104,8 @@ module HubspotSDK
           )
           end
 
+          # Read Marketing event's participations breakdown with optional filters by
+          # internal identifier marketingEventId.
           sig do
             params(
               marketing_event_id: Integer,

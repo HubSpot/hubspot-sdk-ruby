@@ -209,16 +209,6 @@ class HubspotSDK::Test::Resources::Events::DefinitionsTest < HubspotSDK::Test::R
     end
   end
 
-  def test_send__required_params
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.events.definitions.send_(event_name: "eventName", properties: {foo: "string"})
-
-    assert_pattern do
-      response => nil
-    end
-  end
-
   def test_send_batch_required_params
     skip("Mock server tests are disabled")
 

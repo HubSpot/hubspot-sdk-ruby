@@ -14,7 +14,7 @@ class HubspotSDK::Test::Resources::BusinessUnits::BusinessUnitsTest < HubspotSDK
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicBusinessUnit])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::BusinessUnits::PublicBusinessUnit])
       }
     end
   end

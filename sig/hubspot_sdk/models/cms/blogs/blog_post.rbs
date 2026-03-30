@@ -37,7 +37,7 @@ module HubspotSDK
             html_title: String,
             include_default_custom_css: bool,
             language: HubspotSDK::Models::Cms::Blogs::BlogPost::language,
-            layout_sections: ::Hash[Symbol, HubspotSDK::Cms::Blogs::LayoutSection],
+            layout_sections: ::Hash[Symbol, HubspotSDK::Cms::LayoutSection],
             link_rel_canonical_url: String,
             mab_experiment_id: String,
             meta_description: String,
@@ -60,7 +60,7 @@ module HubspotSDK
             tag_ids: ::Array[Integer],
             theme_settings_values: ::Hash[Symbol, top],
             translated_from_id: String,
-            translations: ::Hash[Symbol, HubspotSDK::Cms::Blogs::ContentLanguageVariation],
+            translations: ::Hash[Symbol, HubspotSDK::Cms::ContentLanguageVariation],
             updated: Time,
             updated_by_id: String,
             url: String,
@@ -132,7 +132,7 @@ module HubspotSDK
 
           attr_accessor language: HubspotSDK::Models::Cms::Blogs::BlogPost::language
 
-          attr_accessor layout_sections: ::Hash[Symbol, HubspotSDK::Cms::Blogs::LayoutSection]
+          attr_accessor layout_sections: ::Hash[Symbol, HubspotSDK::Cms::LayoutSection]
 
           attr_accessor link_rel_canonical_url: String
 
@@ -178,7 +178,7 @@ module HubspotSDK
 
           attr_accessor translated_from_id: String
 
-          attr_accessor translations: ::Hash[Symbol, HubspotSDK::Cms::Blogs::ContentLanguageVariation]
+          attr_accessor translations: ::Hash[Symbol, HubspotSDK::Cms::ContentLanguageVariation]
 
           attr_accessor updated: Time
 
@@ -224,7 +224,7 @@ module HubspotSDK
             html_title: String,
             include_default_custom_css: bool,
             language: HubspotSDK::Models::Cms::Blogs::BlogPost::language,
-            layout_sections: ::Hash[Symbol, HubspotSDK::Cms::Blogs::LayoutSection],
+            layout_sections: ::Hash[Symbol, HubspotSDK::Cms::LayoutSection],
             link_rel_canonical_url: String,
             mab_experiment_id: String,
             meta_description: String,
@@ -247,7 +247,7 @@ module HubspotSDK
             tag_ids: ::Array[Integer],
             theme_settings_values: ::Hash[Symbol, top],
             translated_from_id: String,
-            translations: ::Hash[Symbol, HubspotSDK::Cms::Blogs::ContentLanguageVariation],
+            translations: ::Hash[Symbol, HubspotSDK::Cms::ContentLanguageVariation],
             updated: Time,
             updated_by_id: String,
             url: String,
@@ -288,7 +288,7 @@ module HubspotSDK
             html_title: String,
             include_default_custom_css: bool,
             language: HubspotSDK::Models::Cms::Blogs::BlogPost::language,
-            layout_sections: ::Hash[Symbol, HubspotSDK::Cms::Blogs::LayoutSection],
+            layout_sections: ::Hash[Symbol, HubspotSDK::Cms::LayoutSection],
             link_rel_canonical_url: String,
             mab_experiment_id: String,
             meta_description: String,
@@ -311,7 +311,7 @@ module HubspotSDK
             tag_ids: ::Array[Integer],
             theme_settings_values: ::Hash[Symbol, top],
             translated_from_id: String,
-            translations: ::Hash[Symbol, HubspotSDK::Cms::Blogs::ContentLanguageVariation],
+            translations: ::Hash[Symbol, HubspotSDK::Cms::ContentLanguageVariation],
             updated: Time,
             updated_by_id: String,
             url: String,

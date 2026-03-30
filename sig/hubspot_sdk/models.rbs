@@ -1,9 +1,9 @@
 module HubspotSDK
+  class AbTestCreateRequestVNext = HubspotSDK::Models::AbTestCreateRequestVNext
+
   module Account = HubspotSDK::Models::Account
 
   class ActionResponse = HubspotSDK::Models::ActionResponse
-
-  module AppWebhooks = HubspotSDK::Models::AppWebhooks
 
   class AssociationDefinition = HubspotSDK::Models::AssociationDefinition
 
@@ -27,25 +27,17 @@ module HubspotSDK
 
   class BatchReadInputPropertyName = HubspotSDK::Models::BatchReadInputPropertyName
 
-  class BatchResponseProperty = HubspotSDK::Models::BatchResponseProperty
-
   module BusinessUnits = HubspotSDK::Models::BusinessUnits
 
   module Cms = HubspotSDK::Models::Cms
 
-  class CollectionResponseObjectSchemaNoPaging = HubspotSDK::Models::CollectionResponseObjectSchemaNoPaging
-
   class CollectionResponsePropertyGroupNoPaging = HubspotSDK::Models::CollectionResponsePropertyGroupNoPaging
-
-  class CollectionResponsePropertyNoPaging = HubspotSDK::Models::CollectionResponsePropertyNoPaging
 
   module CommunicationPreferences = HubspotSDK::Models::CommunicationPreferences
 
   module Conversations = HubspotSDK::Models::Conversations
 
   module Crm = HubspotSDK::Models::Crm
-
-  module DataStudio = HubspotSDK::Models::DataStudio
 
   class Error = HubspotSDK::Models::Error
 
@@ -62,8 +54,6 @@ module HubspotSDK
   module Meta = HubspotSDK::Models::Meta
 
   class NextPage = HubspotSDK::Models::NextPage
-
-  class ObjectSchema = HubspotSDK::Models::ObjectSchema
 
   class ObjectTypeDefinition = HubspotSDK::Models::ObjectTypeDefinition
 
@@ -106,4 +96,6 @@ module HubspotSDK
   class TaskLocator = HubspotSDK::Models::TaskLocator
 
   class VersionUser = HubspotSDK::Models::VersionUser
+
+  module Webhooks = HubspotSDK::Models::Webhooks
 end

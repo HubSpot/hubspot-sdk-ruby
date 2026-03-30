@@ -27,11 +27,12 @@ module HubspotSDK
           )
           end
 
-          # Perform a partial update of a call, specified by ID. Alternatively, you can use
-          # a `isUnique` property to identify the call by using the `idProperty` query
-          # parameter. Provided property values will be overwritten. Read-only and
-          # non-existent properties will be ignored. Properties values can be cleared by
-          # passing an empty string.
+          # Perform a partial update of an Object identified by `{callId}`or optionally a
+          # unique property value as specified by the `idProperty` query param. `{callId}`
+          # refers to the internal object ID by default, and the `idProperty` query param
+          # refers to a property whose values are unique for the object. Provided property
+          # values will be overwritten. Read-only and non-existent properties will result in
+          # an error. Properties values can be cleared by passing an empty string.
           sig do
             params(
               call_id: String,
@@ -51,7 +52,7 @@ module HubspotSDK
           )
           end
 
-          # Retrieve all calls. Control what is returned via the `properties` query param.
+          # Read a page of calls. Control what is returned via the `properties` query param.
           sig do
             params(
               after: String,
@@ -92,9 +93,7 @@ module HubspotSDK
           )
           end
 
-          # Move a call to the recycling bin, specified by call ID. Activities in the
-          # recycling bin can be restored within 90 days of being deleted. Learn more about
-          # [restoring deleted activities](https://knowledge.hubspot.com/records/restore-deleted-activity-in-a-record).
+          # Move an Object identified by `{callId}` to the recycling bin.
           sig do
             params(
               call_id: String,
@@ -104,9 +103,10 @@ module HubspotSDK
           def delete(call_id, request_options: {})
           end
 
-          # Retrieve a call, specified by its ID. Alternatively, you can use a `isUnique`
-          # property to identify the call by using the `idProperty` query parameter. Control
-          # what is returned via the `properties` query parameter.
+          # Read an Object identified by `{callId}`. `{callId}` refers to the internal
+          # object ID by default, or optionally any unique property value as specified by
+          # the `idProperty` query param. Control what is returned via the `properties`
+          # query param.
           sig do
             params(
               call_id: String,

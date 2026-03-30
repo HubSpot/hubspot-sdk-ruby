@@ -1,0 +1,19 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Pages
+        type multi_language_create_language_variation_params =
+          {  } & HubspotSDK::Internal::Type::request_parameters
+
+        class MultiLanguageCreateLanguageVariationParams < HubspotSDK::Models::Cms::ContentLanguageCloneRequestVNext
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+
+          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+        end
+      end
+    end
+  end
+end

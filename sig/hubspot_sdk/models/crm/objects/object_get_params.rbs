@@ -1,0 +1,70 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module Objects
+        type object_get_params =
+          {
+            object_type: String,
+            object_id_: String,
+            archived: bool,
+            associations: ::Array[String],
+            id_property: String,
+            properties: ::Array[String],
+            properties_with_history: ::Array[String]
+          }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class ObjectGetParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor object_type: String
+
+          attr_accessor object_id_: String
+
+          attr_reader archived: bool?
+
+          def archived=: (bool) -> bool
+
+          attr_reader associations: ::Array[String]?
+
+          def associations=: (::Array[String]) -> ::Array[String]
+
+          attr_reader id_property: String?
+
+          def id_property=: (String) -> String
+
+          attr_reader properties: ::Array[String]?
+
+          def properties=: (::Array[String]) -> ::Array[String]
+
+          attr_reader properties_with_history: ::Array[String]?
+
+          def properties_with_history=: (::Array[String]) -> ::Array[String]
+
+          def initialize: (
+            object_type: String,
+            object_id_: String,
+            ?archived: bool,
+            ?associations: ::Array[String],
+            ?id_property: String,
+            ?properties: ::Array[String],
+            ?properties_with_history: ::Array[String],
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            object_type: String,
+            object_id_: String,
+            archived: bool,
+            associations: ::Array[String],
+            id_property: String,
+            properties: ::Array[String],
+            properties_with_history: ::Array[String],
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

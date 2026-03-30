@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    module Webhooks
+      type crm_object_snapshot_response =
+        {
+          object_id_: Integer,
+          object_type_id: String,
+          portal_id: Integer,
+          snapshot_status_id: String
+        }
+
+      class CrmObjectSnapshotResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor object_id_: Integer
+
+        attr_accessor object_type_id: String
+
+        attr_accessor portal_id: Integer
+
+        attr_accessor snapshot_status_id: String
+
+        def initialize: (
+          object_id_: Integer,
+          object_type_id: String,
+          portal_id: Integer,
+          snapshot_status_id: String
+        ) -> void
+
+        def to_hash: -> {
+          object_id_: Integer,
+          object_type_id: String,
+          portal_id: Integer,
+          snapshot_status_id: String
+        }
+      end
+    end
+  end
+end

@@ -12,9 +12,11 @@ module HubspotSDK
             )
           end
 
+        # Defines the conditions that must be met for the execution rule to apply.
         sig { returns(T::Hash[Symbol, T.anything]) }
         attr_accessor :conditions
 
+        # Specifies the name of the label associated with the execution rule.
         sig { returns(String) }
         attr_accessor :label_name
 
@@ -24,7 +26,12 @@ module HubspotSDK
             label_name: String
           ).returns(T.attached_class)
         end
-        def self.new(conditions:, label_name:)
+        def self.new(
+          # Defines the conditions that must be met for the execution rule to apply.
+          conditions:,
+          # Specifies the name of the label associated with the execution rule.
+          label_name:
+        )
         end
 
         sig do

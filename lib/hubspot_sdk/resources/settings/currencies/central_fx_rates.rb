@@ -9,6 +9,9 @@ module HubspotSDK
           # {HubspotSDK::Models::Settings::Currencies::CentralFxRateCreateCurrencyParams}
           # for more details.
           #
+          # Create a new currency with central exchange rates in the portal. Unsupported
+          # currencies cannot be added here.
+          #
           # @overload create_currency(currency_code:, request_options: {})
           #
           # @param currency_code [Symbol, HubspotSDK::Models::Settings::CurrencyCreateRequest::CurrencyCode] The currency code being added to the HubSpot portal for use with central exchang
@@ -30,6 +33,9 @@ module HubspotSDK
             )
           end
 
+          # Retrieve details on whether the central exchange rates feature is enabled for
+          # the portal.
+          #
           # @overload get_information(request_options: {})
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
@@ -46,6 +52,9 @@ module HubspotSDK
             )
           end
 
+          # Retrieve a list of currency codes that are not supported by the central exchange
+          # rates. Unsupported currencies will need to be manually updated.
+          #
           # @overload get_unsupported_currencies(request_options: {})
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]

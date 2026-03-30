@@ -6,6 +6,7 @@ module HubspotSDK
       class Blogs
         class Authors
           class Batch
+            # Create the Blog Author objects detailed in the request body.
             sig do
               params(
                 inputs: T::Array[HubspotSDK::Cms::Blogs::BlogAuthor::OrHash],
@@ -19,6 +20,7 @@ module HubspotSDK
             )
             end
 
+            # Update the Blog Author objects identified in the request body.
             sig do
               params(
                 inputs: T::Array[T.anything],
@@ -35,6 +37,7 @@ module HubspotSDK
             )
             end
 
+            # Delete the Blog Author objects identified in the request body.
             sig do
               params(
                 inputs: T::Array[String],
@@ -48,6 +51,7 @@ module HubspotSDK
             )
             end
 
+            # Retrieve the Blog Author objects identified in the request body.
             sig do
               params(
                 inputs: T::Array[String],

@@ -12,7 +12,7 @@ module HubspotSDK
             )
           end
 
-        # The unique ID of the activity.
+        # The activity's unique ID.
         sig { returns(String) }
         attr_accessor :id
 
@@ -39,7 +39,7 @@ module HubspotSDK
         sig { params(acting_user: String).void }
         attr_writer :acting_user
 
-        # The approximate country code.
+        # The approximate country code
         sig { returns(T.nilable(String)) }
         attr_reader :country_code
 
@@ -74,7 +74,7 @@ module HubspotSDK
         sig { params(object_id_: String).void }
         attr_writer :object_id_
 
-        # The approximate region code.
+        # The approximate region code
         sig { returns(T.nilable(String)) }
         attr_reader :region_code
 
@@ -97,7 +97,7 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The unique ID of the activity.
+          # The activity's unique ID.
           id:,
           # The time the activity took place.
           created_at:,
@@ -107,7 +107,7 @@ module HubspotSDK
           user_id:,
           # Email address of the user associated with the activity.
           acting_user: nil,
-          # The approximate country code.
+          # The approximate country code
           country_code: nil,
           # A link to the URL where the action was taken in the account.
           info_url: nil,
@@ -117,7 +117,7 @@ module HubspotSDK
           location: nil,
           # The ID of the affected object.
           object_id_: nil,
-          # The approximate region code.
+          # The approximate region code
           region_code: nil
         )
         end

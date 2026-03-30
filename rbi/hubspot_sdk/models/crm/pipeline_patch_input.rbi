@@ -21,12 +21,15 @@ module HubspotSDK
         sig { params(archived: T::Boolean).void }
         attr_writer :archived
 
+        # The order for displaying this pipeline. If two pipelines have a matching
+        # `displayOrder`, they will be sorted alphabetically by label.
         sig { returns(T.nilable(Integer)) }
         attr_reader :display_order
 
         sig { params(display_order: Integer).void }
         attr_writer :display_order
 
+        # A unique label used to organize pipelines in HubSpot's UI
         sig { returns(T.nilable(String)) }
         attr_reader :label
 
@@ -45,7 +48,10 @@ module HubspotSDK
           # restoring an archived pipeline. If it's provided in any other call, the request
           # will fail and a `400 Bad Request` will be returned.
           archived: nil,
+          # The order for displaying this pipeline. If two pipelines have a matching
+          # `displayOrder`, they will be sorted alphabetically by label.
           display_order: nil,
+          # A unique label used to organize pipelines in HubSpot's UI
           label: nil
         )
         end

@@ -42,7 +42,7 @@ module HubspotSDK
         optional :business_unit_id, String, api_name: :businessUnitId
 
         # @!attribute campaign
-        #   The campaign GUID on the email.
+        #   The ID of the campaign this email is associated to.
         #
         #   @return [String, nil]
         optional :campaign, String
@@ -264,7 +264,7 @@ module HubspotSDK
         optional :updated_at, Time, api_name: :updatedAt
 
         # @!attribute updated_by_id
-        #   The ID of the user who last updated the email.
+        #   The id of the user who last updated the email.
         #
         #   @return [String, nil]
         optional :updated_by_id, String, api_name: :updatedById
@@ -301,7 +301,7 @@ module HubspotSDK
         #
         #   @param business_unit_id [String]
         #
-        #   @param campaign [String] The campaign GUID on the email.
+        #   @param campaign [String] The ID of the campaign this email is associated to.
         #
         #   @param campaign_name [String] The name of the campaign.
         #
@@ -379,7 +379,7 @@ module HubspotSDK
         #
         #   @param updated_at [Time] The date and time of the last update to the email, in ISO8601 representation.
         #
-        #   @param updated_by_id [String] The ID of the user who last updated the email.
+        #   @param updated_by_id [String] The id of the user who last updated the email.
         #
         #   @param users_with_access [Array<String>]
         #

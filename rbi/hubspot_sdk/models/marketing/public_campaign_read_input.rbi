@@ -12,13 +12,13 @@ module HubspotSDK
             )
           end
 
-        # The unique identifier for the campaign, represented as a string.
+        # The unique identifier for a campaign.
         sig { returns(String) }
         attr_accessor :id
 
         sig { params(id: String).returns(T.attached_class) }
         def self.new(
-          # The unique identifier for the campaign, represented as a string.
+          # The unique identifier for a campaign.
           id:
         )
         end

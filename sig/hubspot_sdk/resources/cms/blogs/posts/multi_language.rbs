@@ -1,0 +1,43 @@
+module HubspotSDK
+  module Resources
+    class Cms
+      class Blogs
+        class Posts
+          class MultiLanguage
+            def attach_to_lang_group: (
+              id: String,
+              language: HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::language,
+              primary_id: String,
+              ?primary_language: HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language,
+              ?request_options: HubspotSDK::request_opts
+            ) -> StringIO
+
+            def create_lang_variation: (
+              id: String,
+              ?language: String,
+              ?request_options: HubspotSDK::request_opts
+            ) -> StringIO
+
+            def detach_from_lang_group: (
+              id: String,
+              ?request_options: HubspotSDK::request_opts
+            ) -> StringIO
+
+            def set_lang_primary: (
+              id: String,
+              ?request_options: HubspotSDK::request_opts
+            ) -> nil
+
+            def update_langs: (
+              languages: ::Hash[Symbol, HubspotSDK::Models::Cms::UpdateLanguagesRequestVNext::language],
+              primary_id: String,
+              ?request_options: HubspotSDK::request_opts
+            ) -> StringIO
+
+            def initialize: (client: HubspotSDK::Client) -> void
+          end
+        end
+      end
+    end
+  end
+end

@@ -12,9 +12,11 @@ module HubspotSDK
             )
           end
 
+        # The results of the query.
         sig { returns(T::Array[HubspotSDK::Cms::Domain]) }
         attr_accessor :results
 
+        # The number of available results.
         sig { returns(Integer) }
         attr_accessor :total
 
@@ -31,7 +33,13 @@ module HubspotSDK
             paging: HubspotSDK::Paging::OrHash
           ).returns(T.attached_class)
         end
-        def self.new(results:, total:, paging: nil)
+        def self.new(
+          # The results of the query.
+          results:,
+          # The number of available results.
+          total:,
+          paging: nil
+        )
         end
 
         sig do

@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::Campaigns#update
+      # @see HubspotSDK::Resources::Marketing::Campaigns#create
       class PublicCampaign < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the campaign.

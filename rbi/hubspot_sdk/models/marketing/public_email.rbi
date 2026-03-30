@@ -49,7 +49,7 @@ module HubspotSDK
         sig { params(business_unit_id: String).void }
         attr_writer :business_unit_id
 
-        # The campaign GUID on the email.
+        # The ID of the campaign this email is associated to.
         sig { returns(T.nilable(String)) }
         attr_reader :campaign
 
@@ -374,7 +374,7 @@ module HubspotSDK
         sig { params(updated_at: Time).void }
         attr_writer :updated_at
 
-        # The ID of the user who last updated the email.
+        # The id of the user who last updated the email.
         sig { returns(T.nilable(String)) }
         attr_reader :updated_by_id
 
@@ -472,7 +472,7 @@ module HubspotSDK
           # Determines if the email is archived or not.
           archived: nil,
           business_unit_id: nil,
-          # The campaign GUID on the email.
+          # The ID of the campaign this email is associated to.
           campaign: nil,
           # The name of the campaign.
           campaign_name: nil,
@@ -534,7 +534,7 @@ module HubspotSDK
           unpublished_at: nil,
           # The date and time of the last update to the email, in ISO8601 representation.
           updated_at: nil,
-          # The ID of the user who last updated the email.
+          # The id of the user who last updated the email.
           updated_by_id: nil,
           users_with_access: nil,
           webversion: nil,

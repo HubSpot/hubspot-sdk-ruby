@@ -42,7 +42,7 @@ module HubspotSDK
         optional :author_full_name, String, api_name: :authorFullName
 
         # @!attribute category
-        #   For knowledge articles, the category of the article.
+        #   The error category
         #
         #   @return [String, nil]
         optional :category, String
@@ -140,7 +140,7 @@ module HubspotSDK
         #
         #   @param author_full_name [String] Name of the author.
         #
-        #   @param category [String] For knowledge articles, the category of the article.
+        #   @param category [String] The error category
         #
         #   @param combined_id [String] The ID of the document in HubSpot.
         #

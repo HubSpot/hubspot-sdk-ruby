@@ -9,8 +9,9 @@ module HubspotSDK
         include HubspotSDK::Internal::Type::RequestParameters
 
         # @!attribute after
-        #   A cursor token for pagination. Use the value from the previous response's
-        #   paging.next.after field.
+        #   The paging cursor token of the last successfully read resource will be returned
+        #   as the `paging.next.after` JSON property of a paged response containing more
+        #   results.
         #
         #   @return [String, nil]
         optional :after, String
@@ -22,19 +23,16 @@ module HubspotSDK
         optional :archived, HubspotSDK::Internal::Type::Boolean
 
         # @!attribute created_after
-        #   Filter redirects created after a specific timestamp. Format must be date-time.
         #
         #   @return [Time, nil]
         optional :created_after, Time
 
         # @!attribute created_at
-        #   Filter redirects by their exact creation timestamp. Format must be date-time.
         #
         #   @return [Time, nil]
         optional :created_at, Time
 
         # @!attribute created_before
-        #   Filter redirects created before a specific timestamp. Format must be date-time.
         #
         #   @return [Time, nil]
         optional :created_before, Time
@@ -46,25 +44,21 @@ module HubspotSDK
         optional :limit, Integer
 
         # @!attribute sort
-        #   Specify the order in which to sort the results. Accepts an array of strings.
         #
         #   @return [Array<String>, nil]
         optional :sort, HubspotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute updated_after
-        #   Filter redirects updated after a specific timestamp. Format must be date-time.
         #
         #   @return [Time, nil]
         optional :updated_after, Time
 
         # @!attribute updated_at
-        #   Filter redirects by their exact update timestamp. Format must be date-time.
         #
         #   @return [Time, nil]
         optional :updated_at, Time
 
         # @!attribute updated_before
-        #   Filter redirects updated before a specific timestamp. Format must be date-time.
         #
         #   @return [Time, nil]
         optional :updated_before, Time
@@ -73,25 +67,25 @@ module HubspotSDK
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Cms::URLRedirectListParams} for more details.
         #
-        #   @param after [String] A cursor token for pagination. Use the value from the previous response's paging
+        #   @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
         #   @param archived [Boolean] Whether to return only results that have been archived.
         #
-        #   @param created_after [Time] Filter redirects created after a specific timestamp. Format must be date-time.
+        #   @param created_after [Time]
         #
-        #   @param created_at [Time] Filter redirects by their exact creation timestamp. Format must be date-time.
+        #   @param created_at [Time]
         #
-        #   @param created_before [Time] Filter redirects created before a specific timestamp. Format must be date-time.
+        #   @param created_before [Time]
         #
         #   @param limit [Integer] The maximum number of results to display per page.
         #
-        #   @param sort [Array<String>] Specify the order in which to sort the results. Accepts an array of strings.
+        #   @param sort [Array<String>]
         #
-        #   @param updated_after [Time] Filter redirects updated after a specific timestamp. Format must be date-time.
+        #   @param updated_after [Time]
         #
-        #   @param updated_at [Time] Filter redirects by their exact update timestamp. Format must be date-time.
+        #   @param updated_at [Time]
         #
-        #   @param updated_before [Time] Filter redirects updated before a specific timestamp. Format must be date-time.
+        #   @param updated_before [Time]
         #
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
       end

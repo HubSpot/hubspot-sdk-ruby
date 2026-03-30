@@ -1,0 +1,71 @@
+module HubspotSDK
+  module Resources
+    class Cms
+      class Pages
+        class Batch
+          def create_folders: (
+            inputs: ::Array[HubspotSDK::Cms::ContentFolder],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::BatchResponseContentFolder
+
+          def create_landing_pages: (
+            inputs: ::Array[HubspotSDK::Cms::Page],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::BatchResponsePage
+
+          def create_site_pages: (
+            inputs: ::Array[HubspotSDK::Cms::Page],
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::BatchResponsePage
+
+          def delete_folders: (
+            inputs: ::Array[String],
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def delete_landing_pages: (
+            inputs: ::Array[String],
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def delete_site_pages: (
+            inputs: ::Array[String],
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def get_landing_pages: (
+            inputs: ::Array[String],
+            ?archived: bool,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::BatchResponsePage
+
+          def get_site_pages: (
+            inputs: ::Array[String],
+            ?archived: bool,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::BatchResponsePage
+
+          def update_folders: (
+            inputs: ::Array[top],
+            ?archived: bool,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::BatchResponseContentFolder
+
+          def update_landing_pages: (
+            inputs: ::Array[top],
+            ?archived: bool,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::BatchResponsePage
+
+          def update_site_pages: (
+            inputs: ::Array[top],
+            ?archived: bool,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::BatchResponsePage
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

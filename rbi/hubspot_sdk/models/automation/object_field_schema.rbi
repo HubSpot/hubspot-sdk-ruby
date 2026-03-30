@@ -12,9 +12,11 @@ module HubspotSDK
             )
           end
 
+        # Contains the properties of the object.
         sig { returns(T.anything) }
         attr_accessor :properties
 
+        # Specifies the type of the field, which is 'OBJECT' by default.
         sig do
           returns(HubspotSDK::Automation::ObjectFieldSchema::Type::OrSymbol)
         end
@@ -26,7 +28,12 @@ module HubspotSDK
             type: HubspotSDK::Automation::ObjectFieldSchema::Type::OrSymbol
           ).returns(T.attached_class)
         end
-        def self.new(properties:, type:)
+        def self.new(
+          # Contains the properties of the object.
+          properties:,
+          # Specifies the type of the field, which is 'OBJECT' by default.
+          type:
+        )
         end
 
         sig do
@@ -40,6 +47,7 @@ module HubspotSDK
         def to_hash
         end
 
+        # Specifies the type of the field, which is 'OBJECT' by default.
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

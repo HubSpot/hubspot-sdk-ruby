@@ -12,15 +12,18 @@ module HubspotSDK
             )
           end
 
+        # The ID of the portal associated with the contact.
         sig { returns(Integer) }
         attr_accessor :portal_id
 
+        # The email address of the contact.
         sig { returns(T.nilable(String)) }
         attr_reader :email
 
         sig { params(email: String).void }
         attr_writer :email
 
+        # The unique identifier for the contact.
         sig { returns(T.nilable(Integer)) }
         attr_reader :vid
 
@@ -32,7 +35,14 @@ module HubspotSDK
             T.attached_class
           )
         end
-        def self.new(portal_id:, email: nil, vid: nil)
+        def self.new(
+          # The ID of the portal associated with the contact.
+          portal_id:,
+          # The email address of the contact.
+          email: nil,
+          # The unique identifier for the contact.
+          vid: nil
+        )
         end
 
         sig do

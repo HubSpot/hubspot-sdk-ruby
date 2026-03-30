@@ -25,39 +25,37 @@ module HubspotSDK
         end
         def create(
           # The destination URL, where the target URL should be redirected if it matches the
-          # routePrefix.
+          # `routePrefix`.
           destination:,
           # The type of redirect to create. Options include: 301 (permanent), 302
-          # (temporary), or 305 (proxy).
+          # (temporary), or 305 (proxy). Find more details
+          # [here](https://knowledge.hubspot.com/cos-general/how-to-redirect-a-hubspot-page).
           redirect_style:,
           # The target incoming URL, path, or pattern to match for redirection.
           route_prefix:,
-          # Whether the routePrefix should match on the entire URL, including the domain.
+          # Whether the `routePrefix` should match on the entire URL, including the domain.
           is_match_full_url: nil,
-          # Whether the routePrefix should match on the entire URL path, including the query
-          # string.
+          # Whether the `routePrefix` should match on the entire URL path, including the
+          # query string.
           is_match_query_string: nil,
           # Whether the URL redirect mapping should apply only if a live page on the URL
           # isn't found. If False, the URL redirect mapping will take precedence over any
           # existing page.
           is_only_after_not_found: nil,
-          # Whether the routePrefix should match based on pattern.
+          # Whether the `routePrefix` should match based on pattern.
           is_pattern: nil,
-          # Whether the routePrefix should match both HTTP and HTTPS protocols.
+          # Whether the `routePrefix` should match both HTTP and HTTPS protocols.
           is_protocol_agnostic: nil,
           # Whether a trailing slash will be ignored.
           is_trailing_slash_optional: nil,
           # Used to prioritize URL redirection. If a given URL matches more than one
-          # redirect, the one with the lower precedence will be used.
+          # redirect, the one with the **lower** precedence will be used.
           precedence: nil,
           request_options: {}
         )
         end
 
-        # Update the details of an existing URL redirect in your HubSpot account. This
-        # operation allows you to modify properties such as the destination URL, route
-        # prefix, and other redirect settings. Use this endpoint to ensure your URL
-        # redirects are up-to-date and functioning as intended.
+        # Updates the settings for an existing URL redirect.
         sig do
           params(
             url_redirect_id: String,
@@ -78,7 +76,6 @@ module HubspotSDK
           ).returns(HubspotSDK::Cms::URLMapping)
         end
         def update(
-          # The unique identifier of the URL redirect to update.
           url_redirect_id,
           # The unique ID of this URL redirect.
           id:,
@@ -137,62 +134,43 @@ module HubspotSDK
           ).returns(HubspotSDK::Internal::Page[HubspotSDK::Cms::URLMapping])
         end
         def list(
-          # A cursor token for pagination. Use the value from the previous response's
-          # paging.next.after field.
+          # The paging cursor token of the last successfully read resource will be returned
+          # as the `paging.next.after` JSON property of a paged response containing more
+          # results.
           after: nil,
           # Whether to return only results that have been archived.
           archived: nil,
-          # Filter redirects created after a specific timestamp. Format must be date-time.
           created_after: nil,
-          # Filter redirects by their exact creation timestamp. Format must be date-time.
           created_at: nil,
-          # Filter redirects created before a specific timestamp. Format must be date-time.
           created_before: nil,
           # The maximum number of results to display per page.
           limit: nil,
-          # Specify the order in which to sort the results. Accepts an array of strings.
           sort: nil,
-          # Filter redirects updated after a specific timestamp. Format must be date-time.
           updated_after: nil,
-          # Filter redirects by their exact update timestamp. Format must be date-time.
           updated_at: nil,
-          # Filter redirects updated before a specific timestamp. Format must be date-time.
           updated_before: nil,
           request_options: {}
         )
         end
 
-        # Delete a specific URL redirect in your HubSpot account using its unique
-        # identifier. This operation is useful for removing outdated or incorrect URL
-        # redirects, ensuring that your URL mappings remain current and accurate.
+        # Delete one existing redirect, so it is no longer mapped.
         sig do
           params(
             url_redirect_id: String,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).void
         end
-        def delete(
-          # The unique identifier of the URL redirect to delete.
-          url_redirect_id,
-          request_options: {}
-        )
+        def delete(url_redirect_id, request_options: {})
         end
 
-        # Retrieve detailed information about a specific URL redirect in your HubSpot
-        # account using its unique identifier. This endpoint is useful for obtaining the
-        # configuration and properties of a URL redirect, such as its destination, route
-        # prefix, and other settings.
+        # Returns the details for a single existing URL redirect by ID.
         sig do
           params(
             url_redirect_id: String,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Cms::URLMapping)
         end
-        def get(
-          # The unique identifier of the URL redirect to retrieve.
-          url_redirect_id,
-          request_options: {}
-        )
+        def get(url_redirect_id, request_options: {})
         end
 
         # @api private

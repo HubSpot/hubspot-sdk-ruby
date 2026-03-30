@@ -15,6 +15,7 @@ module HubspotSDK
               )
             end
 
+          # The id of the version.
           sig { returns(String) }
           attr_accessor :id
 
@@ -43,6 +44,7 @@ module HubspotSDK
             ).returns(T.attached_class)
           end
           def self.new(
+            # The id of the version.
             id:,
             object:,
             # The timestamp (ISO8601 format) when this blog version was updated.

@@ -1,0 +1,16 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type collection_response_property_no_paging =
+        { results: ::Array[HubspotSDK::Property] }
+
+      class CollectionResponsePropertyNoPaging < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubspotSDK::Property]
+
+        def initialize: (results: ::Array[HubspotSDK::Property]) -> void
+
+        def to_hash: -> { results: ::Array[HubspotSDK::Property] }
+      end
+    end
+  end
+end

@@ -7,6 +7,8 @@ module HubspotSDK
 
       attr_reader events: HubspotSDK::Resources::Marketing::Events
 
+      attr_reader single_send: HubspotSDK::Resources::Marketing::SingleSend
+
       attr_reader transactional: HubspotSDK::Resources::Marketing::Transactional
 
       def initialize: (client: HubspotSDK::Client) -> void

@@ -12,9 +12,11 @@ module HubspotSDK
             )
           end
 
+        # The unique identifier for the action revision.
         sig { returns(String) }
         attr_accessor :id
 
+        # The date and time when the action revision was created.
         sig { returns(Time) }
         attr_accessor :created_at
 
@@ -28,6 +30,7 @@ module HubspotSDK
         end
         attr_writer :definition
 
+        # The unique identifier for the specific revision of the action.
         sig { returns(String) }
         attr_accessor :revision_id
 
@@ -39,7 +42,15 @@ module HubspotSDK
             revision_id: String
           ).returns(T.attached_class)
         end
-        def self.new(id:, created_at:, definition:, revision_id:)
+        def self.new(
+          # The unique identifier for the action revision.
+          id:,
+          # The date and time when the action revision was created.
+          created_at:,
+          definition:,
+          # The unique identifier for the specific revision of the action.
+          revision_id:
+        )
         end
 
         sig do

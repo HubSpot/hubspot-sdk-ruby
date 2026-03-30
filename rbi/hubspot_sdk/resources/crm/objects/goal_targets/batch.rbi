@@ -43,8 +43,8 @@ module HubspotSDK
             def delete(inputs:, request_options: {})
             end
 
-            # Retrieve multiple goal targets with a single request. Goal targets are specified
-            # by ID.
+            # Retrieve records by record ID or include the `idProperty` parameter to retrieve
+            # records by a custom unique value property.
             sig do
               params(
                 inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],

@@ -12,11 +12,14 @@ module HubspotSDK
             )
           end
 
+        # Indicates that the type is a string, with the default value being STRING.
         sig do
           returns(HubspotSDK::Automation::StringFieldSchema::Type::OrSymbol)
         end
         attr_accessor :type
 
+        # Specifies the format of the string, with accepted values: DATE, DATE_TIME,
+        # OBJECT_COORDINATE, TIME, URI.
         sig do
           returns(
             T.nilable(
@@ -39,7 +42,13 @@ module HubspotSDK
             format_: HubspotSDK::Automation::StringFieldSchema::Format::OrSymbol
           ).returns(T.attached_class)
         end
-        def self.new(type:, format_: nil)
+        def self.new(
+          # Indicates that the type is a string, with the default value being STRING.
+          type:,
+          # Specifies the format of the string, with accepted values: DATE, DATE_TIME,
+          # OBJECT_COORDINATE, TIME, URI.
+          format_: nil
+        )
         end
 
         sig do
@@ -54,6 +63,7 @@ module HubspotSDK
         def to_hash
         end
 
+        # Indicates that the type is a string, with the default value being STRING.
         module Type
           extend HubspotSDK::Internal::Type::Enum
 
@@ -80,6 +90,8 @@ module HubspotSDK
           end
         end
 
+        # Specifies the format of the string, with accepted values: DATE, DATE_TIME,
+        # OBJECT_COORDINATE, TIME, URI.
         module Format
           extend HubspotSDK::Internal::Type::Enum
 

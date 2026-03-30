@@ -3,6 +3,7 @@
 module HubspotSDK
   module Models
     module Cms
+      # @see HubspotSDK::Resources::Cms::MediaBridge#create_property
       class Property < HubspotSDK::Internal::Type::BaseModel
         # @!attribute allowed_object_types
         #   Object types permitted to use this property.
@@ -218,8 +219,8 @@ module HubspotSDK
         #   A list of valid options for the property. This field is required for enumerated
         #   properties.
         #
-        #   @return [Array<HubspotSDK::Models::Option>]
-        required :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Option] }
+        #   @return [Array<HubspotSDK::Models::AutomationActionsOption>]
+        required :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AutomationActionsOption] }
 
         # @!attribute options_are_mutable
         #   Whether options can be modified after creation.
@@ -389,7 +390,7 @@ module HubspotSDK
         #
         #   @param number_display_hint [Symbol, HubspotSDK::Models::Cms::Property::NumberDisplayHint] Hint for how a number property is displayed and validated in HubSpot's UI. Can b
         #
-        #   @param options [Array<HubspotSDK::Models::Option>] A list of valid options for the property. This field is required for enumerated
+        #   @param options [Array<HubspotSDK::Models::AutomationActionsOption>] A list of valid options for the property. This field is required for enumerated
         #
         #   @param options_are_mutable [Boolean] Whether options can be modified after creation.
         #

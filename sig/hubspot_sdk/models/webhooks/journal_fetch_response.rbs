@@ -1,0 +1,28 @@
+module HubspotSDK
+  module Models
+    module Webhooks
+      type journal_fetch_response =
+        { current_offset: String, expires_at: Time, url: String }
+
+      class JournalFetchResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor current_offset: String
+
+        attr_accessor expires_at: Time
+
+        attr_accessor url: String
+
+        def initialize: (
+          current_offset: String,
+          expires_at: Time,
+          url: String
+        ) -> void
+
+        def to_hash: -> {
+          current_offset: String,
+          expires_at: Time,
+          url: String
+        }
+      end
+    end
+  end
+end

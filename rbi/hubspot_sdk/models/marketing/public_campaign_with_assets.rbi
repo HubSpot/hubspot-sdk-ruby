@@ -16,8 +16,8 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :id
 
-        # A map of asset types to their corresponding collection of campaign assets,
-        # represented by CollectionResponsePublicCampaignAsset objects.
+        # Contains the assets associated with the campaign, each represented as a
+        # collection of campaign assets.
         sig do
           returns(
             T::Hash[
@@ -33,15 +33,17 @@ module HubspotSDK
         sig { returns(T::Array[HubspotSDK::Marketing::PublicBusinessUnit]) }
         attr_accessor :business_units
 
-        # The date and time when the campaign was created, in ISO 8601 format.
+        # The date and time when the campaign was created, formatted as a date-time
+        # string.
         sig { returns(Time) }
         attr_accessor :created_at
 
-        # A map of custom property names to their values for the campaign.
+        # A map of key-value pairs representing the properties of the campaign.
         sig { returns(T::Hash[Symbol, String]) }
         attr_accessor :properties
 
-        # The date and time when the campaign was last updated, in ISO 8601 format.
+        # The date and time when the campaign was last updated, formatted as a date-time
+        # string.
         sig { returns(Time) }
         attr_accessor :updated_at
 
@@ -63,17 +65,19 @@ module HubspotSDK
         def self.new(
           # The unique identifier for the campaign.
           id:,
-          # A map of asset types to their corresponding collection of campaign assets,
-          # represented by CollectionResponsePublicCampaignAsset objects.
+          # Contains the assets associated with the campaign, each represented as a
+          # collection of campaign assets.
           assets:,
           # An array of business units associated with the campaign, each represented by a
           # PublicBusinessUnit object.
           business_units:,
-          # The date and time when the campaign was created, in ISO 8601 format.
+          # The date and time when the campaign was created, formatted as a date-time
+          # string.
           created_at:,
-          # A map of custom property names to their values for the campaign.
+          # A map of key-value pairs representing the properties of the campaign.
           properties:,
-          # The date and time when the campaign was last updated, in ISO 8601 format.
+          # The date and time when the campaign was last updated, formatted as a date-time
+          # string.
           updated_at:
         )
         end

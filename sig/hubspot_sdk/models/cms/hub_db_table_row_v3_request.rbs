@@ -1,0 +1,46 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type hub_db_table_row_v3_request =
+        {
+          child_table_id: Integer,
+          display_index: Integer,
+          values: ::Hash[Symbol, top],
+          name: String,
+          path: String
+        }
+
+      class HubDBTableRowV3Request < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor child_table_id: Integer
+
+        attr_accessor display_index: Integer
+
+        attr_accessor values: ::Hash[Symbol, top]
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader path: String?
+
+        def path=: (String) -> String
+
+        def initialize: (
+          child_table_id: Integer,
+          display_index: Integer,
+          values: ::Hash[Symbol, top],
+          ?name: String,
+          ?path: String
+        ) -> void
+
+        def to_hash: -> {
+          child_table_id: Integer,
+          display_index: Integer,
+          values: ::Hash[Symbol, top],
+          name: String,
+          path: String
+        }
+      end
+    end
+  end
+end

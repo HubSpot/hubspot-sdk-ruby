@@ -2,13 +2,9 @@ module HubspotSDK
   module Resources
     class Marketing
       class Transactional
-        def send_: (
-          contact_properties: ::Hash[Symbol, String],
-          custom_properties: ::Hash[Symbol, top],
-          email_id: Integer,
-          message: HubspotSDK::Marketing::PublicSingleSendEmail,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Marketing::EmailSendStatusView
+        attr_reader single_email: HubspotSDK::Resources::Marketing::Transactional::SingleEmail
+
+        attr_reader smtp_tokens: HubspotSDK::Resources::Marketing::Transactional::SmtpTokens
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

@@ -20,7 +20,7 @@ module HubspotSDK
                    api_name: :propertyNamesIncluded
 
           # @!attribute type
-          #   Specifies the type of action, which is 'IFRAME' for iframe actions.
+          #   The type of status.
           #
           #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::IFrameActionBody::Type]
           required :type, enum: -> { HubspotSDK::Crm::Extensions::IFrameActionBody::Type }
@@ -38,29 +38,25 @@ module HubspotSDK
           required :width, Integer
 
           # @!attribute label
-          #   The label for the button that opens the iframen as it will be displayed to
-          #   users.
+          #   The label for this property as you'd like it displayed to users.
           #
           #   @return [String, nil]
           optional :label, String
 
           # @!method initialize(height:, property_names_included:, type:, url:, width:, label: nil)
-          #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Crm::Extensions::IFrameActionBody} for more details.
-          #
           #   @param height [Integer] The height of the iframe in pixels.
           #
           #   @param property_names_included [Array<String>] A list of property names that will be included on the url of the iframe.
           #
-          #   @param type [Symbol, HubspotSDK::Models::Crm::Extensions::IFrameActionBody::Type] Specifies the type of action, which is 'IFRAME' for iframe actions.
+          #   @param type [Symbol, HubspotSDK::Models::Crm::Extensions::IFrameActionBody::Type] The type of status.
           #
           #   @param url [String] The URL endpoint that will be loaded in the iframe when triggered.
           #
           #   @param width [Integer] The width of the iframe in pixels.
           #
-          #   @param label [String] The label for the button that opens the iframen as it will be displayed to users
+          #   @param label [String] The label for this property as you'd like it displayed to users.
 
-          # Specifies the type of action, which is 'IFRAME' for iframe actions.
+          # The type of status.
           #
           # @see HubspotSDK::Models::Crm::Extensions::IFrameActionBody#type
           module Type

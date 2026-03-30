@@ -4,11 +4,102 @@ module HubspotSDK
   module Resources
     class Files
       class Folders
+        # Delete folder by ID.
+        #
+        # @overload delete_by_id(folder_id, request_options: {})
+        #
+        # @param folder_id [String] ID of folder to delete.
+        #
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [nil]
+        #
+        # @see HubspotSDK::Models::Files::FolderDeleteByIDParams
+        def delete_by_id(folder_id, params = {})
+          @client.request(
+            method: :delete,
+            path: ["files/2026-03/folders/%1$s", folder_id],
+            model: NilClass,
+            options: params[:request_options]
+          )
+        end
+
+        # Delete a folder, identified by its path.
+        #
+        # @overload delete_by_path(folder_path, request_options: {})
+        #
+        # @param folder_path [String] Path of folder to delete
+        #
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [nil]
+        #
+        # @see HubspotSDK::Models::Files::FolderDeleteByPathParams
+        def delete_by_path(folder_path, params = {})
+          @client.request(
+            method: :delete,
+            path: ["files/2026-03/folders/%1$s", folder_path],
+            model: NilClass,
+            options: params[:request_options]
+          )
+        end
+
+        # Retrieve a folder by its ID.
+        #
+        # @overload get_by_id(folder_id, properties: nil, request_options: {})
+        #
+        # @param folder_id [String] ID of desired folder
+        #
+        # @param properties [Array<String>] Properties to set on returned folder.
+        #
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Models::Files::Folder]
+        #
+        # @see HubspotSDK::Models::Files::FolderGetByIDParams
+        def get_by_id(folder_id, params = {})
+          parsed, options = HubspotSDK::Files::FolderGetByIDParams.dump_request(params)
+          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          @client.request(
+            method: :get,
+            path: ["files/2026-03/folders/%1$s", folder_id],
+            query: query,
+            model: HubspotSDK::Files::Folder,
+            options: options
+          )
+        end
+
+        # Retrieve a folder, identified by its path.
+        #
+        # @overload get_by_path(folder_path, properties: nil, request_options: {})
+        #
+        # @param folder_path [String] Path of desired folder.
+        #
+        # @param properties [Array<String>] Properties to set on returned folder.
+        #
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Models::Files::Folder]
+        #
+        # @see HubspotSDK::Models::Files::FolderGetByPathParams
+        def get_by_path(folder_path, params = {})
+          parsed, options = HubspotSDK::Files::FolderGetByPathParams.dump_request(params)
+          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          @client.request(
+            method: :get,
+            path: ["files/2026-03/folders/%1$s", folder_path],
+            query: query,
+            model: HubspotSDK::Files::Folder,
+            options: options
+          )
+        end
+
         # Check status of folder update. Folder updates happen asynchronously.
         #
         # @overload get_update_async_status(task_id, request_options: {})
         #
-        # @param task_id [String]
+        # @param task_id [String] TaskId of folder update
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Files::FolderActionResponse]
@@ -30,39 +121,39 @@ module HubspotSDK
         #
         # @overload search(after: nil, before: nil, created_at: nil, created_at_gte: nil, created_at_lte: nil, id_gte: nil, id_lte: nil, ids: nil, limit: nil, name: nil, parent_folder_ids: nil, path: nil, properties: nil, sort: nil, updated_at: nil, updated_at_gte: nil, updated_at_lte: nil, request_options: {})
         #
-        # @param after [String] The paging cursor token of the last successfully read resource will be returned
+        # @param after [String] Offset search results by this value. The default offset is 0 and the maximum off
         #
-        # @param before [String]
+        # @param before [String] Search folders updated before this timestamp. Time must be epoch time in millise
         #
-        # @param created_at [Time]
+        # @param created_at [Time] Search folders by exact time of creation. Time must be epoch time in millisecond
         #
-        # @param created_at_gte [Time]
+        # @param created_at_gte [Time] Search folders by greater than or equal to time of creation. Can be used with cr
         #
-        # @param created_at_lte [Time]
+        # @param created_at_lte [Time] Search folders by less than or equal to time of creation. Can be used with creat
         #
-        # @param id_gte [Integer]
+        # @param id_gte [Integer] Search folders by greater than or equal to ID. Can be used with idLte to create
         #
-        # @param id_lte [Integer]
+        # @param id_lte [Integer] Search folders by less than or equal to ID. Can be used with idGte to create a r
         #
-        # @param ids [Array<Integer>]
+        # @param ids [Array<Integer>] Search folders by multiple IDs. Comma-separated list of folder IDs.
         #
-        # @param limit [Integer] The maximum number of results to display per page.
+        # @param limit [Integer] Number of items to return. Default limit is 10, maximum limit is 100.
         #
-        # @param name [String]
+        # @param name [String] Search for folders containing the specified name.
         #
         # @param parent_folder_ids [Array<Integer>]
         #
-        # @param path [String]
+        # @param path [String] Search folders by path.
         #
-        # @param properties [Array<String>]
+        # @param properties [Array<String>] Properties that should be included in the returned folders.
         #
-        # @param sort [Array<String>]
+        # @param sort [Array<String>] Sort results by given property. For example -name sorts by name field descending
         #
-        # @param updated_at [Time]
+        # @param updated_at [Time] Search folders by exact time of latest updated. Time must be epoch time in milli
         #
-        # @param updated_at_gte [Time]
+        # @param updated_at_gte [Time] Search folders by greater than or equal to time of latest update. Can be used wi
         #
-        # @param updated_at_lte [Time]
+        # @param updated_at_lte [Time] Search folders by less than or equal to time of latest update. Can be used with
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -102,9 +193,9 @@ module HubspotSDK
         #
         # @param id [String] The unique identifier of the folder to be updated.
         #
-        # @param name [String] The new name for the folder, which will also update the fullPath and all childre
+        # @param name [String] New name. If specified the folder's name and fullPath will change. All children
         #
-        # @param parent_folder_id [Integer] The ID of the new parent folder, which will move the folder and its children int
+        # @param parent_folder_id [Integer] New parent folderId. If changed, the folder and all it's children will be moved
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -129,7 +220,7 @@ module HubspotSDK
         #
         # @overload update_by_id(folder_id, name: nil, parent_folder_id: nil, request_options: {})
         #
-        # @param folder_id [String]
+        # @param folder_id [String] ID of folder to update
         #
         # @param name [String] New name. If specified the folder's name and fullPath will change. All children
         #

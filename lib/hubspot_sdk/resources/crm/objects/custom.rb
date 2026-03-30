@@ -5,15 +5,12 @@ module HubspotSDK
     class Crm
       class Objects
         class Custom
-          # Create multiple CRM objects in a single request by specifying the object type
-          # and providing the necessary properties and associations for each object.
+          # Create a batch of objects
           #
           # @overload create(object_type, inputs:, request_options: {})
           #
-          # @param object_type [String] The type of object.
-          #
+          # @param object_type [String]
           # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInputForCreate>]
-          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicObject]
@@ -30,15 +27,12 @@ module HubspotSDK
             )
           end
 
-          # Update a batch of CRM objects by their internal IDs or unique property values,
-          # allowing for efficient modifications of multiple records in a single request.
+          # Update a batch of objects by internal ID, or unique property values
           #
           # @overload update(object_type, inputs:, request_options: {})
           #
-          # @param object_type [String] The type of object.
-          #
+          # @param object_type [String]
           # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInput>]
-          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicObject]
@@ -63,7 +57,7 @@ module HubspotSDK
           #
           # @overload list(object_type, after: nil, archived: nil, associations: nil, limit: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
-          # @param object_type [String] The type of object.
+          # @param object_type [String]
           #
           # @param after [String] The paging cursor token of the last successfully read resource will be returned
           #
@@ -95,15 +89,12 @@ module HubspotSDK
             )
           end
 
-          # Archive a batch of objects by their unique IDs. This operation moves the
-          # specified objects to the recycling bin, effectively marking them as archived.
+          # Archive a batch of objects by ID
           #
           # @overload delete(object_type, inputs:, request_options: {})
           #
-          # @param object_type [String] The type of object.
-          #
+          # @param object_type [String]
           # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectID>]
-          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -128,7 +119,7 @@ module HubspotSDK
           #
           # @overload get(object_type, inputs:, properties:, properties_with_history:, archived: nil, id_property: nil, request_options: {})
           #
-          # @param object_type [String] Path param: The type of object.
+          # @param object_type [String] Path param
           #
           # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectID>] Body param
           #
@@ -164,7 +155,7 @@ module HubspotSDK
           #
           # @overload merge(object_type, object_id_to_merge:, primary_object_id:, request_options: {})
           #
-          # @param object_type [String] The type of object.
+          # @param object_type [String]
           #
           # @param object_id_to_merge [String] The ID of the company to merge into the primary.
           #
@@ -186,13 +177,9 @@ module HubspotSDK
             )
           end
 
-          # Execute a search query to find CRM objects of a given type, using specified
-          # filters and properties. The search can be customized with filters, sorting, and
-          # pagination options.
-          #
           # @overload search(object_type, after:, filter_groups:, limit:, properties:, sorts:, query: nil, request_options: {})
           #
-          # @param object_type [String] The type of object.
+          # @param object_type [String]
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.
           #
@@ -228,10 +215,8 @@ module HubspotSDK
           #
           # @overload upsert(object_type, inputs:, request_options: {})
           #
-          # @param object_type [String] The type of object.
-          #
+          # @param object_type [String]
           # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInputUpsert>]
-          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicUpsertObject]

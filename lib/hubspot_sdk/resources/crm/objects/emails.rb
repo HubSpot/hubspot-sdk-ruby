@@ -74,7 +74,8 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::EmailListParams} for more details.
           #
-          # Retrieve all emails. Control what is returned via the `properties` query param.
+          # Read a page of emails. Control what is returned via the `properties` query
+          # param.
           #
           # @overload list(after: nil, archived: nil, associations: nil, limit: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
@@ -130,7 +131,7 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::EmailGetParams} for more details.
           #
-          # Retrieve an email identified by `{emailId}`. `{emailId}` refers to the internal
+          # Read an Object identified by `{emailId}`. `{emailId}` refers to the internal
           # object ID by default, or optionally any unique property value as specified by
           # the `idProperty` query param. Control what is returned via the `properties`
           # query param.

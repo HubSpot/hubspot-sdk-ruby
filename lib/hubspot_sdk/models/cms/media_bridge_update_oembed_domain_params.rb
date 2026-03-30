@@ -10,8 +10,8 @@ module HubspotSDK
 
         # @!attribute app_id
         #
-        #   @return [String]
-        required :app_id, String
+        #   @return [Integer]
+        required :app_id, Integer
 
         # @!attribute o_embed_domain_id
         #
@@ -19,7 +19,7 @@ module HubspotSDK
         required :o_embed_domain_id, String
 
         # @!method initialize(app_id:, o_embed_domain_id:, request_options: {})
-        #   @param app_id [String]
+        #   @param app_id [Integer]
         #   @param o_embed_domain_id [String]
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
       end

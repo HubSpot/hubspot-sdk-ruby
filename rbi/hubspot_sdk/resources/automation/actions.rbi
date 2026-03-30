@@ -4,6 +4,7 @@ module HubspotSDK
   module Resources
     class Automation
       class Actions
+        # Create a new custom workflow action.
         sig do
           params(
             app_id: Integer,
@@ -42,12 +43,17 @@ module HubspotSDK
         end
         def create(
           app_id,
+          # The URL endpoint where the action is executed.
           action_url:,
           functions:,
           input_fields:,
+          # Holds various labels associated with the action, including names and
+          # descriptions.
           labels:,
           object_types:,
+          # Indicates whether the action is published and available for use.
           published:,
+          # The timestamp indicating when the action was archived.
           archived_at: nil,
           execution_rules: nil,
           input_field_dependencies: nil,
@@ -57,6 +63,7 @@ module HubspotSDK
         )
         end
 
+        # Update an existing action definition by ID.
         sig do
           params(
             definition_id: String,
@@ -96,7 +103,7 @@ module HubspotSDK
           definition_id,
           # Path param
           app_id:,
-          # Body param
+          # Body param: The URL endpoint where the action is executed.
           action_url: nil,
           # Body param
           execution_rules: nil,
@@ -104,7 +111,7 @@ module HubspotSDK
           input_field_dependencies: nil,
           # Body param
           input_fields: nil,
-          # Body param
+          # Body param: Contains labels for the action, including names and descriptions.
           labels: nil,
           # Body param
           object_request_options: nil,
@@ -112,12 +119,13 @@ module HubspotSDK
           object_types: nil,
           # Body param
           output_fields: nil,
-          # Body param
+          # Body param: Indicates whether the action is published and available for use.
           published: nil,
           request_options: {}
         )
         end
 
+        # Retrieve the versions of a definition by ID.
         sig do
           params(
             definition_id: String,
@@ -146,6 +154,7 @@ module HubspotSDK
         )
         end
 
+        # Archive a function for a specific definition.
         sig do
           params(
             function_id: String,
@@ -165,6 +174,7 @@ module HubspotSDK
         )
         end
 
+        # Complete a specific blocked action execution by ID.
         sig do
           params(
             callback_id: String,
@@ -184,14 +194,21 @@ module HubspotSDK
         end
         def complete(
           callback_id,
+          # Contains the output fields associated with the callback, with each field
+          # represented as a key-value pair.
           output_fields:,
+          # Holds the typed outputs related to the callback, structured as an object.
           typed_outputs:,
+          # Indicates the reason for the failure of a callback completion.
           failure_reason_type: nil,
+          # Specifies the context in which the request is made, which can be one of several
+          # predefined contexts.
           request_context: nil,
           request_options: {}
         )
         end
 
+        # Complete a batch of blocked action executions.
         sig do
           params(
             inputs:
@@ -204,6 +221,7 @@ module HubspotSDK
         def complete_batch(inputs:, request_options: {})
         end
 
+        # Update a function for a given definition by ID.
         sig do
           params(
             function_id: String,
@@ -230,6 +248,7 @@ module HubspotSDK
         )
         end
 
+        # Add a function for a given definition.
         sig do
           params(
             function_type:
@@ -253,6 +272,7 @@ module HubspotSDK
         )
         end
 
+        # Set whether a custom action definition requires an object.
         sig do
           params(
             definition_id: String,
@@ -266,12 +286,14 @@ module HubspotSDK
           definition_id,
           # Path param
           app_id:,
-          # Body param
+          # Body param: Indicates whether a custom action definition requires an associated
+          # object.
           requires_object:,
           request_options: {}
         )
         end
 
+        # Delete a function within a given definition.
         sig do
           params(
             function_type:
@@ -289,6 +311,7 @@ module HubspotSDK
         )
         end
 
+        # Retrieve a specific revision of a definition by revision ID.
         sig do
           params(
             revision_id: String,
@@ -300,6 +323,7 @@ module HubspotSDK
         def get(revision_id, app_id:, definition_id:, request_options: {})
         end
 
+        # Retrieve functions of a specific type for a given definition.
         sig do
           params(
             function_type:
@@ -317,6 +341,7 @@ module HubspotSDK
         )
         end
 
+        # Retrieve whether a custom action definition requires an object.
         sig do
           params(
             definition_id: String,

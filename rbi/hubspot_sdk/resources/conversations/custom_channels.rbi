@@ -40,6 +40,8 @@ module HubspotSDK
         )
         end
 
+        # Update the capabilities for an existing. You can also use it to update the
+        # channel's webhookUri and its channelAccountConnectionRedirectUrl.
         sig do
           params(
             channel_id: Integer,
@@ -90,6 +92,7 @@ module HubspotSDK
         )
         end
 
+        # Archive an existing registered custom channel
         sig do
           params(
             channel_id: Integer,
@@ -99,6 +102,9 @@ module HubspotSDK
         def delete(channel_id, request_options: {})
         end
 
+        # Retrieve the details for a specific channel account. This contains all the
+        # metadata about your channel account, including its channel, associated inbox id,
+        # and delivery identifier information.
         sig do
           params(
             channel_account_id: Integer,

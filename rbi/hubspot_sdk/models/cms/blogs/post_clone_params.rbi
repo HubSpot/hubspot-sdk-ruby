@@ -4,7 +4,7 @@ module HubspotSDK
   module Models
     module Cms
       module Blogs
-        class PostCloneParams < HubspotSDK::Models::Cms::Blogs::ContentCloneRequestVNext
+        class PostCloneParams < HubspotSDK::Models::Cms::ContentCloneRequestVNext
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

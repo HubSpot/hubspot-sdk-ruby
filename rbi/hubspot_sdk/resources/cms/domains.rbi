@@ -39,6 +39,7 @@ module HubspotSDK
         )
         end
 
+        # Returns a single domains with the id specified.
         sig do
           params(
             domain_id: String,

@@ -9,10 +9,10 @@ module HubspotSDK
           sig do
             params(
               object_type: String,
-              app_id: String,
+              app_id: Integer,
               inputs: T::Array[HubspotSDK::PropertyCreate::OrHash],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::BatchResponseProperty)
+            ).returns(HubspotSDK::Cms::BatchResponseProperty)
           end
           def create(
             # Path param
@@ -29,7 +29,7 @@ module HubspotSDK
           sig do
             params(
               object_type: String,
-              app_id: String,
+              app_id: Integer,
               inputs: T::Array[HubspotSDK::PropertyName::OrHash],
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
@@ -49,13 +49,13 @@ module HubspotSDK
           sig do
             params(
               object_type: String,
-              app_id: String,
+              app_id: Integer,
               archived: T::Boolean,
               data_sensitivity:
                 HubspotSDK::BatchReadInputPropertyName::DataSensitivity::OrSymbol,
               inputs: T::Array[HubspotSDK::PropertyName::OrHash],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::BatchResponseProperty)
+            ).returns(HubspotSDK::Cms::BatchResponseProperty)
           end
           def get(
             # Path param

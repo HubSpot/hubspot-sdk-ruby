@@ -4,6 +4,8 @@ module HubspotSDK
   module Resources
     class Crm
       class Limits
+        # Returns limits and usage for custom association labels
+        #
         # @overload get_association_label_limits(from_object_type_id: nil, to_object_type_id: nil, request_options: {})
         #
         # @param from_object_type_id [String]
@@ -28,6 +30,8 @@ module HubspotSDK
           )
         end
 
+        # Returns records approaching or at association limits between two objects
+        #
         # @overload get_association_records_limits_by_object_type(to_object_type_id, from_object_type_id:, request_options: {})
         #
         # @param to_object_type_id [String]
@@ -56,6 +60,8 @@ module HubspotSDK
           )
         end
 
+        # Returns objects with records approaching or at association limits
+        #
         # @overload get_association_records_limits_from_objects(request_options: {})
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
@@ -72,6 +78,9 @@ module HubspotSDK
           )
         end
 
+        # Returns objects for which the from object has records approaching or at
+        # association limits
+        #
         # @overload get_association_records_limits_to_objects(from_object_type_id, request_options: {})
         #
         # @param from_object_type_id [String]
@@ -89,6 +98,8 @@ module HubspotSDK
           )
         end
 
+        # Returns overall limit and per object usage for calculated properties
+        #
         # @overload get_calculated_property_limits(request_options: {})
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
@@ -105,6 +116,8 @@ module HubspotSDK
           )
         end
 
+        # Returns limits and usage for custom object schemas
+        #
         # @overload get_custom_object_type_limits(request_options: {})
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
@@ -121,6 +134,8 @@ module HubspotSDK
           )
         end
 
+        # Returns limits and usage per object for custom properties
+        #
         # @overload get_custom_property_limits(request_options: {})
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
@@ -137,6 +152,8 @@ module HubspotSDK
           )
         end
 
+        # Returns limits and usage per object for pipelines
+        #
         # @overload get_pipeline_limits(request_options: {})
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
@@ -153,6 +170,8 @@ module HubspotSDK
           )
         end
 
+        # Returns limits and usage per object for records
+        #
         # @overload get_record_limits(request_options: {})
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]

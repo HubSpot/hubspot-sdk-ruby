@@ -12,15 +12,18 @@ module HubspotSDK
             )
           end
 
+        # The type of the field, which is LONG by default.
         sig { returns(HubspotSDK::Automation::LongFieldSchema::Type::OrSymbol) }
         attr_accessor :type
 
+        # The maximum value allowed for the long field.
         sig { returns(T.nilable(Integer)) }
         attr_reader :maximum
 
         sig { params(maximum: Integer).void }
         attr_writer :maximum
 
+        # The minimum value allowed for the long field.
         sig { returns(T.nilable(Integer)) }
         attr_reader :minimum
 
@@ -34,7 +37,14 @@ module HubspotSDK
             minimum: Integer
           ).returns(T.attached_class)
         end
-        def self.new(type:, maximum: nil, minimum: nil)
+        def self.new(
+          # The type of the field, which is LONG by default.
+          type:,
+          # The maximum value allowed for the long field.
+          maximum: nil,
+          # The minimum value allowed for the long field.
+          minimum: nil
+        )
         end
 
         sig do
@@ -49,6 +59,7 @@ module HubspotSDK
         def to_hash
         end
 
+        # The type of the field, which is LONG by default.
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

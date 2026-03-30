@@ -39,7 +39,7 @@ module HubspotSDK
         sig { params(archived_at: Time).void }
         attr_writer :archived_at
 
-        # An identifier used for tracing the write request for the object.
+        # A unique identifier for tracing the creation request.
         sig { returns(T.nilable(String)) }
         attr_reader :object_write_trace_id
 
@@ -106,7 +106,7 @@ module HubspotSDK
           updated_at:,
           # The timestamp when the object was archived, in ISO 8601 format.
           archived_at: nil,
-          # An identifier used for tracing the write request for the object.
+          # A unique identifier for tracing the creation request.
           object_write_trace_id: nil,
           # Key-value pairs representing the properties of the object along with their
           # history.

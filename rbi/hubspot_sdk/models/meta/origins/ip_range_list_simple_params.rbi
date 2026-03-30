@@ -16,8 +16,6 @@ module HubspotSDK
               )
             end
 
-          # An array of directions to filter the IP ranges by. Valid values are `INGRESS`
-          # and `EGRESS`.
           sig do
             returns(
               T.nilable(
@@ -39,8 +37,6 @@ module HubspotSDK
           end
           attr_writer :direction
 
-          # An array specifying the service types to filter by. Valid values include
-          # `EMAIL`, `API`, `DNS`, `WEB_SCRAPING`, and `TEST_SERVICE`.
           sig do
             returns(
               T.nilable(
@@ -75,15 +71,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
-          def self.new(
-            # An array of directions to filter the IP ranges by. Valid values are `INGRESS`
-            # and `EGRESS`.
-            direction: nil,
-            # An array specifying the service types to filter by. Valid values include
-            # `EMAIL`, `API`, `DNS`, `WEB_SCRAPING`, and `TEST_SERVICE`.
-            service: nil,
-            request_options: {}
-          )
+          def self.new(direction: nil, service: nil, request_options: {})
           end
 
           sig do
@@ -168,6 +156,11 @@ module HubspotSDK
             WEB_SCRAPING =
               T.let(
                 :WEB_SCRAPING,
+                HubspotSDK::Meta::Origins::IPRangeListSimpleParams::Service::TaggedSymbol
+              )
+            TEST_SERVICE =
+              T.let(
+                :TEST_SERVICE,
                 HubspotSDK::Meta::Origins::IPRangeListSimpleParams::Service::TaggedSymbol
               )
 

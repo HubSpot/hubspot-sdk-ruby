@@ -7,15 +7,17 @@ module HubspotSDK
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Crm::PipelineCreateParams} for more details.
         #
+        # Create a pipeline stage
+        #
         # @overload create(pipeline_id, object_type:, display_order:, label:, metadata:, stage_id: nil, request_options: {})
         #
         # @param pipeline_id [String] Path param
         #
         # @param object_type [String] Path param
         #
-        # @param display_order [Integer] Body param
+        # @param display_order [Integer] Body param: The order for displaying this pipeline stage. If two pipeline stages
         #
-        # @param label [String] Body param
+        # @param label [String] Body param: A label used to organize pipeline stages in HubSpot's UI. Each pipel
         #
         # @param metadata [Hash{Symbol=>String}] Body param: A JSON object containing properties that are not present on all obje
         #
@@ -52,11 +54,11 @@ module HubspotSDK
         #
         # @param pipeline_id [String] Path param
         #
-        # @param metadata [Hash{Symbol=>String}] Body param
+        # @param metadata [Hash{Symbol=>String}] Body param: A JSON object containing properties that are not present on all obje
         #
         # @param archived [Boolean] Body param: Whether the pipeline is archived.
         #
-        # @param display_order [Integer] Body param
+        # @param display_order [Integer] Body param: The order for displaying this pipeline stage. If two pipeline stages
         #
         # @param label [String] Body param: A label used to organize pipeline stages in HubSpot's UI. Each pipel
         #
@@ -84,6 +86,8 @@ module HubspotSDK
           )
         end
 
+        # Return all the stages associated with the pipeline identified by `{pipelineId}`.
+        #
         # @overload list(pipeline_id, object_type:, request_options: {})
         #
         # @param pipeline_id [String]
@@ -107,6 +111,8 @@ module HubspotSDK
           )
         end
 
+        # Delete a pipeline stage
+        #
         # @overload delete(stage_id, object_type:, pipeline_id:, request_options: {})
         #
         # @param stage_id [String]
@@ -135,6 +141,8 @@ module HubspotSDK
           )
         end
 
+        # Return a pipeline stage by ID
+        #
         # @overload get(stage_id, object_type:, pipeline_id:, request_options: {})
         #
         # @param stage_id [String]
@@ -163,6 +171,9 @@ module HubspotSDK
           )
         end
 
+        # Return a reverse chronological list of all mutations that have occurred on the
+        # pipeline stage identified by `{stageId}`.
+        #
         # @overload get_audit(stage_id, object_type:, pipeline_id:, request_options: {})
         #
         # @param stage_id [String]
@@ -191,6 +202,12 @@ module HubspotSDK
           )
         end
 
+        # Some parameter documentations has been truncated, see
+        # {HubspotSDK::Models::Crm::PipelineReplaceParams} for more details.
+        #
+        # Replace all the properties of an existing pipeline stage with the values
+        # provided. The updated stage will be returned in the response.
+        #
         # @overload replace(stage_id, object_type:, pipeline_id:, display_order:, label:, metadata:, request_options: {})
         #
         # @param stage_id [String] Path param
@@ -199,11 +216,11 @@ module HubspotSDK
         #
         # @param pipeline_id [String] Path param
         #
-        # @param display_order [Integer] Body param
+        # @param display_order [Integer] Body param: The order for displaying this pipeline stage. If two pipeline stages
         #
-        # @param label [String] Body param
+        # @param label [String] Body param: A label used to organize pipeline stages in HubSpot's UI. Each pipel
         #
-        # @param metadata [Hash{Symbol=>String}] Body param
+        # @param metadata [Hash{Symbol=>String}] Body param: A JSON object containing properties that are not present on all obje
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #

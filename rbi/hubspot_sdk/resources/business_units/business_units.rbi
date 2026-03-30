@@ -4,6 +4,7 @@ module HubspotSDK
   module Resources
     class BusinessUnits
       class BusinessUnits
+        # Retrieve the brands that a specific user can access.
         sig do
           params(
             user_id: String,

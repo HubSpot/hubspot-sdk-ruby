@@ -1,0 +1,54 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type smtp_api_token_view =
+        {
+          id: String,
+          campaign_name: String,
+          create_contact: bool,
+          created_at: Time,
+          created_by: String,
+          email_campaign_id: String,
+          password: String
+        }
+
+      class SmtpAPITokenView < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor campaign_name: String
+
+        attr_accessor create_contact: bool
+
+        attr_accessor created_at: Time
+
+        attr_accessor created_by: String
+
+        attr_accessor email_campaign_id: String
+
+        attr_reader password: String?
+
+        def password=: (String) -> String
+
+        def initialize: (
+          id: String,
+          campaign_name: String,
+          create_contact: bool,
+          created_at: Time,
+          created_by: String,
+          email_campaign_id: String,
+          ?password: String
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          campaign_name: String,
+          create_contact: bool,
+          created_at: Time,
+          created_by: String,
+          email_campaign_id: String,
+          password: String
+        }
+      end
+    end
+  end
+end

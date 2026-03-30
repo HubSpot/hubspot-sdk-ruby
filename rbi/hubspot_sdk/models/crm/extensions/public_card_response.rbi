@@ -54,7 +54,7 @@ module HubspotSDK
           end
           attr_writer :fetch
 
-          # The top-level title for this card, displayed to users in the CRM UI.
+          # The top-level title for this card. Displayed to users in the CRM UI.
           sig { returns(String) }
           attr_accessor :title
 
@@ -96,7 +96,7 @@ module HubspotSDK
             audit_history:,
             display_:,
             fetch:,
-            # The top-level title for this card, displayed to users in the CRM UI.
+            # The top-level title for this card. Displayed to users in the CRM UI.
             title:,
             # The date and time when the card was created.
             created_at: nil,

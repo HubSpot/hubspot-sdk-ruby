@@ -12,8 +12,14 @@ module HubspotSDK
       # @return [HubspotSDK::Resources::Cms::Domains]
       attr_reader :domains
 
+      # @return [HubspotSDK::Resources::Cms::Hubdb]
+      attr_reader :hubdb
+
       # @return [HubspotSDK::Resources::Cms::MediaBridge]
       attr_reader :media_bridge
+
+      # @return [HubspotSDK::Resources::Cms::Pages]
+      attr_reader :pages
 
       # @return [HubspotSDK::Resources::Cms::SiteSearch]
       attr_reader :site_search
@@ -35,7 +41,9 @@ module HubspotSDK
         @audit_logs = HubspotSDK::Resources::Cms::AuditLogs.new(client: client)
         @blogs = HubspotSDK::Resources::Cms::Blogs.new(client: client)
         @domains = HubspotSDK::Resources::Cms::Domains.new(client: client)
+        @hubdb = HubspotSDK::Resources::Cms::Hubdb.new(client: client)
         @media_bridge = HubspotSDK::Resources::Cms::MediaBridge.new(client: client)
+        @pages = HubspotSDK::Resources::Cms::Pages.new(client: client)
         @site_search = HubspotSDK::Resources::Cms::SiteSearch.new(client: client)
         @source_code = HubspotSDK::Resources::Cms::SourceCode.new(client: client)
         @url_mappings = HubspotSDK::Resources::Cms::URLMappings.new(client: client)

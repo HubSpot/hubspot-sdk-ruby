@@ -11,6 +11,8 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Cms::Blogs::AuthorCreateParams} for more details.
           #
+          # Create a new Blog Author.
+          #
           # @overload create(id:, avatar:, bio:, created:, deleted_at:, display_name:, email:, facebook:, full_name:, language:, linkedin:, name:, slug:, translated_from_id:, twitter:, updated:, website:, request_options: {})
           #
           # @param id [String] The unique ID of the Blog Author.
@@ -66,6 +68,10 @@ module HubspotSDK
 
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Cms::Blogs::AuthorUpdateParams} for more details.
+          #
+          # Sparse updates a single Blog Author object identified by the id in the path. All
+          # the column values need not be specified. Only the that need to be modified can
+          # be specified.
           #
           # @overload update(object_id_, id:, avatar:, bio:, created:, deleted_at:, display_name:, email:, facebook:, full_name:, language:, linkedin:, name:, slug:, translated_from_id:, twitter:, updated:, website:, archived: nil, request_options: {})
           #
@@ -164,7 +170,7 @@ module HubspotSDK
             query = HubspotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
-              path: "cms/blogs/2026-03/authors",
+              path: "cms/blogs/2026-03/authors/cursor",
               query: query.transform_keys(
                 created_after: "createdAfter",
                 created_at: "createdAt",
@@ -179,6 +185,8 @@ module HubspotSDK
             )
           end
 
+          # Delete the Blog Author object identified by the id in the path.
+          #
           # @overload delete(object_id_, archived: nil, request_options: {})
           #
           # @param object_id_ [String]
@@ -202,6 +210,8 @@ module HubspotSDK
             )
           end
 
+          # Attach a Blog Author to a multi-language group.
+          #
           # @overload attach_to_lang_group(id:, language:, primary_id:, primary_language: nil, request_options: {})
           #
           # @param id [String] ID of the object to add to a multi-language group.
@@ -229,6 +239,8 @@ module HubspotSDK
             )
           end
 
+          # Create a new language variation from an existing Blog Author.
+          #
           # @overload create_language_variation(id:, blog_author:, language: nil, primary_language: nil, request_options: {})
           #
           # @param id [String] ID of the object to be cloned.
@@ -256,6 +268,8 @@ module HubspotSDK
             )
           end
 
+          # Detach a Blog Author from a multi-language group.
+          #
           # @overload detach_from_lang_group(id:, request_options: {})
           #
           # @param id [String] ID of the object to remove from a multi-language group.
@@ -277,6 +291,8 @@ module HubspotSDK
             )
           end
 
+          # Retrieve the Blog Author object identified by the id in the path.
+          #
           # @overload get(object_id_, archived: nil, property: nil, request_options: {})
           #
           # @param object_id_ [String]
@@ -303,6 +319,268 @@ module HubspotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Cms::Blogs::AuthorListByQueryParams} for more details.
+          #
+          # @overload list_by_query(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
+          #
+          # @param after [String] The paging cursor token of the last successfully read resource will be returned
+          #
+          # @param archived [Boolean] Whether to return only results that have been archived.
+          #
+          # @param created_after [Time]
+          #
+          # @param created_at [Time]
+          #
+          # @param created_before [Time]
+          #
+          # @param limit [Integer] The maximum number of results to display per page.
+          #
+          # @param property [String]
+          #
+          # @param sort [Array<String>]
+          #
+          # @param updated_after [Time]
+          #
+          # @param updated_at [Time]
+          #
+          # @param updated_before [Time]
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [StringIO]
+          #
+          # @see HubspotSDK::Models::Cms::Blogs::AuthorListByQueryParams
+          def list_by_query(params = {})
+            parsed, options = HubspotSDK::Cms::Blogs::AuthorListByQueryParams.dump_request(params)
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            @client.request(
+              method: :get,
+              path: "cms/blogs/2026-03/authors/cursor/query",
+              query: query.transform_keys(
+                created_after: "createdAfter",
+                created_at: "createdAt",
+                created_before: "createdBefore",
+                updated_after: "updatedAfter",
+                updated_at: "updatedAt",
+                updated_before: "updatedBefore"
+              ),
+              headers: {"accept" => "*/*"},
+              model: StringIO,
+              options: options
+            )
+          end
+
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Cms::Blogs::AuthorListPostsParams} for more details.
+          #
+          # @overload list_posts(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
+          #
+          # @param after [String] The paging cursor token of the last successfully read resource will be returned
+          #
+          # @param archived [Boolean] Whether to return only results that have been archived.
+          #
+          # @param created_after [Time]
+          #
+          # @param created_at [Time]
+          #
+          # @param created_before [Time]
+          #
+          # @param limit [Integer] The maximum number of results to display per page.
+          #
+          # @param property [String]
+          #
+          # @param sort [Array<String>]
+          #
+          # @param updated_after [Time]
+          #
+          # @param updated_at [Time]
+          #
+          # @param updated_before [Time]
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [StringIO]
+          #
+          # @see HubspotSDK::Models::Cms::Blogs::AuthorListPostsParams
+          def list_posts(params = {})
+            parsed, options = HubspotSDK::Cms::Blogs::AuthorListPostsParams.dump_request(params)
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            @client.request(
+              method: :get,
+              path: "cms/blogs/2026-03/posts/cursor",
+              query: query.transform_keys(
+                created_after: "createdAfter",
+                created_at: "createdAt",
+                created_before: "createdBefore",
+                updated_after: "updatedAfter",
+                updated_at: "updatedAt",
+                updated_before: "updatedBefore"
+              ),
+              headers: {"accept" => "*/*"},
+              model: StringIO,
+              options: options
+            )
+          end
+
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Cms::Blogs::AuthorListPostsByQueryParams} for more details.
+          #
+          # @overload list_posts_by_query(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
+          #
+          # @param after [String] The paging cursor token of the last successfully read resource will be returned
+          #
+          # @param archived [Boolean] Whether to return only results that have been archived.
+          #
+          # @param created_after [Time]
+          #
+          # @param created_at [Time]
+          #
+          # @param created_before [Time]
+          #
+          # @param limit [Integer] The maximum number of results to display per page.
+          #
+          # @param property [String]
+          #
+          # @param sort [Array<String>]
+          #
+          # @param updated_after [Time]
+          #
+          # @param updated_at [Time]
+          #
+          # @param updated_before [Time]
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [StringIO]
+          #
+          # @see HubspotSDK::Models::Cms::Blogs::AuthorListPostsByQueryParams
+          def list_posts_by_query(params = {})
+            parsed, options = HubspotSDK::Cms::Blogs::AuthorListPostsByQueryParams.dump_request(params)
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            @client.request(
+              method: :get,
+              path: "cms/blogs/2026-03/posts/cursor/query",
+              query: query.transform_keys(
+                created_after: "createdAfter",
+                created_at: "createdAt",
+                created_before: "createdBefore",
+                updated_after: "updatedAfter",
+                updated_at: "updatedAt",
+                updated_before: "updatedBefore"
+              ),
+              headers: {"accept" => "*/*"},
+              model: StringIO,
+              options: options
+            )
+          end
+
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Cms::Blogs::AuthorListTagsParams} for more details.
+          #
+          # @overload list_tags(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
+          #
+          # @param after [String] The paging cursor token of the last successfully read resource will be returned
+          #
+          # @param archived [Boolean] Whether to return only results that have been archived.
+          #
+          # @param created_after [Time]
+          #
+          # @param created_at [Time]
+          #
+          # @param created_before [Time]
+          #
+          # @param limit [Integer] The maximum number of results to display per page.
+          #
+          # @param property [String]
+          #
+          # @param sort [Array<String>]
+          #
+          # @param updated_after [Time]
+          #
+          # @param updated_at [Time]
+          #
+          # @param updated_before [Time]
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [StringIO]
+          #
+          # @see HubspotSDK::Models::Cms::Blogs::AuthorListTagsParams
+          def list_tags(params = {})
+            parsed, options = HubspotSDK::Cms::Blogs::AuthorListTagsParams.dump_request(params)
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            @client.request(
+              method: :get,
+              path: "cms/blogs/2026-03/tags/cursor",
+              query: query.transform_keys(
+                created_after: "createdAfter",
+                created_at: "createdAt",
+                created_before: "createdBefore",
+                updated_after: "updatedAfter",
+                updated_at: "updatedAt",
+                updated_before: "updatedBefore"
+              ),
+              headers: {"accept" => "*/*"},
+              model: StringIO,
+              options: options
+            )
+          end
+
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Cms::Blogs::AuthorListTagsByQueryParams} for more details.
+          #
+          # @overload list_tags_by_query(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
+          #
+          # @param after [String] The paging cursor token of the last successfully read resource will be returned
+          #
+          # @param archived [Boolean] Whether to return only results that have been archived.
+          #
+          # @param created_after [Time]
+          #
+          # @param created_at [Time]
+          #
+          # @param created_before [Time]
+          #
+          # @param limit [Integer] The maximum number of results to display per page.
+          #
+          # @param property [String]
+          #
+          # @param sort [Array<String>]
+          #
+          # @param updated_after [Time]
+          #
+          # @param updated_at [Time]
+          #
+          # @param updated_before [Time]
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [StringIO]
+          #
+          # @see HubspotSDK::Models::Cms::Blogs::AuthorListTagsByQueryParams
+          def list_tags_by_query(params = {})
+            parsed, options = HubspotSDK::Cms::Blogs::AuthorListTagsByQueryParams.dump_request(params)
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            @client.request(
+              method: :get,
+              path: "cms/blogs/2026-03/tags/cursor/query",
+              query: query.transform_keys(
+                created_after: "createdAfter",
+                created_at: "createdAt",
+                created_before: "createdBefore",
+                updated_after: "updatedAfter",
+                updated_at: "updatedAt",
+                updated_before: "updatedBefore"
+              ),
+              headers: {"accept" => "*/*"},
+              model: StringIO,
+              options: options
+            )
+          end
+
+          # Set a Blog Author as the primary language of a multi-language group.
+          #
           # @overload set_new_lang_primary(id:, request_options: {})
           #
           # @param id [String] ID of object to set as primary in multi-language group.
@@ -326,6 +604,8 @@ module HubspotSDK
 
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Cms::Blogs::AuthorUpdateLanguagesParams} for more details.
+          #
+          # Explicitly set new languages for each Blog Author in a multi-language group.
           #
           # @overload update_languages(languages:, primary_id:, request_options: {})
           #

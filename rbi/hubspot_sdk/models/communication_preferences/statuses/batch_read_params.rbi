@@ -16,12 +16,9 @@ module HubspotSDK
               )
             end
 
-          # The communication channel to filter by. This parameter is required and currently
-          # only supports 'EMAIL'.
           sig { returns(HubspotSDK::BatchInputString::Channel::OrSymbol) }
           attr_accessor :channel
 
-          # An optional identifier for the business unit. This is an integer value.
           sig { returns(T.nilable(Integer)) }
           attr_reader :business_unit_id
 
@@ -35,14 +32,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
-          def self.new(
-            # The communication channel to filter by. This parameter is required and currently
-            # only supports 'EMAIL'.
-            channel:,
-            # An optional identifier for the business unit. This is an integer value.
-            business_unit_id: nil,
-            request_options: {}
-          )
+          def self.new(channel:, business_unit_id: nil, request_options: {})
           end
 
           sig do
@@ -57,8 +47,6 @@ module HubspotSDK
           def to_hash
           end
 
-          # The communication channel to filter by. This parameter is required and currently
-          # only supports 'EMAIL'.
           module Channel
             extend HubspotSDK::Internal::Type::Enum
 

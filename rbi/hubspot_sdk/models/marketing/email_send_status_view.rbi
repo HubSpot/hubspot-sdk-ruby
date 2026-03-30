@@ -39,6 +39,8 @@ module HubspotSDK
         end
         attr_writer :event_id
 
+        # A human readable message describing the error along with remediation steps where
+        # appropriate
         sig { returns(T.nilable(String)) }
         attr_reader :message
 
@@ -99,6 +101,8 @@ module HubspotSDK
           # Time when the send was completed.
           completed_at: nil,
           event_id: nil,
+          # A human readable message describing the error along with remediation steps where
+          # appropriate
           message: nil,
           # Time when the send was requested.
           requested_at: nil,

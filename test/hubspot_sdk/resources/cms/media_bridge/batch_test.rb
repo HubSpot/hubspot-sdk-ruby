@@ -9,7 +9,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::BatchTest < HubspotSDK::Tes
     response =
       @hubspot.cms.media_bridge.batch.create(
         "objectType",
-        app_id: "appId",
+        app_id: 0,
         inputs: [
           {
             fieldType: :booleancheckbox,
@@ -22,7 +22,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::BatchTest < HubspotSDK::Tes
       )
 
     assert_pattern do
-      response => HubspotSDK::BatchResponseProperty
+      response => HubspotSDK::Cms::BatchResponseProperty
     end
 
     assert_pattern do
@@ -30,7 +30,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::BatchTest < HubspotSDK::Tes
         completed_at: Time,
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Property1]),
         started_at: Time,
-        status: HubspotSDK::BatchResponseProperty::Status,
+        status: HubspotSDK::Cms::BatchResponseProperty::Status,
         errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
@@ -42,8 +42,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::BatchTest < HubspotSDK::Tes
   def test_delete_required_params
     skip("Mock server tests are disabled")
 
-    response =
-      @hubspot.cms.media_bridge.batch.delete("objectType", app_id: "appId", inputs: [{name: "name"}])
+    response = @hubspot.cms.media_bridge.batch.delete("objectType", app_id: 0, inputs: [{name: "name"}])
 
     assert_pattern do
       response => nil
@@ -56,14 +55,14 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::BatchTest < HubspotSDK::Tes
     response =
       @hubspot.cms.media_bridge.batch.get(
         "objectType",
-        app_id: "appId",
+        app_id: 0,
         archived: true,
         data_sensitivity: :highly_sensitive,
         inputs: [{name: "name"}]
       )
 
     assert_pattern do
-      response => HubspotSDK::BatchResponseProperty
+      response => HubspotSDK::Cms::BatchResponseProperty
     end
 
     assert_pattern do
@@ -71,7 +70,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::BatchTest < HubspotSDK::Tes
         completed_at: Time,
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Property1]),
         started_at: Time,
-        status: HubspotSDK::BatchResponseProperty::Status,
+        status: HubspotSDK::Cms::BatchResponseProperty::Status,
         errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,

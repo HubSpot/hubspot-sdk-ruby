@@ -12,7 +12,8 @@ module HubspotSDK
             )
           end
 
-        # The date and time when the batch operation was completed, in ISO 8601 format.
+        # The date and time when the batch operation was completed, formatted as a
+        # date-time string.
         sig { returns(Time) }
         attr_accessor :completed_at
 
@@ -21,12 +22,13 @@ module HubspotSDK
         sig { returns(T::Array[HubspotSDK::Marketing::PublicCampaign]) }
         attr_accessor :results
 
-        # The date and time when the batch operation started, in ISO 8601 format.
+        # The date and time when the batch operation started, formatted as a date-time
+        # string.
         sig { returns(Time) }
         attr_accessor :started_at
 
-        # The current status of the batch operation. Valid values include 'PENDING',
-        # 'PROCESSING', 'CANCELED', and 'COMPLETE'.
+        # The current status of the batch operation, with possible values: CANCELED,
+        # COMPLETE, PENDING, PROCESSING.
         sig do
           returns(
             HubspotSDK::Marketing::BatchResponsePublicCampaign::Status::TaggedSymbol
@@ -42,7 +44,7 @@ module HubspotSDK
         sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
         attr_writer :errors
 
-        # A map of link names to associated URIs related to the batch operation.
+        # A map of related links associated with the batch operation.
         sig { returns(T.nilable(T::Hash[Symbol, String])) }
         attr_reader :links
 
@@ -56,7 +58,8 @@ module HubspotSDK
         sig { params(num_errors: Integer).void }
         attr_writer :num_errors
 
-        # The date and time when the batch operation was requested, in ISO 8601 format.
+        # The date and time when the batch operation was requested, formatted as a
+        # date-time string.
         sig { returns(T.nilable(Time)) }
         attr_reader :requested_at
 
@@ -77,24 +80,27 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The date and time when the batch operation was completed, in ISO 8601 format.
+          # The date and time when the batch operation was completed, formatted as a
+          # date-time string.
           completed_at:,
           # An array of results from the batch operation, each item representing a public
           # campaign.
           results:,
-          # The date and time when the batch operation started, in ISO 8601 format.
+          # The date and time when the batch operation started, formatted as a date-time
+          # string.
           started_at:,
-          # The current status of the batch operation. Valid values include 'PENDING',
-          # 'PROCESSING', 'CANCELED', and 'COMPLETE'.
+          # The current status of the batch operation, with possible values: CANCELED,
+          # COMPLETE, PENDING, PROCESSING.
           status:,
           # An array of errors that occurred during the batch operation, each item detailing
           # a specific error.
           errors: nil,
-          # A map of link names to associated URIs related to the batch operation.
+          # A map of related links associated with the batch operation.
           links: nil,
           # The number of errors that occurred during the batch operation.
           num_errors: nil,
-          # The date and time when the batch operation was requested, in ISO 8601 format.
+          # The date and time when the batch operation was requested, formatted as a
+          # date-time string.
           requested_at: nil
         )
         end
@@ -117,8 +123,8 @@ module HubspotSDK
         def to_hash
         end
 
-        # The current status of the batch operation. Valid values include 'PENDING',
-        # 'PROCESSING', 'CANCELED', and 'COMPLETE'.
+        # The current status of the batch operation, with possible values: CANCELED,
+        # COMPLETE, PENDING, PROCESSING.
         module Status
           extend HubspotSDK::Internal::Type::Enum
 

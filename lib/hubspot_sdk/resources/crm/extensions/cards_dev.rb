@@ -5,6 +5,9 @@ module HubspotSDK
     class Crm
       class Extensions
         class CardsDev
+          # Defines a new card that will become active on an account when this app is
+          # installed.
+          #
           # @overload create(app_id, actions:, display_:, fetch:, title:, request_options: {})
           #
           # @param app_id [Integer]
@@ -35,6 +38,8 @@ module HubspotSDK
 
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Extensions::CardsDevUpdateParams} for more details.
+          #
+          # Update a card definition with new details.
           #
           # @overload update(card_id, app_id:, actions: nil, display_: nil, fetch: nil, title: nil, request_options: {})
           #
@@ -70,6 +75,10 @@ module HubspotSDK
             )
           end
 
+          # Permanently deletes a card definition with the given ID. Once deleted, data
+          # fetch requests for this card will no longer be sent to your service. This can't
+          # be undone.
+          #
           # @overload delete(card_id, app_id:, request_options: {})
           #
           # @param card_id [String]
@@ -93,6 +102,8 @@ module HubspotSDK
             )
           end
 
+          # Returns a list of cards for a given app.
+          #
           # @overload get(app_id, request_options: {})
           #
           # @param app_id [Integer]
@@ -110,6 +121,8 @@ module HubspotSDK
             )
           end
 
+          # Returns the definition for a card with the given ID.
+          #
           # @overload get_by_id(card_id, app_id:, request_options: {})
           #
           # @param card_id [String]
@@ -133,6 +146,10 @@ module HubspotSDK
             )
           end
 
+          # Returns an example card detail response. This is the payload with displayed
+          # details for a card that will be shown to a user. An app should send this in
+          # response to the data fetch request.
+          #
           # @overload get_sample_response(request_options: {})
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]

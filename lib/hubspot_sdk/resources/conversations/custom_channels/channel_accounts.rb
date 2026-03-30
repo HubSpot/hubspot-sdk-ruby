@@ -5,6 +5,9 @@ module HubspotSDK
     class Conversations
       class CustomChannels
         class ChannelAccounts
+          # Create a new account for a channel. Multiple accounts can communicate over a
+          # single channel using different delivery identifiers.
+          #
           # @overload create(channel_id, authorized:, inbox_id:, name:, delivery_identifier: nil, request_options: {})
           #
           # @param channel_id [Integer]
@@ -29,6 +32,9 @@ module HubspotSDK
             )
           end
 
+          # This API is used to update the name of the channel account and it's isAuthorized
+          # status. Setting to isAuthorized flag to False disables the channel account.
+          #
           # @overload update(channel_account_id, channel_id:, authorized: nil, name: nil, request_options: {})
           #
           # @param channel_account_id [Integer] Path param
@@ -67,6 +73,8 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams}
           # for more details.
+          #
+          # Retrieve a list of accounts for a custom channel.
           #
           # @overload list(channel_id, after: nil, archived: nil, default_page_length: nil, delivery_identifier_type: nil, delivery_identifier_value: nil, limit: nil, sort: nil, request_options: {})
           #
@@ -109,6 +117,10 @@ module HubspotSDK
             )
           end
 
+          # Update a channel account staging token's account name and delivery identifier.
+          # This information will be applied to the channel account created from this
+          # staging token. This is used for public apps.
+          #
           # @overload update_staging_token(account_token, channel_id:, account_name:, delivery_identifier:, request_options: {})
           #
           # @param account_token [String] Path param

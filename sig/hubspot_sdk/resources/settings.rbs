@@ -5,6 +5,8 @@ module HubspotSDK
 
       attr_reader tax_rates: HubspotSDK::Resources::Settings::TaxRates
 
+      attr_reader users: HubspotSDK::Resources::Settings::Users
+
       def initialize: (client: HubspotSDK::Client) -> void
     end
   end

@@ -1,0 +1,47 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type feature_flag_list_portals_params =
+        {
+          app_id: Integer,
+          flag_name: String,
+          limit: Integer,
+          start_portal_id: Integer
+        }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class FeatureFlagListPortalsParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor app_id: Integer
+
+        attr_accessor flag_name: String
+
+        attr_reader limit: Integer?
+
+        def limit=: (Integer) -> Integer
+
+        attr_reader start_portal_id: Integer?
+
+        def start_portal_id=: (Integer) -> Integer
+
+        def initialize: (
+          app_id: Integer,
+          flag_name: String,
+          ?limit: Integer,
+          ?start_portal_id: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          app_id: Integer,
+          flag_name: String,
+          limit: Integer,
+          start_portal_id: Integer,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

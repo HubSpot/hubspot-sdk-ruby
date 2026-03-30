@@ -1,0 +1,51 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type random_access_collection_response_with_total_hub_db_table_row_v3 =
+        {
+          results: ::Array[top],
+          total: Integer,
+          type: HubspotSDK::Models::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3::type_,
+          paging: HubspotSDK::Cms::BoundedPaging
+        }
+
+      class RandomAccessCollectionResponseWithTotalHubDBTableRowV3 < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[top]
+
+        attr_accessor total: Integer
+
+        attr_accessor type: HubspotSDK::Models::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3::type_
+
+        attr_reader paging: HubspotSDK::Cms::BoundedPaging?
+
+        def paging=: (
+          HubspotSDK::Cms::BoundedPaging
+        ) -> HubspotSDK::Cms::BoundedPaging
+
+        def initialize: (
+          results: ::Array[top],
+          total: Integer,
+          type: HubspotSDK::Models::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3::type_,
+          ?paging: HubspotSDK::Cms::BoundedPaging
+        ) -> void
+
+        def to_hash: -> {
+          results: ::Array[top],
+          total: Integer,
+          type: HubspotSDK::Models::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3::type_,
+          paging: HubspotSDK::Cms::BoundedPaging
+        }
+
+        type type_ = :RANDOM_ACCESS
+
+        module Type
+          extend HubspotSDK::Internal::Type::Enum
+
+          RANDOM_ACCESS: :RANDOM_ACCESS
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3::type_]
+        end
+      end
+    end
+  end
+end

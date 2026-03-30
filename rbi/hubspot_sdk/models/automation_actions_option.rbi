@@ -19,6 +19,7 @@ module HubspotSDK
       sig { returns(Integer) }
       attr_accessor :display_order
 
+      # A numerical value associated with the option.
       sig { returns(Float) }
       attr_accessor :double_data
 
@@ -55,6 +56,7 @@ module HubspotSDK
         description:,
         # The position of the item relative to others in the list.
         display_order:,
+        # A numerical value associated with the option.
         double_data:,
         # Whether the option is displayed in HubSpot's UI.
         hidden:,

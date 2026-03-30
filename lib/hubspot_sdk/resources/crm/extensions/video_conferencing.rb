@@ -5,6 +5,8 @@ module HubspotSDK
     class Crm
       class Extensions
         class VideoConferencing
+          # Create or update video conference extension settings for your app
+          #
           # @overload update(app_id, create_meeting_url:, delete_meeting_url: nil, fetch_accounts_uri: nil, update_meeting_url: nil, user_verify_url: nil, request_options: {})
           #
           # @param app_id [Integer]
@@ -29,6 +31,8 @@ module HubspotSDK
             )
           end
 
+          # Delete video conference extension settings for your app
+          #
           # @overload delete(app_id, request_options: {})
           #
           # @param app_id [Integer]
@@ -46,6 +50,8 @@ module HubspotSDK
             )
           end
 
+          # Fetch video conference extension settings for your app
+          #
           # @overload get(app_id, request_options: {})
           #
           # @param app_id [Integer]

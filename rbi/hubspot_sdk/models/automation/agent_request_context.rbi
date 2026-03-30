@@ -12,6 +12,7 @@ module HubspotSDK
             )
           end
 
+        # The unique identifier for the agent making the request.
         sig { returns(Integer) }
         attr_accessor :agent_id
 
@@ -26,11 +27,13 @@ module HubspotSDK
         end
         attr_writer :chirp_ai_context_object
 
+        # Indicates the source of the request, with the default value being 'AGENTS'.
         sig do
           returns(HubspotSDK::Automation::AgentRequestContext::Source::OrSymbol)
         end
         attr_accessor :source
 
+        # The unique identifier for the trajectory associated with the agent request.
         sig { returns(T.nilable(String)) }
         attr_reader :trajectory_id
 
@@ -48,9 +51,12 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # The unique identifier for the agent making the request.
           agent_id:,
           chirp_ai_context_object:,
+          # Indicates the source of the request, with the default value being 'AGENTS'.
           source:,
+          # The unique identifier for the trajectory associated with the agent request.
           trajectory_id: nil
         )
         end
@@ -70,6 +76,7 @@ module HubspotSDK
         def to_hash
         end
 
+        # Indicates the source of the request, with the default value being 'AGENTS'.
         module Source
           extend HubspotSDK::Internal::Type::Enum
 

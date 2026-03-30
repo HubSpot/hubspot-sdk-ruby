@@ -1,0 +1,142 @@
+module HubspotSDK
+  module Resources
+    class Cms
+      class Pages
+        attr_reader a_b_tests: HubspotSDK::Resources::Cms::Pages::ABTests
+
+        attr_reader batch: HubspotSDK::Resources::Cms::Pages::Batch
+
+        attr_reader folders: HubspotSDK::Resources::Cms::Pages::Folders
+
+        attr_reader landing_pages: HubspotSDK::Resources::Cms::Pages::LandingPages
+
+        attr_reader multi_language: HubspotSDK::Resources::Cms::Pages::MultiLanguage
+
+        attr_reader website_pages: HubspotSDK::Resources::Cms::Pages::WebsitePages
+
+        def get_revision: (
+          String revision_id,
+          object_id_: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Cms::PageVersion
+
+        def list_landing_page_folders: (
+          ?after: String,
+          ?archived: bool,
+          ?created_after: Time,
+          ?created_at: Time,
+          ?created_before: Time,
+          ?limit: Integer,
+          ?property: String,
+          ?sort: ::Array[String],
+          ?updated_after: Time,
+          ?updated_at: Time,
+          ?updated_before: Time,
+          ?request_options: HubspotSDK::request_opts
+        ) -> top
+
+        def list_landing_pages: (
+          ?after: String,
+          ?archived: bool,
+          ?created_after: Time,
+          ?created_at: Time,
+          ?created_before: Time,
+          ?limit: Integer,
+          ?property: String,
+          ?sort: ::Array[String],
+          ?updated_after: Time,
+          ?updated_at: Time,
+          ?updated_before: Time,
+          ?request_options: HubspotSDK::request_opts
+        ) -> top
+
+        def list_revisions: (
+          String object_id_,
+          ?after: String,
+          ?before: String,
+          ?limit: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::PageVersion]
+
+        def list_site_pages: (
+          ?after: String,
+          ?archived: bool,
+          ?created_after: Time,
+          ?created_at: Time,
+          ?created_before: Time,
+          ?limit: Integer,
+          ?property: String,
+          ?sort: ::Array[String],
+          ?updated_after: Time,
+          ?updated_at: Time,
+          ?updated_before: Time,
+          ?request_options: HubspotSDK::request_opts
+        ) -> top
+
+        def query_landing_page_folders: (
+          ?after: String,
+          ?archived: bool,
+          ?created_after: Time,
+          ?created_at: Time,
+          ?created_before: Time,
+          ?limit: Integer,
+          ?property: String,
+          ?sort: ::Array[String],
+          ?updated_after: Time,
+          ?updated_at: Time,
+          ?updated_before: Time,
+          ?request_options: HubspotSDK::request_opts
+        ) -> top
+
+        def query_landing_pages: (
+          ?after: String,
+          ?archived: bool,
+          ?created_after: Time,
+          ?created_at: Time,
+          ?created_before: Time,
+          ?limit: Integer,
+          ?property: String,
+          ?sort: ::Array[String],
+          ?updated_after: Time,
+          ?updated_at: Time,
+          ?updated_before: Time,
+          ?request_options: HubspotSDK::request_opts
+        ) -> top
+
+        def query_site_pages: (
+          ?after: String,
+          ?archived: bool,
+          ?created_after: Time,
+          ?created_at: Time,
+          ?created_before: Time,
+          ?limit: Integer,
+          ?property: String,
+          ?sort: ::Array[String],
+          ?updated_after: Time,
+          ?updated_at: Time,
+          ?updated_before: Time,
+          ?request_options: HubspotSDK::request_opts
+        ) -> top
+
+        def reset_draft: (
+          String object_id_,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def restore_revision: (
+          String revision_id,
+          object_id_: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Cms::Page
+
+        def restore_revision_to_draft: (
+          Integer revision_id,
+          object_id_: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Cms::Page
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

@@ -6,6 +6,7 @@ module HubspotSDK
       class Blogs
         class Posts
           class Batch
+            # Create a batch of blog posts, specifying their content in the request body.
             sig do
               params(
                 inputs: T::Array[HubspotSDK::Cms::Blogs::BlogPost::OrHash],
@@ -19,6 +20,7 @@ module HubspotSDK
             )
             end
 
+            # Update a batch of blog posts.
             sig do
               params(
                 inputs: T::Array[T.anything],
@@ -35,6 +37,9 @@ module HubspotSDK
             )
             end
 
+            # Delete a blog post by ID. Note: This is not the same as the in-app `archive`
+            # function. To perform a dashboard `archive` send an normal update with the
+            # `archivedInDashboard` field set to `true`.
             sig do
               params(
                 inputs: T::Array[String],
@@ -48,6 +53,7 @@ module HubspotSDK
             )
             end
 
+            # Retrieve a batch of blog posts by ID. identified in the request body.
             sig do
               params(
                 inputs: T::Array[String],

@@ -5,22 +5,15 @@ module HubspotSDK
     class CommunicationPreferences
       class Statuses
         class Batch
-          # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CommunicationPreferences::Statuses::BatchGetUnsubscribeAllStatusesParams}
-          # for more details.
-          #
-          # Retrieve the unsubscribe-all status for a batch of subscribers in a specified
-          # channel. This endpoint is useful for checking the current unsubscribe-all status
-          # of multiple subscribers at once, helping to manage and audit communication
-          # preferences efficiently.
+          # Checks whether a set of contacts have opted out of all communications.
           #
           # @overload get_unsubscribe_all_statuses(channel:, inputs:, business_unit_id: nil, request_options: {})
           #
-          # @param channel [Symbol, HubspotSDK::Models::BatchInputString::Channel] Query param: The communication channel to check the unsubscribe-all status for.
+          # @param channel [Symbol, HubspotSDK::Models::BatchInputString::Channel] Query param
           #
           # @param inputs [Array<String>] Body param: Strings to input.
           #
-          # @param business_unit_id [Integer] Query param: The ID of the business unit for which the statuses are being retrie
+          # @param business_unit_id [Integer] Query param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -42,22 +35,15 @@ module HubspotSDK
             )
           end
 
-          # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CommunicationPreferences::Statuses::BatchReadParams} for
-          # more details.
-          #
-          # Retrieve the subscription statuses for multiple subscribers in a batch
-          # operation. This endpoint allows you to check the communication preferences of
-          # several subscribers at once, which is useful for managing large lists of
-          # contacts efficiently.
+          # Batch retrieve subscription statuses for a set of contacts.
           #
           # @overload read(channel:, inputs:, business_unit_id: nil, request_options: {})
           #
-          # @param channel [Symbol, HubspotSDK::Models::BatchInputString::Channel] Query param: The communication channel to filter by. This parameter is required
+          # @param channel [Symbol, HubspotSDK::Models::BatchInputString::Channel] Query param
           #
           # @param inputs [Array<String>] Body param: Strings to input.
           #
-          # @param business_unit_id [Integer] Query param: An optional identifier for the business unit. This is an integer va
+          # @param business_unit_id [Integer] Query param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -78,21 +64,17 @@ module HubspotSDK
             )
           end
 
-          # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::CommunicationPreferences::Statuses::BatchUnsubscribeAllParams}
-          # for more details.
-          #
           # Unsubscribe a set of contacts from all email subscriptions.
           #
           # @overload unsubscribe_all(channel:, inputs:, business_unit_id: nil, verbose: nil, request_options: {})
           #
-          # @param channel [Symbol, HubspotSDK::Models::BatchInputString::Channel] Query param: A required string specifying the communication channel. Currently,
+          # @param channel [Symbol, HubspotSDK::Models::BatchInputString::Channel] Query param
           #
           # @param inputs [Array<String>] Body param: Strings to input.
           #
-          # @param business_unit_id [Integer] Query param: The ID of the business unit to which the operation applies. It is a
+          # @param business_unit_id [Integer] Query param
           #
-          # @param verbose [Boolean] Query param: A boolean indicating whether to include detailed information in the
+          # @param verbose [Boolean] Query param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

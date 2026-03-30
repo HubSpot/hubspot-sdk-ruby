@@ -15,12 +15,12 @@ class HubspotSDK::Test::Resources::Crm::ObjectSchemas::BatchTest < HubspotSDK::T
       )
 
     assert_pattern do
-      response => HubspotSDK::CollectionResponseObjectSchemaNoPaging
+      response => HubspotSDK::Crm::CollectionResponseObjectSchemaNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::ObjectSchema])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ObjectSchema])
       }
     end
   end

@@ -1,0 +1,29 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Pages
+        type batch_update_landing_pages_params =
+          { archived: bool } & HubspotSDK::Internal::Type::request_parameters
+
+        class BatchUpdateLandingPagesParams < HubspotSDK::Models::Cms::BatchInputJsonNode
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def archived: -> bool?
+
+          def archived=: (bool _) -> bool
+
+          def initialize: (
+            ?archived: bool,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            archived: bool,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

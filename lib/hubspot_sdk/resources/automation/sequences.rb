@@ -14,13 +14,13 @@ module HubspotSDK
         #
         # @overload list(user_id:, after: nil, limit: nil, name: nil, request_options: {})
         #
-        # @param user_id [String] The unique identifier of the user whose sequences are to be retrieved. This para
+        # @param user_id [String]
         #
-        # @param after [String] The paging cursor token of the last successfully read resource. Use this for pag
+        # @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
         # @param limit [Integer] The maximum number of results to display per page.
         #
-        # @param name [String] The name of the sequence to filter results by.
+        # @param name [String]
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -44,15 +44,12 @@ module HubspotSDK
         # {HubspotSDK::Models::Automation::SequenceCreateEnrollmentParams} for more
         # details.
         #
-        # Enroll a contact into a sequence using the specified sequence ID and sender
-        # email. This endpoint requires the user ID to be provided as a query parameter
-        # and a valid JSON body with the necessary enrollment details. It is used to
-        # automate the process of enrolling contacts into predefined sequences for
-        # streamlined communication.
+        # Enroll a contact into a sequence using the specified user ID and sequence
+        # details.
         #
         # @overload create_enrollment(user_id:, contact_id:, sender_email:, sequence_id:, sender_alias_address: nil, request_options: {})
         #
-        # @param user_id [String] Query param: The unique identifier of the user performing the enrollment. This p
+        # @param user_id [String] Query param
         #
         # @param contact_id [String] Body param: The unique identifier of the contact to be enrolled in the sequence.
         #
@@ -81,20 +78,12 @@ module HubspotSDK
           )
         end
 
-        # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Automation::SequenceGetParams} for more details.
-        #
-        # Retrieve details of a specific sequence in your HubSpot account using the
-        # sequence ID. This endpoint requires the user ID to be specified and provides
-        # comprehensive information about the sequence, including its steps and
-        # dependencies.
+        # Retrieve details of a specific sequence by its ID.
         #
         # @overload get(sequence_id, user_id:, request_options: {})
         #
-        # @param sequence_id [String] The unique identifier of the sequence to retrieve.
-        #
-        # @param user_id [String] The unique identifier of the user requesting the sequence details. This paramete
-        #
+        # @param sequence_id [String]
+        # @param user_id [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Automation::PublicSequenceResponse]
@@ -112,19 +101,11 @@ module HubspotSDK
           )
         end
 
-        # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Automation::SequenceGetEnrollmentByContactIDParams} for
-        # more details.
-        #
-        # Retrieve the sequence enrollment details for a specific contact in your HubSpot
-        # account. This endpoint provides information about the sequence a contact is
-        # enrolled in, including enrollment timestamps and the sequence's name. It is
-        # useful for tracking the progress and status of a contact within a sequence.
+        # Get the enrollment status of a contact in sequences by their contact ID.
         #
         # @overload get_enrollment_by_contact_id(contact_id, request_options: {})
         #
-        # @param contact_id [String] The unique identifier of the contact whose sequence enrollment details are being
-        #
+        # @param contact_id [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Automation::PublicSequenceEnrollmentResponse]

@@ -28,7 +28,6 @@ module HubspotSDK
           optional :after, String
 
           # @!attribute end_date
-          #   The end date for filtering assets, in YYYY-MM-DD format.
           #
           #   @return [String, nil]
           optional :end_date, String
@@ -40,7 +39,6 @@ module HubspotSDK
           optional :limit, String
 
           # @!attribute start_date
-          #   The start date for filtering assets, in YYYY-MM-DD format.
           #
           #   @return [String, nil]
           optional :start_date, String
@@ -55,11 +53,11 @@ module HubspotSDK
           #
           #   @param after [String] The paging cursor token of the last successfully read resource will be returned
           #
-          #   @param end_date [String] The end date for filtering assets, in YYYY-MM-DD format.
+          #   @param end_date [String]
           #
           #   @param limit [String] The maximum number of results to display per page.
           #
-          #   @param start_date [String] The start date for filtering assets, in YYYY-MM-DD format.
+          #   @param start_date [String]
           #
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end

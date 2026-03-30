@@ -8,12 +8,20 @@ module HubspotSDK
           # @return [HubspotSDK::Resources::Cms::Blogs::Posts::Batch]
           attr_reader :batch
 
+          # @return [HubspotSDK::Resources::Cms::Blogs::Posts::MultiLanguage]
+          attr_reader :multi_language
+
+          # @return [HubspotSDK::Resources::Cms::Blogs::Posts::Revisions]
+          attr_reader :revisions
+
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Cms::Blogs::PostCreateParams} for more details.
           #
+          # Create a new blog post, specifying its content in the request body.
+          #
           # @overload create(id:, ab_status:, ab_test_id:, archived_at:, archived_in_dashboard:, attached_stylesheets:, author_name:, blog_author_id:, campaign:, category_id:, content_group_id:, content_type_category:, created:, created_by_id:, currently_published:, current_state:, domain:, dynamic_page_data_source_id:, dynamic_page_data_source_type:, dynamic_page_hub_db_table_id:, enable_domain_stylesheets:, enable_google_amp_output_override:, enable_layout_stylesheets:, featured_image:, featured_image_alt_text:, folder_id:, footer_html:, head_html:, html_title:, include_default_custom_css:, language:, layout_sections:, link_rel_canonical_url:, mab_experiment_id:, meta_description:, name:, page_expiry_date:, page_expiry_enabled:, page_expiry_redirect_id:, page_expiry_redirect_url:, password:, post_body:, post_summary:, public_access_rules:, public_access_rules_enabled:, publish_date:, publish_immediately:, rss_body:, rss_summary:, slug:, state:, tag_ids:, theme_settings_values:, translated_from_id:, translations:, updated:, updated_by_id:, url:, use_featured_image:, widget_containers:, widgets:, request_options: {})
           #
-          # @param id [String] The unique ID of the blog post.
+          # @param id [String] The unique ID of the Blog Post.
           #
           # @param ab_status [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::AbStatus] The status of the AB test associated with this blog post, if applicable
           #
@@ -25,33 +33,33 @@ module HubspotSDK
           #
           # @param attached_stylesheets [Array<Hash{Symbol=>Object}>] List of stylesheets to attach to this blog post. These stylesheets are attached
           #
-          # @param author_name [String] The name of the user who last published the blog post. For posts that haven't be
+          # @param author_name [String] The name of the user that updated this Blog Post.
           #
-          # @param blog_author_id [String] The ID of the blog author associated with this post.
+          # @param blog_author_id [String] The ID of the Blog Author associated with this Blog Post.
           #
-          # @param campaign [String] The GUID of the marketing campaign the post is associated with.
+          # @param campaign [String] The GUID of the marketing campaign this Blog Post is a part of.
           #
-          # @param category_id [Integer] ID of the object type.
+          # @param category_id [Integer] ID of the type of object this is. Should always .
           #
-          # @param content_group_id [String] The ID of the post's parent blog.
+          # @param content_group_id [String] The ID of the parent Blog this Blog Post is associated with.
           #
           # @param content_type_category [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::ContentTypeCategory] An ENUM descibing the type of this object. Should always be BLOG_POST.
           #
           # @param created [Time] The timestamp (ISO8601 format) when this Blog Post was created.
           #
-          # @param created_by_id [String] The ID of the user that created the post.
+          # @param created_by_id [String] The ID of the user that created this Blog Post.
           #
           # @param currently_published [Boolean] Whether the post is published (true or false)
           #
           # @param current_state [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::CurrentState] A generated ENUM descibing the current state of this Blog Post. Should always ma
           #
-          # @param domain [String] The domain that the post lives on. If null, the post will default to the domain
+          # @param domain [String] The domain this Blog Post will resolve to. If null, the Blog Post will default t
           #
           # @param dynamic_page_data_source_id [String] The identifier for the data source used by the dynamic page.
           #
           # @param dynamic_page_data_source_type [Integer] The type of data source used by the dynamic page.
           #
-          # @param dynamic_page_hub_db_table_id [String] For dynamic HubDB pages,
+          # @param dynamic_page_hub_db_table_id [String] The ID of the HubDB table this Blog Post references, if applicable
           #
           # @param enable_domain_stylesheets [Boolean] Boolean to determine whether or not the styles from the template should be appli
           #
@@ -69,13 +77,13 @@ module HubspotSDK
           #
           # @param head_html [String] Custom HTML for embed codes, javascript, etc. that goes in the <head> tag of the
           #
-          # @param html_title [String] The HTML title of the post.
+          # @param html_title [String] The html title of this Blog Post.
           #
           # @param include_default_custom_css [Boolean] Boolean to determine whether or not the Primary CSS Files should be applied.
           #
-          # @param language [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::Language] The explicitly defined ISO 639 language code of the post. If null, the post will
+          # @param language [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::Language] The explicitly defined ISO 639 language code of the Blog Post. If null, the Blog
           #
-          # @param layout_sections [Hash{Symbol=>HubspotSDK::Models::Cms::Blogs::LayoutSection}] A structure detailing the layout sections of the blog post.
+          # @param layout_sections [Hash{Symbol=>HubspotSDK::Models::Cms::LayoutSection}] A structure detailing the layout sections of the blog post.
           #
           # @param link_rel_canonical_url [String] Optional override to set the URL to be used in the rel=canonical link tag on the
           #
@@ -83,7 +91,7 @@ module HubspotSDK
           #
           # @param meta_description [String] A description that goes in <meta> tag on the page.
           #
-          # @param name [String] The internal name of the post.
+          # @param name [String] The internal name of the Blog Post.
           #
           # @param page_expiry_date [Integer] The date at which this blog post should expire and begin redirecting to another
           #
@@ -111,25 +119,25 @@ module HubspotSDK
           #
           # @param rss_summary [String] The contents of the RSS summary for this Blog Post.
           #
-          # @param slug [String] The URL slug of the blog post. This field is appended to the domain to construct
+          # @param slug [String] The path of the this blog post. This field is appended to the domain to construc
           #
-          # @param state [String] An enumeration describing the current publish state of the post.
+          # @param state [String] An ENUM descibing the current state of this Blog Post.
           #
-          # @param tag_ids [Array<Integer>] The IDs of the tags associated with this post.
+          # @param tag_ids [Array<Integer>] List of IDs for the tags associated with this Blog Post.
           #
           # @param theme_settings_values [Hash{Symbol=>Object}] A collection of settings specific to the theme applied to the blog post.
           #
-          # @param translated_from_id [String] ID of the primary blog post that this post was translated from.
+          # @param translated_from_id [String] ID of the primary blog post this object was translated from.
           #
-          # @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::Blogs::ContentLanguageVariation}] A map of translations for the blog post, each associated with a specific languag
+          # @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::ContentLanguageVariation}] A map of translations for the blog post, each associated with a specific languag
           #
           # @param updated [Time] The timestamp (ISO8601 format) when this Blog Post was updated.
           #
-          # @param updated_by_id [String] The ID of the user that updated the post.
+          # @param updated_by_id [String] The ID of the user that updated this Blog Post.
           #
           # @param url [String] A generated field representing the URL of this blog post.
           #
-          # @param use_featured_image [Boolean] Boolean to determine if this post should use a featured image.
+          # @param use_featured_image [Boolean] Boolean to determine if this post should use a featuredImage.
           #
           # @param widget_containers [Hash{Symbol=>Object}] A data structure containing the data for all the modules inside the containers f
           #
@@ -155,11 +163,14 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Cms::Blogs::PostUpdateParams} for more details.
           #
+          # Partially updates a single blog post by ID. You only need to specify the values
+          # that you want to update.
+          #
           # @overload update(object_id_, id:, ab_status:, ab_test_id:, archived_at:, archived_in_dashboard:, attached_stylesheets:, author_name:, blog_author_id:, campaign:, category_id:, content_group_id:, content_type_category:, created:, created_by_id:, currently_published:, current_state:, domain:, dynamic_page_data_source_id:, dynamic_page_data_source_type:, dynamic_page_hub_db_table_id:, enable_domain_stylesheets:, enable_google_amp_output_override:, enable_layout_stylesheets:, featured_image:, featured_image_alt_text:, folder_id:, footer_html:, head_html:, html_title:, include_default_custom_css:, language:, layout_sections:, link_rel_canonical_url:, mab_experiment_id:, meta_description:, name:, page_expiry_date:, page_expiry_enabled:, page_expiry_redirect_id:, page_expiry_redirect_url:, password:, post_body:, post_summary:, public_access_rules:, public_access_rules_enabled:, publish_date:, publish_immediately:, rss_body:, rss_summary:, slug:, state:, tag_ids:, theme_settings_values:, translated_from_id:, translations:, updated:, updated_by_id:, url:, use_featured_image:, widget_containers:, widgets:, archived: nil, request_options: {})
           #
           # @param object_id_ [String] Path param
           #
-          # @param id [String] Body param: The unique ID of the blog post.
+          # @param id [String] Body param: The unique ID of the Blog Post.
           #
           # @param ab_status [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::AbStatus] Body param: The status of the AB test associated with this blog post, if applica
           #
@@ -171,33 +182,33 @@ module HubspotSDK
           #
           # @param attached_stylesheets [Array<Hash{Symbol=>Object}>] Body param: List of stylesheets to attach to this blog post. These stylesheets a
           #
-          # @param author_name [String] Body param: The name of the user who last published the blog post. For posts tha
+          # @param author_name [String] Body param: The name of the user that updated this Blog Post.
           #
-          # @param blog_author_id [String] Body param: The ID of the blog author associated with this post.
+          # @param blog_author_id [String] Body param: The ID of the Blog Author associated with this Blog Post.
           #
-          # @param campaign [String] Body param: The GUID of the marketing campaign the post is associated with.
+          # @param campaign [String] Body param: The GUID of the marketing campaign this Blog Post is a part of.
           #
-          # @param category_id [Integer] Body param: ID of the object type.
+          # @param category_id [Integer] Body param: ID of the type of object this is. Should always .
           #
-          # @param content_group_id [String] Body param: The ID of the post's parent blog.
+          # @param content_group_id [String] Body param: The ID of the parent Blog this Blog Post is associated with.
           #
           # @param content_type_category [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::ContentTypeCategory] Body param: An ENUM descibing the type of this object. Should always be BLOG_POS
           #
           # @param created [Time] Body param: The timestamp (ISO8601 format) when this Blog Post was created.
           #
-          # @param created_by_id [String] Body param: The ID of the user that created the post.
+          # @param created_by_id [String] Body param: The ID of the user that created this Blog Post.
           #
           # @param currently_published [Boolean] Body param: Whether the post is published (true or false)
           #
           # @param current_state [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::CurrentState] Body param: A generated ENUM descibing the current state of this Blog Post. Shou
           #
-          # @param domain [String] Body param: The domain that the post lives on. If null, the post will default to
+          # @param domain [String] Body param: The domain this Blog Post will resolve to. If null, the Blog Post wi
           #
           # @param dynamic_page_data_source_id [String] Body param: The identifier for the data source used by the dynamic page.
           #
           # @param dynamic_page_data_source_type [Integer] Body param: The type of data source used by the dynamic page.
           #
-          # @param dynamic_page_hub_db_table_id [String] Body param: For dynamic HubDB pages,
+          # @param dynamic_page_hub_db_table_id [String] Body param: The ID of the HubDB table this Blog Post references, if applicable
           #
           # @param enable_domain_stylesheets [Boolean] Body param: Boolean to determine whether or not the styles from the template sho
           #
@@ -215,13 +226,13 @@ module HubspotSDK
           #
           # @param head_html [String] Body param: Custom HTML for embed codes, javascript, etc. that goes in the <head
           #
-          # @param html_title [String] Body param: The HTML title of the post.
+          # @param html_title [String] Body param: The html title of this Blog Post.
           #
           # @param include_default_custom_css [Boolean] Body param: Boolean to determine whether or not the Primary CSS Files should be
           #
-          # @param language [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::Language] Body param: The explicitly defined ISO 639 language code of the post. If null, t
+          # @param language [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::Language] Body param: The explicitly defined ISO 639 language code of the Blog Post. If nu
           #
-          # @param layout_sections [Hash{Symbol=>HubspotSDK::Models::Cms::Blogs::LayoutSection}] Body param: A structure detailing the layout sections of the blog post.
+          # @param layout_sections [Hash{Symbol=>HubspotSDK::Models::Cms::LayoutSection}] Body param: A structure detailing the layout sections of the blog post.
           #
           # @param link_rel_canonical_url [String] Body param: Optional override to set the URL to be used in the rel=canonical lin
           #
@@ -229,7 +240,7 @@ module HubspotSDK
           #
           # @param meta_description [String] Body param: A description that goes in <meta> tag on the page.
           #
-          # @param name [String] Body param: The internal name of the post.
+          # @param name [String] Body param: The internal name of the Blog Post.
           #
           # @param page_expiry_date [Integer] Body param: The date at which this blog post should expire and begin redirecting
           #
@@ -257,25 +268,25 @@ module HubspotSDK
           #
           # @param rss_summary [String] Body param: The contents of the RSS summary for this Blog Post.
           #
-          # @param slug [String] Body param: The URL slug of the blog post. This field is appended to the domain
+          # @param slug [String] Body param: The path of the this blog post. This field is appended to the domain
           #
-          # @param state [String] Body param: An enumeration describing the current publish state of the post.
+          # @param state [String] Body param: An ENUM descibing the current state of this Blog Post.
           #
-          # @param tag_ids [Array<Integer>] Body param: The IDs of the tags associated with this post.
+          # @param tag_ids [Array<Integer>] Body param: List of IDs for the tags associated with this Blog Post.
           #
           # @param theme_settings_values [Hash{Symbol=>Object}] Body param: A collection of settings specific to the theme applied to the blog p
           #
-          # @param translated_from_id [String] Body param: ID of the primary blog post that this post was translated from.
+          # @param translated_from_id [String] Body param: ID of the primary blog post this object was translated from.
           #
-          # @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::Blogs::ContentLanguageVariation}] Body param: A map of translations for the blog post, each associated with a spec
+          # @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::ContentLanguageVariation}] Body param: A map of translations for the blog post, each associated with a spec
           #
           # @param updated [Time] Body param: The timestamp (ISO8601 format) when this Blog Post was updated.
           #
-          # @param updated_by_id [String] Body param: The ID of the user that updated the post.
+          # @param updated_by_id [String] Body param: The ID of the user that updated this Blog Post.
           #
           # @param url [String] Body param: A generated field representing the URL of this blog post.
           #
-          # @param use_featured_image [Boolean] Body param: Boolean to determine if this post should use a featured image.
+          # @param use_featured_image [Boolean] Body param: Boolean to determine if this post should use a featuredImage.
           #
           # @param widget_containers [Hash{Symbol=>Object}] Body param: A data structure containing the data for all the modules inside the
           #
@@ -340,7 +351,7 @@ module HubspotSDK
             query = HubspotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
-              path: "cms/blogs/2026-03/posts",
+              path: "cms/blogs/2026-03/posts/cursor",
               query: query.transform_keys(
                 created_after: "createdAfter",
                 created_at: "createdAt",
@@ -355,6 +366,8 @@ module HubspotSDK
             )
           end
 
+          # Delete a blog post by ID.
+          #
           # @overload delete(object_id_, archived: nil, request_options: {})
           #
           # @param object_id_ [String]
@@ -378,33 +391,8 @@ module HubspotSDK
             )
           end
 
-          # @overload attach_to_lang_group(id:, language:, primary_id:, primary_language: nil, request_options: {})
+          # Clone a blog post, making a copy of it in a new blog post.
           #
-          # @param id [String] ID of the object to add to a multi-language group.
-          #
-          # @param language [Symbol, HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::Language] Designated language of the object to add to a multi-language group.
-          #
-          # @param primary_id [String] ID of primary language object in multi-language group.
-          #
-          # @param primary_language [Symbol, HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage] Primary language of the multi-language group.
-          #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-          #
-          # @return [StringIO]
-          #
-          # @see HubspotSDK::Models::Cms::Blogs::PostAttachToLangGroupParams
-          def attach_to_lang_group(params)
-            parsed, options = HubspotSDK::Cms::Blogs::PostAttachToLangGroupParams.dump_request(params)
-            @client.request(
-              method: :post,
-              path: "cms/blogs/2026-03/posts/multi-language/attach-to-lang-group",
-              headers: {"content-type" => "*/*", "accept" => "*/*"},
-              body: parsed,
-              model: StringIO,
-              options: options
-            )
-          end
-
           # @overload clone_(id:, clone_name: nil, request_options: {})
           #
           # @param id [String] ID of the object to be cloned.
@@ -428,50 +416,8 @@ module HubspotSDK
             )
           end
 
-          # @overload create_lang_variation(id:, language: nil, request_options: {})
+          # Retrieve a blog post by the post ID.
           #
-          # @param id [String] ID of blog post to clone.
-          #
-          # @param language [String] Target language of new variant.
-          #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-          #
-          # @return [StringIO]
-          #
-          # @see HubspotSDK::Models::Cms::Blogs::PostCreateLangVariationParams
-          def create_lang_variation(params)
-            parsed, options = HubspotSDK::Cms::Blogs::PostCreateLangVariationParams.dump_request(params)
-            @client.request(
-              method: :post,
-              path: "cms/blogs/2026-03/posts/multi-language/create-language-variation",
-              headers: {"content-type" => "*/*", "accept" => "*/*"},
-              body: parsed,
-              model: StringIO,
-              options: options
-            )
-          end
-
-          # @overload detach_from_lang_group(id:, request_options: {})
-          #
-          # @param id [String] ID of the object to remove from a multi-language group.
-          #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-          #
-          # @return [StringIO]
-          #
-          # @see HubspotSDK::Models::Cms::Blogs::PostDetachFromLangGroupParams
-          def detach_from_lang_group(params)
-            parsed, options = HubspotSDK::Cms::Blogs::PostDetachFromLangGroupParams.dump_request(params)
-            @client.request(
-              method: :post,
-              path: "cms/blogs/2026-03/posts/multi-language/detach-from-lang-group",
-              headers: {"content-type" => "*/*", "accept" => "*/*"},
-              body: parsed,
-              model: StringIO,
-              options: options
-            )
-          end
-
           # @overload get(object_id_, archived: nil, property: nil, request_options: {})
           #
           # @param object_id_ [String]
@@ -498,6 +444,8 @@ module HubspotSDK
             )
           end
 
+          # Retrieve the full draft version of a blog post.
+          #
           # @overload get_draft_by_id(object_id_, request_options: {})
           #
           # @param object_id_ [String]
@@ -516,24 +464,52 @@ module HubspotSDK
             )
           end
 
-          # @overload get_previous_version(revision_id, object_id_:, request_options: {})
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Cms::Blogs::PostListAuthorsParams} for more details.
           #
-          # @param revision_id [String]
-          # @param object_id_ [String]
+          # @overload list_authors(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
+          #
+          # @param after [String] The paging cursor token of the last successfully read resource will be returned
+          #
+          # @param archived [Boolean] Whether to return only results that have been archived.
+          #
+          # @param created_after [Time]
+          #
+          # @param created_at [Time]
+          #
+          # @param created_before [Time]
+          #
+          # @param limit [Integer] The maximum number of results to display per page.
+          #
+          # @param property [String]
+          #
+          # @param sort [Array<String>]
+          #
+          # @param updated_after [Time]
+          #
+          # @param updated_at [Time]
+          #
+          # @param updated_before [Time]
+          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::PostGetPreviousVersionParams
-          def get_previous_version(revision_id, params)
-            parsed, options = HubspotSDK::Cms::Blogs::PostGetPreviousVersionParams.dump_request(params)
-            object_id_ =
-              parsed.delete(:object_id_) do
-                raise ArgumentError.new("missing required path argument #{_1}")
-              end
+          # @see HubspotSDK::Models::Cms::Blogs::PostListAuthorsParams
+          def list_authors(params = {})
+            parsed, options = HubspotSDK::Cms::Blogs::PostListAuthorsParams.dump_request(params)
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
-              path: ["cms/blogs/2026-03/posts/%1$s/revisions/%2$s", object_id_, revision_id],
+              path: "cms/blogs/2026-03/authors/cursor",
+              query: query.transform_keys(
+                created_after: "createdAfter",
+                created_at: "createdAt",
+                created_before: "createdBefore",
+                updated_after: "updatedAfter",
+                updated_at: "updatedAt",
+                updated_before: "updatedBefore"
+              ),
               headers: {"accept" => "*/*"},
               model: StringIO,
               options: options
@@ -541,37 +517,60 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::PostGetPreviousVersionsParams} for more
-          # details.
+          # {HubspotSDK::Models::Cms::Blogs::PostListTagsParams} for more details.
           #
-          # @overload get_previous_versions(object_id_, after: nil, before: nil, limit: nil, request_options: {})
-          #
-          # @param object_id_ [String]
+          # @overload list_tags(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
           #
           # @param after [String] The paging cursor token of the last successfully read resource will be returned
           #
-          # @param before [String]
+          # @param archived [Boolean] Whether to return only results that have been archived.
+          #
+          # @param created_after [Time]
+          #
+          # @param created_at [Time]
+          #
+          # @param created_before [Time]
           #
           # @param limit [Integer] The maximum number of results to display per page.
+          #
+          # @param property [String]
+          #
+          # @param sort [Array<String>]
+          #
+          # @param updated_after [Time]
+          #
+          # @param updated_at [Time]
+          #
+          # @param updated_before [Time]
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::PostGetPreviousVersionsParams
-          def get_previous_versions(object_id_, params = {})
-            parsed, options = HubspotSDK::Cms::Blogs::PostGetPreviousVersionsParams.dump_request(params)
+          # @see HubspotSDK::Models::Cms::Blogs::PostListTagsParams
+          def list_tags(params = {})
+            parsed, options = HubspotSDK::Cms::Blogs::PostListTagsParams.dump_request(params)
             query = HubspotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
-              path: ["cms/blogs/2026-03/posts/%1$s/revisions", object_id_],
-              query: query,
+              path: "cms/blogs/2026-03/tags/cursor",
+              query: query.transform_keys(
+                created_after: "createdAfter",
+                created_at: "createdAt",
+                created_before: "createdBefore",
+                updated_after: "updatedAfter",
+                updated_at: "updatedAt",
+                updated_before: "updatedBefore"
+              ),
               headers: {"accept" => "*/*"},
               model: StringIO,
               options: options
             )
           end
 
+          # Publish the draft version of the blog post, sending its content to the live
+          # page.
+          #
           # @overload push_live(object_id_, request_options: {})
           #
           # @param object_id_ [String]
@@ -589,6 +588,165 @@ module HubspotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Cms::Blogs::PostQueryParams} for more details.
+          #
+          # @overload query(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
+          #
+          # @param after [String] The paging cursor token of the last successfully read resource will be returned
+          #
+          # @param archived [Boolean] Whether to return only results that have been archived.
+          #
+          # @param created_after [Time]
+          #
+          # @param created_at [Time]
+          #
+          # @param created_before [Time]
+          #
+          # @param limit [Integer] The maximum number of results to display per page.
+          #
+          # @param property [String]
+          #
+          # @param sort [Array<String>]
+          #
+          # @param updated_after [Time]
+          #
+          # @param updated_at [Time]
+          #
+          # @param updated_before [Time]
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [StringIO]
+          #
+          # @see HubspotSDK::Models::Cms::Blogs::PostQueryParams
+          def query(params = {})
+            parsed, options = HubspotSDK::Cms::Blogs::PostQueryParams.dump_request(params)
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            @client.request(
+              method: :get,
+              path: "cms/blogs/2026-03/posts/cursor/query",
+              query: query.transform_keys(
+                created_after: "createdAfter",
+                created_at: "createdAt",
+                created_before: "createdBefore",
+                updated_after: "updatedAfter",
+                updated_at: "updatedAt",
+                updated_before: "updatedBefore"
+              ),
+              headers: {"accept" => "*/*"},
+              model: StringIO,
+              options: options
+            )
+          end
+
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Cms::Blogs::PostQueryAuthorsParams} for more details.
+          #
+          # @overload query_authors(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
+          #
+          # @param after [String] The paging cursor token of the last successfully read resource will be returned
+          #
+          # @param archived [Boolean] Whether to return only results that have been archived.
+          #
+          # @param created_after [Time]
+          #
+          # @param created_at [Time]
+          #
+          # @param created_before [Time]
+          #
+          # @param limit [Integer] The maximum number of results to display per page.
+          #
+          # @param property [String]
+          #
+          # @param sort [Array<String>]
+          #
+          # @param updated_after [Time]
+          #
+          # @param updated_at [Time]
+          #
+          # @param updated_before [Time]
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [StringIO]
+          #
+          # @see HubspotSDK::Models::Cms::Blogs::PostQueryAuthorsParams
+          def query_authors(params = {})
+            parsed, options = HubspotSDK::Cms::Blogs::PostQueryAuthorsParams.dump_request(params)
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            @client.request(
+              method: :get,
+              path: "cms/blogs/2026-03/authors/cursor/query",
+              query: query.transform_keys(
+                created_after: "createdAfter",
+                created_at: "createdAt",
+                created_before: "createdBefore",
+                updated_after: "updatedAfter",
+                updated_at: "updatedAt",
+                updated_before: "updatedBefore"
+              ),
+              headers: {"accept" => "*/*"},
+              model: StringIO,
+              options: options
+            )
+          end
+
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Cms::Blogs::PostQueryTagsParams} for more details.
+          #
+          # @overload query_tags(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
+          #
+          # @param after [String] The paging cursor token of the last successfully read resource will be returned
+          #
+          # @param archived [Boolean] Whether to return only results that have been archived.
+          #
+          # @param created_after [Time]
+          #
+          # @param created_at [Time]
+          #
+          # @param created_before [Time]
+          #
+          # @param limit [Integer] The maximum number of results to display per page.
+          #
+          # @param property [String]
+          #
+          # @param sort [Array<String>]
+          #
+          # @param updated_after [Time]
+          #
+          # @param updated_at [Time]
+          #
+          # @param updated_before [Time]
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [StringIO]
+          #
+          # @see HubspotSDK::Models::Cms::Blogs::PostQueryTagsParams
+          def query_tags(params = {})
+            parsed, options = HubspotSDK::Cms::Blogs::PostQueryTagsParams.dump_request(params)
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            @client.request(
+              method: :get,
+              path: "cms/blogs/2026-03/tags/cursor/query",
+              query: query.transform_keys(
+                created_after: "createdAfter",
+                created_at: "createdAt",
+                created_before: "createdBefore",
+                updated_after: "updatedAfter",
+                updated_at: "updatedAt",
+                updated_before: "updatedBefore"
+              ),
+              headers: {"accept" => "*/*"},
+              model: StringIO,
+              options: options
+            )
+          end
+
+          # Discard all drafted content, resetting the draft to contain the content in the
+          # currently published version.
+          #
           # @overload reset_draft(object_id_, request_options: {})
           #
           # @param object_id_ [String]
@@ -606,54 +764,8 @@ module HubspotSDK
             )
           end
 
-          # @overload restore_previous_version(revision_id, object_id_:, request_options: {})
+          # Schedule a blog post to be published at a specified time.
           #
-          # @param revision_id [String]
-          # @param object_id_ [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-          #
-          # @return [StringIO]
-          #
-          # @see HubspotSDK::Models::Cms::Blogs::PostRestorePreviousVersionParams
-          def restore_previous_version(revision_id, params)
-            parsed, options = HubspotSDK::Cms::Blogs::PostRestorePreviousVersionParams.dump_request(params)
-            object_id_ =
-              parsed.delete(:object_id_) do
-                raise ArgumentError.new("missing required path argument #{_1}")
-              end
-            @client.request(
-              method: :post,
-              path: ["cms/blogs/2026-03/posts/%1$s/revisions/%2$s/restore", object_id_, revision_id],
-              headers: {"accept" => "*/*"},
-              model: StringIO,
-              options: options
-            )
-          end
-
-          # @overload restore_previous_version_to_draft(revision_id, object_id_:, request_options: {})
-          #
-          # @param revision_id [Integer]
-          # @param object_id_ [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-          #
-          # @return [StringIO]
-          #
-          # @see HubspotSDK::Models::Cms::Blogs::PostRestorePreviousVersionToDraftParams
-          def restore_previous_version_to_draft(revision_id, params)
-            parsed, options = HubspotSDK::Cms::Blogs::PostRestorePreviousVersionToDraftParams.dump_request(params)
-            object_id_ =
-              parsed.delete(:object_id_) do
-                raise ArgumentError.new("missing required path argument #{_1}")
-              end
-            @client.request(
-              method: :post,
-              path: ["cms/blogs/2026-03/posts/%1$s/revisions/%2$s/restore-to-draft", object_id_, revision_id],
-              headers: {"accept" => "*/*"},
-              model: StringIO,
-              options: options
-            )
-          end
-
           # @overload schedule(id:, publish_date:, request_options: {})
           #
           # @param id [String] The ID of the object to be scheduled.
@@ -677,35 +789,17 @@ module HubspotSDK
             )
           end
 
-          # @overload set_lang_primary(id:, request_options: {})
-          #
-          # @param id [String] ID of object to set as primary in multi-language group.
-          #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-          #
-          # @return [nil]
-          #
-          # @see HubspotSDK::Models::Cms::Blogs::PostSetLangPrimaryParams
-          def set_lang_primary(params)
-            parsed, options = HubspotSDK::Cms::Blogs::PostSetLangPrimaryParams.dump_request(params)
-            @client.request(
-              method: :put,
-              path: "cms/blogs/2026-03/posts/multi-language/set-new-lang-primary",
-              headers: {"content-type" => "*/*"},
-              body: parsed,
-              model: NilClass,
-              options: options
-            )
-          end
-
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Cms::Blogs::PostUpdateDraftParams} for more details.
+          #
+          # Partially updates the draft version of a single blog post by ID. You only need
+          # to specify the values that you want to update.
           #
           # @overload update_draft(object_id_, id:, ab_status:, ab_test_id:, archived_at:, archived_in_dashboard:, attached_stylesheets:, author_name:, blog_author_id:, campaign:, category_id:, content_group_id:, content_type_category:, created:, created_by_id:, currently_published:, current_state:, domain:, dynamic_page_data_source_id:, dynamic_page_data_source_type:, dynamic_page_hub_db_table_id:, enable_domain_stylesheets:, enable_google_amp_output_override:, enable_layout_stylesheets:, featured_image:, featured_image_alt_text:, folder_id:, footer_html:, head_html:, html_title:, include_default_custom_css:, language:, layout_sections:, link_rel_canonical_url:, mab_experiment_id:, meta_description:, name:, page_expiry_date:, page_expiry_enabled:, page_expiry_redirect_id:, page_expiry_redirect_url:, password:, post_body:, post_summary:, public_access_rules:, public_access_rules_enabled:, publish_date:, publish_immediately:, rss_body:, rss_summary:, slug:, state:, tag_ids:, theme_settings_values:, translated_from_id:, translations:, updated:, updated_by_id:, url:, use_featured_image:, widget_containers:, widgets:, request_options: {})
           #
           # @param object_id_ [String]
           #
-          # @param id [String] The unique ID of the blog post.
+          # @param id [String] The unique ID of the Blog Post.
           #
           # @param ab_status [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::AbStatus] The status of the AB test associated with this blog post, if applicable
           #
@@ -717,33 +811,33 @@ module HubspotSDK
           #
           # @param attached_stylesheets [Array<Hash{Symbol=>Object}>] List of stylesheets to attach to this blog post. These stylesheets are attached
           #
-          # @param author_name [String] The name of the user who last published the blog post. For posts that haven't be
+          # @param author_name [String] The name of the user that updated this Blog Post.
           #
-          # @param blog_author_id [String] The ID of the blog author associated with this post.
+          # @param blog_author_id [String] The ID of the Blog Author associated with this Blog Post.
           #
-          # @param campaign [String] The GUID of the marketing campaign the post is associated with.
+          # @param campaign [String] The GUID of the marketing campaign this Blog Post is a part of.
           #
-          # @param category_id [Integer] ID of the object type.
+          # @param category_id [Integer] ID of the type of object this is. Should always .
           #
-          # @param content_group_id [String] The ID of the post's parent blog.
+          # @param content_group_id [String] The ID of the parent Blog this Blog Post is associated with.
           #
           # @param content_type_category [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::ContentTypeCategory] An ENUM descibing the type of this object. Should always be BLOG_POST.
           #
           # @param created [Time] The timestamp (ISO8601 format) when this Blog Post was created.
           #
-          # @param created_by_id [String] The ID of the user that created the post.
+          # @param created_by_id [String] The ID of the user that created this Blog Post.
           #
           # @param currently_published [Boolean] Whether the post is published (true or false)
           #
           # @param current_state [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::CurrentState] A generated ENUM descibing the current state of this Blog Post. Should always ma
           #
-          # @param domain [String] The domain that the post lives on. If null, the post will default to the domain
+          # @param domain [String] The domain this Blog Post will resolve to. If null, the Blog Post will default t
           #
           # @param dynamic_page_data_source_id [String] The identifier for the data source used by the dynamic page.
           #
           # @param dynamic_page_data_source_type [Integer] The type of data source used by the dynamic page.
           #
-          # @param dynamic_page_hub_db_table_id [String] For dynamic HubDB pages,
+          # @param dynamic_page_hub_db_table_id [String] The ID of the HubDB table this Blog Post references, if applicable
           #
           # @param enable_domain_stylesheets [Boolean] Boolean to determine whether or not the styles from the template should be appli
           #
@@ -761,13 +855,13 @@ module HubspotSDK
           #
           # @param head_html [String] Custom HTML for embed codes, javascript, etc. that goes in the <head> tag of the
           #
-          # @param html_title [String] The HTML title of the post.
+          # @param html_title [String] The html title of this Blog Post.
           #
           # @param include_default_custom_css [Boolean] Boolean to determine whether or not the Primary CSS Files should be applied.
           #
-          # @param language [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::Language] The explicitly defined ISO 639 language code of the post. If null, the post will
+          # @param language [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::Language] The explicitly defined ISO 639 language code of the Blog Post. If null, the Blog
           #
-          # @param layout_sections [Hash{Symbol=>HubspotSDK::Models::Cms::Blogs::LayoutSection}] A structure detailing the layout sections of the blog post.
+          # @param layout_sections [Hash{Symbol=>HubspotSDK::Models::Cms::LayoutSection}] A structure detailing the layout sections of the blog post.
           #
           # @param link_rel_canonical_url [String] Optional override to set the URL to be used in the rel=canonical link tag on the
           #
@@ -775,7 +869,7 @@ module HubspotSDK
           #
           # @param meta_description [String] A description that goes in <meta> tag on the page.
           #
-          # @param name [String] The internal name of the post.
+          # @param name [String] The internal name of the Blog Post.
           #
           # @param page_expiry_date [Integer] The date at which this blog post should expire and begin redirecting to another
           #
@@ -803,25 +897,25 @@ module HubspotSDK
           #
           # @param rss_summary [String] The contents of the RSS summary for this Blog Post.
           #
-          # @param slug [String] The URL slug of the blog post. This field is appended to the domain to construct
+          # @param slug [String] The path of the this blog post. This field is appended to the domain to construc
           #
-          # @param state [String] An enumeration describing the current publish state of the post.
+          # @param state [String] An ENUM descibing the current state of this Blog Post.
           #
-          # @param tag_ids [Array<Integer>] The IDs of the tags associated with this post.
+          # @param tag_ids [Array<Integer>] List of IDs for the tags associated with this Blog Post.
           #
           # @param theme_settings_values [Hash{Symbol=>Object}] A collection of settings specific to the theme applied to the blog post.
           #
-          # @param translated_from_id [String] ID of the primary blog post that this post was translated from.
+          # @param translated_from_id [String] ID of the primary blog post this object was translated from.
           #
-          # @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::Blogs::ContentLanguageVariation}] A map of translations for the blog post, each associated with a specific languag
+          # @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::ContentLanguageVariation}] A map of translations for the blog post, each associated with a specific languag
           #
           # @param updated [Time] The timestamp (ISO8601 format) when this Blog Post was updated.
           #
-          # @param updated_by_id [String] The ID of the user that updated the post.
+          # @param updated_by_id [String] The ID of the user that updated this Blog Post.
           #
           # @param url [String] A generated field representing the URL of this blog post.
           #
-          # @param use_featured_image [Boolean] Boolean to determine if this post should use a featured image.
+          # @param use_featured_image [Boolean] Boolean to determine if this post should use a featuredImage.
           #
           # @param widget_containers [Hash{Symbol=>Object}] A data structure containing the data for all the modules inside the containers f
           #
@@ -844,38 +938,14 @@ module HubspotSDK
             )
           end
 
-          # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::PostUpdateLangsParams} for more details.
-          #
-          # @overload update_langs(languages:, primary_id:, request_options: {})
-          #
-          # @param languages [Hash{Symbol=>Symbol, HubspotSDK::Models::Cms::UpdateLanguagesRequestVNext::Language}] Map of object IDs to associated languages of object in the multi-language group.
-          #
-          # @param primary_id [String] ID of the primary object in the multi-language group.
-          #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-          #
-          # @return [StringIO]
-          #
-          # @see HubspotSDK::Models::Cms::Blogs::PostUpdateLangsParams
-          def update_langs(params)
-            parsed, options = HubspotSDK::Cms::Blogs::PostUpdateLangsParams.dump_request(params)
-            @client.request(
-              method: :post,
-              path: "cms/blogs/2026-03/posts/multi-language/update-languages",
-              headers: {"content-type" => "*/*", "accept" => "*/*"},
-              body: parsed,
-              model: StringIO,
-              options: options
-            )
-          end
-
           # @api private
           #
           # @param client [HubspotSDK::Client]
           def initialize(client:)
             @client = client
             @batch = HubspotSDK::Resources::Cms::Blogs::Posts::Batch.new(client: client)
+            @multi_language = HubspotSDK::Resources::Cms::Blogs::Posts::MultiLanguage.new(client: client)
+            @revisions = HubspotSDK::Resources::Cms::Blogs::Posts::Revisions.new(client: client)
           end
         end
       end

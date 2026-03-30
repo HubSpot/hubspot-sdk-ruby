@@ -20,8 +20,8 @@ module HubspotSDK
             def create(inputs:, request_options: {})
             end
 
-            # Batch update multiple subscription objects in a single batch operation, allowing
-            # for efficient modifications of CRM subscription records.
+            # Update multiple subscription objects in a single batch operation, allowing for
+            # efficient modifications of CRM subscription records.
             sig do
               params(
                 inputs:
@@ -45,7 +45,7 @@ module HubspotSDK
             def delete(inputs:, request_options: {})
             end
 
-            # Retrieve a batch of commerce subscriptions by their IDs, including specified
+            # Retrieve a batch of CRM subscription objects by their IDs, including specified
             # properties and their histories.
             sig do
               params(

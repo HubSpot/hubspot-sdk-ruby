@@ -4,6 +4,7 @@ module HubspotSDK
   module Resources
     class Crm
       class PropertiesValidations
+        # Read all properties with validation rules for a given object.
         sig do
           params(
             object_type_id: String,
@@ -15,6 +16,7 @@ module HubspotSDK
         def get_by_object_type_id(object_type_id, request_options: {})
         end
 
+        # Read a property's validation rules identified by {propertyName}.
         sig do
           params(
             property_name: String,
@@ -31,6 +33,8 @@ module HubspotSDK
         )
         end
 
+        # Retrieve a specific validation rule for a property identified by its name and
+        # rule type.
         sig do
           params(
             rule_type:
@@ -48,6 +52,8 @@ module HubspotSDK
         )
         end
 
+        # Update a specific validation rule for a property identified by its name and rule
+        # type.
         sig do
           params(
             rule_type:

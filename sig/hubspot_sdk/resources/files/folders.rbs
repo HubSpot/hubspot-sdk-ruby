@@ -2,6 +2,28 @@ module HubspotSDK
   module Resources
     class Files
       class Folders
+        def delete_by_id: (
+          String folder_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def delete_by_path: (
+          String folder_path,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def get_by_id: (
+          String folder_id,
+          ?properties: ::Array[String],
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Files::Folder
+
+        def get_by_path: (
+          String folder_path,
+          ?properties: ::Array[String],
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Files::Folder
+
         def get_update_async_status: (
           String task_id,
           ?request_options: HubspotSDK::request_opts

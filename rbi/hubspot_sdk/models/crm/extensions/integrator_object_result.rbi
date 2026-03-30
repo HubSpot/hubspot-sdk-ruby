@@ -28,7 +28,7 @@ module HubspotSDK
           end
           attr_accessor :actions
 
-          # The title of the object card, displayed to users.
+          # The top-level title for this card. Displayed to users in the CRM UI.
           sig { returns(String) }
           attr_accessor :title
 
@@ -65,7 +65,7 @@ module HubspotSDK
             # A list of actions associated with the card, which can include action hooks,
             # confirmation action hooks, or iframes.
             actions:,
-            # The title of the object card, displayed to users.
+            # The top-level title for this card. Displayed to users in the CRM UI.
             title:,
             # A collection of tokens representing specific properties related to the card.
             tokens:,

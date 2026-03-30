@@ -75,6 +75,7 @@ module HubspotSDK
         )
         end
 
+        # Change properties of a marketing email.
         sig do
           params(
             email_id: String,
@@ -212,6 +213,7 @@ module HubspotSDK
         )
         end
 
+        # Delete a marketing email by its ID
         sig do
           params(
             email_id: String,
@@ -227,6 +229,8 @@ module HubspotSDK
         )
         end
 
+        # This will create a duplicate email with the same properties as the original,
+        # with the exception of a unique ID.
         sig do
           params(
             id: String,
@@ -236,7 +240,7 @@ module HubspotSDK
           ).returns(HubspotSDK::Marketing::PublicEmail)
         end
         def clone_(
-          # The unique identifier of the email to be cloned.
+          # The email ID.
           id:,
           # The name to assign to the cloned email.
           clone_name: nil,
@@ -246,6 +250,9 @@ module HubspotSDK
         )
         end
 
+        # Create a variation of a marketing email for an A/B test. The new variation will
+        # be created as a draft. If an active variation already exists, a new one won't be
+        # created.
         sig do
           params(
             content_id: String,
@@ -254,14 +261,17 @@ module HubspotSDK
           ).returns(HubspotSDK::Marketing::PublicEmail)
         end
         def create_ab_test_variation(
-          # ID of the email to test.
+          # ID of the object to test.
           content_id:,
-          # Name of the variation to be created.
+          # Name of A/B test variation.
           variation_name:,
           request_options: {}
         )
         end
 
+        # Use this endpoint to get aggregated statistics of emails sent in a specified
+        # time span. It also returns the list of emails that were sent during the time
+        # span.
         sig do
           params(
             email_ids: T::Array[Integer],
@@ -280,6 +290,9 @@ module HubspotSDK
         )
         end
 
+        # This endpoint lets you obtain the variation of an A/B marketing email. If the
+        # email is variation A (master) it will return variation B (variant) and vice
+        # versa.
         sig do
           params(
             email_id: String,
@@ -305,6 +318,8 @@ module HubspotSDK
         )
         end
 
+        # Get the draft version of an email (if it exists). If no draft version exists,
+        # the published email is returned.
         sig do
           params(
             email_id: String,
@@ -314,6 +329,8 @@ module HubspotSDK
         def get_draft(email_id, request_options: {})
         end
 
+        # Get aggregated statistics in intervals for a specified time span. Each interval
+        # contains aggregated statistics of the emails that were sent in that time.
         sig do
           params(
             email_ids: T::Array[Integer],
@@ -335,6 +352,7 @@ module HubspotSDK
         )
         end
 
+        # Get a specific revision of a marketing email.
         sig do
           params(
             revision_id: String,
@@ -345,6 +363,9 @@ module HubspotSDK
         def get_revision(revision_id, email_id:, request_options: {})
         end
 
+        # Get a list of all versions of a marketing email, with each entry including the
+        # full state of that particular version. To view the most recent version, sort by
+        # the updatedAt parameter.
         sig do
           params(
             email_id: String,
@@ -371,6 +392,9 @@ module HubspotSDK
         )
         end
 
+        # If you have a Marketing Hub Enterprise account or the transactional email
+        # add-on, you can use this endpoint to publish an automated email or send/schedule
+        # a regular email.
         sig do
           params(
             email_id: String,
@@ -380,6 +404,7 @@ module HubspotSDK
         def publish(email_id, request_options: {})
         end
 
+        # Resets the draft back to a copy of the live object.
         sig do
           params(
             email_id: String,
@@ -389,6 +414,8 @@ module HubspotSDK
         def reset_draft(email_id, request_options: {})
         end
 
+        # Restores a previous revision of a marketing email. The current revision becomes
+        # old, and the restored revision is given a new version number.
         sig do
           params(
             revision_id: String,
@@ -399,6 +426,8 @@ module HubspotSDK
         def restore_revision(revision_id, email_id:, request_options: {})
         end
 
+        # Restores a previous revision of a marketing email to DRAFT state. If there is
+        # currently something in the draft for that object, it is overwritten.
         sig do
           params(
             revision_id: Integer,
@@ -407,12 +436,17 @@ module HubspotSDK
           ).returns(HubspotSDK::Marketing::PublicEmail)
         end
         def restore_revision_to_draft(
+          # The ID of the revision.
           revision_id,
           email_id:,
           request_options: {}
         )
         end
 
+        # If you have a Marketing Hub Enterprise account or the transactional email
+        # add-on, you can use this endpoint to unpublish an automated email or cancel a
+        # regular email. If the email is already in the process of being sent, canceling
+        # might not be possible.
         sig do
           params(
             email_id: String,
@@ -422,6 +456,10 @@ module HubspotSDK
         def unpublish(email_id, request_options: {})
         end
 
+        # Create or update the draft version of a marketing email. If no draft exists, the
+        # system creates a draft from the current “live” email then applies the request
+        # body to that draft. The draft version only lives on the buffer—the email is not
+        # cloned.
         sig do
           params(
             email_id: String,

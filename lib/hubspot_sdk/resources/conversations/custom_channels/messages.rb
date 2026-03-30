@@ -5,6 +5,8 @@ module HubspotSDK
     class Conversations
       class CustomChannels
         class Messages
+          # Publish a message over your custom channel
+          #
           # @overload create(channel_id, attachments:, channel_account_id:, message_direction:, recipients:, senders:, text:, timestamp:, associate_with_contact_id: nil, in_reply_to_id: nil, integration_idempotency_id: nil, integration_thread_id: nil, pre_resolved_contacts: nil, rich_text: nil, request_options: {})
           #
           # @param channel_id [Integer]
@@ -37,6 +39,10 @@ module HubspotSDK
             )
           end
 
+          # Update a message's status to indicate if it was successfully sent, failed to
+          # send, or was read. For failed messages, this can also include the error message
+          # for the failure.
+          #
           # @overload update(message_id, channel_id:, status_type:, error_message: nil, request_options: {})
           #
           # @param message_id [String] Path param
@@ -67,6 +73,8 @@ module HubspotSDK
             )
           end
 
+          # Get the details for a specific message sent over a custom channel
+          #
           # @overload get(message_id, channel_id:, request_options: {})
           #
           # @param message_id [String]

@@ -13,9 +13,12 @@ module HubspotSDK
               )
             end
 
+          # The phone number formatted in E.164 standard.
           sig { returns(String) }
           attr_accessor :e164_number
 
+          # The type of phone number, with accepted values including FIXED_LINE, MOBILE,
+          # VOIP, and others.
           sig do
             returns(
               HubspotSDK::Crm::Extensions::FormattedPhoneNumber::PhoneNumberType::OrSymbol
@@ -23,6 +26,7 @@ module HubspotSDK
           end
           attr_accessor :phone_number_type
 
+          # The extension number associated with the phone number.
           sig { returns(T.nilable(String)) }
           attr_reader :extension
 
@@ -37,7 +41,15 @@ module HubspotSDK
               extension: String
             ).returns(T.attached_class)
           end
-          def self.new(e164_number:, phone_number_type:, extension: nil)
+          def self.new(
+            # The phone number formatted in E.164 standard.
+            e164_number:,
+            # The type of phone number, with accepted values including FIXED_LINE, MOBILE,
+            # VOIP, and others.
+            phone_number_type:,
+            # The extension number associated with the phone number.
+            extension: nil
+          )
           end
 
           sig do
@@ -53,6 +65,8 @@ module HubspotSDK
           def to_hash
           end
 
+          # The type of phone number, with accepted values including FIXED_LINE, MOBILE,
+          # VOIP, and others.
           module PhoneNumberType
             extend HubspotSDK::Internal::Type::Enum
 

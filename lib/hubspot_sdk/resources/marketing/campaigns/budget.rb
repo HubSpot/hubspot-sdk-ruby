@@ -5,13 +5,11 @@ module HubspotSDK
     class Marketing
       class Campaigns
         class Budget
-          # Add a new budget item to the specified campaign. This operation allows you to
-          # allocate a budget for a campaign by specifying the necessary details in the
-          # request body.
+          # Add a new budget item to the campaign
           #
           # @overload create(campaign_guid, amount:, name:, order:, description: nil, request_options: {})
           #
-          # @param campaign_guid [String] The unique identifier of the campaign to which the budget item will be added.
+          # @param campaign_guid [String]
           #
           # @param amount [Float] The monetary value assigned to the budget item.
           #
@@ -37,19 +35,13 @@ module HubspotSDK
             )
           end
 
-          # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Marketing::Campaigns::BudgetUpdateParams} for more details.
-          #
-          # Update a specific budget item by its ID within a marketing campaign. This
-          # operation allows you to modify the details of a budget item, such as its amount,
-          # name, or order, ensuring that your campaign's financial records are accurate and
-          # up-to-date.
+          # Update a specific budget item by ID
           #
           # @overload update(budget_id, campaign_guid:, amount:, name:, order:, description: nil, request_options: {})
           #
-          # @param budget_id [Integer] Path param: The unique identifier of the budget item to update.
+          # @param budget_id [Integer] Path param
           #
-          # @param campaign_guid [String] Path param: The unique identifier of the campaign to which the budget item belon
+          # @param campaign_guid [String] Path param
           #
           # @param amount [Float] Body param: The monetary value assigned to the budget item.
           #
@@ -79,19 +71,12 @@ module HubspotSDK
             )
           end
 
-          # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Marketing::Campaigns::BudgetDeleteParams} for more details.
-          #
-          # Delete a specific budget item from a campaign using its unique ID. This
-          # operation removes the budget item from the campaign's budget list, ensuring it
-          # is no longer considered in budget calculations.
+          # Delete a specific budget item by ID
           #
           # @overload delete(budget_id, campaign_guid:, request_options: {})
           #
-          # @param budget_id [Integer] The unique identifier of the budget item to be deleted.
-          #
-          # @param campaign_guid [String] The unique identifier of the campaign from which the budget item will be deleted
-          #
+          # @param budget_id [Integer]
+          # @param campaign_guid [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -111,16 +96,12 @@ module HubspotSDK
             )
           end
 
-          # Retrieve a specific budget item by its ID for a given campaign. This endpoint is
-          # useful for accessing detailed information about a particular budget item
-          # associated with a marketing campaign.
+          # Get a specific budget item by ID
           #
           # @overload get(budget_id, campaign_guid:, request_options: {})
           #
-          # @param budget_id [Integer] The unique identifier of the budget item to retrieve.
-          #
-          # @param campaign_guid [String] The unique identifier of the campaign.
-          #
+          # @param budget_id [Integer]
+          # @param campaign_guid [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Marketing::PublicBudgetItem]
@@ -140,19 +121,15 @@ module HubspotSDK
             )
           end
 
-          # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Marketing::Campaigns::BudgetGetTotalsParams} for more
-          # details.
-          #
-          # Retrieve budget and spending items along with their totals for a specific
-          # campaign. This endpoint provides insights into the financial allocations and
-          # expenditures associated with the campaign, helping users to manage and analyze
-          # campaign budgets effectively.
+          # Retrieve detailed information about the budget and spend items for a specified
+          # campaign, including the total budget, total spend, and remaining budget. Budget
+          # and Spend items may be returned in any order, but the order field specifies
+          # their sequence based on the creation date. The item with order 0 is the oldest,
+          # and items with higher order values are newer
           #
           # @overload get_totals(campaign_guid, request_options: {})
           #
-          # @param campaign_guid [String] The unique identifier of the campaign for which the budget and spending totals a
-          #
+          # @param campaign_guid [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Marketing::PublicBudgetTotals]

@@ -108,8 +108,10 @@ module HubspotSDK
           )
           end
 
-          # Search for partner clients by filtering on properties, searching through
-          # associations, and sorting results.
+          # Execute a search for partner clients based on defined filters, properties, and
+          # sorting options. This endpoint allows you to retrieve partner client data that
+          # matches the search criteria, facilitating integration and data synchronization
+          # with third-party systems.
           sig do
             params(
               after: String,

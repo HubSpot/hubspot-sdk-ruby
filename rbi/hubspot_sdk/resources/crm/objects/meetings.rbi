@@ -27,7 +27,10 @@ module HubspotSDK
           )
           end
 
-          # Update a meeting by ID (`objectId`) or unique property value (`idProperty`).
+          # Perform a partial update of an Object identified by `{meetingId}`or optionally a
+          # unique property value as specified by the `idProperty` query param.
+          # `{meetingId}` refers to the internal object ID by default, and the `idProperty`
+          # query param refers to a property whose values are unique for the object.
           # Provided property values will be overwritten. Read-only and non-existent
           # properties will result in an error. Properties values can be cleared by passing
           # an empty string.
@@ -50,8 +53,8 @@ module HubspotSDK
           )
           end
 
-          # Retrieve all meetings, using query parameters to specify the information that
-          # gets returned.
+          # Read a page of meetings. Control what is returned via the `properties` query
+          # param.
           sig do
             params(
               after: String,
@@ -92,7 +95,7 @@ module HubspotSDK
           )
           end
 
-          # Delete a meeting by ID.
+          # Move an Object identified by `{meetingId}` to the recycling bin.
           sig do
             params(
               meeting_id: String,
@@ -102,9 +105,10 @@ module HubspotSDK
           def delete(meeting_id, request_options: {})
           end
 
-          # Retrieve a meeting by its ID (`objectId`) or by a unique property
-          # (`idProperty`). You can specify what is returned using the `properties` query
-          # parameter.
+          # Read an Object identified by `{meetingId}`. `{meetingId}` refers to the internal
+          # object ID by default, or optionally any unique property value as specified by
+          # the `idProperty` query param. Control what is returned via the `properties`
+          # query param.
           sig do
             params(
               meeting_id: String,

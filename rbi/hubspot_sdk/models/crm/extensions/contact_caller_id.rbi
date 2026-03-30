@@ -13,6 +13,7 @@ module HubspotSDK
               )
             end
 
+          # Specifies the type of caller ID, with the default value being CONTACT.
           sig do
             returns(
               HubspotSDK::Crm::Extensions::ContactCallerID::CallerIDType::TaggedSymbol
@@ -31,18 +32,21 @@ module HubspotSDK
           end
           attr_writer :object_coordinates
 
+          # The email address of the contact.
           sig { returns(T.nilable(String)) }
           attr_reader :email
 
           sig { params(email: String).void }
           attr_writer :email
 
+          # The first name of the contact.
           sig { returns(T.nilable(String)) }
           attr_reader :first_name
 
           sig { params(first_name: String).void }
           attr_writer :first_name
 
+          # The last name of the contact.
           sig { returns(T.nilable(String)) }
           attr_reader :last_name
 
@@ -61,10 +65,14 @@ module HubspotSDK
             ).returns(T.attached_class)
           end
           def self.new(
+            # Specifies the type of caller ID, with the default value being CONTACT.
             caller_id_type:,
             object_coordinates:,
+            # The email address of the contact.
             email: nil,
+            # The first name of the contact.
             first_name: nil,
+            # The last name of the contact.
             last_name: nil
           )
           end
@@ -85,6 +93,7 @@ module HubspotSDK
           def to_hash
           end
 
+          # Specifies the type of caller ID, with the default value being CONTACT.
           module CallerIDType
             extend HubspotSDK::Internal::Type::Enum
 

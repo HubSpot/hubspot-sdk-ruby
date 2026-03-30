@@ -35,6 +35,8 @@ module HubspotSDK
           )
         end
 
+        # Retrieve details of a specific owner using either their 'id' or 'userId'.
+        #
         # @overload get(owner_id, archived: nil, id_property: nil, request_options: {})
         #
         # @param owner_id [Integer]

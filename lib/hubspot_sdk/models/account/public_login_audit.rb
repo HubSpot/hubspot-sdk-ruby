@@ -24,7 +24,7 @@ module HubspotSDK
         required :login_succeeded, HubspotSDK::Internal::Type::Boolean, api_name: :loginSucceeded
 
         # @!attribute country_code
-        #   The approximate country code of the login.
+        #   The approximate country code of the login
         #
         #   @return [String, nil]
         optional :country_code, String, api_name: :countryCode
@@ -48,7 +48,7 @@ module HubspotSDK
         optional :location, String
 
         # @!attribute region_code
-        #   The approximate region code of the login.
+        #   The approximate region code of the login
         #
         #   @return [String, nil]
         optional :region_code, String, api_name: :regionCode
@@ -72,7 +72,7 @@ module HubspotSDK
         #
         #   @param login_succeeded [Boolean] Whether the login was successful or not.
         #
-        #   @param country_code [String] The approximate country code of the login.
+        #   @param country_code [String] The approximate country code of the login
         #
         #   @param email [String] Email address of the user associated with the login.
         #
@@ -80,7 +80,7 @@ module HubspotSDK
         #
         #   @param location [String] The approximate location where the login activity originated.
         #
-        #   @param region_code [String] The approximate region code of the login.
+        #   @param region_code [String] The approximate region code of the login
         #
         #   @param user_agent [String] Information about the device used for logging in.
         #

@@ -1,0 +1,30 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Hubdb
+        type row_update_batch_params =
+          { table_id_or_name: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class RowUpdateBatchParams < HubspotSDK::Models::Cms::BatchInputHubDBTableRowV3BatchUpdateRequest
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def table_id_or_name: -> String
+
+          def table_id_or_name=: (String _) -> String
+
+          def initialize: (
+            table_id_or_name: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            table_id_or_name: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

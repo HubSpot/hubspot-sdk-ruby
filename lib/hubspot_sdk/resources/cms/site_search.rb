@@ -4,6 +4,10 @@ module HubspotSDK
   module Resources
     class Cms
       class SiteSearch
+        # Return all indexed data for an asset (e.g., page, blog post, HubDB table),
+        # specified by ID. This is useful when debugging why a particular asset is not
+        # returned from a custom search.
+        #
         # @overload get_indexed_data(content_id, type: nil, request_options: {})
         #
         # @param content_id [String]
@@ -25,6 +29,11 @@ module HubspotSDK
           )
         end
 
+        # Returns any website content matching the given search criteria for a given
+        # HubSpot account. Searches can be filtered by content type, domain, or URL path.
+        # Includes options for weighing results by recency and popularity, along with
+        # language support.
+        #
         # @overload search(analytics: nil, autocomplete: nil, boost_limit: nil, boost_recent: nil, domain: nil, group_id: nil, hubdb_query: nil, language: nil, length: nil, limit: nil, match_prefix: nil, offset: nil, path_prefix: nil, popularity_boost: nil, property: nil, q: nil, table_id: nil, type: nil, types: nil, request_options: {})
         #
         # @param analytics [Boolean]

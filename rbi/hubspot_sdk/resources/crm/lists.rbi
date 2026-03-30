@@ -362,25 +362,15 @@ module HubspotSDK
           # `hs_list_size`, `hs_last_record_added_at`, `hs_last_record_removed_at`,
           # `hs_folder_name`, and `hs_list_reference_count`.
           additional_properties:,
-          # The `listIds` that will be used to filter results by `listId`. If values are
-          # provided, then the response will only include results that have a `listId` in
-          # this array.
-          #
-          # If no value is provided, or if an empty list is provided, then the results will
-          # not be filtered by `listId`.
+          # ILS list ids to be included in search results. If not specified, all lists
+          # matching other criteria will be included
           list_ids:,
           # Value used to paginate through lists. The `offset` provided in the response can
           # be used in the next request to fetch the next page of results. Defaults to `0`
           # if no offset is provided.
           offset:,
-          # The `processingTypes` that will be used to filter results by `processingType`.
-          # If values are provided, then the response will only include results that have a
-          # `processingType` in this array.
-          #
-          # If no value is provided, or if an empty list is provided, then results will not
-          # be filtered by `processingType`.
-          #
-          # Valid `processingTypes` are: `MANUAL`, `SNAPSHOT`, or `DYNAMIC`.
+          # List processing types to be included in search results. If not specified, all
+          # lists with all processing types will be included.
           processing_types:,
           # The number of lists to include in the response. Defaults to `20` if no value is
           # provided. The max `count` is `500`.

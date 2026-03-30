@@ -5,6 +5,7 @@ module HubspotSDK
     class Marketing
       class Events
         class ListAssociations
+          # Gets lists associated with a marketing event by marketing event id
           sig do
             params(
               marketing_event_id: String,
@@ -20,6 +21,8 @@ module HubspotSDK
           )
           end
 
+          # Disassociates a list from a marketing event by marketing event id and ILS list
+          # id
           sig do
             params(
               list_id: String,
@@ -36,6 +39,7 @@ module HubspotSDK
           )
           end
 
+          # Associates a list with a marketing event by marketing event id and ILS list id
           sig do
             params(
               list_id: String,
@@ -52,6 +56,8 @@ module HubspotSDK
           )
           end
 
+          # Associates a list with a marketing event by external account id, external event
+          # id, and ILS list id
           sig do
             params(
               list_id: String,
@@ -72,6 +78,8 @@ module HubspotSDK
           )
           end
 
+          # Disassociates a list from a marketing event by external account id, external
+          # event id, and ILS list id
           sig do
             params(
               list_id: String,
@@ -92,6 +100,8 @@ module HubspotSDK
           )
           end
 
+          # Gets lists associated with a marketing event by external account id and external
+          # event id
           sig do
             params(
               external_event_id: String,

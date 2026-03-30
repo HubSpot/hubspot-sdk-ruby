@@ -12,17 +12,20 @@ module HubspotSDK
             )
           end
 
+        # The type of the field, which is set to INTEGER.
         sig do
           returns(HubspotSDK::Automation::IntegerFieldSchema::Type::OrSymbol)
         end
         attr_accessor :type
 
+        # The maximum value allowed for the integer field.
         sig { returns(T.nilable(Integer)) }
         attr_reader :maximum
 
         sig { params(maximum: Integer).void }
         attr_writer :maximum
 
+        # The minimum value allowed for the integer field.
         sig { returns(T.nilable(Integer)) }
         attr_reader :minimum
 
@@ -36,7 +39,14 @@ module HubspotSDK
             minimum: Integer
           ).returns(T.attached_class)
         end
-        def self.new(type:, maximum: nil, minimum: nil)
+        def self.new(
+          # The type of the field, which is set to INTEGER.
+          type:,
+          # The maximum value allowed for the integer field.
+          maximum: nil,
+          # The minimum value allowed for the integer field.
+          minimum: nil
+        )
         end
 
         sig do
@@ -51,6 +61,7 @@ module HubspotSDK
         def to_hash
         end
 
+        # The type of the field, which is set to INTEGER.
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

@@ -13,6 +13,8 @@ module HubspotSDK
 
       attr_reader extensions: HubspotSDK::Resources::Crm::Extensions
 
+      attr_reader feature_flags: HubspotSDK::Resources::Crm::FeatureFlags
+
       attr_reader imports: HubspotSDK::Resources::Crm::Imports
 
       attr_reader limits: HubspotSDK::Resources::Crm::Limits
@@ -32,6 +34,8 @@ module HubspotSDK
       attr_reader properties: HubspotSDK::Resources::Crm::Properties
 
       attr_reader properties_validations: HubspotSDK::Resources::Crm::PropertiesValidations
+
+      attr_reader timeline: HubspotSDK::Resources::Crm::Timeline
 
       def initialize: (client: HubspotSDK::Client) -> void
     end

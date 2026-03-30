@@ -1,0 +1,24 @@
+module HubspotSDK
+  module Models
+    module Webhooks
+      type filter_create_request =
+        { filter: HubspotSDK::Webhooks::Filter, subscription_id: Integer }
+
+      class FilterCreateRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor filter: HubspotSDK::Webhooks::Filter
+
+        attr_accessor subscription_id: Integer
+
+        def initialize: (
+          filter: HubspotSDK::Webhooks::Filter,
+          subscription_id: Integer
+        ) -> void
+
+        def to_hash: -> {
+          filter: HubspotSDK::Webhooks::Filter,
+          subscription_id: Integer
+        }
+      end
+    end
+  end
+end

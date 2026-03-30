@@ -5,6 +5,8 @@ module HubspotSDK
     class Conversations
       class CustomChannels
         class ChannelAccounts
+          # Create a new account for a channel. Multiple accounts can communicate over a
+          # single channel using different delivery identifiers.
           sig do
             params(
               channel_id: Integer,
@@ -26,6 +28,8 @@ module HubspotSDK
           )
           end
 
+          # This API is used to update the name of the channel account and it's isAuthorized
+          # status. Setting to isAuthorized flag to False disables the channel account.
           sig do
             params(
               channel_account_id: Integer,
@@ -48,6 +52,7 @@ module HubspotSDK
           )
           end
 
+          # Retrieve a list of accounts for a custom channel.
           sig do
             params(
               channel_id: Integer,
@@ -86,6 +91,9 @@ module HubspotSDK
           )
           end
 
+          # Update a channel account staging token's account name and delivery identifier.
+          # This information will be applied to the channel account created from this
+          # staging token. This is used for public apps.
           sig do
             params(
               account_token: String,

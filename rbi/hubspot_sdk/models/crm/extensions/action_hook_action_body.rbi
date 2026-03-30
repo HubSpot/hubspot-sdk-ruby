@@ -27,7 +27,7 @@ module HubspotSDK
           sig { returns(T::Array[String]) }
           attr_accessor :property_names_included
 
-          # Specifies the type of action, which is 'ACTION_HOOK' for action hooks.
+          # The type of status.
           sig do
             returns(
               HubspotSDK::Crm::Extensions::ActionHookActionBody::Type::TaggedSymbol
@@ -54,8 +54,7 @@ module HubspotSDK
           end
           attr_writer :confirmation
 
-          # The label for the button that triggers the action as it will be displayed to
-          # users.
+          # The label for this property as you'd like it displayed to users.
           sig { returns(T.nilable(String)) }
           attr_reader :label
 
@@ -82,13 +81,12 @@ module HubspotSDK
             # A list of property names that will be included on the action. See the
             # documentation for more information
             property_names_included:,
-            # Specifies the type of action, which is 'ACTION_HOOK' for action hooks.
+            # The type of status.
             type:,
             # The URL endpoint that will be called when the action is triggered.
             url:,
             confirmation: nil,
-            # The label for the button that triggers the action as it will be displayed to
-            # users.
+            # The label for this property as you'd like it displayed to users.
             label: nil
           )
           end
@@ -182,7 +180,7 @@ module HubspotSDK
             end
           end
 
-          # Specifies the type of action, which is 'ACTION_HOOK' for action hooks.
+          # The type of status.
           module Type
             extend HubspotSDK::Internal::Type::Enum
 

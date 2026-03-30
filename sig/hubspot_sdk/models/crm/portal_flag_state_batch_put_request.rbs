@@ -1,0 +1,20 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type portal_flag_state_batch_put_request =
+        { portal_states: ::Array[HubspotSDK::Crm::BatchPortalEntry] }
+
+      class PortalFlagStateBatchPutRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor portal_states: ::Array[HubspotSDK::Crm::BatchPortalEntry]
+
+        def initialize: (
+          portal_states: ::Array[HubspotSDK::Crm::BatchPortalEntry]
+        ) -> void
+
+        def to_hash: -> {
+          portal_states: ::Array[HubspotSDK::Crm::BatchPortalEntry]
+        }
+      end
+    end
+  end
+end

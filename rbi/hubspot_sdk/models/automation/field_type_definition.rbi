@@ -12,15 +12,18 @@ module HubspotSDK
             )
           end
 
+        # Indicates whether the field's options are sourced externally.
         sig { returns(T::Boolean) }
         attr_accessor :external_options
 
+        # The unique identifier for the field.
         sig { returns(String) }
         attr_accessor :name
 
-        sig { returns(T::Array[HubspotSDK::Option]) }
+        sig { returns(T::Array[HubspotSDK::AutomationActionsOption]) }
         attr_accessor :options
 
+        # Defines the structure and constraints of the field.
         sig do
           returns(
             T.any(
@@ -36,26 +39,34 @@ module HubspotSDK
         end
         attr_accessor :schema
 
+        # Specifies the data type of the field, with accepted values like bool, date,
+        # datetime, enumeration, json, number, object_coordinates, phone_number, string.
         sig do
           returns(HubspotSDK::Automation::FieldTypeDefinition::Type::OrSymbol)
         end
         attr_accessor :type
 
+        # Specifies whether the field uses the Chirp feature.
         sig { returns(T::Boolean) }
         attr_accessor :use_chirp
 
+        # A detailed explanation of the field's purpose and usage.
         sig { returns(T.nilable(String)) }
         attr_reader :description
 
         sig { params(description: String).void }
         attr_writer :description
 
+        # Specifies the type of external reference for options.
         sig { returns(T.nilable(String)) }
         attr_reader :external_options_reference_type
 
         sig { params(external_options_reference_type: String).void }
         attr_writer :external_options_reference_type
 
+        # Describes the field's type in the UI, with accepted values like booleancheckbox,
+        # calculation_equation, checkbox, date, file, html, number, phonenumber, radio,
+        # select, text, textarea, unknown.
         sig do
           returns(
             T.nilable(
@@ -73,24 +84,29 @@ module HubspotSDK
         end
         attr_writer :field_type
 
+        # Additional information or guidance about the field.
         sig { returns(T.nilable(String)) }
         attr_reader :help_text
 
         sig { params(help_text: String).void }
         attr_writer :help_text
 
+        # The user-friendly label for the field.
         sig { returns(T.nilable(String)) }
         attr_reader :label
 
         sig { params(label: String).void }
         attr_writer :label
 
+        # A URL that provides options for the field.
         sig { returns(T.nilable(String)) }
         attr_reader :options_url
 
         sig { params(options_url: String).void }
         attr_writer :options_url
 
+        # Indicates the type of object that the field references, with accepted values
+        # like OWNER.
         sig do
           returns(
             T.nilable(
@@ -112,7 +128,7 @@ module HubspotSDK
           params(
             external_options: T::Boolean,
             name: String,
-            options: T::Array[HubspotSDK::Option::OrHash],
+            options: T::Array[HubspotSDK::AutomationActionsOption::OrHash],
             schema:
               T.any(
                 HubspotSDK::Automation::IntegerFieldSchema::OrHash,
@@ -137,18 +153,34 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # Indicates whether the field's options are sourced externally.
           external_options:,
+          # The unique identifier for the field.
           name:,
           options:,
+          # Defines the structure and constraints of the field.
           schema:,
+          # Specifies the data type of the field, with accepted values like bool, date,
+          # datetime, enumeration, json, number, object_coordinates, phone_number, string.
           type:,
+          # Specifies whether the field uses the Chirp feature.
           use_chirp:,
+          # A detailed explanation of the field's purpose and usage.
           description: nil,
+          # Specifies the type of external reference for options.
           external_options_reference_type: nil,
+          # Describes the field's type in the UI, with accepted values like booleancheckbox,
+          # calculation_equation, checkbox, date, file, html, number, phonenumber, radio,
+          # select, text, textarea, unknown.
           field_type: nil,
+          # Additional information or guidance about the field.
           help_text: nil,
+          # The user-friendly label for the field.
           label: nil,
+          # A URL that provides options for the field.
           options_url: nil,
+          # Indicates the type of object that the field references, with accepted values
+          # like OWNER.
           referenced_object_type: nil
         )
         end
@@ -158,7 +190,7 @@ module HubspotSDK
             {
               external_options: T::Boolean,
               name: String,
-              options: T::Array[HubspotSDK::Option],
+              options: T::Array[HubspotSDK::AutomationActionsOption],
               schema:
                 T.any(
                   HubspotSDK::Automation::IntegerFieldSchema,
@@ -186,6 +218,7 @@ module HubspotSDK
         def to_hash
         end
 
+        # Defines the structure and constraints of the field.
         module Schema
           extend HubspotSDK::Internal::Type::Union
 
@@ -213,6 +246,8 @@ module HubspotSDK
           end
         end
 
+        # Specifies the data type of the field, with accepted values like bool, date,
+        # datetime, enumeration, json, number, object_coordinates, phone_number, string.
         module Type
           extend HubspotSDK::Internal::Type::Enum
 
@@ -284,6 +319,9 @@ module HubspotSDK
           end
         end
 
+        # Describes the field's type in the UI, with accepted values like booleancheckbox,
+        # calculation_equation, checkbox, date, file, html, number, phonenumber, radio,
+        # select, text, textarea, unknown.
         module FieldType
           extend HubspotSDK::Internal::Type::Enum
 
@@ -388,6 +426,8 @@ module HubspotSDK
           end
         end
 
+        # Indicates the type of object that the field references, with accepted values
+        # like OWNER.
         module ReferencedObjectType
           extend HubspotSDK::Internal::Type::Enum
 

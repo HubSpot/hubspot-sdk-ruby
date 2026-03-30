@@ -5,7 +5,7 @@ module HubspotSDK
     module Cms
       module Blogs
         # @see HubspotSDK::Resources::Cms::Blogs::Posts#schedule
-        class PostScheduleParams < HubspotSDK::Models::Cms::Blogs::ContentScheduleRequestVNext
+        class PostScheduleParams < HubspotSDK::Models::Cms::ContentScheduleRequestVNext
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

@@ -12,7 +12,7 @@ module HubspotSDK
             )
           end
 
-        # The ID of the user who performed the action.
+        # The user's unique ID.
         sig { returns(Integer) }
         attr_accessor :user_id
 
@@ -27,7 +27,7 @@ module HubspotSDK
           params(user_id: Integer, user_email: String).returns(T.attached_class)
         end
         def self.new(
-          # The ID of the user who performed the action.
+          # The user's unique ID.
           user_id:,
           # The email address of the user who performed the action.
           user_email: nil

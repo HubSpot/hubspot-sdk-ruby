@@ -12,6 +12,7 @@ module HubspotSDK
             )
           end
 
+        # Indicates the source of the request, with the default value being 'COPILOT'.
         sig do
           returns(
             HubspotSDK::Automation::CopilotRequestContext::Source::OrSymbol
@@ -19,6 +20,7 @@ module HubspotSDK
         end
         attr_accessor :source
 
+        # The unique identifier for the trajectory.
         sig { returns(T.nilable(String)) }
         attr_reader :trajectory_id
 
@@ -32,7 +34,12 @@ module HubspotSDK
             trajectory_id: String
           ).returns(T.attached_class)
         end
-        def self.new(source:, trajectory_id: nil)
+        def self.new(
+          # Indicates the source of the request, with the default value being 'COPILOT'.
+          source:,
+          # The unique identifier for the trajectory.
+          trajectory_id: nil
+        )
         end
 
         sig do
@@ -47,6 +54,7 @@ module HubspotSDK
         def to_hash
         end
 
+        # Indicates the source of the request, with the default value being 'COPILOT'.
         module Source
           extend HubspotSDK::Internal::Type::Enum
 

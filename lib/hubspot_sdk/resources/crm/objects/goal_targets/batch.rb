@@ -74,8 +74,8 @@ module HubspotSDK
             # {HubspotSDK::Models::Crm::Objects::GoalTargets::BatchGetParams} for more
             # details.
             #
-            # Retrieve multiple goal targets with a single request. Goal targets are specified
-            # by ID.
+            # Retrieve records by record ID or include the `idProperty` parameter to retrieve
+            # records by a custom unique value property.
             #
             # @overload get(inputs:, properties:, properties_with_history:, archived: nil, id_property: nil, request_options: {})
             #

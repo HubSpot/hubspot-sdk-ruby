@@ -15,8 +15,9 @@ module HubspotSDK
             )
           end
 
-        # A cursor token for pagination. Use the value from the previous response's
-        # paging.next.after field.
+        # The paging cursor token of the last successfully read resource will be returned
+        # as the `paging.next.after` JSON property of a paged response containing more
+        # results.
         sig { returns(T.nilable(String)) }
         attr_reader :after
 
@@ -30,21 +31,18 @@ module HubspotSDK
         sig { params(archived: T::Boolean).void }
         attr_writer :archived
 
-        # Filter redirects created after a specific timestamp. Format must be date-time.
         sig { returns(T.nilable(Time)) }
         attr_reader :created_after
 
         sig { params(created_after: Time).void }
         attr_writer :created_after
 
-        # Filter redirects by their exact creation timestamp. Format must be date-time.
         sig { returns(T.nilable(Time)) }
         attr_reader :created_at
 
         sig { params(created_at: Time).void }
         attr_writer :created_at
 
-        # Filter redirects created before a specific timestamp. Format must be date-time.
         sig { returns(T.nilable(Time)) }
         attr_reader :created_before
 
@@ -58,28 +56,24 @@ module HubspotSDK
         sig { params(limit: Integer).void }
         attr_writer :limit
 
-        # Specify the order in which to sort the results. Accepts an array of strings.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :sort
 
         sig { params(sort: T::Array[String]).void }
         attr_writer :sort
 
-        # Filter redirects updated after a specific timestamp. Format must be date-time.
         sig { returns(T.nilable(Time)) }
         attr_reader :updated_after
 
         sig { params(updated_after: Time).void }
         attr_writer :updated_after
 
-        # Filter redirects by their exact update timestamp. Format must be date-time.
         sig { returns(T.nilable(Time)) }
         attr_reader :updated_at
 
         sig { params(updated_at: Time).void }
         attr_writer :updated_at
 
-        # Filter redirects updated before a specific timestamp. Format must be date-time.
         sig { returns(T.nilable(Time)) }
         attr_reader :updated_before
 
@@ -102,26 +96,20 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # A cursor token for pagination. Use the value from the previous response's
-          # paging.next.after field.
+          # The paging cursor token of the last successfully read resource will be returned
+          # as the `paging.next.after` JSON property of a paged response containing more
+          # results.
           after: nil,
           # Whether to return only results that have been archived.
           archived: nil,
-          # Filter redirects created after a specific timestamp. Format must be date-time.
           created_after: nil,
-          # Filter redirects by their exact creation timestamp. Format must be date-time.
           created_at: nil,
-          # Filter redirects created before a specific timestamp. Format must be date-time.
           created_before: nil,
           # The maximum number of results to display per page.
           limit: nil,
-          # Specify the order in which to sort the results. Accepts an array of strings.
           sort: nil,
-          # Filter redirects updated after a specific timestamp. Format must be date-time.
           updated_after: nil,
-          # Filter redirects by their exact update timestamp. Format must be date-time.
           updated_at: nil,
-          # Filter redirects updated before a specific timestamp. Format must be date-time.
           updated_before: nil,
           request_options: {}
         )

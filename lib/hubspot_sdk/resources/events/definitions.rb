@@ -7,6 +7,8 @@ module HubspotSDK
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Events::DefinitionCreateParams} for more details.
         #
+        # Create a custom event definition.
+        #
         # @overload create(include_default_properties:, label:, property_definitions:, custom_matching_id: nil, description: nil, name: nil, primary_object: nil, request_options: {})
         #
         # @param include_default_properties [Boolean]
@@ -32,13 +34,15 @@ module HubspotSDK
           parsed, options = HubspotSDK::Events::DefinitionCreateParams.dump_request(params)
           @client.request(
             method: :post,
-            path: "events/custom/2026-03/event-definitions",
+            path: "events/2026-03/event-definitions",
             body: parsed,
             model: HubspotSDK::Events::ExternalBehavioralEventTypeDefinition,
             options: options
           )
         end
 
+        # Update a specific custom event definition by name.
+        #
         # @overload update(event_name, description: nil, label: nil, request_options: {})
         #
         # @param event_name [String]
@@ -56,7 +60,7 @@ module HubspotSDK
           parsed, options = HubspotSDK::Events::DefinitionUpdateParams.dump_request(params)
           @client.request(
             method: :patch,
-            path: ["events/custom/2026-03/event-definitions/%1$s", event_name],
+            path: ["events/2026-03/event-definitions/%1$s", event_name],
             body: parsed,
             model: HubspotSDK::Events::ExternalBehavioralEventTypeDefinition,
             options: options
@@ -65,6 +69,8 @@ module HubspotSDK
 
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Events::DefinitionListParams} for more details.
+        #
+        # Retrieve existing custom event definitions.
         #
         # @overload list(after: nil, include_properties: nil, limit: nil, search_string: nil, sort_order: nil, request_options: {})
         #
@@ -88,7 +94,7 @@ module HubspotSDK
           query = HubspotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
-            path: "events/custom/2026-03/event-definitions",
+            path: "events/2026-03/event-definitions",
             query: query.transform_keys(
               include_properties: "includeProperties",
               search_string: "searchString",
@@ -100,6 +106,8 @@ module HubspotSDK
           )
         end
 
+        # Delete a custom event definition by name.
+        #
         # @overload delete(event_name, request_options: {})
         #
         # @param event_name [String]
@@ -111,7 +119,7 @@ module HubspotSDK
         def delete(event_name, params = {})
           @client.request(
             method: :delete,
-            path: ["events/custom/2026-03/event-definitions/%1$s", event_name],
+            path: ["events/2026-03/event-definitions/%1$s", event_name],
             model: NilClass,
             options: params[:request_options]
           )
@@ -119,6 +127,8 @@ module HubspotSDK
 
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Events::DefinitionCreatePropertyParams} for more details.
+        #
+        # Create a new property for an existing event definition.
         #
         # @overload create_property(event_name, label:, type:, description: nil, name: nil, options: nil, request_options: {})
         #
@@ -143,13 +153,15 @@ module HubspotSDK
           parsed, options = HubspotSDK::Events::DefinitionCreatePropertyParams.dump_request(params)
           @client.request(
             method: :post,
-            path: ["events/custom/2026-03/event-definitions/%1$s/property", event_name],
+            path: ["events/2026-03/event-definitions/%1$s/property", event_name],
             body: parsed,
             model: HubspotSDK::Property,
             options: options
           )
         end
 
+        # Delete an existing property from a custom event definition.
+        #
         # @overload delete_property(property_name, event_name:, request_options: {})
         #
         # @param property_name [String]
@@ -167,12 +179,14 @@ module HubspotSDK
             end
           @client.request(
             method: :delete,
-            path: ["events/custom/2026-03/event-definitions/%1$s/property/%2$s", event_name, property_name],
+            path: ["events/2026-03/event-definitions/%1$s/property/%2$s", event_name, property_name],
             model: NilClass,
             options: options
           )
         end
 
+        # Fetch a single custom event definition by name.
+        #
         # @overload get(event_name, request_options: {})
         #
         # @param event_name [String]
@@ -184,47 +198,14 @@ module HubspotSDK
         def get(event_name, params = {})
           @client.request(
             method: :get,
-            path: ["events/custom/2026-03/event-definitions/%1$s", event_name],
+            path: ["events/2026-03/event-definitions/%1$s", event_name],
             model: HubspotSDK::Events::ExternalBehavioralEventTypeDefinition,
             options: params[:request_options]
           )
         end
 
-        # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Events::DefinitionSendParams} for more details.
+        # Send multiple event occurrences at once.
         #
-        # @overload send_(event_name:, properties:, email: nil, object_id_: nil, occurred_at: nil, utk: nil, uuid: nil, request_options: {})
-        #
-        # @param event_name [String] Internal name of the event-type to trigger
-        #
-        # @param properties [Hash{Symbol=>String}] Map of properties for the event in the format property internal name - property
-        #
-        # @param email [String] Email of visitor
-        #
-        # @param object_id_ [String] The object id that this event occurred on. Could be a contact id or a visitor id
-        #
-        # @param occurred_at [Time] The time when this event occurred (if any). If this isn't set, the current time
-        #
-        # @param utk [String] User token
-        #
-        # @param uuid [String]
-        #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-        #
-        # @return [nil]
-        #
-        # @see HubspotSDK::Models::Events::DefinitionSendParams
-        def send_(params)
-          parsed, options = HubspotSDK::Events::DefinitionSendParams.dump_request(params)
-          @client.request(
-            method: :post,
-            path: "events/custom/2026-03/send",
-            body: parsed,
-            model: NilClass,
-            options: options
-          )
-        end
-
         # @overload send_batch(inputs:, request_options: {})
         #
         # @param inputs [Array<HubspotSDK::Models::Events::BehavioralEventHTTPCompletionRequest>]
@@ -237,7 +218,7 @@ module HubspotSDK
           parsed, options = HubspotSDK::Events::DefinitionSendBatchParams.dump_request(params)
           @client.request(
             method: :post,
-            path: "events/custom/2026-03/send/batch",
+            path: "events/2026-03/send/batch",
             body: parsed,
             model: NilClass,
             options: options
@@ -246,6 +227,8 @@ module HubspotSDK
 
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Events::DefinitionUpdatePropertyParams} for more details.
+        #
+        # Update an existing property in a custom event definition.
         #
         # @overload update_property(property_name, event_name:, description: nil, label: nil, options: nil, request_options: {})
         #
@@ -272,7 +255,7 @@ module HubspotSDK
             end
           @client.request(
             method: :patch,
-            path: ["events/custom/2026-03/event-definitions/%1$s/property/%2$s", event_name, property_name],
+            path: ["events/2026-03/event-definitions/%1$s/property/%2$s", event_name, property_name],
             body: parsed,
             model: HubspotSDK::Property,
             options: options

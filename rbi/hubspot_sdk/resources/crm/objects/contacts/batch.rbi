@@ -6,11 +6,6 @@ module HubspotSDK
       class Objects
         class Contacts
           class Batch
-            # Create a batch of contacts. The `inputs` array can contain a `properties` object
-            # to define property values for each record, along with an `associations` array to
-            # define
-            # [associations](https://developers.hubspot.com/docs/guides/api/crm/associations/associations-v4)
-            # with other CRM records.
             sig do
               params(
                 inputs:
@@ -23,10 +18,6 @@ module HubspotSDK
             def create(inputs:, request_options: {})
             end
 
-            # Update a batch of contacts by ID (`contactId`) or unique property value
-            # (`idProperty`). Provided property values will be overwritten. Read-only and
-            # non-existent properties will result in an error. Properties values can be
-            # cleared by passing an empty string.
             sig do
               params(
                 inputs:
@@ -39,11 +30,7 @@ module HubspotSDK
             def update(inputs:, request_options: {})
             end
 
-            # Archive a batch of contacts by ID. Archived contacts can be restored within 90
-            # days of deletion. Learn more about the
-            # [data impacted by contact deletions](https://knowledge.hubspot.com/privacy-and-consent/understand-restorable-and-permanent-contact-deletions)
-            # and how to
-            # [restore archived records](https://knowledge.hubspot.com/records/restore-deleted-records).
+            # Archive a batch of contacts
             sig do
               params(
                 inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
@@ -53,8 +40,6 @@ module HubspotSDK
             def delete(inputs:, request_options: {})
             end
 
-            # Retrieve a batch of contacts by ID (`contactId`) or unique property value
-            # (`idProperty`).
             sig do
               params(
                 inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
@@ -82,8 +67,6 @@ module HubspotSDK
             )
             end
 
-            # Upsert a batch of contacts. The `inputs` array can contain a `properties` object
-            # to define property values for each record.
             sig do
               params(
                 inputs:

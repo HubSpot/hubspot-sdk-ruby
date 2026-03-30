@@ -10,6 +10,8 @@ module HubspotSDK
           end
           attr_reader :multi_language
 
+          # Get the list of blogs. Results can be limited and filtered by creation or
+          # updated date.
           sig do
             params(
               after: String,
@@ -45,6 +47,7 @@ module HubspotSDK
           )
           end
 
+          # Retrieve a specific blog by its ID.
           sig do
             params(
               blog_id: String,
@@ -54,6 +57,7 @@ module HubspotSDK
           def get(blog_id, request_options: {})
           end
 
+          # Get a specific blog revision.
           sig do
             params(
               revision_id: String,
@@ -64,6 +68,8 @@ module HubspotSDK
           def get_revision(revision_id, blog_id:, request_options: {})
           end
 
+          # Get the list of blog revisions. Results can be limited and filtered by creation
+          # or updated date.
           sig do
             params(
               blog_id: String,

@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type feature_flag_delete_params =
+        { app_id: Integer, flag_name: String, portal_id: Integer }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class FeatureFlagDeleteParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor app_id: Integer
+
+        attr_accessor flag_name: String
+
+        attr_accessor portal_id: Integer
+
+        def initialize: (
+          app_id: Integer,
+          flag_name: String,
+          portal_id: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          app_id: Integer,
+          flag_name: String,
+          portal_id: Integer,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end
