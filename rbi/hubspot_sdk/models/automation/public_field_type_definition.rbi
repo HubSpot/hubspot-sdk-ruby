@@ -12,12 +12,15 @@ module HubspotSDK
             )
           end
 
+        # The internal name used to identify the field.
         sig { returns(String) }
         attr_accessor :name
 
         sig { returns(T::Array[HubspotSDK::Automation::PublicOption]) }
         attr_accessor :options
 
+        # The data type of the field, with accepted values including bool, date, datetime,
+        # enumeration, json, number, object_coordinates, phone_number, and string.
         sig do
           returns(
             HubspotSDK::Automation::PublicFieldTypeDefinition::Type::OrSymbol
@@ -25,12 +28,16 @@ module HubspotSDK
         end
         attr_accessor :type
 
+        # A detailed explanation of the field's purpose.
         sig { returns(T.nilable(String)) }
         attr_reader :description
 
         sig { params(description: String).void }
         attr_writer :description
 
+        # The type of field, with accepted values including booleancheckbox,
+        # calculation_equation, checkbox, date, file, html, number, phonenumber, radio,
+        # select, text, and textarea.
         sig do
           returns(
             T.nilable(
@@ -48,24 +55,29 @@ module HubspotSDK
         end
         attr_writer :field_type
 
+        # Additional information or guidance about the field.
         sig { returns(T.nilable(String)) }
         attr_reader :help_text
 
         sig { params(help_text: String).void }
         attr_writer :help_text
 
+        # A user-friendly name for the field.
         sig { returns(T.nilable(String)) }
         attr_reader :label
 
         sig { params(label: String).void }
         attr_writer :label
 
+        # A URL that provides options for the field.
         sig { returns(T.nilable(String)) }
         attr_reader :options_url
 
         sig { params(options_url: String).void }
         attr_writer :options_url
 
+        # The type of object that the field references, with accepted values including
+        # OWNER.
         sig do
           returns(
             T.nilable(
@@ -100,14 +112,26 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # The internal name used to identify the field.
           name:,
           options:,
+          # The data type of the field, with accepted values including bool, date, datetime,
+          # enumeration, json, number, object_coordinates, phone_number, and string.
           type:,
+          # A detailed explanation of the field's purpose.
           description: nil,
+          # The type of field, with accepted values including booleancheckbox,
+          # calculation_equation, checkbox, date, file, html, number, phonenumber, radio,
+          # select, text, and textarea.
           field_type: nil,
+          # Additional information or guidance about the field.
           help_text: nil,
+          # A user-friendly name for the field.
           label: nil,
+          # A URL that provides options for the field.
           options_url: nil,
+          # The type of object that the field references, with accepted values including
+          # OWNER.
           referenced_object_type: nil
         )
         end
@@ -133,6 +157,8 @@ module HubspotSDK
         def to_hash
         end
 
+        # The data type of the field, with accepted values including bool, date, datetime,
+        # enumeration, json, number, object_coordinates, phone_number, and string.
         module Type
           extend HubspotSDK::Internal::Type::Enum
 
@@ -202,6 +228,9 @@ module HubspotSDK
           end
         end
 
+        # The type of field, with accepted values including booleancheckbox,
+        # calculation_equation, checkbox, date, file, html, number, phonenumber, radio,
+        # select, text, and textarea.
         module FieldType
           extend HubspotSDK::Internal::Type::Enum
 
@@ -286,6 +315,8 @@ module HubspotSDK
           end
         end
 
+        # The type of object that the field references, with accepted values including
+        # OWNER.
         module ReferencedObjectType
           extend HubspotSDK::Internal::Type::Enum
 

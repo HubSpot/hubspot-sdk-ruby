@@ -10,9 +10,11 @@ module HubspotSDK
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Crm::ObjectSchemaCreateParams} for more details.
         #
+        # Create a new custom object schema by defining its properties and associations.
+        #
         # @overload create(allows_sensitive_properties:, associated_objects:, labels:, name:, properties:, required_properties:, searchable_properties:, secondary_display_properties:, description: nil, primary_display_property: nil, request_options: {})
         #
-        # @param allows_sensitive_properties [Boolean]
+        # @param allows_sensitive_properties [Boolean] Determines if the object type can include properties that are marked as sensitiv
         #
         # @param associated_objects [Array<String>] Associations defined for this object type.
         #
@@ -28,13 +30,13 @@ module HubspotSDK
         #
         # @param secondary_display_properties [Array<String>] The names of secondary properties for this object. These will be displayed as se
         #
-        # @param description [String]
+        # @param description [String] A brief explanation of the object type.
         #
         # @param primary_display_property [String] The name of the primary property for this object. This will be displayed as prim
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::ObjectSchema]
+        # @return [HubspotSDK::Models::Crm::ObjectSchema]
         #
         # @see HubspotSDK::Models::Crm::ObjectSchemaCreateParams
         def create(params)
@@ -43,23 +45,36 @@ module HubspotSDK
             method: :post,
             path: "crm-object-schemas/2026-03/schemas",
             body: parsed,
-            model: HubspotSDK::ObjectSchema,
+            model: HubspotSDK::Crm::ObjectSchema,
             options: options
           )
         end
 
+        # Update attributes of a custom object schema, such as properties and labels,
+        # using the object type ID or fully qualified name.
+        #
         # @overload update(object_type, clear_description:, allows_sensitive_properties: nil, description: nil, labels: nil, primary_display_property: nil, required_properties: nil, restorable: nil, searchable_properties: nil, secondary_display_properties: nil, request_options: {})
         #
-        # @param object_type [String]
+        # @param object_type [String] Fully qualified name or object type ID of your schema.
+        #
         # @param clear_description [Boolean]
+        #
         # @param allows_sensitive_properties [Boolean]
+        #
         # @param description [String]
+        #
         # @param labels [HubspotSDK::Models::ObjectTypeDefinitionLabels]
+        #
         # @param primary_display_property [String]
+        #
         # @param required_properties [Array<String>]
+        #
         # @param restorable [Boolean]
+        #
         # @param searchable_properties [Array<String>]
+        #
         # @param secondary_display_properties [Array<String>]
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::ObjectTypeDefinition]
@@ -76,6 +91,9 @@ module HubspotSDK
           )
         end
 
+        # Retrieve all custom object schemas, with options to include property
+        # definitions, association definitions, and audit metadata.
+        #
         # @overload list(archived: nil, include_association_definitions: nil, include_audit_metadata: nil, include_property_definitions: nil, request_options: {})
         #
         # @param archived [Boolean] Whether to return only results that have been archived.
@@ -88,7 +106,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CollectionResponseObjectSchemaNoPaging]
+        # @return [HubspotSDK::Models::Crm::CollectionResponseObjectSchemaNoPaging]
         #
         # @see HubspotSDK::Models::Crm::ObjectSchemaListParams
         def list(params = {})
@@ -102,14 +120,17 @@ module HubspotSDK
               include_audit_metadata: "includeAuditMetadata",
               include_property_definitions: "includePropertyDefinitions"
             ),
-            model: HubspotSDK::CollectionResponseObjectSchemaNoPaging,
+            model: HubspotSDK::Crm::CollectionResponseObjectSchemaNoPaging,
             options: options
           )
         end
 
+        # Remove a custom object schema from the account using its object type ID or fully
+        # qualified name.
+        #
         # @overload delete(object_type, archived: nil, request_options: {})
         #
-        # @param object_type [String]
+        # @param object_type [String] Fully qualified name or object type ID of your schema.
         #
         # @param archived [Boolean] Whether to return only results that have been archived.
         #
@@ -130,15 +151,23 @@ module HubspotSDK
           )
         end
 
+        # Create a new association between the specified object type and another object
+        # type. This operation requires the definition of the association attributes, such
+        # as the primary and target object type IDs.
+        #
         # @overload create_association(object_type, from_object_type_id:, to_object_type_id:, name: nil, request_options: {})
         #
-        # @param object_type [String]
+        # @param object_type [String] Fully qualified name or object type ID of your schema.
+        #
         # @param from_object_type_id [String]
+        #
         # @param to_object_type_id [String]
+        #
         # @param name [String]
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Events::AssociationDefinition]
+        # @return [HubspotSDK::Models::AssociationDefinition]
         #
         # @see HubspotSDK::Models::Crm::ObjectSchemaCreateAssociationParams
         def create_association(object_type, params)
@@ -147,15 +176,21 @@ module HubspotSDK
             method: :post,
             path: ["crm-object-schemas/2026-03/schemas/%1$s/associations", object_type],
             body: parsed,
-            model: HubspotSDK::Events::AssociationDefinition,
+            model: HubspotSDK::AssociationDefinition,
             options: options
           )
         end
 
+        # Remove an association between two object types identified by the association
+        # identifier and object type. This operation is irreversible and will permanently
+        # delete the specified association.
+        #
         # @overload delete_association(association_identifier, object_type:, request_options: {})
         #
-        # @param association_identifier [String]
-        # @param object_type [String]
+        # @param association_identifier [String] Unique ID of the association to remove.
+        #
+        # @param object_type [String] Fully qualified name or object type ID of your schema.
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
@@ -179,15 +214,22 @@ module HubspotSDK
           )
         end
 
+        # Retrieve details of a custom object schema, including its properties and
+        # associations, using the object type ID or fully qualified name.
+        #
         # @overload get(object_type, include_association_definitions: nil, include_audit_metadata: nil, include_property_definitions: nil, request_options: {})
         #
-        # @param object_type [String]
+        # @param object_type [String] Fully qualified name or object type ID of your schema.
+        #
         # @param include_association_definitions [Boolean]
+        #
         # @param include_audit_metadata [Boolean]
+        #
         # @param include_property_definitions [Boolean]
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::ObjectSchema]
+        # @return [HubspotSDK::Models::Crm::ObjectSchema]
         #
         # @see HubspotSDK::Models::Crm::ObjectSchemaGetParams
         def get(object_type, params = {})
@@ -201,7 +243,7 @@ module HubspotSDK
               include_audit_metadata: "includeAuditMetadata",
               include_property_definitions: "includePropertyDefinitions"
             ),
-            model: HubspotSDK::ObjectSchema,
+            model: HubspotSDK::Crm::ObjectSchema,
             options: options
           )
         end

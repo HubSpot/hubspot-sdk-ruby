@@ -6,7 +6,7 @@ module HubspotSDK
       module Blogs
         class BlogPost < HubspotSDK::Internal::Type::BaseModel
           # @!attribute id
-          #   The unique ID of the blog post.
+          #   The unique ID of the Blog Post.
           #
           #   @return [String]
           required :id, String
@@ -49,33 +49,31 @@ module HubspotSDK
                    api_name: :attachedStylesheets
 
           # @!attribute author_name
-          #   The name of the user who last published the blog post. For posts that haven't
-          #   been published yet, this property will reflect the user who initially created
-          #   the draft.
+          #   The name of the user that updated this Blog Post.
           #
           #   @return [String]
           required :author_name, String, api_name: :authorName
 
           # @!attribute blog_author_id
-          #   The ID of the blog author associated with this post.
+          #   The ID of the Blog Author associated with this Blog Post.
           #
           #   @return [String]
           required :blog_author_id, String, api_name: :blogAuthorId
 
           # @!attribute campaign
-          #   The GUID of the marketing campaign the post is associated with.
+          #   The GUID of the marketing campaign this Blog Post is a part of.
           #
           #   @return [String]
           required :campaign, String
 
           # @!attribute category_id
-          #   ID of the object type.
+          #   ID of the type of object this is. Should always .
           #
           #   @return [Integer]
           required :category_id, Integer, api_name: :categoryId
 
           # @!attribute content_group_id
-          #   The ID of the post's parent blog.
+          #   The ID of the parent Blog this Blog Post is associated with.
           #
           #   @return [String]
           required :content_group_id, String, api_name: :contentGroupId
@@ -95,7 +93,7 @@ module HubspotSDK
           required :created, Time
 
           # @!attribute created_by_id
-          #   The ID of the user that created the post.
+          #   The ID of the user that created this Blog Post.
           #
           #   @return [String]
           required :created_by_id, String, api_name: :createdById
@@ -116,8 +114,8 @@ module HubspotSDK
                    api_name: :currentState
 
           # @!attribute domain
-          #   The domain that the post lives on. If null, the post will default to the domain
-          #   of the parent blog.
+          #   The domain this Blog Post will resolve to. If null, the Blog Post will default
+          #   to the domain of the ParentBlog.
           #
           #   @return [String]
           required :domain, String
@@ -135,7 +133,7 @@ module HubspotSDK
           required :dynamic_page_data_source_type, Integer, api_name: :dynamicPageDataSourceType
 
           # @!attribute dynamic_page_hub_db_table_id
-          #   For dynamic HubDB pages, the ID of the HubDB table this post references.
+          #   The ID of the HubDB table this Blog Post references, if applicable
           #
           #   @return [String]
           required :dynamic_page_hub_db_table_id, String, api_name: :dynamicPageHubDbTableId
@@ -199,7 +197,7 @@ module HubspotSDK
           required :head_html, String, api_name: :headHtml
 
           # @!attribute html_title
-          #   The HTML title of the post.
+          #   The html title of this Blog Post.
           #
           #   @return [String]
           required :html_title, String, api_name: :htmlTitle
@@ -213,8 +211,8 @@ module HubspotSDK
                    api_name: :includeDefaultCustomCss
 
           # @!attribute language
-          #   The explicitly defined ISO 639 language code of the post. If null, the post will
-          #   default to the language of the parent blog.
+          #   The explicitly defined ISO 639 language code of the Blog Post. If null, the Blog
+          #   Post will default to the language of the ParentBlog.
           #
           #   @return [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::Language]
           required :language, enum: -> { HubspotSDK::Cms::Blogs::BlogPost::Language }
@@ -222,9 +220,9 @@ module HubspotSDK
           # @!attribute layout_sections
           #   A structure detailing the layout sections of the blog post.
           #
-          #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::Blogs::LayoutSection}]
+          #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::LayoutSection}]
           required :layout_sections,
-                   -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::Blogs::LayoutSection] },
+                   -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::LayoutSection] },
                    api_name: :layoutSections
 
           # @!attribute link_rel_canonical_url
@@ -247,7 +245,7 @@ module HubspotSDK
           required :meta_description, String, api_name: :metaDescription
 
           # @!attribute name
-          #   The internal name of the post.
+          #   The internal name of the Blog Post.
           #
           #   @return [String]
           required :name, String
@@ -281,7 +279,7 @@ module HubspotSDK
 
           # @!attribute password
           #   Set this to create a password protected page. Entering the password will be
-          #   required to view the blog post.
+          #   required to view the page.
           #
           #   @return [String]
           required :password, String
@@ -340,20 +338,20 @@ module HubspotSDK
           required :rss_summary, String, api_name: :rssSummary
 
           # @!attribute slug
-          #   The URL slug of the blog post. This field is appended to the domain to construct
-          #   the url of this post.
+          #   The path of the this blog post. This field is appended to the domain to
+          #   construct the url of this post.
           #
           #   @return [String]
           required :slug, String
 
           # @!attribute state
-          #   An enumeration describing the current publish state of the post.
+          #   An ENUM descibing the current state of this Blog Post.
           #
           #   @return [String]
           required :state, String
 
           # @!attribute tag_ids
-          #   The IDs of the tags associated with this post.
+          #   List of IDs for the tags associated with this Blog Post.
           #
           #   @return [Array<Integer>]
           required :tag_ids, HubspotSDK::Internal::Type::ArrayOf[Integer], api_name: :tagIds
@@ -367,7 +365,7 @@ module HubspotSDK
                    api_name: :themeSettingsValues
 
           # @!attribute translated_from_id
-          #   ID of the primary blog post that this post was translated from.
+          #   ID of the primary blog post this object was translated from.
           #
           #   @return [String]
           required :translated_from_id, String, api_name: :translatedFromId
@@ -376,9 +374,9 @@ module HubspotSDK
           #   A map of translations for the blog post, each associated with a specific
           #   language variation.
           #
-          #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::Blogs::ContentLanguageVariation}]
+          #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::ContentLanguageVariation}]
           required :translations,
-                   -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::Blogs::ContentLanguageVariation] }
+                   -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::ContentLanguageVariation] }
 
           # @!attribute updated
           #   The timestamp (ISO8601 format) when this Blog Post was updated.
@@ -387,7 +385,7 @@ module HubspotSDK
           required :updated, Time
 
           # @!attribute updated_by_id
-          #   The ID of the user that updated the post.
+          #   The ID of the user that updated this Blog Post.
           #
           #   @return [String]
           required :updated_by_id, String, api_name: :updatedById
@@ -399,7 +397,7 @@ module HubspotSDK
           required :url, String
 
           # @!attribute use_featured_image
-          #   Boolean to determine if this post should use a featured image.
+          #   Boolean to determine if this post should use a featuredImage.
           #
           #   @return [Boolean]
           required :use_featured_image, HubspotSDK::Internal::Type::Boolean, api_name: :useFeaturedImage
@@ -423,7 +421,7 @@ module HubspotSDK
           #   Some parameter documentations has been truncated, see
           #   {HubspotSDK::Models::Cms::Blogs::BlogPost} for more details.
           #
-          #   @param id [String] The unique ID of the blog post.
+          #   @param id [String] The unique ID of the Blog Post.
           #
           #   @param ab_status [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::AbStatus] The status of the AB test associated with this blog post, if applicable
           #
@@ -435,33 +433,33 @@ module HubspotSDK
           #
           #   @param attached_stylesheets [Array<Hash{Symbol=>Object}>] List of stylesheets to attach to this blog post. These stylesheets are attached
           #
-          #   @param author_name [String] The name of the user who last published the blog post. For posts that haven't be
+          #   @param author_name [String] The name of the user that updated this Blog Post.
           #
-          #   @param blog_author_id [String] The ID of the blog author associated with this post.
+          #   @param blog_author_id [String] The ID of the Blog Author associated with this Blog Post.
           #
-          #   @param campaign [String] The GUID of the marketing campaign the post is associated with.
+          #   @param campaign [String] The GUID of the marketing campaign this Blog Post is a part of.
           #
-          #   @param category_id [Integer] ID of the object type.
+          #   @param category_id [Integer] ID of the type of object this is. Should always .
           #
-          #   @param content_group_id [String] The ID of the post's parent blog.
+          #   @param content_group_id [String] The ID of the parent Blog this Blog Post is associated with.
           #
           #   @param content_type_category [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::ContentTypeCategory] An ENUM descibing the type of this object. Should always be BLOG_POST.
           #
           #   @param created [Time] The timestamp (ISO8601 format) when this Blog Post was created.
           #
-          #   @param created_by_id [String] The ID of the user that created the post.
+          #   @param created_by_id [String] The ID of the user that created this Blog Post.
           #
           #   @param currently_published [Boolean] Whether the post is published (true or false)
           #
           #   @param current_state [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::CurrentState] A generated ENUM descibing the current state of this Blog Post. Should always ma
           #
-          #   @param domain [String] The domain that the post lives on. If null, the post will default to the domain
+          #   @param domain [String] The domain this Blog Post will resolve to. If null, the Blog Post will default t
           #
           #   @param dynamic_page_data_source_id [String] The identifier for the data source used by the dynamic page.
           #
           #   @param dynamic_page_data_source_type [Integer] The type of data source used by the dynamic page.
           #
-          #   @param dynamic_page_hub_db_table_id [String] For dynamic HubDB pages,
+          #   @param dynamic_page_hub_db_table_id [String] The ID of the HubDB table this Blog Post references, if applicable
           #
           #   @param enable_domain_stylesheets [Boolean] Boolean to determine whether or not the styles from the template should be appli
           #
@@ -479,13 +477,13 @@ module HubspotSDK
           #
           #   @param head_html [String] Custom HTML for embed codes, javascript, etc. that goes in the <head> tag of the
           #
-          #   @param html_title [String] The HTML title of the post.
+          #   @param html_title [String] The html title of this Blog Post.
           #
           #   @param include_default_custom_css [Boolean] Boolean to determine whether or not the Primary CSS Files should be applied.
           #
-          #   @param language [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::Language] The explicitly defined ISO 639 language code of the post. If null, the post will
+          #   @param language [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::Language] The explicitly defined ISO 639 language code of the Blog Post. If null, the Blog
           #
-          #   @param layout_sections [Hash{Symbol=>HubspotSDK::Models::Cms::Blogs::LayoutSection}] A structure detailing the layout sections of the blog post.
+          #   @param layout_sections [Hash{Symbol=>HubspotSDK::Models::Cms::LayoutSection}] A structure detailing the layout sections of the blog post.
           #
           #   @param link_rel_canonical_url [String] Optional override to set the URL to be used in the rel=canonical link tag on the
           #
@@ -493,7 +491,7 @@ module HubspotSDK
           #
           #   @param meta_description [String] A description that goes in <meta> tag on the page.
           #
-          #   @param name [String] The internal name of the post.
+          #   @param name [String] The internal name of the Blog Post.
           #
           #   @param page_expiry_date [Integer] The date at which this blog post should expire and begin redirecting to another
           #
@@ -521,25 +519,25 @@ module HubspotSDK
           #
           #   @param rss_summary [String] The contents of the RSS summary for this Blog Post.
           #
-          #   @param slug [String] The URL slug of the blog post. This field is appended to the domain to construct
+          #   @param slug [String] The path of the this blog post. This field is appended to the domain to construc
           #
-          #   @param state [String] An enumeration describing the current publish state of the post.
+          #   @param state [String] An ENUM descibing the current state of this Blog Post.
           #
-          #   @param tag_ids [Array<Integer>] The IDs of the tags associated with this post.
+          #   @param tag_ids [Array<Integer>] List of IDs for the tags associated with this Blog Post.
           #
           #   @param theme_settings_values [Hash{Symbol=>Object}] A collection of settings specific to the theme applied to the blog post.
           #
-          #   @param translated_from_id [String] ID of the primary blog post that this post was translated from.
+          #   @param translated_from_id [String] ID of the primary blog post this object was translated from.
           #
-          #   @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::Blogs::ContentLanguageVariation}] A map of translations for the blog post, each associated with a specific languag
+          #   @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::ContentLanguageVariation}] A map of translations for the blog post, each associated with a specific languag
           #
           #   @param updated [Time] The timestamp (ISO8601 format) when this Blog Post was updated.
           #
-          #   @param updated_by_id [String] The ID of the user that updated the post.
+          #   @param updated_by_id [String] The ID of the user that updated this Blog Post.
           #
           #   @param url [String] A generated field representing the URL of this blog post.
           #
-          #   @param use_featured_image [Boolean] Boolean to determine if this post should use a featured image.
+          #   @param use_featured_image [Boolean] Boolean to determine if this post should use a featuredImage.
           #
           #   @param widget_containers [Hash{Symbol=>Object}] A data structure containing the data for all the modules inside the containers f
           #
@@ -645,8 +643,8 @@ module HubspotSDK
             #   @return [Array<Symbol>]
           end
 
-          # The explicitly defined ISO 639 language code of the post. If null, the post will
-          # default to the language of the parent blog.
+          # The explicitly defined ISO 639 language code of the Blog Post. If null, the Blog
+          # Post will default to the language of the ParentBlog.
           #
           # @see HubspotSDK::Models::Cms::Blogs::BlogPost#language
           module Language

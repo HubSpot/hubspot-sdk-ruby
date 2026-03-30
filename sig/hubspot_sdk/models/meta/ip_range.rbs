@@ -43,7 +43,7 @@ module HubspotSDK
           def self?.values: -> ::Array[HubspotSDK::Models::Meta::IPRange::direction]
         end
 
-        type service = :API | :DNS | :EMAIL | :WEB_SCRAPING
+        type service = :API | :DNS | :EMAIL | :TEST_SERVICE | :WEB_SCRAPING
 
         module Service
           extend HubspotSDK::Internal::Type::Enum
@@ -51,6 +51,7 @@ module HubspotSDK
           API: :API
           DNS: :DNS
           EMAIL: :EMAIL
+          TEST_SERVICE: :TEST_SERVICE
           WEB_SCRAPING: :WEB_SCRAPING
 
           def self?.values: -> ::Array[HubspotSDK::Models::Meta::IPRange::service]

@@ -12,6 +12,7 @@ module HubspotSDK
             )
           end
 
+        # The URL endpoint where the action is executed.
         sig { returns(String) }
         attr_accessor :action_url
 
@@ -23,6 +24,8 @@ module HubspotSDK
         end
         attr_accessor :input_fields
 
+        # Holds various labels associated with the action, including names and
+        # descriptions.
         sig do
           returns(T::Hash[Symbol, HubspotSDK::Automation::PublicActionLabels])
         end
@@ -31,9 +34,11 @@ module HubspotSDK
         sig { returns(T::Array[String]) }
         attr_accessor :object_types
 
+        # Indicates whether the action is published and available for use.
         sig { returns(T::Boolean) }
         attr_accessor :published
 
+        # The timestamp indicating when the action was archived.
         sig { returns(T.nilable(Integer)) }
         attr_reader :archived_at
 
@@ -149,12 +154,17 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # The URL endpoint where the action is executed.
           action_url:,
           functions:,
           input_fields:,
+          # Holds various labels associated with the action, including names and
+          # descriptions.
           labels:,
           object_types:,
+          # Indicates whether the action is published and available for use.
           published:,
+          # The timestamp indicating when the action was archived.
           archived_at: nil,
           execution_rules: nil,
           input_field_dependencies: nil,

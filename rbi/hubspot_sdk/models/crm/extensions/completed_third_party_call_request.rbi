@@ -13,15 +13,21 @@ module HubspotSDK
               )
             end
 
+          # Indicates whether an engagement should be created for the call.
           sig { returns(T::Boolean) }
           attr_accessor :create_engagement
 
+          # Contains additional properties related to the engagement.
           sig { returns(T::Hash[Symbol, String]) }
           attr_accessor :engagement_properties
 
+          # The unique identifier for the call from an external system.
           sig { returns(String) }
           attr_accessor :external_call_id
 
+          # The final status of the call, with accepted values including: BUSY,
+          # CALLING_CRM_USER, CANCELED, COMPLETED, CONNECTING, FAILED, HOLD, IN_PROGRESS,
+          # MISSED, NO_ANSWER, QUEUED, RINGING, UNKNOWN.
           sig do
             returns(
               HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::OrSymbol
@@ -54,18 +60,21 @@ module HubspotSDK
           end
           attr_writer :to_number
 
+          # The timestamp indicating when the call started, formatted as a date-time string.
           sig { returns(T.nilable(Time)) }
           attr_reader :call_started_timestamp
 
           sig { params(call_started_timestamp: Time).void }
           attr_writer :call_started_timestamp
 
+          # The duration of the call in seconds.
           sig { returns(T.nilable(Integer)) }
           attr_reader :duration_seconds
 
           sig { params(duration_seconds: Integer).void }
           attr_writer :duration_seconds
 
+          # The ID of the user associated with the call.
           sig { returns(T.nilable(Integer)) }
           attr_reader :user_id
 
@@ -90,15 +99,24 @@ module HubspotSDK
             ).returns(T.attached_class)
           end
           def self.new(
+            # Indicates whether an engagement should be created for the call.
             create_engagement:,
+            # Contains additional properties related to the engagement.
             engagement_properties:,
+            # The unique identifier for the call from an external system.
             external_call_id:,
+            # The final status of the call, with accepted values including: BUSY,
+            # CALLING_CRM_USER, CANCELED, COMPLETED, CONNECTING, FAILED, HOLD, IN_PROGRESS,
+            # MISSED, NO_ANSWER, QUEUED, RINGING, UNKNOWN.
             final_call_status:,
             from_number:,
             potential_recipient_user_ids:,
             to_number:,
+            # The timestamp indicating when the call started, formatted as a date-time string.
             call_started_timestamp: nil,
+            # The duration of the call in seconds.
             duration_seconds: nil,
+            # The ID of the user associated with the call.
             user_id: nil
           )
           end
@@ -123,6 +141,9 @@ module HubspotSDK
           def to_hash
           end
 
+          # The final status of the call, with accepted values including: BUSY,
+          # CALLING_CRM_USER, CANCELED, COMPLETED, CONNECTING, FAILED, HOLD, IN_PROGRESS,
+          # MISSED, NO_ANSWER, QUEUED, RINGING, UNKNOWN.
           module FinalCallStatus
             extend HubspotSDK::Internal::Type::Enum
 

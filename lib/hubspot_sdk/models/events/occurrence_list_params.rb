@@ -9,26 +9,24 @@ module HubspotSDK
         include HubspotSDK::Internal::Type::RequestParameters
 
         # @!attribute id
-        #   An array of event IDs to filter by.
         #
         #   @return [Array<String>, nil]
         optional :id, HubspotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute after
-        #   A cursor token for pagination. Use the value from the previous response's
-        #   paging.next.after field.
+        #   The paging cursor token of the last successfully read resource will be returned
+        #   as the `paging.next.after` JSON property of a paged response containing more
+        #   results.
         #
         #   @return [String, nil]
         optional :after, String
 
         # @!attribute before
-        #   A cursor token to retrieve results before a specific point.
         #
         #   @return [String, nil]
         optional :before, String
 
         # @!attribute event_type
-        #   The type of event to filter by.
         #
         #   @return [String, nil]
         optional :event_type, String
@@ -40,7 +38,6 @@ module HubspotSDK
         optional :limit, Integer
 
         # @!attribute object_id_
-        #   The unique identifier of the object associated with the events.
         #
         #   @return [Integer, nil]
         optional :object_id_, Integer
@@ -51,25 +48,21 @@ module HubspotSDK
         optional :object_property, -> { HubspotSDK::Events::OccurrenceListParams::ObjectProperty }
 
         # @!attribute object_type
-        #   The type of object associated with the events.
         #
         #   @return [String, nil]
         optional :object_type, String
 
         # @!attribute occurred_after
-        #   Filter events that occurred after this date-time.
         #
         #   @return [Time, nil]
         optional :occurred_after, Time
 
         # @!attribute occurred_before
-        #   Filter events that occurred before this date-time.
         #
         #   @return [Time, nil]
         optional :occurred_before, Time
 
         # @!attribute properties
-        #   An array of property names to include in the response.
         #
         #   @return [Array<String>, nil]
         optional :properties, HubspotSDK::Internal::Type::ArrayOf[String]
@@ -80,7 +73,6 @@ module HubspotSDK
         optional :property, -> { HubspotSDK::Events::OccurrenceListParams::Property }
 
         # @!attribute sort
-        #   An array of fields to sort the results by.
         #
         #   @return [Array<String>, nil]
         optional :sort, HubspotSDK::Internal::Type::ArrayOf[String]
@@ -89,54 +81,52 @@ module HubspotSDK
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Events::OccurrenceListParams} for more details.
         #
-        #   @param id [Array<String>] An array of event IDs to filter by.
+        #   @param id [Array<String>]
         #
-        #   @param after [String] A cursor token for pagination. Use the value from the previous response's paging
+        #   @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
-        #   @param before [String] A cursor token to retrieve results before a specific point.
+        #   @param before [String]
         #
-        #   @param event_type [String] The type of event to filter by.
+        #   @param event_type [String]
         #
         #   @param limit [Integer] The maximum number of results to display per page.
         #
-        #   @param object_id_ [Integer] The unique identifier of the object associated with the events.
+        #   @param object_id_ [Integer]
         #
         #   @param object_property [HubspotSDK::Models::Events::OccurrenceListParams::ObjectProperty]
         #
-        #   @param object_type [String] The type of object associated with the events.
+        #   @param object_type [String]
         #
-        #   @param occurred_after [Time] Filter events that occurred after this date-time.
+        #   @param occurred_after [Time]
         #
-        #   @param occurred_before [Time] Filter events that occurred before this date-time.
+        #   @param occurred_before [Time]
         #
-        #   @param properties [Array<String>] An array of property names to include in the response.
+        #   @param properties [Array<String>]
         #
         #   @param property [HubspotSDK::Models::Events::OccurrenceListParams::Property]
         #
-        #   @param sort [Array<String>] An array of fields to sort the results by.
+        #   @param sort [Array<String>]
         #
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
 
         class ObjectProperty < HubspotSDK::Internal::Type::BaseModel
           # @!attribute propname
-          #   Filter events by specific object properties.
           #
           #   @return [Object, nil]
           optional :propname, HubspotSDK::Internal::Type::Unknown, api_name: :"{propname}"
 
           # @!method initialize(propname: nil)
-          #   @param propname [Object] Filter events by specific object properties.
+          #   @param propname [Object]
         end
 
         class Property < HubspotSDK::Internal::Type::BaseModel
           # @!attribute propname
-          #   Filter events by specific event properties.
           #
           #   @return [Object, nil]
           optional :propname, HubspotSDK::Internal::Type::Unknown, api_name: :"{propname}"
 
           # @!method initialize(propname: nil)
-          #   @param propname [Object] Filter events by specific event properties.
+          #   @param propname [Object]
         end
       end
     end

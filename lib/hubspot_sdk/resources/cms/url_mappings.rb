@@ -12,33 +12,59 @@ module HubspotSDK
         # navigation and SEO. The request body must include all required properties of the
         # UrlMapping schema.
         #
-        # @overload create(id:, created:, destination:, is_match_full_url:, is_match_query_string:, is_only_after_not_found:, is_pattern:, is_protocol_agnostic:, is_trailing_slash_optional:, precedence:, redirect_style:, route_prefix:, updated:, request_options: {})
+        # @overload create(id:, cdn_purge_embargo_time:, content_group_id:, cos_object_type:, created:, created_by_id:, deleted_at:, destination:, internally_created:, is_active:, is_match_full_url:, is_match_query_string:, is_only_after_not_found:, is_pattern:, is_protocol_agnostic:, is_regex:, is_trailing_slash_optional:, label:, name:, note:, portal_id:, precedence:, redirect_style:, route_prefix:, updated:, updated_by_id:, request_options: {})
         #
-        # @param id [String] The unique ID of this URL redirect.
+        # @param id [Integer] The unique identifier for the URL mapping, represented as a 64-bit integer.
         #
-        # @param created [Time] The date and time when the URL mapping was initially created.
+        # @param cdn_purge_embargo_time [Integer] A Unix timestamp in milliseconds indicating the embargo time for CDN purge relat
         #
-        # @param destination [String] The destination URL, where the target URL should be redirected if it matches the
+        # @param content_group_id [Integer] A 64-bit integer representing the content group associated with the URL mapping.
         #
-        # @param is_match_full_url [Boolean] Whether the `routePrefix` should match on the entire URL, including the domain.
+        # @param cos_object_type [Symbol, HubspotSDK::Models::Cms::URLMappingsURLMapping::CosObjectType] A string representing the type of content object associated with the URL mapping
         #
-        # @param is_match_query_string [Boolean] Whether the `routePrefix` should match on the entire URL path, including the que
+        # @param created [Integer] A Unix timestamp in milliseconds indicating when the URL mapping was created.
         #
-        # @param is_only_after_not_found [Boolean] Whether the URL redirect mapping should apply only if a live page on the URL isn
+        # @param created_by_id [Integer] The identifier of the user who created the URL mapping.
         #
-        # @param is_pattern [Boolean] Whether the `routePrefix` should match based on pattern.
+        # @param deleted_at [Integer] A Unix timestamp in milliseconds indicating when the URL mapping was deleted.
         #
-        # @param is_protocol_agnostic [Boolean] Whether the `routePrefix` should match both HTTP and HTTPS protocols.
+        # @param destination [String] The destination URL to which the routePrefix is redirected.
         #
-        # @param is_trailing_slash_optional [Boolean] Whether a trailing slash will be ignored.
+        # @param internally_created [Boolean] A boolean indicating if the URL mapping was created internally by the system.
         #
-        # @param precedence [Integer] Used to prioritize URL redirection. If a given URL matches more than one redirec
+        # @param is_active [Boolean] A boolean indicating if the URL mapping is currently active.
         #
-        # @param redirect_style [Integer] The type of redirect to create. Options include: 301 (permanent), 302 (temporary
+        # @param is_match_full_url [Boolean] A boolean indicating if the full URL should be matched.
         #
-        # @param route_prefix [String] The target incoming URL, path, or pattern to match for redirection.
+        # @param is_match_query_string [Boolean] A boolean indicating if the query string should be matched.
         #
-        # @param updated [Time] The date and time when the URL mapping was last modified.
+        # @param is_only_after_not_found [Boolean] A boolean indicating if the mapping should only be applied after a 404 Not Found
+        #
+        # @param is_pattern [Boolean] A boolean indicating if the routePrefix is a pattern.
+        #
+        # @param is_protocol_agnostic [Boolean] A boolean indicating if the mapping should ignore the URL protocol (http/https).
+        #
+        # @param is_regex [Boolean] A boolean indicating if the routePrefix should be treated as a regular expressio
+        #
+        # @param is_trailing_slash_optional [Boolean] A boolean indicating if the trailing slash in the URL is optional.
+        #
+        # @param label [String] A label for the URL mapping.
+        #
+        # @param name [String] The name of the URL mapping.
+        #
+        # @param note [String] A string containing notes about the URL mapping.
+        #
+        # @param portal_id [Integer] The identifier for the HubSpot portal associated with this URL mapping.
+        #
+        # @param precedence [Integer] An integer representing the precedence of the URL mapping, used to determine ord
+        #
+        # @param redirect_style [Integer] An integer representing the style of redirection used.
+        #
+        # @param route_prefix [String] The prefix of the URL path that is being mapped.
+        #
+        # @param updated [Integer] A Unix timestamp in milliseconds indicating when the URL mapping was last update
+        #
+        # @param updated_by_id [Integer] The identifier of the user who last updated the URL mapping.
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -85,8 +111,7 @@ module HubspotSDK
         #
         # @overload delete(id, request_options: {})
         #
-        # @param id [Integer] The unique identifier of the URL mapping to delete. Must be an integer.
-        #
+        # @param id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
@@ -107,8 +132,7 @@ module HubspotSDK
         #
         # @overload get(id, request_options: {})
         #
-        # @param id [Integer] The unique identifier of the URL mapping to retrieve. It must be an integer.
-        #
+        # @param id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [StringIO]

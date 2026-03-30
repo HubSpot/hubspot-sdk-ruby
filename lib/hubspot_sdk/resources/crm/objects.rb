@@ -67,6 +67,9 @@ module HubspotSDK
         # @return [HubspotSDK::Resources::Crm::Objects::Notes]
         attr_reader :notes
 
+        # @return [HubspotSDK::Resources::Crm::Objects::Objects]
+        attr_reader :objects
+
         # @return [HubspotSDK::Resources::Crm::Objects::Orders]
         attr_reader :orders
 
@@ -81,6 +84,9 @@ module HubspotSDK
 
         # @return [HubspotSDK::Resources::Crm::Objects::Products]
         attr_reader :products
+
+        # @return [HubspotSDK::Resources::Crm::Objects::Projects]
+        attr_reader :projects
 
         # @return [HubspotSDK::Resources::Crm::Objects::Quotes]
         attr_reader :quotes
@@ -129,11 +135,13 @@ module HubspotSDK
           @listings = HubspotSDK::Resources::Crm::Objects::Listings.new(client: client)
           @meetings = HubspotSDK::Resources::Crm::Objects::Meetings.new(client: client)
           @notes = HubspotSDK::Resources::Crm::Objects::Notes.new(client: client)
+          @objects = HubspotSDK::Resources::Crm::Objects::Objects.new(client: client)
           @orders = HubspotSDK::Resources::Crm::Objects::Orders.new(client: client)
           @partner_clients = HubspotSDK::Resources::Crm::Objects::PartnerClients.new(client: client)
           @partner_services = HubspotSDK::Resources::Crm::Objects::PartnerServices.new(client: client)
           @postal_mail = HubspotSDK::Resources::Crm::Objects::PostalMail.new(client: client)
           @products = HubspotSDK::Resources::Crm::Objects::Products.new(client: client)
+          @projects = HubspotSDK::Resources::Crm::Objects::Projects.new(client: client)
           @quotes = HubspotSDK::Resources::Crm::Objects::Quotes.new(client: client)
           @services = HubspotSDK::Resources::Crm::Objects::Services.new(client: client)
           @subscriptions = HubspotSDK::Resources::Crm::Objects::Subscriptions.new(client: client)

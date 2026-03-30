@@ -5,16 +5,11 @@ module HubspotSDK
     class Marketing
       class Campaigns
         class Spend
-          # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Marketing::Campaigns::SpendCreateParams} for more details.
-          #
-          # Create a new campaign spend item for a specific campaign identified by its
-          # unique ID. This endpoint allows you to add financial details related to campaign
-          # expenditures, which can be useful for budget tracking and financial reporting.
+          # Create a new campaign spend item
           #
           # @overload create(campaign_guid, amount:, name:, order:, description: nil, request_options: {})
           #
-          # @param campaign_guid [String] The unique identifier of the campaign for which the spend item is being created.
+          # @param campaign_guid [String]
           #
           # @param amount [Float] The monetary value of the spend item.
           #
@@ -40,16 +35,13 @@ module HubspotSDK
             )
           end
 
-          # Update a specific campaign spend item by its ID. This endpoint allows you to
-          # modify the details of a spend item associated with a marketing campaign, such as
-          # its amount, name, or order. Use this to keep your campaign spend data accurate
-          # and up-to-date.
+          # Update a specific campaign spend item by ID
           #
           # @overload update(spend_id, campaign_guid:, amount:, name:, order:, description: nil, request_options: {})
           #
-          # @param spend_id [Integer] Path param: The unique identifier of the spend item to update.
+          # @param spend_id [Integer] Path param
           #
-          # @param campaign_guid [String] Path param: The unique identifier of the campaign.
+          # @param campaign_guid [String] Path param
           #
           # @param amount [Float] Body param: The monetary value of the spend item.
           #
@@ -79,16 +71,12 @@ module HubspotSDK
             )
           end
 
-          # Delete a specific campaign spend item by its ID. This operation is useful for
-          # removing spend items that are no longer needed or were added in error. Once
-          # deleted, the spend item cannot be recovered.
+          # Delete a specific campaign spend item by ID
           #
           # @overload delete(spend_id, campaign_guid:, request_options: {})
           #
-          # @param spend_id [Integer] The unique identifier of the spend item to delete.
-          #
-          # @param campaign_guid [String] The unique identifier of the campaign.
-          #
+          # @param spend_id [Integer]
+          # @param campaign_guid [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -108,16 +96,12 @@ module HubspotSDK
             )
           end
 
-          # Retrieve details of a specific campaign spend item using its spendId. This
-          # endpoint allows you to access information about the spend associated with a
-          # particular campaign, identified by the campaignGuid.
+          # Read a campaign spend item by its spendId
           #
           # @overload get(spend_id, campaign_guid:, request_options: {})
           #
-          # @param spend_id [Integer] The unique identifier of the spend item to retrieve.
-          #
-          # @param campaign_guid [String] The unique identifier of the campaign.
-          #
+          # @param spend_id [Integer]
+          # @param campaign_guid [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Marketing::PublicSpendItem]

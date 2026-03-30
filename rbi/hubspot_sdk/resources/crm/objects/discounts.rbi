@@ -8,7 +8,9 @@ module HubspotSDK
           sig { returns(HubspotSDK::Resources::Crm::Objects::Discounts::Batch) }
           attr_reader :batch
 
-          # Create a discount
+          # Create a discount with the given properties and return a copy of the object,
+          # including the ID. Documentation and examples for creating standard discounts is
+          # provided.
           sig do
             params(
               associations:
@@ -51,8 +53,7 @@ module HubspotSDK
           )
           end
 
-          # Retrieve all discounts, using query parameters to specify the information that
-          # gets returned.
+          # List
           sig do
             params(
               after: String,
@@ -93,7 +94,7 @@ module HubspotSDK
           )
           end
 
-          # Delete a discount.
+          # Archive
           sig do
             params(
               discount_id: String,
@@ -103,9 +104,10 @@ module HubspotSDK
           def delete(discount_id, request_options: {})
           end
 
-          # Retrieve a discount by its ID (`objectId`) or by a unique property
-          # (`idProperty`). You can specify what is returned using the `properties` query
-          # parameter.
+          # Read an Object identified by `{discountId}`. `{discountId}` refers to the
+          # internal object ID by default, or optionally any unique property value as
+          # specified by the `idProperty` query param. Control what is returned via the
+          # `properties` query param.
           sig do
             params(
               discount_id: String,
@@ -138,7 +140,6 @@ module HubspotSDK
           )
           end
 
-          # Search for a discount
           sig do
             params(
               after: String,

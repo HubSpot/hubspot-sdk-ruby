@@ -5,9 +5,7 @@ module HubspotSDK
     class Marketing
       class Campaigns
         class Spend
-          # Create a new campaign spend item for a specific campaign identified by its
-          # unique ID. This endpoint allows you to add financial details related to campaign
-          # expenditures, which can be useful for budget tracking and financial reporting.
+          # Create a new campaign spend item
           sig do
             params(
               campaign_guid: String,
@@ -19,7 +17,6 @@ module HubspotSDK
             ).returns(HubspotSDK::Marketing::PublicSpendItem)
           end
           def create(
-            # The unique identifier of the campaign for which the spend item is being created.
             campaign_guid,
             # The monetary value of the spend item.
             amount:,
@@ -33,10 +30,7 @@ module HubspotSDK
           )
           end
 
-          # Update a specific campaign spend item by its ID. This endpoint allows you to
-          # modify the details of a spend item associated with a marketing campaign, such as
-          # its amount, name, or order. Use this to keep your campaign spend data accurate
-          # and up-to-date.
+          # Update a specific campaign spend item by ID
           sig do
             params(
               spend_id: Integer,
@@ -49,9 +43,9 @@ module HubspotSDK
             ).returns(HubspotSDK::Marketing::PublicSpendItem)
           end
           def update(
-            # Path param: The unique identifier of the spend item to update.
+            # Path param
             spend_id,
-            # Path param: The unique identifier of the campaign.
+            # Path param
             campaign_guid:,
             # Body param: The monetary value of the spend item.
             amount:,
@@ -65,9 +59,7 @@ module HubspotSDK
           )
           end
 
-          # Delete a specific campaign spend item by its ID. This operation is useful for
-          # removing spend items that are no longer needed or were added in error. Once
-          # deleted, the spend item cannot be recovered.
+          # Delete a specific campaign spend item by ID
           sig do
             params(
               spend_id: Integer,
@@ -75,18 +67,10 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(
-            # The unique identifier of the spend item to delete.
-            spend_id,
-            # The unique identifier of the campaign.
-            campaign_guid:,
-            request_options: {}
-          )
+          def delete(spend_id, campaign_guid:, request_options: {})
           end
 
-          # Retrieve details of a specific campaign spend item using its spendId. This
-          # endpoint allows you to access information about the spend associated with a
-          # particular campaign, identified by the campaignGuid.
+          # Read a campaign spend item by its spendId
           sig do
             params(
               spend_id: Integer,
@@ -94,13 +78,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Marketing::PublicSpendItem)
           end
-          def get(
-            # The unique identifier of the spend item to retrieve.
-            spend_id,
-            # The unique identifier of the campaign.
-            campaign_guid:,
-            request_options: {}
-          )
+          def get(spend_id, campaign_guid:, request_options: {})
           end
 
           # @api private

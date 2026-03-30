@@ -6,7 +6,7 @@ module HubspotSDK
       class CollectionResponseExternalUnifiedEvent < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #   An array of ExternalUnifiedEvent objects, each representing an individual event
-        #   occurrence.
+        #   with its associated details.
         #
         #   @return [Array<HubspotSDK::Models::Events::ExternalUnifiedEvent>]
         required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::ExternalUnifiedEvent] }

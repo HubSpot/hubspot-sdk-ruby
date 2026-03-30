@@ -6,9 +6,6 @@ module HubspotSDK
       class Objects
         class Discounts
           class Batch
-            # Create multiple discounts in a single request by providing the necessary
-            # properties and associations for each discount. This operation returns a list of
-            # the created discounts, including their unique identifiers.
             sig do
               params(
                 inputs:
@@ -21,7 +18,7 @@ module HubspotSDK
             def create(inputs:, request_options: {})
             end
 
-            # Update discounts
+            # Update a batch of discounts by internal ID, or unique property values
             sig do
               params(
                 inputs:
@@ -34,7 +31,6 @@ module HubspotSDK
             def update(inputs:, request_options: {})
             end
 
-            # Batch delete discounts
             sig do
               params(
                 inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
@@ -44,7 +40,8 @@ module HubspotSDK
             def delete(inputs:, request_options: {})
             end
 
-            # Batch retrieve discounts.
+            # Retrieve records by record ID or include the `idProperty` parameter to retrieve
+            # records by a custom unique value property.
             sig do
               params(
                 inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
@@ -72,8 +69,6 @@ module HubspotSDK
             )
             end
 
-            # Create and update a batch of discounts by a unique property. Discounts that
-            # don't exist will be created, while existing discounts will be updated.
             sig do
               params(
                 inputs:

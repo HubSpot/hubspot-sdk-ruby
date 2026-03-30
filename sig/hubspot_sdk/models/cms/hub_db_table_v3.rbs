@@ -1,0 +1,127 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type hub_db_table_v3 =
+        {
+          id: String,
+          allow_child_tables: bool,
+          allow_public_api_access: bool,
+          column_count: Integer,
+          columns: ::Array[HubspotSDK::Cms::Column],
+          created_at: Time,
+          deleted: bool,
+          deleted_at: Time,
+          dynamic_meta_tags: ::Hash[Symbol, Integer],
+          enable_child_table_pages: bool,
+          label: String,
+          name: String,
+          published: bool,
+          published_at: Time,
+          row_count: Integer,
+          updated_at: Time,
+          use_for_pages: bool,
+          created_by: HubspotSDK::Cms::SimpleUser,
+          is_ordered_manually: bool,
+          updated_by: HubspotSDK::Cms::SimpleUser
+        }
+
+      class HubDBTableV3 < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor allow_child_tables: bool
+
+        attr_accessor allow_public_api_access: bool
+
+        attr_accessor column_count: Integer
+
+        attr_accessor columns: ::Array[HubspotSDK::Cms::Column]
+
+        attr_accessor created_at: Time
+
+        attr_accessor deleted: bool
+
+        attr_accessor deleted_at: Time
+
+        attr_accessor dynamic_meta_tags: ::Hash[Symbol, Integer]
+
+        attr_accessor enable_child_table_pages: bool
+
+        attr_accessor label: String
+
+        attr_accessor name: String
+
+        attr_accessor published: bool
+
+        attr_accessor published_at: Time
+
+        attr_accessor row_count: Integer
+
+        attr_accessor updated_at: Time
+
+        attr_accessor use_for_pages: bool
+
+        attr_reader created_by: HubspotSDK::Cms::SimpleUser?
+
+        def created_by=: (
+          HubspotSDK::Cms::SimpleUser
+        ) -> HubspotSDK::Cms::SimpleUser
+
+        attr_reader is_ordered_manually: bool?
+
+        def is_ordered_manually=: (bool) -> bool
+
+        attr_reader updated_by: HubspotSDK::Cms::SimpleUser?
+
+        def updated_by=: (
+          HubspotSDK::Cms::SimpleUser
+        ) -> HubspotSDK::Cms::SimpleUser
+
+        def initialize: (
+          id: String,
+          allow_child_tables: bool,
+          allow_public_api_access: bool,
+          column_count: Integer,
+          columns: ::Array[HubspotSDK::Cms::Column],
+          created_at: Time,
+          deleted: bool,
+          deleted_at: Time,
+          dynamic_meta_tags: ::Hash[Symbol, Integer],
+          enable_child_table_pages: bool,
+          label: String,
+          name: String,
+          published: bool,
+          published_at: Time,
+          row_count: Integer,
+          updated_at: Time,
+          use_for_pages: bool,
+          ?created_by: HubspotSDK::Cms::SimpleUser,
+          ?is_ordered_manually: bool,
+          ?updated_by: HubspotSDK::Cms::SimpleUser
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          allow_child_tables: bool,
+          allow_public_api_access: bool,
+          column_count: Integer,
+          columns: ::Array[HubspotSDK::Cms::Column],
+          created_at: Time,
+          deleted: bool,
+          deleted_at: Time,
+          dynamic_meta_tags: ::Hash[Symbol, Integer],
+          enable_child_table_pages: bool,
+          label: String,
+          name: String,
+          published: bool,
+          published_at: Time,
+          row_count: Integer,
+          updated_at: Time,
+          use_for_pages: bool,
+          created_by: HubspotSDK::Cms::SimpleUser,
+          is_ordered_manually: bool,
+          updated_by: HubspotSDK::Cms::SimpleUser
+        }
+      end
+    end
+  end
+end

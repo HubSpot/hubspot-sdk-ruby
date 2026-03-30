@@ -22,25 +22,20 @@ module HubspotSDK
           )
         end
         def list(
-          # The unique identifier of the user whose sequences are to be retrieved. This
-          # parameter is required.
           user_id:,
-          # The paging cursor token of the last successfully read resource. Use this for
-          # pagination to retrieve the next set of results.
+          # The paging cursor token of the last successfully read resource will be returned
+          # as the `paging.next.after` JSON property of a paged response containing more
+          # results.
           after: nil,
           # The maximum number of results to display per page.
           limit: nil,
-          # The name of the sequence to filter results by.
           name: nil,
           request_options: {}
         )
         end
 
-        # Enroll a contact into a sequence using the specified sequence ID and sender
-        # email. This endpoint requires the user ID to be provided as a query parameter
-        # and a valid JSON body with the necessary enrollment details. It is used to
-        # automate the process of enrolling contacts into predefined sequences for
-        # streamlined communication.
+        # Enroll a contact into a sequence using the specified user ID and sequence
+        # details.
         sig do
           params(
             user_id: String,
@@ -54,8 +49,7 @@ module HubspotSDK
           )
         end
         def create_enrollment(
-          # Query param: The unique identifier of the user performing the enrollment. This
-          # parameter is required.
+          # Query param
           user_id:,
           # Body param: The unique identifier of the contact to be enrolled in the sequence.
           contact_id:,
@@ -72,10 +66,7 @@ module HubspotSDK
         )
         end
 
-        # Retrieve details of a specific sequence in your HubSpot account using the
-        # sequence ID. This endpoint requires the user ID to be specified and provides
-        # comprehensive information about the sequence, including its steps and
-        # dependencies.
+        # Retrieve details of a specific sequence by its ID.
         sig do
           params(
             sequence_id: String,
@@ -83,32 +74,17 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Automation::PublicSequenceResponse)
         end
-        def get(
-          # The unique identifier of the sequence to retrieve.
-          sequence_id,
-          # The unique identifier of the user requesting the sequence details. This
-          # parameter is required.
-          user_id:,
-          request_options: {}
-        )
+        def get(sequence_id, user_id:, request_options: {})
         end
 
-        # Retrieve the sequence enrollment details for a specific contact in your HubSpot
-        # account. This endpoint provides information about the sequence a contact is
-        # enrolled in, including enrollment timestamps and the sequence's name. It is
-        # useful for tracking the progress and status of a contact within a sequence.
+        # Get the enrollment status of a contact in sequences by their contact ID.
         sig do
           params(
             contact_id: String,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Automation::PublicSequenceEnrollmentResponse)
         end
-        def get_enrollment_by_contact_id(
-          # The unique identifier of the contact whose sequence enrollment details are being
-          # retrieved.
-          contact_id,
-          request_options: {}
-        )
+        def get_enrollment_by_contact_id(contact_id, request_options: {})
         end
 
         # @api private

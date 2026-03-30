@@ -2,21 +2,21 @@ module HubspotSDK
   module Models
     module Cms
       type media_bridge_create_video_association_definition_params =
-        { app_id: String } & HubspotSDK::Internal::Type::request_parameters
+        { app_id: Integer } & HubspotSDK::Internal::Type::request_parameters
 
       class MediaBridgeCreateVideoAssociationDefinitionParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
-        attr_accessor app_id: String
+        attr_accessor app_id: Integer
 
         def initialize: (
-          app_id: String,
+          app_id: Integer,
           ?request_options: HubspotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
-          app_id: String,
+          app_id: Integer,
           request_options: HubspotSDK::RequestOptions
         }
       end

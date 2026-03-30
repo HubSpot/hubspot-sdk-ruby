@@ -24,6 +24,12 @@ module HubspotSDK
         attr_reader :settings
 
         sig do
+          returns(HubspotSDK::Resources::Marketing::Events::SubscriberState)
+        end
+        attr_reader :subscriber_state
+
+        # Creates a new marketing event in HubSpot
+        sig do
           params(
             custom_properties: T::Array[HubspotSDK::PropertyValue::OrHash],
             event_name: String,
@@ -79,6 +85,8 @@ module HubspotSDK
         )
         end
 
+        # Updates the details of an existing Marketing Event identified by its objectId,
+        # if it exists.
         sig do
           params(
             object_id_: String,
@@ -122,6 +130,27 @@ module HubspotSDK
 
         sig do
           params(
+            after: String,
+            limit: Integer,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(
+            HubspotSDK::Internal::Page[
+              HubspotSDK::Marketing::MarketingEventPublicReadResponseV2
+            ]
+          )
+        end
+        def list(
+          # The cursor indicating the position of the last retrieved item.
+          after: nil,
+          # The limit for response size. The default value is 10, the max number is 100
+          limit: nil,
+          request_options: {}
+        )
+        end
+
+        # Deletes the existing Marketing Event with the specified objectId, if it exists.
+        sig do
+          params(
             object_id_: String,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).void
@@ -133,6 +162,12 @@ module HubspotSDK
         )
         end
 
+        # Deletes multiple Marketing Events from the portal based on their objectId, if
+        # they exist.
+        #
+        # Responses: 204: Returned if all specified Marketing Events were successfully
+        # deleted. 207: Returned if some objectIds did not correspond to any existing
+        # Marketing Events.
         sig do
           params(
             inputs:
@@ -145,6 +180,11 @@ module HubspotSDK
         def delete_batch(inputs:, request_options: {})
         end
 
+        # Deletes multiple Marketing Events based on externalAccountId, externalEventId,
+        # and appId.
+        #
+        # Only Marketing Events created by the same apps will be deleted; events from
+        # other apps cannot be removed by this endpoint.
         sig do
           params(
             inputs:
@@ -157,6 +197,10 @@ module HubspotSDK
         def delete_batch_by_external_event_id(inputs:, request_options: {})
         end
 
+        # Deletes the existing Marketing Event with the specified externalAccountId,
+        # externalEventId, if it exists.
+        #
+        # Only Marketing Events created by the same app can be deleted.
         sig do
           params(
             external_event_id: String,
@@ -171,6 +215,8 @@ module HubspotSDK
         )
         end
 
+        # Returns the details of a Marketing Event with the specified objectId, if it
+        # exists.
         sig do
           params(
             object_id_: String,
@@ -184,6 +230,11 @@ module HubspotSDK
         )
         end
 
+        # Returns the details of a Marketing Event with the specified externalAccountId,
+        # externalEventId, if it exists.
+        #
+        # Only Marketing Events created by the same app making the request can be
+        # retrieved.
         sig do
           params(
             external_event_id: String,
@@ -198,6 +249,10 @@ module HubspotSDK
         )
         end
 
+        # Retrieves Marketing Events where the externalEventId matches the value provided
+        # in the request, limited to events created by the app making the request.
+        #
+        # Marketing Events created by other apps will not be included in the results.
         sig do
           params(
             q: String,
@@ -209,6 +264,17 @@ module HubspotSDK
         def search_by_external_event_id(q:, request_options: {})
         end
 
+        # This endpoint searches the portal for all Marketing Events whose externalEventId
+        # matches the value provided in the request.
+        #
+        # It retrieves the objectId and additional event details for each matching
+        # Marketing Event.
+        #
+        # Since multiple Marketing Events can have the same externalEventId, the endpoint
+        # returns all matching results.
+        #
+        # Note: Marketing Events become searchable by externalEventId a few minutes after
+        # creation.
         sig do
           params(
             external_event_id: String,
@@ -224,6 +290,8 @@ module HubspotSDK
         )
         end
 
+        # Updates multiple Marketing Events on the portal based on their objectId, if they
+        # exist.
         sig do
           params(
             inputs:
@@ -238,6 +306,10 @@ module HubspotSDK
         def update_batch(inputs:, request_options: {})
         end
 
+        # Updates the details of an existing Marketing Event identified by its
+        # externalAccountId, externalEventId if it exists.
+        #
+        # Only Marketing Events created by the same app can be updated.
         sig do
           params(
             external_event_id: String,
@@ -295,6 +367,10 @@ module HubspotSDK
         )
         end
 
+        # Upserts multiple Marketing Events. If a Marketing Event with the specified ID
+        # already exists, it will be updated; otherwise, a new event will be created.
+        #
+        # Only Marketing Events originally created by the same app can be updated.
         sig do
           params(
             inputs:
@@ -309,6 +385,8 @@ module HubspotSDK
         def upsert_batch(inputs:, request_options: {})
         end
 
+        # Upserts a marketing event If there is an existing marketing event with the
+        # specified ID, it will be updated; otherwise a new event will be created.
         sig do
           params(
             path_external_event_id: String,
@@ -363,54 +441,6 @@ module HubspotSDK
           event_url: nil,
           # The start date and time of the marketing event.
           start_date_time: nil,
-          request_options: {}
-        )
-        end
-
-        sig do
-          params(
-            subscriber_state: String,
-            external_event_id: String,
-            external_account_id: String,
-            inputs:
-              T::Array[
-                HubspotSDK::Marketing::MarketingEventEmailSubscriber::OrHash
-              ],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(StringIO)
-        end
-        def upsert_subscriber_state_by_email(
-          # Path param
-          subscriber_state,
-          # Path param
-          external_event_id:,
-          # Query param
-          external_account_id:,
-          # Body param: List of marketing event details to create or update
-          inputs:,
-          request_options: {}
-        )
-        end
-
-        sig do
-          params(
-            subscriber_state: String,
-            external_event_id: String,
-            external_account_id: String,
-            inputs:
-              T::Array[HubspotSDK::Marketing::MarketingEventSubscriber::OrHash],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(StringIO)
-        end
-        def upsert_subscriber_state_by_id(
-          # Path param
-          subscriber_state,
-          # Path param
-          external_event_id:,
-          # Query param
-          external_account_id:,
-          # Body param: List of HubSpot contacts to subscribe to the marketing event
-          inputs:,
           request_options: {}
         )
         end

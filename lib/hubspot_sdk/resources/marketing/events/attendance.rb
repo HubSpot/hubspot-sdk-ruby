@@ -9,6 +9,18 @@ module HubspotSDK
           # {HubspotSDK::Models::Marketing::Events::AttendanceCreateByEventIDAndContactIDParams}
           # for more details.
           #
+          # Records the participation of multiple HubSpot contacts in a Marketing Event
+          # using their HubSpot contact IDs.
+          #
+          # Additional Functionality:
+          #
+          # - Adds a timeline event to the contacts.
+          #
+          # Allowed Properties: For the state "attend":
+          #
+          # - joinedAt
+          # - leftAt
+          #
           # @overload create_by_event_id_and_contact_id(subscriber_state, object_id_:, inputs:, request_options: {})
           #
           # @param subscriber_state [String] Path param: The attendance state value. It may be 'register', 'attend' or 'cance
@@ -46,6 +58,22 @@ module HubspotSDK
           # {HubspotSDK::Models::Marketing::Events::AttendanceCreateByEventIDAndEmailParams}
           # for more details.
           #
+          # Records the participation of multiple HubSpot contacts in a Marketing Event
+          # using their email addresses.
+          #
+          # If a contact does not exist, it will be automatically created. The
+          # contactProperties field is used exclusively for creating new contacts and will
+          # not update properties of existing contacts.
+          #
+          # Additional Functionality:
+          #
+          # - Adds a timeline event to the contacts.
+          #
+          # Allowed Properties: For the state "attend":
+          #
+          # - joinedAt
+          # - leftAt
+          #
           # @overload create_by_event_id_and_email(subscriber_state, object_id_:, inputs:, request_options: {})
           #
           # @param subscriber_state [String] Path param: The attendance state value. It may be 'register', 'attend' or 'cance
@@ -79,6 +107,18 @@ module HubspotSDK
             )
           end
 
+          # Records the participation of multiple HubSpot contacts in a Marketing Event
+          # using their HubSpot contact IDs.
+          #
+          # Additional Functionality:
+          #
+          # - Adds a timeline event to the contacts.
+          #
+          # Allowed Properties: For the state "attend":
+          #
+          # - joinedAt
+          # - leftAt
+          #
           # @overload create_by_external_event_id_and_contact_id(subscriber_state, external_event_id:, inputs:, external_account_id: nil, request_options: {})
           #
           # @param subscriber_state [String] Path param
@@ -117,6 +157,22 @@ module HubspotSDK
             )
           end
 
+          # Records the participation of multiple HubSpot contacts in a Marketing Event
+          # using their email addresses.
+          #
+          # If a contact does not exist, it will be automatically created. The
+          # contactProperties field is used exclusively for creating new contacts and will
+          # not update properties of existing contacts.
+          #
+          # Additional Functionality:
+          #
+          # - Adds a timeline event to the contacts.
+          #
+          # Allowed Properties: For the state "attend":
+          #
+          # - joinedAt
+          # - leftAt
+          #
           # @overload create_by_external_event_id_and_email(subscriber_state, external_event_id:, inputs:, external_account_id: nil, request_options: {})
           #
           # @param subscriber_state [String] Path param

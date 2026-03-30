@@ -5,9 +5,16 @@ module HubspotSDK
     class Marketing
       class Campaigns
         class Assets
-          # Associate an asset with a specific campaign in your HubSpot account. This
-          # operation allows you to link an asset of a specified type and ID to a campaign,
-          # facilitating better organization and tracking of campaign resources.
+          # Associate a specified asset with a campaign. Using the API, you can create
+          # associations for the following asset types: ads, blog posts, calls, case
+          # studies, CTAs, CTAs (legacy), external website pages, feedback surveys, forms,
+          # files, knowledge base articles, landing pages, marketing email, marketing
+          # events, meetings, playbooks, podcast episodes, sales documents, sales emails,
+          # sequences, SMS, social posts, static lists, videos, website pages, and
+          # workflows.
+          #
+          # For other asset types, it is recommended to manage your associations directly in
+          # the campaign tool in HubSpot.
           sig do
             params(
               asset_id: String,
@@ -16,20 +23,13 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def update(
-            # The unique identifier of the asset to be associated with the campaign.
-            asset_id,
-            # The unique identifier of the campaign to which the asset will be associated.
-            campaign_guid:,
-            # The type of asset to be associated with the campaign.
-            asset_type:,
-            request_options: {}
-          )
+          def update(asset_id, campaign_guid:, asset_type:, request_options: {})
           end
 
-          # List all assets of a specified campaign by asset type. This endpoint allows you
-          # to retrieve assets associated with a campaign, filtered by the type of asset. It
-          # supports pagination and date filtering to manage and refine the results.
+          # This endpoint lists all assets of the campaign by asset type. The assetType
+          # parameter is required, and each request can only fetch assets of a single type.
+          # Asset metrics can also be fetched along with the assets; they are available only
+          # if start and end dates are provided.
           sig do
             params(
               asset_type: String,
@@ -44,27 +44,34 @@ module HubspotSDK
             )
           end
           def list(
-            # Path param: The type of asset to list for the specified campaign.
+            # Path param
             asset_type,
-            # Path param: The unique identifier of the campaign.
+            # Path param
             campaign_guid:,
             # Query param: The paging cursor token of the last successfully read resource will
             # be returned as the `paging.next.after` JSON property of a paged response
             # containing more results.
             after: nil,
-            # Query param: The end date for filtering assets, in YYYY-MM-DD format.
+            # Query param
             end_date: nil,
             # Query param: The maximum number of results to display per page.
             limit: nil,
-            # Query param: The start date for filtering assets, in YYYY-MM-DD format.
+            # Query param
             start_date: nil,
             request_options: {}
           )
           end
 
-          # Disassociate an asset from a specific campaign. This operation removes the
-          # association between the specified asset and campaign, effectively detaching the
-          # asset from the campaign's context.
+          # Disassociate a specified asset from a campaign. Using the API, you can remove
+          # associations for the following asset types: ads, blog posts, calls, case
+          # studies, CTAs, CTAs (legacy), external website pages, feedback surveys, forms,
+          # files, knowledge base articles, landing pages, marketing email, marketing
+          # events, meetings, playbooks, podcast episodes, sales documents, sales emails,
+          # sequences, SMS, social posts, static lists, videos, website pages, and
+          # workflows.
+          #
+          # For other asset types, it is recommended to manage your associations directly in
+          # the campaign tool in HubSpot.
           sig do
             params(
               asset_id: String,
@@ -73,16 +80,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(
-            # The unique identifier of the asset to be disassociated from the campaign.
-            asset_id,
-            # The unique identifier of the campaign from which the asset will be
-            # disassociated.
-            campaign_guid:,
-            # The type of asset to be disassociated from the campaign.
-            asset_type:,
-            request_options: {}
-          )
+          def delete(asset_id, campaign_guid:, asset_type:, request_options: {})
           end
 
           # @api private

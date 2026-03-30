@@ -5,6 +5,8 @@ module HubspotSDK
     class Marketing
       class Events
         class Events
+          # Mark a marketing event as cancelled.
+          #
           # @overload cancel_by_external_event_id(external_event_id, external_account_id:, request_options: {})
           #
           # @param external_event_id [String]
@@ -26,6 +28,8 @@ module HubspotSDK
             )
           end
 
+          # Mark a marketing event as completed
+          #
           # @overload complete_by_external_event_id(external_event_id, external_account_id:, end_date_time:, start_date_time:, request_options: {})
           #
           # @param external_event_id [String] Path param

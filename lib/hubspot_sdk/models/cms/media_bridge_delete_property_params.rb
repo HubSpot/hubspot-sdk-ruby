@@ -10,8 +10,8 @@ module HubspotSDK
 
         # @!attribute app_id
         #
-        #   @return [String]
-        required :app_id, String
+        #   @return [Integer]
+        required :app_id, Integer
 
         # @!attribute object_type
         #
@@ -24,7 +24,7 @@ module HubspotSDK
         required :property_name, String
 
         # @!method initialize(app_id:, object_type:, property_name:, request_options: {})
-        #   @param app_id [String]
+        #   @param app_id [Integer]
         #   @param object_type [String]
         #   @param property_name [String]
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]

@@ -15,7 +15,7 @@ module HubspotSDK
             )
           end
 
-        sig { returns(String) }
+        sig { returns(Integer) }
         attr_accessor :app_id
 
         sig { returns(T.nilable(Integer)) }
@@ -26,7 +26,7 @@ module HubspotSDK
 
         sig do
           params(
-            app_id: String,
+            app_id: Integer,
             domain_portal_id: Integer,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
@@ -37,7 +37,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              app_id: String,
+              app_id: Integer,
               domain_portal_id: Integer,
               request_options: HubspotSDK::RequestOptions
             }

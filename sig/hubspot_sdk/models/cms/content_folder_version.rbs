@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type content_folder_version =
+        {
+          id: String,
+          object: HubspotSDK::Cms::ContentFolder,
+          updated_at: Time,
+          user: HubspotSDK::VersionUser
+        }
+
+      class ContentFolderVersion < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor object: HubspotSDK::Cms::ContentFolder
+
+        attr_accessor updated_at: Time
+
+        attr_accessor user: HubspotSDK::VersionUser
+
+        def initialize: (
+          id: String,
+          object: HubspotSDK::Cms::ContentFolder,
+          updated_at: Time,
+          user: HubspotSDK::VersionUser
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          object: HubspotSDK::Cms::ContentFolder,
+          updated_at: Time,
+          user: HubspotSDK::VersionUser
+        }
+      end
+    end
+  end
+end

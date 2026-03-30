@@ -101,12 +101,12 @@ class HubspotSDK::Test::Resources::Crm::PropertiesTest < HubspotSDK::Test::Resou
     response = @hubspot.crm.properties.list("objectType")
 
     assert_pattern do
-      response => HubspotSDK::CollectionResponsePropertyNoPaging
+      response => HubspotSDK::Crm::CollectionResponsePropertyNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Property1])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property])
       }
     end
   end

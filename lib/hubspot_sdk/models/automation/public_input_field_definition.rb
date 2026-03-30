@@ -5,6 +5,7 @@ module HubspotSDK
     module Automation
       class PublicInputFieldDefinition < HubspotSDK::Internal::Type::BaseModel
         # @!attribute is_required
+        #   Indicates whether the input field is mandatory.
         #
         #   @return [Boolean]
         required :is_required, HubspotSDK::Internal::Type::Boolean, api_name: :isRequired
@@ -26,8 +27,10 @@ module HubspotSDK
                  api_name: :supportedValueTypes
 
         # @!method initialize(is_required:, type_definition:, supported_value_types: nil)
-        #   @param is_required [Boolean]
+        #   @param is_required [Boolean] Indicates whether the input field is mandatory.
+        #
         #   @param type_definition [HubspotSDK::Models::Automation::PublicFieldTypeDefinition]
+        #
         #   @param supported_value_types [Array<Symbol, HubspotSDK::Models::Automation::PublicInputFieldDefinition::SupportedValueType>]
 
         module SupportedValueType

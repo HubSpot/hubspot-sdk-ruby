@@ -5,7 +5,7 @@ module HubspotSDK
     module Marketing
       class EmailCloneRequestVNext < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
-        #   The unique identifier of the email to be cloned.
+        #   The email ID.
         #
         #   @return [String]
         required :id, String
@@ -23,7 +23,7 @@ module HubspotSDK
         optional :language, String
 
         # @!method initialize(id:, clone_name: nil, language: nil)
-        #   @param id [String] The unique identifier of the email to be cloned.
+        #   @param id [String] The email ID.
         #
         #   @param clone_name [String] The name to assign to the cloned email.
         #

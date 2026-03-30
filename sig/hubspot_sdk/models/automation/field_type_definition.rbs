@@ -5,7 +5,7 @@ module HubspotSDK
         {
           external_options: bool,
           name: String,
-          options: ::Array[HubspotSDK::Option],
+          options: ::Array[HubspotSDK::AutomationActionsOption],
           schema: HubspotSDK::Models::Automation::FieldTypeDefinition::schema,
           type: HubspotSDK::Models::Automation::FieldTypeDefinition::type_,
           use_chirp: bool,
@@ -23,7 +23,7 @@ module HubspotSDK
 
         attr_accessor name: String
 
-        attr_accessor options: ::Array[HubspotSDK::Option]
+        attr_accessor options: ::Array[HubspotSDK::AutomationActionsOption]
 
         attr_accessor schema: HubspotSDK::Models::Automation::FieldTypeDefinition::schema
 
@@ -66,7 +66,7 @@ module HubspotSDK
         def initialize: (
           external_options: bool,
           name: String,
-          options: ::Array[HubspotSDK::Option],
+          options: ::Array[HubspotSDK::AutomationActionsOption],
           schema: HubspotSDK::Models::Automation::FieldTypeDefinition::schema,
           type: HubspotSDK::Models::Automation::FieldTypeDefinition::type_,
           use_chirp: bool,
@@ -82,7 +82,7 @@ module HubspotSDK
         def to_hash: -> {
           external_options: bool,
           name: String,
-          options: ::Array[HubspotSDK::Option],
+          options: ::Array[HubspotSDK::AutomationActionsOption],
           schema: HubspotSDK::Models::Automation::FieldTypeDefinition::schema,
           type: HubspotSDK::Models::Automation::FieldTypeDefinition::type_,
           use_chirp: bool,

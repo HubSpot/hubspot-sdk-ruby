@@ -5,14 +5,13 @@ module HubspotSDK
     class Crm
       class AssociationsSchema
         class Labels
-          # Create multiple association definitions between two specified CRM object types
-          # in a single request.
+          # Batch configure association limits between two object types.
           #
           # @overload batch_create(to_object_type, from_object_type:, inputs:, request_options: {})
           #
-          # @param to_object_type [String] Path param: The type of the target object in the association.
+          # @param to_object_type [String] Path param
           #
-          # @param from_object_type [String] Path param: The type of the source object in the association.
+          # @param from_object_type [String] Path param
           #
           # @param inputs [Array<HubspotSDK::Models::Crm::PublicAssociationDefinitionConfigurationCreateRequest>] Body param
           #
@@ -50,9 +49,9 @@ module HubspotSDK
           #
           # @overload create_label(to_object_type, from_object_type:, label:, name:, inverse_label: nil, request_options: {})
           #
-          # @param to_object_type [String] Path param: The type of the target object in the association.
+          # @param to_object_type [String] Path param
           #
-          # @param from_object_type [String] Path param: The type of the source object in the association.
+          # @param from_object_type [String] Path param
           #
           # @param label [String] Body param: A descriptor that provides context about the relationship between tw
           #
@@ -84,12 +83,9 @@ module HubspotSDK
           #
           # @overload delete_label(association_type_id, from_object_type:, to_object_type:, request_options: {})
           #
-          # @param association_type_id [Integer] The unique identifier for the association type.
-          #
-          # @param from_object_type [String] The type of the source object in the association.
-          #
-          # @param to_object_type [String] The type of the target object in the association.
-          #
+          # @param association_type_id [Integer]
+          # @param from_object_type [String]
+          # @param to_object_type [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -123,10 +119,8 @@ module HubspotSDK
           #
           # @overload list_labels(to_object_type, from_object_type:, request_options: {})
           #
-          # @param to_object_type [String] The type of the target object in the association.
-          #
-          # @param from_object_type [String] The type of the source object in the association.
-          #
+          # @param to_object_type [String]
+          # @param from_object_type [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Crm::CollectionResponseAssociationSpecWithLabelNoPaging]
@@ -156,9 +150,9 @@ module HubspotSDK
           #
           # @overload update_label(to_object_type, from_object_type:, association_type_id:, label:, inverse_label: nil, request_options: {})
           #
-          # @param to_object_type [String] Path param: The type of the target object in the association.
+          # @param to_object_type [String] Path param
           #
-          # @param from_object_type [String] Path param: The type of the source object in the association.
+          # @param from_object_type [String] Path param
           #
           # @param association_type_id [Integer] Body param: The unique identifier for the association type.
           #

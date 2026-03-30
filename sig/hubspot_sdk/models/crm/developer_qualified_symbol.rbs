@@ -1,0 +1,18 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type developer_qualified_symbol =
+        { developer_symbol: String, project_name: String }
+
+      class DeveloperQualifiedSymbol < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor developer_symbol: String
+
+        attr_accessor project_name: String
+
+        def initialize: (developer_symbol: String, project_name: String) -> void
+
+        def to_hash: -> { developer_symbol: String, project_name: String }
+      end
+    end
+  end
+end

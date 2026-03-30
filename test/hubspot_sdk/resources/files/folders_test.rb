@@ -3,6 +3,72 @@
 require_relative "../../test_helper"
 
 class HubspotSDK::Test::Resources::Files::FoldersTest < HubspotSDK::Test::ResourceTest
+  def test_delete_by_id
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.files.folders.delete_by_id("321669910225")
+
+    assert_pattern do
+      response => nil
+    end
+  end
+
+  def test_delete_by_path
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.files.folders.delete_by_path("folderPath")
+
+    assert_pattern do
+      response => nil
+    end
+  end
+
+  def test_get_by_id
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.files.folders.get_by_id("321669910225")
+
+    assert_pattern do
+      response => HubspotSDK::Files::Folder
+    end
+
+    assert_pattern do
+      response => {
+        id: String,
+        archived: HubspotSDK::Internal::Type::Boolean,
+        created_at: Time,
+        updated_at: Time,
+        archived_at: Time | nil,
+        name: String | nil,
+        parent_folder_id: String | nil,
+        path: String | nil
+      }
+    end
+  end
+
+  def test_get_by_path
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.files.folders.get_by_path("folderPath")
+
+    assert_pattern do
+      response => HubspotSDK::Files::Folder
+    end
+
+    assert_pattern do
+      response => {
+        id: String,
+        archived: HubspotSDK::Internal::Type::Boolean,
+        created_at: Time,
+        updated_at: Time,
+        archived_at: Time | nil,
+        name: String | nil,
+        parent_folder_id: String | nil,
+        path: String | nil
+      }
+    end
+  end
+
   def test_get_update_async_status
     skip("Mock server tests are disabled")
 

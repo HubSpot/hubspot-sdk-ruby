@@ -21,8 +21,6 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :path
 
-        # A comma-separated list of specific metadata properties to include in the
-        # response.
         sig { returns(T.nilable(String)) }
         attr_reader :properties
 
@@ -37,14 +35,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
-        def self.new(
-          environment:,
-          path:,
-          # A comma-separated list of specific metadata properties to include in the
-          # response.
-          properties: nil,
-          request_options: {}
-        )
+        def self.new(environment:, path:, properties: nil, request_options: {})
         end
 
         sig do

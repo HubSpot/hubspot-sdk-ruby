@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type padding =
+        {
+          bottom: HubspotSDK::Cms::Size,
+          left: HubspotSDK::Cms::Size,
+          right: HubspotSDK::Cms::Size,
+          top: HubspotSDK::Cms::Size
+        }
+
+      class Padding < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor bottom: HubspotSDK::Cms::Size
+
+        attr_accessor left: HubspotSDK::Cms::Size
+
+        attr_accessor right: HubspotSDK::Cms::Size
+
+        attr_accessor top: HubspotSDK::Cms::Size
+
+        def initialize: (
+          bottom: HubspotSDK::Cms::Size,
+          left: HubspotSDK::Cms::Size,
+          right: HubspotSDK::Cms::Size,
+          top: HubspotSDK::Cms::Size
+        ) -> void
+
+        def to_hash: -> {
+          bottom: HubspotSDK::Cms::Size,
+          left: HubspotSDK::Cms::Size,
+          right: HubspotSDK::Cms::Size,
+          top: HubspotSDK::Cms::Size
+        }
+      end
+    end
+  end
+end

@@ -3,7 +3,6 @@
 module HubspotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::Transactional#send_
       class EmailSendStatusView < HubspotSDK::Internal::Type::BaseModel
         # @!attribute status
         #   Status of the send request.
@@ -29,6 +28,8 @@ module HubspotSDK
         optional :event_id, -> { HubspotSDK::Marketing::EventIDView }, api_name: :eventId
 
         # @!attribute message
+        #   A human readable message describing the error along with remediation steps where
+        #   appropriate
         #
         #   @return [String, nil]
         optional :message, String
@@ -54,6 +55,9 @@ module HubspotSDK
         optional :started_at, Time, api_name: :startedAt
 
         # @!method initialize(status:, status_id:, completed_at: nil, event_id: nil, message: nil, requested_at: nil, send_result: nil, started_at: nil)
+        #   Some parameter documentations has been truncated, see
+        #   {HubspotSDK::Models::Marketing::EmailSendStatusView} for more details.
+        #
         #   @param status [Symbol, HubspotSDK::Models::Marketing::EmailSendStatusView::Status] Status of the send request.
         #
         #   @param status_id [String] Identifier used to query the status of the send.
@@ -62,7 +66,7 @@ module HubspotSDK
         #
         #   @param event_id [HubspotSDK::Models::Marketing::EventIDView]
         #
-        #   @param message [String]
+        #   @param message [String] A human readable message describing the error along with remediation steps where
         #
         #   @param requested_at [Time] Time when the send was requested.
         #

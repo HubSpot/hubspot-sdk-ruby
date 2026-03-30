@@ -9,15 +9,14 @@ module HubspotSDK
         include HubspotSDK::Internal::Type::RequestParameters
 
         # @!attribute user_id
-        #   The unique identifier of the user whose sequences are to be retrieved. This
-        #   parameter is required.
         #
         #   @return [String]
         required :user_id, String
 
         # @!attribute after
-        #   The paging cursor token of the last successfully read resource. Use this for
-        #   pagination to retrieve the next set of results.
+        #   The paging cursor token of the last successfully read resource will be returned
+        #   as the `paging.next.after` JSON property of a paged response containing more
+        #   results.
         #
         #   @return [String, nil]
         optional :after, String
@@ -29,7 +28,6 @@ module HubspotSDK
         optional :limit, Integer
 
         # @!attribute name
-        #   The name of the sequence to filter results by.
         #
         #   @return [String, nil]
         optional :name, String
@@ -38,13 +36,13 @@ module HubspotSDK
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Automation::SequenceListParams} for more details.
         #
-        #   @param user_id [String] The unique identifier of the user whose sequences are to be retrieved. This para
+        #   @param user_id [String]
         #
-        #   @param after [String] The paging cursor token of the last successfully read resource. Use this for pag
+        #   @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
         #   @param limit [Integer] The maximum number of results to display per page.
         #
-        #   @param name [String] The name of the sequence to filter results by.
+        #   @param name [String]
         #
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
       end

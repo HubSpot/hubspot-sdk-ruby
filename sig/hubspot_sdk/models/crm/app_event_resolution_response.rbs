@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type app_event_resolution_response =
+        {
+          developer_qualified_symbol: HubspotSDK::Crm::DeveloperQualifiedSymbol,
+          fully_qualified_name: String
+        }
+
+      class AppEventResolutionResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor developer_qualified_symbol: HubspotSDK::Crm::DeveloperQualifiedSymbol
+
+        attr_accessor fully_qualified_name: String
+
+        def initialize: (
+          developer_qualified_symbol: HubspotSDK::Crm::DeveloperQualifiedSymbol,
+          fully_qualified_name: String
+        ) -> void
+
+        def to_hash: -> {
+          developer_qualified_symbol: HubspotSDK::Crm::DeveloperQualifiedSymbol,
+          fully_qualified_name: String
+        }
+      end
+    end
+  end
+end

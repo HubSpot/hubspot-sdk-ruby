@@ -10,6 +10,9 @@ module HubspotSDK
         # @return [HubspotSDK::Resources::Settings::Currencies::ExchangeRates]
         attr_reader :exchange_rates
 
+        # Get the details for the company currency. The company currency is used in deal
+        # totals, reports, and the default currency for new deals.
+        #
         # @overload get_company_currency(request_options: {})
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
@@ -26,6 +29,8 @@ module HubspotSDK
           )
         end
 
+        # Retrieve a list of all available currency codes and their names.
+        #
         # @overload list_codes(request_options: {})
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
@@ -42,6 +47,8 @@ module HubspotSDK
           )
         end
 
+        # Set or update the primary company currency.
+        #
         # @overload update_company_currency(currency_code:, request_options: {})
         #
         # @param currency_code [Symbol, HubspotSDK::Models::Settings::CompanyCurrencyUpdateRequest::CurrencyCode] The three-letter code representing a specific currency (ex. USD).

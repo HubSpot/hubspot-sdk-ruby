@@ -7,11 +7,12 @@ module HubspotSDK
         # @!attribute results
         #   The collection of Business Units
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::PublicBusinessUnit>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicBusinessUnit] }
+        #   @return [Array<HubspotSDK::Models::BusinessUnits::PublicBusinessUnit>]
+        required :results,
+                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::BusinessUnits::PublicBusinessUnit] }
 
         # @!method initialize(results:)
-        #   @param results [Array<HubspotSDK::Models::Marketing::PublicBusinessUnit>] The collection of Business Units
+        #   @param results [Array<HubspotSDK::Models::BusinessUnits::PublicBusinessUnit>] The collection of Business Units
       end
     end
   end

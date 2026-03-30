@@ -13,11 +13,14 @@ module HubspotSDK
         optional :archived, HubspotSDK::Internal::Type::Boolean
 
         # @!attribute display_order
+        #   The order for displaying this pipeline. If two pipelines have a matching
+        #   `displayOrder`, they will be sorted alphabetically by label.
         #
         #   @return [Integer, nil]
         optional :display_order, Integer, api_name: :displayOrder
 
         # @!attribute label
+        #   A unique label used to organize pipelines in HubSpot's UI
         #
         #   @return [String, nil]
         optional :label, String
@@ -28,9 +31,9 @@ module HubspotSDK
         #
         #   @param archived [Boolean] Whether the pipeline is archived. This property should only be provided when res
         #
-        #   @param display_order [Integer]
+        #   @param display_order [Integer] The order for displaying this pipeline. If two pipelines have a matching `displa
         #
-        #   @param label [String]
+        #   @param label [String] A unique label used to organize pipelines in HubSpot's UI
       end
     end
   end

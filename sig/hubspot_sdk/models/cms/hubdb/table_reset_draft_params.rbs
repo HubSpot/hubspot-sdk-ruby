@@ -1,0 +1,34 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Hubdb
+        type table_reset_draft_params =
+          { table_id_or_name: String, include_foreign_ids: bool }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class TableResetDraftParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor table_id_or_name: String
+
+          attr_reader include_foreign_ids: bool?
+
+          def include_foreign_ids=: (bool) -> bool
+
+          def initialize: (
+            table_id_or_name: String,
+            ?include_foreign_ids: bool,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            table_id_or_name: String,
+            include_foreign_ids: bool,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

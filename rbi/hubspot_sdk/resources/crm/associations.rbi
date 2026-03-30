@@ -7,6 +7,39 @@ module HubspotSDK
         sig { returns(HubspotSDK::Resources::Crm::Associations::Batch) }
         attr_reader :batch
 
+        # Retrieve all associations between a specific record and an object type. Limit
+        # 500 per call.
+        sig do
+          params(
+            to_object_type: String,
+            object_type: String,
+            object_id_: String,
+            after: String,
+            limit: Integer,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(
+            HubspotSDK::Internal::Page[
+              HubspotSDK::Crm::MultiAssociatedObjectWithLabel
+            ]
+          )
+        end
+        def list(
+          # Path param
+          to_object_type,
+          # Path param
+          object_type:,
+          # Path param
+          object_id_:,
+          # Query param: The paging cursor token of the last successfully read resource will
+          # be returned as the `paging.next.after` JSON property of a paged response
+          # containing more results.
+          after: nil,
+          # Query param: The maximum number of results to display per page.
+          limit: nil,
+          request_options: {}
+        )
+        end
+
         sig do
           params(
             to_object_id: String,
@@ -16,7 +49,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).void
         end
-        def delete_associations(
+        def delete(
           to_object_id,
           object_type:,
           object_id_:,
@@ -33,9 +66,37 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Crm::ReportCreationResponse)
         end
-        def request_high_usage_report(
-          # The user for the report
-          user_id,
+        def request_high_usage_report(user_id, request_options: {})
+        end
+
+        sig do
+          params(
+            object_type: String,
+            after: String,
+            filter_groups: T::Array[HubspotSDK::Crm::FilterGroup::OrHash],
+            limit: Integer,
+            properties: T::Array[String],
+            sorts: T::Array[String],
+            query: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(
+            HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
+          )
+        end
+        def search(
+          object_type,
+          # A paging cursor token for retrieving subsequent pages.
+          after:,
+          # Up to 6 groups of filters defining additional query criteria.
+          filter_groups:,
+          # The maximum results to return, up to 200 objects.
+          limit:,
+          # A list of property names to include in the response.
+          properties:,
+          # Specifies sorting order based on object properties.
+          sorts:,
+          # The search query string, up to 3000 characters.
+          query: nil,
           request_options: {}
         )
         end

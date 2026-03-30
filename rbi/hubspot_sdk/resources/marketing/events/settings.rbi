@@ -5,6 +5,7 @@ module HubspotSDK
     class Marketing
       class Events
         class Settings
+          # Create or update the current settings for the application.
           sig do
             params(
               app_id: Integer,
@@ -22,6 +23,7 @@ module HubspotSDK
           )
           end
 
+          # Retrieve the current settings for the application.
           sig do
             params(
               app_id: Integer,

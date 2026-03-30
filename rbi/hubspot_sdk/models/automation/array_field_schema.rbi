@@ -12,6 +12,8 @@ module HubspotSDK
             )
           end
 
+        # Defines the type of elements contained within the array, which can be an
+        # integer, long, double, string, boolean, another array, or an object.
         sig do
           returns(
             T.any(
@@ -27,6 +29,7 @@ module HubspotSDK
         end
         attr_accessor :items
 
+        # Specifies that the field is of type 'ARRAY'.
         sig do
           returns(HubspotSDK::Automation::ArrayFieldSchema::Type::OrSymbol)
         end
@@ -47,7 +50,13 @@ module HubspotSDK
             type: HubspotSDK::Automation::ArrayFieldSchema::Type::OrSymbol
           ).returns(T.attached_class)
         end
-        def self.new(items:, type:)
+        def self.new(
+          # Defines the type of elements contained within the array, which can be an
+          # integer, long, double, string, boolean, another array, or an object.
+          items:,
+          # Specifies that the field is of type 'ARRAY'.
+          type:
+        )
         end
 
         sig do
@@ -70,6 +79,8 @@ module HubspotSDK
         def to_hash
         end
 
+        # Defines the type of elements contained within the array, which can be an
+        # integer, long, double, string, boolean, another array, or an object.
         module Items
           extend HubspotSDK::Internal::Type::Union
 
@@ -97,6 +108,7 @@ module HubspotSDK
           end
         end
 
+        # Specifies that the field is of type 'ARRAY'.
         module Type
           extend HubspotSDK::Internal::Type::Enum
 

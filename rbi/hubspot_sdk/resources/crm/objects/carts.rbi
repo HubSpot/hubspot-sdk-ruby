@@ -8,11 +8,9 @@ module HubspotSDK
           sig { returns(HubspotSDK::Resources::Crm::Objects::Carts::Batch) }
           attr_reader :batch
 
-          # Create a single cart. Include a `properties` object to define
-          # [property values](https://developers.hubspot.com/docs/guides/api/crm/properties)
-          # for the {objectName}, along with an `associations` array to define
-          # [associations](https://developers.hubspot.com/docs/guides/api/crm/associations/associations-v4)
-          # with other records.
+          # Create a cart with the given properties and return a copy of the object,
+          # including the ID. Documentation and examples for creating standard carts is
+          # provided.
           sig do
             params(
               associations:
@@ -29,10 +27,11 @@ module HubspotSDK
           )
           end
 
-          # Update a cart by ID (`objectId`) or unique property value (`idProperty`).
-          # Provided property values will be overwritten. Read-only and non-existent
-          # properties will result in an error. Properties values can be cleared by passing
-          # an empty string.
+          # Perform a partial update of a cart, specified by its ID. Alternatively, you can
+          # specify a cart by a unique property value using the `idProperty` query
+          # parameter. Provided property values will be overwritten. Read-only and
+          # non-existent properties will result in an error. Properties values can be
+          # cleared by passing an empty string.
           sig do
             params(
               cart_id: String,
@@ -52,7 +51,8 @@ module HubspotSDK
           )
           end
 
-          # Retrieve all carts. Control what is returned via the `properties` query param.
+          # Retrieve all carts. You can control what is returned via the `properties` query
+          # parameter.
           sig do
             params(
               after: String,
@@ -93,9 +93,7 @@ module HubspotSDK
           )
           end
 
-          # Archive a cart by ID. Deleted carts can be restored within 90 days of deletion.
-          # Learn more about
-          # [restoring records](https://knowledge.hubspot.com/records/restore-deleted-records).
+          # Delete a cart by its ID, moving it to the recycling bin.
           sig do
             params(
               cart_id: String,
@@ -105,8 +103,7 @@ module HubspotSDK
           def delete(cart_id, request_options: {})
           end
 
-          # Retrieve a cart by its ID (`objectId`) or by a unique property (`idProperty`).
-          # Includes options for specifying what gets returned, such as the `properties`
+          # Retrieve a cart by its ID. You can control what is returned via the `properties`
           # query parameter.
           sig do
             params(

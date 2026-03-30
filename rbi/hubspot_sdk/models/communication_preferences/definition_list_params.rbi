@@ -15,16 +15,12 @@ module HubspotSDK
             )
           end
 
-        # The unique identifier of the business unit for which to retrieve the
-        # subscription definitions.
         sig { returns(T.nilable(Integer)) }
         attr_reader :business_unit_id
 
         sig { params(business_unit_id: Integer).void }
         attr_writer :business_unit_id
 
-        # A boolean indicating whether to include translations of the subscription
-        # definitions. Defaults to false if not specified.
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :include_translations
 
@@ -39,11 +35,7 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The unique identifier of the business unit for which to retrieve the
-          # subscription definitions.
           business_unit_id: nil,
-          # A boolean indicating whether to include translations of the subscription
-          # definitions. Defaults to false if not specified.
           include_translations: nil,
           request_options: {}
         )

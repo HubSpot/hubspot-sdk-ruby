@@ -12,6 +12,8 @@ module HubspotSDK
             )
           end
 
+        # Indicates the source of the test request, with the only accepted value being
+        # 'TEST'.
         sig do
           returns(HubspotSDK::Automation::TestRequestContext::Source::OrSymbol)
         end
@@ -22,7 +24,11 @@ module HubspotSDK
             source: HubspotSDK::Automation::TestRequestContext::Source::OrSymbol
           ).returns(T.attached_class)
         end
-        def self.new(source:)
+        def self.new(
+          # Indicates the source of the test request, with the only accepted value being
+          # 'TEST'.
+          source:
+        )
         end
 
         sig do
@@ -36,6 +42,8 @@ module HubspotSDK
         def to_hash
         end
 
+        # Indicates the source of the test request, with the only accepted value being
+        # 'TEST'.
         module Source
           extend HubspotSDK::Internal::Type::Enum
 

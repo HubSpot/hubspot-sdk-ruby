@@ -14,8 +14,8 @@ module HubspotSDK
                  api_name: :budgetItems
 
         # @!attribute currency_code
-        #   The currency code used for budget and spending amounts. Valid values include
-        #   standard currency codes such as 'USD', 'EUR', 'JPY', etc.
+        #   The currency code used for the budget and spend amounts, following ISO 4217
+        #   standards.
         #
         #   @return [Symbol, HubspotSDK::Models::Marketing::PublicBudgetTotals::CurrencyCode]
         required :currency_code,
@@ -32,19 +32,20 @@ module HubspotSDK
                  api_name: :spendItems
 
         # @!attribute budget_total
-        #   The total budget amount for the campaign, represented as a number.
+        #   The total budget allocated for the campaign.
         #
         #   @return [Float, nil]
         optional :budget_total, Float, api_name: :budgetTotal
 
         # @!attribute remaining_budget
-        #   The remaining budget for the campaign after spending, represented as a number.
+        #   The remaining budget available for the campaign after accounting for all spend
+        #   items.
         #
         #   @return [Float, nil]
         optional :remaining_budget, Float, api_name: :remainingBudget
 
         # @!attribute spend_total
-        #   The total amount spent for the campaign, represented as a number.
+        #   The total amount spent across all spend items in the campaign.
         #
         #   @return [Float, nil]
         optional :spend_total, Float, api_name: :spendTotal
@@ -55,18 +56,18 @@ module HubspotSDK
         #
         #   @param budget_items [Array<HubspotSDK::Models::Marketing::PublicBudgetItem>] An array of budget items associated with the campaign. Each item is represented
         #
-        #   @param currency_code [Symbol, HubspotSDK::Models::Marketing::PublicBudgetTotals::CurrencyCode] The currency code used for budget and spending amounts. Valid values include sta
+        #   @param currency_code [Symbol, HubspotSDK::Models::Marketing::PublicBudgetTotals::CurrencyCode] The currency code used for the budget and spend amounts, following ISO 4217 stan
         #
         #   @param spend_items [Array<HubspotSDK::Models::Marketing::PublicSpendItem>] An array of spend items associated with the campaign. Each item is represented b
         #
-        #   @param budget_total [Float] The total budget amount for the campaign, represented as a number.
+        #   @param budget_total [Float] The total budget allocated for the campaign.
         #
-        #   @param remaining_budget [Float] The remaining budget for the campaign after spending, represented as a number.
+        #   @param remaining_budget [Float] The remaining budget available for the campaign after accounting for all spend i
         #
-        #   @param spend_total [Float] The total amount spent for the campaign, represented as a number.
+        #   @param spend_total [Float] The total amount spent across all spend items in the campaign.
 
-        # The currency code used for budget and spending amounts. Valid values include
-        # standard currency codes such as 'USD', 'EUR', 'JPY', etc.
+        # The currency code used for the budget and spend amounts, following ISO 4217
+        # standards.
         #
         # @see HubspotSDK::Models::Marketing::PublicBudgetTotals#currency_code
         module CurrencyCode

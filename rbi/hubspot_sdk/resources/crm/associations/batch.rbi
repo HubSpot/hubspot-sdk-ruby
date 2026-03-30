@@ -36,11 +36,9 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::BatchResponseVoid)
           end
           def delete(
-            # Path param: Specifies the type of the target object in the batch association
-            # deletion.
+            # Path param
             to_object_type,
-            # Path param: Specifies the type of the source object in the batch association
-            # deletion.
+            # Path param
             from_object_type:,
             # Body param
             inputs:,
@@ -48,8 +46,7 @@ module HubspotSDK
           )
           end
 
-          # Batch create the default (most generic) association type between two object
-          # types.
+          # Create the default (most generic) association type between two object types
           sig do
             params(
               to_object_type: String,
@@ -62,9 +59,9 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::BatchResponsePublicDefaultAssociation)
           end
           def create_default(
-            # Path param: Specifies the type of the target object in the association.
+            # Path param
             to_object_type,
-            # Path param: Specifies the type of the source object in the association.
+            # Path param
             from_object_type:,
             # Body param
             inputs:,
@@ -72,9 +69,8 @@ module HubspotSDK
           )
           end
 
-          # Batch remove specific labelled associations between records in bulk. Deleting an
-          # unlabeled association will also delete all labeled associations between those
-          # two objects
+          # Batch delete specific association labels for objects. Deleting an unlabeled
+          # association will also delete all labeled associations between those two objects
           sig do
             params(
               to_object_type: String,
@@ -85,9 +81,9 @@ module HubspotSDK
             ).returns(HubspotSDK::Crm::BatchResponseVoid)
           end
           def delete_labels(
-            # Path param: The type of the to Object
+            # Path param
             to_object_type,
-            # Path param: The type of the from Object
+            # Path param
             from_object_type:,
             # Body param
             inputs:,
@@ -114,9 +110,9 @@ module HubspotSDK
             )
           end
           def get(
-            # Path param: The type of the to Object
+            # Path param
             to_object_type,
-            # Path param: The type of the from Object
+            # Path param
             from_object_type:,
             # Body param
             inputs:,

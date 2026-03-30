@@ -4,7 +4,16 @@ module HubspotSDK
       class Associations
         attr_reader batch: HubspotSDK::Resources::Crm::Associations::Batch
 
-        def delete_associations: (
+        def list: (
+          String to_object_type,
+          object_type: String,
+          object_id_: String,
+          ?after: String,
+          ?limit: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::MultiAssociatedObjectWithLabel]
+
+        def delete: (
           String to_object_id,
           object_type: String,
           object_id_: String,
@@ -16,6 +25,17 @@ module HubspotSDK
           Integer user_id,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Crm::ReportCreationResponse
+
+        def search: (
+          String object_type,
+          after: String,
+          filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
+          limit: Integer,
+          properties: ::Array[String],
+          sorts: ::Array[String],
+          ?query: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
 
         def update_association_labels: (
           String to_object_id,

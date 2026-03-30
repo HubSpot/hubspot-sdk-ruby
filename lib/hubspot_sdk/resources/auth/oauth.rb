@@ -58,6 +58,8 @@ module HubspotSDK
           )
         end
 
+        # Deletes/Revokes provided Refresh Token
+        #
         # @overload revoke_token(token: nil, client_id: nil, client_secret: nil, token_type_hint: nil, request_options: {})
         #
         # @param token [String]

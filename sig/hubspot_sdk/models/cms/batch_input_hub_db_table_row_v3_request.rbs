@@ -1,0 +1,20 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type batch_input_hub_db_table_row_v3_request =
+        { inputs: ::Array[HubspotSDK::Cms::HubDBTableRowV3Request] }
+
+      class BatchInputHubDBTableRowV3Request < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubspotSDK::Cms::HubDBTableRowV3Request]
+
+        def initialize: (
+          inputs: ::Array[HubspotSDK::Cms::HubDBTableRowV3Request]
+        ) -> void
+
+        def to_hash: -> {
+          inputs: ::Array[HubspotSDK::Cms::HubDBTableRowV3Request]
+        }
+      end
+    end
+  end
+end

@@ -7,7 +7,11 @@ module HubspotSDK
 
       attr_reader domains: HubspotSDK::Resources::Cms::Domains
 
+      attr_reader hubdb: HubspotSDK::Resources::Cms::Hubdb
+
       attr_reader media_bridge: HubspotSDK::Resources::Cms::MediaBridge
+
+      attr_reader pages: HubspotSDK::Resources::Cms::Pages
 
       attr_reader site_search: HubspotSDK::Resources::Cms::SiteSearch
 

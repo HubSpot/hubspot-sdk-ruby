@@ -7,7 +7,7 @@ module HubspotSDK
             String object_type,
             inputs: ::Array[HubspotSDK::PropertyCreate],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::BatchResponseProperty
+          ) -> HubspotSDK::Crm::BatchResponseProperty
 
           def delete: (
             String object_type,
@@ -22,7 +22,7 @@ module HubspotSDK
             inputs: ::Array[HubspotSDK::PropertyName],
             ?locale: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::BatchResponseProperty
+          ) -> HubspotSDK::Crm::BatchResponseProperty
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

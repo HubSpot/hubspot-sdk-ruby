@@ -1,0 +1,36 @@
+module HubspotSDK
+  module Models
+    module Crm
+      module FeatureFlags
+        type batch_upsert_params =
+          { app_id: Integer, flag_name: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class BatchUpsertParams < HubspotSDK::Models::Crm::PortalFlagStateBatchPutRequest
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def app_id: -> Integer
+
+          def app_id=: (Integer _) -> Integer
+
+          def flag_name: -> String
+
+          def flag_name=: (String _) -> String
+
+          def initialize: (
+            app_id: Integer,
+            flag_name: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            app_id: Integer,
+            flag_name: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

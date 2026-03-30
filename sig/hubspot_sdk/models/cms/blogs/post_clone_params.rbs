@@ -5,7 +5,7 @@ module HubspotSDK
         type post_clone_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class PostCloneParams < HubspotSDK::Models::Cms::Blogs::ContentCloneRequestVNext
+        class PostCloneParams < HubspotSDK::Models::Cms::ContentCloneRequestVNext
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

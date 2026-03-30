@@ -5,6 +5,8 @@ module HubspotSDK
     class Crm
       class DealSplits
         class Batch
+          # Read a batch of deal split objects by their associated deal object internal ID
+          #
           # @overload read(inputs:, request_options: {})
           #
           # @param inputs [Array<HubspotSDK::Models::PublicObjectID>] An array of deal split inputs
@@ -25,6 +27,10 @@ module HubspotSDK
             )
           end
 
+          # Create or replace deal splits for deals with the provided IDs. Deal split
+          # percentages for each deal must sum up to 1.0 (100%) and may have up to 8 decimal
+          # places
+          #
           # @overload upsert(inputs:, request_options: {})
           #
           # @param inputs [Array<HubspotSDK::Models::Crm::PublicDealSplitsCreateRequest>] An array of deal split inputs

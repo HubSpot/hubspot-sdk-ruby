@@ -24,7 +24,7 @@ module HubspotSDK
         sig { returns(T::Boolean) }
         attr_accessor :login_succeeded
 
-        # The approximate country code of the login.
+        # The approximate country code of the login
         sig { returns(T.nilable(String)) }
         attr_reader :country_code
 
@@ -52,7 +52,7 @@ module HubspotSDK
         sig { params(location: String).void }
         attr_writer :location
 
-        # The approximate region code of the login.
+        # The approximate region code of the login
         sig { returns(T.nilable(String)) }
         attr_reader :region_code
 
@@ -94,7 +94,7 @@ module HubspotSDK
           login_at:,
           # Whether the login was successful or not.
           login_succeeded:,
-          # The approximate country code of the login.
+          # The approximate country code of the login
           country_code: nil,
           # Email address of the user associated with the login.
           email: nil,
@@ -102,7 +102,7 @@ module HubspotSDK
           ip_address: nil,
           # The approximate location where the login activity originated.
           location: nil,
-          # The approximate region code of the login.
+          # The approximate region code of the login
           region_code: nil,
           # Information about the device used for logging in.
           user_agent: nil,

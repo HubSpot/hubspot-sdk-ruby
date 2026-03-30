@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Models
+    module Webhooks
+      type subscription_patch_request = { active: bool }
+
+      class SubscriptionPatchRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_reader active: bool?
+
+        def active=: (bool) -> bool
+
+        def initialize: (?active: bool) -> void
+
+        def to_hash: -> { active: bool }
+      end
+    end
+  end
+end

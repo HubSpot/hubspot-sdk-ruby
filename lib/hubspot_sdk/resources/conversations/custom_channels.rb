@@ -34,6 +34,9 @@ module HubspotSDK
           )
         end
 
+        # Update the capabilities for an existing. You can also use it to update the
+        # channel's webhookUri and its channelAccountConnectionRedirectUrl.
+        #
         # @overload update(channel_id, capabilities:, channel_account_connection_redirect_url:, channel_description:, channel_logo_url:, name:, webhook_url:, request_options: {})
         #
         # @param channel_id [Integer]
@@ -90,6 +93,8 @@ module HubspotSDK
           )
         end
 
+        # Archive an existing registered custom channel
+        #
         # @overload delete(channel_id, request_options: {})
         #
         # @param channel_id [Integer]
@@ -107,6 +112,10 @@ module HubspotSDK
           )
         end
 
+        # Retrieve the details for a specific channel account. This contains all the
+        # metadata about your channel account, including its channel, associated inbox id,
+        # and delivery identifier information.
+        #
         # @overload get(channel_account_id, channel_id:, archived: nil, request_options: {})
         #
         # @param channel_account_id [Integer] Path param

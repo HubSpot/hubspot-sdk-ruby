@@ -12,6 +12,7 @@ module HubspotSDK
             )
           end
 
+        # Indicates the source of the request, with the default value being WORKFLOWS.
         sig do
           returns(
             HubspotSDK::Automation::WorkflowsRequestContext::Source::OrSymbol
@@ -19,6 +20,7 @@ module HubspotSDK
         end
         attr_accessor :source
 
+        # The ID of the workflow associated with the request context.
         sig { returns(Integer) }
         attr_accessor :workflow_id
 
@@ -37,6 +39,7 @@ module HubspotSDK
         end
         attr_writer :action_execution_index_identifier
 
+        # The ID of the action within the workflow context.
         sig { returns(T.nilable(Integer)) }
         attr_reader :action_id
 
@@ -54,9 +57,12 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # Indicates the source of the request, with the default value being WORKFLOWS.
           source:,
+          # The ID of the workflow associated with the request context.
           workflow_id:,
           action_execution_index_identifier: nil,
+          # The ID of the action within the workflow context.
           action_id: nil
         )
         end
@@ -76,6 +82,7 @@ module HubspotSDK
         def to_hash
         end
 
+        # Indicates the source of the request, with the default value being WORKFLOWS.
         module Source
           extend HubspotSDK::Internal::Type::Enum
 

@@ -1,0 +1,9 @@
+module HubspotSDK
+  module Resources
+    class Webhooks
+      attr_reader webhooks: HubspotSDK::Resources::Webhooks::Webhooks
+
+      def initialize: (client: HubspotSDK::Client) -> void
+    end
+  end
+end

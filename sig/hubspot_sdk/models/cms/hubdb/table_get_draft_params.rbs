@@ -1,0 +1,51 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Hubdb
+        type table_get_draft_params =
+          {
+            table_id_or_name: String,
+            archived: bool,
+            include_foreign_ids: bool,
+            is_get_localized_schema: bool
+          }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class TableGetDraftParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor table_id_or_name: String
+
+          attr_reader archived: bool?
+
+          def archived=: (bool) -> bool
+
+          attr_reader include_foreign_ids: bool?
+
+          def include_foreign_ids=: (bool) -> bool
+
+          attr_reader is_get_localized_schema: bool?
+
+          def is_get_localized_schema=: (bool) -> bool
+
+          def initialize: (
+            table_id_or_name: String,
+            ?archived: bool,
+            ?include_foreign_ids: bool,
+            ?is_get_localized_schema: bool,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            table_id_or_name: String,
+            archived: bool,
+            include_foreign_ids: bool,
+            is_get_localized_schema: bool,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

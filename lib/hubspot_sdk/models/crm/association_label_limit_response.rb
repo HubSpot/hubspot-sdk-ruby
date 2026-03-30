@@ -12,8 +12,8 @@ module HubspotSDK
 
         # @!attribute from_object_type
         #
-        #   @return [HubspotSDK::Models::ObjectTypeDefinition]
-        required :from_object_type, -> { HubspotSDK::ObjectTypeDefinition }, api_name: :fromObjectType
+        #   @return [HubspotSDK::Models::Crm::ObjectTypeDefinition]
+        required :from_object_type, -> { HubspotSDK::Crm::ObjectTypeDefinition }, api_name: :fromObjectType
 
         # @!attribute limit
         #   The maximum number of association labels allowed.
@@ -29,8 +29,8 @@ module HubspotSDK
 
         # @!attribute to_object_type
         #
-        #   @return [HubspotSDK::Models::ObjectTypeDefinition]
-        required :to_object_type, -> { HubspotSDK::ObjectTypeDefinition }, api_name: :toObjectType
+        #   @return [HubspotSDK::Models::Crm::ObjectTypeDefinition]
+        required :to_object_type, -> { HubspotSDK::Crm::ObjectTypeDefinition }, api_name: :toObjectType
 
         # @!attribute usage
         #   The current number of association labels used.
@@ -41,13 +41,13 @@ module HubspotSDK
         # @!method initialize(all_labels:, from_object_type:, limit:, percentage:, to_object_type:, usage:)
         #   @param all_labels [Array<String>] A list of all association labels.
         #
-        #   @param from_object_type [HubspotSDK::Models::ObjectTypeDefinition]
+        #   @param from_object_type [HubspotSDK::Models::Crm::ObjectTypeDefinition]
         #
         #   @param limit [Integer] The maximum number of association labels allowed.
         #
         #   @param percentage [Float] The percentage of the association label limit that has been used.
         #
-        #   @param to_object_type [HubspotSDK::Models::ObjectTypeDefinition]
+        #   @param to_object_type [HubspotSDK::Models::Crm::ObjectTypeDefinition]
         #
         #   @param usage [Integer] The current number of association labels used.
       end

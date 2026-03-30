@@ -6,7 +6,7 @@ module HubspotSDK
       OrHash =
         T.type_alias { T.any(HubspotSDK::Error, HubspotSDK::Internal::AnyHash) }
 
-      # The error category.
+      # The error category
       sig { returns(String) }
       attr_accessor :category
 
@@ -42,7 +42,7 @@ module HubspotSDK
       sig { params(links: T::Hash[Symbol, String]).void }
       attr_writer :links
 
-      # A specific category that contains more specific detail about the error.
+      # A specific category that contains more specific detail about the error
       sig { returns(T.nilable(String)) }
       attr_reader :sub_category
 
@@ -61,7 +61,7 @@ module HubspotSDK
         ).returns(T.attached_class)
       end
       def self.new(
-        # The error category.
+        # The error category
         category:,
         # A unique identifier for the request. Include this value with any error reports
         # or support tickets
@@ -76,7 +76,7 @@ module HubspotSDK
         # A map of link names to associated URIs containing documentation about the error
         # or recommended remediation steps
         links: nil,
-        # A specific category that contains more specific detail about the error.
+        # A specific category that contains more specific detail about the error
         sub_category: nil
       )
       end

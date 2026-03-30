@@ -12,12 +12,15 @@ module HubspotSDK
             )
           end
 
+        # Indicates whether to include association definitions in the response.
         sig { returns(T::Boolean) }
         attr_accessor :include_association_definitions
 
+        # Indicates whether to include audit metadata in the response.
         sig { returns(T::Boolean) }
         attr_accessor :include_audit_metadata
 
+        # Indicates whether to include property definitions in the response.
         sig { returns(T::Boolean) }
         attr_accessor :include_property_definitions
 
@@ -33,8 +36,11 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # Indicates whether to include association definitions in the response.
           include_association_definitions:,
+          # Indicates whether to include audit metadata in the response.
           include_audit_metadata:,
+          # Indicates whether to include property definitions in the response.
           include_property_definitions:,
           inputs:
         )

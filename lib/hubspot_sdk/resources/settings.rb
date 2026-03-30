@@ -9,6 +9,9 @@ module HubspotSDK
       # @return [HubspotSDK::Resources::Settings::TaxRates]
       attr_reader :tax_rates
 
+      # @return [HubspotSDK::Resources::Settings::Users]
+      attr_reader :users
+
       # @api private
       #
       # @param client [HubspotSDK::Client]
@@ -16,6 +19,7 @@ module HubspotSDK
         @client = client
         @currencies = HubspotSDK::Resources::Settings::Currencies.new(client: client)
         @tax_rates = HubspotSDK::Resources::Settings::TaxRates.new(client: client)
+        @users = HubspotSDK::Resources::Settings::Users.new(client: client)
       end
     end
   end

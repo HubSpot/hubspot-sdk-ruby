@@ -6,7 +6,7 @@ module HubspotSDK
       # @see HubspotSDK::Resources::Account::Activity#list_security_activities
       class HydratedCriticalAction < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
-        #   The unique ID of the activity.
+        #   The activity's unique ID.
         #
         #   @return [String]
         required :id, String
@@ -36,7 +36,7 @@ module HubspotSDK
         optional :acting_user, String, api_name: :actingUser
 
         # @!attribute country_code
-        #   The approximate country code.
+        #   The approximate country code
         #
         #   @return [String, nil]
         optional :country_code, String, api_name: :countryCode
@@ -66,13 +66,13 @@ module HubspotSDK
         optional :object_id_, String, api_name: :objectId
 
         # @!attribute region_code
-        #   The approximate region code.
+        #   The approximate region code
         #
         #   @return [String, nil]
         optional :region_code, String, api_name: :regionCode
 
         # @!method initialize(id:, created_at:, type:, user_id:, acting_user: nil, country_code: nil, info_url: nil, ip_address: nil, location: nil, object_id_: nil, region_code: nil)
-        #   @param id [String] The unique ID of the activity.
+        #   @param id [String] The activity's unique ID.
         #
         #   @param created_at [Time] The time the activity took place.
         #
@@ -82,7 +82,7 @@ module HubspotSDK
         #
         #   @param acting_user [String] Email address of the user associated with the activity.
         #
-        #   @param country_code [String] The approximate country code.
+        #   @param country_code [String] The approximate country code
         #
         #   @param info_url [String] A link to the URL where the action was taken in the account.
         #
@@ -92,7 +92,7 @@ module HubspotSDK
         #
         #   @param object_id_ [String] The ID of the affected object.
         #
-        #   @param region_code [String] The approximate region code.
+        #   @param region_code [String] The approximate region code
 
         # The type of activity.
         #

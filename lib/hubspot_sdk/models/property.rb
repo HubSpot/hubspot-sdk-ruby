@@ -97,6 +97,8 @@ module HubspotSDK
                api_name: :dataSensitivity
 
       # @!attribute date_display_hint
+      #   Controls how date properties are displayed in the HubSpot UI, with options such
+      #   as 'absolute', 'absolute_with_relative', 'time_since', and 'time_until'.
       #
       #   @return [Symbol, HubspotSDK::Models::Property::DateDisplayHint, nil]
       optional :date_display_hint,
@@ -133,8 +135,7 @@ module HubspotSDK
       optional :has_unique_value, HubspotSDK::Internal::Type::Boolean, api_name: :hasUniqueValue
 
       # @!attribute hidden
-      #   Whether or not the property will be hidden from the HubSpot UI. It's recommended
-      #   that this be set to false for custom properties.
+      #   Hidden options won't be shown in HubSpot.
       #
       #   @return [Boolean, nil]
       optional :hidden, HubspotSDK::Internal::Type::Boolean
@@ -175,7 +176,7 @@ module HubspotSDK
       optional :show_currency_symbol, HubspotSDK::Internal::Type::Boolean, api_name: :showCurrencySymbol
 
       # @!attribute updated_at
-      #   The timestamp when the property was last updated, in ISO 8601 format.
+      #   When the object type was last updated.
       #
       #   @return [Time, nil]
       optional :updated_at, Time, api_name: :updatedAt
@@ -221,7 +222,7 @@ module HubspotSDK
       #
       #   @param data_sensitivity [Symbol, HubspotSDK::Models::Property::DataSensitivity] Indicates the sensitivity level of the property, such as "non_sensitive", "sensi
       #
-      #   @param date_display_hint [Symbol, HubspotSDK::Models::Property::DateDisplayHint]
+      #   @param date_display_hint [Symbol, HubspotSDK::Models::Property::DateDisplayHint] Controls how date properties are displayed in the HubSpot UI, with options such
       #
       #   @param display_order [Integer] The order that this property should be displayed in the HubSpot UI relative to o
       #
@@ -231,7 +232,7 @@ module HubspotSDK
       #
       #   @param has_unique_value [Boolean] Whether or not the property's value must be unique. Once set, this can't be chan
       #
-      #   @param hidden [Boolean] Whether or not the property will be hidden from the HubSpot UI. It's recommended
+      #   @param hidden [Boolean] Hidden options won't be shown in HubSpot.
       #
       #   @param hubspot_defined [Boolean] This will be true for default object properties built into HubSpot.
       #
@@ -243,7 +244,7 @@ module HubspotSDK
       #
       #   @param show_currency_symbol [Boolean] Whether the property will display the currency symbol set in the account setting
       #
-      #   @param updated_at [Time] The timestamp when the property was last updated, in ISO 8601 format.
+      #   @param updated_at [Time] When the object type was last updated.
       #
       #   @param updated_user_id [String] The internal user ID of the user who updated the property in HubSpot. This field
 
@@ -262,6 +263,9 @@ module HubspotSDK
         #   @return [Array<Symbol>]
       end
 
+      # Controls how date properties are displayed in the HubSpot UI, with options such
+      # as 'absolute', 'absolute_with_relative', 'time_since', and 'time_until'.
+      #
       # @see HubspotSDK::Models::Property#date_display_hint
       module DateDisplayHint
         extend HubspotSDK::Internal::Type::Enum

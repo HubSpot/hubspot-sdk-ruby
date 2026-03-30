@@ -5,7 +5,7 @@ module HubspotSDK
         type listing_create_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class ListingCreateParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectBatchInputForCreate
+        class ListingCreateParams < HubspotSDK::Models::Crm::SimplePublicObjectInputForCreate
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

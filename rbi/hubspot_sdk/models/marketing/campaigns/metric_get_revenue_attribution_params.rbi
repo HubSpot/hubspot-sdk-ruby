@@ -19,21 +19,20 @@ module HubspotSDK
           sig { returns(String) }
           attr_accessor :campaign_guid
 
-          # The model used to attribute revenue to the campaign.
           sig { returns(T.nilable(String)) }
           attr_reader :attribution_model
 
           sig { params(attribution_model: String).void }
           attr_writer :attribution_model
 
-          # End date to fetch attribution data, YYYY-MM-DD.
+          # End date to fetch attribution data, YYYY-MM-DD
           sig { returns(T.nilable(String)) }
           attr_reader :end_date
 
           sig { params(end_date: String).void }
           attr_writer :end_date
 
-          # Start date to fetch attribution data, YYYY-MM-DD.
+          # Start date to fetch attribution data, YYYY-MM-DD
           sig { returns(T.nilable(String)) }
           attr_reader :start_date
 
@@ -51,11 +50,10 @@ module HubspotSDK
           end
           def self.new(
             campaign_guid:,
-            # The model used to attribute revenue to the campaign.
             attribution_model: nil,
-            # End date to fetch attribution data, YYYY-MM-DD.
+            # End date to fetch attribution data, YYYY-MM-DD
             end_date: nil,
-            # Start date to fetch attribution data, YYYY-MM-DD.
+            # Start date to fetch attribution data, YYYY-MM-DD
             start_date: nil,
             request_options: {}
           )

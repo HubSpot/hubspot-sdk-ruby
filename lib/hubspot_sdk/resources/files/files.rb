@@ -4,11 +4,168 @@ module HubspotSDK
   module Resources
     class Files
       class Files
+        # Some parameter documentations has been truncated, see
+        # {HubspotSDK::Models::Files::FileCreateParams} for more details.
+        #
+        # Creates a folder.
+        #
+        # @overload create(name:, parent_folder_id: nil, parent_path: nil, request_options: {})
+        #
+        # @param name [String] Desired name for the folder.
+        #
+        # @param parent_folder_id [String] FolderId of the parent of the created folder. If not specified, the folder will
+        #
+        # @param parent_path [String] Path of the parent of the created folder. If not specified the folder will be cr
+        #
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Models::Files::Folder]
+        #
+        # @see HubspotSDK::Models::Files::FileCreateParams
+        def create(params)
+          parsed, options = HubspotSDK::Files::FileCreateParams.dump_request(params)
+          @client.request(
+            method: :post,
+            path: "files/2026-03/folders",
+            body: parsed,
+            model: HubspotSDK::Files::Folder,
+            options: options
+          )
+        end
+
+        # Some parameter documentations has been truncated, see
+        # {HubspotSDK::Models::Files::FileUpdateParams} for more details.
+        #
+        # Update properties of file by ID.
+        #
+        # @overload update(file_id, clear_expires:, access: nil, expires_at: nil, is_usable_in_content: nil, name: nil, parent_folder_id: nil, parent_folder_path: nil, request_options: {})
+        #
+        # @param file_id [String] ID of file to update
+        #
+        # @param clear_expires [Boolean]
+        #
+        # @param access [Symbol, HubspotSDK::Models::Files::FileUpdateInput::Access] NONE: Do not run any duplicate validation. REJECT: Reject the upload if a duplic
+        #
+        # @param expires_at [Time]
+        #
+        # @param is_usable_in_content [Boolean] Mark whether the file should be used in new content or not.
+        #
+        # @param name [String] New name for the file.
+        #
+        # @param parent_folder_id [String] FolderId where the file should be moved to. folderId and folderPath parameters c
+        #
+        # @param parent_folder_path [String] Folder path where the file should be moved to. folderId and folderPath parameter
+        #
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Models::Files::File]
+        #
+        # @see HubspotSDK::Models::Files::FileUpdateParams
+        def update(file_id, params)
+          parsed, options = HubspotSDK::Files::FileUpdateParams.dump_request(params)
+          @client.request(
+            method: :patch,
+            path: ["files/2026-03/files/%1$s", file_id],
+            body: parsed,
+            model: HubspotSDK::Files::File,
+            options: options
+          )
+        end
+
+        # Delete a file by ID
+        #
+        # @overload delete(file_id, request_options: {})
+        #
+        # @param file_id [String] FileId to delete
+        #
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [nil]
+        #
+        # @see HubspotSDK::Models::Files::FileDeleteParams
+        def delete(file_id, params = {})
+          @client.request(
+            method: :delete,
+            path: ["files/2026-03/files/%1$s", file_id],
+            model: NilClass,
+            options: params[:request_options]
+          )
+        end
+
+        # Delete a file in accordance with GDPR regulations.
+        #
+        # @overload gdpr_delete(file_id, request_options: {})
+        #
+        # @param file_id [String] ID of file to GDPR delete
+        #
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [nil]
+        #
+        # @see HubspotSDK::Models::Files::FileGdprDeleteParams
+        def gdpr_delete(file_id, params = {})
+          @client.request(
+            method: :delete,
+            path: ["files/2026-03/files/%1$s/gdpr-delete", file_id],
+            model: NilClass,
+            options: params[:request_options]
+          )
+        end
+
+        # Retrieve a file by its ID.
+        #
+        # @overload get(file_id, properties: nil, request_options: {})
+        #
+        # @param file_id [String] ID of the desired file.
+        #
+        # @param properties [Array<String>]
+        #
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Models::Files::File]
+        #
+        # @see HubspotSDK::Models::Files::FileGetParams
+        def get(file_id, params = {})
+          parsed, options = HubspotSDK::Files::FileGetParams.dump_request(params)
+          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          @client.request(
+            method: :get,
+            path: ["files/2026-03/files/%1$s", file_id],
+            query: query,
+            model: HubspotSDK::Files::File,
+            options: options
+          )
+        end
+
+        # Retrieve a file by its path.
+        #
+        # @overload get_by_path(path, properties: nil, request_options: {})
+        #
+        # @param path [String]
+        # @param properties [Array<String>]
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Models::Files::FileStat]
+        #
+        # @see HubspotSDK::Models::Files::FileGetByPathParams
+        def get_by_path(path, params = {})
+          parsed, options = HubspotSDK::Files::FileGetByPathParams.dump_request(params)
+          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          @client.request(
+            method: :get,
+            path: ["files/2026-03/files/stat/%1$s", path],
+            query: query,
+            model: HubspotSDK::Files::FileStat,
+            options: options
+          )
+        end
+
         # Check the status of requested import.
         #
         # @overload get_import_task_status(task_id, request_options: {})
         #
-        # @param task_id [String]
+        # @param task_id [String] Import by URL task ID
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Files::FileActionResponse]
@@ -20,6 +177,38 @@ module HubspotSDK
             path: ["files/2026-03/files/import-from-url/async/tasks/%1$s/status", task_id],
             model: HubspotSDK::Files::FileActionResponse,
             options: params[:request_options]
+          )
+        end
+
+        # Some parameter documentations has been truncated, see
+        # {HubspotSDK::Models::Files::FileGetSignedURLParams} for more details.
+        #
+        # Generates signed URL that allows temporary access to a private file.
+        #
+        # @overload get_signed_url(file_id, expiration_seconds: nil, size: nil, upscale: nil, request_options: {})
+        #
+        # @param file_id [String] ID of file.
+        #
+        # @param expiration_seconds [Integer] How long in seconds the link will provide access to the file.
+        #
+        # @param size [Symbol, HubspotSDK::Models::Files::FileGetSignedURLParams::Size] For image files. This will resize the image to the desired size before sharing.
+        #
+        # @param upscale [Boolean] If size is provided, this will upscale the image to fit the size dimensions.
+        #
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Models::Files::SignedURL]
+        #
+        # @see HubspotSDK::Models::Files::FileGetSignedURLParams
+        def get_signed_url(file_id, params = {})
+          parsed, options = HubspotSDK::Files::FileGetSignedURLParams.dump_request(params)
+          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          @client.request(
+            method: :get,
+            path: ["files/2026-03/files/%1$s/signed-url", file_id],
+            query: query.transform_keys(expiration_seconds: "expirationSeconds"),
+            model: HubspotSDK::Files::SignedURL,
+            options: options
           )
         end
 
@@ -66,6 +255,36 @@ module HubspotSDK
           )
         end
 
+        # Replace existing file data with new file data. Can be used to change image
+        # content without having to upload a new file and update all references.
+        #
+        # @overload replace(file_id, charset_hunch: nil, file: nil, options: nil, request_options: {})
+        #
+        # @param file_id [String] ID of the desired file.
+        #
+        # @param charset_hunch [String]
+        #
+        # @param file [Pathname, StringIO, IO, String, HubspotSDK::FilePart]
+        #
+        # @param options [String]
+        #
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Models::Files::File]
+        #
+        # @see HubspotSDK::Models::Files::FileReplaceParams
+        def replace(file_id, params = {})
+          parsed, options = HubspotSDK::Files::FileReplaceParams.dump_request(params)
+          @client.request(
+            method: :put,
+            path: ["files/2026-03/files/%1$s", file_id],
+            headers: {"content-type" => "multipart/form-data"},
+            body: parsed,
+            model: HubspotSDK::Files::File,
+            options: options
+          )
+        end
+
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Files::FileSearchParams} for more details.
         #
@@ -74,77 +293,77 @@ module HubspotSDK
         #
         # @overload search(after: nil, allows_anonymous_access: nil, before: nil, created_at: nil, created_at_gte: nil, created_at_lte: nil, encoding: nil, expires_at: nil, expires_at_gte: nil, expires_at_lte: nil, extension: nil, file_md5: nil, height: nil, height_gte: nil, height_lte: nil, id_gte: nil, id_lte: nil, ids: nil, is_usable_in_content: nil, limit: nil, name: nil, parent_folder_ids: nil, path: nil, properties: nil, size: nil, size_gte: nil, size_lte: nil, sort: nil, type: nil, updated_at: nil, updated_at_gte: nil, updated_at_lte: nil, url: nil, width: nil, width_gte: nil, width_lte: nil, request_options: {})
         #
-        # @param after [String] The paging cursor token of the last successfully read resource will be returned
+        # @param after [String] Offset search results by this value. The default offset is 0 and the maximum off
         #
-        # @param allows_anonymous_access [Boolean]
+        # @param allows_anonymous_access [Boolean] Search files by access. If 'true' will show only public files; if 'false' will s
         #
-        # @param before [String]
+        # @param before [String] Search files updated before this timestamp. Time must be epoch time in milliseco
         #
-        # @param created_at [Time]
+        # @param created_at [Time] Search files by exact time of creation. Time must be epoch time in milliseconds.
         #
-        # @param created_at_gte [Time]
+        # @param created_at_gte [Time] Search files by greater than or equal to time of creation. Can be used with crea
         #
-        # @param created_at_lte [Time]
+        # @param created_at_lte [Time] Search files by less than or equal to time of creation. Can be used with created
         #
-        # @param encoding [String]
+        # @param encoding [String] Search files by specified encoding.
         #
-        # @param expires_at [Time]
+        # @param expires_at [Time] Search files by exact expires time. Time must be epoch time in milliseconds.
         #
-        # @param expires_at_gte [Time]
+        # @param expires_at_gte [Time] Search files by greater than or equal to expires time. Can be used with expiresA
         #
-        # @param expires_at_lte [Time]
+        # @param expires_at_lte [Time] Search files by less than or equal to expires time. Can be used with expiresAtGt
         #
-        # @param extension [String]
+        # @param extension [String] Search files by given extension.
         #
-        # @param file_md5 [String]
+        # @param file_md5 [String] Search files by specific md5 hash.
         #
-        # @param height [Integer]
+        # @param height [Integer] Search files by height of image or video.
         #
-        # @param height_gte [Integer]
+        # @param height_gte [Integer] Search files by greater than or equal to height of image or video. Can be used w
         #
-        # @param height_lte [Integer]
+        # @param height_lte [Integer] Search files by less than or equal to height of image or video. Can be used with
         #
-        # @param id_gte [Integer]
+        # @param id_gte [Integer] Search files by greater than or equal to ID. Can be used with idLte to create a
         #
-        # @param id_lte [Integer]
+        # @param id_lte [Integer] Search files by less than or equal to ID. Can be used with idGte to create a ran
         #
         # @param ids [Array<Integer>]
         #
-        # @param is_usable_in_content [Boolean]
+        # @param is_usable_in_content [Boolean] If true shows files that have been marked to be used in new content. It false sh
         #
-        # @param limit [Integer] The maximum number of results to display per page.
+        # @param limit [Integer] Number of items to return. Default limit is 10, maximum limit is 100.
         #
-        # @param name [String]
+        # @param name [String] Search for files containing the given name.
         #
         # @param parent_folder_ids [Array<Integer>]
         #
-        # @param path [String]
+        # @param path [String] Search files by path.
         #
-        # @param properties [Array<String>]
+        # @param properties [Array<String>] Desired file properties in the return object.
         #
-        # @param size [Integer]
+        # @param size [Integer] Search files by exact file size in bytes.
         #
-        # @param size_gte [Integer]
+        # @param size_gte [Integer] Search files by greater than or equal to file size. Can be used with sizeLte to
         #
-        # @param size_lte [Integer]
+        # @param size_lte [Integer] Search files by less than or equal to file size. Can be used with sizeGte to cre
         #
-        # @param sort [Array<String>]
+        # @param sort [Array<String>] Sort files by a given field.
         #
-        # @param type [String]
+        # @param type [String] Search files by file type.
         #
-        # @param updated_at [Time]
+        # @param updated_at [Time] Search files by exact time of latest updated. Time must be epoch time in millise
         #
-        # @param updated_at_gte [Time]
+        # @param updated_at_gte [Time] Search files by greater than or equal to time of latest update. Can be used with
         #
-        # @param updated_at_lte [Time]
+        # @param updated_at_lte [Time] Search files by less than or equal to time of latest update. Can be used with up
         #
-        # @param url [String]
+        # @param url [String] Search for given URL
         #
-        # @param width [Integer]
+        # @param width [Integer] Search files by width of image or video.
         #
-        # @param width_gte [Integer]
+        # @param width_gte [Integer] Search files by greater than or equal to width of image or video. Can be used wi
         #
-        # @param width_lte [Integer]
+        # @param width_lte [Integer] Search files by less than or equal to width of image or video. Can be used with
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -181,6 +400,33 @@ module HubspotSDK
               width_lte: "widthLte"
             ),
             page: HubspotSDK::Internal::Page,
+            model: HubspotSDK::Files::File,
+            options: options
+          )
+        end
+
+        # Upload a single file with content specified in request body.
+        #
+        # @overload upload(charset_hunch: nil, file: nil, file_name: nil, folder_id: nil, folder_path: nil, options: nil, request_options: {})
+        #
+        # @param charset_hunch [String]
+        # @param file [Pathname, StringIO, IO, String, HubspotSDK::FilePart]
+        # @param file_name [String]
+        # @param folder_id [String]
+        # @param folder_path [String]
+        # @param options [String]
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Models::Files::File]
+        #
+        # @see HubspotSDK::Models::Files::FileUploadParams
+        def upload(params = {})
+          parsed, options = HubspotSDK::Files::FileUploadParams.dump_request(params)
+          @client.request(
+            method: :post,
+            path: "files/2026-03/files",
+            headers: {"content-type" => "multipart/form-data"},
+            body: parsed,
             model: HubspotSDK::Files::File,
             options: options
           )

@@ -14,44 +14,28 @@ module HubspotSDK
         required :subscriber_id_string, String
 
         # @!attribute channel
-        #   The communication channel from which to unsubscribe the subscriber. Must be
-        #   'EMAIL'.
         #
         #   @return [Symbol, HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel]
         required :channel,
                  enum: -> { HubspotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel }
 
         # @!attribute business_unit_id
-        #   The ID of the business unit associated with the subscriber. This is an optional
-        #   parameter.
         #
         #   @return [Integer, nil]
         optional :business_unit_id, Integer
 
         # @!attribute verbose
-        #   A boolean flag indicating whether to include detailed information in the
-        #   response. Defaults to false.
         #
         #   @return [Boolean, nil]
         optional :verbose, HubspotSDK::Internal::Type::Boolean
 
         # @!method initialize(subscriber_id_string:, channel:, business_unit_id: nil, verbose: nil, request_options: {})
-        #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams}
-        #   for more details.
-        #
         #   @param subscriber_id_string [String]
-        #
-        #   @param channel [Symbol, HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel] The communication channel from which to unsubscribe the subscriber. Must be 'EMA
-        #
-        #   @param business_unit_id [Integer] The ID of the business unit associated with the subscriber. This is an optional
-        #
-        #   @param verbose [Boolean] A boolean flag indicating whether to include detailed information in the respons
-        #
+        #   @param channel [Symbol, HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel]
+        #   @param business_unit_id [Integer]
+        #   @param verbose [Boolean]
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
 
-        # The communication channel from which to unsubscribe the subscriber. Must be
-        # 'EMAIL'.
         module Channel
           extend HubspotSDK::Internal::Type::Enum
 

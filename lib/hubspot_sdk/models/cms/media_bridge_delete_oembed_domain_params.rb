@@ -10,8 +10,8 @@ module HubspotSDK
 
         # @!attribute app_id
         #
-        #   @return [String]
-        required :app_id, String
+        #   @return [Integer]
+        required :app_id, Integer
 
         # @!attribute id
         #
@@ -24,7 +24,7 @@ module HubspotSDK
         optional :domain_portal_id, Integer
 
         # @!method initialize(app_id:, id: nil, domain_portal_id: nil, request_options: {})
-        #   @param app_id [String]
+        #   @param app_id [Integer]
         #   @param id [Integer]
         #   @param domain_portal_id [Integer]
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]

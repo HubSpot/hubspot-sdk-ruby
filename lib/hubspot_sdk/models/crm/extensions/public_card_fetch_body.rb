@@ -7,8 +7,8 @@ module HubspotSDK
         class PublicCardFetchBody < HubspotSDK::Internal::Type::BaseModel
           # @!attribute object_types
           #   An array of CRM object types where this card should be displayed. HubSpot will
-          #   call your data fetch URL whenever a user visits a record page of the types
-          #   defined here.
+          #   call your target URL whenever a user visits a record page of the types defined
+          #   here.
           #
           #   @return [Array<HubspotSDK::Models::Crm::Extensions::CardObjectTypeBody>]
           required :object_types,
@@ -18,9 +18,9 @@ module HubspotSDK
                    api_name: :objectTypes
 
           # @!attribute target_url
-          #   URL to a service endpoint that will respond with card details. HubSpot will call
-          #   this endpoint each time a user visits a CRM record page where this card should
-          #   be displayed.
+          #   URL to a service endpoint that will respond with details for this card. HubSpot
+          #   will call this endpoint each time a user visits a CRM record page where this
+          #   card should be displayed.
           #
           #   @return [String]
           required :target_url, String, api_name: :targetUrl
@@ -31,7 +31,7 @@ module HubspotSDK
           #
           #   @param object_types [Array<HubspotSDK::Models::Crm::Extensions::CardObjectTypeBody>] An array of CRM object types where this card should be displayed. HubSpot will c
           #
-          #   @param target_url [String] URL to a service endpoint that will respond with card details. HubSpot will call
+          #   @param target_url [String] URL to a service endpoint that will respond with details for this card. HubSpot
         end
       end
     end

@@ -1,0 +1,20 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type batch_input_hub_db_table_row_batch_clone_request =
+        { inputs: ::Array[HubspotSDK::Cms::HubDBTableRowBatchCloneRequest] }
+
+      class BatchInputHubDBTableRowBatchCloneRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubspotSDK::Cms::HubDBTableRowBatchCloneRequest]
+
+        def initialize: (
+          inputs: ::Array[HubspotSDK::Cms::HubDBTableRowBatchCloneRequest]
+        ) -> void
+
+        def to_hash: -> {
+          inputs: ::Array[HubspotSDK::Cms::HubDBTableRowBatchCloneRequest]
+        }
+      end
+    end
+  end
+end

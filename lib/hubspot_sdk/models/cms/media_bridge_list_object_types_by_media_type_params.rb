@@ -10,8 +10,8 @@ module HubspotSDK
 
         # @!attribute app_id
         #
-        #   @return [String]
-        required :app_id, String
+        #   @return [Integer]
+        required :app_id, Integer
 
         # @!attribute media_type
         #
@@ -24,7 +24,7 @@ module HubspotSDK
         optional :include_full_definition, HubspotSDK::Internal::Type::Boolean
 
         # @!method initialize(app_id:, media_type:, include_full_definition: nil, request_options: {})
-        #   @param app_id [String]
+        #   @param app_id [Integer]
         #   @param media_type [Symbol, HubspotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType]
         #   @param include_full_definition [Boolean]
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]

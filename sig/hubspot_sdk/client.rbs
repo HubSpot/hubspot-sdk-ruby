@@ -14,8 +14,6 @@ module HubspotSDK
 
     attr_reader account: HubspotSDK::Resources::Account
 
-    attr_reader app_webhooks: HubspotSDK::Resources::AppWebhooks
-
     attr_reader auth: HubspotSDK::Resources::Auth
 
     attr_reader automation: HubspotSDK::Resources::Automation
@@ -30,8 +28,6 @@ module HubspotSDK
 
     attr_reader crm: HubspotSDK::Resources::Crm
 
-    attr_reader data_studio: HubspotSDK::Resources::DataStudio
-
     attr_reader events: HubspotSDK::Resources::Events
 
     attr_reader files: HubspotSDK::Resources::Files
@@ -43,6 +39,8 @@ module HubspotSDK
     attr_reader scheduler: HubspotSDK::Resources::Scheduler
 
     attr_reader settings: HubspotSDK::Resources::Settings
+
+    attr_reader webhooks: HubspotSDK::Resources::Webhooks
 
     private def auth_headers: -> ::Hash[String, String]
 

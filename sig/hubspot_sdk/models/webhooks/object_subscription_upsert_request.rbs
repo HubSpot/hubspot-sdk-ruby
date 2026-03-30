@@ -1,0 +1,99 @@
+module HubspotSDK
+  module Models
+    module Webhooks
+      type object_subscription_upsert_request =
+        {
+          actions: ::Array[HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::action],
+          object_ids: ::Array[Integer],
+          object_type_id: String,
+          portal_id: Integer,
+          properties: ::Array[String],
+          subscription_type: HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::subscription_type
+        }
+
+      class ObjectSubscriptionUpsertRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor actions: ::Array[HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::action]
+
+        attr_accessor object_ids: ::Array[Integer]
+
+        attr_accessor object_type_id: String
+
+        attr_accessor portal_id: Integer
+
+        attr_accessor properties: ::Array[String]
+
+        attr_accessor subscription_type: HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::subscription_type
+
+        def initialize: (
+          actions: ::Array[HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::action],
+          object_ids: ::Array[Integer],
+          object_type_id: String,
+          portal_id: Integer,
+          properties: ::Array[String],
+          subscription_type: HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::subscription_type
+        ) -> void
+
+        def to_hash: -> {
+          actions: ::Array[HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::action],
+          object_ids: ::Array[Integer],
+          object_type_id: String,
+          portal_id: Integer,
+          properties: ::Array[String],
+          subscription_type: HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::subscription_type
+        }
+
+        type action =
+          :CREATE
+          | :UPDATE
+          | :DELETE
+          | :MERGE
+          | :RESTORE
+          | :ASSOCIATION_ADDED
+          | :ASSOCIATION_REMOVED
+          | :SNAPSHOT
+          | :APP_INSTALL
+          | :APP_UNINSTALL
+          | :ADDED_TO_LIST
+          | :REMOVED_FROM_LIST
+
+        module Action
+          extend HubspotSDK::Internal::Type::Enum
+
+          CREATE: :CREATE
+          UPDATE: :UPDATE
+          DELETE: :DELETE
+          MERGE: :MERGE
+          RESTORE: :RESTORE
+          ASSOCIATION_ADDED: :ASSOCIATION_ADDED
+          ASSOCIATION_REMOVED: :ASSOCIATION_REMOVED
+          SNAPSHOT: :SNAPSHOT
+          APP_INSTALL: :APP_INSTALL
+          APP_UNINSTALL: :APP_UNINSTALL
+          ADDED_TO_LIST: :ADDED_TO_LIST
+          REMOVED_FROM_LIST: :REMOVED_FROM_LIST
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::action]
+        end
+
+        type subscription_type =
+          :OBJECT
+          | :ASSOCIATION
+          | :EVENT
+          | :APP_LIFECYCLE_EVENT
+          | :LIST_MEMBERSHIP
+
+        module SubscriptionType
+          extend HubspotSDK::Internal::Type::Enum
+
+          OBJECT: :OBJECT
+          ASSOCIATION: :ASSOCIATION
+          EVENT: :EVENT
+          APP_LIFECYCLE_EVENT: :APP_LIFECYCLE_EVENT
+          LIST_MEMBERSHIP: :LIST_MEMBERSHIP
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::subscription_type]
+        end
+      end
+    end
+  end
+end

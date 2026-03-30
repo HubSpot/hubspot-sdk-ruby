@@ -28,6 +28,7 @@ module HubspotSDK
         )
         end
 
+        # Retrieve details of a specific owner using either their 'id' or 'userId'.
         sig do
           params(
             owner_id: Integer,

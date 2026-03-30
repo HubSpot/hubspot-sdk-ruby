@@ -5,8 +5,7 @@ module HubspotSDK
     class Crm
       class AssociationsSchema
         class Labels
-          # Create multiple association definitions between two specified CRM object types
-          # in a single request.
+          # Batch configure association limits between two object types.
           sig do
             params(
               to_object_type: String,
@@ -21,9 +20,9 @@ module HubspotSDK
             )
           end
           def batch_create(
-            # Path param: The type of the target object in the association.
+            # Path param
             to_object_type,
-            # Path param: The type of the source object in the association.
+            # Path param
             from_object_type:,
             # Body param
             inputs:,
@@ -47,9 +46,9 @@ module HubspotSDK
             )
           end
           def create_label(
-            # Path param: The type of the target object in the association.
+            # Path param
             to_object_type,
-            # Path param: The type of the source object in the association.
+            # Path param
             from_object_type:,
             # Body param: A descriptor that provides context about the relationship between
             # two associated CRM objects.
@@ -73,11 +72,8 @@ module HubspotSDK
             ).void
           end
           def delete_label(
-            # The unique identifier for the association type.
             association_type_id,
-            # The type of the source object in the association.
             from_object_type:,
-            # The type of the target object in the association.
             to_object_type:,
             request_options: {}
           )
@@ -95,9 +91,7 @@ module HubspotSDK
             )
           end
           def list_labels(
-            # The type of the target object in the association.
             to_object_type,
-            # The type of the source object in the association.
             from_object_type:,
             request_options: {}
           )
@@ -117,9 +111,9 @@ module HubspotSDK
             ).void
           end
           def update_label(
-            # Path param: The type of the target object in the association.
+            # Path param
             to_object_type,
-            # Path param: The type of the source object in the association.
+            # Path param
             from_object_type:,
             # Body param: The unique identifier for the association type.
             association_type_id:,

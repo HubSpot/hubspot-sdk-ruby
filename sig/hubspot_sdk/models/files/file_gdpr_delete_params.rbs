@@ -1,0 +1,25 @@
+module HubspotSDK
+  module Models
+    module Files
+      type file_gdpr_delete_params =
+        { file_id: String } & HubspotSDK::Internal::Type::request_parameters
+
+      class FileGdprDeleteParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor file_id: String
+
+        def initialize: (
+          file_id: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          file_id: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

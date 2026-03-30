@@ -5,9 +5,6 @@ module HubspotSDK
     class Meta
       class Origins
         class IPRanges
-          # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Meta::Origins::IPRangeListParams} for more details.
-          #
           # Retrieve a collection of IP ranges associated with specific services and
           # directions, such as `EMAIL`, `API`, `DNS`, or `WEB_SCRAPING`. The response
           # includes details like CIDR notation, description, and the direction of IP
@@ -15,10 +12,8 @@ module HubspotSDK
           #
           # @overload list(direction: nil, service: nil, request_options: {})
           #
-          # @param direction [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListParams::Direction>] An array of traffic directions to filter the IP ranges. Valid values are `INGRES
-          #
-          # @param service [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListParams::Service>] An array of service types to filter the IP ranges. Valid values include `EMAIL`,
-          #
+          # @param direction [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListParams::Direction>]
+          # @param service [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListParams::Service>]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Meta::CollectionResponseIPRangeNoPaging]
@@ -36,19 +31,14 @@ module HubspotSDK
             )
           end
 
-          # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Meta::Origins::IPRangeListSimpleParams} for more details.
-          #
           # Retrieve a simplified list of IP ranges for specified services and directions in
           # plain text format. This endpoint provides a straightforward representation of IP
           # ranges without additional metadata.
           #
           # @overload list_simple(direction: nil, service: nil, request_options: {})
           #
-          # @param direction [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListSimpleParams::Direction>] An array of directions to filter the IP ranges by. Valid values are `INGRESS` an
-          #
-          # @param service [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListSimpleParams::Service>] An array specifying the service types to filter by. Valid values include `EMAIL`
-          #
+          # @param direction [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListSimpleParams::Direction>]
+          # @param service [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListSimpleParams::Service>]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [String]

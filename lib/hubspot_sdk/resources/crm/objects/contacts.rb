@@ -8,11 +8,7 @@ module HubspotSDK
           # @return [HubspotSDK::Resources::Crm::Objects::Contacts::Batch]
           attr_reader :batch
 
-          # Create a single contact. Include a `properties` object to define
-          # [property values](https://developers.hubspot.com/docs/guides/api/crm/properties)
-          # for the contact, along with an `associations` array to define
-          # [associations](https://developers.hubspot.com/docs/guides/api/crm/associations/associations-v4)
-          # with other CRM records.
+          # Create a contact
           #
           # @overload create(associations:, properties:, request_options: {})
           #
@@ -77,9 +73,6 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::ContactListParams} for more details.
           #
-          # Retrieve all contacts, using query parameters to specify the information that
-          # gets returned.
-          #
           # @overload list(after: nil, archived: nil, associations: nil, limit: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
           # @param after [String] The paging cursor token of the last successfully read resource will be returned
@@ -138,12 +131,6 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::ContactGdprDeleteParams} for more details.
           #
-          # Permanently delete a contact and all associated content to follow GDPR. Use
-          # optional property `idProperty` set to `email` to identify contact by email
-          # address. If email address is not found, the email address will be added to a
-          # blocklist and prevent it from being used in the future. Learn more about
-          # [permanently deleting contacts](https://knowledge.hubspot.com/privacy-and-consent/how-do-i-perform-a-gdpr-delete-in-hubspot).
-          #
           # @overload gdpr_delete(object_id_:, id_property: nil, request_options: {})
           #
           # @param object_id_ [String] The ID of the contact to permanently delete.
@@ -168,10 +155,6 @@ module HubspotSDK
 
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::ContactGetParams} for more details.
-          #
-          # Retrieve a contact by its ID (`contactId`) or by a unique property
-          # (`idProperty`). You can specify what is returned using the `properties` query
-          # parameter.
           #
           # @overload get(contact_id, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
@@ -207,8 +190,7 @@ module HubspotSDK
             )
           end
 
-          # Merge two contact records. Learn more about
-          # [merging records](https://knowledge.hubspot.com/records/merge-records).
+          # Merge two contacts
           #
           # @overload merge(object_id_to_merge:, primary_object_id:, request_options: {})
           #

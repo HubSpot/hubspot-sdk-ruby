@@ -6,6 +6,7 @@ module HubspotSDK
       class Currencies
         class ExchangeRates
           class Batch
+            # Create multiple exchange rates in a single request.
             sig do
               params(
                 inputs:
@@ -18,6 +19,7 @@ module HubspotSDK
             def create(inputs:, request_options: {})
             end
 
+            # Update the conversion rates for multiple exchange rates in a batch operation.
             sig do
               params(
                 inputs:
@@ -30,6 +32,8 @@ module HubspotSDK
             def update(inputs:, request_options: {})
             end
 
+            # Retrieve the details of multiple exchange rates in a single request, specified
+            # by their IDs.
             sig do
               params(
                 inputs: T::Array[HubspotSDK::PublicObjectID::OrHash],

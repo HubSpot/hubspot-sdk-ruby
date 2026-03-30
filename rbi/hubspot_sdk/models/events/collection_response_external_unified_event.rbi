@@ -16,7 +16,7 @@ module HubspotSDK
           end
 
         # An array of ExternalUnifiedEvent objects, each representing an individual event
-        # occurrence.
+        # with its associated details.
         sig { returns(T::Array[HubspotSDK::Events::ExternalUnifiedEvent]) }
         attr_accessor :results
 
@@ -34,7 +34,7 @@ module HubspotSDK
         end
         def self.new(
           # An array of ExternalUnifiedEvent objects, each representing an individual event
-          # occurrence.
+          # with its associated details.
           results:,
           paging: nil
         )

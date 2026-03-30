@@ -11,6 +11,9 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Cms::Blogs::SettingListParams} for more details.
           #
+          # Get the list of blogs. Results can be limited and filtered by creation or
+          # updated date.
+          #
           # @overload list(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
           #
           # @param after [String] The paging cursor token of the last successfully read resource will be returned
@@ -58,6 +61,8 @@ module HubspotSDK
             )
           end
 
+          # Retrieve a specific blog by its ID.
+          #
           # @overload get(blog_id, request_options: {})
           #
           # @param blog_id [String]
@@ -75,6 +80,8 @@ module HubspotSDK
             )
           end
 
+          # Get a specific blog revision.
+          #
           # @overload get_revision(revision_id, blog_id:, request_options: {})
           #
           # @param revision_id [String]
@@ -100,6 +107,9 @@ module HubspotSDK
 
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Cms::Blogs::SettingListRevisionsParams} for more details.
+          #
+          # Get the list of blog revisions. Results can be limited and filtered by creation
+          # or updated date.
           #
           # @overload list_revisions(blog_id, after: nil, before: nil, limit: nil, request_options: {})
           #

@@ -15,8 +15,6 @@ module HubspotSDK
             )
           end
 
-        # The unique identifier of the user performing the enrollment. This parameter is
-        # required.
         sig { returns(String) }
         attr_accessor :user_id
 
@@ -26,12 +24,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
-        def self.new(
-          # The unique identifier of the user performing the enrollment. This parameter is
-          # required.
-          user_id:,
-          request_options: {}
-        )
+        def self.new(user_id:, request_options: {})
         end
 
         sig do

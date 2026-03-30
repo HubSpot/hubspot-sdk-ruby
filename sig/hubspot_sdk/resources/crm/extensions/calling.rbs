@@ -22,6 +22,20 @@ module HubspotSDK
             ?request_options: HubspotSDK::request_opts
           ) -> nil
 
+          def create_inbound_call: (
+            create_engagement: bool,
+            engagement_properties: ::Hash[Symbol, String],
+            external_call_id: String,
+            final_call_status: HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::final_call_status,
+            from_number: HubspotSDK::Crm::Extensions::FormattedPhoneNumber,
+            potential_recipient_user_ids: ::Array[Integer],
+            to_number: HubspotSDK::Crm::Extensions::FormattedPhoneNumber,
+            ?call_started_timestamp: Time,
+            ?duration_seconds: Integer,
+            ?user_id: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::Extensions::CompletedThirdPartyCallResponse
+
           def get: (
             Integer app_id,
             ?request_options: HubspotSDK::request_opts

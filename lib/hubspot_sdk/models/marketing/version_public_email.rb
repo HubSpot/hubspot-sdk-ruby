@@ -17,6 +17,7 @@ module HubspotSDK
         required :object, -> { HubspotSDK::Marketing::PublicEmail }
 
         # @!attribute updated_at
+        #   The date and time of the last update to the email, in ISO8601 representation.
         #
         #   @return [Time]
         required :updated_at, Time, api_name: :updatedAt
@@ -31,7 +32,7 @@ module HubspotSDK
         #
         #   @param object [HubspotSDK::Models::Marketing::PublicEmail]
         #
-        #   @param updated_at [Time]
+        #   @param updated_at [Time] The date and time of the last update to the email, in ISO8601 representation.
         #
         #   @param user [HubspotSDK::Models::VersionUser]
       end

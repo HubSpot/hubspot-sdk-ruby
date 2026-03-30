@@ -6,14 +6,15 @@ module HubspotSDK
       class URLMappingCreateRequestBody < HubspotSDK::Internal::Type::BaseModel
         # @!attribute destination
         #   The destination URL, where the target URL should be redirected if it matches the
-        #   routePrefix.
+        #   `routePrefix`.
         #
         #   @return [String]
         required :destination, String
 
         # @!attribute redirect_style
         #   The type of redirect to create. Options include: 301 (permanent), 302
-        #   (temporary), or 305 (proxy).
+        #   (temporary), or 305 (proxy). Find more details
+        #   [here](https://knowledge.hubspot.com/cos-general/how-to-redirect-a-hubspot-page).
         #
         #   @return [Integer]
         required :redirect_style, Integer, api_name: :redirectStyle
@@ -25,14 +26,14 @@ module HubspotSDK
         required :route_prefix, String, api_name: :routePrefix
 
         # @!attribute is_match_full_url
-        #   Whether the routePrefix should match on the entire URL, including the domain.
+        #   Whether the `routePrefix` should match on the entire URL, including the domain.
         #
         #   @return [Boolean, nil]
         optional :is_match_full_url, HubspotSDK::Internal::Type::Boolean, api_name: :isMatchFullUrl
 
         # @!attribute is_match_query_string
-        #   Whether the routePrefix should match on the entire URL path, including the query
-        #   string.
+        #   Whether the `routePrefix` should match on the entire URL path, including the
+        #   query string.
         #
         #   @return [Boolean, nil]
         optional :is_match_query_string, HubspotSDK::Internal::Type::Boolean, api_name: :isMatchQueryString
@@ -46,13 +47,13 @@ module HubspotSDK
         optional :is_only_after_not_found, HubspotSDK::Internal::Type::Boolean, api_name: :isOnlyAfterNotFound
 
         # @!attribute is_pattern
-        #   Whether the routePrefix should match based on pattern.
+        #   Whether the `routePrefix` should match based on pattern.
         #
         #   @return [Boolean, nil]
         optional :is_pattern, HubspotSDK::Internal::Type::Boolean, api_name: :isPattern
 
         # @!attribute is_protocol_agnostic
-        #   Whether the routePrefix should match both HTTP and HTTPS protocols.
+        #   Whether the `routePrefix` should match both HTTP and HTTPS protocols.
         #
         #   @return [Boolean, nil]
         optional :is_protocol_agnostic, HubspotSDK::Internal::Type::Boolean, api_name: :isProtocolAgnostic
@@ -67,7 +68,7 @@ module HubspotSDK
 
         # @!attribute precedence
         #   Used to prioritize URL redirection. If a given URL matches more than one
-        #   redirect, the one with the lower precedence will be used.
+        #   redirect, the one with the **lower** precedence will be used.
         #
         #   @return [Integer, nil]
         optional :precedence, Integer
@@ -82,15 +83,15 @@ module HubspotSDK
         #
         #   @param route_prefix [String] The target incoming URL, path, or pattern to match for redirection.
         #
-        #   @param is_match_full_url [Boolean] Whether the routePrefix should match on the entire URL, including the domain.
+        #   @param is_match_full_url [Boolean] Whether the `routePrefix` should match on the entire URL, including the domain.
         #
-        #   @param is_match_query_string [Boolean] Whether the routePrefix should match on the entire URL path, including the query
+        #   @param is_match_query_string [Boolean] Whether the `routePrefix` should match on the entire URL path, including the que
         #
         #   @param is_only_after_not_found [Boolean] Whether the URL redirect mapping should apply only if a live page on the URL isn
         #
-        #   @param is_pattern [Boolean] Whether the routePrefix should match based on pattern.
+        #   @param is_pattern [Boolean] Whether the `routePrefix` should match based on pattern.
         #
-        #   @param is_protocol_agnostic [Boolean] Whether the routePrefix should match both HTTP and HTTPS protocols.
+        #   @param is_protocol_agnostic [Boolean] Whether the `routePrefix` should match both HTTP and HTTPS protocols.
         #
         #   @param is_trailing_slash_optional [Boolean] Whether a trailing slash will be ignored.
         #

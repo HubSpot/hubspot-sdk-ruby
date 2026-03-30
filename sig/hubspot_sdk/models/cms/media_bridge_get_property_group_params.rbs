@@ -2,28 +2,28 @@ module HubspotSDK
   module Models
     module Cms
       type media_bridge_get_property_group_params =
-        { app_id: String, object_type: String, group_name: String }
+        { app_id: Integer, object_type: String, group_name: String }
         & HubspotSDK::Internal::Type::request_parameters
 
       class MediaBridgeGetPropertyGroupParams < HubspotSDK::Internal::Type::BaseModel
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
-        attr_accessor app_id: String
+        attr_accessor app_id: Integer
 
         attr_accessor object_type: String
 
         attr_accessor group_name: String
 
         def initialize: (
-          app_id: String,
+          app_id: Integer,
           object_type: String,
           group_name: String,
           ?request_options: HubspotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
-          app_id: String,
+          app_id: Integer,
           object_type: String,
           group_name: String,
           request_options: HubspotSDK::RequestOptions

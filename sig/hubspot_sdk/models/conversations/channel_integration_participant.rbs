@@ -4,7 +4,8 @@ module HubspotSDK
       type channel_integration_participant =
         {
           delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
-          name: String
+          name: String,
+          sender_actor_id: String
         }
 
       class ChannelIntegrationParticipant < HubspotSDK::Internal::Type::BaseModel
@@ -14,14 +15,20 @@ module HubspotSDK
 
         def name=: (String) -> String
 
+        attr_reader sender_actor_id: String?
+
+        def sender_actor_id=: (String) -> String
+
         def initialize: (
           delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
-          ?name: String
+          ?name: String,
+          ?sender_actor_id: String
         ) -> void
 
         def to_hash: -> {
           delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
-          name: String
+          name: String,
+          sender_actor_id: String
         }
       end
     end

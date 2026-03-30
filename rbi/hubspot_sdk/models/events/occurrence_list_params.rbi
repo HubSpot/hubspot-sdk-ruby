@@ -15,29 +15,27 @@ module HubspotSDK
             )
           end
 
-        # An array of event IDs to filter by.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :id
 
         sig { params(id: T::Array[String]).void }
         attr_writer :id
 
-        # A cursor token for pagination. Use the value from the previous response's
-        # paging.next.after field.
+        # The paging cursor token of the last successfully read resource will be returned
+        # as the `paging.next.after` JSON property of a paged response containing more
+        # results.
         sig { returns(T.nilable(String)) }
         attr_reader :after
 
         sig { params(after: String).void }
         attr_writer :after
 
-        # A cursor token to retrieve results before a specific point.
         sig { returns(T.nilable(String)) }
         attr_reader :before
 
         sig { params(before: String).void }
         attr_writer :before
 
-        # The type of event to filter by.
         sig { returns(T.nilable(String)) }
         attr_reader :event_type
 
@@ -51,7 +49,6 @@ module HubspotSDK
         sig { params(limit: Integer).void }
         attr_writer :limit
 
-        # The unique identifier of the object associated with the events.
         sig { returns(T.nilable(Integer)) }
         attr_reader :object_id_
 
@@ -73,28 +70,24 @@ module HubspotSDK
         end
         attr_writer :object_property
 
-        # The type of object associated with the events.
         sig { returns(T.nilable(String)) }
         attr_reader :object_type
 
         sig { params(object_type: String).void }
         attr_writer :object_type
 
-        # Filter events that occurred after this date-time.
         sig { returns(T.nilable(Time)) }
         attr_reader :occurred_after
 
         sig { params(occurred_after: Time).void }
         attr_writer :occurred_after
 
-        # Filter events that occurred before this date-time.
         sig { returns(T.nilable(Time)) }
         attr_reader :occurred_before
 
         sig { params(occurred_before: Time).void }
         attr_writer :occurred_before
 
-        # An array of property names to include in the response.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :properties
 
@@ -113,7 +106,6 @@ module HubspotSDK
         end
         attr_writer :property
 
-        # An array of fields to sort the results by.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :sort
 
@@ -141,30 +133,22 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # An array of event IDs to filter by.
           id: nil,
-          # A cursor token for pagination. Use the value from the previous response's
-          # paging.next.after field.
+          # The paging cursor token of the last successfully read resource will be returned
+          # as the `paging.next.after` JSON property of a paged response containing more
+          # results.
           after: nil,
-          # A cursor token to retrieve results before a specific point.
           before: nil,
-          # The type of event to filter by.
           event_type: nil,
           # The maximum number of results to display per page.
           limit: nil,
-          # The unique identifier of the object associated with the events.
           object_id_: nil,
           object_property: nil,
-          # The type of object associated with the events.
           object_type: nil,
-          # Filter events that occurred after this date-time.
           occurred_after: nil,
-          # Filter events that occurred before this date-time.
           occurred_before: nil,
-          # An array of property names to include in the response.
           properties: nil,
           property: nil,
-          # An array of fields to sort the results by.
           sort: nil,
           request_options: {}
         )
@@ -203,7 +187,6 @@ module HubspotSDK
               )
             end
 
-          # Filter events by specific object properties.
           sig { returns(T.nilable(T.anything)) }
           attr_reader :propname
 
@@ -211,10 +194,7 @@ module HubspotSDK
           attr_writer :propname
 
           sig { params(propname: T.anything).returns(T.attached_class) }
-          def self.new(
-            # Filter events by specific object properties.
-            propname: nil
-          )
+          def self.new(propname: nil)
           end
 
           sig { override.returns({ propname: T.anything }) }
@@ -231,7 +211,6 @@ module HubspotSDK
               )
             end
 
-          # Filter events by specific event properties.
           sig { returns(T.nilable(T.anything)) }
           attr_reader :propname
 
@@ -239,10 +218,7 @@ module HubspotSDK
           attr_writer :propname
 
           sig { params(propname: T.anything).returns(T.attached_class) }
-          def self.new(
-            # Filter events by specific event properties.
-            propname: nil
-          )
+          def self.new(propname: nil)
           end
 
           sig { override.returns({ propname: T.anything }) }

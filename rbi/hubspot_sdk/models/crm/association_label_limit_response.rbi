@@ -16,12 +16,12 @@ module HubspotSDK
         sig { returns(T::Array[String]) }
         attr_accessor :all_labels
 
-        sig { returns(HubspotSDK::ObjectTypeDefinition) }
+        sig { returns(HubspotSDK::Crm::ObjectTypeDefinition) }
         attr_reader :from_object_type
 
         sig do
           params(
-            from_object_type: HubspotSDK::ObjectTypeDefinition::OrHash
+            from_object_type: HubspotSDK::Crm::ObjectTypeDefinition::OrHash
           ).void
         end
         attr_writer :from_object_type
@@ -34,11 +34,13 @@ module HubspotSDK
         sig { returns(Float) }
         attr_accessor :percentage
 
-        sig { returns(HubspotSDK::ObjectTypeDefinition) }
+        sig { returns(HubspotSDK::Crm::ObjectTypeDefinition) }
         attr_reader :to_object_type
 
         sig do
-          params(to_object_type: HubspotSDK::ObjectTypeDefinition::OrHash).void
+          params(
+            to_object_type: HubspotSDK::Crm::ObjectTypeDefinition::OrHash
+          ).void
         end
         attr_writer :to_object_type
 
@@ -49,10 +51,10 @@ module HubspotSDK
         sig do
           params(
             all_labels: T::Array[String],
-            from_object_type: HubspotSDK::ObjectTypeDefinition::OrHash,
+            from_object_type: HubspotSDK::Crm::ObjectTypeDefinition::OrHash,
             limit: Integer,
             percentage: Float,
-            to_object_type: HubspotSDK::ObjectTypeDefinition::OrHash,
+            to_object_type: HubspotSDK::Crm::ObjectTypeDefinition::OrHash,
             usage: Integer
           ).returns(T.attached_class)
         end
@@ -74,10 +76,10 @@ module HubspotSDK
           override.returns(
             {
               all_labels: T::Array[String],
-              from_object_type: HubspotSDK::ObjectTypeDefinition,
+              from_object_type: HubspotSDK::Crm::ObjectTypeDefinition,
               limit: Integer,
               percentage: Float,
-              to_object_type: HubspotSDK::ObjectTypeDefinition,
+              to_object_type: HubspotSDK::Crm::ObjectTypeDefinition,
               usage: Integer
             }
           )

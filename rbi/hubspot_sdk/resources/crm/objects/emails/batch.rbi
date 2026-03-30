@@ -43,8 +43,8 @@ module HubspotSDK
             def delete(inputs:, request_options: {})
             end
 
-            # Retrieve a batch of emails by record ID or include the `idProperty` parameter to
-            # retrieve records by a custom unique value property.
+            # Retrieve records by record ID or include the `idProperty` parameter to retrieve
+            # records by a custom unique value property.
             sig do
               params(
                 inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
@@ -72,8 +72,9 @@ module HubspotSDK
             )
             end
 
-            # Create and update a batch of emails by a unique property. Emails that don't
-            # exist will be created, while existing emails will be updated.
+            # Create or update records identified by a unique property value as specified by
+            # the `idProperty` query param. `idProperty` query param refers to a property
+            # whose values are unique for the object.
             sig do
               params(
                 inputs:

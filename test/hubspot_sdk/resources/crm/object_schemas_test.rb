@@ -19,7 +19,7 @@ class HubspotSDK::Test::Resources::Crm::ObjectSchemasTest < HubspotSDK::Test::Re
       )
 
     assert_pattern do
-      response => HubspotSDK::ObjectSchema
+      response => HubspotSDK::Crm::ObjectSchema
     end
 
     assert_pattern do
@@ -27,12 +27,12 @@ class HubspotSDK::Test::Resources::Crm::ObjectSchemasTest < HubspotSDK::Test::Re
         id: String,
         allows_sensitive_properties: HubspotSDK::Internal::Type::Boolean,
         archived: HubspotSDK::Internal::Type::Boolean,
-        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::AssociationDefinition]),
+        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AssociationDefinition]),
         fully_qualified_name: String,
         labels: HubspotSDK::ObjectTypeDefinitionLabels,
         name: String,
         object_type_id: String,
-        properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Property1]),
+        properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property]),
         required_properties: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
         searchable_properties: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
         secondary_display_properties: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
@@ -82,12 +82,12 @@ class HubspotSDK::Test::Resources::Crm::ObjectSchemasTest < HubspotSDK::Test::Re
     response = @hubspot.crm.object_schemas.list
 
     assert_pattern do
-      response => HubspotSDK::CollectionResponseObjectSchemaNoPaging
+      response => HubspotSDK::Crm::CollectionResponseObjectSchemaNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::ObjectSchema])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ObjectSchema])
       }
     end
   end
@@ -113,40 +113,17 @@ class HubspotSDK::Test::Resources::Crm::ObjectSchemasTest < HubspotSDK::Test::Re
       )
 
     assert_pattern do
-      response => HubspotSDK::Events::AssociationDefinition
+      response => HubspotSDK::AssociationDefinition
     end
 
     assert_pattern do
       response => {
-        id: Integer,
-        allows_custom_labels: HubspotSDK::Internal::Type::Boolean,
-        cardinality: HubspotSDK::Events::AssociationDefinition::Cardinality,
-        category: HubspotSDK::Events::AssociationDefinition::Category,
+        id: String,
         from_object_type_id: String,
-        has_all_associated_objects: HubspotSDK::Internal::Type::Boolean,
-        has_cascading_deletes: HubspotSDK::Internal::Type::Boolean,
-        has_user_enforced_max_from_object_ids: HubspotSDK::Internal::Type::Boolean,
-        has_user_enforced_max_to_object_ids: HubspotSDK::Internal::Type::Boolean,
-        hidden: HubspotSDK::Internal::Type::Boolean,
-        inverse_allows_custom_labels: HubspotSDK::Internal::Type::Boolean,
-        inverse_cardinality: HubspotSDK::Events::AssociationDefinition::InverseCardinality,
-        inverse_has_all_associated_objects: HubspotSDK::Internal::Type::Boolean,
-        inverse_id: Integer,
-        inverse_name: String,
-        is_default: HubspotSDK::Internal::Type::Boolean,
-        is_inverse_primary: HubspotSDK::Internal::Type::Boolean,
-        is_primary: HubspotSDK::Internal::Type::Boolean,
-        max_from_object_ids: Integer,
-        max_to_object_ids: Integer,
-        name: String,
-        portal_unique_identifier: String,
-        read_only: HubspotSDK::Internal::Type::Boolean,
         to_object_type_id: String,
-        from_object_type: HubspotSDK::Events::AssociationDefinition::FromObjectType | nil,
-        hidden_reason: HubspotSDK::Events::AssociationDefinition::HiddenReason | nil,
-        inverse_label: String | nil,
-        label: String | nil,
-        to_object_type: HubspotSDK::Events::AssociationDefinition::ToObjectType | nil
+        created_at: Time | nil,
+        name: String | nil,
+        updated_at: Time | nil
       }
     end
   end
@@ -168,7 +145,7 @@ class HubspotSDK::Test::Resources::Crm::ObjectSchemasTest < HubspotSDK::Test::Re
     response = @hubspot.crm.object_schemas.get("objectType")
 
     assert_pattern do
-      response => HubspotSDK::ObjectSchema
+      response => HubspotSDK::Crm::ObjectSchema
     end
 
     assert_pattern do
@@ -176,12 +153,12 @@ class HubspotSDK::Test::Resources::Crm::ObjectSchemasTest < HubspotSDK::Test::Re
         id: String,
         allows_sensitive_properties: HubspotSDK::Internal::Type::Boolean,
         archived: HubspotSDK::Internal::Type::Boolean,
-        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::AssociationDefinition]),
+        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AssociationDefinition]),
         fully_qualified_name: String,
         labels: HubspotSDK::ObjectTypeDefinitionLabels,
         name: String,
         object_type_id: String,
-        properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Property1]),
+        properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property]),
         required_properties: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
         searchable_properties: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
         secondary_display_properties: ^(HubspotSDK::Internal::Type::ArrayOf[String]),

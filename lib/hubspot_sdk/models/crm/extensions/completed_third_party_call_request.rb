@@ -6,11 +6,13 @@ module HubspotSDK
       module Extensions
         class CompletedThirdPartyCallRequest < HubspotSDK::Internal::Type::BaseModel
           # @!attribute create_engagement
+          #   Indicates whether an engagement should be created for the call.
           #
           #   @return [Boolean]
           required :create_engagement, HubspotSDK::Internal::Type::Boolean, api_name: :createEngagement
 
           # @!attribute engagement_properties
+          #   Contains additional properties related to the engagement.
           #
           #   @return [Hash{Symbol=>String}]
           required :engagement_properties,
@@ -18,11 +20,15 @@ module HubspotSDK
                    api_name: :engagementProperties
 
           # @!attribute external_call_id
+          #   The unique identifier for the call from an external system.
           #
           #   @return [String]
           required :external_call_id, String, api_name: :externalCallId
 
           # @!attribute final_call_status
+          #   The final status of the call, with accepted values including: BUSY,
+          #   CALLING_CRM_USER, CANCELED, COMPLETED, CONNECTING, FAILED, HOLD, IN_PROGRESS,
+          #   MISSED, NO_ANSWER, QUEUED, RINGING, UNKNOWN.
           #
           #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus]
           required :final_call_status,
@@ -51,32 +57,52 @@ module HubspotSDK
           required :to_number, -> { HubspotSDK::Crm::Extensions::FormattedPhoneNumber }, api_name: :toNumber
 
           # @!attribute call_started_timestamp
+          #   The timestamp indicating when the call started, formatted as a date-time string.
           #
           #   @return [Time, nil]
           optional :call_started_timestamp, Time, api_name: :callStartedTimestamp
 
           # @!attribute duration_seconds
+          #   The duration of the call in seconds.
           #
           #   @return [Integer, nil]
           optional :duration_seconds, Integer, api_name: :durationSeconds
 
           # @!attribute user_id
+          #   The ID of the user associated with the call.
           #
           #   @return [Integer, nil]
           optional :user_id, Integer, api_name: :userId
 
           # @!method initialize(create_engagement:, engagement_properties:, external_call_id:, final_call_status:, from_number:, potential_recipient_user_ids:, to_number:, call_started_timestamp: nil, duration_seconds: nil, user_id: nil)
-          #   @param create_engagement [Boolean]
-          #   @param engagement_properties [Hash{Symbol=>String}]
-          #   @param external_call_id [String]
-          #   @param final_call_status [Symbol, HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus]
+          #   Some parameter documentations has been truncated, see
+          #   {HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest} for more
+          #   details.
+          #
+          #   @param create_engagement [Boolean] Indicates whether an engagement should be created for the call.
+          #
+          #   @param engagement_properties [Hash{Symbol=>String}] Contains additional properties related to the engagement.
+          #
+          #   @param external_call_id [String] The unique identifier for the call from an external system.
+          #
+          #   @param final_call_status [Symbol, HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus] The final status of the call, with accepted values including: BUSY, CALLING*CRM*
+          #
           #   @param from_number [HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber]
+          #
           #   @param potential_recipient_user_ids [Array<Integer>]
+          #
           #   @param to_number [HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber]
-          #   @param call_started_timestamp [Time]
-          #   @param duration_seconds [Integer]
-          #   @param user_id [Integer]
+          #
+          #   @param call_started_timestamp [Time] The timestamp indicating when the call started, formatted as a date-time string.
+          #
+          #   @param duration_seconds [Integer] The duration of the call in seconds.
+          #
+          #   @param user_id [Integer] The ID of the user associated with the call.
 
+          # The final status of the call, with accepted values including: BUSY,
+          # CALLING_CRM_USER, CANCELED, COMPLETED, CONNECTING, FAILED, HOLD, IN_PROGRESS,
+          # MISSED, NO_ANSWER, QUEUED, RINGING, UNKNOWN.
+          #
           # @see HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest#final_call_status
           module FinalCallStatus
             extend HubspotSDK::Internal::Type::Enum

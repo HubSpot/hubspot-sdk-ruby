@@ -1,0 +1,69 @@
+module HubspotSDK
+  module Models
+    module Files
+      type signed_url =
+        {
+          expires_at: Time,
+          url: String,
+          extension: String,
+          height: Integer,
+          name: String,
+          size: Integer,
+          type: String,
+          width: Integer
+        }
+
+      class SignedURL < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor expires_at: Time
+
+        attr_accessor url: String
+
+        attr_reader extension: String?
+
+        def extension=: (String) -> String
+
+        attr_reader height: Integer?
+
+        def height=: (Integer) -> Integer
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader size: Integer?
+
+        def size=: (Integer) -> Integer
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        attr_reader width: Integer?
+
+        def width=: (Integer) -> Integer
+
+        def initialize: (
+          expires_at: Time,
+          url: String,
+          ?extension: String,
+          ?height: Integer,
+          ?name: String,
+          ?size: Integer,
+          ?type: String,
+          ?width: Integer
+        ) -> void
+
+        def to_hash: -> {
+          expires_at: Time,
+          url: String,
+          extension: String,
+          height: Integer,
+          name: String,
+          size: Integer,
+          type: String,
+          width: Integer
+        }
+      end
+    end
+  end
+end

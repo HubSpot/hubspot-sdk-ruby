@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      module Transactional
+        type smtp_token_get_params =
+          { token_id: String } & HubspotSDK::Internal::Type::request_parameters
+
+        class SmtpTokenGetParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor token_id: String
+
+          def initialize: (
+            token_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            token_id: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

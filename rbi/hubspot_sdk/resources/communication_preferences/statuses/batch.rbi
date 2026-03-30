@@ -5,10 +5,7 @@ module HubspotSDK
     class CommunicationPreferences
       class Statuses
         class Batch
-          # Retrieve the unsubscribe-all status for a batch of subscribers in a specified
-          # channel. This endpoint is useful for checking the current unsubscribe-all status
-          # of multiple subscribers at once, helping to manage and audit communication
-          # preferences efficiently.
+          # Checks whether a set of contacts have opted out of all communications.
           sig do
             params(
               channel: HubspotSDK::BatchInputString::Channel::OrSymbol,
@@ -20,22 +17,17 @@ module HubspotSDK
             )
           end
           def get_unsubscribe_all_statuses(
-            # Query param: The communication channel to check the unsubscribe-all status for.
-            # Currently, only 'EMAIL' is supported. This parameter is required.
+            # Query param
             channel:,
             # Body param: Strings to input.
             inputs:,
-            # Query param: The ID of the business unit for which the statuses are being
-            # retrieved. This is an optional parameter.
+            # Query param
             business_unit_id: nil,
             request_options: {}
           )
           end
 
-          # Retrieve the subscription statuses for multiple subscribers in a batch
-          # operation. This endpoint allows you to check the communication preferences of
-          # several subscribers at once, which is useful for managing large lists of
-          # contacts efficiently.
+          # Batch retrieve subscription statuses for a set of contacts.
           sig do
             params(
               channel: HubspotSDK::BatchInputString::Channel::OrSymbol,
@@ -47,13 +39,11 @@ module HubspotSDK
             )
           end
           def read(
-            # Query param: The communication channel to filter by. This parameter is required
-            # and currently only supports 'EMAIL'.
+            # Query param
             channel:,
             # Body param: Strings to input.
             inputs:,
-            # Query param: An optional identifier for the business unit. This is an integer
-            # value.
+            # Query param
             business_unit_id: nil,
             request_options: {}
           )
@@ -72,16 +62,13 @@ module HubspotSDK
             )
           end
           def unsubscribe_all(
-            # Query param: A required string specifying the communication channel. Currently,
-            # only 'EMAIL' is supported.
+            # Query param
             channel:,
             # Body param: Strings to input.
             inputs:,
-            # Query param: The ID of the business unit to which the operation applies. It is
-            # an optional parameter.
+            # Query param
             business_unit_id: nil,
-            # Query param: A boolean indicating whether to include detailed information in the
-            # response. Defaults to false.
+            # Query param
             verbose: nil,
             request_options: {}
           )

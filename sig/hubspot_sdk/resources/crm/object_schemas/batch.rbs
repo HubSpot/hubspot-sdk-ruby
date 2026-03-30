@@ -9,7 +9,7 @@ module HubspotSDK
             include_property_definitions: bool,
             inputs: ::Array[String],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CollectionResponseObjectSchemaNoPaging
+          ) -> HubspotSDK::Crm::CollectionResponseObjectSchemaNoPaging
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

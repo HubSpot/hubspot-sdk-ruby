@@ -29,8 +29,11 @@ module HubspotSDK
           )
           end
 
-          # Update a goal target by ID (`objectId`) or unique property value (`idProperty`).
-          # Provided property values will be overwritten. Read-only and non-existent
+          # Perform a partial update of an Object identified by `{goalTargetId}`or
+          # optionally a unique property value as specified by the `idProperty` query param.
+          # `{goalTargetId}` refers to the internal object ID by default, and the
+          # `idProperty` query param refers to a property whose values are unique for the
+          # object. Provided property values will be overwritten. Read-only and non-existent
           # properties will result in an error. Properties values can be cleared by passing
           # an empty string.
           sig do
@@ -52,7 +55,7 @@ module HubspotSDK
           )
           end
 
-          # Retrieve all goal targets. Control what is returned via the `properties` query
+          # Read a page of goal targets. Control what is returned via the `properties` query
           # param.
           sig do
             params(
@@ -94,7 +97,7 @@ module HubspotSDK
           )
           end
 
-          # Delete a goal target by ID.
+          # Delete a goal target by `{goalTargetId}` to the recycling bin.
           sig do
             params(
               goal_target_id: String,
@@ -104,10 +107,8 @@ module HubspotSDK
           def delete(goal_target_id, request_options: {})
           end
 
-          # Read an Object identified by `{goalTargetId}`. `{goalTargetId}` refers to the
-          # internal object ID by default, or optionally any unique property value as
-          # specified by the `idProperty` query param. Control what is returned via the
-          # `properties` query param.
+          # Retrieve a goal target by its ID. You can specify what is returned using the
+          # `properties` query parameter.
           sig do
             params(
               goal_target_id: String,

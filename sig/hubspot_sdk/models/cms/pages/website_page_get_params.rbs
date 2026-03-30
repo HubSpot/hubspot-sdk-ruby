@@ -1,0 +1,40 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Pages
+        type website_page_get_params =
+          { object_id_: String, archived: bool, property: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class WebsitePageGetParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor object_id_: String
+
+          attr_reader archived: bool?
+
+          def archived=: (bool) -> bool
+
+          attr_reader property: String?
+
+          def property=: (String) -> String
+
+          def initialize: (
+            object_id_: String,
+            ?archived: bool,
+            ?property: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            object_id_: String,
+            archived: bool,
+            property: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

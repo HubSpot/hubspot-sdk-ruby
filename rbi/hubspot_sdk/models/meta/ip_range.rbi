@@ -95,6 +95,11 @@ module HubspotSDK
           DNS = T.let(:DNS, HubspotSDK::Meta::IPRange::Service::TaggedSymbol)
           EMAIL =
             T.let(:EMAIL, HubspotSDK::Meta::IPRange::Service::TaggedSymbol)
+          TEST_SERVICE =
+            T.let(
+              :TEST_SERVICE,
+              HubspotSDK::Meta::IPRange::Service::TaggedSymbol
+            )
           WEB_SCRAPING =
             T.let(
               :WEB_SCRAPING,

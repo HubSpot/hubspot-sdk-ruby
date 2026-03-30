@@ -5,21 +5,25 @@ module HubspotSDK
     module Automation
       class ChirpAIContextObject < HubspotSDK::Internal::Type::BaseModel
         # @!attribute application_group
+        #   The group to which the application belongs.
         #
         #   @return [String]
         required :application_group, String, api_name: :applicationGroup
 
         # @!attribute application_id
+        #   The identifier for the application associated with the context.
         #
         #   @return [String]
         required :application_id, String, api_name: :applicationId
 
         # @!attribute metadata
+        #   Additional metadata related to the context, represented as key-value pairs.
         #
         #   @return [Hash{Symbol=>String}]
         required :metadata, HubspotSDK::Internal::Type::HashOf[String]
 
         # @!attribute otel_context_holder
+        #   Holds OpenTelemetry context information as key-value pairs.
         #
         #   @return [Hash{Symbol=>String}]
         required :otel_context_holder,
@@ -41,30 +45,41 @@ module HubspotSDK
         optional :compliance_ids, -> { HubspotSDK::Automation::ComplianceIDs }, api_name: :complianceIds
 
         # @!attribute feature_id
+        #   The identifier for the feature associated with the context.
         #
         #   @return [String, nil]
         optional :feature_id, String, api_name: :featureId
 
         # @!attribute inference_id
+        #   The identifier for the inference associated with the context.
         #
         #   @return [String, nil]
         optional :inference_id, String, api_name: :inferenceId
 
         # @!attribute trajectory_id
+        #   The identifier for the trajectory, formatted as a UUID.
         #
         #   @return [String, nil]
         optional :trajectory_id, String, api_name: :trajectoryId
 
         # @!method initialize(application_group:, application_id:, metadata:, otel_context_holder:, unstructured_sources:, compliance_ids: nil, feature_id: nil, inference_id: nil, trajectory_id: nil)
-        #   @param application_group [String]
-        #   @param application_id [String]
-        #   @param metadata [Hash{Symbol=>String}]
-        #   @param otel_context_holder [Hash{Symbol=>String}]
+        #   @param application_group [String] The group to which the application belongs.
+        #
+        #   @param application_id [String] The identifier for the application associated with the context.
+        #
+        #   @param metadata [Hash{Symbol=>String}] Additional metadata related to the context, represented as key-value pairs.
+        #
+        #   @param otel_context_holder [Hash{Symbol=>String}] Holds OpenTelemetry context information as key-value pairs.
+        #
         #   @param unstructured_sources [Array<Symbol, HubspotSDK::Models::Automation::ChirpAIContextObject::UnstructuredSource>]
+        #
         #   @param compliance_ids [HubspotSDK::Models::Automation::ComplianceIDs]
-        #   @param feature_id [String]
-        #   @param inference_id [String]
-        #   @param trajectory_id [String]
+        #
+        #   @param feature_id [String] The identifier for the feature associated with the context.
+        #
+        #   @param inference_id [String] The identifier for the inference associated with the context.
+        #
+        #   @param trajectory_id [String] The identifier for the trajectory, formatted as a UUID.
 
         module UnstructuredSource
           extend HubspotSDK::Internal::Type::Enum

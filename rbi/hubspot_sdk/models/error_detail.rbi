@@ -34,7 +34,7 @@ module HubspotSDK
       sig { params(in_: String).void }
       attr_writer :in_
 
-      # A specific category that contains more specific detail about the error.
+      # A specific category that contains more specific detail about the error
       sig { returns(T.nilable(String)) }
       attr_reader :sub_category
 
@@ -60,7 +60,7 @@ module HubspotSDK
         context: nil,
         # The name of the field or parameter in which the error was found.
         in_: nil,
-        # A specific category that contains more specific detail about the error.
+        # A specific category that contains more specific detail about the error
         sub_category: nil
       )
       end

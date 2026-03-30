@@ -145,6 +145,56 @@ class HubspotSDK::Test::Resources::Cms::Blogs::AuthorsTest < HubspotSDK::Test::R
     end
   end
 
+  def test_list_by_query
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.cms.blogs.authors.list_by_query
+
+    assert_pattern do
+      response => StringIO
+    end
+  end
+
+  def test_list_posts
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.cms.blogs.authors.list_posts
+
+    assert_pattern do
+      response => StringIO
+    end
+  end
+
+  def test_list_posts_by_query
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.cms.blogs.authors.list_posts_by_query
+
+    assert_pattern do
+      response => StringIO
+    end
+  end
+
+  def test_list_tags
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.cms.blogs.authors.list_tags
+
+    assert_pattern do
+      response => StringIO
+    end
+  end
+
+  def test_list_tags_by_query
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.cms.blogs.authors.list_tags_by_query
+
+    assert_pattern do
+      response => StringIO
+    end
+  end
+
   def test_set_new_lang_primary_required_params
     skip("Mock server tests are disabled")
 

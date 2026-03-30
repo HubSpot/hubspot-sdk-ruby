@@ -16,21 +16,18 @@ module HubspotSDK
               )
             end
 
-          # The end date for filtering campaigns, in YYYY-MM-DD format.
           sig { returns(T.nilable(String)) }
           attr_reader :end_date
 
           sig { params(end_date: String).void }
           attr_writer :end_date
 
-          # A comma-separated list of property names to include in the response.
           sig { returns(T.nilable(T::Array[String])) }
           attr_reader :properties
 
           sig { params(properties: T::Array[String]).void }
           attr_writer :properties
 
-          # The start date for filtering campaigns, in YYYY-MM-DD format.
           sig { returns(T.nilable(String)) }
           attr_reader :start_date
 
@@ -46,11 +43,8 @@ module HubspotSDK
             ).returns(T.attached_class)
           end
           def self.new(
-            # The end date for filtering campaigns, in YYYY-MM-DD format.
             end_date: nil,
-            # A comma-separated list of property names to include in the response.
             properties: nil,
-            # The start date for filtering campaigns, in YYYY-MM-DD format.
             start_date: nil,
             request_options: {}
           )

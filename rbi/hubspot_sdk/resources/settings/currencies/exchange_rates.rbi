@@ -12,6 +12,7 @@ module HubspotSDK
           end
           attr_reader :batch
 
+          # Create a new exchange rate with specified conversion rate and currency codes.
           sig do
             params(
               conversion_rate: Float,
@@ -33,6 +34,7 @@ module HubspotSDK
           )
           end
 
+          # Retrieve the details for a specific exchange rate specified by its ID.
           sig do
             params(
               exchange_rate_id: String,
@@ -42,6 +44,7 @@ module HubspotSDK
           def get_exchange_rate_by_id(exchange_rate_id, request_options: {})
           end
 
+          # Retrieve all current exchange rates for all currency pairs.
           sig do
             params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
               HubspotSDK::Settings::CollectionResponseExchangeRateNoPaging
@@ -50,6 +53,7 @@ module HubspotSDK
           def list_current_exchange_rates(request_options: {})
           end
 
+          # Get a list of exchange rates
           sig do
             params(
               after: String,
@@ -76,6 +80,7 @@ module HubspotSDK
           )
           end
 
+          # Update an existing conversion rate, specified by its ID.
           sig do
             params(
               exchange_rate_id: String,
@@ -95,6 +100,8 @@ module HubspotSDK
           )
           end
 
+          # Change the visibility setting for a currency pair. This will hide or display a
+          # currency pair for users in the HubSpot app.
           sig do
             params(
               from_currency_code:

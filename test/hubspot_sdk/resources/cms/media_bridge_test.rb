@@ -3,154 +3,29 @@
 require_relative "../../test_helper"
 
 class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::ResourceTest
-  def test_create_required_params
-    skip("Mock server tests are disabled")
-
-    response =
-      @hubspot.cms.media_bridge.create(create_mb_object_request: {mediaType: :VIDEO, title: "title"})
-
-    assert_pattern do
-      response => HubspotSDK::Cms::MediaBridgeObject
-    end
-
-    assert_pattern do
-      response => {
-        id: String,
-        created_at: Time,
-        media_type: HubspotSDK::Cms::MediaBridgeObject::MediaType,
-        title: String,
-        updated_at: Time,
-        details_page_link: String | nil,
-        duration: Integer | nil,
-        external_id: String | nil,
-        file_url: String | nil,
-        oembed_url: String | nil,
-        poster_url: String | nil,
-        thumbnail_url: String | nil,
-        video: HubspotSDK::Cms::VideoObject | nil
-      }
-    end
-  end
-
-  def test_update_required_params
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.cms.media_bridge.update(0, update_mb_object_request: {mediaType: :VIDEO})
-
-    assert_pattern do
-      response => HubspotSDK::Cms::MediaBridgeObject
-    end
-
-    assert_pattern do
-      response => {
-        id: String,
-        created_at: Time,
-        media_type: HubspotSDK::Cms::MediaBridgeObject::MediaType,
-        title: String,
-        updated_at: Time,
-        details_page_link: String | nil,
-        duration: Integer | nil,
-        external_id: String | nil,
-        file_url: String | nil,
-        oembed_url: String | nil,
-        poster_url: String | nil,
-        thumbnail_url: String | nil,
-        video: HubspotSDK::Cms::VideoObject | nil
-      }
-    end
-  end
-
-  def test_list
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.cms.media_bridge.list(:AUDIO)
-
-    assert_pattern do
-      response => HubspotSDK::Internal::Page
-    end
-
-    row = response.to_enum.first
-    return if row.nil?
-
-    assert_pattern do
-      row => HubspotSDK::Cms::MediaBridgeObject
-    end
-
-    assert_pattern do
-      row => {
-        id: String,
-        created_at: Time,
-        media_type: HubspotSDK::Cms::MediaBridgeObject::MediaType,
-        title: String,
-        updated_at: Time,
-        details_page_link: String | nil,
-        duration: Integer | nil,
-        external_id: String | nil,
-        file_url: String | nil,
-        oembed_url: String | nil,
-        poster_url: String | nil,
-        thumbnail_url: String | nil,
-        video: HubspotSDK::Cms::VideoObject | nil
-      }
-    end
-  end
-
-  def test_delete_required_params
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.cms.media_bridge.delete(0, media_type: :AUDIO)
-
-    assert_pattern do
-      response => nil
-    end
-  end
-
   def test_create_association_required_params
     skip("Mock server tests are disabled")
 
     response =
       @hubspot.cms.media_bridge.create_association(
         "objectType",
-        app_id: "appId",
+        app_id: 0,
         from_object_type_id: "fromObjectTypeId",
         to_object_type_id: "toObjectTypeId"
       )
 
     assert_pattern do
-      response => HubspotSDK::Events::AssociationDefinition
+      response => HubspotSDK::AssociationDefinition
     end
 
     assert_pattern do
       response => {
-        id: Integer,
-        allows_custom_labels: HubspotSDK::Internal::Type::Boolean,
-        cardinality: HubspotSDK::Events::AssociationDefinition::Cardinality,
-        category: HubspotSDK::Events::AssociationDefinition::Category,
+        id: String,
         from_object_type_id: String,
-        has_all_associated_objects: HubspotSDK::Internal::Type::Boolean,
-        has_cascading_deletes: HubspotSDK::Internal::Type::Boolean,
-        has_user_enforced_max_from_object_ids: HubspotSDK::Internal::Type::Boolean,
-        has_user_enforced_max_to_object_ids: HubspotSDK::Internal::Type::Boolean,
-        hidden: HubspotSDK::Internal::Type::Boolean,
-        inverse_allows_custom_labels: HubspotSDK::Internal::Type::Boolean,
-        inverse_cardinality: HubspotSDK::Events::AssociationDefinition::InverseCardinality,
-        inverse_has_all_associated_objects: HubspotSDK::Internal::Type::Boolean,
-        inverse_id: Integer,
-        inverse_name: String,
-        is_default: HubspotSDK::Internal::Type::Boolean,
-        is_inverse_primary: HubspotSDK::Internal::Type::Boolean,
-        is_primary: HubspotSDK::Internal::Type::Boolean,
-        max_from_object_ids: Integer,
-        max_to_object_ids: Integer,
-        name: String,
-        portal_unique_identifier: String,
-        read_only: HubspotSDK::Internal::Type::Boolean,
         to_object_type_id: String,
-        from_object_type: HubspotSDK::Events::AssociationDefinition::FromObjectType | nil,
-        hidden_reason: HubspotSDK::Events::AssociationDefinition::HiddenReason | nil,
-        inverse_label: String | nil,
-        label: String | nil,
-        to_object_type: HubspotSDK::Events::AssociationDefinition::ToObjectType | nil
+        created_at: Time | nil,
+        name: String | nil,
+        updated_at: Time | nil
       }
     end
   end
@@ -167,7 +42,32 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
       )
 
     assert_pattern do
-      response => StringIO
+      response => HubspotSDK::Cms::AttentionSpanEvent
+    end
+
+    assert_pattern do
+      response => {
+        contact_id: Integer,
+        media_bridge_id: Integer,
+        media_bridge_object_coordinates: String,
+        media_bridge_object_type_id: String,
+        media_name: String,
+        media_type: HubspotSDK::Cms::AttentionSpanEvent::MediaType,
+        occurred_timestamp: Integer,
+        percent_range: String,
+        portal_id: Integer,
+        provider_id: Integer,
+        session_id: String,
+        total_percent_played: Float,
+        external_play_context: HubspotSDK::Cms::AttentionSpanEvent::ExternalPlayContext | nil,
+        media_url: String | nil,
+        page_id: Integer | nil,
+        page_name: String | nil,
+        page_object_coordinates: String | nil,
+        page_url: String | nil,
+        raw_data: String | nil,
+        total_seconds_played: Integer | nil
+      }
     end
   end
 
@@ -183,7 +83,30 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
       )
 
     assert_pattern do
-      response => StringIO
+      response => HubspotSDK::Cms::MediaPlayedEvent
+    end
+
+    assert_pattern do
+      response => {
+        contact_id: Integer,
+        media_bridge_id: Integer,
+        media_bridge_object_coordinates: String,
+        media_bridge_object_type_id: String,
+        media_name: String,
+        media_type: HubspotSDK::Cms::MediaPlayedEvent::MediaType,
+        occurred_timestamp: Integer,
+        portal_id: Integer,
+        provider_id: Integer,
+        session_id: String,
+        state: HubspotSDK::Cms::MediaPlayedEvent::State,
+        external_play_context: HubspotSDK::Cms::MediaPlayedEvent::ExternalPlayContext | nil,
+        iframe_url: String | nil,
+        media_url: String | nil,
+        page_id: Integer | nil,
+        page_name: String | nil,
+        page_object_coordinates: String | nil,
+        page_url: String | nil
+      }
     end
   end
 
@@ -199,14 +122,36 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
       )
 
     assert_pattern do
-      response => StringIO
+      response => HubspotSDK::Cms::MediaPlayedPercentageEvent
+    end
+
+    assert_pattern do
+      response => {
+        contact_id: Integer,
+        media_bridge_id: Integer,
+        media_bridge_object_coordinates: String,
+        media_bridge_object_type_id: String,
+        media_name: String,
+        media_type: HubspotSDK::Cms::MediaPlayedPercentageEvent::MediaType,
+        occurred_timestamp: Integer,
+        played_percent: Integer,
+        portal_id: Integer,
+        provider_id: Integer,
+        session_id: String,
+        external_play_context: HubspotSDK::Cms::MediaPlayedPercentageEvent::ExternalPlayContext | nil,
+        media_url: String | nil,
+        page_id: Integer | nil,
+        page_name: String | nil,
+        page_object_coordinates: String | nil,
+        page_url: String | nil
+      }
     end
   end
 
   def test_create_object_type_required_params
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.media_bridge.create_object_type("appId", media_types: [:VIDEO])
+    response = @hubspot.cms.media_bridge.create_object_type(0, media_types: [:VIDEO])
 
     assert_pattern do
       response => HubspotSDK::Cms::BulkIntegratorObjectCreationResponse
@@ -224,7 +169,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
 
     response =
       @hubspot.cms.media_bridge.create_oembed_domain(
-        "appId",
+        0,
         endpoints: {discovery: true, schemes: ["string"], url: "url"}
       )
 
@@ -251,7 +196,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     response =
       @hubspot.cms.media_bridge.create_property(
         "objectType",
-        app_id: "appId",
+        app_id: 0,
         field_type: :booleancheckbox,
         group_name: "groupName",
         label: "label",
@@ -260,38 +205,58 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
       )
 
     assert_pattern do
-      response => HubspotSDK::Property
+      response => HubspotSDK::Cms::Property
     end
 
     assert_pattern do
       response => {
+        allowed_object_types: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ObjectTypeIDProto]),
+        calculated: HubspotSDK::Internal::Type::Boolean,
+        can_archive: HubspotSDK::Internal::Type::Boolean,
+        can_restore: HubspotSDK::Internal::Type::Boolean,
+        created_at: Integer,
+        created_user_id: Integer,
+        currency_property_name: String,
+        data_sensitivity: HubspotSDK::Cms::Property::DataSensitivity,
+        date_display_hint: HubspotSDK::Cms::Property::DateDisplayHint,
+        deleted: HubspotSDK::Internal::Type::Boolean,
         description: String,
+        display_mode: HubspotSDK::Cms::Property::DisplayMode,
+        display_order: Integer,
+        enforce_multivalue_uniqueness: HubspotSDK::Internal::Type::Boolean,
+        external_options: HubspotSDK::Internal::Type::Boolean,
+        external_options_reference_type: String,
+        favorited: HubspotSDK::Internal::Type::Boolean,
+        favorited_order: Integer,
         field_type: String,
+        form_field: HubspotSDK::Internal::Type::Boolean,
+        from_user_id: Integer,
         group_name: String,
+        has_unique_value: HubspotSDK::Internal::Type::Boolean,
+        hidden: HubspotSDK::Internal::Type::Boolean,
+        hubspot_defined: HubspotSDK::Internal::Type::Boolean,
+        is_customized_default: HubspotSDK::Internal::Type::Boolean,
+        is_multi_valued: HubspotSDK::Internal::Type::Boolean,
+        is_partial: HubspotSDK::Internal::Type::Boolean,
         label: String,
+        mutable_definition_not_deletable: HubspotSDK::Internal::Type::Boolean,
         name: String,
-        options: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Option]),
-        type: String,
-        archived: HubspotSDK::Internal::Type::Boolean | nil,
-        archived_at: Time | nil,
-        calculated: HubspotSDK::Internal::Type::Boolean | nil,
-        calculation_formula: String | nil,
-        created_at: Time | nil,
-        created_user_id: String | nil,
-        data_sensitivity: HubspotSDK::Property::DataSensitivity | nil,
-        date_display_hint: HubspotSDK::Property::DateDisplayHint | nil,
-        display_order: Integer | nil,
-        external_options: HubspotSDK::Internal::Type::Boolean | nil,
-        form_field: HubspotSDK::Internal::Type::Boolean | nil,
-        has_unique_value: HubspotSDK::Internal::Type::Boolean | nil,
-        hidden: HubspotSDK::Internal::Type::Boolean | nil,
-        hubspot_defined: HubspotSDK::Internal::Type::Boolean | nil,
-        modification_metadata: HubspotSDK::PropertyModificationMetadata | nil,
-        referenced_object_type: String | nil,
-        sensitive_data_categories: ^(HubspotSDK::Internal::Type::ArrayOf[String]) | nil,
-        show_currency_symbol: HubspotSDK::Internal::Type::Boolean | nil,
-        updated_at: Time | nil,
-        updated_user_id: String | nil
+        number_display_hint: HubspotSDK::Cms::Property::NumberDisplayHint,
+        options: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AutomationActionsOption]),
+        options_are_mutable: HubspotSDK::Internal::Type::Boolean,
+        option_sort_strategy: HubspotSDK::Cms::Property::OptionSortStrategy,
+        owning_app_id: Integer,
+        portal_id: Integer,
+        read_only_definition: HubspotSDK::Internal::Type::Boolean,
+        read_only_value: HubspotSDK::Internal::Type::Boolean,
+        referenced_object_type: HubspotSDK::Cms::Property::ReferencedObjectType,
+        searchable_in_global_search: HubspotSDK::Internal::Type::Boolean,
+        search_text_analysis_mode: HubspotSDK::Cms::Property::SearchTextAnalysisMode,
+        sensitive_data_categories: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
+        show_currency_symbol: HubspotSDK::Internal::Type::Boolean,
+        text_display_hint: HubspotSDK::Cms::Property::TextDisplayHint,
+        type: HubspotSDK::Cms::Property::Type,
+        updated_at: Integer
       }
     end
   end
@@ -300,12 +265,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     skip("Mock server tests are disabled")
 
     response =
-      @hubspot.cms.media_bridge.create_property_group(
-        "objectType",
-        app_id: "appId",
-        label: "label",
-        name: "name"
-      )
+      @hubspot.cms.media_bridge.create_property_group("objectType", app_id: 0, label: "label", name: "name")
 
     assert_pattern do
       response => HubspotSDK::PropertyGroup
@@ -324,43 +284,20 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
   def test_create_video_association_definition
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.media_bridge.create_video_association_definition("appId")
+    response = @hubspot.cms.media_bridge.create_video_association_definition(0)
 
     assert_pattern do
-      response => HubspotSDK::Events::AssociationDefinition
+      response => HubspotSDK::AssociationDefinition
     end
 
     assert_pattern do
       response => {
-        id: Integer,
-        allows_custom_labels: HubspotSDK::Internal::Type::Boolean,
-        cardinality: HubspotSDK::Events::AssociationDefinition::Cardinality,
-        category: HubspotSDK::Events::AssociationDefinition::Category,
+        id: String,
         from_object_type_id: String,
-        has_all_associated_objects: HubspotSDK::Internal::Type::Boolean,
-        has_cascading_deletes: HubspotSDK::Internal::Type::Boolean,
-        has_user_enforced_max_from_object_ids: HubspotSDK::Internal::Type::Boolean,
-        has_user_enforced_max_to_object_ids: HubspotSDK::Internal::Type::Boolean,
-        hidden: HubspotSDK::Internal::Type::Boolean,
-        inverse_allows_custom_labels: HubspotSDK::Internal::Type::Boolean,
-        inverse_cardinality: HubspotSDK::Events::AssociationDefinition::InverseCardinality,
-        inverse_has_all_associated_objects: HubspotSDK::Internal::Type::Boolean,
-        inverse_id: Integer,
-        inverse_name: String,
-        is_default: HubspotSDK::Internal::Type::Boolean,
-        is_inverse_primary: HubspotSDK::Internal::Type::Boolean,
-        is_primary: HubspotSDK::Internal::Type::Boolean,
-        max_from_object_ids: Integer,
-        max_to_object_ids: Integer,
-        name: String,
-        portal_unique_identifier: String,
-        read_only: HubspotSDK::Internal::Type::Boolean,
         to_object_type_id: String,
-        from_object_type: HubspotSDK::Events::AssociationDefinition::FromObjectType | nil,
-        hidden_reason: HubspotSDK::Events::AssociationDefinition::HiddenReason | nil,
-        inverse_label: String | nil,
-        label: String | nil,
-        to_object_type: HubspotSDK::Events::AssociationDefinition::ToObjectType | nil
+        created_at: Time | nil,
+        name: String | nil,
+        updated_at: Time | nil
       }
     end
   end
@@ -369,11 +306,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     skip("Mock server tests are disabled")
 
     response =
-      @hubspot.cms.media_bridge.delete_association(
-        "associationId",
-        app_id: "appId",
-        object_type: "objectType"
-      )
+      @hubspot.cms.media_bridge.delete_association("associationId", app_id: 0, object_type: "objectType")
 
     assert_pattern do
       response => nil
@@ -383,7 +316,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
   def test_delete_oembed_domain
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.media_bridge.delete_oembed_domain("appId")
+    response = @hubspot.cms.media_bridge.delete_oembed_domain(0)
 
     assert_pattern do
       response => nil
@@ -394,7 +327,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     skip("Mock server tests are disabled")
 
     response =
-      @hubspot.cms.media_bridge.delete_property("propertyName", app_id: "appId", object_type: "objectType")
+      @hubspot.cms.media_bridge.delete_property("propertyName", app_id: 0, object_type: "objectType")
 
     assert_pattern do
       response => nil
@@ -405,45 +338,17 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     skip("Mock server tests are disabled")
 
     response =
-      @hubspot.cms.media_bridge.delete_property_group("groupName", app_id: "appId", object_type: "objectType")
+      @hubspot.cms.media_bridge.delete_property_group("groupName", app_id: 0, object_type: "objectType")
 
     assert_pattern do
       response => nil
     end
   end
 
-  def test_get_required_params
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.cms.media_bridge.get(0, media_type: :AUDIO)
-
-    assert_pattern do
-      response => HubspotSDK::Cms::MediaBridgeObject
-    end
-
-    assert_pattern do
-      response => {
-        id: String,
-        created_at: Time,
-        media_type: HubspotSDK::Cms::MediaBridgeObject::MediaType,
-        title: String,
-        updated_at: Time,
-        details_page_link: String | nil,
-        duration: Integer | nil,
-        external_id: String | nil,
-        file_url: String | nil,
-        oembed_url: String | nil,
-        poster_url: String | nil,
-        thumbnail_url: String | nil,
-        video: HubspotSDK::Cms::VideoObject | nil
-      }
-    end
-  end
-
   def test_get_event_visibility_settings
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.media_bridge.get_event_visibility_settings("appId")
+    response = @hubspot.cms.media_bridge.get_event_visibility_settings(0)
 
     assert_pattern do
       response => HubspotSDK::Cms::EventVisibilityResponse
@@ -460,7 +365,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
   def test_get_oembed_domain_required_params
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.media_bridge.get_oembed_domain("oEmbedDomainId", app_id: "appId")
+    response = @hubspot.cms.media_bridge.get_oembed_domain("oEmbedDomainId", app_id: 0)
 
     assert_pattern do
       response => HubspotSDK::Cms::IntegratorOEmbedDomainModel
@@ -482,42 +387,61 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
   def test_get_property_required_params
     skip("Mock server tests are disabled")
 
-    response =
-      @hubspot.cms.media_bridge.get_property("propertyName", app_id: "appId", object_type: "objectType")
+    response = @hubspot.cms.media_bridge.get_property("propertyName", app_id: 0, object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::Property
+      response => HubspotSDK::Cms::Property
     end
 
     assert_pattern do
       response => {
+        allowed_object_types: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ObjectTypeIDProto]),
+        calculated: HubspotSDK::Internal::Type::Boolean,
+        can_archive: HubspotSDK::Internal::Type::Boolean,
+        can_restore: HubspotSDK::Internal::Type::Boolean,
+        created_at: Integer,
+        created_user_id: Integer,
+        currency_property_name: String,
+        data_sensitivity: HubspotSDK::Cms::Property::DataSensitivity,
+        date_display_hint: HubspotSDK::Cms::Property::DateDisplayHint,
+        deleted: HubspotSDK::Internal::Type::Boolean,
         description: String,
+        display_mode: HubspotSDK::Cms::Property::DisplayMode,
+        display_order: Integer,
+        enforce_multivalue_uniqueness: HubspotSDK::Internal::Type::Boolean,
+        external_options: HubspotSDK::Internal::Type::Boolean,
+        external_options_reference_type: String,
+        favorited: HubspotSDK::Internal::Type::Boolean,
+        favorited_order: Integer,
         field_type: String,
+        form_field: HubspotSDK::Internal::Type::Boolean,
+        from_user_id: Integer,
         group_name: String,
+        has_unique_value: HubspotSDK::Internal::Type::Boolean,
+        hidden: HubspotSDK::Internal::Type::Boolean,
+        hubspot_defined: HubspotSDK::Internal::Type::Boolean,
+        is_customized_default: HubspotSDK::Internal::Type::Boolean,
+        is_multi_valued: HubspotSDK::Internal::Type::Boolean,
+        is_partial: HubspotSDK::Internal::Type::Boolean,
         label: String,
+        mutable_definition_not_deletable: HubspotSDK::Internal::Type::Boolean,
         name: String,
-        options: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Option]),
-        type: String,
-        archived: HubspotSDK::Internal::Type::Boolean | nil,
-        archived_at: Time | nil,
-        calculated: HubspotSDK::Internal::Type::Boolean | nil,
-        calculation_formula: String | nil,
-        created_at: Time | nil,
-        created_user_id: String | nil,
-        data_sensitivity: HubspotSDK::Property::DataSensitivity | nil,
-        date_display_hint: HubspotSDK::Property::DateDisplayHint | nil,
-        display_order: Integer | nil,
-        external_options: HubspotSDK::Internal::Type::Boolean | nil,
-        form_field: HubspotSDK::Internal::Type::Boolean | nil,
-        has_unique_value: HubspotSDK::Internal::Type::Boolean | nil,
-        hidden: HubspotSDK::Internal::Type::Boolean | nil,
-        hubspot_defined: HubspotSDK::Internal::Type::Boolean | nil,
-        modification_metadata: HubspotSDK::PropertyModificationMetadata | nil,
-        referenced_object_type: String | nil,
-        sensitive_data_categories: ^(HubspotSDK::Internal::Type::ArrayOf[String]) | nil,
-        show_currency_symbol: HubspotSDK::Internal::Type::Boolean | nil,
-        updated_at: Time | nil,
-        updated_user_id: String | nil
+        number_display_hint: HubspotSDK::Cms::Property::NumberDisplayHint,
+        options: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AutomationActionsOption]),
+        options_are_mutable: HubspotSDK::Internal::Type::Boolean,
+        option_sort_strategy: HubspotSDK::Cms::Property::OptionSortStrategy,
+        owning_app_id: Integer,
+        portal_id: Integer,
+        read_only_definition: HubspotSDK::Internal::Type::Boolean,
+        read_only_value: HubspotSDK::Internal::Type::Boolean,
+        referenced_object_type: HubspotSDK::Cms::Property::ReferencedObjectType,
+        searchable_in_global_search: HubspotSDK::Internal::Type::Boolean,
+        search_text_analysis_mode: HubspotSDK::Cms::Property::SearchTextAnalysisMode,
+        sensitive_data_categories: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
+        show_currency_symbol: HubspotSDK::Internal::Type::Boolean,
+        text_display_hint: HubspotSDK::Cms::Property::TextDisplayHint,
+        type: HubspotSDK::Cms::Property::Type,
+        updated_at: Integer
       }
     end
   end
@@ -526,7 +450,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     skip("Mock server tests are disabled")
 
     response =
-      @hubspot.cms.media_bridge.get_property_group("groupName", app_id: "appId", object_type: "objectType")
+      @hubspot.cms.media_bridge.get_property_group("groupName", app_id: 0, object_type: "objectType")
 
     assert_pattern do
       response => HubspotSDK::PropertyGroup
@@ -545,10 +469,10 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
   def test_get_schema_required_params
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.media_bridge.get_schema("objectType", app_id: "appId")
+    response = @hubspot.cms.media_bridge.get_schema("objectType", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::ObjectSchema
+      response => HubspotSDK::Cms::ObjectSchema
     end
 
     assert_pattern do
@@ -556,7 +480,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
         id: String,
         allows_sensitive_properties: HubspotSDK::Internal::Type::Boolean,
         archived: HubspotSDK::Internal::Type::Boolean,
-        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::AssociationDefinition]),
+        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AssociationDefinition]),
         fully_qualified_name: String,
         labels: HubspotSDK::ObjectTypeDefinitionLabels,
         name: String,
@@ -578,7 +502,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
   def test_list_object_types_by_media_type_required_params
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.media_bridge.list_object_types_by_media_type(:AUDIO, app_id: "appId")
+    response = @hubspot.cms.media_bridge.list_object_types_by_media_type(:AUDIO, app_id: 0)
 
     assert_pattern do
       response => HubspotSDK::Cms::ObjectDefinitionResponse
@@ -598,7 +522,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
   def test_list_oembed_domains
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.media_bridge.list_oembed_domains("appId")
+    response = @hubspot.cms.media_bridge.list_oembed_domains(0)
 
     assert_pattern do
       response => HubspotSDK::Cms::OEmbedDomainsCollectionResponse
@@ -615,10 +539,10 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
   def test_list_properties_required_params
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.media_bridge.list_properties("objectType", app_id: "appId")
+    response = @hubspot.cms.media_bridge.list_properties("objectType", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::CollectionResponsePropertyNoPaging
+      response => HubspotSDK::Cms::CollectionResponsePropertyNoPaging
     end
 
     assert_pattern do
@@ -631,7 +555,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
   def test_list_property_groups_required_params
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.media_bridge.list_property_groups("objectType", app_id: "appId")
+    response = @hubspot.cms.media_bridge.list_property_groups("objectType", app_id: 0)
 
     assert_pattern do
       response => HubspotSDK::CollectionResponsePropertyGroupNoPaging
@@ -647,15 +571,15 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
   def test_list_schemas
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.media_bridge.list_schemas("appId")
+    response = @hubspot.cms.media_bridge.list_schemas(0)
 
     assert_pattern do
-      response => HubspotSDK::CollectionResponseObjectSchemaNoPaging
+      response => HubspotSDK::Cms::CollectionResponseObjectSchemaNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::ObjectSchema])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ObjectSchema])
       }
     end
   end
@@ -663,7 +587,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
   def test_register_app_name_required_params
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.media_bridge.register_app_name("appId", updated_at: 0)
+    response = @hubspot.cms.media_bridge.register_app_name(0, updated_at: 0)
 
     assert_pattern do
       response => HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse
@@ -680,8 +604,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
   def test_update_event_visibility_settings_required_params
     skip("Mock server tests are disabled")
 
-    response =
-      @hubspot.cms.media_bridge.update_event_visibility_settings("appId", event_type: :ALL, updated_at: 0)
+    response = @hubspot.cms.media_bridge.update_event_visibility_settings(0, event_type: :ALL, updated_at: 0)
 
     assert_pattern do
       response => HubspotSDK::Cms::EventVisibilityChange
@@ -704,7 +627,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     response =
       @hubspot.cms.media_bridge.update_oembed_domain(
         "oEmbedDomainId",
-        app_id: "appId",
+        app_id: 0,
         endpoints: {discovery: true, schemes: ["string"], url: "url"}
       )
 
@@ -729,41 +652,61 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     skip("Mock server tests are disabled")
 
     response =
-      @hubspot.cms.media_bridge.update_property("propertyName", app_id: "appId", object_type: "objectType")
+      @hubspot.cms.media_bridge.update_property("propertyName", app_id: 0, object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::Property
+      response => HubspotSDK::Cms::Property
     end
 
     assert_pattern do
       response => {
+        allowed_object_types: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ObjectTypeIDProto]),
+        calculated: HubspotSDK::Internal::Type::Boolean,
+        can_archive: HubspotSDK::Internal::Type::Boolean,
+        can_restore: HubspotSDK::Internal::Type::Boolean,
+        created_at: Integer,
+        created_user_id: Integer,
+        currency_property_name: String,
+        data_sensitivity: HubspotSDK::Cms::Property::DataSensitivity,
+        date_display_hint: HubspotSDK::Cms::Property::DateDisplayHint,
+        deleted: HubspotSDK::Internal::Type::Boolean,
         description: String,
+        display_mode: HubspotSDK::Cms::Property::DisplayMode,
+        display_order: Integer,
+        enforce_multivalue_uniqueness: HubspotSDK::Internal::Type::Boolean,
+        external_options: HubspotSDK::Internal::Type::Boolean,
+        external_options_reference_type: String,
+        favorited: HubspotSDK::Internal::Type::Boolean,
+        favorited_order: Integer,
         field_type: String,
+        form_field: HubspotSDK::Internal::Type::Boolean,
+        from_user_id: Integer,
         group_name: String,
+        has_unique_value: HubspotSDK::Internal::Type::Boolean,
+        hidden: HubspotSDK::Internal::Type::Boolean,
+        hubspot_defined: HubspotSDK::Internal::Type::Boolean,
+        is_customized_default: HubspotSDK::Internal::Type::Boolean,
+        is_multi_valued: HubspotSDK::Internal::Type::Boolean,
+        is_partial: HubspotSDK::Internal::Type::Boolean,
         label: String,
+        mutable_definition_not_deletable: HubspotSDK::Internal::Type::Boolean,
         name: String,
-        options: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Option]),
-        type: String,
-        archived: HubspotSDK::Internal::Type::Boolean | nil,
-        archived_at: Time | nil,
-        calculated: HubspotSDK::Internal::Type::Boolean | nil,
-        calculation_formula: String | nil,
-        created_at: Time | nil,
-        created_user_id: String | nil,
-        data_sensitivity: HubspotSDK::Property::DataSensitivity | nil,
-        date_display_hint: HubspotSDK::Property::DateDisplayHint | nil,
-        display_order: Integer | nil,
-        external_options: HubspotSDK::Internal::Type::Boolean | nil,
-        form_field: HubspotSDK::Internal::Type::Boolean | nil,
-        has_unique_value: HubspotSDK::Internal::Type::Boolean | nil,
-        hidden: HubspotSDK::Internal::Type::Boolean | nil,
-        hubspot_defined: HubspotSDK::Internal::Type::Boolean | nil,
-        modification_metadata: HubspotSDK::PropertyModificationMetadata | nil,
-        referenced_object_type: String | nil,
-        sensitive_data_categories: ^(HubspotSDK::Internal::Type::ArrayOf[String]) | nil,
-        show_currency_symbol: HubspotSDK::Internal::Type::Boolean | nil,
-        updated_at: Time | nil,
-        updated_user_id: String | nil
+        number_display_hint: HubspotSDK::Cms::Property::NumberDisplayHint,
+        options: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AutomationActionsOption]),
+        options_are_mutable: HubspotSDK::Internal::Type::Boolean,
+        option_sort_strategy: HubspotSDK::Cms::Property::OptionSortStrategy,
+        owning_app_id: Integer,
+        portal_id: Integer,
+        read_only_definition: HubspotSDK::Internal::Type::Boolean,
+        read_only_value: HubspotSDK::Internal::Type::Boolean,
+        referenced_object_type: HubspotSDK::Cms::Property::ReferencedObjectType,
+        searchable_in_global_search: HubspotSDK::Internal::Type::Boolean,
+        search_text_analysis_mode: HubspotSDK::Cms::Property::SearchTextAnalysisMode,
+        sensitive_data_categories: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
+        show_currency_symbol: HubspotSDK::Internal::Type::Boolean,
+        text_display_hint: HubspotSDK::Cms::Property::TextDisplayHint,
+        type: HubspotSDK::Cms::Property::Type,
+        updated_at: Integer
       }
     end
   end
@@ -772,7 +715,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     skip("Mock server tests are disabled")
 
     response =
-      @hubspot.cms.media_bridge.update_property_group("groupName", app_id: "appId", object_type: "objectType")
+      @hubspot.cms.media_bridge.update_property_group("groupName", app_id: 0, object_type: "objectType")
 
     assert_pattern do
       response => HubspotSDK::PropertyGroup
@@ -791,8 +734,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
   def test_update_schema_required_params
     skip("Mock server tests are disabled")
 
-    response =
-      @hubspot.cms.media_bridge.update_schema("objectType", app_id: "appId", clear_description: true)
+    response = @hubspot.cms.media_bridge.update_schema("objectType", app_id: 0, clear_description: true)
 
     assert_pattern do
       response => HubspotSDK::ObjectTypeDefinition
@@ -822,7 +764,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
   def test_update_settings_required_params
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.media_bridge.update_settings("appId", updated_at: 0)
+    response = @hubspot.cms.media_bridge.update_settings(0, updated_at: 0)
 
     assert_pattern do
       response => HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse

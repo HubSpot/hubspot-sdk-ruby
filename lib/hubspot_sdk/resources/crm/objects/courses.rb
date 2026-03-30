@@ -74,7 +74,8 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::CourseListParams} for more details.
           #
-          # Retrieve all courses.
+          # Read a page of courses. Control what is returned via the `properties` query
+          # param.
           #
           # @overload list(after: nil, archived: nil, associations: nil, limit: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
@@ -108,7 +109,7 @@ module HubspotSDK
             )
           end
 
-          # Delete a course by ID.
+          # Move an Object identified by `{courseId}` to the recycling bin.
           #
           # @overload delete(course_id, request_options: {})
           #

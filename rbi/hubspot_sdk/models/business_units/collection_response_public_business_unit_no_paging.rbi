@@ -13,12 +13,13 @@ module HubspotSDK
           end
 
         # The collection of Business Units
-        sig { returns(T::Array[HubspotSDK::Marketing::PublicBusinessUnit]) }
+        sig { returns(T::Array[HubspotSDK::BusinessUnits::PublicBusinessUnit]) }
         attr_accessor :results
 
         sig do
           params(
-            results: T::Array[HubspotSDK::Marketing::PublicBusinessUnit::OrHash]
+            results:
+              T::Array[HubspotSDK::BusinessUnits::PublicBusinessUnit::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(
@@ -29,7 +30,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { results: T::Array[HubspotSDK::Marketing::PublicBusinessUnit] }
+            { results: T::Array[HubspotSDK::BusinessUnits::PublicBusinessUnit] }
           )
         end
         def to_hash

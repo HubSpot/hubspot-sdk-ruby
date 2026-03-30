@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module Files
+      type folder_get_by_path_params =
+        { folder_path: String, properties: ::Array[String] }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class FolderGetByPathParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor folder_path: String
+
+        attr_reader properties: ::Array[String]?
+
+        def properties=: (::Array[String]) -> ::Array[String]
+
+        def initialize: (
+          folder_path: String,
+          ?properties: ::Array[String],
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          folder_path: String,
+          properties: ::Array[String],
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

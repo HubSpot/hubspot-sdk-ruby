@@ -6,6 +6,8 @@ module HubspotSDK
       class Blogs
         class Posts
           class Batch
+            # Create a batch of blog posts, specifying their content in the request body.
+            #
             # @overload create(inputs:, request_options: {})
             #
             # @param inputs [Array<HubspotSDK::Models::Cms::Blogs::BlogPost>] Blog posts to input.
@@ -27,6 +29,8 @@ module HubspotSDK
               )
             end
 
+            # Update a batch of blog posts.
+            #
             # @overload update(inputs:, archived: nil, request_options: {})
             #
             # @param inputs [Array<Object>] Body param: JSON nodes to input.
@@ -53,6 +57,10 @@ module HubspotSDK
               )
             end
 
+            # Delete a blog post by ID. Note: This is not the same as the in-app `archive`
+            # function. To perform a dashboard `archive` send an normal update with the
+            # `archivedInDashboard` field set to `true`.
+            #
             # @overload delete(inputs:, request_options: {})
             #
             # @param inputs [Array<String>] Strings to input.
@@ -74,6 +82,8 @@ module HubspotSDK
               )
             end
 
+            # Retrieve a batch of blog posts by ID. identified in the request body.
+            #
             # @overload get(inputs:, archived: nil, request_options: {})
             #
             # @param inputs [Array<String>] Body param: Strings to input.

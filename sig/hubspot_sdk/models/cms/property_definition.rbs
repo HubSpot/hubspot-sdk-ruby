@@ -4,7 +4,7 @@ module HubspotSDK
       type property_definition =
         {
           object_type_id: String,
-          property: HubspotSDK::Property,
+          property: HubspotSDK::Cms::Property,
           calculation_expression: HubspotSDK::Models::Cms::PropertyDefinition::calculation_expression,
           calculation_formula: String,
           definition_source: HubspotSDK::Cms::PropertyDefinitionSource,
@@ -22,7 +22,7 @@ module HubspotSDK
       class PropertyDefinition < HubspotSDK::Internal::Type::BaseModel
         attr_accessor object_type_id: String
 
-        attr_accessor property: HubspotSDK::Property
+        attr_accessor property: HubspotSDK::Cms::Property
 
         attr_reader calculation_expression: HubspotSDK::Models::Cms::PropertyDefinition::calculation_expression?
 
@@ -90,7 +90,7 @@ module HubspotSDK
 
         def initialize: (
           object_type_id: String,
-          property: HubspotSDK::Property,
+          property: HubspotSDK::Cms::Property,
           ?calculation_expression: HubspotSDK::Models::Cms::PropertyDefinition::calculation_expression,
           ?calculation_formula: String,
           ?definition_source: HubspotSDK::Cms::PropertyDefinitionSource,
@@ -107,7 +107,7 @@ module HubspotSDK
 
         def to_hash: -> {
           object_type_id: String,
-          property: HubspotSDK::Property,
+          property: HubspotSDK::Cms::Property,
           calculation_expression: HubspotSDK::Models::Cms::PropertyDefinition::calculation_expression,
           calculation_formula: String,
           definition_source: HubspotSDK::Cms::PropertyDefinitionSource,

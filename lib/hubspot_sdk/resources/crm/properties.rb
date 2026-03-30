@@ -62,7 +62,7 @@ module HubspotSDK
         #
         # @param description [String] Body param: A description of the property that will be shown as help text in Hub
         #
-        # @param display_order [Integer] Body param: Property groups are displayed in order starting with the lowest posi
+        # @param display_order [Integer] Body param: Properties are displayed in order starting with the lowest positive
         #
         # @param field_type [Symbol, HubspotSDK::Models::Crm::PropertyUpdate::FieldType] Body param: Controls how the property appears in HubSpot.
         #
@@ -72,9 +72,9 @@ module HubspotSDK
         #
         # @param hidden [Boolean] Body param: If true, the property won't be visible and can't be used in HubSpot.
         #
-        # @param label [String] Body param: A human-readable label that will be shown in HubSpot.
+        # @param label [String] Body param: A human-readable property label that will be shown in HubSpot.
         #
-        # @param options [Array<HubspotSDK::Models::OptionInput>] Body param: A list of valid options for the property. This field is required for
+        # @param options [Array<HubspotSDK::Models::OptionInput>] Body param: A list of valid options for the property.
         #
         # @param type [Symbol, HubspotSDK::Models::Crm::PropertyUpdate::Type] Body param: The data type of the property.
         #
@@ -114,7 +114,7 @@ module HubspotSDK
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CollectionResponsePropertyNoPaging]
+        # @return [HubspotSDK::Models::Crm::CollectionResponsePropertyNoPaging]
         #
         # @see HubspotSDK::Models::Crm::PropertyListParams
         def list(object_type, params = {})
@@ -124,12 +124,12 @@ module HubspotSDK
             method: :get,
             path: ["crm/properties/2026-03/%1$s", object_type],
             query: query.transform_keys(data_sensitivity: "dataSensitivity"),
-            model: HubspotSDK::CollectionResponsePropertyNoPaging,
+            model: HubspotSDK::Crm::CollectionResponsePropertyNoPaging,
             options: options
           )
         end
 
-        # Delete an existing property.
+        # Move a property identified by {propertyName} to the recycling bin.
         #
         # @overload delete(property_name, object_type:, request_options: {})
         #

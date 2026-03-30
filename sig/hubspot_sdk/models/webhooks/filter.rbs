@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Models
+    module Webhooks
+      type filter = { conditions: ::Array[HubspotSDK::Webhooks::Condition] }
+
+      class Filter < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor conditions: ::Array[HubspotSDK::Webhooks::Condition]
+
+        def initialize: (
+          conditions: ::Array[HubspotSDK::Webhooks::Condition]
+        ) -> void
+
+        def to_hash: -> { conditions: ::Array[HubspotSDK::Webhooks::Condition] }
+      end
+    end
+  end
+end

@@ -28,8 +28,8 @@ module HubspotSDK
               )
             end
 
-            # Batch update multiple subscription objects in a single batch operation, allowing
-            # for efficient modifications of CRM subscription records.
+            # Update multiple subscription objects in a single batch operation, allowing for
+            # efficient modifications of CRM subscription records.
             #
             # @overload update(inputs:, request_options: {})
             #
@@ -76,7 +76,7 @@ module HubspotSDK
             # {HubspotSDK::Models::Crm::Objects::Subscriptions::BatchGetParams} for more
             # details.
             #
-            # Retrieve a batch of commerce subscriptions by their IDs, including specified
+            # Retrieve a batch of CRM subscription objects by their IDs, including specified
             # properties and their histories.
             #
             # @overload get(inputs:, properties:, properties_with_history:, archived: nil, id_property: nil, request_options: {})

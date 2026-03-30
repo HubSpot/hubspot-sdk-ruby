@@ -69,6 +69,9 @@ module HubspotSDK
         sig { returns(HubspotSDK::Resources::Crm::Objects::Notes) }
         attr_reader :notes
 
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Objects) }
+        attr_reader :objects
+
         sig { returns(HubspotSDK::Resources::Crm::Objects::Orders) }
         attr_reader :orders
 
@@ -83,6 +86,9 @@ module HubspotSDK
 
         sig { returns(HubspotSDK::Resources::Crm::Objects::Products) }
         attr_reader :products
+
+        sig { returns(HubspotSDK::Resources::Crm::Objects::Projects) }
+        attr_reader :projects
 
         sig { returns(HubspotSDK::Resources::Crm::Objects::Quotes) }
         attr_reader :quotes

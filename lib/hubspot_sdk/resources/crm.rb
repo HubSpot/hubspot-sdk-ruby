@@ -21,6 +21,9 @@ module HubspotSDK
       # @return [HubspotSDK::Resources::Crm::Extensions]
       attr_reader :extensions
 
+      # @return [HubspotSDK::Resources::Crm::FeatureFlags]
+      attr_reader :feature_flags
+
       # @return [HubspotSDK::Resources::Crm::Imports]
       attr_reader :imports
 
@@ -51,6 +54,9 @@ module HubspotSDK
       # @return [HubspotSDK::Resources::Crm::PropertiesValidations]
       attr_reader :properties_validations
 
+      # @return [HubspotSDK::Resources::Crm::Timeline]
+      attr_reader :timeline
+
       # @api private
       #
       # @param client [HubspotSDK::Client]
@@ -62,6 +68,7 @@ module HubspotSDK
         @deal_splits = HubspotSDK::Resources::Crm::DealSplits.new(client: client)
         @exports = HubspotSDK::Resources::Crm::Exports.new(client: client)
         @extensions = HubspotSDK::Resources::Crm::Extensions.new(client: client)
+        @feature_flags = HubspotSDK::Resources::Crm::FeatureFlags.new(client: client)
         @imports = HubspotSDK::Resources::Crm::Imports.new(client: client)
         @limits = HubspotSDK::Resources::Crm::Limits.new(client: client)
         @lists = HubspotSDK::Resources::Crm::Lists.new(client: client)
@@ -72,6 +79,7 @@ module HubspotSDK
         @pipelines = HubspotSDK::Resources::Crm::Pipelines.new(client: client)
         @properties = HubspotSDK::Resources::Crm::Properties.new(client: client)
         @properties_validations = HubspotSDK::Resources::Crm::PropertiesValidations.new(client: client)
+        @timeline = HubspotSDK::Resources::Crm::Timeline.new(client: client)
       end
     end
   end

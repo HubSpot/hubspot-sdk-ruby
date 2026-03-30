@@ -48,6 +48,7 @@ module HubspotSDK
         sig { params(display_order: Integer).void }
         attr_writer :display_order
 
+        # Specifies the reference type for external options associated with the property.
         sig { returns(T.nilable(String)) }
         attr_reader :external_options_reference_type
 
@@ -76,6 +77,7 @@ module HubspotSDK
         sig { params(has_unique_value: T::Boolean).void }
         attr_writer :has_unique_value
 
+        # Hidden options won't be shown in HubSpot.
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :hidden
 
@@ -209,6 +211,7 @@ module HubspotSDK
           # starting with the lowest positive integer value. A value of -1 will cause the
           # property to be displayed **after** any positive values.
           display_order: nil,
+          # Specifies the reference type for external options associated with the property.
           external_options_reference_type: nil,
           # Whether the property can be used in a HubSpot form.
           form_field: nil,
@@ -217,6 +220,7 @@ module HubspotSDK
           # Whether or not the property's value must be unique. Once set, this can't be
           # changed.
           has_unique_value: nil,
+          # Hidden options won't be shown in HubSpot.
           hidden: nil,
           # Controls how numeric properties are formatted in the HubSpot UI
           number_display_hint: nil,

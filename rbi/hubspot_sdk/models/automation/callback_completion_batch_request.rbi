@@ -12,21 +12,27 @@ module HubspotSDK
             )
           end
 
+        # The unique identifier for the callback.
         sig { returns(String) }
         attr_accessor :callback_id
 
+        # Holds the output fields for the callback completion.
         sig { returns(T::Hash[Symbol, String]) }
         attr_accessor :output_fields
 
+        # Contains the typed outputs for the callback completion.
         sig { returns(T.anything) }
         attr_accessor :typed_outputs
 
+        # Specifies the type of failure reason for the callback completion.
         sig { returns(T.nilable(String)) }
         attr_reader :failure_reason_type
 
         sig { params(failure_reason_type: String).void }
         attr_writer :failure_reason_type
 
+        # Defines the context of the request, which can be one of several predefined
+        # types.
         sig do
           returns(
             T.nilable(
@@ -73,10 +79,16 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # The unique identifier for the callback.
           callback_id:,
+          # Holds the output fields for the callback completion.
           output_fields:,
+          # Contains the typed outputs for the callback completion.
           typed_outputs:,
+          # Specifies the type of failure reason for the callback completion.
           failure_reason_type: nil,
+          # Defines the context of the request, which can be one of several predefined
+          # types.
           request_context: nil
         )
         end
@@ -102,6 +114,8 @@ module HubspotSDK
         def to_hash
         end
 
+        # Defines the context of the request, which can be one of several predefined
+        # types.
         module RequestContext
           extend HubspotSDK::Internal::Type::Union
 

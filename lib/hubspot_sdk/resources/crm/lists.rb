@@ -559,11 +559,11 @@ module HubspotSDK
         #
         # @param additional_properties [Array<String>] The property names of any additional list properties to include in the response.
         #
-        # @param list_ids [Array<String>] The `listIds` that will be used to filter results by `listId`. If values are pro
+        # @param list_ids [Array<String>] ILS list ids to be included in search results. If not specified, all lists match
         #
         # @param offset [Integer] Value used to paginate through lists. The `offset` provided in the response can
         #
-        # @param processing_types [Array<String>] The `processingTypes` that will be used to filter results by `processingType`. I
+        # @param processing_types [Array<String>] List processing types to be included in search results. If not specified, all li
         #
         # @param count [Integer] The number of lists to include in the response. Defaults to `20` if no value is
         #

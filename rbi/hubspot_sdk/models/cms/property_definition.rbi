@@ -16,10 +16,10 @@ module HubspotSDK
         attr_accessor :object_type_id
 
         # A HubSpot property
-        sig { returns(HubspotSDK::Property) }
+        sig { returns(HubspotSDK::Cms::Property) }
         attr_reader :property
 
-        sig { params(property: HubspotSDK::Property::OrHash).void }
+        sig { params(property: HubspotSDK::Cms::Property::OrHash).void }
         attr_writer :property
 
         sig do
@@ -208,7 +208,7 @@ module HubspotSDK
         sig do
           params(
             object_type_id: String,
-            property: HubspotSDK::Property::OrHash,
+            property: HubspotSDK::Cms::Property::OrHash,
             calculation_expression:
               T.any(
                 HubspotSDK::Cms::ConstantBoolean::OrHash,
@@ -324,7 +324,7 @@ module HubspotSDK
           override.returns(
             {
               object_type_id: String,
-              property: HubspotSDK::Property,
+              property: HubspotSDK::Cms::Property,
               calculation_expression:
                 HubspotSDK::Cms::PropertyDefinition::CalculationExpression::Variants,
               calculation_formula: String,

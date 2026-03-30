@@ -55,15 +55,24 @@ module HubspotSDK
               )
             end
             def create_inbound_call(
+              # Indicates whether an engagement should be created for the call.
               create_engagement:,
+              # Contains additional properties related to the engagement.
               engagement_properties:,
+              # The unique identifier for the call from an external system.
               external_call_id:,
+              # The final status of the call, with accepted values including: BUSY,
+              # CALLING_CRM_USER, CANCELED, COMPLETED, CONNECTING, FAILED, HOLD, IN_PROGRESS,
+              # MISSED, NO_ANSWER, QUEUED, RINGING, UNKNOWN.
               final_call_status:,
               from_number:,
               potential_recipient_user_ids:,
               to_number:,
+              # The timestamp indicating when the call started, formatted as a date-time string.
               call_started_timestamp: nil,
+              # The duration of the call in seconds.
               duration_seconds: nil,
+              # The ID of the user associated with the call.
               user_id: nil,
               request_options: {}
             )

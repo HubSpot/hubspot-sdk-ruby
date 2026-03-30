@@ -5,6 +5,7 @@ module HubspotSDK
     class Marketing
       class Events
         class Events
+          # Mark a marketing event as cancelled.
           sig do
             params(
               external_event_id: String,
@@ -19,6 +20,7 @@ module HubspotSDK
           )
           end
 
+          # Mark a marketing event as completed
           sig do
             params(
               external_event_id: String,

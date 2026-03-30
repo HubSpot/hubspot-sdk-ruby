@@ -17,8 +17,7 @@ module HubspotSDK
           sig { returns(String) }
           attr_accessor :value
 
-          # The type of the property. Can be one of CURRENCY, DATE, DATETIME, EMAIL, LINK,
-          # NUMERIC, STATUS
+          # Type of data represented by this property.
           sig do
             returns(
               T.nilable(
@@ -36,14 +35,14 @@ module HubspotSDK
           end
           attr_writer :data_type
 
-          # The label of the property as it will be displayed to users
+          # The label for this property as you'd like it displayed to users.
           sig { returns(T.nilable(String)) }
           attr_reader :label
 
           sig { params(label: String).void }
           attr_writer :label
 
-          # The name of the property
+          # An internal identifier for this property. This value must be unique TODO.
           sig { returns(T.nilable(String)) }
           attr_reader :name
 
@@ -62,12 +61,11 @@ module HubspotSDK
           def self.new(
             # The value of the property
             value:,
-            # The type of the property. Can be one of CURRENCY, DATE, DATETIME, EMAIL, LINK,
-            # NUMERIC, STATUS
+            # Type of data represented by this property.
             data_type: nil,
-            # The label of the property as it will be displayed to users
+            # The label for this property as you'd like it displayed to users.
             label: nil,
-            # The name of the property
+            # An internal identifier for this property. This value must be unique TODO.
             name: nil
           )
           end
@@ -86,8 +84,7 @@ module HubspotSDK
           def to_hash
           end
 
-          # The type of the property. Can be one of CURRENCY, DATE, DATETIME, EMAIL, LINK,
-          # NUMERIC, STATUS
+          # Type of data represented by this property.
           module DataType
             extend HubspotSDK::Internal::Type::Enum
 

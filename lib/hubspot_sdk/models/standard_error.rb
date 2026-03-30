@@ -4,49 +4,49 @@ module HubspotSDK
   module Models
     class StandardError < HubspotSDK::Internal::Type::BaseModel
       # @!attribute category
-      #   The main category of the error.
+      #   Error category.
       #
       #   @return [String]
       required :category, String
 
       # @!attribute context
-      #   Additional context-specific information related to the error.
+      #   Error context.
       #
       #   @return [Hash{Symbol=>Array<String>}]
       required :context, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[String]]
 
       # @!attribute errors
-      #   The detailed error objects.
+      #   List of error details.
       #
       #   @return [Array<HubspotSDK::Models::ErrorDetail>]
       required :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::ErrorDetail] }
 
       # @!attribute links
-      #   URLs linking to documentation or resources associated with the error.
+      #   Error links.
       #
       #   @return [Hash{Symbol=>String}]
       required :links, HubspotSDK::Internal::Type::HashOf[String]
 
       # @!attribute message
-      #   A human-readable string describing the error and possible remediation steps.
+      #   Error message.
       #
       #   @return [String]
       required :message, String
 
       # @!attribute status
-      #   The HTTP status code associated with the error.
+      #   Error status.
       #
       #   @return [String]
       required :status, String
 
       # @!attribute id
-      #   A unique ID for the error instance.
+      #   Error ID.
       #
       #   @return [String, nil]
       optional :id, String
 
       # @!attribute sub_category
-      #   A more specific error category within each main category.
+      #   Error subcategory.
       #
       #   @return [Object, nil]
       optional :sub_category, HubspotSDK::Internal::Type::Unknown, api_name: :subCategory
@@ -54,21 +54,21 @@ module HubspotSDK
       # @!method initialize(category:, context:, errors:, links:, message:, status:, id: nil, sub_category: nil)
       #   Ye olde error
       #
-      #   @param category [String] The main category of the error.
+      #   @param category [String] Error category.
       #
-      #   @param context [Hash{Symbol=>Array<String>}] Additional context-specific information related to the error.
+      #   @param context [Hash{Symbol=>Array<String>}] Error context.
       #
-      #   @param errors [Array<HubspotSDK::Models::ErrorDetail>] The detailed error objects.
+      #   @param errors [Array<HubspotSDK::Models::ErrorDetail>] List of error details.
       #
-      #   @param links [Hash{Symbol=>String}] URLs linking to documentation or resources associated with the error.
+      #   @param links [Hash{Symbol=>String}] Error links.
       #
-      #   @param message [String] A human-readable string describing the error and possible remediation steps.
+      #   @param message [String] Error message.
       #
-      #   @param status [String] The HTTP status code associated with the error.
+      #   @param status [String] Error status.
       #
-      #   @param id [String] A unique ID for the error instance.
+      #   @param id [String] Error ID.
       #
-      #   @param sub_category [Object] A more specific error category within each main category.
+      #   @param sub_category [Object] Error subcategory.
     end
   end
 end

@@ -113,6 +113,49 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
     end
   end
 
+  def test_list
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.marketing.events.list
+
+    assert_pattern do
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Marketing::MarketingEventPublicReadResponseV2
+    end
+
+    assert_pattern do
+      row => {
+        created_at: Time,
+        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::CrmPropertyWrapper]),
+        event_name: String,
+        object_id_: String,
+        updated_at: Time,
+        app_info: HubspotSDK::Marketing::AppInfo | nil,
+        attendees: Integer | nil,
+        cancellations: Integer | nil,
+        end_date_time: Time | nil,
+        event_cancelled: HubspotSDK::Internal::Type::Boolean | nil,
+        event_completed: HubspotSDK::Internal::Type::Boolean | nil,
+        event_description: String | nil,
+        event_organizer: String | nil,
+        event_status: String | nil,
+        event_status_v2: String | nil,
+        event_type: String | nil,
+        event_url: String | nil,
+        external_event_id: String | nil,
+        no_shows: Integer | nil,
+        registrants: Integer | nil,
+        start_date_time: Time | nil
+      }
+    end
+  end
+
   def test_delete
     skip("Mock server tests are disabled")
 
@@ -489,45 +532,6 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
         object_id_: String | nil,
         start_date_time: Time | nil
       }
-    end
-  end
-
-  def test_upsert_subscriber_state_by_email_required_params
-    skip("Mock server tests are disabled")
-
-    response =
-      @hubspot.marketing.events.upsert_subscriber_state_by_email(
-        "subscriberState",
-        external_event_id: "externalEventId",
-        external_account_id: "externalAccountId",
-        inputs: [
-          {
-            contactProperties: {foo: "string"},
-            email: "email",
-            interactionDateTime: 0,
-            properties: {foo: "string"}
-          }
-        ]
-      )
-
-    assert_pattern do
-      response => StringIO
-    end
-  end
-
-  def test_upsert_subscriber_state_by_id_required_params
-    skip("Mock server tests are disabled")
-
-    response =
-      @hubspot.marketing.events.upsert_subscriber_state_by_id(
-        "subscriberState",
-        external_event_id: "externalEventId",
-        external_account_id: "externalAccountId",
-        inputs: [{interactionDateTime: 0, properties: {foo: "string"}, vid: 0}]
-      )
-
-    assert_pattern do
-      response => StringIO
     end
   end
 end

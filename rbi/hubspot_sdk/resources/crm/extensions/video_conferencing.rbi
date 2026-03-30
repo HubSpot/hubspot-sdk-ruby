@@ -5,6 +5,7 @@ module HubspotSDK
     class Crm
       class Extensions
         class VideoConferencing
+          # Create or update video conference extension settings for your app
           sig do
             params(
               app_id: Integer,
@@ -27,6 +28,7 @@ module HubspotSDK
           )
           end
 
+          # Delete video conference extension settings for your app
           sig do
             params(
               app_id: Integer,
@@ -36,6 +38,7 @@ module HubspotSDK
           def delete(app_id, request_options: {})
           end
 
+          # Fetch video conference extension settings for your app
           sig do
             params(
               app_id: Integer,

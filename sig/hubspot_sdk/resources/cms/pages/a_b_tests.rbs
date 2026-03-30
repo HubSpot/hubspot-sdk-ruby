@@ -1,0 +1,29 @@
+module HubspotSDK
+  module Resources
+    class Cms
+      class Pages
+        class ABTests
+          def create_ab_test_variation: (
+            content_id: String,
+            variation_name: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::Page
+
+          def end_ab_test: (
+            ab_test_id: String,
+            winner_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def rerun_ab_test: (
+            ab_test_id: String,
+            variation_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

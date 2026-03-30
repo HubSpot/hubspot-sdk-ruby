@@ -394,6 +394,11 @@ module HubspotSDK
               :INVALID_OBJECT_ID,
               HubspotSDK::Crm::PublicImportError::ErrorType::TaggedSymbol
             )
+          INVALID_PROPERTY_VALUE_FORMAT =
+            T.let(
+              :INVALID_PROPERTY_VALUE_FORMAT,
+              HubspotSDK::Crm::PublicImportError::ErrorType::TaggedSymbol
+            )
           INVALID_RECORD_ID =
             T.let(
               :INVALID_RECORD_ID,

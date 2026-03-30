@@ -20,14 +20,14 @@ module HubspotSDK
           required :contact_type, String
 
           # @!attribute after
-          #   The paging cursor token of the last successfully read resource, used for
-          #   pagination.
+          #   The paging cursor token of the last successfully read resource will be returned
+          #   as the `paging.next.after` JSON property of a paged response containing more
+          #   results.
           #
           #   @return [String, nil]
           optional :after, String
 
           # @!attribute end_date
-          #   The end date for filtering contacts, formatted as a string.
           #
           #   @return [String, nil]
           optional :end_date, String
@@ -39,7 +39,6 @@ module HubspotSDK
           optional :limit, Integer
 
           # @!attribute start_date
-          #   The start date for filtering contacts, formatted as a string.
           #
           #   @return [String, nil]
           optional :start_date, String
@@ -53,13 +52,13 @@ module HubspotSDK
           #
           #   @param contact_type [String]
           #
-          #   @param after [String] The paging cursor token of the last successfully read resource, used for paginat
+          #   @param after [String] The paging cursor token of the last successfully read resource will be returned
           #
-          #   @param end_date [String] The end date for filtering contacts, formatted as a string.
+          #   @param end_date [String]
           #
           #   @param limit [Integer] The maximum number of results to display per page.
           #
-          #   @param start_date [String] The start date for filtering contacts, formatted as a string.
+          #   @param start_date [String]
           #
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end

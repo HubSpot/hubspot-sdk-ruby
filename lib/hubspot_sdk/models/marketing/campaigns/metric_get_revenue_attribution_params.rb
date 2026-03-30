@@ -15,19 +15,18 @@ module HubspotSDK
           required :campaign_guid, String
 
           # @!attribute attribution_model
-          #   The model used to attribute revenue to the campaign.
           #
           #   @return [String, nil]
           optional :attribution_model, String
 
           # @!attribute end_date
-          #   End date to fetch attribution data, YYYY-MM-DD.
+          #   End date to fetch attribution data, YYYY-MM-DD
           #
           #   @return [String, nil]
           optional :end_date, String
 
           # @!attribute start_date
-          #   Start date to fetch attribution data, YYYY-MM-DD.
+          #   Start date to fetch attribution data, YYYY-MM-DD
           #
           #   @return [String, nil]
           optional :start_date, String
@@ -35,11 +34,11 @@ module HubspotSDK
           # @!method initialize(campaign_guid:, attribution_model: nil, end_date: nil, start_date: nil, request_options: {})
           #   @param campaign_guid [String]
           #
-          #   @param attribution_model [String] The model used to attribute revenue to the campaign.
+          #   @param attribution_model [String]
           #
-          #   @param end_date [String] End date to fetch attribution data, YYYY-MM-DD.
+          #   @param end_date [String] End date to fetch attribution data, YYYY-MM-DD
           #
-          #   @param start_date [String] Start date to fetch attribution data, YYYY-MM-DD.
+          #   @param start_date [String] Start date to fetch attribution data, YYYY-MM-DD
           #
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end

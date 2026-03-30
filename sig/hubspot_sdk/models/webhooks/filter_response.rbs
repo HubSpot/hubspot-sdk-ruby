@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module Webhooks
+      type filter_response =
+        {
+          id: Integer,
+          created_at: Integer,
+          filter: HubspotSDK::Webhooks::Filter
+        }
+
+      class FilterResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: Integer
+
+        attr_accessor created_at: Integer
+
+        attr_accessor filter: HubspotSDK::Webhooks::Filter
+
+        def initialize: (
+          id: Integer,
+          created_at: Integer,
+          filter: HubspotSDK::Webhooks::Filter
+        ) -> void
+
+        def to_hash: -> {
+          id: Integer,
+          created_at: Integer,
+          filter: HubspotSDK::Webhooks::Filter
+        }
+      end
+    end
+  end
+end

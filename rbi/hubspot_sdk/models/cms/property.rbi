@@ -37,10 +37,14 @@ module HubspotSDK
 
         # Indicates the sensitivity level of the property, such as "non_sensitive",
         # "sensitive", or "highly_sensitive".
-        sig { returns(HubspotSDK::Cms::Property::DataSensitivity::OrSymbol) }
+        sig do
+          returns(HubspotSDK::Cms::Property::DataSensitivity::TaggedSymbol)
+        end
         attr_accessor :data_sensitivity
 
-        sig { returns(HubspotSDK::Cms::Property::DateDisplayHint::OrSymbol) }
+        sig do
+          returns(HubspotSDK::Cms::Property::DateDisplayHint::TaggedSymbol)
+        end
         attr_accessor :date_display_hint
 
         # Whether the property has been deleted.
@@ -53,7 +57,7 @@ module HubspotSDK
 
         # The mode in which the property is displayed. Can be: "current_value" or
         # "all_unique_versions".
-        sig { returns(HubspotSDK::Cms::Property::DisplayMode::OrSymbol) }
+        sig { returns(HubspotSDK::Cms::Property::DisplayMode::TaggedSymbol) }
         attr_accessor :display_mode
 
         # The position of the item relative to others in the list.
@@ -140,12 +144,14 @@ module HubspotSDK
         # Hint for how a number property is displayed and validated in HubSpot's UI. Can
         # be: "unformatted", "formatted", "currency", "percentage", "duration", or
         # "probability".
-        sig { returns(HubspotSDK::Cms::Property::NumberDisplayHint::OrSymbol) }
+        sig do
+          returns(HubspotSDK::Cms::Property::NumberDisplayHint::TaggedSymbol)
+        end
         attr_accessor :number_display_hint
 
         # A list of valid options for the property. This field is required for enumerated
         # properties.
-        sig { returns(T::Array[HubspotSDK::Option]) }
+        sig { returns(T::Array[HubspotSDK::AutomationActionsOption]) }
         attr_accessor :options
 
         # Whether options can be modified after creation.
@@ -154,7 +160,9 @@ module HubspotSDK
 
         # Specifies how to sort property options. Can be either "DISPLAY_ORDER" to defer
         # to the displayOrder field, or "ALPHABETICAL".
-        sig { returns(HubspotSDK::Cms::Property::OptionSortStrategy::OrSymbol) }
+        sig do
+          returns(HubspotSDK::Cms::Property::OptionSortStrategy::TaggedSymbol)
+        end
         attr_accessor :option_sort_strategy
 
         sig { returns(Integer) }
@@ -174,7 +182,7 @@ module HubspotSDK
 
         # Deprecated. Use externalOptionsReferenceType instead.
         sig do
-          returns(HubspotSDK::Cms::Property::ReferencedObjectType::OrSymbol)
+          returns(HubspotSDK::Cms::Property::ReferencedObjectType::TaggedSymbol)
         end
         attr_accessor :referenced_object_type
 
@@ -183,7 +191,9 @@ module HubspotSDK
         attr_accessor :searchable_in_global_search
 
         sig do
-          returns(HubspotSDK::Cms::Property::SearchTextAnalysisMode::OrSymbol)
+          returns(
+            HubspotSDK::Cms::Property::SearchTextAnalysisMode::TaggedSymbol
+          )
         end
         attr_accessor :search_text_analysis_mode
 
@@ -199,11 +209,13 @@ module HubspotSDK
         # Hint for how the text is displayed and validated in HubSpot's UI. Can be:
         # "unformatted_single_line", "multi_line", "email", "phone_number", "domain_name",
         # "ip_address", "physical_address", or "postal_code".
-        sig { returns(HubspotSDK::Cms::Property::TextDisplayHint::OrSymbol) }
+        sig do
+          returns(HubspotSDK::Cms::Property::TextDisplayHint::TaggedSymbol)
+        end
         attr_accessor :text_display_hint
 
         # The data type of the property, such as string or number.
-        sig { returns(HubspotSDK::Cms::Property::Type::OrSymbol) }
+        sig { returns(HubspotSDK::Cms::Property::Type::TaggedSymbol) }
         attr_accessor :type
 
         # The timestamp when the property was last updated, in ISO 8601 format.
@@ -249,7 +261,7 @@ module HubspotSDK
             name: String,
             number_display_hint:
               HubspotSDK::Cms::Property::NumberDisplayHint::OrSymbol,
-            options: T::Array[HubspotSDK::Option::OrHash],
+            options: T::Array[HubspotSDK::AutomationActionsOption::OrHash],
             options_are_mutable: T::Boolean,
             option_sort_strategy:
               HubspotSDK::Cms::Property::OptionSortStrategy::OrSymbol,
@@ -389,12 +401,13 @@ module HubspotSDK
               created_user_id: Integer,
               currency_property_name: String,
               data_sensitivity:
-                HubspotSDK::Cms::Property::DataSensitivity::OrSymbol,
+                HubspotSDK::Cms::Property::DataSensitivity::TaggedSymbol,
               date_display_hint:
-                HubspotSDK::Cms::Property::DateDisplayHint::OrSymbol,
+                HubspotSDK::Cms::Property::DateDisplayHint::TaggedSymbol,
               deleted: T::Boolean,
               description: String,
-              display_mode: HubspotSDK::Cms::Property::DisplayMode::OrSymbol,
+              display_mode:
+                HubspotSDK::Cms::Property::DisplayMode::TaggedSymbol,
               display_order: Integer,
               enforce_multivalue_uniqueness: T::Boolean,
               external_options: T::Boolean,
@@ -415,25 +428,25 @@ module HubspotSDK
               mutable_definition_not_deletable: T::Boolean,
               name: String,
               number_display_hint:
-                HubspotSDK::Cms::Property::NumberDisplayHint::OrSymbol,
-              options: T::Array[HubspotSDK::Option],
+                HubspotSDK::Cms::Property::NumberDisplayHint::TaggedSymbol,
+              options: T::Array[HubspotSDK::AutomationActionsOption],
               options_are_mutable: T::Boolean,
               option_sort_strategy:
-                HubspotSDK::Cms::Property::OptionSortStrategy::OrSymbol,
+                HubspotSDK::Cms::Property::OptionSortStrategy::TaggedSymbol,
               owning_app_id: Integer,
               portal_id: Integer,
               read_only_definition: T::Boolean,
               read_only_value: T::Boolean,
               referenced_object_type:
-                HubspotSDK::Cms::Property::ReferencedObjectType::OrSymbol,
+                HubspotSDK::Cms::Property::ReferencedObjectType::TaggedSymbol,
               searchable_in_global_search: T::Boolean,
               search_text_analysis_mode:
-                HubspotSDK::Cms::Property::SearchTextAnalysisMode::OrSymbol,
+                HubspotSDK::Cms::Property::SearchTextAnalysisMode::TaggedSymbol,
               sensitive_data_categories: T::Array[String],
               show_currency_symbol: T::Boolean,
               text_display_hint:
-                HubspotSDK::Cms::Property::TextDisplayHint::OrSymbol,
-              type: HubspotSDK::Cms::Property::Type::OrSymbol,
+                HubspotSDK::Cms::Property::TextDisplayHint::TaggedSymbol,
+              type: HubspotSDK::Cms::Property::Type::TaggedSymbol,
               updated_at: Integer
             }
           )

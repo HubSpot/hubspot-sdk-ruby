@@ -15,7 +15,7 @@ module HubspotSDK
             )
           end
 
-        sig { returns(String) }
+        sig { returns(Integer) }
         attr_accessor :app_id
 
         # Whether to return only results that have been archived.
@@ -27,7 +27,7 @@ module HubspotSDK
 
         sig do
           params(
-            app_id: String,
+            app_id: Integer,
             archived: T::Boolean,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
@@ -43,7 +43,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              app_id: String,
+              app_id: Integer,
               archived: T::Boolean,
               request_options: HubspotSDK::RequestOptions
             }

@@ -7,6 +7,7 @@ module HubspotSDK
         # @see HubspotSDK::Resources::Cms::Blogs::Settings#list
         class Blog < HubspotSDK::Internal::Type::BaseModel
           # @!attribute id
+          #   The unique ID of the Blog.
           #
           #   @return [String]
           required :id, String
@@ -18,6 +19,7 @@ module HubspotSDK
           required :absolute_url, String, api_name: :absoluteUrl
 
           # @!attribute allow_comments
+          #   Boolean determining whether or not this blog allows public comments.
           #
           #   @return [Boolean]
           required :allow_comments, HubspotSDK::Internal::Type::Boolean, api_name: :allowComments
@@ -29,22 +31,26 @@ module HubspotSDK
           required :created, Time
 
           # @!attribute deleted_at
-          #   The timestamp (ISO8601 format) when this blog was deleted.
+          #   The timestamp (ISO8601 format) when this Blog was deleted.
           #
           #   @return [Time]
           required :deleted_at, Time, api_name: :deletedAt
 
           # @!attribute description
+          #   The Description of this Blog.
           #
           #   @return [String]
           required :description, String
 
           # @!attribute html_title
+          #   The html title of this Blog.
           #
           #   @return [String]
           required :html_title, String, api_name: :htmlTitle
 
           # @!attribute language
+          #   The explicitly defined language of the Blog. If null, the Blog will default to
+          #   the language of the Domain.
           #
           #   @return [Symbol, HubspotSDK::Models::Cms::Blogs::Blog::Language]
           required :language, enum: -> { HubspotSDK::Cms::Blogs::Blog::Language }
@@ -55,11 +61,13 @@ module HubspotSDK
           required :listing_page_id, String, api_name: :listingPageId
 
           # @!attribute name
+          #   The internal name of the blog.
           #
           #   @return [String]
           required :name, String
 
           # @!attribute public_access_rules
+          #   Rules for require member registration to access private content.
           #
           #   @return [Array<Object>]
           required :public_access_rules,
@@ -67,6 +75,7 @@ module HubspotSDK
                    api_name: :publicAccessRules
 
           # @!attribute public_access_rules_enabled
+          #   Boolean to determine whether or not to respect publicAccessRules.
           #
           #   @return [Boolean]
           required :public_access_rules_enabled,
@@ -74,16 +83,20 @@ module HubspotSDK
                    api_name: :publicAccessRulesEnabled
 
           # @!attribute public_title
+          #   The public title of this Blog.
           #
           #   @return [String]
           required :public_title, String, api_name: :publicTitle
 
           # @!attribute slug
+          #   The path of the this blog. This field is appended to the domain to construct the
+          #   url of this blog.
           #
           #   @return [String]
           required :slug, String
 
           # @!attribute translated_from_id
+          #   ID of the primary Blog this object was translated from.
           #
           #   @return [String]
           required :translated_from_id, String, api_name: :translatedFromId
@@ -95,38 +108,44 @@ module HubspotSDK
           required :updated, Time
 
           # @!method initialize(id:, absolute_url:, allow_comments:, created:, deleted_at:, description:, html_title:, language:, listing_page_id:, name:, public_access_rules:, public_access_rules_enabled:, public_title:, slug:, translated_from_id:, updated:)
-          #   @param id [String]
+          #   Some parameter documentations has been truncated, see
+          #   {HubspotSDK::Models::Cms::Blogs::Blog} for more details.
+          #
+          #   @param id [String] The unique ID of the Blog.
           #
           #   @param absolute_url [String] Blog's root URL
           #
-          #   @param allow_comments [Boolean]
+          #   @param allow_comments [Boolean] Boolean determining whether or not this blog allows public comments.
           #
           #   @param created [Time] The timestamp (ISO8601 format) when this blog was created.
           #
-          #   @param deleted_at [Time] The timestamp (ISO8601 format) when this blog was deleted.
+          #   @param deleted_at [Time] The timestamp (ISO8601 format) when this Blog was deleted.
           #
-          #   @param description [String]
+          #   @param description [String] The Description of this Blog.
           #
-          #   @param html_title [String]
+          #   @param html_title [String] The html title of this Blog.
           #
-          #   @param language [Symbol, HubspotSDK::Models::Cms::Blogs::Blog::Language]
+          #   @param language [Symbol, HubspotSDK::Models::Cms::Blogs::Blog::Language] The explicitly defined language of the Blog. If null, the Blog will default to t
           #
           #   @param listing_page_id [String]
           #
-          #   @param name [String]
+          #   @param name [String] The internal name of the blog.
           #
-          #   @param public_access_rules [Array<Object>]
+          #   @param public_access_rules [Array<Object>] Rules for require member registration to access private content.
           #
-          #   @param public_access_rules_enabled [Boolean]
+          #   @param public_access_rules_enabled [Boolean] Boolean to determine whether or not to respect publicAccessRules.
           #
-          #   @param public_title [String]
+          #   @param public_title [String] The public title of this Blog.
           #
-          #   @param slug [String]
+          #   @param slug [String] The path of the this blog. This field is appended to the domain to construct the
           #
-          #   @param translated_from_id [String]
+          #   @param translated_from_id [String] ID of the primary Blog this object was translated from.
           #
           #   @param updated [Time] The timestamp (ISO8601 format) when this blog was updated.
 
+          # The explicitly defined language of the Blog. If null, the Blog will default to
+          # the language of the Domain.
+          #
           # @see HubspotSDK::Models::Cms::Blogs::Blog#language
           module Language
             extend HubspotSDK::Internal::Type::Enum

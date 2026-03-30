@@ -1,0 +1,37 @@
+module HubspotSDK
+  module Models
+    module Settings
+      type public_team =
+        {
+          id: String,
+          name: String,
+          secondary_user_ids: ::Array[String],
+          user_ids: ::Array[String]
+        }
+
+      class PublicTeam < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor name: String
+
+        attr_accessor secondary_user_ids: ::Array[String]
+
+        attr_accessor user_ids: ::Array[String]
+
+        def initialize: (
+          id: String,
+          name: String,
+          secondary_user_ids: ::Array[String],
+          user_ids: ::Array[String]
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          name: String,
+          secondary_user_ids: ::Array[String],
+          user_ids: ::Array[String]
+        }
+      end
+    end
+  end
+end

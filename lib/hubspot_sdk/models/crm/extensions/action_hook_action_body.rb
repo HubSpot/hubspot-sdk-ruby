@@ -24,7 +24,7 @@ module HubspotSDK
                    api_name: :propertyNamesIncluded
 
           # @!attribute type
-          #   Specifies the type of action, which is 'ACTION_HOOK' for action hooks.
+          #   The type of status.
           #
           #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::ActionHookActionBody::Type]
           required :type, enum: -> { HubspotSDK::Crm::Extensions::ActionHookActionBody::Type }
@@ -41,8 +41,7 @@ module HubspotSDK
           optional :confirmation, -> { HubspotSDK::Crm::Extensions::ActionConfirmationBody }
 
           # @!attribute label
-          #   The label for the button that triggers the action as it will be displayed to
-          #   users.
+          #   The label for this property as you'd like it displayed to users.
           #
           #   @return [String, nil]
           optional :label, String
@@ -55,13 +54,13 @@ module HubspotSDK
           #
           #   @param property_names_included [Array<String>] A list of property names that will be included on the action. See the documentat
           #
-          #   @param type [Symbol, HubspotSDK::Models::Crm::Extensions::ActionHookActionBody::Type] Specifies the type of action, which is 'ACTION_HOOK' for action hooks.
+          #   @param type [Symbol, HubspotSDK::Models::Crm::Extensions::ActionHookActionBody::Type] The type of status.
           #
           #   @param url [String] The URL endpoint that will be called when the action is triggered.
           #
           #   @param confirmation [HubspotSDK::Models::Crm::Extensions::ActionConfirmationBody]
           #
-          #   @param label [String] The label for the button that triggers the action as it will be displayed to use
+          #   @param label [String] The label for this property as you'd like it displayed to users.
 
           # The HTTP method to be used when making the call, which can be set to GET, POST,
           # PUT, DELETE, or PATCH. If using GET or DELETE
@@ -84,7 +83,7 @@ module HubspotSDK
             #   @return [Array<Symbol>]
           end
 
-          # Specifies the type of action, which is 'ACTION_HOOK' for action hooks.
+          # The type of status.
           #
           # @see HubspotSDK::Models::Crm::Extensions::ActionHookActionBody#type
           module Type

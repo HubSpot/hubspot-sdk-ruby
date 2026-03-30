@@ -1,0 +1,46 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Hubdb
+        type table_import_draft_params =
+          {
+            table_id_or_name: String,
+            config: String,
+            file: HubspotSDK::Internal::file_input
+          }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class TableImportDraftParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor table_id_or_name: String
+
+          attr_reader config: String?
+
+          def config=: (String) -> String
+
+          attr_reader file: HubspotSDK::Internal::file_input?
+
+          def file=: (
+            HubspotSDK::Internal::file_input
+          ) -> HubspotSDK::Internal::file_input
+
+          def initialize: (
+            table_id_or_name: String,
+            ?config: String,
+            ?file: HubspotSDK::Internal::file_input,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            table_id_or_name: String,
+            config: String,
+            file: HubspotSDK::Internal::file_input,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

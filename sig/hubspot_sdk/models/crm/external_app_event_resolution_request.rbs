@@ -1,0 +1,18 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type external_app_event_resolution_request =
+        { developer_symbol: String, project_name: String }
+
+      class ExternalAppEventResolutionRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor developer_symbol: String
+
+        attr_accessor project_name: String
+
+        def initialize: (developer_symbol: String, project_name: String) -> void
+
+        def to_hash: -> { developer_symbol: String, project_name: String }
+      end
+    end
+  end
+end

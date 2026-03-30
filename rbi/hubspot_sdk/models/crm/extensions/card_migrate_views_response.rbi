@@ -13,11 +13,17 @@ module HubspotSDK
               )
             end
 
+          # A human readable message describing the error along with remediation steps where
+          # appropriate
           sig { returns(String) }
           attr_accessor :message
 
           sig { params(message: String).returns(T.attached_class) }
-          def self.new(message:)
+          def self.new(
+            # A human readable message describing the error along with remediation steps where
+            # appropriate
+            message:
+          )
           end
 
           sig { override.returns({ message: String }) }

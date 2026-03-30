@@ -5,6 +5,7 @@ module HubspotSDK
     module Automation
       class PublicActionDefinitionPatch < HubspotSDK::Internal::Type::BaseModel
         # @!attribute action_url
+        #   The URL endpoint where the action is executed.
         #
         #   @return [String, nil]
         optional :action_url, String, api_name: :actionUrl
@@ -37,6 +38,7 @@ module HubspotSDK
                  api_name: :inputFields
 
         # @!attribute labels
+        #   Contains labels for the action, including names and descriptions.
         #
         #   @return [Hash{Symbol=>HubspotSDK::Models::Automation::PublicActionLabels}, nil]
         optional :labels, -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Automation::PublicActionLabels] }
@@ -61,20 +63,29 @@ module HubspotSDK
                  api_name: :outputFields
 
         # @!attribute published
+        #   Indicates whether the action is published and available for use.
         #
         #   @return [Boolean, nil]
         optional :published, HubspotSDK::Internal::Type::Boolean
 
         # @!method initialize(action_url: nil, execution_rules: nil, input_field_dependencies: nil, input_fields: nil, labels: nil, object_request_options: nil, object_types: nil, output_fields: nil, published: nil)
-        #   @param action_url [String]
+        #   @param action_url [String] The URL endpoint where the action is executed.
+        #
         #   @param execution_rules [Array<HubspotSDK::Models::Automation::PublicExecutionTranslationRule>]
+        #
         #   @param input_field_dependencies [Array<HubspotSDK::Models::Automation::PublicSingleFieldDependency, HubspotSDK::Models::Automation::PublicConditionalSingleFieldDependency>]
+        #
         #   @param input_fields [Array<HubspotSDK::Models::Automation::PublicInputFieldDefinition>]
-        #   @param labels [Hash{Symbol=>HubspotSDK::Models::Automation::PublicActionLabels}]
+        #
+        #   @param labels [Hash{Symbol=>HubspotSDK::Models::Automation::PublicActionLabels}] Contains labels for the action, including names and descriptions.
+        #
         #   @param object_request_options [HubspotSDK::Models::Automation::PublicObjectRequestOptions]
+        #
         #   @param object_types [Array<String>]
+        #
         #   @param output_fields [Array<HubspotSDK::Models::Automation::OutputFieldDefinition>]
-        #   @param published [Boolean]
+        #
+        #   @param published [Boolean] Indicates whether the action is published and available for use.
 
         module InputFieldDependency
           extend HubspotSDK::Internal::Type::Union

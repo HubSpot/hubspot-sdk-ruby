@@ -96,6 +96,8 @@ module HubspotSDK
       end
       attr_writer :data_sensitivity
 
+      # Controls how date properties are displayed in the HubSpot UI, with options such
+      # as 'absolute', 'absolute_with_relative', 'time_since', and 'time_until'.
       sig do
         returns(T.nilable(HubspotSDK::Property::DateDisplayHint::TaggedSymbol))
       end
@@ -141,8 +143,7 @@ module HubspotSDK
       sig { params(has_unique_value: T::Boolean).void }
       attr_writer :has_unique_value
 
-      # Whether or not the property will be hidden from the HubSpot UI. It's recommended
-      # that this be set to false for custom properties.
+      # Hidden options won't be shown in HubSpot.
       sig { returns(T.nilable(T::Boolean)) }
       attr_reader :hidden
 
@@ -190,7 +191,7 @@ module HubspotSDK
       sig { params(show_currency_symbol: T::Boolean).void }
       attr_writer :show_currency_symbol
 
-      # The timestamp when the property was last updated, in ISO 8601 format.
+      # When the object type was last updated.
       sig { returns(T.nilable(Time)) }
       attr_reader :updated_at
 
@@ -272,6 +273,8 @@ module HubspotSDK
         # Indicates the sensitivity level of the property, such as "non_sensitive",
         # "sensitive", or "highly_sensitive".
         data_sensitivity: nil,
+        # Controls how date properties are displayed in the HubSpot UI, with options such
+        # as 'absolute', 'absolute_with_relative', 'time_since', and 'time_until'.
         date_display_hint: nil,
         # The order that this property should be displayed in the HubSpot UI relative to
         # other properties for this object type. Properties are displayed in order
@@ -286,8 +289,7 @@ module HubspotSDK
         # Whether or not the property's value must be unique. Once set, this can't be
         # changed.
         has_unique_value: nil,
-        # Whether or not the property will be hidden from the HubSpot UI. It's recommended
-        # that this be set to false for custom properties.
+        # Hidden options won't be shown in HubSpot.
         hidden: nil,
         # This will be true for default object properties built into HubSpot.
         hubspot_defined: nil,
@@ -300,7 +302,7 @@ module HubspotSDK
         # Whether the property will display the currency symbol set in the account
         # settings.
         show_currency_symbol: nil,
-        # The timestamp when the property was last updated, in ISO 8601 format.
+        # When the object type was last updated.
         updated_at: nil,
         # The internal user ID of the user who updated the property in HubSpot. This field
         # may not exist if the property was updated outside of HubSpot.
@@ -377,6 +379,8 @@ module HubspotSDK
         end
       end
 
+      # Controls how date properties are displayed in the HubSpot UI, with options such
+      # as 'absolute', 'absolute_with_relative', 'time_since', and 'time_until'.
       module DateDisplayHint
         extend HubspotSDK::Internal::Type::Enum
 

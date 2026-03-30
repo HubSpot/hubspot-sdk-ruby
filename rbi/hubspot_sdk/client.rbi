@@ -19,9 +19,6 @@ module HubspotSDK
     sig { returns(HubspotSDK::Resources::Account) }
     attr_reader :account
 
-    sig { returns(HubspotSDK::Resources::AppWebhooks) }
-    attr_reader :app_webhooks
-
     sig { returns(HubspotSDK::Resources::Auth) }
     attr_reader :auth
 
@@ -43,9 +40,6 @@ module HubspotSDK
     sig { returns(HubspotSDK::Resources::Crm) }
     attr_reader :crm
 
-    sig { returns(HubspotSDK::Resources::DataStudio) }
-    attr_reader :data_studio
-
     sig { returns(HubspotSDK::Resources::Events) }
     attr_reader :events
 
@@ -63,6 +57,9 @@ module HubspotSDK
 
     sig { returns(HubspotSDK::Resources::Settings) }
     attr_reader :settings
+
+    sig { returns(HubspotSDK::Resources::Webhooks) }
+    attr_reader :webhooks
 
     # @api private
     sig { override.returns(T::Hash[String, String]) }

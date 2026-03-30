@@ -1,0 +1,39 @@
+module HubspotSDK
+  module Resources
+    class Cms
+      class Blogs
+        class Posts
+          class Revisions
+            def get_previous_version: (
+              String revision_id,
+              object_id_: String,
+              ?request_options: HubspotSDK::request_opts
+            ) -> StringIO
+
+            def get_previous_versions: (
+              String object_id_,
+              ?after: String,
+              ?before: String,
+              ?limit: Integer,
+              ?request_options: HubspotSDK::request_opts
+            ) -> StringIO
+
+            def restore_previous_version: (
+              String revision_id,
+              object_id_: String,
+              ?request_options: HubspotSDK::request_opts
+            ) -> StringIO
+
+            def restore_previous_version_to_draft: (
+              Integer revision_id,
+              object_id_: String,
+              ?request_options: HubspotSDK::request_opts
+            ) -> StringIO
+
+            def initialize: (client: HubspotSDK::Client) -> void
+          end
+        end
+      end
+    end
+  end
+end

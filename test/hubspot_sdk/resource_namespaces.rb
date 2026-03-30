@@ -30,6 +30,9 @@ module HubspotSDK
 
         module Settings
         end
+
+        module Tags
+        end
       end
 
       module BusinessUnits
@@ -57,9 +60,18 @@ module HubspotSDK
 
           module Settings
           end
+
+          module Tags
+          end
+        end
+
+        module Hubdb
         end
 
         module MediaBridge
+        end
+
+        module Pages
         end
       end
 
@@ -104,6 +116,9 @@ module HubspotSDK
         module Extensions
           module Calling
           end
+        end
+
+        module FeatureFlags
         end
 
         module ObjectLibrary
@@ -158,13 +173,22 @@ module HubspotSDK
           module LineItems
           end
 
+          module Listings
+          end
+
           module Meetings
           end
 
           module Notes
           end
 
+          module Objects
+          end
+
           module PartnerClients
+          end
+
+          module Projects
           end
 
           module Quotes
@@ -185,6 +209,9 @@ module HubspotSDK
 
         module Properties
         end
+
+        module Timeline
+        end
       end
 
       module Currencies
@@ -193,9 +220,6 @@ module HubspotSDK
       end
 
       module CustomChannels
-      end
-
-      module DataStudio
       end
 
       module Deals
@@ -221,6 +245,9 @@ module HubspotSDK
         end
       end
 
+      module FeatureFlags
+      end
+
       module FeedbackSubmissions
       end
 
@@ -233,10 +260,16 @@ module HubspotSDK
       module GoalTargets
       end
 
+      module Hubdb
+      end
+
       module Leads
       end
 
       module LineItems
+      end
+
+      module Listings
       end
 
       module Marketing
@@ -244,6 +277,9 @@ module HubspotSDK
         end
 
         module Events
+        end
+
+        module Transactional
         end
       end
 
@@ -313,13 +349,22 @@ module HubspotSDK
         module LineItems
         end
 
+        module Listings
+        end
+
         module Meetings
         end
 
         module Notes
         end
 
+        module Objects
+        end
+
         module PartnerClients
+        end
+
+        module Projects
         end
 
         module Quotes
@@ -341,10 +386,16 @@ module HubspotSDK
       module Origins
       end
 
+      module Pages
+      end
+
       module PartnerClients
       end
 
       module Posts
+      end
+
+      module Projects
       end
 
       module Properties
@@ -371,10 +422,24 @@ module HubspotSDK
       module Subscriptions
       end
 
+      module Tags
+      end
+
       module Tasks
       end
 
       module Tickets
+      end
+
+      module Timeline
+      end
+
+      module Transactional
+      end
+
+      module Webhooks
+        module Webhooks
+        end
       end
     end
   end

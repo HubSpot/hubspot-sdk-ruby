@@ -16,16 +16,17 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :id
 
-        # The new name for the folder, which will also update the fullPath and all
-        # children of the folder.
+        # New name. If specified the folder's name and fullPath will change. All children
+        # of the folder will be updated accordingly.
         sig { returns(T.nilable(String)) }
         attr_reader :name
 
         sig { params(name: String).void }
         attr_writer :name
 
-        # The ID of the new parent folder, which will move the folder and its children
-        # into the specified folder.
+        # New parent folderId. If changed, the folder and all it's children will be moved
+        # into the specified folder. parentFolderId and parentFolderPath cannot be
+        # specified at the same time.
         sig { returns(T.nilable(Integer)) }
         attr_reader :parent_folder_id
 
@@ -40,11 +41,12 @@ module HubspotSDK
         def self.new(
           # The unique identifier of the folder to be updated.
           id:,
-          # The new name for the folder, which will also update the fullPath and all
-          # children of the folder.
+          # New name. If specified the folder's name and fullPath will change. All children
+          # of the folder will be updated accordingly.
           name: nil,
-          # The ID of the new parent folder, which will move the folder and its children
-          # into the specified folder.
+          # New parent folderId. If changed, the folder and all it's children will be moved
+          # into the specified folder. parentFolderId and parentFolderPath cannot be
+          # specified at the same time.
           parent_folder_id: nil
         )
         end

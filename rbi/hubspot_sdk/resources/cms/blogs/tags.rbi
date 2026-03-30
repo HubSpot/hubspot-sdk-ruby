@@ -5,6 +5,10 @@ module HubspotSDK
     class Cms
       class Blogs
         class Tags
+          sig { returns(HubspotSDK::Resources::Cms::Blogs::Tags::Batch) }
+          attr_reader :batch
+
+          # Create a new Blog Tag.
           sig do
             params(
               id: String,
@@ -38,6 +42,9 @@ module HubspotSDK
           )
           end
 
+          # Sparse updates a single Blog Tag object identified by the id in the path. All
+          # the column values need not be specified. Only the that need to be modified can
+          # be specified.
           sig do
             params(
               object_id_: String,
@@ -78,6 +85,9 @@ module HubspotSDK
           )
           end
 
+          # Get the list of blog tags. Supports paging and filtering. This method would be
+          # useful for an integration that examined these models and used an external
+          # service to suggest edits.
           sig do
             params(
               after: String,
@@ -115,6 +125,7 @@ module HubspotSDK
           )
           end
 
+          # Delete the Blog Tag object identified by the id in the path.
           sig do
             params(
               object_id_: String,
@@ -130,6 +141,7 @@ module HubspotSDK
           )
           end
 
+          # Attach a Blog Tag to a multi-language group.
           sig do
             params(
               id: String,
@@ -154,19 +166,7 @@ module HubspotSDK
           )
           end
 
-          sig do
-            params(
-              inputs: T::Array[HubspotSDK::Cms::Blogs::Tag::OrHash],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(StringIO)
-          end
-          def create_batch(
-            # Blog tags to input.
-            inputs:,
-            request_options: {}
-          )
-          end
-
+          # Create a new language variation from an existing Blog Tag
           sig do
             params(
               id: String,
@@ -189,19 +189,7 @@ module HubspotSDK
           )
           end
 
-          sig do
-            params(
-              inputs: T::Array[String],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).void
-          end
-          def delete_batch(
-            # Strings to input.
-            inputs:,
-            request_options: {}
-          )
-          end
-
+          # Detach a Blog Tag from a multi-language group.
           sig do
             params(
               id: String,
@@ -215,6 +203,7 @@ module HubspotSDK
           )
           end
 
+          # Retrieve the Blog Tag object identified by the id in the path.
           sig do
             params(
               object_id_: String,
@@ -234,20 +223,227 @@ module HubspotSDK
 
           sig do
             params(
-              inputs: T::Array[String],
+              after: String,
               archived: T::Boolean,
+              created_after: Time,
+              created_at: Time,
+              created_before: Time,
+              limit: Integer,
+              property: String,
+              sort: T::Array[String],
+              updated_after: Time,
+              updated_at: Time,
+              updated_before: Time,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
-          def get_batch(
-            # Body param: Strings to input.
-            inputs:,
-            # Query param: Whether to return only results that have been archived.
+          def list_authors_cursor(
+            # The paging cursor token of the last successfully read resource will be returned
+            # as the `paging.next.after` JSON property of a paged response containing more
+            # results.
+            after: nil,
+            # Whether to return only results that have been archived.
             archived: nil,
+            created_after: nil,
+            created_at: nil,
+            created_before: nil,
+            # The maximum number of results to display per page.
+            limit: nil,
+            property: nil,
+            sort: nil,
+            updated_after: nil,
+            updated_at: nil,
+            updated_before: nil,
             request_options: {}
           )
           end
 
+          sig do
+            params(
+              after: String,
+              archived: T::Boolean,
+              created_after: Time,
+              created_at: Time,
+              created_before: Time,
+              limit: Integer,
+              property: String,
+              sort: T::Array[String],
+              updated_after: Time,
+              updated_at: Time,
+              updated_before: Time,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(StringIO)
+          end
+          def list_authors_cursor_by_query(
+            # The paging cursor token of the last successfully read resource will be returned
+            # as the `paging.next.after` JSON property of a paged response containing more
+            # results.
+            after: nil,
+            # Whether to return only results that have been archived.
+            archived: nil,
+            created_after: nil,
+            created_at: nil,
+            created_before: nil,
+            # The maximum number of results to display per page.
+            limit: nil,
+            property: nil,
+            sort: nil,
+            updated_after: nil,
+            updated_at: nil,
+            updated_before: nil,
+            request_options: {}
+          )
+          end
+
+          sig do
+            params(
+              after: String,
+              archived: T::Boolean,
+              created_after: Time,
+              created_at: Time,
+              created_before: Time,
+              limit: Integer,
+              property: String,
+              sort: T::Array[String],
+              updated_after: Time,
+              updated_at: Time,
+              updated_before: Time,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(StringIO)
+          end
+          def list_cursor(
+            # The paging cursor token of the last successfully read resource will be returned
+            # as the `paging.next.after` JSON property of a paged response containing more
+            # results.
+            after: nil,
+            # Whether to return only results that have been archived.
+            archived: nil,
+            created_after: nil,
+            created_at: nil,
+            created_before: nil,
+            # The maximum number of results to display per page.
+            limit: nil,
+            property: nil,
+            sort: nil,
+            updated_after: nil,
+            updated_at: nil,
+            updated_before: nil,
+            request_options: {}
+          )
+          end
+
+          sig do
+            params(
+              after: String,
+              archived: T::Boolean,
+              created_after: Time,
+              created_at: Time,
+              created_before: Time,
+              limit: Integer,
+              property: String,
+              sort: T::Array[String],
+              updated_after: Time,
+              updated_at: Time,
+              updated_before: Time,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(StringIO)
+          end
+          def list_cursor_by_query(
+            # The paging cursor token of the last successfully read resource will be returned
+            # as the `paging.next.after` JSON property of a paged response containing more
+            # results.
+            after: nil,
+            # Whether to return only results that have been archived.
+            archived: nil,
+            created_after: nil,
+            created_at: nil,
+            created_before: nil,
+            # The maximum number of results to display per page.
+            limit: nil,
+            property: nil,
+            sort: nil,
+            updated_after: nil,
+            updated_at: nil,
+            updated_before: nil,
+            request_options: {}
+          )
+          end
+
+          sig do
+            params(
+              after: String,
+              archived: T::Boolean,
+              created_after: Time,
+              created_at: Time,
+              created_before: Time,
+              limit: Integer,
+              property: String,
+              sort: T::Array[String],
+              updated_after: Time,
+              updated_at: Time,
+              updated_before: Time,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(StringIO)
+          end
+          def list_posts_cursor(
+            # The paging cursor token of the last successfully read resource will be returned
+            # as the `paging.next.after` JSON property of a paged response containing more
+            # results.
+            after: nil,
+            # Whether to return only results that have been archived.
+            archived: nil,
+            created_after: nil,
+            created_at: nil,
+            created_before: nil,
+            # The maximum number of results to display per page.
+            limit: nil,
+            property: nil,
+            sort: nil,
+            updated_after: nil,
+            updated_at: nil,
+            updated_before: nil,
+            request_options: {}
+          )
+          end
+
+          sig do
+            params(
+              after: String,
+              archived: T::Boolean,
+              created_after: Time,
+              created_at: Time,
+              created_before: Time,
+              limit: Integer,
+              property: String,
+              sort: T::Array[String],
+              updated_after: Time,
+              updated_at: Time,
+              updated_before: Time,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(StringIO)
+          end
+          def list_posts_cursor_by_query(
+            # The paging cursor token of the last successfully read resource will be returned
+            # as the `paging.next.after` JSON property of a paged response containing more
+            # results.
+            after: nil,
+            # Whether to return only results that have been archived.
+            archived: nil,
+            created_after: nil,
+            created_at: nil,
+            created_before: nil,
+            # The maximum number of results to display per page.
+            limit: nil,
+            property: nil,
+            sort: nil,
+            updated_after: nil,
+            updated_at: nil,
+            updated_before: nil,
+            request_options: {}
+          )
+          end
+
+          # Set a Blog Tag as the primary language of a multi-language group.
           sig do
             params(
               id: String,
@@ -261,22 +457,7 @@ module HubspotSDK
           )
           end
 
-          sig do
-            params(
-              inputs: T::Array[T.anything],
-              archived: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(StringIO)
-          end
-          def update_batch(
-            # Body param: JSON nodes to input.
-            inputs:,
-            # Query param: Whether to return only results that have been archived.
-            archived: nil,
-            request_options: {}
-          )
-          end
-
+          # Explicitly set new languages for each Blog Tag in a multi-language group.
           sig do
             params(
               languages:

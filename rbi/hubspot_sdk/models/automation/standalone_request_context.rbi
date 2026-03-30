@@ -23,6 +23,7 @@ module HubspotSDK
         end
         attr_writer :chirp_ai_context_object
 
+        # Indicates the source of the request, with the default value being 'STANDALONE'.
         sig do
           returns(
             HubspotSDK::Automation::StandaloneRequestContext::Source::OrSymbol
@@ -30,6 +31,7 @@ module HubspotSDK
         end
         attr_accessor :source
 
+        # A unique identifier for tracking the trajectory of the request.
         sig { returns(T.nilable(String)) }
         attr_reader :trajectory_id
 
@@ -45,7 +47,13 @@ module HubspotSDK
             trajectory_id: String
           ).returns(T.attached_class)
         end
-        def self.new(chirp_ai_context_object:, source:, trajectory_id: nil)
+        def self.new(
+          chirp_ai_context_object:,
+          # Indicates the source of the request, with the default value being 'STANDALONE'.
+          source:,
+          # A unique identifier for tracking the trajectory of the request.
+          trajectory_id: nil
+        )
         end
 
         sig do
@@ -62,6 +70,7 @@ module HubspotSDK
         def to_hash
         end
 
+        # Indicates the source of the request, with the default value being 'STANDALONE'.
         module Source
           extend HubspotSDK::Internal::Type::Enum
 

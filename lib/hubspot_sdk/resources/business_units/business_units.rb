@@ -4,6 +4,8 @@ module HubspotSDK
   module Resources
     class BusinessUnits
       class BusinessUnits
+        # Retrieve the brands that a specific user can access.
+        #
         # @overload get_by_user_id(user_id, name: nil, properties: nil, request_options: {})
         #
         # @param user_id [String]

@@ -1,0 +1,38 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Hubdb
+        type row_clone_draft_params =
+          { table_id_or_name: String, row_id: String, name: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class RowCloneDraftParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor table_id_or_name: String
+
+          attr_accessor row_id: String
+
+          attr_reader name: String?
+
+          def name=: (String) -> String
+
+          def initialize: (
+            table_id_or_name: String,
+            row_id: String,
+            ?name: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            table_id_or_name: String,
+            row_id: String,
+            name: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

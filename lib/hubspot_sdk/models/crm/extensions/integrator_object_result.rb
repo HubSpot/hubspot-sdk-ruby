@@ -20,7 +20,7 @@ module HubspotSDK
                    -> { HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Crm::Extensions::IntegratorObjectResult::Action] }
 
           # @!attribute title
-          #   The title of the object card, displayed to users.
+          #   The top-level title for this card. Displayed to users in the CRM UI.
           #
           #   @return [String]
           required :title, String
@@ -45,7 +45,7 @@ module HubspotSDK
           #
           #   @param actions [Array<HubspotSDK::Models::Crm::Extensions::ActionHookActionBody, HubspotSDK::Models::Crm::Extensions::IFrameActionBody>] A list of actions associated with the card, which can include action hooks, conf
           #
-          #   @param title [String] The title of the object card, displayed to users.
+          #   @param title [String] The top-level title for this card. Displayed to users in the CRM UI.
           #
           #   @param tokens [Array<HubspotSDK::Models::Crm::Extensions::ObjectToken>] A collection of tokens representing specific properties related to the card.
           #

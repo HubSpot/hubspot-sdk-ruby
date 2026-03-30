@@ -18,8 +18,6 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :sequence_id
 
-        # The unique identifier of the user requesting the sequence details. This
-        # parameter is required.
         sig { returns(String) }
         attr_accessor :user_id
 
@@ -30,13 +28,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
-        def self.new(
-          sequence_id:,
-          # The unique identifier of the user requesting the sequence details. This
-          # parameter is required.
-          user_id:,
-          request_options: {}
-        )
+        def self.new(sequence_id:, user_id:, request_options: {})
         end
 
         sig do

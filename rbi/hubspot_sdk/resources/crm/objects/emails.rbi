@@ -52,7 +52,8 @@ module HubspotSDK
           )
           end
 
-          # Retrieve all emails. Control what is returned via the `properties` query param.
+          # Read a page of emails. Control what is returned via the `properties` query
+          # param.
           sig do
             params(
               after: String,
@@ -103,7 +104,7 @@ module HubspotSDK
           def delete(email_id, request_options: {})
           end
 
-          # Retrieve an email identified by `{emailId}`. `{emailId}` refers to the internal
+          # Read an Object identified by `{emailId}`. `{emailId}` refers to the internal
           # object ID by default, or optionally any unique property value as specified by
           # the `idProperty` query param. Control what is returned via the `properties`
           # query param.

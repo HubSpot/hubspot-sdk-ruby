@@ -29,14 +29,21 @@ module HubspotSDK
         sig { params(name: String).void }
         attr_writer :name
 
+        sig { returns(T.nilable(String)) }
+        attr_reader :sender_actor_id
+
+        sig { params(sender_actor_id: String).void }
+        attr_writer :sender_actor_id
+
         sig do
           params(
             delivery_identifier:
               HubspotSDK::Conversations::PublicDeliveryIdentifier::OrHash,
-            name: String
+            name: String,
+            sender_actor_id: String
           ).returns(T.attached_class)
         end
-        def self.new(delivery_identifier:, name: nil)
+        def self.new(delivery_identifier:, name: nil, sender_actor_id: nil)
         end
 
         sig do
@@ -44,7 +51,8 @@ module HubspotSDK
             {
               delivery_identifier:
                 HubspotSDK::Conversations::PublicDeliveryIdentifier,
-              name: String
+              name: String,
+              sender_actor_id: String
             }
           )
         end

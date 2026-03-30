@@ -9,6 +9,8 @@ module HubspotSDK
           # {HubspotSDK::Models::Marketing::Events::SettingCreateOrUpdateParams} for more
           # details.
           #
+          # Create or update the current settings for the application.
+          #
           # @overload create_or_update(app_id, event_details_url:, request_options: {})
           #
           # @param app_id [Integer]
@@ -31,6 +33,8 @@ module HubspotSDK
             )
           end
 
+          # Retrieve the current settings for the application.
+          #
           # @overload get(app_id, request_options: {})
           #
           # @param app_id [Integer]

@@ -6,7 +6,7 @@ module HubspotSDK
       # @see HubspotSDK::Resources::Account::Activity#list_audit_logs
       class PublicAPIUserActionEvent < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
-        #   The unique ID of the activity.
+        #   The login activity's unique ID.
         #
         #   @return [String]
         required :id, String
@@ -47,7 +47,7 @@ module HubspotSDK
         optional :target_object_id, String, api_name: :targetObjectId
 
         # @!method initialize(id:, acting_user:, action:, category:, occurred_at:, sub_category: nil, target_object_id: nil)
-        #   @param id [String] The unique ID of the activity.
+        #   @param id [String] The login activity's unique ID.
         #
         #   @param acting_user [HubspotSDK::Models::Account::ActingUser]
         #

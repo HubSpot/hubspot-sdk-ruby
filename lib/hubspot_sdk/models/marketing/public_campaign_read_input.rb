@@ -5,13 +5,13 @@ module HubspotSDK
     module Marketing
       class PublicCampaignReadInput < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
-        #   The unique identifier for the campaign, represented as a string.
+        #   The unique identifier for a campaign.
         #
         #   @return [String]
         required :id, String
 
         # @!method initialize(id:)
-        #   @param id [String] The unique identifier for the campaign, represented as a string.
+        #   @param id [String] The unique identifier for a campaign.
       end
     end
   end

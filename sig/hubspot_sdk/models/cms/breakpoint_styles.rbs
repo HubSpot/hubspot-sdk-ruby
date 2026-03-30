@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module Cms
+      type breakpoint_styles =
+        {
+          hidden: bool,
+          margin: HubspotSDK::Cms::Margin,
+          padding: HubspotSDK::Cms::Padding
+        }
+
+      class BreakpointStyles < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor hidden: bool
+
+        attr_accessor margin: HubspotSDK::Cms::Margin
+
+        attr_accessor padding: HubspotSDK::Cms::Padding
+
+        def initialize: (
+          hidden: bool,
+          margin: HubspotSDK::Cms::Margin,
+          padding: HubspotSDK::Cms::Padding
+        ) -> void
+
+        def to_hash: -> {
+          hidden: bool,
+          margin: HubspotSDK::Cms::Margin,
+          padding: HubspotSDK::Cms::Padding
+        }
+      end
+    end
+  end
+end

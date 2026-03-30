@@ -1,0 +1,38 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Hubdb
+        type row_get_params =
+          { table_id_or_name: String, row_id: String, archived: bool }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class RowGetParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor table_id_or_name: String
+
+          attr_accessor row_id: String
+
+          attr_reader archived: bool?
+
+          def archived=: (bool) -> bool
+
+          def initialize: (
+            table_id_or_name: String,
+            row_id: String,
+            ?archived: bool,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            table_id_or_name: String,
+            row_id: String,
+            archived: bool,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

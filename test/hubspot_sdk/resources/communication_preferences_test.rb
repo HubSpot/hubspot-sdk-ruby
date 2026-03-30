@@ -26,23 +26,6 @@ class HubspotSDK::Test::Resources::CommunicationPreferencesTest < HubspotSDK::Te
     end
   end
 
-  def test_get_status_by_email
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.communication_preferences.get_status_by_email("emailAddress")
-
-    assert_pattern do
-      response => HubspotSDK::CommunicationPreferences::PublicSubscriptionStatusesResponse
-    end
-
-    assert_pattern do
-      response => {
-        recipient: String,
-        subscription_statuses: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CommunicationPreferences::PublicSubscriptionStatus])
-      }
-    end
-  end
-
   def test_get_statuses_required_params
     skip("Mock server tests are disabled")
 
@@ -86,62 +69,6 @@ class HubspotSDK::Test::Resources::CommunicationPreferencesTest < HubspotSDK::Te
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
-      }
-    end
-  end
-
-  def test_subscribe_required_params
-    skip("Mock server tests are disabled")
-
-    response =
-      @hubspot.communication_preferences.subscribe(
-        email_address: "emailAddress",
-        subscription_id: "subscriptionId"
-      )
-
-    assert_pattern do
-      response => HubspotSDK::CommunicationPreferences::PublicSubscriptionStatus
-    end
-
-    assert_pattern do
-      response => {
-        id: String,
-        description: String,
-        name: String,
-        source_of_status: HubspotSDK::CommunicationPreferences::PublicSubscriptionStatus::SourceOfStatus,
-        status: HubspotSDK::CommunicationPreferences::PublicSubscriptionStatus::Status,
-        brand_id: Integer | nil,
-        legal_basis: HubspotSDK::CommunicationPreferences::PublicSubscriptionStatus::LegalBasis | nil,
-        legal_basis_explanation: String | nil,
-        preference_group_name: String | nil
-      }
-    end
-  end
-
-  def test_unsubscribe_required_params
-    skip("Mock server tests are disabled")
-
-    response =
-      @hubspot.communication_preferences.unsubscribe(
-        email_address: "emailAddress",
-        subscription_id: "subscriptionId"
-      )
-
-    assert_pattern do
-      response => HubspotSDK::CommunicationPreferences::PublicSubscriptionStatus
-    end
-
-    assert_pattern do
-      response => {
-        id: String,
-        description: String,
-        name: String,
-        source_of_status: HubspotSDK::CommunicationPreferences::PublicSubscriptionStatus::SourceOfStatus,
-        status: HubspotSDK::CommunicationPreferences::PublicSubscriptionStatus::Status,
-        brand_id: Integer | nil,
-        legal_basis: HubspotSDK::CommunicationPreferences::PublicSubscriptionStatus::LegalBasis | nil,
-        legal_basis_explanation: String | nil,
-        preference_group_name: String | nil
       }
     end
   end

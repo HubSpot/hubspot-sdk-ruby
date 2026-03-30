@@ -12,15 +12,19 @@ module HubspotSDK
             )
           end
 
+        # The group to which the application belongs.
         sig { returns(String) }
         attr_accessor :application_group
 
+        # The identifier for the application associated with the context.
         sig { returns(String) }
         attr_accessor :application_id
 
+        # Additional metadata related to the context, represented as key-value pairs.
         sig { returns(T::Hash[Symbol, String]) }
         attr_accessor :metadata
 
+        # Holds OpenTelemetry context information as key-value pairs.
         sig { returns(T::Hash[Symbol, String]) }
         attr_accessor :otel_context_holder
 
@@ -43,18 +47,21 @@ module HubspotSDK
         end
         attr_writer :compliance_ids
 
+        # The identifier for the feature associated with the context.
         sig { returns(T.nilable(String)) }
         attr_reader :feature_id
 
         sig { params(feature_id: String).void }
         attr_writer :feature_id
 
+        # The identifier for the inference associated with the context.
         sig { returns(T.nilable(String)) }
         attr_reader :inference_id
 
         sig { params(inference_id: String).void }
         attr_writer :inference_id
 
+        # The identifier for the trajectory, formatted as a UUID.
         sig { returns(T.nilable(String)) }
         attr_reader :trajectory_id
 
@@ -78,14 +85,21 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # The group to which the application belongs.
           application_group:,
+          # The identifier for the application associated with the context.
           application_id:,
+          # Additional metadata related to the context, represented as key-value pairs.
           metadata:,
+          # Holds OpenTelemetry context information as key-value pairs.
           otel_context_holder:,
           unstructured_sources:,
           compliance_ids: nil,
+          # The identifier for the feature associated with the context.
           feature_id: nil,
+          # The identifier for the inference associated with the context.
           inference_id: nil,
+          # The identifier for the trajectory, formatted as a UUID.
           trajectory_id: nil
         )
         end

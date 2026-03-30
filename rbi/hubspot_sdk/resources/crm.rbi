@@ -21,6 +21,9 @@ module HubspotSDK
       sig { returns(HubspotSDK::Resources::Crm::Extensions) }
       attr_reader :extensions
 
+      sig { returns(HubspotSDK::Resources::Crm::FeatureFlags) }
+      attr_reader :feature_flags
+
       sig { returns(HubspotSDK::Resources::Crm::Imports) }
       attr_reader :imports
 
@@ -50,6 +53,9 @@ module HubspotSDK
 
       sig { returns(HubspotSDK::Resources::Crm::PropertiesValidations) }
       attr_reader :properties_validations
+
+      sig { returns(HubspotSDK::Resources::Crm::Timeline) }
+      attr_reader :timeline
 
       # @api private
       sig { params(client: HubspotSDK::Client).returns(T.attached_class) }

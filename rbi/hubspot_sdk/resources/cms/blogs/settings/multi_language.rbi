@@ -6,6 +6,7 @@ module HubspotSDK
       class Blogs
         class Settings
           class MultiLanguage
+            # Attach a blog to a multi-language group.
             sig do
               params(
                 id: String,
@@ -30,6 +31,7 @@ module HubspotSDK
             )
             end
 
+            # Create a new language variation from an existing blog.
             sig do
               params(
                 id: String,
@@ -40,14 +42,19 @@ module HubspotSDK
               ).returns(HubspotSDK::Cms::Blogs::Blog)
             end
             def create_language_variation(
+              # ID of blog to clone.
               id:,
+              # Target language of new variant.
               language: nil,
+              # Language of primary blog to clone.
               primary_language: nil,
+              # Path to this blog.
               slug: nil,
               request_options: {}
             )
             end
 
+            # Detaches a blog from a multi-language group.
             sig do
               params(
                 id: String,
@@ -61,6 +68,7 @@ module HubspotSDK
             )
             end
 
+            # Set a blog as the primary language of a multi-language group.
             sig do
               params(
                 id: String,
@@ -74,6 +82,7 @@ module HubspotSDK
             )
             end
 
+            # Explicitly set new languages for each blog in a multi-language group.
             sig do
               params(
                 languages:

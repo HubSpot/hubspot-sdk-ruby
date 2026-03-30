@@ -12,7 +12,8 @@ module HubspotSDK
       sig { returns(String) }
       attr_accessor :id
 
-      # A collection of link names mapped to their corresponding URIs.
+      # A map of link names to associated URIs containing documentation about the error
+      # or recommended remediation steps
       sig { returns(T.nilable(T::Hash[Symbol, String])) }
       attr_reader :links
 
@@ -27,7 +28,8 @@ module HubspotSDK
       def self.new(
         # The unique identifier for the task.
         id:,
-        # A collection of link names mapped to their corresponding URIs.
+        # A map of link names to associated URIs containing documentation about the error
+        # or recommended remediation steps
         links: nil
       )
       end

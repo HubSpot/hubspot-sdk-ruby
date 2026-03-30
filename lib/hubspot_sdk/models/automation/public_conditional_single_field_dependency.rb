@@ -5,16 +5,19 @@ module HubspotSDK
     module Automation
       class PublicConditionalSingleFieldDependency < HubspotSDK::Internal::Type::BaseModel
         # @!attribute controlling_field_name
+        #   The name of the field that determines the dependency.
         #
         #   @return [String]
         required :controlling_field_name, String, api_name: :controllingFieldName
 
         # @!attribute controlling_field_value
+        #   The value of the controlling field that triggers the dependency.
         #
         #   @return [String]
         required :controlling_field_value, String, api_name: :controllingFieldValue
 
         # @!attribute dependency_type
+        #   The type of dependency, with the default value being CONDITIONAL_SINGLE_FIELD.
         #
         #   @return [Symbol, HubspotSDK::Models::Automation::PublicConditionalSingleFieldDependency::DependencyType]
         required :dependency_type,
@@ -29,11 +32,16 @@ module HubspotSDK
                  api_name: :dependentFieldNames
 
         # @!method initialize(controlling_field_name:, controlling_field_value:, dependency_type:, dependent_field_names:)
-        #   @param controlling_field_name [String]
-        #   @param controlling_field_value [String]
-        #   @param dependency_type [Symbol, HubspotSDK::Models::Automation::PublicConditionalSingleFieldDependency::DependencyType]
+        #   @param controlling_field_name [String] The name of the field that determines the dependency.
+        #
+        #   @param controlling_field_value [String] The value of the controlling field that triggers the dependency.
+        #
+        #   @param dependency_type [Symbol, HubspotSDK::Models::Automation::PublicConditionalSingleFieldDependency::DependencyType] The type of dependency, with the default value being CONDITIONAL_SINGLE_FIELD.
+        #
         #   @param dependent_field_names [Array<String>]
 
+        # The type of dependency, with the default value being CONDITIONAL_SINGLE_FIELD.
+        #
         # @see HubspotSDK::Models::Automation::PublicConditionalSingleFieldDependency#dependency_type
         module DependencyType
           extend HubspotSDK::Internal::Type::Enum

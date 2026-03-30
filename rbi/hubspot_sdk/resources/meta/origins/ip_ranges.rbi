@@ -22,15 +22,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Meta::CollectionResponseIPRangeNoPaging)
           end
-          def list(
-            # An array of traffic directions to filter the IP ranges. Valid values are
-            # `INGRESS` and `EGRESS`.
-            direction: nil,
-            # An array of service types to filter the IP ranges. Valid values include `EMAIL`,
-            # `API`, `DNS`, `WEB_SCRAPING`, and `TEST_SERVICE`.
-            service: nil,
-            request_options: {}
-          )
+          def list(direction: nil, service: nil, request_options: {})
           end
 
           # Retrieve a simplified list of IP ranges for specified services and directions in
@@ -49,15 +41,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(String)
           end
-          def list_simple(
-            # An array of directions to filter the IP ranges by. Valid values are `INGRESS`
-            # and `EGRESS`.
-            direction: nil,
-            # An array specifying the service types to filter by. Valid values include
-            # `EMAIL`, `API`, `DNS`, `WEB_SCRAPING`, and `TEST_SERVICE`.
-            service: nil,
-            request_options: {}
-          )
+          def list_simple(direction: nil, service: nil, request_options: {})
           end
 
           # @api private

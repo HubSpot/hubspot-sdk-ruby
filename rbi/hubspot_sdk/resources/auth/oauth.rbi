@@ -51,6 +51,7 @@ module HubspotSDK
         )
         end
 
+        # Deletes/Revokes provided Refresh Token
         sig do
           params(
             token: String,

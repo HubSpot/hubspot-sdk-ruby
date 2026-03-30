@@ -1,9 +1,0 @@
-module HubspotSDK
-  module Resources
-    class DataStudio
-      attr_reader datasource: HubspotSDK::Resources::DataStudio::Datasource
-
-      def initialize: (client: HubspotSDK::Client) -> void
-    end
-  end
-end

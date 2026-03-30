@@ -60,11 +60,11 @@ module HubspotSDK
         #
         # @overload list_login_activities(after: nil, limit: nil, user_id: nil, request_options: {})
         #
-        # @param after [String] The paging cursor token of the last successfully read resource will be returned
+        # @param after [String] The cursor token value to get the next set of results. You can get this from the
         #
-        # @param limit [Integer] The maximum number of results to display per page.
+        # @param limit [Integer] The maximum number of results to display per page. Max value of limit is 200.
         #
-        # @param user_id [Integer]
+        # @param user_id [Integer] Identifier of user to retrieve activities for
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -93,15 +93,15 @@ module HubspotSDK
         #
         # @overload list_security_activities(after: nil, from_timestamp: nil, limit: nil, to_timestamp: nil, user_id: nil, request_options: {})
         #
-        # @param after [String] The paging cursor token of the last successfully read resource will be returned
+        # @param after [String] The cursor token value to get the next set of results. You can get this from the
         #
-        # @param from_timestamp [Integer]
+        # @param from_timestamp [Integer] Limit to activities created after this epoch timestamp.
         #
-        # @param limit [Integer] The maximum number of results to display per page.
+        # @param limit [Integer] The maximum number of results to display per page. Max value of limit is 200.
         #
-        # @param to_timestamp [Integer]
+        # @param to_timestamp [Integer] Limit to activities created before this epoch timestamp.
         #
-        # @param user_id [Integer]
+        # @param user_id [Integer] Identifier of user to retrieve activities for
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #

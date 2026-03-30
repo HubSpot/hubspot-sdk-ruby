@@ -5,6 +5,8 @@ module HubspotSDK
     class Marketing
       class Events
         class ListAssociations
+          # Gets lists associated with a marketing event by marketing event id
+          #
           # @overload list(marketing_event_id, request_options: {})
           #
           # @param marketing_event_id [String] The internal id of the marketing event in HubSpot.
@@ -23,6 +25,9 @@ module HubspotSDK
             )
           end
 
+          # Disassociates a list from a marketing event by marketing event id and ILS list
+          # id
+          #
           # @overload delete(list_id, marketing_event_id:, request_options: {})
           #
           # @param list_id [String] The ILS ID of the list.
@@ -52,6 +57,8 @@ module HubspotSDK
             )
           end
 
+          # Associates a list with a marketing event by marketing event id and ILS list id
+          #
           # @overload associate(list_id, marketing_event_id:, request_options: {})
           #
           # @param list_id [String] The ILS ID of the list.
@@ -84,6 +91,9 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Marketing::Events::ListAssociationAssociateByExternalAccountParams}
           # for more details.
+          #
+          # Associates a list with a marketing event by external account id, external event
+          # id, and ILS list id
           #
           # @overload associate_by_external_account(list_id, external_account_id:, external_event_id:, request_options: {})
           #
@@ -126,6 +136,9 @@ module HubspotSDK
           # {HubspotSDK::Models::Marketing::Events::ListAssociationDeleteByExternalAccountParams}
           # for more details.
           #
+          # Disassociates a list from a marketing event by external account id, external
+          # event id, and ILS list id
+          #
           # @overload delete_by_external_account(list_id, external_account_id:, external_event_id:, request_options: {})
           #
           # @param list_id [String] The ILS ID of the list.
@@ -166,6 +179,9 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Marketing::Events::ListAssociationListByExternalAccountParams}
           # for more details.
+          #
+          # Gets lists associated with a marketing event by external account id and external
+          # event id
           #
           # @overload list_by_external_account(external_event_id, external_account_id:, request_options: {})
           #

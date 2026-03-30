@@ -12,8 +12,14 @@ module HubspotSDK
       sig { returns(HubspotSDK::Resources::Cms::Domains) }
       attr_reader :domains
 
+      sig { returns(HubspotSDK::Resources::Cms::Hubdb) }
+      attr_reader :hubdb
+
       sig { returns(HubspotSDK::Resources::Cms::MediaBridge) }
       attr_reader :media_bridge
+
+      sig { returns(HubspotSDK::Resources::Cms::Pages) }
+      attr_reader :pages
 
       sig { returns(HubspotSDK::Resources::Cms::SiteSearch) }
       attr_reader :site_search

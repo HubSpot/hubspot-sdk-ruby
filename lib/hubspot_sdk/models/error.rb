@@ -4,7 +4,7 @@ module HubspotSDK
   module Models
     class Error < HubspotSDK::Internal::Type::BaseModel
       # @!attribute category
-      #   The error category.
+      #   The error category
       #
       #   @return [String]
       required :category, String
@@ -43,7 +43,7 @@ module HubspotSDK
       optional :links, HubspotSDK::Internal::Type::HashOf[String]
 
       # @!attribute sub_category
-      #   A specific category that contains more specific detail about the error.
+      #   A specific category that contains more specific detail about the error
       #
       #   @return [String, nil]
       optional :sub_category, String, api_name: :subCategory
@@ -52,7 +52,7 @@ module HubspotSDK
       #   Some parameter documentations has been truncated, see
       #   {HubspotSDK::Models::Error} for more details.
       #
-      #   @param category [String] The error category.
+      #   @param category [String] The error category
       #
       #   @param correlation_id [String] A unique identifier for the request. Include this value with any error reports o
       #
@@ -64,7 +64,7 @@ module HubspotSDK
       #
       #   @param links [Hash{Symbol=>String}] A map of link names to associated URIs containing documentation about the error
       #
-      #   @param sub_category [String] A specific category that contains more specific detail about the error.
+      #   @param sub_category [String] A specific category that contains more specific detail about the error
     end
   end
 end

@@ -70,6 +70,8 @@ module HubspotSDK
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Marketing::EmailUpdateParams} for more details.
         #
+        # Change properties of a marketing email.
+        #
         # @overload update(email_id, body_archived: nil, active_domain: nil, business_unit_id: nil, campaign: nil, content: nil, folder_id_v2: nil, from: nil, jitter_send_time: nil, language: nil, name: nil, publish_date: nil, rss_data: nil, send_on_publish: nil, state: nil, subcategory: nil, subject: nil, subscription_details: nil, testing: nil, to: nil, webversion: nil, request_options: {})
         #
         # @param email_id [String] Path param
@@ -214,6 +216,8 @@ module HubspotSDK
           )
         end
 
+        # Delete a marketing email by its ID
+        #
         # @overload delete(email_id, archived: nil, request_options: {})
         #
         # @param email_id [String]
@@ -237,9 +241,12 @@ module HubspotSDK
           )
         end
 
+        # This will create a duplicate email with the same properties as the original,
+        # with the exception of a unique ID.
+        #
         # @overload clone_(id:, clone_name: nil, language: nil, request_options: {})
         #
-        # @param id [String] The unique identifier of the email to be cloned.
+        # @param id [String] The email ID.
         #
         # @param clone_name [String] The name to assign to the cloned email.
         #
@@ -261,11 +268,15 @@ module HubspotSDK
           )
         end
 
+        # Create a variation of a marketing email for an A/B test. The new variation will
+        # be created as a draft. If an active variation already exists, a new one won't be
+        # created.
+        #
         # @overload create_ab_test_variation(content_id:, variation_name:, request_options: {})
         #
-        # @param content_id [String] ID of the email to test.
+        # @param content_id [String] ID of the object to test.
         #
-        # @param variation_name [String] Name of the variation to be created.
+        # @param variation_name [String] Name of A/B test variation.
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -283,6 +294,10 @@ module HubspotSDK
           )
         end
 
+        # Use this endpoint to get aggregated statistics of emails sent in a specified
+        # time span. It also returns the list of emails that were sent during the time
+        # span.
+        #
         # @overload get(email_ids: nil, end_timestamp: nil, property: nil, start_timestamp: nil, request_options: {})
         #
         # @param email_ids [Array<Integer>]
@@ -310,6 +325,10 @@ module HubspotSDK
           )
         end
 
+        # This endpoint lets you obtain the variation of an A/B marketing email. If the
+        # email is variation A (master) it will return variation B (variant) and vice
+        # versa.
+        #
         # @overload get_ab_test_variation(email_id, archived: nil, included_properties: nil, include_stats: nil, marketing_campaign_names: nil, variant_stats: nil, workflow_names: nil, request_options: {})
         #
         # @param email_id [String]
@@ -349,6 +368,9 @@ module HubspotSDK
           )
         end
 
+        # Get the draft version of an email (if it exists). If no draft version exists,
+        # the published email is returned.
+        #
         # @overload get_draft(email_id, request_options: {})
         #
         # @param email_id [String]
@@ -366,6 +388,9 @@ module HubspotSDK
           )
         end
 
+        # Get aggregated statistics in intervals for a specified time span. Each interval
+        # contains aggregated statistics of the emails that were sent in that time.
+        #
         # @overload get_histogram(email_ids: nil, end_timestamp: nil, interval: nil, start_timestamp: nil, request_options: {})
         #
         # @param email_ids [Array<Integer>]
@@ -393,6 +418,8 @@ module HubspotSDK
           )
         end
 
+        # Get a specific revision of a marketing email.
+        #
         # @overload get_revision(revision_id, email_id:, request_options: {})
         #
         # @param revision_id [String]
@@ -418,6 +445,10 @@ module HubspotSDK
 
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Marketing::EmailListRevisionsParams} for more details.
+        #
+        # Get a list of all versions of a marketing email, with each entry including the
+        # full state of that particular version. To view the most recent version, sort by
+        # the updatedAt parameter.
         #
         # @overload list_revisions(email_id, after: nil, before: nil, limit: nil, request_options: {})
         #
@@ -447,6 +478,10 @@ module HubspotSDK
           )
         end
 
+        # If you have a Marketing Hub Enterprise account or the transactional email
+        # add-on, you can use this endpoint to publish an automated email or send/schedule
+        # a regular email.
+        #
         # @overload publish(email_id, request_options: {})
         #
         # @param email_id [String]
@@ -464,6 +499,8 @@ module HubspotSDK
           )
         end
 
+        # Resets the draft back to a copy of the live object.
+        #
         # @overload reset_draft(email_id, request_options: {})
         #
         # @param email_id [String]
@@ -481,6 +518,9 @@ module HubspotSDK
           )
         end
 
+        # Restores a previous revision of a marketing email. The current revision becomes
+        # old, and the restored revision is given a new version number.
+        #
         # @overload restore_revision(revision_id, email_id:, request_options: {})
         #
         # @param revision_id [String]
@@ -504,10 +544,15 @@ module HubspotSDK
           )
         end
 
+        # Restores a previous revision of a marketing email to DRAFT state. If there is
+        # currently something in the draft for that object, it is overwritten.
+        #
         # @overload restore_revision_to_draft(revision_id, email_id:, request_options: {})
         #
-        # @param revision_id [Integer]
+        # @param revision_id [Integer] The ID of the revision.
+        #
         # @param email_id [String]
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Marketing::PublicEmail]
@@ -527,6 +572,11 @@ module HubspotSDK
           )
         end
 
+        # If you have a Marketing Hub Enterprise account or the transactional email
+        # add-on, you can use this endpoint to unpublish an automated email or cancel a
+        # regular email. If the email is already in the process of being sent, canceling
+        # might not be possible.
+        #
         # @overload unpublish(email_id, request_options: {})
         #
         # @param email_id [String]
@@ -546,6 +596,11 @@ module HubspotSDK
 
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Marketing::EmailUpdateDraftParams} for more details.
+        #
+        # Create or update the draft version of a marketing email. If no draft exists, the
+        # system creates a draft from the current “live” email then applies the request
+        # body to that draft. The draft version only lives on the buffer—the email is not
+        # cloned.
         #
         # @overload update_draft(email_id, active_domain: nil, archived: nil, business_unit_id: nil, campaign: nil, content: nil, folder_id_v2: nil, from: nil, jitter_send_time: nil, language: nil, name: nil, publish_date: nil, rss_data: nil, send_on_publish: nil, state: nil, subcategory: nil, subject: nil, subscription_details: nil, testing: nil, to: nil, webversion: nil, request_options: {})
         #

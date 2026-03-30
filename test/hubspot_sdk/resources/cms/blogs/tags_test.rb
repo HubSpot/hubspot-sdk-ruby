@@ -74,30 +74,6 @@ class HubspotSDK::Test::Resources::Cms::Blogs::TagsTest < HubspotSDK::Test::Reso
     end
   end
 
-  def test_create_batch_required_params
-    skip("Mock server tests are disabled")
-
-    response =
-      @hubspot.cms.blogs.tags.create_batch(
-        inputs: [
-          {
-            id: "id",
-            created: "2019-12-27T18:11:19.117Z",
-            deletedAt: "2019-12-27T18:11:19.117Z",
-            language: :aa,
-            name: "name",
-            slug: "slug",
-            translatedFromId: 0,
-            updated: "2019-12-27T18:11:19.117Z"
-          }
-        ]
-      )
-
-    assert_pattern do
-      response => StringIO
-    end
-  end
-
   def test_create_lang_variation_required_params
     skip("Mock server tests are disabled")
 
@@ -105,16 +81,6 @@ class HubspotSDK::Test::Resources::Cms::Blogs::TagsTest < HubspotSDK::Test::Reso
 
     assert_pattern do
       response => StringIO
-    end
-  end
-
-  def test_delete_batch_required_params
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.cms.blogs.tags.delete_batch(inputs: ["string"])
-
-    assert_pattern do
-      response => nil
     end
   end
 
@@ -138,10 +104,60 @@ class HubspotSDK::Test::Resources::Cms::Blogs::TagsTest < HubspotSDK::Test::Reso
     end
   end
 
-  def test_get_batch_required_params
+  def test_list_authors_cursor
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.blogs.tags.get_batch(inputs: ["string"])
+    response = @hubspot.cms.blogs.tags.list_authors_cursor
+
+    assert_pattern do
+      response => StringIO
+    end
+  end
+
+  def test_list_authors_cursor_by_query
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.cms.blogs.tags.list_authors_cursor_by_query
+
+    assert_pattern do
+      response => StringIO
+    end
+  end
+
+  def test_list_cursor
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.cms.blogs.tags.list_cursor
+
+    assert_pattern do
+      response => StringIO
+    end
+  end
+
+  def test_list_cursor_by_query
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.cms.blogs.tags.list_cursor_by_query
+
+    assert_pattern do
+      response => StringIO
+    end
+  end
+
+  def test_list_posts_cursor
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.cms.blogs.tags.list_posts_cursor
+
+    assert_pattern do
+      response => StringIO
+    end
+  end
+
+  def test_list_posts_cursor_by_query
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.cms.blogs.tags.list_posts_cursor_by_query
 
     assert_pattern do
       response => StringIO
@@ -155,16 +171,6 @@ class HubspotSDK::Test::Resources::Cms::Blogs::TagsTest < HubspotSDK::Test::Reso
 
     assert_pattern do
       response => nil
-    end
-  end
-
-  def test_update_batch_required_params
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.cms.blogs.tags.update_batch(inputs: [{}])
-
-    assert_pattern do
-      response => StringIO
     end
   end
 

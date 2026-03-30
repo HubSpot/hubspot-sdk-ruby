@@ -5,25 +5,32 @@ module HubspotSDK
     module Automation
       class DoubleFieldSchema < HubspotSDK::Internal::Type::BaseModel
         # @!attribute type
+        #   Indicates the field type as DOUBLE.
         #
         #   @return [Symbol, HubspotSDK::Models::Automation::DoubleFieldSchema::Type]
         required :type, enum: -> { HubspotSDK::Automation::DoubleFieldSchema::Type }
 
         # @!attribute maximum
+        #   The maximum allowable value for the double field.
         #
         #   @return [Float, nil]
         optional :maximum, Float
 
         # @!attribute minimum
+        #   The minimum allowable value for the double field.
         #
         #   @return [Float, nil]
         optional :minimum, Float
 
         # @!method initialize(type:, maximum: nil, minimum: nil)
-        #   @param type [Symbol, HubspotSDK::Models::Automation::DoubleFieldSchema::Type]
-        #   @param maximum [Float]
-        #   @param minimum [Float]
+        #   @param type [Symbol, HubspotSDK::Models::Automation::DoubleFieldSchema::Type] Indicates the field type as DOUBLE.
+        #
+        #   @param maximum [Float] The maximum allowable value for the double field.
+        #
+        #   @param minimum [Float] The minimum allowable value for the double field.
 
+        # Indicates the field type as DOUBLE.
+        #
         # @see HubspotSDK::Models::Automation::DoubleFieldSchema#type
         module Type
           extend HubspotSDK::Internal::Type::Enum

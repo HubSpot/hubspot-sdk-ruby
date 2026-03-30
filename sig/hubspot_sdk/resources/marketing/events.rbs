@@ -12,6 +12,8 @@ module HubspotSDK
 
         attr_reader settings: HubspotSDK::Resources::Marketing::Events::Settings
 
+        attr_reader subscriber_state: HubspotSDK::Resources::Marketing::Events::SubscriberState
+
         def create: (
           custom_properties: ::Array[HubspotSDK::PropertyValue],
           event_name: String,
@@ -41,6 +43,12 @@ module HubspotSDK
           ?start_date_time: Time,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Marketing::MarketingEventPublicDefaultResponseV2
+
+        def list: (
+          ?after: String,
+          ?limit: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Marketing::MarketingEventPublicReadResponseV2]
 
         def delete: (
           String object_id_,
@@ -126,22 +134,6 @@ module HubspotSDK
           ?start_date_time: Time,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Marketing::MarketingEventPublicDefaultResponse
-
-        def upsert_subscriber_state_by_email: (
-          String subscriber_state,
-          external_event_id: String,
-          external_account_id: String,
-          inputs: ::Array[HubspotSDK::Marketing::MarketingEventEmailSubscriber],
-          ?request_options: HubspotSDK::request_opts
-        ) -> StringIO
-
-        def upsert_subscriber_state_by_id: (
-          String subscriber_state,
-          external_event_id: String,
-          external_account_id: String,
-          inputs: ::Array[HubspotSDK::Marketing::MarketingEventSubscriber],
-          ?request_options: HubspotSDK::request_opts
-        ) -> StringIO
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

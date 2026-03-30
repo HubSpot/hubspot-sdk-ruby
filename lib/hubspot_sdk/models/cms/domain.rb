@@ -48,25 +48,25 @@ module HubspotSDK
         required :is_ssl_only, HubspotSDK::Internal::Type::Boolean, api_name: :isSslOnly
 
         # @!attribute is_used_for_blog_post
-        #   Whether the domain is used for CMS blog posts. Deprecated
+        #   Whether the domain is used for CMS blog posts.
         #
         #   @return [Boolean]
         required :is_used_for_blog_post, HubspotSDK::Internal::Type::Boolean, api_name: :isUsedForBlogPost
 
         # @!attribute is_used_for_email
-        #   Whether the domain is used for CMS email web pages. Deprecated
+        #   Whether the domain is used for CMS email web pages.
         #
         #   @return [Boolean]
         required :is_used_for_email, HubspotSDK::Internal::Type::Boolean, api_name: :isUsedForEmail
 
         # @!attribute is_used_for_knowledge
-        #   Whether the domain is used for CMS knowledge pages. Deprecated
+        #   Whether the domain is used for CMS knowledge pages.
         #
         #   @return [Boolean]
         required :is_used_for_knowledge, HubspotSDK::Internal::Type::Boolean, api_name: :isUsedForKnowledge
 
         # @!attribute is_used_for_landing_page
-        #   Whether the domain is used for CMS landing pages. Deprecated
+        #   Whether the domain is used for CMS landing pages.
         #
         #   @return [Boolean]
         required :is_used_for_landing_page,
@@ -74,7 +74,7 @@ module HubspotSDK
                  api_name: :isUsedForLandingPage
 
         # @!attribute is_used_for_site_page
-        #   Whether the domain is used for CMS site pages. Deprecated
+        #   Whether the domain is used for CMS site pages.
         #
         #   @return [Boolean]
         required :is_used_for_site_page, HubspotSDK::Internal::Type::Boolean, api_name: :isUsedForSitePage
@@ -144,15 +144,15 @@ module HubspotSDK
         #
         #   @param is_ssl_only [Boolean] Indicates whether the domain is accessible only via SSL.
         #
-        #   @param is_used_for_blog_post [Boolean] Whether the domain is used for CMS blog posts. Deprecated
+        #   @param is_used_for_blog_post [Boolean] Whether the domain is used for CMS blog posts.
         #
-        #   @param is_used_for_email [Boolean] Whether the domain is used for CMS email web pages. Deprecated
+        #   @param is_used_for_email [Boolean] Whether the domain is used for CMS email web pages.
         #
-        #   @param is_used_for_knowledge [Boolean] Whether the domain is used for CMS knowledge pages. Deprecated
+        #   @param is_used_for_knowledge [Boolean] Whether the domain is used for CMS knowledge pages.
         #
-        #   @param is_used_for_landing_page [Boolean] Whether the domain is used for CMS landing pages. Deprecated
+        #   @param is_used_for_landing_page [Boolean] Whether the domain is used for CMS landing pages.
         #
-        #   @param is_used_for_site_page [Boolean] Whether the domain is used for CMS site pages. Deprecated
+        #   @param is_used_for_site_page [Boolean] Whether the domain is used for CMS site pages.
         #
         #   @param manually_marked_as_resolving [Boolean] Indicates whether the domain has been manually marked as resolving.
         #

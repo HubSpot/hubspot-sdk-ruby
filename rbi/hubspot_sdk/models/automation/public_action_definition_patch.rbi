@@ -12,6 +12,7 @@ module HubspotSDK
             )
           end
 
+        # The URL endpoint where the action is executed.
         sig { returns(T.nilable(String)) }
         attr_reader :action_url
 
@@ -83,6 +84,7 @@ module HubspotSDK
         end
         attr_writer :input_fields
 
+        # Contains labels for the action, including names and descriptions.
         sig do
           returns(
             T.nilable(
@@ -137,6 +139,7 @@ module HubspotSDK
         end
         attr_writer :output_fields
 
+        # Indicates whether the action is published and available for use.
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :published
 
@@ -175,14 +178,17 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # The URL endpoint where the action is executed.
           action_url: nil,
           execution_rules: nil,
           input_field_dependencies: nil,
           input_fields: nil,
+          # Contains labels for the action, including names and descriptions.
           labels: nil,
           object_request_options: nil,
           object_types: nil,
           output_fields: nil,
+          # Indicates whether the action is published and available for use.
           published: nil
         )
         end

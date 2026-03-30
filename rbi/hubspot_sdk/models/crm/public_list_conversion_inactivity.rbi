@@ -20,7 +20,9 @@ module HubspotSDK
         end
         attr_accessor :conversion_type
 
-        # The number of time units for the inactivity period.
+        # Value used to paginate through lists. The `offset` provided in the response can
+        # be used in the next request to fetch the next page of results. Defaults to `0`
+        # if no offset is provided.
         sig { returns(Integer) }
         attr_accessor :offset
 
@@ -44,7 +46,9 @@ module HubspotSDK
         def self.new(
           # Specifies the type of conversion (INACTIVITY).
           conversion_type:,
-          # The number of time units for the inactivity period.
+          # Value used to paginate through lists. The `offset` provided in the response can
+          # be used in the next request to fetch the next page of results. Defaults to `0`
+          # if no offset is provided.
           offset:,
           # The unit of time for the inactivity period, such as (DAY, MONTH, WEEK).
           time_unit:

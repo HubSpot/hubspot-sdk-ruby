@@ -1,0 +1,19 @@
+module HubspotSDK
+  module Resources
+    class Marketing
+      class Transactional
+        class SingleEmail
+          def send_: (
+            contact_properties: ::Hash[Symbol, String],
+            custom_properties: ::Hash[Symbol, top],
+            email_id: Integer,
+            message: HubspotSDK::Marketing::PublicSingleSendEmail,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Marketing::EmailSendStatusView
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

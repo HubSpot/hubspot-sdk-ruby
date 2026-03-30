@@ -42,7 +42,7 @@ module HubspotSDK
         sig { params(author_full_name: String).void }
         attr_writer :author_full_name
 
-        # For knowledge articles, the category of the article.
+        # The error category
         sig { returns(T.nilable(String)) }
         attr_reader :category
 
@@ -186,7 +186,7 @@ module HubspotSDK
           url:,
           # Name of the author.
           author_full_name: nil,
-          # For knowledge articles, the category of the article.
+          # The error category
           category: nil,
           # The ID of the document in HubSpot.
           combined_id: nil,

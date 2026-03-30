@@ -7,6 +7,7 @@ module HubspotSDK
         # @see HubspotSDK::Resources::Cms::Blogs::Settings#list_revisions
         class VersionBlog < HubspotSDK::Internal::Type::BaseModel
           # @!attribute id
+          #   The id of the version.
           #
           #   @return [String]
           required :id, String
@@ -28,7 +29,7 @@ module HubspotSDK
           required :user, -> { HubspotSDK::VersionUser }
 
           # @!method initialize(id:, object:, updated_at:, user:)
-          #   @param id [String]
+          #   @param id [String] The id of the version.
           #
           #   @param object [HubspotSDK::Models::Cms::Blogs::Blog]
           #

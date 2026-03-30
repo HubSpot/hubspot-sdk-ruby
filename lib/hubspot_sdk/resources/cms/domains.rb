@@ -54,6 +54,8 @@ module HubspotSDK
           )
         end
 
+        # Returns a single domains with the id specified.
+        #
         # @overload get(domain_id, request_options: {})
         #
         # @param domain_id [String]

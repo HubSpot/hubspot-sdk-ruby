@@ -8,11 +8,9 @@ module HubspotSDK
           # @return [HubspotSDK::Resources::Crm::Objects::Carts::Batch]
           attr_reader :batch
 
-          # Create a single cart. Include a `properties` object to define
-          # [property values](https://developers.hubspot.com/docs/guides/api/crm/properties)
-          # for the {objectName}, along with an `associations` array to define
-          # [associations](https://developers.hubspot.com/docs/guides/api/crm/associations/associations-v4)
-          # with other records.
+          # Create a cart with the given properties and return a copy of the object,
+          # including the ID. Documentation and examples for creating standard carts is
+          # provided.
           #
           # @overload create(associations:, properties:, request_options: {})
           #
@@ -39,10 +37,11 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::CartUpdateParams} for more details.
           #
-          # Update a cart by ID (`objectId`) or unique property value (`idProperty`).
-          # Provided property values will be overwritten. Read-only and non-existent
-          # properties will result in an error. Properties values can be cleared by passing
-          # an empty string.
+          # Perform a partial update of a cart, specified by its ID. Alternatively, you can
+          # specify a cart by a unique property value using the `idProperty` query
+          # parameter. Provided property values will be overwritten. Read-only and
+          # non-existent properties will result in an error. Properties values can be
+          # cleared by passing an empty string.
           #
           # @overload update(cart_id, properties:, id_property: nil, request_options: {})
           #
@@ -74,7 +73,8 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::CartListParams} for more details.
           #
-          # Retrieve all carts. Control what is returned via the `properties` query param.
+          # Retrieve all carts. You can control what is returned via the `properties` query
+          # parameter.
           #
           # @overload list(after: nil, archived: nil, associations: nil, limit: nil, properties: nil, properties_with_history: nil, request_options: {})
           #
@@ -108,9 +108,7 @@ module HubspotSDK
             )
           end
 
-          # Archive a cart by ID. Deleted carts can be restored within 90 days of deletion.
-          # Learn more about
-          # [restoring records](https://knowledge.hubspot.com/records/restore-deleted-records).
+          # Delete a cart by its ID, moving it to the recycling bin.
           #
           # @overload delete(cart_id, request_options: {})
           #
@@ -132,8 +130,7 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Crm::Objects::CartGetParams} for more details.
           #
-          # Retrieve a cart by its ID (`objectId`) or by a unique property (`idProperty`).
-          # Includes options for specifying what gets returned, such as the `properties`
+          # Retrieve a cart by its ID. You can control what is returned via the `properties`
           # query parameter.
           #
           # @overload get(cart_id, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})

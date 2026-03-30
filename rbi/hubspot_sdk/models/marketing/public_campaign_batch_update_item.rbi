@@ -12,12 +12,12 @@ module HubspotSDK
             )
           end
 
-        # The unique identifier for the campaign to be updated. It is a string.
+        # The unique identifier for the campaign to be updated.
         sig { returns(String) }
         attr_accessor :id
 
-        # A map of property names to their new values for the campaign. Each property name
-        # is a string, and its value is also a string.
+        # A set of key-value pairs representing the properties to be updated for the
+        # campaign.
         sig { returns(T::Hash[Symbol, String]) }
         attr_accessor :properties
 
@@ -27,10 +27,10 @@ module HubspotSDK
           )
         end
         def self.new(
-          # The unique identifier for the campaign to be updated. It is a string.
+          # The unique identifier for the campaign to be updated.
           id:,
-          # A map of property names to their new values for the campaign. Each property name
-          # is a string, and its value is also a string.
+          # A set of key-value pairs representing the properties to be updated for the
+          # campaign.
           properties:
         )
         end

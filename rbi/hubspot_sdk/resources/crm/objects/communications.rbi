@@ -10,12 +10,9 @@ module HubspotSDK
           end
           attr_reader :batch
 
-          # Create a single communication (WhatsApp, SMS, LinkedIn message). Include a
-          # `properties` object to define
-          # [property values](https://developers.hubspot.com/docs/guides/api/crm/properties)
-          # for the {objectName}, along with an `associations` array to define
-          # [associations](https://developers.hubspot.com/docs/guides/api/crm/associations/associations-v4)
-          # with other CRM records.
+          # Create a communication with the given properties and return a copy of the
+          # object, including the ID. Documentation and examples for creating standard
+          # communications is provided.
           sig do
             params(
               associations:
@@ -32,10 +29,13 @@ module HubspotSDK
           )
           end
 
-          # Update a communication by ID (`objectId`) or unique property value
-          # (`idProperty`). Provided property values will be overwritten. Read-only and
-          # non-existent properties will result in an error. Properties values can be
-          # cleared by passing an empty string.
+          # Perform a partial update of an Object identified by `{communicationId}`or
+          # optionally a unique property value as specified by the `idProperty` query param.
+          # `{communicationId}` refers to the internal object ID by default, and the
+          # `idProperty` query param refers to a property whose values are unique for the
+          # object. Provided property values will be overwritten. Read-only and non-existent
+          # properties will result in an error. Properties values can be cleared by passing
+          # an empty string.
           sig do
             params(
               communication_id: String,
@@ -55,9 +55,8 @@ module HubspotSDK
           )
           end
 
-          # Retrieve a communication by its ID (`objectId`) or by a unique property
-          # (`idProperty`). You can specify what is returned using the `properties` query
-          # parameter.
+          # Read a page of communications. Control what is returned via the `properties`
+          # query param.
           sig do
             params(
               after: String,
@@ -98,7 +97,7 @@ module HubspotSDK
           )
           end
 
-          # Delete a communication by ID.
+          # Move an Object identified by `{communicationId}` to the recycling bin.
           sig do
             params(
               communication_id: String,
@@ -108,9 +107,10 @@ module HubspotSDK
           def delete(communication_id, request_options: {})
           end
 
-          # Retrieve a communication (WhatsApp, SMS, LinkedIn message) by its ID
-          # (`objectId`) or by a unique property (`idProperty`). You can specify what is
-          # returned using the `properties` query parameter.
+          # Read an Object identified by `{communicationId}`. `{communicationId}` refers to
+          # the internal object ID by default, or optionally any unique property value as
+          # specified by the `idProperty` query param. Control what is returned via the
+          # `properties` query param.
           sig do
             params(
               communication_id: String,

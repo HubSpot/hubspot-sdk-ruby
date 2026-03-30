@@ -14,35 +14,22 @@ module HubspotSDK
         required :subscriber_id_string, String
 
         # @!attribute channel
-        #   A required string indicating the communication channel to retrieve the status
-        #   for. Valid value is 'EMAIL'.
         #
         #   @return [Symbol, HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetStatusesParams::Channel]
         required :channel,
                  enum: -> { HubspotSDK::CommunicationPreferences::CommunicationPreferenceGetStatusesParams::Channel }
 
         # @!attribute business_unit_id
-        #   An optional integer representing the business unit ID to filter the subscription
-        #   status.
         #
         #   @return [Integer, nil]
         optional :business_unit_id, Integer
 
         # @!method initialize(subscriber_id_string:, channel:, business_unit_id: nil, request_options: {})
-        #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetStatusesParams}
-        #   for more details.
-        #
         #   @param subscriber_id_string [String]
-        #
-        #   @param channel [Symbol, HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetStatusesParams::Channel] A required string indicating the communication channel to retrieve the status fo
-        #
-        #   @param business_unit_id [Integer] An optional integer representing the business unit ID to filter the subscription
-        #
+        #   @param channel [Symbol, HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetStatusesParams::Channel]
+        #   @param business_unit_id [Integer]
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
 
-        # A required string indicating the communication channel to retrieve the status
-        # for. Valid value is 'EMAIL'.
         module Channel
           extend HubspotSDK::Internal::Type::Enum
 

@@ -1,0 +1,46 @@
+module HubspotSDK
+  module Resources
+    class Crm
+      class FeatureFlags
+        attr_reader batch: HubspotSDK::Resources::Crm::FeatureFlags::Batch
+
+        def update: (
+          Integer portal_id,
+          app_id: Integer,
+          flag_name: String,
+          flag_state: HubspotSDK::Models::Crm::PortalFlagStatePutRequest::flag_state,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Crm::PortalFlagStateResponse
+
+        def delete: (
+          Integer portal_id,
+          app_id: Integer,
+          flag_name: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Crm::PortalFlagStateResponse
+
+        def get: (
+          Integer portal_id,
+          app_id: Integer,
+          flag_name: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Crm::PortalFlagStateResponse
+
+        def list_all: (
+          Integer app_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Crm::FlagsForAppResponse
+
+        def list_portals: (
+          String flag_name,
+          app_id: Integer,
+          ?limit: Integer,
+          ?start_portal_id: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Crm::PortalFlagStateBatchResponse
+
+        def initialize: (client: HubspotSDK::Client) -> void
+      end
+    end
+  end
+end

@@ -11,15 +11,16 @@ module HubspotSDK
         required :id, String
 
         # @!attribute name
-        #   The new name for the folder, which will also update the fullPath and all
-        #   children of the folder.
+        #   New name. If specified the folder's name and fullPath will change. All children
+        #   of the folder will be updated accordingly.
         #
         #   @return [String, nil]
         optional :name, String
 
         # @!attribute parent_folder_id
-        #   The ID of the new parent folder, which will move the folder and its children
-        #   into the specified folder.
+        #   New parent folderId. If changed, the folder and all it's children will be moved
+        #   into the specified folder. parentFolderId and parentFolderPath cannot be
+        #   specified at the same time.
         #
         #   @return [Integer, nil]
         optional :parent_folder_id, Integer, api_name: :parentFolderId
@@ -30,9 +31,9 @@ module HubspotSDK
         #
         #   @param id [String] The unique identifier of the folder to be updated.
         #
-        #   @param name [String] The new name for the folder, which will also update the fullPath and all childre
+        #   @param name [String] New name. If specified the folder's name and fullPath will change. All children
         #
-        #   @param parent_folder_id [Integer] The ID of the new parent folder, which will move the folder and its children int
+        #   @param parent_folder_id [Integer] New parent folderId. If changed, the folder and all it's children will be moved
       end
     end
   end

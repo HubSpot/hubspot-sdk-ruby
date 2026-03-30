@@ -3,7 +3,7 @@ module HubspotSDK
     module Cms
       type media_bridge_list_object_types_by_media_type_params =
         {
-          app_id: String,
+          app_id: Integer,
           media_type: HubspotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::media_type,
           include_full_definition: bool
         }
@@ -13,7 +13,7 @@ module HubspotSDK
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
-        attr_accessor app_id: String
+        attr_accessor app_id: Integer
 
         attr_accessor media_type: HubspotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::media_type
 
@@ -22,14 +22,14 @@ module HubspotSDK
         def include_full_definition=: (bool) -> bool
 
         def initialize: (
-          app_id: String,
+          app_id: Integer,
           media_type: HubspotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::media_type,
           ?include_full_definition: bool,
           ?request_options: HubspotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
-          app_id: String,
+          app_id: Integer,
           media_type: HubspotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::media_type,
           include_full_definition: bool,
           request_options: HubspotSDK::RequestOptions

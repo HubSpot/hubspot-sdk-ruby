@@ -12,9 +12,11 @@ module HubspotSDK
             )
           end
 
+        # The index number representing the execution order of the action.
         sig { returns(Integer) }
         attr_accessor :action_execution_index
 
+        # The ID associated with the enrollment process.
         sig { returns(Integer) }
         attr_accessor :enrollment_id
 
@@ -24,7 +26,12 @@ module HubspotSDK
             enrollment_id: Integer
           ).returns(T.attached_class)
         end
-        def self.new(action_execution_index:, enrollment_id:)
+        def self.new(
+          # The index number representing the execution order of the action.
+          action_execution_index:,
+          # The ID associated with the enrollment process.
+          enrollment_id:
+        )
         end
 
         sig do

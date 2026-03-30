@@ -9,6 +9,15 @@ module HubspotSDK
           attr_reader :batch
 
           sig do
+            returns(HubspotSDK::Resources::Cms::Blogs::Posts::MultiLanguage)
+          end
+          attr_reader :multi_language
+
+          sig { returns(HubspotSDK::Resources::Cms::Blogs::Posts::Revisions) }
+          attr_reader :revisions
+
+          # Create a new blog post, specifying its content in the request body.
+          sig do
             params(
               id: String,
               ab_status: HubspotSDK::Cms::Blogs::BlogPost::AbStatus::OrSymbol,
@@ -44,7 +53,7 @@ module HubspotSDK
               include_default_custom_css: T::Boolean,
               language: HubspotSDK::Cms::Blogs::BlogPost::Language::OrSymbol,
               layout_sections:
-                T::Hash[Symbol, HubspotSDK::Cms::Blogs::LayoutSection::OrHash],
+                T::Hash[Symbol, HubspotSDK::Cms::LayoutSection::OrHash],
               link_rel_canonical_url: String,
               mab_experiment_id: String,
               meta_description: String,
@@ -70,7 +79,7 @@ module HubspotSDK
               translations:
                 T::Hash[
                   Symbol,
-                  HubspotSDK::Cms::Blogs::ContentLanguageVariation::OrHash
+                  HubspotSDK::Cms::ContentLanguageVariation::OrHash
                 ],
               updated: Time,
               updated_by_id: String,
@@ -82,7 +91,7 @@ module HubspotSDK
             ).returns(StringIO)
           end
           def create(
-            # The unique ID of the blog post.
+            # The unique ID of the Blog Post.
             id:,
             # The status of the AB test associated with this blog post, if applicable
             #
@@ -99,37 +108,35 @@ module HubspotSDK
             # List of stylesheets to attach to this blog post. These stylesheets are attached
             # to just this page. Order of precedence is bottom to top, just like in the HTML.
             attached_stylesheets:,
-            # The name of the user who last published the blog post. For posts that haven't
-            # been published yet, this property will reflect the user who initially created
-            # the draft.
+            # The name of the user that updated this Blog Post.
             author_name:,
-            # The ID of the blog author associated with this post.
+            # The ID of the Blog Author associated with this Blog Post.
             blog_author_id:,
-            # The GUID of the marketing campaign the post is associated with.
+            # The GUID of the marketing campaign this Blog Post is a part of.
             campaign:,
-            # ID of the object type.
+            # ID of the type of object this is. Should always .
             category_id:,
-            # The ID of the post's parent blog.
+            # The ID of the parent Blog this Blog Post is associated with.
             content_group_id:,
             # An ENUM descibing the type of this object. Should always be BLOG_POST.
             content_type_category:,
             # The timestamp (ISO8601 format) when this Blog Post was created.
             created:,
-            # The ID of the user that created the post.
+            # The ID of the user that created this Blog Post.
             created_by_id:,
             # Whether the post is published (true or false)
             currently_published:,
             # A generated ENUM descibing the current state of this Blog Post. Should always
             # match state.
             current_state:,
-            # The domain that the post lives on. If null, the post will default to the domain
-            # of the parent blog.
+            # The domain this Blog Post will resolve to. If null, the Blog Post will default
+            # to the domain of the ParentBlog.
             domain:,
             # The identifier for the data source used by the dynamic page.
             dynamic_page_data_source_id:,
             # The type of data source used by the dynamic page.
             dynamic_page_data_source_type:,
-            # For dynamic HubDB pages, the ID of the HubDB table this post references.
+            # The ID of the HubDB table this Blog Post references, if applicable
             dynamic_page_hub_db_table_id:,
             # Boolean to determine whether or not the styles from the template should be
             # applied.
@@ -151,12 +158,12 @@ module HubspotSDK
             # Custom HTML for embed codes, javascript, etc. that goes in the <head> tag of the
             # page.
             head_html:,
-            # The HTML title of the post.
+            # The html title of this Blog Post.
             html_title:,
             # Boolean to determine whether or not the Primary CSS Files should be applied.
             include_default_custom_css:,
-            # The explicitly defined ISO 639 language code of the post. If null, the post will
-            # default to the language of the parent blog.
+            # The explicitly defined ISO 639 language code of the Blog Post. If null, the Blog
+            # Post will default to the language of the ParentBlog.
             language:,
             # A structure detailing the layout sections of the blog post.
             layout_sections:,
@@ -167,7 +174,7 @@ module HubspotSDK
             mab_experiment_id:,
             # A description that goes in <meta> tag on the page.
             meta_description:,
-            # The internal name of the post.
+            # The internal name of the Blog Post.
             name:,
             # The date at which this blog post should expire and begin redirecting to another
             # url or page.
@@ -181,7 +188,7 @@ module HubspotSDK
             # this or pageExpiryRedirectId.
             page_expiry_redirect_url:,
             # Set this to create a password protected page. Entering the password will be
-            # required to view the blog post.
+            # required to view the page.
             password:,
             # The HTML of the main post body.
             post_body:,
@@ -200,27 +207,27 @@ module HubspotSDK
             rss_body:,
             # The contents of the RSS summary for this Blog Post.
             rss_summary:,
-            # The URL slug of the blog post. This field is appended to the domain to construct
-            # the url of this post.
+            # The path of the this blog post. This field is appended to the domain to
+            # construct the url of this post.
             slug:,
-            # An enumeration describing the current publish state of the post.
+            # An ENUM descibing the current state of this Blog Post.
             state:,
-            # The IDs of the tags associated with this post.
+            # List of IDs for the tags associated with this Blog Post.
             tag_ids:,
             # A collection of settings specific to the theme applied to the blog post.
             theme_settings_values:,
-            # ID of the primary blog post that this post was translated from.
+            # ID of the primary blog post this object was translated from.
             translated_from_id:,
             # A map of translations for the blog post, each associated with a specific
             # language variation.
             translations:,
             # The timestamp (ISO8601 format) when this Blog Post was updated.
             updated:,
-            # The ID of the user that updated the post.
+            # The ID of the user that updated this Blog Post.
             updated_by_id:,
             # A generated field representing the URL of this blog post.
             url:,
-            # Boolean to determine if this post should use a featured image.
+            # Boolean to determine if this post should use a featuredImage.
             use_featured_image:,
             # A data structure containing the data for all the modules inside the containers
             # for this post. This will only be populated if the page has widget containers.
@@ -231,6 +238,8 @@ module HubspotSDK
           )
           end
 
+          # Partially updates a single blog post by ID. You only need to specify the values
+          # that you want to update.
           sig do
             params(
               object_id_: String,
@@ -268,7 +277,7 @@ module HubspotSDK
               include_default_custom_css: T::Boolean,
               language: HubspotSDK::Cms::Blogs::BlogPost::Language::OrSymbol,
               layout_sections:
-                T::Hash[Symbol, HubspotSDK::Cms::Blogs::LayoutSection::OrHash],
+                T::Hash[Symbol, HubspotSDK::Cms::LayoutSection::OrHash],
               link_rel_canonical_url: String,
               mab_experiment_id: String,
               meta_description: String,
@@ -294,7 +303,7 @@ module HubspotSDK
               translations:
                 T::Hash[
                   Symbol,
-                  HubspotSDK::Cms::Blogs::ContentLanguageVariation::OrHash
+                  HubspotSDK::Cms::ContentLanguageVariation::OrHash
                 ],
               updated: Time,
               updated_by_id: String,
@@ -309,7 +318,7 @@ module HubspotSDK
           def update(
             # Path param
             object_id_,
-            # Body param: The unique ID of the blog post.
+            # Body param: The unique ID of the Blog Post.
             id:,
             # Body param: The status of the AB test associated with this blog post, if
             # applicable
@@ -328,39 +337,36 @@ module HubspotSDK
             # are attached to just this page. Order of precedence is bottom to top, just like
             # in the HTML.
             attached_stylesheets:,
-            # Body param: The name of the user who last published the blog post. For posts
-            # that haven't been published yet, this property will reflect the user who
-            # initially created the draft.
+            # Body param: The name of the user that updated this Blog Post.
             author_name:,
-            # Body param: The ID of the blog author associated with this post.
+            # Body param: The ID of the Blog Author associated with this Blog Post.
             blog_author_id:,
-            # Body param: The GUID of the marketing campaign the post is associated with.
+            # Body param: The GUID of the marketing campaign this Blog Post is a part of.
             campaign:,
-            # Body param: ID of the object type.
+            # Body param: ID of the type of object this is. Should always .
             category_id:,
-            # Body param: The ID of the post's parent blog.
+            # Body param: The ID of the parent Blog this Blog Post is associated with.
             content_group_id:,
             # Body param: An ENUM descibing the type of this object. Should always be
             # BLOG_POST.
             content_type_category:,
             # Body param: The timestamp (ISO8601 format) when this Blog Post was created.
             created:,
-            # Body param: The ID of the user that created the post.
+            # Body param: The ID of the user that created this Blog Post.
             created_by_id:,
             # Body param: Whether the post is published (true or false)
             currently_published:,
             # Body param: A generated ENUM descibing the current state of this Blog Post.
             # Should always match state.
             current_state:,
-            # Body param: The domain that the post lives on. If null, the post will default to
-            # the domain of the parent blog.
+            # Body param: The domain this Blog Post will resolve to. If null, the Blog Post
+            # will default to the domain of the ParentBlog.
             domain:,
             # Body param: The identifier for the data source used by the dynamic page.
             dynamic_page_data_source_id:,
             # Body param: The type of data source used by the dynamic page.
             dynamic_page_data_source_type:,
-            # Body param: For dynamic HubDB pages, the ID of the HubDB table this post
-            # references.
+            # Body param: The ID of the HubDB table this Blog Post references, if applicable
             dynamic_page_hub_db_table_id:,
             # Body param: Boolean to determine whether or not the styles from the template
             # should be applied.
@@ -382,13 +388,13 @@ module HubspotSDK
             # Body param: Custom HTML for embed codes, javascript, etc. that goes in the
             # <head> tag of the page.
             head_html:,
-            # Body param: The HTML title of the post.
+            # Body param: The html title of this Blog Post.
             html_title:,
             # Body param: Boolean to determine whether or not the Primary CSS Files should be
             # applied.
             include_default_custom_css:,
-            # Body param: The explicitly defined ISO 639 language code of the post. If null,
-            # the post will default to the language of the parent blog.
+            # Body param: The explicitly defined ISO 639 language code of the Blog Post. If
+            # null, the Blog Post will default to the language of the ParentBlog.
             language:,
             # Body param: A structure detailing the layout sections of the blog post.
             layout_sections:,
@@ -399,7 +405,7 @@ module HubspotSDK
             mab_experiment_id:,
             # Body param: A description that goes in <meta> tag on the page.
             meta_description:,
-            # Body param: The internal name of the post.
+            # Body param: The internal name of the Blog Post.
             name:,
             # Body param: The date at which this blog post should expire and begin redirecting
             # to another url or page.
@@ -414,7 +420,7 @@ module HubspotSDK
             # Should only set this or pageExpiryRedirectId.
             page_expiry_redirect_url:,
             # Body param: Set this to create a password protected page. Entering the password
-            # will be required to view the blog post.
+            # will be required to view the page.
             password:,
             # Body param: The HTML of the main post body.
             post_body:,
@@ -434,28 +440,28 @@ module HubspotSDK
             rss_body:,
             # Body param: The contents of the RSS summary for this Blog Post.
             rss_summary:,
-            # Body param: The URL slug of the blog post. This field is appended to the domain
+            # Body param: The path of the this blog post. This field is appended to the domain
             # to construct the url of this post.
             slug:,
-            # Body param: An enumeration describing the current publish state of the post.
+            # Body param: An ENUM descibing the current state of this Blog Post.
             state:,
-            # Body param: The IDs of the tags associated with this post.
+            # Body param: List of IDs for the tags associated with this Blog Post.
             tag_ids:,
             # Body param: A collection of settings specific to the theme applied to the blog
             # post.
             theme_settings_values:,
-            # Body param: ID of the primary blog post that this post was translated from.
+            # Body param: ID of the primary blog post this object was translated from.
             translated_from_id:,
             # Body param: A map of translations for the blog post, each associated with a
             # specific language variation.
             translations:,
             # Body param: The timestamp (ISO8601 format) when this Blog Post was updated.
             updated:,
-            # Body param: The ID of the user that updated the post.
+            # Body param: The ID of the user that updated this Blog Post.
             updated_by_id:,
             # Body param: A generated field representing the URL of this blog post.
             url:,
-            # Body param: Boolean to determine if this post should use a featured image.
+            # Body param: Boolean to determine if this post should use a featuredImage.
             use_featured_image:,
             # Body param: A data structure containing the data for all the modules inside the
             # containers for this post. This will only be populated if the page has widget
@@ -507,6 +513,7 @@ module HubspotSDK
           )
           end
 
+          # Delete a blog post by ID.
           sig do
             params(
               object_id_: String,
@@ -522,30 +529,7 @@ module HubspotSDK
           )
           end
 
-          sig do
-            params(
-              id: String,
-              language:
-                HubspotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::OrSymbol,
-              primary_id: String,
-              primary_language:
-                HubspotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::OrSymbol,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(StringIO)
-          end
-          def attach_to_lang_group(
-            # ID of the object to add to a multi-language group.
-            id:,
-            # Designated language of the object to add to a multi-language group.
-            language:,
-            # ID of primary language object in multi-language group.
-            primary_id:,
-            # Primary language of the multi-language group.
-            primary_language: nil,
-            request_options: {}
-          )
-          end
-
+          # Clone a blog post, making a copy of it in a new blog post.
           sig do
             params(
               id: String,
@@ -562,35 +546,7 @@ module HubspotSDK
           )
           end
 
-          sig do
-            params(
-              id: String,
-              language: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(StringIO)
-          end
-          def create_lang_variation(
-            # ID of blog post to clone.
-            id:,
-            # Target language of new variant.
-            language: nil,
-            request_options: {}
-          )
-          end
-
-          sig do
-            params(
-              id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(StringIO)
-          end
-          def detach_from_lang_group(
-            # ID of the object to remove from a multi-language group.
-            id:,
-            request_options: {}
-          )
-          end
-
+          # Retrieve a blog post by the post ID.
           sig do
             params(
               object_id_: String,
@@ -608,6 +564,7 @@ module HubspotSDK
           )
           end
 
+          # Retrieve the full draft version of a blog post.
           sig do
             params(
               object_id_: String,
@@ -619,40 +576,80 @@ module HubspotSDK
 
           sig do
             params(
-              revision_id: String,
-              object_id_: String,
+              after: String,
+              archived: T::Boolean,
+              created_after: Time,
+              created_at: Time,
+              created_before: Time,
+              limit: Integer,
+              property: String,
+              sort: T::Array[String],
+              updated_after: Time,
+              updated_at: Time,
+              updated_before: Time,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
-          def get_previous_version(
-            revision_id,
-            object_id_:,
+          def list_authors(
+            # The paging cursor token of the last successfully read resource will be returned
+            # as the `paging.next.after` JSON property of a paged response containing more
+            # results.
+            after: nil,
+            # Whether to return only results that have been archived.
+            archived: nil,
+            created_after: nil,
+            created_at: nil,
+            created_before: nil,
+            # The maximum number of results to display per page.
+            limit: nil,
+            property: nil,
+            sort: nil,
+            updated_after: nil,
+            updated_at: nil,
+            updated_before: nil,
             request_options: {}
           )
           end
 
           sig do
             params(
-              object_id_: String,
               after: String,
-              before: String,
+              archived: T::Boolean,
+              created_after: Time,
+              created_at: Time,
+              created_before: Time,
               limit: Integer,
+              property: String,
+              sort: T::Array[String],
+              updated_after: Time,
+              updated_at: Time,
+              updated_before: Time,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
-          def get_previous_versions(
-            object_id_,
+          def list_tags(
             # The paging cursor token of the last successfully read resource will be returned
             # as the `paging.next.after` JSON property of a paged response containing more
             # results.
             after: nil,
-            before: nil,
+            # Whether to return only results that have been archived.
+            archived: nil,
+            created_after: nil,
+            created_at: nil,
+            created_before: nil,
             # The maximum number of results to display per page.
             limit: nil,
+            property: nil,
+            sort: nil,
+            updated_after: nil,
+            updated_at: nil,
+            updated_before: nil,
             request_options: {}
           )
           end
 
+          # Publish the draft version of the blog post, sending its content to the live
+          # page.
           sig do
             params(
               object_id_: String,
@@ -664,6 +661,119 @@ module HubspotSDK
 
           sig do
             params(
+              after: String,
+              archived: T::Boolean,
+              created_after: Time,
+              created_at: Time,
+              created_before: Time,
+              limit: Integer,
+              property: String,
+              sort: T::Array[String],
+              updated_after: Time,
+              updated_at: Time,
+              updated_before: Time,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(StringIO)
+          end
+          def query(
+            # The paging cursor token of the last successfully read resource will be returned
+            # as the `paging.next.after` JSON property of a paged response containing more
+            # results.
+            after: nil,
+            # Whether to return only results that have been archived.
+            archived: nil,
+            created_after: nil,
+            created_at: nil,
+            created_before: nil,
+            # The maximum number of results to display per page.
+            limit: nil,
+            property: nil,
+            sort: nil,
+            updated_after: nil,
+            updated_at: nil,
+            updated_before: nil,
+            request_options: {}
+          )
+          end
+
+          sig do
+            params(
+              after: String,
+              archived: T::Boolean,
+              created_after: Time,
+              created_at: Time,
+              created_before: Time,
+              limit: Integer,
+              property: String,
+              sort: T::Array[String],
+              updated_after: Time,
+              updated_at: Time,
+              updated_before: Time,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(StringIO)
+          end
+          def query_authors(
+            # The paging cursor token of the last successfully read resource will be returned
+            # as the `paging.next.after` JSON property of a paged response containing more
+            # results.
+            after: nil,
+            # Whether to return only results that have been archived.
+            archived: nil,
+            created_after: nil,
+            created_at: nil,
+            created_before: nil,
+            # The maximum number of results to display per page.
+            limit: nil,
+            property: nil,
+            sort: nil,
+            updated_after: nil,
+            updated_at: nil,
+            updated_before: nil,
+            request_options: {}
+          )
+          end
+
+          sig do
+            params(
+              after: String,
+              archived: T::Boolean,
+              created_after: Time,
+              created_at: Time,
+              created_before: Time,
+              limit: Integer,
+              property: String,
+              sort: T::Array[String],
+              updated_after: Time,
+              updated_at: Time,
+              updated_before: Time,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(StringIO)
+          end
+          def query_tags(
+            # The paging cursor token of the last successfully read resource will be returned
+            # as the `paging.next.after` JSON property of a paged response containing more
+            # results.
+            after: nil,
+            # Whether to return only results that have been archived.
+            archived: nil,
+            created_after: nil,
+            created_at: nil,
+            created_before: nil,
+            # The maximum number of results to display per page.
+            limit: nil,
+            property: nil,
+            sort: nil,
+            updated_after: nil,
+            updated_at: nil,
+            updated_before: nil,
+            request_options: {}
+          )
+          end
+
+          # Discard all drafted content, resetting the draft to contain the content in the
+          # currently published version.
+          sig do
+            params(
               object_id_: String,
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
@@ -671,34 +781,7 @@ module HubspotSDK
           def reset_draft(object_id_, request_options: {})
           end
 
-          sig do
-            params(
-              revision_id: String,
-              object_id_: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(StringIO)
-          end
-          def restore_previous_version(
-            revision_id,
-            object_id_:,
-            request_options: {}
-          )
-          end
-
-          sig do
-            params(
-              revision_id: Integer,
-              object_id_: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(StringIO)
-          end
-          def restore_previous_version_to_draft(
-            revision_id,
-            object_id_:,
-            request_options: {}
-          )
-          end
-
+          # Schedule a blog post to be published at a specified time.
           sig do
             params(
               id: String,
@@ -715,19 +798,8 @@ module HubspotSDK
           )
           end
 
-          sig do
-            params(
-              id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).void
-          end
-          def set_lang_primary(
-            # ID of object to set as primary in multi-language group.
-            id:,
-            request_options: {}
-          )
-          end
-
+          # Partially updates the draft version of a single blog post by ID. You only need
+          # to specify the values that you want to update.
           sig do
             params(
               object_id_: String,
@@ -765,7 +837,7 @@ module HubspotSDK
               include_default_custom_css: T::Boolean,
               language: HubspotSDK::Cms::Blogs::BlogPost::Language::OrSymbol,
               layout_sections:
-                T::Hash[Symbol, HubspotSDK::Cms::Blogs::LayoutSection::OrHash],
+                T::Hash[Symbol, HubspotSDK::Cms::LayoutSection::OrHash],
               link_rel_canonical_url: String,
               mab_experiment_id: String,
               meta_description: String,
@@ -791,7 +863,7 @@ module HubspotSDK
               translations:
                 T::Hash[
                   Symbol,
-                  HubspotSDK::Cms::Blogs::ContentLanguageVariation::OrHash
+                  HubspotSDK::Cms::ContentLanguageVariation::OrHash
                 ],
               updated: Time,
               updated_by_id: String,
@@ -804,7 +876,7 @@ module HubspotSDK
           end
           def update_draft(
             object_id_,
-            # The unique ID of the blog post.
+            # The unique ID of the Blog Post.
             id:,
             # The status of the AB test associated with this blog post, if applicable
             #
@@ -821,37 +893,35 @@ module HubspotSDK
             # List of stylesheets to attach to this blog post. These stylesheets are attached
             # to just this page. Order of precedence is bottom to top, just like in the HTML.
             attached_stylesheets:,
-            # The name of the user who last published the blog post. For posts that haven't
-            # been published yet, this property will reflect the user who initially created
-            # the draft.
+            # The name of the user that updated this Blog Post.
             author_name:,
-            # The ID of the blog author associated with this post.
+            # The ID of the Blog Author associated with this Blog Post.
             blog_author_id:,
-            # The GUID of the marketing campaign the post is associated with.
+            # The GUID of the marketing campaign this Blog Post is a part of.
             campaign:,
-            # ID of the object type.
+            # ID of the type of object this is. Should always .
             category_id:,
-            # The ID of the post's parent blog.
+            # The ID of the parent Blog this Blog Post is associated with.
             content_group_id:,
             # An ENUM descibing the type of this object. Should always be BLOG_POST.
             content_type_category:,
             # The timestamp (ISO8601 format) when this Blog Post was created.
             created:,
-            # The ID of the user that created the post.
+            # The ID of the user that created this Blog Post.
             created_by_id:,
             # Whether the post is published (true or false)
             currently_published:,
             # A generated ENUM descibing the current state of this Blog Post. Should always
             # match state.
             current_state:,
-            # The domain that the post lives on. If null, the post will default to the domain
-            # of the parent blog.
+            # The domain this Blog Post will resolve to. If null, the Blog Post will default
+            # to the domain of the ParentBlog.
             domain:,
             # The identifier for the data source used by the dynamic page.
             dynamic_page_data_source_id:,
             # The type of data source used by the dynamic page.
             dynamic_page_data_source_type:,
-            # For dynamic HubDB pages, the ID of the HubDB table this post references.
+            # The ID of the HubDB table this Blog Post references, if applicable
             dynamic_page_hub_db_table_id:,
             # Boolean to determine whether or not the styles from the template should be
             # applied.
@@ -873,12 +943,12 @@ module HubspotSDK
             # Custom HTML for embed codes, javascript, etc. that goes in the <head> tag of the
             # page.
             head_html:,
-            # The HTML title of the post.
+            # The html title of this Blog Post.
             html_title:,
             # Boolean to determine whether or not the Primary CSS Files should be applied.
             include_default_custom_css:,
-            # The explicitly defined ISO 639 language code of the post. If null, the post will
-            # default to the language of the parent blog.
+            # The explicitly defined ISO 639 language code of the Blog Post. If null, the Blog
+            # Post will default to the language of the ParentBlog.
             language:,
             # A structure detailing the layout sections of the blog post.
             layout_sections:,
@@ -889,7 +959,7 @@ module HubspotSDK
             mab_experiment_id:,
             # A description that goes in <meta> tag on the page.
             meta_description:,
-            # The internal name of the post.
+            # The internal name of the Blog Post.
             name:,
             # The date at which this blog post should expire and begin redirecting to another
             # url or page.
@@ -903,7 +973,7 @@ module HubspotSDK
             # this or pageExpiryRedirectId.
             page_expiry_redirect_url:,
             # Set this to create a password protected page. Entering the password will be
-            # required to view the blog post.
+            # required to view the page.
             password:,
             # The HTML of the main post body.
             post_body:,
@@ -922,53 +992,33 @@ module HubspotSDK
             rss_body:,
             # The contents of the RSS summary for this Blog Post.
             rss_summary:,
-            # The URL slug of the blog post. This field is appended to the domain to construct
-            # the url of this post.
+            # The path of the this blog post. This field is appended to the domain to
+            # construct the url of this post.
             slug:,
-            # An enumeration describing the current publish state of the post.
+            # An ENUM descibing the current state of this Blog Post.
             state:,
-            # The IDs of the tags associated with this post.
+            # List of IDs for the tags associated with this Blog Post.
             tag_ids:,
             # A collection of settings specific to the theme applied to the blog post.
             theme_settings_values:,
-            # ID of the primary blog post that this post was translated from.
+            # ID of the primary blog post this object was translated from.
             translated_from_id:,
             # A map of translations for the blog post, each associated with a specific
             # language variation.
             translations:,
             # The timestamp (ISO8601 format) when this Blog Post was updated.
             updated:,
-            # The ID of the user that updated the post.
+            # The ID of the user that updated this Blog Post.
             updated_by_id:,
             # A generated field representing the URL of this blog post.
             url:,
-            # Boolean to determine if this post should use a featured image.
+            # Boolean to determine if this post should use a featuredImage.
             use_featured_image:,
             # A data structure containing the data for all the modules inside the containers
             # for this post. This will only be populated if the page has widget containers.
             widget_containers:,
             # A data structure containing the data for all the modules for this page.
             widgets:,
-            request_options: {}
-          )
-          end
-
-          sig do
-            params(
-              languages:
-                T::Hash[
-                  Symbol,
-                  HubspotSDK::Cms::UpdateLanguagesRequestVNext::Language::OrSymbol
-                ],
-              primary_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(StringIO)
-          end
-          def update_langs(
-            # Map of object IDs to associated languages of object in the multi-language group.
-            languages:,
-            # ID of the primary object in the multi-language group.
-            primary_id:,
             request_options: {}
           )
           end

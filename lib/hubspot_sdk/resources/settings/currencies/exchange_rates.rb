@@ -12,6 +12,8 @@ module HubspotSDK
           # {HubspotSDK::Models::Settings::Currencies::ExchangeRateCreateExchangeRateParams}
           # for more details.
           #
+          # Create a new exchange rate with specified conversion rate and currency codes.
+          #
           # @overload create_exchange_rate(conversion_rate:, from_currency_code:, effective_at: nil, request_options: {})
           #
           # @param conversion_rate [Float] The conversion rate between the to and from currency code of this exchange rate.
@@ -37,6 +39,8 @@ module HubspotSDK
             )
           end
 
+          # Retrieve the details for a specific exchange rate specified by its ID.
+          #
           # @overload get_exchange_rate_by_id(exchange_rate_id, request_options: {})
           #
           # @param exchange_rate_id [String]
@@ -54,6 +58,8 @@ module HubspotSDK
             )
           end
 
+          # Retrieve all current exchange rates for all currency pairs.
+          #
           # @overload list_current_exchange_rates(request_options: {})
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
@@ -73,6 +79,8 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams}
           # for more details.
+          #
+          # Get a list of exchange rates
           #
           # @overload list_exchange_rates(after: nil, from_currency_code: nil, limit: nil, to_currency_code: nil, request_options: {})
           #
@@ -110,6 +118,8 @@ module HubspotSDK
           # {HubspotSDK::Models::Settings::Currencies::ExchangeRateUpdateExchangeRateParams}
           # for more details.
           #
+          # Update an existing conversion rate, specified by its ID.
+          #
           # @overload update_exchange_rate(exchange_rate_id, conversion_rate:, effective_at: nil, request_options: {})
           #
           # @param exchange_rate_id [String]
@@ -138,6 +148,9 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Settings::Currencies::ExchangeRateUpdateVisibilityParams}
           # for more details.
+          #
+          # Change the visibility setting for a currency pair. This will hide or display a
+          # currency pair for users in the HubSpot app.
           #
           # @overload update_visibility(from_currency_code:, to_currency_code:, visible_in_ui:, request_options: {})
           #

@@ -12,8 +12,8 @@ module HubspotSDK
         required :id, String
 
         # @!attribute assets
-        #   A map of asset types to their corresponding collection of campaign assets,
-        #   represented by CollectionResponsePublicCampaignAsset objects.
+        #   Contains the assets associated with the campaign, each represented as a
+        #   collection of campaign assets.
         #
         #   @return [Hash{Symbol=>HubspotSDK::Models::Marketing::CollectionResponsePublicCampaignAsset}]
         required :assets,
@@ -29,19 +29,21 @@ module HubspotSDK
                  api_name: :businessUnits
 
         # @!attribute created_at
-        #   The date and time when the campaign was created, in ISO 8601 format.
+        #   The date and time when the campaign was created, formatted as a date-time
+        #   string.
         #
         #   @return [Time]
         required :created_at, Time, api_name: :createdAt
 
         # @!attribute properties
-        #   A map of custom property names to their values for the campaign.
+        #   A map of key-value pairs representing the properties of the campaign.
         #
         #   @return [Hash{Symbol=>String}]
         required :properties, HubspotSDK::Internal::Type::HashOf[String]
 
         # @!attribute updated_at
-        #   The date and time when the campaign was last updated, in ISO 8601 format.
+        #   The date and time when the campaign was last updated, formatted as a date-time
+        #   string.
         #
         #   @return [Time]
         required :updated_at, Time, api_name: :updatedAt
@@ -52,15 +54,15 @@ module HubspotSDK
         #
         #   @param id [String] The unique identifier for the campaign.
         #
-        #   @param assets [Hash{Symbol=>HubspotSDK::Models::Marketing::CollectionResponsePublicCampaignAsset}] A map of asset types to their corresponding collection of campaign assets, repre
+        #   @param assets [Hash{Symbol=>HubspotSDK::Models::Marketing::CollectionResponsePublicCampaignAsset}] Contains the assets associated with the campaign, each represented as a collecti
         #
         #   @param business_units [Array<HubspotSDK::Models::Marketing::PublicBusinessUnit>] An array of business units associated with the campaign, each represented by a P
         #
-        #   @param created_at [Time] The date and time when the campaign was created, in ISO 8601 format.
+        #   @param created_at [Time] The date and time when the campaign was created, formatted as a date-time string
         #
-        #   @param properties [Hash{Symbol=>String}] A map of custom property names to their values for the campaign.
+        #   @param properties [Hash{Symbol=>String}] A map of key-value pairs representing the properties of the campaign.
         #
-        #   @param updated_at [Time] The date and time when the campaign was last updated, in ISO 8601 format.
+        #   @param updated_at [Time] The date and time when the campaign was last updated, formatted as a date-time s
       end
     end
   end

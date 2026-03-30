@@ -12,7 +12,7 @@ module HubspotSDK
             )
           end
 
-        # The unique identifier of the email to be cloned.
+        # The email ID.
         sig { returns(String) }
         attr_accessor :id
 
@@ -36,7 +36,7 @@ module HubspotSDK
           )
         end
         def self.new(
-          # The unique identifier of the email to be cloned.
+          # The email ID.
           id:,
           # The name to assign to the cloned email.
           clone_name: nil,

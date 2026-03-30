@@ -11,13 +11,13 @@ module HubspotSDK
           #
           # @param object_type [String] Path param
           #
-          # @param app_id [String] Path param
+          # @param app_id [Integer] Path param
           #
           # @param inputs [Array<HubspotSDK::Models::PropertyCreate>] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::BatchResponseProperty]
+          # @return [HubspotSDK::Models::Cms::BatchResponseProperty]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::BatchCreateParams
           def create(object_type, params)
@@ -30,7 +30,7 @@ module HubspotSDK
               method: :post,
               path: ["media-bridge/2026-03/%1$s/properties/%2$s/batch/create", app_id, object_type],
               body: parsed,
-              model: HubspotSDK::BatchResponseProperty,
+              model: HubspotSDK::Cms::BatchResponseProperty,
               options: options
             )
           end
@@ -41,7 +41,7 @@ module HubspotSDK
           #
           # @param object_type [String] Path param
           #
-          # @param app_id [String] Path param
+          # @param app_id [Integer] Path param
           #
           # @param inputs [Array<HubspotSDK::Models::PropertyName>] Body param
           #
@@ -71,7 +71,7 @@ module HubspotSDK
           #
           # @param object_type [String] Path param
           #
-          # @param app_id [String] Path param
+          # @param app_id [Integer] Path param
           #
           # @param archived [Boolean] Body param
           #
@@ -81,7 +81,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::BatchResponseProperty]
+          # @return [HubspotSDK::Models::Cms::BatchResponseProperty]
           #
           # @see HubspotSDK::Models::Cms::MediaBridge::BatchGetParams
           def get(object_type, params)
@@ -94,7 +94,7 @@ module HubspotSDK
               method: :post,
               path: ["media-bridge/2026-03/%1$s/properties/%2$s/batch/read", app_id, object_type],
               body: parsed,
-              model: HubspotSDK::BatchResponseProperty,
+              model: HubspotSDK::Cms::BatchResponseProperty,
               options: options
             )
           end

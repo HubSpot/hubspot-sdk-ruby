@@ -35,7 +35,7 @@ module HubspotSDK
           mutable_definition_not_deletable: bool,
           name: String,
           number_display_hint: HubspotSDK::Models::Cms::Property::number_display_hint,
-          options: ::Array[HubspotSDK::Option],
+          options: ::Array[HubspotSDK::AutomationActionsOption],
           options_are_mutable: bool,
           option_sort_strategy: HubspotSDK::Models::Cms::Property::option_sort_strategy,
           owning_app_id: Integer,
@@ -117,7 +117,7 @@ module HubspotSDK
 
         attr_accessor number_display_hint: HubspotSDK::Models::Cms::Property::number_display_hint
 
-        attr_accessor options: ::Array[HubspotSDK::Option]
+        attr_accessor options: ::Array[HubspotSDK::AutomationActionsOption]
 
         attr_accessor options_are_mutable: bool
 
@@ -180,7 +180,7 @@ module HubspotSDK
           mutable_definition_not_deletable: bool,
           name: String,
           number_display_hint: HubspotSDK::Models::Cms::Property::number_display_hint,
-          options: ::Array[HubspotSDK::Option],
+          options: ::Array[HubspotSDK::AutomationActionsOption],
           options_are_mutable: bool,
           option_sort_strategy: HubspotSDK::Models::Cms::Property::option_sort_strategy,
           owning_app_id: Integer,
@@ -230,7 +230,7 @@ module HubspotSDK
           mutable_definition_not_deletable: bool,
           name: String,
           number_display_hint: HubspotSDK::Models::Cms::Property::number_display_hint,
-          options: ::Array[HubspotSDK::Option],
+          options: ::Array[HubspotSDK::AutomationActionsOption],
           options_are_mutable: bool,
           option_sort_strategy: HubspotSDK::Models::Cms::Property::option_sort_strategy,
           owning_app_id: Integer,

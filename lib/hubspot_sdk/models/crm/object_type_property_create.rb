@@ -45,6 +45,7 @@ module HubspotSDK
         optional :display_order, Integer, api_name: :displayOrder
 
         # @!attribute external_options_reference_type
+        #   Specifies the reference type for external options associated with the property.
         #
         #   @return [String, nil]
         optional :external_options_reference_type, String, api_name: :externalOptionsReferenceType
@@ -69,6 +70,7 @@ module HubspotSDK
         optional :has_unique_value, HubspotSDK::Internal::Type::Boolean, api_name: :hasUniqueValue
 
         # @!attribute hidden
+        #   Hidden options won't be shown in HubSpot.
         #
         #   @return [Boolean, nil]
         optional :hidden, HubspotSDK::Internal::Type::Boolean
@@ -142,7 +144,7 @@ module HubspotSDK
         #
         #   @param display_order [Integer] The order that this property should be displayed in the HubSpot UI relative to o
         #
-        #   @param external_options_reference_type [String]
+        #   @param external_options_reference_type [String] Specifies the reference type for external options associated with the property.
         #
         #   @param form_field [Boolean] Whether the property can be used in a HubSpot form.
         #
@@ -150,7 +152,7 @@ module HubspotSDK
         #
         #   @param has_unique_value [Boolean] Whether or not the property's value must be unique. Once set, this can't be chan
         #
-        #   @param hidden [Boolean]
+        #   @param hidden [Boolean] Hidden options won't be shown in HubSpot.
         #
         #   @param number_display_hint [Symbol, HubspotSDK::Models::Crm::ObjectTypePropertyCreate::NumberDisplayHint] Controls how numeric properties are formatted in the HubSpot UI
         #

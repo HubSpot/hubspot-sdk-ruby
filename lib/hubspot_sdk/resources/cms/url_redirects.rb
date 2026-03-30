@@ -20,15 +20,15 @@ module HubspotSDK
         #
         # @param route_prefix [String] The target incoming URL, path, or pattern to match for redirection.
         #
-        # @param is_match_full_url [Boolean] Whether the routePrefix should match on the entire URL, including the domain.
+        # @param is_match_full_url [Boolean] Whether the `routePrefix` should match on the entire URL, including the domain.
         #
-        # @param is_match_query_string [Boolean] Whether the routePrefix should match on the entire URL path, including the query
+        # @param is_match_query_string [Boolean] Whether the `routePrefix` should match on the entire URL path, including the que
         #
         # @param is_only_after_not_found [Boolean] Whether the URL redirect mapping should apply only if a live page on the URL isn
         #
-        # @param is_pattern [Boolean] Whether the routePrefix should match based on pattern.
+        # @param is_pattern [Boolean] Whether the `routePrefix` should match based on pattern.
         #
-        # @param is_protocol_agnostic [Boolean] Whether the routePrefix should match both HTTP and HTTPS protocols.
+        # @param is_protocol_agnostic [Boolean] Whether the `routePrefix` should match both HTTP and HTTPS protocols.
         #
         # @param is_trailing_slash_optional [Boolean] Whether a trailing slash will be ignored.
         #
@@ -53,14 +53,11 @@ module HubspotSDK
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Cms::URLRedirectUpdateParams} for more details.
         #
-        # Update the details of an existing URL redirect in your HubSpot account. This
-        # operation allows you to modify properties such as the destination URL, route
-        # prefix, and other redirect settings. Use this endpoint to ensure your URL
-        # redirects are up-to-date and functioning as intended.
+        # Updates the settings for an existing URL redirect.
         #
         # @overload update(url_redirect_id, id:, created:, destination:, is_match_full_url:, is_match_query_string:, is_only_after_not_found:, is_pattern:, is_protocol_agnostic:, is_trailing_slash_optional:, precedence:, redirect_style:, route_prefix:, updated:, request_options: {})
         #
-        # @param url_redirect_id [String] The unique identifier of the URL redirect to update.
+        # @param url_redirect_id [String]
         #
         # @param id [String] The unique ID of this URL redirect.
         #
@@ -114,25 +111,25 @@ module HubspotSDK
         #
         # @overload list(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
         #
-        # @param after [String] A cursor token for pagination. Use the value from the previous response's paging
+        # @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
         # @param archived [Boolean] Whether to return only results that have been archived.
         #
-        # @param created_after [Time] Filter redirects created after a specific timestamp. Format must be date-time.
+        # @param created_after [Time]
         #
-        # @param created_at [Time] Filter redirects by their exact creation timestamp. Format must be date-time.
+        # @param created_at [Time]
         #
-        # @param created_before [Time] Filter redirects created before a specific timestamp. Format must be date-time.
+        # @param created_before [Time]
         #
         # @param limit [Integer] The maximum number of results to display per page.
         #
-        # @param sort [Array<String>] Specify the order in which to sort the results. Accepts an array of strings.
+        # @param sort [Array<String>]
         #
-        # @param updated_after [Time] Filter redirects updated after a specific timestamp. Format must be date-time.
+        # @param updated_after [Time]
         #
-        # @param updated_at [Time] Filter redirects by their exact update timestamp. Format must be date-time.
+        # @param updated_at [Time]
         #
-        # @param updated_before [Time] Filter redirects updated before a specific timestamp. Format must be date-time.
+        # @param updated_before [Time]
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -159,14 +156,11 @@ module HubspotSDK
           )
         end
 
-        # Delete a specific URL redirect in your HubSpot account using its unique
-        # identifier. This operation is useful for removing outdated or incorrect URL
-        # redirects, ensuring that your URL mappings remain current and accurate.
+        # Delete one existing redirect, so it is no longer mapped.
         #
         # @overload delete(url_redirect_id, request_options: {})
         #
-        # @param url_redirect_id [String] The unique identifier of the URL redirect to delete.
-        #
+        # @param url_redirect_id [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
@@ -181,15 +175,11 @@ module HubspotSDK
           )
         end
 
-        # Retrieve detailed information about a specific URL redirect in your HubSpot
-        # account using its unique identifier. This endpoint is useful for obtaining the
-        # configuration and properties of a URL redirect, such as its destination, route
-        # prefix, and other settings.
+        # Returns the details for a single existing URL redirect by ID.
         #
         # @overload get(url_redirect_id, request_options: {})
         #
-        # @param url_redirect_id [String] The unique identifier of the URL redirect to retrieve.
-        #
+        # @param url_redirect_id [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Cms::URLMapping]

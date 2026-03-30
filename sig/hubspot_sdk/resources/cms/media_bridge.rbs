@@ -4,38 +4,14 @@ module HubspotSDK
       class MediaBridge
         attr_reader batch: HubspotSDK::Resources::Cms::MediaBridge::Batch
 
-        def create: (
-          create_mb_object_request: HubspotSDK::Models::Cms::create_mb_object_request,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::MediaBridgeObject
-
-        def update: (
-          Integer object_id_,
-          update_mb_object_request: HubspotSDK::Models::Cms::update_mb_object_request,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::MediaBridgeObject
-
-        def list: (
-          HubspotSDK::Models::Cms::MediaBridgeListParams::media_type media_type,
-          ?after: String,
-          ?limit: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::MediaBridgeObject]
-
-        def delete: (
-          Integer object_id_,
-          media_type: HubspotSDK::Models::Cms::MediaBridgeDeleteParams::media_type,
-          ?request_options: HubspotSDK::request_opts
-        ) -> nil
-
         def create_association: (
           String object_type,
-          app_id: String,
+          app_id: Integer,
           from_object_type_id: String,
           to_object_type_id: String,
           ?name: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Events::AssociationDefinition
+        ) -> HubspotSDK::AssociationDefinition
 
         def create_attention_span_event: (
           media_type: HubspotSDK::Models::Cms::AttentionSpanEventRequest::media_type,
@@ -56,7 +32,7 @@ module HubspotSDK
           ?page_url: String,
           ?raw_data_string: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> StringIO
+        ) -> HubspotSDK::Cms::AttentionSpanEvent
 
         def create_media_played_event: (
           media_type: HubspotSDK::Models::Cms::MediaPlayedEventRequest::media_type,
@@ -76,7 +52,7 @@ module HubspotSDK
           ?page_name: String,
           ?page_url: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> StringIO
+        ) -> HubspotSDK::Cms::MediaPlayedEvent
 
         def create_media_played_percent_event: (
           media_type: HubspotSDK::Models::Cms::MediaPlayedPercentageEventRequest::media_type,
@@ -95,16 +71,16 @@ module HubspotSDK
           ?page_name: String,
           ?page_url: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> StringIO
+        ) -> HubspotSDK::Cms::MediaPlayedPercentageEvent
 
         def create_object_type: (
-          String app_id,
+          Integer app_id,
           media_types: ::Array[HubspotSDK::Models::Cms::IntegratorObjectCreationRequest::media_type],
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Cms::BulkIntegratorObjectCreationResponse
 
         def create_oembed_domain: (
-          String app_id,
+          Integer app_id,
           endpoints: HubspotSDK::Cms::Endpoints,
           ?portal_id: Integer,
           ?request_options: HubspotSDK::request_opts
@@ -112,7 +88,7 @@ module HubspotSDK
 
         def create_property: (
           String object_type,
-          app_id: String,
+          app_id: Integer,
           field_type: HubspotSDK::Models::PropertyCreate::field_type,
           group_name: String,
           label: String,
@@ -129,11 +105,11 @@ module HubspotSDK
           ?options: ::Array[HubspotSDK::OptionInput],
           ?referenced_object_type: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Property
+        ) -> HubspotSDK::Cms::Property
 
         def create_property_group: (
           String object_type,
-          app_id: String,
+          app_id: Integer,
           label: String,
           name: String,
           ?display_order: Integer,
@@ -141,19 +117,19 @@ module HubspotSDK
         ) -> HubspotSDK::PropertyGroup
 
         def create_video_association_definition: (
-          String app_id,
+          Integer app_id,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Events::AssociationDefinition
+        ) -> HubspotSDK::AssociationDefinition
 
         def delete_association: (
           String association_id,
-          app_id: String,
+          app_id: Integer,
           object_type: String,
           ?request_options: HubspotSDK::request_opts
         ) -> nil
 
         def delete_oembed_domain: (
-          String app_id,
+          Integer app_id,
           ?id: Integer,
           ?domain_portal_id: Integer,
           ?request_options: HubspotSDK::request_opts
@@ -161,92 +137,86 @@ module HubspotSDK
 
         def delete_property: (
           String property_name,
-          app_id: String,
+          app_id: Integer,
           object_type: String,
           ?request_options: HubspotSDK::request_opts
         ) -> nil
 
         def delete_property_group: (
           String group_name,
-          app_id: String,
+          app_id: Integer,
           object_type: String,
           ?request_options: HubspotSDK::request_opts
         ) -> nil
 
-        def get: (
-          Integer object_id_,
-          media_type: HubspotSDK::Models::Cms::MediaBridgeGetParams::media_type,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::MediaBridgeObject
-
         def get_event_visibility_settings: (
-          String app_id,
+          Integer app_id,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Cms::EventVisibilityResponse
 
         def get_oembed_domain: (
           String o_embed_domain_id,
-          app_id: String,
+          app_id: Integer,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Cms::IntegratorOEmbedDomainModel
 
         def get_property: (
           String property_name,
-          app_id: String,
+          app_id: Integer,
           object_type: String,
           ?archived: bool,
           ?properties: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Property
+        ) -> HubspotSDK::Cms::Property
 
         def get_property_group: (
           String group_name,
-          app_id: String,
+          app_id: Integer,
           object_type: String,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::PropertyGroup
 
         def get_schema: (
           String object_type,
-          app_id: String,
+          app_id: Integer,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::ObjectSchema
+        ) -> HubspotSDK::Cms::ObjectSchema
 
         def list_object_types_by_media_type: (
           HubspotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::media_type media_type,
-          app_id: String,
+          app_id: Integer,
           ?include_full_definition: bool,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Cms::ObjectDefinitionResponse
 
         def list_oembed_domains: (
-          String app_id,
+          Integer app_id,
           ?domain_portal_id: Integer,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Cms::OEmbedDomainsCollectionResponse
 
         def list_properties: (
           String object_type,
-          app_id: String,
+          app_id: Integer,
           ?archived: bool,
           ?properties: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::CollectionResponsePropertyNoPaging
+        ) -> HubspotSDK::Cms::CollectionResponsePropertyNoPaging
 
         def list_property_groups: (
           String object_type,
-          app_id: String,
+          app_id: Integer,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::CollectionResponsePropertyGroupNoPaging
 
         def list_schemas: (
-          String app_id,
+          Integer app_id,
           ?archived: bool,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::CollectionResponseObjectSchemaNoPaging
+        ) -> HubspotSDK::Cms::CollectionResponseObjectSchemaNoPaging
 
         def register_app_name: (
-          String app_id,
+          Integer app_id,
           updated_at: Integer,
           ?allow_import_on_disconnect: bool,
           ?module_name: String,
@@ -255,7 +225,7 @@ module HubspotSDK
         ) -> HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse
 
         def update_event_visibility_settings: (
-          String app_id,
+          Integer app_id,
           event_type: HubspotSDK::Models::Cms::EventVisibilityChange::event_type,
           updated_at: Integer,
           ?show_in_reporting: bool,
@@ -266,7 +236,7 @@ module HubspotSDK
 
         def update_oembed_domain: (
           String o_embed_domain_id,
-          app_id: String,
+          app_id: Integer,
           endpoints: HubspotSDK::Cms::Endpoints,
           ?portal_id: Integer,
           ?request_options: HubspotSDK::request_opts
@@ -274,7 +244,7 @@ module HubspotSDK
 
         def update_property: (
           String property_name,
-          app_id: String,
+          app_id: Integer,
           object_type: String,
           ?calculation_formula: String,
           ?description: String,
@@ -288,11 +258,11 @@ module HubspotSDK
           ?options: ::Array[HubspotSDK::OptionInput],
           ?type: HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::type_,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Property
+        ) -> HubspotSDK::Cms::Property
 
         def update_property_group: (
           String group_name,
-          app_id: String,
+          app_id: Integer,
           object_type: String,
           ?display_order: Integer,
           ?label: String,
@@ -301,7 +271,7 @@ module HubspotSDK
 
         def update_schema: (
           String object_type,
-          app_id: String,
+          app_id: Integer,
           clear_description: bool,
           ?allows_sensitive_properties: bool,
           ?description: String,
@@ -315,7 +285,7 @@ module HubspotSDK
         ) -> HubspotSDK::ObjectTypeDefinition
 
         def update_settings: (
-          String app_id,
+          Integer app_id,
           updated_at: Integer,
           ?allow_import_on_disconnect: bool,
           ?module_name: String,

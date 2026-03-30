@@ -15,11 +15,7 @@ module HubspotSDK
           )
         end
         def list(
-          # The unique identifier of the business unit for which to retrieve the
-          # subscription definitions.
           business_unit_id: nil,
-          # A boolean indicating whether to include translations of the subscription
-          # definitions. Defaults to false if not specified.
           include_translations: nil,
           request_options: {}
         )

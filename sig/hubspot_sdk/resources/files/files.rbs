@@ -2,10 +2,59 @@ module HubspotSDK
   module Resources
     class Files
       class Files
+        def create: (
+          name: String,
+          ?parent_folder_id: String,
+          ?parent_path: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Files::Folder
+
+        def update: (
+          String file_id,
+          clear_expires: bool,
+          ?access: HubspotSDK::Models::Files::FileUpdateInput::access,
+          ?expires_at: Time,
+          ?is_usable_in_content: bool,
+          ?name: String,
+          ?parent_folder_id: String,
+          ?parent_folder_path: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Files::File
+
+        def delete: (
+          String file_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def gdpr_delete: (
+          String file_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def get: (
+          String file_id,
+          ?properties: ::Array[String],
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Files::File
+
+        def get_by_path: (
+          String path,
+          ?properties: ::Array[String],
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Files::FileStat
+
         def get_import_task_status: (
           String task_id,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Files::FileActionResponse
+
+        def get_signed_url: (
+          String file_id,
+          ?expiration_seconds: Integer,
+          ?size: HubspotSDK::Models::Files::FileGetSignedURLParams::size,
+          ?upscale: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Files::SignedURL
 
         def import_from_url_async: (
           access: HubspotSDK::Models::Files::ImportFromURLInput::access,
@@ -20,6 +69,14 @@ module HubspotSDK
           ?url: String,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Files::ImportFromURLTaskLocator
+
+        def replace: (
+          String file_id,
+          ?charset_hunch: String,
+          ?file: HubspotSDK::Internal::file_input,
+          ?options: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Files::File
 
         def search: (
           ?after: String,
@@ -60,6 +117,16 @@ module HubspotSDK
           ?width_lte: Integer,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Internal::Page[HubspotSDK::Files::File]
+
+        def upload: (
+          ?charset_hunch: String,
+          ?file: HubspotSDK::Internal::file_input,
+          ?file_name: String,
+          ?folder_id: String,
+          ?folder_path: String,
+          ?options: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Files::File
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

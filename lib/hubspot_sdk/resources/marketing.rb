@@ -12,6 +12,9 @@ module HubspotSDK
       # @return [HubspotSDK::Resources::Marketing::Events]
       attr_reader :events
 
+      # @return [HubspotSDK::Resources::Marketing::SingleSend]
+      attr_reader :single_send
+
       # @return [HubspotSDK::Resources::Marketing::Transactional]
       attr_reader :transactional
 
@@ -23,6 +26,7 @@ module HubspotSDK
         @campaigns = HubspotSDK::Resources::Marketing::Campaigns.new(client: client)
         @emails = HubspotSDK::Resources::Marketing::Emails.new(client: client)
         @events = HubspotSDK::Resources::Marketing::Events.new(client: client)
+        @single_send = HubspotSDK::Resources::Marketing::SingleSend.new(client: client)
         @transactional = HubspotSDK::Resources::Marketing::Transactional.new(client: client)
       end
     end
