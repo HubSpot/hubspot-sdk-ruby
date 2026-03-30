@@ -4,7 +4,7 @@ module HubspotSDK
   module Models
     module Crm
       module Objects
-        class TaxCreateParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectBatchInputForCreate
+        class TaxCreateParams < HubspotSDK::Models::Crm::SimplePublicObjectInputForCreate
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

@@ -5,8 +5,8 @@ module HubspotSDK
     class Crm
       class Objects
         class Quotes
-          # @return [HubspotSDK::Resources::Crm::Objects::Quotes::Basic]
-          attr_reader :basic
+          # @return [HubspotSDK::Resources::Crm::Objects::Quotes::Batch]
+          attr_reader :batch
 
           # Create a quote with the given properties and return a copy of the object,
           # including the ID. Documentation and examples for creating standard quotes is
@@ -209,7 +209,7 @@ module HubspotSDK
           # @param client [HubspotSDK::Client]
           def initialize(client:)
             @client = client
-            @basic = HubspotSDK::Resources::Crm::Objects::Quotes::Basic.new(client: client)
+            @batch = HubspotSDK::Resources::Crm::Objects::Quotes::Batch.new(client: client)
           end
         end
       end

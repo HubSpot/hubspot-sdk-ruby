@@ -5,7 +5,7 @@ module HubspotSDK
     module Crm
       module Objects
         # @see HubspotSDK::Resources::Crm::Objects::Orders#create
-        class OrderCreateParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectBatchInputForCreate
+        class OrderCreateParams < HubspotSDK::Models::Crm::SimplePublicObjectInputForCreate
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

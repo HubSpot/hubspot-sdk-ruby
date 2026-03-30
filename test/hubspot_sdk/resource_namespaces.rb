@@ -6,6 +6,9 @@ module HubspotSDK
       module Account
       end
 
+      module Actions
+      end
+
       module Associations
       end
 
@@ -19,6 +22,8 @@ module HubspotSDK
       end
 
       module Automation
+        module Actions
+        end
       end
 
       module Blogs
@@ -149,6 +154,9 @@ module HubspotSDK
           module Courses
           end
 
+          module Custom
+          end
+
           module Deals
           end
 
@@ -165,6 +173,9 @@ module HubspotSDK
           end
 
           module GoalTargets
+          end
+
+          module Invoices
           end
 
           module Leads
@@ -185,7 +196,19 @@ module HubspotSDK
           module Objects
           end
 
+          module Orders
+          end
+
           module PartnerClients
+          end
+
+          module PartnerServices
+          end
+
+          module PostalMail
+          end
+
+          module Products
           end
 
           module Projects
@@ -194,13 +217,22 @@ module HubspotSDK
           module Quotes
           end
 
+          module Services
+          end
+
           module Subscriptions
           end
 
           module Tasks
           end
 
+          module Taxes
+          end
+
           module Tickets
+          end
+
+          module Users
           end
         end
 
@@ -217,6 +249,9 @@ module HubspotSDK
       module Currencies
         module ExchangeRates
         end
+      end
+
+      module Custom
       end
 
       module CustomChannels
@@ -261,6 +296,9 @@ module HubspotSDK
       end
 
       module Hubdb
+      end
+
+      module Invoices
       end
 
       module Leads
@@ -325,6 +363,9 @@ module HubspotSDK
         module Courses
         end
 
+        module Custom
+        end
+
         module Deals
         end
 
@@ -341,6 +382,9 @@ module HubspotSDK
         end
 
         module GoalTargets
+        end
+
+        module Invoices
         end
 
         module Leads
@@ -361,7 +405,19 @@ module HubspotSDK
         module Objects
         end
 
+        module Orders
+        end
+
         module PartnerClients
+        end
+
+        module PartnerServices
+        end
+
+        module PostalMail
+        end
+
+        module Products
         end
 
         module Projects
@@ -370,17 +426,29 @@ module HubspotSDK
         module Quotes
         end
 
+        module Services
+        end
+
         module Subscriptions
         end
 
         module Tasks
         end
 
+        module Taxes
+        end
+
         module Tickets
+        end
+
+        module Users
         end
       end
 
       module ObjectSchemas
+      end
+
+      module Orders
       end
 
       module Origins
@@ -392,7 +460,16 @@ module HubspotSDK
       module PartnerClients
       end
 
+      module PartnerServices
+      end
+
+      module PostalMail
+      end
+
       module Posts
+      end
+
+      module Products
       end
 
       module Projects
@@ -407,6 +484,9 @@ module HubspotSDK
       module Scheduler
         module Meetings
         end
+      end
+
+      module Services
       end
 
       module Settings
@@ -428,6 +508,9 @@ module HubspotSDK
       module Tasks
       end
 
+      module Taxes
+      end
+
       module Tickets
       end
 
@@ -435,6 +518,9 @@ module HubspotSDK
       end
 
       module Transactional
+      end
+
+      module Users
       end
 
       module Webhooks

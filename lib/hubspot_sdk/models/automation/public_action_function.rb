@@ -3,7 +3,6 @@
 module HubspotSDK
   module Models
     module Automation
-      # @see HubspotSDK::Resources::Automation::Actions#get_by_function_type
       class PublicActionFunction < HubspotSDK::Internal::Type::BaseModel
         # @!attribute function_source
         #   The source code or script that defines the function's behavior.

@@ -5,11 +5,17 @@ module HubspotSDK
     module Crm
       module Objects
         # @see HubspotSDK::Resources::Crm::Objects::Services#delete
-        class ServiceDeleteParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectID
+        class ServiceDeleteParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          # @!method initialize(request_options: {})
+          # @!attribute service_id
+          #
+          #   @return [String]
+          required :service_id, String
+
+          # @!method initialize(service_id:, request_options: {})
+          #   @param service_id [String]
           #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end

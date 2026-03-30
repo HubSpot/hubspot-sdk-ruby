@@ -5,8 +5,8 @@ module HubspotSDK
     class Crm
       class Objects
         class Quotes
-          sig { returns(HubspotSDK::Resources::Crm::Objects::Quotes::Basic) }
-          attr_reader :basic
+          sig { returns(HubspotSDK::Resources::Crm::Objects::Quotes::Batch) }
+          attr_reader :batch
 
           # Create a quote with the given properties and return a copy of the object,
           # including the ID. Documentation and examples for creating standard quotes is

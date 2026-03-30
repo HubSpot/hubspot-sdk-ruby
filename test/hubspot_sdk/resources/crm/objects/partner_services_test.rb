@@ -6,23 +6,23 @@ class HubspotSDK::Test::Resources::Crm::Objects::PartnerServicesTest < HubspotSD
   def test_update_required_params
     skip("Mock server tests are disabled")
 
-    response =
-      @hubspot.crm.objects.partner_services.update(inputs: [{id: "id", properties: {foo: "string"}}])
+    response = @hubspot.crm.objects.partner_services.update("partnerServiceId", properties: {foo: "string"})
 
     assert_pattern do
-      response => HubspotSDK::Crm::BatchResponseSimplePublicObject
+      response => HubspotSDK::Crm::SimplePublicObject
     end
 
     assert_pattern do
       response => {
-        completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
-        started_at: Time,
-        status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
-        requested_at: Time | nil
+        id: String,
+        archived: HubspotSDK::Internal::Type::Boolean,
+        created_at: Time,
+        properties: ^(HubspotSDK::Internal::Type::HashOf[String, nil?: true]),
+        updated_at: Time,
+        archived_at: Time | nil,
+        object_write_trace_id: String | nil,
+        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil,
+        url: String | nil
       }
     end
   end
@@ -52,30 +52,27 @@ class HubspotSDK::Test::Resources::Crm::Objects::PartnerServicesTest < HubspotSD
     end
   end
 
-  def test_get_required_params
+  def test_get
     skip("Mock server tests are disabled")
 
-    response =
-      @hubspot.crm.objects.partner_services.get(
-        inputs: [{id: "430001"}],
-        properties: ["string"],
-        properties_with_history: ["string"]
-      )
+    response = @hubspot.crm.objects.partner_services.get("partnerServiceId")
 
     assert_pattern do
-      response => HubspotSDK::Crm::BatchResponseSimplePublicObject
+      response => HubspotSDK::Crm::SimplePublicObjectWithAssociations
     end
 
     assert_pattern do
       response => {
-        completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
-        started_at: Time,
-        status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
-        requested_at: Time | nil
+        id: String,
+        archived: HubspotSDK::Internal::Type::Boolean,
+        created_at: Time,
+        properties: ^(HubspotSDK::Internal::Type::HashOf[String, nil?: true]),
+        updated_at: Time,
+        archived_at: Time | nil,
+        associations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Crm::CollectionResponseAssociatedID]) | nil,
+        object_write_trace_id: String | nil,
+        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil,
+        url: String | nil
       }
     end
   end

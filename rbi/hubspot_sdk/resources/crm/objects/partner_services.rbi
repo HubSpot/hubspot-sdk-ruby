@@ -5,17 +5,35 @@ module HubspotSDK
     class Crm
       class Objects
         class PartnerServices
-          # Update multiple partner services using their internal IDs or unique property
-          # values. This operation allows for batch processing of updates, ensuring
-          # efficient synchronization of service data between HubSpot and other systems.
+          sig do
+            returns(HubspotSDK::Resources::Crm::Objects::PartnerServices::Batch)
+          end
+          attr_reader :batch
+
+          # Perform a partial update of an Object identified by `{partnerServiceId}`or
+          # optionally a unique property value as specified by the `idProperty` query param.
+          # `{partnerServiceId}` refers to the internal object ID by default, and the
+          # `idProperty` query param refers to a property whose values are unique for the
+          # object. Provided property values will be overwritten. Read-only and non-existent
+          # properties will result in an error. Properties values can be cleared by passing
+          # an empty string.
           sig do
             params(
-              inputs:
-                T::Array[HubspotSDK::Crm::SimplePublicObjectBatchInput::OrHash],
+              partner_service_id: String,
+              properties: T::Hash[Symbol, String],
+              id_property: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
+            ).returns(HubspotSDK::Crm::SimplePublicObject)
           end
-          def update(inputs:, request_options: {})
+          def update(
+            # Path param
+            partner_service_id,
+            # Body param: Key value pairs representing the properties of the object.
+            properties:,
+            # Query param: The name of a property whose values are unique for this object type
+            id_property: nil,
+            request_options: {}
+          )
           end
 
           # Retrieve a list of associations for a specific partner service, filtered by the
@@ -48,31 +66,38 @@ module HubspotSDK
           )
           end
 
-          # Retrieve records by record ID or include the `idProperty` parameter to retrieve
-          # records by a custom unique value property.
+          # Read an Object identified by `{partnerServiceId}`. `{partnerServiceId}` refers
+          # to the internal object ID by default, or optionally any unique property value as
+          # specified by the `idProperty` query param. Control what is returned via the
+          # `properties` query param.
           sig do
             params(
-              inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
+              partner_service_id: String,
+              archived: T::Boolean,
+              associations: T::Array[String],
+              id_property: String,
               properties: T::Array[String],
               properties_with_history: T::Array[String],
-              archived: T::Boolean,
-              id_property: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
+            ).returns(HubspotSDK::Crm::SimplePublicObjectWithAssociations)
           end
           def get(
-            # Body param
-            inputs:,
-            # Body param: Key-value pairs for setting properties for the new object.
-            properties:,
-            # Body param: Key-value pairs for setting properties for the new object and their
-            # histories.
-            properties_with_history:,
-            # Query param: Whether to return only results that have been archived.
+            partner_service_id,
+            # Whether to return only results that have been archived.
             archived: nil,
-            # Body param: When using a custom unique value property to retrieve records, the
-            # name of the property. Do not include this parameter if retrieving by record ID.
+            # A comma separated list of object types to retrieve associated IDs for. If any of
+            # the specified associations do not exist, they will be ignored.
+            associations: nil,
+            # The name of a property whose values are unique for this object type
             id_property: nil,
+            # A comma separated list of the properties to be returned in the response. If any
+            # of the specified properties are not present on the requested object(s), they
+            # will be ignored.
+            properties: nil,
+            # A comma separated list of the properties to be returned along with their history
+            # of previous values. If any of the specified properties are not present on the
+            # requested object(s), they will be ignored.
+            properties_with_history: nil,
             request_options: {}
           )
           end

@@ -1,0 +1,30 @@
+module HubspotSDK
+  module Models
+    module Automation
+      module Actions
+        type callback_complete_params =
+          { callback_id: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class CallbackCompleteParams < HubspotSDK::Models::Automation::CallbackCompletionRequest
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def callback_id: -> String
+
+          def callback_id=: (String _) -> String
+
+          def initialize: (
+            callback_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            callback_id: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

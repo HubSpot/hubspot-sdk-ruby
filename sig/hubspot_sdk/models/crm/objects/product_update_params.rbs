@@ -3,15 +3,32 @@ module HubspotSDK
     module Crm
       module Objects
         type product_update_params =
-          {  } & HubspotSDK::Internal::Type::request_parameters
+          { product_id: String, id_property: String }
+          & HubspotSDK::Internal::Type::request_parameters
 
-        class ProductUpdateParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectBatchInput
+        class ProductUpdateParams < HubspotSDK::Models::Crm::SimplePublicObjectInput
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
-          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+          def product_id: -> String
 
-          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+          def product_id=: (String _) -> String
+
+          def id_property: -> String?
+
+          def id_property=: (String _) -> String
+
+          def initialize: (
+            product_id: String,
+            ?id_property: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            product_id: String,
+            id_property: String,
+            request_options: HubspotSDK::RequestOptions
+          }
         end
       end
     end

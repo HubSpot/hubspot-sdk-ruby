@@ -3,17 +3,22 @@ module HubspotSDK
     class Crm
       class Objects
         class Custom
+          attr_reader batch: HubspotSDK::Resources::Crm::Objects::Custom::Batch
+
           def create: (
             String object_type,
-            inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectBatchInputForCreate],
+            associations: ::Array[HubspotSDK::Crm::PublicAssociationsForObject],
+            properties: ::Hash[Symbol, String],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::BatchResponseSimplePublicObject
+          ) -> HubspotSDK::Crm::SimplePublicObject
 
           def update: (
-            String object_type,
-            inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectBatchInput],
+            String object_id_,
+            object_type: String,
+            properties: ::Hash[Symbol, String],
+            ?id_property: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::BatchResponseSimplePublicObject
+          ) -> HubspotSDK::Crm::SimplePublicObject
 
           def list: (
             String object_type,
@@ -27,20 +32,21 @@ module HubspotSDK
           ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::SimplePublicObjectWithAssociations]
 
           def delete: (
-            String object_type,
-            inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectID],
+            String object_id_,
+            object_type: String,
             ?request_options: HubspotSDK::request_opts
           ) -> nil
 
           def get: (
-            String object_type,
-            inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectID],
-            properties: ::Array[String],
-            properties_with_history: ::Array[String],
+            String object_id_,
+            object_type: String,
             ?archived: bool,
+            ?associations: ::Array[String],
             ?id_property: String,
+            ?properties: ::Array[String],
+            ?properties_with_history: ::Array[String],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::BatchResponseSimplePublicObject
+          ) -> HubspotSDK::Crm::SimplePublicObjectWithAssociations
 
           def merge: (
             String object_type,
@@ -59,12 +65,6 @@ module HubspotSDK
             ?query: String,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
-
-          def upsert: (
-            String object_type,
-            inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectBatchInputUpsert],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

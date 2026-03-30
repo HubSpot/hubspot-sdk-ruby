@@ -4,7 +4,7 @@ module HubspotSDK
   module Models
     module Crm
       module Objects
-        class UserDeleteParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectID
+        class UserDeleteParams < HubspotSDK::Internal::Type::BaseModel
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 
@@ -16,16 +16,22 @@ module HubspotSDK
               )
             end
 
+          sig { returns(String) }
+          attr_accessor :user_id
+
           sig do
-            params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-              T.attached_class
-            )
+            params(
+              user_id: String,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(T.attached_class)
           end
-          def self.new(request_options: {})
+          def self.new(user_id:, request_options: {})
           end
 
           sig do
-            override.returns({ request_options: HubspotSDK::RequestOptions })
+            override.returns(
+              { user_id: String, request_options: HubspotSDK::RequestOptions }
+            )
           end
           def to_hash
           end
