@@ -10,6 +10,7 @@ module HubspotSDK
           object_type_id: String,
           subscription_type: HubspotSDK::Models::Webhooks::SubscriptionResponse1::subscription_type,
           updated_at: Time,
+          action_overrides: ::Hash[Symbol, HubspotSDK::Webhooks::ActionOverrideRequest],
           associated_object_type_ids: ::Array[String],
           created_by: Integer,
           deleted_at: Time,
@@ -33,6 +34,12 @@ module HubspotSDK
         attr_accessor subscription_type: HubspotSDK::Models::Webhooks::SubscriptionResponse1::subscription_type
 
         attr_accessor updated_at: Time
+
+        attr_reader action_overrides: ::Hash[Symbol, HubspotSDK::Webhooks::ActionOverrideRequest]?
+
+        def action_overrides=: (
+          ::Hash[Symbol, HubspotSDK::Webhooks::ActionOverrideRequest]
+        ) -> ::Hash[Symbol, HubspotSDK::Webhooks::ActionOverrideRequest]
 
         attr_reader associated_object_type_ids: ::Array[String]?
 
@@ -70,6 +77,7 @@ module HubspotSDK
           object_type_id: String,
           subscription_type: HubspotSDK::Models::Webhooks::SubscriptionResponse1::subscription_type,
           updated_at: Time,
+          ?action_overrides: ::Hash[Symbol, HubspotSDK::Webhooks::ActionOverrideRequest],
           ?associated_object_type_ids: ::Array[String],
           ?created_by: Integer,
           ?deleted_at: Time,
@@ -87,6 +95,7 @@ module HubspotSDK
           object_type_id: String,
           subscription_type: HubspotSDK::Models::Webhooks::SubscriptionResponse1::subscription_type,
           updated_at: Time,
+          action_overrides: ::Hash[Symbol, HubspotSDK::Webhooks::ActionOverrideRequest],
           associated_object_type_ids: ::Array[String],
           created_by: Integer,
           deleted_at: Time,

@@ -4,14 +4,15 @@ module HubspotSDK
   module Models
     module Auth
       # @see HubspotSDK::Resources::Auth::OAuth#introspect_token
-      class TokenInfoResponseBaseIf < HubspotSDK::Internal::Type::BaseModel
-        # @!attribute active
-        #
-        #   @return [Boolean]
-        required :active, HubspotSDK::Internal::Type::Boolean
+      module TokenInfoResponseBaseIf
+        extend HubspotSDK::Internal::Type::Union
 
-        # @!method initialize(active:)
-        #   @param active [Boolean]
+        variant -> { HubspotSDK::Auth::PublicAccessTokenInfoResponse }
+
+        variant -> { HubspotSDK::Auth::PublicRefreshTokenInfoResponse }
+
+        # @!method self.variants
+        #   @return [Array(HubspotSDK::Models::Auth::PublicAccessTokenInfoResponse, HubspotSDK::Models::Auth::PublicRefreshTokenInfoResponse)]
       end
     end
   end

@@ -15,22 +15,22 @@ module HubspotSDK
             )
           end
 
-        # The cursor token value to get the next set of results. You can get this from the
-        # `paging.next.after` JSON property of a paged response containing more results.
+        # The paging cursor token of the last successfully read resource will be returned
+        # as the `paging.next.after` JSON property of a paged response containing more
+        # results.
         sig { returns(T.nilable(String)) }
         attr_reader :after
 
         sig { params(after: String).void }
         attr_writer :after
 
-        # The maximum number of results to display per page. Max value of limit is 200.
+        # The maximum number of results to display per page.
         sig { returns(T.nilable(Integer)) }
         attr_reader :limit
 
         sig { params(limit: Integer).void }
         attr_writer :limit
 
-        # Identifier of user to retrieve activities for
         sig { returns(T.nilable(Integer)) }
         attr_reader :user_id
 
@@ -46,12 +46,12 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The cursor token value to get the next set of results. You can get this from the
-          # `paging.next.after` JSON property of a paged response containing more results.
+          # The paging cursor token of the last successfully read resource will be returned
+          # as the `paging.next.after` JSON property of a paged response containing more
+          # results.
           after: nil,
-          # The maximum number of results to display per page. Max value of limit is 200.
+          # The maximum number of results to display per page.
           limit: nil,
-          # Identifier of user to retrieve activities for
           user_id: nil,
           request_options: {}
         )

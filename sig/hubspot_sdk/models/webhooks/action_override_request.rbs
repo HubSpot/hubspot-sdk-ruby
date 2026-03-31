@@ -1,0 +1,45 @@
+module HubspotSDK
+  module Models
+    module Webhooks
+      type action_override_request =
+        {
+          associated_object_type_ids: ::Array[String],
+          list_ids: ::Array[Integer],
+          object_ids: ::Array[Integer],
+          properties: ::Array[String]
+        }
+
+      class ActionOverrideRequest < HubspotSDK::Internal::Type::BaseModel
+        attr_reader associated_object_type_ids: ::Array[String]?
+
+        def associated_object_type_ids=: (::Array[String]) -> ::Array[String]
+
+        attr_reader list_ids: ::Array[Integer]?
+
+        def list_ids=: (::Array[Integer]) -> ::Array[Integer]
+
+        attr_reader object_ids: ::Array[Integer]?
+
+        def object_ids=: (::Array[Integer]) -> ::Array[Integer]
+
+        attr_reader properties: ::Array[String]?
+
+        def properties=: (::Array[String]) -> ::Array[String]
+
+        def initialize: (
+          ?associated_object_type_ids: ::Array[String],
+          ?list_ids: ::Array[Integer],
+          ?object_ids: ::Array[Integer],
+          ?properties: ::Array[String]
+        ) -> void
+
+        def to_hash: -> {
+          associated_object_type_ids: ::Array[String],
+          list_ids: ::Array[Integer],
+          object_ids: ::Array[Integer],
+          properties: ::Array[String]
+        }
+      end
+    end
+  end
+end

@@ -8,13 +8,19 @@ module HubspotSDK
         }
 
       class PublicChannelAccountStagingTokenUpdateRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor account_name: String
+        attr_reader account_name: String?
 
-        attr_accessor delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+        def account_name=: (String) -> String
+
+        attr_reader delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier?
+
+        def delivery_identifier=: (
+          HubspotSDK::Conversations::PublicDeliveryIdentifier
+        ) -> HubspotSDK::Conversations::PublicDeliveryIdentifier
 
         def initialize: (
-          account_name: String,
-          delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+          ?account_name: String,
+          ?delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
         ) -> void
 
         def to_hash: -> {

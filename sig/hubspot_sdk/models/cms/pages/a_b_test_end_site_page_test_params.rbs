@@ -1,0 +1,19 @@
+module HubspotSDK
+  module Models
+    module Cms
+      module Pages
+        type ab_test_end_site_page_test_params =
+          {  } & HubspotSDK::Internal::Type::request_parameters
+
+        class ABTestEndSitePageTestParams < HubspotSDK::Models::Cms::AbTestEndRequestVNext
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+
+          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+        end
+      end
+    end
+  end
+end

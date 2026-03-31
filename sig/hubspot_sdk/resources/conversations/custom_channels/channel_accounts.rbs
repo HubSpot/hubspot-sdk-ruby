@@ -35,8 +35,8 @@ module HubspotSDK
           def update_staging_token: (
             String account_token,
             channel_id: Integer,
-            account_name: String,
-            delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
+            ?account_name: String,
+            ?delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Conversations::PublicChannelAccountStagingToken
 

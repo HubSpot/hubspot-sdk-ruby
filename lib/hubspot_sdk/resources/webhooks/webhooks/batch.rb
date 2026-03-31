@@ -9,10 +9,8 @@ module HubspotSDK
           #
           # @overload create(app_id, inputs:, request_options: {})
           #
-          # @param app_id [Integer] The ID of the target app.
-          #
+          # @param app_id [Integer]
           # @param inputs [Array<HubspotSDK::Models::Webhooks::SubscriptionBatchUpdateRequest>]
-          #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubspotSDK::Models::Webhooks::BatchResponseSubscriptionResponse]

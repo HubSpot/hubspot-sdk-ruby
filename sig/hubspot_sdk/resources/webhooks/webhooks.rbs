@@ -15,6 +15,11 @@ module HubspotSDK
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Webhooks::FilterCreateResponse
 
+        def create_journal_subscription: (
+          subscription_upsert_request: HubspotSDK::Models::Webhooks::subscription_upsert_request,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Webhooks::SubscriptionResponse1
+
         def create_subscription: (
           Integer app_id,
           active: bool,
@@ -30,7 +35,12 @@ module HubspotSDK
           ?request_options: HubspotSDK::request_opts
         ) -> nil
 
-        def delete_portal: (
+        def delete_journal_subscription: (
+          Integer subscription_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> nil
+
+        def delete_portal_subscriptions: (
           Integer portal_id,
           ?request_options: HubspotSDK::request_opts
         ) -> nil
@@ -46,57 +56,57 @@ module HubspotSDK
           ?request_options: HubspotSDK::request_opts
         ) -> nil
 
-        def get_earliest_journal: (
-          ?install_portal_id: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> StringIO
-
-        def get_earliest_journal_local: (
-          ?install_portal_id: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> StringIO
-
         def get_filter: (
           Integer filter_id,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Webhooks::FilterResponse
 
-        def get_filter_by_subscription: (
+        def get_filters_by_subscription: (
           Integer subscription_id,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Models::Webhooks::webhook_get_filter_by_subscription_response
+        ) -> HubspotSDK::Models::Webhooks::webhook_get_filters_by_subscription_response
 
-        def get_journal_local_status: (
-          String status_id,
+        def get_journal_earliest: (
+          ?install_portal_id: Integer,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Webhooks::SnapshotStatusResponse
+        ) -> StringIO
+
+        def get_journal_latest: (
+          ?install_portal_id: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> StringIO
+
+        def get_journal_next_by_offset: (
+          String offset,
+          ?install_portal_id: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> StringIO
 
         def get_journal_status: (
           String status_id,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Webhooks::SnapshotStatusResponse
 
-        def get_latest_journal: (
+        def get_local_earliest: (
           ?install_portal_id: Integer,
           ?request_options: HubspotSDK::request_opts
         ) -> StringIO
 
-        def get_latest_journal_local: (
+        def get_local_latest: (
           ?install_portal_id: Integer,
           ?request_options: HubspotSDK::request_opts
         ) -> StringIO
 
-        def get_next_journal_by_offset: (
+        def get_local_next_by_offset: (
           String offset,
           ?install_portal_id: Integer,
           ?request_options: HubspotSDK::request_opts
         ) -> StringIO
 
-        def get_next_journal_local_by_offset: (
-          String offset,
-          ?install_portal_id: Integer,
+        def get_local_status: (
+          String status_id,
           ?request_options: HubspotSDK::request_opts
-        ) -> StringIO
+        ) -> HubspotSDK::Webhooks::SnapshotStatusResponse
 
         def get_settings: (
           Integer app_id,
@@ -108,6 +118,10 @@ module HubspotSDK
           app_id: Integer,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Webhooks::SubscriptionResponse
+
+        def list_journal_subscriptions: (
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Webhooks::CollectionResponseSubscriptionResponseNoPaging
 
         def list_subscriptions: (
           Integer app_id,

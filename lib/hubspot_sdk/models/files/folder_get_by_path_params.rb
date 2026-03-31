@@ -14,16 +14,13 @@ module HubspotSDK
         required :folder_path, String
 
         # @!attribute properties
-        #   Properties to set on returned folder.
         #
         #   @return [Array<String>, nil]
         optional :properties, HubspotSDK::Internal::Type::ArrayOf[String]
 
         # @!method initialize(folder_path:, properties: nil, request_options: {})
         #   @param folder_path [String]
-        #
-        #   @param properties [Array<String>] Properties to set on returned folder.
-        #
+        #   @param properties [Array<String>]
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end

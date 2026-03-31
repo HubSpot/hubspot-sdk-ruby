@@ -55,26 +55,16 @@ module HubspotSDK
         #
         # @overload update(object_type, clear_description:, allows_sensitive_properties: nil, description: nil, labels: nil, primary_display_property: nil, required_properties: nil, restorable: nil, searchable_properties: nil, secondary_display_properties: nil, request_options: {})
         #
-        # @param object_type [String] Fully qualified name or object type ID of your schema.
-        #
+        # @param object_type [String]
         # @param clear_description [Boolean]
-        #
         # @param allows_sensitive_properties [Boolean]
-        #
         # @param description [String]
-        #
         # @param labels [HubspotSDK::Models::ObjectTypeDefinitionLabels]
-        #
         # @param primary_display_property [String]
-        #
         # @param required_properties [Array<String>]
-        #
         # @param restorable [Boolean]
-        #
         # @param searchable_properties [Array<String>]
-        #
         # @param secondary_display_properties [Array<String>]
-        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::ObjectTypeDefinition]
@@ -130,7 +120,7 @@ module HubspotSDK
         #
         # @overload delete(object_type, archived: nil, request_options: {})
         #
-        # @param object_type [String] Fully qualified name or object type ID of your schema.
+        # @param object_type [String]
         #
         # @param archived [Boolean] Whether to return only results that have been archived.
         #
@@ -157,14 +147,10 @@ module HubspotSDK
         #
         # @overload create_association(object_type, from_object_type_id:, to_object_type_id:, name: nil, request_options: {})
         #
-        # @param object_type [String] Fully qualified name or object type ID of your schema.
-        #
+        # @param object_type [String]
         # @param from_object_type_id [String]
-        #
         # @param to_object_type_id [String]
-        #
         # @param name [String]
-        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::AssociationDefinition]
@@ -187,10 +173,8 @@ module HubspotSDK
         #
         # @overload delete_association(association_identifier, object_type:, request_options: {})
         #
-        # @param association_identifier [String] Unique ID of the association to remove.
-        #
-        # @param object_type [String] Fully qualified name or object type ID of your schema.
-        #
+        # @param association_identifier [String]
+        # @param object_type [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
@@ -219,14 +203,10 @@ module HubspotSDK
         #
         # @overload get(object_type, include_association_definitions: nil, include_audit_metadata: nil, include_property_definitions: nil, request_options: {})
         #
-        # @param object_type [String] Fully qualified name or object type ID of your schema.
-        #
+        # @param object_type [String]
         # @param include_association_definitions [Boolean]
-        #
         # @param include_audit_metadata [Boolean]
-        #
         # @param include_property_definitions [Boolean]
-        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Crm::ObjectSchema]

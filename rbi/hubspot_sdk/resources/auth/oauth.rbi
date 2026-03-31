@@ -40,7 +40,7 @@ module HubspotSDK
             client_secret: String,
             token_type_hint: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Auth::TokenInfoResponseBaseIf)
+          ).returns(HubspotSDK::Auth::TokenInfoResponseBaseIf::Variants)
         end
         def introspect_token(
           token: nil,

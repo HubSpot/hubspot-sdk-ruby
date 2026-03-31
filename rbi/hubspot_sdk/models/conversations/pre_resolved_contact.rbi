@@ -672,6 +672,11 @@ module HubspotSDK
               :hs_email_last_send_date,
               HubspotSDK::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch::TaggedSymbol
             )
+          HS_EMAIL_LIVE_SOURCING_RESTRICTED =
+            T.let(
+              :hs_email_live_sourcing_restricted,
+              HubspotSDK::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch::TaggedSymbol
+            )
           HS_EMAIL_OPEN =
             T.let(
               :hs_email_open,

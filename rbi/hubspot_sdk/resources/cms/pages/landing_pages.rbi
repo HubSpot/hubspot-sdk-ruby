@@ -546,7 +546,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def publish_draft(object_id_, request_options: {})
+          def push_draft_live(object_id_, request_options: {})
           end
 
           # Discards any edits and resets the draft to match the live version.

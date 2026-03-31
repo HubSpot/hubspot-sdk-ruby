@@ -4,6 +4,7 @@ module HubspotSDK
   module Models
     module Crm
       module Extensions
+        # @see HubspotSDK::Resources::Crm::Extensions::Calling#create_settings
         class SettingsResponse < HubspotSDK::Internal::Type::BaseModel
           # @!attribute created_at
           #   The date and time when the calling extension settings were created.

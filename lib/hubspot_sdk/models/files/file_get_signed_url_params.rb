@@ -14,40 +14,27 @@ module HubspotSDK
         required :file_id, String
 
         # @!attribute expiration_seconds
-        #   How long in seconds the link will provide access to the file.
         #
         #   @return [Integer, nil]
         optional :expiration_seconds, Integer
 
         # @!attribute size
-        #   For image files. This will resize the image to the desired size before sharing.
-        #   Does not affect the original file, just the file served by this signed URL.
         #
         #   @return [Symbol, HubspotSDK::Models::Files::FileGetSignedURLParams::Size, nil]
         optional :size, enum: -> { HubspotSDK::Files::FileGetSignedURLParams::Size }
 
         # @!attribute upscale
-        #   If size is provided, this will upscale the image to fit the size dimensions.
         #
         #   @return [Boolean, nil]
         optional :upscale, HubspotSDK::Internal::Type::Boolean
 
         # @!method initialize(file_id:, expiration_seconds: nil, size: nil, upscale: nil, request_options: {})
-        #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Files::FileGetSignedURLParams} for more details.
-        #
         #   @param file_id [String]
-        #
-        #   @param expiration_seconds [Integer] How long in seconds the link will provide access to the file.
-        #
-        #   @param size [Symbol, HubspotSDK::Models::Files::FileGetSignedURLParams::Size] For image files. This will resize the image to the desired size before sharing.
-        #
-        #   @param upscale [Boolean] If size is provided, this will upscale the image to fit the size dimensions.
-        #
+        #   @param expiration_seconds [Integer]
+        #   @param size [Symbol, HubspotSDK::Models::Files::FileGetSignedURLParams::Size]
+        #   @param upscale [Boolean]
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
 
-        # For image files. This will resize the image to the desired size before sharing.
-        # Does not affect the original file, just the file served by this signed URL.
         module Size
           extend HubspotSDK::Internal::Type::Enum
 

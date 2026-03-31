@@ -121,7 +121,7 @@ module HubspotSDK
           # This information will be applied to the channel account created from this
           # staging token. This is used for public apps.
           #
-          # @overload update_staging_token(account_token, channel_id:, account_name:, delivery_identifier:, request_options: {})
+          # @overload update_staging_token(account_token, channel_id:, account_name: nil, delivery_identifier: nil, request_options: {})
           #
           # @param account_token [String] Path param
           #

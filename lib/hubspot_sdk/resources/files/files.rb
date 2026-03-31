@@ -40,7 +40,7 @@ module HubspotSDK
         #
         # @overload update(file_id, clear_expires:, access: nil, expires_at: nil, is_usable_in_content: nil, name: nil, parent_folder_id: nil, parent_folder_path: nil, request_options: {})
         #
-        # @param file_id [String] ID of file to update
+        # @param file_id [String]
         #
         # @param clear_expires [Boolean]
         #
@@ -76,8 +76,7 @@ module HubspotSDK
         #
         # @overload delete(file_id, request_options: {})
         #
-        # @param file_id [String] FileId to delete
-        #
+        # @param file_id [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
@@ -96,8 +95,7 @@ module HubspotSDK
         #
         # @overload gdpr_delete(file_id, request_options: {})
         #
-        # @param file_id [String] ID of file to GDPR delete
-        #
+        # @param file_id [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
@@ -116,10 +114,8 @@ module HubspotSDK
         #
         # @overload get(file_id, properties: nil, request_options: {})
         #
-        # @param file_id [String] ID of the desired file.
-        #
+        # @param file_id [String]
         # @param properties [Array<String>]
-        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Files::File]
@@ -164,8 +160,7 @@ module HubspotSDK
         #
         # @overload get_import_task_status(task_id, request_options: {})
         #
-        # @param task_id [String] Import by URL task ID
-        #
+        # @param task_id [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Files::FileActionResponse]
@@ -180,21 +175,14 @@ module HubspotSDK
           )
         end
 
-        # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Files::FileGetSignedURLParams} for more details.
-        #
         # Generates signed URL that allows temporary access to a private file.
         #
         # @overload get_signed_url(file_id, expiration_seconds: nil, size: nil, upscale: nil, request_options: {})
         #
-        # @param file_id [String] ID of file.
-        #
-        # @param expiration_seconds [Integer] How long in seconds the link will provide access to the file.
-        #
-        # @param size [Symbol, HubspotSDK::Models::Files::FileGetSignedURLParams::Size] For image files. This will resize the image to the desired size before sharing.
-        #
-        # @param upscale [Boolean] If size is provided, this will upscale the image to fit the size dimensions.
-        #
+        # @param file_id [String]
+        # @param expiration_seconds [Integer]
+        # @param size [Symbol, HubspotSDK::Models::Files::FileGetSignedURLParams::Size]
+        # @param upscale [Boolean]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Files::SignedURL]
@@ -260,14 +248,10 @@ module HubspotSDK
         #
         # @overload replace(file_id, charset_hunch: nil, file: nil, options: nil, request_options: {})
         #
-        # @param file_id [String] ID of the desired file.
-        #
+        # @param file_id [String]
         # @param charset_hunch [String]
-        #
         # @param file [Pathname, StringIO, IO, String, HubspotSDK::FilePart]
-        #
         # @param options [String]
-        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Files::File]
@@ -293,77 +277,77 @@ module HubspotSDK
         #
         # @overload search(after: nil, allows_anonymous_access: nil, before: nil, created_at: nil, created_at_gte: nil, created_at_lte: nil, encoding: nil, expires_at: nil, expires_at_gte: nil, expires_at_lte: nil, extension: nil, file_md5: nil, height: nil, height_gte: nil, height_lte: nil, id_gte: nil, id_lte: nil, ids: nil, is_usable_in_content: nil, limit: nil, name: nil, parent_folder_ids: nil, path: nil, properties: nil, size: nil, size_gte: nil, size_lte: nil, sort: nil, type: nil, updated_at: nil, updated_at_gte: nil, updated_at_lte: nil, url: nil, width: nil, width_gte: nil, width_lte: nil, request_options: {})
         #
-        # @param after [String] Offset search results by this value. The default offset is 0 and the maximum off
+        # @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
-        # @param allows_anonymous_access [Boolean] Search files by access. If 'true' will show only public files; if 'false' will s
+        # @param allows_anonymous_access [Boolean]
         #
-        # @param before [String] Search files updated before this timestamp. Time must be epoch time in milliseco
+        # @param before [String]
         #
-        # @param created_at [Time] Search files by exact time of creation. Time must be epoch time in milliseconds.
+        # @param created_at [Time]
         #
-        # @param created_at_gte [Time] Search files by greater than or equal to time of creation. Can be used with crea
+        # @param created_at_gte [Time]
         #
-        # @param created_at_lte [Time] Search files by less than or equal to time of creation. Can be used with created
+        # @param created_at_lte [Time]
         #
-        # @param encoding [String] Search files by specified encoding.
+        # @param encoding [String]
         #
-        # @param expires_at [Time] Search files by exact expires time. Time must be epoch time in milliseconds.
+        # @param expires_at [Time]
         #
-        # @param expires_at_gte [Time] Search files by greater than or equal to expires time. Can be used with expiresA
+        # @param expires_at_gte [Time]
         #
-        # @param expires_at_lte [Time] Search files by less than or equal to expires time. Can be used with expiresAtGt
+        # @param expires_at_lte [Time]
         #
-        # @param extension [String] Search files by given extension.
+        # @param extension [String]
         #
-        # @param file_md5 [String] Search files by specific md5 hash.
+        # @param file_md5 [String]
         #
-        # @param height [Integer] Search files by height of image or video.
+        # @param height [Integer]
         #
-        # @param height_gte [Integer] Search files by greater than or equal to height of image or video. Can be used w
+        # @param height_gte [Integer]
         #
-        # @param height_lte [Integer] Search files by less than or equal to height of image or video. Can be used with
+        # @param height_lte [Integer]
         #
-        # @param id_gte [Integer] Search files by greater than or equal to ID. Can be used with idLte to create a
+        # @param id_gte [Integer]
         #
-        # @param id_lte [Integer] Search files by less than or equal to ID. Can be used with idGte to create a ran
+        # @param id_lte [Integer]
         #
         # @param ids [Array<Integer>]
         #
-        # @param is_usable_in_content [Boolean] If true shows files that have been marked to be used in new content. It false sh
+        # @param is_usable_in_content [Boolean]
         #
-        # @param limit [Integer] Number of items to return. Default limit is 10, maximum limit is 100.
+        # @param limit [Integer] The maximum number of results to display per page.
         #
-        # @param name [String] Search for files containing the given name.
+        # @param name [String]
         #
         # @param parent_folder_ids [Array<Integer>]
         #
-        # @param path [String] Search files by path.
+        # @param path [String]
         #
-        # @param properties [Array<String>] Desired file properties in the return object.
+        # @param properties [Array<String>]
         #
-        # @param size [Integer] Search files by exact file size in bytes.
+        # @param size [Integer]
         #
-        # @param size_gte [Integer] Search files by greater than or equal to file size. Can be used with sizeLte to
+        # @param size_gte [Integer]
         #
-        # @param size_lte [Integer] Search files by less than or equal to file size. Can be used with sizeGte to cre
+        # @param size_lte [Integer]
         #
-        # @param sort [Array<String>] Sort files by a given field.
+        # @param sort [Array<String>]
         #
-        # @param type [String] Search files by file type.
+        # @param type [String]
         #
-        # @param updated_at [Time] Search files by exact time of latest updated. Time must be epoch time in millise
+        # @param updated_at [Time]
         #
-        # @param updated_at_gte [Time] Search files by greater than or equal to time of latest update. Can be used with
+        # @param updated_at_gte [Time]
         #
-        # @param updated_at_lte [Time] Search files by less than or equal to time of latest update. Can be used with up
+        # @param updated_at_lte [Time]
         #
-        # @param url [String] Search for given URL
+        # @param url [String]
         #
-        # @param width [Integer] Search files by width of image or video.
+        # @param width [Integer]
         #
-        # @param width_gte [Integer] Search files by greater than or equal to width of image or video. Can be used wi
+        # @param width_gte [Integer]
         #
-        # @param width_lte [Integer] Search files by less than or equal to width of image or video. Can be used with
+        # @param width_lte [Integer]
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
