@@ -48,10 +48,7 @@ class HubspotSDK::Test::SingletonClient < HubspotSDK::Client
   TEST_API_BASE_URL = ENV.fetch("TEST_API_BASE_URL", "http://localhost:4010")
 
   def initialize
-    super(
-      base_url: HubspotSDK::Test::SingletonClient::TEST_API_BASE_URL,
-      access_token: "pat-na1-xxxxxxxx-xxxx"
-    )
+    super(base_url: HubspotSDK::Test::SingletonClient::TEST_API_BASE_URL, access_token: "My Access Token")
   end
 end
 
