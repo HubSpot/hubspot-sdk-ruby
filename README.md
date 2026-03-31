@@ -24,14 +24,11 @@ gem "hubspot-sdk", "~> 0.0.1"
 require "bundler/setup"
 require "hubspot_sdk"
 
-hubspot = HubspotSDK::Client.new(access_token: "pat-na1-xxxxxxxx-xxxx")
+hubspot = HubspotSDK::Client.new(access_token: "My Access Token")
 
-simple_public_object = hubspot.crm.objects.contacts.create(
-  associations: [{to: {id: "id"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-  properties: {email: "mark.s@lumon.industries"}
-)
+simple_public_object_with_associations = hubspot.crm.objects.contacts.get("contactId")
 
-puts(simple_public_object.id)
+puts(simple_public_object_with_associations.id)
 ```
 
 ### Pagination
@@ -92,7 +89,7 @@ When the library is unable to connect to the API, or if the API returns a non-su
 begin
   contact = hubspot.crm.objects.contacts.create(
     associations: [{to: {id: "id"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-    properties: {email: "mark.s@lumon.industries"}
+    properties: {foo: "string"}
   )
 rescue HubspotSDK::Errors::APIConnectionError => e
   puts("The server could not be reached")
@@ -138,7 +135,7 @@ hubspot = HubspotSDK::Client.new(
 # Or, configure per-request:
 hubspot.crm.objects.contacts.create(
   associations: [{to: {id: "id"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-  properties: {email: "mark.s@lumon.industries"},
+  properties: {foo: "string"},
   request_options: {max_retries: 5}
 )
 ```
@@ -156,7 +153,7 @@ hubspot = HubspotSDK::Client.new(
 # Or, configure per-request:
 hubspot.crm.objects.contacts.create(
   associations: [{to: {id: "id"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-  properties: {email: "mark.s@lumon.industries"},
+  properties: {foo: "string"},
   request_options: {timeout: 5}
 )
 ```
@@ -191,7 +188,7 @@ Note: the `extra_` parameters of the same name overrides the documented paramete
 simple_public_object =
   hubspot.crm.objects.contacts.create(
     associations: [{to: {id: "id"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-    properties: {email: "mark.s@lumon.industries"},
+    properties: {foo: "string"},
     request_options: {
       extra_query: {my_query_parameter: value},
       extra_body: {my_body_parameter: value},
@@ -237,37 +234,18 @@ This library provides comprehensive [RBI](https://sorbet.org/docs/rbi) definitio
 You can provide typesafe request parameters like so:
 
 ```ruby
-hubspot.crm.objects.contacts.create(
-  associations: [
-    HubspotSDK::Crm::PublicAssociationsForObject.new(
-      to: HubspotSDK::PublicObjectID.new(id: "id"),
-      types: [HubspotSDK::AssociationSpec.new(association_category: "HUBSPOT_DEFINED", association_type_id: 0)]
-    )
-  ],
-  properties: {email: "mark.s@lumon.industries"}
-)
+hubspot.crm.objects.contacts.get("contactId")
 ```
 
 Or, equivalently:
 
 ```ruby
 # Hashes work, but are not typesafe:
-hubspot.crm.objects.contacts.create(
-  associations: [{to: {id: "id"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
-  properties: {email: "mark.s@lumon.industries"}
-)
+hubspot.crm.objects.contacts.get("contactId")
 
 # You can also splat a full Params class:
-params = HubspotSDK::Crm::Objects::ContactCreateParams.new(
-  associations: [
-    HubspotSDK::Crm::PublicAssociationsForObject.new(
-      to: HubspotSDK::PublicObjectID.new(id: "id"),
-      types: [HubspotSDK::AssociationSpec.new(association_category: "HUBSPOT_DEFINED", association_type_id: 0)]
-    )
-  ],
-  properties: {email: "mark.s@lumon.industries"}
-)
-hubspot.crm.objects.contacts.create(**params)
+params = HubspotSDK::Crm::Objects::ContactGetParams.new
+hubspot.crm.objects.contacts.get("contactId", **params)
 ```
 
 ### Enums
