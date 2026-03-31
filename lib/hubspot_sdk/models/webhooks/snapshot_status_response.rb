@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Webhooks
-      # @see HubspotSDK::Resources::Webhooks::Webhooks#get_journal_local_status
+      # @see HubspotSDK::Resources::Webhooks::Webhooks#get_journal_status
       class SnapshotStatusResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #

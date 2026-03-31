@@ -445,15 +445,15 @@ module HubspotSDK
           # Take any changes from the draft version of the Landing Page and apply them to
           # the live version.
           #
-          # @overload publish_draft(object_id_, request_options: {})
+          # @overload push_draft_live(object_id_, request_options: {})
           #
           # @param object_id_ [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Cms::Pages::LandingPagePublishDraftParams
-          def publish_draft(object_id_, params = {})
+          # @see HubspotSDK::Models::Cms::Pages::LandingPagePushDraftLiveParams
+          def push_draft_live(object_id_, params = {})
             @client.request(
               method: :post,
               path: ["cms/pages/2026-03/landing-pages/%1$s/draft/push-live", object_id_],

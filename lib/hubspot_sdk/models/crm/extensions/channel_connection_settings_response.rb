@@ -4,6 +4,7 @@ module HubspotSDK
   module Models
     module Crm
       module Extensions
+        # @see HubspotSDK::Resources::Crm::Extensions::Calling#create_channel_connection_settings
         class ChannelConnectionSettingsResponse < HubspotSDK::Internal::Type::BaseModel
           # @!attribute created_at
           #   The date and time when the channel connection settings were created.

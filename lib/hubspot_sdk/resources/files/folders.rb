@@ -8,8 +8,7 @@ module HubspotSDK
         #
         # @overload delete_by_id(folder_id, request_options: {})
         #
-        # @param folder_id [String] ID of folder to delete.
-        #
+        # @param folder_id [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
@@ -28,8 +27,7 @@ module HubspotSDK
         #
         # @overload delete_by_path(folder_path, request_options: {})
         #
-        # @param folder_path [String] Path of folder to delete
-        #
+        # @param folder_path [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
@@ -48,10 +46,8 @@ module HubspotSDK
         #
         # @overload get_by_id(folder_id, properties: nil, request_options: {})
         #
-        # @param folder_id [String] ID of desired folder
-        #
-        # @param properties [Array<String>] Properties to set on returned folder.
-        #
+        # @param folder_id [String]
+        # @param properties [Array<String>]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Files::Folder]
@@ -73,10 +69,8 @@ module HubspotSDK
         #
         # @overload get_by_path(folder_path, properties: nil, request_options: {})
         #
-        # @param folder_path [String] Path of desired folder.
-        #
-        # @param properties [Array<String>] Properties to set on returned folder.
-        #
+        # @param folder_path [String]
+        # @param properties [Array<String>]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Files::Folder]
@@ -98,8 +92,7 @@ module HubspotSDK
         #
         # @overload get_update_async_status(task_id, request_options: {})
         #
-        # @param task_id [String] TaskId of folder update
-        #
+        # @param task_id [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Files::FolderActionResponse]
@@ -121,39 +114,39 @@ module HubspotSDK
         #
         # @overload search(after: nil, before: nil, created_at: nil, created_at_gte: nil, created_at_lte: nil, id_gte: nil, id_lte: nil, ids: nil, limit: nil, name: nil, parent_folder_ids: nil, path: nil, properties: nil, sort: nil, updated_at: nil, updated_at_gte: nil, updated_at_lte: nil, request_options: {})
         #
-        # @param after [String] Offset search results by this value. The default offset is 0 and the maximum off
+        # @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
-        # @param before [String] Search folders updated before this timestamp. Time must be epoch time in millise
+        # @param before [String]
         #
-        # @param created_at [Time] Search folders by exact time of creation. Time must be epoch time in millisecond
+        # @param created_at [Time]
         #
-        # @param created_at_gte [Time] Search folders by greater than or equal to time of creation. Can be used with cr
+        # @param created_at_gte [Time]
         #
-        # @param created_at_lte [Time] Search folders by less than or equal to time of creation. Can be used with creat
+        # @param created_at_lte [Time]
         #
-        # @param id_gte [Integer] Search folders by greater than or equal to ID. Can be used with idLte to create
+        # @param id_gte [Integer]
         #
-        # @param id_lte [Integer] Search folders by less than or equal to ID. Can be used with idGte to create a r
+        # @param id_lte [Integer]
         #
-        # @param ids [Array<Integer>] Search folders by multiple IDs. Comma-separated list of folder IDs.
+        # @param ids [Array<Integer>]
         #
-        # @param limit [Integer] Number of items to return. Default limit is 10, maximum limit is 100.
+        # @param limit [Integer] The maximum number of results to display per page.
         #
-        # @param name [String] Search for folders containing the specified name.
+        # @param name [String]
         #
         # @param parent_folder_ids [Array<Integer>]
         #
-        # @param path [String] Search folders by path.
+        # @param path [String]
         #
-        # @param properties [Array<String>] Properties that should be included in the returned folders.
+        # @param properties [Array<String>]
         #
-        # @param sort [Array<String>] Sort results by given property. For example -name sorts by name field descending
+        # @param sort [Array<String>]
         #
-        # @param updated_at [Time] Search folders by exact time of latest updated. Time must be epoch time in milli
+        # @param updated_at [Time]
         #
-        # @param updated_at_gte [Time] Search folders by greater than or equal to time of latest update. Can be used wi
+        # @param updated_at_gte [Time]
         #
-        # @param updated_at_lte [Time] Search folders by less than or equal to time of latest update. Can be used with
+        # @param updated_at_lte [Time]
         #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -220,7 +213,7 @@ module HubspotSDK
         #
         # @overload update_by_id(folder_id, name: nil, parent_folder_id: nil, request_options: {})
         #
-        # @param folder_id [String] ID of folder to update
+        # @param folder_id [String]
         #
         # @param name [String] New name. If specified the folder's name and fullPath will change. All children
         #

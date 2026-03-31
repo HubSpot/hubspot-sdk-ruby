@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::Pages#get_revision
+      # @see HubspotSDK::Resources::Cms::Pages#get_landing_page_revision
       class PageVersion < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #

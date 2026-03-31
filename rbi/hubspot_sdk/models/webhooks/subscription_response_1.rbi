@@ -19,7 +19,7 @@ module HubspotSDK
         sig do
           returns(
             T::Array[
-              HubspotSDK::Webhooks::SubscriptionResponse1::Action::OrSymbol
+              HubspotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
             ]
           )
         end
@@ -41,7 +41,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::OrSymbol
+            HubspotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
           )
         end
         attr_accessor :subscription_type
@@ -50,6 +50,26 @@ module HubspotSDK
         # (e.g., 2020-02-29T12:30:00Z).
         sig { returns(Time) }
         attr_accessor :updated_at
+
+        sig do
+          returns(
+            T.nilable(
+              T::Hash[Symbol, HubspotSDK::Webhooks::ActionOverrideRequest]
+            )
+          )
+        end
+        attr_reader :action_overrides
+
+        sig do
+          params(
+            action_overrides:
+              T::Hash[
+                Symbol,
+                HubspotSDK::Webhooks::ActionOverrideRequest::OrHash
+              ]
+          ).void
+        end
+        attr_writer :action_overrides
 
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :associated_object_type_ids
@@ -106,6 +126,11 @@ module HubspotSDK
             subscription_type:
               HubspotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::OrSymbol,
             updated_at: Time,
+            action_overrides:
+              T::Hash[
+                Symbol,
+                HubspotSDK::Webhooks::ActionOverrideRequest::OrHash
+              ],
             associated_object_type_ids: T::Array[String],
             created_by: Integer,
             deleted_at: Time,
@@ -131,6 +156,7 @@ module HubspotSDK
           # The timestamp when the webhook subscription was last updated, in ISO 8601 format
           # (e.g., 2020-02-29T12:30:00Z).
           updated_at:,
+          action_overrides: nil,
           associated_object_type_ids: nil,
           created_by: nil,
           deleted_at: nil,
@@ -147,14 +173,16 @@ module HubspotSDK
               id: Integer,
               actions:
                 T::Array[
-                  HubspotSDK::Webhooks::SubscriptionResponse1::Action::OrSymbol
+                  HubspotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
                 ],
               app_id: Integer,
               created_at: Time,
               object_type_id: String,
               subscription_type:
-                HubspotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::OrSymbol,
+                HubspotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol,
               updated_at: Time,
+              action_overrides:
+                T::Hash[Symbol, HubspotSDK::Webhooks::ActionOverrideRequest],
               associated_object_type_ids: T::Array[String],
               created_by: Integer,
               deleted_at: Time,

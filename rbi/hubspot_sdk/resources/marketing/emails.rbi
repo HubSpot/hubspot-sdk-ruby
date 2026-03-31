@@ -436,7 +436,6 @@ module HubspotSDK
           ).returns(HubspotSDK::Marketing::PublicEmail)
         end
         def restore_revision_to_draft(
-          # The ID of the revision.
           revision_id,
           email_id:,
           request_options: {}

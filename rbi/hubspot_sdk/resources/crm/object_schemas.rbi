@@ -71,7 +71,6 @@ module HubspotSDK
           ).returns(HubspotSDK::ObjectTypeDefinition)
         end
         def update(
-          # Fully qualified name or object type ID of your schema.
           object_type,
           clear_description:,
           allows_sensitive_properties: nil,
@@ -117,7 +116,6 @@ module HubspotSDK
           ).void
         end
         def delete(
-          # Fully qualified name or object type ID of your schema.
           object_type,
           # Whether to return only results that have been archived.
           archived: nil,
@@ -138,7 +136,6 @@ module HubspotSDK
           ).returns(HubspotSDK::AssociationDefinition)
         end
         def create_association(
-          # Fully qualified name or object type ID of your schema.
           object_type,
           from_object_type_id:,
           to_object_type_id:,
@@ -158,9 +155,7 @@ module HubspotSDK
           ).void
         end
         def delete_association(
-          # Unique ID of the association to remove.
           association_identifier,
-          # Fully qualified name or object type ID of your schema.
           object_type:,
           request_options: {}
         )
@@ -178,7 +173,6 @@ module HubspotSDK
           ).returns(HubspotSDK::Crm::ObjectSchema)
         end
         def get(
-          # Fully qualified name or object type ID of your schema.
           object_type,
           include_association_definitions: nil,
           include_audit_metadata: nil,

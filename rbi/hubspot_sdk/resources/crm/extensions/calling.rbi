@@ -12,46 +12,25 @@ module HubspotSDK
           end
           attr_reader :transcripts
 
-          # Create new recording settings for a specific app using the provided app ID.
+          # Establish new channel connection settings for the specified app.
           sig do
             params(
               app_id: Integer,
-              url_to_retrieve_authed_recording: String,
+              is_ready: T::Boolean,
+              url: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::Extensions::RecordingSettingsResponse)
+            ).returns(
+              HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
+            )
           end
-          def create(
+          def create_channel_connection_settings(
             app_id,
-            # The URL used to access authenticated call recordings.
-            url_to_retrieve_authed_recording:,
+            # Indicates whether the channel connection settings are ready.
+            is_ready:,
+            # The URL associated with the channel connection settings.
+            url:,
             request_options: {}
           )
-          end
-
-          # Update the recording settings for a specific app using the provided app ID.
-          sig do
-            params(
-              app_id: Integer,
-              url_to_retrieve_authed_recording: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::Extensions::RecordingSettingsResponse)
-          end
-          def update(
-            app_id,
-            # The URL used to access authenticated call recordings.
-            url_to_retrieve_authed_recording: nil,
-            request_options: {}
-          )
-          end
-
-          # Delete the channel connection settings associated with the specified app.
-          sig do
-            params(
-              app_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).void
-          end
-          def delete(app_id, request_options: {})
           end
 
           sig do
@@ -98,17 +77,6 @@ module HubspotSDK
           )
           end
 
-          # Retrieve the current recording settings for a specific app using the provided
-          # app ID.
-          sig do
-            params(
-              app_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::Extensions::RecordingSettingsResponse)
-          end
-          def get(app_id, request_options: {})
-          end
-
           # This endpoint is used to mark a call recording as ready. It requires the
           # engagementId to identify the specific recording.
           sig do
@@ -117,9 +85,198 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).void
           end
-          def mark_ready(
+          def create_recording_ready(
             # The unique identifier for the engagement associated with the call recording.
             engagement_id:,
+            request_options: {}
+          )
+          end
+
+          # Create new recording settings for a specific app using the provided app ID.
+          sig do
+            params(
+              app_id: Integer,
+              url_to_retrieve_authed_recording: String,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(HubspotSDK::Crm::Extensions::RecordingSettingsResponse)
+          end
+          def create_recording_settings(
+            app_id,
+            # The URL used to access authenticated call recordings.
+            url_to_retrieve_authed_recording:,
+            request_options: {}
+          )
+          end
+
+          # Create new settings for the calling extension associated with the specified
+          # appId.
+          sig do
+            params(
+              app_id: Integer,
+              height: Integer,
+              is_ready: T::Boolean,
+              name: String,
+              supports_custom_objects: T::Boolean,
+              supports_inbound_calling: T::Boolean,
+              url: String,
+              uses_calling_window: T::Boolean,
+              uses_remote: T::Boolean,
+              width: Integer,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(HubspotSDK::Crm::Extensions::SettingsResponse)
+          end
+          def create_settings(
+            app_id,
+            # Specifies the height of the calling extension interface.
+            height:,
+            # Indicates if the calling extension is ready for use.
+            is_ready:,
+            # The name of the calling extension.
+            name:,
+            # Indicates if the calling extension supports custom objects.
+            supports_custom_objects:,
+            # Indicates if the calling extension supports inbound calling.
+            supports_inbound_calling:,
+            # The URL associated with the calling extension.
+            url:,
+            # Indicates if the calling extension uses a separate calling window.
+            uses_calling_window:,
+            # Indicates if the calling extension uses remote services.
+            uses_remote:,
+            # Specifies the width of the calling extension interface.
+            width:,
+            request_options: {}
+          )
+          end
+
+          # Delete the channel connection settings associated with the specified app.
+          sig do
+            params(
+              app_id: Integer,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).void
+          end
+          def delete_channel_connection_settings(app_id, request_options: {})
+          end
+
+          # Remove the calling extension settings associated with the specified appId. This
+          # action cannot be undone.
+          sig do
+            params(
+              app_id: Integer,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).void
+          end
+          def delete_settings(app_id, request_options: {})
+          end
+
+          # Access the current channel connection settings for the specified app.
+          sig do
+            params(
+              app_id: Integer,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(
+              HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
+            )
+          end
+          def get_channel_connection_settings(app_id, request_options: {})
+          end
+
+          # Retrieve the current recording settings for a specific app using the provided
+          # app ID.
+          sig do
+            params(
+              app_id: Integer,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(HubspotSDK::Crm::Extensions::RecordingSettingsResponse)
+          end
+          def get_recording_settings(app_id, request_options: {})
+          end
+
+          # Retrieve the current settings of the calling extension for the specified appId.
+          sig do
+            params(
+              app_id: Integer,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(HubspotSDK::Crm::Extensions::SettingsResponse)
+          end
+          def get_settings(app_id, request_options: {})
+          end
+
+          # Modify the existing channel connection settings for the specified app.
+          sig do
+            params(
+              app_id: Integer,
+              is_ready: T::Boolean,
+              url: String,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(
+              HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
+            )
+          end
+          def update_channel_connection_settings(
+            app_id,
+            # Indicates whether the channel connection settings are ready.
+            is_ready: nil,
+            # The URL for the channel connection settings.
+            url: nil,
+            request_options: {}
+          )
+          end
+
+          # Update the recording settings for a specific app using the provided app ID.
+          sig do
+            params(
+              app_id: Integer,
+              url_to_retrieve_authed_recording: String,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(HubspotSDK::Crm::Extensions::RecordingSettingsResponse)
+          end
+          def update_recording_settings(
+            app_id,
+            # The URL used to access authenticated call recordings.
+            url_to_retrieve_authed_recording: nil,
+            request_options: {}
+          )
+          end
+
+          # Modify existing calling extension settings for the specified appId. Only the
+          # fields provided in the request will be updated.
+          sig do
+            params(
+              app_id: Integer,
+              height: Integer,
+              is_ready: T::Boolean,
+              name: String,
+              supports_custom_objects: T::Boolean,
+              supports_inbound_calling: T::Boolean,
+              url: String,
+              uses_calling_window: T::Boolean,
+              uses_remote: T::Boolean,
+              width: Integer,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(HubspotSDK::Crm::Extensions::SettingsResponse)
+          end
+          def update_settings(
+            app_id,
+            # The height setting for the calling extension interface.
+            height: nil,
+            # Specifies whether the calling extension is ready for use.
+            is_ready: nil,
+            # The name of the calling extension.
+            name: nil,
+            # Indicates if the calling extension supports custom objects.
+            supports_custom_objects: nil,
+            # Indicates if the calling extension supports inbound calling.
+            supports_inbound_calling: nil,
+            # The URL associated with the calling extension settings.
+            url: nil,
+            # Indicates if the calling extension uses a calling window.
+            uses_calling_window: nil,
+            # Indicates if the calling extension uses a remote connection.
+            uses_remote: nil,
+            # The width setting for the calling extension interface.
+            width: nil,
             request_options: {}
           )
           end

@@ -3,19 +3,37 @@ module HubspotSDK
     class Cms
       class Pages
         class ABTests
-          def create_ab_test_variation: (
+          def create_landing_page_variation: (
             content_id: String,
             variation_name: String,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Cms::Page
 
-          def end_ab_test: (
+          def create_site_page_variation: (
+            content_id: String,
+            variation_name: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Cms::Page
+
+          def end_landing_page_test: (
             ab_test_id: String,
             winner_id: String,
             ?request_options: HubspotSDK::request_opts
           ) -> nil
 
-          def rerun_ab_test: (
+          def end_site_page_test: (
+            ab_test_id: String,
+            winner_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def rerun_landing_page_test: (
+            ab_test_id: String,
+            variation_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def rerun_site_page_test: (
             ab_test_id: String,
             variation_id: String,
             ?request_options: HubspotSDK::request_opts

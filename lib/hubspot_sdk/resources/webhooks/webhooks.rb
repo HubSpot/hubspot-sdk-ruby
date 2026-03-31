@@ -51,6 +51,25 @@ module HubspotSDK
           )
         end
 
+        # @overload create_journal_subscription(subscription_upsert_request:, request_options: {})
+        #
+        # @param subscription_upsert_request [HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest, HubspotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest, HubspotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest, HubspotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest]
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Models::Webhooks::SubscriptionResponse1]
+        #
+        # @see HubspotSDK::Models::Webhooks::WebhookCreateJournalSubscriptionParams
+        def create_journal_subscription(params)
+          parsed, options = HubspotSDK::Webhooks::WebhookCreateJournalSubscriptionParams.dump_request(params)
+          @client.request(
+            method: :post,
+            path: "webhooks-journal/subscriptions/2026-03",
+            body: parsed[:subscription_upsert_request],
+            model: HubspotSDK::Webhooks::SubscriptionResponse1,
+            options: options
+          )
+        end
+
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Webhooks::WebhookCreateSubscriptionParams} for more
         # details.
@@ -59,7 +78,7 @@ module HubspotSDK
         #
         # @overload create_subscription(app_id, active:, event_type:, event_type_name: nil, object_type_id: nil, property_name: nil, request_options: {})
         #
-        # @param app_id [Integer] The ID of the target app.
+        # @param app_id [Integer]
         #
         # @param active [Boolean] Determines if the subscription is active or paused. Defaults to false.
         #
@@ -104,15 +123,32 @@ module HubspotSDK
           )
         end
 
-        # @overload delete_portal(portal_id, request_options: {})
+        # @overload delete_journal_subscription(subscription_id, request_options: {})
+        #
+        # @param subscription_id [Integer]
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [nil]
+        #
+        # @see HubspotSDK::Models::Webhooks::WebhookDeleteJournalSubscriptionParams
+        def delete_journal_subscription(subscription_id, params = {})
+          @client.request(
+            method: :delete,
+            path: ["webhooks-journal/subscriptions/2026-03/%1$s", subscription_id],
+            model: NilClass,
+            options: params[:request_options]
+          )
+        end
+
+        # @overload delete_portal_subscriptions(portal_id, request_options: {})
         #
         # @param portal_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Webhooks::WebhookDeletePortalParams
-        def delete_portal(portal_id, params = {})
+        # @see HubspotSDK::Models::Webhooks::WebhookDeletePortalSubscriptionsParams
+        def delete_portal_subscriptions(portal_id, params = {})
           @client.request(
             method: :delete,
             path: ["webhooks-journal/subscriptions/2026-03/portals/%1$s", portal_id],
@@ -126,8 +162,7 @@ module HubspotSDK
         #
         # @overload delete_settings(app_id, request_options: {})
         #
-        # @param app_id [Integer] The ID of the target app.
-        #
+        # @param app_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
@@ -146,10 +181,8 @@ module HubspotSDK
         #
         # @overload delete_subscription(subscription_id, app_id:, request_options: {})
         #
-        # @param subscription_id [Integer] The ID of the subscription to delete.
-        #
-        # @param app_id [Integer] The ID of the target app.
-        #
+        # @param subscription_id [Integer]
+        # @param app_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
@@ -165,48 +198,6 @@ module HubspotSDK
             method: :delete,
             path: ["webhooks/2026-03/%1$s/subscriptions/%2$s", app_id, subscription_id],
             model: NilClass,
-            options: options
-          )
-        end
-
-        # @overload get_earliest_journal(install_portal_id: nil, request_options: {})
-        #
-        # @param install_portal_id [Integer]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-        #
-        # @return [StringIO]
-        #
-        # @see HubspotSDK::Models::Webhooks::WebhookGetEarliestJournalParams
-        def get_earliest_journal(params = {})
-          parsed, options = HubspotSDK::Webhooks::WebhookGetEarliestJournalParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
-          @client.request(
-            method: :get,
-            path: "webhooks-journal/journal/2026-03/earliest",
-            query: query.transform_keys(install_portal_id: "installPortalId"),
-            headers: {"accept" => "*/*"},
-            model: StringIO,
-            options: options
-          )
-        end
-
-        # @overload get_earliest_journal_local(install_portal_id: nil, request_options: {})
-        #
-        # @param install_portal_id [Integer]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-        #
-        # @return [StringIO]
-        #
-        # @see HubspotSDK::Models::Webhooks::WebhookGetEarliestJournalLocalParams
-        def get_earliest_journal_local(params = {})
-          parsed, options = HubspotSDK::Webhooks::WebhookGetEarliestJournalLocalParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
-          @client.request(
-            method: :get,
-            path: "webhooks-journal/journal-local/2026-03/earliest",
-            query: query.transform_keys(install_portal_id: "installPortalId"),
-            headers: {"accept" => "*/*"},
-            model: StringIO,
             options: options
           )
         end
@@ -228,15 +219,15 @@ module HubspotSDK
           )
         end
 
-        # @overload get_filter_by_subscription(subscription_id, request_options: {})
+        # @overload get_filters_by_subscription(subscription_id, request_options: {})
         #
         # @param subscription_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [Array<HubspotSDK::Models::Webhooks::FilterResponse>]
         #
-        # @see HubspotSDK::Models::Webhooks::WebhookGetFilterBySubscriptionParams
-        def get_filter_by_subscription(subscription_id, params = {})
+        # @see HubspotSDK::Models::Webhooks::WebhookGetFiltersBySubscriptionParams
+        def get_filters_by_subscription(subscription_id, params = {})
           @client.request(
             method: :get,
             path: ["webhooks-journal/subscriptions/2026-03/filters/subscription/%1$s", subscription_id],
@@ -245,20 +236,67 @@ module HubspotSDK
           )
         end
 
-        # @overload get_journal_local_status(status_id, request_options: {})
+        # @overload get_journal_earliest(install_portal_id: nil, request_options: {})
         #
-        # @param status_id [String]
+        # @param install_portal_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Webhooks::SnapshotStatusResponse]
+        # @return [StringIO]
         #
-        # @see HubspotSDK::Models::Webhooks::WebhookGetJournalLocalStatusParams
-        def get_journal_local_status(status_id, params = {})
+        # @see HubspotSDK::Models::Webhooks::WebhookGetJournalEarliestParams
+        def get_journal_earliest(params = {})
+          parsed, options = HubspotSDK::Webhooks::WebhookGetJournalEarliestParams.dump_request(params)
+          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
-            path: ["webhooks-journal/journal-local/2026-03/status/%1$s", status_id],
-            model: HubspotSDK::Webhooks::SnapshotStatusResponse,
-            options: params[:request_options]
+            path: "webhooks-journal/journal/2026-03/earliest",
+            query: query.transform_keys(install_portal_id: "installPortalId"),
+            headers: {"accept" => "*/*"},
+            model: StringIO,
+            options: options
+          )
+        end
+
+        # @overload get_journal_latest(install_portal_id: nil, request_options: {})
+        #
+        # @param install_portal_id [Integer]
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [StringIO]
+        #
+        # @see HubspotSDK::Models::Webhooks::WebhookGetJournalLatestParams
+        def get_journal_latest(params = {})
+          parsed, options = HubspotSDK::Webhooks::WebhookGetJournalLatestParams.dump_request(params)
+          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          @client.request(
+            method: :get,
+            path: "webhooks-journal/journal/2026-03/latest",
+            query: query.transform_keys(install_portal_id: "installPortalId"),
+            headers: {"accept" => "*/*"},
+            model: StringIO,
+            options: options
+          )
+        end
+
+        # @overload get_journal_next_by_offset(offset, install_portal_id: nil, request_options: {})
+        #
+        # @param offset [String]
+        # @param install_portal_id [Integer]
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [StringIO]
+        #
+        # @see HubspotSDK::Models::Webhooks::WebhookGetJournalNextByOffsetParams
+        def get_journal_next_by_offset(offset, params = {})
+          parsed, options = HubspotSDK::Webhooks::WebhookGetJournalNextByOffsetParams.dump_request(params)
+          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          @client.request(
+            method: :get,
+            path: ["webhooks-journal/journal/2026-03/offset/%1$s/next", offset],
+            query: query.transform_keys(install_portal_id: "installPortalId"),
+            headers: {"accept" => "*/*"},
+            model: StringIO,
+            options: options
           )
         end
 
@@ -279,20 +317,20 @@ module HubspotSDK
           )
         end
 
-        # @overload get_latest_journal(install_portal_id: nil, request_options: {})
+        # @overload get_local_earliest(install_portal_id: nil, request_options: {})
         #
         # @param install_portal_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [StringIO]
         #
-        # @see HubspotSDK::Models::Webhooks::WebhookGetLatestJournalParams
-        def get_latest_journal(params = {})
-          parsed, options = HubspotSDK::Webhooks::WebhookGetLatestJournalParams.dump_request(params)
+        # @see HubspotSDK::Models::Webhooks::WebhookGetLocalEarliestParams
+        def get_local_earliest(params = {})
+          parsed, options = HubspotSDK::Webhooks::WebhookGetLocalEarliestParams.dump_request(params)
           query = HubspotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
-            path: "webhooks-journal/journal/2026-03/latest",
+            path: "webhooks-journal/journal-local/2026-03/earliest",
             query: query.transform_keys(install_portal_id: "installPortalId"),
             headers: {"accept" => "*/*"},
             model: StringIO,
@@ -300,16 +338,16 @@ module HubspotSDK
           )
         end
 
-        # @overload get_latest_journal_local(install_portal_id: nil, request_options: {})
+        # @overload get_local_latest(install_portal_id: nil, request_options: {})
         #
         # @param install_portal_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [StringIO]
         #
-        # @see HubspotSDK::Models::Webhooks::WebhookGetLatestJournalLocalParams
-        def get_latest_journal_local(params = {})
-          parsed, options = HubspotSDK::Webhooks::WebhookGetLatestJournalLocalParams.dump_request(params)
+        # @see HubspotSDK::Models::Webhooks::WebhookGetLocalLatestParams
+        def get_local_latest(params = {})
+          parsed, options = HubspotSDK::Webhooks::WebhookGetLocalLatestParams.dump_request(params)
           query = HubspotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
@@ -321,7 +359,7 @@ module HubspotSDK
           )
         end
 
-        # @overload get_next_journal_by_offset(offset, install_portal_id: nil, request_options: {})
+        # @overload get_local_next_by_offset(offset, install_portal_id: nil, request_options: {})
         #
         # @param offset [String]
         # @param install_portal_id [Integer]
@@ -329,31 +367,9 @@ module HubspotSDK
         #
         # @return [StringIO]
         #
-        # @see HubspotSDK::Models::Webhooks::WebhookGetNextJournalByOffsetParams
-        def get_next_journal_by_offset(offset, params = {})
-          parsed, options = HubspotSDK::Webhooks::WebhookGetNextJournalByOffsetParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
-          @client.request(
-            method: :get,
-            path: ["webhooks-journal/journal/2026-03/offset/%1$s/next", offset],
-            query: query.transform_keys(install_portal_id: "installPortalId"),
-            headers: {"accept" => "*/*"},
-            model: StringIO,
-            options: options
-          )
-        end
-
-        # @overload get_next_journal_local_by_offset(offset, install_portal_id: nil, request_options: {})
-        #
-        # @param offset [String]
-        # @param install_portal_id [Integer]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-        #
-        # @return [StringIO]
-        #
-        # @see HubspotSDK::Models::Webhooks::WebhookGetNextJournalLocalByOffsetParams
-        def get_next_journal_local_by_offset(offset, params = {})
-          parsed, options = HubspotSDK::Webhooks::WebhookGetNextJournalLocalByOffsetParams.dump_request(params)
+        # @see HubspotSDK::Models::Webhooks::WebhookGetLocalNextByOffsetParams
+        def get_local_next_by_offset(offset, params = {})
+          parsed, options = HubspotSDK::Webhooks::WebhookGetLocalNextByOffsetParams.dump_request(params)
           query = HubspotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
@@ -365,13 +381,29 @@ module HubspotSDK
           )
         end
 
+        # @overload get_local_status(status_id, request_options: {})
+        #
+        # @param status_id [String]
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Models::Webhooks::SnapshotStatusResponse]
+        #
+        # @see HubspotSDK::Models::Webhooks::WebhookGetLocalStatusParams
+        def get_local_status(status_id, params = {})
+          @client.request(
+            method: :get,
+            path: ["webhooks-journal/journal-local/2026-03/status/%1$s", status_id],
+            model: HubspotSDK::Webhooks::SnapshotStatusResponse,
+            options: params[:request_options]
+          )
+        end
+
         # Retrieve the webhook settings for the specified app, including the webhook’s
         # target URL, throttle configuration, and create/update date.
         #
         # @overload get_settings(app_id, request_options: {})
         #
-        # @param app_id [Integer] The ID of the target app.
-        #
+        # @param app_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Webhooks::SettingsResponse]
@@ -390,10 +422,8 @@ module HubspotSDK
         #
         # @overload get_subscription(subscription_id, app_id:, request_options: {})
         #
-        # @param subscription_id [Integer] The ID of the target subscription.
-        #
-        # @param app_id [Integer] The ID of the target app.
-        #
+        # @param subscription_id [Integer]
+        # @param app_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Webhooks::SubscriptionResponse]
@@ -413,12 +443,27 @@ module HubspotSDK
           )
         end
 
+        # @overload list_journal_subscriptions(request_options: {})
+        #
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Models::Webhooks::CollectionResponseSubscriptionResponseNoPaging]
+        #
+        # @see HubspotSDK::Models::Webhooks::WebhookListJournalSubscriptionsParams
+        def list_journal_subscriptions(params = {})
+          @client.request(
+            method: :get,
+            path: "webhooks-journal/subscriptions/2026-03",
+            model: HubspotSDK::Webhooks::CollectionResponseSubscriptionResponseNoPaging,
+            options: params[:request_options]
+          )
+        end
+
         # Retrieve event subscriptions for the specified app.
         #
         # @overload list_subscriptions(app_id, request_options: {})
         #
-        # @param app_id [Integer] The ID of the target app.
-        #
+        # @param app_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Webhooks::SubscriptionListResponse]
@@ -440,7 +485,7 @@ module HubspotSDK
         #
         # @overload update_settings(app_id, target_url:, throttling:, request_options: {})
         #
-        # @param app_id [Integer] The ID of the target app.
+        # @param app_id [Integer]
         #
         # @param target_url [String] A publicly available URL for Hubspot to call where event payloads will be delive
         #
@@ -470,9 +515,9 @@ module HubspotSDK
         #
         # @overload update_subscription(subscription_id, app_id:, active: nil, request_options: {})
         #
-        # @param subscription_id [Integer] Path param: The ID of the subscription to update.
+        # @param subscription_id [Integer] Path param
         #
-        # @param app_id [Integer] Path param: The ID of the target app.
+        # @param app_id [Integer] Path param
         #
         # @param active [Boolean] Body param: Whether to activate or pause the webhook subscription. If true, the
         #

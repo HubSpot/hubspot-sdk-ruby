@@ -166,7 +166,7 @@ module HubspotSDK
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Cms::Page
 
-          def publish_draft: (
+          def push_draft_live: (
             String object_id_,
             ?request_options: HubspotSDK::request_opts
           ) -> nil

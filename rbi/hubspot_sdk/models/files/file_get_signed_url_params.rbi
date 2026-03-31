@@ -18,15 +18,12 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :file_id
 
-        # How long in seconds the link will provide access to the file.
         sig { returns(T.nilable(Integer)) }
         attr_reader :expiration_seconds
 
         sig { params(expiration_seconds: Integer).void }
         attr_writer :expiration_seconds
 
-        # For image files. This will resize the image to the desired size before sharing.
-        # Does not affect the original file, just the file served by this signed URL.
         sig do
           returns(
             T.nilable(HubspotSDK::Files::FileGetSignedURLParams::Size::OrSymbol)
@@ -41,7 +38,6 @@ module HubspotSDK
         end
         attr_writer :size
 
-        # If size is provided, this will upscale the image to fit the size dimensions.
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :upscale
 
@@ -59,12 +55,8 @@ module HubspotSDK
         end
         def self.new(
           file_id:,
-          # How long in seconds the link will provide access to the file.
           expiration_seconds: nil,
-          # For image files. This will resize the image to the desired size before sharing.
-          # Does not affect the original file, just the file served by this signed URL.
           size: nil,
-          # If size is provided, this will upscale the image to fit the size dimensions.
           upscale: nil,
           request_options: {}
         )
@@ -84,8 +76,6 @@ module HubspotSDK
         def to_hash
         end
 
-        # For image files. This will resize the image to the desired size before sharing.
-        # Does not affect the original file, just the file served by this signed URL.
         module Size
           extend HubspotSDK::Internal::Type::Enum
 

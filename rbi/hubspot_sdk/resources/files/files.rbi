@@ -43,7 +43,6 @@ module HubspotSDK
           ).returns(HubspotSDK::Files::File)
         end
         def update(
-          # ID of file to update
           file_id,
           clear_expires:,
           # NONE: Do not run any duplicate validation. REJECT: Reject the upload if a
@@ -72,11 +71,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).void
         end
-        def delete(
-          # FileId to delete
-          file_id,
-          request_options: {}
-        )
+        def delete(file_id, request_options: {})
         end
 
         # Delete a file in accordance with GDPR regulations.
@@ -86,11 +81,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).void
         end
-        def gdpr_delete(
-          # ID of file to GDPR delete
-          file_id,
-          request_options: {}
-        )
+        def gdpr_delete(file_id, request_options: {})
         end
 
         # Retrieve a file by its ID.
@@ -101,12 +92,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Files::File)
         end
-        def get(
-          # ID of the desired file.
-          file_id,
-          properties: nil,
-          request_options: {}
-        )
+        def get(file_id, properties: nil, request_options: {})
         end
 
         # Retrieve a file by its path.
@@ -127,11 +113,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Files::FileActionResponse)
         end
-        def get_import_task_status(
-          # Import by URL task ID
-          task_id,
-          request_options: {}
-        )
+        def get_import_task_status(task_id, request_options: {})
         end
 
         # Generates signed URL that allows temporary access to a private file.
@@ -145,14 +127,9 @@ module HubspotSDK
           ).returns(HubspotSDK::Files::SignedURL)
         end
         def get_signed_url(
-          # ID of file.
           file_id,
-          # How long in seconds the link will provide access to the file.
           expiration_seconds: nil,
-          # For image files. This will resize the image to the desired size before sharing.
-          # Does not affect the original file, just the file served by this signed URL.
           size: nil,
-          # If size is provided, this will upscale the image to fit the size dimensions.
           upscale: nil,
           request_options: {}
         )
@@ -228,7 +205,6 @@ module HubspotSDK
           ).returns(HubspotSDK::Files::File)
         end
         def replace(
-          # ID of the desired file.
           file_id,
           charset_hunch: nil,
           file: nil,
@@ -281,95 +257,45 @@ module HubspotSDK
           ).returns(HubspotSDK::Internal::Page[HubspotSDK::Files::File])
         end
         def search(
-          # Offset search results by this value. The default offset is 0 and the maximum
-          # offset of items for a given search is 10,000. Narrow your search down if you are
-          # reaching this limit.
+          # The paging cursor token of the last successfully read resource will be returned
+          # as the `paging.next.after` JSON property of a paged response containing more
+          # results.
           after: nil,
-          # Search files by access. If 'true' will show only public files; if 'false' will
-          # show only private files
           allows_anonymous_access: nil,
-          # Search files updated before this timestamp. Time must be epoch time in
-          # milliseconds.
           before: nil,
-          # Search files by exact time of creation. Time must be epoch time in milliseconds.
           created_at: nil,
-          # Search files by greater than or equal to time of creation. Can be used with
-          # createdAtLte to create a range.
           created_at_gte: nil,
-          # Search files by less than or equal to time of creation. Can be used with
-          # createdAtGte to create a range.
           created_at_lte: nil,
-          # Search files by specified encoding.
           encoding: nil,
-          # Search files by exact expires time. Time must be epoch time in milliseconds.
           expires_at: nil,
-          # Search files by greater than or equal to expires time. Can be used with
-          # expiresAtLte to create a range.
           expires_at_gte: nil,
-          # Search files by less than or equal to expires time. Can be used with
-          # expiresAtGte to create a range.
           expires_at_lte: nil,
-          # Search files by given extension.
           extension: nil,
-          # Search files by specific md5 hash.
           file_md5: nil,
-          # Search files by height of image or video.
           height: nil,
-          # Search files by greater than or equal to height of image or video. Can be used
-          # with heightLte to create a range.
           height_gte: nil,
-          # Search files by less than or equal to height of image or video. Can be used with
-          # heightGte to create a range.
           height_lte: nil,
-          # Search files by greater than or equal to ID. Can be used with idLte to create a
-          # range.
           id_gte: nil,
-          # Search files by less than or equal to ID. Can be used with idGte to create a
-          # range.
           id_lte: nil,
           ids: nil,
-          # If true shows files that have been marked to be used in new content. It false
-          # shows files that should not be used in new content.
           is_usable_in_content: nil,
-          # Number of items to return. Default limit is 10, maximum limit is 100.
+          # The maximum number of results to display per page.
           limit: nil,
-          # Search for files containing the given name.
           name: nil,
           parent_folder_ids: nil,
-          # Search files by path.
           path: nil,
-          # Desired file properties in the return object.
           properties: nil,
-          # Search files by exact file size in bytes.
           size: nil,
-          # Search files by greater than or equal to file size. Can be used with sizeLte to
-          # create a range.
           size_gte: nil,
-          # Search files by less than or equal to file size. Can be used with sizeGte to
-          # create a range.
           size_lte: nil,
-          # Sort files by a given field.
           sort: nil,
-          # Search files by file type.
           type: nil,
-          # Search files by exact time of latest updated. Time must be epoch time in
-          # milliseconds.
           updated_at: nil,
-          # Search files by greater than or equal to time of latest update. Can be used with
-          # updatedAtLte to create a range.
           updated_at_gte: nil,
-          # Search files by less than or equal to time of latest update. Can be used with
-          # updatedAtGte to create a range.
           updated_at_lte: nil,
-          # Search for given URL
           url: nil,
-          # Search files by width of image or video.
           width: nil,
-          # Search files by greater than or equal to width of image or video. Can be used
-          # with widthLte to create a range.
           width_gte: nil,
-          # Search files by less than or equal to width of image or video. Can be used with
-          # widthGte to create a range.
           width_lte: nil,
           request_options: {}
         )

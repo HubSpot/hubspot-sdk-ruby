@@ -16,12 +16,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Webhooks::BatchResponseSubscriptionResponse)
           end
-          def create(
-            # The ID of the target app.
-            app_id,
-            inputs:,
-            request_options: {}
-          )
+          def create(app_id, inputs:, request_options: {})
           end
 
           sig do

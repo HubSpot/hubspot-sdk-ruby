@@ -34,6 +34,24 @@ module HubspotSDK
         )
         end
 
+        sig do
+          params(
+            subscription_upsert_request:
+              T.any(
+                HubspotSDK::Webhooks::ObjectSubscriptionUpsertRequest::OrHash,
+                HubspotSDK::Webhooks::AssociationSubscriptionUpsertRequest::OrHash,
+                HubspotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::OrHash,
+                HubspotSDK::Webhooks::ListMembershipSubscriptionUpsertRequest::OrHash
+              ),
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Webhooks::SubscriptionResponse1)
+        end
+        def create_journal_subscription(
+          subscription_upsert_request:,
+          request_options: {}
+        )
+        end
+
         # Create new event subscription for the specified app.
         sig do
           params(
@@ -48,7 +66,6 @@ module HubspotSDK
           ).returns(HubspotSDK::Webhooks::SubscriptionResponse)
         end
         def create_subscription(
-          # The ID of the target app.
           app_id,
           # Determines if the subscription is active or paused. Defaults to false.
           active:,
@@ -80,11 +97,20 @@ module HubspotSDK
 
         sig do
           params(
+            subscription_id: Integer,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).void
+        end
+        def delete_journal_subscription(subscription_id, request_options: {})
+        end
+
+        sig do
+          params(
             portal_id: Integer,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).void
         end
-        def delete_portal(portal_id, request_options: {})
+        def delete_portal_subscriptions(portal_id, request_options: {})
         end
 
         # Delete the webhook settings for the specified app. Event subscriptions will not
@@ -95,11 +121,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).void
         end
-        def delete_settings(
-          # The ID of the target app.
-          app_id,
-          request_options: {}
-        )
+        def delete_settings(app_id, request_options: {})
         end
 
         # Delete an existing event subscription by ID.
@@ -110,34 +132,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).void
         end
-        def delete_subscription(
-          # The ID of the subscription to delete.
-          subscription_id,
-          # The ID of the target app.
-          app_id:,
-          request_options: {}
-        )
-        end
-
-        sig do
-          params(
-            install_portal_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(StringIO)
-        end
-        def get_earliest_journal(install_portal_id: nil, request_options: {})
-        end
-
-        sig do
-          params(
-            install_portal_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(StringIO)
-        end
-        def get_earliest_journal_local(
-          install_portal_id: nil,
-          request_options: {}
-        )
+        def delete_subscription(subscription_id, app_id:, request_options: {})
         end
 
         sig do
@@ -155,16 +150,39 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(T::Array[HubspotSDK::Webhooks::FilterResponse])
         end
-        def get_filter_by_subscription(subscription_id, request_options: {})
+        def get_filters_by_subscription(subscription_id, request_options: {})
         end
 
         sig do
           params(
-            status_id: String,
+            install_portal_id: Integer,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Webhooks::SnapshotStatusResponse)
+          ).returns(StringIO)
         end
-        def get_journal_local_status(status_id, request_options: {})
+        def get_journal_earliest(install_portal_id: nil, request_options: {})
+        end
+
+        sig do
+          params(
+            install_portal_id: Integer,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(StringIO)
+        end
+        def get_journal_latest(install_portal_id: nil, request_options: {})
+        end
+
+        sig do
+          params(
+            offset: String,
+            install_portal_id: Integer,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(StringIO)
+        end
+        def get_journal_next_by_offset(
+          offset,
+          install_portal_id: nil,
+          request_options: {}
+        )
         end
 
         sig do
@@ -182,7 +200,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(StringIO)
         end
-        def get_latest_journal(install_portal_id: nil, request_options: {})
+        def get_local_earliest(install_portal_id: nil, request_options: {})
         end
 
         sig do
@@ -191,24 +209,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(StringIO)
         end
-        def get_latest_journal_local(
-          install_portal_id: nil,
-          request_options: {}
-        )
-        end
-
-        sig do
-          params(
-            offset: String,
-            install_portal_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(StringIO)
-        end
-        def get_next_journal_by_offset(
-          offset,
-          install_portal_id: nil,
-          request_options: {}
-        )
+        def get_local_latest(install_portal_id: nil, request_options: {})
         end
 
         sig do
@@ -218,11 +219,20 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(StringIO)
         end
-        def get_next_journal_local_by_offset(
+        def get_local_next_by_offset(
           offset,
           install_portal_id: nil,
           request_options: {}
         )
+        end
+
+        sig do
+          params(
+            status_id: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Webhooks::SnapshotStatusResponse)
+        end
+        def get_local_status(status_id, request_options: {})
         end
 
         # Retrieve the webhook settings for the specified app, including the webhook’s
@@ -233,11 +243,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Webhooks::SettingsResponse)
         end
-        def get_settings(
-          # The ID of the target app.
-          app_id,
-          request_options: {}
-        )
+        def get_settings(app_id, request_options: {})
         end
 
         # Retrieve a specific event subscription by ID.
@@ -248,13 +254,15 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Webhooks::SubscriptionResponse)
         end
-        def get_subscription(
-          # The ID of the target subscription.
-          subscription_id,
-          # The ID of the target app.
-          app_id:,
-          request_options: {}
-        )
+        def get_subscription(subscription_id, app_id:, request_options: {})
+        end
+
+        sig do
+          params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
+            HubspotSDK::Webhooks::CollectionResponseSubscriptionResponseNoPaging
+          )
+        end
+        def list_journal_subscriptions(request_options: {})
         end
 
         # Retrieve event subscriptions for the specified app.
@@ -264,11 +272,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Webhooks::SubscriptionListResponse)
         end
-        def list_subscriptions(
-          # The ID of the target app.
-          app_id,
-          request_options: {}
-        )
+        def list_subscriptions(app_id, request_options: {})
         end
 
         # Update webhook settings for the specified app.
@@ -281,7 +285,6 @@ module HubspotSDK
           ).returns(HubspotSDK::Webhooks::SettingsResponse)
         end
         def update_settings(
-          # The ID of the target app.
           app_id,
           # A publicly available URL for Hubspot to call where event payloads will be
           # delivered. See [link-so-some-doc](#) for details about the format of these event
@@ -302,9 +305,9 @@ module HubspotSDK
           ).returns(HubspotSDK::Webhooks::SubscriptionResponse)
         end
         def update_subscription(
-          # Path param: The ID of the subscription to update.
+          # Path param
           subscription_id,
-          # Path param: The ID of the target app.
+          # Path param
           app_id:,
           # Body param: Whether to activate or pause the webhook subscription. If true, the
           # subscription will send webhook notifications. If false, the subscription is

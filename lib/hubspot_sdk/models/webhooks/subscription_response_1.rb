@@ -3,6 +3,7 @@
 module HubspotSDK
   module Models
     module Webhooks
+      # @see HubspotSDK::Resources::Webhooks::Webhooks#create_journal_subscription
       class SubscriptionResponse1 < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique ID of the webhook subscription.
@@ -50,6 +51,13 @@ module HubspotSDK
         #   @return [Time]
         required :updated_at, Time, api_name: :updatedAt
 
+        # @!attribute action_overrides
+        #
+        #   @return [Hash{Symbol=>HubspotSDK::Models::Webhooks::ActionOverrideRequest}, nil]
+        optional :action_overrides,
+                 -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Webhooks::ActionOverrideRequest] },
+                 api_name: :actionOverrides
+
         # @!attribute associated_object_type_ids
         #
         #   @return [Array<String>, nil]
@@ -87,7 +95,7 @@ module HubspotSDK
         #   @return [Array<String>, nil]
         optional :properties, HubspotSDK::Internal::Type::ArrayOf[String]
 
-        # @!method initialize(id:, actions:, app_id:, created_at:, object_type_id:, subscription_type:, updated_at:, associated_object_type_ids: nil, created_by: nil, deleted_at: nil, list_ids: nil, object_ids: nil, portal_id: nil, properties: nil)
+        # @!method initialize(id:, actions:, app_id:, created_at:, object_type_id:, subscription_type:, updated_at:, action_overrides: nil, associated_object_type_ids: nil, created_by: nil, deleted_at: nil, list_ids: nil, object_ids: nil, portal_id: nil, properties: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Webhooks::SubscriptionResponse1} for more details.
         #
@@ -104,6 +112,8 @@ module HubspotSDK
         #   @param subscription_type [Symbol, HubspotSDK::Models::Webhooks::SubscriptionResponse1::SubscriptionType]
         #
         #   @param updated_at [Time] The timestamp when the webhook subscription was last updated, in ISO 8601 format
+        #
+        #   @param action_overrides [Hash{Symbol=>HubspotSDK::Models::Webhooks::ActionOverrideRequest}]
         #
         #   @param associated_object_type_ids [Array<String>]
         #

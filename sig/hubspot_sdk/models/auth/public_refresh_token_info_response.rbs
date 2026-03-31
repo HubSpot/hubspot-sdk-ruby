@@ -1,0 +1,86 @@
+module HubspotSDK
+  module Models
+    module Auth
+      type public_refresh_token_info_response =
+        {
+          token: String,
+          active: bool,
+          app_id: Integer,
+          client_id: String,
+          hub_id: Integer,
+          scopes: ::Array[String],
+          token_type: String,
+          token_use: HubspotSDK::Models::Auth::PublicRefreshTokenInfoResponse::token_use,
+          user_id: Integer,
+          hub_domain: String,
+          user: String
+        }
+
+      class PublicRefreshTokenInfoResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor token: String
+
+        attr_accessor active: bool
+
+        attr_accessor app_id: Integer
+
+        attr_accessor client_id: String
+
+        attr_accessor hub_id: Integer
+
+        attr_accessor scopes: ::Array[String]
+
+        attr_accessor token_type: String
+
+        attr_accessor token_use: HubspotSDK::Models::Auth::PublicRefreshTokenInfoResponse::token_use
+
+        attr_accessor user_id: Integer
+
+        attr_reader hub_domain: String?
+
+        def hub_domain=: (String) -> String
+
+        attr_reader user: String?
+
+        def user=: (String) -> String
+
+        def initialize: (
+          token: String,
+          active: bool,
+          app_id: Integer,
+          client_id: String,
+          hub_id: Integer,
+          scopes: ::Array[String],
+          token_type: String,
+          token_use: HubspotSDK::Models::Auth::PublicRefreshTokenInfoResponse::token_use,
+          user_id: Integer,
+          ?hub_domain: String,
+          ?user: String
+        ) -> void
+
+        def to_hash: -> {
+          token: String,
+          active: bool,
+          app_id: Integer,
+          client_id: String,
+          hub_id: Integer,
+          scopes: ::Array[String],
+          token_type: String,
+          token_use: HubspotSDK::Models::Auth::PublicRefreshTokenInfoResponse::token_use,
+          user_id: Integer,
+          hub_domain: String,
+          user: String
+        }
+
+        type token_use = :refresh_token
+
+        module TokenUse
+          extend HubspotSDK::Internal::Type::Enum
+
+          REFRESH_TOKEN: :refresh_token
+
+          def self?.values: -> ::Array[HubspotSDK::Models::Auth::PublicRefreshTokenInfoResponse::token_use]
+        end
+      end
+    end
+  end
+end

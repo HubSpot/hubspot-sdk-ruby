@@ -5,22 +5,12 @@ module HubspotSDK
         class Calling
           attr_reader transcripts: HubspotSDK::Resources::Crm::Extensions::Calling::Transcripts
 
-          def create: (
+          def create_channel_connection_settings: (
             Integer app_id,
-            url_to_retrieve_authed_recording: String,
+            is_ready: bool,
+            url: String,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::Extensions::RecordingSettingsResponse
-
-          def update: (
-            Integer app_id,
-            ?url_to_retrieve_authed_recording: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::Extensions::RecordingSettingsResponse
-
-          def delete: (
-            Integer app_id,
-            ?request_options: HubspotSDK::request_opts
-          ) -> nil
+          ) -> HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
 
           def create_inbound_call: (
             create_engagement: bool,
@@ -36,15 +26,82 @@ module HubspotSDK
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Crm::Extensions::CompletedThirdPartyCallResponse
 
-          def get: (
+          def create_recording_ready: (
+            engagement_id: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def create_recording_settings: (
+            Integer app_id,
+            url_to_retrieve_authed_recording: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::Extensions::RecordingSettingsResponse
+
+          def create_settings: (
+            Integer app_id,
+            height: Integer,
+            is_ready: bool,
+            name: String,
+            supports_custom_objects: bool,
+            supports_inbound_calling: bool,
+            url: String,
+            uses_calling_window: bool,
+            uses_remote: bool,
+            width: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::Extensions::SettingsResponse
+
+          def delete_channel_connection_settings: (
+            Integer app_id,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def delete_settings: (
+            Integer app_id,
+            ?request_options: HubspotSDK::request_opts
+          ) -> nil
+
+          def get_channel_connection_settings: (
+            Integer app_id,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
+
+          def get_recording_settings: (
             Integer app_id,
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Crm::Extensions::RecordingSettingsResponse
 
-          def mark_ready: (
-            engagement_id: Integer,
+          def get_settings: (
+            Integer app_id,
             ?request_options: HubspotSDK::request_opts
-          ) -> nil
+          ) -> HubspotSDK::Crm::Extensions::SettingsResponse
+
+          def update_channel_connection_settings: (
+            Integer app_id,
+            ?is_ready: bool,
+            ?url: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
+
+          def update_recording_settings: (
+            Integer app_id,
+            ?url_to_retrieve_authed_recording: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::Extensions::RecordingSettingsResponse
+
+          def update_settings: (
+            Integer app_id,
+            ?height: Integer,
+            ?is_ready: bool,
+            ?name: String,
+            ?supports_custom_objects: bool,
+            ?supports_inbound_calling: bool,
+            ?url: String,
+            ?uses_calling_window: bool,
+            ?uses_remote: bool,
+            ?width: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Crm::Extensions::SettingsResponse
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

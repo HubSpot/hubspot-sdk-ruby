@@ -12,10 +12,17 @@ module HubspotSDK
             )
           end
 
-        sig { returns(String) }
-        attr_accessor :account_name
+        sig { returns(T.nilable(String)) }
+        attr_reader :account_name
 
-        sig { returns(HubspotSDK::Conversations::PublicDeliveryIdentifier) }
+        sig { params(account_name: String).void }
+        attr_writer :account_name
+
+        sig do
+          returns(
+            T.nilable(HubspotSDK::Conversations::PublicDeliveryIdentifier)
+          )
+        end
         attr_reader :delivery_identifier
 
         sig do
@@ -33,7 +40,7 @@ module HubspotSDK
               HubspotSDK::Conversations::PublicDeliveryIdentifier::OrHash
           ).returns(T.attached_class)
         end
-        def self.new(account_name:, delivery_identifier:)
+        def self.new(account_name: nil, delivery_identifier: nil)
         end
 
         sig do

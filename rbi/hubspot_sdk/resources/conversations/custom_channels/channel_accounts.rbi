@@ -112,9 +112,9 @@ module HubspotSDK
             # Path param
             channel_id:,
             # Body param
-            account_name:,
+            account_name: nil,
             # Body param
-            delivery_identifier:,
+            delivery_identifier: nil,
             request_options: {}
           )
           end

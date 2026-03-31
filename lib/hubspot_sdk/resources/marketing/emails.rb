@@ -549,10 +549,8 @@ module HubspotSDK
         #
         # @overload restore_revision_to_draft(revision_id, email_id:, request_options: {})
         #
-        # @param revision_id [Integer] The ID of the revision.
-        #
+        # @param revision_id [Integer]
         # @param email_id [String]
-        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Marketing::PublicEmail]

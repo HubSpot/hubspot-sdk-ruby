@@ -711,10 +711,10 @@ class HubspotSDK::Test::Resources::Cms::Pages::LandingPagesTest < HubspotSDK::Te
     end
   end
 
-  def test_publish_draft
+  def test_push_draft_live
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.pages.landing_pages.publish_draft("objectId")
+    response = @hubspot.cms.pages.landing_pages.push_draft_live("objectId")
 
     assert_pattern do
       response => nil

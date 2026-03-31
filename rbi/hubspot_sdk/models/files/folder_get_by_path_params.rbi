@@ -18,7 +18,6 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :folder_path
 
-        # Properties to set on returned folder.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :properties
 
@@ -32,12 +31,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
-        def self.new(
-          folder_path:,
-          # Properties to set on returned folder.
-          properties: nil,
-          request_options: {}
-        )
+        def self.new(folder_path:, properties: nil, request_options: {})
         end
 
         sig do

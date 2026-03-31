@@ -3,24 +3,23 @@
 module HubspotSDK
   module Models
     module Auth
-      class TokenInfoResponseBaseIf < HubspotSDK::Internal::Type::BaseModel
-        OrHash =
+      module TokenInfoResponseBaseIf
+        extend HubspotSDK::Internal::Type::Union
+
+        Variants =
           T.type_alias do
             T.any(
-              HubspotSDK::Auth::TokenInfoResponseBaseIf,
-              HubspotSDK::Internal::AnyHash
+              HubspotSDK::Auth::PublicAccessTokenInfoResponse,
+              HubspotSDK::Auth::PublicRefreshTokenInfoResponse
             )
           end
 
-        sig { returns(T::Boolean) }
-        attr_accessor :active
-
-        sig { params(active: T::Boolean).returns(T.attached_class) }
-        def self.new(active:)
+        sig do
+          override.returns(
+            T::Array[HubspotSDK::Auth::TokenInfoResponseBaseIf::Variants]
+          )
         end
-
-        sig { override.returns({ active: T::Boolean }) }
-        def to_hash
+        def self.variants
         end
       end
     end

@@ -97,9 +97,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccount
     response =
       @hubspot.conversations.custom_channels.channel_accounts.update_staging_token(
         "accountToken",
-        channel_id: 0,
-        account_name: "accountName",
-        delivery_identifier: {type: :CHANNEL_SPECIFIC_OPAQUE_ID, value: "value"}
+        channel_id: 0
       )
 
     assert_pattern do

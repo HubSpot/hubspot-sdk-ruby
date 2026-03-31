@@ -23,9 +23,10 @@ class HubspotSDK::Test::Resources::Auth::OAuthTest < HubspotSDK::Test::ResourceT
     end
 
     assert_pattern do
-      response => {
-        active: HubspotSDK::Internal::Type::Boolean
-      }
+      case response
+      in HubspotSDK::Auth::PublicAccessTokenInfoResponse
+      in HubspotSDK::Auth::PublicRefreshTokenInfoResponse
+      end
     end
   end
 

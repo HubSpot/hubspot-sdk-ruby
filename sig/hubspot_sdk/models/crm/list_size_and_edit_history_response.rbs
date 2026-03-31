@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type list_size_and_edit_history_response =
+        {
+          edit_history: ::Array[Time],
+          size_history: ::Array[HubspotSDK::Crm::ListSizeDataPoint]
+        }
+
+      class ListSizeAndEditHistoryResponse < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor edit_history: ::Array[Time]
+
+        attr_accessor size_history: ::Array[HubspotSDK::Crm::ListSizeDataPoint]
+
+        def initialize: (
+          edit_history: ::Array[Time],
+          size_history: ::Array[HubspotSDK::Crm::ListSizeDataPoint]
+        ) -> void
+
+        def to_hash: -> {
+          edit_history: ::Array[Time],
+          size_history: ::Array[HubspotSDK::Crm::ListSizeDataPoint]
+        }
+      end
+    end
+  end
+end

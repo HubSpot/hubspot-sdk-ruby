@@ -1,0 +1,17 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type list_size_data_point = { size: Integer, timestamp: Time }
+
+      class ListSizeDataPoint < HubspotSDK::Internal::Type::BaseModel
+        attr_accessor size: Integer
+
+        attr_accessor timestamp: Time
+
+        def initialize: (size: Integer, timestamp: Time) -> void
+
+        def to_hash: -> { size: Integer, timestamp: Time }
+      end
+    end
+  end
+end
