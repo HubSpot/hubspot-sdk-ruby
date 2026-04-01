@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Webhooks
-      # @see HubspotSDK::Resources::Webhooks::Webhooks#get_filter
+      # @see HubspotSDK::Resources::Webhooks::Webhooks#get_subscription_filter
       class FilterResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #

@@ -21,18 +21,36 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :pipeline_id
 
-        sig { returns(String) }
-        attr_accessor :stage_id
+        sig { returns(T.nilable(T::Boolean)) }
+        attr_reader :validate_deal_stage_usages_before_delete
+
+        sig do
+          params(validate_deal_stage_usages_before_delete: T::Boolean).void
+        end
+        attr_writer :validate_deal_stage_usages_before_delete
+
+        sig { returns(T.nilable(T::Boolean)) }
+        attr_reader :validate_references_before_delete
+
+        sig { params(validate_references_before_delete: T::Boolean).void }
+        attr_writer :validate_references_before_delete
 
         sig do
           params(
             object_type: String,
             pipeline_id: String,
-            stage_id: String,
+            validate_deal_stage_usages_before_delete: T::Boolean,
+            validate_references_before_delete: T::Boolean,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
-        def self.new(object_type:, pipeline_id:, stage_id:, request_options: {})
+        def self.new(
+          object_type:,
+          pipeline_id:,
+          validate_deal_stage_usages_before_delete: nil,
+          validate_references_before_delete: nil,
+          request_options: {}
+        )
         end
 
         sig do
@@ -40,7 +58,8 @@ module HubspotSDK
             {
               object_type: String,
               pipeline_id: String,
-              stage_id: String,
+              validate_deal_stage_usages_before_delete: T::Boolean,
+              validate_references_before_delete: T::Boolean,
               request_options: HubspotSDK::RequestOptions
             }
           )

@@ -84,6 +84,34 @@ class HubspotSDK::Test::Resources::Crm::Objects::PartnerClientsTest < HubspotSDK
     end
   end
 
+  def test_list_associations_required_params
+    skip("Mock server tests are disabled")
+
+    response =
+      @hubspot.crm.objects.partner_clients.list_associations(
+        "toObjectType",
+        partner_client_id: "partnerClientId"
+      )
+
+    assert_pattern do
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Crm::MultiAssociatedObjectWithLabel
+    end
+
+    assert_pattern do
+      row => {
+        association_types: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::AssociationSpecWithLabel]),
+        to_object_id: String
+      }
+    end
+  end
+
   def test_search_required_params
     skip("Mock server tests are disabled")
 

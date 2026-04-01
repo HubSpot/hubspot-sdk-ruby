@@ -9,12 +9,6 @@ module HubspotSDK
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Webhooks::CrmObjectSnapshotBatchResponse
 
-        def create_filter: (
-          filter: HubspotSDK::Webhooks::Filter,
-          subscription_id: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Webhooks::FilterCreateResponse
-
         def create_journal_subscription: (
           subscription_upsert_request: HubspotSDK::Models::Webhooks::subscription_upsert_request,
           ?request_options: HubspotSDK::request_opts
@@ -30,10 +24,11 @@ module HubspotSDK
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Webhooks::SubscriptionResponse
 
-        def delete_filter: (
-          Integer filter_id,
+        def create_subscription_filter: (
+          filter: HubspotSDK::Webhooks::Filter,
+          subscription_id: Integer,
           ?request_options: HubspotSDK::request_opts
-        ) -> nil
+        ) -> HubspotSDK::Webhooks::FilterCreateResponse
 
         def delete_journal_subscription: (
           Integer subscription_id,
@@ -56,15 +51,10 @@ module HubspotSDK
           ?request_options: HubspotSDK::request_opts
         ) -> nil
 
-        def get_filter: (
+        def delete_subscription_filter: (
           Integer filter_id,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Webhooks::FilterResponse
-
-        def get_filters_by_subscription: (
-          Integer subscription_id,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Models::Webhooks::webhook_get_filters_by_subscription_response
+        ) -> nil
 
         def get_journal_earliest: (
           ?install_portal_id: Integer,
@@ -87,23 +77,23 @@ module HubspotSDK
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Webhooks::SnapshotStatusResponse
 
-        def get_local_earliest: (
+        def get_local_journal_earliest: (
           ?install_portal_id: Integer,
           ?request_options: HubspotSDK::request_opts
         ) -> StringIO
 
-        def get_local_latest: (
+        def get_local_journal_latest: (
           ?install_portal_id: Integer,
           ?request_options: HubspotSDK::request_opts
         ) -> StringIO
 
-        def get_local_next_by_offset: (
+        def get_local_journal_next_by_offset: (
           String offset,
           ?install_portal_id: Integer,
           ?request_options: HubspotSDK::request_opts
         ) -> StringIO
 
-        def get_local_status: (
+        def get_local_journal_status: (
           String status_id,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Webhooks::SnapshotStatusResponse
@@ -118,6 +108,16 @@ module HubspotSDK
           app_id: Integer,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Webhooks::SubscriptionResponse
+
+        def get_subscription_filter: (
+          Integer filter_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Webhooks::FilterResponse
+
+        def get_subscription_filter_for_subscription: (
+          Integer subscription_id,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Models::Webhooks::webhook_get_subscription_filter_for_subscription_response
 
         def list_journal_subscriptions: (
           ?request_options: HubspotSDK::request_opts

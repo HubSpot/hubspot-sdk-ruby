@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Pipelines#list
+      # @see HubspotSDK::Resources::Crm::Pipelines#list_stages
       class CollectionResponsePipelineStageNoPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #

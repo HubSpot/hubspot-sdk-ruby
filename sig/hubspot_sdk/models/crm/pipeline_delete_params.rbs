@@ -2,7 +2,12 @@ module HubspotSDK
   module Models
     module Crm
       type pipeline_delete_params =
-        { object_type: String, pipeline_id: String, stage_id: String }
+        {
+          object_type: String,
+          pipeline_id: String,
+          validate_deal_stage_usages_before_delete: bool,
+          validate_references_before_delete: bool
+        }
         & HubspotSDK::Internal::Type::request_parameters
 
       class PipelineDeleteParams < HubspotSDK::Internal::Type::BaseModel
@@ -13,19 +18,27 @@ module HubspotSDK
 
         attr_accessor pipeline_id: String
 
-        attr_accessor stage_id: String
+        attr_reader validate_deal_stage_usages_before_delete: bool?
+
+        def validate_deal_stage_usages_before_delete=: (bool) -> bool
+
+        attr_reader validate_references_before_delete: bool?
+
+        def validate_references_before_delete=: (bool) -> bool
 
         def initialize: (
           object_type: String,
           pipeline_id: String,
-          stage_id: String,
+          ?validate_deal_stage_usages_before_delete: bool,
+          ?validate_references_before_delete: bool,
           ?request_options: HubspotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           object_type: String,
           pipeline_id: String,
-          stage_id: String,
+          validate_deal_stage_usages_before_delete: bool,
+          validate_references_before_delete: bool,
           request_options: HubspotSDK::RequestOptions
         }
       end

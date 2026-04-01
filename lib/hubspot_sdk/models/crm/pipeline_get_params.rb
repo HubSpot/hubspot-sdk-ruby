@@ -18,15 +18,9 @@ module HubspotSDK
         #   @return [String]
         required :pipeline_id, String
 
-        # @!attribute stage_id
-        #
-        #   @return [String]
-        required :stage_id, String
-
-        # @!method initialize(object_type:, pipeline_id:, stage_id:, request_options: {})
+        # @!method initialize(object_type:, pipeline_id:, request_options: {})
         #   @param object_type [String]
         #   @param pipeline_id [String]
-        #   @param stage_id [String]
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end

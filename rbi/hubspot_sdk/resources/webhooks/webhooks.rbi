@@ -19,23 +19,6 @@ module HubspotSDK
 
         sig do
           params(
-            filter: HubspotSDK::Webhooks::Filter::OrHash,
-            subscription_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Webhooks::FilterCreateResponse)
-        end
-        def create_filter(
-          # Defines a single condition for searching CRM objects, specifying the property to
-          # filter on, the operator to use (such as equals, greater than, or contains), and
-          # the value(s) to compare against.
-          filter:,
-          subscription_id:,
-          request_options: {}
-        )
-        end
-
-        sig do
-          params(
             subscription_upsert_request:
               T.any(
                 HubspotSDK::Webhooks::ObjectSubscriptionUpsertRequest::OrHash,
@@ -88,11 +71,19 @@ module HubspotSDK
 
         sig do
           params(
-            filter_id: Integer,
+            filter: HubspotSDK::Webhooks::Filter::OrHash,
+            subscription_id: Integer,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).void
+          ).returns(HubspotSDK::Webhooks::FilterCreateResponse)
         end
-        def delete_filter(filter_id, request_options: {})
+        def create_subscription_filter(
+          # Defines a single condition for searching CRM objects, specifying the property to
+          # filter on, the operator to use (such as equals, greater than, or contains), and
+          # the value(s) to compare against.
+          filter:,
+          subscription_id:,
+          request_options: {}
+        )
         end
 
         sig do
@@ -139,18 +130,9 @@ module HubspotSDK
           params(
             filter_id: Integer,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Webhooks::FilterResponse)
+          ).void
         end
-        def get_filter(filter_id, request_options: {})
-        end
-
-        sig do
-          params(
-            subscription_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(T::Array[HubspotSDK::Webhooks::FilterResponse])
-        end
-        def get_filters_by_subscription(subscription_id, request_options: {})
+        def delete_subscription_filter(filter_id, request_options: {})
         end
 
         sig do
@@ -200,7 +182,10 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(StringIO)
         end
-        def get_local_earliest(install_portal_id: nil, request_options: {})
+        def get_local_journal_earliest(
+          install_portal_id: nil,
+          request_options: {}
+        )
         end
 
         sig do
@@ -209,7 +194,10 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(StringIO)
         end
-        def get_local_latest(install_portal_id: nil, request_options: {})
+        def get_local_journal_latest(
+          install_portal_id: nil,
+          request_options: {}
+        )
         end
 
         sig do
@@ -219,7 +207,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(StringIO)
         end
-        def get_local_next_by_offset(
+        def get_local_journal_next_by_offset(
           offset,
           install_portal_id: nil,
           request_options: {}
@@ -232,7 +220,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Webhooks::SnapshotStatusResponse)
         end
-        def get_local_status(status_id, request_options: {})
+        def get_local_journal_status(status_id, request_options: {})
         end
 
         # Retrieve the webhook settings for the specified app, including the webhook’s
@@ -255,6 +243,27 @@ module HubspotSDK
           ).returns(HubspotSDK::Webhooks::SubscriptionResponse)
         end
         def get_subscription(subscription_id, app_id:, request_options: {})
+        end
+
+        sig do
+          params(
+            filter_id: Integer,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Webhooks::FilterResponse)
+        end
+        def get_subscription_filter(filter_id, request_options: {})
+        end
+
+        sig do
+          params(
+            subscription_id: Integer,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(T::Array[HubspotSDK::Webhooks::FilterResponse])
+        end
+        def get_subscription_filter_for_subscription(
+          subscription_id,
+          request_options: {}
+        )
         end
 
         sig do

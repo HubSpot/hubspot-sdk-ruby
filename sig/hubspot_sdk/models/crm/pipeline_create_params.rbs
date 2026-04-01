@@ -2,10 +2,9 @@ module HubspotSDK
   module Models
     module Crm
       type pipeline_create_params =
-        { object_type: String, pipeline_id: String }
-        & HubspotSDK::Internal::Type::request_parameters
+        { object_type: String } & HubspotSDK::Internal::Type::request_parameters
 
-      class PipelineCreateParams < HubspotSDK::Models::Crm::PipelineStageInput
+      class PipelineCreateParams < HubspotSDK::Models::Crm::PipelineInput
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
@@ -13,19 +12,13 @@ module HubspotSDK
 
         def object_type=: (String _) -> String
 
-        def pipeline_id: -> String
-
-        def pipeline_id=: (String _) -> String
-
         def initialize: (
           object_type: String,
-          pipeline_id: String,
           ?request_options: HubspotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           object_type: String,
-          pipeline_id: String,
           request_options: HubspotSDK::RequestOptions
         }
       end

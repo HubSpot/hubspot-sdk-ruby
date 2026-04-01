@@ -18,15 +18,9 @@ module HubspotSDK
         #   @return [String]
         required :flag_name, String
 
-        # @!attribute portal_id
-        #
-        #   @return [Integer]
-        required :portal_id, Integer
-
-        # @!method initialize(app_id:, flag_name:, portal_id:, request_options: {})
+        # @!method initialize(app_id:, flag_name:, request_options: {})
         #   @param app_id [Integer]
         #   @param flag_name [String]
-        #   @param portal_id [Integer]
         #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end

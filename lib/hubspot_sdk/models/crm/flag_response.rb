@@ -3,6 +3,7 @@
 module HubspotSDK
   module Models
     module Crm
+      # @see HubspotSDK::Resources::Crm::FeatureFlags#update
       class FlagResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute app_id
         #   The ID of the app

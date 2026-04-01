@@ -108,6 +108,36 @@ module HubspotSDK
           )
           end
 
+          # Retrieve a list of associations for a specific partner client based on the
+          # specified object type.
+          sig do
+            params(
+              to_object_type: String,
+              partner_client_id: String,
+              after: String,
+              limit: Integer,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(
+              HubspotSDK::Internal::Page[
+                HubspotSDK::Crm::MultiAssociatedObjectWithLabel
+              ]
+            )
+          end
+          def list_associations(
+            # Path param
+            to_object_type,
+            # Path param
+            partner_client_id:,
+            # Query param: The paging cursor token of the last successfully read resource will
+            # be returned as the `paging.next.after` JSON property of a paged response
+            # containing more results.
+            after: nil,
+            # Query param: The maximum number of results to display per page.
+            limit: nil,
+            request_options: {}
+          )
+          end
+
           # Execute a search for partner clients based on defined filters, properties, and
           # sorting options. This endpoint allows you to retrieve partner client data that
           # matches the search criteria, facilitating integration and data synchronization
