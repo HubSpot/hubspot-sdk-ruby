@@ -32,6 +32,14 @@ module HubspotSDK
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Crm::SimplePublicObjectWithAssociations
 
+          def list_associations: (
+            String to_object_type,
+            partner_client_id: String,
+            ?after: String,
+            ?limit: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::MultiAssociatedObjectWithLabel]
+
           def search: (
             after: String,
             filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],

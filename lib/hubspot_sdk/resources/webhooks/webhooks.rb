@@ -26,31 +26,6 @@ module HubspotSDK
           )
         end
 
-        # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Webhooks::WebhookCreateFilterParams} for more details.
-        #
-        # @overload create_filter(filter:, subscription_id:, request_options: {})
-        #
-        # @param filter [HubspotSDK::Models::Webhooks::Filter] Defines a single condition for searching CRM objects, specifying the property to
-        #
-        # @param subscription_id [Integer]
-        #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-        #
-        # @return [HubspotSDK::Models::Webhooks::FilterCreateResponse]
-        #
-        # @see HubspotSDK::Models::Webhooks::WebhookCreateFilterParams
-        def create_filter(params)
-          parsed, options = HubspotSDK::Webhooks::WebhookCreateFilterParams.dump_request(params)
-          @client.request(
-            method: :post,
-            path: "webhooks-journal/subscriptions/2026-03/filters",
-            body: parsed,
-            model: HubspotSDK::Webhooks::FilterCreateResponse,
-            options: options
-          )
-        end
-
         # @overload create_journal_subscription(subscription_upsert_request:, request_options: {})
         #
         # @param subscription_upsert_request [HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest, HubspotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest, HubspotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest, HubspotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest]
@@ -106,20 +81,29 @@ module HubspotSDK
           )
         end
 
-        # @overload delete_filter(filter_id, request_options: {})
+        # Some parameter documentations has been truncated, see
+        # {HubspotSDK::Models::Webhooks::WebhookCreateSubscriptionFilterParams} for more
+        # details.
         #
-        # @param filter_id [Integer]
+        # @overload create_subscription_filter(filter:, subscription_id:, request_options: {})
+        #
+        # @param filter [HubspotSDK::Models::Webhooks::Filter] Defines a single condition for searching CRM objects, specifying the property to
+        #
+        # @param subscription_id [Integer]
+        #
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [nil]
+        # @return [HubspotSDK::Models::Webhooks::FilterCreateResponse]
         #
-        # @see HubspotSDK::Models::Webhooks::WebhookDeleteFilterParams
-        def delete_filter(filter_id, params = {})
+        # @see HubspotSDK::Models::Webhooks::WebhookCreateSubscriptionFilterParams
+        def create_subscription_filter(params)
+          parsed, options = HubspotSDK::Webhooks::WebhookCreateSubscriptionFilterParams.dump_request(params)
           @client.request(
-            method: :delete,
-            path: ["webhooks-journal/subscriptions/2026-03/filters/%1$s", filter_id],
-            model: NilClass,
-            options: params[:request_options]
+            method: :post,
+            path: "webhooks-journal/subscriptions/2026-03/filters",
+            body: parsed,
+            model: HubspotSDK::Webhooks::FilterCreateResponse,
+            options: options
           )
         end
 
@@ -202,36 +186,19 @@ module HubspotSDK
           )
         end
 
-        # @overload get_filter(filter_id, request_options: {})
+        # @overload delete_subscription_filter(filter_id, request_options: {})
         #
         # @param filter_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Webhooks::FilterResponse]
+        # @return [nil]
         #
-        # @see HubspotSDK::Models::Webhooks::WebhookGetFilterParams
-        def get_filter(filter_id, params = {})
+        # @see HubspotSDK::Models::Webhooks::WebhookDeleteSubscriptionFilterParams
+        def delete_subscription_filter(filter_id, params = {})
           @client.request(
-            method: :get,
+            method: :delete,
             path: ["webhooks-journal/subscriptions/2026-03/filters/%1$s", filter_id],
-            model: HubspotSDK::Webhooks::FilterResponse,
-            options: params[:request_options]
-          )
-        end
-
-        # @overload get_filters_by_subscription(subscription_id, request_options: {})
-        #
-        # @param subscription_id [Integer]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-        #
-        # @return [Array<HubspotSDK::Models::Webhooks::FilterResponse>]
-        #
-        # @see HubspotSDK::Models::Webhooks::WebhookGetFiltersBySubscriptionParams
-        def get_filters_by_subscription(subscription_id, params = {})
-          @client.request(
-            method: :get,
-            path: ["webhooks-journal/subscriptions/2026-03/filters/subscription/%1$s", subscription_id],
-            model: HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Webhooks::FilterResponse],
+            model: NilClass,
             options: params[:request_options]
           )
         end
@@ -317,16 +284,16 @@ module HubspotSDK
           )
         end
 
-        # @overload get_local_earliest(install_portal_id: nil, request_options: {})
+        # @overload get_local_journal_earliest(install_portal_id: nil, request_options: {})
         #
         # @param install_portal_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [StringIO]
         #
-        # @see HubspotSDK::Models::Webhooks::WebhookGetLocalEarliestParams
-        def get_local_earliest(params = {})
-          parsed, options = HubspotSDK::Webhooks::WebhookGetLocalEarliestParams.dump_request(params)
+        # @see HubspotSDK::Models::Webhooks::WebhookGetLocalJournalEarliestParams
+        def get_local_journal_earliest(params = {})
+          parsed, options = HubspotSDK::Webhooks::WebhookGetLocalJournalEarliestParams.dump_request(params)
           query = HubspotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
@@ -338,16 +305,16 @@ module HubspotSDK
           )
         end
 
-        # @overload get_local_latest(install_portal_id: nil, request_options: {})
+        # @overload get_local_journal_latest(install_portal_id: nil, request_options: {})
         #
         # @param install_portal_id [Integer]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [StringIO]
         #
-        # @see HubspotSDK::Models::Webhooks::WebhookGetLocalLatestParams
-        def get_local_latest(params = {})
-          parsed, options = HubspotSDK::Webhooks::WebhookGetLocalLatestParams.dump_request(params)
+        # @see HubspotSDK::Models::Webhooks::WebhookGetLocalJournalLatestParams
+        def get_local_journal_latest(params = {})
+          parsed, options = HubspotSDK::Webhooks::WebhookGetLocalJournalLatestParams.dump_request(params)
           query = HubspotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
@@ -359,7 +326,7 @@ module HubspotSDK
           )
         end
 
-        # @overload get_local_next_by_offset(offset, install_portal_id: nil, request_options: {})
+        # @overload get_local_journal_next_by_offset(offset, install_portal_id: nil, request_options: {})
         #
         # @param offset [String]
         # @param install_portal_id [Integer]
@@ -367,9 +334,9 @@ module HubspotSDK
         #
         # @return [StringIO]
         #
-        # @see HubspotSDK::Models::Webhooks::WebhookGetLocalNextByOffsetParams
-        def get_local_next_by_offset(offset, params = {})
-          parsed, options = HubspotSDK::Webhooks::WebhookGetLocalNextByOffsetParams.dump_request(params)
+        # @see HubspotSDK::Models::Webhooks::WebhookGetLocalJournalNextByOffsetParams
+        def get_local_journal_next_by_offset(offset, params = {})
+          parsed, options = HubspotSDK::Webhooks::WebhookGetLocalJournalNextByOffsetParams.dump_request(params)
           query = HubspotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
@@ -381,15 +348,15 @@ module HubspotSDK
           )
         end
 
-        # @overload get_local_status(status_id, request_options: {})
+        # @overload get_local_journal_status(status_id, request_options: {})
         #
         # @param status_id [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubspotSDK::Models::Webhooks::SnapshotStatusResponse]
         #
-        # @see HubspotSDK::Models::Webhooks::WebhookGetLocalStatusParams
-        def get_local_status(status_id, params = {})
+        # @see HubspotSDK::Models::Webhooks::WebhookGetLocalJournalStatusParams
+        def get_local_journal_status(status_id, params = {})
           @client.request(
             method: :get,
             path: ["webhooks-journal/journal-local/2026-03/status/%1$s", status_id],
@@ -440,6 +407,40 @@ module HubspotSDK
             path: ["webhooks/2026-03/%1$s/subscriptions/%2$s", app_id, subscription_id],
             model: HubspotSDK::Webhooks::SubscriptionResponse,
             options: options
+          )
+        end
+
+        # @overload get_subscription_filter(filter_id, request_options: {})
+        #
+        # @param filter_id [Integer]
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Models::Webhooks::FilterResponse]
+        #
+        # @see HubspotSDK::Models::Webhooks::WebhookGetSubscriptionFilterParams
+        def get_subscription_filter(filter_id, params = {})
+          @client.request(
+            method: :get,
+            path: ["webhooks-journal/subscriptions/2026-03/filters/%1$s", filter_id],
+            model: HubspotSDK::Webhooks::FilterResponse,
+            options: params[:request_options]
+          )
+        end
+
+        # @overload get_subscription_filter_for_subscription(subscription_id, request_options: {})
+        #
+        # @param subscription_id [Integer]
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [Array<HubspotSDK::Models::Webhooks::FilterResponse>]
+        #
+        # @see HubspotSDK::Models::Webhooks::WebhookGetSubscriptionFilterForSubscriptionParams
+        def get_subscription_filter_for_subscription(subscription_id, params = {})
+          @client.request(
+            method: :get,
+            path: ["webhooks-journal/subscriptions/2026-03/filters/subscription/%1$s", subscription_id],
+            model: HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Webhooks::FilterResponse],
+            options: params[:request_options]
           )
         end
 

@@ -120,6 +120,49 @@ module HubspotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Crm::Objects::PartnerClientListAssociationsParams} for more
+          # details.
+          #
+          # Retrieve a list of associations for a specific partner client based on the
+          # specified object type.
+          #
+          # @overload list_associations(to_object_type, partner_client_id:, after: nil, limit: nil, request_options: {})
+          #
+          # @param to_object_type [String] Path param
+          #
+          # @param partner_client_id [String] Path param
+          #
+          # @param after [String] Query param: The paging cursor token of the last successfully read resource will
+          #
+          # @param limit [Integer] Query param: The maximum number of results to display per page.
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::MultiAssociatedObjectWithLabel>]
+          #
+          # @see HubspotSDK::Models::Crm::Objects::PartnerClientListAssociationsParams
+          def list_associations(to_object_type, params)
+            parsed, options = HubspotSDK::Crm::Objects::PartnerClientListAssociationsParams.dump_request(params)
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            partner_client_id =
+              parsed.delete(:partner_client_id) do
+                raise ArgumentError.new("missing required path argument #{_1}")
+              end
+            @client.request(
+              method: :get,
+              path: [
+                "crm/objects/2026-03/partner_clients/%1$s/associations/%2$s",
+                partner_client_id,
+                to_object_type
+              ],
+              query: query,
+              page: HubspotSDK::Internal::Page,
+              model: HubspotSDK::Crm::MultiAssociatedObjectWithLabel,
+              options: options
+            )
+          end
+
           # Execute a search for partner clients based on defined filters, properties, and
           # sorting options. This endpoint allows you to retrieve partner client data that
           # matches the search criteria, facilitating integration and data synchronization

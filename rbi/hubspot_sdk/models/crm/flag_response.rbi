@@ -14,7 +14,9 @@ module HubspotSDK
         attr_accessor :app_id
 
         # The flag state for any portal that doesn't have an override value
-        sig { returns(HubspotSDK::Crm::FlagResponse::DefaultState::OrSymbol) }
+        sig do
+          returns(HubspotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol)
+        end
         attr_accessor :default_state
 
         # The name of the flag
@@ -25,7 +27,9 @@ module HubspotSDK
         # including portal-level values
         sig do
           returns(
-            T.nilable(HubspotSDK::Crm::FlagResponse::OverrideState::OrSymbol)
+            T.nilable(
+              HubspotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
+            )
           )
         end
         attr_reader :override_state
@@ -66,10 +70,10 @@ module HubspotSDK
             {
               app_id: Integer,
               default_state:
-                HubspotSDK::Crm::FlagResponse::DefaultState::OrSymbol,
+                HubspotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol,
               flag_name: String,
               override_state:
-                HubspotSDK::Crm::FlagResponse::OverrideState::OrSymbol
+                HubspotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
             }
           )
         end

@@ -136,6 +136,10 @@ module HubspotSDK
           # Some parameter documentations has been truncated, see
           # {HubspotSDK::Models::Cms::Blogs::AuthorListParams} for more details.
           #
+          # Get the list of blog authors. Supports paging and filtering. This method would
+          # be useful for an integration that examined these models and used an external
+          # service to suggest edits.
+          #
           # @overload list(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
           #
           # @param after [String] The paging cursor token of the last successfully read resource will be returned
@@ -170,7 +174,7 @@ module HubspotSDK
             query = HubspotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
-              path: "cms/blogs/2026-03/authors/cursor",
+              path: "cms/blogs/2026-03/authors",
               query: query.transform_keys(
                 created_after: "createdAfter",
                 created_at: "createdAt",
@@ -320,9 +324,9 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::AuthorListByQueryParams} for more details.
+          # {HubspotSDK::Models::Cms::Blogs::AuthorGetCursorParams} for more details.
           #
-          # @overload list_by_query(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
+          # @overload get_cursor(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
           #
           # @param after [String] The paging cursor token of the last successfully read resource will be returned
           #
@@ -350,9 +354,61 @@ module HubspotSDK
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorListByQueryParams
-          def list_by_query(params = {})
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorListByQueryParams.dump_request(params)
+          # @see HubspotSDK::Models::Cms::Blogs::AuthorGetCursorParams
+          def get_cursor(params = {})
+            parsed, options = HubspotSDK::Cms::Blogs::AuthorGetCursorParams.dump_request(params)
+            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            @client.request(
+              method: :get,
+              path: "cms/blogs/2026-03/authors/cursor",
+              query: query.transform_keys(
+                created_after: "createdAfter",
+                created_at: "createdAt",
+                created_before: "createdBefore",
+                updated_after: "updatedAfter",
+                updated_at: "updatedAt",
+                updated_before: "updatedBefore"
+              ),
+              headers: {"accept" => "*/*"},
+              model: StringIO,
+              options: options
+            )
+          end
+
+          # Some parameter documentations has been truncated, see
+          # {HubspotSDK::Models::Cms::Blogs::AuthorGetCursorByQueryParams} for more details.
+          #
+          # @overload get_cursor_by_query(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
+          #
+          # @param after [String] The paging cursor token of the last successfully read resource will be returned
+          #
+          # @param archived [Boolean] Whether to return only results that have been archived.
+          #
+          # @param created_after [Time]
+          #
+          # @param created_at [Time]
+          #
+          # @param created_before [Time]
+          #
+          # @param limit [Integer] The maximum number of results to display per page.
+          #
+          # @param property [String]
+          #
+          # @param sort [Array<String>]
+          #
+          # @param updated_after [Time]
+          #
+          # @param updated_at [Time]
+          #
+          # @param updated_before [Time]
+          #
+          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          #
+          # @return [StringIO]
+          #
+          # @see HubspotSDK::Models::Cms::Blogs::AuthorGetCursorByQueryParams
+          def get_cursor_by_query(params = {})
+            parsed, options = HubspotSDK::Cms::Blogs::AuthorGetCursorByQueryParams.dump_request(params)
             query = HubspotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
@@ -372,9 +428,9 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::AuthorListPostsParams} for more details.
+          # {HubspotSDK::Models::Cms::Blogs::AuthorGetPostsCursorParams} for more details.
           #
-          # @overload list_posts(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
+          # @overload get_posts_cursor(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
           #
           # @param after [String] The paging cursor token of the last successfully read resource will be returned
           #
@@ -402,9 +458,9 @@ module HubspotSDK
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorListPostsParams
-          def list_posts(params = {})
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorListPostsParams.dump_request(params)
+          # @see HubspotSDK::Models::Cms::Blogs::AuthorGetPostsCursorParams
+          def get_posts_cursor(params = {})
+            parsed, options = HubspotSDK::Cms::Blogs::AuthorGetPostsCursorParams.dump_request(params)
             query = HubspotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
@@ -424,9 +480,10 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::AuthorListPostsByQueryParams} for more details.
+          # {HubspotSDK::Models::Cms::Blogs::AuthorGetPostsCursorByQueryParams} for more
+          # details.
           #
-          # @overload list_posts_by_query(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
+          # @overload get_posts_cursor_by_query(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
           #
           # @param after [String] The paging cursor token of the last successfully read resource will be returned
           #
@@ -454,9 +511,9 @@ module HubspotSDK
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorListPostsByQueryParams
-          def list_posts_by_query(params = {})
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorListPostsByQueryParams.dump_request(params)
+          # @see HubspotSDK::Models::Cms::Blogs::AuthorGetPostsCursorByQueryParams
+          def get_posts_cursor_by_query(params = {})
+            parsed, options = HubspotSDK::Cms::Blogs::AuthorGetPostsCursorByQueryParams.dump_request(params)
             query = HubspotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
@@ -476,9 +533,9 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::AuthorListTagsParams} for more details.
+          # {HubspotSDK::Models::Cms::Blogs::AuthorGetTagsCursorParams} for more details.
           #
-          # @overload list_tags(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
+          # @overload get_tags_cursor(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
           #
           # @param after [String] The paging cursor token of the last successfully read resource will be returned
           #
@@ -506,9 +563,9 @@ module HubspotSDK
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorListTagsParams
-          def list_tags(params = {})
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorListTagsParams.dump_request(params)
+          # @see HubspotSDK::Models::Cms::Blogs::AuthorGetTagsCursorParams
+          def get_tags_cursor(params = {})
+            parsed, options = HubspotSDK::Cms::Blogs::AuthorGetTagsCursorParams.dump_request(params)
             query = HubspotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
@@ -528,9 +585,10 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::AuthorListTagsByQueryParams} for more details.
+          # {HubspotSDK::Models::Cms::Blogs::AuthorGetTagsCursorByQueryParams} for more
+          # details.
           #
-          # @overload list_tags_by_query(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
+          # @overload get_tags_cursor_by_query(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
           #
           # @param after [String] The paging cursor token of the last successfully read resource will be returned
           #
@@ -558,9 +616,9 @@ module HubspotSDK
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorListTagsByQueryParams
-          def list_tags_by_query(params = {})
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorListTagsByQueryParams.dump_request(params)
+          # @see HubspotSDK::Models::Cms::Blogs::AuthorGetTagsCursorByQueryParams
+          def get_tags_cursor_by_query(params = {})
+            parsed, options = HubspotSDK::Cms::Blogs::AuthorGetTagsCursorByQueryParams.dump_request(params)
             query = HubspotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,

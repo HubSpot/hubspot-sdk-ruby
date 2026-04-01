@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Pipelines#get_audit
+      # @see HubspotSDK::Resources::Crm::Pipelines#list_audit
       class CollectionResponsePublicAuditInfoNoPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #

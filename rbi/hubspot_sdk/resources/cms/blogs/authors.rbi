@@ -150,6 +150,9 @@ module HubspotSDK
           )
           end
 
+          # Get the list of blog authors. Supports paging and filtering. This method would
+          # be useful for an integration that examined these models and used an external
+          # service to suggest edits.
           sig do
             params(
               after: String,
@@ -298,7 +301,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
-          def list_by_query(
+          def get_cursor(
             # The paging cursor token of the last successfully read resource will be returned
             # as the `paging.next.after` JSON property of a paged response containing more
             # results.
@@ -335,7 +338,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
-          def list_posts(
+          def get_cursor_by_query(
             # The paging cursor token of the last successfully read resource will be returned
             # as the `paging.next.after` JSON property of a paged response containing more
             # results.
@@ -372,7 +375,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
-          def list_posts_by_query(
+          def get_posts_cursor(
             # The paging cursor token of the last successfully read resource will be returned
             # as the `paging.next.after` JSON property of a paged response containing more
             # results.
@@ -409,7 +412,7 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
-          def list_tags(
+          def get_posts_cursor_by_query(
             # The paging cursor token of the last successfully read resource will be returned
             # as the `paging.next.after` JSON property of a paged response containing more
             # results.
@@ -446,7 +449,44 @@ module HubspotSDK
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
-          def list_tags_by_query(
+          def get_tags_cursor(
+            # The paging cursor token of the last successfully read resource will be returned
+            # as the `paging.next.after` JSON property of a paged response containing more
+            # results.
+            after: nil,
+            # Whether to return only results that have been archived.
+            archived: nil,
+            created_after: nil,
+            created_at: nil,
+            created_before: nil,
+            # The maximum number of results to display per page.
+            limit: nil,
+            property: nil,
+            sort: nil,
+            updated_after: nil,
+            updated_at: nil,
+            updated_before: nil,
+            request_options: {}
+          )
+          end
+
+          sig do
+            params(
+              after: String,
+              archived: T::Boolean,
+              created_after: Time,
+              created_at: Time,
+              created_before: Time,
+              limit: Integer,
+              property: String,
+              sort: T::Array[String],
+              updated_after: Time,
+              updated_at: Time,
+              updated_before: Time,
+              request_options: HubspotSDK::RequestOptions::OrHash
+            ).returns(StringIO)
+          end
+          def get_tags_cursor_by_query(
             # The paging cursor token of the last successfully read resource will be returned
             # as the `paging.next.after` JSON property of a paged response containing more
             # results.

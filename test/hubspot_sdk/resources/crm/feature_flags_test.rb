@@ -6,18 +6,18 @@ class HubspotSDK::Test::Resources::Crm::FeatureFlagsTest < HubspotSDK::Test::Res
   def test_update_required_params
     skip("Mock server tests are disabled")
 
-    response = @hubspot.crm.feature_flags.update(0, app_id: 0, flag_name: "flagName", flag_state: :ABSENT)
+    response = @hubspot.crm.feature_flags.update("flagName", app_id: 0, default_state: :ABSENT)
 
     assert_pattern do
-      response => HubspotSDK::Crm::PortalFlagStateResponse
+      response => HubspotSDK::Crm::FlagResponse
     end
 
     assert_pattern do
       response => {
         app_id: Integer,
+        default_state: HubspotSDK::Crm::FlagResponse::DefaultState,
         flag_name: String,
-        flag_state: HubspotSDK::Crm::PortalFlagStateResponse::FlagState,
-        portal_id: Integer
+        override_state: HubspotSDK::Crm::FlagResponse::OverrideState | nil
       }
     end
   end
@@ -25,7 +25,26 @@ class HubspotSDK::Test::Resources::Crm::FeatureFlagsTest < HubspotSDK::Test::Res
   def test_delete_required_params
     skip("Mock server tests are disabled")
 
-    response = @hubspot.crm.feature_flags.delete(0, app_id: 0, flag_name: "flagName")
+    response = @hubspot.crm.feature_flags.delete("flagName", app_id: 0)
+
+    assert_pattern do
+      response => HubspotSDK::Crm::FlagResponse
+    end
+
+    assert_pattern do
+      response => {
+        app_id: Integer,
+        default_state: HubspotSDK::Crm::FlagResponse::DefaultState,
+        flag_name: String,
+        override_state: HubspotSDK::Crm::FlagResponse::OverrideState | nil
+      }
+    end
+  end
+
+  def test_delete_portal_state_required_params
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.crm.feature_flags.delete_portal_state(0, app_id: 0, flag_name: "flagName")
 
     assert_pattern do
       response => HubspotSDK::Crm::PortalFlagStateResponse
@@ -44,7 +63,26 @@ class HubspotSDK::Test::Resources::Crm::FeatureFlagsTest < HubspotSDK::Test::Res
   def test_get_required_params
     skip("Mock server tests are disabled")
 
-    response = @hubspot.crm.feature_flags.get(0, app_id: 0, flag_name: "flagName")
+    response = @hubspot.crm.feature_flags.get("flagName", app_id: 0)
+
+    assert_pattern do
+      response => HubspotSDK::Crm::FlagResponse
+    end
+
+    assert_pattern do
+      response => {
+        app_id: Integer,
+        default_state: HubspotSDK::Crm::FlagResponse::DefaultState,
+        flag_name: String,
+        override_state: HubspotSDK::Crm::FlagResponse::OverrideState | nil
+      }
+    end
+  end
+
+  def test_get_portal_state_required_params
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.crm.feature_flags.get_portal_state(0, app_id: 0, flag_name: "flagName")
 
     assert_pattern do
       response => HubspotSDK::Crm::PortalFlagStateResponse
@@ -88,6 +126,26 @@ class HubspotSDK::Test::Resources::Crm::FeatureFlagsTest < HubspotSDK::Test::Res
     assert_pattern do
       response => {
         portal_flag_states: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PortalFlagStateResponse])
+      }
+    end
+  end
+
+  def test_update_portal_state_required_params
+    skip("Mock server tests are disabled")
+
+    response =
+      @hubspot.crm.feature_flags.update_portal_state(0, app_id: 0, flag_name: "flagName", flag_state: :ABSENT)
+
+    assert_pattern do
+      response => HubspotSDK::Crm::PortalFlagStateResponse
+    end
+
+    assert_pattern do
+      response => {
+        app_id: Integer,
+        flag_name: String,
+        flag_state: HubspotSDK::Crm::PortalFlagStateResponse::FlagState,
+        portal_id: Integer
       }
     end
   end

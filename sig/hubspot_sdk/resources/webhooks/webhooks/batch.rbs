@@ -3,11 +3,11 @@ module HubspotSDK
     class Webhooks
       class Webhooks
         class Batch
-          def create: (
-            Integer app_id,
-            inputs: ::Array[HubspotSDK::Webhooks::SubscriptionBatchUpdateRequest],
+          def get: (
+            inputs: ::Array[String],
+            ?install_portal_id: Integer,
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Webhooks::BatchResponseSubscriptionResponse
+          ) -> HubspotSDK::Webhooks::BatchResponseJournalFetchResponse
 
           def get_earliest: (
             Integer count,
@@ -21,6 +21,31 @@ module HubspotSDK
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Webhooks::BatchResponseJournalFetchResponse
 
+          def get_local: (
+            inputs: ::Array[String],
+            ?install_portal_id: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Webhooks::BatchResponseJournalFetchResponse
+
+          def get_local_earliest: (
+            Integer count,
+            ?install_portal_id: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Webhooks::BatchResponseJournalFetchResponse
+
+          def get_local_latest: (
+            Integer count,
+            ?install_portal_id: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Webhooks::BatchResponseJournalFetchResponse
+
+          def get_local_next: (
+            Integer count,
+            offset: String,
+            ?install_portal_id: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> HubspotSDK::Webhooks::BatchResponseJournalFetchResponse
+
           def get_next: (
             Integer count,
             offset: String,
@@ -28,11 +53,11 @@ module HubspotSDK
             ?request_options: HubspotSDK::request_opts
           ) -> HubspotSDK::Webhooks::BatchResponseJournalFetchResponse
 
-          def read: (
-            inputs: ::Array[String],
-            ?install_portal_id: Integer,
+          def update_subscriptions: (
+            Integer app_id,
+            inputs: ::Array[HubspotSDK::Webhooks::SubscriptionBatchUpdateRequest],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Webhooks::BatchResponseJournalFetchResponse
+          ) -> HubspotSDK::Webhooks::BatchResponseSubscriptionResponse
 
           def initialize: (client: HubspotSDK::Client) -> void
         end

@@ -5,14 +5,20 @@ module HubspotSDK
         attr_reader batch: HubspotSDK::Resources::Crm::FeatureFlags::Batch
 
         def update: (
-          Integer portal_id,
+          String flag_name,
           app_id: Integer,
-          flag_name: String,
-          flag_state: HubspotSDK::Models::Crm::PortalFlagStatePutRequest::flag_state,
+          default_state: HubspotSDK::Models::Crm::FlagPutRequest::default_state,
+          ?override_state: HubspotSDK::Models::Crm::FlagPutRequest::override_state,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::PortalFlagStateResponse
+        ) -> HubspotSDK::Crm::FlagResponse
 
         def delete: (
+          String flag_name,
+          app_id: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Crm::FlagResponse
+
+        def delete_portal_state: (
           Integer portal_id,
           app_id: Integer,
           flag_name: String,
@@ -20,6 +26,12 @@ module HubspotSDK
         ) -> HubspotSDK::Crm::PortalFlagStateResponse
 
         def get: (
+          String flag_name,
+          app_id: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Crm::FlagResponse
+
+        def get_portal_state: (
           Integer portal_id,
           app_id: Integer,
           flag_name: String,
@@ -38,6 +50,14 @@ module HubspotSDK
           ?start_portal_id: Integer,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Crm::PortalFlagStateBatchResponse
+
+        def update_portal_state: (
+          Integer portal_id,
+          app_id: Integer,
+          flag_name: String,
+          flag_state: HubspotSDK::Models::Crm::PortalFlagStatePutRequest::flag_state,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Crm::PortalFlagStateResponse
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

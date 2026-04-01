@@ -2,7 +2,7 @@ module HubspotSDK
   module Models
     module Crm
       type feature_flag_get_params =
-        { app_id: Integer, flag_name: String, portal_id: Integer }
+        { app_id: Integer, flag_name: String }
         & HubspotSDK::Internal::Type::request_parameters
 
       class FeatureFlagGetParams < HubspotSDK::Internal::Type::BaseModel
@@ -13,19 +13,15 @@ module HubspotSDK
 
         attr_accessor flag_name: String
 
-        attr_accessor portal_id: Integer
-
         def initialize: (
           app_id: Integer,
           flag_name: String,
-          portal_id: Integer,
           ?request_options: HubspotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           app_id: Integer,
           flag_name: String,
-          portal_id: Integer,
           request_options: HubspotSDK::RequestOptions
         }
       end

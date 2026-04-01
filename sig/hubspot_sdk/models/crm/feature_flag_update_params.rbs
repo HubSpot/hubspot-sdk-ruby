@@ -2,10 +2,10 @@ module HubspotSDK
   module Models
     module Crm
       type feature_flag_update_params =
-        { app_id: Integer, flag_name: String, portal_id: Integer }
+        { app_id: Integer, flag_name: String }
         & HubspotSDK::Internal::Type::request_parameters
 
-      class FeatureFlagUpdateParams < HubspotSDK::Models::Crm::PortalFlagStatePutRequest
+      class FeatureFlagUpdateParams < HubspotSDK::Models::Crm::FlagPutRequest
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 
@@ -17,21 +17,15 @@ module HubspotSDK
 
         def flag_name=: (String _) -> String
 
-        def portal_id: -> Integer
-
-        def portal_id=: (Integer _) -> Integer
-
         def initialize: (
           app_id: Integer,
           flag_name: String,
-          portal_id: Integer,
           ?request_options: HubspotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           app_id: Integer,
           flag_name: String,
-          portal_id: Integer,
           request_options: HubspotSDK::RequestOptions
         }
       end

@@ -145,50 +145,60 @@ class HubspotSDK::Test::Resources::Cms::Blogs::AuthorsTest < HubspotSDK::Test::R
     end
   end
 
-  def test_list_by_query
+  def test_get_cursor
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.blogs.authors.list_by_query
+    response = @hubspot.cms.blogs.authors.get_cursor
 
     assert_pattern do
       response => StringIO
     end
   end
 
-  def test_list_posts
+  def test_get_cursor_by_query
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.blogs.authors.list_posts
+    response = @hubspot.cms.blogs.authors.get_cursor_by_query
 
     assert_pattern do
       response => StringIO
     end
   end
 
-  def test_list_posts_by_query
+  def test_get_posts_cursor
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.blogs.authors.list_posts_by_query
+    response = @hubspot.cms.blogs.authors.get_posts_cursor
 
     assert_pattern do
       response => StringIO
     end
   end
 
-  def test_list_tags
+  def test_get_posts_cursor_by_query
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.blogs.authors.list_tags
+    response = @hubspot.cms.blogs.authors.get_posts_cursor_by_query
 
     assert_pattern do
       response => StringIO
     end
   end
 
-  def test_list_tags_by_query
+  def test_get_tags_cursor
     skip("Mock server tests are disabled")
 
-    response = @hubspot.cms.blogs.authors.list_tags_by_query
+    response = @hubspot.cms.blogs.authors.get_tags_cursor
+
+    assert_pattern do
+      response => StringIO
+    end
+  end
+
+  def test_get_tags_cursor_by_query
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.cms.blogs.authors.get_tags_cursor_by_query
 
     assert_pattern do
       response => StringIO

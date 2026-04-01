@@ -22,26 +22,6 @@ class HubspotSDK::Test::Resources::Webhooks::WebhooksTest < HubspotSDK::Test::Re
     end
   end
 
-  def test_create_filter_required_params
-    skip("Mock server tests are disabled")
-
-    response =
-      @hubspot.webhooks.webhooks.create_filter(
-        filter: {conditions: [{filterType: :CRM_OBJECT_PROPERTY, operator: :CONTAINS, property: "property"}]},
-        subscription_id: 0
-      )
-
-    assert_pattern do
-      response => HubspotSDK::Webhooks::FilterCreateResponse
-    end
-
-    assert_pattern do
-      response => {
-        filter_id: Integer
-      }
-    end
-  end
-
   def test_create_journal_subscription_required_params
     skip("Mock server tests are disabled")
 
@@ -110,13 +90,23 @@ class HubspotSDK::Test::Resources::Webhooks::WebhooksTest < HubspotSDK::Test::Re
     end
   end
 
-  def test_delete_filter
+  def test_create_subscription_filter_required_params
     skip("Mock server tests are disabled")
 
-    response = @hubspot.webhooks.webhooks.delete_filter(0)
+    response =
+      @hubspot.webhooks.webhooks.create_subscription_filter(
+        filter: {conditions: [{filterType: :CRM_OBJECT_PROPERTY, operator: :CONTAINS, property: "property"}]},
+        subscription_id: 0
+      )
 
     assert_pattern do
-      response => nil
+      response => HubspotSDK::Webhooks::FilterCreateResponse
+    end
+
+    assert_pattern do
+      response => {
+        filter_id: Integer
+      }
     end
   end
 
@@ -160,31 +150,13 @@ class HubspotSDK::Test::Resources::Webhooks::WebhooksTest < HubspotSDK::Test::Re
     end
   end
 
-  def test_get_filter
+  def test_delete_subscription_filter
     skip("Mock server tests are disabled")
 
-    response = @hubspot.webhooks.webhooks.get_filter(0)
+    response = @hubspot.webhooks.webhooks.delete_subscription_filter(0)
 
     assert_pattern do
-      response => HubspotSDK::Webhooks::FilterResponse
-    end
-
-    assert_pattern do
-      response => {
-        id: Integer,
-        created_at: Integer,
-        filter: HubspotSDK::Webhooks::Filter
-      }
-    end
-  end
-
-  def test_get_filters_by_subscription
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.webhooks.webhooks.get_filters_by_subscription(0)
-
-    assert_pattern do
-      response => ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Webhooks::FilterResponse])
+      response => nil
     end
   end
 
@@ -239,40 +211,40 @@ class HubspotSDK::Test::Resources::Webhooks::WebhooksTest < HubspotSDK::Test::Re
     end
   end
 
-  def test_get_local_earliest
+  def test_get_local_journal_earliest
     skip("Mock server tests are disabled")
 
-    response = @hubspot.webhooks.webhooks.get_local_earliest
+    response = @hubspot.webhooks.webhooks.get_local_journal_earliest
 
     assert_pattern do
       response => StringIO
     end
   end
 
-  def test_get_local_latest
+  def test_get_local_journal_latest
     skip("Mock server tests are disabled")
 
-    response = @hubspot.webhooks.webhooks.get_local_latest
+    response = @hubspot.webhooks.webhooks.get_local_journal_latest
 
     assert_pattern do
       response => StringIO
     end
   end
 
-  def test_get_local_next_by_offset
+  def test_get_local_journal_next_by_offset
     skip("Mock server tests are disabled")
 
-    response = @hubspot.webhooks.webhooks.get_local_next_by_offset("offset")
+    response = @hubspot.webhooks.webhooks.get_local_journal_next_by_offset("offset")
 
     assert_pattern do
       response => StringIO
     end
   end
 
-  def test_get_local_status
+  def test_get_local_journal_status
     skip("Mock server tests are disabled")
 
-    response = @hubspot.webhooks.webhooks.get_local_status("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
+    response = @hubspot.webhooks.webhooks.get_local_journal_status("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
 
     assert_pattern do
       response => HubspotSDK::Webhooks::SnapshotStatusResponse
@@ -329,6 +301,34 @@ class HubspotSDK::Test::Resources::Webhooks::WebhooksTest < HubspotSDK::Test::Re
         property_name: String | nil,
         updated_at: Time | nil
       }
+    end
+  end
+
+  def test_get_subscription_filter
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.webhooks.webhooks.get_subscription_filter(0)
+
+    assert_pattern do
+      response => HubspotSDK::Webhooks::FilterResponse
+    end
+
+    assert_pattern do
+      response => {
+        id: Integer,
+        created_at: Integer,
+        filter: HubspotSDK::Webhooks::Filter
+      }
+    end
+  end
+
+  def test_get_subscription_filter_for_subscription
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.webhooks.webhooks.get_subscription_filter_for_subscription(0)
+
+    assert_pattern do
+      response => ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Webhooks::FilterResponse])
     end
   end
 
