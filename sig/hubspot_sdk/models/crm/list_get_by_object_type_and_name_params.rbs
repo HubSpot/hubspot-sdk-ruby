@@ -1,0 +1,36 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type list_get_by_object_type_and_name_params =
+        { object_type_id: String, list_name: String, include_filters: bool }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class ListGetByObjectTypeAndNameParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor object_type_id: String
+
+        attr_accessor list_name: String
+
+        attr_reader include_filters: bool?
+
+        def include_filters=: (bool) -> bool
+
+        def initialize: (
+          object_type_id: String,
+          list_name: String,
+          ?include_filters: bool,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          object_type_id: String,
+          list_name: String,
+          include_filters: bool,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

@@ -28,6 +28,11 @@ module HubspotSDK
               ?request_options: HubspotSDK::request_opts
             ) -> HubspotSDK::Crm::BatchResponseSimplePublicObject
 
+            def upsert: (
+              inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectBatchInputUpsert],
+              ?request_options: HubspotSDK::request_opts
+            ) -> HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject
+
             def initialize: (client: HubspotSDK::Client) -> void
           end
         end

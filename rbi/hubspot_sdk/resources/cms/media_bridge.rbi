@@ -206,14 +206,14 @@ module HubspotSDK
           params(
             object_type: String,
             app_id: Integer,
-            field_type: HubspotSDK::PropertyCreate::FieldType::OrSymbol,
+            field_type: HubspotSDK::Cms::PropertyCreate::FieldType::OrSymbol,
             group_name: String,
             label: String,
             name: String,
-            type: HubspotSDK::PropertyCreate::Type::OrSymbol,
+            type: HubspotSDK::Cms::PropertyCreate::Type::OrSymbol,
             calculation_formula: String,
             data_sensitivity:
-              HubspotSDK::PropertyCreate::DataSensitivity::OrSymbol,
+              HubspotSDK::Cms::PropertyCreate::DataSensitivity::OrSymbol,
             description: String,
             display_order: Integer,
             external_options: T::Boolean,

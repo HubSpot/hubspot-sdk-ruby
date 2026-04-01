@@ -356,9 +356,7 @@ class HubspotSDK::Test::Resources::Marketing::EventsTest < HubspotSDK::Test::Res
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::MarketingEventPublicDefaultResponseV2]),
         started_at: Time,
         status: HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end

@@ -17,7 +17,7 @@ class HubspotSDK::Test::Resources::Crm::PropertiesTest < HubspotSDK::Test::Resou
       )
 
     assert_pattern do
-      response => HubspotSDK::Property
+      response => HubspotSDK::Crm::Property
     end
 
     assert_pattern do
@@ -35,8 +35,9 @@ class HubspotSDK::Test::Resources::Crm::PropertiesTest < HubspotSDK::Test::Resou
         calculation_formula: String | nil,
         created_at: Time | nil,
         created_user_id: String | nil,
-        data_sensitivity: HubspotSDK::Property::DataSensitivity | nil,
-        date_display_hint: HubspotSDK::Property::DateDisplayHint | nil,
+        currency_property_name: String | nil,
+        data_sensitivity: HubspotSDK::Crm::Property::DataSensitivity | nil,
+        date_display_hint: HubspotSDK::Crm::Property::DateDisplayHint | nil,
         display_order: Integer | nil,
         external_options: HubspotSDK::Internal::Type::Boolean | nil,
         form_field: HubspotSDK::Internal::Type::Boolean | nil,
@@ -59,7 +60,7 @@ class HubspotSDK::Test::Resources::Crm::PropertiesTest < HubspotSDK::Test::Resou
     response = @hubspot.crm.properties.update("propertyName", object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::Property
+      response => HubspotSDK::Crm::Property
     end
 
     assert_pattern do
@@ -77,8 +78,9 @@ class HubspotSDK::Test::Resources::Crm::PropertiesTest < HubspotSDK::Test::Resou
         calculation_formula: String | nil,
         created_at: Time | nil,
         created_user_id: String | nil,
-        data_sensitivity: HubspotSDK::Property::DataSensitivity | nil,
-        date_display_hint: HubspotSDK::Property::DateDisplayHint | nil,
+        currency_property_name: String | nil,
+        data_sensitivity: HubspotSDK::Crm::Property::DataSensitivity | nil,
+        date_display_hint: HubspotSDK::Crm::Property::DateDisplayHint | nil,
         display_order: Integer | nil,
         external_options: HubspotSDK::Internal::Type::Boolean | nil,
         form_field: HubspotSDK::Internal::Type::Boolean | nil,
@@ -106,7 +108,7 @@ class HubspotSDK::Test::Resources::Crm::PropertiesTest < HubspotSDK::Test::Resou
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property])
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Property])
       }
     end
   end
@@ -127,7 +129,7 @@ class HubspotSDK::Test::Resources::Crm::PropertiesTest < HubspotSDK::Test::Resou
     response = @hubspot.crm.properties.get("propertyName", object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::Property
+      response => HubspotSDK::Crm::Property
     end
 
     assert_pattern do
@@ -145,8 +147,9 @@ class HubspotSDK::Test::Resources::Crm::PropertiesTest < HubspotSDK::Test::Resou
         calculation_formula: String | nil,
         created_at: Time | nil,
         created_user_id: String | nil,
-        data_sensitivity: HubspotSDK::Property::DataSensitivity | nil,
-        date_display_hint: HubspotSDK::Property::DateDisplayHint | nil,
+        currency_property_name: String | nil,
+        data_sensitivity: HubspotSDK::Crm::Property::DataSensitivity | nil,
+        date_display_hint: HubspotSDK::Crm::Property::DateDisplayHint | nil,
         display_order: Integer | nil,
         external_options: HubspotSDK::Internal::Type::Boolean | nil,
         form_field: HubspotSDK::Internal::Type::Boolean | nil,

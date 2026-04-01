@@ -40,27 +40,12 @@ module HubspotSDK
         end
         attr_accessor :status
 
-        # An array of errors encountered during the batch operation, each item providing
-        # details about a specific error.
-        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
-        attr_reader :errors
-
-        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
-        attr_writer :errors
-
         # A collection of related links associated with the batch response.
         sig { returns(T.nilable(T::Hash[Symbol, String])) }
         attr_reader :links
 
         sig { params(links: T::Hash[Symbol, String]).void }
         attr_writer :links
-
-        # The number of errors that occurred during the batch operation.
-        sig { returns(T.nilable(Integer)) }
-        attr_reader :num_errors
-
-        sig { params(num_errors: Integer).void }
-        attr_writer :num_errors
 
         # The date and time when the batch request was made.
         sig { returns(T.nilable(Time)) }
@@ -79,9 +64,7 @@ module HubspotSDK
             started_at: Time,
             status:
               HubspotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse::Status::OrSymbol,
-            errors: T::Array[HubspotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
-            num_errors: Integer,
             requested_at: Time
           ).returns(T.attached_class)
         end
@@ -96,13 +79,8 @@ module HubspotSDK
           # The current status of the batch process, with possible values: PENDING,
           # PROCESSING, CANCELED, COMPLETE.
           status:,
-          # An array of errors encountered during the batch operation, each item providing
-          # details about a specific error.
-          errors: nil,
           # A collection of related links associated with the batch response.
           links: nil,
-          # The number of errors that occurred during the batch operation.
-          num_errors: nil,
           # The date and time when the batch request was made.
           requested_at: nil
         )
@@ -119,9 +97,7 @@ module HubspotSDK
               started_at: Time,
               status:
                 HubspotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse::Status::TaggedSymbol,
-              errors: T::Array[HubspotSDK::StandardError],
               links: T::Hash[Symbol, String],
-              num_errors: Integer,
               requested_at: Time
             }
           )

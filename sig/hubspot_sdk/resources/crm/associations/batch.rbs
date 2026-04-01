@@ -16,7 +16,7 @@ module HubspotSDK
             from_object_type: String,
             inputs: ::Array[HubspotSDK::Crm::PublicAssociationMultiArchive],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::BatchResponseVoid
+          ) -> nil
 
           def create_default: (
             String to_object_type,
@@ -30,7 +30,7 @@ module HubspotSDK
             from_object_type: String,
             inputs: ::Array[HubspotSDK::Crm::PublicAssociationMultiPost],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::BatchResponseVoid
+          ) -> nil
 
           def get: (
             String to_object_type,

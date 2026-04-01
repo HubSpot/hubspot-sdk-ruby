@@ -240,23 +240,6 @@ module HubspotSDK
           )
         end
 
-        # @overload delete_schedule_conversion(list_id, request_options: {})
-        #
-        # @param list_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-        #
-        # @return [nil]
-        #
-        # @see HubspotSDK::Models::Crm::ListDeleteScheduleConversionParams
-        def delete_schedule_conversion(list_id, params = {})
-          @client.request(
-            method: :delete,
-            path: ["crm/lists/2026-03/%1$s/schedule-conversion", list_id],
-            model: NilClass,
-            options: params[:request_options]
-          )
-        end
-
         # @overload get(list_id, include_filters: nil, request_options: {})
         #
         # @param list_id [String]
@@ -278,7 +261,7 @@ module HubspotSDK
           )
         end
 
-        # @overload get_by_object_type_id_and_name(list_name, object_type_id:, include_filters: nil, request_options: {})
+        # @overload get_by_object_type_and_name(list_name, object_type_id:, include_filters: nil, request_options: {})
         #
         # @param list_name [String] Path param
         #
@@ -290,9 +273,9 @@ module HubspotSDK
         #
         # @return [HubspotSDK::Models::Crm::ListFetchResponse]
         #
-        # @see HubspotSDK::Models::Crm::ListGetByObjectTypeIDAndNameParams
-        def get_by_object_type_id_and_name(list_name, params)
-          parsed, options = HubspotSDK::Crm::ListGetByObjectTypeIDAndNameParams.dump_request(params)
+        # @see HubspotSDK::Models::Crm::ListGetByObjectTypeAndNameParams
+        def get_by_object_type_and_name(list_name, params)
+          parsed, options = HubspotSDK::Crm::ListGetByObjectTypeAndNameParams.dump_request(params)
           query = HubspotSDK::Internal::Util.encode_query_params(parsed)
           object_type_id =
             parsed.delete(:object_type_id) do
@@ -323,6 +306,37 @@ module HubspotSDK
             path: "crm/lists/2026-03/idmapping",
             query: query.transform_keys(legacy_list_id: "legacyListId"),
             model: HubspotSDK::Crm::PublicMigrationMapping,
+            options: options
+          )
+        end
+
+        # Some parameter documentations has been truncated, see
+        # {HubspotSDK::Models::Crm::ListGetMembershipsJoinOrderParams} for more details.
+        #
+        # @overload get_memberships_join_order(list_id, after: nil, before: nil, limit: nil, request_options: {})
+        #
+        # @param list_id [String]
+        #
+        # @param after [String] The paging cursor token of the last successfully read resource will be returned
+        #
+        # @param before [String]
+        #
+        # @param limit [Integer] The maximum number of results to display per page.
+        #
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::JoinTimeAndRecordID>]
+        #
+        # @see HubspotSDK::Models::Crm::ListGetMembershipsJoinOrderParams
+        def get_memberships_join_order(list_id, params = {})
+          parsed, options = HubspotSDK::Crm::ListGetMembershipsJoinOrderParams.dump_request(params)
+          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          @client.request(
+            method: :get,
+            path: ["crm/lists/2026-03/%1$s/memberships/join-order", list_id],
+            query: query,
+            page: HubspotSDK::Internal::Page,
+            model: HubspotSDK::Crm::JoinTimeAndRecordID,
             options: options
           )
         end
@@ -364,6 +378,65 @@ module HubspotSDK
             path: ["crm/lists/2026-03/%1$s/schedule-conversion", list_id],
             model: HubspotSDK::Crm::PublicListConversionResponse,
             options: params[:request_options]
+          )
+        end
+
+        # @overload get_size_and_edits_history_between(list_id, end_date: nil, start_date: nil, request_options: {})
+        #
+        # @param list_id [String]
+        # @param end_date [String]
+        # @param start_date [String]
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Models::Crm::ListSizeAndEditHistoryResponse]
+        #
+        # @see HubspotSDK::Models::Crm::ListGetSizeAndEditsHistoryBetweenParams
+        def get_size_and_edits_history_between(list_id, params = {})
+          parsed, options = HubspotSDK::Crm::ListGetSizeAndEditsHistoryBetweenParams.dump_request(params)
+          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          @client.request(
+            method: :get,
+            path: ["crm/lists/2026-03/%1$s/size-and-edits-history/between", list_id],
+            query: query.transform_keys(end_date: "endDate", start_date: "startDate"),
+            model: HubspotSDK::Crm::ListSizeAndEditHistoryResponse,
+            options: options
+          )
+        end
+
+        # Some parameter documentations has been truncated, see
+        # {HubspotSDK::Models::Crm::ListListBySearchParams} for more details.
+        #
+        # @overload list_by_search(additional_properties:, list_ids:, offset:, processing_types:, count: nil, object_type_id: nil, query: nil, sort: nil, request_options: {})
+        #
+        # @param additional_properties [Array<String>] The property names of any additional list properties to include in the response.
+        #
+        # @param list_ids [Array<String>] ILS list ids to be included in search results. If not specified, all lists match
+        #
+        # @param offset [Integer] Value used to paginate through lists. The `offset` provided in the response can
+        #
+        # @param processing_types [Array<String>] List processing types to be included in search results. If not specified, all li
+        #
+        # @param count [Integer] The number of lists to include in the response. Defaults to `20` if no value is
+        #
+        # @param object_type_id [String]
+        #
+        # @param query [String] The `query` that will be used to search for lists by list name. If no `query` is
+        #
+        # @param sort [String] Sort field and order
+        #
+        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubspotSDK::Models::Crm::ListSearchResponse]
+        #
+        # @see HubspotSDK::Models::Crm::ListListBySearchParams
+        def list_by_search(params)
+          parsed, options = HubspotSDK::Crm::ListListBySearchParams.dump_request(params)
+          @client.request(
+            method: :post,
+            path: "crm/lists/2026-03/search",
+            body: parsed,
+            model: HubspotSDK::Crm::ListSearchResponse,
+            options: options
           )
         end
 
@@ -411,37 +484,6 @@ module HubspotSDK
           @client.request(
             method: :get,
             path: ["crm/lists/2026-03/%1$s/memberships", list_id],
-            query: query,
-            page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Crm::JoinTimeAndRecordID,
-            options: options
-          )
-        end
-
-        # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Crm::ListListMembershipsJoinOrderParams} for more details.
-        #
-        # @overload list_memberships_join_order(list_id, after: nil, before: nil, limit: nil, request_options: {})
-        #
-        # @param list_id [String]
-        #
-        # @param after [String] The paging cursor token of the last successfully read resource will be returned
-        #
-        # @param before [String]
-        #
-        # @param limit [Integer] The maximum number of results to display per page.
-        #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-        #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::JoinTimeAndRecordID>]
-        #
-        # @see HubspotSDK::Models::Crm::ListListMembershipsJoinOrderParams
-        def list_memberships_join_order(list_id, params = {})
-          parsed, options = HubspotSDK::Crm::ListListMembershipsJoinOrderParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
-          @client.request(
-            method: :get,
-            path: ["crm/lists/2026-03/%1$s/memberships/join-order", list_id],
             query: query,
             page: HubspotSDK::Internal::Page,
             model: HubspotSDK::Crm::JoinTimeAndRecordID,
@@ -552,40 +594,20 @@ module HubspotSDK
           )
         end
 
-        # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Crm::ListSearchParams} for more details.
+        # @overload schedule_conversion(list_id, request_options: {})
         #
-        # @overload search(additional_properties:, list_ids:, offset:, processing_types:, count: nil, object_type_id: nil, query: nil, sort: nil, request_options: {})
-        #
-        # @param additional_properties [Array<String>] The property names of any additional list properties to include in the response.
-        #
-        # @param list_ids [Array<String>] ILS list ids to be included in search results. If not specified, all lists match
-        #
-        # @param offset [Integer] Value used to paginate through lists. The `offset` provided in the response can
-        #
-        # @param processing_types [Array<String>] List processing types to be included in search results. If not specified, all li
-        #
-        # @param count [Integer] The number of lists to include in the response. Defaults to `20` if no value is
-        #
-        # @param object_type_id [String]
-        #
-        # @param query [String] The `query` that will be used to search for lists by list name. If no `query` is
-        #
-        # @param sort [String] Sort field and order
-        #
+        # @param list_id [String]
         # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::ListSearchResponse]
+        # @return [nil]
         #
-        # @see HubspotSDK::Models::Crm::ListSearchParams
-        def search(params)
-          parsed, options = HubspotSDK::Crm::ListSearchParams.dump_request(params)
+        # @see HubspotSDK::Models::Crm::ListScheduleConversionParams
+        def schedule_conversion(list_id, params = {})
           @client.request(
-            method: :post,
-            path: "crm/lists/2026-03/search",
-            body: parsed,
-            model: HubspotSDK::Crm::ListSearchResponse,
-            options: options
+            method: :delete,
+            path: ["crm/lists/2026-03/%1$s/schedule-conversion", list_id],
+            model: NilClass,
+            options: params[:request_options]
           )
         end
 

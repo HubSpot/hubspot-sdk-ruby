@@ -219,7 +219,7 @@ module HubspotSDK
               table_id_or_name: String,
               inputs: T::Array[String],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::BatchResponseHubDBTableRowV3)
+            ).void
           end
           def purge_batch(
             table_id_or_name,

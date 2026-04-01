@@ -161,15 +161,6 @@ module HubspotSDK
         sig do
           params(
             list_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).void
-        end
-        def delete_schedule_conversion(list_id, request_options: {})
-        end
-
-        sig do
-          params(
-            list_id: String,
             include_filters: T::Boolean,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Crm::ListFetchResponse)
@@ -185,7 +176,7 @@ module HubspotSDK
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Crm::ListFetchResponse)
         end
-        def get_by_object_type_id_and_name(
+        def get_by_object_type_and_name(
           # Path param
           list_name,
           # Path param
@@ -203,6 +194,30 @@ module HubspotSDK
           ).returns(HubspotSDK::Crm::PublicMigrationMapping)
         end
         def get_id_mapping(legacy_list_id: nil, request_options: {})
+        end
+
+        sig do
+          params(
+            list_id: String,
+            after: String,
+            before: String,
+            limit: Integer,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(
+            HubspotSDK::Internal::Page[HubspotSDK::Crm::JoinTimeAndRecordID]
+          )
+        end
+        def get_memberships_join_order(
+          list_id,
+          # The paging cursor token of the last successfully read resource will be returned
+          # as the `paging.next.after` JSON property of a paged response containing more
+          # results.
+          after: nil,
+          before: nil,
+          # The maximum number of results to display per page.
+          limit: nil,
+          request_options: {}
+        )
         end
 
         sig do
@@ -230,6 +245,67 @@ module HubspotSDK
 
         sig do
           params(
+            list_id: String,
+            end_date: String,
+            start_date: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Crm::ListSizeAndEditHistoryResponse)
+        end
+        def get_size_and_edits_history_between(
+          list_id,
+          end_date: nil,
+          start_date: nil,
+          request_options: {}
+        )
+        end
+
+        sig do
+          params(
+            additional_properties: T::Array[String],
+            list_ids: T::Array[String],
+            offset: Integer,
+            processing_types: T::Array[String],
+            count: Integer,
+            object_type_id: String,
+            query: String,
+            sort: String,
+            request_options: HubspotSDK::RequestOptions::OrHash
+          ).returns(HubspotSDK::Crm::ListSearchResponse)
+        end
+        def list_by_search(
+          # The property names of any additional list properties to include in the response.
+          # Properties that do not exist or that are empty for a particular list are not
+          # included in the response.
+          #
+          # By default, all requests will fetch the following properties for each list:
+          # `hs_list_size`, `hs_last_record_added_at`, `hs_last_record_removed_at`,
+          # `hs_folder_name`, and `hs_list_reference_count`.
+          additional_properties:,
+          # ILS list ids to be included in search results. If not specified, all lists
+          # matching other criteria will be included
+          list_ids:,
+          # Value used to paginate through lists. The `offset` provided in the response can
+          # be used in the next request to fetch the next page of results. Defaults to `0`
+          # if no offset is provided.
+          offset:,
+          # List processing types to be included in search results. If not specified, all
+          # lists with all processing types will be included.
+          processing_types:,
+          # The number of lists to include in the response. Defaults to `20` if no value is
+          # provided. The max `count` is `500`.
+          count: nil,
+          object_type_id: nil,
+          # The `query` that will be used to search for lists by list name. If no `query` is
+          # provided, then the results will include all lists.
+          query: nil,
+          # Sort field and order
+          sort: nil,
+          request_options: {}
+        )
+        end
+
+        sig do
+          params(
             folder_id: String,
             request_options: HubspotSDK::RequestOptions::OrHash
           ).returns(HubspotSDK::Crm::ListFolderFetchResponse)
@@ -249,30 +325,6 @@ module HubspotSDK
           )
         end
         def list_memberships(
-          list_id,
-          # The paging cursor token of the last successfully read resource will be returned
-          # as the `paging.next.after` JSON property of a paged response containing more
-          # results.
-          after: nil,
-          before: nil,
-          # The maximum number of results to display per page.
-          limit: nil,
-          request_options: {}
-        )
-        end
-
-        sig do
-          params(
-            list_id: String,
-            after: String,
-            before: String,
-            limit: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(
-            HubspotSDK::Internal::Page[HubspotSDK::Crm::JoinTimeAndRecordID]
-          )
-        end
-        def list_memberships_join_order(
           list_id,
           # The paging cursor token of the last successfully read resource will be returned
           # as the `paging.next.after` JSON property of a paged response containing more
@@ -342,47 +394,11 @@ module HubspotSDK
 
         sig do
           params(
-            additional_properties: T::Array[String],
-            list_ids: T::Array[String],
-            offset: Integer,
-            processing_types: T::Array[String],
-            count: Integer,
-            object_type_id: String,
-            query: String,
-            sort: String,
+            list_id: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::ListSearchResponse)
+          ).void
         end
-        def search(
-          # The property names of any additional list properties to include in the response.
-          # Properties that do not exist or that are empty for a particular list are not
-          # included in the response.
-          #
-          # By default, all requests will fetch the following properties for each list:
-          # `hs_list_size`, `hs_last_record_added_at`, `hs_last_record_removed_at`,
-          # `hs_folder_name`, and `hs_list_reference_count`.
-          additional_properties:,
-          # ILS list ids to be included in search results. If not specified, all lists
-          # matching other criteria will be included
-          list_ids:,
-          # Value used to paginate through lists. The `offset` provided in the response can
-          # be used in the next request to fetch the next page of results. Defaults to `0`
-          # if no offset is provided.
-          offset:,
-          # List processing types to be included in search results. If not specified, all
-          # lists with all processing types will be included.
-          processing_types:,
-          # The number of lists to include in the response. Defaults to `20` if no value is
-          # provided. The max `count` is `500`.
-          count: nil,
-          object_type_id: nil,
-          # The `query` that will be used to search for lists by list name. If no `query` is
-          # provided, then the results will include all lists.
-          query: nil,
-          # Sort field and order
-          sort: nil,
-          request_options: {}
-        )
+        def schedule_conversion(list_id, request_options: {})
         end
 
         sig do

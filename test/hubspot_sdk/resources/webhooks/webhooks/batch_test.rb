@@ -18,9 +18,7 @@ class HubspotSDK::Test::Resources::Webhooks::Webhooks::BatchTest < HubspotSDK::T
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Webhooks::SubscriptionResponse]),
         started_at: Time,
         status: HubspotSDK::Webhooks::BatchResponseSubscriptionResponse::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end
@@ -41,9 +39,7 @@ class HubspotSDK::Test::Resources::Webhooks::Webhooks::BatchTest < HubspotSDK::T
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Webhooks::JournalFetchResponse]),
         started_at: Time,
         status: HubspotSDK::Webhooks::BatchResponseJournalFetchResponse::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end
@@ -64,9 +60,7 @@ class HubspotSDK::Test::Resources::Webhooks::Webhooks::BatchTest < HubspotSDK::T
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Webhooks::JournalFetchResponse]),
         started_at: Time,
         status: HubspotSDK::Webhooks::BatchResponseJournalFetchResponse::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end
@@ -87,9 +81,7 @@ class HubspotSDK::Test::Resources::Webhooks::Webhooks::BatchTest < HubspotSDK::T
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Webhooks::JournalFetchResponse]),
         started_at: Time,
         status: HubspotSDK::Webhooks::BatchResponseJournalFetchResponse::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end
@@ -110,9 +102,7 @@ class HubspotSDK::Test::Resources::Webhooks::Webhooks::BatchTest < HubspotSDK::T
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Webhooks::JournalFetchResponse]),
         started_at: Time,
         status: HubspotSDK::Webhooks::BatchResponseJournalFetchResponse::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end

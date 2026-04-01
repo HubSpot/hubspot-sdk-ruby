@@ -31,24 +31,12 @@ module HubspotSDK
         end
         attr_accessor :status
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
-        attr_reader :errors
-
-        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
-        attr_writer :errors
-
         # The link to the next page with exchange rates.
         sig { returns(T.nilable(T::Hash[Symbol, String])) }
         attr_reader :links
 
         sig { params(links: T::Hash[Symbol, String]).void }
         attr_writer :links
-
-        sig { returns(T.nilable(Integer)) }
-        attr_reader :num_errors
-
-        sig { params(num_errors: Integer).void }
-        attr_writer :num_errors
 
         # The datetime the of the request.
         sig { returns(T.nilable(Time)) }
@@ -64,9 +52,7 @@ module HubspotSDK
             started_at: Time,
             status:
               HubspotSDK::Settings::BatchResponseExchangeRate::Status::OrSymbol,
-            errors: T::Array[HubspotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
-            num_errors: Integer,
             requested_at: Time
           ).returns(T.attached_class)
         end
@@ -78,10 +64,8 @@ module HubspotSDK
           started_at:,
           # The current status of the response (e.g. COMPLETED)
           status:,
-          errors: nil,
           # The link to the next page with exchange rates.
           links: nil,
-          num_errors: nil,
           # The datetime the of the request.
           requested_at: nil
         )
@@ -95,9 +79,7 @@ module HubspotSDK
               started_at: Time,
               status:
                 HubspotSDK::Settings::BatchResponseExchangeRate::Status::TaggedSymbol,
-              errors: T::Array[HubspotSDK::StandardError],
               links: T::Hash[Symbol, String],
-              num_errors: Integer,
               requested_at: Time
             }
           )

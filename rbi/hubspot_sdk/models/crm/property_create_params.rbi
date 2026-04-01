@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Crm
-      class PropertyCreateParams < HubspotSDK::Models::PropertyCreate
+      class PropertyCreateParams < HubspotSDK::Models::Crm::PropertyCreate
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 

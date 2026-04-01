@@ -72,6 +72,20 @@ module HubspotSDK
             )
             end
 
+            # Create and update a batch of goal targets by a unique property. Goal targets
+            # that don't exist will be created, while existing goal targets will be updated.
+            sig do
+              params(
+                inputs:
+                  T::Array[
+                    HubspotSDK::Crm::SimplePublicObjectBatchInputUpsert::OrHash
+                  ],
+                request_options: HubspotSDK::RequestOptions::OrHash
+              ).returns(HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject)
+            end
+            def upsert(inputs:, request_options: {})
+            end
+
             # @api private
             sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
             def self.new(client:)

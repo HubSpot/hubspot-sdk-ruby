@@ -7,9 +7,7 @@ module HubspotSDK
           results: ::Array[HubspotSDK::Crm::LabelsBetweenObjectPair],
           started_at: Time,
           status: HubspotSDK::Models::Crm::BatchResponseLabelsBetweenObjectPair::status,
-          errors: ::Array[HubspotSDK::StandardError],
           links: ::Hash[Symbol, String],
-          num_errors: Integer,
           requested_at: Time
         }
 
@@ -22,19 +20,9 @@ module HubspotSDK
 
         attr_accessor status: HubspotSDK::Models::Crm::BatchResponseLabelsBetweenObjectPair::status
 
-        attr_reader errors: ::Array[HubspotSDK::StandardError]?
-
-        def errors=: (
-          ::Array[HubspotSDK::StandardError]
-        ) -> ::Array[HubspotSDK::StandardError]
-
         attr_reader links: ::Hash[Symbol, String]?
 
         def links=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
-
-        attr_reader num_errors: Integer?
-
-        def num_errors=: (Integer) -> Integer
 
         attr_reader requested_at: Time?
 
@@ -45,9 +33,7 @@ module HubspotSDK
           results: ::Array[HubspotSDK::Crm::LabelsBetweenObjectPair],
           started_at: Time,
           status: HubspotSDK::Models::Crm::BatchResponseLabelsBetweenObjectPair::status,
-          ?errors: ::Array[HubspotSDK::StandardError],
           ?links: ::Hash[Symbol, String],
-          ?num_errors: Integer,
           ?requested_at: Time
         ) -> void
 
@@ -56,9 +42,7 @@ module HubspotSDK
           results: ::Array[HubspotSDK::Crm::LabelsBetweenObjectPair],
           started_at: Time,
           status: HubspotSDK::Models::Crm::BatchResponseLabelsBetweenObjectPair::status,
-          errors: ::Array[HubspotSDK::StandardError],
           links: ::Hash[Symbol, String],
-          num_errors: Integer,
           requested_at: Time
         }
 

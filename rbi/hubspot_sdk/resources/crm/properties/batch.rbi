@@ -10,7 +10,7 @@ module HubspotSDK
           sig do
             params(
               object_type: String,
-              inputs: T::Array[HubspotSDK::PropertyCreate::OrHash],
+              inputs: T::Array[HubspotSDK::Crm::PropertyCreate::OrHash],
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Crm::BatchResponseProperty)
           end

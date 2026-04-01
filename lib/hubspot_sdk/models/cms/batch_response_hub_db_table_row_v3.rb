@@ -28,21 +28,11 @@ module HubspotSDK
         #   @return [Symbol, HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::Status]
         required :status, enum: -> { HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status }
 
-        # @!attribute errors
-        #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
-
         # @!attribute links
         #   A collection of related links associated with the batch response.
         #
         #   @return [Hash{Symbol=>String}, nil]
         optional :links, HubspotSDK::Internal::Type::HashOf[String]
-
-        # @!attribute num_errors
-        #
-        #   @return [Integer, nil]
-        optional :num_errors, Integer, api_name: :numErrors
 
         # @!attribute requested_at
         #   The timestamp indicating when the batch request was made.
@@ -50,7 +40,7 @@ module HubspotSDK
         #   @return [Time, nil]
         optional :requested_at, Time, api_name: :requestedAt
 
-        # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
+        # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3} for more details.
         #
@@ -62,11 +52,7 @@ module HubspotSDK
         #
         #   @param status [Symbol, HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3::Status] The current status of the batch operation, with possible values: CANCELED, COMPL
         #
-        #   @param errors [Array<HubspotSDK::Models::StandardError>]
-        #
         #   @param links [Hash{Symbol=>String}] A collection of related links associated with the batch response.
-        #
-        #   @param num_errors [Integer]
         #
         #   @param requested_at [Time] The timestamp indicating when the batch request was made.
 

@@ -108,6 +108,28 @@ module HubspotSDK
               )
             end
 
+            # Create and update a batch of goal targets by a unique property. Goal targets
+            # that don't exist will be created, while existing goal targets will be updated.
+            #
+            # @overload upsert(inputs:, request_options: {})
+            #
+            # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInputUpsert>]
+            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            #
+            # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicUpsertObject]
+            #
+            # @see HubspotSDK::Models::Crm::Objects::GoalTargets::BatchUpsertParams
+            def upsert(params)
+              parsed, options = HubspotSDK::Crm::Objects::GoalTargets::BatchUpsertParams.dump_request(params)
+              @client.request(
+                method: :post,
+                path: "crm/objects/2026-03/goal_targets/batch/upsert",
+                body: parsed,
+                model: HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject,
+                options: options
+              )
+            end
+
             # @api private
             #
             # @param client [HubspotSDK::Client]

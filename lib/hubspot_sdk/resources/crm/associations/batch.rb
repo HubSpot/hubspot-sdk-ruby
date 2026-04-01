@@ -56,7 +56,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::BatchResponseVoid]
+          # @return [nil]
           #
           # @see HubspotSDK::Models::Crm::Associations::BatchDeleteParams
           def delete(to_object_type, params)
@@ -69,7 +69,7 @@ module HubspotSDK
               method: :post,
               path: ["crm/associations/2026-03/%1$s/%2$s/batch/archive", from_object_type, to_object_type],
               body: parsed,
-              model: HubspotSDK::Crm::BatchResponseVoid,
+              model: NilClass,
               options: options
             )
           end
@@ -121,7 +121,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::BatchResponseVoid]
+          # @return [nil]
           #
           # @see HubspotSDK::Models::Crm::Associations::BatchDeleteLabelsParams
           def delete_labels(to_object_type, params)
@@ -138,7 +138,7 @@ module HubspotSDK
                 to_object_type
               ],
               body: parsed,
-              model: HubspotSDK::Crm::BatchResponseVoid,
+              model: NilClass,
               options: options
             )
           end

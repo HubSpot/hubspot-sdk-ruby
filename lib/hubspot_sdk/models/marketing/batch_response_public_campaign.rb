@@ -32,24 +32,11 @@ module HubspotSDK
         #   @return [Symbol, HubspotSDK::Models::Marketing::BatchResponsePublicCampaign::Status]
         required :status, enum: -> { HubspotSDK::Marketing::BatchResponsePublicCampaign::Status }
 
-        # @!attribute errors
-        #   An array of errors that occurred during the batch operation, each item detailing
-        #   a specific error.
-        #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
-
         # @!attribute links
         #   A map of related links associated with the batch operation.
         #
         #   @return [Hash{Symbol=>String}, nil]
         optional :links, HubspotSDK::Internal::Type::HashOf[String]
-
-        # @!attribute num_errors
-        #   The number of errors that occurred during the batch operation.
-        #
-        #   @return [Integer, nil]
-        optional :num_errors, Integer, api_name: :numErrors
 
         # @!attribute requested_at
         #   The date and time when the batch operation was requested, formatted as a
@@ -58,7 +45,7 @@ module HubspotSDK
         #   @return [Time, nil]
         optional :requested_at, Time, api_name: :requestedAt
 
-        # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
+        # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Marketing::BatchResponsePublicCampaign} for more details.
         #
@@ -70,11 +57,7 @@ module HubspotSDK
         #
         #   @param status [Symbol, HubspotSDK::Models::Marketing::BatchResponsePublicCampaign::Status] The current status of the batch operation, with possible values: CANCELED, COMPL
         #
-        #   @param errors [Array<HubspotSDK::Models::StandardError>] An array of errors that occurred during the batch operation, each item detailing
-        #
         #   @param links [Hash{Symbol=>String}] A map of related links associated with the batch operation.
-        #
-        #   @param num_errors [Integer] The number of errors that occurred during the batch operation.
         #
         #   @param requested_at [Time] The date and time when the batch operation was requested, formatted as a date-ti
 

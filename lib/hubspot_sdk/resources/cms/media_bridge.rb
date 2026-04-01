@@ -203,7 +203,7 @@ module HubspotSDK
         #
         # @param app_id [Integer] Path param
         #
-        # @param field_type [Symbol, HubspotSDK::Models::PropertyCreate::FieldType] Body param
+        # @param field_type [Symbol, HubspotSDK::Models::Cms::PropertyCreate::FieldType] Body param
         #
         # @param group_name [String] Body param
         #
@@ -211,11 +211,11 @@ module HubspotSDK
         #
         # @param name [String] Body param
         #
-        # @param type [Symbol, HubspotSDK::Models::PropertyCreate::Type] Body param
+        # @param type [Symbol, HubspotSDK::Models::Cms::PropertyCreate::Type] Body param
         #
         # @param calculation_formula [String] Body param
         #
-        # @param data_sensitivity [Symbol, HubspotSDK::Models::PropertyCreate::DataSensitivity] Body param
+        # @param data_sensitivity [Symbol, HubspotSDK::Models::Cms::PropertyCreate::DataSensitivity] Body param
         #
         # @param description [String] Body param
         #

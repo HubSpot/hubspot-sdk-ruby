@@ -31,9 +31,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::GoalTargets::BatchTest < Hubspo
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         started_at: Time,
         status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end
@@ -55,9 +53,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::GoalTargets::BatchTest < Hubspo
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         started_at: Time,
         status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end
@@ -93,9 +89,29 @@ class HubspotSDK::Test::Resources::Crm::Objects::GoalTargets::BatchTest < Hubspo
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         started_at: Time,
         status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
+        requested_at: Time | nil
+      }
+    end
+  end
+
+  def test_upsert_required_params
+    skip("Mock server tests are disabled")
+
+    response =
+      @hubspot.crm.objects.goal_targets.batch.upsert(inputs: [{id: "id", properties: {foo: "string"}}])
+
+    assert_pattern do
+      response => HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject
+    end
+
+    assert_pattern do
+      response => {
+        completed_at: Time,
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicUpsertObject]),
+        started_at: Time,
+        status: HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject::Status,
+        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end

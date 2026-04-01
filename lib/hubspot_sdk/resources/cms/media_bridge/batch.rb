@@ -13,7 +13,7 @@ module HubspotSDK
           #
           # @param app_id [Integer] Path param
           #
-          # @param inputs [Array<HubspotSDK::Models::PropertyCreate>] Body param
+          # @param inputs [Array<HubspotSDK::Models::Cms::PropertyCreate>] Body param
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

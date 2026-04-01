@@ -16,7 +16,7 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :completed_at
 
-        sig { returns(T::Array[HubspotSDK::Property]) }
+        sig { returns(T::Array[HubspotSDK::Crm::Property]) }
         attr_accessor :results
 
         # The timestamp indicating when the batch operation began processing.
@@ -30,12 +30,6 @@ module HubspotSDK
         end
         attr_accessor :status
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
-        attr_reader :errors
-
-        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
-        attr_writer :errors
-
         # A collection of URLs linking to documentation or resources related to the batch
         # operation.
         sig { returns(T.nilable(T::Hash[Symbol, String])) }
@@ -43,13 +37,6 @@ module HubspotSDK
 
         sig { params(links: T::Hash[Symbol, String]).void }
         attr_writer :links
-
-        # The total number of errors encountered during the batch operation.
-        sig { returns(T.nilable(Integer)) }
-        attr_reader :num_errors
-
-        sig { params(num_errors: Integer).void }
-        attr_writer :num_errors
 
         # The timestamp indicating when the batch operation was requested.
         sig { returns(T.nilable(Time)) }
@@ -61,12 +48,10 @@ module HubspotSDK
         sig do
           params(
             completed_at: Time,
-            results: T::Array[HubspotSDK::Property::OrHash],
+            results: T::Array[HubspotSDK::Crm::Property::OrHash],
             started_at: Time,
             status: HubspotSDK::Crm::BatchResponseProperty::Status::OrSymbol,
-            errors: T::Array[HubspotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
-            num_errors: Integer,
             requested_at: Time
           ).returns(T.attached_class)
         end
@@ -79,12 +64,9 @@ module HubspotSDK
           # The current status of the batch operation, with possible values being CANCELED,
           # COMPLETE, PENDING, or PROCESSING.
           status:,
-          errors: nil,
           # A collection of URLs linking to documentation or resources related to the batch
           # operation.
           links: nil,
-          # The total number of errors encountered during the batch operation.
-          num_errors: nil,
           # The timestamp indicating when the batch operation was requested.
           requested_at: nil
         )
@@ -94,13 +76,11 @@ module HubspotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubspotSDK::Property],
+              results: T::Array[HubspotSDK::Crm::Property],
               started_at: Time,
               status:
                 HubspotSDK::Crm::BatchResponseProperty::Status::TaggedSymbol,
-              errors: T::Array[HubspotSDK::StandardError],
               links: T::Hash[Symbol, String],
-              num_errors: Integer,
               requested_at: Time
             }
           )

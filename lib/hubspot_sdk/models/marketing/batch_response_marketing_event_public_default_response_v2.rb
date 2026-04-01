@@ -30,21 +30,11 @@ module HubspotSDK
         required :status,
                  enum: -> { HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2::Status }
 
-        # @!attribute errors
-        #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
-
         # @!attribute links
         #   Result object of the request.
         #
         #   @return [Hash{Symbol=>String}, nil]
         optional :links, HubspotSDK::Internal::Type::HashOf[String]
-
-        # @!attribute num_errors
-        #
-        #   @return [Integer, nil]
-        optional :num_errors, Integer, api_name: :numErrors
 
         # @!attribute requested_at
         #   Timestamp of when the request was sent.
@@ -52,7 +42,7 @@ module HubspotSDK
         #   @return [Time, nil]
         optional :requested_at, Time, api_name: :requestedAt
 
-        # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
+        # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
         #   @param completed_at [Time] Timestamp of when the request was processed.
         #
         #   @param results [Array<HubspotSDK::Models::Marketing::MarketingEventPublicDefaultResponseV2>]
@@ -61,11 +51,7 @@ module HubspotSDK
         #
         #   @param status [Symbol, HubspotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2::Status] The status of the response.
         #
-        #   @param errors [Array<HubspotSDK::Models::StandardError>]
-        #
         #   @param links [Hash{Symbol=>String}] Result object of the request.
-        #
-        #   @param num_errors [Integer]
         #
         #   @param requested_at [Time] Timestamp of when the request was sent.
 

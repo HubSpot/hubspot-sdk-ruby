@@ -38,12 +38,6 @@ module HubspotSDK
         end
         attr_accessor :status
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
-        attr_reader :errors
-
-        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
-        attr_writer :errors
-
         # A collection of URLs linking to related documentation or resources associated
         # with the batch operation.
         sig { returns(T.nilable(T::Hash[Symbol, String])) }
@@ -51,13 +45,6 @@ module HubspotSDK
 
         sig { params(links: T::Hash[Symbol, String]).void }
         attr_writer :links
-
-        # The total number of errors encountered during the batch operation.
-        sig { returns(T.nilable(Integer)) }
-        attr_reader :num_errors
-
-        sig { params(num_errors: Integer).void }
-        attr_writer :num_errors
 
         # The date and time when the batch operation was requested.
         sig { returns(T.nilable(Time)) }
@@ -76,9 +63,7 @@ module HubspotSDK
             started_at: Time,
             status:
               HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::OrSymbol,
-            errors: T::Array[HubspotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
-            num_errors: Integer,
             requested_at: Time
           ).returns(T.attached_class)
         end
@@ -91,12 +76,9 @@ module HubspotSDK
           # The current status of the batch operation, which can be CANCELED, COMPLETE,
           # PENDING, or PROCESSING.
           status:,
-          errors: nil,
           # A collection of URLs linking to related documentation or resources associated
           # with the batch operation.
           links: nil,
-          # The total number of errors encountered during the batch operation.
-          num_errors: nil,
           # The date and time when the batch operation was requested.
           requested_at: nil
         )
@@ -113,9 +95,7 @@ module HubspotSDK
               started_at: Time,
               status:
                 HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration::Status::TaggedSymbol,
-              errors: T::Array[HubspotSDK::StandardError],
               links: T::Hash[Symbol, String],
-              num_errors: Integer,
               requested_at: Time
             }
           )

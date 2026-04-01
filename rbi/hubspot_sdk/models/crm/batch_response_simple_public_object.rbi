@@ -32,25 +32,12 @@ module HubspotSDK
         end
         attr_accessor :status
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
-        attr_reader :errors
-
-        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
-        attr_writer :errors
-
         # An object containing relevant links related to the batch request.
         sig { returns(T.nilable(T::Hash[Symbol, String])) }
         attr_reader :links
 
         sig { params(links: T::Hash[Symbol, String]).void }
         attr_writer :links
-
-        # The total number of errors that occurred during the batch operation.
-        sig { returns(T.nilable(Integer)) }
-        attr_reader :num_errors
-
-        sig { params(num_errors: Integer).void }
-        attr_writer :num_errors
 
         # The timestamp when the batch request was initially made, in ISO 8601 format.
         sig { returns(T.nilable(Time)) }
@@ -67,9 +54,7 @@ module HubspotSDK
             started_at: Time,
             status:
               HubspotSDK::Crm::BatchResponseSimplePublicObject::Status::OrSymbol,
-            errors: T::Array[HubspotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
-            num_errors: Integer,
             requested_at: Time
           ).returns(T.attached_class)
         end
@@ -82,11 +67,8 @@ module HubspotSDK
           # The status of the batch processing request: "PENDING", "PROCESSING",
           # "CANCELLED", or "COMPLETE"
           status:,
-          errors: nil,
           # An object containing relevant links related to the batch request.
           links: nil,
-          # The total number of errors that occurred during the batch operation.
-          num_errors: nil,
           # The timestamp when the batch request was initially made, in ISO 8601 format.
           requested_at: nil
         )
@@ -100,9 +82,7 @@ module HubspotSDK
               started_at: Time,
               status:
                 HubspotSDK::Crm::BatchResponseSimplePublicObject::Status::TaggedSymbol,
-              errors: T::Array[HubspotSDK::StandardError],
               links: T::Hash[Symbol, String],
-              num_errors: Integer,
               requested_at: Time
             }
           )

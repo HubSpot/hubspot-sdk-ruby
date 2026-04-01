@@ -14,14 +14,15 @@ module HubspotSDK
         sig do
           params(
             object_type: String,
-            field_type: HubspotSDK::PropertyCreate::FieldType::OrSymbol,
+            field_type: HubspotSDK::Crm::PropertyCreate::FieldType::OrSymbol,
             group_name: String,
             label: String,
             name: String,
-            type: HubspotSDK::PropertyCreate::Type::OrSymbol,
+            type: HubspotSDK::Crm::PropertyCreate::Type::OrSymbol,
             calculation_formula: String,
+            currency_property_name: String,
             data_sensitivity:
-              HubspotSDK::PropertyCreate::DataSensitivity::OrSymbol,
+              HubspotSDK::Crm::PropertyCreate::DataSensitivity::OrSymbol,
             description: String,
             display_order: Integer,
             external_options: T::Boolean,
@@ -30,26 +31,52 @@ module HubspotSDK
             hidden: T::Boolean,
             options: T::Array[HubspotSDK::OptionInput::OrHash],
             referenced_object_type: String,
+            show_currency_symbol: T::Boolean,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Property)
+          ).returns(HubspotSDK::Crm::Property)
         end
         def create(
           object_type,
+          # Controls how the property appears in HubSpot.
           field_type:,
+          # The name of the property group the property belongs to.
           group_name:,
+          # A human-readable property label that will be shown in HubSpot.
           label:,
+          # The internal property name, which must be used when referencing the property via
+          # the API.
           name:,
+          # The data type of the property.
           type:,
+          # Represents a formula that is used to compute a calculated property.
           calculation_formula: nil,
+          currency_property_name: nil,
+          # Indicates the sensitivity level of the property, with options: highly_sensitive,
+          # non_sensitive, or sensitive.
           data_sensitivity: nil,
+          # A description of the property that will be shown as help text in HubSpot.
           description: nil,
+          # Properties are displayed in order starting with the lowest positive integer
+          # value. Values of -1 will cause the property to be displayed after any positive
+          # values.
           display_order: nil,
+          # Applicable only for 'enumeration' type properties. Should be set to true in
+          # conjunction with a 'referencedObjectType' of 'OWNER'. Otherwise false.
           external_options: nil,
+          # Whether or not the property can be used in a HubSpot form.
           form_field: nil,
+          # Whether or not the property's value must be unique. Once set, this can't be
+          # changed.
           has_unique_value: nil,
+          # If true, the property won't be visible and can't be used in HubSpot.
           hidden: nil,
+          # A list of valid options for the property. This field is required for enumerated
+          # properties.
           options: nil,
+          # Should be set to 'OWNER' when 'externalOptions' is true, which causes the
+          # property to dynamically pull option values from the current HubSpot users.
           referenced_object_type: nil,
+          show_currency_symbol: nil,
           request_options: {}
         )
         end
@@ -61,6 +88,7 @@ module HubspotSDK
             property_name: String,
             object_type: String,
             calculation_formula: String,
+            currency_property_name: String,
             description: String,
             display_order: Integer,
             field_type: HubspotSDK::Crm::PropertyUpdate::FieldType::OrSymbol,
@@ -69,9 +97,10 @@ module HubspotSDK
             hidden: T::Boolean,
             label: String,
             options: T::Array[HubspotSDK::OptionInput::OrHash],
+            show_currency_symbol: T::Boolean,
             type: HubspotSDK::Crm::PropertyUpdate::Type::OrSymbol,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Property)
+          ).returns(HubspotSDK::Crm::Property)
         end
         def update(
           # Path param
@@ -80,6 +109,8 @@ module HubspotSDK
           object_type:,
           # Body param: Represents a formula that is used to compute a calculated property.
           calculation_formula: nil,
+          # Body param
+          currency_property_name: nil,
           # Body param: A description of the property that will be shown as help text in
           # HubSpot.
           description: nil,
@@ -99,6 +130,8 @@ module HubspotSDK
           label: nil,
           # Body param: A list of valid options for the property.
           options: nil,
+          # Body param
+          show_currency_symbol: nil,
           # Body param: The data type of the property.
           type: nil,
           request_options: {}
@@ -150,7 +183,7 @@ module HubspotSDK
             locale: String,
             properties: String,
             request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Property)
+          ).returns(HubspotSDK::Crm::Property)
         end
         def get(
           # Path param

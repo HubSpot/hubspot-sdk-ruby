@@ -15,7 +15,7 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :completed_at
 
-        sig { returns(T::Array[HubspotSDK::Cms::Property1]) }
+        sig { returns(T::Array[HubspotSDK::Cms::Property]) }
         attr_accessor :results
 
         sig { returns(Time) }
@@ -26,23 +26,11 @@ module HubspotSDK
         end
         attr_accessor :status
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
-        attr_reader :errors
-
-        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
-        attr_writer :errors
-
         sig { returns(T.nilable(T::Hash[Symbol, String])) }
         attr_reader :links
 
         sig { params(links: T::Hash[Symbol, String]).void }
         attr_writer :links
-
-        sig { returns(T.nilable(Integer)) }
-        attr_reader :num_errors
-
-        sig { params(num_errors: Integer).void }
-        attr_writer :num_errors
 
         sig { returns(T.nilable(Time)) }
         attr_reader :requested_at
@@ -53,12 +41,10 @@ module HubspotSDK
         sig do
           params(
             completed_at: Time,
-            results: T::Array[HubspotSDK::Cms::Property1::OrHash],
+            results: T::Array[HubspotSDK::Cms::Property::OrHash],
             started_at: Time,
             status: HubspotSDK::Cms::BatchResponseProperty::Status::OrSymbol,
-            errors: T::Array[HubspotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
-            num_errors: Integer,
             requested_at: Time
           ).returns(T.attached_class)
         end
@@ -67,9 +53,7 @@ module HubspotSDK
           results:,
           started_at:,
           status:,
-          errors: nil,
           links: nil,
-          num_errors: nil,
           requested_at: nil
         )
         end
@@ -78,13 +62,11 @@ module HubspotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubspotSDK::Cms::Property1],
+              results: T::Array[HubspotSDK::Cms::Property],
               started_at: Time,
               status:
                 HubspotSDK::Cms::BatchResponseProperty::Status::TaggedSymbol,
-              errors: T::Array[HubspotSDK::StandardError],
               links: T::Hash[Symbol, String],
-              num_errors: Integer,
               requested_at: Time
             }
           )

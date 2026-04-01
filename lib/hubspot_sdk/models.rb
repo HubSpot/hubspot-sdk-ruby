@@ -57,8 +57,6 @@ module HubspotSDK
 
   AutomationActionsOption = HubspotSDK::Models::AutomationActionsOption
 
-  BatchInputPropertyCreate = HubspotSDK::Models::BatchInputPropertyCreate
-
   BatchInputPropertyName = HubspotSDK::Models::BatchInputPropertyName
 
   BatchInputPublicObjectID = HubspotSDK::Models::BatchInputPublicObjectID
@@ -110,8 +108,6 @@ module HubspotSDK
   PreviousPage = HubspotSDK::Models::PreviousPage
 
   Property = HubspotSDK::Models::Property
-
-  PropertyCreate = HubspotSDK::Models::PropertyCreate
 
   PropertyGroup = HubspotSDK::Models::PropertyGroup
 

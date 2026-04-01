@@ -27,21 +27,11 @@ module HubspotSDK
         #   @return [Symbol, HubspotSDK::Models::Settings::BatchResponseExchangeRate::Status]
         required :status, enum: -> { HubspotSDK::Settings::BatchResponseExchangeRate::Status }
 
-        # @!attribute errors
-        #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
-
         # @!attribute links
         #   The link to the next page with exchange rates.
         #
         #   @return [Hash{Symbol=>String}, nil]
         optional :links, HubspotSDK::Internal::Type::HashOf[String]
-
-        # @!attribute num_errors
-        #
-        #   @return [Integer, nil]
-        optional :num_errors, Integer, api_name: :numErrors
 
         # @!attribute requested_at
         #   The datetime the of the request.
@@ -49,7 +39,7 @@ module HubspotSDK
         #   @return [Time, nil]
         optional :requested_at, Time, api_name: :requestedAt
 
-        # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
+        # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
         #   @param completed_at [Time] The datetime the response was completed
         #
         #   @param results [Array<HubspotSDK::Models::Settings::ExchangeRate>]
@@ -58,11 +48,7 @@ module HubspotSDK
         #
         #   @param status [Symbol, HubspotSDK::Models::Settings::BatchResponseExchangeRate::Status] The current status of the response (e.g. COMPLETED)
         #
-        #   @param errors [Array<HubspotSDK::Models::StandardError>]
-        #
         #   @param links [Hash{Symbol=>String}] The link to the next page with exchange rates.
-        #
-        #   @param num_errors [Integer]
         #
         #   @param requested_at [Time] The datetime the of the request.
 

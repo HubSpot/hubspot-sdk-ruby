@@ -43,20 +43,7 @@ class HubspotSDK::Test::Resources::Crm::Associations::BatchTest < HubspotSDK::Te
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::BatchResponseVoid
-    end
-
-    assert_pattern do
-      response => {
-        completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::Unknown]),
-        started_at: Time,
-        status: HubspotSDK::Crm::BatchResponseVoid::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
-        requested_at: Time | nil
-      }
+      response => nil
     end
   end
 
@@ -105,20 +92,7 @@ class HubspotSDK::Test::Resources::Crm::Associations::BatchTest < HubspotSDK::Te
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::BatchResponseVoid
-    end
-
-    assert_pattern do
-      response => {
-        completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::Unknown]),
-        started_at: Time,
-        status: HubspotSDK::Crm::BatchResponseVoid::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
-        requested_at: Time | nil
-      }
+      response => nil
     end
   end
 
@@ -142,9 +116,7 @@ class HubspotSDK::Test::Resources::Crm::Associations::BatchTest < HubspotSDK::Te
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociationMultiWithLabel]),
         started_at: Time,
         status: HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end

@@ -23,7 +23,7 @@ module HubspotSDK
               from_object_type: String,
               inputs: T::Array[HubspotSDK::Crm::PublicAssociationSpec::OrHash],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::BatchResponseVoid)
+            ).void
           end
           def batch_delete(
             # Path param

@@ -113,6 +113,29 @@ module HubspotSDK
               )
             end
 
+            # Create or update records identified by a unique property value as specified by
+            # the `idProperty` query param. `idProperty` query param refers to a property
+            # whose values are unique for the object.
+            #
+            # @overload upsert(inputs:, request_options: {})
+            #
+            # @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectBatchInputUpsert>]
+            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            #
+            # @return [HubspotSDK::Models::Crm::BatchResponseSimplePublicUpsertObject]
+            #
+            # @see HubspotSDK::Models::Crm::Objects::Leads::BatchUpsertParams
+            def upsert(params)
+              parsed, options = HubspotSDK::Crm::Objects::Leads::BatchUpsertParams.dump_request(params)
+              @client.request(
+                method: :post,
+                path: "crm/objects/2026-03/leads/batch/upsert",
+                body: parsed,
+                model: HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject,
+                options: options
+              )
+            end
+
             # @api private
             #
             # @param client [HubspotSDK::Client]

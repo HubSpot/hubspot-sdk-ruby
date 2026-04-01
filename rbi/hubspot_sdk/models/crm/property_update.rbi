@@ -19,6 +19,12 @@ module HubspotSDK
         sig { params(calculation_formula: String).void }
         attr_writer :calculation_formula
 
+        sig { returns(T.nilable(String)) }
+        attr_reader :currency_property_name
+
+        sig { params(currency_property_name: String).void }
+        attr_writer :currency_property_name
+
         # A description of the property that will be shown as help text in HubSpot.
         sig { returns(T.nilable(String)) }
         attr_reader :description
@@ -85,6 +91,12 @@ module HubspotSDK
         sig { params(options: T::Array[HubspotSDK::OptionInput::OrHash]).void }
         attr_writer :options
 
+        sig { returns(T.nilable(T::Boolean)) }
+        attr_reader :show_currency_symbol
+
+        sig { params(show_currency_symbol: T::Boolean).void }
+        attr_writer :show_currency_symbol
+
         # The data type of the property.
         sig do
           returns(T.nilable(HubspotSDK::Crm::PropertyUpdate::Type::OrSymbol))
@@ -99,6 +111,7 @@ module HubspotSDK
         sig do
           params(
             calculation_formula: String,
+            currency_property_name: String,
             description: String,
             display_order: Integer,
             field_type: HubspotSDK::Crm::PropertyUpdate::FieldType::OrSymbol,
@@ -107,12 +120,14 @@ module HubspotSDK
             hidden: T::Boolean,
             label: String,
             options: T::Array[HubspotSDK::OptionInput::OrHash],
+            show_currency_symbol: T::Boolean,
             type: HubspotSDK::Crm::PropertyUpdate::Type::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
           # Represents a formula that is used to compute a calculated property.
           calculation_formula: nil,
+          currency_property_name: nil,
           # A description of the property that will be shown as help text in HubSpot.
           description: nil,
           # Properties are displayed in order starting with the lowest positive integer
@@ -131,6 +146,7 @@ module HubspotSDK
           label: nil,
           # A list of valid options for the property.
           options: nil,
+          show_currency_symbol: nil,
           # The data type of the property.
           type: nil
         )
@@ -140,6 +156,7 @@ module HubspotSDK
           override.returns(
             {
               calculation_formula: String,
+              currency_property_name: String,
               description: String,
               display_order: Integer,
               field_type: HubspotSDK::Crm::PropertyUpdate::FieldType::OrSymbol,
@@ -148,6 +165,7 @@ module HubspotSDK
               hidden: T::Boolean,
               label: String,
               options: T::Array[HubspotSDK::OptionInput],
+              show_currency_symbol: T::Boolean,
               type: HubspotSDK::Crm::PropertyUpdate::Type::OrSymbol
             }
           )

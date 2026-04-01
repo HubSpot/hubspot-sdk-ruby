@@ -319,7 +319,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3]
+          # @return [nil]
           #
           # @see HubspotSDK::Models::Cms::Hubdb::RowPurgeBatchParams
           def purge_batch(table_id_or_name, params)
@@ -328,7 +328,7 @@ module HubspotSDK
               method: :post,
               path: ["cms/hubdb/2026-03/tables/%1$s/rows/draft/batch/purge", table_id_or_name],
               body: parsed,
-              model: HubspotSDK::Cms::BatchResponseHubDBTableRowV3,
+              model: NilClass,
               options: options
             )
           end

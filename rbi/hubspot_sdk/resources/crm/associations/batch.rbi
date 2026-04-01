@@ -33,7 +33,7 @@ module HubspotSDK
                   HubspotSDK::Crm::PublicAssociationMultiArchive::OrHash
                 ],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::BatchResponseVoid)
+            ).void
           end
           def delete(
             # Path param
@@ -78,7 +78,7 @@ module HubspotSDK
               inputs:
                 T::Array[HubspotSDK::Crm::PublicAssociationMultiPost::OrHash],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::BatchResponseVoid)
+            ).void
           end
           def delete_labels(
             # Path param
