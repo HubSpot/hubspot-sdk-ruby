@@ -1,0 +1,38 @@
+module HubspotSDK
+  module Models
+    module Crm
+      type list_get_size_and_edits_history_between_params =
+        { list_id: String, end_date: String, start_date: String }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class ListGetSizeAndEditsHistoryBetweenParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor list_id: String
+
+        attr_reader end_date: String?
+
+        def end_date=: (String) -> String
+
+        attr_reader start_date: String?
+
+        def start_date=: (String) -> String
+
+        def initialize: (
+          list_id: String,
+          ?end_date: String,
+          ?start_date: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          list_id: String,
+          end_date: String,
+          start_date: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

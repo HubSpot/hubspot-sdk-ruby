@@ -18,9 +18,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::BatchTest < HubspotSDK:
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicCampaign]),
         started_at: Time,
         status: HubspotSDK::Marketing::BatchResponsePublicCampaign::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end
@@ -41,9 +39,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::BatchTest < HubspotSDK:
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicCampaign]),
         started_at: Time,
         status: HubspotSDK::Marketing::BatchResponsePublicCampaign::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end
@@ -74,9 +70,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::BatchTest < HubspotSDK:
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicCampaignWithAssets]),
         started_at: Time,
         status: HubspotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end

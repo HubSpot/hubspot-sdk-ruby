@@ -28,12 +28,10 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::BatchTest < HubspotSDK::Tes
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Property1]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Property]),
         started_at: Time,
         status: HubspotSDK::Cms::BatchResponseProperty::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end
@@ -68,12 +66,10 @@ class HubspotSDK::Test::Resources::Cms::MediaBridge::BatchTest < HubspotSDK::Tes
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Property1]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Property]),
         started_at: Time,
         status: HubspotSDK::Cms::BatchResponseProperty::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end

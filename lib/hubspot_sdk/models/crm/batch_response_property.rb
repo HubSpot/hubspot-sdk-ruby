@@ -12,8 +12,8 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Property>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property] }
+        #   @return [Array<HubspotSDK::Models::Crm::Property>]
+        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Property] }
 
         # @!attribute started_at
         #   The timestamp indicating when the batch operation began processing.
@@ -28,11 +28,6 @@ module HubspotSDK
         #   @return [Symbol, HubspotSDK::Models::Crm::BatchResponseProperty::Status]
         required :status, enum: -> { HubspotSDK::Crm::BatchResponseProperty::Status }
 
-        # @!attribute errors
-        #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
-
         # @!attribute links
         #   A collection of URLs linking to documentation or resources related to the batch
         #   operation.
@@ -40,35 +35,25 @@ module HubspotSDK
         #   @return [Hash{Symbol=>String}, nil]
         optional :links, HubspotSDK::Internal::Type::HashOf[String]
 
-        # @!attribute num_errors
-        #   The total number of errors encountered during the batch operation.
-        #
-        #   @return [Integer, nil]
-        optional :num_errors, Integer, api_name: :numErrors
-
         # @!attribute requested_at
         #   The timestamp indicating when the batch operation was requested.
         #
         #   @return [Time, nil]
         optional :requested_at, Time, api_name: :requestedAt
 
-        # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
+        # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Crm::BatchResponseProperty} for more details.
         #
         #   @param completed_at [Time] The timestamp indicating when the batch operation was completed.
         #
-        #   @param results [Array<HubspotSDK::Models::Property>]
+        #   @param results [Array<HubspotSDK::Models::Crm::Property>]
         #
         #   @param started_at [Time] The timestamp indicating when the batch operation began processing.
         #
         #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponseProperty::Status] The current status of the batch operation, with possible values being CANCELED,
         #
-        #   @param errors [Array<HubspotSDK::Models::StandardError>]
-        #
         #   @param links [Hash{Symbol=>String}] A collection of URLs linking to documentation or resources related to the batch
-        #
-        #   @param num_errors [Integer] The total number of errors encountered during the batch operation.
         #
         #   @param requested_at [Time] The timestamp indicating when the batch operation was requested.
 

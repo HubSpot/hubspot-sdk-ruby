@@ -23,9 +23,7 @@ class HubspotSDK::Test::Resources::Crm::Objects::FeedbackSubmissions::BatchTest 
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
         started_at: Time,
         status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end

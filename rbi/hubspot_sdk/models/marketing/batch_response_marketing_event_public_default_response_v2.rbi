@@ -37,24 +37,12 @@ module HubspotSDK
         end
         attr_accessor :status
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
-        attr_reader :errors
-
-        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
-        attr_writer :errors
-
         # Result object of the request.
         sig { returns(T.nilable(T::Hash[Symbol, String])) }
         attr_reader :links
 
         sig { params(links: T::Hash[Symbol, String]).void }
         attr_writer :links
-
-        sig { returns(T.nilable(Integer)) }
-        attr_reader :num_errors
-
-        sig { params(num_errors: Integer).void }
-        attr_writer :num_errors
 
         # Timestamp of when the request was sent.
         sig { returns(T.nilable(Time)) }
@@ -73,9 +61,7 @@ module HubspotSDK
             started_at: Time,
             status:
               HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2::Status::OrSymbol,
-            errors: T::Array[HubspotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
-            num_errors: Integer,
             requested_at: Time
           ).returns(T.attached_class)
         end
@@ -87,10 +73,8 @@ module HubspotSDK
           started_at:,
           # The status of the response.
           status:,
-          errors: nil,
           # Result object of the request.
           links: nil,
-          num_errors: nil,
           # Timestamp of when the request was sent.
           requested_at: nil
         )
@@ -107,9 +91,7 @@ module HubspotSDK
               started_at: Time,
               status:
                 HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2::Status::TaggedSymbol,
-              errors: T::Array[HubspotSDK::StandardError],
               links: T::Hash[Symbol, String],
-              num_errors: Integer,
               requested_at: Time
             }
           )

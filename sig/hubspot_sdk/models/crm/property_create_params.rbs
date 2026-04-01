@@ -4,7 +4,7 @@ module HubspotSDK
       type property_create_params =
         { object_type: String } & HubspotSDK::Internal::Type::request_parameters
 
-      class PropertyCreateParams < HubspotSDK::Models::PropertyCreate
+      class PropertyCreateParams < HubspotSDK::Models::Crm::PropertyCreate
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 

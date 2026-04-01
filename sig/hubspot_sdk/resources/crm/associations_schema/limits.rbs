@@ -12,7 +12,7 @@ module HubspotSDK
             from_object_type: String,
             inputs: ::Array[HubspotSDK::Crm::PublicAssociationSpec],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::BatchResponseVoid
+          ) -> nil
 
           def batch_update: (
             String to_object_type,

@@ -10,6 +10,11 @@ module HubspotSDK
         #   @return [String, nil]
         optional :calculation_formula, String, api_name: :calculationFormula
 
+        # @!attribute currency_property_name
+        #
+        #   @return [String, nil]
+        optional :currency_property_name, String, api_name: :currencyPropertyName
+
         # @!attribute description
         #   A description of the property that will be shown as help text in HubSpot.
         #
@@ -60,17 +65,24 @@ module HubspotSDK
         #   @return [Array<HubspotSDK::Models::OptionInput>, nil]
         optional :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::OptionInput] }
 
+        # @!attribute show_currency_symbol
+        #
+        #   @return [Boolean, nil]
+        optional :show_currency_symbol, HubspotSDK::Internal::Type::Boolean, api_name: :showCurrencySymbol
+
         # @!attribute type
         #   The data type of the property.
         #
         #   @return [Symbol, HubspotSDK::Models::Crm::PropertyUpdate::Type, nil]
         optional :type, enum: -> { HubspotSDK::Crm::PropertyUpdate::Type }
 
-        # @!method initialize(calculation_formula: nil, description: nil, display_order: nil, field_type: nil, form_field: nil, group_name: nil, hidden: nil, label: nil, options: nil, type: nil)
+        # @!method initialize(calculation_formula: nil, currency_property_name: nil, description: nil, display_order: nil, field_type: nil, form_field: nil, group_name: nil, hidden: nil, label: nil, options: nil, show_currency_symbol: nil, type: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Crm::PropertyUpdate} for more details.
         #
         #   @param calculation_formula [String] Represents a formula that is used to compute a calculated property.
+        #
+        #   @param currency_property_name [String]
         #
         #   @param description [String] A description of the property that will be shown as help text in HubSpot.
         #
@@ -87,6 +99,8 @@ module HubspotSDK
         #   @param label [String] A human-readable property label that will be shown in HubSpot.
         #
         #   @param options [Array<HubspotSDK::Models::OptionInput>] A list of valid options for the property.
+        #
+        #   @param show_currency_symbol [Boolean]
         #
         #   @param type [Symbol, HubspotSDK::Models::Crm::PropertyUpdate::Type] The data type of the property.
 

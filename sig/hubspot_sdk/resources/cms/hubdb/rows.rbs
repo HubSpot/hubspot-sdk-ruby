@@ -79,7 +79,7 @@ module HubspotSDK
             String table_id_or_name,
             inputs: ::Array[String],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::BatchResponseHubDBTableRowV3
+          ) -> nil
 
           def replace_batch: (
             String table_id_or_name,

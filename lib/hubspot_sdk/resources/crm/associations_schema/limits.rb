@@ -37,7 +37,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::BatchResponseVoid]
+          # @return [nil]
           #
           # @see HubspotSDK::Models::Crm::AssociationsSchema::LimitBatchDeleteParams
           def batch_delete(to_object_type, params)
@@ -54,7 +54,7 @@ module HubspotSDK
                 to_object_type
               ],
               body: parsed,
-              model: HubspotSDK::Crm::BatchResponseVoid,
+              model: NilClass,
               options: options
             )
           end

@@ -70,18 +70,13 @@ module HubspotSDK
           ?request_options: HubspotSDK::request_opts
         ) -> nil
 
-        def delete_schedule_conversion: (
-          String list_id,
-          ?request_options: HubspotSDK::request_opts
-        ) -> nil
-
         def get: (
           String list_id,
           ?include_filters: bool,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Crm::ListFetchResponse
 
-        def get_by_object_type_id_and_name: (
+        def get_by_object_type_and_name: (
           String list_name,
           object_type_id: String,
           ?include_filters: bool,
@@ -92,6 +87,14 @@ module HubspotSDK
           ?legacy_list_id: String,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Crm::PublicMigrationMapping
+
+        def get_memberships_join_order: (
+          String list_id,
+          ?after: String,
+          ?before: String,
+          ?limit: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::JoinTimeAndRecordID]
 
         def get_record_memberships: (
           String record_id,
@@ -104,20 +107,31 @@ module HubspotSDK
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Crm::PublicListConversionResponse
 
+        def get_size_and_edits_history_between: (
+          String list_id,
+          ?end_date: String,
+          ?start_date: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Crm::ListSizeAndEditHistoryResponse
+
+        def list_by_search: (
+          additional_properties: ::Array[String],
+          list_ids: ::Array[String],
+          offset: Integer,
+          processing_types: ::Array[String],
+          ?count: Integer,
+          ?object_type_id: String,
+          ?query: String,
+          ?sort: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> HubspotSDK::Crm::ListSearchResponse
+
         def list_folders: (
           ?folder_id: String,
           ?request_options: HubspotSDK::request_opts
         ) -> HubspotSDK::Crm::ListFolderFetchResponse
 
         def list_memberships: (
-          String list_id,
-          ?after: String,
-          ?before: String,
-          ?limit: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::JoinTimeAndRecordID]
-
-        def list_memberships_join_order: (
           String list_id,
           ?after: String,
           ?before: String,
@@ -154,17 +168,10 @@ module HubspotSDK
           ?request_options: HubspotSDK::request_opts
         ) -> nil
 
-        def search: (
-          additional_properties: ::Array[String],
-          list_ids: ::Array[String],
-          offset: Integer,
-          processing_types: ::Array[String],
-          ?count: Integer,
-          ?object_type_id: String,
-          ?query: String,
-          ?sort: String,
+        def schedule_conversion: (
+          String list_id,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::ListSearchResponse
+        ) -> nil
 
         def update_list_filters: (
           String list_id,

@@ -31,24 +31,11 @@ module HubspotSDK
         #   @return [Symbol, HubspotSDK::Models::Marketing::BatchResponsePublicCampaignWithAssets::Status]
         required :status, enum: -> { HubspotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status }
 
-        # @!attribute errors
-        #   An array of errors encountered during the batch operation, each described by a
-        #   StandardError object.
-        #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
-
         # @!attribute links
         #   A collection of URLs linking to related resources or documentation.
         #
         #   @return [Hash{Symbol=>String}, nil]
         optional :links, HubspotSDK::Internal::Type::HashOf[String]
-
-        # @!attribute num_errors
-        #   The number of errors encountered during the batch operation.
-        #
-        #   @return [Integer, nil]
-        optional :num_errors, Integer, api_name: :numErrors
 
         # @!attribute requested_at
         #   The timestamp when the batch request was initially made.
@@ -56,7 +43,7 @@ module HubspotSDK
         #   @return [Time, nil]
         optional :requested_at, Time, api_name: :requestedAt
 
-        # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
+        # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Marketing::BatchResponsePublicCampaignWithAssets} for more
         #   details.
@@ -69,11 +56,7 @@ module HubspotSDK
         #
         #   @param status [Symbol, HubspotSDK::Models::Marketing::BatchResponsePublicCampaignWithAssets::Status] The current processing status of the batch operation, with possible values: CANC
         #
-        #   @param errors [Array<HubspotSDK::Models::StandardError>] An array of errors encountered during the batch operation, each described by a S
-        #
         #   @param links [Hash{Symbol=>String}] A collection of URLs linking to related resources or documentation.
-        #
-        #   @param num_errors [Integer] The number of errors encountered during the batch operation.
         #
         #   @param requested_at [Time] The timestamp when the batch request was initially made.
 

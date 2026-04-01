@@ -5,7 +5,7 @@ module HubspotSDK
         { app_id: Integer, object_type: String }
         & HubspotSDK::Internal::Type::request_parameters
 
-      class MediaBridgeCreatePropertyParams < HubspotSDK::Models::PropertyCreate
+      class MediaBridgeCreatePropertyParams < HubspotSDK::Models::Cms::PropertyCreate
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 

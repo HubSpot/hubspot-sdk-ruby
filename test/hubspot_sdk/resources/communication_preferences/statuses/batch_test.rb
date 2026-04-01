@@ -22,9 +22,7 @@ class HubspotSDK::Test::Resources::CommunicationPreferences::Statuses::BatchTest
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CommunicationPreferences::PublicWideStatusBulkResponse]),
         started_at: Time,
         status: HubspotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end
@@ -45,9 +43,7 @@ class HubspotSDK::Test::Resources::CommunicationPreferences::Statuses::BatchTest
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CommunicationPreferences::PublicStatusBulkResponse]),
         started_at: Time,
         status: HubspotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end

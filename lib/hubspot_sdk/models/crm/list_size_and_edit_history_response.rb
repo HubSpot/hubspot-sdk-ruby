@@ -3,6 +3,7 @@
 module HubspotSDK
   module Models
     module Crm
+      # @see HubspotSDK::Resources::Crm::Lists#get_size_and_edits_history_between
       class ListSizeAndEditHistoryResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute edit_history
         #

@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Lists#list_memberships
+      # @see HubspotSDK::Resources::Crm::Lists#get_memberships_join_order
       class JoinTimeAndRecordID < HubspotSDK::Internal::Type::BaseModel
         # @!attribute membership_timestamp
         #   The date and time when the record was added to the list.

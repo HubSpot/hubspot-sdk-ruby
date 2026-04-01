@@ -78,6 +78,21 @@ module HubspotSDK
             )
             end
 
+            # Create or update records identified by a unique property value as specified by
+            # the `idProperty` query param. `idProperty` query param refers to a property
+            # whose values are unique for the object.
+            sig do
+              params(
+                inputs:
+                  T::Array[
+                    HubspotSDK::Crm::SimplePublicObjectBatchInputUpsert::OrHash
+                  ],
+                request_options: HubspotSDK::RequestOptions::OrHash
+              ).returns(HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject)
+            end
+            def upsert(inputs:, request_options: {})
+            end
+
             # @api private
             sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
             def self.new(client:)

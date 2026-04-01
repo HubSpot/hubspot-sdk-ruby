@@ -4,37 +4,25 @@ module HubspotSDK
       type batch_response_property =
         {
           completed_at: Time,
-          results: ::Array[HubspotSDK::Property],
+          results: ::Array[HubspotSDK::Crm::Property],
           started_at: Time,
           status: HubspotSDK::Models::Crm::BatchResponseProperty::status,
-          errors: ::Array[HubspotSDK::StandardError],
           links: ::Hash[Symbol, String],
-          num_errors: Integer,
           requested_at: Time
         }
 
       class BatchResponseProperty < HubspotSDK::Internal::Type::BaseModel
         attr_accessor completed_at: Time
 
-        attr_accessor results: ::Array[HubspotSDK::Property]
+        attr_accessor results: ::Array[HubspotSDK::Crm::Property]
 
         attr_accessor started_at: Time
 
         attr_accessor status: HubspotSDK::Models::Crm::BatchResponseProperty::status
 
-        attr_reader errors: ::Array[HubspotSDK::StandardError]?
-
-        def errors=: (
-          ::Array[HubspotSDK::StandardError]
-        ) -> ::Array[HubspotSDK::StandardError]
-
         attr_reader links: ::Hash[Symbol, String]?
 
         def links=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
-
-        attr_reader num_errors: Integer?
-
-        def num_errors=: (Integer) -> Integer
 
         attr_reader requested_at: Time?
 
@@ -42,23 +30,19 @@ module HubspotSDK
 
         def initialize: (
           completed_at: Time,
-          results: ::Array[HubspotSDK::Property],
+          results: ::Array[HubspotSDK::Crm::Property],
           started_at: Time,
           status: HubspotSDK::Models::Crm::BatchResponseProperty::status,
-          ?errors: ::Array[HubspotSDK::StandardError],
           ?links: ::Hash[Symbol, String],
-          ?num_errors: Integer,
           ?requested_at: Time
         ) -> void
 
         def to_hash: -> {
           completed_at: Time,
-          results: ::Array[HubspotSDK::Property],
+          results: ::Array[HubspotSDK::Crm::Property],
           started_at: Time,
           status: HubspotSDK::Models::Crm::BatchResponseProperty::status,
-          errors: ::Array[HubspotSDK::StandardError],
           links: ::Hash[Symbol, String],
-          num_errors: Integer,
           requested_at: Time
         }
 

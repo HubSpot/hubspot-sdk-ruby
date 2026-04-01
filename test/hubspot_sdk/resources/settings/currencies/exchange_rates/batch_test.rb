@@ -21,9 +21,7 @@ class HubspotSDK::Test::Resources::Settings::Currencies::ExchangeRates::BatchTes
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Settings::ExchangeRate]),
         started_at: Time,
         status: HubspotSDK::Settings::BatchResponseExchangeRate::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end
@@ -45,9 +43,7 @@ class HubspotSDK::Test::Resources::Settings::Currencies::ExchangeRates::BatchTes
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Settings::ExchangeRate]),
         started_at: Time,
         status: HubspotSDK::Settings::BatchResponseExchangeRate::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end
@@ -68,9 +64,7 @@ class HubspotSDK::Test::Resources::Settings::Currencies::ExchangeRates::BatchTes
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Settings::ExchangeRate]),
         started_at: Time,
         status: HubspotSDK::Settings::BatchResponseExchangeRate::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end

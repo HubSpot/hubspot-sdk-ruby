@@ -124,9 +124,7 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::RecordIDWithMemberships]),
         started_at: Time,
         status: HubspotSDK::Crm::BatchResponseRecordIDWithMemberships::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end
@@ -185,16 +183,6 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     end
   end
 
-  def test_delete_schedule_conversion
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.crm.lists.delete_schedule_conversion("listId")
-
-    assert_pattern do
-      response => nil
-    end
-  end
-
   def test_get
     skip("Mock server tests are disabled")
 
@@ -211,10 +199,10 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     end
   end
 
-  def test_get_by_object_type_id_and_name_required_params
+  def test_get_by_object_type_and_name_required_params
     skip("Mock server tests are disabled")
 
-    response = @hubspot.crm.lists.get_by_object_type_id_and_name("listName", object_type_id: "objectTypeId")
+    response = @hubspot.crm.lists.get_by_object_type_and_name("listName", object_type_id: "objectTypeId")
 
     assert_pattern do
       response => HubspotSDK::Crm::ListFetchResponse
@@ -240,6 +228,30 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
       response => {
         legacy_list_id: String,
         list_id: String
+      }
+    end
+  end
+
+  def test_get_memberships_join_order
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.crm.lists.get_memberships_join_order("listId")
+
+    assert_pattern do
+      response => HubspotSDK::Internal::Page
+    end
+
+    row = response.to_enum.first
+    return if row.nil?
+
+    assert_pattern do
+      row => HubspotSDK::Crm::JoinTimeAndRecordID
+    end
+
+    assert_pattern do
+      row => {
+        membership_timestamp: Time,
+        record_id: String
       }
     end
   end
@@ -280,6 +292,48 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     end
   end
 
+  def test_get_size_and_edits_history_between
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.crm.lists.get_size_and_edits_history_between("listId")
+
+    assert_pattern do
+      response => HubspotSDK::Crm::ListSizeAndEditHistoryResponse
+    end
+
+    assert_pattern do
+      response => {
+        edit_history: ^(HubspotSDK::Internal::Type::ArrayOf[Time]),
+        size_history: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ListSizeDataPoint])
+      }
+    end
+  end
+
+  def test_list_by_search_required_params
+    skip("Mock server tests are disabled")
+
+    response =
+      @hubspot.crm.lists.list_by_search(
+        additional_properties: ["string"],
+        list_ids: ["string"],
+        offset: 0,
+        processing_types: ["string"]
+      )
+
+    assert_pattern do
+      response => HubspotSDK::Crm::ListSearchResponse
+    end
+
+    assert_pattern do
+      response => {
+        has_more: HubspotSDK::Internal::Type::Boolean,
+        lists: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicObjectListSearchResult]),
+        offset: Integer,
+        total: Integer
+      }
+    end
+  end
+
   def test_list_folders
     skip("Mock server tests are disabled")
 
@@ -300,30 +354,6 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     skip("Mock server tests are disabled")
 
     response = @hubspot.crm.lists.list_memberships("listId")
-
-    assert_pattern do
-      response => HubspotSDK::Internal::Page
-    end
-
-    row = response.to_enum.first
-    return if row.nil?
-
-    assert_pattern do
-      row => HubspotSDK::Crm::JoinTimeAndRecordID
-    end
-
-    assert_pattern do
-      row => {
-        membership_timestamp: Time,
-        record_id: String
-      }
-    end
-  end
-
-  def test_list_memberships_join_order
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.crm.lists.list_memberships_join_order("listId")
 
     assert_pattern do
       response => HubspotSDK::Internal::Page
@@ -414,28 +444,13 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     end
   end
 
-  def test_search_required_params
+  def test_schedule_conversion
     skip("Mock server tests are disabled")
 
-    response =
-      @hubspot.crm.lists.search(
-        additional_properties: ["string"],
-        list_ids: ["string"],
-        offset: 0,
-        processing_types: ["string"]
-      )
+    response = @hubspot.crm.lists.schedule_conversion("listId")
 
     assert_pattern do
-      response => HubspotSDK::Crm::ListSearchResponse
-    end
-
-    assert_pattern do
-      response => {
-        has_more: HubspotSDK::Internal::Type::Boolean,
-        lists: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicObjectListSearchResult]),
-        offset: Integer,
-        total: Integer
-      }
+      response => nil
     end
   end
 

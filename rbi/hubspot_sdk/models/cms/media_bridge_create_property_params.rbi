@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Cms
-      class MediaBridgeCreatePropertyParams < HubspotSDK::Models::PropertyCreate
+      class MediaBridgeCreatePropertyParams < HubspotSDK::Models::Cms::PropertyCreate
         extend HubspotSDK::Internal::Type::RequestParameters::Converter
         include HubspotSDK::Internal::Type::RequestParameters
 

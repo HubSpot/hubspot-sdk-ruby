@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Lists#search
+      # @see HubspotSDK::Resources::Crm::Lists#list_by_search
       class ListSearchResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute has_more
         #   Whether or not there are more results to page through.

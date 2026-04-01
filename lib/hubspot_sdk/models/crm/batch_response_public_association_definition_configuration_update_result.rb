@@ -30,11 +30,6 @@ module HubspotSDK
         required :status,
                  enum: -> { HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult::Status }
 
-        # @!attribute errors
-        #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
-
         # @!attribute links
         #   URLs linking to documentation or resources associated with the batch update
         #   operation.
@@ -42,19 +37,13 @@ module HubspotSDK
         #   @return [Hash{Symbol=>String}, nil]
         optional :links, HubspotSDK::Internal::Type::HashOf[String]
 
-        # @!attribute num_errors
-        #   The total number of errors encountered during the batch update operation.
-        #
-        #   @return [Integer, nil]
-        optional :num_errors, Integer, api_name: :numErrors
-
         # @!attribute requested_at
         #   The date and time when the batch update operation was requested.
         #
         #   @return [Time, nil]
         optional :requested_at, Time, api_name: :requestedAt
 
-        # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
+        # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult}
         #   for more details.
@@ -67,11 +56,7 @@ module HubspotSDK
         #
         #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult::Status] The current status of the batch update operation, which can be CANCELED, COMPLET
         #
-        #   @param errors [Array<HubspotSDK::Models::StandardError>]
-        #
         #   @param links [Hash{Symbol=>String}] URLs linking to documentation or resources associated with the batch update oper
-        #
-        #   @param num_errors [Integer] The total number of errors encountered during the batch update operation.
         #
         #   @param requested_at [Time] The date and time when the batch update operation was requested.
 

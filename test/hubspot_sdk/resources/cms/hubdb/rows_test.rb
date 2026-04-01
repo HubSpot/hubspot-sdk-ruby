@@ -59,9 +59,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]),
         started_at: Time,
         status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end
@@ -109,9 +107,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]),
         started_at: Time,
         status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end
@@ -165,9 +161,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]),
         started_at: Time,
         status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end
@@ -211,9 +205,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]),
         started_at: Time,
         status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end
@@ -225,20 +217,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.hubdb.rows.purge_batch("tableIdOrName", inputs: ["string"])
 
     assert_pattern do
-      response => HubspotSDK::Cms::BatchResponseHubDBTableRowV3
-    end
-
-    assert_pattern do
-      response => {
-        completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]),
-        started_at: Time,
-        status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
-        requested_at: Time | nil
-      }
+      response => nil
     end
   end
 
@@ -261,9 +240,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]),
         started_at: Time,
         status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end
@@ -318,9 +295,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
         results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]),
         started_at: Time,
         status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end
