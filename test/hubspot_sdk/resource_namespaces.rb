@@ -172,6 +172,9 @@ module HubspotSDK
           module Fees
           end
 
+          module GenericObjects
+          end
+
           module GoalTargets
           end
 
@@ -191,9 +194,6 @@ module HubspotSDK
           end
 
           module Notes
-          end
-
-          module Objects
           end
 
           module Orders
@@ -292,6 +292,9 @@ module HubspotSDK
       module Files
       end
 
+      module GenericObjects
+      end
+
       module GoalTargets
       end
 
@@ -314,11 +317,14 @@ module HubspotSDK
         module Campaigns
         end
 
-        module Events
+        module MarketingEvents
         end
 
         module Transactional
         end
+      end
+
+      module MarketingEvents
       end
 
       module MediaBridge
@@ -381,6 +387,9 @@ module HubspotSDK
         module Fees
         end
 
+        module GenericObjects
+        end
+
         module GoalTargets
         end
 
@@ -400,9 +409,6 @@ module HubspotSDK
         end
 
         module Notes
-        end
-
-        module Objects
         end
 
         module Orders
@@ -524,8 +530,11 @@ module HubspotSDK
       end
 
       module Webhooks
-        module Webhooks
+        module WebhookSubscriptions
         end
+      end
+
+      module WebhookSubscriptions
       end
     end
   end

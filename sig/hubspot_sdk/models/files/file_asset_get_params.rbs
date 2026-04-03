@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module Files
+      type file_asset_get_params =
+        { file_id: String, properties: ::Array[String] }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class FileAssetGetParams < HubspotSDK::Internal::Type::BaseModel
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        attr_accessor file_id: String
+
+        attr_reader properties: ::Array[String]?
+
+        def properties=: (::Array[String]) -> ::Array[String]
+
+        def initialize: (
+          file_id: String,
+          ?properties: ::Array[String],
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          file_id: String,
+          properties: ::Array[String],
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

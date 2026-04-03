@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Webhooks
-      # @see HubspotSDK::Resources::Webhooks::Webhooks#create_subscription
+      # @see HubspotSDK::Resources::Webhooks::WebhookSubscriptions#create_subscription
       class SubscriptionResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique ID of the webhook subscription.

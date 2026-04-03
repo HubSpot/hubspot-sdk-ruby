@@ -5,7 +5,7 @@ module HubspotSDK
         type landing_page_create_params =
           {  } & HubspotSDK::Internal::Type::request_parameters
 
-        class LandingPageCreateParams < HubspotSDK::Models::Cms::Page
+        class LandingPageCreateParams < HubspotSDK::Models::Cms::CmsPage
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

@@ -261,10 +261,10 @@ module HubspotSDK
 
         sig do
           params(
-            additional_properties: T::Array[String],
             list_ids: T::Array[String],
             offset: Integer,
             processing_types: T::Array[String],
+            additional_filter_properties: T::Array[String],
             count: Integer,
             object_type_id: String,
             query: String,
@@ -273,14 +273,6 @@ module HubspotSDK
           ).returns(HubspotSDK::Crm::ListSearchResponse)
         end
         def list_by_search(
-          # The property names of any additional list properties to include in the response.
-          # Properties that do not exist or that are empty for a particular list are not
-          # included in the response.
-          #
-          # By default, all requests will fetch the following properties for each list:
-          # `hs_list_size`, `hs_last_record_added_at`, `hs_last_record_removed_at`,
-          # `hs_folder_name`, and `hs_list_reference_count`.
-          additional_properties:,
           # ILS list ids to be included in search results. If not specified, all lists
           # matching other criteria will be included
           list_ids:,
@@ -291,6 +283,14 @@ module HubspotSDK
           # List processing types to be included in search results. If not specified, all
           # lists with all processing types will be included.
           processing_types:,
+          # The property names of any additional list properties to include in the response.
+          # Properties that do not exist or that are empty for a particular list are not
+          # included in the response.
+          #
+          # By default, all requests will fetch the following properties for each list:
+          # `hs_list_size`, `hs_last_record_added_at`, `hs_last_record_removed_at`,
+          # `hs_folder_name`, and `hs_list_reference_count`.
+          additional_filter_properties: nil,
           # The number of lists to include in the response. Defaults to `20` if no value is
           # provided. The max `count` is `500`.
           count: nil,

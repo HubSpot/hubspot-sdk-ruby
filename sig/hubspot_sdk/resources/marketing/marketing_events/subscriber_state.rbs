@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Resources
+    class Marketing
+      class MarketingEvents
+        class SubscriberState
+          def record_by_email: (
+            String subscriber_state,
+            external_event_id: String,
+            external_account_id: String,
+            inputs: ::Array[HubspotSDK::Marketing::MarketingEventEmailSubscriber],
+            ?request_options: HubspotSDK::request_opts
+          ) -> StringIO
+
+          def record_by_id: (
+            String subscriber_state,
+            external_event_id: String,
+            external_account_id: String,
+            inputs: ::Array[HubspotSDK::Marketing::MarketingEventSubscriber],
+            ?request_options: HubspotSDK::request_opts
+          ) -> StringIO
+
+          def initialize: (client: HubspotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

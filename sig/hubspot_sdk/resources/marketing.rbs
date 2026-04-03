@@ -5,7 +5,7 @@ module HubspotSDK
 
       attr_reader emails: HubspotSDK::Resources::Marketing::Emails
 
-      attr_reader events: HubspotSDK::Resources::Marketing::Events
+      attr_reader marketing_events: HubspotSDK::Resources::Marketing::MarketingEvents
 
       attr_reader single_send: HubspotSDK::Resources::Marketing::SingleSend
 

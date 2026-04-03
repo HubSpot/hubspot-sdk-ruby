@@ -313,12 +313,7 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     skip("Mock server tests are disabled")
 
     response =
-      @hubspot.crm.lists.list_by_search(
-        additional_properties: ["string"],
-        list_ids: ["string"],
-        offset: 0,
-        processing_types: ["string"]
-      )
+      @hubspot.crm.lists.list_by_search(list_ids: ["string"], offset: 0, processing_types: ["string"])
 
     assert_pattern do
       response => HubspotSDK::Crm::ListSearchResponse

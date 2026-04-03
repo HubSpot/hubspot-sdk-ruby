@@ -146,21 +146,23 @@ module HubspotSDK
         module FilterBranch
           extend HubspotSDK::Internal::Type::Union
 
-          variant -> { HubspotSDK::Crm::PublicOrFilterBranch }
+          discriminator :filterBranchType
 
-          variant -> { HubspotSDK::Crm::PublicAndFilterBranch }
+          variant :OR, -> { HubspotSDK::Crm::PublicOrFilterBranch }
 
-          variant -> { HubspotSDK::Crm::PublicNotAllFilterBranch }
+          variant :AND, -> { HubspotSDK::Crm::PublicAndFilterBranch }
 
-          variant -> { HubspotSDK::Crm::PublicNotAnyFilterBranch }
+          variant :NOT_ALL, -> { HubspotSDK::Crm::PublicNotAllFilterBranch }
 
-          variant -> { HubspotSDK::Crm::PublicRestrictedFilterBranch }
+          variant :NOT_ANY, -> { HubspotSDK::Crm::PublicNotAnyFilterBranch }
 
-          variant -> { HubspotSDK::Crm::PublicUnifiedEventsFilterBranch }
+          variant :RESTRICTED, -> { HubspotSDK::Crm::PublicRestrictedFilterBranch }
 
-          variant -> { HubspotSDK::Crm::PublicPropertyAssociationFilterBranch }
+          variant :UNIFIED_EVENTS, -> { HubspotSDK::Crm::PublicUnifiedEventsFilterBranch }
 
-          variant -> { HubspotSDK::Crm::PublicAssociationFilterBranch }
+          variant :PROPERTY_ASSOCIATION, -> { HubspotSDK::Crm::PublicPropertyAssociationFilterBranch }
+
+          variant :ASSOCIATION, -> { HubspotSDK::Crm::PublicAssociationFilterBranch }
 
           # @!method self.variants
           #   @return [Array(HubspotSDK::Models::Crm::PublicOrFilterBranch, HubspotSDK::Models::Crm::PublicAndFilterBranch, HubspotSDK::Models::Crm::PublicNotAllFilterBranch, HubspotSDK::Models::Crm::PublicNotAnyFilterBranch, HubspotSDK::Models::Crm::PublicRestrictedFilterBranch, HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch, HubspotSDK::Models::Crm::PublicPropertyAssociationFilterBranch, HubspotSDK::Models::Crm::PublicAssociationFilterBranch)]

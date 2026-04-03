@@ -406,15 +406,15 @@ module HubspotSDK
         # Some parameter documentations has been truncated, see
         # {HubspotSDK::Models::Crm::ListListBySearchParams} for more details.
         #
-        # @overload list_by_search(additional_properties:, list_ids:, offset:, processing_types:, count: nil, object_type_id: nil, query: nil, sort: nil, request_options: {})
-        #
-        # @param additional_properties [Array<String>] The property names of any additional list properties to include in the response.
+        # @overload list_by_search(list_ids:, offset:, processing_types:, additional_filter_properties: nil, count: nil, object_type_id: nil, query: nil, sort: nil, request_options: {})
         #
         # @param list_ids [Array<String>] ILS list ids to be included in search results. If not specified, all lists match
         #
         # @param offset [Integer] Value used to paginate through lists. The `offset` provided in the response can
         #
         # @param processing_types [Array<String>] List processing types to be included in search results. If not specified, all li
+        #
+        # @param additional_filter_properties [Array<String>] The property names of any additional list properties to include in the response.
         #
         # @param count [Integer] The number of lists to include in the response. Defaults to `20` if no value is
         #

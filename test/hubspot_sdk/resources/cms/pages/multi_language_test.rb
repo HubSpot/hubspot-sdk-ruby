@@ -20,13 +20,13 @@ class HubspotSDK::Test::Resources::Cms::Pages::MultiLanguageTest < HubspotSDK::T
     response = @hubspot.cms.pages.multi_language.create_language_variation(id: "id")
 
     assert_pattern do
-      response => HubspotSDK::Cms::Page
+      response => HubspotSDK::Cms::CmsPage
     end
 
     assert_pattern do
       response => {
         id: String,
-        ab_status: HubspotSDK::Cms::Page::AbStatus,
+        ab_status: HubspotSDK::Cms::CmsPage::AbStatus,
         ab_test_id: String,
         archived_at: Time,
         archived_in_dashboard: HubspotSDK::Internal::Type::Boolean,
@@ -35,11 +35,11 @@ class HubspotSDK::Test::Resources::Cms::Pages::MultiLanguageTest < HubspotSDK::T
         campaign: String,
         category_id: Integer,
         content_group_id: String,
-        content_type_category: HubspotSDK::Cms::Page::ContentTypeCategory,
+        content_type_category: HubspotSDK::Cms::CmsPage::ContentTypeCategory,
         created: Time,
         created_by_id: String,
         currently_published: HubspotSDK::Internal::Type::Boolean,
-        current_state: HubspotSDK::Cms::Page::CurrentState,
+        current_state: HubspotSDK::Cms::CmsPage::CurrentState,
         domain: String,
         dynamic_page_data_source_id: String,
         dynamic_page_data_source_type: Integer,
@@ -53,7 +53,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::MultiLanguageTest < HubspotSDK::T
         head_html: String,
         html_title: String,
         include_default_custom_css: HubspotSDK::Internal::Type::Boolean,
-        language: HubspotSDK::Cms::Page::Language,
+        language: HubspotSDK::Cms::CmsPage::Language,
         layout_sections: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::LayoutSection]),
         link_rel_canonical_url: String,
         mab_experiment_id: String,

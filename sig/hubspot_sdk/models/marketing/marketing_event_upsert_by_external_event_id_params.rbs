@@ -1,0 +1,28 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      type marketing_event_upsert_by_external_event_id_params =
+        { path_external_event_id: String }
+        & HubspotSDK::Internal::Type::request_parameters
+
+      class MarketingEventUpsertByExternalEventIDParams < HubspotSDK::Models::Marketing::MarketingEventCreateRequestParams
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        def path_external_event_id: -> String
+
+        def path_external_event_id=: (String _) -> String
+
+        def initialize: (
+          path_external_event_id: String,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          path_external_event_id: String,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

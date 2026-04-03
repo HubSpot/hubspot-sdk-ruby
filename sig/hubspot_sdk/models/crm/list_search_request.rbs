@@ -3,10 +3,10 @@ module HubspotSDK
     module Crm
       type list_search_request =
         {
-          additional_properties: ::Array[String],
           list_ids: ::Array[String],
           offset: Integer,
           processing_types: ::Array[String],
+          additional_filter_properties: ::Array[String],
           count: Integer,
           object_type_id: String,
           query: String,
@@ -14,13 +14,15 @@ module HubspotSDK
         }
 
       class ListSearchRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor additional_properties: ::Array[String]
-
         attr_accessor list_ids: ::Array[String]
 
         attr_accessor offset: Integer
 
         attr_accessor processing_types: ::Array[String]
+
+        attr_reader additional_filter_properties: ::Array[String]?
+
+        def additional_filter_properties=: (::Array[String]) -> ::Array[String]
 
         attr_reader count: Integer?
 
@@ -39,10 +41,10 @@ module HubspotSDK
         def sort=: (String) -> String
 
         def initialize: (
-          additional_properties: ::Array[String],
           list_ids: ::Array[String],
           offset: Integer,
           processing_types: ::Array[String],
+          ?additional_filter_properties: ::Array[String],
           ?count: Integer,
           ?object_type_id: String,
           ?query: String,
@@ -50,10 +52,10 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
-          additional_properties: ::Array[String],
           list_ids: ::Array[String],
           offset: Integer,
           processing_types: ::Array[String],
+          additional_filter_properties: ::Array[String],
           count: Integer,
           object_type_id: String,
           query: String,

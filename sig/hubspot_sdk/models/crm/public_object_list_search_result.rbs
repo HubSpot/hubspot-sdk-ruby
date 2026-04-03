@@ -3,13 +3,13 @@ module HubspotSDK
     module Crm
       type public_object_list_search_result =
         {
-          additional_properties: ::Hash[Symbol, String],
           list_id: String,
           list_version: Integer,
           name: String,
           object_type_id: String,
           processing_status: String,
           processing_type: String,
+          additional_filter_properties: ::Hash[Symbol, String],
           created_at: Time,
           created_by_id: String,
           deleted_at: Time,
@@ -19,8 +19,6 @@ module HubspotSDK
         }
 
       class PublicObjectListSearchResult < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor additional_properties: ::Hash[Symbol, String]
-
         attr_accessor list_id: String
 
         attr_accessor list_version: Integer
@@ -32,6 +30,12 @@ module HubspotSDK
         attr_accessor processing_status: String
 
         attr_accessor processing_type: String
+
+        attr_reader additional_filter_properties: ::Hash[Symbol, String]?
+
+        def additional_filter_properties=: (
+          ::Hash[Symbol, String]
+        ) -> ::Hash[Symbol, String]
 
         attr_reader created_at: Time?
 
@@ -58,13 +62,13 @@ module HubspotSDK
         def updated_by_id=: (String) -> String
 
         def initialize: (
-          additional_properties: ::Hash[Symbol, String],
           list_id: String,
           list_version: Integer,
           name: String,
           object_type_id: String,
           processing_status: String,
           processing_type: String,
+          ?additional_filter_properties: ::Hash[Symbol, String],
           ?created_at: Time,
           ?created_by_id: String,
           ?deleted_at: Time,
@@ -74,13 +78,13 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
-          additional_properties: ::Hash[Symbol, String],
           list_id: String,
           list_version: Integer,
           name: String,
           object_type_id: String,
           processing_status: String,
           processing_type: String,
+          additional_filter_properties: ::Hash[Symbol, String],
           created_at: Time,
           created_by_id: String,
           deleted_at: Time,

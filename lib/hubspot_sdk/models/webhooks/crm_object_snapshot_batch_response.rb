@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Webhooks
-      # @see HubspotSDK::Resources::Webhooks::Webhooks#create_crm_snapshot
+      # @see HubspotSDK::Resources::Webhooks::WebhookSubscriptions#create_crm_snapshot
       class CrmObjectSnapshotBatchResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute snapshot_responses
         #

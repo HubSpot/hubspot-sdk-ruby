@@ -12,8 +12,8 @@ module HubspotSDK
 
         # @!attribute object
         #
-        #   @return [HubspotSDK::Models::Cms::Page]
-        required :object, -> { HubspotSDK::Cms::Page }
+        #   @return [HubspotSDK::Models::Cms::CmsPage]
+        required :object, -> { HubspotSDK::Cms::CmsPage }
 
         # @!attribute updated_at
         #
@@ -27,7 +27,7 @@ module HubspotSDK
 
         # @!method initialize(id:, object:, updated_at:, user:)
         #   @param id [String]
-        #   @param object [HubspotSDK::Models::Cms::Page]
+        #   @param object [HubspotSDK::Models::Cms::CmsPage]
         #   @param updated_at [Time]
         #   @param user [HubspotSDK::Models::VersionUser]
       end

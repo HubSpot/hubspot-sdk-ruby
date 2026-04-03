@@ -1,0 +1,51 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      module MarketingEvents
+        type participation_list_breakdown_by_contact_params =
+          {
+            contact_identifier: String,
+            after: String,
+            limit: Integer,
+            state: String
+          }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class ParticipationListBreakdownByContactParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor contact_identifier: String
+
+          attr_reader after: String?
+
+          def after=: (String) -> String
+
+          attr_reader limit: Integer?
+
+          def limit=: (Integer) -> Integer
+
+          attr_reader state: String?
+
+          def state=: (String) -> String
+
+          def initialize: (
+            contact_identifier: String,
+            ?after: String,
+            ?limit: Integer,
+            ?state: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            contact_identifier: String,
+            after: String,
+            limit: Integer,
+            state: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

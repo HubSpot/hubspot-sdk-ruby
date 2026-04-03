@@ -35,7 +35,7 @@ class HubspotSDK::Test::Resources::Cms::PagesTest < HubspotSDK::Test::ResourceTe
     assert_pattern do
       response => {
         id: String,
-        object: HubspotSDK::Cms::Page,
+        object: HubspotSDK::Cms::CmsPage,
         updated_at: Time,
         user: HubspotSDK::VersionUser
       }
@@ -74,7 +74,7 @@ class HubspotSDK::Test::Resources::Cms::PagesTest < HubspotSDK::Test::ResourceTe
     assert_pattern do
       response => {
         id: String,
-        object: HubspotSDK::Cms::Page,
+        object: HubspotSDK::Cms::CmsPage,
         updated_at: Time,
         user: HubspotSDK::VersionUser
       }
@@ -120,7 +120,7 @@ class HubspotSDK::Test::Resources::Cms::PagesTest < HubspotSDK::Test::ResourceTe
     assert_pattern do
       row => {
         id: String,
-        object: HubspotSDK::Cms::Page,
+        object: HubspotSDK::Cms::CmsPage,
         updated_at: Time,
         user: HubspotSDK::VersionUser
       }
@@ -146,7 +146,7 @@ class HubspotSDK::Test::Resources::Cms::PagesTest < HubspotSDK::Test::ResourceTe
     assert_pattern do
       row => {
         id: String,
-        object: HubspotSDK::Cms::Page,
+        object: HubspotSDK::Cms::CmsPage,
         updated_at: Time,
         user: HubspotSDK::VersionUser
       }
@@ -169,13 +169,13 @@ class HubspotSDK::Test::Resources::Cms::PagesTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.cms.pages.restore_landing_page_revision("revisionId", object_id_: "objectId")
 
     assert_pattern do
-      response => HubspotSDK::Cms::Page
+      response => HubspotSDK::Cms::CmsPage
     end
 
     assert_pattern do
       response => {
         id: String,
-        ab_status: HubspotSDK::Cms::Page::AbStatus,
+        ab_status: HubspotSDK::Cms::CmsPage::AbStatus,
         ab_test_id: String,
         archived_at: Time,
         archived_in_dashboard: HubspotSDK::Internal::Type::Boolean,
@@ -184,11 +184,11 @@ class HubspotSDK::Test::Resources::Cms::PagesTest < HubspotSDK::Test::ResourceTe
         campaign: String,
         category_id: Integer,
         content_group_id: String,
-        content_type_category: HubspotSDK::Cms::Page::ContentTypeCategory,
+        content_type_category: HubspotSDK::Cms::CmsPage::ContentTypeCategory,
         created: Time,
         created_by_id: String,
         currently_published: HubspotSDK::Internal::Type::Boolean,
-        current_state: HubspotSDK::Cms::Page::CurrentState,
+        current_state: HubspotSDK::Cms::CmsPage::CurrentState,
         domain: String,
         dynamic_page_data_source_id: String,
         dynamic_page_data_source_type: Integer,
@@ -202,7 +202,7 @@ class HubspotSDK::Test::Resources::Cms::PagesTest < HubspotSDK::Test::ResourceTe
         head_html: String,
         html_title: String,
         include_default_custom_css: HubspotSDK::Internal::Type::Boolean,
-        language: HubspotSDK::Cms::Page::Language,
+        language: HubspotSDK::Cms::CmsPage::Language,
         layout_sections: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::LayoutSection]),
         link_rel_canonical_url: String,
         mab_experiment_id: String,
@@ -241,13 +241,13 @@ class HubspotSDK::Test::Resources::Cms::PagesTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.cms.pages.restore_landing_page_revision_to_draft(0, object_id_: "objectId")
 
     assert_pattern do
-      response => HubspotSDK::Cms::Page
+      response => HubspotSDK::Cms::CmsPage
     end
 
     assert_pattern do
       response => {
         id: String,
-        ab_status: HubspotSDK::Cms::Page::AbStatus,
+        ab_status: HubspotSDK::Cms::CmsPage::AbStatus,
         ab_test_id: String,
         archived_at: Time,
         archived_in_dashboard: HubspotSDK::Internal::Type::Boolean,
@@ -256,11 +256,11 @@ class HubspotSDK::Test::Resources::Cms::PagesTest < HubspotSDK::Test::ResourceTe
         campaign: String,
         category_id: Integer,
         content_group_id: String,
-        content_type_category: HubspotSDK::Cms::Page::ContentTypeCategory,
+        content_type_category: HubspotSDK::Cms::CmsPage::ContentTypeCategory,
         created: Time,
         created_by_id: String,
         currently_published: HubspotSDK::Internal::Type::Boolean,
-        current_state: HubspotSDK::Cms::Page::CurrentState,
+        current_state: HubspotSDK::Cms::CmsPage::CurrentState,
         domain: String,
         dynamic_page_data_source_id: String,
         dynamic_page_data_source_type: Integer,
@@ -274,7 +274,7 @@ class HubspotSDK::Test::Resources::Cms::PagesTest < HubspotSDK::Test::ResourceTe
         head_html: String,
         html_title: String,
         include_default_custom_css: HubspotSDK::Internal::Type::Boolean,
-        language: HubspotSDK::Cms::Page::Language,
+        language: HubspotSDK::Cms::CmsPage::Language,
         layout_sections: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::LayoutSection]),
         link_rel_canonical_url: String,
         mab_experiment_id: String,
@@ -313,13 +313,13 @@ class HubspotSDK::Test::Resources::Cms::PagesTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.cms.pages.restore_site_page_revision("revisionId", object_id_: "objectId")
 
     assert_pattern do
-      response => HubspotSDK::Cms::Page
+      response => HubspotSDK::Cms::CmsPage
     end
 
     assert_pattern do
       response => {
         id: String,
-        ab_status: HubspotSDK::Cms::Page::AbStatus,
+        ab_status: HubspotSDK::Cms::CmsPage::AbStatus,
         ab_test_id: String,
         archived_at: Time,
         archived_in_dashboard: HubspotSDK::Internal::Type::Boolean,
@@ -328,11 +328,11 @@ class HubspotSDK::Test::Resources::Cms::PagesTest < HubspotSDK::Test::ResourceTe
         campaign: String,
         category_id: Integer,
         content_group_id: String,
-        content_type_category: HubspotSDK::Cms::Page::ContentTypeCategory,
+        content_type_category: HubspotSDK::Cms::CmsPage::ContentTypeCategory,
         created: Time,
         created_by_id: String,
         currently_published: HubspotSDK::Internal::Type::Boolean,
-        current_state: HubspotSDK::Cms::Page::CurrentState,
+        current_state: HubspotSDK::Cms::CmsPage::CurrentState,
         domain: String,
         dynamic_page_data_source_id: String,
         dynamic_page_data_source_type: Integer,
@@ -346,7 +346,7 @@ class HubspotSDK::Test::Resources::Cms::PagesTest < HubspotSDK::Test::ResourceTe
         head_html: String,
         html_title: String,
         include_default_custom_css: HubspotSDK::Internal::Type::Boolean,
-        language: HubspotSDK::Cms::Page::Language,
+        language: HubspotSDK::Cms::CmsPage::Language,
         layout_sections: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::LayoutSection]),
         link_rel_canonical_url: String,
         mab_experiment_id: String,
@@ -385,13 +385,13 @@ class HubspotSDK::Test::Resources::Cms::PagesTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.cms.pages.restore_site_page_revision_to_draft(0, object_id_: "objectId")
 
     assert_pattern do
-      response => HubspotSDK::Cms::Page
+      response => HubspotSDK::Cms::CmsPage
     end
 
     assert_pattern do
       response => {
         id: String,
-        ab_status: HubspotSDK::Cms::Page::AbStatus,
+        ab_status: HubspotSDK::Cms::CmsPage::AbStatus,
         ab_test_id: String,
         archived_at: Time,
         archived_in_dashboard: HubspotSDK::Internal::Type::Boolean,
@@ -400,11 +400,11 @@ class HubspotSDK::Test::Resources::Cms::PagesTest < HubspotSDK::Test::ResourceTe
         campaign: String,
         category_id: Integer,
         content_group_id: String,
-        content_type_category: HubspotSDK::Cms::Page::ContentTypeCategory,
+        content_type_category: HubspotSDK::Cms::CmsPage::ContentTypeCategory,
         created: Time,
         created_by_id: String,
         currently_published: HubspotSDK::Internal::Type::Boolean,
-        current_state: HubspotSDK::Cms::Page::CurrentState,
+        current_state: HubspotSDK::Cms::CmsPage::CurrentState,
         domain: String,
         dynamic_page_data_source_id: String,
         dynamic_page_data_source_type: Integer,
@@ -418,7 +418,7 @@ class HubspotSDK::Test::Resources::Cms::PagesTest < HubspotSDK::Test::ResourceTe
         head_html: String,
         html_title: String,
         include_default_custom_css: HubspotSDK::Internal::Type::Boolean,
-        language: HubspotSDK::Cms::Page::Language,
+        language: HubspotSDK::Cms::CmsPage::Language,
         layout_sections: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::LayoutSection]),
         link_rel_canonical_url: String,
         mab_experiment_id: String,

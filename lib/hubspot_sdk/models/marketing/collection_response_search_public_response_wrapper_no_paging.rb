@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::Events#search_by_external_event_id
+      # @see HubspotSDK::Resources::Marketing::MarketingEvents#search_by_external_event_id
       class CollectionResponseSearchPublicResponseWrapperNoPaging < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #

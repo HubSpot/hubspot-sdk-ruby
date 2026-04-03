@@ -22,7 +22,7 @@ module HubspotSDK
           # Create a batch of landing pages as detailed in the request body.
           sig do
             params(
-              inputs: T::Array[HubspotSDK::Cms::Page::OrHash],
+              inputs: T::Array[HubspotSDK::Cms::CmsPage::OrHash],
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Cms::BatchResponsePage)
           end
@@ -36,7 +36,7 @@ module HubspotSDK
           # Create a batch of website pages as specified in the request body.
           sig do
             params(
-              inputs: T::Array[HubspotSDK::Cms::Page::OrHash],
+              inputs: T::Array[HubspotSDK::Cms::CmsPage::OrHash],
               request_options: HubspotSDK::RequestOptions::OrHash
             ).returns(HubspotSDK::Cms::BatchResponsePage)
           end

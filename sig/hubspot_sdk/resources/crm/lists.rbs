@@ -115,10 +115,10 @@ module HubspotSDK
         ) -> HubspotSDK::Crm::ListSizeAndEditHistoryResponse
 
         def list_by_search: (
-          additional_properties: ::Array[String],
           list_ids: ::Array[String],
           offset: Integer,
           processing_types: ::Array[String],
+          ?additional_filter_properties: ::Array[String],
           ?count: Integer,
           ?object_type_id: String,
           ?query: String,
