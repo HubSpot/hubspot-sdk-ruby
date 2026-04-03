@@ -54,37 +54,39 @@ module HubspotSDK
         module Operation
           extend HubspotSDK::Internal::Type::Union
 
-          variant -> { HubspotSDK::Crm::PublicBoolPropertyOperation }
+          discriminator :operationType
 
-          variant -> { HubspotSDK::Crm::PublicNumberPropertyOperation }
+          variant :BOOL, -> { HubspotSDK::Crm::PublicBoolPropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicStringPropertyOperation }
+          variant :NUMBER, -> { HubspotSDK::Crm::PublicNumberPropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicDateTimePropertyOperation }
+          variant :STRING, -> { HubspotSDK::Crm::PublicStringPropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicRangedDatePropertyOperation }
+          variant :DATETIME, -> { HubspotSDK::Crm::PublicDateTimePropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation }
+          variant :RANGED_DATE, -> { HubspotSDK::Crm::PublicRangedDatePropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicComparativeDatePropertyOperation }
+          variant :COMPARATIVE_PROPERTY_UPDATED, -> { HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation }
 
-          variant -> { HubspotSDK::Crm::PublicRollingDateRangePropertyOperation }
+          variant :COMPARATIVE_DATE, -> { HubspotSDK::Crm::PublicComparativeDatePropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation }
+          variant :ROLLING_DATE_RANGE, -> { HubspotSDK::Crm::PublicRollingDateRangePropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicEnumerationPropertyOperation }
+          variant :ROLLING_PROPERTY_UPDATED, -> { HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation }
 
-          variant -> { HubspotSDK::Crm::PublicAllPropertyTypesOperation }
+          variant :ENUMERATION, -> { HubspotSDK::Crm::PublicEnumerationPropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicRangedNumberPropertyOperation }
+          variant :ALL_PROPERTY, -> { HubspotSDK::Crm::PublicAllPropertyTypesOperation }
 
-          variant -> { HubspotSDK::Crm::PublicMultiStringPropertyOperation }
+          variant :NUMBER_RANGED, -> { HubspotSDK::Crm::PublicRangedNumberPropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicDatePropertyOperation }
+          variant :MULTISTRING, -> { HubspotSDK::Crm::PublicMultiStringPropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicCalendarDatePropertyOperation }
+          variant :DATE, -> { HubspotSDK::Crm::PublicDatePropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicTimePointOperation }
+          variant :CALENDAR_DATE, -> { HubspotSDK::Crm::PublicCalendarDatePropertyOperation }
+
+          variant :TIME_POINT, -> { HubspotSDK::Crm::PublicTimePointOperation }
 
           variant -> { HubspotSDK::Crm::PublicRangedTimeOperation }
 

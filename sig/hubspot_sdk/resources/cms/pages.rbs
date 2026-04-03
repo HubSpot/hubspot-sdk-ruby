@@ -141,25 +141,25 @@ module HubspotSDK
           String revision_id,
           object_id_: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::Page
+        ) -> HubspotSDK::Cms::CmsPage
 
         def restore_landing_page_revision_to_draft: (
           Integer revision_id,
           object_id_: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::Page
+        ) -> HubspotSDK::Cms::CmsPage
 
         def restore_site_page_revision: (
           String revision_id,
           object_id_: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::Page
+        ) -> HubspotSDK::Cms::CmsPage
 
         def restore_site_page_revision_to_draft: (
           Integer revision_id,
           object_id_: String,
           ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::Page
+        ) -> HubspotSDK::Cms::CmsPage
 
         def initialize: (client: HubspotSDK::Client) -> void
       end

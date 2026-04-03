@@ -69,8 +69,8 @@ module HubspotSDK
         sig { returns(HubspotSDK::Resources::Crm::Objects::Notes) }
         attr_reader :notes
 
-        sig { returns(HubspotSDK::Resources::Crm::Objects::Objects) }
-        attr_reader :objects
+        sig { returns(HubspotSDK::Resources::Crm::Objects::GenericObjects) }
+        attr_reader :generic_objects
 
         sig { returns(HubspotSDK::Resources::Crm::Objects::Orders) }
         attr_reader :orders

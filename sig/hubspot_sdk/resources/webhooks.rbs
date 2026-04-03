@@ -1,7 +1,7 @@
 module HubspotSDK
   module Resources
     class Webhooks
-      attr_reader webhooks: HubspotSDK::Resources::Webhooks::Webhooks
+      attr_reader webhook_subscriptions: HubspotSDK::Resources::Webhooks::WebhookSubscriptions
 
       def initialize: (client: HubspotSDK::Client) -> void
     end

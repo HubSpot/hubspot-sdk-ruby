@@ -1,0 +1,32 @@
+module HubspotSDK
+  module Models
+    module Marketing
+      module MarketingEvents
+        type list_association_delete_params =
+          { marketing_event_id: String, list_id: String }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class ListAssociationDeleteParams < HubspotSDK::Internal::Type::BaseModel
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          attr_accessor marketing_event_id: String
+
+          attr_accessor list_id: String
+
+          def initialize: (
+            marketing_event_id: String,
+            list_id: String,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            marketing_event_id: String,
+            list_id: String,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

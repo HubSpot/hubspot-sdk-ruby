@@ -13,7 +13,7 @@ module HubspotSDK
           end
 
         # Collection of pages.
-        sig { returns(T::Array[HubspotSDK::Cms::Page]) }
+        sig { returns(T::Array[HubspotSDK::Cms::CmsPage]) }
         attr_accessor :results
 
         # Total number of pages.
@@ -28,7 +28,7 @@ module HubspotSDK
 
         sig do
           params(
-            results: T::Array[HubspotSDK::Cms::Page::OrHash],
+            results: T::Array[HubspotSDK::Cms::CmsPage::OrHash],
             total: Integer,
             paging: HubspotSDK::ForwardPaging::OrHash
           ).returns(T.attached_class)
@@ -45,7 +45,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              results: T::Array[HubspotSDK::Cms::Page],
+              results: T::Array[HubspotSDK::Cms::CmsPage],
               total: Integer,
               paging: HubspotSDK::ForwardPaging
             }

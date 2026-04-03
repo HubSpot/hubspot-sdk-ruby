@@ -9,8 +9,8 @@ module HubspotSDK
       sig { returns(HubspotSDK::Resources::Marketing::Emails) }
       attr_reader :emails
 
-      sig { returns(HubspotSDK::Resources::Marketing::Events) }
-      attr_reader :events
+      sig { returns(HubspotSDK::Resources::Marketing::MarketingEvents) }
+      attr_reader :marketing_events
 
       sig { returns(HubspotSDK::Resources::Marketing::SingleSend) }
       attr_reader :single_send

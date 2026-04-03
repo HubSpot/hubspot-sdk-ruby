@@ -12,11 +12,6 @@ module HubspotSDK
             )
           end
 
-        # The name and value of any additional properties that exist for this list and
-        # that were included in the search request.
-        sig { returns(T::Hash[Symbol, String]) }
-        attr_accessor :additional_properties
-
         # The **ILS ID** of the list.
         sig { returns(String) }
         attr_accessor :list_id
@@ -40,6 +35,16 @@ module HubspotSDK
         # The processing type of the list.
         sig { returns(String) }
         attr_accessor :processing_type
+
+        # The name and value of any additional properties that exist for this list and
+        # that were included in the search request.
+        sig { returns(T.nilable(T::Hash[Symbol, String])) }
+        attr_reader :additional_filter_properties
+
+        sig do
+          params(additional_filter_properties: T::Hash[Symbol, String]).void
+        end
+        attr_writer :additional_filter_properties
 
         # The time when the list was created.
         sig { returns(T.nilable(Time)) }
@@ -85,13 +90,13 @@ module HubspotSDK
 
         sig do
           params(
-            additional_properties: T::Hash[Symbol, String],
             list_id: String,
             list_version: Integer,
             name: String,
             object_type_id: String,
             processing_status: String,
             processing_type: String,
+            additional_filter_properties: T::Hash[Symbol, String],
             created_at: Time,
             created_by_id: String,
             deleted_at: Time,
@@ -101,9 +106,6 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The name and value of any additional properties that exist for this list and
-          # that were included in the search request.
-          additional_properties:,
           # The **ILS ID** of the list.
           list_id:,
           # The version of the list.
@@ -116,6 +118,9 @@ module HubspotSDK
           processing_status:,
           # The processing type of the list.
           processing_type:,
+          # The name and value of any additional properties that exist for this list and
+          # that were included in the search request.
+          additional_filter_properties: nil,
           # The time when the list was created.
           created_at: nil,
           # The ID of the user that created the list.
@@ -134,13 +139,13 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              additional_properties: T::Hash[Symbol, String],
               list_id: String,
               list_version: Integer,
               name: String,
               object_type_id: String,
               processing_status: String,
               processing_type: String,
+              additional_filter_properties: T::Hash[Symbol, String],
               created_at: Time,
               created_by_id: String,
               deleted_at: Time,

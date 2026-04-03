@@ -4,15 +4,6 @@ module HubspotSDK
   module Models
     module Crm
       class PublicObjectListSearchResult < HubspotSDK::Internal::Type::BaseModel
-        # @!attribute additional_properties
-        #   The name and value of any additional properties that exist for this list and
-        #   that were included in the search request.
-        #
-        #   @return [Hash{Symbol=>String}]
-        required :additional_properties,
-                 HubspotSDK::Internal::Type::HashOf[String],
-                 api_name: :additionalProperties
-
         # @!attribute list_id
         #   The **ILS ID** of the list.
         #
@@ -48,6 +39,13 @@ module HubspotSDK
         #
         #   @return [String]
         required :processing_type, String, api_name: :processingType
+
+        # @!attribute additional_filter_properties
+        #   The name and value of any additional properties that exist for this list and
+        #   that were included in the search request.
+        #
+        #   @return [Hash{Symbol=>String}, nil]
+        optional :additional_filter_properties, HubspotSDK::Internal::Type::HashOf[String]
 
         # @!attribute created_at
         #   The time when the list was created.
@@ -85,11 +83,9 @@ module HubspotSDK
         #   @return [String, nil]
         optional :updated_by_id, String, api_name: :updatedById
 
-        # @!method initialize(additional_properties:, list_id:, list_version:, name:, object_type_id:, processing_status:, processing_type:, created_at: nil, created_by_id: nil, deleted_at: nil, filters_updated_at: nil, updated_at: nil, updated_by_id: nil)
+        # @!method initialize(list_id:, list_version:, name:, object_type_id:, processing_status:, processing_type:, additional_filter_properties: nil, created_at: nil, created_by_id: nil, deleted_at: nil, filters_updated_at: nil, updated_at: nil, updated_by_id: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubspotSDK::Models::Crm::PublicObjectListSearchResult} for more details.
-        #
-        #   @param additional_properties [Hash{Symbol=>String}] The name and value of any additional properties that exist for this list and tha
         #
         #   @param list_id [String] The **ILS ID** of the list.
         #
@@ -102,6 +98,8 @@ module HubspotSDK
         #   @param processing_status [String] The processing status of the list.
         #
         #   @param processing_type [String] The processing type of the list.
+        #
+        #   @param additional_filter_properties [Hash{Symbol=>String}] The name and value of any additional properties that exist for this list and tha
         #
         #   @param created_at [Time] The time when the list was created.
         #

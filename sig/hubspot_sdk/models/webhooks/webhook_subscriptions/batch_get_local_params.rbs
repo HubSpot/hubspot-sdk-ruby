@@ -1,0 +1,30 @@
+module HubspotSDK
+  module Models
+    module Webhooks
+      module WebhookSubscriptions
+        type batch_get_local_params =
+          { install_portal_id: Integer }
+          & HubspotSDK::Internal::Type::request_parameters
+
+        class BatchGetLocalParams < HubspotSDK::Models::BatchInputString
+          extend HubspotSDK::Internal::Type::RequestParameters::Converter
+          include HubspotSDK::Internal::Type::RequestParameters
+
+          def install_portal_id: -> Integer?
+
+          def install_portal_id=: (Integer _) -> Integer
+
+          def initialize: (
+            ?install_portal_id: Integer,
+            ?request_options: HubspotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            install_portal_id: Integer,
+            request_options: HubspotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

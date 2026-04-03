@@ -44,7 +44,7 @@ module HubspotSDK
 
         attr_reader notes: HubspotSDK::Resources::Crm::Objects::Notes
 
-        attr_reader objects: HubspotSDK::Resources::Crm::Objects::Objects
+        attr_reader generic_objects: HubspotSDK::Resources::Crm::Objects::GenericObjects
 
         attr_reader orders: HubspotSDK::Resources::Crm::Objects::Orders
 

@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::Events#list
+      # @see HubspotSDK::Resources::Marketing::MarketingEvents#list
       class MarketingEventPublicReadResponseV2 < HubspotSDK::Internal::Type::BaseModel
         # @!attribute created_at
         #   The creation date and time of the marketing event

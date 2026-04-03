@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::Events#get_by_external_event_id
+      # @see HubspotSDK::Resources::Marketing::MarketingEvents#get_by_external_event_id
       class MarketingEventPublicReadResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The ID of the marketing event CRM object.

@@ -67,8 +67,8 @@ module HubspotSDK
         # @return [HubspotSDK::Resources::Crm::Objects::Notes]
         attr_reader :notes
 
-        # @return [HubspotSDK::Resources::Crm::Objects::Objects]
-        attr_reader :objects
+        # @return [HubspotSDK::Resources::Crm::Objects::GenericObjects]
+        attr_reader :generic_objects
 
         # @return [HubspotSDK::Resources::Crm::Objects::Orders]
         attr_reader :orders
@@ -135,7 +135,7 @@ module HubspotSDK
           @listings = HubspotSDK::Resources::Crm::Objects::Listings.new(client: client)
           @meetings = HubspotSDK::Resources::Crm::Objects::Meetings.new(client: client)
           @notes = HubspotSDK::Resources::Crm::Objects::Notes.new(client: client)
-          @objects = HubspotSDK::Resources::Crm::Objects::Objects.new(client: client)
+          @generic_objects = HubspotSDK::Resources::Crm::Objects::GenericObjects.new(client: client)
           @orders = HubspotSDK::Resources::Crm::Objects::Orders.new(client: client)
           @partner_clients = HubspotSDK::Resources::Crm::Objects::PartnerClients.new(client: client)
           @partner_services = HubspotSDK::Resources::Crm::Objects::PartnerServices.new(client: client)

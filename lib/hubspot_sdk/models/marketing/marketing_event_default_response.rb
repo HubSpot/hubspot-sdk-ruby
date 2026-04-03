@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::Events#create
+      # @see HubspotSDK::Resources::Marketing::MarketingEvents#create
       class MarketingEventDefaultResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute custom_properties
         #   A list of PropertyValues. These can be whatever kind of property names and

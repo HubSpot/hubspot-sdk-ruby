@@ -4,7 +4,7 @@ module HubspotSDK
       type page_version =
         {
           id: String,
-          object: HubspotSDK::Cms::Page,
+          object: HubspotSDK::Cms::CmsPage,
           updated_at: Time,
           user: HubspotSDK::VersionUser
         }
@@ -12,7 +12,7 @@ module HubspotSDK
       class PageVersion < HubspotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
-        attr_accessor object: HubspotSDK::Cms::Page
+        attr_accessor object: HubspotSDK::Cms::CmsPage
 
         attr_accessor updated_at: Time
 
@@ -20,14 +20,14 @@ module HubspotSDK
 
         def initialize: (
           id: String,
-          object: HubspotSDK::Cms::Page,
+          object: HubspotSDK::Cms::CmsPage,
           updated_at: Time,
           user: HubspotSDK::VersionUser
         ) -> void
 
         def to_hash: -> {
           id: String,
-          object: HubspotSDK::Cms::Page,
+          object: HubspotSDK::Cms::CmsPage,
           updated_at: Time,
           user: HubspotSDK::VersionUser
         }

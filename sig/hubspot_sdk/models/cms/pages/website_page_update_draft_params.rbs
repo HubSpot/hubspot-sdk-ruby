@@ -6,7 +6,7 @@ module HubspotSDK
           { object_id_: String }
           & HubspotSDK::Internal::Type::request_parameters
 
-        class WebsitePageUpdateDraftParams < HubspotSDK::Models::Cms::Page
+        class WebsitePageUpdateDraftParams < HubspotSDK::Models::Cms::CmsPage
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

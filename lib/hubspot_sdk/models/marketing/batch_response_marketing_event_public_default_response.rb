@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::Events#upsert_batch
+      # @see HubspotSDK::Resources::Marketing::MarketingEvents#upsert_batch
       class BatchResponseMarketingEventPublicDefaultResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   Timestamp of when the request was completed.
