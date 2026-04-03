@@ -44,7 +44,7 @@ module HubspotSDK
         attr_accessor :object_type_id
 
         # Properties defined for this object type.
-        sig { returns(T::Array[HubspotSDK::Property]) }
+        sig { returns(T::Array[HubspotSDK::Crm::Property]) }
         attr_accessor :properties
 
         # The names of properties that should be **required** when creating an object of
@@ -112,7 +112,7 @@ module HubspotSDK
             labels: HubspotSDK::ObjectTypeDefinitionLabels::OrHash,
             name: String,
             object_type_id: String,
-            properties: T::Array[HubspotSDK::Property::OrHash],
+            properties: T::Array[HubspotSDK::Crm::Property::OrHash],
             required_properties: T::Array[String],
             searchable_properties: T::Array[String],
             secondary_display_properties: T::Array[String],
@@ -173,7 +173,7 @@ module HubspotSDK
               labels: HubspotSDK::ObjectTypeDefinitionLabels,
               name: String,
               object_type_id: String,
-              properties: T::Array[HubspotSDK::Property],
+              properties: T::Array[HubspotSDK::Crm::Property],
               required_properties: T::Array[String],
               searchable_properties: T::Array[String],
               secondary_display_properties: T::Array[String],

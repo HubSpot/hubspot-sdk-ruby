@@ -22,7 +22,7 @@ module HubspotSDK
         module Units
           extend HubspotSDK::Internal::Type::Enum
 
-          Unknown0 = :%
+          PERCENT = :%
           CH = :ch
           CM = :cm
           EM = :em

@@ -2,59 +2,58 @@
 
 module HubspotSDK
   module Models
-    module Crm
+    module Events
       class Property < HubspotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Crm::Property, HubspotSDK::Internal::AnyHash)
+            T.any(HubspotSDK::Events::Property, HubspotSDK::Internal::AnyHash)
           end
 
-        # A description of the property that will be shown as help text in HubSpot.
+        # A summary of the property's purpose.
         sig { returns(String) }
         attr_accessor :description
 
-        # Controls how the property appears in HubSpot.
+        # Determines how the property will appear in HubSpot's UI or on a form. Learn more
+        # in the properties API guide.
         sig { returns(String) }
         attr_accessor :field_type
 
-        # The name of the property group the property belongs to.
+        # The name of the group to which the property is assigned.
         sig { returns(String) }
         attr_accessor :group_name
 
-        # A human-readable property label that will be shown in HubSpot.
+        # The display label for the property.
         sig { returns(String) }
         attr_accessor :label
 
-        # The internal property name, which must be used when referencing the property via
-        # the API.
+        # The internal name for the property.
         sig { returns(String) }
         attr_accessor :name
 
         # A list of valid options for the property. This field is required for enumerated
-        # properties, but will be empty for other property types.
+        # properties.
         sig { returns(T::Array[HubspotSDK::Option]) }
         attr_accessor :options
 
-        # The property data type.
+        # The data type of the property, such as string or number.
         sig { returns(String) }
         attr_accessor :type
 
-        # Whether or not the property is archived.
+        # Whether the property is archived.
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :archived
 
         sig { params(archived: T::Boolean).void }
         attr_writer :archived
 
-        # When the property was archived.
+        # The timestamp when the property was archived, in ISO 8601 format.
         sig { returns(T.nilable(Time)) }
         attr_reader :archived_at
 
         sig { params(archived_at: Time).void }
         attr_writer :archived_at
 
-        # For default properties, true indicates that the property is calculated by a
-        # HubSpot process. It has no effect for custom properties.
+        # Whether the property is a calculated field.
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :calculated
 
@@ -68,33 +67,27 @@ module HubspotSDK
         sig { params(calculation_formula: String).void }
         attr_writer :calculation_formula
 
-        # When the property was created
+        # The timestamp when the property was created, in ISO 8601 format.
         sig { returns(T.nilable(Time)) }
         attr_reader :created_at
 
         sig { params(created_at: Time).void }
         attr_writer :created_at
 
-        # The internal ID of the user who created the property in HubSpot. This field may
-        # not exist if the property was created outside of HubSpot.
+        # The ID of the user who created the property.
         sig { returns(T.nilable(String)) }
         attr_reader :created_user_id
 
         sig { params(created_user_id: String).void }
         attr_writer :created_user_id
 
-        # The name of the related currency property.
-        sig { returns(T.nilable(String)) }
-        attr_reader :currency_property_name
-
-        sig { params(currency_property_name: String).void }
-        attr_writer :currency_property_name
-
         # Indicates the sensitivity level of the property, such as "non_sensitive",
         # "sensitive", or "highly_sensitive".
         sig do
           returns(
-            T.nilable(HubspotSDK::Crm::Property::DataSensitivity::TaggedSymbol)
+            T.nilable(
+              HubspotSDK::Events::Property::DataSensitivity::TaggedSymbol
+            )
           )
         end
         attr_reader :data_sensitivity
@@ -102,16 +95,16 @@ module HubspotSDK
         sig do
           params(
             data_sensitivity:
-              HubspotSDK::Crm::Property::DataSensitivity::OrSymbol
+              HubspotSDK::Events::Property::DataSensitivity::OrSymbol
           ).void
         end
         attr_writer :data_sensitivity
 
-        # Controls how date properties are displayed in the HubSpot UI, with options such
-        # as 'absolute', 'absolute_with_relative', 'time_since', and 'time_until'.
         sig do
           returns(
-            T.nilable(HubspotSDK::Crm::Property::DateDisplayHint::TaggedSymbol)
+            T.nilable(
+              HubspotSDK::Events::Property::DateDisplayHint::TaggedSymbol
+            )
           )
         end
         attr_reader :date_display_hint
@@ -119,52 +112,49 @@ module HubspotSDK
         sig do
           params(
             date_display_hint:
-              HubspotSDK::Crm::Property::DateDisplayHint::OrSymbol
+              HubspotSDK::Events::Property::DateDisplayHint::OrSymbol
           ).void
         end
         attr_writer :date_display_hint
 
-        # The order that this property should be displayed in the HubSpot UI relative to
-        # other properties for this object type. Properties are displayed in order
-        # starting with the lowest positive integer value. A value of -1 will cause the
-        # property to be displayed **after** any positive values.
+        # The position of the item relative to others in the list.
         sig { returns(T.nilable(Integer)) }
         attr_reader :display_order
 
         sig { params(display_order: Integer).void }
         attr_writer :display_order
 
-        # For default properties, true indicates that the options are stored externally to
-        # the property settings.
+        # Applicable only for enumeration type properties. Should be set to true with a
+        # 'referencedObjectType' of 'OWNER'. Otherwise false.
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :external_options
 
         sig { params(external_options: T::Boolean).void }
         attr_writer :external_options
 
-        # Whether or not the property can be used in a HubSpot form.
+        # Whether the property can appear on forms.
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :form_field
 
         sig { params(form_field: T::Boolean).void }
         attr_writer :form_field
 
-        # Whether or not the property's value must be unique. Once set, this can't be
-        # changed.
+        # Whether the property is a unique identifier property.
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :has_unique_value
 
         sig { params(has_unique_value: T::Boolean).void }
         attr_writer :has_unique_value
 
-        # Hidden options won't be shown in HubSpot.
+        # Whether or not the property will be hidden from the HubSpot UI. It's recommended
+        # that this be set to false for custom properties.
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :hidden
 
         sig { params(hidden: T::Boolean).void }
         attr_writer :hidden
 
-        # This will be true for default object properties built into HubSpot.
+        # A boolean value set to true for HubSpot default properties.
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :hubspot_defined
 
@@ -182,7 +172,7 @@ module HubspotSDK
         end
         attr_writer :modification_metadata
 
-        # If this property is related to other object(s), they'll be listed here.
+        # Deprecated. Use externalOptionsReferenceType instead.
         sig { returns(T.nilable(String)) }
         attr_reader :referenced_object_type
 
@@ -197,23 +187,20 @@ module HubspotSDK
         sig { params(sensitive_data_categories: T::Array[String]).void }
         attr_writer :sensitive_data_categories
 
-        # Whether the property will display the currency symbol set in the account
-        # settings.
+        # Whether to show the currency symbol in HubSpot's UI.
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :show_currency_symbol
 
         sig { params(show_currency_symbol: T::Boolean).void }
         attr_writer :show_currency_symbol
 
-        # When the object type was last updated.
+        # The timestamp when the property was last updated, in ISO 8601 format.
         sig { returns(T.nilable(Time)) }
         attr_reader :updated_at
 
         sig { params(updated_at: Time).void }
         attr_writer :updated_at
 
-        # The internal user ID of the user who updated the property in HubSpot. This field
-        # may not exist if the property was updated outside of HubSpot.
         sig { returns(T.nilable(String)) }
         attr_reader :updated_user_id
 
@@ -236,11 +223,10 @@ module HubspotSDK
             calculation_formula: String,
             created_at: Time,
             created_user_id: String,
-            currency_property_name: String,
             data_sensitivity:
-              HubspotSDK::Crm::Property::DataSensitivity::OrSymbol,
+              HubspotSDK::Events::Property::DataSensitivity::OrSymbol,
             date_display_hint:
-              HubspotSDK::Crm::Property::DateDisplayHint::OrSymbol,
+              HubspotSDK::Events::Property::DateDisplayHint::OrSymbol,
             display_order: Integer,
             external_options: T::Boolean,
             form_field: T::Boolean,
@@ -257,74 +243,62 @@ module HubspotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # A description of the property that will be shown as help text in HubSpot.
+          # A summary of the property's purpose.
           description:,
-          # Controls how the property appears in HubSpot.
+          # Determines how the property will appear in HubSpot's UI or on a form. Learn more
+          # in the properties API guide.
           field_type:,
-          # The name of the property group the property belongs to.
+          # The name of the group to which the property is assigned.
           group_name:,
-          # A human-readable property label that will be shown in HubSpot.
+          # The display label for the property.
           label:,
-          # The internal property name, which must be used when referencing the property via
-          # the API.
+          # The internal name for the property.
           name:,
           # A list of valid options for the property. This field is required for enumerated
-          # properties, but will be empty for other property types.
+          # properties.
           options:,
-          # The property data type.
+          # The data type of the property, such as string or number.
           type:,
-          # Whether or not the property is archived.
+          # Whether the property is archived.
           archived: nil,
-          # When the property was archived.
+          # The timestamp when the property was archived, in ISO 8601 format.
           archived_at: nil,
-          # For default properties, true indicates that the property is calculated by a
-          # HubSpot process. It has no effect for custom properties.
+          # Whether the property is a calculated field.
           calculated: nil,
           # The formula used for calculated properties.
           calculation_formula: nil,
-          # When the property was created
+          # The timestamp when the property was created, in ISO 8601 format.
           created_at: nil,
-          # The internal ID of the user who created the property in HubSpot. This field may
-          # not exist if the property was created outside of HubSpot.
+          # The ID of the user who created the property.
           created_user_id: nil,
-          # The name of the related currency property.
-          currency_property_name: nil,
           # Indicates the sensitivity level of the property, such as "non_sensitive",
           # "sensitive", or "highly_sensitive".
           data_sensitivity: nil,
-          # Controls how date properties are displayed in the HubSpot UI, with options such
-          # as 'absolute', 'absolute_with_relative', 'time_since', and 'time_until'.
           date_display_hint: nil,
-          # The order that this property should be displayed in the HubSpot UI relative to
-          # other properties for this object type. Properties are displayed in order
-          # starting with the lowest positive integer value. A value of -1 will cause the
-          # property to be displayed **after** any positive values.
+          # The position of the item relative to others in the list.
           display_order: nil,
-          # For default properties, true indicates that the options are stored externally to
-          # the property settings.
+          # Applicable only for enumeration type properties. Should be set to true with a
+          # 'referencedObjectType' of 'OWNER'. Otherwise false.
           external_options: nil,
-          # Whether or not the property can be used in a HubSpot form.
+          # Whether the property can appear on forms.
           form_field: nil,
-          # Whether or not the property's value must be unique. Once set, this can't be
-          # changed.
+          # Whether the property is a unique identifier property.
           has_unique_value: nil,
-          # Hidden options won't be shown in HubSpot.
+          # Whether or not the property will be hidden from the HubSpot UI. It's recommended
+          # that this be set to false for custom properties.
           hidden: nil,
-          # This will be true for default object properties built into HubSpot.
+          # A boolean value set to true for HubSpot default properties.
           hubspot_defined: nil,
           modification_metadata: nil,
-          # If this property is related to other object(s), they'll be listed here.
+          # Deprecated. Use externalOptionsReferenceType instead.
           referenced_object_type: nil,
           # When sensitiveData is true, lists the type of sensitive data contained in the
           # property (e.g., "HIPAA").
           sensitive_data_categories: nil,
-          # Whether the property will display the currency symbol set in the account
-          # settings.
+          # Whether to show the currency symbol in HubSpot's UI.
           show_currency_symbol: nil,
-          # When the object type was last updated.
+          # The timestamp when the property was last updated, in ISO 8601 format.
           updated_at: nil,
-          # The internal user ID of the user who updated the property in HubSpot. This field
-          # may not exist if the property was updated outside of HubSpot.
           updated_user_id: nil
         )
         end
@@ -345,11 +319,10 @@ module HubspotSDK
               calculation_formula: String,
               created_at: Time,
               created_user_id: String,
-              currency_property_name: String,
               data_sensitivity:
-                HubspotSDK::Crm::Property::DataSensitivity::TaggedSymbol,
+                HubspotSDK::Events::Property::DataSensitivity::TaggedSymbol,
               date_display_hint:
-                HubspotSDK::Crm::Property::DateDisplayHint::TaggedSymbol,
+                HubspotSDK::Events::Property::DateDisplayHint::TaggedSymbol,
               display_order: Integer,
               external_options: T::Boolean,
               form_field: T::Boolean,
@@ -375,70 +348,72 @@ module HubspotSDK
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::Property::DataSensitivity)
+              T.all(Symbol, HubspotSDK::Events::Property::DataSensitivity)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           HIGHLY_SENSITIVE =
             T.let(
               :highly_sensitive,
-              HubspotSDK::Crm::Property::DataSensitivity::TaggedSymbol
+              HubspotSDK::Events::Property::DataSensitivity::TaggedSymbol
             )
           NON_SENSITIVE =
             T.let(
               :non_sensitive,
-              HubspotSDK::Crm::Property::DataSensitivity::TaggedSymbol
+              HubspotSDK::Events::Property::DataSensitivity::TaggedSymbol
             )
           SENSITIVE =
             T.let(
               :sensitive,
-              HubspotSDK::Crm::Property::DataSensitivity::TaggedSymbol
+              HubspotSDK::Events::Property::DataSensitivity::TaggedSymbol
             )
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Crm::Property::DataSensitivity::TaggedSymbol]
+              T::Array[
+                HubspotSDK::Events::Property::DataSensitivity::TaggedSymbol
+              ]
             )
           end
           def self.values
           end
         end
 
-        # Controls how date properties are displayed in the HubSpot UI, with options such
-        # as 'absolute', 'absolute_with_relative', 'time_since', and 'time_until'.
         module DateDisplayHint
           extend HubspotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::Property::DateDisplayHint)
+              T.all(Symbol, HubspotSDK::Events::Property::DateDisplayHint)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           ABSOLUTE =
             T.let(
               :absolute,
-              HubspotSDK::Crm::Property::DateDisplayHint::TaggedSymbol
+              HubspotSDK::Events::Property::DateDisplayHint::TaggedSymbol
             )
           ABSOLUTE_WITH_RELATIVE =
             T.let(
               :absolute_with_relative,
-              HubspotSDK::Crm::Property::DateDisplayHint::TaggedSymbol
+              HubspotSDK::Events::Property::DateDisplayHint::TaggedSymbol
             )
           TIME_SINCE =
             T.let(
               :time_since,
-              HubspotSDK::Crm::Property::DateDisplayHint::TaggedSymbol
+              HubspotSDK::Events::Property::DateDisplayHint::TaggedSymbol
             )
           TIME_UNTIL =
             T.let(
               :time_until,
-              HubspotSDK::Crm::Property::DateDisplayHint::TaggedSymbol
+              HubspotSDK::Events::Property::DateDisplayHint::TaggedSymbol
             )
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Crm::Property::DateDisplayHint::TaggedSymbol]
+              T::Array[
+                HubspotSDK::Events::Property::DateDisplayHint::TaggedSymbol
+              ]
             )
           end
           def self.values

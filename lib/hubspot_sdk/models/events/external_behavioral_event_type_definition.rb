@@ -43,8 +43,8 @@ module HubspotSDK
 
         # @!attribute properties
         #
-        #   @return [Array<HubspotSDK::Models::Property>]
-        required :properties, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property] }
+        #   @return [Array<HubspotSDK::Models::Events::Property>]
+        required :properties, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::Property] }
 
         # @!attribute combo_event_rules
         #
@@ -112,7 +112,7 @@ module HubspotSDK
         #   @param labels [HubspotSDK::Models::Events::BehavioralEventTypeDefinitionLabels]
         #   @param name [String]
         #   @param object_type_id [String]
-        #   @param properties [Array<HubspotSDK::Models::Property>]
+        #   @param properties [Array<HubspotSDK::Models::Events::Property>]
         #   @param combo_event_rules [HubspotSDK::Models::Events::ComboEventRuleBranch]
         #   @param created_at [Time]
         #   @param created_user_id [Integer]
