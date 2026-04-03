@@ -70,8 +70,6 @@ module HubspotSDK
 
   PreviousPage = HubspotSDK::Models::PreviousPage
 
-  Property = HubspotSDK::Models::Property
-
   PropertyGroup = HubspotSDK::Models::PropertyGroup
 
   PropertyGroupCreate = HubspotSDK::Models::PropertyGroupCreate

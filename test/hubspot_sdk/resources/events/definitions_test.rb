@@ -26,7 +26,7 @@ class HubspotSDK::Test::Resources::Events::DefinitionsTest < HubspotSDK::Test::R
         labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels,
         name: String,
         object_type_id: String,
-        properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property]),
+        properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::Property]),
         combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch | nil,
         created_at: Time | nil,
         created_user_id: Integer | nil,
@@ -59,7 +59,7 @@ class HubspotSDK::Test::Resources::Events::DefinitionsTest < HubspotSDK::Test::R
         labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels,
         name: String,
         object_type_id: String,
-        properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property]),
+        properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::Property]),
         combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch | nil,
         created_at: Time | nil,
         created_user_id: Integer | nil,
@@ -99,7 +99,7 @@ class HubspotSDK::Test::Resources::Events::DefinitionsTest < HubspotSDK::Test::R
         labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels,
         name: String,
         object_type_id: String,
-        properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property]),
+        properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::Property]),
         combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch | nil,
         created_at: Time | nil,
         created_user_id: Integer | nil,
@@ -130,7 +130,7 @@ class HubspotSDK::Test::Resources::Events::DefinitionsTest < HubspotSDK::Test::R
     response = @hubspot.events.definitions.create_property("eventName", label: "label", type: "type")
 
     assert_pattern do
-      response => HubspotSDK::Property
+      response => HubspotSDK::Events::Property
     end
 
     assert_pattern do
@@ -148,8 +148,8 @@ class HubspotSDK::Test::Resources::Events::DefinitionsTest < HubspotSDK::Test::R
         calculation_formula: String | nil,
         created_at: Time | nil,
         created_user_id: String | nil,
-        data_sensitivity: HubspotSDK::Property::DataSensitivity | nil,
-        date_display_hint: HubspotSDK::Property::DateDisplayHint | nil,
+        data_sensitivity: HubspotSDK::Events::Property::DataSensitivity | nil,
+        date_display_hint: HubspotSDK::Events::Property::DateDisplayHint | nil,
         display_order: Integer | nil,
         external_options: HubspotSDK::Internal::Type::Boolean | nil,
         form_field: HubspotSDK::Internal::Type::Boolean | nil,
@@ -194,7 +194,7 @@ class HubspotSDK::Test::Resources::Events::DefinitionsTest < HubspotSDK::Test::R
         labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels,
         name: String,
         object_type_id: String,
-        properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Property]),
+        properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::Property]),
         combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch | nil,
         created_at: Time | nil,
         created_user_id: Integer | nil,
@@ -226,7 +226,7 @@ class HubspotSDK::Test::Resources::Events::DefinitionsTest < HubspotSDK::Test::R
     response = @hubspot.events.definitions.update_property("propertyName", event_name: "eventName")
 
     assert_pattern do
-      response => HubspotSDK::Property
+      response => HubspotSDK::Events::Property
     end
 
     assert_pattern do
@@ -244,8 +244,8 @@ class HubspotSDK::Test::Resources::Events::DefinitionsTest < HubspotSDK::Test::R
         calculation_formula: String | nil,
         created_at: Time | nil,
         created_user_id: String | nil,
-        data_sensitivity: HubspotSDK::Property::DataSensitivity | nil,
-        date_display_hint: HubspotSDK::Property::DateDisplayHint | nil,
+        data_sensitivity: HubspotSDK::Events::Property::DataSensitivity | nil,
+        date_display_hint: HubspotSDK::Events::Property::DateDisplayHint | nil,
         display_order: Integer | nil,
         external_options: HubspotSDK::Internal::Type::Boolean | nil,
         form_field: HubspotSDK::Internal::Type::Boolean | nil,

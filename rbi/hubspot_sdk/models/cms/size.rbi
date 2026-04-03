@@ -39,7 +39,7 @@ module HubspotSDK
             T.type_alias { T.all(Symbol, HubspotSDK::Cms::Size::Units) }
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          Unknown0 = T.let(:"%", HubspotSDK::Cms::Size::Units::TaggedSymbol)
+          PERCENT = T.let(:"%", HubspotSDK::Cms::Size::Units::TaggedSymbol)
           CH = T.let(:ch, HubspotSDK::Cms::Size::Units::TaggedSymbol)
           CM = T.let(:cm, HubspotSDK::Cms::Size::Units::TaggedSymbol)
           EM = T.let(:em, HubspotSDK::Cms::Size::Units::TaggedSymbol)
