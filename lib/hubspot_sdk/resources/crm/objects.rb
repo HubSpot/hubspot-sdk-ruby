@@ -46,6 +46,9 @@ module HubspotSDK
         # @return [HubspotSDK::Resources::Crm::Objects::Fees]
         attr_reader :fees
 
+        # @return [HubspotSDK::Resources::Crm::Objects::GenericObjects]
+        attr_reader :generic_objects
+
         # @return [HubspotSDK::Resources::Crm::Objects::GoalTargets]
         attr_reader :goal_targets
 
@@ -66,9 +69,6 @@ module HubspotSDK
 
         # @return [HubspotSDK::Resources::Crm::Objects::Notes]
         attr_reader :notes
-
-        # @return [HubspotSDK::Resources::Crm::Objects::GenericObjects]
-        attr_reader :generic_objects
 
         # @return [HubspotSDK::Resources::Crm::Objects::Orders]
         attr_reader :orders
@@ -128,6 +128,7 @@ module HubspotSDK
           @emails = HubspotSDK::Resources::Crm::Objects::Emails.new(client: client)
           @feedback_submissions = HubspotSDK::Resources::Crm::Objects::FeedbackSubmissions.new(client: client)
           @fees = HubspotSDK::Resources::Crm::Objects::Fees.new(client: client)
+          @generic_objects = HubspotSDK::Resources::Crm::Objects::GenericObjects.new(client: client)
           @goal_targets = HubspotSDK::Resources::Crm::Objects::GoalTargets.new(client: client)
           @invoices = HubspotSDK::Resources::Crm::Objects::Invoices.new(client: client)
           @leads = HubspotSDK::Resources::Crm::Objects::Leads.new(client: client)
@@ -135,7 +136,6 @@ module HubspotSDK
           @listings = HubspotSDK::Resources::Crm::Objects::Listings.new(client: client)
           @meetings = HubspotSDK::Resources::Crm::Objects::Meetings.new(client: client)
           @notes = HubspotSDK::Resources::Crm::Objects::Notes.new(client: client)
-          @generic_objects = HubspotSDK::Resources::Crm::Objects::GenericObjects.new(client: client)
           @orders = HubspotSDK::Resources::Crm::Objects::Orders.new(client: client)
           @partner_clients = HubspotSDK::Resources::Crm::Objects::PartnerClients.new(client: client)
           @partner_services = HubspotSDK::Resources::Crm::Objects::PartnerServices.new(client: client)

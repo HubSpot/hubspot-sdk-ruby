@@ -9,7 +9,7 @@ module HubspotSDK
           sig do
             params(
               id: String,
-              ab_status: HubspotSDK::Cms::CmsPage::AbStatus::OrSymbol,
+              ab_status: HubspotSDK::Cms::PageData::AbStatus::OrSymbol,
               ab_test_id: String,
               archived_at: Time,
               archived_in_dashboard: T::Boolean,
@@ -19,11 +19,11 @@ module HubspotSDK
               category_id: Integer,
               content_group_id: String,
               content_type_category:
-                HubspotSDK::Cms::CmsPage::ContentTypeCategory::OrSymbol,
+                HubspotSDK::Cms::PageData::ContentTypeCategory::OrSymbol,
               created: Time,
               created_by_id: String,
               currently_published: T::Boolean,
-              current_state: HubspotSDK::Cms::CmsPage::CurrentState::OrSymbol,
+              current_state: HubspotSDK::Cms::PageData::CurrentState::OrSymbol,
               domain: String,
               dynamic_page_data_source_id: String,
               dynamic_page_data_source_type: Integer,
@@ -37,7 +37,7 @@ module HubspotSDK
               head_html: String,
               html_title: String,
               include_default_custom_css: T::Boolean,
-              language: HubspotSDK::Cms::CmsPage::Language::OrSymbol,
+              language: HubspotSDK::Cms::PageData::Language::OrSymbol,
               layout_sections:
                 T::Hash[Symbol, HubspotSDK::Cms::LayoutSection::OrHash],
               link_rel_canonical_url: String,
@@ -72,7 +72,7 @@ module HubspotSDK
               widget_containers: T::Hash[Symbol, T.anything],
               widgets: T::Hash[Symbol, T.anything],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::CmsPage)
+            ).returns(HubspotSDK::Cms::PageData)
           end
           def create(
             # The unique ID of the page.
@@ -220,7 +220,7 @@ module HubspotSDK
             params(
               object_id_: String,
               id: String,
-              ab_status: HubspotSDK::Cms::CmsPage::AbStatus::OrSymbol,
+              ab_status: HubspotSDK::Cms::PageData::AbStatus::OrSymbol,
               ab_test_id: String,
               archived_at: Time,
               archived_in_dashboard: T::Boolean,
@@ -230,11 +230,11 @@ module HubspotSDK
               category_id: Integer,
               content_group_id: String,
               content_type_category:
-                HubspotSDK::Cms::CmsPage::ContentTypeCategory::OrSymbol,
+                HubspotSDK::Cms::PageData::ContentTypeCategory::OrSymbol,
               created: Time,
               created_by_id: String,
               currently_published: T::Boolean,
-              current_state: HubspotSDK::Cms::CmsPage::CurrentState::OrSymbol,
+              current_state: HubspotSDK::Cms::PageData::CurrentState::OrSymbol,
               domain: String,
               dynamic_page_data_source_id: String,
               dynamic_page_data_source_type: Integer,
@@ -248,7 +248,7 @@ module HubspotSDK
               head_html: String,
               html_title: String,
               include_default_custom_css: T::Boolean,
-              language: HubspotSDK::Cms::CmsPage::Language::OrSymbol,
+              language: HubspotSDK::Cms::PageData::Language::OrSymbol,
               layout_sections:
                 T::Hash[Symbol, HubspotSDK::Cms::LayoutSection::OrHash],
               link_rel_canonical_url: String,
@@ -284,7 +284,7 @@ module HubspotSDK
               widgets: T::Hash[Symbol, T.anything],
               archived: T::Boolean,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::CmsPage)
+            ).returns(HubspotSDK::Cms::PageData)
           end
           def update(
             # Path param
@@ -454,7 +454,7 @@ module HubspotSDK
               updated_at: Time,
               updated_before: Time,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Internal::Page[HubspotSDK::Cms::CmsPage])
+            ).returns(HubspotSDK::Internal::Page[HubspotSDK::Cms::PageData])
           end
           def list(
             # The paging cursor token of the last successfully read resource will be returned
@@ -499,7 +499,7 @@ module HubspotSDK
               id: String,
               clone_name: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::CmsPage)
+            ).returns(HubspotSDK::Cms::PageData)
           end
           def clone_(
             # ID of the object to be cloned.
@@ -517,7 +517,7 @@ module HubspotSDK
               archived: T::Boolean,
               property: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::CmsPage)
+            ).returns(HubspotSDK::Cms::PageData)
           end
           def get(
             object_id_,
@@ -533,7 +533,7 @@ module HubspotSDK
             params(
               object_id_: String,
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::CmsPage)
+            ).returns(HubspotSDK::Cms::PageData)
           end
           def get_draft(object_id_, request_options: {})
           end
@@ -586,7 +586,7 @@ module HubspotSDK
             params(
               object_id_: String,
               id: String,
-              ab_status: HubspotSDK::Cms::CmsPage::AbStatus::OrSymbol,
+              ab_status: HubspotSDK::Cms::PageData::AbStatus::OrSymbol,
               ab_test_id: String,
               archived_at: Time,
               archived_in_dashboard: T::Boolean,
@@ -596,11 +596,11 @@ module HubspotSDK
               category_id: Integer,
               content_group_id: String,
               content_type_category:
-                HubspotSDK::Cms::CmsPage::ContentTypeCategory::OrSymbol,
+                HubspotSDK::Cms::PageData::ContentTypeCategory::OrSymbol,
               created: Time,
               created_by_id: String,
               currently_published: T::Boolean,
-              current_state: HubspotSDK::Cms::CmsPage::CurrentState::OrSymbol,
+              current_state: HubspotSDK::Cms::PageData::CurrentState::OrSymbol,
               domain: String,
               dynamic_page_data_source_id: String,
               dynamic_page_data_source_type: Integer,
@@ -614,7 +614,7 @@ module HubspotSDK
               head_html: String,
               html_title: String,
               include_default_custom_css: T::Boolean,
-              language: HubspotSDK::Cms::CmsPage::Language::OrSymbol,
+              language: HubspotSDK::Cms::PageData::Language::OrSymbol,
               layout_sections:
                 T::Hash[Symbol, HubspotSDK::Cms::LayoutSection::OrHash],
               link_rel_canonical_url: String,
@@ -649,7 +649,7 @@ module HubspotSDK
               widget_containers: T::Hash[Symbol, T.anything],
               widgets: T::Hash[Symbol, T.anything],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::CmsPage)
+            ).returns(HubspotSDK::Cms::PageData)
           end
           def update_draft(
             object_id_,

@@ -46,7 +46,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::CmsPage]
+          # @return [HubspotSDK::Models::Cms::PageData]
           #
           # @see HubspotSDK::Models::Cms::Pages::MultiLanguageCreateLanguageVariationParams
           def create_language_variation(params)
@@ -56,7 +56,7 @@ module HubspotSDK
               path: "cms/pages/2026-03/site-pages/multi-language/create-language-variation",
               headers: {"content-type" => "*/*"},
               body: parsed,
-              model: HubspotSDK::Cms::CmsPage,
+              model: HubspotSDK::Cms::PageData,
               options: options
             )
           end

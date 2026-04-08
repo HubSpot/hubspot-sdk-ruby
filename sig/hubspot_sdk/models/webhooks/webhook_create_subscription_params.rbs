@@ -1,0 +1,27 @@
+module HubspotSDK
+  module Models
+    module Webhooks
+      type webhook_create_subscription_params =
+        { app_id: Integer } & HubspotSDK::Internal::Type::request_parameters
+
+      class WebhookCreateSubscriptionParams < HubspotSDK::Models::Webhooks::SubscriptionCreateRequest
+        extend HubspotSDK::Internal::Type::RequestParameters::Converter
+        include HubspotSDK::Internal::Type::RequestParameters
+
+        def app_id: -> Integer
+
+        def app_id=: (Integer _) -> Integer
+
+        def initialize: (
+          app_id: Integer,
+          ?request_options: HubspotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          app_id: Integer,
+          request_options: HubspotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

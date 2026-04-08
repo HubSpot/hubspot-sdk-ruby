@@ -22,7 +22,7 @@ module HubspotSDK
             ?properties: ::Array[String],
             ?sort: ::Array[String],
             ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Internal::Page[top]
+          ) -> HubspotSDK::Models::Cms::unified_collection_response_with_total_base_hub_db_table_row_v3
 
           def clone_batch: (
             String table_id_or_name,

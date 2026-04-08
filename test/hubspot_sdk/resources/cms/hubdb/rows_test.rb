@@ -33,14 +33,14 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.hubdb.rows.list("tableIdOrName")
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubspotSDK::Cms::UnifiedCollectionResponseWithTotalBaseHubDBTableRowV3
     end
 
-    row = response.to_enum.first
-    return if row.nil?
-
     assert_pattern do
-      row => HubspotSDK::Internal::Type::Unknown
+      case response
+      in HubspotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3
+      in HubspotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3
+      end
     end
   end
 

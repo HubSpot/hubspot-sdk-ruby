@@ -9,14 +9,6 @@ module HubspotSDK
               ?request_options: HubspotSDK::request_opts
             ) -> HubspotSDK::Crm::BatchResponseSimplePublicObject
 
-            def create_default_association: (
-              String to_object_id,
-              from_object_type: String,
-              from_object_id: String,
-              to_object_type: String,
-              ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::Crm::BatchResponsePublicDefaultAssociation
-
             def get: (
               inputs: ::Array[HubspotSDK::Crm::SimplePublicObjectID],
               properties: ::Array[String],

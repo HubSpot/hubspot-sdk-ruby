@@ -7,11 +7,11 @@ module HubspotSDK
         # @!attribute inputs
         #   Pages to input.
         #
-        #   @return [Array<HubspotSDK::Models::Cms::CmsPage>]
-        required :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::CmsPage] }
+        #   @return [Array<HubspotSDK::Models::Cms::PageData>]
+        required :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::PageData] }
 
         # @!method initialize(inputs:)
-        #   @param inputs [Array<HubspotSDK::Models::Cms::CmsPage>] Pages to input.
+        #   @param inputs [Array<HubspotSDK::Models::Cms::PageData>] Pages to input.
       end
     end
   end

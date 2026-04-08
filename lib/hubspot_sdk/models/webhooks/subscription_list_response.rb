@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Webhooks
-      # @see HubspotSDK::Resources::Webhooks::WebhookSubscriptions#list_subscriptions
+      # @see HubspotSDK::Resources::Webhooks#list_subscriptions
       class SubscriptionListResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute results
         #   An array containing all active and paused event subscriptions configured for the

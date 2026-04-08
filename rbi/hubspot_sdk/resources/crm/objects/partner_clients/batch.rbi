@@ -22,24 +22,6 @@ module HubspotSDK
             def update(inputs:, request_options: {})
             end
 
-            sig do
-              params(
-                to_object_id: String,
-                from_object_type: String,
-                from_object_id: String,
-                to_object_type: String,
-                request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::Crm::BatchResponsePublicDefaultAssociation)
-            end
-            def create_default_association(
-              to_object_id,
-              from_object_type:,
-              from_object_id:,
-              to_object_type:,
-              request_options: {}
-            )
-            end
-
             # Retrieve multiple partner client objects in a single request by specifying their
             # IDs. This endpoint is useful for efficiently accessing data for multiple clients
             # at once, particularly when integrating with third-party systems.

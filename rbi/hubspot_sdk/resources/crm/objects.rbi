@@ -48,6 +48,9 @@ module HubspotSDK
         sig { returns(HubspotSDK::Resources::Crm::Objects::Fees) }
         attr_reader :fees
 
+        sig { returns(HubspotSDK::Resources::Crm::Objects::GenericObjects) }
+        attr_reader :generic_objects
+
         sig { returns(HubspotSDK::Resources::Crm::Objects::GoalTargets) }
         attr_reader :goal_targets
 
@@ -68,9 +71,6 @@ module HubspotSDK
 
         sig { returns(HubspotSDK::Resources::Crm::Objects::Notes) }
         attr_reader :notes
-
-        sig { returns(HubspotSDK::Resources::Crm::Objects::GenericObjects) }
-        attr_reader :generic_objects
 
         sig { returns(HubspotSDK::Resources::Crm::Objects::Orders) }
         attr_reader :orders

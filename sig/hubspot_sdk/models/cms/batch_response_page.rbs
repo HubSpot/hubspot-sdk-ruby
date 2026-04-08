@@ -4,7 +4,7 @@ module HubspotSDK
       type batch_response_page =
         {
           completed_at: Time,
-          results: ::Array[HubspotSDK::Cms::CmsPage],
+          results: ::Array[HubspotSDK::Cms::PageData],
           started_at: Time,
           status: HubspotSDK::Models::Cms::BatchResponsePage::status,
           links: ::Hash[Symbol, String],
@@ -14,7 +14,7 @@ module HubspotSDK
       class BatchResponsePage < HubspotSDK::Internal::Type::BaseModel
         attr_accessor completed_at: Time
 
-        attr_accessor results: ::Array[HubspotSDK::Cms::CmsPage]
+        attr_accessor results: ::Array[HubspotSDK::Cms::PageData]
 
         attr_accessor started_at: Time
 
@@ -30,7 +30,7 @@ module HubspotSDK
 
         def initialize: (
           completed_at: Time,
-          results: ::Array[HubspotSDK::Cms::CmsPage],
+          results: ::Array[HubspotSDK::Cms::PageData],
           started_at: Time,
           status: HubspotSDK::Models::Cms::BatchResponsePage::status,
           ?links: ::Hash[Symbol, String],
@@ -39,7 +39,7 @@ module HubspotSDK
 
         def to_hash: -> {
           completed_at: Time,
-          results: ::Array[HubspotSDK::Cms::CmsPage],
+          results: ::Array[HubspotSDK::Cms::PageData],
           started_at: Time,
           status: HubspotSDK::Models::Cms::BatchResponsePage::status,
           links: ::Hash[Symbol, String],

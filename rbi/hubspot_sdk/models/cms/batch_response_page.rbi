@@ -17,7 +17,7 @@ module HubspotSDK
         attr_accessor :completed_at
 
         # Results of batch operation.
-        sig { returns(T::Array[HubspotSDK::Cms::CmsPage]) }
+        sig { returns(T::Array[HubspotSDK::Cms::PageData]) }
         attr_accessor :results
 
         # Time of batch operation start.
@@ -47,7 +47,7 @@ module HubspotSDK
         sig do
           params(
             completed_at: Time,
-            results: T::Array[HubspotSDK::Cms::CmsPage::OrHash],
+            results: T::Array[HubspotSDK::Cms::PageData::OrHash],
             started_at: Time,
             status: HubspotSDK::Cms::BatchResponsePage::Status::OrSymbol,
             links: T::Hash[Symbol, String],
@@ -74,7 +74,7 @@ module HubspotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubspotSDK::Cms::CmsPage],
+              results: T::Array[HubspotSDK::Cms::PageData],
               started_at: Time,
               status: HubspotSDK::Cms::BatchResponsePage::Status::TaggedSymbol,
               links: T::Hash[Symbol, String],

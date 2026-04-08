@@ -14,7 +14,7 @@ module HubspotSDK
           #
           # @param id [String] The unique ID of the page.
           #
-          # @param ab_status [Symbol, HubspotSDK::Models::Cms::CmsPage::AbStatus] The status of the AB test associated with this page, if applicable
+          # @param ab_status [Symbol, HubspotSDK::Models::Cms::PageData::AbStatus] The status of the AB test associated with this page, if applicable
           #
           # @param ab_test_id [String] The ID of the AB test associated with this page, if applicable
           #
@@ -32,7 +32,7 @@ module HubspotSDK
           #
           # @param content_group_id [String] The unique identifier for the content group associated with the page.
           #
-          # @param content_type_category [Symbol, HubspotSDK::Models::Cms::CmsPage::ContentTypeCategory] An ENUM descibing the type of this object. Should be either LANDING_PAGE or SITE
+          # @param content_type_category [Symbol, HubspotSDK::Models::Cms::PageData::ContentTypeCategory] An ENUM descibing the type of this object. Should be either LANDING_PAGE or SITE
           #
           # @param created [Time] The timestamp indicating when the page was created.
           #
@@ -40,7 +40,7 @@ module HubspotSDK
           #
           # @param currently_published [Boolean] Indicates whether the page is currently published.
           #
-          # @param current_state [Symbol, HubspotSDK::Models::Cms::CmsPage::CurrentState] A generated ENUM descibing the current state of this page.
+          # @param current_state [Symbol, HubspotSDK::Models::Cms::PageData::CurrentState] A generated ENUM descibing the current state of this page.
           #
           # @param domain [String] The domain this page will resolve to. If null, the page will default to the prim
           #
@@ -68,7 +68,7 @@ module HubspotSDK
           #
           # @param include_default_custom_css [Boolean] Boolean to determine whether or not the Primary CSS Files should be applied.
           #
-          # @param language [Symbol, HubspotSDK::Models::Cms::CmsPage::Language] The explicitly defined ISO 639 language code of the page. If null, the page will
+          # @param language [Symbol, HubspotSDK::Models::Cms::PageData::Language] The explicitly defined ISO 639 language code of the page. If null, the page will
           #
           # @param layout_sections [Hash{Symbol=>HubspotSDK::Models::Cms::LayoutSection}] A structure detailing the layout sections of the page.
           #
@@ -128,7 +128,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::CmsPage]
+          # @return [HubspotSDK::Models::Cms::PageData]
           #
           # @see HubspotSDK::Models::Cms::Pages::LandingPageCreateParams
           def create(params)
@@ -138,7 +138,7 @@ module HubspotSDK
               path: "cms/pages/2026-03/landing-pages",
               headers: {"content-type" => "*/*"},
               body: parsed,
-              model: HubspotSDK::Cms::CmsPage,
+              model: HubspotSDK::Cms::PageData,
               options: options
             )
           end
@@ -155,7 +155,7 @@ module HubspotSDK
           #
           # @param id [String] Body param: The unique ID of the page.
           #
-          # @param ab_status [Symbol, HubspotSDK::Models::Cms::CmsPage::AbStatus] Body param: The status of the AB test associated with this page, if applicable
+          # @param ab_status [Symbol, HubspotSDK::Models::Cms::PageData::AbStatus] Body param: The status of the AB test associated with this page, if applicable
           #
           # @param ab_test_id [String] Body param: The ID of the AB test associated with this page, if applicable
           #
@@ -173,7 +173,7 @@ module HubspotSDK
           #
           # @param content_group_id [String] Body param: The unique identifier for the content group associated with the page
           #
-          # @param content_type_category [Symbol, HubspotSDK::Models::Cms::CmsPage::ContentTypeCategory] Body param: An ENUM descibing the type of this object. Should be either
+          # @param content_type_category [Symbol, HubspotSDK::Models::Cms::PageData::ContentTypeCategory] Body param: An ENUM descibing the type of this object. Should be either
           # LANDING\_
           #
           # @param created [Time] Body param: The timestamp indicating when the page was created.
@@ -182,7 +182,7 @@ module HubspotSDK
           #
           # @param currently_published [Boolean] Body param: Indicates whether the page is currently published.
           #
-          # @param current_state [Symbol, HubspotSDK::Models::Cms::CmsPage::CurrentState] Body param: A generated ENUM descibing the current state of this page.
+          # @param current_state [Symbol, HubspotSDK::Models::Cms::PageData::CurrentState] Body param: A generated ENUM descibing the current state of this page.
           #
           # @param domain [String] Body param: The domain this page will resolve to. If null, the page will default
           #
@@ -210,7 +210,7 @@ module HubspotSDK
           #
           # @param include_default_custom_css [Boolean] Body param: Boolean to determine whether or not the Primary CSS Files should be
           #
-          # @param language [Symbol, HubspotSDK::Models::Cms::CmsPage::Language] Body param: The explicitly defined ISO 639 language code of the page. If null, t
+          # @param language [Symbol, HubspotSDK::Models::Cms::PageData::Language] Body param: The explicitly defined ISO 639 language code of the page. If null, t
           #
           # @param layout_sections [Hash{Symbol=>HubspotSDK::Models::Cms::LayoutSection}] Body param: A structure detailing the layout sections of the page.
           #
@@ -272,7 +272,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::CmsPage]
+          # @return [HubspotSDK::Models::Cms::PageData]
           #
           # @see HubspotSDK::Models::Cms::Pages::LandingPageUpdateParams
           def update(object_id_, params)
@@ -285,7 +285,7 @@ module HubspotSDK
               query: query,
               headers: {"content-type" => "*/*"},
               body: parsed.except(*query_params),
-              model: HubspotSDK::Cms::CmsPage,
+              model: HubspotSDK::Cms::PageData,
               options: options
             )
           end
@@ -323,7 +323,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::CmsPage>]
+          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::PageData>]
           #
           # @see HubspotSDK::Models::Cms::Pages::LandingPageListParams
           def list(params = {})
@@ -341,7 +341,7 @@ module HubspotSDK
                 updated_before: "updatedBefore"
               ),
               page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Cms::CmsPage,
+              model: HubspotSDK::Cms::PageData,
               options: options
             )
           end
@@ -381,7 +381,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::CmsPage]
+          # @return [HubspotSDK::Models::Cms::PageData]
           #
           # @see HubspotSDK::Models::Cms::Pages::LandingPageCloneParams
           def clone_(params)
@@ -391,7 +391,7 @@ module HubspotSDK
               path: "cms/pages/2026-03/landing-pages/clone",
               headers: {"content-type" => "*/*"},
               body: parsed,
-              model: HubspotSDK::Cms::CmsPage,
+              model: HubspotSDK::Cms::PageData,
               options: options
             )
           end
@@ -408,7 +408,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::CmsPage]
+          # @return [HubspotSDK::Models::Cms::PageData]
           #
           # @see HubspotSDK::Models::Cms::Pages::LandingPageGetParams
           def get(object_id_, params = {})
@@ -418,7 +418,7 @@ module HubspotSDK
               method: :get,
               path: ["cms/pages/2026-03/landing-pages/%1$s", object_id_],
               query: query,
-              model: HubspotSDK::Cms::CmsPage,
+              model: HubspotSDK::Cms::PageData,
               options: options
             )
           end
@@ -430,14 +430,14 @@ module HubspotSDK
           # @param object_id_ [String]
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::CmsPage]
+          # @return [HubspotSDK::Models::Cms::PageData]
           #
           # @see HubspotSDK::Models::Cms::Pages::LandingPageGetDraftParams
           def get_draft(object_id_, params = {})
             @client.request(
               method: :get,
               path: ["cms/pages/2026-03/landing-pages/%1$s/draft", object_id_],
-              model: HubspotSDK::Cms::CmsPage,
+              model: HubspotSDK::Cms::PageData,
               options: params[:request_options]
             )
           end
@@ -518,7 +518,7 @@ module HubspotSDK
           #
           # @param id [String] The unique ID of the page.
           #
-          # @param ab_status [Symbol, HubspotSDK::Models::Cms::CmsPage::AbStatus] The status of the AB test associated with this page, if applicable
+          # @param ab_status [Symbol, HubspotSDK::Models::Cms::PageData::AbStatus] The status of the AB test associated with this page, if applicable
           #
           # @param ab_test_id [String] The ID of the AB test associated with this page, if applicable
           #
@@ -536,7 +536,7 @@ module HubspotSDK
           #
           # @param content_group_id [String] The unique identifier for the content group associated with the page.
           #
-          # @param content_type_category [Symbol, HubspotSDK::Models::Cms::CmsPage::ContentTypeCategory] An ENUM descibing the type of this object. Should be either LANDING_PAGE or SITE
+          # @param content_type_category [Symbol, HubspotSDK::Models::Cms::PageData::ContentTypeCategory] An ENUM descibing the type of this object. Should be either LANDING_PAGE or SITE
           #
           # @param created [Time] The timestamp indicating when the page was created.
           #
@@ -544,7 +544,7 @@ module HubspotSDK
           #
           # @param currently_published [Boolean] Indicates whether the page is currently published.
           #
-          # @param current_state [Symbol, HubspotSDK::Models::Cms::CmsPage::CurrentState] A generated ENUM descibing the current state of this page.
+          # @param current_state [Symbol, HubspotSDK::Models::Cms::PageData::CurrentState] A generated ENUM descibing the current state of this page.
           #
           # @param domain [String] The domain this page will resolve to. If null, the page will default to the prim
           #
@@ -572,7 +572,7 @@ module HubspotSDK
           #
           # @param include_default_custom_css [Boolean] Boolean to determine whether or not the Primary CSS Files should be applied.
           #
-          # @param language [Symbol, HubspotSDK::Models::Cms::CmsPage::Language] The explicitly defined ISO 639 language code of the page. If null, the page will
+          # @param language [Symbol, HubspotSDK::Models::Cms::PageData::Language] The explicitly defined ISO 639 language code of the page. If null, the page will
           #
           # @param layout_sections [Hash{Symbol=>HubspotSDK::Models::Cms::LayoutSection}] A structure detailing the layout sections of the page.
           #
@@ -632,7 +632,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::CmsPage]
+          # @return [HubspotSDK::Models::Cms::PageData]
           #
           # @see HubspotSDK::Models::Cms::Pages::LandingPageUpdateDraftParams
           def update_draft(object_id_, params)
@@ -642,7 +642,7 @@ module HubspotSDK
               path: ["cms/pages/2026-03/landing-pages/%1$s/draft", object_id_],
               headers: {"content-type" => "*/*"},
               body: parsed,
-              model: HubspotSDK::Cms::CmsPage,
+              model: HubspotSDK::Cms::PageData,
               options: options
             )
           end

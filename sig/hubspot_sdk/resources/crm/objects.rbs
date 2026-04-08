@@ -30,6 +30,8 @@ module HubspotSDK
 
         attr_reader fees: HubspotSDK::Resources::Crm::Objects::Fees
 
+        attr_reader generic_objects: HubspotSDK::Resources::Crm::Objects::GenericObjects
+
         attr_reader goal_targets: HubspotSDK::Resources::Crm::Objects::GoalTargets
 
         attr_reader invoices: HubspotSDK::Resources::Crm::Objects::Invoices
@@ -43,8 +45,6 @@ module HubspotSDK
         attr_reader meetings: HubspotSDK::Resources::Crm::Objects::Meetings
 
         attr_reader notes: HubspotSDK::Resources::Crm::Objects::Notes
-
-        attr_reader generic_objects: HubspotSDK::Resources::Crm::Objects::GenericObjects
 
         attr_reader orders: HubspotSDK::Resources::Crm::Objects::Orders
 

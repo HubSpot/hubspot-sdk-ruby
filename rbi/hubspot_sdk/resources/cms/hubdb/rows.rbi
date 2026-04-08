@@ -57,7 +57,9 @@ module HubspotSDK
               properties: T::Array[String],
               sort: T::Array[String],
               request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Internal::Page[T.anything])
+            ).returns(
+              HubspotSDK::Cms::UnifiedCollectionResponseWithTotalBaseHubDBTableRowV3::Variants
+            )
           end
           def list(
             table_id_or_name,
