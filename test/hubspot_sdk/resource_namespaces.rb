@@ -528,14 +528,6 @@ module HubspotSDK
 
       module Users
       end
-
-      module Webhooks
-        module WebhookSubscriptions
-        end
-      end
-
-      module WebhookSubscriptions
-      end
     end
   end
 end

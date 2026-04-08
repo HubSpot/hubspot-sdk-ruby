@@ -182,7 +182,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::BatchTest < HubspotSDK::Test::Res
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::CmsPage]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::PageData]),
         started_at: Time,
         status: HubspotSDK::Cms::BatchResponsePage::Status,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
@@ -336,7 +336,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::BatchTest < HubspotSDK::Test::Res
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::CmsPage]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::PageData]),
         started_at: Time,
         status: HubspotSDK::Cms::BatchResponsePage::Status,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
@@ -387,7 +387,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::BatchTest < HubspotSDK::Test::Res
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::CmsPage]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::PageData]),
         started_at: Time,
         status: HubspotSDK::Cms::BatchResponsePage::Status,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
@@ -408,7 +408,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::BatchTest < HubspotSDK::Test::Res
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::CmsPage]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::PageData]),
         started_at: Time,
         status: HubspotSDK::Cms::BatchResponsePage::Status,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
@@ -450,7 +450,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::BatchTest < HubspotSDK::Test::Res
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::CmsPage]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::PageData]),
         started_at: Time,
         status: HubspotSDK::Cms::BatchResponsePage::Status,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
@@ -471,7 +471,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::BatchTest < HubspotSDK::Test::Res
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::CmsPage]),
+        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::PageData]),
         started_at: Time,
         status: HubspotSDK::Cms::BatchResponsePage::Status,
         links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,

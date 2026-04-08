@@ -13,11 +13,11 @@ module HubspotSDK
           end
 
         # Pages to input.
-        sig { returns(T::Array[HubspotSDK::Cms::CmsPage]) }
+        sig { returns(T::Array[HubspotSDK::Cms::PageData]) }
         attr_accessor :inputs
 
         sig do
-          params(inputs: T::Array[HubspotSDK::Cms::CmsPage::OrHash]).returns(
+          params(inputs: T::Array[HubspotSDK::Cms::PageData::OrHash]).returns(
             T.attached_class
           )
         end
@@ -27,7 +27,9 @@ module HubspotSDK
         )
         end
 
-        sig { override.returns({ inputs: T::Array[HubspotSDK::Cms::CmsPage] }) }
+        sig do
+          override.returns({ inputs: T::Array[HubspotSDK::Cms::PageData] })
+        end
         def to_hash
         end
       end

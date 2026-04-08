@@ -6,7 +6,7 @@ module HubspotSDK
           { object_id_: String }
           & HubspotSDK::Internal::Type::request_parameters
 
-        class LandingPageUpdateDraftParams < HubspotSDK::Models::Cms::CmsPage
+        class LandingPageUpdateDraftParams < HubspotSDK::Models::Cms::PageData
           extend HubspotSDK::Internal::Type::RequestParameters::Converter
           include HubspotSDK::Internal::Type::RequestParameters
 

@@ -74,7 +74,7 @@ module HubspotSDK
           #
           # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<Object>]
+          # @return [HubspotSDK::Models::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3, HubspotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3]
           #
           # @see HubspotSDK::Models::Cms::Hubdb::RowListParams
           def list(table_id_or_name, params = {})
@@ -84,8 +84,7 @@ module HubspotSDK
               method: :get,
               path: ["cms/hubdb/2026-03/tables/%1$s/rows", table_id_or_name],
               query: query,
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Internal::Type::Unknown,
+              model: HubspotSDK::Cms::UnifiedCollectionResponseWithTotalBaseHubDBTableRowV3,
               options: options
             )
           end

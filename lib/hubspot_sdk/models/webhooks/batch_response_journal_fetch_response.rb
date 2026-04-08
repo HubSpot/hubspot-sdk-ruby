@@ -3,6 +3,7 @@
 module HubspotSDK
   module Models
     module Webhooks
+      # @see HubspotSDK::Resources::Webhooks#get_earliest_journal_batch
       class BatchResponseJournalFetchResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #

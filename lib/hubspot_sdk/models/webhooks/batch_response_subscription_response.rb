@@ -3,6 +3,7 @@
 module HubspotSDK
   module Models
     module Webhooks
+      # @see HubspotSDK::Resources::Webhooks#create_subscriptions_batch
       class BatchResponseSubscriptionResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   The date and time when the batch operation was completed.

@@ -3,7 +3,7 @@
 module HubspotSDK
   module Models
     module Webhooks
-      # @see HubspotSDK::Resources::Webhooks::WebhookSubscriptions#get_settings
+      # @see HubspotSDK::Resources::Webhooks#get_settings
       class SettingsResponse < HubspotSDK::Internal::Type::BaseModel
         # @!attribute created_at
         #   When this subscription was created. Formatted as milliseconds from the
