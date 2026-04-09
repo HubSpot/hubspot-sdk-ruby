@@ -1,6 +1,6 @@
-# Hubspot Ruby API library
+# HubSpot Ruby API library
 
-The Hubspot Ruby library provides convenient access to the Hubspot REST API from any Ruby 3.2.0+ application. It ships with comprehensive types & docstrings in Yard, RBS, and RBI – [see below](https://github.com/stainless-sdks/hubspot-sdk-ruby#Sorbet) for usage with Sorbet. The standard library's `net/http` is used as the HTTP transport, with connection pooling via the `connection_pool` gem.
+The HubSpot Ruby library provides convenient access to HubSpot's date-versioned REST API (`2026-03` release) from any Ruby 3.2.0+ application. It ships with comprehensive types & docstrings in Yard, RBS, and RBI – [see below](https://github.com/stainless-sdks/hubspot-sdk-ruby#Sorbet) for usage with Sorbet. The standard library's `net/http` is used as the HTTP transport, with connection pooling via the `connection_pool` gem.
 
 It is generated with [Stainless](https://www.stainless.com/).
 
@@ -33,7 +33,7 @@ puts(simple_public_object_with_associations.id)
 
 ### Pagination
 
-List methods in the Hubspot API are paginated.
+List methods in the HubSpot API are paginated.
 
 This library provides auto-paginating iterators with each list response, so you do not have to request successive pages manually:
 
