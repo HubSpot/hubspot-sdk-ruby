@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        # @see HubspotSDK::Resources::Crm::Extensions::Calling#create_recording_settings
-        class RecordingSettingsResponse < HubspotSDK::Internal::Type::BaseModel
+        # @see HubSpotSDK::Resources::Crm::Extensions::Calling#create_recording_settings
+        class RecordingSettingsResponse < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute url_to_retrieve_authed_recording
           #   The URL used to retrieve authenticated call recordings.
           #

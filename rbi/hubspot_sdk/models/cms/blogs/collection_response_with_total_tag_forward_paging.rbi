@@ -1,37 +1,37 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        class CollectionResponseWithTotalTagForwardPaging < HubspotSDK::Internal::Type::BaseModel
+        class CollectionResponseWithTotalTagForwardPaging < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Cms::Blogs::CollectionResponseWithTotalTagForwardPaging,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Cms::Blogs::CollectionResponseWithTotalTagForwardPaging,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
           # Collection of blog tags.
-          sig { returns(T::Array[HubspotSDK::Cms::Blogs::Tag]) }
+          sig { returns(T::Array[HubSpotSDK::Cms::Blogs::Tag]) }
           attr_accessor :results
 
           # Total number of blog tags.
           sig { returns(Integer) }
           attr_accessor :total
 
-          sig { returns(T.nilable(HubspotSDK::ForwardPaging)) }
+          sig { returns(T.nilable(HubSpotSDK::ForwardPaging)) }
           attr_reader :paging
 
-          sig { params(paging: HubspotSDK::ForwardPaging::OrHash).void }
+          sig { params(paging: HubSpotSDK::ForwardPaging::OrHash).void }
           attr_writer :paging
 
           sig do
             params(
-              results: T::Array[HubspotSDK::Cms::Blogs::Tag::OrHash],
+              results: T::Array[HubSpotSDK::Cms::Blogs::Tag::OrHash],
               total: Integer,
-              paging: HubspotSDK::ForwardPaging::OrHash
+              paging: HubSpotSDK::ForwardPaging::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
@@ -46,9 +46,9 @@ module HubspotSDK
           sig do
             override.returns(
               {
-                results: T::Array[HubspotSDK::Cms::Blogs::Tag],
+                results: T::Array[HubSpotSDK::Cms::Blogs::Tag],
                 total: Integer,
-                paging: HubspotSDK::ForwardPaging
+                paging: HubSpotSDK::ForwardPaging
               }
             )
           end

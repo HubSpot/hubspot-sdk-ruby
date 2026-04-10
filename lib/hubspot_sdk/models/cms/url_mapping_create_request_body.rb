@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class URLMappingCreateRequestBody < HubspotSDK::Internal::Type::BaseModel
+      class URLMappingCreateRequestBody < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute destination
         #   The destination URL, where the target URL should be redirected if it matches the
         #   `routePrefix`.
@@ -29,14 +29,14 @@ module HubspotSDK
         #   Whether the `routePrefix` should match on the entire URL, including the domain.
         #
         #   @return [Boolean, nil]
-        optional :is_match_full_url, HubspotSDK::Internal::Type::Boolean, api_name: :isMatchFullUrl
+        optional :is_match_full_url, HubSpotSDK::Internal::Type::Boolean, api_name: :isMatchFullUrl
 
         # @!attribute is_match_query_string
         #   Whether the `routePrefix` should match on the entire URL path, including the
         #   query string.
         #
         #   @return [Boolean, nil]
-        optional :is_match_query_string, HubspotSDK::Internal::Type::Boolean, api_name: :isMatchQueryString
+        optional :is_match_query_string, HubSpotSDK::Internal::Type::Boolean, api_name: :isMatchQueryString
 
         # @!attribute is_only_after_not_found
         #   Whether the URL redirect mapping should apply only if a live page on the URL
@@ -44,26 +44,26 @@ module HubspotSDK
         #   existing page.
         #
         #   @return [Boolean, nil]
-        optional :is_only_after_not_found, HubspotSDK::Internal::Type::Boolean, api_name: :isOnlyAfterNotFound
+        optional :is_only_after_not_found, HubSpotSDK::Internal::Type::Boolean, api_name: :isOnlyAfterNotFound
 
         # @!attribute is_pattern
         #   Whether the `routePrefix` should match based on pattern.
         #
         #   @return [Boolean, nil]
-        optional :is_pattern, HubspotSDK::Internal::Type::Boolean, api_name: :isPattern
+        optional :is_pattern, HubSpotSDK::Internal::Type::Boolean, api_name: :isPattern
 
         # @!attribute is_protocol_agnostic
         #   Whether the `routePrefix` should match both HTTP and HTTPS protocols.
         #
         #   @return [Boolean, nil]
-        optional :is_protocol_agnostic, HubspotSDK::Internal::Type::Boolean, api_name: :isProtocolAgnostic
+        optional :is_protocol_agnostic, HubSpotSDK::Internal::Type::Boolean, api_name: :isProtocolAgnostic
 
         # @!attribute is_trailing_slash_optional
         #   Whether a trailing slash will be ignored.
         #
         #   @return [Boolean, nil]
         optional :is_trailing_slash_optional,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :isTrailingSlashOptional
 
         # @!attribute precedence
@@ -75,7 +75,7 @@ module HubspotSDK
 
         # @!method initialize(destination:, redirect_style:, route_prefix:, is_match_full_url: nil, is_match_query_string: nil, is_only_after_not_found: nil, is_pattern: nil, is_protocol_agnostic: nil, is_trailing_slash_optional: nil, precedence: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Cms::URLMappingCreateRequestBody} for more details.
+        #   {HubSpotSDK::Models::Cms::URLMappingCreateRequestBody} for more details.
         #
         #   @param destination [String] The destination URL, where the target URL should be redirected if it matches the
         #

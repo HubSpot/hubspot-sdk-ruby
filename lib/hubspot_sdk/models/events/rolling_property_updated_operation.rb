@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class RollingPropertyUpdatedOperation < HubspotSDK::Internal::Type::BaseModel
+      class RollingPropertyUpdatedOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute include_objects_with_no_value_set
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute number_of_days
@@ -23,8 +23,8 @@ module HubspotSDK
 
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::RollingPropertyUpdatedOperation::Operator]
-        required :operator, enum: -> { HubspotSDK::Events::RollingPropertyUpdatedOperation::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Events::RollingPropertyUpdatedOperation::Operator]
+        required :operator, enum: -> { HubSpotSDK::Events::RollingPropertyUpdatedOperation::Operator }
 
         # @!attribute operator_name
         #
@@ -33,9 +33,9 @@ module HubspotSDK
 
         # @!attribute property_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::RollingPropertyUpdatedOperation::PropertyType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::RollingPropertyUpdatedOperation::PropertyType]
         required :property_type,
-                 enum: -> { HubspotSDK::Events::RollingPropertyUpdatedOperation::PropertyType },
+                 enum: -> { HubSpotSDK::Events::RollingPropertyUpdatedOperation::PropertyType },
                  api_name: :propertyType
 
         # @!attribute default_value
@@ -52,15 +52,15 @@ module HubspotSDK
         #   @param include_objects_with_no_value_set [Boolean]
         #   @param number_of_days [Integer]
         #   @param operation_type [String]
-        #   @param operator [Symbol, HubspotSDK::Models::Events::RollingPropertyUpdatedOperation::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Events::RollingPropertyUpdatedOperation::Operator]
         #   @param operator_name [String]
-        #   @param property_type [Symbol, HubspotSDK::Models::Events::RollingPropertyUpdatedOperation::PropertyType]
+        #   @param property_type [Symbol, HubSpotSDK::Models::Events::RollingPropertyUpdatedOperation::PropertyType]
         #   @param default_value [String]
         #   @param render_spec [String]
 
-        # @see HubspotSDK::Models::Events::RollingPropertyUpdatedOperation#operator
+        # @see HubSpotSDK::Models::Events::RollingPropertyUpdatedOperation#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NOT_UPDATED_IN_LAST_X_DAYS = :NOT_UPDATED_IN_LAST_X_DAYS
           UPDATED_IN_LAST_X_DAYS = :UPDATED_IN_LAST_X_DAYS
@@ -69,9 +69,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::RollingPropertyUpdatedOperation#property_type
+        # @see HubSpotSDK::Models::Events::RollingPropertyUpdatedOperation#property_type
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ROLLING_PROPERTY_UPDATED = :"rolling-property-updated"
 

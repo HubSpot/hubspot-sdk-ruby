@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class CompanyCurrency < HubspotSDK::Internal::Type::BaseModel
+      class CompanyCurrency < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Settings::CompanyCurrency,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Settings::CompanyCurrency,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

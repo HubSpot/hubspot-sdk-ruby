@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module BusinessUnits
-      # @see HubspotSDK::Resources::BusinessUnits::BusinessUnitEntries#get_by_user_id
-      class BusinessUnitEntryGetByUserIDParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::BusinessUnits::BusinessUnitEntries#get_by_user_id
+      class BusinessUnitEntryGetByUserIDParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute user_id
         #
@@ -16,18 +16,18 @@ module HubspotSDK
         # @!attribute name
         #
         #   @return [Array<String>, nil]
-        optional :name, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :name, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute properties
         #
         #   @return [Array<String>, nil]
-        optional :properties, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :properties, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!method initialize(user_id:, name: nil, properties: nil, request_options: {})
         #   @param user_id [String]
         #   @param name [Array<String>]
         #   @param properties [Array<String>]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

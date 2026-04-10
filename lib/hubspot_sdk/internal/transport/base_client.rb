@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Transport
       # @api private
       #
       # @abstract
       class BaseClient
-        extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        extend HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         # from whatwg fetch spec
         MAX_REDIRECTS = 20
@@ -15,10 +15,10 @@ module HubspotSDK
         # rubocop:disable Style/MutableConstant
         PLATFORM_HEADERS =
           {
-            "x-stainless-arch" => HubspotSDK::Internal::Util.arch,
+            "x-stainless-arch" => HubSpotSDK::Internal::Util.arch,
             "x-stainless-lang" => "ruby",
-            "x-stainless-os" => HubspotSDK::Internal::Util.os,
-            "x-stainless-package-version" => HubspotSDK::VERSION,
+            "x-stainless-os" => HubSpotSDK::Internal::Util.os,
+            "x-stainless-package-version" => HubSpotSDK::VERSION,
             "x-stainless-runtime" => ::RUBY_ENGINE,
             "x-stainless-runtime-version" => ::RUBY_ENGINE_VERSION
           }
@@ -51,7 +51,7 @@ module HubspotSDK
           #
           # @return [Boolean]
           def should_retry?(status, headers:)
-            coerced = HubspotSDK::Internal::Util.coerce_boolean(headers["x-should-retry"])
+            coerced = HubSpotSDK::Internal::Util.coerce_boolean(headers["x-should-retry"])
             case [coerced, status]
             in [true | false, _]
               coerced
@@ -95,7 +95,7 @@ module HubspotSDK
                 URI.join(url, response_headers["location"])
               rescue ArgumentError
                 message = "Server responded with status #{status} but no valid location header."
-                raise HubspotSDK::Errors::APIConnectionError.new(
+                raise HubSpotSDK::Errors::APIConnectionError.new(
                   url: url,
                   response: response_headers,
                   message: message
@@ -107,7 +107,7 @@ module HubspotSDK
             case [url.scheme, location.scheme]
             in ["https", "http"]
               message = "Tried to redirect to a insecure URL"
-              raise HubspotSDK::Errors::APIConnectionError.new(
+              raise HubSpotSDK::Errors::APIConnectionError.new(
                 url: url,
                 response: response_headers,
                 message: message
@@ -130,7 +130,7 @@ module HubspotSDK
             end
 
             # from undici
-            if HubspotSDK::Internal::Util.uri_origin(url) != HubspotSDK::Internal::Util.uri_origin(location)
+            if HubSpotSDK::Internal::Util.uri_origin(url) != HubSpotSDK::Internal::Util.uri_origin(location)
               drop = %w[authorization cookie host proxy-authorization]
               request = {**request, headers: request.fetch(:headers).except(*drop)}
             end
@@ -140,14 +140,14 @@ module HubspotSDK
 
           # @api private
           #
-          # @param status [Integer, HubspotSDK::Errors::APIConnectionError]
+          # @param status [Integer, HubSpotSDK::Errors::APIConnectionError]
           # @param stream [Enumerable<String>, nil]
           def reap_connection!(status, stream:)
             case status
             in (..199) | (300..499)
               stream&.each { next }
-            in HubspotSDK::Errors::APIConnectionError | (500..)
-              HubspotSDK::Internal::Util.close_fused!(stream)
+            in HubSpotSDK::Errors::APIConnectionError | (500..)
+              HubSpotSDK::Internal::Util.close_fused!(stream)
             else
             end
           end
@@ -175,7 +175,7 @@ module HubspotSDK
         attr_reader :idempotency_header
 
         # @api private
-        # @return [HubspotSDK::Internal::Transport::PooledNetRequester]
+        # @return [HubSpotSDK::Internal::Transport::PooledNetRequester]
         attr_reader :requester
 
         # @api private
@@ -196,8 +196,8 @@ module HubspotSDK
           headers: {},
           idempotency_header: nil
         )
-          @requester = HubspotSDK::Internal::Transport::PooledNetRequester.new
-          @headers = HubspotSDK::Internal::Util.normalized_headers(
+          @requester = HubSpotSDK::Internal::Transport::PooledNetRequester.new
+          @headers = HubSpotSDK::Internal::Util.normalized_headers(
             self.class::PLATFORM_HEADERS,
             {
               "accept" => "application/json",
@@ -206,8 +206,8 @@ module HubspotSDK
             },
             headers
           )
-          @base_url_components = HubspotSDK::Internal::Util.parse_uri(base_url)
-          @base_url = HubspotSDK::Internal::Util.unparse_uri(@base_url_components)
+          @base_url_components = HubSpotSDK::Internal::Util.parse_uri(base_url)
+          @base_url = HubSpotSDK::Internal::Util.unparse_uri(@base_url_components)
           @idempotency_header = idempotency_header&.to_s&.downcase
           @timeout = timeout
           @max_retries = max_retries
@@ -228,7 +228,7 @@ module HubspotSDK
         # @api private
         #
         # @return [String]
-        private def user_agent = "#{self.class.name}/Ruby #{HubspotSDK::VERSION}"
+        private def user_agent = "#{self.class.name}/Ruby #{HubSpotSDK::VERSION}"
 
         # @api private
         #
@@ -251,11 +251,11 @@ module HubspotSDK
         #
         #   @option req [Symbol, Integer, Array<Symbol, Integer>, Proc, nil] :unwrap
         #
-        #   @option req [Class<HubspotSDK::Internal::Type::BasePage>, nil] :page
+        #   @option req [Class<HubSpotSDK::Internal::Type::BasePage>, nil] :page
         #
-        #   @option req [Class<HubspotSDK::Internal::Type::BaseStream>, nil] :stream
+        #   @option req [Class<HubSpotSDK::Internal::Type::BaseStream>, nil] :stream
         #
-        #   @option req [HubspotSDK::Internal::Type::Converter, Class, nil] :model
+        #   @option req [HubSpotSDK::Internal::Type::Converter, Class, nil] :model
         #
         # @param opts [Hash{Symbol=>Object}] .
         #
@@ -275,11 +275,11 @@ module HubspotSDK
         private def build_request(req, opts)
           method, uninterpolated_path = req.fetch_values(:method, :path)
 
-          path = HubspotSDK::Internal::Util.interpolate_path(uninterpolated_path)
+          path = HubSpotSDK::Internal::Util.interpolate_path(uninterpolated_path)
 
-          query = HubspotSDK::Internal::Util.deep_merge(auth_query, req[:query].to_h, opts[:extra_query].to_h)
+          query = HubSpotSDK::Internal::Util.deep_merge(auth_query, req[:query].to_h, opts[:extra_query].to_h)
 
-          headers = HubspotSDK::Internal::Util.normalized_headers(
+          headers = HubSpotSDK::Internal::Util.normalized_headers(
             @headers,
             auth_headers,
             req[:headers].to_h,
@@ -308,14 +308,14 @@ module HubspotSDK
             in :get | :head | :options | :trace
               nil
             else
-              HubspotSDK::Internal::Util.deep_merge(*[req[:body], opts[:extra_body]].compact)
+              HubSpotSDK::Internal::Util.deep_merge(*[req[:body], opts[:extra_body]].compact)
             end
 
-          url = HubspotSDK::Internal::Util.join_parsed_uri(
+          url = HubSpotSDK::Internal::Util.join_parsed_uri(
             @base_url_components,
             {**req, path: path, query: query}
           )
-          headers, encoded = HubspotSDK::Internal::Util.encode_content(headers, body)
+          headers, encoded = HubSpotSDK::Internal::Util.encode_content(headers, body)
           {
             method: method,
             url: url,
@@ -374,11 +374,11 @@ module HubspotSDK
         #
         # @param send_retry_header [Boolean]
         #
-        # @raise [HubspotSDK::Errors::APIError]
+        # @raise [HubSpotSDK::Errors::APIError]
         # @return [Array(Integer, Net::HTTPResponse, Enumerable<String>)]
         def send_request(request, redirect_count:, retry_count:, send_retry_header:)
           url, headers, max_retries, timeout = request.fetch_values(:url, :headers, :max_retries, :timeout)
-          input = {**request.except(:timeout), deadline: HubspotSDK::Internal::Util.monotonic_secs + timeout}
+          input = {**request.except(:timeout), deadline: HubSpotSDK::Internal::Util.monotonic_secs + timeout}
 
           if send_retry_header
             headers["x-stainless-retry-count"] = retry_count.to_s
@@ -386,10 +386,10 @@ module HubspotSDK
 
           begin
             status, response, stream = @requester.execute(input)
-          rescue HubspotSDK::Errors::APIConnectionError => e
+          rescue HubSpotSDK::Errors::APIConnectionError => e
             status = e
           end
-          headers = HubspotSDK::Internal::Util.normalized_headers(response&.each_header&.to_h)
+          headers = HubSpotSDK::Internal::Util.normalized_headers(response&.each_header&.to_h)
 
           case status
           in ..299
@@ -398,7 +398,7 @@ module HubspotSDK
             self.class.reap_connection!(status, stream: stream)
 
             message = "Failed to complete the request within #{self.class::MAX_REDIRECTS} redirects."
-            raise HubspotSDK::Errors::APIConnectionError.new(url: url, response: response, message: message)
+            raise HubSpotSDK::Errors::APIConnectionError.new(url: url, response: response, message: message)
           in 300..399
             self.class.reap_connection!(status, stream: stream)
 
@@ -409,16 +409,16 @@ module HubspotSDK
               retry_count: retry_count,
               send_retry_header: send_retry_header
             )
-          in HubspotSDK::Errors::APIConnectionError if retry_count >= max_retries
+          in HubSpotSDK::Errors::APIConnectionError if retry_count >= max_retries
             raise status
           in (400..) if retry_count >= max_retries || !self.class.should_retry?(status, headers: headers)
             decoded = Kernel.then do
-              HubspotSDK::Internal::Util.decode_content(headers, stream: stream, suppress_error: true)
+              HubSpotSDK::Internal::Util.decode_content(headers, stream: stream, suppress_error: true)
             ensure
               self.class.reap_connection!(status, stream: stream)
             end
 
-            raise HubspotSDK::Errors::APIStatusError.for(
+            raise HubSpotSDK::Errors::APIStatusError.for(
               url: url,
               status: status,
               headers: headers,
@@ -426,7 +426,7 @@ module HubspotSDK
               request: nil,
               response: response
             )
-          in (400..) | HubspotSDK::Errors::APIConnectionError
+          in (400..) | HubSpotSDK::Errors::APIConnectionError
             self.class.reap_connection!(status, stream: stream)
 
             delay = retry_delay(response || {}, retry_count: retry_count)
@@ -444,7 +444,7 @@ module HubspotSDK
         # Execute the request specified by `req`. This is the method that all resource
         # methods call into.
         #
-        # @overload request(method, path, query: {}, headers: {}, body: nil, unwrap: nil, page: nil, stream: nil, model: HubspotSDK::Internal::Type::Unknown, options: {})
+        # @overload request(method, path, query: {}, headers: {}, body: nil, unwrap: nil, page: nil, stream: nil, model: HubSpotSDK::Internal::Type::Unknown, options: {})
         #
         # @param method [Symbol]
         #
@@ -458,13 +458,13 @@ module HubspotSDK
         #
         # @param unwrap [Symbol, Integer, Array<Symbol, Integer>, Proc, nil]
         #
-        # @param page [Class<HubspotSDK::Internal::Type::BasePage>, nil]
+        # @param page [Class<HubSpotSDK::Internal::Type::BasePage>, nil]
         #
-        # @param stream [Class<HubspotSDK::Internal::Type::BaseStream>, nil]
+        # @param stream [Class<HubSpotSDK::Internal::Type::BaseStream>, nil]
         #
-        # @param model [HubspotSDK::Internal::Type::Converter, Class, nil]
+        # @param model [HubSpotSDK::Internal::Type::Converter, Class, nil]
         #
-        # @param options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil] .
+        # @param options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil] .
         #
         #   @option options [String, nil] :idempotency_key
         #
@@ -478,14 +478,14 @@ module HubspotSDK
         #
         #   @option options [Float, nil] :timeout
         #
-        # @raise [HubspotSDK::Errors::APIError]
+        # @raise [HubSpotSDK::Errors::APIError]
         # @return [Object]
         def request(req)
           self.class.validate!(req)
-          model = req.fetch(:model) { HubspotSDK::Internal::Type::Unknown }
+          model = req.fetch(:model) { HubSpotSDK::Internal::Type::Unknown }
           opts = req[:options].to_h
           unwrap = req[:unwrap]
-          HubspotSDK::RequestOptions.validate!(opts)
+          HubSpotSDK::RequestOptions.validate!(opts)
           request = build_request(req.except(:options), opts)
           url = request.fetch(:url)
 
@@ -498,8 +498,8 @@ module HubspotSDK
             send_retry_header: send_retry_header
           )
 
-          headers = HubspotSDK::Internal::Util.normalized_headers(response.each_header.to_h)
-          decoded = HubspotSDK::Internal::Util.decode_content(headers, stream: stream)
+          headers = HubSpotSDK::Internal::Util.normalized_headers(response.each_header.to_h)
+          decoded = HubSpotSDK::Internal::Util.decode_content(headers, stream: stream)
           case req
           in {stream: Class => st}
             st.new(
@@ -514,8 +514,8 @@ module HubspotSDK
           in {page: Class => page}
             page.new(client: self, req: req, headers: headers, page_data: decoded)
           else
-            unwrapped = HubspotSDK::Internal::Util.dig(decoded, unwrap)
-            HubspotSDK::Internal::Type::Converter.coerce(model, unwrapped)
+            unwrapped = HubSpotSDK::Internal::Util.dig(decoded, unwrap)
+            HubSpotSDK::Internal::Type::Converter.coerce(model, unwrapped)
           end
         end
 
@@ -553,10 +553,10 @@ module HubspotSDK
                   T.proc.params(arg0: T.anything).returns(T.anything)
                 )
               ),
-              page: T.nilable(T::Class[HubspotSDK::Internal::Type::BasePage[HubspotSDK::Internal::Type::BaseModel]]),
+              page: T.nilable(T::Class[HubSpotSDK::Internal::Type::BasePage[HubSpotSDK::Internal::Type::BaseModel]]),
               stream: T.nilable(T::Class[T.anything]),
-              model: T.nilable(HubspotSDK::Internal::Type::Converter::Input),
-              options: T.nilable(HubspotSDK::RequestOptions::OrHash)
+              model: T.nilable(HubSpotSDK::Internal::Type::Converter::Input),
+              options: T.nilable(HubSpotSDK::RequestOptions::OrHash)
             }
           end
         end

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type pipeline =
@@ -8,12 +8,12 @@ module HubspotSDK
           created_at: Time,
           display_order: Integer,
           label: String,
-          stages: ::Array[HubspotSDK::Crm::PipelineStage],
+          stages: ::Array[HubSpotSDK::Crm::PipelineStage],
           updated_at: Time,
           archived_at: Time
         }
 
-      class Pipeline < HubspotSDK::Internal::Type::BaseModel
+      class Pipeline < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor archived: bool
@@ -24,7 +24,7 @@ module HubspotSDK
 
         attr_accessor label: String
 
-        attr_accessor stages: ::Array[HubspotSDK::Crm::PipelineStage]
+        attr_accessor stages: ::Array[HubSpotSDK::Crm::PipelineStage]
 
         attr_accessor updated_at: Time
 
@@ -38,7 +38,7 @@ module HubspotSDK
           created_at: Time,
           display_order: Integer,
           label: String,
-          stages: ::Array[HubspotSDK::Crm::PipelineStage],
+          stages: ::Array[HubSpotSDK::Crm::PipelineStage],
           updated_at: Time,
           ?archived_at: Time
         ) -> void
@@ -49,7 +49,7 @@ module HubspotSDK
           created_at: Time,
           display_order: Integer,
           label: String,
-          stages: ::Array[HubspotSDK::Crm::PipelineStage],
+          stages: ::Array[HubSpotSDK::Crm::PipelineStage],
           updated_at: Time,
           archived_at: Time
         }

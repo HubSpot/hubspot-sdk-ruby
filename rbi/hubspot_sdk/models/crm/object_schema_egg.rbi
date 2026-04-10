@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ObjectSchemaEgg < HubspotSDK::Internal::Type::BaseModel
+      class ObjectSchemaEgg < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::ObjectSchemaEgg,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::ObjectSchemaEgg,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -21,11 +21,11 @@ module HubspotSDK
         sig { returns(T::Array[String]) }
         attr_accessor :associated_objects
 
-        sig { returns(HubspotSDK::ObjectTypeDefinitionLabels) }
+        sig { returns(HubSpotSDK::ObjectTypeDefinitionLabels) }
         attr_reader :labels
 
         sig do
-          params(labels: HubspotSDK::ObjectTypeDefinitionLabels::OrHash).void
+          params(labels: HubSpotSDK::ObjectTypeDefinitionLabels::OrHash).void
         end
         attr_writer :labels
 
@@ -34,7 +34,7 @@ module HubspotSDK
         attr_accessor :name
 
         # Properties defined for this object type.
-        sig { returns(T::Array[HubspotSDK::Crm::ObjectTypePropertyCreate]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::ObjectTypePropertyCreate]) }
         attr_accessor :properties
 
         # The names of properties that should be **required** when creating an object of
@@ -71,10 +71,10 @@ module HubspotSDK
           params(
             allows_sensitive_properties: T::Boolean,
             associated_objects: T::Array[String],
-            labels: HubspotSDK::ObjectTypeDefinitionLabels::OrHash,
+            labels: HubSpotSDK::ObjectTypeDefinitionLabels::OrHash,
             name: String,
             properties:
-              T::Array[HubspotSDK::Crm::ObjectTypePropertyCreate::OrHash],
+              T::Array[HubSpotSDK::Crm::ObjectTypePropertyCreate::OrHash],
             required_properties: T::Array[String],
             searchable_properties: T::Array[String],
             secondary_display_properties: T::Array[String],
@@ -115,9 +115,9 @@ module HubspotSDK
             {
               allows_sensitive_properties: T::Boolean,
               associated_objects: T::Array[String],
-              labels: HubspotSDK::ObjectTypeDefinitionLabels,
+              labels: HubSpotSDK::ObjectTypeDefinitionLabels,
               name: String,
-              properties: T::Array[HubspotSDK::Crm::ObjectTypePropertyCreate],
+              properties: T::Array[HubSpotSDK::Crm::ObjectTypePropertyCreate],
               required_properties: T::Array[String],
               searchable_properties: T::Array[String],
               secondary_display_properties: T::Array[String],

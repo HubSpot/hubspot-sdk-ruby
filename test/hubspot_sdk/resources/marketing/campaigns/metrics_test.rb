@@ -2,14 +2,14 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Marketing::Campaigns::MetricsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Marketing::Campaigns::MetricsTest < HubSpotSDK::Test::ResourceTest
   def test_get_attribution_metrics
     skip("Mock server tests are disabled")
 
     response = @hubspot.marketing.campaigns.metrics.get_attribution_metrics("campaignGuid")
 
     assert_pattern do
-      response => HubspotSDK::Marketing::MetricsCounters
+      response => HubSpotSDK::Marketing::MetricsCounters
     end
 
     assert_pattern do
@@ -28,13 +28,13 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::MetricsTest < HubspotSD
     response = @hubspot.marketing.campaigns.metrics.get_revenue_attribution("campaignGuid")
 
     assert_pattern do
-      response => HubspotSDK::Marketing::RevenueAttributionAggregate
+      response => HubSpotSDK::Marketing::RevenueAttributionAggregate
     end
 
     assert_pattern do
       response => {
         contacts_number: Integer | nil,
-        currency_code: HubspotSDK::Marketing::RevenueAttributionAggregate::CurrencyCode | nil,
+        currency_code: HubSpotSDK::Marketing::RevenueAttributionAggregate::CurrencyCode | nil,
         deal_amount: Float | nil,
         deals_number: Integer | nil,
         revenue_amount: Float | nil
@@ -52,14 +52,14 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::MetricsTest < HubspotSD
       )
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Marketing::ContactReference
+      row => HubSpotSDK::Marketing::ContactReference
     end
 
     assert_pattern do

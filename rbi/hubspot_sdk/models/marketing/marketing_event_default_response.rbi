@@ -1,16 +1,16 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     MarketingEventDefaultResponse = Marketing::MarketingEventDefaultResponse
 
     module Marketing
-      class MarketingEventDefaultResponse < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventDefaultResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::MarketingEventDefaultResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::MarketingEventDefaultResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -22,7 +22,7 @@ module HubspotSDK
         # Custom Property you want to track on that HubSpot account. Do not create any new
         # default properties on the MarketingEvent object as that will apply to all
         # HubSpot accounts.
-        sig { returns(T::Array[HubspotSDK::PropertyValue]) }
+        sig { returns(T::Array[HubSpotSDK::PropertyValue]) }
         attr_accessor :custom_properties
 
         # The name of the marketing event.
@@ -92,7 +92,7 @@ module HubspotSDK
 
         sig do
           params(
-            custom_properties: T::Array[HubspotSDK::PropertyValue::OrHash],
+            custom_properties: T::Array[HubSpotSDK::PropertyValue::OrHash],
             event_name: String,
             event_organizer: String,
             end_date_time: Time,
@@ -142,7 +142,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              custom_properties: T::Array[HubspotSDK::PropertyValue],
+              custom_properties: T::Array[HubSpotSDK::PropertyValue],
               event_name: String,
               event_organizer: String,
               end_date_time: Time,

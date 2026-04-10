@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::Emails#get_revision
-      class PublicEmailVersion < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Marketing::Emails#get_revision
+      class PublicEmailVersion < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [String]
@@ -12,8 +12,8 @@ module HubspotSDK
 
         # @!attribute object
         #
-        #   @return [HubspotSDK::Models::Marketing::PublicEmail]
-        required :object, -> { HubspotSDK::Marketing::PublicEmail }
+        #   @return [HubSpotSDK::Models::Marketing::PublicEmail]
+        required :object, -> { HubSpotSDK::Marketing::PublicEmail }
 
         # @!attribute updated_at
         #
@@ -22,14 +22,14 @@ module HubspotSDK
 
         # @!attribute user
         #
-        #   @return [HubspotSDK::Models::VersionUser]
-        required :user, -> { HubspotSDK::VersionUser }
+        #   @return [HubSpotSDK::Models::VersionUser]
+        required :user, -> { HubSpotSDK::VersionUser }
 
         # @!method initialize(id:, object:, updated_at:, user:)
         #   @param id [String]
-        #   @param object [HubspotSDK::Models::Marketing::PublicEmail]
+        #   @param object [HubSpotSDK::Models::Marketing::PublicEmail]
         #   @param updated_at [Time]
-        #   @param user [HubspotSDK::Models::VersionUser]
+        #   @param user [HubSpotSDK::Models::VersionUser]
       end
     end
   end

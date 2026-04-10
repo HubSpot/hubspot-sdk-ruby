@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class IdentificationTokenResponse < HubspotSDK::Internal::Type::BaseModel
+      class IdentificationTokenResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::IdentificationTokenResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::IdentificationTokenResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

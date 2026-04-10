@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ListSizeDataPoint < HubspotSDK::Internal::Type::BaseModel
+      class ListSizeDataPoint < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute size
         #
         #   @return [Integer]

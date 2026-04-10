@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
         module Posts
-          # @see HubspotSDK::Resources::Cms::Blogs::Posts::Revisions#restore_previous_version_to_draft
-          class RevisionRestorePreviousVersionToDraftParams < HubspotSDK::Internal::Type::BaseModel
-            extend HubspotSDK::Internal::Type::RequestParameters::Converter
-            include HubspotSDK::Internal::Type::RequestParameters
+          # @see HubSpotSDK::Resources::Cms::Blogs::Posts::Revisions#restore_previous_version_to_draft
+          class RevisionRestorePreviousVersionToDraftParams < HubSpotSDK::Internal::Type::BaseModel
+            extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+            include HubSpotSDK::Internal::Type::RequestParameters
 
             # @!attribute object_id_
             #
@@ -23,7 +23,7 @@ module HubspotSDK
             # @!method initialize(object_id_:, revision_id:, request_options: {})
             #   @param object_id_ [String]
             #   @param revision_id [Integer]
-            #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+            #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
           end
         end
       end

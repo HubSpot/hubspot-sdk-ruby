@@ -1,24 +1,24 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
       type public_status_bulk_response =
         {
-          statuses: ::Array[HubspotSDK::CommunicationPreferences::PublicStatus],
+          statuses: ::Array[HubSpotSDK::CommunicationPreferences::PublicStatus],
           subscriber_id_string: String
         }
 
-      class PublicStatusBulkResponse < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor statuses: ::Array[HubspotSDK::CommunicationPreferences::PublicStatus]
+      class PublicStatusBulkResponse < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor statuses: ::Array[HubSpotSDK::CommunicationPreferences::PublicStatus]
 
         attr_accessor subscriber_id_string: String
 
         def initialize: (
-          statuses: ::Array[HubspotSDK::CommunicationPreferences::PublicStatus],
+          statuses: ::Array[HubSpotSDK::CommunicationPreferences::PublicStatus],
           subscriber_id_string: String
         ) -> void
 
         def to_hash: -> {
-          statuses: ::Array[HubspotSDK::CommunicationPreferences::PublicStatus],
+          statuses: ::Array[HubSpotSDK::CommunicationPreferences::PublicStatus],
           subscriber_id_string: String
         }
       end

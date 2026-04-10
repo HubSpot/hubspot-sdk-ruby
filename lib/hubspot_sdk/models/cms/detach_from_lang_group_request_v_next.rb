@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class DetachFromLangGroupRequestVNext < HubspotSDK::Internal::Type::BaseModel
+      class DetachFromLangGroupRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   ID of the object to remove from a multi-language group.
         #

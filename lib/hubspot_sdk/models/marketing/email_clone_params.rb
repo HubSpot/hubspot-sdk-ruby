@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::Emails#clone_
-      class EmailCloneParams < HubspotSDK::Models::Marketing::EmailCloneRequestVNext
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Marketing::Emails#clone_
+      class EmailCloneParams < HubSpotSDK::Models::Marketing::EmailCloneRequestVNext
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!method initialize(request_options: {})
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

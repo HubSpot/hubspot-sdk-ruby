@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Extensions
@@ -14,8 +14,8 @@ module HubspotSDK
               fetch_accounts_uri: String,
               update_meeting_url: String,
               user_verify_url: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::Extensions::ExternalSettings)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::Extensions::ExternalSettings)
           end
           def update(
             app_id,
@@ -32,7 +32,7 @@ module HubspotSDK
           sig do
             params(
               app_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete(app_id, request_options: {})
@@ -42,14 +42,14 @@ module HubspotSDK
           sig do
             params(
               app_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::Extensions::ExternalSettings)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::Extensions::ExternalSettings)
           end
           def get(app_id, request_options: {})
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

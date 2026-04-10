@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       module Actions
-        # @see HubspotSDK::Resources::Automation::Actions::Functions#delete_by_function_type
-        class FunctionDeleteByFunctionTypeParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Automation::Actions::Functions#delete_by_function_type
+        class FunctionDeleteByFunctionTypeParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute app_id
           #
@@ -21,18 +21,18 @@ module HubspotSDK
 
           # @!attribute function_type
           #
-          #   @return [Symbol, HubspotSDK::Models::Automation::Actions::FunctionDeleteByFunctionTypeParams::FunctionType]
+          #   @return [Symbol, HubSpotSDK::Models::Automation::Actions::FunctionDeleteByFunctionTypeParams::FunctionType]
           required :function_type,
-                   enum: -> { HubspotSDK::Automation::Actions::FunctionDeleteByFunctionTypeParams::FunctionType }
+                   enum: -> { HubSpotSDK::Automation::Actions::FunctionDeleteByFunctionTypeParams::FunctionType }
 
           # @!method initialize(app_id:, definition_id:, function_type:, request_options: {})
           #   @param app_id [Integer]
           #   @param definition_id [String]
-          #   @param function_type [Symbol, HubspotSDK::Models::Automation::Actions::FunctionDeleteByFunctionTypeParams::FunctionType]
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param function_type [Symbol, HubSpotSDK::Models::Automation::Actions::FunctionDeleteByFunctionTypeParams::FunctionType]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
 
           module FunctionType
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             POST_ACTION_EXECUTION = :POST_ACTION_EXECUTION
             POST_FETCH_OPTIONS = :POST_FETCH_OPTIONS

@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type standard_error =
       {
         category: String,
         context: ::Hash[Symbol, ::Array[String]],
-        errors: ::Array[HubspotSDK::ErrorDetail],
+        errors: ::Array[HubSpotSDK::ErrorDetail],
         links: ::Hash[Symbol, String],
         message: String,
         status: String,
@@ -12,12 +12,12 @@ module HubspotSDK
         sub_category: top
       }
 
-    class StandardError < HubspotSDK::Internal::Type::BaseModel
+    class StandardError < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor category: String
 
       attr_accessor context: ::Hash[Symbol, ::Array[String]]
 
-      attr_accessor errors: ::Array[HubspotSDK::ErrorDetail]
+      attr_accessor errors: ::Array[HubSpotSDK::ErrorDetail]
 
       attr_accessor links: ::Hash[Symbol, String]
 
@@ -36,7 +36,7 @@ module HubspotSDK
       def initialize: (
         category: String,
         context: ::Hash[Symbol, ::Array[String]],
-        errors: ::Array[HubspotSDK::ErrorDetail],
+        errors: ::Array[HubSpotSDK::ErrorDetail],
         links: ::Hash[Symbol, String],
         message: String,
         status: String,
@@ -47,7 +47,7 @@ module HubspotSDK
       def to_hash: -> {
         category: String,
         context: ::Hash[Symbol, ::Array[String]],
-        errors: ::Array[HubspotSDK::ErrorDetail],
+        errors: ::Array[HubSpotSDK::ErrorDetail],
         links: ::Hash[Symbol, String],
         message: String,
         status: String,

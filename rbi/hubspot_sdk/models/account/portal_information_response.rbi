@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
-      class PortalInformationResponse < HubspotSDK::Internal::Type::BaseModel
+      class PortalInformationResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Account::PortalInformationResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Account::PortalInformationResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,7 +16,7 @@ module HubspotSDK
         # STANDARD.
         sig do
           returns(
-            HubspotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol
+            HubSpotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol
           )
         end
         attr_accessor :account_type
@@ -55,7 +55,7 @@ module HubspotSDK
         sig do
           params(
             account_type:
-              HubspotSDK::Account::PortalInformationResponse::AccountType::OrSymbol,
+              HubSpotSDK::Account::PortalInformationResponse::AccountType::OrSymbol,
             additional_currencies: T::Array[String],
             company_currency: String,
             data_hosting_location: String,
@@ -92,7 +92,7 @@ module HubspotSDK
           override.returns(
             {
               account_type:
-                HubspotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol,
+                HubSpotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol,
               additional_currencies: T::Array[String],
               company_currency: String,
               data_hosting_location: String,
@@ -110,13 +110,13 @@ module HubspotSDK
         # The type of account, such as APP_DEVELOPER, DEVELOPER_TEST, SANDBOX, or
         # STANDARD.
         module AccountType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Account::PortalInformationResponse::AccountType
+                HubSpotSDK::Account::PortalInformationResponse::AccountType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -124,28 +124,28 @@ module HubspotSDK
           APP_DEVELOPER =
             T.let(
               :APP_DEVELOPER,
-              HubspotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol
+              HubSpotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol
             )
           DEVELOPER_TEST =
             T.let(
               :DEVELOPER_TEST,
-              HubspotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol
+              HubSpotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol
             )
           SANDBOX =
             T.let(
               :SANDBOX,
-              HubspotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol
+              HubSpotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol
             )
           STANDARD =
             T.let(
               :STANDARD,
-              HubspotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol
+              HubSpotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol
+                HubSpotSDK::Account::PortalInformationResponse::AccountType::TaggedSymbol
               ]
             )
           end

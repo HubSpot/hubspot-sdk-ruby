@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Objects
-        class ProductUpdateParams < HubspotSDK::Models::Crm::SimplePublicObjectInput
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class ProductUpdateParams < HubSpotSDK::Models::Crm::SimplePublicObjectInput
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Objects::ProductUpdateParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Objects::ProductUpdateParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -30,7 +30,7 @@ module HubspotSDK
             params(
               product_id: String,
               id_property: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
@@ -46,7 +46,7 @@ module HubspotSDK
               {
                 product_id: String,
                 id_property: String,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

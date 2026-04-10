@@ -1,23 +1,23 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type definition_delete_params =
-        { event_name: String } & HubspotSDK::Internal::Type::request_parameters
+        { event_name: String } & HubSpotSDK::Internal::Type::request_parameters
 
-      class DefinitionDeleteParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class DefinitionDeleteParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         attr_accessor event_name: String
 
         def initialize: (
           event_name: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           event_name: String,
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
       end
     end

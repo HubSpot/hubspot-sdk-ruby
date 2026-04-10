@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicSpendItemInput < HubspotSDK::Internal::Type::BaseModel
+      class PublicSpendItemInput < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute amount
         #   The monetary value of the spend item.
         #

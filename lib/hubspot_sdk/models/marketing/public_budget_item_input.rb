@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicBudgetItemInput < HubspotSDK::Internal::Type::BaseModel
+      class PublicBudgetItemInput < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute amount
         #   The monetary value assigned to the budget item.
         #

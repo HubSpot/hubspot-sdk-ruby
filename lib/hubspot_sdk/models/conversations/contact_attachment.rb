@@ -1,26 +1,26 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class ContactAttachment < HubspotSDK::Internal::Type::BaseModel
+      class ContactAttachment < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute contact_profile
         #
-        #   @return [HubspotSDK::Models::Conversations::ContactProfile]
-        required :contact_profile, -> { HubspotSDK::Conversations::ContactProfile }, api_name: :contactProfile
+        #   @return [HubSpotSDK::Models::Conversations::ContactProfile]
+        required :contact_profile, -> { HubSpotSDK::Conversations::ContactProfile }, api_name: :contactProfile
 
         # @!attribute type
         #
-        #   @return [Symbol, HubspotSDK::Models::Conversations::ContactAttachment::Type]
-        required :type, enum: -> { HubspotSDK::Conversations::ContactAttachment::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Conversations::ContactAttachment::Type]
+        required :type, enum: -> { HubSpotSDK::Conversations::ContactAttachment::Type }
 
         # @!method initialize(contact_profile:, type:)
-        #   @param contact_profile [HubspotSDK::Models::Conversations::ContactProfile]
-        #   @param type [Symbol, HubspotSDK::Models::Conversations::ContactAttachment::Type]
+        #   @param contact_profile [HubSpotSDK::Models::Conversations::ContactProfile]
+        #   @param type [Symbol, HubSpotSDK::Models::Conversations::ContactAttachment::Type]
 
-        # @see HubspotSDK::Models::Conversations::ContactAttachment#type
+        # @see HubSpotSDK::Models::Conversations::ContactAttachment#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONTACT = :CONTACT
 

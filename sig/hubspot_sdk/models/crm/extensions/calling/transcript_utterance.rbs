@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
@@ -10,10 +10,10 @@ module HubspotSDK
               start_time_millis: Integer,
               text: String,
               language_code: String,
-              speaker: HubspotSDK::Crm::Extensions::Calling::Speaker
+              speaker: HubSpotSDK::Crm::Extensions::Calling::Speaker
             }
 
-          class TranscriptUtterance < HubspotSDK::Internal::Type::BaseModel
+          class TranscriptUtterance < HubSpotSDK::Internal::Type::BaseModel
             attr_accessor id: String
 
             attr_accessor end_time_millis: Integer
@@ -26,11 +26,11 @@ module HubspotSDK
 
             def language_code=: (String) -> String
 
-            attr_reader speaker: HubspotSDK::Crm::Extensions::Calling::Speaker?
+            attr_reader speaker: HubSpotSDK::Crm::Extensions::Calling::Speaker?
 
             def speaker=: (
-              HubspotSDK::Crm::Extensions::Calling::Speaker
-            ) -> HubspotSDK::Crm::Extensions::Calling::Speaker
+              HubSpotSDK::Crm::Extensions::Calling::Speaker
+            ) -> HubSpotSDK::Crm::Extensions::Calling::Speaker
 
             def initialize: (
               id: String,
@@ -38,7 +38,7 @@ module HubspotSDK
               start_time_millis: Integer,
               text: String,
               ?language_code: String,
-              ?speaker: HubspotSDK::Crm::Extensions::Calling::Speaker
+              ?speaker: HubSpotSDK::Crm::Extensions::Calling::Speaker
             ) -> void
 
             def to_hash: -> {
@@ -47,7 +47,7 @@ module HubspotSDK
               start_time_millis: Integer,
               text: String,
               language_code: String,
-              speaker: HubspotSDK::Crm::Extensions::Calling::Speaker
+              speaker: HubSpotSDK::Crm::Extensions::Calling::Speaker
             }
           end
         end

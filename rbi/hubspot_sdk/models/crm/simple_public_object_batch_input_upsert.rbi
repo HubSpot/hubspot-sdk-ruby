@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class SimplePublicObjectBatchInputUpsert < HubspotSDK::Internal::Type::BaseModel
+      class SimplePublicObjectBatchInputUpsert < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::SimplePublicObjectBatchInputUpsert,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::SimplePublicObjectBatchInputUpsert,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type audit_log_list_params =
@@ -12,11 +12,11 @@ module HubspotSDK
           sort: ::Array[String],
           user_id: ::Array[String]
         }
-        & HubspotSDK::Internal::Type::request_parameters
+        & HubSpotSDK::Internal::Type::request_parameters
 
-      class AuditLogListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class AuditLogListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         attr_reader after: String?
 
@@ -59,7 +59,7 @@ module HubspotSDK
           ?object_type: ::Array[String],
           ?sort: ::Array[String],
           ?user_id: ::Array[String],
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
@@ -71,7 +71,7 @@ module HubspotSDK
           object_type: ::Array[String],
           sort: ::Array[String],
           user_id: ::Array[String],
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
       end
     end

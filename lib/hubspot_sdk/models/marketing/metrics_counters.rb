@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class MetricsCounters < HubspotSDK::Internal::Type::BaseModel
+      class MetricsCounters < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute influenced_contacts
         #   The number of contacts influenced by the campaign.
         #

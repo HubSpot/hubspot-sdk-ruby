@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Meta
       class Origins
@@ -13,14 +13,14 @@ module HubspotSDK
             params(
               direction:
                 T::Array[
-                  HubspotSDK::Meta::Origins::IPRangeListParams::Direction::OrSymbol
+                  HubSpotSDK::Meta::Origins::IPRangeListParams::Direction::OrSymbol
                 ],
               service:
                 T::Array[
-                  HubspotSDK::Meta::Origins::IPRangeListParams::Service::OrSymbol
+                  HubSpotSDK::Meta::Origins::IPRangeListParams::Service::OrSymbol
                 ],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Meta::CollectionResponseIPRangeNoPaging)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Meta::CollectionResponseIPRangeNoPaging)
           end
           def list(direction: nil, service: nil, request_options: {})
           end
@@ -32,20 +32,20 @@ module HubspotSDK
             params(
               direction:
                 T::Array[
-                  HubspotSDK::Meta::Origins::IPRangeListSimpleParams::Direction::OrSymbol
+                  HubSpotSDK::Meta::Origins::IPRangeListSimpleParams::Direction::OrSymbol
                 ],
               service:
                 T::Array[
-                  HubspotSDK::Meta::Origins::IPRangeListSimpleParams::Service::OrSymbol
+                  HubSpotSDK::Meta::Origins::IPRangeListSimpleParams::Service::OrSymbol
                 ],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(String)
           end
           def list_simple(direction: nil, service: nil, request_options: {})
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

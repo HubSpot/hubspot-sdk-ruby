@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::MediaBridge#list_object_types_by_media_type
-      class ObjectDefinitionResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Cms::MediaBridge#list_object_types_by_media_type
+      class ObjectDefinitionResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute object_type_id
         #
         #   @return [String]
@@ -17,27 +17,27 @@ module HubspotSDK
 
         # @!attribute properties
         #
-        #   @return [Array<HubspotSDK::Models::Cms::PropertyDefinition>]
-        required :properties, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::PropertyDefinition] }
+        #   @return [Array<HubSpotSDK::Models::Cms::PropertyDefinition>]
+        required :properties, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::PropertyDefinition] }
 
         # @!attribute property_groups
         #
-        #   @return [Array<HubspotSDK::Models::Cms::GroupView>]
+        #   @return [Array<HubSpotSDK::Models::Cms::GroupView>]
         required :property_groups,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::GroupView] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::GroupView] },
                  api_name: :propertyGroups
 
         # @!attribute schema
         #
-        #   @return [HubspotSDK::Models::Cms::InboundDBObjectType, nil]
-        optional :schema, -> { HubspotSDK::Cms::InboundDBObjectType }
+        #   @return [HubSpotSDK::Models::Cms::InboundDBObjectType, nil]
+        optional :schema, -> { HubSpotSDK::Cms::InboundDBObjectType }
 
         # @!method initialize(object_type_id:, object_type_name:, properties:, property_groups:, schema: nil)
         #   @param object_type_id [String]
         #   @param object_type_name [String]
-        #   @param properties [Array<HubspotSDK::Models::Cms::PropertyDefinition>]
-        #   @param property_groups [Array<HubspotSDK::Models::Cms::GroupView>]
-        #   @param schema [HubspotSDK::Models::Cms::InboundDBObjectType]
+        #   @param properties [Array<HubSpotSDK::Models::Cms::PropertyDefinition>]
+        #   @param property_groups [Array<HubSpotSDK::Models::Cms::GroupView>]
+        #   @param schema [HubSpotSDK::Models::Cms::InboundDBObjectType]
       end
     end
   end

@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       module Actions
-        class CallbackCompleteParams < HubspotSDK::Models::Automation::CallbackCompletionRequest
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class CallbackCompleteParams < HubSpotSDK::Models::Automation::CallbackCompletionRequest
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Automation::Actions::CallbackCompleteParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Automation::Actions::CallbackCompleteParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -22,7 +22,7 @@ module HubspotSDK
           sig do
             params(
               callback_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(callback_id:, request_options: {})
@@ -32,7 +32,7 @@ module HubspotSDK
             override.returns(
               {
                 callback_id: String,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

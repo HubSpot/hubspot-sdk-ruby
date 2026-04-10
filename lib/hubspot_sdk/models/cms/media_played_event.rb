@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::MediaBridge#create_media_played_event
-      class MediaPlayedEvent < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Cms::MediaBridge#create_media_played_event
+      class MediaPlayedEvent < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute contact_id
         #
         #   @return [Integer]
@@ -32,8 +32,8 @@ module HubspotSDK
 
         # @!attribute media_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::MediaPlayedEvent::MediaType]
-        required :media_type, enum: -> { HubspotSDK::Cms::MediaPlayedEvent::MediaType }, api_name: :mediaType
+        #   @return [Symbol, HubSpotSDK::Models::Cms::MediaPlayedEvent::MediaType]
+        required :media_type, enum: -> { HubSpotSDK::Cms::MediaPlayedEvent::MediaType }, api_name: :mediaType
 
         # @!attribute occurred_timestamp
         #
@@ -57,14 +57,14 @@ module HubspotSDK
 
         # @!attribute state
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::MediaPlayedEvent::State]
-        required :state, enum: -> { HubspotSDK::Cms::MediaPlayedEvent::State }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::MediaPlayedEvent::State]
+        required :state, enum: -> { HubSpotSDK::Cms::MediaPlayedEvent::State }
 
         # @!attribute external_play_context
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::MediaPlayedEvent::ExternalPlayContext, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::MediaPlayedEvent::ExternalPlayContext, nil]
         optional :external_play_context,
-                 enum: -> { HubspotSDK::Cms::MediaPlayedEvent::ExternalPlayContext },
+                 enum: -> { HubSpotSDK::Cms::MediaPlayedEvent::ExternalPlayContext },
                  api_name: :externalPlayContext
 
         # @!attribute iframe_url
@@ -103,13 +103,13 @@ module HubspotSDK
         #   @param media_bridge_object_coordinates [String]
         #   @param media_bridge_object_type_id [String]
         #   @param media_name [String]
-        #   @param media_type [Symbol, HubspotSDK::Models::Cms::MediaPlayedEvent::MediaType]
+        #   @param media_type [Symbol, HubSpotSDK::Models::Cms::MediaPlayedEvent::MediaType]
         #   @param occurred_timestamp [Integer]
         #   @param portal_id [Integer]
         #   @param provider_id [Integer]
         #   @param session_id [String]
-        #   @param state [Symbol, HubspotSDK::Models::Cms::MediaPlayedEvent::State]
-        #   @param external_play_context [Symbol, HubspotSDK::Models::Cms::MediaPlayedEvent::ExternalPlayContext]
+        #   @param state [Symbol, HubSpotSDK::Models::Cms::MediaPlayedEvent::State]
+        #   @param external_play_context [Symbol, HubSpotSDK::Models::Cms::MediaPlayedEvent::ExternalPlayContext]
         #   @param iframe_url [String]
         #   @param media_url [String]
         #   @param page_id [Integer]
@@ -117,9 +117,9 @@ module HubspotSDK
         #   @param page_object_coordinates [String]
         #   @param page_url [String]
 
-        # @see HubspotSDK::Models::Cms::MediaPlayedEvent#media_type
+        # @see HubSpotSDK::Models::Cms::MediaPlayedEvent#media_type
         module MediaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUDIO = :AUDIO
           DOCUMENT = :DOCUMENT
@@ -131,9 +131,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Cms::MediaPlayedEvent#state
+        # @see HubSpotSDK::Models::Cms::MediaPlayedEvent#state
         module State
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           STARTED = :STARTED
           VIEWED = :VIEWED
@@ -142,9 +142,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Cms::MediaPlayedEvent#external_play_context
+        # @see HubSpotSDK::Models::Cms::MediaPlayedEvent#external_play_context
         module ExternalPlayContext
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL = :EMAIL
           EXTERNAL_PAGE = :EXTERNAL_PAGE

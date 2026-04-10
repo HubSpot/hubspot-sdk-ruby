@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       type subscription_response =
@@ -6,21 +6,21 @@ module HubspotSDK
           id: String,
           active: bool,
           created_at: Time,
-          event_type: HubspotSDK::Models::Webhooks::SubscriptionResponse::event_type,
+          event_type: HubSpotSDK::Models::Webhooks::SubscriptionResponse::event_type,
           event_type_name: String,
           object_type_id: String,
           property_name: String,
           updated_at: Time
         }
 
-      class SubscriptionResponse < HubspotSDK::Internal::Type::BaseModel
+      class SubscriptionResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor active: bool
 
         attr_accessor created_at: Time
 
-        attr_accessor event_type: HubspotSDK::Models::Webhooks::SubscriptionResponse::event_type
+        attr_accessor event_type: HubSpotSDK::Models::Webhooks::SubscriptionResponse::event_type
 
         attr_reader event_type_name: String?
 
@@ -42,7 +42,7 @@ module HubspotSDK
           id: String,
           active: bool,
           created_at: Time,
-          event_type: HubspotSDK::Models::Webhooks::SubscriptionResponse::event_type,
+          event_type: HubSpotSDK::Models::Webhooks::SubscriptionResponse::event_type,
           ?event_type_name: String,
           ?object_type_id: String,
           ?property_name: String,
@@ -53,7 +53,7 @@ module HubspotSDK
           id: String,
           active: bool,
           created_at: Time,
-          event_type: HubspotSDK::Models::Webhooks::SubscriptionResponse::event_type,
+          event_type: HubSpotSDK::Models::Webhooks::SubscriptionResponse::event_type,
           event_type_name: String,
           object_type_id: String,
           property_name: String,
@@ -111,7 +111,7 @@ module HubspotSDK
           | :"ticket.restore"
 
         module EventType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           COMPANY_ASSOCIATION_CHANGE: :"company.associationChange"
           COMPANY_CREATION: :"company.creation"
@@ -162,7 +162,7 @@ module HubspotSDK
           TICKET_PROPERTY_CHANGE: :"ticket.propertyChange"
           TICKET_RESTORE: :"ticket.restore"
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Webhooks::SubscriptionResponse::event_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Webhooks::SubscriptionResponse::event_type]
         end
       end
     end

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Hubdb
         class Rows
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Hubdb::RowCreateParams} for more details.
+          # {HubSpotSDK::Models::Cms::Hubdb::RowCreateParams} for more details.
           #
           # Add a new row to a HubDB table. New rows will be added to the draft version of
           # the table. Use the `/publish` endpoint to push these changes to published
@@ -26,24 +26,24 @@ module HubspotSDK
           #
           # @param path [String] Specifies the value for `hs_path` column, which will be used as slug in the dyna
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::HubDBTableRowV3]
+          # @return [HubSpotSDK::Models::Cms::HubDBTableRowV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::RowCreateParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::RowCreateParams
           def create(table_id_or_name, params)
-            parsed, options = HubspotSDK::Cms::Hubdb::RowCreateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Hubdb::RowCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["cms/hubdb/2026-03/tables/%1$s/rows", table_id_or_name],
               body: parsed,
-              model: HubspotSDK::Cms::HubDBTableRowV3,
+              model: HubSpotSDK::Cms::HubDBTableRowV3,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Hubdb::RowListParams} for more details.
+          # {HubSpotSDK::Models::Cms::Hubdb::RowListParams} for more details.
           #
           # Returns a set of rows in the published version of the specified table. Row
           # results can be filtered and sorted. Filtering and sorting options will be sent
@@ -72,19 +72,19 @@ module HubspotSDK
           #
           # @param sort [Array<String>]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3, HubspotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3]
+          # @return [HubSpotSDK::Models::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3, HubSpotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::RowListParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::RowListParams
           def list(table_id_or_name, params = {})
-            parsed, options = HubspotSDK::Cms::Hubdb::RowListParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Hubdb::RowListParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["cms/hubdb/2026-03/tables/%1$s/rows", table_id_or_name],
               query: query,
-              model: HubspotSDK::Cms::UnifiedCollectionResponseWithTotalBaseHubDBTableRowV3,
+              model: HubSpotSDK::Cms::UnifiedCollectionResponseWithTotalBaseHubDBTableRowV3,
               options: options
             )
           end
@@ -95,19 +95,19 @@ module HubspotSDK
           # @overload clone_batch(table_id_or_name, inputs:, request_options: {})
           #
           # @param table_id_or_name [String]
-          # @param inputs [Array<HubspotSDK::Models::Cms::HubDBTableRowBatchCloneRequest>]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param inputs [Array<HubSpotSDK::Models::Cms::HubDBTableRowBatchCloneRequest>]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3]
+          # @return [HubSpotSDK::Models::Cms::BatchResponseHubDBTableRowV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::RowCloneBatchParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::RowCloneBatchParams
           def clone_batch(table_id_or_name, params)
-            parsed, options = HubspotSDK::Cms::Hubdb::RowCloneBatchParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Hubdb::RowCloneBatchParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["cms/hubdb/2026-03/tables/%1$s/rows/draft/batch/clone", table_id_or_name],
               body: parsed,
-              model: HubspotSDK::Cms::BatchResponseHubDBTableRowV3,
+              model: HubSpotSDK::Cms::BatchResponseHubDBTableRowV3,
               options: options
             )
           end
@@ -122,14 +122,14 @@ module HubspotSDK
           #
           # @param name [String] Query param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::HubDBTableRowV3]
+          # @return [HubSpotSDK::Models::Cms::HubDBTableRowV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::RowCloneDraftParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::RowCloneDraftParams
           def clone_draft(row_id, params)
-            parsed, options = HubspotSDK::Cms::Hubdb::RowCloneDraftParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Hubdb::RowCloneDraftParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             table_id_or_name =
               parsed.delete(:table_id_or_name) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -138,7 +138,7 @@ module HubspotSDK
               method: :post,
               path: ["cms/hubdb/2026-03/tables/%1$s/rows/%2$s/draft/clone", table_id_or_name, row_id],
               query: query,
-              model: HubspotSDK::Cms::HubDBTableRowV3,
+              model: HubSpotSDK::Cms::HubDBTableRowV3,
               options: options
             )
           end
@@ -150,19 +150,19 @@ module HubspotSDK
           # @overload create_batch(table_id_or_name, inputs:, request_options: {})
           #
           # @param table_id_or_name [String]
-          # @param inputs [Array<HubspotSDK::Models::Cms::HubDBTableRowV3Request>]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param inputs [Array<HubSpotSDK::Models::Cms::HubDBTableRowV3Request>]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3]
+          # @return [HubSpotSDK::Models::Cms::BatchResponseHubDBTableRowV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::RowCreateBatchParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::RowCreateBatchParams
           def create_batch(table_id_or_name, params)
-            parsed, options = HubspotSDK::Cms::Hubdb::RowCreateBatchParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Hubdb::RowCreateBatchParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["cms/hubdb/2026-03/tables/%1$s/rows/draft/batch/create", table_id_or_name],
               body: parsed,
-              model: HubspotSDK::Cms::BatchResponseHubDBTableRowV3,
+              model: HubSpotSDK::Cms::BatchResponseHubDBTableRowV3,
               options: options
             )
           end
@@ -173,13 +173,13 @@ module HubspotSDK
           #
           # @param row_id [String]
           # @param table_id_or_name [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::RowDeleteDraftParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::RowDeleteDraftParams
           def delete_draft(row_id, params)
-            parsed, options = HubspotSDK::Cms::Hubdb::RowDeleteDraftParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Hubdb::RowDeleteDraftParams.dump_request(params)
             table_id_or_name =
               parsed.delete(:table_id_or_name) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -204,14 +204,14 @@ module HubspotSDK
           #
           # @param archived [Boolean] Query param: Whether to return only results that have been archived.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::HubDBTableRowV3]
+          # @return [HubSpotSDK::Models::Cms::HubDBTableRowV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::RowGetParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::RowGetParams
           def get(row_id, params)
-            parsed, options = HubspotSDK::Cms::Hubdb::RowGetParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Hubdb::RowGetParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             table_id_or_name =
               parsed.delete(:table_id_or_name) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -220,7 +220,7 @@ module HubspotSDK
               method: :get,
               path: ["cms/hubdb/2026-03/tables/%1$s/rows/%2$s", table_id_or_name, row_id],
               query: query,
-              model: HubspotSDK::Cms::HubDBTableRowV3,
+              model: HubSpotSDK::Cms::HubDBTableRowV3,
               options: options
             )
           end
@@ -235,18 +235,18 @@ module HubspotSDK
           #
           # @param inputs [Array<String>] Strings to input.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3]
+          # @return [HubSpotSDK::Models::Cms::BatchResponseHubDBTableRowV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::RowGetBatchParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::RowGetBatchParams
           def get_batch(table_id_or_name, params)
-            parsed, options = HubspotSDK::Cms::Hubdb::RowGetBatchParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Hubdb::RowGetBatchParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["cms/hubdb/2026-03/tables/%1$s/rows/batch/read", table_id_or_name],
               body: parsed,
-              model: HubspotSDK::Cms::BatchResponseHubDBTableRowV3,
+              model: HubSpotSDK::Cms::BatchResponseHubDBTableRowV3,
               options: options
             )
           end
@@ -261,14 +261,14 @@ module HubspotSDK
           #
           # @param archived [Boolean] Query param: Whether to return only results that have been archived.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::HubDBTableRowV3]
+          # @return [HubSpotSDK::Models::Cms::HubDBTableRowV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::RowGetDraftParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::RowGetDraftParams
           def get_draft(row_id, params)
-            parsed, options = HubspotSDK::Cms::Hubdb::RowGetDraftParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Hubdb::RowGetDraftParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             table_id_or_name =
               parsed.delete(:table_id_or_name) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -277,7 +277,7 @@ module HubspotSDK
               method: :get,
               path: ["cms/hubdb/2026-03/tables/%1$s/rows/%2$s/draft", table_id_or_name, row_id],
               query: query,
-              model: HubspotSDK::Cms::HubDBTableRowV3,
+              model: HubSpotSDK::Cms::HubDBTableRowV3,
               options: options
             )
           end
@@ -291,18 +291,18 @@ module HubspotSDK
           #
           # @param inputs [Array<String>] Strings to input.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3]
+          # @return [HubSpotSDK::Models::Cms::BatchResponseHubDBTableRowV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::RowGetDraftBatchParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::RowGetDraftBatchParams
           def get_draft_batch(table_id_or_name, params)
-            parsed, options = HubspotSDK::Cms::Hubdb::RowGetDraftBatchParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Hubdb::RowGetDraftBatchParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["cms/hubdb/2026-03/tables/%1$s/rows/draft/batch/read", table_id_or_name],
               body: parsed,
-              model: HubspotSDK::Cms::BatchResponseHubDBTableRowV3,
+              model: HubSpotSDK::Cms::BatchResponseHubDBTableRowV3,
               options: options
             )
           end
@@ -316,13 +316,13 @@ module HubspotSDK
           #
           # @param inputs [Array<String>] Strings to input.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::RowPurgeBatchParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::RowPurgeBatchParams
           def purge_batch(table_id_or_name, params)
-            parsed, options = HubspotSDK::Cms::Hubdb::RowPurgeBatchParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Hubdb::RowPurgeBatchParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["cms/hubdb/2026-03/tables/%1$s/rows/draft/batch/purge", table_id_or_name],
@@ -340,25 +340,25 @@ module HubspotSDK
           # @overload replace_batch(table_id_or_name, inputs:, request_options: {})
           #
           # @param table_id_or_name [String]
-          # @param inputs [Array<HubspotSDK::Models::Cms::HubDBTableRowV3BatchUpdateRequest>]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param inputs [Array<HubSpotSDK::Models::Cms::HubDBTableRowV3BatchUpdateRequest>]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3]
+          # @return [HubSpotSDK::Models::Cms::BatchResponseHubDBTableRowV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::RowReplaceBatchParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::RowReplaceBatchParams
           def replace_batch(table_id_or_name, params)
-            parsed, options = HubspotSDK::Cms::Hubdb::RowReplaceBatchParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Hubdb::RowReplaceBatchParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["cms/hubdb/2026-03/tables/%1$s/rows/draft/batch/replace", table_id_or_name],
               body: parsed,
-              model: HubspotSDK::Cms::BatchResponseHubDBTableRowV3,
+              model: HubSpotSDK::Cms::BatchResponseHubDBTableRowV3,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Hubdb::RowReplaceDraftParams} for more details.
+          # {HubSpotSDK::Models::Cms::Hubdb::RowReplaceDraftParams} for more details.
           #
           # Replace a single row in the draft version of a table. All column values must be
           # specified. If a column has a value in the target table and this request doesn't
@@ -381,13 +381,13 @@ module HubspotSDK
           #
           # @param path [String] Body param: Specifies the value for `hs_path` column, which will be used as slug
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::HubDBTableRowV3]
+          # @return [HubSpotSDK::Models::Cms::HubDBTableRowV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::RowReplaceDraftParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::RowReplaceDraftParams
           def replace_draft(row_id, params)
-            parsed, options = HubspotSDK::Cms::Hubdb::RowReplaceDraftParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Hubdb::RowReplaceDraftParams.dump_request(params)
             table_id_or_name =
               parsed.delete(:table_id_or_name) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -396,7 +396,7 @@ module HubspotSDK
               method: :put,
               path: ["cms/hubdb/2026-03/tables/%1$s/rows/%2$s/draft", table_id_or_name, row_id],
               body: parsed,
-              model: HubspotSDK::Cms::HubDBTableRowV3,
+              model: HubSpotSDK::Cms::HubDBTableRowV3,
               options: options
             )
           end
@@ -409,25 +409,25 @@ module HubspotSDK
           # @overload update_batch(table_id_or_name, inputs:, request_options: {})
           #
           # @param table_id_or_name [String]
-          # @param inputs [Array<HubspotSDK::Models::Cms::HubDBTableRowV3BatchUpdateRequest>]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param inputs [Array<HubSpotSDK::Models::Cms::HubDBTableRowV3BatchUpdateRequest>]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3]
+          # @return [HubSpotSDK::Models::Cms::BatchResponseHubDBTableRowV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::RowUpdateBatchParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::RowUpdateBatchParams
           def update_batch(table_id_or_name, params)
-            parsed, options = HubspotSDK::Cms::Hubdb::RowUpdateBatchParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Hubdb::RowUpdateBatchParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["cms/hubdb/2026-03/tables/%1$s/rows/draft/batch/update", table_id_or_name],
               body: parsed,
-              model: HubspotSDK::Cms::BatchResponseHubDBTableRowV3,
+              model: HubSpotSDK::Cms::BatchResponseHubDBTableRowV3,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Hubdb::RowUpdateDraftParams} for more details.
+          # {HubSpotSDK::Models::Cms::Hubdb::RowUpdateDraftParams} for more details.
           #
           # Partially update a single row in the table's draft version. All the column
           # values need not be specified. Only the columns or fields that needs to be
@@ -450,13 +450,13 @@ module HubspotSDK
           #
           # @param path [String] Body param: Specifies the value for `hs_path` column, which will be used as slug
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::HubDBTableRowV3]
+          # @return [HubSpotSDK::Models::Cms::HubDBTableRowV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::RowUpdateDraftParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::RowUpdateDraftParams
           def update_draft(row_id, params)
-            parsed, options = HubspotSDK::Cms::Hubdb::RowUpdateDraftParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Hubdb::RowUpdateDraftParams.dump_request(params)
             table_id_or_name =
               parsed.delete(:table_id_or_name) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -465,14 +465,14 @@ module HubspotSDK
               method: :patch,
               path: ["cms/hubdb/2026-03/tables/%1$s/rows/%2$s/draft", table_id_or_name, row_id],
               body: parsed,
-              model: HubspotSDK::Cms::HubDBTableRowV3,
+              model: HubSpotSDK::Cms::HubDBTableRowV3,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

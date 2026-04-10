@@ -1,11 +1,11 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class ActionResponse < HubspotSDK::Internal::Type::BaseModel
+    class ActionResponse < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
-          T.any(HubspotSDK::ActionResponse, HubspotSDK::Internal::AnyHash)
+          T.any(HubSpotSDK::ActionResponse, HubSpotSDK::Internal::AnyHash)
         end
 
       # The timestamp indicating when the action was completed.
@@ -18,7 +18,7 @@ module HubspotSDK
 
       # The current status of the action, with possible values: CANCELED, COMPLETE,
       # PENDING, PROCESSING.
-      sig { returns(HubspotSDK::ActionResponse::Status::TaggedSymbol) }
+      sig { returns(HubSpotSDK::ActionResponse::Status::TaggedSymbol) }
       attr_accessor :status
 
       # A map of link names to associated URIs containing documentation about the error
@@ -40,7 +40,7 @@ module HubspotSDK
         params(
           completed_at: Time,
           started_at: Time,
-          status: HubspotSDK::ActionResponse::Status::OrSymbol,
+          status: HubSpotSDK::ActionResponse::Status::OrSymbol,
           links: T::Hash[Symbol, String],
           requested_at: Time
         ).returns(T.attached_class)
@@ -66,7 +66,7 @@ module HubspotSDK
           {
             completed_at: Time,
             started_at: Time,
-            status: HubspotSDK::ActionResponse::Status::TaggedSymbol,
+            status: HubSpotSDK::ActionResponse::Status::TaggedSymbol,
             links: T::Hash[Symbol, String],
             requested_at: Time
           }
@@ -78,24 +78,24 @@ module HubspotSDK
       # The current status of the action, with possible values: CANCELED, COMPLETE,
       # PENDING, PROCESSING.
       module Status
-        extend HubspotSDK::Internal::Type::Enum
+        extend HubSpotSDK::Internal::Type::Enum
 
         TaggedSymbol =
-          T.type_alias { T.all(Symbol, HubspotSDK::ActionResponse::Status) }
+          T.type_alias { T.all(Symbol, HubSpotSDK::ActionResponse::Status) }
         OrSymbol = T.type_alias { T.any(Symbol, String) }
 
         CANCELED =
-          T.let(:CANCELED, HubspotSDK::ActionResponse::Status::TaggedSymbol)
+          T.let(:CANCELED, HubSpotSDK::ActionResponse::Status::TaggedSymbol)
         COMPLETE =
-          T.let(:COMPLETE, HubspotSDK::ActionResponse::Status::TaggedSymbol)
+          T.let(:COMPLETE, HubSpotSDK::ActionResponse::Status::TaggedSymbol)
         PENDING =
-          T.let(:PENDING, HubspotSDK::ActionResponse::Status::TaggedSymbol)
+          T.let(:PENDING, HubSpotSDK::ActionResponse::Status::TaggedSymbol)
         PROCESSING =
-          T.let(:PROCESSING, HubspotSDK::ActionResponse::Status::TaggedSymbol)
+          T.let(:PROCESSING, HubSpotSDK::ActionResponse::Status::TaggedSymbol)
 
         sig do
           override.returns(
-            T::Array[HubspotSDK::ActionResponse::Status::TaggedSymbol]
+            T::Array[HubSpotSDK::ActionResponse::Status::TaggedSymbol]
           )
         end
         def self.values

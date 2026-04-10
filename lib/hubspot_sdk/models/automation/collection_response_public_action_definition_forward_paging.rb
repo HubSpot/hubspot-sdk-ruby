@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class CollectionResponsePublicActionDefinitionForwardPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponsePublicActionDefinitionForwardPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Automation::PublicActionDefinition>]
+        #   @return [Array<HubSpotSDK::Models::Automation::PublicActionDefinition>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicActionDefinition] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicActionDefinition] }
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::ForwardPaging, nil]
-        optional :paging, -> { HubspotSDK::ForwardPaging }
+        #   @return [HubSpotSDK::Models::ForwardPaging, nil]
+        optional :paging, -> { HubSpotSDK::ForwardPaging }
 
         # @!method initialize(results:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Automation::PublicActionDefinition>]
-        #   @param paging [HubspotSDK::Models::ForwardPaging]
+        #   @param results [Array<HubSpotSDK::Models::Automation::PublicActionDefinition>]
+        #   @param paging [HubSpotSDK::Models::ForwardPaging]
       end
     end
   end

@@ -1,40 +1,40 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type property_definition_source =
         {
-          type: HubspotSDK::Models::Cms::PropertyDefinitionSource::type_,
+          type: HubSpotSDK::Models::Cms::PropertyDefinitionSource::type_,
           name: String
         }
 
-      class PropertyDefinitionSource < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor type: HubspotSDK::Models::Cms::PropertyDefinitionSource::type_
+      class PropertyDefinitionSource < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor type: HubSpotSDK::Models::Cms::PropertyDefinitionSource::type_
 
         attr_reader name: String?
 
         def name=: (String) -> String
 
         def initialize: (
-          type: HubspotSDK::Models::Cms::PropertyDefinitionSource::type_,
+          type: HubSpotSDK::Models::Cms::PropertyDefinitionSource::type_,
           ?name: String
         ) -> void
 
         def to_hash: -> {
-          type: HubspotSDK::Models::Cms::PropertyDefinitionSource::type_,
+          type: HubSpotSDK::Models::Cms::PropertyDefinitionSource::type_,
           name: String
         }
 
         type type_ = :GLOBAL | :HAVEN_BRANCH | :OBJECT_TYPE | :PORTAL
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           GLOBAL: :GLOBAL
           HAVEN_BRANCH: :HAVEN_BRANCH
           OBJECT_TYPE: :OBJECT_TYPE
           PORTAL: :PORTAL
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::PropertyDefinitionSource::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::PropertyDefinitionSource::type_]
         end
       end
     end

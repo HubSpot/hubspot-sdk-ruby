@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class PublicObjectID < HubspotSDK::Internal::Type::BaseModel
+    class PublicObjectID < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute id
       #   ID of the object
       #

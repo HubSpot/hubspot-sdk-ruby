@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class MetricsCounters < HubspotSDK::Internal::Type::BaseModel
+      class MetricsCounters < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::MetricsCounters,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::MetricsCounters,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

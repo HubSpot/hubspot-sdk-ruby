@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       # @api private
@@ -8,13 +8,13 @@ module HubspotSDK
         # @!attribute request_options
         # Options to specify HTTP behaviour for this request.
         #
-        #   @return [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @return [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
 
         # @param mod [Module]
         def self.included(mod)
-          raise ArgumentError.new(mod) unless mod <= HubspotSDK::Internal::Type::BaseModel
+          raise ArgumentError.new(mod) unless mod <= HubSpotSDK::Internal::Type::BaseModel
 
-          mod.optional(:request_options, HubspotSDK::RequestOptions)
+          mod.optional(:request_options, HubSpotSDK::RequestOptions)
         end
 
         # @api private
@@ -28,7 +28,7 @@ module HubspotSDK
             state = {can_retry: true}
             case (dumped = dump(params, state: state))
             in Hash
-              options = HubspotSDK::Internal::Util.coerce_hash!(dumped[:request_options]).to_h
+              options = HubSpotSDK::Internal::Util.coerce_hash!(dumped[:request_options]).to_h
               request_options = state.fetch(:can_retry) ? options : {**options, max_retries: 0}
               [dumped.except(:request_options), request_options]
             else

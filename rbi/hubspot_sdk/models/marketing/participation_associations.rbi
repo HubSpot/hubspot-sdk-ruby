@@ -1,43 +1,43 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class ParticipationAssociations < HubspotSDK::Internal::Type::BaseModel
+      class ParticipationAssociations < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::ParticipationAssociations,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::ParticipationAssociations,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(HubspotSDK::Marketing::ContactAssociation) }
+        sig { returns(HubSpotSDK::Marketing::ContactAssociation) }
         attr_reader :contact
 
         sig do
           params(
-            contact: HubspotSDK::Marketing::ContactAssociation::OrHash
+            contact: HubSpotSDK::Marketing::ContactAssociation::OrHash
           ).void
         end
         attr_writer :contact
 
-        sig { returns(HubspotSDK::Marketing::MarketingEventAssociation) }
+        sig { returns(HubSpotSDK::Marketing::MarketingEventAssociation) }
         attr_reader :marketing_event
 
         sig do
           params(
             marketing_event:
-              HubspotSDK::Marketing::MarketingEventAssociation::OrHash
+              HubSpotSDK::Marketing::MarketingEventAssociation::OrHash
           ).void
         end
         attr_writer :marketing_event
 
         sig do
           params(
-            contact: HubspotSDK::Marketing::ContactAssociation::OrHash,
+            contact: HubSpotSDK::Marketing::ContactAssociation::OrHash,
             marketing_event:
-              HubspotSDK::Marketing::MarketingEventAssociation::OrHash
+              HubSpotSDK::Marketing::MarketingEventAssociation::OrHash
           ).returns(T.attached_class)
         end
         def self.new(contact:, marketing_event:)
@@ -46,8 +46,8 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              contact: HubspotSDK::Marketing::ContactAssociation,
-              marketing_event: HubspotSDK::Marketing::MarketingEventAssociation
+              contact: HubSpotSDK::Marketing::ContactAssociation,
+              marketing_event: HubSpotSDK::Marketing::MarketingEventAssociation
             }
           )
         end

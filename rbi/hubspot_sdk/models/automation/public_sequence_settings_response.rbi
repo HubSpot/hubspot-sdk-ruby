@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicSequenceSettingsResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicSequenceSettingsResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::PublicSequenceSettingsResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::PublicSequenceSettingsResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -23,7 +23,7 @@ module HubspotSDK
         # Specifies the days on which follow-up actions are allowed.
         sig do
           returns(
-            HubspotSDK::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays::TaggedSymbol
+            HubSpotSDK::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays::TaggedSymbol
           )
         end
         attr_accessor :eligible_follow_up_days
@@ -38,7 +38,7 @@ module HubspotSDK
         # unenrollment criteria.
         sig do
           returns(
-            HubspotSDK::Automation::PublicSequenceSettingsResponse::SellingStrategy::TaggedSymbol
+            HubSpotSDK::Automation::PublicSequenceSettingsResponse::SellingStrategy::TaggedSymbol
           )
         end
         attr_accessor :selling_strategy
@@ -66,10 +66,10 @@ module HubspotSDK
             id: String,
             created_at: Time,
             eligible_follow_up_days:
-              HubspotSDK::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays::OrSymbol,
+              HubSpotSDK::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays::OrSymbol,
             individual_task_reminders_enabled: T::Boolean,
             selling_strategy:
-              HubspotSDK::Automation::PublicSequenceSettingsResponse::SellingStrategy::OrSymbol,
+              HubSpotSDK::Automation::PublicSequenceSettingsResponse::SellingStrategy::OrSymbol,
             send_window_end_minute: Integer,
             send_window_start_minute: Integer,
             task_reminder_minute: Integer,
@@ -109,10 +109,10 @@ module HubspotSDK
               id: String,
               created_at: Time,
               eligible_follow_up_days:
-                HubspotSDK::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays::TaggedSymbol,
+                HubSpotSDK::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays::TaggedSymbol,
               individual_task_reminders_enabled: T::Boolean,
               selling_strategy:
-                HubspotSDK::Automation::PublicSequenceSettingsResponse::SellingStrategy::TaggedSymbol,
+                HubSpotSDK::Automation::PublicSequenceSettingsResponse::SellingStrategy::TaggedSymbol,
               send_window_end_minute: Integer,
               send_window_start_minute: Integer,
               task_reminder_minute: Integer,
@@ -125,13 +125,13 @@ module HubspotSDK
 
         # Specifies the days on which follow-up actions are allowed.
         module EligibleFollowUpDays
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays
+                HubSpotSDK::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -139,23 +139,23 @@ module HubspotSDK
           BUSINESS_DAYS =
             T.let(
               :BUSINESS_DAYS,
-              HubspotSDK::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays::TaggedSymbol
+              HubSpotSDK::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays::TaggedSymbol
             )
           EVERYDAY =
             T.let(
               :EVERYDAY,
-              HubspotSDK::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays::TaggedSymbol
+              HubSpotSDK::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays::TaggedSymbol
             )
           WEEKDAYS_ONLY =
             T.let(
               :WEEKDAYS_ONLY,
-              HubspotSDK::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays::TaggedSymbol
+              HubSpotSDK::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays::TaggedSymbol
+                HubSpotSDK::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays::TaggedSymbol
               ]
             )
           end
@@ -168,13 +168,13 @@ module HubspotSDK
         # with the same company will be unenrolled if one contact meets any of the
         # unenrollment criteria.
         module SellingStrategy
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Automation::PublicSequenceSettingsResponse::SellingStrategy
+                HubSpotSDK::Automation::PublicSequenceSettingsResponse::SellingStrategy
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -182,18 +182,18 @@ module HubspotSDK
           ACCOUNT_BASED =
             T.let(
               :ACCOUNT_BASED,
-              HubspotSDK::Automation::PublicSequenceSettingsResponse::SellingStrategy::TaggedSymbol
+              HubSpotSDK::Automation::PublicSequenceSettingsResponse::SellingStrategy::TaggedSymbol
             )
           LEAD_BASED =
             T.let(
               :LEAD_BASED,
-              HubspotSDK::Automation::PublicSequenceSettingsResponse::SellingStrategy::TaggedSymbol
+              HubSpotSDK::Automation::PublicSequenceSettingsResponse::SellingStrategy::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::PublicSequenceSettingsResponse::SellingStrategy::TaggedSymbol
+                HubSpotSDK::Automation::PublicSequenceSettingsResponse::SellingStrategy::TaggedSymbol
               ]
             )
           end

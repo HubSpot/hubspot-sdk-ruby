@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_option =
@@ -12,7 +12,7 @@ module HubspotSDK
           value: String
         }
 
-      class ExternalOption < HubspotSDK::Internal::Type::BaseModel
+      class ExternalOption < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor description: String
 
         attr_accessor display_order: Integer

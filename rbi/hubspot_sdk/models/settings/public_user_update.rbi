@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class PublicUserUpdate < HubspotSDK::Internal::Type::BaseModel
+      class PublicUserUpdate < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Settings::PublicUserUpdate,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Settings::PublicUserUpdate,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

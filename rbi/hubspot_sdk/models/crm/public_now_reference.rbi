@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicNowReference < HubspotSDK::Internal::Type::BaseModel
+      class PublicNowReference < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicNowReference,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicNowReference,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Indicates the type of reference (NOW).
         sig do
-          returns(HubspotSDK::Crm::PublicNowReference::ReferenceType::OrSymbol)
+          returns(HubSpotSDK::Crm::PublicNowReference::ReferenceType::OrSymbol)
         end
         attr_accessor :reference_type
 
@@ -49,7 +49,7 @@ module HubspotSDK
         sig do
           params(
             reference_type:
-              HubspotSDK::Crm::PublicNowReference::ReferenceType::OrSymbol,
+              HubSpotSDK::Crm::PublicNowReference::ReferenceType::OrSymbol,
             hour: Integer,
             millisecond: Integer,
             minute: Integer,
@@ -74,7 +74,7 @@ module HubspotSDK
           override.returns(
             {
               reference_type:
-                HubspotSDK::Crm::PublicNowReference::ReferenceType::OrSymbol,
+                HubSpotSDK::Crm::PublicNowReference::ReferenceType::OrSymbol,
               hour: Integer,
               millisecond: Integer,
               minute: Integer,
@@ -87,24 +87,24 @@ module HubspotSDK
 
         # Indicates the type of reference (NOW).
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PublicNowReference::ReferenceType)
+              T.all(Symbol, HubSpotSDK::Crm::PublicNowReference::ReferenceType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           NOW =
             T.let(
               :NOW,
-              HubspotSDK::Crm::PublicNowReference::ReferenceType::TaggedSymbol
+              HubSpotSDK::Crm::PublicNowReference::ReferenceType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicNowReference::ReferenceType::TaggedSymbol
+                HubSpotSDK::Crm::PublicNowReference::ReferenceType::TaggedSymbol
               ]
             )
           end

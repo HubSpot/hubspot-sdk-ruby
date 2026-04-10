@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      # @see HubspotSDK::Resources::Files::FileAssets#get
-      class FileAssetGetParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Files::FileAssets#get
+      class FileAssetGetParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute file_id
         #
@@ -16,12 +16,12 @@ module HubspotSDK
         # @!attribute properties
         #
         #   @return [Array<String>, nil]
-        optional :properties, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :properties, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!method initialize(file_id:, properties: nil, request_options: {})
         #   @param file_id [String]
         #   @param properties [Array<String>]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

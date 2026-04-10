@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       type public_user_update =
@@ -10,7 +10,7 @@ module HubspotSDK
           secondary_team_ids: ::Array[String]
         }
 
-      class PublicUserUpdate < HubspotSDK::Internal::Type::BaseModel
+      class PublicUserUpdate < HubSpotSDK::Internal::Type::BaseModel
         attr_reader first_name: String?
 
         def first_name=: (String) -> String

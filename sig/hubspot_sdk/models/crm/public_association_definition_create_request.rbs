@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_association_definition_create_request =
         { label: String, name: String, inverse_label: String }
 
-      class PublicAssociationDefinitionCreateRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicAssociationDefinitionCreateRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor label: String
 
         attr_accessor name: String

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_validated_form_field =
@@ -12,7 +12,7 @@ module HubspotSDK
           value_label: String
         }
 
-      class ExternalValidatedFormField < HubspotSDK::Internal::Type::BaseModel
+      class ExternalValidatedFormField < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor is_custom: bool
 
         attr_accessor label: String

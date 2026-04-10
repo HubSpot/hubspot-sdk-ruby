@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicSequenceStepDependencyResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicSequenceStepDependencyResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier of the step dependency.
         #
@@ -20,9 +20,9 @@ module HubspotSDK
         #   The type of dependency between sequence steps with accepted values being
         #   TASK_COMPLETION or MANUAL_PAUSE.
         #
-        #   @return [Symbol, HubspotSDK::Models::Automation::PublicSequenceStepDependencyResponse::DependencyType]
+        #   @return [Symbol, HubSpotSDK::Models::Automation::PublicSequenceStepDependencyResponse::DependencyType]
         required :dependency_type,
-                 enum: -> { HubspotSDK::Automation::PublicSequenceStepDependencyResponse::DependencyType },
+                 enum: -> { HubSpotSDK::Automation::PublicSequenceStepDependencyResponse::DependencyType },
                  api_name: :dependencyType
 
         # @!attribute relies_on_sequence_step_id
@@ -59,14 +59,14 @@ module HubspotSDK
 
         # @!method initialize(id:, created_at:, dependency_type:, relies_on_sequence_step_id:, relies_on_step_order:, required_by_sequence_step_id:, required_by_step_order:, updated_at:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Automation::PublicSequenceStepDependencyResponse} for more
+        #   {HubSpotSDK::Models::Automation::PublicSequenceStepDependencyResponse} for more
         #   details.
         #
         #   @param id [String] The unique identifier of the step dependency.
         #
         #   @param created_at [Time] The date and time when the step dependency was created.
         #
-        #   @param dependency_type [Symbol, HubspotSDK::Models::Automation::PublicSequenceStepDependencyResponse::DependencyType] The type of dependency between sequence steps with accepted values being TASK_CO
+        #   @param dependency_type [Symbol, HubSpotSDK::Models::Automation::PublicSequenceStepDependencyResponse::DependencyType] The type of dependency between sequence steps with accepted values being TASK_CO
         #
         #   @param relies_on_sequence_step_id [String] The unique identifier of the sequence step that is responsible for creating and
         #
@@ -81,9 +81,9 @@ module HubspotSDK
         # The type of dependency between sequence steps with accepted values being
         # TASK_COMPLETION or MANUAL_PAUSE.
         #
-        # @see HubspotSDK::Models::Automation::PublicSequenceStepDependencyResponse#dependency_type
+        # @see HubSpotSDK::Models::Automation::PublicSequenceStepDependencyResponse#dependency_type
         module DependencyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           MANUAL_PAUSE = :MANUAL_PAUSE
           TASK_COMPLETION = :TASK_COMPLETION

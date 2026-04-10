@@ -1,11 +1,11 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type object_type_definition_patch =
       {
         clear_description: bool,
         allows_sensitive_properties: bool,
         description: String,
-        labels: HubspotSDK::ObjectTypeDefinitionLabels,
+        labels: HubSpotSDK::ObjectTypeDefinitionLabels,
         primary_display_property: String,
         required_properties: ::Array[String],
         restorable: bool,
@@ -13,7 +13,7 @@ module HubspotSDK
         secondary_display_properties: ::Array[String]
       }
 
-    class ObjectTypeDefinitionPatch < HubspotSDK::Internal::Type::BaseModel
+    class ObjectTypeDefinitionPatch < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor clear_description: bool
 
       attr_reader allows_sensitive_properties: bool?
@@ -24,11 +24,11 @@ module HubspotSDK
 
       def description=: (String) -> String
 
-      attr_reader labels: HubspotSDK::ObjectTypeDefinitionLabels?
+      attr_reader labels: HubSpotSDK::ObjectTypeDefinitionLabels?
 
       def labels=: (
-        HubspotSDK::ObjectTypeDefinitionLabels
-      ) -> HubspotSDK::ObjectTypeDefinitionLabels
+        HubSpotSDK::ObjectTypeDefinitionLabels
+      ) -> HubSpotSDK::ObjectTypeDefinitionLabels
 
       attr_reader primary_display_property: String?
 
@@ -54,7 +54,7 @@ module HubspotSDK
         clear_description: bool,
         ?allows_sensitive_properties: bool,
         ?description: String,
-        ?labels: HubspotSDK::ObjectTypeDefinitionLabels,
+        ?labels: HubSpotSDK::ObjectTypeDefinitionLabels,
         ?primary_display_property: String,
         ?required_properties: ::Array[String],
         ?restorable: bool,
@@ -66,7 +66,7 @@ module HubspotSDK
         clear_description: bool,
         allows_sensitive_properties: bool,
         description: String,
-        labels: HubspotSDK::ObjectTypeDefinitionLabels,
+        labels: HubSpotSDK::ObjectTypeDefinitionLabels,
         primary_display_property: String,
         required_properties: ::Array[String],
         restorable: bool,

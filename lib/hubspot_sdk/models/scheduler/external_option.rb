@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalOption < HubspotSDK::Internal::Type::BaseModel
+      class ExternalOption < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute description
         #   A brief description of the option.
         #
@@ -26,7 +26,7 @@ module HubspotSDK
         #   Whether the option should be hidden from the user.
         #
         #   @return [Boolean]
-        required :hidden, HubspotSDK::Internal::Type::Boolean
+        required :hidden, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute label
         #   The text label for the option.
@@ -38,7 +38,7 @@ module HubspotSDK
         #   Whether the option is read-only.
         #
         #   @return [Boolean]
-        required :read_only, HubspotSDK::Internal::Type::Boolean, api_name: :readOnly
+        required :read_only, HubSpotSDK::Internal::Type::Boolean, api_name: :readOnly
 
         # @!attribute value
         #   The value associated with the option.

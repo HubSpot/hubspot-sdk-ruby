@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_object_list_search_result =
@@ -18,7 +18,7 @@ module HubspotSDK
           updated_by_id: String
         }
 
-      class PublicObjectListSearchResult < HubspotSDK::Internal::Type::BaseModel
+      class PublicObjectListSearchResult < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor list_id: String
 
         attr_accessor list_version: Integer

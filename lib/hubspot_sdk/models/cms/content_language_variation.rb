@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ContentLanguageVariation < HubspotSDK::Internal::Type::BaseModel
+      class ContentLanguageVariation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   ID of object to set as primary in multi-language group.
         #
@@ -15,7 +15,7 @@ module HubspotSDK
         #   still be live.
         #
         #   @return [Boolean]
-        required :archived_in_dashboard, HubspotSDK::Internal::Type::Boolean, api_name: :archivedInDashboard
+        required :archived_in_dashboard, HubSpotSDK::Internal::Type::Boolean, api_name: :archivedInDashboard
 
         # @!attribute author_name
         #   The name of the user who last published the blog post. For posts that haven't
@@ -60,7 +60,7 @@ module HubspotSDK
         #
         #   @return [Array<Object>]
         required :public_access_rules,
-                 HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::Unknown],
+                 HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Internal::Type::Unknown],
                  api_name: :publicAccessRules
 
         # @!attribute public_access_rules_enabled
@@ -68,7 +68,7 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :public_access_rules_enabled,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :publicAccessRulesEnabled
 
         # @!attribute publish_date
@@ -101,11 +101,11 @@ module HubspotSDK
         # @!attribute tag_ids
         #
         #   @return [Array<Integer>, nil]
-        optional :tag_ids, HubspotSDK::Internal::Type::ArrayOf[Integer], api_name: :tagIds
+        optional :tag_ids, HubSpotSDK::Internal::Type::ArrayOf[Integer], api_name: :tagIds
 
         # @!method initialize(id:, archived_in_dashboard:, author_name:, campaign:, campaign_name:, created:, name:, password:, public_access_rules:, public_access_rules_enabled:, publish_date:, slug:, state:, updated:, tag_ids: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Cms::ContentLanguageVariation} for more details.
+        #   {HubSpotSDK::Models::Cms::ContentLanguageVariation} for more details.
         #
         #   @param id [Integer] ID of object to set as primary in multi-language group.
         #

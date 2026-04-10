@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Objects
-        # @see HubspotSDK::Resources::Crm::Objects::Companies#delete
-        class CompanyDeleteParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Crm::Objects::Companies#delete
+        class CompanyDeleteParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute company_id
           #
@@ -16,7 +16,7 @@ module HubspotSDK
 
           # @!method initialize(company_id:, request_options: {})
           #   @param company_id [String]
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalCalendarMeetingEventCreateProperties < HubspotSDK::Internal::Type::BaseModel
+      class ExternalCalendarMeetingEventCreateProperties < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -86,7 +86,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType::OrSymbol
+              HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType::OrSymbol
             )
           )
         end
@@ -95,7 +95,7 @@ module HubspotSDK
         sig do
           params(
             hs_meeting_location_type:
-              HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType::OrSymbol
+              HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType::OrSymbol
           ).void
         end
         attr_writer :hs_meeting_location_type
@@ -115,7 +115,7 @@ module HubspotSDK
             hs_meeting_body: String,
             hs_meeting_location: String,
             hs_meeting_location_type:
-              HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType::OrSymbol
+              HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -168,7 +168,7 @@ module HubspotSDK
               hs_meeting_body: String,
               hs_meeting_location: String,
               hs_meeting_location_type:
-                HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType::OrSymbol
+                HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType::OrSymbol
             }
           )
         end
@@ -178,13 +178,13 @@ module HubspotSDK
         # The type of location for the meeting. Acceptable values are: ADDRESS, CUSTOM,
         # PHONE.
         module HsMeetingLocationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType
+                HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -192,23 +192,23 @@ module HubspotSDK
           ADDRESS =
             T.let(
               :ADDRESS,
-              HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType::TaggedSymbol
             )
           CUSTOM =
             T.let(
               :CUSTOM,
-              HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType::TaggedSymbol
             )
           PHONE =
             T.let(
               :PHONE,
-              HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType::TaggedSymbol
+                HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType::TaggedSymbol
               ]
             )
           end

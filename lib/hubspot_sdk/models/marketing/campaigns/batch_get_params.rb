@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       module Campaigns
-        # @see HubspotSDK::Resources::Marketing::Campaigns::Batch#get
-        class BatchGetParams < HubspotSDK::Models::Marketing::BatchInputPublicCampaignReadInput
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Marketing::Campaigns::Batch#get
+        class BatchGetParams < HubSpotSDK::Models::Marketing::BatchInputPublicCampaignReadInput
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute end_date
           #
@@ -17,7 +17,7 @@ module HubspotSDK
           # @!attribute properties
           #
           #   @return [Array<String>, nil]
-          optional :properties, HubspotSDK::Internal::Type::ArrayOf[String]
+          optional :properties, HubSpotSDK::Internal::Type::ArrayOf[String]
 
           # @!attribute start_date
           #
@@ -28,7 +28,7 @@ module HubspotSDK
           #   @param end_date [String]
           #   @param properties [Array<String>]
           #   @param start_date [String]
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

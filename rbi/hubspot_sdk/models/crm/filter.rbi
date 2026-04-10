@@ -1,16 +1,16 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class Filter < HubspotSDK::Internal::Type::BaseModel
+      class Filter < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Crm::Filter, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Crm::Filter, HubSpotSDK::Internal::AnyHash)
           end
 
         # The comparison operator used in the filter, such as "EQ" or "GT".
-        sig { returns(HubspotSDK::Crm::Filter::Operator::OrSymbol) }
+        sig { returns(HubSpotSDK::Crm::Filter::Operator::OrSymbol) }
         attr_accessor :operator
 
         # The name of the property to apply the filter to.
@@ -43,7 +43,7 @@ module HubspotSDK
         # the value(s) to compare against.
         sig do
           params(
-            operator: HubspotSDK::Crm::Filter::Operator::OrSymbol,
+            operator: HubSpotSDK::Crm::Filter::Operator::OrSymbol,
             property_name: String,
             high_value: String,
             value: String,
@@ -67,7 +67,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              operator: HubspotSDK::Crm::Filter::Operator::OrSymbol,
+              operator: HubSpotSDK::Crm::Filter::Operator::OrSymbol,
               property_name: String,
               high_value: String,
               value: String,
@@ -80,47 +80,47 @@ module HubspotSDK
 
         # The comparison operator used in the filter, such as "EQ" or "GT".
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
-            T.type_alias { T.all(Symbol, HubspotSDK::Crm::Filter::Operator) }
+            T.type_alias { T.all(Symbol, HubSpotSDK::Crm::Filter::Operator) }
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           BETWEEN =
-            T.let(:BETWEEN, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
+            T.let(:BETWEEN, HubSpotSDK::Crm::Filter::Operator::TaggedSymbol)
           CONTAINS_TOKEN =
             T.let(
               :CONTAINS_TOKEN,
-              HubspotSDK::Crm::Filter::Operator::TaggedSymbol
+              HubSpotSDK::Crm::Filter::Operator::TaggedSymbol
             )
-          EQ = T.let(:EQ, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
-          GT = T.let(:GT, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
-          GTE = T.let(:GTE, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
+          EQ = T.let(:EQ, HubSpotSDK::Crm::Filter::Operator::TaggedSymbol)
+          GT = T.let(:GT, HubSpotSDK::Crm::Filter::Operator::TaggedSymbol)
+          GTE = T.let(:GTE, HubSpotSDK::Crm::Filter::Operator::TaggedSymbol)
           HAS_PROPERTY =
             T.let(
               :HAS_PROPERTY,
-              HubspotSDK::Crm::Filter::Operator::TaggedSymbol
+              HubSpotSDK::Crm::Filter::Operator::TaggedSymbol
             )
-          IN = T.let(:IN, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
-          LT = T.let(:LT, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
-          LTE = T.let(:LTE, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
-          NEQ = T.let(:NEQ, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
+          IN = T.let(:IN, HubSpotSDK::Crm::Filter::Operator::TaggedSymbol)
+          LT = T.let(:LT, HubSpotSDK::Crm::Filter::Operator::TaggedSymbol)
+          LTE = T.let(:LTE, HubSpotSDK::Crm::Filter::Operator::TaggedSymbol)
+          NEQ = T.let(:NEQ, HubSpotSDK::Crm::Filter::Operator::TaggedSymbol)
           NOT_CONTAINS_TOKEN =
             T.let(
               :NOT_CONTAINS_TOKEN,
-              HubspotSDK::Crm::Filter::Operator::TaggedSymbol
+              HubSpotSDK::Crm::Filter::Operator::TaggedSymbol
             )
           NOT_HAS_PROPERTY =
             T.let(
               :NOT_HAS_PROPERTY,
-              HubspotSDK::Crm::Filter::Operator::TaggedSymbol
+              HubSpotSDK::Crm::Filter::Operator::TaggedSymbol
             )
           NOT_IN =
-            T.let(:NOT_IN, HubspotSDK::Crm::Filter::Operator::TaggedSymbol)
+            T.let(:NOT_IN, HubSpotSDK::Crm::Filter::Operator::TaggedSymbol)
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Crm::Filter::Operator::TaggedSymbol]
+              T::Array[HubSpotSDK::Crm::Filter::Operator::TaggedSymbol]
             )
           end
           def self.values

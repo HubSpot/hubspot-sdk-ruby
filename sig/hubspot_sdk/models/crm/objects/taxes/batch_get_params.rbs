@@ -1,14 +1,14 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Objects
         module Taxes
           type batch_get_params =
-            { archived: bool } & HubspotSDK::Internal::Type::request_parameters
+            { archived: bool } & HubSpotSDK::Internal::Type::request_parameters
 
-          class BatchGetParams < HubspotSDK::Models::Crm::BatchReadInputSimplePublicObjectID
-            extend HubspotSDK::Internal::Type::RequestParameters::Converter
-            include HubspotSDK::Internal::Type::RequestParameters
+          class BatchGetParams < HubSpotSDK::Models::Crm::BatchReadInputSimplePublicObjectID
+            extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+            include HubSpotSDK::Internal::Type::RequestParameters
 
             def archived: -> bool?
 
@@ -16,12 +16,12 @@ module HubspotSDK
 
             def initialize: (
               ?archived: bool,
-              ?request_options: HubspotSDK::request_opts
+              ?request_options: HubSpotSDK::request_opts
             ) -> void
 
             def to_hash: -> {
               archived: bool,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           end
         end

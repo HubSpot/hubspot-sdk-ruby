@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicAssociationDefinitionConfigurationCreateRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicAssociationDefinitionConfigurationCreateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute category
         #   Specifies the category of the association, which can be HUBSPOT_DEFINED,
         #   INTEGRATOR_DEFINED, or USER_DEFINED.
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category]
         required :category,
-                 enum: -> { HubspotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category }
+                 enum: -> { HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category }
 
         # @!attribute max_to_object_ids
         #   The maximum number of target object IDs that can be associated with a single
@@ -28,10 +28,10 @@ module HubspotSDK
 
         # @!method initialize(category:, max_to_object_ids:, type_id:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicAssociationDefinitionConfigurationCreateRequest}
+        #   {HubSpotSDK::Models::Crm::PublicAssociationDefinitionConfigurationCreateRequest}
         #   for more details.
         #
-        #   @param category [Symbol, HubspotSDK::Models::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category] Specifies the category of the association, which can be HUBSPOT_DEFINED, INTEGRA
+        #   @param category [Symbol, HubSpotSDK::Models::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category] Specifies the category of the association, which can be HUBSPOT_DEFINED, INTEGRA
         #
         #   @param max_to_object_ids [Integer] The maximum number of target object IDs that can be associated with a single sou
         #
@@ -40,9 +40,9 @@ module HubspotSDK
         # Specifies the category of the association, which can be HUBSPOT_DEFINED,
         # INTEGRATOR_DEFINED, or USER_DEFINED.
         #
-        # @see HubspotSDK::Models::Crm::PublicAssociationDefinitionConfigurationCreateRequest#category
+        # @see HubSpotSDK::Models::Crm::PublicAssociationDefinitionConfigurationCreateRequest#category
         module Category
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HUBSPOT_DEFINED = :HUBSPOT_DEFINED
           INTEGRATOR_DEFINED = :INTEGRATOR_DEFINED

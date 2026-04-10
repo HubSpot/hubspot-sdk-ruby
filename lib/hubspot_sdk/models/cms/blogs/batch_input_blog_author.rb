@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        class BatchInputBlogAuthor < HubspotSDK::Internal::Type::BaseModel
+        class BatchInputBlogAuthor < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute inputs
           #   Blog authors to input.
           #
-          #   @return [Array<HubspotSDK::Models::Cms::Blogs::BlogAuthor>]
-          required :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Blogs::BlogAuthor] }
+          #   @return [Array<HubSpotSDK::Models::Cms::Blogs::BlogAuthor>]
+          required :inputs, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Blogs::BlogAuthor] }
 
           # @!method initialize(inputs:)
-          #   @param inputs [Array<HubspotSDK::Models::Cms::Blogs::BlogAuthor>] Blog authors to input.
+          #   @param inputs [Array<HubSpotSDK::Models::Cms::Blogs::BlogAuthor>] Blog authors to input.
         end
       end
     end

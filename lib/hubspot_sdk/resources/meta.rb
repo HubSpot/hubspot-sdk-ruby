@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Meta
-      # @return [HubspotSDK::Resources::Meta::Origins]
+      # @return [HubSpotSDK::Resources::Meta::Origins]
       attr_reader :origins
 
       # @api private
       #
-      # @param client [HubspotSDK::Client]
+      # @param client [HubSpotSDK::Client]
       def initialize(client:)
         @client = client
-        @origins = HubspotSDK::Resources::Meta::Origins.new(client: client)
+        @origins = HubSpotSDK::Resources::Meta::Origins.new(client: client)
       end
     end
   end

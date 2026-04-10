@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchInputPublicAssociationDefinitionConfigurationCreateRequest < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputPublicAssociationDefinitionConfigurationCreateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute inputs
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PublicAssociationDefinitionConfigurationCreateRequest>]
+        #   @return [Array<HubSpotSDK::Models::Crm::PublicAssociationDefinitionConfigurationCreateRequest>]
         required :inputs,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest] }
 
         # @!method initialize(inputs:)
-        #   @param inputs [Array<HubspotSDK::Models::Crm::PublicAssociationDefinitionConfigurationCreateRequest>]
+        #   @param inputs [Array<HubSpotSDK::Models::Crm::PublicAssociationDefinitionConfigurationCreateRequest>]
       end
     end
   end

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicExportResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicExportResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicExportResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicExportResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -23,7 +23,7 @@ module HubspotSDK
         # The current state of the export process.
         sig do
           returns(
-            HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
+            HubSpotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
           )
         end
         attr_accessor :export_state
@@ -31,7 +31,7 @@ module HubspotSDK
         # The type of export, which can be either VIEW or LIST.
         sig do
           returns(
-            HubspotSDK::Crm::PublicExportResponse::ExportType::TaggedSymbol
+            HubSpotSDK::Crm::PublicExportResponse::ExportType::TaggedSymbol
           )
         end
         attr_accessor :export_type
@@ -67,9 +67,9 @@ module HubspotSDK
             id: String,
             created_at: Time,
             export_state:
-              HubspotSDK::Crm::PublicExportResponse::ExportState::OrSymbol,
+              HubSpotSDK::Crm::PublicExportResponse::ExportState::OrSymbol,
             export_type:
-              HubspotSDK::Crm::PublicExportResponse::ExportType::OrSymbol,
+              HubSpotSDK::Crm::PublicExportResponse::ExportType::OrSymbol,
             object_properties: T::Array[String],
             object_type: String,
             updated_at: Time,
@@ -105,9 +105,9 @@ module HubspotSDK
               id: String,
               created_at: Time,
               export_state:
-                HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol,
+                HubSpotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol,
               export_type:
-                HubspotSDK::Crm::PublicExportResponse::ExportType::TaggedSymbol,
+                HubSpotSDK::Crm::PublicExportResponse::ExportType::TaggedSymbol,
               object_properties: T::Array[String],
               object_type: String,
               updated_at: Time,
@@ -121,64 +121,64 @@ module HubspotSDK
 
         # The current state of the export process.
         module ExportState
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PublicExportResponse::ExportState)
+              T.all(Symbol, HubSpotSDK::Crm::PublicExportResponse::ExportState)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
+              HubSpotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
             )
           CONFLICT =
             T.let(
               :CONFLICT,
-              HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
+              HubSpotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
             )
           DEFERRED =
             T.let(
               :DEFERRED,
-              HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
+              HubSpotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
             )
           DELETED =
             T.let(
               :DELETED,
-              HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
+              HubSpotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
             )
           DONE =
             T.let(
               :DONE,
-              HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
+              HubSpotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
             )
           ENQUEUED =
             T.let(
               :ENQUEUED,
-              HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
+              HubSpotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
             )
           FAILED =
             T.let(
               :FAILED,
-              HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
+              HubSpotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
             )
           PENDING_APPROVAL =
             T.let(
               :PENDING_APPROVAL,
-              HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
+              HubSpotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
+              HubSpotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
+                HubSpotSDK::Crm::PublicExportResponse::ExportState::TaggedSymbol
               ]
             )
           end
@@ -188,29 +188,29 @@ module HubspotSDK
 
         # The type of export, which can be either VIEW or LIST.
         module ExportType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PublicExportResponse::ExportType)
+              T.all(Symbol, HubSpotSDK::Crm::PublicExportResponse::ExportType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           LIST =
             T.let(
               :LIST,
-              HubspotSDK::Crm::PublicExportResponse::ExportType::TaggedSymbol
+              HubSpotSDK::Crm::PublicExportResponse::ExportType::TaggedSymbol
             )
           VIEW =
             T.let(
               :VIEW,
-              HubspotSDK::Crm::PublicExportResponse::ExportType::TaggedSymbol
+              HubSpotSDK::Crm::PublicExportResponse::ExportType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicExportResponse::ExportType::TaggedSymbol
+                HubSpotSDK::Crm::PublicExportResponse::ExportType::TaggedSymbol
               ]
             )
           end

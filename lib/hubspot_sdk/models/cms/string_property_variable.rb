@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class StringPropertyVariable < HubspotSDK::Internal::Type::BaseModel
+      class StringPropertyVariable < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::StringPropertyVariable::Operator]
-        required :operator, enum: -> { HubspotSDK::Cms::StringPropertyVariable::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::StringPropertyVariable::Operator]
+        required :operator, enum: -> { HubSpotSDK::Cms::StringPropertyVariable::Operator }
 
         # @!attribute property_name
         #
@@ -20,13 +20,13 @@ module HubspotSDK
         optional :value, String
 
         # @!method initialize(operator:, property_name: nil, value: nil)
-        #   @param operator [Symbol, HubspotSDK::Models::Cms::StringPropertyVariable::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Cms::StringPropertyVariable::Operator]
         #   @param property_name [String]
         #   @param value [String]
 
-        # @see HubspotSDK::Models::Cms::StringPropertyVariable#operator
+        # @see HubSpotSDK::Models::Cms::StringPropertyVariable#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           STRING_PROPERTY_VARIABLE = :STRING_PROPERTY_VARIABLE
 

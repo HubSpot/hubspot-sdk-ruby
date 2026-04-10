@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchInputPublicFetchAssociationsBatchRequest < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputPublicFetchAssociationsBatchRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::BatchInputPublicFetchAssociationsBatchRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::BatchInputPublicFetchAssociationsBatchRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            T::Array[HubspotSDK::Crm::PublicFetchAssociationsBatchRequest]
+            T::Array[HubSpotSDK::Crm::PublicFetchAssociationsBatchRequest]
           )
         end
         attr_accessor :inputs
@@ -23,7 +23,7 @@ module HubspotSDK
           params(
             inputs:
               T::Array[
-                HubspotSDK::Crm::PublicFetchAssociationsBatchRequest::OrHash
+                HubSpotSDK::Crm::PublicFetchAssociationsBatchRequest::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -34,7 +34,7 @@ module HubspotSDK
           override.returns(
             {
               inputs:
-                T::Array[HubspotSDK::Crm::PublicFetchAssociationsBatchRequest]
+                T::Array[HubSpotSDK::Crm::PublicFetchAssociationsBatchRequest]
             }
           )
         end

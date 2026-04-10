@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicUnifiedEventsFilterBranch < HubspotSDK::Internal::Type::BaseModel
+      class PublicUnifiedEventsFilterBranch < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicUnifiedEventsFilterBranch,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,14 +20,14 @@ module HubspotSDK
           returns(
             T::Array[
               T.any(
-                HubspotSDK::Crm::PublicOrFilterBranch,
-                HubspotSDK::Crm::PublicAndFilterBranch,
-                HubspotSDK::Crm::PublicNotAllFilterBranch,
-                HubspotSDK::Crm::PublicNotAnyFilterBranch,
-                HubspotSDK::Crm::PublicRestrictedFilterBranch,
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch,
-                HubspotSDK::Crm::PublicPropertyAssociationFilterBranch,
-                HubspotSDK::Crm::PublicAssociationFilterBranch
+                HubSpotSDK::Crm::PublicOrFilterBranch,
+                HubSpotSDK::Crm::PublicAndFilterBranch,
+                HubSpotSDK::Crm::PublicNotAllFilterBranch,
+                HubSpotSDK::Crm::PublicNotAnyFilterBranch,
+                HubSpotSDK::Crm::PublicRestrictedFilterBranch,
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch,
+                HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch,
+                HubSpotSDK::Crm::PublicAssociationFilterBranch
               )
             ]
           )
@@ -41,7 +41,7 @@ module HubspotSDK
         # The type of the filter branch (UNIFIED_EVENTS).
         sig do
           returns(
-            HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::FilterBranchType::OrSymbol
+            HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::FilterBranchType::OrSymbol
           )
         end
         attr_accessor :filter_branch_type
@@ -50,29 +50,29 @@ module HubspotSDK
           returns(
             T::Array[
               T.any(
-                HubspotSDK::Crm::PublicPropertyFilter,
-                HubspotSDK::Crm::PublicAssociationInListFilter,
-                HubspotSDK::Crm::PublicPageViewAnalyticsFilter,
-                HubspotSDK::Crm::PublicCtaAnalyticsFilter,
-                HubspotSDK::Crm::PublicEventAnalyticsFilter,
-                HubspotSDK::Crm::PublicFormSubmissionFilter,
-                HubspotSDK::Crm::PublicFormSubmissionOnPageFilter,
-                HubspotSDK::Crm::PublicIntegrationEventFilter,
-                HubspotSDK::Crm::PublicEmailSubscriptionFilter,
-                HubspotSDK::Crm::PublicCommunicationSubscriptionFilter,
-                HubspotSDK::Crm::PublicCampaignInfluencedFilter,
-                HubspotSDK::Crm::PublicSurveyMonkeyFilter,
-                HubspotSDK::Crm::PublicSurveyMonkeyValueFilter,
-                HubspotSDK::Crm::PublicWebinarFilter,
-                HubspotSDK::Crm::PublicEmailEventFilter,
-                HubspotSDK::Crm::PublicPrivacyAnalyticsFilter,
-                HubspotSDK::Crm::PublicAdsSearchFilter,
-                HubspotSDK::Crm::PublicAdsTimeFilter,
-                HubspotSDK::Crm::PublicInListFilter,
-                HubspotSDK::Crm::PublicNumAssociationsFilter,
-                HubspotSDK::Crm::PublicUnifiedEventsFilter,
-                HubspotSDK::Crm::PublicPropertyAssociationInListFilter,
-                HubspotSDK::Crm::PublicConstantFilter
+                HubSpotSDK::Crm::PublicPropertyFilter,
+                HubSpotSDK::Crm::PublicAssociationInListFilter,
+                HubSpotSDK::Crm::PublicPageViewAnalyticsFilter,
+                HubSpotSDK::Crm::PublicCtaAnalyticsFilter,
+                HubSpotSDK::Crm::PublicEventAnalyticsFilter,
+                HubSpotSDK::Crm::PublicFormSubmissionFilter,
+                HubSpotSDK::Crm::PublicFormSubmissionOnPageFilter,
+                HubSpotSDK::Crm::PublicIntegrationEventFilter,
+                HubSpotSDK::Crm::PublicEmailSubscriptionFilter,
+                HubSpotSDK::Crm::PublicCommunicationSubscriptionFilter,
+                HubSpotSDK::Crm::PublicCampaignInfluencedFilter,
+                HubSpotSDK::Crm::PublicSurveyMonkeyFilter,
+                HubSpotSDK::Crm::PublicSurveyMonkeyValueFilter,
+                HubSpotSDK::Crm::PublicWebinarFilter,
+                HubSpotSDK::Crm::PublicEmailEventFilter,
+                HubSpotSDK::Crm::PublicPrivacyAnalyticsFilter,
+                HubSpotSDK::Crm::PublicAdsSearchFilter,
+                HubSpotSDK::Crm::PublicAdsTimeFilter,
+                HubSpotSDK::Crm::PublicInListFilter,
+                HubSpotSDK::Crm::PublicNumAssociationsFilter,
+                HubSpotSDK::Crm::PublicUnifiedEventsFilter,
+                HubSpotSDK::Crm::PublicPropertyAssociationInListFilter,
+                HubSpotSDK::Crm::PublicConstantFilter
               )
             ]
           )
@@ -83,7 +83,7 @@ module HubspotSDK
         # HAS_NOT_COMPLETED).
         sig do
           returns(
-            HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::Operator::OrSymbol
+            HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::Operator::OrSymbol
           )
         end
         attr_accessor :operator
@@ -93,15 +93,15 @@ module HubspotSDK
           returns(
             T.nilable(
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy,
-                HubspotSDK::Crm::PublicTimePointOperation,
-                HubspotSDK::Crm::PublicRangedTimeOperation
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+                HubSpotSDK::Crm::PublicTimePointOperation,
+                HubSpotSDK::Crm::PublicRangedTimeOperation
               )
             )
           )
@@ -112,15 +112,15 @@ module HubspotSDK
           params(
             coalescing_refine_by:
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
-                HubspotSDK::Crm::PublicTimePointOperation::OrHash,
-                HubspotSDK::Crm::PublicRangedTimeOperation::OrHash
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicTimePointOperation::OrHash,
+                HubSpotSDK::Crm::PublicRangedTimeOperation::OrHash
               )
           ).void
         end
@@ -130,15 +130,15 @@ module HubspotSDK
           returns(
             T.nilable(
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy,
-                HubspotSDK::Crm::PublicTimePointOperation,
-                HubspotSDK::Crm::PublicRangedTimeOperation
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+                HubSpotSDK::Crm::PublicTimePointOperation,
+                HubSpotSDK::Crm::PublicRangedTimeOperation
               )
             )
           )
@@ -149,15 +149,15 @@ module HubspotSDK
           params(
             pruning_refine_by:
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
-                HubspotSDK::Crm::PublicTimePointOperation::OrHash,
-                HubspotSDK::Crm::PublicRangedTimeOperation::OrHash
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicTimePointOperation::OrHash,
+                HubSpotSDK::Crm::PublicRangedTimeOperation::OrHash
               )
           ).void
         end
@@ -169,72 +169,72 @@ module HubspotSDK
             filter_branches:
               T::Array[
                 T.any(
-                  HubspotSDK::Crm::PublicOrFilterBranch,
-                  HubspotSDK::Crm::PublicAndFilterBranch,
-                  HubspotSDK::Crm::PublicNotAllFilterBranch,
-                  HubspotSDK::Crm::PublicNotAnyFilterBranch,
-                  HubspotSDK::Crm::PublicRestrictedFilterBranch,
-                  HubspotSDK::Crm::PublicUnifiedEventsFilterBranch,
-                  HubspotSDK::Crm::PublicPropertyAssociationFilterBranch,
-                  HubspotSDK::Crm::PublicAssociationFilterBranch
+                  HubSpotSDK::Crm::PublicOrFilterBranch,
+                  HubSpotSDK::Crm::PublicAndFilterBranch,
+                  HubSpotSDK::Crm::PublicNotAllFilterBranch,
+                  HubSpotSDK::Crm::PublicNotAnyFilterBranch,
+                  HubSpotSDK::Crm::PublicRestrictedFilterBranch,
+                  HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch,
+                  HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch,
+                  HubSpotSDK::Crm::PublicAssociationFilterBranch
                 )
               ],
             filter_branch_operator: String,
             filter_branch_type:
-              HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::FilterBranchType::OrSymbol,
+              HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::FilterBranchType::OrSymbol,
             filters:
               T::Array[
                 T.any(
-                  HubspotSDK::Crm::PublicPropertyFilter::OrHash,
-                  HubspotSDK::Crm::PublicAssociationInListFilter::OrHash,
-                  HubspotSDK::Crm::PublicPageViewAnalyticsFilter::OrHash,
-                  HubspotSDK::Crm::PublicCtaAnalyticsFilter::OrHash,
-                  HubspotSDK::Crm::PublicEventAnalyticsFilter::OrHash,
-                  HubspotSDK::Crm::PublicFormSubmissionFilter::OrHash,
-                  HubspotSDK::Crm::PublicFormSubmissionOnPageFilter::OrHash,
-                  HubspotSDK::Crm::PublicIntegrationEventFilter::OrHash,
-                  HubspotSDK::Crm::PublicEmailSubscriptionFilter::OrHash,
-                  HubspotSDK::Crm::PublicCommunicationSubscriptionFilter::OrHash,
-                  HubspotSDK::Crm::PublicCampaignInfluencedFilter::OrHash,
-                  HubspotSDK::Crm::PublicSurveyMonkeyFilter::OrHash,
-                  HubspotSDK::Crm::PublicSurveyMonkeyValueFilter::OrHash,
-                  HubspotSDK::Crm::PublicWebinarFilter::OrHash,
-                  HubspotSDK::Crm::PublicEmailEventFilter::OrHash,
-                  HubspotSDK::Crm::PublicPrivacyAnalyticsFilter::OrHash,
-                  HubspotSDK::Crm::PublicAdsSearchFilter::OrHash,
-                  HubspotSDK::Crm::PublicAdsTimeFilter::OrHash,
-                  HubspotSDK::Crm::PublicInListFilter::OrHash,
-                  HubspotSDK::Crm::PublicNumAssociationsFilter::OrHash,
-                  HubspotSDK::Crm::PublicUnifiedEventsFilter::OrHash,
-                  HubspotSDK::Crm::PublicPropertyAssociationInListFilter::OrHash,
-                  HubspotSDK::Crm::PublicConstantFilter::OrHash
+                  HubSpotSDK::Crm::PublicPropertyFilter::OrHash,
+                  HubSpotSDK::Crm::PublicAssociationInListFilter::OrHash,
+                  HubSpotSDK::Crm::PublicPageViewAnalyticsFilter::OrHash,
+                  HubSpotSDK::Crm::PublicCtaAnalyticsFilter::OrHash,
+                  HubSpotSDK::Crm::PublicEventAnalyticsFilter::OrHash,
+                  HubSpotSDK::Crm::PublicFormSubmissionFilter::OrHash,
+                  HubSpotSDK::Crm::PublicFormSubmissionOnPageFilter::OrHash,
+                  HubSpotSDK::Crm::PublicIntegrationEventFilter::OrHash,
+                  HubSpotSDK::Crm::PublicEmailSubscriptionFilter::OrHash,
+                  HubSpotSDK::Crm::PublicCommunicationSubscriptionFilter::OrHash,
+                  HubSpotSDK::Crm::PublicCampaignInfluencedFilter::OrHash,
+                  HubSpotSDK::Crm::PublicSurveyMonkeyFilter::OrHash,
+                  HubSpotSDK::Crm::PublicSurveyMonkeyValueFilter::OrHash,
+                  HubSpotSDK::Crm::PublicWebinarFilter::OrHash,
+                  HubSpotSDK::Crm::PublicEmailEventFilter::OrHash,
+                  HubSpotSDK::Crm::PublicPrivacyAnalyticsFilter::OrHash,
+                  HubSpotSDK::Crm::PublicAdsSearchFilter::OrHash,
+                  HubSpotSDK::Crm::PublicAdsTimeFilter::OrHash,
+                  HubSpotSDK::Crm::PublicInListFilter::OrHash,
+                  HubSpotSDK::Crm::PublicNumAssociationsFilter::OrHash,
+                  HubSpotSDK::Crm::PublicUnifiedEventsFilter::OrHash,
+                  HubSpotSDK::Crm::PublicPropertyAssociationInListFilter::OrHash,
+                  HubSpotSDK::Crm::PublicConstantFilter::OrHash
                 )
               ],
             operator:
-              HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::Operator::OrSymbol,
+              HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::Operator::OrSymbol,
             coalescing_refine_by:
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
-                HubspotSDK::Crm::PublicTimePointOperation::OrHash,
-                HubspotSDK::Crm::PublicRangedTimeOperation::OrHash
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicTimePointOperation::OrHash,
+                HubSpotSDK::Crm::PublicRangedTimeOperation::OrHash
               ),
             pruning_refine_by:
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
-                HubspotSDK::Crm::PublicTimePointOperation::OrHash,
-                HubspotSDK::Crm::PublicRangedTimeOperation::OrHash
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicTimePointOperation::OrHash,
+                HubSpotSDK::Crm::PublicRangedTimeOperation::OrHash
               )
           ).returns(T.attached_class)
         end
@@ -263,72 +263,72 @@ module HubspotSDK
               filter_branches:
                 T::Array[
                   T.any(
-                    HubspotSDK::Crm::PublicOrFilterBranch,
-                    HubspotSDK::Crm::PublicAndFilterBranch,
-                    HubspotSDK::Crm::PublicNotAllFilterBranch,
-                    HubspotSDK::Crm::PublicNotAnyFilterBranch,
-                    HubspotSDK::Crm::PublicRestrictedFilterBranch,
-                    HubspotSDK::Crm::PublicUnifiedEventsFilterBranch,
-                    HubspotSDK::Crm::PublicPropertyAssociationFilterBranch,
-                    HubspotSDK::Crm::PublicAssociationFilterBranch
+                    HubSpotSDK::Crm::PublicOrFilterBranch,
+                    HubSpotSDK::Crm::PublicAndFilterBranch,
+                    HubSpotSDK::Crm::PublicNotAllFilterBranch,
+                    HubSpotSDK::Crm::PublicNotAnyFilterBranch,
+                    HubSpotSDK::Crm::PublicRestrictedFilterBranch,
+                    HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch,
+                    HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch,
+                    HubSpotSDK::Crm::PublicAssociationFilterBranch
                   )
                 ],
               filter_branch_operator: String,
               filter_branch_type:
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::FilterBranchType::OrSymbol,
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::FilterBranchType::OrSymbol,
               filters:
                 T::Array[
                   T.any(
-                    HubspotSDK::Crm::PublicPropertyFilter,
-                    HubspotSDK::Crm::PublicAssociationInListFilter,
-                    HubspotSDK::Crm::PublicPageViewAnalyticsFilter,
-                    HubspotSDK::Crm::PublicCtaAnalyticsFilter,
-                    HubspotSDK::Crm::PublicEventAnalyticsFilter,
-                    HubspotSDK::Crm::PublicFormSubmissionFilter,
-                    HubspotSDK::Crm::PublicFormSubmissionOnPageFilter,
-                    HubspotSDK::Crm::PublicIntegrationEventFilter,
-                    HubspotSDK::Crm::PublicEmailSubscriptionFilter,
-                    HubspotSDK::Crm::PublicCommunicationSubscriptionFilter,
-                    HubspotSDK::Crm::PublicCampaignInfluencedFilter,
-                    HubspotSDK::Crm::PublicSurveyMonkeyFilter,
-                    HubspotSDK::Crm::PublicSurveyMonkeyValueFilter,
-                    HubspotSDK::Crm::PublicWebinarFilter,
-                    HubspotSDK::Crm::PublicEmailEventFilter,
-                    HubspotSDK::Crm::PublicPrivacyAnalyticsFilter,
-                    HubspotSDK::Crm::PublicAdsSearchFilter,
-                    HubspotSDK::Crm::PublicAdsTimeFilter,
-                    HubspotSDK::Crm::PublicInListFilter,
-                    HubspotSDK::Crm::PublicNumAssociationsFilter,
-                    HubspotSDK::Crm::PublicUnifiedEventsFilter,
-                    HubspotSDK::Crm::PublicPropertyAssociationInListFilter,
-                    HubspotSDK::Crm::PublicConstantFilter
+                    HubSpotSDK::Crm::PublicPropertyFilter,
+                    HubSpotSDK::Crm::PublicAssociationInListFilter,
+                    HubSpotSDK::Crm::PublicPageViewAnalyticsFilter,
+                    HubSpotSDK::Crm::PublicCtaAnalyticsFilter,
+                    HubSpotSDK::Crm::PublicEventAnalyticsFilter,
+                    HubSpotSDK::Crm::PublicFormSubmissionFilter,
+                    HubSpotSDK::Crm::PublicFormSubmissionOnPageFilter,
+                    HubSpotSDK::Crm::PublicIntegrationEventFilter,
+                    HubSpotSDK::Crm::PublicEmailSubscriptionFilter,
+                    HubSpotSDK::Crm::PublicCommunicationSubscriptionFilter,
+                    HubSpotSDK::Crm::PublicCampaignInfluencedFilter,
+                    HubSpotSDK::Crm::PublicSurveyMonkeyFilter,
+                    HubSpotSDK::Crm::PublicSurveyMonkeyValueFilter,
+                    HubSpotSDK::Crm::PublicWebinarFilter,
+                    HubSpotSDK::Crm::PublicEmailEventFilter,
+                    HubSpotSDK::Crm::PublicPrivacyAnalyticsFilter,
+                    HubSpotSDK::Crm::PublicAdsSearchFilter,
+                    HubSpotSDK::Crm::PublicAdsTimeFilter,
+                    HubSpotSDK::Crm::PublicInListFilter,
+                    HubSpotSDK::Crm::PublicNumAssociationsFilter,
+                    HubSpotSDK::Crm::PublicUnifiedEventsFilter,
+                    HubSpotSDK::Crm::PublicPropertyAssociationInListFilter,
+                    HubSpotSDK::Crm::PublicConstantFilter
                   )
                 ],
               operator:
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::Operator::OrSymbol,
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::Operator::OrSymbol,
               coalescing_refine_by:
                 T.any(
-                  HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-                  HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-                  HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-                  HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAllHistoryRefineBy,
-                  HubspotSDK::Crm::PublicTimePointOperation,
-                  HubspotSDK::Crm::PublicRangedTimeOperation
+                  HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+                  HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+                  HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+                  HubSpotSDK::Crm::PublicTimePointOperation,
+                  HubSpotSDK::Crm::PublicRangedTimeOperation
                 ),
               pruning_refine_by:
                 T.any(
-                  HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-                  HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-                  HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-                  HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAllHistoryRefineBy,
-                  HubspotSDK::Crm::PublicTimePointOperation,
-                  HubspotSDK::Crm::PublicRangedTimeOperation
+                  HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+                  HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+                  HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+                  HubSpotSDK::Crm::PublicTimePointOperation,
+                  HubSpotSDK::Crm::PublicRangedTimeOperation
                 )
             }
           )
@@ -337,26 +337,26 @@ module HubspotSDK
         end
 
         module FilterBranch
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::PublicOrFilterBranch,
-                HubspotSDK::Crm::PublicAndFilterBranch,
-                HubspotSDK::Crm::PublicNotAllFilterBranch,
-                HubspotSDK::Crm::PublicNotAnyFilterBranch,
-                HubspotSDK::Crm::PublicRestrictedFilterBranch,
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch,
-                HubspotSDK::Crm::PublicPropertyAssociationFilterBranch,
-                HubspotSDK::Crm::PublicAssociationFilterBranch
+                HubSpotSDK::Crm::PublicOrFilterBranch,
+                HubSpotSDK::Crm::PublicAndFilterBranch,
+                HubSpotSDK::Crm::PublicNotAllFilterBranch,
+                HubSpotSDK::Crm::PublicNotAnyFilterBranch,
+                HubSpotSDK::Crm::PublicRestrictedFilterBranch,
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch,
+                HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch,
+                HubSpotSDK::Crm::PublicAssociationFilterBranch
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::FilterBranch::Variants
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::FilterBranch::Variants
               ]
             )
           end
@@ -366,13 +366,13 @@ module HubspotSDK
 
         # The type of the filter branch (UNIFIED_EVENTS).
         module FilterBranchType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::FilterBranchType
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::FilterBranchType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -380,13 +380,13 @@ module HubspotSDK
           UNIFIED_EVENTS =
             T.let(
               :UNIFIED_EVENTS,
-              HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::FilterBranchType::TaggedSymbol
+              HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::FilterBranchType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::FilterBranchType::TaggedSymbol
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::FilterBranchType::TaggedSymbol
               ]
             )
           end
@@ -395,41 +395,41 @@ module HubspotSDK
         end
 
         module Filter
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::PublicPropertyFilter,
-                HubspotSDK::Crm::PublicAssociationInListFilter,
-                HubspotSDK::Crm::PublicPageViewAnalyticsFilter,
-                HubspotSDK::Crm::PublicCtaAnalyticsFilter,
-                HubspotSDK::Crm::PublicEventAnalyticsFilter,
-                HubspotSDK::Crm::PublicFormSubmissionFilter,
-                HubspotSDK::Crm::PublicFormSubmissionOnPageFilter,
-                HubspotSDK::Crm::PublicIntegrationEventFilter,
-                HubspotSDK::Crm::PublicEmailSubscriptionFilter,
-                HubspotSDK::Crm::PublicCommunicationSubscriptionFilter,
-                HubspotSDK::Crm::PublicCampaignInfluencedFilter,
-                HubspotSDK::Crm::PublicSurveyMonkeyFilter,
-                HubspotSDK::Crm::PublicSurveyMonkeyValueFilter,
-                HubspotSDK::Crm::PublicWebinarFilter,
-                HubspotSDK::Crm::PublicEmailEventFilter,
-                HubspotSDK::Crm::PublicPrivacyAnalyticsFilter,
-                HubspotSDK::Crm::PublicAdsSearchFilter,
-                HubspotSDK::Crm::PublicAdsTimeFilter,
-                HubspotSDK::Crm::PublicInListFilter,
-                HubspotSDK::Crm::PublicNumAssociationsFilter,
-                HubspotSDK::Crm::PublicUnifiedEventsFilter,
-                HubspotSDK::Crm::PublicPropertyAssociationInListFilter,
-                HubspotSDK::Crm::PublicConstantFilter
+                HubSpotSDK::Crm::PublicPropertyFilter,
+                HubSpotSDK::Crm::PublicAssociationInListFilter,
+                HubSpotSDK::Crm::PublicPageViewAnalyticsFilter,
+                HubSpotSDK::Crm::PublicCtaAnalyticsFilter,
+                HubSpotSDK::Crm::PublicEventAnalyticsFilter,
+                HubSpotSDK::Crm::PublicFormSubmissionFilter,
+                HubSpotSDK::Crm::PublicFormSubmissionOnPageFilter,
+                HubSpotSDK::Crm::PublicIntegrationEventFilter,
+                HubSpotSDK::Crm::PublicEmailSubscriptionFilter,
+                HubSpotSDK::Crm::PublicCommunicationSubscriptionFilter,
+                HubSpotSDK::Crm::PublicCampaignInfluencedFilter,
+                HubSpotSDK::Crm::PublicSurveyMonkeyFilter,
+                HubSpotSDK::Crm::PublicSurveyMonkeyValueFilter,
+                HubSpotSDK::Crm::PublicWebinarFilter,
+                HubSpotSDK::Crm::PublicEmailEventFilter,
+                HubSpotSDK::Crm::PublicPrivacyAnalyticsFilter,
+                HubSpotSDK::Crm::PublicAdsSearchFilter,
+                HubSpotSDK::Crm::PublicAdsTimeFilter,
+                HubSpotSDK::Crm::PublicInListFilter,
+                HubSpotSDK::Crm::PublicNumAssociationsFilter,
+                HubSpotSDK::Crm::PublicUnifiedEventsFilter,
+                HubSpotSDK::Crm::PublicPropertyAssociationInListFilter,
+                HubSpotSDK::Crm::PublicConstantFilter
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::Filter::Variants
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::Filter::Variants
               ]
             )
           end
@@ -440,13 +440,13 @@ module HubspotSDK
         # Defines the operation to be applied within the filter branch (HAS_COMPLETED,
         # HAS_NOT_COMPLETED).
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::Operator
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::Operator
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -454,18 +454,18 @@ module HubspotSDK
           HAS_COMPLETED =
             T.let(
               :HAS_COMPLETED,
-              HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::Operator::TaggedSymbol
+              HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::Operator::TaggedSymbol
             )
           HAS_NOT_COMPLETED =
             T.let(
               :HAS_NOT_COMPLETED,
-              HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::Operator::TaggedSymbol
+              HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::Operator::TaggedSymbol
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::Operator::TaggedSymbol
               ]
             )
           end
@@ -475,27 +475,27 @@ module HubspotSDK
 
         # Specifies the criteria for refining the filter by coalescing.
         module CoalescingRefineBy
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy,
-                HubspotSDK::Crm::PublicTimePointOperation,
-                HubspotSDK::Crm::PublicRangedTimeOperation
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+                HubSpotSDK::Crm::PublicTimePointOperation,
+                HubSpotSDK::Crm::PublicRangedTimeOperation
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::CoalescingRefineBy::Variants
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::CoalescingRefineBy::Variants
               ]
             )
           end
@@ -504,27 +504,27 @@ module HubspotSDK
         end
 
         module PruningRefineBy
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy,
-                HubspotSDK::Crm::PublicTimePointOperation,
-                HubspotSDK::Crm::PublicRangedTimeOperation
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+                HubSpotSDK::Crm::PublicTimePointOperation,
+                HubSpotSDK::Crm::PublicRangedTimeOperation
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::PruningRefineBy::Variants
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::PruningRefineBy::Variants
               ]
             )
           end

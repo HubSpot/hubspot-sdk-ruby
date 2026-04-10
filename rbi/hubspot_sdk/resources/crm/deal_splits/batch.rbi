@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class DealSplits
@@ -8,9 +8,9 @@ module HubspotSDK
           # Read a batch of deal split objects by their associated deal object internal ID
           sig do
             params(
-              inputs: T::Array[HubspotSDK::PublicObjectID::OrHash],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::BatchResponseDealToDealSplits)
+              inputs: T::Array[HubSpotSDK::PublicObjectID::OrHash],
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::BatchResponseDealToDealSplits)
           end
           def read(
             # An array of deal split inputs
@@ -26,10 +26,10 @@ module HubspotSDK
             params(
               inputs:
                 T::Array[
-                  HubspotSDK::Crm::PublicDealSplitsCreateRequest::OrHash
+                  HubSpotSDK::Crm::PublicDealSplitsCreateRequest::OrHash
                 ],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::BatchResponseDealToDealSplits)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::BatchResponseDealToDealSplits)
           end
           def upsert(
             # An array of deal split inputs
@@ -39,7 +39,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

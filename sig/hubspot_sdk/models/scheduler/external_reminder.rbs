@@ -1,38 +1,38 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_reminder =
         {
           number_of_time_units: Integer,
-          time_unit: HubspotSDK::Models::Scheduler::ExternalReminder::time_unit
+          time_unit: HubSpotSDK::Models::Scheduler::ExternalReminder::time_unit
         }
 
-      class ExternalReminder < HubspotSDK::Internal::Type::BaseModel
+      class ExternalReminder < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor number_of_time_units: Integer
 
-        attr_accessor time_unit: HubspotSDK::Models::Scheduler::ExternalReminder::time_unit
+        attr_accessor time_unit: HubSpotSDK::Models::Scheduler::ExternalReminder::time_unit
 
         def initialize: (
           number_of_time_units: Integer,
-          time_unit: HubspotSDK::Models::Scheduler::ExternalReminder::time_unit
+          time_unit: HubSpotSDK::Models::Scheduler::ExternalReminder::time_unit
         ) -> void
 
         def to_hash: -> {
           number_of_time_units: Integer,
-          time_unit: HubspotSDK::Models::Scheduler::ExternalReminder::time_unit
+          time_unit: HubSpotSDK::Models::Scheduler::ExternalReminder::time_unit
         }
 
         type time_unit = :DAYS | :HOURS | :MINUTES | :WEEKS
 
         module TimeUnit
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DAYS: :DAYS
           HOURS: :HOURS
           MINUTES: :MINUTES
           WEEKS: :WEEKS
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Scheduler::ExternalReminder::time_unit]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Scheduler::ExternalReminder::time_unit]
         end
       end
     end

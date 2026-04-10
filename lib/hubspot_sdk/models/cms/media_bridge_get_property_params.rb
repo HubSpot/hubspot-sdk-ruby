@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::MediaBridge#get_property
-      class MediaBridgeGetPropertyParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Cms::MediaBridge#get_property
+      class MediaBridgeGetPropertyParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute app_id
         #
@@ -27,7 +27,7 @@ module HubspotSDK
         #   Whether to return only results that have been archived.
         #
         #   @return [Boolean, nil]
-        optional :archived, HubspotSDK::Internal::Type::Boolean
+        optional :archived, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute properties
         #
@@ -45,7 +45,7 @@ module HubspotSDK
         #
         #   @param properties [String]
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

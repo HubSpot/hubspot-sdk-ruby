@@ -1,14 +1,14 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Auth
       type token_info_response_base_if =
-        HubspotSDK::Auth::PublicAccessTokenInfoResponse
-        | HubspotSDK::Auth::PublicRefreshTokenInfoResponse
+        HubSpotSDK::Auth::PublicAccessTokenInfoResponse
+        | HubSpotSDK::Auth::PublicRefreshTokenInfoResponse
 
       module TokenInfoResponseBaseIf
-        extend HubspotSDK::Internal::Type::Union
+        extend HubSpotSDK::Internal::Type::Union
 
-        def self?.variants: -> ::Array[HubspotSDK::Models::Auth::token_info_response_base_if]
+        def self?.variants: -> ::Array[HubSpotSDK::Models::Auth::token_info_response_base_if]
       end
     end
   end

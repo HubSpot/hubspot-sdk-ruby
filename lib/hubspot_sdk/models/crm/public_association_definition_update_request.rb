@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicAssociationDefinitionUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicAssociationDefinitionUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute association_type_id
         #   The unique identifier for the association type.
         #
@@ -25,7 +25,7 @@ module HubspotSDK
 
         # @!method initialize(association_type_id:, label:, inverse_label: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicAssociationDefinitionUpdateRequest} for more
+        #   {HubSpotSDK::Models::Crm::PublicAssociationDefinitionUpdateRequest} for more
         #   details.
         #
         #   @param association_type_id [Integer] The unique identifier for the association type.

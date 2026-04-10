@@ -1,23 +1,23 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         type card_audit_response =
           {
-            action_type: HubspotSDK::Models::Crm::Extensions::CardAuditResponse::action_type,
+            action_type: HubSpotSDK::Models::Crm::Extensions::CardAuditResponse::action_type,
             application_id: Integer,
-            auth_source: HubspotSDK::Models::Crm::Extensions::CardAuditResponse::auth_source,
+            auth_source: HubSpotSDK::Models::Crm::Extensions::CardAuditResponse::auth_source,
             changed_at: Integer,
             initiating_user_id: Integer,
             object_type_id: Integer
           }
 
-        class CardAuditResponse < HubspotSDK::Internal::Type::BaseModel
-          attr_accessor action_type: HubspotSDK::Models::Crm::Extensions::CardAuditResponse::action_type
+        class CardAuditResponse < HubSpotSDK::Internal::Type::BaseModel
+          attr_accessor action_type: HubSpotSDK::Models::Crm::Extensions::CardAuditResponse::action_type
 
           attr_accessor application_id: Integer
 
-          attr_accessor auth_source: HubspotSDK::Models::Crm::Extensions::CardAuditResponse::auth_source
+          attr_accessor auth_source: HubSpotSDK::Models::Crm::Extensions::CardAuditResponse::auth_source
 
           attr_accessor changed_at: Integer
 
@@ -26,18 +26,18 @@ module HubspotSDK
           attr_accessor object_type_id: Integer
 
           def initialize: (
-            action_type: HubspotSDK::Models::Crm::Extensions::CardAuditResponse::action_type,
+            action_type: HubSpotSDK::Models::Crm::Extensions::CardAuditResponse::action_type,
             application_id: Integer,
-            auth_source: HubspotSDK::Models::Crm::Extensions::CardAuditResponse::auth_source,
+            auth_source: HubSpotSDK::Models::Crm::Extensions::CardAuditResponse::auth_source,
             changed_at: Integer,
             initiating_user_id: Integer,
             object_type_id: Integer
           ) -> void
 
           def to_hash: -> {
-            action_type: HubspotSDK::Models::Crm::Extensions::CardAuditResponse::action_type,
+            action_type: HubSpotSDK::Models::Crm::Extensions::CardAuditResponse::action_type,
             application_id: Integer,
-            auth_source: HubspotSDK::Models::Crm::Extensions::CardAuditResponse::auth_source,
+            auth_source: HubSpotSDK::Models::Crm::Extensions::CardAuditResponse::auth_source,
             changed_at: Integer,
             initiating_user_id: Integer,
             object_type_id: Integer
@@ -46,25 +46,25 @@ module HubspotSDK
           type action_type = :CREATE | :DELETE | :UPDATE
 
           module ActionType
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             CREATE: :CREATE
             DELETE: :DELETE
             UPDATE: :UPDATE
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::CardAuditResponse::action_type]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Crm::Extensions::CardAuditResponse::action_type]
           end
 
           type auth_source = :APP | :EXTERNAL | :INTERNAL
 
           module AuthSource
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             APP: :APP
             EXTERNAL: :EXTERNAL
             INTERNAL: :INTERNAL
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::CardAuditResponse::auth_source]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Crm::Extensions::CardAuditResponse::auth_source]
           end
         end
       end

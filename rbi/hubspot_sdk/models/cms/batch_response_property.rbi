@@ -1,28 +1,28 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class BatchResponseProperty < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseProperty < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::BatchResponseProperty,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::BatchResponseProperty,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig { returns(Time) }
         attr_accessor :completed_at
 
-        sig { returns(T::Array[HubspotSDK::Cms::Property]) }
+        sig { returns(T::Array[HubSpotSDK::Cms::Property]) }
         attr_accessor :results
 
         sig { returns(Time) }
         attr_accessor :started_at
 
         sig do
-          returns(HubspotSDK::Cms::BatchResponseProperty::Status::TaggedSymbol)
+          returns(HubSpotSDK::Cms::BatchResponseProperty::Status::TaggedSymbol)
         end
         attr_accessor :status
 
@@ -41,9 +41,9 @@ module HubspotSDK
         sig do
           params(
             completed_at: Time,
-            results: T::Array[HubspotSDK::Cms::Property::OrHash],
+            results: T::Array[HubSpotSDK::Cms::Property::OrHash],
             started_at: Time,
-            status: HubspotSDK::Cms::BatchResponseProperty::Status::OrSymbol,
+            status: HubSpotSDK::Cms::BatchResponseProperty::Status::OrSymbol,
             links: T::Hash[Symbol, String],
             requested_at: Time
           ).returns(T.attached_class)
@@ -62,10 +62,10 @@ module HubspotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubspotSDK::Cms::Property],
+              results: T::Array[HubSpotSDK::Cms::Property],
               started_at: Time,
               status:
-                HubspotSDK::Cms::BatchResponseProperty::Status::TaggedSymbol,
+                HubSpotSDK::Cms::BatchResponseProperty::Status::TaggedSymbol,
               links: T::Hash[Symbol, String],
               requested_at: Time
             }
@@ -75,39 +75,39 @@ module HubspotSDK
         end
 
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::BatchResponseProperty::Status)
+              T.all(Symbol, HubSpotSDK::Cms::BatchResponseProperty::Status)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::Cms::BatchResponseProperty::Status::TaggedSymbol
+              HubSpotSDK::Cms::BatchResponseProperty::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::Cms::BatchResponseProperty::Status::TaggedSymbol
+              HubSpotSDK::Cms::BatchResponseProperty::Status::TaggedSymbol
             )
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::Cms::BatchResponseProperty::Status::TaggedSymbol
+              HubSpotSDK::Cms::BatchResponseProperty::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::Cms::BatchResponseProperty::Status::TaggedSymbol
+              HubSpotSDK::Cms::BatchResponseProperty::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::BatchResponseProperty::Status::TaggedSymbol
+                HubSpotSDK::Cms::BatchResponseProperty::Status::TaggedSymbol
               ]
             )
           end

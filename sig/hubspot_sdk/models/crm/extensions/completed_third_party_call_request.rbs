@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
@@ -7,29 +7,29 @@ module HubspotSDK
             create_engagement: bool,
             engagement_properties: ::Hash[Symbol, String],
             external_call_id: String,
-            final_call_status: HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::final_call_status,
-            from_number: HubspotSDK::Crm::Extensions::FormattedPhoneNumber,
+            final_call_status: HubSpotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::final_call_status,
+            from_number: HubSpotSDK::Crm::Extensions::FormattedPhoneNumber,
             potential_recipient_user_ids: ::Array[Integer],
-            to_number: HubspotSDK::Crm::Extensions::FormattedPhoneNumber,
+            to_number: HubSpotSDK::Crm::Extensions::FormattedPhoneNumber,
             call_started_timestamp: Time,
             duration_seconds: Integer,
             user_id: Integer
           }
 
-        class CompletedThirdPartyCallRequest < HubspotSDK::Internal::Type::BaseModel
+        class CompletedThirdPartyCallRequest < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor create_engagement: bool
 
           attr_accessor engagement_properties: ::Hash[Symbol, String]
 
           attr_accessor external_call_id: String
 
-          attr_accessor final_call_status: HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::final_call_status
+          attr_accessor final_call_status: HubSpotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::final_call_status
 
-          attr_accessor from_number: HubspotSDK::Crm::Extensions::FormattedPhoneNumber
+          attr_accessor from_number: HubSpotSDK::Crm::Extensions::FormattedPhoneNumber
 
           attr_accessor potential_recipient_user_ids: ::Array[Integer]
 
-          attr_accessor to_number: HubspotSDK::Crm::Extensions::FormattedPhoneNumber
+          attr_accessor to_number: HubSpotSDK::Crm::Extensions::FormattedPhoneNumber
 
           attr_reader call_started_timestamp: Time?
 
@@ -47,10 +47,10 @@ module HubspotSDK
             create_engagement: bool,
             engagement_properties: ::Hash[Symbol, String],
             external_call_id: String,
-            final_call_status: HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::final_call_status,
-            from_number: HubspotSDK::Crm::Extensions::FormattedPhoneNumber,
+            final_call_status: HubSpotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::final_call_status,
+            from_number: HubSpotSDK::Crm::Extensions::FormattedPhoneNumber,
             potential_recipient_user_ids: ::Array[Integer],
-            to_number: HubspotSDK::Crm::Extensions::FormattedPhoneNumber,
+            to_number: HubSpotSDK::Crm::Extensions::FormattedPhoneNumber,
             ?call_started_timestamp: Time,
             ?duration_seconds: Integer,
             ?user_id: Integer
@@ -60,10 +60,10 @@ module HubspotSDK
             create_engagement: bool,
             engagement_properties: ::Hash[Symbol, String],
             external_call_id: String,
-            final_call_status: HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::final_call_status,
-            from_number: HubspotSDK::Crm::Extensions::FormattedPhoneNumber,
+            final_call_status: HubSpotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::final_call_status,
+            from_number: HubSpotSDK::Crm::Extensions::FormattedPhoneNumber,
             potential_recipient_user_ids: ::Array[Integer],
-            to_number: HubspotSDK::Crm::Extensions::FormattedPhoneNumber,
+            to_number: HubSpotSDK::Crm::Extensions::FormattedPhoneNumber,
             call_started_timestamp: Time,
             duration_seconds: Integer,
             user_id: Integer
@@ -85,7 +85,7 @@ module HubspotSDK
             | :UNKNOWN
 
           module FinalCallStatus
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             BUSY: :BUSY
             CALLING_CRM_USER: :CALLING_CRM_USER
@@ -101,7 +101,7 @@ module HubspotSDK
             RINGING: :RINGING
             UNKNOWN: :UNKNOWN
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::final_call_status]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::final_call_status]
           end
         end
       end

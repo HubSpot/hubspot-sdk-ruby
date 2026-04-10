@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class CommunicationPreferences
       class Definitions
@@ -10,14 +10,14 @@ module HubspotSDK
         #
         # @param business_unit_id [Integer]
         # @param include_translations [Boolean]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::CommunicationPreferences::ActionResponseWithResultsSubscriptionDefinition]
+        # @return [HubSpotSDK::Models::CommunicationPreferences::ActionResponseWithResultsSubscriptionDefinition]
         #
-        # @see HubspotSDK::Models::CommunicationPreferences::DefinitionListParams
+        # @see HubSpotSDK::Models::CommunicationPreferences::DefinitionListParams
         def list(params = {})
-          parsed, options = HubspotSDK::CommunicationPreferences::DefinitionListParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::CommunicationPreferences::DefinitionListParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "communication-preferences/2026-03/definitions",
@@ -25,14 +25,14 @@ module HubspotSDK
               business_unit_id: "businessUnitId",
               include_translations: "includeTranslations"
             ),
-            model: HubspotSDK::CommunicationPreferences::ActionResponseWithResultsSubscriptionDefinition,
+            model: HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsSubscriptionDefinition,
             options: options
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
         end

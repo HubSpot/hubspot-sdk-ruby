@@ -1,11 +1,11 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Files
-      attr_reader file_assets: HubspotSDK::Resources::Files::FileAssets
+      attr_reader file_assets: HubSpotSDK::Resources::Files::FileAssets
 
-      attr_reader folders: HubspotSDK::Resources::Files::Folders
+      attr_reader folders: HubSpotSDK::Resources::Files::Folders
 
-      def initialize: (client: HubspotSDK::Client) -> void
+      def initialize: (client: HubSpotSDK::Client) -> void
     end
   end
 end

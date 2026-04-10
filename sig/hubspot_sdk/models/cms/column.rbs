@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type column =
@@ -8,24 +8,24 @@ module HubspotSDK
           description: String,
           label: String,
           name: String,
-          type: HubspotSDK::Models::Cms::Column::type_,
+          type: HubSpotSDK::Models::Cms::Column::type_,
           created_at: Time,
-          created_by: HubspotSDK::Cms::SimpleUser,
+          created_by: HubSpotSDK::Cms::SimpleUser,
           created_by_user_id: Integer,
           foreign_column_id: Integer,
-          foreign_ids: ::Array[HubspotSDK::Cms::ForeignID],
-          foreign_ids_by_id: ::Hash[Symbol, HubspotSDK::Cms::ForeignID],
-          foreign_ids_by_name: ::Hash[Symbol, HubspotSDK::Cms::ForeignID],
+          foreign_ids: ::Array[HubSpotSDK::Cms::ForeignID],
+          foreign_ids_by_id: ::Hash[Symbol, HubSpotSDK::Cms::ForeignID],
+          foreign_ids_by_name: ::Hash[Symbol, HubSpotSDK::Cms::ForeignID],
           foreign_table_id: Integer,
           option_count: Integer,
-          options: ::Array[HubspotSDK::Cms::Option],
+          options: ::Array[HubSpotSDK::Cms::Option],
           updated_at: Time,
-          updated_by: HubspotSDK::Cms::SimpleUser,
+          updated_by: HubSpotSDK::Cms::SimpleUser,
           updated_by_user_id: Integer,
           width: Integer
         }
 
-      class Column < HubspotSDK::Internal::Type::BaseModel
+      class Column < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor deleted: bool
@@ -36,17 +36,17 @@ module HubspotSDK
 
         attr_accessor name: String
 
-        attr_accessor type: HubspotSDK::Models::Cms::Column::type_
+        attr_accessor type: HubSpotSDK::Models::Cms::Column::type_
 
         attr_reader created_at: Time?
 
         def created_at=: (Time) -> Time
 
-        attr_reader created_by: HubspotSDK::Cms::SimpleUser?
+        attr_reader created_by: HubSpotSDK::Cms::SimpleUser?
 
         def created_by=: (
-          HubspotSDK::Cms::SimpleUser
-        ) -> HubspotSDK::Cms::SimpleUser
+          HubSpotSDK::Cms::SimpleUser
+        ) -> HubSpotSDK::Cms::SimpleUser
 
         attr_reader created_by_user_id: Integer?
 
@@ -56,23 +56,23 @@ module HubspotSDK
 
         def foreign_column_id=: (Integer) -> Integer
 
-        attr_reader foreign_ids: ::Array[HubspotSDK::Cms::ForeignID]?
+        attr_reader foreign_ids: ::Array[HubSpotSDK::Cms::ForeignID]?
 
         def foreign_ids=: (
-          ::Array[HubspotSDK::Cms::ForeignID]
-        ) -> ::Array[HubspotSDK::Cms::ForeignID]
+          ::Array[HubSpotSDK::Cms::ForeignID]
+        ) -> ::Array[HubSpotSDK::Cms::ForeignID]
 
-        attr_reader foreign_ids_by_id: ::Hash[Symbol, HubspotSDK::Cms::ForeignID]?
+        attr_reader foreign_ids_by_id: ::Hash[Symbol, HubSpotSDK::Cms::ForeignID]?
 
         def foreign_ids_by_id=: (
-          ::Hash[Symbol, HubspotSDK::Cms::ForeignID]
-        ) -> ::Hash[Symbol, HubspotSDK::Cms::ForeignID]
+          ::Hash[Symbol, HubSpotSDK::Cms::ForeignID]
+        ) -> ::Hash[Symbol, HubSpotSDK::Cms::ForeignID]
 
-        attr_reader foreign_ids_by_name: ::Hash[Symbol, HubspotSDK::Cms::ForeignID]?
+        attr_reader foreign_ids_by_name: ::Hash[Symbol, HubSpotSDK::Cms::ForeignID]?
 
         def foreign_ids_by_name=: (
-          ::Hash[Symbol, HubspotSDK::Cms::ForeignID]
-        ) -> ::Hash[Symbol, HubspotSDK::Cms::ForeignID]
+          ::Hash[Symbol, HubSpotSDK::Cms::ForeignID]
+        ) -> ::Hash[Symbol, HubSpotSDK::Cms::ForeignID]
 
         attr_reader foreign_table_id: Integer?
 
@@ -82,21 +82,21 @@ module HubspotSDK
 
         def option_count=: (Integer) -> Integer
 
-        attr_reader options: ::Array[HubspotSDK::Cms::Option]?
+        attr_reader options: ::Array[HubSpotSDK::Cms::Option]?
 
         def options=: (
-          ::Array[HubspotSDK::Cms::Option]
-        ) -> ::Array[HubspotSDK::Cms::Option]
+          ::Array[HubSpotSDK::Cms::Option]
+        ) -> ::Array[HubSpotSDK::Cms::Option]
 
         attr_reader updated_at: Time?
 
         def updated_at=: (Time) -> Time
 
-        attr_reader updated_by: HubspotSDK::Cms::SimpleUser?
+        attr_reader updated_by: HubSpotSDK::Cms::SimpleUser?
 
         def updated_by=: (
-          HubspotSDK::Cms::SimpleUser
-        ) -> HubspotSDK::Cms::SimpleUser
+          HubSpotSDK::Cms::SimpleUser
+        ) -> HubSpotSDK::Cms::SimpleUser
 
         attr_reader updated_by_user_id: Integer?
 
@@ -112,19 +112,19 @@ module HubspotSDK
           description: String,
           label: String,
           name: String,
-          type: HubspotSDK::Models::Cms::Column::type_,
+          type: HubSpotSDK::Models::Cms::Column::type_,
           ?created_at: Time,
-          ?created_by: HubspotSDK::Cms::SimpleUser,
+          ?created_by: HubSpotSDK::Cms::SimpleUser,
           ?created_by_user_id: Integer,
           ?foreign_column_id: Integer,
-          ?foreign_ids: ::Array[HubspotSDK::Cms::ForeignID],
-          ?foreign_ids_by_id: ::Hash[Symbol, HubspotSDK::Cms::ForeignID],
-          ?foreign_ids_by_name: ::Hash[Symbol, HubspotSDK::Cms::ForeignID],
+          ?foreign_ids: ::Array[HubSpotSDK::Cms::ForeignID],
+          ?foreign_ids_by_id: ::Hash[Symbol, HubSpotSDK::Cms::ForeignID],
+          ?foreign_ids_by_name: ::Hash[Symbol, HubSpotSDK::Cms::ForeignID],
           ?foreign_table_id: Integer,
           ?option_count: Integer,
-          ?options: ::Array[HubspotSDK::Cms::Option],
+          ?options: ::Array[HubSpotSDK::Cms::Option],
           ?updated_at: Time,
-          ?updated_by: HubspotSDK::Cms::SimpleUser,
+          ?updated_by: HubSpotSDK::Cms::SimpleUser,
           ?updated_by_user_id: Integer,
           ?width: Integer
         ) -> void
@@ -135,19 +135,19 @@ module HubspotSDK
           description: String,
           label: String,
           name: String,
-          type: HubspotSDK::Models::Cms::Column::type_,
+          type: HubSpotSDK::Models::Cms::Column::type_,
           created_at: Time,
-          created_by: HubspotSDK::Cms::SimpleUser,
+          created_by: HubSpotSDK::Cms::SimpleUser,
           created_by_user_id: Integer,
           foreign_column_id: Integer,
-          foreign_ids: ::Array[HubspotSDK::Cms::ForeignID],
-          foreign_ids_by_id: ::Hash[Symbol, HubspotSDK::Cms::ForeignID],
-          foreign_ids_by_name: ::Hash[Symbol, HubspotSDK::Cms::ForeignID],
+          foreign_ids: ::Array[HubSpotSDK::Cms::ForeignID],
+          foreign_ids_by_id: ::Hash[Symbol, HubSpotSDK::Cms::ForeignID],
+          foreign_ids_by_name: ::Hash[Symbol, HubSpotSDK::Cms::ForeignID],
           foreign_table_id: Integer,
           option_count: Integer,
-          options: ::Array[HubspotSDK::Cms::Option],
+          options: ::Array[HubSpotSDK::Cms::Option],
           updated_at: Time,
-          updated_by: HubspotSDK::Cms::SimpleUser,
+          updated_by: HubSpotSDK::Cms::SimpleUser,
           updated_by_user_id: Integer,
           width: Integer
         }
@@ -177,7 +177,7 @@ module HubspotSDK
           | :VIDEO
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOLEAN: :BOOLEAN
           CODE: :CODE
@@ -202,7 +202,7 @@ module HubspotSDK
           URL: :URL
           VIDEO: :VIDEO
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::Column::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Column::type_]
         end
       end
     end

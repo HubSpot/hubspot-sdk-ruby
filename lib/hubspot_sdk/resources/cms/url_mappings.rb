@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class URLMappings
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Cms::URLMappingCreateParams} for more details.
+        # {HubSpotSDK::Models::Cms::URLMappingCreateParams} for more details.
         #
         # Create a new URL mapping in your HubSpot account. This endpoint allows you to
         # define URL redirections and mappings, which can be useful for managing site
@@ -20,7 +20,7 @@ module HubspotSDK
         #
         # @param content_group_id [Integer] A 64-bit integer representing the content group associated with the URL mapping.
         #
-        # @param cos_object_type [Symbol, HubspotSDK::Models::Cms::URLMappingsURLMapping::CosObjectType] A string representing the type of content object associated with the URL mapping
+        # @param cos_object_type [Symbol, HubSpotSDK::Models::Cms::URLMappingsURLMapping::CosObjectType] A string representing the type of content object associated with the URL mapping
         #
         # @param created [Integer] A Unix timestamp in milliseconds indicating when the URL mapping was created.
         #
@@ -66,13 +66,13 @@ module HubspotSDK
         #
         # @param updated_by_id [Integer] The identifier of the user who last updated the URL mapping.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [StringIO]
         #
-        # @see HubspotSDK::Models::Cms::URLMappingCreateParams
+        # @see HubSpotSDK::Models::Cms::URLMappingCreateParams
         def create(params)
-          parsed, options = HubspotSDK::Cms::URLMappingCreateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Cms::URLMappingCreateParams.dump_request(params)
           @client.request(
             method: :post,
             path: "url-mappings/2026-03/url-mappings",
@@ -90,11 +90,11 @@ module HubspotSDK
         #
         # @overload list(request_options: {})
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [StringIO]
         #
-        # @see HubspotSDK::Models::Cms::URLMappingListParams
+        # @see HubSpotSDK::Models::Cms::URLMappingListParams
         def list(params = {})
           @client.request(
             method: :get,
@@ -112,11 +112,11 @@ module HubspotSDK
         # @overload delete(id, request_options: {})
         #
         # @param id [Integer]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Cms::URLMappingDeleteParams
+        # @see HubSpotSDK::Models::Cms::URLMappingDeleteParams
         def delete(id, params = {})
           @client.request(
             method: :delete,
@@ -133,11 +133,11 @@ module HubspotSDK
         # @overload get(id, request_options: {})
         #
         # @param id [Integer]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [StringIO]
         #
-        # @see HubspotSDK::Models::Cms::URLMappingGetParams
+        # @see HubSpotSDK::Models::Cms::URLMappingGetParams
         def get(id, params = {})
           @client.request(
             method: :get,
@@ -150,7 +150,7 @@ module HubspotSDK
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
         end

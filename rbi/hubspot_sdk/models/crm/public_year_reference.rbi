@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicYearReference < HubspotSDK::Internal::Type::BaseModel
+      class PublicYearReference < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicYearReference,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicYearReference,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -22,7 +22,7 @@ module HubspotSDK
 
         # Indicates the type of reference (YEAR).
         sig do
-          returns(HubspotSDK::Crm::PublicYearReference::ReferenceType::OrSymbol)
+          returns(HubSpotSDK::Crm::PublicYearReference::ReferenceType::OrSymbol)
         end
         attr_accessor :reference_type
 
@@ -59,7 +59,7 @@ module HubspotSDK
             day: Integer,
             month: Integer,
             reference_type:
-              HubspotSDK::Crm::PublicYearReference::ReferenceType::OrSymbol,
+              HubSpotSDK::Crm::PublicYearReference::ReferenceType::OrSymbol,
             hour: Integer,
             millisecond: Integer,
             minute: Integer,
@@ -90,7 +90,7 @@ module HubspotSDK
               day: Integer,
               month: Integer,
               reference_type:
-                HubspotSDK::Crm::PublicYearReference::ReferenceType::OrSymbol,
+                HubSpotSDK::Crm::PublicYearReference::ReferenceType::OrSymbol,
               hour: Integer,
               millisecond: Integer,
               minute: Integer,
@@ -103,24 +103,24 @@ module HubspotSDK
 
         # Indicates the type of reference (YEAR).
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PublicYearReference::ReferenceType)
+              T.all(Symbol, HubSpotSDK::Crm::PublicYearReference::ReferenceType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           YEAR =
             T.let(
               :YEAR,
-              HubspotSDK::Crm::PublicYearReference::ReferenceType::TaggedSymbol
+              HubSpotSDK::Crm::PublicYearReference::ReferenceType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicYearReference::ReferenceType::TaggedSymbol
+                HubSpotSDK::Crm::PublicYearReference::ReferenceType::TaggedSymbol
               ]
             )
           end

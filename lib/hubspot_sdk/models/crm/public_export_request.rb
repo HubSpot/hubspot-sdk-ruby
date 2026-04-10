@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module PublicExportRequest
-        extend HubspotSDK::Internal::Type::Union
+        extend HubSpotSDK::Internal::Type::Union
 
-        variant -> { HubspotSDK::Crm::PublicExportViewRequest }
+        variant -> { HubSpotSDK::Crm::PublicExportViewRequest }
 
-        variant -> { HubspotSDK::Crm::PublicExportListRequest }
+        variant -> { HubSpotSDK::Crm::PublicExportListRequest }
 
         # @!method self.variants
-        #   @return [Array(HubspotSDK::Models::Crm::PublicExportViewRequest, HubspotSDK::Models::Crm::PublicExportListRequest)]
+        #   @return [Array(HubSpotSDK::Models::Crm::PublicExportViewRequest, HubSpotSDK::Models::Crm::PublicExportListRequest)]
       end
     end
   end

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Objects
-        class PublicGdprDeleteInput < HubspotSDK::Internal::Type::BaseModel
+        class PublicGdprDeleteInput < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute object_id_
           #   The ID of the contact to permanently delete.
           #
@@ -20,7 +20,7 @@ module HubspotSDK
 
           # @!method initialize(object_id_:, id_property: nil)
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Crm::Objects::PublicGdprDeleteInput} for more details.
+          #   {HubSpotSDK::Models::Crm::Objects::PublicGdprDeleteInput} for more details.
           #
           #   An input that contains the information required to process a public GDPR data
           #   deletion request.

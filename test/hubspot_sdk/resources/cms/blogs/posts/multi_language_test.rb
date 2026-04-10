@@ -2,7 +2,7 @@
 
 require_relative "../../../../test_helper"
 
-class HubspotSDK::Test::Resources::Cms::Blogs::Posts::MultiLanguageTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Cms::Blogs::Posts::MultiLanguageTest < HubSpotSDK::Test::ResourceTest
   def test_attach_to_lang_group_required_params
     skip("Mock server tests are disabled")
 

@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class MultiAssociatedObjectWithLabel < HubspotSDK::Internal::Type::BaseModel
+      class MultiAssociatedObjectWithLabel < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute association_types
         #
-        #   @return [Array<HubspotSDK::Models::Crm::AssociationSpecWithLabel>]
+        #   @return [Array<HubSpotSDK::Models::Crm::AssociationSpecWithLabel>]
         required :association_types,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::AssociationSpecWithLabel] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::AssociationSpecWithLabel] },
                  api_name: :associationTypes
 
         # @!attribute to_object_id
@@ -21,7 +21,7 @@ module HubspotSDK
         #   Represents an object that is associated with multiple other objects, with
         #   optional context.
         #
-        #   @param association_types [Array<HubspotSDK::Models::Crm::AssociationSpecWithLabel>]
+        #   @param association_types [Array<HubSpotSDK::Models::Crm::AssociationSpecWithLabel>]
         #
         #   @param to_object_id [String] The unique identifier for the target object in the association.
       end

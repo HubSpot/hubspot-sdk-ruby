@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Pages
-        class FolderUpdateParams < HubspotSDK::Models::Cms::ContentFolder
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class FolderUpdateParams < HubSpotSDK::Models::Cms::ContentFolder
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Cms::Pages::FolderUpdateParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Cms::Pages::FolderUpdateParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -30,7 +30,7 @@ module HubspotSDK
             params(
               object_id_: String,
               archived: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
@@ -46,7 +46,7 @@ module HubspotSDK
               {
                 object_id_: String,
                 archived: T::Boolean,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

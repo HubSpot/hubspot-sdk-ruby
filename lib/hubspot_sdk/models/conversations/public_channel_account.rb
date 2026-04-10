@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      # @see HubspotSDK::Resources::Conversations::CustomChannels#get
-      class PublicChannelAccount < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Conversations::CustomChannels#get
+      class PublicChannelAccount < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [String]
@@ -13,17 +13,17 @@ module HubspotSDK
         # @!attribute active
         #
         #   @return [Boolean]
-        required :active, HubspotSDK::Internal::Type::Boolean
+        required :active, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute archived
         #
         #   @return [Boolean]
-        required :archived, HubspotSDK::Internal::Type::Boolean
+        required :archived, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute authorized
         #
         #   @return [Boolean]
-        required :authorized, HubspotSDK::Internal::Type::Boolean
+        required :authorized, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute channel_id
         #
@@ -52,9 +52,9 @@ module HubspotSDK
 
         # @!attribute delivery_identifier
         #
-        #   @return [HubspotSDK::Models::Conversations::PublicDeliveryIdentifier, nil]
+        #   @return [HubSpotSDK::Models::Conversations::PublicDeliveryIdentifier, nil]
         optional :delivery_identifier,
-                 -> { HubspotSDK::Conversations::PublicDeliveryIdentifier },
+                 -> { HubSpotSDK::Conversations::PublicDeliveryIdentifier },
                  api_name: :deliveryIdentifier
 
         # @!method initialize(id:, active:, archived:, authorized:, channel_id:, created_at:, inbox_id:, name:, archived_at: nil, delivery_identifier: nil)
@@ -67,7 +67,7 @@ module HubspotSDK
         #   @param inbox_id [String]
         #   @param name [String]
         #   @param archived_at [Time]
-        #   @param delivery_identifier [HubspotSDK::Models::Conversations::PublicDeliveryIdentifier]
+        #   @param delivery_identifier [HubSpotSDK::Models::Conversations::PublicDeliveryIdentifier]
       end
     end
   end

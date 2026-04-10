@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicBatchMigrationMapping < HubspotSDK::Internal::Type::BaseModel
+      class PublicBatchMigrationMapping < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicBatchMigrationMapping,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicBatchMigrationMapping,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Crm::PublicMigrationMapping]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::PublicMigrationMapping]) }
         attr_accessor :legacy_list_ids_to_ids_mapping
 
         # A list of legacy list ids that were passed in but not found. It will be empty if
@@ -23,7 +23,7 @@ module HubspotSDK
         sig do
           params(
             legacy_list_ids_to_ids_mapping:
-              T::Array[HubspotSDK::Crm::PublicMigrationMapping::OrHash],
+              T::Array[HubSpotSDK::Crm::PublicMigrationMapping::OrHash],
             missing_legacy_list_ids: T::Array[String]
           ).returns(T.attached_class)
         end
@@ -39,7 +39,7 @@ module HubspotSDK
           override.returns(
             {
               legacy_list_ids_to_ids_mapping:
-                T::Array[HubspotSDK::Crm::PublicMigrationMapping],
+                T::Array[HubSpotSDK::Crm::PublicMigrationMapping],
               missing_legacy_list_ids: T::Array[String]
             }
           )

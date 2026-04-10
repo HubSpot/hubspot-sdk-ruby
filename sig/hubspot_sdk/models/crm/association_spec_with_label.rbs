@@ -1,15 +1,15 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type association_spec_with_label =
         {
-          category: HubspotSDK::Models::Crm::AssociationSpecWithLabel::category,
+          category: HubSpotSDK::Models::Crm::AssociationSpecWithLabel::category,
           type_id: Integer,
           label: String
         }
 
-      class AssociationSpecWithLabel < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor category: HubspotSDK::Models::Crm::AssociationSpecWithLabel::category
+      class AssociationSpecWithLabel < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor category: HubSpotSDK::Models::Crm::AssociationSpecWithLabel::category
 
         attr_accessor type_id: Integer
 
@@ -18,13 +18,13 @@ module HubspotSDK
         def label=: (String) -> String
 
         def initialize: (
-          category: HubspotSDK::Models::Crm::AssociationSpecWithLabel::category,
+          category: HubSpotSDK::Models::Crm::AssociationSpecWithLabel::category,
           type_id: Integer,
           ?label: String
         ) -> void
 
         def to_hash: -> {
-          category: HubspotSDK::Models::Crm::AssociationSpecWithLabel::category,
+          category: HubSpotSDK::Models::Crm::AssociationSpecWithLabel::category,
           type_id: Integer,
           label: String
         }
@@ -33,14 +33,14 @@ module HubspotSDK
           :HUBSPOT_DEFINED | :INTEGRATOR_DEFINED | :USER_DEFINED | :WORK
 
         module Category
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HUBSPOT_DEFINED: :HUBSPOT_DEFINED
           INTEGRATOR_DEFINED: :INTEGRATOR_DEFINED
           USER_DEFINED: :USER_DEFINED
           WORK: :WORK
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::AssociationSpecWithLabel::category]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::AssociationSpecWithLabel::category]
         end
       end
     end

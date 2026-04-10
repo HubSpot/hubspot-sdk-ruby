@@ -2,7 +2,7 @@
 
 require_relative "../../../../test_helper"
 
-class HubspotSDK::Test::Resources::Cms::Blogs::Settings::MultiLanguageTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Cms::Blogs::Settings::MultiLanguageTest < HubSpotSDK::Test::ResourceTest
   def test_attach_to_lang_group_required_params
     skip("Mock server tests are disabled")
 
@@ -24,23 +24,23 @@ class HubspotSDK::Test::Resources::Cms::Blogs::Settings::MultiLanguageTest < Hub
     response = @hubspot.cms.blogs.settings.multi_language.create_language_variation(id: "id")
 
     assert_pattern do
-      response => HubspotSDK::Cms::Blogs::Blog
+      response => HubSpotSDK::Cms::Blogs::Blog
     end
 
     assert_pattern do
       response => {
         id: String,
         absolute_url: String,
-        allow_comments: HubspotSDK::Internal::Type::Boolean,
+        allow_comments: HubSpotSDK::Internal::Type::Boolean,
         created: Time,
         deleted_at: Time,
         description: String,
         html_title: String,
-        language: HubspotSDK::Cms::Blogs::Blog::Language,
+        language: HubSpotSDK::Cms::Blogs::Blog::Language,
         listing_page_id: String,
         name: String,
-        public_access_rules: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::Unknown]),
-        public_access_rules_enabled: HubspotSDK::Internal::Type::Boolean,
+        public_access_rules: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Internal::Type::Unknown]),
+        public_access_rules_enabled: HubSpotSDK::Internal::Type::Boolean,
         public_title: String,
         slug: String,
         translated_from_id: String,

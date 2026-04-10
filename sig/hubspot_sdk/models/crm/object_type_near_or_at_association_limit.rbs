@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type object_type_near_or_at_association_limit =
@@ -10,7 +10,7 @@ module HubspotSDK
           singular_label: String
         }
 
-      class ObjectTypeNearOrAtAssociationLimit < HubspotSDK::Internal::Type::BaseModel
+      class ObjectTypeNearOrAtAssociationLimit < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor has_records_at_limit: bool
 
         attr_accessor has_records_near_limit: bool

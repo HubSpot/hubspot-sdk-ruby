@@ -1,28 +1,28 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type property_filter =
         {
-          filter_type: HubspotSDK::Models::Events::PropertyFilter::filter_type,
-          operation: HubspotSDK::Models::Events::PropertyFilter::operation,
+          filter_type: HubSpotSDK::Models::Events::PropertyFilter::filter_type,
+          operation: HubSpotSDK::Models::Events::PropertyFilter::operation,
           property: String,
-          context: HubspotSDK::Events::PropertyFilterContext,
+          context: HubSpotSDK::Events::PropertyFilterContext,
           filter_insights_id: Integer,
           framework_filter_id: Integer
         }
 
-      class PropertyFilter < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor filter_type: HubspotSDK::Models::Events::PropertyFilter::filter_type
+      class PropertyFilter < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor filter_type: HubSpotSDK::Models::Events::PropertyFilter::filter_type
 
-        attr_accessor operation: HubspotSDK::Models::Events::PropertyFilter::operation
+        attr_accessor operation: HubSpotSDK::Models::Events::PropertyFilter::operation
 
         attr_accessor property: String
 
-        attr_reader context: HubspotSDK::Events::PropertyFilterContext?
+        attr_reader context: HubSpotSDK::Events::PropertyFilterContext?
 
         def context=: (
-          HubspotSDK::Events::PropertyFilterContext
-        ) -> HubspotSDK::Events::PropertyFilterContext
+          HubSpotSDK::Events::PropertyFilterContext
+        ) -> HubSpotSDK::Events::PropertyFilterContext
 
         attr_reader filter_insights_id: Integer?
 
@@ -33,19 +33,19 @@ module HubspotSDK
         def framework_filter_id=: (Integer) -> Integer
 
         def initialize: (
-          filter_type: HubspotSDK::Models::Events::PropertyFilter::filter_type,
-          operation: HubspotSDK::Models::Events::PropertyFilter::operation,
+          filter_type: HubSpotSDK::Models::Events::PropertyFilter::filter_type,
+          operation: HubSpotSDK::Models::Events::PropertyFilter::operation,
           property: String,
-          ?context: HubspotSDK::Events::PropertyFilterContext,
+          ?context: HubSpotSDK::Events::PropertyFilterContext,
           ?filter_insights_id: Integer,
           ?framework_filter_id: Integer
         ) -> void
 
         def to_hash: -> {
-          filter_type: HubspotSDK::Models::Events::PropertyFilter::filter_type,
-          operation: HubspotSDK::Models::Events::PropertyFilter::operation,
+          filter_type: HubSpotSDK::Models::Events::PropertyFilter::filter_type,
+          operation: HubSpotSDK::Models::Events::PropertyFilter::operation,
           property: String,
-          context: HubspotSDK::Events::PropertyFilterContext,
+          context: HubSpotSDK::Events::PropertyFilterContext,
           filter_insights_id: Integer,
           framework_filter_id: Integer
         }
@@ -53,40 +53,40 @@ module HubspotSDK
         type filter_type = :PROPERTY
 
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           PROPERTY: :PROPERTY
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::PropertyFilter::filter_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::PropertyFilter::filter_type]
         end
 
         type operation =
-          HubspotSDK::Events::BoolPropertyOperation
-          | HubspotSDK::Events::NumberPropertyOperation
-          | HubspotSDK::Events::StringPropertyOperation
-          | HubspotSDK::Events::DateTimePropertyOperation
-          | HubspotSDK::Events::RangedDatePropertyOperation
-          | HubspotSDK::Events::ComparativeDatePropertyOperation
-          | HubspotSDK::Events::ComparativeBoolPropertyOperation
-          | HubspotSDK::Events::ComparativeNumberPropertyOperation
-          | HubspotSDK::Events::ComparativeStringPropertyOperation
-          | HubspotSDK::Events::ComparativePropertyUpdatedOperation
-          | HubspotSDK::Events::RollingDateRangePropertyOperation
-          | HubspotSDK::Events::RollingPropertyUpdatedOperation
-          | HubspotSDK::Events::EnumerationPropertyOperation
-          | HubspotSDK::Events::AllPropertyTypesOperation
-          | HubspotSDK::Events::RangedNumberPropertyOperation
-          | HubspotSDK::Events::MultiStringPropertyOperation
-          | HubspotSDK::Events::DatePropertyOperation
-          | HubspotSDK::Events::CalendarDatePropertyOperation
-          | HubspotSDK::Events::TimePointOperation
-          | HubspotSDK::Events::RangedTimeOperation
-          | HubspotSDK::Events::RegexPropertyOperation
+          HubSpotSDK::Events::BoolPropertyOperation
+          | HubSpotSDK::Events::NumberPropertyOperation
+          | HubSpotSDK::Events::StringPropertyOperation
+          | HubSpotSDK::Events::DateTimePropertyOperation
+          | HubSpotSDK::Events::RangedDatePropertyOperation
+          | HubSpotSDK::Events::ComparativeDatePropertyOperation
+          | HubSpotSDK::Events::ComparativeBoolPropertyOperation
+          | HubSpotSDK::Events::ComparativeNumberPropertyOperation
+          | HubSpotSDK::Events::ComparativeStringPropertyOperation
+          | HubSpotSDK::Events::ComparativePropertyUpdatedOperation
+          | HubSpotSDK::Events::RollingDateRangePropertyOperation
+          | HubSpotSDK::Events::RollingPropertyUpdatedOperation
+          | HubSpotSDK::Events::EnumerationPropertyOperation
+          | HubSpotSDK::Events::AllPropertyTypesOperation
+          | HubSpotSDK::Events::RangedNumberPropertyOperation
+          | HubSpotSDK::Events::MultiStringPropertyOperation
+          | HubSpotSDK::Events::DatePropertyOperation
+          | HubSpotSDK::Events::CalendarDatePropertyOperation
+          | HubSpotSDK::Events::TimePointOperation
+          | HubSpotSDK::Events::RangedTimeOperation
+          | HubSpotSDK::Events::RegexPropertyOperation
 
         module Operation
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          def self?.variants: -> ::Array[HubspotSDK::Models::Events::PropertyFilter::operation]
+          def self?.variants: -> ::Array[HubSpotSDK::Models::Events::PropertyFilter::operation]
         end
       end
     end

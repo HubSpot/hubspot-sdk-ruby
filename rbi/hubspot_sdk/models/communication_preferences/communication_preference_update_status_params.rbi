@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class CommunicationPreferenceUpdateStatusParams < HubspotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class CommunicationPreferenceUpdateStatusParams < HubSpotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CommunicationPreferences::CommunicationPreferenceUpdateStatusParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::CommunicationPreferences::CommunicationPreferenceUpdateStatusParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -21,7 +21,7 @@ module HubspotSDK
         sig do
           params(
             subscriber_id_string: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(subscriber_id_string:, request_options: {})
@@ -31,7 +31,7 @@ module HubspotSDK
           override.returns(
             {
               subscriber_id_string: String,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end

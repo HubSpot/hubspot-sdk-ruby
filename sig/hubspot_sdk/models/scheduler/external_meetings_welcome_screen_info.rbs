@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_meetings_welcome_screen_info =
@@ -10,7 +10,7 @@ module HubspotSDK
           use_company_logo: bool
         }
 
-      class ExternalMeetingsWelcomeScreenInfo < HubspotSDK::Internal::Type::BaseModel
+      class ExternalMeetingsWelcomeScreenInfo < HubSpotSDK::Internal::Type::BaseModel
         attr_reader description: String?
 
         def description=: (String) -> String

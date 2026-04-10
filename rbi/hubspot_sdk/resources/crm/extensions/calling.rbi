@@ -1,13 +1,13 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Extensions
         class Calling
           sig do
             returns(
-              HubspotSDK::Resources::Crm::Extensions::Calling::Transcripts
+              HubSpotSDK::Resources::Crm::Extensions::Calling::Transcripts
             )
           end
           attr_reader :transcripts
@@ -18,9 +18,9 @@ module HubspotSDK
               app_id: Integer,
               is_ready: T::Boolean,
               url: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
+              HubSpotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
             )
           end
           def create_channel_connection_settings(
@@ -39,18 +39,18 @@ module HubspotSDK
               engagement_properties: T::Hash[Symbol, String],
               external_call_id: String,
               final_call_status:
-                HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::OrSymbol,
+                HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::OrSymbol,
               from_number:
-                HubspotSDK::Crm::Extensions::FormattedPhoneNumber::OrHash,
+                HubSpotSDK::Crm::Extensions::FormattedPhoneNumber::OrHash,
               potential_recipient_user_ids: T::Array[Integer],
               to_number:
-                HubspotSDK::Crm::Extensions::FormattedPhoneNumber::OrHash,
+                HubSpotSDK::Crm::Extensions::FormattedPhoneNumber::OrHash,
               call_started_timestamp: Time,
               duration_seconds: Integer,
               user_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Crm::Extensions::CompletedThirdPartyCallResponse
+              HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallResponse
             )
           end
           def create_inbound_call(
@@ -82,7 +82,7 @@ module HubspotSDK
           sig do
             params(
               engagement_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def create_recording_ready(
@@ -97,8 +97,8 @@ module HubspotSDK
             params(
               app_id: Integer,
               url_to_retrieve_authed_recording: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::Extensions::RecordingSettingsResponse)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::Extensions::RecordingSettingsResponse)
           end
           def create_recording_settings(
             app_id,
@@ -122,8 +122,8 @@ module HubspotSDK
               uses_calling_window: T::Boolean,
               uses_remote: T::Boolean,
               width: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::Extensions::SettingsResponse)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::Extensions::SettingsResponse)
           end
           def create_settings(
             app_id,
@@ -153,7 +153,7 @@ module HubspotSDK
           sig do
             params(
               app_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete_channel_connection_settings(app_id, request_options: {})
@@ -164,7 +164,7 @@ module HubspotSDK
           sig do
             params(
               app_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete_settings(app_id, request_options: {})
@@ -174,9 +174,9 @@ module HubspotSDK
           sig do
             params(
               app_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
+              HubSpotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
             )
           end
           def get_channel_connection_settings(app_id, request_options: {})
@@ -187,8 +187,8 @@ module HubspotSDK
           sig do
             params(
               app_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::Extensions::RecordingSettingsResponse)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::Extensions::RecordingSettingsResponse)
           end
           def get_recording_settings(app_id, request_options: {})
           end
@@ -197,8 +197,8 @@ module HubspotSDK
           sig do
             params(
               app_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::Extensions::SettingsResponse)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::Extensions::SettingsResponse)
           end
           def get_settings(app_id, request_options: {})
           end
@@ -209,9 +209,9 @@ module HubspotSDK
               app_id: Integer,
               is_ready: T::Boolean,
               url: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
+              HubSpotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
             )
           end
           def update_channel_connection_settings(
@@ -229,8 +229,8 @@ module HubspotSDK
             params(
               app_id: Integer,
               url_to_retrieve_authed_recording: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::Extensions::RecordingSettingsResponse)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::Extensions::RecordingSettingsResponse)
           end
           def update_recording_settings(
             app_id,
@@ -254,8 +254,8 @@ module HubspotSDK
               uses_calling_window: T::Boolean,
               uses_remote: T::Boolean,
               width: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::Extensions::SettingsResponse)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::Extensions::SettingsResponse)
           end
           def update_settings(
             app_id,
@@ -282,7 +282,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

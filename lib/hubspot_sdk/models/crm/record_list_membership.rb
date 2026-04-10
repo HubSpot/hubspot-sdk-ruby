@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class RecordListMembership < HubspotSDK::Internal::Type::BaseModel
+      class RecordListMembership < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute first_added_timestamp
         #   The timestamp when the record was first added to the list.
         #
@@ -32,7 +32,7 @@ module HubspotSDK
         #   Indicates whether the list is public.
         #
         #   @return [Boolean, nil]
-        optional :is_public_list, HubspotSDK::Internal::Type::Boolean, api_name: :isPublicList
+        optional :is_public_list, HubSpotSDK::Internal::Type::Boolean, api_name: :isPublicList
 
         # @!method initialize(first_added_timestamp:, last_added_timestamp:, list_id:, list_version:, is_public_list: nil)
         #   @param first_added_timestamp [Time] The timestamp when the record was first added to the list.

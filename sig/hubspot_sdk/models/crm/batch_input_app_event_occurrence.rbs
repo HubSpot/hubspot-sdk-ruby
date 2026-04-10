@@ -1,17 +1,17 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type batch_input_app_event_occurrence =
-        { inputs: ::Array[HubspotSDK::Crm::AppEventOccurrence] }
+        { inputs: ::Array[HubSpotSDK::Crm::AppEventOccurrence] }
 
-      class BatchInputAppEventOccurrence < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor inputs: ::Array[HubspotSDK::Crm::AppEventOccurrence]
+      class BatchInputAppEventOccurrence < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubSpotSDK::Crm::AppEventOccurrence]
 
         def initialize: (
-          inputs: ::Array[HubspotSDK::Crm::AppEventOccurrence]
+          inputs: ::Array[HubSpotSDK::Crm::AppEventOccurrence]
         ) -> void
 
-        def to_hash: -> { inputs: ::Array[HubspotSDK::Crm::AppEventOccurrence] }
+        def to_hash: -> { inputs: ::Array[HubSpotSDK::Crm::AppEventOccurrence] }
       end
     end
   end

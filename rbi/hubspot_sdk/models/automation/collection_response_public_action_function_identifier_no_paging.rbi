@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class CollectionResponsePublicActionFunctionIdentifierNoPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponsePublicActionFunctionIdentifierNoPaging < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::CollectionResponsePublicActionFunctionIdentifierNoPaging,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::CollectionResponsePublicActionFunctionIdentifierNoPaging,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            T::Array[HubspotSDK::Automation::PublicActionFunctionIdentifier]
+            T::Array[HubSpotSDK::Automation::PublicActionFunctionIdentifier]
           )
         end
         attr_accessor :results
@@ -23,7 +23,7 @@ module HubspotSDK
           params(
             results:
               T::Array[
-                HubspotSDK::Automation::PublicActionFunctionIdentifier::OrHash
+                HubSpotSDK::Automation::PublicActionFunctionIdentifier::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -34,7 +34,7 @@ module HubspotSDK
           override.returns(
             {
               results:
-                T::Array[HubspotSDK::Automation::PublicActionFunctionIdentifier]
+                T::Array[HubSpotSDK::Automation::PublicActionFunctionIdentifier]
             }
           )
         end

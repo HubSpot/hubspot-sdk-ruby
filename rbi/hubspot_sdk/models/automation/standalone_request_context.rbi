@@ -1,24 +1,24 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class StandaloneRequestContext < HubspotSDK::Internal::Type::BaseModel
+      class StandaloneRequestContext < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::StandaloneRequestContext,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::StandaloneRequestContext,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(HubspotSDK::Automation::ChirpAIContextObject) }
+        sig { returns(HubSpotSDK::Automation::ChirpAIContextObject) }
         attr_reader :chirp_ai_context_object
 
         sig do
           params(
             chirp_ai_context_object:
-              HubspotSDK::Automation::ChirpAIContextObject::OrHash
+              HubSpotSDK::Automation::ChirpAIContextObject::OrHash
           ).void
         end
         attr_writer :chirp_ai_context_object
@@ -26,7 +26,7 @@ module HubspotSDK
         # Indicates the source of the request, with the default value being 'STANDALONE'.
         sig do
           returns(
-            HubspotSDK::Automation::StandaloneRequestContext::Source::OrSymbol
+            HubSpotSDK::Automation::StandaloneRequestContext::Source::OrSymbol
           )
         end
         attr_accessor :source
@@ -41,9 +41,9 @@ module HubspotSDK
         sig do
           params(
             chirp_ai_context_object:
-              HubspotSDK::Automation::ChirpAIContextObject::OrHash,
+              HubSpotSDK::Automation::ChirpAIContextObject::OrHash,
             source:
-              HubspotSDK::Automation::StandaloneRequestContext::Source::OrSymbol,
+              HubSpotSDK::Automation::StandaloneRequestContext::Source::OrSymbol,
             trajectory_id: String
           ).returns(T.attached_class)
         end
@@ -60,9 +60,9 @@ module HubspotSDK
           override.returns(
             {
               chirp_ai_context_object:
-                HubspotSDK::Automation::ChirpAIContextObject,
+                HubSpotSDK::Automation::ChirpAIContextObject,
               source:
-                HubspotSDK::Automation::StandaloneRequestContext::Source::OrSymbol,
+                HubSpotSDK::Automation::StandaloneRequestContext::Source::OrSymbol,
               trajectory_id: String
             }
           )
@@ -72,13 +72,13 @@ module HubspotSDK
 
         # Indicates the source of the request, with the default value being 'STANDALONE'.
         module Source
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Automation::StandaloneRequestContext::Source
+                HubSpotSDK::Automation::StandaloneRequestContext::Source
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -86,13 +86,13 @@ module HubspotSDK
           STANDALONE =
             T.let(
               :STANDALONE,
-              HubspotSDK::Automation::StandaloneRequestContext::Source::TaggedSymbol
+              HubSpotSDK::Automation::StandaloneRequestContext::Source::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::StandaloneRequestContext::Source::TaggedSymbol
+                HubSpotSDK::Automation::StandaloneRequestContext::Source::TaggedSymbol
               ]
             )
           end

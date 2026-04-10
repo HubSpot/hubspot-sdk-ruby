@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchInputPublicAssociationDefinitionConfigurationCreateRequest < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputPublicAssociationDefinitionConfigurationCreateRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::BatchInputPublicAssociationDefinitionConfigurationCreateRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::BatchInputPublicAssociationDefinitionConfigurationCreateRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
             T::Array[
-              HubspotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest
+              HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest
             ]
           )
         end
@@ -25,7 +25,7 @@ module HubspotSDK
           params(
             inputs:
               T::Array[
-                HubspotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::OrHash
+                HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -37,7 +37,7 @@ module HubspotSDK
             {
               inputs:
                 T::Array[
-                  HubspotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest
+                  HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest
                 ]
             }
           )

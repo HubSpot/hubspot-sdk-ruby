@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Meta
       class Origins
@@ -12,21 +12,21 @@ module HubspotSDK
           #
           # @overload list(direction: nil, service: nil, request_options: {})
           #
-          # @param direction [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListParams::Direction>]
-          # @param service [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListParams::Service>]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param direction [Array<Symbol, HubSpotSDK::Models::Meta::Origins::IPRangeListParams::Direction>]
+          # @param service [Array<Symbol, HubSpotSDK::Models::Meta::Origins::IPRangeListParams::Service>]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Meta::CollectionResponseIPRangeNoPaging]
+          # @return [HubSpotSDK::Models::Meta::CollectionResponseIPRangeNoPaging]
           #
-          # @see HubspotSDK::Models::Meta::Origins::IPRangeListParams
+          # @see HubSpotSDK::Models::Meta::Origins::IPRangeListParams
           def list(params = {})
-            parsed, options = HubspotSDK::Meta::Origins::IPRangeListParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Meta::Origins::IPRangeListParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "meta/network-origins/2026-03/ip-ranges",
               query: query,
-              model: HubspotSDK::Meta::CollectionResponseIPRangeNoPaging,
+              model: HubSpotSDK::Meta::CollectionResponseIPRangeNoPaging,
               options: options
             )
           end
@@ -37,16 +37,16 @@ module HubspotSDK
           #
           # @overload list_simple(direction: nil, service: nil, request_options: {})
           #
-          # @param direction [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListSimpleParams::Direction>]
-          # @param service [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListSimpleParams::Service>]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param direction [Array<Symbol, HubSpotSDK::Models::Meta::Origins::IPRangeListSimpleParams::Direction>]
+          # @param service [Array<Symbol, HubSpotSDK::Models::Meta::Origins::IPRangeListSimpleParams::Service>]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [String]
           #
-          # @see HubspotSDK::Models::Meta::Origins::IPRangeListSimpleParams
+          # @see HubSpotSDK::Models::Meta::Origins::IPRangeListSimpleParams
           def list_simple(params = {})
-            parsed, options = HubspotSDK::Meta::Origins::IPRangeListSimpleParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Meta::Origins::IPRangeListSimpleParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "meta/network-origins/2026-03/ip-ranges/simple",
@@ -59,7 +59,7 @@ module HubspotSDK
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

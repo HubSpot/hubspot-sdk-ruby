@@ -1,8 +1,8 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
-    extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+    extend HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
     # Due to the current WIP status of Shapes support in Sorbet, types referencing
     # this alias might be refined in the future.
@@ -10,7 +10,7 @@ module HubspotSDK
 
     FileInput =
       T.type_alias do
-        T.any(Pathname, StringIO, IO, String, HubspotSDK::FilePart)
+        T.any(Pathname, StringIO, IO, String, HubSpotSDK::FilePart)
       end
 
     OMIT = T.let(Object.new.freeze, T.anything)

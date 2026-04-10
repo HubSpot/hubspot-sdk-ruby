@@ -1,25 +1,25 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type participation_associations =
         {
-          contact: HubspotSDK::Marketing::ContactAssociation,
-          marketing_event: HubspotSDK::Marketing::MarketingEventAssociation
+          contact: HubSpotSDK::Marketing::ContactAssociation,
+          marketing_event: HubSpotSDK::Marketing::MarketingEventAssociation
         }
 
-      class ParticipationAssociations < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor contact: HubspotSDK::Marketing::ContactAssociation
+      class ParticipationAssociations < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor contact: HubSpotSDK::Marketing::ContactAssociation
 
-        attr_accessor marketing_event: HubspotSDK::Marketing::MarketingEventAssociation
+        attr_accessor marketing_event: HubSpotSDK::Marketing::MarketingEventAssociation
 
         def initialize: (
-          contact: HubspotSDK::Marketing::ContactAssociation,
-          marketing_event: HubspotSDK::Marketing::MarketingEventAssociation
+          contact: HubSpotSDK::Marketing::ContactAssociation,
+          marketing_event: HubSpotSDK::Marketing::MarketingEventAssociation
         ) -> void
 
         def to_hash: -> {
-          contact: HubspotSDK::Marketing::ContactAssociation,
-          marketing_event: HubspotSDK::Marketing::MarketingEventAssociation
+          contact: HubSpotSDK::Marketing::ContactAssociation,
+          marketing_event: HubSpotSDK::Marketing::MarketingEventAssociation
         }
       end
     end

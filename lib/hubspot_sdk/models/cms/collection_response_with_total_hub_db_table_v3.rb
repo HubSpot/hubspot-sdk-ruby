@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class CollectionResponseWithTotalHubDBTableV3 < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseWithTotalHubDBTableV3 < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Cms::HubDBTableV3>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableV3] }
+        #   @return [Array<HubSpotSDK::Models::Cms::HubDBTableV3>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::HubDBTableV3] }
 
         # @!attribute total
         #
@@ -16,13 +16,13 @@ module HubspotSDK
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::Paging, nil]
-        optional :paging, -> { HubspotSDK::Paging }
+        #   @return [HubSpotSDK::Models::Paging, nil]
+        optional :paging, -> { HubSpotSDK::Paging }
 
         # @!method initialize(results:, total:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Cms::HubDBTableV3>]
+        #   @param results [Array<HubSpotSDK::Models::Cms::HubDBTableV3>]
         #   @param total [Integer]
-        #   @param paging [HubspotSDK::Models::Paging]
+        #   @param paging [HubSpotSDK::Models::Paging]
       end
     end
   end

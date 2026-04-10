@@ -1,13 +1,13 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Scheduler
-      sig { returns(HubspotSDK::Resources::Scheduler::Meetings) }
+      sig { returns(HubSpotSDK::Resources::Scheduler::Meetings) }
       attr_reader :meetings
 
       # @api private
-      sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+      sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
       def self.new(client:)
       end
     end

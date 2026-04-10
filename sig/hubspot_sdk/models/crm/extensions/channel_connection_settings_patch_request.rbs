@@ -1,11 +1,11 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         type channel_connection_settings_patch_request =
           { is_ready: bool, url: String }
 
-        class ChannelConnectionSettingsPatchRequest < HubspotSDK::Internal::Type::BaseModel
+        class ChannelConnectionSettingsPatchRequest < HubSpotSDK::Internal::Type::BaseModel
           attr_reader is_ready: bool?
 
           def is_ready=: (bool) -> bool

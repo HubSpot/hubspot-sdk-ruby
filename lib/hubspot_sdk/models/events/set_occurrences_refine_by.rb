@@ -1,30 +1,30 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class SetOccurrencesRefineBy < HubspotSDK::Internal::Type::BaseModel
+      class SetOccurrencesRefineBy < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute set_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::SetOccurrencesRefineBy::SetType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::SetOccurrencesRefineBy::SetType]
         required :set_type,
                  enum: -> {
-                   HubspotSDK::Events::SetOccurrencesRefineBy::SetType
+                   HubSpotSDK::Events::SetOccurrencesRefineBy::SetType
                  },
                  api_name: :setType
 
         # @!attribute type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::SetOccurrencesRefineBy::Type]
-        required :type, enum: -> { HubspotSDK::Events::SetOccurrencesRefineBy::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Events::SetOccurrencesRefineBy::Type]
+        required :type, enum: -> { HubSpotSDK::Events::SetOccurrencesRefineBy::Type }
 
         # @!method initialize(set_type:, type:)
-        #   @param set_type [Symbol, HubspotSDK::Models::Events::SetOccurrencesRefineBy::SetType]
-        #   @param type [Symbol, HubspotSDK::Models::Events::SetOccurrencesRefineBy::Type]
+        #   @param set_type [Symbol, HubSpotSDK::Models::Events::SetOccurrencesRefineBy::SetType]
+        #   @param type [Symbol, HubSpotSDK::Models::Events::SetOccurrencesRefineBy::Type]
 
-        # @see HubspotSDK::Models::Events::SetOccurrencesRefineBy#set_type
+        # @see HubSpotSDK::Models::Events::SetOccurrencesRefineBy#set_type
         module SetType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ALL = :ALL
           ALL_INCLUDE_EMPTY = :ALL_INCLUDE_EMPTY
@@ -37,9 +37,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::SetOccurrencesRefineBy#type
+        # @see HubSpotSDK::Models::Events::SetOccurrencesRefineBy#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           SET_OCCURRENCES_REFINE_BY = :SetOccurrencesRefineBy
 

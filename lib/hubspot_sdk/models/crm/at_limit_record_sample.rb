@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class AtLimitRecordSample < HubspotSDK::Internal::Type::BaseModel
+      class AtLimitRecordSample < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute label
         #   The label associated with a record that is at its limit.
         #

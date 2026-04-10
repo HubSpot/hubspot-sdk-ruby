@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class ThrottlingSettings < HubspotSDK::Internal::Type::BaseModel
+      class ThrottlingSettings < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute max_concurrent_requests
         #   The maximum number of HTTP requests HubSpot will attempt to make to your app in
         #   a given time frame determined by `period`.
@@ -13,7 +13,7 @@ module HubspotSDK
 
         # @!method initialize(max_concurrent_requests:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Webhooks::ThrottlingSettings} for more details.
+        #   {HubSpotSDK::Models::Webhooks::ThrottlingSettings} for more details.
         #
         #   @param max_concurrent_requests [Integer] The maximum number of HTTP requests HubSpot will attempt to make to your app in
       end

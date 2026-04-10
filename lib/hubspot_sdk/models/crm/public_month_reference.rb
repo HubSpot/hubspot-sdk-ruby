@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicMonthReference < HubspotSDK::Internal::Type::BaseModel
+      class PublicMonthReference < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute day
         #   The day component of the month reference.
         #
@@ -13,9 +13,9 @@ module HubspotSDK
         # @!attribute reference_type
         #   Indicates the type of reference, (MONTH).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicMonthReference::ReferenceType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicMonthReference::ReferenceType]
         required :reference_type,
-                 enum: -> { HubspotSDK::Crm::PublicMonthReference::ReferenceType },
+                 enum: -> { HubSpotSDK::Crm::PublicMonthReference::ReferenceType },
                  api_name: :referenceType
 
         # @!attribute hour
@@ -45,7 +45,7 @@ module HubspotSDK
         # @!method initialize(day:, reference_type:, hour: nil, millisecond: nil, minute: nil, second: nil)
         #   @param day [Integer] The day component of the month reference.
         #
-        #   @param reference_type [Symbol, HubspotSDK::Models::Crm::PublicMonthReference::ReferenceType] Indicates the type of reference, (MONTH).
+        #   @param reference_type [Symbol, HubSpotSDK::Models::Crm::PublicMonthReference::ReferenceType] Indicates the type of reference, (MONTH).
         #
         #   @param hour [Integer] The hour component of the month reference.
         #
@@ -57,9 +57,9 @@ module HubspotSDK
 
         # Indicates the type of reference, (MONTH).
         #
-        # @see HubspotSDK::Models::Crm::PublicMonthReference#reference_type
+        # @see HubSpotSDK::Models::Crm::PublicMonthReference#reference_type
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           MONTH = :MONTH
 

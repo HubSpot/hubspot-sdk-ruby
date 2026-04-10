@@ -1,25 +1,25 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PortalFlagStatePutRequest < HubspotSDK::Internal::Type::BaseModel
+      class PortalFlagStatePutRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute flag_state
         #   The state that the given flag should be in for this portal
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PortalFlagStatePutRequest::FlagState]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PortalFlagStatePutRequest::FlagState]
         required :flag_state,
-                 enum: -> { HubspotSDK::Crm::PortalFlagStatePutRequest::FlagState },
+                 enum: -> { HubSpotSDK::Crm::PortalFlagStatePutRequest::FlagState },
                  api_name: :flagState
 
         # @!method initialize(flag_state:)
-        #   @param flag_state [Symbol, HubspotSDK::Models::Crm::PortalFlagStatePutRequest::FlagState] The state that the given flag should be in for this portal
+        #   @param flag_state [Symbol, HubSpotSDK::Models::Crm::PortalFlagStatePutRequest::FlagState] The state that the given flag should be in for this portal
 
         # The state that the given flag should be in for this portal
         #
-        # @see HubspotSDK::Models::Crm::PortalFlagStatePutRequest#flag_state
+        # @see HubSpotSDK::Models::Crm::PortalFlagStatePutRequest#flag_state
         module FlagState
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABSENT = :ABSENT
           OFF = :OFF

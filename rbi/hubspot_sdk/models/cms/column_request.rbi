@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ColumnRequest < HubspotSDK::Internal::Type::BaseModel
+      class ColumnRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::ColumnRequest, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::ColumnRequest, HubSpotSDK::Internal::AnyHash)
           end
 
         # Column Id
@@ -22,11 +22,11 @@ module HubspotSDK
         attr_accessor :name
 
         # Options to choose for select and multi-select columns
-        sig { returns(T::Array[HubspotSDK::Cms::Option]) }
+        sig { returns(T::Array[HubSpotSDK::Cms::Option]) }
         attr_accessor :options
 
         # Type of the column
-        sig { returns(HubspotSDK::Cms::ColumnRequest::Type::OrSymbol) }
+        sig { returns(HubSpotSDK::Cms::ColumnRequest::Type::OrSymbol) }
         attr_accessor :type
 
         # The id of the column from another table to which the column refers/points to.
@@ -63,8 +63,8 @@ module HubspotSDK
             id: Integer,
             label: String,
             name: String,
-            options: T::Array[HubspotSDK::Cms::Option::OrHash],
-            type: HubspotSDK::Cms::ColumnRequest::Type::OrSymbol,
+            options: T::Array[HubSpotSDK::Cms::Option::OrHash],
+            type: HubSpotSDK::Cms::ColumnRequest::Type::OrSymbol,
             foreign_column_id: Integer,
             foreign_table_id: Integer,
             max_number_of_characters: Integer,
@@ -100,8 +100,8 @@ module HubspotSDK
               id: Integer,
               label: String,
               name: String,
-              options: T::Array[HubspotSDK::Cms::Option],
-              type: HubspotSDK::Cms::ColumnRequest::Type::OrSymbol,
+              options: T::Array[HubSpotSDK::Cms::Option],
+              type: HubSpotSDK::Cms::ColumnRequest::Type::OrSymbol,
               foreign_column_id: Integer,
               foreign_table_id: Integer,
               max_number_of_characters: Integer,
@@ -114,70 +114,70 @@ module HubspotSDK
 
         # Type of the column
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
-            T.type_alias { T.all(Symbol, HubspotSDK::Cms::ColumnRequest::Type) }
+            T.type_alias { T.all(Symbol, HubSpotSDK::Cms::ColumnRequest::Type) }
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           BOOLEAN =
-            T.let(:BOOLEAN, HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
+            T.let(:BOOLEAN, HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
           CODE =
-            T.let(:CODE, HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
+            T.let(:CODE, HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
           COMPOSITE =
             T.let(
               :COMPOSITE,
-              HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol
+              HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol
             )
-          CTA = T.let(:CTA, HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
+          CTA = T.let(:CTA, HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
           CURRENCY =
-            T.let(:CURRENCY, HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
+            T.let(:CURRENCY, HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
           DATE =
-            T.let(:DATE, HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
+            T.let(:DATE, HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
           DATETIME =
-            T.let(:DATETIME, HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
+            T.let(:DATETIME, HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
           EMBED =
-            T.let(:EMBED, HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
+            T.let(:EMBED, HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
           FILE =
-            T.let(:FILE, HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
+            T.let(:FILE, HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
           FOREIGN_ID =
             T.let(
               :FOREIGN_ID,
-              HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol
+              HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol
             )
           HUBSPOT_VIDEO =
             T.let(
               :HUBSPOT_VIDEO,
-              HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol
+              HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol
             )
           IMAGE =
-            T.let(:IMAGE, HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
+            T.let(:IMAGE, HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
           JSON =
-            T.let(:JSON, HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
+            T.let(:JSON, HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
           LOCATION =
-            T.let(:LOCATION, HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
+            T.let(:LOCATION, HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
           MULTISELECT =
             T.let(
               :MULTISELECT,
-              HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol
+              HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol
             )
           NULL =
-            T.let(:NULL, HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
+            T.let(:NULL, HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
           NUMBER =
-            T.let(:NUMBER, HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
+            T.let(:NUMBER, HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
           RICHTEXT =
-            T.let(:RICHTEXT, HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
+            T.let(:RICHTEXT, HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
           SELECT =
-            T.let(:SELECT, HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
+            T.let(:SELECT, HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
           TEXT =
-            T.let(:TEXT, HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
-          URL = T.let(:URL, HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
+            T.let(:TEXT, HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
+          URL = T.let(:URL, HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
           VIDEO =
-            T.let(:VIDEO, HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
+            T.let(:VIDEO, HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol)
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Cms::ColumnRequest::Type::TaggedSymbol]
+              T::Array[HubSpotSDK::Cms::ColumnRequest::Type::TaggedSymbol]
             )
           end
           def self.values

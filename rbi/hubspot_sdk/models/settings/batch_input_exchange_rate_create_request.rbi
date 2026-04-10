@@ -1,26 +1,26 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class BatchInputExchangeRateCreateRequest < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputExchangeRateCreateRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Settings::BatchInputExchangeRateCreateRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Settings::BatchInputExchangeRateCreateRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
-          returns(T::Array[HubspotSDK::Settings::ExchangeRateCreateRequest])
+          returns(T::Array[HubSpotSDK::Settings::ExchangeRateCreateRequest])
         end
         attr_accessor :inputs
 
         sig do
           params(
             inputs:
-              T::Array[HubspotSDK::Settings::ExchangeRateCreateRequest::OrHash]
+              T::Array[HubSpotSDK::Settings::ExchangeRateCreateRequest::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(inputs:)
@@ -29,7 +29,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              inputs: T::Array[HubspotSDK::Settings::ExchangeRateCreateRequest]
+              inputs: T::Array[HubSpotSDK::Settings::ExchangeRateCreateRequest]
             }
           )
         end

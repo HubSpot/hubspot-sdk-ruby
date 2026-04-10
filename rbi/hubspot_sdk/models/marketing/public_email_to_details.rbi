@@ -1,44 +1,44 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicEmailToDetails < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailToDetails < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::PublicEmailToDetails,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::PublicEmailToDetails,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T.nilable(HubspotSDK::Marketing::PublicEmailRecipients)) }
+        sig { returns(T.nilable(HubSpotSDK::Marketing::PublicEmailRecipients)) }
         attr_reader :contact_ids
 
         sig do
           params(
-            contact_ids: HubspotSDK::Marketing::PublicEmailRecipients::OrHash
+            contact_ids: HubSpotSDK::Marketing::PublicEmailRecipients::OrHash
           ).void
         end
         attr_writer :contact_ids
 
-        sig { returns(T.nilable(HubspotSDK::Marketing::PublicEmailRecipients)) }
+        sig { returns(T.nilable(HubSpotSDK::Marketing::PublicEmailRecipients)) }
         attr_reader :contact_ils_lists
 
         sig do
           params(
             contact_ils_lists:
-              HubspotSDK::Marketing::PublicEmailRecipients::OrHash
+              HubSpotSDK::Marketing::PublicEmailRecipients::OrHash
           ).void
         end
         attr_writer :contact_ils_lists
 
-        sig { returns(T.nilable(HubspotSDK::Marketing::PublicEmailRecipients)) }
+        sig { returns(T.nilable(HubSpotSDK::Marketing::PublicEmailRecipients)) }
         attr_reader :contact_lists
 
         sig do
           params(
-            contact_lists: HubspotSDK::Marketing::PublicEmailRecipients::OrHash
+            contact_lists: HubSpotSDK::Marketing::PublicEmailRecipients::OrHash
           ).void
         end
         attr_writer :contact_lists
@@ -58,10 +58,10 @@ module HubspotSDK
 
         sig do
           params(
-            contact_ids: HubspotSDK::Marketing::PublicEmailRecipients::OrHash,
+            contact_ids: HubSpotSDK::Marketing::PublicEmailRecipients::OrHash,
             contact_ils_lists:
-              HubspotSDK::Marketing::PublicEmailRecipients::OrHash,
-            contact_lists: HubspotSDK::Marketing::PublicEmailRecipients::OrHash,
+              HubSpotSDK::Marketing::PublicEmailRecipients::OrHash,
+            contact_lists: HubSpotSDK::Marketing::PublicEmailRecipients::OrHash,
             limit_send_frequency: T::Boolean,
             suppress_graymail: T::Boolean
           ).returns(T.attached_class)
@@ -79,9 +79,9 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              contact_ids: HubspotSDK::Marketing::PublicEmailRecipients,
-              contact_ils_lists: HubspotSDK::Marketing::PublicEmailRecipients,
-              contact_lists: HubspotSDK::Marketing::PublicEmailRecipients,
+              contact_ids: HubSpotSDK::Marketing::PublicEmailRecipients,
+              contact_ils_lists: HubSpotSDK::Marketing::PublicEmailRecipients,
+              contact_lists: HubSpotSDK::Marketing::PublicEmailRecipients,
               limit_send_frequency: T::Boolean,
               suppress_graymail: T::Boolean
             }

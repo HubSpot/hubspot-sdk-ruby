@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      # @type [HubspotSDK::Internal::Type::Converter]
-      SmartEmailField = HubspotSDK::Internal::Type::Unknown
+      # @type [HubSpotSDK::Internal::Type::Converter]
+      SmartEmailField = HubSpotSDK::Internal::Type::Unknown
     end
   end
 end

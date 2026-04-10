@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       type filter_create_response = { filter_id: Integer }
 
-      class FilterCreateResponse < HubspotSDK::Internal::Type::BaseModel
+      class FilterCreateResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor filter_id: Integer
 
         def initialize: (filter_id: Integer) -> void

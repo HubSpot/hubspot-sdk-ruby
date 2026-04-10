@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class DeveloperQualifiedSymbol < HubspotSDK::Internal::Type::BaseModel
+      class DeveloperQualifiedSymbol < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute developer_symbol
         #
         #   @return [String]

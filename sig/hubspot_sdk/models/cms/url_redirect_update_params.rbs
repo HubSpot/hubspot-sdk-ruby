@@ -1,13 +1,13 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type url_redirect_update_params =
         { url_redirect_id: String }
-        & HubspotSDK::Internal::Type::request_parameters
+        & HubSpotSDK::Internal::Type::request_parameters
 
-      class URLRedirectUpdateParams < HubspotSDK::Models::Cms::URLMapping
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class URLRedirectUpdateParams < HubSpotSDK::Models::Cms::URLMapping
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         def url_redirect_id: -> String
 
@@ -15,12 +15,12 @@ module HubspotSDK
 
         def initialize: (
           url_redirect_id: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           url_redirect_id: String,
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
       end
     end

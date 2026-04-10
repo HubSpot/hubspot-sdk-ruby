@@ -1,20 +1,20 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type batch_input_marketing_event_public_update_request_full_v2 =
         {
-          inputs: ::Array[HubspotSDK::Marketing::MarketingEventPublicUpdateRequestFullV2]
+          inputs: ::Array[HubSpotSDK::Marketing::MarketingEventPublicUpdateRequestFullV2]
         }
 
-      class BatchInputMarketingEventPublicUpdateRequestFullV2 < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor inputs: ::Array[HubspotSDK::Marketing::MarketingEventPublicUpdateRequestFullV2]
+      class BatchInputMarketingEventPublicUpdateRequestFullV2 < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubSpotSDK::Marketing::MarketingEventPublicUpdateRequestFullV2]
 
         def initialize: (
-          inputs: ::Array[HubspotSDK::Marketing::MarketingEventPublicUpdateRequestFullV2]
+          inputs: ::Array[HubSpotSDK::Marketing::MarketingEventPublicUpdateRequestFullV2]
         ) -> void
 
         def to_hash: -> {
-          inputs: ::Array[HubspotSDK::Marketing::MarketingEventPublicUpdateRequestFullV2]
+          inputs: ::Array[HubSpotSDK::Marketing::MarketingEventPublicUpdateRequestFullV2]
         }
       end
     end

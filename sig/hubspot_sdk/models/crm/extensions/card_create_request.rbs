@@ -1,35 +1,35 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         type card_create_request =
           {
-            actions: HubspotSDK::Crm::Extensions::CardActions,
-            display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
-            fetch: HubspotSDK::Crm::Extensions::CardFetchBody,
+            actions: HubSpotSDK::Crm::Extensions::CardActions,
+            display_: HubSpotSDK::Crm::Extensions::CardDisplayBody,
+            fetch: HubSpotSDK::Crm::Extensions::CardFetchBody,
             title: String
           }
 
-        class CardCreateRequest < HubspotSDK::Internal::Type::BaseModel
-          attr_accessor actions: HubspotSDK::Crm::Extensions::CardActions
+        class CardCreateRequest < HubSpotSDK::Internal::Type::BaseModel
+          attr_accessor actions: HubSpotSDK::Crm::Extensions::CardActions
 
-          attr_accessor display_: HubspotSDK::Crm::Extensions::CardDisplayBody
+          attr_accessor display_: HubSpotSDK::Crm::Extensions::CardDisplayBody
 
-          attr_accessor fetch: HubspotSDK::Crm::Extensions::CardFetchBody
+          attr_accessor fetch: HubSpotSDK::Crm::Extensions::CardFetchBody
 
           attr_accessor title: String
 
           def initialize: (
-            actions: HubspotSDK::Crm::Extensions::CardActions,
-            display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
-            fetch: HubspotSDK::Crm::Extensions::CardFetchBody,
+            actions: HubSpotSDK::Crm::Extensions::CardActions,
+            display_: HubSpotSDK::Crm::Extensions::CardDisplayBody,
+            fetch: HubSpotSDK::Crm::Extensions::CardFetchBody,
             title: String
           ) -> void
 
           def to_hash: -> {
-            actions: HubspotSDK::Crm::Extensions::CardActions,
-            display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
-            fetch: HubspotSDK::Crm::Extensions::CardFetchBody,
+            actions: HubSpotSDK::Crm::Extensions::CardActions,
+            display_: HubSpotSDK::Crm::Extensions::CardDisplayBody,
+            fetch: HubSpotSDK::Crm::Extensions::CardFetchBody,
             title: String
           }
         end

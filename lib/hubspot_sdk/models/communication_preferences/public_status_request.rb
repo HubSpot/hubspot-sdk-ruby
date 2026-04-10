@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class PublicStatusRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicStatusRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute channel
         #   The type of communication channel. Currently, only `EMAIL` is supported.
         #
-        #   @return [Symbol, HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::Channel]
-        required :channel, enum: -> { HubspotSDK::CommunicationPreferences::PublicStatusRequest::Channel }
+        #   @return [Symbol, HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::Channel]
+        required :channel, enum: -> { HubSpotSDK::CommunicationPreferences::PublicStatusRequest::Channel }
 
         # @!attribute status_state
         #   The status of the contact's subscription.
         #
-        #   @return [Symbol, HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::StatusState]
+        #   @return [Symbol, HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::StatusState]
         required :status_state,
-                 enum: -> { HubspotSDK::CommunicationPreferences::PublicStatusRequest::StatusState },
+                 enum: -> { HubSpotSDK::CommunicationPreferences::PublicStatusRequest::StatusState },
                  api_name: :statusState
 
         # @!attribute subscriber_id_string
@@ -33,9 +33,9 @@ module HubspotSDK
         # @!attribute legal_basis
         #   The legal basis for communication.
         #
-        #   @return [Symbol, HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::LegalBasis, nil]
+        #   @return [Symbol, HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::LegalBasis, nil]
         optional :legal_basis,
-                 enum: -> { HubspotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis },
+                 enum: -> { HubSpotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis },
                  api_name: :legalBasis
 
         # @!attribute legal_basis_explanation
@@ -45,23 +45,23 @@ module HubspotSDK
         optional :legal_basis_explanation, String, api_name: :legalBasisExplanation
 
         # @!method initialize(channel:, status_state:, subscriber_id_string:, subscription_id:, legal_basis: nil, legal_basis_explanation: nil)
-        #   @param channel [Symbol, HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::Channel] The type of communication channel. Currently, only `EMAIL` is supported.
+        #   @param channel [Symbol, HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::Channel] The type of communication channel. Currently, only `EMAIL` is supported.
         #
-        #   @param status_state [Symbol, HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::StatusState] The status of the contact's subscription.
+        #   @param status_state [Symbol, HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::StatusState] The status of the contact's subscription.
         #
         #   @param subscriber_id_string [String] The contact's email address.
         #
         #   @param subscription_id [Integer] The ID of the subscription to update.
         #
-        #   @param legal_basis [Symbol, HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::LegalBasis] The legal basis for communication.
+        #   @param legal_basis [Symbol, HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::LegalBasis] The legal basis for communication.
         #
         #   @param legal_basis_explanation [String] The explanation for the legal basis.
 
         # The type of communication channel. Currently, only `EMAIL` is supported.
         #
-        # @see HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest#channel
+        # @see HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest#channel
         module Channel
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL = :EMAIL
 
@@ -71,9 +71,9 @@ module HubspotSDK
 
         # The status of the contact's subscription.
         #
-        # @see HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest#status_state
+        # @see HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest#status_state
         module StatusState
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NOT_SPECIFIED = :NOT_SPECIFIED
           SUBSCRIBED = :SUBSCRIBED
@@ -85,9 +85,9 @@ module HubspotSDK
 
         # The legal basis for communication.
         #
-        # @see HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest#legal_basis
+        # @see HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest#legal_basis
         module LegalBasis
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONSENT_WITH_NOTICE = :CONSENT_WITH_NOTICE
           LEGITIMATE_INTEREST_CLIENT = :LEGITIMATE_INTEREST_CLIENT

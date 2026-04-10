@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class ParticipationProperties < HubspotSDK::Internal::Type::BaseModel
+      class ParticipationProperties < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::ParticipationProperties,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::ParticipationProperties,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # The state of the participation
         sig do
           returns(
-            HubspotSDK::Marketing::ParticipationProperties::AttendanceState::TaggedSymbol
+            HubSpotSDK::Marketing::ParticipationProperties::AttendanceState::TaggedSymbol
           )
         end
         attr_accessor :attendance_state
@@ -41,7 +41,7 @@ module HubspotSDK
         sig do
           params(
             attendance_state:
-              HubspotSDK::Marketing::ParticipationProperties::AttendanceState::OrSymbol,
+              HubSpotSDK::Marketing::ParticipationProperties::AttendanceState::OrSymbol,
             occurred_at: Integer,
             attendance_duration_seconds: Integer,
             attendance_percentage: String
@@ -63,7 +63,7 @@ module HubspotSDK
           override.returns(
             {
               attendance_state:
-                HubspotSDK::Marketing::ParticipationProperties::AttendanceState::TaggedSymbol,
+                HubSpotSDK::Marketing::ParticipationProperties::AttendanceState::TaggedSymbol,
               occurred_at: Integer,
               attendance_duration_seconds: Integer,
               attendance_percentage: String
@@ -75,13 +75,13 @@ module HubspotSDK
 
         # The state of the participation
         module AttendanceState
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Marketing::ParticipationProperties::AttendanceState
+                HubSpotSDK::Marketing::ParticipationProperties::AttendanceState
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -89,33 +89,33 @@ module HubspotSDK
           ATTENDED =
             T.let(
               :ATTENDED,
-              HubspotSDK::Marketing::ParticipationProperties::AttendanceState::TaggedSymbol
+              HubSpotSDK::Marketing::ParticipationProperties::AttendanceState::TaggedSymbol
             )
           CANCELLED =
             T.let(
               :CANCELLED,
-              HubspotSDK::Marketing::ParticipationProperties::AttendanceState::TaggedSymbol
+              HubSpotSDK::Marketing::ParticipationProperties::AttendanceState::TaggedSymbol
             )
           EMPTY =
             T.let(
               :EMPTY,
-              HubspotSDK::Marketing::ParticipationProperties::AttendanceState::TaggedSymbol
+              HubSpotSDK::Marketing::ParticipationProperties::AttendanceState::TaggedSymbol
             )
           NO_SHOW =
             T.let(
               :NO_SHOW,
-              HubspotSDK::Marketing::ParticipationProperties::AttendanceState::TaggedSymbol
+              HubSpotSDK::Marketing::ParticipationProperties::AttendanceState::TaggedSymbol
             )
           REGISTERED =
             T.let(
               :REGISTERED,
-              HubspotSDK::Marketing::ParticipationProperties::AttendanceState::TaggedSymbol
+              HubSpotSDK::Marketing::ParticipationProperties::AttendanceState::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Marketing::ParticipationProperties::AttendanceState::TaggedSymbol
+                HubSpotSDK::Marketing::ParticipationProperties::AttendanceState::TaggedSymbol
               ]
             )
           end

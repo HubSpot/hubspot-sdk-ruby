@@ -1,21 +1,21 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         type card_display_body =
           {
-            properties: ::Array[HubspotSDK::Crm::Extensions::CardDisplayProperty]
+            properties: ::Array[HubSpotSDK::Crm::Extensions::CardDisplayProperty]
           }
 
-        class CardDisplayBody < HubspotSDK::Internal::Type::BaseModel
-          attr_accessor properties: ::Array[HubspotSDK::Crm::Extensions::CardDisplayProperty]
+        class CardDisplayBody < HubSpotSDK::Internal::Type::BaseModel
+          attr_accessor properties: ::Array[HubSpotSDK::Crm::Extensions::CardDisplayProperty]
 
           def initialize: (
-            properties: ::Array[HubspotSDK::Crm::Extensions::CardDisplayProperty]
+            properties: ::Array[HubSpotSDK::Crm::Extensions::CardDisplayProperty]
           ) -> void
 
           def to_hash: -> {
-            properties: ::Array[HubspotSDK::Crm::Extensions::CardDisplayProperty]
+            properties: ::Array[HubSpotSDK::Crm::Extensions::CardDisplayProperty]
           }
         end
       end

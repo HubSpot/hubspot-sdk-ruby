@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicDatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicDatePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute day
         #   The day of the month for the date operation.
         #
@@ -15,7 +15,7 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute month
@@ -27,9 +27,9 @@ module HubspotSDK
         # @!attribute operation_type
         #   Specifies the type of operation (DATE).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicDatePropertyOperation::OperationType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicDatePropertyOperation::OperationType]
         required :operation_type,
-                 enum: -> { HubspotSDK::Crm::PublicDatePropertyOperation::OperationType },
+                 enum: -> { HubSpotSDK::Crm::PublicDatePropertyOperation::OperationType },
                  api_name: :operationType
 
         # @!attribute operator
@@ -48,7 +48,7 @@ module HubspotSDK
 
         # @!method initialize(day:, include_objects_with_no_value_set:, month:, operation_type:, operator:, year:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicDatePropertyOperation} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicDatePropertyOperation} for more details.
         #
         #   @param day [Integer] The day of the month for the date operation.
         #
@@ -56,7 +56,7 @@ module HubspotSDK
         #
         #   @param month [String] The month for the date operation.
         #
-        #   @param operation_type [Symbol, HubspotSDK::Models::Crm::PublicDatePropertyOperation::OperationType] Specifies the type of operation (DATE).
+        #   @param operation_type [Symbol, HubSpotSDK::Models::Crm::PublicDatePropertyOperation::OperationType] Specifies the type of operation (DATE).
         #
         #   @param operator [String] Defines the operation to be applied in the date property operation (IS_LESS_THAN
         #
@@ -64,9 +64,9 @@ module HubspotSDK
 
         # Specifies the type of operation (DATE).
         #
-        # @see HubspotSDK::Models::Crm::PublicDatePropertyOperation#operation_type
+        # @see HubSpotSDK::Models::Crm::PublicDatePropertyOperation#operation_type
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DATE = :DATE
 

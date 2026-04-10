@@ -1,22 +1,22 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module PublicExportRequest
-        extend HubspotSDK::Internal::Type::Union
+        extend HubSpotSDK::Internal::Type::Union
 
         Variants =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicExportViewRequest,
-              HubspotSDK::Crm::PublicExportListRequest
+              HubSpotSDK::Crm::PublicExportViewRequest,
+              HubSpotSDK::Crm::PublicExportListRequest
             )
           end
 
         sig do
           override.returns(
-            T::Array[HubspotSDK::Crm::PublicExportRequest::Variants]
+            T::Array[HubSpotSDK::Crm::PublicExportRequest::Variants]
           )
         end
         def self.variants

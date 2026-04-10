@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type batch_input_public_campaign_delete_input =
-        { inputs: ::Array[HubspotSDK::Marketing::PublicCampaignDeleteInput] }
+        { inputs: ::Array[HubSpotSDK::Marketing::PublicCampaignDeleteInput] }
 
-      class BatchInputPublicCampaignDeleteInput < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor inputs: ::Array[HubspotSDK::Marketing::PublicCampaignDeleteInput]
+      class BatchInputPublicCampaignDeleteInput < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubSpotSDK::Marketing::PublicCampaignDeleteInput]
 
         def initialize: (
-          inputs: ::Array[HubspotSDK::Marketing::PublicCampaignDeleteInput]
+          inputs: ::Array[HubSpotSDK::Marketing::PublicCampaignDeleteInput]
         ) -> void
 
         def to_hash: -> {
-          inputs: ::Array[HubspotSDK::Marketing::PublicCampaignDeleteInput]
+          inputs: ::Array[HubSpotSDK::Marketing::PublicCampaignDeleteInput]
         }
       end
     end

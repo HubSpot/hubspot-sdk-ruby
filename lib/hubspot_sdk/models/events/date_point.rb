@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class DatePoint < HubspotSDK::Internal::Type::BaseModel
+      class DatePoint < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute day
         #
         #   @return [Integer]
@@ -16,14 +16,14 @@ module HubspotSDK
 
         # @!attribute time_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::DatePoint::TimeType]
-        required :time_type, enum: -> { HubspotSDK::Events::DatePoint::TimeType }, api_name: :timeType
+        #   @return [Symbol, HubSpotSDK::Models::Events::DatePoint::TimeType]
+        required :time_type, enum: -> { HubSpotSDK::Events::DatePoint::TimeType }, api_name: :timeType
 
         # @!attribute timezone_source
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::DatePoint::TimezoneSource]
+        #   @return [Symbol, HubSpotSDK::Models::Events::DatePoint::TimezoneSource]
         required :timezone_source,
-                 enum: -> { HubspotSDK::Events::DatePoint::TimezoneSource },
+                 enum: -> { HubSpotSDK::Events::DatePoint::TimezoneSource },
                  api_name: :timezoneSource
 
         # @!attribute year
@@ -59,8 +59,8 @@ module HubspotSDK
         # @!method initialize(day:, month:, time_type:, timezone_source:, year:, zone_id:, hour: nil, millisecond: nil, minute: nil, second: nil)
         #   @param day [Integer]
         #   @param month [Integer]
-        #   @param time_type [Symbol, HubspotSDK::Models::Events::DatePoint::TimeType]
-        #   @param timezone_source [Symbol, HubspotSDK::Models::Events::DatePoint::TimezoneSource]
+        #   @param time_type [Symbol, HubSpotSDK::Models::Events::DatePoint::TimeType]
+        #   @param timezone_source [Symbol, HubSpotSDK::Models::Events::DatePoint::TimezoneSource]
         #   @param year [Integer]
         #   @param zone_id [String]
         #   @param hour [Integer]
@@ -68,9 +68,9 @@ module HubspotSDK
         #   @param minute [Integer]
         #   @param second [Integer]
 
-        # @see HubspotSDK::Models::Events::DatePoint#time_type
+        # @see HubSpotSDK::Models::Events::DatePoint#time_type
         module TimeType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DATE = :DATE
 
@@ -78,9 +78,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::DatePoint#timezone_source
+        # @see HubSpotSDK::Models::Events::DatePoint#timezone_source
         module TimezoneSource
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CUSTOM = :CUSTOM
           PORTAL = :PORTAL

@@ -1,30 +1,30 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class OutputFieldDefinition < HubspotSDK::Internal::Type::BaseModel
+      class OutputFieldDefinition < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::OutputFieldDefinition,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::OutputFieldDefinition,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(HubspotSDK::Automation::FieldTypeDefinition) }
+        sig { returns(HubSpotSDK::Automation::FieldTypeDefinition) }
         attr_reader :type_definition
 
         sig do
           params(
-            type_definition: HubspotSDK::Automation::FieldTypeDefinition::OrHash
+            type_definition: HubSpotSDK::Automation::FieldTypeDefinition::OrHash
           ).void
         end
         attr_writer :type_definition
 
         sig do
           params(
-            type_definition: HubspotSDK::Automation::FieldTypeDefinition::OrHash
+            type_definition: HubSpotSDK::Automation::FieldTypeDefinition::OrHash
           ).returns(T.attached_class)
         end
         def self.new(type_definition:)
@@ -32,7 +32,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { type_definition: HubspotSDK::Automation::FieldTypeDefinition }
+            { type_definition: HubSpotSDK::Automation::FieldTypeDefinition }
           )
         end
         def to_hash

@@ -1,24 +1,24 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         type cards_dev_get_params =
-          { app_id: Integer } & HubspotSDK::Internal::Type::request_parameters
+          { app_id: Integer } & HubSpotSDK::Internal::Type::request_parameters
 
-        class CardsDevGetParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class CardsDevGetParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           attr_accessor app_id: Integer
 
           def initialize: (
             app_id: Integer,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
             app_id: Integer,
-            request_options: HubspotSDK::RequestOptions
+            request_options: HubSpotSDK::RequestOptions
           }
         end
       end

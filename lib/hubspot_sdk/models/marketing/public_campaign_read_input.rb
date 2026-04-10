@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicCampaignReadInput < HubspotSDK::Internal::Type::BaseModel
+      class PublicCampaignReadInput < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for a campaign.
         #

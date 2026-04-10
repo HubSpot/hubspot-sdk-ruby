@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicLocation < HubspotSDK::Internal::Type::BaseModel
+      class PublicLocation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::PublicLocation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::PublicLocation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -19,7 +19,7 @@ module HubspotSDK
         attr_accessor :longitude
 
         sig do
-          returns(HubspotSDK::Conversations::PublicLocation::Type::TaggedSymbol)
+          returns(HubSpotSDK::Conversations::PublicLocation::Type::TaggedSymbol)
         end
         attr_accessor :type
 
@@ -45,7 +45,7 @@ module HubspotSDK
           params(
             latitude: Float,
             longitude: Float,
-            type: HubspotSDK::Conversations::PublicLocation::Type::OrSymbol,
+            type: HubSpotSDK::Conversations::PublicLocation::Type::OrSymbol,
             address: String,
             name: String,
             url: String
@@ -67,7 +67,7 @@ module HubspotSDK
               latitude: Float,
               longitude: Float,
               type:
-                HubspotSDK::Conversations::PublicLocation::Type::TaggedSymbol,
+                HubSpotSDK::Conversations::PublicLocation::Type::TaggedSymbol,
               address: String,
               name: String,
               url: String
@@ -78,24 +78,24 @@ module HubspotSDK
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Conversations::PublicLocation::Type)
+              T.all(Symbol, HubSpotSDK::Conversations::PublicLocation::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           LOCATION =
             T.let(
               :LOCATION,
-              HubspotSDK::Conversations::PublicLocation::Type::TaggedSymbol
+              HubSpotSDK::Conversations::PublicLocation::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::PublicLocation::Type::TaggedSymbol
+                HubSpotSDK::Conversations::PublicLocation::Type::TaggedSymbol
               ]
             )
           end

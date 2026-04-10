@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class BoundedPaging < HubspotSDK::Internal::Type::BaseModel
+      class BoundedPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute next_
         #
-        #   @return [HubspotSDK::Models::Cms::BoundedNextPage, nil]
-        optional :next_, -> { HubspotSDK::Cms::BoundedNextPage }, api_name: :next
+        #   @return [HubSpotSDK::Models::Cms::BoundedNextPage, nil]
+        optional :next_, -> { HubSpotSDK::Cms::BoundedNextPage }, api_name: :next
 
         # @!method initialize(next_: nil)
-        #   @param next_ [HubspotSDK::Models::Cms::BoundedNextPage]
+        #   @param next_ [HubSpotSDK::Models::Cms::BoundedNextPage]
       end
     end
   end

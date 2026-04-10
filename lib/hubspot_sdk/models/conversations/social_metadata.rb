@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class SocialMetadata < HubspotSDK::Internal::Type::BaseModel
+      class SocialMetadata < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute media_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Conversations::SocialMetadata::MediaType]
+        #   @return [Symbol, HubSpotSDK::Models::Conversations::SocialMetadata::MediaType]
         required :media_type,
-                 enum: -> { HubspotSDK::Conversations::SocialMetadata::MediaType },
+                 enum: -> { HubSpotSDK::Conversations::SocialMetadata::MediaType },
                  api_name: :mediaType
 
         # @!attribute id
@@ -42,7 +42,7 @@ module HubspotSDK
         optional :thumbnail_url, String, api_name: :thumbnailUrl
 
         # @!method initialize(media_type:, id: nil, description: nil, media_title: nil, media_url: nil, media_url_string: nil, thumbnail_url: nil)
-        #   @param media_type [Symbol, HubspotSDK::Models::Conversations::SocialMetadata::MediaType]
+        #   @param media_type [Symbol, HubSpotSDK::Models::Conversations::SocialMetadata::MediaType]
         #   @param id [String]
         #   @param description [String]
         #   @param media_title [String]
@@ -50,9 +50,9 @@ module HubspotSDK
         #   @param media_url_string [String]
         #   @param thumbnail_url [String]
 
-        # @see HubspotSDK::Models::Conversations::SocialMetadata#media_type
+        # @see HubSpotSDK::Models::Conversations::SocialMetadata#media_type
         module MediaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ARTICLE = :ARTICLE
           AUDIO = :AUDIO

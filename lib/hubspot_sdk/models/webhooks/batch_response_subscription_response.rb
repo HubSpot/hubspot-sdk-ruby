@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      # @see HubspotSDK::Resources::Webhooks#create_subscriptions_batch
-      class BatchResponseSubscriptionResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Webhooks#create_subscriptions_batch
+      class BatchResponseSubscriptionResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   The date and time when the batch operation was completed.
         #
@@ -14,8 +14,8 @@ module HubspotSDK
         # @!attribute results
         #   The list of results from the batch operation.
         #
-        #   @return [Array<HubspotSDK::Models::Webhooks::SubscriptionResponse>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Webhooks::SubscriptionResponse] }
+        #   @return [Array<HubSpotSDK::Models::Webhooks::SubscriptionResponse>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::SubscriptionResponse] }
 
         # @!attribute started_at
         #   The date and time when the batch operation started.
@@ -27,14 +27,14 @@ module HubspotSDK
         #   The current status of the batch operation, which can be PENDING, PROCESSING,
         #   CANCELED, or COMPLETE.
         #
-        #   @return [Symbol, HubspotSDK::Models::Webhooks::BatchResponseSubscriptionResponse::Status]
-        required :status, enum: -> { HubspotSDK::Webhooks::BatchResponseSubscriptionResponse::Status }
+        #   @return [Symbol, HubSpotSDK::Models::Webhooks::BatchResponseSubscriptionResponse::Status]
+        required :status, enum: -> { HubSpotSDK::Webhooks::BatchResponseSubscriptionResponse::Status }
 
         # @!attribute links
         #   A collection of related links associated with the batch operation.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute requested_at
         #   The date and time when the batch operation was requested.
@@ -44,16 +44,16 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Webhooks::BatchResponseSubscriptionResponse} for more
+        #   {HubSpotSDK::Models::Webhooks::BatchResponseSubscriptionResponse} for more
         #   details.
         #
         #   @param completed_at [Time] The date and time when the batch operation was completed.
         #
-        #   @param results [Array<HubspotSDK::Models::Webhooks::SubscriptionResponse>] The list of results from the batch operation.
+        #   @param results [Array<HubSpotSDK::Models::Webhooks::SubscriptionResponse>] The list of results from the batch operation.
         #
         #   @param started_at [Time] The date and time when the batch operation started.
         #
-        #   @param status [Symbol, HubspotSDK::Models::Webhooks::BatchResponseSubscriptionResponse::Status] The current status of the batch operation, which can be PENDING, PROCESSING, CAN
+        #   @param status [Symbol, HubSpotSDK::Models::Webhooks::BatchResponseSubscriptionResponse::Status] The current status of the batch operation, which can be PENDING, PROCESSING, CAN
         #
         #   @param links [Hash{Symbol=>String}] A collection of related links associated with the batch operation.
         #
@@ -62,9 +62,9 @@ module HubspotSDK
         # The current status of the batch operation, which can be PENDING, PROCESSING,
         # CANCELED, or COMPLETE.
         #
-        # @see HubspotSDK::Models::Webhooks::BatchResponseSubscriptionResponse#status
+        # @see HubSpotSDK::Models::Webhooks::BatchResponseSubscriptionResponse#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

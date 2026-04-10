@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Events
       class Send
         def batch_send: (
-          inputs: ::Array[HubspotSDK::Events::BehavioralEventHTTPCompletionRequest],
-          ?request_options: HubspotSDK::request_opts
+          inputs: ::Array[HubSpotSDK::Events::BehavioralEventHTTPCompletionRequest],
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def send_: (
@@ -15,10 +15,10 @@ module HubspotSDK
           ?occurred_at: Time,
           ?utk: String,
           ?uuid: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

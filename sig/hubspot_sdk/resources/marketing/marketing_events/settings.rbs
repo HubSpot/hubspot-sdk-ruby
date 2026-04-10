@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class MarketingEvents
@@ -6,15 +6,15 @@ module HubspotSDK
           def create_or_update: (
             Integer app_id,
             event_details_url: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::EventDetailSettings
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Marketing::EventDetailSettings
 
           def get: (
             Integer app_id,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::EventDetailSettings
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Marketing::EventDetailSettings
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

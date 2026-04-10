@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class BehavioralEventHTTPCompletionRequest < HubspotSDK::Internal::Type::BaseModel
+      class BehavioralEventHTTPCompletionRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute event_name
         #   Internal name of the event-type to trigger
         #
@@ -15,7 +15,7 @@ module HubspotSDK
         #   value
         #
         #   @return [Hash{Symbol=>String}]
-        required :properties, HubspotSDK::Internal::Type::HashOf[String]
+        required :properties, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute email
         #   Email of visitor
@@ -50,7 +50,7 @@ module HubspotSDK
 
         # @!method initialize(event_name:, properties:, email: nil, object_id_: nil, occurred_at: nil, utk: nil, uuid: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Events::BehavioralEventHTTPCompletionRequest} for more
+        #   {HubSpotSDK::Models::Events::BehavioralEventHTTPCompletionRequest} for more
         #   details.
         #
         #   @param event_name [String] Internal name of the event-type to trigger

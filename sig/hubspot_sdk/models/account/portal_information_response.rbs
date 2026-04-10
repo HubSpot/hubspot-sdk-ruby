@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
       type portal_information_response =
         {
-          account_type: HubspotSDK::Models::Account::PortalInformationResponse::account_type,
+          account_type: HubSpotSDK::Models::Account::PortalInformationResponse::account_type,
           additional_currencies: ::Array[String],
           company_currency: String,
           data_hosting_location: String,
@@ -14,8 +14,8 @@ module HubspotSDK
           utc_offset_milliseconds: Integer
         }
 
-      class PortalInformationResponse < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor account_type: HubspotSDK::Models::Account::PortalInformationResponse::account_type
+      class PortalInformationResponse < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor account_type: HubSpotSDK::Models::Account::PortalInformationResponse::account_type
 
         attr_accessor additional_currencies: ::Array[String]
 
@@ -34,7 +34,7 @@ module HubspotSDK
         attr_accessor utc_offset_milliseconds: Integer
 
         def initialize: (
-          account_type: HubspotSDK::Models::Account::PortalInformationResponse::account_type,
+          account_type: HubSpotSDK::Models::Account::PortalInformationResponse::account_type,
           additional_currencies: ::Array[String],
           company_currency: String,
           data_hosting_location: String,
@@ -46,7 +46,7 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
-          account_type: HubspotSDK::Models::Account::PortalInformationResponse::account_type,
+          account_type: HubSpotSDK::Models::Account::PortalInformationResponse::account_type,
           additional_currencies: ::Array[String],
           company_currency: String,
           data_hosting_location: String,
@@ -61,14 +61,14 @@ module HubspotSDK
           :APP_DEVELOPER | :DEVELOPER_TEST | :SANDBOX | :STANDARD
 
         module AccountType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           APP_DEVELOPER: :APP_DEVELOPER
           DEVELOPER_TEST: :DEVELOPER_TEST
           SANDBOX: :SANDBOX
           STANDARD: :STANDARD
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Account::PortalInformationResponse::account_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Account::PortalInformationResponse::account_type]
         end
       end
     end

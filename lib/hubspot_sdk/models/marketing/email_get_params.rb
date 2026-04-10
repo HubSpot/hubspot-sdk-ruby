@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::Emails#get
-      class EmailGetParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Marketing::Emails#get
+      class EmailGetParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute email_ids
         #
         #   @return [Array<Integer>, nil]
-        optional :email_ids, HubspotSDK::Internal::Type::ArrayOf[Integer]
+        optional :email_ids, HubSpotSDK::Internal::Type::ArrayOf[Integer]
 
         # @!attribute end_timestamp
         #
@@ -33,7 +33,7 @@ module HubspotSDK
         #   @param end_timestamp [String]
         #   @param property [String]
         #   @param start_timestamp [String]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

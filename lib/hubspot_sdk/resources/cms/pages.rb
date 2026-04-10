@@ -1,29 +1,29 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Pages
-        # @return [HubspotSDK::Resources::Cms::Pages::ABTests]
+        # @return [HubSpotSDK::Resources::Cms::Pages::ABTests]
         attr_reader :a_b_tests
 
-        # @return [HubspotSDK::Resources::Cms::Pages::Batch]
+        # @return [HubSpotSDK::Resources::Cms::Pages::Batch]
         attr_reader :batch
 
-        # @return [HubspotSDK::Resources::Cms::Pages::Folders]
+        # @return [HubSpotSDK::Resources::Cms::Pages::Folders]
         attr_reader :folders
 
-        # @return [HubspotSDK::Resources::Cms::Pages::LandingPages]
+        # @return [HubSpotSDK::Resources::Cms::Pages::LandingPages]
         attr_reader :landing_pages
 
-        # @return [HubspotSDK::Resources::Cms::Pages::MultiLanguage]
+        # @return [HubSpotSDK::Resources::Cms::Pages::MultiLanguage]
         attr_reader :multi_language
 
-        # @return [HubspotSDK::Resources::Cms::Pages::WebsitePages]
+        # @return [HubSpotSDK::Resources::Cms::Pages::WebsitePages]
         attr_reader :website_pages
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Cms::PageGetLandingPageFoldersParams} for more details.
+        # {HubSpotSDK::Models::Cms::PageGetLandingPageFoldersParams} for more details.
         #
         # @overload get_landing_page_folders(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
         #
@@ -49,14 +49,14 @@ module HubspotSDK
         #
         # @param updated_before [Time]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [Object]
         #
-        # @see HubspotSDK::Models::Cms::PageGetLandingPageFoldersParams
+        # @see HubSpotSDK::Models::Cms::PageGetLandingPageFoldersParams
         def get_landing_page_folders(params = {})
-          parsed, options = HubspotSDK::Cms::PageGetLandingPageFoldersParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Cms::PageGetLandingPageFoldersParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "cms/pages/2026-03/landing-pages/folders/cursor",
@@ -68,13 +68,13 @@ module HubspotSDK
               updated_at: "updatedAt",
               updated_before: "updatedBefore"
             ),
-            model: HubspotSDK::Internal::Type::Unknown,
+            model: HubSpotSDK::Internal::Type::Unknown,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Cms::PageGetLandingPageFoldersByQueryParams} for more
+        # {HubSpotSDK::Models::Cms::PageGetLandingPageFoldersByQueryParams} for more
         # details.
         #
         # @overload get_landing_page_folders_by_query(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
@@ -101,14 +101,14 @@ module HubspotSDK
         #
         # @param updated_before [Time]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [Object]
         #
-        # @see HubspotSDK::Models::Cms::PageGetLandingPageFoldersByQueryParams
+        # @see HubSpotSDK::Models::Cms::PageGetLandingPageFoldersByQueryParams
         def get_landing_page_folders_by_query(params = {})
-          parsed, options = HubspotSDK::Cms::PageGetLandingPageFoldersByQueryParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Cms::PageGetLandingPageFoldersByQueryParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "cms/pages/2026-03/landing-pages/folders/cursor/query",
@@ -120,7 +120,7 @@ module HubspotSDK
               updated_at: "updatedAt",
               updated_before: "updatedBefore"
             ),
-            model: HubspotSDK::Internal::Type::Unknown,
+            model: HubSpotSDK::Internal::Type::Unknown,
             options: options
           )
         end
@@ -132,13 +132,13 @@ module HubspotSDK
         #
         # @param revision_id [String]
         # @param object_id_ [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::PageVersion]
+        # @return [HubSpotSDK::Models::Cms::PageVersion]
         #
-        # @see HubspotSDK::Models::Cms::PageGetLandingPageRevisionParams
+        # @see HubSpotSDK::Models::Cms::PageGetLandingPageRevisionParams
         def get_landing_page_revision(revision_id, params)
-          parsed, options = HubspotSDK::Cms::PageGetLandingPageRevisionParams.dump_request(params)
+          parsed, options = HubSpotSDK::Cms::PageGetLandingPageRevisionParams.dump_request(params)
           object_id_ =
             parsed.delete(:object_id_) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -146,13 +146,13 @@ module HubspotSDK
           @client.request(
             method: :get,
             path: ["cms/pages/2026-03/landing-pages/%1$s/revisions/%2$s", object_id_, revision_id],
-            model: HubspotSDK::Cms::PageVersion,
+            model: HubSpotSDK::Cms::PageVersion,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Cms::PageGetLandingPagesParams} for more details.
+        # {HubSpotSDK::Models::Cms::PageGetLandingPagesParams} for more details.
         #
         # @overload get_landing_pages(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
         #
@@ -178,14 +178,14 @@ module HubspotSDK
         #
         # @param updated_before [Time]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [Object]
         #
-        # @see HubspotSDK::Models::Cms::PageGetLandingPagesParams
+        # @see HubSpotSDK::Models::Cms::PageGetLandingPagesParams
         def get_landing_pages(params = {})
-          parsed, options = HubspotSDK::Cms::PageGetLandingPagesParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Cms::PageGetLandingPagesParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "cms/pages/2026-03/landing-pages/cursor",
@@ -197,13 +197,13 @@ module HubspotSDK
               updated_at: "updatedAt",
               updated_before: "updatedBefore"
             ),
-            model: HubspotSDK::Internal::Type::Unknown,
+            model: HubSpotSDK::Internal::Type::Unknown,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Cms::PageGetLandingPagesByQueryParams} for more details.
+        # {HubSpotSDK::Models::Cms::PageGetLandingPagesByQueryParams} for more details.
         #
         # @overload get_landing_pages_by_query(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
         #
@@ -229,14 +229,14 @@ module HubspotSDK
         #
         # @param updated_before [Time]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [Object]
         #
-        # @see HubspotSDK::Models::Cms::PageGetLandingPagesByQueryParams
+        # @see HubSpotSDK::Models::Cms::PageGetLandingPagesByQueryParams
         def get_landing_pages_by_query(params = {})
-          parsed, options = HubspotSDK::Cms::PageGetLandingPagesByQueryParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Cms::PageGetLandingPagesByQueryParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "cms/pages/2026-03/landing-pages/cursor/query",
@@ -248,7 +248,7 @@ module HubspotSDK
               updated_at: "updatedAt",
               updated_before: "updatedBefore"
             ),
-            model: HubspotSDK::Internal::Type::Unknown,
+            model: HubSpotSDK::Internal::Type::Unknown,
             options: options
           )
         end
@@ -259,13 +259,13 @@ module HubspotSDK
         #
         # @param revision_id [String]
         # @param object_id_ [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::PageVersion]
+        # @return [HubSpotSDK::Models::Cms::PageVersion]
         #
-        # @see HubspotSDK::Models::Cms::PageGetSitePageRevisionParams
+        # @see HubSpotSDK::Models::Cms::PageGetSitePageRevisionParams
         def get_site_page_revision(revision_id, params)
-          parsed, options = HubspotSDK::Cms::PageGetSitePageRevisionParams.dump_request(params)
+          parsed, options = HubSpotSDK::Cms::PageGetSitePageRevisionParams.dump_request(params)
           object_id_ =
             parsed.delete(:object_id_) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -273,13 +273,13 @@ module HubspotSDK
           @client.request(
             method: :get,
             path: ["cms/pages/2026-03/site-pages/%1$s/revisions/%2$s", object_id_, revision_id],
-            model: HubspotSDK::Cms::PageVersion,
+            model: HubSpotSDK::Cms::PageVersion,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Cms::PageGetSitePagesParams} for more details.
+        # {HubSpotSDK::Models::Cms::PageGetSitePagesParams} for more details.
         #
         # @overload get_site_pages(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
         #
@@ -305,14 +305,14 @@ module HubspotSDK
         #
         # @param updated_before [Time]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [Object]
         #
-        # @see HubspotSDK::Models::Cms::PageGetSitePagesParams
+        # @see HubSpotSDK::Models::Cms::PageGetSitePagesParams
         def get_site_pages(params = {})
-          parsed, options = HubspotSDK::Cms::PageGetSitePagesParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Cms::PageGetSitePagesParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "cms/pages/2026-03/site-pages/cursor",
@@ -324,13 +324,13 @@ module HubspotSDK
               updated_at: "updatedAt",
               updated_before: "updatedBefore"
             ),
-            model: HubspotSDK::Internal::Type::Unknown,
+            model: HubSpotSDK::Internal::Type::Unknown,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Cms::PageGetSitePagesByQueryParams} for more details.
+        # {HubSpotSDK::Models::Cms::PageGetSitePagesByQueryParams} for more details.
         #
         # @overload get_site_pages_by_query(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
         #
@@ -356,14 +356,14 @@ module HubspotSDK
         #
         # @param updated_before [Time]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [Object]
         #
-        # @see HubspotSDK::Models::Cms::PageGetSitePagesByQueryParams
+        # @see HubSpotSDK::Models::Cms::PageGetSitePagesByQueryParams
         def get_site_pages_by_query(params = {})
-          parsed, options = HubspotSDK::Cms::PageGetSitePagesByQueryParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Cms::PageGetSitePagesByQueryParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "cms/pages/2026-03/site-pages/cursor/query",
@@ -375,13 +375,13 @@ module HubspotSDK
               updated_at: "updatedAt",
               updated_before: "updatedBefore"
             ),
-            model: HubspotSDK::Internal::Type::Unknown,
+            model: HubSpotSDK::Internal::Type::Unknown,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Cms::PageListLandingPageRevisionsParams} for more details.
+        # {HubSpotSDK::Models::Cms::PageListLandingPageRevisionsParams} for more details.
         #
         # Retrieve all the previous versions of a landing page, specified by page ID.
         #
@@ -395,26 +395,26 @@ module HubspotSDK
         #
         # @param limit [Integer] The maximum number of results to display per page.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::PageVersion>]
+        # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Cms::PageVersion>]
         #
-        # @see HubspotSDK::Models::Cms::PageListLandingPageRevisionsParams
+        # @see HubSpotSDK::Models::Cms::PageListLandingPageRevisionsParams
         def list_landing_page_revisions(object_id_, params = {})
-          parsed, options = HubspotSDK::Cms::PageListLandingPageRevisionsParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Cms::PageListLandingPageRevisionsParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: ["cms/pages/2026-03/landing-pages/%1$s/revisions", object_id_],
             query: query,
-            page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Cms::PageVersion,
+            page: HubSpotSDK::Internal::Page,
+            model: HubSpotSDK::Cms::PageVersion,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Cms::PageListSitePageRevisionsParams} for more details.
+        # {HubSpotSDK::Models::Cms::PageListSitePageRevisionsParams} for more details.
         #
         # Retrieves all the previous versions of a website page, specified by page ID.
         #
@@ -428,20 +428,20 @@ module HubspotSDK
         #
         # @param limit [Integer] The maximum number of results to display per page.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::PageVersion>]
+        # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Cms::PageVersion>]
         #
-        # @see HubspotSDK::Models::Cms::PageListSitePageRevisionsParams
+        # @see HubSpotSDK::Models::Cms::PageListSitePageRevisionsParams
         def list_site_page_revisions(object_id_, params = {})
-          parsed, options = HubspotSDK::Cms::PageListSitePageRevisionsParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Cms::PageListSitePageRevisionsParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: ["cms/pages/2026-03/site-pages/%1$s/revisions", object_id_],
             query: query,
-            page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Cms::PageVersion,
+            page: HubSpotSDK::Internal::Page,
+            model: HubSpotSDK::Cms::PageVersion,
             options: options
           )
         end
@@ -451,11 +451,11 @@ module HubspotSDK
         # @overload reset_site_page_draft(object_id_, request_options: {})
         #
         # @param object_id_ [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Cms::PageResetSitePageDraftParams
+        # @see HubSpotSDK::Models::Cms::PageResetSitePageDraftParams
         def reset_site_page_draft(object_id_, params = {})
           @client.request(
             method: :post,
@@ -472,13 +472,13 @@ module HubspotSDK
         #
         # @param revision_id [String]
         # @param object_id_ [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::PageData]
+        # @return [HubSpotSDK::Models::Cms::PageData]
         #
-        # @see HubspotSDK::Models::Cms::PageRestoreLandingPageRevisionParams
+        # @see HubSpotSDK::Models::Cms::PageRestoreLandingPageRevisionParams
         def restore_landing_page_revision(revision_id, params)
-          parsed, options = HubspotSDK::Cms::PageRestoreLandingPageRevisionParams.dump_request(params)
+          parsed, options = HubSpotSDK::Cms::PageRestoreLandingPageRevisionParams.dump_request(params)
           object_id_ =
             parsed.delete(:object_id_) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -486,7 +486,7 @@ module HubspotSDK
           @client.request(
             method: :post,
             path: ["cms/pages/2026-03/landing-pages/%1$s/revisions/%2$s/restore", object_id_, revision_id],
-            model: HubspotSDK::Cms::PageData,
+            model: HubSpotSDK::Cms::PageData,
             options: options
           )
         end
@@ -497,13 +497,13 @@ module HubspotSDK
         #
         # @param revision_id [Integer]
         # @param object_id_ [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::PageData]
+        # @return [HubSpotSDK::Models::Cms::PageData]
         #
-        # @see HubspotSDK::Models::Cms::PageRestoreLandingPageRevisionToDraftParams
+        # @see HubSpotSDK::Models::Cms::PageRestoreLandingPageRevisionToDraftParams
         def restore_landing_page_revision_to_draft(revision_id, params)
-          parsed, options = HubspotSDK::Cms::PageRestoreLandingPageRevisionToDraftParams.dump_request(params)
+          parsed, options = HubSpotSDK::Cms::PageRestoreLandingPageRevisionToDraftParams.dump_request(params)
           object_id_ =
             parsed.delete(:object_id_) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -515,7 +515,7 @@ module HubspotSDK
               object_id_,
               revision_id
             ],
-            model: HubspotSDK::Cms::PageData,
+            model: HubSpotSDK::Cms::PageData,
             options: options
           )
         end
@@ -527,13 +527,13 @@ module HubspotSDK
         #
         # @param revision_id [String]
         # @param object_id_ [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::PageData]
+        # @return [HubSpotSDK::Models::Cms::PageData]
         #
-        # @see HubspotSDK::Models::Cms::PageRestoreSitePageRevisionParams
+        # @see HubSpotSDK::Models::Cms::PageRestoreSitePageRevisionParams
         def restore_site_page_revision(revision_id, params)
-          parsed, options = HubspotSDK::Cms::PageRestoreSitePageRevisionParams.dump_request(params)
+          parsed, options = HubSpotSDK::Cms::PageRestoreSitePageRevisionParams.dump_request(params)
           object_id_ =
             parsed.delete(:object_id_) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -541,7 +541,7 @@ module HubspotSDK
           @client.request(
             method: :post,
             path: ["cms/pages/2026-03/site-pages/%1$s/revisions/%2$s/restore", object_id_, revision_id],
-            model: HubspotSDK::Cms::PageData,
+            model: HubSpotSDK::Cms::PageData,
             options: options
           )
         end
@@ -553,13 +553,13 @@ module HubspotSDK
         #
         # @param revision_id [Integer]
         # @param object_id_ [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::PageData]
+        # @return [HubSpotSDK::Models::Cms::PageData]
         #
-        # @see HubspotSDK::Models::Cms::PageRestoreSitePageRevisionToDraftParams
+        # @see HubSpotSDK::Models::Cms::PageRestoreSitePageRevisionToDraftParams
         def restore_site_page_revision_to_draft(revision_id, params)
-          parsed, options = HubspotSDK::Cms::PageRestoreSitePageRevisionToDraftParams.dump_request(params)
+          parsed, options = HubSpotSDK::Cms::PageRestoreSitePageRevisionToDraftParams.dump_request(params)
           object_id_ =
             parsed.delete(:object_id_) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -571,22 +571,22 @@ module HubspotSDK
               object_id_,
               revision_id
             ],
-            model: HubspotSDK::Cms::PageData,
+            model: HubSpotSDK::Cms::PageData,
             options: options
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
-          @a_b_tests = HubspotSDK::Resources::Cms::Pages::ABTests.new(client: client)
-          @batch = HubspotSDK::Resources::Cms::Pages::Batch.new(client: client)
-          @folders = HubspotSDK::Resources::Cms::Pages::Folders.new(client: client)
-          @landing_pages = HubspotSDK::Resources::Cms::Pages::LandingPages.new(client: client)
-          @multi_language = HubspotSDK::Resources::Cms::Pages::MultiLanguage.new(client: client)
-          @website_pages = HubspotSDK::Resources::Cms::Pages::WebsitePages.new(client: client)
+          @a_b_tests = HubSpotSDK::Resources::Cms::Pages::ABTests.new(client: client)
+          @batch = HubSpotSDK::Resources::Cms::Pages::Batch.new(client: client)
+          @folders = HubSpotSDK::Resources::Cms::Pages::Folders.new(client: client)
+          @landing_pages = HubSpotSDK::Resources::Cms::Pages::LandingPages.new(client: client)
+          @multi_language = HubSpotSDK::Resources::Cms::Pages::MultiLanguage.new(client: client)
+          @website_pages = HubSpotSDK::Resources::Cms::Pages::WebsitePages.new(client: client)
         end
       end
     end

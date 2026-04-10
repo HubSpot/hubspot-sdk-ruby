@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      # @see HubspotSDK::Resources::Webhooks#delete_portal_subscriptions
-      class WebhookDeletePortalSubscriptionsParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Webhooks#delete_portal_subscriptions
+      class WebhookDeletePortalSubscriptionsParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute portal_id
         #
@@ -15,7 +15,7 @@ module HubspotSDK
 
         # @!method initialize(portal_id:, request_options: {})
         #   @param portal_id [Integer]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

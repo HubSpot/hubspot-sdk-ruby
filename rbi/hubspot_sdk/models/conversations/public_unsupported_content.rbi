@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicUnsupportedContent < HubspotSDK::Internal::Type::BaseModel
+      class PublicUnsupportedContent < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::PublicUnsupportedContent,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::PublicUnsupportedContent,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::Conversations::PublicUnsupportedContent::Type::TaggedSymbol
+            HubSpotSDK::Conversations::PublicUnsupportedContent::Type::TaggedSymbol
           )
         end
         attr_accessor :type
@@ -22,7 +22,7 @@ module HubspotSDK
         sig do
           params(
             type:
-              HubspotSDK::Conversations::PublicUnsupportedContent::Type::OrSymbol
+              HubSpotSDK::Conversations::PublicUnsupportedContent::Type::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(type:)
@@ -32,7 +32,7 @@ module HubspotSDK
           override.returns(
             {
               type:
-                HubspotSDK::Conversations::PublicUnsupportedContent::Type::TaggedSymbol
+                HubSpotSDK::Conversations::PublicUnsupportedContent::Type::TaggedSymbol
             }
           )
         end
@@ -40,13 +40,13 @@ module HubspotSDK
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Conversations::PublicUnsupportedContent::Type
+                HubSpotSDK::Conversations::PublicUnsupportedContent::Type
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -54,13 +54,13 @@ module HubspotSDK
           UNSUPPORTED_CONTENT =
             T.let(
               :UNSUPPORTED_CONTENT,
-              HubspotSDK::Conversations::PublicUnsupportedContent::Type::TaggedSymbol
+              HubSpotSDK::Conversations::PublicUnsupportedContent::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::PublicUnsupportedContent::Type::TaggedSymbol
+                HubSpotSDK::Conversations::PublicUnsupportedContent::Type::TaggedSymbol
               ]
             )
           end

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class ContactEmail < HubspotSDK::Internal::Type::BaseModel
+      class ContactEmail < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute email
         #
         #   @return [String]
@@ -11,16 +11,16 @@ module HubspotSDK
 
         # @!attribute type
         #
-        #   @return [Symbol, HubspotSDK::Models::Conversations::ContactEmail::Type, nil]
-        optional :type, enum: -> { HubspotSDK::Conversations::ContactEmail::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Conversations::ContactEmail::Type, nil]
+        optional :type, enum: -> { HubSpotSDK::Conversations::ContactEmail::Type }
 
         # @!method initialize(email:, type: nil)
         #   @param email [String]
-        #   @param type [Symbol, HubspotSDK::Models::Conversations::ContactEmail::Type]
+        #   @param type [Symbol, HubSpotSDK::Models::Conversations::ContactEmail::Type]
 
-        # @see HubspotSDK::Models::Conversations::ContactEmail#type
+        # @see HubSpotSDK::Models::Conversations::ContactEmail#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HOME = :HOME
           WORK = :WORK

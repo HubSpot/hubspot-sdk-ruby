@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Properties
@@ -13,18 +13,18 @@ module HubspotSDK
           # @param label [String]
           # @param name [String]
           # @param display_order [Integer]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::PropertyGroup]
+          # @return [HubSpotSDK::Models::PropertyGroup]
           #
-          # @see HubspotSDK::Models::Crm::Properties::GroupCreateParams
+          # @see HubSpotSDK::Models::Crm::Properties::GroupCreateParams
           def create(object_type, params)
-            parsed, options = HubspotSDK::Crm::Properties::GroupCreateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Properties::GroupCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["crm/properties/2026-03/%1$s/groups", object_type],
               body: parsed,
-              model: HubspotSDK::PropertyGroup,
+              model: HubSpotSDK::PropertyGroup,
               options: options
             )
           end
@@ -42,13 +42,13 @@ module HubspotSDK
           #
           # @param label [String] Body param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::PropertyGroup]
+          # @return [HubSpotSDK::Models::PropertyGroup]
           #
-          # @see HubspotSDK::Models::Crm::Properties::GroupUpdateParams
+          # @see HubSpotSDK::Models::Crm::Properties::GroupUpdateParams
           def update(group_name, params)
-            parsed, options = HubspotSDK::Crm::Properties::GroupUpdateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Properties::GroupUpdateParams.dump_request(params)
             object_type =
               parsed.delete(:object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -57,7 +57,7 @@ module HubspotSDK
               method: :patch,
               path: ["crm/properties/2026-03/%1$s/groups/%2$s", object_type, group_name],
               body: parsed,
-              model: HubspotSDK::PropertyGroup,
+              model: HubSpotSDK::PropertyGroup,
               options: options
             )
           end
@@ -69,19 +69,19 @@ module HubspotSDK
           #
           # @param object_type [String]
           # @param locale [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::CollectionResponsePropertyGroupNoPaging]
+          # @return [HubSpotSDK::Models::CollectionResponsePropertyGroupNoPaging]
           #
-          # @see HubspotSDK::Models::Crm::Properties::GroupListParams
+          # @see HubSpotSDK::Models::Crm::Properties::GroupListParams
           def list(object_type, params = {})
-            parsed, options = HubspotSDK::Crm::Properties::GroupListParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Crm::Properties::GroupListParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["crm/properties/2026-03/%1$s/groups", object_type],
               query: query,
-              model: HubspotSDK::CollectionResponsePropertyGroupNoPaging,
+              model: HubSpotSDK::CollectionResponsePropertyGroupNoPaging,
               options: options
             )
           end
@@ -92,13 +92,13 @@ module HubspotSDK
           #
           # @param group_name [String]
           # @param object_type [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Crm::Properties::GroupDeleteParams
+          # @see HubSpotSDK::Models::Crm::Properties::GroupDeleteParams
           def delete(group_name, params)
-            parsed, options = HubspotSDK::Crm::Properties::GroupDeleteParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Properties::GroupDeleteParams.dump_request(params)
             object_type =
               parsed.delete(:object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -121,14 +121,14 @@ module HubspotSDK
           #
           # @param locale [String] Query param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::PropertyGroup]
+          # @return [HubSpotSDK::Models::PropertyGroup]
           #
-          # @see HubspotSDK::Models::Crm::Properties::GroupGetParams
+          # @see HubSpotSDK::Models::Crm::Properties::GroupGetParams
           def get(group_name, params)
-            parsed, options = HubspotSDK::Crm::Properties::GroupGetParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Crm::Properties::GroupGetParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             object_type =
               parsed.delete(:object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -137,14 +137,14 @@ module HubspotSDK
               method: :get,
               path: ["crm/properties/2026-03/%1$s/groups/%2$s", object_type, group_name],
               query: query,
-              model: HubspotSDK::PropertyGroup,
+              model: HubSpotSDK::PropertyGroup,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

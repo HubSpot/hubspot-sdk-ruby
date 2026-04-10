@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class BatchResponseSubscriptionResponse < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseSubscriptionResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Webhooks::BatchResponseSubscriptionResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Webhooks::BatchResponseSubscriptionResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -17,7 +17,7 @@ module HubspotSDK
         attr_accessor :completed_at
 
         # The list of results from the batch operation.
-        sig { returns(T::Array[HubspotSDK::Webhooks::SubscriptionResponse]) }
+        sig { returns(T::Array[HubSpotSDK::Webhooks::SubscriptionResponse]) }
         attr_accessor :results
 
         # The date and time when the batch operation started.
@@ -28,7 +28,7 @@ module HubspotSDK
         # CANCELED, or COMPLETE.
         sig do
           returns(
-            HubspotSDK::Webhooks::BatchResponseSubscriptionResponse::Status::TaggedSymbol
+            HubSpotSDK::Webhooks::BatchResponseSubscriptionResponse::Status::TaggedSymbol
           )
         end
         attr_accessor :status
@@ -51,10 +51,10 @@ module HubspotSDK
           params(
             completed_at: Time,
             results:
-              T::Array[HubspotSDK::Webhooks::SubscriptionResponse::OrHash],
+              T::Array[HubSpotSDK::Webhooks::SubscriptionResponse::OrHash],
             started_at: Time,
             status:
-              HubspotSDK::Webhooks::BatchResponseSubscriptionResponse::Status::OrSymbol,
+              HubSpotSDK::Webhooks::BatchResponseSubscriptionResponse::Status::OrSymbol,
             links: T::Hash[Symbol, String],
             requested_at: Time
           ).returns(T.attached_class)
@@ -80,10 +80,10 @@ module HubspotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubspotSDK::Webhooks::SubscriptionResponse],
+              results: T::Array[HubSpotSDK::Webhooks::SubscriptionResponse],
               started_at: Time,
               status:
-                HubspotSDK::Webhooks::BatchResponseSubscriptionResponse::Status::TaggedSymbol,
+                HubSpotSDK::Webhooks::BatchResponseSubscriptionResponse::Status::TaggedSymbol,
               links: T::Hash[Symbol, String],
               requested_at: Time
             }
@@ -95,13 +95,13 @@ module HubspotSDK
         # The current status of the batch operation, which can be PENDING, PROCESSING,
         # CANCELED, or COMPLETE.
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Webhooks::BatchResponseSubscriptionResponse::Status
+                HubSpotSDK::Webhooks::BatchResponseSubscriptionResponse::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -109,28 +109,28 @@ module HubspotSDK
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::Webhooks::BatchResponseSubscriptionResponse::Status::TaggedSymbol
+              HubSpotSDK::Webhooks::BatchResponseSubscriptionResponse::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::Webhooks::BatchResponseSubscriptionResponse::Status::TaggedSymbol
+              HubSpotSDK::Webhooks::BatchResponseSubscriptionResponse::Status::TaggedSymbol
             )
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::Webhooks::BatchResponseSubscriptionResponse::Status::TaggedSymbol
+              HubSpotSDK::Webhooks::BatchResponseSubscriptionResponse::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::Webhooks::BatchResponseSubscriptionResponse::Status::TaggedSymbol
+              HubSpotSDK::Webhooks::BatchResponseSubscriptionResponse::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Webhooks::BatchResponseSubscriptionResponse::Status::TaggedSymbol
+                HubSpotSDK::Webhooks::BatchResponseSubscriptionResponse::Status::TaggedSymbol
               ]
             )
           end

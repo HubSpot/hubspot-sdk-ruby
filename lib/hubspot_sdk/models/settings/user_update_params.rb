@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      # @see HubspotSDK::Resources::Settings::Users#update
-      class UserUpdateParams < HubspotSDK::Models::Settings::PublicUserUpdate
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Settings::Users#update
+      class UserUpdateParams < HubSpotSDK::Models::Settings::PublicUserUpdate
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute user_id
         #
@@ -15,16 +15,16 @@ module HubspotSDK
 
         # @!attribute id_property
         #
-        #   @return [Symbol, HubspotSDK::Models::Settings::PublicUserUpdate::IDProperty, nil]
-        optional :id_property, enum: -> { HubspotSDK::Settings::PublicUserUpdate::IDProperty }
+        #   @return [Symbol, HubSpotSDK::Models::Settings::PublicUserUpdate::IDProperty, nil]
+        optional :id_property, enum: -> { HubSpotSDK::Settings::PublicUserUpdate::IDProperty }
 
         # @!method initialize(user_id:, id_property: nil, request_options: {})
         #   @param user_id [String]
-        #   @param id_property [Symbol, HubspotSDK::Models::Settings::PublicUserUpdate::IDProperty]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param id_property [Symbol, HubSpotSDK::Models::Settings::PublicUserUpdate::IDProperty]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
 
         module IDProperty
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL = :EMAIL
           USER_ID = :USER_ID

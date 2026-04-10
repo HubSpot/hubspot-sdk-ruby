@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class FieldLevelPermission < HubspotSDK::Internal::Type::BaseModel
+      class FieldLevelPermission < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute access_level
         #
         #   @return [String]

@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchInputPublicAssociationMultiArchive < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputPublicAssociationMultiArchive < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute inputs
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PublicAssociationMultiArchive>]
+        #   @return [Array<HubSpotSDK::Models::Crm::PublicAssociationMultiArchive>]
         required :inputs,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociationMultiArchive] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicAssociationMultiArchive] }
 
         # @!method initialize(inputs:)
-        #   @param inputs [Array<HubspotSDK::Models::Crm::PublicAssociationMultiArchive>]
+        #   @param inputs [Array<HubSpotSDK::Models::Crm::PublicAssociationMultiArchive>]
       end
     end
   end

@@ -1,39 +1,39 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicSocialMetadataAttachment < HubspotSDK::Internal::Type::BaseModel
+      class PublicSocialMetadataAttachment < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::PublicSocialMetadataAttachment,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::PublicSocialMetadataAttachment,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(HubspotSDK::Conversations::SocialMetadata) }
+        sig { returns(HubSpotSDK::Conversations::SocialMetadata) }
         attr_reader :social_metadata
 
         sig do
           params(
-            social_metadata: HubspotSDK::Conversations::SocialMetadata::OrHash
+            social_metadata: HubSpotSDK::Conversations::SocialMetadata::OrHash
           ).void
         end
         attr_writer :social_metadata
 
         sig do
           returns(
-            HubspotSDK::Conversations::PublicSocialMetadataAttachment::Type::TaggedSymbol
+            HubSpotSDK::Conversations::PublicSocialMetadataAttachment::Type::TaggedSymbol
           )
         end
         attr_accessor :type
 
         sig do
           params(
-            social_metadata: HubspotSDK::Conversations::SocialMetadata::OrHash,
+            social_metadata: HubSpotSDK::Conversations::SocialMetadata::OrHash,
             type:
-              HubspotSDK::Conversations::PublicSocialMetadataAttachment::Type::OrSymbol
+              HubSpotSDK::Conversations::PublicSocialMetadataAttachment::Type::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(social_metadata:, type:)
@@ -42,9 +42,9 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              social_metadata: HubspotSDK::Conversations::SocialMetadata,
+              social_metadata: HubSpotSDK::Conversations::SocialMetadata,
               type:
-                HubspotSDK::Conversations::PublicSocialMetadataAttachment::Type::TaggedSymbol
+                HubSpotSDK::Conversations::PublicSocialMetadataAttachment::Type::TaggedSymbol
             }
           )
         end
@@ -52,13 +52,13 @@ module HubspotSDK
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Conversations::PublicSocialMetadataAttachment::Type
+                HubSpotSDK::Conversations::PublicSocialMetadataAttachment::Type
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -66,13 +66,13 @@ module HubspotSDK
           SOCIAL_MEDIA_METADATA =
             T.let(
               :SOCIAL_MEDIA_METADATA,
-              HubspotSDK::Conversations::PublicSocialMetadataAttachment::Type::TaggedSymbol
+              HubSpotSDK::Conversations::PublicSocialMetadataAttachment::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::PublicSocialMetadataAttachment::Type::TaggedSymbol
+                HubSpotSDK::Conversations::PublicSocialMetadataAttachment::Type::TaggedSymbol
               ]
             )
           end

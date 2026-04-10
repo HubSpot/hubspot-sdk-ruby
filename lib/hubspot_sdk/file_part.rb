@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   class FilePart
     # @return [Pathname, StringIO, IO, String]
     attr_reader :content

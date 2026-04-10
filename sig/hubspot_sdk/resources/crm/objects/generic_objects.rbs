@@ -1,24 +1,24 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Objects
         class GenericObjects
-          attr_reader batch: HubspotSDK::Resources::Crm::Objects::GenericObjects::Batch
+          attr_reader batch: HubSpotSDK::Resources::Crm::Objects::GenericObjects::Batch
 
           def create: (
             String object_type,
-            associations: ::Array[HubspotSDK::Crm::PublicAssociationsForObject],
+            associations: ::Array[HubSpotSDK::Crm::PublicAssociationsForObject],
             properties: ::Hash[Symbol, String],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::SimplePublicObject
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::SimplePublicObject
 
           def update: (
             String object_id_,
             object_type: String,
             properties: ::Hash[Symbol, String],
             ?id_property: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::SimplePublicObject
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::SimplePublicObject
 
           def list: (
             String object_type,
@@ -28,13 +28,13 @@ module HubspotSDK
             ?limit: Integer,
             ?properties: ::Array[String],
             ?properties_with_history: ::Array[String],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::SimplePublicObjectWithAssociations]
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Crm::SimplePublicObjectWithAssociations]
 
           def delete: (
             String object_id_,
             object_type: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def get: (
@@ -45,21 +45,21 @@ module HubspotSDK
             ?id_property: String,
             ?properties: ::Array[String],
             ?properties_with_history: ::Array[String],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::SimplePublicObjectWithAssociations
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::SimplePublicObjectWithAssociations
 
           def search: (
             String object_type,
             after: String,
-            filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
+            filter_groups: ::Array[HubSpotSDK::Crm::FilterGroup],
             limit: Integer,
             properties: ::Array[String],
             sorts: ::Array[String],
             ?query: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

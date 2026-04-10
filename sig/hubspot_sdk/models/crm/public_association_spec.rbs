@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_association_spec = { category: String, type_id: Integer }
 
-      class PublicAssociationSpec < HubspotSDK::Internal::Type::BaseModel
+      class PublicAssociationSpec < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor category: String
 
         attr_accessor type_id: Integer

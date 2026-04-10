@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class CollectionResponseExchangeRateForwardPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseExchangeRateForwardPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Settings::ExchangeRate>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Settings::ExchangeRate] }
+        #   @return [Array<HubSpotSDK::Models::Settings::ExchangeRate>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Settings::ExchangeRate] }
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::ForwardPaging, nil]
-        optional :paging, -> { HubspotSDK::ForwardPaging }
+        #   @return [HubSpotSDK::Models::ForwardPaging, nil]
+        optional :paging, -> { HubSpotSDK::ForwardPaging }
 
         # @!method initialize(results:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Settings::ExchangeRate>]
-        #   @param paging [HubspotSDK::Models::ForwardPaging]
+        #   @param results [Array<HubSpotSDK::Models::Settings::ExchangeRate>]
+        #   @param paging [HubSpotSDK::Models::ForwardPaging]
       end
     end
   end

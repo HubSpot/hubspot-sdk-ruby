@@ -1,9 +1,9 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     class Page
-      include HubspotSDK::Internal::Type::BasePage
+      include HubSpotSDK::Internal::Type::BasePage
 
       Elem = type_member
 
@@ -18,8 +18,8 @@ module HubspotSDK
       def inspect
       end
 
-      class Paging < HubspotSDK::Internal::Type::BaseModel
-        OrHash = T.type_alias { T.any(Paging, HubspotSDK::Internal::AnyHash) }
+      class Paging < HubSpotSDK::Internal::Type::BaseModel
+        OrHash = T.type_alias { T.any(Paging, HubSpotSDK::Internal::AnyHash) }
 
         sig { returns(T.nilable(Paging::Next)) }
         attr_reader :next_
@@ -35,9 +35,9 @@ module HubspotSDK
         def to_hash
         end
 
-        class Next < HubspotSDK::Internal::Type::BaseModel
+        class Next < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
-            T.type_alias { T.any(Paging::Next, HubspotSDK::Internal::AnyHash) }
+            T.type_alias { T.any(Paging::Next, HubSpotSDK::Internal::AnyHash) }
 
           sig { returns(T.nilable(String)) }
           attr_reader :after

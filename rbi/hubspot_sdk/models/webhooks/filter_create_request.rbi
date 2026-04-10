@@ -1,24 +1,24 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class FilterCreateRequest < HubspotSDK::Internal::Type::BaseModel
+      class FilterCreateRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Webhooks::FilterCreateRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Webhooks::FilterCreateRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Defines a single condition for searching CRM objects, specifying the property to
         # filter on, the operator to use (such as equals, greater than, or contains), and
         # the value(s) to compare against.
-        sig { returns(HubspotSDK::Webhooks::Filter) }
+        sig { returns(HubSpotSDK::Webhooks::Filter) }
         attr_reader :filter
 
-        sig { params(filter: HubspotSDK::Webhooks::Filter::OrHash).void }
+        sig { params(filter: HubSpotSDK::Webhooks::Filter::OrHash).void }
         attr_writer :filter
 
         sig { returns(Integer) }
@@ -26,7 +26,7 @@ module HubspotSDK
 
         sig do
           params(
-            filter: HubspotSDK::Webhooks::Filter::OrHash,
+            filter: HubSpotSDK::Webhooks::Filter::OrHash,
             subscription_id: Integer
           ).returns(T.attached_class)
         end
@@ -41,7 +41,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { filter: HubspotSDK::Webhooks::Filter, subscription_id: Integer }
+            { filter: HubSpotSDK::Webhooks::Filter, subscription_id: Integer }
           )
         end
         def to_hash

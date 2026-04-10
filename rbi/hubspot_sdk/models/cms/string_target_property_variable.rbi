@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class StringTargetPropertyVariable < HubspotSDK::Internal::Type::BaseModel
+      class StringTargetPropertyVariable < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::StringTargetPropertyVariable,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::StringTargetPropertyVariable,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::Cms::StringTargetPropertyVariable::Operator::TaggedSymbol
+            HubSpotSDK::Cms::StringTargetPropertyVariable::Operator::TaggedSymbol
           )
         end
         attr_accessor :operator
@@ -34,7 +34,7 @@ module HubspotSDK
         sig do
           params(
             operator:
-              HubspotSDK::Cms::StringTargetPropertyVariable::Operator::OrSymbol,
+              HubSpotSDK::Cms::StringTargetPropertyVariable::Operator::OrSymbol,
             property_name: String,
             value: String
           ).returns(T.attached_class)
@@ -46,7 +46,7 @@ module HubspotSDK
           override.returns(
             {
               operator:
-                HubspotSDK::Cms::StringTargetPropertyVariable::Operator::TaggedSymbol,
+                HubSpotSDK::Cms::StringTargetPropertyVariable::Operator::TaggedSymbol,
               property_name: String,
               value: String
             }
@@ -56,13 +56,13 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Cms::StringTargetPropertyVariable::Operator
+                HubSpotSDK::Cms::StringTargetPropertyVariable::Operator
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -70,13 +70,13 @@ module HubspotSDK
           STRING_TARGET_PROPERTY_VARIABLE =
             T.let(
               :STRING_TARGET_PROPERTY_VARIABLE,
-              HubspotSDK::Cms::StringTargetPropertyVariable::Operator::TaggedSymbol
+              HubSpotSDK::Cms::StringTargetPropertyVariable::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::StringTargetPropertyVariable::Operator::TaggedSymbol
+                HubSpotSDK::Cms::StringTargetPropertyVariable::Operator::TaggedSymbol
               ]
             )
           end

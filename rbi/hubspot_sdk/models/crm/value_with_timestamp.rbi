@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ValueWithTimestamp < HubspotSDK::Internal::Type::BaseModel
+      class ValueWithTimestamp < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::ValueWithTimestamp,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::ValueWithTimestamp,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

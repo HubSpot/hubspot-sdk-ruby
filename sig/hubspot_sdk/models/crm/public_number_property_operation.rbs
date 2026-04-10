@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_number_property_operation =
         {
           include_objects_with_no_value_set: bool,
-          operation_type: HubspotSDK::Models::Crm::PublicNumberPropertyOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicNumberPropertyOperation::operation_type,
           operator: String,
           value: Float
         }
 
-      class PublicNumberPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicNumberPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor include_objects_with_no_value_set: bool
 
-        attr_accessor operation_type: HubspotSDK::Models::Crm::PublicNumberPropertyOperation::operation_type
+        attr_accessor operation_type: HubSpotSDK::Models::Crm::PublicNumberPropertyOperation::operation_type
 
         attr_accessor operator: String
 
@@ -20,14 +20,14 @@ module HubspotSDK
 
         def initialize: (
           include_objects_with_no_value_set: bool,
-          operation_type: HubspotSDK::Models::Crm::PublicNumberPropertyOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicNumberPropertyOperation::operation_type,
           operator: String,
           value: Float
         ) -> void
 
         def to_hash: -> {
           include_objects_with_no_value_set: bool,
-          operation_type: HubspotSDK::Models::Crm::PublicNumberPropertyOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicNumberPropertyOperation::operation_type,
           operator: String,
           value: Float
         }
@@ -35,11 +35,11 @@ module HubspotSDK
         type operation_type = :NUMBER
 
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NUMBER: :NUMBER
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicNumberPropertyOperation::operation_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicNumberPropertyOperation::operation_type]
         end
       end
     end

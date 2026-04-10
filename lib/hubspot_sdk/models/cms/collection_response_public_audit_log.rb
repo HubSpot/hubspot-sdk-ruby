@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class CollectionResponsePublicAuditLog < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponsePublicAuditLog < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Cms::PublicAuditLog>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::PublicAuditLog] }
+        #   @return [Array<HubSpotSDK::Models::Cms::PublicAuditLog>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::PublicAuditLog] }
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::Paging, nil]
-        optional :paging, -> { HubspotSDK::Paging }
+        #   @return [HubSpotSDK::Models::Paging, nil]
+        optional :paging, -> { HubSpotSDK::Paging }
 
         # @!method initialize(results:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Cms::PublicAuditLog>]
-        #   @param paging [HubspotSDK::Models::Paging]
+        #   @param results [Array<HubSpotSDK::Models::Cms::PublicAuditLog>]
+        #   @param paging [HubSpotSDK::Models::Paging]
       end
     end
   end

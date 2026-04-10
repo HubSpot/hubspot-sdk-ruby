@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class PublicSubscriptionTranslation < HubspotSDK::Internal::Type::BaseModel
+      class PublicSubscriptionTranslation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CommunicationPreferences::PublicSubscriptionTranslation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::CommunicationPreferences::PublicSubscriptionTranslation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

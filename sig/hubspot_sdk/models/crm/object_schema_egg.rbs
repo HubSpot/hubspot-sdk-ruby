@@ -1,13 +1,13 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type object_schema_egg =
         {
           allows_sensitive_properties: bool,
           associated_objects: ::Array[String],
-          labels: HubspotSDK::ObjectTypeDefinitionLabels,
+          labels: HubSpotSDK::ObjectTypeDefinitionLabels,
           name: String,
-          properties: ::Array[HubspotSDK::Crm::ObjectTypePropertyCreate],
+          properties: ::Array[HubSpotSDK::Crm::ObjectTypePropertyCreate],
           required_properties: ::Array[String],
           searchable_properties: ::Array[String],
           secondary_display_properties: ::Array[String],
@@ -15,16 +15,16 @@ module HubspotSDK
           primary_display_property: String
         }
 
-      class ObjectSchemaEgg < HubspotSDK::Internal::Type::BaseModel
+      class ObjectSchemaEgg < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor allows_sensitive_properties: bool
 
         attr_accessor associated_objects: ::Array[String]
 
-        attr_accessor labels: HubspotSDK::ObjectTypeDefinitionLabels
+        attr_accessor labels: HubSpotSDK::ObjectTypeDefinitionLabels
 
         attr_accessor name: String
 
-        attr_accessor properties: ::Array[HubspotSDK::Crm::ObjectTypePropertyCreate]
+        attr_accessor properties: ::Array[HubSpotSDK::Crm::ObjectTypePropertyCreate]
 
         attr_accessor required_properties: ::Array[String]
 
@@ -43,9 +43,9 @@ module HubspotSDK
         def initialize: (
           allows_sensitive_properties: bool,
           associated_objects: ::Array[String],
-          labels: HubspotSDK::ObjectTypeDefinitionLabels,
+          labels: HubSpotSDK::ObjectTypeDefinitionLabels,
           name: String,
-          properties: ::Array[HubspotSDK::Crm::ObjectTypePropertyCreate],
+          properties: ::Array[HubSpotSDK::Crm::ObjectTypePropertyCreate],
           required_properties: ::Array[String],
           searchable_properties: ::Array[String],
           secondary_display_properties: ::Array[String],
@@ -56,9 +56,9 @@ module HubspotSDK
         def to_hash: -> {
           allows_sensitive_properties: bool,
           associated_objects: ::Array[String],
-          labels: HubspotSDK::ObjectTypeDefinitionLabels,
+          labels: HubSpotSDK::ObjectTypeDefinitionLabels,
           name: String,
-          properties: ::Array[HubspotSDK::Crm::ObjectTypePropertyCreate],
+          properties: ::Array[HubSpotSDK::Crm::ObjectTypePropertyCreate],
           required_properties: ::Array[String],
           searchable_properties: ::Array[String],
           secondary_display_properties: ::Array[String],

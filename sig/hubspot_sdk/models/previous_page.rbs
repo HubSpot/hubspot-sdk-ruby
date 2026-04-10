@@ -1,8 +1,8 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type previous_page = { before: String, link: String }
 
-    class PreviousPage < HubspotSDK::Internal::Type::BaseModel
+    class PreviousPage < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor before: String
 
       attr_reader link: String?

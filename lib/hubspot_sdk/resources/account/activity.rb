@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Account
       class Activity
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Account::ActivityListAuditLogsParams} for more details.
+        # {HubSpotSDK::Models::Account::ActivityListAuditLogsParams} for more details.
         #
         # Retrieve activity history for user actions related to approvals, content
         # updates, CRM object updates, security activity, and more (Enterprise only).
@@ -28,14 +28,14 @@ module HubspotSDK
         #
         # @param sort [Array<String>]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Account::PublicAPIUserActionEvent>]
+        # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Account::PublicAPIUserActionEvent>]
         #
-        # @see HubspotSDK::Models::Account::ActivityListAuditLogsParams
+        # @see HubSpotSDK::Models::Account::ActivityListAuditLogsParams
         def list_audit_logs(params = {})
-          parsed, options = HubspotSDK::Account::ActivityListAuditLogsParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Account::ActivityListAuditLogsParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "account-info/2026-03/activity/audit-logs",
@@ -45,14 +45,14 @@ module HubspotSDK
               occurred_after: "occurredAfter",
               occurred_before: "occurredBefore"
             ),
-            page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Account::PublicAPIUserActionEvent,
+            page: HubSpotSDK::Internal::Page,
+            model: HubSpotSDK::Account::PublicAPIUserActionEvent,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Account::ActivityListLoginActivitiesParams} for more
+        # {HubSpotSDK::Models::Account::ActivityListLoginActivitiesParams} for more
         # details.
         #
         # Retrieve logs of user actions related to
@@ -66,26 +66,26 @@ module HubspotSDK
         #
         # @param user_id [Integer]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Account::PublicLoginAudit>]
+        # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Account::PublicLoginAudit>]
         #
-        # @see HubspotSDK::Models::Account::ActivityListLoginActivitiesParams
+        # @see HubSpotSDK::Models::Account::ActivityListLoginActivitiesParams
         def list_login_activities(params = {})
-          parsed, options = HubspotSDK::Account::ActivityListLoginActivitiesParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Account::ActivityListLoginActivitiesParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "account-info/2026-03/activity/login",
             query: query.transform_keys(user_id: "userId"),
-            page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Account::PublicLoginAudit,
+            page: HubSpotSDK::Internal::Page,
+            model: HubSpotSDK::Account::PublicLoginAudit,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Account::ActivityListSecurityActivitiesParams} for more
+        # {HubSpotSDK::Models::Account::ActivityListSecurityActivitiesParams} for more
         # details.
         #
         # Retrieve logs of user actions related to
@@ -103,14 +103,14 @@ module HubspotSDK
         #
         # @param user_id [Integer]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Account::HydratedCriticalAction>]
+        # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Account::HydratedCriticalAction>]
         #
-        # @see HubspotSDK::Models::Account::ActivityListSecurityActivitiesParams
+        # @see HubSpotSDK::Models::Account::ActivityListSecurityActivitiesParams
         def list_security_activities(params = {})
-          parsed, options = HubspotSDK::Account::ActivityListSecurityActivitiesParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Account::ActivityListSecurityActivitiesParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "account-info/2026-03/activity/security",
@@ -119,15 +119,15 @@ module HubspotSDK
               to_timestamp: "toTimestamp",
               user_id: "userId"
             ),
-            page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Account::HydratedCriticalAction,
+            page: HubSpotSDK::Internal::Page,
+            model: HubSpotSDK::Account::HydratedCriticalAction,
             options: options
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
         end

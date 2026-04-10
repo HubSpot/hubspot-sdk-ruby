@@ -1,29 +1,29 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class CollectionResponsePublicCampaignAssetForwardPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponsePublicCampaignAssetForwardPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #   An array of public campaign assets. Each item in the array is a reference to a
         #   PublicCampaignAsset object.
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::PublicCampaignAsset>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicCampaignAsset] }
+        #   @return [Array<HubSpotSDK::Models::Marketing::PublicCampaignAsset>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::PublicCampaignAsset] }
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::ForwardPaging, nil]
-        optional :paging, -> { HubspotSDK::ForwardPaging }
+        #   @return [HubSpotSDK::Models::ForwardPaging, nil]
+        optional :paging, -> { HubSpotSDK::ForwardPaging }
 
         # @!method initialize(results:, paging: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::CollectionResponsePublicCampaignAssetForwardPaging}
+        #   {HubSpotSDK::Models::Marketing::CollectionResponsePublicCampaignAssetForwardPaging}
         #   for more details.
         #
-        #   @param results [Array<HubspotSDK::Models::Marketing::PublicCampaignAsset>] An array of public campaign assets. Each item in the array is a reference to a P
+        #   @param results [Array<HubSpotSDK::Models::Marketing::PublicCampaignAsset>] An array of public campaign assets. Each item in the array is a reference to a P
         #
-        #   @param paging [HubspotSDK::Models::ForwardPaging]
+        #   @param paging [HubSpotSDK::Models::ForwardPaging]
       end
     end
   end

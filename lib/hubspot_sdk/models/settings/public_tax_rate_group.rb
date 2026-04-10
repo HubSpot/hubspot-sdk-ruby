@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      # @see HubspotSDK::Resources::Settings::TaxRates#list
-      class PublicTaxRateGroup < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Settings::TaxRates#list
+      class PublicTaxRateGroup < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the tax rate.
         #
@@ -15,7 +15,7 @@ module HubspotSDK
         #   Indicates whether the tax rate group is currently active.
         #
         #   @return [Boolean]
-        required :active, HubspotSDK::Internal::Type::Boolean
+        required :active, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute created_at
         #   The date and time when the tax rate was created.

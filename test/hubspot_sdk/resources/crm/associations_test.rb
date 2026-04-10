@@ -2,7 +2,7 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::AssociationsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::AssociationsTest < HubSpotSDK::Test::ResourceTest
   def test_list_required_params
     skip("Mock server tests are disabled")
 
@@ -10,19 +10,19 @@ class HubspotSDK::Test::Resources::Crm::AssociationsTest < HubspotSDK::Test::Res
       @hubspot.crm.associations.list("toObjectType", object_type: "objectType", object_id_: "objectId")
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Crm::MultiAssociatedObjectWithLabel
+      row => HubSpotSDK::Crm::MultiAssociatedObjectWithLabel
     end
 
     assert_pattern do
       row => {
-        association_types: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::AssociationSpecWithLabel]),
+        association_types: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::AssociationSpecWithLabel]),
         to_object_id: String
       }
     end
@@ -50,12 +50,12 @@ class HubspotSDK::Test::Resources::Crm::AssociationsTest < HubspotSDK::Test::Res
     response = @hubspot.crm.associations.request_high_usage_report(0)
 
     assert_pattern do
-      response => HubspotSDK::Crm::ReportCreationResponse
+      response => HubSpotSDK::Crm::ReportCreationResponse
     end
 
     assert_pattern do
       response => {
-        enqueue_time: HubspotSDK::Crm::DateTime,
+        enqueue_time: HubSpotSDK::Crm::DateTime,
         user_email: String,
         user_id: Integer
       }
@@ -76,14 +76,14 @@ class HubspotSDK::Test::Resources::Crm::AssociationsTest < HubspotSDK::Test::Res
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
+      response => HubSpotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::SimplePublicObject]),
         total: Integer,
-        paging: HubspotSDK::Paging | nil
+        paging: HubSpotSDK::Paging | nil
       }
     end
   end
@@ -101,14 +101,14 @@ class HubspotSDK::Test::Resources::Crm::AssociationsTest < HubspotSDK::Test::Res
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::LabelsBetweenObjectPair
+      response => HubSpotSDK::Crm::LabelsBetweenObjectPair
     end
 
     assert_pattern do
       response => {
         from_object_id: String,
         from_object_type_id: String,
-        labels: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
+        labels: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
         to_object_id: String,
         to_object_type_id: String
       }

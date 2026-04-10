@@ -1,24 +1,24 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type public_sender =
         {
           actor_id: String,
-          delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
+          delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier,
           name: String,
           sender_field: String
         }
 
-      class PublicSender < HubspotSDK::Internal::Type::BaseModel
+      class PublicSender < HubSpotSDK::Internal::Type::BaseModel
         attr_reader actor_id: String?
 
         def actor_id=: (String) -> String
 
-        attr_reader delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier?
+        attr_reader delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier?
 
         def delivery_identifier=: (
-          HubspotSDK::Conversations::PublicDeliveryIdentifier
-        ) -> HubspotSDK::Conversations::PublicDeliveryIdentifier
+          HubSpotSDK::Conversations::PublicDeliveryIdentifier
+        ) -> HubSpotSDK::Conversations::PublicDeliveryIdentifier
 
         attr_reader name: String?
 
@@ -30,14 +30,14 @@ module HubspotSDK
 
         def initialize: (
           ?actor_id: String,
-          ?delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
+          ?delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier,
           ?name: String,
           ?sender_field: String
         ) -> void
 
         def to_hash: -> {
           actor_id: String,
-          delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
+          delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier,
           name: String,
           sender_field: String
         }

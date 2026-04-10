@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        class BlogAuthor < HubspotSDK::Internal::Type::BaseModel
+        class BlogAuthor < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute id
           #   The unique ID of the Blog Author.
           #
@@ -63,8 +63,8 @@ module HubspotSDK
           # @!attribute language
           #   The explicitly defined ISO 639 language code of the blog author.
           #
-          #   @return [Symbol, HubspotSDK::Models::Cms::Blogs::BlogAuthor::Language]
-          required :language, enum: -> { HubspotSDK::Cms::Blogs::BlogAuthor::Language }
+          #   @return [Symbol, HubSpotSDK::Models::Cms::Blogs::BlogAuthor::Language]
+          required :language, enum: -> { HubSpotSDK::Cms::Blogs::BlogAuthor::Language }
 
           # @!attribute linkedin
           #   URL to the blog author's LinkedIn page.
@@ -114,7 +114,7 @@ module HubspotSDK
 
           # @!method initialize(id:, avatar:, bio:, created:, deleted_at:, display_name:, email:, facebook:, full_name:, language:, linkedin:, name:, slug:, translated_from_id:, twitter:, updated:, website:)
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Cms::Blogs::BlogAuthor} for more details.
+          #   {HubSpotSDK::Models::Cms::Blogs::BlogAuthor} for more details.
           #
           #   @param id [String] The unique ID of the Blog Author.
           #
@@ -134,7 +134,7 @@ module HubspotSDK
           #
           #   @param full_name [String] The full, unabbreviated name of the blog author, typically their first and last
           #
-          #   @param language [Symbol, HubspotSDK::Models::Cms::Blogs::BlogAuthor::Language] The explicitly defined ISO 639 language code of the blog author.
+          #   @param language [Symbol, HubSpotSDK::Models::Cms::Blogs::BlogAuthor::Language] The explicitly defined ISO 639 language code of the blog author.
           #
           #   @param linkedin [String] URL to the blog author's LinkedIn page.
           #
@@ -152,9 +152,9 @@ module HubspotSDK
 
           # The explicitly defined ISO 639 language code of the blog author.
           #
-          # @see HubspotSDK::Models::Cms::Blogs::BlogAuthor#language
+          # @see HubSpotSDK::Models::Cms::Blogs::BlogAuthor#language
           module Language
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             AA = :aa
             AB = :ab

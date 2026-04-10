@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Domains
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Cms::DomainListParams} for more details.
+        # {HubSpotSDK::Models::Cms::DomainListParams} for more details.
         #
         # @overload list(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
         #
@@ -29,14 +29,14 @@ module HubspotSDK
         #
         # @param updated_before [Time]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::Domain>]
+        # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Cms::Domain>]
         #
-        # @see HubspotSDK::Models::Cms::DomainListParams
+        # @see HubSpotSDK::Models::Cms::DomainListParams
         def list(params = {})
-          parsed, options = HubspotSDK::Cms::DomainListParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Cms::DomainListParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "cms/domains/2026-03",
@@ -48,8 +48,8 @@ module HubspotSDK
               updated_at: "updatedAt",
               updated_before: "updatedBefore"
             ),
-            page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Cms::Domain,
+            page: HubSpotSDK::Internal::Page,
+            model: HubSpotSDK::Cms::Domain,
             options: options
           )
         end
@@ -59,23 +59,23 @@ module HubspotSDK
         # @overload get(domain_id, request_options: {})
         #
         # @param domain_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::Domain]
+        # @return [HubSpotSDK::Models::Cms::Domain]
         #
-        # @see HubspotSDK::Models::Cms::DomainGetParams
+        # @see HubSpotSDK::Models::Cms::DomainGetParams
         def get(domain_id, params = {})
           @client.request(
             method: :get,
             path: ["cms/domains/2026-03/%1$s", domain_id],
-            model: HubspotSDK::Cms::Domain,
+            model: HubSpotSDK::Cms::Domain,
             options: params[:request_options]
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
         end

@@ -1,29 +1,29 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type date_time_property_operation =
         {
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::DateTimePropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::DateTimePropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::DateTimePropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::DateTimePropertyOperation::property_type,
           requires_time_zone_conversion: bool,
           timestamp: Integer,
           default_value: String,
           render_spec: String
         }
 
-      class DateTimePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class DateTimePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor include_objects_with_no_value_set: bool
 
         attr_accessor operation_type: String
 
-        attr_accessor operator: HubspotSDK::Models::Events::DateTimePropertyOperation::operator
+        attr_accessor operator: HubSpotSDK::Models::Events::DateTimePropertyOperation::operator
 
         attr_accessor operator_name: String
 
-        attr_accessor property_type: HubspotSDK::Models::Events::DateTimePropertyOperation::property_type
+        attr_accessor property_type: HubSpotSDK::Models::Events::DateTimePropertyOperation::property_type
 
         attr_accessor requires_time_zone_conversion: bool
 
@@ -40,9 +40,9 @@ module HubspotSDK
         def initialize: (
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::DateTimePropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::DateTimePropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::DateTimePropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::DateTimePropertyOperation::property_type,
           requires_time_zone_conversion: bool,
           timestamp: Integer,
           ?default_value: String,
@@ -52,9 +52,9 @@ module HubspotSDK
         def to_hash: -> {
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::DateTimePropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::DateTimePropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::DateTimePropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::DateTimePropertyOperation::property_type,
           requires_time_zone_conversion: bool,
           timestamp: Integer,
           default_value: String,
@@ -69,7 +69,7 @@ module HubspotSDK
           | :IS_EQUAL_TO
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           IS_AFTER: :IS_AFTER
           IS_AFTER_DATE: :IS_AFTER_DATE
@@ -77,17 +77,17 @@ module HubspotSDK
           IS_BEFORE_DATE: :IS_BEFORE_DATE
           IS_EQUAL_TO: :IS_EQUAL_TO
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::DateTimePropertyOperation::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::DateTimePropertyOperation::operator]
         end
 
         type property_type = :datetime
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DATETIME: :datetime
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::DateTimePropertyOperation::property_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::DateTimePropertyOperation::property_type]
         end
       end
     end

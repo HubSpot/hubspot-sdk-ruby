@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Events
       class Occurrences
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Events::OccurrenceListParams} for more details.
+        # {HubSpotSDK::Models::Events::OccurrenceListParams} for more details.
         #
         # Retrieve event occurrences for the specified time frame. This endpoint allows
         # filtering by various parameters such as object type, event type, and occurrence
@@ -25,7 +25,7 @@ module HubspotSDK
         #
         # @param object_id_ [Integer]
         #
-        # @param object_property [HubspotSDK::Models::Events::OccurrenceListParams::ObjectProperty]
+        # @param object_property [HubSpotSDK::Models::Events::OccurrenceListParams::ObjectProperty]
         #
         # @param object_type [String]
         #
@@ -35,18 +35,18 @@ module HubspotSDK
         #
         # @param properties [Array<String>]
         #
-        # @param property [HubspotSDK::Models::Events::OccurrenceListParams::Property]
+        # @param property [HubSpotSDK::Models::Events::OccurrenceListParams::Property]
         #
         # @param sort [Array<String>]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Events::ExternalUnifiedEvent>]
+        # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Events::ExternalUnifiedEvent>]
         #
-        # @see HubspotSDK::Models::Events::OccurrenceListParams
+        # @see HubSpotSDK::Models::Events::OccurrenceListParams
         def list(params = {})
-          parsed, options = HubspotSDK::Events::OccurrenceListParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Events::OccurrenceListParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "events/event-occurrences/2026-03",
@@ -58,8 +58,8 @@ module HubspotSDK
               occurred_after: "occurredAfter",
               occurred_before: "occurredBefore"
             ),
-            page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Events::ExternalUnifiedEvent,
+            page: HubSpotSDK::Internal::Page,
+            model: HubSpotSDK::Events::ExternalUnifiedEvent,
             options: options
           )
         end
@@ -72,23 +72,23 @@ module HubspotSDK
         #
         # @overload list_event_types(request_options: {})
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Events::VisibleExternalEventTypeNames]
+        # @return [HubSpotSDK::Models::Events::VisibleExternalEventTypeNames]
         #
-        # @see HubspotSDK::Models::Events::OccurrenceListEventTypesParams
+        # @see HubSpotSDK::Models::Events::OccurrenceListEventTypesParams
         def list_event_types(params = {})
           @client.request(
             method: :get,
             path: "events/event-occurrences/2026-03/event-types",
-            model: HubspotSDK::Events::VisibleExternalEventTypeNames,
+            model: HubSpotSDK::Events::VisibleExternalEventTypeNames,
             options: params[:request_options]
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
         end

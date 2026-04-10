@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_calendar_meeting_event_response_properties =
         {
-          hs_engagement_source: HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_engagement_source,
+          hs_engagement_source: HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_engagement_source,
           hs_engagement_source_id: String,
           hs_meeting_end_time: Time,
           hs_meeting_outcome: String,
@@ -18,13 +18,13 @@ module HubspotSDK
           hs_meeting_body: String,
           hs_meeting_external_url: String,
           hs_meeting_location: String,
-          hs_meeting_location_type: HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_meeting_location_type,
+          hs_meeting_location_type: HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_meeting_location_type,
           hs_unique_id: String,
           hubspot_owner_id: String
         }
 
-      class ExternalCalendarMeetingEventResponseProperties < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor hs_engagement_source: HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_engagement_source
+      class ExternalCalendarMeetingEventResponseProperties < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor hs_engagement_source: HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_engagement_source
 
         attr_accessor hs_engagement_source_id: String
 
@@ -70,11 +70,11 @@ module HubspotSDK
 
         def hs_meeting_location=: (String) -> String
 
-        attr_reader hs_meeting_location_type: HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_meeting_location_type?
+        attr_reader hs_meeting_location_type: HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_meeting_location_type?
 
         def hs_meeting_location_type=: (
-          HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_meeting_location_type
-        ) -> HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_meeting_location_type
+          HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_meeting_location_type
+        ) -> HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_meeting_location_type
 
         attr_reader hs_unique_id: String?
 
@@ -85,7 +85,7 @@ module HubspotSDK
         def hubspot_owner_id=: (String) -> String
 
         def initialize: (
-          hs_engagement_source: HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_engagement_source,
+          hs_engagement_source: HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_engagement_source,
           hs_engagement_source_id: String,
           hs_meeting_end_time: Time,
           hs_meeting_outcome: String,
@@ -100,13 +100,13 @@ module HubspotSDK
           ?hs_meeting_body: String,
           ?hs_meeting_external_url: String,
           ?hs_meeting_location: String,
-          ?hs_meeting_location_type: HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_meeting_location_type,
+          ?hs_meeting_location_type: HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_meeting_location_type,
           ?hs_unique_id: String,
           ?hubspot_owner_id: String
         ) -> void
 
         def to_hash: -> {
-          hs_engagement_source: HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_engagement_source,
+          hs_engagement_source: HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_engagement_source,
           hs_engagement_source_id: String,
           hs_meeting_end_time: Time,
           hs_meeting_outcome: String,
@@ -121,7 +121,7 @@ module HubspotSDK
           hs_meeting_body: String,
           hs_meeting_external_url: String,
           hs_meeting_location: String,
-          hs_meeting_location_type: HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_meeting_location_type,
+          hs_meeting_location_type: HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_meeting_location_type,
           hs_unique_id: String,
           hubspot_owner_id: String
         }
@@ -242,7 +242,7 @@ module HubspotSDK
           | :WORKFLOWS
 
         module HsEngagementSource
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ACADEMY: :ACADEMY
           ACCEPTANCE_TEST: :ACCEPTANCE_TEST
@@ -358,19 +358,19 @@ module HubspotSDK
           WORKFLOW_CONTACT_DELETE_ACTION: :WORKFLOW_CONTACT_DELETE_ACTION
           WORKFLOWS: :WORKFLOWS
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_engagement_source]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_engagement_source]
         end
 
         type hs_meeting_location_type = :ADDRESS | :CUSTOM | :PHONE
 
         module HsMeetingLocationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ADDRESS: :ADDRESS
           CUSTOM: :CUSTOM
           PHONE: :PHONE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_meeting_location_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::hs_meeting_location_type]
         end
       end
     end

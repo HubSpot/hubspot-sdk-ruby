@@ -1,12 +1,12 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type definition_update_params =
-        { event_name: String } & HubspotSDK::Internal::Type::request_parameters
+        { event_name: String } & HubSpotSDK::Internal::Type::request_parameters
 
-      class DefinitionUpdateParams < HubspotSDK::Models::Events::ExternalBehavioralEventTypeDefinitionPatch
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class DefinitionUpdateParams < HubSpotSDK::Models::Events::ExternalBehavioralEventTypeDefinitionPatch
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         def event_name: -> String
 
@@ -14,12 +14,12 @@ module HubspotSDK
 
         def initialize: (
           event_name: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           event_name: String,
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
       end
     end

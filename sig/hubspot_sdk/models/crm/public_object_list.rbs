@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_object_list =
@@ -12,16 +12,16 @@ module HubspotSDK
           created_at: Time,
           created_by_id: String,
           deleted_at: Time,
-          filter_branch: HubspotSDK::Models::Crm::PublicObjectList::filter_branch,
+          filter_branch: HubSpotSDK::Models::Crm::PublicObjectList::filter_branch,
           filters_updated_at: Time,
-          list_permissions: HubspotSDK::Crm::PublicListPermissions,
-          membership_settings: HubspotSDK::Crm::PublicMembershipSettings,
+          list_permissions: HubSpotSDK::Crm::PublicListPermissions,
+          membership_settings: HubSpotSDK::Crm::PublicMembershipSettings,
           size: Integer,
           updated_at: Time,
           updated_by_id: String
         }
 
-      class PublicObjectList < HubspotSDK::Internal::Type::BaseModel
+      class PublicObjectList < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor list_id: String
 
         attr_accessor list_version: Integer
@@ -46,27 +46,27 @@ module HubspotSDK
 
         def deleted_at=: (Time) -> Time
 
-        attr_reader filter_branch: HubspotSDK::Models::Crm::PublicObjectList::filter_branch?
+        attr_reader filter_branch: HubSpotSDK::Models::Crm::PublicObjectList::filter_branch?
 
         def filter_branch=: (
-          HubspotSDK::Models::Crm::PublicObjectList::filter_branch
-        ) -> HubspotSDK::Models::Crm::PublicObjectList::filter_branch
+          HubSpotSDK::Models::Crm::PublicObjectList::filter_branch
+        ) -> HubSpotSDK::Models::Crm::PublicObjectList::filter_branch
 
         attr_reader filters_updated_at: Time?
 
         def filters_updated_at=: (Time) -> Time
 
-        attr_reader list_permissions: HubspotSDK::Crm::PublicListPermissions?
+        attr_reader list_permissions: HubSpotSDK::Crm::PublicListPermissions?
 
         def list_permissions=: (
-          HubspotSDK::Crm::PublicListPermissions
-        ) -> HubspotSDK::Crm::PublicListPermissions
+          HubSpotSDK::Crm::PublicListPermissions
+        ) -> HubSpotSDK::Crm::PublicListPermissions
 
-        attr_reader membership_settings: HubspotSDK::Crm::PublicMembershipSettings?
+        attr_reader membership_settings: HubSpotSDK::Crm::PublicMembershipSettings?
 
         def membership_settings=: (
-          HubspotSDK::Crm::PublicMembershipSettings
-        ) -> HubspotSDK::Crm::PublicMembershipSettings
+          HubSpotSDK::Crm::PublicMembershipSettings
+        ) -> HubSpotSDK::Crm::PublicMembershipSettings
 
         attr_reader size: Integer?
 
@@ -90,10 +90,10 @@ module HubspotSDK
           ?created_at: Time,
           ?created_by_id: String,
           ?deleted_at: Time,
-          ?filter_branch: HubspotSDK::Models::Crm::PublicObjectList::filter_branch,
+          ?filter_branch: HubSpotSDK::Models::Crm::PublicObjectList::filter_branch,
           ?filters_updated_at: Time,
-          ?list_permissions: HubspotSDK::Crm::PublicListPermissions,
-          ?membership_settings: HubspotSDK::Crm::PublicMembershipSettings,
+          ?list_permissions: HubSpotSDK::Crm::PublicListPermissions,
+          ?membership_settings: HubSpotSDK::Crm::PublicMembershipSettings,
           ?size: Integer,
           ?updated_at: Time,
           ?updated_by_id: String
@@ -109,29 +109,29 @@ module HubspotSDK
           created_at: Time,
           created_by_id: String,
           deleted_at: Time,
-          filter_branch: HubspotSDK::Models::Crm::PublicObjectList::filter_branch,
+          filter_branch: HubSpotSDK::Models::Crm::PublicObjectList::filter_branch,
           filters_updated_at: Time,
-          list_permissions: HubspotSDK::Crm::PublicListPermissions,
-          membership_settings: HubspotSDK::Crm::PublicMembershipSettings,
+          list_permissions: HubSpotSDK::Crm::PublicListPermissions,
+          membership_settings: HubSpotSDK::Crm::PublicMembershipSettings,
           size: Integer,
           updated_at: Time,
           updated_by_id: String
         }
 
         type filter_branch =
-          HubspotSDK::Crm::PublicOrFilterBranch
-          | HubspotSDK::Crm::PublicAndFilterBranch
-          | HubspotSDK::Crm::PublicNotAllFilterBranch
-          | HubspotSDK::Crm::PublicNotAnyFilterBranch
-          | HubspotSDK::Crm::PublicRestrictedFilterBranch
-          | HubspotSDK::Crm::PublicUnifiedEventsFilterBranch
-          | HubspotSDK::Crm::PublicPropertyAssociationFilterBranch
-          | HubspotSDK::Crm::PublicAssociationFilterBranch
+          HubSpotSDK::Crm::PublicOrFilterBranch
+          | HubSpotSDK::Crm::PublicAndFilterBranch
+          | HubSpotSDK::Crm::PublicNotAllFilterBranch
+          | HubSpotSDK::Crm::PublicNotAnyFilterBranch
+          | HubSpotSDK::Crm::PublicRestrictedFilterBranch
+          | HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch
+          | HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch
+          | HubSpotSDK::Crm::PublicAssociationFilterBranch
 
         module FilterBranch
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicObjectList::filter_branch]
+          def self?.variants: -> ::Array[HubSpotSDK::Models::Crm::PublicObjectList::filter_branch]
         end
       end
     end

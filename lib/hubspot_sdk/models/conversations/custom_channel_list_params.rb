@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      # @see HubspotSDK::Resources::Conversations::CustomChannels#list
-      class CustomChannelListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Conversations::CustomChannels#list
+      class CustomChannelListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute after
         #   The paging cursor token of the last successfully read resource will be returned
@@ -30,11 +30,11 @@ module HubspotSDK
         # @!attribute sort
         #
         #   @return [Array<String>, nil]
-        optional :sort, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :sort, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!method initialize(after: nil, default_page_length: nil, limit: nil, sort: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Conversations::CustomChannelListParams} for more details.
+        #   {HubSpotSDK::Models::Conversations::CustomChannelListParams} for more details.
         #
         #   @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
@@ -44,7 +44,7 @@ module HubspotSDK
         #
         #   @param sort [Array<String>]
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

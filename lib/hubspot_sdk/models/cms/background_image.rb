@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class BackgroundImage < HubspotSDK::Internal::Type::BaseModel
+      class BackgroundImage < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute background_position
         #   Defines the position of the background image.
         #

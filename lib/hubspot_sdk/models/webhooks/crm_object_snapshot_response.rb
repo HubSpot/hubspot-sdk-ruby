@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class CrmObjectSnapshotResponse < HubspotSDK::Internal::Type::BaseModel
+      class CrmObjectSnapshotResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute object_id_
         #
         #   @return [Integer]

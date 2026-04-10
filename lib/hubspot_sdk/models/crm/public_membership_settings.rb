@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicMembershipSettings < HubspotSDK::Internal::Type::BaseModel
+      class PublicMembershipSettings < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute include_unassigned
         #   Indicates whether unassigned memberships should be included.
         #
         #   @return [Boolean, nil]
-        optional :include_unassigned, HubspotSDK::Internal::Type::Boolean, api_name: :includeUnassigned
+        optional :include_unassigned, HubSpotSDK::Internal::Type::Boolean, api_name: :includeUnassigned
 
         # @!attribute membership_team_id
         #   The ID of the team associated with the membership.

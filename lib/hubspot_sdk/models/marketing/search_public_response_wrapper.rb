@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class SearchPublicResponseWrapper < HubspotSDK::Internal::Type::BaseModel
+      class SearchPublicResponseWrapper < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute app_id
         #   The ID of the source application of the marketing event
         #

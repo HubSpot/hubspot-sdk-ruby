@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class LinkGenerationRequest < HubspotSDK::Internal::Type::BaseModel
+      class LinkGenerationRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CommunicationPreferences::LinkGenerationRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::CommunicationPreferences::LinkGenerationRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

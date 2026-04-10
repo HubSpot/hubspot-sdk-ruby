@@ -1,17 +1,17 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type quick_reply =
         {
           value: String,
-          value_type: HubspotSDK::Models::Conversations::QuickReply::value_type,
+          value_type: HubSpotSDK::Models::Conversations::QuickReply::value_type,
           label: String
         }
 
-      class QuickReply < HubspotSDK::Internal::Type::BaseModel
+      class QuickReply < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor value: String
 
-        attr_accessor value_type: HubspotSDK::Models::Conversations::QuickReply::value_type
+        attr_accessor value_type: HubSpotSDK::Models::Conversations::QuickReply::value_type
 
         attr_reader label: String?
 
@@ -19,25 +19,25 @@ module HubspotSDK
 
         def initialize: (
           value: String,
-          value_type: HubspotSDK::Models::Conversations::QuickReply::value_type,
+          value_type: HubSpotSDK::Models::Conversations::QuickReply::value_type,
           ?label: String
         ) -> void
 
         def to_hash: -> {
           value: String,
-          value_type: HubspotSDK::Models::Conversations::QuickReply::value_type,
+          value_type: HubSpotSDK::Models::Conversations::QuickReply::value_type,
           label: String
         }
 
         type value_type = :TEXT | :URL
 
         module ValueType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TEXT: :TEXT
           URL: :URL
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::QuickReply::value_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Conversations::QuickReply::value_type]
         end
       end
     end

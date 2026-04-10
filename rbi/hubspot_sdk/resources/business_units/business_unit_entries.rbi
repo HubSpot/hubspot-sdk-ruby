@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class BusinessUnits
       class BusinessUnitEntries
@@ -10,9 +10,9 @@ module HubspotSDK
             user_id: String,
             name: T::Array[String],
             properties: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::BusinessUnits::CollectionResponsePublicBusinessUnitNoPaging
+            HubSpotSDK::BusinessUnits::CollectionResponsePublicBusinessUnitNoPaging
           )
         end
         def get_by_user_id(
@@ -24,7 +24,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

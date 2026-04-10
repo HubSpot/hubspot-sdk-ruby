@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalLinkMetadata < HubspotSDK::Internal::Type::BaseModel
+      class ExternalLinkMetadata < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the meeting link.
         #
@@ -20,7 +20,7 @@ module HubspotSDK
         #   Whether the meeting link is the user's default link.
         #
         #   @return [Boolean]
-        required :default_link, HubspotSDK::Internal::Type::Boolean, api_name: :defaultLink
+        required :default_link, HubSpotSDK::Internal::Type::Boolean, api_name: :defaultLink
 
         # @!attribute link
         #   The URL of the meeting link.
@@ -44,14 +44,14 @@ module HubspotSDK
         #   The type of the external meeting link. Accepted values are: PERSONAL_LINK,
         #   GROUP_CALENDAR, ROUND_ROBIN_CALENDAR.
         #
-        #   @return [Symbol, HubspotSDK::Models::Scheduler::ExternalLinkMetadata::Type]
-        required :type, enum: -> { HubspotSDK::Scheduler::ExternalLinkMetadata::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Scheduler::ExternalLinkMetadata::Type]
+        required :type, enum: -> { HubSpotSDK::Scheduler::ExternalLinkMetadata::Type }
 
         # @!attribute user_ids_of_link_members
         #
         #   @return [Array<String>]
         required :user_ids_of_link_members,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :userIdsOfLinkMembers
 
         # @!attribute name
@@ -68,7 +68,7 @@ module HubspotSDK
 
         # @!method initialize(id:, created_at:, default_link:, link:, organizer_user_id:, slug:, type:, user_ids_of_link_members:, name: nil, updated_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Scheduler::ExternalLinkMetadata} for more details.
+        #   {HubSpotSDK::Models::Scheduler::ExternalLinkMetadata} for more details.
         #
         #   @param id [String] The unique identifier for the meeting link.
         #
@@ -82,7 +82,7 @@ module HubspotSDK
         #
         #   @param slug [String] The slug of the meeting link, located directly after the domain in the URL.
         #
-        #   @param type [Symbol, HubspotSDK::Models::Scheduler::ExternalLinkMetadata::Type] The type of the external meeting link. Accepted values are: PERSONAL_LINK, GROUP
+        #   @param type [Symbol, HubSpotSDK::Models::Scheduler::ExternalLinkMetadata::Type] The type of the external meeting link. Accepted values are: PERSONAL_LINK, GROUP
         #
         #   @param user_ids_of_link_members [Array<String>]
         #
@@ -93,9 +93,9 @@ module HubspotSDK
         # The type of the external meeting link. Accepted values are: PERSONAL_LINK,
         # GROUP_CALENDAR, ROUND_ROBIN_CALENDAR.
         #
-        # @see HubspotSDK::Models::Scheduler::ExternalLinkMetadata#type
+        # @see HubSpotSDK::Models::Scheduler::ExternalLinkMetadata#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           GROUP_CALENDAR = :GROUP_CALENDAR
           PERSONAL_LINK = :PERSONAL_LINK

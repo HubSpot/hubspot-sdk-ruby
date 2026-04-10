@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class FileAssetSearchParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class FileAssetSearchParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Files::FileAssetSearchParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Files::FileAssetSearchParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -273,7 +273,7 @@ module HubspotSDK
             width: Integer,
             width_gte: Integer,
             width_lte: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -360,7 +360,7 @@ module HubspotSDK
               width: Integer,
               width_gte: Integer,
               width_lte: Integer,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end

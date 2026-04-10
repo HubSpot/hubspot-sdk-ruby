@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicNumOccurrencesRefineBy < HubspotSDK::Internal::Type::BaseModel
+      class PublicNumOccurrencesRefineBy < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # The type of refinement (NUM_OCCURRENCES).
         sig do
-          returns(HubspotSDK::Crm::PublicNumOccurrencesRefineBy::Type::OrSymbol)
+          returns(HubSpotSDK::Crm::PublicNumOccurrencesRefineBy::Type::OrSymbol)
         end
         attr_accessor :type
 
@@ -34,7 +34,7 @@ module HubspotSDK
 
         sig do
           params(
-            type: HubspotSDK::Crm::PublicNumOccurrencesRefineBy::Type::OrSymbol,
+            type: HubSpotSDK::Crm::PublicNumOccurrencesRefineBy::Type::OrSymbol,
             max_occurrences: Integer,
             min_occurrences: Integer
           ).returns(T.attached_class)
@@ -53,7 +53,7 @@ module HubspotSDK
           override.returns(
             {
               type:
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy::Type::OrSymbol,
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy::Type::OrSymbol,
               max_occurrences: Integer,
               min_occurrences: Integer
             }
@@ -64,24 +64,24 @@ module HubspotSDK
 
         # The type of refinement (NUM_OCCURRENCES).
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PublicNumOccurrencesRefineBy::Type)
+              T.all(Symbol, HubSpotSDK::Crm::PublicNumOccurrencesRefineBy::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           NUM_OCCURRENCES =
             T.let(
               :NUM_OCCURRENCES,
-              HubspotSDK::Crm::PublicNumOccurrencesRefineBy::Type::TaggedSymbol
+              HubSpotSDK::Crm::PublicNumOccurrencesRefineBy::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy::Type::TaggedSymbol
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy::Type::TaggedSymbol
               ]
             )
           end

@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Meta
-      class IPRange < HubspotSDK::Internal::Type::BaseModel
+      class IPRange < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Meta::IPRange, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Meta::IPRange, HubSpotSDK::Internal::AnyHash)
           end
 
         # The CIDR notation representing the IP range.
@@ -18,20 +18,20 @@ module HubspotSDK
         attr_accessor :description
 
         # The direction of the IP traffic, which can be INGRESS or EGRESS.
-        sig { returns(HubspotSDK::Meta::IPRange::Direction::TaggedSymbol) }
+        sig { returns(HubSpotSDK::Meta::IPRange::Direction::TaggedSymbol) }
         attr_accessor :direction
 
         # The service associated with the IP range, such as EMAIL, API, DNS, or
         # WEB_SCRAPING.
-        sig { returns(HubspotSDK::Meta::IPRange::Service::TaggedSymbol) }
+        sig { returns(HubSpotSDK::Meta::IPRange::Service::TaggedSymbol) }
         attr_accessor :service
 
         sig do
           params(
             cidr: String,
             description: String,
-            direction: HubspotSDK::Meta::IPRange::Direction::OrSymbol,
-            service: HubspotSDK::Meta::IPRange::Service::OrSymbol
+            direction: HubSpotSDK::Meta::IPRange::Direction::OrSymbol,
+            service: HubSpotSDK::Meta::IPRange::Service::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -52,8 +52,8 @@ module HubspotSDK
             {
               cidr: String,
               description: String,
-              direction: HubspotSDK::Meta::IPRange::Direction::TaggedSymbol,
-              service: HubspotSDK::Meta::IPRange::Service::TaggedSymbol
+              direction: HubSpotSDK::Meta::IPRange::Direction::TaggedSymbol,
+              service: HubSpotSDK::Meta::IPRange::Service::TaggedSymbol
             }
           )
         end
@@ -62,20 +62,20 @@ module HubspotSDK
 
         # The direction of the IP traffic, which can be INGRESS or EGRESS.
         module Direction
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
-            T.type_alias { T.all(Symbol, HubspotSDK::Meta::IPRange::Direction) }
+            T.type_alias { T.all(Symbol, HubSpotSDK::Meta::IPRange::Direction) }
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           EGRESS =
-            T.let(:EGRESS, HubspotSDK::Meta::IPRange::Direction::TaggedSymbol)
+            T.let(:EGRESS, HubSpotSDK::Meta::IPRange::Direction::TaggedSymbol)
           INGRESS =
-            T.let(:INGRESS, HubspotSDK::Meta::IPRange::Direction::TaggedSymbol)
+            T.let(:INGRESS, HubSpotSDK::Meta::IPRange::Direction::TaggedSymbol)
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Meta::IPRange::Direction::TaggedSymbol]
+              T::Array[HubSpotSDK::Meta::IPRange::Direction::TaggedSymbol]
             )
           end
           def self.values
@@ -85,30 +85,30 @@ module HubspotSDK
         # The service associated with the IP range, such as EMAIL, API, DNS, or
         # WEB_SCRAPING.
         module Service
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
-            T.type_alias { T.all(Symbol, HubspotSDK::Meta::IPRange::Service) }
+            T.type_alias { T.all(Symbol, HubSpotSDK::Meta::IPRange::Service) }
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          API = T.let(:API, HubspotSDK::Meta::IPRange::Service::TaggedSymbol)
-          DNS = T.let(:DNS, HubspotSDK::Meta::IPRange::Service::TaggedSymbol)
+          API = T.let(:API, HubSpotSDK::Meta::IPRange::Service::TaggedSymbol)
+          DNS = T.let(:DNS, HubSpotSDK::Meta::IPRange::Service::TaggedSymbol)
           EMAIL =
-            T.let(:EMAIL, HubspotSDK::Meta::IPRange::Service::TaggedSymbol)
+            T.let(:EMAIL, HubSpotSDK::Meta::IPRange::Service::TaggedSymbol)
           TEST_SERVICE =
             T.let(
               :TEST_SERVICE,
-              HubspotSDK::Meta::IPRange::Service::TaggedSymbol
+              HubSpotSDK::Meta::IPRange::Service::TaggedSymbol
             )
           WEB_SCRAPING =
             T.let(
               :WEB_SCRAPING,
-              HubspotSDK::Meta::IPRange::Service::TaggedSymbol
+              HubSpotSDK::Meta::IPRange::Service::TaggedSymbol
             )
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Meta::IPRange::Service::TaggedSymbol]
+              T::Array[HubSpotSDK::Meta::IPRange::Service::TaggedSymbol]
             )
           end
           def self.values

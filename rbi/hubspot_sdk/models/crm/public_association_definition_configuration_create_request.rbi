@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicAssociationDefinitionConfigurationCreateRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicAssociationDefinitionConfigurationCreateRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,7 +16,7 @@ module HubspotSDK
         # INTEGRATOR_DEFINED, or USER_DEFINED.
         sig do
           returns(
-            HubspotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category::OrSymbol
+            HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category::OrSymbol
           )
         end
         attr_accessor :category
@@ -34,7 +34,7 @@ module HubspotSDK
         sig do
           params(
             category:
-              HubspotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category::OrSymbol,
+              HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category::OrSymbol,
             max_to_object_ids: Integer,
             type_id: Integer
           ).returns(T.attached_class)
@@ -56,7 +56,7 @@ module HubspotSDK
           override.returns(
             {
               category:
-                HubspotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category::OrSymbol,
+                HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category::OrSymbol,
               max_to_object_ids: Integer,
               type_id: Integer
             }
@@ -68,13 +68,13 @@ module HubspotSDK
         # Specifies the category of the association, which can be HUBSPOT_DEFINED,
         # INTEGRATOR_DEFINED, or USER_DEFINED.
         module Category
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category
+                HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -82,28 +82,28 @@ module HubspotSDK
           HUBSPOT_DEFINED =
             T.let(
               :HUBSPOT_DEFINED,
-              HubspotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category::TaggedSymbol
+              HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category::TaggedSymbol
             )
           INTEGRATOR_DEFINED =
             T.let(
               :INTEGRATOR_DEFINED,
-              HubspotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category::TaggedSymbol
+              HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category::TaggedSymbol
             )
           USER_DEFINED =
             T.let(
               :USER_DEFINED,
-              HubspotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category::TaggedSymbol
+              HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category::TaggedSymbol
             )
           WORK =
             T.let(
               :WORK,
-              HubspotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category::TaggedSymbol
+              HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category::TaggedSymbol
+                HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::Category::TaggedSymbol
               ]
             )
           end

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module BusinessUnits
-      class PublicBusinessUnit < HubspotSDK::Internal::Type::BaseModel
+      class PublicBusinessUnit < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::BusinessUnits::PublicBusinessUnit,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::BusinessUnits::PublicBusinessUnit,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -22,7 +22,7 @@ module HubspotSDK
 
         sig do
           returns(
-            T.nilable(HubspotSDK::BusinessUnits::PublicBusinessUnitLogoMetadata)
+            T.nilable(HubSpotSDK::BusinessUnits::PublicBusinessUnitLogoMetadata)
           )
         end
         attr_reader :logo_metadata
@@ -30,7 +30,7 @@ module HubspotSDK
         sig do
           params(
             logo_metadata:
-              HubspotSDK::BusinessUnits::PublicBusinessUnitLogoMetadata::OrHash
+              HubSpotSDK::BusinessUnits::PublicBusinessUnitLogoMetadata::OrHash
           ).void
         end
         attr_writer :logo_metadata
@@ -40,7 +40,7 @@ module HubspotSDK
             id: String,
             name: String,
             logo_metadata:
-              HubspotSDK::BusinessUnits::PublicBusinessUnitLogoMetadata::OrHash
+              HubSpotSDK::BusinessUnits::PublicBusinessUnitLogoMetadata::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -58,7 +58,7 @@ module HubspotSDK
               id: String,
               name: String,
               logo_metadata:
-                HubspotSDK::BusinessUnits::PublicBusinessUnitLogoMetadata
+                HubSpotSDK::BusinessUnits::PublicBusinessUnitLogoMetadata
             }
           )
         end

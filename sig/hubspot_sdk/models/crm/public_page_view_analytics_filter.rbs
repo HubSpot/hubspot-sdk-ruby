@@ -1,99 +1,99 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_page_view_analytics_filter =
         {
-          filter_type: HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter::filter_type,
+          filter_type: HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter::filter_type,
           operator: String,
           page_url: String,
-          coalescing_refine_by: HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter::coalescing_refine_by,
+          coalescing_refine_by: HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter::coalescing_refine_by,
           enable_tracking: bool,
-          pruning_refine_by: HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter::pruning_refine_by
+          pruning_refine_by: HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter::pruning_refine_by
         }
 
-      class PublicPageViewAnalyticsFilter < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor filter_type: HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter::filter_type
+      class PublicPageViewAnalyticsFilter < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor filter_type: HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter::filter_type
 
         attr_accessor operator: String
 
         attr_accessor page_url: String
 
-        attr_reader coalescing_refine_by: HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter::coalescing_refine_by?
+        attr_reader coalescing_refine_by: HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter::coalescing_refine_by?
 
         def coalescing_refine_by=: (
-          HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter::coalescing_refine_by
-        ) -> HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter::coalescing_refine_by
+          HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter::coalescing_refine_by
+        ) -> HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter::coalescing_refine_by
 
         attr_reader enable_tracking: bool?
 
         def enable_tracking=: (bool) -> bool
 
-        attr_reader pruning_refine_by: HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter::pruning_refine_by?
+        attr_reader pruning_refine_by: HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter::pruning_refine_by?
 
         def pruning_refine_by=: (
-          HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter::pruning_refine_by
-        ) -> HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter::pruning_refine_by
+          HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter::pruning_refine_by
+        ) -> HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter::pruning_refine_by
 
         def initialize: (
-          filter_type: HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter::filter_type,
+          filter_type: HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter::filter_type,
           operator: String,
           page_url: String,
-          ?coalescing_refine_by: HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter::coalescing_refine_by,
+          ?coalescing_refine_by: HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter::coalescing_refine_by,
           ?enable_tracking: bool,
-          ?pruning_refine_by: HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter::pruning_refine_by
+          ?pruning_refine_by: HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter::pruning_refine_by
         ) -> void
 
         def to_hash: -> {
-          filter_type: HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter::filter_type,
+          filter_type: HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter::filter_type,
           operator: String,
           page_url: String,
-          coalescing_refine_by: HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter::coalescing_refine_by,
+          coalescing_refine_by: HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter::coalescing_refine_by,
           enable_tracking: bool,
-          pruning_refine_by: HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter::pruning_refine_by
+          pruning_refine_by: HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter::pruning_refine_by
         }
 
         type filter_type = :PAGE_VIEW
 
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           PAGE_VIEW: :PAGE_VIEW
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter::filter_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter::filter_type]
         end
 
         type coalescing_refine_by =
-          HubspotSDK::Crm::PublicNumOccurrencesRefineBy
-          | HubspotSDK::Crm::PublicSetOccurrencesRefineBy
-          | HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy
-          | HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy
-          | HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy
-          | HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy
-          | HubspotSDK::Crm::PublicAllHistoryRefineBy
-          | HubspotSDK::Crm::PublicTimePointOperation
-          | HubspotSDK::Crm::PublicRangedTimeOperation
+          HubSpotSDK::Crm::PublicNumOccurrencesRefineBy
+          | HubSpotSDK::Crm::PublicSetOccurrencesRefineBy
+          | HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy
+          | HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy
+          | HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy
+          | HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy
+          | HubSpotSDK::Crm::PublicAllHistoryRefineBy
+          | HubSpotSDK::Crm::PublicTimePointOperation
+          | HubSpotSDK::Crm::PublicRangedTimeOperation
 
         module CoalescingRefineBy
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter::coalescing_refine_by]
+          def self?.variants: -> ::Array[HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter::coalescing_refine_by]
         end
 
         type pruning_refine_by =
-          HubspotSDK::Crm::PublicNumOccurrencesRefineBy
-          | HubspotSDK::Crm::PublicSetOccurrencesRefineBy
-          | HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy
-          | HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy
-          | HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy
-          | HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy
-          | HubspotSDK::Crm::PublicAllHistoryRefineBy
-          | HubspotSDK::Crm::PublicTimePointOperation
-          | HubspotSDK::Crm::PublicRangedTimeOperation
+          HubSpotSDK::Crm::PublicNumOccurrencesRefineBy
+          | HubSpotSDK::Crm::PublicSetOccurrencesRefineBy
+          | HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy
+          | HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy
+          | HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy
+          | HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy
+          | HubSpotSDK::Crm::PublicAllHistoryRefineBy
+          | HubSpotSDK::Crm::PublicTimePointOperation
+          | HubSpotSDK::Crm::PublicRangedTimeOperation
 
         module PruningRefineBy
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter::pruning_refine_by]
+          def self?.variants: -> ::Array[HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter::pruning_refine_by]
         end
       end
     end

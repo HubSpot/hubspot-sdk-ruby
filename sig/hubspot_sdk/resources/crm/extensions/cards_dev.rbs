@@ -1,57 +1,57 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Extensions
         class CardsDev
           def create: (
             Integer app_id,
-            actions: HubspotSDK::Crm::Extensions::CardActions,
-            display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
-            fetch: HubspotSDK::Crm::Extensions::CardFetchBody,
+            actions: HubSpotSDK::Crm::Extensions::CardActions,
+            display_: HubSpotSDK::Crm::Extensions::CardDisplayBody,
+            fetch: HubSpotSDK::Crm::Extensions::CardFetchBody,
             title: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::Extensions::PublicCardResponse
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::Extensions::PublicCardResponse
 
           def update: (
             String card_id,
             app_id: Integer,
-            ?actions: HubspotSDK::Crm::Extensions::CardActions,
-            ?display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
-            ?fetch: HubspotSDK::Crm::Extensions::CardFetchBodyPatch,
+            ?actions: HubSpotSDK::Crm::Extensions::CardActions,
+            ?display_: HubSpotSDK::Crm::Extensions::CardDisplayBody,
+            ?fetch: HubSpotSDK::Crm::Extensions::CardFetchBodyPatch,
             ?title: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::Extensions::PublicCardResponse
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::Extensions::PublicCardResponse
 
           def delete: (
             String card_id,
             app_id: Integer,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def get: (
             Integer app_id,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::Extensions::PublicCardListResponse
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::Extensions::PublicCardListResponse
 
           def get_by_id: (
             String card_id,
             app_id: Integer,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::Extensions::PublicCardResponse
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::Extensions::PublicCardResponse
 
           def get_sample_response: (
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::Extensions::IntegratorCardPayloadResponse
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::Extensions::IntegratorCardPayloadResponse
 
           def migrate_views: (
             Integer app_id,
             app_card_id: Integer,
             legacy_crm_card_id: Integer,
             ?helpdesk_app_card_id: Integer,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::Extensions::CardMigrateViewsResponse
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::Extensions::CardMigrateViewsResponse
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

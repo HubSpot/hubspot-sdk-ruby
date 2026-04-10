@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Cms::Pages::FoldersTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Cms::Pages::FoldersTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
@@ -18,7 +18,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::FoldersTest < HubspotSDK::Test::R
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::ContentFolder
+      response => HubSpotSDK::Cms::ContentFolder
     end
 
     assert_pattern do
@@ -50,7 +50,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::FoldersTest < HubspotSDK::Test::R
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::ContentFolder
+      response => HubSpotSDK::Cms::ContentFolder
     end
 
     assert_pattern do
@@ -72,14 +72,14 @@ class HubspotSDK::Test::Resources::Cms::Pages::FoldersTest < HubspotSDK::Test::R
     response = @hubspot.cms.pages.folders.list
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Cms::ContentFolder
+      row => HubSpotSDK::Cms::ContentFolder
     end
 
     assert_pattern do
@@ -111,16 +111,16 @@ class HubspotSDK::Test::Resources::Cms::Pages::FoldersTest < HubspotSDK::Test::R
     response = @hubspot.cms.pages.folders.batch_get(inputs: ["string"])
 
     assert_pattern do
-      response => HubspotSDK::Cms::BatchResponseContentFolder
+      response => HubSpotSDK::Cms::BatchResponseContentFolder
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ContentFolder]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::ContentFolder]),
         started_at: Time,
-        status: HubspotSDK::Cms::BatchResponseContentFolder::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Cms::BatchResponseContentFolder::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -132,7 +132,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::FoldersTest < HubspotSDK::Test::R
     response = @hubspot.cms.pages.folders.get("objectId")
 
     assert_pattern do
-      response => HubspotSDK::Cms::ContentFolder
+      response => HubSpotSDK::Cms::ContentFolder
     end
 
     assert_pattern do
@@ -154,15 +154,15 @@ class HubspotSDK::Test::Resources::Cms::Pages::FoldersTest < HubspotSDK::Test::R
     response = @hubspot.cms.pages.folders.get_revision("revisionId", object_id_: "objectId")
 
     assert_pattern do
-      response => HubspotSDK::Cms::ContentFolderVersion
+      response => HubSpotSDK::Cms::ContentFolderVersion
     end
 
     assert_pattern do
       response => {
         id: String,
-        object: HubspotSDK::Cms::ContentFolder,
+        object: HubSpotSDK::Cms::ContentFolder,
         updated_at: Time,
-        user: HubspotSDK::VersionUser
+        user: HubSpotSDK::VersionUser
       }
     end
   end
@@ -173,22 +173,22 @@ class HubspotSDK::Test::Resources::Cms::Pages::FoldersTest < HubspotSDK::Test::R
     response = @hubspot.cms.pages.folders.list_revisions("objectId")
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Cms::ContentFolderVersion
+      row => HubSpotSDK::Cms::ContentFolderVersion
     end
 
     assert_pattern do
       row => {
         id: String,
-        object: HubspotSDK::Cms::ContentFolder,
+        object: HubSpotSDK::Cms::ContentFolder,
         updated_at: Time,
-        user: HubspotSDK::VersionUser
+        user: HubSpotSDK::VersionUser
       }
     end
   end
@@ -199,7 +199,7 @@ class HubspotSDK::Test::Resources::Cms::Pages::FoldersTest < HubspotSDK::Test::R
     response = @hubspot.cms.pages.folders.restore_revision("revisionId", object_id_: "objectId")
 
     assert_pattern do
-      response => HubspotSDK::Cms::ContentFolder
+      response => HubSpotSDK::Cms::ContentFolder
     end
 
     assert_pattern do

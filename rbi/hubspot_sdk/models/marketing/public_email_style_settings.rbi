@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicEmailStyleSettings < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailStyleSettings < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::PublicEmailStyleSettings,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::PublicEmailStyleSettings,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -27,7 +27,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType::OrSymbol
+              HubSpotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType::OrSymbol
             )
           )
         end
@@ -36,7 +36,7 @@ module HubspotSDK
         sig do
           params(
             background_image_type:
-              HubspotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType::OrSymbol
+              HubSpotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType::OrSymbol
           ).void
         end
         attr_writer :background_image_type
@@ -66,14 +66,14 @@ module HubspotSDK
         attr_writer :body_color
 
         sig do
-          returns(T.nilable(HubspotSDK::Marketing::PublicButtonStyleSettings))
+          returns(T.nilable(HubSpotSDK::Marketing::PublicButtonStyleSettings))
         end
         attr_reader :button_style_settings
 
         sig do
           params(
             button_style_settings:
-              HubspotSDK::Marketing::PublicButtonStyleSettings::OrHash
+              HubSpotSDK::Marketing::PublicButtonStyleSettings::OrHash
           ).void
         end
         attr_writer :button_style_settings
@@ -115,14 +115,14 @@ module HubspotSDK
         attr_writer :color_picker_favorite6
 
         sig do
-          returns(T.nilable(HubspotSDK::Marketing::PublicDividerStyleSettings))
+          returns(T.nilable(HubSpotSDK::Marketing::PublicDividerStyleSettings))
         end
         attr_reader :divider_style_settings
 
         sig do
           params(
             divider_style_settings:
-              HubspotSDK::Marketing::PublicDividerStyleSettings::OrHash
+              HubSpotSDK::Marketing::PublicDividerStyleSettings::OrHash
           ).void
         end
         attr_writer :divider_style_settings
@@ -139,32 +139,32 @@ module HubspotSDK
         sig { params(email_body_width: String).void }
         attr_writer :email_body_width
 
-        sig { returns(T.nilable(HubspotSDK::Marketing::PublicFontStyle)) }
+        sig { returns(T.nilable(HubSpotSDK::Marketing::PublicFontStyle)) }
         attr_reader :heading_one_font
 
         sig do
           params(
-            heading_one_font: HubspotSDK::Marketing::PublicFontStyle::OrHash
+            heading_one_font: HubSpotSDK::Marketing::PublicFontStyle::OrHash
           ).void
         end
         attr_writer :heading_one_font
 
-        sig { returns(T.nilable(HubspotSDK::Marketing::PublicFontStyle)) }
+        sig { returns(T.nilable(HubSpotSDK::Marketing::PublicFontStyle)) }
         attr_reader :heading_two_font
 
         sig do
           params(
-            heading_two_font: HubspotSDK::Marketing::PublicFontStyle::OrHash
+            heading_two_font: HubSpotSDK::Marketing::PublicFontStyle::OrHash
           ).void
         end
         attr_writer :heading_two_font
 
-        sig { returns(T.nilable(HubspotSDK::Marketing::PublicFontStyle)) }
+        sig { returns(T.nilable(HubSpotSDK::Marketing::PublicFontStyle)) }
         attr_reader :links_font
 
         sig do
           params(
-            links_font: HubspotSDK::Marketing::PublicFontStyle::OrHash
+            links_font: HubSpotSDK::Marketing::PublicFontStyle::OrHash
           ).void
         end
         attr_writer :links_font
@@ -234,13 +234,13 @@ module HubspotSDK
             background_color: String,
             background_image: String,
             background_image_type:
-              HubspotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType::OrSymbol,
+              HubSpotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType::OrSymbol,
             body_border_color: String,
             body_border_color_choice: String,
             body_border_width: Float,
             body_color: String,
             button_style_settings:
-              HubspotSDK::Marketing::PublicButtonStyleSettings::OrHash,
+              HubSpotSDK::Marketing::PublicButtonStyleSettings::OrHash,
             color_picker_favorite1: String,
             color_picker_favorite2: String,
             color_picker_favorite3: String,
@@ -248,12 +248,12 @@ module HubspotSDK
             color_picker_favorite5: String,
             color_picker_favorite6: String,
             divider_style_settings:
-              HubspotSDK::Marketing::PublicDividerStyleSettings::OrHash,
+              HubSpotSDK::Marketing::PublicDividerStyleSettings::OrHash,
             email_body_padding: String,
             email_body_width: String,
-            heading_one_font: HubspotSDK::Marketing::PublicFontStyle::OrHash,
-            heading_two_font: HubspotSDK::Marketing::PublicFontStyle::OrHash,
-            links_font: HubspotSDK::Marketing::PublicFontStyle::OrHash,
+            heading_one_font: HubSpotSDK::Marketing::PublicFontStyle::OrHash,
+            heading_two_font: HubSpotSDK::Marketing::PublicFontStyle::OrHash,
+            links_font: HubSpotSDK::Marketing::PublicFontStyle::OrHash,
             primary_accent_color: String,
             primary_font: String,
             primary_font_color: String,
@@ -306,13 +306,13 @@ module HubspotSDK
               background_color: String,
               background_image: String,
               background_image_type:
-                HubspotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType::OrSymbol,
+                HubSpotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType::OrSymbol,
               body_border_color: String,
               body_border_color_choice: String,
               body_border_width: Float,
               body_color: String,
               button_style_settings:
-                HubspotSDK::Marketing::PublicButtonStyleSettings,
+                HubSpotSDK::Marketing::PublicButtonStyleSettings,
               color_picker_favorite1: String,
               color_picker_favorite2: String,
               color_picker_favorite3: String,
@@ -320,12 +320,12 @@ module HubspotSDK
               color_picker_favorite5: String,
               color_picker_favorite6: String,
               divider_style_settings:
-                HubspotSDK::Marketing::PublicDividerStyleSettings,
+                HubSpotSDK::Marketing::PublicDividerStyleSettings,
               email_body_padding: String,
               email_body_width: String,
-              heading_one_font: HubspotSDK::Marketing::PublicFontStyle,
-              heading_two_font: HubspotSDK::Marketing::PublicFontStyle,
-              links_font: HubspotSDK::Marketing::PublicFontStyle,
+              heading_one_font: HubSpotSDK::Marketing::PublicFontStyle,
+              heading_two_font: HubSpotSDK::Marketing::PublicFontStyle,
+              links_font: HubSpotSDK::Marketing::PublicFontStyle,
               primary_accent_color: String,
               primary_font: String,
               primary_font_color: String,
@@ -343,13 +343,13 @@ module HubspotSDK
         end
 
         module BackgroundImageType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType
+                HubSpotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -357,23 +357,23 @@ module HubspotSDK
           REPEAT =
             T.let(
               :REPEAT,
-              HubspotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType::TaggedSymbol
+              HubSpotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType::TaggedSymbol
             )
           SINGLE =
             T.let(
               :SINGLE,
-              HubspotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType::TaggedSymbol
+              HubSpotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType::TaggedSymbol
             )
           STRETCH =
             T.let(
               :STRETCH,
-              HubspotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType::TaggedSymbol
+              HubSpotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType::TaggedSymbol
+                HubSpotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType::TaggedSymbol
               ]
             )
           end

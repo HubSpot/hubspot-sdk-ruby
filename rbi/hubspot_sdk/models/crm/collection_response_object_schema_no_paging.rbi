@@ -1,30 +1,30 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class CollectionResponseObjectSchemaNoPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseObjectSchemaNoPaging < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::CollectionResponseObjectSchemaNoPaging,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::CollectionResponseObjectSchemaNoPaging,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Crm::ObjectSchema]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::ObjectSchema]) }
         attr_accessor :results
 
         sig do
           params(
-            results: T::Array[HubspotSDK::Crm::ObjectSchema::OrHash]
+            results: T::Array[HubSpotSDK::Crm::ObjectSchema::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(results:)
         end
 
         sig do
-          override.returns({ results: T::Array[HubspotSDK::Crm::ObjectSchema] })
+          override.returns({ results: T::Array[HubSpotSDK::Crm::ObjectSchema] })
         end
         def to_hash
         end

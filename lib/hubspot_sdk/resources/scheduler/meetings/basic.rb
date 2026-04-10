@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Scheduler
       class Meetings
         class Basic
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Scheduler::Meetings::BasicListParams} for more details.
+          # {HubSpotSDK::Models::Scheduler::Meetings::BasicListParams} for more details.
           #
           # Get a paged list meeting scheduling pages
           #
@@ -20,22 +20,22 @@ module HubspotSDK
           #
           # @param organizer_user_id [String]
           #
-          # @param type [Symbol, HubspotSDK::Models::Scheduler::Meetings::BasicListParams::Type]
+          # @param type [Symbol, HubSpotSDK::Models::Scheduler::Meetings::BasicListParams::Type]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Scheduler::ExternalLinkMetadata>]
+          # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Scheduler::ExternalLinkMetadata>]
           #
-          # @see HubspotSDK::Models::Scheduler::Meetings::BasicListParams
+          # @see HubSpotSDK::Models::Scheduler::Meetings::BasicListParams
           def list(params = {})
-            parsed, options = HubspotSDK::Scheduler::Meetings::BasicListParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Scheduler::Meetings::BasicListParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "scheduler/2026-03/meetings/meeting-links",
               query: query.transform_keys(organizer_user_id: "organizerUserId"),
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Scheduler::ExternalLinkMetadata,
+              page: HubSpotSDK::Internal::Page,
+              model: HubSpotSDK::Scheduler::ExternalLinkMetadata,
               options: options
             )
           end
@@ -47,19 +47,19 @@ module HubspotSDK
           # @param slug [String]
           # @param timezone [String]
           # @param month_offset [Integer]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Scheduler::ExternalLinkAvailabilityAndBusyTimes]
+          # @return [HubSpotSDK::Models::Scheduler::ExternalLinkAvailabilityAndBusyTimes]
           #
-          # @see HubspotSDK::Models::Scheduler::Meetings::BasicGetAvailabilityBySlugParams
+          # @see HubSpotSDK::Models::Scheduler::Meetings::BasicGetAvailabilityBySlugParams
           def get_availability_by_slug(slug, params)
-            parsed, options = HubspotSDK::Scheduler::Meetings::BasicGetAvailabilityBySlugParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Scheduler::Meetings::BasicGetAvailabilityBySlugParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["scheduler/2026-03/meetings/meeting-links/book/availability-page/%1$s", slug],
               query: query.transform_keys(month_offset: "monthOffset"),
-              model: HubspotSDK::Scheduler::ExternalLinkAvailabilityAndBusyTimes,
+              model: HubSpotSDK::Scheduler::ExternalLinkAvailabilityAndBusyTimes,
               options: options
             )
           end
@@ -70,26 +70,26 @@ module HubspotSDK
           #
           # @param slug [String]
           # @param timezone [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Scheduler::ExternalBookingInfo]
+          # @return [HubSpotSDK::Models::Scheduler::ExternalBookingInfo]
           #
-          # @see HubspotSDK::Models::Scheduler::Meetings::BasicGetBookingInfoBySlugParams
+          # @see HubSpotSDK::Models::Scheduler::Meetings::BasicGetBookingInfoBySlugParams
           def get_booking_info_by_slug(slug, params)
-            parsed, options = HubspotSDK::Scheduler::Meetings::BasicGetBookingInfoBySlugParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Scheduler::Meetings::BasicGetBookingInfoBySlugParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["scheduler/2026-03/meetings/meeting-links/book/%1$s", slug],
               query: query,
-              model: HubspotSDK::Scheduler::ExternalBookingInfo,
+              model: HubSpotSDK::Scheduler::ExternalBookingInfo,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

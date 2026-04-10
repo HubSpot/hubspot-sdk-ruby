@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::FeatureFlags#list_portals
-      class PortalFlagStateBatchResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::FeatureFlags#list_portals
+      class PortalFlagStateBatchResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute portal_flag_states
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PortalFlagStateResponse>]
+        #   @return [Array<HubSpotSDK::Models::Crm::PortalFlagStateResponse>]
         required :portal_flag_states,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PortalFlagStateResponse] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PortalFlagStateResponse] },
                  api_name: :portalFlagStates
 
         # @!method initialize(portal_flag_states:)
-        #   @param portal_flag_states [Array<HubspotSDK::Models::Crm::PortalFlagStateResponse>]
+        #   @param portal_flag_states [Array<HubSpotSDK::Models::Crm::PortalFlagStateResponse>]
       end
     end
   end

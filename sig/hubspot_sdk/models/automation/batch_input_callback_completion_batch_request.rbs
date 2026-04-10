@@ -1,20 +1,20 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type batch_input_callback_completion_batch_request =
         {
-          inputs: ::Array[HubspotSDK::Automation::CallbackCompletionBatchRequest]
+          inputs: ::Array[HubSpotSDK::Automation::CallbackCompletionBatchRequest]
         }
 
-      class BatchInputCallbackCompletionBatchRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor inputs: ::Array[HubspotSDK::Automation::CallbackCompletionBatchRequest]
+      class BatchInputCallbackCompletionBatchRequest < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubSpotSDK::Automation::CallbackCompletionBatchRequest]
 
         def initialize: (
-          inputs: ::Array[HubspotSDK::Automation::CallbackCompletionBatchRequest]
+          inputs: ::Array[HubSpotSDK::Automation::CallbackCompletionBatchRequest]
         ) -> void
 
         def to_hash: -> {
-          inputs: ::Array[HubspotSDK::Automation::CallbackCompletionBatchRequest]
+          inputs: ::Array[HubSpotSDK::Automation::CallbackCompletionBatchRequest]
         }
       end
     end

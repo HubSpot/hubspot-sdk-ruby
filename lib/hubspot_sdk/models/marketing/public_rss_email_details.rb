@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicRssEmailDetails < HubspotSDK::Internal::Type::BaseModel
+      class PublicRssEmailDetails < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute blog_email_type
         #
         #   @return [String, nil]
@@ -16,9 +16,9 @@ module HubspotSDK
 
         # @!attribute blog_layout
         #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::PublicRssEmailDetails::BlogLayout, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Marketing::PublicRssEmailDetails::BlogLayout, nil]
         optional :blog_layout,
-                 enum: -> { HubspotSDK::Marketing::PublicRssEmailDetails::BlogLayout },
+                 enum: -> { HubSpotSDK::Marketing::PublicRssEmailDetails::BlogLayout },
                  api_name: :blogLayout
 
         # @!attribute hubspot_blog_id
@@ -39,7 +39,7 @@ module HubspotSDK
         # @!attribute timing
         #
         #   @return [Hash{Symbol=>Object}, nil]
-        optional :timing, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]
+        optional :timing, HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown]
 
         # @!attribute url
         #
@@ -50,13 +50,13 @@ module HubspotSDK
         #
         #   @return [Boolean, nil]
         optional :use_headline_as_subject,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :useHeadlineAsSubject
 
         # @!method initialize(blog_email_type: nil, blog_image_max_width: nil, blog_layout: nil, hubspot_blog_id: nil, max_entries: nil, rss_entry_template: nil, timing: nil, url: nil, use_headline_as_subject: nil)
         #   @param blog_email_type [String]
         #   @param blog_image_max_width [Integer]
-        #   @param blog_layout [Symbol, HubspotSDK::Models::Marketing::PublicRssEmailDetails::BlogLayout]
+        #   @param blog_layout [Symbol, HubSpotSDK::Models::Marketing::PublicRssEmailDetails::BlogLayout]
         #   @param hubspot_blog_id [String]
         #   @param max_entries [Integer]
         #   @param rss_entry_template [String]
@@ -64,9 +64,9 @@ module HubspotSDK
         #   @param url [String]
         #   @param use_headline_as_subject [Boolean]
 
-        # @see HubspotSDK::Models::Marketing::PublicRssEmailDetails#blog_layout
+        # @see HubSpotSDK::Models::Marketing::PublicRssEmailDetails#blog_layout
         module BlogLayout
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           FULL_POST = :FULL_POST
           SUMMARY_NO_FEATURED_IMAGE = :SUMMARY_NO_FEATURED_IMAGE

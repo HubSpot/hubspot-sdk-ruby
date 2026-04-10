@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       class BlogAuthorCloneRequestVNext = Blogs::BlogAuthorCloneRequestVNext
@@ -7,15 +7,15 @@ module HubspotSDK
         type blog_author_clone_request_v_next =
           {
             id: String,
-            blog_author: HubspotSDK::Cms::Blogs::BlogAuthor,
+            blog_author: HubSpotSDK::Cms::Blogs::BlogAuthor,
             language: String,
             primary_language: String
           }
 
-        class BlogAuthorCloneRequestVNext < HubspotSDK::Internal::Type::BaseModel
+        class BlogAuthorCloneRequestVNext < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor id: String
 
-          attr_accessor blog_author: HubspotSDK::Cms::Blogs::BlogAuthor
+          attr_accessor blog_author: HubSpotSDK::Cms::Blogs::BlogAuthor
 
           attr_reader language: String?
 
@@ -27,14 +27,14 @@ module HubspotSDK
 
           def initialize: (
             id: String,
-            blog_author: HubspotSDK::Cms::Blogs::BlogAuthor,
+            blog_author: HubSpotSDK::Cms::Blogs::BlogAuthor,
             ?language: String,
             ?primary_language: String
           ) -> void
 
           def to_hash: -> {
             id: String,
-            blog_author: HubspotSDK::Cms::Blogs::BlogAuthor,
+            blog_author: HubSpotSDK::Cms::Blogs::BlogAuthor,
             language: String,
             primary_language: String
           }

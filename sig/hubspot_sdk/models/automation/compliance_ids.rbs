@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type compliance_ids =
         {
-          contact_ids: ::Array[HubspotSDK::Automation::ContactID],
+          contact_ids: ::Array[HubSpotSDK::Automation::ContactID],
           portal_ids: ::Array[Integer],
           user_ids: ::Array[Integer],
           no_contact_id_reason: String,
@@ -11,8 +11,8 @@ module HubspotSDK
           no_user_id_reason: String
         }
 
-      class ComplianceIDs < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor contact_ids: ::Array[HubspotSDK::Automation::ContactID]
+      class ComplianceIDs < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor contact_ids: ::Array[HubSpotSDK::Automation::ContactID]
 
         attr_accessor portal_ids: ::Array[Integer]
 
@@ -31,7 +31,7 @@ module HubspotSDK
         def no_user_id_reason=: (String) -> String
 
         def initialize: (
-          contact_ids: ::Array[HubspotSDK::Automation::ContactID],
+          contact_ids: ::Array[HubSpotSDK::Automation::ContactID],
           portal_ids: ::Array[Integer],
           user_ids: ::Array[Integer],
           ?no_contact_id_reason: String,
@@ -40,7 +40,7 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
-          contact_ids: ::Array[HubspotSDK::Automation::ContactID],
+          contact_ids: ::Array[HubSpotSDK::Automation::ContactID],
           portal_ids: ::Array[Integer],
           user_ids: ::Array[Integer],
           no_contact_id_reason: String,

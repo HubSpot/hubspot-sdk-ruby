@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ScopeMapping < HubspotSDK::Internal::Type::BaseModel
+      class ScopeMapping < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute access_level
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::ScopeMapping::AccessLevel]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::ScopeMapping::AccessLevel]
         required :access_level,
                  enum: -> {
-                   HubspotSDK::Cms::ScopeMapping::AccessLevel
+                   HubSpotSDK::Cms::ScopeMapping::AccessLevel
                  },
                  api_name: :accessLevel
 
         # @!attribute request_action
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::ScopeMapping::RequestAction]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::ScopeMapping::RequestAction]
         required :request_action,
-                 enum: -> { HubspotSDK::Cms::ScopeMapping::RequestAction },
+                 enum: -> { HubSpotSDK::Cms::ScopeMapping::RequestAction },
                  api_name: :requestAction
 
         # @!attribute scope_name
@@ -26,13 +26,13 @@ module HubspotSDK
         required :scope_name, String, api_name: :scopeName
 
         # @!method initialize(access_level:, request_action:, scope_name:)
-        #   @param access_level [Symbol, HubspotSDK::Models::Cms::ScopeMapping::AccessLevel]
-        #   @param request_action [Symbol, HubspotSDK::Models::Cms::ScopeMapping::RequestAction]
+        #   @param access_level [Symbol, HubSpotSDK::Models::Cms::ScopeMapping::AccessLevel]
+        #   @param request_action [Symbol, HubSpotSDK::Models::Cms::ScopeMapping::RequestAction]
         #   @param scope_name [String]
 
-        # @see HubspotSDK::Models::Cms::ScopeMapping#access_level
+        # @see HubSpotSDK::Models::Cms::ScopeMapping#access_level
         module AccessLevel
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ALL = :ALL
           OWNED = :OWNED
@@ -43,9 +43,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Cms::ScopeMapping#request_action
+        # @see HubSpotSDK::Models::Cms::ScopeMapping#request_action
         module RequestAction
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           COMMUNICATE = :COMMUNICATE
           DELETE = :DELETE

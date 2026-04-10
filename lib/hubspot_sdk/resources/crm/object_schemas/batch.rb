@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class ObjectSchemas
@@ -20,25 +20,25 @@ module HubspotSDK
           #
           # @param inputs [Array<String>]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::CollectionResponseObjectSchemaNoPaging]
+          # @return [HubSpotSDK::Models::Crm::CollectionResponseObjectSchemaNoPaging]
           #
-          # @see HubspotSDK::Models::Crm::ObjectSchemas::BatchGetParams
+          # @see HubSpotSDK::Models::Crm::ObjectSchemas::BatchGetParams
           def get(params)
-            parsed, options = HubspotSDK::Crm::ObjectSchemas::BatchGetParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::ObjectSchemas::BatchGetParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm-object-schemas/2026-03/schemas/batch/read",
               body: parsed,
-              model: HubspotSDK::Crm::CollectionResponseObjectSchemaNoPaging,
+              model: HubSpotSDK::Crm::CollectionResponseObjectSchemaNoPaging,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

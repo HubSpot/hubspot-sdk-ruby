@@ -1,44 +1,44 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       BlogPostVersion = Blogs::BlogPostVersion
 
       module Blogs
-        class BlogPostVersion < HubspotSDK::Internal::Type::BaseModel
+        class BlogPostVersion < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Cms::Blogs::BlogPostVersion,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Cms::Blogs::BlogPostVersion,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
           sig { returns(String) }
           attr_accessor :id
 
-          sig { returns(HubspotSDK::Cms::Blogs::BlogPost) }
+          sig { returns(HubSpotSDK::Cms::Blogs::BlogPost) }
           attr_reader :object
 
-          sig { params(object: HubspotSDK::Cms::Blogs::BlogPost::OrHash).void }
+          sig { params(object: HubSpotSDK::Cms::Blogs::BlogPost::OrHash).void }
           attr_writer :object
 
           sig { returns(Time) }
           attr_accessor :updated_at
 
-          sig { returns(HubspotSDK::VersionUser) }
+          sig { returns(HubSpotSDK::VersionUser) }
           attr_reader :user
 
-          sig { params(user: HubspotSDK::VersionUser::OrHash).void }
+          sig { params(user: HubSpotSDK::VersionUser::OrHash).void }
           attr_writer :user
 
           sig do
             params(
               id: String,
-              object: HubspotSDK::Cms::Blogs::BlogPost::OrHash,
+              object: HubSpotSDK::Cms::Blogs::BlogPost::OrHash,
               updated_at: Time,
-              user: HubspotSDK::VersionUser::OrHash
+              user: HubSpotSDK::VersionUser::OrHash
             ).returns(T.attached_class)
           end
           def self.new(id:, object:, updated_at:, user:)
@@ -48,9 +48,9 @@ module HubspotSDK
             override.returns(
               {
                 id: String,
-                object: HubspotSDK::Cms::Blogs::BlogPost,
+                object: HubSpotSDK::Cms::Blogs::BlogPost,
                 updated_at: Time,
-                user: HubspotSDK::VersionUser
+                user: HubSpotSDK::VersionUser
               }
             )
           end

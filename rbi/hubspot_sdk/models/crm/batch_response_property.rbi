@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchResponseProperty < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseProperty < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::BatchResponseProperty,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::BatchResponseProperty,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,7 +16,7 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :completed_at
 
-        sig { returns(T::Array[HubspotSDK::Crm::Property]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::Property]) }
         attr_accessor :results
 
         # The timestamp indicating when the batch operation began processing.
@@ -26,7 +26,7 @@ module HubspotSDK
         # The current status of the batch operation, with possible values being CANCELED,
         # COMPLETE, PENDING, or PROCESSING.
         sig do
-          returns(HubspotSDK::Crm::BatchResponseProperty::Status::TaggedSymbol)
+          returns(HubSpotSDK::Crm::BatchResponseProperty::Status::TaggedSymbol)
         end
         attr_accessor :status
 
@@ -48,9 +48,9 @@ module HubspotSDK
         sig do
           params(
             completed_at: Time,
-            results: T::Array[HubspotSDK::Crm::Property::OrHash],
+            results: T::Array[HubSpotSDK::Crm::Property::OrHash],
             started_at: Time,
-            status: HubspotSDK::Crm::BatchResponseProperty::Status::OrSymbol,
+            status: HubSpotSDK::Crm::BatchResponseProperty::Status::OrSymbol,
             links: T::Hash[Symbol, String],
             requested_at: Time
           ).returns(T.attached_class)
@@ -76,10 +76,10 @@ module HubspotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubspotSDK::Crm::Property],
+              results: T::Array[HubSpotSDK::Crm::Property],
               started_at: Time,
               status:
-                HubspotSDK::Crm::BatchResponseProperty::Status::TaggedSymbol,
+                HubSpotSDK::Crm::BatchResponseProperty::Status::TaggedSymbol,
               links: T::Hash[Symbol, String],
               requested_at: Time
             }
@@ -91,39 +91,39 @@ module HubspotSDK
         # The current status of the batch operation, with possible values being CANCELED,
         # COMPLETE, PENDING, or PROCESSING.
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::BatchResponseProperty::Status)
+              T.all(Symbol, HubSpotSDK::Crm::BatchResponseProperty::Status)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::Crm::BatchResponseProperty::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponseProperty::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::Crm::BatchResponseProperty::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponseProperty::Status::TaggedSymbol
             )
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::Crm::BatchResponseProperty::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponseProperty::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::Crm::BatchResponseProperty::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponseProperty::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::BatchResponseProperty::Status::TaggedSymbol
+                HubSpotSDK::Crm::BatchResponseProperty::Status::TaggedSymbol
               ]
             )
           end

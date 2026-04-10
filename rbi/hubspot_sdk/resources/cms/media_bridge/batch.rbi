@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class MediaBridge
@@ -10,9 +10,9 @@ module HubspotSDK
             params(
               object_type: String,
               app_id: Integer,
-              inputs: T::Array[HubspotSDK::Cms::PropertyCreate::OrHash],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::BatchResponseProperty)
+              inputs: T::Array[HubSpotSDK::Cms::PropertyCreate::OrHash],
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::BatchResponseProperty)
           end
           def create(
             # Path param
@@ -30,8 +30,8 @@ module HubspotSDK
             params(
               object_type: String,
               app_id: Integer,
-              inputs: T::Array[HubspotSDK::PropertyName::OrHash],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              inputs: T::Array[HubSpotSDK::PropertyName::OrHash],
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete(
@@ -52,10 +52,10 @@ module HubspotSDK
               app_id: Integer,
               archived: T::Boolean,
               data_sensitivity:
-                HubspotSDK::BatchReadInputPropertyName::DataSensitivity::OrSymbol,
-              inputs: T::Array[HubspotSDK::PropertyName::OrHash],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::BatchResponseProperty)
+                HubSpotSDK::BatchReadInputPropertyName::DataSensitivity::OrSymbol,
+              inputs: T::Array[HubSpotSDK::PropertyName::OrHash],
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::BatchResponseProperty)
           end
           def get(
             # Path param
@@ -73,7 +73,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

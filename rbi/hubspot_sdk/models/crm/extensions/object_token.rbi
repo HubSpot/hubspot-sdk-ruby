@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class ObjectToken < HubspotSDK::Internal::Type::BaseModel
+        class ObjectToken < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Extensions::ObjectToken,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Extensions::ObjectToken,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -21,7 +21,7 @@ module HubspotSDK
           sig do
             returns(
               T.nilable(
-                HubspotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
               )
             )
           end
@@ -30,7 +30,7 @@ module HubspotSDK
           sig do
             params(
               data_type:
-                HubspotSDK::Crm::Extensions::ObjectToken::DataType::OrSymbol
+                HubSpotSDK::Crm::Extensions::ObjectToken::DataType::OrSymbol
             ).void
           end
           attr_writer :data_type
@@ -53,7 +53,7 @@ module HubspotSDK
             params(
               value: String,
               data_type:
-                HubspotSDK::Crm::Extensions::ObjectToken::DataType::OrSymbol,
+                HubSpotSDK::Crm::Extensions::ObjectToken::DataType::OrSymbol,
               label: String,
               name: String
             ).returns(T.attached_class)
@@ -75,7 +75,7 @@ module HubspotSDK
               {
                 value: String,
                 data_type:
-                  HubspotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol,
+                  HubSpotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol,
                 label: String,
                 name: String
               }
@@ -86,13 +86,13 @@ module HubspotSDK
 
           # Type of data represented by this property.
           module DataType
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             TaggedSymbol =
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::Crm::Extensions::ObjectToken::DataType
+                  HubSpotSDK::Crm::Extensions::ObjectToken::DataType
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -100,53 +100,53 @@ module HubspotSDK
             BOOLEAN =
               T.let(
                 :BOOLEAN,
-                HubspotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
               )
             CURRENCY =
               T.let(
                 :CURRENCY,
-                HubspotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
               )
             DATE =
               T.let(
                 :DATE,
-                HubspotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
               )
             DATETIME =
               T.let(
                 :DATETIME,
-                HubspotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
               )
             EMAIL =
               T.let(
                 :EMAIL,
-                HubspotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
               )
             LINK =
               T.let(
                 :LINK,
-                HubspotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
               )
             NUMERIC =
               T.let(
                 :NUMERIC,
-                HubspotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
               )
             STATUS =
               T.let(
                 :STATUS,
-                HubspotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
               )
             STRING =
               T.let(
                 :STRING,
-                HubspotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
+                  HubSpotSDK::Crm::Extensions::ObjectToken::DataType::TaggedSymbol
                 ]
               )
             end

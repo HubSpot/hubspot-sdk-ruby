@@ -24,7 +24,7 @@ gem "hubspot-sdk", "~> 0.0.1"
 require "bundler/setup"
 require "hubspot_sdk"
 
-hubspot = HubspotSDK::Client.new(access_token: "My Access Token")
+hubspot = HubSpotSDK::Client.new(access_token: "My Access Token")
 
 simple_public_object_with_associations = hubspot.crm.objects.contacts.get("contactId")
 
@@ -73,7 +73,7 @@ import_result = hubspot.cms.hubdb.tables.import_draft(file: Pathname("/path/to/f
 import_result = hubspot.cms.hubdb.tables.import_draft(file: File.read("/path/to/file"))
 
 # Or, to control the filename and/or content type:
-file = HubspotSDK::FilePart.new(File.read("/path/to/file"), filename: "/path/to/file", content_type: "…")
+file = HubSpotSDK::FilePart.new(File.read("/path/to/file"), filename: "/path/to/file", content_type: "…")
 import_result = hubspot.cms.hubdb.tables.import_draft(file: file)
 
 puts(import_result.duplicateRows)
@@ -83,7 +83,7 @@ Note that you can also pass a raw `IO` descriptor, but this disables retries, as
 
 ### Handling errors
 
-When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `HubspotSDK::Errors::APIError` will be thrown:
+When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `HubSpotSDK::Errors::APIError` will be thrown:
 
 ```ruby
 begin
@@ -91,12 +91,12 @@ begin
     associations: [{to: {id: "id"}, types: [{associationCategory: "HUBSPOT_DEFINED", associationTypeId: 0}]}],
     properties: {foo: "string"}
   )
-rescue HubspotSDK::Errors::APIConnectionError => e
+rescue HubSpotSDK::Errors::APIConnectionError => e
   puts("The server could not be reached")
   puts(e.cause)  # an underlying Exception, likely raised within `net/http`
-rescue HubspotSDK::Errors::RateLimitError => e
+rescue HubSpotSDK::Errors::RateLimitError => e
   puts("A 429 status code was received; we should back off a bit.")
-rescue HubspotSDK::Errors::APIStatusError => e
+rescue HubSpotSDK::Errors::APIStatusError => e
   puts("Another non-200-range status code was received")
   puts(e.status)
 end
@@ -128,7 +128,7 @@ You can use the `max_retries` option to configure or disable this:
 
 ```ruby
 # Configure the default for all requests:
-hubspot = HubspotSDK::Client.new(
+hubspot = HubSpotSDK::Client.new(
   max_retries: 0 # default is 2
 )
 
@@ -146,7 +146,7 @@ By default, requests will time out after 60 seconds. You can use the timeout opt
 
 ```ruby
 # Configure the default for all requests:
-hubspot = HubspotSDK::Client.new(
+hubspot = HubSpotSDK::Client.new(
   timeout: nil # default is 60
 )
 
@@ -158,7 +158,7 @@ hubspot.crm.objects.contacts.create(
 )
 ```
 
-On timeout, `HubspotSDK::Errors::APITimeoutError` is raised.
+On timeout, `HubSpotSDK::Errors::APITimeoutError` is raised.
 
 Note that requests that time out are retried by default.
 
@@ -166,7 +166,7 @@ Note that requests that time out are retried by default.
 
 ### BaseModel
 
-All parameter and response objects inherit from `HubspotSDK::Internal::Type::BaseModel`, which provides several conveniences, including:
+All parameter and response objects inherit from `HubSpotSDK::Internal::Type::BaseModel`, which provides several conveniences, including:
 
 1. All fields, including unknown ones, are accessible with `obj[:prop]` syntax, and can be destructured with `obj => {prop: prop}` or pattern-matching syntax.
 
@@ -219,9 +219,9 @@ response = client.request(
 
 ### Concurrency & connection pooling
 
-The `HubspotSDK::Client` instances are threadsafe, but are only are fork-safe when there are no in-flight HTTP requests.
+The `HubSpotSDK::Client` instances are threadsafe, but are only are fork-safe when there are no in-flight HTTP requests.
 
-Each instance of `HubspotSDK::Client` has its own HTTP connection pool with a default size of 99. As such, we recommend instantiating the client once per application in most settings.
+Each instance of `HubSpotSDK::Client` has its own HTTP connection pool with a default size of 99. As such, we recommend instantiating the client once per application in most settings.
 
 When all available connections from the pool are checked out, requests wait for a new connection to become available, with queue time counting towards the request timeout.
 
@@ -244,7 +244,7 @@ Or, equivalently:
 hubspot.crm.objects.contacts.get("contactId")
 
 # You can also splat a full Params class:
-params = HubspotSDK::Crm::Objects::ContactGetParams.new
+params = HubSpotSDK::Crm::Objects::ContactGetParams.new
 hubspot.crm.objects.contacts.get("contactId", **params)
 ```
 
@@ -254,10 +254,10 @@ Since this library does not depend on `sorbet-runtime`, it cannot provide [`T::E
 
 ```ruby
 # :authorization_code
-puts(HubspotSDK::Auth::OAuthCreateTokenParams::GrantType::AUTHORIZATION_CODE)
+puts(HubSpotSDK::Auth::OAuthCreateTokenParams::GrantType::AUTHORIZATION_CODE)
 
-# Revealed type: `T.all(HubspotSDK::Auth::OAuthCreateTokenParams::GrantType, Symbol)`
-T.reveal_type(HubspotSDK::Auth::OAuthCreateTokenParams::GrantType::AUTHORIZATION_CODE)
+# Revealed type: `T.all(HubSpotSDK::Auth::OAuthCreateTokenParams::GrantType, Symbol)`
+T.reveal_type(HubSpotSDK::Auth::OAuthCreateTokenParams::GrantType::AUTHORIZATION_CODE)
 ```
 
 Enum parameters have a "relaxed" type, so you can either pass in enum constants or their literal value:
@@ -265,7 +265,7 @@ Enum parameters have a "relaxed" type, so you can either pass in enum constants 
 ```ruby
 # Using the enum constants preserves the tagged type information:
 hubspot.auth.oauth.create_token(
-  grant_type: HubspotSDK::Auth::OAuthCreateTokenParams::GrantType::AUTHORIZATION_CODE,
+  grant_type: HubSpotSDK::Auth::OAuthCreateTokenParams::GrantType::AUTHORIZATION_CODE,
   # …
 )
 

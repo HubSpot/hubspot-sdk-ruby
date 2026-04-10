@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class PublicStatusBulkResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicStatusBulkResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CommunicationPreferences::PublicStatusBulkResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::CommunicationPreferences::PublicStatusBulkResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # An array of subscription status objects for the contact.
         sig do
-          returns(T::Array[HubspotSDK::CommunicationPreferences::PublicStatus])
+          returns(T::Array[HubSpotSDK::CommunicationPreferences::PublicStatus])
         end
         attr_accessor :statuses
 
@@ -26,7 +26,7 @@ module HubspotSDK
           params(
             statuses:
               T::Array[
-                HubspotSDK::CommunicationPreferences::PublicStatus::OrHash
+                HubSpotSDK::CommunicationPreferences::PublicStatus::OrHash
               ],
             subscriber_id_string: String
           ).returns(T.attached_class)
@@ -43,7 +43,7 @@ module HubspotSDK
           override.returns(
             {
               statuses:
-                T::Array[HubspotSDK::CommunicationPreferences::PublicStatus],
+                T::Array[HubSpotSDK::CommunicationPreferences::PublicStatus],
               subscriber_id_string: String
             }
           )

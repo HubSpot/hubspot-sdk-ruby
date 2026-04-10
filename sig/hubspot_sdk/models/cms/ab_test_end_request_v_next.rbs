@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type ab_test_end_request_v_next =
         { ab_test_id: String, winner_id: String }
 
-      class AbTestEndRequestVNext < HubspotSDK::Internal::Type::BaseModel
+      class AbTestEndRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor ab_test_id: String
 
         attr_accessor winner_id: String

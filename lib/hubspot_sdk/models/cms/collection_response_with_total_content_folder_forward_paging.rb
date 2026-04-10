@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class CollectionResponseWithTotalContentFolderForwardPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseWithTotalContentFolderForwardPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #   Collection of content folders.
         #
-        #   @return [Array<HubspotSDK::Models::Cms::ContentFolder>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ContentFolder] }
+        #   @return [Array<HubSpotSDK::Models::Cms::ContentFolder>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::ContentFolder] }
 
         # @!attribute total
         #   Total number of content folders.
@@ -18,15 +18,15 @@ module HubspotSDK
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::ForwardPaging, nil]
-        optional :paging, -> { HubspotSDK::ForwardPaging }
+        #   @return [HubSpotSDK::Models::ForwardPaging, nil]
+        optional :paging, -> { HubSpotSDK::ForwardPaging }
 
         # @!method initialize(results:, total:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Cms::ContentFolder>] Collection of content folders.
+        #   @param results [Array<HubSpotSDK::Models::Cms::ContentFolder>] Collection of content folders.
         #
         #   @param total [Integer] Total number of content folders.
         #
-        #   @param paging [HubspotSDK::Models::ForwardPaging]
+        #   @param paging [HubSpotSDK::Models::ForwardPaging]
       end
     end
   end

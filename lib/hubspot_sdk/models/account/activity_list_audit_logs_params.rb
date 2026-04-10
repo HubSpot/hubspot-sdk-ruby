@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
-      # @see HubspotSDK::Resources::Account::Activity#list_audit_logs
-      class ActivityListAuditLogsParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Account::Activity#list_audit_logs
+      class ActivityListAuditLogsParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute acting_user_id
         #
         #   @return [Array<Integer>, nil]
-        optional :acting_user_id, HubspotSDK::Internal::Type::ArrayOf[Integer]
+        optional :acting_user_id, HubSpotSDK::Internal::Type::ArrayOf[Integer]
 
         # @!attribute after
         #   The paging cursor token of the last successfully read resource will be returned
@@ -24,7 +24,7 @@ module HubspotSDK
         # @!attribute fill_final_timestamp
         #
         #   @return [Boolean, nil]
-        optional :fill_final_timestamp, HubspotSDK::Internal::Type::Boolean
+        optional :fill_final_timestamp, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute limit
         #   The maximum number of results to display per page.
@@ -45,11 +45,11 @@ module HubspotSDK
         # @!attribute sort
         #
         #   @return [Array<String>, nil]
-        optional :sort, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :sort, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!method initialize(acting_user_id: nil, after: nil, fill_final_timestamp: nil, limit: nil, occurred_after: nil, occurred_before: nil, sort: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Account::ActivityListAuditLogsParams} for more details.
+        #   {HubSpotSDK::Models::Account::ActivityListAuditLogsParams} for more details.
         #
         #   @param acting_user_id [Array<Integer>]
         #
@@ -65,7 +65,7 @@ module HubspotSDK
         #
         #   @param sort [Array<String>]
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

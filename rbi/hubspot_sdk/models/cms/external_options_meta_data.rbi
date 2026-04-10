@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ExternalOptionsMetaData < HubspotSDK::Internal::Type::BaseModel
+      class ExternalOptionsMetaData < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::ExternalOptionsMetaData,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::ExternalOptionsMetaData,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T.nilable(HubspotSDK::Cms::FilteringMetaData)) }
+        sig { returns(T.nilable(HubSpotSDK::Cms::FilteringMetaData)) }
         attr_reader :filter
 
-        sig { params(filter: HubspotSDK::Cms::FilteringMetaData::OrHash).void }
+        sig { params(filter: HubSpotSDK::Cms::FilteringMetaData::OrHash).void }
         attr_writer :filter
 
         sig { returns(T.nilable(String)) }
@@ -26,7 +26,7 @@ module HubspotSDK
 
         sig do
           params(
-            filter: HubspotSDK::Cms::FilteringMetaData::OrHash,
+            filter: HubSpotSDK::Cms::FilteringMetaData::OrHash,
             related_object_type_id: String
           ).returns(T.attached_class)
         end
@@ -36,7 +36,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              filter: HubspotSDK::Cms::FilteringMetaData,
+              filter: HubSpotSDK::Cms::FilteringMetaData,
               related_object_type_id: String
             }
           )

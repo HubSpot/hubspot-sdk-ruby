@@ -2,7 +2,7 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Cms::URLRedirectsTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
@@ -14,7 +14,7 @@ class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::Res
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::URLMapping
+      response => HubSpotSDK::Cms::URLMapping
     end
 
     assert_pattern do
@@ -22,12 +22,12 @@ class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::Res
         id: String,
         created: Time,
         destination: String,
-        is_match_full_url: HubspotSDK::Internal::Type::Boolean,
-        is_match_query_string: HubspotSDK::Internal::Type::Boolean,
-        is_only_after_not_found: HubspotSDK::Internal::Type::Boolean,
-        is_pattern: HubspotSDK::Internal::Type::Boolean,
-        is_protocol_agnostic: HubspotSDK::Internal::Type::Boolean,
-        is_trailing_slash_optional: HubspotSDK::Internal::Type::Boolean,
+        is_match_full_url: HubSpotSDK::Internal::Type::Boolean,
+        is_match_query_string: HubSpotSDK::Internal::Type::Boolean,
+        is_only_after_not_found: HubSpotSDK::Internal::Type::Boolean,
+        is_pattern: HubSpotSDK::Internal::Type::Boolean,
+        is_protocol_agnostic: HubSpotSDK::Internal::Type::Boolean,
+        is_trailing_slash_optional: HubSpotSDK::Internal::Type::Boolean,
         precedence: Integer,
         redirect_style: Integer,
         route_prefix: String,
@@ -58,7 +58,7 @@ class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::Res
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::URLMapping
+      response => HubSpotSDK::Cms::URLMapping
     end
 
     assert_pattern do
@@ -66,12 +66,12 @@ class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::Res
         id: String,
         created: Time,
         destination: String,
-        is_match_full_url: HubspotSDK::Internal::Type::Boolean,
-        is_match_query_string: HubspotSDK::Internal::Type::Boolean,
-        is_only_after_not_found: HubspotSDK::Internal::Type::Boolean,
-        is_pattern: HubspotSDK::Internal::Type::Boolean,
-        is_protocol_agnostic: HubspotSDK::Internal::Type::Boolean,
-        is_trailing_slash_optional: HubspotSDK::Internal::Type::Boolean,
+        is_match_full_url: HubSpotSDK::Internal::Type::Boolean,
+        is_match_query_string: HubSpotSDK::Internal::Type::Boolean,
+        is_only_after_not_found: HubSpotSDK::Internal::Type::Boolean,
+        is_pattern: HubSpotSDK::Internal::Type::Boolean,
+        is_protocol_agnostic: HubSpotSDK::Internal::Type::Boolean,
+        is_trailing_slash_optional: HubSpotSDK::Internal::Type::Boolean,
         precedence: Integer,
         redirect_style: Integer,
         route_prefix: String,
@@ -86,14 +86,14 @@ class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::Res
     response = @hubspot.cms.url_redirects.list
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Cms::URLMapping
+      row => HubSpotSDK::Cms::URLMapping
     end
 
     assert_pattern do
@@ -101,12 +101,12 @@ class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::Res
         id: String,
         created: Time,
         destination: String,
-        is_match_full_url: HubspotSDK::Internal::Type::Boolean,
-        is_match_query_string: HubspotSDK::Internal::Type::Boolean,
-        is_only_after_not_found: HubspotSDK::Internal::Type::Boolean,
-        is_pattern: HubspotSDK::Internal::Type::Boolean,
-        is_protocol_agnostic: HubspotSDK::Internal::Type::Boolean,
-        is_trailing_slash_optional: HubspotSDK::Internal::Type::Boolean,
+        is_match_full_url: HubSpotSDK::Internal::Type::Boolean,
+        is_match_query_string: HubSpotSDK::Internal::Type::Boolean,
+        is_only_after_not_found: HubSpotSDK::Internal::Type::Boolean,
+        is_pattern: HubSpotSDK::Internal::Type::Boolean,
+        is_protocol_agnostic: HubSpotSDK::Internal::Type::Boolean,
+        is_trailing_slash_optional: HubSpotSDK::Internal::Type::Boolean,
         precedence: Integer,
         redirect_style: Integer,
         route_prefix: String,
@@ -131,7 +131,7 @@ class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::Res
     response = @hubspot.cms.url_redirects.get("urlRedirectId")
 
     assert_pattern do
-      response => HubspotSDK::Cms::URLMapping
+      response => HubSpotSDK::Cms::URLMapping
     end
 
     assert_pattern do
@@ -139,12 +139,12 @@ class HubspotSDK::Test::Resources::Cms::URLRedirectsTest < HubspotSDK::Test::Res
         id: String,
         created: Time,
         destination: String,
-        is_match_full_url: HubspotSDK::Internal::Type::Boolean,
-        is_match_query_string: HubspotSDK::Internal::Type::Boolean,
-        is_only_after_not_found: HubspotSDK::Internal::Type::Boolean,
-        is_pattern: HubspotSDK::Internal::Type::Boolean,
-        is_protocol_agnostic: HubspotSDK::Internal::Type::Boolean,
-        is_trailing_slash_optional: HubspotSDK::Internal::Type::Boolean,
+        is_match_full_url: HubSpotSDK::Internal::Type::Boolean,
+        is_match_query_string: HubSpotSDK::Internal::Type::Boolean,
+        is_only_after_not_found: HubSpotSDK::Internal::Type::Boolean,
+        is_pattern: HubSpotSDK::Internal::Type::Boolean,
+        is_protocol_agnostic: HubSpotSDK::Internal::Type::Boolean,
+        is_trailing_slash_optional: HubSpotSDK::Internal::Type::Boolean,
         precedence: Integer,
         redirect_style: Integer,
         route_prefix: String,

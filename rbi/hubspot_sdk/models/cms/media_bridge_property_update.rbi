@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class MediaBridgePropertyUpdate < HubspotSDK::Internal::Type::BaseModel
+      class MediaBridgePropertyUpdate < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::MediaBridgePropertyUpdate,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -33,7 +33,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::OrSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType::OrSymbol
             )
           )
         end
@@ -42,7 +42,7 @@ module HubspotSDK
         sig do
           params(
             field_type:
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::OrSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType::OrSymbol
           ).void
         end
         attr_writer :field_type
@@ -77,16 +77,16 @@ module HubspotSDK
         sig { params(label: String).void }
         attr_writer :label
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::OptionInput])) }
+        sig { returns(T.nilable(T::Array[HubSpotSDK::OptionInput])) }
         attr_reader :options
 
-        sig { params(options: T::Array[HubspotSDK::OptionInput::OrHash]).void }
+        sig { params(options: T::Array[HubSpotSDK::OptionInput::OrHash]).void }
         attr_writer :options
 
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::Type::OrSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type::OrSymbol
             )
           )
         end
@@ -94,7 +94,7 @@ module HubspotSDK
 
         sig do
           params(
-            type: HubspotSDK::Cms::MediaBridgePropertyUpdate::Type::OrSymbol
+            type: HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type::OrSymbol
           ).void
         end
         attr_writer :type
@@ -105,14 +105,14 @@ module HubspotSDK
             description: String,
             display_order: Integer,
             field_type:
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::OrSymbol,
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType::OrSymbol,
             form_field: T::Boolean,
             group_name: String,
             has_unique_value: T::Boolean,
             hidden: T::Boolean,
             label: String,
-            options: T::Array[HubspotSDK::OptionInput::OrHash],
-            type: HubspotSDK::Cms::MediaBridgePropertyUpdate::Type::OrSymbol
+            options: T::Array[HubSpotSDK::OptionInput::OrHash],
+            type: HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -137,14 +137,14 @@ module HubspotSDK
               description: String,
               display_order: Integer,
               field_type:
-                HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::OrSymbol,
+                HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType::OrSymbol,
               form_field: T::Boolean,
               group_name: String,
               has_unique_value: T::Boolean,
               hidden: T::Boolean,
               label: String,
-              options: T::Array[HubspotSDK::OptionInput],
-              type: HubspotSDK::Cms::MediaBridgePropertyUpdate::Type::OrSymbol
+              options: T::Array[HubSpotSDK::OptionInput],
+              type: HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type::OrSymbol
             }
           )
         end
@@ -152,13 +152,13 @@ module HubspotSDK
         end
 
         module FieldType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType
+                HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -166,68 +166,68 @@ module HubspotSDK
           BOOLEANCHECKBOX =
             T.let(
               :booleancheckbox,
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
             )
           CALCULATION_EQUATION =
             T.let(
               :calculation_equation,
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
             )
           CHECKBOX =
             T.let(
               :checkbox,
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
             )
           DATE =
             T.let(
               :date,
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
             )
           FILE =
             T.let(
               :file,
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
             )
           HTML =
             T.let(
               :html,
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
             )
           NUMBER =
             T.let(
               :number,
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
             )
           PHONENUMBER =
             T.let(
               :phonenumber,
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
             )
           RADIO =
             T.let(
               :radio,
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
             )
           SELECT =
             T.let(
               :select,
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
             )
           TEXT =
             T.let(
               :text,
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
             )
           TEXTAREA =
             T.let(
               :textarea,
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
+                HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType::TaggedSymbol
               ]
             )
           end
@@ -236,54 +236,54 @@ module HubspotSDK
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::MediaBridgePropertyUpdate::Type)
+              T.all(Symbol, HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           BOOL =
             T.let(
               :bool,
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::Type::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type::TaggedSymbol
             )
           DATE =
             T.let(
               :date,
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::Type::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type::TaggedSymbol
             )
           DATETIME =
             T.let(
               :datetime,
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::Type::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type::TaggedSymbol
             )
           ENUMERATION =
             T.let(
               :enumeration,
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::Type::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type::TaggedSymbol
             )
           NUMBER =
             T.let(
               :number,
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::Type::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type::TaggedSymbol
             )
           PHONE_NUMBER =
             T.let(
               :phone_number,
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::Type::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type::TaggedSymbol
             )
           STRING =
             T.let(
               :string,
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::Type::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::MediaBridgePropertyUpdate::Type::TaggedSymbol
+                HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type::TaggedSymbol
               ]
             )
           end

@@ -2,23 +2,23 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::DealSplits::BatchTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::DealSplits::BatchTest < HubSpotSDK::Test::ResourceTest
   def test_read_required_params
     skip("Mock server tests are disabled")
 
     response = @hubspot.crm.deal_splits.batch.read(inputs: [{id: "id"}])
 
     assert_pattern do
-      response => HubspotSDK::Crm::BatchResponseDealToDealSplits
+      response => HubSpotSDK::Crm::BatchResponseDealToDealSplits
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::DealToDealSplits]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::DealToDealSplits]),
         started_at: Time,
-        status: HubspotSDK::Crm::BatchResponseDealToDealSplits::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Crm::BatchResponseDealToDealSplits::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -31,16 +31,16 @@ class HubspotSDK::Test::Resources::Crm::DealSplits::BatchTest < HubspotSDK::Test
       @hubspot.crm.deal_splits.batch.upsert(inputs: [{id: 0, splits: [{ownerId: 0, percentage: 0}]}])
 
     assert_pattern do
-      response => HubspotSDK::Crm::BatchResponseDealToDealSplits
+      response => HubSpotSDK::Crm::BatchResponseDealToDealSplits
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::DealToDealSplits]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::DealToDealSplits]),
         started_at: Time,
-        status: HubspotSDK::Crm::BatchResponseDealToDealSplits::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Crm::BatchResponseDealToDealSplits::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end

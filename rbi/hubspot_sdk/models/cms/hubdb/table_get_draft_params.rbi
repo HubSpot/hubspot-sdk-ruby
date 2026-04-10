@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Hubdb
-        class TableGetDraftParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class TableGetDraftParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Cms::Hubdb::TableGetDraftParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Cms::Hubdb::TableGetDraftParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -44,7 +44,7 @@ module HubspotSDK
               archived: T::Boolean,
               include_foreign_ids: T::Boolean,
               is_get_localized_schema: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
@@ -64,7 +64,7 @@ module HubspotSDK
                 archived: T::Boolean,
                 include_foreign_ids: T::Boolean,
                 is_get_localized_schema: T::Boolean,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

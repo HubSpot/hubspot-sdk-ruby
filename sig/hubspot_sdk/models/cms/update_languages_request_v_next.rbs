@@ -1,24 +1,24 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type update_languages_request_v_next =
         {
-          languages: ::Hash[Symbol, HubspotSDK::Models::Cms::UpdateLanguagesRequestVNext::language],
+          languages: ::Hash[Symbol, HubSpotSDK::Models::Cms::UpdateLanguagesRequestVNext::language],
           primary_id: String
         }
 
-      class UpdateLanguagesRequestVNext < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor languages: ::Hash[Symbol, HubspotSDK::Models::Cms::UpdateLanguagesRequestVNext::language]
+      class UpdateLanguagesRequestVNext < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor languages: ::Hash[Symbol, HubSpotSDK::Models::Cms::UpdateLanguagesRequestVNext::language]
 
         attr_accessor primary_id: String
 
         def initialize: (
-          languages: ::Hash[Symbol, HubspotSDK::Models::Cms::UpdateLanguagesRequestVNext::language],
+          languages: ::Hash[Symbol, HubSpotSDK::Models::Cms::UpdateLanguagesRequestVNext::language],
           primary_id: String
         ) -> void
 
         def to_hash: -> {
-          languages: ::Hash[Symbol, HubspotSDK::Models::Cms::UpdateLanguagesRequestVNext::language],
+          languages: ::Hash[Symbol, HubSpotSDK::Models::Cms::UpdateLanguagesRequestVNext::language],
           primary_id: String
         }
 
@@ -868,7 +868,7 @@ module HubspotSDK
           | :"zu-za"
 
         module Language
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AA: :aa
           AB: :ab
@@ -1714,7 +1714,7 @@ module HubspotSDK
           ZU: :zu
           ZU_ZA: :"zu-za"
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::UpdateLanguagesRequestVNext::language]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::UpdateLanguagesRequestVNext::language]
         end
       end
     end

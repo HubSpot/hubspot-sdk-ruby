@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class SequenceGetEnrollmentByContactIDParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class SequenceGetEnrollmentByContactIDParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::SequenceGetEnrollmentByContactIDParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::SequenceGetEnrollmentByContactIDParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -21,7 +21,7 @@ module HubspotSDK
         sig do
           params(
             contact_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(contact_id:, request_options: {})
@@ -29,7 +29,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { contact_id: String, request_options: HubspotSDK::RequestOptions }
+            { contact_id: String, request_options: HubSpotSDK::RequestOptions }
           )
         end
         def to_hash

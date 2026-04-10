@@ -1,23 +1,23 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         type object_token =
           {
             value: String,
-            data_type: HubspotSDK::Models::Crm::Extensions::ObjectToken::data_type,
+            data_type: HubSpotSDK::Models::Crm::Extensions::ObjectToken::data_type,
             label: String,
             name: String
           }
 
-        class ObjectToken < HubspotSDK::Internal::Type::BaseModel
+        class ObjectToken < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor value: String
 
-          attr_reader data_type: HubspotSDK::Models::Crm::Extensions::ObjectToken::data_type?
+          attr_reader data_type: HubSpotSDK::Models::Crm::Extensions::ObjectToken::data_type?
 
           def data_type=: (
-            HubspotSDK::Models::Crm::Extensions::ObjectToken::data_type
-          ) -> HubspotSDK::Models::Crm::Extensions::ObjectToken::data_type
+            HubSpotSDK::Models::Crm::Extensions::ObjectToken::data_type
+          ) -> HubSpotSDK::Models::Crm::Extensions::ObjectToken::data_type
 
           attr_reader label: String?
 
@@ -29,14 +29,14 @@ module HubspotSDK
 
           def initialize: (
             value: String,
-            ?data_type: HubspotSDK::Models::Crm::Extensions::ObjectToken::data_type,
+            ?data_type: HubSpotSDK::Models::Crm::Extensions::ObjectToken::data_type,
             ?label: String,
             ?name: String
           ) -> void
 
           def to_hash: -> {
             value: String,
-            data_type: HubspotSDK::Models::Crm::Extensions::ObjectToken::data_type,
+            data_type: HubSpotSDK::Models::Crm::Extensions::ObjectToken::data_type,
             label: String,
             name: String
           }
@@ -53,7 +53,7 @@ module HubspotSDK
             | :STRING
 
           module DataType
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             BOOLEAN: :BOOLEAN
             CURRENCY: :CURRENCY
@@ -65,7 +65,7 @@ module HubspotSDK
             STATUS: :STATUS
             STRING: :STRING
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::ObjectToken::data_type]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Crm::Extensions::ObjectToken::data_type]
           end
         end
       end

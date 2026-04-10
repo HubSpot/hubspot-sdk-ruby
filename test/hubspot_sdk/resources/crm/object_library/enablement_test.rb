@@ -2,19 +2,19 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::ObjectLibrary::EnablementTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::ObjectLibrary::EnablementTest < HubSpotSDK::Test::ResourceTest
   def test_get_all
     skip("Mock server tests are disabled")
 
     response = @hubspot.crm.object_library.enablement.get_all
 
     assert_pattern do
-      response => HubspotSDK::Crm::ObjectLibrary::PortalObjectTypeEnablementPublicResponse
+      response => HubSpotSDK::Crm::ObjectLibrary::PortalObjectTypeEnablementPublicResponse
     end
 
     assert_pattern do
       response => {
-        enablement_by_object_type_id: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Boolean])
+        enablement_by_object_type_id: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Boolean])
       }
     end
   end
@@ -25,12 +25,12 @@ class HubspotSDK::Test::Resources::Crm::ObjectLibrary::EnablementTest < HubspotS
     response = @hubspot.crm.object_library.enablement.get_by_object_type_id("objectTypeId")
 
     assert_pattern do
-      response => HubspotSDK::Crm::ObjectLibrary::ObjectTypeEnablementPublicResponse
+      response => HubSpotSDK::Crm::ObjectLibrary::ObjectTypeEnablementPublicResponse
     end
 
     assert_pattern do
       response => {
-        enablement: HubspotSDK::Internal::Type::Boolean
+        enablement: HubSpotSDK::Internal::Type::Boolean
       }
     end
   end

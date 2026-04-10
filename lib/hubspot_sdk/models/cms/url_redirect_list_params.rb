@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::URLRedirects#list
-      class URLRedirectListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Cms::URLRedirects#list
+      class URLRedirectListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute after
         #   The paging cursor token of the last successfully read resource will be returned
@@ -20,7 +20,7 @@ module HubspotSDK
         #   Whether to return only results that have been archived.
         #
         #   @return [Boolean, nil]
-        optional :archived, HubspotSDK::Internal::Type::Boolean
+        optional :archived, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute created_after
         #
@@ -46,7 +46,7 @@ module HubspotSDK
         # @!attribute sort
         #
         #   @return [Array<String>, nil]
-        optional :sort, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :sort, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute updated_after
         #
@@ -65,7 +65,7 @@ module HubspotSDK
 
         # @!method initialize(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Cms::URLRedirectListParams} for more details.
+        #   {HubSpotSDK::Models::Cms::URLRedirectListParams} for more details.
         #
         #   @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
@@ -87,7 +87,7 @@ module HubspotSDK
         #
         #   @param updated_before [Time]
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

@@ -1,25 +1,25 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module BusinessUnits
-      class CollectionResponsePublicBusinessUnitNoPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponsePublicBusinessUnitNoPaging < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::BusinessUnits::CollectionResponsePublicBusinessUnitNoPaging,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::BusinessUnits::CollectionResponsePublicBusinessUnitNoPaging,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # The collection of Business Units
-        sig { returns(T::Array[HubspotSDK::BusinessUnits::PublicBusinessUnit]) }
+        sig { returns(T::Array[HubSpotSDK::BusinessUnits::PublicBusinessUnit]) }
         attr_accessor :results
 
         sig do
           params(
             results:
-              T::Array[HubspotSDK::BusinessUnits::PublicBusinessUnit::OrHash]
+              T::Array[HubSpotSDK::BusinessUnits::PublicBusinessUnit::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(
@@ -30,7 +30,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { results: T::Array[HubspotSDK::BusinessUnits::PublicBusinessUnit] }
+            { results: T::Array[HubSpotSDK::BusinessUnits::PublicBusinessUnit] }
           )
         end
         def to_hash

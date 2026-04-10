@@ -1,21 +1,21 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type public_file =
         {
           file_id: String,
-          file_usage_type: HubspotSDK::Models::Conversations::PublicFile::file_usage_type,
-          type: HubspotSDK::Models::Conversations::PublicFile::type_,
+          file_usage_type: HubSpotSDK::Models::Conversations::PublicFile::file_usage_type,
+          type: HubSpotSDK::Models::Conversations::PublicFile::type_,
           name: String,
           url: String
         }
 
-      class PublicFile < HubspotSDK::Internal::Type::BaseModel
+      class PublicFile < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor file_id: String
 
-        attr_accessor file_usage_type: HubspotSDK::Models::Conversations::PublicFile::file_usage_type
+        attr_accessor file_usage_type: HubSpotSDK::Models::Conversations::PublicFile::file_usage_type
 
-        attr_accessor type: HubspotSDK::Models::Conversations::PublicFile::type_
+        attr_accessor type: HubSpotSDK::Models::Conversations::PublicFile::type_
 
         attr_reader name: String?
 
@@ -27,16 +27,16 @@ module HubspotSDK
 
         def initialize: (
           file_id: String,
-          file_usage_type: HubspotSDK::Models::Conversations::PublicFile::file_usage_type,
-          type: HubspotSDK::Models::Conversations::PublicFile::type_,
+          file_usage_type: HubSpotSDK::Models::Conversations::PublicFile::file_usage_type,
+          type: HubSpotSDK::Models::Conversations::PublicFile::type_,
           ?name: String,
           ?url: String
         ) -> void
 
         def to_hash: -> {
           file_id: String,
-          file_usage_type: HubspotSDK::Models::Conversations::PublicFile::file_usage_type,
-          type: HubspotSDK::Models::Conversations::PublicFile::type_,
+          file_usage_type: HubSpotSDK::Models::Conversations::PublicFile::file_usage_type,
+          type: HubSpotSDK::Models::Conversations::PublicFile::type_,
           name: String,
           url: String
         }
@@ -45,7 +45,7 @@ module HubspotSDK
           :AUDIO | :IMAGE | :OTHER | :STICKER | :VOICE_RECORDING
 
         module FileUsageType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUDIO: :AUDIO
           IMAGE: :IMAGE
@@ -53,17 +53,17 @@ module HubspotSDK
           STICKER: :STICKER
           VOICE_RECORDING: :VOICE_RECORDING
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicFile::file_usage_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Conversations::PublicFile::file_usage_type]
         end
 
         type type_ = :FILE
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           FILE: :FILE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicFile::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Conversations::PublicFile::type_]
         end
       end
     end

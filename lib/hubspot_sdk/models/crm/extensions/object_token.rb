@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class ObjectToken < HubspotSDK::Internal::Type::BaseModel
+        class ObjectToken < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute value
           #   The value of the property
           #
@@ -14,10 +14,10 @@ module HubspotSDK
           # @!attribute data_type
           #   Type of data represented by this property.
           #
-          #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::ObjectToken::DataType, nil]
+          #   @return [Symbol, HubSpotSDK::Models::Crm::Extensions::ObjectToken::DataType, nil]
           optional :data_type,
                    enum: -> {
-                     HubspotSDK::Crm::Extensions::ObjectToken::DataType
+                     HubSpotSDK::Crm::Extensions::ObjectToken::DataType
                    },
                    api_name: :dataType
 
@@ -36,7 +36,7 @@ module HubspotSDK
           # @!method initialize(value:, data_type: nil, label: nil, name: nil)
           #   @param value [String] The value of the property
           #
-          #   @param data_type [Symbol, HubspotSDK::Models::Crm::Extensions::ObjectToken::DataType] Type of data represented by this property.
+          #   @param data_type [Symbol, HubSpotSDK::Models::Crm::Extensions::ObjectToken::DataType] Type of data represented by this property.
           #
           #   @param label [String] The label for this property as you'd like it displayed to users.
           #
@@ -44,9 +44,9 @@ module HubspotSDK
 
           # Type of data represented by this property.
           #
-          # @see HubspotSDK::Models::Crm::Extensions::ObjectToken#data_type
+          # @see HubSpotSDK::Models::Crm::Extensions::ObjectToken#data_type
           module DataType
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             BOOLEAN = :BOOLEAN
             CURRENCY = :CURRENCY

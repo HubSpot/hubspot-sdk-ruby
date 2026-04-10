@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_link_display_info =
@@ -6,10 +6,10 @@ module HubspotSDK
           avatar: String,
           company_avatar: String,
           headline: String,
-          public_display_avatar_option: HubspotSDK::Models::Scheduler::ExternalLinkDisplayInfo::public_display_avatar_option
+          public_display_avatar_option: HubSpotSDK::Models::Scheduler::ExternalLinkDisplayInfo::public_display_avatar_option
         }
 
-      class ExternalLinkDisplayInfo < HubspotSDK::Internal::Type::BaseModel
+      class ExternalLinkDisplayInfo < HubSpotSDK::Internal::Type::BaseModel
         attr_reader avatar: String?
 
         def avatar=: (String) -> String
@@ -22,37 +22,37 @@ module HubspotSDK
 
         def headline=: (String) -> String
 
-        attr_reader public_display_avatar_option: HubspotSDK::Models::Scheduler::ExternalLinkDisplayInfo::public_display_avatar_option?
+        attr_reader public_display_avatar_option: HubSpotSDK::Models::Scheduler::ExternalLinkDisplayInfo::public_display_avatar_option?
 
         def public_display_avatar_option=: (
-          HubspotSDK::Models::Scheduler::ExternalLinkDisplayInfo::public_display_avatar_option
-        ) -> HubspotSDK::Models::Scheduler::ExternalLinkDisplayInfo::public_display_avatar_option
+          HubSpotSDK::Models::Scheduler::ExternalLinkDisplayInfo::public_display_avatar_option
+        ) -> HubSpotSDK::Models::Scheduler::ExternalLinkDisplayInfo::public_display_avatar_option
 
         def initialize: (
           ?avatar: String,
           ?company_avatar: String,
           ?headline: String,
-          ?public_display_avatar_option: HubspotSDK::Models::Scheduler::ExternalLinkDisplayInfo::public_display_avatar_option
+          ?public_display_avatar_option: HubSpotSDK::Models::Scheduler::ExternalLinkDisplayInfo::public_display_avatar_option
         ) -> void
 
         def to_hash: -> {
           avatar: String,
           company_avatar: String,
           headline: String,
-          public_display_avatar_option: HubspotSDK::Models::Scheduler::ExternalLinkDisplayInfo::public_display_avatar_option
+          public_display_avatar_option: HubSpotSDK::Models::Scheduler::ExternalLinkDisplayInfo::public_display_avatar_option
         }
 
         type public_display_avatar_option =
           :COMPANY_LOGO | :CUSTOM_AVATAR | :PROFILE_IMAGE
 
         module PublicDisplayAvatarOption
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           COMPANY_LOGO: :COMPANY_LOGO
           CUSTOM_AVATAR: :CUSTOM_AVATAR
           PROFILE_IMAGE: :PROFILE_IMAGE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Scheduler::ExternalLinkDisplayInfo::public_display_avatar_option]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Scheduler::ExternalLinkDisplayInfo::public_display_avatar_option]
         end
       end
     end

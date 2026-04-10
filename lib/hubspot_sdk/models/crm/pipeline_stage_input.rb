@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PipelineStageInput < HubspotSDK::Internal::Type::BaseModel
+      class PipelineStageInput < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute display_order
         #   The order for displaying this pipeline stage. If two pipeline stages have a
         #   matching `displayOrder`, they will be sorted alphabetically by label.
@@ -32,7 +32,7 @@ module HubspotSDK
         #   `CLOSED`.
         #
         #   @return [Hash{Symbol=>String}]
-        required :metadata, HubspotSDK::Internal::Type::HashOf[String]
+        required :metadata, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute stage_id
         #
@@ -41,7 +41,7 @@ module HubspotSDK
 
         # @!method initialize(display_order:, label:, metadata:, stage_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PipelineStageInput} for more details.
+        #   {HubSpotSDK::Models::Crm::PipelineStageInput} for more details.
         #
         #   @param display_order [Integer] The order for displaying this pipeline stage. If two pipeline stages have a matc
         #

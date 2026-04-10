@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type object_type_definition =
       {
@@ -6,7 +6,7 @@ module HubspotSDK
         allows_sensitive_properties: bool,
         archived: bool,
         fully_qualified_name: String,
-        labels: HubspotSDK::ObjectTypeDefinitionLabels,
+        labels: HubSpotSDK::ObjectTypeDefinitionLabels,
         name: String,
         object_type_id: String,
         required_properties: ::Array[String],
@@ -19,7 +19,7 @@ module HubspotSDK
         updated_at: Time
       }
 
-    class ObjectTypeDefinition < HubspotSDK::Internal::Type::BaseModel
+    class ObjectTypeDefinition < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor id: String
 
       attr_accessor allows_sensitive_properties: bool
@@ -28,7 +28,7 @@ module HubspotSDK
 
       attr_accessor fully_qualified_name: String
 
-      attr_accessor labels: HubspotSDK::ObjectTypeDefinitionLabels
+      attr_accessor labels: HubSpotSDK::ObjectTypeDefinitionLabels
 
       attr_accessor name: String
 
@@ -65,7 +65,7 @@ module HubspotSDK
         allows_sensitive_properties: bool,
         archived: bool,
         fully_qualified_name: String,
-        labels: HubspotSDK::ObjectTypeDefinitionLabels,
+        labels: HubSpotSDK::ObjectTypeDefinitionLabels,
         name: String,
         object_type_id: String,
         required_properties: ::Array[String],
@@ -83,7 +83,7 @@ module HubspotSDK
         allows_sensitive_properties: bool,
         archived: bool,
         fully_qualified_name: String,
-        labels: HubspotSDK::ObjectTypeDefinitionLabels,
+        labels: HubSpotSDK::ObjectTypeDefinitionLabels,
         name: String,
         object_type_id: String,
         required_properties: ::Array[String],

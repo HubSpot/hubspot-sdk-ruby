@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Marketing::MarketingEvents::SubscriberStateTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Marketing::MarketingEvents::SubscriberStateTest < HubSpotSDK::Test::ResourceTest
   def test_record_by_email_required_params
     skip("Mock server tests are disabled")
 

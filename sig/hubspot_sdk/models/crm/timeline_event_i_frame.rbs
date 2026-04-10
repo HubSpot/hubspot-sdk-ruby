@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type timeline_event_i_frame =
@@ -10,7 +10,7 @@ module HubspotSDK
           width: Integer
         }
 
-      class TimelineEventIFrame < HubspotSDK::Internal::Type::BaseModel
+      class TimelineEventIFrame < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor header_label: String
 
         attr_accessor height: Integer

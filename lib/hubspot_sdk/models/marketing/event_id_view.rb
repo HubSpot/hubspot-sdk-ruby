@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class EventIDView < HubspotSDK::Internal::Type::BaseModel
+      class EventIDView < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   Identifier of event.
         #

@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type email_get_histogram_params =
         {
           email_ids: ::Array[Integer],
           end_timestamp: String,
-          interval: HubspotSDK::Models::Marketing::EmailGetHistogramParams::interval,
+          interval: HubSpotSDK::Models::Marketing::EmailGetHistogramParams::interval,
           start_timestamp: String
         }
-        & HubspotSDK::Internal::Type::request_parameters
+        & HubSpotSDK::Internal::Type::request_parameters
 
-      class EmailGetHistogramParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class EmailGetHistogramParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         attr_reader email_ids: ::Array[Integer]?
 
@@ -22,11 +22,11 @@ module HubspotSDK
 
         def end_timestamp=: (String) -> String
 
-        attr_reader interval: HubspotSDK::Models::Marketing::EmailGetHistogramParams::interval?
+        attr_reader interval: HubSpotSDK::Models::Marketing::EmailGetHistogramParams::interval?
 
         def interval=: (
-          HubspotSDK::Models::Marketing::EmailGetHistogramParams::interval
-        ) -> HubspotSDK::Models::Marketing::EmailGetHistogramParams::interval
+          HubSpotSDK::Models::Marketing::EmailGetHistogramParams::interval
+        ) -> HubSpotSDK::Models::Marketing::EmailGetHistogramParams::interval
 
         attr_reader start_timestamp: String?
 
@@ -35,17 +35,17 @@ module HubspotSDK
         def initialize: (
           ?email_ids: ::Array[Integer],
           ?end_timestamp: String,
-          ?interval: HubspotSDK::Models::Marketing::EmailGetHistogramParams::interval,
+          ?interval: HubSpotSDK::Models::Marketing::EmailGetHistogramParams::interval,
           ?start_timestamp: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           email_ids: ::Array[Integer],
           end_timestamp: String,
-          interval: HubspotSDK::Models::Marketing::EmailGetHistogramParams::interval,
+          interval: HubSpotSDK::Models::Marketing::EmailGetHistogramParams::interval,
           start_timestamp: String,
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
 
         type interval =
@@ -60,7 +60,7 @@ module HubspotSDK
           | :YEAR
 
         module Interval
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DAY: :DAY
           HOUR: :HOUR
@@ -72,7 +72,7 @@ module HubspotSDK
           WEEK: :WEEK
           YEAR: :YEAR
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::EmailGetHistogramParams::interval]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Marketing::EmailGetHistogramParams::interval]
         end
       end
     end

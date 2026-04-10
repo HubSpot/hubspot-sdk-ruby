@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class SetNewLanguagePrimaryRequestVNext < HubspotSDK::Internal::Type::BaseModel
+      class SetNewLanguagePrimaryRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   ID of object to set as primary in multi-language group.
         #

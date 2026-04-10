@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class AllPropertyTypesOperation < HubspotSDK::Internal::Type::BaseModel
+      class AllPropertyTypesOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::AllPropertyTypesOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::AllPropertyTypesOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::Events::AllPropertyTypesOperation::CoalescingRefineBy::Variants
+            HubSpotSDK::Events::AllPropertyTypesOperation::CoalescingRefineBy::Variants
           )
         end
         attr_accessor :coalescing_refine_by
@@ -27,7 +27,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol
+            HubSpotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol
           )
         end
         attr_accessor :operator
@@ -37,7 +37,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::AllPropertyTypesOperation::PropertyType::TaggedSymbol
+            HubSpotSDK::Events::AllPropertyTypesOperation::PropertyType::TaggedSymbol
           )
         end
         attr_accessor :property_type
@@ -51,7 +51,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Events::AllPropertyTypesOperation::PruningRefineBy::Variants
+              HubSpotSDK::Events::AllPropertyTypesOperation::PruningRefineBy::Variants
             )
           )
         end
@@ -61,13 +61,13 @@ module HubspotSDK
           params(
             pruning_refine_by:
               T.any(
-                HubspotSDK::Events::RelativeComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Events::RelativeRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Events::AbsoluteComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Events::AbsoluteRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Events::AllHistoryRefineBy::OrHash,
-                HubspotSDK::Events::TimePointOperation::OrHash,
-                HubspotSDK::Events::RangedTimeOperation::OrHash
+                HubSpotSDK::Events::RelativeComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Events::RelativeRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Events::AbsoluteComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Events::AllHistoryRefineBy::OrHash,
+                HubSpotSDK::Events::TimePointOperation::OrHash,
+                HubSpotSDK::Events::RangedTimeOperation::OrHash
               )
           ).void
         end
@@ -83,26 +83,26 @@ module HubspotSDK
           params(
             coalescing_refine_by:
               T.any(
-                HubspotSDK::Events::NumOccurrencesRefineBy::OrHash,
-                HubspotSDK::Events::SetOccurrencesRefineBy::OrHash
+                HubSpotSDK::Events::NumOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Events::SetOccurrencesRefineBy::OrHash
               ),
             include_objects_with_no_value_set: T::Boolean,
             operation_type: String,
             operator:
-              HubspotSDK::Events::AllPropertyTypesOperation::Operator::OrSymbol,
+              HubSpotSDK::Events::AllPropertyTypesOperation::Operator::OrSymbol,
             operator_name: String,
             property_type:
-              HubspotSDK::Events::AllPropertyTypesOperation::PropertyType::OrSymbol,
+              HubSpotSDK::Events::AllPropertyTypesOperation::PropertyType::OrSymbol,
             default_value: String,
             pruning_refine_by:
               T.any(
-                HubspotSDK::Events::RelativeComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Events::RelativeRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Events::AbsoluteComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Events::AbsoluteRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Events::AllHistoryRefineBy::OrHash,
-                HubspotSDK::Events::TimePointOperation::OrHash,
-                HubspotSDK::Events::RangedTimeOperation::OrHash
+                HubSpotSDK::Events::RelativeComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Events::RelativeRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Events::AbsoluteComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Events::AllHistoryRefineBy::OrHash,
+                HubSpotSDK::Events::TimePointOperation::OrHash,
+                HubSpotSDK::Events::RangedTimeOperation::OrHash
               ),
             render_spec: String
           ).returns(T.attached_class)
@@ -124,17 +124,17 @@ module HubspotSDK
           override.returns(
             {
               coalescing_refine_by:
-                HubspotSDK::Events::AllPropertyTypesOperation::CoalescingRefineBy::Variants,
+                HubSpotSDK::Events::AllPropertyTypesOperation::CoalescingRefineBy::Variants,
               include_objects_with_no_value_set: T::Boolean,
               operation_type: String,
               operator:
-                HubspotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol,
+                HubSpotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol,
               operator_name: String,
               property_type:
-                HubspotSDK::Events::AllPropertyTypesOperation::PropertyType::TaggedSymbol,
+                HubSpotSDK::Events::AllPropertyTypesOperation::PropertyType::TaggedSymbol,
               default_value: String,
               pruning_refine_by:
-                HubspotSDK::Events::AllPropertyTypesOperation::PruningRefineBy::Variants,
+                HubSpotSDK::Events::AllPropertyTypesOperation::PruningRefineBy::Variants,
               render_spec: String
             }
           )
@@ -143,20 +143,20 @@ module HubspotSDK
         end
 
         module CoalescingRefineBy
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Events::NumOccurrencesRefineBy,
-                HubspotSDK::Events::SetOccurrencesRefineBy
+                HubSpotSDK::Events::NumOccurrencesRefineBy,
+                HubSpotSDK::Events::SetOccurrencesRefineBy
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::AllPropertyTypesOperation::CoalescingRefineBy::Variants
+                HubSpotSDK::Events::AllPropertyTypesOperation::CoalescingRefineBy::Variants
               ]
             )
           end
@@ -165,13 +165,13 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::AllPropertyTypesOperation::Operator
+                HubSpotSDK::Events::AllPropertyTypesOperation::Operator
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -179,28 +179,28 @@ module HubspotSDK
           IS_BLANK =
             T.let(
               :IS_BLANK,
-              HubspotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol
             )
           IS_KNOWN =
             T.let(
               :IS_KNOWN,
-              HubspotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol
             )
           IS_NOT_BLANK =
             T.let(
               :IS_NOT_BLANK,
-              HubspotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol
             )
           IS_UNKNOWN =
             T.let(
               :IS_UNKNOWN,
-              HubspotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol
+                HubSpotSDK::Events::AllPropertyTypesOperation::Operator::TaggedSymbol
               ]
             )
           end
@@ -209,13 +209,13 @@ module HubspotSDK
         end
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::AllPropertyTypesOperation::PropertyType
+                HubSpotSDK::Events::AllPropertyTypesOperation::PropertyType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -223,13 +223,13 @@ module HubspotSDK
           ALLTYPES =
             T.let(
               :alltypes,
-              HubspotSDK::Events::AllPropertyTypesOperation::PropertyType::TaggedSymbol
+              HubSpotSDK::Events::AllPropertyTypesOperation::PropertyType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::AllPropertyTypesOperation::PropertyType::TaggedSymbol
+                HubSpotSDK::Events::AllPropertyTypesOperation::PropertyType::TaggedSymbol
               ]
             )
           end
@@ -238,25 +238,25 @@ module HubspotSDK
         end
 
         module PruningRefineBy
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Events::RelativeComparativeTimestampRefineBy,
-                HubspotSDK::Events::RelativeRangedTimestampRefineBy,
-                HubspotSDK::Events::AbsoluteComparativeTimestampRefineBy,
-                HubspotSDK::Events::AbsoluteRangedTimestampRefineBy,
-                HubspotSDK::Events::AllHistoryRefineBy,
-                HubspotSDK::Events::TimePointOperation,
-                HubspotSDK::Events::RangedTimeOperation
+                HubSpotSDK::Events::RelativeComparativeTimestampRefineBy,
+                HubSpotSDK::Events::RelativeRangedTimestampRefineBy,
+                HubSpotSDK::Events::AbsoluteComparativeTimestampRefineBy,
+                HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy,
+                HubSpotSDK::Events::AllHistoryRefineBy,
+                HubSpotSDK::Events::TimePointOperation,
+                HubSpotSDK::Events::RangedTimeOperation
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::AllPropertyTypesOperation::PruningRefineBy::Variants
+                HubSpotSDK::Events::AllPropertyTypesOperation::PruningRefineBy::Variants
               ]
             )
           end

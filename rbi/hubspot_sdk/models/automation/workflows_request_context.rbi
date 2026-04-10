@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class WorkflowsRequestContext < HubspotSDK::Internal::Type::BaseModel
+      class WorkflowsRequestContext < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::WorkflowsRequestContext,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::WorkflowsRequestContext,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Indicates the source of the request, with the default value being WORKFLOWS.
         sig do
           returns(
-            HubspotSDK::Automation::WorkflowsRequestContext::Source::OrSymbol
+            HubSpotSDK::Automation::WorkflowsRequestContext::Source::OrSymbol
           )
         end
         attr_accessor :source
@@ -26,7 +26,7 @@ module HubspotSDK
 
         sig do
           returns(
-            T.nilable(HubspotSDK::Automation::ActionExecutionIndexIdentifier)
+            T.nilable(HubSpotSDK::Automation::ActionExecutionIndexIdentifier)
           )
         end
         attr_reader :action_execution_index_identifier
@@ -34,7 +34,7 @@ module HubspotSDK
         sig do
           params(
             action_execution_index_identifier:
-              HubspotSDK::Automation::ActionExecutionIndexIdentifier::OrHash
+              HubSpotSDK::Automation::ActionExecutionIndexIdentifier::OrHash
           ).void
         end
         attr_writer :action_execution_index_identifier
@@ -49,10 +49,10 @@ module HubspotSDK
         sig do
           params(
             source:
-              HubspotSDK::Automation::WorkflowsRequestContext::Source::OrSymbol,
+              HubSpotSDK::Automation::WorkflowsRequestContext::Source::OrSymbol,
             workflow_id: Integer,
             action_execution_index_identifier:
-              HubspotSDK::Automation::ActionExecutionIndexIdentifier::OrHash,
+              HubSpotSDK::Automation::ActionExecutionIndexIdentifier::OrHash,
             action_id: Integer
           ).returns(T.attached_class)
         end
@@ -71,10 +71,10 @@ module HubspotSDK
           override.returns(
             {
               source:
-                HubspotSDK::Automation::WorkflowsRequestContext::Source::OrSymbol,
+                HubSpotSDK::Automation::WorkflowsRequestContext::Source::OrSymbol,
               workflow_id: Integer,
               action_execution_index_identifier:
-                HubspotSDK::Automation::ActionExecutionIndexIdentifier,
+                HubSpotSDK::Automation::ActionExecutionIndexIdentifier,
               action_id: Integer
             }
           )
@@ -84,13 +84,13 @@ module HubspotSDK
 
         # Indicates the source of the request, with the default value being WORKFLOWS.
         module Source
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Automation::WorkflowsRequestContext::Source
+                HubSpotSDK::Automation::WorkflowsRequestContext::Source
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -98,13 +98,13 @@ module HubspotSDK
           WORKFLOWS =
             T.let(
               :WORKFLOWS,
-              HubspotSDK::Automation::WorkflowsRequestContext::Source::TaggedSymbol
+              HubSpotSDK::Automation::WorkflowsRequestContext::Source::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::WorkflowsRequestContext::Source::TaggedSymbol
+                HubSpotSDK::Automation::WorkflowsRequestContext::Source::TaggedSymbol
               ]
             )
           end

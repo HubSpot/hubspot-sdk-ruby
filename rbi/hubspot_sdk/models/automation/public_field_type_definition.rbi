@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicFieldTypeDefinition < HubspotSDK::Internal::Type::BaseModel
+      class PublicFieldTypeDefinition < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::PublicFieldTypeDefinition,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::PublicFieldTypeDefinition,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,14 +16,14 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :name
 
-        sig { returns(T::Array[HubspotSDK::Automation::PublicOption]) }
+        sig { returns(T::Array[HubSpotSDK::Automation::PublicOption]) }
         attr_accessor :options
 
         # The data type of the field, with accepted values including bool, date, datetime,
         # enumeration, json, number, object_coordinates, phone_number, and string.
         sig do
           returns(
-            HubspotSDK::Automation::PublicFieldTypeDefinition::Type::OrSymbol
+            HubSpotSDK::Automation::PublicFieldTypeDefinition::Type::OrSymbol
           )
         end
         attr_accessor :type
@@ -41,7 +41,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Automation::PublicFieldTypeDefinition::FieldType::OrSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::FieldType::OrSymbol
             )
           )
         end
@@ -50,7 +50,7 @@ module HubspotSDK
         sig do
           params(
             field_type:
-              HubspotSDK::Automation::PublicFieldTypeDefinition::FieldType::OrSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::FieldType::OrSymbol
           ).void
         end
         attr_writer :field_type
@@ -81,7 +81,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Automation::PublicFieldTypeDefinition::ReferencedObjectType::OrSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::ReferencedObjectType::OrSymbol
             )
           )
         end
@@ -90,7 +90,7 @@ module HubspotSDK
         sig do
           params(
             referenced_object_type:
-              HubspotSDK::Automation::PublicFieldTypeDefinition::ReferencedObjectType::OrSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::ReferencedObjectType::OrSymbol
           ).void
         end
         attr_writer :referenced_object_type
@@ -98,17 +98,17 @@ module HubspotSDK
         sig do
           params(
             name: String,
-            options: T::Array[HubspotSDK::Automation::PublicOption::OrHash],
+            options: T::Array[HubSpotSDK::Automation::PublicOption::OrHash],
             type:
-              HubspotSDK::Automation::PublicFieldTypeDefinition::Type::OrSymbol,
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::Type::OrSymbol,
             description: String,
             field_type:
-              HubspotSDK::Automation::PublicFieldTypeDefinition::FieldType::OrSymbol,
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::FieldType::OrSymbol,
             help_text: String,
             label: String,
             options_url: String,
             referenced_object_type:
-              HubspotSDK::Automation::PublicFieldTypeDefinition::ReferencedObjectType::OrSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::ReferencedObjectType::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -140,17 +140,17 @@ module HubspotSDK
           override.returns(
             {
               name: String,
-              options: T::Array[HubspotSDK::Automation::PublicOption],
+              options: T::Array[HubSpotSDK::Automation::PublicOption],
               type:
-                HubspotSDK::Automation::PublicFieldTypeDefinition::Type::OrSymbol,
+                HubSpotSDK::Automation::PublicFieldTypeDefinition::Type::OrSymbol,
               description: String,
               field_type:
-                HubspotSDK::Automation::PublicFieldTypeDefinition::FieldType::OrSymbol,
+                HubSpotSDK::Automation::PublicFieldTypeDefinition::FieldType::OrSymbol,
               help_text: String,
               label: String,
               options_url: String,
               referenced_object_type:
-                HubspotSDK::Automation::PublicFieldTypeDefinition::ReferencedObjectType::OrSymbol
+                HubSpotSDK::Automation::PublicFieldTypeDefinition::ReferencedObjectType::OrSymbol
             }
           )
         end
@@ -160,13 +160,13 @@ module HubspotSDK
         # The data type of the field, with accepted values including bool, date, datetime,
         # enumeration, json, number, object_coordinates, phone_number, and string.
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Automation::PublicFieldTypeDefinition::Type
+                HubSpotSDK::Automation::PublicFieldTypeDefinition::Type
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -174,53 +174,53 @@ module HubspotSDK
           BOOL =
             T.let(
               :bool,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
             )
           DATE =
             T.let(
               :date,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
             )
           DATETIME =
             T.let(
               :datetime,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
             )
           ENUMERATION =
             T.let(
               :enumeration,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
             )
           JSON =
             T.let(
               :json,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
             )
           NUMBER =
             T.let(
               :number,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
             )
           OBJECT_COORDINATES =
             T.let(
               :object_coordinates,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
             )
           PHONE_NUMBER =
             T.let(
               :phone_number,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
             )
           STRING =
             T.let(
               :string,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
+                HubSpotSDK::Automation::PublicFieldTypeDefinition::Type::TaggedSymbol
               ]
             )
           end
@@ -232,13 +232,13 @@ module HubspotSDK
         # calculation_equation, checkbox, date, file, html, number, phonenumber, radio,
         # select, text, and textarea.
         module FieldType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Automation::PublicFieldTypeDefinition::FieldType
+                HubSpotSDK::Automation::PublicFieldTypeDefinition::FieldType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -246,68 +246,68 @@ module HubspotSDK
           BOOLEANCHECKBOX =
             T.let(
               :booleancheckbox,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
             )
           CALCULATION_EQUATION =
             T.let(
               :calculation_equation,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
             )
           CHECKBOX =
             T.let(
               :checkbox,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
             )
           DATE =
             T.let(
               :date,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
             )
           FILE =
             T.let(
               :file,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
             )
           HTML =
             T.let(
               :html,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
             )
           NUMBER =
             T.let(
               :number,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
             )
           PHONENUMBER =
             T.let(
               :phonenumber,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
             )
           RADIO =
             T.let(
               :radio,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
             )
           SELECT =
             T.let(
               :select,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
             )
           TEXT =
             T.let(
               :text,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
             )
           TEXTAREA =
             T.let(
               :textarea,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
+                HubSpotSDK::Automation::PublicFieldTypeDefinition::FieldType::TaggedSymbol
               ]
             )
           end
@@ -318,13 +318,13 @@ module HubspotSDK
         # The type of object that the field references, with accepted values including
         # OWNER.
         module ReferencedObjectType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Automation::PublicFieldTypeDefinition::ReferencedObjectType
+                HubSpotSDK::Automation::PublicFieldTypeDefinition::ReferencedObjectType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -332,13 +332,13 @@ module HubspotSDK
           OWNER =
             T.let(
               :OWNER,
-              HubspotSDK::Automation::PublicFieldTypeDefinition::ReferencedObjectType::TaggedSymbol
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::ReferencedObjectType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::PublicFieldTypeDefinition::ReferencedObjectType::TaggedSymbol
+                HubSpotSDK::Automation::PublicFieldTypeDefinition::ReferencedObjectType::TaggedSymbol
               ]
             )
           end

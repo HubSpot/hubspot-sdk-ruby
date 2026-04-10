@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class Property < HubspotSDK::Internal::Type::BaseModel
+      class Property < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Crm::Property, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Crm::Property, HubSpotSDK::Internal::AnyHash)
           end
 
         # A description of the property that will be shown as help text in HubSpot.
@@ -32,7 +32,7 @@ module HubspotSDK
 
         # A list of valid options for the property. This field is required for enumerated
         # properties, but will be empty for other property types.
-        sig { returns(T::Array[HubspotSDK::Option]) }
+        sig { returns(T::Array[HubSpotSDK::Option]) }
         attr_accessor :options
 
         # The property data type.
@@ -94,7 +94,7 @@ module HubspotSDK
         # "sensitive", or "highly_sensitive".
         sig do
           returns(
-            T.nilable(HubspotSDK::Crm::Property::DataSensitivity::TaggedSymbol)
+            T.nilable(HubSpotSDK::Crm::Property::DataSensitivity::TaggedSymbol)
           )
         end
         attr_reader :data_sensitivity
@@ -102,7 +102,7 @@ module HubspotSDK
         sig do
           params(
             data_sensitivity:
-              HubspotSDK::Crm::Property::DataSensitivity::OrSymbol
+              HubSpotSDK::Crm::Property::DataSensitivity::OrSymbol
           ).void
         end
         attr_writer :data_sensitivity
@@ -111,7 +111,7 @@ module HubspotSDK
         # as 'absolute', 'absolute_with_relative', 'time_since', and 'time_until'.
         sig do
           returns(
-            T.nilable(HubspotSDK::Crm::Property::DateDisplayHint::TaggedSymbol)
+            T.nilable(HubSpotSDK::Crm::Property::DateDisplayHint::TaggedSymbol)
           )
         end
         attr_reader :date_display_hint
@@ -119,7 +119,7 @@ module HubspotSDK
         sig do
           params(
             date_display_hint:
-              HubspotSDK::Crm::Property::DateDisplayHint::OrSymbol
+              HubSpotSDK::Crm::Property::DateDisplayHint::OrSymbol
           ).void
         end
         attr_writer :date_display_hint
@@ -171,13 +171,13 @@ module HubspotSDK
         sig { params(hubspot_defined: T::Boolean).void }
         attr_writer :hubspot_defined
 
-        sig { returns(T.nilable(HubspotSDK::PropertyModificationMetadata)) }
+        sig { returns(T.nilable(HubSpotSDK::PropertyModificationMetadata)) }
         attr_reader :modification_metadata
 
         sig do
           params(
             modification_metadata:
-              HubspotSDK::PropertyModificationMetadata::OrHash
+              HubSpotSDK::PropertyModificationMetadata::OrHash
           ).void
         end
         attr_writer :modification_metadata
@@ -228,7 +228,7 @@ module HubspotSDK
             group_name: String,
             label: String,
             name: String,
-            options: T::Array[HubspotSDK::Option::OrHash],
+            options: T::Array[HubSpotSDK::Option::OrHash],
             type: String,
             archived: T::Boolean,
             archived_at: Time,
@@ -238,9 +238,9 @@ module HubspotSDK
             created_user_id: String,
             currency_property_name: String,
             data_sensitivity:
-              HubspotSDK::Crm::Property::DataSensitivity::OrSymbol,
+              HubSpotSDK::Crm::Property::DataSensitivity::OrSymbol,
             date_display_hint:
-              HubspotSDK::Crm::Property::DateDisplayHint::OrSymbol,
+              HubSpotSDK::Crm::Property::DateDisplayHint::OrSymbol,
             display_order: Integer,
             external_options: T::Boolean,
             form_field: T::Boolean,
@@ -248,7 +248,7 @@ module HubspotSDK
             hidden: T::Boolean,
             hubspot_defined: T::Boolean,
             modification_metadata:
-              HubspotSDK::PropertyModificationMetadata::OrHash,
+              HubSpotSDK::PropertyModificationMetadata::OrHash,
             referenced_object_type: String,
             sensitive_data_categories: T::Array[String],
             show_currency_symbol: T::Boolean,
@@ -337,7 +337,7 @@ module HubspotSDK
               group_name: String,
               label: String,
               name: String,
-              options: T::Array[HubspotSDK::Option],
+              options: T::Array[HubSpotSDK::Option],
               type: String,
               archived: T::Boolean,
               archived_at: Time,
@@ -347,16 +347,16 @@ module HubspotSDK
               created_user_id: String,
               currency_property_name: String,
               data_sensitivity:
-                HubspotSDK::Crm::Property::DataSensitivity::TaggedSymbol,
+                HubSpotSDK::Crm::Property::DataSensitivity::TaggedSymbol,
               date_display_hint:
-                HubspotSDK::Crm::Property::DateDisplayHint::TaggedSymbol,
+                HubSpotSDK::Crm::Property::DateDisplayHint::TaggedSymbol,
               display_order: Integer,
               external_options: T::Boolean,
               form_field: T::Boolean,
               has_unique_value: T::Boolean,
               hidden: T::Boolean,
               hubspot_defined: T::Boolean,
-              modification_metadata: HubspotSDK::PropertyModificationMetadata,
+              modification_metadata: HubSpotSDK::PropertyModificationMetadata,
               referenced_object_type: String,
               sensitive_data_categories: T::Array[String],
               show_currency_symbol: T::Boolean,
@@ -371,33 +371,33 @@ module HubspotSDK
         # Indicates the sensitivity level of the property, such as "non_sensitive",
         # "sensitive", or "highly_sensitive".
         module DataSensitivity
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::Property::DataSensitivity)
+              T.all(Symbol, HubSpotSDK::Crm::Property::DataSensitivity)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           HIGHLY_SENSITIVE =
             T.let(
               :highly_sensitive,
-              HubspotSDK::Crm::Property::DataSensitivity::TaggedSymbol
+              HubSpotSDK::Crm::Property::DataSensitivity::TaggedSymbol
             )
           NON_SENSITIVE =
             T.let(
               :non_sensitive,
-              HubspotSDK::Crm::Property::DataSensitivity::TaggedSymbol
+              HubSpotSDK::Crm::Property::DataSensitivity::TaggedSymbol
             )
           SENSITIVE =
             T.let(
               :sensitive,
-              HubspotSDK::Crm::Property::DataSensitivity::TaggedSymbol
+              HubSpotSDK::Crm::Property::DataSensitivity::TaggedSymbol
             )
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Crm::Property::DataSensitivity::TaggedSymbol]
+              T::Array[HubSpotSDK::Crm::Property::DataSensitivity::TaggedSymbol]
             )
           end
           def self.values
@@ -407,38 +407,38 @@ module HubspotSDK
         # Controls how date properties are displayed in the HubSpot UI, with options such
         # as 'absolute', 'absolute_with_relative', 'time_since', and 'time_until'.
         module DateDisplayHint
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::Property::DateDisplayHint)
+              T.all(Symbol, HubSpotSDK::Crm::Property::DateDisplayHint)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           ABSOLUTE =
             T.let(
               :absolute,
-              HubspotSDK::Crm::Property::DateDisplayHint::TaggedSymbol
+              HubSpotSDK::Crm::Property::DateDisplayHint::TaggedSymbol
             )
           ABSOLUTE_WITH_RELATIVE =
             T.let(
               :absolute_with_relative,
-              HubspotSDK::Crm::Property::DateDisplayHint::TaggedSymbol
+              HubSpotSDK::Crm::Property::DateDisplayHint::TaggedSymbol
             )
           TIME_SINCE =
             T.let(
               :time_since,
-              HubspotSDK::Crm::Property::DateDisplayHint::TaggedSymbol
+              HubSpotSDK::Crm::Property::DateDisplayHint::TaggedSymbol
             )
           TIME_UNTIL =
             T.let(
               :time_until,
-              HubspotSDK::Crm::Property::DateDisplayHint::TaggedSymbol
+              HubSpotSDK::Crm::Property::DateDisplayHint::TaggedSymbol
             )
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Crm::Property::DateDisplayHint::TaggedSymbol]
+              T::Array[HubSpotSDK::Crm::Property::DateDisplayHint::TaggedSymbol]
             )
           end
           def self.values

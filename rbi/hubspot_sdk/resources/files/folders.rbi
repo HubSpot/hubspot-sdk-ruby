@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Files
       class Folders
@@ -8,7 +8,7 @@ module HubspotSDK
         sig do
           params(
             folder_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete_by_id(folder_id, request_options: {})
@@ -18,7 +18,7 @@ module HubspotSDK
         sig do
           params(
             folder_path: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete_by_path(folder_path, request_options: {})
@@ -29,8 +29,8 @@ module HubspotSDK
           params(
             folder_id: String,
             properties: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Files::Folder)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Files::Folder)
         end
         def get_by_id(folder_id, properties: nil, request_options: {})
         end
@@ -40,8 +40,8 @@ module HubspotSDK
           params(
             folder_path: String,
             properties: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Files::Folder)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Files::Folder)
         end
         def get_by_path(folder_path, properties: nil, request_options: {})
         end
@@ -50,8 +50,8 @@ module HubspotSDK
         sig do
           params(
             task_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Files::FolderActionResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Files::FolderActionResponse)
         end
         def get_update_async_status(task_id, request_options: {})
         end
@@ -76,8 +76,8 @@ module HubspotSDK
             updated_at: Time,
             updated_at_gte: Time,
             updated_at_lte: Time,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Internal::Page[HubspotSDK::Files::Folder])
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Internal::Page[HubSpotSDK::Files::Folder])
         end
         def search(
           # The paging cursor token of the last successfully read resource will be returned
@@ -112,8 +112,8 @@ module HubspotSDK
             id: String,
             name: String,
             parent_folder_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Files::FolderUpdateTaskLocator)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Files::FolderUpdateTaskLocator)
         end
         def update_async_by_id(
           # The unique identifier of the folder to be updated.
@@ -135,8 +135,8 @@ module HubspotSDK
             folder_id: String,
             name: String,
             parent_folder_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Files::Folder)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Files::Folder)
         end
         def update_by_id(
           folder_id,
@@ -152,7 +152,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

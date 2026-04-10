@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module AssociationsSchema
-        # @see HubspotSDK::Resources::Crm::AssociationsSchema::Labels#list_labels
-        class LabelListLabelsParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Crm::AssociationsSchema::Labels#list_labels
+        class LabelListLabelsParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute from_object_type
           #
@@ -22,7 +22,7 @@ module HubspotSDK
           # @!method initialize(from_object_type:, to_object_type:, request_options: {})
           #   @param from_object_type [String]
           #   @param to_object_type [String]
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

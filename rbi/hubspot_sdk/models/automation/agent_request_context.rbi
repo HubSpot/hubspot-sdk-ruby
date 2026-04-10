@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class AgentRequestContext < HubspotSDK::Internal::Type::BaseModel
+      class AgentRequestContext < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::AgentRequestContext,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::AgentRequestContext,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,20 +16,20 @@ module HubspotSDK
         sig { returns(Integer) }
         attr_accessor :agent_id
 
-        sig { returns(HubspotSDK::Automation::ChirpAIContextObject) }
+        sig { returns(HubSpotSDK::Automation::ChirpAIContextObject) }
         attr_reader :chirp_ai_context_object
 
         sig do
           params(
             chirp_ai_context_object:
-              HubspotSDK::Automation::ChirpAIContextObject::OrHash
+              HubSpotSDK::Automation::ChirpAIContextObject::OrHash
           ).void
         end
         attr_writer :chirp_ai_context_object
 
         # Indicates the source of the request, with the default value being 'AGENTS'.
         sig do
-          returns(HubspotSDK::Automation::AgentRequestContext::Source::OrSymbol)
+          returns(HubSpotSDK::Automation::AgentRequestContext::Source::OrSymbol)
         end
         attr_accessor :source
 
@@ -44,9 +44,9 @@ module HubspotSDK
           params(
             agent_id: Integer,
             chirp_ai_context_object:
-              HubspotSDK::Automation::ChirpAIContextObject::OrHash,
+              HubSpotSDK::Automation::ChirpAIContextObject::OrHash,
             source:
-              HubspotSDK::Automation::AgentRequestContext::Source::OrSymbol,
+              HubSpotSDK::Automation::AgentRequestContext::Source::OrSymbol,
             trajectory_id: String
           ).returns(T.attached_class)
         end
@@ -66,9 +66,9 @@ module HubspotSDK
             {
               agent_id: Integer,
               chirp_ai_context_object:
-                HubspotSDK::Automation::ChirpAIContextObject,
+                HubSpotSDK::Automation::ChirpAIContextObject,
               source:
-                HubspotSDK::Automation::AgentRequestContext::Source::OrSymbol,
+                HubSpotSDK::Automation::AgentRequestContext::Source::OrSymbol,
               trajectory_id: String
             }
           )
@@ -78,24 +78,24 @@ module HubspotSDK
 
         # Indicates the source of the request, with the default value being 'AGENTS'.
         module Source
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Automation::AgentRequestContext::Source)
+              T.all(Symbol, HubSpotSDK::Automation::AgentRequestContext::Source)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           AGENTS =
             T.let(
               :AGENTS,
-              HubspotSDK::Automation::AgentRequestContext::Source::TaggedSymbol
+              HubSpotSDK::Automation::AgentRequestContext::Source::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::AgentRequestContext::Source::TaggedSymbol
+                HubSpotSDK::Automation::AgentRequestContext::Source::TaggedSymbol
               ]
             )
           end

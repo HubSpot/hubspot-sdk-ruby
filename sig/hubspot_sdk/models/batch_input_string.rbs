@@ -1,8 +1,8 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type batch_input_string = { inputs: ::Array[String] }
 
-    class BatchInputString < HubspotSDK::Internal::Type::BaseModel
+    class BatchInputString < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor inputs: ::Array[String]
 
       def initialize: (inputs: ::Array[String]) -> void

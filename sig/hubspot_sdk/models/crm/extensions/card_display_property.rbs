@@ -1,36 +1,36 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         type card_display_property =
           {
-            data_type: HubspotSDK::Models::Crm::Extensions::CardDisplayProperty::data_type,
+            data_type: HubSpotSDK::Models::Crm::Extensions::CardDisplayProperty::data_type,
             label: String,
             name: String,
-            options: ::Array[HubspotSDK::Crm::Extensions::DisplayOption]
+            options: ::Array[HubSpotSDK::Crm::Extensions::DisplayOption]
           }
 
-        class CardDisplayProperty < HubspotSDK::Internal::Type::BaseModel
-          attr_accessor data_type: HubspotSDK::Models::Crm::Extensions::CardDisplayProperty::data_type
+        class CardDisplayProperty < HubSpotSDK::Internal::Type::BaseModel
+          attr_accessor data_type: HubSpotSDK::Models::Crm::Extensions::CardDisplayProperty::data_type
 
           attr_accessor label: String
 
           attr_accessor name: String
 
-          attr_accessor options: ::Array[HubspotSDK::Crm::Extensions::DisplayOption]
+          attr_accessor options: ::Array[HubSpotSDK::Crm::Extensions::DisplayOption]
 
           def initialize: (
-            data_type: HubspotSDK::Models::Crm::Extensions::CardDisplayProperty::data_type,
+            data_type: HubSpotSDK::Models::Crm::Extensions::CardDisplayProperty::data_type,
             label: String,
             name: String,
-            options: ::Array[HubspotSDK::Crm::Extensions::DisplayOption]
+            options: ::Array[HubSpotSDK::Crm::Extensions::DisplayOption]
           ) -> void
 
           def to_hash: -> {
-            data_type: HubspotSDK::Models::Crm::Extensions::CardDisplayProperty::data_type,
+            data_type: HubSpotSDK::Models::Crm::Extensions::CardDisplayProperty::data_type,
             label: String,
             name: String,
-            options: ::Array[HubspotSDK::Crm::Extensions::DisplayOption]
+            options: ::Array[HubSpotSDK::Crm::Extensions::DisplayOption]
           }
 
           type data_type =
@@ -45,7 +45,7 @@ module HubspotSDK
             | :STRING
 
           module DataType
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             BOOLEAN: :BOOLEAN
             CURRENCY: :CURRENCY
@@ -57,7 +57,7 @@ module HubspotSDK
             STATUS: :STATUS
             STRING: :STRING
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::CardDisplayProperty::data_type]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Crm::Extensions::CardDisplayProperty::data_type]
           end
         end
       end

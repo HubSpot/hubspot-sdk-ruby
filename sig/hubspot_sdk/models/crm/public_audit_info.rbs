@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_audit_info =
@@ -12,7 +12,7 @@ module HubspotSDK
           timestamp: Time
         }
 
-      class PublicAuditInfo < HubspotSDK::Internal::Type::BaseModel
+      class PublicAuditInfo < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor action: String
 
         attr_accessor identifier: String

@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Events
       class Definitions
@@ -11,15 +11,15 @@ module HubspotSDK
             label: String,
             property_definitions:
               T::Array[
-                HubspotSDK::Events::ExternalBehavioralEventPropertyCreate::OrHash
+                HubSpotSDK::Events::ExternalBehavioralEventPropertyCreate::OrHash
               ],
             custom_matching_id:
-              HubspotSDK::Events::ExternalObjectResolutionMappingRequest::OrHash,
+              HubSpotSDK::Events::ExternalObjectResolutionMappingRequest::OrHash,
             description: String,
             name: String,
             primary_object: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Events::ExternalBehavioralEventTypeDefinition)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition)
         end
         def create(
           include_default_properties:,
@@ -50,8 +50,8 @@ module HubspotSDK
             event_name: String,
             description: String,
             label: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Events::ExternalBehavioralEventTypeDefinition)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition)
         end
         def update(
           event_name,
@@ -71,10 +71,10 @@ module HubspotSDK
             limit: Integer,
             search_string: String,
             sort_order: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Internal::Page[
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
+            HubSpotSDK::Internal::Page[
+              HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition
             ]
           )
         end
@@ -96,7 +96,7 @@ module HubspotSDK
         sig do
           params(
             event_name: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete(event_name, request_options: {})
@@ -110,9 +110,9 @@ module HubspotSDK
             type: String,
             description: String,
             name: String,
-            options: T::Array[HubspotSDK::OptionInput::OrHash],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Events::Property)
+            options: T::Array[HubSpotSDK::OptionInput::OrHash],
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Events::Property)
         end
         def create_property(
           event_name,
@@ -138,7 +138,7 @@ module HubspotSDK
           params(
             property_name: String,
             event_name: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete_property(property_name, event_name:, request_options: {})
@@ -148,8 +148,8 @@ module HubspotSDK
         sig do
           params(
             event_name: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Events::ExternalBehavioralEventTypeDefinition)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition)
         end
         def get(event_name, request_options: {})
         end
@@ -159,9 +159,9 @@ module HubspotSDK
           params(
             inputs:
               T::Array[
-                HubspotSDK::Events::BehavioralEventHTTPCompletionRequest::OrHash
+                HubSpotSDK::Events::BehavioralEventHTTPCompletionRequest::OrHash
               ],
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def send_batch(inputs:, request_options: {})
@@ -174,9 +174,9 @@ module HubspotSDK
             event_name: String,
             description: String,
             label: String,
-            options: T::Array[HubspotSDK::OptionInput::OrHash],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Events::Property)
+            options: T::Array[HubSpotSDK::OptionInput::OrHash],
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Events::Property)
         end
         def update_property(
           # Path param
@@ -196,7 +196,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

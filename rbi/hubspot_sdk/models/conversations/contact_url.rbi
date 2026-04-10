@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class ContactURL < HubspotSDK::Internal::Type::BaseModel
+      class ContactURL < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::ContactURL,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::ContactURL,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -17,14 +17,14 @@ module HubspotSDK
 
         sig do
           returns(
-            T.nilable(HubspotSDK::Conversations::ContactURL::Type::OrSymbol)
+            T.nilable(HubSpotSDK::Conversations::ContactURL::Type::OrSymbol)
           )
         end
         attr_reader :type
 
         sig do
           params(
-            type: HubspotSDK::Conversations::ContactURL::Type::OrSymbol
+            type: HubSpotSDK::Conversations::ContactURL::Type::OrSymbol
           ).void
         end
         attr_writer :type
@@ -32,7 +32,7 @@ module HubspotSDK
         sig do
           params(
             url: String,
-            type: HubspotSDK::Conversations::ContactURL::Type::OrSymbol
+            type: HubSpotSDK::Conversations::ContactURL::Type::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(url:, type: nil)
@@ -42,7 +42,7 @@ module HubspotSDK
           override.returns(
             {
               url: String,
-              type: HubspotSDK::Conversations::ContactURL::Type::OrSymbol
+              type: HubSpotSDK::Conversations::ContactURL::Type::OrSymbol
             }
           )
         end
@@ -50,29 +50,29 @@ module HubspotSDK
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Conversations::ContactURL::Type)
+              T.all(Symbol, HubSpotSDK::Conversations::ContactURL::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           HOME =
             T.let(
               :HOME,
-              HubspotSDK::Conversations::ContactURL::Type::TaggedSymbol
+              HubSpotSDK::Conversations::ContactURL::Type::TaggedSymbol
             )
           WORK =
             T.let(
               :WORK,
-              HubspotSDK::Conversations::ContactURL::Type::TaggedSymbol
+              HubSpotSDK::Conversations::ContactURL::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::ContactURL::Type::TaggedSymbol
+                HubSpotSDK::Conversations::ContactURL::Type::TaggedSymbol
               ]
             )
           end

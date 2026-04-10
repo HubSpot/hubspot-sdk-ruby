@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class EnumerationPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class EnumerationPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute include_objects_with_no_value_set
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute operation_type
@@ -18,8 +18,8 @@ module HubspotSDK
 
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::EnumerationPropertyOperation::Operator]
-        required :operator, enum: -> { HubspotSDK::Events::EnumerationPropertyOperation::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Events::EnumerationPropertyOperation::Operator]
+        required :operator, enum: -> { HubSpotSDK::Events::EnumerationPropertyOperation::Operator }
 
         # @!attribute operator_name
         #
@@ -28,15 +28,15 @@ module HubspotSDK
 
         # @!attribute property_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::EnumerationPropertyOperation::PropertyType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::EnumerationPropertyOperation::PropertyType]
         required :property_type,
-                 enum: -> { HubspotSDK::Events::EnumerationPropertyOperation::PropertyType },
+                 enum: -> { HubSpotSDK::Events::EnumerationPropertyOperation::PropertyType },
                  api_name: :propertyType
 
         # @!attribute values
         #
         #   @return [Array<String>]
-        required :values, HubspotSDK::Internal::Type::ArrayOf[String]
+        required :values, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute default_value
         #
@@ -51,16 +51,16 @@ module HubspotSDK
         # @!method initialize(include_objects_with_no_value_set:, operation_type:, operator:, operator_name:, property_type:, values:, default_value: nil, render_spec: nil)
         #   @param include_objects_with_no_value_set [Boolean]
         #   @param operation_type [String]
-        #   @param operator [Symbol, HubspotSDK::Models::Events::EnumerationPropertyOperation::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Events::EnumerationPropertyOperation::Operator]
         #   @param operator_name [String]
-        #   @param property_type [Symbol, HubspotSDK::Models::Events::EnumerationPropertyOperation::PropertyType]
+        #   @param property_type [Symbol, HubSpotSDK::Models::Events::EnumerationPropertyOperation::PropertyType]
         #   @param values [Array<String>]
         #   @param default_value [String]
         #   @param render_spec [String]
 
-        # @see HubspotSDK::Models::Events::EnumerationPropertyOperation#operator
+        # @see HubSpotSDK::Models::Events::EnumerationPropertyOperation#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONTAINS_ALL = :CONTAINS_ALL
           DOES_NOT_CONTAIN_ALL = :DOES_NOT_CONTAIN_ALL
@@ -79,9 +79,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::EnumerationPropertyOperation#property_type
+        # @see HubSpotSDK::Models::Events::EnumerationPropertyOperation#property_type
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ENUMERATION = :enumeration
 

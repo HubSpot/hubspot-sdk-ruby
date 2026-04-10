@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicDatePoint < HubspotSDK::Internal::Type::BaseModel
+      class PublicDatePoint < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicDatePoint,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicDatePoint,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -21,7 +21,7 @@ module HubspotSDK
         attr_accessor :month
 
         # Specifies the type of time (DATE).
-        sig { returns(HubspotSDK::Crm::PublicDatePoint::TimeType::OrSymbol) }
+        sig { returns(HubSpotSDK::Crm::PublicDatePoint::TimeType::OrSymbol) }
         attr_accessor :time_type
 
         # The year component of the date.
@@ -71,7 +71,7 @@ module HubspotSDK
           params(
             day: Integer,
             month: Integer,
-            time_type: HubspotSDK::Crm::PublicDatePoint::TimeType::OrSymbol,
+            time_type: HubSpotSDK::Crm::PublicDatePoint::TimeType::OrSymbol,
             year: Integer,
             zone_id: String,
             hour: Integer,
@@ -110,7 +110,7 @@ module HubspotSDK
             {
               day: Integer,
               month: Integer,
-              time_type: HubspotSDK::Crm::PublicDatePoint::TimeType::OrSymbol,
+              time_type: HubSpotSDK::Crm::PublicDatePoint::TimeType::OrSymbol,
               year: Integer,
               zone_id: String,
               hour: Integer,
@@ -126,23 +126,23 @@ module HubspotSDK
 
         # Specifies the type of time (DATE).
         module TimeType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PublicDatePoint::TimeType)
+              T.all(Symbol, HubSpotSDK::Crm::PublicDatePoint::TimeType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           DATE =
             T.let(
               :DATE,
-              HubspotSDK::Crm::PublicDatePoint::TimeType::TaggedSymbol
+              HubSpotSDK::Crm::PublicDatePoint::TimeType::TaggedSymbol
             )
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Crm::PublicDatePoint::TimeType::TaggedSymbol]
+              T::Array[HubSpotSDK::Crm::PublicDatePoint::TimeType::TaggedSymbol]
             )
           end
           def self.values

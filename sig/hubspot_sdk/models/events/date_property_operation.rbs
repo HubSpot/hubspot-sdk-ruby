@@ -1,34 +1,34 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type date_property_operation =
         {
           day: Integer,
           include_objects_with_no_value_set: bool,
-          month: HubspotSDK::Models::Events::DatePropertyOperation::month,
+          month: HubSpotSDK::Models::Events::DatePropertyOperation::month,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::DatePropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::DatePropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::DatePropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::DatePropertyOperation::property_type,
           year: Integer,
           default_value: String,
           render_spec: String
         }
 
-      class DatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class DatePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor day: Integer
 
         attr_accessor include_objects_with_no_value_set: bool
 
-        attr_accessor month: HubspotSDK::Models::Events::DatePropertyOperation::month
+        attr_accessor month: HubSpotSDK::Models::Events::DatePropertyOperation::month
 
         attr_accessor operation_type: String
 
-        attr_accessor operator: HubspotSDK::Models::Events::DatePropertyOperation::operator
+        attr_accessor operator: HubSpotSDK::Models::Events::DatePropertyOperation::operator
 
         attr_accessor operator_name: String
 
-        attr_accessor property_type: HubspotSDK::Models::Events::DatePropertyOperation::property_type
+        attr_accessor property_type: HubSpotSDK::Models::Events::DatePropertyOperation::property_type
 
         attr_accessor year: Integer
 
@@ -43,11 +43,11 @@ module HubspotSDK
         def initialize: (
           day: Integer,
           include_objects_with_no_value_set: bool,
-          month: HubspotSDK::Models::Events::DatePropertyOperation::month,
+          month: HubSpotSDK::Models::Events::DatePropertyOperation::month,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::DatePropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::DatePropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::DatePropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::DatePropertyOperation::property_type,
           year: Integer,
           ?default_value: String,
           ?render_spec: String
@@ -56,11 +56,11 @@ module HubspotSDK
         def to_hash: -> {
           day: Integer,
           include_objects_with_no_value_set: bool,
-          month: HubspotSDK::Models::Events::DatePropertyOperation::month,
+          month: HubSpotSDK::Models::Events::DatePropertyOperation::month,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::DatePropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::DatePropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::DatePropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::DatePropertyOperation::property_type,
           year: Integer,
           default_value: String,
           render_spec: String
@@ -81,7 +81,7 @@ module HubspotSDK
           | :SEP
 
         module Month
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           APR: :APR
           AUG: :AUG
@@ -96,29 +96,29 @@ module HubspotSDK
           OCT: :OCT
           SEP: :SEP
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::DatePropertyOperation::month]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::DatePropertyOperation::month]
         end
 
         type operator = :AFTER | :BEFORE | :EQUAL
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AFTER: :AFTER
           BEFORE: :BEFORE
           EQUAL: :EQUAL
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::DatePropertyOperation::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::DatePropertyOperation::operator]
         end
 
         type property_type = :date
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DATE: :date
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::DatePropertyOperation::property_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::DatePropertyOperation::property_type]
         end
       end
     end

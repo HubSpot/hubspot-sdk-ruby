@@ -1,14 +1,14 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      type batch_input_page = { inputs: ::Array[HubspotSDK::Cms::PageData] }
+      type batch_input_page = { inputs: ::Array[HubSpotSDK::Cms::PageData] }
 
-      class BatchInputPage < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor inputs: ::Array[HubspotSDK::Cms::PageData]
+      class BatchInputPage < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubSpotSDK::Cms::PageData]
 
-        def initialize: (inputs: ::Array[HubspotSDK::Cms::PageData]) -> void
+        def initialize: (inputs: ::Array[HubSpotSDK::Cms::PageData]) -> void
 
-        def to_hash: -> { inputs: ::Array[HubspotSDK::Cms::PageData] }
+        def to_hash: -> { inputs: ::Array[HubSpotSDK::Cms::PageData] }
       end
     end
   end

@@ -1,22 +1,22 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_ads_search_filter =
         {
           ad_network: String,
           entity_type: String,
-          filter_type: HubspotSDK::Models::Crm::PublicAdsSearchFilter::filter_type,
+          filter_type: HubSpotSDK::Models::Crm::PublicAdsSearchFilter::filter_type,
           operator: String,
           search_terms: ::Array[String],
           search_term_type: String
         }
 
-      class PublicAdsSearchFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicAdsSearchFilter < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor ad_network: String
 
         attr_accessor entity_type: String
 
-        attr_accessor filter_type: HubspotSDK::Models::Crm::PublicAdsSearchFilter::filter_type
+        attr_accessor filter_type: HubSpotSDK::Models::Crm::PublicAdsSearchFilter::filter_type
 
         attr_accessor operator: String
 
@@ -27,7 +27,7 @@ module HubspotSDK
         def initialize: (
           ad_network: String,
           entity_type: String,
-          filter_type: HubspotSDK::Models::Crm::PublicAdsSearchFilter::filter_type,
+          filter_type: HubSpotSDK::Models::Crm::PublicAdsSearchFilter::filter_type,
           operator: String,
           search_terms: ::Array[String],
           search_term_type: String
@@ -36,7 +36,7 @@ module HubspotSDK
         def to_hash: -> {
           ad_network: String,
           entity_type: String,
-          filter_type: HubspotSDK::Models::Crm::PublicAdsSearchFilter::filter_type,
+          filter_type: HubSpotSDK::Models::Crm::PublicAdsSearchFilter::filter_type,
           operator: String,
           search_terms: ::Array[String],
           search_term_type: String
@@ -45,11 +45,11 @@ module HubspotSDK
         type filter_type = :ADS_SEARCH
 
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ADS_SEARCH: :ADS_SEARCH
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicAdsSearchFilter::filter_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicAdsSearchFilter::filter_type]
         end
       end
     end

@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class FilterGroup < HubspotSDK::Internal::Type::BaseModel
+      class FilterGroup < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute filters
         #
-        #   @return [Array<HubspotSDK::Models::Crm::Filter>]
-        required :filters, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Filter] }
+        #   @return [Array<HubSpotSDK::Models::Crm::Filter>]
+        required :filters, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::Filter] }
 
         # @!method initialize(filters:)
-        #   @param filters [Array<HubspotSDK::Models::Crm::Filter>]
+        #   @param filters [Array<HubSpotSDK::Models::Crm::Filter>]
       end
     end
   end

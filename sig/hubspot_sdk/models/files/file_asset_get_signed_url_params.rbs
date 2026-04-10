@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
       type file_asset_get_signed_url_params =
         {
           file_id: String,
           expiration_seconds: Integer,
-          size: HubspotSDK::Models::Files::FileAssetGetSignedURLParams::size,
+          size: HubSpotSDK::Models::Files::FileAssetGetSignedURLParams::size,
           upscale: bool
         }
-        & HubspotSDK::Internal::Type::request_parameters
+        & HubSpotSDK::Internal::Type::request_parameters
 
-      class FileAssetGetSignedURLParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class FileAssetGetSignedURLParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         attr_accessor file_id: String
 
@@ -20,11 +20,11 @@ module HubspotSDK
 
         def expiration_seconds=: (Integer) -> Integer
 
-        attr_reader size: HubspotSDK::Models::Files::FileAssetGetSignedURLParams::size?
+        attr_reader size: HubSpotSDK::Models::Files::FileAssetGetSignedURLParams::size?
 
         def size=: (
-          HubspotSDK::Models::Files::FileAssetGetSignedURLParams::size
-        ) -> HubspotSDK::Models::Files::FileAssetGetSignedURLParams::size
+          HubSpotSDK::Models::Files::FileAssetGetSignedURLParams::size
+        ) -> HubSpotSDK::Models::Files::FileAssetGetSignedURLParams::size
 
         attr_reader upscale: bool?
 
@@ -33,30 +33,30 @@ module HubspotSDK
         def initialize: (
           file_id: String,
           ?expiration_seconds: Integer,
-          ?size: HubspotSDK::Models::Files::FileAssetGetSignedURLParams::size,
+          ?size: HubSpotSDK::Models::Files::FileAssetGetSignedURLParams::size,
           ?upscale: bool,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           file_id: String,
           expiration_seconds: Integer,
-          size: HubspotSDK::Models::Files::FileAssetGetSignedURLParams::size,
+          size: HubSpotSDK::Models::Files::FileAssetGetSignedURLParams::size,
           upscale: bool,
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
 
         type size = :icon | :medium | :preview | :thumb
 
         module Size
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ICON: :icon
           MEDIUM: :medium
           PREVIEW: :preview
           THUMB: :thumb
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Files::FileAssetGetSignedURLParams::size]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Files::FileAssetGetSignedURLParams::size]
         end
       end
     end

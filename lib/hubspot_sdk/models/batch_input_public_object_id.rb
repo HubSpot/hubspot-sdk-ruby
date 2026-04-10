@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class BatchInputPublicObjectID < HubspotSDK::Internal::Type::BaseModel
+    class BatchInputPublicObjectID < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute inputs
       #   An array of deal split inputs
       #
-      #   @return [Array<HubspotSDK::Models::PublicObjectID>]
-      required :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::PublicObjectID] }
+      #   @return [Array<HubSpotSDK::Models::PublicObjectID>]
+      required :inputs, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::PublicObjectID] }
 
       # @!method initialize(inputs:)
-      #   @param inputs [Array<HubspotSDK::Models::PublicObjectID>] An array of deal split inputs
+      #   @param inputs [Array<HubSpotSDK::Models::PublicObjectID>] An array of deal split inputs
     end
   end
 end

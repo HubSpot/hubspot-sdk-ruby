@@ -2,14 +2,14 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Marketing::Campaigns::SpendTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Marketing::Campaigns::SpendTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
     response = @hubspot.marketing.campaigns.spend.create("campaignGuid", amount: 0, name: "name", order: 0)
 
     assert_pattern do
-      response => HubspotSDK::Marketing::PublicSpendItem
+      response => HubSpotSDK::Marketing::PublicSpendItem
     end
 
     assert_pattern do
@@ -38,7 +38,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::SpendTest < HubspotSDK:
       )
 
     assert_pattern do
-      response => HubspotSDK::Marketing::PublicSpendItem
+      response => HubSpotSDK::Marketing::PublicSpendItem
     end
 
     assert_pattern do
@@ -70,7 +70,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::SpendTest < HubspotSDK:
     response = @hubspot.marketing.campaigns.spend.get(0, campaign_guid: "campaignGuid")
 
     assert_pattern do
-      response => HubspotSDK::Marketing::PublicSpendItem
+      response => HubSpotSDK::Marketing::PublicSpendItem
     end
 
     assert_pattern do

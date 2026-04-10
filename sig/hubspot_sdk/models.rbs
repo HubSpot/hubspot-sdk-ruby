@@ -1,95 +1,95 @@
-module HubspotSDK
-  class AbTestCreateRequestVNext = HubspotSDK::Models::AbTestCreateRequestVNext
+module HubSpotSDK
+  class AbTestCreateRequestVNext = HubSpotSDK::Models::AbTestCreateRequestVNext
 
-  module Account = HubspotSDK::Models::Account
+  module Account = HubSpotSDK::Models::Account
 
-  class ActionResponse = HubspotSDK::Models::ActionResponse
+  class ActionResponse = HubSpotSDK::Models::ActionResponse
 
-  class AssociationDefinition = HubspotSDK::Models::AssociationDefinition
+  class AssociationDefinition = HubSpotSDK::Models::AssociationDefinition
 
-  class AssociationDefinitionEgg = HubspotSDK::Models::AssociationDefinitionEgg
+  class AssociationDefinitionEgg = HubSpotSDK::Models::AssociationDefinitionEgg
 
-  class AssociationSpec = HubspotSDK::Models::AssociationSpec
+  class AssociationSpec = HubSpotSDK::Models::AssociationSpec
 
-  module Auth = HubspotSDK::Models::Auth
+  module Auth = HubSpotSDK::Models::Auth
 
-  module Automation = HubspotSDK::Models::Automation
+  module Automation = HubSpotSDK::Models::Automation
 
-  class AutomationActionsOption = HubspotSDK::Models::AutomationActionsOption
+  class AutomationActionsOption = HubSpotSDK::Models::AutomationActionsOption
 
-  class BatchInputPropertyName = HubspotSDK::Models::BatchInputPropertyName
+  class BatchInputPropertyName = HubSpotSDK::Models::BatchInputPropertyName
 
-  class BatchInputPublicObjectID = HubspotSDK::Models::BatchInputPublicObjectID
+  class BatchInputPublicObjectID = HubSpotSDK::Models::BatchInputPublicObjectID
 
-  class BatchInputString = HubspotSDK::Models::BatchInputString
+  class BatchInputString = HubSpotSDK::Models::BatchInputString
 
-  class BatchReadInputPropertyName = HubspotSDK::Models::BatchReadInputPropertyName
+  class BatchReadInputPropertyName = HubSpotSDK::Models::BatchReadInputPropertyName
 
-  module BusinessUnits = HubspotSDK::Models::BusinessUnits
+  module BusinessUnits = HubSpotSDK::Models::BusinessUnits
 
-  module Cms = HubspotSDK::Models::Cms
+  module Cms = HubSpotSDK::Models::Cms
 
-  class CollectionResponsePropertyGroupNoPaging = HubspotSDK::Models::CollectionResponsePropertyGroupNoPaging
+  class CollectionResponsePropertyGroupNoPaging = HubSpotSDK::Models::CollectionResponsePropertyGroupNoPaging
 
-  module CommunicationPreferences = HubspotSDK::Models::CommunicationPreferences
+  module CommunicationPreferences = HubSpotSDK::Models::CommunicationPreferences
 
-  module Conversations = HubspotSDK::Models::Conversations
+  module Conversations = HubSpotSDK::Models::Conversations
 
-  module Crm = HubspotSDK::Models::Crm
+  module Crm = HubSpotSDK::Models::Crm
 
-  class Error = HubspotSDK::Models::Error
+  class Error = HubSpotSDK::Models::Error
 
-  class ErrorDetail = HubspotSDK::Models::ErrorDetail
+  class ErrorDetail = HubSpotSDK::Models::ErrorDetail
 
-  module Events = HubspotSDK::Models::Events
+  module Events = HubSpotSDK::Models::Events
 
-  module Files = HubspotSDK::Models::Files
+  module Files = HubSpotSDK::Models::Files
 
-  class ForwardPaging = HubspotSDK::Models::ForwardPaging
+  class ForwardPaging = HubSpotSDK::Models::ForwardPaging
 
-  module Marketing = HubspotSDK::Models::Marketing
+  module Marketing = HubSpotSDK::Models::Marketing
 
-  module Meta = HubspotSDK::Models::Meta
+  module Meta = HubSpotSDK::Models::Meta
 
-  class NextPage = HubspotSDK::Models::NextPage
+  class NextPage = HubSpotSDK::Models::NextPage
 
-  class ObjectTypeDefinition = HubspotSDK::Models::ObjectTypeDefinition
+  class ObjectTypeDefinition = HubSpotSDK::Models::ObjectTypeDefinition
 
-  class ObjectTypeDefinitionLabels = HubspotSDK::Models::ObjectTypeDefinitionLabels
+  class ObjectTypeDefinitionLabels = HubSpotSDK::Models::ObjectTypeDefinitionLabels
 
-  class ObjectTypeDefinitionPatch = HubspotSDK::Models::ObjectTypeDefinitionPatch
+  class ObjectTypeDefinitionPatch = HubSpotSDK::Models::ObjectTypeDefinitionPatch
 
-  class Option = HubspotSDK::Models::Option
+  class Option = HubSpotSDK::Models::Option
 
-  class OptionInput = HubspotSDK::Models::OptionInput
+  class OptionInput = HubSpotSDK::Models::OptionInput
 
-  class Paging = HubspotSDK::Models::Paging
+  class Paging = HubSpotSDK::Models::Paging
 
-  class PreviousPage = HubspotSDK::Models::PreviousPage
+  class PreviousPage = HubSpotSDK::Models::PreviousPage
 
-  class PropertyGroup = HubspotSDK::Models::PropertyGroup
+  class PropertyGroup = HubSpotSDK::Models::PropertyGroup
 
-  class PropertyGroupCreate = HubspotSDK::Models::PropertyGroupCreate
+  class PropertyGroupCreate = HubSpotSDK::Models::PropertyGroupCreate
 
-  class PropertyGroupUpdate = HubspotSDK::Models::PropertyGroupUpdate
+  class PropertyGroupUpdate = HubSpotSDK::Models::PropertyGroupUpdate
 
-  class PropertyModificationMetadata = HubspotSDK::Models::PropertyModificationMetadata
+  class PropertyModificationMetadata = HubSpotSDK::Models::PropertyModificationMetadata
 
-  class PropertyName = HubspotSDK::Models::PropertyName
+  class PropertyName = HubSpotSDK::Models::PropertyName
 
-  class PropertyValue = HubspotSDK::Models::PropertyValue
+  class PropertyValue = HubSpotSDK::Models::PropertyValue
 
-  class PublicObjectID = HubspotSDK::Models::PublicObjectID
+  class PublicObjectID = HubSpotSDK::Models::PublicObjectID
 
-  module Scheduler = HubspotSDK::Models::Scheduler
+  module Scheduler = HubSpotSDK::Models::Scheduler
 
-  module Settings = HubspotSDK::Models::Settings
+  module Settings = HubSpotSDK::Models::Settings
 
-  class StandardError = HubspotSDK::Models::StandardError
+  class StandardError = HubSpotSDK::Models::StandardError
 
-  class TaskLocator = HubspotSDK::Models::TaskLocator
+  class TaskLocator = HubSpotSDK::Models::TaskLocator
 
-  class VersionUser = HubspotSDK::Models::VersionUser
+  class VersionUser = HubSpotSDK::Models::VersionUser
 
-  module Webhooks = HubspotSDK::Models::Webhooks
+  module Webhooks = HubSpotSDK::Models::Webhooks
 end

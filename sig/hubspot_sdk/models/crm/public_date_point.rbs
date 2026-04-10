@@ -1,11 +1,11 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_date_point =
         {
           day: Integer,
           month: Integer,
-          time_type: HubspotSDK::Models::Crm::PublicDatePoint::time_type,
+          time_type: HubSpotSDK::Models::Crm::PublicDatePoint::time_type,
           year: Integer,
           zone_id: String,
           hour: Integer,
@@ -15,12 +15,12 @@ module HubspotSDK
           timezone_source: String
         }
 
-      class PublicDatePoint < HubspotSDK::Internal::Type::BaseModel
+      class PublicDatePoint < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor day: Integer
 
         attr_accessor month: Integer
 
-        attr_accessor time_type: HubspotSDK::Models::Crm::PublicDatePoint::time_type
+        attr_accessor time_type: HubSpotSDK::Models::Crm::PublicDatePoint::time_type
 
         attr_accessor year: Integer
 
@@ -49,7 +49,7 @@ module HubspotSDK
         def initialize: (
           day: Integer,
           month: Integer,
-          time_type: HubspotSDK::Models::Crm::PublicDatePoint::time_type,
+          time_type: HubSpotSDK::Models::Crm::PublicDatePoint::time_type,
           year: Integer,
           zone_id: String,
           ?hour: Integer,
@@ -62,7 +62,7 @@ module HubspotSDK
         def to_hash: -> {
           day: Integer,
           month: Integer,
-          time_type: HubspotSDK::Models::Crm::PublicDatePoint::time_type,
+          time_type: HubSpotSDK::Models::Crm::PublicDatePoint::time_type,
           year: Integer,
           zone_id: String,
           hour: Integer,
@@ -75,11 +75,11 @@ module HubspotSDK
         type time_type = :DATE
 
         module TimeType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DATE: :DATE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicDatePoint::time_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicDatePoint::time_type]
         end
       end
     end

@@ -1,12 +1,12 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Scheduler
       class Meetings
-        attr_reader advanced: HubspotSDK::Resources::Scheduler::Meetings::Advanced
+        attr_reader advanced: HubSpotSDK::Resources::Scheduler::Meetings::Advanced
 
-        attr_reader basic: HubspotSDK::Resources::Scheduler::Meetings::Basic
+        attr_reader basic: HubSpotSDK::Resources::Scheduler::Meetings::Basic
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

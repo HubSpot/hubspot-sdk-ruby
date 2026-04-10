@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class RangedNumberPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class RangedNumberPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute include_objects_with_no_value_set
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute lower_bound
@@ -23,8 +23,8 @@ module HubspotSDK
 
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::RangedNumberPropertyOperation::Operator]
-        required :operator, enum: -> { HubspotSDK::Events::RangedNumberPropertyOperation::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Events::RangedNumberPropertyOperation::Operator]
+        required :operator, enum: -> { HubSpotSDK::Events::RangedNumberPropertyOperation::Operator }
 
         # @!attribute operator_name
         #
@@ -33,9 +33,9 @@ module HubspotSDK
 
         # @!attribute property_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::RangedNumberPropertyOperation::PropertyType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::RangedNumberPropertyOperation::PropertyType]
         required :property_type,
-                 enum: -> { HubspotSDK::Events::RangedNumberPropertyOperation::PropertyType },
+                 enum: -> { HubSpotSDK::Events::RangedNumberPropertyOperation::PropertyType },
                  api_name: :propertyType
 
         # @!attribute upper_bound
@@ -57,16 +57,16 @@ module HubspotSDK
         #   @param include_objects_with_no_value_set [Boolean]
         #   @param lower_bound [Float]
         #   @param operation_type [String]
-        #   @param operator [Symbol, HubspotSDK::Models::Events::RangedNumberPropertyOperation::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Events::RangedNumberPropertyOperation::Operator]
         #   @param operator_name [String]
-        #   @param property_type [Symbol, HubspotSDK::Models::Events::RangedNumberPropertyOperation::PropertyType]
+        #   @param property_type [Symbol, HubSpotSDK::Models::Events::RangedNumberPropertyOperation::PropertyType]
         #   @param upper_bound [Float]
         #   @param default_value [String]
         #   @param render_spec [String]
 
-        # @see HubspotSDK::Models::Events::RangedNumberPropertyOperation#operator
+        # @see HubSpotSDK::Models::Events::RangedNumberPropertyOperation#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           IS_BETWEEN = :IS_BETWEEN
           IS_NOT_BETWEEN = :IS_NOT_BETWEEN
@@ -75,9 +75,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::RangedNumberPropertyOperation#property_type
+        # @see HubSpotSDK::Models::Events::RangedNumberPropertyOperation#property_type
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NUMBER_RANGED = :"number-ranged"
 

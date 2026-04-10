@@ -1,21 +1,21 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_ranged_number_property_operation =
         {
           include_objects_with_no_value_set: bool,
           lower_bound: Integer,
-          operation_type: HubspotSDK::Models::Crm::PublicRangedNumberPropertyOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicRangedNumberPropertyOperation::operation_type,
           operator: String,
           upper_bound: Integer
         }
 
-      class PublicRangedNumberPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicRangedNumberPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor include_objects_with_no_value_set: bool
 
         attr_accessor lower_bound: Integer
 
-        attr_accessor operation_type: HubspotSDK::Models::Crm::PublicRangedNumberPropertyOperation::operation_type
+        attr_accessor operation_type: HubSpotSDK::Models::Crm::PublicRangedNumberPropertyOperation::operation_type
 
         attr_accessor operator: String
 
@@ -24,7 +24,7 @@ module HubspotSDK
         def initialize: (
           include_objects_with_no_value_set: bool,
           lower_bound: Integer,
-          operation_type: HubspotSDK::Models::Crm::PublicRangedNumberPropertyOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicRangedNumberPropertyOperation::operation_type,
           operator: String,
           upper_bound: Integer
         ) -> void
@@ -32,7 +32,7 @@ module HubspotSDK
         def to_hash: -> {
           include_objects_with_no_value_set: bool,
           lower_bound: Integer,
-          operation_type: HubspotSDK::Models::Crm::PublicRangedNumberPropertyOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicRangedNumberPropertyOperation::operation_type,
           operator: String,
           upper_bound: Integer
         }
@@ -40,11 +40,11 @@ module HubspotSDK
         type operation_type = :NUMBER_RANGED
 
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NUMBER_RANGED: :NUMBER_RANGED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicRangedNumberPropertyOperation::operation_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicRangedNumberPropertyOperation::operation_type]
         end
       end
     end

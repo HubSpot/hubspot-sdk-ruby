@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicMessageFailureDetails < HubspotSDK::Internal::Type::BaseModel
+      class PublicMessageFailureDetails < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute error_message_tokens
         #
         #   @return [Hash{Symbol=>String}]
         required :error_message_tokens,
-                 HubspotSDK::Internal::Type::HashOf[String],
+                 HubSpotSDK::Internal::Type::HashOf[String],
                  api_name: :errorMessageTokens
 
         # @!attribute error_message

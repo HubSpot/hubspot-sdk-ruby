@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type public_email_pattern_response =
@@ -10,7 +10,7 @@ module HubspotSDK
           thread_email_to_step_order: Integer
         }
 
-      class PublicEmailPatternResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailPatternResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor created_at: Time

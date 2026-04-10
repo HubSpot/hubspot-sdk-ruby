@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_guest_settings =
         { can_add_guests: bool, max_guest_count: Integer }
 
-      class ExternalGuestSettings < HubspotSDK::Internal::Type::BaseModel
+      class ExternalGuestSettings < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor can_add_guests: bool
 
         attr_accessor max_guest_count: Integer

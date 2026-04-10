@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Auth
       type signed_access_token =
@@ -20,7 +20,7 @@ module HubspotSDK
           user_id: Integer
         }
 
-      class SignedAccessToken < HubspotSDK::Internal::Type::BaseModel
+      class SignedAccessToken < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor app_id: Integer
 
         attr_accessor expires_at: Integer

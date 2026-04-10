@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_date_property_operation =
@@ -6,19 +6,19 @@ module HubspotSDK
           day: Integer,
           include_objects_with_no_value_set: bool,
           month: String,
-          operation_type: HubspotSDK::Models::Crm::PublicDatePropertyOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicDatePropertyOperation::operation_type,
           operator: String,
           year: Integer
         }
 
-      class PublicDatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicDatePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor day: Integer
 
         attr_accessor include_objects_with_no_value_set: bool
 
         attr_accessor month: String
 
-        attr_accessor operation_type: HubspotSDK::Models::Crm::PublicDatePropertyOperation::operation_type
+        attr_accessor operation_type: HubSpotSDK::Models::Crm::PublicDatePropertyOperation::operation_type
 
         attr_accessor operator: String
 
@@ -28,7 +28,7 @@ module HubspotSDK
           day: Integer,
           include_objects_with_no_value_set: bool,
           month: String,
-          operation_type: HubspotSDK::Models::Crm::PublicDatePropertyOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicDatePropertyOperation::operation_type,
           operator: String,
           year: Integer
         ) -> void
@@ -37,7 +37,7 @@ module HubspotSDK
           day: Integer,
           include_objects_with_no_value_set: bool,
           month: String,
-          operation_type: HubspotSDK::Models::Crm::PublicDatePropertyOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicDatePropertyOperation::operation_type,
           operator: String,
           year: Integer
         }
@@ -45,11 +45,11 @@ module HubspotSDK
         type operation_type = :DATE
 
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DATE: :DATE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicDatePropertyOperation::operation_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicDatePropertyOperation::operation_type]
         end
       end
     end

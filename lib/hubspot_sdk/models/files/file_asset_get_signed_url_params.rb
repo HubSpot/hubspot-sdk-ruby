@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      # @see HubspotSDK::Resources::Files::FileAssets#get_signed_url
-      class FileAssetGetSignedURLParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Files::FileAssets#get_signed_url
+      class FileAssetGetSignedURLParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute file_id
         #
@@ -20,23 +20,23 @@ module HubspotSDK
 
         # @!attribute size
         #
-        #   @return [Symbol, HubspotSDK::Models::Files::FileAssetGetSignedURLParams::Size, nil]
-        optional :size, enum: -> { HubspotSDK::Files::FileAssetGetSignedURLParams::Size }
+        #   @return [Symbol, HubSpotSDK::Models::Files::FileAssetGetSignedURLParams::Size, nil]
+        optional :size, enum: -> { HubSpotSDK::Files::FileAssetGetSignedURLParams::Size }
 
         # @!attribute upscale
         #
         #   @return [Boolean, nil]
-        optional :upscale, HubspotSDK::Internal::Type::Boolean
+        optional :upscale, HubSpotSDK::Internal::Type::Boolean
 
         # @!method initialize(file_id:, expiration_seconds: nil, size: nil, upscale: nil, request_options: {})
         #   @param file_id [String]
         #   @param expiration_seconds [Integer]
-        #   @param size [Symbol, HubspotSDK::Models::Files::FileAssetGetSignedURLParams::Size]
+        #   @param size [Symbol, HubSpotSDK::Models::Files::FileAssetGetSignedURLParams::Size]
         #   @param upscale [Boolean]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
 
         module Size
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ICON = :icon
           MEDIUM = :medium

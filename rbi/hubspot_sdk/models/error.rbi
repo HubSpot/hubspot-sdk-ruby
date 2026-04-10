@@ -1,10 +1,10 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class Error < HubspotSDK::Internal::Type::BaseModel
+    class Error < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
-        T.type_alias { T.any(HubspotSDK::Error, HubspotSDK::Internal::AnyHash) }
+        T.type_alias { T.any(HubSpotSDK::Error, HubSpotSDK::Internal::AnyHash) }
 
       # The error category
       sig { returns(String) }
@@ -28,10 +28,10 @@ module HubspotSDK
       attr_writer :context
 
       # further information about the error
-      sig { returns(T.nilable(T::Array[HubspotSDK::ErrorDetail])) }
+      sig { returns(T.nilable(T::Array[HubSpotSDK::ErrorDetail])) }
       attr_reader :errors
 
-      sig { params(errors: T::Array[HubspotSDK::ErrorDetail::OrHash]).void }
+      sig { params(errors: T::Array[HubSpotSDK::ErrorDetail::OrHash]).void }
       attr_writer :errors
 
       # A map of link names to associated URIs containing documentation about the error
@@ -55,7 +55,7 @@ module HubspotSDK
           correlation_id: String,
           message: String,
           context: T::Hash[Symbol, T::Array[String]],
-          errors: T::Array[HubspotSDK::ErrorDetail::OrHash],
+          errors: T::Array[HubSpotSDK::ErrorDetail::OrHash],
           links: T::Hash[Symbol, String],
           sub_category: String
         ).returns(T.attached_class)
@@ -88,7 +88,7 @@ module HubspotSDK
             correlation_id: String,
             message: String,
             context: T::Hash[Symbol, T::Array[String]],
-            errors: T::Array[HubspotSDK::ErrorDetail],
+            errors: T::Array[HubSpotSDK::ErrorDetail],
             links: T::Hash[Symbol, String],
             sub_category: String
           }

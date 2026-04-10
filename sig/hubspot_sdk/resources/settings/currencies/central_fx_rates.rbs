@@ -1,22 +1,22 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Settings
       class Currencies
         class CentralFxRates
           def create_currency: (
-            currency_code: HubspotSDK::Models::Settings::CurrencyCreateRequest::currency_code,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Settings::ExchangeRate
+            currency_code: HubSpotSDK::Models::Settings::CurrencyCreateRequest::currency_code,
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Settings::ExchangeRate
 
           def get_information: (
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Settings::CentralExchangeRatesInformation
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Settings::CentralExchangeRatesInformation
 
           def get_unsupported_currencies: (
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Settings::CollectionResponseCurrencyCodeInfoNoPaging
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Settings::CollectionResponseCurrencyCodeInfoNoPaging
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

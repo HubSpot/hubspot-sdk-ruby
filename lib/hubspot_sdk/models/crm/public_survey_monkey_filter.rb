@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicSurveyMonkeyFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicSurveyMonkeyFilter < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute filter_type
         #   Indicates the type of filter being applied (SURVEY_MONKEY).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicSurveyMonkeyFilter::FilterType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicSurveyMonkeyFilter::FilterType]
         required :filter_type,
-                 enum: -> { HubspotSDK::Crm::PublicSurveyMonkeyFilter::FilterType },
+                 enum: -> { HubSpotSDK::Crm::PublicSurveyMonkeyFilter::FilterType },
                  api_name: :filterType
 
         # @!attribute operator
@@ -27,9 +27,9 @@ module HubspotSDK
 
         # @!method initialize(filter_type:, operator:, survey_id:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicSurveyMonkeyFilter} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicSurveyMonkeyFilter} for more details.
         #
-        #   @param filter_type [Symbol, HubspotSDK::Models::Crm::PublicSurveyMonkeyFilter::FilterType] Indicates the type of filter being applied (SURVEY_MONKEY).
+        #   @param filter_type [Symbol, HubSpotSDK::Models::Crm::PublicSurveyMonkeyFilter::FilterType] Indicates the type of filter being applied (SURVEY_MONKEY).
         #
         #   @param operator [String] Specifies the operation to be performed by the filter (HAS_RESPONDED_TO_SURVEY,
         #
@@ -37,9 +37,9 @@ module HubspotSDK
 
         # Indicates the type of filter being applied (SURVEY_MONKEY).
         #
-        # @see HubspotSDK::Models::Crm::PublicSurveyMonkeyFilter#filter_type
+        # @see HubSpotSDK::Models::Crm::PublicSurveyMonkeyFilter#filter_type
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           SURVEY_MONKEY = :SURVEY_MONKEY
 

@@ -1,23 +1,23 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class CollectionResponsePublicPermissionSetNoPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponsePublicPermissionSetNoPaging < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Settings::CollectionResponsePublicPermissionSetNoPaging,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Settings::CollectionResponsePublicPermissionSetNoPaging,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Settings::PublicPermissionSet]) }
+        sig { returns(T::Array[HubSpotSDK::Settings::PublicPermissionSet]) }
         attr_accessor :results
 
         sig do
           params(
-            results: T::Array[HubspotSDK::Settings::PublicPermissionSet::OrHash]
+            results: T::Array[HubSpotSDK::Settings::PublicPermissionSet::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(results:)
@@ -25,7 +25,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { results: T::Array[HubspotSDK::Settings::PublicPermissionSet] }
+            { results: T::Array[HubSpotSDK::Settings::PublicPermissionSet] }
           )
         end
         def to_hash

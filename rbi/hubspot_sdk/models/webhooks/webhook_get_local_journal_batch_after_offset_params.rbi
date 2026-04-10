@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class WebhookGetLocalJournalBatchAfterOffsetParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class WebhookGetLocalJournalBatchAfterOffsetParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Webhooks::WebhookGetLocalJournalBatchAfterOffsetParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Webhooks::WebhookGetLocalJournalBatchAfterOffsetParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -32,7 +32,7 @@ module HubspotSDK
             offset: String,
             count: Integer,
             install_portal_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -49,7 +49,7 @@ module HubspotSDK
               offset: String,
               count: Integer,
               install_portal_id: Integer,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end

@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class UserUpdateParams < HubspotSDK::Models::Settings::PublicUserUpdate
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class UserUpdateParams < HubSpotSDK::Models::Settings::PublicUserUpdate
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Settings::UserUpdateParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Settings::UserUpdateParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -21,7 +21,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Settings::PublicUserUpdate::IDProperty::OrSymbol
+              HubSpotSDK::Settings::PublicUserUpdate::IDProperty::OrSymbol
             )
           )
         end
@@ -30,7 +30,7 @@ module HubspotSDK
         sig do
           params(
             id_property:
-              HubspotSDK::Settings::PublicUserUpdate::IDProperty::OrSymbol
+              HubSpotSDK::Settings::PublicUserUpdate::IDProperty::OrSymbol
           ).void
         end
         attr_writer :id_property
@@ -39,8 +39,8 @@ module HubspotSDK
           params(
             user_id: String,
             id_property:
-              HubspotSDK::Settings::PublicUserUpdate::IDProperty::OrSymbol,
-            request_options: HubspotSDK::RequestOptions::OrHash
+              HubSpotSDK::Settings::PublicUserUpdate::IDProperty::OrSymbol,
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(user_id:, id_property: nil, request_options: {})
@@ -51,8 +51,8 @@ module HubspotSDK
             {
               user_id: String,
               id_property:
-                HubspotSDK::Settings::PublicUserUpdate::IDProperty::OrSymbol,
-              request_options: HubspotSDK::RequestOptions
+                HubSpotSDK::Settings::PublicUserUpdate::IDProperty::OrSymbol,
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end
@@ -60,29 +60,29 @@ module HubspotSDK
         end
 
         module IDProperty
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Settings::PublicUserUpdate::IDProperty)
+              T.all(Symbol, HubSpotSDK::Settings::PublicUserUpdate::IDProperty)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           EMAIL =
             T.let(
               :EMAIL,
-              HubspotSDK::Settings::PublicUserUpdate::IDProperty::TaggedSymbol
+              HubSpotSDK::Settings::PublicUserUpdate::IDProperty::TaggedSymbol
             )
           USER_ID =
             T.let(
               :USER_ID,
-              HubspotSDK::Settings::PublicUserUpdate::IDProperty::TaggedSymbol
+              HubSpotSDK::Settings::PublicUserUpdate::IDProperty::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Settings::PublicUserUpdate::IDProperty::TaggedSymbol
+                HubSpotSDK::Settings::PublicUserUpdate::IDProperty::TaggedSymbol
               ]
             )
           end

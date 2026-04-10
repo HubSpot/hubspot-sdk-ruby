@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class ComparativeStringPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class ComparativeStringPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute comparison_property_name
         #
         #   @return [String]
@@ -13,7 +13,7 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute operation_type
@@ -23,8 +23,8 @@ module HubspotSDK
 
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::ComparativeStringPropertyOperation::Operator]
-        required :operator, enum: -> { HubspotSDK::Events::ComparativeStringPropertyOperation::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Events::ComparativeStringPropertyOperation::Operator]
+        required :operator, enum: -> { HubSpotSDK::Events::ComparativeStringPropertyOperation::Operator }
 
         # @!attribute operator_name
         #
@@ -33,9 +33,9 @@ module HubspotSDK
 
         # @!attribute property_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::ComparativeStringPropertyOperation::PropertyType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::ComparativeStringPropertyOperation::PropertyType]
         required :property_type,
-                 enum: -> { HubspotSDK::Events::ComparativeStringPropertyOperation::PropertyType },
+                 enum: -> { HubSpotSDK::Events::ComparativeStringPropertyOperation::PropertyType },
                  api_name: :propertyType
 
         # @!attribute default_value
@@ -52,15 +52,15 @@ module HubspotSDK
         #   @param comparison_property_name [String]
         #   @param include_objects_with_no_value_set [Boolean]
         #   @param operation_type [String]
-        #   @param operator [Symbol, HubspotSDK::Models::Events::ComparativeStringPropertyOperation::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Events::ComparativeStringPropertyOperation::Operator]
         #   @param operator_name [String]
-        #   @param property_type [Symbol, HubspotSDK::Models::Events::ComparativeStringPropertyOperation::PropertyType]
+        #   @param property_type [Symbol, HubSpotSDK::Models::Events::ComparativeStringPropertyOperation::PropertyType]
         #   @param default_value [String]
         #   @param render_spec [String]
 
-        # @see HubspotSDK::Models::Events::ComparativeStringPropertyOperation#operator
+        # @see HubSpotSDK::Models::Events::ComparativeStringPropertyOperation#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONTAINS = :CONTAINS
           DOES_NOT_CONTAIN = :DOES_NOT_CONTAIN
@@ -73,9 +73,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::ComparativeStringPropertyOperation#property_type
+        # @see HubSpotSDK::Models::Events::ComparativeStringPropertyOperation#property_type
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           STRING_COMPARATIVE = :"string-comparative"
 

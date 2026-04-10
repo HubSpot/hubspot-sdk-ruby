@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_email_subscription_details =
@@ -9,7 +9,7 @@ module HubspotSDK
           subscription_name: String
         }
 
-      class PublicEmailSubscriptionDetails < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailSubscriptionDetails < HubSpotSDK::Internal::Type::BaseModel
         attr_reader office_location_id: String?
 
         def office_location_id=: (String) -> String

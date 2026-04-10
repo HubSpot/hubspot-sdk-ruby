@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class FiscalQuarter < HubspotSDK::Internal::Type::BaseModel
+      class FiscalQuarter < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::FiscalQuarter,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::FiscalQuarter,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::FiscalQuarter::ReferenceType::TaggedSymbol
+            HubSpotSDK::Events::FiscalQuarter::ReferenceType::TaggedSymbol
           )
         end
         attr_accessor :reference_type
@@ -54,7 +54,7 @@ module HubspotSDK
             day: Integer,
             month: Integer,
             reference_type:
-              HubspotSDK::Events::FiscalQuarter::ReferenceType::OrSymbol,
+              HubSpotSDK::Events::FiscalQuarter::ReferenceType::OrSymbol,
             hour: Integer,
             millisecond: Integer,
             minute: Integer,
@@ -78,7 +78,7 @@ module HubspotSDK
               day: Integer,
               month: Integer,
               reference_type:
-                HubspotSDK::Events::FiscalQuarter::ReferenceType::TaggedSymbol,
+                HubSpotSDK::Events::FiscalQuarter::ReferenceType::TaggedSymbol,
               hour: Integer,
               millisecond: Integer,
               minute: Integer,
@@ -90,24 +90,24 @@ module HubspotSDK
         end
 
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Events::FiscalQuarter::ReferenceType)
+              T.all(Symbol, HubSpotSDK::Events::FiscalQuarter::ReferenceType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           FISCAL_QUARTER =
             T.let(
               :FISCAL_QUARTER,
-              HubspotSDK::Events::FiscalQuarter::ReferenceType::TaggedSymbol
+              HubSpotSDK::Events::FiscalQuarter::ReferenceType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::FiscalQuarter::ReferenceType::TaggedSymbol
+                HubSpotSDK::Events::FiscalQuarter::ReferenceType::TaggedSymbol
               ]
             )
           end

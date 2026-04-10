@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class SignedURL < HubspotSDK::Internal::Type::BaseModel
+      class SignedURL < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute expires_at
         #   Timestamp of when the URL will no longer grant access to the file.
         #
@@ -55,7 +55,7 @@ module HubspotSDK
 
         # @!method initialize(expires_at:, url:, extension: nil, height: nil, name: nil, size: nil, type: nil, width: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Files::SignedURL} for more details.
+        #   {HubSpotSDK::Models::Files::SignedURL} for more details.
         #
         #   @param expires_at [Time] Timestamp of when the URL will no longer grant access to the file.
         #

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicSequenceStepResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicSequenceStepResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::PublicSequenceStepResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::PublicSequenceStepResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -19,7 +19,7 @@ module HubspotSDK
         # The type of action to be performed in the sequence step.
         sig do
           returns(
-            HubspotSDK::Automation::PublicSequenceStepResponse::ActionType::TaggedSymbol
+            HubSpotSDK::Automation::PublicSequenceStepResponse::ActionType::TaggedSymbol
           )
         end
         attr_accessor :action_type
@@ -41,27 +41,27 @@ module HubspotSDK
         attr_accessor :updated_at
 
         sig do
-          returns(T.nilable(HubspotSDK::Automation::PublicEmailPatternResponse))
+          returns(T.nilable(HubSpotSDK::Automation::PublicEmailPatternResponse))
         end
         attr_reader :email_pattern
 
         sig do
           params(
             email_pattern:
-              HubspotSDK::Automation::PublicEmailPatternResponse::OrHash
+              HubSpotSDK::Automation::PublicEmailPatternResponse::OrHash
           ).void
         end
         attr_writer :email_pattern
 
         sig do
-          returns(T.nilable(HubspotSDK::Automation::PublicTaskPatternResponse))
+          returns(T.nilable(HubSpotSDK::Automation::PublicTaskPatternResponse))
         end
         attr_reader :task_pattern
 
         sig do
           params(
             task_pattern:
-              HubspotSDK::Automation::PublicTaskPatternResponse::OrHash
+              HubSpotSDK::Automation::PublicTaskPatternResponse::OrHash
           ).void
         end
         attr_writer :task_pattern
@@ -70,15 +70,15 @@ module HubspotSDK
           params(
             id: String,
             action_type:
-              HubspotSDK::Automation::PublicSequenceStepResponse::ActionType::OrSymbol,
+              HubSpotSDK::Automation::PublicSequenceStepResponse::ActionType::OrSymbol,
             created_at: Time,
             delay_millis: Integer,
             step_order: Integer,
             updated_at: Time,
             email_pattern:
-              HubspotSDK::Automation::PublicEmailPatternResponse::OrHash,
+              HubSpotSDK::Automation::PublicEmailPatternResponse::OrHash,
             task_pattern:
-              HubspotSDK::Automation::PublicTaskPatternResponse::OrHash
+              HubSpotSDK::Automation::PublicTaskPatternResponse::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -104,13 +104,13 @@ module HubspotSDK
             {
               id: String,
               action_type:
-                HubspotSDK::Automation::PublicSequenceStepResponse::ActionType::TaggedSymbol,
+                HubSpotSDK::Automation::PublicSequenceStepResponse::ActionType::TaggedSymbol,
               created_at: Time,
               delay_millis: Integer,
               step_order: Integer,
               updated_at: Time,
-              email_pattern: HubspotSDK::Automation::PublicEmailPatternResponse,
-              task_pattern: HubspotSDK::Automation::PublicTaskPatternResponse
+              email_pattern: HubSpotSDK::Automation::PublicEmailPatternResponse,
+              task_pattern: HubSpotSDK::Automation::PublicTaskPatternResponse
             }
           )
         end
@@ -119,13 +119,13 @@ module HubspotSDK
 
         # The type of action to be performed in the sequence step.
         module ActionType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Automation::PublicSequenceStepResponse::ActionType
+                HubSpotSDK::Automation::PublicSequenceStepResponse::ActionType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -133,23 +133,23 @@ module HubspotSDK
           EMAIL =
             T.let(
               :EMAIL,
-              HubspotSDK::Automation::PublicSequenceStepResponse::ActionType::TaggedSymbol
+              HubSpotSDK::Automation::PublicSequenceStepResponse::ActionType::TaggedSymbol
             )
           FINISH_ENROLLMENT =
             T.let(
               :FINISH_ENROLLMENT,
-              HubspotSDK::Automation::PublicSequenceStepResponse::ActionType::TaggedSymbol
+              HubSpotSDK::Automation::PublicSequenceStepResponse::ActionType::TaggedSymbol
             )
           TASK =
             T.let(
               :TASK,
-              HubspotSDK::Automation::PublicSequenceStepResponse::ActionType::TaggedSymbol
+              HubSpotSDK::Automation::PublicSequenceStepResponse::ActionType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::PublicSequenceStepResponse::ActionType::TaggedSymbol
+                HubSpotSDK::Automation::PublicSequenceStepResponse::ActionType::TaggedSymbol
               ]
             )
           end

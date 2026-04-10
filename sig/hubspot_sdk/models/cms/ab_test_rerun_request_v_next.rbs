@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type ab_test_rerun_request_v_next =
         { ab_test_id: String, variation_id: String }
 
-      class AbTestRerunRequestVNext < HubspotSDK::Internal::Type::BaseModel
+      class AbTestRerunRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor ab_test_id: String
 
         attr_accessor variation_id: String

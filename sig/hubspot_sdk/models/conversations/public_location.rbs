@@ -1,22 +1,22 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type public_location =
         {
           latitude: Float,
           longitude: Float,
-          type: HubspotSDK::Models::Conversations::PublicLocation::type_,
+          type: HubSpotSDK::Models::Conversations::PublicLocation::type_,
           address: String,
           name: String,
           url: String
         }
 
-      class PublicLocation < HubspotSDK::Internal::Type::BaseModel
+      class PublicLocation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor latitude: Float
 
         attr_accessor longitude: Float
 
-        attr_accessor type: HubspotSDK::Models::Conversations::PublicLocation::type_
+        attr_accessor type: HubSpotSDK::Models::Conversations::PublicLocation::type_
 
         attr_reader address: String?
 
@@ -33,7 +33,7 @@ module HubspotSDK
         def initialize: (
           latitude: Float,
           longitude: Float,
-          type: HubspotSDK::Models::Conversations::PublicLocation::type_,
+          type: HubSpotSDK::Models::Conversations::PublicLocation::type_,
           ?address: String,
           ?name: String,
           ?url: String
@@ -42,7 +42,7 @@ module HubspotSDK
         def to_hash: -> {
           latitude: Float,
           longitude: Float,
-          type: HubspotSDK::Models::Conversations::PublicLocation::type_,
+          type: HubSpotSDK::Models::Conversations::PublicLocation::type_,
           address: String,
           name: String,
           url: String
@@ -51,11 +51,11 @@ module HubspotSDK
         type type_ = :LOCATION
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           LOCATION: :LOCATION
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicLocation::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Conversations::PublicLocation::type_]
         end
       end
     end

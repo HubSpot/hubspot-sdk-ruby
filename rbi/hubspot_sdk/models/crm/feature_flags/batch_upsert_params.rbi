@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module FeatureFlags
-        class BatchUpsertParams < HubspotSDK::Models::Crm::PortalFlagStateBatchPutRequest
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class BatchUpsertParams < HubSpotSDK::Models::Crm::PortalFlagStateBatchPutRequest
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::FeatureFlags::BatchUpsertParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::FeatureFlags::BatchUpsertParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -26,7 +26,7 @@ module HubspotSDK
             params(
               app_id: Integer,
               flag_name: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(app_id:, flag_name:, request_options: {})
@@ -37,7 +37,7 @@ module HubspotSDK
               {
                 app_id: Integer,
                 flag_name: String,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

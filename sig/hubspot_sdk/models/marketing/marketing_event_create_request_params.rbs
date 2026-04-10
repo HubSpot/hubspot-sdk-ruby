@@ -1,11 +1,11 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     class MarketingEventCreateRequestParams = Marketing::MarketingEventCreateRequestParams
 
     module Marketing
       type marketing_event_create_request_params =
         {
-          custom_properties: ::Array[HubspotSDK::PropertyValue],
+          custom_properties: ::Array[HubSpotSDK::PropertyValue],
           event_name: String,
           event_organizer: String,
           external_account_id: String,
@@ -19,8 +19,8 @@ module HubspotSDK
           start_date_time: Time
         }
 
-      class MarketingEventCreateRequestParams < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor custom_properties: ::Array[HubspotSDK::PropertyValue]
+      class MarketingEventCreateRequestParams < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor custom_properties: ::Array[HubSpotSDK::PropertyValue]
 
         attr_accessor event_name: String
 
@@ -59,7 +59,7 @@ module HubspotSDK
         def start_date_time=: (Time) -> Time
 
         def initialize: (
-          custom_properties: ::Array[HubspotSDK::PropertyValue],
+          custom_properties: ::Array[HubSpotSDK::PropertyValue],
           event_name: String,
           event_organizer: String,
           external_account_id: String,
@@ -74,7 +74,7 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
-          custom_properties: ::Array[HubspotSDK::PropertyValue],
+          custom_properties: ::Array[HubSpotSDK::PropertyValue],
           event_name: String,
           event_organizer: String,
           external_account_id: String,

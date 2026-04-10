@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicPageViewAnalyticsFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicPageViewAnalyticsFilter < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicPageViewAnalyticsFilter,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicPageViewAnalyticsFilter,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Indicates the type of filter being applied (PAGE_VIEW).
         sig do
           returns(
-            HubspotSDK::Crm::PublicPageViewAnalyticsFilter::FilterType::OrSymbol
+            HubSpotSDK::Crm::PublicPageViewAnalyticsFilter::FilterType::OrSymbol
           )
         end
         attr_accessor :filter_type
@@ -35,15 +35,15 @@ module HubspotSDK
           returns(
             T.nilable(
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy,
-                HubspotSDK::Crm::PublicTimePointOperation,
-                HubspotSDK::Crm::PublicRangedTimeOperation
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+                HubSpotSDK::Crm::PublicTimePointOperation,
+                HubSpotSDK::Crm::PublicRangedTimeOperation
               )
             )
           )
@@ -54,15 +54,15 @@ module HubspotSDK
           params(
             coalescing_refine_by:
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
-                HubspotSDK::Crm::PublicTimePointOperation::OrHash,
-                HubspotSDK::Crm::PublicRangedTimeOperation::OrHash
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicTimePointOperation::OrHash,
+                HubSpotSDK::Crm::PublicRangedTimeOperation::OrHash
               )
           ).void
         end
@@ -80,15 +80,15 @@ module HubspotSDK
           returns(
             T.nilable(
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy,
-                HubspotSDK::Crm::PublicTimePointOperation,
-                HubspotSDK::Crm::PublicRangedTimeOperation
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+                HubSpotSDK::Crm::PublicTimePointOperation,
+                HubSpotSDK::Crm::PublicRangedTimeOperation
               )
             )
           )
@@ -99,15 +99,15 @@ module HubspotSDK
           params(
             pruning_refine_by:
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
-                HubspotSDK::Crm::PublicTimePointOperation::OrHash,
-                HubspotSDK::Crm::PublicRangedTimeOperation::OrHash
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicTimePointOperation::OrHash,
+                HubSpotSDK::Crm::PublicRangedTimeOperation::OrHash
               )
           ).void
         end
@@ -116,33 +116,33 @@ module HubspotSDK
         sig do
           params(
             filter_type:
-              HubspotSDK::Crm::PublicPageViewAnalyticsFilter::FilterType::OrSymbol,
+              HubSpotSDK::Crm::PublicPageViewAnalyticsFilter::FilterType::OrSymbol,
             operator: String,
             page_url: String,
             coalescing_refine_by:
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
-                HubspotSDK::Crm::PublicTimePointOperation::OrHash,
-                HubspotSDK::Crm::PublicRangedTimeOperation::OrHash
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicTimePointOperation::OrHash,
+                HubSpotSDK::Crm::PublicRangedTimeOperation::OrHash
               ),
             enable_tracking: T::Boolean,
             pruning_refine_by:
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
-                HubspotSDK::Crm::PublicTimePointOperation::OrHash,
-                HubspotSDK::Crm::PublicRangedTimeOperation::OrHash
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicTimePointOperation::OrHash,
+                HubSpotSDK::Crm::PublicRangedTimeOperation::OrHash
               )
           ).returns(T.attached_class)
         end
@@ -168,33 +168,33 @@ module HubspotSDK
           override.returns(
             {
               filter_type:
-                HubspotSDK::Crm::PublicPageViewAnalyticsFilter::FilterType::OrSymbol,
+                HubSpotSDK::Crm::PublicPageViewAnalyticsFilter::FilterType::OrSymbol,
               operator: String,
               page_url: String,
               coalescing_refine_by:
                 T.any(
-                  HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-                  HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-                  HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-                  HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAllHistoryRefineBy,
-                  HubspotSDK::Crm::PublicTimePointOperation,
-                  HubspotSDK::Crm::PublicRangedTimeOperation
+                  HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+                  HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+                  HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+                  HubSpotSDK::Crm::PublicTimePointOperation,
+                  HubSpotSDK::Crm::PublicRangedTimeOperation
                 ),
               enable_tracking: T::Boolean,
               pruning_refine_by:
                 T.any(
-                  HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-                  HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-                  HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-                  HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAllHistoryRefineBy,
-                  HubspotSDK::Crm::PublicTimePointOperation,
-                  HubspotSDK::Crm::PublicRangedTimeOperation
+                  HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+                  HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+                  HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+                  HubSpotSDK::Crm::PublicTimePointOperation,
+                  HubSpotSDK::Crm::PublicRangedTimeOperation
                 )
             }
           )
@@ -204,13 +204,13 @@ module HubspotSDK
 
         # Indicates the type of filter being applied (PAGE_VIEW).
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicPageViewAnalyticsFilter::FilterType
+                HubSpotSDK::Crm::PublicPageViewAnalyticsFilter::FilterType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -218,13 +218,13 @@ module HubspotSDK
           PAGE_VIEW =
             T.let(
               :PAGE_VIEW,
-              HubspotSDK::Crm::PublicPageViewAnalyticsFilter::FilterType::TaggedSymbol
+              HubSpotSDK::Crm::PublicPageViewAnalyticsFilter::FilterType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicPageViewAnalyticsFilter::FilterType::TaggedSymbol
+                HubSpotSDK::Crm::PublicPageViewAnalyticsFilter::FilterType::TaggedSymbol
               ]
             )
           end
@@ -234,27 +234,27 @@ module HubspotSDK
 
         # Specifies the criteria for refining the filter by coalescing.
         module CoalescingRefineBy
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy,
-                HubspotSDK::Crm::PublicTimePointOperation,
-                HubspotSDK::Crm::PublicRangedTimeOperation
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+                HubSpotSDK::Crm::PublicTimePointOperation,
+                HubSpotSDK::Crm::PublicRangedTimeOperation
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicPageViewAnalyticsFilter::CoalescingRefineBy::Variants
+                HubSpotSDK::Crm::PublicPageViewAnalyticsFilter::CoalescingRefineBy::Variants
               ]
             )
           end
@@ -264,27 +264,27 @@ module HubspotSDK
 
         # Specifies the criteria for refining the filter by pruning.
         module PruningRefineBy
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy,
-                HubspotSDK::Crm::PublicTimePointOperation,
-                HubspotSDK::Crm::PublicRangedTimeOperation
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+                HubSpotSDK::Crm::PublicTimePointOperation,
+                HubSpotSDK::Crm::PublicRangedTimeOperation
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicPageViewAnalyticsFilter::PruningRefineBy::Variants
+                HubSpotSDK::Crm::PublicPageViewAnalyticsFilter::PruningRefineBy::Variants
               ]
             )
           end

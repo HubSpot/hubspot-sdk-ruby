@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class ExternalBehavioralEventPropertyDefinitionPatch < HubspotSDK::Internal::Type::BaseModel
+      class ExternalBehavioralEventPropertyDefinitionPatch < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute description
         #   A description of the property that will be shown as help text in HubSpot.
         #
@@ -20,19 +20,19 @@ module HubspotSDK
         #   A list of available options for the property if it is an enumeration. NOTE: This
         #   field is only applicable for enumerated properties.
         #
-        #   @return [Array<HubspotSDK::Models::OptionInput>, nil]
-        optional :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::OptionInput] }
+        #   @return [Array<HubSpotSDK::Models::OptionInput>, nil]
+        optional :options, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::OptionInput] }
 
         # @!method initialize(description: nil, label: nil, options: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Events::ExternalBehavioralEventPropertyDefinitionPatch} for
+        #   {HubSpotSDK::Models::Events::ExternalBehavioralEventPropertyDefinitionPatch} for
         #   more details.
         #
         #   @param description [String] A description of the property that will be shown as help text in HubSpot.
         #
         #   @param label [String] Human readable label for the property. Used in HubSpot UI
         #
-        #   @param options [Array<HubspotSDK::Models::OptionInput>] A list of available options for the property if it is an enumeration. NOTE: This
+        #   @param options [Array<HubSpotSDK::Models::OptionInput>] A list of available options for the property if it is an enumeration. NOTE: This
       end
     end
   end

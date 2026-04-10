@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class AttentionSpanCalculatedValues < HubspotSDK::Internal::Type::BaseModel
+      class AttentionSpanCalculatedValues < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::AttentionSpanCalculatedValues,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::AttentionSpanCalculatedValues,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

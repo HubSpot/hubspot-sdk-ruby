@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       BlogLanguageCloneRequestVNext = Blogs::BlogLanguageCloneRequestVNext
 
       module Blogs
-        class BlogLanguageCloneRequestVNext < HubspotSDK::Internal::Type::BaseModel
+        class BlogLanguageCloneRequestVNext < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Cms::Blogs::BlogLanguageCloneRequestVNext,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Cms::Blogs::BlogLanguageCloneRequestVNext,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 

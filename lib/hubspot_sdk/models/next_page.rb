@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class NextPage < HubspotSDK::Internal::Type::BaseModel
+    class NextPage < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute after
       #   A paging cursor token for retrieving subsequent pages.
       #

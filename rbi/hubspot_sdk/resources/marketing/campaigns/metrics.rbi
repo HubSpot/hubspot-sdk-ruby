@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class Campaigns
@@ -12,8 +12,8 @@ module HubspotSDK
               campaign_guid: String,
               end_date: String,
               start_date: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Marketing::MetricsCounters)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Marketing::MetricsCounters)
           end
           def get_attribution_metrics(
             # The unique identifier of the campaign
@@ -31,8 +31,8 @@ module HubspotSDK
               attribution_model: String,
               end_date: String,
               start_date: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Marketing::RevenueAttributionAggregate)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Marketing::RevenueAttributionAggregate)
           end
           def get_revenue_attribution(
             # The unique identifier of the campaign
@@ -55,10 +55,10 @@ module HubspotSDK
               end_date: String,
               limit: Integer,
               start_date: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Internal::Page[
-                HubspotSDK::Marketing::ContactReference
+              HubSpotSDK::Internal::Page[
+                HubSpotSDK::Marketing::ContactReference
               ]
             )
           end
@@ -82,7 +82,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

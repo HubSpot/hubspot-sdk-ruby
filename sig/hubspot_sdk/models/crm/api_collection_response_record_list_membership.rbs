@@ -1,33 +1,33 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type api_collection_response_record_list_membership =
         {
-          results: ::Array[HubspotSDK::Crm::RecordListMembership],
-          paging: HubspotSDK::Paging,
+          results: ::Array[HubSpotSDK::Crm::RecordListMembership],
+          paging: HubSpotSDK::Paging,
           total: Integer
         }
 
-      class APICollectionResponseRecordListMembership < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::Crm::RecordListMembership]
+      class APICollectionResponseRecordListMembership < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubSpotSDK::Crm::RecordListMembership]
 
-        attr_reader paging: HubspotSDK::Paging?
+        attr_reader paging: HubSpotSDK::Paging?
 
-        def paging=: (HubspotSDK::Paging) -> HubspotSDK::Paging
+        def paging=: (HubSpotSDK::Paging) -> HubSpotSDK::Paging
 
         attr_reader total: Integer?
 
         def total=: (Integer) -> Integer
 
         def initialize: (
-          results: ::Array[HubspotSDK::Crm::RecordListMembership],
-          ?paging: HubspotSDK::Paging,
+          results: ::Array[HubSpotSDK::Crm::RecordListMembership],
+          ?paging: HubSpotSDK::Paging,
           ?total: Integer
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubspotSDK::Crm::RecordListMembership],
-          paging: HubspotSDK::Paging,
+          results: ::Array[HubSpotSDK::Crm::RecordListMembership],
+          paging: HubSpotSDK::Paging,
           total: Integer
         }
       end

@@ -1,32 +1,32 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type multi_string_property_operation =
         {
-          coalescing_refine_by: HubspotSDK::Models::Events::MultiStringPropertyOperation::coalescing_refine_by,
+          coalescing_refine_by: HubSpotSDK::Models::Events::MultiStringPropertyOperation::coalescing_refine_by,
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::MultiStringPropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::MultiStringPropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::MultiStringPropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::MultiStringPropertyOperation::property_type,
           values: ::Array[String],
           default_value: String,
-          pruning_refine_by: HubspotSDK::Models::Events::MultiStringPropertyOperation::pruning_refine_by,
+          pruning_refine_by: HubSpotSDK::Models::Events::MultiStringPropertyOperation::pruning_refine_by,
           render_spec: String
         }
 
-      class MultiStringPropertyOperation < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor coalescing_refine_by: HubspotSDK::Models::Events::MultiStringPropertyOperation::coalescing_refine_by
+      class MultiStringPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor coalescing_refine_by: HubSpotSDK::Models::Events::MultiStringPropertyOperation::coalescing_refine_by
 
         attr_accessor include_objects_with_no_value_set: bool
 
         attr_accessor operation_type: String
 
-        attr_accessor operator: HubspotSDK::Models::Events::MultiStringPropertyOperation::operator
+        attr_accessor operator: HubSpotSDK::Models::Events::MultiStringPropertyOperation::operator
 
         attr_accessor operator_name: String
 
-        attr_accessor property_type: HubspotSDK::Models::Events::MultiStringPropertyOperation::property_type
+        attr_accessor property_type: HubSpotSDK::Models::Events::MultiStringPropertyOperation::property_type
 
         attr_accessor values: ::Array[String]
 
@@ -34,50 +34,50 @@ module HubspotSDK
 
         def default_value=: (String) -> String
 
-        attr_reader pruning_refine_by: HubspotSDK::Models::Events::MultiStringPropertyOperation::pruning_refine_by?
+        attr_reader pruning_refine_by: HubSpotSDK::Models::Events::MultiStringPropertyOperation::pruning_refine_by?
 
         def pruning_refine_by=: (
-          HubspotSDK::Models::Events::MultiStringPropertyOperation::pruning_refine_by
-        ) -> HubspotSDK::Models::Events::MultiStringPropertyOperation::pruning_refine_by
+          HubSpotSDK::Models::Events::MultiStringPropertyOperation::pruning_refine_by
+        ) -> HubSpotSDK::Models::Events::MultiStringPropertyOperation::pruning_refine_by
 
         attr_reader render_spec: String?
 
         def render_spec=: (String) -> String
 
         def initialize: (
-          coalescing_refine_by: HubspotSDK::Models::Events::MultiStringPropertyOperation::coalescing_refine_by,
+          coalescing_refine_by: HubSpotSDK::Models::Events::MultiStringPropertyOperation::coalescing_refine_by,
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::MultiStringPropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::MultiStringPropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::MultiStringPropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::MultiStringPropertyOperation::property_type,
           values: ::Array[String],
           ?default_value: String,
-          ?pruning_refine_by: HubspotSDK::Models::Events::MultiStringPropertyOperation::pruning_refine_by,
+          ?pruning_refine_by: HubSpotSDK::Models::Events::MultiStringPropertyOperation::pruning_refine_by,
           ?render_spec: String
         ) -> void
 
         def to_hash: -> {
-          coalescing_refine_by: HubspotSDK::Models::Events::MultiStringPropertyOperation::coalescing_refine_by,
+          coalescing_refine_by: HubSpotSDK::Models::Events::MultiStringPropertyOperation::coalescing_refine_by,
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::MultiStringPropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::MultiStringPropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::MultiStringPropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::MultiStringPropertyOperation::property_type,
           values: ::Array[String],
           default_value: String,
-          pruning_refine_by: HubspotSDK::Models::Events::MultiStringPropertyOperation::pruning_refine_by,
+          pruning_refine_by: HubSpotSDK::Models::Events::MultiStringPropertyOperation::pruning_refine_by,
           render_spec: String
         }
 
         type coalescing_refine_by =
-          HubspotSDK::Events::NumOccurrencesRefineBy
-          | HubspotSDK::Events::SetOccurrencesRefineBy
+          HubSpotSDK::Events::NumOccurrencesRefineBy
+          | HubSpotSDK::Events::SetOccurrencesRefineBy
 
         module CoalescingRefineBy
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          def self?.variants: -> ::Array[HubspotSDK::Models::Events::MultiStringPropertyOperation::coalescing_refine_by]
+          def self?.variants: -> ::Array[HubSpotSDK::Models::Events::MultiStringPropertyOperation::coalescing_refine_by]
         end
 
         type operator =
@@ -91,7 +91,7 @@ module HubspotSDK
           | :STARTS_WITH
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONTAINS: :CONTAINS
           CONTAINS_EXACTLY: :CONTAINS_EXACTLY
@@ -102,32 +102,32 @@ module HubspotSDK
           IS_NOT_EQUAL_TO: :IS_NOT_EQUAL_TO
           STARTS_WITH: :STARTS_WITH
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::MultiStringPropertyOperation::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::MultiStringPropertyOperation::operator]
         end
 
         type property_type = :multistring
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           MULTISTRING: :multistring
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::MultiStringPropertyOperation::property_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::MultiStringPropertyOperation::property_type]
         end
 
         type pruning_refine_by =
-          HubspotSDK::Events::RelativeComparativeTimestampRefineBy
-          | HubspotSDK::Events::RelativeRangedTimestampRefineBy
-          | HubspotSDK::Events::AbsoluteComparativeTimestampRefineBy
-          | HubspotSDK::Events::AbsoluteRangedTimestampRefineBy
-          | HubspotSDK::Events::AllHistoryRefineBy
-          | HubspotSDK::Events::TimePointOperation
-          | HubspotSDK::Events::RangedTimeOperation
+          HubSpotSDK::Events::RelativeComparativeTimestampRefineBy
+          | HubSpotSDK::Events::RelativeRangedTimestampRefineBy
+          | HubSpotSDK::Events::AbsoluteComparativeTimestampRefineBy
+          | HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy
+          | HubSpotSDK::Events::AllHistoryRefineBy
+          | HubSpotSDK::Events::TimePointOperation
+          | HubSpotSDK::Events::RangedTimeOperation
 
         module PruningRefineBy
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          def self?.variants: -> ::Array[HubspotSDK::Models::Events::MultiStringPropertyOperation::pruning_refine_by]
+          def self?.variants: -> ::Array[HubSpotSDK::Models::Events::MultiStringPropertyOperation::pruning_refine_by]
         end
       end
     end

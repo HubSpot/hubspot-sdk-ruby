@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class StreamingCollectionResponseWithTotalHubDBTableRowV3 < HubspotSDK::Internal::Type::BaseModel
+      class StreamingCollectionResponseWithTotalHubDBTableRowV3 < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -22,15 +22,15 @@ module HubspotSDK
         # Indicates the type of response, which is 'STREAMING' by default.
         sig do
           returns(
-            HubspotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::Type::TaggedSymbol
+            HubSpotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::Type::TaggedSymbol
           )
         end
         attr_accessor :type
 
-        sig { returns(T.nilable(HubspotSDK::Paging)) }
+        sig { returns(T.nilable(HubSpotSDK::Paging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::Paging::OrHash).void }
+        sig { params(paging: HubSpotSDK::Paging::OrHash).void }
         attr_writer :paging
 
         sig do
@@ -38,8 +38,8 @@ module HubspotSDK
             results: T::Array[T.anything],
             total: Integer,
             type:
-              HubspotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::Type::OrSymbol,
-            paging: HubspotSDK::Paging::OrHash
+              HubSpotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::Type::OrSymbol,
+            paging: HubSpotSDK::Paging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -58,8 +58,8 @@ module HubspotSDK
               results: T::Array[T.anything],
               total: Integer,
               type:
-                HubspotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::Type::TaggedSymbol,
-              paging: HubspotSDK::Paging
+                HubSpotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::Type::TaggedSymbol,
+              paging: HubSpotSDK::Paging
             }
           )
         end
@@ -68,13 +68,13 @@ module HubspotSDK
 
         # Indicates the type of response, which is 'STREAMING' by default.
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::Type
+                HubSpotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::Type
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -82,13 +82,13 @@ module HubspotSDK
           STREAMING =
             T.let(
               :STREAMING,
-              HubspotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::Type::TaggedSymbol
+              HubSpotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::Type::TaggedSymbol
+                HubSpotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::Type::TaggedSymbol
               ]
             )
           end

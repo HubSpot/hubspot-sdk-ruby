@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       module MarketingEvents
-        class EventCompleteByExternalEventIDParams < HubspotSDK::Models::Marketing::MarketingEventCompleteRequestParams
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class EventCompleteByExternalEventIDParams < HubSpotSDK::Models::Marketing::MarketingEventCompleteRequestParams
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Marketing::MarketingEvents::EventCompleteByExternalEventIDParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Marketing::MarketingEvents::EventCompleteByExternalEventIDParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -26,7 +26,7 @@ module HubspotSDK
             params(
               external_event_id: String,
               external_account_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
@@ -41,7 +41,7 @@ module HubspotSDK
               {
                 external_event_id: String,
                 external_account_id: String,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class TopLevelActions < HubspotSDK::Internal::Type::BaseModel
+        class TopLevelActions < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Extensions::TopLevelActions,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Extensions::TopLevelActions,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -18,7 +18,7 @@ module HubspotSDK
           sig do
             returns(
               T::Array[
-                HubspotSDK::Crm::Extensions::TopLevelActions::Secondary::Variants
+                HubSpotSDK::Crm::Extensions::TopLevelActions::Secondary::Variants
               ]
             )
           end
@@ -29,7 +29,7 @@ module HubspotSDK
           sig do
             returns(
               T.nilable(
-                HubspotSDK::Crm::Extensions::TopLevelActions::Primary::Variants
+                HubSpotSDK::Crm::Extensions::TopLevelActions::Primary::Variants
               )
             )
           end
@@ -39,21 +39,21 @@ module HubspotSDK
             params(
               primary:
                 T.any(
-                  HubspotSDK::Crm::Extensions::ActionHookActionBody::OrHash,
-                  HubspotSDK::Crm::Extensions::IFrameActionBody::OrHash
+                  HubSpotSDK::Crm::Extensions::ActionHookActionBody::OrHash,
+                  HubSpotSDK::Crm::Extensions::IFrameActionBody::OrHash
                 )
             ).void
           end
           attr_writer :primary
 
           sig do
-            returns(T.nilable(HubspotSDK::Crm::Extensions::IFrameActionBody))
+            returns(T.nilable(HubSpotSDK::Crm::Extensions::IFrameActionBody))
           end
           attr_reader :settings
 
           sig do
             params(
-              settings: HubspotSDK::Crm::Extensions::IFrameActionBody::OrHash
+              settings: HubSpotSDK::Crm::Extensions::IFrameActionBody::OrHash
             ).void
           end
           attr_writer :settings
@@ -63,16 +63,16 @@ module HubspotSDK
               secondary:
                 T::Array[
                   T.any(
-                    HubspotSDK::Crm::Extensions::ActionHookActionBody::OrHash,
-                    HubspotSDK::Crm::Extensions::IFrameActionBody::OrHash
+                    HubSpotSDK::Crm::Extensions::ActionHookActionBody::OrHash,
+                    HubSpotSDK::Crm::Extensions::IFrameActionBody::OrHash
                   )
                 ],
               primary:
                 T.any(
-                  HubspotSDK::Crm::Extensions::ActionHookActionBody::OrHash,
-                  HubspotSDK::Crm::Extensions::IFrameActionBody::OrHash
+                  HubSpotSDK::Crm::Extensions::ActionHookActionBody::OrHash,
+                  HubSpotSDK::Crm::Extensions::IFrameActionBody::OrHash
                 ),
-              settings: HubspotSDK::Crm::Extensions::IFrameActionBody::OrHash
+              settings: HubSpotSDK::Crm::Extensions::IFrameActionBody::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
@@ -91,11 +91,11 @@ module HubspotSDK
               {
                 secondary:
                   T::Array[
-                    HubspotSDK::Crm::Extensions::TopLevelActions::Secondary::Variants
+                    HubSpotSDK::Crm::Extensions::TopLevelActions::Secondary::Variants
                   ],
                 primary:
-                  HubspotSDK::Crm::Extensions::TopLevelActions::Primary::Variants,
-                settings: HubspotSDK::Crm::Extensions::IFrameActionBody
+                  HubSpotSDK::Crm::Extensions::TopLevelActions::Primary::Variants,
+                settings: HubSpotSDK::Crm::Extensions::IFrameActionBody
               }
             )
           end
@@ -103,20 +103,20 @@ module HubspotSDK
           end
 
           module Secondary
-            extend HubspotSDK::Internal::Type::Union
+            extend HubSpotSDK::Internal::Type::Union
 
             Variants =
               T.type_alias do
                 T.any(
-                  HubspotSDK::Crm::Extensions::ActionHookActionBody,
-                  HubspotSDK::Crm::Extensions::IFrameActionBody
+                  HubSpotSDK::Crm::Extensions::ActionHookActionBody,
+                  HubSpotSDK::Crm::Extensions::IFrameActionBody
                 )
               end
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Crm::Extensions::TopLevelActions::Secondary::Variants
+                  HubSpotSDK::Crm::Extensions::TopLevelActions::Secondary::Variants
                 ]
               )
             end
@@ -127,20 +127,20 @@ module HubspotSDK
           # Defines the primary action for a card, which can be either an action hook or an
           # iframe.
           module Primary
-            extend HubspotSDK::Internal::Type::Union
+            extend HubSpotSDK::Internal::Type::Union
 
             Variants =
               T.type_alias do
                 T.any(
-                  HubspotSDK::Crm::Extensions::ActionHookActionBody,
-                  HubspotSDK::Crm::Extensions::IFrameActionBody
+                  HubSpotSDK::Crm::Extensions::ActionHookActionBody,
+                  HubSpotSDK::Crm::Extensions::IFrameActionBody
                 )
               end
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Crm::Extensions::TopLevelActions::Primary::Variants
+                  HubSpotSDK::Crm::Extensions::TopLevelActions::Primary::Variants
                 ]
               )
             end

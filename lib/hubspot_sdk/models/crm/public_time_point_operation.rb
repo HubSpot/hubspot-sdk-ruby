@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicTimePointOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicTimePointOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute include_objects_with_no_value_set
         #   Indicates whether objects with no value set for the property should be included
         #   in the operation.
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute operation_type
         #   Specifies the type of operation (TIME_POINT).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicTimePointOperation::OperationType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicTimePointOperation::OperationType]
         required :operation_type,
-                 enum: -> { HubspotSDK::Crm::PublicTimePointOperation::OperationType },
+                 enum: -> { HubSpotSDK::Crm::PublicTimePointOperation::OperationType },
                  api_name: :operationType
 
         # @!attribute operator
@@ -32,9 +32,9 @@ module HubspotSDK
         #   Defines the specific point in time for the operation, which can be a date,
         #   indexed time, or property-referenced time.
         #
-        #   @return [HubspotSDK::Models::Crm::PublicDatePoint, HubspotSDK::Models::Crm::PublicIndexedTimePoint, HubspotSDK::Models::Crm::PublicPropertyReferencedTime]
+        #   @return [HubSpotSDK::Models::Crm::PublicDatePoint, HubSpotSDK::Models::Crm::PublicIndexedTimePoint, HubSpotSDK::Models::Crm::PublicPropertyReferencedTime]
         required :time_point,
-                 union: -> { HubspotSDK::Crm::PublicTimePointOperation::TimePoint },
+                 union: -> { HubSpotSDK::Crm::PublicTimePointOperation::TimePoint },
                  api_name: :timePoint
 
         # @!attribute type
@@ -57,15 +57,15 @@ module HubspotSDK
 
         # @!method initialize(include_objects_with_no_value_set:, operation_type:, operator:, time_point:, type:, endpoint_behavior: nil, property_parser: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicTimePointOperation} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicTimePointOperation} for more details.
         #
         #   @param include_objects_with_no_value_set [Boolean] Indicates whether objects with no value set for the property should be included
         #
-        #   @param operation_type [Symbol, HubspotSDK::Models::Crm::PublicTimePointOperation::OperationType] Specifies the type of operation (TIME_POINT).
+        #   @param operation_type [Symbol, HubSpotSDK::Models::Crm::PublicTimePointOperation::OperationType] Specifies the type of operation (TIME_POINT).
         #
         #   @param operator [String] Specifies the operation to be applied within the time point operation (IS_BEFORE
         #
-        #   @param time_point [HubspotSDK::Models::Crm::PublicDatePoint, HubspotSDK::Models::Crm::PublicIndexedTimePoint, HubspotSDK::Models::Crm::PublicPropertyReferencedTime] Defines the specific point in time for the operation, which can be a date, index
+        #   @param time_point [HubSpotSDK::Models::Crm::PublicDatePoint, HubSpotSDK::Models::Crm::PublicIndexedTimePoint, HubSpotSDK::Models::Crm::PublicPropertyReferencedTime] Defines the specific point in time for the operation, which can be a date, index
         #
         #   @param type [String] Defines the type of operation being performed.
         #
@@ -75,9 +75,9 @@ module HubspotSDK
 
         # Specifies the type of operation (TIME_POINT).
         #
-        # @see HubspotSDK::Models::Crm::PublicTimePointOperation#operation_type
+        # @see HubSpotSDK::Models::Crm::PublicTimePointOperation#operation_type
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TIME_POINT = :TIME_POINT
 
@@ -88,18 +88,18 @@ module HubspotSDK
         # Defines the specific point in time for the operation, which can be a date,
         # indexed time, or property-referenced time.
         #
-        # @see HubspotSDK::Models::Crm::PublicTimePointOperation#time_point
+        # @see HubSpotSDK::Models::Crm::PublicTimePointOperation#time_point
         module TimePoint
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubspotSDK::Crm::PublicDatePoint }
+          variant -> { HubSpotSDK::Crm::PublicDatePoint }
 
-          variant -> { HubspotSDK::Crm::PublicIndexedTimePoint }
+          variant -> { HubSpotSDK::Crm::PublicIndexedTimePoint }
 
-          variant -> { HubspotSDK::Crm::PublicPropertyReferencedTime }
+          variant -> { HubSpotSDK::Crm::PublicPropertyReferencedTime }
 
           # @!method self.variants
-          #   @return [Array(HubspotSDK::Models::Crm::PublicDatePoint, HubspotSDK::Models::Crm::PublicIndexedTimePoint, HubspotSDK::Models::Crm::PublicPropertyReferencedTime)]
+          #   @return [Array(HubSpotSDK::Models::Crm::PublicDatePoint, HubSpotSDK::Models::Crm::PublicIndexedTimePoint, HubSpotSDK::Models::Crm::PublicPropertyReferencedTime)]
         end
       end
     end

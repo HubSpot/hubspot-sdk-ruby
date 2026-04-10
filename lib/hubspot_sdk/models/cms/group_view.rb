@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class GroupView < HubspotSDK::Internal::Type::BaseModel
+      class GroupView < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute display_name
         #
         #   @return [String]
@@ -27,7 +27,7 @@ module HubspotSDK
         # @!attribute hubspot_defined
         #
         #   @return [Boolean]
-        required :hubspot_defined, HubspotSDK::Internal::Type::Boolean, api_name: :hubspotDefined
+        required :hubspot_defined, HubSpotSDK::Internal::Type::Boolean, api_name: :hubspotDefined
 
         # @!attribute name
         #

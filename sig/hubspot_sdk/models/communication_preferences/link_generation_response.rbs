@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
       type link_generation_response =
@@ -9,7 +9,7 @@ module HubspotSDK
           unsubscribe_single_url: String
         }
 
-      class LinkGenerationResponse < HubspotSDK::Internal::Type::BaseModel
+      class LinkGenerationResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor manage_preferences_url: String
 
         attr_accessor subscriber_id_string: String

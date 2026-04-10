@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class EmailListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class EmailListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::EmailListParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::EmailListParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -112,14 +112,14 @@ module HubspotSDK
 
         sig do
           returns(
-            T.nilable(HubspotSDK::Marketing::EmailListParams::Type::OrSymbol)
+            T.nilable(HubSpotSDK::Marketing::EmailListParams::Type::OrSymbol)
           )
         end
         attr_reader :type
 
         sig do
           params(
-            type: HubspotSDK::Marketing::EmailListParams::Type::OrSymbol
+            type: HubSpotSDK::Marketing::EmailListParams::Type::OrSymbol
           ).void
         end
         attr_writer :type
@@ -171,13 +171,13 @@ module HubspotSDK
             published_at: Time,
             published_before: Time,
             sort: T::Array[String],
-            type: HubspotSDK::Marketing::EmailListParams::Type::OrSymbol,
+            type: HubSpotSDK::Marketing::EmailListParams::Type::OrSymbol,
             updated_after: Time,
             updated_at: Time,
             updated_before: Time,
             variant_stats: T::Boolean,
             workflow_names: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -229,13 +229,13 @@ module HubspotSDK
               published_at: Time,
               published_before: Time,
               sort: T::Array[String],
-              type: HubspotSDK::Marketing::EmailListParams::Type::OrSymbol,
+              type: HubSpotSDK::Marketing::EmailListParams::Type::OrSymbol,
               updated_after: Time,
               updated_at: Time,
               updated_before: Time,
               variant_stats: T::Boolean,
               workflow_names: T::Boolean,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end
@@ -243,179 +243,179 @@ module HubspotSDK
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Marketing::EmailListParams::Type)
+              T.all(Symbol, HubSpotSDK::Marketing::EmailListParams::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           AB_EMAIL =
             T.let(
               :AB_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           AUTOMATED_AB_EMAIL =
             T.let(
               :AUTOMATED_AB_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           AUTOMATED_EMAIL =
             T.let(
               :AUTOMATED_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           BATCH_EMAIL =
             T.let(
               :BATCH_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           BLOG_EMAIL =
             T.let(
               :BLOG_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           BLOG_EMAIL_CHILD =
             T.let(
               :BLOG_EMAIL_CHILD,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           FEEDBACK_CES_EMAIL =
             T.let(
               :FEEDBACK_CES_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           FEEDBACK_CUSTOM_EMAIL =
             T.let(
               :FEEDBACK_CUSTOM_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           FEEDBACK_CUSTOM_SURVEY_EMAIL =
             T.let(
               :FEEDBACK_CUSTOM_SURVEY_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           FEEDBACK_NPS_EMAIL =
             T.let(
               :FEEDBACK_NPS_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           FOLLOWUP_EMAIL =
             T.let(
               :FOLLOWUP_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           LEADFLOW_EMAIL =
             T.let(
               :LEADFLOW_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           LOCALTIME_EMAIL =
             T.let(
               :LOCALTIME_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           MANAGE_PREFERENCES_EMAIL =
             T.let(
               :MANAGE_PREFERENCES_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           MARKETING_SINGLE_SEND_API =
             T.let(
               :MARKETING_SINGLE_SEND_API,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           MEMBERSHIP_EMAIL_VERIFICATION_EMAIL =
             T.let(
               :MEMBERSHIP_EMAIL_VERIFICATION_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           MEMBERSHIP_FOLLOW_UP_EMAIL =
             T.let(
               :MEMBERSHIP_FOLLOW_UP_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           MEMBERSHIP_OTP_LOGIN_EMAIL =
             T.let(
               :MEMBERSHIP_OTP_LOGIN_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           MEMBERSHIP_PASSWORD_RESET_EMAIL =
             T.let(
               :MEMBERSHIP_PASSWORD_RESET_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           MEMBERSHIP_PASSWORD_SAVED_EMAIL =
             T.let(
               :MEMBERSHIP_PASSWORD_SAVED_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL =
             T.let(
               :MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           MEMBERSHIP_REGISTRATION_EMAIL =
             T.let(
               :MEMBERSHIP_REGISTRATION_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL =
             T.let(
               :MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           MEMBERSHIP_VERIFICATION_EMAIL =
             T.let(
               :MEMBERSHIP_VERIFICATION_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           OPTIN_EMAIL =
             T.let(
               :OPTIN_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           OPTIN_FOLLOWUP_EMAIL =
             T.let(
               :OPTIN_FOLLOWUP_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           RESUBSCRIBE_EMAIL =
             T.let(
               :RESUBSCRIBE_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           RSS_EMAIL =
             T.let(
               :RSS_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           RSS_EMAIL_CHILD =
             T.let(
               :RSS_EMAIL_CHILD,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           SINGLE_SEND_API =
             T.let(
               :SINGLE_SEND_API,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           SMTP_TOKEN =
             T.let(
               :SMTP_TOKEN,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
           TICKET_EMAIL =
             T.let(
               :TICKET_EMAIL,
-              HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+              HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Marketing::EmailListParams::Type::TaggedSymbol
+                HubSpotSDK::Marketing::EmailListParams::Type::TaggedSymbol
               ]
             )
           end

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalCalenderMeetingEventResponse < HubspotSDK::Internal::Type::BaseModel
+      class ExternalCalenderMeetingEventResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Scheduler::ExternalCalenderMeetingEventResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Scheduler::ExternalCalenderMeetingEventResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -27,7 +27,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties
+            HubSpotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties
           )
         end
         attr_reader :properties
@@ -35,7 +35,7 @@ module HubspotSDK
         sig do
           params(
             properties:
-              HubspotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties::OrHash
+              HubSpotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties::OrHash
           ).void
         end
         attr_writer :properties
@@ -46,7 +46,7 @@ module HubspotSDK
             created_at: Time,
             last_updated_at: Time,
             properties:
-              HubspotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties::OrHash
+              HubSpotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -68,7 +68,7 @@ module HubspotSDK
               created_at: Time,
               last_updated_at: Time,
               properties:
-                HubspotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties
+                HubSpotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties
             }
           )
         end

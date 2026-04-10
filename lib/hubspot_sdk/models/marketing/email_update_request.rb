@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class EmailUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+      class EmailUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute active_domain
         #   The active domain of the email.
         #
@@ -14,7 +14,7 @@ module HubspotSDK
         #   Determines if the email is archived or not.
         #
         #   @return [Boolean, nil]
-        optional :archived, HubspotSDK::Internal::Type::Boolean
+        optional :archived, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute business_unit_id
         #   The ID of the business unit associated with the email.
@@ -30,8 +30,8 @@ module HubspotSDK
 
         # @!attribute content
         #
-        #   @return [HubspotSDK::Models::Marketing::PublicEmailContent, nil]
-        optional :content, -> { HubspotSDK::Marketing::PublicEmailContent }
+        #   @return [HubSpotSDK::Models::Marketing::PublicEmailContent, nil]
+        optional :content, -> { HubSpotSDK::Marketing::PublicEmailContent }
 
         # @!attribute folder_id_v2
         #   The ID of the folder where the email will be stored.
@@ -41,21 +41,21 @@ module HubspotSDK
 
         # @!attribute from
         #
-        #   @return [HubspotSDK::Models::Marketing::PublicEmailFromDetails, nil]
-        optional :from, -> { HubspotSDK::Marketing::PublicEmailFromDetails }
+        #   @return [HubSpotSDK::Models::Marketing::PublicEmailFromDetails, nil]
+        optional :from, -> { HubSpotSDK::Marketing::PublicEmailFromDetails }
 
         # @!attribute jitter_send_time
         #   Determines whether the email send time should be randomized to avoid sending all
         #   emails at the exact same time.
         #
         #   @return [Boolean, nil]
-        optional :jitter_send_time, HubspotSDK::Internal::Type::Boolean, api_name: :jitterSendTime
+        optional :jitter_send_time, HubSpotSDK::Internal::Type::Boolean, api_name: :jitterSendTime
 
         # @!attribute language
         #   The language code for the email, such as 'en' for English.
         #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::EmailUpdateRequest::Language, nil]
-        optional :language, enum: -> { HubspotSDK::Marketing::EmailUpdateRequest::Language }
+        #   @return [Symbol, HubSpotSDK::Models::Marketing::EmailUpdateRequest::Language, nil]
+        optional :language, enum: -> { HubSpotSDK::Marketing::EmailUpdateRequest::Language }
 
         # @!attribute name
         #   The name of the email, as displayed on the email dashboard.
@@ -72,26 +72,26 @@ module HubspotSDK
 
         # @!attribute rss_data
         #
-        #   @return [HubspotSDK::Models::Marketing::PublicRssEmailDetails, nil]
-        optional :rss_data, -> { HubspotSDK::Marketing::PublicRssEmailDetails }, api_name: :rssData
+        #   @return [HubSpotSDK::Models::Marketing::PublicRssEmailDetails, nil]
+        optional :rss_data, -> { HubSpotSDK::Marketing::PublicRssEmailDetails }, api_name: :rssData
 
         # @!attribute send_on_publish
         #   Determines whether the email will be sent immediately on publish.
         #
         #   @return [Boolean, nil]
-        optional :send_on_publish, HubspotSDK::Internal::Type::Boolean, api_name: :sendOnPublish
+        optional :send_on_publish, HubSpotSDK::Internal::Type::Boolean, api_name: :sendOnPublish
 
         # @!attribute state
         #   The email state.
         #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::EmailUpdateRequest::State, nil]
-        optional :state, enum: -> { HubspotSDK::Marketing::EmailUpdateRequest::State }
+        #   @return [Symbol, HubSpotSDK::Models::Marketing::EmailUpdateRequest::State, nil]
+        optional :state, enum: -> { HubSpotSDK::Marketing::EmailUpdateRequest::State }
 
         # @!attribute subcategory
         #   The email subcategory.
         #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::EmailUpdateRequest::Subcategory, nil]
-        optional :subcategory, enum: -> { HubspotSDK::Marketing::EmailUpdateRequest::Subcategory }
+        #   @return [Symbol, HubSpotSDK::Models::Marketing::EmailUpdateRequest::Subcategory, nil]
+        optional :subcategory, enum: -> { HubSpotSDK::Marketing::EmailUpdateRequest::Subcategory }
 
         # @!attribute subject
         #   The subject of the email.
@@ -101,29 +101,29 @@ module HubspotSDK
 
         # @!attribute subscription_details
         #
-        #   @return [HubspotSDK::Models::Marketing::PublicEmailSubscriptionDetails, nil]
+        #   @return [HubSpotSDK::Models::Marketing::PublicEmailSubscriptionDetails, nil]
         optional :subscription_details,
-                 -> { HubspotSDK::Marketing::PublicEmailSubscriptionDetails },
+                 -> { HubSpotSDK::Marketing::PublicEmailSubscriptionDetails },
                  api_name: :subscriptionDetails
 
         # @!attribute testing
         #
-        #   @return [HubspotSDK::Models::Marketing::PublicEmailTestingDetails, nil]
-        optional :testing, -> { HubspotSDK::Marketing::PublicEmailTestingDetails }
+        #   @return [HubSpotSDK::Models::Marketing::PublicEmailTestingDetails, nil]
+        optional :testing, -> { HubSpotSDK::Marketing::PublicEmailTestingDetails }
 
         # @!attribute to
         #
-        #   @return [HubspotSDK::Models::Marketing::PublicEmailToDetails, nil]
-        optional :to, -> { HubspotSDK::Marketing::PublicEmailToDetails }
+        #   @return [HubSpotSDK::Models::Marketing::PublicEmailToDetails, nil]
+        optional :to, -> { HubSpotSDK::Marketing::PublicEmailToDetails }
 
         # @!attribute webversion
         #
-        #   @return [HubspotSDK::Models::Marketing::PublicWebversionDetails, nil]
-        optional :webversion, -> { HubspotSDK::Marketing::PublicWebversionDetails }
+        #   @return [HubSpotSDK::Models::Marketing::PublicWebversionDetails, nil]
+        optional :webversion, -> { HubSpotSDK::Marketing::PublicWebversionDetails }
 
         # @!method initialize(active_domain: nil, archived: nil, business_unit_id: nil, campaign: nil, content: nil, folder_id_v2: nil, from: nil, jitter_send_time: nil, language: nil, name: nil, publish_date: nil, rss_data: nil, send_on_publish: nil, state: nil, subcategory: nil, subject: nil, subscription_details: nil, testing: nil, to: nil, webversion: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::EmailUpdateRequest} for more details.
+        #   {HubSpotSDK::Models::Marketing::EmailUpdateRequest} for more details.
         #
         #   @param active_domain [String] The active domain of the email.
         #
@@ -133,43 +133,43 @@ module HubspotSDK
         #
         #   @param campaign [String] The ID of the campaign this email is associated to.
         #
-        #   @param content [HubspotSDK::Models::Marketing::PublicEmailContent]
+        #   @param content [HubSpotSDK::Models::Marketing::PublicEmailContent]
         #
         #   @param folder_id_v2 [Integer] The ID of the folder where the email will be stored.
         #
-        #   @param from [HubspotSDK::Models::Marketing::PublicEmailFromDetails]
+        #   @param from [HubSpotSDK::Models::Marketing::PublicEmailFromDetails]
         #
         #   @param jitter_send_time [Boolean] Determines whether the email send time should be randomized to avoid sending all
         #
-        #   @param language [Symbol, HubspotSDK::Models::Marketing::EmailUpdateRequest::Language] The language code for the email, such as 'en' for English.
+        #   @param language [Symbol, HubSpotSDK::Models::Marketing::EmailUpdateRequest::Language] The language code for the email, such as 'en' for English.
         #
         #   @param name [String] The name of the email, as displayed on the email dashboard.
         #
         #   @param publish_date [Time] The date and time the email is scheduled for, in ISO8601 representation. This is
         #
-        #   @param rss_data [HubspotSDK::Models::Marketing::PublicRssEmailDetails]
+        #   @param rss_data [HubSpotSDK::Models::Marketing::PublicRssEmailDetails]
         #
         #   @param send_on_publish [Boolean] Determines whether the email will be sent immediately on publish.
         #
-        #   @param state [Symbol, HubspotSDK::Models::Marketing::EmailUpdateRequest::State] The email state.
+        #   @param state [Symbol, HubSpotSDK::Models::Marketing::EmailUpdateRequest::State] The email state.
         #
-        #   @param subcategory [Symbol, HubspotSDK::Models::Marketing::EmailUpdateRequest::Subcategory] The email subcategory.
+        #   @param subcategory [Symbol, HubSpotSDK::Models::Marketing::EmailUpdateRequest::Subcategory] The email subcategory.
         #
         #   @param subject [String] The subject of the email.
         #
-        #   @param subscription_details [HubspotSDK::Models::Marketing::PublicEmailSubscriptionDetails]
+        #   @param subscription_details [HubSpotSDK::Models::Marketing::PublicEmailSubscriptionDetails]
         #
-        #   @param testing [HubspotSDK::Models::Marketing::PublicEmailTestingDetails]
+        #   @param testing [HubSpotSDK::Models::Marketing::PublicEmailTestingDetails]
         #
-        #   @param to [HubspotSDK::Models::Marketing::PublicEmailToDetails]
+        #   @param to [HubSpotSDK::Models::Marketing::PublicEmailToDetails]
         #
-        #   @param webversion [HubspotSDK::Models::Marketing::PublicWebversionDetails]
+        #   @param webversion [HubSpotSDK::Models::Marketing::PublicWebversionDetails]
 
         # The language code for the email, such as 'en' for English.
         #
-        # @see HubspotSDK::Models::Marketing::EmailUpdateRequest#language
+        # @see HubSpotSDK::Models::Marketing::EmailUpdateRequest#language
         module Language
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AA = :aa
           AB = :ab
@@ -1021,9 +1021,9 @@ module HubspotSDK
 
         # The email state.
         #
-        # @see HubspotSDK::Models::Marketing::EmailUpdateRequest#state
+        # @see HubSpotSDK::Models::Marketing::EmailUpdateRequest#state
         module State
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AGENT_GENERATED = :AGENT_GENERATED
           AUTOMATED = :AUTOMATED
@@ -1064,9 +1064,9 @@ module HubspotSDK
 
         # The email subcategory.
         #
-        # @see HubspotSDK::Models::Marketing::EmailUpdateRequest#subcategory
+        # @see HubSpotSDK::Models::Marketing::EmailUpdateRequest#subcategory
         module Subcategory
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AB_LOSER_VARIANT = :ab_loser_variant
           AB_LOSER_VARIANT_SITE_PAGE = :ab_loser_variant_site_page

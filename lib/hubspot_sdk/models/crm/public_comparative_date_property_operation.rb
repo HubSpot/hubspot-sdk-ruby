@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicComparativeDatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicComparativeDatePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute comparison_property_name
         #   The name of the property to compare against in the operation.
         #
@@ -16,15 +16,15 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute operation_type
         #   The type of operation (COMPARATIVE_DATE).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicComparativeDatePropertyOperation::OperationType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicComparativeDatePropertyOperation::OperationType]
         required :operation_type,
-                 enum: -> { HubspotSDK::Crm::PublicComparativeDatePropertyOperation::OperationType },
+                 enum: -> { HubSpotSDK::Crm::PublicComparativeDatePropertyOperation::OperationType },
                  api_name: :operationType
 
         # @!attribute operator
@@ -43,14 +43,14 @@ module HubspotSDK
 
         # @!method initialize(comparison_property_name:, include_objects_with_no_value_set:, operation_type:, operator:, default_comparison_value: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicComparativeDatePropertyOperation} for more
+        #   {HubSpotSDK::Models::Crm::PublicComparativeDatePropertyOperation} for more
         #   details.
         #
         #   @param comparison_property_name [String] The name of the property to compare against in the operation.
         #
         #   @param include_objects_with_no_value_set [Boolean] Indicates whether objects with no value set for the property should be included
         #
-        #   @param operation_type [Symbol, HubspotSDK::Models::Crm::PublicComparativeDatePropertyOperation::OperationType] The type of operation (COMPARATIVE_DATE).
+        #   @param operation_type [Symbol, HubSpotSDK::Models::Crm::PublicComparativeDatePropertyOperation::OperationType] The type of operation (COMPARATIVE_DATE).
         #
         #   @param operator [String] Defines the operation to be applied in the comparative date property operation (
         #
@@ -58,9 +58,9 @@ module HubspotSDK
 
         # The type of operation (COMPARATIVE_DATE).
         #
-        # @see HubspotSDK::Models::Crm::PublicComparativeDatePropertyOperation#operation_type
+        # @see HubSpotSDK::Models::Crm::PublicComparativeDatePropertyOperation#operation_type
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           COMPARATIVE_DATE = :COMPARATIVE_DATE
 

@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PreResolvedContacts < HubspotSDK::Internal::Type::BaseModel
+      class PreResolvedContacts < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute contacts
         #
-        #   @return [Array<HubspotSDK::Models::Conversations::PreResolvedContact>]
+        #   @return [Array<HubSpotSDK::Models::Conversations::PreResolvedContact>]
         required :contacts,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::PreResolvedContact] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Conversations::PreResolvedContact] }
 
         # @!method initialize(contacts:)
-        #   @param contacts [Array<HubspotSDK::Models::Conversations::PreResolvedContact>]
+        #   @param contacts [Array<HubSpotSDK::Models::Conversations::PreResolvedContact>]
       end
     end
   end

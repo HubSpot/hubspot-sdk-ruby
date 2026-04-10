@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Settings
       class TaxRates
@@ -6,15 +6,15 @@ module HubspotSDK
           ?active: bool,
           ?after: String,
           ?limit: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Settings::PublicTaxRateGroup]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Settings::PublicTaxRateGroup]
 
         def get: (
           String tax_rate_group_id,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Settings::PublicTaxRateGroup
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Settings::PublicTaxRateGroup
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

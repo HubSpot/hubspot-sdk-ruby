@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class ContactAddress < HubspotSDK::Internal::Type::BaseModel
+      class ContactAddress < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute city
         #
         #   @return [String, nil]
@@ -31,8 +31,8 @@ module HubspotSDK
 
         # @!attribute type
         #
-        #   @return [Symbol, HubspotSDK::Models::Conversations::ContactAddress::Type, nil]
-        optional :type, enum: -> { HubspotSDK::Conversations::ContactAddress::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Conversations::ContactAddress::Type, nil]
+        optional :type, enum: -> { HubSpotSDK::Conversations::ContactAddress::Type }
 
         # @!attribute zip
         #
@@ -45,12 +45,12 @@ module HubspotSDK
         #   @param country_code [String]
         #   @param state [String]
         #   @param street [String]
-        #   @param type [Symbol, HubspotSDK::Models::Conversations::ContactAddress::Type]
+        #   @param type [Symbol, HubSpotSDK::Models::Conversations::ContactAddress::Type]
         #   @param zip [String]
 
-        # @see HubspotSDK::Models::Conversations::ContactAddress#type
+        # @see HubSpotSDK::Models::Conversations::ContactAddress#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HOME = :HOME
           WORK = :WORK

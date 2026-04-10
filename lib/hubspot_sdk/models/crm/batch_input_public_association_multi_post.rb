@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchInputPublicAssociationMultiPost < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputPublicAssociationMultiPost < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute inputs
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PublicAssociationMultiPost>]
-        required :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociationMultiPost] }
+        #   @return [Array<HubSpotSDK::Models::Crm::PublicAssociationMultiPost>]
+        required :inputs, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicAssociationMultiPost] }
 
         # @!method initialize(inputs:)
-        #   @param inputs [Array<HubspotSDK::Models::Crm::PublicAssociationMultiPost>]
+        #   @param inputs [Array<HubSpotSDK::Models::Crm::PublicAssociationMultiPost>]
       end
     end
   end

@@ -1,27 +1,27 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicMessageStatus < HubspotSDK::Internal::Type::BaseModel
+      class PublicMessageStatus < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::PublicMessageStatus,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::PublicMessageStatus,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::Conversations::PublicMessageStatus::StatusType::TaggedSymbol
+            HubSpotSDK::Conversations::PublicMessageStatus::StatusType::TaggedSymbol
           )
         end
         attr_accessor :status_type
 
         sig do
           returns(
-            T.nilable(HubspotSDK::Conversations::PublicMessageFailureDetails)
+            T.nilable(HubSpotSDK::Conversations::PublicMessageFailureDetails)
           )
         end
         attr_reader :failure_details
@@ -29,7 +29,7 @@ module HubspotSDK
         sig do
           params(
             failure_details:
-              HubspotSDK::Conversations::PublicMessageFailureDetails::OrHash
+              HubSpotSDK::Conversations::PublicMessageFailureDetails::OrHash
           ).void
         end
         attr_writer :failure_details
@@ -37,9 +37,9 @@ module HubspotSDK
         sig do
           params(
             status_type:
-              HubspotSDK::Conversations::PublicMessageStatus::StatusType::OrSymbol,
+              HubSpotSDK::Conversations::PublicMessageStatus::StatusType::OrSymbol,
             failure_details:
-              HubspotSDK::Conversations::PublicMessageFailureDetails::OrHash
+              HubSpotSDK::Conversations::PublicMessageFailureDetails::OrHash
           ).returns(T.attached_class)
         end
         def self.new(status_type:, failure_details: nil)
@@ -49,9 +49,9 @@ module HubspotSDK
           override.returns(
             {
               status_type:
-                HubspotSDK::Conversations::PublicMessageStatus::StatusType::TaggedSymbol,
+                HubSpotSDK::Conversations::PublicMessageStatus::StatusType::TaggedSymbol,
               failure_details:
-                HubspotSDK::Conversations::PublicMessageFailureDetails
+                HubSpotSDK::Conversations::PublicMessageFailureDetails
             }
           )
         end
@@ -59,13 +59,13 @@ module HubspotSDK
         end
 
         module StatusType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Conversations::PublicMessageStatus::StatusType
+                HubSpotSDK::Conversations::PublicMessageStatus::StatusType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -73,28 +73,28 @@ module HubspotSDK
           FAILED =
             T.let(
               :FAILED,
-              HubspotSDK::Conversations::PublicMessageStatus::StatusType::TaggedSymbol
+              HubSpotSDK::Conversations::PublicMessageStatus::StatusType::TaggedSymbol
             )
           READ =
             T.let(
               :READ,
-              HubspotSDK::Conversations::PublicMessageStatus::StatusType::TaggedSymbol
+              HubSpotSDK::Conversations::PublicMessageStatus::StatusType::TaggedSymbol
             )
           RECEIVED =
             T.let(
               :RECEIVED,
-              HubspotSDK::Conversations::PublicMessageStatus::StatusType::TaggedSymbol
+              HubSpotSDK::Conversations::PublicMessageStatus::StatusType::TaggedSymbol
             )
           SENT =
             T.let(
               :SENT,
-              HubspotSDK::Conversations::PublicMessageStatus::StatusType::TaggedSymbol
+              HubSpotSDK::Conversations::PublicMessageStatus::StatusType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::PublicMessageStatus::StatusType::TaggedSymbol
+                HubSpotSDK::Conversations::PublicMessageStatus::StatusType::TaggedSymbol
               ]
             )
           end

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
       type public_subscription_translation =
@@ -11,7 +11,7 @@ module HubspotSDK
           updated_at: Integer
         }
 
-      class PublicSubscriptionTranslation < HubspotSDK::Internal::Type::BaseModel
+      class PublicSubscriptionTranslation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor created_at: Integer
 
         attr_accessor description: String

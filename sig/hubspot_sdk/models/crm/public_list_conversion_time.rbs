@@ -1,14 +1,14 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_list_conversion_time =
-        HubspotSDK::Crm::PublicListConversionDate
-        | HubspotSDK::Crm::PublicListConversionInactivity
+        HubSpotSDK::Crm::PublicListConversionDate
+        | HubSpotSDK::Crm::PublicListConversionInactivity
 
       module PublicListConversionTime
-        extend HubspotSDK::Internal::Type::Union
+        extend HubSpotSDK::Internal::Type::Union
 
-        def self?.variants: -> ::Array[HubspotSDK::Models::Crm::public_list_conversion_time]
+        def self?.variants: -> ::Array[HubSpotSDK::Models::Crm::public_list_conversion_time]
       end
     end
   end

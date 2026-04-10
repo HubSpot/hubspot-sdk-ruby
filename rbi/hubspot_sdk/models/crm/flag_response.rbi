@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class FlagResponse < HubspotSDK::Internal::Type::BaseModel
+      class FlagResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Crm::FlagResponse, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Crm::FlagResponse, HubSpotSDK::Internal::AnyHash)
           end
 
         # The ID of the app
@@ -15,7 +15,7 @@ module HubspotSDK
 
         # The flag state for any portal that doesn't have an override value
         sig do
-          returns(HubspotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol)
+          returns(HubSpotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol)
         end
         attr_accessor :default_state
 
@@ -28,7 +28,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
+              HubSpotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
             )
           )
         end
@@ -37,7 +37,7 @@ module HubspotSDK
         sig do
           params(
             override_state:
-              HubspotSDK::Crm::FlagResponse::OverrideState::OrSymbol
+              HubSpotSDK::Crm::FlagResponse::OverrideState::OrSymbol
           ).void
         end
         attr_writer :override_state
@@ -46,10 +46,10 @@ module HubspotSDK
           params(
             app_id: Integer,
             default_state:
-              HubspotSDK::Crm::FlagResponse::DefaultState::OrSymbol,
+              HubSpotSDK::Crm::FlagResponse::DefaultState::OrSymbol,
             flag_name: String,
             override_state:
-              HubspotSDK::Crm::FlagResponse::OverrideState::OrSymbol
+              HubSpotSDK::Crm::FlagResponse::OverrideState::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -70,10 +70,10 @@ module HubspotSDK
             {
               app_id: Integer,
               default_state:
-                HubspotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol,
+                HubSpotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol,
               flag_name: String,
               override_state:
-                HubspotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
+                HubSpotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
             }
           )
         end
@@ -82,34 +82,34 @@ module HubspotSDK
 
         # The flag state for any portal that doesn't have an override value
         module DefaultState
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::FlagResponse::DefaultState)
+              T.all(Symbol, HubSpotSDK::Crm::FlagResponse::DefaultState)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           ABSENT =
             T.let(
               :ABSENT,
-              HubspotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol
+              HubSpotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol
             )
           OFF =
             T.let(
               :OFF,
-              HubspotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol
+              HubSpotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol
             )
           ON =
             T.let(
               :ON,
-              HubspotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol
+              HubSpotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol
+                HubSpotSDK::Crm::FlagResponse::DefaultState::TaggedSymbol
               ]
             )
           end
@@ -120,34 +120,34 @@ module HubspotSDK
         # An optional flag value that overrides all others for this flag name and app,
         # including portal-level values
         module OverrideState
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::FlagResponse::OverrideState)
+              T.all(Symbol, HubSpotSDK::Crm::FlagResponse::OverrideState)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           ABSENT =
             T.let(
               :ABSENT,
-              HubspotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
+              HubSpotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
             )
           OFF =
             T.let(
               :OFF,
-              HubspotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
+              HubSpotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
             )
           ON =
             T.let(
               :ON,
-              HubspotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
+              HubSpotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
+                HubSpotSDK::Crm::FlagResponse::OverrideState::TaggedSymbol
               ]
             )
           end

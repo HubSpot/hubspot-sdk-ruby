@@ -1,13 +1,13 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class AssociationDefinitionEgg < HubspotSDK::Internal::Type::BaseModel
+    class AssociationDefinitionEgg < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
           T.any(
-            HubspotSDK::AssociationDefinitionEgg,
-            HubspotSDK::Internal::AnyHash
+            HubSpotSDK::AssociationDefinitionEgg,
+            HubSpotSDK::Internal::AnyHash
           )
         end
 

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class ImportFromURLInput < HubspotSDK::Internal::Type::BaseModel
+      class ImportFromURLInput < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute access
         #   PUBLIC_INDEXABLE: File is publicly accessible by anyone who has the URL. Search
         #   engines can index the file. PUBLIC_NOT_INDEXABLE: File is publicly accessible by
@@ -11,16 +11,16 @@ module HubspotSDK
         #   NOT publicly accessible. Requires a signed URL to see content. Search engines
         #   _can't_ index the file.
         #
-        #   @return [Symbol, HubspotSDK::Models::Files::ImportFromURLInput::Access]
-        required :access, enum: -> { HubspotSDK::Files::ImportFromURLInput::Access }
+        #   @return [Symbol, HubSpotSDK::Models::Files::ImportFromURLInput::Access]
+        required :access, enum: -> { HubSpotSDK::Files::ImportFromURLInput::Access }
 
         # @!attribute duplicate_validation_scope
         #   ENTIRE_PORTAL: Look for a duplicate file in the entire account. EXACT_FOLDER:
         #   Look for a duplicate file in the provided folder.
         #
-        #   @return [Symbol, HubspotSDK::Models::Files::ImportFromURLInput::DuplicateValidationScope]
+        #   @return [Symbol, HubSpotSDK::Models::Files::ImportFromURLInput::DuplicateValidationScope]
         required :duplicate_validation_scope,
-                 enum: -> { HubspotSDK::Files::ImportFromURLInput::DuplicateValidationScope },
+                 enum: -> { HubSpotSDK::Files::ImportFromURLInput::DuplicateValidationScope },
                  api_name: :duplicateValidationScope
 
         # @!attribute duplicate_validation_strategy
@@ -28,9 +28,9 @@ module HubspotSDK
         #   duplicate is found. RETURN_EXISTING: If a duplicate file is found, do not upload
         #   a new file and return the found duplicate instead.
         #
-        #   @return [Symbol, HubspotSDK::Models::Files::ImportFromURLInput::DuplicateValidationStrategy]
+        #   @return [Symbol, HubSpotSDK::Models::Files::ImportFromURLInput::DuplicateValidationStrategy]
         required :duplicate_validation_strategy,
-                 enum: -> { HubspotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy },
+                 enum: -> { HubSpotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy },
                  api_name: :duplicateValidationStrategy
 
         # @!attribute overwrite
@@ -41,7 +41,7 @@ module HubspotSDK
         #   exists with the same path, name, and extension
         #
         #   @return [Boolean]
-        required :overwrite, HubspotSDK::Internal::Type::Boolean
+        required :overwrite, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute expires_at
         #   Specifies the date and time when the file will expire.
@@ -85,13 +85,13 @@ module HubspotSDK
 
         # @!method initialize(access:, duplicate_validation_scope:, duplicate_validation_strategy:, overwrite:, expires_at: nil, folder_id: nil, folder_path: nil, name: nil, ttl: nil, url: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Files::ImportFromURLInput} for more details.
+        #   {HubSpotSDK::Models::Files::ImportFromURLInput} for more details.
         #
-        #   @param access [Symbol, HubspotSDK::Models::Files::ImportFromURLInput::Access] PUBLIC_INDEXABLE: File is publicly accessible by anyone who has the URL. Search
+        #   @param access [Symbol, HubSpotSDK::Models::Files::ImportFromURLInput::Access] PUBLIC_INDEXABLE: File is publicly accessible by anyone who has the URL. Search
         #
-        #   @param duplicate_validation_scope [Symbol, HubspotSDK::Models::Files::ImportFromURLInput::DuplicateValidationScope] ENTIRE_PORTAL: Look for a duplicate file in the entire account. EXACT_FOLDER: Lo
+        #   @param duplicate_validation_scope [Symbol, HubSpotSDK::Models::Files::ImportFromURLInput::DuplicateValidationScope] ENTIRE_PORTAL: Look for a duplicate file in the entire account. EXACT_FOLDER: Lo
         #
-        #   @param duplicate_validation_strategy [Symbol, HubspotSDK::Models::Files::ImportFromURLInput::DuplicateValidationStrategy] NONE: Do not run any duplicate validation. REJECT: Reject the upload if a duplic
+        #   @param duplicate_validation_strategy [Symbol, HubSpotSDK::Models::Files::ImportFromURLInput::DuplicateValidationStrategy] NONE: Do not run any duplicate validation. REJECT: Reject the upload if a duplic
         #
         #   @param overwrite [Boolean] If true, will overwrite existing file if one with the same name and extension ex
         #
@@ -113,9 +113,9 @@ module HubspotSDK
         # NOT publicly accessible. Requires a signed URL to see content. Search engines
         # _can't_ index the file.
         #
-        # @see HubspotSDK::Models::Files::ImportFromURLInput#access
+        # @see HubSpotSDK::Models::Files::ImportFromURLInput#access
         module Access
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HIDDEN_INDEXABLE = :HIDDEN_INDEXABLE
           HIDDEN_NOT_INDEXABLE = :HIDDEN_NOT_INDEXABLE
@@ -133,9 +133,9 @@ module HubspotSDK
         # ENTIRE_PORTAL: Look for a duplicate file in the entire account. EXACT_FOLDER:
         # Look for a duplicate file in the provided folder.
         #
-        # @see HubspotSDK::Models::Files::ImportFromURLInput#duplicate_validation_scope
+        # @see HubSpotSDK::Models::Files::ImportFromURLInput#duplicate_validation_scope
         module DuplicateValidationScope
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ENTIRE_PORTAL = :ENTIRE_PORTAL
           EXACT_FOLDER = :EXACT_FOLDER
@@ -148,9 +148,9 @@ module HubspotSDK
         # duplicate is found. RETURN_EXISTING: If a duplicate file is found, do not upload
         # a new file and return the found duplicate instead.
         #
-        # @see HubspotSDK::Models::Files::ImportFromURLInput#duplicate_validation_strategy
+        # @see HubSpotSDK::Models::Files::ImportFromURLInput#duplicate_validation_strategy
         module DuplicateValidationStrategy
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NONE = :NONE
           REJECT = :REJECT

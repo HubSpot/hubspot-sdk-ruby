@@ -1,54 +1,54 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       module Currencies
         type exchange_rate_list_exchange_rates_params =
           {
             after: String,
-            from_currency_code: HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::from_currency_code,
+            from_currency_code: HubSpotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::from_currency_code,
             limit: Integer,
-            to_currency_code: HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::to_currency_code
+            to_currency_code: HubSpotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::to_currency_code
           }
-          & HubspotSDK::Internal::Type::request_parameters
+          & HubSpotSDK::Internal::Type::request_parameters
 
-        class ExchangeRateListExchangeRatesParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class ExchangeRateListExchangeRatesParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           attr_reader after: String?
 
           def after=: (String) -> String
 
-          attr_reader from_currency_code: HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::from_currency_code?
+          attr_reader from_currency_code: HubSpotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::from_currency_code?
 
           def from_currency_code=: (
-            HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::from_currency_code
-          ) -> HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::from_currency_code
+            HubSpotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::from_currency_code
+          ) -> HubSpotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::from_currency_code
 
           attr_reader limit: Integer?
 
           def limit=: (Integer) -> Integer
 
-          attr_reader to_currency_code: HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::to_currency_code?
+          attr_reader to_currency_code: HubSpotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::to_currency_code?
 
           def to_currency_code=: (
-            HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::to_currency_code
-          ) -> HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::to_currency_code
+            HubSpotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::to_currency_code
+          ) -> HubSpotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::to_currency_code
 
           def initialize: (
             ?after: String,
-            ?from_currency_code: HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::from_currency_code,
+            ?from_currency_code: HubSpotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::from_currency_code,
             ?limit: Integer,
-            ?to_currency_code: HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::to_currency_code,
-            ?request_options: HubspotSDK::request_opts
+            ?to_currency_code: HubSpotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::to_currency_code,
+            ?request_options: HubSpotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
             after: String,
-            from_currency_code: HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::from_currency_code,
+            from_currency_code: HubSpotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::from_currency_code,
             limit: Integer,
-            to_currency_code: HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::to_currency_code,
-            request_options: HubspotSDK::RequestOptions
+            to_currency_code: HubSpotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::to_currency_code,
+            request_options: HubSpotSDK::RequestOptions
           }
 
           type from_currency_code =
@@ -230,7 +230,7 @@ module HubspotSDK
             | :ZWL
 
           module FromCurrencyCode
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             AED: :AED
             AFN: :AFN
@@ -409,7 +409,7 @@ module HubspotSDK
             ZMW: :ZMW
             ZWL: :ZWL
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::from_currency_code]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::from_currency_code]
           end
 
           type to_currency_code =
@@ -591,7 +591,7 @@ module HubspotSDK
             | :ZWL
 
           module ToCurrencyCode
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             AED: :AED
             AFN: :AFN
@@ -770,7 +770,7 @@ module HubspotSDK
             ZMW: :ZMW
             ZWL: :ZWL
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::to_currency_code]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::to_currency_code]
           end
         end
       end

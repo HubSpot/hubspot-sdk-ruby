@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class SubscriptionCreateRequest < HubspotSDK::Internal::Type::BaseModel
+      class SubscriptionCreateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute active
         #   Determines if the subscription is active or paused. Defaults to false.
         #
         #   @return [Boolean]
-        required :active, HubspotSDK::Internal::Type::Boolean
+        required :active, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute event_type
         #   Type of event to listen for. Can be one of `create`, `delete`,
         #   `deletedForPrivacy`, or `propertyChange`.
         #
-        #   @return [Symbol, HubspotSDK::Models::Webhooks::SubscriptionCreateRequest::EventType]
+        #   @return [Symbol, HubSpotSDK::Models::Webhooks::SubscriptionCreateRequest::EventType]
         required :event_type,
-                 enum: -> { HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType },
+                 enum: -> { HubSpotSDK::Webhooks::SubscriptionCreateRequest::EventType },
                  api_name: :eventType
 
         # @!attribute event_type_name
@@ -43,11 +43,11 @@ module HubspotSDK
 
         # @!method initialize(active:, event_type:, event_type_name: nil, object_type_id: nil, property_name: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Webhooks::SubscriptionCreateRequest} for more details.
+        #   {HubSpotSDK::Models::Webhooks::SubscriptionCreateRequest} for more details.
         #
         #   @param active [Boolean] Determines if the subscription is active or paused. Defaults to false.
         #
-        #   @param event_type [Symbol, HubspotSDK::Models::Webhooks::SubscriptionCreateRequest::EventType] Type of event to listen for. Can be one of `create`, `delete`, `deletedForPrivac
+        #   @param event_type [Symbol, HubSpotSDK::Models::Webhooks::SubscriptionCreateRequest::EventType] Type of event to listen for. Can be one of `create`, `delete`, `deletedForPrivac
         #
         #   @param event_type_name [String] The name of the event to listen for. This is used with custom objects to specify
         #
@@ -58,9 +58,9 @@ module HubspotSDK
         # Type of event to listen for. Can be one of `create`, `delete`,
         # `deletedForPrivacy`, or `propertyChange`.
         #
-        # @see HubspotSDK::Models::Webhooks::SubscriptionCreateRequest#event_type
+        # @see HubSpotSDK::Models::Webhooks::SubscriptionCreateRequest#event_type
         module EventType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           COMPANY_ASSOCIATION_CHANGE = :"company.associationChange"
           COMPANY_CREATION = :"company.creation"

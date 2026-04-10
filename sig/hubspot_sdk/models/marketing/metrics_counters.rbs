@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type metrics_counters =
@@ -9,7 +9,7 @@ module HubspotSDK
           sessions: Integer
         }
 
-      class MetricsCounters < HubspotSDK::Internal::Type::BaseModel
+      class MetricsCounters < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor influenced_contacts: Integer
 
         attr_accessor new_contacts_first_touch: Integer

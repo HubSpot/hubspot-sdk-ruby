@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      # @see HubspotSDK::Resources::Files::Folders#search
-      class FolderSearchParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Files::Folders#search
+      class FolderSearchParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute after
         #   The paging cursor token of the last successfully read resource will be returned
@@ -49,7 +49,7 @@ module HubspotSDK
         # @!attribute ids
         #
         #   @return [Array<Integer>, nil]
-        optional :ids, HubspotSDK::Internal::Type::ArrayOf[Integer]
+        optional :ids, HubSpotSDK::Internal::Type::ArrayOf[Integer]
 
         # @!attribute limit
         #   The maximum number of results to display per page.
@@ -65,7 +65,7 @@ module HubspotSDK
         # @!attribute parent_folder_ids
         #
         #   @return [Array<Integer>, nil]
-        optional :parent_folder_ids, HubspotSDK::Internal::Type::ArrayOf[Integer]
+        optional :parent_folder_ids, HubSpotSDK::Internal::Type::ArrayOf[Integer]
 
         # @!attribute path
         #
@@ -75,12 +75,12 @@ module HubspotSDK
         # @!attribute properties
         #
         #   @return [Array<String>, nil]
-        optional :properties, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :properties, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute sort
         #
         #   @return [Array<String>, nil]
-        optional :sort, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :sort, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute updated_at
         #
@@ -99,7 +99,7 @@ module HubspotSDK
 
         # @!method initialize(after: nil, before: nil, created_at: nil, created_at_gte: nil, created_at_lte: nil, id_gte: nil, id_lte: nil, ids: nil, limit: nil, name: nil, parent_folder_ids: nil, path: nil, properties: nil, sort: nil, updated_at: nil, updated_at_gte: nil, updated_at_lte: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Files::FolderSearchParams} for more details.
+        #   {HubSpotSDK::Models::Files::FolderSearchParams} for more details.
         #
         #   @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
@@ -135,7 +135,7 @@ module HubspotSDK
         #
         #   @param updated_at_lte [Time]
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

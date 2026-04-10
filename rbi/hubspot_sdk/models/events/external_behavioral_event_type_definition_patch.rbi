@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class ExternalBehavioralEventTypeDefinitionPatch < HubspotSDK::Internal::Type::BaseModel
+      class ExternalBehavioralEventTypeDefinitionPatch < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinitionPatch,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::ExternalBehavioralEventTypeDefinitionPatch,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

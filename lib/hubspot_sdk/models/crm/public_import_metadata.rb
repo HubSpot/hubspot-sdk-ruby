@@ -1,27 +1,27 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicImportMetadata < HubspotSDK::Internal::Type::BaseModel
+      class PublicImportMetadata < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute counters
         #   Summarized outcomes of each row a developer attempted to import into HubSpot.
         #
         #   @return [Hash{Symbol=>Integer}]
-        required :counters, HubspotSDK::Internal::Type::HashOf[Integer]
+        required :counters, HubSpotSDK::Internal::Type::HashOf[Integer]
 
         # @!attribute file_ids
         #   The IDs of files uploaded in the File Manager API.
         #
         #   @return [Array<String>]
-        required :file_ids, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :fileIds
+        required :file_ids, HubSpotSDK::Internal::Type::ArrayOf[String], api_name: :fileIds
 
         # @!attribute object_lists
         #   The lists containing the imported objects.
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PublicObjectListRecord>]
+        #   @return [Array<HubSpotSDK::Models::Crm::PublicObjectListRecord>]
         required :object_lists,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicObjectListRecord] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicObjectListRecord] },
                  api_name: :objectLists
 
         # @!method initialize(counters:, file_ids:, object_lists:)
@@ -29,7 +29,7 @@ module HubspotSDK
         #
         #   @param file_ids [Array<String>] The IDs of files uploaded in the File Manager API.
         #
-        #   @param object_lists [Array<HubspotSDK::Models::Crm::PublicObjectListRecord>] The lists containing the imported objects.
+        #   @param object_lists [Array<HubSpotSDK::Models::Crm::PublicObjectListRecord>] The lists containing the imported objects.
       end
     end
   end

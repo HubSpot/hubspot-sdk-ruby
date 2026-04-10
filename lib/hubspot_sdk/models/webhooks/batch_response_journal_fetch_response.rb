@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      # @see HubspotSDK::Resources::Webhooks#get_earliest_journal_batch
-      class BatchResponseJournalFetchResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Webhooks#get_earliest_journal_batch
+      class BatchResponseJournalFetchResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #
         #   @return [Time]
@@ -12,8 +12,8 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Webhooks::JournalFetchResponse>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Webhooks::JournalFetchResponse] }
+        #   @return [Array<HubSpotSDK::Models::Webhooks::JournalFetchResponse>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::JournalFetchResponse] }
 
         # @!attribute started_at
         #
@@ -22,13 +22,13 @@ module HubspotSDK
 
         # @!attribute status
         #
-        #   @return [Symbol, HubspotSDK::Models::Webhooks::BatchResponseJournalFetchResponse::Status]
-        required :status, enum: -> { HubspotSDK::Webhooks::BatchResponseJournalFetchResponse::Status }
+        #   @return [Symbol, HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponse::Status]
+        required :status, enum: -> { HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status }
 
         # @!attribute links
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute requested_at
         #
@@ -37,15 +37,15 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
         #   @param completed_at [Time]
-        #   @param results [Array<HubspotSDK::Models::Webhooks::JournalFetchResponse>]
+        #   @param results [Array<HubSpotSDK::Models::Webhooks::JournalFetchResponse>]
         #   @param started_at [Time]
-        #   @param status [Symbol, HubspotSDK::Models::Webhooks::BatchResponseJournalFetchResponse::Status]
+        #   @param status [Symbol, HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponse::Status]
         #   @param links [Hash{Symbol=>String}]
         #   @param requested_at [Time]
 
-        # @see HubspotSDK::Models::Webhooks::BatchResponseJournalFetchResponse#status
+        # @see HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponse#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

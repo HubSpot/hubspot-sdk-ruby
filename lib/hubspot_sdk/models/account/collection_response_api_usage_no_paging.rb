@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
-      # @see HubspotSDK::Resources::Account#get_daily_private_apps_usage
-      class CollectionResponseAPIUsageNoPaging < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Account#get_daily_private_apps_usage
+      class CollectionResponseAPIUsageNoPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Account::APIUsage>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Account::APIUsage] }
+        #   @return [Array<HubSpotSDK::Models::Account::APIUsage>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Account::APIUsage] }
 
         # @!method initialize(results:)
-        #   @param results [Array<HubspotSDK::Models::Account::APIUsage>]
+        #   @param results [Array<HubSpotSDK::Models::Account::APIUsage>]
       end
     end
   end

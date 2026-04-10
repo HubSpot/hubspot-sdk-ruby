@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       module MarketingEvents
-        # @see HubspotSDK::Resources::Marketing::MarketingEvents::ListAssociations#delete_by_external_account
-        class ListAssociationDeleteByExternalAccountParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Marketing::MarketingEvents::ListAssociations#delete_by_external_account
+        class ListAssociationDeleteByExternalAccountParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute external_account_id
           #
@@ -28,7 +28,7 @@ module HubspotSDK
           #   @param external_account_id [String]
           #   @param external_event_id [String]
           #   @param list_id [String]
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

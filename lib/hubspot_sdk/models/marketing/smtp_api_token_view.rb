@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class SmtpAPITokenView < HubspotSDK::Internal::Type::BaseModel
+      class SmtpAPITokenView < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   User name to log into the HubSpot SMTP server.
         #
@@ -20,7 +20,7 @@ module HubspotSDK
         #   Indicates whether a contact should be created for email recipients.
         #
         #   @return [Boolean]
-        required :create_contact, HubspotSDK::Internal::Type::Boolean, api_name: :createContact
+        required :create_contact, HubSpotSDK::Internal::Type::Boolean, api_name: :createContact
 
         # @!attribute created_at
         #   Timestamp generated when a token is created.

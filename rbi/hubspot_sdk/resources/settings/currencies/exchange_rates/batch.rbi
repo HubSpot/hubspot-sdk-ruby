@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Settings
       class Currencies
@@ -11,10 +11,10 @@ module HubspotSDK
               params(
                 inputs:
                   T::Array[
-                    HubspotSDK::Settings::ExchangeRateCreateRequest::OrHash
+                    HubSpotSDK::Settings::ExchangeRateCreateRequest::OrHash
                   ],
-                request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::Settings::BatchResponseExchangeRate)
+                request_options: HubSpotSDK::RequestOptions::OrHash
+              ).returns(HubSpotSDK::Settings::BatchResponseExchangeRate)
             end
             def create(inputs:, request_options: {})
             end
@@ -24,10 +24,10 @@ module HubspotSDK
               params(
                 inputs:
                   T::Array[
-                    HubspotSDK::Settings::ExchangeRateUpdateRequest::OrHash
+                    HubSpotSDK::Settings::ExchangeRateUpdateRequest::OrHash
                   ],
-                request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::Settings::BatchResponseExchangeRate)
+                request_options: HubSpotSDK::RequestOptions::OrHash
+              ).returns(HubSpotSDK::Settings::BatchResponseExchangeRate)
             end
             def update(inputs:, request_options: {})
             end
@@ -36,9 +36,9 @@ module HubspotSDK
             # by their IDs.
             sig do
               params(
-                inputs: T::Array[HubspotSDK::PublicObjectID::OrHash],
-                request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::Settings::BatchResponseExchangeRate)
+                inputs: T::Array[HubSpotSDK::PublicObjectID::OrHash],
+                request_options: HubSpotSDK::RequestOptions::OrHash
+              ).returns(HubSpotSDK::Settings::BatchResponseExchangeRate)
             end
             def get(
               # An array of deal split inputs
@@ -48,7 +48,7 @@ module HubspotSDK
             end
 
             # @api private
-            sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+            sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
             def self.new(client:)
             end
           end

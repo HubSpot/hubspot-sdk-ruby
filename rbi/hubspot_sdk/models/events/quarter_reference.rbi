@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class QuarterReference < HubspotSDK::Internal::Type::BaseModel
+      class QuarterReference < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::QuarterReference,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::QuarterReference,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::QuarterReference::ReferenceType::TaggedSymbol
+            HubSpotSDK::Events::QuarterReference::ReferenceType::TaggedSymbol
           )
         end
         attr_accessor :reference_type
@@ -54,7 +54,7 @@ module HubspotSDK
             day: Integer,
             month: Integer,
             reference_type:
-              HubspotSDK::Events::QuarterReference::ReferenceType::OrSymbol,
+              HubSpotSDK::Events::QuarterReference::ReferenceType::OrSymbol,
             hour: Integer,
             millisecond: Integer,
             minute: Integer,
@@ -78,7 +78,7 @@ module HubspotSDK
               day: Integer,
               month: Integer,
               reference_type:
-                HubspotSDK::Events::QuarterReference::ReferenceType::TaggedSymbol,
+                HubSpotSDK::Events::QuarterReference::ReferenceType::TaggedSymbol,
               hour: Integer,
               millisecond: Integer,
               minute: Integer,
@@ -90,24 +90,24 @@ module HubspotSDK
         end
 
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Events::QuarterReference::ReferenceType)
+              T.all(Symbol, HubSpotSDK::Events::QuarterReference::ReferenceType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           QUARTER =
             T.let(
               :QUARTER,
-              HubspotSDK::Events::QuarterReference::ReferenceType::TaggedSymbol
+              HubSpotSDK::Events::QuarterReference::ReferenceType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::QuarterReference::ReferenceType::TaggedSymbol
+                HubSpotSDK::Events::QuarterReference::ReferenceType::TaggedSymbol
               ]
             )
           end

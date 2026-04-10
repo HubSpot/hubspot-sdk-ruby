@@ -1,32 +1,32 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        # @see HubspotSDK::Resources::Crm::Extensions::Calling#create_inbound_call
-        class CompletedThirdPartyCallResponse < HubspotSDK::Internal::Type::BaseModel
+        # @see HubSpotSDK::Resources::Crm::Extensions::Calling#create_inbound_call
+        class CompletedThirdPartyCallResponse < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute caller_id_matches
           #
-          #   @return [Array<HubspotSDK::Models::Crm::Extensions::ContactCallerID, HubspotSDK::Models::Crm::Extensions::CompanyCallerID>]
+          #   @return [Array<HubSpotSDK::Models::Crm::Extensions::ContactCallerID, HubSpotSDK::Models::Crm::Extensions::CompanyCallerID>]
           required :caller_id_matches,
                    -> {
-                     HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Crm::Extensions::CompletedThirdPartyCallResponse::CallerIDMatch]
+                     HubSpotSDK::Internal::Type::ArrayOf[union: HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallResponse::CallerIDMatch]
                    },
                    api_name: :callerIdMatches
 
           # @!method initialize(caller_id_matches:)
-          #   @param caller_id_matches [Array<HubspotSDK::Models::Crm::Extensions::ContactCallerID, HubspotSDK::Models::Crm::Extensions::CompanyCallerID>]
+          #   @param caller_id_matches [Array<HubSpotSDK::Models::Crm::Extensions::ContactCallerID, HubSpotSDK::Models::Crm::Extensions::CompanyCallerID>]
 
           module CallerIDMatch
-            extend HubspotSDK::Internal::Type::Union
+            extend HubSpotSDK::Internal::Type::Union
 
-            variant -> { HubspotSDK::Crm::Extensions::ContactCallerID }
+            variant -> { HubSpotSDK::Crm::Extensions::ContactCallerID }
 
-            variant -> { HubspotSDK::Crm::Extensions::CompanyCallerID }
+            variant -> { HubSpotSDK::Crm::Extensions::CompanyCallerID }
 
             # @!method self.variants
-            #   @return [Array(HubspotSDK::Models::Crm::Extensions::ContactCallerID, HubspotSDK::Models::Crm::Extensions::CompanyCallerID)]
+            #   @return [Array(HubSpotSDK::Models::Crm::Extensions::ContactCallerID, HubSpotSDK::Models::Crm::Extensions::CompanyCallerID)]
           end
         end
       end

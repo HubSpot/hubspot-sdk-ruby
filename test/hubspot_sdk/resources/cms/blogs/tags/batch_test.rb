@@ -2,7 +2,7 @@
 
 require_relative "../../../../test_helper"
 
-class HubspotSDK::Test::Resources::Cms::Blogs::Tags::BatchTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Cms::Blogs::Tags::BatchTest < HubSpotSDK::Test::ResourceTest
   def test_delete_required_params
     skip("Mock server tests are disabled")
 

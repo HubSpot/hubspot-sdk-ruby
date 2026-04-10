@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class BusinessUnits
-      attr_reader business_unit_entries: HubspotSDK::Resources::BusinessUnits::BusinessUnitEntries
+      attr_reader business_unit_entries: HubSpotSDK::Resources::BusinessUnits::BusinessUnitEntries
 
-      def initialize: (client: HubspotSDK::Client) -> void
+      def initialize: (client: HubSpotSDK::Client) -> void
     end
   end
 end

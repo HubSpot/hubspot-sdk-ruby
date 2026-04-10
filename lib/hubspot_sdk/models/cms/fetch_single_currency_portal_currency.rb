@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class FetchSingleCurrencyPortalCurrency < HubspotSDK::Internal::Type::BaseModel
+      class FetchSingleCurrencyPortalCurrency < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency::Operator]
-        required :operator, enum: -> { HubspotSDK::Cms::FetchSingleCurrencyPortalCurrency::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency::Operator]
+        required :operator, enum: -> { HubSpotSDK::Cms::FetchSingleCurrencyPortalCurrency::Operator }
 
         # @!attribute property_name
         #
@@ -20,13 +20,13 @@ module HubspotSDK
         optional :value, String
 
         # @!method initialize(operator:, property_name: nil, value: nil)
-        #   @param operator [Symbol, HubspotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency::Operator]
         #   @param property_name [String]
         #   @param value [String]
 
-        # @see HubspotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency#operator
+        # @see HubSpotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           FETCH_SINGLE_CURRENCY_PORTAL_CURRENCY = :FETCH_SINGLE_CURRENCY_PORTAL_CURRENCY
 

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type background_image =
@@ -8,7 +8,7 @@ module HubspotSDK
           image_url: String
         }
 
-      class BackgroundImage < HubspotSDK::Internal::Type::BaseModel
+      class BackgroundImage < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor background_position: String
 
         attr_accessor background_size: String

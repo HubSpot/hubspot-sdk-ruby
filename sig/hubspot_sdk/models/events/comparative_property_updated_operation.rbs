@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type comparative_property_updated_operation =
@@ -6,26 +6,26 @@ module HubspotSDK
           comparison_property_name: String,
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::ComparativePropertyUpdatedOperation::operator,
+          operator: HubSpotSDK::Models::Events::ComparativePropertyUpdatedOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::ComparativePropertyUpdatedOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::ComparativePropertyUpdatedOperation::property_type,
           default_comparison_value: String,
           default_value: String,
           render_spec: String
         }
 
-      class ComparativePropertyUpdatedOperation < HubspotSDK::Internal::Type::BaseModel
+      class ComparativePropertyUpdatedOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor comparison_property_name: String
 
         attr_accessor include_objects_with_no_value_set: bool
 
         attr_accessor operation_type: String
 
-        attr_accessor operator: HubspotSDK::Models::Events::ComparativePropertyUpdatedOperation::operator
+        attr_accessor operator: HubSpotSDK::Models::Events::ComparativePropertyUpdatedOperation::operator
 
         attr_accessor operator_name: String
 
-        attr_accessor property_type: HubspotSDK::Models::Events::ComparativePropertyUpdatedOperation::property_type
+        attr_accessor property_type: HubSpotSDK::Models::Events::ComparativePropertyUpdatedOperation::property_type
 
         attr_reader default_comparison_value: String?
 
@@ -43,9 +43,9 @@ module HubspotSDK
           comparison_property_name: String,
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::ComparativePropertyUpdatedOperation::operator,
+          operator: HubSpotSDK::Models::Events::ComparativePropertyUpdatedOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::ComparativePropertyUpdatedOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::ComparativePropertyUpdatedOperation::property_type,
           ?default_comparison_value: String,
           ?default_value: String,
           ?render_spec: String
@@ -55,9 +55,9 @@ module HubspotSDK
           comparison_property_name: String,
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::ComparativePropertyUpdatedOperation::operator,
+          operator: HubSpotSDK::Models::Events::ComparativePropertyUpdatedOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::ComparativePropertyUpdatedOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::ComparativePropertyUpdatedOperation::property_type,
           default_comparison_value: String,
           default_value: String,
           render_spec: String
@@ -66,22 +66,22 @@ module HubspotSDK
         type operator = :IS_AFTER | :IS_BEFORE
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           IS_AFTER: :IS_AFTER
           IS_BEFORE: :IS_BEFORE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::ComparativePropertyUpdatedOperation::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::ComparativePropertyUpdatedOperation::operator]
         end
 
         type property_type = :"property-updated-comparative"
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           PROPERTY_UPDATED_COMPARATIVE: :"property-updated-comparative"
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::ComparativePropertyUpdatedOperation::property_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::ComparativePropertyUpdatedOperation::property_type]
         end
       end
     end

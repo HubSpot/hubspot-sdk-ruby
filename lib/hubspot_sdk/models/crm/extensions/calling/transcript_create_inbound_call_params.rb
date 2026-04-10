@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         module Calling
-          # @see HubspotSDK::Resources::Crm::Extensions::Calling::Transcripts#create_inbound_call
-          class TranscriptCreateInboundCallParams < HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest
-            extend HubspotSDK::Internal::Type::RequestParameters::Converter
-            include HubspotSDK::Internal::Type::RequestParameters
+          # @see HubSpotSDK::Resources::Crm::Extensions::Calling::Transcripts#create_inbound_call
+          class TranscriptCreateInboundCallParams < HubSpotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest
+            extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+            include HubSpotSDK::Internal::Type::RequestParameters
 
             # @!method initialize(request_options: {})
-            #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+            #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
           end
         end
       end

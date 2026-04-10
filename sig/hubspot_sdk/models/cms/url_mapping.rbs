@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type url_mapping =
@@ -18,7 +18,7 @@ module HubspotSDK
           updated: Time
         }
 
-      class URLMapping < HubspotSDK::Internal::Type::BaseModel
+      class URLMapping < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor created: Time

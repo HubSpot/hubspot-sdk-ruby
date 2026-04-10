@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::AuditLogs#list
-      class AuditLogListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Cms::AuditLogs#list
+      class AuditLogListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute after
         #   The paging cursor token of the last successfully read resource will be returned
@@ -24,7 +24,7 @@ module HubspotSDK
         # @!attribute event_type
         #
         #   @return [Array<String>, nil]
-        optional :event_type, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :event_type, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute limit
         #   The maximum number of results to display per page.
@@ -35,26 +35,26 @@ module HubspotSDK
         # @!attribute object_id_
         #
         #   @return [Array<String>, nil]
-        optional :object_id_, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :object_id_, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute object_type
         #
         #   @return [Array<String>, nil]
-        optional :object_type, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :object_type, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute sort
         #
         #   @return [Array<String>, nil]
-        optional :sort, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :sort, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute user_id
         #
         #   @return [Array<String>, nil]
-        optional :user_id, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :user_id, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!method initialize(after: nil, before: nil, event_type: nil, limit: nil, object_id_: nil, object_type: nil, sort: nil, user_id: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Cms::AuditLogListParams} for more details.
+        #   {HubSpotSDK::Models::Cms::AuditLogListParams} for more details.
         #
         #   @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
@@ -72,7 +72,7 @@ module HubspotSDK
         #
         #   @param user_id [Array<String>]
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

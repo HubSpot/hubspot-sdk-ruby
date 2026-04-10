@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        class BatchResponseBlogAuthor < HubspotSDK::Internal::Type::BaseModel
+        class BatchResponseBlogAuthor < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Cms::Blogs::BatchResponseBlogAuthor,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Cms::Blogs::BatchResponseBlogAuthor,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -18,7 +18,7 @@ module HubspotSDK
           attr_accessor :completed_at
 
           # Results of batch operation.
-          sig { returns(T::Array[HubspotSDK::Cms::Blogs::BlogAuthor]) }
+          sig { returns(T::Array[HubSpotSDK::Cms::Blogs::BlogAuthor]) }
           attr_accessor :results
 
           # Time of batch operation start.
@@ -28,7 +28,7 @@ module HubspotSDK
           # Status of batch operation.
           sig do
             returns(
-              HubspotSDK::Cms::Blogs::BatchResponseBlogAuthor::Status::OrSymbol
+              HubSpotSDK::Cms::Blogs::BatchResponseBlogAuthor::Status::OrSymbol
             )
           end
           attr_accessor :status
@@ -50,10 +50,10 @@ module HubspotSDK
           sig do
             params(
               completed_at: Time,
-              results: T::Array[HubspotSDK::Cms::Blogs::BlogAuthor::OrHash],
+              results: T::Array[HubSpotSDK::Cms::Blogs::BlogAuthor::OrHash],
               started_at: Time,
               status:
-                HubspotSDK::Cms::Blogs::BatchResponseBlogAuthor::Status::OrSymbol,
+                HubSpotSDK::Cms::Blogs::BatchResponseBlogAuthor::Status::OrSymbol,
               links: T::Hash[Symbol, String],
               requested_at: Time
             ).returns(T.attached_class)
@@ -78,10 +78,10 @@ module HubspotSDK
             override.returns(
               {
                 completed_at: Time,
-                results: T::Array[HubspotSDK::Cms::Blogs::BlogAuthor],
+                results: T::Array[HubSpotSDK::Cms::Blogs::BlogAuthor],
                 started_at: Time,
                 status:
-                  HubspotSDK::Cms::Blogs::BatchResponseBlogAuthor::Status::OrSymbol,
+                  HubSpotSDK::Cms::Blogs::BatchResponseBlogAuthor::Status::OrSymbol,
                 links: T::Hash[Symbol, String],
                 requested_at: Time
               }
@@ -92,13 +92,13 @@ module HubspotSDK
 
           # Status of batch operation.
           module Status
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             TaggedSymbol =
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::Cms::Blogs::BatchResponseBlogAuthor::Status
+                  HubSpotSDK::Cms::Blogs::BatchResponseBlogAuthor::Status
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -106,28 +106,28 @@ module HubspotSDK
             CANCELED =
               T.let(
                 :CANCELED,
-                HubspotSDK::Cms::Blogs::BatchResponseBlogAuthor::Status::TaggedSymbol
+                HubSpotSDK::Cms::Blogs::BatchResponseBlogAuthor::Status::TaggedSymbol
               )
             COMPLETE =
               T.let(
                 :COMPLETE,
-                HubspotSDK::Cms::Blogs::BatchResponseBlogAuthor::Status::TaggedSymbol
+                HubSpotSDK::Cms::Blogs::BatchResponseBlogAuthor::Status::TaggedSymbol
               )
             PENDING =
               T.let(
                 :PENDING,
-                HubspotSDK::Cms::Blogs::BatchResponseBlogAuthor::Status::TaggedSymbol
+                HubSpotSDK::Cms::Blogs::BatchResponseBlogAuthor::Status::TaggedSymbol
               )
             PROCESSING =
               T.let(
                 :PROCESSING,
-                HubspotSDK::Cms::Blogs::BatchResponseBlogAuthor::Status::TaggedSymbol
+                HubSpotSDK::Cms::Blogs::BatchResponseBlogAuthor::Status::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Cms::Blogs::BatchResponseBlogAuthor::Status::TaggedSymbol
+                  HubSpotSDK::Cms::Blogs::BatchResponseBlogAuthor::Status::TaggedSymbol
                 ]
               )
             end

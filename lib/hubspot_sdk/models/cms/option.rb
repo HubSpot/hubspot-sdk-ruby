@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Option < HubspotSDK::Internal::Type::BaseModel
+      class Option < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique ID of the option.
         #
@@ -48,8 +48,8 @@ module HubspotSDK
 
         # @!attribute created_by
         #
-        #   @return [HubspotSDK::Models::Cms::SimpleUser, nil]
-        optional :created_by, -> { HubspotSDK::Cms::SimpleUser }, api_name: :createdBy
+        #   @return [HubSpotSDK::Models::Cms::SimpleUser, nil]
+        optional :created_by, -> { HubSpotSDK::Cms::SimpleUser }, api_name: :createdBy
 
         # @!attribute created_by_user_id
         #   The ID of the user who created the option.
@@ -59,8 +59,8 @@ module HubspotSDK
 
         # @!attribute updated_by
         #
-        #   @return [HubspotSDK::Models::Cms::SimpleUser, nil]
-        optional :updated_by, -> { HubspotSDK::Cms::SimpleUser }, api_name: :updatedBy
+        #   @return [HubSpotSDK::Models::Cms::SimpleUser, nil]
+        optional :updated_by, -> { HubSpotSDK::Cms::SimpleUser }, api_name: :updatedBy
 
         # @!attribute updated_by_user_id
         #   The ID of the user who last updated the option.
@@ -85,11 +85,11 @@ module HubspotSDK
         #
         #   @param updated_at [Time] The timestamp when the option was last updated, in ISO 8601 format.
         #
-        #   @param created_by [HubspotSDK::Models::Cms::SimpleUser]
+        #   @param created_by [HubSpotSDK::Models::Cms::SimpleUser]
         #
         #   @param created_by_user_id [Integer] The ID of the user who created the option.
         #
-        #   @param updated_by [HubspotSDK::Models::Cms::SimpleUser]
+        #   @param updated_by [HubSpotSDK::Models::Cms::SimpleUser]
         #
         #   @param updated_by_user_id [Integer] The ID of the user who last updated the option.
       end

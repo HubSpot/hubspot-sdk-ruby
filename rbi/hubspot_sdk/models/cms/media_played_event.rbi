@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class MediaPlayedEvent < HubspotSDK::Internal::Type::BaseModel
+      class MediaPlayedEvent < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::MediaPlayedEvent,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::MediaPlayedEvent,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -28,7 +28,7 @@ module HubspotSDK
         attr_accessor :media_name
 
         sig do
-          returns(HubspotSDK::Cms::MediaPlayedEvent::MediaType::TaggedSymbol)
+          returns(HubSpotSDK::Cms::MediaPlayedEvent::MediaType::TaggedSymbol)
         end
         attr_accessor :media_type
 
@@ -44,13 +44,13 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :session_id
 
-        sig { returns(HubspotSDK::Cms::MediaPlayedEvent::State::TaggedSymbol) }
+        sig { returns(HubSpotSDK::Cms::MediaPlayedEvent::State::TaggedSymbol) }
         attr_accessor :state
 
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Cms::MediaPlayedEvent::ExternalPlayContext::TaggedSymbol
+              HubSpotSDK::Cms::MediaPlayedEvent::ExternalPlayContext::TaggedSymbol
             )
           )
         end
@@ -59,7 +59,7 @@ module HubspotSDK
         sig do
           params(
             external_play_context:
-              HubspotSDK::Cms::MediaPlayedEvent::ExternalPlayContext::OrSymbol
+              HubSpotSDK::Cms::MediaPlayedEvent::ExternalPlayContext::OrSymbol
           ).void
         end
         attr_writer :external_play_context
@@ -107,14 +107,14 @@ module HubspotSDK
             media_bridge_object_coordinates: String,
             media_bridge_object_type_id: String,
             media_name: String,
-            media_type: HubspotSDK::Cms::MediaPlayedEvent::MediaType::OrSymbol,
+            media_type: HubSpotSDK::Cms::MediaPlayedEvent::MediaType::OrSymbol,
             occurred_timestamp: Integer,
             portal_id: Integer,
             provider_id: Integer,
             session_id: String,
-            state: HubspotSDK::Cms::MediaPlayedEvent::State::OrSymbol,
+            state: HubSpotSDK::Cms::MediaPlayedEvent::State::OrSymbol,
             external_play_context:
-              HubspotSDK::Cms::MediaPlayedEvent::ExternalPlayContext::OrSymbol,
+              HubSpotSDK::Cms::MediaPlayedEvent::ExternalPlayContext::OrSymbol,
             iframe_url: String,
             media_url: String,
             page_id: Integer,
@@ -154,14 +154,14 @@ module HubspotSDK
               media_bridge_object_type_id: String,
               media_name: String,
               media_type:
-                HubspotSDK::Cms::MediaPlayedEvent::MediaType::TaggedSymbol,
+                HubSpotSDK::Cms::MediaPlayedEvent::MediaType::TaggedSymbol,
               occurred_timestamp: Integer,
               portal_id: Integer,
               provider_id: Integer,
               session_id: String,
-              state: HubspotSDK::Cms::MediaPlayedEvent::State::TaggedSymbol,
+              state: HubSpotSDK::Cms::MediaPlayedEvent::State::TaggedSymbol,
               external_play_context:
-                HubspotSDK::Cms::MediaPlayedEvent::ExternalPlayContext::TaggedSymbol,
+                HubSpotSDK::Cms::MediaPlayedEvent::ExternalPlayContext::TaggedSymbol,
               iframe_url: String,
               media_url: String,
               page_id: Integer,
@@ -175,44 +175,44 @@ module HubspotSDK
         end
 
         module MediaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::MediaPlayedEvent::MediaType)
+              T.all(Symbol, HubSpotSDK::Cms::MediaPlayedEvent::MediaType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           AUDIO =
             T.let(
               :AUDIO,
-              HubspotSDK::Cms::MediaPlayedEvent::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::MediaPlayedEvent::MediaType::TaggedSymbol
             )
           DOCUMENT =
             T.let(
               :DOCUMENT,
-              HubspotSDK::Cms::MediaPlayedEvent::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::MediaPlayedEvent::MediaType::TaggedSymbol
             )
           IMAGE =
             T.let(
               :IMAGE,
-              HubspotSDK::Cms::MediaPlayedEvent::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::MediaPlayedEvent::MediaType::TaggedSymbol
             )
           OTHER =
             T.let(
               :OTHER,
-              HubspotSDK::Cms::MediaPlayedEvent::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::MediaPlayedEvent::MediaType::TaggedSymbol
             )
           VIDEO =
             T.let(
               :VIDEO,
-              HubspotSDK::Cms::MediaPlayedEvent::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::MediaPlayedEvent::MediaType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::MediaPlayedEvent::MediaType::TaggedSymbol
+                HubSpotSDK::Cms::MediaPlayedEvent::MediaType::TaggedSymbol
               ]
             )
           end
@@ -221,28 +221,28 @@ module HubspotSDK
         end
 
         module State
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::MediaPlayedEvent::State)
+              T.all(Symbol, HubSpotSDK::Cms::MediaPlayedEvent::State)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           STARTED =
             T.let(
               :STARTED,
-              HubspotSDK::Cms::MediaPlayedEvent::State::TaggedSymbol
+              HubSpotSDK::Cms::MediaPlayedEvent::State::TaggedSymbol
             )
           VIEWED =
             T.let(
               :VIEWED,
-              HubspotSDK::Cms::MediaPlayedEvent::State::TaggedSymbol
+              HubSpotSDK::Cms::MediaPlayedEvent::State::TaggedSymbol
             )
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Cms::MediaPlayedEvent::State::TaggedSymbol]
+              T::Array[HubSpotSDK::Cms::MediaPlayedEvent::State::TaggedSymbol]
             )
           end
           def self.values
@@ -250,13 +250,13 @@ module HubspotSDK
         end
 
         module ExternalPlayContext
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Cms::MediaPlayedEvent::ExternalPlayContext
+                HubSpotSDK::Cms::MediaPlayedEvent::ExternalPlayContext
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -264,18 +264,18 @@ module HubspotSDK
           EMAIL =
             T.let(
               :EMAIL,
-              HubspotSDK::Cms::MediaPlayedEvent::ExternalPlayContext::TaggedSymbol
+              HubSpotSDK::Cms::MediaPlayedEvent::ExternalPlayContext::TaggedSymbol
             )
           EXTERNAL_PAGE =
             T.let(
               :EXTERNAL_PAGE,
-              HubspotSDK::Cms::MediaPlayedEvent::ExternalPlayContext::TaggedSymbol
+              HubSpotSDK::Cms::MediaPlayedEvent::ExternalPlayContext::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::MediaPlayedEvent::ExternalPlayContext::TaggedSymbol
+                HubSpotSDK::Cms::MediaPlayedEvent::ExternalPlayContext::TaggedSymbol
               ]
             )
           end

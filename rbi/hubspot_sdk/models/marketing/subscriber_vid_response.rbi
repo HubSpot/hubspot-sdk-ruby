@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class SubscriberVidResponse < HubspotSDK::Internal::Type::BaseModel
+      class SubscriberVidResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::SubscriberVidResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::SubscriberVidResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

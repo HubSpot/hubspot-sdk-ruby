@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicQuickReplies < HubspotSDK::Internal::Type::BaseModel
+      class PublicQuickReplies < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::PublicQuickReplies,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::PublicQuickReplies,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -18,12 +18,12 @@ module HubspotSDK
         sig { returns(T::Boolean) }
         attr_accessor :allow_user_input
 
-        sig { returns(T::Array[HubspotSDK::Conversations::QuickReply]) }
+        sig { returns(T::Array[HubSpotSDK::Conversations::QuickReply]) }
         attr_accessor :quick_replies
 
         sig do
           returns(
-            HubspotSDK::Conversations::PublicQuickReplies::Type::TaggedSymbol
+            HubSpotSDK::Conversations::PublicQuickReplies::Type::TaggedSymbol
           )
         end
         attr_accessor :type
@@ -33,8 +33,8 @@ module HubspotSDK
             allow_multi_select: T::Boolean,
             allow_user_input: T::Boolean,
             quick_replies:
-              T::Array[HubspotSDK::Conversations::QuickReply::OrHash],
-            type: HubspotSDK::Conversations::PublicQuickReplies::Type::OrSymbol
+              T::Array[HubSpotSDK::Conversations::QuickReply::OrHash],
+            type: HubSpotSDK::Conversations::PublicQuickReplies::Type::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -50,9 +50,9 @@ module HubspotSDK
             {
               allow_multi_select: T::Boolean,
               allow_user_input: T::Boolean,
-              quick_replies: T::Array[HubspotSDK::Conversations::QuickReply],
+              quick_replies: T::Array[HubSpotSDK::Conversations::QuickReply],
               type:
-                HubspotSDK::Conversations::PublicQuickReplies::Type::TaggedSymbol
+                HubSpotSDK::Conversations::PublicQuickReplies::Type::TaggedSymbol
             }
           )
         end
@@ -60,24 +60,24 @@ module HubspotSDK
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Conversations::PublicQuickReplies::Type)
+              T.all(Symbol, HubSpotSDK::Conversations::PublicQuickReplies::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           QUICK_REPLIES =
             T.let(
               :QUICK_REPLIES,
-              HubspotSDK::Conversations::PublicQuickReplies::Type::TaggedSymbol
+              HubSpotSDK::Conversations::PublicQuickReplies::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::PublicQuickReplies::Type::TaggedSymbol
+                HubSpotSDK::Conversations::PublicQuickReplies::Type::TaggedSymbol
               ]
             )
           end

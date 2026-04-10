@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class AssociationsSchema
@@ -13,15 +13,15 @@ module HubspotSDK
           #
           # @param from_object_type [String] Path param
           #
-          # @param inputs [Array<HubspotSDK::Models::Crm::PublicAssociationDefinitionConfigurationCreateRequest>] Body param
+          # @param inputs [Array<HubSpotSDK::Models::Crm::PublicAssociationDefinitionConfigurationCreateRequest>] Body param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration]
+          # @return [HubSpotSDK::Models::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration]
           #
-          # @see HubspotSDK::Models::Crm::AssociationsSchema::LabelBatchCreateParams
+          # @see HubSpotSDK::Models::Crm::AssociationsSchema::LabelBatchCreateParams
           def batch_create(to_object_type, params)
-            parsed, options = HubspotSDK::Crm::AssociationsSchema::LabelBatchCreateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::AssociationsSchema::LabelBatchCreateParams.dump_request(params)
             from_object_type =
               parsed.delete(:from_object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -34,13 +34,13 @@ module HubspotSDK
                 to_object_type
               ],
               body: parsed,
-              model: HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration,
+              model: HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::AssociationsSchema::LabelCreateLabelParams} for more
+          # {HubSpotSDK::Models::Crm::AssociationsSchema::LabelCreateLabelParams} for more
           # details.
           #
           # Create a new label that describes the relationship between two specified CRM
@@ -59,13 +59,13 @@ module HubspotSDK
           #
           # @param inverse_label [String] Body param: An optional descriptor that clarifies the reverse relationship in th
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::CollectionResponseAssociationSpecWithLabelNoPaging]
+          # @return [HubSpotSDK::Models::Crm::CollectionResponseAssociationSpecWithLabelNoPaging]
           #
-          # @see HubspotSDK::Models::Crm::AssociationsSchema::LabelCreateLabelParams
+          # @see HubSpotSDK::Models::Crm::AssociationsSchema::LabelCreateLabelParams
           def create_label(to_object_type, params)
-            parsed, options = HubspotSDK::Crm::AssociationsSchema::LabelCreateLabelParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::AssociationsSchema::LabelCreateLabelParams.dump_request(params)
             from_object_type =
               parsed.delete(:from_object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -74,7 +74,7 @@ module HubspotSDK
               method: :post,
               path: ["crm/associations/2026-03/%1$s/%2$s/labels", from_object_type, to_object_type],
               body: parsed,
-              model: HubspotSDK::Crm::CollectionResponseAssociationSpecWithLabelNoPaging,
+              model: HubSpotSDK::Crm::CollectionResponseAssociationSpecWithLabelNoPaging,
               options: options
             )
           end
@@ -86,13 +86,13 @@ module HubspotSDK
           # @param association_type_id [Integer]
           # @param from_object_type [String]
           # @param to_object_type [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Crm::AssociationsSchema::LabelDeleteLabelParams
+          # @see HubSpotSDK::Models::Crm::AssociationsSchema::LabelDeleteLabelParams
           def delete_label(association_type_id, params)
-            parsed, options = HubspotSDK::Crm::AssociationsSchema::LabelDeleteLabelParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::AssociationsSchema::LabelDeleteLabelParams.dump_request(params)
             from_object_type =
               parsed.delete(:from_object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -121,13 +121,13 @@ module HubspotSDK
           #
           # @param to_object_type [String]
           # @param from_object_type [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::CollectionResponseAssociationSpecWithLabelNoPaging]
+          # @return [HubSpotSDK::Models::Crm::CollectionResponseAssociationSpecWithLabelNoPaging]
           #
-          # @see HubspotSDK::Models::Crm::AssociationsSchema::LabelListLabelsParams
+          # @see HubSpotSDK::Models::Crm::AssociationsSchema::LabelListLabelsParams
           def list_labels(to_object_type, params)
-            parsed, options = HubspotSDK::Crm::AssociationsSchema::LabelListLabelsParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::AssociationsSchema::LabelListLabelsParams.dump_request(params)
             from_object_type =
               parsed.delete(:from_object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -135,13 +135,13 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["crm/associations/2026-03/%1$s/%2$s/labels", from_object_type, to_object_type],
-              model: HubspotSDK::Crm::CollectionResponseAssociationSpecWithLabelNoPaging,
+              model: HubSpotSDK::Crm::CollectionResponseAssociationSpecWithLabelNoPaging,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::AssociationsSchema::LabelUpdateLabelParams} for more
+          # {HubSpotSDK::Models::Crm::AssociationsSchema::LabelUpdateLabelParams} for more
           # details.
           #
           # Update an existing label that describes the relationship between two specified
@@ -160,13 +160,13 @@ module HubspotSDK
           #
           # @param inverse_label [String] Body param: An optional descriptor for the inverse relationship between associat
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Crm::AssociationsSchema::LabelUpdateLabelParams
+          # @see HubSpotSDK::Models::Crm::AssociationsSchema::LabelUpdateLabelParams
           def update_label(to_object_type, params)
-            parsed, options = HubspotSDK::Crm::AssociationsSchema::LabelUpdateLabelParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::AssociationsSchema::LabelUpdateLabelParams.dump_request(params)
             from_object_type =
               parsed.delete(:from_object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -182,7 +182,7 @@ module HubspotSDK
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

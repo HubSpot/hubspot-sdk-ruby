@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Objects
         class GenericObjects
-          # @return [HubspotSDK::Resources::Crm::Objects::GenericObjects::Batch]
+          # @return [HubSpotSDK::Resources::Crm::Objects::GenericObjects::Batch]
           attr_reader :batch
 
           # Create a CRM object with the given properties and return a copy of the object,
@@ -16,28 +16,28 @@ module HubspotSDK
           #
           # @param object_type [String]
           #
-          # @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
+          # @param associations [Array<HubSpotSDK::Models::Crm::PublicAssociationsForObject>]
           #
           # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
+          # @return [HubSpotSDK::Models::Crm::SimplePublicObject]
           #
-          # @see HubspotSDK::Models::Crm::Objects::GenericObjectCreateParams
+          # @see HubSpotSDK::Models::Crm::Objects::GenericObjectCreateParams
           def create(object_type, params)
-            parsed, options = HubspotSDK::Crm::Objects::GenericObjectCreateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Objects::GenericObjectCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["crm/objects/2026-03/%1$s", object_type],
               body: parsed,
-              model: HubspotSDK::Crm::SimplePublicObject,
+              model: HubSpotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Objects::GenericObjectUpdateParams} for more details.
+          # {HubSpotSDK::Models::Crm::Objects::GenericObjectUpdateParams} for more details.
           #
           # Perform a partial update of an Object identified by `{objectId}`or optionally a
           # unique property value as specified by the `idProperty` query param. `{objectId}`
@@ -56,15 +56,15 @@ module HubspotSDK
           #
           # @param id_property [String] Query param: The name of a property whose values are unique for this object type
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
+          # @return [HubSpotSDK::Models::Crm::SimplePublicObject]
           #
-          # @see HubspotSDK::Models::Crm::Objects::GenericObjectUpdateParams
+          # @see HubSpotSDK::Models::Crm::Objects::GenericObjectUpdateParams
           def update(object_id_, params)
             query_params = [:id_property]
-            parsed, options = HubspotSDK::Crm::Objects::GenericObjectUpdateParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            parsed, options = HubSpotSDK::Crm::Objects::GenericObjectUpdateParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             object_type =
               parsed.delete(:object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -74,13 +74,13 @@ module HubspotSDK
               path: ["crm/objects/2026-03/%1$s/%2$s", object_type, object_id_],
               query: query.transform_keys(id_property: "idProperty"),
               body: parsed.except(*query_params),
-              model: HubspotSDK::Crm::SimplePublicObject,
+              model: HubSpotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Objects::GenericObjectListParams} for more details.
+          # {HubSpotSDK::Models::Crm::Objects::GenericObjectListParams} for more details.
           #
           # Read a page of objects. Control what is returned via the `properties` query
           # param.
@@ -101,20 +101,20 @@ module HubspotSDK
           #
           # @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
+          # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
           #
-          # @see HubspotSDK::Models::Crm::Objects::GenericObjectListParams
+          # @see HubSpotSDK::Models::Crm::Objects::GenericObjectListParams
           def list(object_type, params = {})
-            parsed, options = HubspotSDK::Crm::Objects::GenericObjectListParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Crm::Objects::GenericObjectListParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["crm/objects/2026-03/%1$s", object_type],
               query: query.transform_keys(properties_with_history: "propertiesWithHistory"),
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
+              page: HubSpotSDK::Internal::Page,
+              model: HubSpotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -125,13 +125,13 @@ module HubspotSDK
           #
           # @param object_id_ [String]
           # @param object_type [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Crm::Objects::GenericObjectDeleteParams
+          # @see HubSpotSDK::Models::Crm::Objects::GenericObjectDeleteParams
           def delete(object_id_, params)
-            parsed, options = HubspotSDK::Crm::Objects::GenericObjectDeleteParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Objects::GenericObjectDeleteParams.dump_request(params)
             object_type =
               parsed.delete(:object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -145,7 +145,7 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Objects::GenericObjectGetParams} for more details.
+          # {HubSpotSDK::Models::Crm::Objects::GenericObjectGetParams} for more details.
           #
           # Read an Object identified by `{objectId}`. `{objectId}` refers to the internal
           # object ID by default, or optionally any unique property value as specified by
@@ -168,14 +168,14 @@ module HubspotSDK
           #
           # @param properties_with_history [Array<String>] Query param: A comma separated list of the properties to be returned along with
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations]
+          # @return [HubSpotSDK::Models::Crm::SimplePublicObjectWithAssociations]
           #
-          # @see HubspotSDK::Models::Crm::Objects::GenericObjectGetParams
+          # @see HubSpotSDK::Models::Crm::Objects::GenericObjectGetParams
           def get(object_id_, params)
-            parsed, options = HubspotSDK::Crm::Objects::GenericObjectGetParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Crm::Objects::GenericObjectGetParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             object_type =
               parsed.delete(:object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -187,7 +187,7 @@ module HubspotSDK
                 id_property: "idProperty",
                 properties_with_history: "propertiesWithHistory"
               ),
-              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
+              model: HubSpotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -198,7 +198,7 @@ module HubspotSDK
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.
           #
-          # @param filter_groups [Array<HubspotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
+          # @param filter_groups [Array<HubSpotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
           #
           # @param limit [Integer] The maximum results to return, up to 200 objects.
           #
@@ -208,28 +208,28 @@ module HubspotSDK
           #
           # @param query [String] The search query string, up to 3000 characters.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
+          # @return [HubSpotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
           #
-          # @see HubspotSDK::Models::Crm::Objects::GenericObjectSearchParams
+          # @see HubSpotSDK::Models::Crm::Objects::GenericObjectSearchParams
           def search(object_type, params)
-            parsed, options = HubspotSDK::Crm::Objects::GenericObjectSearchParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Objects::GenericObjectSearchParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["crm/objects/2026-03/%1$s/search", object_type],
               body: parsed,
-              model: HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
+              model: HubSpotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
-            @batch = HubspotSDK::Resources::Crm::Objects::GenericObjects::Batch.new(client: client)
+            @batch = HubSpotSDK::Resources::Crm::Objects::GenericObjects::Batch.new(client: client)
           end
         end
       end

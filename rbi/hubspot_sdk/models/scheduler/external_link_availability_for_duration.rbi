@@ -1,19 +1,19 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalLinkAvailabilityForDuration < HubspotSDK::Internal::Type::BaseModel
+      class ExternalLinkAvailabilityForDuration < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Scheduler::ExternalLinkAvailabilityForDuration,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Scheduler::ExternalLinkAvailabilityForDuration,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
-          returns(T::Array[HubspotSDK::Scheduler::ExternalMeetingAvailability])
+          returns(T::Array[HubSpotSDK::Scheduler::ExternalMeetingAvailability])
         end
         attr_accessor :availabilities
 
@@ -25,7 +25,7 @@ module HubspotSDK
           params(
             availabilities:
               T::Array[
-                HubspotSDK::Scheduler::ExternalMeetingAvailability::OrHash
+                HubSpotSDK::Scheduler::ExternalMeetingAvailability::OrHash
               ],
             meeting_duration_millis: Integer
           ).returns(T.attached_class)
@@ -41,7 +41,7 @@ module HubspotSDK
           override.returns(
             {
               availabilities:
-                T::Array[HubspotSDK::Scheduler::ExternalMeetingAvailability],
+                T::Array[HubSpotSDK::Scheduler::ExternalMeetingAvailability],
               meeting_duration_millis: Integer
             }
           )

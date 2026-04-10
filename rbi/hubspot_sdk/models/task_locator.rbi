@@ -1,11 +1,11 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class TaskLocator < HubspotSDK::Internal::Type::BaseModel
+    class TaskLocator < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
-          T.any(HubspotSDK::TaskLocator, HubspotSDK::Internal::AnyHash)
+          T.any(HubSpotSDK::TaskLocator, HubSpotSDK::Internal::AnyHash)
         end
 
       # The unique identifier for the task.

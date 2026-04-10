@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      # @see HubspotSDK::Resources::Webhooks#create_subscription_filter
-      class WebhookCreateSubscriptionFilterParams < HubspotSDK::Models::Webhooks::FilterCreateRequest
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Webhooks#create_subscription_filter
+      class WebhookCreateSubscriptionFilterParams < HubSpotSDK::Models::Webhooks::FilterCreateRequest
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!method initialize(request_options: {})
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

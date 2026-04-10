@@ -1,10 +1,10 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Associations
-        sig { returns(HubspotSDK::Resources::Crm::Associations::Batch) }
+        sig { returns(HubSpotSDK::Resources::Crm::Associations::Batch) }
         attr_reader :batch
 
         # Retrieve all associations between a specific record and an object type. Limit
@@ -16,10 +16,10 @@ module HubspotSDK
             object_id_: String,
             after: String,
             limit: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Internal::Page[
-              HubspotSDK::Crm::MultiAssociatedObjectWithLabel
+            HubSpotSDK::Internal::Page[
+              HubSpotSDK::Crm::MultiAssociatedObjectWithLabel
             ]
           )
         end
@@ -46,7 +46,7 @@ module HubspotSDK
             object_type: String,
             object_id_: String,
             to_object_type: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete(
@@ -63,8 +63,8 @@ module HubspotSDK
         sig do
           params(
             user_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::ReportCreationResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::ReportCreationResponse)
         end
         def request_high_usage_report(user_id, request_options: {})
         end
@@ -73,14 +73,14 @@ module HubspotSDK
           params(
             object_type: String,
             after: String,
-            filter_groups: T::Array[HubspotSDK::Crm::FilterGroup::OrHash],
+            filter_groups: T::Array[HubSpotSDK::Crm::FilterGroup::OrHash],
             limit: Integer,
             properties: T::Array[String],
             sorts: T::Array[String],
             query: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
+            HubSpotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
           )
         end
         def search(
@@ -107,9 +107,9 @@ module HubspotSDK
             object_type: String,
             object_id_: String,
             to_object_type: String,
-            body: T::Array[HubspotSDK::AssociationSpec::OrHash],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::LabelsBetweenObjectPair)
+            body: T::Array[HubSpotSDK::AssociationSpec::OrHash],
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::LabelsBetweenObjectPair)
         end
         def update_association_labels(
           # Path param
@@ -127,7 +127,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

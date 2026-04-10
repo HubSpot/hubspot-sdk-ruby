@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Automation
       class Actions
@@ -6,57 +6,57 @@ module HubspotSDK
           def list: (
             String definition_id,
             app_id: Integer,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Automation::CollectionResponsePublicActionFunctionIdentifierNoPaging
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Automation::CollectionResponsePublicActionFunctionIdentifierNoPaging
 
           def delete: (
             String function_id,
             app_id: Integer,
             definition_id: String,
-            function_type: HubspotSDK::Models::Automation::Actions::FunctionDeleteParams::function_type,
-            ?request_options: HubspotSDK::request_opts
+            function_type: HubSpotSDK::Models::Automation::Actions::FunctionDeleteParams::function_type,
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def create_or_replace: (
             String function_id,
             app_id: Integer,
             definition_id: String,
-            function_type: HubspotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::function_type,
+            function_type: HubSpotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::function_type,
             body: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Automation::PublicActionFunctionIdentifier
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Automation::PublicActionFunctionIdentifier
 
           def create_or_replace_by_function_type: (
-            HubspotSDK::Models::Automation::Actions::FunctionCreateOrReplaceByFunctionTypeParams::function_type function_type,
+            HubSpotSDK::Models::Automation::Actions::FunctionCreateOrReplaceByFunctionTypeParams::function_type function_type,
             app_id: Integer,
             definition_id: String,
             body: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Automation::PublicActionFunctionIdentifier
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Automation::PublicActionFunctionIdentifier
 
           def delete_by_function_type: (
-            HubspotSDK::Models::Automation::Actions::FunctionDeleteByFunctionTypeParams::function_type function_type,
+            HubSpotSDK::Models::Automation::Actions::FunctionDeleteByFunctionTypeParams::function_type function_type,
             app_id: Integer,
             definition_id: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def get: (
             String function_id,
             app_id: Integer,
             definition_id: String,
-            function_type: HubspotSDK::Models::Automation::Actions::FunctionGetParams::function_type,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Automation::PublicActionFunction
+            function_type: HubSpotSDK::Models::Automation::Actions::FunctionGetParams::function_type,
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Automation::PublicActionFunction
 
           def get_by_function_type: (
-            HubspotSDK::Models::Automation::Actions::FunctionGetByFunctionTypeParams::function_type function_type,
+            HubSpotSDK::Models::Automation::Actions::FunctionGetByFunctionTypeParams::function_type function_type,
             app_id: Integer,
             definition_id: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Automation::PublicActionFunction
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Automation::PublicActionFunction
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

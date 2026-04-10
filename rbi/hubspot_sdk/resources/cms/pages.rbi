@@ -1,25 +1,25 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Pages
-        sig { returns(HubspotSDK::Resources::Cms::Pages::ABTests) }
+        sig { returns(HubSpotSDK::Resources::Cms::Pages::ABTests) }
         attr_reader :a_b_tests
 
-        sig { returns(HubspotSDK::Resources::Cms::Pages::Batch) }
+        sig { returns(HubSpotSDK::Resources::Cms::Pages::Batch) }
         attr_reader :batch
 
-        sig { returns(HubspotSDK::Resources::Cms::Pages::Folders) }
+        sig { returns(HubSpotSDK::Resources::Cms::Pages::Folders) }
         attr_reader :folders
 
-        sig { returns(HubspotSDK::Resources::Cms::Pages::LandingPages) }
+        sig { returns(HubSpotSDK::Resources::Cms::Pages::LandingPages) }
         attr_reader :landing_pages
 
-        sig { returns(HubspotSDK::Resources::Cms::Pages::MultiLanguage) }
+        sig { returns(HubSpotSDK::Resources::Cms::Pages::MultiLanguage) }
         attr_reader :multi_language
 
-        sig { returns(HubspotSDK::Resources::Cms::Pages::WebsitePages) }
+        sig { returns(HubSpotSDK::Resources::Cms::Pages::WebsitePages) }
         attr_reader :website_pages
 
         sig do
@@ -35,7 +35,7 @@ module HubspotSDK
             updated_after: Time,
             updated_at: Time,
             updated_before: Time,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.anything)
         end
         def get_landing_page_folders(
@@ -72,7 +72,7 @@ module HubspotSDK
             updated_after: Time,
             updated_at: Time,
             updated_before: Time,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.anything)
         end
         def get_landing_page_folders_by_query(
@@ -102,8 +102,8 @@ module HubspotSDK
           params(
             revision_id: String,
             object_id_: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::PageVersion)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::PageVersion)
         end
         def get_landing_page_revision(
           revision_id,
@@ -125,7 +125,7 @@ module HubspotSDK
             updated_after: Time,
             updated_at: Time,
             updated_before: Time,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.anything)
         end
         def get_landing_pages(
@@ -162,7 +162,7 @@ module HubspotSDK
             updated_after: Time,
             updated_at: Time,
             updated_before: Time,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.anything)
         end
         def get_landing_pages_by_query(
@@ -191,8 +191,8 @@ module HubspotSDK
           params(
             revision_id: String,
             object_id_: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::PageVersion)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::PageVersion)
         end
         def get_site_page_revision(
           revision_id,
@@ -214,7 +214,7 @@ module HubspotSDK
             updated_after: Time,
             updated_at: Time,
             updated_before: Time,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.anything)
         end
         def get_site_pages(
@@ -251,7 +251,7 @@ module HubspotSDK
             updated_after: Time,
             updated_at: Time,
             updated_before: Time,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.anything)
         end
         def get_site_pages_by_query(
@@ -282,8 +282,8 @@ module HubspotSDK
             after: String,
             before: String,
             limit: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Internal::Page[HubspotSDK::Cms::PageVersion])
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Internal::Page[HubSpotSDK::Cms::PageVersion])
         end
         def list_landing_page_revisions(
           object_id_,
@@ -305,8 +305,8 @@ module HubspotSDK
             after: String,
             before: String,
             limit: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Internal::Page[HubspotSDK::Cms::PageVersion])
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Internal::Page[HubSpotSDK::Cms::PageVersion])
         end
         def list_site_page_revisions(
           object_id_,
@@ -325,7 +325,7 @@ module HubspotSDK
         sig do
           params(
             object_id_: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def reset_site_page_draft(object_id_, request_options: {})
@@ -337,8 +337,8 @@ module HubspotSDK
           params(
             revision_id: String,
             object_id_: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::PageData)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::PageData)
         end
         def restore_landing_page_revision(
           revision_id,
@@ -352,8 +352,8 @@ module HubspotSDK
           params(
             revision_id: Integer,
             object_id_: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::PageData)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::PageData)
         end
         def restore_landing_page_revision_to_draft(
           revision_id,
@@ -368,8 +368,8 @@ module HubspotSDK
           params(
             revision_id: String,
             object_id_: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::PageData)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::PageData)
         end
         def restore_site_page_revision(
           revision_id,
@@ -384,8 +384,8 @@ module HubspotSDK
           params(
             revision_id: Integer,
             object_id_: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::PageData)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::PageData)
         end
         def restore_site_page_revision_to_draft(
           revision_id,
@@ -395,7 +395,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      # @see HubspotSDK::Resources::Settings::TaxRates#list
-      class TaxRateListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Settings::TaxRates#list
+      class TaxRateListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute active
         #
         #   @return [Boolean, nil]
-        optional :active, HubspotSDK::Internal::Type::Boolean
+        optional :active, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute after
         #   The paging cursor token of the last successfully read resource will be returned
@@ -29,7 +29,7 @@ module HubspotSDK
 
         # @!method initialize(active: nil, after: nil, limit: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Settings::TaxRateListParams} for more details.
+        #   {HubSpotSDK::Models::Settings::TaxRateListParams} for more details.
         #
         #   @param active [Boolean]
         #
@@ -37,7 +37,7 @@ module HubspotSDK
         #
         #   @param limit [Integer] The maximum number of results to display per page.
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

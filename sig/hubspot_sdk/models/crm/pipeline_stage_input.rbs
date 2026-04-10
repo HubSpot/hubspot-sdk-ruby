@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type pipeline_stage_input =
@@ -9,7 +9,7 @@ module HubspotSDK
           stage_id: String
         }
 
-      class PipelineStageInput < HubspotSDK::Internal::Type::BaseModel
+      class PipelineStageInput < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor display_order: Integer
 
         attr_accessor label: String

@@ -1,19 +1,19 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   # Specify HTTP behaviour to use for a specific request. These options supplement
   # or override those provided at the client level.
   #
   # When making a request, you can pass an actual {RequestOptions} instance, or
   # simply pass a Hash with symbol keys matching the attributes on this class.
-  class RequestOptions < HubspotSDK::Internal::Type::BaseModel
+  class RequestOptions < HubSpotSDK::Internal::Type::BaseModel
     OrHash =
       T.type_alias do
-        T.any(HubspotSDK::RequestOptions, HubspotSDK::Internal::AnyHash)
+        T.any(HubSpotSDK::RequestOptions, HubSpotSDK::Internal::AnyHash)
       end
 
     # @api private
-    sig { params(opts: HubspotSDK::RequestOptions::OrHash).void }
+    sig { params(opts: HubSpotSDK::RequestOptions::OrHash).void }
     def self.validate!(opts)
     end
 
@@ -51,7 +51,7 @@ module HubspotSDK
 
     # Returns a new instance of RequestOptions.
     sig do
-      params(values: HubspotSDK::Internal::AnyHash).returns(T.attached_class)
+      params(values: HubSpotSDK::Internal::AnyHash).returns(T.attached_class)
     end
     def self.new(values = {})
     end

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        class TagCloneRequestVNext < HubspotSDK::Internal::Type::BaseModel
+        class TagCloneRequestVNext < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute id
           #   ID of the object to be cloned.
           #

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module HubspotSDK
-  class Client < HubspotSDK::Internal::Transport::BaseClient
+module HubSpotSDK
+  class Client < HubSpotSDK::Internal::Transport::BaseClient
     # Default max number of retries to attempt after a failed retryable request.
     DEFAULT_MAX_RETRIES = 2
 
@@ -21,49 +21,49 @@ module HubspotSDK
     # @return [String, nil]
     attr_reader :developer_api_key
 
-    # @return [HubspotSDK::Resources::Account]
+    # @return [HubSpotSDK::Resources::Account]
     attr_reader :account
 
-    # @return [HubspotSDK::Resources::Auth]
+    # @return [HubSpotSDK::Resources::Auth]
     attr_reader :auth
 
-    # @return [HubspotSDK::Resources::Automation]
+    # @return [HubSpotSDK::Resources::Automation]
     attr_reader :automation
 
-    # @return [HubspotSDK::Resources::BusinessUnits]
+    # @return [HubSpotSDK::Resources::BusinessUnits]
     attr_reader :business_units
 
-    # @return [HubspotSDK::Resources::Cms]
+    # @return [HubSpotSDK::Resources::Cms]
     attr_reader :cms
 
-    # @return [HubspotSDK::Resources::CommunicationPreferences]
+    # @return [HubSpotSDK::Resources::CommunicationPreferences]
     attr_reader :communication_preferences
 
-    # @return [HubspotSDK::Resources::Conversations]
+    # @return [HubSpotSDK::Resources::Conversations]
     attr_reader :conversations
 
-    # @return [HubspotSDK::Resources::Crm]
+    # @return [HubSpotSDK::Resources::Crm]
     attr_reader :crm
 
-    # @return [HubspotSDK::Resources::Events]
+    # @return [HubSpotSDK::Resources::Events]
     attr_reader :events
 
-    # @return [HubspotSDK::Resources::Files]
+    # @return [HubSpotSDK::Resources::Files]
     attr_reader :files
 
-    # @return [HubspotSDK::Resources::Marketing]
+    # @return [HubSpotSDK::Resources::Marketing]
     attr_reader :marketing
 
-    # @return [HubspotSDK::Resources::Meta]
+    # @return [HubSpotSDK::Resources::Meta]
     attr_reader :meta
 
-    # @return [HubspotSDK::Resources::Scheduler]
+    # @return [HubSpotSDK::Resources::Scheduler]
     attr_reader :scheduler
 
-    # @return [HubspotSDK::Resources::Settings]
+    # @return [HubSpotSDK::Resources::Settings]
     attr_reader :settings
 
-    # @return [HubspotSDK::Resources::Webhooks]
+    # @return [HubSpotSDK::Resources::Webhooks]
     attr_reader :webhooks
 
     # @api private
@@ -120,21 +120,21 @@ module HubspotSDK
         max_retry_delay: max_retry_delay
       )
 
-      @account = HubspotSDK::Resources::Account.new(client: self)
-      @auth = HubspotSDK::Resources::Auth.new(client: self)
-      @automation = HubspotSDK::Resources::Automation.new(client: self)
-      @business_units = HubspotSDK::Resources::BusinessUnits.new(client: self)
-      @cms = HubspotSDK::Resources::Cms.new(client: self)
-      @communication_preferences = HubspotSDK::Resources::CommunicationPreferences.new(client: self)
-      @conversations = HubspotSDK::Resources::Conversations.new(client: self)
-      @crm = HubspotSDK::Resources::Crm.new(client: self)
-      @events = HubspotSDK::Resources::Events.new(client: self)
-      @files = HubspotSDK::Resources::Files.new(client: self)
-      @marketing = HubspotSDK::Resources::Marketing.new(client: self)
-      @meta = HubspotSDK::Resources::Meta.new(client: self)
-      @scheduler = HubspotSDK::Resources::Scheduler.new(client: self)
-      @settings = HubspotSDK::Resources::Settings.new(client: self)
-      @webhooks = HubspotSDK::Resources::Webhooks.new(client: self)
+      @account = HubSpotSDK::Resources::Account.new(client: self)
+      @auth = HubSpotSDK::Resources::Auth.new(client: self)
+      @automation = HubSpotSDK::Resources::Automation.new(client: self)
+      @business_units = HubSpotSDK::Resources::BusinessUnits.new(client: self)
+      @cms = HubSpotSDK::Resources::Cms.new(client: self)
+      @communication_preferences = HubSpotSDK::Resources::CommunicationPreferences.new(client: self)
+      @conversations = HubSpotSDK::Resources::Conversations.new(client: self)
+      @crm = HubSpotSDK::Resources::Crm.new(client: self)
+      @events = HubSpotSDK::Resources::Events.new(client: self)
+      @files = HubSpotSDK::Resources::Files.new(client: self)
+      @marketing = HubSpotSDK::Resources::Marketing.new(client: self)
+      @meta = HubSpotSDK::Resources::Meta.new(client: self)
+      @scheduler = HubSpotSDK::Resources::Scheduler.new(client: self)
+      @settings = HubSpotSDK::Resources::Settings.new(client: self)
+      @webhooks = HubSpotSDK::Resources::Webhooks.new(client: self)
     end
   end
 end

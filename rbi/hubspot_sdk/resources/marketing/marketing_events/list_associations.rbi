@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class MarketingEvents
@@ -9,9 +9,9 @@ module HubspotSDK
           sig do
             params(
               marketing_event_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Marketing::CollectionResponseWithTotalPublicList
+              HubSpotSDK::Marketing::CollectionResponseWithTotalPublicList
             )
           end
           def list(
@@ -27,7 +27,7 @@ module HubspotSDK
             params(
               list_id: String,
               marketing_event_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete(
@@ -44,7 +44,7 @@ module HubspotSDK
             params(
               list_id: String,
               marketing_event_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def associate(
@@ -63,7 +63,7 @@ module HubspotSDK
               list_id: String,
               external_account_id: String,
               external_event_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def associate_by_external_account(
@@ -85,7 +85,7 @@ module HubspotSDK
               list_id: String,
               external_account_id: String,
               external_event_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete_by_external_account(
@@ -106,9 +106,9 @@ module HubspotSDK
             params(
               external_event_id: String,
               external_account_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Marketing::CollectionResponseWithTotalPublicList
+              HubSpotSDK::Marketing::CollectionResponseWithTotalPublicList
             )
           end
           def list_by_external_account(
@@ -122,7 +122,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

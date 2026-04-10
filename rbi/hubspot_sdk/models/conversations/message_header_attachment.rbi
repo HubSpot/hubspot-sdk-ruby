@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class MessageHeaderAttachment < HubspotSDK::Internal::Type::BaseModel
+      class MessageHeaderAttachment < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::MessageHeaderAttachment,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::MessageHeaderAttachment,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::Conversations::MessageHeaderAttachment::Type::OrSymbol
+            HubSpotSDK::Conversations::MessageHeaderAttachment::Type::OrSymbol
           )
         end
         attr_accessor :type
@@ -34,7 +34,7 @@ module HubspotSDK
         sig do
           params(
             type:
-              HubspotSDK::Conversations::MessageHeaderAttachment::Type::OrSymbol,
+              HubSpotSDK::Conversations::MessageHeaderAttachment::Type::OrSymbol,
             file_id: Integer,
             text: String
           ).returns(T.attached_class)
@@ -46,7 +46,7 @@ module HubspotSDK
           override.returns(
             {
               type:
-                HubspotSDK::Conversations::MessageHeaderAttachment::Type::OrSymbol,
+                HubSpotSDK::Conversations::MessageHeaderAttachment::Type::OrSymbol,
               file_id: Integer,
               text: String
             }
@@ -56,13 +56,13 @@ module HubspotSDK
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Conversations::MessageHeaderAttachment::Type
+                HubSpotSDK::Conversations::MessageHeaderAttachment::Type
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -70,13 +70,13 @@ module HubspotSDK
           MESSAGE_HEADER =
             T.let(
               :MESSAGE_HEADER,
-              HubspotSDK::Conversations::MessageHeaderAttachment::Type::TaggedSymbol
+              HubSpotSDK::Conversations::MessageHeaderAttachment::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::MessageHeaderAttachment::Type::TaggedSymbol
+                HubSpotSDK::Conversations::MessageHeaderAttachment::Type::TaggedSymbol
               ]
             )
           end

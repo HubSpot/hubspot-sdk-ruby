@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class IntegratorObjectResult < HubspotSDK::Internal::Type::BaseModel
+        class IntegratorObjectResult < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute id
           #   The unique identifier for the card.
           #
@@ -15,9 +15,9 @@ module HubspotSDK
           #   A list of actions associated with the card, which can include action hooks,
           #   confirmation action hooks, or iframes.
           #
-          #   @return [Array<HubspotSDK::Models::Crm::Extensions::ActionHookActionBody, HubspotSDK::Models::Crm::Extensions::IFrameActionBody>]
+          #   @return [Array<HubSpotSDK::Models::Crm::Extensions::ActionHookActionBody, HubSpotSDK::Models::Crm::Extensions::IFrameActionBody>]
           required :actions,
-                   -> { HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Crm::Extensions::IntegratorObjectResult::Action] }
+                   -> { HubSpotSDK::Internal::Type::ArrayOf[union: HubSpotSDK::Crm::Extensions::IntegratorObjectResult::Action] }
 
           # @!attribute title
           #   The top-level title for this card. Displayed to users in the CRM UI.
@@ -28,8 +28,8 @@ module HubspotSDK
           # @!attribute tokens
           #   A collection of tokens representing specific properties related to the card.
           #
-          #   @return [Array<HubspotSDK::Models::Crm::Extensions::ObjectToken>]
-          required :tokens, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Extensions::ObjectToken] }
+          #   @return [Array<HubSpotSDK::Models::Crm::Extensions::ObjectToken>]
+          required :tokens, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::Extensions::ObjectToken] }
 
           # @!attribute link_url
           #   A URL used on the title of the card
@@ -39,27 +39,27 @@ module HubspotSDK
 
           # @!method initialize(id:, actions:, title:, tokens:, link_url: nil)
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Crm::Extensions::IntegratorObjectResult} for more details.
+          #   {HubSpotSDK::Models::Crm::Extensions::IntegratorObjectResult} for more details.
           #
           #   @param id [String] The unique identifier for the card.
           #
-          #   @param actions [Array<HubspotSDK::Models::Crm::Extensions::ActionHookActionBody, HubspotSDK::Models::Crm::Extensions::IFrameActionBody>] A list of actions associated with the card, which can include action hooks, conf
+          #   @param actions [Array<HubSpotSDK::Models::Crm::Extensions::ActionHookActionBody, HubSpotSDK::Models::Crm::Extensions::IFrameActionBody>] A list of actions associated with the card, which can include action hooks, conf
           #
           #   @param title [String] The top-level title for this card. Displayed to users in the CRM UI.
           #
-          #   @param tokens [Array<HubspotSDK::Models::Crm::Extensions::ObjectToken>] A collection of tokens representing specific properties related to the card.
+          #   @param tokens [Array<HubSpotSDK::Models::Crm::Extensions::ObjectToken>] A collection of tokens representing specific properties related to the card.
           #
           #   @param link_url [String] A URL used on the title of the card
 
           module Action
-            extend HubspotSDK::Internal::Type::Union
+            extend HubSpotSDK::Internal::Type::Union
 
-            variant -> { HubspotSDK::Crm::Extensions::ActionHookActionBody }
+            variant -> { HubSpotSDK::Crm::Extensions::ActionHookActionBody }
 
-            variant -> { HubspotSDK::Crm::Extensions::IFrameActionBody }
+            variant -> { HubSpotSDK::Crm::Extensions::IFrameActionBody }
 
             # @!method self.variants
-            #   @return [Array(HubspotSDK::Models::Crm::Extensions::ActionHookActionBody, HubspotSDK::Models::Crm::Extensions::IFrameActionBody)]
+            #   @return [Array(HubSpotSDK::Models::Crm::Extensions::ActionHookActionBody, HubSpotSDK::Models::Crm::Extensions::IFrameActionBody)]
           end
         end
       end

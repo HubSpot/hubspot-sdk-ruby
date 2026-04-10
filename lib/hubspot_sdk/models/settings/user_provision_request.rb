@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class UserProvisionRequest < HubspotSDK::Internal::Type::BaseModel
+      class UserProvisionRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute email
         #   The user's email.
         #
@@ -14,7 +14,7 @@ module HubspotSDK
         #   Whether to send a welcome email.
         #
         #   @return [Boolean]
-        required :send_welcome_email, HubspotSDK::Internal::Type::Boolean, api_name: :sendWelcomeEmail
+        required :send_welcome_email, HubSpotSDK::Internal::Type::Boolean, api_name: :sendWelcomeEmail
 
         # @!attribute first_name
         #   The user's first name.
@@ -44,7 +44,7 @@ module HubspotSDK
         #   The user's additional teams.
         #
         #   @return [Array<String>, nil]
-        optional :secondary_team_ids, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :secondaryTeamIds
+        optional :secondary_team_ids, HubSpotSDK::Internal::Type::ArrayOf[String], api_name: :secondaryTeamIds
 
         # @!method initialize(email:, send_welcome_email:, first_name: nil, last_name: nil, primary_team_id: nil, role_id: nil, secondary_team_ids: nil)
         #   @param email [String] The user's email.

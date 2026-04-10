@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicRangedTimeOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicRangedTimeOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute include_objects_with_no_value_set
         #   Indicates whether objects with no value set for the property should be included
         #   in the operation.
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute lower_bound_time_point
         #   Defines the lower bound time point for the operation.
         #
-        #   @return [HubspotSDK::Models::Crm::PublicDatePoint, HubspotSDK::Models::Crm::PublicIndexedTimePoint, HubspotSDK::Models::Crm::PublicPropertyReferencedTime]
+        #   @return [HubSpotSDK::Models::Crm::PublicDatePoint, HubSpotSDK::Models::Crm::PublicIndexedTimePoint, HubSpotSDK::Models::Crm::PublicPropertyReferencedTime]
         required :lower_bound_time_point,
-                 union: -> { HubspotSDK::Crm::PublicRangedTimeOperation::LowerBoundTimePoint },
+                 union: -> { HubSpotSDK::Crm::PublicRangedTimeOperation::LowerBoundTimePoint },
                  api_name: :lowerBoundTimePoint
 
         # @!attribute operation_type
@@ -37,15 +37,15 @@ module HubspotSDK
         # @!attribute type
         #   Specifies the type of operation (TIME_RANGED).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicRangedTimeOperation::Type]
-        required :type, enum: -> { HubspotSDK::Crm::PublicRangedTimeOperation::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicRangedTimeOperation::Type]
+        required :type, enum: -> { HubSpotSDK::Crm::PublicRangedTimeOperation::Type }
 
         # @!attribute upper_bound_time_point
         #   Defines the upper bound time point for the operation.
         #
-        #   @return [HubspotSDK::Models::Crm::PublicDatePoint, HubspotSDK::Models::Crm::PublicIndexedTimePoint, HubspotSDK::Models::Crm::PublicPropertyReferencedTime]
+        #   @return [HubSpotSDK::Models::Crm::PublicDatePoint, HubSpotSDK::Models::Crm::PublicIndexedTimePoint, HubSpotSDK::Models::Crm::PublicPropertyReferencedTime]
         required :upper_bound_time_point,
-                 union: -> { HubspotSDK::Crm::PublicRangedTimeOperation::UpperBoundTimePoint },
+                 union: -> { HubSpotSDK::Crm::PublicRangedTimeOperation::UpperBoundTimePoint },
                  api_name: :upperBoundTimePoint
 
         # @!attribute lower_bound_endpoint_behavior
@@ -68,19 +68,19 @@ module HubspotSDK
 
         # @!method initialize(include_objects_with_no_value_set:, lower_bound_time_point:, operation_type:, operator:, type:, upper_bound_time_point:, lower_bound_endpoint_behavior: nil, property_parser: nil, upper_bound_endpoint_behavior: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicRangedTimeOperation} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicRangedTimeOperation} for more details.
         #
         #   @param include_objects_with_no_value_set [Boolean] Indicates whether objects with no value set for the property should be included
         #
-        #   @param lower_bound_time_point [HubspotSDK::Models::Crm::PublicDatePoint, HubspotSDK::Models::Crm::PublicIndexedTimePoint, HubspotSDK::Models::Crm::PublicPropertyReferencedTime] Defines the lower bound time point for the operation.
+        #   @param lower_bound_time_point [HubSpotSDK::Models::Crm::PublicDatePoint, HubSpotSDK::Models::Crm::PublicIndexedTimePoint, HubSpotSDK::Models::Crm::PublicPropertyReferencedTime] Defines the lower bound time point for the operation.
         #
         #   @param operation_type [String] Specifies the type of operation (TIME_RANGED).
         #
         #   @param operator [String] Defines the operation to be applied within the time range (IS_BETWEEN, IS_NOT_BE
         #
-        #   @param type [Symbol, HubspotSDK::Models::Crm::PublicRangedTimeOperation::Type] Specifies the type of operation (TIME_RANGED).
+        #   @param type [Symbol, HubSpotSDK::Models::Crm::PublicRangedTimeOperation::Type] Specifies the type of operation (TIME_RANGED).
         #
-        #   @param upper_bound_time_point [HubspotSDK::Models::Crm::PublicDatePoint, HubspotSDK::Models::Crm::PublicIndexedTimePoint, HubspotSDK::Models::Crm::PublicPropertyReferencedTime] Defines the upper bound time point for the operation.
+        #   @param upper_bound_time_point [HubSpotSDK::Models::Crm::PublicDatePoint, HubSpotSDK::Models::Crm::PublicIndexedTimePoint, HubSpotSDK::Models::Crm::PublicPropertyReferencedTime] Defines the upper bound time point for the operation.
         #
         #   @param lower_bound_endpoint_behavior [String] Describes the behavior at the lower bound endpoint of the time range.
         #
@@ -90,25 +90,25 @@ module HubspotSDK
 
         # Defines the lower bound time point for the operation.
         #
-        # @see HubspotSDK::Models::Crm::PublicRangedTimeOperation#lower_bound_time_point
+        # @see HubSpotSDK::Models::Crm::PublicRangedTimeOperation#lower_bound_time_point
         module LowerBoundTimePoint
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubspotSDK::Crm::PublicDatePoint }
+          variant -> { HubSpotSDK::Crm::PublicDatePoint }
 
-          variant -> { HubspotSDK::Crm::PublicIndexedTimePoint }
+          variant -> { HubSpotSDK::Crm::PublicIndexedTimePoint }
 
-          variant -> { HubspotSDK::Crm::PublicPropertyReferencedTime }
+          variant -> { HubSpotSDK::Crm::PublicPropertyReferencedTime }
 
           # @!method self.variants
-          #   @return [Array(HubspotSDK::Models::Crm::PublicDatePoint, HubspotSDK::Models::Crm::PublicIndexedTimePoint, HubspotSDK::Models::Crm::PublicPropertyReferencedTime)]
+          #   @return [Array(HubSpotSDK::Models::Crm::PublicDatePoint, HubSpotSDK::Models::Crm::PublicIndexedTimePoint, HubSpotSDK::Models::Crm::PublicPropertyReferencedTime)]
         end
 
         # Specifies the type of operation (TIME_RANGED).
         #
-        # @see HubspotSDK::Models::Crm::PublicRangedTimeOperation#type
+        # @see HubSpotSDK::Models::Crm::PublicRangedTimeOperation#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TIME_RANGED = :TIME_RANGED
 
@@ -118,18 +118,18 @@ module HubspotSDK
 
         # Defines the upper bound time point for the operation.
         #
-        # @see HubspotSDK::Models::Crm::PublicRangedTimeOperation#upper_bound_time_point
+        # @see HubSpotSDK::Models::Crm::PublicRangedTimeOperation#upper_bound_time_point
         module UpperBoundTimePoint
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubspotSDK::Crm::PublicDatePoint }
+          variant -> { HubSpotSDK::Crm::PublicDatePoint }
 
-          variant -> { HubspotSDK::Crm::PublicIndexedTimePoint }
+          variant -> { HubSpotSDK::Crm::PublicIndexedTimePoint }
 
-          variant -> { HubspotSDK::Crm::PublicPropertyReferencedTime }
+          variant -> { HubSpotSDK::Crm::PublicPropertyReferencedTime }
 
           # @!method self.variants
-          #   @return [Array(HubspotSDK::Models::Crm::PublicDatePoint, HubspotSDK::Models::Crm::PublicIndexedTimePoint, HubspotSDK::Models::Crm::PublicPropertyReferencedTime)]
+          #   @return [Array(HubSpotSDK::Models::Crm::PublicDatePoint, HubSpotSDK::Models::Crm::PublicIndexedTimePoint, HubSpotSDK::Models::Crm::PublicPropertyReferencedTime)]
         end
       end
     end

@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicSurveyMonkeyValueFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicSurveyMonkeyValueFilter < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicSurveyMonkeyValueFilter,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicSurveyMonkeyValueFilter,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Defines the type of filter (SURVEY_MONKEY_VALUE).
         sig do
           returns(
-            HubspotSDK::Crm::PublicSurveyMonkeyValueFilter::FilterType::OrSymbol
+            HubSpotSDK::Crm::PublicSurveyMonkeyValueFilter::FilterType::OrSymbol
           )
         end
         attr_accessor :filter_type
@@ -37,23 +37,23 @@ module HubspotSDK
         sig do
           returns(
             T.any(
-              HubspotSDK::Crm::PublicBoolPropertyOperation,
-              HubspotSDK::Crm::PublicNumberPropertyOperation,
-              HubspotSDK::Crm::PublicStringPropertyOperation,
-              HubspotSDK::Crm::PublicDateTimePropertyOperation,
-              HubspotSDK::Crm::PublicRangedDatePropertyOperation,
-              HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation,
-              HubspotSDK::Crm::PublicComparativeDatePropertyOperation,
-              HubspotSDK::Crm::PublicRollingDateRangePropertyOperation,
-              HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation,
-              HubspotSDK::Crm::PublicEnumerationPropertyOperation,
-              HubspotSDK::Crm::PublicAllPropertyTypesOperation,
-              HubspotSDK::Crm::PublicRangedNumberPropertyOperation,
-              HubspotSDK::Crm::PublicMultiStringPropertyOperation,
-              HubspotSDK::Crm::PublicDatePropertyOperation,
-              HubspotSDK::Crm::PublicCalendarDatePropertyOperation,
-              HubspotSDK::Crm::PublicTimePointOperation,
-              HubspotSDK::Crm::PublicRangedTimeOperation
+              HubSpotSDK::Crm::PublicBoolPropertyOperation,
+              HubSpotSDK::Crm::PublicNumberPropertyOperation,
+              HubSpotSDK::Crm::PublicStringPropertyOperation,
+              HubSpotSDK::Crm::PublicDateTimePropertyOperation,
+              HubSpotSDK::Crm::PublicRangedDatePropertyOperation,
+              HubSpotSDK::Crm::PublicComparativePropertyUpdatedOperation,
+              HubSpotSDK::Crm::PublicComparativeDatePropertyOperation,
+              HubSpotSDK::Crm::PublicRollingDateRangePropertyOperation,
+              HubSpotSDK::Crm::PublicRollingPropertyUpdatedOperation,
+              HubSpotSDK::Crm::PublicEnumerationPropertyOperation,
+              HubSpotSDK::Crm::PublicAllPropertyTypesOperation,
+              HubSpotSDK::Crm::PublicRangedNumberPropertyOperation,
+              HubSpotSDK::Crm::PublicMultiStringPropertyOperation,
+              HubSpotSDK::Crm::PublicDatePropertyOperation,
+              HubSpotSDK::Crm::PublicCalendarDatePropertyOperation,
+              HubSpotSDK::Crm::PublicTimePointOperation,
+              HubSpotSDK::Crm::PublicRangedTimeOperation
             )
           )
         end
@@ -76,29 +76,29 @@ module HubspotSDK
         sig do
           params(
             filter_type:
-              HubspotSDK::Crm::PublicSurveyMonkeyValueFilter::FilterType::OrSymbol,
+              HubSpotSDK::Crm::PublicSurveyMonkeyValueFilter::FilterType::OrSymbol,
             operator: String,
             survey_id: String,
             survey_question: String,
             value_comparison:
               T.any(
-                HubspotSDK::Crm::PublicBoolPropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicNumberPropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicStringPropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicDateTimePropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicRangedDatePropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation::OrHash,
-                HubspotSDK::Crm::PublicComparativeDatePropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicRollingDateRangePropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation::OrHash,
-                HubspotSDK::Crm::PublicEnumerationPropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicAllPropertyTypesOperation::OrHash,
-                HubspotSDK::Crm::PublicRangedNumberPropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicMultiStringPropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicDatePropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicCalendarDatePropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicTimePointOperation::OrHash,
-                HubspotSDK::Crm::PublicRangedTimeOperation::OrHash
+                HubSpotSDK::Crm::PublicBoolPropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicNumberPropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicStringPropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicDateTimePropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicRangedDatePropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicComparativePropertyUpdatedOperation::OrHash,
+                HubSpotSDK::Crm::PublicComparativeDatePropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicRollingDateRangePropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicRollingPropertyUpdatedOperation::OrHash,
+                HubSpotSDK::Crm::PublicEnumerationPropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicAllPropertyTypesOperation::OrHash,
+                HubSpotSDK::Crm::PublicRangedNumberPropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicMultiStringPropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicDatePropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicCalendarDatePropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicTimePointOperation::OrHash,
+                HubSpotSDK::Crm::PublicRangedTimeOperation::OrHash
               ),
             survey_answer_col_id: String,
             survey_answer_row_id: String
@@ -127,29 +127,29 @@ module HubspotSDK
           override.returns(
             {
               filter_type:
-                HubspotSDK::Crm::PublicSurveyMonkeyValueFilter::FilterType::OrSymbol,
+                HubSpotSDK::Crm::PublicSurveyMonkeyValueFilter::FilterType::OrSymbol,
               operator: String,
               survey_id: String,
               survey_question: String,
               value_comparison:
                 T.any(
-                  HubspotSDK::Crm::PublicBoolPropertyOperation,
-                  HubspotSDK::Crm::PublicNumberPropertyOperation,
-                  HubspotSDK::Crm::PublicStringPropertyOperation,
-                  HubspotSDK::Crm::PublicDateTimePropertyOperation,
-                  HubspotSDK::Crm::PublicRangedDatePropertyOperation,
-                  HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation,
-                  HubspotSDK::Crm::PublicComparativeDatePropertyOperation,
-                  HubspotSDK::Crm::PublicRollingDateRangePropertyOperation,
-                  HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation,
-                  HubspotSDK::Crm::PublicEnumerationPropertyOperation,
-                  HubspotSDK::Crm::PublicAllPropertyTypesOperation,
-                  HubspotSDK::Crm::PublicRangedNumberPropertyOperation,
-                  HubspotSDK::Crm::PublicMultiStringPropertyOperation,
-                  HubspotSDK::Crm::PublicDatePropertyOperation,
-                  HubspotSDK::Crm::PublicCalendarDatePropertyOperation,
-                  HubspotSDK::Crm::PublicTimePointOperation,
-                  HubspotSDK::Crm::PublicRangedTimeOperation
+                  HubSpotSDK::Crm::PublicBoolPropertyOperation,
+                  HubSpotSDK::Crm::PublicNumberPropertyOperation,
+                  HubSpotSDK::Crm::PublicStringPropertyOperation,
+                  HubSpotSDK::Crm::PublicDateTimePropertyOperation,
+                  HubSpotSDK::Crm::PublicRangedDatePropertyOperation,
+                  HubSpotSDK::Crm::PublicComparativePropertyUpdatedOperation,
+                  HubSpotSDK::Crm::PublicComparativeDatePropertyOperation,
+                  HubSpotSDK::Crm::PublicRollingDateRangePropertyOperation,
+                  HubSpotSDK::Crm::PublicRollingPropertyUpdatedOperation,
+                  HubSpotSDK::Crm::PublicEnumerationPropertyOperation,
+                  HubSpotSDK::Crm::PublicAllPropertyTypesOperation,
+                  HubSpotSDK::Crm::PublicRangedNumberPropertyOperation,
+                  HubSpotSDK::Crm::PublicMultiStringPropertyOperation,
+                  HubSpotSDK::Crm::PublicDatePropertyOperation,
+                  HubSpotSDK::Crm::PublicCalendarDatePropertyOperation,
+                  HubSpotSDK::Crm::PublicTimePointOperation,
+                  HubSpotSDK::Crm::PublicRangedTimeOperation
                 ),
               survey_answer_col_id: String,
               survey_answer_row_id: String
@@ -161,13 +161,13 @@ module HubspotSDK
 
         # Defines the type of filter (SURVEY_MONKEY_VALUE).
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicSurveyMonkeyValueFilter::FilterType
+                HubSpotSDK::Crm::PublicSurveyMonkeyValueFilter::FilterType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -175,13 +175,13 @@ module HubspotSDK
           SURVEY_MONKEY_VALUE =
             T.let(
               :SURVEY_MONKEY_VALUE,
-              HubspotSDK::Crm::PublicSurveyMonkeyValueFilter::FilterType::TaggedSymbol
+              HubSpotSDK::Crm::PublicSurveyMonkeyValueFilter::FilterType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicSurveyMonkeyValueFilter::FilterType::TaggedSymbol
+                HubSpotSDK::Crm::PublicSurveyMonkeyValueFilter::FilterType::TaggedSymbol
               ]
             )
           end
@@ -191,35 +191,35 @@ module HubspotSDK
 
         # Specifies the operation used to compare the survey answer value.
         module ValueComparison
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::PublicBoolPropertyOperation,
-                HubspotSDK::Crm::PublicNumberPropertyOperation,
-                HubspotSDK::Crm::PublicStringPropertyOperation,
-                HubspotSDK::Crm::PublicDateTimePropertyOperation,
-                HubspotSDK::Crm::PublicRangedDatePropertyOperation,
-                HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation,
-                HubspotSDK::Crm::PublicComparativeDatePropertyOperation,
-                HubspotSDK::Crm::PublicRollingDateRangePropertyOperation,
-                HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation,
-                HubspotSDK::Crm::PublicEnumerationPropertyOperation,
-                HubspotSDK::Crm::PublicAllPropertyTypesOperation,
-                HubspotSDK::Crm::PublicRangedNumberPropertyOperation,
-                HubspotSDK::Crm::PublicMultiStringPropertyOperation,
-                HubspotSDK::Crm::PublicDatePropertyOperation,
-                HubspotSDK::Crm::PublicCalendarDatePropertyOperation,
-                HubspotSDK::Crm::PublicTimePointOperation,
-                HubspotSDK::Crm::PublicRangedTimeOperation
+                HubSpotSDK::Crm::PublicBoolPropertyOperation,
+                HubSpotSDK::Crm::PublicNumberPropertyOperation,
+                HubSpotSDK::Crm::PublicStringPropertyOperation,
+                HubSpotSDK::Crm::PublicDateTimePropertyOperation,
+                HubSpotSDK::Crm::PublicRangedDatePropertyOperation,
+                HubSpotSDK::Crm::PublicComparativePropertyUpdatedOperation,
+                HubSpotSDK::Crm::PublicComparativeDatePropertyOperation,
+                HubSpotSDK::Crm::PublicRollingDateRangePropertyOperation,
+                HubSpotSDK::Crm::PublicRollingPropertyUpdatedOperation,
+                HubSpotSDK::Crm::PublicEnumerationPropertyOperation,
+                HubSpotSDK::Crm::PublicAllPropertyTypesOperation,
+                HubSpotSDK::Crm::PublicRangedNumberPropertyOperation,
+                HubSpotSDK::Crm::PublicMultiStringPropertyOperation,
+                HubSpotSDK::Crm::PublicDatePropertyOperation,
+                HubSpotSDK::Crm::PublicCalendarDatePropertyOperation,
+                HubSpotSDK::Crm::PublicTimePointOperation,
+                HubSpotSDK::Crm::PublicRangedTimeOperation
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicSurveyMonkeyValueFilter::ValueComparison::Variants
+                HubSpotSDK::Crm::PublicSurveyMonkeyValueFilter::ValueComparison::Variants
               ]
             )
           end

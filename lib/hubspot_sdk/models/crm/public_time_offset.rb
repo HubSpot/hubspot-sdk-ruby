@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicTimeOffset < HubspotSDK::Internal::Type::BaseModel
+      class PublicTimeOffset < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute amount
         #   The numerical value representing the quantity of the time offset.
         #

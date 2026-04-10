@@ -1,11 +1,11 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class ErrorDetail < HubspotSDK::Internal::Type::BaseModel
+    class ErrorDetail < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
-          T.any(HubspotSDK::ErrorDetail, HubspotSDK::Internal::AnyHash)
+          T.any(HubSpotSDK::ErrorDetail, HubSpotSDK::Internal::AnyHash)
         end
 
       # A human readable message describing the error along with remediation steps where

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class IndexOffset < HubspotSDK::Internal::Type::BaseModel
+      class IndexOffset < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute days
         #
         #   @return [Integer, nil]

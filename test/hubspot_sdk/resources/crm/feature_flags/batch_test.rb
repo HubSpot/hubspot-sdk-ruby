@@ -2,19 +2,19 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::FeatureFlags::BatchTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::FeatureFlags::BatchTest < HubSpotSDK::Test::ResourceTest
   def test_delete_required_params
     skip("Mock server tests are disabled")
 
     response = @hubspot.crm.feature_flags.batch.delete("flagName", app_id: 0, portal_ids: [0])
 
     assert_pattern do
-      response => HubspotSDK::Crm::PortalFlagStateBatchResponse
+      response => HubSpotSDK::Crm::PortalFlagStateBatchResponse
     end
 
     assert_pattern do
       response => {
-        portal_flag_states: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PortalFlagStateResponse])
+        portal_flag_states: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PortalFlagStateResponse])
       }
     end
   end
@@ -30,12 +30,12 @@ class HubspotSDK::Test::Resources::Crm::FeatureFlags::BatchTest < HubspotSDK::Te
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::PortalFlagStateBatchResponse
+      response => HubSpotSDK::Crm::PortalFlagStateBatchResponse
     end
 
     assert_pattern do
       response => {
-        portal_flag_states: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PortalFlagStateResponse])
+        portal_flag_states: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PortalFlagStateResponse])
       }
     end
   end

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalBrandingMetadata < HubspotSDK::Internal::Type::BaseModel
+      class ExternalBrandingMetadata < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Scheduler::ExternalBrandingMetadata,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Scheduler::ExternalBrandingMetadata,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Auth
-      class PublicRefreshTokenInfoResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicRefreshTokenInfoResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute token
         #
         #   @return [String]
@@ -12,7 +12,7 @@ module HubspotSDK
         # @!attribute active
         #
         #   @return [Boolean]
-        required :active, HubspotSDK::Internal::Type::Boolean
+        required :active, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute app_id
         #
@@ -32,7 +32,7 @@ module HubspotSDK
         # @!attribute scopes
         #
         #   @return [Array<String>]
-        required :scopes, HubspotSDK::Internal::Type::ArrayOf[String]
+        required :scopes, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute token_type
         #
@@ -41,8 +41,8 @@ module HubspotSDK
 
         # @!attribute token_use
         #
-        #   @return [Symbol, HubspotSDK::Models::Auth::PublicRefreshTokenInfoResponse::TokenUse]
-        required :token_use, enum: -> { HubspotSDK::Auth::PublicRefreshTokenInfoResponse::TokenUse }
+        #   @return [Symbol, HubSpotSDK::Models::Auth::PublicRefreshTokenInfoResponse::TokenUse]
+        required :token_use, enum: -> { HubSpotSDK::Auth::PublicRefreshTokenInfoResponse::TokenUse }
 
         # @!attribute user_id
         #
@@ -67,14 +67,14 @@ module HubspotSDK
         #   @param hub_id [Integer]
         #   @param scopes [Array<String>]
         #   @param token_type [String]
-        #   @param token_use [Symbol, HubspotSDK::Models::Auth::PublicRefreshTokenInfoResponse::TokenUse]
+        #   @param token_use [Symbol, HubSpotSDK::Models::Auth::PublicRefreshTokenInfoResponse::TokenUse]
         #   @param user_id [Integer]
         #   @param hub_domain [String]
         #   @param user [String]
 
-        # @see HubspotSDK::Models::Auth::PublicRefreshTokenInfoResponse#token_use
+        # @see HubSpotSDK::Models::Auth::PublicRefreshTokenInfoResponse#token_use
         module TokenUse
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           REFRESH_TOKEN = :refresh_token
 

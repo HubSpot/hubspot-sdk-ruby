@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Imports#list_errors
-      class PublicImportError < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::Imports#list_errors
+      class PublicImportError < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   A unique, stable identifier for this specific error.
         #
@@ -20,13 +20,13 @@ module HubspotSDK
         # @!attribute error_type
         #   The classification of what went wrong during import processing.
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicImportError::ErrorType]
-        required :error_type, enum: -> { HubspotSDK::Crm::PublicImportError::ErrorType }, api_name: :errorType
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicImportError::ErrorType]
+        required :error_type, enum: -> { HubSpotSDK::Crm::PublicImportError::ErrorType }, api_name: :errorType
 
         # @!attribute source_data
         #
-        #   @return [HubspotSDK::Models::Crm::ImportRowCore]
-        required :source_data, -> { HubspotSDK::Crm::ImportRowCore }, api_name: :sourceData
+        #   @return [HubSpotSDK::Models::Crm::ImportRowCore]
+        required :source_data, -> { HubSpotSDK::Crm::ImportRowCore }, api_name: :sourceData
 
         # @!attribute error_message
         #   A human-readable error message.
@@ -45,8 +45,8 @@ module HubspotSDK
         #   value, metadata (like source, timestamp, and sensitivity), and related audit
         #   information for tracking changes.
         #
-        #   @return [HubspotSDK::Models::PropertyValue, nil]
-        optional :invalid_property_value, -> { HubspotSDK::PropertyValue }, api_name: :invalidPropertyValue
+        #   @return [HubSpotSDK::Models::PropertyValue, nil]
+        optional :invalid_property_value, -> { HubSpotSDK::PropertyValue }, api_name: :invalidPropertyValue
 
         # @!attribute invalid_value
         #   The raw string value from the import file that caused the validation failure.
@@ -70,10 +70,10 @@ module HubspotSDK
         # @!attribute object_type
         #   The CRM object type affected by this error.
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicImportError::ObjectType, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicImportError::ObjectType, nil]
         optional :object_type,
                  enum: -> {
-                   HubspotSDK::Crm::PublicImportError::ObjectType
+                   HubSpotSDK::Crm::PublicImportError::ObjectType
                  },
                  api_name: :objectType
 
@@ -85,21 +85,21 @@ module HubspotSDK
 
         # @!method initialize(id:, created_at:, error_type:, source_data:, error_message: nil, extra_context: nil, invalid_property_value: nil, invalid_value: nil, invalid_value_to_display: nil, known_column_number: nil, object_type: nil, object_type_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicImportError} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicImportError} for more details.
         #
         #   @param id [String] A unique, stable identifier for this specific error.
         #
         #   @param created_at [Integer] The epoch millisecond timestamp when this error was recorded.
         #
-        #   @param error_type [Symbol, HubspotSDK::Models::Crm::PublicImportError::ErrorType] The classification of what went wrong during import processing.
+        #   @param error_type [Symbol, HubSpotSDK::Models::Crm::PublicImportError::ErrorType] The classification of what went wrong during import processing.
         #
-        #   @param source_data [HubspotSDK::Models::Crm::ImportRowCore]
+        #   @param source_data [HubSpotSDK::Models::Crm::ImportRowCore]
         #
         #   @param error_message [String] A human-readable error message.
         #
         #   @param extra_context [String] Additional human-readable context about the error.
         #
-        #   @param invalid_property_value [HubspotSDK::Models::PropertyValue] Represents a single custom property of a marketing event, storing its name, valu
+        #   @param invalid_property_value [HubSpotSDK::Models::PropertyValue] Represents a single custom property of a marketing event, storing its name, valu
         #
         #   @param invalid_value [String] The raw string value from the import file that caused the validation failure.
         #
@@ -107,15 +107,15 @@ module HubspotSDK
         #
         #   @param known_column_number [Integer] The zero-based column index in the import file where the error occurred
         #
-        #   @param object_type [Symbol, HubspotSDK::Models::Crm::PublicImportError::ObjectType] The CRM object type affected by this error.
+        #   @param object_type [Symbol, HubSpotSDK::Models::Crm::PublicImportError::ObjectType] The CRM object type affected by this error.
         #
         #   @param object_type_id [String] The modern object type identifier for the CRM object affected by this error.
 
         # The classification of what went wrong during import processing.
         #
-        # @see HubspotSDK::Models::Crm::PublicImportError#error_type
+        # @see HubSpotSDK::Models::Crm::PublicImportError#error_type
         module ErrorType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AMBIGUOUS_ENUMERATION_OPTION = :AMBIGUOUS_ENUMERATION_OPTION
           ASSOCIATION_LABEL_NOT_FOUND = :ASSOCIATION_LABEL_NOT_FOUND
@@ -192,9 +192,9 @@ module HubspotSDK
 
         # The CRM object type affected by this error.
         #
-        # @see HubspotSDK::Models::Crm::PublicImportError#object_type
+        # @see HubSpotSDK::Models::Crm::PublicImportError#object_type
         module ObjectType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABANDONED_CART = :ABANDONED_CART
           ACCEPTANCE_TEST = :ACCEPTANCE_TEST

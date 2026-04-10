@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ObjectTypePropertyCreate < HubspotSDK::Internal::Type::BaseModel
+      class ObjectTypePropertyCreate < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::ObjectTypePropertyCreate,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::ObjectTypePropertyCreate,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -27,7 +27,7 @@ module HubspotSDK
 
         # The data type of the property.
         sig do
-          returns(HubspotSDK::Crm::ObjectTypePropertyCreate::Type::OrSymbol)
+          returns(HubSpotSDK::Crm::ObjectTypePropertyCreate::Type::OrSymbol)
         end
         attr_accessor :type
 
@@ -88,7 +88,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::OrSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::OrSymbol
             )
           )
         end
@@ -97,24 +97,24 @@ module HubspotSDK
         sig do
           params(
             number_display_hint:
-              HubspotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::OrSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::OrSymbol
           ).void
         end
         attr_writer :number_display_hint
 
         # A list of available options for the property. This field is only required for
         # enumerated properties.
-        sig { returns(T.nilable(T::Array[HubspotSDK::OptionInput])) }
+        sig { returns(T.nilable(T::Array[HubSpotSDK::OptionInput])) }
         attr_reader :options
 
-        sig { params(options: T::Array[HubspotSDK::OptionInput::OrHash]).void }
+        sig { params(options: T::Array[HubSpotSDK::OptionInput::OrHash]).void }
         attr_writer :options
 
         # Controls how the property options will be sorted in the HubSpot UI.
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Crm::ObjectTypePropertyCreate::OptionSortStrategy::OrSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::OptionSortStrategy::OrSymbol
             )
           )
         end
@@ -123,7 +123,7 @@ module HubspotSDK
         sig do
           params(
             option_sort_strategy:
-              HubspotSDK::Crm::ObjectTypePropertyCreate::OptionSortStrategy::OrSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::OptionSortStrategy::OrSymbol
           ).void
         end
         attr_writer :option_sort_strategy
@@ -155,7 +155,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::OrSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::OrSymbol
             )
           )
         end
@@ -164,7 +164,7 @@ module HubspotSDK
         sig do
           params(
             text_display_hint:
-              HubspotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::OrSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::OrSymbol
           ).void
         end
         attr_writer :text_display_hint
@@ -174,7 +174,7 @@ module HubspotSDK
             field_type: String,
             label: String,
             name: String,
-            type: HubspotSDK::Crm::ObjectTypePropertyCreate::Type::OrSymbol,
+            type: HubSpotSDK::Crm::ObjectTypePropertyCreate::Type::OrSymbol,
             description: String,
             display_order: Integer,
             external_options_reference_type: String,
@@ -183,15 +183,15 @@ module HubspotSDK
             has_unique_value: T::Boolean,
             hidden: T::Boolean,
             number_display_hint:
-              HubspotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::OrSymbol,
-            options: T::Array[HubspotSDK::OptionInput::OrHash],
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::OrSymbol,
+            options: T::Array[HubSpotSDK::OptionInput::OrHash],
             option_sort_strategy:
-              HubspotSDK::Crm::ObjectTypePropertyCreate::OptionSortStrategy::OrSymbol,
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::OptionSortStrategy::OrSymbol,
             referenced_object_type: String,
             searchable_in_global_search: T::Boolean,
             show_currency_symbol: T::Boolean,
             text_display_hint:
-              HubspotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::OrSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -248,7 +248,7 @@ module HubspotSDK
               field_type: String,
               label: String,
               name: String,
-              type: HubspotSDK::Crm::ObjectTypePropertyCreate::Type::OrSymbol,
+              type: HubSpotSDK::Crm::ObjectTypePropertyCreate::Type::OrSymbol,
               description: String,
               display_order: Integer,
               external_options_reference_type: String,
@@ -257,15 +257,15 @@ module HubspotSDK
               has_unique_value: T::Boolean,
               hidden: T::Boolean,
               number_display_hint:
-                HubspotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::OrSymbol,
-              options: T::Array[HubspotSDK::OptionInput],
+                HubSpotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::OrSymbol,
+              options: T::Array[HubSpotSDK::OptionInput],
               option_sort_strategy:
-                HubspotSDK::Crm::ObjectTypePropertyCreate::OptionSortStrategy::OrSymbol,
+                HubSpotSDK::Crm::ObjectTypePropertyCreate::OptionSortStrategy::OrSymbol,
               referenced_object_type: String,
               searchable_in_global_search: T::Boolean,
               show_currency_symbol: T::Boolean,
               text_display_hint:
-                HubspotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::OrSymbol
+                HubSpotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::OrSymbol
             }
           )
         end
@@ -274,54 +274,54 @@ module HubspotSDK
 
         # The data type of the property.
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::ObjectTypePropertyCreate::Type)
+              T.all(Symbol, HubSpotSDK::Crm::ObjectTypePropertyCreate::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           BOOL =
             T.let(
               :bool,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::Type::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::Type::TaggedSymbol
             )
           DATE =
             T.let(
               :date,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::Type::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::Type::TaggedSymbol
             )
           DATETIME =
             T.let(
               :datetime,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::Type::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::Type::TaggedSymbol
             )
           ENUMERATION =
             T.let(
               :enumeration,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::Type::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::Type::TaggedSymbol
             )
           NUMBER =
             T.let(
               :number,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::Type::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::Type::TaggedSymbol
             )
           PHONE_NUMBER =
             T.let(
               :phone_number,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::Type::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::Type::TaggedSymbol
             )
           STRING =
             T.let(
               :string,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::Type::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::ObjectTypePropertyCreate::Type::TaggedSymbol
+                HubSpotSDK::Crm::ObjectTypePropertyCreate::Type::TaggedSymbol
               ]
             )
           end
@@ -331,13 +331,13 @@ module HubspotSDK
 
         # Controls how numeric properties are formatted in the HubSpot UI
         module NumberDisplayHint
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint
+                HubSpotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -345,38 +345,38 @@ module HubspotSDK
           CURRENCY =
             T.let(
               :currency,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
             )
           DURATION =
             T.let(
               :duration,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
             )
           FORMATTED =
             T.let(
               :formatted,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
             )
           PERCENTAGE =
             T.let(
               :percentage,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
             )
           PROBABILITY =
             T.let(
               :probability,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
             )
           UNFORMATTED =
             T.let(
               :unformatted,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
+                HubSpotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint::TaggedSymbol
               ]
             )
           end
@@ -386,13 +386,13 @@ module HubspotSDK
 
         # Controls how the property options will be sorted in the HubSpot UI.
         module OptionSortStrategy
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::ObjectTypePropertyCreate::OptionSortStrategy
+                HubSpotSDK::Crm::ObjectTypePropertyCreate::OptionSortStrategy
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -400,18 +400,18 @@ module HubspotSDK
           ALPHABETICAL =
             T.let(
               :ALPHABETICAL,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::OptionSortStrategy::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::OptionSortStrategy::TaggedSymbol
             )
           DISPLAY_ORDER =
             T.let(
               :DISPLAY_ORDER,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::OptionSortStrategy::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::OptionSortStrategy::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::ObjectTypePropertyCreate::OptionSortStrategy::TaggedSymbol
+                HubSpotSDK::Crm::ObjectTypePropertyCreate::OptionSortStrategy::TaggedSymbol
               ]
             )
           end
@@ -421,13 +421,13 @@ module HubspotSDK
 
         # Controls how text properties are formatted in the HubSpot UI
         module TextDisplayHint
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint
+                HubSpotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -435,48 +435,48 @@ module HubspotSDK
           DOMAIN_NAME =
             T.let(
               :domain_name,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
             )
           EMAIL =
             T.let(
               :email,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
             )
           IP_ADDRESS =
             T.let(
               :ip_address,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
             )
           MULTI_LINE =
             T.let(
               :multi_line,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
             )
           PHONE_NUMBER =
             T.let(
               :phone_number,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
             )
           PHYSICAL_ADDRESS =
             T.let(
               :physical_address,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
             )
           POSTAL_CODE =
             T.let(
               :postal_code,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
             )
           UNFORMATTED_SINGLE_LINE =
             T.let(
               :unformatted_single_line,
-              HubspotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
+              HubSpotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
+                HubSpotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint::TaggedSymbol
               ]
             )
           end

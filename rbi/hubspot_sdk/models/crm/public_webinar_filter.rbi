@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicWebinarFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicWebinarFilter < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicWebinarFilter,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicWebinarFilter,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Indicates the type of filter, (WEBINAR).
         sig do
-          returns(HubspotSDK::Crm::PublicWebinarFilter::FilterType::OrSymbol)
+          returns(HubSpotSDK::Crm::PublicWebinarFilter::FilterType::OrSymbol)
         end
         attr_accessor :filter_type
 
@@ -34,7 +34,7 @@ module HubspotSDK
         sig do
           params(
             filter_type:
-              HubspotSDK::Crm::PublicWebinarFilter::FilterType::OrSymbol,
+              HubSpotSDK::Crm::PublicWebinarFilter::FilterType::OrSymbol,
             operator: String,
             webinar_id: String
           ).returns(T.attached_class)
@@ -55,7 +55,7 @@ module HubspotSDK
           override.returns(
             {
               filter_type:
-                HubspotSDK::Crm::PublicWebinarFilter::FilterType::OrSymbol,
+                HubSpotSDK::Crm::PublicWebinarFilter::FilterType::OrSymbol,
               operator: String,
               webinar_id: String
             }
@@ -66,24 +66,24 @@ module HubspotSDK
 
         # Indicates the type of filter, (WEBINAR).
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PublicWebinarFilter::FilterType)
+              T.all(Symbol, HubSpotSDK::Crm::PublicWebinarFilter::FilterType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           WEBINAR =
             T.let(
               :WEBINAR,
-              HubspotSDK::Crm::PublicWebinarFilter::FilterType::TaggedSymbol
+              HubSpotSDK::Crm::PublicWebinarFilter::FilterType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicWebinarFilter::FilterType::TaggedSymbol
+                HubSpotSDK::Crm::PublicWebinarFilter::FilterType::TaggedSymbol
               ]
             )
           end

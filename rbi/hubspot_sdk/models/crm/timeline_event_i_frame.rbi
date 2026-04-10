@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class TimelineEventIFrame < HubspotSDK::Internal::Type::BaseModel
+      class TimelineEventIFrame < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::TimelineEventIFrame,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::TimelineEventIFrame,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      # @see HubspotSDK::Resources::Settings::Users#list
-      class UserListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Settings::Users#list
+      class UserListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute after
         #   The paging cursor token of the last successfully read resource will be returned
@@ -24,13 +24,13 @@ module HubspotSDK
 
         # @!method initialize(after: nil, limit: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Settings::UserListParams} for more details.
+        #   {HubSpotSDK::Models::Settings::UserListParams} for more details.
         #
         #   @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
         #   @param limit [Integer] The maximum number of results to display per page.
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

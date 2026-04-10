@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class Campaigns
@@ -7,7 +7,7 @@ module HubspotSDK
             String asset_id,
             campaign_guid: String,
             asset_type: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def list: (
@@ -17,17 +17,17 @@ module HubspotSDK
             ?end_date: String,
             ?limit: String,
             ?start_date: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::CollectionResponsePublicCampaignAssetForwardPaging
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Marketing::CollectionResponsePublicCampaignAssetForwardPaging
 
           def delete: (
             String asset_id,
             campaign_guid: String,
             asset_type: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

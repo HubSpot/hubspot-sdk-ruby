@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type index_offset =
@@ -14,7 +14,7 @@ module HubspotSDK
           years: Integer
         }
 
-      class IndexOffset < HubspotSDK::Internal::Type::BaseModel
+      class IndexOffset < HubSpotSDK::Internal::Type::BaseModel
         attr_reader days: Integer?
 
         def days=: (Integer) -> Integer

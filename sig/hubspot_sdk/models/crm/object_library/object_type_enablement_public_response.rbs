@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module ObjectLibrary
         type object_type_enablement_public_response = { enablement: bool }
 
-        class ObjectTypeEnablementPublicResponse < HubspotSDK::Internal::Type::BaseModel
+        class ObjectTypeEnablementPublicResponse < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor enablement: bool
 
           def initialize: (enablement: bool) -> void

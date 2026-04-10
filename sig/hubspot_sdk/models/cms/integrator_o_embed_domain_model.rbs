@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type integrator_o_embed_domain_model =
@@ -7,12 +7,12 @@ module HubspotSDK
           app_id: Integer,
           created_at: Integer,
           deleted_at: Integer,
-          endpoints: HubspotSDK::Cms::Endpoints,
+          endpoints: HubSpotSDK::Cms::Endpoints,
           portal_id: Integer,
           updated_at: Integer
         }
 
-      class IntegratorOEmbedDomainModel < HubspotSDK::Internal::Type::BaseModel
+      class IntegratorOEmbedDomainModel < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: Integer
 
         attr_accessor app_id: Integer
@@ -21,7 +21,7 @@ module HubspotSDK
 
         attr_accessor deleted_at: Integer
 
-        attr_accessor endpoints: HubspotSDK::Cms::Endpoints
+        attr_accessor endpoints: HubSpotSDK::Cms::Endpoints
 
         attr_accessor portal_id: Integer
 
@@ -32,7 +32,7 @@ module HubspotSDK
           app_id: Integer,
           created_at: Integer,
           deleted_at: Integer,
-          endpoints: HubspotSDK::Cms::Endpoints,
+          endpoints: HubSpotSDK::Cms::Endpoints,
           portal_id: Integer,
           updated_at: Integer
         ) -> void
@@ -42,7 +42,7 @@ module HubspotSDK
           app_id: Integer,
           created_at: Integer,
           deleted_at: Integer,
-          endpoints: HubspotSDK::Cms::Endpoints,
+          endpoints: HubSpotSDK::Cms::Endpoints,
           portal_id: Integer,
           updated_at: Integer
         }

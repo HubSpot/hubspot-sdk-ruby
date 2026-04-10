@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type content_clone_request_v_next = { id: String, clone_name: String }
 
-      class ContentCloneRequestVNext < HubspotSDK::Internal::Type::BaseModel
+      class ContentCloneRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_reader clone_name: String?

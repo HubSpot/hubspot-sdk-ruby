@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type record_id_input = { object_type_id: String, record_id: String }
 
-      class RecordIDInput < HubspotSDK::Internal::Type::BaseModel
+      class RecordIDInput < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor object_type_id: String
 
         attr_accessor record_id: String

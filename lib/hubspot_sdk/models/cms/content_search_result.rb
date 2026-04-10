@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ContentSearchResult < HubspotSDK::Internal::Type::BaseModel
+      class ContentSearchResult < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The ID of the content.
         #
@@ -26,8 +26,8 @@ module HubspotSDK
         #   The type of document. Can be `SITE_PAGE`, `LANDING_PAGE`, `BLOG_POST`,
         #   `LISTING_PAGE`, or `KNOWLEDGE_ARTICLE`.
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::ContentSearchResult::Type]
-        required :type, enum: -> { HubspotSDK::Cms::ContentSearchResult::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::ContentSearchResult::Type]
+        required :type, enum: -> { HubSpotSDK::Cms::ContentSearchResult::Type }
 
         # @!attribute url
         #   The url of the document.
@@ -74,18 +74,18 @@ module HubspotSDK
         # @!attribute in_beta
         #
         #   @return [Boolean, nil]
-        optional :in_beta, HubspotSDK::Internal::Type::Boolean, api_name: :inBeta
+        optional :in_beta, HubSpotSDK::Internal::Type::Boolean, api_name: :inBeta
 
         # @!attribute is_private
         #
         #   @return [Boolean, nil]
-        optional :is_private, HubspotSDK::Internal::Type::Boolean, api_name: :isPrivate
+        optional :is_private, HubSpotSDK::Internal::Type::Boolean, api_name: :isPrivate
 
         # @!attribute language
         #   The document's language.
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::ContentSearchResult::Language, nil]
-        optional :language, enum: -> { HubspotSDK::Cms::ContentSearchResult::Language }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::ContentSearchResult::Language, nil]
+        optional :language, enum: -> { HubSpotSDK::Cms::ContentSearchResult::Language }
 
         # @!attribute published_date
         #   The date the content was published.
@@ -115,7 +115,7 @@ module HubspotSDK
         #   If a blog post, the tags associated with it.
         #
         #   @return [Array<String>, nil]
-        optional :tags, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :tags, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute title
         #   The title of the returned document.
@@ -125,7 +125,7 @@ module HubspotSDK
 
         # @!method initialize(id:, domain:, score:, type:, url:, author_full_name: nil, category: nil, combined_id: nil, content_type: nil, description: nil, featured_image_url: nil, in_beta: nil, is_private: nil, language: nil, published_date: nil, row_id: nil, subcategory: nil, table_id: nil, tags: nil, title: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Cms::ContentSearchResult} for more details.
+        #   {HubSpotSDK::Models::Cms::ContentSearchResult} for more details.
         #
         #   @param id [Integer] The ID of the content.
         #
@@ -133,7 +133,7 @@ module HubspotSDK
         #
         #   @param score [Float] The matching score of the document.
         #
-        #   @param type [Symbol, HubspotSDK::Models::Cms::ContentSearchResult::Type] The type of document. Can be `SITE_PAGE`, `LANDING_PAGE`, `BLOG_POST`,
+        #   @param type [Symbol, HubSpotSDK::Models::Cms::ContentSearchResult::Type] The type of document. Can be `SITE_PAGE`, `LANDING_PAGE`, `BLOG_POST`,
         #   `LISTING\_
         #
         #   @param url [String] The url of the document.
@@ -154,7 +154,7 @@ module HubspotSDK
         #
         #   @param is_private [Boolean]
         #
-        #   @param language [Symbol, HubspotSDK::Models::Cms::ContentSearchResult::Language] The document's language.
+        #   @param language [Symbol, HubSpotSDK::Models::Cms::ContentSearchResult::Language] The document's language.
         #
         #   @param published_date [Integer] The date the content was published.
         #
@@ -171,9 +171,9 @@ module HubspotSDK
         # The type of document. Can be `SITE_PAGE`, `LANDING_PAGE`, `BLOG_POST`,
         # `LISTING_PAGE`, or `KNOWLEDGE_ARTICLE`.
         #
-        # @see HubspotSDK::Models::Cms::ContentSearchResult#type
+        # @see HubSpotSDK::Models::Cms::ContentSearchResult#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BLOG_POST = :BLOG_POST
           KNOWLEDGE_ARTICLE = :KNOWLEDGE_ARTICLE
@@ -188,9 +188,9 @@ module HubspotSDK
 
         # The document's language.
         #
-        # @see HubspotSDK::Models::Cms::ContentSearchResult#language
+        # @see HubSpotSDK::Models::Cms::ContentSearchResult#language
         module Language
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AA = :aa
           AB = :ab

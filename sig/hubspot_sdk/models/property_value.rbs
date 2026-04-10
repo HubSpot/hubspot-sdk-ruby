@@ -1,8 +1,8 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type property_value =
       {
-        data_sensitivity: HubspotSDK::Models::PropertyValue::data_sensitivity,
+        data_sensitivity: HubSpotSDK::Models::PropertyValue::data_sensitivity,
         is_encrypted: bool,
         is_large_value: bool,
         name: String,
@@ -10,7 +10,7 @@ module HubspotSDK
         request_id: String,
         selected_by_user: bool,
         selected_by_user_timestamp: Integer,
-        source: HubspotSDK::Models::PropertyValue::source,
+        source: HubSpotSDK::Models::PropertyValue::source,
         source_id: String,
         source_label: String,
         source_metadata: String,
@@ -23,8 +23,8 @@ module HubspotSDK
         value: String
       }
 
-    class PropertyValue < HubspotSDK::Internal::Type::BaseModel
-      attr_accessor data_sensitivity: HubspotSDK::Models::PropertyValue::data_sensitivity
+    class PropertyValue < HubSpotSDK::Internal::Type::BaseModel
+      attr_accessor data_sensitivity: HubSpotSDK::Models::PropertyValue::data_sensitivity
 
       attr_accessor is_encrypted: bool
 
@@ -40,7 +40,7 @@ module HubspotSDK
 
       attr_accessor selected_by_user_timestamp: Integer
 
-      attr_accessor source: HubspotSDK::Models::PropertyValue::source
+      attr_accessor source: HubSpotSDK::Models::PropertyValue::source
 
       attr_accessor source_id: String
 
@@ -63,7 +63,7 @@ module HubspotSDK
       attr_accessor value: String
 
       def initialize: (
-        data_sensitivity: HubspotSDK::Models::PropertyValue::data_sensitivity,
+        data_sensitivity: HubSpotSDK::Models::PropertyValue::data_sensitivity,
         is_encrypted: bool,
         is_large_value: bool,
         name: String,
@@ -71,7 +71,7 @@ module HubspotSDK
         request_id: String,
         selected_by_user: bool,
         selected_by_user_timestamp: Integer,
-        source: HubspotSDK::Models::PropertyValue::source,
+        source: HubSpotSDK::Models::PropertyValue::source,
         source_id: String,
         source_label: String,
         source_metadata: String,
@@ -85,7 +85,7 @@ module HubspotSDK
       ) -> void
 
       def to_hash: -> {
-        data_sensitivity: HubspotSDK::Models::PropertyValue::data_sensitivity,
+        data_sensitivity: HubSpotSDK::Models::PropertyValue::data_sensitivity,
         is_encrypted: bool,
         is_large_value: bool,
         name: String,
@@ -93,7 +93,7 @@ module HubspotSDK
         request_id: String,
         selected_by_user: bool,
         selected_by_user_timestamp: Integer,
-        source: HubspotSDK::Models::PropertyValue::source,
+        source: HubSpotSDK::Models::PropertyValue::source,
         source_id: String,
         source_label: String,
         source_metadata: String,
@@ -109,13 +109,13 @@ module HubspotSDK
       type data_sensitivity = :high | :none | :standard
 
       module DataSensitivity
-        extend HubspotSDK::Internal::Type::Enum
+        extend HubSpotSDK::Internal::Type::Enum
 
         HIGH: :high
         NONE: :none
         STANDARD: :standard
 
-        def self?.values: -> ::Array[HubspotSDK::Models::PropertyValue::data_sensitivity]
+        def self?.values: -> ::Array[HubSpotSDK::Models::PropertyValue::data_sensitivity]
       end
 
       type source =
@@ -234,7 +234,7 @@ module HubspotSDK
         | :WORKFLOWS
 
       module Source
-        extend HubspotSDK::Internal::Type::Enum
+        extend HubSpotSDK::Internal::Type::Enum
 
         ACADEMY: :ACADEMY
         ACCEPTANCE_TEST: :ACCEPTANCE_TEST
@@ -350,7 +350,7 @@ module HubspotSDK
         WORKFLOW_CONTACT_DELETE_ACTION: :WORKFLOW_CONTACT_DELETE_ACTION
         WORKFLOWS: :WORKFLOWS
 
-        def self?.values: -> ::Array[HubspotSDK::Models::PropertyValue::source]
+        def self?.values: -> ::Array[HubSpotSDK::Models::PropertyValue::source]
       end
     end
   end

@@ -1,11 +1,11 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Transport
       # @api private
       class PooledNetRequester
-        extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        extend HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         Request =
           T.type_alias do
@@ -43,7 +43,7 @@ module HubspotSDK
           sig do
             params(
               request:
-                HubspotSDK::Internal::Transport::PooledNetRequester::Request,
+                HubSpotSDK::Internal::Transport::PooledNetRequester::Request,
               blk: T.proc.params(arg0: String).void
             ).returns([Net::HTTPGenericRequest, T.proc.void])
           end
@@ -66,7 +66,7 @@ module HubspotSDK
         sig do
           params(
             request:
-              HubspotSDK::Internal::Transport::PooledNetRequester::Request
+              HubSpotSDK::Internal::Transport::PooledNetRequester::Request
           ).returns([Integer, Net::HTTPResponse, T::Enumerable[String]])
         end
         def execute(request)
@@ -75,7 +75,7 @@ module HubspotSDK
         # @api private
         sig { params(size: Integer).returns(T.attached_class) }
         def self.new(
-          size: HubspotSDK::Internal::Transport::PooledNetRequester::DEFAULT_MAX_CONNECTIONS
+          size: HubSpotSDK::Internal::Transport::PooledNetRequester::DEFAULT_MAX_CONNECTIONS
         )
         end
       end

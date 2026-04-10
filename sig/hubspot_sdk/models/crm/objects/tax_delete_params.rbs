@@ -1,24 +1,24 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Objects
         type tax_delete_params =
-          { tax_id: String } & HubspotSDK::Internal::Type::request_parameters
+          { tax_id: String } & HubSpotSDK::Internal::Type::request_parameters
 
-        class TaxDeleteParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class TaxDeleteParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           attr_accessor tax_id: String
 
           def initialize: (
             tax_id: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
             tax_id: String,
-            request_options: HubspotSDK::RequestOptions
+            request_options: HubSpotSDK::RequestOptions
           }
         end
       end

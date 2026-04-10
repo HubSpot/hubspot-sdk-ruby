@@ -1,13 +1,13 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         type cards_dev_migrate_views_params =
-          { app_id: Integer } & HubspotSDK::Internal::Type::request_parameters
+          { app_id: Integer } & HubSpotSDK::Internal::Type::request_parameters
 
-        class CardsDevMigrateViewsParams < HubspotSDK::Models::Crm::Extensions::CardMigrateViewsRequest
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class CardsDevMigrateViewsParams < HubSpotSDK::Models::Crm::Extensions::CardMigrateViewsRequest
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           def app_id: -> Integer
 
@@ -15,12 +15,12 @@ module HubspotSDK
 
           def initialize: (
             app_id: Integer,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
             app_id: Integer,
-            request_options: HubspotSDK::RequestOptions
+            request_options: HubSpotSDK::RequestOptions
           }
         end
       end

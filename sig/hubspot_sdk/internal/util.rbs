@@ -1,7 +1,7 @@
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Util
-      extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+      extend HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
       def self?.monotonic_secs: -> Float
 
@@ -70,15 +70,15 @@ module HubspotSDK
 
       def self?.parse_uri: (
         URI::Generic | String url
-      ) -> HubspotSDK::Internal::Util::parsed_uri
+      ) -> HubSpotSDK::Internal::Util::parsed_uri
 
       def self?.unparse_uri: (
-        HubspotSDK::Internal::Util::parsed_uri parsed
+        HubSpotSDK::Internal::Util::parsed_uri parsed
       ) -> URI::Generic
 
       def self?.join_parsed_uri: (
-        HubspotSDK::Internal::Util::parsed_uri lhs,
-        HubspotSDK::Internal::Util::parsed_uri rhs
+        HubSpotSDK::Internal::Util::parsed_uri lhs,
+        HubSpotSDK::Internal::Util::parsed_uri rhs
       ) -> URI::Generic
 
       def self?.normalized_headers: (
@@ -174,7 +174,7 @@ module HubspotSDK
 
       def self?.decode_sse: (
         Enumerable[String] lines
-      ) -> Enumerable[HubspotSDK::Internal::Util::server_sent_event]
+      ) -> Enumerable[HubSpotSDK::Internal::Util::server_sent_event]
 
       module SorbetRuntimeSupport
         class MissingSorbetRuntimeError < ::RuntimeError
@@ -191,7 +191,7 @@ module HubspotSDK
         def to_sorbet_type: -> top
 
         def self.to_sorbet_type: (
-          HubspotSDK::Internal::Util::SorbetRuntimeSupport | top `type`
+          HubSpotSDK::Internal::Util::SorbetRuntimeSupport | top `type`
         ) -> top
       end
     end

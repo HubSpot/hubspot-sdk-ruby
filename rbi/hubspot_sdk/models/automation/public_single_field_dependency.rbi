@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicSingleFieldDependency < HubspotSDK::Internal::Type::BaseModel
+      class PublicSingleFieldDependency < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::PublicSingleFieldDependency,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::PublicSingleFieldDependency,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -19,7 +19,7 @@ module HubspotSDK
         # The type of dependency, with the default value being 'SINGLE_FIELD'.
         sig do
           returns(
-            HubspotSDK::Automation::PublicSingleFieldDependency::DependencyType::OrSymbol
+            HubSpotSDK::Automation::PublicSingleFieldDependency::DependencyType::OrSymbol
           )
         end
         attr_accessor :dependency_type
@@ -31,7 +31,7 @@ module HubspotSDK
           params(
             controlling_field_name: String,
             dependency_type:
-              HubspotSDK::Automation::PublicSingleFieldDependency::DependencyType::OrSymbol,
+              HubSpotSDK::Automation::PublicSingleFieldDependency::DependencyType::OrSymbol,
             dependent_field_names: T::Array[String]
           ).returns(T.attached_class)
         end
@@ -49,7 +49,7 @@ module HubspotSDK
             {
               controlling_field_name: String,
               dependency_type:
-                HubspotSDK::Automation::PublicSingleFieldDependency::DependencyType::OrSymbol,
+                HubSpotSDK::Automation::PublicSingleFieldDependency::DependencyType::OrSymbol,
               dependent_field_names: T::Array[String]
             }
           )
@@ -59,13 +59,13 @@ module HubspotSDK
 
         # The type of dependency, with the default value being 'SINGLE_FIELD'.
         module DependencyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Automation::PublicSingleFieldDependency::DependencyType
+                HubSpotSDK::Automation::PublicSingleFieldDependency::DependencyType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -73,13 +73,13 @@ module HubspotSDK
           SINGLE_FIELD =
             T.let(
               :SINGLE_FIELD,
-              HubspotSDK::Automation::PublicSingleFieldDependency::DependencyType::TaggedSymbol
+              HubSpotSDK::Automation::PublicSingleFieldDependency::DependencyType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::PublicSingleFieldDependency::DependencyType::TaggedSymbol
+                HubSpotSDK::Automation::PublicSingleFieldDependency::DependencyType::TaggedSymbol
               ]
             )
           end

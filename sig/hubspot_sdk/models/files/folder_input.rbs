@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
       type folder_input =
         { name: String, parent_folder_id: String, parent_path: String }
 
-      class FolderInput < HubspotSDK::Internal::Type::BaseModel
+      class FolderInput < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor name: String
 
         attr_reader parent_folder_id: String?

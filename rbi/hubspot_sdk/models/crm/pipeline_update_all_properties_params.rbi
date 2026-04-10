@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PipelineUpdateAllPropertiesParams < HubspotSDK::Models::Crm::PipelineReplaceInput
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class PipelineUpdateAllPropertiesParams < HubSpotSDK::Models::Crm::PipelineReplaceInput
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PipelineUpdateAllPropertiesParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PipelineUpdateAllPropertiesParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -41,7 +41,7 @@ module HubspotSDK
             pipeline_id: String,
             validate_deal_stage_usages_before_delete: T::Boolean,
             validate_references_before_delete: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -60,7 +60,7 @@ module HubspotSDK
               pipeline_id: String,
               validate_deal_stage_usages_before_delete: T::Boolean,
               validate_references_before_delete: T::Boolean,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Pages
@@ -14,19 +14,19 @@ module HubspotSDK
           #
           # @param variation_name [String] Name of A/B test variation.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::PageData]
+          # @return [HubSpotSDK::Models::Cms::PageData]
           #
-          # @see HubspotSDK::Models::Cms::Pages::ABTestCreateLandingPageVariationParams
+          # @see HubSpotSDK::Models::Cms::Pages::ABTestCreateLandingPageVariationParams
           def create_landing_page_variation(params)
-            parsed, options = HubspotSDK::Cms::Pages::ABTestCreateLandingPageVariationParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Pages::ABTestCreateLandingPageVariationParams.dump_request(params)
             @client.request(
               method: :post,
               path: "cms/pages/2026-03/landing-pages/ab-test/create-variation",
               headers: {"content-type" => "*/*"},
               body: parsed,
-              model: HubspotSDK::Cms::PageData,
+              model: HubSpotSDK::Cms::PageData,
               options: options
             )
           end
@@ -40,19 +40,19 @@ module HubspotSDK
           #
           # @param variation_name [String] Name of A/B test variation.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::PageData]
+          # @return [HubSpotSDK::Models::Cms::PageData]
           #
-          # @see HubspotSDK::Models::Cms::Pages::ABTestCreateSitePageVariationParams
+          # @see HubSpotSDK::Models::Cms::Pages::ABTestCreateSitePageVariationParams
           def create_site_page_variation(params)
-            parsed, options = HubspotSDK::Cms::Pages::ABTestCreateSitePageVariationParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Pages::ABTestCreateSitePageVariationParams.dump_request(params)
             @client.request(
               method: :post,
               path: "cms/pages/2026-03/site-pages/ab-test/create-variation",
               headers: {"content-type" => "*/*"},
               body: parsed,
-              model: HubspotSDK::Cms::PageData,
+              model: HubSpotSDK::Cms::PageData,
               options: options
             )
           end
@@ -65,13 +65,13 @@ module HubspotSDK
           #
           # @param winner_id [String] ID of the object to designate as the test winner.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Cms::Pages::ABTestEndLandingPageTestParams
+          # @see HubSpotSDK::Models::Cms::Pages::ABTestEndLandingPageTestParams
           def end_landing_page_test(params)
-            parsed, options = HubspotSDK::Cms::Pages::ABTestEndLandingPageTestParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Pages::ABTestEndLandingPageTestParams.dump_request(params)
             @client.request(
               method: :post,
               path: "cms/pages/2026-03/landing-pages/ab-test/end",
@@ -90,13 +90,13 @@ module HubspotSDK
           #
           # @param winner_id [String] ID of the object to designate as the test winner.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Cms::Pages::ABTestEndSitePageTestParams
+          # @see HubSpotSDK::Models::Cms::Pages::ABTestEndSitePageTestParams
           def end_site_page_test(params)
-            parsed, options = HubspotSDK::Cms::Pages::ABTestEndSitePageTestParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Pages::ABTestEndSitePageTestParams.dump_request(params)
             @client.request(
               method: :post,
               path: "cms/pages/2026-03/site-pages/ab-test/end",
@@ -115,13 +115,13 @@ module HubspotSDK
           #
           # @param variation_id [String] ID of the object to reactivate as a test variation.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Cms::Pages::ABTestRerunLandingPageTestParams
+          # @see HubSpotSDK::Models::Cms::Pages::ABTestRerunLandingPageTestParams
           def rerun_landing_page_test(params)
-            parsed, options = HubspotSDK::Cms::Pages::ABTestRerunLandingPageTestParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Pages::ABTestRerunLandingPageTestParams.dump_request(params)
             @client.request(
               method: :post,
               path: "cms/pages/2026-03/landing-pages/ab-test/rerun",
@@ -140,13 +140,13 @@ module HubspotSDK
           #
           # @param variation_id [String] ID of the object to reactivate as a test variation.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Cms::Pages::ABTestRerunSitePageTestParams
+          # @see HubSpotSDK::Models::Cms::Pages::ABTestRerunSitePageTestParams
           def rerun_site_page_test(params)
-            parsed, options = HubspotSDK::Cms::Pages::ABTestRerunSitePageTestParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Pages::ABTestRerunSitePageTestParams.dump_request(params)
             @client.request(
               method: :post,
               path: "cms/pages/2026-03/site-pages/ab-test/rerun",
@@ -159,7 +159,7 @@ module HubspotSDK
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

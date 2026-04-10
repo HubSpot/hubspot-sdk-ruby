@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type indexed_field =
         { metadata_field: bool, name: String, value: top, values: ::Array[top] }
 
-      class IndexedField < HubspotSDK::Internal::Type::BaseModel
+      class IndexedField < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor metadata_field: bool
 
         attr_accessor name: String

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicPropertyReferencedTime < HubspotSDK::Internal::Type::BaseModel
+      class PublicPropertyReferencedTime < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute property
         #   Specifies the name of the property that the time reference is applied to.
         #
@@ -21,9 +21,9 @@ module HubspotSDK
         # @!attribute time_type
         #   Defines the type of time (PROPERTY_REFERENCED).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicPropertyReferencedTime::TimeType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicPropertyReferencedTime::TimeType]
         required :time_type,
-                 enum: -> { HubspotSDK::Crm::PublicPropertyReferencedTime::TimeType },
+                 enum: -> { HubSpotSDK::Crm::PublicPropertyReferencedTime::TimeType },
                  api_name: :timeType
 
         # @!attribute zone_id
@@ -41,13 +41,13 @@ module HubspotSDK
 
         # @!method initialize(property:, reference_type:, time_type:, zone_id:, timezone_source: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicPropertyReferencedTime} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicPropertyReferencedTime} for more details.
         #
         #   @param property [String] Specifies the name of the property that the time reference is applied to.
         #
         #   @param reference_type [String] Specifies the type of reference for the property (VALUE, UPDATED_AT, ANNIVERSARY
         #
-        #   @param time_type [Symbol, HubspotSDK::Models::Crm::PublicPropertyReferencedTime::TimeType] Defines the type of time (PROPERTY_REFERENCED).
+        #   @param time_type [Symbol, HubSpotSDK::Models::Crm::PublicPropertyReferencedTime::TimeType] Defines the type of time (PROPERTY_REFERENCED).
         #
         #   @param zone_id [String] Indicates the identifier for the time zone associated with the property.
         #
@@ -55,9 +55,9 @@ module HubspotSDK
 
         # Defines the type of time (PROPERTY_REFERENCED).
         #
-        # @see HubspotSDK::Models::Crm::PublicPropertyReferencedTime#time_type
+        # @see HubSpotSDK::Models::Crm::PublicPropertyReferencedTime#time_type
         module TimeType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           PROPERTY_REFERENCED = :PROPERTY_REFERENCED
 

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class ObjectFieldSchema < HubspotSDK::Internal::Type::BaseModel
+      class ObjectFieldSchema < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::ObjectFieldSchema,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::ObjectFieldSchema,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -18,14 +18,14 @@ module HubspotSDK
 
         # Specifies the type of the field, which is 'OBJECT' by default.
         sig do
-          returns(HubspotSDK::Automation::ObjectFieldSchema::Type::OrSymbol)
+          returns(HubSpotSDK::Automation::ObjectFieldSchema::Type::OrSymbol)
         end
         attr_accessor :type
 
         sig do
           params(
             properties: T.anything,
-            type: HubspotSDK::Automation::ObjectFieldSchema::Type::OrSymbol
+            type: HubSpotSDK::Automation::ObjectFieldSchema::Type::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -40,7 +40,7 @@ module HubspotSDK
           override.returns(
             {
               properties: T.anything,
-              type: HubspotSDK::Automation::ObjectFieldSchema::Type::OrSymbol
+              type: HubSpotSDK::Automation::ObjectFieldSchema::Type::OrSymbol
             }
           )
         end
@@ -49,24 +49,24 @@ module HubspotSDK
 
         # Specifies the type of the field, which is 'OBJECT' by default.
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Automation::ObjectFieldSchema::Type)
+              T.all(Symbol, HubSpotSDK::Automation::ObjectFieldSchema::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           OBJECT =
             T.let(
               :OBJECT,
-              HubspotSDK::Automation::ObjectFieldSchema::Type::TaggedSymbol
+              HubSpotSDK::Automation::ObjectFieldSchema::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::ObjectFieldSchema::Type::TaggedSymbol
+                HubSpotSDK::Automation::ObjectFieldSchema::Type::TaggedSymbol
               ]
             )
           end

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class EnumerationPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class EnumerationPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::EnumerationPropertyOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::EnumerationPropertyOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+            HubSpotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
           )
         end
         attr_accessor :operator
@@ -30,7 +30,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::EnumerationPropertyOperation::PropertyType::TaggedSymbol
+            HubSpotSDK::Events::EnumerationPropertyOperation::PropertyType::TaggedSymbol
           )
         end
         attr_accessor :property_type
@@ -55,10 +55,10 @@ module HubspotSDK
             include_objects_with_no_value_set: T::Boolean,
             operation_type: String,
             operator:
-              HubspotSDK::Events::EnumerationPropertyOperation::Operator::OrSymbol,
+              HubSpotSDK::Events::EnumerationPropertyOperation::Operator::OrSymbol,
             operator_name: String,
             property_type:
-              HubspotSDK::Events::EnumerationPropertyOperation::PropertyType::OrSymbol,
+              HubSpotSDK::Events::EnumerationPropertyOperation::PropertyType::OrSymbol,
             values: T::Array[String],
             default_value: String,
             render_spec: String
@@ -82,10 +82,10 @@ module HubspotSDK
               include_objects_with_no_value_set: T::Boolean,
               operation_type: String,
               operator:
-                HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol,
+                HubSpotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol,
               operator_name: String,
               property_type:
-                HubspotSDK::Events::EnumerationPropertyOperation::PropertyType::TaggedSymbol,
+                HubSpotSDK::Events::EnumerationPropertyOperation::PropertyType::TaggedSymbol,
               values: T::Array[String],
               default_value: String,
               render_spec: String
@@ -96,13 +96,13 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::EnumerationPropertyOperation::Operator
+                HubSpotSDK::Events::EnumerationPropertyOperation::Operator
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -110,68 +110,68 @@ module HubspotSDK
           CONTAINS_ALL =
             T.let(
               :CONTAINS_ALL,
-              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
             )
           DOES_NOT_CONTAIN_ALL =
             T.let(
               :DOES_NOT_CONTAIN_ALL,
-              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
             )
           HAS_EVER_BEEN_ANY_OF =
             T.let(
               :HAS_EVER_BEEN_ANY_OF,
-              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
             )
           HAS_EVER_BEEN_EXACTLY =
             T.let(
               :HAS_EVER_BEEN_EXACTLY,
-              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
             )
           HAS_EVER_CONTAINED_ALL =
             T.let(
               :HAS_EVER_CONTAINED_ALL,
-              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
             )
           HAS_NEVER_BEEN_ANY_OF =
             T.let(
               :HAS_NEVER_BEEN_ANY_OF,
-              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
             )
           HAS_NEVER_BEEN_EXACTLY =
             T.let(
               :HAS_NEVER_BEEN_EXACTLY,
-              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
             )
           HAS_NEVER_CONTAINED_ALL =
             T.let(
               :HAS_NEVER_CONTAINED_ALL,
-              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
             )
           IS_ANY_OF =
             T.let(
               :IS_ANY_OF,
-              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
             )
           IS_EXACTLY =
             T.let(
               :IS_EXACTLY,
-              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
             )
           IS_NONE_OF =
             T.let(
               :IS_NONE_OF,
-              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
             )
           IS_NOT_EXACTLY =
             T.let(
               :IS_NOT_EXACTLY,
-              HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
+                HubSpotSDK::Events::EnumerationPropertyOperation::Operator::TaggedSymbol
               ]
             )
           end
@@ -180,13 +180,13 @@ module HubspotSDK
         end
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::EnumerationPropertyOperation::PropertyType
+                HubSpotSDK::Events::EnumerationPropertyOperation::PropertyType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -194,13 +194,13 @@ module HubspotSDK
           ENUMERATION =
             T.let(
               :enumeration,
-              HubspotSDK::Events::EnumerationPropertyOperation::PropertyType::TaggedSymbol
+              HubSpotSDK::Events::EnumerationPropertyOperation::PropertyType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::EnumerationPropertyOperation::PropertyType::TaggedSymbol
+                HubSpotSDK::Events::EnumerationPropertyOperation::PropertyType::TaggedSymbol
               ]
             )
           end

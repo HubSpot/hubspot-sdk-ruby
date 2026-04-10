@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class DateTimePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class DateTimePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::DateTimePropertyOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::DateTimePropertyOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::DateTimePropertyOperation::Operator::TaggedSymbol
+            HubSpotSDK::Events::DateTimePropertyOperation::Operator::TaggedSymbol
           )
         end
         attr_accessor :operator
@@ -30,7 +30,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::DateTimePropertyOperation::PropertyType::TaggedSymbol
+            HubSpotSDK::Events::DateTimePropertyOperation::PropertyType::TaggedSymbol
           )
         end
         attr_accessor :property_type
@@ -58,10 +58,10 @@ module HubspotSDK
             include_objects_with_no_value_set: T::Boolean,
             operation_type: String,
             operator:
-              HubspotSDK::Events::DateTimePropertyOperation::Operator::OrSymbol,
+              HubSpotSDK::Events::DateTimePropertyOperation::Operator::OrSymbol,
             operator_name: String,
             property_type:
-              HubspotSDK::Events::DateTimePropertyOperation::PropertyType::OrSymbol,
+              HubSpotSDK::Events::DateTimePropertyOperation::PropertyType::OrSymbol,
             requires_time_zone_conversion: T::Boolean,
             timestamp: Integer,
             default_value: String,
@@ -87,10 +87,10 @@ module HubspotSDK
               include_objects_with_no_value_set: T::Boolean,
               operation_type: String,
               operator:
-                HubspotSDK::Events::DateTimePropertyOperation::Operator::TaggedSymbol,
+                HubSpotSDK::Events::DateTimePropertyOperation::Operator::TaggedSymbol,
               operator_name: String,
               property_type:
-                HubspotSDK::Events::DateTimePropertyOperation::PropertyType::TaggedSymbol,
+                HubSpotSDK::Events::DateTimePropertyOperation::PropertyType::TaggedSymbol,
               requires_time_zone_conversion: T::Boolean,
               timestamp: Integer,
               default_value: String,
@@ -102,13 +102,13 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::DateTimePropertyOperation::Operator
+                HubSpotSDK::Events::DateTimePropertyOperation::Operator
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -116,33 +116,33 @@ module HubspotSDK
           IS_AFTER =
             T.let(
               :IS_AFTER,
-              HubspotSDK::Events::DateTimePropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::DateTimePropertyOperation::Operator::TaggedSymbol
             )
           IS_AFTER_DATE =
             T.let(
               :IS_AFTER_DATE,
-              HubspotSDK::Events::DateTimePropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::DateTimePropertyOperation::Operator::TaggedSymbol
             )
           IS_BEFORE =
             T.let(
               :IS_BEFORE,
-              HubspotSDK::Events::DateTimePropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::DateTimePropertyOperation::Operator::TaggedSymbol
             )
           IS_BEFORE_DATE =
             T.let(
               :IS_BEFORE_DATE,
-              HubspotSDK::Events::DateTimePropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::DateTimePropertyOperation::Operator::TaggedSymbol
             )
           IS_EQUAL_TO =
             T.let(
               :IS_EQUAL_TO,
-              HubspotSDK::Events::DateTimePropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::DateTimePropertyOperation::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::DateTimePropertyOperation::Operator::TaggedSymbol
+                HubSpotSDK::Events::DateTimePropertyOperation::Operator::TaggedSymbol
               ]
             )
           end
@@ -151,13 +151,13 @@ module HubspotSDK
         end
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::DateTimePropertyOperation::PropertyType
+                HubSpotSDK::Events::DateTimePropertyOperation::PropertyType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -165,13 +165,13 @@ module HubspotSDK
           DATETIME =
             T.let(
               :datetime,
-              HubspotSDK::Events::DateTimePropertyOperation::PropertyType::TaggedSymbol
+              HubSpotSDK::Events::DateTimePropertyOperation::PropertyType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::DateTimePropertyOperation::PropertyType::TaggedSymbol
+                HubSpotSDK::Events::DateTimePropertyOperation::PropertyType::TaggedSymbol
               ]
             )
           end

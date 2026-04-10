@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class PropertiesValidations
@@ -9,16 +9,16 @@ module HubspotSDK
         # @overload get_by_object_type_id(object_type_id, request_options: {})
         #
         # @param object_type_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::CollectionResponsePublicPropertyValidationRuleMapNoPaging]
+        # @return [HubSpotSDK::Models::Crm::CollectionResponsePublicPropertyValidationRuleMapNoPaging]
         #
-        # @see HubspotSDK::Models::Crm::PropertiesValidationGetByObjectTypeIDParams
+        # @see HubSpotSDK::Models::Crm::PropertiesValidationGetByObjectTypeIDParams
         def get_by_object_type_id(object_type_id, params = {})
           @client.request(
             method: :get,
             path: ["crm/property-validations/2026-03/%1$s", object_type_id],
-            model: HubspotSDK::Crm::CollectionResponsePublicPropertyValidationRuleMapNoPaging,
+            model: HubSpotSDK::Crm::CollectionResponsePublicPropertyValidationRuleMapNoPaging,
             options: params[:request_options]
           )
         end
@@ -29,14 +29,14 @@ module HubspotSDK
         #
         # @param property_name [String]
         # @param object_type_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::CollectionResponsePublicPropertyValidationRuleNoPaging]
+        # @return [HubSpotSDK::Models::Crm::CollectionResponsePublicPropertyValidationRuleNoPaging]
         #
-        # @see HubspotSDK::Models::Crm::PropertiesValidationGetByObjectTypeIDAndPropertyNameParams
+        # @see HubSpotSDK::Models::Crm::PropertiesValidationGetByObjectTypeIDAndPropertyNameParams
         def get_by_object_type_id_and_property_name(property_name, params)
           parsed, options =
-            HubspotSDK::Crm::PropertiesValidationGetByObjectTypeIDAndPropertyNameParams.dump_request(params)
+            HubSpotSDK::Crm::PropertiesValidationGetByObjectTypeIDAndPropertyNameParams.dump_request(params)
           object_type_id =
             parsed.delete(:object_type_id) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -44,7 +44,7 @@ module HubspotSDK
           @client.request(
             method: :get,
             path: ["crm/property-validations/2026-03/%1$s/%2$s", object_type_id, property_name],
-            model: HubspotSDK::Crm::CollectionResponsePublicPropertyValidationRuleNoPaging,
+            model: HubSpotSDK::Crm::CollectionResponsePublicPropertyValidationRuleNoPaging,
             options: options
           )
         end
@@ -54,17 +54,17 @@ module HubspotSDK
         #
         # @overload get_by_object_type_id_property_name_and_rule_type(rule_type, object_type_id:, property_name:, request_options: {})
         #
-        # @param rule_type [Symbol, HubspotSDK::Models::Crm::PropertiesValidationGetByObjectTypeIDPropertyNameAndRuleTypeParams::RuleType]
+        # @param rule_type [Symbol, HubSpotSDK::Models::Crm::PropertiesValidationGetByObjectTypeIDPropertyNameAndRuleTypeParams::RuleType]
         # @param object_type_id [String]
         # @param property_name [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::PublicPropertyValidationRule]
+        # @return [HubSpotSDK::Models::Crm::PublicPropertyValidationRule]
         #
-        # @see HubspotSDK::Models::Crm::PropertiesValidationGetByObjectTypeIDPropertyNameAndRuleTypeParams
+        # @see HubSpotSDK::Models::Crm::PropertiesValidationGetByObjectTypeIDPropertyNameAndRuleTypeParams
         def get_by_object_type_id_property_name_and_rule_type(rule_type, params)
           parsed, options =
-            HubspotSDK::Crm::PropertiesValidationGetByObjectTypeIDPropertyNameAndRuleTypeParams.dump_request(params)
+            HubSpotSDK::Crm::PropertiesValidationGetByObjectTypeIDPropertyNameAndRuleTypeParams.dump_request(params)
           object_type_id =
             parsed.delete(:object_type_id) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -81,13 +81,13 @@ module HubspotSDK
               property_name,
               rule_type
             ],
-            model: HubspotSDK::Crm::PublicPropertyValidationRule,
+            model: HubSpotSDK::Crm::PublicPropertyValidationRule,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams}
+        # {HubSpotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams}
         # for more details.
         #
         # Update a specific validation rule for a property identified by its name and rule
@@ -95,7 +95,7 @@ module HubspotSDK
         #
         # @overload update_by_object_type_id_property_name_and_rule_type(rule_type, object_type_id:, property_name:, rule_arguments:, should_apply_normalization: nil, request_options: {})
         #
-        # @param rule_type [Symbol, HubspotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::RuleType] Path param
+        # @param rule_type [Symbol, HubSpotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::RuleType] Path param
         #
         # @param object_type_id [String] Path param
         #
@@ -105,14 +105,14 @@ module HubspotSDK
         #
         # @param should_apply_normalization [Boolean] Body param
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams
+        # @see HubSpotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams
         def update_by_object_type_id_property_name_and_rule_type(rule_type, params)
           parsed, options =
-            HubspotSDK::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams.dump_request(
+            HubSpotSDK::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams.dump_request(
               params
             )
           object_type_id =
@@ -139,7 +139,7 @@ module HubspotSDK
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
         end

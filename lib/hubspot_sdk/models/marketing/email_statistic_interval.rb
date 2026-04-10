@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class EmailStatisticInterval < HubspotSDK::Internal::Type::BaseModel
+      class EmailStatisticInterval < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute aggregations
         #
-        #   @return [HubspotSDK::Models::Marketing::EmailStatisticsData]
-        required :aggregations, -> { HubspotSDK::Marketing::EmailStatisticsData }
+        #   @return [HubSpotSDK::Models::Marketing::EmailStatisticsData]
+        required :aggregations, -> { HubSpotSDK::Marketing::EmailStatisticsData }
 
         # @!attribute interval
         #
-        #   @return [HubspotSDK::Models::Marketing::Interval]
-        required :interval, -> { HubspotSDK::Marketing::Interval }
+        #   @return [HubSpotSDK::Models::Marketing::Interval]
+        required :interval, -> { HubSpotSDK::Marketing::Interval }
 
         # @!method initialize(aggregations:, interval:)
-        #   @param aggregations [HubspotSDK::Models::Marketing::EmailStatisticsData]
-        #   @param interval [HubspotSDK::Models::Marketing::Interval]
+        #   @param aggregations [HubSpotSDK::Models::Marketing::EmailStatisticsData]
+        #   @param interval [HubSpotSDK::Models::Marketing::Interval]
       end
     end
   end

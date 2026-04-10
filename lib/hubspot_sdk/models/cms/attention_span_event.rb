@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::MediaBridge#create_attention_span_event
-      class AttentionSpanEvent < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Cms::MediaBridge#create_attention_span_event
+      class AttentionSpanEvent < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute contact_id
         #   The ID of the contact in HubSpot’s system that consumed the media. This can be
         #   fetched using HubSpot's Get contact by usertoken (utk) API. The API also
@@ -36,10 +36,10 @@ module HubspotSDK
 
         # @!attribute media_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::AttentionSpanEvent::MediaType]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::AttentionSpanEvent::MediaType]
         required :media_type,
                  enum: -> {
-                   HubspotSDK::Cms::AttentionSpanEvent::MediaType
+                   HubSpotSDK::Cms::AttentionSpanEvent::MediaType
                  },
                  api_name: :mediaType
 
@@ -83,9 +83,9 @@ module HubspotSDK
 
         # @!attribute external_play_context
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::AttentionSpanEvent::ExternalPlayContext, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::AttentionSpanEvent::ExternalPlayContext, nil]
         optional :external_play_context,
-                 enum: -> { HubspotSDK::Cms::AttentionSpanEvent::ExternalPlayContext },
+                 enum: -> { HubSpotSDK::Cms::AttentionSpanEvent::ExternalPlayContext },
                  api_name: :externalPlayContext
 
         # @!attribute media_url
@@ -139,7 +139,7 @@ module HubspotSDK
 
         # @!method initialize(contact_id:, media_bridge_id:, media_bridge_object_coordinates:, media_bridge_object_type_id:, media_name:, media_type:, occurred_timestamp:, percent_range:, portal_id:, provider_id:, session_id:, total_percent_played:, external_play_context: nil, media_url: nil, page_id: nil, page_name: nil, page_object_coordinates: nil, page_url: nil, raw_data: nil, total_seconds_played: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Cms::AttentionSpanEvent} for more details.
+        #   {HubSpotSDK::Models::Cms::AttentionSpanEvent} for more details.
         #
         #   @param contact_id [Integer] The ID of the contact in HubSpot’s system that consumed the media. This can be f
         #
@@ -151,7 +151,7 @@ module HubspotSDK
         #
         #   @param media_name [String]
         #
-        #   @param media_type [Symbol, HubspotSDK::Models::Cms::AttentionSpanEvent::MediaType]
+        #   @param media_type [Symbol, HubSpotSDK::Models::Cms::AttentionSpanEvent::MediaType]
         #
         #   @param occurred_timestamp [Integer] The timestamp at which this event occurred, in milliseconds since the epoch.
         #
@@ -165,7 +165,7 @@ module HubspotSDK
         #
         #   @param total_percent_played [Float] The percent of the media that the user consumed. Providers may calculate this di
         #
-        #   @param external_play_context [Symbol, HubspotSDK::Models::Cms::AttentionSpanEvent::ExternalPlayContext]
+        #   @param external_play_context [Symbol, HubSpotSDK::Models::Cms::AttentionSpanEvent::ExternalPlayContext]
         #
         #   @param media_url [String]
         #
@@ -181,9 +181,9 @@ module HubspotSDK
         #
         #   @param total_seconds_played [Integer] The seconds that a user spent consuming the media. The media bridge calculates t
 
-        # @see HubspotSDK::Models::Cms::AttentionSpanEvent#media_type
+        # @see HubSpotSDK::Models::Cms::AttentionSpanEvent#media_type
         module MediaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUDIO = :AUDIO
           DOCUMENT = :DOCUMENT
@@ -195,9 +195,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Cms::AttentionSpanEvent#external_play_context
+        # @see HubSpotSDK::Models::Cms::AttentionSpanEvent#external_play_context
         module ExternalPlayContext
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL = :EMAIL
           EXTERNAL_PAGE = :EXTERNAL_PAGE

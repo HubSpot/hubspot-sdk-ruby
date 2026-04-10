@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Conversations
       class CustomChannels
@@ -8,39 +8,39 @@ module HubspotSDK
             authorized: bool,
             inbox_id: String,
             name: String,
-            ?delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Conversations::PublicChannelAccount
+            ?delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier,
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Conversations::PublicChannelAccount
 
           def update: (
             Integer channel_account_id,
             channel_id: Integer,
             ?authorized: bool,
             ?name: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Conversations::PublicChannelAccount
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Conversations::PublicChannelAccount
 
           def list: (
             Integer channel_id,
             ?after: String,
             ?archived: bool,
             ?default_page_length: Integer,
-            ?delivery_identifier_type: ::Array[HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams::delivery_identifier_type],
+            ?delivery_identifier_type: ::Array[HubSpotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams::delivery_identifier_type],
             ?delivery_identifier_value: ::Array[String],
             ?limit: Integer,
             ?sort: ::Array[String],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Internal::Page[HubspotSDK::Conversations::PublicChannelAccount]
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Conversations::PublicChannelAccount]
 
           def update_staging_token: (
             String account_token,
             channel_id: Integer,
             ?account_name: String,
-            ?delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Conversations::PublicChannelAccountStagingToken
+            ?delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier,
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Conversations::PublicChannelAccountStagingToken
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

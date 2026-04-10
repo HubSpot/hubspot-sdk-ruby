@@ -1,63 +1,63 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type public_action_definition_patch =
         {
           action_url: String,
-          execution_rules: ::Array[HubspotSDK::Automation::PublicExecutionTranslationRule],
-          input_field_dependencies: ::Array[HubspotSDK::Models::Automation::PublicActionDefinitionPatch::input_field_dependency],
-          input_fields: ::Array[HubspotSDK::Automation::PublicInputFieldDefinition],
-          labels: ::Hash[Symbol, HubspotSDK::Automation::PublicActionLabels],
-          object_request_options: HubspotSDK::Automation::PublicObjectRequestOptions,
+          execution_rules: ::Array[HubSpotSDK::Automation::PublicExecutionTranslationRule],
+          input_field_dependencies: ::Array[HubSpotSDK::Models::Automation::PublicActionDefinitionPatch::input_field_dependency],
+          input_fields: ::Array[HubSpotSDK::Automation::PublicInputFieldDefinition],
+          labels: ::Hash[Symbol, HubSpotSDK::Automation::PublicActionLabels],
+          object_request_options: HubSpotSDK::Automation::PublicObjectRequestOptions,
           object_types: ::Array[String],
-          output_fields: ::Array[HubspotSDK::Automation::OutputFieldDefinition],
+          output_fields: ::Array[HubSpotSDK::Automation::OutputFieldDefinition],
           published: bool
         }
 
-      class PublicActionDefinitionPatch < HubspotSDK::Internal::Type::BaseModel
+      class PublicActionDefinitionPatch < HubSpotSDK::Internal::Type::BaseModel
         attr_reader action_url: String?
 
         def action_url=: (String) -> String
 
-        attr_reader execution_rules: ::Array[HubspotSDK::Automation::PublicExecutionTranslationRule]?
+        attr_reader execution_rules: ::Array[HubSpotSDK::Automation::PublicExecutionTranslationRule]?
 
         def execution_rules=: (
-          ::Array[HubspotSDK::Automation::PublicExecutionTranslationRule]
-        ) -> ::Array[HubspotSDK::Automation::PublicExecutionTranslationRule]
+          ::Array[HubSpotSDK::Automation::PublicExecutionTranslationRule]
+        ) -> ::Array[HubSpotSDK::Automation::PublicExecutionTranslationRule]
 
-        attr_reader input_field_dependencies: ::Array[HubspotSDK::Models::Automation::PublicActionDefinitionPatch::input_field_dependency]?
+        attr_reader input_field_dependencies: ::Array[HubSpotSDK::Models::Automation::PublicActionDefinitionPatch::input_field_dependency]?
 
         def input_field_dependencies=: (
-          ::Array[HubspotSDK::Models::Automation::PublicActionDefinitionPatch::input_field_dependency]
-        ) -> ::Array[HubspotSDK::Models::Automation::PublicActionDefinitionPatch::input_field_dependency]
+          ::Array[HubSpotSDK::Models::Automation::PublicActionDefinitionPatch::input_field_dependency]
+        ) -> ::Array[HubSpotSDK::Models::Automation::PublicActionDefinitionPatch::input_field_dependency]
 
-        attr_reader input_fields: ::Array[HubspotSDK::Automation::PublicInputFieldDefinition]?
+        attr_reader input_fields: ::Array[HubSpotSDK::Automation::PublicInputFieldDefinition]?
 
         def input_fields=: (
-          ::Array[HubspotSDK::Automation::PublicInputFieldDefinition]
-        ) -> ::Array[HubspotSDK::Automation::PublicInputFieldDefinition]
+          ::Array[HubSpotSDK::Automation::PublicInputFieldDefinition]
+        ) -> ::Array[HubSpotSDK::Automation::PublicInputFieldDefinition]
 
-        attr_reader labels: ::Hash[Symbol, HubspotSDK::Automation::PublicActionLabels]?
+        attr_reader labels: ::Hash[Symbol, HubSpotSDK::Automation::PublicActionLabels]?
 
         def labels=: (
-          ::Hash[Symbol, HubspotSDK::Automation::PublicActionLabels]
-        ) -> ::Hash[Symbol, HubspotSDK::Automation::PublicActionLabels]
+          ::Hash[Symbol, HubSpotSDK::Automation::PublicActionLabels]
+        ) -> ::Hash[Symbol, HubSpotSDK::Automation::PublicActionLabels]
 
-        attr_reader object_request_options: HubspotSDK::Automation::PublicObjectRequestOptions?
+        attr_reader object_request_options: HubSpotSDK::Automation::PublicObjectRequestOptions?
 
         def object_request_options=: (
-          HubspotSDK::Automation::PublicObjectRequestOptions
-        ) -> HubspotSDK::Automation::PublicObjectRequestOptions
+          HubSpotSDK::Automation::PublicObjectRequestOptions
+        ) -> HubSpotSDK::Automation::PublicObjectRequestOptions
 
         attr_reader object_types: ::Array[String]?
 
         def object_types=: (::Array[String]) -> ::Array[String]
 
-        attr_reader output_fields: ::Array[HubspotSDK::Automation::OutputFieldDefinition]?
+        attr_reader output_fields: ::Array[HubSpotSDK::Automation::OutputFieldDefinition]?
 
         def output_fields=: (
-          ::Array[HubspotSDK::Automation::OutputFieldDefinition]
-        ) -> ::Array[HubspotSDK::Automation::OutputFieldDefinition]
+          ::Array[HubSpotSDK::Automation::OutputFieldDefinition]
+        ) -> ::Array[HubSpotSDK::Automation::OutputFieldDefinition]
 
         attr_reader published: bool?
 
@@ -65,36 +65,36 @@ module HubspotSDK
 
         def initialize: (
           ?action_url: String,
-          ?execution_rules: ::Array[HubspotSDK::Automation::PublicExecutionTranslationRule],
-          ?input_field_dependencies: ::Array[HubspotSDK::Models::Automation::PublicActionDefinitionPatch::input_field_dependency],
-          ?input_fields: ::Array[HubspotSDK::Automation::PublicInputFieldDefinition],
-          ?labels: ::Hash[Symbol, HubspotSDK::Automation::PublicActionLabels],
-          ?object_request_options: HubspotSDK::Automation::PublicObjectRequestOptions,
+          ?execution_rules: ::Array[HubSpotSDK::Automation::PublicExecutionTranslationRule],
+          ?input_field_dependencies: ::Array[HubSpotSDK::Models::Automation::PublicActionDefinitionPatch::input_field_dependency],
+          ?input_fields: ::Array[HubSpotSDK::Automation::PublicInputFieldDefinition],
+          ?labels: ::Hash[Symbol, HubSpotSDK::Automation::PublicActionLabels],
+          ?object_request_options: HubSpotSDK::Automation::PublicObjectRequestOptions,
           ?object_types: ::Array[String],
-          ?output_fields: ::Array[HubspotSDK::Automation::OutputFieldDefinition],
+          ?output_fields: ::Array[HubSpotSDK::Automation::OutputFieldDefinition],
           ?published: bool
         ) -> void
 
         def to_hash: -> {
           action_url: String,
-          execution_rules: ::Array[HubspotSDK::Automation::PublicExecutionTranslationRule],
-          input_field_dependencies: ::Array[HubspotSDK::Models::Automation::PublicActionDefinitionPatch::input_field_dependency],
-          input_fields: ::Array[HubspotSDK::Automation::PublicInputFieldDefinition],
-          labels: ::Hash[Symbol, HubspotSDK::Automation::PublicActionLabels],
-          object_request_options: HubspotSDK::Automation::PublicObjectRequestOptions,
+          execution_rules: ::Array[HubSpotSDK::Automation::PublicExecutionTranslationRule],
+          input_field_dependencies: ::Array[HubSpotSDK::Models::Automation::PublicActionDefinitionPatch::input_field_dependency],
+          input_fields: ::Array[HubSpotSDK::Automation::PublicInputFieldDefinition],
+          labels: ::Hash[Symbol, HubSpotSDK::Automation::PublicActionLabels],
+          object_request_options: HubSpotSDK::Automation::PublicObjectRequestOptions,
           object_types: ::Array[String],
-          output_fields: ::Array[HubspotSDK::Automation::OutputFieldDefinition],
+          output_fields: ::Array[HubSpotSDK::Automation::OutputFieldDefinition],
           published: bool
         }
 
         type input_field_dependency =
-          HubspotSDK::Automation::PublicSingleFieldDependency
-          | HubspotSDK::Automation::PublicConditionalSingleFieldDependency
+          HubSpotSDK::Automation::PublicSingleFieldDependency
+          | HubSpotSDK::Automation::PublicConditionalSingleFieldDependency
 
         module InputFieldDependency
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          def self?.variants: -> ::Array[HubspotSDK::Models::Automation::PublicActionDefinitionPatch::input_field_dependency]
+          def self?.variants: -> ::Array[HubSpotSDK::Models::Automation::PublicActionDefinitionPatch::input_field_dependency]
         end
       end
     end

@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class ChannelConnectionSettingsRequest < HubspotSDK::Internal::Type::BaseModel
+        class ChannelConnectionSettingsRequest < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute is_ready
           #   Indicates whether the channel connection settings are ready.
           #
           #   @return [Boolean]
-          required :is_ready, HubspotSDK::Internal::Type::Boolean, api_name: :isReady
+          required :is_ready, HubSpotSDK::Internal::Type::Boolean, api_name: :isReady
 
           # @!attribute url
           #   The URL associated with the channel connection settings.

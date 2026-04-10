@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -18,7 +18,7 @@ module HubspotSDK
         sig do
           returns(
             T::Array[
-              HubspotSDK::Crm::PublicAssociationDefinitionConfigurationUpdateResult
+              HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationUpdateResult
             ]
           )
         end
@@ -29,15 +29,15 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors::Status::OrSymbol
+            HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors::Status::OrSymbol
           )
         end
         attr_accessor :status
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
+        sig { returns(T.nilable(T::Array[HubSpotSDK::StandardError])) }
         attr_reader :errors
 
-        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
+        sig { params(errors: T::Array[HubSpotSDK::StandardError::OrHash]).void }
         attr_writer :errors
 
         sig { returns(T.nilable(T::Hash[Symbol, String])) }
@@ -63,12 +63,12 @@ module HubspotSDK
             completed_at: Time,
             results:
               T::Array[
-                HubspotSDK::Crm::PublicAssociationDefinitionConfigurationUpdateResult::OrHash
+                HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationUpdateResult::OrHash
               ],
             started_at: Time,
             status:
-              HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors::Status::OrSymbol,
-            errors: T::Array[HubspotSDK::StandardError::OrHash],
+              HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors::Status::OrSymbol,
+            errors: T::Array[HubSpotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
             requested_at: Time
@@ -92,12 +92,12 @@ module HubspotSDK
               completed_at: Time,
               results:
                 T::Array[
-                  HubspotSDK::Crm::PublicAssociationDefinitionConfigurationUpdateResult
+                  HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationUpdateResult
                 ],
               started_at: Time,
               status:
-                HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors::Status::OrSymbol,
-              errors: T::Array[HubspotSDK::StandardError],
+                HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors::Status::OrSymbol,
+              errors: T::Array[HubSpotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
               requested_at: Time
@@ -108,13 +108,13 @@ module HubspotSDK
         end
 
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors::Status
+                HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -122,28 +122,28 @@ module HubspotSDK
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors::Status::TaggedSymbol
             )
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors::Status::TaggedSymbol
+                HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors::Status::TaggedSymbol
               ]
             )
           end

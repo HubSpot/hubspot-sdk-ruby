@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type site_search_search_params =
@@ -10,8 +10,8 @@ module HubspotSDK
           domain: ::Array[String],
           group_id: ::Array[Integer],
           hubdb_query: String,
-          language: HubspotSDK::Models::Cms::SiteSearchSearchParams::language,
-          length: HubspotSDK::Models::Cms::SiteSearchSearchParams::length,
+          language: HubSpotSDK::Models::Cms::SiteSearchSearchParams::language,
+          length: HubSpotSDK::Models::Cms::SiteSearchSearchParams::length,
           limit: Integer,
           match_prefix: bool,
           offset: Integer,
@@ -21,13 +21,13 @@ module HubspotSDK
           q: String,
           table_id: Integer,
           type: ::Array[String],
-          types: ::Array[HubspotSDK::Models::Cms::SiteSearchSearchParams::type_]
+          types: ::Array[HubSpotSDK::Models::Cms::SiteSearchSearchParams::type_]
         }
-        & HubspotSDK::Internal::Type::request_parameters
+        & HubSpotSDK::Internal::Type::request_parameters
 
-      class SiteSearchSearchParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class SiteSearchSearchParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         attr_reader analytics: bool?
 
@@ -57,17 +57,17 @@ module HubspotSDK
 
         def hubdb_query=: (String) -> String
 
-        attr_reader language: HubspotSDK::Models::Cms::SiteSearchSearchParams::language?
+        attr_reader language: HubSpotSDK::Models::Cms::SiteSearchSearchParams::language?
 
         def language=: (
-          HubspotSDK::Models::Cms::SiteSearchSearchParams::language
-        ) -> HubspotSDK::Models::Cms::SiteSearchSearchParams::language
+          HubSpotSDK::Models::Cms::SiteSearchSearchParams::language
+        ) -> HubSpotSDK::Models::Cms::SiteSearchSearchParams::language
 
-        attr_reader length: HubspotSDK::Models::Cms::SiteSearchSearchParams::length?
+        attr_reader length: HubSpotSDK::Models::Cms::SiteSearchSearchParams::length?
 
         def length=: (
-          HubspotSDK::Models::Cms::SiteSearchSearchParams::length
-        ) -> HubspotSDK::Models::Cms::SiteSearchSearchParams::length
+          HubSpotSDK::Models::Cms::SiteSearchSearchParams::length
+        ) -> HubSpotSDK::Models::Cms::SiteSearchSearchParams::length
 
         attr_reader limit: Integer?
 
@@ -105,11 +105,11 @@ module HubspotSDK
 
         def type=: (::Array[String]) -> ::Array[String]
 
-        attr_reader types: ::Array[HubspotSDK::Models::Cms::SiteSearchSearchParams::type_]?
+        attr_reader types: ::Array[HubSpotSDK::Models::Cms::SiteSearchSearchParams::type_]?
 
         def types=: (
-          ::Array[HubspotSDK::Models::Cms::SiteSearchSearchParams::type_]
-        ) -> ::Array[HubspotSDK::Models::Cms::SiteSearchSearchParams::type_]
+          ::Array[HubSpotSDK::Models::Cms::SiteSearchSearchParams::type_]
+        ) -> ::Array[HubSpotSDK::Models::Cms::SiteSearchSearchParams::type_]
 
         def initialize: (
           ?analytics: bool,
@@ -119,8 +119,8 @@ module HubspotSDK
           ?domain: ::Array[String],
           ?group_id: ::Array[Integer],
           ?hubdb_query: String,
-          ?language: HubspotSDK::Models::Cms::SiteSearchSearchParams::language,
-          ?length: HubspotSDK::Models::Cms::SiteSearchSearchParams::length,
+          ?language: HubSpotSDK::Models::Cms::SiteSearchSearchParams::language,
+          ?length: HubSpotSDK::Models::Cms::SiteSearchSearchParams::length,
           ?limit: Integer,
           ?match_prefix: bool,
           ?offset: Integer,
@@ -130,8 +130,8 @@ module HubspotSDK
           ?q: String,
           ?table_id: Integer,
           ?type: ::Array[String],
-          ?types: ::Array[HubspotSDK::Models::Cms::SiteSearchSearchParams::type_],
-          ?request_options: HubspotSDK::request_opts
+          ?types: ::Array[HubSpotSDK::Models::Cms::SiteSearchSearchParams::type_],
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
@@ -142,8 +142,8 @@ module HubspotSDK
           domain: ::Array[String],
           group_id: ::Array[Integer],
           hubdb_query: String,
-          language: HubspotSDK::Models::Cms::SiteSearchSearchParams::language,
-          length: HubspotSDK::Models::Cms::SiteSearchSearchParams::length,
+          language: HubSpotSDK::Models::Cms::SiteSearchSearchParams::language,
+          length: HubSpotSDK::Models::Cms::SiteSearchSearchParams::length,
           limit: Integer,
           match_prefix: bool,
           offset: Integer,
@@ -153,8 +153,8 @@ module HubspotSDK
           q: String,
           table_id: Integer,
           type: ::Array[String],
-          types: ::Array[HubspotSDK::Models::Cms::SiteSearchSearchParams::type_],
-          request_options: HubspotSDK::RequestOptions
+          types: ::Array[HubSpotSDK::Models::Cms::SiteSearchSearchParams::type_],
+          request_options: HubSpotSDK::RequestOptions
         }
 
         type language =
@@ -1003,7 +1003,7 @@ module HubspotSDK
           | :"zu-za"
 
         module Language
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AA: :aa
           AB: :ab
@@ -1849,18 +1849,18 @@ module HubspotSDK
           ZU: :zu
           ZU_ZA: :"zu-za"
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::SiteSearchSearchParams::language]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::SiteSearchSearchParams::language]
         end
 
         type length = :LONG | :SHORT
 
         module Length
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           LONG: :LONG
           SHORT: :SHORT
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::SiteSearchSearchParams::length]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::SiteSearchSearchParams::length]
         end
 
         type type_ =
@@ -1872,7 +1872,7 @@ module HubspotSDK
           | :STRUCTURED_CONTENT
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           LANDING_PAGE: :LANDING_PAGE
           BLOG_POST: :BLOG_POST
@@ -1881,7 +1881,7 @@ module HubspotSDK
           LISTING_PAGE: :LISTING_PAGE
           STRUCTURED_CONTENT: :STRUCTURED_CONTENT
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::SiteSearchSearchParams::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::SiteSearchSearchParams::type_]
         end
       end
     end

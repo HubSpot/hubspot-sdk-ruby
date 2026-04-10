@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Hubdb
-        # @see HubspotSDK::Resources::Cms::Hubdb::Tables#get
-        class TableGetParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Cms::Hubdb::Tables#get
+        class TableGetParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute table_id_or_name
           #
@@ -18,17 +18,17 @@ module HubspotSDK
           #   Whether to return only results that have been archived.
           #
           #   @return [Boolean, nil]
-          optional :archived, HubspotSDK::Internal::Type::Boolean
+          optional :archived, HubSpotSDK::Internal::Type::Boolean
 
           # @!attribute include_foreign_ids
           #
           #   @return [Boolean, nil]
-          optional :include_foreign_ids, HubspotSDK::Internal::Type::Boolean
+          optional :include_foreign_ids, HubSpotSDK::Internal::Type::Boolean
 
           # @!attribute is_get_localized_schema
           #
           #   @return [Boolean, nil]
-          optional :is_get_localized_schema, HubspotSDK::Internal::Type::Boolean
+          optional :is_get_localized_schema, HubSpotSDK::Internal::Type::Boolean
 
           # @!method initialize(table_id_or_name:, archived: nil, include_foreign_ids: nil, is_get_localized_schema: nil, request_options: {})
           #   @param table_id_or_name [String]
@@ -39,7 +39,7 @@ module HubspotSDK
           #
           #   @param is_get_localized_schema [Boolean]
           #
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

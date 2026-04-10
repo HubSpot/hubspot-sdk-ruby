@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type ab_test_create_request_v_next =
       { content_id: String, variation_name: String }
 
-    class AbTestCreateRequestVNext < HubspotSDK::Internal::Type::BaseModel
+    class AbTestCreateRequestVNext < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor content_id: String
 
       attr_accessor variation_name: String

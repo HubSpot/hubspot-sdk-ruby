@@ -1,33 +1,33 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Meta
       module Origins
-        # @see HubspotSDK::Resources::Meta::Origins::IPRanges#list_simple
-        class IPRangeListSimpleParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Meta::Origins::IPRanges#list_simple
+        class IPRangeListSimpleParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute direction
           #
-          #   @return [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListSimpleParams::Direction>, nil]
+          #   @return [Array<Symbol, HubSpotSDK::Models::Meta::Origins::IPRangeListSimpleParams::Direction>, nil]
           optional :direction,
-                   -> { HubspotSDK::Internal::Type::ArrayOf[enum: HubspotSDK::Meta::Origins::IPRangeListSimpleParams::Direction] }
+                   -> { HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::Meta::Origins::IPRangeListSimpleParams::Direction] }
 
           # @!attribute service
           #
-          #   @return [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListSimpleParams::Service>, nil]
+          #   @return [Array<Symbol, HubSpotSDK::Models::Meta::Origins::IPRangeListSimpleParams::Service>, nil]
           optional :service,
-                   -> { HubspotSDK::Internal::Type::ArrayOf[enum: HubspotSDK::Meta::Origins::IPRangeListSimpleParams::Service] }
+                   -> { HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::Meta::Origins::IPRangeListSimpleParams::Service] }
 
           # @!method initialize(direction: nil, service: nil, request_options: {})
-          #   @param direction [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListSimpleParams::Direction>]
-          #   @param service [Array<Symbol, HubspotSDK::Models::Meta::Origins::IPRangeListSimpleParams::Service>]
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param direction [Array<Symbol, HubSpotSDK::Models::Meta::Origins::IPRangeListSimpleParams::Direction>]
+          #   @param service [Array<Symbol, HubSpotSDK::Models::Meta::Origins::IPRangeListSimpleParams::Service>]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
 
           module Direction
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             INGRESS = :INGRESS
             EGRESS = :EGRESS
@@ -37,7 +37,7 @@ module HubspotSDK
           end
 
           module Service
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             EMAIL = :EMAIL
             API = :API

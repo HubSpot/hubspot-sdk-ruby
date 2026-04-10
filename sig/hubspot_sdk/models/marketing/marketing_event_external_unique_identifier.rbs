@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     class MarketingEventExternalUniqueIdentifier = Marketing::MarketingEventExternalUniqueIdentifier
 
@@ -10,7 +10,7 @@ module HubspotSDK
           external_event_id: String
         }
 
-      class MarketingEventExternalUniqueIdentifier < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventExternalUniqueIdentifier < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor app_id: Integer
 
         attr_accessor external_account_id: String

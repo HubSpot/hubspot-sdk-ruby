@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Option1 < HubspotSDK::Internal::Type::BaseModel
+      class Option1 < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute hidden
         #
         #   @return [Boolean]
-        required :hidden, HubspotSDK::Internal::Type::Boolean
+        required :hidden, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute label
         #

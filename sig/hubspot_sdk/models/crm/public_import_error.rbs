@@ -1,30 +1,30 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_import_error =
         {
           id: String,
           created_at: Integer,
-          error_type: HubspotSDK::Models::Crm::PublicImportError::error_type,
-          source_data: HubspotSDK::Crm::ImportRowCore,
+          error_type: HubSpotSDK::Models::Crm::PublicImportError::error_type,
+          source_data: HubSpotSDK::Crm::ImportRowCore,
           error_message: String,
           extra_context: String,
-          invalid_property_value: HubspotSDK::PropertyValue,
+          invalid_property_value: HubSpotSDK::PropertyValue,
           invalid_value: String,
           invalid_value_to_display: String,
           known_column_number: Integer,
-          object_type: HubspotSDK::Models::Crm::PublicImportError::object_type,
+          object_type: HubSpotSDK::Models::Crm::PublicImportError::object_type,
           object_type_id: String
         }
 
-      class PublicImportError < HubspotSDK::Internal::Type::BaseModel
+      class PublicImportError < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor created_at: Integer
 
-        attr_accessor error_type: HubspotSDK::Models::Crm::PublicImportError::error_type
+        attr_accessor error_type: HubSpotSDK::Models::Crm::PublicImportError::error_type
 
-        attr_accessor source_data: HubspotSDK::Crm::ImportRowCore
+        attr_accessor source_data: HubSpotSDK::Crm::ImportRowCore
 
         attr_reader error_message: String?
 
@@ -34,11 +34,11 @@ module HubspotSDK
 
         def extra_context=: (String) -> String
 
-        attr_reader invalid_property_value: HubspotSDK::PropertyValue?
+        attr_reader invalid_property_value: HubSpotSDK::PropertyValue?
 
         def invalid_property_value=: (
-          HubspotSDK::PropertyValue
-        ) -> HubspotSDK::PropertyValue
+          HubSpotSDK::PropertyValue
+        ) -> HubSpotSDK::PropertyValue
 
         attr_reader invalid_value: String?
 
@@ -52,11 +52,11 @@ module HubspotSDK
 
         def known_column_number=: (Integer) -> Integer
 
-        attr_reader object_type: HubspotSDK::Models::Crm::PublicImportError::object_type?
+        attr_reader object_type: HubSpotSDK::Models::Crm::PublicImportError::object_type?
 
         def object_type=: (
-          HubspotSDK::Models::Crm::PublicImportError::object_type
-        ) -> HubspotSDK::Models::Crm::PublicImportError::object_type
+          HubSpotSDK::Models::Crm::PublicImportError::object_type
+        ) -> HubSpotSDK::Models::Crm::PublicImportError::object_type
 
         attr_reader object_type_id: String?
 
@@ -65,30 +65,30 @@ module HubspotSDK
         def initialize: (
           id: String,
           created_at: Integer,
-          error_type: HubspotSDK::Models::Crm::PublicImportError::error_type,
-          source_data: HubspotSDK::Crm::ImportRowCore,
+          error_type: HubSpotSDK::Models::Crm::PublicImportError::error_type,
+          source_data: HubSpotSDK::Crm::ImportRowCore,
           ?error_message: String,
           ?extra_context: String,
-          ?invalid_property_value: HubspotSDK::PropertyValue,
+          ?invalid_property_value: HubSpotSDK::PropertyValue,
           ?invalid_value: String,
           ?invalid_value_to_display: String,
           ?known_column_number: Integer,
-          ?object_type: HubspotSDK::Models::Crm::PublicImportError::object_type,
+          ?object_type: HubSpotSDK::Models::Crm::PublicImportError::object_type,
           ?object_type_id: String
         ) -> void
 
         def to_hash: -> {
           id: String,
           created_at: Integer,
-          error_type: HubspotSDK::Models::Crm::PublicImportError::error_type,
-          source_data: HubspotSDK::Crm::ImportRowCore,
+          error_type: HubSpotSDK::Models::Crm::PublicImportError::error_type,
+          source_data: HubSpotSDK::Crm::ImportRowCore,
           error_message: String,
           extra_context: String,
-          invalid_property_value: HubspotSDK::PropertyValue,
+          invalid_property_value: HubSpotSDK::PropertyValue,
           invalid_value: String,
           invalid_value_to_display: String,
           known_column_number: Integer,
-          object_type: HubspotSDK::Models::Crm::PublicImportError::object_type,
+          object_type: HubSpotSDK::Models::Crm::PublicImportError::object_type,
           object_type_id: String
         }
 
@@ -162,7 +162,7 @@ module HubspotSDK
           | :UPDATE_ONLY_IMPORT
 
         module ErrorType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AMBIGUOUS_ENUMERATION_OPTION: :AMBIGUOUS_ENUMERATION_OPTION
           ASSOCIATION_LABEL_NOT_FOUND: :ASSOCIATION_LABEL_NOT_FOUND
@@ -232,7 +232,7 @@ module HubspotSDK
           UNKNOWN_ERROR: :UNKNOWN_ERROR
           UPDATE_ONLY_IMPORT: :UPDATE_ONLY_IMPORT
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicImportError::error_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicImportError::error_type]
         end
 
         type object_type =
@@ -399,7 +399,7 @@ module HubspotSDK
           | :WEB_INTERACTIVE
 
         module ObjectType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABANDONED_CART: :ABANDONED_CART
           ACCEPTANCE_TEST: :ACCEPTANCE_TEST
@@ -563,7 +563,7 @@ module HubspotSDK
           VIEW_BLOCK: :VIEW_BLOCK
           WEB_INTERACTIVE: :WEB_INTERACTIVE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicImportError::object_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicImportError::object_type]
         end
       end
     end

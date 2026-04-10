@@ -1,19 +1,19 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchPortalEntry < HubspotSDK::Internal::Type::BaseModel
+      class BatchPortalEntry < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::BatchPortalEntry,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::BatchPortalEntry,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # The flag state for this portal (e.g. ON or OFF)
-        sig { returns(HubspotSDK::Crm::BatchPortalEntry::FlagState::OrSymbol) }
+        sig { returns(HubSpotSDK::Crm::BatchPortalEntry::FlagState::OrSymbol) }
         attr_accessor :flag_state
 
         # The ID of the portal
@@ -22,7 +22,7 @@ module HubspotSDK
 
         sig do
           params(
-            flag_state: HubspotSDK::Crm::BatchPortalEntry::FlagState::OrSymbol,
+            flag_state: HubSpotSDK::Crm::BatchPortalEntry::FlagState::OrSymbol,
             portal_id: Integer
           ).returns(T.attached_class)
         end
@@ -38,7 +38,7 @@ module HubspotSDK
           override.returns(
             {
               flag_state:
-                HubspotSDK::Crm::BatchPortalEntry::FlagState::OrSymbol,
+                HubSpotSDK::Crm::BatchPortalEntry::FlagState::OrSymbol,
               portal_id: Integer
             }
           )
@@ -48,34 +48,34 @@ module HubspotSDK
 
         # The flag state for this portal (e.g. ON or OFF)
         module FlagState
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::BatchPortalEntry::FlagState)
+              T.all(Symbol, HubSpotSDK::Crm::BatchPortalEntry::FlagState)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           ABSENT =
             T.let(
               :ABSENT,
-              HubspotSDK::Crm::BatchPortalEntry::FlagState::TaggedSymbol
+              HubSpotSDK::Crm::BatchPortalEntry::FlagState::TaggedSymbol
             )
           OFF =
             T.let(
               :OFF,
-              HubspotSDK::Crm::BatchPortalEntry::FlagState::TaggedSymbol
+              HubSpotSDK::Crm::BatchPortalEntry::FlagState::TaggedSymbol
             )
           ON =
             T.let(
               :ON,
-              HubspotSDK::Crm::BatchPortalEntry::FlagState::TaggedSymbol
+              HubSpotSDK::Crm::BatchPortalEntry::FlagState::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::BatchPortalEntry::FlagState::TaggedSymbol
+                HubSpotSDK::Crm::BatchPortalEntry::FlagState::TaggedSymbol
               ]
             )
           end

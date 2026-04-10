@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class ObjectCoordinates < HubspotSDK::Internal::Type::BaseModel
+        class ObjectCoordinates < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute object_id_
           #   The unique identifier for the object.
           #

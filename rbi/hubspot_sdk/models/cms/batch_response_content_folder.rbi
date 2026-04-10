@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class BatchResponseContentFolder < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseContentFolder < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::BatchResponseContentFolder,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::BatchResponseContentFolder,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -17,7 +17,7 @@ module HubspotSDK
         attr_accessor :completed_at
 
         # Results of batch operation.
-        sig { returns(T::Array[HubspotSDK::Cms::ContentFolder]) }
+        sig { returns(T::Array[HubSpotSDK::Cms::ContentFolder]) }
         attr_accessor :results
 
         # Time of batch operation start.
@@ -27,7 +27,7 @@ module HubspotSDK
         # Status of batch operation.
         sig do
           returns(
-            HubspotSDK::Cms::BatchResponseContentFolder::Status::TaggedSymbol
+            HubSpotSDK::Cms::BatchResponseContentFolder::Status::TaggedSymbol
           )
         end
         attr_accessor :status
@@ -49,10 +49,10 @@ module HubspotSDK
         sig do
           params(
             completed_at: Time,
-            results: T::Array[HubspotSDK::Cms::ContentFolder::OrHash],
+            results: T::Array[HubSpotSDK::Cms::ContentFolder::OrHash],
             started_at: Time,
             status:
-              HubspotSDK::Cms::BatchResponseContentFolder::Status::OrSymbol,
+              HubSpotSDK::Cms::BatchResponseContentFolder::Status::OrSymbol,
             links: T::Hash[Symbol, String],
             requested_at: Time
           ).returns(T.attached_class)
@@ -77,10 +77,10 @@ module HubspotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubspotSDK::Cms::ContentFolder],
+              results: T::Array[HubSpotSDK::Cms::ContentFolder],
               started_at: Time,
               status:
-                HubspotSDK::Cms::BatchResponseContentFolder::Status::TaggedSymbol,
+                HubSpotSDK::Cms::BatchResponseContentFolder::Status::TaggedSymbol,
               links: T::Hash[Symbol, String],
               requested_at: Time
             }
@@ -91,39 +91,39 @@ module HubspotSDK
 
         # Status of batch operation.
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::BatchResponseContentFolder::Status)
+              T.all(Symbol, HubSpotSDK::Cms::BatchResponseContentFolder::Status)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::Cms::BatchResponseContentFolder::Status::TaggedSymbol
+              HubSpotSDK::Cms::BatchResponseContentFolder::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::Cms::BatchResponseContentFolder::Status::TaggedSymbol
+              HubSpotSDK::Cms::BatchResponseContentFolder::Status::TaggedSymbol
             )
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::Cms::BatchResponseContentFolder::Status::TaggedSymbol
+              HubSpotSDK::Cms::BatchResponseContentFolder::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::Cms::BatchResponseContentFolder::Status::TaggedSymbol
+              HubSpotSDK::Cms::BatchResponseContentFolder::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::BatchResponseContentFolder::Status::TaggedSymbol
+                HubSpotSDK::Cms::BatchResponseContentFolder::Status::TaggedSymbol
               ]
             )
           end

@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class SimplePublicObjectBatchInputForCreate < HubspotSDK::Internal::Type::BaseModel
+      class SimplePublicObjectBatchInputForCreate < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute associations
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
+        #   @return [Array<HubSpotSDK::Models::Crm::PublicAssociationsForObject>]
         required :associations,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociationsForObject] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicAssociationsForObject] }
 
         # @!attribute properties
         #   Key value pairs representing the properties of the object.
         #
         #   @return [Hash{Symbol=>String}]
-        required :properties, HubspotSDK::Internal::Type::HashOf[String]
+        required :properties, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute object_write_trace_id
         #   An identifier used for tracing the creation or update request of the object.
@@ -26,7 +26,7 @@ module HubspotSDK
         #   An input object that contains a collection of objects to be created together in
         #   a batch.
         #
-        #   @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
+        #   @param associations [Array<HubSpotSDK::Models::Crm::PublicAssociationsForObject>]
         #
         #   @param properties [Hash{Symbol=>String}] Key value pairs representing the properties of the object.
         #

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicFiscalYearReference < HubspotSDK::Internal::Type::BaseModel
+      class PublicFiscalYearReference < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute day
         #   The day component of the fiscal year reference.
         #
@@ -19,9 +19,9 @@ module HubspotSDK
         # @!attribute reference_type
         #   Indicates the type of reference (FISCAL_YEAR).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicFiscalYearReference::ReferenceType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicFiscalYearReference::ReferenceType]
         required :reference_type,
-                 enum: -> { HubspotSDK::Crm::PublicFiscalYearReference::ReferenceType },
+                 enum: -> { HubSpotSDK::Crm::PublicFiscalYearReference::ReferenceType },
                  api_name: :referenceType
 
         # @!attribute hour
@@ -53,7 +53,7 @@ module HubspotSDK
         #
         #   @param month [Integer] The month component of the fiscal year reference.
         #
-        #   @param reference_type [Symbol, HubspotSDK::Models::Crm::PublicFiscalYearReference::ReferenceType] Indicates the type of reference (FISCAL_YEAR).
+        #   @param reference_type [Symbol, HubSpotSDK::Models::Crm::PublicFiscalYearReference::ReferenceType] Indicates the type of reference (FISCAL_YEAR).
         #
         #   @param hour [Integer] The hour component of the fiscal year reference.
         #
@@ -65,9 +65,9 @@ module HubspotSDK
 
         # Indicates the type of reference (FISCAL_YEAR).
         #
-        # @see HubspotSDK::Models::Crm::PublicFiscalYearReference#reference_type
+        # @see HubSpotSDK::Models::Crm::PublicFiscalYearReference#reference_type
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           FISCAL_YEAR = :FISCAL_YEAR
 

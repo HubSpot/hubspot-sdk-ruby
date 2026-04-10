@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class MarketingEventExternalUniqueIdentifier < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventExternalUniqueIdentifier < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute app_id
         #   The id of the application that created the marketing event in HubSpot.
         #
@@ -25,7 +25,7 @@ module HubspotSDK
 
         # @!method initialize(app_id:, external_account_id:, external_event_id:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::MarketingEventExternalUniqueIdentifier} for more
+        #   {HubSpotSDK::Models::Marketing::MarketingEventExternalUniqueIdentifier} for more
         #   details.
         #
         #   @param app_id [Integer] The id of the application that created the marketing event in HubSpot.

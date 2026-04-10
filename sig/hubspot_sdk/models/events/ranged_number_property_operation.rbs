@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type ranged_number_property_operation =
@@ -6,26 +6,26 @@ module HubspotSDK
           include_objects_with_no_value_set: bool,
           lower_bound: Float,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::RangedNumberPropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::RangedNumberPropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::RangedNumberPropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::RangedNumberPropertyOperation::property_type,
           upper_bound: Float,
           default_value: String,
           render_spec: String
         }
 
-      class RangedNumberPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class RangedNumberPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor include_objects_with_no_value_set: bool
 
         attr_accessor lower_bound: Float
 
         attr_accessor operation_type: String
 
-        attr_accessor operator: HubspotSDK::Models::Events::RangedNumberPropertyOperation::operator
+        attr_accessor operator: HubSpotSDK::Models::Events::RangedNumberPropertyOperation::operator
 
         attr_accessor operator_name: String
 
-        attr_accessor property_type: HubspotSDK::Models::Events::RangedNumberPropertyOperation::property_type
+        attr_accessor property_type: HubSpotSDK::Models::Events::RangedNumberPropertyOperation::property_type
 
         attr_accessor upper_bound: Float
 
@@ -41,9 +41,9 @@ module HubspotSDK
           include_objects_with_no_value_set: bool,
           lower_bound: Float,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::RangedNumberPropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::RangedNumberPropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::RangedNumberPropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::RangedNumberPropertyOperation::property_type,
           upper_bound: Float,
           ?default_value: String,
           ?render_spec: String
@@ -53,9 +53,9 @@ module HubspotSDK
           include_objects_with_no_value_set: bool,
           lower_bound: Float,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::RangedNumberPropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::RangedNumberPropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::RangedNumberPropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::RangedNumberPropertyOperation::property_type,
           upper_bound: Float,
           default_value: String,
           render_spec: String
@@ -64,22 +64,22 @@ module HubspotSDK
         type operator = :IS_BETWEEN | :IS_NOT_BETWEEN
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           IS_BETWEEN: :IS_BETWEEN
           IS_NOT_BETWEEN: :IS_NOT_BETWEEN
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::RangedNumberPropertyOperation::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::RangedNumberPropertyOperation::operator]
         end
 
         type property_type = :"number-ranged"
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NUMBER_RANGED: :"number-ranged"
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::RangedNumberPropertyOperation::property_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::RangedNumberPropertyOperation::property_type]
         end
       end
     end

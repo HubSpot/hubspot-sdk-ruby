@@ -1,16 +1,16 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type public_recipient =
         {
-          delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
+          delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier,
           actor_id: String,
           name: String,
           recipient_field: String
         }
 
-      class PublicRecipient < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+      class PublicRecipient < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier
 
         attr_reader actor_id: String?
 
@@ -25,14 +25,14 @@ module HubspotSDK
         def recipient_field=: (String) -> String
 
         def initialize: (
-          delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
+          delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier,
           ?actor_id: String,
           ?name: String,
           ?recipient_field: String
         ) -> void
 
         def to_hash: -> {
-          delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier,
+          delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier,
           actor_id: String,
           name: String,
           recipient_field: String

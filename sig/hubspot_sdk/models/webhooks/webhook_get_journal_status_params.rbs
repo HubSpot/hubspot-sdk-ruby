@@ -1,23 +1,23 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       type webhook_get_journal_status_params =
-        { status_id: String } & HubspotSDK::Internal::Type::request_parameters
+        { status_id: String } & HubSpotSDK::Internal::Type::request_parameters
 
-      class WebhookGetJournalStatusParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class WebhookGetJournalStatusParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         attr_accessor status_id: String
 
         def initialize: (
           status_id: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           status_id: String,
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
       end
     end

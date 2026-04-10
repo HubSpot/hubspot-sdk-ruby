@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class SiteSearch
@@ -12,19 +12,19 @@ module HubspotSDK
         #
         # @param content_id [String]
         # @param type [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::IndexedData]
+        # @return [HubSpotSDK::Models::Cms::IndexedData]
         #
-        # @see HubspotSDK::Models::Cms::SiteSearchGetIndexedDataParams
+        # @see HubSpotSDK::Models::Cms::SiteSearchGetIndexedDataParams
         def get_indexed_data(content_id, params = {})
-          parsed, options = HubspotSDK::Cms::SiteSearchGetIndexedDataParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Cms::SiteSearchGetIndexedDataParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: ["cms/site-search/2026-03/indexed-data/%1$s", content_id],
             query: query,
-            model: HubspotSDK::Cms::IndexedData,
+            model: HubSpotSDK::Cms::IndexedData,
             options: options
           )
         end
@@ -50,9 +50,9 @@ module HubspotSDK
         #
         # @param hubdb_query [String]
         #
-        # @param language [Symbol, HubspotSDK::Models::Cms::SiteSearchSearchParams::Language]
+        # @param language [Symbol, HubSpotSDK::Models::Cms::SiteSearchSearchParams::Language]
         #
-        # @param length [Symbol, HubspotSDK::Models::Cms::SiteSearchSearchParams::Length]
+        # @param length [Symbol, HubSpotSDK::Models::Cms::SiteSearchSearchParams::Length]
         #
         # @param limit [Integer] The maximum number of results to display per page.
         #
@@ -72,16 +72,16 @@ module HubspotSDK
         #
         # @param type [Array<String>]
         #
-        # @param types [Array<Symbol, HubspotSDK::Models::Cms::SiteSearchSearchParams::Type>]
+        # @param types [Array<Symbol, HubSpotSDK::Models::Cms::SiteSearchSearchParams::Type>]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::PublicSearchResults]
+        # @return [HubSpotSDK::Models::Cms::PublicSearchResults]
         #
-        # @see HubspotSDK::Models::Cms::SiteSearchSearchParams
+        # @see HubSpotSDK::Models::Cms::SiteSearchSearchParams
         def search(params = {})
-          parsed, options = HubspotSDK::Cms::SiteSearchSearchParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Cms::SiteSearchSearchParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "cms/site-search/2026-03/search",
@@ -95,14 +95,14 @@ module HubspotSDK
               popularity_boost: "popularityBoost",
               table_id: "tableId"
             ),
-            model: HubspotSDK::Cms::PublicSearchResults,
+            model: HubSpotSDK::Cms::PublicSearchResults,
             options: options
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
         end

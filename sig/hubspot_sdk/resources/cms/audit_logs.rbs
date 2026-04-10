@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class AuditLogs
@@ -11,24 +11,24 @@ module HubspotSDK
           ?object_type: ::Array[String],
           ?sort: ::Array[String],
           ?user_id: ::Array[String],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::PublicAuditLog]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Cms::PublicAuditLog]
 
         def export: (
           email: String,
-          format_: HubspotSDK::Models::Cms::CmsAuditLoggingExportSettings::format_,
+          format_: HubSpotSDK::Models::Cms::CmsAuditLoggingExportSettings::format_,
           portal_id: Integer,
           recipient_user_ids: ::Array[Integer],
           should_mark_export_file_as_sensitive: bool,
           type: String,
-          ?filters: HubspotSDK::Cms::CmsAuditLoggingExportFilters,
+          ?filters: HubSpotSDK::Cms::CmsAuditLoggingExportFilters,
           ?partition: Integer,
           ?user_id: Integer,
           ?user_time_zone: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class AtLimitRecordSample < HubspotSDK::Internal::Type::BaseModel
+      class AtLimitRecordSample < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::AtLimitRecordSample,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::AtLimitRecordSample,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

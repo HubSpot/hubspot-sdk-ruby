@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class TimestampOfPropertyVariable < HubspotSDK::Internal::Type::BaseModel
+      class TimestampOfPropertyVariable < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::TimestampOfPropertyVariable,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::TimestampOfPropertyVariable,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::Cms::TimestampOfPropertyVariable::Operator::TaggedSymbol
+            HubSpotSDK::Cms::TimestampOfPropertyVariable::Operator::TaggedSymbol
           )
         end
         attr_accessor :operator
@@ -34,7 +34,7 @@ module HubspotSDK
         sig do
           params(
             operator:
-              HubspotSDK::Cms::TimestampOfPropertyVariable::Operator::OrSymbol,
+              HubSpotSDK::Cms::TimestampOfPropertyVariable::Operator::OrSymbol,
             property_name: String,
             value: String
           ).returns(T.attached_class)
@@ -46,7 +46,7 @@ module HubspotSDK
           override.returns(
             {
               operator:
-                HubspotSDK::Cms::TimestampOfPropertyVariable::Operator::TaggedSymbol,
+                HubSpotSDK::Cms::TimestampOfPropertyVariable::Operator::TaggedSymbol,
               property_name: String,
               value: String
             }
@@ -56,13 +56,13 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Cms::TimestampOfPropertyVariable::Operator
+                HubSpotSDK::Cms::TimestampOfPropertyVariable::Operator
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -70,13 +70,13 @@ module HubspotSDK
           TIMESTAMP_OF_PROPERTY_VARIABLE =
             T.let(
               :TIMESTAMP_OF_PROPERTY_VARIABLE,
-              HubspotSDK::Cms::TimestampOfPropertyVariable::Operator::TaggedSymbol
+              HubSpotSDK::Cms::TimestampOfPropertyVariable::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::TimestampOfPropertyVariable::Operator::TaggedSymbol
+                HubSpotSDK::Cms::TimestampOfPropertyVariable::Operator::TaggedSymbol
               ]
             )
           end

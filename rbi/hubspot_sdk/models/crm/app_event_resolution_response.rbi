@@ -1,24 +1,24 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class AppEventResolutionResponse < HubspotSDK::Internal::Type::BaseModel
+      class AppEventResolutionResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::AppEventResolutionResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::AppEventResolutionResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(HubspotSDK::Crm::DeveloperQualifiedSymbol) }
+        sig { returns(HubSpotSDK::Crm::DeveloperQualifiedSymbol) }
         attr_reader :developer_qualified_symbol
 
         sig do
           params(
             developer_qualified_symbol:
-              HubspotSDK::Crm::DeveloperQualifiedSymbol::OrHash
+              HubSpotSDK::Crm::DeveloperQualifiedSymbol::OrHash
           ).void
         end
         attr_writer :developer_qualified_symbol
@@ -29,7 +29,7 @@ module HubspotSDK
         sig do
           params(
             developer_qualified_symbol:
-              HubspotSDK::Crm::DeveloperQualifiedSymbol::OrHash,
+              HubSpotSDK::Crm::DeveloperQualifiedSymbol::OrHash,
             fully_qualified_name: String
           ).returns(T.attached_class)
         end
@@ -40,7 +40,7 @@ module HubspotSDK
           override.returns(
             {
               developer_qualified_symbol:
-                HubspotSDK::Crm::DeveloperQualifiedSymbol,
+                HubSpotSDK::Crm::DeveloperQualifiedSymbol,
               fully_qualified_name: String
             }
           )

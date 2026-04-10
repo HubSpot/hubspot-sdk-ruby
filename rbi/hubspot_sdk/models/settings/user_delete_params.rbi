@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class UserDeleteParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class UserDeleteParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Settings::UserDeleteParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Settings::UserDeleteParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -21,7 +21,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Settings::UserDeleteParams::IDProperty::OrSymbol
+              HubSpotSDK::Settings::UserDeleteParams::IDProperty::OrSymbol
             )
           )
         end
@@ -30,7 +30,7 @@ module HubspotSDK
         sig do
           params(
             id_property:
-              HubspotSDK::Settings::UserDeleteParams::IDProperty::OrSymbol
+              HubSpotSDK::Settings::UserDeleteParams::IDProperty::OrSymbol
           ).void
         end
         attr_writer :id_property
@@ -39,8 +39,8 @@ module HubspotSDK
           params(
             user_id: String,
             id_property:
-              HubspotSDK::Settings::UserDeleteParams::IDProperty::OrSymbol,
-            request_options: HubspotSDK::RequestOptions::OrHash
+              HubSpotSDK::Settings::UserDeleteParams::IDProperty::OrSymbol,
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(user_id:, id_property: nil, request_options: {})
@@ -51,8 +51,8 @@ module HubspotSDK
             {
               user_id: String,
               id_property:
-                HubspotSDK::Settings::UserDeleteParams::IDProperty::OrSymbol,
-              request_options: HubspotSDK::RequestOptions
+                HubSpotSDK::Settings::UserDeleteParams::IDProperty::OrSymbol,
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end
@@ -60,29 +60,29 @@ module HubspotSDK
         end
 
         module IDProperty
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Settings::UserDeleteParams::IDProperty)
+              T.all(Symbol, HubSpotSDK::Settings::UserDeleteParams::IDProperty)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           EMAIL =
             T.let(
               :EMAIL,
-              HubspotSDK::Settings::UserDeleteParams::IDProperty::TaggedSymbol
+              HubSpotSDK::Settings::UserDeleteParams::IDProperty::TaggedSymbol
             )
           USER_ID =
             T.let(
               :USER_ID,
-              HubspotSDK::Settings::UserDeleteParams::IDProperty::TaggedSymbol
+              HubSpotSDK::Settings::UserDeleteParams::IDProperty::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Settings::UserDeleteParams::IDProperty::TaggedSymbol
+                HubSpotSDK::Settings::UserDeleteParams::IDProperty::TaggedSymbol
               ]
             )
           end

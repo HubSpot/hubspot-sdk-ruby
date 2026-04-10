@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        # @see HubspotSDK::Resources::Cms::Blogs::Settings#list_revisions
-        class SettingListRevisionsParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Cms::Blogs::Settings#list_revisions
+        class SettingListRevisionsParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute blog_id
           #
@@ -35,7 +35,7 @@ module HubspotSDK
 
           # @!method initialize(blog_id:, after: nil, before: nil, limit: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Cms::Blogs::SettingListRevisionsParams} for more details.
+          #   {HubSpotSDK::Models::Cms::Blogs::SettingListRevisionsParams} for more details.
           #
           #   @param blog_id [String]
           #
@@ -45,7 +45,7 @@ module HubspotSDK
           #
           #   @param limit [Integer] The maximum number of results to display per page.
           #
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

@@ -1,16 +1,16 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       type subscription_upsert_request =
-        HubspotSDK::Webhooks::ObjectSubscriptionUpsertRequest
-        | HubspotSDK::Webhooks::AssociationSubscriptionUpsertRequest
-        | HubspotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest
-        | HubspotSDK::Webhooks::ListMembershipSubscriptionUpsertRequest
+        HubSpotSDK::Webhooks::ObjectSubscriptionUpsertRequest
+        | HubSpotSDK::Webhooks::AssociationSubscriptionUpsertRequest
+        | HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest
+        | HubSpotSDK::Webhooks::ListMembershipSubscriptionUpsertRequest
 
       module SubscriptionUpsertRequest
-        extend HubspotSDK::Internal::Type::Union
+        extend HubSpotSDK::Internal::Type::Union
 
-        def self?.variants: -> ::Array[HubspotSDK::Models::Webhooks::subscription_upsert_request]
+        def self?.variants: -> ::Array[HubSpotSDK::Models::Webhooks::subscription_upsert_request]
       end
     end
   end

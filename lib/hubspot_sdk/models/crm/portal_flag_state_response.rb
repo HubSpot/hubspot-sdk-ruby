@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::FeatureFlags#delete_portal_state
-      class PortalFlagStateResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::FeatureFlags#delete_portal_state
+      class PortalFlagStateResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute app_id
         #   The ID of the app
         #
@@ -20,9 +20,9 @@ module HubspotSDK
         # @!attribute flag_state
         #   The state of the flag for this portal
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PortalFlagStateResponse::FlagState]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PortalFlagStateResponse::FlagState]
         required :flag_state,
-                 enum: -> { HubspotSDK::Crm::PortalFlagStateResponse::FlagState },
+                 enum: -> { HubSpotSDK::Crm::PortalFlagStateResponse::FlagState },
                  api_name: :flagState
 
         # @!attribute portal_id
@@ -36,15 +36,15 @@ module HubspotSDK
         #
         #   @param flag_name [String] The name of the flag
         #
-        #   @param flag_state [Symbol, HubspotSDK::Models::Crm::PortalFlagStateResponse::FlagState] The state of the flag for this portal
+        #   @param flag_state [Symbol, HubSpotSDK::Models::Crm::PortalFlagStateResponse::FlagState] The state of the flag for this portal
         #
         #   @param portal_id [Integer] The ID of the portal
 
         # The state of the flag for this portal
         #
-        # @see HubspotSDK::Models::Crm::PortalFlagStateResponse#flag_state
+        # @see HubSpotSDK::Models::Crm::PortalFlagStateResponse#flag_state
         module FlagState
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABSENT = :ABSENT
           OFF = :OFF

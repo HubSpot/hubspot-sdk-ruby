@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       module Actions
@@ -6,21 +6,21 @@ module HubspotSDK
           {
             app_id: Integer,
             definition_id: String,
-            function_type: HubspotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::function_type,
+            function_type: HubSpotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::function_type,
             function_id: String,
             body: String
           }
-          & HubspotSDK::Internal::Type::request_parameters
+          & HubSpotSDK::Internal::Type::request_parameters
 
-        class FunctionCreateOrReplaceParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class FunctionCreateOrReplaceParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           attr_accessor app_id: Integer
 
           attr_accessor definition_id: String
 
-          attr_accessor function_type: HubspotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::function_type
+          attr_accessor function_type: HubSpotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::function_type
 
           attr_accessor function_id: String
 
@@ -29,19 +29,19 @@ module HubspotSDK
           def initialize: (
             app_id: Integer,
             definition_id: String,
-            function_type: HubspotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::function_type,
+            function_type: HubSpotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::function_type,
             function_id: String,
             body: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
             app_id: Integer,
             definition_id: String,
-            function_type: HubspotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::function_type,
+            function_type: HubSpotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::function_type,
             function_id: String,
             body: String,
-            request_options: HubspotSDK::RequestOptions
+            request_options: HubSpotSDK::RequestOptions
           }
 
           type function_type =
@@ -51,14 +51,14 @@ module HubspotSDK
             | :PRE_FETCH_OPTIONS
 
           module FunctionType
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             POST_ACTION_EXECUTION: :POST_ACTION_EXECUTION
             POST_FETCH_OPTIONS: :POST_FETCH_OPTIONS
             PRE_ACTION_EXECUTION: :PRE_ACTION_EXECUTION
             PRE_FETCH_OPTIONS: :PRE_FETCH_OPTIONS
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::function_type]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::function_type]
           end
         end
       end

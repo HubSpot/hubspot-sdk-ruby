@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::MediaBridge#get_event_visibility_settings
-      class EventVisibilityResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Cms::MediaBridge#get_event_visibility_settings
+      class EventVisibilityResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute created_at
         #
         #   @return [Time]
@@ -12,14 +12,14 @@ module HubspotSDK
 
         # @!attribute visibility_settings
         #
-        #   @return [Array<HubspotSDK::Models::Cms::EventVisibilityChange>]
+        #   @return [Array<HubSpotSDK::Models::Cms::EventVisibilityChange>]
         required :visibility_settings,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::EventVisibilityChange] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::EventVisibilityChange] },
                  api_name: :visibilitySettings
 
         # @!method initialize(created_at:, visibility_settings:)
         #   @param created_at [Time]
-        #   @param visibility_settings [Array<HubspotSDK::Models::Cms::EventVisibilityChange>]
+        #   @param visibility_settings [Array<HubSpotSDK::Models::Cms::EventVisibilityChange>]
       end
     end
   end

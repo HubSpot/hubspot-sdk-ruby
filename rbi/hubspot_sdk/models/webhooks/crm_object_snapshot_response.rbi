@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class CrmObjectSnapshotResponse < HubspotSDK::Internal::Type::BaseModel
+      class CrmObjectSnapshotResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Webhooks::CrmObjectSnapshotResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Webhooks::CrmObjectSnapshotResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

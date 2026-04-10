@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      # @see HubspotSDK::Resources::Settings::Users#list_roles
-      class CollectionResponsePublicPermissionSetNoPaging < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Settings::Users#list_roles
+      class CollectionResponsePublicPermissionSetNoPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Settings::PublicPermissionSet>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Settings::PublicPermissionSet] }
+        #   @return [Array<HubSpotSDK::Models::Settings::PublicPermissionSet>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Settings::PublicPermissionSet] }
 
         # @!method initialize(results:)
-        #   @param results [Array<HubspotSDK::Models::Settings::PublicPermissionSet>]
+        #   @param results [Array<HubSpotSDK::Models::Settings::PublicPermissionSet>]
       end
     end
   end

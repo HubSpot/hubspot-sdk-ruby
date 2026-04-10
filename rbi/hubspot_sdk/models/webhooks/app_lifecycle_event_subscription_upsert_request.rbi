@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class AppLifecycleEventSubscriptionUpsertRequest < HubspotSDK::Internal::Type::BaseModel
+      class AppLifecycleEventSubscriptionUpsertRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::OrSymbol
+            HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::OrSymbol
           )
         end
         attr_accessor :subscription_type
@@ -30,7 +30,7 @@ module HubspotSDK
             event_type_id: String,
             properties: T::Array[String],
             subscription_type:
-              HubspotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::OrSymbol
+              HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(event_type_id:, properties:, subscription_type:)
@@ -42,7 +42,7 @@ module HubspotSDK
               event_type_id: String,
               properties: T::Array[String],
               subscription_type:
-                HubspotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::OrSymbol
+                HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::OrSymbol
             }
           )
         end
@@ -50,13 +50,13 @@ module HubspotSDK
         end
 
         module SubscriptionType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType
+                HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -64,33 +64,33 @@ module HubspotSDK
           OBJECT =
             T.let(
               :OBJECT,
-              HubspotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::TaggedSymbol
+              HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::TaggedSymbol
             )
           ASSOCIATION =
             T.let(
               :ASSOCIATION,
-              HubspotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::TaggedSymbol
+              HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::TaggedSymbol
             )
           EVENT =
             T.let(
               :EVENT,
-              HubspotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::TaggedSymbol
+              HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::TaggedSymbol
             )
           APP_LIFECYCLE_EVENT =
             T.let(
               :APP_LIFECYCLE_EVENT,
-              HubspotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::TaggedSymbol
+              HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::TaggedSymbol
             )
           LIST_MEMBERSHIP =
             T.let(
               :LIST_MEMBERSHIP,
-              HubspotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::TaggedSymbol
+              HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::TaggedSymbol
+                HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::TaggedSymbol
               ]
             )
           end

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class PublicSearchResults < HubspotSDK::Internal::Type::BaseModel
+      class PublicSearchResults < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::PublicSearchResults,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::PublicSearchResults,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -24,7 +24,7 @@ module HubspotSDK
         sig { returns(Integer) }
         attr_accessor :page
 
-        sig { returns(T::Array[HubspotSDK::Cms::ContentSearchResult]) }
+        sig { returns(T::Array[HubSpotSDK::Cms::ContentSearchResult]) }
         attr_accessor :results
 
         # The total number of results found for the search term.
@@ -43,7 +43,7 @@ module HubspotSDK
             limit: Integer,
             offset: Integer,
             page: Integer,
-            results: T::Array[HubspotSDK::Cms::ContentSearchResult::OrHash],
+            results: T::Array[HubSpotSDK::Cms::ContentSearchResult::OrHash],
             total: Integer,
             search_term: String
           ).returns(T.attached_class)
@@ -69,7 +69,7 @@ module HubspotSDK
               limit: Integer,
               offset: Integer,
               page: Integer,
-              results: T::Array[HubspotSDK::Cms::ContentSearchResult],
+              results: T::Array[HubSpotSDK::Cms::ContentSearchResult],
               total: Integer,
               search_term: String
             }

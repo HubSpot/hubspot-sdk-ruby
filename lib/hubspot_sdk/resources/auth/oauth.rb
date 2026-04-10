@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Auth
       class OAuth
@@ -12,17 +12,17 @@ module HubspotSDK
         # @param client_secret [String]
         # @param code [String]
         # @param code_verifier [String]
-        # @param grant_type [Symbol, HubspotSDK::Models::Auth::OAuthCreateTokenParams::GrantType]
+        # @param grant_type [Symbol, HubSpotSDK::Models::Auth::OAuthCreateTokenParams::GrantType]
         # @param redirect_uri [String]
         # @param refresh_token [String]
         # @param scope [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [StringIO]
         #
-        # @see HubspotSDK::Models::Auth::OAuthCreateTokenParams
+        # @see HubSpotSDK::Models::Auth::OAuthCreateTokenParams
         def create_token(params = {})
-          parsed, options = HubspotSDK::Auth::OAuthCreateTokenParams.dump_request(params)
+          parsed, options = HubSpotSDK::Auth::OAuthCreateTokenParams.dump_request(params)
           @client.request(
             method: :post,
             path: "oauth/2026-03/token",
@@ -41,19 +41,19 @@ module HubspotSDK
         # @param client_id [String]
         # @param client_secret [String]
         # @param token_type_hint [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Auth::PublicAccessTokenInfoResponse, HubspotSDK::Models::Auth::PublicRefreshTokenInfoResponse]
+        # @return [HubSpotSDK::Models::Auth::PublicAccessTokenInfoResponse, HubSpotSDK::Models::Auth::PublicRefreshTokenInfoResponse]
         #
-        # @see HubspotSDK::Models::Auth::OAuthIntrospectTokenParams
+        # @see HubSpotSDK::Models::Auth::OAuthIntrospectTokenParams
         def introspect_token(params = {})
-          parsed, options = HubspotSDK::Auth::OAuthIntrospectTokenParams.dump_request(params)
+          parsed, options = HubSpotSDK::Auth::OAuthIntrospectTokenParams.dump_request(params)
           @client.request(
             method: :post,
             path: "oauth/2026-03/token/introspect",
             headers: {"content-type" => "application/x-www-form-urlencoded"},
             body: parsed,
-            model: HubspotSDK::Auth::TokenInfoResponseBaseIf,
+            model: HubSpotSDK::Auth::TokenInfoResponseBaseIf,
             options: options
           )
         end
@@ -66,13 +66,13 @@ module HubspotSDK
         # @param client_id [String]
         # @param client_secret [String]
         # @param token_type_hint [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [StringIO]
         #
-        # @see HubspotSDK::Models::Auth::OAuthRevokeTokenParams
+        # @see HubSpotSDK::Models::Auth::OAuthRevokeTokenParams
         def revoke_token(params = {})
-          parsed, options = HubspotSDK::Auth::OAuthRevokeTokenParams.dump_request(params)
+          parsed, options = HubSpotSDK::Auth::OAuthRevokeTokenParams.dump_request(params)
           @client.request(
             method: :post,
             path: "oauth/2026-03/token/revoke",
@@ -85,7 +85,7 @@ module HubspotSDK
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
         end

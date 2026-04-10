@@ -1,26 +1,26 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
       type file_stat =
-        { file: HubspotSDK::Files::File, folder: HubspotSDK::Files::Folder }
+        { file: HubSpotSDK::Files::File, folder: HubSpotSDK::Files::Folder }
 
-      class FileStat < HubspotSDK::Internal::Type::BaseModel
-        attr_reader file: HubspotSDK::Files::File?
+      class FileStat < HubSpotSDK::Internal::Type::BaseModel
+        attr_reader file: HubSpotSDK::Files::File?
 
-        def file=: (HubspotSDK::Files::File) -> HubspotSDK::Files::File
+        def file=: (HubSpotSDK::Files::File) -> HubSpotSDK::Files::File
 
-        attr_reader folder: HubspotSDK::Files::Folder?
+        attr_reader folder: HubSpotSDK::Files::Folder?
 
-        def folder=: (HubspotSDK::Files::Folder) -> HubspotSDK::Files::Folder
+        def folder=: (HubSpotSDK::Files::Folder) -> HubSpotSDK::Files::Folder
 
         def initialize: (
-          ?file: HubspotSDK::Files::File,
-          ?folder: HubspotSDK::Files::Folder
+          ?file: HubSpotSDK::Files::File,
+          ?folder: HubSpotSDK::Files::Folder
         ) -> void
 
         def to_hash: -> {
-          file: HubspotSDK::Files::File,
-          folder: HubspotSDK::Files::Folder
+          file: HubSpotSDK::Files::File,
+          folder: HubSpotSDK::Files::Folder
         }
       end
     end

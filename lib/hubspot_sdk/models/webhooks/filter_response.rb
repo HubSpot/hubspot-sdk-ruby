@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      # @see HubspotSDK::Resources::Webhooks#get_subscription_filter
-      class FilterResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Webhooks#get_subscription_filter
+      class FilterResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [Integer]
@@ -20,18 +20,18 @@ module HubspotSDK
         #   filter on, the operator to use (such as equals, greater than, or contains), and
         #   the value(s) to compare against.
         #
-        #   @return [HubspotSDK::Models::Webhooks::Filter]
-        required :filter, -> { HubspotSDK::Webhooks::Filter }
+        #   @return [HubSpotSDK::Models::Webhooks::Filter]
+        required :filter, -> { HubSpotSDK::Webhooks::Filter }
 
         # @!method initialize(id:, created_at:, filter:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Webhooks::FilterResponse} for more details.
+        #   {HubSpotSDK::Models::Webhooks::FilterResponse} for more details.
         #
         #   @param id [Integer]
         #
         #   @param created_at [Integer]
         #
-        #   @param filter [HubspotSDK::Models::Webhooks::Filter] Defines a single condition for searching CRM objects, specifying the property to
+        #   @param filter [HubSpotSDK::Models::Webhooks::Filter] Defines a single condition for searching CRM objects, specifying the property to
       end
     end
   end

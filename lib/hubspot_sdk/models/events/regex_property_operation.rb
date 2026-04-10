@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class RegexPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class RegexPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute case_sensitive
         #
         #   @return [Boolean]
-        required :case_sensitive, HubspotSDK::Internal::Type::Boolean, api_name: :caseSensitive
+        required :case_sensitive, HubSpotSDK::Internal::Type::Boolean, api_name: :caseSensitive
 
         # @!attribute include_objects_with_no_value_set
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute operation_type
@@ -23,8 +23,8 @@ module HubspotSDK
 
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::RegexPropertyOperation::Operator]
-        required :operator, enum: -> { HubspotSDK::Events::RegexPropertyOperation::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Events::RegexPropertyOperation::Operator]
+        required :operator, enum: -> { HubSpotSDK::Events::RegexPropertyOperation::Operator }
 
         # @!attribute operator_name
         #
@@ -38,9 +38,9 @@ module HubspotSDK
 
         # @!attribute property_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::RegexPropertyOperation::PropertyType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::RegexPropertyOperation::PropertyType]
         required :property_type,
-                 enum: -> { HubspotSDK::Events::RegexPropertyOperation::PropertyType },
+                 enum: -> { HubSpotSDK::Events::RegexPropertyOperation::PropertyType },
                  api_name: :propertyType
 
         # @!attribute default_value
@@ -57,16 +57,16 @@ module HubspotSDK
         #   @param case_sensitive [Boolean]
         #   @param include_objects_with_no_value_set [Boolean]
         #   @param operation_type [String]
-        #   @param operator [Symbol, HubspotSDK::Models::Events::RegexPropertyOperation::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Events::RegexPropertyOperation::Operator]
         #   @param operator_name [String]
         #   @param pattern [String]
-        #   @param property_type [Symbol, HubspotSDK::Models::Events::RegexPropertyOperation::PropertyType]
+        #   @param property_type [Symbol, HubSpotSDK::Models::Events::RegexPropertyOperation::PropertyType]
         #   @param default_value [String]
         #   @param render_spec [String]
 
-        # @see HubspotSDK::Models::Events::RegexPropertyOperation#operator
+        # @see HubSpotSDK::Models::Events::RegexPropertyOperation#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DOES_NOT_MATCH_REGEX = :DOES_NOT_MATCH_REGEX
           MATCHES_REGEX = :MATCHES_REGEX
@@ -75,9 +75,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::RegexPropertyOperation#property_type
+        # @see HubSpotSDK::Models::Events::RegexPropertyOperation#property_type
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           REGEX = :regex
 

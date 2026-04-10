@@ -1,64 +1,64 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
-      sig { returns(HubspotSDK::Resources::Crm::AppUninstalls) }
+      sig { returns(HubSpotSDK::Resources::Crm::AppUninstalls) }
       attr_reader :app_uninstalls
 
-      sig { returns(HubspotSDK::Resources::Crm::Associations) }
+      sig { returns(HubSpotSDK::Resources::Crm::Associations) }
       attr_reader :associations
 
-      sig { returns(HubspotSDK::Resources::Crm::AssociationsSchema) }
+      sig { returns(HubSpotSDK::Resources::Crm::AssociationsSchema) }
       attr_reader :associations_schema
 
-      sig { returns(HubspotSDK::Resources::Crm::DealSplits) }
+      sig { returns(HubSpotSDK::Resources::Crm::DealSplits) }
       attr_reader :deal_splits
 
-      sig { returns(HubspotSDK::Resources::Crm::Exports) }
+      sig { returns(HubSpotSDK::Resources::Crm::Exports) }
       attr_reader :exports
 
-      sig { returns(HubspotSDK::Resources::Crm::Extensions) }
+      sig { returns(HubSpotSDK::Resources::Crm::Extensions) }
       attr_reader :extensions
 
-      sig { returns(HubspotSDK::Resources::Crm::FeatureFlags) }
+      sig { returns(HubSpotSDK::Resources::Crm::FeatureFlags) }
       attr_reader :feature_flags
 
-      sig { returns(HubspotSDK::Resources::Crm::Imports) }
+      sig { returns(HubSpotSDK::Resources::Crm::Imports) }
       attr_reader :imports
 
-      sig { returns(HubspotSDK::Resources::Crm::Limits) }
+      sig { returns(HubSpotSDK::Resources::Crm::Limits) }
       attr_reader :limits
 
-      sig { returns(HubspotSDK::Resources::Crm::Lists) }
+      sig { returns(HubSpotSDK::Resources::Crm::Lists) }
       attr_reader :lists
 
-      sig { returns(HubspotSDK::Resources::Crm::ObjectLibrary) }
+      sig { returns(HubSpotSDK::Resources::Crm::ObjectLibrary) }
       attr_reader :object_library
 
-      sig { returns(HubspotSDK::Resources::Crm::ObjectSchemas) }
+      sig { returns(HubSpotSDK::Resources::Crm::ObjectSchemas) }
       attr_reader :object_schemas
 
-      sig { returns(HubspotSDK::Resources::Crm::Objects) }
+      sig { returns(HubSpotSDK::Resources::Crm::Objects) }
       attr_reader :objects
 
-      sig { returns(HubspotSDK::Resources::Crm::Owners) }
+      sig { returns(HubSpotSDK::Resources::Crm::Owners) }
       attr_reader :owners
 
-      sig { returns(HubspotSDK::Resources::Crm::Pipelines) }
+      sig { returns(HubSpotSDK::Resources::Crm::Pipelines) }
       attr_reader :pipelines
 
-      sig { returns(HubspotSDK::Resources::Crm::Properties) }
+      sig { returns(HubSpotSDK::Resources::Crm::Properties) }
       attr_reader :properties
 
-      sig { returns(HubspotSDK::Resources::Crm::PropertiesValidations) }
+      sig { returns(HubSpotSDK::Resources::Crm::PropertiesValidations) }
       attr_reader :properties_validations
 
-      sig { returns(HubspotSDK::Resources::Crm::Timeline) }
+      sig { returns(HubSpotSDK::Resources::Crm::Timeline) }
       attr_reader :timeline
 
       # @api private
-      sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+      sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
       def self.new(client:)
       end
     end

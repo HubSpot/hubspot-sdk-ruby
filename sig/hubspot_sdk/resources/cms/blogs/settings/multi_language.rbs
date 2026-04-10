@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Blogs
@@ -6,10 +6,10 @@ module HubspotSDK
           class MultiLanguage
             def attach_to_lang_group: (
               id: String,
-              language: HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::language,
+              language: HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::language,
               primary_id: String,
-              ?primary_language: HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language,
-              ?request_options: HubspotSDK::request_opts
+              ?primary_language: HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language,
+              ?request_options: HubSpotSDK::request_opts
             ) -> StringIO
 
             def create_language_variation: (
@@ -17,26 +17,26 @@ module HubspotSDK
               ?language: String,
               ?primary_language: String,
               ?slug: String,
-              ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::Cms::Blogs::Blog
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Cms::Blogs::Blog
 
             def detach_from_lang_group: (
               id: String,
-              ?request_options: HubspotSDK::request_opts
+              ?request_options: HubSpotSDK::request_opts
             ) -> StringIO
 
             def set_new_lang_primary: (
               id: String,
-              ?request_options: HubspotSDK::request_opts
+              ?request_options: HubSpotSDK::request_opts
             ) -> nil
 
             def update_languages: (
-              languages: ::Hash[Symbol, HubspotSDK::Models::Cms::UpdateLanguagesRequestVNext::language],
+              languages: ::Hash[Symbol, HubSpotSDK::Models::Cms::UpdateLanguagesRequestVNext::language],
               primary_id: String,
-              ?request_options: HubspotSDK::request_opts
+              ?request_options: HubSpotSDK::request_opts
             ) -> StringIO
 
-            def initialize: (client: HubspotSDK::Client) -> void
+            def initialize: (client: HubSpotSDK::Client) -> void
           end
         end
       end

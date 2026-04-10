@@ -1,31 +1,31 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class BreakpointStyles < HubspotSDK::Internal::Type::BaseModel
+      class BreakpointStyles < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute hidden
         #   Boolean indicating if the breakpoint is visible.
         #
         #   @return [Boolean]
-        required :hidden, HubspotSDK::Internal::Type::Boolean
+        required :hidden, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute margin
         #
-        #   @return [HubspotSDK::Models::Cms::Margin]
-        required :margin, -> { HubspotSDK::Cms::Margin }
+        #   @return [HubSpotSDK::Models::Cms::Margin]
+        required :margin, -> { HubSpotSDK::Cms::Margin }
 
         # @!attribute padding
         #
-        #   @return [HubspotSDK::Models::Cms::Padding]
-        required :padding, -> { HubspotSDK::Cms::Padding }
+        #   @return [HubSpotSDK::Models::Cms::Padding]
+        required :padding, -> { HubSpotSDK::Cms::Padding }
 
         # @!method initialize(hidden:, margin:, padding:)
         #   @param hidden [Boolean] Boolean indicating if the breakpoint is visible.
         #
-        #   @param margin [HubspotSDK::Models::Cms::Margin]
+        #   @param margin [HubSpotSDK::Models::Cms::Margin]
         #
-        #   @param padding [HubspotSDK::Models::Cms::Padding]
+        #   @param padding [HubSpotSDK::Models::Cms::Padding]
       end
     end
   end

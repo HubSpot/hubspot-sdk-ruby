@@ -2,28 +2,28 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Automation::Actions::RevisionsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Automation::Actions::RevisionsTest < HubSpotSDK::Test::ResourceTest
   def test_list_required_params
     skip("Mock server tests are disabled")
 
     response = @hubspot.automation.actions.revisions.list("definitionId", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Automation::PublicActionRevision
+      row => HubSpotSDK::Automation::PublicActionRevision
     end
 
     assert_pattern do
       row => {
         id: String,
         created_at: Time,
-        definition: HubspotSDK::Automation::PublicActionDefinition,
+        definition: HubSpotSDK::Automation::PublicActionDefinition,
         revision_id: String
       }
     end
@@ -36,14 +36,14 @@ class HubspotSDK::Test::Resources::Automation::Actions::RevisionsTest < HubspotS
       @hubspot.automation.actions.revisions.get("revisionId", app_id: 0, definition_id: "definitionId")
 
     assert_pattern do
-      response => HubspotSDK::Automation::PublicActionRevision
+      response => HubSpotSDK::Automation::PublicActionRevision
     end
 
     assert_pattern do
       response => {
         id: String,
         created_at: Time,
-        definition: HubspotSDK::Automation::PublicActionDefinition,
+        definition: HubSpotSDK::Automation::PublicActionDefinition,
         revision_id: String
       }
     end

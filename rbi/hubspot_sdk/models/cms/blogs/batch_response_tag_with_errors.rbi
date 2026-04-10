@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        class BatchResponseTagWithErrors < HubspotSDK::Internal::Type::BaseModel
+        class BatchResponseTagWithErrors < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Cms::Blogs::BatchResponseTagWithErrors,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Cms::Blogs::BatchResponseTagWithErrors,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -18,7 +18,7 @@ module HubspotSDK
           attr_accessor :completed_at
 
           # Results of batch operation.
-          sig { returns(T::Array[HubspotSDK::Cms::Blogs::Tag]) }
+          sig { returns(T::Array[HubSpotSDK::Cms::Blogs::Tag]) }
           attr_accessor :results
 
           # Time of batch operation start.
@@ -28,17 +28,17 @@ module HubspotSDK
           # Status of batch operation.
           sig do
             returns(
-              HubspotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status::OrSymbol
+              HubSpotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status::OrSymbol
             )
           end
           attr_accessor :status
 
           # Errors in batch operation.
-          sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
+          sig { returns(T.nilable(T::Array[HubSpotSDK::StandardError])) }
           attr_reader :errors
 
           sig do
-            params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void
+            params(errors: T::Array[HubSpotSDK::StandardError::OrHash]).void
           end
           attr_writer :errors
 
@@ -66,11 +66,11 @@ module HubspotSDK
           sig do
             params(
               completed_at: Time,
-              results: T::Array[HubspotSDK::Cms::Blogs::Tag::OrHash],
+              results: T::Array[HubSpotSDK::Cms::Blogs::Tag::OrHash],
               started_at: Time,
               status:
-                HubspotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status::OrSymbol,
-              errors: T::Array[HubspotSDK::StandardError::OrHash],
+                HubSpotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status::OrSymbol,
+              errors: T::Array[HubSpotSDK::StandardError::OrHash],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
               requested_at: Time
@@ -100,11 +100,11 @@ module HubspotSDK
             override.returns(
               {
                 completed_at: Time,
-                results: T::Array[HubspotSDK::Cms::Blogs::Tag],
+                results: T::Array[HubSpotSDK::Cms::Blogs::Tag],
                 started_at: Time,
                 status:
-                  HubspotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status::OrSymbol,
-                errors: T::Array[HubspotSDK::StandardError],
+                  HubSpotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status::OrSymbol,
+                errors: T::Array[HubSpotSDK::StandardError],
                 links: T::Hash[Symbol, String],
                 num_errors: Integer,
                 requested_at: Time
@@ -116,13 +116,13 @@ module HubspotSDK
 
           # Status of batch operation.
           module Status
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             TaggedSymbol =
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status
+                  HubSpotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -130,28 +130,28 @@ module HubspotSDK
             CANCELED =
               T.let(
                 :CANCELED,
-                HubspotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status::TaggedSymbol
+                HubSpotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status::TaggedSymbol
               )
             COMPLETE =
               T.let(
                 :COMPLETE,
-                HubspotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status::TaggedSymbol
+                HubSpotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status::TaggedSymbol
               )
             PENDING =
               T.let(
                 :PENDING,
-                HubspotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status::TaggedSymbol
+                HubSpotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status::TaggedSymbol
               )
             PROCESSING =
               T.let(
                 :PROCESSING,
-                HubspotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status::TaggedSymbol
+                HubSpotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status::TaggedSymbol
+                  HubSpotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status::TaggedSymbol
                 ]
               )
             end

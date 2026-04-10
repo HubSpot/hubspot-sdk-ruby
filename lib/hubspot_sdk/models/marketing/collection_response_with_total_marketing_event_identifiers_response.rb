@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::MarketingEvents#search_identifiers_by_external_event_id
-      class CollectionResponseWithTotalMarketingEventIdentifiersResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Marketing::MarketingEvents#search_identifiers_by_external_event_id
+      class CollectionResponseWithTotalMarketingEventIdentifiersResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::MarketingEventIdentifiersResponse>]
+        #   @return [Array<HubSpotSDK::Models::Marketing::MarketingEventIdentifiersResponse>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::MarketingEventIdentifiersResponse] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::MarketingEventIdentifiersResponse] }
 
         # @!attribute total
         #
@@ -18,13 +18,13 @@ module HubspotSDK
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::Paging, nil]
-        optional :paging, -> { HubspotSDK::Paging }
+        #   @return [HubSpotSDK::Models::Paging, nil]
+        optional :paging, -> { HubSpotSDK::Paging }
 
         # @!method initialize(results:, total:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Marketing::MarketingEventIdentifiersResponse>]
+        #   @param results [Array<HubSpotSDK::Models::Marketing::MarketingEventIdentifiersResponse>]
         #   @param total [Integer]
-        #   @param paging [HubspotSDK::Models::Paging]
+        #   @param paging [HubSpotSDK::Models::Paging]
       end
     end
   end

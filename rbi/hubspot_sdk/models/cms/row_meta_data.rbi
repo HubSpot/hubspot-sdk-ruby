@@ -1,28 +1,28 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class RowMetaData < HubspotSDK::Internal::Type::BaseModel
+      class RowMetaData < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::RowMetaData, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::RowMetaData, HubSpotSDK::Internal::AnyHash)
           end
 
         # The CSS class applied to the row.
         sig { returns(String) }
         attr_accessor :css_class
 
-        sig { returns(HubspotSDK::Cms::Styles) }
+        sig { returns(HubSpotSDK::Cms::Styles) }
         attr_reader :styles
 
-        sig { params(styles: HubspotSDK::Cms::Styles::OrHash).void }
+        sig { params(styles: HubSpotSDK::Cms::Styles::OrHash).void }
         attr_writer :styles
 
         sig do
           params(
             css_class: String,
-            styles: HubspotSDK::Cms::Styles::OrHash
+            styles: HubSpotSDK::Cms::Styles::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -34,7 +34,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { css_class: String, styles: HubspotSDK::Cms::Styles }
+            { css_class: String, styles: HubSpotSDK::Cms::Styles }
           )
         end
         def to_hash

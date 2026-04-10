@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicNowReference < HubspotSDK::Internal::Type::BaseModel
+      class PublicNowReference < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute reference_type
         #   Indicates the type of reference (NOW).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicNowReference::ReferenceType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicNowReference::ReferenceType]
         required :reference_type,
-                 enum: -> { HubspotSDK::Crm::PublicNowReference::ReferenceType },
+                 enum: -> { HubSpotSDK::Crm::PublicNowReference::ReferenceType },
                  api_name: :referenceType
 
         # @!attribute hour
@@ -37,7 +37,7 @@ module HubspotSDK
         optional :second, Integer
 
         # @!method initialize(reference_type:, hour: nil, millisecond: nil, minute: nil, second: nil)
-        #   @param reference_type [Symbol, HubspotSDK::Models::Crm::PublicNowReference::ReferenceType] Indicates the type of reference (NOW).
+        #   @param reference_type [Symbol, HubSpotSDK::Models::Crm::PublicNowReference::ReferenceType] Indicates the type of reference (NOW).
         #
         #   @param hour [Integer] The hour component of the current time reference.
         #
@@ -49,9 +49,9 @@ module HubspotSDK
 
         # Indicates the type of reference (NOW).
         #
-        # @see HubspotSDK::Models::Crm::PublicNowReference#reference_type
+        # @see HubSpotSDK::Models::Crm::PublicNowReference#reference_type
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NOW = :NOW
 

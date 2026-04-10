@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class CommunicationPreferences
       class Statuses
-        attr_reader batch: HubspotSDK::Resources::CommunicationPreferences::Statuses::Batch
+        attr_reader batch: HubSpotSDK::Resources::CommunicationPreferences::Statuses::Batch
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

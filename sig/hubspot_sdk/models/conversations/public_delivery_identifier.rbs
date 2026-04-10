@@ -1,24 +1,24 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type public_delivery_identifier =
         {
-          type: HubspotSDK::Models::Conversations::PublicDeliveryIdentifier::type_,
+          type: HubSpotSDK::Models::Conversations::PublicDeliveryIdentifier::type_,
           value: String
         }
 
-      class PublicDeliveryIdentifier < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor type: HubspotSDK::Models::Conversations::PublicDeliveryIdentifier::type_
+      class PublicDeliveryIdentifier < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor type: HubSpotSDK::Models::Conversations::PublicDeliveryIdentifier::type_
 
         attr_accessor value: String
 
         def initialize: (
-          type: HubspotSDK::Models::Conversations::PublicDeliveryIdentifier::type_,
+          type: HubSpotSDK::Models::Conversations::PublicDeliveryIdentifier::type_,
           value: String
         ) -> void
 
         def to_hash: -> {
-          type: HubspotSDK::Models::Conversations::PublicDeliveryIdentifier::type_,
+          type: HubSpotSDK::Models::Conversations::PublicDeliveryIdentifier::type_,
           value: String
         }
 
@@ -29,14 +29,14 @@ module HubspotSDK
           | :HS_SHORT_CODE
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CHANNEL_SPECIFIC_OPAQUE_ID: :CHANNEL_SPECIFIC_OPAQUE_ID
           HS_EMAIL_ADDRESS: :HS_EMAIL_ADDRESS
           HS_PHONE_NUMBER: :HS_PHONE_NUMBER
           HS_SHORT_CODE: :HS_SHORT_CODE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicDeliveryIdentifier::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Conversations::PublicDeliveryIdentifier::type_]
         end
       end
     end

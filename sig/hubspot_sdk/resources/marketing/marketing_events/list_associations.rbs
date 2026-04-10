@@ -1,46 +1,46 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class MarketingEvents
         class ListAssociations
           def list: (
             String marketing_event_id,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::CollectionResponseWithTotalPublicList
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Marketing::CollectionResponseWithTotalPublicList
 
           def delete: (
             String list_id,
             marketing_event_id: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def associate: (
             String list_id,
             marketing_event_id: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def associate_by_external_account: (
             String list_id,
             external_account_id: String,
             external_event_id: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def delete_by_external_account: (
             String list_id,
             external_account_id: String,
             external_event_id: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def list_by_external_account: (
             String external_event_id,
             external_account_id: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::CollectionResponseWithTotalPublicList
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Marketing::CollectionResponseWithTotalPublicList
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

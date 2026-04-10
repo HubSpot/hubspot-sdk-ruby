@@ -1,24 +1,24 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       type batch_response_subscription_response =
         {
           completed_at: Time,
-          results: ::Array[HubspotSDK::Webhooks::SubscriptionResponse],
+          results: ::Array[HubSpotSDK::Webhooks::SubscriptionResponse],
           started_at: Time,
-          status: HubspotSDK::Models::Webhooks::BatchResponseSubscriptionResponse::status,
+          status: HubSpotSDK::Models::Webhooks::BatchResponseSubscriptionResponse::status,
           links: ::Hash[Symbol, String],
           requested_at: Time
         }
 
-      class BatchResponseSubscriptionResponse < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseSubscriptionResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor completed_at: Time
 
-        attr_accessor results: ::Array[HubspotSDK::Webhooks::SubscriptionResponse]
+        attr_accessor results: ::Array[HubSpotSDK::Webhooks::SubscriptionResponse]
 
         attr_accessor started_at: Time
 
-        attr_accessor status: HubspotSDK::Models::Webhooks::BatchResponseSubscriptionResponse::status
+        attr_accessor status: HubSpotSDK::Models::Webhooks::BatchResponseSubscriptionResponse::status
 
         attr_reader links: ::Hash[Symbol, String]?
 
@@ -30,18 +30,18 @@ module HubspotSDK
 
         def initialize: (
           completed_at: Time,
-          results: ::Array[HubspotSDK::Webhooks::SubscriptionResponse],
+          results: ::Array[HubSpotSDK::Webhooks::SubscriptionResponse],
           started_at: Time,
-          status: HubspotSDK::Models::Webhooks::BatchResponseSubscriptionResponse::status,
+          status: HubSpotSDK::Models::Webhooks::BatchResponseSubscriptionResponse::status,
           ?links: ::Hash[Symbol, String],
           ?requested_at: Time
         ) -> void
 
         def to_hash: -> {
           completed_at: Time,
-          results: ::Array[HubspotSDK::Webhooks::SubscriptionResponse],
+          results: ::Array[HubSpotSDK::Webhooks::SubscriptionResponse],
           started_at: Time,
-          status: HubspotSDK::Models::Webhooks::BatchResponseSubscriptionResponse::status,
+          status: HubSpotSDK::Models::Webhooks::BatchResponseSubscriptionResponse::status,
           links: ::Hash[Symbol, String],
           requested_at: Time
         }
@@ -49,14 +49,14 @@ module HubspotSDK
         type status = :CANCELED | :COMPLETE | :PENDING | :PROCESSING
 
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED: :CANCELED
           COMPLETE: :COMPLETE
           PENDING: :PENDING
           PROCESSING: :PROCESSING
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Webhooks::BatchResponseSubscriptionResponse::status]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Webhooks::BatchResponseSubscriptionResponse::status]
         end
       end
     end

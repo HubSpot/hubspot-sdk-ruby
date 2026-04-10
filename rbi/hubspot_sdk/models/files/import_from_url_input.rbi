@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class ImportFromURLInput < HubspotSDK::Internal::Type::BaseModel
+      class ImportFromURLInput < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Files::ImportFromURLInput,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Files::ImportFromURLInput,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -17,14 +17,14 @@ module HubspotSDK
         # anyone who has the URL. Search engines _can't_ index the file. PRIVATE: File is
         # NOT publicly accessible. Requires a signed URL to see content. Search engines
         # _can't_ index the file.
-        sig { returns(HubspotSDK::Files::ImportFromURLInput::Access::OrSymbol) }
+        sig { returns(HubSpotSDK::Files::ImportFromURLInput::Access::OrSymbol) }
         attr_accessor :access
 
         # ENTIRE_PORTAL: Look for a duplicate file in the entire account. EXACT_FOLDER:
         # Look for a duplicate file in the provided folder.
         sig do
           returns(
-            HubspotSDK::Files::ImportFromURLInput::DuplicateValidationScope::OrSymbol
+            HubSpotSDK::Files::ImportFromURLInput::DuplicateValidationScope::OrSymbol
           )
         end
         attr_accessor :duplicate_validation_scope
@@ -34,7 +34,7 @@ module HubspotSDK
         # a new file and return the found duplicate instead.
         sig do
           returns(
-            HubspotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy::OrSymbol
+            HubSpotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy::OrSymbol
           )
         end
         attr_accessor :duplicate_validation_strategy
@@ -95,11 +95,11 @@ module HubspotSDK
 
         sig do
           params(
-            access: HubspotSDK::Files::ImportFromURLInput::Access::OrSymbol,
+            access: HubSpotSDK::Files::ImportFromURLInput::Access::OrSymbol,
             duplicate_validation_scope:
-              HubspotSDK::Files::ImportFromURLInput::DuplicateValidationScope::OrSymbol,
+              HubSpotSDK::Files::ImportFromURLInput::DuplicateValidationScope::OrSymbol,
             duplicate_validation_strategy:
-              HubspotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy::OrSymbol,
+              HubSpotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy::OrSymbol,
             overwrite: T::Boolean,
             expires_at: Time,
             folder_id: String,
@@ -151,11 +151,11 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              access: HubspotSDK::Files::ImportFromURLInput::Access::OrSymbol,
+              access: HubSpotSDK::Files::ImportFromURLInput::Access::OrSymbol,
               duplicate_validation_scope:
-                HubspotSDK::Files::ImportFromURLInput::DuplicateValidationScope::OrSymbol,
+                HubSpotSDK::Files::ImportFromURLInput::DuplicateValidationScope::OrSymbol,
               duplicate_validation_strategy:
-                HubspotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy::OrSymbol,
+                HubSpotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy::OrSymbol,
               overwrite: T::Boolean,
               expires_at: Time,
               folder_id: String,
@@ -175,59 +175,59 @@ module HubspotSDK
         # NOT publicly accessible. Requires a signed URL to see content. Search engines
         # _can't_ index the file.
         module Access
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Files::ImportFromURLInput::Access)
+              T.all(Symbol, HubSpotSDK::Files::ImportFromURLInput::Access)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           HIDDEN_INDEXABLE =
             T.let(
               :HIDDEN_INDEXABLE,
-              HubspotSDK::Files::ImportFromURLInput::Access::TaggedSymbol
+              HubSpotSDK::Files::ImportFromURLInput::Access::TaggedSymbol
             )
           HIDDEN_NOT_INDEXABLE =
             T.let(
               :HIDDEN_NOT_INDEXABLE,
-              HubspotSDK::Files::ImportFromURLInput::Access::TaggedSymbol
+              HubSpotSDK::Files::ImportFromURLInput::Access::TaggedSymbol
             )
           HIDDEN_PRIVATE =
             T.let(
               :HIDDEN_PRIVATE,
-              HubspotSDK::Files::ImportFromURLInput::Access::TaggedSymbol
+              HubSpotSDK::Files::ImportFromURLInput::Access::TaggedSymbol
             )
           HIDDEN_SENSITIVE =
             T.let(
               :HIDDEN_SENSITIVE,
-              HubspotSDK::Files::ImportFromURLInput::Access::TaggedSymbol
+              HubSpotSDK::Files::ImportFromURLInput::Access::TaggedSymbol
             )
           PRIVATE =
             T.let(
               :PRIVATE,
-              HubspotSDK::Files::ImportFromURLInput::Access::TaggedSymbol
+              HubSpotSDK::Files::ImportFromURLInput::Access::TaggedSymbol
             )
           PUBLIC_INDEXABLE =
             T.let(
               :PUBLIC_INDEXABLE,
-              HubspotSDK::Files::ImportFromURLInput::Access::TaggedSymbol
+              HubSpotSDK::Files::ImportFromURLInput::Access::TaggedSymbol
             )
           PUBLIC_NOT_INDEXABLE =
             T.let(
               :PUBLIC_NOT_INDEXABLE,
-              HubspotSDK::Files::ImportFromURLInput::Access::TaggedSymbol
+              HubSpotSDK::Files::ImportFromURLInput::Access::TaggedSymbol
             )
           SENSITIVE =
             T.let(
               :SENSITIVE,
-              HubspotSDK::Files::ImportFromURLInput::Access::TaggedSymbol
+              HubSpotSDK::Files::ImportFromURLInput::Access::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Files::ImportFromURLInput::Access::TaggedSymbol
+                HubSpotSDK::Files::ImportFromURLInput::Access::TaggedSymbol
               ]
             )
           end
@@ -238,13 +238,13 @@ module HubspotSDK
         # ENTIRE_PORTAL: Look for a duplicate file in the entire account. EXACT_FOLDER:
         # Look for a duplicate file in the provided folder.
         module DuplicateValidationScope
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Files::ImportFromURLInput::DuplicateValidationScope
+                HubSpotSDK::Files::ImportFromURLInput::DuplicateValidationScope
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -252,18 +252,18 @@ module HubspotSDK
           ENTIRE_PORTAL =
             T.let(
               :ENTIRE_PORTAL,
-              HubspotSDK::Files::ImportFromURLInput::DuplicateValidationScope::TaggedSymbol
+              HubSpotSDK::Files::ImportFromURLInput::DuplicateValidationScope::TaggedSymbol
             )
           EXACT_FOLDER =
             T.let(
               :EXACT_FOLDER,
-              HubspotSDK::Files::ImportFromURLInput::DuplicateValidationScope::TaggedSymbol
+              HubSpotSDK::Files::ImportFromURLInput::DuplicateValidationScope::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Files::ImportFromURLInput::DuplicateValidationScope::TaggedSymbol
+                HubSpotSDK::Files::ImportFromURLInput::DuplicateValidationScope::TaggedSymbol
               ]
             )
           end
@@ -275,13 +275,13 @@ module HubspotSDK
         # duplicate is found. RETURN_EXISTING: If a duplicate file is found, do not upload
         # a new file and return the found duplicate instead.
         module DuplicateValidationStrategy
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy
+                HubSpotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -289,23 +289,23 @@ module HubspotSDK
           NONE =
             T.let(
               :NONE,
-              HubspotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy::TaggedSymbol
+              HubSpotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy::TaggedSymbol
             )
           REJECT =
             T.let(
               :REJECT,
-              HubspotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy::TaggedSymbol
+              HubSpotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy::TaggedSymbol
             )
           RETURN_EXISTING =
             T.let(
               :RETURN_EXISTING,
-              HubspotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy::TaggedSymbol
+              HubSpotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy::TaggedSymbol
+                HubSpotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy::TaggedSymbol
               ]
             )
           end

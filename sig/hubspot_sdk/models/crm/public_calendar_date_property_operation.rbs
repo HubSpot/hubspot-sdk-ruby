@@ -1,31 +1,31 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_calendar_date_property_operation =
         {
           include_objects_with_no_value_set: bool,
-          operation_type: HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation::operation_type,
           operator: String,
           time_unit: String,
-          fiscal_year_start: HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation::fiscal_year_start,
+          fiscal_year_start: HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation::fiscal_year_start,
           time_unit_count: Integer,
           use_fiscal_year: bool
         }
 
-      class PublicCalendarDatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicCalendarDatePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor include_objects_with_no_value_set: bool
 
-        attr_accessor operation_type: HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation::operation_type
+        attr_accessor operation_type: HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation::operation_type
 
         attr_accessor operator: String
 
         attr_accessor time_unit: String
 
-        attr_reader fiscal_year_start: HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation::fiscal_year_start?
+        attr_reader fiscal_year_start: HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation::fiscal_year_start?
 
         def fiscal_year_start=: (
-          HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation::fiscal_year_start
-        ) -> HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation::fiscal_year_start
+          HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation::fiscal_year_start
+        ) -> HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation::fiscal_year_start
 
         attr_reader time_unit_count: Integer?
 
@@ -37,20 +37,20 @@ module HubspotSDK
 
         def initialize: (
           include_objects_with_no_value_set: bool,
-          operation_type: HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation::operation_type,
           operator: String,
           time_unit: String,
-          ?fiscal_year_start: HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation::fiscal_year_start,
+          ?fiscal_year_start: HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation::fiscal_year_start,
           ?time_unit_count: Integer,
           ?use_fiscal_year: bool
         ) -> void
 
         def to_hash: -> {
           include_objects_with_no_value_set: bool,
-          operation_type: HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation::operation_type,
           operator: String,
           time_unit: String,
-          fiscal_year_start: HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation::fiscal_year_start,
+          fiscal_year_start: HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation::fiscal_year_start,
           time_unit_count: Integer,
           use_fiscal_year: bool
         }
@@ -58,11 +58,11 @@ module HubspotSDK
         type operation_type = :CALENDAR_DATE
 
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CALENDAR_DATE: :CALENDAR_DATE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation::operation_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation::operation_type]
         end
 
         type fiscal_year_start =
@@ -80,7 +80,7 @@ module HubspotSDK
           | :SEPTEMBER
 
         module FiscalYearStart
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           APRIL: :APRIL
           AUGUST: :AUGUST
@@ -95,7 +95,7 @@ module HubspotSDK
           OCTOBER: :OCTOBER
           SEPTEMBER: :SEPTEMBER
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation::fiscal_year_start]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation::fiscal_year_start]
         end
       end
     end

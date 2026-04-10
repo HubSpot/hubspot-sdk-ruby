@@ -1,14 +1,14 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Pages
         type folder_update_params =
           { object_id_: String, archived: bool }
-          & HubspotSDK::Internal::Type::request_parameters
+          & HubSpotSDK::Internal::Type::request_parameters
 
-        class FolderUpdateParams < HubspotSDK::Models::Cms::ContentFolder
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class FolderUpdateParams < HubSpotSDK::Models::Cms::ContentFolder
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           def object_id_: -> String
 
@@ -21,13 +21,13 @@ module HubspotSDK
           def initialize: (
             object_id_: String,
             ?archived: bool,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
             object_id_: String,
             archived: bool,
-            request_options: HubspotSDK::RequestOptions
+            request_options: HubSpotSDK::RequestOptions
           }
         end
       end

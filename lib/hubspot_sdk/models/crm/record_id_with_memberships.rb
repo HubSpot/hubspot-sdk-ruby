@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class RecordIDWithMemberships < HubspotSDK::Internal::Type::BaseModel
+      class RecordIDWithMemberships < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute object_type_id
         #
         #   @return [String]
@@ -16,15 +16,15 @@ module HubspotSDK
 
         # @!attribute record_list_memberships
         #
-        #   @return [Array<HubspotSDK::Models::Crm::RecordListMembership>]
+        #   @return [Array<HubSpotSDK::Models::Crm::RecordListMembership>]
         required :record_list_memberships,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::RecordListMembership] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::RecordListMembership] },
                  api_name: :recordListMemberships
 
         # @!method initialize(object_type_id:, record_id:, record_list_memberships:)
         #   @param object_type_id [String]
         #   @param record_id [String]
-        #   @param record_list_memberships [Array<HubspotSDK::Models::Crm::RecordListMembership>]
+        #   @param record_list_memberships [Array<HubSpotSDK::Models::Crm::RecordListMembership>]
       end
     end
   end

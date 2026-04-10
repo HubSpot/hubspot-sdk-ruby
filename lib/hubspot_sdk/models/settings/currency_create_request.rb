@@ -1,30 +1,30 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class CurrencyCreateRequest < HubspotSDK::Internal::Type::BaseModel
+      class CurrencyCreateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute currency_code
         #   The currency code being added to the HubSpot portal for use with central
         #   exchange rates.
         #
-        #   @return [Symbol, HubspotSDK::Models::Settings::CurrencyCreateRequest::CurrencyCode]
+        #   @return [Symbol, HubSpotSDK::Models::Settings::CurrencyCreateRequest::CurrencyCode]
         required :currency_code,
-                 enum: -> { HubspotSDK::Settings::CurrencyCreateRequest::CurrencyCode },
+                 enum: -> { HubSpotSDK::Settings::CurrencyCreateRequest::CurrencyCode },
                  api_name: :currencyCode
 
         # @!method initialize(currency_code:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Settings::CurrencyCreateRequest} for more details.
+        #   {HubSpotSDK::Models::Settings::CurrencyCreateRequest} for more details.
         #
-        #   @param currency_code [Symbol, HubspotSDK::Models::Settings::CurrencyCreateRequest::CurrencyCode] The currency code being added to the HubSpot portal for use with central exchang
+        #   @param currency_code [Symbol, HubSpotSDK::Models::Settings::CurrencyCreateRequest::CurrencyCode] The currency code being added to the HubSpot portal for use with central exchang
 
         # The currency code being added to the HubSpot portal for use with central
         # exchange rates.
         #
-        # @see HubspotSDK::Models::Settings::CurrencyCreateRequest#currency_code
+        # @see HubSpotSDK::Models::Settings::CurrencyCreateRequest#currency_code
         module CurrencyCode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AED = :AED
           AFN = :AFN

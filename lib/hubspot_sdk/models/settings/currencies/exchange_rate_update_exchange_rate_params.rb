@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       module Currencies
-        # @see HubspotSDK::Resources::Settings::Currencies::ExchangeRates#update_exchange_rate
-        class ExchangeRateUpdateExchangeRateParams < HubspotSDK::Models::Settings::ExchangeRateMultiplier
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Settings::Currencies::ExchangeRates#update_exchange_rate
+        class ExchangeRateUpdateExchangeRateParams < HubSpotSDK::Models::Settings::ExchangeRateMultiplier
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute exchange_rate_id
           #
@@ -16,7 +16,7 @@ module HubspotSDK
 
           # @!method initialize(exchange_rate_id:, request_options: {})
           #   @param exchange_rate_id [String]
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

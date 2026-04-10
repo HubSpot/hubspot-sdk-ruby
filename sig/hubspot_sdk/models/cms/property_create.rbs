@@ -1,27 +1,27 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type property_create =
         {
-          field_type: HubspotSDK::Models::Cms::PropertyCreate::field_type,
+          field_type: HubSpotSDK::Models::Cms::PropertyCreate::field_type,
           group_name: String,
           label: String,
           name: String,
-          type: HubspotSDK::Models::Cms::PropertyCreate::type_,
+          type: HubSpotSDK::Models::Cms::PropertyCreate::type_,
           calculation_formula: String,
-          data_sensitivity: HubspotSDK::Models::Cms::PropertyCreate::data_sensitivity,
+          data_sensitivity: HubSpotSDK::Models::Cms::PropertyCreate::data_sensitivity,
           description: String,
           display_order: Integer,
           external_options: bool,
           form_field: bool,
           has_unique_value: bool,
           hidden: bool,
-          options: ::Array[HubspotSDK::OptionInput],
+          options: ::Array[HubSpotSDK::OptionInput],
           referenced_object_type: String
         }
 
-      class PropertyCreate < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor field_type: HubspotSDK::Models::Cms::PropertyCreate::field_type
+      class PropertyCreate < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor field_type: HubSpotSDK::Models::Cms::PropertyCreate::field_type
 
         attr_accessor group_name: String
 
@@ -29,17 +29,17 @@ module HubspotSDK
 
         attr_accessor name: String
 
-        attr_accessor type: HubspotSDK::Models::Cms::PropertyCreate::type_
+        attr_accessor type: HubSpotSDK::Models::Cms::PropertyCreate::type_
 
         attr_reader calculation_formula: String?
 
         def calculation_formula=: (String) -> String
 
-        attr_reader data_sensitivity: HubspotSDK::Models::Cms::PropertyCreate::data_sensitivity?
+        attr_reader data_sensitivity: HubSpotSDK::Models::Cms::PropertyCreate::data_sensitivity?
 
         def data_sensitivity=: (
-          HubspotSDK::Models::Cms::PropertyCreate::data_sensitivity
-        ) -> HubspotSDK::Models::Cms::PropertyCreate::data_sensitivity
+          HubSpotSDK::Models::Cms::PropertyCreate::data_sensitivity
+        ) -> HubSpotSDK::Models::Cms::PropertyCreate::data_sensitivity
 
         attr_reader description: String?
 
@@ -65,49 +65,49 @@ module HubspotSDK
 
         def hidden=: (bool) -> bool
 
-        attr_reader options: ::Array[HubspotSDK::OptionInput]?
+        attr_reader options: ::Array[HubSpotSDK::OptionInput]?
 
         def options=: (
-          ::Array[HubspotSDK::OptionInput]
-        ) -> ::Array[HubspotSDK::OptionInput]
+          ::Array[HubSpotSDK::OptionInput]
+        ) -> ::Array[HubSpotSDK::OptionInput]
 
         attr_reader referenced_object_type: String?
 
         def referenced_object_type=: (String) -> String
 
         def initialize: (
-          field_type: HubspotSDK::Models::Cms::PropertyCreate::field_type,
+          field_type: HubSpotSDK::Models::Cms::PropertyCreate::field_type,
           group_name: String,
           label: String,
           name: String,
-          type: HubspotSDK::Models::Cms::PropertyCreate::type_,
+          type: HubSpotSDK::Models::Cms::PropertyCreate::type_,
           ?calculation_formula: String,
-          ?data_sensitivity: HubspotSDK::Models::Cms::PropertyCreate::data_sensitivity,
+          ?data_sensitivity: HubSpotSDK::Models::Cms::PropertyCreate::data_sensitivity,
           ?description: String,
           ?display_order: Integer,
           ?external_options: bool,
           ?form_field: bool,
           ?has_unique_value: bool,
           ?hidden: bool,
-          ?options: ::Array[HubspotSDK::OptionInput],
+          ?options: ::Array[HubSpotSDK::OptionInput],
           ?referenced_object_type: String
         ) -> void
 
         def to_hash: -> {
-          field_type: HubspotSDK::Models::Cms::PropertyCreate::field_type,
+          field_type: HubSpotSDK::Models::Cms::PropertyCreate::field_type,
           group_name: String,
           label: String,
           name: String,
-          type: HubspotSDK::Models::Cms::PropertyCreate::type_,
+          type: HubSpotSDK::Models::Cms::PropertyCreate::type_,
           calculation_formula: String,
-          data_sensitivity: HubspotSDK::Models::Cms::PropertyCreate::data_sensitivity,
+          data_sensitivity: HubSpotSDK::Models::Cms::PropertyCreate::data_sensitivity,
           description: String,
           display_order: Integer,
           external_options: bool,
           form_field: bool,
           has_unique_value: bool,
           hidden: bool,
-          options: ::Array[HubspotSDK::OptionInput],
+          options: ::Array[HubSpotSDK::OptionInput],
           referenced_object_type: String
         }
 
@@ -126,7 +126,7 @@ module HubspotSDK
           | :textarea
 
         module FieldType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOLEANCHECKBOX: :booleancheckbox
           CALCULATION_EQUATION: :calculation_equation
@@ -141,7 +141,7 @@ module HubspotSDK
           TEXT: :text
           TEXTAREA: :textarea
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::PropertyCreate::field_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::PropertyCreate::field_type]
         end
 
         type type_ =
@@ -154,7 +154,7 @@ module HubspotSDK
           | :string
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOL: :bool
           DATE: :date
@@ -164,19 +164,19 @@ module HubspotSDK
           PHONE_NUMBER: :phone_number
           STRING: :string
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::PropertyCreate::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::PropertyCreate::type_]
         end
 
         type data_sensitivity = :highly_sensitive | :non_sensitive | :sensitive
 
         module DataSensitivity
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HIGHLY_SENSITIVE: :highly_sensitive
           NON_SENSITIVE: :non_sensitive
           SENSITIVE: :sensitive
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::PropertyCreate::data_sensitivity]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::PropertyCreate::data_sensitivity]
         end
       end
     end

@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class AssociationsSchema
@@ -12,11 +12,11 @@ module HubspotSDK
               from_object_type: String,
               inputs:
                 T::Array[
-                  HubspotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::OrHash
+                  HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest::OrHash
                 ],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration
+              HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration
             )
           end
           def batch_create(
@@ -40,9 +40,9 @@ module HubspotSDK
               label: String,
               name: String,
               inverse_label: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Crm::CollectionResponseAssociationSpecWithLabelNoPaging
+              HubSpotSDK::Crm::CollectionResponseAssociationSpecWithLabelNoPaging
             )
           end
           def create_label(
@@ -68,7 +68,7 @@ module HubspotSDK
               association_type_id: Integer,
               from_object_type: String,
               to_object_type: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete_label(
@@ -85,9 +85,9 @@ module HubspotSDK
             params(
               to_object_type: String,
               from_object_type: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Crm::CollectionResponseAssociationSpecWithLabelNoPaging
+              HubSpotSDK::Crm::CollectionResponseAssociationSpecWithLabelNoPaging
             )
           end
           def list_labels(
@@ -107,7 +107,7 @@ module HubspotSDK
               association_type_id: Integer,
               label: String,
               inverse_label: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def update_label(
@@ -128,7 +128,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

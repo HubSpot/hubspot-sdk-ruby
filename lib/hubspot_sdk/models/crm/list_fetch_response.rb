@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Lists#get
-      class ListFetchResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::Lists#get
+      class ListFetchResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute list
         #
-        #   @return [HubspotSDK::Models::Crm::PublicObjectList]
-        required :list, -> { HubspotSDK::Crm::PublicObjectList }
+        #   @return [HubSpotSDK::Models::Crm::PublicObjectList]
+        required :list, -> { HubSpotSDK::Crm::PublicObjectList }
 
         # @!method initialize(list:)
-        #   @param list [HubspotSDK::Models::Crm::PublicObjectList]
+        #   @param list [HubSpotSDK::Models::Crm::PublicObjectList]
       end
     end
   end

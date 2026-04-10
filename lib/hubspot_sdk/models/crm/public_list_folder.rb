@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicListFolder < HubspotSDK::Internal::Type::BaseModel
+      class PublicListFolder < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The Id of the folder.
         #
@@ -14,13 +14,13 @@ module HubspotSDK
         #   An array of list Id's contained in this folder.
         #
         #   @return [Array<Integer>]
-        required :child_lists, HubspotSDK::Internal::Type::ArrayOf[Integer], api_name: :childLists
+        required :child_lists, HubSpotSDK::Internal::Type::ArrayOf[Integer], api_name: :childLists
 
         # @!attribute child_nodes
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PublicListFolder>]
+        #   @return [Array<HubSpotSDK::Models::Crm::PublicListFolder>]
         required :child_nodes,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicListFolder] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicListFolder] },
                  api_name: :childNodes
 
         # @!attribute parent_folder_id
@@ -64,7 +64,7 @@ module HubspotSDK
         #
         #   @param child_lists [Array<Integer>] An array of list Id's contained in this folder.
         #
-        #   @param child_nodes [Array<HubspotSDK::Models::Crm::PublicListFolder>]
+        #   @param child_nodes [Array<HubSpotSDK::Models::Crm::PublicListFolder>]
         #
         #   @param parent_folder_id [String] The Id of the folder this folder is in, the root folder is represented as 0.
         #

@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Pages
-        class BatchGetSitePagesParams < HubspotSDK::Models::BatchInputString
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class BatchGetSitePagesParams < HubSpotSDK::Models::BatchInputString
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Cms::Pages::BatchGetSitePagesParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Cms::Pages::BatchGetSitePagesParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -26,7 +26,7 @@ module HubspotSDK
           sig do
             params(
               archived: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
@@ -40,7 +40,7 @@ module HubspotSDK
             override.returns(
               {
                 archived: T::Boolean,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

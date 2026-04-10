@@ -1,22 +1,22 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_ranged_date_property_operation =
         {
           include_objects_with_no_value_set: bool,
           lower_bound: Integer,
-          operation_type: HubspotSDK::Models::Crm::PublicRangedDatePropertyOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicRangedDatePropertyOperation::operation_type,
           operator: String,
           requires_time_zone_conversion: bool,
           upper_bound: Integer
         }
 
-      class PublicRangedDatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicRangedDatePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor include_objects_with_no_value_set: bool
 
         attr_accessor lower_bound: Integer
 
-        attr_accessor operation_type: HubspotSDK::Models::Crm::PublicRangedDatePropertyOperation::operation_type
+        attr_accessor operation_type: HubSpotSDK::Models::Crm::PublicRangedDatePropertyOperation::operation_type
 
         attr_accessor operator: String
 
@@ -27,7 +27,7 @@ module HubspotSDK
         def initialize: (
           include_objects_with_no_value_set: bool,
           lower_bound: Integer,
-          operation_type: HubspotSDK::Models::Crm::PublicRangedDatePropertyOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicRangedDatePropertyOperation::operation_type,
           operator: String,
           requires_time_zone_conversion: bool,
           upper_bound: Integer
@@ -36,7 +36,7 @@ module HubspotSDK
         def to_hash: -> {
           include_objects_with_no_value_set: bool,
           lower_bound: Integer,
-          operation_type: HubspotSDK::Models::Crm::PublicRangedDatePropertyOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicRangedDatePropertyOperation::operation_type,
           operator: String,
           requires_time_zone_conversion: bool,
           upper_bound: Integer
@@ -45,11 +45,11 @@ module HubspotSDK
         type operation_type = :RANGED_DATE
 
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           RANGED_DATE: :RANGED_DATE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicRangedDatePropertyOperation::operation_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicRangedDatePropertyOperation::operation_type]
         end
       end
     end

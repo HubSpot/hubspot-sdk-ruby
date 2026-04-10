@@ -1,16 +1,16 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     CmsAuditLoggingExportSettings = Cms::CmsAuditLoggingExportSettings
 
     module Cms
-      class CmsAuditLoggingExportSettings < HubspotSDK::Internal::Type::BaseModel
+      class CmsAuditLoggingExportSettings < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::CmsAuditLoggingExportSettings,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::CmsAuditLoggingExportSettings,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -19,7 +19,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Cms::CmsAuditLoggingExportSettings::Format::OrSymbol
+            HubSpotSDK::Cms::CmsAuditLoggingExportSettings::Format::OrSymbol
           )
         end
         attr_accessor :format_
@@ -37,13 +37,13 @@ module HubspotSDK
         attr_accessor :type
 
         sig do
-          returns(T.nilable(HubspotSDK::Cms::CmsAuditLoggingExportFilters))
+          returns(T.nilable(HubSpotSDK::Cms::CmsAuditLoggingExportFilters))
         end
         attr_reader :filters
 
         sig do
           params(
-            filters: HubspotSDK::Cms::CmsAuditLoggingExportFilters::OrHash
+            filters: HubSpotSDK::Cms::CmsAuditLoggingExportFilters::OrHash
           ).void
         end
         attr_writer :filters
@@ -70,12 +70,12 @@ module HubspotSDK
           params(
             email: String,
             format_:
-              HubspotSDK::Cms::CmsAuditLoggingExportSettings::Format::OrSymbol,
+              HubSpotSDK::Cms::CmsAuditLoggingExportSettings::Format::OrSymbol,
             portal_id: Integer,
             recipient_user_ids: T::Array[Integer],
             should_mark_export_file_as_sensitive: T::Boolean,
             type: String,
-            filters: HubspotSDK::Cms::CmsAuditLoggingExportFilters::OrHash,
+            filters: HubSpotSDK::Cms::CmsAuditLoggingExportFilters::OrHash,
             partition: Integer,
             user_id: Integer,
             user_time_zone: String
@@ -100,12 +100,12 @@ module HubspotSDK
             {
               email: String,
               format_:
-                HubspotSDK::Cms::CmsAuditLoggingExportSettings::Format::OrSymbol,
+                HubSpotSDK::Cms::CmsAuditLoggingExportSettings::Format::OrSymbol,
               portal_id: Integer,
               recipient_user_ids: T::Array[Integer],
               should_mark_export_file_as_sensitive: T::Boolean,
               type: String,
-              filters: HubspotSDK::Cms::CmsAuditLoggingExportFilters,
+              filters: HubSpotSDK::Cms::CmsAuditLoggingExportFilters,
               partition: Integer,
               user_id: Integer,
               user_time_zone: String
@@ -116,13 +116,13 @@ module HubspotSDK
         end
 
         module Format
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Cms::CmsAuditLoggingExportSettings::Format
+                HubSpotSDK::Cms::CmsAuditLoggingExportSettings::Format
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -130,23 +130,23 @@ module HubspotSDK
           CSV =
             T.let(
               :CSV,
-              HubspotSDK::Cms::CmsAuditLoggingExportSettings::Format::TaggedSymbol
+              HubSpotSDK::Cms::CmsAuditLoggingExportSettings::Format::TaggedSymbol
             )
           XLS =
             T.let(
               :XLS,
-              HubspotSDK::Cms::CmsAuditLoggingExportSettings::Format::TaggedSymbol
+              HubSpotSDK::Cms::CmsAuditLoggingExportSettings::Format::TaggedSymbol
             )
           XLSX =
             T.let(
               :XLSX,
-              HubspotSDK::Cms::CmsAuditLoggingExportSettings::Format::TaggedSymbol
+              HubSpotSDK::Cms::CmsAuditLoggingExportSettings::Format::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::CmsAuditLoggingExportSettings::Format::TaggedSymbol
+                HubSpotSDK::Cms::CmsAuditLoggingExportSettings::Format::TaggedSymbol
               ]
             )
           end

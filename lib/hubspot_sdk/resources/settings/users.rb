@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Settings
       class Users
@@ -20,18 +20,18 @@ module HubspotSDK
         #
         # @param secondary_team_ids [Array<String>] The user's additional teams.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Settings::PublicUser]
+        # @return [HubSpotSDK::Models::Settings::PublicUser]
         #
-        # @see HubspotSDK::Models::Settings::UserCreateParams
+        # @see HubSpotSDK::Models::Settings::UserCreateParams
         def create(params)
-          parsed, options = HubspotSDK::Settings::UserCreateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Settings::UserCreateParams.dump_request(params)
           @client.request(
             method: :post,
             path: "settings/users/2026-03",
             body: parsed,
-            model: HubspotSDK::Settings::PublicUser,
+            model: HubSpotSDK::Settings::PublicUser,
             options: options
           )
         end
@@ -43,7 +43,7 @@ module HubspotSDK
         #
         # @param user_id [String] Path param
         #
-        # @param id_property [Symbol, HubspotSDK::Models::Settings::PublicUserUpdate::IDProperty] Query param
+        # @param id_property [Symbol, HubSpotSDK::Models::Settings::PublicUserUpdate::IDProperty] Query param
         #
         # @param first_name [String] Body param: The first name of the user.
         #
@@ -55,27 +55,27 @@ module HubspotSDK
         #
         # @param secondary_team_ids [Array<String>] Body param: The user's additional teams.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Settings::PublicUser]
+        # @return [HubSpotSDK::Models::Settings::PublicUser]
         #
-        # @see HubspotSDK::Models::Settings::UserUpdateParams
+        # @see HubSpotSDK::Models::Settings::UserUpdateParams
         def update(user_id, params = {})
           query_params = [:id_property]
-          parsed, options = HubspotSDK::Settings::UserUpdateParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+          parsed, options = HubSpotSDK::Settings::UserUpdateParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :put,
             path: ["settings/users/2026-03/%1$s", user_id],
             query: query.transform_keys(id_property: "idProperty"),
             body: parsed.except(*query_params),
-            model: HubspotSDK::Settings::PublicUser,
+            model: HubSpotSDK::Settings::PublicUser,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Settings::UserListParams} for more details.
+        # {HubSpotSDK::Models::Settings::UserListParams} for more details.
         #
         # @overload list(after: nil, limit: nil, request_options: {})
         #
@@ -83,20 +83,20 @@ module HubspotSDK
         #
         # @param limit [Integer] The maximum number of results to display per page.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Settings::PublicUser>]
+        # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Settings::PublicUser>]
         #
-        # @see HubspotSDK::Models::Settings::UserListParams
+        # @see HubSpotSDK::Models::Settings::UserListParams
         def list(params = {})
-          parsed, options = HubspotSDK::Settings::UserListParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Settings::UserListParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "settings/users/2026-03",
             query: query,
-            page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Settings::PublicUser,
+            page: HubSpotSDK::Internal::Page,
+            model: HubSpotSDK::Settings::PublicUser,
             options: options
           )
         end
@@ -107,15 +107,15 @@ module HubspotSDK
         # @overload delete(user_id, id_property: nil, request_options: {})
         #
         # @param user_id [String]
-        # @param id_property [Symbol, HubspotSDK::Models::Settings::UserDeleteParams::IDProperty]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param id_property [Symbol, HubSpotSDK::Models::Settings::UserDeleteParams::IDProperty]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Settings::UserDeleteParams
+        # @see HubSpotSDK::Models::Settings::UserDeleteParams
         def delete(user_id, params = {})
-          parsed, options = HubspotSDK::Settings::UserDeleteParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Settings::UserDeleteParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :delete,
             path: ["settings/users/2026-03/%1$s", user_id],
@@ -131,20 +131,20 @@ module HubspotSDK
         # @overload get(user_id, id_property: nil, request_options: {})
         #
         # @param user_id [String]
-        # @param id_property [Symbol, HubspotSDK::Models::Settings::UserGetParams::IDProperty]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param id_property [Symbol, HubSpotSDK::Models::Settings::UserGetParams::IDProperty]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Settings::PublicUser]
+        # @return [HubSpotSDK::Models::Settings::PublicUser]
         #
-        # @see HubspotSDK::Models::Settings::UserGetParams
+        # @see HubSpotSDK::Models::Settings::UserGetParams
         def get(user_id, params = {})
-          parsed, options = HubspotSDK::Settings::UserGetParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Settings::UserGetParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: ["settings/users/2026-03/%1$s", user_id],
             query: query.transform_keys(id_property: "idProperty"),
-            model: HubspotSDK::Settings::PublicUser,
+            model: HubSpotSDK::Settings::PublicUser,
             options: options
           )
         end
@@ -153,16 +153,16 @@ module HubspotSDK
         #
         # @overload list_roles(request_options: {})
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Settings::CollectionResponsePublicPermissionSetNoPaging]
+        # @return [HubSpotSDK::Models::Settings::CollectionResponsePublicPermissionSetNoPaging]
         #
-        # @see HubspotSDK::Models::Settings::UserListRolesParams
+        # @see HubSpotSDK::Models::Settings::UserListRolesParams
         def list_roles(params = {})
           @client.request(
             method: :get,
             path: "settings/users/2026-03/roles",
-            model: HubspotSDK::Settings::CollectionResponsePublicPermissionSetNoPaging,
+            model: HubSpotSDK::Settings::CollectionResponsePublicPermissionSetNoPaging,
             options: params[:request_options]
           )
         end
@@ -171,23 +171,23 @@ module HubspotSDK
         #
         # @overload list_teams(request_options: {})
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Settings::CollectionResponsePublicTeamNoPaging]
+        # @return [HubSpotSDK::Models::Settings::CollectionResponsePublicTeamNoPaging]
         #
-        # @see HubspotSDK::Models::Settings::UserListTeamsParams
+        # @see HubSpotSDK::Models::Settings::UserListTeamsParams
         def list_teams(params = {})
           @client.request(
             method: :get,
             path: "settings/users/2026-03/teams",
-            model: HubspotSDK::Settings::CollectionResponsePublicTeamNoPaging,
+            model: HubSpotSDK::Settings::CollectionResponsePublicTeamNoPaging,
             options: params[:request_options]
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
         end

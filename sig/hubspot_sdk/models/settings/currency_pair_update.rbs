@@ -1,29 +1,29 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       type currency_pair_update =
         {
-          from_currency_code: HubspotSDK::Models::Settings::CurrencyPairUpdate::from_currency_code,
-          to_currency_code: HubspotSDK::Models::Settings::CurrencyPairUpdate::to_currency_code,
+          from_currency_code: HubSpotSDK::Models::Settings::CurrencyPairUpdate::from_currency_code,
+          to_currency_code: HubSpotSDK::Models::Settings::CurrencyPairUpdate::to_currency_code,
           visible_in_ui: bool
         }
 
-      class CurrencyPairUpdate < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor from_currency_code: HubspotSDK::Models::Settings::CurrencyPairUpdate::from_currency_code
+      class CurrencyPairUpdate < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor from_currency_code: HubSpotSDK::Models::Settings::CurrencyPairUpdate::from_currency_code
 
-        attr_accessor to_currency_code: HubspotSDK::Models::Settings::CurrencyPairUpdate::to_currency_code
+        attr_accessor to_currency_code: HubSpotSDK::Models::Settings::CurrencyPairUpdate::to_currency_code
 
         attr_accessor visible_in_ui: bool
 
         def initialize: (
-          from_currency_code: HubspotSDK::Models::Settings::CurrencyPairUpdate::from_currency_code,
-          to_currency_code: HubspotSDK::Models::Settings::CurrencyPairUpdate::to_currency_code,
+          from_currency_code: HubSpotSDK::Models::Settings::CurrencyPairUpdate::from_currency_code,
+          to_currency_code: HubSpotSDK::Models::Settings::CurrencyPairUpdate::to_currency_code,
           visible_in_ui: bool
         ) -> void
 
         def to_hash: -> {
-          from_currency_code: HubspotSDK::Models::Settings::CurrencyPairUpdate::from_currency_code,
-          to_currency_code: HubspotSDK::Models::Settings::CurrencyPairUpdate::to_currency_code,
+          from_currency_code: HubSpotSDK::Models::Settings::CurrencyPairUpdate::from_currency_code,
+          to_currency_code: HubSpotSDK::Models::Settings::CurrencyPairUpdate::to_currency_code,
           visible_in_ui: bool
         }
 
@@ -206,7 +206,7 @@ module HubspotSDK
           | :ZWL
 
         module FromCurrencyCode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AED: :AED
           AFN: :AFN
@@ -385,7 +385,7 @@ module HubspotSDK
           ZMW: :ZMW
           ZWL: :ZWL
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Settings::CurrencyPairUpdate::from_currency_code]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Settings::CurrencyPairUpdate::from_currency_code]
         end
 
         type to_currency_code =
@@ -567,7 +567,7 @@ module HubspotSDK
           | :ZWL
 
         module ToCurrencyCode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AED: :AED
           AFN: :AFN
@@ -746,7 +746,7 @@ module HubspotSDK
           ZMW: :ZMW
           ZWL: :ZWL
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Settings::CurrencyPairUpdate::to_currency_code]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Settings::CurrencyPairUpdate::to_currency_code]
         end
       end
     end

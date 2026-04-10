@@ -2,7 +2,7 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::Marketing::MarketingEventsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Marketing::MarketingEventsTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
@@ -38,17 +38,17 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEventsTest < HubspotSDK::
       )
 
     assert_pattern do
-      response => HubspotSDK::Marketing::MarketingEventDefaultResponse
+      response => HubSpotSDK::Marketing::MarketingEventDefaultResponse
     end
 
     assert_pattern do
       response => {
-        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::PropertyValue]),
+        custom_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::PropertyValue]),
         event_name: String,
         event_organizer: String,
         end_date_time: Time | nil,
-        event_cancelled: HubspotSDK::Internal::Type::Boolean | nil,
-        event_completed: HubspotSDK::Internal::Type::Boolean | nil,
+        event_cancelled: HubSpotSDK::Internal::Type::Boolean | nil,
+        event_completed: HubSpotSDK::Internal::Type::Boolean | nil,
         event_description: String | nil,
         event_type: String | nil,
         event_url: String | nil,
@@ -90,20 +90,20 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEventsTest < HubspotSDK::
       )
 
     assert_pattern do
-      response => HubspotSDK::Marketing::MarketingEventPublicDefaultResponseV2
+      response => HubSpotSDK::Marketing::MarketingEventPublicDefaultResponseV2
     end
 
     assert_pattern do
       response => {
         created_at: Time,
-        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::CrmPropertyWrapper]),
+        custom_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::CrmPropertyWrapper]),
         event_name: String,
         object_id_: String,
         updated_at: Time,
-        app_info: HubspotSDK::Marketing::AppInfo | nil,
+        app_info: HubSpotSDK::Marketing::AppInfo | nil,
         end_date_time: Time | nil,
-        event_cancelled: HubspotSDK::Internal::Type::Boolean | nil,
-        event_completed: HubspotSDK::Internal::Type::Boolean | nil,
+        event_cancelled: HubSpotSDK::Internal::Type::Boolean | nil,
+        event_completed: HubSpotSDK::Internal::Type::Boolean | nil,
         event_description: String | nil,
         event_organizer: String | nil,
         event_type: String | nil,
@@ -119,29 +119,29 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEventsTest < HubspotSDK::
     response = @hubspot.marketing.marketing_events.list
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Marketing::MarketingEventPublicReadResponseV2
+      row => HubSpotSDK::Marketing::MarketingEventPublicReadResponseV2
     end
 
     assert_pattern do
       row => {
         created_at: Time,
-        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::CrmPropertyWrapper]),
+        custom_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::CrmPropertyWrapper]),
         event_name: String,
         object_id_: String,
         updated_at: Time,
-        app_info: HubspotSDK::Marketing::AppInfo | nil,
+        app_info: HubSpotSDK::Marketing::AppInfo | nil,
         attendees: Integer | nil,
         cancellations: Integer | nil,
         end_date_time: Time | nil,
-        event_cancelled: HubspotSDK::Internal::Type::Boolean | nil,
-        event_completed: HubspotSDK::Internal::Type::Boolean | nil,
+        event_cancelled: HubSpotSDK::Internal::Type::Boolean | nil,
+        event_completed: HubSpotSDK::Internal::Type::Boolean | nil,
         event_description: String | nil,
         event_organizer: String | nil,
         event_status: String | nil,
@@ -209,22 +209,22 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEventsTest < HubspotSDK::
     response = @hubspot.marketing.marketing_events.get("objectId")
 
     assert_pattern do
-      response => HubspotSDK::Marketing::MarketingEventPublicReadResponseV2
+      response => HubSpotSDK::Marketing::MarketingEventPublicReadResponseV2
     end
 
     assert_pattern do
       response => {
         created_at: Time,
-        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::CrmPropertyWrapper]),
+        custom_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::CrmPropertyWrapper]),
         event_name: String,
         object_id_: String,
         updated_at: Time,
-        app_info: HubspotSDK::Marketing::AppInfo | nil,
+        app_info: HubSpotSDK::Marketing::AppInfo | nil,
         attendees: Integer | nil,
         cancellations: Integer | nil,
         end_date_time: Time | nil,
-        event_cancelled: HubspotSDK::Internal::Type::Boolean | nil,
-        event_completed: HubspotSDK::Internal::Type::Boolean | nil,
+        event_cancelled: HubSpotSDK::Internal::Type::Boolean | nil,
+        event_completed: HubSpotSDK::Internal::Type::Boolean | nil,
         event_description: String | nil,
         event_organizer: String | nil,
         event_status: String | nil,
@@ -249,7 +249,7 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEventsTest < HubspotSDK::
       )
 
     assert_pattern do
-      response => HubspotSDK::Marketing::MarketingEventPublicReadResponse
+      response => HubSpotSDK::Marketing::MarketingEventPublicReadResponse
     end
 
     assert_pattern do
@@ -258,7 +258,7 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEventsTest < HubspotSDK::
         attendees: Integer,
         cancellations: Integer,
         created_at: Time,
-        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::PropertyValue]),
+        custom_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::PropertyValue]),
         event_name: String,
         event_organizer: String,
         external_event_id: String,
@@ -266,8 +266,8 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEventsTest < HubspotSDK::
         registrants: Integer,
         updated_at: Time,
         end_date_time: Time | nil,
-        event_cancelled: HubspotSDK::Internal::Type::Boolean | nil,
-        event_completed: HubspotSDK::Internal::Type::Boolean | nil,
+        event_cancelled: HubSpotSDK::Internal::Type::Boolean | nil,
+        event_completed: HubSpotSDK::Internal::Type::Boolean | nil,
         event_description: String | nil,
         event_type: String | nil,
         event_url: String | nil,
@@ -283,12 +283,12 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEventsTest < HubspotSDK::
     response = @hubspot.marketing.marketing_events.search_by_external_event_id(q: "q")
 
     assert_pattern do
-      response => HubspotSDK::Marketing::CollectionResponseSearchPublicResponseWrapperNoPaging
+      response => HubSpotSDK::Marketing::CollectionResponseSearchPublicResponseWrapperNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::SearchPublicResponseWrapper])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::SearchPublicResponseWrapper])
       }
     end
   end
@@ -299,14 +299,14 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEventsTest < HubspotSDK::
     response = @hubspot.marketing.marketing_events.search_identifiers_by_external_event_id("externalEventId")
 
     assert_pattern do
-      response => HubspotSDK::Marketing::CollectionResponseWithTotalMarketingEventIdentifiersResponse
+      response => HubSpotSDK::Marketing::CollectionResponseWithTotalMarketingEventIdentifiersResponse
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::MarketingEventIdentifiersResponse]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::MarketingEventIdentifiersResponse]),
         total: Integer,
-        paging: HubspotSDK::Paging | nil
+        paging: HubSpotSDK::Paging | nil
       }
     end
   end
@@ -347,16 +347,16 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEventsTest < HubspotSDK::
       )
 
     assert_pattern do
-      response => HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2
+      response => HubSpotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::MarketingEventPublicDefaultResponseV2]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::MarketingEventPublicDefaultResponseV2]),
         started_at: Time,
-        status: HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -395,20 +395,20 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEventsTest < HubspotSDK::
       )
 
     assert_pattern do
-      response => HubspotSDK::Marketing::MarketingEventPublicDefaultResponse
+      response => HubSpotSDK::Marketing::MarketingEventPublicDefaultResponse
     end
 
     assert_pattern do
       response => {
         id: String,
         created_at: Time,
-        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::PropertyValue]),
+        custom_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::PropertyValue]),
         event_name: String,
         event_organizer: String,
         updated_at: Time,
         end_date_time: Time | nil,
-        event_cancelled: HubspotSDK::Internal::Type::Boolean | nil,
-        event_completed: HubspotSDK::Internal::Type::Boolean | nil,
+        event_cancelled: HubSpotSDK::Internal::Type::Boolean | nil,
+        event_completed: HubSpotSDK::Internal::Type::Boolean | nil,
         event_description: String | nil,
         event_type: String | nil,
         event_url: String | nil,
@@ -457,17 +457,17 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEventsTest < HubspotSDK::
       )
 
     assert_pattern do
-      response => HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponse
+      response => HubSpotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponse
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::MarketingEventPublicDefaultResponse]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::MarketingEventPublicDefaultResponse]),
         started_at: Time,
-        status: HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponse::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponse::Status,
+        errors: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError]) | nil,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
       }
@@ -510,20 +510,20 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEventsTest < HubspotSDK::
       )
 
     assert_pattern do
-      response => HubspotSDK::Marketing::MarketingEventPublicDefaultResponse
+      response => HubSpotSDK::Marketing::MarketingEventPublicDefaultResponse
     end
 
     assert_pattern do
       response => {
         id: String,
         created_at: Time,
-        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::PropertyValue]),
+        custom_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::PropertyValue]),
         event_name: String,
         event_organizer: String,
         updated_at: Time,
         end_date_time: Time | nil,
-        event_cancelled: HubspotSDK::Internal::Type::Boolean | nil,
-        event_completed: HubspotSDK::Internal::Type::Boolean | nil,
+        event_cancelled: HubSpotSDK::Internal::Type::Boolean | nil,
+        event_completed: HubSpotSDK::Internal::Type::Boolean | nil,
         event_description: String | nil,
         event_type: String | nil,
         event_url: String | nil,

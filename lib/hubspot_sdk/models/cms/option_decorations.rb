@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class OptionDecorations < HubspotSDK::Internal::Type::BaseModel
+      class OptionDecorations < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute color
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::OptionDecorations::Color]
-        required :color, enum: -> { HubspotSDK::Cms::OptionDecorations::Color }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::OptionDecorations::Color]
+        required :color, enum: -> { HubSpotSDK::Cms::OptionDecorations::Color }
 
         # @!method initialize(color:)
-        #   @param color [Symbol, HubspotSDK::Models::Cms::OptionDecorations::Color]
+        #   @param color [Symbol, HubSpotSDK::Models::Cms::OptionDecorations::Color]
 
-        # @see HubspotSDK::Models::Cms::OptionDecorations#color
+        # @see HubSpotSDK::Models::Cms::OptionDecorations#color
         module Color
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BLACK = :BLACK
           BLUE = :BLUE

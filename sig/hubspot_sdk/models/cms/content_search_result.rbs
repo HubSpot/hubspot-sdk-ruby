@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type content_search_result =
@@ -6,7 +6,7 @@ module HubspotSDK
           id: Integer,
           domain: String,
           score: Float,
-          type: HubspotSDK::Models::Cms::ContentSearchResult::type_,
+          type: HubSpotSDK::Models::Cms::ContentSearchResult::type_,
           url: String,
           author_full_name: String,
           category: String,
@@ -16,7 +16,7 @@ module HubspotSDK
           featured_image_url: String,
           in_beta: bool,
           is_private: bool,
-          language: HubspotSDK::Models::Cms::ContentSearchResult::language,
+          language: HubSpotSDK::Models::Cms::ContentSearchResult::language,
           published_date: Integer,
           row_id: Integer,
           subcategory: String,
@@ -25,14 +25,14 @@ module HubspotSDK
           title: String
         }
 
-      class ContentSearchResult < HubspotSDK::Internal::Type::BaseModel
+      class ContentSearchResult < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: Integer
 
         attr_accessor domain: String
 
         attr_accessor score: Float
 
-        attr_accessor type: HubspotSDK::Models::Cms::ContentSearchResult::type_
+        attr_accessor type: HubSpotSDK::Models::Cms::ContentSearchResult::type_
 
         attr_accessor url: String
 
@@ -68,11 +68,11 @@ module HubspotSDK
 
         def is_private=: (bool) -> bool
 
-        attr_reader language: HubspotSDK::Models::Cms::ContentSearchResult::language?
+        attr_reader language: HubSpotSDK::Models::Cms::ContentSearchResult::language?
 
         def language=: (
-          HubspotSDK::Models::Cms::ContentSearchResult::language
-        ) -> HubspotSDK::Models::Cms::ContentSearchResult::language
+          HubSpotSDK::Models::Cms::ContentSearchResult::language
+        ) -> HubSpotSDK::Models::Cms::ContentSearchResult::language
 
         attr_reader published_date: Integer?
 
@@ -102,7 +102,7 @@ module HubspotSDK
           id: Integer,
           domain: String,
           score: Float,
-          type: HubspotSDK::Models::Cms::ContentSearchResult::type_,
+          type: HubSpotSDK::Models::Cms::ContentSearchResult::type_,
           url: String,
           ?author_full_name: String,
           ?category: String,
@@ -112,7 +112,7 @@ module HubspotSDK
           ?featured_image_url: String,
           ?in_beta: bool,
           ?is_private: bool,
-          ?language: HubspotSDK::Models::Cms::ContentSearchResult::language,
+          ?language: HubSpotSDK::Models::Cms::ContentSearchResult::language,
           ?published_date: Integer,
           ?row_id: Integer,
           ?subcategory: String,
@@ -125,7 +125,7 @@ module HubspotSDK
           id: Integer,
           domain: String,
           score: Float,
-          type: HubspotSDK::Models::Cms::ContentSearchResult::type_,
+          type: HubSpotSDK::Models::Cms::ContentSearchResult::type_,
           url: String,
           author_full_name: String,
           category: String,
@@ -135,7 +135,7 @@ module HubspotSDK
           featured_image_url: String,
           in_beta: bool,
           is_private: bool,
-          language: HubspotSDK::Models::Cms::ContentSearchResult::language,
+          language: HubSpotSDK::Models::Cms::ContentSearchResult::language,
           published_date: Integer,
           row_id: Integer,
           subcategory: String,
@@ -153,7 +153,7 @@ module HubspotSDK
           | :STRUCTURED_CONTENT
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BLOG_POST: :BLOG_POST
           KNOWLEDGE_ARTICLE: :KNOWLEDGE_ARTICLE
@@ -162,7 +162,7 @@ module HubspotSDK
           SITE_PAGE: :SITE_PAGE
           STRUCTURED_CONTENT: :STRUCTURED_CONTENT
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::ContentSearchResult::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::ContentSearchResult::type_]
         end
 
         type language =
@@ -1011,7 +1011,7 @@ module HubspotSDK
           | :"zu-za"
 
         module Language
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AA: :aa
           AB: :ab
@@ -1857,7 +1857,7 @@ module HubspotSDK
           ZU: :zu
           ZU_ZA: :"zu-za"
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::ContentSearchResult::language]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::ContentSearchResult::language]
         end
       end
     end

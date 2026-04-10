@@ -1,29 +1,29 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_link_availability_and_busy_times =
         {
-          all_users_busy_times: ::Array[HubspotSDK::Scheduler::ExternalUserBusyTimes],
-          link_availability: HubspotSDK::Scheduler::ExternalLinkAvailability
+          all_users_busy_times: ::Array[HubSpotSDK::Scheduler::ExternalUserBusyTimes],
+          link_availability: HubSpotSDK::Scheduler::ExternalLinkAvailability
         }
 
-      class ExternalLinkAvailabilityAndBusyTimes < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor all_users_busy_times: ::Array[HubspotSDK::Scheduler::ExternalUserBusyTimes]
+      class ExternalLinkAvailabilityAndBusyTimes < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor all_users_busy_times: ::Array[HubSpotSDK::Scheduler::ExternalUserBusyTimes]
 
-        attr_reader link_availability: HubspotSDK::Scheduler::ExternalLinkAvailability?
+        attr_reader link_availability: HubSpotSDK::Scheduler::ExternalLinkAvailability?
 
         def link_availability=: (
-          HubspotSDK::Scheduler::ExternalLinkAvailability
-        ) -> HubspotSDK::Scheduler::ExternalLinkAvailability
+          HubSpotSDK::Scheduler::ExternalLinkAvailability
+        ) -> HubSpotSDK::Scheduler::ExternalLinkAvailability
 
         def initialize: (
-          all_users_busy_times: ::Array[HubspotSDK::Scheduler::ExternalUserBusyTimes],
-          ?link_availability: HubspotSDK::Scheduler::ExternalLinkAvailability
+          all_users_busy_times: ::Array[HubSpotSDK::Scheduler::ExternalUserBusyTimes],
+          ?link_availability: HubSpotSDK::Scheduler::ExternalLinkAvailability
         ) -> void
 
         def to_hash: -> {
-          all_users_busy_times: ::Array[HubspotSDK::Scheduler::ExternalUserBusyTimes],
-          link_availability: HubspotSDK::Scheduler::ExternalLinkAvailability
+          all_users_busy_times: ::Array[HubSpotSDK::Scheduler::ExternalUserBusyTimes],
+          link_availability: HubSpotSDK::Scheduler::ExternalLinkAvailability
         }
       end
     end

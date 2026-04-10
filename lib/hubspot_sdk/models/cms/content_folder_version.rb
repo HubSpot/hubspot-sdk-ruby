@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ContentFolderVersion < HubspotSDK::Internal::Type::BaseModel
+      class ContentFolderVersion < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [String]
@@ -11,8 +11,8 @@ module HubspotSDK
 
         # @!attribute object
         #
-        #   @return [HubspotSDK::Models::Cms::ContentFolder]
-        required :object, -> { HubspotSDK::Cms::ContentFolder }
+        #   @return [HubSpotSDK::Models::Cms::ContentFolder]
+        required :object, -> { HubSpotSDK::Cms::ContentFolder }
 
         # @!attribute updated_at
         #
@@ -21,14 +21,14 @@ module HubspotSDK
 
         # @!attribute user
         #
-        #   @return [HubspotSDK::Models::VersionUser]
-        required :user, -> { HubspotSDK::VersionUser }
+        #   @return [HubSpotSDK::Models::VersionUser]
+        required :user, -> { HubSpotSDK::VersionUser }
 
         # @!method initialize(id:, object:, updated_at:, user:)
         #   @param id [String]
-        #   @param object [HubspotSDK::Models::Cms::ContentFolder]
+        #   @param object [HubSpotSDK::Models::Cms::ContentFolder]
         #   @param updated_at [Time]
-        #   @param user [HubspotSDK::Models::VersionUser]
+        #   @param user [HubSpotSDK::Models::VersionUser]
       end
     end
   end

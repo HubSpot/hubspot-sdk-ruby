@@ -1,12 +1,12 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type date_point =
         {
           day: Integer,
           month: Integer,
-          time_type: HubspotSDK::Models::Events::DatePoint::time_type,
-          timezone_source: HubspotSDK::Models::Events::DatePoint::timezone_source,
+          time_type: HubSpotSDK::Models::Events::DatePoint::time_type,
+          timezone_source: HubSpotSDK::Models::Events::DatePoint::timezone_source,
           year: Integer,
           zone_id: String,
           hour: Integer,
@@ -15,14 +15,14 @@ module HubspotSDK
           second: Integer
         }
 
-      class DatePoint < HubspotSDK::Internal::Type::BaseModel
+      class DatePoint < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor day: Integer
 
         attr_accessor month: Integer
 
-        attr_accessor time_type: HubspotSDK::Models::Events::DatePoint::time_type
+        attr_accessor time_type: HubSpotSDK::Models::Events::DatePoint::time_type
 
-        attr_accessor timezone_source: HubspotSDK::Models::Events::DatePoint::timezone_source
+        attr_accessor timezone_source: HubSpotSDK::Models::Events::DatePoint::timezone_source
 
         attr_accessor year: Integer
 
@@ -47,8 +47,8 @@ module HubspotSDK
         def initialize: (
           day: Integer,
           month: Integer,
-          time_type: HubspotSDK::Models::Events::DatePoint::time_type,
-          timezone_source: HubspotSDK::Models::Events::DatePoint::timezone_source,
+          time_type: HubSpotSDK::Models::Events::DatePoint::time_type,
+          timezone_source: HubSpotSDK::Models::Events::DatePoint::timezone_source,
           year: Integer,
           zone_id: String,
           ?hour: Integer,
@@ -60,8 +60,8 @@ module HubspotSDK
         def to_hash: -> {
           day: Integer,
           month: Integer,
-          time_type: HubspotSDK::Models::Events::DatePoint::time_type,
-          timezone_source: HubspotSDK::Models::Events::DatePoint::timezone_source,
+          time_type: HubSpotSDK::Models::Events::DatePoint::time_type,
+          timezone_source: HubSpotSDK::Models::Events::DatePoint::timezone_source,
           year: Integer,
           zone_id: String,
           hour: Integer,
@@ -73,23 +73,23 @@ module HubspotSDK
         type time_type = :DATE
 
         module TimeType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DATE: :DATE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::DatePoint::time_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::DatePoint::time_type]
         end
 
         type timezone_source = :CUSTOM | :PORTAL | :USER
 
         module TimezoneSource
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CUSTOM: :CUSTOM
           PORTAL: :PORTAL
           USER: :USER
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::DatePoint::timezone_source]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::DatePoint::timezone_source]
         end
       end
     end

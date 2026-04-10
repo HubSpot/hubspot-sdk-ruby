@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Automation
       class Actions
@@ -14,13 +14,13 @@ module HubspotSDK
               failure_reason_type: String,
               request_context:
                 T.any(
-                  HubspotSDK::Automation::WorkflowsRequestContext::OrHash,
-                  HubspotSDK::Automation::AgentRequestContext::OrHash,
-                  HubspotSDK::Automation::CopilotRequestContext::OrHash,
-                  HubspotSDK::Automation::StandaloneRequestContext::OrHash,
-                  HubspotSDK::Automation::TestRequestContext::OrHash
+                  HubSpotSDK::Automation::WorkflowsRequestContext::OrHash,
+                  HubSpotSDK::Automation::AgentRequestContext::OrHash,
+                  HubSpotSDK::Automation::CopilotRequestContext::OrHash,
+                  HubSpotSDK::Automation::StandaloneRequestContext::OrHash,
+                  HubSpotSDK::Automation::TestRequestContext::OrHash
                 ),
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def complete(
@@ -44,16 +44,16 @@ module HubspotSDK
             params(
               inputs:
                 T::Array[
-                  HubspotSDK::Automation::CallbackCompletionBatchRequest::OrHash
+                  HubSpotSDK::Automation::CallbackCompletionBatchRequest::OrHash
                 ],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def complete_batch(inputs:, request_options: {})
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

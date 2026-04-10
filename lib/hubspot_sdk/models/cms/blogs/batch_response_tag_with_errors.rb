@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        class BatchResponseTagWithErrors < HubspotSDK::Internal::Type::BaseModel
+        class BatchResponseTagWithErrors < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute completed_at
           #   Time of batch operation completion.
           #
@@ -14,8 +14,8 @@ module HubspotSDK
           # @!attribute results
           #   Results of batch operation.
           #
-          #   @return [Array<HubspotSDK::Models::Cms::Blogs::Tag>]
-          required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Blogs::Tag] }
+          #   @return [Array<HubSpotSDK::Models::Cms::Blogs::Tag>]
+          required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Blogs::Tag] }
 
           # @!attribute started_at
           #   Time of batch operation start.
@@ -26,20 +26,20 @@ module HubspotSDK
           # @!attribute status
           #   Status of batch operation.
           #
-          #   @return [Symbol, HubspotSDK::Models::Cms::Blogs::BatchResponseTagWithErrors::Status]
-          required :status, enum: -> { HubspotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status }
+          #   @return [Symbol, HubSpotSDK::Models::Cms::Blogs::BatchResponseTagWithErrors::Status]
+          required :status, enum: -> { HubSpotSDK::Cms::Blogs::BatchResponseTagWithErrors::Status }
 
           # @!attribute errors
           #   Errors in batch operation.
           #
-          #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-          optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
+          #   @return [Array<HubSpotSDK::Models::StandardError>, nil]
+          optional :errors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError] }
 
           # @!attribute links
           #   Links associated with batch operation.
           #
           #   @return [Hash{Symbol=>String}, nil]
-          optional :links, HubspotSDK::Internal::Type::HashOf[String]
+          optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
           # @!attribute num_errors
           #   Number of errors.
@@ -56,13 +56,13 @@ module HubspotSDK
           # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
           #   @param completed_at [Time] Time of batch operation completion.
           #
-          #   @param results [Array<HubspotSDK::Models::Cms::Blogs::Tag>] Results of batch operation.
+          #   @param results [Array<HubSpotSDK::Models::Cms::Blogs::Tag>] Results of batch operation.
           #
           #   @param started_at [Time] Time of batch operation start.
           #
-          #   @param status [Symbol, HubspotSDK::Models::Cms::Blogs::BatchResponseTagWithErrors::Status] Status of batch operation.
+          #   @param status [Symbol, HubSpotSDK::Models::Cms::Blogs::BatchResponseTagWithErrors::Status] Status of batch operation.
           #
-          #   @param errors [Array<HubspotSDK::Models::StandardError>] Errors in batch operation.
+          #   @param errors [Array<HubSpotSDK::Models::StandardError>] Errors in batch operation.
           #
           #   @param links [Hash{Symbol=>String}] Links associated with batch operation.
           #
@@ -72,9 +72,9 @@ module HubspotSDK
 
           # Status of batch operation.
           #
-          # @see HubspotSDK::Models::Cms::Blogs::BatchResponseTagWithErrors#status
+          # @see HubSpotSDK::Models::Cms::Blogs::BatchResponseTagWithErrors#status
           module Status
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             CANCELED = :CANCELED
             COMPLETE = :COMPLETE

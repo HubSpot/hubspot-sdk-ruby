@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class FeatureFlagListPortalsParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class FeatureFlagListPortalsParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::FeatureFlagListPortalsParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::FeatureFlagListPortalsParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -40,7 +40,7 @@ module HubspotSDK
             flag_name: String,
             limit: Integer,
             start_portal_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -60,7 +60,7 @@ module HubspotSDK
               flag_name: String,
               limit: Integer,
               start_portal_id: Integer,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end

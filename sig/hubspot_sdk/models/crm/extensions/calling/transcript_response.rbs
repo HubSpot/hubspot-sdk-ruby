@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
@@ -8,21 +8,21 @@ module HubspotSDK
               id: String,
               created_at: Time,
               engagement_id: Integer,
-              transcript_source: HubspotSDK::Models::Crm::Extensions::Calling::TranscriptResponse::transcript_source,
-              transcript_utterances: ::Array[HubspotSDK::Crm::Extensions::Calling::TranscriptUtterance],
+              transcript_source: HubSpotSDK::Models::Crm::Extensions::Calling::TranscriptResponse::transcript_source,
+              transcript_utterances: ::Array[HubSpotSDK::Crm::Extensions::Calling::TranscriptUtterance],
               updated_at: Time
             }
 
-          class TranscriptResponse < HubspotSDK::Internal::Type::BaseModel
+          class TranscriptResponse < HubSpotSDK::Internal::Type::BaseModel
             attr_accessor id: String
 
             attr_accessor created_at: Time
 
             attr_accessor engagement_id: Integer
 
-            attr_accessor transcript_source: HubspotSDK::Models::Crm::Extensions::Calling::TranscriptResponse::transcript_source
+            attr_accessor transcript_source: HubSpotSDK::Models::Crm::Extensions::Calling::TranscriptResponse::transcript_source
 
-            attr_accessor transcript_utterances: ::Array[HubspotSDK::Crm::Extensions::Calling::TranscriptUtterance]
+            attr_accessor transcript_utterances: ::Array[HubSpotSDK::Crm::Extensions::Calling::TranscriptUtterance]
 
             attr_accessor updated_at: Time
 
@@ -30,8 +30,8 @@ module HubspotSDK
               id: String,
               created_at: Time,
               engagement_id: Integer,
-              transcript_source: HubspotSDK::Models::Crm::Extensions::Calling::TranscriptResponse::transcript_source,
-              transcript_utterances: ::Array[HubspotSDK::Crm::Extensions::Calling::TranscriptUtterance],
+              transcript_source: HubSpotSDK::Models::Crm::Extensions::Calling::TranscriptResponse::transcript_source,
+              transcript_utterances: ::Array[HubSpotSDK::Crm::Extensions::Calling::TranscriptUtterance],
               updated_at: Time
             ) -> void
 
@@ -39,20 +39,20 @@ module HubspotSDK
               id: String,
               created_at: Time,
               engagement_id: Integer,
-              transcript_source: HubspotSDK::Models::Crm::Extensions::Calling::TranscriptResponse::transcript_source,
-              transcript_utterances: ::Array[HubspotSDK::Crm::Extensions::Calling::TranscriptUtterance],
+              transcript_source: HubSpotSDK::Models::Crm::Extensions::Calling::TranscriptResponse::transcript_source,
+              transcript_utterances: ::Array[HubSpotSDK::Crm::Extensions::Calling::TranscriptUtterance],
               updated_at: Time
             }
 
             type transcript_source = :HUBSPOT_GENERATED | :INTEGRATOR_GENERATED
 
             module TranscriptSource
-              extend HubspotSDK::Internal::Type::Enum
+              extend HubSpotSDK::Internal::Type::Enum
 
               HUBSPOT_GENERATED: :HUBSPOT_GENERATED
               INTEGRATOR_GENERATED: :INTEGRATOR_GENERATED
 
-              def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::Calling::TranscriptResponse::transcript_source]
+              def self?.values: -> ::Array[HubSpotSDK::Models::Crm::Extensions::Calling::TranscriptResponse::transcript_source]
             end
           end
         end

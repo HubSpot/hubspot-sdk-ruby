@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class FolderUpdateTaskLocator < HubspotSDK::Internal::Type::BaseModel
+      class FolderUpdateTaskLocator < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Files::FolderUpdateTaskLocator,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Files::FolderUpdateTaskLocator,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

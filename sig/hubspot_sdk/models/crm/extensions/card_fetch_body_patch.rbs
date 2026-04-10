@@ -1,23 +1,23 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         type card_fetch_body_patch =
           {
-            object_types: ::Array[HubspotSDK::Crm::Extensions::CardObjectTypeBody],
-            card_type: HubspotSDK::Models::Crm::Extensions::CardFetchBodyPatch::card_type,
+            object_types: ::Array[HubSpotSDK::Crm::Extensions::CardObjectTypeBody],
+            card_type: HubSpotSDK::Models::Crm::Extensions::CardFetchBodyPatch::card_type,
             serverless_function: String,
             target_url: String
           }
 
-        class CardFetchBodyPatch < HubspotSDK::Internal::Type::BaseModel
-          attr_accessor object_types: ::Array[HubspotSDK::Crm::Extensions::CardObjectTypeBody]
+        class CardFetchBodyPatch < HubSpotSDK::Internal::Type::BaseModel
+          attr_accessor object_types: ::Array[HubSpotSDK::Crm::Extensions::CardObjectTypeBody]
 
-          attr_reader card_type: HubspotSDK::Models::Crm::Extensions::CardFetchBodyPatch::card_type?
+          attr_reader card_type: HubSpotSDK::Models::Crm::Extensions::CardFetchBodyPatch::card_type?
 
           def card_type=: (
-            HubspotSDK::Models::Crm::Extensions::CardFetchBodyPatch::card_type
-          ) -> HubspotSDK::Models::Crm::Extensions::CardFetchBodyPatch::card_type
+            HubSpotSDK::Models::Crm::Extensions::CardFetchBodyPatch::card_type
+          ) -> HubSpotSDK::Models::Crm::Extensions::CardFetchBodyPatch::card_type
 
           attr_reader serverless_function: String?
 
@@ -28,15 +28,15 @@ module HubspotSDK
           def target_url=: (String) -> String
 
           def initialize: (
-            object_types: ::Array[HubspotSDK::Crm::Extensions::CardObjectTypeBody],
-            ?card_type: HubspotSDK::Models::Crm::Extensions::CardFetchBodyPatch::card_type,
+            object_types: ::Array[HubSpotSDK::Crm::Extensions::CardObjectTypeBody],
+            ?card_type: HubSpotSDK::Models::Crm::Extensions::CardFetchBodyPatch::card_type,
             ?serverless_function: String,
             ?target_url: String
           ) -> void
 
           def to_hash: -> {
-            object_types: ::Array[HubspotSDK::Crm::Extensions::CardObjectTypeBody],
-            card_type: HubspotSDK::Models::Crm::Extensions::CardFetchBodyPatch::card_type,
+            object_types: ::Array[HubSpotSDK::Crm::Extensions::CardObjectTypeBody],
+            card_type: HubSpotSDK::Models::Crm::Extensions::CardFetchBodyPatch::card_type,
             serverless_function: String,
             target_url: String
           }
@@ -44,12 +44,12 @@ module HubspotSDK
           type card_type = :EXTERNAL | :SERVERLESS
 
           module CardType
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             EXTERNAL: :EXTERNAL
             SERVERLESS: :SERVERLESS
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::CardFetchBodyPatch::card_type]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Crm::Extensions::CardFetchBodyPatch::card_type]
           end
         end
       end

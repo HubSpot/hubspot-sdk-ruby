@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Limits#get_association_records_limits_from_objects
-      class CollectionResponseObjectTypeNearOrAtAssociationLimitNoPaging < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::Limits#get_association_records_limits_from_objects
+      class CollectionResponseObjectTypeNearOrAtAssociationLimitNoPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Crm::ObjectTypeNearOrAtAssociationLimit>]
+        #   @return [Array<HubSpotSDK::Models::Crm::ObjectTypeNearOrAtAssociationLimit>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ObjectTypeNearOrAtAssociationLimit] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::ObjectTypeNearOrAtAssociationLimit] }
 
         # @!method initialize(results:)
-        #   @param results [Array<HubspotSDK::Models::Crm::ObjectTypeNearOrAtAssociationLimit>]
+        #   @param results [Array<HubSpotSDK::Models::Crm::ObjectTypeNearOrAtAssociationLimit>]
       end
     end
   end

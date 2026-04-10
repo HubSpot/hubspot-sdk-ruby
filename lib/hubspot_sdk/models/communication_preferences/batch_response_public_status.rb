@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class BatchResponsePublicStatus < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponsePublicStatus < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   The date and time when the batch operation was completed.
         #
@@ -13,9 +13,9 @@ module HubspotSDK
         # @!attribute results
         #   An array containing the results of the batch operation.
         #
-        #   @return [Array<HubspotSDK::Models::CommunicationPreferences::PublicStatus>]
+        #   @return [Array<HubSpotSDK::Models::CommunicationPreferences::PublicStatus>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CommunicationPreferences::PublicStatus] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::CommunicationPreferences::PublicStatus] }
 
         # @!attribute started_at
         #   The date and time when the batch operation started.
@@ -27,20 +27,20 @@ module HubspotSDK
         #   The current status of the batch operation, which can be PENDING, PROCESSING,
         #   CANCELED, or COMPLETE.
         #
-        #   @return [Symbol, HubspotSDK::Models::CommunicationPreferences::BatchResponsePublicStatus::Status]
-        required :status, enum: -> { HubspotSDK::CommunicationPreferences::BatchResponsePublicStatus::Status }
+        #   @return [Symbol, HubSpotSDK::Models::CommunicationPreferences::BatchResponsePublicStatus::Status]
+        required :status, enum: -> { HubSpotSDK::CommunicationPreferences::BatchResponsePublicStatus::Status }
 
         # @!attribute errors
         #   An array of error objects detailing any issues encountered.
         #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
+        #   @return [Array<HubSpotSDK::Models::StandardError>, nil]
+        optional :errors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError] }
 
         # @!attribute links
         #   URLs linking to related resources or documentation.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute num_errors
         #   The number of errors encountered during the batch operation.
@@ -56,18 +56,18 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CommunicationPreferences::BatchResponsePublicStatus} for
+        #   {HubSpotSDK::Models::CommunicationPreferences::BatchResponsePublicStatus} for
         #   more details.
         #
         #   @param completed_at [Time] The date and time when the batch operation was completed.
         #
-        #   @param results [Array<HubspotSDK::Models::CommunicationPreferences::PublicStatus>] An array containing the results of the batch operation.
+        #   @param results [Array<HubSpotSDK::Models::CommunicationPreferences::PublicStatus>] An array containing the results of the batch operation.
         #
         #   @param started_at [Time] The date and time when the batch operation started.
         #
-        #   @param status [Symbol, HubspotSDK::Models::CommunicationPreferences::BatchResponsePublicStatus::Status] The current status of the batch operation, which can be PENDING, PROCESSING, CAN
+        #   @param status [Symbol, HubSpotSDK::Models::CommunicationPreferences::BatchResponsePublicStatus::Status] The current status of the batch operation, which can be PENDING, PROCESSING, CAN
         #
-        #   @param errors [Array<HubspotSDK::Models::StandardError>] An array of error objects detailing any issues encountered.
+        #   @param errors [Array<HubSpotSDK::Models::StandardError>] An array of error objects detailing any issues encountered.
         #
         #   @param links [Hash{Symbol=>String}] URLs linking to related resources or documentation.
         #
@@ -78,9 +78,9 @@ module HubspotSDK
         # The current status of the batch operation, which can be PENDING, PROCESSING,
         # CANCELED, or COMPLETE.
         #
-        # @see HubspotSDK::Models::CommunicationPreferences::BatchResponsePublicStatus#status
+        # @see HubSpotSDK::Models::CommunicationPreferences::BatchResponsePublicStatus#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

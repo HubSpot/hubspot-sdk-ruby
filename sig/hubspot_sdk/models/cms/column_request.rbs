@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type column_request =
@@ -6,24 +6,24 @@ module HubspotSDK
           id: Integer,
           label: String,
           name: String,
-          options: ::Array[HubspotSDK::Cms::Option],
-          type: HubspotSDK::Models::Cms::ColumnRequest::type_,
+          options: ::Array[HubSpotSDK::Cms::Option],
+          type: HubSpotSDK::Models::Cms::ColumnRequest::type_,
           foreign_column_id: Integer,
           foreign_table_id: Integer,
           max_number_of_characters: Integer,
           max_number_of_options: Integer
         }
 
-      class ColumnRequest < HubspotSDK::Internal::Type::BaseModel
+      class ColumnRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: Integer
 
         attr_accessor label: String
 
         attr_accessor name: String
 
-        attr_accessor options: ::Array[HubspotSDK::Cms::Option]
+        attr_accessor options: ::Array[HubSpotSDK::Cms::Option]
 
-        attr_accessor type: HubspotSDK::Models::Cms::ColumnRequest::type_
+        attr_accessor type: HubSpotSDK::Models::Cms::ColumnRequest::type_
 
         attr_reader foreign_column_id: Integer?
 
@@ -45,8 +45,8 @@ module HubspotSDK
           id: Integer,
           label: String,
           name: String,
-          options: ::Array[HubspotSDK::Cms::Option],
-          type: HubspotSDK::Models::Cms::ColumnRequest::type_,
+          options: ::Array[HubSpotSDK::Cms::Option],
+          type: HubSpotSDK::Models::Cms::ColumnRequest::type_,
           ?foreign_column_id: Integer,
           ?foreign_table_id: Integer,
           ?max_number_of_characters: Integer,
@@ -57,8 +57,8 @@ module HubspotSDK
           id: Integer,
           label: String,
           name: String,
-          options: ::Array[HubspotSDK::Cms::Option],
-          type: HubspotSDK::Models::Cms::ColumnRequest::type_,
+          options: ::Array[HubSpotSDK::Cms::Option],
+          type: HubSpotSDK::Models::Cms::ColumnRequest::type_,
           foreign_column_id: Integer,
           foreign_table_id: Integer,
           max_number_of_characters: Integer,
@@ -90,7 +90,7 @@ module HubspotSDK
           | :VIDEO
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOLEAN: :BOOLEAN
           CODE: :CODE
@@ -115,7 +115,7 @@ module HubspotSDK
           URL: :URL
           VIDEO: :VIDEO
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::ColumnRequest::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::ColumnRequest::type_]
         end
       end
     end

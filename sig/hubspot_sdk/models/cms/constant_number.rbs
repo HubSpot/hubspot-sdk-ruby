@@ -1,15 +1,15 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type constant_number =
         {
-          operator: HubspotSDK::Models::Cms::ConstantNumber::operator,
+          operator: HubSpotSDK::Models::Cms::ConstantNumber::operator,
           property_name: String,
           value: Float
         }
 
-      class ConstantNumber < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor operator: HubspotSDK::Models::Cms::ConstantNumber::operator
+      class ConstantNumber < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor operator: HubSpotSDK::Models::Cms::ConstantNumber::operator
 
         attr_reader property_name: String?
 
@@ -20,13 +20,13 @@ module HubspotSDK
         def value=: (Float) -> Float
 
         def initialize: (
-          operator: HubspotSDK::Models::Cms::ConstantNumber::operator,
+          operator: HubSpotSDK::Models::Cms::ConstantNumber::operator,
           ?property_name: String,
           ?value: Float
         ) -> void
 
         def to_hash: -> {
-          operator: HubspotSDK::Models::Cms::ConstantNumber::operator,
+          operator: HubSpotSDK::Models::Cms::ConstantNumber::operator,
           property_name: String,
           value: Float
         }
@@ -34,11 +34,11 @@ module HubspotSDK
         type operator = :CONSTANT_NUMBER
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONSTANT_NUMBER: :CONSTANT_NUMBER
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::ConstantNumber::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::ConstantNumber::operator]
         end
       end
     end

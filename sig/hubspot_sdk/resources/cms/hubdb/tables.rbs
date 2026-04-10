@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Hubdb
@@ -6,14 +6,14 @@ module HubspotSDK
           def create: (
             allow_child_tables: bool,
             allow_public_api_access: bool,
-            columns: ::Array[HubspotSDK::Cms::ColumnRequest],
+            columns: ::Array[HubSpotSDK::Cms::ColumnRequest],
             dynamic_meta_tags: ::Hash[Symbol, Integer],
             enable_child_table_pages: bool,
             label: String,
             name: String,
             use_for_pages: bool,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::HubDBTableV3
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::HubDBTableV3
 
           def list: (
             ?after: String,
@@ -28,12 +28,12 @@ module HubspotSDK
             ?updated_after: Time,
             ?updated_at: Time,
             ?updated_before: Time,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::HubDBTableV3]
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Cms::HubDBTableV3]
 
           def delete: (
             String table_id_or_name,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def clone_draft: (
@@ -42,25 +42,25 @@ module HubspotSDK
             is_hubspot_defined: bool,
             ?new_label: String,
             ?new_name: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::HubDBTableV3
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::HubDBTableV3
 
           def delete_version: (
             Integer version_id,
             table_id_or_name: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def export: (
             String table_id_or_name,
             ?format_: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> StringIO
 
           def export_draft: (
             String table_id_or_name,
             ?format_: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> StringIO
 
           def get: (
@@ -68,23 +68,23 @@ module HubspotSDK
             ?archived: bool,
             ?include_foreign_ids: bool,
             ?is_get_localized_schema: bool,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::HubDBTableV3
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::HubDBTableV3
 
           def get_draft: (
             String table_id_or_name,
             ?archived: bool,
             ?include_foreign_ids: bool,
             ?is_get_localized_schema: bool,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::HubDBTableV3
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::HubDBTableV3
 
           def import_draft: (
             String table_id_or_name,
             ?config: String,
-            ?file: HubspotSDK::Internal::file_input,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::ImportResult
+            ?file: HubSpotSDK::Internal::file_input,
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::ImportResult
 
           def list_draft: (
             ?after: String,
@@ -99,32 +99,32 @@ module HubspotSDK
             ?updated_after: Time,
             ?updated_at: Time,
             ?updated_before: Time,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::HubDBTableV3]
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Cms::HubDBTableV3]
 
           def publish_draft: (
             String table_id_or_name,
             ?include_foreign_ids: bool,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::HubDBTableV3
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::HubDBTableV3
 
           def reset_draft: (
             String table_id_or_name,
             ?include_foreign_ids: bool,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::HubDBTableV3
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::HubDBTableV3
 
           def unpublish: (
             String table_id_or_name,
             ?include_foreign_ids: bool,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::HubDBTableV3
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::HubDBTableV3
 
           def update_draft: (
             String table_id_or_name,
             allow_child_tables: bool,
             allow_public_api_access: bool,
-            columns: ::Array[HubspotSDK::Cms::ColumnRequest],
+            columns: ::Array[HubSpotSDK::Cms::ColumnRequest],
             dynamic_meta_tags: ::Hash[Symbol, Integer],
             enable_child_table_pages: bool,
             label: String,
@@ -133,10 +133,10 @@ module HubspotSDK
             ?archived: bool,
             ?include_foreign_ids: bool,
             ?is_get_localized_schema: bool,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::HubDBTableV3
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::HubDBTableV3
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

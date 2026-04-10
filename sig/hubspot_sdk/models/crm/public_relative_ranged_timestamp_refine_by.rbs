@@ -1,45 +1,45 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_relative_ranged_timestamp_refine_by =
         {
-          lower_bound_offset: HubspotSDK::Crm::PublicTimeOffset,
+          lower_bound_offset: HubSpotSDK::Crm::PublicTimeOffset,
           range_type: String,
-          type: HubspotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy::type_,
-          upper_bound_offset: HubspotSDK::Crm::PublicTimeOffset
+          type: HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy::type_,
+          upper_bound_offset: HubSpotSDK::Crm::PublicTimeOffset
         }
 
-      class PublicRelativeRangedTimestampRefineBy < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor lower_bound_offset: HubspotSDK::Crm::PublicTimeOffset
+      class PublicRelativeRangedTimestampRefineBy < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor lower_bound_offset: HubSpotSDK::Crm::PublicTimeOffset
 
         attr_accessor range_type: String
 
-        attr_accessor type: HubspotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy::type_
+        attr_accessor type: HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy::type_
 
-        attr_accessor upper_bound_offset: HubspotSDK::Crm::PublicTimeOffset
+        attr_accessor upper_bound_offset: HubSpotSDK::Crm::PublicTimeOffset
 
         def initialize: (
-          lower_bound_offset: HubspotSDK::Crm::PublicTimeOffset,
+          lower_bound_offset: HubSpotSDK::Crm::PublicTimeOffset,
           range_type: String,
-          type: HubspotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy::type_,
-          upper_bound_offset: HubspotSDK::Crm::PublicTimeOffset
+          type: HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy::type_,
+          upper_bound_offset: HubSpotSDK::Crm::PublicTimeOffset
         ) -> void
 
         def to_hash: -> {
-          lower_bound_offset: HubspotSDK::Crm::PublicTimeOffset,
+          lower_bound_offset: HubSpotSDK::Crm::PublicTimeOffset,
           range_type: String,
-          type: HubspotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy::type_,
-          upper_bound_offset: HubspotSDK::Crm::PublicTimeOffset
+          type: HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy::type_,
+          upper_bound_offset: HubSpotSDK::Crm::PublicTimeOffset
         }
 
         type type_ = :RELATIVE_RANGED
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           RELATIVE_RANGED: :RELATIVE_RANGED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy::type_]
         end
       end
     end

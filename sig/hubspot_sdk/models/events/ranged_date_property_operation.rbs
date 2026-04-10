@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type ranged_date_property_operation =
@@ -6,27 +6,27 @@ module HubspotSDK
           include_objects_with_no_value_set: bool,
           lower_bound_timestamp: Integer,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::RangedDatePropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::RangedDatePropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::RangedDatePropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::RangedDatePropertyOperation::property_type,
           requires_time_zone_conversion: bool,
           upper_bound_timestamp: Integer,
           default_value: String,
           render_spec: String
         }
 
-      class RangedDatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class RangedDatePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor include_objects_with_no_value_set: bool
 
         attr_accessor lower_bound_timestamp: Integer
 
         attr_accessor operation_type: String
 
-        attr_accessor operator: HubspotSDK::Models::Events::RangedDatePropertyOperation::operator
+        attr_accessor operator: HubSpotSDK::Models::Events::RangedDatePropertyOperation::operator
 
         attr_accessor operator_name: String
 
-        attr_accessor property_type: HubspotSDK::Models::Events::RangedDatePropertyOperation::property_type
+        attr_accessor property_type: HubSpotSDK::Models::Events::RangedDatePropertyOperation::property_type
 
         attr_accessor requires_time_zone_conversion: bool
 
@@ -44,9 +44,9 @@ module HubspotSDK
           include_objects_with_no_value_set: bool,
           lower_bound_timestamp: Integer,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::RangedDatePropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::RangedDatePropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::RangedDatePropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::RangedDatePropertyOperation::property_type,
           requires_time_zone_conversion: bool,
           upper_bound_timestamp: Integer,
           ?default_value: String,
@@ -57,9 +57,9 @@ module HubspotSDK
           include_objects_with_no_value_set: bool,
           lower_bound_timestamp: Integer,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::RangedDatePropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::RangedDatePropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::RangedDatePropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::RangedDatePropertyOperation::property_type,
           requires_time_zone_conversion: bool,
           upper_bound_timestamp: Integer,
           default_value: String,
@@ -69,22 +69,22 @@ module HubspotSDK
         type operator = :IS_BETWEEN | :IS_NOT_BETWEEN
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           IS_BETWEEN: :IS_BETWEEN
           IS_NOT_BETWEEN: :IS_NOT_BETWEEN
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::RangedDatePropertyOperation::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::RangedDatePropertyOperation::operator]
         end
 
         type property_type = :"datetime-ranged"
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DATETIME_RANGED: :"datetime-ranged"
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::RangedDatePropertyOperation::property_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::RangedDatePropertyOperation::property_type]
         end
       end
     end

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type url_mapping_create_request_body =
@@ -15,7 +15,7 @@ module HubspotSDK
           precedence: Integer
         }
 
-      class URLMappingCreateRequestBody < HubspotSDK::Internal::Type::BaseModel
+      class URLMappingCreateRequestBody < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor destination: String
 
         attr_accessor redirect_style: Integer

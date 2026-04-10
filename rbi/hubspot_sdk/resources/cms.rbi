@@ -1,40 +1,40 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
-      sig { returns(HubspotSDK::Resources::Cms::AuditLogs) }
+      sig { returns(HubSpotSDK::Resources::Cms::AuditLogs) }
       attr_reader :audit_logs
 
-      sig { returns(HubspotSDK::Resources::Cms::Blogs) }
+      sig { returns(HubSpotSDK::Resources::Cms::Blogs) }
       attr_reader :blogs
 
-      sig { returns(HubspotSDK::Resources::Cms::Domains) }
+      sig { returns(HubSpotSDK::Resources::Cms::Domains) }
       attr_reader :domains
 
-      sig { returns(HubspotSDK::Resources::Cms::Hubdb) }
+      sig { returns(HubSpotSDK::Resources::Cms::Hubdb) }
       attr_reader :hubdb
 
-      sig { returns(HubspotSDK::Resources::Cms::MediaBridge) }
+      sig { returns(HubSpotSDK::Resources::Cms::MediaBridge) }
       attr_reader :media_bridge
 
-      sig { returns(HubspotSDK::Resources::Cms::Pages) }
+      sig { returns(HubSpotSDK::Resources::Cms::Pages) }
       attr_reader :pages
 
-      sig { returns(HubspotSDK::Resources::Cms::SiteSearch) }
+      sig { returns(HubSpotSDK::Resources::Cms::SiteSearch) }
       attr_reader :site_search
 
-      sig { returns(HubspotSDK::Resources::Cms::SourceCode) }
+      sig { returns(HubSpotSDK::Resources::Cms::SourceCode) }
       attr_reader :source_code
 
-      sig { returns(HubspotSDK::Resources::Cms::URLMappings) }
+      sig { returns(HubSpotSDK::Resources::Cms::URLMappings) }
       attr_reader :url_mappings
 
-      sig { returns(HubspotSDK::Resources::Cms::URLRedirects) }
+      sig { returns(HubSpotSDK::Resources::Cms::URLRedirects) }
       attr_reader :url_redirects
 
       # @api private
-      sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+      sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
       def self.new(client:)
       end
     end

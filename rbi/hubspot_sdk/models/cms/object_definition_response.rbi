@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ObjectDefinitionResponse < HubspotSDK::Internal::Type::BaseModel
+      class ObjectDefinitionResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::ObjectDefinitionResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::ObjectDefinitionResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -18,17 +18,17 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :object_type_name
 
-        sig { returns(T::Array[HubspotSDK::Cms::PropertyDefinition]) }
+        sig { returns(T::Array[HubSpotSDK::Cms::PropertyDefinition]) }
         attr_accessor :properties
 
-        sig { returns(T::Array[HubspotSDK::Cms::GroupView]) }
+        sig { returns(T::Array[HubSpotSDK::Cms::GroupView]) }
         attr_accessor :property_groups
 
-        sig { returns(T.nilable(HubspotSDK::Cms::InboundDBObjectType)) }
+        sig { returns(T.nilable(HubSpotSDK::Cms::InboundDBObjectType)) }
         attr_reader :schema
 
         sig do
-          params(schema: HubspotSDK::Cms::InboundDBObjectType::OrHash).void
+          params(schema: HubSpotSDK::Cms::InboundDBObjectType::OrHash).void
         end
         attr_writer :schema
 
@@ -36,9 +36,9 @@ module HubspotSDK
           params(
             object_type_id: String,
             object_type_name: String,
-            properties: T::Array[HubspotSDK::Cms::PropertyDefinition::OrHash],
-            property_groups: T::Array[HubspotSDK::Cms::GroupView::OrHash],
-            schema: HubspotSDK::Cms::InboundDBObjectType::OrHash
+            properties: T::Array[HubSpotSDK::Cms::PropertyDefinition::OrHash],
+            property_groups: T::Array[HubSpotSDK::Cms::GroupView::OrHash],
+            schema: HubSpotSDK::Cms::InboundDBObjectType::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -55,9 +55,9 @@ module HubspotSDK
             {
               object_type_id: String,
               object_type_name: String,
-              properties: T::Array[HubspotSDK::Cms::PropertyDefinition],
-              property_groups: T::Array[HubspotSDK::Cms::GroupView],
-              schema: HubspotSDK::Cms::InboundDBObjectType
+              properties: T::Array[HubSpotSDK::Cms::PropertyDefinition],
+              property_groups: T::Array[HubSpotSDK::Cms::GroupView],
+              schema: HubSpotSDK::Cms::InboundDBObjectType
             }
           )
         end

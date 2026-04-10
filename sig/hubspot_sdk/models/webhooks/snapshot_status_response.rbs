@@ -1,32 +1,32 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       type snapshot_status_response =
         {
           id: String,
           initiated_at: Integer,
-          status: HubspotSDK::Models::Webhooks::SnapshotStatusResponse::status,
+          status: HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::status,
           completed_at: Integer,
-          error_code: HubspotSDK::Models::Webhooks::SnapshotStatusResponse::error_code,
+          error_code: HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::error_code,
           message: String
         }
 
-      class SnapshotStatusResponse < HubspotSDK::Internal::Type::BaseModel
+      class SnapshotStatusResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor initiated_at: Integer
 
-        attr_accessor status: HubspotSDK::Models::Webhooks::SnapshotStatusResponse::status
+        attr_accessor status: HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::status
 
         attr_reader completed_at: Integer?
 
         def completed_at=: (Integer) -> Integer
 
-        attr_reader error_code: HubspotSDK::Models::Webhooks::SnapshotStatusResponse::error_code?
+        attr_reader error_code: HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::error_code?
 
         def error_code=: (
-          HubspotSDK::Models::Webhooks::SnapshotStatusResponse::error_code
-        ) -> HubspotSDK::Models::Webhooks::SnapshotStatusResponse::error_code
+          HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::error_code
+        ) -> HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::error_code
 
         attr_reader message: String?
 
@@ -35,25 +35,25 @@ module HubspotSDK
         def initialize: (
           id: String,
           initiated_at: Integer,
-          status: HubspotSDK::Models::Webhooks::SnapshotStatusResponse::status,
+          status: HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::status,
           ?completed_at: Integer,
-          ?error_code: HubspotSDK::Models::Webhooks::SnapshotStatusResponse::error_code,
+          ?error_code: HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::error_code,
           ?message: String
         ) -> void
 
         def to_hash: -> {
           id: String,
           initiated_at: Integer,
-          status: HubspotSDK::Models::Webhooks::SnapshotStatusResponse::status,
+          status: HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::status,
           completed_at: Integer,
-          error_code: HubspotSDK::Models::Webhooks::SnapshotStatusResponse::error_code,
+          error_code: HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::error_code,
           message: String
         }
 
         type status = :COMPLETED | :EXPIRED | :FAILED | :IN_PROGRESS | :PENDING
 
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           COMPLETED: :COMPLETED
           EXPIRED: :EXPIRED
@@ -61,21 +61,21 @@ module HubspotSDK
           IN_PROGRESS: :IN_PROGRESS
           PENDING: :PENDING
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Webhooks::SnapshotStatusResponse::status]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::status]
         end
 
         type error_code =
           :INTERNAL_ERROR | :PERMISSION_DENIED | :TIMEOUT | :VALIDATION_ERROR
 
         module ErrorCode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           INTERNAL_ERROR: :INTERNAL_ERROR
           PERMISSION_DENIED: :PERMISSION_DENIED
           TIMEOUT: :TIMEOUT
           VALIDATION_ERROR: :VALIDATION_ERROR
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Webhooks::SnapshotStatusResponse::error_code]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::error_code]
         end
       end
     end

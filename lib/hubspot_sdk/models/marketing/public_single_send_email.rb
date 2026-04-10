@@ -1,26 +1,26 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicSingleSendEmail < HubspotSDK::Internal::Type::BaseModel
+      class PublicSingleSendEmail < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute bcc
         #   List of email addresses to send as Bcc.
         #
         #   @return [Array<String>]
-        required :bcc, HubspotSDK::Internal::Type::ArrayOf[String]
+        required :bcc, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute cc
         #   List of email addresses to send as Cc.
         #
         #   @return [Array<String>]
-        required :cc, HubspotSDK::Internal::Type::ArrayOf[String]
+        required :cc, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute reply_to
         #   List of Reply-To header values for the email.
         #
         #   @return [Array<String>]
-        required :reply_to, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :replyTo
+        required :reply_to, HubSpotSDK::Internal::Type::ArrayOf[String], api_name: :replyTo
 
         # @!attribute from
         #   The From header for the email.

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicTimePointOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicTimePointOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicTimePointOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicTimePointOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
         # Specifies the type of operation (TIME_POINT).
         sig do
           returns(
-            HubspotSDK::Crm::PublicTimePointOperation::OperationType::OrSymbol
+            HubSpotSDK::Crm::PublicTimePointOperation::OperationType::OrSymbol
           )
         end
         attr_accessor :operation_type
@@ -35,9 +35,9 @@ module HubspotSDK
         sig do
           returns(
             T.any(
-              HubspotSDK::Crm::PublicDatePoint,
-              HubspotSDK::Crm::PublicIndexedTimePoint,
-              HubspotSDK::Crm::PublicPropertyReferencedTime
+              HubSpotSDK::Crm::PublicDatePoint,
+              HubSpotSDK::Crm::PublicIndexedTimePoint,
+              HubSpotSDK::Crm::PublicPropertyReferencedTime
             )
           )
         end
@@ -65,13 +65,13 @@ module HubspotSDK
           params(
             include_objects_with_no_value_set: T::Boolean,
             operation_type:
-              HubspotSDK::Crm::PublicTimePointOperation::OperationType::OrSymbol,
+              HubSpotSDK::Crm::PublicTimePointOperation::OperationType::OrSymbol,
             operator: String,
             time_point:
               T.any(
-                HubspotSDK::Crm::PublicDatePoint::OrHash,
-                HubspotSDK::Crm::PublicIndexedTimePoint::OrHash,
-                HubspotSDK::Crm::PublicPropertyReferencedTime::OrHash
+                HubSpotSDK::Crm::PublicDatePoint::OrHash,
+                HubSpotSDK::Crm::PublicIndexedTimePoint::OrHash,
+                HubSpotSDK::Crm::PublicPropertyReferencedTime::OrHash
               ),
             type: String,
             endpoint_behavior: String,
@@ -104,13 +104,13 @@ module HubspotSDK
             {
               include_objects_with_no_value_set: T::Boolean,
               operation_type:
-                HubspotSDK::Crm::PublicTimePointOperation::OperationType::OrSymbol,
+                HubSpotSDK::Crm::PublicTimePointOperation::OperationType::OrSymbol,
               operator: String,
               time_point:
                 T.any(
-                  HubspotSDK::Crm::PublicDatePoint,
-                  HubspotSDK::Crm::PublicIndexedTimePoint,
-                  HubspotSDK::Crm::PublicPropertyReferencedTime
+                  HubSpotSDK::Crm::PublicDatePoint,
+                  HubSpotSDK::Crm::PublicIndexedTimePoint,
+                  HubSpotSDK::Crm::PublicPropertyReferencedTime
                 ),
               type: String,
               endpoint_behavior: String,
@@ -123,13 +123,13 @@ module HubspotSDK
 
         # Specifies the type of operation (TIME_POINT).
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicTimePointOperation::OperationType
+                HubSpotSDK::Crm::PublicTimePointOperation::OperationType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -137,13 +137,13 @@ module HubspotSDK
           TIME_POINT =
             T.let(
               :TIME_POINT,
-              HubspotSDK::Crm::PublicTimePointOperation::OperationType::TaggedSymbol
+              HubSpotSDK::Crm::PublicTimePointOperation::OperationType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicTimePointOperation::OperationType::TaggedSymbol
+                HubSpotSDK::Crm::PublicTimePointOperation::OperationType::TaggedSymbol
               ]
             )
           end
@@ -154,21 +154,21 @@ module HubspotSDK
         # Defines the specific point in time for the operation, which can be a date,
         # indexed time, or property-referenced time.
         module TimePoint
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::PublicDatePoint,
-                HubspotSDK::Crm::PublicIndexedTimePoint,
-                HubspotSDK::Crm::PublicPropertyReferencedTime
+                HubSpotSDK::Crm::PublicDatePoint,
+                HubSpotSDK::Crm::PublicIndexedTimePoint,
+                HubSpotSDK::Crm::PublicPropertyReferencedTime
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicTimePointOperation::TimePoint::Variants
+                HubSpotSDK::Crm::PublicTimePointOperation::TimePoint::Variants
               ]
             )
           end

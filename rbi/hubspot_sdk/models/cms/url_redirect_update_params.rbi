@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class URLRedirectUpdateParams < HubspotSDK::Models::Cms::URLMapping
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class URLRedirectUpdateParams < HubSpotSDK::Models::Cms::URLMapping
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::URLRedirectUpdateParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::URLRedirectUpdateParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -21,7 +21,7 @@ module HubspotSDK
         sig do
           params(
             url_redirect_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(url_redirect_id:, request_options: {})
@@ -31,7 +31,7 @@ module HubspotSDK
           override.returns(
             {
               url_redirect_id: String,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end

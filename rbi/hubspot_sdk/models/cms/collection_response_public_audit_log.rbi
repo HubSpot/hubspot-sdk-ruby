@@ -1,30 +1,30 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class CollectionResponsePublicAuditLog < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponsePublicAuditLog < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::CollectionResponsePublicAuditLog,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::CollectionResponsePublicAuditLog,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Cms::PublicAuditLog]) }
+        sig { returns(T::Array[HubSpotSDK::Cms::PublicAuditLog]) }
         attr_accessor :results
 
-        sig { returns(T.nilable(HubspotSDK::Paging)) }
+        sig { returns(T.nilable(HubSpotSDK::Paging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::Paging::OrHash).void }
+        sig { params(paging: HubSpotSDK::Paging::OrHash).void }
         attr_writer :paging
 
         sig do
           params(
-            results: T::Array[HubspotSDK::Cms::PublicAuditLog::OrHash],
-            paging: HubspotSDK::Paging::OrHash
+            results: T::Array[HubSpotSDK::Cms::PublicAuditLog::OrHash],
+            paging: HubSpotSDK::Paging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(results:, paging: nil)
@@ -33,8 +33,8 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              results: T::Array[HubspotSDK::Cms::PublicAuditLog],
-              paging: HubspotSDK::Paging
+              results: T::Array[HubSpotSDK::Cms::PublicAuditLog],
+              paging: HubSpotSDK::Paging
             }
           )
         end

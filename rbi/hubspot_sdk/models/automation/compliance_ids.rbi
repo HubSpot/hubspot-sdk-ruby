@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class ComplianceIDs < HubspotSDK::Internal::Type::BaseModel
+      class ComplianceIDs < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::ComplianceIDs,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::ComplianceIDs,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Automation::ContactID]) }
+        sig { returns(T::Array[HubSpotSDK::Automation::ContactID]) }
         attr_accessor :contact_ids
 
         sig { returns(T::Array[Integer]) }
@@ -44,7 +44,7 @@ module HubspotSDK
 
         sig do
           params(
-            contact_ids: T::Array[HubspotSDK::Automation::ContactID::OrHash],
+            contact_ids: T::Array[HubSpotSDK::Automation::ContactID::OrHash],
             portal_ids: T::Array[Integer],
             user_ids: T::Array[Integer],
             no_contact_id_reason: String,
@@ -68,7 +68,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              contact_ids: T::Array[HubspotSDK::Automation::ContactID],
+              contact_ids: T::Array[HubSpotSDK::Automation::ContactID],
               portal_ids: T::Array[Integer],
               user_ids: T::Array[Integer],
               no_contact_id_reason: String,

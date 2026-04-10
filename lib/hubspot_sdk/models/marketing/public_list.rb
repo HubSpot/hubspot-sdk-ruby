@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicList < HubspotSDK::Internal::Type::BaseModel
+      class PublicList < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute list_id
         #   An internal ID of the list
         #

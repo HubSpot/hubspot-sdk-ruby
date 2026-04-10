@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalLegalConsentOptions < HubspotSDK::Internal::Type::BaseModel
+      class ExternalLegalConsentOptions < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute communication_consent_checkboxes
         #
-        #   @return [Array<HubspotSDK::Models::Scheduler::ExternalCommunicationConsentCheckbox>]
+        #   @return [Array<HubSpotSDK::Models::Scheduler::ExternalCommunicationConsentCheckbox>]
         required :communication_consent_checkboxes,
                  -> {
-                   HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Scheduler::ExternalCommunicationConsentCheckbox]
+                   HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Scheduler::ExternalCommunicationConsentCheckbox]
                  },
                  api_name: :communicationConsentCheckboxes
 
@@ -23,13 +23,13 @@ module HubspotSDK
         #   Whether the legal basis for processing is legitimate interest.
         #
         #   @return [Boolean]
-        required :is_legitimate_interest, HubspotSDK::Internal::Type::Boolean, api_name: :isLegitimateInterest
+        required :is_legitimate_interest, HubSpotSDK::Internal::Type::Boolean, api_name: :isLegitimateInterest
 
         # @!attribute legitimate_interest_subscription_types
         #
         #   @return [Array<Integer>]
         required :legitimate_interest_subscription_types,
-                 HubspotSDK::Internal::Type::ArrayOf[Integer],
+                 HubSpotSDK::Internal::Type::ArrayOf[Integer],
                  api_name: :legitimateInterestSubscriptionTypes
 
         # @!attribute privacy_policy_text
@@ -61,9 +61,9 @@ module HubspotSDK
         #   The type of consent required for processing. Accepted values are: IMPLICIT,
         #   REQUIRED_CHECKBOX.
         #
-        #   @return [Symbol, HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType]
+        #   @return [Symbol, HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType]
         required :processing_consent_type,
-                 enum: -> { HubspotSDK::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType },
+                 enum: -> { HubSpotSDK::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType },
                  api_name: :processingConsentType
 
         # @!attribute legitimate_interest_legal_basis
@@ -71,18 +71,18 @@ module HubspotSDK
         #   LEGITIMATE_INTEREST_PQL, LEGITIMATE_INTEREST_CLIENT, PERFORMANCE_OF_CONTRACT,
         #   CONSENT_WITH_NOTICE, NON_GDPR, PROCESS_AND_STORE, LEGITIMATE_INTEREST_OTHER.
         #
-        #   @return [Symbol, HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis, nil]
         optional :legitimate_interest_legal_basis,
                  enum: -> {
-                   HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis
+                   HubSpotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis
                  },
                  api_name: :legitimateInterestLegalBasis
 
         # @!method initialize(communication_consent_checkboxes:, communication_consent_text:, is_legitimate_interest:, legitimate_interest_subscription_types:, privacy_policy_text:, processing_consent_checkbox_label:, processing_consent_footer_text:, processing_consent_text:, processing_consent_type:, legitimate_interest_legal_basis: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions} for more details.
+        #   {HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions} for more details.
         #
-        #   @param communication_consent_checkboxes [Array<HubspotSDK::Models::Scheduler::ExternalCommunicationConsentCheckbox>]
+        #   @param communication_consent_checkboxes [Array<HubSpotSDK::Models::Scheduler::ExternalCommunicationConsentCheckbox>]
         #
         #   @param communication_consent_text [String] The text that describes the consent for communication preferences.
         #
@@ -98,16 +98,16 @@ module HubspotSDK
         #
         #   @param processing_consent_text [String] The text that describes the consent for processing personal data.
         #
-        #   @param processing_consent_type [Symbol, HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType] The type of consent required for processing. Accepted values are: IMPLICIT, REQU
+        #   @param processing_consent_type [Symbol, HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType] The type of consent required for processing. Accepted values are: IMPLICIT, REQU
         #
-        #   @param legitimate_interest_legal_basis [Symbol, HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis] The legal basis for processing under legitimate interest. Accepted values are: L
+        #   @param legitimate_interest_legal_basis [Symbol, HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis] The legal basis for processing under legitimate interest. Accepted values are: L
 
         # The type of consent required for processing. Accepted values are: IMPLICIT,
         # REQUIRED_CHECKBOX.
         #
-        # @see HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions#processing_consent_type
+        # @see HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions#processing_consent_type
         module ProcessingConsentType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           IMPLICIT = :IMPLICIT
           REQUIRED_CHECKBOX = :REQUIRED_CHECKBOX
@@ -120,9 +120,9 @@ module HubspotSDK
         # LEGITIMATE_INTEREST_PQL, LEGITIMATE_INTEREST_CLIENT, PERFORMANCE_OF_CONTRACT,
         # CONSENT_WITH_NOTICE, NON_GDPR, PROCESS_AND_STORE, LEGITIMATE_INTEREST_OTHER.
         #
-        # @see HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions#legitimate_interest_legal_basis
+        # @see HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions#legitimate_interest_legal_basis
         module LegitimateInterestLegalBasis
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONSENT_WITH_NOTICE = :CONSENT_WITH_NOTICE
           LEGITIMATE_INTEREST_CLIENT = :LEGITIMATE_INTEREST_CLIENT

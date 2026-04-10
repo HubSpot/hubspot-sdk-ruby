@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PublicAssociationDefinitionUserConfiguration>]
+        #   @return [Array<HubSpotSDK::Models::Crm::PublicAssociationDefinitionUserConfiguration>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicAssociationDefinitionUserConfiguration] }
 
         # @!method initialize(results:)
-        #   @param results [Array<HubspotSDK::Models::Crm::PublicAssociationDefinitionUserConfiguration>]
+        #   @param results [Array<HubSpotSDK::Models::Crm::PublicAssociationDefinitionUserConfiguration>]
       end
     end
   end

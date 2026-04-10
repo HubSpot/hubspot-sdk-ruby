@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PortalFlagStateBatchPutRequest < HubspotSDK::Internal::Type::BaseModel
+      class PortalFlagStateBatchPutRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute portal_states
         #
-        #   @return [Array<HubspotSDK::Models::Crm::BatchPortalEntry>]
+        #   @return [Array<HubSpotSDK::Models::Crm::BatchPortalEntry>]
         required :portal_states,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::BatchPortalEntry] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::BatchPortalEntry] },
                  api_name: :portalStates
 
         # @!method initialize(portal_states:)
-        #   @param portal_states [Array<HubspotSDK::Models::Crm::BatchPortalEntry>]
+        #   @param portal_states [Array<HubSpotSDK::Models::Crm::BatchPortalEntry>]
       end
     end
   end

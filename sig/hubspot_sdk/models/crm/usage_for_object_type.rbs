@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type usage_for_object_type =
@@ -9,7 +9,7 @@ module HubspotSDK
           usage: Integer
         }
 
-      class UsageForObjectType < HubspotSDK::Internal::Type::BaseModel
+      class UsageForObjectType < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor object_type_id: String
 
         attr_accessor plural_label: String

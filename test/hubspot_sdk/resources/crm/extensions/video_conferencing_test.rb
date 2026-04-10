@@ -2,14 +2,14 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::Extensions::VideoConferencingTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::Extensions::VideoConferencingTest < HubSpotSDK::Test::ResourceTest
   def test_update_required_params
     skip("Mock server tests are disabled")
 
     response = @hubspot.crm.extensions.video_conferencing.update(0, create_meeting_url: "createMeetingUrl")
 
     assert_pattern do
-      response => HubspotSDK::Crm::Extensions::ExternalSettings
+      response => HubSpotSDK::Crm::Extensions::ExternalSettings
     end
 
     assert_pattern do
@@ -39,7 +39,7 @@ class HubspotSDK::Test::Resources::Crm::Extensions::VideoConferencingTest < Hubs
     response = @hubspot.crm.extensions.video_conferencing.get(0)
 
     assert_pattern do
-      response => HubspotSDK::Crm::Extensions::ExternalSettings
+      response => HubSpotSDK::Crm::Extensions::ExternalSettings
     end
 
     assert_pattern do

@@ -1,20 +1,20 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       type crm_object_snapshot_batch_response =
         {
-          snapshot_responses: ::Array[HubspotSDK::Webhooks::CrmObjectSnapshotResponse]
+          snapshot_responses: ::Array[HubSpotSDK::Webhooks::CrmObjectSnapshotResponse]
         }
 
-      class CrmObjectSnapshotBatchResponse < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor snapshot_responses: ::Array[HubspotSDK::Webhooks::CrmObjectSnapshotResponse]
+      class CrmObjectSnapshotBatchResponse < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor snapshot_responses: ::Array[HubSpotSDK::Webhooks::CrmObjectSnapshotResponse]
 
         def initialize: (
-          snapshot_responses: ::Array[HubspotSDK::Webhooks::CrmObjectSnapshotResponse]
+          snapshot_responses: ::Array[HubSpotSDK::Webhooks::CrmObjectSnapshotResponse]
         ) -> void
 
         def to_hash: -> {
-          snapshot_responses: ::Array[HubspotSDK::Webhooks::CrmObjectSnapshotResponse]
+          snapshot_responses: ::Array[HubSpotSDK::Webhooks::CrmObjectSnapshotResponse]
         }
       end
     end

@@ -1,33 +1,33 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type channel_integration_message_egg =
         {
-          attachments: ::Array[HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::attachment],
+          attachments: ::Array[HubSpotSDK::Models::Conversations::ChannelIntegrationMessageEgg::attachment],
           channel_account_id: String,
-          message_direction: HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::message_direction,
-          recipients: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant],
-          senders: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant],
+          message_direction: HubSpotSDK::Models::Conversations::ChannelIntegrationMessageEgg::message_direction,
+          recipients: ::Array[HubSpotSDK::Conversations::ChannelIntegrationParticipant],
+          senders: ::Array[HubSpotSDK::Conversations::ChannelIntegrationParticipant],
           text: String,
           timestamp: Time,
           associate_with_contact_id: Integer,
           in_reply_to_id: String,
           integration_idempotency_id: String,
           integration_thread_id: String,
-          pre_resolved_contacts: HubspotSDK::Conversations::PreResolvedContacts,
+          pre_resolved_contacts: HubSpotSDK::Conversations::PreResolvedContacts,
           rich_text: String
         }
 
-      class ChannelIntegrationMessageEgg < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor attachments: ::Array[HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::attachment]
+      class ChannelIntegrationMessageEgg < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor attachments: ::Array[HubSpotSDK::Models::Conversations::ChannelIntegrationMessageEgg::attachment]
 
         attr_accessor channel_account_id: String
 
-        attr_accessor message_direction: HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::message_direction
+        attr_accessor message_direction: HubSpotSDK::Models::Conversations::ChannelIntegrationMessageEgg::message_direction
 
-        attr_accessor recipients: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant]
+        attr_accessor recipients: ::Array[HubSpotSDK::Conversations::ChannelIntegrationParticipant]
 
-        attr_accessor senders: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant]
+        attr_accessor senders: ::Array[HubSpotSDK::Conversations::ChannelIntegrationParticipant]
 
         attr_accessor text: String
 
@@ -49,72 +49,72 @@ module HubspotSDK
 
         def integration_thread_id=: (String) -> String
 
-        attr_reader pre_resolved_contacts: HubspotSDK::Conversations::PreResolvedContacts?
+        attr_reader pre_resolved_contacts: HubSpotSDK::Conversations::PreResolvedContacts?
 
         def pre_resolved_contacts=: (
-          HubspotSDK::Conversations::PreResolvedContacts
-        ) -> HubspotSDK::Conversations::PreResolvedContacts
+          HubSpotSDK::Conversations::PreResolvedContacts
+        ) -> HubSpotSDK::Conversations::PreResolvedContacts
 
         attr_reader rich_text: String?
 
         def rich_text=: (String) -> String
 
         def initialize: (
-          attachments: ::Array[HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::attachment],
+          attachments: ::Array[HubSpotSDK::Models::Conversations::ChannelIntegrationMessageEgg::attachment],
           channel_account_id: String,
-          message_direction: HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::message_direction,
-          recipients: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant],
-          senders: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant],
+          message_direction: HubSpotSDK::Models::Conversations::ChannelIntegrationMessageEgg::message_direction,
+          recipients: ::Array[HubSpotSDK::Conversations::ChannelIntegrationParticipant],
+          senders: ::Array[HubSpotSDK::Conversations::ChannelIntegrationParticipant],
           text: String,
           timestamp: Time,
           ?associate_with_contact_id: Integer,
           ?in_reply_to_id: String,
           ?integration_idempotency_id: String,
           ?integration_thread_id: String,
-          ?pre_resolved_contacts: HubspotSDK::Conversations::PreResolvedContacts,
+          ?pre_resolved_contacts: HubSpotSDK::Conversations::PreResolvedContacts,
           ?rich_text: String
         ) -> void
 
         def to_hash: -> {
-          attachments: ::Array[HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::attachment],
+          attachments: ::Array[HubSpotSDK::Models::Conversations::ChannelIntegrationMessageEgg::attachment],
           channel_account_id: String,
-          message_direction: HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::message_direction,
-          recipients: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant],
-          senders: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant],
+          message_direction: HubSpotSDK::Models::Conversations::ChannelIntegrationMessageEgg::message_direction,
+          recipients: ::Array[HubSpotSDK::Conversations::ChannelIntegrationParticipant],
+          senders: ::Array[HubSpotSDK::Conversations::ChannelIntegrationParticipant],
           text: String,
           timestamp: Time,
           associate_with_contact_id: Integer,
           in_reply_to_id: String,
           integration_idempotency_id: String,
           integration_thread_id: String,
-          pre_resolved_contacts: HubspotSDK::Conversations::PreResolvedContacts,
+          pre_resolved_contacts: HubSpotSDK::Conversations::PreResolvedContacts,
           rich_text: String
         }
 
         type attachment =
-          HubspotSDK::Conversations::FileAttachment
-          | HubspotSDK::Conversations::LocationAttachment
-          | HubspotSDK::Conversations::ContactAttachment
-          | HubspotSDK::Conversations::UnsupportedContentAttachment
-          | HubspotSDK::Conversations::MessageHeaderAttachment
-          | HubspotSDK::Conversations::QuickRepliesAttachment
-          | HubspotSDK::Conversations::SocialMetadataIntegrationAttachment
+          HubSpotSDK::Conversations::FileAttachment
+          | HubSpotSDK::Conversations::LocationAttachment
+          | HubSpotSDK::Conversations::ContactAttachment
+          | HubSpotSDK::Conversations::UnsupportedContentAttachment
+          | HubSpotSDK::Conversations::MessageHeaderAttachment
+          | HubSpotSDK::Conversations::QuickRepliesAttachment
+          | HubSpotSDK::Conversations::SocialMetadataIntegrationAttachment
 
         module Attachment
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          def self?.variants: -> ::Array[HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::attachment]
+          def self?.variants: -> ::Array[HubSpotSDK::Models::Conversations::ChannelIntegrationMessageEgg::attachment]
         end
 
         type message_direction = :INCOMING | :OUTGOING
 
         module MessageDirection
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           INCOMING: :INCOMING
           OUTGOING: :OUTGOING
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::message_direction]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Conversations::ChannelIntegrationMessageEgg::message_direction]
         end
       end
     end

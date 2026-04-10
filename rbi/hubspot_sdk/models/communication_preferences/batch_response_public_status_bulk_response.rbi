@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class BatchResponsePublicStatusBulkResponse < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponsePublicStatusBulkResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -21,7 +21,7 @@ module HubspotSDK
         sig do
           returns(
             T::Array[
-              HubspotSDK::CommunicationPreferences::PublicStatusBulkResponse
+              HubSpotSDK::CommunicationPreferences::PublicStatusBulkResponse
             ]
           )
         end
@@ -35,7 +35,7 @@ module HubspotSDK
         # PROCESSING, CANCELED, COMPLETE.
         sig do
           returns(
-            HubspotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status::TaggedSymbol
+            HubSpotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status::TaggedSymbol
           )
         end
         attr_accessor :status
@@ -59,11 +59,11 @@ module HubspotSDK
             completed_at: Time,
             results:
               T::Array[
-                HubspotSDK::CommunicationPreferences::PublicStatusBulkResponse::OrHash
+                HubSpotSDK::CommunicationPreferences::PublicStatusBulkResponse::OrHash
               ],
             started_at: Time,
             status:
-              HubspotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status::OrSymbol,
+              HubSpotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status::OrSymbol,
             links: T::Hash[Symbol, String],
             requested_at: Time
           ).returns(T.attached_class)
@@ -92,11 +92,11 @@ module HubspotSDK
               completed_at: Time,
               results:
                 T::Array[
-                  HubspotSDK::CommunicationPreferences::PublicStatusBulkResponse
+                  HubSpotSDK::CommunicationPreferences::PublicStatusBulkResponse
                 ],
               started_at: Time,
               status:
-                HubspotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status::TaggedSymbol,
+                HubSpotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status::TaggedSymbol,
               links: T::Hash[Symbol, String],
               requested_at: Time
             }
@@ -108,13 +108,13 @@ module HubspotSDK
         # The current status of the batch process, with possible values: PENDING,
         # PROCESSING, CANCELED, COMPLETE.
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status
+                HubSpotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -122,28 +122,28 @@ module HubspotSDK
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status::TaggedSymbol
             )
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status::TaggedSymbol
+                HubSpotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status::TaggedSymbol
               ]
             )
           end

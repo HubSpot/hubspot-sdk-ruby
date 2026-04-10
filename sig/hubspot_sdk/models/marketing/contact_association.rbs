@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type contact_association =
@@ -9,7 +9,7 @@ module HubspotSDK
           lastname: String
         }
 
-      class ContactAssociation < HubspotSDK::Internal::Type::BaseModel
+      class ContactAssociation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor contact_id: String
 
         attr_accessor email: String

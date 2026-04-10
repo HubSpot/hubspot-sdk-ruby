@@ -1,37 +1,37 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type import_template =
         {
           template_id: Integer,
-          template_type: HubspotSDK::Models::Crm::ImportTemplate::template_type
+          template_type: HubSpotSDK::Models::Crm::ImportTemplate::template_type
         }
 
-      class ImportTemplate < HubspotSDK::Internal::Type::BaseModel
+      class ImportTemplate < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor template_id: Integer
 
-        attr_accessor template_type: HubspotSDK::Models::Crm::ImportTemplate::template_type
+        attr_accessor template_type: HubSpotSDK::Models::Crm::ImportTemplate::template_type
 
         def initialize: (
           template_id: Integer,
-          template_type: HubspotSDK::Models::Crm::ImportTemplate::template_type
+          template_type: HubSpotSDK::Models::Crm::ImportTemplate::template_type
         ) -> void
 
         def to_hash: -> {
           template_id: Integer,
-          template_type: HubspotSDK::Models::Crm::ImportTemplate::template_type
+          template_type: HubSpotSDK::Models::Crm::ImportTemplate::template_type
         }
 
         type template_type = :admin_defined | :previous_import | :user_file
 
         module TemplateType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ADMIN_DEFINED: :admin_defined
           PREVIOUS_IMPORT: :previous_import
           USER_FILE: :user_file
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::ImportTemplate::template_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::ImportTemplate::template_type]
         end
       end
     end

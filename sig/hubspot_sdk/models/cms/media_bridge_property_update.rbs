@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type media_bridge_property_update =
@@ -6,17 +6,17 @@ module HubspotSDK
           calculation_formula: String,
           description: String,
           display_order: Integer,
-          field_type: HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type,
+          field_type: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type,
           form_field: bool,
           group_name: String,
           has_unique_value: bool,
           hidden: bool,
           label: String,
-          options: ::Array[HubspotSDK::OptionInput],
-          type: HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::type_
+          options: ::Array[HubSpotSDK::OptionInput],
+          type: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::type_
         }
 
-      class MediaBridgePropertyUpdate < HubspotSDK::Internal::Type::BaseModel
+      class MediaBridgePropertyUpdate < HubSpotSDK::Internal::Type::BaseModel
         attr_reader calculation_formula: String?
 
         def calculation_formula=: (String) -> String
@@ -29,11 +29,11 @@ module HubspotSDK
 
         def display_order=: (Integer) -> Integer
 
-        attr_reader field_type: HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type?
+        attr_reader field_type: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type?
 
         def field_type=: (
-          HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type
-        ) -> HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type
+          HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type
+        ) -> HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type
 
         attr_reader form_field: bool?
 
@@ -55,44 +55,44 @@ module HubspotSDK
 
         def label=: (String) -> String
 
-        attr_reader options: ::Array[HubspotSDK::OptionInput]?
+        attr_reader options: ::Array[HubSpotSDK::OptionInput]?
 
         def options=: (
-          ::Array[HubspotSDK::OptionInput]
-        ) -> ::Array[HubspotSDK::OptionInput]
+          ::Array[HubSpotSDK::OptionInput]
+        ) -> ::Array[HubSpotSDK::OptionInput]
 
-        attr_reader type: HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::type_?
+        attr_reader type: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::type_?
 
         def type=: (
-          HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::type_
-        ) -> HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::type_
+          HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::type_
+        ) -> HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::type_
 
         def initialize: (
           ?calculation_formula: String,
           ?description: String,
           ?display_order: Integer,
-          ?field_type: HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type,
+          ?field_type: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type,
           ?form_field: bool,
           ?group_name: String,
           ?has_unique_value: bool,
           ?hidden: bool,
           ?label: String,
-          ?options: ::Array[HubspotSDK::OptionInput],
-          ?type: HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::type_
+          ?options: ::Array[HubSpotSDK::OptionInput],
+          ?type: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::type_
         ) -> void
 
         def to_hash: -> {
           calculation_formula: String,
           description: String,
           display_order: Integer,
-          field_type: HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type,
+          field_type: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type,
           form_field: bool,
           group_name: String,
           has_unique_value: bool,
           hidden: bool,
           label: String,
-          options: ::Array[HubspotSDK::OptionInput],
-          type: HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::type_
+          options: ::Array[HubSpotSDK::OptionInput],
+          type: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::type_
         }
 
         type field_type =
@@ -110,7 +110,7 @@ module HubspotSDK
           | :textarea
 
         module FieldType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOLEANCHECKBOX: :booleancheckbox
           CALCULATION_EQUATION: :calculation_equation
@@ -125,7 +125,7 @@ module HubspotSDK
           TEXT: :text
           TEXTAREA: :textarea
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type]
         end
 
         type type_ =
@@ -138,7 +138,7 @@ module HubspotSDK
           | :string
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOL: :bool
           DATE: :date
@@ -148,7 +148,7 @@ module HubspotSDK
           PHONE_NUMBER: :phone_number
           STRING: :string
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::type_]
         end
       end
     end

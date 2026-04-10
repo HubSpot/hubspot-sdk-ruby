@@ -2,31 +2,31 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::Cms::AuditLogsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Cms::AuditLogsTest < HubSpotSDK::Test::ResourceTest
   def test_list
     skip("Mock server tests are disabled")
 
     response = @hubspot.cms.audit_logs.list
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Cms::PublicAuditLog
+      row => HubSpotSDK::Cms::PublicAuditLog
     end
 
     assert_pattern do
       row => {
-        event: HubspotSDK::Cms::PublicAuditLog::Event,
+        event: HubSpotSDK::Cms::PublicAuditLog::Event,
         full_name: String,
-        meta: HubspotSDK::Internal::Type::Unknown,
+        meta: HubSpotSDK::Internal::Type::Unknown,
         object_id_: String,
         object_name: String,
-        object_type: HubspotSDK::Cms::PublicAuditLog::ObjectType,
+        object_type: HubSpotSDK::Cms::PublicAuditLog::ObjectType,
         timestamp: Time,
         user_id: String
       }

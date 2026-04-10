@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalLinkDisplayInfo < HubspotSDK::Internal::Type::BaseModel
+      class ExternalLinkDisplayInfo < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Scheduler::ExternalLinkDisplayInfo,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Scheduler::ExternalLinkDisplayInfo,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -38,7 +38,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption::TaggedSymbol
             )
           )
         end
@@ -47,7 +47,7 @@ module HubspotSDK
         sig do
           params(
             public_display_avatar_option:
-              HubspotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption::OrSymbol
+              HubSpotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption::OrSymbol
           ).void
         end
         attr_writer :public_display_avatar_option
@@ -58,7 +58,7 @@ module HubspotSDK
             company_avatar: String,
             headline: String,
             public_display_avatar_option:
-              HubspotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption::OrSymbol
+              HubSpotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -81,7 +81,7 @@ module HubspotSDK
               company_avatar: String,
               headline: String,
               public_display_avatar_option:
-                HubspotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption::TaggedSymbol
+                HubSpotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption::TaggedSymbol
             }
           )
         end
@@ -91,13 +91,13 @@ module HubspotSDK
         # Option for determining which avatar to display on scheduling page. Accepted
         # values are: PROFILE_IMAGE, COMPANY_LOGO, CUSTOM_AVATAR,
         module PublicDisplayAvatarOption
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption
+                HubSpotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -105,23 +105,23 @@ module HubspotSDK
           COMPANY_LOGO =
             T.let(
               :COMPANY_LOGO,
-              HubspotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption::TaggedSymbol
             )
           CUSTOM_AVATAR =
             T.let(
               :CUSTOM_AVATAR,
-              HubspotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption::TaggedSymbol
             )
           PROFILE_IMAGE =
             T.let(
               :PROFILE_IMAGE,
-              HubspotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption::TaggedSymbol
+                HubSpotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption::TaggedSymbol
               ]
             )
           end

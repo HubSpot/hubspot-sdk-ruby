@@ -1,11 +1,11 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class NextPage < HubspotSDK::Internal::Type::BaseModel
+    class NextPage < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
-          T.any(HubspotSDK::NextPage, HubspotSDK::Internal::AnyHash)
+          T.any(HubSpotSDK::NextPage, HubSpotSDK::Internal::AnyHash)
         end
 
       # A paging cursor token for retrieving subsequent pages.

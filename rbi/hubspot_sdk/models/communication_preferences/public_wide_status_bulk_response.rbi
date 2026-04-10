@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class PublicWideStatusBulkResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicWideStatusBulkResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CommunicationPreferences::PublicWideStatusBulkResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::CommunicationPreferences::PublicWideStatusBulkResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -19,7 +19,7 @@ module HubspotSDK
         # An array containing the wide status results for the operation.
         sig do
           returns(
-            T::Array[HubspotSDK::CommunicationPreferences::PublicWideStatus]
+            T::Array[HubSpotSDK::CommunicationPreferences::PublicWideStatus]
           )
         end
         attr_accessor :wide_statuses
@@ -29,7 +29,7 @@ module HubspotSDK
             subscriber_id_string: String,
             wide_statuses:
               T::Array[
-                HubspotSDK::CommunicationPreferences::PublicWideStatus::OrHash
+                HubSpotSDK::CommunicationPreferences::PublicWideStatus::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -46,7 +46,7 @@ module HubspotSDK
             {
               subscriber_id_string: String,
               wide_statuses:
-                T::Array[HubspotSDK::CommunicationPreferences::PublicWideStatus]
+                T::Array[HubSpotSDK::CommunicationPreferences::PublicWideStatus]
             }
           )
         end

@@ -1,27 +1,27 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class BatchInputMarketingEventSubscriber < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputMarketingEventSubscriber < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::BatchInputMarketingEventSubscriber,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::BatchInputMarketingEventSubscriber,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # List of HubSpot contacts to subscribe to the marketing event
         sig do
-          returns(T::Array[HubspotSDK::Marketing::MarketingEventSubscriber])
+          returns(T::Array[HubSpotSDK::Marketing::MarketingEventSubscriber])
         end
         attr_accessor :inputs
 
         sig do
           params(
             inputs:
-              T::Array[HubspotSDK::Marketing::MarketingEventSubscriber::OrHash]
+              T::Array[HubSpotSDK::Marketing::MarketingEventSubscriber::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(
@@ -33,7 +33,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              inputs: T::Array[HubspotSDK::Marketing::MarketingEventSubscriber]
+              inputs: T::Array[HubSpotSDK::Marketing::MarketingEventSubscriber]
             }
           )
         end

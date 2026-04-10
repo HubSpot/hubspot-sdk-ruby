@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class CollectionResponseWithTotalExternalBehavioralEventTypeDefinition < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseWithTotalExternalBehavioralEventTypeDefinition < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::CollectionResponseWithTotalExternalBehavioralEventTypeDefinition,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::CollectionResponseWithTotalExternalBehavioralEventTypeDefinition,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            T::Array[HubspotSDK::Events::ExternalBehavioralEventTypeDefinition]
+            T::Array[HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition]
           )
         end
         attr_accessor :results
@@ -22,20 +22,20 @@ module HubspotSDK
         sig { returns(Integer) }
         attr_accessor :total
 
-        sig { returns(T.nilable(HubspotSDK::Paging)) }
+        sig { returns(T.nilable(HubSpotSDK::Paging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::Paging::OrHash).void }
+        sig { params(paging: HubSpotSDK::Paging::OrHash).void }
         attr_writer :paging
 
         sig do
           params(
             results:
               T::Array[
-                HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::OrHash
+                HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::OrHash
               ],
             total: Integer,
-            paging: HubspotSDK::Paging::OrHash
+            paging: HubSpotSDK::Paging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(results:, total:, paging: nil)
@@ -46,10 +46,10 @@ module HubspotSDK
             {
               results:
                 T::Array[
-                  HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
+                  HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition
                 ],
               total: Integer,
-              paging: HubspotSDK::Paging
+              paging: HubSpotSDK::Paging
             }
           )
         end

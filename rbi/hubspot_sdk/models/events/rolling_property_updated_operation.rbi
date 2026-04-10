@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class RollingPropertyUpdatedOperation < HubspotSDK::Internal::Type::BaseModel
+      class RollingPropertyUpdatedOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::RollingPropertyUpdatedOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::RollingPropertyUpdatedOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -23,7 +23,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::RollingPropertyUpdatedOperation::Operator::TaggedSymbol
+            HubSpotSDK::Events::RollingPropertyUpdatedOperation::Operator::TaggedSymbol
           )
         end
         attr_accessor :operator
@@ -33,7 +33,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::RollingPropertyUpdatedOperation::PropertyType::TaggedSymbol
+            HubSpotSDK::Events::RollingPropertyUpdatedOperation::PropertyType::TaggedSymbol
           )
         end
         attr_accessor :property_type
@@ -56,10 +56,10 @@ module HubspotSDK
             number_of_days: Integer,
             operation_type: String,
             operator:
-              HubspotSDK::Events::RollingPropertyUpdatedOperation::Operator::OrSymbol,
+              HubSpotSDK::Events::RollingPropertyUpdatedOperation::Operator::OrSymbol,
             operator_name: String,
             property_type:
-              HubspotSDK::Events::RollingPropertyUpdatedOperation::PropertyType::OrSymbol,
+              HubSpotSDK::Events::RollingPropertyUpdatedOperation::PropertyType::OrSymbol,
             default_value: String,
             render_spec: String
           ).returns(T.attached_class)
@@ -83,10 +83,10 @@ module HubspotSDK
               number_of_days: Integer,
               operation_type: String,
               operator:
-                HubspotSDK::Events::RollingPropertyUpdatedOperation::Operator::TaggedSymbol,
+                HubSpotSDK::Events::RollingPropertyUpdatedOperation::Operator::TaggedSymbol,
               operator_name: String,
               property_type:
-                HubspotSDK::Events::RollingPropertyUpdatedOperation::PropertyType::TaggedSymbol,
+                HubSpotSDK::Events::RollingPropertyUpdatedOperation::PropertyType::TaggedSymbol,
               default_value: String,
               render_spec: String
             }
@@ -96,13 +96,13 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::RollingPropertyUpdatedOperation::Operator
+                HubSpotSDK::Events::RollingPropertyUpdatedOperation::Operator
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -110,18 +110,18 @@ module HubspotSDK
           NOT_UPDATED_IN_LAST_X_DAYS =
             T.let(
               :NOT_UPDATED_IN_LAST_X_DAYS,
-              HubspotSDK::Events::RollingPropertyUpdatedOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::RollingPropertyUpdatedOperation::Operator::TaggedSymbol
             )
           UPDATED_IN_LAST_X_DAYS =
             T.let(
               :UPDATED_IN_LAST_X_DAYS,
-              HubspotSDK::Events::RollingPropertyUpdatedOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::RollingPropertyUpdatedOperation::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::RollingPropertyUpdatedOperation::Operator::TaggedSymbol
+                HubSpotSDK::Events::RollingPropertyUpdatedOperation::Operator::TaggedSymbol
               ]
             )
           end
@@ -130,13 +130,13 @@ module HubspotSDK
         end
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::RollingPropertyUpdatedOperation::PropertyType
+                HubSpotSDK::Events::RollingPropertyUpdatedOperation::PropertyType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -144,13 +144,13 @@ module HubspotSDK
           ROLLING_PROPERTY_UPDATED =
             T.let(
               :"rolling-property-updated",
-              HubspotSDK::Events::RollingPropertyUpdatedOperation::PropertyType::TaggedSymbol
+              HubSpotSDK::Events::RollingPropertyUpdatedOperation::PropertyType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::RollingPropertyUpdatedOperation::PropertyType::TaggedSymbol
+                HubSpotSDK::Events::RollingPropertyUpdatedOperation::PropertyType::TaggedSymbol
               ]
             )
           end

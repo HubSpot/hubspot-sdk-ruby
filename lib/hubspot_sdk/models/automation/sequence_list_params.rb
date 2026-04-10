@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      # @see HubspotSDK::Resources::Automation::Sequences#list
-      class SequenceListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Automation::Sequences#list
+      class SequenceListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute user_id
         #
@@ -34,7 +34,7 @@ module HubspotSDK
 
         # @!method initialize(user_id:, after: nil, limit: nil, name: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Automation::SequenceListParams} for more details.
+        #   {HubSpotSDK::Models::Automation::SequenceListParams} for more details.
         #
         #   @param user_id [String]
         #
@@ -44,7 +44,7 @@ module HubspotSDK
         #
         #   @param name [String]
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

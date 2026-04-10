@@ -1,14 +1,14 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Timeline
         class Batch
           def create: (
-            inputs: ::Array[HubspotSDK::Crm::AppEventOccurrence],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::BatchResponseAppEventOccurrence
+            inputs: ::Array[HubSpotSDK::Crm::AppEventOccurrence],
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::BatchResponseAppEventOccurrence
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

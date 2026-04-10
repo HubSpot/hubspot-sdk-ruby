@@ -1,53 +1,53 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class CommunicationPreferences
-      attr_reader definitions: HubspotSDK::Resources::CommunicationPreferences::Definitions
+      attr_reader definitions: HubSpotSDK::Resources::CommunicationPreferences::Definitions
 
-      attr_reader statuses: HubspotSDK::Resources::CommunicationPreferences::Statuses
+      attr_reader statuses: HubSpotSDK::Resources::CommunicationPreferences::Statuses
 
       def generate_links: (
-        channel: HubspotSDK::Models::CommunicationPreferences::LinkGenerationRequest::channel,
+        channel: HubSpotSDK::Models::CommunicationPreferences::LinkGenerationRequest::channel,
         subscriber_id_string: String,
         ?business_unit_id: Integer,
         ?language: String,
         ?subscription_id: Integer,
-        ?request_options: HubspotSDK::request_opts
-      ) -> HubspotSDK::CommunicationPreferences::LinkGenerationResponse
+        ?request_options: HubSpotSDK::request_opts
+      ) -> HubSpotSDK::CommunicationPreferences::LinkGenerationResponse
 
       def get_statuses: (
         String subscriber_id_string,
-        channel: HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetStatusesParams::channel,
+        channel: HubSpotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetStatusesParams::channel,
         ?business_unit_id: Integer,
-        ?request_options: HubspotSDK::request_opts
-      ) -> HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus
+        ?request_options: HubSpotSDK::request_opts
+      ) -> HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus
 
       def get_unsubscribe_all_status: (
         String subscriber_id_string,
-        channel: HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetUnsubscribeAllStatusParams::channel,
+        channel: HubSpotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetUnsubscribeAllStatusParams::channel,
         ?business_unit_id: Integer,
         ?verbose: bool,
-        ?request_options: HubspotSDK::request_opts
-      ) -> HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus
+        ?request_options: HubSpotSDK::request_opts
+      ) -> HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus
 
       def unsubscribe_all: (
         String subscriber_id_string,
-        channel: HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::channel,
+        channel: HubSpotSDK::Models::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::channel,
         ?business_unit_id: Integer,
         ?verbose: bool,
-        ?request_options: HubspotSDK::request_opts
-      ) -> HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus
+        ?request_options: HubSpotSDK::request_opts
+      ) -> HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus
 
       def update_status: (
         String subscriber_id_string,
-        channel: HubspotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest::channel,
-        status_state: HubspotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest::status_state,
+        channel: HubSpotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest::channel,
+        status_state: HubSpotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest::status_state,
         subscription_id: Integer,
-        ?legal_basis: HubspotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest::legal_basis,
+        ?legal_basis: HubSpotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest::legal_basis,
         ?legal_basis_explanation: String,
-        ?request_options: HubspotSDK::request_opts
-      ) -> HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus
+        ?request_options: HubSpotSDK::request_opts
+      ) -> HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus
 
-      def initialize: (client: HubspotSDK::Client) -> void
+      def initialize: (client: HubSpotSDK::Client) -> void
     end
   end
 end

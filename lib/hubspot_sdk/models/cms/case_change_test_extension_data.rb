@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class CaseChangeTestExtensionData < HubspotSDK::Internal::Type::BaseModel
+      class CaseChangeTestExtensionData < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute mood
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::CaseChangeTestExtensionData::Mood]
-        required :mood, enum: -> { HubspotSDK::Cms::CaseChangeTestExtensionData::Mood }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::CaseChangeTestExtensionData::Mood]
+        required :mood, enum: -> { HubSpotSDK::Cms::CaseChangeTestExtensionData::Mood }
 
         # @!method initialize(mood:)
-        #   @param mood [Symbol, HubspotSDK::Models::Cms::CaseChangeTestExtensionData::Mood]
+        #   @param mood [Symbol, HubSpotSDK::Models::Cms::CaseChangeTestExtensionData::Mood]
 
-        # @see HubspotSDK::Models::Cms::CaseChangeTestExtensionData#mood
+        # @see HubSpotSDK::Models::Cms::CaseChangeTestExtensionData#mood
         module Mood
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ANGRY = :ANGRY
           HAPPY = :HAPPY

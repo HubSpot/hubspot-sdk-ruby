@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class GroupView < HubspotSDK::Internal::Type::BaseModel
+      class GroupView < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::GroupView, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::GroupView, HubSpotSDK::Internal::AnyHash)
           end
 
         sig { returns(String) }

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicLocation < HubspotSDK::Internal::Type::BaseModel
+      class PublicLocation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute latitude
         #
         #   @return [Float]
@@ -16,8 +16,8 @@ module HubspotSDK
 
         # @!attribute type
         #
-        #   @return [Symbol, HubspotSDK::Models::Conversations::PublicLocation::Type]
-        required :type, enum: -> { HubspotSDK::Conversations::PublicLocation::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Conversations::PublicLocation::Type]
+        required :type, enum: -> { HubSpotSDK::Conversations::PublicLocation::Type }
 
         # @!attribute address
         #
@@ -37,14 +37,14 @@ module HubspotSDK
         # @!method initialize(latitude:, longitude:, type:, address: nil, name: nil, url: nil)
         #   @param latitude [Float]
         #   @param longitude [Float]
-        #   @param type [Symbol, HubspotSDK::Models::Conversations::PublicLocation::Type]
+        #   @param type [Symbol, HubSpotSDK::Models::Conversations::PublicLocation::Type]
         #   @param address [String]
         #   @param name [String]
         #   @param url [String]
 
-        # @see HubspotSDK::Models::Conversations::PublicLocation#type
+        # @see HubSpotSDK::Models::Conversations::PublicLocation#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           LOCATION = :LOCATION
 

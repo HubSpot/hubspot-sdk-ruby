@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Auth
-      class SignedAccessToken < HubspotSDK::Internal::Type::BaseModel
+      class SignedAccessToken < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Auth::SignedAccessToken,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Auth::SignedAccessToken,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

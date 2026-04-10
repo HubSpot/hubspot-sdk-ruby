@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class TimeOffset < HubspotSDK::Internal::Type::BaseModel
+      class TimeOffset < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute amount
         #
         #   @return [Integer]
@@ -11,24 +11,24 @@ module HubspotSDK
 
         # @!attribute offset_direction
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::TimeOffset::OffsetDirection]
+        #   @return [Symbol, HubSpotSDK::Models::Events::TimeOffset::OffsetDirection]
         required :offset_direction,
-                 enum: -> { HubspotSDK::Events::TimeOffset::OffsetDirection },
+                 enum: -> { HubSpotSDK::Events::TimeOffset::OffsetDirection },
                  api_name: :offsetDirection
 
         # @!attribute time_unit
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::TimeOffset::TimeUnit]
-        required :time_unit, enum: -> { HubspotSDK::Events::TimeOffset::TimeUnit }, api_name: :timeUnit
+        #   @return [Symbol, HubSpotSDK::Models::Events::TimeOffset::TimeUnit]
+        required :time_unit, enum: -> { HubSpotSDK::Events::TimeOffset::TimeUnit }, api_name: :timeUnit
 
         # @!method initialize(amount:, offset_direction:, time_unit:)
         #   @param amount [Integer]
-        #   @param offset_direction [Symbol, HubspotSDK::Models::Events::TimeOffset::OffsetDirection]
-        #   @param time_unit [Symbol, HubspotSDK::Models::Events::TimeOffset::TimeUnit]
+        #   @param offset_direction [Symbol, HubSpotSDK::Models::Events::TimeOffset::OffsetDirection]
+        #   @param time_unit [Symbol, HubSpotSDK::Models::Events::TimeOffset::TimeUnit]
 
-        # @see HubspotSDK::Models::Events::TimeOffset#offset_direction
+        # @see HubSpotSDK::Models::Events::TimeOffset#offset_direction
         module OffsetDirection
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           FUTURE = :FUTURE
           PAST = :PAST
@@ -37,9 +37,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::TimeOffset#time_unit
+        # @see HubSpotSDK::Models::Events::TimeOffset#time_unit
         module TimeUnit
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DAYS = :DAYS
           HOURS = :HOURS

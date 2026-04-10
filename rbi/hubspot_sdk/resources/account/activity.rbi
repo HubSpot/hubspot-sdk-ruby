@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Account
       class Activity
@@ -17,10 +17,10 @@ module HubspotSDK
             occurred_after: Time,
             occurred_before: Time,
             sort: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Internal::Page[
-              HubspotSDK::Account::PublicAPIUserActionEvent
+            HubSpotSDK::Internal::Page[
+              HubSpotSDK::Account::PublicAPIUserActionEvent
             ]
           )
         end
@@ -47,9 +47,9 @@ module HubspotSDK
             after: String,
             limit: Integer,
             user_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Internal::Page[HubspotSDK::Account::PublicLoginAudit]
+            HubSpotSDK::Internal::Page[HubSpotSDK::Account::PublicLoginAudit]
           )
         end
         def list_login_activities(
@@ -73,10 +73,10 @@ module HubspotSDK
             limit: Integer,
             to_timestamp: Integer,
             user_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Internal::Page[
-              HubspotSDK::Account::HydratedCriticalAction
+            HubSpotSDK::Internal::Page[
+              HubSpotSDK::Account::HydratedCriticalAction
             ]
           )
         end
@@ -95,7 +95,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

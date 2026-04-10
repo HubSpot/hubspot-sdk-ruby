@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class ParticipationBreakdown < HubspotSDK::Internal::Type::BaseModel
+      class ParticipationBreakdown < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::ParticipationBreakdown,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::ParticipationBreakdown,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,13 +16,13 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :id
 
-        sig { returns(HubspotSDK::Marketing::ParticipationAssociations) }
+        sig { returns(HubSpotSDK::Marketing::ParticipationAssociations) }
         attr_reader :associations
 
         sig do
           params(
             associations:
-              HubspotSDK::Marketing::ParticipationAssociations::OrHash
+              HubSpotSDK::Marketing::ParticipationAssociations::OrHash
           ).void
         end
         attr_writer :associations
@@ -31,12 +31,12 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :created_at
 
-        sig { returns(HubspotSDK::Marketing::ParticipationProperties) }
+        sig { returns(HubSpotSDK::Marketing::ParticipationProperties) }
         attr_reader :properties
 
         sig do
           params(
-            properties: HubspotSDK::Marketing::ParticipationProperties::OrHash
+            properties: HubSpotSDK::Marketing::ParticipationProperties::OrHash
           ).void
         end
         attr_writer :properties
@@ -45,9 +45,9 @@ module HubspotSDK
           params(
             id: String,
             associations:
-              HubspotSDK::Marketing::ParticipationAssociations::OrHash,
+              HubSpotSDK::Marketing::ParticipationAssociations::OrHash,
             created_at: Time,
-            properties: HubspotSDK::Marketing::ParticipationProperties::OrHash
+            properties: HubSpotSDK::Marketing::ParticipationProperties::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -64,9 +64,9 @@ module HubspotSDK
           override.returns(
             {
               id: String,
-              associations: HubspotSDK::Marketing::ParticipationAssociations,
+              associations: HubSpotSDK::Marketing::ParticipationAssociations,
               created_at: Time,
-              properties: HubspotSDK::Marketing::ParticipationProperties
+              properties: HubSpotSDK::Marketing::ParticipationProperties
             }
           )
         end

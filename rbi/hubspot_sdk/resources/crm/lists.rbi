@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Lists
@@ -12,21 +12,21 @@ module HubspotSDK
             custom_properties: T::Hash[Symbol, String],
             filter_branch:
               T.any(
-                HubspotSDK::Crm::PublicOrFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicAndFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicNotAllFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicNotAnyFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicRestrictedFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicPropertyAssociationFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicAssociationFilterBranch::OrHash
+                HubSpotSDK::Crm::PublicOrFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicAndFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicNotAllFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicNotAnyFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicRestrictedFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicAssociationFilterBranch::OrHash
               ),
             list_folder_id: Integer,
-            list_permissions: HubspotSDK::Crm::PublicListPermissions::OrHash,
+            list_permissions: HubSpotSDK::Crm::PublicListPermissions::OrHash,
             membership_settings:
-              HubspotSDK::Crm::PublicMembershipSettings::OrHash,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::ListCreateResponse)
+              HubSpotSDK::Crm::PublicMembershipSettings::OrHash,
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::ListCreateResponse)
         end
         def create(
           # The name of the list, which must be globally unique across all public lists in
@@ -54,8 +54,8 @@ module HubspotSDK
           params(
             include_filters: T::Boolean,
             list_ids: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::ListsByIDResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::ListsByIDResponse)
         end
         def list(include_filters: nil, list_ids: nil, request_options: {})
         end
@@ -63,7 +63,7 @@ module HubspotSDK
         sig do
           params(
             list_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete(list_id, request_options: {})
@@ -74,8 +74,8 @@ module HubspotSDK
             list_id: String,
             record_ids_to_add: T::Array[String],
             record_ids_to_remove: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::MembershipsUpdateResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::MembershipsUpdateResponse)
         end
         def add_and_remove_memberships(
           list_id,
@@ -89,8 +89,8 @@ module HubspotSDK
           params(
             list_id: String,
             body: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::MembershipsUpdateResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::MembershipsUpdateResponse)
         end
         def add_memberships(list_id, body:, request_options: {})
         end
@@ -99,7 +99,7 @@ module HubspotSDK
           params(
             source_list_id: String,
             list_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def add_memberships_from(source_list_id, list_id:, request_options: {})
@@ -107,9 +107,9 @@ module HubspotSDK
 
         sig do
           params(
-            inputs: T::Array[HubspotSDK::Crm::RecordIDInput::OrHash],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::BatchResponseRecordIDWithMemberships)
+            inputs: T::Array[HubSpotSDK::Crm::RecordIDInput::OrHash],
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::BatchResponseRecordIDWithMemberships)
         end
         def batch_read_memberships(inputs:, request_options: {})
         end
@@ -118,8 +118,8 @@ module HubspotSDK
           params(
             name: String,
             parent_folder_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::ListFolderCreateResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::ListFolderCreateResponse)
         end
         def create_folder(
           # The name of the folder to be created.
@@ -134,8 +134,8 @@ module HubspotSDK
         sig do
           params(
             body: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::PublicBatchMigrationMapping)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::PublicBatchMigrationMapping)
         end
         def create_id_mapping(body:, request_options: {})
         end
@@ -143,7 +143,7 @@ module HubspotSDK
         sig do
           params(
             folder_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete_folder(folder_id, request_options: {})
@@ -152,7 +152,7 @@ module HubspotSDK
         sig do
           params(
             list_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete_memberships(list_id, request_options: {})
@@ -162,8 +162,8 @@ module HubspotSDK
           params(
             list_id: String,
             include_filters: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::ListFetchResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::ListFetchResponse)
         end
         def get(list_id, include_filters: nil, request_options: {})
         end
@@ -173,8 +173,8 @@ module HubspotSDK
             list_name: String,
             object_type_id: String,
             include_filters: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::ListFetchResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::ListFetchResponse)
         end
         def get_by_object_type_and_name(
           # Path param
@@ -190,8 +190,8 @@ module HubspotSDK
         sig do
           params(
             legacy_list_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::PublicMigrationMapping)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::PublicMigrationMapping)
         end
         def get_id_mapping(legacy_list_id: nil, request_options: {})
         end
@@ -202,9 +202,9 @@ module HubspotSDK
             after: String,
             before: String,
             limit: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Internal::Page[HubspotSDK::Crm::JoinTimeAndRecordID]
+            HubSpotSDK::Internal::Page[HubSpotSDK::Crm::JoinTimeAndRecordID]
           )
         end
         def get_memberships_join_order(
@@ -224,8 +224,8 @@ module HubspotSDK
           params(
             record_id: String,
             object_type_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::APICollectionResponseRecordListMembership)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::APICollectionResponseRecordListMembership)
         end
         def get_record_memberships(
           record_id,
@@ -237,8 +237,8 @@ module HubspotSDK
         sig do
           params(
             list_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::PublicListConversionResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::PublicListConversionResponse)
         end
         def get_schedule_conversion(list_id, request_options: {})
         end
@@ -248,8 +248,8 @@ module HubspotSDK
             list_id: String,
             end_date: String,
             start_date: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::ListSizeAndEditHistoryResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::ListSizeAndEditHistoryResponse)
         end
         def get_size_and_edits_history_between(
           list_id,
@@ -269,8 +269,8 @@ module HubspotSDK
             object_type_id: String,
             query: String,
             sort: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::ListSearchResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::ListSearchResponse)
         end
         def list_by_search(
           # ILS list ids to be included in search results. If not specified, all lists
@@ -307,8 +307,8 @@ module HubspotSDK
         sig do
           params(
             folder_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::ListFolderFetchResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::ListFolderFetchResponse)
         end
         def list_folders(folder_id: nil, request_options: {})
         end
@@ -319,9 +319,9 @@ module HubspotSDK
             after: String,
             before: String,
             limit: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Internal::Page[HubspotSDK::Crm::JoinTimeAndRecordID]
+            HubSpotSDK::Internal::Page[HubSpotSDK::Crm::JoinTimeAndRecordID]
           )
         end
         def list_memberships(
@@ -341,8 +341,8 @@ module HubspotSDK
           params(
             new_parent_folder_id: String,
             folder_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::ListFolderFetchResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::ListFolderFetchResponse)
         end
         def move_folder(new_parent_folder_id, folder_id:, request_options: {})
         end
@@ -351,7 +351,7 @@ module HubspotSDK
           params(
             list_id: String,
             new_folder_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def move_list(
@@ -367,8 +367,8 @@ module HubspotSDK
           params(
             list_id: String,
             body: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::MembershipsUpdateResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::MembershipsUpdateResponse)
         end
         def remove_memberships(list_id, body:, request_options: {})
         end
@@ -377,8 +377,8 @@ module HubspotSDK
           params(
             folder_id: String,
             new_folder_name: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::ListFolderFetchResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::ListFolderFetchResponse)
         end
         def rename_folder(folder_id, new_folder_name: nil, request_options: {})
         end
@@ -386,7 +386,7 @@ module HubspotSDK
         sig do
           params(
             list_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def restore(list_id, request_options: {})
@@ -395,7 +395,7 @@ module HubspotSDK
         sig do
           params(
             list_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def schedule_conversion(list_id, request_options: {})
@@ -406,18 +406,18 @@ module HubspotSDK
             list_id: String,
             filter_branch:
               T.any(
-                HubspotSDK::Crm::PublicOrFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicAndFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicNotAllFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicNotAnyFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicRestrictedFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicPropertyAssociationFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicAssociationFilterBranch::OrHash
+                HubSpotSDK::Crm::PublicOrFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicAndFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicNotAllFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicNotAnyFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicRestrictedFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicAssociationFilterBranch::OrHash
               ),
             enroll_objects_in_workflows: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::ListUpdateResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::ListUpdateResponse)
         end
         def update_list_filters(
           # Path param
@@ -435,8 +435,8 @@ module HubspotSDK
             list_id: String,
             include_filters: T::Boolean,
             list_name: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::ListUpdateResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::ListUpdateResponse)
         end
         def update_list_name(
           list_id,
@@ -451,11 +451,11 @@ module HubspotSDK
             list_id: String,
             public_list_conversion_time:
               T.any(
-                HubspotSDK::Crm::PublicListConversionDate::OrHash,
-                HubspotSDK::Crm::PublicListConversionInactivity::OrHash
+                HubSpotSDK::Crm::PublicListConversionDate::OrHash,
+                HubSpotSDK::Crm::PublicListConversionInactivity::OrHash
               ),
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::PublicListConversionResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::PublicListConversionResponse)
         end
         def update_schedule_conversion(
           list_id,
@@ -465,7 +465,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

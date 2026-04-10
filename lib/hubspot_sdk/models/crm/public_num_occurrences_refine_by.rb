@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicNumOccurrencesRefineBy < HubspotSDK::Internal::Type::BaseModel
+      class PublicNumOccurrencesRefineBy < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute type
         #   The type of refinement (NUM_OCCURRENCES).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicNumOccurrencesRefineBy::Type]
-        required :type, enum: -> { HubspotSDK::Crm::PublicNumOccurrencesRefineBy::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy::Type]
+        required :type, enum: -> { HubSpotSDK::Crm::PublicNumOccurrencesRefineBy::Type }
 
         # @!attribute max_occurrences
         #   The maximum number of occurrences allowed.
@@ -23,7 +23,7 @@ module HubspotSDK
         optional :min_occurrences, Integer, api_name: :minOccurrences
 
         # @!method initialize(type:, max_occurrences: nil, min_occurrences: nil)
-        #   @param type [Symbol, HubspotSDK::Models::Crm::PublicNumOccurrencesRefineBy::Type] The type of refinement (NUM_OCCURRENCES).
+        #   @param type [Symbol, HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy::Type] The type of refinement (NUM_OCCURRENCES).
         #
         #   @param max_occurrences [Integer] The maximum number of occurrences allowed.
         #
@@ -31,9 +31,9 @@ module HubspotSDK
 
         # The type of refinement (NUM_OCCURRENCES).
         #
-        # @see HubspotSDK::Models::Crm::PublicNumOccurrencesRefineBy#type
+        # @see HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NUM_OCCURRENCES = :NUM_OCCURRENCES
 

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class PropertyDefinition < HubspotSDK::Internal::Type::BaseModel
+      class PropertyDefinition < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute object_type_id
         #
         #   @return [String]
@@ -12,14 +12,14 @@ module HubspotSDK
         # @!attribute property
         #   A HubSpot property
         #
-        #   @return [HubspotSDK::Models::Cms::Property]
-        required :property, -> { HubspotSDK::Cms::Property }
+        #   @return [HubSpotSDK::Models::Cms::Property]
+        required :property, -> { HubSpotSDK::Cms::Property }
 
         # @!attribute calculation_expression
         #
-        #   @return [HubspotSDK::Models::Cms::ConstantBoolean, HubspotSDK::Models::Cms::ConstantNumber, HubspotSDK::Models::Cms::ConstantString, HubspotSDK::Models::Cms::BooleanPropertyVariable, HubspotSDK::Models::Cms::StringPropertyVariable, HubspotSDK::Models::Cms::NumberPropertyVariable, HubspotSDK::Models::Cms::TimestampOfPropertyVariable, HubspotSDK::Models::Cms::BooleanTargetPropertyVariable, HubspotSDK::Models::Cms::StringTargetPropertyVariable, HubspotSDK::Models::Cms::NumberTargetPropertyVariable, HubspotSDK::Models::Cms::TimestampOfTargetPropertyVariable, HubspotSDK::Models::Cms::AddNumbers, HubspotSDK::Models::Cms::SubtractNumbers, HubspotSDK::Models::Cms::MultiplyNumbers, HubspotSDK::Models::Cms::DivideNumbers, HubspotSDK::Models::Cms::RoundDownNumbers, HubspotSDK::Models::Cms::RoundUpNumbers, HubspotSDK::Models::Cms::RoundNearestNumbers, HubspotSDK::Models::Cms::UpperCase, HubspotSDK::Models::Cms::LowerCase, HubspotSDK::Models::Cms::ConcatStrings, HubspotSDK::Models::Cms::Contains, HubspotSDK::Models::Cms::BeginsWith, HubspotSDK::Models::Cms::NumberToString, HubspotSDK::Models::Cms::ParseNumber, HubspotSDK::Models::Cms::FetchExchangeRate, HubspotSDK::Models::Cms::FetchCurrencyDecimalPlaces, HubspotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency, HubspotSDK::Models::Cms::DatedExchangeRate, HubspotSDK::Models::Cms::PipelineProbability, HubspotSDK::Models::Cms::MaxNumbers, HubspotSDK::Models::Cms::MinNumbers, HubspotSDK::Models::Cms::LessThan, HubspotSDK::Models::Cms::LessThanOrEqual, HubspotSDK::Models::Cms::MoreThan, HubspotSDK::Models::Cms::MoreThanOrEqual, HubspotSDK::Models::Cms::NumberEquals, HubspotSDK::Models::Cms::StringEquals, HubspotSDK::Models::Cms::IsPipelineStageClosed, HubspotSDK::Models::Cms::Not, HubspotSDK::Models::Cms::Date, HubspotSDK::Models::Cms::Month, HubspotSDK::Models::Cms::Year, HubspotSDK::Models::Cms::Now, HubspotSDK::Models::Cms::TimeBetween, HubspotSDK::Models::Cms::TimeBetweenSkipWeekends, HubspotSDK::Models::Cms::PeriodToMonths, HubspotSDK::Models::Cms::PeriodToWeeks, HubspotSDK::Models::Cms::And, HubspotSDK::Models::Cms::Or, HubspotSDK::Models::Cms::Xor, HubspotSDK::Models::Cms::IfString, HubspotSDK::Models::Cms::IfNumber, HubspotSDK::Models::Cms::IfBoolean, HubspotSDK::Models::Cms::IsPresent, HubspotSDK::Models::Cms::HasEmailReply, HubspotSDK::Models::Cms::HasPlainTextEmailReply, HubspotSDK::Models::Cms::ExtractMostRecentEmailReplyHTML, HubspotSDK::Models::Cms::ExtractMostRecentEmailReplyText, HubspotSDK::Models::Cms::ExtractMostRecentPlainTextEmailReply, HubspotSDK::Models::Cms::SetContainsString, HubspotSDK::Models::Cms::IsEngagementType, HubspotSDK::Models::Cms::FormatFullName, HubspotSDK::Models::Cms::FormatPhoneNumber, HubspotSDK::Models::Cms::FormatSearchablePhoneNumber, HubspotSDK::Models::Cms::AbsoluteValue, HubspotSDK::Models::Cms::SquareRoot, HubspotSDK::Models::Cms::Power, HubspotSDK::Models::Cms::Substring, HubspotSDK::Models::Cms::Euler, HubspotSDK::Models::Cms::StringLength, HubspotSDK::Models::Cms::AddTime, HubspotSDK::Models::Cms::SubtractTime, nil]
+        #   @return [HubSpotSDK::Models::Cms::ConstantBoolean, HubSpotSDK::Models::Cms::ConstantNumber, HubSpotSDK::Models::Cms::ConstantString, HubSpotSDK::Models::Cms::BooleanPropertyVariable, HubSpotSDK::Models::Cms::StringPropertyVariable, HubSpotSDK::Models::Cms::NumberPropertyVariable, HubSpotSDK::Models::Cms::TimestampOfPropertyVariable, HubSpotSDK::Models::Cms::BooleanTargetPropertyVariable, HubSpotSDK::Models::Cms::StringTargetPropertyVariable, HubSpotSDK::Models::Cms::NumberTargetPropertyVariable, HubSpotSDK::Models::Cms::TimestampOfTargetPropertyVariable, HubSpotSDK::Models::Cms::AddNumbers, HubSpotSDK::Models::Cms::SubtractNumbers, HubSpotSDK::Models::Cms::MultiplyNumbers, HubSpotSDK::Models::Cms::DivideNumbers, HubSpotSDK::Models::Cms::RoundDownNumbers, HubSpotSDK::Models::Cms::RoundUpNumbers, HubSpotSDK::Models::Cms::RoundNearestNumbers, HubSpotSDK::Models::Cms::UpperCase, HubSpotSDK::Models::Cms::LowerCase, HubSpotSDK::Models::Cms::ConcatStrings, HubSpotSDK::Models::Cms::Contains, HubSpotSDK::Models::Cms::BeginsWith, HubSpotSDK::Models::Cms::NumberToString, HubSpotSDK::Models::Cms::ParseNumber, HubSpotSDK::Models::Cms::FetchExchangeRate, HubSpotSDK::Models::Cms::FetchCurrencyDecimalPlaces, HubSpotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency, HubSpotSDK::Models::Cms::DatedExchangeRate, HubSpotSDK::Models::Cms::PipelineProbability, HubSpotSDK::Models::Cms::MaxNumbers, HubSpotSDK::Models::Cms::MinNumbers, HubSpotSDK::Models::Cms::LessThan, HubSpotSDK::Models::Cms::LessThanOrEqual, HubSpotSDK::Models::Cms::MoreThan, HubSpotSDK::Models::Cms::MoreThanOrEqual, HubSpotSDK::Models::Cms::NumberEquals, HubSpotSDK::Models::Cms::StringEquals, HubSpotSDK::Models::Cms::IsPipelineStageClosed, HubSpotSDK::Models::Cms::Not, HubSpotSDK::Models::Cms::Date, HubSpotSDK::Models::Cms::Month, HubSpotSDK::Models::Cms::Year, HubSpotSDK::Models::Cms::Now, HubSpotSDK::Models::Cms::TimeBetween, HubSpotSDK::Models::Cms::TimeBetweenSkipWeekends, HubSpotSDK::Models::Cms::PeriodToMonths, HubSpotSDK::Models::Cms::PeriodToWeeks, HubSpotSDK::Models::Cms::And, HubSpotSDK::Models::Cms::Or, HubSpotSDK::Models::Cms::Xor, HubSpotSDK::Models::Cms::IfString, HubSpotSDK::Models::Cms::IfNumber, HubSpotSDK::Models::Cms::IfBoolean, HubSpotSDK::Models::Cms::IsPresent, HubSpotSDK::Models::Cms::HasEmailReply, HubSpotSDK::Models::Cms::HasPlainTextEmailReply, HubSpotSDK::Models::Cms::ExtractMostRecentEmailReplyHTML, HubSpotSDK::Models::Cms::ExtractMostRecentEmailReplyText, HubSpotSDK::Models::Cms::ExtractMostRecentPlainTextEmailReply, HubSpotSDK::Models::Cms::SetContainsString, HubSpotSDK::Models::Cms::IsEngagementType, HubSpotSDK::Models::Cms::FormatFullName, HubSpotSDK::Models::Cms::FormatPhoneNumber, HubSpotSDK::Models::Cms::FormatSearchablePhoneNumber, HubSpotSDK::Models::Cms::AbsoluteValue, HubSpotSDK::Models::Cms::SquareRoot, HubSpotSDK::Models::Cms::Power, HubSpotSDK::Models::Cms::Substring, HubSpotSDK::Models::Cms::Euler, HubSpotSDK::Models::Cms::StringLength, HubSpotSDK::Models::Cms::AddTime, HubSpotSDK::Models::Cms::SubtractTime, nil]
         optional :calculation_expression,
-                 union: -> { HubspotSDK::Cms::PropertyDefinition::CalculationExpression },
+                 union: -> { HubSpotSDK::Cms::PropertyDefinition::CalculationExpression },
                  api_name: :calculationExpression
 
         # @!attribute calculation_formula
@@ -29,23 +29,23 @@ module HubspotSDK
 
         # @!attribute definition_source
         #
-        #   @return [HubspotSDK::Models::Cms::PropertyDefinitionSource, nil]
+        #   @return [HubSpotSDK::Models::Cms::PropertyDefinitionSource, nil]
         optional :definition_source,
                  -> {
-                   HubspotSDK::Cms::PropertyDefinitionSource
+                   HubSpotSDK::Cms::PropertyDefinitionSource
                  },
                  api_name: :definitionSource
 
         # @!attribute extension_data
         #
-        #   @return [HubspotSDK::Models::Cms::ExtensionData, nil]
-        optional :extension_data, -> { HubspotSDK::Cms::ExtensionData }, api_name: :extensionData
+        #   @return [HubSpotSDK::Models::Cms::ExtensionData, nil]
+        optional :extension_data, -> { HubSpotSDK::Cms::ExtensionData }, api_name: :extensionData
 
         # @!attribute external_options_meta_data
         #
-        #   @return [HubspotSDK::Models::Cms::ExternalOptionsMetaData, nil]
+        #   @return [HubSpotSDK::Models::Cms::ExternalOptionsMetaData, nil]
         optional :external_options_meta_data,
-                 -> { HubspotSDK::Cms::ExternalOptionsMetaData },
+                 -> { HubSpotSDK::Cms::ExternalOptionsMetaData },
                  api_name: :externalOptionsMetaData
 
         # @!attribute fulcrum_portal_id
@@ -65,42 +65,42 @@ module HubspotSDK
 
         # @!attribute permission
         #
-        #   @return [HubspotSDK::Models::Cms::FieldLevelPermission, nil]
-        optional :permission, -> { HubspotSDK::Cms::FieldLevelPermission }
+        #   @return [HubSpotSDK::Models::Cms::FieldLevelPermission, nil]
+        optional :permission, -> { HubSpotSDK::Cms::FieldLevelPermission }
 
         # @!attribute property_definition_source
         #
-        #   @return [HubspotSDK::Models::Cms::DefinitionSource, nil]
+        #   @return [HubSpotSDK::Models::Cms::DefinitionSource, nil]
         optional :property_definition_source,
-                 -> { HubspotSDK::Cms::DefinitionSource },
+                 -> { HubSpotSDK::Cms::DefinitionSource },
                  api_name: :propertyDefinitionSource
 
         # @!attribute property_requirements
         #
-        #   @return [HubspotSDK::Models::Cms::DefaultRequirements, nil]
+        #   @return [HubSpotSDK::Models::Cms::DefaultRequirements, nil]
         optional :property_requirements,
-                 -> { HubspotSDK::Cms::DefaultRequirements },
+                 -> { HubSpotSDK::Cms::DefaultRequirements },
                  api_name: :propertyRequirements
 
         # @!attribute rollup_expression
         #
-        #   @return [HubspotSDK::Models::Cms::RollupExpression, nil]
-        optional :rollup_expression, -> { HubspotSDK::Cms::RollupExpression }, api_name: :rollupExpression
+        #   @return [HubSpotSDK::Models::Cms::RollupExpression, nil]
+        optional :rollup_expression, -> { HubSpotSDK::Cms::RollupExpression }, api_name: :rollupExpression
 
         # @!method initialize(object_type_id:, property:, calculation_expression: nil, calculation_formula: nil, definition_source: nil, extension_data: nil, external_options_meta_data: nil, fulcrum_portal_id: nil, fulcrum_timestamp: nil, janus_group: nil, permission: nil, property_definition_source: nil, property_requirements: nil, rollup_expression: nil)
         #   @param object_type_id [String]
         #
-        #   @param property [HubspotSDK::Models::Cms::Property] A HubSpot property
+        #   @param property [HubSpotSDK::Models::Cms::Property] A HubSpot property
         #
-        #   @param calculation_expression [HubspotSDK::Models::Cms::ConstantBoolean, HubspotSDK::Models::Cms::ConstantNumber, HubspotSDK::Models::Cms::ConstantString, HubspotSDK::Models::Cms::BooleanPropertyVariable, HubspotSDK::Models::Cms::StringPropertyVariable, HubspotSDK::Models::Cms::NumberPropertyVariable, HubspotSDK::Models::Cms::TimestampOfPropertyVariable, HubspotSDK::Models::Cms::BooleanTargetPropertyVariable, HubspotSDK::Models::Cms::StringTargetPropertyVariable, HubspotSDK::Models::Cms::NumberTargetPropertyVariable, HubspotSDK::Models::Cms::TimestampOfTargetPropertyVariable, HubspotSDK::Models::Cms::AddNumbers, HubspotSDK::Models::Cms::SubtractNumbers, HubspotSDK::Models::Cms::MultiplyNumbers, HubspotSDK::Models::Cms::DivideNumbers, HubspotSDK::Models::Cms::RoundDownNumbers, HubspotSDK::Models::Cms::RoundUpNumbers, HubspotSDK::Models::Cms::RoundNearestNumbers, HubspotSDK::Models::Cms::UpperCase, HubspotSDK::Models::Cms::LowerCase, HubspotSDK::Models::Cms::ConcatStrings, HubspotSDK::Models::Cms::Contains, HubspotSDK::Models::Cms::BeginsWith, HubspotSDK::Models::Cms::NumberToString, HubspotSDK::Models::Cms::ParseNumber, HubspotSDK::Models::Cms::FetchExchangeRate, HubspotSDK::Models::Cms::FetchCurrencyDecimalPlaces, HubspotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency, HubspotSDK::Models::Cms::DatedExchangeRate, HubspotSDK::Models::Cms::PipelineProbability, HubspotSDK::Models::Cms::MaxNumbers, HubspotSDK::Models::Cms::MinNumbers, HubspotSDK::Models::Cms::LessThan, HubspotSDK::Models::Cms::LessThanOrEqual, HubspotSDK::Models::Cms::MoreThan, HubspotSDK::Models::Cms::MoreThanOrEqual, HubspotSDK::Models::Cms::NumberEquals, HubspotSDK::Models::Cms::StringEquals, HubspotSDK::Models::Cms::IsPipelineStageClosed, HubspotSDK::Models::Cms::Not, HubspotSDK::Models::Cms::Date, HubspotSDK::Models::Cms::Month, HubspotSDK::Models::Cms::Year, HubspotSDK::Models::Cms::Now, HubspotSDK::Models::Cms::TimeBetween, HubspotSDK::Models::Cms::TimeBetweenSkipWeekends, HubspotSDK::Models::Cms::PeriodToMonths, HubspotSDK::Models::Cms::PeriodToWeeks, HubspotSDK::Models::Cms::And, HubspotSDK::Models::Cms::Or, HubspotSDK::Models::Cms::Xor, HubspotSDK::Models::Cms::IfString, HubspotSDK::Models::Cms::IfNumber, HubspotSDK::Models::Cms::IfBoolean, HubspotSDK::Models::Cms::IsPresent, HubspotSDK::Models::Cms::HasEmailReply, HubspotSDK::Models::Cms::HasPlainTextEmailReply, HubspotSDK::Models::Cms::ExtractMostRecentEmailReplyHTML, HubspotSDK::Models::Cms::ExtractMostRecentEmailReplyText, HubspotSDK::Models::Cms::ExtractMostRecentPlainTextEmailReply, HubspotSDK::Models::Cms::SetContainsString, HubspotSDK::Models::Cms::IsEngagementType, HubspotSDK::Models::Cms::FormatFullName, HubspotSDK::Models::Cms::FormatPhoneNumber, HubspotSDK::Models::Cms::FormatSearchablePhoneNumber, HubspotSDK::Models::Cms::AbsoluteValue, HubspotSDK::Models::Cms::SquareRoot, HubspotSDK::Models::Cms::Power, HubspotSDK::Models::Cms::Substring, HubspotSDK::Models::Cms::Euler, HubspotSDK::Models::Cms::StringLength, HubspotSDK::Models::Cms::AddTime, HubspotSDK::Models::Cms::SubtractTime]
+        #   @param calculation_expression [HubSpotSDK::Models::Cms::ConstantBoolean, HubSpotSDK::Models::Cms::ConstantNumber, HubSpotSDK::Models::Cms::ConstantString, HubSpotSDK::Models::Cms::BooleanPropertyVariable, HubSpotSDK::Models::Cms::StringPropertyVariable, HubSpotSDK::Models::Cms::NumberPropertyVariable, HubSpotSDK::Models::Cms::TimestampOfPropertyVariable, HubSpotSDK::Models::Cms::BooleanTargetPropertyVariable, HubSpotSDK::Models::Cms::StringTargetPropertyVariable, HubSpotSDK::Models::Cms::NumberTargetPropertyVariable, HubSpotSDK::Models::Cms::TimestampOfTargetPropertyVariable, HubSpotSDK::Models::Cms::AddNumbers, HubSpotSDK::Models::Cms::SubtractNumbers, HubSpotSDK::Models::Cms::MultiplyNumbers, HubSpotSDK::Models::Cms::DivideNumbers, HubSpotSDK::Models::Cms::RoundDownNumbers, HubSpotSDK::Models::Cms::RoundUpNumbers, HubSpotSDK::Models::Cms::RoundNearestNumbers, HubSpotSDK::Models::Cms::UpperCase, HubSpotSDK::Models::Cms::LowerCase, HubSpotSDK::Models::Cms::ConcatStrings, HubSpotSDK::Models::Cms::Contains, HubSpotSDK::Models::Cms::BeginsWith, HubSpotSDK::Models::Cms::NumberToString, HubSpotSDK::Models::Cms::ParseNumber, HubSpotSDK::Models::Cms::FetchExchangeRate, HubSpotSDK::Models::Cms::FetchCurrencyDecimalPlaces, HubSpotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency, HubSpotSDK::Models::Cms::DatedExchangeRate, HubSpotSDK::Models::Cms::PipelineProbability, HubSpotSDK::Models::Cms::MaxNumbers, HubSpotSDK::Models::Cms::MinNumbers, HubSpotSDK::Models::Cms::LessThan, HubSpotSDK::Models::Cms::LessThanOrEqual, HubSpotSDK::Models::Cms::MoreThan, HubSpotSDK::Models::Cms::MoreThanOrEqual, HubSpotSDK::Models::Cms::NumberEquals, HubSpotSDK::Models::Cms::StringEquals, HubSpotSDK::Models::Cms::IsPipelineStageClosed, HubSpotSDK::Models::Cms::Not, HubSpotSDK::Models::Cms::Date, HubSpotSDK::Models::Cms::Month, HubSpotSDK::Models::Cms::Year, HubSpotSDK::Models::Cms::Now, HubSpotSDK::Models::Cms::TimeBetween, HubSpotSDK::Models::Cms::TimeBetweenSkipWeekends, HubSpotSDK::Models::Cms::PeriodToMonths, HubSpotSDK::Models::Cms::PeriodToWeeks, HubSpotSDK::Models::Cms::And, HubSpotSDK::Models::Cms::Or, HubSpotSDK::Models::Cms::Xor, HubSpotSDK::Models::Cms::IfString, HubSpotSDK::Models::Cms::IfNumber, HubSpotSDK::Models::Cms::IfBoolean, HubSpotSDK::Models::Cms::IsPresent, HubSpotSDK::Models::Cms::HasEmailReply, HubSpotSDK::Models::Cms::HasPlainTextEmailReply, HubSpotSDK::Models::Cms::ExtractMostRecentEmailReplyHTML, HubSpotSDK::Models::Cms::ExtractMostRecentEmailReplyText, HubSpotSDK::Models::Cms::ExtractMostRecentPlainTextEmailReply, HubSpotSDK::Models::Cms::SetContainsString, HubSpotSDK::Models::Cms::IsEngagementType, HubSpotSDK::Models::Cms::FormatFullName, HubSpotSDK::Models::Cms::FormatPhoneNumber, HubSpotSDK::Models::Cms::FormatSearchablePhoneNumber, HubSpotSDK::Models::Cms::AbsoluteValue, HubSpotSDK::Models::Cms::SquareRoot, HubSpotSDK::Models::Cms::Power, HubSpotSDK::Models::Cms::Substring, HubSpotSDK::Models::Cms::Euler, HubSpotSDK::Models::Cms::StringLength, HubSpotSDK::Models::Cms::AddTime, HubSpotSDK::Models::Cms::SubtractTime]
         #
         #   @param calculation_formula [String]
         #
-        #   @param definition_source [HubspotSDK::Models::Cms::PropertyDefinitionSource]
+        #   @param definition_source [HubSpotSDK::Models::Cms::PropertyDefinitionSource]
         #
-        #   @param extension_data [HubspotSDK::Models::Cms::ExtensionData]
+        #   @param extension_data [HubSpotSDK::Models::Cms::ExtensionData]
         #
-        #   @param external_options_meta_data [HubspotSDK::Models::Cms::ExternalOptionsMetaData]
+        #   @param external_options_meta_data [HubSpotSDK::Models::Cms::ExternalOptionsMetaData]
         #
         #   @param fulcrum_portal_id [Integer]
         #
@@ -108,166 +108,166 @@ module HubspotSDK
         #
         #   @param janus_group [String]
         #
-        #   @param permission [HubspotSDK::Models::Cms::FieldLevelPermission]
+        #   @param permission [HubSpotSDK::Models::Cms::FieldLevelPermission]
         #
-        #   @param property_definition_source [HubspotSDK::Models::Cms::DefinitionSource]
+        #   @param property_definition_source [HubSpotSDK::Models::Cms::DefinitionSource]
         #
-        #   @param property_requirements [HubspotSDK::Models::Cms::DefaultRequirements]
+        #   @param property_requirements [HubSpotSDK::Models::Cms::DefaultRequirements]
         #
-        #   @param rollup_expression [HubspotSDK::Models::Cms::RollupExpression]
+        #   @param rollup_expression [HubSpotSDK::Models::Cms::RollupExpression]
 
-        # @see HubspotSDK::Models::Cms::PropertyDefinition#calculation_expression
+        # @see HubSpotSDK::Models::Cms::PropertyDefinition#calculation_expression
         module CalculationExpression
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubspotSDK::Cms::ConstantBoolean }
+          variant -> { HubSpotSDK::Cms::ConstantBoolean }
 
-          variant -> { HubspotSDK::Cms::ConstantNumber }
+          variant -> { HubSpotSDK::Cms::ConstantNumber }
 
-          variant -> { HubspotSDK::Cms::ConstantString }
+          variant -> { HubSpotSDK::Cms::ConstantString }
 
-          variant -> { HubspotSDK::Cms::BooleanPropertyVariable }
+          variant -> { HubSpotSDK::Cms::BooleanPropertyVariable }
 
-          variant -> { HubspotSDK::Cms::StringPropertyVariable }
+          variant -> { HubSpotSDK::Cms::StringPropertyVariable }
 
-          variant -> { HubspotSDK::Cms::NumberPropertyVariable }
+          variant -> { HubSpotSDK::Cms::NumberPropertyVariable }
 
-          variant -> { HubspotSDK::Cms::TimestampOfPropertyVariable }
+          variant -> { HubSpotSDK::Cms::TimestampOfPropertyVariable }
 
-          variant -> { HubspotSDK::Cms::BooleanTargetPropertyVariable }
+          variant -> { HubSpotSDK::Cms::BooleanTargetPropertyVariable }
 
-          variant -> { HubspotSDK::Cms::StringTargetPropertyVariable }
+          variant -> { HubSpotSDK::Cms::StringTargetPropertyVariable }
 
-          variant -> { HubspotSDK::Cms::NumberTargetPropertyVariable }
+          variant -> { HubSpotSDK::Cms::NumberTargetPropertyVariable }
 
-          variant -> { HubspotSDK::Cms::TimestampOfTargetPropertyVariable }
+          variant -> { HubSpotSDK::Cms::TimestampOfTargetPropertyVariable }
 
-          variant -> { HubspotSDK::Cms::AddNumbers }
+          variant -> { HubSpotSDK::Cms::AddNumbers }
 
-          variant -> { HubspotSDK::Cms::SubtractNumbers }
+          variant -> { HubSpotSDK::Cms::SubtractNumbers }
 
-          variant -> { HubspotSDK::Cms::MultiplyNumbers }
+          variant -> { HubSpotSDK::Cms::MultiplyNumbers }
 
-          variant -> { HubspotSDK::Cms::DivideNumbers }
+          variant -> { HubSpotSDK::Cms::DivideNumbers }
 
-          variant -> { HubspotSDK::Cms::RoundDownNumbers }
+          variant -> { HubSpotSDK::Cms::RoundDownNumbers }
 
-          variant -> { HubspotSDK::Cms::RoundUpNumbers }
+          variant -> { HubSpotSDK::Cms::RoundUpNumbers }
 
-          variant -> { HubspotSDK::Cms::RoundNearestNumbers }
+          variant -> { HubSpotSDK::Cms::RoundNearestNumbers }
 
-          variant -> { HubspotSDK::Cms::UpperCase }
+          variant -> { HubSpotSDK::Cms::UpperCase }
 
-          variant -> { HubspotSDK::Cms::LowerCase }
+          variant -> { HubSpotSDK::Cms::LowerCase }
 
-          variant -> { HubspotSDK::Cms::ConcatStrings }
+          variant -> { HubSpotSDK::Cms::ConcatStrings }
 
-          variant -> { HubspotSDK::Cms::Contains }
+          variant -> { HubSpotSDK::Cms::Contains }
 
-          variant -> { HubspotSDK::Cms::BeginsWith }
+          variant -> { HubSpotSDK::Cms::BeginsWith }
 
-          variant -> { HubspotSDK::Cms::NumberToString }
+          variant -> { HubSpotSDK::Cms::NumberToString }
 
-          variant -> { HubspotSDK::Cms::ParseNumber }
+          variant -> { HubSpotSDK::Cms::ParseNumber }
 
-          variant -> { HubspotSDK::Cms::FetchExchangeRate }
+          variant -> { HubSpotSDK::Cms::FetchExchangeRate }
 
-          variant -> { HubspotSDK::Cms::FetchCurrencyDecimalPlaces }
+          variant -> { HubSpotSDK::Cms::FetchCurrencyDecimalPlaces }
 
-          variant -> { HubspotSDK::Cms::FetchSingleCurrencyPortalCurrency }
+          variant -> { HubSpotSDK::Cms::FetchSingleCurrencyPortalCurrency }
 
-          variant -> { HubspotSDK::Cms::DatedExchangeRate }
+          variant -> { HubSpotSDK::Cms::DatedExchangeRate }
 
-          variant -> { HubspotSDK::Cms::PipelineProbability }
+          variant -> { HubSpotSDK::Cms::PipelineProbability }
 
-          variant -> { HubspotSDK::Cms::MaxNumbers }
+          variant -> { HubSpotSDK::Cms::MaxNumbers }
 
-          variant -> { HubspotSDK::Cms::MinNumbers }
+          variant -> { HubSpotSDK::Cms::MinNumbers }
 
-          variant -> { HubspotSDK::Cms::LessThan }
+          variant -> { HubSpotSDK::Cms::LessThan }
 
-          variant -> { HubspotSDK::Cms::LessThanOrEqual }
+          variant -> { HubSpotSDK::Cms::LessThanOrEqual }
 
-          variant -> { HubspotSDK::Cms::MoreThan }
+          variant -> { HubSpotSDK::Cms::MoreThan }
 
-          variant -> { HubspotSDK::Cms::MoreThanOrEqual }
+          variant -> { HubSpotSDK::Cms::MoreThanOrEqual }
 
-          variant -> { HubspotSDK::Cms::NumberEquals }
+          variant -> { HubSpotSDK::Cms::NumberEquals }
 
-          variant -> { HubspotSDK::Cms::StringEquals }
+          variant -> { HubSpotSDK::Cms::StringEquals }
 
-          variant -> { HubspotSDK::Cms::IsPipelineStageClosed }
+          variant -> { HubSpotSDK::Cms::IsPipelineStageClosed }
 
-          variant -> { HubspotSDK::Cms::Not }
+          variant -> { HubSpotSDK::Cms::Not }
 
-          variant -> { HubspotSDK::Cms::Date }
+          variant -> { HubSpotSDK::Cms::Date }
 
-          variant -> { HubspotSDK::Cms::Month }
+          variant -> { HubSpotSDK::Cms::Month }
 
-          variant -> { HubspotSDK::Cms::Year }
+          variant -> { HubSpotSDK::Cms::Year }
 
-          variant -> { HubspotSDK::Cms::Now }
+          variant -> { HubSpotSDK::Cms::Now }
 
-          variant -> { HubspotSDK::Cms::TimeBetween }
+          variant -> { HubSpotSDK::Cms::TimeBetween }
 
-          variant -> { HubspotSDK::Cms::TimeBetweenSkipWeekends }
+          variant -> { HubSpotSDK::Cms::TimeBetweenSkipWeekends }
 
-          variant -> { HubspotSDK::Cms::PeriodToMonths }
+          variant -> { HubSpotSDK::Cms::PeriodToMonths }
 
-          variant -> { HubspotSDK::Cms::PeriodToWeeks }
+          variant -> { HubSpotSDK::Cms::PeriodToWeeks }
 
-          variant -> { HubspotSDK::Cms::And }
+          variant -> { HubSpotSDK::Cms::And }
 
-          variant -> { HubspotSDK::Cms::Or }
+          variant -> { HubSpotSDK::Cms::Or }
 
-          variant -> { HubspotSDK::Cms::Xor }
+          variant -> { HubSpotSDK::Cms::Xor }
 
-          variant -> { HubspotSDK::Cms::IfString }
+          variant -> { HubSpotSDK::Cms::IfString }
 
-          variant -> { HubspotSDK::Cms::IfNumber }
+          variant -> { HubSpotSDK::Cms::IfNumber }
 
-          variant -> { HubspotSDK::Cms::IfBoolean }
+          variant -> { HubSpotSDK::Cms::IfBoolean }
 
-          variant -> { HubspotSDK::Cms::IsPresent }
+          variant -> { HubSpotSDK::Cms::IsPresent }
 
-          variant -> { HubspotSDK::Cms::HasEmailReply }
+          variant -> { HubSpotSDK::Cms::HasEmailReply }
 
-          variant -> { HubspotSDK::Cms::HasPlainTextEmailReply }
+          variant -> { HubSpotSDK::Cms::HasPlainTextEmailReply }
 
-          variant -> { HubspotSDK::Cms::ExtractMostRecentEmailReplyHTML }
+          variant -> { HubSpotSDK::Cms::ExtractMostRecentEmailReplyHTML }
 
-          variant -> { HubspotSDK::Cms::ExtractMostRecentEmailReplyText }
+          variant -> { HubSpotSDK::Cms::ExtractMostRecentEmailReplyText }
 
-          variant -> { HubspotSDK::Cms::ExtractMostRecentPlainTextEmailReply }
+          variant -> { HubSpotSDK::Cms::ExtractMostRecentPlainTextEmailReply }
 
-          variant -> { HubspotSDK::Cms::SetContainsString }
+          variant -> { HubSpotSDK::Cms::SetContainsString }
 
-          variant -> { HubspotSDK::Cms::IsEngagementType }
+          variant -> { HubSpotSDK::Cms::IsEngagementType }
 
-          variant -> { HubspotSDK::Cms::FormatFullName }
+          variant -> { HubSpotSDK::Cms::FormatFullName }
 
-          variant -> { HubspotSDK::Cms::FormatPhoneNumber }
+          variant -> { HubSpotSDK::Cms::FormatPhoneNumber }
 
-          variant -> { HubspotSDK::Cms::FormatSearchablePhoneNumber }
+          variant -> { HubSpotSDK::Cms::FormatSearchablePhoneNumber }
 
-          variant -> { HubspotSDK::Cms::AbsoluteValue }
+          variant -> { HubSpotSDK::Cms::AbsoluteValue }
 
-          variant -> { HubspotSDK::Cms::SquareRoot }
+          variant -> { HubSpotSDK::Cms::SquareRoot }
 
-          variant -> { HubspotSDK::Cms::Power }
+          variant -> { HubSpotSDK::Cms::Power }
 
-          variant -> { HubspotSDK::Cms::Substring }
+          variant -> { HubSpotSDK::Cms::Substring }
 
-          variant -> { HubspotSDK::Cms::Euler }
+          variant -> { HubSpotSDK::Cms::Euler }
 
-          variant -> { HubspotSDK::Cms::StringLength }
+          variant -> { HubSpotSDK::Cms::StringLength }
 
-          variant -> { HubspotSDK::Cms::AddTime }
+          variant -> { HubSpotSDK::Cms::AddTime }
 
-          variant -> { HubspotSDK::Cms::SubtractTime }
+          variant -> { HubSpotSDK::Cms::SubtractTime }
 
           # @!method self.variants
-          #   @return [Array(HubspotSDK::Models::Cms::ConstantBoolean, HubspotSDK::Models::Cms::ConstantNumber, HubspotSDK::Models::Cms::ConstantString, HubspotSDK::Models::Cms::BooleanPropertyVariable, HubspotSDK::Models::Cms::StringPropertyVariable, HubspotSDK::Models::Cms::NumberPropertyVariable, HubspotSDK::Models::Cms::TimestampOfPropertyVariable, HubspotSDK::Models::Cms::BooleanTargetPropertyVariable, HubspotSDK::Models::Cms::StringTargetPropertyVariable, HubspotSDK::Models::Cms::NumberTargetPropertyVariable, HubspotSDK::Models::Cms::TimestampOfTargetPropertyVariable, HubspotSDK::Models::Cms::AddNumbers, HubspotSDK::Models::Cms::SubtractNumbers, HubspotSDK::Models::Cms::MultiplyNumbers, HubspotSDK::Models::Cms::DivideNumbers, HubspotSDK::Models::Cms::RoundDownNumbers, HubspotSDK::Models::Cms::RoundUpNumbers, HubspotSDK::Models::Cms::RoundNearestNumbers, HubspotSDK::Models::Cms::UpperCase, HubspotSDK::Models::Cms::LowerCase, HubspotSDK::Models::Cms::ConcatStrings, HubspotSDK::Models::Cms::Contains, HubspotSDK::Models::Cms::BeginsWith, HubspotSDK::Models::Cms::NumberToString, HubspotSDK::Models::Cms::ParseNumber, HubspotSDK::Models::Cms::FetchExchangeRate, HubspotSDK::Models::Cms::FetchCurrencyDecimalPlaces, HubspotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency, HubspotSDK::Models::Cms::DatedExchangeRate, HubspotSDK::Models::Cms::PipelineProbability, HubspotSDK::Models::Cms::MaxNumbers, HubspotSDK::Models::Cms::MinNumbers, HubspotSDK::Models::Cms::LessThan, HubspotSDK::Models::Cms::LessThanOrEqual, HubspotSDK::Models::Cms::MoreThan, HubspotSDK::Models::Cms::MoreThanOrEqual, HubspotSDK::Models::Cms::NumberEquals, HubspotSDK::Models::Cms::StringEquals, HubspotSDK::Models::Cms::IsPipelineStageClosed, HubspotSDK::Models::Cms::Not, HubspotSDK::Models::Cms::Date, HubspotSDK::Models::Cms::Month, HubspotSDK::Models::Cms::Year, HubspotSDK::Models::Cms::Now, HubspotSDK::Models::Cms::TimeBetween, HubspotSDK::Models::Cms::TimeBetweenSkipWeekends, HubspotSDK::Models::Cms::PeriodToMonths, HubspotSDK::Models::Cms::PeriodToWeeks, HubspotSDK::Models::Cms::And, HubspotSDK::Models::Cms::Or, HubspotSDK::Models::Cms::Xor, HubspotSDK::Models::Cms::IfString, HubspotSDK::Models::Cms::IfNumber, HubspotSDK::Models::Cms::IfBoolean, HubspotSDK::Models::Cms::IsPresent, HubspotSDK::Models::Cms::HasEmailReply, HubspotSDK::Models::Cms::HasPlainTextEmailReply, HubspotSDK::Models::Cms::ExtractMostRecentEmailReplyHTML, HubspotSDK::Models::Cms::ExtractMostRecentEmailReplyText, HubspotSDK::Models::Cms::ExtractMostRecentPlainTextEmailReply, HubspotSDK::Models::Cms::SetContainsString, HubspotSDK::Models::Cms::IsEngagementType, HubspotSDK::Models::Cms::FormatFullName, HubspotSDK::Models::Cms::FormatPhoneNumber, HubspotSDK::Models::Cms::FormatSearchablePhoneNumber, HubspotSDK::Models::Cms::AbsoluteValue, HubspotSDK::Models::Cms::SquareRoot, HubspotSDK::Models::Cms::Power, HubspotSDK::Models::Cms::Substring, HubspotSDK::Models::Cms::Euler, HubspotSDK::Models::Cms::StringLength, HubspotSDK::Models::Cms::AddTime, HubspotSDK::Models::Cms::SubtractTime)]
+          #   @return [Array(HubSpotSDK::Models::Cms::ConstantBoolean, HubSpotSDK::Models::Cms::ConstantNumber, HubSpotSDK::Models::Cms::ConstantString, HubSpotSDK::Models::Cms::BooleanPropertyVariable, HubSpotSDK::Models::Cms::StringPropertyVariable, HubSpotSDK::Models::Cms::NumberPropertyVariable, HubSpotSDK::Models::Cms::TimestampOfPropertyVariable, HubSpotSDK::Models::Cms::BooleanTargetPropertyVariable, HubSpotSDK::Models::Cms::StringTargetPropertyVariable, HubSpotSDK::Models::Cms::NumberTargetPropertyVariable, HubSpotSDK::Models::Cms::TimestampOfTargetPropertyVariable, HubSpotSDK::Models::Cms::AddNumbers, HubSpotSDK::Models::Cms::SubtractNumbers, HubSpotSDK::Models::Cms::MultiplyNumbers, HubSpotSDK::Models::Cms::DivideNumbers, HubSpotSDK::Models::Cms::RoundDownNumbers, HubSpotSDK::Models::Cms::RoundUpNumbers, HubSpotSDK::Models::Cms::RoundNearestNumbers, HubSpotSDK::Models::Cms::UpperCase, HubSpotSDK::Models::Cms::LowerCase, HubSpotSDK::Models::Cms::ConcatStrings, HubSpotSDK::Models::Cms::Contains, HubSpotSDK::Models::Cms::BeginsWith, HubSpotSDK::Models::Cms::NumberToString, HubSpotSDK::Models::Cms::ParseNumber, HubSpotSDK::Models::Cms::FetchExchangeRate, HubSpotSDK::Models::Cms::FetchCurrencyDecimalPlaces, HubSpotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency, HubSpotSDK::Models::Cms::DatedExchangeRate, HubSpotSDK::Models::Cms::PipelineProbability, HubSpotSDK::Models::Cms::MaxNumbers, HubSpotSDK::Models::Cms::MinNumbers, HubSpotSDK::Models::Cms::LessThan, HubSpotSDK::Models::Cms::LessThanOrEqual, HubSpotSDK::Models::Cms::MoreThan, HubSpotSDK::Models::Cms::MoreThanOrEqual, HubSpotSDK::Models::Cms::NumberEquals, HubSpotSDK::Models::Cms::StringEquals, HubSpotSDK::Models::Cms::IsPipelineStageClosed, HubSpotSDK::Models::Cms::Not, HubSpotSDK::Models::Cms::Date, HubSpotSDK::Models::Cms::Month, HubSpotSDK::Models::Cms::Year, HubSpotSDK::Models::Cms::Now, HubSpotSDK::Models::Cms::TimeBetween, HubSpotSDK::Models::Cms::TimeBetweenSkipWeekends, HubSpotSDK::Models::Cms::PeriodToMonths, HubSpotSDK::Models::Cms::PeriodToWeeks, HubSpotSDK::Models::Cms::And, HubSpotSDK::Models::Cms::Or, HubSpotSDK::Models::Cms::Xor, HubSpotSDK::Models::Cms::IfString, HubSpotSDK::Models::Cms::IfNumber, HubSpotSDK::Models::Cms::IfBoolean, HubSpotSDK::Models::Cms::IsPresent, HubSpotSDK::Models::Cms::HasEmailReply, HubSpotSDK::Models::Cms::HasPlainTextEmailReply, HubSpotSDK::Models::Cms::ExtractMostRecentEmailReplyHTML, HubSpotSDK::Models::Cms::ExtractMostRecentEmailReplyText, HubSpotSDK::Models::Cms::ExtractMostRecentPlainTextEmailReply, HubSpotSDK::Models::Cms::SetContainsString, HubSpotSDK::Models::Cms::IsEngagementType, HubSpotSDK::Models::Cms::FormatFullName, HubSpotSDK::Models::Cms::FormatPhoneNumber, HubSpotSDK::Models::Cms::FormatSearchablePhoneNumber, HubSpotSDK::Models::Cms::AbsoluteValue, HubSpotSDK::Models::Cms::SquareRoot, HubSpotSDK::Models::Cms::Power, HubSpotSDK::Models::Cms::Substring, HubSpotSDK::Models::Cms::Euler, HubSpotSDK::Models::Cms::StringLength, HubSpotSDK::Models::Cms::AddTime, HubSpotSDK::Models::Cms::SubtractTime)]
         end
       end
     end

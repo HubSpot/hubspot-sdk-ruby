@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
             T::Array[
-              HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration
+              HubSpotSDK::Crm::PublicAssociationDefinitionUserConfiguration
             ]
           )
         end
@@ -25,7 +25,7 @@ module HubspotSDK
           params(
             results:
               T::Array[
-                HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration::OrHash
+                HubSpotSDK::Crm::PublicAssociationDefinitionUserConfiguration::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -37,7 +37,7 @@ module HubspotSDK
             {
               results:
                 T::Array[
-                  HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration
+                  HubSpotSDK::Crm::PublicAssociationDefinitionUserConfiguration
                 ]
             }
           )

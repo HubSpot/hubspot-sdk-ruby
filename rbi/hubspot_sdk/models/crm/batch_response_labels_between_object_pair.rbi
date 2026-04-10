@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchResponseLabelsBetweenObjectPair < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseLabelsBetweenObjectPair < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::BatchResponseLabelsBetweenObjectPair,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::BatchResponseLabelsBetweenObjectPair,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,7 +16,7 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :completed_at
 
-        sig { returns(T::Array[HubspotSDK::Crm::LabelsBetweenObjectPair]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::LabelsBetweenObjectPair]) }
         attr_accessor :results
 
         # The timestamp when the batch processing began, in ISO 8601 format.
@@ -27,7 +27,7 @@ module HubspotSDK
         # "CANCELLED", or "COMPLETE".
         sig do
           returns(
-            HubspotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::OrSymbol
+            HubSpotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::OrSymbol
           )
         end
         attr_accessor :status
@@ -49,10 +49,10 @@ module HubspotSDK
         sig do
           params(
             completed_at: Time,
-            results: T::Array[HubspotSDK::Crm::LabelsBetweenObjectPair::OrHash],
+            results: T::Array[HubSpotSDK::Crm::LabelsBetweenObjectPair::OrHash],
             started_at: Time,
             status:
-              HubspotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::OrSymbol,
+              HubSpotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::OrSymbol,
             links: T::Hash[Symbol, String],
             requested_at: Time
           ).returns(T.attached_class)
@@ -77,10 +77,10 @@ module HubspotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubspotSDK::Crm::LabelsBetweenObjectPair],
+              results: T::Array[HubSpotSDK::Crm::LabelsBetweenObjectPair],
               started_at: Time,
               status:
-                HubspotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::OrSymbol,
+                HubSpotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::OrSymbol,
               links: T::Hash[Symbol, String],
               requested_at: Time
             }
@@ -92,13 +92,13 @@ module HubspotSDK
         # The status of the batch processing request: "PENDING", "PROCESSING",
         # "CANCELLED", or "COMPLETE".
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status
+                HubSpotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -106,28 +106,28 @@ module HubspotSDK
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::TaggedSymbol
             )
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::TaggedSymbol
+                HubSpotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::TaggedSymbol
               ]
             )
           end

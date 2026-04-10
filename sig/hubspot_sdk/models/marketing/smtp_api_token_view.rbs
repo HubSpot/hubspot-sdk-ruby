@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type smtp_api_token_view =
@@ -12,7 +12,7 @@ module HubspotSDK
           password: String
         }
 
-      class SmtpAPITokenView < HubspotSDK::Internal::Type::BaseModel
+      class SmtpAPITokenView < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor campaign_name: String

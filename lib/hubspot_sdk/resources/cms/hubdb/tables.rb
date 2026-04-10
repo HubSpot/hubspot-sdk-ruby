@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Hubdb
         class Tables
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Hubdb::TableCreateParams} for more details.
+          # {HubSpotSDK::Models::Cms::Hubdb::TableCreateParams} for more details.
           #
           # Creates a new draft HubDB table given a JSON schema. The table name and label
           # should be unique for each account.
@@ -17,7 +17,7 @@ module HubspotSDK
           #
           # @param allow_public_api_access [Boolean] Specifies whether the table can be read by public without authorization
           #
-          # @param columns [Array<HubspotSDK::Models::Cms::ColumnRequest>] List of columns in the table
+          # @param columns [Array<HubSpotSDK::Models::Cms::ColumnRequest>] List of columns in the table
           #
           # @param dynamic_meta_tags [Hash{Symbol=>Integer}] Specifies the key value pairs of the [metadata fields](https://developers.hubspo
           #
@@ -29,24 +29,24 @@ module HubspotSDK
           #
           # @param use_for_pages [Boolean] Specifies whether the table can be used for creation of dynamic pages
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::HubDBTableV3]
+          # @return [HubSpotSDK::Models::Cms::HubDBTableV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::TableCreateParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::TableCreateParams
           def create(params)
-            parsed, options = HubspotSDK::Cms::Hubdb::TableCreateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Hubdb::TableCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: "cms/hubdb/2026-03/tables",
               body: parsed,
-              model: HubspotSDK::Cms::HubDBTableV3,
+              model: HubSpotSDK::Cms::HubDBTableV3,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Hubdb::TableListParams} for more details.
+          # {HubSpotSDK::Models::Cms::Hubdb::TableListParams} for more details.
           #
           # Returns the details for the published version of each table defined in an
           # account, including column definitions.
@@ -77,14 +77,14 @@ module HubspotSDK
           #
           # @param updated_before [Time]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::HubDBTableV3>]
+          # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Cms::HubDBTableV3>]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::TableListParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::TableListParams
           def list(params = {})
-            parsed, options = HubspotSDK::Cms::Hubdb::TableListParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Hubdb::TableListParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "cms/hubdb/2026-03/tables",
@@ -98,8 +98,8 @@ module HubspotSDK
                 updated_at: "updatedAt",
                 updated_before: "updatedBefore"
               ),
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Cms::HubDBTableV3,
+              page: HubSpotSDK::Internal::Page,
+              model: HubSpotSDK::Cms::HubDBTableV3,
               options: options
             )
           end
@@ -110,11 +110,11 @@ module HubspotSDK
           # @overload delete(table_id_or_name, request_options: {})
           #
           # @param table_id_or_name [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::TableDeleteParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::TableDeleteParams
           def delete(table_id_or_name, params = {})
             @client.request(
               method: :delete,
@@ -140,18 +140,18 @@ module HubspotSDK
           #
           # @param new_name [String] The new name for the cloned table
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::HubDBTableV3]
+          # @return [HubSpotSDK::Models::Cms::HubDBTableV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::TableCloneDraftParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::TableCloneDraftParams
           def clone_draft(table_id_or_name, params)
-            parsed, options = HubspotSDK::Cms::Hubdb::TableCloneDraftParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Hubdb::TableCloneDraftParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["cms/hubdb/2026-03/tables/%1$s/draft/clone", table_id_or_name],
               body: parsed,
-              model: HubspotSDK::Cms::HubDBTableV3,
+              model: HubSpotSDK::Cms::HubDBTableV3,
               options: options
             )
           end
@@ -162,13 +162,13 @@ module HubspotSDK
           #
           # @param version_id [Integer]
           # @param table_id_or_name [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::TableDeleteVersionParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::TableDeleteVersionParams
           def delete_version(version_id, params)
-            parsed, options = HubspotSDK::Cms::Hubdb::TableDeleteVersionParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Hubdb::TableDeleteVersionParams.dump_request(params)
             table_id_or_name =
               parsed.delete(:table_id_or_name) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -187,14 +187,14 @@ module HubspotSDK
           #
           # @param table_id_or_name [String]
           # @param format_ [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::TableExportParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::TableExportParams
           def export(table_id_or_name, params = {})
-            parsed, options = HubspotSDK::Cms::Hubdb::TableExportParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Hubdb::TableExportParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["cms/hubdb/2026-03/tables/%1$s/export", table_id_or_name],
@@ -211,14 +211,14 @@ module HubspotSDK
           #
           # @param table_id_or_name [String]
           # @param format_ [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::TableExportDraftParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::TableExportDraftParams
           def export_draft(table_id_or_name, params = {})
-            parsed, options = HubspotSDK::Cms::Hubdb::TableExportDraftParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Hubdb::TableExportDraftParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["cms/hubdb/2026-03/tables/%1$s/draft/export", table_id_or_name],
@@ -247,14 +247,14 @@ module HubspotSDK
           #
           # @param is_get_localized_schema [Boolean]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::HubDBTableV3]
+          # @return [HubSpotSDK::Models::Cms::HubDBTableV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::TableGetParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::TableGetParams
           def get(table_id_or_name, params = {})
-            parsed, options = HubspotSDK::Cms::Hubdb::TableGetParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Hubdb::TableGetParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["cms/hubdb/2026-03/tables/%1$s", table_id_or_name],
@@ -262,7 +262,7 @@ module HubspotSDK
                 include_foreign_ids: "includeForeignIds",
                 is_get_localized_schema: "isGetLocalizedSchema"
               ),
-              model: HubspotSDK::Cms::HubDBTableV3,
+              model: HubSpotSDK::Cms::HubDBTableV3,
               options: options
             )
           end
@@ -281,14 +281,14 @@ module HubspotSDK
           #
           # @param is_get_localized_schema [Boolean]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::HubDBTableV3]
+          # @return [HubSpotSDK::Models::Cms::HubDBTableV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::TableGetDraftParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::TableGetDraftParams
           def get_draft(table_id_or_name, params = {})
-            parsed, options = HubspotSDK::Cms::Hubdb::TableGetDraftParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Hubdb::TableGetDraftParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["cms/hubdb/2026-03/tables/%1$s/draft", table_id_or_name],
@@ -296,7 +296,7 @@ module HubspotSDK
                 include_foreign_ids: "includeForeignIds",
                 is_get_localized_schema: "isGetLocalizedSchema"
               ),
-              model: HubspotSDK::Cms::HubDBTableV3,
+              model: HubSpotSDK::Cms::HubDBTableV3,
               options: options
             )
           end
@@ -315,26 +315,26 @@ module HubspotSDK
           #
           # @param table_id_or_name [String]
           # @param config [String]
-          # @param file [Pathname, StringIO, IO, String, HubspotSDK::FilePart]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param file [Pathname, StringIO, IO, String, HubSpotSDK::FilePart]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::ImportResult]
+          # @return [HubSpotSDK::Models::Cms::ImportResult]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::TableImportDraftParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::TableImportDraftParams
           def import_draft(table_id_or_name, params = {})
-            parsed, options = HubspotSDK::Cms::Hubdb::TableImportDraftParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Hubdb::TableImportDraftParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["cms/hubdb/2026-03/tables/%1$s/draft/import", table_id_or_name],
               headers: {"content-type" => "multipart/form-data"},
               body: parsed,
-              model: HubspotSDK::Cms::ImportResult,
+              model: HubSpotSDK::Cms::ImportResult,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Hubdb::TableListDraftParams} for more details.
+          # {HubSpotSDK::Models::Cms::Hubdb::TableListDraftParams} for more details.
           #
           # Returns the details for each draft table defined in the specified account,
           # including column definitions.
@@ -365,14 +365,14 @@ module HubspotSDK
           #
           # @param updated_before [Time]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::HubDBTableV3>]
+          # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Cms::HubDBTableV3>]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::TableListDraftParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::TableListDraftParams
           def list_draft(params = {})
-            parsed, options = HubspotSDK::Cms::Hubdb::TableListDraftParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Hubdb::TableListDraftParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "cms/hubdb/2026-03/tables/draft",
@@ -386,8 +386,8 @@ module HubspotSDK
                 updated_at: "updatedAt",
                 updated_before: "updatedBefore"
               ),
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Cms::HubDBTableV3,
+              page: HubSpotSDK::Internal::Page,
+              model: HubSpotSDK::Cms::HubDBTableV3,
               options: options
             )
           end
@@ -400,19 +400,19 @@ module HubspotSDK
           #
           # @param table_id_or_name [String]
           # @param include_foreign_ids [Boolean]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::HubDBTableV3]
+          # @return [HubSpotSDK::Models::Cms::HubDBTableV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::TablePublishDraftParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::TablePublishDraftParams
           def publish_draft(table_id_or_name, params = {})
-            parsed, options = HubspotSDK::Cms::Hubdb::TablePublishDraftParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Hubdb::TablePublishDraftParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :post,
               path: ["cms/hubdb/2026-03/tables/%1$s/draft/publish", table_id_or_name],
               query: query.transform_keys(include_foreign_ids: "includeForeignIds"),
-              model: HubspotSDK::Cms::HubDBTableV3,
+              model: HubSpotSDK::Cms::HubDBTableV3,
               options: options
             )
           end
@@ -425,19 +425,19 @@ module HubspotSDK
           #
           # @param table_id_or_name [String]
           # @param include_foreign_ids [Boolean]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::HubDBTableV3]
+          # @return [HubSpotSDK::Models::Cms::HubDBTableV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::TableResetDraftParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::TableResetDraftParams
           def reset_draft(table_id_or_name, params = {})
-            parsed, options = HubspotSDK::Cms::Hubdb::TableResetDraftParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Hubdb::TableResetDraftParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :post,
               path: ["cms/hubdb/2026-03/tables/%1$s/draft/reset", table_id_or_name],
               query: query.transform_keys(include_foreign_ids: "includeForeignIds"),
-              model: HubspotSDK::Cms::HubDBTableV3,
+              model: HubSpotSDK::Cms::HubDBTableV3,
               options: options
             )
           end
@@ -449,25 +449,25 @@ module HubspotSDK
           #
           # @param table_id_or_name [String]
           # @param include_foreign_ids [Boolean]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::HubDBTableV3]
+          # @return [HubSpotSDK::Models::Cms::HubDBTableV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::TableUnpublishParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::TableUnpublishParams
           def unpublish(table_id_or_name, params = {})
-            parsed, options = HubspotSDK::Cms::Hubdb::TableUnpublishParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Hubdb::TableUnpublishParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :post,
               path: ["cms/hubdb/2026-03/tables/%1$s/unpublish", table_id_or_name],
               query: query.transform_keys(include_foreign_ids: "includeForeignIds"),
-              model: HubspotSDK::Cms::HubDBTableV3,
+              model: HubSpotSDK::Cms::HubDBTableV3,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Hubdb::TableUpdateDraftParams} for more details.
+          # {HubSpotSDK::Models::Cms::Hubdb::TableUpdateDraftParams} for more details.
           #
           # Update an existing HubDB table. You can use this endpoint to add or remove
           # columns to the table as well as restore an archived table. Tables updated using
@@ -486,7 +486,7 @@ module HubspotSDK
           #
           # @param allow_public_api_access [Boolean] Body param: Specifies whether the table can be read by public without authorizat
           #
-          # @param columns [Array<HubspotSDK::Models::Cms::ColumnRequest>] Body param: List of columns in the table
+          # @param columns [Array<HubSpotSDK::Models::Cms::ColumnRequest>] Body param: List of columns in the table
           #
           # @param dynamic_meta_tags [Hash{Symbol=>Integer}] Body param: Specifies the key value pairs of the [metadata fields](https://devel
           #
@@ -504,15 +504,15 @@ module HubspotSDK
           #
           # @param is_get_localized_schema [Boolean] Query param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::HubDBTableV3]
+          # @return [HubSpotSDK::Models::Cms::HubDBTableV3]
           #
-          # @see HubspotSDK::Models::Cms::Hubdb::TableUpdateDraftParams
+          # @see HubSpotSDK::Models::Cms::Hubdb::TableUpdateDraftParams
           def update_draft(table_id_or_name, params)
             query_params = [:archived, :include_foreign_ids, :is_get_localized_schema]
-            parsed, options = HubspotSDK::Cms::Hubdb::TableUpdateDraftParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            parsed, options = HubSpotSDK::Cms::Hubdb::TableUpdateDraftParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
               method: :patch,
               path: ["cms/hubdb/2026-03/tables/%1$s/draft", table_id_or_name],
@@ -521,14 +521,14 @@ module HubspotSDK
                 is_get_localized_schema: "isGetLocalizedSchema"
               ),
               body: parsed.except(*query_params),
-              model: HubspotSDK::Cms::HubDBTableV3,
+              model: HubSpotSDK::Cms::HubDBTableV3,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

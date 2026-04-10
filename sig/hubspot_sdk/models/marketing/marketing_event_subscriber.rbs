@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     class MarketingEventSubscriber = Marketing::MarketingEventSubscriber
 
@@ -10,7 +10,7 @@ module HubspotSDK
           vid: Integer
         }
 
-      class MarketingEventSubscriber < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventSubscriber < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor interaction_date_time: Integer
 
         attr_accessor properties: ::Hash[Symbol, String]

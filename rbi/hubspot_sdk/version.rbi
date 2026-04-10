@@ -1,5 +1,5 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   VERSION = T.let(T.unsafe(nil), String)
 end

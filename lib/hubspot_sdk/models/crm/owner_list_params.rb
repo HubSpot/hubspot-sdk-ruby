@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Owners#list
-      class OwnerListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Crm::Owners#list
+      class OwnerListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute after
         #   The paging cursor token of the last successfully read resource will be returned
@@ -20,7 +20,7 @@ module HubspotSDK
         #   Whether to return only results that have been archived.
         #
         #   @return [Boolean, nil]
-        optional :archived, HubspotSDK::Internal::Type::Boolean
+        optional :archived, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute email
         #   Filter by email address (optional)
@@ -36,7 +36,7 @@ module HubspotSDK
 
         # @!method initialize(after: nil, archived: nil, email: nil, limit: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::OwnerListParams} for more details.
+        #   {HubSpotSDK::Models::Crm::OwnerListParams} for more details.
         #
         #   @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
@@ -46,7 +46,7 @@ module HubspotSDK
         #
         #   @param limit [Integer] The maximum number of results to display per page.
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

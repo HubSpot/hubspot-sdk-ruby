@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Auth
-      class PublicAccessTokenInfoResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicAccessTokenInfoResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Auth::PublicAccessTokenInfoResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Auth::PublicAccessTokenInfoResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -36,12 +36,12 @@ module HubspotSDK
         sig { returns(T::Array[String]) }
         attr_accessor :scopes
 
-        sig { returns(HubspotSDK::Auth::SignedAccessToken) }
+        sig { returns(HubSpotSDK::Auth::SignedAccessToken) }
         attr_reader :signed_access_token
 
         sig do
           params(
-            signed_access_token: HubspotSDK::Auth::SignedAccessToken::OrHash
+            signed_access_token: HubSpotSDK::Auth::SignedAccessToken::OrHash
           ).void
         end
         attr_writer :signed_access_token
@@ -51,7 +51,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Auth::PublicAccessTokenInfoResponse::TokenUse::TaggedSymbol
+            HubSpotSDK::Auth::PublicAccessTokenInfoResponse::TokenUse::TaggedSymbol
           )
         end
         attr_accessor :token_use
@@ -81,10 +81,10 @@ module HubspotSDK
             hub_id: Integer,
             is_private_distribution: T::Boolean,
             scopes: T::Array[String],
-            signed_access_token: HubspotSDK::Auth::SignedAccessToken::OrHash,
+            signed_access_token: HubSpotSDK::Auth::SignedAccessToken::OrHash,
             token_type: String,
             token_use:
-              HubspotSDK::Auth::PublicAccessTokenInfoResponse::TokenUse::OrSymbol,
+              HubSpotSDK::Auth::PublicAccessTokenInfoResponse::TokenUse::OrSymbol,
             user_id: Integer,
             hub_domain: String,
             user: String
@@ -119,10 +119,10 @@ module HubspotSDK
               hub_id: Integer,
               is_private_distribution: T::Boolean,
               scopes: T::Array[String],
-              signed_access_token: HubspotSDK::Auth::SignedAccessToken,
+              signed_access_token: HubSpotSDK::Auth::SignedAccessToken,
               token_type: String,
               token_use:
-                HubspotSDK::Auth::PublicAccessTokenInfoResponse::TokenUse::TaggedSymbol,
+                HubSpotSDK::Auth::PublicAccessTokenInfoResponse::TokenUse::TaggedSymbol,
               user_id: Integer,
               hub_domain: String,
               user: String
@@ -133,13 +133,13 @@ module HubspotSDK
         end
 
         module TokenUse
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Auth::PublicAccessTokenInfoResponse::TokenUse
+                HubSpotSDK::Auth::PublicAccessTokenInfoResponse::TokenUse
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -147,13 +147,13 @@ module HubspotSDK
           ACCESS_TOKEN =
             T.let(
               :access_token,
-              HubspotSDK::Auth::PublicAccessTokenInfoResponse::TokenUse::TaggedSymbol
+              HubSpotSDK::Auth::PublicAccessTokenInfoResponse::TokenUse::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Auth::PublicAccessTokenInfoResponse::TokenUse::TaggedSymbol
+                HubSpotSDK::Auth::PublicAccessTokenInfoResponse::TokenUse::TaggedSymbol
               ]
             )
           end

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicAuditInfo < HubspotSDK::Internal::Type::BaseModel
+      class PublicAuditInfo < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute action
         #   The action performed that triggered the audit event.
         #
@@ -38,7 +38,7 @@ module HubspotSDK
         #   An object containing the raw data associated with the audit event.
         #
         #   @return [Object, nil]
-        optional :raw_object, HubspotSDK::Internal::Type::Unknown, api_name: :rawObject
+        optional :raw_object, HubSpotSDK::Internal::Type::Unknown, api_name: :rawObject
 
         # @!attribute timestamp
         #   The date and time when the audit event took place.

@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class PropertyDefinitionSource < HubspotSDK::Internal::Type::BaseModel
+      class PropertyDefinitionSource < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute type
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::PropertyDefinitionSource::Type]
-        required :type, enum: -> { HubspotSDK::Cms::PropertyDefinitionSource::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::PropertyDefinitionSource::Type]
+        required :type, enum: -> { HubSpotSDK::Cms::PropertyDefinitionSource::Type }
 
         # @!attribute name
         #
@@ -15,12 +15,12 @@ module HubspotSDK
         optional :name, String
 
         # @!method initialize(type:, name: nil)
-        #   @param type [Symbol, HubspotSDK::Models::Cms::PropertyDefinitionSource::Type]
+        #   @param type [Symbol, HubSpotSDK::Models::Cms::PropertyDefinitionSource::Type]
         #   @param name [String]
 
-        # @see HubspotSDK::Models::Cms::PropertyDefinitionSource#type
+        # @see HubSpotSDK::Models::Cms::PropertyDefinitionSource#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           GLOBAL = :GLOBAL
           HAVEN_BRANCH = :HAVEN_BRANCH

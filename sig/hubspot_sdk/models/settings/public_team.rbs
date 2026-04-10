@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       type public_team =
@@ -9,7 +9,7 @@ module HubspotSDK
           user_ids: ::Array[String]
         }
 
-      class PublicTeam < HubspotSDK::Internal::Type::BaseModel
+      class PublicTeam < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor name: String

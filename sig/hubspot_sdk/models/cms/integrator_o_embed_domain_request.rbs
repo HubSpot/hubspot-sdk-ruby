@@ -1,23 +1,23 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type integrator_o_embed_domain_request =
-        { endpoints: HubspotSDK::Cms::Endpoints, portal_id: Integer }
+        { endpoints: HubSpotSDK::Cms::Endpoints, portal_id: Integer }
 
-      class IntegratorOEmbedDomainRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor endpoints: HubspotSDK::Cms::Endpoints
+      class IntegratorOEmbedDomainRequest < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor endpoints: HubSpotSDK::Cms::Endpoints
 
         attr_reader portal_id: Integer?
 
         def portal_id=: (Integer) -> Integer
 
         def initialize: (
-          endpoints: HubspotSDK::Cms::Endpoints,
+          endpoints: HubSpotSDK::Cms::Endpoints,
           ?portal_id: Integer
         ) -> void
 
         def to_hash: -> {
-          endpoints: HubspotSDK::Cms::Endpoints,
+          endpoints: HubSpotSDK::Cms::Endpoints,
           portal_id: Integer
         }
       end

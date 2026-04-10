@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type public_channel_integration_channel =
@@ -13,7 +13,7 @@ module HubspotSDK
           webhook_url: String
         }
 
-      class PublicChannelIntegrationChannel < HubspotSDK::Internal::Type::BaseModel
+      class PublicChannelIntegrationChannel < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor capabilities: ::Hash[Symbol, top]

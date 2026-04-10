@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type rolling_property_updated_operation =
@@ -6,25 +6,25 @@ module HubspotSDK
           include_objects_with_no_value_set: bool,
           number_of_days: Integer,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::RollingPropertyUpdatedOperation::operator,
+          operator: HubSpotSDK::Models::Events::RollingPropertyUpdatedOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::RollingPropertyUpdatedOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::RollingPropertyUpdatedOperation::property_type,
           default_value: String,
           render_spec: String
         }
 
-      class RollingPropertyUpdatedOperation < HubspotSDK::Internal::Type::BaseModel
+      class RollingPropertyUpdatedOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor include_objects_with_no_value_set: bool
 
         attr_accessor number_of_days: Integer
 
         attr_accessor operation_type: String
 
-        attr_accessor operator: HubspotSDK::Models::Events::RollingPropertyUpdatedOperation::operator
+        attr_accessor operator: HubSpotSDK::Models::Events::RollingPropertyUpdatedOperation::operator
 
         attr_accessor operator_name: String
 
-        attr_accessor property_type: HubspotSDK::Models::Events::RollingPropertyUpdatedOperation::property_type
+        attr_accessor property_type: HubSpotSDK::Models::Events::RollingPropertyUpdatedOperation::property_type
 
         attr_reader default_value: String?
 
@@ -38,9 +38,9 @@ module HubspotSDK
           include_objects_with_no_value_set: bool,
           number_of_days: Integer,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::RollingPropertyUpdatedOperation::operator,
+          operator: HubSpotSDK::Models::Events::RollingPropertyUpdatedOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::RollingPropertyUpdatedOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::RollingPropertyUpdatedOperation::property_type,
           ?default_value: String,
           ?render_spec: String
         ) -> void
@@ -49,9 +49,9 @@ module HubspotSDK
           include_objects_with_no_value_set: bool,
           number_of_days: Integer,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::RollingPropertyUpdatedOperation::operator,
+          operator: HubSpotSDK::Models::Events::RollingPropertyUpdatedOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::RollingPropertyUpdatedOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::RollingPropertyUpdatedOperation::property_type,
           default_value: String,
           render_spec: String
         }
@@ -59,22 +59,22 @@ module HubspotSDK
         type operator = :NOT_UPDATED_IN_LAST_X_DAYS | :UPDATED_IN_LAST_X_DAYS
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NOT_UPDATED_IN_LAST_X_DAYS: :NOT_UPDATED_IN_LAST_X_DAYS
           UPDATED_IN_LAST_X_DAYS: :UPDATED_IN_LAST_X_DAYS
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::RollingPropertyUpdatedOperation::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::RollingPropertyUpdatedOperation::operator]
         end
 
         type property_type = :"rolling-property-updated"
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ROLLING_PROPERTY_UPDATED: :"rolling-property-updated"
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::RollingPropertyUpdatedOperation::property_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::RollingPropertyUpdatedOperation::property_type]
         end
       end
     end

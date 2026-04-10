@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::ObjectSchemas#create
-      class ObjectSchema < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::ObjectSchemas#create
+      class ObjectSchema < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   A unique ID for this schema's object type. Will be defined as
         #   {meta-type}-{unique ID}.
@@ -16,19 +16,19 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :allows_sensitive_properties,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :allowsSensitiveProperties
 
         # @!attribute archived
         #
         #   @return [Boolean]
-        required :archived, HubspotSDK::Internal::Type::Boolean
+        required :archived, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute associations
         #   Associations defined for a given object type.
         #
-        #   @return [Array<HubspotSDK::Models::AssociationDefinition>]
-        required :associations, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AssociationDefinition] }
+        #   @return [Array<HubSpotSDK::Models::AssociationDefinition>]
+        required :associations, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::AssociationDefinition] }
 
         # @!attribute fully_qualified_name
         #   An assigned unique ID for the object, including portal ID and object name.
@@ -38,8 +38,8 @@ module HubspotSDK
 
         # @!attribute labels
         #
-        #   @return [HubspotSDK::Models::ObjectTypeDefinitionLabels]
-        required :labels, -> { HubspotSDK::ObjectTypeDefinitionLabels }
+        #   @return [HubSpotSDK::Models::ObjectTypeDefinitionLabels]
+        required :labels, -> { HubSpotSDK::ObjectTypeDefinitionLabels }
 
         # @!attribute name
         #   A unique name for the schema's object type.
@@ -55,8 +55,8 @@ module HubspotSDK
         # @!attribute properties
         #   Properties defined for this object type.
         #
-        #   @return [Array<HubspotSDK::Models::Crm::Property>]
-        required :properties, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Property] }
+        #   @return [Array<HubSpotSDK::Models::Crm::Property>]
+        required :properties, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::Property] }
 
         # @!attribute required_properties
         #   The names of properties that should be **required** when creating an object of
@@ -64,7 +64,7 @@ module HubspotSDK
         #
         #   @return [Array<String>]
         required :required_properties,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :requiredProperties
 
         # @!attribute searchable_properties
@@ -73,7 +73,7 @@ module HubspotSDK
         #
         #   @return [Array<String>]
         required :searchable_properties,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :searchableProperties
 
         # @!attribute secondary_display_properties
@@ -82,7 +82,7 @@ module HubspotSDK
         #
         #   @return [Array<String>]
         required :secondary_display_properties,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :secondaryDisplayProperties
 
         # @!attribute created_at
@@ -121,7 +121,7 @@ module HubspotSDK
 
         # @!method initialize(id:, allows_sensitive_properties:, archived:, associations:, fully_qualified_name:, labels:, name:, object_type_id:, properties:, required_properties:, searchable_properties:, secondary_display_properties:, created_at: nil, created_by_user_id: nil, description: nil, primary_display_property: nil, updated_at: nil, updated_by_user_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::ObjectSchema} for more details.
+        #   {HubSpotSDK::Models::Crm::ObjectSchema} for more details.
         #
         #   @param id [String] A unique ID for this schema's object type. Will be defined as {meta-type}-{uniqu
         #
@@ -129,17 +129,17 @@ module HubspotSDK
         #
         #   @param archived [Boolean]
         #
-        #   @param associations [Array<HubspotSDK::Models::AssociationDefinition>] Associations defined for a given object type.
+        #   @param associations [Array<HubSpotSDK::Models::AssociationDefinition>] Associations defined for a given object type.
         #
         #   @param fully_qualified_name [String] An assigned unique ID for the object, including portal ID and object name.
         #
-        #   @param labels [HubspotSDK::Models::ObjectTypeDefinitionLabels]
+        #   @param labels [HubSpotSDK::Models::ObjectTypeDefinitionLabels]
         #
         #   @param name [String] A unique name for the schema's object type.
         #
         #   @param object_type_id [String]
         #
-        #   @param properties [Array<HubspotSDK::Models::Crm::Property>] Properties defined for this object type.
+        #   @param properties [Array<HubSpotSDK::Models::Crm::Property>] Properties defined for this object type.
         #
         #   @param required_properties [Array<String>] The names of properties that should be **required** when creating an object of t
         #

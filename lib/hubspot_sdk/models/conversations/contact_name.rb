@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class ContactName < HubspotSDK::Internal::Type::BaseModel
+      class ContactName < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute first_name
         #
         #   @return [String, nil]

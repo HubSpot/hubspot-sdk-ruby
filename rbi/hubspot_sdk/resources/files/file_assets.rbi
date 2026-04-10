@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Files
       class FileAssets
@@ -10,8 +10,8 @@ module HubspotSDK
             name: String,
             parent_folder_id: String,
             parent_path: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Files::Folder)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Files::Folder)
         end
         def create(
           # Desired name for the folder.
@@ -33,14 +33,14 @@ module HubspotSDK
           params(
             file_id: String,
             clear_expires: T::Boolean,
-            access: HubspotSDK::Files::FileUpdateInput::Access::OrSymbol,
+            access: HubSpotSDK::Files::FileUpdateInput::Access::OrSymbol,
             expires_at: Time,
             is_usable_in_content: T::Boolean,
             name: String,
             parent_folder_id: String,
             parent_folder_path: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Files::File)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Files::File)
         end
         def update(
           file_id,
@@ -68,7 +68,7 @@ module HubspotSDK
         sig do
           params(
             file_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete(file_id, request_options: {})
@@ -78,7 +78,7 @@ module HubspotSDK
         sig do
           params(
             file_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def gdpr_delete(file_id, request_options: {})
@@ -89,8 +89,8 @@ module HubspotSDK
           params(
             file_id: String,
             properties: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Files::File)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Files::File)
         end
         def get(file_id, properties: nil, request_options: {})
         end
@@ -100,8 +100,8 @@ module HubspotSDK
           params(
             path: String,
             properties: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Files::FileStat)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Files::FileStat)
         end
         def get_by_path(path, properties: nil, request_options: {})
         end
@@ -110,8 +110,8 @@ module HubspotSDK
         sig do
           params(
             task_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Files::FileActionResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Files::FileActionResponse)
         end
         def get_import_task_status(task_id, request_options: {})
         end
@@ -122,10 +122,10 @@ module HubspotSDK
             file_id: String,
             expiration_seconds: Integer,
             size:
-              HubspotSDK::Files::FileAssetGetSignedURLParams::Size::OrSymbol,
+              HubSpotSDK::Files::FileAssetGetSignedURLParams::Size::OrSymbol,
             upscale: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Files::SignedURL)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Files::SignedURL)
         end
         def get_signed_url(
           file_id,
@@ -139,11 +139,11 @@ module HubspotSDK
         # Asynchronously imports the file at the given URL into the file manager.
         sig do
           params(
-            access: HubspotSDK::Files::ImportFromURLInput::Access::OrSymbol,
+            access: HubSpotSDK::Files::ImportFromURLInput::Access::OrSymbol,
             duplicate_validation_scope:
-              HubspotSDK::Files::ImportFromURLInput::DuplicateValidationScope::OrSymbol,
+              HubSpotSDK::Files::ImportFromURLInput::DuplicateValidationScope::OrSymbol,
             duplicate_validation_strategy:
-              HubspotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy::OrSymbol,
+              HubSpotSDK::Files::ImportFromURLInput::DuplicateValidationStrategy::OrSymbol,
             overwrite: T::Boolean,
             expires_at: Time,
             folder_id: String,
@@ -151,8 +151,8 @@ module HubspotSDK
             name: String,
             ttl: String,
             url: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Files::ImportFromURLTaskLocator)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Files::ImportFromURLTaskLocator)
         end
         def import_from_url_async(
           # PUBLIC_INDEXABLE: File is publicly accessible by anyone who has the URL. Search
@@ -200,10 +200,10 @@ module HubspotSDK
           params(
             file_id: String,
             charset_hunch: String,
-            file: HubspotSDK::Internal::FileInput,
+            file: HubSpotSDK::Internal::FileInput,
             options: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Files::File)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Files::File)
         end
         def replace(
           file_id,
@@ -254,8 +254,8 @@ module HubspotSDK
             width: Integer,
             width_gte: Integer,
             width_lte: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Internal::Page[HubspotSDK::Files::File])
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Internal::Page[HubSpotSDK::Files::File])
         end
         def search(
           # The paging cursor token of the last successfully read resource will be returned
@@ -306,13 +306,13 @@ module HubspotSDK
         sig do
           params(
             charset_hunch: String,
-            file: HubspotSDK::Internal::FileInput,
+            file: HubSpotSDK::Internal::FileInput,
             file_name: String,
             folder_id: String,
             folder_path: String,
             options: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Files::File)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Files::File)
         end
         def upload(
           charset_hunch: nil,
@@ -326,7 +326,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

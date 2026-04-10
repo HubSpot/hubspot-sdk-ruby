@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicActionDefinition < HubspotSDK::Internal::Type::BaseModel
+      class PublicActionDefinition < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [String]
@@ -16,33 +16,33 @@ module HubspotSDK
 
         # @!attribute functions
         #
-        #   @return [Array<HubspotSDK::Models::Automation::PublicActionFunctionIdentifier>]
+        #   @return [Array<HubSpotSDK::Models::Automation::PublicActionFunctionIdentifier>]
         required :functions,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicActionFunctionIdentifier] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicActionFunctionIdentifier] }
 
         # @!attribute input_fields
         #
-        #   @return [Array<HubspotSDK::Models::Automation::PublicInputFieldDefinition>]
+        #   @return [Array<HubSpotSDK::Models::Automation::PublicInputFieldDefinition>]
         required :input_fields,
                  -> {
-                   HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicInputFieldDefinition]
+                   HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicInputFieldDefinition]
                  },
                  api_name: :inputFields
 
         # @!attribute labels
         #
-        #   @return [Hash{Symbol=>HubspotSDK::Models::Automation::PublicActionLabels}]
-        required :labels, -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Automation::PublicActionLabels] }
+        #   @return [Hash{Symbol=>HubSpotSDK::Models::Automation::PublicActionLabels}]
+        required :labels, -> { HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Automation::PublicActionLabels] }
 
         # @!attribute object_types
         #
         #   @return [Array<String>]
-        required :object_types, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :objectTypes
+        required :object_types, HubSpotSDK::Internal::Type::ArrayOf[String], api_name: :objectTypes
 
         # @!attribute published
         #
         #   @return [Boolean]
-        required :published, HubspotSDK::Internal::Type::Boolean
+        required :published, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute revision_id
         #
@@ -56,60 +56,60 @@ module HubspotSDK
 
         # @!attribute execution_rules
         #
-        #   @return [Array<HubspotSDK::Models::Automation::PublicExecutionTranslationRule>, nil]
+        #   @return [Array<HubSpotSDK::Models::Automation::PublicExecutionTranslationRule>, nil]
         optional :execution_rules,
                  -> {
-                   HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicExecutionTranslationRule]
+                   HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicExecutionTranslationRule]
                  },
                  api_name: :executionRules
 
         # @!attribute input_field_dependencies
         #
-        #   @return [Array<HubspotSDK::Models::Automation::PublicSingleFieldDependency, HubspotSDK::Models::Automation::PublicConditionalSingleFieldDependency>, nil]
+        #   @return [Array<HubSpotSDK::Models::Automation::PublicSingleFieldDependency, HubSpotSDK::Models::Automation::PublicConditionalSingleFieldDependency>, nil]
         optional :input_field_dependencies,
                  -> {
-                   HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Automation::PublicActionDefinition::InputFieldDependency]
+                   HubSpotSDK::Internal::Type::ArrayOf[union: HubSpotSDK::Automation::PublicActionDefinition::InputFieldDependency]
                  },
                  api_name: :inputFieldDependencies
 
         # @!attribute object_request_options
         #
-        #   @return [HubspotSDK::Models::Automation::PublicObjectRequestOptions, nil]
+        #   @return [HubSpotSDK::Models::Automation::PublicObjectRequestOptions, nil]
         optional :object_request_options,
-                 -> { HubspotSDK::Automation::PublicObjectRequestOptions },
+                 -> { HubSpotSDK::Automation::PublicObjectRequestOptions },
                  api_name: :objectRequestOptions
 
         # @!attribute output_fields
         #
-        #   @return [Array<HubspotSDK::Models::Automation::OutputFieldDefinition>, nil]
+        #   @return [Array<HubSpotSDK::Models::Automation::OutputFieldDefinition>, nil]
         optional :output_fields,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::OutputFieldDefinition] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::OutputFieldDefinition] },
                  api_name: :outputFields
 
         # @!method initialize(id:, action_url:, functions:, input_fields:, labels:, object_types:, published:, revision_id:, archived_at: nil, execution_rules: nil, input_field_dependencies: nil, object_request_options: nil, output_fields: nil)
         #   @param id [String]
         #   @param action_url [String]
-        #   @param functions [Array<HubspotSDK::Models::Automation::PublicActionFunctionIdentifier>]
-        #   @param input_fields [Array<HubspotSDK::Models::Automation::PublicInputFieldDefinition>]
-        #   @param labels [Hash{Symbol=>HubspotSDK::Models::Automation::PublicActionLabels}]
+        #   @param functions [Array<HubSpotSDK::Models::Automation::PublicActionFunctionIdentifier>]
+        #   @param input_fields [Array<HubSpotSDK::Models::Automation::PublicInputFieldDefinition>]
+        #   @param labels [Hash{Symbol=>HubSpotSDK::Models::Automation::PublicActionLabels}]
         #   @param object_types [Array<String>]
         #   @param published [Boolean]
         #   @param revision_id [String]
         #   @param archived_at [Integer]
-        #   @param execution_rules [Array<HubspotSDK::Models::Automation::PublicExecutionTranslationRule>]
-        #   @param input_field_dependencies [Array<HubspotSDK::Models::Automation::PublicSingleFieldDependency, HubspotSDK::Models::Automation::PublicConditionalSingleFieldDependency>]
-        #   @param object_request_options [HubspotSDK::Models::Automation::PublicObjectRequestOptions]
-        #   @param output_fields [Array<HubspotSDK::Models::Automation::OutputFieldDefinition>]
+        #   @param execution_rules [Array<HubSpotSDK::Models::Automation::PublicExecutionTranslationRule>]
+        #   @param input_field_dependencies [Array<HubSpotSDK::Models::Automation::PublicSingleFieldDependency, HubSpotSDK::Models::Automation::PublicConditionalSingleFieldDependency>]
+        #   @param object_request_options [HubSpotSDK::Models::Automation::PublicObjectRequestOptions]
+        #   @param output_fields [Array<HubSpotSDK::Models::Automation::OutputFieldDefinition>]
 
         module InputFieldDependency
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubspotSDK::Automation::PublicSingleFieldDependency }
+          variant -> { HubSpotSDK::Automation::PublicSingleFieldDependency }
 
-          variant -> { HubspotSDK::Automation::PublicConditionalSingleFieldDependency }
+          variant -> { HubSpotSDK::Automation::PublicConditionalSingleFieldDependency }
 
           # @!method self.variants
-          #   @return [Array(HubspotSDK::Models::Automation::PublicSingleFieldDependency, HubspotSDK::Models::Automation::PublicConditionalSingleFieldDependency)]
+          #   @return [Array(HubSpotSDK::Models::Automation::PublicSingleFieldDependency, HubSpotSDK::Models::Automation::PublicConditionalSingleFieldDependency)]
         end
       end
     end

@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type bounded_next_page = { offset: Integer, link: String }
 
-      class BoundedNextPage < HubspotSDK::Internal::Type::BaseModel
+      class BoundedNextPage < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor offset: Integer
 
         attr_reader link: String?

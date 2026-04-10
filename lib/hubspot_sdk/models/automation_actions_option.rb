@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class AutomationActionsOption < HubspotSDK::Internal::Type::BaseModel
+    class AutomationActionsOption < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute description
       #   A description of the option.
       #
@@ -25,7 +25,7 @@ module HubspotSDK
       #   Whether the option is displayed in HubSpot's UI.
       #
       #   @return [Boolean]
-      required :hidden, HubspotSDK::Internal::Type::Boolean
+      required :hidden, HubSpotSDK::Internal::Type::Boolean
 
       # @!attribute label
       #   A user-friendly label that identifies the option.
@@ -37,7 +37,7 @@ module HubspotSDK
       #   Whether the option is read-only.
       #
       #   @return [Boolean]
-      required :read_only, HubspotSDK::Internal::Type::Boolean, api_name: :readOnly
+      required :read_only, HubSpotSDK::Internal::Type::Boolean, api_name: :readOnly
 
       # @!attribute value
       #   The actual value of the option.

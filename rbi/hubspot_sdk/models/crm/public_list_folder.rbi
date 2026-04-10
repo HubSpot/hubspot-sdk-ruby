@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicListFolder < HubspotSDK::Internal::Type::BaseModel
+      class PublicListFolder < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicListFolder,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicListFolder,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
         sig { returns(T::Array[Integer]) }
         attr_accessor :child_lists
 
-        sig { returns(T::Array[HubspotSDK::Crm::PublicListFolder]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::PublicListFolder]) }
         attr_accessor :child_nodes
 
         # The Id of the folder this folder is in, the root folder is represented as 0.
@@ -66,7 +66,7 @@ module HubspotSDK
           params(
             id: String,
             child_lists: T::Array[Integer],
-            child_nodes: T::Array[HubspotSDK::Crm::PublicListFolder],
+            child_nodes: T::Array[HubSpotSDK::Crm::PublicListFolder],
             parent_folder_id: String,
             created_at: Time,
             name: String,
@@ -101,7 +101,7 @@ module HubspotSDK
             {
               id: String,
               child_lists: T::Array[Integer],
-              child_nodes: T::Array[HubspotSDK::Crm::PublicListFolder],
+              child_nodes: T::Array[HubSpotSDK::Crm::PublicListFolder],
               parent_folder_id: String,
               created_at: Time,
               name: String,

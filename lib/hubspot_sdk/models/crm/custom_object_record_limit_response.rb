@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class CustomObjectRecordLimitResponse < HubspotSDK::Internal::Type::BaseModel
+      class CustomObjectRecordLimitResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute by_object_type
         #
-        #   @return [Array<HubspotSDK::Models::Crm::UsageForObjectType>]
+        #   @return [Array<HubSpotSDK::Models::Crm::UsageForObjectType>]
         required :by_object_type,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::UsageForObjectType] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::UsageForObjectType] },
                  api_name: :byObjectType
 
         # @!attribute overall_limit
@@ -30,7 +30,7 @@ module HubspotSDK
         required :overall_usage, Integer, api_name: :overallUsage
 
         # @!method initialize(by_object_type:, overall_limit:, overall_percentage:, overall_usage:)
-        #   @param by_object_type [Array<HubspotSDK::Models::Crm::UsageForObjectType>]
+        #   @param by_object_type [Array<HubSpotSDK::Models::Crm::UsageForObjectType>]
         #
         #   @param overall_limit [Integer] The maximum number of custom object records allowed.
         #

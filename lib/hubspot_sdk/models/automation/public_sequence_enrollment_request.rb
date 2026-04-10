@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicSequenceEnrollmentRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicSequenceEnrollmentRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute contact_id
         #   The unique identifier of the contact to be enrolled in the sequence.
         #

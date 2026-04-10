@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Blogs
@@ -10,7 +10,7 @@ module HubspotSDK
             sig do
               params(
                 inputs: T::Array[String],
-                request_options: HubspotSDK::RequestOptions::OrHash
+                request_options: HubSpotSDK::RequestOptions::OrHash
               ).void
             end
             def delete(
@@ -23,8 +23,8 @@ module HubspotSDK
             # Create the Blog Tag objects detailed in the request body.
             sig do
               params(
-                inputs: T::Array[HubspotSDK::Cms::Blogs::Tag::OrHash],
-                request_options: HubspotSDK::RequestOptions::OrHash
+                inputs: T::Array[HubSpotSDK::Cms::Blogs::Tag::OrHash],
+                request_options: HubSpotSDK::RequestOptions::OrHash
               ).returns(StringIO)
             end
             def create_batch(
@@ -39,7 +39,7 @@ module HubspotSDK
               params(
                 inputs: T::Array[String],
                 archived: T::Boolean,
-                request_options: HubspotSDK::RequestOptions::OrHash
+                request_options: HubSpotSDK::RequestOptions::OrHash
               ).returns(StringIO)
             end
             def get_batch(
@@ -56,7 +56,7 @@ module HubspotSDK
               params(
                 inputs: T::Array[T.anything],
                 archived: T::Boolean,
-                request_options: HubspotSDK::RequestOptions::OrHash
+                request_options: HubSpotSDK::RequestOptions::OrHash
               ).returns(StringIO)
             end
             def update_batch(
@@ -69,7 +69,7 @@ module HubspotSDK
             end
 
             # @api private
-            sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+            sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
             def self.new(client:)
             end
           end

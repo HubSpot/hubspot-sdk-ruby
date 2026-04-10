@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type media_played_percentage_event_request =
         {
-          media_type: HubspotSDK::Models::Cms::MediaPlayedPercentageEventRequest::media_type,
+          media_type: HubSpotSDK::Models::Cms::MediaPlayedPercentageEventRequest::media_type,
           occurred_timestamp: Integer,
           played_percent: Integer,
           session_id: String,
@@ -11,7 +11,7 @@ module HubspotSDK
           contact_id: Integer,
           contact_utk: String,
           external_id: String,
-          external_play_context: HubspotSDK::Models::Cms::MediaPlayedPercentageEventRequest::external_play_context,
+          external_play_context: HubSpotSDK::Models::Cms::MediaPlayedPercentageEventRequest::external_play_context,
           media_bridge_id: Integer,
           media_name: String,
           media_url: String,
@@ -20,8 +20,8 @@ module HubspotSDK
           page_url: String
         }
 
-      class MediaPlayedPercentageEventRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor media_type: HubspotSDK::Models::Cms::MediaPlayedPercentageEventRequest::media_type
+      class MediaPlayedPercentageEventRequest < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor media_type: HubSpotSDK::Models::Cms::MediaPlayedPercentageEventRequest::media_type
 
         attr_accessor occurred_timestamp: Integer
 
@@ -45,11 +45,11 @@ module HubspotSDK
 
         def external_id=: (String) -> String
 
-        attr_reader external_play_context: HubspotSDK::Models::Cms::MediaPlayedPercentageEventRequest::external_play_context?
+        attr_reader external_play_context: HubSpotSDK::Models::Cms::MediaPlayedPercentageEventRequest::external_play_context?
 
         def external_play_context=: (
-          HubspotSDK::Models::Cms::MediaPlayedPercentageEventRequest::external_play_context
-        ) -> HubspotSDK::Models::Cms::MediaPlayedPercentageEventRequest::external_play_context
+          HubSpotSDK::Models::Cms::MediaPlayedPercentageEventRequest::external_play_context
+        ) -> HubSpotSDK::Models::Cms::MediaPlayedPercentageEventRequest::external_play_context
 
         attr_reader media_bridge_id: Integer?
 
@@ -76,7 +76,7 @@ module HubspotSDK
         def page_url=: (String) -> String
 
         def initialize: (
-          media_type: HubspotSDK::Models::Cms::MediaPlayedPercentageEventRequest::media_type,
+          media_type: HubSpotSDK::Models::Cms::MediaPlayedPercentageEventRequest::media_type,
           occurred_timestamp: Integer,
           played_percent: Integer,
           session_id: String,
@@ -84,7 +84,7 @@ module HubspotSDK
           ?contact_id: Integer,
           ?contact_utk: String,
           ?external_id: String,
-          ?external_play_context: HubspotSDK::Models::Cms::MediaPlayedPercentageEventRequest::external_play_context,
+          ?external_play_context: HubSpotSDK::Models::Cms::MediaPlayedPercentageEventRequest::external_play_context,
           ?media_bridge_id: Integer,
           ?media_name: String,
           ?media_url: String,
@@ -94,7 +94,7 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
-          media_type: HubspotSDK::Models::Cms::MediaPlayedPercentageEventRequest::media_type,
+          media_type: HubSpotSDK::Models::Cms::MediaPlayedPercentageEventRequest::media_type,
           occurred_timestamp: Integer,
           played_percent: Integer,
           session_id: String,
@@ -102,7 +102,7 @@ module HubspotSDK
           contact_id: Integer,
           contact_utk: String,
           external_id: String,
-          external_play_context: HubspotSDK::Models::Cms::MediaPlayedPercentageEventRequest::external_play_context,
+          external_play_context: HubSpotSDK::Models::Cms::MediaPlayedPercentageEventRequest::external_play_context,
           media_bridge_id: Integer,
           media_name: String,
           media_url: String,
@@ -114,7 +114,7 @@ module HubspotSDK
         type media_type = :AUDIO | :DOCUMENT | :IMAGE | :OTHER | :VIDEO
 
         module MediaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUDIO: :AUDIO
           DOCUMENT: :DOCUMENT
@@ -122,18 +122,18 @@ module HubspotSDK
           OTHER: :OTHER
           VIDEO: :VIDEO
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::MediaPlayedPercentageEventRequest::media_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::MediaPlayedPercentageEventRequest::media_type]
         end
 
         type external_play_context = :EMAIL | :EXTERNAL_PAGE
 
         module ExternalPlayContext
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL: :EMAIL
           EXTERNAL_PAGE: :EXTERNAL_PAGE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::MediaPlayedPercentageEventRequest::external_play_context]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::MediaPlayedPercentageEventRequest::external_play_context]
         end
       end
     end

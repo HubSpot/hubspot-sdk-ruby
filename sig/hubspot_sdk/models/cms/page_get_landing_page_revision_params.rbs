@@ -1,13 +1,13 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type page_get_landing_page_revision_params =
         { object_id_: String, revision_id: String }
-        & HubspotSDK::Internal::Type::request_parameters
+        & HubSpotSDK::Internal::Type::request_parameters
 
-      class PageGetLandingPageRevisionParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class PageGetLandingPageRevisionParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         attr_accessor object_id_: String
 
@@ -16,13 +16,13 @@ module HubspotSDK
         def initialize: (
           object_id_: String,
           revision_id: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           object_id_: String,
           revision_id: String,
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
       end
     end

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class MarketingEvents
         class Settings
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Marketing::MarketingEvents::SettingCreateOrUpdateParams}
+          # {HubSpotSDK::Models::Marketing::MarketingEvents::SettingCreateOrUpdateParams}
           # for more details.
           #
           # Create or update the current settings for the application.
@@ -17,19 +17,19 @@ module HubspotSDK
           #
           # @param event_details_url [String] The url that will be used to fetch marketing event details by id. Must contain a
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::EventDetailSettings]
+          # @return [HubSpotSDK::Models::Marketing::EventDetailSettings]
           #
-          # @see HubspotSDK::Models::Marketing::MarketingEvents::SettingCreateOrUpdateParams
+          # @see HubSpotSDK::Models::Marketing::MarketingEvents::SettingCreateOrUpdateParams
           def create_or_update(app_id, params)
             parsed, options =
-              HubspotSDK::Marketing::MarketingEvents::SettingCreateOrUpdateParams.dump_request(params)
+              HubSpotSDK::Marketing::MarketingEvents::SettingCreateOrUpdateParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["marketing/marketing-events/2026-03/%1$s/settings", app_id],
               body: parsed,
-              model: HubspotSDK::Marketing::EventDetailSettings,
+              model: HubSpotSDK::Marketing::EventDetailSettings,
               options: options
             )
           end
@@ -39,23 +39,23 @@ module HubspotSDK
           # @overload get(app_id, request_options: {})
           #
           # @param app_id [Integer]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::EventDetailSettings]
+          # @return [HubSpotSDK::Models::Marketing::EventDetailSettings]
           #
-          # @see HubspotSDK::Models::Marketing::MarketingEvents::SettingGetParams
+          # @see HubSpotSDK::Models::Marketing::MarketingEvents::SettingGetParams
           def get(app_id, params = {})
             @client.request(
               method: :get,
               path: ["marketing/marketing-events/2026-03/%1$s/settings", app_id],
-              model: HubspotSDK::Marketing::EventDetailSettings,
+              model: HubSpotSDK::Marketing::EventDetailSettings,
               options: params[:request_options]
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

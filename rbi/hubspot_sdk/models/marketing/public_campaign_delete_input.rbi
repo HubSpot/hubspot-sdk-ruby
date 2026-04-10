@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicCampaignDeleteInput < HubspotSDK::Internal::Type::BaseModel
+      class PublicCampaignDeleteInput < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::PublicCampaignDeleteInput,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::PublicCampaignDeleteInput,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

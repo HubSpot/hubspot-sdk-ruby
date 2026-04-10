@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_font_style =
@@ -11,7 +11,7 @@ module HubspotSDK
           underline: bool
         }
 
-      class PublicFontStyle < HubspotSDK::Internal::Type::BaseModel
+      class PublicFontStyle < HubSpotSDK::Internal::Type::BaseModel
         attr_reader bold: bool?
 
         def bold=: (bool) -> bool

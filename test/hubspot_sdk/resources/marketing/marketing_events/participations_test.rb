@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Marketing::MarketingEvents::ParticipationsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Marketing::MarketingEvents::ParticipationsTest < HubSpotSDK::Test::ResourceTest
   def test_get_by_external_account_and_event_id_required_params
     skip("Mock server tests are disabled")
 
@@ -13,7 +13,7 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEvents::ParticipationsTes
       )
 
     assert_pattern do
-      response => HubspotSDK::Marketing::AttendanceCounters
+      response => HubSpotSDK::Marketing::AttendanceCounters
     end
 
     assert_pattern do
@@ -32,7 +32,7 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEvents::ParticipationsTes
     response = @hubspot.marketing.marketing_events.participations.get_by_id(0)
 
     assert_pattern do
-      response => HubspotSDK::Marketing::AttendanceCounters
+      response => HubSpotSDK::Marketing::AttendanceCounters
     end
 
     assert_pattern do
@@ -52,22 +52,22 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEvents::ParticipationsTes
       @hubspot.marketing.marketing_events.participations.list_breakdown_by_contact("contactIdentifier")
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Marketing::ParticipationBreakdown
+      row => HubSpotSDK::Marketing::ParticipationBreakdown
     end
 
     assert_pattern do
       row => {
         id: String,
-        associations: HubspotSDK::Marketing::ParticipationAssociations,
+        associations: HubSpotSDK::Marketing::ParticipationAssociations,
         created_at: Time,
-        properties: HubspotSDK::Marketing::ParticipationProperties
+        properties: HubSpotSDK::Marketing::ParticipationProperties
       }
     end
   end
@@ -82,22 +82,22 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEvents::ParticipationsTes
       )
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Marketing::ParticipationBreakdown
+      row => HubSpotSDK::Marketing::ParticipationBreakdown
     end
 
     assert_pattern do
       row => {
         id: String,
-        associations: HubspotSDK::Marketing::ParticipationAssociations,
+        associations: HubSpotSDK::Marketing::ParticipationAssociations,
         created_at: Time,
-        properties: HubspotSDK::Marketing::ParticipationProperties
+        properties: HubSpotSDK::Marketing::ParticipationProperties
       }
     end
   end
@@ -108,22 +108,22 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEvents::ParticipationsTes
     response = @hubspot.marketing.marketing_events.participations.list_breakdown_by_id(0)
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Marketing::ParticipationBreakdown
+      row => HubSpotSDK::Marketing::ParticipationBreakdown
     end
 
     assert_pattern do
       row => {
         id: String,
-        associations: HubspotSDK::Marketing::ParticipationAssociations,
+        associations: HubSpotSDK::Marketing::ParticipationAssociations,
         created_at: Time,
-        properties: HubspotSDK::Marketing::ParticipationProperties
+        properties: HubSpotSDK::Marketing::ParticipationProperties
       }
     end
   end

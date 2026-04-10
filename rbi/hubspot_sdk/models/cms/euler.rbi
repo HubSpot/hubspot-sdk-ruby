@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Euler < HubspotSDK::Internal::Type::BaseModel
+      class Euler < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::Euler, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::Euler, HubSpotSDK::Internal::AnyHash)
           end
 
-        sig { returns(HubspotSDK::Cms::Euler::Operator::TaggedSymbol) }
+        sig { returns(HubSpotSDK::Cms::Euler::Operator::TaggedSymbol) }
         attr_accessor :operator
 
         sig { returns(T.nilable(String)) }
@@ -26,7 +26,7 @@ module HubspotSDK
 
         sig do
           params(
-            operator: HubspotSDK::Cms::Euler::Operator::OrSymbol,
+            operator: HubSpotSDK::Cms::Euler::Operator::OrSymbol,
             property_name: String,
             value: Float
           ).returns(T.attached_class)
@@ -37,7 +37,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              operator: HubspotSDK::Cms::Euler::Operator::TaggedSymbol,
+              operator: HubSpotSDK::Cms::Euler::Operator::TaggedSymbol,
               property_name: String,
               value: Float
             }
@@ -47,17 +47,17 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
-            T.type_alias { T.all(Symbol, HubspotSDK::Cms::Euler::Operator) }
+            T.type_alias { T.all(Symbol, HubSpotSDK::Cms::Euler::Operator) }
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          EULER = T.let(:EULER, HubspotSDK::Cms::Euler::Operator::TaggedSymbol)
+          EULER = T.let(:EULER, HubSpotSDK::Cms::Euler::Operator::TaggedSymbol)
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Cms::Euler::Operator::TaggedSymbol]
+              T::Array[HubSpotSDK::Cms::Euler::Operator::TaggedSymbol]
             )
           end
           def self.values

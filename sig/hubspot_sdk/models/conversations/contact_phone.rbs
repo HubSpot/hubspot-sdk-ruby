@@ -1,42 +1,42 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type contact_phone =
         {
           phone: String,
-          type: HubspotSDK::Models::Conversations::ContactPhone::type_
+          type: HubSpotSDK::Models::Conversations::ContactPhone::type_
         }
 
-      class ContactPhone < HubspotSDK::Internal::Type::BaseModel
+      class ContactPhone < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor phone: String
 
-        attr_reader type: HubspotSDK::Models::Conversations::ContactPhone::type_?
+        attr_reader type: HubSpotSDK::Models::Conversations::ContactPhone::type_?
 
         def type=: (
-          HubspotSDK::Models::Conversations::ContactPhone::type_
-        ) -> HubspotSDK::Models::Conversations::ContactPhone::type_
+          HubSpotSDK::Models::Conversations::ContactPhone::type_
+        ) -> HubSpotSDK::Models::Conversations::ContactPhone::type_
 
         def initialize: (
           phone: String,
-          ?type: HubspotSDK::Models::Conversations::ContactPhone::type_
+          ?type: HubSpotSDK::Models::Conversations::ContactPhone::type_
         ) -> void
 
         def to_hash: -> {
           phone: String,
-          type: HubspotSDK::Models::Conversations::ContactPhone::type_
+          type: HubSpotSDK::Models::Conversations::ContactPhone::type_
         }
 
         type type_ = :CELL | :HOME | :MAIN | :WORK
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CELL: :CELL
           HOME: :HOME
           MAIN: :MAIN
           WORK: :WORK
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::ContactPhone::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Conversations::ContactPhone::type_]
         end
       end
     end

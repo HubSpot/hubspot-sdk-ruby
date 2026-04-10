@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type memberships_update_response =
@@ -8,7 +8,7 @@ module HubspotSDK
           records_ids_added: ::Array[String]
         }
 
-      class MembershipsUpdateResponse < HubspotSDK::Internal::Type::BaseModel
+      class MembershipsUpdateResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor record_ids_missing: ::Array[String]
 
         attr_accessor record_ids_removed: ::Array[String]

@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class MarketingEvents
@@ -10,8 +10,8 @@ module HubspotSDK
             params(
               external_event_id: String,
               external_account_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Marketing::MarketingEventDefaultResponse)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Marketing::MarketingEventDefaultResponse)
           end
           def cancel_by_external_event_id(
             external_event_id,
@@ -27,8 +27,8 @@ module HubspotSDK
               external_account_id: String,
               end_date_time: Time,
               start_date_time: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Marketing::MarketingEventDefaultResponse)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Marketing::MarketingEventDefaultResponse)
           end
           def complete_by_external_event_id(
             # Path param
@@ -44,7 +44,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

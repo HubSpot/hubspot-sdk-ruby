@@ -4,9 +4,9 @@ require_relative "lib/hubspot_sdk/version"
 
 Gem::Specification.new do |s|
   s.name = "hubspot-sdk"
-  s.version = HubspotSDK::VERSION
-  s.summary = "Ruby library to access the Hubspot API"
-  s.authors = ["Hubspot"]
+  s.version = HubSpotSDK::VERSION
+  s.summary = "Ruby library to access the HubSpot API"
+  s.authors = ["HubSpot"]
   s.email = ""
   s.homepage = "https://gemdocs.org/gems/hubspot-sdk"
   s.metadata["homepage_uri"] = s.homepage

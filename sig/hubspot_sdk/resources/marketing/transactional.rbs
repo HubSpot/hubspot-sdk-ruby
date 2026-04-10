@@ -1,12 +1,12 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class Transactional
-        attr_reader single_email: HubspotSDK::Resources::Marketing::Transactional::SingleEmail
+        attr_reader single_email: HubSpotSDK::Resources::Marketing::Transactional::SingleEmail
 
-        attr_reader smtp_tokens: HubspotSDK::Resources::Marketing::Transactional::SmtpTokens
+        attr_reader smtp_tokens: HubSpotSDK::Resources::Marketing::Transactional::SmtpTokens
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

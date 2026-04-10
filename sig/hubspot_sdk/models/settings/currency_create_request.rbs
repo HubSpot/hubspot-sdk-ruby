@@ -1,20 +1,20 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       type currency_create_request =
         {
-          currency_code: HubspotSDK::Models::Settings::CurrencyCreateRequest::currency_code
+          currency_code: HubSpotSDK::Models::Settings::CurrencyCreateRequest::currency_code
         }
 
-      class CurrencyCreateRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor currency_code: HubspotSDK::Models::Settings::CurrencyCreateRequest::currency_code
+      class CurrencyCreateRequest < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor currency_code: HubSpotSDK::Models::Settings::CurrencyCreateRequest::currency_code
 
         def initialize: (
-          currency_code: HubspotSDK::Models::Settings::CurrencyCreateRequest::currency_code
+          currency_code: HubSpotSDK::Models::Settings::CurrencyCreateRequest::currency_code
         ) -> void
 
         def to_hash: -> {
-          currency_code: HubspotSDK::Models::Settings::CurrencyCreateRequest::currency_code
+          currency_code: HubSpotSDK::Models::Settings::CurrencyCreateRequest::currency_code
         }
 
         type currency_code =
@@ -196,7 +196,7 @@ module HubspotSDK
           | :ZWL
 
         module CurrencyCode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AED: :AED
           AFN: :AFN
@@ -375,7 +375,7 @@ module HubspotSDK
           ZMW: :ZMW
           ZWL: :ZWL
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Settings::CurrencyCreateRequest::currency_code]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Settings::CurrencyCreateRequest::currency_code]
         end
       end
     end

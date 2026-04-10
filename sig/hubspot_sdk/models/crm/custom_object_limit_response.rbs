@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type custom_object_limit_response =
         { limit: Integer, percentage: Float, usage: Integer }
 
-      class CustomObjectLimitResponse < HubspotSDK::Internal::Type::BaseModel
+      class CustomObjectLimitResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor limit: Integer
 
         attr_accessor percentage: Float

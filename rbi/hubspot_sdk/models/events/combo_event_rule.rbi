@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class ComboEventRule < HubspotSDK::Internal::Type::BaseModel
+      class ComboEventRule < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::ComboEventRule,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::ComboEventRule,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -18,7 +18,7 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :event_type_id
 
-        sig { returns(T::Array[HubspotSDK::Events::PropertyFilter]) }
+        sig { returns(T::Array[HubSpotSDK::Events::PropertyFilter]) }
         attr_accessor :property_filters
 
         sig { returns(T.nilable(Integer)) }
@@ -32,7 +32,7 @@ module HubspotSDK
             count: Integer,
             event_type_id: String,
             property_filters:
-              T::Array[HubspotSDK::Events::PropertyFilter::OrHash],
+              T::Array[HubSpotSDK::Events::PropertyFilter::OrHash],
             lookback_window_days: Integer
           ).returns(T.attached_class)
         end
@@ -49,7 +49,7 @@ module HubspotSDK
             {
               count: Integer,
               event_type_id: String,
-              property_filters: T::Array[HubspotSDK::Events::PropertyFilter],
+              property_filters: T::Array[HubSpotSDK::Events::PropertyFilter],
               lookback_window_days: Integer
             }
           )

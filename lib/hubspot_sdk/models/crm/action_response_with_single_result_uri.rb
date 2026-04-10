@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Exports#get_status
-      class ActionResponseWithSingleResultUri < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::Exports#get_status
+      class ActionResponseWithSingleResultUri < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   The timestamp when the export was completed, in ISO 8601 format.
         #
@@ -21,19 +21,19 @@ module HubspotSDK
         #   The current status of the export, which can be PENDING, PROCESSING, COMPLETE or
         #   CANCELED.
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::ActionResponseWithSingleResultUri::Status]
-        required :status, enum: -> { HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status }
+        #   @return [Symbol, HubSpotSDK::Models::Crm::ActionResponseWithSingleResultUri::Status]
+        required :status, enum: -> { HubSpotSDK::Crm::ActionResponseWithSingleResultUri::Status }
 
         # @!attribute errors
         #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
+        #   @return [Array<HubSpotSDK::Models::StandardError>, nil]
+        optional :errors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError] }
 
         # @!attribute links
         #   A collection of related links associated with the export.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute num_errors
         #   The number of errors encountered during the export process.
@@ -55,15 +55,15 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil, result: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::ActionResponseWithSingleResultUri} for more details.
+        #   {HubSpotSDK::Models::Crm::ActionResponseWithSingleResultUri} for more details.
         #
         #   @param completed_at [Time] The timestamp when the export was completed, in ISO 8601 format.
         #
         #   @param started_at [Time] The timestamp when the export process started, in ISO 8601 format.
         #
-        #   @param status [Symbol, HubspotSDK::Models::Crm::ActionResponseWithSingleResultUri::Status] The current status of the export, which can be PENDING, PROCESSING, COMPLETE or
+        #   @param status [Symbol, HubSpotSDK::Models::Crm::ActionResponseWithSingleResultUri::Status] The current status of the export, which can be PENDING, PROCESSING, COMPLETE or
         #
-        #   @param errors [Array<HubspotSDK::Models::StandardError>]
+        #   @param errors [Array<HubSpotSDK::Models::StandardError>]
         #
         #   @param links [Hash{Symbol=>String}] A collection of related links associated with the export.
         #
@@ -76,9 +76,9 @@ module HubspotSDK
         # The current status of the export, which can be PENDING, PROCESSING, COMPLETE or
         # CANCELED.
         #
-        # @see HubspotSDK::Models::Crm::ActionResponseWithSingleResultUri#status
+        # @see HubSpotSDK::Models::Crm::ActionResponseWithSingleResultUri#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_email_from_details =
         { custom_reply_to: String, from_name: String, reply_to: String }
 
-      class PublicEmailFromDetails < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailFromDetails < HubSpotSDK::Internal::Type::BaseModel
         attr_reader custom_reply_to: String?
 
         def custom_reply_to=: (String) -> String

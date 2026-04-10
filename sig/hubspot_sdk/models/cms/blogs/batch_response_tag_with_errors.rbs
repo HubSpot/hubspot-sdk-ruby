@@ -1,33 +1,33 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
         type batch_response_tag_with_errors =
           {
             completed_at: Time,
-            results: ::Array[HubspotSDK::Cms::Blogs::Tag],
+            results: ::Array[HubSpotSDK::Cms::Blogs::Tag],
             started_at: Time,
-            status: HubspotSDK::Models::Cms::Blogs::BatchResponseTagWithErrors::status,
-            errors: ::Array[HubspotSDK::StandardError],
+            status: HubSpotSDK::Models::Cms::Blogs::BatchResponseTagWithErrors::status,
+            errors: ::Array[HubSpotSDK::StandardError],
             links: ::Hash[Symbol, String],
             num_errors: Integer,
             requested_at: Time
           }
 
-        class BatchResponseTagWithErrors < HubspotSDK::Internal::Type::BaseModel
+        class BatchResponseTagWithErrors < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor completed_at: Time
 
-          attr_accessor results: ::Array[HubspotSDK::Cms::Blogs::Tag]
+          attr_accessor results: ::Array[HubSpotSDK::Cms::Blogs::Tag]
 
           attr_accessor started_at: Time
 
-          attr_accessor status: HubspotSDK::Models::Cms::Blogs::BatchResponseTagWithErrors::status
+          attr_accessor status: HubSpotSDK::Models::Cms::Blogs::BatchResponseTagWithErrors::status
 
-          attr_reader errors: ::Array[HubspotSDK::StandardError]?
+          attr_reader errors: ::Array[HubSpotSDK::StandardError]?
 
           def errors=: (
-            ::Array[HubspotSDK::StandardError]
-          ) -> ::Array[HubspotSDK::StandardError]
+            ::Array[HubSpotSDK::StandardError]
+          ) -> ::Array[HubSpotSDK::StandardError]
 
           attr_reader links: ::Hash[Symbol, String]?
 
@@ -43,10 +43,10 @@ module HubspotSDK
 
           def initialize: (
             completed_at: Time,
-            results: ::Array[HubspotSDK::Cms::Blogs::Tag],
+            results: ::Array[HubSpotSDK::Cms::Blogs::Tag],
             started_at: Time,
-            status: HubspotSDK::Models::Cms::Blogs::BatchResponseTagWithErrors::status,
-            ?errors: ::Array[HubspotSDK::StandardError],
+            status: HubSpotSDK::Models::Cms::Blogs::BatchResponseTagWithErrors::status,
+            ?errors: ::Array[HubSpotSDK::StandardError],
             ?links: ::Hash[Symbol, String],
             ?num_errors: Integer,
             ?requested_at: Time
@@ -54,10 +54,10 @@ module HubspotSDK
 
           def to_hash: -> {
             completed_at: Time,
-            results: ::Array[HubspotSDK::Cms::Blogs::Tag],
+            results: ::Array[HubSpotSDK::Cms::Blogs::Tag],
             started_at: Time,
-            status: HubspotSDK::Models::Cms::Blogs::BatchResponseTagWithErrors::status,
-            errors: ::Array[HubspotSDK::StandardError],
+            status: HubSpotSDK::Models::Cms::Blogs::BatchResponseTagWithErrors::status,
+            errors: ::Array[HubSpotSDK::StandardError],
             links: ::Hash[Symbol, String],
             num_errors: Integer,
             requested_at: Time
@@ -66,14 +66,14 @@ module HubspotSDK
           type status = :CANCELED | :COMPLETE | :PENDING | :PROCESSING
 
           module Status
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             CANCELED: :CANCELED
             COMPLETE: :COMPLETE
             PENDING: :PENDING
             PROCESSING: :PROCESSING
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Cms::Blogs::BatchResponseTagWithErrors::status]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Blogs::BatchResponseTagWithErrors::status]
           end
         end
       end

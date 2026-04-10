@@ -1,24 +1,24 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class CollectionResponseSubscriptionResponseNoPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseSubscriptionResponseNoPaging < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Webhooks::CollectionResponseSubscriptionResponseNoPaging,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Webhooks::CollectionResponseSubscriptionResponseNoPaging,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Webhooks::SubscriptionResponse1]) }
+        sig { returns(T::Array[HubSpotSDK::Webhooks::SubscriptionResponse1]) }
         attr_accessor :results
 
         sig do
           params(
             results:
-              T::Array[HubspotSDK::Webhooks::SubscriptionResponse1::OrHash]
+              T::Array[HubSpotSDK::Webhooks::SubscriptionResponse1::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(results:)
@@ -26,7 +26,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { results: T::Array[HubspotSDK::Webhooks::SubscriptionResponse1] }
+            { results: T::Array[HubSpotSDK::Webhooks::SubscriptionResponse1] }
           )
         end
         def to_hash

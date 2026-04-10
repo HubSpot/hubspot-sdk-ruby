@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Group < HubspotSDK::Internal::Type::BaseModel
+      class Group < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute deleted
         #
         #   @return [Boolean]
-        required :deleted, HubspotSDK::Internal::Type::Boolean
+        required :deleted, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute display_name
         #
@@ -32,7 +32,7 @@ module HubspotSDK
         # @!attribute hubspot_defined
         #
         #   @return [Boolean]
-        required :hubspot_defined, HubspotSDK::Internal::Type::Boolean, api_name: :hubspotDefined
+        required :hubspot_defined, HubSpotSDK::Internal::Type::Boolean, api_name: :hubspotDefined
 
         # @!attribute name
         #

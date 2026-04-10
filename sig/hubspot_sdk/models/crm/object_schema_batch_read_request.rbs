@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type object_schema_batch_read_request =
@@ -9,7 +9,7 @@ module HubspotSDK
           inputs: ::Array[String]
         }
 
-      class ObjectSchemaBatchReadRequest < HubspotSDK::Internal::Type::BaseModel
+      class ObjectSchemaBatchReadRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor include_association_definitions: bool
 
         attr_accessor include_audit_metadata: bool

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Imports#create
-      class PublicImportResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::Imports#create
+      class PublicImportResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for this import.
         #
@@ -21,26 +21,26 @@ module HubspotSDK
         #
         #   @return [Array<String>]
         required :mapped_object_type_ids,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :mappedObjectTypeIds
 
         # @!attribute metadata
         #
-        #   @return [HubspotSDK::Models::Crm::PublicImportMetadata]
-        required :metadata, -> { HubspotSDK::Crm::PublicImportMetadata }
+        #   @return [HubSpotSDK::Models::Crm::PublicImportMetadata]
+        required :metadata, -> { HubSpotSDK::Crm::PublicImportMetadata }
 
         # @!attribute opt_out_import
         #   Whether or not the import is a list of people disqualified from receiving
         #   emails.
         #
         #   @return [Boolean]
-        required :opt_out_import, HubspotSDK::Internal::Type::Boolean, api_name: :optOutImport
+        required :opt_out_import, HubSpotSDK::Internal::Type::Boolean, api_name: :optOutImport
 
         # @!attribute state
         #   The status of the import.
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicImportResponse::State]
-        required :state, enum: -> { HubspotSDK::Crm::PublicImportResponse::State }
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicImportResponse::State]
+        required :state, enum: -> { HubSpotSDK::Crm::PublicImportResponse::State }
 
         # @!attribute updated_at
         #   The timestamp when the import record was last updated, formatted as an ISO 8601
@@ -59,24 +59,24 @@ module HubspotSDK
         #   The complete import request configuration as a JSON object.
         #
         #   @return [Object, nil]
-        optional :import_request_json, HubspotSDK::Internal::Type::Unknown, api_name: :importRequestJson
+        optional :import_request_json, HubSpotSDK::Internal::Type::Unknown, api_name: :importRequestJson
 
         # @!attribute import_source
         #   Indicates where/how the import was initiated.
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicImportResponse::ImportSource, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicImportResponse::ImportSource, nil]
         optional :import_source,
-                 enum: -> { HubspotSDK::Crm::PublicImportResponse::ImportSource },
+                 enum: -> { HubSpotSDK::Crm::PublicImportResponse::ImportSource },
                  api_name: :importSource
 
         # @!attribute import_template
         #
-        #   @return [HubspotSDK::Models::Crm::ImportTemplate, nil]
-        optional :import_template, -> { HubspotSDK::Crm::ImportTemplate }, api_name: :importTemplate
+        #   @return [HubSpotSDK::Models::Crm::ImportTemplate, nil]
+        optional :import_template, -> { HubSpotSDK::Crm::ImportTemplate }, api_name: :importTemplate
 
         # @!method initialize(id:, created_at:, mapped_object_type_ids:, metadata:, opt_out_import:, state:, updated_at:, import_name: nil, import_request_json: nil, import_source: nil, import_template: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicImportResponse} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicImportResponse} for more details.
         #
         #   @param id [String] The unique identifier for this import.
         #
@@ -84,11 +84,11 @@ module HubspotSDK
         #
         #   @param mapped_object_type_ids [Array<String>]
         #
-        #   @param metadata [HubspotSDK::Models::Crm::PublicImportMetadata]
+        #   @param metadata [HubSpotSDK::Models::Crm::PublicImportMetadata]
         #
         #   @param opt_out_import [Boolean] Whether or not the import is a list of people disqualified from receiving emails
         #
-        #   @param state [Symbol, HubspotSDK::Models::Crm::PublicImportResponse::State] The status of the import.
+        #   @param state [Symbol, HubSpotSDK::Models::Crm::PublicImportResponse::State] The status of the import.
         #
         #   @param updated_at [Time] The timestamp when the import record was last updated, formatted as an ISO 8601
         #
@@ -96,15 +96,15 @@ module HubspotSDK
         #
         #   @param import_request_json [Object] The complete import request configuration as a JSON object.
         #
-        #   @param import_source [Symbol, HubspotSDK::Models::Crm::PublicImportResponse::ImportSource] Indicates where/how the import was initiated.
+        #   @param import_source [Symbol, HubSpotSDK::Models::Crm::PublicImportResponse::ImportSource] Indicates where/how the import was initiated.
         #
-        #   @param import_template [HubspotSDK::Models::Crm::ImportTemplate]
+        #   @param import_template [HubSpotSDK::Models::Crm::ImportTemplate]
 
         # The status of the import.
         #
-        # @see HubspotSDK::Models::Crm::PublicImportResponse#state
+        # @see HubSpotSDK::Models::Crm::PublicImportResponse#state
         module State
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           DEFERRED = :DEFERRED
@@ -120,9 +120,9 @@ module HubspotSDK
 
         # Indicates where/how the import was initiated.
         #
-        # @see HubspotSDK::Models::Crm::PublicImportResponse#import_source
+        # @see HubSpotSDK::Models::Crm::PublicImportResponse#import_source
         module ImportSource
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           API = :API
           CRM_UI = :CRM_UI

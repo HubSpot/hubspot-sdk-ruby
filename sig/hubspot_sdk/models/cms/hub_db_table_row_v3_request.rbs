@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type hub_db_table_row_v3_request =
@@ -10,7 +10,7 @@ module HubspotSDK
           path: String
         }
 
-      class HubDBTableRowV3Request < HubspotSDK::Internal::Type::BaseModel
+      class HubDBTableRowV3Request < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor child_table_id: Integer
 
         attr_accessor display_index: Integer

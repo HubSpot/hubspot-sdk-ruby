@@ -1,11 +1,11 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class VersionUser < HubspotSDK::Internal::Type::BaseModel
+    class VersionUser < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
-          T.any(HubspotSDK::VersionUser, HubspotSDK::Internal::AnyHash)
+          T.any(HubSpotSDK::VersionUser, HubSpotSDK::Internal::AnyHash)
         end
 
       # The unique ID of the User.

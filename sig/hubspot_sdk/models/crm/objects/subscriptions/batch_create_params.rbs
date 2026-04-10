@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Objects
         module Subscriptions
           type batch_create_params =
-            {  } & HubspotSDK::Internal::Type::request_parameters
+            {  } & HubSpotSDK::Internal::Type::request_parameters
 
-          class BatchCreateParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectBatchInputForCreate
-            extend HubspotSDK::Internal::Type::RequestParameters::Converter
-            include HubspotSDK::Internal::Type::RequestParameters
+          class BatchCreateParams < HubSpotSDK::Models::Crm::BatchInputSimplePublicObjectBatchInputForCreate
+            extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+            include HubSpotSDK::Internal::Type::RequestParameters
 
-            def initialize: (?request_options: HubspotSDK::request_opts) -> void
+            def initialize: (?request_options: HubSpotSDK::request_opts) -> void
 
-            def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+            def to_hash: -> { request_options: HubSpotSDK::RequestOptions }
           end
         end
       end

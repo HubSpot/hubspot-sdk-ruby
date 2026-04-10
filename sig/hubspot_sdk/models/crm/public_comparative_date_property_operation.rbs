@@ -1,21 +1,21 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_comparative_date_property_operation =
         {
           comparison_property_name: String,
           include_objects_with_no_value_set: bool,
-          operation_type: HubspotSDK::Models::Crm::PublicComparativeDatePropertyOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicComparativeDatePropertyOperation::operation_type,
           operator: String,
           default_comparison_value: String
         }
 
-      class PublicComparativeDatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicComparativeDatePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor comparison_property_name: String
 
         attr_accessor include_objects_with_no_value_set: bool
 
-        attr_accessor operation_type: HubspotSDK::Models::Crm::PublicComparativeDatePropertyOperation::operation_type
+        attr_accessor operation_type: HubSpotSDK::Models::Crm::PublicComparativeDatePropertyOperation::operation_type
 
         attr_accessor operator: String
 
@@ -26,7 +26,7 @@ module HubspotSDK
         def initialize: (
           comparison_property_name: String,
           include_objects_with_no_value_set: bool,
-          operation_type: HubspotSDK::Models::Crm::PublicComparativeDatePropertyOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicComparativeDatePropertyOperation::operation_type,
           operator: String,
           ?default_comparison_value: String
         ) -> void
@@ -34,7 +34,7 @@ module HubspotSDK
         def to_hash: -> {
           comparison_property_name: String,
           include_objects_with_no_value_set: bool,
-          operation_type: HubspotSDK::Models::Crm::PublicComparativeDatePropertyOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicComparativeDatePropertyOperation::operation_type,
           operator: String,
           default_comparison_value: String
         }
@@ -42,11 +42,11 @@ module HubspotSDK
         type operation_type = :COMPARATIVE_DATE
 
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           COMPARATIVE_DATE: :COMPARATIVE_DATE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicComparativeDatePropertyOperation::operation_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicComparativeDatePropertyOperation::operation_type]
         end
       end
     end

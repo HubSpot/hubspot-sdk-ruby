@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class UserProvisionRequest < HubspotSDK::Internal::Type::BaseModel
+      class UserProvisionRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Settings::UserProvisionRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Settings::UserProvisionRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

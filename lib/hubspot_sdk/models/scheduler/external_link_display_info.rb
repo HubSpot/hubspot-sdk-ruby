@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalLinkDisplayInfo < HubspotSDK::Internal::Type::BaseModel
+      class ExternalLinkDisplayInfo < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute avatar
         #   The URL of the user's custom uploaded avatar image.
         #
@@ -26,14 +26,14 @@ module HubspotSDK
         #   Option for determining which avatar to display on scheduling page. Accepted
         #   values are: PROFILE_IMAGE, COMPANY_LOGO, CUSTOM_AVATAR,
         #
-        #   @return [Symbol, HubspotSDK::Models::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption, nil]
         optional :public_display_avatar_option,
-                 enum: -> { HubspotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption },
+                 enum: -> { HubSpotSDK::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption },
                  api_name: :publicDisplayAvatarOption
 
         # @!method initialize(avatar: nil, company_avatar: nil, headline: nil, public_display_avatar_option: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Scheduler::ExternalLinkDisplayInfo} for more details.
+        #   {HubSpotSDK::Models::Scheduler::ExternalLinkDisplayInfo} for more details.
         #
         #   @param avatar [String] The URL of the user's custom uploaded avatar image.
         #
@@ -41,14 +41,14 @@ module HubspotSDK
         #
         #   @param headline [String] Deprecated field with no impact of link display info.
         #
-        #   @param public_display_avatar_option [Symbol, HubspotSDK::Models::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption] Option for determining which avatar to display on scheduling page. Accepted valu
+        #   @param public_display_avatar_option [Symbol, HubSpotSDK::Models::Scheduler::ExternalLinkDisplayInfo::PublicDisplayAvatarOption] Option for determining which avatar to display on scheduling page. Accepted valu
 
         # Option for determining which avatar to display on scheduling page. Accepted
         # values are: PROFILE_IMAGE, COMPANY_LOGO, CUSTOM_AVATAR,
         #
-        # @see HubspotSDK::Models::Scheduler::ExternalLinkDisplayInfo#public_display_avatar_option
+        # @see HubSpotSDK::Models::Scheduler::ExternalLinkDisplayInfo#public_display_avatar_option
         module PublicDisplayAvatarOption
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           COMPANY_LOGO = :COMPANY_LOGO
           CUSTOM_AVATAR = :CUSTOM_AVATAR

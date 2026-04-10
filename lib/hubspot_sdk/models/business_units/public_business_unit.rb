@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module BusinessUnits
-      class PublicBusinessUnit < HubspotSDK::Internal::Type::BaseModel
+      class PublicBusinessUnit < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The Business Unit's unique ID
         #
@@ -18,9 +18,9 @@ module HubspotSDK
 
         # @!attribute logo_metadata
         #
-        #   @return [HubspotSDK::Models::BusinessUnits::PublicBusinessUnitLogoMetadata, nil]
+        #   @return [HubSpotSDK::Models::BusinessUnits::PublicBusinessUnitLogoMetadata, nil]
         optional :logo_metadata,
-                 -> { HubspotSDK::BusinessUnits::PublicBusinessUnitLogoMetadata },
+                 -> { HubSpotSDK::BusinessUnits::PublicBusinessUnitLogoMetadata },
                  api_name: :logoMetadata
 
         # @!method initialize(id:, name:, logo_metadata: nil)
@@ -28,7 +28,7 @@ module HubspotSDK
         #
         #   @param name [String] The Business Unit's name
         #
-        #   @param logo_metadata [HubspotSDK::Models::BusinessUnits::PublicBusinessUnitLogoMetadata]
+        #   @param logo_metadata [HubSpotSDK::Models::BusinessUnits::PublicBusinessUnitLogoMetadata]
       end
     end
   end

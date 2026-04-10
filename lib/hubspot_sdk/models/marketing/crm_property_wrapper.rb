@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class CrmPropertyWrapper < HubspotSDK::Internal::Type::BaseModel
+      class CrmPropertyWrapper < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute name
         #   The name of the property in the CRM
         #

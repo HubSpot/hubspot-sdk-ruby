@@ -1,15 +1,15 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type timestamp_of_property_variable =
         {
-          operator: HubspotSDK::Models::Cms::TimestampOfPropertyVariable::operator,
+          operator: HubSpotSDK::Models::Cms::TimestampOfPropertyVariable::operator,
           property_name: String,
           value: String
         }
 
-      class TimestampOfPropertyVariable < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor operator: HubspotSDK::Models::Cms::TimestampOfPropertyVariable::operator
+      class TimestampOfPropertyVariable < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor operator: HubSpotSDK::Models::Cms::TimestampOfPropertyVariable::operator
 
         attr_reader property_name: String?
 
@@ -20,13 +20,13 @@ module HubspotSDK
         def value=: (String) -> String
 
         def initialize: (
-          operator: HubspotSDK::Models::Cms::TimestampOfPropertyVariable::operator,
+          operator: HubSpotSDK::Models::Cms::TimestampOfPropertyVariable::operator,
           ?property_name: String,
           ?value: String
         ) -> void
 
         def to_hash: -> {
-          operator: HubspotSDK::Models::Cms::TimestampOfPropertyVariable::operator,
+          operator: HubSpotSDK::Models::Cms::TimestampOfPropertyVariable::operator,
           property_name: String,
           value: String
         }
@@ -34,11 +34,11 @@ module HubspotSDK
         type operator = :TIMESTAMP_OF_PROPERTY_VARIABLE
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TIMESTAMP_OF_PROPERTY_VARIABLE: :TIMESTAMP_OF_PROPERTY_VARIABLE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::TimestampOfPropertyVariable::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::TimestampOfPropertyVariable::operator]
         end
       end
     end

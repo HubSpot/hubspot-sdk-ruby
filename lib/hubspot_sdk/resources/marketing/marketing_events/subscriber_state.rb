@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class MarketingEvents
@@ -19,18 +19,18 @@ module HubspotSDK
           #
           # @param external_account_id [String] Query param
           #
-          # @param inputs [Array<HubspotSDK::Models::Marketing::MarketingEventEmailSubscriber>] Body param: List of marketing event details to create or update
+          # @param inputs [Array<HubSpotSDK::Models::Marketing::MarketingEventEmailSubscriber>] Body param: List of marketing event details to create or update
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Marketing::MarketingEvents::SubscriberStateRecordByEmailParams
+          # @see HubSpotSDK::Models::Marketing::MarketingEvents::SubscriberStateRecordByEmailParams
           def record_by_email(subscriber_state, params)
             query_params = [:external_account_id]
             parsed, options =
-              HubspotSDK::Marketing::MarketingEvents::SubscriberStateRecordByEmailParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+              HubSpotSDK::Marketing::MarketingEvents::SubscriberStateRecordByEmailParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             external_event_id =
               parsed.delete(:external_event_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -62,18 +62,18 @@ module HubspotSDK
           #
           # @param external_account_id [String] Query param
           #
-          # @param inputs [Array<HubspotSDK::Models::Marketing::MarketingEventSubscriber>] Body param: List of HubSpot contacts to subscribe to the marketing event
+          # @param inputs [Array<HubSpotSDK::Models::Marketing::MarketingEventSubscriber>] Body param: List of HubSpot contacts to subscribe to the marketing event
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Marketing::MarketingEvents::SubscriberStateRecordByIDParams
+          # @see HubSpotSDK::Models::Marketing::MarketingEvents::SubscriberStateRecordByIDParams
           def record_by_id(subscriber_state, params)
             query_params = [:external_account_id]
             parsed, options =
-              HubspotSDK::Marketing::MarketingEvents::SubscriberStateRecordByIDParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+              HubSpotSDK::Marketing::MarketingEvents::SubscriberStateRecordByIDParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             external_event_id =
               parsed.delete(:external_event_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -95,7 +95,7 @@ module HubspotSDK
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

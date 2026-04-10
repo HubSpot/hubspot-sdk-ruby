@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
-      class CollectionResponsePublicAPIUserActionEventForwardPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponsePublicAPIUserActionEventForwardPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Account::PublicAPIUserActionEvent>]
+        #   @return [Array<HubSpotSDK::Models::Account::PublicAPIUserActionEvent>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Account::PublicAPIUserActionEvent] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Account::PublicAPIUserActionEvent] }
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::ForwardPaging, nil]
-        optional :paging, -> { HubspotSDK::ForwardPaging }
+        #   @return [HubSpotSDK::Models::ForwardPaging, nil]
+        optional :paging, -> { HubSpotSDK::ForwardPaging }
 
         # @!method initialize(results:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Account::PublicAPIUserActionEvent>]
-        #   @param paging [HubspotSDK::Models::ForwardPaging]
+        #   @param results [Array<HubSpotSDK::Models::Account::PublicAPIUserActionEvent>]
+        #   @param paging [HubSpotSDK::Models::ForwardPaging]
       end
     end
   end

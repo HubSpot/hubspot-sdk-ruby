@@ -1,33 +1,33 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_email_to_details =
         {
-          contact_ids: HubspotSDK::Marketing::PublicEmailRecipients,
-          contact_ils_lists: HubspotSDK::Marketing::PublicEmailRecipients,
-          contact_lists: HubspotSDK::Marketing::PublicEmailRecipients,
+          contact_ids: HubSpotSDK::Marketing::PublicEmailRecipients,
+          contact_ils_lists: HubSpotSDK::Marketing::PublicEmailRecipients,
+          contact_lists: HubSpotSDK::Marketing::PublicEmailRecipients,
           limit_send_frequency: bool,
           suppress_graymail: bool
         }
 
-      class PublicEmailToDetails < HubspotSDK::Internal::Type::BaseModel
-        attr_reader contact_ids: HubspotSDK::Marketing::PublicEmailRecipients?
+      class PublicEmailToDetails < HubSpotSDK::Internal::Type::BaseModel
+        attr_reader contact_ids: HubSpotSDK::Marketing::PublicEmailRecipients?
 
         def contact_ids=: (
-          HubspotSDK::Marketing::PublicEmailRecipients
-        ) -> HubspotSDK::Marketing::PublicEmailRecipients
+          HubSpotSDK::Marketing::PublicEmailRecipients
+        ) -> HubSpotSDK::Marketing::PublicEmailRecipients
 
-        attr_reader contact_ils_lists: HubspotSDK::Marketing::PublicEmailRecipients?
+        attr_reader contact_ils_lists: HubSpotSDK::Marketing::PublicEmailRecipients?
 
         def contact_ils_lists=: (
-          HubspotSDK::Marketing::PublicEmailRecipients
-        ) -> HubspotSDK::Marketing::PublicEmailRecipients
+          HubSpotSDK::Marketing::PublicEmailRecipients
+        ) -> HubSpotSDK::Marketing::PublicEmailRecipients
 
-        attr_reader contact_lists: HubspotSDK::Marketing::PublicEmailRecipients?
+        attr_reader contact_lists: HubSpotSDK::Marketing::PublicEmailRecipients?
 
         def contact_lists=: (
-          HubspotSDK::Marketing::PublicEmailRecipients
-        ) -> HubspotSDK::Marketing::PublicEmailRecipients
+          HubSpotSDK::Marketing::PublicEmailRecipients
+        ) -> HubSpotSDK::Marketing::PublicEmailRecipients
 
         attr_reader limit_send_frequency: bool?
 
@@ -38,17 +38,17 @@ module HubspotSDK
         def suppress_graymail=: (bool) -> bool
 
         def initialize: (
-          ?contact_ids: HubspotSDK::Marketing::PublicEmailRecipients,
-          ?contact_ils_lists: HubspotSDK::Marketing::PublicEmailRecipients,
-          ?contact_lists: HubspotSDK::Marketing::PublicEmailRecipients,
+          ?contact_ids: HubSpotSDK::Marketing::PublicEmailRecipients,
+          ?contact_ils_lists: HubSpotSDK::Marketing::PublicEmailRecipients,
+          ?contact_lists: HubSpotSDK::Marketing::PublicEmailRecipients,
           ?limit_send_frequency: bool,
           ?suppress_graymail: bool
         ) -> void
 
         def to_hash: -> {
-          contact_ids: HubspotSDK::Marketing::PublicEmailRecipients,
-          contact_ils_lists: HubspotSDK::Marketing::PublicEmailRecipients,
-          contact_lists: HubspotSDK::Marketing::PublicEmailRecipients,
+          contact_ids: HubSpotSDK::Marketing::PublicEmailRecipients,
+          contact_ils_lists: HubSpotSDK::Marketing::PublicEmailRecipients,
+          contact_lists: HubSpotSDK::Marketing::PublicEmailRecipients,
           limit_send_frequency: bool,
           suppress_graymail: bool
         }

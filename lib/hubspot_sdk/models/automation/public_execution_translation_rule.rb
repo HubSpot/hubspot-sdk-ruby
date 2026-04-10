@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicExecutionTranslationRule < HubspotSDK::Internal::Type::BaseModel
+      class PublicExecutionTranslationRule < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute conditions
         #   Defines the conditions that must be met for the execution rule to apply.
         #
         #   @return [Hash{Symbol=>Object}]
-        required :conditions, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]
+        required :conditions, HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown]
 
         # @!attribute label_name
         #   Specifies the name of the label associated with the execution rule.

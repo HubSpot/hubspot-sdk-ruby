@@ -1,25 +1,25 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_time_point_operation =
         {
           include_objects_with_no_value_set: bool,
-          operation_type: HubspotSDK::Models::Crm::PublicTimePointOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicTimePointOperation::operation_type,
           operator: String,
-          time_point: HubspotSDK::Models::Crm::PublicTimePointOperation::time_point,
+          time_point: HubSpotSDK::Models::Crm::PublicTimePointOperation::time_point,
           type: String,
           endpoint_behavior: String,
           property_parser: String
         }
 
-      class PublicTimePointOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicTimePointOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor include_objects_with_no_value_set: bool
 
-        attr_accessor operation_type: HubspotSDK::Models::Crm::PublicTimePointOperation::operation_type
+        attr_accessor operation_type: HubSpotSDK::Models::Crm::PublicTimePointOperation::operation_type
 
         attr_accessor operator: String
 
-        attr_accessor time_point: HubspotSDK::Models::Crm::PublicTimePointOperation::time_point
+        attr_accessor time_point: HubSpotSDK::Models::Crm::PublicTimePointOperation::time_point
 
         attr_accessor type: String
 
@@ -33,9 +33,9 @@ module HubspotSDK
 
         def initialize: (
           include_objects_with_no_value_set: bool,
-          operation_type: HubspotSDK::Models::Crm::PublicTimePointOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicTimePointOperation::operation_type,
           operator: String,
-          time_point: HubspotSDK::Models::Crm::PublicTimePointOperation::time_point,
+          time_point: HubSpotSDK::Models::Crm::PublicTimePointOperation::time_point,
           type: String,
           ?endpoint_behavior: String,
           ?property_parser: String
@@ -43,9 +43,9 @@ module HubspotSDK
 
         def to_hash: -> {
           include_objects_with_no_value_set: bool,
-          operation_type: HubspotSDK::Models::Crm::PublicTimePointOperation::operation_type,
+          operation_type: HubSpotSDK::Models::Crm::PublicTimePointOperation::operation_type,
           operator: String,
-          time_point: HubspotSDK::Models::Crm::PublicTimePointOperation::time_point,
+          time_point: HubSpotSDK::Models::Crm::PublicTimePointOperation::time_point,
           type: String,
           endpoint_behavior: String,
           property_parser: String
@@ -54,22 +54,22 @@ module HubspotSDK
         type operation_type = :TIME_POINT
 
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TIME_POINT: :TIME_POINT
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicTimePointOperation::operation_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicTimePointOperation::operation_type]
         end
 
         type time_point =
-          HubspotSDK::Crm::PublicDatePoint
-          | HubspotSDK::Crm::PublicIndexedTimePoint
-          | HubspotSDK::Crm::PublicPropertyReferencedTime
+          HubSpotSDK::Crm::PublicDatePoint
+          | HubSpotSDK::Crm::PublicIndexedTimePoint
+          | HubSpotSDK::Crm::PublicPropertyReferencedTime
 
         module TimePoint
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicTimePointOperation::time_point]
+          def self?.variants: -> ::Array[HubSpotSDK::Models::Crm::PublicTimePointOperation::time_point]
         end
       end
     end

@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class IntegerFieldSchema < HubspotSDK::Internal::Type::BaseModel
+      class IntegerFieldSchema < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute type
         #   The type of the field, which is set to INTEGER.
         #
-        #   @return [Symbol, HubspotSDK::Models::Automation::IntegerFieldSchema::Type]
-        required :type, enum: -> { HubspotSDK::Automation::IntegerFieldSchema::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Automation::IntegerFieldSchema::Type]
+        required :type, enum: -> { HubSpotSDK::Automation::IntegerFieldSchema::Type }
 
         # @!attribute maximum
         #   The maximum value allowed for the integer field.
@@ -23,7 +23,7 @@ module HubspotSDK
         optional :minimum, Integer
 
         # @!method initialize(type:, maximum: nil, minimum: nil)
-        #   @param type [Symbol, HubspotSDK::Models::Automation::IntegerFieldSchema::Type] The type of the field, which is set to INTEGER.
+        #   @param type [Symbol, HubSpotSDK::Models::Automation::IntegerFieldSchema::Type] The type of the field, which is set to INTEGER.
         #
         #   @param maximum [Integer] The maximum value allowed for the integer field.
         #
@@ -31,9 +31,9 @@ module HubspotSDK
 
         # The type of the field, which is set to INTEGER.
         #
-        # @see HubspotSDK::Models::Automation::IntegerFieldSchema#type
+        # @see HubSpotSDK::Models::Automation::IntegerFieldSchema#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           INTEGER = :INTEGER
 

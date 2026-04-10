@@ -1,30 +1,30 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchInputRecordIDInput < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputRecordIDInput < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::BatchInputRecordIDInput,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::BatchInputRecordIDInput,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Crm::RecordIDInput]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::RecordIDInput]) }
         attr_accessor :inputs
 
         sig do
           params(
-            inputs: T::Array[HubspotSDK::Crm::RecordIDInput::OrHash]
+            inputs: T::Array[HubSpotSDK::Crm::RecordIDInput::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(inputs:)
         end
 
         sig do
-          override.returns({ inputs: T::Array[HubspotSDK::Crm::RecordIDInput] })
+          override.returns({ inputs: T::Array[HubSpotSDK::Crm::RecordIDInput] })
         end
         def to_hash
         end

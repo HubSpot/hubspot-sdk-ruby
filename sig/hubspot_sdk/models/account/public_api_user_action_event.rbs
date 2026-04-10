@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
       type public_api_user_action_event =
         {
           id: String,
-          acting_user: HubspotSDK::Account::ActingUser,
+          acting_user: HubSpotSDK::Account::ActingUser,
           action: String,
           category: String,
           occurred_at: Time,
@@ -12,10 +12,10 @@ module HubspotSDK
           target_object_id: String
         }
 
-      class PublicAPIUserActionEvent < HubspotSDK::Internal::Type::BaseModel
+      class PublicAPIUserActionEvent < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
-        attr_accessor acting_user: HubspotSDK::Account::ActingUser
+        attr_accessor acting_user: HubSpotSDK::Account::ActingUser
 
         attr_accessor action: String
 
@@ -33,7 +33,7 @@ module HubspotSDK
 
         def initialize: (
           id: String,
-          acting_user: HubspotSDK::Account::ActingUser,
+          acting_user: HubSpotSDK::Account::ActingUser,
           action: String,
           category: String,
           occurred_at: Time,
@@ -43,7 +43,7 @@ module HubspotSDK
 
         def to_hash: -> {
           id: String,
-          acting_user: HubspotSDK::Account::ActingUser,
+          acting_user: HubSpotSDK::Account::ActingUser,
           action: String,
           category: String,
           occurred_at: Time,

@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Marketing::MarketingEvents::EventsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Marketing::MarketingEvents::EventsTest < HubSpotSDK::Test::ResourceTest
   def test_cancel_by_external_event_id_required_params
     skip("Mock server tests are disabled")
 
@@ -13,17 +13,17 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEvents::EventsTest < Hubs
       )
 
     assert_pattern do
-      response => HubspotSDK::Marketing::MarketingEventDefaultResponse
+      response => HubSpotSDK::Marketing::MarketingEventDefaultResponse
     end
 
     assert_pattern do
       response => {
-        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::PropertyValue]),
+        custom_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::PropertyValue]),
         event_name: String,
         event_organizer: String,
         end_date_time: Time | nil,
-        event_cancelled: HubspotSDK::Internal::Type::Boolean | nil,
-        event_completed: HubspotSDK::Internal::Type::Boolean | nil,
+        event_cancelled: HubSpotSDK::Internal::Type::Boolean | nil,
+        event_completed: HubSpotSDK::Internal::Type::Boolean | nil,
         event_description: String | nil,
         event_type: String | nil,
         event_url: String | nil,
@@ -45,17 +45,17 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEvents::EventsTest < Hubs
       )
 
     assert_pattern do
-      response => HubspotSDK::Marketing::MarketingEventDefaultResponse
+      response => HubSpotSDK::Marketing::MarketingEventDefaultResponse
     end
 
     assert_pattern do
       response => {
-        custom_properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::PropertyValue]),
+        custom_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::PropertyValue]),
         event_name: String,
         event_organizer: String,
         end_date_time: Time | nil,
-        event_cancelled: HubspotSDK::Internal::Type::Boolean | nil,
-        event_completed: HubspotSDK::Internal::Type::Boolean | nil,
+        event_cancelled: HubSpotSDK::Internal::Type::Boolean | nil,
+        event_completed: HubSpotSDK::Internal::Type::Boolean | nil,
         event_description: String | nil,
         event_type: String | nil,
         event_url: String | nil,

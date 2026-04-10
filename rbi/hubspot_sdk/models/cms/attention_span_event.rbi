@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class AttentionSpanEvent < HubspotSDK::Internal::Type::BaseModel
+      class AttentionSpanEvent < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::AttentionSpanEvent,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::AttentionSpanEvent,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -32,7 +32,7 @@ module HubspotSDK
         attr_accessor :media_name
 
         sig do
-          returns(HubspotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol)
+          returns(HubSpotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol)
         end
         attr_accessor :media_type
 
@@ -65,7 +65,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Cms::AttentionSpanEvent::ExternalPlayContext::TaggedSymbol
+              HubSpotSDK::Cms::AttentionSpanEvent::ExternalPlayContext::TaggedSymbol
             )
           )
         end
@@ -74,7 +74,7 @@ module HubspotSDK
         sig do
           params(
             external_play_context:
-              HubspotSDK::Cms::AttentionSpanEvent::ExternalPlayContext::OrSymbol
+              HubSpotSDK::Cms::AttentionSpanEvent::ExternalPlayContext::OrSymbol
           ).void
         end
         attr_writer :external_play_context
@@ -143,7 +143,7 @@ module HubspotSDK
             media_bridge_object_type_id: String,
             media_name: String,
             media_type:
-              HubspotSDK::Cms::AttentionSpanEvent::MediaType::OrSymbol,
+              HubSpotSDK::Cms::AttentionSpanEvent::MediaType::OrSymbol,
             occurred_timestamp: Integer,
             percent_range: String,
             portal_id: Integer,
@@ -151,7 +151,7 @@ module HubspotSDK
             session_id: String,
             total_percent_played: Float,
             external_play_context:
-              HubspotSDK::Cms::AttentionSpanEvent::ExternalPlayContext::OrSymbol,
+              HubSpotSDK::Cms::AttentionSpanEvent::ExternalPlayContext::OrSymbol,
             media_url: String,
             page_id: Integer,
             page_name: String,
@@ -220,7 +220,7 @@ module HubspotSDK
               media_bridge_object_type_id: String,
               media_name: String,
               media_type:
-                HubspotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol,
+                HubSpotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol,
               occurred_timestamp: Integer,
               percent_range: String,
               portal_id: Integer,
@@ -228,7 +228,7 @@ module HubspotSDK
               session_id: String,
               total_percent_played: Float,
               external_play_context:
-                HubspotSDK::Cms::AttentionSpanEvent::ExternalPlayContext::TaggedSymbol,
+                HubSpotSDK::Cms::AttentionSpanEvent::ExternalPlayContext::TaggedSymbol,
               media_url: String,
               page_id: Integer,
               page_name: String,
@@ -243,44 +243,44 @@ module HubspotSDK
         end
 
         module MediaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::AttentionSpanEvent::MediaType)
+              T.all(Symbol, HubSpotSDK::Cms::AttentionSpanEvent::MediaType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           AUDIO =
             T.let(
               :AUDIO,
-              HubspotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol
             )
           DOCUMENT =
             T.let(
               :DOCUMENT,
-              HubspotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol
             )
           IMAGE =
             T.let(
               :IMAGE,
-              HubspotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol
             )
           OTHER =
             T.let(
               :OTHER,
-              HubspotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol
             )
           VIDEO =
             T.let(
               :VIDEO,
-              HubspotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol
+                HubSpotSDK::Cms::AttentionSpanEvent::MediaType::TaggedSymbol
               ]
             )
           end
@@ -289,13 +289,13 @@ module HubspotSDK
         end
 
         module ExternalPlayContext
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Cms::AttentionSpanEvent::ExternalPlayContext
+                HubSpotSDK::Cms::AttentionSpanEvent::ExternalPlayContext
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -303,18 +303,18 @@ module HubspotSDK
           EMAIL =
             T.let(
               :EMAIL,
-              HubspotSDK::Cms::AttentionSpanEvent::ExternalPlayContext::TaggedSymbol
+              HubSpotSDK::Cms::AttentionSpanEvent::ExternalPlayContext::TaggedSymbol
             )
           EXTERNAL_PAGE =
             T.let(
               :EXTERNAL_PAGE,
-              HubspotSDK::Cms::AttentionSpanEvent::ExternalPlayContext::TaggedSymbol
+              HubSpotSDK::Cms::AttentionSpanEvent::ExternalPlayContext::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::AttentionSpanEvent::ExternalPlayContext::TaggedSymbol
+                HubSpotSDK::Cms::AttentionSpanEvent::ExternalPlayContext::TaggedSymbol
               ]
             )
           end

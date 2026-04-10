@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         type card_actions = { base_urls: ::Array[String] }
 
-        class CardActions < HubspotSDK::Internal::Type::BaseModel
+        class CardActions < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor base_urls: ::Array[String]
 
           def initialize: (base_urls: ::Array[String]) -> void

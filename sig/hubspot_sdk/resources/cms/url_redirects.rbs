@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class URLRedirects
@@ -13,8 +13,8 @@ module HubspotSDK
           ?is_protocol_agnostic: bool,
           ?is_trailing_slash_optional: bool,
           ?precedence: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::URLMapping
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Cms::URLMapping
 
         def update: (
           String url_redirect_id,
@@ -31,8 +31,8 @@ module HubspotSDK
           redirect_style: Integer,
           route_prefix: String,
           updated: Time,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::URLMapping
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Cms::URLMapping
 
         def list: (
           ?after: String,
@@ -45,20 +45,20 @@ module HubspotSDK
           ?updated_after: Time,
           ?updated_at: Time,
           ?updated_before: Time,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::URLMapping]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Cms::URLMapping]
 
         def delete: (
           String url_redirect_id,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def get: (
           String url_redirect_id,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::URLMapping
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Cms::URLMapping
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

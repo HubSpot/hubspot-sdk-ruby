@@ -1,35 +1,35 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_campaign_influenced_filter =
         {
           campaign_id: String,
-          filter_type: HubspotSDK::Models::Crm::PublicCampaignInfluencedFilter::filter_type
+          filter_type: HubSpotSDK::Models::Crm::PublicCampaignInfluencedFilter::filter_type
         }
 
-      class PublicCampaignInfluencedFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicCampaignInfluencedFilter < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor campaign_id: String
 
-        attr_accessor filter_type: HubspotSDK::Models::Crm::PublicCampaignInfluencedFilter::filter_type
+        attr_accessor filter_type: HubSpotSDK::Models::Crm::PublicCampaignInfluencedFilter::filter_type
 
         def initialize: (
           campaign_id: String,
-          filter_type: HubspotSDK::Models::Crm::PublicCampaignInfluencedFilter::filter_type
+          filter_type: HubSpotSDK::Models::Crm::PublicCampaignInfluencedFilter::filter_type
         ) -> void
 
         def to_hash: -> {
           campaign_id: String,
-          filter_type: HubspotSDK::Models::Crm::PublicCampaignInfluencedFilter::filter_type
+          filter_type: HubSpotSDK::Models::Crm::PublicCampaignInfluencedFilter::filter_type
         }
 
         type filter_type = :CAMPAIGN_INFLUENCED
 
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CAMPAIGN_INFLUENCED: :CAMPAIGN_INFLUENCED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicCampaignInfluencedFilter::filter_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicCampaignInfluencedFilter::filter_type]
         end
       end
     end

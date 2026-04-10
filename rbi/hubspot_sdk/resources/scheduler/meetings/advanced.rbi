@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Scheduler
       class Meetings
@@ -13,16 +13,16 @@ module HubspotSDK
               organizer_user_id: String,
               associations:
                 T::Array[
-                  HubspotSDK::Scheduler::ExternalAssociationCreateRequest::OrHash
+                  HubSpotSDK::Scheduler::ExternalAssociationCreateRequest::OrHash
                 ],
               email_reminder_schedule:
-                HubspotSDK::Scheduler::ExternalEmailReminderSchedule::OrHash,
+                HubSpotSDK::Scheduler::ExternalEmailReminderSchedule::OrHash,
               properties:
-                HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::OrHash,
+                HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::OrHash,
               timezone: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Scheduler::ExternalCalenderMeetingEventResponse
+              HubSpotSDK::Scheduler::ExternalCalenderMeetingEventResponse
             )
           end
           def create(
@@ -48,20 +48,20 @@ module HubspotSDK
               first_name: String,
               form_fields:
                 T::Array[
-                  HubspotSDK::Scheduler::ExternalBookingFormField::OrHash
+                  HubSpotSDK::Scheduler::ExternalBookingFormField::OrHash
                 ],
               last_name: String,
               legal_consent_responses:
                 T::Array[
-                  HubspotSDK::Scheduler::ExternalLegalConsentResponse::OrHash
+                  HubSpotSDK::Scheduler::ExternalLegalConsentResponse::OrHash
                 ],
               likely_available_user_ids: T::Array[String],
               slug: String,
               start_time: Time,
               locale: String,
               timezone: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Scheduler::ExternalMeetingBookingResponse)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Scheduler::ExternalMeetingBookingResponse)
           end
           def book(
             # The duration of the meeting in milliseconds.
@@ -88,7 +88,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ObjectTypeIDProto < HubspotSDK::Internal::Type::BaseModel
+      class ObjectTypeIDProto < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute inner_id
         #
         #   @return [Integer]

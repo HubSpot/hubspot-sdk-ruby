@@ -1,20 +1,20 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Blogs
         class Tags
-          attr_reader batch: HubspotSDK::Resources::Cms::Blogs::Tags::Batch
+          attr_reader batch: HubSpotSDK::Resources::Cms::Blogs::Tags::Batch
 
           def create: (
             id: String,
             created: Time,
             deleted_at: Time,
-            language: HubspotSDK::Models::Cms::Blogs::Tag::language,
+            language: HubSpotSDK::Models::Cms::Blogs::Tag::language,
             name: String,
             slug: String,
             translated_from_id: Integer,
             updated: Time,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> StringIO
 
           def update: (
@@ -22,13 +22,13 @@ module HubspotSDK
             id: String,
             created: Time,
             deleted_at: Time,
-            language: HubspotSDK::Models::Cms::Blogs::Tag::language,
+            language: HubSpotSDK::Models::Cms::Blogs::Tag::language,
             name: String,
             slug: String,
             translated_from_id: Integer,
             updated: Time,
             ?archived: bool,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> StringIO
 
           def list: (
@@ -43,21 +43,21 @@ module HubspotSDK
             ?updated_after: Time,
             ?updated_at: Time,
             ?updated_before: Time,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> StringIO
 
           def delete: (
             String object_id_,
             ?archived: bool,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def attach_to_lang_group: (
             id: String,
-            language: HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::language,
+            language: HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::language,
             primary_id: String,
-            ?primary_language: HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language,
-            ?request_options: HubspotSDK::request_opts
+            ?primary_language: HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language,
+            ?request_options: HubSpotSDK::request_opts
           ) -> StringIO
 
           def create_lang_variation: (
@@ -65,19 +65,19 @@ module HubspotSDK
             name: String,
             ?language: String,
             ?primary_language: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> StringIO
 
           def detach_from_lang_group: (
             id: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> StringIO
 
           def get: (
             String object_id_,
             ?archived: bool,
             ?property: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> StringIO
 
           def list_authors_cursor: (
@@ -92,7 +92,7 @@ module HubspotSDK
             ?updated_after: Time,
             ?updated_at: Time,
             ?updated_before: Time,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> StringIO
 
           def list_authors_cursor_by_query: (
@@ -107,7 +107,7 @@ module HubspotSDK
             ?updated_after: Time,
             ?updated_at: Time,
             ?updated_before: Time,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> StringIO
 
           def list_cursor: (
@@ -122,7 +122,7 @@ module HubspotSDK
             ?updated_after: Time,
             ?updated_at: Time,
             ?updated_before: Time,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> StringIO
 
           def list_cursor_by_query: (
@@ -137,7 +137,7 @@ module HubspotSDK
             ?updated_after: Time,
             ?updated_at: Time,
             ?updated_before: Time,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> StringIO
 
           def list_posts_cursor: (
@@ -152,7 +152,7 @@ module HubspotSDK
             ?updated_after: Time,
             ?updated_at: Time,
             ?updated_before: Time,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> StringIO
 
           def list_posts_cursor_by_query: (
@@ -167,21 +167,21 @@ module HubspotSDK
             ?updated_after: Time,
             ?updated_at: Time,
             ?updated_before: Time,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> StringIO
 
           def set_lang_primary: (
             id: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def update_langs: (
-            languages: ::Hash[Symbol, HubspotSDK::Models::Cms::UpdateLanguagesRequestVNext::language],
+            languages: ::Hash[Symbol, HubSpotSDK::Models::Cms::UpdateLanguagesRequestVNext::language],
             primary_id: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> StringIO
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

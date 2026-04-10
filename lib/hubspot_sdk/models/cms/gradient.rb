@@ -1,28 +1,28 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Gradient < HubspotSDK::Internal::Type::BaseModel
+      class Gradient < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute angle
         #
-        #   @return [HubspotSDK::Models::Cms::Angle]
-        required :angle, -> { HubspotSDK::Cms::Angle }
+        #   @return [HubSpotSDK::Models::Cms::Angle]
+        required :angle, -> { HubSpotSDK::Cms::Angle }
 
         # @!attribute colors
         #
-        #   @return [Array<HubspotSDK::Models::Cms::ColorStop>]
-        required :colors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ColorStop] }
+        #   @return [Array<HubSpotSDK::Models::Cms::ColorStop>]
+        required :colors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::ColorStop] }
 
         # @!attribute side_or_corner
         #
-        #   @return [HubspotSDK::Models::Cms::SideOrCorner]
-        required :side_or_corner, -> { HubspotSDK::Cms::SideOrCorner }, api_name: :sideOrCorner
+        #   @return [HubSpotSDK::Models::Cms::SideOrCorner]
+        required :side_or_corner, -> { HubSpotSDK::Cms::SideOrCorner }, api_name: :sideOrCorner
 
         # @!method initialize(angle:, colors:, side_or_corner:)
-        #   @param angle [HubspotSDK::Models::Cms::Angle]
-        #   @param colors [Array<HubspotSDK::Models::Cms::ColorStop>]
-        #   @param side_or_corner [HubspotSDK::Models::Cms::SideOrCorner]
+        #   @param angle [HubSpotSDK::Models::Cms::Angle]
+        #   @param colors [Array<HubSpotSDK::Models::Cms::ColorStop>]
+        #   @param side_or_corner [HubSpotSDK::Models::Cms::SideOrCorner]
       end
     end
   end

@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       module Enum
-        include HubspotSDK::Internal::Type::Converter
-        include HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        include HubSpotSDK::Internal::Type::Converter
+        include HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         def self.values: -> ::Array[(nil | bool | Integer | Float | Symbol)]
 
@@ -15,12 +15,12 @@ module HubspotSDK
 
         def coerce: (
           String | Symbol | top value,
-          state: HubspotSDK::Internal::Type::Converter::coerce_state
+          state: HubSpotSDK::Internal::Type::Converter::coerce_state
         ) -> (Symbol | top)
 
         def dump: (
           Symbol | top value,
-          state: HubspotSDK::Internal::Type::Converter::dump_state
+          state: HubSpotSDK::Internal::Type::Converter::dump_state
         ) -> (Symbol | top)
 
         def to_sorbet_type: -> top

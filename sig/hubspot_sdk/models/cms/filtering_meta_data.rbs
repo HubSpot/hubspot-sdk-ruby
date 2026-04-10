@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type filtering_meta_data =
@@ -9,7 +9,7 @@ module HubspotSDK
           pipeline_ids: ::Array[String]
         }
 
-      class FilteringMetaData < HubspotSDK::Internal::Type::BaseModel
+      class FilteringMetaData < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor include_helpdesk_routable_teams_only: bool
 
         attr_accessor include_unconfirmed_users: bool

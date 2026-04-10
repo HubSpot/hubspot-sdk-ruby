@@ -1,37 +1,37 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class CollectionResponseWithTotalPublicCampaign < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseWithTotalPublicCampaign < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::CollectionResponseWithTotalPublicCampaign,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::CollectionResponseWithTotalPublicCampaign,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # An array of PublicCampaign objects, each representing a campaign with its
         # associated properties.
-        sig { returns(T::Array[HubspotSDK::Marketing::PublicCampaign]) }
+        sig { returns(T::Array[HubSpotSDK::Marketing::PublicCampaign]) }
         attr_accessor :results
 
         # An integer representing the total number of public campaigns available.
         sig { returns(Integer) }
         attr_accessor :total
 
-        sig { returns(T.nilable(HubspotSDK::Paging)) }
+        sig { returns(T.nilable(HubSpotSDK::Paging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::Paging::OrHash).void }
+        sig { params(paging: HubSpotSDK::Paging::OrHash).void }
         attr_writer :paging
 
         sig do
           params(
-            results: T::Array[HubspotSDK::Marketing::PublicCampaign::OrHash],
+            results: T::Array[HubSpotSDK::Marketing::PublicCampaign::OrHash],
             total: Integer,
-            paging: HubspotSDK::Paging::OrHash
+            paging: HubSpotSDK::Paging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -47,9 +47,9 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              results: T::Array[HubspotSDK::Marketing::PublicCampaign],
+              results: T::Array[HubSpotSDK::Marketing::PublicCampaign],
               total: Integer,
-              paging: HubspotSDK::Paging
+              paging: HubSpotSDK::Paging
             }
           )
         end

@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Endpoints < HubspotSDK::Internal::Type::BaseModel
+      class Endpoints < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute discovery
         #
         #   @return [Boolean]
-        required :discovery, HubspotSDK::Internal::Type::Boolean
+        required :discovery, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute schemes
         #
         #   @return [Array<String>]
-        required :schemes, HubspotSDK::Internal::Type::ArrayOf[String]
+        required :schemes, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute url
         #

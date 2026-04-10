@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class EmailUpdateDraftParams < HubspotSDK::Models::Marketing::EmailUpdateRequest
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class EmailUpdateDraftParams < HubSpotSDK::Models::Marketing::EmailUpdateRequest
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::EmailUpdateDraftParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::EmailUpdateDraftParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -21,7 +21,7 @@ module HubspotSDK
         sig do
           params(
             email_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(email_id:, request_options: {})
@@ -29,7 +29,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { email_id: String, request_options: HubspotSDK::RequestOptions }
+            { email_id: String, request_options: HubSpotSDK::RequestOptions }
           )
         end
         def to_hash

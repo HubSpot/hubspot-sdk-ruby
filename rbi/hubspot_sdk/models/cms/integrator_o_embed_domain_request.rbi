@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class IntegratorOEmbedDomainRequest < HubspotSDK::Internal::Type::BaseModel
+      class IntegratorOEmbedDomainRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::IntegratorOEmbedDomainRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::IntegratorOEmbedDomainRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(HubspotSDK::Cms::Endpoints) }
+        sig { returns(HubSpotSDK::Cms::Endpoints) }
         attr_reader :endpoints
 
-        sig { params(endpoints: HubspotSDK::Cms::Endpoints::OrHash).void }
+        sig { params(endpoints: HubSpotSDK::Cms::Endpoints::OrHash).void }
         attr_writer :endpoints
 
         sig { returns(T.nilable(Integer)) }
@@ -26,7 +26,7 @@ module HubspotSDK
 
         sig do
           params(
-            endpoints: HubspotSDK::Cms::Endpoints::OrHash,
+            endpoints: HubSpotSDK::Cms::Endpoints::OrHash,
             portal_id: Integer
           ).returns(T.attached_class)
         end
@@ -35,7 +35,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { endpoints: HubspotSDK::Cms::Endpoints, portal_id: Integer }
+            { endpoints: HubSpotSDK::Cms::Endpoints, portal_id: Integer }
           )
         end
         def to_hash

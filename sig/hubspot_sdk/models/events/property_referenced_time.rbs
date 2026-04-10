@@ -1,39 +1,39 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type property_referenced_time =
         {
           property: String,
-          reference_type: HubspotSDK::Models::Events::PropertyReferencedTime::reference_type,
-          time_type: HubspotSDK::Models::Events::PropertyReferencedTime::time_type,
-          timezone_source: HubspotSDK::Models::Events::PropertyReferencedTime::timezone_source,
+          reference_type: HubSpotSDK::Models::Events::PropertyReferencedTime::reference_type,
+          time_type: HubSpotSDK::Models::Events::PropertyReferencedTime::time_type,
+          timezone_source: HubSpotSDK::Models::Events::PropertyReferencedTime::timezone_source,
           zone_id: String
         }
 
-      class PropertyReferencedTime < HubspotSDK::Internal::Type::BaseModel
+      class PropertyReferencedTime < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor property: String
 
-        attr_accessor reference_type: HubspotSDK::Models::Events::PropertyReferencedTime::reference_type
+        attr_accessor reference_type: HubSpotSDK::Models::Events::PropertyReferencedTime::reference_type
 
-        attr_accessor time_type: HubspotSDK::Models::Events::PropertyReferencedTime::time_type
+        attr_accessor time_type: HubSpotSDK::Models::Events::PropertyReferencedTime::time_type
 
-        attr_accessor timezone_source: HubspotSDK::Models::Events::PropertyReferencedTime::timezone_source
+        attr_accessor timezone_source: HubSpotSDK::Models::Events::PropertyReferencedTime::timezone_source
 
         attr_accessor zone_id: String
 
         def initialize: (
           property: String,
-          reference_type: HubspotSDK::Models::Events::PropertyReferencedTime::reference_type,
-          time_type: HubspotSDK::Models::Events::PropertyReferencedTime::time_type,
-          timezone_source: HubspotSDK::Models::Events::PropertyReferencedTime::timezone_source,
+          reference_type: HubSpotSDK::Models::Events::PropertyReferencedTime::reference_type,
+          time_type: HubSpotSDK::Models::Events::PropertyReferencedTime::time_type,
+          timezone_source: HubSpotSDK::Models::Events::PropertyReferencedTime::timezone_source,
           zone_id: String
         ) -> void
 
         def to_hash: -> {
           property: String,
-          reference_type: HubspotSDK::Models::Events::PropertyReferencedTime::reference_type,
-          time_type: HubspotSDK::Models::Events::PropertyReferencedTime::time_type,
-          timezone_source: HubspotSDK::Models::Events::PropertyReferencedTime::timezone_source,
+          reference_type: HubSpotSDK::Models::Events::PropertyReferencedTime::reference_type,
+          time_type: HubSpotSDK::Models::Events::PropertyReferencedTime::time_type,
+          timezone_source: HubSpotSDK::Models::Events::PropertyReferencedTime::timezone_source,
           zone_id: String
         }
 
@@ -45,7 +45,7 @@ module HubspotSDK
           | :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION
 
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ANNIVERSARY: :ANNIVERSARY
           ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION: :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION
@@ -53,29 +53,29 @@ module HubspotSDK
           VALUE: :VALUE
           VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION: :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::PropertyReferencedTime::reference_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::PropertyReferencedTime::reference_type]
         end
 
         type time_type = :PROPERTY_REFERENCED
 
         module TimeType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           PROPERTY_REFERENCED: :PROPERTY_REFERENCED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::PropertyReferencedTime::time_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::PropertyReferencedTime::time_type]
         end
 
         type timezone_source = :CUSTOM | :PORTAL | :USER
 
         module TimezoneSource
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CUSTOM: :CUSTOM
           PORTAL: :PORTAL
           USER: :USER
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::PropertyReferencedTime::timezone_source]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::PropertyReferencedTime::timezone_source]
         end
       end
     end

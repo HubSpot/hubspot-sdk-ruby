@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class PublicBulkOptOutFromAllResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicBulkOptOutFromAllResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute subscriber_id_string
         #   The email address of the contact.
         #
@@ -13,14 +13,14 @@ module HubspotSDK
         # @!attribute statuses
         #   An array of subscription status objects for the contact.
         #
-        #   @return [Array<HubspotSDK::Models::CommunicationPreferences::PublicStatus>, nil]
+        #   @return [Array<HubSpotSDK::Models::CommunicationPreferences::PublicStatus>, nil]
         optional :statuses,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CommunicationPreferences::PublicStatus] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::CommunicationPreferences::PublicStatus] }
 
         # @!method initialize(subscriber_id_string:, statuses: nil)
         #   @param subscriber_id_string [String] The email address of the contact.
         #
-        #   @param statuses [Array<HubspotSDK::Models::CommunicationPreferences::PublicStatus>] An array of subscription status objects for the contact.
+        #   @param statuses [Array<HubSpotSDK::Models::CommunicationPreferences::PublicStatus>] An array of subscription status objects for the contact.
       end
     end
   end

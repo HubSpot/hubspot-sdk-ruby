@@ -1,11 +1,11 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class PublicObjectID < HubspotSDK::Internal::Type::BaseModel
+    class PublicObjectID < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
-          T.any(HubspotSDK::PublicObjectID, HubspotSDK::Internal::AnyHash)
+          T.any(HubSpotSDK::PublicObjectID, HubSpotSDK::Internal::AnyHash)
         end
 
       # ID of the object

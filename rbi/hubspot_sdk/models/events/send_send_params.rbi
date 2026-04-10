@@ -1,22 +1,22 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class SendSendParams < HubspotSDK::Models::Events::BehavioralEventHTTPCompletionRequest
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class SendSendParams < HubSpotSDK::Models::Events::BehavioralEventHTTPCompletionRequest
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::SendSendParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::SendSendParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
-          params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
+          params(request_options: HubSpotSDK::RequestOptions::OrHash).returns(
             T.attached_class
           )
         end
@@ -24,7 +24,7 @@ module HubspotSDK
         end
 
         sig do
-          override.returns({ request_options: HubspotSDK::RequestOptions })
+          override.returns({ request_options: HubSpotSDK::RequestOptions })
         end
         def to_hash
         end

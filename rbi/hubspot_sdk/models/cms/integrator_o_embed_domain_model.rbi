@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class IntegratorOEmbedDomainModel < HubspotSDK::Internal::Type::BaseModel
+      class IntegratorOEmbedDomainModel < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::IntegratorOEmbedDomainModel,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::IntegratorOEmbedDomainModel,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -24,10 +24,10 @@ module HubspotSDK
         sig { returns(Integer) }
         attr_accessor :deleted_at
 
-        sig { returns(HubspotSDK::Cms::Endpoints) }
+        sig { returns(HubSpotSDK::Cms::Endpoints) }
         attr_reader :endpoints
 
-        sig { params(endpoints: HubspotSDK::Cms::Endpoints::OrHash).void }
+        sig { params(endpoints: HubSpotSDK::Cms::Endpoints::OrHash).void }
         attr_writer :endpoints
 
         sig { returns(Integer) }
@@ -42,7 +42,7 @@ module HubspotSDK
             app_id: Integer,
             created_at: Integer,
             deleted_at: Integer,
-            endpoints: HubspotSDK::Cms::Endpoints::OrHash,
+            endpoints: HubSpotSDK::Cms::Endpoints::OrHash,
             portal_id: Integer,
             updated_at: Integer
           ).returns(T.attached_class)
@@ -65,7 +65,7 @@ module HubspotSDK
               app_id: Integer,
               created_at: Integer,
               deleted_at: Integer,
-              endpoints: HubspotSDK::Cms::Endpoints,
+              endpoints: HubSpotSDK::Cms::Endpoints,
               portal_id: Integer,
               updated_at: Integer
             }

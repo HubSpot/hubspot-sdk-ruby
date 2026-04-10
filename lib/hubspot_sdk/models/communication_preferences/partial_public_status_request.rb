@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class PartialPublicStatusRequest < HubspotSDK::Internal::Type::BaseModel
+      class PartialPublicStatusRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute channel
         #   The type of communication channel, with 'EMAIL' as the only supported option.
         #
-        #   @return [Symbol, HubspotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest::Channel]
-        required :channel, enum: -> { HubspotSDK::CommunicationPreferences::PartialPublicStatusRequest::Channel }
+        #   @return [Symbol, HubSpotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest::Channel]
+        required :channel, enum: -> { HubSpotSDK::CommunicationPreferences::PartialPublicStatusRequest::Channel }
 
         # @!attribute status_state
         #   The current subscription status of the contact, which can be 'SUBSCRIBED',
         #   'UNSUBSCRIBED', or 'NOT_SPECIFIED'.
         #
-        #   @return [Symbol, HubspotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest::StatusState]
+        #   @return [Symbol, HubSpotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest::StatusState]
         required :status_state,
-                 enum: -> { HubspotSDK::CommunicationPreferences::PartialPublicStatusRequest::StatusState },
+                 enum: -> { HubSpotSDK::CommunicationPreferences::PartialPublicStatusRequest::StatusState },
                  api_name: :statusState
 
         # @!attribute subscription_id
@@ -31,9 +31,9 @@ module HubspotSDK
         #   'PERFORMANCE_OF_CONTRACT', 'CONSENT_WITH_NOTICE', 'NON_GDPR',
         #   'PROCESS_AND_STORE', and 'LEGITIMATE_INTEREST_OTHER'.
         #
-        #   @return [Symbol, HubspotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest::LegalBasis, nil]
+        #   @return [Symbol, HubSpotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest::LegalBasis, nil]
         optional :legal_basis,
-                 enum: -> { HubspotSDK::CommunicationPreferences::PartialPublicStatusRequest::LegalBasis },
+                 enum: -> { HubSpotSDK::CommunicationPreferences::PartialPublicStatusRequest::LegalBasis },
                  api_name: :legalBasis
 
         # @!attribute legal_basis_explanation
@@ -44,24 +44,24 @@ module HubspotSDK
 
         # @!method initialize(channel:, status_state:, subscription_id:, legal_basis: nil, legal_basis_explanation: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest} for
+        #   {HubSpotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest} for
         #   more details.
         #
-        #   @param channel [Symbol, HubspotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest::Channel] The type of communication channel, with 'EMAIL' as the only supported option.
+        #   @param channel [Symbol, HubSpotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest::Channel] The type of communication channel, with 'EMAIL' as the only supported option.
         #
-        #   @param status_state [Symbol, HubspotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest::StatusState] The current subscription status of the contact, which can be 'SUBSCRIBED', 'UNSU
+        #   @param status_state [Symbol, HubSpotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest::StatusState] The current subscription status of the contact, which can be 'SUBSCRIBED', 'UNSU
         #
         #   @param subscription_id [Integer] The unique identifier of the subscription to be updated.
         #
-        #   @param legal_basis [Symbol, HubspotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest::LegalBasis] The legal basis for communication, with options including 'LEGITIMATE_INTEREST_P
+        #   @param legal_basis [Symbol, HubSpotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest::LegalBasis] The legal basis for communication, with options including 'LEGITIMATE_INTEREST_P
         #
         #   @param legal_basis_explanation [String] An explanation for the legal basis used for communication.
 
         # The type of communication channel, with 'EMAIL' as the only supported option.
         #
-        # @see HubspotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest#channel
+        # @see HubSpotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest#channel
         module Channel
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL = :EMAIL
 
@@ -72,9 +72,9 @@ module HubspotSDK
         # The current subscription status of the contact, which can be 'SUBSCRIBED',
         # 'UNSUBSCRIBED', or 'NOT_SPECIFIED'.
         #
-        # @see HubspotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest#status_state
+        # @see HubSpotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest#status_state
         module StatusState
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NOT_SPECIFIED = :NOT_SPECIFIED
           SUBSCRIBED = :SUBSCRIBED
@@ -89,9 +89,9 @@ module HubspotSDK
         # 'PERFORMANCE_OF_CONTRACT', 'CONSENT_WITH_NOTICE', 'NON_GDPR',
         # 'PROCESS_AND_STORE', and 'LEGITIMATE_INTEREST_OTHER'.
         #
-        # @see HubspotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest#legal_basis
+        # @see HubSpotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest#legal_basis
         module LegalBasis
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONSENT_WITH_NOTICE = :CONSENT_WITH_NOTICE
           LEGITIMATE_INTEREST_CLIENT = :LEGITIMATE_INTEREST_CLIENT

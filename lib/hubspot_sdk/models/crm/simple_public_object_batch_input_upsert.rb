@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class SimplePublicObjectBatchInputUpsert < HubspotSDK::Internal::Type::BaseModel
+      class SimplePublicObjectBatchInputUpsert < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique ID of the object.
         #
@@ -14,7 +14,7 @@ module HubspotSDK
         #   Key value pairs representing the properties of the object.
         #
         #   @return [Hash{Symbol=>String}]
-        required :properties, HubspotSDK::Internal::Type::HashOf[String]
+        required :properties, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute id_property
         #   The name of a property whose values are unique for this object

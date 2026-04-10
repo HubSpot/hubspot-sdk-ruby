@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class NumberPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class NumberPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute include_objects_with_no_value_set
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute operation_type
@@ -18,8 +18,8 @@ module HubspotSDK
 
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::NumberPropertyOperation::Operator]
-        required :operator, enum: -> { HubspotSDK::Events::NumberPropertyOperation::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Events::NumberPropertyOperation::Operator]
+        required :operator, enum: -> { HubSpotSDK::Events::NumberPropertyOperation::Operator }
 
         # @!attribute operator_name
         #
@@ -28,9 +28,9 @@ module HubspotSDK
 
         # @!attribute property_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::NumberPropertyOperation::PropertyType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::NumberPropertyOperation::PropertyType]
         required :property_type,
-                 enum: -> { HubspotSDK::Events::NumberPropertyOperation::PropertyType },
+                 enum: -> { HubSpotSDK::Events::NumberPropertyOperation::PropertyType },
                  api_name: :propertyType
 
         # @!attribute value
@@ -51,16 +51,16 @@ module HubspotSDK
         # @!method initialize(include_objects_with_no_value_set:, operation_type:, operator:, operator_name:, property_type:, value:, default_value: nil, render_spec: nil)
         #   @param include_objects_with_no_value_set [Boolean]
         #   @param operation_type [String]
-        #   @param operator [Symbol, HubspotSDK::Models::Events::NumberPropertyOperation::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Events::NumberPropertyOperation::Operator]
         #   @param operator_name [String]
-        #   @param property_type [Symbol, HubspotSDK::Models::Events::NumberPropertyOperation::PropertyType]
+        #   @param property_type [Symbol, HubSpotSDK::Models::Events::NumberPropertyOperation::PropertyType]
         #   @param value [Float]
         #   @param default_value [String]
         #   @param render_spec [String]
 
-        # @see HubspotSDK::Models::Events::NumberPropertyOperation#operator
+        # @see HubSpotSDK::Models::Events::NumberPropertyOperation#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HAS_EVER_BEEN_EQUAL_TO = :HAS_EVER_BEEN_EQUAL_TO
           HAS_NEVER_BEEN_EQUAL_TO = :HAS_NEVER_BEEN_EQUAL_TO
@@ -75,9 +75,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::NumberPropertyOperation#property_type
+        # @see HubSpotSDK::Models::Events::NumberPropertyOperation#property_type
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NUMBER = :number
 

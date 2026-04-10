@@ -1,35 +1,35 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type padding =
         {
-          bottom: HubspotSDK::Cms::Size,
-          left: HubspotSDK::Cms::Size,
-          right: HubspotSDK::Cms::Size,
-          top: HubspotSDK::Cms::Size
+          bottom: HubSpotSDK::Cms::Size,
+          left: HubSpotSDK::Cms::Size,
+          right: HubSpotSDK::Cms::Size,
+          top: HubSpotSDK::Cms::Size
         }
 
-      class Padding < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor bottom: HubspotSDK::Cms::Size
+      class Padding < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor bottom: HubSpotSDK::Cms::Size
 
-        attr_accessor left: HubspotSDK::Cms::Size
+        attr_accessor left: HubSpotSDK::Cms::Size
 
-        attr_accessor right: HubspotSDK::Cms::Size
+        attr_accessor right: HubSpotSDK::Cms::Size
 
-        attr_accessor top: HubspotSDK::Cms::Size
+        attr_accessor top: HubSpotSDK::Cms::Size
 
         def initialize: (
-          bottom: HubspotSDK::Cms::Size,
-          left: HubspotSDK::Cms::Size,
-          right: HubspotSDK::Cms::Size,
-          top: HubspotSDK::Cms::Size
+          bottom: HubSpotSDK::Cms::Size,
+          left: HubSpotSDK::Cms::Size,
+          right: HubSpotSDK::Cms::Size,
+          top: HubSpotSDK::Cms::Size
         ) -> void
 
         def to_hash: -> {
-          bottom: HubspotSDK::Cms::Size,
-          left: HubspotSDK::Cms::Size,
-          right: HubspotSDK::Cms::Size,
-          top: HubspotSDK::Cms::Size
+          bottom: HubSpotSDK::Cms::Size,
+          left: HubSpotSDK::Cms::Size,
+          right: HubSpotSDK::Cms::Size,
+          top: HubSpotSDK::Cms::Size
         }
       end
     end

@@ -1,19 +1,19 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class CollectionResponseSearchPublicResponseWrapperNoPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseSearchPublicResponseWrapperNoPaging < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::CollectionResponseSearchPublicResponseWrapperNoPaging,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::CollectionResponseSearchPublicResponseWrapperNoPaging,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
-          returns(T::Array[HubspotSDK::Marketing::SearchPublicResponseWrapper])
+          returns(T::Array[HubSpotSDK::Marketing::SearchPublicResponseWrapper])
         end
         attr_accessor :results
 
@@ -21,7 +21,7 @@ module HubspotSDK
           params(
             results:
               T::Array[
-                HubspotSDK::Marketing::SearchPublicResponseWrapper::OrHash
+                HubSpotSDK::Marketing::SearchPublicResponseWrapper::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -32,7 +32,7 @@ module HubspotSDK
           override.returns(
             {
               results:
-                T::Array[HubspotSDK::Marketing::SearchPublicResponseWrapper]
+                T::Array[HubSpotSDK::Marketing::SearchPublicResponseWrapper]
             }
           )
         end

@@ -1,23 +1,23 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class CollectionResponseAssociationSpecWithLabelNoPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseAssociationSpecWithLabelNoPaging < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::CollectionResponseAssociationSpecWithLabelNoPaging,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::CollectionResponseAssociationSpecWithLabelNoPaging,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Crm::AssociationSpecWithLabel]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::AssociationSpecWithLabel]) }
         attr_accessor :results
 
         sig do
           params(
-            results: T::Array[HubspotSDK::Crm::AssociationSpecWithLabel::OrHash]
+            results: T::Array[HubSpotSDK::Crm::AssociationSpecWithLabel::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(results:)
@@ -25,7 +25,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { results: T::Array[HubspotSDK::Crm::AssociationSpecWithLabel] }
+            { results: T::Array[HubSpotSDK::Crm::AssociationSpecWithLabel] }
           )
         end
         def to_hash

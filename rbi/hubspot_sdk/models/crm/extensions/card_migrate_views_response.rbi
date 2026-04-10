@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class CardMigrateViewsResponse < HubspotSDK::Internal::Type::BaseModel
+        class CardMigrateViewsResponse < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Extensions::CardMigrateViewsResponse,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Extensions::CardMigrateViewsResponse,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 

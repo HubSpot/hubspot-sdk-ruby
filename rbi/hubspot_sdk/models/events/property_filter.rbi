@@ -1,34 +1,34 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class PropertyFilter < HubspotSDK::Internal::Type::BaseModel
+      class PropertyFilter < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::PropertyFilter,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::PropertyFilter,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
-          returns(HubspotSDK::Events::PropertyFilter::FilterType::TaggedSymbol)
+          returns(HubSpotSDK::Events::PropertyFilter::FilterType::TaggedSymbol)
         end
         attr_accessor :filter_type
 
-        sig { returns(HubspotSDK::Events::PropertyFilter::Operation::Variants) }
+        sig { returns(HubSpotSDK::Events::PropertyFilter::Operation::Variants) }
         attr_accessor :operation
 
         sig { returns(String) }
         attr_accessor :property
 
-        sig { returns(T.nilable(HubspotSDK::Events::PropertyFilterContext)) }
+        sig { returns(T.nilable(HubSpotSDK::Events::PropertyFilterContext)) }
         attr_reader :context
 
         sig do
           params(
-            context: HubspotSDK::Events::PropertyFilterContext::OrHash
+            context: HubSpotSDK::Events::PropertyFilterContext::OrHash
           ).void
         end
         attr_writer :context
@@ -48,33 +48,33 @@ module HubspotSDK
         sig do
           params(
             filter_type:
-              HubspotSDK::Events::PropertyFilter::FilterType::OrSymbol,
+              HubSpotSDK::Events::PropertyFilter::FilterType::OrSymbol,
             operation:
               T.any(
-                HubspotSDK::Events::BoolPropertyOperation::OrHash,
-                HubspotSDK::Events::NumberPropertyOperation::OrHash,
-                HubspotSDK::Events::StringPropertyOperation::OrHash,
-                HubspotSDK::Events::DateTimePropertyOperation::OrHash,
-                HubspotSDK::Events::RangedDatePropertyOperation::OrHash,
-                HubspotSDK::Events::ComparativeDatePropertyOperation::OrHash,
-                HubspotSDK::Events::ComparativeBoolPropertyOperation::OrHash,
-                HubspotSDK::Events::ComparativeNumberPropertyOperation::OrHash,
-                HubspotSDK::Events::ComparativeStringPropertyOperation::OrHash,
-                HubspotSDK::Events::ComparativePropertyUpdatedOperation::OrHash,
-                HubspotSDK::Events::RollingDateRangePropertyOperation::OrHash,
-                HubspotSDK::Events::RollingPropertyUpdatedOperation::OrHash,
-                HubspotSDK::Events::EnumerationPropertyOperation::OrHash,
-                HubspotSDK::Events::AllPropertyTypesOperation::OrHash,
-                HubspotSDK::Events::RangedNumberPropertyOperation::OrHash,
-                HubspotSDK::Events::MultiStringPropertyOperation::OrHash,
-                HubspotSDK::Events::DatePropertyOperation::OrHash,
-                HubspotSDK::Events::CalendarDatePropertyOperation::OrHash,
-                HubspotSDK::Events::TimePointOperation::OrHash,
-                HubspotSDK::Events::RangedTimeOperation::OrHash,
-                HubspotSDK::Events::RegexPropertyOperation::OrHash
+                HubSpotSDK::Events::BoolPropertyOperation::OrHash,
+                HubSpotSDK::Events::NumberPropertyOperation::OrHash,
+                HubSpotSDK::Events::StringPropertyOperation::OrHash,
+                HubSpotSDK::Events::DateTimePropertyOperation::OrHash,
+                HubSpotSDK::Events::RangedDatePropertyOperation::OrHash,
+                HubSpotSDK::Events::ComparativeDatePropertyOperation::OrHash,
+                HubSpotSDK::Events::ComparativeBoolPropertyOperation::OrHash,
+                HubSpotSDK::Events::ComparativeNumberPropertyOperation::OrHash,
+                HubSpotSDK::Events::ComparativeStringPropertyOperation::OrHash,
+                HubSpotSDK::Events::ComparativePropertyUpdatedOperation::OrHash,
+                HubSpotSDK::Events::RollingDateRangePropertyOperation::OrHash,
+                HubSpotSDK::Events::RollingPropertyUpdatedOperation::OrHash,
+                HubSpotSDK::Events::EnumerationPropertyOperation::OrHash,
+                HubSpotSDK::Events::AllPropertyTypesOperation::OrHash,
+                HubSpotSDK::Events::RangedNumberPropertyOperation::OrHash,
+                HubSpotSDK::Events::MultiStringPropertyOperation::OrHash,
+                HubSpotSDK::Events::DatePropertyOperation::OrHash,
+                HubSpotSDK::Events::CalendarDatePropertyOperation::OrHash,
+                HubSpotSDK::Events::TimePointOperation::OrHash,
+                HubSpotSDK::Events::RangedTimeOperation::OrHash,
+                HubSpotSDK::Events::RegexPropertyOperation::OrHash
               ),
             property: String,
-            context: HubspotSDK::Events::PropertyFilterContext::OrHash,
+            context: HubSpotSDK::Events::PropertyFilterContext::OrHash,
             filter_insights_id: Integer,
             framework_filter_id: Integer
           ).returns(T.attached_class)
@@ -93,11 +93,11 @@ module HubspotSDK
           override.returns(
             {
               filter_type:
-                HubspotSDK::Events::PropertyFilter::FilterType::TaggedSymbol,
+                HubSpotSDK::Events::PropertyFilter::FilterType::TaggedSymbol,
               operation:
-                HubspotSDK::Events::PropertyFilter::Operation::Variants,
+                HubSpotSDK::Events::PropertyFilter::Operation::Variants,
               property: String,
-              context: HubspotSDK::Events::PropertyFilterContext,
+              context: HubSpotSDK::Events::PropertyFilterContext,
               filter_insights_id: Integer,
               framework_filter_id: Integer
             }
@@ -107,24 +107,24 @@ module HubspotSDK
         end
 
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Events::PropertyFilter::FilterType)
+              T.all(Symbol, HubSpotSDK::Events::PropertyFilter::FilterType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           PROPERTY =
             T.let(
               :PROPERTY,
-              HubspotSDK::Events::PropertyFilter::FilterType::TaggedSymbol
+              HubSpotSDK::Events::PropertyFilter::FilterType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::PropertyFilter::FilterType::TaggedSymbol
+                HubSpotSDK::Events::PropertyFilter::FilterType::TaggedSymbol
               ]
             )
           end
@@ -133,38 +133,38 @@ module HubspotSDK
         end
 
         module Operation
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Events::BoolPropertyOperation,
-                HubspotSDK::Events::NumberPropertyOperation,
-                HubspotSDK::Events::StringPropertyOperation,
-                HubspotSDK::Events::DateTimePropertyOperation,
-                HubspotSDK::Events::RangedDatePropertyOperation,
-                HubspotSDK::Events::ComparativeDatePropertyOperation,
-                HubspotSDK::Events::ComparativeBoolPropertyOperation,
-                HubspotSDK::Events::ComparativeNumberPropertyOperation,
-                HubspotSDK::Events::ComparativeStringPropertyOperation,
-                HubspotSDK::Events::ComparativePropertyUpdatedOperation,
-                HubspotSDK::Events::RollingDateRangePropertyOperation,
-                HubspotSDK::Events::RollingPropertyUpdatedOperation,
-                HubspotSDK::Events::EnumerationPropertyOperation,
-                HubspotSDK::Events::AllPropertyTypesOperation,
-                HubspotSDK::Events::RangedNumberPropertyOperation,
-                HubspotSDK::Events::MultiStringPropertyOperation,
-                HubspotSDK::Events::DatePropertyOperation,
-                HubspotSDK::Events::CalendarDatePropertyOperation,
-                HubspotSDK::Events::TimePointOperation,
-                HubspotSDK::Events::RangedTimeOperation,
-                HubspotSDK::Events::RegexPropertyOperation
+                HubSpotSDK::Events::BoolPropertyOperation,
+                HubSpotSDK::Events::NumberPropertyOperation,
+                HubSpotSDK::Events::StringPropertyOperation,
+                HubSpotSDK::Events::DateTimePropertyOperation,
+                HubSpotSDK::Events::RangedDatePropertyOperation,
+                HubSpotSDK::Events::ComparativeDatePropertyOperation,
+                HubSpotSDK::Events::ComparativeBoolPropertyOperation,
+                HubSpotSDK::Events::ComparativeNumberPropertyOperation,
+                HubSpotSDK::Events::ComparativeStringPropertyOperation,
+                HubSpotSDK::Events::ComparativePropertyUpdatedOperation,
+                HubSpotSDK::Events::RollingDateRangePropertyOperation,
+                HubSpotSDK::Events::RollingPropertyUpdatedOperation,
+                HubSpotSDK::Events::EnumerationPropertyOperation,
+                HubSpotSDK::Events::AllPropertyTypesOperation,
+                HubSpotSDK::Events::RangedNumberPropertyOperation,
+                HubSpotSDK::Events::MultiStringPropertyOperation,
+                HubSpotSDK::Events::DatePropertyOperation,
+                HubSpotSDK::Events::CalendarDatePropertyOperation,
+                HubSpotSDK::Events::TimePointOperation,
+                HubSpotSDK::Events::RangedTimeOperation,
+                HubSpotSDK::Events::RegexPropertyOperation
               )
             end
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Events::PropertyFilter::Operation::Variants]
+              T::Array[HubSpotSDK::Events::PropertyFilter::Operation::Variants]
             )
           end
           def self.variants

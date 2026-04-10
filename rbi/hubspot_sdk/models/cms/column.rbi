@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Column < HubspotSDK::Internal::Type::BaseModel
+      class Column < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::Column, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::Column, HubSpotSDK::Internal::AnyHash)
           end
 
         # Column Id
@@ -30,7 +30,7 @@ module HubspotSDK
         attr_accessor :name
 
         # Type of the column
-        sig { returns(HubspotSDK::Cms::Column::Type::TaggedSymbol) }
+        sig { returns(HubSpotSDK::Cms::Column::Type::TaggedSymbol) }
         attr_accessor :type
 
         # The timestamp when the column was created.
@@ -40,10 +40,10 @@ module HubspotSDK
         sig { params(created_at: Time).void }
         attr_writer :created_at
 
-        sig { returns(T.nilable(HubspotSDK::Cms::SimpleUser)) }
+        sig { returns(T.nilable(HubSpotSDK::Cms::SimpleUser)) }
         attr_reader :created_by
 
-        sig { params(created_by: HubspotSDK::Cms::SimpleUser::OrHash).void }
+        sig { params(created_by: HubSpotSDK::Cms::SimpleUser::OrHash).void }
         attr_writer :created_by
 
         # The ID of the user who created the column.
@@ -61,34 +61,34 @@ module HubspotSDK
         attr_writer :foreign_column_id
 
         # Foreign Ids
-        sig { returns(T.nilable(T::Array[HubspotSDK::Cms::ForeignID])) }
+        sig { returns(T.nilable(T::Array[HubSpotSDK::Cms::ForeignID])) }
         attr_reader :foreign_ids
 
         sig do
-          params(foreign_ids: T::Array[HubspotSDK::Cms::ForeignID::OrHash]).void
+          params(foreign_ids: T::Array[HubSpotSDK::Cms::ForeignID::OrHash]).void
         end
         attr_writer :foreign_ids
 
         # Foreign ids
-        sig { returns(T.nilable(T::Hash[Symbol, HubspotSDK::Cms::ForeignID])) }
+        sig { returns(T.nilable(T::Hash[Symbol, HubSpotSDK::Cms::ForeignID])) }
         attr_reader :foreign_ids_by_id
 
         sig do
           params(
             foreign_ids_by_id:
-              T::Hash[Symbol, HubspotSDK::Cms::ForeignID::OrHash]
+              T::Hash[Symbol, HubSpotSDK::Cms::ForeignID::OrHash]
           ).void
         end
         attr_writer :foreign_ids_by_id
 
         # Foreign ids by name
-        sig { returns(T.nilable(T::Hash[Symbol, HubspotSDK::Cms::ForeignID])) }
+        sig { returns(T.nilable(T::Hash[Symbol, HubSpotSDK::Cms::ForeignID])) }
         attr_reader :foreign_ids_by_name
 
         sig do
           params(
             foreign_ids_by_name:
-              T::Hash[Symbol, HubspotSDK::Cms::ForeignID::OrHash]
+              T::Hash[Symbol, HubSpotSDK::Cms::ForeignID::OrHash]
           ).void
         end
         attr_writer :foreign_ids_by_name
@@ -108,10 +108,10 @@ module HubspotSDK
         attr_writer :option_count
 
         # Options to choose for select and multi-select columns
-        sig { returns(T.nilable(T::Array[HubspotSDK::Cms::Option])) }
+        sig { returns(T.nilable(T::Array[HubSpotSDK::Cms::Option])) }
         attr_reader :options
 
-        sig { params(options: T::Array[HubspotSDK::Cms::Option::OrHash]).void }
+        sig { params(options: T::Array[HubSpotSDK::Cms::Option::OrHash]).void }
         attr_writer :options
 
         # The timestamp when the column was last updated.
@@ -121,10 +121,10 @@ module HubspotSDK
         sig { params(updated_at: Time).void }
         attr_writer :updated_at
 
-        sig { returns(T.nilable(HubspotSDK::Cms::SimpleUser)) }
+        sig { returns(T.nilable(HubSpotSDK::Cms::SimpleUser)) }
         attr_reader :updated_by
 
-        sig { params(updated_by: HubspotSDK::Cms::SimpleUser::OrHash).void }
+        sig { params(updated_by: HubSpotSDK::Cms::SimpleUser::OrHash).void }
         attr_writer :updated_by
 
         # The ID of the user who last updated the column.
@@ -148,21 +148,21 @@ module HubspotSDK
             description: String,
             label: String,
             name: String,
-            type: HubspotSDK::Cms::Column::Type::OrSymbol,
+            type: HubSpotSDK::Cms::Column::Type::OrSymbol,
             created_at: Time,
-            created_by: HubspotSDK::Cms::SimpleUser::OrHash,
+            created_by: HubSpotSDK::Cms::SimpleUser::OrHash,
             created_by_user_id: Integer,
             foreign_column_id: Integer,
-            foreign_ids: T::Array[HubspotSDK::Cms::ForeignID::OrHash],
+            foreign_ids: T::Array[HubSpotSDK::Cms::ForeignID::OrHash],
             foreign_ids_by_id:
-              T::Hash[Symbol, HubspotSDK::Cms::ForeignID::OrHash],
+              T::Hash[Symbol, HubSpotSDK::Cms::ForeignID::OrHash],
             foreign_ids_by_name:
-              T::Hash[Symbol, HubspotSDK::Cms::ForeignID::OrHash],
+              T::Hash[Symbol, HubSpotSDK::Cms::ForeignID::OrHash],
             foreign_table_id: Integer,
             option_count: Integer,
-            options: T::Array[HubspotSDK::Cms::Option::OrHash],
+            options: T::Array[HubSpotSDK::Cms::Option::OrHash],
             updated_at: Time,
-            updated_by: HubspotSDK::Cms::SimpleUser::OrHash,
+            updated_by: HubSpotSDK::Cms::SimpleUser::OrHash,
             updated_by_user_id: Integer,
             width: Integer
           ).returns(T.attached_class)
@@ -217,19 +217,19 @@ module HubspotSDK
               description: String,
               label: String,
               name: String,
-              type: HubspotSDK::Cms::Column::Type::TaggedSymbol,
+              type: HubSpotSDK::Cms::Column::Type::TaggedSymbol,
               created_at: Time,
-              created_by: HubspotSDK::Cms::SimpleUser,
+              created_by: HubSpotSDK::Cms::SimpleUser,
               created_by_user_id: Integer,
               foreign_column_id: Integer,
-              foreign_ids: T::Array[HubspotSDK::Cms::ForeignID],
-              foreign_ids_by_id: T::Hash[Symbol, HubspotSDK::Cms::ForeignID],
-              foreign_ids_by_name: T::Hash[Symbol, HubspotSDK::Cms::ForeignID],
+              foreign_ids: T::Array[HubSpotSDK::Cms::ForeignID],
+              foreign_ids_by_id: T::Hash[Symbol, HubSpotSDK::Cms::ForeignID],
+              foreign_ids_by_name: T::Hash[Symbol, HubSpotSDK::Cms::ForeignID],
               foreign_table_id: Integer,
               option_count: Integer,
-              options: T::Array[HubspotSDK::Cms::Option],
+              options: T::Array[HubSpotSDK::Cms::Option],
               updated_at: Time,
-              updated_by: HubspotSDK::Cms::SimpleUser,
+              updated_by: HubSpotSDK::Cms::SimpleUser,
               updated_by_user_id: Integer,
               width: Integer
             }
@@ -240,46 +240,46 @@ module HubspotSDK
 
         # Type of the column
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
-            T.type_alias { T.all(Symbol, HubspotSDK::Cms::Column::Type) }
+            T.type_alias { T.all(Symbol, HubSpotSDK::Cms::Column::Type) }
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          BOOLEAN = T.let(:BOOLEAN, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          CODE = T.let(:CODE, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+          BOOLEAN = T.let(:BOOLEAN, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
+          CODE = T.let(:CODE, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
           COMPOSITE =
-            T.let(:COMPOSITE, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          CTA = T.let(:CTA, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+            T.let(:COMPOSITE, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
+          CTA = T.let(:CTA, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
           CURRENCY =
-            T.let(:CURRENCY, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          DATE = T.let(:DATE, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+            T.let(:CURRENCY, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
+          DATE = T.let(:DATE, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
           DATETIME =
-            T.let(:DATETIME, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          EMBED = T.let(:EMBED, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          FILE = T.let(:FILE, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+            T.let(:DATETIME, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
+          EMBED = T.let(:EMBED, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
+          FILE = T.let(:FILE, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
           FOREIGN_ID =
-            T.let(:FOREIGN_ID, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+            T.let(:FOREIGN_ID, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
           HUBSPOT_VIDEO =
-            T.let(:HUBSPOT_VIDEO, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          IMAGE = T.let(:IMAGE, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          JSON = T.let(:JSON, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+            T.let(:HUBSPOT_VIDEO, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
+          IMAGE = T.let(:IMAGE, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
+          JSON = T.let(:JSON, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
           LOCATION =
-            T.let(:LOCATION, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+            T.let(:LOCATION, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
           MULTISELECT =
-            T.let(:MULTISELECT, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          NULL = T.let(:NULL, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          NUMBER = T.let(:NUMBER, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+            T.let(:MULTISELECT, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
+          NULL = T.let(:NULL, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
+          NUMBER = T.let(:NUMBER, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
           RICHTEXT =
-            T.let(:RICHTEXT, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          SELECT = T.let(:SELECT, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          TEXT = T.let(:TEXT, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          URL = T.let(:URL, HubspotSDK::Cms::Column::Type::TaggedSymbol)
-          VIDEO = T.let(:VIDEO, HubspotSDK::Cms::Column::Type::TaggedSymbol)
+            T.let(:RICHTEXT, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
+          SELECT = T.let(:SELECT, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
+          TEXT = T.let(:TEXT, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
+          URL = T.let(:URL, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
+          VIDEO = T.let(:VIDEO, HubSpotSDK::Cms::Column::Type::TaggedSymbol)
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Cms::Column::Type::TaggedSymbol]
+              T::Array[HubSpotSDK::Cms::Column::Type::TaggedSymbol]
             )
           end
           def self.values

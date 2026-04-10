@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class ContactReference < HubspotSDK::Internal::Type::BaseModel
+      class ContactReference < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::ContactReference,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::ContactReference,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

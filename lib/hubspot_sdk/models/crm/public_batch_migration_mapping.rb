@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Lists#create_id_mapping
-      class PublicBatchMigrationMapping < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::Lists#create_id_mapping
+      class PublicBatchMigrationMapping < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute legacy_list_ids_to_ids_mapping
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PublicMigrationMapping>]
+        #   @return [Array<HubSpotSDK::Models::Crm::PublicMigrationMapping>]
         required :legacy_list_ids_to_ids_mapping,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicMigrationMapping] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicMigrationMapping] },
                  api_name: :legacyListIdsToIdsMapping
 
         # @!attribute missing_legacy_list_ids
@@ -18,14 +18,14 @@ module HubspotSDK
         #
         #   @return [Array<String>]
         required :missing_legacy_list_ids,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :missingLegacyListIds
 
         # @!method initialize(legacy_list_ids_to_ids_mapping:, missing_legacy_list_ids:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicBatchMigrationMapping} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicBatchMigrationMapping} for more details.
         #
-        #   @param legacy_list_ids_to_ids_mapping [Array<HubspotSDK::Models::Crm::PublicMigrationMapping>]
+        #   @param legacy_list_ids_to_ids_mapping [Array<HubSpotSDK::Models::Crm::PublicMigrationMapping>]
         #
         #   @param missing_legacy_list_ids [Array<String>] A list of legacy list ids that were passed in but not found. It will be empty if
       end

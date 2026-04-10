@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class BatchResponseHubDBTableRowV3WithErrors < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseHubDBTableRowV3WithErrors < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   The timestamp indicating when the batch processing was completed.
         #
@@ -12,8 +12,8 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Cms::HubDBTableRowV3>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3] }
+        #   @return [Array<HubSpotSDK::Models::Cms::HubDBTableRowV3>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::HubDBTableRowV3] }
 
         # @!attribute started_at
         #   The timestamp indicating when the batch processing began.
@@ -25,19 +25,19 @@ module HubspotSDK
         #   The current status of the batch operation, with possible values: CANCELED,
         #   COMPLETE, PENDING, PROCESSING.
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3WithErrors::Status]
-        required :status, enum: -> { HubspotSDK::Cms::BatchResponseHubDBTableRowV3WithErrors::Status }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::BatchResponseHubDBTableRowV3WithErrors::Status]
+        required :status, enum: -> { HubSpotSDK::Cms::BatchResponseHubDBTableRowV3WithErrors::Status }
 
         # @!attribute errors
         #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
+        #   @return [Array<HubSpotSDK::Models::StandardError>, nil]
+        optional :errors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError] }
 
         # @!attribute links
         #   A collection of related links associated with the batch response.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute num_errors
         #   The number of errors encountered during the batch operation.
@@ -53,18 +53,18 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3WithErrors} for more
+        #   {HubSpotSDK::Models::Cms::BatchResponseHubDBTableRowV3WithErrors} for more
         #   details.
         #
         #   @param completed_at [Time] The timestamp indicating when the batch processing was completed.
         #
-        #   @param results [Array<HubspotSDK::Models::Cms::HubDBTableRowV3>]
+        #   @param results [Array<HubSpotSDK::Models::Cms::HubDBTableRowV3>]
         #
         #   @param started_at [Time] The timestamp indicating when the batch processing began.
         #
-        #   @param status [Symbol, HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3WithErrors::Status] The current status of the batch operation, with possible values: CANCELED, COMPL
+        #   @param status [Symbol, HubSpotSDK::Models::Cms::BatchResponseHubDBTableRowV3WithErrors::Status] The current status of the batch operation, with possible values: CANCELED, COMPL
         #
-        #   @param errors [Array<HubspotSDK::Models::StandardError>]
+        #   @param errors [Array<HubSpotSDK::Models::StandardError>]
         #
         #   @param links [Hash{Symbol=>String}] A collection of related links associated with the batch response.
         #
@@ -75,9 +75,9 @@ module HubspotSDK
         # The current status of the batch operation, with possible values: CANCELED,
         # COMPLETE, PENDING, PROCESSING.
         #
-        # @see HubspotSDK::Models::Cms::BatchResponseHubDBTableRowV3WithErrors#status
+        # @see HubSpotSDK::Models::Cms::BatchResponseHubDBTableRowV3WithErrors#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Objects
-        class GenericObjectSearchParams < HubspotSDK::Models::Crm::PublicObjectSearchRequest
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class GenericObjectSearchParams < HubSpotSDK::Models::Crm::PublicObjectSearchRequest
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Objects::GenericObjectSearchParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Objects::GenericObjectSearchParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -22,7 +22,7 @@ module HubspotSDK
           sig do
             params(
               object_type: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(object_type:, request_options: {})
@@ -32,7 +32,7 @@ module HubspotSDK
             override.returns(
               {
                 object_type: String,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

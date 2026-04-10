@@ -2,41 +2,41 @@
 
 require_relative "../test_helper"
 
-class HubspotSDK::Test::SorbetRuntimeSupportTest < Minitest::Test
+class HubSpotSDK::Test::SorbetRuntimeSupportTest < Minitest::Test
   extend Minitest::Serial
 
   i_suck_and_my_tests_are_order_dependent!
 
   module E
-    extend HubspotSDK::Internal::Type::Enum
+    extend HubSpotSDK::Internal::Type::Enum
 
     define_sorbet_constant!(:TaggedSymbol) { 1 }
   end
 
   module U
-    extend HubspotSDK::Internal::Type::Union
+    extend HubSpotSDK::Internal::Type::Union
 
     define_sorbet_constant!(:Variants) { 2 }
   end
 
-  class M < HubspotSDK::Internal::Type::BaseModel
+  class M < HubSpotSDK::Internal::Type::BaseModel
     define_sorbet_constant!(:OrHash) { 3 }
   end
 
   def test_nil_aliases
-    err = HubspotSDK::Internal::Util::SorbetRuntimeSupport::MissingSorbetRuntimeError
+    err = HubSpotSDK::Internal::Util::SorbetRuntimeSupport::MissingSorbetRuntimeError
 
-    assert_raises(err) { HubspotSDK::Internal::AnyHash }
-    assert_raises(err) { HubspotSDK::Internal::FileInput }
-    assert_raises(err) { HubspotSDK::Internal::Type::Converter::Input }
-    assert_raises(err) { HubspotSDK::Internal::Type::Converter::CoerceState }
-    assert_raises(err) { HubspotSDK::Internal::Type::Converter::DumpState }
-    assert_raises(err) { HubspotSDK::Internal::Type::BaseModel::KnownField }
-    assert_raises(err) { HubspotSDK::Internal::Util::ParsedUri }
-    assert_raises(err) { HubspotSDK::Internal::Util::ServerSentEvent }
-    assert_raises(err) { HubspotSDK::Internal::Transport::BaseClient::RequestComponents }
-    assert_raises(err) { HubspotSDK::Internal::Transport::BaseClient::RequestInput }
-    assert_raises(err) { HubspotSDK::Internal::Transport::PooledNetRequester::Request }
+    assert_raises(err) { HubSpotSDK::Internal::AnyHash }
+    assert_raises(err) { HubSpotSDK::Internal::FileInput }
+    assert_raises(err) { HubSpotSDK::Internal::Type::Converter::Input }
+    assert_raises(err) { HubSpotSDK::Internal::Type::Converter::CoerceState }
+    assert_raises(err) { HubSpotSDK::Internal::Type::Converter::DumpState }
+    assert_raises(err) { HubSpotSDK::Internal::Type::BaseModel::KnownField }
+    assert_raises(err) { HubSpotSDK::Internal::Util::ParsedUri }
+    assert_raises(err) { HubSpotSDK::Internal::Util::ServerSentEvent }
+    assert_raises(err) { HubSpotSDK::Internal::Transport::BaseClient::RequestComponents }
+    assert_raises(err) { HubSpotSDK::Internal::Transport::BaseClient::RequestInput }
+    assert_raises(err) { HubSpotSDK::Internal::Transport::PooledNetRequester::Request }
     assert_raises(err) { E::TaggedSymbol }
     assert_raises(err) { U::Variants }
     assert_raises(err) { M::OrHash }

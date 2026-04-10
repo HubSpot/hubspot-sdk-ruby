@@ -1,30 +1,30 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_user_busy_times =
         {
-          busy_times: ::Array[HubspotSDK::Scheduler::ExternalTimeRange],
+          busy_times: ::Array[HubSpotSDK::Scheduler::ExternalTimeRange],
           is_offline: bool,
-          meetings_user: HubspotSDK::Scheduler::ExternalMeetingsUser
+          meetings_user: HubSpotSDK::Scheduler::ExternalMeetingsUser
         }
 
-      class ExternalUserBusyTimes < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor busy_times: ::Array[HubspotSDK::Scheduler::ExternalTimeRange]
+      class ExternalUserBusyTimes < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor busy_times: ::Array[HubSpotSDK::Scheduler::ExternalTimeRange]
 
         attr_accessor is_offline: bool
 
-        attr_accessor meetings_user: HubspotSDK::Scheduler::ExternalMeetingsUser
+        attr_accessor meetings_user: HubSpotSDK::Scheduler::ExternalMeetingsUser
 
         def initialize: (
-          busy_times: ::Array[HubspotSDK::Scheduler::ExternalTimeRange],
+          busy_times: ::Array[HubSpotSDK::Scheduler::ExternalTimeRange],
           is_offline: bool,
-          meetings_user: HubspotSDK::Scheduler::ExternalMeetingsUser
+          meetings_user: HubSpotSDK::Scheduler::ExternalMeetingsUser
         ) -> void
 
         def to_hash: -> {
-          busy_times: ::Array[HubspotSDK::Scheduler::ExternalTimeRange],
+          busy_times: ::Array[HubSpotSDK::Scheduler::ExternalTimeRange],
           is_offline: bool,
-          meetings_user: HubspotSDK::Scheduler::ExternalMeetingsUser
+          meetings_user: HubSpotSDK::Scheduler::ExternalMeetingsUser
         }
       end
     end

@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       module CustomChannels
-        # @see HubspotSDK::Resources::Conversations::CustomChannels::ChannelAccounts#update_staging_token
-        class ChannelAccountUpdateStagingTokenParams < HubspotSDK::Models::Conversations::PublicChannelAccountStagingTokenUpdateRequest
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Conversations::CustomChannels::ChannelAccounts#update_staging_token
+        class ChannelAccountUpdateStagingTokenParams < HubSpotSDK::Models::Conversations::PublicChannelAccountStagingTokenUpdateRequest
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute channel_id
           #
@@ -22,7 +22,7 @@ module HubspotSDK
           # @!method initialize(channel_id:, account_token:, request_options: {})
           #   @param channel_id [Integer]
           #   @param account_token [String]
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

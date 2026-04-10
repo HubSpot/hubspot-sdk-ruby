@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class AssociatedID < HubspotSDK::Internal::Type::BaseModel
+      class AssociatedID < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The ID for the association type.
         #

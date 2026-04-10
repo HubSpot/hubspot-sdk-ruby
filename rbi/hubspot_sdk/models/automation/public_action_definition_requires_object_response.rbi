@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicActionDefinitionRequiresObjectResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicActionDefinitionRequiresObjectResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::PublicActionDefinitionRequiresObjectResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::PublicActionDefinitionRequiresObjectResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

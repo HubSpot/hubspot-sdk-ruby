@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Settings::Currencies::ExchangeRatesTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Settings::Currencies::ExchangeRatesTest < HubSpotSDK::Test::ResourceTest
   def test_create_exchange_rate_required_params
     skip("Mock server tests are disabled")
 
@@ -13,7 +13,7 @@ class HubspotSDK::Test::Resources::Settings::Currencies::ExchangeRatesTest < Hub
       )
 
     assert_pattern do
-      response => HubspotSDK::Settings::ExchangeRate
+      response => HubSpotSDK::Settings::ExchangeRate
     end
 
     assert_pattern do
@@ -22,10 +22,10 @@ class HubspotSDK::Test::Resources::Settings::Currencies::ExchangeRatesTest < Hub
         conversion_rate: Float,
         created_at: Time,
         effective_at: Time,
-        from_currency_code: HubspotSDK::Settings::ExchangeRate::FromCurrencyCode,
-        to_currency_code: HubspotSDK::Settings::ExchangeRate::ToCurrencyCode,
+        from_currency_code: HubSpotSDK::Settings::ExchangeRate::FromCurrencyCode,
+        to_currency_code: HubSpotSDK::Settings::ExchangeRate::ToCurrencyCode,
         updated_at: Time,
-        visible_in_ui: HubspotSDK::Internal::Type::Boolean
+        visible_in_ui: HubSpotSDK::Internal::Type::Boolean
       }
     end
   end
@@ -36,7 +36,7 @@ class HubspotSDK::Test::Resources::Settings::Currencies::ExchangeRatesTest < Hub
     response = @hubspot.settings.currencies.exchange_rates.get_exchange_rate_by_id("exchangeRateId")
 
     assert_pattern do
-      response => HubspotSDK::Settings::ExchangeRate
+      response => HubSpotSDK::Settings::ExchangeRate
     end
 
     assert_pattern do
@@ -45,10 +45,10 @@ class HubspotSDK::Test::Resources::Settings::Currencies::ExchangeRatesTest < Hub
         conversion_rate: Float,
         created_at: Time,
         effective_at: Time,
-        from_currency_code: HubspotSDK::Settings::ExchangeRate::FromCurrencyCode,
-        to_currency_code: HubspotSDK::Settings::ExchangeRate::ToCurrencyCode,
+        from_currency_code: HubSpotSDK::Settings::ExchangeRate::FromCurrencyCode,
+        to_currency_code: HubSpotSDK::Settings::ExchangeRate::ToCurrencyCode,
         updated_at: Time,
-        visible_in_ui: HubspotSDK::Internal::Type::Boolean
+        visible_in_ui: HubSpotSDK::Internal::Type::Boolean
       }
     end
   end
@@ -59,12 +59,12 @@ class HubspotSDK::Test::Resources::Settings::Currencies::ExchangeRatesTest < Hub
     response = @hubspot.settings.currencies.exchange_rates.list_current_exchange_rates
 
     assert_pattern do
-      response => HubspotSDK::Settings::CollectionResponseExchangeRateNoPaging
+      response => HubSpotSDK::Settings::CollectionResponseExchangeRateNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Settings::ExchangeRate])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Settings::ExchangeRate])
       }
     end
   end
@@ -75,14 +75,14 @@ class HubspotSDK::Test::Resources::Settings::Currencies::ExchangeRatesTest < Hub
     response = @hubspot.settings.currencies.exchange_rates.list_exchange_rates
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Settings::ExchangeRate
+      row => HubSpotSDK::Settings::ExchangeRate
     end
 
     assert_pattern do
@@ -91,10 +91,10 @@ class HubspotSDK::Test::Resources::Settings::Currencies::ExchangeRatesTest < Hub
         conversion_rate: Float,
         created_at: Time,
         effective_at: Time,
-        from_currency_code: HubspotSDK::Settings::ExchangeRate::FromCurrencyCode,
-        to_currency_code: HubspotSDK::Settings::ExchangeRate::ToCurrencyCode,
+        from_currency_code: HubSpotSDK::Settings::ExchangeRate::FromCurrencyCode,
+        to_currency_code: HubSpotSDK::Settings::ExchangeRate::ToCurrencyCode,
         updated_at: Time,
-        visible_in_ui: HubspotSDK::Internal::Type::Boolean
+        visible_in_ui: HubSpotSDK::Internal::Type::Boolean
       }
     end
   end
@@ -106,7 +106,7 @@ class HubspotSDK::Test::Resources::Settings::Currencies::ExchangeRatesTest < Hub
       @hubspot.settings.currencies.exchange_rates.update_exchange_rate("exchangeRateId", conversion_rate: 0)
 
     assert_pattern do
-      response => HubspotSDK::Settings::ExchangeRate
+      response => HubSpotSDK::Settings::ExchangeRate
     end
 
     assert_pattern do
@@ -115,10 +115,10 @@ class HubspotSDK::Test::Resources::Settings::Currencies::ExchangeRatesTest < Hub
         conversion_rate: Float,
         created_at: Time,
         effective_at: Time,
-        from_currency_code: HubspotSDK::Settings::ExchangeRate::FromCurrencyCode,
-        to_currency_code: HubspotSDK::Settings::ExchangeRate::ToCurrencyCode,
+        from_currency_code: HubSpotSDK::Settings::ExchangeRate::FromCurrencyCode,
+        to_currency_code: HubSpotSDK::Settings::ExchangeRate::ToCurrencyCode,
         updated_at: Time,
-        visible_in_ui: HubspotSDK::Internal::Type::Boolean
+        visible_in_ui: HubSpotSDK::Internal::Type::Boolean
       }
     end
   end

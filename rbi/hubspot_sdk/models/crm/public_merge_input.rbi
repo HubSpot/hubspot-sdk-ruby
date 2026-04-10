@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicMergeInput < HubspotSDK::Internal::Type::BaseModel
+      class PublicMergeInput < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicMergeInput,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicMergeInput,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class MediaBridgeListObjectTypesByMediaTypeParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class MediaBridgeListObjectTypesByMediaTypeParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::OrSymbol
+            HubSpotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::OrSymbol
           )
         end
         attr_accessor :media_type
@@ -35,9 +35,9 @@ module HubspotSDK
           params(
             app_id: Integer,
             media_type:
-              HubspotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::OrSymbol,
+              HubSpotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::OrSymbol,
             include_full_definition: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -53,9 +53,9 @@ module HubspotSDK
             {
               app_id: Integer,
               media_type:
-                HubspotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::OrSymbol,
+                HubSpotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::OrSymbol,
               include_full_definition: T::Boolean,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end
@@ -63,13 +63,13 @@ module HubspotSDK
         end
 
         module MediaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType
+                HubSpotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -77,33 +77,33 @@ module HubspotSDK
           AUDIO =
             T.let(
               :AUDIO,
-              HubspotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::TaggedSymbol
             )
           DOCUMENT =
             T.let(
               :DOCUMENT,
-              HubspotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::TaggedSymbol
             )
           IMAGE =
             T.let(
               :IMAGE,
-              HubspotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::TaggedSymbol
             )
           OTHER =
             T.let(
               :OTHER,
-              HubspotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::TaggedSymbol
             )
           VIDEO =
             T.let(
               :VIDEO,
-              HubspotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::TaggedSymbol
+                HubSpotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::TaggedSymbol
               ]
             )
           end

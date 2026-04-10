@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::Domains#list
-      class Domain < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Cms::Domains#list
+      class Domain < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique ID of this domain.
         #
@@ -33,89 +33,89 @@ module HubspotSDK
         #   Whether the DNS for this domain is optimally configured for use with HubSpot.
         #
         #   @return [Boolean]
-        required :is_resolving, HubspotSDK::Internal::Type::Boolean, api_name: :isResolving
+        required :is_resolving, HubSpotSDK::Internal::Type::Boolean, api_name: :isResolving
 
         # @!attribute is_ssl_enabled
         #   Indicates whether SSL is enabled for the domain.
         #
         #   @return [Boolean]
-        required :is_ssl_enabled, HubspotSDK::Internal::Type::Boolean, api_name: :isSslEnabled
+        required :is_ssl_enabled, HubSpotSDK::Internal::Type::Boolean, api_name: :isSslEnabled
 
         # @!attribute is_ssl_only
         #   Indicates whether the domain is accessible only via SSL.
         #
         #   @return [Boolean]
-        required :is_ssl_only, HubspotSDK::Internal::Type::Boolean, api_name: :isSslOnly
+        required :is_ssl_only, HubSpotSDK::Internal::Type::Boolean, api_name: :isSslOnly
 
         # @!attribute is_used_for_blog_post
         #   Whether the domain is used for CMS blog posts.
         #
         #   @return [Boolean]
-        required :is_used_for_blog_post, HubspotSDK::Internal::Type::Boolean, api_name: :isUsedForBlogPost
+        required :is_used_for_blog_post, HubSpotSDK::Internal::Type::Boolean, api_name: :isUsedForBlogPost
 
         # @!attribute is_used_for_email
         #   Whether the domain is used for CMS email web pages.
         #
         #   @return [Boolean]
-        required :is_used_for_email, HubspotSDK::Internal::Type::Boolean, api_name: :isUsedForEmail
+        required :is_used_for_email, HubSpotSDK::Internal::Type::Boolean, api_name: :isUsedForEmail
 
         # @!attribute is_used_for_knowledge
         #   Whether the domain is used for CMS knowledge pages.
         #
         #   @return [Boolean]
-        required :is_used_for_knowledge, HubspotSDK::Internal::Type::Boolean, api_name: :isUsedForKnowledge
+        required :is_used_for_knowledge, HubSpotSDK::Internal::Type::Boolean, api_name: :isUsedForKnowledge
 
         # @!attribute is_used_for_landing_page
         #   Whether the domain is used for CMS landing pages.
         #
         #   @return [Boolean]
         required :is_used_for_landing_page,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :isUsedForLandingPage
 
         # @!attribute is_used_for_site_page
         #   Whether the domain is used for CMS site pages.
         #
         #   @return [Boolean]
-        required :is_used_for_site_page, HubspotSDK::Internal::Type::Boolean, api_name: :isUsedForSitePage
+        required :is_used_for_site_page, HubSpotSDK::Internal::Type::Boolean, api_name: :isUsedForSitePage
 
         # @!attribute manually_marked_as_resolving
         #   Indicates whether the domain has been manually marked as resolving.
         #
         #   @return [Boolean]
         required :manually_marked_as_resolving,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :manuallyMarkedAsResolving
 
         # @!attribute primary_blog_post
         #   Indicates whether the domain is the primary domain for blog posts.
         #
         #   @return [Boolean]
-        required :primary_blog_post, HubspotSDK::Internal::Type::Boolean, api_name: :primaryBlogPost
+        required :primary_blog_post, HubSpotSDK::Internal::Type::Boolean, api_name: :primaryBlogPost
 
         # @!attribute primary_email
         #   Indicates whether the domain is the primary domain for email pages.
         #
         #   @return [Boolean]
-        required :primary_email, HubspotSDK::Internal::Type::Boolean, api_name: :primaryEmail
+        required :primary_email, HubSpotSDK::Internal::Type::Boolean, api_name: :primaryEmail
 
         # @!attribute primary_knowledge
         #   Indicates whether the domain is the primary domain for knowledge pages.
         #
         #   @return [Boolean]
-        required :primary_knowledge, HubspotSDK::Internal::Type::Boolean, api_name: :primaryKnowledge
+        required :primary_knowledge, HubSpotSDK::Internal::Type::Boolean, api_name: :primaryKnowledge
 
         # @!attribute primary_landing_page
         #   Indicates whether the domain is the primary domain for landing pages.
         #
         #   @return [Boolean]
-        required :primary_landing_page, HubspotSDK::Internal::Type::Boolean, api_name: :primaryLandingPage
+        required :primary_landing_page, HubSpotSDK::Internal::Type::Boolean, api_name: :primaryLandingPage
 
         # @!attribute primary_site_page
         #   Indicates whether the domain is the primary domain for site pages.
         #
         #   @return [Boolean]
-        required :primary_site_page, HubspotSDK::Internal::Type::Boolean, api_name: :primarySitePage
+        required :primary_site_page, HubSpotSDK::Internal::Type::Boolean, api_name: :primarySitePage
 
         # @!attribute secondary_to_domain
         #   Specifies the domain to which this domain is secondary.

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::SourceCode#create
-      class AssetFileMetadata < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Cms::SourceCode#create
+      class AssetFileMetadata < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The path of the file in the CMS Developer File System.
         #
@@ -21,7 +21,7 @@ module HubspotSDK
         #   Determines whether or not this path points to a folder.
         #
         #   @return [Boolean]
-        required :folder, HubspotSDK::Internal::Type::Boolean
+        required :folder, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute name
         #   The name of the file.
@@ -46,7 +46,7 @@ module HubspotSDK
         #   folder.
         #
         #   @return [Array<String>, nil]
-        optional :children, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :children, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute hash_
         #   A unique identifier for the file's content, used to verify data integrity.
@@ -56,7 +56,7 @@ module HubspotSDK
 
         # @!method initialize(id:, created_at:, folder:, name:, updated_at:, archived_at: nil, children: nil, hash_: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Cms::AssetFileMetadata} for more details.
+        #   {HubSpotSDK::Models::Cms::AssetFileMetadata} for more details.
         #
         #   @param id [String] The path of the file in the CMS Developer File System.
         #

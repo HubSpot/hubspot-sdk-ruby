@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Owners
@@ -10,8 +10,8 @@ module HubspotSDK
             archived: T::Boolean,
             email: String,
             limit: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Internal::Page[HubspotSDK::Crm::PublicOwner])
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Internal::Page[HubSpotSDK::Crm::PublicOwner])
         end
         def list(
           # The paging cursor token of the last successfully read resource will be returned
@@ -33,9 +33,9 @@ module HubspotSDK
           params(
             owner_id: Integer,
             archived: T::Boolean,
-            id_property: HubspotSDK::Crm::OwnerGetParams::IDProperty::OrSymbol,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::PublicOwner)
+            id_property: HubSpotSDK::Crm::OwnerGetParams::IDProperty::OrSymbol,
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::PublicOwner)
         end
         def get(
           owner_id,
@@ -47,7 +47,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalBookingFormField < HubspotSDK::Internal::Type::BaseModel
+      class ExternalBookingFormField < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute name
         #   The name of the form field.
         #

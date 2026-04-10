@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class ErrorDetail < HubspotSDK::Internal::Type::BaseModel
+    class ErrorDetail < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute message
       #   A human readable message describing the error along with remediation steps where
       #   appropriate
@@ -20,7 +20,7 @@ module HubspotSDK
       #   Context about the error condition
       #
       #   @return [Hash{Symbol=>Array<String>}, nil]
-      optional :context, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[String]]
+      optional :context, HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::ArrayOf[String]]
 
       # @!attribute in_
       #   The name of the field or parameter in which the error was found.
@@ -36,7 +36,7 @@ module HubspotSDK
 
       # @!method initialize(message:, code: nil, context: nil, in_: nil, sub_category: nil)
       #   Some parameter documentations has been truncated, see
-      #   {HubspotSDK::Models::ErrorDetail} for more details.
+      #   {HubSpotSDK::Models::ErrorDetail} for more details.
       #
       #   @param message [String] A human readable message describing the error along with remediation steps where
       #

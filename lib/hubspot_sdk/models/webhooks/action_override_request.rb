@@ -1,30 +1,30 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class ActionOverrideRequest < HubspotSDK::Internal::Type::BaseModel
+      class ActionOverrideRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute associated_object_type_ids
         #
         #   @return [Array<String>, nil]
         optional :associated_object_type_ids,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :associatedObjectTypeIds
 
         # @!attribute list_ids
         #
         #   @return [Array<Integer>, nil]
-        optional :list_ids, HubspotSDK::Internal::Type::ArrayOf[Integer], api_name: :listIds
+        optional :list_ids, HubSpotSDK::Internal::Type::ArrayOf[Integer], api_name: :listIds
 
         # @!attribute object_ids
         #
         #   @return [Array<Integer>, nil]
-        optional :object_ids, HubspotSDK::Internal::Type::ArrayOf[Integer], api_name: :objectIds
+        optional :object_ids, HubSpotSDK::Internal::Type::ArrayOf[Integer], api_name: :objectIds
 
         # @!attribute properties
         #
         #   @return [Array<String>, nil]
-        optional :properties, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :properties, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!method initialize(associated_object_type_ids: nil, list_ids: nil, object_ids: nil, properties: nil)
         #   @param associated_object_type_ids [Array<String>]

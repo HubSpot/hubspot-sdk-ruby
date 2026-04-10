@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ListSearchResponse < HubspotSDK::Internal::Type::BaseModel
+      class ListSearchResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::ListSearchResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::ListSearchResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -17,7 +17,7 @@ module HubspotSDK
         attr_accessor :has_more
 
         # The lists that matched the search criteria.
-        sig { returns(T::Array[HubspotSDK::Crm::PublicObjectListSearchResult]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::PublicObjectListSearchResult]) }
         attr_accessor :lists
 
         # Value to be passed in a future request to paginate through list search results.
@@ -32,7 +32,7 @@ module HubspotSDK
           params(
             has_more: T::Boolean,
             lists:
-              T::Array[HubspotSDK::Crm::PublicObjectListSearchResult::OrHash],
+              T::Array[HubSpotSDK::Crm::PublicObjectListSearchResult::OrHash],
             offset: Integer,
             total: Integer
           ).returns(T.attached_class)
@@ -53,7 +53,7 @@ module HubspotSDK
           override.returns(
             {
               has_more: T::Boolean,
-              lists: T::Array[HubspotSDK::Crm::PublicObjectListSearchResult],
+              lists: T::Array[HubSpotSDK::Crm::PublicObjectListSearchResult],
               offset: Integer,
               total: Integer
             }

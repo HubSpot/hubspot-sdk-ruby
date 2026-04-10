@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type hub_db_table_row_v3 =
@@ -13,7 +13,7 @@ module HubspotSDK
           values: ::Hash[Symbol, top]
         }
 
-      class HubDBTableRowV3 < HubspotSDK::Internal::Type::BaseModel
+      class HubDBTableRowV3 < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor child_table_id: String

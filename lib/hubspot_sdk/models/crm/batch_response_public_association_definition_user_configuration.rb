@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchResponsePublicAssociationDefinitionUserConfiguration < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponsePublicAssociationDefinitionUserConfiguration < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   The date and time when the batch operation was completed.
         #
@@ -12,9 +12,9 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PublicAssociationDefinitionUserConfiguration>]
+        #   @return [Array<HubSpotSDK::Models::Crm::PublicAssociationDefinitionUserConfiguration>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicAssociationDefinitionUserConfiguration] }
 
         # @!attribute started_at
         #   The date and time when the batch operation started.
@@ -26,16 +26,16 @@ module HubspotSDK
         #   The current status of the batch operation, which can be CANCELED, COMPLETE,
         #   PENDING, or PROCESSING.
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration::Status]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration::Status]
         required :status,
-                 enum: -> { HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration::Status }
+                 enum: -> { HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration::Status }
 
         # @!attribute links
         #   A collection of URLs linking to related documentation or resources associated
         #   with the batch operation.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute requested_at
         #   The date and time when the batch operation was requested.
@@ -45,16 +45,16 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration}
+        #   {HubSpotSDK::Models::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration}
         #   for more details.
         #
         #   @param completed_at [Time] The date and time when the batch operation was completed.
         #
-        #   @param results [Array<HubspotSDK::Models::Crm::PublicAssociationDefinitionUserConfiguration>]
+        #   @param results [Array<HubSpotSDK::Models::Crm::PublicAssociationDefinitionUserConfiguration>]
         #
         #   @param started_at [Time] The date and time when the batch operation started.
         #
-        #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration::Status] The current status of the batch operation, which can be CANCELED, COMPLETE, PEND
+        #   @param status [Symbol, HubSpotSDK::Models::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration::Status] The current status of the batch operation, which can be CANCELED, COMPLETE, PEND
         #
         #   @param links [Hash{Symbol=>String}] A collection of URLs linking to related documentation or resources associated wi
         #
@@ -63,9 +63,9 @@ module HubspotSDK
         # The current status of the batch operation, which can be CANCELED, COMPLETE,
         # PENDING, or PROCESSING.
         #
-        # @see HubspotSDK::Models::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration#status
+        # @see HubSpotSDK::Models::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

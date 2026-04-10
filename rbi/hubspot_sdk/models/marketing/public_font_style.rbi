@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicFontStyle < HubspotSDK::Internal::Type::BaseModel
+      class PublicFontStyle < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::PublicFontStyle,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::PublicFontStyle,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

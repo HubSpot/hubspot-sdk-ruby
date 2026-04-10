@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class URLMapping < HubspotSDK::Internal::Type::BaseModel
+      class URLMapping < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::URLMapping, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::URLMapping, HubSpotSDK::Internal::AnyHash)
           end
 
         # The unique ID of this URL redirect.

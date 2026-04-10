@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class OptionInput < HubspotSDK::Internal::Type::BaseModel
+    class OptionInput < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute display_order
       #
       #   @return [Integer]
@@ -11,7 +11,7 @@ module HubspotSDK
       # @!attribute hidden
       #
       #   @return [Boolean]
-      required :hidden, HubspotSDK::Internal::Type::Boolean
+      required :hidden, HubSpotSDK::Internal::Type::Boolean
 
       # @!attribute label
       #

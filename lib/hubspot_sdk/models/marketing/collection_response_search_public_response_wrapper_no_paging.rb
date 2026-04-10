@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::MarketingEvents#search_by_external_event_id
-      class CollectionResponseSearchPublicResponseWrapperNoPaging < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Marketing::MarketingEvents#search_by_external_event_id
+      class CollectionResponseSearchPublicResponseWrapperNoPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::SearchPublicResponseWrapper>]
+        #   @return [Array<HubSpotSDK::Models::Marketing::SearchPublicResponseWrapper>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::SearchPublicResponseWrapper] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::SearchPublicResponseWrapper] }
 
         # @!method initialize(results:)
-        #   @param results [Array<HubspotSDK::Models::Marketing::SearchPublicResponseWrapper>]
+        #   @param results [Array<HubSpotSDK::Models::Marketing::SearchPublicResponseWrapper>]
       end
     end
   end

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ObjectTypeIDProto < HubspotSDK::Internal::Type::BaseModel
+      class ObjectTypeIDProto < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::ObjectTypeIDProto,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::ObjectTypeIDProto,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

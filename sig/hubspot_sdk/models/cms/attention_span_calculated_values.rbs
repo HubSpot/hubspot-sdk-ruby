@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type attention_span_calculated_values =
         { total_percent_played: Float, total_seconds_played: Integer }
 
-      class AttentionSpanCalculatedValues < HubspotSDK::Internal::Type::BaseModel
+      class AttentionSpanCalculatedValues < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor total_percent_played: Float
 
         attr_accessor total_seconds_played: Integer

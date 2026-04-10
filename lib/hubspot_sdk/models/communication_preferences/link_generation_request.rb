@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class LinkGenerationRequest < HubspotSDK::Internal::Type::BaseModel
+      class LinkGenerationRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute subscriber_id_string
         #   A string representing the unique identifier of the subscriber. This property is
         #   required.
@@ -27,7 +27,7 @@ module HubspotSDK
 
         # @!method initialize(subscriber_id_string:, language: nil, subscription_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CommunicationPreferences::LinkGenerationRequest} for more
+        #   {HubSpotSDK::Models::CommunicationPreferences::LinkGenerationRequest} for more
         #   details.
         #
         #   @param subscriber_id_string [String] A string representing the unique identifier of the subscriber. This property is

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class Error < HubspotSDK::Internal::Type::BaseModel
+    class Error < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute category
       #   The error category
       #
@@ -27,20 +27,20 @@ module HubspotSDK
       #   Context about the error condition
       #
       #   @return [Hash{Symbol=>Array<String>}, nil]
-      optional :context, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[String]]
+      optional :context, HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::ArrayOf[String]]
 
       # @!attribute errors
       #   further information about the error
       #
-      #   @return [Array<HubspotSDK::Models::ErrorDetail>, nil]
-      optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::ErrorDetail] }
+      #   @return [Array<HubSpotSDK::Models::ErrorDetail>, nil]
+      optional :errors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::ErrorDetail] }
 
       # @!attribute links
       #   A map of link names to associated URIs containing documentation about the error
       #   or recommended remediation steps
       #
       #   @return [Hash{Symbol=>String}, nil]
-      optional :links, HubspotSDK::Internal::Type::HashOf[String]
+      optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
       # @!attribute sub_category
       #   A specific category that contains more specific detail about the error
@@ -50,7 +50,7 @@ module HubspotSDK
 
       # @!method initialize(category:, correlation_id:, message:, context: nil, errors: nil, links: nil, sub_category: nil)
       #   Some parameter documentations has been truncated, see
-      #   {HubspotSDK::Models::Error} for more details.
+      #   {HubSpotSDK::Models::Error} for more details.
       #
       #   @param category [String] The error category
       #
@@ -60,7 +60,7 @@ module HubspotSDK
       #
       #   @param context [Hash{Symbol=>Array<String>}] Context about the error condition
       #
-      #   @param errors [Array<HubspotSDK::Models::ErrorDetail>] further information about the error
+      #   @param errors [Array<HubSpotSDK::Models::ErrorDetail>] further information about the error
       #
       #   @param links [Hash{Symbol=>String}] A map of link names to associated URIs containing documentation about the error
       #

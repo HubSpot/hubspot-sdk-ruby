@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicFetchAssociationsBatchRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicFetchAssociationsBatchRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the object whose associations are being fetched.
         #
@@ -19,7 +19,7 @@ module HubspotSDK
 
         # @!method initialize(id:, after: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicFetchAssociationsBatchRequest} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicFetchAssociationsBatchRequest} for more details.
         #
         #   @param id [String] The unique identifier for the object whose associations are being fetched.
         #

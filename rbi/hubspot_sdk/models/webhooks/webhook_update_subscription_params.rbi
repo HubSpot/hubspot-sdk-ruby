@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class WebhookUpdateSubscriptionParams < HubspotSDK::Models::Webhooks::SubscriptionPatchRequest
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class WebhookUpdateSubscriptionParams < HubSpotSDK::Models::Webhooks::SubscriptionPatchRequest
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Webhooks::WebhookUpdateSubscriptionParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Webhooks::WebhookUpdateSubscriptionParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -25,7 +25,7 @@ module HubspotSDK
           params(
             app_id: Integer,
             subscription_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(app_id:, subscription_id:, request_options: {})
@@ -36,7 +36,7 @@ module HubspotSDK
             {
               app_id: Integer,
               subscription_id: Integer,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end

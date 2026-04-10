@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicCrmSearchRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicCrmSearchRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicCrmSearchRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicCrmSearchRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Crm::FilterGroup]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::FilterGroup]) }
         attr_accessor :filter_groups
 
-        sig { returns(T::Array[HubspotSDK::Crm::Filter]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::Filter]) }
         attr_accessor :filters
 
         # Defines the order in which the CRM records should be returned.
@@ -31,8 +31,8 @@ module HubspotSDK
 
         sig do
           params(
-            filter_groups: T::Array[HubspotSDK::Crm::FilterGroup::OrHash],
-            filters: T::Array[HubspotSDK::Crm::Filter::OrHash],
+            filter_groups: T::Array[HubSpotSDK::Crm::FilterGroup::OrHash],
+            filters: T::Array[HubSpotSDK::Crm::Filter::OrHash],
             sorts: T::Array[String],
             query: String
           ).returns(T.attached_class)
@@ -50,8 +50,8 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              filter_groups: T::Array[HubspotSDK::Crm::FilterGroup],
-              filters: T::Array[HubspotSDK::Crm::Filter],
+              filter_groups: T::Array[HubSpotSDK::Crm::FilterGroup],
+              filters: T::Array[HubSpotSDK::Crm::Filter],
               sorts: T::Array[String],
               query: String
             }

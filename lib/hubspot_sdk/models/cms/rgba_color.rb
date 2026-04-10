@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class RgbaColor < HubspotSDK::Internal::Type::BaseModel
+      class RgbaColor < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute a
         #   Alpha.
         #

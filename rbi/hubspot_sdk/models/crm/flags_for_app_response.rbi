@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class FlagsForAppResponse < HubspotSDK::Internal::Type::BaseModel
+      class FlagsForAppResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::FlagsForAppResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::FlagsForAppResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

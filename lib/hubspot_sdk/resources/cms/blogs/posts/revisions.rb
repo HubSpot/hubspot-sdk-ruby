@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Blogs
@@ -12,13 +12,13 @@ module HubspotSDK
             #
             # @param revision_id [String]
             # @param object_id_ [String]
-            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [StringIO]
             #
-            # @see HubspotSDK::Models::Cms::Blogs::Posts::RevisionGetPreviousVersionParams
+            # @see HubSpotSDK::Models::Cms::Blogs::Posts::RevisionGetPreviousVersionParams
             def get_previous_version(revision_id, params)
-              parsed, options = HubspotSDK::Cms::Blogs::Posts::RevisionGetPreviousVersionParams.dump_request(params)
+              parsed, options = HubSpotSDK::Cms::Blogs::Posts::RevisionGetPreviousVersionParams.dump_request(params)
               object_id_ =
                 parsed.delete(:object_id_) do
                   raise ArgumentError.new("missing required path argument #{_1}")
@@ -33,7 +33,7 @@ module HubspotSDK
             end
 
             # Some parameter documentations has been truncated, see
-            # {HubspotSDK::Models::Cms::Blogs::Posts::RevisionGetPreviousVersionsParams} for
+            # {HubSpotSDK::Models::Cms::Blogs::Posts::RevisionGetPreviousVersionsParams} for
             # more details.
             #
             # Retrieve all the previous versions of a blog post.
@@ -48,14 +48,14 @@ module HubspotSDK
             #
             # @param limit [Integer] The maximum number of results to display per page.
             #
-            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [StringIO]
             #
-            # @see HubspotSDK::Models::Cms::Blogs::Posts::RevisionGetPreviousVersionsParams
+            # @see HubSpotSDK::Models::Cms::Blogs::Posts::RevisionGetPreviousVersionsParams
             def get_previous_versions(object_id_, params = {})
-              parsed, options = HubspotSDK::Cms::Blogs::Posts::RevisionGetPreviousVersionsParams.dump_request(params)
-              query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+              parsed, options = HubSpotSDK::Cms::Blogs::Posts::RevisionGetPreviousVersionsParams.dump_request(params)
+              query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
               @client.request(
                 method: :get,
                 path: ["cms/blogs/2026-03/posts/%1$s/revisions", object_id_],
@@ -72,14 +72,14 @@ module HubspotSDK
             #
             # @param revision_id [String]
             # @param object_id_ [String]
-            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [StringIO]
             #
-            # @see HubspotSDK::Models::Cms::Blogs::Posts::RevisionRestorePreviousVersionParams
+            # @see HubSpotSDK::Models::Cms::Blogs::Posts::RevisionRestorePreviousVersionParams
             def restore_previous_version(revision_id, params)
               parsed, options =
-                HubspotSDK::Cms::Blogs::Posts::RevisionRestorePreviousVersionParams.dump_request(params)
+                HubSpotSDK::Cms::Blogs::Posts::RevisionRestorePreviousVersionParams.dump_request(params)
               object_id_ =
                 parsed.delete(:object_id_) do
                   raise ArgumentError.new("missing required path argument #{_1}")
@@ -100,14 +100,14 @@ module HubspotSDK
             #
             # @param revision_id [Integer]
             # @param object_id_ [String]
-            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [StringIO]
             #
-            # @see HubspotSDK::Models::Cms::Blogs::Posts::RevisionRestorePreviousVersionToDraftParams
+            # @see HubSpotSDK::Models::Cms::Blogs::Posts::RevisionRestorePreviousVersionToDraftParams
             def restore_previous_version_to_draft(revision_id, params)
               parsed, options =
-                HubspotSDK::Cms::Blogs::Posts::RevisionRestorePreviousVersionToDraftParams.dump_request(params)
+                HubSpotSDK::Cms::Blogs::Posts::RevisionRestorePreviousVersionToDraftParams.dump_request(params)
               object_id_ =
                 parsed.delete(:object_id_) do
                   raise ArgumentError.new("missing required path argument #{_1}")
@@ -127,7 +127,7 @@ module HubspotSDK
 
             # @api private
             #
-            # @param client [HubspotSDK::Client]
+            # @param client [HubSpotSDK::Client]
             def initialize(client:)
               @client = client
             end

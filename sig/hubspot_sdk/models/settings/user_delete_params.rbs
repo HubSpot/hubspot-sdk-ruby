@@ -1,46 +1,46 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       type user_delete_params =
         {
           user_id: String,
-          id_property: HubspotSDK::Models::Settings::UserDeleteParams::id_property
+          id_property: HubSpotSDK::Models::Settings::UserDeleteParams::id_property
         }
-        & HubspotSDK::Internal::Type::request_parameters
+        & HubSpotSDK::Internal::Type::request_parameters
 
-      class UserDeleteParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class UserDeleteParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         attr_accessor user_id: String
 
-        attr_reader id_property: HubspotSDK::Models::Settings::UserDeleteParams::id_property?
+        attr_reader id_property: HubSpotSDK::Models::Settings::UserDeleteParams::id_property?
 
         def id_property=: (
-          HubspotSDK::Models::Settings::UserDeleteParams::id_property
-        ) -> HubspotSDK::Models::Settings::UserDeleteParams::id_property
+          HubSpotSDK::Models::Settings::UserDeleteParams::id_property
+        ) -> HubSpotSDK::Models::Settings::UserDeleteParams::id_property
 
         def initialize: (
           user_id: String,
-          ?id_property: HubspotSDK::Models::Settings::UserDeleteParams::id_property,
-          ?request_options: HubspotSDK::request_opts
+          ?id_property: HubSpotSDK::Models::Settings::UserDeleteParams::id_property,
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           user_id: String,
-          id_property: HubspotSDK::Models::Settings::UserDeleteParams::id_property,
-          request_options: HubspotSDK::RequestOptions
+          id_property: HubSpotSDK::Models::Settings::UserDeleteParams::id_property,
+          request_options: HubSpotSDK::RequestOptions
         }
 
         type id_property = :EMAIL | :USER_ID
 
         module IDProperty
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL: :EMAIL
           USER_ID: :USER_ID
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Settings::UserDeleteParams::id_property]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Settings::UserDeleteParams::id_property]
         end
       end
     end

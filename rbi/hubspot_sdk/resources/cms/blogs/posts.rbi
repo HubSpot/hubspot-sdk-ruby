@@ -1,26 +1,26 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Blogs
         class Posts
-          sig { returns(HubspotSDK::Resources::Cms::Blogs::Posts::Batch) }
+          sig { returns(HubSpotSDK::Resources::Cms::Blogs::Posts::Batch) }
           attr_reader :batch
 
           sig do
-            returns(HubspotSDK::Resources::Cms::Blogs::Posts::MultiLanguage)
+            returns(HubSpotSDK::Resources::Cms::Blogs::Posts::MultiLanguage)
           end
           attr_reader :multi_language
 
-          sig { returns(HubspotSDK::Resources::Cms::Blogs::Posts::Revisions) }
+          sig { returns(HubSpotSDK::Resources::Cms::Blogs::Posts::Revisions) }
           attr_reader :revisions
 
           # Create a new blog post, specifying its content in the request body.
           sig do
             params(
               id: String,
-              ab_status: HubspotSDK::Cms::Blogs::BlogPost::AbStatus::OrSymbol,
+              ab_status: HubSpotSDK::Cms::Blogs::BlogPost::AbStatus::OrSymbol,
               ab_test_id: String,
               archived_at: Integer,
               archived_in_dashboard: T::Boolean,
@@ -31,12 +31,12 @@ module HubspotSDK
               category_id: Integer,
               content_group_id: String,
               content_type_category:
-                HubspotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::OrSymbol,
+                HubSpotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::OrSymbol,
               created: Time,
               created_by_id: String,
               currently_published: T::Boolean,
               current_state:
-                HubspotSDK::Cms::Blogs::BlogPost::CurrentState::OrSymbol,
+                HubSpotSDK::Cms::Blogs::BlogPost::CurrentState::OrSymbol,
               domain: String,
               dynamic_page_data_source_id: String,
               dynamic_page_data_source_type: Integer,
@@ -51,9 +51,9 @@ module HubspotSDK
               head_html: String,
               html_title: String,
               include_default_custom_css: T::Boolean,
-              language: HubspotSDK::Cms::Blogs::BlogPost::Language::OrSymbol,
+              language: HubSpotSDK::Cms::Blogs::BlogPost::Language::OrSymbol,
               layout_sections:
-                T::Hash[Symbol, HubspotSDK::Cms::LayoutSection::OrHash],
+                T::Hash[Symbol, HubSpotSDK::Cms::LayoutSection::OrHash],
               link_rel_canonical_url: String,
               mab_experiment_id: String,
               meta_description: String,
@@ -79,7 +79,7 @@ module HubspotSDK
               translations:
                 T::Hash[
                   Symbol,
-                  HubspotSDK::Cms::ContentLanguageVariation::OrHash
+                  HubSpotSDK::Cms::ContentLanguageVariation::OrHash
                 ],
               updated: Time,
               updated_by_id: String,
@@ -87,7 +87,7 @@ module HubspotSDK
               use_featured_image: T::Boolean,
               widget_containers: T::Hash[Symbol, T.anything],
               widgets: T::Hash[Symbol, T.anything],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def create(
@@ -244,7 +244,7 @@ module HubspotSDK
             params(
               object_id_: String,
               id: String,
-              ab_status: HubspotSDK::Cms::Blogs::BlogPost::AbStatus::OrSymbol,
+              ab_status: HubSpotSDK::Cms::Blogs::BlogPost::AbStatus::OrSymbol,
               ab_test_id: String,
               archived_at: Integer,
               archived_in_dashboard: T::Boolean,
@@ -255,12 +255,12 @@ module HubspotSDK
               category_id: Integer,
               content_group_id: String,
               content_type_category:
-                HubspotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::OrSymbol,
+                HubSpotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::OrSymbol,
               created: Time,
               created_by_id: String,
               currently_published: T::Boolean,
               current_state:
-                HubspotSDK::Cms::Blogs::BlogPost::CurrentState::OrSymbol,
+                HubSpotSDK::Cms::Blogs::BlogPost::CurrentState::OrSymbol,
               domain: String,
               dynamic_page_data_source_id: String,
               dynamic_page_data_source_type: Integer,
@@ -275,9 +275,9 @@ module HubspotSDK
               head_html: String,
               html_title: String,
               include_default_custom_css: T::Boolean,
-              language: HubspotSDK::Cms::Blogs::BlogPost::Language::OrSymbol,
+              language: HubSpotSDK::Cms::Blogs::BlogPost::Language::OrSymbol,
               layout_sections:
-                T::Hash[Symbol, HubspotSDK::Cms::LayoutSection::OrHash],
+                T::Hash[Symbol, HubSpotSDK::Cms::LayoutSection::OrHash],
               link_rel_canonical_url: String,
               mab_experiment_id: String,
               meta_description: String,
@@ -303,7 +303,7 @@ module HubspotSDK
               translations:
                 T::Hash[
                   Symbol,
-                  HubspotSDK::Cms::ContentLanguageVariation::OrHash
+                  HubSpotSDK::Cms::ContentLanguageVariation::OrHash
                 ],
               updated: Time,
               updated_by_id: String,
@@ -312,7 +312,7 @@ module HubspotSDK
               widget_containers: T::Hash[Symbol, T.anything],
               widgets: T::Hash[Symbol, T.anything],
               archived: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def update(
@@ -489,7 +489,7 @@ module HubspotSDK
               updated_after: Time,
               updated_at: Time,
               updated_before: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def list(
@@ -518,7 +518,7 @@ module HubspotSDK
             params(
               object_id_: String,
               archived: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete(
@@ -534,7 +534,7 @@ module HubspotSDK
             params(
               id: String,
               clone_name: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def clone_(
@@ -552,7 +552,7 @@ module HubspotSDK
               object_id_: String,
               archived: T::Boolean,
               property: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def get(
@@ -568,7 +568,7 @@ module HubspotSDK
           sig do
             params(
               object_id_: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def get_draft_by_id(object_id_, request_options: {})
@@ -587,7 +587,7 @@ module HubspotSDK
               updated_after: Time,
               updated_at: Time,
               updated_before: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def list_authors(
@@ -624,7 +624,7 @@ module HubspotSDK
               updated_after: Time,
               updated_at: Time,
               updated_before: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def list_tags(
@@ -653,7 +653,7 @@ module HubspotSDK
           sig do
             params(
               object_id_: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def push_live(object_id_, request_options: {})
@@ -672,7 +672,7 @@ module HubspotSDK
               updated_after: Time,
               updated_at: Time,
               updated_before: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def query(
@@ -709,7 +709,7 @@ module HubspotSDK
               updated_after: Time,
               updated_at: Time,
               updated_before: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def query_authors(
@@ -746,7 +746,7 @@ module HubspotSDK
               updated_after: Time,
               updated_at: Time,
               updated_before: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def query_tags(
@@ -775,7 +775,7 @@ module HubspotSDK
           sig do
             params(
               object_id_: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def reset_draft(object_id_, request_options: {})
@@ -786,7 +786,7 @@ module HubspotSDK
             params(
               id: String,
               publish_date: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def schedule(
@@ -804,7 +804,7 @@ module HubspotSDK
             params(
               object_id_: String,
               id: String,
-              ab_status: HubspotSDK::Cms::Blogs::BlogPost::AbStatus::OrSymbol,
+              ab_status: HubSpotSDK::Cms::Blogs::BlogPost::AbStatus::OrSymbol,
               ab_test_id: String,
               archived_at: Integer,
               archived_in_dashboard: T::Boolean,
@@ -815,12 +815,12 @@ module HubspotSDK
               category_id: Integer,
               content_group_id: String,
               content_type_category:
-                HubspotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::OrSymbol,
+                HubSpotSDK::Cms::Blogs::BlogPost::ContentTypeCategory::OrSymbol,
               created: Time,
               created_by_id: String,
               currently_published: T::Boolean,
               current_state:
-                HubspotSDK::Cms::Blogs::BlogPost::CurrentState::OrSymbol,
+                HubSpotSDK::Cms::Blogs::BlogPost::CurrentState::OrSymbol,
               domain: String,
               dynamic_page_data_source_id: String,
               dynamic_page_data_source_type: Integer,
@@ -835,9 +835,9 @@ module HubspotSDK
               head_html: String,
               html_title: String,
               include_default_custom_css: T::Boolean,
-              language: HubspotSDK::Cms::Blogs::BlogPost::Language::OrSymbol,
+              language: HubSpotSDK::Cms::Blogs::BlogPost::Language::OrSymbol,
               layout_sections:
-                T::Hash[Symbol, HubspotSDK::Cms::LayoutSection::OrHash],
+                T::Hash[Symbol, HubSpotSDK::Cms::LayoutSection::OrHash],
               link_rel_canonical_url: String,
               mab_experiment_id: String,
               meta_description: String,
@@ -863,7 +863,7 @@ module HubspotSDK
               translations:
                 T::Hash[
                   Symbol,
-                  HubspotSDK::Cms::ContentLanguageVariation::OrHash
+                  HubSpotSDK::Cms::ContentLanguageVariation::OrHash
                 ],
               updated: Time,
               updated_by_id: String,
@@ -871,7 +871,7 @@ module HubspotSDK
               use_featured_image: T::Boolean,
               widget_containers: T::Hash[Symbol, T.anything],
               widgets: T::Hash[Symbol, T.anything],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def update_draft(
@@ -1024,7 +1024,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

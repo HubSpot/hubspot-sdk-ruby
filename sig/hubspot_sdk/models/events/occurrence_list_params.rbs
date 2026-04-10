@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type occurrence_list_params =
@@ -9,19 +9,19 @@ module HubspotSDK
           event_type: String,
           limit: Integer,
           object_id_: Integer,
-          object_property: HubspotSDK::Events::OccurrenceListParams::ObjectProperty,
+          object_property: HubSpotSDK::Events::OccurrenceListParams::ObjectProperty,
           object_type: String,
           occurred_after: Time,
           occurred_before: Time,
           properties: ::Array[String],
-          property: HubspotSDK::Events::OccurrenceListParams::Property,
+          property: HubSpotSDK::Events::OccurrenceListParams::Property,
           sort: ::Array[String]
         }
-        & HubspotSDK::Internal::Type::request_parameters
+        & HubSpotSDK::Internal::Type::request_parameters
 
-      class OccurrenceListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class OccurrenceListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         attr_reader id: ::Array[String]?
 
@@ -47,11 +47,11 @@ module HubspotSDK
 
         def object_id_=: (Integer) -> Integer
 
-        attr_reader object_property: HubspotSDK::Events::OccurrenceListParams::ObjectProperty?
+        attr_reader object_property: HubSpotSDK::Events::OccurrenceListParams::ObjectProperty?
 
         def object_property=: (
-          HubspotSDK::Events::OccurrenceListParams::ObjectProperty
-        ) -> HubspotSDK::Events::OccurrenceListParams::ObjectProperty
+          HubSpotSDK::Events::OccurrenceListParams::ObjectProperty
+        ) -> HubSpotSDK::Events::OccurrenceListParams::ObjectProperty
 
         attr_reader object_type: String?
 
@@ -69,11 +69,11 @@ module HubspotSDK
 
         def properties=: (::Array[String]) -> ::Array[String]
 
-        attr_reader property: HubspotSDK::Events::OccurrenceListParams::Property?
+        attr_reader property: HubSpotSDK::Events::OccurrenceListParams::Property?
 
         def property=: (
-          HubspotSDK::Events::OccurrenceListParams::Property
-        ) -> HubspotSDK::Events::OccurrenceListParams::Property
+          HubSpotSDK::Events::OccurrenceListParams::Property
+        ) -> HubSpotSDK::Events::OccurrenceListParams::Property
 
         attr_reader sort: ::Array[String]?
 
@@ -86,14 +86,14 @@ module HubspotSDK
           ?event_type: String,
           ?limit: Integer,
           ?object_id_: Integer,
-          ?object_property: HubspotSDK::Events::OccurrenceListParams::ObjectProperty,
+          ?object_property: HubSpotSDK::Events::OccurrenceListParams::ObjectProperty,
           ?object_type: String,
           ?occurred_after: Time,
           ?occurred_before: Time,
           ?properties: ::Array[String],
-          ?property: HubspotSDK::Events::OccurrenceListParams::Property,
+          ?property: HubSpotSDK::Events::OccurrenceListParams::Property,
           ?sort: ::Array[String],
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
@@ -103,19 +103,19 @@ module HubspotSDK
           event_type: String,
           limit: Integer,
           object_id_: Integer,
-          object_property: HubspotSDK::Events::OccurrenceListParams::ObjectProperty,
+          object_property: HubSpotSDK::Events::OccurrenceListParams::ObjectProperty,
           object_type: String,
           occurred_after: Time,
           occurred_before: Time,
           properties: ::Array[String],
-          property: HubspotSDK::Events::OccurrenceListParams::Property,
+          property: HubSpotSDK::Events::OccurrenceListParams::Property,
           sort: ::Array[String],
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
 
         type object_property = { propname: top }
 
-        class ObjectProperty < HubspotSDK::Internal::Type::BaseModel
+        class ObjectProperty < HubSpotSDK::Internal::Type::BaseModel
           attr_reader propname: top?
 
           def propname=: (top) -> top
@@ -127,7 +127,7 @@ module HubspotSDK
 
         type property = { propname: top }
 
-        class Property < HubspotSDK::Internal::Type::BaseModel
+        class Property < HubSpotSDK::Internal::Type::BaseModel
           attr_reader propname: top?
 
           def propname=: (top) -> top

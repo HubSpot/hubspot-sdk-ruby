@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type simple_user =
         { id: String, email: String, first_name: String, last_name: String }
 
-      class SimpleUser < HubspotSDK::Internal::Type::BaseModel
+      class SimpleUser < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor email: String

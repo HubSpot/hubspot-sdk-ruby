@@ -1,15 +1,15 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type integer_field_schema =
         {
-          type: HubspotSDK::Models::Automation::IntegerFieldSchema::type_,
+          type: HubSpotSDK::Models::Automation::IntegerFieldSchema::type_,
           maximum: Integer,
           minimum: Integer
         }
 
-      class IntegerFieldSchema < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor type: HubspotSDK::Models::Automation::IntegerFieldSchema::type_
+      class IntegerFieldSchema < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor type: HubSpotSDK::Models::Automation::IntegerFieldSchema::type_
 
         attr_reader maximum: Integer?
 
@@ -20,13 +20,13 @@ module HubspotSDK
         def minimum=: (Integer) -> Integer
 
         def initialize: (
-          type: HubspotSDK::Models::Automation::IntegerFieldSchema::type_,
+          type: HubSpotSDK::Models::Automation::IntegerFieldSchema::type_,
           ?maximum: Integer,
           ?minimum: Integer
         ) -> void
 
         def to_hash: -> {
-          type: HubspotSDK::Models::Automation::IntegerFieldSchema::type_,
+          type: HubSpotSDK::Models::Automation::IntegerFieldSchema::type_,
           maximum: Integer,
           minimum: Integer
         }
@@ -34,11 +34,11 @@ module HubspotSDK
         type type_ = :INTEGER
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           INTEGER: :INTEGER
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Automation::IntegerFieldSchema::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Automation::IntegerFieldSchema::type_]
         end
       end
     end

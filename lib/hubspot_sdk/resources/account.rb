@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Account
-      # @return [HubspotSDK::Resources::Account::Activity]
+      # @return [HubSpotSDK::Resources::Account::Activity]
       attr_reader :activity
 
       # Retrieve account details such as the account type, time zone, currencies, and
@@ -11,16 +11,16 @@ module HubspotSDK
       #
       # @overload get(request_options: {})
       #
-      # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+      # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubspotSDK::Models::Account::PortalInformationResponse]
+      # @return [HubSpotSDK::Models::Account::PortalInformationResponse]
       #
-      # @see HubspotSDK::Models::Account::AccountGetParams
+      # @see HubSpotSDK::Models::Account::AccountGetParams
       def get(params = {})
         @client.request(
           method: :get,
           path: "account-info/2026-03/details",
-          model: HubspotSDK::Account::PortalInformationResponse,
+          model: HubSpotSDK::Account::PortalInformationResponse,
           options: params[:request_options]
         )
       end
@@ -30,26 +30,26 @@ module HubspotSDK
       #
       # @overload get_daily_private_apps_usage(request_options: {})
       #
-      # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+      # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubspotSDK::Models::Account::CollectionResponseAPIUsageNoPaging]
+      # @return [HubSpotSDK::Models::Account::CollectionResponseAPIUsageNoPaging]
       #
-      # @see HubspotSDK::Models::Account::AccountGetDailyPrivateAppsUsageParams
+      # @see HubSpotSDK::Models::Account::AccountGetDailyPrivateAppsUsageParams
       def get_daily_private_apps_usage(params = {})
         @client.request(
           method: :get,
           path: "account-info/2026-03/api-usage/daily/private-apps",
-          model: HubspotSDK::Account::CollectionResponseAPIUsageNoPaging,
+          model: HubSpotSDK::Account::CollectionResponseAPIUsageNoPaging,
           options: params[:request_options]
         )
       end
 
       # @api private
       #
-      # @param client [HubspotSDK::Client]
+      # @param client [HubSpotSDK::Client]
       def initialize(client:)
         @client = client
-        @activity = HubspotSDK::Resources::Account::Activity.new(client: client)
+        @activity = HubSpotSDK::Resources::Account::Activity.new(client: client)
       end
     end
   end

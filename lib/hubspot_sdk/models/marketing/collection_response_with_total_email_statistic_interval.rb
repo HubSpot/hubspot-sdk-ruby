@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::Emails#get_histogram
-      class CollectionResponseWithTotalEmailStatisticInterval < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Marketing::Emails#get_histogram
+      class CollectionResponseWithTotalEmailStatisticInterval < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::EmailStatisticInterval>]
+        #   @return [Array<HubSpotSDK::Models::Marketing::EmailStatisticInterval>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::EmailStatisticInterval] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::EmailStatisticInterval] }
 
         # @!attribute total
         #
@@ -18,13 +18,13 @@ module HubspotSDK
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::Paging, nil]
-        optional :paging, -> { HubspotSDK::Paging }
+        #   @return [HubSpotSDK::Models::Paging, nil]
+        optional :paging, -> { HubSpotSDK::Paging }
 
         # @!method initialize(results:, total:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Marketing::EmailStatisticInterval>]
+        #   @param results [Array<HubSpotSDK::Models::Marketing::EmailStatisticInterval>]
         #   @param total [Integer]
-        #   @param paging [HubspotSDK::Models::Paging]
+        #   @param paging [HubSpotSDK::Models::Paging]
       end
     end
   end

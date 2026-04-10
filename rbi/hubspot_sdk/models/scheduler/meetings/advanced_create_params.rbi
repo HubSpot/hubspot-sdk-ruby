@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       module Meetings
-        class AdvancedCreateParams < HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateRequest
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class AdvancedCreateParams < HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateRequest
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Scheduler::Meetings::AdvancedCreateParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Scheduler::Meetings::AdvancedCreateParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -22,7 +22,7 @@ module HubspotSDK
           sig do
             params(
               organizer_user_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(organizer_user_id:, request_options: {})
@@ -32,7 +32,7 @@ module HubspotSDK
             override.returns(
               {
                 organizer_user_id: String,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

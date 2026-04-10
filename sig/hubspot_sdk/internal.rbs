@@ -1,8 +1,8 @@
-module HubspotSDK
+module HubSpotSDK
   module Internal
-    extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+    extend HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
-    type file_input = Pathname | StringIO | IO | String | HubspotSDK::FilePart
+    type file_input = Pathname | StringIO | IO | String | HubSpotSDK::FilePart
 
     OMIT: Object
   end

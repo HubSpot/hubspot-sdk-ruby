@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class SocialMetadata < HubspotSDK::Internal::Type::BaseModel
+      class SocialMetadata < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::SocialMetadata,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::SocialMetadata,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::Conversations::SocialMetadata::MediaType::OrSymbol
+            HubSpotSDK::Conversations::SocialMetadata::MediaType::OrSymbol
           )
         end
         attr_accessor :media_type
@@ -58,7 +58,7 @@ module HubspotSDK
         sig do
           params(
             media_type:
-              HubspotSDK::Conversations::SocialMetadata::MediaType::OrSymbol,
+              HubSpotSDK::Conversations::SocialMetadata::MediaType::OrSymbol,
             id: String,
             description: String,
             media_title: String,
@@ -82,7 +82,7 @@ module HubspotSDK
           override.returns(
             {
               media_type:
-                HubspotSDK::Conversations::SocialMetadata::MediaType::OrSymbol,
+                HubSpotSDK::Conversations::SocialMetadata::MediaType::OrSymbol,
               id: String,
               description: String,
               media_title: String,
@@ -96,13 +96,13 @@ module HubspotSDK
         end
 
         module MediaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Conversations::SocialMetadata::MediaType
+                HubSpotSDK::Conversations::SocialMetadata::MediaType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -110,63 +110,63 @@ module HubspotSDK
           ARTICLE =
             T.let(
               :ARTICLE,
-              HubspotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
+              HubSpotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
             )
           AUDIO =
             T.let(
               :AUDIO,
-              HubspotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
+              HubSpotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
             )
           CAROUSEL =
             T.let(
               :CAROUSEL,
-              HubspotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
+              HubSpotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
             )
           DOCUMENT =
             T.let(
               :DOCUMENT,
-              HubspotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
+              HubSpotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
             )
           GIF =
             T.let(
               :GIF,
-              HubspotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
+              HubSpotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
             )
           LINK =
             T.let(
               :LINK,
-              HubspotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
+              HubSpotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
             )
           NONE =
             T.let(
               :NONE,
-              HubspotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
+              HubSpotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
             )
           PHOTO =
             T.let(
               :PHOTO,
-              HubspotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
+              HubSpotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
             )
           POLL =
             T.let(
               :POLL,
-              HubspotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
+              HubSpotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
             )
           STORY =
             T.let(
               :STORY,
-              HubspotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
+              HubSpotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
             )
           VIDEO =
             T.let(
               :VIDEO,
-              HubspotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
+              HubSpotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
+                HubSpotSDK::Conversations::SocialMetadata::MediaType::TaggedSymbol
               ]
             )
           end

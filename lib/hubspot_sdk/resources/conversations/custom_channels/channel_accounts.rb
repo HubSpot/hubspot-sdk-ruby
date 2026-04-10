@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Conversations
       class CustomChannels
@@ -14,20 +14,20 @@ module HubspotSDK
           # @param authorized [Boolean]
           # @param inbox_id [String]
           # @param name [String]
-          # @param delivery_identifier [HubspotSDK::Models::Conversations::PublicDeliveryIdentifier]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param delivery_identifier [HubSpotSDK::Models::Conversations::PublicDeliveryIdentifier]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Conversations::PublicChannelAccount]
+          # @return [HubSpotSDK::Models::Conversations::PublicChannelAccount]
           #
-          # @see HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountCreateParams
+          # @see HubSpotSDK::Models::Conversations::CustomChannels::ChannelAccountCreateParams
           def create(channel_id, params)
             parsed, options =
-              HubspotSDK::Conversations::CustomChannels::ChannelAccountCreateParams.dump_request(params)
+              HubSpotSDK::Conversations::CustomChannels::ChannelAccountCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["conversations/custom-channels/2026-03/%1$s/channel-accounts", channel_id],
               body: parsed,
-              model: HubspotSDK::Conversations::PublicChannelAccount,
+              model: HubSpotSDK::Conversations::PublicChannelAccount,
               options: options
             )
           end
@@ -45,14 +45,14 @@ module HubspotSDK
           #
           # @param name [String] Body param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Conversations::PublicChannelAccount]
+          # @return [HubSpotSDK::Models::Conversations::PublicChannelAccount]
           #
-          # @see HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountUpdateParams
+          # @see HubSpotSDK::Models::Conversations::CustomChannels::ChannelAccountUpdateParams
           def update(channel_account_id, params)
             parsed, options =
-              HubspotSDK::Conversations::CustomChannels::ChannelAccountUpdateParams.dump_request(params)
+              HubSpotSDK::Conversations::CustomChannels::ChannelAccountUpdateParams.dump_request(params)
             channel_id =
               parsed.delete(:channel_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -65,13 +65,13 @@ module HubspotSDK
                 channel_account_id
               ],
               body: parsed,
-              model: HubspotSDK::Conversations::PublicChannelAccount,
+              model: HubSpotSDK::Conversations::PublicChannelAccount,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams}
+          # {HubSpotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams}
           # for more details.
           #
           # Retrieve a list of accounts for a custom channel.
@@ -86,7 +86,7 @@ module HubspotSDK
           #
           # @param default_page_length [Integer]
           #
-          # @param delivery_identifier_type [Array<Symbol, HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType>]
+          # @param delivery_identifier_type [Array<Symbol, HubSpotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType>]
           #
           # @param delivery_identifier_value [Array<String>]
           #
@@ -94,15 +94,15 @@ module HubspotSDK
           #
           # @param sort [Array<String>]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Conversations::PublicChannelAccount>]
+          # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Conversations::PublicChannelAccount>]
           #
-          # @see HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams
+          # @see HubSpotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams
           def list(channel_id, params = {})
             parsed, options =
-              HubspotSDK::Conversations::CustomChannels::ChannelAccountListParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+              HubSpotSDK::Conversations::CustomChannels::ChannelAccountListParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["conversations/custom-channels/2026-03/%1$s/channel-accounts", channel_id],
@@ -111,8 +111,8 @@ module HubspotSDK
                 delivery_identifier_type: "deliveryIdentifierType",
                 delivery_identifier_value: "deliveryIdentifierValue"
               ),
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Conversations::PublicChannelAccount,
+              page: HubSpotSDK::Internal::Page,
+              model: HubSpotSDK::Conversations::PublicChannelAccount,
               options: options
             )
           end
@@ -129,16 +129,16 @@ module HubspotSDK
           #
           # @param account_name [String] Body param
           #
-          # @param delivery_identifier [HubspotSDK::Models::Conversations::PublicDeliveryIdentifier] Body param
+          # @param delivery_identifier [HubSpotSDK::Models::Conversations::PublicDeliveryIdentifier] Body param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Conversations::PublicChannelAccountStagingToken]
+          # @return [HubSpotSDK::Models::Conversations::PublicChannelAccountStagingToken]
           #
-          # @see HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountUpdateStagingTokenParams
+          # @see HubSpotSDK::Models::Conversations::CustomChannels::ChannelAccountUpdateStagingTokenParams
           def update_staging_token(account_token, params)
             parsed, options =
-              HubspotSDK::Conversations::CustomChannels::ChannelAccountUpdateStagingTokenParams.dump_request(params)
+              HubSpotSDK::Conversations::CustomChannels::ChannelAccountUpdateStagingTokenParams.dump_request(params)
             channel_id =
               parsed.delete(:channel_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -151,14 +151,14 @@ module HubspotSDK
                 account_token
               ],
               body: parsed,
-              model: HubspotSDK::Conversations::PublicChannelAccountStagingToken,
+              model: HubSpotSDK::Conversations::PublicChannelAccountStagingToken,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

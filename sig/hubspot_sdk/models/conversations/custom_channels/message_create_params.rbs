@@ -1,14 +1,14 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       module CustomChannels
         type message_create_params =
           { channel_id: Integer }
-          & HubspotSDK::Internal::Type::request_parameters
+          & HubSpotSDK::Internal::Type::request_parameters
 
-        class MessageCreateParams < HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class MessageCreateParams < HubSpotSDK::Models::Conversations::ChannelIntegrationMessageEgg
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           def channel_id: -> Integer
 
@@ -16,12 +16,12 @@ module HubspotSDK
 
           def initialize: (
             channel_id: Integer,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
             channel_id: Integer,
-            request_options: HubspotSDK::RequestOptions
+            request_options: HubSpotSDK::RequestOptions
           }
         end
       end

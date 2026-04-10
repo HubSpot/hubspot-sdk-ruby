@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Scheduler
       class Meetings
@@ -8,24 +8,24 @@ module HubspotSDK
             ?limit: Integer,
             ?name: String,
             ?organizer_user_id: String,
-            ?type: HubspotSDK::Models::Scheduler::Meetings::BasicListParams::type_,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Internal::Page[HubspotSDK::Scheduler::ExternalLinkMetadata]
+            ?type: HubSpotSDK::Models::Scheduler::Meetings::BasicListParams::type_,
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Scheduler::ExternalLinkMetadata]
 
           def get_availability_by_slug: (
             String slug,
             timezone: String,
             ?month_offset: Integer,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Scheduler::ExternalLinkAvailabilityAndBusyTimes
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Scheduler::ExternalLinkAvailabilityAndBusyTimes
 
           def get_booking_info_by_slug: (
             String slug,
             timezone: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Scheduler::ExternalBookingInfo
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Scheduler::ExternalBookingInfo
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

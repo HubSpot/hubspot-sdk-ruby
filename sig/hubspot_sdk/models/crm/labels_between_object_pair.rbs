@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type labels_between_object_pair =
@@ -10,7 +10,7 @@ module HubspotSDK
           to_object_type_id: String
         }
 
-      class LabelsBetweenObjectPair < HubspotSDK::Internal::Type::BaseModel
+      class LabelsBetweenObjectPair < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor from_object_id: String
 
         attr_accessor from_object_type_id: String

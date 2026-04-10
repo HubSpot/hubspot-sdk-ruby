@@ -1,22 +1,22 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Auth
       module TokenInfoResponseBaseIf
-        extend HubspotSDK::Internal::Type::Union
+        extend HubSpotSDK::Internal::Type::Union
 
         Variants =
           T.type_alias do
             T.any(
-              HubspotSDK::Auth::PublicAccessTokenInfoResponse,
-              HubspotSDK::Auth::PublicRefreshTokenInfoResponse
+              HubSpotSDK::Auth::PublicAccessTokenInfoResponse,
+              HubSpotSDK::Auth::PublicRefreshTokenInfoResponse
             )
           end
 
         sig do
           override.returns(
-            T::Array[HubspotSDK::Auth::TokenInfoResponseBaseIf::Variants]
+            T::Array[HubSpotSDK::Auth::TokenInfoResponseBaseIf::Variants]
           )
         end
         def self.variants

@@ -1,26 +1,26 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicSocialMetadataAttachment < HubspotSDK::Internal::Type::BaseModel
+      class PublicSocialMetadataAttachment < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute social_metadata
         #
-        #   @return [HubspotSDK::Models::Conversations::SocialMetadata]
-        required :social_metadata, -> { HubspotSDK::Conversations::SocialMetadata }, api_name: :socialMetadata
+        #   @return [HubSpotSDK::Models::Conversations::SocialMetadata]
+        required :social_metadata, -> { HubSpotSDK::Conversations::SocialMetadata }, api_name: :socialMetadata
 
         # @!attribute type
         #
-        #   @return [Symbol, HubspotSDK::Models::Conversations::PublicSocialMetadataAttachment::Type]
-        required :type, enum: -> { HubspotSDK::Conversations::PublicSocialMetadataAttachment::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Conversations::PublicSocialMetadataAttachment::Type]
+        required :type, enum: -> { HubSpotSDK::Conversations::PublicSocialMetadataAttachment::Type }
 
         # @!method initialize(social_metadata:, type:)
-        #   @param social_metadata [HubspotSDK::Models::Conversations::SocialMetadata]
-        #   @param type [Symbol, HubspotSDK::Models::Conversations::PublicSocialMetadataAttachment::Type]
+        #   @param social_metadata [HubSpotSDK::Models::Conversations::SocialMetadata]
+        #   @param type [Symbol, HubSpotSDK::Models::Conversations::PublicSocialMetadataAttachment::Type]
 
-        # @see HubspotSDK::Models::Conversations::PublicSocialMetadataAttachment#type
+        # @see HubSpotSDK::Models::Conversations::PublicSocialMetadataAttachment#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           SOCIAL_MEDIA_METADATA = :SOCIAL_MEDIA_METADATA
 

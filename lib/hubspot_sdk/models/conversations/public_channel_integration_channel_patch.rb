@@ -1,40 +1,40 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicChannelIntegrationChannelPatch < HubspotSDK::Internal::Type::BaseModel
+      class PublicChannelIntegrationChannelPatch < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute capabilities
         #
         #   @return [Hash{Symbol=>Object}]
-        required :capabilities, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]
+        required :capabilities, HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown]
 
         # @!attribute channel_account_connection_redirect_url
         #
         #   @return [Object]
         required :channel_account_connection_redirect_url,
-                 HubspotSDK::Internal::Type::Unknown,
+                 HubSpotSDK::Internal::Type::Unknown,
                  api_name: :channelAccountConnectionRedirectUrl
 
         # @!attribute channel_description
         #
         #   @return [Object]
-        required :channel_description, HubspotSDK::Internal::Type::Unknown, api_name: :channelDescription
+        required :channel_description, HubSpotSDK::Internal::Type::Unknown, api_name: :channelDescription
 
         # @!attribute channel_logo_url
         #
         #   @return [Object]
-        required :channel_logo_url, HubspotSDK::Internal::Type::Unknown, api_name: :channelLogoUrl
+        required :channel_logo_url, HubSpotSDK::Internal::Type::Unknown, api_name: :channelLogoUrl
 
         # @!attribute name
         #
         #   @return [Object]
-        required :name, HubspotSDK::Internal::Type::Unknown
+        required :name, HubSpotSDK::Internal::Type::Unknown
 
         # @!attribute webhook_url
         #
         #   @return [Object]
-        required :webhook_url, HubspotSDK::Internal::Type::Unknown, api_name: :webhookUrl
+        required :webhook_url, HubSpotSDK::Internal::Type::Unknown, api_name: :webhookUrl
 
         # @!method initialize(capabilities:, channel_account_connection_redirect_url:, channel_description:, channel_logo_url:, name:, webhook_url:)
         #   @param capabilities [Hash{Symbol=>Object}]

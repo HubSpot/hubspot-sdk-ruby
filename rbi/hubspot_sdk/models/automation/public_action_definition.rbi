@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicActionDefinition < HubspotSDK::Internal::Type::BaseModel
+      class PublicActionDefinition < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::PublicActionDefinition,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::PublicActionDefinition,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,18 +20,18 @@ module HubspotSDK
 
         sig do
           returns(
-            T::Array[HubspotSDK::Automation::PublicActionFunctionIdentifier]
+            T::Array[HubSpotSDK::Automation::PublicActionFunctionIdentifier]
           )
         end
         attr_accessor :functions
 
         sig do
-          returns(T::Array[HubspotSDK::Automation::PublicInputFieldDefinition])
+          returns(T::Array[HubSpotSDK::Automation::PublicInputFieldDefinition])
         end
         attr_accessor :input_fields
 
         sig do
-          returns(T::Hash[Symbol, HubspotSDK::Automation::PublicActionLabels])
+          returns(T::Hash[Symbol, HubSpotSDK::Automation::PublicActionLabels])
         end
         attr_accessor :labels
 
@@ -53,7 +53,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              T::Array[HubspotSDK::Automation::PublicExecutionTranslationRule]
+              T::Array[HubSpotSDK::Automation::PublicExecutionTranslationRule]
             )
           )
         end
@@ -63,7 +63,7 @@ module HubspotSDK
           params(
             execution_rules:
               T::Array[
-                HubspotSDK::Automation::PublicExecutionTranslationRule::OrHash
+                HubSpotSDK::Automation::PublicExecutionTranslationRule::OrHash
               ]
           ).void
         end
@@ -73,7 +73,7 @@ module HubspotSDK
           returns(
             T.nilable(
               T::Array[
-                HubspotSDK::Automation::PublicActionDefinition::InputFieldDependency::Variants
+                HubSpotSDK::Automation::PublicActionDefinition::InputFieldDependency::Variants
               ]
             )
           )
@@ -85,8 +85,8 @@ module HubspotSDK
             input_field_dependencies:
               T::Array[
                 T.any(
-                  HubspotSDK::Automation::PublicSingleFieldDependency::OrHash,
-                  HubspotSDK::Automation::PublicConditionalSingleFieldDependency::OrHash
+                  HubSpotSDK::Automation::PublicSingleFieldDependency::OrHash,
+                  HubSpotSDK::Automation::PublicConditionalSingleFieldDependency::OrHash
                 )
               ]
           ).void
@@ -94,21 +94,21 @@ module HubspotSDK
         attr_writer :input_field_dependencies
 
         sig do
-          returns(T.nilable(HubspotSDK::Automation::PublicObjectRequestOptions))
+          returns(T.nilable(HubSpotSDK::Automation::PublicObjectRequestOptions))
         end
         attr_reader :object_request_options
 
         sig do
           params(
             object_request_options:
-              HubspotSDK::Automation::PublicObjectRequestOptions::OrHash
+              HubSpotSDK::Automation::PublicObjectRequestOptions::OrHash
           ).void
         end
         attr_writer :object_request_options
 
         sig do
           returns(
-            T.nilable(T::Array[HubspotSDK::Automation::OutputFieldDefinition])
+            T.nilable(T::Array[HubSpotSDK::Automation::OutputFieldDefinition])
           )
         end
         attr_reader :output_fields
@@ -116,7 +116,7 @@ module HubspotSDK
         sig do
           params(
             output_fields:
-              T::Array[HubspotSDK::Automation::OutputFieldDefinition::OrHash]
+              T::Array[HubSpotSDK::Automation::OutputFieldDefinition::OrHash]
           ).void
         end
         attr_writer :output_fields
@@ -127,16 +127,16 @@ module HubspotSDK
             action_url: String,
             functions:
               T::Array[
-                HubspotSDK::Automation::PublicActionFunctionIdentifier::OrHash
+                HubSpotSDK::Automation::PublicActionFunctionIdentifier::OrHash
               ],
             input_fields:
               T::Array[
-                HubspotSDK::Automation::PublicInputFieldDefinition::OrHash
+                HubSpotSDK::Automation::PublicInputFieldDefinition::OrHash
               ],
             labels:
               T::Hash[
                 Symbol,
-                HubspotSDK::Automation::PublicActionLabels::OrHash
+                HubSpotSDK::Automation::PublicActionLabels::OrHash
               ],
             object_types: T::Array[String],
             published: T::Boolean,
@@ -144,19 +144,19 @@ module HubspotSDK
             archived_at: Integer,
             execution_rules:
               T::Array[
-                HubspotSDK::Automation::PublicExecutionTranslationRule::OrHash
+                HubSpotSDK::Automation::PublicExecutionTranslationRule::OrHash
               ],
             input_field_dependencies:
               T::Array[
                 T.any(
-                  HubspotSDK::Automation::PublicSingleFieldDependency::OrHash,
-                  HubspotSDK::Automation::PublicConditionalSingleFieldDependency::OrHash
+                  HubSpotSDK::Automation::PublicSingleFieldDependency::OrHash,
+                  HubSpotSDK::Automation::PublicConditionalSingleFieldDependency::OrHash
                 )
               ],
             object_request_options:
-              HubspotSDK::Automation::PublicObjectRequestOptions::OrHash,
+              HubSpotSDK::Automation::PublicObjectRequestOptions::OrHash,
             output_fields:
-              T::Array[HubspotSDK::Automation::OutputFieldDefinition::OrHash]
+              T::Array[HubSpotSDK::Automation::OutputFieldDefinition::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(
@@ -183,28 +183,28 @@ module HubspotSDK
               action_url: String,
               functions:
                 T::Array[
-                  HubspotSDK::Automation::PublicActionFunctionIdentifier
+                  HubSpotSDK::Automation::PublicActionFunctionIdentifier
                 ],
               input_fields:
-                T::Array[HubspotSDK::Automation::PublicInputFieldDefinition],
+                T::Array[HubSpotSDK::Automation::PublicInputFieldDefinition],
               labels:
-                T::Hash[Symbol, HubspotSDK::Automation::PublicActionLabels],
+                T::Hash[Symbol, HubSpotSDK::Automation::PublicActionLabels],
               object_types: T::Array[String],
               published: T::Boolean,
               revision_id: String,
               archived_at: Integer,
               execution_rules:
                 T::Array[
-                  HubspotSDK::Automation::PublicExecutionTranslationRule
+                  HubSpotSDK::Automation::PublicExecutionTranslationRule
                 ],
               input_field_dependencies:
                 T::Array[
-                  HubspotSDK::Automation::PublicActionDefinition::InputFieldDependency::Variants
+                  HubSpotSDK::Automation::PublicActionDefinition::InputFieldDependency::Variants
                 ],
               object_request_options:
-                HubspotSDK::Automation::PublicObjectRequestOptions,
+                HubSpotSDK::Automation::PublicObjectRequestOptions,
               output_fields:
-                T::Array[HubspotSDK::Automation::OutputFieldDefinition]
+                T::Array[HubSpotSDK::Automation::OutputFieldDefinition]
             }
           )
         end
@@ -212,20 +212,20 @@ module HubspotSDK
         end
 
         module InputFieldDependency
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Automation::PublicSingleFieldDependency,
-                HubspotSDK::Automation::PublicConditionalSingleFieldDependency
+                HubSpotSDK::Automation::PublicSingleFieldDependency,
+                HubSpotSDK::Automation::PublicConditionalSingleFieldDependency
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::PublicActionDefinition::InputFieldDependency::Variants
+                HubSpotSDK::Automation::PublicActionDefinition::InputFieldDependency::Variants
               ]
             )
           end

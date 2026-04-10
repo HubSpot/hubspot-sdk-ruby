@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicWhatsAppTemplateMetadata < HubspotSDK::Internal::Type::BaseModel
+      class PublicWhatsAppTemplateMetadata < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::PublicWhatsAppTemplateMetadata,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::PublicWhatsAppTemplateMetadata,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Conversations::PublicWhatsAppTemplateMetadata::Type::TaggedSymbol
+            HubSpotSDK::Conversations::PublicWhatsAppTemplateMetadata::Type::TaggedSymbol
           )
         end
         attr_accessor :type
@@ -48,7 +48,7 @@ module HubspotSDK
             crm_object_ids: T::Hash[Symbol, Integer],
             parameters: T::Hash[Symbol, String],
             type:
-              HubspotSDK::Conversations::PublicWhatsAppTemplateMetadata::Type::OrSymbol,
+              HubSpotSDK::Conversations::PublicWhatsAppTemplateMetadata::Type::OrSymbol,
             content_id: Integer,
             mapped_template_id: Integer,
             root_mic_id: Integer
@@ -70,7 +70,7 @@ module HubspotSDK
               crm_object_ids: T::Hash[Symbol, Integer],
               parameters: T::Hash[Symbol, String],
               type:
-                HubspotSDK::Conversations::PublicWhatsAppTemplateMetadata::Type::TaggedSymbol,
+                HubSpotSDK::Conversations::PublicWhatsAppTemplateMetadata::Type::TaggedSymbol,
               content_id: Integer,
               mapped_template_id: Integer,
               root_mic_id: Integer
@@ -81,13 +81,13 @@ module HubspotSDK
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Conversations::PublicWhatsAppTemplateMetadata::Type
+                HubSpotSDK::Conversations::PublicWhatsAppTemplateMetadata::Type
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -95,13 +95,13 @@ module HubspotSDK
           WHATSAPP_TEMPLATE_METADATA =
             T.let(
               :WHATSAPP_TEMPLATE_METADATA,
-              HubspotSDK::Conversations::PublicWhatsAppTemplateMetadata::Type::TaggedSymbol
+              HubSpotSDK::Conversations::PublicWhatsAppTemplateMetadata::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::PublicWhatsAppTemplateMetadata::Type::TaggedSymbol
+                HubSpotSDK::Conversations::PublicWhatsAppTemplateMetadata::Type::TaggedSymbol
               ]
             )
           end

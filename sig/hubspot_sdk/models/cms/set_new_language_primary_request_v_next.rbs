@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type set_new_language_primary_request_v_next = { id: String }
 
-      class SetNewLanguagePrimaryRequestVNext < HubspotSDK::Internal::Type::BaseModel
+      class SetNewLanguagePrimaryRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         def initialize: (id: String) -> void

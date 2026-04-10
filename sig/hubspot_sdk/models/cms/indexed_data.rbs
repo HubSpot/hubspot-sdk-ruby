@@ -1,30 +1,30 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type indexed_data =
         {
           id: String,
-          fields: ::Hash[Symbol, HubspotSDK::Cms::IndexedField],
-          type: HubspotSDK::Models::Cms::IndexedData::type_
+          fields: ::Hash[Symbol, HubSpotSDK::Cms::IndexedField],
+          type: HubSpotSDK::Models::Cms::IndexedData::type_
         }
 
-      class IndexedData < HubspotSDK::Internal::Type::BaseModel
+      class IndexedData < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
-        attr_accessor fields: ::Hash[Symbol, HubspotSDK::Cms::IndexedField]
+        attr_accessor fields: ::Hash[Symbol, HubSpotSDK::Cms::IndexedField]
 
-        attr_accessor type: HubspotSDK::Models::Cms::IndexedData::type_
+        attr_accessor type: HubSpotSDK::Models::Cms::IndexedData::type_
 
         def initialize: (
           id: String,
-          fields: ::Hash[Symbol, HubspotSDK::Cms::IndexedField],
-          type: HubspotSDK::Models::Cms::IndexedData::type_
+          fields: ::Hash[Symbol, HubSpotSDK::Cms::IndexedField],
+          type: HubSpotSDK::Models::Cms::IndexedData::type_
         ) -> void
 
         def to_hash: -> {
           id: String,
-          fields: ::Hash[Symbol, HubspotSDK::Cms::IndexedField],
-          type: HubspotSDK::Models::Cms::IndexedData::type_
+          fields: ::Hash[Symbol, HubSpotSDK::Cms::IndexedField],
+          type: HubSpotSDK::Models::Cms::IndexedData::type_
         }
 
         type type_ =
@@ -36,7 +36,7 @@ module HubspotSDK
           | :STRUCTURED_CONTENT
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BLOG_POST: :BLOG_POST
           KNOWLEDGE_ARTICLE: :KNOWLEDGE_ARTICLE
@@ -45,7 +45,7 @@ module HubspotSDK
           SITE_PAGE: :SITE_PAGE
           STRUCTURED_CONTENT: :STRUCTURED_CONTENT
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::IndexedData::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::IndexedData::type_]
         end
       end
     end

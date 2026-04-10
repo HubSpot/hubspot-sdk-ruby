@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Automation
       class Actions
@@ -11,13 +11,13 @@ module HubspotSDK
           #
           # @param definition_id [String]
           # @param app_id [Integer]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Automation::CollectionResponsePublicActionFunctionIdentifierNoPaging]
+          # @return [HubSpotSDK::Models::Automation::CollectionResponsePublicActionFunctionIdentifierNoPaging]
           #
-          # @see HubspotSDK::Models::Automation::Actions::FunctionListParams
+          # @see HubSpotSDK::Models::Automation::Actions::FunctionListParams
           def list(definition_id, params)
-            parsed, options = HubspotSDK::Automation::Actions::FunctionListParams.dump_request(params)
+            parsed, options = HubSpotSDK::Automation::Actions::FunctionListParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -25,7 +25,7 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["automation/actions/2026-03/%1$s/%2$s/functions", app_id, definition_id],
-              model: HubspotSDK::Automation::CollectionResponsePublicActionFunctionIdentifierNoPaging,
+              model: HubSpotSDK::Automation::CollectionResponsePublicActionFunctionIdentifierNoPaging,
               options: options
             )
           end
@@ -37,14 +37,14 @@ module HubspotSDK
           # @param function_id [String]
           # @param app_id [Integer]
           # @param definition_id [String]
-          # @param function_type [Symbol, HubspotSDK::Models::Automation::Actions::FunctionDeleteParams::FunctionType]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param function_type [Symbol, HubSpotSDK::Models::Automation::Actions::FunctionDeleteParams::FunctionType]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Automation::Actions::FunctionDeleteParams
+          # @see HubSpotSDK::Models::Automation::Actions::FunctionDeleteParams
           def delete(function_id, params)
-            parsed, options = HubspotSDK::Automation::Actions::FunctionDeleteParams.dump_request(params)
+            parsed, options = HubSpotSDK::Automation::Actions::FunctionDeleteParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -81,17 +81,17 @@ module HubspotSDK
           #
           # @param definition_id [String] Path param
           #
-          # @param function_type [Symbol, HubspotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType] Path param
+          # @param function_type [Symbol, HubSpotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType] Path param
           #
           # @param body [String] Body param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Automation::PublicActionFunctionIdentifier]
+          # @return [HubSpotSDK::Models::Automation::PublicActionFunctionIdentifier]
           #
-          # @see HubspotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams
+          # @see HubSpotSDK::Models::Automation::Actions::FunctionCreateOrReplaceParams
           def create_or_replace(function_id, params)
-            parsed, options = HubspotSDK::Automation::Actions::FunctionCreateOrReplaceParams.dump_request(params)
+            parsed, options = HubSpotSDK::Automation::Actions::FunctionCreateOrReplaceParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -115,7 +115,7 @@ module HubspotSDK
               ],
               headers: {"content-type" => "text/plain"},
               body: parsed[:body],
-              model: HubspotSDK::Automation::PublicActionFunctionIdentifier,
+              model: HubSpotSDK::Automation::PublicActionFunctionIdentifier,
               options: options
             )
           end
@@ -124,7 +124,7 @@ module HubspotSDK
           #
           # @overload create_or_replace_by_function_type(function_type, app_id:, definition_id:, body:, request_options: {})
           #
-          # @param function_type [Symbol, HubspotSDK::Models::Automation::Actions::FunctionCreateOrReplaceByFunctionTypeParams::FunctionType] Path param
+          # @param function_type [Symbol, HubSpotSDK::Models::Automation::Actions::FunctionCreateOrReplaceByFunctionTypeParams::FunctionType] Path param
           #
           # @param app_id [Integer] Path param
           #
@@ -132,14 +132,14 @@ module HubspotSDK
           #
           # @param body [String] Body param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Automation::PublicActionFunctionIdentifier]
+          # @return [HubSpotSDK::Models::Automation::PublicActionFunctionIdentifier]
           #
-          # @see HubspotSDK::Models::Automation::Actions::FunctionCreateOrReplaceByFunctionTypeParams
+          # @see HubSpotSDK::Models::Automation::Actions::FunctionCreateOrReplaceByFunctionTypeParams
           def create_or_replace_by_function_type(function_type, params)
             parsed, options =
-              HubspotSDK::Automation::Actions::FunctionCreateOrReplaceByFunctionTypeParams.dump_request(params)
+              HubSpotSDK::Automation::Actions::FunctionCreateOrReplaceByFunctionTypeParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -158,7 +158,7 @@ module HubspotSDK
               ],
               headers: {"content-type" => "text/plain"},
               body: parsed[:body],
-              model: HubspotSDK::Automation::PublicActionFunctionIdentifier,
+              model: HubSpotSDK::Automation::PublicActionFunctionIdentifier,
               options: options
             )
           end
@@ -167,17 +167,17 @@ module HubspotSDK
           #
           # @overload delete_by_function_type(function_type, app_id:, definition_id:, request_options: {})
           #
-          # @param function_type [Symbol, HubspotSDK::Models::Automation::Actions::FunctionDeleteByFunctionTypeParams::FunctionType]
+          # @param function_type [Symbol, HubSpotSDK::Models::Automation::Actions::FunctionDeleteByFunctionTypeParams::FunctionType]
           # @param app_id [Integer]
           # @param definition_id [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Automation::Actions::FunctionDeleteByFunctionTypeParams
+          # @see HubSpotSDK::Models::Automation::Actions::FunctionDeleteByFunctionTypeParams
           def delete_by_function_type(function_type, params)
             parsed, options =
-              HubspotSDK::Automation::Actions::FunctionDeleteByFunctionTypeParams.dump_request(params)
+              HubSpotSDK::Automation::Actions::FunctionDeleteByFunctionTypeParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -206,14 +206,14 @@ module HubspotSDK
           # @param function_id [String]
           # @param app_id [Integer]
           # @param definition_id [String]
-          # @param function_type [Symbol, HubspotSDK::Models::Automation::Actions::FunctionGetParams::FunctionType]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param function_type [Symbol, HubSpotSDK::Models::Automation::Actions::FunctionGetParams::FunctionType]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Automation::PublicActionFunction]
+          # @return [HubSpotSDK::Models::Automation::PublicActionFunction]
           #
-          # @see HubspotSDK::Models::Automation::Actions::FunctionGetParams
+          # @see HubSpotSDK::Models::Automation::Actions::FunctionGetParams
           def get(function_id, params)
-            parsed, options = HubspotSDK::Automation::Actions::FunctionGetParams.dump_request(params)
+            parsed, options = HubSpotSDK::Automation::Actions::FunctionGetParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -235,7 +235,7 @@ module HubspotSDK
                 function_type,
                 function_id
               ],
-              model: HubspotSDK::Automation::PublicActionFunction,
+              model: HubSpotSDK::Automation::PublicActionFunction,
               options: options
             )
           end
@@ -244,16 +244,16 @@ module HubspotSDK
           #
           # @overload get_by_function_type(function_type, app_id:, definition_id:, request_options: {})
           #
-          # @param function_type [Symbol, HubspotSDK::Models::Automation::Actions::FunctionGetByFunctionTypeParams::FunctionType]
+          # @param function_type [Symbol, HubSpotSDK::Models::Automation::Actions::FunctionGetByFunctionTypeParams::FunctionType]
           # @param app_id [Integer]
           # @param definition_id [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Automation::PublicActionFunction]
+          # @return [HubSpotSDK::Models::Automation::PublicActionFunction]
           #
-          # @see HubspotSDK::Models::Automation::Actions::FunctionGetByFunctionTypeParams
+          # @see HubSpotSDK::Models::Automation::Actions::FunctionGetByFunctionTypeParams
           def get_by_function_type(function_type, params)
-            parsed, options = HubspotSDK::Automation::Actions::FunctionGetByFunctionTypeParams.dump_request(params)
+            parsed, options = HubSpotSDK::Automation::Actions::FunctionGetByFunctionTypeParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -270,14 +270,14 @@ module HubspotSDK
                 definition_id,
                 function_type
               ],
-              model: HubspotSDK::Automation::PublicActionFunction,
+              model: HubSpotSDK::Automation::PublicActionFunction,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

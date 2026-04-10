@@ -1,27 +1,27 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
       type public_status =
         {
-          channel: HubspotSDK::Models::CommunicationPreferences::PublicStatus::channel,
+          channel: HubSpotSDK::Models::CommunicationPreferences::PublicStatus::channel,
           source: String,
-          status: HubspotSDK::Models::CommunicationPreferences::PublicStatus::status,
+          status: HubSpotSDK::Models::CommunicationPreferences::PublicStatus::status,
           subscriber_id_string: String,
           subscription_id: Integer,
           timestamp: Time,
           business_unit_id: Integer,
-          legal_basis: HubspotSDK::Models::CommunicationPreferences::PublicStatus::legal_basis,
+          legal_basis: HubSpotSDK::Models::CommunicationPreferences::PublicStatus::legal_basis,
           legal_basis_explanation: String,
-          set_status_success_reason: HubspotSDK::Models::CommunicationPreferences::PublicStatus::set_status_success_reason,
+          set_status_success_reason: HubSpotSDK::Models::CommunicationPreferences::PublicStatus::set_status_success_reason,
           subscription_name: String
         }
 
-      class PublicStatus < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor channel: HubspotSDK::Models::CommunicationPreferences::PublicStatus::channel
+      class PublicStatus < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor channel: HubSpotSDK::Models::CommunicationPreferences::PublicStatus::channel
 
         attr_accessor source: String
 
-        attr_accessor status: HubspotSDK::Models::CommunicationPreferences::PublicStatus::status
+        attr_accessor status: HubSpotSDK::Models::CommunicationPreferences::PublicStatus::status
 
         attr_accessor subscriber_id_string: String
 
@@ -33,74 +33,74 @@ module HubspotSDK
 
         def business_unit_id=: (Integer) -> Integer
 
-        attr_reader legal_basis: HubspotSDK::Models::CommunicationPreferences::PublicStatus::legal_basis?
+        attr_reader legal_basis: HubSpotSDK::Models::CommunicationPreferences::PublicStatus::legal_basis?
 
         def legal_basis=: (
-          HubspotSDK::Models::CommunicationPreferences::PublicStatus::legal_basis
-        ) -> HubspotSDK::Models::CommunicationPreferences::PublicStatus::legal_basis
+          HubSpotSDK::Models::CommunicationPreferences::PublicStatus::legal_basis
+        ) -> HubSpotSDK::Models::CommunicationPreferences::PublicStatus::legal_basis
 
         attr_reader legal_basis_explanation: String?
 
         def legal_basis_explanation=: (String) -> String
 
-        attr_reader set_status_success_reason: HubspotSDK::Models::CommunicationPreferences::PublicStatus::set_status_success_reason?
+        attr_reader set_status_success_reason: HubSpotSDK::Models::CommunicationPreferences::PublicStatus::set_status_success_reason?
 
         def set_status_success_reason=: (
-          HubspotSDK::Models::CommunicationPreferences::PublicStatus::set_status_success_reason
-        ) -> HubspotSDK::Models::CommunicationPreferences::PublicStatus::set_status_success_reason
+          HubSpotSDK::Models::CommunicationPreferences::PublicStatus::set_status_success_reason
+        ) -> HubSpotSDK::Models::CommunicationPreferences::PublicStatus::set_status_success_reason
 
         attr_reader subscription_name: String?
 
         def subscription_name=: (String) -> String
 
         def initialize: (
-          channel: HubspotSDK::Models::CommunicationPreferences::PublicStatus::channel,
+          channel: HubSpotSDK::Models::CommunicationPreferences::PublicStatus::channel,
           source: String,
-          status: HubspotSDK::Models::CommunicationPreferences::PublicStatus::status,
+          status: HubSpotSDK::Models::CommunicationPreferences::PublicStatus::status,
           subscriber_id_string: String,
           subscription_id: Integer,
           timestamp: Time,
           ?business_unit_id: Integer,
-          ?legal_basis: HubspotSDK::Models::CommunicationPreferences::PublicStatus::legal_basis,
+          ?legal_basis: HubSpotSDK::Models::CommunicationPreferences::PublicStatus::legal_basis,
           ?legal_basis_explanation: String,
-          ?set_status_success_reason: HubspotSDK::Models::CommunicationPreferences::PublicStatus::set_status_success_reason,
+          ?set_status_success_reason: HubSpotSDK::Models::CommunicationPreferences::PublicStatus::set_status_success_reason,
           ?subscription_name: String
         ) -> void
 
         def to_hash: -> {
-          channel: HubspotSDK::Models::CommunicationPreferences::PublicStatus::channel,
+          channel: HubSpotSDK::Models::CommunicationPreferences::PublicStatus::channel,
           source: String,
-          status: HubspotSDK::Models::CommunicationPreferences::PublicStatus::status,
+          status: HubSpotSDK::Models::CommunicationPreferences::PublicStatus::status,
           subscriber_id_string: String,
           subscription_id: Integer,
           timestamp: Time,
           business_unit_id: Integer,
-          legal_basis: HubspotSDK::Models::CommunicationPreferences::PublicStatus::legal_basis,
+          legal_basis: HubSpotSDK::Models::CommunicationPreferences::PublicStatus::legal_basis,
           legal_basis_explanation: String,
-          set_status_success_reason: HubspotSDK::Models::CommunicationPreferences::PublicStatus::set_status_success_reason,
+          set_status_success_reason: HubSpotSDK::Models::CommunicationPreferences::PublicStatus::set_status_success_reason,
           subscription_name: String
         }
 
         type channel = :EMAIL
 
         module Channel
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL: :EMAIL
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CommunicationPreferences::PublicStatus::channel]
+          def self?.values: -> ::Array[HubSpotSDK::Models::CommunicationPreferences::PublicStatus::channel]
         end
 
         type status = :NOT_SPECIFIED | :SUBSCRIBED | :UNSUBSCRIBED
 
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NOT_SPECIFIED: :NOT_SPECIFIED
           SUBSCRIBED: :SUBSCRIBED
           UNSUBSCRIBED: :UNSUBSCRIBED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CommunicationPreferences::PublicStatus::status]
+          def self?.values: -> ::Array[HubSpotSDK::Models::CommunicationPreferences::PublicStatus::status]
         end
 
         type legal_basis =
@@ -113,7 +113,7 @@ module HubspotSDK
           | :PROCESS_AND_STORE
 
         module LegalBasis
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONSENT_WITH_NOTICE: :CONSENT_WITH_NOTICE
           LEGITIMATE_INTEREST_CLIENT: :LEGITIMATE_INTEREST_CLIENT
@@ -123,7 +123,7 @@ module HubspotSDK
           PERFORMANCE_OF_CONTRACT: :PERFORMANCE_OF_CONTRACT
           PROCESS_AND_STORE: :PROCESS_AND_STORE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CommunicationPreferences::PublicStatus::legal_basis]
+          def self?.values: -> ::Array[HubSpotSDK::Models::CommunicationPreferences::PublicStatus::legal_basis]
         end
 
         type set_status_success_reason =
@@ -133,14 +133,14 @@ module HubspotSDK
           | :UNSUBSCRIBE_FROM_ALL_OCCURRED
 
         module SetStatusSuccessReason
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NO_STATUS_CHANGE: :NO_STATUS_CHANGE
           REQUESTED_CHANGE_OCCURRED: :REQUESTED_CHANGE_OCCURRED
           RESUBSCRIBE_OCCURRED: :RESUBSCRIBE_OCCURRED
           UNSUBSCRIBE_FROM_ALL_OCCURRED: :UNSUBSCRIBE_FROM_ALL_OCCURRED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CommunicationPreferences::PublicStatus::set_status_success_reason]
+          def self?.values: -> ::Array[HubSpotSDK::Models::CommunicationPreferences::PublicStatus::set_status_success_reason]
         end
       end
     end

@@ -1,89 +1,89 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type indexed_time_point =
         {
-          index_reference: HubspotSDK::Models::Events::IndexedTimePoint::index_reference,
-          time_type: HubspotSDK::Models::Events::IndexedTimePoint::time_type,
-          timezone_source: HubspotSDK::Models::Events::IndexedTimePoint::timezone_source,
+          index_reference: HubSpotSDK::Models::Events::IndexedTimePoint::index_reference,
+          time_type: HubSpotSDK::Models::Events::IndexedTimePoint::time_type,
+          timezone_source: HubSpotSDK::Models::Events::IndexedTimePoint::timezone_source,
           zone_id: String,
-          offset: HubspotSDK::Events::IndexOffset,
+          offset: HubSpotSDK::Events::IndexOffset,
           should_generate_refresh_time: bool
         }
 
-      class IndexedTimePoint < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor index_reference: HubspotSDK::Models::Events::IndexedTimePoint::index_reference
+      class IndexedTimePoint < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor index_reference: HubSpotSDK::Models::Events::IndexedTimePoint::index_reference
 
-        attr_accessor time_type: HubspotSDK::Models::Events::IndexedTimePoint::time_type
+        attr_accessor time_type: HubSpotSDK::Models::Events::IndexedTimePoint::time_type
 
-        attr_accessor timezone_source: HubspotSDK::Models::Events::IndexedTimePoint::timezone_source
+        attr_accessor timezone_source: HubSpotSDK::Models::Events::IndexedTimePoint::timezone_source
 
         attr_accessor zone_id: String
 
-        attr_reader offset: HubspotSDK::Events::IndexOffset?
+        attr_reader offset: HubSpotSDK::Events::IndexOffset?
 
         def offset=: (
-          HubspotSDK::Events::IndexOffset
-        ) -> HubspotSDK::Events::IndexOffset
+          HubSpotSDK::Events::IndexOffset
+        ) -> HubSpotSDK::Events::IndexOffset
 
         attr_reader should_generate_refresh_time: bool?
 
         def should_generate_refresh_time=: (bool) -> bool
 
         def initialize: (
-          index_reference: HubspotSDK::Models::Events::IndexedTimePoint::index_reference,
-          time_type: HubspotSDK::Models::Events::IndexedTimePoint::time_type,
-          timezone_source: HubspotSDK::Models::Events::IndexedTimePoint::timezone_source,
+          index_reference: HubSpotSDK::Models::Events::IndexedTimePoint::index_reference,
+          time_type: HubSpotSDK::Models::Events::IndexedTimePoint::time_type,
+          timezone_source: HubSpotSDK::Models::Events::IndexedTimePoint::timezone_source,
           zone_id: String,
-          ?offset: HubspotSDK::Events::IndexOffset,
+          ?offset: HubSpotSDK::Events::IndexOffset,
           ?should_generate_refresh_time: bool
         ) -> void
 
         def to_hash: -> {
-          index_reference: HubspotSDK::Models::Events::IndexedTimePoint::index_reference,
-          time_type: HubspotSDK::Models::Events::IndexedTimePoint::time_type,
-          timezone_source: HubspotSDK::Models::Events::IndexedTimePoint::timezone_source,
+          index_reference: HubSpotSDK::Models::Events::IndexedTimePoint::index_reference,
+          time_type: HubSpotSDK::Models::Events::IndexedTimePoint::time_type,
+          timezone_source: HubSpotSDK::Models::Events::IndexedTimePoint::timezone_source,
           zone_id: String,
-          offset: HubspotSDK::Events::IndexOffset,
+          offset: HubSpotSDK::Events::IndexOffset,
           should_generate_refresh_time: bool
         }
 
         type index_reference =
-          HubspotSDK::Events::NowReference
-          | HubspotSDK::Events::TodayReference
-          | HubspotSDK::Events::WeekReference
-          | HubspotSDK::Events::MonthReference
-          | HubspotSDK::Events::QuarterReference
-          | HubspotSDK::Events::FiscalQuarter
-          | HubspotSDK::Events::YearReference
-          | HubspotSDK::Events::FiscalYear
+          HubSpotSDK::Events::NowReference
+          | HubSpotSDK::Events::TodayReference
+          | HubSpotSDK::Events::WeekReference
+          | HubSpotSDK::Events::MonthReference
+          | HubSpotSDK::Events::QuarterReference
+          | HubSpotSDK::Events::FiscalQuarter
+          | HubSpotSDK::Events::YearReference
+          | HubSpotSDK::Events::FiscalYear
 
         module IndexReference
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          def self?.variants: -> ::Array[HubspotSDK::Models::Events::IndexedTimePoint::index_reference]
+          def self?.variants: -> ::Array[HubSpotSDK::Models::Events::IndexedTimePoint::index_reference]
         end
 
         type time_type = :INDEXED
 
         module TimeType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           INDEXED: :INDEXED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::IndexedTimePoint::time_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::IndexedTimePoint::time_type]
         end
 
         type timezone_source = :CUSTOM | :PORTAL | :USER
 
         module TimezoneSource
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CUSTOM: :CUSTOM
           PORTAL: :PORTAL
           USER: :USER
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::IndexedTimePoint::timezone_source]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::IndexedTimePoint::timezone_source]
         end
       end
     end

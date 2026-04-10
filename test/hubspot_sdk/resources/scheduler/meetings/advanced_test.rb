@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Scheduler::Meetings::AdvancedTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Scheduler::Meetings::AdvancedTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
@@ -31,7 +31,7 @@ class HubspotSDK::Test::Resources::Scheduler::Meetings::AdvancedTest < HubspotSD
       )
 
     assert_pattern do
-      response => HubspotSDK::Scheduler::ExternalCalenderMeetingEventResponse
+      response => HubSpotSDK::Scheduler::ExternalCalenderMeetingEventResponse
     end
 
     assert_pattern do
@@ -39,7 +39,7 @@ class HubspotSDK::Test::Resources::Scheduler::Meetings::AdvancedTest < HubspotSD
         id: String,
         created_at: Time,
         last_updated_at: Time,
-        properties: HubspotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties
+        properties: HubSpotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties
       }
     end
   end
@@ -61,7 +61,7 @@ class HubspotSDK::Test::Resources::Scheduler::Meetings::AdvancedTest < HubspotSD
       )
 
     assert_pattern do
-      response => HubspotSDK::Scheduler::ExternalMeetingBookingResponse
+      response => HubSpotSDK::Scheduler::ExternalMeetingBookingResponse
     end
 
     assert_pattern do
@@ -71,10 +71,10 @@ class HubspotSDK::Test::Resources::Scheduler::Meetings::AdvancedTest < HubspotSD
         contact_id: String,
         duration: Integer,
         end_: Time,
-        form_fields: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Scheduler::ExternalValidatedFormField]),
-        guest_emails: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        is_offline: HubspotSDK::Internal::Type::Boolean,
-        legal_consent_responses: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Scheduler::ExternalLegalConsentResponse]),
+        form_fields: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Scheduler::ExternalValidatedFormField]),
+        guest_emails: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        is_offline: HubSpotSDK::Internal::Type::Boolean,
+        legal_consent_responses: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Scheduler::ExternalLegalConsentResponse]),
         start: Time,
         subject: String,
         locale: String | nil,

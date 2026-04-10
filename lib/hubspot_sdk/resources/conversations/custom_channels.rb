@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Conversations
       class CustomChannels
-        # @return [HubspotSDK::Resources::Conversations::CustomChannels::ChannelAccounts]
+        # @return [HubSpotSDK::Resources::Conversations::CustomChannels::ChannelAccounts]
         attr_reader :channel_accounts
 
-        # @return [HubspotSDK::Resources::Conversations::CustomChannels::Messages]
+        # @return [HubSpotSDK::Resources::Conversations::CustomChannels::Messages]
         attr_reader :messages
 
         # @overload create(capabilities:, name:, channel_account_connection_redirect_url: nil, channel_description: nil, channel_logo_url: nil, webhook_url: nil, request_options: {})
@@ -18,18 +18,18 @@ module HubspotSDK
         # @param channel_description [String]
         # @param channel_logo_url [String]
         # @param webhook_url [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Conversations::PublicChannelIntegrationChannel]
+        # @return [HubSpotSDK::Models::Conversations::PublicChannelIntegrationChannel]
         #
-        # @see HubspotSDK::Models::Conversations::CustomChannelCreateParams
+        # @see HubSpotSDK::Models::Conversations::CustomChannelCreateParams
         def create(params)
-          parsed, options = HubspotSDK::Conversations::CustomChannelCreateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Conversations::CustomChannelCreateParams.dump_request(params)
           @client.request(
             method: :post,
             path: "conversations/custom-channels/2026-03",
             body: parsed,
-            model: HubspotSDK::Conversations::PublicChannelIntegrationChannel,
+            model: HubSpotSDK::Conversations::PublicChannelIntegrationChannel,
             options: options
           )
         end
@@ -46,24 +46,24 @@ module HubspotSDK
         # @param channel_logo_url [Object]
         # @param name [Object]
         # @param webhook_url [Object]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Conversations::PublicChannelIntegrationChannel]
+        # @return [HubSpotSDK::Models::Conversations::PublicChannelIntegrationChannel]
         #
-        # @see HubspotSDK::Models::Conversations::CustomChannelUpdateParams
+        # @see HubSpotSDK::Models::Conversations::CustomChannelUpdateParams
         def update(channel_id, params)
-          parsed, options = HubspotSDK::Conversations::CustomChannelUpdateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Conversations::CustomChannelUpdateParams.dump_request(params)
           @client.request(
             method: :patch,
             path: ["conversations/custom-channels/2026-03/%1$s", channel_id],
             body: parsed,
-            model: HubspotSDK::Conversations::PublicChannelIntegrationChannel,
+            model: HubSpotSDK::Conversations::PublicChannelIntegrationChannel,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Conversations::CustomChannelListParams} for more details.
+        # {HubSpotSDK::Models::Conversations::CustomChannelListParams} for more details.
         #
         # @overload list(after: nil, default_page_length: nil, limit: nil, sort: nil, request_options: {})
         #
@@ -75,20 +75,20 @@ module HubspotSDK
         #
         # @param sort [Array<String>]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Conversations::PublicChannelIntegrationChannel>]
+        # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Conversations::PublicChannelIntegrationChannel>]
         #
-        # @see HubspotSDK::Models::Conversations::CustomChannelListParams
+        # @see HubSpotSDK::Models::Conversations::CustomChannelListParams
         def list(params = {})
-          parsed, options = HubspotSDK::Conversations::CustomChannelListParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Conversations::CustomChannelListParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "conversations/custom-channels/2026-03",
             query: query.transform_keys(default_page_length: "defaultPageLength"),
-            page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Conversations::PublicChannelIntegrationChannel,
+            page: HubSpotSDK::Internal::Page,
+            model: HubSpotSDK::Conversations::PublicChannelIntegrationChannel,
             options: options
           )
         end
@@ -98,11 +98,11 @@ module HubspotSDK
         # @overload delete(channel_id, request_options: {})
         #
         # @param channel_id [Integer]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Conversations::CustomChannelDeleteParams
+        # @see HubSpotSDK::Models::Conversations::CustomChannelDeleteParams
         def delete(channel_id, params = {})
           @client.request(
             method: :delete,
@@ -124,14 +124,14 @@ module HubspotSDK
         #
         # @param archived [Boolean] Query param: Whether to return only results that have been archived.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Conversations::PublicChannelAccount]
+        # @return [HubSpotSDK::Models::Conversations::PublicChannelAccount]
         #
-        # @see HubspotSDK::Models::Conversations::CustomChannelGetParams
+        # @see HubSpotSDK::Models::Conversations::CustomChannelGetParams
         def get(channel_account_id, params)
-          parsed, options = HubspotSDK::Conversations::CustomChannelGetParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Conversations::CustomChannelGetParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           channel_id =
             parsed.delete(:channel_id) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -144,19 +144,19 @@ module HubspotSDK
               channel_account_id
             ],
             query: query,
-            model: HubspotSDK::Conversations::PublicChannelAccount,
+            model: HubSpotSDK::Conversations::PublicChannelAccount,
             options: options
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
           @channel_accounts =
-            HubspotSDK::Resources::Conversations::CustomChannels::ChannelAccounts.new(client: client)
-          @messages = HubspotSDK::Resources::Conversations::CustomChannels::Messages.new(client: client)
+            HubSpotSDK::Resources::Conversations::CustomChannels::ChannelAccounts.new(client: client)
+          @messages = HubSpotSDK::Resources::Conversations::CustomChannels::Messages.new(client: client)
         end
       end
     end

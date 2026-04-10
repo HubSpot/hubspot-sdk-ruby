@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Pages
-        attr_reader a_b_tests: HubspotSDK::Resources::Cms::Pages::ABTests
+        attr_reader a_b_tests: HubSpotSDK::Resources::Cms::Pages::ABTests
 
-        attr_reader batch: HubspotSDK::Resources::Cms::Pages::Batch
+        attr_reader batch: HubSpotSDK::Resources::Cms::Pages::Batch
 
-        attr_reader folders: HubspotSDK::Resources::Cms::Pages::Folders
+        attr_reader folders: HubSpotSDK::Resources::Cms::Pages::Folders
 
-        attr_reader landing_pages: HubspotSDK::Resources::Cms::Pages::LandingPages
+        attr_reader landing_pages: HubSpotSDK::Resources::Cms::Pages::LandingPages
 
-        attr_reader multi_language: HubspotSDK::Resources::Cms::Pages::MultiLanguage
+        attr_reader multi_language: HubSpotSDK::Resources::Cms::Pages::MultiLanguage
 
-        attr_reader website_pages: HubspotSDK::Resources::Cms::Pages::WebsitePages
+        attr_reader website_pages: HubSpotSDK::Resources::Cms::Pages::WebsitePages
 
         def get_landing_page_folders: (
           ?after: String,
@@ -26,7 +26,7 @@ module HubspotSDK
           ?updated_after: Time,
           ?updated_at: Time,
           ?updated_before: Time,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> top
 
         def get_landing_page_folders_by_query: (
@@ -41,14 +41,14 @@ module HubspotSDK
           ?updated_after: Time,
           ?updated_at: Time,
           ?updated_before: Time,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> top
 
         def get_landing_page_revision: (
           String revision_id,
           object_id_: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::PageVersion
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Cms::PageVersion
 
         def get_landing_pages: (
           ?after: String,
@@ -62,7 +62,7 @@ module HubspotSDK
           ?updated_after: Time,
           ?updated_at: Time,
           ?updated_before: Time,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> top
 
         def get_landing_pages_by_query: (
@@ -77,14 +77,14 @@ module HubspotSDK
           ?updated_after: Time,
           ?updated_at: Time,
           ?updated_before: Time,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> top
 
         def get_site_page_revision: (
           String revision_id,
           object_id_: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::PageVersion
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Cms::PageVersion
 
         def get_site_pages: (
           ?after: String,
@@ -98,7 +98,7 @@ module HubspotSDK
           ?updated_after: Time,
           ?updated_at: Time,
           ?updated_before: Time,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> top
 
         def get_site_pages_by_query: (
@@ -113,7 +113,7 @@ module HubspotSDK
           ?updated_after: Time,
           ?updated_at: Time,
           ?updated_before: Time,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> top
 
         def list_landing_page_revisions: (
@@ -121,47 +121,47 @@ module HubspotSDK
           ?after: String,
           ?before: String,
           ?limit: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::PageVersion]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Cms::PageVersion]
 
         def list_site_page_revisions: (
           String object_id_,
           ?after: String,
           ?before: String,
           ?limit: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::PageVersion]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Cms::PageVersion]
 
         def reset_site_page_draft: (
           String object_id_,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def restore_landing_page_revision: (
           String revision_id,
           object_id_: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::PageData
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Cms::PageData
 
         def restore_landing_page_revision_to_draft: (
           Integer revision_id,
           object_id_: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::PageData
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Cms::PageData
 
         def restore_site_page_revision: (
           String revision_id,
           object_id_: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::PageData
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Cms::PageData
 
         def restore_site_page_revision_to_draft: (
           Integer revision_id,
           object_id_: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::PageData
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Cms::PageData
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Conversations
       class VisitorIdentification
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Conversations::VisitorIdentificationGenerateTokenParams}
+        # {HubSpotSDK::Models::Conversations::VisitorIdentificationGenerateTokenParams}
         # for more details.
         #
         # Generate an identification token for a website visitor who has been
@@ -22,26 +22,26 @@ module HubspotSDK
         #
         # @param last_name [String] The last name of the visitor that you wish to identify. This value will only be
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Conversations::IdentificationTokenResponse]
+        # @return [HubSpotSDK::Models::Conversations::IdentificationTokenResponse]
         #
-        # @see HubspotSDK::Models::Conversations::VisitorIdentificationGenerateTokenParams
+        # @see HubSpotSDK::Models::Conversations::VisitorIdentificationGenerateTokenParams
         def generate_token(params)
           parsed, options =
-            HubspotSDK::Conversations::VisitorIdentificationGenerateTokenParams.dump_request(params)
+            HubSpotSDK::Conversations::VisitorIdentificationGenerateTokenParams.dump_request(params)
           @client.request(
             method: :post,
             path: "visitor-identification/2026-03/tokens/create",
             body: parsed,
-            model: HubspotSDK::Conversations::IdentificationTokenResponse,
+            model: HubSpotSDK::Conversations::IdentificationTokenResponse,
             options: options
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
         end

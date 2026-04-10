@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        # @see HubspotSDK::Resources::Crm::Extensions::CardsDev#create
-        class PublicCardResponse < HubspotSDK::Internal::Type::BaseModel
+        # @see HubSpotSDK::Resources::Crm::Extensions::CardsDev#create
+        class PublicCardResponse < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute id
           #   The unique id of the card.
           #
@@ -14,27 +14,27 @@ module HubspotSDK
 
           # @!attribute actions
           #
-          #   @return [HubspotSDK::Models::Crm::Extensions::CardActions]
-          required :actions, -> { HubspotSDK::Crm::Extensions::CardActions }
+          #   @return [HubSpotSDK::Models::Crm::Extensions::CardActions]
+          required :actions, -> { HubSpotSDK::Crm::Extensions::CardActions }
 
           # @!attribute audit_history
           #   A list of actions performed on the card, including creation, deletion, and
           #   updates.
           #
-          #   @return [Array<HubspotSDK::Models::Crm::Extensions::CardAuditResponse>]
+          #   @return [Array<HubSpotSDK::Models::Crm::Extensions::CardAuditResponse>]
           required :audit_history,
-                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Extensions::CardAuditResponse] },
+                   -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::Extensions::CardAuditResponse] },
                    api_name: :auditHistory
 
           # @!attribute display_
           #
-          #   @return [HubspotSDK::Models::Crm::Extensions::CardDisplayBody]
-          required :display_, -> { HubspotSDK::Crm::Extensions::CardDisplayBody }, api_name: :display
+          #   @return [HubSpotSDK::Models::Crm::Extensions::CardDisplayBody]
+          required :display_, -> { HubSpotSDK::Crm::Extensions::CardDisplayBody }, api_name: :display
 
           # @!attribute fetch
           #
-          #   @return [HubspotSDK::Models::Crm::Extensions::PublicCardFetchBody]
-          required :fetch, -> { HubspotSDK::Crm::Extensions::PublicCardFetchBody }
+          #   @return [HubSpotSDK::Models::Crm::Extensions::PublicCardFetchBody]
+          required :fetch, -> { HubSpotSDK::Crm::Extensions::PublicCardFetchBody }
 
           # @!attribute title
           #   The top-level title for this card. Displayed to users in the CRM UI.
@@ -56,17 +56,17 @@ module HubspotSDK
 
           # @!method initialize(id:, actions:, audit_history:, display_:, fetch:, title:, created_at: nil, updated_at: nil)
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Crm::Extensions::PublicCardResponse} for more details.
+          #   {HubSpotSDK::Models::Crm::Extensions::PublicCardResponse} for more details.
           #
           #   @param id [String] The unique id of the card.
           #
-          #   @param actions [HubspotSDK::Models::Crm::Extensions::CardActions]
+          #   @param actions [HubSpotSDK::Models::Crm::Extensions::CardActions]
           #
-          #   @param audit_history [Array<HubspotSDK::Models::Crm::Extensions::CardAuditResponse>] A list of actions performed on the card, including creation, deletion, and updat
+          #   @param audit_history [Array<HubSpotSDK::Models::Crm::Extensions::CardAuditResponse>] A list of actions performed on the card, including creation, deletion, and updat
           #
-          #   @param display_ [HubspotSDK::Models::Crm::Extensions::CardDisplayBody]
+          #   @param display_ [HubSpotSDK::Models::Crm::Extensions::CardDisplayBody]
           #
-          #   @param fetch [HubspotSDK::Models::Crm::Extensions::PublicCardFetchBody]
+          #   @param fetch [HubSpotSDK::Models::Crm::Extensions::PublicCardFetchBody]
           #
           #   @param title [String] The top-level title for this card. Displayed to users in the CRM UI.
           #

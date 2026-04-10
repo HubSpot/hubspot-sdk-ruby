@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class OccurrenceListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class OccurrenceListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::OccurrenceListParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::OccurrenceListParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -57,7 +57,7 @@ module HubspotSDK
 
         sig do
           returns(
-            T.nilable(HubspotSDK::Events::OccurrenceListParams::ObjectProperty)
+            T.nilable(HubSpotSDK::Events::OccurrenceListParams::ObjectProperty)
           )
         end
         attr_reader :object_property
@@ -65,7 +65,7 @@ module HubspotSDK
         sig do
           params(
             object_property:
-              HubspotSDK::Events::OccurrenceListParams::ObjectProperty::OrHash
+              HubSpotSDK::Events::OccurrenceListParams::ObjectProperty::OrHash
           ).void
         end
         attr_writer :object_property
@@ -95,13 +95,13 @@ module HubspotSDK
         attr_writer :properties
 
         sig do
-          returns(T.nilable(HubspotSDK::Events::OccurrenceListParams::Property))
+          returns(T.nilable(HubSpotSDK::Events::OccurrenceListParams::Property))
         end
         attr_reader :property
 
         sig do
           params(
-            property: HubspotSDK::Events::OccurrenceListParams::Property::OrHash
+            property: HubSpotSDK::Events::OccurrenceListParams::Property::OrHash
           ).void
         end
         attr_writer :property
@@ -121,15 +121,15 @@ module HubspotSDK
             limit: Integer,
             object_id_: Integer,
             object_property:
-              HubspotSDK::Events::OccurrenceListParams::ObjectProperty::OrHash,
+              HubSpotSDK::Events::OccurrenceListParams::ObjectProperty::OrHash,
             object_type: String,
             occurred_after: Time,
             occurred_before: Time,
             properties: T::Array[String],
             property:
-              HubspotSDK::Events::OccurrenceListParams::Property::OrHash,
+              HubSpotSDK::Events::OccurrenceListParams::Property::OrHash,
             sort: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -164,26 +164,26 @@ module HubspotSDK
               limit: Integer,
               object_id_: Integer,
               object_property:
-                HubspotSDK::Events::OccurrenceListParams::ObjectProperty,
+                HubSpotSDK::Events::OccurrenceListParams::ObjectProperty,
               object_type: String,
               occurred_after: Time,
               occurred_before: Time,
               properties: T::Array[String],
-              property: HubspotSDK::Events::OccurrenceListParams::Property,
+              property: HubSpotSDK::Events::OccurrenceListParams::Property,
               sort: T::Array[String],
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end
         def to_hash
         end
 
-        class ObjectProperty < HubspotSDK::Internal::Type::BaseModel
+        class ObjectProperty < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Events::OccurrenceListParams::ObjectProperty,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Events::OccurrenceListParams::ObjectProperty,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -202,12 +202,12 @@ module HubspotSDK
           end
         end
 
-        class Property < HubspotSDK::Internal::Type::BaseModel
+        class Property < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Events::OccurrenceListParams::Property,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Events::OccurrenceListParams::Property,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 

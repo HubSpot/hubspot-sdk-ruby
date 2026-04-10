@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class SubscriptionDefinition < HubspotSDK::Internal::Type::BaseModel
+      class SubscriptionDefinition < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the subscription.
         #
@@ -26,19 +26,19 @@ module HubspotSDK
         #   Indicates whether the subscription is active.
         #
         #   @return [Boolean]
-        required :is_active, HubspotSDK::Internal::Type::Boolean, api_name: :isActive
+        required :is_active, HubSpotSDK::Internal::Type::Boolean, api_name: :isActive
 
         # @!attribute is_default
         #   Indicates whether the subscription is the default option.
         #
         #   @return [Boolean]
-        required :is_default, HubspotSDK::Internal::Type::Boolean, api_name: :isDefault
+        required :is_default, HubSpotSDK::Internal::Type::Boolean, api_name: :isDefault
 
         # @!attribute is_internal
         #   Indicates whether the subscription is internal.
         #
         #   @return [Boolean]
-        required :is_internal, HubspotSDK::Internal::Type::Boolean, api_name: :isInternal
+        required :is_internal, HubSpotSDK::Internal::Type::Boolean, api_name: :isInternal
 
         # @!attribute name
         #   The name of the subscription.
@@ -73,10 +73,10 @@ module HubspotSDK
         # @!attribute subscription_translations
         #   A list of translations associated with the subscription.
         #
-        #   @return [Array<HubspotSDK::Models::CommunicationPreferences::PublicSubscriptionTranslation>, nil]
+        #   @return [Array<HubSpotSDK::Models::CommunicationPreferences::PublicSubscriptionTranslation>, nil]
         optional :subscription_translations,
                  -> {
-                   HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CommunicationPreferences::PublicSubscriptionTranslation]
+                   HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::CommunicationPreferences::PublicSubscriptionTranslation]
                  },
                  api_name: :subscriptionTranslations
 
@@ -103,7 +103,7 @@ module HubspotSDK
         #
         #   @param purpose [String] The purpose of the subscription.
         #
-        #   @param subscription_translations [Array<HubspotSDK::Models::CommunicationPreferences::PublicSubscriptionTranslation>] A list of translations associated with the subscription.
+        #   @param subscription_translations [Array<HubSpotSDK::Models::CommunicationPreferences::PublicSubscriptionTranslation>] A list of translations associated with the subscription.
       end
     end
   end

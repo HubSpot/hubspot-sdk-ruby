@@ -1,11 +1,11 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class PropertyGroup < HubspotSDK::Internal::Type::BaseModel
+    class PropertyGroup < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
-          T.any(HubspotSDK::PropertyGroup, HubspotSDK::Internal::AnyHash)
+          T.any(HubSpotSDK::PropertyGroup, HubSpotSDK::Internal::AnyHash)
         end
 
       sig { returns(T::Boolean) }

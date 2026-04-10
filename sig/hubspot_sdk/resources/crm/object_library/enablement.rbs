@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class ObjectLibrary
         class Enablement
           def get_all: (
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::ObjectLibrary::PortalObjectTypeEnablementPublicResponse
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::ObjectLibrary::PortalObjectTypeEnablementPublicResponse
 
           def get_by_object_type_id: (
             String object_type_id,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::ObjectLibrary::ObjectTypeEnablementPublicResponse
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::ObjectLibrary::ObjectTypeEnablementPublicResponse
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

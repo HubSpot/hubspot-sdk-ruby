@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type pipeline_stage_patch_input =
@@ -9,7 +9,7 @@ module HubspotSDK
           label: String
         }
 
-      class PipelineStagePatchInput < HubspotSDK::Internal::Type::BaseModel
+      class PipelineStagePatchInput < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor metadata: ::Hash[Symbol, String]
 
         attr_reader archived: bool?

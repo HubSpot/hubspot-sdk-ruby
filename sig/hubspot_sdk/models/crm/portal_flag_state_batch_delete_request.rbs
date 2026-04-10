@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type portal_flag_state_batch_delete_request =
         { portal_ids: ::Array[Integer] }
 
-      class PortalFlagStateBatchDeleteRequest < HubspotSDK::Internal::Type::BaseModel
+      class PortalFlagStateBatchDeleteRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor portal_ids: ::Array[Integer]
 
         def initialize: (portal_ids: ::Array[Integer]) -> void

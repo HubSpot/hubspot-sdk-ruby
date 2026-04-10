@@ -1,29 +1,29 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class CollectionResponsePublicCampaignAsset < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponsePublicCampaignAsset < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #   An array of public campaign assets. Each item in the array is an object
         #   representing a campaign asset.
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::PublicCampaignAsset>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicCampaignAsset] }
+        #   @return [Array<HubSpotSDK::Models::Marketing::PublicCampaignAsset>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::PublicCampaignAsset] }
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::Paging, nil]
-        optional :paging, -> { HubspotSDK::Paging }
+        #   @return [HubSpotSDK::Models::Paging, nil]
+        optional :paging, -> { HubSpotSDK::Paging }
 
         # @!method initialize(results:, paging: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::CollectionResponsePublicCampaignAsset} for more
+        #   {HubSpotSDK::Models::Marketing::CollectionResponsePublicCampaignAsset} for more
         #   details.
         #
-        #   @param results [Array<HubspotSDK::Models::Marketing::PublicCampaignAsset>] An array of public campaign assets. Each item in the array is an object represen
+        #   @param results [Array<HubSpotSDK::Models::Marketing::PublicCampaignAsset>] An array of public campaign assets. Each item in the array is an object represen
         #
-        #   @param paging [HubspotSDK::Models::Paging]
+        #   @param paging [HubSpotSDK::Models::Paging]
       end
     end
   end

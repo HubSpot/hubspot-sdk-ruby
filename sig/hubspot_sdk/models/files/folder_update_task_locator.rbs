@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
       type folder_update_task_locator =
         { id: String, links: ::Hash[Symbol, String] }
 
-      class FolderUpdateTaskLocator < HubspotSDK::Internal::Type::BaseModel
+      class FolderUpdateTaskLocator < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_reader links: ::Hash[Symbol, String]?

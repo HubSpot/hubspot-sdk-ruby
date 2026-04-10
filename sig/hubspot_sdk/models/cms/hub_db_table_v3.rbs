@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type hub_db_table_v3 =
@@ -7,7 +7,7 @@ module HubspotSDK
           allow_child_tables: bool,
           allow_public_api_access: bool,
           column_count: Integer,
-          columns: ::Array[HubspotSDK::Cms::Column],
+          columns: ::Array[HubSpotSDK::Cms::Column],
           created_at: Time,
           deleted: bool,
           deleted_at: Time,
@@ -20,12 +20,12 @@ module HubspotSDK
           row_count: Integer,
           updated_at: Time,
           use_for_pages: bool,
-          created_by: HubspotSDK::Cms::SimpleUser,
+          created_by: HubSpotSDK::Cms::SimpleUser,
           is_ordered_manually: bool,
-          updated_by: HubspotSDK::Cms::SimpleUser
+          updated_by: HubSpotSDK::Cms::SimpleUser
         }
 
-      class HubDBTableV3 < HubspotSDK::Internal::Type::BaseModel
+      class HubDBTableV3 < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor allow_child_tables: bool
@@ -34,7 +34,7 @@ module HubspotSDK
 
         attr_accessor column_count: Integer
 
-        attr_accessor columns: ::Array[HubspotSDK::Cms::Column]
+        attr_accessor columns: ::Array[HubSpotSDK::Cms::Column]
 
         attr_accessor created_at: Time
 
@@ -60,28 +60,28 @@ module HubspotSDK
 
         attr_accessor use_for_pages: bool
 
-        attr_reader created_by: HubspotSDK::Cms::SimpleUser?
+        attr_reader created_by: HubSpotSDK::Cms::SimpleUser?
 
         def created_by=: (
-          HubspotSDK::Cms::SimpleUser
-        ) -> HubspotSDK::Cms::SimpleUser
+          HubSpotSDK::Cms::SimpleUser
+        ) -> HubSpotSDK::Cms::SimpleUser
 
         attr_reader is_ordered_manually: bool?
 
         def is_ordered_manually=: (bool) -> bool
 
-        attr_reader updated_by: HubspotSDK::Cms::SimpleUser?
+        attr_reader updated_by: HubSpotSDK::Cms::SimpleUser?
 
         def updated_by=: (
-          HubspotSDK::Cms::SimpleUser
-        ) -> HubspotSDK::Cms::SimpleUser
+          HubSpotSDK::Cms::SimpleUser
+        ) -> HubSpotSDK::Cms::SimpleUser
 
         def initialize: (
           id: String,
           allow_child_tables: bool,
           allow_public_api_access: bool,
           column_count: Integer,
-          columns: ::Array[HubspotSDK::Cms::Column],
+          columns: ::Array[HubSpotSDK::Cms::Column],
           created_at: Time,
           deleted: bool,
           deleted_at: Time,
@@ -94,9 +94,9 @@ module HubspotSDK
           row_count: Integer,
           updated_at: Time,
           use_for_pages: bool,
-          ?created_by: HubspotSDK::Cms::SimpleUser,
+          ?created_by: HubSpotSDK::Cms::SimpleUser,
           ?is_ordered_manually: bool,
-          ?updated_by: HubspotSDK::Cms::SimpleUser
+          ?updated_by: HubSpotSDK::Cms::SimpleUser
         ) -> void
 
         def to_hash: -> {
@@ -104,7 +104,7 @@ module HubspotSDK
           allow_child_tables: bool,
           allow_public_api_access: bool,
           column_count: Integer,
-          columns: ::Array[HubspotSDK::Cms::Column],
+          columns: ::Array[HubSpotSDK::Cms::Column],
           created_at: Time,
           deleted: bool,
           deleted_at: Time,
@@ -117,9 +117,9 @@ module HubspotSDK
           row_count: Integer,
           updated_at: Time,
           use_for_pages: bool,
-          created_by: HubspotSDK::Cms::SimpleUser,
+          created_by: HubSpotSDK::Cms::SimpleUser,
           is_ordered_manually: bool,
-          updated_by: HubspotSDK::Cms::SimpleUser
+          updated_by: HubSpotSDK::Cms::SimpleUser
         }
       end
     end

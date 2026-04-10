@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class ObjectSchemas
@@ -8,10 +8,10 @@ module HubspotSDK
             include_audit_metadata: bool,
             include_property_definitions: bool,
             inputs: ::Array[String],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::CollectionResponseObjectSchemaNoPaging
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::CollectionResponseObjectSchemaNoPaging
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

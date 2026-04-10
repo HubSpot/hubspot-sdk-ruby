@@ -1,10 +1,10 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class FeatureFlags
-        sig { returns(HubspotSDK::Resources::Crm::FeatureFlags::Batch) }
+        sig { returns(HubSpotSDK::Resources::Crm::FeatureFlags::Batch) }
         attr_reader :batch
 
         # Set a feature flag for an app. For example, update the `hs-hide-crm-cards`
@@ -14,11 +14,11 @@ module HubspotSDK
             flag_name: String,
             app_id: Integer,
             default_state:
-              HubspotSDK::Crm::FlagPutRequest::DefaultState::OrSymbol,
+              HubSpotSDK::Crm::FlagPutRequest::DefaultState::OrSymbol,
             override_state:
-              HubspotSDK::Crm::FlagPutRequest::OverrideState::OrSymbol,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::FlagResponse)
+              HubSpotSDK::Crm::FlagPutRequest::OverrideState::OrSymbol,
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::FlagResponse)
         end
         def update(
           # Path param
@@ -41,8 +41,8 @@ module HubspotSDK
           params(
             flag_name: String,
             app_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::FlagResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::FlagResponse)
         end
         def delete(flag_name, app_id:, request_options: {})
         end
@@ -54,8 +54,8 @@ module HubspotSDK
             portal_id: Integer,
             app_id: Integer,
             flag_name: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::PortalFlagStateResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::PortalFlagStateResponse)
         end
         def delete_portal_state(
           portal_id,
@@ -71,8 +71,8 @@ module HubspotSDK
           params(
             flag_name: String,
             app_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::FlagResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::FlagResponse)
         end
         def get(flag_name, app_id:, request_options: {})
         end
@@ -83,8 +83,8 @@ module HubspotSDK
             portal_id: Integer,
             app_id: Integer,
             flag_name: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::PortalFlagStateResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::PortalFlagStateResponse)
         end
         def get_portal_state(
           portal_id,
@@ -97,8 +97,8 @@ module HubspotSDK
         sig do
           params(
             app_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::FlagsForAppResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::FlagsForAppResponse)
         end
         def list_all(app_id, request_options: {})
         end
@@ -111,8 +111,8 @@ module HubspotSDK
             app_id: Integer,
             limit: Integer,
             start_portal_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::PortalFlagStateBatchResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::PortalFlagStateBatchResponse)
         end
         def list_portals(
           # Path param
@@ -134,9 +134,9 @@ module HubspotSDK
             app_id: Integer,
             flag_name: String,
             flag_state:
-              HubspotSDK::Crm::PortalFlagStatePutRequest::FlagState::OrSymbol,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::PortalFlagStateResponse)
+              HubSpotSDK::Crm::PortalFlagStatePutRequest::FlagState::OrSymbol,
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::PortalFlagStateResponse)
         end
         def update_portal_state(
           # Path param
@@ -152,7 +152,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

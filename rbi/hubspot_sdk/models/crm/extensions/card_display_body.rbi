@@ -1,22 +1,22 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class CardDisplayBody < HubspotSDK::Internal::Type::BaseModel
+        class CardDisplayBody < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Extensions::CardDisplayBody,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Extensions::CardDisplayBody,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
           # Card display properties. These will will be rendered as "label : value" pairs in
           # the card UI. See the [example card](#) in the overview docs for more details.
           sig do
-            returns(T::Array[HubspotSDK::Crm::Extensions::CardDisplayProperty])
+            returns(T::Array[HubSpotSDK::Crm::Extensions::CardDisplayProperty])
           end
           attr_accessor :properties
 
@@ -24,7 +24,7 @@ module HubspotSDK
             params(
               properties:
                 T::Array[
-                  HubspotSDK::Crm::Extensions::CardDisplayProperty::OrHash
+                  HubSpotSDK::Crm::Extensions::CardDisplayProperty::OrHash
                 ]
             ).returns(T.attached_class)
           end
@@ -39,7 +39,7 @@ module HubspotSDK
             override.returns(
               {
                 properties:
-                  T::Array[HubspotSDK::Crm::Extensions::CardDisplayProperty]
+                  T::Array[HubSpotSDK::Crm::Extensions::CardDisplayProperty]
               }
             )
           end

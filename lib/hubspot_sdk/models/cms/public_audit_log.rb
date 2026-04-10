@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::AuditLogs#list
-      class PublicAuditLog < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Cms::AuditLogs#list
+      class PublicAuditLog < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute event
         #   The type of event that took place (CREATED, UPDATED, PUBLISHED, DELETED,
         #   UNPUBLISHED).
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::PublicAuditLog::Event]
-        required :event, enum: -> { HubspotSDK::Cms::PublicAuditLog::Event }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::PublicAuditLog::Event]
+        required :event, enum: -> { HubSpotSDK::Cms::PublicAuditLog::Event }
 
         # @!attribute full_name
         #   The name of the user who caused the event.
@@ -24,7 +24,7 @@ module HubspotSDK
         #   event, the specific fields that were changed for a Content Settings event).
         #
         #   @return [Object]
-        required :meta, HubspotSDK::Internal::Type::Unknown
+        required :meta, HubSpotSDK::Internal::Type::Unknown
 
         # @!attribute object_id_
         #   The ID of the object.
@@ -41,8 +41,8 @@ module HubspotSDK
         # @!attribute object_type
         #   The type of the object (BLOG, LANDING_PAGE, DOMAIN, HUBDB_TABLE etc.)
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::PublicAuditLog::ObjectType]
-        required :object_type, enum: -> { HubspotSDK::Cms::PublicAuditLog::ObjectType }, api_name: :objectType
+        #   @return [Symbol, HubSpotSDK::Models::Cms::PublicAuditLog::ObjectType]
+        required :object_type, enum: -> { HubSpotSDK::Cms::PublicAuditLog::ObjectType }, api_name: :objectType
 
         # @!attribute timestamp
         #   The timestamp at which the event occurred.
@@ -58,9 +58,9 @@ module HubspotSDK
 
         # @!method initialize(event:, full_name:, meta:, object_id_:, object_name:, object_type:, timestamp:, user_id:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Cms::PublicAuditLog} for more details.
+        #   {HubSpotSDK::Models::Cms::PublicAuditLog} for more details.
         #
-        #   @param event [Symbol, HubspotSDK::Models::Cms::PublicAuditLog::Event] The type of event that took place (CREATED, UPDATED, PUBLISHED, DELETED, UNPUBLI
+        #   @param event [Symbol, HubSpotSDK::Models::Cms::PublicAuditLog::Event] The type of event that took place (CREATED, UPDATED, PUBLISHED, DELETED, UNPUBLI
         #
         #   @param full_name [String] The name of the user who caused the event.
         #
@@ -70,7 +70,7 @@ module HubspotSDK
         #
         #   @param object_name [String] The internal name of the object in HubSpot.
         #
-        #   @param object_type [Symbol, HubspotSDK::Models::Cms::PublicAuditLog::ObjectType] The type of the object (BLOG, LANDING_PAGE, DOMAIN, HUBDB_TABLE etc.)
+        #   @param object_type [Symbol, HubSpotSDK::Models::Cms::PublicAuditLog::ObjectType] The type of the object (BLOG, LANDING_PAGE, DOMAIN, HUBDB_TABLE etc.)
         #
         #   @param timestamp [Time] The timestamp at which the event occurred.
         #
@@ -79,9 +79,9 @@ module HubspotSDK
         # The type of event that took place (CREATED, UPDATED, PUBLISHED, DELETED,
         # UNPUBLISHED).
         #
-        # @see HubspotSDK::Models::Cms::PublicAuditLog#event
+        # @see HubSpotSDK::Models::Cms::PublicAuditLog#event
         module Event
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CREATED = :CREATED
           DELETED = :DELETED
@@ -96,9 +96,9 @@ module HubspotSDK
 
         # The type of the object (BLOG, LANDING_PAGE, DOMAIN, HUBDB_TABLE etc.)
         #
-        # @see HubspotSDK::Models::Cms::PublicAuditLog#object_type
+        # @see HubSpotSDK::Models::Cms::PublicAuditLog#object_type
         module ObjectType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BLOG = :BLOG
           BLOG_POST = :BLOG_POST

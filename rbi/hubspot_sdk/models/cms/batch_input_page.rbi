@@ -1,23 +1,23 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class BatchInputPage < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputPage < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::BatchInputPage,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::BatchInputPage,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Pages to input.
-        sig { returns(T::Array[HubspotSDK::Cms::PageData]) }
+        sig { returns(T::Array[HubSpotSDK::Cms::PageData]) }
         attr_accessor :inputs
 
         sig do
-          params(inputs: T::Array[HubspotSDK::Cms::PageData::OrHash]).returns(
+          params(inputs: T::Array[HubSpotSDK::Cms::PageData::OrHash]).returns(
             T.attached_class
           )
         end
@@ -28,7 +28,7 @@ module HubspotSDK
         end
 
         sig do
-          override.returns({ inputs: T::Array[HubspotSDK::Cms::PageData] })
+          override.returns({ inputs: T::Array[HubSpotSDK::Cms::PageData] })
         end
         def to_hash
         end

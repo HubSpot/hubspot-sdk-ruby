@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class BatchInputMarketingEventPublicObjectIDDeleteRequest < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputMarketingEventPublicObjectIDDeleteRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::BatchInputMarketingEventPublicObjectIDDeleteRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::BatchInputMarketingEventPublicObjectIDDeleteRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
             T::Array[
-              HubspotSDK::Marketing::MarketingEventPublicObjectIDDeleteRequest
+              HubSpotSDK::Marketing::MarketingEventPublicObjectIDDeleteRequest
             ]
           )
         end
@@ -25,7 +25,7 @@ module HubspotSDK
           params(
             inputs:
               T::Array[
-                HubspotSDK::Marketing::MarketingEventPublicObjectIDDeleteRequest::OrHash
+                HubSpotSDK::Marketing::MarketingEventPublicObjectIDDeleteRequest::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -37,7 +37,7 @@ module HubspotSDK
             {
               inputs:
                 T::Array[
-                  HubspotSDK::Marketing::MarketingEventPublicObjectIDDeleteRequest
+                  HubSpotSDK::Marketing::MarketingEventPublicObjectIDDeleteRequest
                 ]
             }
           )

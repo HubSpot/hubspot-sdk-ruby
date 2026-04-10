@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type public_sequence_enrollment_lite_response =
         { id: String, enrolled_at: Time, to_email: String, updated_at: Time }
 
-      class PublicSequenceEnrollmentLiteResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicSequenceEnrollmentLiteResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor enrolled_at: Time

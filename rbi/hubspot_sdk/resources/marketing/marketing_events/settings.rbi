@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class MarketingEvents
@@ -10,8 +10,8 @@ module HubspotSDK
             params(
               app_id: Integer,
               event_details_url: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Marketing::EventDetailSettings)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Marketing::EventDetailSettings)
           end
           def create_or_update(
             app_id,
@@ -27,14 +27,14 @@ module HubspotSDK
           sig do
             params(
               app_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Marketing::EventDetailSettings)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Marketing::EventDetailSettings)
           end
           def get(app_id, request_options: {})
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

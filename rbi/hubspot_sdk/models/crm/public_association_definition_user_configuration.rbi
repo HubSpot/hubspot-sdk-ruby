@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicAssociationDefinitionUserConfiguration < HubspotSDK::Internal::Type::BaseModel
+      class PublicAssociationDefinitionUserConfiguration < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicAssociationDefinitionUserConfiguration,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,7 +16,7 @@ module HubspotSDK
         # INTEGRATOR_DEFINED, or USER_DEFINED.
         sig do
           returns(
-            HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category::TaggedSymbol
+            HubSpotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category::TaggedSymbol
           )
         end
         attr_accessor :category
@@ -44,7 +44,7 @@ module HubspotSDK
         sig do
           params(
             category:
-              HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category::OrSymbol,
+              HubSpotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category::OrSymbol,
             type_id: Integer,
             label: String,
             user_enforced_max_to_object_ids: Integer
@@ -69,7 +69,7 @@ module HubspotSDK
           override.returns(
             {
               category:
-                HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category::TaggedSymbol,
+                HubSpotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category::TaggedSymbol,
               type_id: Integer,
               label: String,
               user_enforced_max_to_object_ids: Integer
@@ -82,13 +82,13 @@ module HubspotSDK
         # The category of the association, which can be HUBSPOT_DEFINED,
         # INTEGRATOR_DEFINED, or USER_DEFINED.
         module Category
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category
+                HubSpotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -96,28 +96,28 @@ module HubspotSDK
           HUBSPOT_DEFINED =
             T.let(
               :HUBSPOT_DEFINED,
-              HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category::TaggedSymbol
+              HubSpotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category::TaggedSymbol
             )
           INTEGRATOR_DEFINED =
             T.let(
               :INTEGRATOR_DEFINED,
-              HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category::TaggedSymbol
+              HubSpotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category::TaggedSymbol
             )
           USER_DEFINED =
             T.let(
               :USER_DEFINED,
-              HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category::TaggedSymbol
+              HubSpotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category::TaggedSymbol
             )
           WORK =
             T.let(
               :WORK,
-              HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category::TaggedSymbol
+              HubSpotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category::TaggedSymbol
+                HubSpotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category::TaggedSymbol
               ]
             )
           end

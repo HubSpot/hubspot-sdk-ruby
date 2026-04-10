@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class File < HubspotSDK::Internal::Type::BaseModel
+      class File < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   File ID.
         #
@@ -14,7 +14,7 @@ module HubspotSDK
         #   If the file is deleted.
         #
         #   @return [Boolean]
-        required :archived, HubspotSDK::Internal::Type::Boolean
+        required :archived, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute created_at
         #   Creation time of the file object.
@@ -31,8 +31,8 @@ module HubspotSDK
         # @!attribute access
         #   File access. Can be PUBLIC_INDEXABLE, PUBLIC_NOT_INDEXABLE, PRIVATE.
         #
-        #   @return [Symbol, HubspotSDK::Models::Files::File::Access, nil]
-        optional :access, enum: -> { HubspotSDK::Files::File::Access }
+        #   @return [Symbol, HubSpotSDK::Models::Files::File::Access, nil]
+        optional :access, enum: -> { HubSpotSDK::Files::File::Access }
 
         # @!attribute archived_at
         #   Deletion time of the file object.
@@ -81,7 +81,7 @@ module HubspotSDK
         #   content like web pages.
         #
         #   @return [Boolean, nil]
-        optional :is_usable_in_content, HubspotSDK::Internal::Type::Boolean, api_name: :isUsableInContent
+        optional :is_usable_in_content, HubSpotSDK::Internal::Type::Boolean, api_name: :isUsableInContent
 
         # @!attribute name
         #   Name of the file.
@@ -109,8 +109,8 @@ module HubspotSDK
 
         # @!attribute source_group
         #
-        #   @return [Symbol, HubspotSDK::Models::Files::File::SourceGroup, nil]
-        optional :source_group, enum: -> { HubspotSDK::Files::File::SourceGroup }, api_name: :sourceGroup
+        #   @return [Symbol, HubSpotSDK::Models::Files::File::SourceGroup, nil]
+        optional :source_group, enum: -> { HubSpotSDK::Files::File::SourceGroup }, api_name: :sourceGroup
 
         # @!attribute type
         #   Type of the file. Can be IMG, DOCUMENT, AUDIO, MOVIE, or OTHER.
@@ -133,7 +133,7 @@ module HubspotSDK
 
         # @!method initialize(id:, archived:, created_at:, updated_at:, access: nil, archived_at: nil, default_hosting_url: nil, encoding: nil, expires_at: nil, extension: nil, file_md5: nil, height: nil, is_usable_in_content: nil, name: nil, parent_folder_id: nil, path: nil, size: nil, source_group: nil, type: nil, url: nil, width: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Files::File} for more details.
+        #   {HubSpotSDK::Models::Files::File} for more details.
         #
         #   @param id [String] File ID.
         #
@@ -143,7 +143,7 @@ module HubspotSDK
         #
         #   @param updated_at [Time] Timestamp of the latest update to the file.
         #
-        #   @param access [Symbol, HubspotSDK::Models::Files::File::Access] File access. Can be PUBLIC_INDEXABLE, PUBLIC_NOT_INDEXABLE, PRIVATE.
+        #   @param access [Symbol, HubSpotSDK::Models::Files::File::Access] File access. Can be PUBLIC_INDEXABLE, PUBLIC_NOT_INDEXABLE, PRIVATE.
         #
         #   @param archived_at [Time] Deletion time of the file object.
         #
@@ -169,7 +169,7 @@ module HubspotSDK
         #
         #   @param size [Integer] Size of the file in bytes.
         #
-        #   @param source_group [Symbol, HubspotSDK::Models::Files::File::SourceGroup]
+        #   @param source_group [Symbol, HubSpotSDK::Models::Files::File::SourceGroup]
         #
         #   @param type [String] Type of the file. Can be IMG, DOCUMENT, AUDIO, MOVIE, or OTHER.
         #
@@ -179,9 +179,9 @@ module HubspotSDK
 
         # File access. Can be PUBLIC_INDEXABLE, PUBLIC_NOT_INDEXABLE, PRIVATE.
         #
-        # @see HubspotSDK::Models::Files::File#access
+        # @see HubSpotSDK::Models::Files::File#access
         module Access
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HIDDEN_INDEXABLE = :HIDDEN_INDEXABLE
           HIDDEN_NOT_INDEXABLE = :HIDDEN_NOT_INDEXABLE
@@ -196,9 +196,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Files::File#source_group
+        # @see HubSpotSDK::Models::Files::File#source_group
         module SourceGroup
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONTENT = :CONTENT
           CONVERSATIONS = :CONVERSATIONS

@@ -1,24 +1,24 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class ExternalObjectResolutionMappingRequest < HubspotSDK::Internal::Type::BaseModel
+      class ExternalObjectResolutionMappingRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::ExternalObjectResolutionMappingRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::ExternalObjectResolutionMappingRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(HubspotSDK::Events::ExternalPrimaryObjectResolutionRule) }
+        sig { returns(HubSpotSDK::Events::ExternalPrimaryObjectResolutionRule) }
         attr_reader :primary_object_rule
 
         sig do
           params(
             primary_object_rule:
-              HubspotSDK::Events::ExternalPrimaryObjectResolutionRule::OrHash
+              HubSpotSDK::Events::ExternalPrimaryObjectResolutionRule::OrHash
           ).void
         end
         attr_writer :primary_object_rule
@@ -26,7 +26,7 @@ module HubspotSDK
         sig do
           params(
             primary_object_rule:
-              HubspotSDK::Events::ExternalPrimaryObjectResolutionRule::OrHash
+              HubSpotSDK::Events::ExternalPrimaryObjectResolutionRule::OrHash
           ).returns(T.attached_class)
         end
         def self.new(primary_object_rule:)
@@ -36,7 +36,7 @@ module HubspotSDK
           override.returns(
             {
               primary_object_rule:
-                HubspotSDK::Events::ExternalPrimaryObjectResolutionRule
+                HubSpotSDK::Events::ExternalPrimaryObjectResolutionRule
             }
           )
         end

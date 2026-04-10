@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class MonthReference < HubspotSDK::Internal::Type::BaseModel
+      class MonthReference < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute day
         #
         #   @return [Integer]
@@ -11,9 +11,9 @@ module HubspotSDK
 
         # @!attribute reference_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::MonthReference::ReferenceType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::MonthReference::ReferenceType]
         required :reference_type,
-                 enum: -> { HubspotSDK::Events::MonthReference::ReferenceType },
+                 enum: -> { HubSpotSDK::Events::MonthReference::ReferenceType },
                  api_name: :referenceType
 
         # @!attribute hour
@@ -38,15 +38,15 @@ module HubspotSDK
 
         # @!method initialize(day:, reference_type:, hour: nil, millisecond: nil, minute: nil, second: nil)
         #   @param day [Integer]
-        #   @param reference_type [Symbol, HubspotSDK::Models::Events::MonthReference::ReferenceType]
+        #   @param reference_type [Symbol, HubSpotSDK::Models::Events::MonthReference::ReferenceType]
         #   @param hour [Integer]
         #   @param millisecond [Integer]
         #   @param minute [Integer]
         #   @param second [Integer]
 
-        # @see HubspotSDK::Models::Events::MonthReference#reference_type
+        # @see HubSpotSDK::Models::Events::MonthReference#reference_type
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           MONTH = :MONTH
 

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class AttentionSpanCalculatedValues < HubspotSDK::Internal::Type::BaseModel
+      class AttentionSpanCalculatedValues < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute total_percent_played
         #
         #   @return [Float]

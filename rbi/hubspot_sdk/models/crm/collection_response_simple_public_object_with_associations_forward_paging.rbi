@@ -1,35 +1,35 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class CollectionResponseSimplePublicObjectWithAssociationsForwardPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseSimplePublicObjectWithAssociationsForwardPaging < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::CollectionResponseSimplePublicObjectWithAssociationsForwardPaging,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::CollectionResponseSimplePublicObjectWithAssociationsForwardPaging,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
-          returns(T::Array[HubspotSDK::Crm::SimplePublicObjectWithAssociations])
+          returns(T::Array[HubSpotSDK::Crm::SimplePublicObjectWithAssociations])
         end
         attr_accessor :results
 
-        sig { returns(T.nilable(HubspotSDK::ForwardPaging)) }
+        sig { returns(T.nilable(HubSpotSDK::ForwardPaging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::ForwardPaging::OrHash).void }
+        sig { params(paging: HubSpotSDK::ForwardPaging::OrHash).void }
         attr_writer :paging
 
         sig do
           params(
             results:
               T::Array[
-                HubspotSDK::Crm::SimplePublicObjectWithAssociations::OrHash
+                HubSpotSDK::Crm::SimplePublicObjectWithAssociations::OrHash
               ],
-            paging: HubspotSDK::ForwardPaging::OrHash
+            paging: HubSpotSDK::ForwardPaging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(results:, paging: nil)
@@ -39,8 +39,8 @@ module HubspotSDK
           override.returns(
             {
               results:
-                T::Array[HubspotSDK::Crm::SimplePublicObjectWithAssociations],
-              paging: HubspotSDK::ForwardPaging
+                T::Array[HubSpotSDK::Crm::SimplePublicObjectWithAssociations],
+              paging: HubSpotSDK::ForwardPaging
             }
           )
         end

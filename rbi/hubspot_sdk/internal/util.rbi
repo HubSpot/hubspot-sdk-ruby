@@ -1,10 +1,10 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     # @api private
     module Util
-      extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+      extend HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
       # @api private
       sig { returns(Float) }
@@ -128,7 +128,7 @@ module HubspotSDK
           params(
             data:
               T.any(
-                HubspotSDK::Internal::AnyHash,
+                HubSpotSDK::Internal::AnyHash,
                 T::Array[T.anything],
                 T.anything
               ),
@@ -206,7 +206,7 @@ module HubspotSDK
         # @api private
         sig do
           params(url: T.any(URI::Generic, String)).returns(
-            HubspotSDK::Internal::Util::ParsedUri
+            HubSpotSDK::Internal::Util::ParsedUri
           )
         end
         def parse_uri(url)
@@ -214,7 +214,7 @@ module HubspotSDK
 
         # @api private
         sig do
-          params(parsed: HubspotSDK::Internal::Util::ParsedUri).returns(
+          params(parsed: HubSpotSDK::Internal::Util::ParsedUri).returns(
             URI::Generic
           )
         end
@@ -224,8 +224,8 @@ module HubspotSDK
         # @api private
         sig do
           params(
-            lhs: HubspotSDK::Internal::Util::ParsedUri,
-            rhs: HubspotSDK::Internal::Util::ParsedUri
+            lhs: HubSpotSDK::Internal::Util::ParsedUri,
+            rhs: HubSpotSDK::Internal::Util::ParsedUri
           ).returns(URI::Generic)
         end
         def join_parsed_uri(lhs, rhs)
@@ -311,8 +311,8 @@ module HubspotSDK
       class << self
         # @api private
         sig do
-          params(query: HubspotSDK::Internal::AnyHash).returns(
-            HubspotSDK::Internal::AnyHash
+          params(query: HubSpotSDK::Internal::AnyHash).returns(
+            HubSpotSDK::Internal::AnyHash
           )
         end
         def encode_query_params(query)
@@ -321,7 +321,7 @@ module HubspotSDK
         # @api private
         sig do
           params(
-            collection: HubspotSDK::Internal::AnyHash,
+            collection: HubSpotSDK::Internal::AnyHash,
             key: String,
             element: T.anything
           ).void
@@ -458,7 +458,7 @@ module HubspotSDK
         # Assumes that `lines` has been decoded with `#decode_lines`.
         sig do
           params(lines: T::Enumerable[String]).returns(
-            T::Enumerable[HubspotSDK::Internal::Util::ServerSentEvent]
+            T::Enumerable[HubSpotSDK::Internal::Util::ServerSentEvent]
           )
         end
         def decode_sse(lines)
@@ -501,7 +501,7 @@ module HubspotSDK
             params(
               type:
                 T.any(
-                  HubspotSDK::Internal::Util::SorbetRuntimeSupport,
+                  HubSpotSDK::Internal::Util::SorbetRuntimeSupport,
                   T.anything
                 )
             ).returns(T.anything)

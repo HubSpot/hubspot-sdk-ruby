@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class UpdateLanguagesRequestVNext < HubspotSDK::Internal::Type::BaseModel
+      class UpdateLanguagesRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute languages
         #   Map of object IDs to associated languages of object in the multi-language group.
         #
-        #   @return [Hash{Symbol=>Symbol, HubspotSDK::Models::Cms::UpdateLanguagesRequestVNext::Language}]
+        #   @return [Hash{Symbol=>Symbol, HubSpotSDK::Models::Cms::UpdateLanguagesRequestVNext::Language}]
         required :languages,
-                 -> { HubspotSDK::Internal::Type::HashOf[enum: HubspotSDK::Cms::UpdateLanguagesRequestVNext::Language] }
+                 -> { HubSpotSDK::Internal::Type::HashOf[enum: HubSpotSDK::Cms::UpdateLanguagesRequestVNext::Language] }
 
         # @!attribute primary_id
         #   ID of the primary object in the multi-language group.
@@ -19,14 +19,14 @@ module HubspotSDK
 
         # @!method initialize(languages:, primary_id:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Cms::UpdateLanguagesRequestVNext} for more details.
+        #   {HubSpotSDK::Models::Cms::UpdateLanguagesRequestVNext} for more details.
         #
-        #   @param languages [Hash{Symbol=>Symbol, HubspotSDK::Models::Cms::UpdateLanguagesRequestVNext::Language}] Map of object IDs to associated languages of object in the multi-language group.
+        #   @param languages [Hash{Symbol=>Symbol, HubSpotSDK::Models::Cms::UpdateLanguagesRequestVNext::Language}] Map of object IDs to associated languages of object in the multi-language group.
         #
         #   @param primary_id [String] ID of the primary object in the multi-language group.
 
         module Language
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AA = :aa
           AB = :ab

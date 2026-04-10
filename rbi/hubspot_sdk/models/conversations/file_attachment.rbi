@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class FileAttachment < HubspotSDK::Internal::Type::BaseModel
+      class FileAttachment < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::FileAttachment,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::FileAttachment,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,14 +16,14 @@ module HubspotSDK
         attr_accessor :file_id
 
         sig do
-          returns(HubspotSDK::Conversations::FileAttachment::Type::OrSymbol)
+          returns(HubSpotSDK::Conversations::FileAttachment::Type::OrSymbol)
         end
         attr_accessor :type
 
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Conversations::FileAttachment::FileUsageType::OrSymbol
+              HubSpotSDK::Conversations::FileAttachment::FileUsageType::OrSymbol
             )
           )
         end
@@ -32,7 +32,7 @@ module HubspotSDK
         sig do
           params(
             file_usage_type:
-              HubspotSDK::Conversations::FileAttachment::FileUsageType::OrSymbol
+              HubSpotSDK::Conversations::FileAttachment::FileUsageType::OrSymbol
           ).void
         end
         attr_writer :file_usage_type
@@ -40,9 +40,9 @@ module HubspotSDK
         sig do
           params(
             file_id: String,
-            type: HubspotSDK::Conversations::FileAttachment::Type::OrSymbol,
+            type: HubSpotSDK::Conversations::FileAttachment::Type::OrSymbol,
             file_usage_type:
-              HubspotSDK::Conversations::FileAttachment::FileUsageType::OrSymbol
+              HubSpotSDK::Conversations::FileAttachment::FileUsageType::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(file_id:, type:, file_usage_type: nil)
@@ -52,9 +52,9 @@ module HubspotSDK
           override.returns(
             {
               file_id: String,
-              type: HubspotSDK::Conversations::FileAttachment::Type::OrSymbol,
+              type: HubSpotSDK::Conversations::FileAttachment::Type::OrSymbol,
               file_usage_type:
-                HubspotSDK::Conversations::FileAttachment::FileUsageType::OrSymbol
+                HubSpotSDK::Conversations::FileAttachment::FileUsageType::OrSymbol
             }
           )
         end
@@ -62,24 +62,24 @@ module HubspotSDK
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Conversations::FileAttachment::Type)
+              T.all(Symbol, HubSpotSDK::Conversations::FileAttachment::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           FILE =
             T.let(
               :FILE,
-              HubspotSDK::Conversations::FileAttachment::Type::TaggedSymbol
+              HubSpotSDK::Conversations::FileAttachment::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::FileAttachment::Type::TaggedSymbol
+                HubSpotSDK::Conversations::FileAttachment::Type::TaggedSymbol
               ]
             )
           end
@@ -88,13 +88,13 @@ module HubspotSDK
         end
 
         module FileUsageType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Conversations::FileAttachment::FileUsageType
+                HubSpotSDK::Conversations::FileAttachment::FileUsageType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -102,33 +102,33 @@ module HubspotSDK
           AUDIO =
             T.let(
               :AUDIO,
-              HubspotSDK::Conversations::FileAttachment::FileUsageType::TaggedSymbol
+              HubSpotSDK::Conversations::FileAttachment::FileUsageType::TaggedSymbol
             )
           IMAGE =
             T.let(
               :IMAGE,
-              HubspotSDK::Conversations::FileAttachment::FileUsageType::TaggedSymbol
+              HubSpotSDK::Conversations::FileAttachment::FileUsageType::TaggedSymbol
             )
           OTHER =
             T.let(
               :OTHER,
-              HubspotSDK::Conversations::FileAttachment::FileUsageType::TaggedSymbol
+              HubSpotSDK::Conversations::FileAttachment::FileUsageType::TaggedSymbol
             )
           STICKER =
             T.let(
               :STICKER,
-              HubspotSDK::Conversations::FileAttachment::FileUsageType::TaggedSymbol
+              HubSpotSDK::Conversations::FileAttachment::FileUsageType::TaggedSymbol
             )
           VOICE_RECORDING =
             T.let(
               :VOICE_RECORDING,
-              HubspotSDK::Conversations::FileAttachment::FileUsageType::TaggedSymbol
+              HubSpotSDK::Conversations::FileAttachment::FileUsageType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::FileAttachment::FileUsageType::TaggedSymbol
+                HubSpotSDK::Conversations::FileAttachment::FileUsageType::TaggedSymbol
               ]
             )
           end

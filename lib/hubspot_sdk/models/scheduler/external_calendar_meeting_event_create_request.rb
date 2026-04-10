@@ -1,26 +1,26 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalCalendarMeetingEventCreateRequest < HubspotSDK::Internal::Type::BaseModel
+      class ExternalCalendarMeetingEventCreateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute associations
         #
-        #   @return [Array<HubspotSDK::Models::Scheduler::ExternalAssociationCreateRequest>]
+        #   @return [Array<HubSpotSDK::Models::Scheduler::ExternalAssociationCreateRequest>]
         required :associations,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Scheduler::ExternalAssociationCreateRequest] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Scheduler::ExternalAssociationCreateRequest] }
 
         # @!attribute email_reminder_schedule
         #
-        #   @return [HubspotSDK::Models::Scheduler::ExternalEmailReminderSchedule]
+        #   @return [HubSpotSDK::Models::Scheduler::ExternalEmailReminderSchedule]
         required :email_reminder_schedule,
-                 -> { HubspotSDK::Scheduler::ExternalEmailReminderSchedule },
+                 -> { HubSpotSDK::Scheduler::ExternalEmailReminderSchedule },
                  api_name: :emailReminderSchedule
 
         # @!attribute properties
         #
-        #   @return [HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties]
-        required :properties, -> { HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties }
+        #   @return [HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties]
+        required :properties, -> { HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties }
 
         # @!attribute timezone
         #   The timezone property that will be set on the meeting event.
@@ -29,11 +29,11 @@ module HubspotSDK
         required :timezone, String
 
         # @!method initialize(associations:, email_reminder_schedule:, properties:, timezone:)
-        #   @param associations [Array<HubspotSDK::Models::Scheduler::ExternalAssociationCreateRequest>]
+        #   @param associations [Array<HubSpotSDK::Models::Scheduler::ExternalAssociationCreateRequest>]
         #
-        #   @param email_reminder_schedule [HubspotSDK::Models::Scheduler::ExternalEmailReminderSchedule]
+        #   @param email_reminder_schedule [HubSpotSDK::Models::Scheduler::ExternalEmailReminderSchedule]
         #
-        #   @param properties [HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties]
+        #   @param properties [HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties]
         #
         #   @param timezone [String] The timezone property that will be set on the meeting event.
       end

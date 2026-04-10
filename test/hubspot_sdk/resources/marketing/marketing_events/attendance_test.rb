@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Marketing::MarketingEvents::AttendanceTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Marketing::MarketingEvents::AttendanceTest < HubSpotSDK::Test::ResourceTest
   def test_create_by_event_id_and_contact_id_required_params
     skip("Mock server tests are disabled")
 
@@ -14,17 +14,17 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEvents::AttendanceTest < 
       )
 
     assert_pattern do
-      response => HubspotSDK::Marketing::BatchResponseSubscriberVidResponse
+      response => HubSpotSDK::Marketing::BatchResponseSubscriberVidResponse
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::SubscriberVidResponse]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::SubscriberVidResponse]),
         started_at: Time,
-        status: HubspotSDK::Marketing::BatchResponseSubscriberVidResponse::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Marketing::BatchResponseSubscriberVidResponse::Status,
+        errors: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError]) | nil,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
       }
@@ -49,17 +49,17 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEvents::AttendanceTest < 
       )
 
     assert_pattern do
-      response => HubspotSDK::Marketing::BatchResponseSubscriberEmailResponse
+      response => HubSpotSDK::Marketing::BatchResponseSubscriberEmailResponse
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::SubscriberEmailResponse]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::SubscriberEmailResponse]),
         started_at: Time,
-        status: HubspotSDK::Marketing::BatchResponseSubscriberEmailResponse::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Marketing::BatchResponseSubscriberEmailResponse::Status,
+        errors: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError]) | nil,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
       }
@@ -77,17 +77,17 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEvents::AttendanceTest < 
       )
 
     assert_pattern do
-      response => HubspotSDK::Marketing::BatchResponseSubscriberVidResponse
+      response => HubSpotSDK::Marketing::BatchResponseSubscriberVidResponse
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::SubscriberVidResponse]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::SubscriberVidResponse]),
         started_at: Time,
-        status: HubspotSDK::Marketing::BatchResponseSubscriberVidResponse::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Marketing::BatchResponseSubscriberVidResponse::Status,
+        errors: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError]) | nil,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
       }
@@ -112,17 +112,17 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEvents::AttendanceTest < 
       )
 
     assert_pattern do
-      response => HubspotSDK::Marketing::BatchResponseSubscriberEmailResponse
+      response => HubSpotSDK::Marketing::BatchResponseSubscriberEmailResponse
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::SubscriberEmailResponse]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::SubscriberEmailResponse]),
         started_at: Time,
-        status: HubspotSDK::Marketing::BatchResponseSubscriberEmailResponse::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Marketing::BatchResponseSubscriberEmailResponse::Status,
+        errors: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError]) | nil,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
       }

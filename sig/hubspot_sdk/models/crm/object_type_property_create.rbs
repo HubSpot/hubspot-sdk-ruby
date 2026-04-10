@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type object_type_property_create =
@@ -6,7 +6,7 @@ module HubspotSDK
           field_type: String,
           label: String,
           name: String,
-          type: HubspotSDK::Models::Crm::ObjectTypePropertyCreate::type_,
+          type: HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::type_,
           description: String,
           display_order: Integer,
           external_options_reference_type: String,
@@ -14,23 +14,23 @@ module HubspotSDK
           group_name: String,
           has_unique_value: bool,
           hidden: bool,
-          number_display_hint: HubspotSDK::Models::Crm::ObjectTypePropertyCreate::number_display_hint,
-          options: ::Array[HubspotSDK::OptionInput],
-          option_sort_strategy: HubspotSDK::Models::Crm::ObjectTypePropertyCreate::option_sort_strategy,
+          number_display_hint: HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::number_display_hint,
+          options: ::Array[HubSpotSDK::OptionInput],
+          option_sort_strategy: HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::option_sort_strategy,
           referenced_object_type: String,
           searchable_in_global_search: bool,
           show_currency_symbol: bool,
-          text_display_hint: HubspotSDK::Models::Crm::ObjectTypePropertyCreate::text_display_hint
+          text_display_hint: HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::text_display_hint
         }
 
-      class ObjectTypePropertyCreate < HubspotSDK::Internal::Type::BaseModel
+      class ObjectTypePropertyCreate < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor field_type: String
 
         attr_accessor label: String
 
         attr_accessor name: String
 
-        attr_accessor type: HubspotSDK::Models::Crm::ObjectTypePropertyCreate::type_
+        attr_accessor type: HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::type_
 
         attr_reader description: String?
 
@@ -60,23 +60,23 @@ module HubspotSDK
 
         def hidden=: (bool) -> bool
 
-        attr_reader number_display_hint: HubspotSDK::Models::Crm::ObjectTypePropertyCreate::number_display_hint?
+        attr_reader number_display_hint: HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::number_display_hint?
 
         def number_display_hint=: (
-          HubspotSDK::Models::Crm::ObjectTypePropertyCreate::number_display_hint
-        ) -> HubspotSDK::Models::Crm::ObjectTypePropertyCreate::number_display_hint
+          HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::number_display_hint
+        ) -> HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::number_display_hint
 
-        attr_reader options: ::Array[HubspotSDK::OptionInput]?
+        attr_reader options: ::Array[HubSpotSDK::OptionInput]?
 
         def options=: (
-          ::Array[HubspotSDK::OptionInput]
-        ) -> ::Array[HubspotSDK::OptionInput]
+          ::Array[HubSpotSDK::OptionInput]
+        ) -> ::Array[HubSpotSDK::OptionInput]
 
-        attr_reader option_sort_strategy: HubspotSDK::Models::Crm::ObjectTypePropertyCreate::option_sort_strategy?
+        attr_reader option_sort_strategy: HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::option_sort_strategy?
 
         def option_sort_strategy=: (
-          HubspotSDK::Models::Crm::ObjectTypePropertyCreate::option_sort_strategy
-        ) -> HubspotSDK::Models::Crm::ObjectTypePropertyCreate::option_sort_strategy
+          HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::option_sort_strategy
+        ) -> HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::option_sort_strategy
 
         attr_reader referenced_object_type: String?
 
@@ -90,17 +90,17 @@ module HubspotSDK
 
         def show_currency_symbol=: (bool) -> bool
 
-        attr_reader text_display_hint: HubspotSDK::Models::Crm::ObjectTypePropertyCreate::text_display_hint?
+        attr_reader text_display_hint: HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::text_display_hint?
 
         def text_display_hint=: (
-          HubspotSDK::Models::Crm::ObjectTypePropertyCreate::text_display_hint
-        ) -> HubspotSDK::Models::Crm::ObjectTypePropertyCreate::text_display_hint
+          HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::text_display_hint
+        ) -> HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::text_display_hint
 
         def initialize: (
           field_type: String,
           label: String,
           name: String,
-          type: HubspotSDK::Models::Crm::ObjectTypePropertyCreate::type_,
+          type: HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::type_,
           ?description: String,
           ?display_order: Integer,
           ?external_options_reference_type: String,
@@ -108,20 +108,20 @@ module HubspotSDK
           ?group_name: String,
           ?has_unique_value: bool,
           ?hidden: bool,
-          ?number_display_hint: HubspotSDK::Models::Crm::ObjectTypePropertyCreate::number_display_hint,
-          ?options: ::Array[HubspotSDK::OptionInput],
-          ?option_sort_strategy: HubspotSDK::Models::Crm::ObjectTypePropertyCreate::option_sort_strategy,
+          ?number_display_hint: HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::number_display_hint,
+          ?options: ::Array[HubSpotSDK::OptionInput],
+          ?option_sort_strategy: HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::option_sort_strategy,
           ?referenced_object_type: String,
           ?searchable_in_global_search: bool,
           ?show_currency_symbol: bool,
-          ?text_display_hint: HubspotSDK::Models::Crm::ObjectTypePropertyCreate::text_display_hint
+          ?text_display_hint: HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::text_display_hint
         ) -> void
 
         def to_hash: -> {
           field_type: String,
           label: String,
           name: String,
-          type: HubspotSDK::Models::Crm::ObjectTypePropertyCreate::type_,
+          type: HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::type_,
           description: String,
           display_order: Integer,
           external_options_reference_type: String,
@@ -129,13 +129,13 @@ module HubspotSDK
           group_name: String,
           has_unique_value: bool,
           hidden: bool,
-          number_display_hint: HubspotSDK::Models::Crm::ObjectTypePropertyCreate::number_display_hint,
-          options: ::Array[HubspotSDK::OptionInput],
-          option_sort_strategy: HubspotSDK::Models::Crm::ObjectTypePropertyCreate::option_sort_strategy,
+          number_display_hint: HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::number_display_hint,
+          options: ::Array[HubSpotSDK::OptionInput],
+          option_sort_strategy: HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::option_sort_strategy,
           referenced_object_type: String,
           searchable_in_global_search: bool,
           show_currency_symbol: bool,
-          text_display_hint: HubspotSDK::Models::Crm::ObjectTypePropertyCreate::text_display_hint
+          text_display_hint: HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::text_display_hint
         }
 
         type type_ =
@@ -148,7 +148,7 @@ module HubspotSDK
           | :string
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOL: :bool
           DATE: :date
@@ -158,7 +158,7 @@ module HubspotSDK
           PHONE_NUMBER: :phone_number
           STRING: :string
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::ObjectTypePropertyCreate::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::type_]
         end
 
         type number_display_hint =
@@ -170,7 +170,7 @@ module HubspotSDK
           | :unformatted
 
         module NumberDisplayHint
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CURRENCY: :currency
           DURATION: :duration
@@ -179,18 +179,18 @@ module HubspotSDK
           PROBABILITY: :probability
           UNFORMATTED: :unformatted
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::ObjectTypePropertyCreate::number_display_hint]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::number_display_hint]
         end
 
         type option_sort_strategy = :ALPHABETICAL | :DISPLAY_ORDER
 
         module OptionSortStrategy
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ALPHABETICAL: :ALPHABETICAL
           DISPLAY_ORDER: :DISPLAY_ORDER
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::ObjectTypePropertyCreate::option_sort_strategy]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::option_sort_strategy]
         end
 
         type text_display_hint =
@@ -204,7 +204,7 @@ module HubspotSDK
           | :unformatted_single_line
 
         module TextDisplayHint
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DOMAIN_NAME: :domain_name
           EMAIL: :email
@@ -215,7 +215,7 @@ module HubspotSDK
           POSTAL_CODE: :postal_code
           UNFORMATTED_SINGLE_LINE: :unformatted_single_line
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::ObjectTypePropertyCreate::text_display_hint]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::text_display_hint]
         end
       end
     end

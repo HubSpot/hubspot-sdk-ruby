@@ -1,19 +1,19 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class IsEngagementType < HubspotSDK::Internal::Type::BaseModel
+      class IsEngagementType < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::IsEngagementType,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::IsEngagementType,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
-          returns(HubspotSDK::Cms::IsEngagementType::Operator::TaggedSymbol)
+          returns(HubSpotSDK::Cms::IsEngagementType::Operator::TaggedSymbol)
         end
         attr_accessor :operator
 
@@ -31,7 +31,7 @@ module HubspotSDK
 
         sig do
           params(
-            operator: HubspotSDK::Cms::IsEngagementType::Operator::OrSymbol,
+            operator: HubSpotSDK::Cms::IsEngagementType::Operator::OrSymbol,
             property_name: String,
             value: T::Boolean
           ).returns(T.attached_class)
@@ -43,7 +43,7 @@ module HubspotSDK
           override.returns(
             {
               operator:
-                HubspotSDK::Cms::IsEngagementType::Operator::TaggedSymbol,
+                HubSpotSDK::Cms::IsEngagementType::Operator::TaggedSymbol,
               property_name: String,
               value: T::Boolean
             }
@@ -53,24 +53,24 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::IsEngagementType::Operator)
+              T.all(Symbol, HubSpotSDK::Cms::IsEngagementType::Operator)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           IS_ENGAGEMENT_TYPE =
             T.let(
               :IS_ENGAGEMENT_TYPE,
-              HubspotSDK::Cms::IsEngagementType::Operator::TaggedSymbol
+              HubSpotSDK::Cms::IsEngagementType::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::IsEngagementType::Operator::TaggedSymbol
+                HubSpotSDK::Cms::IsEngagementType::Operator::TaggedSymbol
               ]
             )
           end

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type comparative_string_property_operation =
@@ -6,25 +6,25 @@ module HubspotSDK
           comparison_property_name: String,
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::ComparativeStringPropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::ComparativeStringPropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::ComparativeStringPropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::ComparativeStringPropertyOperation::property_type,
           default_value: String,
           render_spec: String
         }
 
-      class ComparativeStringPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class ComparativeStringPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor comparison_property_name: String
 
         attr_accessor include_objects_with_no_value_set: bool
 
         attr_accessor operation_type: String
 
-        attr_accessor operator: HubspotSDK::Models::Events::ComparativeStringPropertyOperation::operator
+        attr_accessor operator: HubSpotSDK::Models::Events::ComparativeStringPropertyOperation::operator
 
         attr_accessor operator_name: String
 
-        attr_accessor property_type: HubspotSDK::Models::Events::ComparativeStringPropertyOperation::property_type
+        attr_accessor property_type: HubSpotSDK::Models::Events::ComparativeStringPropertyOperation::property_type
 
         attr_reader default_value: String?
 
@@ -38,9 +38,9 @@ module HubspotSDK
           comparison_property_name: String,
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::ComparativeStringPropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::ComparativeStringPropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::ComparativeStringPropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::ComparativeStringPropertyOperation::property_type,
           ?default_value: String,
           ?render_spec: String
         ) -> void
@@ -49,9 +49,9 @@ module HubspotSDK
           comparison_property_name: String,
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::ComparativeStringPropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::ComparativeStringPropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::ComparativeStringPropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::ComparativeStringPropertyOperation::property_type,
           default_value: String,
           render_spec: String
         }
@@ -65,7 +65,7 @@ module HubspotSDK
           | :STARTS_WITH
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONTAINS: :CONTAINS
           DOES_NOT_CONTAIN: :DOES_NOT_CONTAIN
@@ -74,17 +74,17 @@ module HubspotSDK
           IS_NOT_EQUAL_TO: :IS_NOT_EQUAL_TO
           STARTS_WITH: :STARTS_WITH
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::ComparativeStringPropertyOperation::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::ComparativeStringPropertyOperation::operator]
         end
 
         type property_type = :"string-comparative"
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           STRING_COMPARATIVE: :"string-comparative"
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::ComparativeStringPropertyOperation::property_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::ComparativeStringPropertyOperation::property_type]
         end
       end
     end

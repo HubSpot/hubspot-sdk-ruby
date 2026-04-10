@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class FeatureFlags
-        # @return [HubspotSDK::Resources::Crm::FeatureFlags::Batch]
+        # @return [HubSpotSDK::Resources::Crm::FeatureFlags::Batch]
         attr_reader :batch
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Crm::FeatureFlagUpdateParams} for more details.
+        # {HubSpotSDK::Models::Crm::FeatureFlagUpdateParams} for more details.
         #
         # Set a feature flag for an app. For example, update the `hs-hide-crm-cards`
         # flag's `defaultState` to `ON` to hide classic CRM cards from new installs.
@@ -19,17 +19,17 @@ module HubspotSDK
         #
         # @param app_id [Integer] Path param
         #
-        # @param default_state [Symbol, HubspotSDK::Models::Crm::FlagPutRequest::DefaultState] Body param: The state that the flag should have if there are no overrides for a
+        # @param default_state [Symbol, HubSpotSDK::Models::Crm::FlagPutRequest::DefaultState] Body param: The state that the flag should have if there are no overrides for a
         #
-        # @param override_state [Symbol, HubspotSDK::Models::Crm::FlagPutRequest::OverrideState] Body param: A flag value that supercedes all other overrides, including portal-l
+        # @param override_state [Symbol, HubSpotSDK::Models::Crm::FlagPutRequest::OverrideState] Body param: A flag value that supercedes all other overrides, including portal-l
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::FlagResponse]
+        # @return [HubSpotSDK::Models::Crm::FlagResponse]
         #
-        # @see HubspotSDK::Models::Crm::FeatureFlagUpdateParams
+        # @see HubSpotSDK::Models::Crm::FeatureFlagUpdateParams
         def update(flag_name, params)
-          parsed, options = HubspotSDK::Crm::FeatureFlagUpdateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Crm::FeatureFlagUpdateParams.dump_request(params)
           app_id =
             parsed.delete(:app_id) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -38,7 +38,7 @@ module HubspotSDK
             method: :put,
             path: ["feature-flags/2026-03/%1$s/flags/%2$s", app_id, flag_name],
             body: parsed,
-            model: HubspotSDK::Crm::FlagResponse,
+            model: HubSpotSDK::Crm::FlagResponse,
             options: options
           )
         end
@@ -50,13 +50,13 @@ module HubspotSDK
         #
         # @param flag_name [String]
         # @param app_id [Integer]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::FlagResponse]
+        # @return [HubSpotSDK::Models::Crm::FlagResponse]
         #
-        # @see HubspotSDK::Models::Crm::FeatureFlagDeleteParams
+        # @see HubSpotSDK::Models::Crm::FeatureFlagDeleteParams
         def delete(flag_name, params)
-          parsed, options = HubspotSDK::Crm::FeatureFlagDeleteParams.dump_request(params)
+          parsed, options = HubSpotSDK::Crm::FeatureFlagDeleteParams.dump_request(params)
           app_id =
             parsed.delete(:app_id) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -64,7 +64,7 @@ module HubspotSDK
           @client.request(
             method: :delete,
             path: ["feature-flags/2026-03/%1$s/flags/%2$s", app_id, flag_name],
-            model: HubspotSDK::Crm::FlagResponse,
+            model: HubSpotSDK::Crm::FlagResponse,
             options: options
           )
         end
@@ -77,13 +77,13 @@ module HubspotSDK
         # @param portal_id [Integer]
         # @param app_id [Integer]
         # @param flag_name [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::PortalFlagStateResponse]
+        # @return [HubSpotSDK::Models::Crm::PortalFlagStateResponse]
         #
-        # @see HubspotSDK::Models::Crm::FeatureFlagDeletePortalStateParams
+        # @see HubSpotSDK::Models::Crm::FeatureFlagDeletePortalStateParams
         def delete_portal_state(portal_id, params)
-          parsed, options = HubspotSDK::Crm::FeatureFlagDeletePortalStateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Crm::FeatureFlagDeletePortalStateParams.dump_request(params)
           app_id =
             parsed.delete(:app_id) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -95,7 +95,7 @@ module HubspotSDK
           @client.request(
             method: :delete,
             path: ["feature-flags/2026-03/%1$s/flags/%2$s/portals/%3$s", app_id, flag_name, portal_id],
-            model: HubspotSDK::Crm::PortalFlagStateResponse,
+            model: HubSpotSDK::Crm::PortalFlagStateResponse,
             options: options
           )
         end
@@ -107,13 +107,13 @@ module HubspotSDK
         #
         # @param flag_name [String]
         # @param app_id [Integer]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::FlagResponse]
+        # @return [HubSpotSDK::Models::Crm::FlagResponse]
         #
-        # @see HubspotSDK::Models::Crm::FeatureFlagGetParams
+        # @see HubSpotSDK::Models::Crm::FeatureFlagGetParams
         def get(flag_name, params)
-          parsed, options = HubspotSDK::Crm::FeatureFlagGetParams.dump_request(params)
+          parsed, options = HubSpotSDK::Crm::FeatureFlagGetParams.dump_request(params)
           app_id =
             parsed.delete(:app_id) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -121,7 +121,7 @@ module HubspotSDK
           @client.request(
             method: :get,
             path: ["feature-flags/2026-03/%1$s/flags/%2$s", app_id, flag_name],
-            model: HubspotSDK::Crm::FlagResponse,
+            model: HubSpotSDK::Crm::FlagResponse,
             options: options
           )
         end
@@ -133,13 +133,13 @@ module HubspotSDK
         # @param portal_id [Integer]
         # @param app_id [Integer]
         # @param flag_name [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::PortalFlagStateResponse]
+        # @return [HubSpotSDK::Models::Crm::PortalFlagStateResponse]
         #
-        # @see HubspotSDK::Models::Crm::FeatureFlagGetPortalStateParams
+        # @see HubSpotSDK::Models::Crm::FeatureFlagGetPortalStateParams
         def get_portal_state(portal_id, params)
-          parsed, options = HubspotSDK::Crm::FeatureFlagGetPortalStateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Crm::FeatureFlagGetPortalStateParams.dump_request(params)
           app_id =
             parsed.delete(:app_id) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -151,7 +151,7 @@ module HubspotSDK
           @client.request(
             method: :get,
             path: ["feature-flags/2026-03/%1$s/flags/%2$s/portals/%3$s", app_id, flag_name, portal_id],
-            model: HubspotSDK::Crm::PortalFlagStateResponse,
+            model: HubSpotSDK::Crm::PortalFlagStateResponse,
             options: options
           )
         end
@@ -159,16 +159,16 @@ module HubspotSDK
         # @overload list_all(app_id, request_options: {})
         #
         # @param app_id [Integer]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::FlagsForAppResponse]
+        # @return [HubSpotSDK::Models::Crm::FlagsForAppResponse]
         #
-        # @see HubspotSDK::Models::Crm::FeatureFlagListAllParams
+        # @see HubSpotSDK::Models::Crm::FeatureFlagListAllParams
         def list_all(app_id, params = {})
           @client.request(
             method: :get,
             path: ["feature-flags/2026-03/%1$s/flags/all", app_id],
-            model: HubspotSDK::Crm::FlagsForAppResponse,
+            model: HubSpotSDK::Crm::FlagsForAppResponse,
             options: params[:request_options]
           )
         end
@@ -186,14 +186,14 @@ module HubspotSDK
         #
         # @param start_portal_id [Integer] Query param
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::PortalFlagStateBatchResponse]
+        # @return [HubSpotSDK::Models::Crm::PortalFlagStateBatchResponse]
         #
-        # @see HubspotSDK::Models::Crm::FeatureFlagListPortalsParams
+        # @see HubSpotSDK::Models::Crm::FeatureFlagListPortalsParams
         def list_portals(flag_name, params)
-          parsed, options = HubspotSDK::Crm::FeatureFlagListPortalsParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Crm::FeatureFlagListPortalsParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           app_id =
             parsed.delete(:app_id) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -202,7 +202,7 @@ module HubspotSDK
             method: :get,
             path: ["feature-flags/2026-03/%1$s/flags/%2$s/portals", app_id, flag_name],
             query: query.transform_keys(start_portal_id: "startPortalId"),
-            model: HubspotSDK::Crm::PortalFlagStateBatchResponse,
+            model: HubSpotSDK::Crm::PortalFlagStateBatchResponse,
             options: options
           )
         end
@@ -217,15 +217,15 @@ module HubspotSDK
         #
         # @param flag_name [String] Path param
         #
-        # @param flag_state [Symbol, HubspotSDK::Models::Crm::PortalFlagStatePutRequest::FlagState] Body param: The state that the given flag should be in for this portal
+        # @param flag_state [Symbol, HubSpotSDK::Models::Crm::PortalFlagStatePutRequest::FlagState] Body param: The state that the given flag should be in for this portal
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::PortalFlagStateResponse]
+        # @return [HubSpotSDK::Models::Crm::PortalFlagStateResponse]
         #
-        # @see HubspotSDK::Models::Crm::FeatureFlagUpdatePortalStateParams
+        # @see HubSpotSDK::Models::Crm::FeatureFlagUpdatePortalStateParams
         def update_portal_state(portal_id, params)
-          parsed, options = HubspotSDK::Crm::FeatureFlagUpdatePortalStateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Crm::FeatureFlagUpdatePortalStateParams.dump_request(params)
           app_id =
             parsed.delete(:app_id) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -238,17 +238,17 @@ module HubspotSDK
             method: :put,
             path: ["feature-flags/2026-03/%1$s/flags/%2$s/portals/%3$s", app_id, flag_name, portal_id],
             body: parsed,
-            model: HubspotSDK::Crm::PortalFlagStateResponse,
+            model: HubSpotSDK::Crm::PortalFlagStateResponse,
             options: options
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
-          @batch = HubspotSDK::Resources::Crm::FeatureFlags::Batch.new(client: client)
+          @batch = HubSpotSDK::Resources::Crm::FeatureFlags::Batch.new(client: client)
         end
       end
     end

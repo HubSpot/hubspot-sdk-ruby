@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class SoftRequiredPropertiesExtensionData < HubspotSDK::Internal::Type::BaseModel
+      class SoftRequiredPropertiesExtensionData < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute is_soft_required_property
         #
         #   @return [Boolean]
         required :is_soft_required_property,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :isSoftRequiredProperty
 
         # @!method initialize(is_soft_required_property:)

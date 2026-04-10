@@ -1,25 +1,25 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type revenue_attribution_aggregate =
         {
           contacts_number: Integer,
-          currency_code: HubspotSDK::Models::Marketing::RevenueAttributionAggregate::currency_code,
+          currency_code: HubSpotSDK::Models::Marketing::RevenueAttributionAggregate::currency_code,
           deal_amount: Float,
           deals_number: Integer,
           revenue_amount: Float
         }
 
-      class RevenueAttributionAggregate < HubspotSDK::Internal::Type::BaseModel
+      class RevenueAttributionAggregate < HubSpotSDK::Internal::Type::BaseModel
         attr_reader contacts_number: Integer?
 
         def contacts_number=: (Integer) -> Integer
 
-        attr_reader currency_code: HubspotSDK::Models::Marketing::RevenueAttributionAggregate::currency_code?
+        attr_reader currency_code: HubSpotSDK::Models::Marketing::RevenueAttributionAggregate::currency_code?
 
         def currency_code=: (
-          HubspotSDK::Models::Marketing::RevenueAttributionAggregate::currency_code
-        ) -> HubspotSDK::Models::Marketing::RevenueAttributionAggregate::currency_code
+          HubSpotSDK::Models::Marketing::RevenueAttributionAggregate::currency_code
+        ) -> HubSpotSDK::Models::Marketing::RevenueAttributionAggregate::currency_code
 
         attr_reader deal_amount: Float?
 
@@ -35,7 +35,7 @@ module HubspotSDK
 
         def initialize: (
           ?contacts_number: Integer,
-          ?currency_code: HubspotSDK::Models::Marketing::RevenueAttributionAggregate::currency_code,
+          ?currency_code: HubSpotSDK::Models::Marketing::RevenueAttributionAggregate::currency_code,
           ?deal_amount: Float,
           ?deals_number: Integer,
           ?revenue_amount: Float
@@ -43,7 +43,7 @@ module HubspotSDK
 
         def to_hash: -> {
           contacts_number: Integer,
-          currency_code: HubspotSDK::Models::Marketing::RevenueAttributionAggregate::currency_code,
+          currency_code: HubSpotSDK::Models::Marketing::RevenueAttributionAggregate::currency_code,
           deal_amount: Float,
           deals_number: Integer,
           revenue_amount: Float
@@ -228,7 +228,7 @@ module HubspotSDK
           | :ZWL
 
         module CurrencyCode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AED: :AED
           AFN: :AFN
@@ -407,7 +407,7 @@ module HubspotSDK
           ZMW: :ZMW
           ZWL: :ZWL
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::RevenueAttributionAggregate::currency_code]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Marketing::RevenueAttributionAggregate::currency_code]
         end
       end
     end

@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        # @see HubspotSDK::Resources::Cms::Blogs::Tags#detach_from_lang_group
-        class TagDetachFromLangGroupParams < HubspotSDK::Models::Cms::DetachFromLangGroupRequestVNext
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Cms::Blogs::Tags#detach_from_lang_group
+        class TagDetachFromLangGroupParams < HubSpotSDK::Models::Cms::DetachFromLangGroupRequestVNext
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!method initialize(request_options: {})
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

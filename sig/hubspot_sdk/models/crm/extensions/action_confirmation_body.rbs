@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
@@ -9,7 +9,7 @@ module HubspotSDK
             prompt: String
           }
 
-        class ActionConfirmationBody < HubspotSDK::Internal::Type::BaseModel
+        class ActionConfirmationBody < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor cancel_button_label: String
 
           attr_accessor confirm_button_label: String

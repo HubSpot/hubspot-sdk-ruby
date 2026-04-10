@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class ComparativeNumberPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class ComparativeNumberPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute comparison_property_name
         #
         #   @return [String]
@@ -13,7 +13,7 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute operation_type
@@ -23,8 +23,8 @@ module HubspotSDK
 
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::ComparativeNumberPropertyOperation::Operator]
-        required :operator, enum: -> { HubspotSDK::Events::ComparativeNumberPropertyOperation::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Events::ComparativeNumberPropertyOperation::Operator]
+        required :operator, enum: -> { HubSpotSDK::Events::ComparativeNumberPropertyOperation::Operator }
 
         # @!attribute operator_name
         #
@@ -33,9 +33,9 @@ module HubspotSDK
 
         # @!attribute property_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::ComparativeNumberPropertyOperation::PropertyType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::ComparativeNumberPropertyOperation::PropertyType]
         required :property_type,
-                 enum: -> { HubspotSDK::Events::ComparativeNumberPropertyOperation::PropertyType },
+                 enum: -> { HubSpotSDK::Events::ComparativeNumberPropertyOperation::PropertyType },
                  api_name: :propertyType
 
         # @!attribute default_value
@@ -52,15 +52,15 @@ module HubspotSDK
         #   @param comparison_property_name [String]
         #   @param include_objects_with_no_value_set [Boolean]
         #   @param operation_type [String]
-        #   @param operator [Symbol, HubspotSDK::Models::Events::ComparativeNumberPropertyOperation::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Events::ComparativeNumberPropertyOperation::Operator]
         #   @param operator_name [String]
-        #   @param property_type [Symbol, HubspotSDK::Models::Events::ComparativeNumberPropertyOperation::PropertyType]
+        #   @param property_type [Symbol, HubSpotSDK::Models::Events::ComparativeNumberPropertyOperation::PropertyType]
         #   @param default_value [String]
         #   @param render_spec [String]
 
-        # @see HubspotSDK::Models::Events::ComparativeNumberPropertyOperation#operator
+        # @see HubSpotSDK::Models::Events::ComparativeNumberPropertyOperation#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           IS_EQUAL_TO = :IS_EQUAL_TO
           IS_GREATER_THAN = :IS_GREATER_THAN
@@ -73,9 +73,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::ComparativeNumberPropertyOperation#property_type
+        # @see HubSpotSDK::Models::Events::ComparativeNumberPropertyOperation#property_type
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NUMBER_COMPARATIVE = :"number-comparative"
 

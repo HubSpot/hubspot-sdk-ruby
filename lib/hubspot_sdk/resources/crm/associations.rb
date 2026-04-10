@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Associations
-        # @return [HubspotSDK::Resources::Crm::Associations::Batch]
+        # @return [HubSpotSDK::Resources::Crm::Associations::Batch]
         attr_reader :batch
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Crm::AssociationListParams} for more details.
+        # {HubSpotSDK::Models::Crm::AssociationListParams} for more details.
         #
         # Retrieve all associations between a specific record and an object type. Limit
         # 500 per call.
@@ -25,14 +25,14 @@ module HubspotSDK
         #
         # @param limit [Integer] Query param: The maximum number of results to display per page.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::MultiAssociatedObjectWithLabel>]
+        # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Crm::MultiAssociatedObjectWithLabel>]
         #
-        # @see HubspotSDK::Models::Crm::AssociationListParams
+        # @see HubSpotSDK::Models::Crm::AssociationListParams
         def list(to_object_type, params)
-          parsed, options = HubspotSDK::Crm::AssociationListParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Crm::AssociationListParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           object_type =
             parsed.delete(:object_type) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -50,8 +50,8 @@ module HubspotSDK
               to_object_type
             ],
             query: query,
-            page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Crm::MultiAssociatedObjectWithLabel,
+            page: HubSpotSDK::Internal::Page,
+            model: HubSpotSDK::Crm::MultiAssociatedObjectWithLabel,
             options: options
           )
         end
@@ -62,13 +62,13 @@ module HubspotSDK
         # @param object_type [String]
         # @param object_id_ [String]
         # @param to_object_type [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Crm::AssociationDeleteParams
+        # @see HubSpotSDK::Models::Crm::AssociationDeleteParams
         def delete(to_object_id, params)
-          parsed, options = HubspotSDK::Crm::AssociationDeleteParams.dump_request(params)
+          parsed, options = HubSpotSDK::Crm::AssociationDeleteParams.dump_request(params)
           object_type =
             parsed.delete(:object_type) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -101,16 +101,16 @@ module HubspotSDK
         # @overload request_high_usage_report(user_id, request_options: {})
         #
         # @param user_id [Integer]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::ReportCreationResponse]
+        # @return [HubSpotSDK::Models::Crm::ReportCreationResponse]
         #
-        # @see HubspotSDK::Models::Crm::AssociationRequestHighUsageReportParams
+        # @see HubSpotSDK::Models::Crm::AssociationRequestHighUsageReportParams
         def request_high_usage_report(user_id, params = {})
           @client.request(
             method: :post,
             path: ["crm/associations/2026-03/usage/high-usage-report/%1$s", user_id],
-            model: HubspotSDK::Crm::ReportCreationResponse,
+            model: HubSpotSDK::Crm::ReportCreationResponse,
             options: params[:request_options]
           )
         end
@@ -121,7 +121,7 @@ module HubspotSDK
         #
         # @param after [String] A paging cursor token for retrieving subsequent pages.
         #
-        # @param filter_groups [Array<HubspotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
+        # @param filter_groups [Array<HubSpotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
         #
         # @param limit [Integer] The maximum results to return, up to 200 objects.
         #
@@ -131,18 +131,18 @@ module HubspotSDK
         #
         # @param query [String] The search query string, up to 3000 characters.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
+        # @return [HubSpotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
         #
-        # @see HubspotSDK::Models::Crm::AssociationSearchParams
+        # @see HubSpotSDK::Models::Crm::AssociationSearchParams
         def search(object_type, params)
-          parsed, options = HubspotSDK::Crm::AssociationSearchParams.dump_request(params)
+          parsed, options = HubSpotSDK::Crm::AssociationSearchParams.dump_request(params)
           @client.request(
             method: :post,
             path: ["crm/objects/2026-03/%1$s/search", object_type],
             body: parsed,
-            model: HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
+            model: HubSpotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
             options: options
           )
         end
@@ -157,15 +157,15 @@ module HubspotSDK
         #
         # @param to_object_type [String] Path param
         #
-        # @param body [Array<HubspotSDK::Models::AssociationSpec>] Body param
+        # @param body [Array<HubSpotSDK::Models::AssociationSpec>] Body param
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::LabelsBetweenObjectPair]
+        # @return [HubSpotSDK::Models::Crm::LabelsBetweenObjectPair]
         #
-        # @see HubspotSDK::Models::Crm::AssociationUpdateAssociationLabelsParams
+        # @see HubSpotSDK::Models::Crm::AssociationUpdateAssociationLabelsParams
         def update_association_labels(to_object_id, params)
-          parsed, options = HubspotSDK::Crm::AssociationUpdateAssociationLabelsParams.dump_request(params)
+          parsed, options = HubSpotSDK::Crm::AssociationUpdateAssociationLabelsParams.dump_request(params)
           object_type =
             parsed.delete(:object_type) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -188,17 +188,17 @@ module HubspotSDK
               to_object_id
             ],
             body: parsed[:body],
-            model: HubspotSDK::Crm::LabelsBetweenObjectPair,
+            model: HubSpotSDK::Crm::LabelsBetweenObjectPair,
             options: options
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
-          @batch = HubspotSDK::Resources::Crm::Associations::Batch.new(client: client)
+          @batch = HubSpotSDK::Resources::Crm::Associations::Batch.new(client: client)
         end
       end
     end

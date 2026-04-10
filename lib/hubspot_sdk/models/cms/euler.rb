@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Euler < HubspotSDK::Internal::Type::BaseModel
+      class Euler < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::Euler::Operator]
-        required :operator, enum: -> { HubspotSDK::Cms::Euler::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::Euler::Operator]
+        required :operator, enum: -> { HubSpotSDK::Cms::Euler::Operator }
 
         # @!attribute property_name
         #
@@ -20,13 +20,13 @@ module HubspotSDK
         optional :value, Float
 
         # @!method initialize(operator:, property_name: nil, value: nil)
-        #   @param operator [Symbol, HubspotSDK::Models::Cms::Euler::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Cms::Euler::Operator]
         #   @param property_name [String]
         #   @param value [Float]
 
-        # @see HubspotSDK::Models::Cms::Euler#operator
+        # @see HubSpotSDK::Models::Cms::Euler#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EULER = :EULER
 

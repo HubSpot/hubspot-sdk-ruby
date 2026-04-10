@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class ObjectSchemas
-        # @return [HubspotSDK::Resources::Crm::ObjectSchemas::Batch]
+        # @return [HubSpotSDK::Resources::Crm::ObjectSchemas::Batch]
         attr_reader :batch
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Crm::ObjectSchemaCreateParams} for more details.
+        # {HubSpotSDK::Models::Crm::ObjectSchemaCreateParams} for more details.
         #
         # Create a new custom object schema by defining its properties and associations.
         #
@@ -18,11 +18,11 @@ module HubspotSDK
         #
         # @param associated_objects [Array<String>] Associations defined for this object type.
         #
-        # @param labels [HubspotSDK::Models::ObjectTypeDefinitionLabels]
+        # @param labels [HubSpotSDK::Models::ObjectTypeDefinitionLabels]
         #
         # @param name [String] A unique name for this object. For internal use only.
         #
-        # @param properties [Array<HubspotSDK::Models::Crm::ObjectTypePropertyCreate>] Properties defined for this object type.
+        # @param properties [Array<HubSpotSDK::Models::Crm::ObjectTypePropertyCreate>] Properties defined for this object type.
         #
         # @param required_properties [Array<String>] The names of properties that should be **required** when creating an object of t
         #
@@ -34,18 +34,18 @@ module HubspotSDK
         #
         # @param primary_display_property [String] The name of the primary property for this object. This will be displayed as prim
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::ObjectSchema]
+        # @return [HubSpotSDK::Models::Crm::ObjectSchema]
         #
-        # @see HubspotSDK::Models::Crm::ObjectSchemaCreateParams
+        # @see HubSpotSDK::Models::Crm::ObjectSchemaCreateParams
         def create(params)
-          parsed, options = HubspotSDK::Crm::ObjectSchemaCreateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Crm::ObjectSchemaCreateParams.dump_request(params)
           @client.request(
             method: :post,
             path: "crm-object-schemas/2026-03/schemas",
             body: parsed,
-            model: HubspotSDK::Crm::ObjectSchema,
+            model: HubSpotSDK::Crm::ObjectSchema,
             options: options
           )
         end
@@ -59,24 +59,24 @@ module HubspotSDK
         # @param clear_description [Boolean]
         # @param allows_sensitive_properties [Boolean]
         # @param description [String]
-        # @param labels [HubspotSDK::Models::ObjectTypeDefinitionLabels]
+        # @param labels [HubSpotSDK::Models::ObjectTypeDefinitionLabels]
         # @param primary_display_property [String]
         # @param required_properties [Array<String>]
         # @param restorable [Boolean]
         # @param searchable_properties [Array<String>]
         # @param secondary_display_properties [Array<String>]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::ObjectTypeDefinition]
+        # @return [HubSpotSDK::Models::ObjectTypeDefinition]
         #
-        # @see HubspotSDK::Models::Crm::ObjectSchemaUpdateParams
+        # @see HubSpotSDK::Models::Crm::ObjectSchemaUpdateParams
         def update(object_type, params)
-          parsed, options = HubspotSDK::Crm::ObjectSchemaUpdateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Crm::ObjectSchemaUpdateParams.dump_request(params)
           @client.request(
             method: :patch,
             path: ["crm-object-schemas/2026-03/schemas/%1$s", object_type],
             body: parsed,
-            model: HubspotSDK::ObjectTypeDefinition,
+            model: HubSpotSDK::ObjectTypeDefinition,
             options: options
           )
         end
@@ -94,14 +94,14 @@ module HubspotSDK
         #
         # @param include_property_definitions [Boolean]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::CollectionResponseObjectSchemaNoPaging]
+        # @return [HubSpotSDK::Models::Crm::CollectionResponseObjectSchemaNoPaging]
         #
-        # @see HubspotSDK::Models::Crm::ObjectSchemaListParams
+        # @see HubSpotSDK::Models::Crm::ObjectSchemaListParams
         def list(params = {})
-          parsed, options = HubspotSDK::Crm::ObjectSchemaListParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Crm::ObjectSchemaListParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "crm-object-schemas/2026-03/schemas",
@@ -110,7 +110,7 @@ module HubspotSDK
               include_audit_metadata: "includeAuditMetadata",
               include_property_definitions: "includePropertyDefinitions"
             ),
-            model: HubspotSDK::Crm::CollectionResponseObjectSchemaNoPaging,
+            model: HubSpotSDK::Crm::CollectionResponseObjectSchemaNoPaging,
             options: options
           )
         end
@@ -124,14 +124,14 @@ module HubspotSDK
         #
         # @param archived [Boolean] Whether to return only results that have been archived.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Crm::ObjectSchemaDeleteParams
+        # @see HubSpotSDK::Models::Crm::ObjectSchemaDeleteParams
         def delete(object_type, params = {})
-          parsed, options = HubspotSDK::Crm::ObjectSchemaDeleteParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Crm::ObjectSchemaDeleteParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :delete,
             path: ["crm-object-schemas/2026-03/schemas/%1$s", object_type],
@@ -151,18 +151,18 @@ module HubspotSDK
         # @param from_object_type_id [String]
         # @param to_object_type_id [String]
         # @param name [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::AssociationDefinition]
+        # @return [HubSpotSDK::Models::AssociationDefinition]
         #
-        # @see HubspotSDK::Models::Crm::ObjectSchemaCreateAssociationParams
+        # @see HubSpotSDK::Models::Crm::ObjectSchemaCreateAssociationParams
         def create_association(object_type, params)
-          parsed, options = HubspotSDK::Crm::ObjectSchemaCreateAssociationParams.dump_request(params)
+          parsed, options = HubSpotSDK::Crm::ObjectSchemaCreateAssociationParams.dump_request(params)
           @client.request(
             method: :post,
             path: ["crm-object-schemas/2026-03/schemas/%1$s/associations", object_type],
             body: parsed,
-            model: HubspotSDK::AssociationDefinition,
+            model: HubSpotSDK::AssociationDefinition,
             options: options
           )
         end
@@ -175,13 +175,13 @@ module HubspotSDK
         #
         # @param association_identifier [String]
         # @param object_type [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Crm::ObjectSchemaDeleteAssociationParams
+        # @see HubSpotSDK::Models::Crm::ObjectSchemaDeleteAssociationParams
         def delete_association(association_identifier, params)
-          parsed, options = HubspotSDK::Crm::ObjectSchemaDeleteAssociationParams.dump_request(params)
+          parsed, options = HubSpotSDK::Crm::ObjectSchemaDeleteAssociationParams.dump_request(params)
           object_type =
             parsed.delete(:object_type) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -207,14 +207,14 @@ module HubspotSDK
         # @param include_association_definitions [Boolean]
         # @param include_audit_metadata [Boolean]
         # @param include_property_definitions [Boolean]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::ObjectSchema]
+        # @return [HubSpotSDK::Models::Crm::ObjectSchema]
         #
-        # @see HubspotSDK::Models::Crm::ObjectSchemaGetParams
+        # @see HubSpotSDK::Models::Crm::ObjectSchemaGetParams
         def get(object_type, params = {})
-          parsed, options = HubspotSDK::Crm::ObjectSchemaGetParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Crm::ObjectSchemaGetParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: ["crm-object-schemas/2026-03/schemas/%1$s", object_type],
@@ -223,17 +223,17 @@ module HubspotSDK
               include_audit_metadata: "includeAuditMetadata",
               include_property_definitions: "includePropertyDefinitions"
             ),
-            model: HubspotSDK::Crm::ObjectSchema,
+            model: HubSpotSDK::Crm::ObjectSchema,
             options: options
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
-          @batch = HubspotSDK::Resources::Crm::ObjectSchemas::Batch.new(client: client)
+          @batch = HubSpotSDK::Resources::Crm::ObjectSchemas::Batch.new(client: client)
         end
       end
     end

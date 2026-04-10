@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class Emails
@@ -10,28 +10,28 @@ module HubspotSDK
             archived: T::Boolean,
             business_unit_id: Integer,
             campaign: String,
-            content: HubspotSDK::Marketing::PublicEmailContent::OrHash,
+            content: HubSpotSDK::Marketing::PublicEmailContent::OrHash,
             feedback_survey_id: String,
             folder_id_v2: Integer,
-            from: HubspotSDK::Marketing::PublicEmailFromDetails::OrHash,
+            from: HubSpotSDK::Marketing::PublicEmailFromDetails::OrHash,
             jitter_send_time: T::Boolean,
             language:
-              HubspotSDK::Marketing::EmailCreateRequest::Language::OrSymbol,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::OrSymbol,
             name: String,
             publish_date: Time,
-            rss_data: HubspotSDK::Marketing::PublicRssEmailDetails::OrHash,
+            rss_data: HubSpotSDK::Marketing::PublicRssEmailDetails::OrHash,
             send_on_publish: T::Boolean,
-            state: HubspotSDK::Marketing::EmailCreateRequest::State::OrSymbol,
+            state: HubSpotSDK::Marketing::EmailCreateRequest::State::OrSymbol,
             subcategory:
-              HubspotSDK::Marketing::EmailCreateRequest::Subcategory::OrSymbol,
+              HubSpotSDK::Marketing::EmailCreateRequest::Subcategory::OrSymbol,
             subject: String,
             subscription_details:
-              HubspotSDK::Marketing::PublicEmailSubscriptionDetails::OrHash,
-            testing: HubspotSDK::Marketing::PublicEmailTestingDetails::OrHash,
-            to: HubspotSDK::Marketing::PublicEmailToDetails::OrHash,
-            webversion: HubspotSDK::Marketing::PublicWebversionDetails::OrHash,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Marketing::PublicEmail)
+              HubSpotSDK::Marketing::PublicEmailSubscriptionDetails::OrHash,
+            testing: HubSpotSDK::Marketing::PublicEmailTestingDetails::OrHash,
+            to: HubSpotSDK::Marketing::PublicEmailToDetails::OrHash,
+            webversion: HubSpotSDK::Marketing::PublicWebversionDetails::OrHash,
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Marketing::PublicEmail)
         end
         def create(
           # The active domain of the email.
@@ -83,27 +83,27 @@ module HubspotSDK
             active_domain: String,
             business_unit_id: Integer,
             campaign: String,
-            content: HubspotSDK::Marketing::PublicEmailContent::OrHash,
+            content: HubSpotSDK::Marketing::PublicEmailContent::OrHash,
             folder_id_v2: Integer,
-            from: HubspotSDK::Marketing::PublicEmailFromDetails::OrHash,
+            from: HubSpotSDK::Marketing::PublicEmailFromDetails::OrHash,
             jitter_send_time: T::Boolean,
             language:
-              HubspotSDK::Marketing::EmailUpdateRequest::Language::OrSymbol,
+              HubSpotSDK::Marketing::EmailUpdateRequest::Language::OrSymbol,
             name: String,
             publish_date: Time,
-            rss_data: HubspotSDK::Marketing::PublicRssEmailDetails::OrHash,
+            rss_data: HubSpotSDK::Marketing::PublicRssEmailDetails::OrHash,
             send_on_publish: T::Boolean,
-            state: HubspotSDK::Marketing::EmailUpdateRequest::State::OrSymbol,
+            state: HubSpotSDK::Marketing::EmailUpdateRequest::State::OrSymbol,
             subcategory:
-              HubspotSDK::Marketing::EmailUpdateRequest::Subcategory::OrSymbol,
+              HubSpotSDK::Marketing::EmailUpdateRequest::Subcategory::OrSymbol,
             subject: String,
             subscription_details:
-              HubspotSDK::Marketing::PublicEmailSubscriptionDetails::OrHash,
-            testing: HubspotSDK::Marketing::PublicEmailTestingDetails::OrHash,
-            to: HubspotSDK::Marketing::PublicEmailToDetails::OrHash,
-            webversion: HubspotSDK::Marketing::PublicWebversionDetails::OrHash,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Marketing::PublicEmail)
+              HubSpotSDK::Marketing::PublicEmailSubscriptionDetails::OrHash,
+            testing: HubSpotSDK::Marketing::PublicEmailTestingDetails::OrHash,
+            to: HubSpotSDK::Marketing::PublicEmailToDetails::OrHash,
+            webversion: HubSpotSDK::Marketing::PublicWebversionDetails::OrHash,
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Marketing::PublicEmail)
         end
         def update(
           # Path param
@@ -171,15 +171,15 @@ module HubspotSDK
             published_at: Time,
             published_before: Time,
             sort: T::Array[String],
-            type: HubspotSDK::Marketing::EmailListParams::Type::OrSymbol,
+            type: HubSpotSDK::Marketing::EmailListParams::Type::OrSymbol,
             updated_after: Time,
             updated_at: Time,
             updated_before: Time,
             variant_stats: T::Boolean,
             workflow_names: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Internal::Page[HubspotSDK::Marketing::PublicEmail]
+            HubSpotSDK::Internal::Page[HubSpotSDK::Marketing::PublicEmail]
           )
         end
         def list(
@@ -218,7 +218,7 @@ module HubspotSDK
           params(
             email_id: String,
             archived: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete(
@@ -236,8 +236,8 @@ module HubspotSDK
             id: String,
             clone_name: String,
             language: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Marketing::PublicEmail)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Marketing::PublicEmail)
         end
         def clone_(
           # The email ID.
@@ -257,8 +257,8 @@ module HubspotSDK
           params(
             content_id: String,
             variation_name: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Marketing::PublicEmail)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Marketing::PublicEmail)
         end
         def create_ab_test_variation(
           # ID of the object to test.
@@ -278,8 +278,8 @@ module HubspotSDK
             end_timestamp: String,
             property: String,
             start_timestamp: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Marketing::AggregateEmailStatistics)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Marketing::AggregateEmailStatistics)
         end
         def get(
           email_ids: nil,
@@ -302,8 +302,8 @@ module HubspotSDK
             marketing_campaign_names: T::Boolean,
             variant_stats: T::Boolean,
             workflow_names: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Marketing::PublicEmail)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Marketing::PublicEmail)
         end
         def get_ab_test_variation(
           email_id,
@@ -323,8 +323,8 @@ module HubspotSDK
         sig do
           params(
             email_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Marketing::PublicEmail)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Marketing::PublicEmail)
         end
         def get_draft(email_id, request_options: {})
         end
@@ -336,11 +336,11 @@ module HubspotSDK
             email_ids: T::Array[Integer],
             end_timestamp: String,
             interval:
-              HubspotSDK::Marketing::EmailGetHistogramParams::Interval::OrSymbol,
+              HubSpotSDK::Marketing::EmailGetHistogramParams::Interval::OrSymbol,
             start_timestamp: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Marketing::CollectionResponseWithTotalEmailStatisticInterval
+            HubSpotSDK::Marketing::CollectionResponseWithTotalEmailStatisticInterval
           )
         end
         def get_histogram(
@@ -357,8 +357,8 @@ module HubspotSDK
           params(
             revision_id: String,
             email_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Marketing::PublicEmailVersion)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Marketing::PublicEmailVersion)
         end
         def get_revision(revision_id, email_id:, request_options: {})
         end
@@ -372,10 +372,10 @@ module HubspotSDK
             after: String,
             before: String,
             limit: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Internal::Page[
-              HubspotSDK::Marketing::VersionPublicEmail
+            HubSpotSDK::Internal::Page[
+              HubSpotSDK::Marketing::VersionPublicEmail
             ]
           )
         end
@@ -398,7 +398,7 @@ module HubspotSDK
         sig do
           params(
             email_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def publish(email_id, request_options: {})
@@ -408,7 +408,7 @@ module HubspotSDK
         sig do
           params(
             email_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def reset_draft(email_id, request_options: {})
@@ -420,7 +420,7 @@ module HubspotSDK
           params(
             revision_id: String,
             email_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def restore_revision(revision_id, email_id:, request_options: {})
@@ -432,8 +432,8 @@ module HubspotSDK
           params(
             revision_id: Integer,
             email_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Marketing::PublicEmail)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Marketing::PublicEmail)
         end
         def restore_revision_to_draft(
           revision_id,
@@ -449,7 +449,7 @@ module HubspotSDK
         sig do
           params(
             email_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def unpublish(email_id, request_options: {})
@@ -466,27 +466,27 @@ module HubspotSDK
             archived: T::Boolean,
             business_unit_id: Integer,
             campaign: String,
-            content: HubspotSDK::Marketing::PublicEmailContent::OrHash,
+            content: HubSpotSDK::Marketing::PublicEmailContent::OrHash,
             folder_id_v2: Integer,
-            from: HubspotSDK::Marketing::PublicEmailFromDetails::OrHash,
+            from: HubSpotSDK::Marketing::PublicEmailFromDetails::OrHash,
             jitter_send_time: T::Boolean,
             language:
-              HubspotSDK::Marketing::EmailUpdateRequest::Language::OrSymbol,
+              HubSpotSDK::Marketing::EmailUpdateRequest::Language::OrSymbol,
             name: String,
             publish_date: Time,
-            rss_data: HubspotSDK::Marketing::PublicRssEmailDetails::OrHash,
+            rss_data: HubSpotSDK::Marketing::PublicRssEmailDetails::OrHash,
             send_on_publish: T::Boolean,
-            state: HubspotSDK::Marketing::EmailUpdateRequest::State::OrSymbol,
+            state: HubSpotSDK::Marketing::EmailUpdateRequest::State::OrSymbol,
             subcategory:
-              HubspotSDK::Marketing::EmailUpdateRequest::Subcategory::OrSymbol,
+              HubSpotSDK::Marketing::EmailUpdateRequest::Subcategory::OrSymbol,
             subject: String,
             subscription_details:
-              HubspotSDK::Marketing::PublicEmailSubscriptionDetails::OrHash,
-            testing: HubspotSDK::Marketing::PublicEmailTestingDetails::OrHash,
-            to: HubspotSDK::Marketing::PublicEmailToDetails::OrHash,
-            webversion: HubspotSDK::Marketing::PublicWebversionDetails::OrHash,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Marketing::PublicEmail)
+              HubSpotSDK::Marketing::PublicEmailSubscriptionDetails::OrHash,
+            testing: HubSpotSDK::Marketing::PublicEmailTestingDetails::OrHash,
+            to: HubSpotSDK::Marketing::PublicEmailToDetails::OrHash,
+            webversion: HubSpotSDK::Marketing::PublicWebversionDetails::OrHash,
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Marketing::PublicEmail)
         end
         def update_draft(
           email_id,
@@ -530,7 +530,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

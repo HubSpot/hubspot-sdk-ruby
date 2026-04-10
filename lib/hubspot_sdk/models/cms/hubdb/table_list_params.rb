@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Hubdb
-        # @see HubspotSDK::Resources::Cms::Hubdb::Tables#list
-        class TableListParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Cms::Hubdb::Tables#list
+        class TableListParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute after
           #   The paging cursor token of the last successfully read resource will be returned
@@ -21,7 +21,7 @@ module HubspotSDK
           #   Whether to return only results that have been archived.
           #
           #   @return [Boolean, nil]
-          optional :archived, HubspotSDK::Internal::Type::Boolean
+          optional :archived, HubSpotSDK::Internal::Type::Boolean
 
           # @!attribute content_type
           #
@@ -46,7 +46,7 @@ module HubspotSDK
           # @!attribute is_get_localized_schema
           #
           #   @return [Boolean, nil]
-          optional :is_get_localized_schema, HubspotSDK::Internal::Type::Boolean
+          optional :is_get_localized_schema, HubSpotSDK::Internal::Type::Boolean
 
           # @!attribute limit
           #   The maximum number of results to display per page.
@@ -57,7 +57,7 @@ module HubspotSDK
           # @!attribute sort
           #
           #   @return [Array<String>, nil]
-          optional :sort, HubspotSDK::Internal::Type::ArrayOf[String]
+          optional :sort, HubSpotSDK::Internal::Type::ArrayOf[String]
 
           # @!attribute updated_after
           #
@@ -76,7 +76,7 @@ module HubspotSDK
 
           # @!method initialize(after: nil, archived: nil, content_type: nil, created_after: nil, created_at: nil, created_before: nil, is_get_localized_schema: nil, limit: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Cms::Hubdb::TableListParams} for more details.
+          #   {HubSpotSDK::Models::Cms::Hubdb::TableListParams} for more details.
           #
           #   @param after [String] The paging cursor token of the last successfully read resource will be returned
           #
@@ -102,7 +102,7 @@ module HubspotSDK
           #
           #   @param updated_before [Time]
           #
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

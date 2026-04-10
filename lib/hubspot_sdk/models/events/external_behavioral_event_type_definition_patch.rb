@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class ExternalBehavioralEventTypeDefinitionPatch < HubspotSDK::Internal::Type::BaseModel
+      class ExternalBehavioralEventTypeDefinitionPatch < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute description
         #   A description of the event that will be shown as help text in HubSpot.
         #

@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class MultiAssociatedObjectWithLabel < HubspotSDK::Internal::Type::BaseModel
+      class MultiAssociatedObjectWithLabel < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::MultiAssociatedObjectWithLabel,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::MultiAssociatedObjectWithLabel,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Crm::AssociationSpecWithLabel]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::AssociationSpecWithLabel]) }
         attr_accessor :association_types
 
         # The unique identifier for the target object in the association.
@@ -24,7 +24,7 @@ module HubspotSDK
         sig do
           params(
             association_types:
-              T::Array[HubspotSDK::Crm::AssociationSpecWithLabel::OrHash],
+              T::Array[HubSpotSDK::Crm::AssociationSpecWithLabel::OrHash],
             to_object_id: String
           ).returns(T.attached_class)
         end
@@ -39,7 +39,7 @@ module HubspotSDK
           override.returns(
             {
               association_types:
-                T::Array[HubspotSDK::Crm::AssociationSpecWithLabel],
+                T::Array[HubSpotSDK::Crm::AssociationSpecWithLabel],
               to_object_id: String
             }
           )

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicExecutionTranslationRule < HubspotSDK::Internal::Type::BaseModel
+      class PublicExecutionTranslationRule < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::PublicExecutionTranslationRule,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::PublicExecutionTranslationRule,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

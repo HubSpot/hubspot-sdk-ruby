@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Objects
-        class GoalTargetDeleteParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class GoalTargetDeleteParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Objects::GoalTargetDeleteParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Objects::GoalTargetDeleteParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -22,7 +22,7 @@ module HubspotSDK
           sig do
             params(
               goal_target_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(goal_target_id:, request_options: {})
@@ -32,7 +32,7 @@ module HubspotSDK
             override.returns(
               {
                 goal_target_id: String,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

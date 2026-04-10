@@ -1,15 +1,15 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type is_engagement_type =
         {
-          operator: HubspotSDK::Models::Cms::IsEngagementType::operator,
+          operator: HubSpotSDK::Models::Cms::IsEngagementType::operator,
           property_name: String,
           value: bool
         }
 
-      class IsEngagementType < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor operator: HubspotSDK::Models::Cms::IsEngagementType::operator
+      class IsEngagementType < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor operator: HubSpotSDK::Models::Cms::IsEngagementType::operator
 
         attr_reader property_name: String?
 
@@ -20,13 +20,13 @@ module HubspotSDK
         def value=: (bool) -> bool
 
         def initialize: (
-          operator: HubspotSDK::Models::Cms::IsEngagementType::operator,
+          operator: HubSpotSDK::Models::Cms::IsEngagementType::operator,
           ?property_name: String,
           ?value: bool
         ) -> void
 
         def to_hash: -> {
-          operator: HubspotSDK::Models::Cms::IsEngagementType::operator,
+          operator: HubSpotSDK::Models::Cms::IsEngagementType::operator,
           property_name: String,
           value: bool
         }
@@ -34,11 +34,11 @@ module HubspotSDK
         type operator = :IS_ENGAGEMENT_TYPE
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           IS_ENGAGEMENT_TYPE: :IS_ENGAGEMENT_TYPE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::IsEngagementType::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::IsEngagementType::operator]
         end
       end
     end

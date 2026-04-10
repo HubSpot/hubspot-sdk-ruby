@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class ContactOrg < HubspotSDK::Internal::Type::BaseModel
+      class ContactOrg < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute company
         #
         #   @return [String, nil]

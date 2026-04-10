@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      # @see HubspotSDK::Resources::Events::Occurrences#list_event_types
-      class VisibleExternalEventTypeNames < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Events::Occurrences#list_event_types
+      class VisibleExternalEventTypeNames < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute event_types
         #   List of event type names.
         #
         #   @return [Array<String>]
-        required :event_types, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :eventTypes
+        required :event_types, HubSpotSDK::Internal::Type::ArrayOf[String], api_name: :eventTypes
 
         # @!method initialize(event_types:)
         #   @param event_types [Array<String>] List of event type names.

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Settings
       class Users
@@ -10,47 +10,47 @@ module HubspotSDK
           ?primary_team_id: String,
           ?role_id: String,
           ?secondary_team_ids: ::Array[String],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Settings::PublicUser
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Settings::PublicUser
 
         def update: (
           String user_id,
-          ?id_property: HubspotSDK::Models::Settings::PublicUserUpdate::id_property,
+          ?id_property: HubSpotSDK::Models::Settings::PublicUserUpdate::id_property,
           ?first_name: String,
           ?last_name: String,
           ?primary_team_id: String,
           ?role_id: String,
           ?secondary_team_ids: ::Array[String],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Settings::PublicUser
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Settings::PublicUser
 
         def list: (
           ?after: String,
           ?limit: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Settings::PublicUser]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Settings::PublicUser]
 
         def delete: (
           String user_id,
-          ?id_property: HubspotSDK::Models::Settings::UserDeleteParams::id_property,
-          ?request_options: HubspotSDK::request_opts
+          ?id_property: HubSpotSDK::Models::Settings::UserDeleteParams::id_property,
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def get: (
           String user_id,
-          ?id_property: HubspotSDK::Models::Settings::UserGetParams::id_property,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Settings::PublicUser
+          ?id_property: HubSpotSDK::Models::Settings::UserGetParams::id_property,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Settings::PublicUser
 
         def list_roles: (
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Settings::CollectionResponsePublicPermissionSetNoPaging
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Settings::CollectionResponsePublicPermissionSetNoPaging
 
         def list_teams: (
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Settings::CollectionResponsePublicTeamNoPaging
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Settings::CollectionResponsePublicTeamNoPaging
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

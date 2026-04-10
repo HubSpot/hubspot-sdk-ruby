@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class CompanyCallerID < HubspotSDK::Internal::Type::BaseModel
+        class CompanyCallerID < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute caller_id_type
           #   Specifies the type of caller ID, which is set to 'COMPANY' by default.
           #
-          #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::CompanyCallerID::CallerIDType]
+          #   @return [Symbol, HubSpotSDK::Models::Crm::Extensions::CompanyCallerID::CallerIDType]
           required :caller_id_type,
-                   enum: -> { HubspotSDK::Crm::Extensions::CompanyCallerID::CallerIDType },
+                   enum: -> { HubSpotSDK::Crm::Extensions::CompanyCallerID::CallerIDType },
                    api_name: :callerIdType
 
           # @!attribute object_coordinates
           #
-          #   @return [HubspotSDK::Models::Crm::Extensions::ObjectCoordinates]
+          #   @return [HubSpotSDK::Models::Crm::Extensions::ObjectCoordinates]
           required :object_coordinates,
-                   -> { HubspotSDK::Crm::Extensions::ObjectCoordinates },
+                   -> { HubSpotSDK::Crm::Extensions::ObjectCoordinates },
                    api_name: :objectCoordinates
 
           # @!attribute name
@@ -27,17 +27,17 @@ module HubspotSDK
           optional :name, String
 
           # @!method initialize(caller_id_type:, object_coordinates:, name: nil)
-          #   @param caller_id_type [Symbol, HubspotSDK::Models::Crm::Extensions::CompanyCallerID::CallerIDType] Specifies the type of caller ID, which is set to 'COMPANY' by default.
+          #   @param caller_id_type [Symbol, HubSpotSDK::Models::Crm::Extensions::CompanyCallerID::CallerIDType] Specifies the type of caller ID, which is set to 'COMPANY' by default.
           #
-          #   @param object_coordinates [HubspotSDK::Models::Crm::Extensions::ObjectCoordinates]
+          #   @param object_coordinates [HubSpotSDK::Models::Crm::Extensions::ObjectCoordinates]
           #
           #   @param name [String] The name associated with the company caller ID.
 
           # Specifies the type of caller ID, which is set to 'COMPANY' by default.
           #
-          # @see HubspotSDK::Models::Crm::Extensions::CompanyCallerID#caller_id_type
+          # @see HubSpotSDK::Models::Crm::Extensions::CompanyCallerID#caller_id_type
           module CallerIDType
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             COMPANY = :COMPANY
 

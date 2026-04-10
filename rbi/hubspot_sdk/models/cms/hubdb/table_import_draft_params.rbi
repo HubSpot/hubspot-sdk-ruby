@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Hubdb
-        class TableImportDraftParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class TableImportDraftParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Cms::Hubdb::TableImportDraftParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Cms::Hubdb::TableImportDraftParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -25,18 +25,18 @@ module HubspotSDK
           sig { params(config: String).void }
           attr_writer :config
 
-          sig { returns(T.nilable(HubspotSDK::Internal::FileInput)) }
+          sig { returns(T.nilable(HubSpotSDK::Internal::FileInput)) }
           attr_reader :file
 
-          sig { params(file: HubspotSDK::Internal::FileInput).void }
+          sig { params(file: HubSpotSDK::Internal::FileInput).void }
           attr_writer :file
 
           sig do
             params(
               table_id_or_name: String,
               config: String,
-              file: HubspotSDK::Internal::FileInput,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              file: HubSpotSDK::Internal::FileInput,
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
@@ -52,8 +52,8 @@ module HubspotSDK
               {
                 table_id_or_name: String,
                 config: String,
-                file: HubspotSDK::Internal::FileInput,
-                request_options: HubspotSDK::RequestOptions
+                file: HubSpotSDK::Internal::FileInput,
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        # @see HubspotSDK::Resources::Crm::Extensions::VideoConferencing#update
-        class ExternalSettings < HubspotSDK::Internal::Type::BaseModel
+        # @see HubSpotSDK::Resources::Crm::Extensions::VideoConferencing#update
+        class ExternalSettings < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute create_meeting_url
           #
           #   @return [String]

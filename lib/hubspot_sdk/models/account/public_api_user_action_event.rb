@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
-      # @see HubspotSDK::Resources::Account::Activity#list_audit_logs
-      class PublicAPIUserActionEvent < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Account::Activity#list_audit_logs
+      class PublicAPIUserActionEvent < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The login activity's unique ID.
         #
@@ -13,8 +13,8 @@ module HubspotSDK
 
         # @!attribute acting_user
         #
-        #   @return [HubspotSDK::Models::Account::ActingUser]
-        required :acting_user, -> { HubspotSDK::Account::ActingUser }, api_name: :actingUser
+        #   @return [HubSpotSDK::Models::Account::ActingUser]
+        required :acting_user, -> { HubSpotSDK::Account::ActingUser }, api_name: :actingUser
 
         # @!attribute action
         #   The type of action taken.
@@ -49,7 +49,7 @@ module HubspotSDK
         # @!method initialize(id:, acting_user:, action:, category:, occurred_at:, sub_category: nil, target_object_id: nil)
         #   @param id [String] The login activity's unique ID.
         #
-        #   @param acting_user [HubspotSDK::Models::Account::ActingUser]
+        #   @param acting_user [HubSpotSDK::Models::Account::ActingUser]
         #
         #   @param action [String] The type of action taken.
         #

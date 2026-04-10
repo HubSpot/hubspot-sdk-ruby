@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class Campaigns
@@ -9,8 +9,8 @@ module HubspotSDK
             name: String,
             order: Integer,
             ?description: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::PublicBudgetItem
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Marketing::PublicBudgetItem
 
           def update: (
             Integer budget_id,
@@ -19,27 +19,27 @@ module HubspotSDK
             name: String,
             order: Integer,
             ?description: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::PublicBudgetItem
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Marketing::PublicBudgetItem
 
           def delete: (
             Integer budget_id,
             campaign_guid: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def get: (
             Integer budget_id,
             campaign_guid: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::PublicBudgetItem
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Marketing::PublicBudgetItem
 
           def get_totals: (
             String campaign_guid,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::PublicBudgetTotals
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Marketing::PublicBudgetTotals
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

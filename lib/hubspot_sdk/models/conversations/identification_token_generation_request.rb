@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class IdentificationTokenGenerationRequest < HubspotSDK::Internal::Type::BaseModel
+      class IdentificationTokenGenerationRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute email
         #   The email of the visitor that you wish to identify
         #
@@ -28,7 +28,7 @@ module HubspotSDK
 
         # @!method initialize(email:, first_name: nil, last_name: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Conversations::IdentificationTokenGenerationRequest} for
+        #   {HubSpotSDK::Models::Conversations::IdentificationTokenGenerationRequest} for
         #   more details.
         #
         #   @param email [String] The email of the visitor that you wish to identify

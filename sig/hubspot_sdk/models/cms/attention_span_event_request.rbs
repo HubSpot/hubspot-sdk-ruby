@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type attention_span_event_request =
         {
-          media_type: HubspotSDK::Models::Cms::AttentionSpanEventRequest::media_type,
+          media_type: HubSpotSDK::Models::Cms::AttentionSpanEventRequest::media_type,
           occurred_timestamp: Integer,
           raw_data_map: ::Hash[Symbol, Integer],
           session_id: String,
           _hsenc: String,
           contact_id: Integer,
           contact_utk: String,
-          derived_values: HubspotSDK::Cms::AttentionSpanCalculatedValues,
+          derived_values: HubSpotSDK::Cms::AttentionSpanCalculatedValues,
           external_id: String,
-          external_play_context: HubspotSDK::Models::Cms::AttentionSpanEventRequest::external_play_context,
+          external_play_context: HubSpotSDK::Models::Cms::AttentionSpanEventRequest::external_play_context,
           media_bridge_id: Integer,
           media_name: String,
           media_url: String,
@@ -22,8 +22,8 @@ module HubspotSDK
           raw_data_string: String
         }
 
-      class AttentionSpanEventRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor media_type: HubspotSDK::Models::Cms::AttentionSpanEventRequest::media_type
+      class AttentionSpanEventRequest < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor media_type: HubSpotSDK::Models::Cms::AttentionSpanEventRequest::media_type
 
         attr_accessor occurred_timestamp: Integer
 
@@ -43,21 +43,21 @@ module HubspotSDK
 
         def contact_utk=: (String) -> String
 
-        attr_reader derived_values: HubspotSDK::Cms::AttentionSpanCalculatedValues?
+        attr_reader derived_values: HubSpotSDK::Cms::AttentionSpanCalculatedValues?
 
         def derived_values=: (
-          HubspotSDK::Cms::AttentionSpanCalculatedValues
-        ) -> HubspotSDK::Cms::AttentionSpanCalculatedValues
+          HubSpotSDK::Cms::AttentionSpanCalculatedValues
+        ) -> HubSpotSDK::Cms::AttentionSpanCalculatedValues
 
         attr_reader external_id: String?
 
         def external_id=: (String) -> String
 
-        attr_reader external_play_context: HubspotSDK::Models::Cms::AttentionSpanEventRequest::external_play_context?
+        attr_reader external_play_context: HubSpotSDK::Models::Cms::AttentionSpanEventRequest::external_play_context?
 
         def external_play_context=: (
-          HubspotSDK::Models::Cms::AttentionSpanEventRequest::external_play_context
-        ) -> HubspotSDK::Models::Cms::AttentionSpanEventRequest::external_play_context
+          HubSpotSDK::Models::Cms::AttentionSpanEventRequest::external_play_context
+        ) -> HubSpotSDK::Models::Cms::AttentionSpanEventRequest::external_play_context
 
         attr_reader media_bridge_id: Integer?
 
@@ -88,16 +88,16 @@ module HubspotSDK
         def raw_data_string=: (String) -> String
 
         def initialize: (
-          media_type: HubspotSDK::Models::Cms::AttentionSpanEventRequest::media_type,
+          media_type: HubSpotSDK::Models::Cms::AttentionSpanEventRequest::media_type,
           occurred_timestamp: Integer,
           raw_data_map: ::Hash[Symbol, Integer],
           session_id: String,
           ?_hsenc: String,
           ?contact_id: Integer,
           ?contact_utk: String,
-          ?derived_values: HubspotSDK::Cms::AttentionSpanCalculatedValues,
+          ?derived_values: HubSpotSDK::Cms::AttentionSpanCalculatedValues,
           ?external_id: String,
-          ?external_play_context: HubspotSDK::Models::Cms::AttentionSpanEventRequest::external_play_context,
+          ?external_play_context: HubSpotSDK::Models::Cms::AttentionSpanEventRequest::external_play_context,
           ?media_bridge_id: Integer,
           ?media_name: String,
           ?media_url: String,
@@ -108,16 +108,16 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
-          media_type: HubspotSDK::Models::Cms::AttentionSpanEventRequest::media_type,
+          media_type: HubSpotSDK::Models::Cms::AttentionSpanEventRequest::media_type,
           occurred_timestamp: Integer,
           raw_data_map: ::Hash[Symbol, Integer],
           session_id: String,
           _hsenc: String,
           contact_id: Integer,
           contact_utk: String,
-          derived_values: HubspotSDK::Cms::AttentionSpanCalculatedValues,
+          derived_values: HubSpotSDK::Cms::AttentionSpanCalculatedValues,
           external_id: String,
-          external_play_context: HubspotSDK::Models::Cms::AttentionSpanEventRequest::external_play_context,
+          external_play_context: HubSpotSDK::Models::Cms::AttentionSpanEventRequest::external_play_context,
           media_bridge_id: Integer,
           media_name: String,
           media_url: String,
@@ -130,7 +130,7 @@ module HubspotSDK
         type media_type = :AUDIO | :DOCUMENT | :IMAGE | :OTHER | :VIDEO
 
         module MediaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUDIO: :AUDIO
           DOCUMENT: :DOCUMENT
@@ -138,18 +138,18 @@ module HubspotSDK
           OTHER: :OTHER
           VIDEO: :VIDEO
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::AttentionSpanEventRequest::media_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::AttentionSpanEventRequest::media_type]
         end
 
         type external_play_context = :EMAIL | :EXTERNAL_PAGE
 
         module ExternalPlayContext
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL: :EMAIL
           EXTERNAL_PAGE: :EXTERNAL_PAGE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::AttentionSpanEventRequest::external_play_context]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::AttentionSpanEventRequest::external_play_context]
         end
       end
     end

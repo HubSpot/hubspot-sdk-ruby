@@ -2,7 +2,7 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::ListsTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
@@ -14,12 +14,12 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::ListCreateResponse
+      response => HubSpotSDK::Crm::ListCreateResponse
     end
 
     assert_pattern do
       response => {
-        list: HubspotSDK::Crm::PublicObjectList
+        list: HubSpotSDK::Crm::PublicObjectList
       }
     end
   end
@@ -30,12 +30,12 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.list
 
     assert_pattern do
-      response => HubspotSDK::Crm::ListsByIDResponse
+      response => HubSpotSDK::Crm::ListsByIDResponse
     end
 
     assert_pattern do
       response => {
-        lists: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicObjectList])
+        lists: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicObjectList])
       }
     end
   end
@@ -61,14 +61,14 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::MembershipsUpdateResponse
+      response => HubSpotSDK::Crm::MembershipsUpdateResponse
     end
 
     assert_pattern do
       response => {
-        record_ids_missing: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        record_ids_removed: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        records_ids_added: ^(HubspotSDK::Internal::Type::ArrayOf[String])
+        record_ids_missing: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        record_ids_removed: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        records_ids_added: ^(HubSpotSDK::Internal::Type::ArrayOf[String])
       }
     end
   end
@@ -79,14 +79,14 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.add_memberships("listId", body: ["string"])
 
     assert_pattern do
-      response => HubspotSDK::Crm::MembershipsUpdateResponse
+      response => HubSpotSDK::Crm::MembershipsUpdateResponse
     end
 
     assert_pattern do
       response => {
-        record_ids_missing: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        record_ids_removed: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        records_ids_added: ^(HubspotSDK::Internal::Type::ArrayOf[String])
+        record_ids_missing: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        record_ids_removed: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        records_ids_added: ^(HubSpotSDK::Internal::Type::ArrayOf[String])
       }
     end
   end
@@ -115,16 +115,16 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::BatchResponseRecordIDWithMemberships
+      response => HubSpotSDK::Crm::BatchResponseRecordIDWithMemberships
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::RecordIDWithMemberships]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::RecordIDWithMemberships]),
         started_at: Time,
-        status: HubspotSDK::Crm::BatchResponseRecordIDWithMemberships::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Crm::BatchResponseRecordIDWithMemberships::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -136,12 +136,12 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.create_folder(name: "name")
 
     assert_pattern do
-      response => HubspotSDK::Crm::ListFolderCreateResponse
+      response => HubSpotSDK::Crm::ListFolderCreateResponse
     end
 
     assert_pattern do
       response => {
-        folder: HubspotSDK::Crm::PublicListFolder
+        folder: HubSpotSDK::Crm::PublicListFolder
       }
     end
   end
@@ -152,13 +152,13 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.create_id_mapping(body: ["string"])
 
     assert_pattern do
-      response => HubspotSDK::Crm::PublicBatchMigrationMapping
+      response => HubSpotSDK::Crm::PublicBatchMigrationMapping
     end
 
     assert_pattern do
       response => {
-        legacy_list_ids_to_ids_mapping: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicMigrationMapping]),
-        missing_legacy_list_ids: ^(HubspotSDK::Internal::Type::ArrayOf[String])
+        legacy_list_ids_to_ids_mapping: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicMigrationMapping]),
+        missing_legacy_list_ids: ^(HubSpotSDK::Internal::Type::ArrayOf[String])
       }
     end
   end
@@ -189,12 +189,12 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.get("listId")
 
     assert_pattern do
-      response => HubspotSDK::Crm::ListFetchResponse
+      response => HubSpotSDK::Crm::ListFetchResponse
     end
 
     assert_pattern do
       response => {
-        list: HubspotSDK::Crm::PublicObjectList
+        list: HubSpotSDK::Crm::PublicObjectList
       }
     end
   end
@@ -205,12 +205,12 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.get_by_object_type_and_name("listName", object_type_id: "objectTypeId")
 
     assert_pattern do
-      response => HubspotSDK::Crm::ListFetchResponse
+      response => HubSpotSDK::Crm::ListFetchResponse
     end
 
     assert_pattern do
       response => {
-        list: HubspotSDK::Crm::PublicObjectList
+        list: HubSpotSDK::Crm::PublicObjectList
       }
     end
   end
@@ -221,7 +221,7 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.get_id_mapping
 
     assert_pattern do
-      response => HubspotSDK::Crm::PublicMigrationMapping
+      response => HubSpotSDK::Crm::PublicMigrationMapping
     end
 
     assert_pattern do
@@ -238,14 +238,14 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.get_memberships_join_order("listId")
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Crm::JoinTimeAndRecordID
+      row => HubSpotSDK::Crm::JoinTimeAndRecordID
     end
 
     assert_pattern do
@@ -262,13 +262,13 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.get_record_memberships("recordId", object_type_id: "objectTypeId")
 
     assert_pattern do
-      response => HubspotSDK::Crm::APICollectionResponseRecordListMembership
+      response => HubSpotSDK::Crm::APICollectionResponseRecordListMembership
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::RecordListMembership]),
-        paging: HubspotSDK::Paging | nil,
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::RecordListMembership]),
+        paging: HubSpotSDK::Paging | nil,
         total: Integer | nil
       }
     end
@@ -280,14 +280,14 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.get_schedule_conversion("listId")
 
     assert_pattern do
-      response => HubspotSDK::Crm::PublicListConversionResponse
+      response => HubSpotSDK::Crm::PublicListConversionResponse
     end
 
     assert_pattern do
       response => {
         list_id: String,
         converted_at: Time | nil,
-        requested_conversion_time: HubspotSDK::Crm::PublicListConversionResponse::RequestedConversionTime | nil
+        requested_conversion_time: HubSpotSDK::Crm::PublicListConversionResponse::RequestedConversionTime | nil
       }
     end
   end
@@ -298,13 +298,13 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.get_size_and_edits_history_between("listId")
 
     assert_pattern do
-      response => HubspotSDK::Crm::ListSizeAndEditHistoryResponse
+      response => HubSpotSDK::Crm::ListSizeAndEditHistoryResponse
     end
 
     assert_pattern do
       response => {
-        edit_history: ^(HubspotSDK::Internal::Type::ArrayOf[Time]),
-        size_history: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ListSizeDataPoint])
+        edit_history: ^(HubSpotSDK::Internal::Type::ArrayOf[Time]),
+        size_history: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::ListSizeDataPoint])
       }
     end
   end
@@ -316,13 +316,13 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
       @hubspot.crm.lists.list_by_search(list_ids: ["string"], offset: 0, processing_types: ["string"])
 
     assert_pattern do
-      response => HubspotSDK::Crm::ListSearchResponse
+      response => HubSpotSDK::Crm::ListSearchResponse
     end
 
     assert_pattern do
       response => {
-        has_more: HubspotSDK::Internal::Type::Boolean,
-        lists: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicObjectListSearchResult]),
+        has_more: HubSpotSDK::Internal::Type::Boolean,
+        lists: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicObjectListSearchResult]),
         offset: Integer,
         total: Integer
       }
@@ -335,12 +335,12 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.list_folders
 
     assert_pattern do
-      response => HubspotSDK::Crm::ListFolderFetchResponse
+      response => HubSpotSDK::Crm::ListFolderFetchResponse
     end
 
     assert_pattern do
       response => {
-        folder: HubspotSDK::Crm::PublicListFolder
+        folder: HubSpotSDK::Crm::PublicListFolder
       }
     end
   end
@@ -351,14 +351,14 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.list_memberships("listId")
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Crm::JoinTimeAndRecordID
+      row => HubSpotSDK::Crm::JoinTimeAndRecordID
     end
 
     assert_pattern do
@@ -375,12 +375,12 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.move_folder("newParentFolderId", folder_id: "folderId")
 
     assert_pattern do
-      response => HubspotSDK::Crm::ListFolderFetchResponse
+      response => HubSpotSDK::Crm::ListFolderFetchResponse
     end
 
     assert_pattern do
       response => {
-        folder: HubspotSDK::Crm::PublicListFolder
+        folder: HubSpotSDK::Crm::PublicListFolder
       }
     end
   end
@@ -401,14 +401,14 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.remove_memberships("listId", body: ["string"])
 
     assert_pattern do
-      response => HubspotSDK::Crm::MembershipsUpdateResponse
+      response => HubSpotSDK::Crm::MembershipsUpdateResponse
     end
 
     assert_pattern do
       response => {
-        record_ids_missing: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        record_ids_removed: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        records_ids_added: ^(HubspotSDK::Internal::Type::ArrayOf[String])
+        record_ids_missing: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        record_ids_removed: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        records_ids_added: ^(HubSpotSDK::Internal::Type::ArrayOf[String])
       }
     end
   end
@@ -419,12 +419,12 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.rename_folder("folderId")
 
     assert_pattern do
-      response => HubspotSDK::Crm::ListFolderFetchResponse
+      response => HubSpotSDK::Crm::ListFolderFetchResponse
     end
 
     assert_pattern do
       response => {
-        folder: HubspotSDK::Crm::PublicListFolder
+        folder: HubSpotSDK::Crm::PublicListFolder
       }
     end
   end
@@ -628,12 +628,12 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::ListUpdateResponse
+      response => HubSpotSDK::Crm::ListUpdateResponse
     end
 
     assert_pattern do
       response => {
-        updated_list: HubspotSDK::Crm::PublicObjectList | nil
+        updated_list: HubSpotSDK::Crm::PublicObjectList | nil
       }
     end
   end
@@ -644,12 +644,12 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
     response = @hubspot.crm.lists.update_list_name("listId")
 
     assert_pattern do
-      response => HubspotSDK::Crm::ListUpdateResponse
+      response => HubSpotSDK::Crm::ListUpdateResponse
     end
 
     assert_pattern do
       response => {
-        updated_list: HubspotSDK::Crm::PublicObjectList | nil
+        updated_list: HubSpotSDK::Crm::PublicObjectList | nil
       }
     end
   end
@@ -664,14 +664,14 @@ class HubspotSDK::Test::Resources::Crm::ListsTest < HubspotSDK::Test::ResourceTe
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::PublicListConversionResponse
+      response => HubSpotSDK::Crm::PublicListConversionResponse
     end
 
     assert_pattern do
       response => {
         list_id: String,
         converted_at: Time | nil,
-        requested_conversion_time: HubspotSDK::Crm::PublicListConversionResponse::RequestedConversionTime | nil
+        requested_conversion_time: HubSpotSDK::Crm::PublicListConversionResponse::RequestedConversionTime | nil
       }
     end
   end

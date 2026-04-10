@@ -1,7 +1,7 @@
-module HubspotSDK
+module HubSpotSDK
   module Internal
     class Page[Elem]
-      include HubspotSDK::Internal::Type::BasePage[Elem]
+      include HubSpotSDK::Internal::Type::BasePage[Elem]
 
       attr_accessor results: ::Array[Elem]?
 
@@ -10,7 +10,7 @@ module HubspotSDK
       def inspect: -> String
 
       type paging = { next_: Paging::Next }
-      class Paging < HubspotSDK::Internal::Type::BaseModel
+      class Paging < HubSpotSDK::Internal::Type::BaseModel
         attr_reader next_: Paging::Next?
 
         def next_=: (Paging::Next) -> Paging::Next
@@ -21,7 +21,7 @@ module HubspotSDK
 
         type next_ = { after: String }
 
-        class Next < HubspotSDK::Internal::Type::BaseModel
+        class Next < HubSpotSDK::Internal::Type::BaseModel
           attr_reader after: String?
 
           def after=: (String) -> String

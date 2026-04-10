@@ -1,25 +1,25 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_property_validation_rule_map =
         {
           property_name: String,
-          property_validation_rules: ::Array[HubspotSDK::Crm::PublicPropertyValidationRule]
+          property_validation_rules: ::Array[HubSpotSDK::Crm::PublicPropertyValidationRule]
         }
 
-      class PublicPropertyValidationRuleMap < HubspotSDK::Internal::Type::BaseModel
+      class PublicPropertyValidationRuleMap < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor property_name: String
 
-        attr_accessor property_validation_rules: ::Array[HubspotSDK::Crm::PublicPropertyValidationRule]
+        attr_accessor property_validation_rules: ::Array[HubSpotSDK::Crm::PublicPropertyValidationRule]
 
         def initialize: (
           property_name: String,
-          property_validation_rules: ::Array[HubspotSDK::Crm::PublicPropertyValidationRule]
+          property_validation_rules: ::Array[HubSpotSDK::Crm::PublicPropertyValidationRule]
         ) -> void
 
         def to_hash: -> {
           property_name: String,
-          property_validation_rules: ::Array[HubspotSDK::Crm::PublicPropertyValidationRule]
+          property_validation_rules: ::Array[HubSpotSDK::Crm::PublicPropertyValidationRule]
         }
       end
     end

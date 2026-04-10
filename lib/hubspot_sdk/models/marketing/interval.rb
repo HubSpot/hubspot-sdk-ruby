@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class Interval < HubspotSDK::Internal::Type::BaseModel
+      class Interval < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute end_
         #   The end timestamp of the interval, in ISO8601 format.
         #

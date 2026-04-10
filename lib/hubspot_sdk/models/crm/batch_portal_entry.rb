@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchPortalEntry < HubspotSDK::Internal::Type::BaseModel
+      class BatchPortalEntry < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute flag_state
         #   The flag state for this portal (e.g. ON or OFF)
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::BatchPortalEntry::FlagState]
-        required :flag_state, enum: -> { HubspotSDK::Crm::BatchPortalEntry::FlagState }, api_name: :flagState
+        #   @return [Symbol, HubSpotSDK::Models::Crm::BatchPortalEntry::FlagState]
+        required :flag_state, enum: -> { HubSpotSDK::Crm::BatchPortalEntry::FlagState }, api_name: :flagState
 
         # @!attribute portal_id
         #   The ID of the portal
@@ -17,15 +17,15 @@ module HubspotSDK
         required :portal_id, Integer, api_name: :portalId
 
         # @!method initialize(flag_state:, portal_id:)
-        #   @param flag_state [Symbol, HubspotSDK::Models::Crm::BatchPortalEntry::FlagState] The flag state for this portal (e.g. ON or OFF)
+        #   @param flag_state [Symbol, HubSpotSDK::Models::Crm::BatchPortalEntry::FlagState] The flag state for this portal (e.g. ON or OFF)
         #
         #   @param portal_id [Integer] The ID of the portal
 
         # The flag state for this portal (e.g. ON or OFF)
         #
-        # @see HubspotSDK::Models::Crm::BatchPortalEntry#flag_state
+        # @see HubSpotSDK::Models::Crm::BatchPortalEntry#flag_state
         module FlagState
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABSENT = :ABSENT
           OFF = :OFF

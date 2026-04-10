@@ -1,39 +1,39 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type attach_to_lang_primary_request_v_next =
         {
           id: String,
-          language: HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::language,
+          language: HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::language,
           primary_id: String,
-          primary_language: HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language
+          primary_language: HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language
         }
 
-      class AttachToLangPrimaryRequestVNext < HubspotSDK::Internal::Type::BaseModel
+      class AttachToLangPrimaryRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
-        attr_accessor language: HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::language
+        attr_accessor language: HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::language
 
         attr_accessor primary_id: String
 
-        attr_reader primary_language: HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language?
+        attr_reader primary_language: HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language?
 
         def primary_language=: (
-          HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language
-        ) -> HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language
+          HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language
+        ) -> HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language
 
         def initialize: (
           id: String,
-          language: HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::language,
+          language: HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::language,
           primary_id: String,
-          ?primary_language: HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language
+          ?primary_language: HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language
         ) -> void
 
         def to_hash: -> {
           id: String,
-          language: HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::language,
+          language: HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::language,
           primary_id: String,
-          primary_language: HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language
+          primary_language: HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language
         }
 
         type language =
@@ -882,7 +882,7 @@ module HubspotSDK
           | :"zu-za"
 
         module Language
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AA: :aa
           AB: :ab
@@ -1728,7 +1728,7 @@ module HubspotSDK
           ZU: :zu
           ZU_ZA: :"zu-za"
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::language]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::language]
         end
 
         type primary_language =
@@ -2577,7 +2577,7 @@ module HubspotSDK
           | :"zu-za"
 
         module PrimaryLanguage
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AA: :aa
           AB: :ab
@@ -3423,7 +3423,7 @@ module HubspotSDK
           ZU: :zu
           ZU_ZA: :"zu-za"
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::primary_language]
         end
       end
     end

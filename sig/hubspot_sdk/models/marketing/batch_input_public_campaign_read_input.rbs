@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type batch_input_public_campaign_read_input =
-        { inputs: ::Array[HubspotSDK::Marketing::PublicCampaignReadInput] }
+        { inputs: ::Array[HubSpotSDK::Marketing::PublicCampaignReadInput] }
 
-      class BatchInputPublicCampaignReadInput < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor inputs: ::Array[HubspotSDK::Marketing::PublicCampaignReadInput]
+      class BatchInputPublicCampaignReadInput < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubSpotSDK::Marketing::PublicCampaignReadInput]
 
         def initialize: (
-          inputs: ::Array[HubspotSDK::Marketing::PublicCampaignReadInput]
+          inputs: ::Array[HubSpotSDK::Marketing::PublicCampaignReadInput]
         ) -> void
 
         def to_hash: -> {
-          inputs: ::Array[HubspotSDK::Marketing::PublicCampaignReadInput]
+          inputs: ::Array[HubSpotSDK::Marketing::PublicCampaignReadInput]
         }
       end
     end

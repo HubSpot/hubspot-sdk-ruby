@@ -1,80 +1,80 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
       type public_wide_status =
         {
-          channel: HubspotSDK::Models::CommunicationPreferences::PublicWideStatus::channel,
-          status: HubspotSDK::Models::CommunicationPreferences::PublicWideStatus::status,
+          channel: HubSpotSDK::Models::CommunicationPreferences::PublicWideStatus::channel,
+          status: HubSpotSDK::Models::CommunicationPreferences::PublicWideStatus::status,
           subscriber_id_string: String,
           timestamp: Time,
-          wide_status_type: HubspotSDK::Models::CommunicationPreferences::PublicWideStatus::wide_status_type,
+          wide_status_type: HubSpotSDK::Models::CommunicationPreferences::PublicWideStatus::wide_status_type,
           business_unit_id: Integer
         }
 
-      class PublicWideStatus < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor channel: HubspotSDK::Models::CommunicationPreferences::PublicWideStatus::channel
+      class PublicWideStatus < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor channel: HubSpotSDK::Models::CommunicationPreferences::PublicWideStatus::channel
 
-        attr_accessor status: HubspotSDK::Models::CommunicationPreferences::PublicWideStatus::status
+        attr_accessor status: HubSpotSDK::Models::CommunicationPreferences::PublicWideStatus::status
 
         attr_accessor subscriber_id_string: String
 
         attr_accessor timestamp: Time
 
-        attr_accessor wide_status_type: HubspotSDK::Models::CommunicationPreferences::PublicWideStatus::wide_status_type
+        attr_accessor wide_status_type: HubSpotSDK::Models::CommunicationPreferences::PublicWideStatus::wide_status_type
 
         attr_reader business_unit_id: Integer?
 
         def business_unit_id=: (Integer) -> Integer
 
         def initialize: (
-          channel: HubspotSDK::Models::CommunicationPreferences::PublicWideStatus::channel,
-          status: HubspotSDK::Models::CommunicationPreferences::PublicWideStatus::status,
+          channel: HubSpotSDK::Models::CommunicationPreferences::PublicWideStatus::channel,
+          status: HubSpotSDK::Models::CommunicationPreferences::PublicWideStatus::status,
           subscriber_id_string: String,
           timestamp: Time,
-          wide_status_type: HubspotSDK::Models::CommunicationPreferences::PublicWideStatus::wide_status_type,
+          wide_status_type: HubSpotSDK::Models::CommunicationPreferences::PublicWideStatus::wide_status_type,
           ?business_unit_id: Integer
         ) -> void
 
         def to_hash: -> {
-          channel: HubspotSDK::Models::CommunicationPreferences::PublicWideStatus::channel,
-          status: HubspotSDK::Models::CommunicationPreferences::PublicWideStatus::status,
+          channel: HubSpotSDK::Models::CommunicationPreferences::PublicWideStatus::channel,
+          status: HubSpotSDK::Models::CommunicationPreferences::PublicWideStatus::status,
           subscriber_id_string: String,
           timestamp: Time,
-          wide_status_type: HubspotSDK::Models::CommunicationPreferences::PublicWideStatus::wide_status_type,
+          wide_status_type: HubSpotSDK::Models::CommunicationPreferences::PublicWideStatus::wide_status_type,
           business_unit_id: Integer
         }
 
         type channel = :EMAIL
 
         module Channel
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL: :EMAIL
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CommunicationPreferences::PublicWideStatus::channel]
+          def self?.values: -> ::Array[HubSpotSDK::Models::CommunicationPreferences::PublicWideStatus::channel]
         end
 
         type status = :NOT_SPECIFIED | :SUBSCRIBED | :UNSUBSCRIBED
 
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NOT_SPECIFIED: :NOT_SPECIFIED
           SUBSCRIBED: :SUBSCRIBED
           UNSUBSCRIBED: :UNSUBSCRIBED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CommunicationPreferences::PublicWideStatus::status]
+          def self?.values: -> ::Array[HubSpotSDK::Models::CommunicationPreferences::PublicWideStatus::status]
         end
 
         type wide_status_type = :BUSINESS_UNIT_WIDE | :PORTAL_WIDE
 
         module WideStatusType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BUSINESS_UNIT_WIDE: :BUSINESS_UNIT_WIDE
           PORTAL_WIDE: :PORTAL_WIDE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CommunicationPreferences::PublicWideStatus::wide_status_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::CommunicationPreferences::PublicWideStatus::wide_status_type]
         end
       end
     end

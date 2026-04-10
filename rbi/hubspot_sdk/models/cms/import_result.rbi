@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ImportResult < HubspotSDK::Internal::Type::BaseModel
+      class ImportResult < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::ImportResult, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::ImportResult, HubSpotSDK::Internal::AnyHash)
           end
 
         # Specifies number of duplicate rows
@@ -14,7 +14,7 @@ module HubspotSDK
         attr_accessor :duplicate_rows
 
         # List of errors during import
-        sig { returns(T::Array[HubspotSDK::Error]) }
+        sig { returns(T::Array[HubSpotSDK::Error]) }
         attr_accessor :errors
 
         # Specifies whether row limit exceeded during import
@@ -28,7 +28,7 @@ module HubspotSDK
         sig do
           params(
             duplicate_rows: Integer,
-            errors: T::Array[HubspotSDK::Error::OrHash],
+            errors: T::Array[HubSpotSDK::Error::OrHash],
             row_limit_exceeded: T::Boolean,
             rows_imported: Integer
           ).returns(T.attached_class)
@@ -49,7 +49,7 @@ module HubspotSDK
           override.returns(
             {
               duplicate_rows: Integer,
-              errors: T::Array[HubspotSDK::Error],
+              errors: T::Array[HubSpotSDK::Error],
               row_limit_exceeded: T::Boolean,
               rows_imported: Integer
             }

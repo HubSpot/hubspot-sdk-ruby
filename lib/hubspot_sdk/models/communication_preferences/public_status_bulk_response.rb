@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class PublicStatusBulkResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicStatusBulkResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute statuses
         #   An array of subscription status objects for the contact.
         #
-        #   @return [Array<HubspotSDK::Models::CommunicationPreferences::PublicStatus>]
+        #   @return [Array<HubSpotSDK::Models::CommunicationPreferences::PublicStatus>]
         required :statuses,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CommunicationPreferences::PublicStatus] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::CommunicationPreferences::PublicStatus] }
 
         # @!attribute subscriber_id_string
         #   The email address of the contact.
@@ -18,7 +18,7 @@ module HubspotSDK
         required :subscriber_id_string, String, api_name: :subscriberIdString
 
         # @!method initialize(statuses:, subscriber_id_string:)
-        #   @param statuses [Array<HubspotSDK::Models::CommunicationPreferences::PublicStatus>] An array of subscription status objects for the contact.
+        #   @param statuses [Array<HubSpotSDK::Models::CommunicationPreferences::PublicStatus>] An array of subscription status objects for the contact.
         #
         #   @param subscriber_id_string [String] The email address of the contact.
       end

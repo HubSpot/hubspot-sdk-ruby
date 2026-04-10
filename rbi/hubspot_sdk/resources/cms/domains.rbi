@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Domains
@@ -16,8 +16,8 @@ module HubspotSDK
             updated_after: Time,
             updated_at: Time,
             updated_before: Time,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Internal::Page[HubspotSDK::Cms::Domain])
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Internal::Page[HubSpotSDK::Cms::Domain])
         end
         def list(
           # The paging cursor token of the last successfully read resource will be returned
@@ -43,14 +43,14 @@ module HubspotSDK
         sig do
           params(
             domain_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::Domain)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::Domain)
         end
         def get(domain_id, request_options: {})
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

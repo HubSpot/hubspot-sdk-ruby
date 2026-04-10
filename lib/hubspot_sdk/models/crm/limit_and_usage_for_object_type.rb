@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class LimitAndUsageForObjectType < HubspotSDK::Internal::Type::BaseModel
+      class LimitAndUsageForObjectType < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute limit
         #   The maximum allowed count for the object type.
         #

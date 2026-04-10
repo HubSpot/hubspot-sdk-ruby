@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Pages
@@ -11,8 +11,8 @@ module HubspotSDK
             params(
               content_id: String,
               variation_name: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::PageData)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::PageData)
           end
           def create_landing_page_variation(
             # ID of the object to test.
@@ -29,8 +29,8 @@ module HubspotSDK
             params(
               content_id: String,
               variation_name: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::PageData)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::PageData)
           end
           def create_site_page_variation(
             # ID of the object to test.
@@ -46,7 +46,7 @@ module HubspotSDK
             params(
               ab_test_id: String,
               winner_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def end_landing_page_test(
@@ -63,7 +63,7 @@ module HubspotSDK
             params(
               ab_test_id: String,
               winner_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def end_site_page_test(
@@ -80,7 +80,7 @@ module HubspotSDK
             params(
               ab_test_id: String,
               variation_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def rerun_landing_page_test(
@@ -97,7 +97,7 @@ module HubspotSDK
             params(
               ab_test_id: String,
               variation_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def rerun_site_page_test(
@@ -110,7 +110,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

@@ -1,11 +1,11 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_rss_email_details =
         {
           blog_email_type: String,
           blog_image_max_width: Integer,
-          blog_layout: HubspotSDK::Models::Marketing::PublicRssEmailDetails::blog_layout,
+          blog_layout: HubSpotSDK::Models::Marketing::PublicRssEmailDetails::blog_layout,
           hubspot_blog_id: String,
           max_entries: Integer,
           rss_entry_template: String,
@@ -14,7 +14,7 @@ module HubspotSDK
           use_headline_as_subject: bool
         }
 
-      class PublicRssEmailDetails < HubspotSDK::Internal::Type::BaseModel
+      class PublicRssEmailDetails < HubSpotSDK::Internal::Type::BaseModel
         attr_reader blog_email_type: String?
 
         def blog_email_type=: (String) -> String
@@ -23,11 +23,11 @@ module HubspotSDK
 
         def blog_image_max_width=: (Integer) -> Integer
 
-        attr_reader blog_layout: HubspotSDK::Models::Marketing::PublicRssEmailDetails::blog_layout?
+        attr_reader blog_layout: HubSpotSDK::Models::Marketing::PublicRssEmailDetails::blog_layout?
 
         def blog_layout=: (
-          HubspotSDK::Models::Marketing::PublicRssEmailDetails::blog_layout
-        ) -> HubspotSDK::Models::Marketing::PublicRssEmailDetails::blog_layout
+          HubSpotSDK::Models::Marketing::PublicRssEmailDetails::blog_layout
+        ) -> HubSpotSDK::Models::Marketing::PublicRssEmailDetails::blog_layout
 
         attr_reader hubspot_blog_id: String?
 
@@ -56,7 +56,7 @@ module HubspotSDK
         def initialize: (
           ?blog_email_type: String,
           ?blog_image_max_width: Integer,
-          ?blog_layout: HubspotSDK::Models::Marketing::PublicRssEmailDetails::blog_layout,
+          ?blog_layout: HubSpotSDK::Models::Marketing::PublicRssEmailDetails::blog_layout,
           ?hubspot_blog_id: String,
           ?max_entries: Integer,
           ?rss_entry_template: String,
@@ -68,7 +68,7 @@ module HubspotSDK
         def to_hash: -> {
           blog_email_type: String,
           blog_image_max_width: Integer,
-          blog_layout: HubspotSDK::Models::Marketing::PublicRssEmailDetails::blog_layout,
+          blog_layout: HubSpotSDK::Models::Marketing::PublicRssEmailDetails::blog_layout,
           hubspot_blog_id: String,
           max_entries: Integer,
           rss_entry_template: String,
@@ -81,13 +81,13 @@ module HubspotSDK
           :FULL_POST | :SUMMARY_NO_FEATURED_IMAGE | :SUMMARY_WITH_FEATURED_IMAGE
 
         module BlogLayout
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           FULL_POST: :FULL_POST
           SUMMARY_NO_FEATURED_IMAGE: :SUMMARY_NO_FEATURED_IMAGE
           SUMMARY_WITH_FEATURED_IMAGE: :SUMMARY_WITH_FEATURED_IMAGE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::PublicRssEmailDetails::blog_layout]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Marketing::PublicRssEmailDetails::blog_layout]
         end
       end
     end

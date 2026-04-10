@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class RandomAccessCollectionResponseWithTotalHubDBTableRowV3 < HubspotSDK::Internal::Type::BaseModel
+      class RandomAccessCollectionResponseWithTotalHubDBTableRowV3 < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -22,15 +22,15 @@ module HubspotSDK
         # Indicates the type of response, which is 'RANDOM_ACCESS' by default.
         sig do
           returns(
-            HubspotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3::Type::TaggedSymbol
+            HubSpotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3::Type::TaggedSymbol
           )
         end
         attr_accessor :type
 
-        sig { returns(T.nilable(HubspotSDK::Cms::BoundedPaging)) }
+        sig { returns(T.nilable(HubSpotSDK::Cms::BoundedPaging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::Cms::BoundedPaging::OrHash).void }
+        sig { params(paging: HubSpotSDK::Cms::BoundedPaging::OrHash).void }
         attr_writer :paging
 
         sig do
@@ -38,8 +38,8 @@ module HubspotSDK
             results: T::Array[T.anything],
             total: Integer,
             type:
-              HubspotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3::Type::OrSymbol,
-            paging: HubspotSDK::Cms::BoundedPaging::OrHash
+              HubSpotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3::Type::OrSymbol,
+            paging: HubSpotSDK::Cms::BoundedPaging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -58,8 +58,8 @@ module HubspotSDK
               results: T::Array[T.anything],
               total: Integer,
               type:
-                HubspotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3::Type::TaggedSymbol,
-              paging: HubspotSDK::Cms::BoundedPaging
+                HubSpotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3::Type::TaggedSymbol,
+              paging: HubSpotSDK::Cms::BoundedPaging
             }
           )
         end
@@ -68,13 +68,13 @@ module HubspotSDK
 
         # Indicates the type of response, which is 'RANDOM_ACCESS' by default.
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3::Type
+                HubSpotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3::Type
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -82,13 +82,13 @@ module HubspotSDK
           RANDOM_ACCESS =
             T.let(
               :RANDOM_ACCESS,
-              HubspotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3::Type::TaggedSymbol
+              HubSpotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3::Type::TaggedSymbol
+                HubSpotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3::Type::TaggedSymbol
               ]
             )
           end

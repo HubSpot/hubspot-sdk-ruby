@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_property_validation_rule_update =
         { rule_arguments: ::Array[String], should_apply_normalization: bool }
 
-      class PublicPropertyValidationRuleUpdate < HubspotSDK::Internal::Type::BaseModel
+      class PublicPropertyValidationRuleUpdate < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor rule_arguments: ::Array[String]
 
         attr_reader should_apply_normalization: bool?

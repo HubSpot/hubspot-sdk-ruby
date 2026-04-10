@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Size < HubspotSDK::Internal::Type::BaseModel
+      class Size < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute units
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::Size::Units]
-        required :units, enum: -> { HubspotSDK::Cms::Size::Units }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::Size::Units]
+        required :units, enum: -> { HubSpotSDK::Cms::Size::Units }
 
         # @!attribute value
         #
@@ -15,12 +15,12 @@ module HubspotSDK
         required :value, Float
 
         # @!method initialize(units:, value:)
-        #   @param units [Symbol, HubspotSDK::Models::Cms::Size::Units]
+        #   @param units [Symbol, HubSpotSDK::Models::Cms::Size::Units]
         #   @param value [Float]
 
-        # @see HubspotSDK::Models::Cms::Size#units
+        # @see HubSpotSDK::Models::Cms::Size#units
         module Units
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           PERCENT = :%
           CH = :ch

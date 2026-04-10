@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicAssociationDefinitionUserConfiguration < HubspotSDK::Internal::Type::BaseModel
+      class PublicAssociationDefinitionUserConfiguration < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute category
         #   The category of the association, which can be HUBSPOT_DEFINED,
         #   INTEGRATOR_DEFINED, or USER_DEFINED.
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicAssociationDefinitionUserConfiguration::Category]
-        required :category, enum: -> { HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category }
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicAssociationDefinitionUserConfiguration::Category]
+        required :category, enum: -> { HubSpotSDK::Crm::PublicAssociationDefinitionUserConfiguration::Category }
 
         # @!attribute type_id
         #   A unique integer identifier for the association type within its category.
@@ -33,10 +33,10 @@ module HubspotSDK
 
         # @!method initialize(category:, type_id:, label: nil, user_enforced_max_to_object_ids: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicAssociationDefinitionUserConfiguration} for more
+        #   {HubSpotSDK::Models::Crm::PublicAssociationDefinitionUserConfiguration} for more
         #   details.
         #
-        #   @param category [Symbol, HubspotSDK::Models::Crm::PublicAssociationDefinitionUserConfiguration::Category] The category of the association, which can be HUBSPOT_DEFINED, INTEGRATOR_DEFINE
+        #   @param category [Symbol, HubSpotSDK::Models::Crm::PublicAssociationDefinitionUserConfiguration::Category] The category of the association, which can be HUBSPOT_DEFINED, INTEGRATOR_DEFINE
         #
         #   @param type_id [Integer] A unique integer identifier for the association type within its category.
         #
@@ -47,9 +47,9 @@ module HubspotSDK
         # The category of the association, which can be HUBSPOT_DEFINED,
         # INTEGRATOR_DEFINED, or USER_DEFINED.
         #
-        # @see HubspotSDK::Models::Crm::PublicAssociationDefinitionUserConfiguration#category
+        # @see HubSpotSDK::Models::Crm::PublicAssociationDefinitionUserConfiguration#category
         module Category
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HUBSPOT_DEFINED = :HUBSPOT_DEFINED
           INTEGRATOR_DEFINED = :INTEGRATOR_DEFINED

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class MarketingEvents
         class Attendance
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Marketing::MarketingEvents::AttendanceCreateByEventIDAndContactIDParams}
+          # {HubSpotSDK::Models::Marketing::MarketingEvents::AttendanceCreateByEventIDAndContactIDParams}
           # for more details.
           #
           # Records the participation of multiple HubSpot contacts in a Marketing Event
@@ -27,16 +27,16 @@ module HubspotSDK
           #
           # @param object_id_ [String] Path param: The internal id of the marketing event in HubSpot.
           #
-          # @param inputs [Array<HubspotSDK::Models::Marketing::MarketingEventSubscriber>] Body param: List of HubSpot contacts to subscribe to the marketing event
+          # @param inputs [Array<HubSpotSDK::Models::Marketing::MarketingEventSubscriber>] Body param: List of HubSpot contacts to subscribe to the marketing event
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::BatchResponseSubscriberVidResponse]
+          # @return [HubSpotSDK::Models::Marketing::BatchResponseSubscriberVidResponse]
           #
-          # @see HubspotSDK::Models::Marketing::MarketingEvents::AttendanceCreateByEventIDAndContactIDParams
+          # @see HubSpotSDK::Models::Marketing::MarketingEvents::AttendanceCreateByEventIDAndContactIDParams
           def create_by_event_id_and_contact_id(subscriber_state, params)
             parsed, options =
-              HubspotSDK::Marketing::MarketingEvents::AttendanceCreateByEventIDAndContactIDParams.dump_request(params)
+              HubSpotSDK::Marketing::MarketingEvents::AttendanceCreateByEventIDAndContactIDParams.dump_request(params)
             object_id_ =
               parsed.delete(:object_id_) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -49,13 +49,13 @@ module HubspotSDK
                 subscriber_state
               ],
               body: parsed,
-              model: HubspotSDK::Marketing::BatchResponseSubscriberVidResponse,
+              model: HubSpotSDK::Marketing::BatchResponseSubscriberVidResponse,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Marketing::MarketingEvents::AttendanceCreateByEventIDAndEmailParams}
+          # {HubSpotSDK::Models::Marketing::MarketingEvents::AttendanceCreateByEventIDAndEmailParams}
           # for more details.
           #
           # Records the participation of multiple HubSpot contacts in a Marketing Event
@@ -80,16 +80,16 @@ module HubspotSDK
           #
           # @param object_id_ [String] Path param: The internal id of the marketing event in HubSpot.
           #
-          # @param inputs [Array<HubspotSDK::Models::Marketing::MarketingEventEmailSubscriber>] Body param: List of marketing event details to create or update
+          # @param inputs [Array<HubSpotSDK::Models::Marketing::MarketingEventEmailSubscriber>] Body param: List of marketing event details to create or update
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::BatchResponseSubscriberEmailResponse]
+          # @return [HubSpotSDK::Models::Marketing::BatchResponseSubscriberEmailResponse]
           #
-          # @see HubspotSDK::Models::Marketing::MarketingEvents::AttendanceCreateByEventIDAndEmailParams
+          # @see HubSpotSDK::Models::Marketing::MarketingEvents::AttendanceCreateByEventIDAndEmailParams
           def create_by_event_id_and_email(subscriber_state, params)
             parsed, options =
-              HubspotSDK::Marketing::MarketingEvents::AttendanceCreateByEventIDAndEmailParams.dump_request(params)
+              HubSpotSDK::Marketing::MarketingEvents::AttendanceCreateByEventIDAndEmailParams.dump_request(params)
             object_id_ =
               parsed.delete(:object_id_) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -102,7 +102,7 @@ module HubspotSDK
                 subscriber_state
               ],
               body: parsed,
-              model: HubspotSDK::Marketing::BatchResponseSubscriberEmailResponse,
+              model: HubSpotSDK::Marketing::BatchResponseSubscriberEmailResponse,
               options: options
             )
           end
@@ -125,22 +125,22 @@ module HubspotSDK
           #
           # @param external_event_id [String] Path param
           #
-          # @param inputs [Array<HubspotSDK::Models::Marketing::MarketingEventSubscriber>] Body param: List of HubSpot contacts to subscribe to the marketing event
+          # @param inputs [Array<HubSpotSDK::Models::Marketing::MarketingEventSubscriber>] Body param: List of HubSpot contacts to subscribe to the marketing event
           #
           # @param external_account_id [String] Query param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::BatchResponseSubscriberVidResponse]
+          # @return [HubSpotSDK::Models::Marketing::BatchResponseSubscriberVidResponse]
           #
-          # @see HubspotSDK::Models::Marketing::MarketingEvents::AttendanceCreateByExternalEventIDAndContactIDParams
+          # @see HubSpotSDK::Models::Marketing::MarketingEvents::AttendanceCreateByExternalEventIDAndContactIDParams
           def create_by_external_event_id_and_contact_id(subscriber_state, params)
             query_params = [:external_account_id]
             parsed, options =
-              HubspotSDK::Marketing::MarketingEvents::AttendanceCreateByExternalEventIDAndContactIDParams.dump_request(
+              HubSpotSDK::Marketing::MarketingEvents::AttendanceCreateByExternalEventIDAndContactIDParams.dump_request(
                 params
               )
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             external_event_id =
               parsed.delete(:external_event_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -154,7 +154,7 @@ module HubspotSDK
               ],
               query: query.transform_keys(external_account_id: "externalAccountId"),
               body: parsed.except(*query_params),
-              model: HubspotSDK::Marketing::BatchResponseSubscriberVidResponse,
+              model: HubSpotSDK::Marketing::BatchResponseSubscriberVidResponse,
               options: options
             )
           end
@@ -181,22 +181,22 @@ module HubspotSDK
           #
           # @param external_event_id [String] Path param
           #
-          # @param inputs [Array<HubspotSDK::Models::Marketing::MarketingEventEmailSubscriber>] Body param: List of marketing event details to create or update
+          # @param inputs [Array<HubSpotSDK::Models::Marketing::MarketingEventEmailSubscriber>] Body param: List of marketing event details to create or update
           #
           # @param external_account_id [String] Query param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::BatchResponseSubscriberEmailResponse]
+          # @return [HubSpotSDK::Models::Marketing::BatchResponseSubscriberEmailResponse]
           #
-          # @see HubspotSDK::Models::Marketing::MarketingEvents::AttendanceCreateByExternalEventIDAndEmailParams
+          # @see HubSpotSDK::Models::Marketing::MarketingEvents::AttendanceCreateByExternalEventIDAndEmailParams
           def create_by_external_event_id_and_email(subscriber_state, params)
             query_params = [:external_account_id]
             parsed, options =
-              HubspotSDK::Marketing::MarketingEvents::AttendanceCreateByExternalEventIDAndEmailParams.dump_request(
+              HubSpotSDK::Marketing::MarketingEvents::AttendanceCreateByExternalEventIDAndEmailParams.dump_request(
                 params
               )
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             external_event_id =
               parsed.delete(:external_event_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -210,14 +210,14 @@ module HubspotSDK
               ],
               query: query.transform_keys(external_account_id: "externalAccountId"),
               body: parsed.except(*query_params),
-              model: HubspotSDK::Marketing::BatchResponseSubscriberEmailResponse,
+              model: HubSpotSDK::Marketing::BatchResponseSubscriberEmailResponse,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class BoolPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class BoolPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::BoolPropertyOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::BoolPropertyOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::BoolPropertyOperation::Operator::TaggedSymbol
+            HubSpotSDK::Events::BoolPropertyOperation::Operator::TaggedSymbol
           )
         end
         attr_accessor :operator
@@ -30,7 +30,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::BoolPropertyOperation::PropertyType::TaggedSymbol
+            HubSpotSDK::Events::BoolPropertyOperation::PropertyType::TaggedSymbol
           )
         end
         attr_accessor :property_type
@@ -55,10 +55,10 @@ module HubspotSDK
             include_objects_with_no_value_set: T::Boolean,
             operation_type: String,
             operator:
-              HubspotSDK::Events::BoolPropertyOperation::Operator::OrSymbol,
+              HubSpotSDK::Events::BoolPropertyOperation::Operator::OrSymbol,
             operator_name: String,
             property_type:
-              HubspotSDK::Events::BoolPropertyOperation::PropertyType::OrSymbol,
+              HubSpotSDK::Events::BoolPropertyOperation::PropertyType::OrSymbol,
             value: T::Boolean,
             default_value: String,
             render_spec: String
@@ -82,10 +82,10 @@ module HubspotSDK
               include_objects_with_no_value_set: T::Boolean,
               operation_type: String,
               operator:
-                HubspotSDK::Events::BoolPropertyOperation::Operator::TaggedSymbol,
+                HubSpotSDK::Events::BoolPropertyOperation::Operator::TaggedSymbol,
               operator_name: String,
               property_type:
-                HubspotSDK::Events::BoolPropertyOperation::PropertyType::TaggedSymbol,
+                HubSpotSDK::Events::BoolPropertyOperation::PropertyType::TaggedSymbol,
               value: T::Boolean,
               default_value: String,
               render_spec: String
@@ -96,39 +96,39 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Events::BoolPropertyOperation::Operator)
+              T.all(Symbol, HubSpotSDK::Events::BoolPropertyOperation::Operator)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           HAS_EVER_BEEN_EQUAL_TO =
             T.let(
               :HAS_EVER_BEEN_EQUAL_TO,
-              HubspotSDK::Events::BoolPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::BoolPropertyOperation::Operator::TaggedSymbol
             )
           HAS_NEVER_BEEN_EQUAL_TO =
             T.let(
               :HAS_NEVER_BEEN_EQUAL_TO,
-              HubspotSDK::Events::BoolPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::BoolPropertyOperation::Operator::TaggedSymbol
             )
           IS_EQUAL_TO =
             T.let(
               :IS_EQUAL_TO,
-              HubspotSDK::Events::BoolPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::BoolPropertyOperation::Operator::TaggedSymbol
             )
           IS_NOT_EQUAL_TO =
             T.let(
               :IS_NOT_EQUAL_TO,
-              HubspotSDK::Events::BoolPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::BoolPropertyOperation::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::BoolPropertyOperation::Operator::TaggedSymbol
+                HubSpotSDK::Events::BoolPropertyOperation::Operator::TaggedSymbol
               ]
             )
           end
@@ -137,13 +137,13 @@ module HubspotSDK
         end
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::BoolPropertyOperation::PropertyType
+                HubSpotSDK::Events::BoolPropertyOperation::PropertyType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -151,13 +151,13 @@ module HubspotSDK
           BOOL =
             T.let(
               :bool,
-              HubspotSDK::Events::BoolPropertyOperation::PropertyType::TaggedSymbol
+              HubSpotSDK::Events::BoolPropertyOperation::PropertyType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::BoolPropertyOperation::PropertyType::TaggedSymbol
+                HubSpotSDK::Events::BoolPropertyOperation::PropertyType::TaggedSymbol
               ]
             )
           end

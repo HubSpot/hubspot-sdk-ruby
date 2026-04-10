@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class SimplePublicObjectInput < HubspotSDK::Internal::Type::BaseModel
+      class SimplePublicObjectInput < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute properties
         #   Key value pairs representing the properties of the object.
         #
         #   @return [Hash{Symbol=>String}]
-        required :properties, HubspotSDK::Internal::Type::HashOf[String]
+        required :properties, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!method initialize(properties:)
         #   Represents the input required to create or update a CRM object, containing an

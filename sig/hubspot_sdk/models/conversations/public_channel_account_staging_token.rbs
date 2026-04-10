@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type public_channel_account_staging_token =
@@ -9,10 +9,10 @@ module HubspotSDK
           inbox_id: Integer,
           user_id: Integer,
           account_name: String,
-          delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+          delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier
         }
 
-      class PublicChannelAccountStagingToken < HubspotSDK::Internal::Type::BaseModel
+      class PublicChannelAccountStagingToken < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor account_token: String
 
         attr_accessor created_at: Time
@@ -27,11 +27,11 @@ module HubspotSDK
 
         def account_name=: (String) -> String
 
-        attr_reader delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier?
+        attr_reader delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier?
 
         def delivery_identifier=: (
-          HubspotSDK::Conversations::PublicDeliveryIdentifier
-        ) -> HubspotSDK::Conversations::PublicDeliveryIdentifier
+          HubSpotSDK::Conversations::PublicDeliveryIdentifier
+        ) -> HubSpotSDK::Conversations::PublicDeliveryIdentifier
 
         def initialize: (
           account_token: String,
@@ -40,7 +40,7 @@ module HubspotSDK
           inbox_id: Integer,
           user_id: Integer,
           ?account_name: String,
-          ?delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+          ?delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier
         ) -> void
 
         def to_hash: -> {
@@ -50,7 +50,7 @@ module HubspotSDK
           inbox_id: Integer,
           user_id: Integer,
           account_name: String,
-          delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+          delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier
         }
       end
     end

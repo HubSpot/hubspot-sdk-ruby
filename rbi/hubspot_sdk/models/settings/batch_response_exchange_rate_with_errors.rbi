@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class BatchResponseExchangeRateWithErrors < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseExchangeRateWithErrors < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Settings::BatchResponseExchangeRateWithErrors,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Settings::BatchResponseExchangeRateWithErrors,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,7 +16,7 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :completed_at
 
-        sig { returns(T::Array[HubspotSDK::Settings::ExchangeRate]) }
+        sig { returns(T::Array[HubSpotSDK::Settings::ExchangeRate]) }
         attr_accessor :results
 
         # The datetime the of the request.
@@ -26,15 +26,15 @@ module HubspotSDK
         # The current status of the response (e.g. COMPLETED)
         sig do
           returns(
-            HubspotSDK::Settings::BatchResponseExchangeRateWithErrors::Status::OrSymbol
+            HubSpotSDK::Settings::BatchResponseExchangeRateWithErrors::Status::OrSymbol
           )
         end
         attr_accessor :status
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
+        sig { returns(T.nilable(T::Array[HubSpotSDK::StandardError])) }
         attr_reader :errors
 
-        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
+        sig { params(errors: T::Array[HubSpotSDK::StandardError::OrHash]).void }
         attr_writer :errors
 
         # The link to the next page with exchange rates.
@@ -61,11 +61,11 @@ module HubspotSDK
         sig do
           params(
             completed_at: Time,
-            results: T::Array[HubspotSDK::Settings::ExchangeRate::OrHash],
+            results: T::Array[HubSpotSDK::Settings::ExchangeRate::OrHash],
             started_at: Time,
             status:
-              HubspotSDK::Settings::BatchResponseExchangeRateWithErrors::Status::OrSymbol,
-            errors: T::Array[HubspotSDK::StandardError::OrHash],
+              HubSpotSDK::Settings::BatchResponseExchangeRateWithErrors::Status::OrSymbol,
+            errors: T::Array[HubSpotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
             requested_at: Time
@@ -93,11 +93,11 @@ module HubspotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubspotSDK::Settings::ExchangeRate],
+              results: T::Array[HubSpotSDK::Settings::ExchangeRate],
               started_at: Time,
               status:
-                HubspotSDK::Settings::BatchResponseExchangeRateWithErrors::Status::OrSymbol,
-              errors: T::Array[HubspotSDK::StandardError],
+                HubSpotSDK::Settings::BatchResponseExchangeRateWithErrors::Status::OrSymbol,
+              errors: T::Array[HubSpotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
               requested_at: Time
@@ -109,13 +109,13 @@ module HubspotSDK
 
         # The current status of the response (e.g. COMPLETED)
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Settings::BatchResponseExchangeRateWithErrors::Status
+                HubSpotSDK::Settings::BatchResponseExchangeRateWithErrors::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -123,28 +123,28 @@ module HubspotSDK
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::Settings::BatchResponseExchangeRateWithErrors::Status::TaggedSymbol
+              HubSpotSDK::Settings::BatchResponseExchangeRateWithErrors::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::Settings::BatchResponseExchangeRateWithErrors::Status::TaggedSymbol
+              HubSpotSDK::Settings::BatchResponseExchangeRateWithErrors::Status::TaggedSymbol
             )
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::Settings::BatchResponseExchangeRateWithErrors::Status::TaggedSymbol
+              HubSpotSDK::Settings::BatchResponseExchangeRateWithErrors::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::Settings::BatchResponseExchangeRateWithErrors::Status::TaggedSymbol
+              HubSpotSDK::Settings::BatchResponseExchangeRateWithErrors::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Settings::BatchResponseExchangeRateWithErrors::Status::TaggedSymbol
+                HubSpotSDK::Settings::BatchResponseExchangeRateWithErrors::Status::TaggedSymbol
               ]
             )
           end

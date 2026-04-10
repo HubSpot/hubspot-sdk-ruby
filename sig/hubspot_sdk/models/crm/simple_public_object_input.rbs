@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type simple_public_object_input = { properties: ::Hash[Symbol, String] }
 
-      class SimplePublicObjectInput < HubspotSDK::Internal::Type::BaseModel
+      class SimplePublicObjectInput < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor properties: ::Hash[Symbol, String]
 
         def initialize: (properties: ::Hash[Symbol, String]) -> void

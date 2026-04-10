@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicFontStyle < HubspotSDK::Internal::Type::BaseModel
+      class PublicFontStyle < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute bold
         #
         #   @return [Boolean, nil]
-        optional :bold, HubspotSDK::Internal::Type::Boolean
+        optional :bold, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute color
         #
@@ -22,7 +22,7 @@ module HubspotSDK
         # @!attribute italic
         #
         #   @return [Boolean, nil]
-        optional :italic, HubspotSDK::Internal::Type::Boolean
+        optional :italic, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute size
         #
@@ -32,7 +32,7 @@ module HubspotSDK
         # @!attribute underline
         #
         #   @return [Boolean, nil]
-        optional :underline, HubspotSDK::Internal::Type::Boolean
+        optional :underline, HubSpotSDK::Internal::Type::Boolean
 
         # @!method initialize(bold: nil, color: nil, font: nil, italic: nil, size: nil, underline: nil)
         #   @param bold [Boolean]

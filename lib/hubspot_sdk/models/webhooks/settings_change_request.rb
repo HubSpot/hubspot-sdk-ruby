@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class SettingsChangeRequest < HubspotSDK::Internal::Type::BaseModel
+      class SettingsChangeRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute target_url
         #   A publicly available URL for Hubspot to call where event payloads will be
         #   delivered. See [link-so-some-doc](#) for details about the format of these event
@@ -14,16 +14,16 @@ module HubspotSDK
 
         # @!attribute throttling
         #
-        #   @return [HubspotSDK::Models::Webhooks::ThrottlingSettings]
-        required :throttling, -> { HubspotSDK::Webhooks::ThrottlingSettings }
+        #   @return [HubSpotSDK::Models::Webhooks::ThrottlingSettings]
+        required :throttling, -> { HubSpotSDK::Webhooks::ThrottlingSettings }
 
         # @!method initialize(target_url:, throttling:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Webhooks::SettingsChangeRequest} for more details.
+        #   {HubSpotSDK::Models::Webhooks::SettingsChangeRequest} for more details.
         #
         #   @param target_url [String] A publicly available URL for Hubspot to call where event payloads will be delive
         #
-        #   @param throttling [HubspotSDK::Models::Webhooks::ThrottlingSettings]
+        #   @param throttling [HubSpotSDK::Models::Webhooks::ThrottlingSettings]
       end
     end
   end

@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Associations
-        class BatchCreateDefaultParams < HubspotSDK::Models::Crm::BatchInputPublicDefaultAssociationMultiPost
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class BatchCreateDefaultParams < HubSpotSDK::Models::Crm::BatchInputPublicDefaultAssociationMultiPost
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Associations::BatchCreateDefaultParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Associations::BatchCreateDefaultParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -26,7 +26,7 @@ module HubspotSDK
             params(
               from_object_type: String,
               to_object_type: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(from_object_type:, to_object_type:, request_options: {})
@@ -37,7 +37,7 @@ module HubspotSDK
               {
                 from_object_type: String,
                 to_object_type: String,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

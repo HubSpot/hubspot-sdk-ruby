@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_campaign_input = { properties: ::Hash[Symbol, String] }
 
-      class PublicCampaignInput < HubspotSDK::Internal::Type::BaseModel
+      class PublicCampaignInput < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor properties: ::Hash[Symbol, String]
 
         def initialize: (properties: ::Hash[Symbol, String]) -> void

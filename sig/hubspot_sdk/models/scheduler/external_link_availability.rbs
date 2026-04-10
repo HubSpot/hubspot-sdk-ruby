@@ -1,25 +1,25 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_link_availability =
         {
           has_more: bool,
-          link_availability_by_duration: ::Hash[Symbol, HubspotSDK::Scheduler::ExternalLinkAvailabilityForDuration]
+          link_availability_by_duration: ::Hash[Symbol, HubSpotSDK::Scheduler::ExternalLinkAvailabilityForDuration]
         }
 
-      class ExternalLinkAvailability < HubspotSDK::Internal::Type::BaseModel
+      class ExternalLinkAvailability < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor has_more: bool
 
-        attr_accessor link_availability_by_duration: ::Hash[Symbol, HubspotSDK::Scheduler::ExternalLinkAvailabilityForDuration]
+        attr_accessor link_availability_by_duration: ::Hash[Symbol, HubSpotSDK::Scheduler::ExternalLinkAvailabilityForDuration]
 
         def initialize: (
           has_more: bool,
-          link_availability_by_duration: ::Hash[Symbol, HubspotSDK::Scheduler::ExternalLinkAvailabilityForDuration]
+          link_availability_by_duration: ::Hash[Symbol, HubSpotSDK::Scheduler::ExternalLinkAvailabilityForDuration]
         ) -> void
 
         def to_hash: -> {
           has_more: bool,
-          link_availability_by_duration: ::Hash[Symbol, HubspotSDK::Scheduler::ExternalLinkAvailabilityForDuration]
+          link_availability_by_duration: ::Hash[Symbol, HubSpotSDK::Scheduler::ExternalLinkAvailabilityForDuration]
         }
       end
     end

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicRangedTimeOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicRangedTimeOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicRangedTimeOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicRangedTimeOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -21,9 +21,9 @@ module HubspotSDK
         sig do
           returns(
             T.any(
-              HubspotSDK::Crm::PublicDatePoint,
-              HubspotSDK::Crm::PublicIndexedTimePoint,
-              HubspotSDK::Crm::PublicPropertyReferencedTime
+              HubSpotSDK::Crm::PublicDatePoint,
+              HubSpotSDK::Crm::PublicIndexedTimePoint,
+              HubSpotSDK::Crm::PublicPropertyReferencedTime
             )
           )
         end
@@ -40,7 +40,7 @@ module HubspotSDK
 
         # Specifies the type of operation (TIME_RANGED).
         sig do
-          returns(HubspotSDK::Crm::PublicRangedTimeOperation::Type::OrSymbol)
+          returns(HubSpotSDK::Crm::PublicRangedTimeOperation::Type::OrSymbol)
         end
         attr_accessor :type
 
@@ -48,9 +48,9 @@ module HubspotSDK
         sig do
           returns(
             T.any(
-              HubspotSDK::Crm::PublicDatePoint,
-              HubspotSDK::Crm::PublicIndexedTimePoint,
-              HubspotSDK::Crm::PublicPropertyReferencedTime
+              HubSpotSDK::Crm::PublicDatePoint,
+              HubSpotSDK::Crm::PublicIndexedTimePoint,
+              HubSpotSDK::Crm::PublicPropertyReferencedTime
             )
           )
         end
@@ -82,18 +82,18 @@ module HubspotSDK
             include_objects_with_no_value_set: T::Boolean,
             lower_bound_time_point:
               T.any(
-                HubspotSDK::Crm::PublicDatePoint::OrHash,
-                HubspotSDK::Crm::PublicIndexedTimePoint::OrHash,
-                HubspotSDK::Crm::PublicPropertyReferencedTime::OrHash
+                HubSpotSDK::Crm::PublicDatePoint::OrHash,
+                HubSpotSDK::Crm::PublicIndexedTimePoint::OrHash,
+                HubSpotSDK::Crm::PublicPropertyReferencedTime::OrHash
               ),
             operation_type: String,
             operator: String,
-            type: HubspotSDK::Crm::PublicRangedTimeOperation::Type::OrSymbol,
+            type: HubSpotSDK::Crm::PublicRangedTimeOperation::Type::OrSymbol,
             upper_bound_time_point:
               T.any(
-                HubspotSDK::Crm::PublicDatePoint::OrHash,
-                HubspotSDK::Crm::PublicIndexedTimePoint::OrHash,
-                HubspotSDK::Crm::PublicPropertyReferencedTime::OrHash
+                HubSpotSDK::Crm::PublicDatePoint::OrHash,
+                HubSpotSDK::Crm::PublicIndexedTimePoint::OrHash,
+                HubSpotSDK::Crm::PublicPropertyReferencedTime::OrHash
               ),
             lower_bound_endpoint_behavior: String,
             property_parser: String,
@@ -130,18 +130,18 @@ module HubspotSDK
               include_objects_with_no_value_set: T::Boolean,
               lower_bound_time_point:
                 T.any(
-                  HubspotSDK::Crm::PublicDatePoint,
-                  HubspotSDK::Crm::PublicIndexedTimePoint,
-                  HubspotSDK::Crm::PublicPropertyReferencedTime
+                  HubSpotSDK::Crm::PublicDatePoint,
+                  HubSpotSDK::Crm::PublicIndexedTimePoint,
+                  HubSpotSDK::Crm::PublicPropertyReferencedTime
                 ),
               operation_type: String,
               operator: String,
-              type: HubspotSDK::Crm::PublicRangedTimeOperation::Type::OrSymbol,
+              type: HubSpotSDK::Crm::PublicRangedTimeOperation::Type::OrSymbol,
               upper_bound_time_point:
                 T.any(
-                  HubspotSDK::Crm::PublicDatePoint,
-                  HubspotSDK::Crm::PublicIndexedTimePoint,
-                  HubspotSDK::Crm::PublicPropertyReferencedTime
+                  HubSpotSDK::Crm::PublicDatePoint,
+                  HubSpotSDK::Crm::PublicIndexedTimePoint,
+                  HubSpotSDK::Crm::PublicPropertyReferencedTime
                 ),
               lower_bound_endpoint_behavior: String,
               property_parser: String,
@@ -154,21 +154,21 @@ module HubspotSDK
 
         # Defines the lower bound time point for the operation.
         module LowerBoundTimePoint
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::PublicDatePoint,
-                HubspotSDK::Crm::PublicIndexedTimePoint,
-                HubspotSDK::Crm::PublicPropertyReferencedTime
+                HubSpotSDK::Crm::PublicDatePoint,
+                HubSpotSDK::Crm::PublicIndexedTimePoint,
+                HubSpotSDK::Crm::PublicPropertyReferencedTime
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicRangedTimeOperation::LowerBoundTimePoint::Variants
+                HubSpotSDK::Crm::PublicRangedTimeOperation::LowerBoundTimePoint::Variants
               ]
             )
           end
@@ -178,24 +178,24 @@ module HubspotSDK
 
         # Specifies the type of operation (TIME_RANGED).
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PublicRangedTimeOperation::Type)
+              T.all(Symbol, HubSpotSDK::Crm::PublicRangedTimeOperation::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           TIME_RANGED =
             T.let(
               :TIME_RANGED,
-              HubspotSDK::Crm::PublicRangedTimeOperation::Type::TaggedSymbol
+              HubSpotSDK::Crm::PublicRangedTimeOperation::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicRangedTimeOperation::Type::TaggedSymbol
+                HubSpotSDK::Crm::PublicRangedTimeOperation::Type::TaggedSymbol
               ]
             )
           end
@@ -205,21 +205,21 @@ module HubspotSDK
 
         # Defines the upper bound time point for the operation.
         module UpperBoundTimePoint
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::PublicDatePoint,
-                HubspotSDK::Crm::PublicIndexedTimePoint,
-                HubspotSDK::Crm::PublicPropertyReferencedTime
+                HubSpotSDK::Crm::PublicDatePoint,
+                HubSpotSDK::Crm::PublicIndexedTimePoint,
+                HubSpotSDK::Crm::PublicPropertyReferencedTime
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicRangedTimeOperation::UpperBoundTimePoint::Variants
+                HubSpotSDK::Crm::PublicRangedTimeOperation::UpperBoundTimePoint::Variants
               ]
             )
           end

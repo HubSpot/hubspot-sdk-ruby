@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicEmailEventFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailEventFilter < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicEmailEventFilter,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicEmailEventFilter,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -22,7 +22,7 @@ module HubspotSDK
 
         # Indicates the type of filter (EMAIL_EVENT).
         sig do
-          returns(HubspotSDK::Crm::PublicEmailEventFilter::FilterType::OrSymbol)
+          returns(HubSpotSDK::Crm::PublicEmailEventFilter::FilterType::OrSymbol)
         end
         attr_accessor :filter_type
 
@@ -35,7 +35,7 @@ module HubspotSDK
         # RECEIVED, RECEIVED_BUT_NOT_OPENED, REPLIED, SENT, SENT_BUT_LINK_NOT_CLICKED,
         # SENT_BUT_NOT_RECEIVED, UNSUBSCRIBED).
         sig do
-          returns(HubspotSDK::Crm::PublicEmailEventFilter::Operator::OrSymbol)
+          returns(HubSpotSDK::Crm::PublicEmailEventFilter::Operator::OrSymbol)
         end
         attr_accessor :operator
 
@@ -51,15 +51,15 @@ module HubspotSDK
           returns(
             T.nilable(
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy,
-                HubspotSDK::Crm::PublicTimePointOperation,
-                HubspotSDK::Crm::PublicRangedTimeOperation
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+                HubSpotSDK::Crm::PublicTimePointOperation,
+                HubSpotSDK::Crm::PublicRangedTimeOperation
               )
             )
           )
@@ -70,15 +70,15 @@ module HubspotSDK
           params(
             pruning_refine_by:
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
-                HubspotSDK::Crm::PublicTimePointOperation::OrHash,
-                HubspotSDK::Crm::PublicRangedTimeOperation::OrHash
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicTimePointOperation::OrHash,
+                HubSpotSDK::Crm::PublicRangedTimeOperation::OrHash
               )
           ).void
         end
@@ -89,22 +89,22 @@ module HubspotSDK
             app_id: String,
             email_id: String,
             filter_type:
-              HubspotSDK::Crm::PublicEmailEventFilter::FilterType::OrSymbol,
+              HubSpotSDK::Crm::PublicEmailEventFilter::FilterType::OrSymbol,
             level: String,
             operator:
-              HubspotSDK::Crm::PublicEmailEventFilter::Operator::OrSymbol,
+              HubSpotSDK::Crm::PublicEmailEventFilter::Operator::OrSymbol,
             click_url: String,
             pruning_refine_by:
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
-                HubspotSDK::Crm::PublicTimePointOperation::OrHash,
-                HubspotSDK::Crm::PublicRangedTimeOperation::OrHash
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicTimePointOperation::OrHash,
+                HubSpotSDK::Crm::PublicRangedTimeOperation::OrHash
               )
           ).returns(T.attached_class)
         end
@@ -135,22 +135,22 @@ module HubspotSDK
               app_id: String,
               email_id: String,
               filter_type:
-                HubspotSDK::Crm::PublicEmailEventFilter::FilterType::OrSymbol,
+                HubSpotSDK::Crm::PublicEmailEventFilter::FilterType::OrSymbol,
               level: String,
               operator:
-                HubspotSDK::Crm::PublicEmailEventFilter::Operator::OrSymbol,
+                HubSpotSDK::Crm::PublicEmailEventFilter::Operator::OrSymbol,
               click_url: String,
               pruning_refine_by:
                 T.any(
-                  HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-                  HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-                  HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-                  HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAllHistoryRefineBy,
-                  HubspotSDK::Crm::PublicTimePointOperation,
-                  HubspotSDK::Crm::PublicRangedTimeOperation
+                  HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+                  HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+                  HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+                  HubSpotSDK::Crm::PublicTimePointOperation,
+                  HubSpotSDK::Crm::PublicRangedTimeOperation
                 )
             }
           )
@@ -160,24 +160,24 @@ module HubspotSDK
 
         # Indicates the type of filter (EMAIL_EVENT).
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PublicEmailEventFilter::FilterType)
+              T.all(Symbol, HubSpotSDK::Crm::PublicEmailEventFilter::FilterType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           EMAIL_EVENT =
             T.let(
               :EMAIL_EVENT,
-              HubspotSDK::Crm::PublicEmailEventFilter::FilterType::TaggedSymbol
+              HubSpotSDK::Crm::PublicEmailEventFilter::FilterType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicEmailEventFilter::FilterType::TaggedSymbol
+                HubSpotSDK::Crm::PublicEmailEventFilter::FilterType::TaggedSymbol
               ]
             )
           end
@@ -190,84 +190,84 @@ module HubspotSDK
         # RECEIVED, RECEIVED_BUT_NOT_OPENED, REPLIED, SENT, SENT_BUT_LINK_NOT_CLICKED,
         # SENT_BUT_NOT_RECEIVED, UNSUBSCRIBED).
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PublicEmailEventFilter::Operator)
+              T.all(Symbol, HubSpotSDK::Crm::PublicEmailEventFilter::Operator)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           BOUNCED =
             T.let(
               :BOUNCED,
-              HubspotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
+              HubSpotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
             )
           LINK_CLICKED =
             T.let(
               :LINK_CLICKED,
-              HubspotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
+              HubSpotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
             )
           MARKED_SPAM =
             T.let(
               :MARKED_SPAM,
-              HubspotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
+              HubSpotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
             )
           OPENED =
             T.let(
               :OPENED,
-              HubspotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
+              HubSpotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
             )
           OPENED_BUT_LINK_NOT_CLICKED =
             T.let(
               :OPENED_BUT_LINK_NOT_CLICKED,
-              HubspotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
+              HubSpotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
             )
           OPENED_BUT_NOT_REPLIED =
             T.let(
               :OPENED_BUT_NOT_REPLIED,
-              HubspotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
+              HubSpotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
             )
           RECEIVED =
             T.let(
               :RECEIVED,
-              HubspotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
+              HubSpotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
             )
           RECEIVED_BUT_NOT_OPENED =
             T.let(
               :RECEIVED_BUT_NOT_OPENED,
-              HubspotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
+              HubSpotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
             )
           REPLIED =
             T.let(
               :REPLIED,
-              HubspotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
+              HubSpotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
             )
           SENT =
             T.let(
               :SENT,
-              HubspotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
+              HubSpotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
             )
           SENT_BUT_LINK_NOT_CLICKED =
             T.let(
               :SENT_BUT_LINK_NOT_CLICKED,
-              HubspotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
+              HubSpotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
             )
           SENT_BUT_NOT_RECEIVED =
             T.let(
               :SENT_BUT_NOT_RECEIVED,
-              HubspotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
+              HubSpotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
             )
           UNSUBSCRIBED =
             T.let(
               :UNSUBSCRIBED,
-              HubspotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
+              HubSpotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
+                HubSpotSDK::Crm::PublicEmailEventFilter::Operator::TaggedSymbol
               ]
             )
           end
@@ -277,27 +277,27 @@ module HubspotSDK
 
         # Specifies the criteria for refining the filter by pruning.
         module PruningRefineBy
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy,
-                HubspotSDK::Crm::PublicTimePointOperation,
-                HubspotSDK::Crm::PublicRangedTimeOperation
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+                HubSpotSDK::Crm::PublicTimePointOperation,
+                HubSpotSDK::Crm::PublicRangedTimeOperation
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicEmailEventFilter::PruningRefineBy::Variants
+                HubSpotSDK::Crm::PublicEmailEventFilter::PruningRefineBy::Variants
               ]
             )
           end

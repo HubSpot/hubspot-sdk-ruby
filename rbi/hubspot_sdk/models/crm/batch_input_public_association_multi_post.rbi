@@ -1,24 +1,24 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchInputPublicAssociationMultiPost < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputPublicAssociationMultiPost < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::BatchInputPublicAssociationMultiPost,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::BatchInputPublicAssociationMultiPost,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Crm::PublicAssociationMultiPost]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::PublicAssociationMultiPost]) }
         attr_accessor :inputs
 
         sig do
           params(
             inputs:
-              T::Array[HubspotSDK::Crm::PublicAssociationMultiPost::OrHash]
+              T::Array[HubSpotSDK::Crm::PublicAssociationMultiPost::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(inputs:)
@@ -26,7 +26,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { inputs: T::Array[HubspotSDK::Crm::PublicAssociationMultiPost] }
+            { inputs: T::Array[HubSpotSDK::Crm::PublicAssociationMultiPost] }
           )
         end
         def to_hash

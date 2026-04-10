@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type media_bridge_get_property_params =
@@ -9,11 +9,11 @@ module HubspotSDK
           archived: bool,
           properties: String
         }
-        & HubspotSDK::Internal::Type::request_parameters
+        & HubSpotSDK::Internal::Type::request_parameters
 
-      class MediaBridgeGetPropertyParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class MediaBridgeGetPropertyParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         attr_accessor app_id: Integer
 
@@ -35,7 +35,7 @@ module HubspotSDK
           property_name: String,
           ?archived: bool,
           ?properties: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
@@ -44,7 +44,7 @@ module HubspotSDK
           property_name: String,
           archived: bool,
           properties: String,
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
       end
     end

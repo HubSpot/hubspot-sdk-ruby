@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicTimeOffset < HubspotSDK::Internal::Type::BaseModel
+      class PublicTimeOffset < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicTimeOffset,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicTimeOffset,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

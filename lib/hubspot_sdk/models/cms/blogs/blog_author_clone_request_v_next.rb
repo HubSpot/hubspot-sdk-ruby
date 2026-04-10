@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        class BlogAuthorCloneRequestVNext < HubspotSDK::Internal::Type::BaseModel
+        class BlogAuthorCloneRequestVNext < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute id
           #   ID of the object to be cloned.
           #
@@ -13,8 +13,8 @@ module HubspotSDK
 
           # @!attribute blog_author
           #
-          #   @return [HubspotSDK::Models::Cms::Blogs::BlogAuthor]
-          required :blog_author, -> { HubspotSDK::Cms::Blogs::BlogAuthor }, api_name: :blogAuthor
+          #   @return [HubSpotSDK::Models::Cms::Blogs::BlogAuthor]
+          required :blog_author, -> { HubSpotSDK::Cms::Blogs::BlogAuthor }, api_name: :blogAuthor
 
           # @!attribute language
           #   Language of newly cloned object.
@@ -31,7 +31,7 @@ module HubspotSDK
           # @!method initialize(id:, blog_author:, language: nil, primary_language: nil)
           #   @param id [String] ID of the object to be cloned.
           #
-          #   @param blog_author [HubspotSDK::Models::Cms::Blogs::BlogAuthor]
+          #   @param blog_author [HubSpotSDK::Models::Cms::Blogs::BlogAuthor]
           #
           #   @param language [String] Language of newly cloned object.
           #

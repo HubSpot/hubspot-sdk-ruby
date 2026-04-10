@@ -2,27 +2,27 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::Account::ActivityTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Account::ActivityTest < HubSpotSDK::Test::ResourceTest
   def test_list_audit_logs
     skip("Mock server tests are disabled")
 
     response = @hubspot.account.activity.list_audit_logs
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Account::PublicAPIUserActionEvent
+      row => HubSpotSDK::Account::PublicAPIUserActionEvent
     end
 
     assert_pattern do
       row => {
         id: String,
-        acting_user: HubspotSDK::Account::ActingUser,
+        acting_user: HubSpotSDK::Account::ActingUser,
         action: String,
         category: String,
         occurred_at: Time,
@@ -38,21 +38,21 @@ class HubspotSDK::Test::Resources::Account::ActivityTest < HubspotSDK::Test::Res
     response = @hubspot.account.activity.list_login_activities
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Account::PublicLoginAudit
+      row => HubSpotSDK::Account::PublicLoginAudit
     end
 
     assert_pattern do
       row => {
         id: String,
         login_at: Time,
-        login_succeeded: HubspotSDK::Internal::Type::Boolean,
+        login_succeeded: HubSpotSDK::Internal::Type::Boolean,
         country_code: String | nil,
         email: String | nil,
         ip_address: String | nil,
@@ -70,21 +70,21 @@ class HubspotSDK::Test::Resources::Account::ActivityTest < HubspotSDK::Test::Res
     response = @hubspot.account.activity.list_security_activities
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Account::HydratedCriticalAction
+      row => HubSpotSDK::Account::HydratedCriticalAction
     end
 
     assert_pattern do
       row => {
         id: String,
         created_at: Time,
-        type: HubspotSDK::Account::HydratedCriticalAction::Type,
+        type: HubSpotSDK::Account::HydratedCriticalAction::Type,
         user_id: Integer,
         acting_user: String | nil,
         country_code: String | nil,

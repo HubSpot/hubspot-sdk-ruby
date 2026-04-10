@@ -1,33 +1,33 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class BatchReadInputPropertyName < HubspotSDK::Internal::Type::BaseModel
+    class BatchReadInputPropertyName < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute archived
       #
       #   @return [Boolean]
-      required :archived, HubspotSDK::Internal::Type::Boolean
+      required :archived, HubSpotSDK::Internal::Type::Boolean
 
       # @!attribute data_sensitivity
       #
-      #   @return [Symbol, HubspotSDK::Models::BatchReadInputPropertyName::DataSensitivity]
+      #   @return [Symbol, HubSpotSDK::Models::BatchReadInputPropertyName::DataSensitivity]
       required :data_sensitivity,
-               enum: -> { HubspotSDK::BatchReadInputPropertyName::DataSensitivity },
+               enum: -> { HubSpotSDK::BatchReadInputPropertyName::DataSensitivity },
                api_name: :dataSensitivity
 
       # @!attribute inputs
       #
-      #   @return [Array<HubspotSDK::Models::PropertyName>]
-      required :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::PropertyName] }
+      #   @return [Array<HubSpotSDK::Models::PropertyName>]
+      required :inputs, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::PropertyName] }
 
       # @!method initialize(archived:, data_sensitivity:, inputs:)
       #   @param archived [Boolean]
-      #   @param data_sensitivity [Symbol, HubspotSDK::Models::BatchReadInputPropertyName::DataSensitivity]
-      #   @param inputs [Array<HubspotSDK::Models::PropertyName>]
+      #   @param data_sensitivity [Symbol, HubSpotSDK::Models::BatchReadInputPropertyName::DataSensitivity]
+      #   @param inputs [Array<HubSpotSDK::Models::PropertyName>]
 
-      # @see HubspotSDK::Models::BatchReadInputPropertyName#data_sensitivity
+      # @see HubSpotSDK::Models::BatchReadInputPropertyName#data_sensitivity
       module DataSensitivity
-        extend HubspotSDK::Internal::Type::Enum
+        extend HubSpotSDK::Internal::Type::Enum
 
         HIGHLY_SENSITIVE = :highly_sensitive
         NON_SENSITIVE = :non_sensitive

@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class RgbaColor < HubspotSDK::Internal::Type::BaseModel
+      class RgbaColor < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::RgbaColor, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::RgbaColor, HubSpotSDK::Internal::AnyHash)
           end
 
         # Alpha.

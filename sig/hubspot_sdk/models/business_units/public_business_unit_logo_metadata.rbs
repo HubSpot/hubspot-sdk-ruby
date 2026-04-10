@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module BusinessUnits
       type public_business_unit_logo_metadata =
         { logo_alt_text: String, logo_url: String, resized_url: String }
 
-      class PublicBusinessUnitLogoMetadata < HubspotSDK::Internal::Type::BaseModel
+      class PublicBusinessUnitLogoMetadata < HubSpotSDK::Internal::Type::BaseModel
         attr_reader logo_alt_text: String?
 
         def logo_alt_text=: (String) -> String

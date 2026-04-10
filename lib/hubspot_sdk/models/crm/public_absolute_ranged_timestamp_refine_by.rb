@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicAbsoluteRangedTimestampRefineBy < HubspotSDK::Internal::Type::BaseModel
+      class PublicAbsoluteRangedTimestampRefineBy < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute lower_timestamp
         #   Lower range timestamp of refinement criteria
         #
@@ -19,8 +19,8 @@ module HubspotSDK
         # @!attribute type
         #   type of refine by criteria (ABSOLUTE_RANGED)
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy::Type]
-        required :type, enum: -> { HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy::Type]
+        required :type, enum: -> { HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::Type }
 
         # @!attribute upper_timestamp
         #   Upper range timestamp of refinement criteria
@@ -33,15 +33,15 @@ module HubspotSDK
         #
         #   @param range_type [String] Type of range of refinement critaria (BETWEEN, NOT_BETWEEN)
         #
-        #   @param type [Symbol, HubspotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy::Type] type of refine by criteria (ABSOLUTE_RANGED)
+        #   @param type [Symbol, HubSpotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy::Type] type of refine by criteria (ABSOLUTE_RANGED)
         #
         #   @param upper_timestamp [Integer] Upper range timestamp of refinement criteria
 
         # type of refine by criteria (ABSOLUTE_RANGED)
         #
-        # @see HubspotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy#type
+        # @see HubSpotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABSOLUTE_RANGED = :ABSOLUTE_RANGED
 

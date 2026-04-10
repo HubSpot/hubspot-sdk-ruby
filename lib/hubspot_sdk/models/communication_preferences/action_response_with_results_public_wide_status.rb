@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      # @see HubspotSDK::Resources::CommunicationPreferences#get_unsubscribe_all_status
-      class ActionResponseWithResultsPublicWideStatus < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::CommunicationPreferences#get_unsubscribe_all_status
+      class ActionResponseWithResultsPublicWideStatus < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   The date and time when the operation was completed.
         #
@@ -14,9 +14,9 @@ module HubspotSDK
         # @!attribute results
         #   An array containing the results of the operation.
         #
-        #   @return [Array<HubspotSDK::Models::CommunicationPreferences::PublicWideStatus>]
+        #   @return [Array<HubSpotSDK::Models::CommunicationPreferences::PublicWideStatus>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CommunicationPreferences::PublicWideStatus] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::CommunicationPreferences::PublicWideStatus] }
 
         # @!attribute started_at
         #   The date and time when the operation started.
@@ -28,22 +28,22 @@ module HubspotSDK
         #   The current status of the operation, which can be PENDING, PROCESSING, CANCELED,
         #   or COMPLETE.
         #
-        #   @return [Symbol, HubspotSDK::Models::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus::Status]
+        #   @return [Symbol, HubSpotSDK::Models::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus::Status]
         required :status,
-                 enum: -> { HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus::Status }
+                 enum: -> { HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus::Status }
 
         # @!attribute errors
         #   An array of error objects detailing any issues encountered during the operation.
         #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
+        #   @return [Array<HubSpotSDK::Models::StandardError>, nil]
+        optional :errors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError] }
 
         # @!attribute links
         #   An object containing related links, where each key is a link name and each value
         #   is a URL.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute num_errors
         #   The number of errors encountered during the operation.
@@ -59,18 +59,18 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus}
+        #   {HubSpotSDK::Models::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus}
         #   for more details.
         #
         #   @param completed_at [Time] The date and time when the operation was completed.
         #
-        #   @param results [Array<HubspotSDK::Models::CommunicationPreferences::PublicWideStatus>] An array containing the results of the operation.
+        #   @param results [Array<HubSpotSDK::Models::CommunicationPreferences::PublicWideStatus>] An array containing the results of the operation.
         #
         #   @param started_at [Time] The date and time when the operation started.
         #
-        #   @param status [Symbol, HubspotSDK::Models::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus::Status] The current status of the operation, which can be PENDING, PROCESSING, CANCELED,
+        #   @param status [Symbol, HubSpotSDK::Models::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus::Status] The current status of the operation, which can be PENDING, PROCESSING, CANCELED,
         #
-        #   @param errors [Array<HubspotSDK::Models::StandardError>] An array of error objects detailing any issues encountered during the operation.
+        #   @param errors [Array<HubSpotSDK::Models::StandardError>] An array of error objects detailing any issues encountered during the operation.
         #
         #   @param links [Hash{Symbol=>String}] An object containing related links, where each key is a link name and each value
         #
@@ -81,9 +81,9 @@ module HubspotSDK
         # The current status of the operation, which can be PENDING, PROCESSING, CANCELED,
         # or COMPLETE.
         #
-        # @see HubspotSDK::Models::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus#status
+        # @see HubSpotSDK::Models::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

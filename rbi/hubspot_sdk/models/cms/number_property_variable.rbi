@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class NumberPropertyVariable < HubspotSDK::Internal::Type::BaseModel
+      class NumberPropertyVariable < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::NumberPropertyVariable,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::NumberPropertyVariable,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::Cms::NumberPropertyVariable::Operator::TaggedSymbol
+            HubSpotSDK::Cms::NumberPropertyVariable::Operator::TaggedSymbol
           )
         end
         attr_accessor :operator
@@ -34,7 +34,7 @@ module HubspotSDK
         sig do
           params(
             operator:
-              HubspotSDK::Cms::NumberPropertyVariable::Operator::OrSymbol,
+              HubSpotSDK::Cms::NumberPropertyVariable::Operator::OrSymbol,
             property_name: String,
             value: Float
           ).returns(T.attached_class)
@@ -46,7 +46,7 @@ module HubspotSDK
           override.returns(
             {
               operator:
-                HubspotSDK::Cms::NumberPropertyVariable::Operator::TaggedSymbol,
+                HubSpotSDK::Cms::NumberPropertyVariable::Operator::TaggedSymbol,
               property_name: String,
               value: Float
             }
@@ -56,24 +56,24 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::NumberPropertyVariable::Operator)
+              T.all(Symbol, HubSpotSDK::Cms::NumberPropertyVariable::Operator)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           NUMBER_PROPERTY_VARIABLE =
             T.let(
               :NUMBER_PROPERTY_VARIABLE,
-              HubspotSDK::Cms::NumberPropertyVariable::Operator::TaggedSymbol
+              HubSpotSDK::Cms::NumberPropertyVariable::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::NumberPropertyVariable::Operator::TaggedSymbol
+                HubSpotSDK::Cms::NumberPropertyVariable::Operator::TaggedSymbol
               ]
             )
           end

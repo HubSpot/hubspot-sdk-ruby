@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicFile < HubspotSDK::Internal::Type::BaseModel
+      class PublicFile < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute file_id
         #
         #   @return [String]
@@ -11,15 +11,15 @@ module HubspotSDK
 
         # @!attribute file_usage_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Conversations::PublicFile::FileUsageType]
+        #   @return [Symbol, HubSpotSDK::Models::Conversations::PublicFile::FileUsageType]
         required :file_usage_type,
-                 enum: -> { HubspotSDK::Conversations::PublicFile::FileUsageType },
+                 enum: -> { HubSpotSDK::Conversations::PublicFile::FileUsageType },
                  api_name: :fileUsageType
 
         # @!attribute type
         #
-        #   @return [Symbol, HubspotSDK::Models::Conversations::PublicFile::Type]
-        required :type, enum: -> { HubspotSDK::Conversations::PublicFile::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Conversations::PublicFile::Type]
+        required :type, enum: -> { HubSpotSDK::Conversations::PublicFile::Type }
 
         # @!attribute name
         #
@@ -33,14 +33,14 @@ module HubspotSDK
 
         # @!method initialize(file_id:, file_usage_type:, type:, name: nil, url: nil)
         #   @param file_id [String]
-        #   @param file_usage_type [Symbol, HubspotSDK::Models::Conversations::PublicFile::FileUsageType]
-        #   @param type [Symbol, HubspotSDK::Models::Conversations::PublicFile::Type]
+        #   @param file_usage_type [Symbol, HubSpotSDK::Models::Conversations::PublicFile::FileUsageType]
+        #   @param type [Symbol, HubSpotSDK::Models::Conversations::PublicFile::Type]
         #   @param name [String]
         #   @param url [String]
 
-        # @see HubspotSDK::Models::Conversations::PublicFile#file_usage_type
+        # @see HubSpotSDK::Models::Conversations::PublicFile#file_usage_type
         module FileUsageType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUDIO = :AUDIO
           IMAGE = :IMAGE
@@ -52,9 +52,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Conversations::PublicFile#type
+        # @see HubSpotSDK::Models::Conversations::PublicFile#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           FILE = :FILE
 

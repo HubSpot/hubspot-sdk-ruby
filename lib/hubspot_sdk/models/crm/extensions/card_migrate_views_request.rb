@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class CardMigrateViewsRequest < HubspotSDK::Internal::Type::BaseModel
+        class CardMigrateViewsRequest < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute app_card_id
           #
           #   @return [Integer]

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicQuarterReference < HubspotSDK::Internal::Type::BaseModel
+      class PublicQuarterReference < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicQuarterReference,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicQuarterReference,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -23,7 +23,7 @@ module HubspotSDK
         # Indicates the type of reference (QUARTER).
         sig do
           returns(
-            HubspotSDK::Crm::PublicQuarterReference::ReferenceType::OrSymbol
+            HubSpotSDK::Crm::PublicQuarterReference::ReferenceType::OrSymbol
           )
         end
         attr_accessor :reference_type
@@ -61,7 +61,7 @@ module HubspotSDK
             day: Integer,
             month: Integer,
             reference_type:
-              HubspotSDK::Crm::PublicQuarterReference::ReferenceType::OrSymbol,
+              HubSpotSDK::Crm::PublicQuarterReference::ReferenceType::OrSymbol,
             hour: Integer,
             millisecond: Integer,
             minute: Integer,
@@ -92,7 +92,7 @@ module HubspotSDK
               day: Integer,
               month: Integer,
               reference_type:
-                HubspotSDK::Crm::PublicQuarterReference::ReferenceType::OrSymbol,
+                HubSpotSDK::Crm::PublicQuarterReference::ReferenceType::OrSymbol,
               hour: Integer,
               millisecond: Integer,
               minute: Integer,
@@ -105,13 +105,13 @@ module HubspotSDK
 
         # Indicates the type of reference (QUARTER).
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicQuarterReference::ReferenceType
+                HubSpotSDK::Crm::PublicQuarterReference::ReferenceType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -119,13 +119,13 @@ module HubspotSDK
           QUARTER =
             T.let(
               :QUARTER,
-              HubspotSDK::Crm::PublicQuarterReference::ReferenceType::TaggedSymbol
+              HubSpotSDK::Crm::PublicQuarterReference::ReferenceType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicQuarterReference::ReferenceType::TaggedSymbol
+                HubSpotSDK::Crm::PublicQuarterReference::ReferenceType::TaggedSymbol
               ]
             )
           end

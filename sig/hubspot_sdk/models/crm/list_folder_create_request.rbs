@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type list_folder_create_request =
         { name: String, parent_folder_id: String }
 
-      class ListFolderCreateRequest < HubspotSDK::Internal::Type::BaseModel
+      class ListFolderCreateRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor name: String
 
         attr_reader parent_folder_id: String?

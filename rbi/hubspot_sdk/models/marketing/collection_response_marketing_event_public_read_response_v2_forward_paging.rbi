@@ -1,37 +1,37 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class CollectionResponseMarketingEventPublicReadResponseV2ForwardPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseMarketingEventPublicReadResponseV2ForwardPaging < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::CollectionResponseMarketingEventPublicReadResponseV2ForwardPaging,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::CollectionResponseMarketingEventPublicReadResponseV2ForwardPaging,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            T::Array[HubspotSDK::Marketing::MarketingEventPublicReadResponseV2]
+            T::Array[HubSpotSDK::Marketing::MarketingEventPublicReadResponseV2]
           )
         end
         attr_accessor :results
 
-        sig { returns(T.nilable(HubspotSDK::ForwardPaging)) }
+        sig { returns(T.nilable(HubSpotSDK::ForwardPaging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::ForwardPaging::OrHash).void }
+        sig { params(paging: HubSpotSDK::ForwardPaging::OrHash).void }
         attr_writer :paging
 
         sig do
           params(
             results:
               T::Array[
-                HubspotSDK::Marketing::MarketingEventPublicReadResponseV2::OrHash
+                HubSpotSDK::Marketing::MarketingEventPublicReadResponseV2::OrHash
               ],
-            paging: HubspotSDK::ForwardPaging::OrHash
+            paging: HubSpotSDK::ForwardPaging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(results:, paging: nil)
@@ -42,9 +42,9 @@ module HubspotSDK
             {
               results:
                 T::Array[
-                  HubspotSDK::Marketing::MarketingEventPublicReadResponseV2
+                  HubSpotSDK::Marketing::MarketingEventPublicReadResponseV2
                 ],
-              paging: HubspotSDK::ForwardPaging
+              paging: HubSpotSDK::ForwardPaging
             }
           )
         end

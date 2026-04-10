@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PropertyListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class PropertyListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PropertyListParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PropertyListParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -28,7 +28,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Crm::PropertyListParams::DataSensitivity::OrSymbol
+              HubSpotSDK::Crm::PropertyListParams::DataSensitivity::OrSymbol
             )
           )
         end
@@ -37,7 +37,7 @@ module HubspotSDK
         sig do
           params(
             data_sensitivity:
-              HubspotSDK::Crm::PropertyListParams::DataSensitivity::OrSymbol
+              HubSpotSDK::Crm::PropertyListParams::DataSensitivity::OrSymbol
           ).void
         end
         attr_writer :data_sensitivity
@@ -59,10 +59,10 @@ module HubspotSDK
             object_type: String,
             archived: T::Boolean,
             data_sensitivity:
-              HubspotSDK::Crm::PropertyListParams::DataSensitivity::OrSymbol,
+              HubSpotSDK::Crm::PropertyListParams::DataSensitivity::OrSymbol,
             locale: String,
             properties: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -82,10 +82,10 @@ module HubspotSDK
               object_type: String,
               archived: T::Boolean,
               data_sensitivity:
-                HubspotSDK::Crm::PropertyListParams::DataSensitivity::OrSymbol,
+                HubSpotSDK::Crm::PropertyListParams::DataSensitivity::OrSymbol,
               locale: String,
               properties: String,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end
@@ -93,13 +93,13 @@ module HubspotSDK
         end
 
         module DataSensitivity
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PropertyListParams::DataSensitivity
+                HubSpotSDK::Crm::PropertyListParams::DataSensitivity
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -107,23 +107,23 @@ module HubspotSDK
           HIGHLY_SENSITIVE =
             T.let(
               :highly_sensitive,
-              HubspotSDK::Crm::PropertyListParams::DataSensitivity::TaggedSymbol
+              HubSpotSDK::Crm::PropertyListParams::DataSensitivity::TaggedSymbol
             )
           NON_SENSITIVE =
             T.let(
               :non_sensitive,
-              HubspotSDK::Crm::PropertyListParams::DataSensitivity::TaggedSymbol
+              HubSpotSDK::Crm::PropertyListParams::DataSensitivity::TaggedSymbol
             )
           SENSITIVE =
             T.let(
               :sensitive,
-              HubspotSDK::Crm::PropertyListParams::DataSensitivity::TaggedSymbol
+              HubSpotSDK::Crm::PropertyListParams::DataSensitivity::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PropertyListParams::DataSensitivity::TaggedSymbol
+                HubSpotSDK::Crm::PropertyListParams::DataSensitivity::TaggedSymbol
               ]
             )
           end

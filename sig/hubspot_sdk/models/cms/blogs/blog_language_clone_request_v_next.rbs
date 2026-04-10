@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       class BlogLanguageCloneRequestVNext = Blogs::BlogLanguageCloneRequestVNext
@@ -12,7 +12,7 @@ module HubspotSDK
             slug: String
           }
 
-        class BlogLanguageCloneRequestVNext < HubspotSDK::Internal::Type::BaseModel
+        class BlogLanguageCloneRequestVNext < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor id: String
 
           attr_reader language: String?

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
@@ -6,22 +6,22 @@ module HubspotSDK
           type transcript_create_request =
             {
               engagement_id: Integer,
-              transcript_create_utterances: ::Array[HubspotSDK::Crm::Extensions::Calling::TranscriptCreateUtterance]
+              transcript_create_utterances: ::Array[HubSpotSDK::Crm::Extensions::Calling::TranscriptCreateUtterance]
             }
 
-          class TranscriptCreateRequest < HubspotSDK::Internal::Type::BaseModel
+          class TranscriptCreateRequest < HubSpotSDK::Internal::Type::BaseModel
             attr_accessor engagement_id: Integer
 
-            attr_accessor transcript_create_utterances: ::Array[HubspotSDK::Crm::Extensions::Calling::TranscriptCreateUtterance]
+            attr_accessor transcript_create_utterances: ::Array[HubSpotSDK::Crm::Extensions::Calling::TranscriptCreateUtterance]
 
             def initialize: (
               engagement_id: Integer,
-              transcript_create_utterances: ::Array[HubspotSDK::Crm::Extensions::Calling::TranscriptCreateUtterance]
+              transcript_create_utterances: ::Array[HubSpotSDK::Crm::Extensions::Calling::TranscriptCreateUtterance]
             ) -> void
 
             def to_hash: -> {
               engagement_id: Integer,
-              transcript_create_utterances: ::Array[HubspotSDK::Crm::Extensions::Calling::TranscriptCreateUtterance]
+              transcript_create_utterances: ::Array[HubSpotSDK::Crm::Extensions::Calling::TranscriptCreateUtterance]
             }
           end
         end

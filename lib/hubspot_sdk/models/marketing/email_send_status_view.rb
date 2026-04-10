@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class EmailSendStatusView < HubspotSDK::Internal::Type::BaseModel
+      class EmailSendStatusView < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute status
         #   Status of the send request.
         #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::EmailSendStatusView::Status]
-        required :status, enum: -> { HubspotSDK::Marketing::EmailSendStatusView::Status }
+        #   @return [Symbol, HubSpotSDK::Models::Marketing::EmailSendStatusView::Status]
+        required :status, enum: -> { HubSpotSDK::Marketing::EmailSendStatusView::Status }
 
         # @!attribute status_id
         #   Identifier used to query the status of the send.
@@ -24,8 +24,8 @@ module HubspotSDK
 
         # @!attribute event_id
         #
-        #   @return [HubspotSDK::Models::Marketing::EventIDView, nil]
-        optional :event_id, -> { HubspotSDK::Marketing::EventIDView }, api_name: :eventId
+        #   @return [HubSpotSDK::Models::Marketing::EventIDView, nil]
+        optional :event_id, -> { HubSpotSDK::Marketing::EventIDView }, api_name: :eventId
 
         # @!attribute message
         #   A human readable message describing the error along with remediation steps where
@@ -43,9 +43,9 @@ module HubspotSDK
         # @!attribute send_result
         #   Result of the send.
         #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::EmailSendStatusView::SendResult, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Marketing::EmailSendStatusView::SendResult, nil]
         optional :send_result,
-                 enum: -> { HubspotSDK::Marketing::EmailSendStatusView::SendResult },
+                 enum: -> { HubSpotSDK::Marketing::EmailSendStatusView::SendResult },
                  api_name: :sendResult
 
         # @!attribute started_at
@@ -56,29 +56,29 @@ module HubspotSDK
 
         # @!method initialize(status:, status_id:, completed_at: nil, event_id: nil, message: nil, requested_at: nil, send_result: nil, started_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::EmailSendStatusView} for more details.
+        #   {HubSpotSDK::Models::Marketing::EmailSendStatusView} for more details.
         #
-        #   @param status [Symbol, HubspotSDK::Models::Marketing::EmailSendStatusView::Status] Status of the send request.
+        #   @param status [Symbol, HubSpotSDK::Models::Marketing::EmailSendStatusView::Status] Status of the send request.
         #
         #   @param status_id [String] Identifier used to query the status of the send.
         #
         #   @param completed_at [Time] Time when the send was completed.
         #
-        #   @param event_id [HubspotSDK::Models::Marketing::EventIDView]
+        #   @param event_id [HubSpotSDK::Models::Marketing::EventIDView]
         #
         #   @param message [String] A human readable message describing the error along with remediation steps where
         #
         #   @param requested_at [Time] Time when the send was requested.
         #
-        #   @param send_result [Symbol, HubspotSDK::Models::Marketing::EmailSendStatusView::SendResult] Result of the send.
+        #   @param send_result [Symbol, HubSpotSDK::Models::Marketing::EmailSendStatusView::SendResult] Result of the send.
         #
         #   @param started_at [Time] Time when the send began processing.
 
         # Status of the send request.
         #
-        # @see HubspotSDK::Models::Marketing::EmailSendStatusView#status
+        # @see HubSpotSDK::Models::Marketing::EmailSendStatusView#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE
@@ -91,9 +91,9 @@ module HubspotSDK
 
         # Result of the send.
         #
-        # @see HubspotSDK::Models::Marketing::EmailSendStatusView#send_result
+        # @see HubSpotSDK::Models::Marketing::EmailSendStatusView#send_result
         module SendResult
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ADDRESS_LIST_BOMBED = :ADDRESS_LIST_BOMBED
           ADDRESS_ONLY_ACCEPTED_ON_PROD = :ADDRESS_ONLY_ACCEPTED_ON_PROD

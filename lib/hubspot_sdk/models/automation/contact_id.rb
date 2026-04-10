@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class ContactID < HubspotSDK::Internal::Type::BaseModel
+      class ContactID < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute portal_id
         #   The ID of the portal associated with the contact.
         #

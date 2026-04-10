@@ -1,11 +1,11 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class ObjectTypeDefinition < HubspotSDK::Internal::Type::BaseModel
+    class ObjectTypeDefinition < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
-          T.any(HubspotSDK::ObjectTypeDefinition, HubspotSDK::Internal::AnyHash)
+          T.any(HubSpotSDK::ObjectTypeDefinition, HubSpotSDK::Internal::AnyHash)
         end
 
       sig { returns(String) }
@@ -20,11 +20,11 @@ module HubspotSDK
       sig { returns(String) }
       attr_accessor :fully_qualified_name
 
-      sig { returns(HubspotSDK::ObjectTypeDefinitionLabels) }
+      sig { returns(HubSpotSDK::ObjectTypeDefinitionLabels) }
       attr_reader :labels
 
       sig do
-        params(labels: HubspotSDK::ObjectTypeDefinitionLabels::OrHash).void
+        params(labels: HubSpotSDK::ObjectTypeDefinitionLabels::OrHash).void
       end
       attr_writer :labels
 
@@ -79,7 +79,7 @@ module HubspotSDK
           allows_sensitive_properties: T::Boolean,
           archived: T::Boolean,
           fully_qualified_name: String,
-          labels: HubspotSDK::ObjectTypeDefinitionLabels::OrHash,
+          labels: HubSpotSDK::ObjectTypeDefinitionLabels::OrHash,
           name: String,
           object_type_id: String,
           required_properties: T::Array[String],
@@ -118,7 +118,7 @@ module HubspotSDK
             allows_sensitive_properties: T::Boolean,
             archived: T::Boolean,
             fully_qualified_name: String,
-            labels: HubspotSDK::ObjectTypeDefinitionLabels,
+            labels: HubSpotSDK::ObjectTypeDefinitionLabels,
             name: String,
             object_type_id: String,
             required_properties: T::Array[String],

@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicDividerStyleSettings < HubspotSDK::Internal::Type::BaseModel
+      class PublicDividerStyleSettings < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute color
         #
         #   @return [Object, nil]
-        optional :color, HubspotSDK::Internal::Type::Unknown
+        optional :color, HubSpotSDK::Internal::Type::Unknown
 
         # @!attribute height
         #

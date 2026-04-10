@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicWhatsAppTemplateMetadata < HubspotSDK::Internal::Type::BaseModel
+      class PublicWhatsAppTemplateMetadata < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute crm_object_ids
         #
         #   @return [Hash{Symbol=>Integer}]
-        required :crm_object_ids, HubspotSDK::Internal::Type::HashOf[Integer], api_name: :crmObjectIds
+        required :crm_object_ids, HubSpotSDK::Internal::Type::HashOf[Integer], api_name: :crmObjectIds
 
         # @!attribute parameters
         #
         #   @return [Hash{Symbol=>String}]
-        required :parameters, HubspotSDK::Internal::Type::HashOf[String]
+        required :parameters, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute type
         #
-        #   @return [Symbol, HubspotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata::Type]
-        required :type, enum: -> { HubspotSDK::Conversations::PublicWhatsAppTemplateMetadata::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata::Type]
+        required :type, enum: -> { HubSpotSDK::Conversations::PublicWhatsAppTemplateMetadata::Type }
 
         # @!attribute content_id
         #
@@ -37,14 +37,14 @@ module HubspotSDK
         # @!method initialize(crm_object_ids:, parameters:, type:, content_id: nil, mapped_template_id: nil, root_mic_id: nil)
         #   @param crm_object_ids [Hash{Symbol=>Integer}]
         #   @param parameters [Hash{Symbol=>String}]
-        #   @param type [Symbol, HubspotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata::Type]
+        #   @param type [Symbol, HubSpotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata::Type]
         #   @param content_id [Integer]
         #   @param mapped_template_id [Integer]
         #   @param root_mic_id [Integer]
 
-        # @see HubspotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata#type
+        # @see HubSpotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           WHATSAPP_TEMPLATE_METADATA = :WHATSAPP_TEMPLATE_METADATA
 

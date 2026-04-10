@@ -1,20 +1,20 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type external_object_resolution_mapping_response =
         {
-          primary_object_rule: HubspotSDK::Events::ExternalPrimaryObjectResolutionRule
+          primary_object_rule: HubSpotSDK::Events::ExternalPrimaryObjectResolutionRule
         }
 
-      class ExternalObjectResolutionMappingResponse < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor primary_object_rule: HubspotSDK::Events::ExternalPrimaryObjectResolutionRule
+      class ExternalObjectResolutionMappingResponse < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor primary_object_rule: HubSpotSDK::Events::ExternalPrimaryObjectResolutionRule
 
         def initialize: (
-          primary_object_rule: HubspotSDK::Events::ExternalPrimaryObjectResolutionRule
+          primary_object_rule: HubSpotSDK::Events::ExternalPrimaryObjectResolutionRule
         ) -> void
 
         def to_hash: -> {
-          primary_object_rule: HubspotSDK::Events::ExternalPrimaryObjectResolutionRule
+          primary_object_rule: HubSpotSDK::Events::ExternalPrimaryObjectResolutionRule
         }
       end
     end

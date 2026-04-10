@@ -1,13 +1,13 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Settings
       class Currencies
         class ExchangeRates
           sig do
             returns(
-              HubspotSDK::Resources::Settings::Currencies::ExchangeRates::Batch
+              HubSpotSDK::Resources::Settings::Currencies::ExchangeRates::Batch
             )
           end
           attr_reader :batch
@@ -17,10 +17,10 @@ module HubspotSDK
             params(
               conversion_rate: Float,
               from_currency_code:
-                HubspotSDK::Settings::ExchangeRateCreateRequest::FromCurrencyCode::OrSymbol,
+                HubSpotSDK::Settings::ExchangeRateCreateRequest::FromCurrencyCode::OrSymbol,
               effective_at: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Settings::ExchangeRate)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Settings::ExchangeRate)
           end
           def create_exchange_rate(
             # The conversion rate between the to and from currency code of this exchange rate.
@@ -38,16 +38,16 @@ module HubspotSDK
           sig do
             params(
               exchange_rate_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Settings::ExchangeRate)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Settings::ExchangeRate)
           end
           def get_exchange_rate_by_id(exchange_rate_id, request_options: {})
           end
 
           # Retrieve all current exchange rates for all currency pairs.
           sig do
-            params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-              HubspotSDK::Settings::CollectionResponseExchangeRateNoPaging
+            params(request_options: HubSpotSDK::RequestOptions::OrHash).returns(
+              HubSpotSDK::Settings::CollectionResponseExchangeRateNoPaging
             )
           end
           def list_current_exchange_rates(request_options: {})
@@ -58,13 +58,13 @@ module HubspotSDK
             params(
               after: String,
               from_currency_code:
-                HubspotSDK::Settings::Currencies::ExchangeRateListExchangeRatesParams::FromCurrencyCode::OrSymbol,
+                HubSpotSDK::Settings::Currencies::ExchangeRateListExchangeRatesParams::FromCurrencyCode::OrSymbol,
               limit: Integer,
               to_currency_code:
-                HubspotSDK::Settings::Currencies::ExchangeRateListExchangeRatesParams::ToCurrencyCode::OrSymbol,
-              request_options: HubspotSDK::RequestOptions::OrHash
+                HubSpotSDK::Settings::Currencies::ExchangeRateListExchangeRatesParams::ToCurrencyCode::OrSymbol,
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Internal::Page[HubspotSDK::Settings::ExchangeRate]
+              HubSpotSDK::Internal::Page[HubSpotSDK::Settings::ExchangeRate]
             )
           end
           def list_exchange_rates(
@@ -86,8 +86,8 @@ module HubspotSDK
               exchange_rate_id: String,
               conversion_rate: Float,
               effective_at: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Settings::ExchangeRate)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Settings::ExchangeRate)
           end
           def update_exchange_rate(
             exchange_rate_id,
@@ -105,11 +105,11 @@ module HubspotSDK
           sig do
             params(
               from_currency_code:
-                HubspotSDK::Settings::CurrencyPairUpdate::FromCurrencyCode::OrSymbol,
+                HubSpotSDK::Settings::CurrencyPairUpdate::FromCurrencyCode::OrSymbol,
               to_currency_code:
-                HubspotSDK::Settings::CurrencyPairUpdate::ToCurrencyCode::OrSymbol,
+                HubSpotSDK::Settings::CurrencyPairUpdate::ToCurrencyCode::OrSymbol,
               visible_in_ui: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def update_visibility(
@@ -127,7 +127,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

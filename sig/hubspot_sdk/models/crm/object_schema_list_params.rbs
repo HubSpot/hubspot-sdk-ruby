@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type object_schema_list_params =
@@ -8,11 +8,11 @@ module HubspotSDK
           include_audit_metadata: bool,
           include_property_definitions: bool
         }
-        & HubspotSDK::Internal::Type::request_parameters
+        & HubSpotSDK::Internal::Type::request_parameters
 
-      class ObjectSchemaListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class ObjectSchemaListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         attr_reader archived: bool?
 
@@ -35,7 +35,7 @@ module HubspotSDK
           ?include_association_definitions: bool,
           ?include_audit_metadata: bool,
           ?include_property_definitions: bool,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
@@ -43,7 +43,7 @@ module HubspotSDK
           include_association_definitions: bool,
           include_audit_metadata: bool,
           include_property_definitions: bool,
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
       end
     end

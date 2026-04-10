@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicMigrationMapping < HubspotSDK::Internal::Type::BaseModel
+      class PublicMigrationMapping < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicMigrationMapping,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicMigrationMapping,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class BatchInputString < HubspotSDK::Internal::Type::BaseModel
+    class BatchInputString < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute inputs
       #   Strings to input.
       #
       #   @return [Array<String>]
-      required :inputs, HubspotSDK::Internal::Type::ArrayOf[String]
+      required :inputs, HubSpotSDK::Internal::Type::ArrayOf[String]
 
       # @!method initialize(inputs:)
       #   @param inputs [Array<String>] Strings to input.

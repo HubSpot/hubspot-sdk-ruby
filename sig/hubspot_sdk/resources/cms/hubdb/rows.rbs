@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Hubdb
@@ -10,8 +10,8 @@ module HubspotSDK
             values: ::Hash[Symbol, top],
             ?name: String,
             ?path: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::HubDBTableRowV3
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::HubDBTableRowV3
 
           def list: (
             String table_id_or_name,
@@ -21,71 +21,71 @@ module HubspotSDK
             ?offset: Integer,
             ?properties: ::Array[String],
             ?sort: ::Array[String],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Models::Cms::unified_collection_response_with_total_base_hub_db_table_row_v3
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Models::Cms::unified_collection_response_with_total_base_hub_db_table_row_v3
 
           def clone_batch: (
             String table_id_or_name,
-            inputs: ::Array[HubspotSDK::Cms::HubDBTableRowBatchCloneRequest],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::BatchResponseHubDBTableRowV3
+            inputs: ::Array[HubSpotSDK::Cms::HubDBTableRowBatchCloneRequest],
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::BatchResponseHubDBTableRowV3
 
           def clone_draft: (
             String row_id,
             table_id_or_name: String,
             ?name: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::HubDBTableRowV3
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::HubDBTableRowV3
 
           def create_batch: (
             String table_id_or_name,
-            inputs: ::Array[HubspotSDK::Cms::HubDBTableRowV3Request],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::BatchResponseHubDBTableRowV3
+            inputs: ::Array[HubSpotSDK::Cms::HubDBTableRowV3Request],
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::BatchResponseHubDBTableRowV3
 
           def delete_draft: (
             String row_id,
             table_id_or_name: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def get: (
             String row_id,
             table_id_or_name: String,
             ?archived: bool,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::HubDBTableRowV3
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::HubDBTableRowV3
 
           def get_batch: (
             String table_id_or_name,
             inputs: ::Array[String],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::BatchResponseHubDBTableRowV3
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::BatchResponseHubDBTableRowV3
 
           def get_draft: (
             String row_id,
             table_id_or_name: String,
             ?archived: bool,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::HubDBTableRowV3
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::HubDBTableRowV3
 
           def get_draft_batch: (
             String table_id_or_name,
             inputs: ::Array[String],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::BatchResponseHubDBTableRowV3
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::BatchResponseHubDBTableRowV3
 
           def purge_batch: (
             String table_id_or_name,
             inputs: ::Array[String],
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def replace_batch: (
             String table_id_or_name,
-            inputs: ::Array[HubspotSDK::Cms::HubDBTableRowV3BatchUpdateRequest],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::BatchResponseHubDBTableRowV3
+            inputs: ::Array[HubSpotSDK::Cms::HubDBTableRowV3BatchUpdateRequest],
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::BatchResponseHubDBTableRowV3
 
           def replace_draft: (
             String row_id,
@@ -95,14 +95,14 @@ module HubspotSDK
             values: ::Hash[Symbol, top],
             ?name: String,
             ?path: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::HubDBTableRowV3
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::HubDBTableRowV3
 
           def update_batch: (
             String table_id_or_name,
-            inputs: ::Array[HubspotSDK::Cms::HubDBTableRowV3BatchUpdateRequest],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::BatchResponseHubDBTableRowV3
+            inputs: ::Array[HubSpotSDK::Cms::HubDBTableRowV3BatchUpdateRequest],
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::BatchResponseHubDBTableRowV3
 
           def update_draft: (
             String row_id,
@@ -112,10 +112,10 @@ module HubspotSDK
             values: ::Hash[Symbol, top],
             ?name: String,
             ?path: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::HubDBTableRowV3
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::HubDBTableRowV3
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

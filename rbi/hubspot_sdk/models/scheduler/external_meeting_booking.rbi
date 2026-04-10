@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalMeetingBooking < HubspotSDK::Internal::Type::BaseModel
+      class ExternalMeetingBooking < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Scheduler::ExternalMeetingBooking,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Scheduler::ExternalMeetingBooking,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -25,7 +25,7 @@ module HubspotSDK
         attr_accessor :first_name
 
         sig do
-          returns(T::Array[HubspotSDK::Scheduler::ExternalBookingFormField])
+          returns(T::Array[HubSpotSDK::Scheduler::ExternalBookingFormField])
         end
         attr_accessor :form_fields
 
@@ -34,7 +34,7 @@ module HubspotSDK
         attr_accessor :last_name
 
         sig do
-          returns(T::Array[HubspotSDK::Scheduler::ExternalLegalConsentResponse])
+          returns(T::Array[HubSpotSDK::Scheduler::ExternalLegalConsentResponse])
         end
         attr_accessor :legal_consent_responses
 
@@ -69,11 +69,11 @@ module HubspotSDK
             email: String,
             first_name: String,
             form_fields:
-              T::Array[HubspotSDK::Scheduler::ExternalBookingFormField::OrHash],
+              T::Array[HubSpotSDK::Scheduler::ExternalBookingFormField::OrHash],
             last_name: String,
             legal_consent_responses:
               T::Array[
-                HubspotSDK::Scheduler::ExternalLegalConsentResponse::OrHash
+                HubSpotSDK::Scheduler::ExternalLegalConsentResponse::OrHash
               ],
             likely_available_user_ids: T::Array[String],
             slug: String,
@@ -112,10 +112,10 @@ module HubspotSDK
               email: String,
               first_name: String,
               form_fields:
-                T::Array[HubspotSDK::Scheduler::ExternalBookingFormField],
+                T::Array[HubSpotSDK::Scheduler::ExternalBookingFormField],
               last_name: String,
               legal_consent_responses:
-                T::Array[HubspotSDK::Scheduler::ExternalLegalConsentResponse],
+                T::Array[HubSpotSDK::Scheduler::ExternalLegalConsentResponse],
               likely_available_user_ids: T::Array[String],
               slug: String,
               start_time: Time,

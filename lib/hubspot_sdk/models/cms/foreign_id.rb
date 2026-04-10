@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ForeignID < HubspotSDK::Internal::Type::BaseModel
+      class ForeignID < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   Unique identifier for the foreign ID.
         #

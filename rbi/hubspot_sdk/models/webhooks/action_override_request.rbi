@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class ActionOverrideRequest < HubspotSDK::Internal::Type::BaseModel
+      class ActionOverrideRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Webhooks::ActionOverrideRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Webhooks::ActionOverrideRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

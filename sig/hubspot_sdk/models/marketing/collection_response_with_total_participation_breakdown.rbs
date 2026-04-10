@@ -1,32 +1,32 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type collection_response_with_total_participation_breakdown =
         {
-          results: ::Array[HubspotSDK::Marketing::ParticipationBreakdown],
+          results: ::Array[HubSpotSDK::Marketing::ParticipationBreakdown],
           total: Integer,
-          paging: HubspotSDK::Paging
+          paging: HubSpotSDK::Paging
         }
 
-      class CollectionResponseWithTotalParticipationBreakdown < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::Marketing::ParticipationBreakdown]
+      class CollectionResponseWithTotalParticipationBreakdown < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubSpotSDK::Marketing::ParticipationBreakdown]
 
         attr_accessor total: Integer
 
-        attr_reader paging: HubspotSDK::Paging?
+        attr_reader paging: HubSpotSDK::Paging?
 
-        def paging=: (HubspotSDK::Paging) -> HubspotSDK::Paging
+        def paging=: (HubSpotSDK::Paging) -> HubSpotSDK::Paging
 
         def initialize: (
-          results: ::Array[HubspotSDK::Marketing::ParticipationBreakdown],
+          results: ::Array[HubSpotSDK::Marketing::ParticipationBreakdown],
           total: Integer,
-          ?paging: HubspotSDK::Paging
+          ?paging: HubSpotSDK::Paging
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubspotSDK::Marketing::ParticipationBreakdown],
+          results: ::Array[HubSpotSDK::Marketing::ParticipationBreakdown],
           total: Integer,
-          paging: HubspotSDK::Paging
+          paging: HubSpotSDK::Paging
         }
       end
     end

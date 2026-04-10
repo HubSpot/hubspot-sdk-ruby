@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class CardPatchRequest < HubspotSDK::Internal::Type::BaseModel
+        class CardPatchRequest < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute actions
           #
-          #   @return [HubspotSDK::Models::Crm::Extensions::CardActions, nil]
-          optional :actions, -> { HubspotSDK::Crm::Extensions::CardActions }
+          #   @return [HubSpotSDK::Models::Crm::Extensions::CardActions, nil]
+          optional :actions, -> { HubSpotSDK::Crm::Extensions::CardActions }
 
           # @!attribute display_
           #
-          #   @return [HubspotSDK::Models::Crm::Extensions::CardDisplayBody, nil]
-          optional :display_, -> { HubspotSDK::Crm::Extensions::CardDisplayBody }, api_name: :display
+          #   @return [HubSpotSDK::Models::Crm::Extensions::CardDisplayBody, nil]
+          optional :display_, -> { HubSpotSDK::Crm::Extensions::CardDisplayBody }, api_name: :display
 
           # @!attribute fetch
           #
-          #   @return [HubspotSDK::Models::Crm::Extensions::CardFetchBodyPatch, nil]
-          optional :fetch, -> { HubspotSDK::Crm::Extensions::CardFetchBodyPatch }
+          #   @return [HubSpotSDK::Models::Crm::Extensions::CardFetchBodyPatch, nil]
+          optional :fetch, -> { HubSpotSDK::Crm::Extensions::CardFetchBodyPatch }
 
           # @!attribute title
           #   The top-level title for this card. Displayed to users in the CRM UI.
@@ -27,11 +27,11 @@ module HubspotSDK
           optional :title, String
 
           # @!method initialize(actions: nil, display_: nil, fetch: nil, title: nil)
-          #   @param actions [HubspotSDK::Models::Crm::Extensions::CardActions]
+          #   @param actions [HubSpotSDK::Models::Crm::Extensions::CardActions]
           #
-          #   @param display_ [HubspotSDK::Models::Crm::Extensions::CardDisplayBody]
+          #   @param display_ [HubSpotSDK::Models::Crm::Extensions::CardDisplayBody]
           #
-          #   @param fetch [HubspotSDK::Models::Crm::Extensions::CardFetchBodyPatch]
+          #   @param fetch [HubSpotSDK::Models::Crm::Extensions::CardFetchBodyPatch]
           #
           #   @param title [String] The top-level title for this card. Displayed to users in the CRM UI.
         end

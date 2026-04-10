@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::Emails#get_ab_test_variation
-      class EmailGetAbTestVariationParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Marketing::Emails#get_ab_test_variation
+      class EmailGetAbTestVariationParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute email_id
         #
@@ -17,32 +17,32 @@ module HubspotSDK
         #   Whether to return only results that have been archived.
         #
         #   @return [Boolean, nil]
-        optional :archived, HubspotSDK::Internal::Type::Boolean
+        optional :archived, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute included_properties
         #
         #   @return [Array<String>, nil]
-        optional :included_properties, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :included_properties, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute include_stats
         #
         #   @return [Boolean, nil]
-        optional :include_stats, HubspotSDK::Internal::Type::Boolean
+        optional :include_stats, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute marketing_campaign_names
         #
         #   @return [Boolean, nil]
-        optional :marketing_campaign_names, HubspotSDK::Internal::Type::Boolean
+        optional :marketing_campaign_names, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute variant_stats
         #
         #   @return [Boolean, nil]
-        optional :variant_stats, HubspotSDK::Internal::Type::Boolean
+        optional :variant_stats, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute workflow_names
         #
         #   @return [Boolean, nil]
-        optional :workflow_names, HubspotSDK::Internal::Type::Boolean
+        optional :workflow_names, HubSpotSDK::Internal::Type::Boolean
 
         # @!method initialize(email_id:, archived: nil, included_properties: nil, include_stats: nil, marketing_campaign_names: nil, variant_stats: nil, workflow_names: nil, request_options: {})
         #   @param email_id [String]
@@ -59,7 +59,7 @@ module HubspotSDK
         #
         #   @param workflow_names [Boolean]
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

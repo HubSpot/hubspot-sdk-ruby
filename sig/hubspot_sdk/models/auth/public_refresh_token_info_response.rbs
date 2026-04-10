@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Auth
       type public_refresh_token_info_response =
@@ -10,13 +10,13 @@ module HubspotSDK
           hub_id: Integer,
           scopes: ::Array[String],
           token_type: String,
-          token_use: HubspotSDK::Models::Auth::PublicRefreshTokenInfoResponse::token_use,
+          token_use: HubSpotSDK::Models::Auth::PublicRefreshTokenInfoResponse::token_use,
           user_id: Integer,
           hub_domain: String,
           user: String
         }
 
-      class PublicRefreshTokenInfoResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicRefreshTokenInfoResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor token: String
 
         attr_accessor active: bool
@@ -31,7 +31,7 @@ module HubspotSDK
 
         attr_accessor token_type: String
 
-        attr_accessor token_use: HubspotSDK::Models::Auth::PublicRefreshTokenInfoResponse::token_use
+        attr_accessor token_use: HubSpotSDK::Models::Auth::PublicRefreshTokenInfoResponse::token_use
 
         attr_accessor user_id: Integer
 
@@ -51,7 +51,7 @@ module HubspotSDK
           hub_id: Integer,
           scopes: ::Array[String],
           token_type: String,
-          token_use: HubspotSDK::Models::Auth::PublicRefreshTokenInfoResponse::token_use,
+          token_use: HubSpotSDK::Models::Auth::PublicRefreshTokenInfoResponse::token_use,
           user_id: Integer,
           ?hub_domain: String,
           ?user: String
@@ -65,7 +65,7 @@ module HubspotSDK
           hub_id: Integer,
           scopes: ::Array[String],
           token_type: String,
-          token_use: HubspotSDK::Models::Auth::PublicRefreshTokenInfoResponse::token_use,
+          token_use: HubSpotSDK::Models::Auth::PublicRefreshTokenInfoResponse::token_use,
           user_id: Integer,
           hub_domain: String,
           user: String
@@ -74,11 +74,11 @@ module HubspotSDK
         type token_use = :refresh_token
 
         module TokenUse
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           REFRESH_TOKEN: :refresh_token
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Auth::PublicRefreshTokenInfoResponse::token_use]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Auth::PublicRefreshTokenInfoResponse::token_use]
         end
       end
     end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Blogs
@@ -10,15 +10,15 @@ module HubspotSDK
             #
             # @overload create(inputs:, request_options: {})
             #
-            # @param inputs [Array<HubspotSDK::Models::Cms::Blogs::BlogPost>] Blog posts to input.
+            # @param inputs [Array<HubSpotSDK::Models::Cms::Blogs::BlogPost>] Blog posts to input.
             #
-            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [StringIO]
             #
-            # @see HubspotSDK::Models::Cms::Blogs::Posts::BatchCreateParams
+            # @see HubSpotSDK::Models::Cms::Blogs::Posts::BatchCreateParams
             def create(params)
-              parsed, options = HubspotSDK::Cms::Blogs::Posts::BatchCreateParams.dump_request(params)
+              parsed, options = HubSpotSDK::Cms::Blogs::Posts::BatchCreateParams.dump_request(params)
               @client.request(
                 method: :post,
                 path: "cms/blogs/2026-03/posts/batch/create",
@@ -37,15 +37,15 @@ module HubspotSDK
             #
             # @param archived [Boolean] Query param: Whether to return only results that have been archived.
             #
-            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [StringIO]
             #
-            # @see HubspotSDK::Models::Cms::Blogs::Posts::BatchUpdateParams
+            # @see HubSpotSDK::Models::Cms::Blogs::Posts::BatchUpdateParams
             def update(params)
               query_params = [:archived]
-              parsed, options = HubspotSDK::Cms::Blogs::Posts::BatchUpdateParams.dump_request(params)
-              query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+              parsed, options = HubSpotSDK::Cms::Blogs::Posts::BatchUpdateParams.dump_request(params)
+              query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
               @client.request(
                 method: :post,
                 path: "cms/blogs/2026-03/posts/batch/update",
@@ -65,13 +65,13 @@ module HubspotSDK
             #
             # @param inputs [Array<String>] Strings to input.
             #
-            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [nil]
             #
-            # @see HubspotSDK::Models::Cms::Blogs::Posts::BatchDeleteParams
+            # @see HubSpotSDK::Models::Cms::Blogs::Posts::BatchDeleteParams
             def delete(params)
-              parsed, options = HubspotSDK::Cms::Blogs::Posts::BatchDeleteParams.dump_request(params)
+              parsed, options = HubSpotSDK::Cms::Blogs::Posts::BatchDeleteParams.dump_request(params)
               @client.request(
                 method: :post,
                 path: "cms/blogs/2026-03/posts/batch/archive",
@@ -90,15 +90,15 @@ module HubspotSDK
             #
             # @param archived [Boolean] Query param: Whether to return only results that have been archived.
             #
-            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [StringIO]
             #
-            # @see HubspotSDK::Models::Cms::Blogs::Posts::BatchGetParams
+            # @see HubSpotSDK::Models::Cms::Blogs::Posts::BatchGetParams
             def get(params)
               query_params = [:archived]
-              parsed, options = HubspotSDK::Cms::Blogs::Posts::BatchGetParams.dump_request(params)
-              query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+              parsed, options = HubSpotSDK::Cms::Blogs::Posts::BatchGetParams.dump_request(params)
+              query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
               @client.request(
                 method: :post,
                 path: "cms/blogs/2026-03/posts/batch/read",
@@ -112,7 +112,7 @@ module HubspotSDK
 
             # @api private
             #
-            # @param client [HubspotSDK::Client]
+            # @param client [HubSpotSDK::Client]
             def initialize(client:)
               @client = client
             end

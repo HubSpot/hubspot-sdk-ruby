@@ -1,33 +1,33 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class ContactCallerID < HubspotSDK::Internal::Type::BaseModel
+        class ContactCallerID < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Extensions::ContactCallerID,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Extensions::ContactCallerID,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
           # Specifies the type of caller ID, with the default value being CONTACT.
           sig do
             returns(
-              HubspotSDK::Crm::Extensions::ContactCallerID::CallerIDType::TaggedSymbol
+              HubSpotSDK::Crm::Extensions::ContactCallerID::CallerIDType::TaggedSymbol
             )
           end
           attr_accessor :caller_id_type
 
-          sig { returns(HubspotSDK::Crm::Extensions::ObjectCoordinates) }
+          sig { returns(HubSpotSDK::Crm::Extensions::ObjectCoordinates) }
           attr_reader :object_coordinates
 
           sig do
             params(
               object_coordinates:
-                HubspotSDK::Crm::Extensions::ObjectCoordinates::OrHash
+                HubSpotSDK::Crm::Extensions::ObjectCoordinates::OrHash
             ).void
           end
           attr_writer :object_coordinates
@@ -56,9 +56,9 @@ module HubspotSDK
           sig do
             params(
               caller_id_type:
-                HubspotSDK::Crm::Extensions::ContactCallerID::CallerIDType::OrSymbol,
+                HubSpotSDK::Crm::Extensions::ContactCallerID::CallerIDType::OrSymbol,
               object_coordinates:
-                HubspotSDK::Crm::Extensions::ObjectCoordinates::OrHash,
+                HubSpotSDK::Crm::Extensions::ObjectCoordinates::OrHash,
               email: String,
               first_name: String,
               last_name: String
@@ -81,9 +81,9 @@ module HubspotSDK
             override.returns(
               {
                 caller_id_type:
-                  HubspotSDK::Crm::Extensions::ContactCallerID::CallerIDType::TaggedSymbol,
+                  HubSpotSDK::Crm::Extensions::ContactCallerID::CallerIDType::TaggedSymbol,
                 object_coordinates:
-                  HubspotSDK::Crm::Extensions::ObjectCoordinates,
+                  HubSpotSDK::Crm::Extensions::ObjectCoordinates,
                 email: String,
                 first_name: String,
                 last_name: String
@@ -95,13 +95,13 @@ module HubspotSDK
 
           # Specifies the type of caller ID, with the default value being CONTACT.
           module CallerIDType
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             TaggedSymbol =
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::Crm::Extensions::ContactCallerID::CallerIDType
+                  HubSpotSDK::Crm::Extensions::ContactCallerID::CallerIDType
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -109,13 +109,13 @@ module HubspotSDK
             CONTACT =
               T.let(
                 :CONTACT,
-                HubspotSDK::Crm::Extensions::ContactCallerID::CallerIDType::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ContactCallerID::CallerIDType::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Crm::Extensions::ContactCallerID::CallerIDType::TaggedSymbol
+                  HubSpotSDK::Crm::Extensions::ContactCallerID::CallerIDType::TaggedSymbol
                 ]
               )
             end

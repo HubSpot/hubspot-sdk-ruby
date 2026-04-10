@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type pre_resolved_contacts =
-        { contacts: ::Array[HubspotSDK::Conversations::PreResolvedContact] }
+        { contacts: ::Array[HubSpotSDK::Conversations::PreResolvedContact] }
 
-      class PreResolvedContacts < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor contacts: ::Array[HubspotSDK::Conversations::PreResolvedContact]
+      class PreResolvedContacts < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor contacts: ::Array[HubSpotSDK::Conversations::PreResolvedContact]
 
         def initialize: (
-          contacts: ::Array[HubspotSDK::Conversations::PreResolvedContact]
+          contacts: ::Array[HubSpotSDK::Conversations::PreResolvedContact]
         ) -> void
 
         def to_hash: -> {
-          contacts: ::Array[HubspotSDK::Conversations::PreResolvedContact]
+          contacts: ::Array[HubSpotSDK::Conversations::PreResolvedContact]
         }
       end
     end

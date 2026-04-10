@@ -1,35 +1,35 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class PropertiesValidations
         def get_by_object_type_id: (
           String object_type_id,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::CollectionResponsePublicPropertyValidationRuleMapNoPaging
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::CollectionResponsePublicPropertyValidationRuleMapNoPaging
 
         def get_by_object_type_id_and_property_name: (
           String property_name,
           object_type_id: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::CollectionResponsePublicPropertyValidationRuleNoPaging
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::CollectionResponsePublicPropertyValidationRuleNoPaging
 
         def get_by_object_type_id_property_name_and_rule_type: (
-          HubspotSDK::Models::Crm::PropertiesValidationGetByObjectTypeIDPropertyNameAndRuleTypeParams::rule_type rule_type,
+          HubSpotSDK::Models::Crm::PropertiesValidationGetByObjectTypeIDPropertyNameAndRuleTypeParams::rule_type rule_type,
           object_type_id: String,
           property_name: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::PublicPropertyValidationRule
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::PublicPropertyValidationRule
 
         def update_by_object_type_id_property_name_and_rule_type: (
-          HubspotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::rule_type rule_type,
+          HubSpotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::rule_type rule_type,
           object_type_id: String,
           property_name: String,
           rule_arguments: ::Array[String],
           ?should_apply_normalization: bool,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

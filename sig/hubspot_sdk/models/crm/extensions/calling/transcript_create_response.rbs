@@ -1,11 +1,11 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         module Calling
           type transcript_create_response = { id: String }
 
-          class TranscriptCreateResponse < HubspotSDK::Internal::Type::BaseModel
+          class TranscriptCreateResponse < HubSpotSDK::Internal::Type::BaseModel
             attr_accessor id: String
 
             def initialize: (id: String) -> void

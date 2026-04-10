@@ -1,13 +1,13 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type media_bridge_delete_oembed_domain_params =
         { app_id: Integer, id: Integer, domain_portal_id: Integer }
-        & HubspotSDK::Internal::Type::request_parameters
+        & HubSpotSDK::Internal::Type::request_parameters
 
-      class MediaBridgeDeleteOembedDomainParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class MediaBridgeDeleteOembedDomainParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         attr_accessor app_id: Integer
 
@@ -23,14 +23,14 @@ module HubspotSDK
           app_id: Integer,
           ?id: Integer,
           ?domain_portal_id: Integer,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           app_id: Integer,
           id: Integer,
           domain_portal_id: Integer,
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
       end
     end

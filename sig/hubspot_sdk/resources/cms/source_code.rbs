@@ -1,58 +1,58 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class SourceCode
         def create: (
           String path,
           environment: String,
-          ?file: HubspotSDK::Internal::file_input,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::AssetFileMetadata
+          ?file: HubSpotSDK::Internal::file_input,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Cms::AssetFileMetadata
 
         def delete: (
           String path,
           environment: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def extract_async: (
           path: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::TaskLocator
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::TaskLocator
 
         def get: (
           String path,
           environment: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> StringIO
 
         def get_extraction_status: (
           Integer task_id,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::ActionResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::ActionResponse
 
         def get_metadata: (
           String path,
           environment: String,
           ?properties: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::AssetFileMetadata
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Cms::AssetFileMetadata
 
         def upsert: (
           String path,
           environment: String,
-          ?file: HubspotSDK::Internal::file_input,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::AssetFileMetadata
+          ?file: HubSpotSDK::Internal::file_input,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Cms::AssetFileMetadata
 
         def validate: (
           String path,
           environment: String,
-          ?file: HubspotSDK::Internal::file_input,
-          ?request_options: HubspotSDK::request_opts
+          ?file: HubSpotSDK::Internal::file_input,
+          ?request_options: HubSpotSDK::request_opts
         ) -> StringIO
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

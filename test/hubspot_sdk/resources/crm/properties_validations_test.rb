@@ -2,19 +2,19 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::PropertiesValidationsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::PropertiesValidationsTest < HubSpotSDK::Test::ResourceTest
   def test_get_by_object_type_id
     skip("Mock server tests are disabled")
 
     response = @hubspot.crm.properties_validations.get_by_object_type_id("objectTypeId")
 
     assert_pattern do
-      response => HubspotSDK::Crm::CollectionResponsePublicPropertyValidationRuleMapNoPaging
+      response => HubSpotSDK::Crm::CollectionResponsePublicPropertyValidationRuleMapNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicPropertyValidationRuleMap])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicPropertyValidationRuleMap])
       }
     end
   end
@@ -29,12 +29,12 @@ class HubspotSDK::Test::Resources::Crm::PropertiesValidationsTest < HubspotSDK::
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::CollectionResponsePublicPropertyValidationRuleNoPaging
+      response => HubSpotSDK::Crm::CollectionResponsePublicPropertyValidationRuleNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicPropertyValidationRule])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicPropertyValidationRule])
       }
     end
   end
@@ -50,14 +50,14 @@ class HubspotSDK::Test::Resources::Crm::PropertiesValidationsTest < HubspotSDK::
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::PublicPropertyValidationRule
+      response => HubSpotSDK::Crm::PublicPropertyValidationRule
     end
 
     assert_pattern do
       response => {
-        rule_arguments: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        rule_type: HubspotSDK::Crm::PublicPropertyValidationRule::RuleType,
-        should_apply_normalization: HubspotSDK::Internal::Type::Boolean | nil
+        rule_arguments: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        rule_type: HubSpotSDK::Crm::PublicPropertyValidationRule::RuleType,
+        should_apply_normalization: HubSpotSDK::Internal::Type::Boolean | nil
       }
     end
   end

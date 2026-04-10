@@ -1,50 +1,50 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type external_behavioral_event_type_definition =
         {
           id: String,
           archived: bool,
-          associations: ::Array[HubspotSDK::Events::AssociationDefinition],
+          associations: ::Array[HubSpotSDK::Events::AssociationDefinition],
           fully_qualified_name: String,
-          labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels,
+          labels: HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels,
           name: String,
           object_type_id: String,
-          properties: ::Array[HubspotSDK::Events::Property],
-          combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch,
+          properties: ::Array[HubSpotSDK::Events::Property],
+          combo_event_rules: HubSpotSDK::Events::ComboEventRuleBranch,
           created_at: Time,
           created_user_id: Integer,
-          custom_matching_id: HubspotSDK::Events::ExternalObjectResolutionMappingResponse,
+          custom_matching_id: HubSpotSDK::Events::ExternalObjectResolutionMappingResponse,
           description: String,
           primary_object: String,
           primary_object_id: String,
-          tracking_type: HubspotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::tracking_type,
+          tracking_type: HubSpotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::tracking_type,
           updated_at: Time,
           updated_user_id: Integer
         }
 
-      class ExternalBehavioralEventTypeDefinition < HubspotSDK::Internal::Type::BaseModel
+      class ExternalBehavioralEventTypeDefinition < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor archived: bool
 
-        attr_accessor associations: ::Array[HubspotSDK::Events::AssociationDefinition]
+        attr_accessor associations: ::Array[HubSpotSDK::Events::AssociationDefinition]
 
         attr_accessor fully_qualified_name: String
 
-        attr_accessor labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels
+        attr_accessor labels: HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels
 
         attr_accessor name: String
 
         attr_accessor object_type_id: String
 
-        attr_accessor properties: ::Array[HubspotSDK::Events::Property]
+        attr_accessor properties: ::Array[HubSpotSDK::Events::Property]
 
-        attr_reader combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch?
+        attr_reader combo_event_rules: HubSpotSDK::Events::ComboEventRuleBranch?
 
         def combo_event_rules=: (
-          HubspotSDK::Events::ComboEventRuleBranch
-        ) -> HubspotSDK::Events::ComboEventRuleBranch
+          HubSpotSDK::Events::ComboEventRuleBranch
+        ) -> HubSpotSDK::Events::ComboEventRuleBranch
 
         attr_reader created_at: Time?
 
@@ -54,11 +54,11 @@ module HubspotSDK
 
         def created_user_id=: (Integer) -> Integer
 
-        attr_reader custom_matching_id: HubspotSDK::Events::ExternalObjectResolutionMappingResponse?
+        attr_reader custom_matching_id: HubSpotSDK::Events::ExternalObjectResolutionMappingResponse?
 
         def custom_matching_id=: (
-          HubspotSDK::Events::ExternalObjectResolutionMappingResponse
-        ) -> HubspotSDK::Events::ExternalObjectResolutionMappingResponse
+          HubSpotSDK::Events::ExternalObjectResolutionMappingResponse
+        ) -> HubSpotSDK::Events::ExternalObjectResolutionMappingResponse
 
         attr_reader description: String?
 
@@ -72,11 +72,11 @@ module HubspotSDK
 
         def primary_object_id=: (String) -> String
 
-        attr_reader tracking_type: HubspotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::tracking_type?
+        attr_reader tracking_type: HubSpotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::tracking_type?
 
         def tracking_type=: (
-          HubspotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::tracking_type
-        ) -> HubspotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::tracking_type
+          HubSpotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::tracking_type
+        ) -> HubSpotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::tracking_type
 
         attr_reader updated_at: Time?
 
@@ -89,20 +89,20 @@ module HubspotSDK
         def initialize: (
           id: String,
           archived: bool,
-          associations: ::Array[HubspotSDK::Events::AssociationDefinition],
+          associations: ::Array[HubSpotSDK::Events::AssociationDefinition],
           fully_qualified_name: String,
-          labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels,
+          labels: HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels,
           name: String,
           object_type_id: String,
-          properties: ::Array[HubspotSDK::Events::Property],
-          ?combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch,
+          properties: ::Array[HubSpotSDK::Events::Property],
+          ?combo_event_rules: HubSpotSDK::Events::ComboEventRuleBranch,
           ?created_at: Time,
           ?created_user_id: Integer,
-          ?custom_matching_id: HubspotSDK::Events::ExternalObjectResolutionMappingResponse,
+          ?custom_matching_id: HubSpotSDK::Events::ExternalObjectResolutionMappingResponse,
           ?description: String,
           ?primary_object: String,
           ?primary_object_id: String,
-          ?tracking_type: HubspotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::tracking_type,
+          ?tracking_type: HubSpotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::tracking_type,
           ?updated_at: Time,
           ?updated_user_id: Integer
         ) -> void
@@ -110,20 +110,20 @@ module HubspotSDK
         def to_hash: -> {
           id: String,
           archived: bool,
-          associations: ::Array[HubspotSDK::Events::AssociationDefinition],
+          associations: ::Array[HubSpotSDK::Events::AssociationDefinition],
           fully_qualified_name: String,
-          labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels,
+          labels: HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels,
           name: String,
           object_type_id: String,
-          properties: ::Array[HubspotSDK::Events::Property],
-          combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch,
+          properties: ::Array[HubSpotSDK::Events::Property],
+          combo_event_rules: HubSpotSDK::Events::ComboEventRuleBranch,
           created_at: Time,
           created_user_id: Integer,
-          custom_matching_id: HubspotSDK::Events::ExternalObjectResolutionMappingResponse,
+          custom_matching_id: HubSpotSDK::Events::ExternalObjectResolutionMappingResponse,
           description: String,
           primary_object: String,
           primary_object_id: String,
-          tracking_type: HubspotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::tracking_type,
+          tracking_type: HubSpotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::tracking_type,
           updated_at: Time,
           updated_user_id: Integer
         }
@@ -142,7 +142,7 @@ module HubspotSDK
           | :WEBHOOK
 
         module TrackingType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           APP_EVENT: :APP_EVENT
           AUTOCAPTURE_EVENT: :AUTOCAPTURE_EVENT
@@ -156,7 +156,7 @@ module HubspotSDK
           VISITED_URL: :VISITED_URL
           WEBHOOK: :WEBHOOK
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::tracking_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::tracking_type]
         end
       end
     end

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class SimplePublicObjectBatchInput < HubspotSDK::Internal::Type::BaseModel
+      class SimplePublicObjectBatchInput < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The id to be updated. This can be the object id, or the unique property value of
         #   the idProperty property
@@ -15,7 +15,7 @@ module HubspotSDK
         #   Key-value pairs representing the properties of the object.
         #
         #   @return [Hash{Symbol=>String}]
-        required :properties, HubspotSDK::Internal::Type::HashOf[String]
+        required :properties, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute id_property
         #   The name of a property whose values are unique for this object
@@ -31,7 +31,7 @@ module HubspotSDK
 
         # @!method initialize(id:, properties:, id_property: nil, object_write_trace_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::SimplePublicObjectBatchInput} for more details.
+        #   {HubSpotSDK::Models::Crm::SimplePublicObjectBatchInput} for more details.
         #
         #   Contains an array of CRM object records to be processed in a batch operation,
         #   each defined by their ID and properties.

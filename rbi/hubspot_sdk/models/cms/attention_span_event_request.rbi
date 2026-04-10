@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class AttentionSpanEventRequest < HubspotSDK::Internal::Type::BaseModel
+      class AttentionSpanEventRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::AttentionSpanEventRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::AttentionSpanEventRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::Cms::AttentionSpanEventRequest::MediaType::OrSymbol
+            HubSpotSDK::Cms::AttentionSpanEventRequest::MediaType::OrSymbol
           )
         end
         attr_accessor :media_type
@@ -47,14 +47,14 @@ module HubspotSDK
         attr_writer :contact_utk
 
         sig do
-          returns(T.nilable(HubspotSDK::Cms::AttentionSpanCalculatedValues))
+          returns(T.nilable(HubSpotSDK::Cms::AttentionSpanCalculatedValues))
         end
         attr_reader :derived_values
 
         sig do
           params(
             derived_values:
-              HubspotSDK::Cms::AttentionSpanCalculatedValues::OrHash
+              HubSpotSDK::Cms::AttentionSpanCalculatedValues::OrHash
           ).void
         end
         attr_writer :derived_values
@@ -68,7 +68,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext::OrSymbol
+              HubSpotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext::OrSymbol
             )
           )
         end
@@ -77,7 +77,7 @@ module HubspotSDK
         sig do
           params(
             external_play_context:
-              HubspotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext::OrSymbol
+              HubSpotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext::OrSymbol
           ).void
         end
         attr_writer :external_play_context
@@ -127,7 +127,7 @@ module HubspotSDK
         sig do
           params(
             media_type:
-              HubspotSDK::Cms::AttentionSpanEventRequest::MediaType::OrSymbol,
+              HubSpotSDK::Cms::AttentionSpanEventRequest::MediaType::OrSymbol,
             occurred_timestamp: Integer,
             raw_data_map: T::Hash[Symbol, Integer],
             session_id: String,
@@ -135,10 +135,10 @@ module HubspotSDK
             contact_id: Integer,
             contact_utk: String,
             derived_values:
-              HubspotSDK::Cms::AttentionSpanCalculatedValues::OrHash,
+              HubSpotSDK::Cms::AttentionSpanCalculatedValues::OrHash,
             external_id: String,
             external_play_context:
-              HubspotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext::OrSymbol,
+              HubSpotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext::OrSymbol,
             media_bridge_id: Integer,
             media_name: String,
             media_url: String,
@@ -173,17 +173,17 @@ module HubspotSDK
           override.returns(
             {
               media_type:
-                HubspotSDK::Cms::AttentionSpanEventRequest::MediaType::OrSymbol,
+                HubSpotSDK::Cms::AttentionSpanEventRequest::MediaType::OrSymbol,
               occurred_timestamp: Integer,
               raw_data_map: T::Hash[Symbol, Integer],
               session_id: String,
               _hsenc: String,
               contact_id: Integer,
               contact_utk: String,
-              derived_values: HubspotSDK::Cms::AttentionSpanCalculatedValues,
+              derived_values: HubSpotSDK::Cms::AttentionSpanCalculatedValues,
               external_id: String,
               external_play_context:
-                HubspotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext::OrSymbol,
+                HubSpotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext::OrSymbol,
               media_bridge_id: Integer,
               media_name: String,
               media_url: String,
@@ -198,13 +198,13 @@ module HubspotSDK
         end
 
         module MediaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Cms::AttentionSpanEventRequest::MediaType
+                HubSpotSDK::Cms::AttentionSpanEventRequest::MediaType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -212,33 +212,33 @@ module HubspotSDK
           AUDIO =
             T.let(
               :AUDIO,
-              HubspotSDK::Cms::AttentionSpanEventRequest::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::AttentionSpanEventRequest::MediaType::TaggedSymbol
             )
           DOCUMENT =
             T.let(
               :DOCUMENT,
-              HubspotSDK::Cms::AttentionSpanEventRequest::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::AttentionSpanEventRequest::MediaType::TaggedSymbol
             )
           IMAGE =
             T.let(
               :IMAGE,
-              HubspotSDK::Cms::AttentionSpanEventRequest::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::AttentionSpanEventRequest::MediaType::TaggedSymbol
             )
           OTHER =
             T.let(
               :OTHER,
-              HubspotSDK::Cms::AttentionSpanEventRequest::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::AttentionSpanEventRequest::MediaType::TaggedSymbol
             )
           VIDEO =
             T.let(
               :VIDEO,
-              HubspotSDK::Cms::AttentionSpanEventRequest::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::AttentionSpanEventRequest::MediaType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::AttentionSpanEventRequest::MediaType::TaggedSymbol
+                HubSpotSDK::Cms::AttentionSpanEventRequest::MediaType::TaggedSymbol
               ]
             )
           end
@@ -247,13 +247,13 @@ module HubspotSDK
         end
 
         module ExternalPlayContext
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext
+                HubSpotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -261,18 +261,18 @@ module HubspotSDK
           EMAIL =
             T.let(
               :EMAIL,
-              HubspotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext::TaggedSymbol
+              HubSpotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext::TaggedSymbol
             )
           EXTERNAL_PAGE =
             T.let(
               :EXTERNAL_PAGE,
-              HubspotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext::TaggedSymbol
+              HubSpotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext::TaggedSymbol
+                HubSpotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext::TaggedSymbol
               ]
             )
           end

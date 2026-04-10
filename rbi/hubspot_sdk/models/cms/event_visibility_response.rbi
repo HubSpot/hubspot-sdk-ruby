@@ -1,28 +1,28 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class EventVisibilityResponse < HubspotSDK::Internal::Type::BaseModel
+      class EventVisibilityResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::EventVisibilityResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::EventVisibilityResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig { returns(Time) }
         attr_accessor :created_at
 
-        sig { returns(T::Array[HubspotSDK::Cms::EventVisibilityChange]) }
+        sig { returns(T::Array[HubSpotSDK::Cms::EventVisibilityChange]) }
         attr_accessor :visibility_settings
 
         sig do
           params(
             created_at: Time,
             visibility_settings:
-              T::Array[HubspotSDK::Cms::EventVisibilityChange::OrHash]
+              T::Array[HubSpotSDK::Cms::EventVisibilityChange::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(created_at:, visibility_settings:)
@@ -33,7 +33,7 @@ module HubspotSDK
             {
               created_at: Time,
               visibility_settings:
-                T::Array[HubspotSDK::Cms::EventVisibilityChange]
+                T::Array[HubSpotSDK::Cms::EventVisibilityChange]
             }
           )
         end

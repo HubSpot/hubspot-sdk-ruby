@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type email_clone_request_v_next =
         { id: String, clone_name: String, language: String }
 
-      class EmailCloneRequestVNext < HubspotSDK::Internal::Type::BaseModel
+      class EmailCloneRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_reader clone_name: String?

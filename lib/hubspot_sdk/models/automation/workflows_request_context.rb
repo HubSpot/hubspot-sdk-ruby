@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class WorkflowsRequestContext < HubspotSDK::Internal::Type::BaseModel
+      class WorkflowsRequestContext < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute source
         #   Indicates the source of the request, with the default value being WORKFLOWS.
         #
-        #   @return [Symbol, HubspotSDK::Models::Automation::WorkflowsRequestContext::Source]
-        required :source, enum: -> { HubspotSDK::Automation::WorkflowsRequestContext::Source }
+        #   @return [Symbol, HubSpotSDK::Models::Automation::WorkflowsRequestContext::Source]
+        required :source, enum: -> { HubSpotSDK::Automation::WorkflowsRequestContext::Source }
 
         # @!attribute workflow_id
         #   The ID of the workflow associated with the request context.
@@ -18,9 +18,9 @@ module HubspotSDK
 
         # @!attribute action_execution_index_identifier
         #
-        #   @return [HubspotSDK::Models::Automation::ActionExecutionIndexIdentifier, nil]
+        #   @return [HubSpotSDK::Models::Automation::ActionExecutionIndexIdentifier, nil]
         optional :action_execution_index_identifier,
-                 -> { HubspotSDK::Automation::ActionExecutionIndexIdentifier },
+                 -> { HubSpotSDK::Automation::ActionExecutionIndexIdentifier },
                  api_name: :actionExecutionIndexIdentifier
 
         # @!attribute action_id
@@ -30,19 +30,19 @@ module HubspotSDK
         optional :action_id, Integer, api_name: :actionId
 
         # @!method initialize(source:, workflow_id:, action_execution_index_identifier: nil, action_id: nil)
-        #   @param source [Symbol, HubspotSDK::Models::Automation::WorkflowsRequestContext::Source] Indicates the source of the request, with the default value being WORKFLOWS.
+        #   @param source [Symbol, HubSpotSDK::Models::Automation::WorkflowsRequestContext::Source] Indicates the source of the request, with the default value being WORKFLOWS.
         #
         #   @param workflow_id [Integer] The ID of the workflow associated with the request context.
         #
-        #   @param action_execution_index_identifier [HubspotSDK::Models::Automation::ActionExecutionIndexIdentifier]
+        #   @param action_execution_index_identifier [HubSpotSDK::Models::Automation::ActionExecutionIndexIdentifier]
         #
         #   @param action_id [Integer] The ID of the action within the workflow context.
 
         # Indicates the source of the request, with the default value being WORKFLOWS.
         #
-        # @see HubspotSDK::Models::Automation::WorkflowsRequestContext#source
+        # @see HubSpotSDK::Models::Automation::WorkflowsRequestContext#source
         module Source
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           WORKFLOWS = :WORKFLOWS
 

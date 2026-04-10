@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class IndexOffset < HubspotSDK::Internal::Type::BaseModel
+      class IndexOffset < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::IndexOffset,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::IndexOffset,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

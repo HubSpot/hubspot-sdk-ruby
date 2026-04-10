@@ -1,10 +1,10 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class MediaBridge
-        sig { returns(HubspotSDK::Resources::Cms::MediaBridge::Batch) }
+        sig { returns(HubSpotSDK::Resources::Cms::MediaBridge::Batch) }
         attr_reader :batch
 
         # Create a new association definition for the specified object type.
@@ -15,8 +15,8 @@ module HubspotSDK
             from_object_type_id: String,
             to_object_type_id: String,
             name: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::AssociationDefinition)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::AssociationDefinition)
         end
         def create_association(
           # Path param
@@ -37,7 +37,7 @@ module HubspotSDK
         sig do
           params(
             media_type:
-              HubspotSDK::Cms::AttentionSpanEventRequest::MediaType::OrSymbol,
+              HubSpotSDK::Cms::AttentionSpanEventRequest::MediaType::OrSymbol,
             occurred_timestamp: Integer,
             raw_data_map: T::Hash[Symbol, Integer],
             session_id: String,
@@ -45,10 +45,10 @@ module HubspotSDK
             contact_id: Integer,
             contact_utk: String,
             derived_values:
-              HubspotSDK::Cms::AttentionSpanCalculatedValues::OrHash,
+              HubSpotSDK::Cms::AttentionSpanCalculatedValues::OrHash,
             external_id: String,
             external_play_context:
-              HubspotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext::OrSymbol,
+              HubSpotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext::OrSymbol,
             media_bridge_id: Integer,
             media_name: String,
             media_url: String,
@@ -56,8 +56,8 @@ module HubspotSDK
             page_name: String,
             page_url: String,
             raw_data_string: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::AttentionSpanEvent)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::AttentionSpanEvent)
         end
         def create_attention_span_event(
           media_type:,
@@ -85,16 +85,16 @@ module HubspotSDK
         sig do
           params(
             media_type:
-              HubspotSDK::Cms::MediaPlayedEventRequest::MediaType::OrSymbol,
+              HubSpotSDK::Cms::MediaPlayedEventRequest::MediaType::OrSymbol,
             occurred_timestamp: Integer,
             session_id: String,
-            state: HubspotSDK::Cms::MediaPlayedEventRequest::State::OrSymbol,
+            state: HubSpotSDK::Cms::MediaPlayedEventRequest::State::OrSymbol,
             _hsenc: String,
             contact_id: Integer,
             contact_utk: String,
             external_id: String,
             external_play_context:
-              HubspotSDK::Cms::MediaPlayedEventRequest::ExternalPlayContext::OrSymbol,
+              HubSpotSDK::Cms::MediaPlayedEventRequest::ExternalPlayContext::OrSymbol,
             iframe_url: String,
             media_bridge_id: Integer,
             media_name: String,
@@ -102,8 +102,8 @@ module HubspotSDK
             page_id: Integer,
             page_name: String,
             page_url: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::MediaPlayedEvent)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::MediaPlayedEvent)
         end
         def create_media_played_event(
           media_type:,
@@ -131,7 +131,7 @@ module HubspotSDK
         sig do
           params(
             media_type:
-              HubspotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::OrSymbol,
+              HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::OrSymbol,
             occurred_timestamp: Integer,
             played_percent: Integer,
             session_id: String,
@@ -140,15 +140,15 @@ module HubspotSDK
             contact_utk: String,
             external_id: String,
             external_play_context:
-              HubspotSDK::Cms::MediaPlayedPercentageEventRequest::ExternalPlayContext::OrSymbol,
+              HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::ExternalPlayContext::OrSymbol,
             media_bridge_id: Integer,
             media_name: String,
             media_url: String,
             page_id: Integer,
             page_name: String,
             page_url: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::MediaPlayedPercentageEvent)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::MediaPlayedPercentageEvent)
         end
         def create_media_played_percent_event(
           media_type:,
@@ -176,10 +176,10 @@ module HubspotSDK
             app_id: Integer,
             media_types:
               T::Array[
-                HubspotSDK::Cms::IntegratorObjectCreationRequest::MediaType::OrSymbol
+                HubSpotSDK::Cms::IntegratorObjectCreationRequest::MediaType::OrSymbol
               ],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::BulkIntegratorObjectCreationResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::BulkIntegratorObjectCreationResponse)
         end
         def create_object_type(app_id, media_types:, request_options: {})
         end
@@ -188,10 +188,10 @@ module HubspotSDK
         sig do
           params(
             app_id: Integer,
-            endpoints: HubspotSDK::Cms::Endpoints::OrHash,
+            endpoints: HubSpotSDK::Cms::Endpoints::OrHash,
             portal_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::IntegratorOEmbedDomainModel)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::IntegratorOEmbedDomainModel)
         end
         def create_oembed_domain(
           app_id,
@@ -206,24 +206,24 @@ module HubspotSDK
           params(
             object_type: String,
             app_id: Integer,
-            field_type: HubspotSDK::Cms::PropertyCreate::FieldType::OrSymbol,
+            field_type: HubSpotSDK::Cms::PropertyCreate::FieldType::OrSymbol,
             group_name: String,
             label: String,
             name: String,
-            type: HubspotSDK::Cms::PropertyCreate::Type::OrSymbol,
+            type: HubSpotSDK::Cms::PropertyCreate::Type::OrSymbol,
             calculation_formula: String,
             data_sensitivity:
-              HubspotSDK::Cms::PropertyCreate::DataSensitivity::OrSymbol,
+              HubSpotSDK::Cms::PropertyCreate::DataSensitivity::OrSymbol,
             description: String,
             display_order: Integer,
             external_options: T::Boolean,
             form_field: T::Boolean,
             has_unique_value: T::Boolean,
             hidden: T::Boolean,
-            options: T::Array[HubspotSDK::OptionInput::OrHash],
+            options: T::Array[HubSpotSDK::OptionInput::OrHash],
             referenced_object_type: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::Property)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::Property)
         end
         def create_property(
           # Path param
@@ -272,8 +272,8 @@ module HubspotSDK
             label: String,
             name: String,
             display_order: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::PropertyGroup)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::PropertyGroup)
         end
         def create_property_group(
           # Path param
@@ -293,8 +293,8 @@ module HubspotSDK
         sig do
           params(
             app_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::AssociationDefinition)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::AssociationDefinition)
         end
         def create_video_association_definition(app_id, request_options: {})
         end
@@ -305,7 +305,7 @@ module HubspotSDK
             association_id: String,
             app_id: Integer,
             object_type: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete_association(
@@ -322,7 +322,7 @@ module HubspotSDK
             app_id: Integer,
             id: Integer,
             domain_portal_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete_oembed_domain(
@@ -339,7 +339,7 @@ module HubspotSDK
             property_name: String,
             app_id: Integer,
             object_type: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete_property(
@@ -356,7 +356,7 @@ module HubspotSDK
             group_name: String,
             app_id: Integer,
             object_type: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete_property_group(
@@ -371,8 +371,8 @@ module HubspotSDK
         sig do
           params(
             app_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::EventVisibilityResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::EventVisibilityResponse)
         end
         def get_event_visibility_settings(app_id, request_options: {})
         end
@@ -382,8 +382,8 @@ module HubspotSDK
           params(
             o_embed_domain_id: String,
             app_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::IntegratorOEmbedDomainModel)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::IntegratorOEmbedDomainModel)
         end
         def get_oembed_domain(o_embed_domain_id, app_id:, request_options: {})
         end
@@ -396,8 +396,8 @@ module HubspotSDK
             object_type: String,
             archived: T::Boolean,
             properties: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::Property)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::Property)
         end
         def get_property(
           # Path param
@@ -420,8 +420,8 @@ module HubspotSDK
             group_name: String,
             app_id: Integer,
             object_type: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::PropertyGroup)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::PropertyGroup)
         end
         def get_property_group(
           group_name,
@@ -436,8 +436,8 @@ module HubspotSDK
           params(
             object_type: String,
             app_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::ObjectSchema)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::ObjectSchema)
         end
         def get_schema(object_type, app_id:, request_options: {})
         end
@@ -446,11 +446,11 @@ module HubspotSDK
         sig do
           params(
             media_type:
-              HubspotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::OrSymbol,
+              HubSpotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType::OrSymbol,
             app_id: Integer,
             include_full_definition: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::ObjectDefinitionResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::ObjectDefinitionResponse)
         end
         def list_object_types_by_media_type(
           # Path param
@@ -468,8 +468,8 @@ module HubspotSDK
           params(
             app_id: Integer,
             domain_portal_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::OEmbedDomainsCollectionResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::OEmbedDomainsCollectionResponse)
         end
         def list_oembed_domains(
           app_id,
@@ -485,8 +485,8 @@ module HubspotSDK
             app_id: Integer,
             archived: T::Boolean,
             properties: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::CollectionResponsePropertyNoPaging)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::CollectionResponsePropertyNoPaging)
         end
         def list_properties(
           # Path param
@@ -506,8 +506,8 @@ module HubspotSDK
           params(
             object_type: String,
             app_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::CollectionResponsePropertyGroupNoPaging)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::CollectionResponsePropertyGroupNoPaging)
         end
         def list_property_groups(object_type, app_id:, request_options: {})
         end
@@ -517,8 +517,8 @@ module HubspotSDK
           params(
             app_id: Integer,
             archived: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::CollectionResponseObjectSchemaNoPaging)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::CollectionResponseObjectSchemaNoPaging)
         end
         def list_schemas(
           app_id,
@@ -537,8 +537,8 @@ module HubspotSDK
             allow_import_on_disconnect: T::Boolean,
             module_name: String,
             name: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::MediaBridgeProviderRegistrationResponse)
         end
         def register_app_name(
           app_id,
@@ -555,13 +555,13 @@ module HubspotSDK
           params(
             app_id: Integer,
             event_type:
-              HubspotSDK::Cms::EventVisibilityChange::EventType::OrSymbol,
+              HubSpotSDK::Cms::EventVisibilityChange::EventType::OrSymbol,
             updated_at: Integer,
             show_in_reporting: T::Boolean,
             show_in_timeline: T::Boolean,
             show_in_workflows: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::EventVisibilityChange)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::EventVisibilityChange)
         end
         def update_event_visibility_settings(
           app_id,
@@ -579,10 +579,10 @@ module HubspotSDK
           params(
             o_embed_domain_id: String,
             app_id: Integer,
-            endpoints: HubspotSDK::Cms::Endpoints::OrHash,
+            endpoints: HubSpotSDK::Cms::Endpoints::OrHash,
             portal_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::IntegratorOEmbedDomainModel)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::IntegratorOEmbedDomainModel)
         end
         def update_oembed_domain(
           # Path param
@@ -607,16 +607,16 @@ module HubspotSDK
             description: String,
             display_order: Integer,
             field_type:
-              HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType::OrSymbol,
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType::OrSymbol,
             form_field: T::Boolean,
             group_name: String,
             has_unique_value: T::Boolean,
             hidden: T::Boolean,
             label: String,
-            options: T::Array[HubspotSDK::OptionInput::OrHash],
-            type: HubspotSDK::Cms::MediaBridgePropertyUpdate::Type::OrSymbol,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::Property)
+            options: T::Array[HubSpotSDK::OptionInput::OrHash],
+            type: HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type::OrSymbol,
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::Property)
         end
         def update_property(
           # Path param
@@ -659,8 +659,8 @@ module HubspotSDK
             object_type: String,
             display_order: Integer,
             label: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::PropertyGroup)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::PropertyGroup)
         end
         def update_property_group(
           # Path param
@@ -685,14 +685,14 @@ module HubspotSDK
             clear_description: T::Boolean,
             allows_sensitive_properties: T::Boolean,
             description: String,
-            labels: HubspotSDK::ObjectTypeDefinitionLabels::OrHash,
+            labels: HubSpotSDK::ObjectTypeDefinitionLabels::OrHash,
             primary_display_property: String,
             required_properties: T::Array[String],
             restorable: T::Boolean,
             searchable_properties: T::Array[String],
             secondary_display_properties: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::ObjectTypeDefinition)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::ObjectTypeDefinition)
         end
         def update_schema(
           # Path param
@@ -730,8 +730,8 @@ module HubspotSDK
             allow_import_on_disconnect: T::Boolean,
             module_name: String,
             name: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::MediaBridgeProviderRegistrationResponse)
         end
         def update_settings(
           app_id,
@@ -744,7 +744,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

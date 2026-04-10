@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class ExternalBehavioralEventTypeDefinition < HubspotSDK::Internal::Type::BaseModel
+      class ExternalBehavioralEventTypeDefinition < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -18,19 +18,19 @@ module HubspotSDK
         sig { returns(T::Boolean) }
         attr_accessor :archived
 
-        sig { returns(T::Array[HubspotSDK::Events::AssociationDefinition]) }
+        sig { returns(T::Array[HubSpotSDK::Events::AssociationDefinition]) }
         attr_accessor :associations
 
         sig { returns(String) }
         attr_accessor :fully_qualified_name
 
-        sig { returns(HubspotSDK::Events::BehavioralEventTypeDefinitionLabels) }
+        sig { returns(HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels) }
         attr_reader :labels
 
         sig do
           params(
             labels:
-              HubspotSDK::Events::BehavioralEventTypeDefinitionLabels::OrHash
+              HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels::OrHash
           ).void
         end
         attr_writer :labels
@@ -41,15 +41,15 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :object_type_id
 
-        sig { returns(T::Array[HubspotSDK::Events::Property]) }
+        sig { returns(T::Array[HubSpotSDK::Events::Property]) }
         attr_accessor :properties
 
-        sig { returns(T.nilable(HubspotSDK::Events::ComboEventRuleBranch)) }
+        sig { returns(T.nilable(HubSpotSDK::Events::ComboEventRuleBranch)) }
         attr_reader :combo_event_rules
 
         sig do
           params(
-            combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch::OrHash
+            combo_event_rules: HubSpotSDK::Events::ComboEventRuleBranch::OrHash
           ).void
         end
         attr_writer :combo_event_rules
@@ -69,7 +69,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Events::ExternalObjectResolutionMappingResponse
+              HubSpotSDK::Events::ExternalObjectResolutionMappingResponse
             )
           )
         end
@@ -78,7 +78,7 @@ module HubspotSDK
         sig do
           params(
             custom_matching_id:
-              HubspotSDK::Events::ExternalObjectResolutionMappingResponse::OrHash
+              HubSpotSDK::Events::ExternalObjectResolutionMappingResponse::OrHash
           ).void
         end
         attr_writer :custom_matching_id
@@ -104,7 +104,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
+              HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
             )
           )
         end
@@ -113,7 +113,7 @@ module HubspotSDK
         sig do
           params(
             tracking_type:
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::OrSymbol
+              HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::OrSymbol
           ).void
         end
         attr_writer :tracking_type
@@ -135,23 +135,23 @@ module HubspotSDK
             id: String,
             archived: T::Boolean,
             associations:
-              T::Array[HubspotSDK::Events::AssociationDefinition::OrHash],
+              T::Array[HubSpotSDK::Events::AssociationDefinition::OrHash],
             fully_qualified_name: String,
             labels:
-              HubspotSDK::Events::BehavioralEventTypeDefinitionLabels::OrHash,
+              HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels::OrHash,
             name: String,
             object_type_id: String,
-            properties: T::Array[HubspotSDK::Events::Property::OrHash],
-            combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch::OrHash,
+            properties: T::Array[HubSpotSDK::Events::Property::OrHash],
+            combo_event_rules: HubSpotSDK::Events::ComboEventRuleBranch::OrHash,
             created_at: Time,
             created_user_id: Integer,
             custom_matching_id:
-              HubspotSDK::Events::ExternalObjectResolutionMappingResponse::OrHash,
+              HubSpotSDK::Events::ExternalObjectResolutionMappingResponse::OrHash,
             description: String,
             primary_object: String,
             primary_object_id: String,
             tracking_type:
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::OrSymbol,
+              HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::OrSymbol,
             updated_at: Time,
             updated_user_id: Integer
           ).returns(T.attached_class)
@@ -183,22 +183,22 @@ module HubspotSDK
             {
               id: String,
               archived: T::Boolean,
-              associations: T::Array[HubspotSDK::Events::AssociationDefinition],
+              associations: T::Array[HubSpotSDK::Events::AssociationDefinition],
               fully_qualified_name: String,
-              labels: HubspotSDK::Events::BehavioralEventTypeDefinitionLabels,
+              labels: HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels,
               name: String,
               object_type_id: String,
-              properties: T::Array[HubspotSDK::Events::Property],
-              combo_event_rules: HubspotSDK::Events::ComboEventRuleBranch,
+              properties: T::Array[HubSpotSDK::Events::Property],
+              combo_event_rules: HubSpotSDK::Events::ComboEventRuleBranch,
               created_at: Time,
               created_user_id: Integer,
               custom_matching_id:
-                HubspotSDK::Events::ExternalObjectResolutionMappingResponse,
+                HubSpotSDK::Events::ExternalObjectResolutionMappingResponse,
               description: String,
               primary_object: String,
               primary_object_id: String,
               tracking_type:
-                HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol,
+                HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol,
               updated_at: Time,
               updated_user_id: Integer
             }
@@ -208,13 +208,13 @@ module HubspotSDK
         end
 
         module TrackingType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType
+                HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -222,63 +222,63 @@ module HubspotSDK
           APP_EVENT =
             T.let(
               :APP_EVENT,
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
+              HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
             )
           AUTOCAPTURE_EVENT =
             T.let(
               :AUTOCAPTURE_EVENT,
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
+              HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
             )
           CLICKED_ELEMENT =
             T.let(
               :CLICKED_ELEMENT,
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
+              HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
             )
           COMBO_EVENT =
             T.let(
               :COMBO_EVENT,
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
+              HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
             )
           CUSTOM_SCRIPT =
             T.let(
               :CUSTOM_SCRIPT,
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
+              HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
             )
           CUSTOM_SIGNAL =
             T.let(
               :CUSTOM_SIGNAL,
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
+              HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
             )
           IMPORT =
             T.let(
               :IMPORT,
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
+              HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
             )
           MANUAL =
             T.let(
               :MANUAL,
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
+              HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
             )
           PROPERTY_CHANGE =
             T.let(
               :PROPERTY_CHANGE,
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
+              HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
             )
           VISITED_URL =
             T.let(
               :VISITED_URL,
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
+              HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
             )
           WEBHOOK =
             T.let(
               :WEBHOOK,
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
+              HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
+                HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType::TaggedSymbol
               ]
             )
           end

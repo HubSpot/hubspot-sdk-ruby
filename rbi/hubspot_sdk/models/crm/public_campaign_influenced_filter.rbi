@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicCampaignInfluencedFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicCampaignInfluencedFilter < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicCampaignInfluencedFilter,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicCampaignInfluencedFilter,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -19,7 +19,7 @@ module HubspotSDK
         # Indicates the type of filter (CAMPAIGN_INFLUENCED).
         sig do
           returns(
-            HubspotSDK::Crm::PublicCampaignInfluencedFilter::FilterType::OrSymbol
+            HubSpotSDK::Crm::PublicCampaignInfluencedFilter::FilterType::OrSymbol
           )
         end
         attr_accessor :filter_type
@@ -28,7 +28,7 @@ module HubspotSDK
           params(
             campaign_id: String,
             filter_type:
-              HubspotSDK::Crm::PublicCampaignInfluencedFilter::FilterType::OrSymbol
+              HubSpotSDK::Crm::PublicCampaignInfluencedFilter::FilterType::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -44,7 +44,7 @@ module HubspotSDK
             {
               campaign_id: String,
               filter_type:
-                HubspotSDK::Crm::PublicCampaignInfluencedFilter::FilterType::OrSymbol
+                HubSpotSDK::Crm::PublicCampaignInfluencedFilter::FilterType::OrSymbol
             }
           )
         end
@@ -53,13 +53,13 @@ module HubspotSDK
 
         # Indicates the type of filter (CAMPAIGN_INFLUENCED).
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicCampaignInfluencedFilter::FilterType
+                HubSpotSDK::Crm::PublicCampaignInfluencedFilter::FilterType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -67,13 +67,13 @@ module HubspotSDK
           CAMPAIGN_INFLUENCED =
             T.let(
               :CAMPAIGN_INFLUENCED,
-              HubspotSDK::Crm::PublicCampaignInfluencedFilter::FilterType::TaggedSymbol
+              HubSpotSDK::Crm::PublicCampaignInfluencedFilter::FilterType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicCampaignInfluencedFilter::FilterType::TaggedSymbol
+                HubSpotSDK::Crm::PublicCampaignInfluencedFilter::FilterType::TaggedSymbol
               ]
             )
           end

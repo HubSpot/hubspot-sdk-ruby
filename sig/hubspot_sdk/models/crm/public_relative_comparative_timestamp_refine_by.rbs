@@ -1,40 +1,40 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_relative_comparative_timestamp_refine_by =
         {
           comparison: String,
-          time_offset: HubspotSDK::Crm::PublicTimeOffset,
-          type: HubspotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy::type_
+          time_offset: HubSpotSDK::Crm::PublicTimeOffset,
+          type: HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy::type_
         }
 
-      class PublicRelativeComparativeTimestampRefineBy < HubspotSDK::Internal::Type::BaseModel
+      class PublicRelativeComparativeTimestampRefineBy < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor comparison: String
 
-        attr_accessor time_offset: HubspotSDK::Crm::PublicTimeOffset
+        attr_accessor time_offset: HubSpotSDK::Crm::PublicTimeOffset
 
-        attr_accessor type: HubspotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy::type_
+        attr_accessor type: HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy::type_
 
         def initialize: (
           comparison: String,
-          time_offset: HubspotSDK::Crm::PublicTimeOffset,
-          type: HubspotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy::type_
+          time_offset: HubSpotSDK::Crm::PublicTimeOffset,
+          type: HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy::type_
         ) -> void
 
         def to_hash: -> {
           comparison: String,
-          time_offset: HubspotSDK::Crm::PublicTimeOffset,
-          type: HubspotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy::type_
+          time_offset: HubSpotSDK::Crm::PublicTimeOffset,
+          type: HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy::type_
         }
 
         type type_ = :RELATIVE_COMPARATIVE
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           RELATIVE_COMPARATIVE: :RELATIVE_COMPARATIVE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy::type_]
         end
       end
     end

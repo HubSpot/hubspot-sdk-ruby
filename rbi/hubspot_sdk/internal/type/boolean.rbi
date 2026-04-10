@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       # @api private
       #
       # Ruby has no Boolean class; this is something for models to refer to.
       class Boolean
-        extend HubspotSDK::Internal::Type::Converter
-        extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        extend HubSpotSDK::Internal::Type::Converter
+        extend HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         abstract!
 
@@ -28,7 +28,7 @@ module HubspotSDK
             override
               .params(
                 value: T.any(T::Boolean, T.anything),
-                state: HubspotSDK::Internal::Type::Converter::CoerceState
+                state: HubSpotSDK::Internal::Type::Converter::CoerceState
               )
               .returns(T.any(T::Boolean, T.anything))
           end
@@ -40,7 +40,7 @@ module HubspotSDK
             override
               .params(
                 value: T.any(T::Boolean, T.anything),
-                state: HubspotSDK::Internal::Type::Converter::DumpState
+                state: HubSpotSDK::Internal::Type::Converter::DumpState
               )
               .returns(T.any(T::Boolean, T.anything))
           end

@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class URLMappings
@@ -14,7 +14,7 @@ module HubspotSDK
             cdn_purge_embargo_time: Integer,
             content_group_id: Integer,
             cos_object_type:
-              HubspotSDK::Cms::URLMappingsURLMapping::CosObjectType::OrSymbol,
+              HubSpotSDK::Cms::URLMappingsURLMapping::CosObjectType::OrSymbol,
             created: Integer,
             created_by_id: Integer,
             deleted_at: Integer,
@@ -37,7 +37,7 @@ module HubspotSDK
             route_prefix: String,
             updated: Integer,
             updated_by_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(StringIO)
         end
         def create(
@@ -109,7 +109,7 @@ module HubspotSDK
         # URLs within the HubSpot CMS. It is useful for understanding how URLs are
         # structured and redirected in your content management setup.
         sig do
-          params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
+          params(request_options: HubSpotSDK::RequestOptions::OrHash).returns(
             StringIO
           )
         end
@@ -122,7 +122,7 @@ module HubspotSDK
         sig do
           params(
             id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete(id, request_options: {})
@@ -134,14 +134,14 @@ module HubspotSDK
         sig do
           params(
             id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(StringIO)
         end
         def get(id, request_options: {})
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicDateTimePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicDateTimePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute include_objects_with_no_value_set
         #   Specifies whether objects without a set value should be included in the
         #   operation.
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute operation_type
         #   The type of operation (DATETIME).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicDateTimePropertyOperation::OperationType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicDateTimePropertyOperation::OperationType]
         required :operation_type,
-                 enum: -> { HubspotSDK::Crm::PublicDateTimePropertyOperation::OperationType },
+                 enum: -> { HubSpotSDK::Crm::PublicDateTimePropertyOperation::OperationType },
                  api_name: :operationType
 
         # @!attribute operator
@@ -33,7 +33,7 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :requires_time_zone_conversion,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :requiresTimeZoneConversion
 
         # @!attribute timestamp
@@ -44,11 +44,11 @@ module HubspotSDK
 
         # @!method initialize(include_objects_with_no_value_set:, operation_type:, operator:, requires_time_zone_conversion:, timestamp:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicDateTimePropertyOperation} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicDateTimePropertyOperation} for more details.
         #
         #   @param include_objects_with_no_value_set [Boolean] Specifies whether objects without a set value should be included in the operatio
         #
-        #   @param operation_type [Symbol, HubspotSDK::Models::Crm::PublicDateTimePropertyOperation::OperationType] The type of operation (DATETIME).
+        #   @param operation_type [Symbol, HubSpotSDK::Models::Crm::PublicDateTimePropertyOperation::OperationType] The type of operation (DATETIME).
         #
         #   @param operator [String] Defines the operation to be applied, such as comparison operators (IS_BEFORE, IS
         #
@@ -58,9 +58,9 @@ module HubspotSDK
 
         # The type of operation (DATETIME).
         #
-        # @see HubspotSDK::Models::Crm::PublicDateTimePropertyOperation#operation_type
+        # @see HubSpotSDK::Models::Crm::PublicDateTimePropertyOperation#operation_type
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DATETIME = :DATETIME
 

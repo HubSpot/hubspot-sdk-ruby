@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   class FilePart
     sig { returns(T.any(Pathname, StringIO, IO, String)) }
     attr_reader :content

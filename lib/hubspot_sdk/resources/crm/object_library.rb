@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class ObjectLibrary
-        # @return [HubspotSDK::Resources::Crm::ObjectLibrary::Enablement]
+        # @return [HubSpotSDK::Resources::Crm::ObjectLibrary::Enablement]
         attr_reader :enablement
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
-          @enablement = HubspotSDK::Resources::Crm::ObjectLibrary::Enablement.new(client: client)
+          @enablement = HubSpotSDK::Resources::Crm::ObjectLibrary::Enablement.new(client: client)
         end
       end
     end

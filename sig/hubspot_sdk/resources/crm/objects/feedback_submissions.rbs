@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Objects
         class FeedbackSubmissions
-          attr_reader batch: HubspotSDK::Resources::Crm::Objects::FeedbackSubmissions::Batch
+          attr_reader batch: HubSpotSDK::Resources::Crm::Objects::FeedbackSubmissions::Batch
 
           def list: (
             ?after: String,
@@ -12,8 +12,8 @@ module HubspotSDK
             ?limit: Integer,
             ?properties: ::Array[String],
             ?properties_with_history: ::Array[String],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::SimplePublicObjectWithAssociations]
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Crm::SimplePublicObjectWithAssociations]
 
           def get: (
             String feedback_submission_id,
@@ -22,20 +22,20 @@ module HubspotSDK
             ?id_property: String,
             ?properties: ::Array[String],
             ?properties_with_history: ::Array[String],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::SimplePublicObjectWithAssociations
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::SimplePublicObjectWithAssociations
 
           def search: (
             after: String,
-            filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
+            filter_groups: ::Array[HubSpotSDK::Crm::FilterGroup],
             limit: Integer,
             properties: ::Array[String],
             sorts: ::Array[String],
             ?query: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

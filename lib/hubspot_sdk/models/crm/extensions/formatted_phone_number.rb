@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class FormattedPhoneNumber < HubspotSDK::Internal::Type::BaseModel
+        class FormattedPhoneNumber < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute e164_number
           #   The phone number formatted in E.164 standard.
           #
@@ -15,9 +15,9 @@ module HubspotSDK
           #   The type of phone number, with accepted values including FIXED_LINE, MOBILE,
           #   VOIP, and others.
           #
-          #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber::PhoneNumberType]
+          #   @return [Symbol, HubSpotSDK::Models::Crm::Extensions::FormattedPhoneNumber::PhoneNumberType]
           required :phone_number_type,
-                   enum: -> { HubspotSDK::Crm::Extensions::FormattedPhoneNumber::PhoneNumberType },
+                   enum: -> { HubSpotSDK::Crm::Extensions::FormattedPhoneNumber::PhoneNumberType },
                    api_name: :phoneNumberType
 
           # @!attribute extension
@@ -28,20 +28,20 @@ module HubspotSDK
 
           # @!method initialize(e164_number:, phone_number_type:, extension: nil)
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber} for more details.
+          #   {HubSpotSDK::Models::Crm::Extensions::FormattedPhoneNumber} for more details.
           #
           #   @param e164_number [String] The phone number formatted in E.164 standard.
           #
-          #   @param phone_number_type [Symbol, HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber::PhoneNumberType] The type of phone number, with accepted values including FIXED_LINE, MOBILE, VOI
+          #   @param phone_number_type [Symbol, HubSpotSDK::Models::Crm::Extensions::FormattedPhoneNumber::PhoneNumberType] The type of phone number, with accepted values including FIXED_LINE, MOBILE, VOI
           #
           #   @param extension [String] The extension number associated with the phone number.
 
           # The type of phone number, with accepted values including FIXED_LINE, MOBILE,
           # VOIP, and others.
           #
-          # @see HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber#phone_number_type
+          # @see HubSpotSDK::Models::Crm::Extensions::FormattedPhoneNumber#phone_number_type
           module PhoneNumberType
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             FIXED_LINE = :FIXED_LINE
             FIXED_LINE_OR_MOBILE = :FIXED_LINE_OR_MOBILE

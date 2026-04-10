@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicInListFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicInListFilter < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicInListFilter,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicInListFilter,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Indicates the type of filter being applied (IN_LIST).
         sig do
-          returns(HubspotSDK::Crm::PublicInListFilter::FilterType::OrSymbol)
+          returns(HubSpotSDK::Crm::PublicInListFilter::FilterType::OrSymbol)
         end
         attr_accessor :filter_type
 
@@ -26,12 +26,12 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :operator
 
-        sig { returns(T.nilable(HubspotSDK::Crm::PublicInListFilterMetadata)) }
+        sig { returns(T.nilable(HubSpotSDK::Crm::PublicInListFilterMetadata)) }
         attr_reader :metadata
 
         sig do
           params(
-            metadata: HubspotSDK::Crm::PublicInListFilterMetadata::OrHash
+            metadata: HubSpotSDK::Crm::PublicInListFilterMetadata::OrHash
           ).void
         end
         attr_writer :metadata
@@ -39,10 +39,10 @@ module HubspotSDK
         sig do
           params(
             filter_type:
-              HubspotSDK::Crm::PublicInListFilter::FilterType::OrSymbol,
+              HubSpotSDK::Crm::PublicInListFilter::FilterType::OrSymbol,
             list_id: String,
             operator: String,
-            metadata: HubspotSDK::Crm::PublicInListFilterMetadata::OrHash
+            metadata: HubSpotSDK::Crm::PublicInListFilterMetadata::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -60,10 +60,10 @@ module HubspotSDK
           override.returns(
             {
               filter_type:
-                HubspotSDK::Crm::PublicInListFilter::FilterType::OrSymbol,
+                HubSpotSDK::Crm::PublicInListFilter::FilterType::OrSymbol,
               list_id: String,
               operator: String,
-              metadata: HubspotSDK::Crm::PublicInListFilterMetadata
+              metadata: HubSpotSDK::Crm::PublicInListFilterMetadata
             }
           )
         end
@@ -72,24 +72,24 @@ module HubspotSDK
 
         # Indicates the type of filter being applied (IN_LIST).
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PublicInListFilter::FilterType)
+              T.all(Symbol, HubSpotSDK::Crm::PublicInListFilter::FilterType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           IN_LIST =
             T.let(
               :IN_LIST,
-              HubspotSDK::Crm::PublicInListFilter::FilterType::TaggedSymbol
+              HubSpotSDK::Crm::PublicInListFilter::FilterType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicInListFilter::FilterType::TaggedSymbol
+                HubSpotSDK::Crm::PublicInListFilter::FilterType::TaggedSymbol
               ]
             )
           end

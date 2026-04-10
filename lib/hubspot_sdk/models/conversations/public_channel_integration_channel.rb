@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      # @see HubspotSDK::Resources::Conversations::CustomChannels#create
-      class PublicChannelIntegrationChannel < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Conversations::CustomChannels#create
+      class PublicChannelIntegrationChannel < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [String]
@@ -13,7 +13,7 @@ module HubspotSDK
         # @!attribute capabilities
         #
         #   @return [Hash{Symbol=>Object}]
-        required :capabilities, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]
+        required :capabilities, HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown]
 
         # @!attribute created_at
         #

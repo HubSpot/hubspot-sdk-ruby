@@ -1,22 +1,22 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_campaign_with_assets =
         {
           id: String,
-          assets: ::Hash[Symbol, HubspotSDK::Marketing::CollectionResponsePublicCampaignAsset],
-          business_units: ::Array[HubspotSDK::Marketing::PublicBusinessUnit],
+          assets: ::Hash[Symbol, HubSpotSDK::Marketing::CollectionResponsePublicCampaignAsset],
+          business_units: ::Array[HubSpotSDK::Marketing::PublicBusinessUnit],
           created_at: Time,
           properties: ::Hash[Symbol, String],
           updated_at: Time
         }
 
-      class PublicCampaignWithAssets < HubspotSDK::Internal::Type::BaseModel
+      class PublicCampaignWithAssets < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
-        attr_accessor assets: ::Hash[Symbol, HubspotSDK::Marketing::CollectionResponsePublicCampaignAsset]
+        attr_accessor assets: ::Hash[Symbol, HubSpotSDK::Marketing::CollectionResponsePublicCampaignAsset]
 
-        attr_accessor business_units: ::Array[HubspotSDK::Marketing::PublicBusinessUnit]
+        attr_accessor business_units: ::Array[HubSpotSDK::Marketing::PublicBusinessUnit]
 
         attr_accessor created_at: Time
 
@@ -26,8 +26,8 @@ module HubspotSDK
 
         def initialize: (
           id: String,
-          assets: ::Hash[Symbol, HubspotSDK::Marketing::CollectionResponsePublicCampaignAsset],
-          business_units: ::Array[HubspotSDK::Marketing::PublicBusinessUnit],
+          assets: ::Hash[Symbol, HubSpotSDK::Marketing::CollectionResponsePublicCampaignAsset],
+          business_units: ::Array[HubSpotSDK::Marketing::PublicBusinessUnit],
           created_at: Time,
           properties: ::Hash[Symbol, String],
           updated_at: Time
@@ -35,8 +35,8 @@ module HubspotSDK
 
         def to_hash: -> {
           id: String,
-          assets: ::Hash[Symbol, HubspotSDK::Marketing::CollectionResponsePublicCampaignAsset],
-          business_units: ::Array[HubspotSDK::Marketing::PublicBusinessUnit],
+          assets: ::Hash[Symbol, HubSpotSDK::Marketing::CollectionResponsePublicCampaignAsset],
+          business_units: ::Array[HubSpotSDK::Marketing::PublicBusinessUnit],
           created_at: Time,
           properties: ::Hash[Symbol, String],
           updated_at: Time

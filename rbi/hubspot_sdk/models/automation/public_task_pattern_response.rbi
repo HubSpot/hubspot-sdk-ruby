@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicTaskPatternResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicTaskPatternResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::PublicTaskPatternResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::PublicTaskPatternResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -23,7 +23,7 @@ module HubspotSDK
         # The priority level assigned to the task.
         sig do
           returns(
-            HubspotSDK::Automation::PublicTaskPatternResponse::TaskPriority::TaggedSymbol
+            HubSpotSDK::Automation::PublicTaskPatternResponse::TaskPriority::TaggedSymbol
           )
         end
         attr_accessor :task_priority
@@ -31,7 +31,7 @@ module HubspotSDK
         # The type of task, such as an email or call.
         sig do
           returns(
-            HubspotSDK::Automation::PublicTaskPatternResponse::TaskType::TaggedSymbol
+            HubSpotSDK::Automation::PublicTaskPatternResponse::TaskType::TaggedSymbol
           )
         end
         attr_accessor :task_type
@@ -80,9 +80,9 @@ module HubspotSDK
             id: String,
             created_at: Time,
             task_priority:
-              HubspotSDK::Automation::PublicTaskPatternResponse::TaskPriority::OrSymbol,
+              HubSpotSDK::Automation::PublicTaskPatternResponse::TaskPriority::OrSymbol,
             task_type:
-              HubspotSDK::Automation::PublicTaskPatternResponse::TaskType::OrSymbol,
+              HubSpotSDK::Automation::PublicTaskPatternResponse::TaskType::OrSymbol,
             updated_at: Time,
             notes: String,
             queue_id: Integer,
@@ -121,9 +121,9 @@ module HubspotSDK
               id: String,
               created_at: Time,
               task_priority:
-                HubspotSDK::Automation::PublicTaskPatternResponse::TaskPriority::TaggedSymbol,
+                HubSpotSDK::Automation::PublicTaskPatternResponse::TaskPriority::TaggedSymbol,
               task_type:
-                HubspotSDK::Automation::PublicTaskPatternResponse::TaskType::TaggedSymbol,
+                HubSpotSDK::Automation::PublicTaskPatternResponse::TaskType::TaggedSymbol,
               updated_at: Time,
               notes: String,
               queue_id: Integer,
@@ -138,13 +138,13 @@ module HubspotSDK
 
         # The priority level assigned to the task.
         module TaskPriority
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Automation::PublicTaskPatternResponse::TaskPriority
+                HubSpotSDK::Automation::PublicTaskPatternResponse::TaskPriority
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -152,28 +152,28 @@ module HubspotSDK
           HIGH =
             T.let(
               :HIGH,
-              HubspotSDK::Automation::PublicTaskPatternResponse::TaskPriority::TaggedSymbol
+              HubSpotSDK::Automation::PublicTaskPatternResponse::TaskPriority::TaggedSymbol
             )
           LOW =
             T.let(
               :LOW,
-              HubspotSDK::Automation::PublicTaskPatternResponse::TaskPriority::TaggedSymbol
+              HubSpotSDK::Automation::PublicTaskPatternResponse::TaskPriority::TaggedSymbol
             )
           MEDIUM =
             T.let(
               :MEDIUM,
-              HubspotSDK::Automation::PublicTaskPatternResponse::TaskPriority::TaggedSymbol
+              HubSpotSDK::Automation::PublicTaskPatternResponse::TaskPriority::TaggedSymbol
             )
           NONE =
             T.let(
               :NONE,
-              HubspotSDK::Automation::PublicTaskPatternResponse::TaskPriority::TaggedSymbol
+              HubSpotSDK::Automation::PublicTaskPatternResponse::TaskPriority::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::PublicTaskPatternResponse::TaskPriority::TaggedSymbol
+                HubSpotSDK::Automation::PublicTaskPatternResponse::TaskPriority::TaggedSymbol
               ]
             )
           end
@@ -183,13 +183,13 @@ module HubspotSDK
 
         # The type of task, such as an email or call.
         module TaskType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Automation::PublicTaskPatternResponse::TaskType
+                HubSpotSDK::Automation::PublicTaskPatternResponse::TaskType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -197,38 +197,38 @@ module HubspotSDK
           CALL =
             T.let(
               :CALL,
-              HubspotSDK::Automation::PublicTaskPatternResponse::TaskType::TaggedSymbol
+              HubSpotSDK::Automation::PublicTaskPatternResponse::TaskType::TaggedSymbol
             )
           EMAIL =
             T.let(
               :EMAIL,
-              HubspotSDK::Automation::PublicTaskPatternResponse::TaskType::TaggedSymbol
+              HubSpotSDK::Automation::PublicTaskPatternResponse::TaskType::TaggedSymbol
             )
           LINKED_IN_CONNECT =
             T.let(
               :LINKED_IN_CONNECT,
-              HubspotSDK::Automation::PublicTaskPatternResponse::TaskType::TaggedSymbol
+              HubSpotSDK::Automation::PublicTaskPatternResponse::TaskType::TaggedSymbol
             )
           LINKED_IN_MESSAGE =
             T.let(
               :LINKED_IN_MESSAGE,
-              HubspotSDK::Automation::PublicTaskPatternResponse::TaskType::TaggedSymbol
+              HubSpotSDK::Automation::PublicTaskPatternResponse::TaskType::TaggedSymbol
             )
           MEETING =
             T.let(
               :MEETING,
-              HubspotSDK::Automation::PublicTaskPatternResponse::TaskType::TaggedSymbol
+              HubSpotSDK::Automation::PublicTaskPatternResponse::TaskType::TaggedSymbol
             )
           TODO =
             T.let(
               :TODO,
-              HubspotSDK::Automation::PublicTaskPatternResponse::TaskType::TaggedSymbol
+              HubSpotSDK::Automation::PublicTaskPatternResponse::TaskType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::PublicTaskPatternResponse::TaskType::TaggedSymbol
+                HubSpotSDK::Automation::PublicTaskPatternResponse::TaskType::TaggedSymbol
               ]
             )
           end

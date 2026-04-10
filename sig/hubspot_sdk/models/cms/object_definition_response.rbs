@@ -1,44 +1,44 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type object_definition_response =
         {
           object_type_id: String,
           object_type_name: String,
-          properties: ::Array[HubspotSDK::Cms::PropertyDefinition],
-          property_groups: ::Array[HubspotSDK::Cms::GroupView],
-          schema: HubspotSDK::Cms::InboundDBObjectType
+          properties: ::Array[HubSpotSDK::Cms::PropertyDefinition],
+          property_groups: ::Array[HubSpotSDK::Cms::GroupView],
+          schema: HubSpotSDK::Cms::InboundDBObjectType
         }
 
-      class ObjectDefinitionResponse < HubspotSDK::Internal::Type::BaseModel
+      class ObjectDefinitionResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor object_type_id: String
 
         attr_accessor object_type_name: String
 
-        attr_accessor properties: ::Array[HubspotSDK::Cms::PropertyDefinition]
+        attr_accessor properties: ::Array[HubSpotSDK::Cms::PropertyDefinition]
 
-        attr_accessor property_groups: ::Array[HubspotSDK::Cms::GroupView]
+        attr_accessor property_groups: ::Array[HubSpotSDK::Cms::GroupView]
 
-        attr_reader schema: HubspotSDK::Cms::InboundDBObjectType?
+        attr_reader schema: HubSpotSDK::Cms::InboundDBObjectType?
 
         def schema=: (
-          HubspotSDK::Cms::InboundDBObjectType
-        ) -> HubspotSDK::Cms::InboundDBObjectType
+          HubSpotSDK::Cms::InboundDBObjectType
+        ) -> HubSpotSDK::Cms::InboundDBObjectType
 
         def initialize: (
           object_type_id: String,
           object_type_name: String,
-          properties: ::Array[HubspotSDK::Cms::PropertyDefinition],
-          property_groups: ::Array[HubspotSDK::Cms::GroupView],
-          ?schema: HubspotSDK::Cms::InboundDBObjectType
+          properties: ::Array[HubSpotSDK::Cms::PropertyDefinition],
+          property_groups: ::Array[HubSpotSDK::Cms::GroupView],
+          ?schema: HubSpotSDK::Cms::InboundDBObjectType
         ) -> void
 
         def to_hash: -> {
           object_type_id: String,
           object_type_name: String,
-          properties: ::Array[HubspotSDK::Cms::PropertyDefinition],
-          property_groups: ::Array[HubspotSDK::Cms::GroupView],
-          schema: HubspotSDK::Cms::InboundDBObjectType
+          properties: ::Array[HubSpotSDK::Cms::PropertyDefinition],
+          property_groups: ::Array[HubSpotSDK::Cms::GroupView],
+          schema: HubSpotSDK::Cms::InboundDBObjectType
         }
       end
     end

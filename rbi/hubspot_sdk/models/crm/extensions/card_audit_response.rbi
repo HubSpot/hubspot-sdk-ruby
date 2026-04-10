@@ -1,22 +1,22 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class CardAuditResponse < HubspotSDK::Internal::Type::BaseModel
+        class CardAuditResponse < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Extensions::CardAuditResponse,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Extensions::CardAuditResponse,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
           # The type of action performed, with possible values: CREATE, DELETE, UPDATE.
           sig do
             returns(
-              HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol
+              HubSpotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol
             )
           end
           attr_accessor :action_type
@@ -29,7 +29,7 @@ module HubspotSDK
           # EXTERNAL, INTERNAL.
           sig do
             returns(
-              HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
+              HubSpotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
             )
           end
           attr_accessor :auth_source
@@ -49,10 +49,10 @@ module HubspotSDK
           sig do
             params(
               action_type:
-                HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType::OrSymbol,
+                HubSpotSDK::Crm::Extensions::CardAuditResponse::ActionType::OrSymbol,
               application_id: Integer,
               auth_source:
-                HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource::OrSymbol,
+                HubSpotSDK::Crm::Extensions::CardAuditResponse::AuthSource::OrSymbol,
               changed_at: Integer,
               initiating_user_id: Integer,
               object_type_id: Integer
@@ -79,10 +79,10 @@ module HubspotSDK
             override.returns(
               {
                 action_type:
-                  HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol,
+                  HubSpotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol,
                 application_id: Integer,
                 auth_source:
-                  HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol,
+                  HubSpotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol,
                 changed_at: Integer,
                 initiating_user_id: Integer,
                 object_type_id: Integer
@@ -94,13 +94,13 @@ module HubspotSDK
 
           # The type of action performed, with possible values: CREATE, DELETE, UPDATE.
           module ActionType
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             TaggedSymbol =
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType
+                  HubSpotSDK::Crm::Extensions::CardAuditResponse::ActionType
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -108,23 +108,23 @@ module HubspotSDK
             CREATE =
               T.let(
                 :CREATE,
-                HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol
               )
             DELETE =
               T.let(
                 :DELETE,
-                HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol
               )
             UPDATE =
               T.let(
                 :UPDATE,
-                HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol
+                  HubSpotSDK::Crm::Extensions::CardAuditResponse::ActionType::TaggedSymbol
                 ]
               )
             end
@@ -135,13 +135,13 @@ module HubspotSDK
           # The source of authentication for the action, with possible values: APP,
           # EXTERNAL, INTERNAL.
           module AuthSource
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             TaggedSymbol =
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource
+                  HubSpotSDK::Crm::Extensions::CardAuditResponse::AuthSource
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -149,23 +149,23 @@ module HubspotSDK
             APP =
               T.let(
                 :APP,
-                HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
               )
             EXTERNAL =
               T.let(
                 :EXTERNAL,
-                HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
               )
             INTERNAL =
               T.let(
                 :INTERNAL,
-                HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
+                  HubSpotSDK::Crm::Extensions::CardAuditResponse::AuthSource::TaggedSymbol
                 ]
               )
             end

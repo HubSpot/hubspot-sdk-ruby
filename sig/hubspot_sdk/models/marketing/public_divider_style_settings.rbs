@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_divider_style_settings =
         { color: top, height: Integer, line_type: String }
 
-      class PublicDividerStyleSettings < HubspotSDK::Internal::Type::BaseModel
+      class PublicDividerStyleSettings < HubSpotSDK::Internal::Type::BaseModel
         attr_reader color: top?
 
         def color=: (top) -> top

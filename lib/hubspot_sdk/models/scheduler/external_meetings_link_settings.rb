@@ -1,35 +1,35 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalMeetingsLinkSettings < HubspotSDK::Internal::Type::BaseModel
+      class ExternalMeetingsLinkSettings < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute availability
         #   An array containing the closed range availability for a meeting link. Closed
         #   range times are provided as minute offsets from midnight (e.g., 540 corresponds
         #   to 9am).
         #
-        #   @return [Hash{Symbol=>HubspotSDK::Models::Scheduler::ExternalClosedRange}]
+        #   @return [Hash{Symbol=>HubSpotSDK::Models::Scheduler::ExternalClosedRange}]
         required :availability,
-                 -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Scheduler::ExternalClosedRange] }
+                 -> { HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Scheduler::ExternalClosedRange] }
 
         # @!attribute durations
         #
         #   @return [Array<Integer>]
-        required :durations, HubspotSDK::Internal::Type::ArrayOf[Integer]
+        required :durations, HubSpotSDK::Internal::Type::ArrayOf[Integer]
 
         # @!attribute form_fields
         #
-        #   @return [Array<HubspotSDK::Models::Scheduler::ExternalLinkFormField>]
+        #   @return [Array<HubSpotSDK::Models::Scheduler::ExternalLinkFormField>]
         required :form_fields,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Scheduler::ExternalLinkFormField] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Scheduler::ExternalLinkFormField] },
                  api_name: :formFields
 
         # @!attribute legal_consent_enabled
         #   Whether the legal consent checkbox is displayed during meeting booking.
         #
         #   @return [Boolean]
-        required :legal_consent_enabled, HubspotSDK::Internal::Type::Boolean, api_name: :legalConsentEnabled
+        required :legal_consent_enabled, HubSpotSDK::Internal::Type::Boolean, api_name: :legalConsentEnabled
 
         # @!attribute meeting_buffer_time
         #   The minimum buffer time in milliseconds between consecutive meetings.
@@ -42,16 +42,16 @@ module HubspotSDK
         #   to link types of ROUND_ROBIN.
         #
         #   @return [Boolean]
-        required :owner_prioritized, HubspotSDK::Internal::Type::Boolean, api_name: :ownerPrioritized
+        required :owner_prioritized, HubSpotSDK::Internal::Type::Boolean, api_name: :ownerPrioritized
 
         # @!attribute start_time_increment_minutes
         #   The increment for available start times of meetings, spelt out as a word (e.g.
         #   15 minute increment corresponds to `FIFTEEN`). `MEETING_DURATION` is also a
         #   valid value.
         #
-        #   @return [Symbol, HubspotSDK::Models::Scheduler::ExternalMeetingsLinkSettings::StartTimeIncrementMinutes]
+        #   @return [Symbol, HubSpotSDK::Models::Scheduler::ExternalMeetingsLinkSettings::StartTimeIncrementMinutes]
         required :start_time_increment_minutes,
-                 enum: -> { HubspotSDK::Scheduler::ExternalMeetingsLinkSettings::StartTimeIncrementMinutes },
+                 enum: -> { HubSpotSDK::Scheduler::ExternalMeetingsLinkSettings::StartTimeIncrementMinutes },
                  api_name: :startTimeIncrementMinutes
 
         # @!attribute weeks_to_advertise
@@ -77,15 +77,15 @@ module HubspotSDK
 
         # @!attribute display_info
         #
-        #   @return [HubspotSDK::Models::Scheduler::ExternalLinkDisplayInfo, nil]
-        optional :display_info, -> { HubspotSDK::Scheduler::ExternalLinkDisplayInfo }, api_name: :displayInfo
+        #   @return [HubSpotSDK::Models::Scheduler::ExternalLinkDisplayInfo, nil]
+        optional :display_info, -> { HubSpotSDK::Scheduler::ExternalLinkDisplayInfo }, api_name: :displayInfo
 
         # @!attribute guest_settings
         #
-        #   @return [HubspotSDK::Models::Scheduler::ExternalGuestSettings, nil]
+        #   @return [HubSpotSDK::Models::Scheduler::ExternalGuestSettings, nil]
         optional :guest_settings,
                  -> {
-                   HubspotSDK::Scheduler::ExternalGuestSettings
+                   HubSpotSDK::Scheduler::ExternalGuestSettings
                  },
                  api_name: :guestSettings
 
@@ -97,9 +97,9 @@ module HubspotSDK
 
         # @!attribute legal_consent_options
         #
-        #   @return [HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions, nil]
+        #   @return [HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions, nil]
         optional :legal_consent_options,
-                 -> { HubspotSDK::Scheduler::ExternalLegalConsentOptions },
+                 -> { HubSpotSDK::Scheduler::ExternalLegalConsentOptions },
                  api_name: :legalConsentOptions
 
         # @!attribute locale
@@ -122,20 +122,20 @@ module HubspotSDK
 
         # @!attribute welcome_screen_info
         #
-        #   @return [HubspotSDK::Models::Scheduler::ExternalMeetingsWelcomeScreenInfo, nil]
+        #   @return [HubSpotSDK::Models::Scheduler::ExternalMeetingsWelcomeScreenInfo, nil]
         optional :welcome_screen_info,
-                 -> { HubspotSDK::Scheduler::ExternalMeetingsWelcomeScreenInfo },
+                 -> { HubSpotSDK::Scheduler::ExternalMeetingsWelcomeScreenInfo },
                  api_name: :welcomeScreenInfo
 
         # @!method initialize(availability:, durations:, form_fields:, legal_consent_enabled:, meeting_buffer_time:, owner_prioritized:, start_time_increment_minutes:, weeks_to_advertise:, custom_availability_end_date: nil, custom_availability_start_date: nil, display_info: nil, guest_settings: nil, language: nil, legal_consent_options: nil, locale: nil, location: nil, redirect_url: nil, welcome_screen_info: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Scheduler::ExternalMeetingsLinkSettings} for more details.
+        #   {HubSpotSDK::Models::Scheduler::ExternalMeetingsLinkSettings} for more details.
         #
-        #   @param availability [Hash{Symbol=>HubspotSDK::Models::Scheduler::ExternalClosedRange}] An array containing the closed range availability for a meeting link. Closed ran
+        #   @param availability [Hash{Symbol=>HubSpotSDK::Models::Scheduler::ExternalClosedRange}] An array containing the closed range availability for a meeting link. Closed ran
         #
         #   @param durations [Array<Integer>]
         #
-        #   @param form_fields [Array<HubspotSDK::Models::Scheduler::ExternalLinkFormField>]
+        #   @param form_fields [Array<HubSpotSDK::Models::Scheduler::ExternalLinkFormField>]
         #
         #   @param legal_consent_enabled [Boolean] Whether the legal consent checkbox is displayed during meeting booking.
         #
@@ -143,7 +143,7 @@ module HubspotSDK
         #
         #   @param owner_prioritized [Boolean] Indicates whether the meeting owner is prioritized during booking. Only applies
         #
-        #   @param start_time_increment_minutes [Symbol, HubspotSDK::Models::Scheduler::ExternalMeetingsLinkSettings::StartTimeIncrementMinutes] The increment for available start times of meetings, spelt out as a word (e.g. 1
+        #   @param start_time_increment_minutes [Symbol, HubSpotSDK::Models::Scheduler::ExternalMeetingsLinkSettings::StartTimeIncrementMinutes] The increment for available start times of meetings, spelt out as a word (e.g. 1
         #
         #   @param weeks_to_advertise [Integer] Legacy property that indicates the number of weeks in advance that availability
         #
@@ -151,13 +151,13 @@ module HubspotSDK
         #
         #   @param custom_availability_start_date [Integer] The start date for a meeting link's custom availability window, represented as U
         #
-        #   @param display_info [HubspotSDK::Models::Scheduler::ExternalLinkDisplayInfo]
+        #   @param display_info [HubSpotSDK::Models::Scheduler::ExternalLinkDisplayInfo]
         #
-        #   @param guest_settings [HubspotSDK::Models::Scheduler::ExternalGuestSettings]
+        #   @param guest_settings [HubSpotSDK::Models::Scheduler::ExternalGuestSettings]
         #
         #   @param language [String] The language setting used for the meeting link.
         #
-        #   @param legal_consent_options [HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions]
+        #   @param legal_consent_options [HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions]
         #
         #   @param locale [String] The locale setting used for formatting dates and times in the meeting link.
         #
@@ -165,15 +165,15 @@ module HubspotSDK
         #
         #   @param redirect_url [String] The URL to redirect to after a meeting is booked.
         #
-        #   @param welcome_screen_info [HubspotSDK::Models::Scheduler::ExternalMeetingsWelcomeScreenInfo]
+        #   @param welcome_screen_info [HubSpotSDK::Models::Scheduler::ExternalMeetingsWelcomeScreenInfo]
 
         # The increment for available start times of meetings, spelt out as a word (e.g.
         # 15 minute increment corresponds to `FIFTEEN`). `MEETING_DURATION` is also a
         # valid value.
         #
-        # @see HubspotSDK::Models::Scheduler::ExternalMeetingsLinkSettings#start_time_increment_minutes
+        # @see HubSpotSDK::Models::Scheduler::ExternalMeetingsLinkSettings#start_time_increment_minutes
         module StartTimeIncrementMinutes
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           FIFTEEN = :FIFTEEN
           FIVE = :FIVE

@@ -1,13 +1,13 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Meta
-      sig { returns(HubspotSDK::Resources::Meta::Origins) }
+      sig { returns(HubSpotSDK::Resources::Meta::Origins) }
       attr_reader :origins
 
       # @api private
-      sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+      sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
       def self.new(client:)
       end
     end

@@ -1,41 +1,41 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Conversations
       class CustomChannels
         class Messages
           def create: (
             Integer channel_id,
-            attachments: ::Array[HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::attachment],
+            attachments: ::Array[HubSpotSDK::Models::Conversations::ChannelIntegrationMessageEgg::attachment],
             channel_account_id: String,
-            message_direction: HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg::message_direction,
-            recipients: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant],
-            senders: ::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant],
+            message_direction: HubSpotSDK::Models::Conversations::ChannelIntegrationMessageEgg::message_direction,
+            recipients: ::Array[HubSpotSDK::Conversations::ChannelIntegrationParticipant],
+            senders: ::Array[HubSpotSDK::Conversations::ChannelIntegrationParticipant],
             text: String,
             timestamp: Time,
             ?associate_with_contact_id: Integer,
             ?in_reply_to_id: String,
             ?integration_idempotency_id: String,
             ?integration_thread_id: String,
-            ?pre_resolved_contacts: HubspotSDK::Conversations::PreResolvedContacts,
+            ?pre_resolved_contacts: HubSpotSDK::Conversations::PreResolvedContacts,
             ?rich_text: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Conversations::PublicConversationsMessage
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Conversations::PublicConversationsMessage
 
           def update: (
             String message_id,
             channel_id: Integer,
-            status_type: HubspotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest::status_type,
+            status_type: HubSpotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest::status_type,
             ?error_message: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Conversations::PublicConversationsMessage
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Conversations::PublicConversationsMessage
 
           def get: (
             String message_id,
             channel_id: Integer,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Conversations::PublicConversationsMessage
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Conversations::PublicConversationsMessage
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalCalendarMeetingEventResponseProperties < HubspotSDK::Internal::Type::BaseModel
+      class ExternalCalendarMeetingEventResponseProperties < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute hs_engagement_source
         #   The source of the engagement, will always be `MEETINGS`.
         #
-        #   @return [Symbol, HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsEngagementSource]
+        #   @return [Symbol, HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsEngagementSource]
         required :hs_engagement_source,
-                 enum: -> { HubspotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsEngagementSource }
+                 enum: -> { HubSpotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsEngagementSource }
 
         # @!attribute hs_engagement_source_id
         #   The ID associated with the process created the engagement. Should always be
@@ -61,12 +61,12 @@ module HubspotSDK
         # @!attribute hs_attachment_ids
         #
         #   @return [Array<String>, nil]
-        optional :hs_attachment_ids, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :hs_attachment_ids, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute hs_attendee_owner_ids
         #
         #   @return [Array<String>, nil]
-        optional :hs_attendee_owner_ids, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :hs_attendee_owner_ids, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute hs_include_description_in_reminder
         #   Whether to include the meeting description in the reminder.
@@ -103,9 +103,9 @@ module HubspotSDK
         #   The type of location for the meeting. Acceptable values are: ADDRESS, CUSTOM,
         #   PHONE.
         #
-        #   @return [Symbol, HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsMeetingLocationType, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsMeetingLocationType, nil]
         optional :hs_meeting_location_type,
-                 enum: -> { HubspotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsMeetingLocationType }
+                 enum: -> { HubSpotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsMeetingLocationType }
 
         # @!attribute hs_unique_id
         #   The unique ID of the created calendar event.
@@ -121,10 +121,10 @@ module HubspotSDK
 
         # @!method initialize(hs_engagement_source:, hs_engagement_source_id:, hs_meeting_end_time:, hs_meeting_outcome:, hs_meeting_start_time:, hs_meeting_title:, hs_timestamp:, hs_activity_type: nil, hs_attachment_ids: nil, hs_attendee_owner_ids: nil, hs_include_description_in_reminder: nil, hs_internal_meeting_notes: nil, hs_meeting_body: nil, hs_meeting_external_url: nil, hs_meeting_location: nil, hs_meeting_location_type: nil, hs_unique_id: nil, hubspot_owner_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties}
+        #   {HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties}
         #   for more details.
         #
-        #   @param hs_engagement_source [Symbol, HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsEngagementSource] The source of the engagement, will always be `MEETINGS`.
+        #   @param hs_engagement_source [Symbol, HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsEngagementSource] The source of the engagement, will always be `MEETINGS`.
         #
         #   @param hs_engagement_source_id [String] The ID associated with the process created the engagement. Should always be empt
         #
@@ -154,7 +154,7 @@ module HubspotSDK
         #
         #   @param hs_meeting_location [String] The physical address, virtual location, or phone number where the meeting will t
         #
-        #   @param hs_meeting_location_type [Symbol, HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsMeetingLocationType] The type of location for the meeting. Acceptable values are: ADDRESS, CUSTOM, PH
+        #   @param hs_meeting_location_type [Symbol, HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsMeetingLocationType] The type of location for the meeting. Acceptable values are: ADDRESS, CUSTOM, PH
         #
         #   @param hs_unique_id [String] The unique ID of the created calendar event.
         #
@@ -162,9 +162,9 @@ module HubspotSDK
 
         # The source of the engagement, will always be `MEETINGS`.
         #
-        # @see HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties#hs_engagement_source
+        # @see HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties#hs_engagement_source
         module HsEngagementSource
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ACADEMY = :ACADEMY
           ACCEPTANCE_TEST = :ACCEPTANCE_TEST
@@ -287,9 +287,9 @@ module HubspotSDK
         # The type of location for the meeting. Acceptable values are: ADDRESS, CUSTOM,
         # PHONE.
         #
-        # @see HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties#hs_meeting_location_type
+        # @see HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties#hs_meeting_location_type
         module HsMeetingLocationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ADDRESS = :ADDRESS
           CUSTOM = :CUSTOM

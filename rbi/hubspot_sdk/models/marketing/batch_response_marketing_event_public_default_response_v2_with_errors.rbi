@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class BatchResponseMarketingEventPublicDefaultResponseV2WithErrors < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseMarketingEventPublicDefaultResponseV2WithErrors < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -19,7 +19,7 @@ module HubspotSDK
         sig do
           returns(
             T::Array[
-              HubspotSDK::Marketing::MarketingEventPublicDefaultResponseV2
+              HubSpotSDK::Marketing::MarketingEventPublicDefaultResponseV2
             ]
           )
         end
@@ -32,15 +32,15 @@ module HubspotSDK
         # The status of the request processing
         sig do
           returns(
-            HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::Status::OrSymbol
+            HubSpotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::Status::OrSymbol
           )
         end
         attr_accessor :status
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
+        sig { returns(T.nilable(T::Array[HubSpotSDK::StandardError])) }
         attr_reader :errors
 
-        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
+        sig { params(errors: T::Array[HubSpotSDK::StandardError::OrHash]).void }
         attr_writer :errors
 
         # Result of the request
@@ -69,12 +69,12 @@ module HubspotSDK
             completed_at: Time,
             results:
               T::Array[
-                HubspotSDK::Marketing::MarketingEventPublicDefaultResponseV2::OrHash
+                HubSpotSDK::Marketing::MarketingEventPublicDefaultResponseV2::OrHash
               ],
             started_at: Time,
             status:
-              HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::Status::OrSymbol,
-            errors: T::Array[HubspotSDK::StandardError::OrHash],
+              HubSpotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::Status::OrSymbol,
+            errors: T::Array[HubSpotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
             requested_at: Time
@@ -104,12 +104,12 @@ module HubspotSDK
               completed_at: Time,
               results:
                 T::Array[
-                  HubspotSDK::Marketing::MarketingEventPublicDefaultResponseV2
+                  HubSpotSDK::Marketing::MarketingEventPublicDefaultResponseV2
                 ],
               started_at: Time,
               status:
-                HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::Status::OrSymbol,
-              errors: T::Array[HubspotSDK::StandardError],
+                HubSpotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::Status::OrSymbol,
+              errors: T::Array[HubSpotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
               requested_at: Time
@@ -121,13 +121,13 @@ module HubspotSDK
 
         # The status of the request processing
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::Status
+                HubSpotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -135,28 +135,28 @@ module HubspotSDK
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::Status::TaggedSymbol
+              HubSpotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::Status::TaggedSymbol
+              HubSpotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::Status::TaggedSymbol
             )
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::Status::TaggedSymbol
+              HubSpotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::Status::TaggedSymbol
+              HubSpotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::Status::TaggedSymbol
+                HubSpotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::Status::TaggedSymbol
               ]
             )
           end

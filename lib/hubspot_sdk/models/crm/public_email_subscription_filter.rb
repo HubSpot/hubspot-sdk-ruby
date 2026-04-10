@@ -1,26 +1,26 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicEmailSubscriptionFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailSubscriptionFilter < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute accepted_statuses
         #
         #   @return [Array<String>]
-        required :accepted_statuses, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :acceptedStatuses
+        required :accepted_statuses, HubSpotSDK::Internal::Type::ArrayOf[String], api_name: :acceptedStatuses
 
         # @!attribute filter_type
         #   Indicates the type of filter (EMAIL_SUBSCRIPTION).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicEmailSubscriptionFilter::FilterType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicEmailSubscriptionFilter::FilterType]
         required :filter_type,
-                 enum: -> { HubspotSDK::Crm::PublicEmailSubscriptionFilter::FilterType },
+                 enum: -> { HubSpotSDK::Crm::PublicEmailSubscriptionFilter::FilterType },
                  api_name: :filterType
 
         # @!attribute subscription_ids
         #
         #   @return [Array<String>]
-        required :subscription_ids, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :subscriptionIds
+        required :subscription_ids, HubSpotSDK::Internal::Type::ArrayOf[String], api_name: :subscriptionIds
 
         # @!attribute subscription_type
         #   The type of subscription related to the filter (PORTAL, BRAND, SUBSCRIPTION,
@@ -31,11 +31,11 @@ module HubspotSDK
 
         # @!method initialize(accepted_statuses:, filter_type:, subscription_ids:, subscription_type: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicEmailSubscriptionFilter} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicEmailSubscriptionFilter} for more details.
         #
         #   @param accepted_statuses [Array<String>]
         #
-        #   @param filter_type [Symbol, HubspotSDK::Models::Crm::PublicEmailSubscriptionFilter::FilterType] Indicates the type of filter (EMAIL_SUBSCRIPTION).
+        #   @param filter_type [Symbol, HubSpotSDK::Models::Crm::PublicEmailSubscriptionFilter::FilterType] Indicates the type of filter (EMAIL_SUBSCRIPTION).
         #
         #   @param subscription_ids [Array<String>]
         #
@@ -43,9 +43,9 @@ module HubspotSDK
 
         # Indicates the type of filter (EMAIL_SUBSCRIPTION).
         #
-        # @see HubspotSDK::Models::Crm::PublicEmailSubscriptionFilter#filter_type
+        # @see HubSpotSDK::Models::Crm::PublicEmailSubscriptionFilter#filter_type
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL_SUBSCRIPTION = :EMAIL_SUBSCRIPTION
 

@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       # @api private
@@ -28,8 +28,8 @@ module HubspotSDK
         # @api private
         sig do
           params(
-            client: HubspotSDK::Internal::Transport::BaseClient,
-            req: HubspotSDK::Internal::Transport::BaseClient::RequestComponents,
+            client: HubSpotSDK::Internal::Transport::BaseClient,
+            req: HubSpotSDK::Internal::Transport::BaseClient::RequestComponents,
             headers: T::Hash[String, String],
             page_data: T.anything
           ).void

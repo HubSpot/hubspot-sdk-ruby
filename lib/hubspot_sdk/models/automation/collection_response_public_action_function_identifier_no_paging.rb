@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class CollectionResponsePublicActionFunctionIdentifierNoPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponsePublicActionFunctionIdentifierNoPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Automation::PublicActionFunctionIdentifier>]
+        #   @return [Array<HubSpotSDK::Models::Automation::PublicActionFunctionIdentifier>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicActionFunctionIdentifier] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicActionFunctionIdentifier] }
 
         # @!method initialize(results:)
-        #   @param results [Array<HubspotSDK::Models::Automation::PublicActionFunctionIdentifier>]
+        #   @param results [Array<HubSpotSDK::Models::Automation::PublicActionFunctionIdentifier>]
       end
     end
   end

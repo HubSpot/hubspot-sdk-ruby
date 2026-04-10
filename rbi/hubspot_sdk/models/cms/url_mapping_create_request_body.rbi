@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class URLMappingCreateRequestBody < HubspotSDK::Internal::Type::BaseModel
+      class URLMappingCreateRequestBody < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::URLMappingCreateRequestBody,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::URLMappingCreateRequestBody,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

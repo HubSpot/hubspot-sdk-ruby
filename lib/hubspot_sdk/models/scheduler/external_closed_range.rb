@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalClosedRange < HubspotSDK::Internal::Type::BaseModel
+      class ExternalClosedRange < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute end_
         #   The end value of the closed range, represented as an integer.
         #

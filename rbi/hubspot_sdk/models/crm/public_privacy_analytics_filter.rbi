@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicPrivacyAnalyticsFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicPrivacyAnalyticsFilter < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicPrivacyAnalyticsFilter,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicPrivacyAnalyticsFilter,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Specifies the type of filter (PRIVACY).
         sig do
           returns(
-            HubspotSDK::Crm::PublicPrivacyAnalyticsFilter::FilterType::OrSymbol
+            HubSpotSDK::Crm::PublicPrivacyAnalyticsFilter::FilterType::OrSymbol
           )
         end
         attr_accessor :filter_type
@@ -32,7 +32,7 @@ module HubspotSDK
         sig do
           params(
             filter_type:
-              HubspotSDK::Crm::PublicPrivacyAnalyticsFilter::FilterType::OrSymbol,
+              HubSpotSDK::Crm::PublicPrivacyAnalyticsFilter::FilterType::OrSymbol,
             operator: String,
             privacy_name: String
           ).returns(T.attached_class)
@@ -52,7 +52,7 @@ module HubspotSDK
           override.returns(
             {
               filter_type:
-                HubspotSDK::Crm::PublicPrivacyAnalyticsFilter::FilterType::OrSymbol,
+                HubSpotSDK::Crm::PublicPrivacyAnalyticsFilter::FilterType::OrSymbol,
               operator: String,
               privacy_name: String
             }
@@ -63,13 +63,13 @@ module HubspotSDK
 
         # Specifies the type of filter (PRIVACY).
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicPrivacyAnalyticsFilter::FilterType
+                HubSpotSDK::Crm::PublicPrivacyAnalyticsFilter::FilterType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -77,13 +77,13 @@ module HubspotSDK
           PRIVACY =
             T.let(
               :PRIVACY,
-              HubspotSDK::Crm::PublicPrivacyAnalyticsFilter::FilterType::TaggedSymbol
+              HubSpotSDK::Crm::PublicPrivacyAnalyticsFilter::FilterType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicPrivacyAnalyticsFilter::FilterType::TaggedSymbol
+                HubSpotSDK::Crm::PublicPrivacyAnalyticsFilter::FilterType::TaggedSymbol
               ]
             )
           end

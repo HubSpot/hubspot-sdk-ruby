@@ -1,15 +1,15 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_association_definition_configuration_update_result =
         {
-          category: HubspotSDK::Models::Crm::PublicAssociationDefinitionConfigurationUpdateResult::category,
+          category: HubSpotSDK::Models::Crm::PublicAssociationDefinitionConfigurationUpdateResult::category,
           type_id: Integer,
           user_enforced_max_to_object_ids: Integer
         }
 
-      class PublicAssociationDefinitionConfigurationUpdateResult < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor category: HubspotSDK::Models::Crm::PublicAssociationDefinitionConfigurationUpdateResult::category
+      class PublicAssociationDefinitionConfigurationUpdateResult < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor category: HubSpotSDK::Models::Crm::PublicAssociationDefinitionConfigurationUpdateResult::category
 
         attr_accessor type_id: Integer
 
@@ -18,13 +18,13 @@ module HubspotSDK
         def user_enforced_max_to_object_ids=: (Integer) -> Integer
 
         def initialize: (
-          category: HubspotSDK::Models::Crm::PublicAssociationDefinitionConfigurationUpdateResult::category,
+          category: HubSpotSDK::Models::Crm::PublicAssociationDefinitionConfigurationUpdateResult::category,
           type_id: Integer,
           ?user_enforced_max_to_object_ids: Integer
         ) -> void
 
         def to_hash: -> {
-          category: HubspotSDK::Models::Crm::PublicAssociationDefinitionConfigurationUpdateResult::category,
+          category: HubSpotSDK::Models::Crm::PublicAssociationDefinitionConfigurationUpdateResult::category,
           type_id: Integer,
           user_enforced_max_to_object_ids: Integer
         }
@@ -33,14 +33,14 @@ module HubspotSDK
           :HUBSPOT_DEFINED | :INTEGRATOR_DEFINED | :USER_DEFINED | :WORK
 
         module Category
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HUBSPOT_DEFINED: :HUBSPOT_DEFINED
           INTEGRATOR_DEFINED: :INTEGRATOR_DEFINED
           USER_DEFINED: :USER_DEFINED
           WORK: :WORK
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicAssociationDefinitionConfigurationUpdateResult::category]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicAssociationDefinitionConfigurationUpdateResult::category]
         end
       end
     end

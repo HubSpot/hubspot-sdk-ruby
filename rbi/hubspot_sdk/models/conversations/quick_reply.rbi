@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class QuickReply < HubspotSDK::Internal::Type::BaseModel
+      class QuickReply < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::QuickReply,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::QuickReply,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,7 +16,7 @@ module HubspotSDK
         attr_accessor :value
 
         sig do
-          returns(HubspotSDK::Conversations::QuickReply::ValueType::OrSymbol)
+          returns(HubSpotSDK::Conversations::QuickReply::ValueType::OrSymbol)
         end
         attr_accessor :value_type
 
@@ -30,7 +30,7 @@ module HubspotSDK
           params(
             value: String,
             value_type:
-              HubspotSDK::Conversations::QuickReply::ValueType::OrSymbol,
+              HubSpotSDK::Conversations::QuickReply::ValueType::OrSymbol,
             label: String
           ).returns(T.attached_class)
         end
@@ -42,7 +42,7 @@ module HubspotSDK
             {
               value: String,
               value_type:
-                HubspotSDK::Conversations::QuickReply::ValueType::OrSymbol,
+                HubSpotSDK::Conversations::QuickReply::ValueType::OrSymbol,
               label: String
             }
           )
@@ -51,29 +51,29 @@ module HubspotSDK
         end
 
         module ValueType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Conversations::QuickReply::ValueType)
+              T.all(Symbol, HubSpotSDK::Conversations::QuickReply::ValueType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           TEXT =
             T.let(
               :TEXT,
-              HubspotSDK::Conversations::QuickReply::ValueType::TaggedSymbol
+              HubSpotSDK::Conversations::QuickReply::ValueType::TaggedSymbol
             )
           URL =
             T.let(
               :URL,
-              HubspotSDK::Conversations::QuickReply::ValueType::TaggedSymbol
+              HubSpotSDK::Conversations::QuickReply::ValueType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::QuickReply::ValueType::TaggedSymbol
+                HubSpotSDK::Conversations::QuickReply::ValueType::TaggedSymbol
               ]
             )
           end

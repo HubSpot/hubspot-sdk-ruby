@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       module SubscriptionUpsertRequest
-        extend HubspotSDK::Internal::Type::Union
+        extend HubSpotSDK::Internal::Type::Union
 
-        variant -> { HubspotSDK::Webhooks::ObjectSubscriptionUpsertRequest }
+        variant -> { HubSpotSDK::Webhooks::ObjectSubscriptionUpsertRequest }
 
-        variant -> { HubspotSDK::Webhooks::AssociationSubscriptionUpsertRequest }
+        variant -> { HubSpotSDK::Webhooks::AssociationSubscriptionUpsertRequest }
 
-        variant -> { HubspotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest }
+        variant -> { HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest }
 
-        variant -> { HubspotSDK::Webhooks::ListMembershipSubscriptionUpsertRequest }
+        variant -> { HubSpotSDK::Webhooks::ListMembershipSubscriptionUpsertRequest }
 
         # @!method self.variants
-        #   @return [Array(HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest, HubspotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest, HubspotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest, HubspotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest)]
+        #   @return [Array(HubSpotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest, HubSpotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest, HubSpotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest, HubSpotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest)]
       end
     end
   end

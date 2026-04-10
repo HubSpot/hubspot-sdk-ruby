@@ -1,35 +1,35 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     CollectionResponseExternalUnifiedEvent =
       Events::CollectionResponseExternalUnifiedEvent
 
     module Events
-      class CollectionResponseExternalUnifiedEvent < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseExternalUnifiedEvent < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::CollectionResponseExternalUnifiedEvent,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::CollectionResponseExternalUnifiedEvent,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # An array of ExternalUnifiedEvent objects, each representing an individual event
         # with its associated details.
-        sig { returns(T::Array[HubspotSDK::Events::ExternalUnifiedEvent]) }
+        sig { returns(T::Array[HubSpotSDK::Events::ExternalUnifiedEvent]) }
         attr_accessor :results
 
-        sig { returns(T.nilable(HubspotSDK::Paging)) }
+        sig { returns(T.nilable(HubSpotSDK::Paging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::Paging::OrHash).void }
+        sig { params(paging: HubSpotSDK::Paging::OrHash).void }
         attr_writer :paging
 
         sig do
           params(
-            results: T::Array[HubspotSDK::Events::ExternalUnifiedEvent::OrHash],
-            paging: HubspotSDK::Paging::OrHash
+            results: T::Array[HubSpotSDK::Events::ExternalUnifiedEvent::OrHash],
+            paging: HubSpotSDK::Paging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -43,8 +43,8 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              results: T::Array[HubspotSDK::Events::ExternalUnifiedEvent],
-              paging: HubspotSDK::Paging
+              results: T::Array[HubSpotSDK::Events::ExternalUnifiedEvent],
+              paging: HubSpotSDK::Paging
             }
           )
         end

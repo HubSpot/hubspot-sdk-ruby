@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type error_detail =
       {
@@ -9,7 +9,7 @@ module HubspotSDK
         sub_category: String
       }
 
-    class ErrorDetail < HubspotSDK::Internal::Type::BaseModel
+    class ErrorDetail < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor message: String
 
       attr_reader code: String?

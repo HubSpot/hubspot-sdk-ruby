@@ -1,11 +1,11 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Automation
-      attr_reader actions: HubspotSDK::Resources::Automation::Actions
+      attr_reader actions: HubSpotSDK::Resources::Automation::Actions
 
-      attr_reader sequences: HubspotSDK::Resources::Automation::Sequences
+      attr_reader sequences: HubSpotSDK::Resources::Automation::Sequences
 
-      def initialize: (client: HubspotSDK::Client) -> void
+      def initialize: (client: HubSpotSDK::Client) -> void
     end
   end
 end

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class Transactional
         class SingleEmail
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Marketing::Transactional::SingleEmailSendParams} for more
+          # {HubSpotSDK::Models::Marketing::Transactional::SingleEmailSendParams} for more
           # details.
           #
           # Asynchronously send a transactional email. Returns the status of the email send
@@ -21,27 +21,27 @@ module HubspotSDK
           #
           # @param email_id [Integer] The content ID for the email, which can be found in email tool UI.
           #
-          # @param message [HubspotSDK::Models::Marketing::PublicSingleSendEmail]
+          # @param message [HubSpotSDK::Models::Marketing::PublicSingleSendEmail]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::EmailSendStatusView]
+          # @return [HubSpotSDK::Models::Marketing::EmailSendStatusView]
           #
-          # @see HubspotSDK::Models::Marketing::Transactional::SingleEmailSendParams
+          # @see HubSpotSDK::Models::Marketing::Transactional::SingleEmailSendParams
           def send_(params)
-            parsed, options = HubspotSDK::Marketing::Transactional::SingleEmailSendParams.dump_request(params)
+            parsed, options = HubSpotSDK::Marketing::Transactional::SingleEmailSendParams.dump_request(params)
             @client.request(
               method: :post,
               path: "marketing/transactional/2026-03/single-email/send",
               body: parsed,
-              model: HubspotSDK::Marketing::EmailSendStatusView,
+              model: HubSpotSDK::Marketing::EmailSendStatusView,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

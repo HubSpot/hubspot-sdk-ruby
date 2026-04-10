@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicUnsupportedContent < HubspotSDK::Internal::Type::BaseModel
+      class PublicUnsupportedContent < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute type
         #
-        #   @return [Symbol, HubspotSDK::Models::Conversations::PublicUnsupportedContent::Type]
-        required :type, enum: -> { HubspotSDK::Conversations::PublicUnsupportedContent::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Conversations::PublicUnsupportedContent::Type]
+        required :type, enum: -> { HubSpotSDK::Conversations::PublicUnsupportedContent::Type }
 
         # @!method initialize(type:)
-        #   @param type [Symbol, HubspotSDK::Models::Conversations::PublicUnsupportedContent::Type]
+        #   @param type [Symbol, HubSpotSDK::Models::Conversations::PublicUnsupportedContent::Type]
 
-        # @see HubspotSDK::Models::Conversations::PublicUnsupportedContent#type
+        # @see HubSpotSDK::Models::Conversations::PublicUnsupportedContent#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           UNSUPPORTED_CONTENT = :UNSUPPORTED_CONTENT
 

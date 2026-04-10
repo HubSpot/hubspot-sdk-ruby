@@ -1,22 +1,22 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class Campaigns
-        sig { returns(HubspotSDK::Resources::Marketing::Campaigns::Assets) }
+        sig { returns(HubSpotSDK::Resources::Marketing::Campaigns::Assets) }
         attr_reader :assets
 
-        sig { returns(HubspotSDK::Resources::Marketing::Campaigns::Batch) }
+        sig { returns(HubSpotSDK::Resources::Marketing::Campaigns::Batch) }
         attr_reader :batch
 
-        sig { returns(HubspotSDK::Resources::Marketing::Campaigns::Budget) }
+        sig { returns(HubSpotSDK::Resources::Marketing::Campaigns::Budget) }
         attr_reader :budget
 
-        sig { returns(HubspotSDK::Resources::Marketing::Campaigns::Metrics) }
+        sig { returns(HubSpotSDK::Resources::Marketing::Campaigns::Metrics) }
         attr_reader :metrics
 
-        sig { returns(HubspotSDK::Resources::Marketing::Campaigns::Spend) }
+        sig { returns(HubSpotSDK::Resources::Marketing::Campaigns::Spend) }
         attr_reader :spend
 
         # Create a campaign with the specified properties and receive a copy of the
@@ -25,8 +25,8 @@ module HubspotSDK
         sig do
           params(
             properties: T::Hash[Symbol, String],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Marketing::PublicCampaign)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Marketing::PublicCampaign)
         end
         def create(
           # A collection of key-value pairs representing the properties of the campaign.
@@ -45,8 +45,8 @@ module HubspotSDK
           params(
             campaign_guid: String,
             properties: T::Hash[Symbol, String],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Marketing::PublicCampaign)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Marketing::PublicCampaign)
         end
         def update(
           campaign_guid,
@@ -68,9 +68,9 @@ module HubspotSDK
             name: String,
             properties: T::Array[String],
             sort: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Internal::Page[HubspotSDK::Marketing::PublicCampaign]
+            HubSpotSDK::Internal::Page[HubSpotSDK::Marketing::PublicCampaign]
           )
         end
         def list(
@@ -93,7 +93,7 @@ module HubspotSDK
         sig do
           params(
             campaign_guid: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete(campaign_guid, request_options: {})
@@ -110,8 +110,8 @@ module HubspotSDK
             end_date: String,
             properties: T::Array[String],
             start_date: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Marketing::PublicCampaignWithAssets)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Marketing::PublicCampaignWithAssets)
         end
         def get(
           campaign_guid,
@@ -123,7 +123,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

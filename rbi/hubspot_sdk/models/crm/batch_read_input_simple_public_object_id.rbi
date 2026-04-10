@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchReadInputSimplePublicObjectID < HubspotSDK::Internal::Type::BaseModel
+      class BatchReadInputSimplePublicObjectID < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::BatchReadInputSimplePublicObjectID,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::BatchReadInputSimplePublicObjectID,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Crm::SimplePublicObjectID]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::SimplePublicObjectID]) }
         attr_accessor :inputs
 
         # Key-value pairs for setting properties for the new object.
@@ -36,7 +36,7 @@ module HubspotSDK
         # unique identifying property.
         sig do
           params(
-            inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
+            inputs: T::Array[HubSpotSDK::Crm::SimplePublicObjectID::OrHash],
             properties: T::Array[String],
             properties_with_history: T::Array[String],
             id_property: String
@@ -57,7 +57,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID],
+              inputs: T::Array[HubSpotSDK::Crm::SimplePublicObjectID],
               properties: T::Array[String],
               properties_with_history: T::Array[String],
               id_property: String

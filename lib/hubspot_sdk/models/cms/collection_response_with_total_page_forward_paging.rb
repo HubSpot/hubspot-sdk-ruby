@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class CollectionResponseWithTotalPageForwardPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseWithTotalPageForwardPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #   Collection of pages.
         #
-        #   @return [Array<HubspotSDK::Models::Cms::PageData>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::PageData] }
+        #   @return [Array<HubSpotSDK::Models::Cms::PageData>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::PageData] }
 
         # @!attribute total
         #   Total number of pages.
@@ -18,15 +18,15 @@ module HubspotSDK
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::ForwardPaging, nil]
-        optional :paging, -> { HubspotSDK::ForwardPaging }
+        #   @return [HubSpotSDK::Models::ForwardPaging, nil]
+        optional :paging, -> { HubSpotSDK::ForwardPaging }
 
         # @!method initialize(results:, total:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Cms::PageData>] Collection of pages.
+        #   @param results [Array<HubSpotSDK::Models::Cms::PageData>] Collection of pages.
         #
         #   @param total [Integer] Total number of pages.
         #
-        #   @param paging [HubspotSDK::Models::ForwardPaging]
+        #   @param paging [HubSpotSDK::Models::ForwardPaging]
       end
     end
   end

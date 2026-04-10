@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type attendance_counters =
@@ -9,7 +9,7 @@ module HubspotSDK
           registered: Integer
         }
 
-      class AttendanceCounters < HubspotSDK::Internal::Type::BaseModel
+      class AttendanceCounters < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor attended: Integer
 
         attr_accessor cancelled: Integer

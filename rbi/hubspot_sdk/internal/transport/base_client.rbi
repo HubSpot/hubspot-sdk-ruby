@@ -1,11 +1,11 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Transport
       # @api private
       class BaseClient
-        extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        extend HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         abstract!
 
@@ -44,14 +44,14 @@ module HubspotSDK
               page:
                 T.nilable(
                   T::Class[
-                    HubspotSDK::Internal::Type::BasePage[
-                      HubspotSDK::Internal::Type::BaseModel
+                    HubSpotSDK::Internal::Type::BasePage[
+                      HubSpotSDK::Internal::Type::BaseModel
                     ]
                   ]
                 ),
               stream: T.nilable(T::Class[T.anything]),
-              model: T.nilable(HubspotSDK::Internal::Type::Converter::Input),
-              options: T.nilable(HubspotSDK::RequestOptions::OrHash)
+              model: T.nilable(HubSpotSDK::Internal::Type::Converter::Input),
+              options: T.nilable(HubSpotSDK::RequestOptions::OrHash)
             }
           end
 
@@ -77,7 +77,7 @@ module HubspotSDK
           sig do
             params(
               req:
-                HubspotSDK::Internal::Transport::BaseClient::RequestComponents
+                HubSpotSDK::Internal::Transport::BaseClient::RequestComponents
             ).void
           end
           def validate!(req)
@@ -96,10 +96,10 @@ module HubspotSDK
           sig do
             params(
               request:
-                HubspotSDK::Internal::Transport::BaseClient::RequestInput,
+                HubSpotSDK::Internal::Transport::BaseClient::RequestInput,
               status: Integer,
               response_headers: T::Hash[String, String]
-            ).returns(HubspotSDK::Internal::Transport::BaseClient::RequestInput)
+            ).returns(HubSpotSDK::Internal::Transport::BaseClient::RequestInput)
           end
           def follow_redirect(request, status:, response_headers:)
           end
@@ -107,7 +107,7 @@ module HubspotSDK
           # @api private
           sig do
             params(
-              status: T.any(Integer, HubspotSDK::Errors::APIConnectionError),
+              status: T.any(Integer, HubSpotSDK::Errors::APIConnectionError),
               stream: T.nilable(T::Enumerable[String])
             ).void
           end
@@ -137,7 +137,7 @@ module HubspotSDK
         attr_reader :idempotency_header
 
         # @api private
-        sig { returns(HubspotSDK::Internal::Transport::PooledNetRequester) }
+        sig { returns(HubSpotSDK::Internal::Transport::PooledNetRequester) }
         attr_reader :requester
 
         # @api private
@@ -198,10 +198,10 @@ module HubspotSDK
           overridable
             .params(
               req:
-                HubspotSDK::Internal::Transport::BaseClient::RequestComponents,
-              opts: HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Internal::Transport::BaseClient::RequestComponents,
+              opts: HubSpotSDK::Internal::AnyHash
             )
-            .returns(HubspotSDK::Internal::Transport::BaseClient::RequestInput)
+            .returns(HubSpotSDK::Internal::Transport::BaseClient::RequestInput)
         end
         private def build_request(req, opts)
         end
@@ -219,7 +219,7 @@ module HubspotSDK
         # @api private
         sig do
           params(
-            request: HubspotSDK::Internal::Transport::BaseClient::RequestInput,
+            request: HubSpotSDK::Internal::Transport::BaseClient::RequestInput,
             redirect_count: Integer,
             retry_count: Integer,
             send_retry_header: T::Boolean
@@ -236,7 +236,7 @@ module HubspotSDK
         # Execute the request specified by `req`. This is the method that all resource
         # methods call into.
         #
-        # @overload request(method, path, query: {}, headers: {}, body: nil, unwrap: nil, page: nil, stream: nil, model: HubspotSDK::Internal::Type::Unknown, options: {})
+        # @overload request(method, path, query: {}, headers: {}, body: nil, unwrap: nil, page: nil, stream: nil, model: HubSpotSDK::Internal::Type::Unknown, options: {})
         sig do
           params(
             method: Symbol,
@@ -271,14 +271,14 @@ module HubspotSDK
             page:
               T.nilable(
                 T::Class[
-                  HubspotSDK::Internal::Type::BasePage[
-                    HubspotSDK::Internal::Type::BaseModel
+                  HubSpotSDK::Internal::Type::BasePage[
+                    HubSpotSDK::Internal::Type::BaseModel
                   ]
                 ]
               ),
             stream: T.nilable(T::Class[T.anything]),
-            model: T.nilable(HubspotSDK::Internal::Type::Converter::Input),
-            options: T.nilable(HubspotSDK::RequestOptions::OrHash)
+            model: T.nilable(HubSpotSDK::Internal::Type::Converter::Input),
+            options: T.nilable(HubSpotSDK::RequestOptions::OrHash)
           ).returns(T.anything)
         end
         def request(
@@ -290,7 +290,7 @@ module HubspotSDK
           unwrap: nil,
           page: nil,
           stream: nil,
-          model: HubspotSDK::Internal::Type::Unknown,
+          model: HubSpotSDK::Internal::Type::Unknown,
           options: {}
         )
         end

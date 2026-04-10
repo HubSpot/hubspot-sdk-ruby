@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicRangedNumberPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicRangedNumberPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute include_objects_with_no_value_set
         #   Indicates whether objects with no value set for the property should be included
         #   in the operation.
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute lower_bound
@@ -22,9 +22,9 @@ module HubspotSDK
         # @!attribute operation_type
         #   Specifies the type of operation (NUMBER_RANGED).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicRangedNumberPropertyOperation::OperationType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicRangedNumberPropertyOperation::OperationType]
         required :operation_type,
-                 enum: -> { HubspotSDK::Crm::PublicRangedNumberPropertyOperation::OperationType },
+                 enum: -> { HubSpotSDK::Crm::PublicRangedNumberPropertyOperation::OperationType },
                  api_name: :operationType
 
         # @!attribute operator
@@ -42,13 +42,13 @@ module HubspotSDK
 
         # @!method initialize(include_objects_with_no_value_set:, lower_bound:, operation_type:, operator:, upper_bound:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicRangedNumberPropertyOperation} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicRangedNumberPropertyOperation} for more details.
         #
         #   @param include_objects_with_no_value_set [Boolean] Indicates whether objects with no value set for the property should be included
         #
         #   @param lower_bound [Integer] The lower limit of the number range for the operation.
         #
-        #   @param operation_type [Symbol, HubspotSDK::Models::Crm::PublicRangedNumberPropertyOperation::OperationType] Specifies the type of operation (NUMBER_RANGED).
+        #   @param operation_type [Symbol, HubSpotSDK::Models::Crm::PublicRangedNumberPropertyOperation::OperationType] Specifies the type of operation (NUMBER_RANGED).
         #
         #   @param operator [String] Defines the operation to be applied in the ranged number property operation
         #   (IS\_
@@ -57,9 +57,9 @@ module HubspotSDK
 
         # Specifies the type of operation (NUMBER_RANGED).
         #
-        # @see HubspotSDK::Models::Crm::PublicRangedNumberPropertyOperation#operation_type
+        # @see HubSpotSDK::Models::Crm::PublicRangedNumberPropertyOperation#operation_type
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NUMBER_RANGED = :NUMBER_RANGED
 

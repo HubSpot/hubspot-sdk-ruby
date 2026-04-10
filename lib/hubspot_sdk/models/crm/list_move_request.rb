@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ListMoveRequest < HubspotSDK::Internal::Type::BaseModel
+      class ListMoveRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute list_id
         #   The Id of the list to move.
         #

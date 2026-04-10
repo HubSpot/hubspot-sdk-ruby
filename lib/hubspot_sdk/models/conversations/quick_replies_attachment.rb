@@ -1,28 +1,28 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class QuickRepliesAttachment < HubspotSDK::Internal::Type::BaseModel
+      class QuickRepliesAttachment < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute quick_replies
         #
-        #   @return [Array<HubspotSDK::Models::Conversations::QuickReply>]
+        #   @return [Array<HubSpotSDK::Models::Conversations::QuickReply>]
         required :quick_replies,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::QuickReply] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Conversations::QuickReply] },
                  api_name: :quickReplies
 
         # @!attribute type
         #
-        #   @return [Symbol, HubspotSDK::Models::Conversations::QuickRepliesAttachment::Type]
-        required :type, enum: -> { HubspotSDK::Conversations::QuickRepliesAttachment::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Conversations::QuickRepliesAttachment::Type]
+        required :type, enum: -> { HubSpotSDK::Conversations::QuickRepliesAttachment::Type }
 
         # @!method initialize(quick_replies:, type:)
-        #   @param quick_replies [Array<HubspotSDK::Models::Conversations::QuickReply>]
-        #   @param type [Symbol, HubspotSDK::Models::Conversations::QuickRepliesAttachment::Type]
+        #   @param quick_replies [Array<HubSpotSDK::Models::Conversations::QuickReply>]
+        #   @param type [Symbol, HubSpotSDK::Models::Conversations::QuickRepliesAttachment::Type]
 
-        # @see HubspotSDK::Models::Conversations::QuickRepliesAttachment#type
+        # @see HubSpotSDK::Models::Conversations::QuickRepliesAttachment#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           QUICK_REPLIES = :QUICK_REPLIES
 

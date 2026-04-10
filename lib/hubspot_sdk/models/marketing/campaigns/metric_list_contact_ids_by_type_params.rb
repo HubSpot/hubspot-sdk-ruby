@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       module Campaigns
-        # @see HubspotSDK::Resources::Marketing::Campaigns::Metrics#list_contact_ids_by_type
-        class MetricListContactIDsByTypeParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Marketing::Campaigns::Metrics#list_contact_ids_by_type
+        class MetricListContactIDsByTypeParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute campaign_guid
           #
@@ -45,7 +45,7 @@ module HubspotSDK
 
           # @!method initialize(campaign_guid:, contact_type:, after: nil, end_date: nil, limit: nil, start_date: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Marketing::Campaigns::MetricListContactIDsByTypeParams} for
+          #   {HubSpotSDK::Models::Marketing::Campaigns::MetricListContactIDsByTypeParams} for
           #   more details.
           #
           #   @param campaign_guid [String]
@@ -60,7 +60,7 @@ module HubspotSDK
           #
           #   @param start_date [String]
           #
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

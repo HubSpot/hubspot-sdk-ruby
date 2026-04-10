@@ -1,40 +1,40 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type contact_email =
         {
           email: String,
-          type: HubspotSDK::Models::Conversations::ContactEmail::type_
+          type: HubSpotSDK::Models::Conversations::ContactEmail::type_
         }
 
-      class ContactEmail < HubspotSDK::Internal::Type::BaseModel
+      class ContactEmail < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor email: String
 
-        attr_reader type: HubspotSDK::Models::Conversations::ContactEmail::type_?
+        attr_reader type: HubSpotSDK::Models::Conversations::ContactEmail::type_?
 
         def type=: (
-          HubspotSDK::Models::Conversations::ContactEmail::type_
-        ) -> HubspotSDK::Models::Conversations::ContactEmail::type_
+          HubSpotSDK::Models::Conversations::ContactEmail::type_
+        ) -> HubSpotSDK::Models::Conversations::ContactEmail::type_
 
         def initialize: (
           email: String,
-          ?type: HubspotSDK::Models::Conversations::ContactEmail::type_
+          ?type: HubSpotSDK::Models::Conversations::ContactEmail::type_
         ) -> void
 
         def to_hash: -> {
           email: String,
-          type: HubspotSDK::Models::Conversations::ContactEmail::type_
+          type: HubSpotSDK::Models::Conversations::ContactEmail::type_
         }
 
         type type_ = :HOME | :WORK
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HOME: :HOME
           WORK: :WORK
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::ContactEmail::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Conversations::ContactEmail::type_]
         end
       end
     end

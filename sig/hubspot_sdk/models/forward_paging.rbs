@@ -1,15 +1,15 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
-    type forward_paging = { next_: HubspotSDK::NextPage }
+    type forward_paging = { next_: HubSpotSDK::NextPage }
 
-    class ForwardPaging < HubspotSDK::Internal::Type::BaseModel
-      attr_reader next_: HubspotSDK::NextPage?
+    class ForwardPaging < HubSpotSDK::Internal::Type::BaseModel
+      attr_reader next_: HubSpotSDK::NextPage?
 
-      def next_=: (HubspotSDK::NextPage) -> HubspotSDK::NextPage
+      def next_=: (HubSpotSDK::NextPage) -> HubSpotSDK::NextPage
 
-      def initialize: (?next_: HubspotSDK::NextPage) -> void
+      def initialize: (?next_: HubSpotSDK::NextPage) -> void
 
-      def to_hash: -> { next_: HubspotSDK::NextPage }
+      def to_hash: -> { next_: HubSpotSDK::NextPage }
     end
   end
 end

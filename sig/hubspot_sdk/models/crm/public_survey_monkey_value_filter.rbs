@@ -1,19 +1,19 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_survey_monkey_value_filter =
         {
-          filter_type: HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::filter_type,
+          filter_type: HubSpotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::filter_type,
           operator: String,
           survey_id: String,
           survey_question: String,
-          value_comparison: HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::value_comparison,
+          value_comparison: HubSpotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::value_comparison,
           survey_answer_col_id: String,
           survey_answer_row_id: String
         }
 
-      class PublicSurveyMonkeyValueFilter < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor filter_type: HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::filter_type
+      class PublicSurveyMonkeyValueFilter < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor filter_type: HubSpotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::filter_type
 
         attr_accessor operator: String
 
@@ -21,7 +21,7 @@ module HubspotSDK
 
         attr_accessor survey_question: String
 
-        attr_accessor value_comparison: HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::value_comparison
+        attr_accessor value_comparison: HubSpotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::value_comparison
 
         attr_reader survey_answer_col_id: String?
 
@@ -32,21 +32,21 @@ module HubspotSDK
         def survey_answer_row_id=: (String) -> String
 
         def initialize: (
-          filter_type: HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::filter_type,
+          filter_type: HubSpotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::filter_type,
           operator: String,
           survey_id: String,
           survey_question: String,
-          value_comparison: HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::value_comparison,
+          value_comparison: HubSpotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::value_comparison,
           ?survey_answer_col_id: String,
           ?survey_answer_row_id: String
         ) -> void
 
         def to_hash: -> {
-          filter_type: HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::filter_type,
+          filter_type: HubSpotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::filter_type,
           operator: String,
           survey_id: String,
           survey_question: String,
-          value_comparison: HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::value_comparison,
+          value_comparison: HubSpotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::value_comparison,
           survey_answer_col_id: String,
           survey_answer_row_id: String
         }
@@ -54,36 +54,36 @@ module HubspotSDK
         type filter_type = :SURVEY_MONKEY_VALUE
 
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           SURVEY_MONKEY_VALUE: :SURVEY_MONKEY_VALUE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::filter_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::filter_type]
         end
 
         type value_comparison =
-          HubspotSDK::Crm::PublicBoolPropertyOperation
-          | HubspotSDK::Crm::PublicNumberPropertyOperation
-          | HubspotSDK::Crm::PublicStringPropertyOperation
-          | HubspotSDK::Crm::PublicDateTimePropertyOperation
-          | HubspotSDK::Crm::PublicRangedDatePropertyOperation
-          | HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation
-          | HubspotSDK::Crm::PublicComparativeDatePropertyOperation
-          | HubspotSDK::Crm::PublicRollingDateRangePropertyOperation
-          | HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation
-          | HubspotSDK::Crm::PublicEnumerationPropertyOperation
-          | HubspotSDK::Crm::PublicAllPropertyTypesOperation
-          | HubspotSDK::Crm::PublicRangedNumberPropertyOperation
-          | HubspotSDK::Crm::PublicMultiStringPropertyOperation
-          | HubspotSDK::Crm::PublicDatePropertyOperation
-          | HubspotSDK::Crm::PublicCalendarDatePropertyOperation
-          | HubspotSDK::Crm::PublicTimePointOperation
-          | HubspotSDK::Crm::PublicRangedTimeOperation
+          HubSpotSDK::Crm::PublicBoolPropertyOperation
+          | HubSpotSDK::Crm::PublicNumberPropertyOperation
+          | HubSpotSDK::Crm::PublicStringPropertyOperation
+          | HubSpotSDK::Crm::PublicDateTimePropertyOperation
+          | HubSpotSDK::Crm::PublicRangedDatePropertyOperation
+          | HubSpotSDK::Crm::PublicComparativePropertyUpdatedOperation
+          | HubSpotSDK::Crm::PublicComparativeDatePropertyOperation
+          | HubSpotSDK::Crm::PublicRollingDateRangePropertyOperation
+          | HubSpotSDK::Crm::PublicRollingPropertyUpdatedOperation
+          | HubSpotSDK::Crm::PublicEnumerationPropertyOperation
+          | HubSpotSDK::Crm::PublicAllPropertyTypesOperation
+          | HubSpotSDK::Crm::PublicRangedNumberPropertyOperation
+          | HubSpotSDK::Crm::PublicMultiStringPropertyOperation
+          | HubSpotSDK::Crm::PublicDatePropertyOperation
+          | HubSpotSDK::Crm::PublicCalendarDatePropertyOperation
+          | HubSpotSDK::Crm::PublicTimePointOperation
+          | HubSpotSDK::Crm::PublicRangedTimeOperation
 
         module ValueComparison
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::value_comparison]
+          def self?.variants: -> ::Array[HubSpotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::value_comparison]
         end
       end
     end

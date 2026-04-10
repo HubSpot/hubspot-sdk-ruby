@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class BatchInputMarketingEventCreateRequestParams < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputMarketingEventCreateRequestParams < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::BatchInputMarketingEventCreateRequestParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::BatchInputMarketingEventCreateRequestParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            T::Array[HubspotSDK::Marketing::MarketingEventCreateRequestParams]
+            T::Array[HubSpotSDK::Marketing::MarketingEventCreateRequestParams]
           )
         end
         attr_accessor :inputs
@@ -23,7 +23,7 @@ module HubspotSDK
           params(
             inputs:
               T::Array[
-                HubspotSDK::Marketing::MarketingEventCreateRequestParams::OrHash
+                HubSpotSDK::Marketing::MarketingEventCreateRequestParams::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -35,7 +35,7 @@ module HubspotSDK
             {
               inputs:
                 T::Array[
-                  HubspotSDK::Marketing::MarketingEventCreateRequestParams
+                  HubSpotSDK::Marketing::MarketingEventCreateRequestParams
                 ]
             }
           )

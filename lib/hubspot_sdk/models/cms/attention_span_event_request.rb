@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class AttentionSpanEventRequest < HubspotSDK::Internal::Type::BaseModel
+      class AttentionSpanEventRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute media_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::AttentionSpanEventRequest::MediaType]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::AttentionSpanEventRequest::MediaType]
         required :media_type,
-                 enum: -> { HubspotSDK::Cms::AttentionSpanEventRequest::MediaType },
+                 enum: -> { HubSpotSDK::Cms::AttentionSpanEventRequest::MediaType },
                  api_name: :mediaType
 
         # @!attribute occurred_timestamp
@@ -19,7 +19,7 @@ module HubspotSDK
         # @!attribute raw_data_map
         #
         #   @return [Hash{Symbol=>Integer}]
-        required :raw_data_map, HubspotSDK::Internal::Type::HashOf[Integer], api_name: :rawDataMap
+        required :raw_data_map, HubSpotSDK::Internal::Type::HashOf[Integer], api_name: :rawDataMap
 
         # @!attribute session_id
         #
@@ -43,10 +43,10 @@ module HubspotSDK
 
         # @!attribute derived_values
         #
-        #   @return [HubspotSDK::Models::Cms::AttentionSpanCalculatedValues, nil]
+        #   @return [HubSpotSDK::Models::Cms::AttentionSpanCalculatedValues, nil]
         optional :derived_values,
                  -> {
-                   HubspotSDK::Cms::AttentionSpanCalculatedValues
+                   HubSpotSDK::Cms::AttentionSpanCalculatedValues
                  },
                  api_name: :derivedValues
 
@@ -57,9 +57,9 @@ module HubspotSDK
 
         # @!attribute external_play_context
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::AttentionSpanEventRequest::ExternalPlayContext, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::AttentionSpanEventRequest::ExternalPlayContext, nil]
         optional :external_play_context,
-                 enum: -> { HubspotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext },
+                 enum: -> { HubSpotSDK::Cms::AttentionSpanEventRequest::ExternalPlayContext },
                  api_name: :externalPlayContext
 
         # @!attribute media_bridge_id
@@ -98,16 +98,16 @@ module HubspotSDK
         optional :raw_data_string, String, api_name: :rawDataString
 
         # @!method initialize(media_type:, occurred_timestamp:, raw_data_map:, session_id:, _hsenc: nil, contact_id: nil, contact_utk: nil, derived_values: nil, external_id: nil, external_play_context: nil, media_bridge_id: nil, media_name: nil, media_url: nil, page_id: nil, page_name: nil, page_url: nil, raw_data_string: nil)
-        #   @param media_type [Symbol, HubspotSDK::Models::Cms::AttentionSpanEventRequest::MediaType]
+        #   @param media_type [Symbol, HubSpotSDK::Models::Cms::AttentionSpanEventRequest::MediaType]
         #   @param occurred_timestamp [Integer]
         #   @param raw_data_map [Hash{Symbol=>Integer}]
         #   @param session_id [String]
         #   @param _hsenc [String]
         #   @param contact_id [Integer]
         #   @param contact_utk [String]
-        #   @param derived_values [HubspotSDK::Models::Cms::AttentionSpanCalculatedValues]
+        #   @param derived_values [HubSpotSDK::Models::Cms::AttentionSpanCalculatedValues]
         #   @param external_id [String]
-        #   @param external_play_context [Symbol, HubspotSDK::Models::Cms::AttentionSpanEventRequest::ExternalPlayContext]
+        #   @param external_play_context [Symbol, HubSpotSDK::Models::Cms::AttentionSpanEventRequest::ExternalPlayContext]
         #   @param media_bridge_id [Integer]
         #   @param media_name [String]
         #   @param media_url [String]
@@ -116,9 +116,9 @@ module HubspotSDK
         #   @param page_url [String]
         #   @param raw_data_string [String]
 
-        # @see HubspotSDK::Models::Cms::AttentionSpanEventRequest#media_type
+        # @see HubSpotSDK::Models::Cms::AttentionSpanEventRequest#media_type
         module MediaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUDIO = :AUDIO
           DOCUMENT = :DOCUMENT
@@ -130,9 +130,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Cms::AttentionSpanEventRequest#external_play_context
+        # @see HubSpotSDK::Models::Cms::AttentionSpanEventRequest#external_play_context
         module ExternalPlayContext
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL = :EMAIL
           EXTERNAL_PAGE = :EXTERNAL_PAGE

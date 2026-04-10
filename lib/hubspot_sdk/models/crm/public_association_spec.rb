@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicAssociationSpec < HubspotSDK::Internal::Type::BaseModel
+      class PublicAssociationSpec < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute category
         #   Specifies the category of the association, which can be HUBSPOT_DEFINED,
         #   INTEGRATOR_DEFINED, or USER_DEFINED.
@@ -20,7 +20,7 @@ module HubspotSDK
 
         # @!method initialize(category:, type_id:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicAssociationSpec} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicAssociationSpec} for more details.
         #
         #   @param category [String] Specifies the category of the association, which can be HUBSPOT_DEFINED, INTEGRA
         #

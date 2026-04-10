@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class IndexedField < HubspotSDK::Internal::Type::BaseModel
+      class IndexedField < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::IndexedField, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::IndexedField, HubSpotSDK::Internal::AnyHash)
           end
 
         # Indicates whether the field is a metadata field.

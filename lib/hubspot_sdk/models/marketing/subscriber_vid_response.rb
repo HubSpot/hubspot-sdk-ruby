@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class SubscriberVidResponse < HubspotSDK::Internal::Type::BaseModel
+      class SubscriberVidResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute vid
         #   The internal ID of the contact
         #

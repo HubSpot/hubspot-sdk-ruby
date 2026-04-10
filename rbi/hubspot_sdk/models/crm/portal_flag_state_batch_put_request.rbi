@@ -1,23 +1,23 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PortalFlagStateBatchPutRequest < HubspotSDK::Internal::Type::BaseModel
+      class PortalFlagStateBatchPutRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PortalFlagStateBatchPutRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PortalFlagStateBatchPutRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Crm::BatchPortalEntry]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::BatchPortalEntry]) }
         attr_accessor :portal_states
 
         sig do
           params(
-            portal_states: T::Array[HubspotSDK::Crm::BatchPortalEntry::OrHash]
+            portal_states: T::Array[HubSpotSDK::Crm::BatchPortalEntry::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(portal_states:)
@@ -25,7 +25,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { portal_states: T::Array[HubspotSDK::Crm::BatchPortalEntry] }
+            { portal_states: T::Array[HubSpotSDK::Crm::BatchPortalEntry] }
           )
         end
         def to_hash

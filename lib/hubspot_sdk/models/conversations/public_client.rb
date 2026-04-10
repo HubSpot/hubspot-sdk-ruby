@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicClient < HubspotSDK::Internal::Type::BaseModel
+      class PublicClient < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute client_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Conversations::PublicClient::ClientType]
+        #   @return [Symbol, HubSpotSDK::Models::Conversations::PublicClient::ClientType]
         required :client_type,
-                 enum: -> { HubspotSDK::Conversations::PublicClient::ClientType },
+                 enum: -> { HubSpotSDK::Conversations::PublicClient::ClientType },
                  api_name: :clientType
 
         # @!attribute integration_app_id
@@ -17,12 +17,12 @@ module HubspotSDK
         optional :integration_app_id, Integer, api_name: :integrationAppId
 
         # @!method initialize(client_type:, integration_app_id: nil)
-        #   @param client_type [Symbol, HubspotSDK::Models::Conversations::PublicClient::ClientType]
+        #   @param client_type [Symbol, HubSpotSDK::Models::Conversations::PublicClient::ClientType]
         #   @param integration_app_id [Integer]
 
-        # @see HubspotSDK::Models::Conversations::PublicClient#client_type
+        # @see HubSpotSDK::Models::Conversations::PublicClient#client_type
         module ClientType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HUBSPOT = :HUBSPOT
           INTEGRATION = :INTEGRATION

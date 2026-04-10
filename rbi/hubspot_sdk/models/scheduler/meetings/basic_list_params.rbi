@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       module Meetings
-        class BasicListParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class BasicListParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Scheduler::Meetings::BasicListParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Scheduler::Meetings::BasicListParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -47,7 +47,7 @@ module HubspotSDK
           sig do
             returns(
               T.nilable(
-                HubspotSDK::Scheduler::Meetings::BasicListParams::Type::OrSymbol
+                HubSpotSDK::Scheduler::Meetings::BasicListParams::Type::OrSymbol
               )
             )
           end
@@ -56,7 +56,7 @@ module HubspotSDK
           sig do
             params(
               type:
-                HubspotSDK::Scheduler::Meetings::BasicListParams::Type::OrSymbol
+                HubSpotSDK::Scheduler::Meetings::BasicListParams::Type::OrSymbol
             ).void
           end
           attr_writer :type
@@ -68,8 +68,8 @@ module HubspotSDK
               name: String,
               organizer_user_id: String,
               type:
-                HubspotSDK::Scheduler::Meetings::BasicListParams::Type::OrSymbol,
-              request_options: HubspotSDK::RequestOptions::OrHash
+                HubSpotSDK::Scheduler::Meetings::BasicListParams::Type::OrSymbol,
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
@@ -94,8 +94,8 @@ module HubspotSDK
                 name: String,
                 organizer_user_id: String,
                 type:
-                  HubspotSDK::Scheduler::Meetings::BasicListParams::Type::OrSymbol,
-                request_options: HubspotSDK::RequestOptions
+                  HubSpotSDK::Scheduler::Meetings::BasicListParams::Type::OrSymbol,
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end
@@ -103,13 +103,13 @@ module HubspotSDK
           end
 
           module Type
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             TaggedSymbol =
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::Scheduler::Meetings::BasicListParams::Type
+                  HubSpotSDK::Scheduler::Meetings::BasicListParams::Type
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -117,23 +117,23 @@ module HubspotSDK
             GROUP_CALENDAR =
               T.let(
                 :GROUP_CALENDAR,
-                HubspotSDK::Scheduler::Meetings::BasicListParams::Type::TaggedSymbol
+                HubSpotSDK::Scheduler::Meetings::BasicListParams::Type::TaggedSymbol
               )
             PERSONAL_LINK =
               T.let(
                 :PERSONAL_LINK,
-                HubspotSDK::Scheduler::Meetings::BasicListParams::Type::TaggedSymbol
+                HubSpotSDK::Scheduler::Meetings::BasicListParams::Type::TaggedSymbol
               )
             ROUND_ROBIN_CALENDAR =
               T.let(
                 :ROUND_ROBIN_CALENDAR,
-                HubspotSDK::Scheduler::Meetings::BasicListParams::Type::TaggedSymbol
+                HubSpotSDK::Scheduler::Meetings::BasicListParams::Type::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Scheduler::Meetings::BasicListParams::Type::TaggedSymbol
+                  HubSpotSDK::Scheduler::Meetings::BasicListParams::Type::TaggedSymbol
                 ]
               )
             end

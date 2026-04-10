@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class CollectionResponsePublicOwnerForwardPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponsePublicOwnerForwardPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PublicOwner>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicOwner] }
+        #   @return [Array<HubSpotSDK::Models::Crm::PublicOwner>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicOwner] }
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::ForwardPaging, nil]
-        optional :paging, -> { HubspotSDK::ForwardPaging }
+        #   @return [HubSpotSDK::Models::ForwardPaging, nil]
+        optional :paging, -> { HubSpotSDK::ForwardPaging }
 
         # @!method initialize(results:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Crm::PublicOwner>]
-        #   @param paging [HubspotSDK::Models::ForwardPaging]
+        #   @param results [Array<HubSpotSDK::Models::Crm::PublicOwner>]
+        #   @param paging [HubSpotSDK::Models::ForwardPaging]
       end
     end
   end

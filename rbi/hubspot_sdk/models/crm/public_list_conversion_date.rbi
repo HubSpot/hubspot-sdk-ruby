@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicListConversionDate < HubspotSDK::Internal::Type::BaseModel
+      class PublicListConversionDate < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicListConversionDate,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicListConversionDate,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Specifies the type of conversion (CONVERSION_DATE).
         sig do
           returns(
-            HubspotSDK::Crm::PublicListConversionDate::ConversionType::OrSymbol
+            HubSpotSDK::Crm::PublicListConversionDate::ConversionType::OrSymbol
           )
         end
         attr_accessor :conversion_type
@@ -35,7 +35,7 @@ module HubspotSDK
         sig do
           params(
             conversion_type:
-              HubspotSDK::Crm::PublicListConversionDate::ConversionType::OrSymbol,
+              HubSpotSDK::Crm::PublicListConversionDate::ConversionType::OrSymbol,
             day: Integer,
             month: Integer,
             year: Integer
@@ -57,7 +57,7 @@ module HubspotSDK
           override.returns(
             {
               conversion_type:
-                HubspotSDK::Crm::PublicListConversionDate::ConversionType::OrSymbol,
+                HubSpotSDK::Crm::PublicListConversionDate::ConversionType::OrSymbol,
               day: Integer,
               month: Integer,
               year: Integer
@@ -69,13 +69,13 @@ module HubspotSDK
 
         # Specifies the type of conversion (CONVERSION_DATE).
         module ConversionType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicListConversionDate::ConversionType
+                HubSpotSDK::Crm::PublicListConversionDate::ConversionType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -83,13 +83,13 @@ module HubspotSDK
           CONVERSION_DATE =
             T.let(
               :CONVERSION_DATE,
-              HubspotSDK::Crm::PublicListConversionDate::ConversionType::TaggedSymbol
+              HubSpotSDK::Crm::PublicListConversionDate::ConversionType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicListConversionDate::ConversionType::TaggedSymbol
+                HubSpotSDK::Crm::PublicListConversionDate::ConversionType::TaggedSymbol
               ]
             )
           end

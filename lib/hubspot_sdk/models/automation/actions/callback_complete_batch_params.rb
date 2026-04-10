@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       module Actions
-        # @see HubspotSDK::Resources::Automation::Actions::Callbacks#complete_batch
-        class CallbackCompleteBatchParams < HubspotSDK::Models::Automation::BatchInputCallbackCompletionBatchRequest
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Automation::Actions::Callbacks#complete_batch
+        class CallbackCompleteBatchParams < HubSpotSDK::Models::Automation::BatchInputCallbackCompletionBatchRequest
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!method initialize(request_options: {})
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

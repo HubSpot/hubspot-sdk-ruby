@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class PropertyCreate < HubspotSDK::Internal::Type::BaseModel
+      class PropertyCreate < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::PropertyCreate,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::PropertyCreate,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(HubspotSDK::Cms::PropertyCreate::FieldType::OrSymbol) }
+        sig { returns(HubSpotSDK::Cms::PropertyCreate::FieldType::OrSymbol) }
         attr_accessor :field_type
 
         sig { returns(String) }
@@ -24,7 +24,7 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :name
 
-        sig { returns(HubspotSDK::Cms::PropertyCreate::Type::OrSymbol) }
+        sig { returns(HubSpotSDK::Cms::PropertyCreate::Type::OrSymbol) }
         attr_accessor :type
 
         sig { returns(T.nilable(String)) }
@@ -36,7 +36,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Cms::PropertyCreate::DataSensitivity::OrSymbol
+              HubSpotSDK::Cms::PropertyCreate::DataSensitivity::OrSymbol
             )
           )
         end
@@ -45,7 +45,7 @@ module HubspotSDK
         sig do
           params(
             data_sensitivity:
-              HubspotSDK::Cms::PropertyCreate::DataSensitivity::OrSymbol
+              HubSpotSDK::Cms::PropertyCreate::DataSensitivity::OrSymbol
           ).void
         end
         attr_writer :data_sensitivity
@@ -86,10 +86,10 @@ module HubspotSDK
         sig { params(hidden: T::Boolean).void }
         attr_writer :hidden
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::OptionInput])) }
+        sig { returns(T.nilable(T::Array[HubSpotSDK::OptionInput])) }
         attr_reader :options
 
-        sig { params(options: T::Array[HubspotSDK::OptionInput::OrHash]).void }
+        sig { params(options: T::Array[HubSpotSDK::OptionInput::OrHash]).void }
         attr_writer :options
 
         sig { returns(T.nilable(String)) }
@@ -100,21 +100,21 @@ module HubspotSDK
 
         sig do
           params(
-            field_type: HubspotSDK::Cms::PropertyCreate::FieldType::OrSymbol,
+            field_type: HubSpotSDK::Cms::PropertyCreate::FieldType::OrSymbol,
             group_name: String,
             label: String,
             name: String,
-            type: HubspotSDK::Cms::PropertyCreate::Type::OrSymbol,
+            type: HubSpotSDK::Cms::PropertyCreate::Type::OrSymbol,
             calculation_formula: String,
             data_sensitivity:
-              HubspotSDK::Cms::PropertyCreate::DataSensitivity::OrSymbol,
+              HubSpotSDK::Cms::PropertyCreate::DataSensitivity::OrSymbol,
             description: String,
             display_order: Integer,
             external_options: T::Boolean,
             form_field: T::Boolean,
             has_unique_value: T::Boolean,
             hidden: T::Boolean,
-            options: T::Array[HubspotSDK::OptionInput::OrHash],
+            options: T::Array[HubSpotSDK::OptionInput::OrHash],
             referenced_object_type: String
           ).returns(T.attached_class)
         end
@@ -140,21 +140,21 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              field_type: HubspotSDK::Cms::PropertyCreate::FieldType::OrSymbol,
+              field_type: HubSpotSDK::Cms::PropertyCreate::FieldType::OrSymbol,
               group_name: String,
               label: String,
               name: String,
-              type: HubspotSDK::Cms::PropertyCreate::Type::OrSymbol,
+              type: HubSpotSDK::Cms::PropertyCreate::Type::OrSymbol,
               calculation_formula: String,
               data_sensitivity:
-                HubspotSDK::Cms::PropertyCreate::DataSensitivity::OrSymbol,
+                HubSpotSDK::Cms::PropertyCreate::DataSensitivity::OrSymbol,
               description: String,
               display_order: Integer,
               external_options: T::Boolean,
               form_field: T::Boolean,
               has_unique_value: T::Boolean,
               hidden: T::Boolean,
-              options: T::Array[HubspotSDK::OptionInput],
+              options: T::Array[HubSpotSDK::OptionInput],
               referenced_object_type: String
             }
           )
@@ -163,78 +163,78 @@ module HubspotSDK
         end
 
         module FieldType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::PropertyCreate::FieldType)
+              T.all(Symbol, HubSpotSDK::Cms::PropertyCreate::FieldType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           BOOLEANCHECKBOX =
             T.let(
               :booleancheckbox,
-              HubspotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
             )
           CALCULATION_EQUATION =
             T.let(
               :calculation_equation,
-              HubspotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
             )
           CHECKBOX =
             T.let(
               :checkbox,
-              HubspotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
             )
           DATE =
             T.let(
               :date,
-              HubspotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
             )
           FILE =
             T.let(
               :file,
-              HubspotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
             )
           HTML =
             T.let(
               :html,
-              HubspotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
             )
           NUMBER =
             T.let(
               :number,
-              HubspotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
             )
           PHONENUMBER =
             T.let(
               :phonenumber,
-              HubspotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
             )
           RADIO =
             T.let(
               :radio,
-              HubspotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
             )
           SELECT =
             T.let(
               :select,
-              HubspotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
             )
           TEXT =
             T.let(
               :text,
-              HubspotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
             )
           TEXTAREA =
             T.let(
               :textarea,
-              HubspotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
+              HubSpotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol
             )
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol]
+              T::Array[HubSpotSDK::Cms::PropertyCreate::FieldType::TaggedSymbol]
             )
           end
           def self.values
@@ -242,41 +242,41 @@ module HubspotSDK
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::PropertyCreate::Type)
+              T.all(Symbol, HubSpotSDK::Cms::PropertyCreate::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           BOOL =
-            T.let(:bool, HubspotSDK::Cms::PropertyCreate::Type::TaggedSymbol)
+            T.let(:bool, HubSpotSDK::Cms::PropertyCreate::Type::TaggedSymbol)
           DATE =
-            T.let(:date, HubspotSDK::Cms::PropertyCreate::Type::TaggedSymbol)
+            T.let(:date, HubSpotSDK::Cms::PropertyCreate::Type::TaggedSymbol)
           DATETIME =
             T.let(
               :datetime,
-              HubspotSDK::Cms::PropertyCreate::Type::TaggedSymbol
+              HubSpotSDK::Cms::PropertyCreate::Type::TaggedSymbol
             )
           ENUMERATION =
             T.let(
               :enumeration,
-              HubspotSDK::Cms::PropertyCreate::Type::TaggedSymbol
+              HubSpotSDK::Cms::PropertyCreate::Type::TaggedSymbol
             )
           NUMBER =
-            T.let(:number, HubspotSDK::Cms::PropertyCreate::Type::TaggedSymbol)
+            T.let(:number, HubSpotSDK::Cms::PropertyCreate::Type::TaggedSymbol)
           PHONE_NUMBER =
             T.let(
               :phone_number,
-              HubspotSDK::Cms::PropertyCreate::Type::TaggedSymbol
+              HubSpotSDK::Cms::PropertyCreate::Type::TaggedSymbol
             )
           STRING =
-            T.let(:string, HubspotSDK::Cms::PropertyCreate::Type::TaggedSymbol)
+            T.let(:string, HubSpotSDK::Cms::PropertyCreate::Type::TaggedSymbol)
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Cms::PropertyCreate::Type::TaggedSymbol]
+              T::Array[HubSpotSDK::Cms::PropertyCreate::Type::TaggedSymbol]
             )
           end
           def self.values
@@ -284,34 +284,34 @@ module HubspotSDK
         end
 
         module DataSensitivity
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::PropertyCreate::DataSensitivity)
+              T.all(Symbol, HubSpotSDK::Cms::PropertyCreate::DataSensitivity)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           HIGHLY_SENSITIVE =
             T.let(
               :highly_sensitive,
-              HubspotSDK::Cms::PropertyCreate::DataSensitivity::TaggedSymbol
+              HubSpotSDK::Cms::PropertyCreate::DataSensitivity::TaggedSymbol
             )
           NON_SENSITIVE =
             T.let(
               :non_sensitive,
-              HubspotSDK::Cms::PropertyCreate::DataSensitivity::TaggedSymbol
+              HubSpotSDK::Cms::PropertyCreate::DataSensitivity::TaggedSymbol
             )
           SENSITIVE =
             T.let(
               :sensitive,
-              HubspotSDK::Cms::PropertyCreate::DataSensitivity::TaggedSymbol
+              HubSpotSDK::Cms::PropertyCreate::DataSensitivity::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::PropertyCreate::DataSensitivity::TaggedSymbol
+                HubSpotSDK::Cms::PropertyCreate::DataSensitivity::TaggedSymbol
               ]
             )
           end

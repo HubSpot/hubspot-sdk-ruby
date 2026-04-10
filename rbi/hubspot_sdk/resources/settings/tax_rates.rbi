@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Settings
       class TaxRates
@@ -11,9 +11,9 @@ module HubspotSDK
             active: T::Boolean,
             after: String,
             limit: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Internal::Page[HubspotSDK::Settings::PublicTaxRateGroup]
+            HubSpotSDK::Internal::Page[HubSpotSDK::Settings::PublicTaxRateGroup]
           )
         end
         def list(
@@ -32,14 +32,14 @@ module HubspotSDK
         sig do
           params(
             tax_rate_group_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Settings::PublicTaxRateGroup)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Settings::PublicTaxRateGroup)
         end
         def get(tax_rate_group_id, request_options: {})
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

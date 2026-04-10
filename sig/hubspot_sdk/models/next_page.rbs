@@ -1,8 +1,8 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type next_page = { after: String, link: String }
 
-    class NextPage < HubspotSDK::Internal::Type::BaseModel
+    class NextPage < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor after: String
 
       attr_reader link: String?

@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class FeatureFlags
@@ -12,8 +12,8 @@ module HubspotSDK
               flag_name: String,
               app_id: Integer,
               portal_ids: T::Array[Integer],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::PortalFlagStateBatchResponse)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::PortalFlagStateBatchResponse)
           end
           def delete(
             # Path param
@@ -33,9 +33,9 @@ module HubspotSDK
               flag_name: String,
               app_id: Integer,
               portal_states:
-                T::Array[HubspotSDK::Crm::BatchPortalEntry::OrHash],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::PortalFlagStateBatchResponse)
+                T::Array[HubSpotSDK::Crm::BatchPortalEntry::OrHash],
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::PortalFlagStateBatchResponse)
           end
           def upsert(
             # Path param
@@ -49,7 +49,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

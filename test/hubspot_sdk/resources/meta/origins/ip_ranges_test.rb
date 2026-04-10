@@ -2,19 +2,19 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Meta::Origins::IPRangesTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Meta::Origins::IPRangesTest < HubSpotSDK::Test::ResourceTest
   def test_list
     skip("Mock server tests are disabled")
 
     response = @hubspot.meta.origins.ip_ranges.list
 
     assert_pattern do
-      response => HubspotSDK::Meta::CollectionResponseIPRangeNoPaging
+      response => HubSpotSDK::Meta::CollectionResponseIPRangeNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Meta::IPRange])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Meta::IPRange])
       }
     end
   end

@@ -1,11 +1,11 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         type object_coordinates =
           { object_id_: Integer, object_type_id: String, portal_id: Integer }
 
-        class ObjectCoordinates < HubspotSDK::Internal::Type::BaseModel
+        class ObjectCoordinates < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor object_id_: Integer
 
           attr_accessor object_type_id: String

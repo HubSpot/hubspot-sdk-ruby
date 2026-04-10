@@ -1,53 +1,53 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
-      # @return [HubspotSDK::Resources::Cms::AuditLogs]
+      # @return [HubSpotSDK::Resources::Cms::AuditLogs]
       attr_reader :audit_logs
 
-      # @return [HubspotSDK::Resources::Cms::Blogs]
+      # @return [HubSpotSDK::Resources::Cms::Blogs]
       attr_reader :blogs
 
-      # @return [HubspotSDK::Resources::Cms::Domains]
+      # @return [HubSpotSDK::Resources::Cms::Domains]
       attr_reader :domains
 
-      # @return [HubspotSDK::Resources::Cms::Hubdb]
+      # @return [HubSpotSDK::Resources::Cms::Hubdb]
       attr_reader :hubdb
 
-      # @return [HubspotSDK::Resources::Cms::MediaBridge]
+      # @return [HubSpotSDK::Resources::Cms::MediaBridge]
       attr_reader :media_bridge
 
-      # @return [HubspotSDK::Resources::Cms::Pages]
+      # @return [HubSpotSDK::Resources::Cms::Pages]
       attr_reader :pages
 
-      # @return [HubspotSDK::Resources::Cms::SiteSearch]
+      # @return [HubSpotSDK::Resources::Cms::SiteSearch]
       attr_reader :site_search
 
-      # @return [HubspotSDK::Resources::Cms::SourceCode]
+      # @return [HubSpotSDK::Resources::Cms::SourceCode]
       attr_reader :source_code
 
-      # @return [HubspotSDK::Resources::Cms::URLMappings]
+      # @return [HubSpotSDK::Resources::Cms::URLMappings]
       attr_reader :url_mappings
 
-      # @return [HubspotSDK::Resources::Cms::URLRedirects]
+      # @return [HubSpotSDK::Resources::Cms::URLRedirects]
       attr_reader :url_redirects
 
       # @api private
       #
-      # @param client [HubspotSDK::Client]
+      # @param client [HubSpotSDK::Client]
       def initialize(client:)
         @client = client
-        @audit_logs = HubspotSDK::Resources::Cms::AuditLogs.new(client: client)
-        @blogs = HubspotSDK::Resources::Cms::Blogs.new(client: client)
-        @domains = HubspotSDK::Resources::Cms::Domains.new(client: client)
-        @hubdb = HubspotSDK::Resources::Cms::Hubdb.new(client: client)
-        @media_bridge = HubspotSDK::Resources::Cms::MediaBridge.new(client: client)
-        @pages = HubspotSDK::Resources::Cms::Pages.new(client: client)
-        @site_search = HubspotSDK::Resources::Cms::SiteSearch.new(client: client)
-        @source_code = HubspotSDK::Resources::Cms::SourceCode.new(client: client)
-        @url_mappings = HubspotSDK::Resources::Cms::URLMappings.new(client: client)
-        @url_redirects = HubspotSDK::Resources::Cms::URLRedirects.new(client: client)
+        @audit_logs = HubSpotSDK::Resources::Cms::AuditLogs.new(client: client)
+        @blogs = HubSpotSDK::Resources::Cms::Blogs.new(client: client)
+        @domains = HubSpotSDK::Resources::Cms::Domains.new(client: client)
+        @hubdb = HubSpotSDK::Resources::Cms::Hubdb.new(client: client)
+        @media_bridge = HubSpotSDK::Resources::Cms::MediaBridge.new(client: client)
+        @pages = HubSpotSDK::Resources::Cms::Pages.new(client: client)
+        @site_search = HubSpotSDK::Resources::Cms::SiteSearch.new(client: client)
+        @source_code = HubSpotSDK::Resources::Cms::SourceCode.new(client: client)
+        @url_mappings = HubSpotSDK::Resources::Cms::URLMappings.new(client: client)
+        @url_redirects = HubSpotSDK::Resources::Cms::URLRedirects.new(client: client)
       end
     end
   end

@@ -1,8 +1,8 @@
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Transport
       class PooledNetRequester
-        extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        extend HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         type request =
           {
@@ -25,7 +25,7 @@ module HubspotSDK
         def self.calibrate_socket_timeout: (top conn, Float deadline) -> void
 
         def self.build_request: (
-          HubspotSDK::Internal::Transport::PooledNetRequester::request request
+          HubSpotSDK::Internal::Transport::PooledNetRequester::request request
         ) {
           (String arg0) -> void
         } -> [top, (^-> void)]
@@ -38,7 +38,7 @@ module HubspotSDK
         } -> void
 
         def execute: (
-          HubspotSDK::Internal::Transport::PooledNetRequester::request request
+          HubSpotSDK::Internal::Transport::PooledNetRequester::request request
         ) -> [Integer, top, Enumerable[String]]
 
         def initialize: (?size: Integer) -> void

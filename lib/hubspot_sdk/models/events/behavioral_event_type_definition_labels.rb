@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class BehavioralEventTypeDefinitionLabels < HubspotSDK::Internal::Type::BaseModel
+      class BehavioralEventTypeDefinitionLabels < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute singular
         #
         #   @return [String]

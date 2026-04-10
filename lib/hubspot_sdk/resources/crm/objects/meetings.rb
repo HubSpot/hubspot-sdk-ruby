@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Objects
         class Meetings
-          # @return [HubspotSDK::Resources::Crm::Objects::Meetings::Batch]
+          # @return [HubSpotSDK::Resources::Crm::Objects::Meetings::Batch]
           attr_reader :batch
 
           # Create a meeting with the given properties and return a copy of the object,
@@ -14,28 +14,28 @@ module HubspotSDK
           #
           # @overload create(associations:, properties:, request_options: {})
           #
-          # @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
+          # @param associations [Array<HubSpotSDK::Models::Crm::PublicAssociationsForObject>]
           #
           # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
+          # @return [HubSpotSDK::Models::Crm::SimplePublicObject]
           #
-          # @see HubspotSDK::Models::Crm::Objects::MeetingCreateParams
+          # @see HubSpotSDK::Models::Crm::Objects::MeetingCreateParams
           def create(params)
-            parsed, options = HubspotSDK::Crm::Objects::MeetingCreateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Objects::MeetingCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/objects/2026-03/meetings",
               body: parsed,
-              model: HubspotSDK::Crm::SimplePublicObject,
+              model: HubSpotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Objects::MeetingUpdateParams} for more details.
+          # {HubSpotSDK::Models::Crm::Objects::MeetingUpdateParams} for more details.
           #
           # Perform a partial update of an Object identified by `{meetingId}`or optionally a
           # unique property value as specified by the `idProperty` query param.
@@ -53,27 +53,27 @@ module HubspotSDK
           #
           # @param id_property [String] Query param: The name of a property whose values are unique for this object type
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
+          # @return [HubSpotSDK::Models::Crm::SimplePublicObject]
           #
-          # @see HubspotSDK::Models::Crm::Objects::MeetingUpdateParams
+          # @see HubSpotSDK::Models::Crm::Objects::MeetingUpdateParams
           def update(meeting_id, params)
             query_params = [:id_property]
-            parsed, options = HubspotSDK::Crm::Objects::MeetingUpdateParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            parsed, options = HubSpotSDK::Crm::Objects::MeetingUpdateParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
               method: :patch,
               path: ["crm/objects/2026-03/meetings/%1$s", meeting_id],
               query: query.transform_keys(id_property: "idProperty"),
               body: parsed.except(*query_params),
-              model: HubspotSDK::Crm::SimplePublicObject,
+              model: HubSpotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Objects::MeetingListParams} for more details.
+          # {HubSpotSDK::Models::Crm::Objects::MeetingListParams} for more details.
           #
           # Read a page of meetings. Control what is returned via the `properties` query
           # param.
@@ -92,20 +92,20 @@ module HubspotSDK
           #
           # @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
+          # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
           #
-          # @see HubspotSDK::Models::Crm::Objects::MeetingListParams
+          # @see HubSpotSDK::Models::Crm::Objects::MeetingListParams
           def list(params = {})
-            parsed, options = HubspotSDK::Crm::Objects::MeetingListParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Crm::Objects::MeetingListParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "crm/objects/2026-03/meetings",
               query: query.transform_keys(properties_with_history: "propertiesWithHistory"),
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
+              page: HubSpotSDK::Internal::Page,
+              model: HubSpotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -115,11 +115,11 @@ module HubspotSDK
           # @overload delete(meeting_id, request_options: {})
           #
           # @param meeting_id [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Crm::Objects::MeetingDeleteParams
+          # @see HubSpotSDK::Models::Crm::Objects::MeetingDeleteParams
           def delete(meeting_id, params = {})
             @client.request(
               method: :delete,
@@ -130,7 +130,7 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Objects::MeetingGetParams} for more details.
+          # {HubSpotSDK::Models::Crm::Objects::MeetingGetParams} for more details.
           #
           # Read an Object identified by `{meetingId}`. `{meetingId}` refers to the internal
           # object ID by default, or optionally any unique property value as specified by
@@ -151,14 +151,14 @@ module HubspotSDK
           #
           # @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations]
+          # @return [HubSpotSDK::Models::Crm::SimplePublicObjectWithAssociations]
           #
-          # @see HubspotSDK::Models::Crm::Objects::MeetingGetParams
+          # @see HubSpotSDK::Models::Crm::Objects::MeetingGetParams
           def get(meeting_id, params = {})
-            parsed, options = HubspotSDK::Crm::Objects::MeetingGetParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Crm::Objects::MeetingGetParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["crm/objects/2026-03/meetings/%1$s", meeting_id],
@@ -166,7 +166,7 @@ module HubspotSDK
                 id_property: "idProperty",
                 properties_with_history: "propertiesWithHistory"
               ),
-              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
+              model: HubSpotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -178,7 +178,7 @@ module HubspotSDK
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.
           #
-          # @param filter_groups [Array<HubspotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
+          # @param filter_groups [Array<HubSpotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
           #
           # @param limit [Integer] The maximum results to return, up to 200 objects.
           #
@@ -188,28 +188,28 @@ module HubspotSDK
           #
           # @param query [String] The search query string, up to 3000 characters.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
+          # @return [HubSpotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
           #
-          # @see HubspotSDK::Models::Crm::Objects::MeetingSearchParams
+          # @see HubSpotSDK::Models::Crm::Objects::MeetingSearchParams
           def search(params)
-            parsed, options = HubspotSDK::Crm::Objects::MeetingSearchParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Objects::MeetingSearchParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/objects/2026-03/meetings/search",
               body: parsed,
-              model: HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
+              model: HubSpotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
-            @batch = HubspotSDK::Resources::Crm::Objects::Meetings::Batch.new(client: client)
+            @batch = HubSpotSDK::Resources::Crm::Objects::Meetings::Batch.new(client: client)
           end
         end
       end

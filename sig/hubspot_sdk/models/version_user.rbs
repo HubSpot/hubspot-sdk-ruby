@@ -1,8 +1,8 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type version_user = { id: String, email: String, full_name: String }
 
-    class VersionUser < HubspotSDK::Internal::Type::BaseModel
+    class VersionUser < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor id: String
 
       attr_accessor email: String

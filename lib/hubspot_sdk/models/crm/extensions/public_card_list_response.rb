@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        # @see HubspotSDK::Resources::Crm::Extensions::CardsDev#get
-        class PublicCardListResponse < HubspotSDK::Internal::Type::BaseModel
+        # @see HubSpotSDK::Resources::Crm::Extensions::CardsDev#get
+        class PublicCardListResponse < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute results
           #   A list of card responses
           #
-          #   @return [Array<HubspotSDK::Models::Crm::Extensions::PublicCardResponse>]
+          #   @return [Array<HubSpotSDK::Models::Crm::Extensions::PublicCardResponse>]
           required :results,
-                   -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Extensions::PublicCardResponse] }
+                   -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::Extensions::PublicCardResponse] }
 
           # @!method initialize(results:)
-          #   @param results [Array<HubspotSDK::Models::Crm::Extensions::PublicCardResponse>] A list of card responses
+          #   @param results [Array<HubSpotSDK::Models::Crm::Extensions::PublicCardResponse>] A list of card responses
         end
       end
     end

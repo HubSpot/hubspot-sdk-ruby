@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicAssociationDefinitionCreateRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicAssociationDefinitionCreateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute label
         #   A descriptor that provides context about the relationship between two associated
         #   CRM objects.
@@ -26,7 +26,7 @@ module HubspotSDK
 
         # @!method initialize(label:, name:, inverse_label: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicAssociationDefinitionCreateRequest} for more
+        #   {HubSpotSDK::Models::Crm::PublicAssociationDefinitionCreateRequest} for more
         #   details.
         #
         #   @param label [String] A descriptor that provides context about the relationship between two associated

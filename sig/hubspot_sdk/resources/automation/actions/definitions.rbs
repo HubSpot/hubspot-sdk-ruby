@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Automation
       class Actions
@@ -6,69 +6,69 @@ module HubspotSDK
           def create: (
             Integer app_id,
             action_url: String,
-            functions: ::Array[HubspotSDK::Automation::PublicActionFunction],
-            input_fields: ::Array[HubspotSDK::Automation::PublicInputFieldDefinition],
-            labels: ::Hash[Symbol, HubspotSDK::Automation::PublicActionLabels],
+            functions: ::Array[HubSpotSDK::Automation::PublicActionFunction],
+            input_fields: ::Array[HubSpotSDK::Automation::PublicInputFieldDefinition],
+            labels: ::Hash[Symbol, HubSpotSDK::Automation::PublicActionLabels],
             object_types: ::Array[String],
             published: bool,
             ?archived_at: Integer,
-            ?execution_rules: ::Array[HubspotSDK::Automation::PublicExecutionTranslationRule],
-            ?input_field_dependencies: ::Array[HubspotSDK::Models::Automation::PublicActionDefinitionEgg::input_field_dependency],
-            ?object_request_options: HubspotSDK::Automation::PublicObjectRequestOptions,
-            ?output_fields: ::Array[HubspotSDK::Automation::OutputFieldDefinition],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Automation::PublicActionDefinition
+            ?execution_rules: ::Array[HubSpotSDK::Automation::PublicExecutionTranslationRule],
+            ?input_field_dependencies: ::Array[HubSpotSDK::Models::Automation::PublicActionDefinitionEgg::input_field_dependency],
+            ?object_request_options: HubSpotSDK::Automation::PublicObjectRequestOptions,
+            ?output_fields: ::Array[HubSpotSDK::Automation::OutputFieldDefinition],
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Automation::PublicActionDefinition
 
           def update: (
             String definition_id,
             app_id: Integer,
             ?action_url: String,
-            ?execution_rules: ::Array[HubspotSDK::Automation::PublicExecutionTranslationRule],
-            ?input_field_dependencies: ::Array[HubspotSDK::Models::Automation::PublicActionDefinitionPatch::input_field_dependency],
-            ?input_fields: ::Array[HubspotSDK::Automation::PublicInputFieldDefinition],
-            ?labels: ::Hash[Symbol, HubspotSDK::Automation::PublicActionLabels],
-            ?object_request_options: HubspotSDK::Automation::PublicObjectRequestOptions,
+            ?execution_rules: ::Array[HubSpotSDK::Automation::PublicExecutionTranslationRule],
+            ?input_field_dependencies: ::Array[HubSpotSDK::Models::Automation::PublicActionDefinitionPatch::input_field_dependency],
+            ?input_fields: ::Array[HubSpotSDK::Automation::PublicInputFieldDefinition],
+            ?labels: ::Hash[Symbol, HubSpotSDK::Automation::PublicActionLabels],
+            ?object_request_options: HubSpotSDK::Automation::PublicObjectRequestOptions,
             ?object_types: ::Array[String],
-            ?output_fields: ::Array[HubspotSDK::Automation::OutputFieldDefinition],
+            ?output_fields: ::Array[HubSpotSDK::Automation::OutputFieldDefinition],
             ?published: bool,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Automation::PublicActionDefinition
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Automation::PublicActionDefinition
 
           def list: (
             Integer app_id,
             ?after: String,
             ?archived: bool,
             ?limit: Integer,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Internal::Page[HubspotSDK::Automation::PublicActionDefinition]
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Automation::PublicActionDefinition]
 
           def delete: (
             String definition_id,
             app_id: Integer,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def create_requires_object: (
             String definition_id,
             app_id: Integer,
             requires_object: bool,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def get: (
             String definition_id,
             app_id: Integer,
             ?archived: bool,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Automation::PublicActionDefinition
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Automation::PublicActionDefinition
 
           def get_requires_object: (
             String definition_id,
             app_id: Integer,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Automation::PublicActionDefinitionRequiresObjectResponse
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Automation::PublicActionDefinitionRequiresObjectResponse
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

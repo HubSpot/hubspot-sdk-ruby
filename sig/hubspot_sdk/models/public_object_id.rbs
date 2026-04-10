@@ -1,8 +1,8 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type public_object_id = { id: String }
 
-    class PublicObjectID < HubspotSDK::Internal::Type::BaseModel
+    class PublicObjectID < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor id: String
 
       def initialize: (id: String) -> void

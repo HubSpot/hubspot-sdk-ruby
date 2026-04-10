@@ -2,21 +2,21 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Marketing::MarketingEvents::ListAssociationsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Marketing::MarketingEvents::ListAssociationsTest < HubSpotSDK::Test::ResourceTest
   def test_list
     skip("Mock server tests are disabled")
 
     response = @hubspot.marketing.marketing_events.list_associations.list("marketingEventId")
 
     assert_pattern do
-      response => HubspotSDK::Marketing::CollectionResponseWithTotalPublicList
+      response => HubSpotSDK::Marketing::CollectionResponseWithTotalPublicList
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicList]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::PublicList]),
         total: Integer,
-        paging: HubspotSDK::Paging | nil
+        paging: HubSpotSDK::Paging | nil
       }
     end
   end
@@ -89,14 +89,14 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEvents::ListAssociationsT
       )
 
     assert_pattern do
-      response => HubspotSDK::Marketing::CollectionResponseWithTotalPublicList
+      response => HubSpotSDK::Marketing::CollectionResponseWithTotalPublicList
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicList]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::PublicList]),
         total: Integer,
-        paging: HubspotSDK::Paging | nil
+        paging: HubSpotSDK::Paging | nil
       }
     end
   end

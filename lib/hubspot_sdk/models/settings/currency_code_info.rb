@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class CurrencyCodeInfo < HubspotSDK::Internal::Type::BaseModel
+      class CurrencyCodeInfo < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute currency_code
         #   The three-letter code representing a specific currency (ex. USD).
         #

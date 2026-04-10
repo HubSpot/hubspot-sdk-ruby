@@ -1,53 +1,53 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type contact_profile =
         {
-          addresses: ::Array[HubspotSDK::Conversations::ContactAddress],
-          emails: ::Array[HubspotSDK::Conversations::ContactEmail],
-          phones: ::Array[HubspotSDK::Conversations::ContactPhone],
-          urls: ::Array[HubspotSDK::Conversations::ContactURL],
-          name: HubspotSDK::Conversations::ContactName,
-          org: HubspotSDK::Conversations::ContactOrg
+          addresses: ::Array[HubSpotSDK::Conversations::ContactAddress],
+          emails: ::Array[HubSpotSDK::Conversations::ContactEmail],
+          phones: ::Array[HubSpotSDK::Conversations::ContactPhone],
+          urls: ::Array[HubSpotSDK::Conversations::ContactURL],
+          name: HubSpotSDK::Conversations::ContactName,
+          org: HubSpotSDK::Conversations::ContactOrg
         }
 
-      class ContactProfile < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor addresses: ::Array[HubspotSDK::Conversations::ContactAddress]
+      class ContactProfile < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor addresses: ::Array[HubSpotSDK::Conversations::ContactAddress]
 
-        attr_accessor emails: ::Array[HubspotSDK::Conversations::ContactEmail]
+        attr_accessor emails: ::Array[HubSpotSDK::Conversations::ContactEmail]
 
-        attr_accessor phones: ::Array[HubspotSDK::Conversations::ContactPhone]
+        attr_accessor phones: ::Array[HubSpotSDK::Conversations::ContactPhone]
 
-        attr_accessor urls: ::Array[HubspotSDK::Conversations::ContactURL]
+        attr_accessor urls: ::Array[HubSpotSDK::Conversations::ContactURL]
 
-        attr_reader name: HubspotSDK::Conversations::ContactName?
+        attr_reader name: HubSpotSDK::Conversations::ContactName?
 
         def name=: (
-          HubspotSDK::Conversations::ContactName
-        ) -> HubspotSDK::Conversations::ContactName
+          HubSpotSDK::Conversations::ContactName
+        ) -> HubSpotSDK::Conversations::ContactName
 
-        attr_reader org: HubspotSDK::Conversations::ContactOrg?
+        attr_reader org: HubSpotSDK::Conversations::ContactOrg?
 
         def org=: (
-          HubspotSDK::Conversations::ContactOrg
-        ) -> HubspotSDK::Conversations::ContactOrg
+          HubSpotSDK::Conversations::ContactOrg
+        ) -> HubSpotSDK::Conversations::ContactOrg
 
         def initialize: (
-          addresses: ::Array[HubspotSDK::Conversations::ContactAddress],
-          emails: ::Array[HubspotSDK::Conversations::ContactEmail],
-          phones: ::Array[HubspotSDK::Conversations::ContactPhone],
-          urls: ::Array[HubspotSDK::Conversations::ContactURL],
-          ?name: HubspotSDK::Conversations::ContactName,
-          ?org: HubspotSDK::Conversations::ContactOrg
+          addresses: ::Array[HubSpotSDK::Conversations::ContactAddress],
+          emails: ::Array[HubSpotSDK::Conversations::ContactEmail],
+          phones: ::Array[HubSpotSDK::Conversations::ContactPhone],
+          urls: ::Array[HubSpotSDK::Conversations::ContactURL],
+          ?name: HubSpotSDK::Conversations::ContactName,
+          ?org: HubSpotSDK::Conversations::ContactOrg
         ) -> void
 
         def to_hash: -> {
-          addresses: ::Array[HubspotSDK::Conversations::ContactAddress],
-          emails: ::Array[HubspotSDK::Conversations::ContactEmail],
-          phones: ::Array[HubspotSDK::Conversations::ContactPhone],
-          urls: ::Array[HubspotSDK::Conversations::ContactURL],
-          name: HubspotSDK::Conversations::ContactName,
-          org: HubspotSDK::Conversations::ContactOrg
+          addresses: ::Array[HubSpotSDK::Conversations::ContactAddress],
+          emails: ::Array[HubSpotSDK::Conversations::ContactEmail],
+          phones: ::Array[HubSpotSDK::Conversations::ContactPhone],
+          urls: ::Array[HubSpotSDK::Conversations::ContactURL],
+          name: HubSpotSDK::Conversations::ContactName,
+          org: HubSpotSDK::Conversations::ContactOrg
         }
       end
     end

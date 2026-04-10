@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalLinkFormField < HubspotSDK::Internal::Type::BaseModel
+      class ExternalLinkFormField < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Scheduler::ExternalLinkFormField,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Scheduler::ExternalLinkFormField,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -33,7 +33,7 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :name
 
-        sig { returns(T::Array[HubspotSDK::Scheduler::ExternalOption]) }
+        sig { returns(T::Array[HubSpotSDK::Scheduler::ExternalOption]) }
         attr_accessor :options
 
         # The data type of the form field accepts (e.g. `date`, `enumeration`, etc)
@@ -47,7 +47,7 @@ module HubspotSDK
             is_required: T::Boolean,
             label: String,
             name: String,
-            options: T::Array[HubspotSDK::Scheduler::ExternalOption::OrHash],
+            options: T::Array[HubSpotSDK::Scheduler::ExternalOption::OrHash],
             type: String
           ).returns(T.attached_class)
         end
@@ -77,7 +77,7 @@ module HubspotSDK
               is_required: T::Boolean,
               label: String,
               name: String,
-              options: T::Array[HubspotSDK::Scheduler::ExternalOption],
+              options: T::Array[HubSpotSDK::Scheduler::ExternalOption],
               type: String
             }
           )

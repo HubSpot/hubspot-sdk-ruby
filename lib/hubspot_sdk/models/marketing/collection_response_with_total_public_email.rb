@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class CollectionResponseWithTotalPublicEmail < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseWithTotalPublicEmail < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::PublicEmail>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicEmail] }
+        #   @return [Array<HubSpotSDK::Models::Marketing::PublicEmail>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::PublicEmail] }
 
         # @!attribute total
         #
@@ -16,13 +16,13 @@ module HubspotSDK
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::Paging, nil]
-        optional :paging, -> { HubspotSDK::Paging }
+        #   @return [HubSpotSDK::Models::Paging, nil]
+        optional :paging, -> { HubSpotSDK::Paging }
 
         # @!method initialize(results:, total:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Marketing::PublicEmail>]
+        #   @param results [Array<HubSpotSDK::Models::Marketing::PublicEmail>]
         #   @param total [Integer]
-        #   @param paging [HubspotSDK::Models::Paging]
+        #   @param paging [HubSpotSDK::Models::Paging]
       end
     end
   end

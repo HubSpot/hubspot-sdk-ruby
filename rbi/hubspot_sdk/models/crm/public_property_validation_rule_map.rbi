@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicPropertyValidationRuleMap < HubspotSDK::Internal::Type::BaseModel
+      class PublicPropertyValidationRuleMap < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicPropertyValidationRuleMap,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicPropertyValidationRuleMap,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -17,14 +17,14 @@ module HubspotSDK
         attr_accessor :property_name
 
         # A list of validation rules applicable to the property.
-        sig { returns(T::Array[HubspotSDK::Crm::PublicPropertyValidationRule]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::PublicPropertyValidationRule]) }
         attr_accessor :property_validation_rules
 
         sig do
           params(
             property_name: String,
             property_validation_rules:
-              T::Array[HubspotSDK::Crm::PublicPropertyValidationRule::OrHash]
+              T::Array[HubSpotSDK::Crm::PublicPropertyValidationRule::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(
@@ -40,7 +40,7 @@ module HubspotSDK
             {
               property_name: String,
               property_validation_rules:
-                T::Array[HubspotSDK::Crm::PublicPropertyValidationRule]
+                T::Array[HubSpotSDK::Crm::PublicPropertyValidationRule]
             }
           )
         end

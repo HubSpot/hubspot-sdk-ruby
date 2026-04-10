@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalCalenderMeetingEventResponse < HubspotSDK::Internal::Type::BaseModel
+      class ExternalCalenderMeetingEventResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the meeting event.
         #
@@ -25,12 +25,12 @@ module HubspotSDK
 
         # @!attribute properties
         #
-        #   @return [HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties]
-        required :properties, -> { HubspotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties }
+        #   @return [HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties]
+        required :properties, -> { HubSpotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties }
 
         # @!method initialize(id:, created_at:, last_updated_at:, properties:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Scheduler::ExternalCalenderMeetingEventResponse} for more
+        #   {HubSpotSDK::Models::Scheduler::ExternalCalenderMeetingEventResponse} for more
         #   details.
         #
         #   @param id [String] The unique identifier for the meeting event.
@@ -39,7 +39,7 @@ module HubspotSDK
         #
         #   @param last_updated_at [Time] The date and time when the meeting event was last updated, in ISO 8601 format.
         #
-        #   @param properties [HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties]
+        #   @param properties [HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventResponseProperties]
       end
     end
   end

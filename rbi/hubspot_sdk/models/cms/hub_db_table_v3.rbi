@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class HubDBTableV3 < HubspotSDK::Internal::Type::BaseModel
+      class HubDBTableV3 < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::HubDBTableV3, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::HubDBTableV3, HubSpotSDK::Internal::AnyHash)
           end
 
         # Id of the table
@@ -26,7 +26,7 @@ module HubspotSDK
         attr_accessor :column_count
 
         # List of columns in the table
-        sig { returns(T::Array[HubspotSDK::Cms::Column]) }
+        sig { returns(T::Array[HubSpotSDK::Cms::Column]) }
         attr_accessor :columns
 
         # Timestamp at which the table is created
@@ -79,10 +79,10 @@ module HubspotSDK
         sig { returns(T::Boolean) }
         attr_accessor :use_for_pages
 
-        sig { returns(T.nilable(HubspotSDK::Cms::SimpleUser)) }
+        sig { returns(T.nilable(HubSpotSDK::Cms::SimpleUser)) }
         attr_reader :created_by
 
-        sig { params(created_by: HubspotSDK::Cms::SimpleUser::OrHash).void }
+        sig { params(created_by: HubSpotSDK::Cms::SimpleUser::OrHash).void }
         attr_writer :created_by
 
         # Indicates whether the table rows are ordered manually.
@@ -92,10 +92,10 @@ module HubspotSDK
         sig { params(is_ordered_manually: T::Boolean).void }
         attr_writer :is_ordered_manually
 
-        sig { returns(T.nilable(HubspotSDK::Cms::SimpleUser)) }
+        sig { returns(T.nilable(HubSpotSDK::Cms::SimpleUser)) }
         attr_reader :updated_by
 
-        sig { params(updated_by: HubspotSDK::Cms::SimpleUser::OrHash).void }
+        sig { params(updated_by: HubSpotSDK::Cms::SimpleUser::OrHash).void }
         attr_writer :updated_by
 
         sig do
@@ -104,7 +104,7 @@ module HubspotSDK
             allow_child_tables: T::Boolean,
             allow_public_api_access: T::Boolean,
             column_count: Integer,
-            columns: T::Array[HubspotSDK::Cms::Column::OrHash],
+            columns: T::Array[HubSpotSDK::Cms::Column::OrHash],
             created_at: Time,
             deleted: T::Boolean,
             deleted_at: Time,
@@ -117,9 +117,9 @@ module HubspotSDK
             row_count: Integer,
             updated_at: Time,
             use_for_pages: T::Boolean,
-            created_by: HubspotSDK::Cms::SimpleUser::OrHash,
+            created_by: HubSpotSDK::Cms::SimpleUser::OrHash,
             is_ordered_manually: T::Boolean,
-            updated_by: HubspotSDK::Cms::SimpleUser::OrHash
+            updated_by: HubSpotSDK::Cms::SimpleUser::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -173,7 +173,7 @@ module HubspotSDK
               allow_child_tables: T::Boolean,
               allow_public_api_access: T::Boolean,
               column_count: Integer,
-              columns: T::Array[HubspotSDK::Cms::Column],
+              columns: T::Array[HubSpotSDK::Cms::Column],
               created_at: Time,
               deleted: T::Boolean,
               deleted_at: Time,
@@ -186,9 +186,9 @@ module HubspotSDK
               row_count: Integer,
               updated_at: Time,
               use_for_pages: T::Boolean,
-              created_by: HubspotSDK::Cms::SimpleUser,
+              created_by: HubSpotSDK::Cms::SimpleUser,
               is_ordered_manually: T::Boolean,
-              updated_by: HubspotSDK::Cms::SimpleUser
+              updated_by: HubSpotSDK::Cms::SimpleUser
             }
           )
         end

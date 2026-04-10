@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type value_with_timestamp =
@@ -11,7 +11,7 @@ module HubspotSDK
           updated_by_user_id: Integer
         }
 
-      class ValueWithTimestamp < HubspotSDK::Internal::Type::BaseModel
+      class ValueWithTimestamp < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor source_type: String
 
         attr_accessor timestamp: Time

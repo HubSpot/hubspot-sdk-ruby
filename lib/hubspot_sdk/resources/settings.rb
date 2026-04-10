@@ -1,25 +1,25 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Settings
-      # @return [HubspotSDK::Resources::Settings::Currencies]
+      # @return [HubSpotSDK::Resources::Settings::Currencies]
       attr_reader :currencies
 
-      # @return [HubspotSDK::Resources::Settings::TaxRates]
+      # @return [HubSpotSDK::Resources::Settings::TaxRates]
       attr_reader :tax_rates
 
-      # @return [HubspotSDK::Resources::Settings::Users]
+      # @return [HubSpotSDK::Resources::Settings::Users]
       attr_reader :users
 
       # @api private
       #
-      # @param client [HubspotSDK::Client]
+      # @param client [HubSpotSDK::Client]
       def initialize(client:)
         @client = client
-        @currencies = HubspotSDK::Resources::Settings::Currencies.new(client: client)
-        @tax_rates = HubspotSDK::Resources::Settings::TaxRates.new(client: client)
-        @users = HubspotSDK::Resources::Settings::Users.new(client: client)
+        @currencies = HubSpotSDK::Resources::Settings::Currencies.new(client: client)
+        @tax_rates = HubSpotSDK::Resources::Settings::TaxRates.new(client: client)
+        @users = HubSpotSDK::Resources::Settings::Users.new(client: client)
       end
     end
   end

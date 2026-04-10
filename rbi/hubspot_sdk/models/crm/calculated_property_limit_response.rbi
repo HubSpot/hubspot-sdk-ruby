@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class CalculatedPropertyLimitResponse < HubspotSDK::Internal::Type::BaseModel
+      class CalculatedPropertyLimitResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::CalculatedPropertyLimitResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::CalculatedPropertyLimitResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Crm::UsageForObjectType]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::UsageForObjectType]) }
         attr_accessor :by_object_type
 
         # The maximum number of calculated properties allowed.
@@ -31,7 +31,7 @@ module HubspotSDK
         sig do
           params(
             by_object_type:
-              T::Array[HubspotSDK::Crm::UsageForObjectType::OrHash],
+              T::Array[HubSpotSDK::Crm::UsageForObjectType::OrHash],
             overall_limit: Integer,
             overall_percentage: Float,
             overall_usage: Integer
@@ -52,7 +52,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              by_object_type: T::Array[HubspotSDK::Crm::UsageForObjectType],
+              by_object_type: T::Array[HubSpotSDK::Crm::UsageForObjectType],
               overall_limit: Integer,
               overall_percentage: Float,
               overall_usage: Integer

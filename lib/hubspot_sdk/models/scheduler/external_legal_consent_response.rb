@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalLegalConsentResponse < HubspotSDK::Internal::Type::BaseModel
+      class ExternalLegalConsentResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute communication_type_id
         #   The ID of communication consent form being recorded.
         #
@@ -14,7 +14,7 @@ module HubspotSDK
         #   Whether the user has given consent for the specified communication type.
         #
         #   @return [Boolean]
-        required :consented, HubspotSDK::Internal::Type::Boolean
+        required :consented, HubSpotSDK::Internal::Type::Boolean
 
         # @!method initialize(communication_type_id:, consented:)
         #   @param communication_type_id [String] The ID of communication consent form being recorded.

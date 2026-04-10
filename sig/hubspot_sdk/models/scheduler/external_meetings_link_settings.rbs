@@ -1,34 +1,34 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_meetings_link_settings =
         {
-          availability: ::Hash[Symbol, HubspotSDK::Scheduler::ExternalClosedRange],
+          availability: ::Hash[Symbol, HubSpotSDK::Scheduler::ExternalClosedRange],
           durations: ::Array[Integer],
-          form_fields: ::Array[HubspotSDK::Scheduler::ExternalLinkFormField],
+          form_fields: ::Array[HubSpotSDK::Scheduler::ExternalLinkFormField],
           legal_consent_enabled: bool,
           meeting_buffer_time: Integer,
           owner_prioritized: bool,
-          start_time_increment_minutes: HubspotSDK::Models::Scheduler::ExternalMeetingsLinkSettings::start_time_increment_minutes,
+          start_time_increment_minutes: HubSpotSDK::Models::Scheduler::ExternalMeetingsLinkSettings::start_time_increment_minutes,
           weeks_to_advertise: Integer,
           custom_availability_end_date: Integer,
           custom_availability_start_date: Integer,
-          display_info: HubspotSDK::Scheduler::ExternalLinkDisplayInfo,
-          guest_settings: HubspotSDK::Scheduler::ExternalGuestSettings,
+          display_info: HubSpotSDK::Scheduler::ExternalLinkDisplayInfo,
+          guest_settings: HubSpotSDK::Scheduler::ExternalGuestSettings,
           language: String,
-          legal_consent_options: HubspotSDK::Scheduler::ExternalLegalConsentOptions,
+          legal_consent_options: HubSpotSDK::Scheduler::ExternalLegalConsentOptions,
           locale: String,
           location: String,
           redirect_url: String,
-          welcome_screen_info: HubspotSDK::Scheduler::ExternalMeetingsWelcomeScreenInfo
+          welcome_screen_info: HubSpotSDK::Scheduler::ExternalMeetingsWelcomeScreenInfo
         }
 
-      class ExternalMeetingsLinkSettings < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor availability: ::Hash[Symbol, HubspotSDK::Scheduler::ExternalClosedRange]
+      class ExternalMeetingsLinkSettings < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor availability: ::Hash[Symbol, HubSpotSDK::Scheduler::ExternalClosedRange]
 
         attr_accessor durations: ::Array[Integer]
 
-        attr_accessor form_fields: ::Array[HubspotSDK::Scheduler::ExternalLinkFormField]
+        attr_accessor form_fields: ::Array[HubSpotSDK::Scheduler::ExternalLinkFormField]
 
         attr_accessor legal_consent_enabled: bool
 
@@ -36,7 +36,7 @@ module HubspotSDK
 
         attr_accessor owner_prioritized: bool
 
-        attr_accessor start_time_increment_minutes: HubspotSDK::Models::Scheduler::ExternalMeetingsLinkSettings::start_time_increment_minutes
+        attr_accessor start_time_increment_minutes: HubSpotSDK::Models::Scheduler::ExternalMeetingsLinkSettings::start_time_increment_minutes
 
         attr_accessor weeks_to_advertise: Integer
 
@@ -48,27 +48,27 @@ module HubspotSDK
 
         def custom_availability_start_date=: (Integer) -> Integer
 
-        attr_reader display_info: HubspotSDK::Scheduler::ExternalLinkDisplayInfo?
+        attr_reader display_info: HubSpotSDK::Scheduler::ExternalLinkDisplayInfo?
 
         def display_info=: (
-          HubspotSDK::Scheduler::ExternalLinkDisplayInfo
-        ) -> HubspotSDK::Scheduler::ExternalLinkDisplayInfo
+          HubSpotSDK::Scheduler::ExternalLinkDisplayInfo
+        ) -> HubSpotSDK::Scheduler::ExternalLinkDisplayInfo
 
-        attr_reader guest_settings: HubspotSDK::Scheduler::ExternalGuestSettings?
+        attr_reader guest_settings: HubSpotSDK::Scheduler::ExternalGuestSettings?
 
         def guest_settings=: (
-          HubspotSDK::Scheduler::ExternalGuestSettings
-        ) -> HubspotSDK::Scheduler::ExternalGuestSettings
+          HubSpotSDK::Scheduler::ExternalGuestSettings
+        ) -> HubSpotSDK::Scheduler::ExternalGuestSettings
 
         attr_reader language: String?
 
         def language=: (String) -> String
 
-        attr_reader legal_consent_options: HubspotSDK::Scheduler::ExternalLegalConsentOptions?
+        attr_reader legal_consent_options: HubSpotSDK::Scheduler::ExternalLegalConsentOptions?
 
         def legal_consent_options=: (
-          HubspotSDK::Scheduler::ExternalLegalConsentOptions
-        ) -> HubspotSDK::Scheduler::ExternalLegalConsentOptions
+          HubSpotSDK::Scheduler::ExternalLegalConsentOptions
+        ) -> HubSpotSDK::Scheduler::ExternalLegalConsentOptions
 
         attr_reader locale: String?
 
@@ -82,52 +82,52 @@ module HubspotSDK
 
         def redirect_url=: (String) -> String
 
-        attr_reader welcome_screen_info: HubspotSDK::Scheduler::ExternalMeetingsWelcomeScreenInfo?
+        attr_reader welcome_screen_info: HubSpotSDK::Scheduler::ExternalMeetingsWelcomeScreenInfo?
 
         def welcome_screen_info=: (
-          HubspotSDK::Scheduler::ExternalMeetingsWelcomeScreenInfo
-        ) -> HubspotSDK::Scheduler::ExternalMeetingsWelcomeScreenInfo
+          HubSpotSDK::Scheduler::ExternalMeetingsWelcomeScreenInfo
+        ) -> HubSpotSDK::Scheduler::ExternalMeetingsWelcomeScreenInfo
 
         def initialize: (
-          availability: ::Hash[Symbol, HubspotSDK::Scheduler::ExternalClosedRange],
+          availability: ::Hash[Symbol, HubSpotSDK::Scheduler::ExternalClosedRange],
           durations: ::Array[Integer],
-          form_fields: ::Array[HubspotSDK::Scheduler::ExternalLinkFormField],
+          form_fields: ::Array[HubSpotSDK::Scheduler::ExternalLinkFormField],
           legal_consent_enabled: bool,
           meeting_buffer_time: Integer,
           owner_prioritized: bool,
-          start_time_increment_minutes: HubspotSDK::Models::Scheduler::ExternalMeetingsLinkSettings::start_time_increment_minutes,
+          start_time_increment_minutes: HubSpotSDK::Models::Scheduler::ExternalMeetingsLinkSettings::start_time_increment_minutes,
           weeks_to_advertise: Integer,
           ?custom_availability_end_date: Integer,
           ?custom_availability_start_date: Integer,
-          ?display_info: HubspotSDK::Scheduler::ExternalLinkDisplayInfo,
-          ?guest_settings: HubspotSDK::Scheduler::ExternalGuestSettings,
+          ?display_info: HubSpotSDK::Scheduler::ExternalLinkDisplayInfo,
+          ?guest_settings: HubSpotSDK::Scheduler::ExternalGuestSettings,
           ?language: String,
-          ?legal_consent_options: HubspotSDK::Scheduler::ExternalLegalConsentOptions,
+          ?legal_consent_options: HubSpotSDK::Scheduler::ExternalLegalConsentOptions,
           ?locale: String,
           ?location: String,
           ?redirect_url: String,
-          ?welcome_screen_info: HubspotSDK::Scheduler::ExternalMeetingsWelcomeScreenInfo
+          ?welcome_screen_info: HubSpotSDK::Scheduler::ExternalMeetingsWelcomeScreenInfo
         ) -> void
 
         def to_hash: -> {
-          availability: ::Hash[Symbol, HubspotSDK::Scheduler::ExternalClosedRange],
+          availability: ::Hash[Symbol, HubSpotSDK::Scheduler::ExternalClosedRange],
           durations: ::Array[Integer],
-          form_fields: ::Array[HubspotSDK::Scheduler::ExternalLinkFormField],
+          form_fields: ::Array[HubSpotSDK::Scheduler::ExternalLinkFormField],
           legal_consent_enabled: bool,
           meeting_buffer_time: Integer,
           owner_prioritized: bool,
-          start_time_increment_minutes: HubspotSDK::Models::Scheduler::ExternalMeetingsLinkSettings::start_time_increment_minutes,
+          start_time_increment_minutes: HubSpotSDK::Models::Scheduler::ExternalMeetingsLinkSettings::start_time_increment_minutes,
           weeks_to_advertise: Integer,
           custom_availability_end_date: Integer,
           custom_availability_start_date: Integer,
-          display_info: HubspotSDK::Scheduler::ExternalLinkDisplayInfo,
-          guest_settings: HubspotSDK::Scheduler::ExternalGuestSettings,
+          display_info: HubSpotSDK::Scheduler::ExternalLinkDisplayInfo,
+          guest_settings: HubSpotSDK::Scheduler::ExternalGuestSettings,
           language: String,
-          legal_consent_options: HubspotSDK::Scheduler::ExternalLegalConsentOptions,
+          legal_consent_options: HubSpotSDK::Scheduler::ExternalLegalConsentOptions,
           locale: String,
           location: String,
           redirect_url: String,
-          welcome_screen_info: HubspotSDK::Scheduler::ExternalMeetingsWelcomeScreenInfo
+          welcome_screen_info: HubSpotSDK::Scheduler::ExternalMeetingsWelcomeScreenInfo
         }
 
         type start_time_increment_minutes =
@@ -143,7 +143,7 @@ module HubspotSDK
           | :TWENTY
 
         module StartTimeIncrementMinutes
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           FIFTEEN: :FIFTEEN
           FIVE: :FIVE
@@ -156,7 +156,7 @@ module HubspotSDK
           THIRTY: :THIRTY
           TWENTY: :TWENTY
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Scheduler::ExternalMeetingsLinkSettings::start_time_increment_minutes]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Scheduler::ExternalMeetingsLinkSettings::start_time_increment_minutes]
         end
       end
     end

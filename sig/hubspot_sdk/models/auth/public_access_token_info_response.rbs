@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Auth
       type public_access_token_info_response =
@@ -11,15 +11,15 @@ module HubspotSDK
           hub_id: Integer,
           is_private_distribution: bool,
           scopes: ::Array[String],
-          signed_access_token: HubspotSDK::Auth::SignedAccessToken,
+          signed_access_token: HubSpotSDK::Auth::SignedAccessToken,
           token_type: String,
-          token_use: HubspotSDK::Models::Auth::PublicAccessTokenInfoResponse::token_use,
+          token_use: HubSpotSDK::Models::Auth::PublicAccessTokenInfoResponse::token_use,
           user_id: Integer,
           hub_domain: String,
           user: String
         }
 
-      class PublicAccessTokenInfoResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicAccessTokenInfoResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor token: String
 
         attr_accessor active: bool
@@ -36,11 +36,11 @@ module HubspotSDK
 
         attr_accessor scopes: ::Array[String]
 
-        attr_accessor signed_access_token: HubspotSDK::Auth::SignedAccessToken
+        attr_accessor signed_access_token: HubSpotSDK::Auth::SignedAccessToken
 
         attr_accessor token_type: String
 
-        attr_accessor token_use: HubspotSDK::Models::Auth::PublicAccessTokenInfoResponse::token_use
+        attr_accessor token_use: HubSpotSDK::Models::Auth::PublicAccessTokenInfoResponse::token_use
 
         attr_accessor user_id: Integer
 
@@ -61,9 +61,9 @@ module HubspotSDK
           hub_id: Integer,
           is_private_distribution: bool,
           scopes: ::Array[String],
-          signed_access_token: HubspotSDK::Auth::SignedAccessToken,
+          signed_access_token: HubSpotSDK::Auth::SignedAccessToken,
           token_type: String,
-          token_use: HubspotSDK::Models::Auth::PublicAccessTokenInfoResponse::token_use,
+          token_use: HubSpotSDK::Models::Auth::PublicAccessTokenInfoResponse::token_use,
           user_id: Integer,
           ?hub_domain: String,
           ?user: String
@@ -78,9 +78,9 @@ module HubspotSDK
           hub_id: Integer,
           is_private_distribution: bool,
           scopes: ::Array[String],
-          signed_access_token: HubspotSDK::Auth::SignedAccessToken,
+          signed_access_token: HubSpotSDK::Auth::SignedAccessToken,
           token_type: String,
-          token_use: HubspotSDK::Models::Auth::PublicAccessTokenInfoResponse::token_use,
+          token_use: HubSpotSDK::Models::Auth::PublicAccessTokenInfoResponse::token_use,
           user_id: Integer,
           hub_domain: String,
           user: String
@@ -89,11 +89,11 @@ module HubspotSDK
         type token_use = :access_token
 
         module TokenUse
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ACCESS_TOKEN: :access_token
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Auth::PublicAccessTokenInfoResponse::token_use]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Auth::PublicAccessTokenInfoResponse::token_use]
         end
       end
     end

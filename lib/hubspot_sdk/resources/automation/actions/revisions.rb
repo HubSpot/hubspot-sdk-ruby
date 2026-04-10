@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Automation
       class Actions
         class Revisions
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Automation::Actions::RevisionListParams} for more details.
+          # {HubSpotSDK::Models::Automation::Actions::RevisionListParams} for more details.
           #
           # Retrieve the versions of a definition by ID.
           #
@@ -20,14 +20,14 @@ module HubspotSDK
           #
           # @param limit [Integer] Query param: The maximum number of results to display per page.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Automation::PublicActionRevision>]
+          # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Automation::PublicActionRevision>]
           #
-          # @see HubspotSDK::Models::Automation::Actions::RevisionListParams
+          # @see HubSpotSDK::Models::Automation::Actions::RevisionListParams
           def list(definition_id, params)
-            parsed, options = HubspotSDK::Automation::Actions::RevisionListParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Automation::Actions::RevisionListParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -36,8 +36,8 @@ module HubspotSDK
               method: :get,
               path: ["automation/actions/2026-03/%1$s/%2$s/revisions", app_id, definition_id],
               query: query,
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Automation::PublicActionRevision,
+              page: HubSpotSDK::Internal::Page,
+              model: HubSpotSDK::Automation::PublicActionRevision,
               options: options
             )
           end
@@ -49,13 +49,13 @@ module HubspotSDK
           # @param revision_id [String]
           # @param app_id [Integer]
           # @param definition_id [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Automation::PublicActionRevision]
+          # @return [HubSpotSDK::Models::Automation::PublicActionRevision]
           #
-          # @see HubspotSDK::Models::Automation::Actions::RevisionGetParams
+          # @see HubSpotSDK::Models::Automation::Actions::RevisionGetParams
           def get(revision_id, params)
-            parsed, options = HubspotSDK::Automation::Actions::RevisionGetParams.dump_request(params)
+            parsed, options = HubSpotSDK::Automation::Actions::RevisionGetParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -72,14 +72,14 @@ module HubspotSDK
                 definition_id,
                 revision_id
               ],
-              model: HubspotSDK::Automation::PublicActionRevision,
+              model: HubSpotSDK::Automation::PublicActionRevision,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

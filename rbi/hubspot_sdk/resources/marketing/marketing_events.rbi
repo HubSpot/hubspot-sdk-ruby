@@ -1,41 +1,41 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class MarketingEvents
         sig do
-          returns(HubspotSDK::Resources::Marketing::MarketingEvents::Attendance)
+          returns(HubSpotSDK::Resources::Marketing::MarketingEvents::Attendance)
         end
         attr_reader :attendance
 
         sig do
-          returns(HubspotSDK::Resources::Marketing::MarketingEvents::Events)
+          returns(HubSpotSDK::Resources::Marketing::MarketingEvents::Events)
         end
         attr_reader :events
 
         sig do
           returns(
-            HubspotSDK::Resources::Marketing::MarketingEvents::ListAssociations
+            HubSpotSDK::Resources::Marketing::MarketingEvents::ListAssociations
           )
         end
         attr_reader :list_associations
 
         sig do
           returns(
-            HubspotSDK::Resources::Marketing::MarketingEvents::Participations
+            HubSpotSDK::Resources::Marketing::MarketingEvents::Participations
           )
         end
         attr_reader :participations
 
         sig do
-          returns(HubspotSDK::Resources::Marketing::MarketingEvents::Settings)
+          returns(HubSpotSDK::Resources::Marketing::MarketingEvents::Settings)
         end
         attr_reader :settings
 
         sig do
           returns(
-            HubspotSDK::Resources::Marketing::MarketingEvents::SubscriberState
+            HubSpotSDK::Resources::Marketing::MarketingEvents::SubscriberState
           )
         end
         attr_reader :subscriber_state
@@ -43,7 +43,7 @@ module HubspotSDK
         # Creates a new marketing event in HubSpot
         sig do
           params(
-            custom_properties: T::Array[HubspotSDK::PropertyValue::OrHash],
+            custom_properties: T::Array[HubSpotSDK::PropertyValue::OrHash],
             event_name: String,
             event_organizer: String,
             external_account_id: String,
@@ -55,8 +55,8 @@ module HubspotSDK
             event_type: String,
             event_url: String,
             start_date_time: Time,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Marketing::MarketingEventDefaultResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Marketing::MarketingEventDefaultResponse)
         end
         def create(
           # A list of PropertyValues. These can be whatever kind of property names and
@@ -102,7 +102,7 @@ module HubspotSDK
         sig do
           params(
             object_id_: String,
-            custom_properties: T::Array[HubspotSDK::PropertyValue::OrHash],
+            custom_properties: T::Array[HubSpotSDK::PropertyValue::OrHash],
             end_date_time: Time,
             event_cancelled: T::Boolean,
             event_description: String,
@@ -111,9 +111,9 @@ module HubspotSDK
             event_type: String,
             event_url: String,
             start_date_time: Time,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Marketing::MarketingEventPublicDefaultResponseV2
+            HubSpotSDK::Marketing::MarketingEventPublicDefaultResponseV2
           )
         end
         def update(
@@ -144,10 +144,10 @@ module HubspotSDK
           params(
             after: String,
             limit: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Internal::Page[
-              HubspotSDK::Marketing::MarketingEventPublicReadResponseV2
+            HubSpotSDK::Internal::Page[
+              HubSpotSDK::Marketing::MarketingEventPublicReadResponseV2
             ]
           )
         end
@@ -164,7 +164,7 @@ module HubspotSDK
         sig do
           params(
             object_id_: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete(
@@ -184,9 +184,9 @@ module HubspotSDK
           params(
             inputs:
               T::Array[
-                HubspotSDK::Marketing::MarketingEventPublicObjectIDDeleteRequest::OrHash
+                HubSpotSDK::Marketing::MarketingEventPublicObjectIDDeleteRequest::OrHash
               ],
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(StringIO)
         end
         def delete_batch(inputs:, request_options: {})
@@ -201,9 +201,9 @@ module HubspotSDK
           params(
             inputs:
               T::Array[
-                HubspotSDK::Marketing::MarketingEventExternalUniqueIdentifier::OrHash
+                HubSpotSDK::Marketing::MarketingEventExternalUniqueIdentifier::OrHash
               ],
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(StringIO)
         end
         def delete_batch_by_external_event_id(inputs:, request_options: {})
@@ -217,7 +217,7 @@ module HubspotSDK
           params(
             external_event_id: String,
             external_account_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete_by_external_event_id(
@@ -232,8 +232,8 @@ module HubspotSDK
         sig do
           params(
             object_id_: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Marketing::MarketingEventPublicReadResponseV2)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Marketing::MarketingEventPublicReadResponseV2)
         end
         def get(
           # The internal id of the marketing event in HubSpot.
@@ -251,8 +251,8 @@ module HubspotSDK
           params(
             external_event_id: String,
             external_account_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Marketing::MarketingEventPublicReadResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Marketing::MarketingEventPublicReadResponse)
         end
         def get_by_external_event_id(
           external_event_id,
@@ -268,9 +268,9 @@ module HubspotSDK
         sig do
           params(
             q: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Marketing::CollectionResponseSearchPublicResponseWrapperNoPaging
+            HubSpotSDK::Marketing::CollectionResponseSearchPublicResponseWrapperNoPaging
           )
         end
         def search_by_external_event_id(q:, request_options: {})
@@ -290,9 +290,9 @@ module HubspotSDK
         sig do
           params(
             external_event_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Marketing::CollectionResponseWithTotalMarketingEventIdentifiersResponse
+            HubSpotSDK::Marketing::CollectionResponseWithTotalMarketingEventIdentifiersResponse
           )
         end
         def search_identifiers_by_external_event_id(
@@ -308,11 +308,11 @@ module HubspotSDK
           params(
             inputs:
               T::Array[
-                HubspotSDK::Marketing::MarketingEventPublicUpdateRequestFullV2::OrHash
+                HubSpotSDK::Marketing::MarketingEventPublicUpdateRequestFullV2::OrHash
               ],
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2
+            HubSpotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2
           )
         end
         def update_batch(inputs:, request_options: {})
@@ -326,7 +326,7 @@ module HubspotSDK
           params(
             external_event_id: String,
             external_account_id: String,
-            custom_properties: T::Array[HubspotSDK::PropertyValue::OrHash],
+            custom_properties: T::Array[HubSpotSDK::PropertyValue::OrHash],
             end_date_time: Time,
             event_cancelled: T::Boolean,
             event_completed: T::Boolean,
@@ -336,8 +336,8 @@ module HubspotSDK
             event_type: String,
             event_url: String,
             start_date_time: Time,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Marketing::MarketingEventPublicDefaultResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Marketing::MarketingEventPublicDefaultResponse)
         end
         def update_by_external_event_id(
           # Path param
@@ -387,11 +387,11 @@ module HubspotSDK
           params(
             inputs:
               T::Array[
-                HubspotSDK::Marketing::MarketingEventCreateRequestParams::OrHash
+                HubSpotSDK::Marketing::MarketingEventCreateRequestParams::OrHash
               ],
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponse
+            HubSpotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponse
           )
         end
         def upsert_batch(inputs:, request_options: {})
@@ -402,7 +402,7 @@ module HubspotSDK
         sig do
           params(
             path_external_event_id: String,
-            custom_properties: T::Array[HubspotSDK::PropertyValue::OrHash],
+            custom_properties: T::Array[HubSpotSDK::PropertyValue::OrHash],
             event_name: String,
             event_organizer: String,
             external_account_id: String,
@@ -414,8 +414,8 @@ module HubspotSDK
             event_type: String,
             event_url: String,
             start_date_time: Time,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Marketing::MarketingEventPublicDefaultResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Marketing::MarketingEventPublicDefaultResponse)
         end
         def upsert_by_external_event_id(
           path_external_event_id,
@@ -458,7 +458,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

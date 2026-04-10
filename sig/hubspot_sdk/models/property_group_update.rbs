@@ -1,8 +1,8 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type property_group_update = { display_order: Integer, label: String }
 
-    class PropertyGroupUpdate < HubspotSDK::Internal::Type::BaseModel
+    class PropertyGroupUpdate < HubSpotSDK::Internal::Type::BaseModel
       attr_reader display_order: Integer?
 
       def display_order=: (Integer) -> Integer

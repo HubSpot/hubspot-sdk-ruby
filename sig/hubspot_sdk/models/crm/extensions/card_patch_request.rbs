@@ -1,49 +1,49 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         type card_patch_request =
           {
-            actions: HubspotSDK::Crm::Extensions::CardActions,
-            display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
-            fetch: HubspotSDK::Crm::Extensions::CardFetchBodyPatch,
+            actions: HubSpotSDK::Crm::Extensions::CardActions,
+            display_: HubSpotSDK::Crm::Extensions::CardDisplayBody,
+            fetch: HubSpotSDK::Crm::Extensions::CardFetchBodyPatch,
             title: String
           }
 
-        class CardPatchRequest < HubspotSDK::Internal::Type::BaseModel
-          attr_reader actions: HubspotSDK::Crm::Extensions::CardActions?
+        class CardPatchRequest < HubSpotSDK::Internal::Type::BaseModel
+          attr_reader actions: HubSpotSDK::Crm::Extensions::CardActions?
 
           def actions=: (
-            HubspotSDK::Crm::Extensions::CardActions
-          ) -> HubspotSDK::Crm::Extensions::CardActions
+            HubSpotSDK::Crm::Extensions::CardActions
+          ) -> HubSpotSDK::Crm::Extensions::CardActions
 
-          attr_reader display_: HubspotSDK::Crm::Extensions::CardDisplayBody?
+          attr_reader display_: HubSpotSDK::Crm::Extensions::CardDisplayBody?
 
           def display_=: (
-            HubspotSDK::Crm::Extensions::CardDisplayBody
-          ) -> HubspotSDK::Crm::Extensions::CardDisplayBody
+            HubSpotSDK::Crm::Extensions::CardDisplayBody
+          ) -> HubSpotSDK::Crm::Extensions::CardDisplayBody
 
-          attr_reader fetch: HubspotSDK::Crm::Extensions::CardFetchBodyPatch?
+          attr_reader fetch: HubSpotSDK::Crm::Extensions::CardFetchBodyPatch?
 
           def fetch=: (
-            HubspotSDK::Crm::Extensions::CardFetchBodyPatch
-          ) -> HubspotSDK::Crm::Extensions::CardFetchBodyPatch
+            HubSpotSDK::Crm::Extensions::CardFetchBodyPatch
+          ) -> HubSpotSDK::Crm::Extensions::CardFetchBodyPatch
 
           attr_reader title: String?
 
           def title=: (String) -> String
 
           def initialize: (
-            ?actions: HubspotSDK::Crm::Extensions::CardActions,
-            ?display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
-            ?fetch: HubspotSDK::Crm::Extensions::CardFetchBodyPatch,
+            ?actions: HubSpotSDK::Crm::Extensions::CardActions,
+            ?display_: HubSpotSDK::Crm::Extensions::CardDisplayBody,
+            ?fetch: HubSpotSDK::Crm::Extensions::CardFetchBodyPatch,
             ?title: String
           ) -> void
 
           def to_hash: -> {
-            actions: HubspotSDK::Crm::Extensions::CardActions,
-            display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
-            fetch: HubspotSDK::Crm::Extensions::CardFetchBodyPatch,
+            actions: HubSpotSDK::Crm::Extensions::CardActions,
+            display_: HubSpotSDK::Crm::Extensions::CardDisplayBody,
+            fetch: HubSpotSDK::Crm::Extensions::CardFetchBodyPatch,
             title: String
           }
         end

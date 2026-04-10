@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Automation
       class Sequences
@@ -7,8 +7,8 @@ module HubspotSDK
           ?after: String,
           ?limit: Integer,
           ?name: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Automation::PublicSequenceLiteResponse]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Automation::PublicSequenceLiteResponse]
 
         def create_enrollment: (
           user_id: String,
@@ -16,21 +16,21 @@ module HubspotSDK
           sender_email: String,
           sequence_id: String,
           ?sender_alias_address: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Automation::PublicSequenceEnrollmentLiteResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Automation::PublicSequenceEnrollmentLiteResponse
 
         def get: (
           String sequence_id,
           user_id: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Automation::PublicSequenceResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Automation::PublicSequenceResponse
 
         def get_enrollment_by_contact_id: (
           String contact_id,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Automation::PublicSequenceEnrollmentResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Automation::PublicSequenceEnrollmentResponse
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

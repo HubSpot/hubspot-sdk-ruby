@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class CollectionResponseWithTotalURLMappingForwardPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseWithTotalURLMappingForwardPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #   An array of UrlMapping objects, each representing a specific URL mapping.
         #
-        #   @return [Array<HubspotSDK::Models::Cms::URLMapping>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::URLMapping] }
+        #   @return [Array<HubSpotSDK::Models::Cms::URLMapping>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::URLMapping] }
 
         # @!attribute total
         #   The total number of URL mappings available.
@@ -18,15 +18,15 @@ module HubspotSDK
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::ForwardPaging, nil]
-        optional :paging, -> { HubspotSDK::ForwardPaging }
+        #   @return [HubSpotSDK::Models::ForwardPaging, nil]
+        optional :paging, -> { HubSpotSDK::ForwardPaging }
 
         # @!method initialize(results:, total:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Cms::URLMapping>] An array of UrlMapping objects, each representing a specific URL mapping.
+        #   @param results [Array<HubSpotSDK::Models::Cms::URLMapping>] An array of UrlMapping objects, each representing a specific URL mapping.
         #
         #   @param total [Integer] The total number of URL mappings available.
         #
-        #   @param paging [HubspotSDK::Models::ForwardPaging]
+        #   @param paging [HubSpotSDK::Models::ForwardPaging]
       end
     end
   end

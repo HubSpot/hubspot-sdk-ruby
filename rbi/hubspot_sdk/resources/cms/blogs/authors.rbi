@@ -1,11 +1,11 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Blogs
         class Authors
-          sig { returns(HubspotSDK::Resources::Cms::Blogs::Authors::Batch) }
+          sig { returns(HubSpotSDK::Resources::Cms::Blogs::Authors::Batch) }
           attr_reader :batch
 
           # Create a new Blog Author.
@@ -20,7 +20,7 @@ module HubspotSDK
               email: String,
               facebook: String,
               full_name: String,
-              language: HubspotSDK::Cms::Blogs::BlogAuthor::Language::OrSymbol,
+              language: HubSpotSDK::Cms::Blogs::BlogAuthor::Language::OrSymbol,
               linkedin: String,
               name: String,
               slug: String,
@@ -28,7 +28,7 @@ module HubspotSDK
               twitter: String,
               updated: Time,
               website: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def create(
@@ -90,7 +90,7 @@ module HubspotSDK
               email: String,
               facebook: String,
               full_name: String,
-              language: HubspotSDK::Cms::Blogs::BlogAuthor::Language::OrSymbol,
+              language: HubSpotSDK::Cms::Blogs::BlogAuthor::Language::OrSymbol,
               linkedin: String,
               name: String,
               slug: String,
@@ -99,7 +99,7 @@ module HubspotSDK
               updated: Time,
               website: String,
               archived: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def update(
@@ -166,7 +166,7 @@ module HubspotSDK
               updated_after: Time,
               updated_at: Time,
               updated_before: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def list(
@@ -195,7 +195,7 @@ module HubspotSDK
             params(
               object_id_: String,
               archived: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete(
@@ -211,11 +211,11 @@ module HubspotSDK
             params(
               id: String,
               language:
-                HubspotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::OrSymbol,
+                HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::OrSymbol,
               primary_id: String,
               primary_language:
-                HubspotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::OrSymbol,
-              request_options: HubspotSDK::RequestOptions::OrHash
+                HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::OrSymbol,
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def attach_to_lang_group(
@@ -235,10 +235,10 @@ module HubspotSDK
           sig do
             params(
               id: String,
-              blog_author: HubspotSDK::Cms::Blogs::BlogAuthor::OrHash,
+              blog_author: HubSpotSDK::Cms::Blogs::BlogAuthor::OrHash,
               language: String,
               primary_language: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def create_language_variation(
@@ -257,7 +257,7 @@ module HubspotSDK
           sig do
             params(
               id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def detach_from_lang_group(
@@ -273,7 +273,7 @@ module HubspotSDK
               object_id_: String,
               archived: T::Boolean,
               property: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def get(
@@ -298,7 +298,7 @@ module HubspotSDK
               updated_after: Time,
               updated_at: Time,
               updated_before: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def get_cursor(
@@ -335,7 +335,7 @@ module HubspotSDK
               updated_after: Time,
               updated_at: Time,
               updated_before: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def get_cursor_by_query(
@@ -372,7 +372,7 @@ module HubspotSDK
               updated_after: Time,
               updated_at: Time,
               updated_before: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def get_posts_cursor(
@@ -409,7 +409,7 @@ module HubspotSDK
               updated_after: Time,
               updated_at: Time,
               updated_before: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def get_posts_cursor_by_query(
@@ -446,7 +446,7 @@ module HubspotSDK
               updated_after: Time,
               updated_at: Time,
               updated_before: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def get_tags_cursor(
@@ -483,7 +483,7 @@ module HubspotSDK
               updated_after: Time,
               updated_at: Time,
               updated_before: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def get_tags_cursor_by_query(
@@ -511,7 +511,7 @@ module HubspotSDK
           sig do
             params(
               id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def set_new_lang_primary(
@@ -527,10 +527,10 @@ module HubspotSDK
               languages:
                 T::Hash[
                   Symbol,
-                  HubspotSDK::Cms::UpdateLanguagesRequestVNext::Language::OrSymbol
+                  HubSpotSDK::Cms::UpdateLanguagesRequestVNext::Language::OrSymbol
                 ],
               primary_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def update_languages(
@@ -543,7 +543,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type email_create_request =
@@ -7,26 +7,26 @@ module HubspotSDK
           archived: bool,
           business_unit_id: Integer,
           campaign: String,
-          content: HubspotSDK::Marketing::PublicEmailContent,
+          content: HubSpotSDK::Marketing::PublicEmailContent,
           feedback_survey_id: String,
           :folder_id_v2 => Integer,
-          from: HubspotSDK::Marketing::PublicEmailFromDetails,
+          from: HubSpotSDK::Marketing::PublicEmailFromDetails,
           jitter_send_time: bool,
-          language: HubspotSDK::Models::Marketing::EmailCreateRequest::language,
+          language: HubSpotSDK::Models::Marketing::EmailCreateRequest::language,
           name: String,
           publish_date: Time,
-          rss_data: HubspotSDK::Marketing::PublicRssEmailDetails,
+          rss_data: HubSpotSDK::Marketing::PublicRssEmailDetails,
           send_on_publish: bool,
-          state: HubspotSDK::Models::Marketing::EmailCreateRequest::state,
-          subcategory: HubspotSDK::Models::Marketing::EmailCreateRequest::subcategory,
+          state: HubSpotSDK::Models::Marketing::EmailCreateRequest::state,
+          subcategory: HubSpotSDK::Models::Marketing::EmailCreateRequest::subcategory,
           subject: String,
-          subscription_details: HubspotSDK::Marketing::PublicEmailSubscriptionDetails,
-          testing: HubspotSDK::Marketing::PublicEmailTestingDetails,
-          to: HubspotSDK::Marketing::PublicEmailToDetails,
-          webversion: HubspotSDK::Marketing::PublicWebversionDetails
+          subscription_details: HubSpotSDK::Marketing::PublicEmailSubscriptionDetails,
+          testing: HubSpotSDK::Marketing::PublicEmailTestingDetails,
+          to: HubSpotSDK::Marketing::PublicEmailToDetails,
+          webversion: HubSpotSDK::Marketing::PublicWebversionDetails
         }
 
-      class EmailCreateRequest < HubspotSDK::Internal::Type::BaseModel
+      class EmailCreateRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_reader active_domain: String?
 
         def active_domain=: (String) -> String
@@ -43,11 +43,11 @@ module HubspotSDK
 
         def campaign=: (String) -> String
 
-        attr_reader content: HubspotSDK::Marketing::PublicEmailContent?
+        attr_reader content: HubSpotSDK::Marketing::PublicEmailContent?
 
         def content=: (
-          HubspotSDK::Marketing::PublicEmailContent
-        ) -> HubspotSDK::Marketing::PublicEmailContent
+          HubSpotSDK::Marketing::PublicEmailContent
+        ) -> HubSpotSDK::Marketing::PublicEmailContent
 
         attr_reader feedback_survey_id: String?
 
@@ -57,21 +57,21 @@ module HubspotSDK
 
         def folder_id_v2=: (Integer) -> Integer
 
-        attr_reader from: HubspotSDK::Marketing::PublicEmailFromDetails?
+        attr_reader from: HubSpotSDK::Marketing::PublicEmailFromDetails?
 
         def from=: (
-          HubspotSDK::Marketing::PublicEmailFromDetails
-        ) -> HubspotSDK::Marketing::PublicEmailFromDetails
+          HubSpotSDK::Marketing::PublicEmailFromDetails
+        ) -> HubSpotSDK::Marketing::PublicEmailFromDetails
 
         attr_reader jitter_send_time: bool?
 
         def jitter_send_time=: (bool) -> bool
 
-        attr_reader language: HubspotSDK::Models::Marketing::EmailCreateRequest::language?
+        attr_reader language: HubSpotSDK::Models::Marketing::EmailCreateRequest::language?
 
         def language=: (
-          HubspotSDK::Models::Marketing::EmailCreateRequest::language
-        ) -> HubspotSDK::Models::Marketing::EmailCreateRequest::language
+          HubSpotSDK::Models::Marketing::EmailCreateRequest::language
+        ) -> HubSpotSDK::Models::Marketing::EmailCreateRequest::language
 
         attr_reader name: String?
 
@@ -81,78 +81,78 @@ module HubspotSDK
 
         def publish_date=: (Time) -> Time
 
-        attr_reader rss_data: HubspotSDK::Marketing::PublicRssEmailDetails?
+        attr_reader rss_data: HubSpotSDK::Marketing::PublicRssEmailDetails?
 
         def rss_data=: (
-          HubspotSDK::Marketing::PublicRssEmailDetails
-        ) -> HubspotSDK::Marketing::PublicRssEmailDetails
+          HubSpotSDK::Marketing::PublicRssEmailDetails
+        ) -> HubSpotSDK::Marketing::PublicRssEmailDetails
 
         attr_reader send_on_publish: bool?
 
         def send_on_publish=: (bool) -> bool
 
-        attr_reader state: HubspotSDK::Models::Marketing::EmailCreateRequest::state?
+        attr_reader state: HubSpotSDK::Models::Marketing::EmailCreateRequest::state?
 
         def state=: (
-          HubspotSDK::Models::Marketing::EmailCreateRequest::state
-        ) -> HubspotSDK::Models::Marketing::EmailCreateRequest::state
+          HubSpotSDK::Models::Marketing::EmailCreateRequest::state
+        ) -> HubSpotSDK::Models::Marketing::EmailCreateRequest::state
 
-        attr_reader subcategory: HubspotSDK::Models::Marketing::EmailCreateRequest::subcategory?
+        attr_reader subcategory: HubSpotSDK::Models::Marketing::EmailCreateRequest::subcategory?
 
         def subcategory=: (
-          HubspotSDK::Models::Marketing::EmailCreateRequest::subcategory
-        ) -> HubspotSDK::Models::Marketing::EmailCreateRequest::subcategory
+          HubSpotSDK::Models::Marketing::EmailCreateRequest::subcategory
+        ) -> HubSpotSDK::Models::Marketing::EmailCreateRequest::subcategory
 
         attr_reader subject: String?
 
         def subject=: (String) -> String
 
-        attr_reader subscription_details: HubspotSDK::Marketing::PublicEmailSubscriptionDetails?
+        attr_reader subscription_details: HubSpotSDK::Marketing::PublicEmailSubscriptionDetails?
 
         def subscription_details=: (
-          HubspotSDK::Marketing::PublicEmailSubscriptionDetails
-        ) -> HubspotSDK::Marketing::PublicEmailSubscriptionDetails
+          HubSpotSDK::Marketing::PublicEmailSubscriptionDetails
+        ) -> HubSpotSDK::Marketing::PublicEmailSubscriptionDetails
 
-        attr_reader testing: HubspotSDK::Marketing::PublicEmailTestingDetails?
+        attr_reader testing: HubSpotSDK::Marketing::PublicEmailTestingDetails?
 
         def testing=: (
-          HubspotSDK::Marketing::PublicEmailTestingDetails
-        ) -> HubspotSDK::Marketing::PublicEmailTestingDetails
+          HubSpotSDK::Marketing::PublicEmailTestingDetails
+        ) -> HubSpotSDK::Marketing::PublicEmailTestingDetails
 
-        attr_reader to: HubspotSDK::Marketing::PublicEmailToDetails?
+        attr_reader to: HubSpotSDK::Marketing::PublicEmailToDetails?
 
         def to=: (
-          HubspotSDK::Marketing::PublicEmailToDetails
-        ) -> HubspotSDK::Marketing::PublicEmailToDetails
+          HubSpotSDK::Marketing::PublicEmailToDetails
+        ) -> HubSpotSDK::Marketing::PublicEmailToDetails
 
-        attr_reader webversion: HubspotSDK::Marketing::PublicWebversionDetails?
+        attr_reader webversion: HubSpotSDK::Marketing::PublicWebversionDetails?
 
         def webversion=: (
-          HubspotSDK::Marketing::PublicWebversionDetails
-        ) -> HubspotSDK::Marketing::PublicWebversionDetails
+          HubSpotSDK::Marketing::PublicWebversionDetails
+        ) -> HubSpotSDK::Marketing::PublicWebversionDetails
 
         def initialize: (
           ?active_domain: String,
           ?archived: bool,
           ?business_unit_id: Integer,
           ?campaign: String,
-          ?content: HubspotSDK::Marketing::PublicEmailContent,
+          ?content: HubSpotSDK::Marketing::PublicEmailContent,
           ?feedback_survey_id: String,
           ?folder_id_v2: Integer,
-          ?from: HubspotSDK::Marketing::PublicEmailFromDetails,
+          ?from: HubSpotSDK::Marketing::PublicEmailFromDetails,
           ?jitter_send_time: bool,
-          ?language: HubspotSDK::Models::Marketing::EmailCreateRequest::language,
+          ?language: HubSpotSDK::Models::Marketing::EmailCreateRequest::language,
           ?name: String,
           ?publish_date: Time,
-          ?rss_data: HubspotSDK::Marketing::PublicRssEmailDetails,
+          ?rss_data: HubSpotSDK::Marketing::PublicRssEmailDetails,
           ?send_on_publish: bool,
-          ?state: HubspotSDK::Models::Marketing::EmailCreateRequest::state,
-          ?subcategory: HubspotSDK::Models::Marketing::EmailCreateRequest::subcategory,
+          ?state: HubSpotSDK::Models::Marketing::EmailCreateRequest::state,
+          ?subcategory: HubSpotSDK::Models::Marketing::EmailCreateRequest::subcategory,
           ?subject: String,
-          ?subscription_details: HubspotSDK::Marketing::PublicEmailSubscriptionDetails,
-          ?testing: HubspotSDK::Marketing::PublicEmailTestingDetails,
-          ?to: HubspotSDK::Marketing::PublicEmailToDetails,
-          ?webversion: HubspotSDK::Marketing::PublicWebversionDetails
+          ?subscription_details: HubSpotSDK::Marketing::PublicEmailSubscriptionDetails,
+          ?testing: HubSpotSDK::Marketing::PublicEmailTestingDetails,
+          ?to: HubSpotSDK::Marketing::PublicEmailToDetails,
+          ?webversion: HubSpotSDK::Marketing::PublicWebversionDetails
         ) -> void
 
         def to_hash: -> {
@@ -160,23 +160,23 @@ module HubspotSDK
           archived: bool,
           business_unit_id: Integer,
           campaign: String,
-          content: HubspotSDK::Marketing::PublicEmailContent,
+          content: HubSpotSDK::Marketing::PublicEmailContent,
           feedback_survey_id: String,
           :folder_id_v2 => Integer,
-          from: HubspotSDK::Marketing::PublicEmailFromDetails,
+          from: HubSpotSDK::Marketing::PublicEmailFromDetails,
           jitter_send_time: bool,
-          language: HubspotSDK::Models::Marketing::EmailCreateRequest::language,
+          language: HubSpotSDK::Models::Marketing::EmailCreateRequest::language,
           name: String,
           publish_date: Time,
-          rss_data: HubspotSDK::Marketing::PublicRssEmailDetails,
+          rss_data: HubSpotSDK::Marketing::PublicRssEmailDetails,
           send_on_publish: bool,
-          state: HubspotSDK::Models::Marketing::EmailCreateRequest::state,
-          subcategory: HubspotSDK::Models::Marketing::EmailCreateRequest::subcategory,
+          state: HubSpotSDK::Models::Marketing::EmailCreateRequest::state,
+          subcategory: HubSpotSDK::Models::Marketing::EmailCreateRequest::subcategory,
           subject: String,
-          subscription_details: HubspotSDK::Marketing::PublicEmailSubscriptionDetails,
-          testing: HubspotSDK::Marketing::PublicEmailTestingDetails,
-          to: HubspotSDK::Marketing::PublicEmailToDetails,
-          webversion: HubspotSDK::Marketing::PublicWebversionDetails
+          subscription_details: HubSpotSDK::Marketing::PublicEmailSubscriptionDetails,
+          testing: HubSpotSDK::Marketing::PublicEmailTestingDetails,
+          to: HubSpotSDK::Marketing::PublicEmailToDetails,
+          webversion: HubSpotSDK::Marketing::PublicWebversionDetails
         }
 
         type language =
@@ -1025,7 +1025,7 @@ module HubspotSDK
           | :"zu-za"
 
         module Language
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AA: :aa
           AB: :ab
@@ -1871,7 +1871,7 @@ module HubspotSDK
           ZU: :zu
           ZU_ZA: :"zu-za"
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::EmailCreateRequest::language]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Marketing::EmailCreateRequest::language]
         end
 
         type state =
@@ -1909,7 +1909,7 @@ module HubspotSDK
           | :SCHEDULED_OR_PUBLISHED
 
         module State
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AGENT_GENERATED: :AGENT_GENERATED
           AUTOMATED: :AUTOMATED
@@ -1944,7 +1944,7 @@ module HubspotSDK
           SCHEDULED_AB: :SCHEDULED_AB
           SCHEDULED_OR_PUBLISHED: :SCHEDULED_OR_PUBLISHED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::EmailCreateRequest::state]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Marketing::EmailCreateRequest::state]
         end
 
         type subcategory =
@@ -2028,7 +2028,7 @@ module HubspotSDK
           | :web_interactive
 
         module Subcategory
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AB_LOSER_VARIANT: :ab_loser_variant
           AB_LOSER_VARIANT_SITE_PAGE: :ab_loser_variant_site_page
@@ -2109,7 +2109,7 @@ module HubspotSDK
           UNSUBSCRIBE_CONFIRMATION_EMAIL: :unsubscribe_confirmation_email
           WEB_INTERACTIVE: :web_interactive
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::EmailCreateRequest::subcategory]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Marketing::EmailCreateRequest::subcategory]
         end
       end
     end

@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class CalendarDatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class CalendarDatePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute include_objects_with_no_value_set
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute operation_type
@@ -18,8 +18,8 @@ module HubspotSDK
 
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::CalendarDatePropertyOperation::Operator]
-        required :operator, enum: -> { HubspotSDK::Events::CalendarDatePropertyOperation::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Events::CalendarDatePropertyOperation::Operator]
+        required :operator, enum: -> { HubSpotSDK::Events::CalendarDatePropertyOperation::Operator }
 
         # @!attribute operator_name
         #
@@ -28,16 +28,16 @@ module HubspotSDK
 
         # @!attribute property_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::CalendarDatePropertyOperation::PropertyType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::CalendarDatePropertyOperation::PropertyType]
         required :property_type,
-                 enum: -> { HubspotSDK::Events::CalendarDatePropertyOperation::PropertyType },
+                 enum: -> { HubSpotSDK::Events::CalendarDatePropertyOperation::PropertyType },
                  api_name: :propertyType
 
         # @!attribute time_unit
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::CalendarDatePropertyOperation::TimeUnit]
+        #   @return [Symbol, HubSpotSDK::Models::Events::CalendarDatePropertyOperation::TimeUnit]
         required :time_unit,
-                 enum: -> { HubspotSDK::Events::CalendarDatePropertyOperation::TimeUnit },
+                 enum: -> { HubSpotSDK::Events::CalendarDatePropertyOperation::TimeUnit },
                  api_name: :timeUnit
 
         # @!attribute time_unit_count
@@ -48,7 +48,7 @@ module HubspotSDK
         # @!attribute use_fiscal_year
         #
         #   @return [Boolean]
-        required :use_fiscal_year, HubspotSDK::Internal::Type::Boolean, api_name: :useFiscalYear
+        required :use_fiscal_year, HubSpotSDK::Internal::Type::Boolean, api_name: :useFiscalYear
 
         # @!attribute default_value
         #
@@ -57,9 +57,9 @@ module HubspotSDK
 
         # @!attribute fiscal_year_start
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::CalendarDatePropertyOperation::FiscalYearStart, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Events::CalendarDatePropertyOperation::FiscalYearStart, nil]
         optional :fiscal_year_start,
-                 enum: -> { HubspotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart },
+                 enum: -> { HubSpotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart },
                  api_name: :fiscalYearStart
 
         # @!attribute render_spec
@@ -70,19 +70,19 @@ module HubspotSDK
         # @!method initialize(include_objects_with_no_value_set:, operation_type:, operator:, operator_name:, property_type:, time_unit:, time_unit_count:, use_fiscal_year:, default_value: nil, fiscal_year_start: nil, render_spec: nil)
         #   @param include_objects_with_no_value_set [Boolean]
         #   @param operation_type [String]
-        #   @param operator [Symbol, HubspotSDK::Models::Events::CalendarDatePropertyOperation::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Events::CalendarDatePropertyOperation::Operator]
         #   @param operator_name [String]
-        #   @param property_type [Symbol, HubspotSDK::Models::Events::CalendarDatePropertyOperation::PropertyType]
-        #   @param time_unit [Symbol, HubspotSDK::Models::Events::CalendarDatePropertyOperation::TimeUnit]
+        #   @param property_type [Symbol, HubSpotSDK::Models::Events::CalendarDatePropertyOperation::PropertyType]
+        #   @param time_unit [Symbol, HubSpotSDK::Models::Events::CalendarDatePropertyOperation::TimeUnit]
         #   @param time_unit_count [Integer]
         #   @param use_fiscal_year [Boolean]
         #   @param default_value [String]
-        #   @param fiscal_year_start [Symbol, HubspotSDK::Models::Events::CalendarDatePropertyOperation::FiscalYearStart]
+        #   @param fiscal_year_start [Symbol, HubSpotSDK::Models::Events::CalendarDatePropertyOperation::FiscalYearStart]
         #   @param render_spec [String]
 
-        # @see HubspotSDK::Models::Events::CalendarDatePropertyOperation#operator
+        # @see HubSpotSDK::Models::Events::CalendarDatePropertyOperation#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           IN_LAST_TIME_UNIT = :IN_LAST_TIME_UNIT
           IN_NEXT_TIME_UNIT = :IN_NEXT_TIME_UNIT
@@ -93,9 +93,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::CalendarDatePropertyOperation#property_type
+        # @see HubSpotSDK::Models::Events::CalendarDatePropertyOperation#property_type
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CALENDAR_DATE = :"calendar-date"
 
@@ -103,9 +103,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::CalendarDatePropertyOperation#time_unit
+        # @see HubSpotSDK::Models::Events::CalendarDatePropertyOperation#time_unit
         module TimeUnit
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DAY = :DAY
           MONTH = :MONTH
@@ -117,9 +117,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::CalendarDatePropertyOperation#fiscal_year_start
+        # @see HubSpotSDK::Models::Events::CalendarDatePropertyOperation#fiscal_year_start
         module FiscalYearStart
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           APRIL = :APRIL
           AUGUST = :AUGUST

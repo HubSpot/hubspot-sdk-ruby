@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class ContactPhone < HubspotSDK::Internal::Type::BaseModel
+      class ContactPhone < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute phone
         #
         #   @return [String]
@@ -11,16 +11,16 @@ module HubspotSDK
 
         # @!attribute type
         #
-        #   @return [Symbol, HubspotSDK::Models::Conversations::ContactPhone::Type, nil]
-        optional :type, enum: -> { HubspotSDK::Conversations::ContactPhone::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Conversations::ContactPhone::Type, nil]
+        optional :type, enum: -> { HubSpotSDK::Conversations::ContactPhone::Type }
 
         # @!method initialize(phone:, type: nil)
         #   @param phone [String]
-        #   @param type [Symbol, HubspotSDK::Models::Conversations::ContactPhone::Type]
+        #   @param type [Symbol, HubSpotSDK::Models::Conversations::ContactPhone::Type]
 
-        # @see HubspotSDK::Models::Conversations::ContactPhone#type
+        # @see HubSpotSDK::Models::Conversations::ContactPhone#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CELL = :CELL
           HOME = :HOME

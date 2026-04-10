@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class SimplePublicUpsertObject < HubspotSDK::Internal::Type::BaseModel
+      class SimplePublicUpsertObject < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique ID of the object.
         #
@@ -14,7 +14,7 @@ module HubspotSDK
         #   Whether the object is archived.
         #
         #   @return [Boolean]
-        required :archived, HubspotSDK::Internal::Type::Boolean
+        required :archived, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute created_at
         #   The timestamp when the object was created, in ISO 8601 format.
@@ -26,13 +26,13 @@ module HubspotSDK
         #   Whether the property is new.
         #
         #   @return [Boolean]
-        required :new, HubspotSDK::Internal::Type::Boolean
+        required :new, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute properties
         #   Key value pairs representing the properties of the object.
         #
         #   @return [Hash{Symbol=>String}]
-        required :properties, HubspotSDK::Internal::Type::HashOf[String]
+        required :properties, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute updated_at
         #   The timestamp when the object was last updated, in ISO 8601 format.
@@ -56,10 +56,10 @@ module HubspotSDK
         #   Key-value pairs representing the properties of the object along with their
         #   history.
         #
-        #   @return [Hash{Symbol=>Array<HubspotSDK::Models::Crm::ValueWithTimestamp>}, nil]
+        #   @return [Hash{Symbol=>Array<HubSpotSDK::Models::Crm::ValueWithTimestamp>}, nil]
         optional :properties_with_history,
                  -> {
-                   HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]
+                   HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::ValueWithTimestamp]]
                  },
                  api_name: :propertiesWithHistory
 
@@ -71,7 +71,7 @@ module HubspotSDK
 
         # @!method initialize(id:, archived:, created_at:, new:, properties:, updated_at:, archived_at: nil, object_write_trace_id: nil, properties_with_history: nil, url: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::SimplePublicUpsertObject} for more details.
+        #   {HubSpotSDK::Models::Crm::SimplePublicUpsertObject} for more details.
         #
         #   Represents a CRM object that has either been created or updated (upserted)
         #
@@ -91,7 +91,7 @@ module HubspotSDK
         #
         #   @param object_write_trace_id [String] An identifier used for tracing the write request for the object.
         #
-        #   @param properties_with_history [Hash{Symbol=>Array<HubspotSDK::Models::Crm::ValueWithTimestamp>}] Key-value pairs representing the properties of the object along with their histo
+        #   @param properties_with_history [Hash{Symbol=>Array<HubSpotSDK::Models::Crm::ValueWithTimestamp>}] Key-value pairs representing the properties of the object along with their histo
         #
         #   @param url [String] The URL associated with the object.
       end

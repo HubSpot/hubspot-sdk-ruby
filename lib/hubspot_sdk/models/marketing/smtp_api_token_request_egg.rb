@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class SmtpAPITokenRequestEgg < HubspotSDK::Internal::Type::BaseModel
+      class SmtpAPITokenRequestEgg < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute campaign_name
         #   A name for the campaign tied to the SMTP API token.
         #
@@ -14,7 +14,7 @@ module HubspotSDK
         #   Indicates whether a contact should be created for email recipients.
         #
         #   @return [Boolean]
-        required :create_contact, HubspotSDK::Internal::Type::Boolean, api_name: :createContact
+        required :create_contact, HubSpotSDK::Internal::Type::Boolean, api_name: :createContact
 
         # @!method initialize(campaign_name:, create_contact:)
         #   @param campaign_name [String] A name for the campaign tied to the SMTP API token.

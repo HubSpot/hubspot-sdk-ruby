@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class WebhookGetEarliestJournalParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class WebhookGetEarliestJournalParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Webhooks::WebhookGetEarliestJournalParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Webhooks::WebhookGetEarliestJournalParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -24,7 +24,7 @@ module HubspotSDK
         sig do
           params(
             install_portal_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(install_portal_id: nil, request_options: {})
@@ -34,7 +34,7 @@ module HubspotSDK
           override.returns(
             {
               install_portal_id: Integer,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end

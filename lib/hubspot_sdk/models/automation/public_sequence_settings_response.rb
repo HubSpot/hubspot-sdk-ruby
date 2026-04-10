@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicSequenceSettingsResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicSequenceSettingsResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the sequence settings.
         #
@@ -19,9 +19,9 @@ module HubspotSDK
         # @!attribute eligible_follow_up_days
         #   Specifies the days on which follow-up actions are allowed.
         #
-        #   @return [Symbol, HubspotSDK::Models::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays]
+        #   @return [Symbol, HubSpotSDK::Models::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays]
         required :eligible_follow_up_days,
-                 enum: -> { HubspotSDK::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays },
+                 enum: -> { HubSpotSDK::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays },
                  api_name: :eligibleFollowUpDays
 
         # @!attribute individual_task_reminders_enabled
@@ -29,7 +29,7 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :individual_task_reminders_enabled,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :individualTaskRemindersEnabled
 
         # @!attribute selling_strategy
@@ -38,9 +38,9 @@ module HubspotSDK
         #   with the same company will be unenrolled if one contact meets any of the
         #   unenrollment criteria.
         #
-        #   @return [Symbol, HubspotSDK::Models::Automation::PublicSequenceSettingsResponse::SellingStrategy]
+        #   @return [Symbol, HubSpotSDK::Models::Automation::PublicSequenceSettingsResponse::SellingStrategy]
         required :selling_strategy,
-                 enum: -> { HubspotSDK::Automation::PublicSequenceSettingsResponse::SellingStrategy },
+                 enum: -> { HubSpotSDK::Automation::PublicSequenceSettingsResponse::SellingStrategy },
                  api_name: :sellingStrategy
 
         # @!attribute send_window_end_minute
@@ -71,18 +71,18 @@ module HubspotSDK
 
         # @!method initialize(id:, created_at:, eligible_follow_up_days:, individual_task_reminders_enabled:, selling_strategy:, send_window_end_minute:, send_window_start_minute:, task_reminder_minute:, updated_at:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Automation::PublicSequenceSettingsResponse} for more
+        #   {HubSpotSDK::Models::Automation::PublicSequenceSettingsResponse} for more
         #   details.
         #
         #   @param id [String] The unique identifier for the sequence settings.
         #
         #   @param created_at [Time] The timestamp of when the sequence settings were created.
         #
-        #   @param eligible_follow_up_days [Symbol, HubspotSDK::Models::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays] Specifies the days on which follow-up actions are allowed.
+        #   @param eligible_follow_up_days [Symbol, HubSpotSDK::Models::Automation::PublicSequenceSettingsResponse::EligibleFollowUpDays] Specifies the days on which follow-up actions are allowed.
         #
         #   @param individual_task_reminders_enabled [Boolean] Indicates whether individual task reminders are enabled.
         #
-        #   @param selling_strategy [Symbol, HubspotSDK::Models::Automation::PublicSequenceSettingsResponse::SellingStrategy] (deprecated) Defines the unenrollment strategy, with accepted values being ACCOU
+        #   @param selling_strategy [Symbol, HubSpotSDK::Models::Automation::PublicSequenceSettingsResponse::SellingStrategy] (deprecated) Defines the unenrollment strategy, with accepted values being ACCOU
         #
         #   @param send_window_end_minute [Integer] Indicates the end minute of the time window during which automated emails can be
         #
@@ -94,9 +94,9 @@ module HubspotSDK
 
         # Specifies the days on which follow-up actions are allowed.
         #
-        # @see HubspotSDK::Models::Automation::PublicSequenceSettingsResponse#eligible_follow_up_days
+        # @see HubSpotSDK::Models::Automation::PublicSequenceSettingsResponse#eligible_follow_up_days
         module EligibleFollowUpDays
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BUSINESS_DAYS = :BUSINESS_DAYS
           EVERYDAY = :EVERYDAY
@@ -111,9 +111,9 @@ module HubspotSDK
         # with the same company will be unenrolled if one contact meets any of the
         # unenrollment criteria.
         #
-        # @see HubspotSDK::Models::Automation::PublicSequenceSettingsResponse#selling_strategy
+        # @see HubSpotSDK::Models::Automation::PublicSequenceSettingsResponse#selling_strategy
         module SellingStrategy
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ACCOUNT_BASED = :ACCOUNT_BASED
           LEAD_BASED = :LEAD_BASED

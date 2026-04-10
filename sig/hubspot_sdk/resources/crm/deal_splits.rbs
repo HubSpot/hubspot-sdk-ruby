@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class DealSplits
-        attr_reader batch: HubspotSDK::Resources::Crm::DealSplits::Batch
+        attr_reader batch: HubSpotSDK::Resources::Crm::DealSplits::Batch
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

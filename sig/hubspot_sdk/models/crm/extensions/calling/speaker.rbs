@@ -1,11 +1,11 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         module Calling
           type speaker = { id: String, name: String, email: String }
 
-          class Speaker < HubspotSDK::Internal::Type::BaseModel
+          class Speaker < HubSpotSDK::Internal::Type::BaseModel
             attr_accessor id: String
 
             attr_accessor name: String

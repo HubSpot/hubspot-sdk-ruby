@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       module Meetings
-        class BasicGetAvailabilityBySlugParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class BasicGetAvailabilityBySlugParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Scheduler::Meetings::BasicGetAvailabilityBySlugParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Scheduler::Meetings::BasicGetAvailabilityBySlugParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -33,7 +33,7 @@ module HubspotSDK
               slug: String,
               timezone: String,
               month_offset: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(slug:, timezone:, month_offset: nil, request_options: {})
@@ -45,7 +45,7 @@ module HubspotSDK
                 slug: String,
                 timezone: String,
                 month_offset: Integer,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class CollectionResponseWithTotalSimplePublicObject < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseWithTotalSimplePublicObject < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Crm::SimplePublicObject>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject] }
+        #   @return [Array<HubSpotSDK::Models::Crm::SimplePublicObject>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::SimplePublicObject] }
 
         # @!attribute total
         #   The total number of objects in the collection.
@@ -17,18 +17,18 @@ module HubspotSDK
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::Paging, nil]
-        optional :paging, -> { HubspotSDK::Paging }
+        #   @return [HubSpotSDK::Models::Paging, nil]
+        optional :paging, -> { HubSpotSDK::Paging }
 
         # @!method initialize(results:, total:, paging: nil)
         #   Represents a list of simple objects returned from an API request, along with the
         #   total count of objects available.
         #
-        #   @param results [Array<HubspotSDK::Models::Crm::SimplePublicObject>]
+        #   @param results [Array<HubSpotSDK::Models::Crm::SimplePublicObject>]
         #
         #   @param total [Integer] The total number of objects in the collection.
         #
-        #   @param paging [HubspotSDK::Models::Paging]
+        #   @param paging [HubSpotSDK::Models::Paging]
       end
     end
   end

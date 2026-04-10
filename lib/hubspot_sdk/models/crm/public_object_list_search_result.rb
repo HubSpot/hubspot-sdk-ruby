@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicObjectListSearchResult < HubspotSDK::Internal::Type::BaseModel
+      class PublicObjectListSearchResult < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute list_id
         #   The **ILS ID** of the list.
         #
@@ -45,7 +45,7 @@ module HubspotSDK
         #   that were included in the search request.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :additional_filter_properties, HubspotSDK::Internal::Type::HashOf[String]
+        optional :additional_filter_properties, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute created_at
         #   The time when the list was created.
@@ -85,7 +85,7 @@ module HubspotSDK
 
         # @!method initialize(list_id:, list_version:, name:, object_type_id:, processing_status:, processing_type:, additional_filter_properties: nil, created_at: nil, created_by_id: nil, deleted_at: nil, filters_updated_at: nil, updated_at: nil, updated_by_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicObjectListSearchResult} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicObjectListSearchResult} for more details.
         #
         #   @param list_id [String] The **ILS ID** of the list.
         #

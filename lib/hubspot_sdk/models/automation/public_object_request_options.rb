@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicObjectRequestOptions < HubspotSDK::Internal::Type::BaseModel
+      class PublicObjectRequestOptions < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute properties
         #
         #   @return [Array<String>]
-        required :properties, HubspotSDK::Internal::Type::ArrayOf[String]
+        required :properties, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!method initialize(properties:)
         #   @param properties [Array<String>]

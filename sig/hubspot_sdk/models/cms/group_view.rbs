@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type group_view =
@@ -11,7 +11,7 @@ module HubspotSDK
           name: String
         }
 
-      class GroupView < HubspotSDK::Internal::Type::BaseModel
+      class GroupView < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor display_name: String
 
         attr_accessor display_order: Integer

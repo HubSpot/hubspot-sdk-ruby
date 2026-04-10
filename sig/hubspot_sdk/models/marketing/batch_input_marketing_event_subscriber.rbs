@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type batch_input_marketing_event_subscriber =
-        { inputs: ::Array[HubspotSDK::Marketing::MarketingEventSubscriber] }
+        { inputs: ::Array[HubSpotSDK::Marketing::MarketingEventSubscriber] }
 
-      class BatchInputMarketingEventSubscriber < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor inputs: ::Array[HubspotSDK::Marketing::MarketingEventSubscriber]
+      class BatchInputMarketingEventSubscriber < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubSpotSDK::Marketing::MarketingEventSubscriber]
 
         def initialize: (
-          inputs: ::Array[HubspotSDK::Marketing::MarketingEventSubscriber]
+          inputs: ::Array[HubSpotSDK::Marketing::MarketingEventSubscriber]
         ) -> void
 
         def to_hash: -> {
-          inputs: ::Array[HubspotSDK::Marketing::MarketingEventSubscriber]
+          inputs: ::Array[HubSpotSDK::Marketing::MarketingEventSubscriber]
         }
       end
     end

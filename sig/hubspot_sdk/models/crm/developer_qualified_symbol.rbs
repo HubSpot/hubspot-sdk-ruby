@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type developer_qualified_symbol =
         { developer_symbol: String, project_name: String }
 
-      class DeveloperQualifiedSymbol < HubspotSDK::Internal::Type::BaseModel
+      class DeveloperQualifiedSymbol < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor developer_symbol: String
 
         attr_accessor project_name: String

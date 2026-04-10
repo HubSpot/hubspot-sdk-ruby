@@ -1,35 +1,35 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class MarketingEvents
-        # @return [HubspotSDK::Resources::Marketing::MarketingEvents::Attendance]
+        # @return [HubSpotSDK::Resources::Marketing::MarketingEvents::Attendance]
         attr_reader :attendance
 
-        # @return [HubspotSDK::Resources::Marketing::MarketingEvents::Events]
+        # @return [HubSpotSDK::Resources::Marketing::MarketingEvents::Events]
         attr_reader :events
 
-        # @return [HubspotSDK::Resources::Marketing::MarketingEvents::ListAssociations]
+        # @return [HubSpotSDK::Resources::Marketing::MarketingEvents::ListAssociations]
         attr_reader :list_associations
 
-        # @return [HubspotSDK::Resources::Marketing::MarketingEvents::Participations]
+        # @return [HubSpotSDK::Resources::Marketing::MarketingEvents::Participations]
         attr_reader :participations
 
-        # @return [HubspotSDK::Resources::Marketing::MarketingEvents::Settings]
+        # @return [HubSpotSDK::Resources::Marketing::MarketingEvents::Settings]
         attr_reader :settings
 
-        # @return [HubspotSDK::Resources::Marketing::MarketingEvents::SubscriberState]
+        # @return [HubSpotSDK::Resources::Marketing::MarketingEvents::SubscriberState]
         attr_reader :subscriber_state
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Marketing::MarketingEventCreateParams} for more details.
+        # {HubSpotSDK::Models::Marketing::MarketingEventCreateParams} for more details.
         #
         # Creates a new marketing event in HubSpot
         #
         # @overload create(custom_properties:, event_name:, event_organizer:, external_account_id:, external_event_id:, end_date_time: nil, event_cancelled: nil, event_completed: nil, event_description: nil, event_type: nil, event_url: nil, start_date_time: nil, request_options: {})
         #
-        # @param custom_properties [Array<HubspotSDK::Models::PropertyValue>] A list of PropertyValues. These can be whatever kind of property names and value
+        # @param custom_properties [Array<HubSpotSDK::Models::PropertyValue>] A list of PropertyValues. These can be whatever kind of property names and value
         #
         # @param event_name [String] The name of the marketing event.
         #
@@ -53,24 +53,24 @@ module HubspotSDK
         #
         # @param start_date_time [Time] The start date and time of the marketing event.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::MarketingEventDefaultResponse]
+        # @return [HubSpotSDK::Models::Marketing::MarketingEventDefaultResponse]
         #
-        # @see HubspotSDK::Models::Marketing::MarketingEventCreateParams
+        # @see HubSpotSDK::Models::Marketing::MarketingEventCreateParams
         def create(params)
-          parsed, options = HubspotSDK::Marketing::MarketingEventCreateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Marketing::MarketingEventCreateParams.dump_request(params)
           @client.request(
             method: :post,
             path: "marketing/marketing-events/2026-03/events",
             body: parsed,
-            model: HubspotSDK::Marketing::MarketingEventDefaultResponse,
+            model: HubSpotSDK::Marketing::MarketingEventDefaultResponse,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Marketing::MarketingEventUpdateParams} for more details.
+        # {HubSpotSDK::Models::Marketing::MarketingEventUpdateParams} for more details.
         #
         # Updates the details of an existing Marketing Event identified by its objectId,
         # if it exists.
@@ -79,7 +79,7 @@ module HubspotSDK
         #
         # @param object_id_ [String] The internal id of the marketing event in HubSpot.
         #
-        # @param custom_properties [Array<HubspotSDK::Models::PropertyValue>]
+        # @param custom_properties [Array<HubSpotSDK::Models::PropertyValue>]
         #
         # @param end_date_time [Time] The end date and time of the marketing event
         #
@@ -97,18 +97,18 @@ module HubspotSDK
         #
         # @param start_date_time [Time] The start date and time of the marketing event
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::MarketingEventPublicDefaultResponseV2]
+        # @return [HubSpotSDK::Models::Marketing::MarketingEventPublicDefaultResponseV2]
         #
-        # @see HubspotSDK::Models::Marketing::MarketingEventUpdateParams
+        # @see HubSpotSDK::Models::Marketing::MarketingEventUpdateParams
         def update(object_id_, params)
-          parsed, options = HubspotSDK::Marketing::MarketingEventUpdateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Marketing::MarketingEventUpdateParams.dump_request(params)
           @client.request(
             method: :patch,
             path: ["marketing/marketing-events/2026-03/%1$s", object_id_],
             body: parsed,
-            model: HubspotSDK::Marketing::MarketingEventPublicDefaultResponseV2,
+            model: HubSpotSDK::Marketing::MarketingEventPublicDefaultResponseV2,
             options: options
           )
         end
@@ -119,20 +119,20 @@ module HubspotSDK
         #
         # @param limit [Integer] The limit for response size. The default value is 10, the max number is 100
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Marketing::MarketingEventPublicReadResponseV2>]
+        # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Marketing::MarketingEventPublicReadResponseV2>]
         #
-        # @see HubspotSDK::Models::Marketing::MarketingEventListParams
+        # @see HubSpotSDK::Models::Marketing::MarketingEventListParams
         def list(params = {})
-          parsed, options = HubspotSDK::Marketing::MarketingEventListParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Marketing::MarketingEventListParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "marketing/marketing-events/2026-03",
             query: query,
-            page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Marketing::MarketingEventPublicReadResponseV2,
+            page: HubSpotSDK::Internal::Page,
+            model: HubSpotSDK::Marketing::MarketingEventPublicReadResponseV2,
             options: options
           )
         end
@@ -143,11 +143,11 @@ module HubspotSDK
         #
         # @param object_id_ [String] The internal id of the marketing event in HubSpot.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Marketing::MarketingEventDeleteParams
+        # @see HubSpotSDK::Models::Marketing::MarketingEventDeleteParams
         def delete(object_id_, params = {})
           @client.request(
             method: :delete,
@@ -166,14 +166,14 @@ module HubspotSDK
         #
         # @overload delete_batch(inputs:, request_options: {})
         #
-        # @param inputs [Array<HubspotSDK::Models::Marketing::MarketingEventPublicObjectIDDeleteRequest>]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param inputs [Array<HubSpotSDK::Models::Marketing::MarketingEventPublicObjectIDDeleteRequest>]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [StringIO]
         #
-        # @see HubspotSDK::Models::Marketing::MarketingEventDeleteBatchParams
+        # @see HubSpotSDK::Models::Marketing::MarketingEventDeleteBatchParams
         def delete_batch(params)
-          parsed, options = HubspotSDK::Marketing::MarketingEventDeleteBatchParams.dump_request(params)
+          parsed, options = HubSpotSDK::Marketing::MarketingEventDeleteBatchParams.dump_request(params)
           @client.request(
             method: :post,
             path: "marketing/marketing-events/2026-03/batch/archive",
@@ -192,15 +192,15 @@ module HubspotSDK
         #
         # @overload delete_batch_by_external_event_id(inputs:, request_options: {})
         #
-        # @param inputs [Array<HubspotSDK::Models::Marketing::MarketingEventExternalUniqueIdentifier>]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param inputs [Array<HubSpotSDK::Models::Marketing::MarketingEventExternalUniqueIdentifier>]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [StringIO]
         #
-        # @see HubspotSDK::Models::Marketing::MarketingEventDeleteBatchByExternalEventIDParams
+        # @see HubSpotSDK::Models::Marketing::MarketingEventDeleteBatchByExternalEventIDParams
         def delete_batch_by_external_event_id(params)
           parsed, options =
-            HubspotSDK::Marketing::MarketingEventDeleteBatchByExternalEventIDParams.dump_request(params)
+            HubSpotSDK::Marketing::MarketingEventDeleteBatchByExternalEventIDParams.dump_request(params)
           @client.request(
             method: :post,
             path: "marketing/marketing-events/2026-03/events/delete",
@@ -220,14 +220,14 @@ module HubspotSDK
         #
         # @param external_event_id [String]
         # @param external_account_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Marketing::MarketingEventDeleteByExternalEventIDParams
+        # @see HubSpotSDK::Models::Marketing::MarketingEventDeleteByExternalEventIDParams
         def delete_by_external_event_id(external_event_id, params)
-          parsed, options = HubspotSDK::Marketing::MarketingEventDeleteByExternalEventIDParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Marketing::MarketingEventDeleteByExternalEventIDParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :delete,
             path: ["marketing/marketing-events/2026-03/events/%1$s", external_event_id],
@@ -244,16 +244,16 @@ module HubspotSDK
         #
         # @param object_id_ [String] The internal id of the marketing event in HubSpot.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::MarketingEventPublicReadResponseV2]
+        # @return [HubSpotSDK::Models::Marketing::MarketingEventPublicReadResponseV2]
         #
-        # @see HubspotSDK::Models::Marketing::MarketingEventGetParams
+        # @see HubSpotSDK::Models::Marketing::MarketingEventGetParams
         def get(object_id_, params = {})
           @client.request(
             method: :get,
             path: ["marketing/marketing-events/2026-03/%1$s", object_id_],
-            model: HubspotSDK::Marketing::MarketingEventPublicReadResponseV2,
+            model: HubSpotSDK::Marketing::MarketingEventPublicReadResponseV2,
             options: params[:request_options]
           )
         end
@@ -268,19 +268,19 @@ module HubspotSDK
         #
         # @param external_event_id [String]
         # @param external_account_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::MarketingEventPublicReadResponse]
+        # @return [HubSpotSDK::Models::Marketing::MarketingEventPublicReadResponse]
         #
-        # @see HubspotSDK::Models::Marketing::MarketingEventGetByExternalEventIDParams
+        # @see HubSpotSDK::Models::Marketing::MarketingEventGetByExternalEventIDParams
         def get_by_external_event_id(external_event_id, params)
-          parsed, options = HubspotSDK::Marketing::MarketingEventGetByExternalEventIDParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Marketing::MarketingEventGetByExternalEventIDParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: ["marketing/marketing-events/2026-03/events/%1$s", external_event_id],
             query: query.transform_keys(external_account_id: "externalAccountId"),
-            model: HubspotSDK::Marketing::MarketingEventPublicReadResponse,
+            model: HubSpotSDK::Marketing::MarketingEventPublicReadResponse,
             options: options
           )
         end
@@ -293,19 +293,19 @@ module HubspotSDK
         # @overload search_by_external_event_id(q:, request_options: {})
         #
         # @param q [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::CollectionResponseSearchPublicResponseWrapperNoPaging]
+        # @return [HubSpotSDK::Models::Marketing::CollectionResponseSearchPublicResponseWrapperNoPaging]
         #
-        # @see HubspotSDK::Models::Marketing::MarketingEventSearchByExternalEventIDParams
+        # @see HubSpotSDK::Models::Marketing::MarketingEventSearchByExternalEventIDParams
         def search_by_external_event_id(params)
-          parsed, options = HubspotSDK::Marketing::MarketingEventSearchByExternalEventIDParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Marketing::MarketingEventSearchByExternalEventIDParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "marketing/marketing-events/2026-03/events/search",
             query: query,
-            model: HubspotSDK::Marketing::CollectionResponseSearchPublicResponseWrapperNoPaging,
+            model: HubSpotSDK::Marketing::CollectionResponseSearchPublicResponseWrapperNoPaging,
             options: options
           )
         end
@@ -326,16 +326,16 @@ module HubspotSDK
         #
         # @param external_event_id [String] The id of the marketing event in the external event application.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::CollectionResponseWithTotalMarketingEventIdentifiersResponse]
+        # @return [HubSpotSDK::Models::Marketing::CollectionResponseWithTotalMarketingEventIdentifiersResponse]
         #
-        # @see HubspotSDK::Models::Marketing::MarketingEventSearchIdentifiersByExternalEventIDParams
+        # @see HubSpotSDK::Models::Marketing::MarketingEventSearchIdentifiersByExternalEventIDParams
         def search_identifiers_by_external_event_id(external_event_id, params = {})
           @client.request(
             method: :get,
             path: ["marketing/marketing-events/2026-03/%1$s/identifiers", external_event_id],
-            model: HubspotSDK::Marketing::CollectionResponseWithTotalMarketingEventIdentifiersResponse,
+            model: HubSpotSDK::Marketing::CollectionResponseWithTotalMarketingEventIdentifiersResponse,
             options: params[:request_options]
           )
         end
@@ -345,25 +345,25 @@ module HubspotSDK
         #
         # @overload update_batch(inputs:, request_options: {})
         #
-        # @param inputs [Array<HubspotSDK::Models::Marketing::MarketingEventPublicUpdateRequestFullV2>]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param inputs [Array<HubSpotSDK::Models::Marketing::MarketingEventPublicUpdateRequestFullV2>]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2]
+        # @return [HubSpotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2]
         #
-        # @see HubspotSDK::Models::Marketing::MarketingEventUpdateBatchParams
+        # @see HubSpotSDK::Models::Marketing::MarketingEventUpdateBatchParams
         def update_batch(params)
-          parsed, options = HubspotSDK::Marketing::MarketingEventUpdateBatchParams.dump_request(params)
+          parsed, options = HubSpotSDK::Marketing::MarketingEventUpdateBatchParams.dump_request(params)
           @client.request(
             method: :post,
             path: "marketing/marketing-events/2026-03/batch/update",
             body: parsed,
-            model: HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2,
+            model: HubSpotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Marketing::MarketingEventUpdateByExternalEventIDParams} for
+        # {HubSpotSDK::Models::Marketing::MarketingEventUpdateByExternalEventIDParams} for
         # more details.
         #
         # Updates the details of an existing Marketing Event identified by its
@@ -377,7 +377,7 @@ module HubspotSDK
         #
         # @param external_account_id [String] Query param
         #
-        # @param custom_properties [Array<HubspotSDK::Models::PropertyValue>] Body param: A list of PropertyValues. These can be whatever kind of property nam
+        # @param custom_properties [Array<HubSpotSDK::Models::PropertyValue>] Body param: A list of PropertyValues. These can be whatever kind of property nam
         #
         # @param end_date_time [Time] Body param: The end date and time of the marketing event.
         #
@@ -397,21 +397,21 @@ module HubspotSDK
         #
         # @param start_date_time [Time] Body param: The start date and time of the marketing event.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::MarketingEventPublicDefaultResponse]
+        # @return [HubSpotSDK::Models::Marketing::MarketingEventPublicDefaultResponse]
         #
-        # @see HubspotSDK::Models::Marketing::MarketingEventUpdateByExternalEventIDParams
+        # @see HubSpotSDK::Models::Marketing::MarketingEventUpdateByExternalEventIDParams
         def update_by_external_event_id(external_event_id, params)
           query_params = [:external_account_id]
-          parsed, options = HubspotSDK::Marketing::MarketingEventUpdateByExternalEventIDParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+          parsed, options = HubSpotSDK::Marketing::MarketingEventUpdateByExternalEventIDParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :patch,
             path: ["marketing/marketing-events/2026-03/events/%1$s", external_event_id],
             query: query.transform_keys(external_account_id: "externalAccountId"),
             body: parsed.except(*query_params),
-            model: HubspotSDK::Marketing::MarketingEventPublicDefaultResponse,
+            model: HubSpotSDK::Marketing::MarketingEventPublicDefaultResponse,
             options: options
           )
         end
@@ -423,25 +423,25 @@ module HubspotSDK
         #
         # @overload upsert_batch(inputs:, request_options: {})
         #
-        # @param inputs [Array<HubspotSDK::Models::Marketing::MarketingEventCreateRequestParams>]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param inputs [Array<HubSpotSDK::Models::Marketing::MarketingEventCreateRequestParams>]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponse]
+        # @return [HubSpotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponse]
         #
-        # @see HubspotSDK::Models::Marketing::MarketingEventUpsertBatchParams
+        # @see HubSpotSDK::Models::Marketing::MarketingEventUpsertBatchParams
         def upsert_batch(params)
-          parsed, options = HubspotSDK::Marketing::MarketingEventUpsertBatchParams.dump_request(params)
+          parsed, options = HubSpotSDK::Marketing::MarketingEventUpsertBatchParams.dump_request(params)
           @client.request(
             method: :post,
             path: "marketing/marketing-events/2026-03/events/upsert",
             body: parsed,
-            model: HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponse,
+            model: HubSpotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponse,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Marketing::MarketingEventUpsertByExternalEventIDParams} for
+        # {HubSpotSDK::Models::Marketing::MarketingEventUpsertByExternalEventIDParams} for
         # more details.
         #
         # Upserts a marketing event If there is an existing marketing event with the
@@ -451,7 +451,7 @@ module HubspotSDK
         #
         # @param path_external_event_id [String]
         #
-        # @param custom_properties [Array<HubspotSDK::Models::PropertyValue>] A list of PropertyValues. These can be whatever kind of property names and value
+        # @param custom_properties [Array<HubSpotSDK::Models::PropertyValue>] A list of PropertyValues. These can be whatever kind of property names and value
         #
         # @param event_name [String] The name of the marketing event.
         #
@@ -475,35 +475,35 @@ module HubspotSDK
         #
         # @param start_date_time [Time] The start date and time of the marketing event.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::MarketingEventPublicDefaultResponse]
+        # @return [HubSpotSDK::Models::Marketing::MarketingEventPublicDefaultResponse]
         #
-        # @see HubspotSDK::Models::Marketing::MarketingEventUpsertByExternalEventIDParams
+        # @see HubSpotSDK::Models::Marketing::MarketingEventUpsertByExternalEventIDParams
         def upsert_by_external_event_id(path_external_event_id, params)
-          parsed, options = HubspotSDK::Marketing::MarketingEventUpsertByExternalEventIDParams.dump_request(params)
+          parsed, options = HubSpotSDK::Marketing::MarketingEventUpsertByExternalEventIDParams.dump_request(params)
           @client.request(
             method: :put,
             path: ["marketing/marketing-events/2026-03/events/%1$s", path_external_event_id],
             body: parsed,
-            model: HubspotSDK::Marketing::MarketingEventPublicDefaultResponse,
+            model: HubSpotSDK::Marketing::MarketingEventPublicDefaultResponse,
             options: options
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
-          @attendance = HubspotSDK::Resources::Marketing::MarketingEvents::Attendance.new(client: client)
-          @events = HubspotSDK::Resources::Marketing::MarketingEvents::Events.new(client: client)
+          @attendance = HubSpotSDK::Resources::Marketing::MarketingEvents::Attendance.new(client: client)
+          @events = HubSpotSDK::Resources::Marketing::MarketingEvents::Events.new(client: client)
           @list_associations =
-            HubspotSDK::Resources::Marketing::MarketingEvents::ListAssociations.new(client: client)
-          @participations = HubspotSDK::Resources::Marketing::MarketingEvents::Participations.new(client: client)
-          @settings = HubspotSDK::Resources::Marketing::MarketingEvents::Settings.new(client: client)
+            HubSpotSDK::Resources::Marketing::MarketingEvents::ListAssociations.new(client: client)
+          @participations = HubSpotSDK::Resources::Marketing::MarketingEvents::Participations.new(client: client)
+          @settings = HubSpotSDK::Resources::Marketing::MarketingEvents::Settings.new(client: client)
           @subscriber_state =
-            HubspotSDK::Resources::Marketing::MarketingEvents::SubscriberState.new(client: client)
+            HubSpotSDK::Resources::Marketing::MarketingEvents::SubscriberState.new(client: client)
         end
       end
     end

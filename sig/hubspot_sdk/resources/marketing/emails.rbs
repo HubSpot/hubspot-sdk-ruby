@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class Emails
@@ -7,25 +7,25 @@ module HubspotSDK
           ?archived: bool,
           ?business_unit_id: Integer,
           ?campaign: String,
-          ?content: HubspotSDK::Marketing::PublicEmailContent,
+          ?content: HubSpotSDK::Marketing::PublicEmailContent,
           ?feedback_survey_id: String,
           ?folder_id_v2: Integer,
-          ?from: HubspotSDK::Marketing::PublicEmailFromDetails,
+          ?from: HubSpotSDK::Marketing::PublicEmailFromDetails,
           ?jitter_send_time: bool,
-          ?language: HubspotSDK::Models::Marketing::EmailCreateRequest::language,
+          ?language: HubSpotSDK::Models::Marketing::EmailCreateRequest::language,
           ?name: String,
           ?publish_date: Time,
-          ?rss_data: HubspotSDK::Marketing::PublicRssEmailDetails,
+          ?rss_data: HubSpotSDK::Marketing::PublicRssEmailDetails,
           ?send_on_publish: bool,
-          ?state: HubspotSDK::Models::Marketing::EmailCreateRequest::state,
-          ?subcategory: HubspotSDK::Models::Marketing::EmailCreateRequest::subcategory,
+          ?state: HubSpotSDK::Models::Marketing::EmailCreateRequest::state,
+          ?subcategory: HubSpotSDK::Models::Marketing::EmailCreateRequest::subcategory,
           ?subject: String,
-          ?subscription_details: HubspotSDK::Marketing::PublicEmailSubscriptionDetails,
-          ?testing: HubspotSDK::Marketing::PublicEmailTestingDetails,
-          ?to: HubspotSDK::Marketing::PublicEmailToDetails,
-          ?webversion: HubspotSDK::Marketing::PublicWebversionDetails,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Marketing::PublicEmail
+          ?subscription_details: HubSpotSDK::Marketing::PublicEmailSubscriptionDetails,
+          ?testing: HubSpotSDK::Marketing::PublicEmailTestingDetails,
+          ?to: HubSpotSDK::Marketing::PublicEmailToDetails,
+          ?webversion: HubSpotSDK::Marketing::PublicWebversionDetails,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Marketing::PublicEmail
 
         def update: (
           String email_id,
@@ -33,24 +33,24 @@ module HubspotSDK
           ?active_domain: String,
           ?business_unit_id: Integer,
           ?campaign: String,
-          ?content: HubspotSDK::Marketing::PublicEmailContent,
+          ?content: HubSpotSDK::Marketing::PublicEmailContent,
           ?folder_id_v2: Integer,
-          ?from: HubspotSDK::Marketing::PublicEmailFromDetails,
+          ?from: HubSpotSDK::Marketing::PublicEmailFromDetails,
           ?jitter_send_time: bool,
-          ?language: HubspotSDK::Models::Marketing::EmailUpdateRequest::language,
+          ?language: HubSpotSDK::Models::Marketing::EmailUpdateRequest::language,
           ?name: String,
           ?publish_date: Time,
-          ?rss_data: HubspotSDK::Marketing::PublicRssEmailDetails,
+          ?rss_data: HubSpotSDK::Marketing::PublicRssEmailDetails,
           ?send_on_publish: bool,
-          ?state: HubspotSDK::Models::Marketing::EmailUpdateRequest::state,
-          ?subcategory: HubspotSDK::Models::Marketing::EmailUpdateRequest::subcategory,
+          ?state: HubSpotSDK::Models::Marketing::EmailUpdateRequest::state,
+          ?subcategory: HubSpotSDK::Models::Marketing::EmailUpdateRequest::subcategory,
           ?subject: String,
-          ?subscription_details: HubspotSDK::Marketing::PublicEmailSubscriptionDetails,
-          ?testing: HubspotSDK::Marketing::PublicEmailTestingDetails,
-          ?to: HubspotSDK::Marketing::PublicEmailToDetails,
-          ?webversion: HubspotSDK::Marketing::PublicWebversionDetails,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Marketing::PublicEmail
+          ?subscription_details: HubSpotSDK::Marketing::PublicEmailSubscriptionDetails,
+          ?testing: HubSpotSDK::Marketing::PublicEmailTestingDetails,
+          ?to: HubSpotSDK::Marketing::PublicEmailToDetails,
+          ?webversion: HubSpotSDK::Marketing::PublicWebversionDetails,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Marketing::PublicEmail
 
         def list: (
           ?after: String,
@@ -68,41 +68,41 @@ module HubspotSDK
           ?published_at: Time,
           ?published_before: Time,
           ?sort: ::Array[String],
-          ?type: HubspotSDK::Models::Marketing::EmailListParams::type_,
+          ?type: HubSpotSDK::Models::Marketing::EmailListParams::type_,
           ?updated_after: Time,
           ?updated_at: Time,
           ?updated_before: Time,
           ?variant_stats: bool,
           ?workflow_names: bool,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Marketing::PublicEmail]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Marketing::PublicEmail]
 
         def delete: (
           String email_id,
           ?archived: bool,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def clone_: (
           id: String,
           ?clone_name: String,
           ?language: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Marketing::PublicEmail
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Marketing::PublicEmail
 
         def create_ab_test_variation: (
           content_id: String,
           variation_name: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Marketing::PublicEmail
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Marketing::PublicEmail
 
         def get: (
           ?email_ids: ::Array[Integer],
           ?end_timestamp: String,
           ?property: String,
           ?start_timestamp: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Marketing::AggregateEmailStatistics
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Marketing::AggregateEmailStatistics
 
         def get_ab_test_variation: (
           String email_id,
@@ -112,61 +112,61 @@ module HubspotSDK
           ?marketing_campaign_names: bool,
           ?variant_stats: bool,
           ?workflow_names: bool,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Marketing::PublicEmail
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Marketing::PublicEmail
 
         def get_draft: (
           String email_id,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Marketing::PublicEmail
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Marketing::PublicEmail
 
         def get_histogram: (
           ?email_ids: ::Array[Integer],
           ?end_timestamp: String,
-          ?interval: HubspotSDK::Models::Marketing::EmailGetHistogramParams::interval,
+          ?interval: HubSpotSDK::Models::Marketing::EmailGetHistogramParams::interval,
           ?start_timestamp: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Marketing::CollectionResponseWithTotalEmailStatisticInterval
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Marketing::CollectionResponseWithTotalEmailStatisticInterval
 
         def get_revision: (
           String revision_id,
           email_id: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Marketing::PublicEmailVersion
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Marketing::PublicEmailVersion
 
         def list_revisions: (
           String email_id,
           ?after: String,
           ?before: String,
           ?limit: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Marketing::VersionPublicEmail]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Marketing::VersionPublicEmail]
 
         def publish: (
           String email_id,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def reset_draft: (
           String email_id,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def restore_revision: (
           String revision_id,
           email_id: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def restore_revision_to_draft: (
           Integer revision_id,
           email_id: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Marketing::PublicEmail
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Marketing::PublicEmail
 
         def unpublish: (
           String email_id,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def update_draft: (
@@ -175,26 +175,26 @@ module HubspotSDK
           ?archived: bool,
           ?business_unit_id: Integer,
           ?campaign: String,
-          ?content: HubspotSDK::Marketing::PublicEmailContent,
+          ?content: HubSpotSDK::Marketing::PublicEmailContent,
           ?folder_id_v2: Integer,
-          ?from: HubspotSDK::Marketing::PublicEmailFromDetails,
+          ?from: HubSpotSDK::Marketing::PublicEmailFromDetails,
           ?jitter_send_time: bool,
-          ?language: HubspotSDK::Models::Marketing::EmailUpdateRequest::language,
+          ?language: HubSpotSDK::Models::Marketing::EmailUpdateRequest::language,
           ?name: String,
           ?publish_date: Time,
-          ?rss_data: HubspotSDK::Marketing::PublicRssEmailDetails,
+          ?rss_data: HubSpotSDK::Marketing::PublicRssEmailDetails,
           ?send_on_publish: bool,
-          ?state: HubspotSDK::Models::Marketing::EmailUpdateRequest::state,
-          ?subcategory: HubspotSDK::Models::Marketing::EmailUpdateRequest::subcategory,
+          ?state: HubSpotSDK::Models::Marketing::EmailUpdateRequest::state,
+          ?subcategory: HubSpotSDK::Models::Marketing::EmailUpdateRequest::subcategory,
           ?subject: String,
-          ?subscription_details: HubspotSDK::Marketing::PublicEmailSubscriptionDetails,
-          ?testing: HubspotSDK::Marketing::PublicEmailTestingDetails,
-          ?to: HubspotSDK::Marketing::PublicEmailToDetails,
-          ?webversion: HubspotSDK::Marketing::PublicWebversionDetails,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Marketing::PublicEmail
+          ?subscription_details: HubSpotSDK::Marketing::PublicEmailSubscriptionDetails,
+          ?testing: HubSpotSDK::Marketing::PublicEmailTestingDetails,
+          ?to: HubSpotSDK::Marketing::PublicEmailToDetails,
+          ?webversion: HubSpotSDK::Marketing::PublicWebversionDetails,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Marketing::PublicEmail
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

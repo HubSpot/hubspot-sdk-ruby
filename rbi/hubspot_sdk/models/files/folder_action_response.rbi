@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class FolderActionResponse < HubspotSDK::Internal::Type::BaseModel
+      class FolderActionResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Files::FolderActionResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Files::FolderActionResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -22,7 +22,7 @@ module HubspotSDK
 
         # Current status of the task.
         sig do
-          returns(HubspotSDK::Files::FolderActionResponse::Status::TaggedSymbol)
+          returns(HubSpotSDK::Files::FolderActionResponse::Status::TaggedSymbol)
         end
         attr_accessor :status
 
@@ -31,10 +31,10 @@ module HubspotSDK
         attr_accessor :task_id
 
         # Detailed errors resulting from the task.
-        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
+        sig { returns(T.nilable(T::Array[HubSpotSDK::StandardError])) }
         attr_reader :errors
 
-        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
+        sig { params(errors: T::Array[HubSpotSDK::StandardError::OrHash]).void }
         attr_writer :errors
 
         # Link to check the status of the task.
@@ -58,23 +58,23 @@ module HubspotSDK
         sig { params(requested_at: Time).void }
         attr_writer :requested_at
 
-        sig { returns(T.nilable(HubspotSDK::Files::Folder)) }
+        sig { returns(T.nilable(HubSpotSDK::Files::Folder)) }
         attr_reader :result
 
-        sig { params(result: HubspotSDK::Files::Folder::OrHash).void }
+        sig { params(result: HubSpotSDK::Files::Folder::OrHash).void }
         attr_writer :result
 
         sig do
           params(
             completed_at: Time,
             started_at: Time,
-            status: HubspotSDK::Files::FolderActionResponse::Status::OrSymbol,
+            status: HubSpotSDK::Files::FolderActionResponse::Status::OrSymbol,
             task_id: String,
-            errors: T::Array[HubspotSDK::StandardError::OrHash],
+            errors: T::Array[HubSpotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
             requested_at: Time,
-            result: HubspotSDK::Files::Folder::OrHash
+            result: HubSpotSDK::Files::Folder::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -104,13 +104,13 @@ module HubspotSDK
               completed_at: Time,
               started_at: Time,
               status:
-                HubspotSDK::Files::FolderActionResponse::Status::TaggedSymbol,
+                HubSpotSDK::Files::FolderActionResponse::Status::TaggedSymbol,
               task_id: String,
-              errors: T::Array[HubspotSDK::StandardError],
+              errors: T::Array[HubSpotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
               requested_at: Time,
-              result: HubspotSDK::Files::Folder
+              result: HubSpotSDK::Files::Folder
             }
           )
         end
@@ -119,39 +119,39 @@ module HubspotSDK
 
         # Current status of the task.
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Files::FolderActionResponse::Status)
+              T.all(Symbol, HubSpotSDK::Files::FolderActionResponse::Status)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::Files::FolderActionResponse::Status::TaggedSymbol
+              HubSpotSDK::Files::FolderActionResponse::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::Files::FolderActionResponse::Status::TaggedSymbol
+              HubSpotSDK::Files::FolderActionResponse::Status::TaggedSymbol
             )
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::Files::FolderActionResponse::Status::TaggedSymbol
+              HubSpotSDK::Files::FolderActionResponse::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::Files::FolderActionResponse::Status::TaggedSymbol
+              HubSpotSDK::Files::FolderActionResponse::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Files::FolderActionResponse::Status::TaggedSymbol
+                HubSpotSDK::Files::FolderActionResponse::Status::TaggedSymbol
               ]
             )
           end

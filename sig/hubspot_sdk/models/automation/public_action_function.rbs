@@ -1,17 +1,17 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type public_action_function =
         {
           function_source: String,
-          function_type: HubspotSDK::Models::Automation::PublicActionFunction::function_type,
+          function_type: HubSpotSDK::Models::Automation::PublicActionFunction::function_type,
           id: String
         }
 
-      class PublicActionFunction < HubspotSDK::Internal::Type::BaseModel
+      class PublicActionFunction < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor function_source: String
 
-        attr_accessor function_type: HubspotSDK::Models::Automation::PublicActionFunction::function_type
+        attr_accessor function_type: HubSpotSDK::Models::Automation::PublicActionFunction::function_type
 
         attr_reader id: String?
 
@@ -19,13 +19,13 @@ module HubspotSDK
 
         def initialize: (
           function_source: String,
-          function_type: HubspotSDK::Models::Automation::PublicActionFunction::function_type,
+          function_type: HubSpotSDK::Models::Automation::PublicActionFunction::function_type,
           ?id: String
         ) -> void
 
         def to_hash: -> {
           function_source: String,
-          function_type: HubspotSDK::Models::Automation::PublicActionFunction::function_type,
+          function_type: HubSpotSDK::Models::Automation::PublicActionFunction::function_type,
           id: String
         }
 
@@ -36,14 +36,14 @@ module HubspotSDK
           | :PRE_FETCH_OPTIONS
 
         module FunctionType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           POST_ACTION_EXECUTION: :POST_ACTION_EXECUTION
           POST_FETCH_OPTIONS: :POST_FETCH_OPTIONS
           PRE_ACTION_EXECUTION: :PRE_ACTION_EXECUTION
           PRE_FETCH_OPTIONS: :PRE_FETCH_OPTIONS
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Automation::PublicActionFunction::function_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Automation::PublicActionFunction::function_type]
         end
       end
     end

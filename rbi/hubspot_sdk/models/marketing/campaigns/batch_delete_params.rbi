@@ -1,23 +1,23 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       module Campaigns
-        class BatchDeleteParams < HubspotSDK::Models::Marketing::BatchInputPublicCampaignDeleteInput
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class BatchDeleteParams < HubSpotSDK::Models::Marketing::BatchInputPublicCampaignDeleteInput
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Marketing::Campaigns::BatchDeleteParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Marketing::Campaigns::BatchDeleteParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
           sig do
-            params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
+            params(request_options: HubSpotSDK::RequestOptions::OrHash).returns(
               T.attached_class
             )
           end
@@ -25,7 +25,7 @@ module HubspotSDK
           end
 
           sig do
-            override.returns({ request_options: HubspotSDK::RequestOptions })
+            override.returns({ request_options: HubSpotSDK::RequestOptions })
           end
           def to_hash
           end

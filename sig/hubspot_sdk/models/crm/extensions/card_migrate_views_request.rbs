@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
@@ -9,7 +9,7 @@ module HubspotSDK
             helpdesk_app_card_id: Integer
           }
 
-        class CardMigrateViewsRequest < HubspotSDK::Internal::Type::BaseModel
+        class CardMigrateViewsRequest < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor app_card_id: Integer
 
           attr_accessor legacy_crm_card_id: Integer

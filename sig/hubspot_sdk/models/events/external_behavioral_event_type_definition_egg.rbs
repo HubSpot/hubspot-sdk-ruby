@@ -1,29 +1,29 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type external_behavioral_event_type_definition_egg =
         {
           include_default_properties: bool,
           label: String,
-          property_definitions: ::Array[HubspotSDK::Events::ExternalBehavioralEventPropertyCreate],
-          custom_matching_id: HubspotSDK::Events::ExternalObjectResolutionMappingRequest,
+          property_definitions: ::Array[HubSpotSDK::Events::ExternalBehavioralEventPropertyCreate],
+          custom_matching_id: HubSpotSDK::Events::ExternalObjectResolutionMappingRequest,
           description: String,
           name: String,
           primary_object: String
         }
 
-      class ExternalBehavioralEventTypeDefinitionEgg < HubspotSDK::Internal::Type::BaseModel
+      class ExternalBehavioralEventTypeDefinitionEgg < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor include_default_properties: bool
 
         attr_accessor label: String
 
-        attr_accessor property_definitions: ::Array[HubspotSDK::Events::ExternalBehavioralEventPropertyCreate]
+        attr_accessor property_definitions: ::Array[HubSpotSDK::Events::ExternalBehavioralEventPropertyCreate]
 
-        attr_reader custom_matching_id: HubspotSDK::Events::ExternalObjectResolutionMappingRequest?
+        attr_reader custom_matching_id: HubSpotSDK::Events::ExternalObjectResolutionMappingRequest?
 
         def custom_matching_id=: (
-          HubspotSDK::Events::ExternalObjectResolutionMappingRequest
-        ) -> HubspotSDK::Events::ExternalObjectResolutionMappingRequest
+          HubSpotSDK::Events::ExternalObjectResolutionMappingRequest
+        ) -> HubSpotSDK::Events::ExternalObjectResolutionMappingRequest
 
         attr_reader description: String?
 
@@ -40,8 +40,8 @@ module HubspotSDK
         def initialize: (
           include_default_properties: bool,
           label: String,
-          property_definitions: ::Array[HubspotSDK::Events::ExternalBehavioralEventPropertyCreate],
-          ?custom_matching_id: HubspotSDK::Events::ExternalObjectResolutionMappingRequest,
+          property_definitions: ::Array[HubSpotSDK::Events::ExternalBehavioralEventPropertyCreate],
+          ?custom_matching_id: HubSpotSDK::Events::ExternalObjectResolutionMappingRequest,
           ?description: String,
           ?name: String,
           ?primary_object: String
@@ -50,8 +50,8 @@ module HubspotSDK
         def to_hash: -> {
           include_default_properties: bool,
           label: String,
-          property_definitions: ::Array[HubspotSDK::Events::ExternalBehavioralEventPropertyCreate],
-          custom_matching_id: HubspotSDK::Events::ExternalObjectResolutionMappingRequest,
+          property_definitions: ::Array[HubSpotSDK::Events::ExternalBehavioralEventPropertyCreate],
+          custom_matching_id: HubSpotSDK::Events::ExternalObjectResolutionMappingRequest,
           description: String,
           name: String,
           primary_object: String

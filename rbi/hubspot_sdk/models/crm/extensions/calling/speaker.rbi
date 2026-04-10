@@ -1,16 +1,16 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         module Calling
-          class Speaker < HubspotSDK::Internal::Type::BaseModel
+          class Speaker < HubSpotSDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::Crm::Extensions::Calling::Speaker,
-                  HubspotSDK::Internal::AnyHash
+                  HubSpotSDK::Crm::Extensions::Calling::Speaker,
+                  HubSpotSDK::Internal::AnyHash
                 )
               end
 

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class ActionExecutionIndexIdentifier < HubspotSDK::Internal::Type::BaseModel
+      class ActionExecutionIndexIdentifier < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::ActionExecutionIndexIdentifier,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::ActionExecutionIndexIdentifier,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

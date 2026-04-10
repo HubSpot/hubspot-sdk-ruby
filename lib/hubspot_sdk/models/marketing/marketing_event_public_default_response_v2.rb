@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::MarketingEvents#update
-      class MarketingEventPublicDefaultResponseV2 < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Marketing::MarketingEvents#update
+      class MarketingEventPublicDefaultResponseV2 < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute created_at
         #   The creation date and time of the marketing event
         #
@@ -13,9 +13,9 @@ module HubspotSDK
 
         # @!attribute custom_properties
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::CrmPropertyWrapper>]
+        #   @return [Array<HubSpotSDK::Models::Marketing::CrmPropertyWrapper>]
         required :custom_properties,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::CrmPropertyWrapper] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::CrmPropertyWrapper] },
                  api_name: :customProperties
 
         # @!attribute event_name
@@ -38,8 +38,8 @@ module HubspotSDK
 
         # @!attribute app_info
         #
-        #   @return [HubspotSDK::Models::Marketing::AppInfo, nil]
-        optional :app_info, -> { HubspotSDK::Marketing::AppInfo }, api_name: :appInfo
+        #   @return [HubSpotSDK::Models::Marketing::AppInfo, nil]
+        optional :app_info, -> { HubSpotSDK::Marketing::AppInfo }, api_name: :appInfo
 
         # @!attribute end_date_time
         #   The end date and time of the marketing event
@@ -51,13 +51,13 @@ module HubspotSDK
         #   Indicates if the marketing event has been cancelled
         #
         #   @return [Boolean, nil]
-        optional :event_cancelled, HubspotSDK::Internal::Type::Boolean, api_name: :eventCancelled
+        optional :event_cancelled, HubSpotSDK::Internal::Type::Boolean, api_name: :eventCancelled
 
         # @!attribute event_completed
         #   Indicates if the marketing event has been completed
         #
         #   @return [Boolean, nil]
-        optional :event_completed, HubspotSDK::Internal::Type::Boolean, api_name: :eventCompleted
+        optional :event_completed, HubSpotSDK::Internal::Type::Boolean, api_name: :eventCompleted
 
         # @!attribute event_description
         #   The description of the marketing event
@@ -91,12 +91,12 @@ module HubspotSDK
 
         # @!method initialize(created_at:, custom_properties:, event_name:, object_id_:, updated_at:, app_info: nil, end_date_time: nil, event_cancelled: nil, event_completed: nil, event_description: nil, event_organizer: nil, event_type: nil, event_url: nil, start_date_time: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::MarketingEventPublicDefaultResponseV2} for more
+        #   {HubSpotSDK::Models::Marketing::MarketingEventPublicDefaultResponseV2} for more
         #   details.
         #
         #   @param created_at [Time] The creation date and time of the marketing event
         #
-        #   @param custom_properties [Array<HubspotSDK::Models::Marketing::CrmPropertyWrapper>]
+        #   @param custom_properties [Array<HubSpotSDK::Models::Marketing::CrmPropertyWrapper>]
         #
         #   @param event_name [String] The name of the marketing event
         #
@@ -104,7 +104,7 @@ module HubspotSDK
         #
         #   @param updated_at [Time] The update date and time of the marketing event
         #
-        #   @param app_info [HubspotSDK::Models::Marketing::AppInfo]
+        #   @param app_info [HubSpotSDK::Models::Marketing::AppInfo]
         #
         #   @param end_date_time [Time] The end date and time of the marketing event
         #

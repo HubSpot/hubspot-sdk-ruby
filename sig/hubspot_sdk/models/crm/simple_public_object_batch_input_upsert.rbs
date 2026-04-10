@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type simple_public_object_batch_input_upsert =
@@ -9,7 +9,7 @@ module HubspotSDK
           object_write_trace_id: String
         }
 
-      class SimplePublicObjectBatchInputUpsert < HubspotSDK::Internal::Type::BaseModel
+      class SimplePublicObjectBatchInputUpsert < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor properties: ::Hash[Symbol, String]

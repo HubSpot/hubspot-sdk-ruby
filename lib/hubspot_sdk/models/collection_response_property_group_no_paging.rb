@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class CollectionResponsePropertyGroupNoPaging < HubspotSDK::Internal::Type::BaseModel
+    class CollectionResponsePropertyGroupNoPaging < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute results
       #
-      #   @return [Array<HubspotSDK::Models::PropertyGroup>]
-      required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::PropertyGroup] }
+      #   @return [Array<HubSpotSDK::Models::PropertyGroup>]
+      required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::PropertyGroup] }
 
       # @!method initialize(results:)
-      #   @param results [Array<HubspotSDK::Models::PropertyGroup>]
+      #   @param results [Array<HubSpotSDK::Models::PropertyGroup>]
     end
   end
 end

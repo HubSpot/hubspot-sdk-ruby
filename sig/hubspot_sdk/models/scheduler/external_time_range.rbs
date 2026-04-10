@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_time_range = { end_: Integer, start: Integer }
 
-      class ExternalTimeRange < HubspotSDK::Internal::Type::BaseModel
+      class ExternalTimeRange < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor end_: Integer
 
         attr_accessor start: Integer

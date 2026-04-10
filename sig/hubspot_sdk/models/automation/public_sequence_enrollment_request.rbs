@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type public_sequence_enrollment_request =
@@ -9,7 +9,7 @@ module HubspotSDK
           sender_alias_address: String
         }
 
-      class PublicSequenceEnrollmentRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicSequenceEnrollmentRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor contact_id: String
 
         attr_accessor sender_email: String

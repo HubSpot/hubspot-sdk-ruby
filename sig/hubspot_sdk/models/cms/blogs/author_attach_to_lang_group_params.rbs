@@ -1,17 +1,17 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
         type author_attach_to_lang_group_params =
-          {  } & HubspotSDK::Internal::Type::request_parameters
+          {  } & HubSpotSDK::Internal::Type::request_parameters
 
-        class AuthorAttachToLangGroupParams < HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class AuthorAttachToLangGroupParams < HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
-          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+          def initialize: (?request_options: HubSpotSDK::request_opts) -> void
 
-          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+          def to_hash: -> { request_options: HubSpotSDK::RequestOptions }
         end
       end
     end

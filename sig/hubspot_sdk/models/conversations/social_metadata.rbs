@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type social_metadata =
         {
-          media_type: HubspotSDK::Models::Conversations::SocialMetadata::media_type,
+          media_type: HubSpotSDK::Models::Conversations::SocialMetadata::media_type,
           id: String,
           description: String,
           media_title: String,
@@ -12,8 +12,8 @@ module HubspotSDK
           thumbnail_url: String
         }
 
-      class SocialMetadata < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor media_type: HubspotSDK::Models::Conversations::SocialMetadata::media_type
+      class SocialMetadata < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor media_type: HubSpotSDK::Models::Conversations::SocialMetadata::media_type
 
         attr_reader id: String?
 
@@ -40,7 +40,7 @@ module HubspotSDK
         def thumbnail_url=: (String) -> String
 
         def initialize: (
-          media_type: HubspotSDK::Models::Conversations::SocialMetadata::media_type,
+          media_type: HubSpotSDK::Models::Conversations::SocialMetadata::media_type,
           ?id: String,
           ?description: String,
           ?media_title: String,
@@ -50,7 +50,7 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
-          media_type: HubspotSDK::Models::Conversations::SocialMetadata::media_type,
+          media_type: HubSpotSDK::Models::Conversations::SocialMetadata::media_type,
           id: String,
           description: String,
           media_title: String,
@@ -73,7 +73,7 @@ module HubspotSDK
           | :VIDEO
 
         module MediaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ARTICLE: :ARTICLE
           AUDIO: :AUDIO
@@ -87,7 +87,7 @@ module HubspotSDK
           STORY: :STORY
           VIDEO: :VIDEO
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::SocialMetadata::media_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Conversations::SocialMetadata::media_type]
         end
       end
     end

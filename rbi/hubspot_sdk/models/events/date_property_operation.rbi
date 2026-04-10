@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class DatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class DatePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::DatePropertyOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::DatePropertyOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
+            HubSpotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
           )
         end
         attr_accessor :month
@@ -30,7 +30,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::DatePropertyOperation::Operator::TaggedSymbol
+            HubSpotSDK::Events::DatePropertyOperation::Operator::TaggedSymbol
           )
         end
         attr_accessor :operator
@@ -40,7 +40,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::DatePropertyOperation::PropertyType::TaggedSymbol
+            HubSpotSDK::Events::DatePropertyOperation::PropertyType::TaggedSymbol
           )
         end
         attr_accessor :property_type
@@ -64,13 +64,13 @@ module HubspotSDK
           params(
             day: Integer,
             include_objects_with_no_value_set: T::Boolean,
-            month: HubspotSDK::Events::DatePropertyOperation::Month::OrSymbol,
+            month: HubSpotSDK::Events::DatePropertyOperation::Month::OrSymbol,
             operation_type: String,
             operator:
-              HubspotSDK::Events::DatePropertyOperation::Operator::OrSymbol,
+              HubSpotSDK::Events::DatePropertyOperation::Operator::OrSymbol,
             operator_name: String,
             property_type:
-              HubspotSDK::Events::DatePropertyOperation::PropertyType::OrSymbol,
+              HubSpotSDK::Events::DatePropertyOperation::PropertyType::OrSymbol,
             year: Integer,
             default_value: String,
             render_spec: String
@@ -96,13 +96,13 @@ module HubspotSDK
               day: Integer,
               include_objects_with_no_value_set: T::Boolean,
               month:
-                HubspotSDK::Events::DatePropertyOperation::Month::TaggedSymbol,
+                HubSpotSDK::Events::DatePropertyOperation::Month::TaggedSymbol,
               operation_type: String,
               operator:
-                HubspotSDK::Events::DatePropertyOperation::Operator::TaggedSymbol,
+                HubSpotSDK::Events::DatePropertyOperation::Operator::TaggedSymbol,
               operator_name: String,
               property_type:
-                HubspotSDK::Events::DatePropertyOperation::PropertyType::TaggedSymbol,
+                HubSpotSDK::Events::DatePropertyOperation::PropertyType::TaggedSymbol,
               year: Integer,
               default_value: String,
               render_spec: String
@@ -113,79 +113,79 @@ module HubspotSDK
         end
 
         module Month
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Events::DatePropertyOperation::Month)
+              T.all(Symbol, HubSpotSDK::Events::DatePropertyOperation::Month)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           APR =
             T.let(
               :APR,
-              HubspotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
+              HubSpotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
             )
           AUG =
             T.let(
               :AUG,
-              HubspotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
+              HubSpotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
             )
           DEC =
             T.let(
               :DEC,
-              HubspotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
+              HubSpotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
             )
           FEB =
             T.let(
               :FEB,
-              HubspotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
+              HubSpotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
             )
           JAN =
             T.let(
               :JAN,
-              HubspotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
+              HubSpotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
             )
           JUL =
             T.let(
               :JUL,
-              HubspotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
+              HubSpotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
             )
           JUN =
             T.let(
               :JUN,
-              HubspotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
+              HubSpotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
             )
           MAR =
             T.let(
               :MAR,
-              HubspotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
+              HubSpotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
             )
           MAY =
             T.let(
               :MAY,
-              HubspotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
+              HubSpotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
             )
           NOV =
             T.let(
               :NOV,
-              HubspotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
+              HubSpotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
             )
           OCT =
             T.let(
               :OCT,
-              HubspotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
+              HubSpotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
             )
           SEP =
             T.let(
               :SEP,
-              HubspotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
+              HubSpotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
+                HubSpotSDK::Events::DatePropertyOperation::Month::TaggedSymbol
               ]
             )
           end
@@ -194,34 +194,34 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Events::DatePropertyOperation::Operator)
+              T.all(Symbol, HubSpotSDK::Events::DatePropertyOperation::Operator)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           AFTER =
             T.let(
               :AFTER,
-              HubspotSDK::Events::DatePropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::DatePropertyOperation::Operator::TaggedSymbol
             )
           BEFORE =
             T.let(
               :BEFORE,
-              HubspotSDK::Events::DatePropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::DatePropertyOperation::Operator::TaggedSymbol
             )
           EQUAL =
             T.let(
               :EQUAL,
-              HubspotSDK::Events::DatePropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::DatePropertyOperation::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::DatePropertyOperation::Operator::TaggedSymbol
+                HubSpotSDK::Events::DatePropertyOperation::Operator::TaggedSymbol
               ]
             )
           end
@@ -230,13 +230,13 @@ module HubspotSDK
         end
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::DatePropertyOperation::PropertyType
+                HubSpotSDK::Events::DatePropertyOperation::PropertyType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -244,13 +244,13 @@ module HubspotSDK
           DATE =
             T.let(
               :date,
-              HubspotSDK::Events::DatePropertyOperation::PropertyType::TaggedSymbol
+              HubSpotSDK::Events::DatePropertyOperation::PropertyType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::DatePropertyOperation::PropertyType::TaggedSymbol
+                HubSpotSDK::Events::DatePropertyOperation::PropertyType::TaggedSymbol
               ]
             )
           end

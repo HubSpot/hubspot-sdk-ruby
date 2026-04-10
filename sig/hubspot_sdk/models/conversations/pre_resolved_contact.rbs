@@ -1,24 +1,24 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type pre_resolved_contact =
         {
-          contact_properties_leading_to_match: ::Array[HubspotSDK::Models::Conversations::PreResolvedContact::contact_properties_leading_to_match],
+          contact_properties_leading_to_match: ::Array[HubSpotSDK::Models::Conversations::PreResolvedContact::contact_properties_leading_to_match],
           contact_vid: Integer
         }
 
-      class PreResolvedContact < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor contact_properties_leading_to_match: ::Array[HubspotSDK::Models::Conversations::PreResolvedContact::contact_properties_leading_to_match]
+      class PreResolvedContact < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor contact_properties_leading_to_match: ::Array[HubSpotSDK::Models::Conversations::PreResolvedContact::contact_properties_leading_to_match]
 
         attr_accessor contact_vid: Integer
 
         def initialize: (
-          contact_properties_leading_to_match: ::Array[HubspotSDK::Models::Conversations::PreResolvedContact::contact_properties_leading_to_match],
+          contact_properties_leading_to_match: ::Array[HubSpotSDK::Models::Conversations::PreResolvedContact::contact_properties_leading_to_match],
           contact_vid: Integer
         ) -> void
 
         def to_hash: -> {
-          contact_properties_leading_to_match: ::Array[HubspotSDK::Models::Conversations::PreResolvedContact::contact_properties_leading_to_match],
+          contact_properties_leading_to_match: ::Array[HubSpotSDK::Models::Conversations::PreResolvedContact::contact_properties_leading_to_match],
           contact_vid: Integer
         }
 
@@ -403,7 +403,7 @@ module HubspotSDK
           | :zip
 
         module ContactPropertiesLeadingToMatch
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ADDRESS: :address
           ANNUALREVENUE: :annualrevenue
@@ -784,7 +784,7 @@ module HubspotSDK
           WORK_EMAIL: :work_email
           ZIP: :zip
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PreResolvedContact::contact_properties_leading_to_match]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Conversations::PreResolvedContact::contact_properties_leading_to_match]
         end
       end
     end

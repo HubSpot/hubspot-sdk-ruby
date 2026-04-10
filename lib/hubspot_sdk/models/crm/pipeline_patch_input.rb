@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PipelinePatchInput < HubspotSDK::Internal::Type::BaseModel
+      class PipelinePatchInput < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute archived
         #   Whether the pipeline is archived. This property should only be provided when
         #   restoring an archived pipeline. If it's provided in any other call, the request
         #   will fail and a `400 Bad Request` will be returned.
         #
         #   @return [Boolean, nil]
-        optional :archived, HubspotSDK::Internal::Type::Boolean
+        optional :archived, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute display_order
         #   The order for displaying this pipeline. If two pipelines have a matching
@@ -27,7 +27,7 @@ module HubspotSDK
 
         # @!method initialize(archived: nil, display_order: nil, label: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PipelinePatchInput} for more details.
+        #   {HubSpotSDK::Models::Crm::PipelinePatchInput} for more details.
         #
         #   @param archived [Boolean] Whether the pipeline is archived. This property should only be provided when res
         #

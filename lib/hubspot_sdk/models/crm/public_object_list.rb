@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicObjectList < HubspotSDK::Internal::Type::BaseModel
+      class PublicObjectList < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute list_id
         #   The **ILS ID** of the list.
         #
@@ -62,9 +62,9 @@ module HubspotSDK
         #   Defines the filter criteria for the list, allowing for complex logical
         #   operations and nested filter branches to determine list membership.
         #
-        #   @return [HubspotSDK::Models::Crm::PublicOrFilterBranch, HubspotSDK::Models::Crm::PublicAndFilterBranch, HubspotSDK::Models::Crm::PublicNotAllFilterBranch, HubspotSDK::Models::Crm::PublicNotAnyFilterBranch, HubspotSDK::Models::Crm::PublicRestrictedFilterBranch, HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch, HubspotSDK::Models::Crm::PublicPropertyAssociationFilterBranch, HubspotSDK::Models::Crm::PublicAssociationFilterBranch, nil]
+        #   @return [HubSpotSDK::Models::Crm::PublicOrFilterBranch, HubSpotSDK::Models::Crm::PublicAndFilterBranch, HubSpotSDK::Models::Crm::PublicNotAllFilterBranch, HubSpotSDK::Models::Crm::PublicNotAnyFilterBranch, HubSpotSDK::Models::Crm::PublicRestrictedFilterBranch, HubSpotSDK::Models::Crm::PublicUnifiedEventsFilterBranch, HubSpotSDK::Models::Crm::PublicPropertyAssociationFilterBranch, HubSpotSDK::Models::Crm::PublicAssociationFilterBranch, nil]
         optional :filter_branch,
-                 union: -> { HubspotSDK::Crm::PublicObjectList::FilterBranch },
+                 union: -> { HubSpotSDK::Crm::PublicObjectList::FilterBranch },
                  api_name: :filterBranch
 
         # @!attribute filters_updated_at
@@ -75,14 +75,14 @@ module HubspotSDK
 
         # @!attribute list_permissions
         #
-        #   @return [HubspotSDK::Models::Crm::PublicListPermissions, nil]
-        optional :list_permissions, -> { HubspotSDK::Crm::PublicListPermissions }, api_name: :listPermissions
+        #   @return [HubSpotSDK::Models::Crm::PublicListPermissions, nil]
+        optional :list_permissions, -> { HubSpotSDK::Crm::PublicListPermissions }, api_name: :listPermissions
 
         # @!attribute membership_settings
         #
-        #   @return [HubspotSDK::Models::Crm::PublicMembershipSettings, nil]
+        #   @return [HubSpotSDK::Models::Crm::PublicMembershipSettings, nil]
         optional :membership_settings,
-                 -> { HubspotSDK::Crm::PublicMembershipSettings },
+                 -> { HubSpotSDK::Crm::PublicMembershipSettings },
                  api_name: :membershipSettings
 
         # @!attribute size
@@ -105,7 +105,7 @@ module HubspotSDK
 
         # @!method initialize(list_id:, list_version:, name:, object_type_id:, processing_status:, processing_type:, created_at: nil, created_by_id: nil, deleted_at: nil, filter_branch: nil, filters_updated_at: nil, list_permissions: nil, membership_settings: nil, size: nil, updated_at: nil, updated_by_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicObjectList} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicObjectList} for more details.
         #
         #   @param list_id [String] The **ILS ID** of the list.
         #
@@ -125,13 +125,13 @@ module HubspotSDK
         #
         #   @param deleted_at [Time] The time when the list was deleted.
         #
-        #   @param filter_branch [HubspotSDK::Models::Crm::PublicOrFilterBranch, HubspotSDK::Models::Crm::PublicAndFilterBranch, HubspotSDK::Models::Crm::PublicNotAllFilterBranch, HubspotSDK::Models::Crm::PublicNotAnyFilterBranch, HubspotSDK::Models::Crm::PublicRestrictedFilterBranch, HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch, HubspotSDK::Models::Crm::PublicPropertyAssociationFilterBranch, HubspotSDK::Models::Crm::PublicAssociationFilterBranch] Defines the filter criteria for the list, allowing for complex logical operation
+        #   @param filter_branch [HubSpotSDK::Models::Crm::PublicOrFilterBranch, HubSpotSDK::Models::Crm::PublicAndFilterBranch, HubSpotSDK::Models::Crm::PublicNotAllFilterBranch, HubSpotSDK::Models::Crm::PublicNotAnyFilterBranch, HubSpotSDK::Models::Crm::PublicRestrictedFilterBranch, HubSpotSDK::Models::Crm::PublicUnifiedEventsFilterBranch, HubSpotSDK::Models::Crm::PublicPropertyAssociationFilterBranch, HubSpotSDK::Models::Crm::PublicAssociationFilterBranch] Defines the filter criteria for the list, allowing for complex logical operation
         #
         #   @param filters_updated_at [Time] The time when the filters for this list were last updated.
         #
-        #   @param list_permissions [HubspotSDK::Models::Crm::PublicListPermissions]
+        #   @param list_permissions [HubSpotSDK::Models::Crm::PublicListPermissions]
         #
-        #   @param membership_settings [HubspotSDK::Models::Crm::PublicMembershipSettings]
+        #   @param membership_settings [HubSpotSDK::Models::Crm::PublicMembershipSettings]
         #
         #   @param size [Integer] Size of the list
         #
@@ -142,30 +142,30 @@ module HubspotSDK
         # Defines the filter criteria for the list, allowing for complex logical
         # operations and nested filter branches to determine list membership.
         #
-        # @see HubspotSDK::Models::Crm::PublicObjectList#filter_branch
+        # @see HubSpotSDK::Models::Crm::PublicObjectList#filter_branch
         module FilterBranch
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           discriminator :filterBranchType
 
-          variant :OR, -> { HubspotSDK::Crm::PublicOrFilterBranch }
+          variant :OR, -> { HubSpotSDK::Crm::PublicOrFilterBranch }
 
-          variant :AND, -> { HubspotSDK::Crm::PublicAndFilterBranch }
+          variant :AND, -> { HubSpotSDK::Crm::PublicAndFilterBranch }
 
-          variant :NOT_ALL, -> { HubspotSDK::Crm::PublicNotAllFilterBranch }
+          variant :NOT_ALL, -> { HubSpotSDK::Crm::PublicNotAllFilterBranch }
 
-          variant :NOT_ANY, -> { HubspotSDK::Crm::PublicNotAnyFilterBranch }
+          variant :NOT_ANY, -> { HubSpotSDK::Crm::PublicNotAnyFilterBranch }
 
-          variant :RESTRICTED, -> { HubspotSDK::Crm::PublicRestrictedFilterBranch }
+          variant :RESTRICTED, -> { HubSpotSDK::Crm::PublicRestrictedFilterBranch }
 
-          variant :UNIFIED_EVENTS, -> { HubspotSDK::Crm::PublicUnifiedEventsFilterBranch }
+          variant :UNIFIED_EVENTS, -> { HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch }
 
-          variant :PROPERTY_ASSOCIATION, -> { HubspotSDK::Crm::PublicPropertyAssociationFilterBranch }
+          variant :PROPERTY_ASSOCIATION, -> { HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch }
 
-          variant :ASSOCIATION, -> { HubspotSDK::Crm::PublicAssociationFilterBranch }
+          variant :ASSOCIATION, -> { HubSpotSDK::Crm::PublicAssociationFilterBranch }
 
           # @!method self.variants
-          #   @return [Array(HubspotSDK::Models::Crm::PublicOrFilterBranch, HubspotSDK::Models::Crm::PublicAndFilterBranch, HubspotSDK::Models::Crm::PublicNotAllFilterBranch, HubspotSDK::Models::Crm::PublicNotAnyFilterBranch, HubspotSDK::Models::Crm::PublicRestrictedFilterBranch, HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch, HubspotSDK::Models::Crm::PublicPropertyAssociationFilterBranch, HubspotSDK::Models::Crm::PublicAssociationFilterBranch)]
+          #   @return [Array(HubSpotSDK::Models::Crm::PublicOrFilterBranch, HubSpotSDK::Models::Crm::PublicAndFilterBranch, HubSpotSDK::Models::Crm::PublicNotAllFilterBranch, HubSpotSDK::Models::Crm::PublicNotAnyFilterBranch, HubSpotSDK::Models::Crm::PublicRestrictedFilterBranch, HubSpotSDK::Models::Crm::PublicUnifiedEventsFilterBranch, HubSpotSDK::Models::Crm::PublicPropertyAssociationFilterBranch, HubSpotSDK::Models::Crm::PublicAssociationFilterBranch)]
         end
       end
     end

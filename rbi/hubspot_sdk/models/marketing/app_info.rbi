@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class AppInfo < HubspotSDK::Internal::Type::BaseModel
+      class AppInfo < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Marketing::AppInfo, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Marketing::AppInfo, HubSpotSDK::Internal::AnyHash)
           end
 
         # The ID of the application

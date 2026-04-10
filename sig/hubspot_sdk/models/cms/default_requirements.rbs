@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type default_requirements =
         {
           gates: ::Array[String],
-          operator: HubspotSDK::Models::Cms::DefaultRequirements::operator,
+          operator: HubSpotSDK::Models::Cms::DefaultRequirements::operator,
           scope_names: ::Array[String],
           settings: ::Array[String]
         }
 
-      class DefaultRequirements < HubspotSDK::Internal::Type::BaseModel
+      class DefaultRequirements < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor gates: ::Array[String]
 
-        attr_accessor operator: HubspotSDK::Models::Cms::DefaultRequirements::operator
+        attr_accessor operator: HubSpotSDK::Models::Cms::DefaultRequirements::operator
 
         attr_accessor scope_names: ::Array[String]
 
@@ -20,14 +20,14 @@ module HubspotSDK
 
         def initialize: (
           gates: ::Array[String],
-          operator: HubspotSDK::Models::Cms::DefaultRequirements::operator,
+          operator: HubSpotSDK::Models::Cms::DefaultRequirements::operator,
           scope_names: ::Array[String],
           settings: ::Array[String]
         ) -> void
 
         def to_hash: -> {
           gates: ::Array[String],
-          operator: HubspotSDK::Models::Cms::DefaultRequirements::operator,
+          operator: HubSpotSDK::Models::Cms::DefaultRequirements::operator,
           scope_names: ::Array[String],
           settings: ::Array[String]
         }
@@ -35,12 +35,12 @@ module HubspotSDK
         type operator = :AND | :OR
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AND: :AND
           OR: :OR
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::DefaultRequirements::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::DefaultRequirements::operator]
         end
       end
     end

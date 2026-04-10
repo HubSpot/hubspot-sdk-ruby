@@ -1,20 +1,20 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type property =
         {
-          allowed_object_types: ::Array[HubspotSDK::Cms::ObjectTypeIDProto],
+          allowed_object_types: ::Array[HubSpotSDK::Cms::ObjectTypeIDProto],
           calculated: bool,
           can_archive: bool,
           can_restore: bool,
           created_at: Integer,
           created_user_id: Integer,
           currency_property_name: String,
-          data_sensitivity: HubspotSDK::Models::Cms::Property::data_sensitivity,
-          date_display_hint: HubspotSDK::Models::Cms::Property::date_display_hint,
+          data_sensitivity: HubSpotSDK::Models::Cms::Property::data_sensitivity,
+          date_display_hint: HubSpotSDK::Models::Cms::Property::date_display_hint,
           deleted: bool,
           description: String,
-          display_mode: HubspotSDK::Models::Cms::Property::display_mode,
+          display_mode: HubSpotSDK::Models::Cms::Property::display_mode,
           display_order: Integer,
           enforce_multivalue_uniqueness: bool,
           external_options: bool,
@@ -34,26 +34,26 @@ module HubspotSDK
           label: String,
           mutable_definition_not_deletable: bool,
           name: String,
-          number_display_hint: HubspotSDK::Models::Cms::Property::number_display_hint,
-          options: ::Array[HubspotSDK::AutomationActionsOption],
+          number_display_hint: HubSpotSDK::Models::Cms::Property::number_display_hint,
+          options: ::Array[HubSpotSDK::AutomationActionsOption],
           options_are_mutable: bool,
-          option_sort_strategy: HubspotSDK::Models::Cms::Property::option_sort_strategy,
+          option_sort_strategy: HubSpotSDK::Models::Cms::Property::option_sort_strategy,
           owning_app_id: Integer,
           portal_id: Integer,
           read_only_definition: bool,
           read_only_value: bool,
-          referenced_object_type: HubspotSDK::Models::Cms::Property::referenced_object_type,
+          referenced_object_type: HubSpotSDK::Models::Cms::Property::referenced_object_type,
           searchable_in_global_search: bool,
-          search_text_analysis_mode: HubspotSDK::Models::Cms::Property::search_text_analysis_mode,
+          search_text_analysis_mode: HubSpotSDK::Models::Cms::Property::search_text_analysis_mode,
           sensitive_data_categories: ::Array[String],
           show_currency_symbol: bool,
-          text_display_hint: HubspotSDK::Models::Cms::Property::text_display_hint,
-          type: HubspotSDK::Models::Cms::Property::type_,
+          text_display_hint: HubSpotSDK::Models::Cms::Property::text_display_hint,
+          type: HubSpotSDK::Models::Cms::Property::type_,
           updated_at: Integer
         }
 
-      class Property < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor allowed_object_types: ::Array[HubspotSDK::Cms::ObjectTypeIDProto]
+      class Property < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor allowed_object_types: ::Array[HubSpotSDK::Cms::ObjectTypeIDProto]
 
         attr_accessor calculated: bool
 
@@ -67,15 +67,15 @@ module HubspotSDK
 
         attr_accessor currency_property_name: String
 
-        attr_accessor data_sensitivity: HubspotSDK::Models::Cms::Property::data_sensitivity
+        attr_accessor data_sensitivity: HubSpotSDK::Models::Cms::Property::data_sensitivity
 
-        attr_accessor date_display_hint: HubspotSDK::Models::Cms::Property::date_display_hint
+        attr_accessor date_display_hint: HubSpotSDK::Models::Cms::Property::date_display_hint
 
         attr_accessor deleted: bool
 
         attr_accessor description: String
 
-        attr_accessor display_mode: HubspotSDK::Models::Cms::Property::display_mode
+        attr_accessor display_mode: HubSpotSDK::Models::Cms::Property::display_mode
 
         attr_accessor display_order: Integer
 
@@ -115,13 +115,13 @@ module HubspotSDK
 
         attr_accessor name: String
 
-        attr_accessor number_display_hint: HubspotSDK::Models::Cms::Property::number_display_hint
+        attr_accessor number_display_hint: HubSpotSDK::Models::Cms::Property::number_display_hint
 
-        attr_accessor options: ::Array[HubspotSDK::AutomationActionsOption]
+        attr_accessor options: ::Array[HubSpotSDK::AutomationActionsOption]
 
         attr_accessor options_are_mutable: bool
 
-        attr_accessor option_sort_strategy: HubspotSDK::Models::Cms::Property::option_sort_strategy
+        attr_accessor option_sort_strategy: HubSpotSDK::Models::Cms::Property::option_sort_strategy
 
         attr_accessor owning_app_id: Integer
 
@@ -131,35 +131,35 @@ module HubspotSDK
 
         attr_accessor read_only_value: bool
 
-        attr_accessor referenced_object_type: HubspotSDK::Models::Cms::Property::referenced_object_type
+        attr_accessor referenced_object_type: HubSpotSDK::Models::Cms::Property::referenced_object_type
 
         attr_accessor searchable_in_global_search: bool
 
-        attr_accessor search_text_analysis_mode: HubspotSDK::Models::Cms::Property::search_text_analysis_mode
+        attr_accessor search_text_analysis_mode: HubSpotSDK::Models::Cms::Property::search_text_analysis_mode
 
         attr_accessor sensitive_data_categories: ::Array[String]
 
         attr_accessor show_currency_symbol: bool
 
-        attr_accessor text_display_hint: HubspotSDK::Models::Cms::Property::text_display_hint
+        attr_accessor text_display_hint: HubSpotSDK::Models::Cms::Property::text_display_hint
 
-        attr_accessor type: HubspotSDK::Models::Cms::Property::type_
+        attr_accessor type: HubSpotSDK::Models::Cms::Property::type_
 
         attr_accessor updated_at: Integer
 
         def initialize: (
-          allowed_object_types: ::Array[HubspotSDK::Cms::ObjectTypeIDProto],
+          allowed_object_types: ::Array[HubSpotSDK::Cms::ObjectTypeIDProto],
           calculated: bool,
           can_archive: bool,
           can_restore: bool,
           created_at: Integer,
           created_user_id: Integer,
           currency_property_name: String,
-          data_sensitivity: HubspotSDK::Models::Cms::Property::data_sensitivity,
-          date_display_hint: HubspotSDK::Models::Cms::Property::date_display_hint,
+          data_sensitivity: HubSpotSDK::Models::Cms::Property::data_sensitivity,
+          date_display_hint: HubSpotSDK::Models::Cms::Property::date_display_hint,
           deleted: bool,
           description: String,
-          display_mode: HubspotSDK::Models::Cms::Property::display_mode,
+          display_mode: HubSpotSDK::Models::Cms::Property::display_mode,
           display_order: Integer,
           enforce_multivalue_uniqueness: bool,
           external_options: bool,
@@ -179,37 +179,37 @@ module HubspotSDK
           label: String,
           mutable_definition_not_deletable: bool,
           name: String,
-          number_display_hint: HubspotSDK::Models::Cms::Property::number_display_hint,
-          options: ::Array[HubspotSDK::AutomationActionsOption],
+          number_display_hint: HubSpotSDK::Models::Cms::Property::number_display_hint,
+          options: ::Array[HubSpotSDK::AutomationActionsOption],
           options_are_mutable: bool,
-          option_sort_strategy: HubspotSDK::Models::Cms::Property::option_sort_strategy,
+          option_sort_strategy: HubSpotSDK::Models::Cms::Property::option_sort_strategy,
           owning_app_id: Integer,
           portal_id: Integer,
           read_only_definition: bool,
           read_only_value: bool,
-          referenced_object_type: HubspotSDK::Models::Cms::Property::referenced_object_type,
+          referenced_object_type: HubSpotSDK::Models::Cms::Property::referenced_object_type,
           searchable_in_global_search: bool,
-          search_text_analysis_mode: HubspotSDK::Models::Cms::Property::search_text_analysis_mode,
+          search_text_analysis_mode: HubSpotSDK::Models::Cms::Property::search_text_analysis_mode,
           sensitive_data_categories: ::Array[String],
           show_currency_symbol: bool,
-          text_display_hint: HubspotSDK::Models::Cms::Property::text_display_hint,
-          type: HubspotSDK::Models::Cms::Property::type_,
+          text_display_hint: HubSpotSDK::Models::Cms::Property::text_display_hint,
+          type: HubSpotSDK::Models::Cms::Property::type_,
           updated_at: Integer
         ) -> void
 
         def to_hash: -> {
-          allowed_object_types: ::Array[HubspotSDK::Cms::ObjectTypeIDProto],
+          allowed_object_types: ::Array[HubSpotSDK::Cms::ObjectTypeIDProto],
           calculated: bool,
           can_archive: bool,
           can_restore: bool,
           created_at: Integer,
           created_user_id: Integer,
           currency_property_name: String,
-          data_sensitivity: HubspotSDK::Models::Cms::Property::data_sensitivity,
-          date_display_hint: HubspotSDK::Models::Cms::Property::date_display_hint,
+          data_sensitivity: HubSpotSDK::Models::Cms::Property::data_sensitivity,
+          date_display_hint: HubSpotSDK::Models::Cms::Property::date_display_hint,
           deleted: bool,
           description: String,
-          display_mode: HubspotSDK::Models::Cms::Property::display_mode,
+          display_mode: HubSpotSDK::Models::Cms::Property::display_mode,
           display_order: Integer,
           enforce_multivalue_uniqueness: bool,
           external_options: bool,
@@ -229,59 +229,59 @@ module HubspotSDK
           label: String,
           mutable_definition_not_deletable: bool,
           name: String,
-          number_display_hint: HubspotSDK::Models::Cms::Property::number_display_hint,
-          options: ::Array[HubspotSDK::AutomationActionsOption],
+          number_display_hint: HubSpotSDK::Models::Cms::Property::number_display_hint,
+          options: ::Array[HubSpotSDK::AutomationActionsOption],
           options_are_mutable: bool,
-          option_sort_strategy: HubspotSDK::Models::Cms::Property::option_sort_strategy,
+          option_sort_strategy: HubSpotSDK::Models::Cms::Property::option_sort_strategy,
           owning_app_id: Integer,
           portal_id: Integer,
           read_only_definition: bool,
           read_only_value: bool,
-          referenced_object_type: HubspotSDK::Models::Cms::Property::referenced_object_type,
+          referenced_object_type: HubSpotSDK::Models::Cms::Property::referenced_object_type,
           searchable_in_global_search: bool,
-          search_text_analysis_mode: HubspotSDK::Models::Cms::Property::search_text_analysis_mode,
+          search_text_analysis_mode: HubSpotSDK::Models::Cms::Property::search_text_analysis_mode,
           sensitive_data_categories: ::Array[String],
           show_currency_symbol: bool,
-          text_display_hint: HubspotSDK::Models::Cms::Property::text_display_hint,
-          type: HubspotSDK::Models::Cms::Property::type_,
+          text_display_hint: HubSpotSDK::Models::Cms::Property::text_display_hint,
+          type: HubSpotSDK::Models::Cms::Property::type_,
           updated_at: Integer
         }
 
         type data_sensitivity = :high | :none | :standard
 
         module DataSensitivity
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HIGH: :high
           NONE: :none
           STANDARD: :standard
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::Property::data_sensitivity]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Property::data_sensitivity]
         end
 
         type date_display_hint =
           :absolute | :absolute_with_relative | :time_since | :time_until
 
         module DateDisplayHint
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABSOLUTE: :absolute
           ABSOLUTE_WITH_RELATIVE: :absolute_with_relative
           TIME_SINCE: :time_since
           TIME_UNTIL: :time_until
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::Property::date_display_hint]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Property::date_display_hint]
         end
 
         type display_mode = :all_unique_versions | :current_value
 
         module DisplayMode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ALL_UNIQUE_VERSIONS: :all_unique_versions
           CURRENT_VALUE: :current_value
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::Property::display_mode]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Property::display_mode]
         end
 
         type number_display_hint =
@@ -293,7 +293,7 @@ module HubspotSDK
           | :unformatted
 
         module NumberDisplayHint
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CURRENCY: :currency
           DURATION: :duration
@@ -302,18 +302,18 @@ module HubspotSDK
           PROBABILITY: :probability
           UNFORMATTED: :unformatted
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::Property::number_display_hint]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Property::number_display_hint]
         end
 
         type option_sort_strategy = :ALPHABETICAL | :DISPLAY_ORDER
 
         module OptionSortStrategy
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ALPHABETICAL: :ALPHABETICAL
           DISPLAY_ORDER: :DISPLAY_ORDER
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::Property::option_sort_strategy]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Property::option_sort_strategy]
         end
 
         type referenced_object_type =
@@ -480,7 +480,7 @@ module HubspotSDK
           | :WEB_INTERACTIVE
 
         module ReferencedObjectType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABANDONED_CART: :ABANDONED_CART
           ACCEPTANCE_TEST: :ACCEPTANCE_TEST
@@ -644,18 +644,18 @@ module HubspotSDK
           VIEW_BLOCK: :VIEW_BLOCK
           WEB_INTERACTIVE: :WEB_INTERACTIVE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::Property::referenced_object_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Property::referenced_object_type]
         end
 
         type search_text_analysis_mode = :NONE | :NOT_ANALYZED_TEXT
 
         module SearchTextAnalysisMode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NONE: :NONE
           NOT_ANALYZED_TEXT: :NOT_ANALYZED_TEXT
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::Property::search_text_analysis_mode]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Property::search_text_analysis_mode]
         end
 
         type text_display_hint =
@@ -669,7 +669,7 @@ module HubspotSDK
           | :unformatted_single_line
 
         module TextDisplayHint
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DOMAIN_NAME: :domain_name
           EMAIL: :email
@@ -680,7 +680,7 @@ module HubspotSDK
           POSTAL_CODE: :postal_code
           UNFORMATTED_SINGLE_LINE: :unformatted_single_line
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::Property::text_display_hint]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Property::text_display_hint]
         end
 
         type type_ =
@@ -696,7 +696,7 @@ module HubspotSDK
           | :string
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOL: :bool
           CURRENCY_NUMBER: :currency_number
@@ -709,7 +709,7 @@ module HubspotSDK
           PHONE_NUMBER: :phone_number
           STRING: :string
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::Property::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Property::type_]
         end
       end
     end

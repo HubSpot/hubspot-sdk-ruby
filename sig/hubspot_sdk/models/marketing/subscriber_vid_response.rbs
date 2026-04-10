@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type subscriber_vid_response = { vid: Integer }
 
-      class SubscriberVidResponse < HubspotSDK::Internal::Type::BaseModel
+      class SubscriberVidResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor vid: Integer
 
         def initialize: (vid: Integer) -> void

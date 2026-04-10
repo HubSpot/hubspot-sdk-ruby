@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Objects
         class PartnerClients
-          # @return [HubspotSDK::Resources::Crm::Objects::PartnerClients::Batch]
+          # @return [HubSpotSDK::Resources::Crm::Objects::PartnerClients::Batch]
           attr_reader :batch
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Objects::PartnerClientUpdateParams} for more details.
+          # {HubSpotSDK::Models::Crm::Objects::PartnerClientUpdateParams} for more details.
           #
           # Update the specified properties of an existing partner client.
           #
@@ -21,27 +21,27 @@ module HubspotSDK
           #
           # @param id_property [String] Query param: The name of a property whose values are unique for this object type
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
+          # @return [HubSpotSDK::Models::Crm::SimplePublicObject]
           #
-          # @see HubspotSDK::Models::Crm::Objects::PartnerClientUpdateParams
+          # @see HubSpotSDK::Models::Crm::Objects::PartnerClientUpdateParams
           def update(partner_client_id, params)
             query_params = [:id_property]
-            parsed, options = HubspotSDK::Crm::Objects::PartnerClientUpdateParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            parsed, options = HubSpotSDK::Crm::Objects::PartnerClientUpdateParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
               method: :patch,
               path: ["crm/objects/2026-03/partner_clients/%1$s", partner_client_id],
               query: query.transform_keys(id_property: "idProperty"),
               body: parsed.except(*query_params),
-              model: HubspotSDK::Crm::SimplePublicObject,
+              model: HubSpotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Objects::PartnerClientListParams} for more details.
+          # {HubSpotSDK::Models::Crm::Objects::PartnerClientListParams} for more details.
           #
           # Retrieve a list of partner clients with optional filtering by deleted status,
           # associations, and specific properties. The response can be paginated using the
@@ -61,26 +61,26 @@ module HubspotSDK
           #
           # @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
+          # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
           #
-          # @see HubspotSDK::Models::Crm::Objects::PartnerClientListParams
+          # @see HubSpotSDK::Models::Crm::Objects::PartnerClientListParams
           def list(params = {})
-            parsed, options = HubspotSDK::Crm::Objects::PartnerClientListParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Crm::Objects::PartnerClientListParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "crm/objects/2026-03/partner_clients",
               query: query.transform_keys(properties_with_history: "propertiesWithHistory"),
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
+              page: HubSpotSDK::Internal::Page,
+              model: HubSpotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Objects::PartnerClientGetParams} for more details.
+          # {HubSpotSDK::Models::Crm::Objects::PartnerClientGetParams} for more details.
           #
           # Retrieve detailed information about a specific partner client, including
           # selected properties and associations. This endpoint is useful for accessing
@@ -100,14 +100,14 @@ module HubspotSDK
           #
           # @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations]
+          # @return [HubSpotSDK::Models::Crm::SimplePublicObjectWithAssociations]
           #
-          # @see HubspotSDK::Models::Crm::Objects::PartnerClientGetParams
+          # @see HubSpotSDK::Models::Crm::Objects::PartnerClientGetParams
           def get(partner_client_id, params = {})
-            parsed, options = HubspotSDK::Crm::Objects::PartnerClientGetParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Crm::Objects::PartnerClientGetParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["crm/objects/2026-03/partner_clients/%1$s", partner_client_id],
@@ -115,13 +115,13 @@ module HubspotSDK
                 id_property: "idProperty",
                 properties_with_history: "propertiesWithHistory"
               ),
-              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
+              model: HubSpotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Objects::PartnerClientListAssociationsParams} for more
+          # {HubSpotSDK::Models::Crm::Objects::PartnerClientListAssociationsParams} for more
           # details.
           #
           # Retrieve a list of associations for a specific partner client based on the
@@ -137,14 +137,14 @@ module HubspotSDK
           #
           # @param limit [Integer] Query param: The maximum number of results to display per page.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::MultiAssociatedObjectWithLabel>]
+          # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Crm::MultiAssociatedObjectWithLabel>]
           #
-          # @see HubspotSDK::Models::Crm::Objects::PartnerClientListAssociationsParams
+          # @see HubSpotSDK::Models::Crm::Objects::PartnerClientListAssociationsParams
           def list_associations(to_object_type, params)
-            parsed, options = HubspotSDK::Crm::Objects::PartnerClientListAssociationsParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Crm::Objects::PartnerClientListAssociationsParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             partner_client_id =
               parsed.delete(:partner_client_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -157,8 +157,8 @@ module HubspotSDK
                 to_object_type
               ],
               query: query,
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Crm::MultiAssociatedObjectWithLabel,
+              page: HubSpotSDK::Internal::Page,
+              model: HubSpotSDK::Crm::MultiAssociatedObjectWithLabel,
               options: options
             )
           end
@@ -172,7 +172,7 @@ module HubspotSDK
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.
           #
-          # @param filter_groups [Array<HubspotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
+          # @param filter_groups [Array<HubSpotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
           #
           # @param limit [Integer] The maximum results to return, up to 200 objects.
           #
@@ -182,28 +182,28 @@ module HubspotSDK
           #
           # @param query [String] The search query string, up to 3000 characters.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
+          # @return [HubSpotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
           #
-          # @see HubspotSDK::Models::Crm::Objects::PartnerClientSearchParams
+          # @see HubSpotSDK::Models::Crm::Objects::PartnerClientSearchParams
           def search(params)
-            parsed, options = HubspotSDK::Crm::Objects::PartnerClientSearchParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Objects::PartnerClientSearchParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/objects/2026-03/partner_clients/search",
               body: parsed,
-              model: HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
+              model: HubSpotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
-            @batch = HubspotSDK::Resources::Crm::Objects::PartnerClients::Batch.new(client: client)
+            @batch = HubSpotSDK::Resources::Crm::Objects::PartnerClients::Batch.new(client: client)
           end
         end
       end

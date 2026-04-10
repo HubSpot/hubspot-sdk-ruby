@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::Properties::BatchTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::Properties::BatchTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
@@ -21,16 +21,16 @@ class HubspotSDK::Test::Resources::Crm::Properties::BatchTest < HubspotSDK::Test
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::BatchResponseProperty
+      response => HubSpotSDK::Crm::BatchResponseProperty
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Property]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::Property]),
         started_at: Time,
-        status: HubspotSDK::Crm::BatchResponseProperty::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Crm::BatchResponseProperty::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -58,16 +58,16 @@ class HubspotSDK::Test::Resources::Crm::Properties::BatchTest < HubspotSDK::Test
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::BatchResponseProperty
+      response => HubSpotSDK::Crm::BatchResponseProperty
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Property]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::Property]),
         started_at: Time,
-        status: HubspotSDK::Crm::BatchResponseProperty::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Crm::BatchResponseProperty::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end

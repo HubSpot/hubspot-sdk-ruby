@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicEmailSubscriptionFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailSubscriptionFilter < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicEmailSubscriptionFilter,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicEmailSubscriptionFilter,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -18,7 +18,7 @@ module HubspotSDK
         # Indicates the type of filter (EMAIL_SUBSCRIPTION).
         sig do
           returns(
-            HubspotSDK::Crm::PublicEmailSubscriptionFilter::FilterType::OrSymbol
+            HubSpotSDK::Crm::PublicEmailSubscriptionFilter::FilterType::OrSymbol
           )
         end
         attr_accessor :filter_type
@@ -38,7 +38,7 @@ module HubspotSDK
           params(
             accepted_statuses: T::Array[String],
             filter_type:
-              HubspotSDK::Crm::PublicEmailSubscriptionFilter::FilterType::OrSymbol,
+              HubSpotSDK::Crm::PublicEmailSubscriptionFilter::FilterType::OrSymbol,
             subscription_ids: T::Array[String],
             subscription_type: String
           ).returns(T.attached_class)
@@ -59,7 +59,7 @@ module HubspotSDK
             {
               accepted_statuses: T::Array[String],
               filter_type:
-                HubspotSDK::Crm::PublicEmailSubscriptionFilter::FilterType::OrSymbol,
+                HubSpotSDK::Crm::PublicEmailSubscriptionFilter::FilterType::OrSymbol,
               subscription_ids: T::Array[String],
               subscription_type: String
             }
@@ -70,13 +70,13 @@ module HubspotSDK
 
         # Indicates the type of filter (EMAIL_SUBSCRIPTION).
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicEmailSubscriptionFilter::FilterType
+                HubSpotSDK::Crm::PublicEmailSubscriptionFilter::FilterType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -84,13 +84,13 @@ module HubspotSDK
           EMAIL_SUBSCRIPTION =
             T.let(
               :EMAIL_SUBSCRIPTION,
-              HubspotSDK::Crm::PublicEmailSubscriptionFilter::FilterType::TaggedSymbol
+              HubSpotSDK::Crm::PublicEmailSubscriptionFilter::FilterType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicEmailSubscriptionFilter::FilterType::TaggedSymbol
+                HubSpotSDK::Crm::PublicEmailSubscriptionFilter::FilterType::TaggedSymbol
               ]
             )
           end

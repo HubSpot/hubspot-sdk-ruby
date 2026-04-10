@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicEnumerationPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicEnumerationPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicEnumerationPropertyOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicEnumerationPropertyOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
         # Specifies the type of operation (ENUMERATION).
         sig do
           returns(
-            HubspotSDK::Crm::PublicEnumerationPropertyOperation::OperationType::OrSymbol
+            HubSpotSDK::Crm::PublicEnumerationPropertyOperation::OperationType::OrSymbol
           )
         end
         attr_accessor :operation_type
@@ -40,7 +40,7 @@ module HubspotSDK
           params(
             include_objects_with_no_value_set: T::Boolean,
             operation_type:
-              HubspotSDK::Crm::PublicEnumerationPropertyOperation::OperationType::OrSymbol,
+              HubSpotSDK::Crm::PublicEnumerationPropertyOperation::OperationType::OrSymbol,
             operator: String,
             values: T::Array[String]
           ).returns(T.attached_class)
@@ -66,7 +66,7 @@ module HubspotSDK
             {
               include_objects_with_no_value_set: T::Boolean,
               operation_type:
-                HubspotSDK::Crm::PublicEnumerationPropertyOperation::OperationType::OrSymbol,
+                HubSpotSDK::Crm::PublicEnumerationPropertyOperation::OperationType::OrSymbol,
               operator: String,
               values: T::Array[String]
             }
@@ -77,13 +77,13 @@ module HubspotSDK
 
         # Specifies the type of operation (ENUMERATION).
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicEnumerationPropertyOperation::OperationType
+                HubSpotSDK::Crm::PublicEnumerationPropertyOperation::OperationType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -91,13 +91,13 @@ module HubspotSDK
           ENUMERATION =
             T.let(
               :ENUMERATION,
-              HubspotSDK::Crm::PublicEnumerationPropertyOperation::OperationType::TaggedSymbol
+              HubSpotSDK::Crm::PublicEnumerationPropertyOperation::OperationType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicEnumerationPropertyOperation::OperationType::TaggedSymbol
+                HubSpotSDK::Crm::PublicEnumerationPropertyOperation::OperationType::TaggedSymbol
               ]
             )
           end

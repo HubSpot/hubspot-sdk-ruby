@@ -1,30 +1,30 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type external_options_meta_data =
         {
-          filter: HubspotSDK::Cms::FilteringMetaData,
+          filter: HubSpotSDK::Cms::FilteringMetaData,
           related_object_type_id: String
         }
 
-      class ExternalOptionsMetaData < HubspotSDK::Internal::Type::BaseModel
-        attr_reader filter: HubspotSDK::Cms::FilteringMetaData?
+      class ExternalOptionsMetaData < HubSpotSDK::Internal::Type::BaseModel
+        attr_reader filter: HubSpotSDK::Cms::FilteringMetaData?
 
         def filter=: (
-          HubspotSDK::Cms::FilteringMetaData
-        ) -> HubspotSDK::Cms::FilteringMetaData
+          HubSpotSDK::Cms::FilteringMetaData
+        ) -> HubSpotSDK::Cms::FilteringMetaData
 
         attr_reader related_object_type_id: String?
 
         def related_object_type_id=: (String) -> String
 
         def initialize: (
-          ?filter: HubspotSDK::Cms::FilteringMetaData,
+          ?filter: HubSpotSDK::Cms::FilteringMetaData,
           ?related_object_type_id: String
         ) -> void
 
         def to_hash: -> {
-          filter: HubspotSDK::Cms::FilteringMetaData,
+          filter: HubSpotSDK::Cms::FilteringMetaData,
           related_object_type_id: String
         }
       end

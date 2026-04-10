@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_single_send_email =
@@ -11,7 +11,7 @@ module HubspotSDK
           to: String
         }
 
-      class PublicSingleSendEmail < HubspotSDK::Internal::Type::BaseModel
+      class PublicSingleSendEmail < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor bcc: ::Array[String]
 
         attr_accessor cc: ::Array[String]

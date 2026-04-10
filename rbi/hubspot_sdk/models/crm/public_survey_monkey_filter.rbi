@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicSurveyMonkeyFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicSurveyMonkeyFilter < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicSurveyMonkeyFilter,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicSurveyMonkeyFilter,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Indicates the type of filter being applied (SURVEY_MONKEY).
         sig do
           returns(
-            HubspotSDK::Crm::PublicSurveyMonkeyFilter::FilterType::OrSymbol
+            HubSpotSDK::Crm::PublicSurveyMonkeyFilter::FilterType::OrSymbol
           )
         end
         attr_accessor :filter_type
@@ -32,7 +32,7 @@ module HubspotSDK
         sig do
           params(
             filter_type:
-              HubspotSDK::Crm::PublicSurveyMonkeyFilter::FilterType::OrSymbol,
+              HubSpotSDK::Crm::PublicSurveyMonkeyFilter::FilterType::OrSymbol,
             operator: String,
             survey_id: String
           ).returns(T.attached_class)
@@ -52,7 +52,7 @@ module HubspotSDK
           override.returns(
             {
               filter_type:
-                HubspotSDK::Crm::PublicSurveyMonkeyFilter::FilterType::OrSymbol,
+                HubSpotSDK::Crm::PublicSurveyMonkeyFilter::FilterType::OrSymbol,
               operator: String,
               survey_id: String
             }
@@ -63,13 +63,13 @@ module HubspotSDK
 
         # Indicates the type of filter being applied (SURVEY_MONKEY).
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicSurveyMonkeyFilter::FilterType
+                HubSpotSDK::Crm::PublicSurveyMonkeyFilter::FilterType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -77,13 +77,13 @@ module HubspotSDK
           SURVEY_MONKEY =
             T.let(
               :SURVEY_MONKEY,
-              HubspotSDK::Crm::PublicSurveyMonkeyFilter::FilterType::TaggedSymbol
+              HubSpotSDK::Crm::PublicSurveyMonkeyFilter::FilterType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicSurveyMonkeyFilter::FilterType::TaggedSymbol
+                HubSpotSDK::Crm::PublicSurveyMonkeyFilter::FilterType::TaggedSymbol
               ]
             )
           end

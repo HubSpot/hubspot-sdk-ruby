@@ -1,14 +1,14 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_export_request =
-        HubspotSDK::Crm::PublicExportViewRequest
-        | HubspotSDK::Crm::PublicExportListRequest
+        HubSpotSDK::Crm::PublicExportViewRequest
+        | HubSpotSDK::Crm::PublicExportListRequest
 
       module PublicExportRequest
-        extend HubspotSDK::Internal::Type::Union
+        extend HubSpotSDK::Internal::Type::Union
 
-        def self?.variants: -> ::Array[HubspotSDK::Models::Crm::public_export_request]
+        def self?.variants: -> ::Array[HubSpotSDK::Models::Crm::public_export_request]
       end
     end
   end

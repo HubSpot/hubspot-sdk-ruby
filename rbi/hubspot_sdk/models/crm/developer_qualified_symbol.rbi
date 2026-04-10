@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class DeveloperQualifiedSymbol < HubspotSDK::Internal::Type::BaseModel
+      class DeveloperQualifiedSymbol < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::DeveloperQualifiedSymbol,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::DeveloperQualifiedSymbol,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

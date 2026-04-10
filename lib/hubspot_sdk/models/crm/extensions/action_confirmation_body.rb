@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class ActionConfirmationBody < HubspotSDK::Internal::Type::BaseModel
+        class ActionConfirmationBody < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute cancel_button_label
           #   The label for the button that cancels the action.
           #

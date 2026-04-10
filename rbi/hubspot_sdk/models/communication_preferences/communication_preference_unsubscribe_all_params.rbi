@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class CommunicationPreferenceUnsubscribeAllParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class CommunicationPreferenceUnsubscribeAllParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel::OrSymbol
+            HubSpotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel::OrSymbol
           )
         end
         attr_accessor :channel
@@ -41,10 +41,10 @@ module HubspotSDK
           params(
             subscriber_id_string: String,
             channel:
-              HubspotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel::OrSymbol,
+              HubSpotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel::OrSymbol,
             business_unit_id: Integer,
             verbose: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -61,10 +61,10 @@ module HubspotSDK
             {
               subscriber_id_string: String,
               channel:
-                HubspotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel::OrSymbol,
+                HubSpotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel::OrSymbol,
               business_unit_id: Integer,
               verbose: T::Boolean,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end
@@ -72,13 +72,13 @@ module HubspotSDK
         end
 
         module Channel
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel
+                HubSpotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -86,13 +86,13 @@ module HubspotSDK
           EMAIL =
             T.let(
               :EMAIL,
-              HubspotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel::TaggedSymbol
+                HubSpotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel::TaggedSymbol
               ]
             )
           end

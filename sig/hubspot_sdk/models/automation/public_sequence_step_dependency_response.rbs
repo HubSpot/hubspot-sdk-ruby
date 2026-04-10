@@ -1,11 +1,11 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type public_sequence_step_dependency_response =
         {
           id: String,
           created_at: Time,
-          dependency_type: HubspotSDK::Models::Automation::PublicSequenceStepDependencyResponse::dependency_type,
+          dependency_type: HubSpotSDK::Models::Automation::PublicSequenceStepDependencyResponse::dependency_type,
           relies_on_sequence_step_id: String,
           relies_on_step_order: Integer,
           required_by_sequence_step_id: String,
@@ -13,12 +13,12 @@ module HubspotSDK
           updated_at: Time
         }
 
-      class PublicSequenceStepDependencyResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicSequenceStepDependencyResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor created_at: Time
 
-        attr_accessor dependency_type: HubspotSDK::Models::Automation::PublicSequenceStepDependencyResponse::dependency_type
+        attr_accessor dependency_type: HubSpotSDK::Models::Automation::PublicSequenceStepDependencyResponse::dependency_type
 
         attr_accessor relies_on_sequence_step_id: String
 
@@ -33,7 +33,7 @@ module HubspotSDK
         def initialize: (
           id: String,
           created_at: Time,
-          dependency_type: HubspotSDK::Models::Automation::PublicSequenceStepDependencyResponse::dependency_type,
+          dependency_type: HubSpotSDK::Models::Automation::PublicSequenceStepDependencyResponse::dependency_type,
           relies_on_sequence_step_id: String,
           relies_on_step_order: Integer,
           required_by_sequence_step_id: String,
@@ -44,7 +44,7 @@ module HubspotSDK
         def to_hash: -> {
           id: String,
           created_at: Time,
-          dependency_type: HubspotSDK::Models::Automation::PublicSequenceStepDependencyResponse::dependency_type,
+          dependency_type: HubSpotSDK::Models::Automation::PublicSequenceStepDependencyResponse::dependency_type,
           relies_on_sequence_step_id: String,
           relies_on_step_order: Integer,
           required_by_sequence_step_id: String,
@@ -55,12 +55,12 @@ module HubspotSDK
         type dependency_type = :MANUAL_PAUSE | :TASK_COMPLETION
 
         module DependencyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           MANUAL_PAUSE: :MANUAL_PAUSE
           TASK_COMPLETION: :TASK_COMPLETION
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Automation::PublicSequenceStepDependencyResponse::dependency_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Automation::PublicSequenceStepDependencyResponse::dependency_type]
         end
       end
     end

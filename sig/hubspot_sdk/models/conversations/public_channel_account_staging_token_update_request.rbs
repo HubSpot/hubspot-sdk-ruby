@@ -1,31 +1,31 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type public_channel_account_staging_token_update_request =
         {
           account_name: String,
-          delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+          delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier
         }
 
-      class PublicChannelAccountStagingTokenUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicChannelAccountStagingTokenUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_reader account_name: String?
 
         def account_name=: (String) -> String
 
-        attr_reader delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier?
+        attr_reader delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier?
 
         def delivery_identifier=: (
-          HubspotSDK::Conversations::PublicDeliveryIdentifier
-        ) -> HubspotSDK::Conversations::PublicDeliveryIdentifier
+          HubSpotSDK::Conversations::PublicDeliveryIdentifier
+        ) -> HubSpotSDK::Conversations::PublicDeliveryIdentifier
 
         def initialize: (
           ?account_name: String,
-          ?delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+          ?delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier
         ) -> void
 
         def to_hash: -> {
           account_name: String,
-          delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+          delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier
         }
       end
     end

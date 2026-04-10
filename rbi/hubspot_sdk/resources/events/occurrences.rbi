@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Events
       class Occurrences
@@ -16,17 +16,17 @@ module HubspotSDK
             limit: Integer,
             object_id_: Integer,
             object_property:
-              HubspotSDK::Events::OccurrenceListParams::ObjectProperty::OrHash,
+              HubSpotSDK::Events::OccurrenceListParams::ObjectProperty::OrHash,
             object_type: String,
             occurred_after: Time,
             occurred_before: Time,
             properties: T::Array[String],
             property:
-              HubspotSDK::Events::OccurrenceListParams::Property::OrHash,
+              HubSpotSDK::Events::OccurrenceListParams::Property::OrHash,
             sort: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Internal::Page[HubspotSDK::Events::ExternalUnifiedEvent]
+            HubSpotSDK::Internal::Page[HubSpotSDK::Events::ExternalUnifiedEvent]
           )
         end
         def list(
@@ -57,15 +57,15 @@ module HubspotSDK
         # Note: the `get_types` method is only supported in the Python SDK version
         # `12.0.0-beta.1` or later.
         sig do
-          params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-            HubspotSDK::Events::VisibleExternalEventTypeNames
+          params(request_options: HubSpotSDK::RequestOptions::OrHash).returns(
+            HubSpotSDK::Events::VisibleExternalEventTypeNames
           )
         end
         def list_event_types(request_options: {})
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

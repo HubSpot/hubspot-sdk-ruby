@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type public_action_labels =
@@ -14,7 +14,7 @@ module HubspotSDK
           output_field_labels: ::Hash[Symbol, String]
         }
 
-      class PublicActionLabels < HubspotSDK::Internal::Type::BaseModel
+      class PublicActionLabels < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor action_name: String
 
         attr_reader action_card_content: String?

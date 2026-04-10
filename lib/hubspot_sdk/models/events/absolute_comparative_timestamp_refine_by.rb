@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class AbsoluteComparativeTimestampRefineBy < HubspotSDK::Internal::Type::BaseModel
+      class AbsoluteComparativeTimestampRefineBy < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute comparison
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::Comparison]
-        required :comparison, enum: -> { HubspotSDK::Events::AbsoluteComparativeTimestampRefineBy::Comparison }
+        #   @return [Symbol, HubSpotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::Comparison]
+        required :comparison, enum: -> { HubSpotSDK::Events::AbsoluteComparativeTimestampRefineBy::Comparison }
 
         # @!attribute timestamp
         #
@@ -16,17 +16,17 @@ module HubspotSDK
 
         # @!attribute type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::Type]
-        required :type, enum: -> { HubspotSDK::Events::AbsoluteComparativeTimestampRefineBy::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::Type]
+        required :type, enum: -> { HubSpotSDK::Events::AbsoluteComparativeTimestampRefineBy::Type }
 
         # @!method initialize(comparison:, timestamp:, type:)
-        #   @param comparison [Symbol, HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::Comparison]
+        #   @param comparison [Symbol, HubSpotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::Comparison]
         #   @param timestamp [Integer]
-        #   @param type [Symbol, HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::Type]
+        #   @param type [Symbol, HubSpotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy::Type]
 
-        # @see HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy#comparison
+        # @see HubSpotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy#comparison
         module Comparison
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AFTER = :AFTER
           BEFORE = :BEFORE
@@ -35,9 +35,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy#type
+        # @see HubSpotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABSOLUTE_COMPARATIVE_TIMESTAMP_REFINE_BY = :AbsoluteComparativeTimestampRefineBy
 

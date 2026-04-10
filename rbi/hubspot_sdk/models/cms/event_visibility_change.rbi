@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class EventVisibilityChange < HubspotSDK::Internal::Type::BaseModel
+      class EventVisibilityChange < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::EventVisibilityChange,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::EventVisibilityChange,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::Cms::EventVisibilityChange::EventType::TaggedSymbol
+            HubSpotSDK::Cms::EventVisibilityChange::EventType::TaggedSymbol
           )
         end
         attr_accessor :event_type
@@ -43,7 +43,7 @@ module HubspotSDK
         sig do
           params(
             event_type:
-              HubspotSDK::Cms::EventVisibilityChange::EventType::OrSymbol,
+              HubSpotSDK::Cms::EventVisibilityChange::EventType::OrSymbol,
             updated_at: Integer,
             show_in_reporting: T::Boolean,
             show_in_timeline: T::Boolean,
@@ -63,7 +63,7 @@ module HubspotSDK
           override.returns(
             {
               event_type:
-                HubspotSDK::Cms::EventVisibilityChange::EventType::TaggedSymbol,
+                HubSpotSDK::Cms::EventVisibilityChange::EventType::TaggedSymbol,
               updated_at: Integer,
               show_in_reporting: T::Boolean,
               show_in_timeline: T::Boolean,
@@ -75,39 +75,39 @@ module HubspotSDK
         end
 
         module EventType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::EventVisibilityChange::EventType)
+              T.all(Symbol, HubSpotSDK::Cms::EventVisibilityChange::EventType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           ALL =
             T.let(
               :ALL,
-              HubspotSDK::Cms::EventVisibilityChange::EventType::TaggedSymbol
+              HubSpotSDK::Cms::EventVisibilityChange::EventType::TaggedSymbol
             )
           ATTENTION_SPAN =
             T.let(
               :ATTENTION_SPAN,
-              HubspotSDK::Cms::EventVisibilityChange::EventType::TaggedSymbol
+              HubSpotSDK::Cms::EventVisibilityChange::EventType::TaggedSymbol
             )
           MEDIA_PLAYS =
             T.let(
               :MEDIA_PLAYS,
-              HubspotSDK::Cms::EventVisibilityChange::EventType::TaggedSymbol
+              HubSpotSDK::Cms::EventVisibilityChange::EventType::TaggedSymbol
             )
           MEDIA_PLAYS_PERCENT =
             T.let(
               :MEDIA_PLAYS_PERCENT,
-              HubspotSDK::Cms::EventVisibilityChange::EventType::TaggedSymbol
+              HubSpotSDK::Cms::EventVisibilityChange::EventType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::EventVisibilityChange::EventType::TaggedSymbol
+                HubSpotSDK::Cms::EventVisibilityChange::EventType::TaggedSymbol
               ]
             )
           end

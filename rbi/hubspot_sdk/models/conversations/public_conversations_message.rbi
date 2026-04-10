@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicConversationsMessage < HubspotSDK::Internal::Type::BaseModel
+      class PublicConversationsMessage < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::PublicConversationsMessage,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::PublicConversationsMessage,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -21,7 +21,7 @@ module HubspotSDK
         sig do
           returns(
             T::Array[
-              HubspotSDK::Conversations::PublicConversationsMessage::Attachment::Variants
+              HubSpotSDK::Conversations::PublicConversationsMessage::Attachment::Variants
             ]
           )
         end
@@ -33,11 +33,11 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :channel_id
 
-        sig { returns(HubspotSDK::Conversations::PublicClient) }
+        sig { returns(HubSpotSDK::Conversations::PublicClient) }
         attr_reader :client
 
         sig do
-          params(client: HubspotSDK::Conversations::PublicClient::OrHash).void
+          params(client: HubSpotSDK::Conversations::PublicClient::OrHash).void
         end
         attr_writer :client
 
@@ -52,15 +52,15 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Conversations::PublicConversationsMessage::Direction::TaggedSymbol
+            HubSpotSDK::Conversations::PublicConversationsMessage::Direction::TaggedSymbol
           )
         end
         attr_accessor :direction
 
-        sig { returns(T::Array[HubspotSDK::Conversations::PublicRecipient]) }
+        sig { returns(T::Array[HubSpotSDK::Conversations::PublicRecipient]) }
         attr_accessor :recipients
 
-        sig { returns(T::Array[HubspotSDK::Conversations::PublicSender]) }
+        sig { returns(T::Array[HubSpotSDK::Conversations::PublicSender]) }
         attr_accessor :senders
 
         sig { returns(String) }
@@ -68,14 +68,14 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Conversations::PublicConversationsMessage::TruncationStatus::TaggedSymbol
+            HubSpotSDK::Conversations::PublicConversationsMessage::TruncationStatus::TaggedSymbol
           )
         end
         attr_accessor :truncation_status
 
         sig do
           returns(
-            HubspotSDK::Conversations::PublicConversationsMessage::Type::TaggedSymbol
+            HubSpotSDK::Conversations::PublicConversationsMessage::Type::TaggedSymbol
           )
         end
         attr_accessor :type
@@ -93,13 +93,13 @@ module HubspotSDK
         attr_writer :rich_text
 
         sig do
-          returns(T.nilable(HubspotSDK::Conversations::PublicMessageStatus))
+          returns(T.nilable(HubSpotSDK::Conversations::PublicMessageStatus))
         end
         attr_reader :status
 
         sig do
           params(
-            status: HubspotSDK::Conversations::PublicMessageStatus::OrHash
+            status: HubSpotSDK::Conversations::PublicMessageStatus::OrHash
           ).void
         end
         attr_writer :status
@@ -123,35 +123,35 @@ module HubspotSDK
             attachments:
               T::Array[
                 T.any(
-                  HubspotSDK::Conversations::PublicFile::OrHash,
-                  HubspotSDK::Conversations::PublicLocation::OrHash,
-                  HubspotSDK::Conversations::PublicContact::OrHash,
-                  HubspotSDK::Conversations::PublicUnsupportedContent::OrHash,
-                  HubspotSDK::Conversations::PublicMessageHeader::OrHash,
-                  HubspotSDK::Conversations::PublicQuickReplies::OrHash,
-                  HubspotSDK::Conversations::PublicWhatsAppTemplateMetadata::OrHash,
-                  HubspotSDK::Conversations::PublicSocialMetadataAttachment::OrHash
+                  HubSpotSDK::Conversations::PublicFile::OrHash,
+                  HubSpotSDK::Conversations::PublicLocation::OrHash,
+                  HubSpotSDK::Conversations::PublicContact::OrHash,
+                  HubSpotSDK::Conversations::PublicUnsupportedContent::OrHash,
+                  HubSpotSDK::Conversations::PublicMessageHeader::OrHash,
+                  HubSpotSDK::Conversations::PublicQuickReplies::OrHash,
+                  HubSpotSDK::Conversations::PublicWhatsAppTemplateMetadata::OrHash,
+                  HubSpotSDK::Conversations::PublicSocialMetadataAttachment::OrHash
                 )
               ],
             channel_account_id: String,
             channel_id: String,
-            client: HubspotSDK::Conversations::PublicClient::OrHash,
+            client: HubSpotSDK::Conversations::PublicClient::OrHash,
             conversations_thread_id: String,
             created_at: Time,
             created_by: String,
             direction:
-              HubspotSDK::Conversations::PublicConversationsMessage::Direction::OrSymbol,
+              HubSpotSDK::Conversations::PublicConversationsMessage::Direction::OrSymbol,
             recipients:
-              T::Array[HubspotSDK::Conversations::PublicRecipient::OrHash],
-            senders: T::Array[HubspotSDK::Conversations::PublicSender::OrHash],
+              T::Array[HubSpotSDK::Conversations::PublicRecipient::OrHash],
+            senders: T::Array[HubSpotSDK::Conversations::PublicSender::OrHash],
             text: String,
             truncation_status:
-              HubspotSDK::Conversations::PublicConversationsMessage::TruncationStatus::OrSymbol,
+              HubSpotSDK::Conversations::PublicConversationsMessage::TruncationStatus::OrSymbol,
             type:
-              HubspotSDK::Conversations::PublicConversationsMessage::Type::OrSymbol,
+              HubSpotSDK::Conversations::PublicConversationsMessage::Type::OrSymbol,
             in_reply_to_id: String,
             rich_text: String,
-            status: HubspotSDK::Conversations::PublicMessageStatus::OrHash,
+            status: HubSpotSDK::Conversations::PublicMessageStatus::OrHash,
             subject: String,
             updated_at: Time
           ).returns(T.attached_class)
@@ -187,26 +187,26 @@ module HubspotSDK
               archived: T::Boolean,
               attachments:
                 T::Array[
-                  HubspotSDK::Conversations::PublicConversationsMessage::Attachment::Variants
+                  HubSpotSDK::Conversations::PublicConversationsMessage::Attachment::Variants
                 ],
               channel_account_id: String,
               channel_id: String,
-              client: HubspotSDK::Conversations::PublicClient,
+              client: HubSpotSDK::Conversations::PublicClient,
               conversations_thread_id: String,
               created_at: Time,
               created_by: String,
               direction:
-                HubspotSDK::Conversations::PublicConversationsMessage::Direction::TaggedSymbol,
-              recipients: T::Array[HubspotSDK::Conversations::PublicRecipient],
-              senders: T::Array[HubspotSDK::Conversations::PublicSender],
+                HubSpotSDK::Conversations::PublicConversationsMessage::Direction::TaggedSymbol,
+              recipients: T::Array[HubSpotSDK::Conversations::PublicRecipient],
+              senders: T::Array[HubSpotSDK::Conversations::PublicSender],
               text: String,
               truncation_status:
-                HubspotSDK::Conversations::PublicConversationsMessage::TruncationStatus::TaggedSymbol,
+                HubSpotSDK::Conversations::PublicConversationsMessage::TruncationStatus::TaggedSymbol,
               type:
-                HubspotSDK::Conversations::PublicConversationsMessage::Type::TaggedSymbol,
+                HubSpotSDK::Conversations::PublicConversationsMessage::Type::TaggedSymbol,
               in_reply_to_id: String,
               rich_text: String,
-              status: HubspotSDK::Conversations::PublicMessageStatus,
+              status: HubSpotSDK::Conversations::PublicMessageStatus,
               subject: String,
               updated_at: Time
             }
@@ -216,26 +216,26 @@ module HubspotSDK
         end
 
         module Attachment
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Conversations::PublicFile,
-                HubspotSDK::Conversations::PublicLocation,
-                HubspotSDK::Conversations::PublicContact,
-                HubspotSDK::Conversations::PublicUnsupportedContent,
-                HubspotSDK::Conversations::PublicMessageHeader,
-                HubspotSDK::Conversations::PublicQuickReplies,
-                HubspotSDK::Conversations::PublicWhatsAppTemplateMetadata,
-                HubspotSDK::Conversations::PublicSocialMetadataAttachment
+                HubSpotSDK::Conversations::PublicFile,
+                HubSpotSDK::Conversations::PublicLocation,
+                HubSpotSDK::Conversations::PublicContact,
+                HubSpotSDK::Conversations::PublicUnsupportedContent,
+                HubSpotSDK::Conversations::PublicMessageHeader,
+                HubSpotSDK::Conversations::PublicQuickReplies,
+                HubSpotSDK::Conversations::PublicWhatsAppTemplateMetadata,
+                HubSpotSDK::Conversations::PublicSocialMetadataAttachment
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::PublicConversationsMessage::Attachment::Variants
+                HubSpotSDK::Conversations::PublicConversationsMessage::Attachment::Variants
               ]
             )
           end
@@ -244,13 +244,13 @@ module HubspotSDK
         end
 
         module Direction
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Conversations::PublicConversationsMessage::Direction
+                HubSpotSDK::Conversations::PublicConversationsMessage::Direction
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -258,18 +258,18 @@ module HubspotSDK
           INCOMING =
             T.let(
               :INCOMING,
-              HubspotSDK::Conversations::PublicConversationsMessage::Direction::TaggedSymbol
+              HubSpotSDK::Conversations::PublicConversationsMessage::Direction::TaggedSymbol
             )
           OUTGOING =
             T.let(
               :OUTGOING,
-              HubspotSDK::Conversations::PublicConversationsMessage::Direction::TaggedSymbol
+              HubSpotSDK::Conversations::PublicConversationsMessage::Direction::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::PublicConversationsMessage::Direction::TaggedSymbol
+                HubSpotSDK::Conversations::PublicConversationsMessage::Direction::TaggedSymbol
               ]
             )
           end
@@ -278,13 +278,13 @@ module HubspotSDK
         end
 
         module TruncationStatus
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Conversations::PublicConversationsMessage::TruncationStatus
+                HubSpotSDK::Conversations::PublicConversationsMessage::TruncationStatus
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -292,23 +292,23 @@ module HubspotSDK
           NOT_TRUNCATED =
             T.let(
               :NOT_TRUNCATED,
-              HubspotSDK::Conversations::PublicConversationsMessage::TruncationStatus::TaggedSymbol
+              HubSpotSDK::Conversations::PublicConversationsMessage::TruncationStatus::TaggedSymbol
             )
           TRUNCATED =
             T.let(
               :TRUNCATED,
-              HubspotSDK::Conversations::PublicConversationsMessage::TruncationStatus::TaggedSymbol
+              HubSpotSDK::Conversations::PublicConversationsMessage::TruncationStatus::TaggedSymbol
             )
           TRUNCATED_TO_MOST_RECENT_REPLY =
             T.let(
               :TRUNCATED_TO_MOST_RECENT_REPLY,
-              HubspotSDK::Conversations::PublicConversationsMessage::TruncationStatus::TaggedSymbol
+              HubSpotSDK::Conversations::PublicConversationsMessage::TruncationStatus::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::PublicConversationsMessage::TruncationStatus::TaggedSymbol
+                HubSpotSDK::Conversations::PublicConversationsMessage::TruncationStatus::TaggedSymbol
               ]
             )
           end
@@ -317,13 +317,13 @@ module HubspotSDK
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Conversations::PublicConversationsMessage::Type
+                HubSpotSDK::Conversations::PublicConversationsMessage::Type
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -331,13 +331,13 @@ module HubspotSDK
           MESSAGE =
             T.let(
               :MESSAGE,
-              HubspotSDK::Conversations::PublicConversationsMessage::Type::TaggedSymbol
+              HubSpotSDK::Conversations::PublicConversationsMessage::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::PublicConversationsMessage::Type::TaggedSymbol
+                HubSpotSDK::Conversations::PublicConversationsMessage::Type::TaggedSymbol
               ]
             )
           end

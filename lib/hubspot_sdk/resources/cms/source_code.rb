@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class SourceCode
@@ -16,15 +16,15 @@ module HubspotSDK
         #
         # @param environment [String] Path param
         #
-        # @param file [Pathname, StringIO, IO, String, HubspotSDK::FilePart] Body param
+        # @param file [Pathname, StringIO, IO, String, HubSpotSDK::FilePart] Body param
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::AssetFileMetadata]
+        # @return [HubSpotSDK::Models::Cms::AssetFileMetadata]
         #
-        # @see HubspotSDK::Models::Cms::SourceCodeCreateParams
+        # @see HubSpotSDK::Models::Cms::SourceCodeCreateParams
         def create(path, params)
-          parsed, options = HubspotSDK::Cms::SourceCodeCreateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Cms::SourceCodeCreateParams.dump_request(params)
           environment =
             parsed.delete(:environment) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -34,7 +34,7 @@ module HubspotSDK
             path: ["cms/source-code/2026-03/%1$s/content/%2$s", environment, path],
             headers: {"content-type" => "multipart/form-data"},
             body: parsed,
-            model: HubspotSDK::Cms::AssetFileMetadata,
+            model: HubSpotSDK::Cms::AssetFileMetadata,
             options: options
           )
         end
@@ -45,13 +45,13 @@ module HubspotSDK
         #
         # @param path [String]
         # @param environment [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Cms::SourceCodeDeleteParams
+        # @see HubSpotSDK::Models::Cms::SourceCodeDeleteParams
         def delete(path, params)
-          parsed, options = HubspotSDK::Cms::SourceCodeDeleteParams.dump_request(params)
+          parsed, options = HubSpotSDK::Cms::SourceCodeDeleteParams.dump_request(params)
           environment =
             parsed.delete(:environment) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -71,18 +71,18 @@ module HubspotSDK
         #
         # @param path [String] The file system location where the zip file is to be extracted.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::TaskLocator]
+        # @return [HubSpotSDK::Models::TaskLocator]
         #
-        # @see HubspotSDK::Models::Cms::SourceCodeExtractAsyncParams
+        # @see HubSpotSDK::Models::Cms::SourceCodeExtractAsyncParams
         def extract_async(params)
-          parsed, options = HubspotSDK::Cms::SourceCodeExtractAsyncParams.dump_request(params)
+          parsed, options = HubSpotSDK::Cms::SourceCodeExtractAsyncParams.dump_request(params)
           @client.request(
             method: :post,
             path: "cms/source-code/2026-03/extract/async",
             body: parsed,
-            model: HubspotSDK::TaskLocator,
+            model: HubSpotSDK::TaskLocator,
             options: options
           )
         end
@@ -94,13 +94,13 @@ module HubspotSDK
         #
         # @param path [String]
         # @param environment [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [StringIO]
         #
-        # @see HubspotSDK::Models::Cms::SourceCodeGetParams
+        # @see HubSpotSDK::Models::Cms::SourceCodeGetParams
         def get(path, params)
-          parsed, options = HubspotSDK::Cms::SourceCodeGetParams.dump_request(params)
+          parsed, options = HubSpotSDK::Cms::SourceCodeGetParams.dump_request(params)
           environment =
             parsed.delete(:environment) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -120,16 +120,16 @@ module HubspotSDK
         # @overload get_extraction_status(task_id, request_options: {})
         #
         # @param task_id [Integer]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::ActionResponse]
+        # @return [HubSpotSDK::Models::ActionResponse]
         #
-        # @see HubspotSDK::Models::Cms::SourceCodeGetExtractionStatusParams
+        # @see HubSpotSDK::Models::Cms::SourceCodeGetExtractionStatusParams
         def get_extraction_status(task_id, params = {})
           @client.request(
             method: :get,
             path: ["cms/source-code/2026-03/extract/async/tasks/%1$s/status", task_id],
-            model: HubspotSDK::ActionResponse,
+            model: HubSpotSDK::ActionResponse,
             options: params[:request_options]
           )
         end
@@ -145,14 +145,14 @@ module HubspotSDK
         #
         # @param properties [String] Query param
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::AssetFileMetadata]
+        # @return [HubSpotSDK::Models::Cms::AssetFileMetadata]
         #
-        # @see HubspotSDK::Models::Cms::SourceCodeGetMetadataParams
+        # @see HubSpotSDK::Models::Cms::SourceCodeGetMetadataParams
         def get_metadata(path, params)
-          parsed, options = HubspotSDK::Cms::SourceCodeGetMetadataParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Cms::SourceCodeGetMetadataParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           environment =
             parsed.delete(:environment) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -161,7 +161,7 @@ module HubspotSDK
             method: :get,
             path: ["cms/source-code/2026-03/%1$s/metadata/%2$s", environment, path],
             query: query,
-            model: HubspotSDK::Cms::AssetFileMetadata,
+            model: HubSpotSDK::Cms::AssetFileMetadata,
             options: options
           )
         end
@@ -175,15 +175,15 @@ module HubspotSDK
         #
         # @param environment [String] Path param
         #
-        # @param file [Pathname, StringIO, IO, String, HubspotSDK::FilePart] Body param
+        # @param file [Pathname, StringIO, IO, String, HubSpotSDK::FilePart] Body param
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::AssetFileMetadata]
+        # @return [HubSpotSDK::Models::Cms::AssetFileMetadata]
         #
-        # @see HubspotSDK::Models::Cms::SourceCodeUpsertParams
+        # @see HubSpotSDK::Models::Cms::SourceCodeUpsertParams
         def upsert(path, params)
-          parsed, options = HubspotSDK::Cms::SourceCodeUpsertParams.dump_request(params)
+          parsed, options = HubSpotSDK::Cms::SourceCodeUpsertParams.dump_request(params)
           environment =
             parsed.delete(:environment) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -193,7 +193,7 @@ module HubspotSDK
             path: ["cms/source-code/2026-03/%1$s/content/%2$s", environment, path],
             headers: {"content-type" => "multipart/form-data"},
             body: parsed,
-            model: HubspotSDK::Cms::AssetFileMetadata,
+            model: HubSpotSDK::Cms::AssetFileMetadata,
             options: options
           )
         end
@@ -207,15 +207,15 @@ module HubspotSDK
         #
         # @param environment [String] Path param
         #
-        # @param file [Pathname, StringIO, IO, String, HubspotSDK::FilePart] Body param
+        # @param file [Pathname, StringIO, IO, String, HubSpotSDK::FilePart] Body param
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [StringIO]
         #
-        # @see HubspotSDK::Models::Cms::SourceCodeValidateParams
+        # @see HubSpotSDK::Models::Cms::SourceCodeValidateParams
         def validate(path, params)
-          parsed, options = HubspotSDK::Cms::SourceCodeValidateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Cms::SourceCodeValidateParams.dump_request(params)
           environment =
             parsed.delete(:environment) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -232,7 +232,7 @@ module HubspotSDK
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
         end

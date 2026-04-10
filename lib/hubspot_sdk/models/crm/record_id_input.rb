@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class RecordIDInput < HubspotSDK::Internal::Type::BaseModel
+      class RecordIDInput < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute object_type_id
         #
         #   @return [String]

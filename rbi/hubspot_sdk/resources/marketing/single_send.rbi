@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class SingleSend
@@ -10,9 +10,9 @@ module HubspotSDK
             contact_properties: T::Hash[Symbol, String],
             custom_properties: T::Hash[Symbol, T.anything],
             email_id: Integer,
-            message: HubspotSDK::Marketing::PublicSingleSendEmail::OrHash,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Marketing::EmailSendStatusView)
+            message: HubSpotSDK::Marketing::PublicSingleSendEmail::OrHash,
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Marketing::EmailSendStatusView)
         end
         def create(
           # The contactProperties field is a map of contact property values. Each contact
@@ -37,7 +37,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

@@ -1,22 +1,22 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
       type api_usage =
         {
           collected_at: Time,
           current_usage: Integer,
-          fetch_status: HubspotSDK::Models::Account::APIUsage::fetch_status,
+          fetch_status: HubSpotSDK::Models::Account::APIUsage::fetch_status,
           name: String,
           usage_limit: Integer,
           resets_at: Time
         }
 
-      class APIUsage < HubspotSDK::Internal::Type::BaseModel
+      class APIUsage < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor collected_at: Time
 
         attr_accessor current_usage: Integer
 
-        attr_accessor fetch_status: HubspotSDK::Models::Account::APIUsage::fetch_status
+        attr_accessor fetch_status: HubSpotSDK::Models::Account::APIUsage::fetch_status
 
         attr_accessor name: String
 
@@ -29,7 +29,7 @@ module HubspotSDK
         def initialize: (
           collected_at: Time,
           current_usage: Integer,
-          fetch_status: HubspotSDK::Models::Account::APIUsage::fetch_status,
+          fetch_status: HubSpotSDK::Models::Account::APIUsage::fetch_status,
           name: String,
           usage_limit: Integer,
           ?resets_at: Time
@@ -38,7 +38,7 @@ module HubspotSDK
         def to_hash: -> {
           collected_at: Time,
           current_usage: Integer,
-          fetch_status: HubspotSDK::Models::Account::APIUsage::fetch_status,
+          fetch_status: HubSpotSDK::Models::Account::APIUsage::fetch_status,
           name: String,
           usage_limit: Integer,
           resets_at: Time
@@ -47,7 +47,7 @@ module HubspotSDK
         type fetch_status = :CACHED | :FAILURE | :NOTFOUND | :SUCCESS | :TIMEOUT
 
         module FetchStatus
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CACHED: :CACHED
           FAILURE: :FAILURE
@@ -55,7 +55,7 @@ module HubspotSDK
           SUCCESS: :SUCCESS
           TIMEOUT: :TIMEOUT
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Account::APIUsage::fetch_status]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Account::APIUsage::fetch_status]
         end
       end
     end

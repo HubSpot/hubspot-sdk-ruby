@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type action_execution_index_identifier =
         { action_execution_index: Integer, enrollment_id: Integer }
 
-      class ActionExecutionIndexIdentifier < HubspotSDK::Internal::Type::BaseModel
+      class ActionExecutionIndexIdentifier < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor action_execution_index: Integer
 
         attr_accessor enrollment_id: Integer

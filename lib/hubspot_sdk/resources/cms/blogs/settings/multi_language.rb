@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Blogs
@@ -12,20 +12,20 @@ module HubspotSDK
             #
             # @param id [String] ID of the object to add to a multi-language group.
             #
-            # @param language [Symbol, HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::Language] Designated language of the object to add to a multi-language group.
+            # @param language [Symbol, HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::Language] Designated language of the object to add to a multi-language group.
             #
             # @param primary_id [String] ID of primary language object in multi-language group.
             #
-            # @param primary_language [Symbol, HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage] Primary language of the multi-language group.
+            # @param primary_language [Symbol, HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage] Primary language of the multi-language group.
             #
-            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [StringIO]
             #
-            # @see HubspotSDK::Models::Cms::Blogs::Settings::MultiLanguageAttachToLangGroupParams
+            # @see HubSpotSDK::Models::Cms::Blogs::Settings::MultiLanguageAttachToLangGroupParams
             def attach_to_lang_group(params)
               parsed, options =
-                HubspotSDK::Cms::Blogs::Settings::MultiLanguageAttachToLangGroupParams.dump_request(params)
+                HubSpotSDK::Cms::Blogs::Settings::MultiLanguageAttachToLangGroupParams.dump_request(params)
               @client.request(
                 method: :post,
                 path: "cms/blog-settings/2026-03/settings/multi-language/attach-to-lang-group",
@@ -48,19 +48,19 @@ module HubspotSDK
             #
             # @param slug [String] Path to this blog.
             #
-            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::Cms::Blogs::Blog]
+            # @return [HubSpotSDK::Models::Cms::Blogs::Blog]
             #
-            # @see HubspotSDK::Models::Cms::Blogs::Settings::MultiLanguageCreateLanguageVariationParams
+            # @see HubSpotSDK::Models::Cms::Blogs::Settings::MultiLanguageCreateLanguageVariationParams
             def create_language_variation(params)
               parsed, options =
-                HubspotSDK::Cms::Blogs::Settings::MultiLanguageCreateLanguageVariationParams.dump_request(params)
+                HubSpotSDK::Cms::Blogs::Settings::MultiLanguageCreateLanguageVariationParams.dump_request(params)
               @client.request(
                 method: :post,
                 path: "cms/blog-settings/2026-03/settings/multi-language/create-language-variation",
                 body: parsed,
-                model: HubspotSDK::Cms::Blogs::Blog,
+                model: HubSpotSDK::Cms::Blogs::Blog,
                 options: options
               )
             end
@@ -71,14 +71,14 @@ module HubspotSDK
             #
             # @param id [String] ID of the object to remove from a multi-language group.
             #
-            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [StringIO]
             #
-            # @see HubspotSDK::Models::Cms::Blogs::Settings::MultiLanguageDetachFromLangGroupParams
+            # @see HubSpotSDK::Models::Cms::Blogs::Settings::MultiLanguageDetachFromLangGroupParams
             def detach_from_lang_group(params)
               parsed, options =
-                HubspotSDK::Cms::Blogs::Settings::MultiLanguageDetachFromLangGroupParams.dump_request(params)
+                HubSpotSDK::Cms::Blogs::Settings::MultiLanguageDetachFromLangGroupParams.dump_request(params)
               @client.request(
                 method: :post,
                 path: "cms/blog-settings/2026-03/settings/multi-language/detach-from-lang-group",
@@ -95,14 +95,14 @@ module HubspotSDK
             #
             # @param id [String] ID of object to set as primary in multi-language group.
             #
-            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [nil]
             #
-            # @see HubspotSDK::Models::Cms::Blogs::Settings::MultiLanguageSetNewLangPrimaryParams
+            # @see HubSpotSDK::Models::Cms::Blogs::Settings::MultiLanguageSetNewLangPrimaryParams
             def set_new_lang_primary(params)
               parsed, options =
-                HubspotSDK::Cms::Blogs::Settings::MultiLanguageSetNewLangPrimaryParams.dump_request(params)
+                HubSpotSDK::Cms::Blogs::Settings::MultiLanguageSetNewLangPrimaryParams.dump_request(params)
               @client.request(
                 method: :put,
                 path: "cms/blog-settings/2026-03/settings/multi-language/set-new-lang-primary",
@@ -113,25 +113,25 @@ module HubspotSDK
             end
 
             # Some parameter documentations has been truncated, see
-            # {HubspotSDK::Models::Cms::Blogs::Settings::MultiLanguageUpdateLanguagesParams}
+            # {HubSpotSDK::Models::Cms::Blogs::Settings::MultiLanguageUpdateLanguagesParams}
             # for more details.
             #
             # Explicitly set new languages for each blog in a multi-language group.
             #
             # @overload update_languages(languages:, primary_id:, request_options: {})
             #
-            # @param languages [Hash{Symbol=>Symbol, HubspotSDK::Models::Cms::UpdateLanguagesRequestVNext::Language}] Map of object IDs to associated languages of object in the multi-language group.
+            # @param languages [Hash{Symbol=>Symbol, HubSpotSDK::Models::Cms::UpdateLanguagesRequestVNext::Language}] Map of object IDs to associated languages of object in the multi-language group.
             #
             # @param primary_id [String] ID of the primary object in the multi-language group.
             #
-            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
             # @return [StringIO]
             #
-            # @see HubspotSDK::Models::Cms::Blogs::Settings::MultiLanguageUpdateLanguagesParams
+            # @see HubSpotSDK::Models::Cms::Blogs::Settings::MultiLanguageUpdateLanguagesParams
             def update_languages(params)
               parsed, options =
-                HubspotSDK::Cms::Blogs::Settings::MultiLanguageUpdateLanguagesParams.dump_request(params)
+                HubSpotSDK::Cms::Blogs::Settings::MultiLanguageUpdateLanguagesParams.dump_request(params)
               @client.request(
                 method: :post,
                 path: "cms/blog-settings/2026-03/settings/multi-language/update-languages",
@@ -144,7 +144,7 @@ module HubspotSDK
 
             # @api private
             #
-            # @param client [HubspotSDK::Client]
+            # @param client [HubSpotSDK::Client]
             def initialize(client:)
               @client = client
             end

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class AbTestRerunRequestVNext < HubspotSDK::Internal::Type::BaseModel
+      class AbTestRerunRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute ab_test_id
         #   ID of the test to rerun.
         #

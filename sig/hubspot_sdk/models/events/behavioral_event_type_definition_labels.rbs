@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type behavioral_event_type_definition_labels =
         { singular: String, plural: String }
 
-      class BehavioralEventTypeDefinitionLabels < HubspotSDK::Internal::Type::BaseModel
+      class BehavioralEventTypeDefinitionLabels < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor singular: String
 
         attr_reader plural: String?

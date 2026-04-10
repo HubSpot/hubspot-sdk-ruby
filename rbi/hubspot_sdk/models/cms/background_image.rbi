@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class BackgroundImage < HubspotSDK::Internal::Type::BaseModel
+      class BackgroundImage < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::BackgroundImage,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::BackgroundImage,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

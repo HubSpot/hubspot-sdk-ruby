@@ -1,40 +1,40 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type public_single_field_dependency =
         {
           controlling_field_name: String,
-          dependency_type: HubspotSDK::Models::Automation::PublicSingleFieldDependency::dependency_type,
+          dependency_type: HubSpotSDK::Models::Automation::PublicSingleFieldDependency::dependency_type,
           dependent_field_names: ::Array[String]
         }
 
-      class PublicSingleFieldDependency < HubspotSDK::Internal::Type::BaseModel
+      class PublicSingleFieldDependency < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor controlling_field_name: String
 
-        attr_accessor dependency_type: HubspotSDK::Models::Automation::PublicSingleFieldDependency::dependency_type
+        attr_accessor dependency_type: HubSpotSDK::Models::Automation::PublicSingleFieldDependency::dependency_type
 
         attr_accessor dependent_field_names: ::Array[String]
 
         def initialize: (
           controlling_field_name: String,
-          dependency_type: HubspotSDK::Models::Automation::PublicSingleFieldDependency::dependency_type,
+          dependency_type: HubSpotSDK::Models::Automation::PublicSingleFieldDependency::dependency_type,
           dependent_field_names: ::Array[String]
         ) -> void
 
         def to_hash: -> {
           controlling_field_name: String,
-          dependency_type: HubspotSDK::Models::Automation::PublicSingleFieldDependency::dependency_type,
+          dependency_type: HubSpotSDK::Models::Automation::PublicSingleFieldDependency::dependency_type,
           dependent_field_names: ::Array[String]
         }
 
         type dependency_type = :SINGLE_FIELD
 
         module DependencyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           SINGLE_FIELD: :SINGLE_FIELD
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Automation::PublicSingleFieldDependency::dependency_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Automation::PublicSingleFieldDependency::dependency_type]
         end
       end
     end

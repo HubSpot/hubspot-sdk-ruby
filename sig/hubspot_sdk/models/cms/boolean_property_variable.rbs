@@ -1,15 +1,15 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type boolean_property_variable =
         {
-          operator: HubspotSDK::Models::Cms::BooleanPropertyVariable::operator,
+          operator: HubSpotSDK::Models::Cms::BooleanPropertyVariable::operator,
           property_name: String,
           value: bool
         }
 
-      class BooleanPropertyVariable < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor operator: HubspotSDK::Models::Cms::BooleanPropertyVariable::operator
+      class BooleanPropertyVariable < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor operator: HubSpotSDK::Models::Cms::BooleanPropertyVariable::operator
 
         attr_reader property_name: String?
 
@@ -20,13 +20,13 @@ module HubspotSDK
         def value=: (bool) -> bool
 
         def initialize: (
-          operator: HubspotSDK::Models::Cms::BooleanPropertyVariable::operator,
+          operator: HubSpotSDK::Models::Cms::BooleanPropertyVariable::operator,
           ?property_name: String,
           ?value: bool
         ) -> void
 
         def to_hash: -> {
-          operator: HubspotSDK::Models::Cms::BooleanPropertyVariable::operator,
+          operator: HubSpotSDK::Models::Cms::BooleanPropertyVariable::operator,
           property_name: String,
           value: bool
         }
@@ -34,11 +34,11 @@ module HubspotSDK
         type operator = :BOOLEAN_PROPERTY_VARIABLE
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOLEAN_PROPERTY_VARIABLE: :BOOLEAN_PROPERTY_VARIABLE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::BooleanPropertyVariable::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::BooleanPropertyVariable::operator]
         end
       end
     end

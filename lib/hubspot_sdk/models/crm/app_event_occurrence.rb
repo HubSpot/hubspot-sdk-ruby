@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class AppEventOccurrence < HubspotSDK::Internal::Type::BaseModel
+      class AppEventOccurrence < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [String]
@@ -17,7 +17,7 @@ module HubspotSDK
         # @!attribute properties
         #
         #   @return [Hash{Symbol=>String}]
-        required :properties, HubspotSDK::Internal::Type::HashOf[String]
+        required :properties, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute domain
         #
@@ -32,7 +32,7 @@ module HubspotSDK
         # @!attribute extra_data
         #
         #   @return [Object, nil]
-        optional :extra_data, HubspotSDK::Internal::Type::Unknown, api_name: :extraData
+        optional :extra_data, HubSpotSDK::Internal::Type::Unknown, api_name: :extraData
 
         # @!attribute object_id_
         #
@@ -46,8 +46,8 @@ module HubspotSDK
 
         # @!attribute timeline_i_frame
         #
-        #   @return [HubspotSDK::Models::Crm::TimelineEventIFrame, nil]
-        optional :timeline_i_frame, -> { HubspotSDK::Crm::TimelineEventIFrame }, api_name: :timelineIFrame
+        #   @return [HubSpotSDK::Models::Crm::TimelineEventIFrame, nil]
+        optional :timeline_i_frame, -> { HubSpotSDK::Crm::TimelineEventIFrame }, api_name: :timelineIFrame
 
         # @!attribute timestamp
         #
@@ -68,7 +68,7 @@ module HubspotSDK
         #   @param extra_data [Object]
         #   @param object_id_ [String]
         #   @param object_type_fully_qualified_name [String]
-        #   @param timeline_i_frame [HubspotSDK::Models::Crm::TimelineEventIFrame]
+        #   @param timeline_i_frame [HubSpotSDK::Models::Crm::TimelineEventIFrame]
         #   @param timestamp [Time]
         #   @param utk [String]
       end

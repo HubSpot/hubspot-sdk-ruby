@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_closed_range = { end_: Integer, start: Integer }
 
-      class ExternalClosedRange < HubspotSDK::Internal::Type::BaseModel
+      class ExternalClosedRange < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor end_: Integer
 
         attr_accessor start: Integer

@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type app_info = { id: String, name: String }
 
-      class AppInfo < HubspotSDK::Internal::Type::BaseModel
+      class AppInfo < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor name: String

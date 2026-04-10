@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      # @see HubspotSDK::Resources::Automation::Sequences#get
-      class PublicSequenceResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Automation::Sequences#get
+      class PublicSequenceResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the sequence.
         #
@@ -21,9 +21,9 @@ module HubspotSDK
         #   An array of dependencies for the sequence steps, each represented as a
         #   PublicSequenceStepDependencyResponse object.
         #
-        #   @return [Array<HubspotSDK::Models::Automation::PublicSequenceStepDependencyResponse>]
+        #   @return [Array<HubSpotSDK::Models::Automation::PublicSequenceStepDependencyResponse>]
         required :dependencies,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicSequenceStepDependencyResponse] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicSequenceStepDependencyResponse] }
 
         # @!attribute name
         #   The name of the sequence.
@@ -35,9 +35,9 @@ module HubspotSDK
         #   An array of steps included in the sequence, each represented by a
         #   PublicSequenceStepResponse object.
         #
-        #   @return [Array<HubspotSDK::Models::Automation::PublicSequenceStepResponse>]
+        #   @return [Array<HubSpotSDK::Models::Automation::PublicSequenceStepResponse>]
         required :steps,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicSequenceStepResponse] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicSequenceStepResponse] }
 
         # @!attribute updated_at
         #   The date and time when the sequence was last updated.
@@ -59,22 +59,22 @@ module HubspotSDK
 
         # @!attribute settings
         #
-        #   @return [HubspotSDK::Models::Automation::PublicSequenceSettingsResponse, nil]
-        optional :settings, -> { HubspotSDK::Automation::PublicSequenceSettingsResponse }
+        #   @return [HubSpotSDK::Models::Automation::PublicSequenceSettingsResponse, nil]
+        optional :settings, -> { HubSpotSDK::Automation::PublicSequenceSettingsResponse }
 
         # @!method initialize(id:, created_at:, dependencies:, name:, steps:, updated_at:, user_id:, folder_id: nil, settings: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Automation::PublicSequenceResponse} for more details.
+        #   {HubSpotSDK::Models::Automation::PublicSequenceResponse} for more details.
         #
         #   @param id [String] The unique identifier for the sequence.
         #
         #   @param created_at [Time] The date and time when the sequence was created.
         #
-        #   @param dependencies [Array<HubspotSDK::Models::Automation::PublicSequenceStepDependencyResponse>] An array of dependencies for the sequence steps, each represented as a PublicSeq
+        #   @param dependencies [Array<HubSpotSDK::Models::Automation::PublicSequenceStepDependencyResponse>] An array of dependencies for the sequence steps, each represented as a PublicSeq
         #
         #   @param name [String] The name of the sequence.
         #
-        #   @param steps [Array<HubspotSDK::Models::Automation::PublicSequenceStepResponse>] An array of steps included in the sequence, each represented by a PublicSequence
+        #   @param steps [Array<HubSpotSDK::Models::Automation::PublicSequenceStepResponse>] An array of steps included in the sequence, each represented by a PublicSequence
         #
         #   @param updated_at [Time] The date and time when the sequence was last updated.
         #
@@ -82,7 +82,7 @@ module HubspotSDK
         #
         #   @param folder_id [String] The identifier of the folder containing the sequence.
         #
-        #   @param settings [HubspotSDK::Models::Automation::PublicSequenceSettingsResponse]
+        #   @param settings [HubSpotSDK::Models::Automation::PublicSequenceSettingsResponse]
       end
     end
   end

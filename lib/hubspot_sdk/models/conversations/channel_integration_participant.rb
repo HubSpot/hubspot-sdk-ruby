@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class ChannelIntegrationParticipant < HubspotSDK::Internal::Type::BaseModel
+      class ChannelIntegrationParticipant < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute delivery_identifier
         #
-        #   @return [HubspotSDK::Models::Conversations::PublicDeliveryIdentifier]
+        #   @return [HubSpotSDK::Models::Conversations::PublicDeliveryIdentifier]
         required :delivery_identifier,
-                 -> { HubspotSDK::Conversations::PublicDeliveryIdentifier },
+                 -> { HubSpotSDK::Conversations::PublicDeliveryIdentifier },
                  api_name: :deliveryIdentifier
 
         # @!attribute name
@@ -22,7 +22,7 @@ module HubspotSDK
         optional :sender_actor_id, String, api_name: :senderActorId
 
         # @!method initialize(delivery_identifier:, name: nil, sender_actor_id: nil)
-        #   @param delivery_identifier [HubspotSDK::Models::Conversations::PublicDeliveryIdentifier]
+        #   @param delivery_identifier [HubSpotSDK::Models::Conversations::PublicDeliveryIdentifier]
         #   @param name [String]
         #   @param sender_actor_id [String]
       end

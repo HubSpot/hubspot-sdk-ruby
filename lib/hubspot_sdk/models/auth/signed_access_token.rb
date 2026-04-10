@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Auth
-      class SignedAccessToken < HubspotSDK::Internal::Type::BaseModel
+      class SignedAccessToken < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute app_id
         #
         #   @return [Integer]
@@ -33,18 +33,18 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :is_private_distribution,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :isPrivateDistribution
 
         # @!attribute is_service_account
         #
         #   @return [Boolean]
-        required :is_service_account, HubspotSDK::Internal::Type::Boolean, api_name: :isServiceAccount
+        required :is_service_account, HubSpotSDK::Internal::Type::Boolean, api_name: :isServiceAccount
 
         # @!attribute is_user_level
         #
         #   @return [Boolean]
-        required :is_user_level, HubspotSDK::Internal::Type::Boolean, api_name: :isUserLevel
+        required :is_user_level, HubSpotSDK::Internal::Type::Boolean, api_name: :isUserLevel
 
         # @!attribute new_signature
         #

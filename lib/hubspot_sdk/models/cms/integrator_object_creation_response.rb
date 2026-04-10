@@ -1,30 +1,30 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class IntegratorObjectCreationResponse < HubspotSDK::Internal::Type::BaseModel
+      class IntegratorObjectCreationResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute object_type
         #
-        #   @return [HubspotSDK::Models::Cms::InboundDBObjectType]
-        required :object_type, -> { HubspotSDK::Cms::InboundDBObjectType }, api_name: :objectType
+        #   @return [HubSpotSDK::Models::Cms::InboundDBObjectType]
+        required :object_type, -> { HubSpotSDK::Cms::InboundDBObjectType }, api_name: :objectType
 
         # @!attribute properties
         #
-        #   @return [Array<HubspotSDK::Models::Cms::PropertyDefinition>]
-        required :properties, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::PropertyDefinition] }
+        #   @return [Array<HubSpotSDK::Models::Cms::PropertyDefinition>]
+        required :properties, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::PropertyDefinition] }
 
         # @!attribute property_groups
         #
-        #   @return [Array<HubspotSDK::Models::Cms::Group>]
+        #   @return [Array<HubSpotSDK::Models::Cms::Group>]
         required :property_groups,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Group] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Group] },
                  api_name: :propertyGroups
 
         # @!method initialize(object_type:, properties:, property_groups:)
-        #   @param object_type [HubspotSDK::Models::Cms::InboundDBObjectType]
-        #   @param properties [Array<HubspotSDK::Models::Cms::PropertyDefinition>]
-        #   @param property_groups [Array<HubspotSDK::Models::Cms::Group>]
+        #   @param object_type [HubSpotSDK::Models::Cms::InboundDBObjectType]
+        #   @param properties [Array<HubSpotSDK::Models::Cms::PropertyDefinition>]
+        #   @param property_groups [Array<HubSpotSDK::Models::Cms::Group>]
       end
     end
   end

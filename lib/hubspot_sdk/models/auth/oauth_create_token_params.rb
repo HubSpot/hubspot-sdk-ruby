@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Auth
-      # @see HubspotSDK::Resources::Auth::OAuth#create_token
-      class OAuthCreateTokenParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Auth::OAuth#create_token
+      class OAuthCreateTokenParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute client_id
         #
@@ -30,8 +30,8 @@ module HubspotSDK
 
         # @!attribute grant_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Auth::OAuthCreateTokenParams::GrantType, nil]
-        optional :grant_type, enum: -> { HubspotSDK::Auth::OAuthCreateTokenParams::GrantType }
+        #   @return [Symbol, HubSpotSDK::Models::Auth::OAuthCreateTokenParams::GrantType, nil]
+        optional :grant_type, enum: -> { HubSpotSDK::Auth::OAuthCreateTokenParams::GrantType }
 
         # @!attribute redirect_uri
         #
@@ -53,14 +53,14 @@ module HubspotSDK
         #   @param client_secret [String]
         #   @param code [String]
         #   @param code_verifier [String]
-        #   @param grant_type [Symbol, HubspotSDK::Models::Auth::OAuthCreateTokenParams::GrantType]
+        #   @param grant_type [Symbol, HubSpotSDK::Models::Auth::OAuthCreateTokenParams::GrantType]
         #   @param redirect_uri [String]
         #   @param refresh_token [String]
         #   @param scope [String]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
 
         module GrantType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUTHORIZATION_CODE = :authorization_code
           REFRESH_TOKEN = :refresh_token

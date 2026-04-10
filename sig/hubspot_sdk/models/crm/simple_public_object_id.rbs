@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type simple_public_object_id = { id: String }
 
-      class SimplePublicObjectID < HubspotSDK::Internal::Type::BaseModel
+      class SimplePublicObjectID < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         def initialize: (id: String) -> void

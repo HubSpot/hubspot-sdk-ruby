@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class AuditLogs
@@ -14,8 +14,8 @@ module HubspotSDK
             object_type: T::Array[String],
             sort: T::Array[String],
             user_id: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Internal::Page[HubspotSDK::Cms::PublicAuditLog])
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Internal::Page[HubSpotSDK::Cms::PublicAuditLog])
         end
         def list(
           # The paging cursor token of the last successfully read resource will be returned
@@ -38,16 +38,16 @@ module HubspotSDK
           params(
             email: String,
             format_:
-              HubspotSDK::Cms::CmsAuditLoggingExportSettings::Format::OrSymbol,
+              HubSpotSDK::Cms::CmsAuditLoggingExportSettings::Format::OrSymbol,
             portal_id: Integer,
             recipient_user_ids: T::Array[Integer],
             should_mark_export_file_as_sensitive: T::Boolean,
             type: String,
-            filters: HubspotSDK::Cms::CmsAuditLoggingExportFilters::OrHash,
+            filters: HubSpotSDK::Cms::CmsAuditLoggingExportFilters::OrHash,
             partition: Integer,
             user_id: Integer,
             user_time_zone: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def export(
@@ -66,7 +66,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

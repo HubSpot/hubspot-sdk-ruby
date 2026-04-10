@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class RangedDatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class RangedDatePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute include_objects_with_no_value_set
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute lower_bound_timestamp
@@ -23,8 +23,8 @@ module HubspotSDK
 
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::RangedDatePropertyOperation::Operator]
-        required :operator, enum: -> { HubspotSDK::Events::RangedDatePropertyOperation::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Events::RangedDatePropertyOperation::Operator]
+        required :operator, enum: -> { HubSpotSDK::Events::RangedDatePropertyOperation::Operator }
 
         # @!attribute operator_name
         #
@@ -33,16 +33,16 @@ module HubspotSDK
 
         # @!attribute property_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::RangedDatePropertyOperation::PropertyType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::RangedDatePropertyOperation::PropertyType]
         required :property_type,
-                 enum: -> { HubspotSDK::Events::RangedDatePropertyOperation::PropertyType },
+                 enum: -> { HubSpotSDK::Events::RangedDatePropertyOperation::PropertyType },
                  api_name: :propertyType
 
         # @!attribute requires_time_zone_conversion
         #
         #   @return [Boolean]
         required :requires_time_zone_conversion,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :requiresTimeZoneConversion
 
         # @!attribute upper_bound_timestamp
@@ -64,17 +64,17 @@ module HubspotSDK
         #   @param include_objects_with_no_value_set [Boolean]
         #   @param lower_bound_timestamp [Integer]
         #   @param operation_type [String]
-        #   @param operator [Symbol, HubspotSDK::Models::Events::RangedDatePropertyOperation::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Events::RangedDatePropertyOperation::Operator]
         #   @param operator_name [String]
-        #   @param property_type [Symbol, HubspotSDK::Models::Events::RangedDatePropertyOperation::PropertyType]
+        #   @param property_type [Symbol, HubSpotSDK::Models::Events::RangedDatePropertyOperation::PropertyType]
         #   @param requires_time_zone_conversion [Boolean]
         #   @param upper_bound_timestamp [Integer]
         #   @param default_value [String]
         #   @param render_spec [String]
 
-        # @see HubspotSDK::Models::Events::RangedDatePropertyOperation#operator
+        # @see HubSpotSDK::Models::Events::RangedDatePropertyOperation#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           IS_BETWEEN = :IS_BETWEEN
           IS_NOT_BETWEEN = :IS_NOT_BETWEEN
@@ -83,9 +83,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::RangedDatePropertyOperation#property_type
+        # @see HubSpotSDK::Models::Events::RangedDatePropertyOperation#property_type
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DATETIME_RANGED = :"datetime-ranged"
 

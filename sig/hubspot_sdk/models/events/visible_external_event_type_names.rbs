@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type visible_external_event_type_names = { event_types: ::Array[String] }
 
-      class VisibleExternalEventTypeNames < HubspotSDK::Internal::Type::BaseModel
+      class VisibleExternalEventTypeNames < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor event_types: ::Array[String]
 
         def initialize: (event_types: ::Array[String]) -> void

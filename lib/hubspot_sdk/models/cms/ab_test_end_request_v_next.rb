@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class AbTestEndRequestVNext < HubspotSDK::Internal::Type::BaseModel
+      class AbTestEndRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute ab_test_id
         #   ID of the test to end.
         #

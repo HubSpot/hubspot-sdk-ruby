@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Auth
       class OAuth
@@ -12,11 +12,11 @@ module HubspotSDK
             code: String,
             code_verifier: String,
             grant_type:
-              HubspotSDK::Auth::OAuthCreateTokenParams::GrantType::OrSymbol,
+              HubSpotSDK::Auth::OAuthCreateTokenParams::GrantType::OrSymbol,
             redirect_uri: String,
             refresh_token: String,
             scope: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(StringIO)
         end
         def create_token(
@@ -39,8 +39,8 @@ module HubspotSDK
             client_id: String,
             client_secret: String,
             token_type_hint: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Auth::TokenInfoResponseBaseIf::Variants)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Auth::TokenInfoResponseBaseIf::Variants)
         end
         def introspect_token(
           token: nil,
@@ -58,7 +58,7 @@ module HubspotSDK
             client_id: String,
             client_secret: String,
             token_type_hint: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(StringIO)
         end
         def revoke_token(
@@ -71,7 +71,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

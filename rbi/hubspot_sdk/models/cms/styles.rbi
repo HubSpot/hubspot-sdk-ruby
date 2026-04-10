@@ -1,42 +1,42 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Styles < HubspotSDK::Internal::Type::BaseModel
+      class Styles < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::Styles, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::Styles, HubSpotSDK::Internal::AnyHash)
           end
 
-        sig { returns(HubspotSDK::Cms::RgbaColor) }
+        sig { returns(HubSpotSDK::Cms::RgbaColor) }
         attr_reader :background_color
 
         sig do
-          params(background_color: HubspotSDK::Cms::RgbaColor::OrHash).void
+          params(background_color: HubSpotSDK::Cms::RgbaColor::OrHash).void
         end
         attr_writer :background_color
 
-        sig { returns(HubspotSDK::Cms::Gradient) }
+        sig { returns(HubSpotSDK::Cms::Gradient) }
         attr_reader :background_gradient
 
         sig do
-          params(background_gradient: HubspotSDK::Cms::Gradient::OrHash).void
+          params(background_gradient: HubSpotSDK::Cms::Gradient::OrHash).void
         end
         attr_writer :background_gradient
 
-        sig { returns(HubspotSDK::Cms::BackgroundImage) }
+        sig { returns(HubSpotSDK::Cms::BackgroundImage) }
         attr_reader :background_image
 
         sig do
           params(
-            background_image: HubspotSDK::Cms::BackgroundImage::OrHash
+            background_image: HubSpotSDK::Cms::BackgroundImage::OrHash
           ).void
         end
         attr_writer :background_image
 
         # Indicates whether flexbox positioning is enabled for the section.
-        sig { returns(HubspotSDK::Cms::Styles::FlexboxPositioning::OrSymbol) }
+        sig { returns(HubSpotSDK::Cms::Styles::FlexboxPositioning::OrSymbol) }
         attr_accessor :flexbox_positioning
 
         # Determines if the section should be forced to full width.
@@ -48,36 +48,36 @@ module HubspotSDK
         attr_accessor :max_width_section_centering
 
         # Specifies the vertical alignment of elements within the section.
-        sig { returns(HubspotSDK::Cms::Styles::VerticalAlignment::OrSymbol) }
+        sig { returns(HubSpotSDK::Cms::Styles::VerticalAlignment::OrSymbol) }
         attr_accessor :vertical_alignment
 
         # Breakpoint CSS styles for margin, padding, etc...
         sig do
-          returns(T.nilable(T::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles]))
+          returns(T.nilable(T::Hash[Symbol, HubSpotSDK::Cms::BreakpointStyles]))
         end
         attr_reader :breakpoint_styles
 
         sig do
           params(
             breakpoint_styles:
-              T::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles::OrHash]
+              T::Hash[Symbol, HubSpotSDK::Cms::BreakpointStyles::OrHash]
           ).void
         end
         attr_writer :breakpoint_styles
 
         sig do
           params(
-            background_color: HubspotSDK::Cms::RgbaColor::OrHash,
-            background_gradient: HubspotSDK::Cms::Gradient::OrHash,
-            background_image: HubspotSDK::Cms::BackgroundImage::OrHash,
+            background_color: HubSpotSDK::Cms::RgbaColor::OrHash,
+            background_gradient: HubSpotSDK::Cms::Gradient::OrHash,
+            background_image: HubSpotSDK::Cms::BackgroundImage::OrHash,
             flexbox_positioning:
-              HubspotSDK::Cms::Styles::FlexboxPositioning::OrSymbol,
+              HubSpotSDK::Cms::Styles::FlexboxPositioning::OrSymbol,
             force_full_width_section: T::Boolean,
             max_width_section_centering: Integer,
             vertical_alignment:
-              HubspotSDK::Cms::Styles::VerticalAlignment::OrSymbol,
+              HubSpotSDK::Cms::Styles::VerticalAlignment::OrSymbol,
             breakpoint_styles:
-              T::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles::OrHash]
+              T::Hash[Symbol, HubSpotSDK::Cms::BreakpointStyles::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(
@@ -100,17 +100,17 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              background_color: HubspotSDK::Cms::RgbaColor,
-              background_gradient: HubspotSDK::Cms::Gradient,
-              background_image: HubspotSDK::Cms::BackgroundImage,
+              background_color: HubSpotSDK::Cms::RgbaColor,
+              background_gradient: HubSpotSDK::Cms::Gradient,
+              background_image: HubSpotSDK::Cms::BackgroundImage,
               flexbox_positioning:
-                HubspotSDK::Cms::Styles::FlexboxPositioning::OrSymbol,
+                HubSpotSDK::Cms::Styles::FlexboxPositioning::OrSymbol,
               force_full_width_section: T::Boolean,
               max_width_section_centering: Integer,
               vertical_alignment:
-                HubspotSDK::Cms::Styles::VerticalAlignment::OrSymbol,
+                HubSpotSDK::Cms::Styles::VerticalAlignment::OrSymbol,
               breakpoint_styles:
-                T::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles]
+                T::Hash[Symbol, HubSpotSDK::Cms::BreakpointStyles]
             }
           )
         end
@@ -119,64 +119,64 @@ module HubspotSDK
 
         # Indicates whether flexbox positioning is enabled for the section.
         module FlexboxPositioning
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::Styles::FlexboxPositioning)
+              T.all(Symbol, HubSpotSDK::Cms::Styles::FlexboxPositioning)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           BOTTOM_CENTER =
             T.let(
               :BOTTOM_CENTER,
-              HubspotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
+              HubSpotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
             )
           BOTTOM_LEFT =
             T.let(
               :BOTTOM_LEFT,
-              HubspotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
+              HubSpotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
             )
           BOTTOM_RIGHT =
             T.let(
               :BOTTOM_RIGHT,
-              HubspotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
+              HubSpotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
             )
           MIDDLE_CENTER =
             T.let(
               :MIDDLE_CENTER,
-              HubspotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
+              HubSpotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
             )
           MIDDLE_LEFT =
             T.let(
               :MIDDLE_LEFT,
-              HubspotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
+              HubSpotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
             )
           MIDDLE_RIGHT =
             T.let(
               :MIDDLE_RIGHT,
-              HubspotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
+              HubSpotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
             )
           TOP_CENTER =
             T.let(
               :TOP_CENTER,
-              HubspotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
+              HubSpotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
             )
           TOP_LEFT =
             T.let(
               :TOP_LEFT,
-              HubspotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
+              HubSpotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
             )
           TOP_RIGHT =
             T.let(
               :TOP_RIGHT,
-              HubspotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
+              HubSpotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
+                HubSpotSDK::Cms::Styles::FlexboxPositioning::TaggedSymbol
               ]
             )
           end
@@ -186,33 +186,33 @@ module HubspotSDK
 
         # Specifies the vertical alignment of elements within the section.
         module VerticalAlignment
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::Styles::VerticalAlignment)
+              T.all(Symbol, HubSpotSDK::Cms::Styles::VerticalAlignment)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           BOTTOM =
             T.let(
               :BOTTOM,
-              HubspotSDK::Cms::Styles::VerticalAlignment::TaggedSymbol
+              HubSpotSDK::Cms::Styles::VerticalAlignment::TaggedSymbol
             )
           MIDDLE =
             T.let(
               :MIDDLE,
-              HubspotSDK::Cms::Styles::VerticalAlignment::TaggedSymbol
+              HubSpotSDK::Cms::Styles::VerticalAlignment::TaggedSymbol
             )
           TOP =
             T.let(
               :TOP,
-              HubspotSDK::Cms::Styles::VerticalAlignment::TaggedSymbol
+              HubSpotSDK::Cms::Styles::VerticalAlignment::TaggedSymbol
             )
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Cms::Styles::VerticalAlignment::TaggedSymbol]
+              T::Array[HubSpotSDK::Cms::Styles::VerticalAlignment::TaggedSymbol]
             )
           end
           def self.values

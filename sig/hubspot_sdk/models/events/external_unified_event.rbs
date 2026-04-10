@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     class ExternalUnifiedEvent = Events::ExternalUnifiedEvent
 
@@ -13,7 +13,7 @@ module HubspotSDK
           properties: ::Hash[Symbol, String]
         }
 
-      class ExternalUnifiedEvent < HubspotSDK::Internal::Type::BaseModel
+      class ExternalUnifiedEvent < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor event_type: String

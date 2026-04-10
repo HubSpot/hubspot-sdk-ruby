@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       type batch_input_exchange_rate_create_request =
-        { inputs: ::Array[HubspotSDK::Settings::ExchangeRateCreateRequest] }
+        { inputs: ::Array[HubSpotSDK::Settings::ExchangeRateCreateRequest] }
 
-      class BatchInputExchangeRateCreateRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor inputs: ::Array[HubspotSDK::Settings::ExchangeRateCreateRequest]
+      class BatchInputExchangeRateCreateRequest < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubSpotSDK::Settings::ExchangeRateCreateRequest]
 
         def initialize: (
-          inputs: ::Array[HubspotSDK::Settings::ExchangeRateCreateRequest]
+          inputs: ::Array[HubSpotSDK::Settings::ExchangeRateCreateRequest]
         ) -> void
 
         def to_hash: -> {
-          inputs: ::Array[HubspotSDK::Settings::ExchangeRateCreateRequest]
+          inputs: ::Array[HubSpotSDK::Settings::ExchangeRateCreateRequest]
         }
       end
     end

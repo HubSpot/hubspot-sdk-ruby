@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Account
       class Activity
@@ -10,15 +10,15 @@ module HubspotSDK
           ?occurred_after: Time,
           ?occurred_before: Time,
           ?sort: ::Array[String],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Account::PublicAPIUserActionEvent]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Account::PublicAPIUserActionEvent]
 
         def list_login_activities: (
           ?after: String,
           ?limit: Integer,
           ?user_id: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Account::PublicLoginAudit]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Account::PublicLoginAudit]
 
         def list_security_activities: (
           ?after: String,
@@ -26,10 +26,10 @@ module HubspotSDK
           ?limit: Integer,
           ?to_timestamp: Integer,
           ?user_id: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Account::HydratedCriticalAction]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Account::HydratedCriticalAction]
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

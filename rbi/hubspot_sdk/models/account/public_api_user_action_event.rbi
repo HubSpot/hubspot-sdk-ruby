@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
-      class PublicAPIUserActionEvent < HubspotSDK::Internal::Type::BaseModel
+      class PublicAPIUserActionEvent < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Account::PublicAPIUserActionEvent,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Account::PublicAPIUserActionEvent,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,11 +16,11 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :id
 
-        sig { returns(HubspotSDK::Account::ActingUser) }
+        sig { returns(HubSpotSDK::Account::ActingUser) }
         attr_reader :acting_user
 
         sig do
-          params(acting_user: HubspotSDK::Account::ActingUser::OrHash).void
+          params(acting_user: HubSpotSDK::Account::ActingUser::OrHash).void
         end
         attr_writer :acting_user
 
@@ -53,7 +53,7 @@ module HubspotSDK
         sig do
           params(
             id: String,
-            acting_user: HubspotSDK::Account::ActingUser::OrHash,
+            acting_user: HubSpotSDK::Account::ActingUser::OrHash,
             action: String,
             category: String,
             occurred_at: Time,
@@ -82,7 +82,7 @@ module HubspotSDK
           override.returns(
             {
               id: String,
-              acting_user: HubspotSDK::Account::ActingUser,
+              acting_user: HubSpotSDK::Account::ActingUser,
               action: String,
               category: String,
               occurred_at: Time,

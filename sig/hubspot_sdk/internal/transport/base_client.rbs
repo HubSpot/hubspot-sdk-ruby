@@ -1,8 +1,8 @@
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Transport
       class BaseClient
-        extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        extend HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         type request_components =
           {
@@ -19,8 +19,8 @@ module HubspotSDK
             | (^(top arg0) -> top))?,
             page: Class?,
             stream: Class?,
-            model: HubspotSDK::Internal::Type::Converter::input?,
-            options: HubspotSDK::request_opts?
+            model: HubSpotSDK::Internal::Type::Converter::input?,
+            options: HubSpotSDK::request_opts?
           }
         type request_input =
           {
@@ -37,7 +37,7 @@ module HubspotSDK
         PLATFORM_HEADERS: ::Hash[String, String]
 
         def self.validate!: (
-          HubspotSDK::Internal::Transport::BaseClient::request_components req
+          HubSpotSDK::Internal::Transport::BaseClient::request_components req
         ) -> void
 
         def self.should_retry?: (
@@ -46,13 +46,13 @@ module HubspotSDK
         ) -> bool
 
         def self.follow_redirect: (
-          HubspotSDK::Internal::Transport::BaseClient::request_input request,
+          HubSpotSDK::Internal::Transport::BaseClient::request_input request,
           status: Integer,
           response_headers: ::Hash[String, String]
-        ) -> HubspotSDK::Internal::Transport::BaseClient::request_input
+        ) -> HubSpotSDK::Internal::Transport::BaseClient::request_input
 
         def self.reap_connection!: (
-          Integer | HubspotSDK::Errors::APIConnectionError status,
+          Integer | HubSpotSDK::Errors::APIConnectionError status,
           stream: Enumerable[String]?
         ) -> void
 
@@ -71,7 +71,7 @@ module HubspotSDK
         attr_reader idempotency_header: String?
 
         # @api private
-        attr_reader requester: HubspotSDK::Internal::Transport::PooledNetRequester
+        attr_reader requester: HubSpotSDK::Internal::Transport::PooledNetRequester
 
         def initialize: (
           base_url: String,
@@ -94,9 +94,9 @@ module HubspotSDK
         private def generate_idempotency_key: -> String
 
         private def build_request: (
-          HubspotSDK::Internal::Transport::BaseClient::request_components req,
-          HubspotSDK::request_options opts
-        ) -> HubspotSDK::Internal::Transport::BaseClient::request_input
+          HubSpotSDK::Internal::Transport::BaseClient::request_components req,
+          HubSpotSDK::request_options opts
+        ) -> HubSpotSDK::Internal::Transport::BaseClient::request_input
 
         private def retry_delay: (
           ::Hash[String, String] headers,
@@ -104,7 +104,7 @@ module HubspotSDK
         ) -> Float
 
         def send_request: (
-          HubspotSDK::Internal::Transport::BaseClient::request_input request,
+          HubSpotSDK::Internal::Transport::BaseClient::request_input request,
           redirect_count: Integer,
           retry_count: Integer,
           send_retry_header: bool
@@ -124,8 +124,8 @@ module HubspotSDK
           | (^(top arg0) -> top))?,
           ?page: Class?,
           ?stream: Class?,
-          ?model: HubspotSDK::Internal::Type::Converter::input?,
-          ?options: HubspotSDK::request_opts?
+          ?model: HubSpotSDK::Internal::Type::Converter::input?,
+          ?options: HubSpotSDK::request_opts?
         ) -> top
 
         def inspect: -> String

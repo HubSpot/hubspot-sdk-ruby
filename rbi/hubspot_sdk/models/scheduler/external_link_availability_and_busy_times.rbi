@@ -1,29 +1,29 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalLinkAvailabilityAndBusyTimes < HubspotSDK::Internal::Type::BaseModel
+      class ExternalLinkAvailabilityAndBusyTimes < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Scheduler::ExternalLinkAvailabilityAndBusyTimes,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Scheduler::ExternalLinkAvailabilityAndBusyTimes,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Scheduler::ExternalUserBusyTimes]) }
+        sig { returns(T::Array[HubSpotSDK::Scheduler::ExternalUserBusyTimes]) }
         attr_accessor :all_users_busy_times
 
         sig do
-          returns(T.nilable(HubspotSDK::Scheduler::ExternalLinkAvailability))
+          returns(T.nilable(HubSpotSDK::Scheduler::ExternalLinkAvailability))
         end
         attr_reader :link_availability
 
         sig do
           params(
             link_availability:
-              HubspotSDK::Scheduler::ExternalLinkAvailability::OrHash
+              HubSpotSDK::Scheduler::ExternalLinkAvailability::OrHash
           ).void
         end
         attr_writer :link_availability
@@ -31,9 +31,9 @@ module HubspotSDK
         sig do
           params(
             all_users_busy_times:
-              T::Array[HubspotSDK::Scheduler::ExternalUserBusyTimes::OrHash],
+              T::Array[HubSpotSDK::Scheduler::ExternalUserBusyTimes::OrHash],
             link_availability:
-              HubspotSDK::Scheduler::ExternalLinkAvailability::OrHash
+              HubSpotSDK::Scheduler::ExternalLinkAvailability::OrHash
           ).returns(T.attached_class)
         end
         def self.new(all_users_busy_times:, link_availability: nil)
@@ -43,8 +43,8 @@ module HubspotSDK
           override.returns(
             {
               all_users_busy_times:
-                T::Array[HubspotSDK::Scheduler::ExternalUserBusyTimes],
-              link_availability: HubspotSDK::Scheduler::ExternalLinkAvailability
+                T::Array[HubSpotSDK::Scheduler::ExternalUserBusyTimes],
+              link_availability: HubSpotSDK::Scheduler::ExternalLinkAvailability
             }
           )
         end

@@ -1,46 +1,46 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicEmailTestingDetails < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailTestingDetails < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute is_ab_variation
         #
         #   @return [Boolean]
-        required :is_ab_variation, HubspotSDK::Internal::Type::Boolean, api_name: :isAbVariation
+        required :is_ab_variation, HubSpotSDK::Internal::Type::Boolean, api_name: :isAbVariation
 
         # @!attribute ab_sample_size_default
         #   Version of the email that should be sent if there are too few recipients to
         #   conduct an AB test.
         #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::PublicEmailTestingDetails::AbSampleSizeDefault, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::AbSampleSizeDefault, nil]
         optional :ab_sample_size_default,
-                 enum: -> { HubspotSDK::Marketing::PublicEmailTestingDetails::AbSampleSizeDefault },
+                 enum: -> { HubSpotSDK::Marketing::PublicEmailTestingDetails::AbSampleSizeDefault },
                  api_name: :abSampleSizeDefault
 
         # @!attribute ab_sampling_default
         #   Version of the email that should be sent if the results are inconclusive after
         #   the test period, master or variant.
         #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::PublicEmailTestingDetails::AbSamplingDefault, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::AbSamplingDefault, nil]
         optional :ab_sampling_default,
-                 enum: -> { HubspotSDK::Marketing::PublicEmailTestingDetails::AbSamplingDefault },
+                 enum: -> { HubSpotSDK::Marketing::PublicEmailTestingDetails::AbSamplingDefault },
                  api_name: :abSamplingDefault
 
         # @!attribute ab_status
         #   Status of the AB test.
         #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::PublicEmailTestingDetails::AbStatus, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::AbStatus, nil]
         optional :ab_status,
-                 enum: -> { HubspotSDK::Marketing::PublicEmailTestingDetails::AbStatus },
+                 enum: -> { HubSpotSDK::Marketing::PublicEmailTestingDetails::AbStatus },
                  api_name: :abStatus
 
         # @!attribute ab_success_metric
         #   Metric to determine the version that will be sent to the remaining contacts.
         #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::PublicEmailTestingDetails::AbSuccessMetric, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::AbSuccessMetric, nil]
         optional :ab_success_metric,
-                 enum: -> { HubspotSDK::Marketing::PublicEmailTestingDetails::AbSuccessMetric },
+                 enum: -> { HubSpotSDK::Marketing::PublicEmailTestingDetails::AbSuccessMetric },
                  api_name: :abSuccessMetric
 
         # @!attribute ab_test_percentage
@@ -64,17 +64,17 @@ module HubspotSDK
 
         # @!method initialize(is_ab_variation:, ab_sample_size_default: nil, ab_sampling_default: nil, ab_status: nil, ab_success_metric: nil, ab_test_percentage: nil, hours_to_wait: nil, test_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::PublicEmailTestingDetails} for more details.
+        #   {HubSpotSDK::Models::Marketing::PublicEmailTestingDetails} for more details.
         #
         #   @param is_ab_variation [Boolean]
         #
-        #   @param ab_sample_size_default [Symbol, HubspotSDK::Models::Marketing::PublicEmailTestingDetails::AbSampleSizeDefault] Version of the email that should be sent if there are too few recipients to cond
+        #   @param ab_sample_size_default [Symbol, HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::AbSampleSizeDefault] Version of the email that should be sent if there are too few recipients to cond
         #
-        #   @param ab_sampling_default [Symbol, HubspotSDK::Models::Marketing::PublicEmailTestingDetails::AbSamplingDefault] Version of the email that should be sent if the results are inconclusive after t
+        #   @param ab_sampling_default [Symbol, HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::AbSamplingDefault] Version of the email that should be sent if the results are inconclusive after t
         #
-        #   @param ab_status [Symbol, HubspotSDK::Models::Marketing::PublicEmailTestingDetails::AbStatus] Status of the AB test.
+        #   @param ab_status [Symbol, HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::AbStatus] Status of the AB test.
         #
-        #   @param ab_success_metric [Symbol, HubspotSDK::Models::Marketing::PublicEmailTestingDetails::AbSuccessMetric] Metric to determine the version that will be sent to the remaining contacts.
+        #   @param ab_success_metric [Symbol, HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::AbSuccessMetric] Metric to determine the version that will be sent to the remaining contacts.
         #
         #   @param ab_test_percentage [Integer] The size of your test group.
         #
@@ -85,9 +85,9 @@ module HubspotSDK
         # Version of the email that should be sent if there are too few recipients to
         # conduct an AB test.
         #
-        # @see HubspotSDK::Models::Marketing::PublicEmailTestingDetails#ab_sample_size_default
+        # @see HubSpotSDK::Models::Marketing::PublicEmailTestingDetails#ab_sample_size_default
         module AbSampleSizeDefault
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUTOMATED_LOSER_VARIANT = :automated_loser_variant
           AUTOMATED_MASTER = :automated_master
@@ -105,9 +105,9 @@ module HubspotSDK
         # Version of the email that should be sent if the results are inconclusive after
         # the test period, master or variant.
         #
-        # @see HubspotSDK::Models::Marketing::PublicEmailTestingDetails#ab_sampling_default
+        # @see HubSpotSDK::Models::Marketing::PublicEmailTestingDetails#ab_sampling_default
         module AbSamplingDefault
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUTOMATED_LOSER_VARIANT = :automated_loser_variant
           AUTOMATED_MASTER = :automated_master
@@ -124,9 +124,9 @@ module HubspotSDK
 
         # Status of the AB test.
         #
-        # @see HubspotSDK::Models::Marketing::PublicEmailTestingDetails#ab_status
+        # @see HubSpotSDK::Models::Marketing::PublicEmailTestingDetails#ab_status
         module AbStatus
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUTOMATED_LOSER_VARIANT = :automated_loser_variant
           AUTOMATED_MASTER = :automated_master
@@ -143,9 +143,9 @@ module HubspotSDK
 
         # Metric to determine the version that will be sent to the remaining contacts.
         #
-        # @see HubspotSDK::Models::Marketing::PublicEmailTestingDetails#ab_success_metric
+        # @see HubSpotSDK::Models::Marketing::PublicEmailTestingDetails#ab_success_metric
         module AbSuccessMetric
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CLICKS_BY_DELIVERED = :CLICKS_BY_DELIVERED
           CLICKS_BY_OPENS = :CLICKS_BY_OPENS

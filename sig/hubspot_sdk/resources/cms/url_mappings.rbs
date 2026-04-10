@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class URLMappings
@@ -6,7 +6,7 @@ module HubspotSDK
           id: Integer,
           cdn_purge_embargo_time: Integer,
           content_group_id: Integer,
-          cos_object_type: HubspotSDK::Models::Cms::URLMappingsURLMapping::cos_object_type,
+          cos_object_type: HubSpotSDK::Models::Cms::URLMappingsURLMapping::cos_object_type,
           created: Integer,
           created_by_id: Integer,
           deleted_at: Integer,
@@ -29,22 +29,22 @@ module HubspotSDK
           route_prefix: String,
           updated: Integer,
           updated_by_id: Integer,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> StringIO
 
-        def list: (?request_options: HubspotSDK::request_opts) -> StringIO
+        def list: (?request_options: HubSpotSDK::request_opts) -> StringIO
 
         def delete: (
           Integer id,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def get: (
           Integer id,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> StringIO
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

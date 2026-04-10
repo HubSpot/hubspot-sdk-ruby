@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_meeting_booking_response =
@@ -8,10 +8,10 @@ module HubspotSDK
           contact_id: String,
           duration: Integer,
           end_: Time,
-          form_fields: ::Array[HubspotSDK::Scheduler::ExternalValidatedFormField],
+          form_fields: ::Array[HubSpotSDK::Scheduler::ExternalValidatedFormField],
           guest_emails: ::Array[String],
           is_offline: bool,
-          legal_consent_responses: ::Array[HubspotSDK::Scheduler::ExternalLegalConsentResponse],
+          legal_consent_responses: ::Array[HubSpotSDK::Scheduler::ExternalLegalConsentResponse],
           start: Time,
           subject: String,
           locale: String,
@@ -20,7 +20,7 @@ module HubspotSDK
           web_conference_url: String
         }
 
-      class ExternalMeetingBookingResponse < HubspotSDK::Internal::Type::BaseModel
+      class ExternalMeetingBookingResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor booking_timezone: String
 
         attr_accessor calendar_event_id: String
@@ -31,13 +31,13 @@ module HubspotSDK
 
         attr_accessor end_: Time
 
-        attr_accessor form_fields: ::Array[HubspotSDK::Scheduler::ExternalValidatedFormField]
+        attr_accessor form_fields: ::Array[HubSpotSDK::Scheduler::ExternalValidatedFormField]
 
         attr_accessor guest_emails: ::Array[String]
 
         attr_accessor is_offline: bool
 
-        attr_accessor legal_consent_responses: ::Array[HubspotSDK::Scheduler::ExternalLegalConsentResponse]
+        attr_accessor legal_consent_responses: ::Array[HubSpotSDK::Scheduler::ExternalLegalConsentResponse]
 
         attr_accessor start: Time
 
@@ -65,10 +65,10 @@ module HubspotSDK
           contact_id: String,
           duration: Integer,
           end_: Time,
-          form_fields: ::Array[HubspotSDK::Scheduler::ExternalValidatedFormField],
+          form_fields: ::Array[HubSpotSDK::Scheduler::ExternalValidatedFormField],
           guest_emails: ::Array[String],
           is_offline: bool,
-          legal_consent_responses: ::Array[HubspotSDK::Scheduler::ExternalLegalConsentResponse],
+          legal_consent_responses: ::Array[HubSpotSDK::Scheduler::ExternalLegalConsentResponse],
           start: Time,
           subject: String,
           ?locale: String,
@@ -83,10 +83,10 @@ module HubspotSDK
           contact_id: String,
           duration: Integer,
           end_: Time,
-          form_fields: ::Array[HubspotSDK::Scheduler::ExternalValidatedFormField],
+          form_fields: ::Array[HubSpotSDK::Scheduler::ExternalValidatedFormField],
           guest_emails: ::Array[String],
           is_offline: bool,
-          legal_consent_responses: ::Array[HubspotSDK::Scheduler::ExternalLegalConsentResponse],
+          legal_consent_responses: ::Array[HubSpotSDK::Scheduler::ExternalLegalConsentResponse],
           start: Time,
           subject: String,
           locale: String,

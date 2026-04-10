@@ -1,23 +1,23 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class QuickRepliesAttachment < HubspotSDK::Internal::Type::BaseModel
+      class QuickRepliesAttachment < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::QuickRepliesAttachment,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::QuickRepliesAttachment,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Conversations::QuickReply]) }
+        sig { returns(T::Array[HubSpotSDK::Conversations::QuickReply]) }
         attr_accessor :quick_replies
 
         sig do
           returns(
-            HubspotSDK::Conversations::QuickRepliesAttachment::Type::OrSymbol
+            HubSpotSDK::Conversations::QuickRepliesAttachment::Type::OrSymbol
           )
         end
         attr_accessor :type
@@ -25,9 +25,9 @@ module HubspotSDK
         sig do
           params(
             quick_replies:
-              T::Array[HubspotSDK::Conversations::QuickReply::OrHash],
+              T::Array[HubSpotSDK::Conversations::QuickReply::OrHash],
             type:
-              HubspotSDK::Conversations::QuickRepliesAttachment::Type::OrSymbol
+              HubSpotSDK::Conversations::QuickRepliesAttachment::Type::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(quick_replies:, type:)
@@ -36,9 +36,9 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              quick_replies: T::Array[HubspotSDK::Conversations::QuickReply],
+              quick_replies: T::Array[HubSpotSDK::Conversations::QuickReply],
               type:
-                HubspotSDK::Conversations::QuickRepliesAttachment::Type::OrSymbol
+                HubSpotSDK::Conversations::QuickRepliesAttachment::Type::OrSymbol
             }
           )
         end
@@ -46,13 +46,13 @@ module HubspotSDK
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Conversations::QuickRepliesAttachment::Type
+                HubSpotSDK::Conversations::QuickRepliesAttachment::Type
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -60,13 +60,13 @@ module HubspotSDK
           QUICK_REPLIES =
             T.let(
               :QUICK_REPLIES,
-              HubspotSDK::Conversations::QuickRepliesAttachment::Type::TaggedSymbol
+              HubSpotSDK::Conversations::QuickRepliesAttachment::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::QuickRepliesAttachment::Type::TaggedSymbol
+                HubSpotSDK::Conversations::QuickRepliesAttachment::Type::TaggedSymbol
               ]
             )
           end

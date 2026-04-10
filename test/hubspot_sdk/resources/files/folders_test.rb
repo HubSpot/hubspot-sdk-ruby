@@ -2,7 +2,7 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::Files::FoldersTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Files::FoldersTest < HubSpotSDK::Test::ResourceTest
   def test_delete_by_id
     skip("Mock server tests are disabled")
 
@@ -29,13 +29,13 @@ class HubspotSDK::Test::Resources::Files::FoldersTest < HubspotSDK::Test::Resour
     response = @hubspot.files.folders.get_by_id("321669910225")
 
     assert_pattern do
-      response => HubspotSDK::Files::Folder
+      response => HubSpotSDK::Files::Folder
     end
 
     assert_pattern do
       response => {
         id: String,
-        archived: HubspotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
         created_at: Time,
         updated_at: Time,
         archived_at: Time | nil,
@@ -52,13 +52,13 @@ class HubspotSDK::Test::Resources::Files::FoldersTest < HubspotSDK::Test::Resour
     response = @hubspot.files.folders.get_by_path("folderPath")
 
     assert_pattern do
-      response => HubspotSDK::Files::Folder
+      response => HubSpotSDK::Files::Folder
     end
 
     assert_pattern do
       response => {
         id: String,
-        archived: HubspotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
         created_at: Time,
         updated_at: Time,
         archived_at: Time | nil,
@@ -75,20 +75,20 @@ class HubspotSDK::Test::Resources::Files::FoldersTest < HubspotSDK::Test::Resour
     response = @hubspot.files.folders.get_update_async_status("taskId")
 
     assert_pattern do
-      response => HubspotSDK::Files::FolderActionResponse
+      response => HubSpotSDK::Files::FolderActionResponse
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
         started_at: Time,
-        status: HubspotSDK::Files::FolderActionResponse::Status,
+        status: HubSpotSDK::Files::FolderActionResponse::Status,
         task_id: String,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        errors: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError]) | nil,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil,
-        result: HubspotSDK::Files::Folder | nil
+        result: HubSpotSDK::Files::Folder | nil
       }
     end
   end
@@ -99,20 +99,20 @@ class HubspotSDK::Test::Resources::Files::FoldersTest < HubspotSDK::Test::Resour
     response = @hubspot.files.folders.search
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Files::Folder
+      row => HubSpotSDK::Files::Folder
     end
 
     assert_pattern do
       row => {
         id: String,
-        archived: HubspotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
         created_at: Time,
         updated_at: Time,
         archived_at: Time | nil,
@@ -129,13 +129,13 @@ class HubspotSDK::Test::Resources::Files::FoldersTest < HubspotSDK::Test::Resour
     response = @hubspot.files.folders.update_async_by_id(id: "id")
 
     assert_pattern do
-      response => HubspotSDK::Files::FolderUpdateTaskLocator
+      response => HubSpotSDK::Files::FolderUpdateTaskLocator
     end
 
     assert_pattern do
       response => {
         id: String,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil
       }
     end
   end
@@ -146,13 +146,13 @@ class HubspotSDK::Test::Resources::Files::FoldersTest < HubspotSDK::Test::Resour
     response = @hubspot.files.folders.update_by_id("321669910225")
 
     assert_pattern do
-      response => HubspotSDK::Files::Folder
+      response => HubSpotSDK::Files::Folder
     end
 
     assert_pattern do
       response => {
         id: String,
-        archived: HubspotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
         created_at: Time,
         updated_at: Time,
         archived_at: Time | nil,

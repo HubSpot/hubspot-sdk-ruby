@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class FolderInput < HubspotSDK::Internal::Type::BaseModel
+      class FolderInput < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute name
         #   Desired name for the folder.
         #
@@ -28,7 +28,7 @@ module HubspotSDK
 
         # @!method initialize(name:, parent_folder_id: nil, parent_path: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Files::FolderInput} for more details.
+        #   {HubSpotSDK::Models::Files::FolderInput} for more details.
         #
         #   @param name [String] Desired name for the folder.
         #

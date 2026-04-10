@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicMonthReference < HubspotSDK::Internal::Type::BaseModel
+      class PublicMonthReference < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicMonthReference,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicMonthReference,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -19,7 +19,7 @@ module HubspotSDK
         # Indicates the type of reference, (MONTH).
         sig do
           returns(
-            HubspotSDK::Crm::PublicMonthReference::ReferenceType::OrSymbol
+            HubSpotSDK::Crm::PublicMonthReference::ReferenceType::OrSymbol
           )
         end
         attr_accessor :reference_type
@@ -56,7 +56,7 @@ module HubspotSDK
           params(
             day: Integer,
             reference_type:
-              HubspotSDK::Crm::PublicMonthReference::ReferenceType::OrSymbol,
+              HubSpotSDK::Crm::PublicMonthReference::ReferenceType::OrSymbol,
             hour: Integer,
             millisecond: Integer,
             minute: Integer,
@@ -84,7 +84,7 @@ module HubspotSDK
             {
               day: Integer,
               reference_type:
-                HubspotSDK::Crm::PublicMonthReference::ReferenceType::OrSymbol,
+                HubSpotSDK::Crm::PublicMonthReference::ReferenceType::OrSymbol,
               hour: Integer,
               millisecond: Integer,
               minute: Integer,
@@ -97,13 +97,13 @@ module HubspotSDK
 
         # Indicates the type of reference, (MONTH).
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicMonthReference::ReferenceType
+                HubSpotSDK::Crm::PublicMonthReference::ReferenceType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -111,13 +111,13 @@ module HubspotSDK
           MONTH =
             T.let(
               :MONTH,
-              HubspotSDK::Crm::PublicMonthReference::ReferenceType::TaggedSymbol
+              HubSpotSDK::Crm::PublicMonthReference::ReferenceType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicMonthReference::ReferenceType::TaggedSymbol
+                HubSpotSDK::Crm::PublicMonthReference::ReferenceType::TaggedSymbol
               ]
             )
           end

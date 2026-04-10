@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type content_folder =
@@ -12,7 +12,7 @@ module HubspotSDK
           updated: Time
         }
 
-      class ContentFolder < HubspotSDK::Internal::Type::BaseModel
+      class ContentFolder < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor category: Integer

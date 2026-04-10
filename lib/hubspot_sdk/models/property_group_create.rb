@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class PropertyGroupCreate < HubspotSDK::Internal::Type::BaseModel
+    class PropertyGroupCreate < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute label
       #
       #   @return [String]

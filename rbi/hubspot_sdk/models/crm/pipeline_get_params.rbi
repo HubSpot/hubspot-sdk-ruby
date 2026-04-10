@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PipelineGetParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class PipelineGetParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PipelineGetParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PipelineGetParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -25,7 +25,7 @@ module HubspotSDK
           params(
             object_type: String,
             pipeline_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(object_type:, pipeline_id:, request_options: {})
@@ -36,7 +36,7 @@ module HubspotSDK
             {
               object_type: String,
               pipeline_id: String,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end

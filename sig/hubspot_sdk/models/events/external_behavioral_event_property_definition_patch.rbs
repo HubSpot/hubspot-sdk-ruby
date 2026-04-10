@@ -1,14 +1,14 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type external_behavioral_event_property_definition_patch =
         {
           description: String,
           label: String,
-          options: ::Array[HubspotSDK::OptionInput]
+          options: ::Array[HubSpotSDK::OptionInput]
         }
 
-      class ExternalBehavioralEventPropertyDefinitionPatch < HubspotSDK::Internal::Type::BaseModel
+      class ExternalBehavioralEventPropertyDefinitionPatch < HubSpotSDK::Internal::Type::BaseModel
         attr_reader description: String?
 
         def description=: (String) -> String
@@ -17,22 +17,22 @@ module HubspotSDK
 
         def label=: (String) -> String
 
-        attr_reader options: ::Array[HubspotSDK::OptionInput]?
+        attr_reader options: ::Array[HubSpotSDK::OptionInput]?
 
         def options=: (
-          ::Array[HubspotSDK::OptionInput]
-        ) -> ::Array[HubspotSDK::OptionInput]
+          ::Array[HubSpotSDK::OptionInput]
+        ) -> ::Array[HubSpotSDK::OptionInput]
 
         def initialize: (
           ?description: String,
           ?label: String,
-          ?options: ::Array[HubspotSDK::OptionInput]
+          ?options: ::Array[HubSpotSDK::OptionInput]
         ) -> void
 
         def to_hash: -> {
           description: String,
           label: String,
-          options: ::Array[HubspotSDK::OptionInput]
+          options: ::Array[HubSpotSDK::OptionInput]
         }
       end
     end

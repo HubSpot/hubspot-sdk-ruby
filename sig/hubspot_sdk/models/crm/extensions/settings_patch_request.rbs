@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
@@ -15,7 +15,7 @@ module HubspotSDK
             width: Integer
           }
 
-        class SettingsPatchRequest < HubspotSDK::Internal::Type::BaseModel
+        class SettingsPatchRequest < HubSpotSDK::Internal::Type::BaseModel
           attr_reader height: Integer?
 
           def height=: (Integer) -> Integer

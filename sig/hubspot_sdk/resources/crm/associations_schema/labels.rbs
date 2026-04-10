@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class AssociationsSchema
@@ -6,9 +6,9 @@ module HubspotSDK
           def batch_create: (
             String to_object_type,
             from_object_type: String,
-            inputs: ::Array[HubspotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration
+            inputs: ::Array[HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationCreateRequest],
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration
 
           def create_label: (
             String to_object_type,
@@ -16,21 +16,21 @@ module HubspotSDK
             label: String,
             name: String,
             ?inverse_label: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::CollectionResponseAssociationSpecWithLabelNoPaging
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::CollectionResponseAssociationSpecWithLabelNoPaging
 
           def delete_label: (
             Integer association_type_id,
             from_object_type: String,
             to_object_type: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def list_labels: (
             String to_object_type,
             from_object_type: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::CollectionResponseAssociationSpecWithLabelNoPaging
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::CollectionResponseAssociationSpecWithLabelNoPaging
 
           def update_label: (
             String to_object_type,
@@ -38,10 +38,10 @@ module HubspotSDK
             association_type_id: Integer,
             label: String,
             ?inverse_label: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

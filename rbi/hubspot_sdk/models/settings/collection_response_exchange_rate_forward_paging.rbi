@@ -1,30 +1,30 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class CollectionResponseExchangeRateForwardPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseExchangeRateForwardPaging < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Settings::CollectionResponseExchangeRateForwardPaging,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Settings::CollectionResponseExchangeRateForwardPaging,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Settings::ExchangeRate]) }
+        sig { returns(T::Array[HubSpotSDK::Settings::ExchangeRate]) }
         attr_accessor :results
 
-        sig { returns(T.nilable(HubspotSDK::ForwardPaging)) }
+        sig { returns(T.nilable(HubSpotSDK::ForwardPaging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::ForwardPaging::OrHash).void }
+        sig { params(paging: HubSpotSDK::ForwardPaging::OrHash).void }
         attr_writer :paging
 
         sig do
           params(
-            results: T::Array[HubspotSDK::Settings::ExchangeRate::OrHash],
-            paging: HubspotSDK::ForwardPaging::OrHash
+            results: T::Array[HubSpotSDK::Settings::ExchangeRate::OrHash],
+            paging: HubSpotSDK::ForwardPaging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(results:, paging: nil)
@@ -33,8 +33,8 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              results: T::Array[HubspotSDK::Settings::ExchangeRate],
-              paging: HubspotSDK::ForwardPaging
+              results: T::Array[HubSpotSDK::Settings::ExchangeRate],
+              paging: HubSpotSDK::ForwardPaging
             }
           )
         end

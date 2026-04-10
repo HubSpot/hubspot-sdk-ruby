@@ -1,22 +1,22 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class BatchInputPublicObjectID < HubspotSDK::Internal::Type::BaseModel
+    class BatchInputPublicObjectID < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
           T.any(
-            HubspotSDK::BatchInputPublicObjectID,
-            HubspotSDK::Internal::AnyHash
+            HubSpotSDK::BatchInputPublicObjectID,
+            HubSpotSDK::Internal::AnyHash
           )
         end
 
       # An array of deal split inputs
-      sig { returns(T::Array[HubspotSDK::PublicObjectID]) }
+      sig { returns(T::Array[HubSpotSDK::PublicObjectID]) }
       attr_accessor :inputs
 
       sig do
-        params(inputs: T::Array[HubspotSDK::PublicObjectID::OrHash]).returns(
+        params(inputs: T::Array[HubSpotSDK::PublicObjectID::OrHash]).returns(
           T.attached_class
         )
       end
@@ -26,7 +26,7 @@ module HubspotSDK
       )
       end
 
-      sig { override.returns({ inputs: T::Array[HubspotSDK::PublicObjectID] }) }
+      sig { override.returns({ inputs: T::Array[HubSpotSDK::PublicObjectID] }) }
       def to_hash
       end
     end

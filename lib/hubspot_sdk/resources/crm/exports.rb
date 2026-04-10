@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Exports
@@ -8,19 +8,19 @@ module HubspotSDK
         #
         # @overload create_async(public_export_request:, request_options: {})
         #
-        # @param public_export_request [HubspotSDK::Models::Crm::PublicExportViewRequest, HubspotSDK::Models::Crm::PublicExportListRequest]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param public_export_request [HubSpotSDK::Models::Crm::PublicExportViewRequest, HubSpotSDK::Models::Crm::PublicExportListRequest]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::TaskLocator]
+        # @return [HubSpotSDK::Models::TaskLocator]
         #
-        # @see HubspotSDK::Models::Crm::ExportCreateAsyncParams
+        # @see HubSpotSDK::Models::Crm::ExportCreateAsyncParams
         def create_async(params)
-          parsed, options = HubspotSDK::Crm::ExportCreateAsyncParams.dump_request(params)
+          parsed, options = HubSpotSDK::Crm::ExportCreateAsyncParams.dump_request(params)
           @client.request(
             method: :post,
             path: "crm/exports/2026-03/export/async",
             body: parsed[:public_export_request],
-            model: HubspotSDK::TaskLocator,
+            model: HubSpotSDK::TaskLocator,
             options: options
           )
         end
@@ -31,16 +31,16 @@ module HubspotSDK
         # @overload get(export_id, request_options: {})
         #
         # @param export_id [Integer]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::PublicExportResponse]
+        # @return [HubSpotSDK::Models::Crm::PublicExportResponse]
         #
-        # @see HubspotSDK::Models::Crm::ExportGetParams
+        # @see HubSpotSDK::Models::Crm::ExportGetParams
         def get(export_id, params = {})
           @client.request(
             method: :get,
             path: ["crm/exports/2026-03/export/%1$s", export_id],
-            model: HubspotSDK::Crm::PublicExportResponse,
+            model: HubSpotSDK::Crm::PublicExportResponse,
             options: params[:request_options]
           )
         end
@@ -51,23 +51,23 @@ module HubspotSDK
         # @overload get_status(task_id, request_options: {})
         #
         # @param task_id [Integer]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::ActionResponseWithSingleResultUri]
+        # @return [HubSpotSDK::Models::Crm::ActionResponseWithSingleResultUri]
         #
-        # @see HubspotSDK::Models::Crm::ExportGetStatusParams
+        # @see HubSpotSDK::Models::Crm::ExportGetStatusParams
         def get_status(task_id, params = {})
           @client.request(
             method: :get,
             path: ["crm/exports/2026-03/export/async/tasks/%1$s/status", task_id],
-            model: HubspotSDK::Crm::ActionResponseWithSingleResultUri,
+            model: HubSpotSDK::Crm::ActionResponseWithSingleResultUri,
             options: params[:request_options]
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
         end

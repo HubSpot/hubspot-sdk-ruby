@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class PropertyGroupUpdate < HubspotSDK::Internal::Type::BaseModel
+    class PropertyGroupUpdate < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute display_order
       #
       #   @return [Integer, nil]

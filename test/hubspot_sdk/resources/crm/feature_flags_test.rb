@@ -2,22 +2,22 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::FeatureFlagsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::FeatureFlagsTest < HubSpotSDK::Test::ResourceTest
   def test_update_required_params
     skip("Mock server tests are disabled")
 
     response = @hubspot.crm.feature_flags.update("flagName", app_id: 0, default_state: :ABSENT)
 
     assert_pattern do
-      response => HubspotSDK::Crm::FlagResponse
+      response => HubSpotSDK::Crm::FlagResponse
     end
 
     assert_pattern do
       response => {
         app_id: Integer,
-        default_state: HubspotSDK::Crm::FlagResponse::DefaultState,
+        default_state: HubSpotSDK::Crm::FlagResponse::DefaultState,
         flag_name: String,
-        override_state: HubspotSDK::Crm::FlagResponse::OverrideState | nil
+        override_state: HubSpotSDK::Crm::FlagResponse::OverrideState | nil
       }
     end
   end
@@ -28,15 +28,15 @@ class HubspotSDK::Test::Resources::Crm::FeatureFlagsTest < HubspotSDK::Test::Res
     response = @hubspot.crm.feature_flags.delete("flagName", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::Crm::FlagResponse
+      response => HubSpotSDK::Crm::FlagResponse
     end
 
     assert_pattern do
       response => {
         app_id: Integer,
-        default_state: HubspotSDK::Crm::FlagResponse::DefaultState,
+        default_state: HubSpotSDK::Crm::FlagResponse::DefaultState,
         flag_name: String,
-        override_state: HubspotSDK::Crm::FlagResponse::OverrideState | nil
+        override_state: HubSpotSDK::Crm::FlagResponse::OverrideState | nil
       }
     end
   end
@@ -47,14 +47,14 @@ class HubspotSDK::Test::Resources::Crm::FeatureFlagsTest < HubspotSDK::Test::Res
     response = @hubspot.crm.feature_flags.delete_portal_state(0, app_id: 0, flag_name: "flagName")
 
     assert_pattern do
-      response => HubspotSDK::Crm::PortalFlagStateResponse
+      response => HubSpotSDK::Crm::PortalFlagStateResponse
     end
 
     assert_pattern do
       response => {
         app_id: Integer,
         flag_name: String,
-        flag_state: HubspotSDK::Crm::PortalFlagStateResponse::FlagState,
+        flag_state: HubSpotSDK::Crm::PortalFlagStateResponse::FlagState,
         portal_id: Integer
       }
     end
@@ -66,15 +66,15 @@ class HubspotSDK::Test::Resources::Crm::FeatureFlagsTest < HubspotSDK::Test::Res
     response = @hubspot.crm.feature_flags.get("flagName", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::Crm::FlagResponse
+      response => HubSpotSDK::Crm::FlagResponse
     end
 
     assert_pattern do
       response => {
         app_id: Integer,
-        default_state: HubspotSDK::Crm::FlagResponse::DefaultState,
+        default_state: HubSpotSDK::Crm::FlagResponse::DefaultState,
         flag_name: String,
-        override_state: HubspotSDK::Crm::FlagResponse::OverrideState | nil
+        override_state: HubSpotSDK::Crm::FlagResponse::OverrideState | nil
       }
     end
   end
@@ -85,14 +85,14 @@ class HubspotSDK::Test::Resources::Crm::FeatureFlagsTest < HubspotSDK::Test::Res
     response = @hubspot.crm.feature_flags.get_portal_state(0, app_id: 0, flag_name: "flagName")
 
     assert_pattern do
-      response => HubspotSDK::Crm::PortalFlagStateResponse
+      response => HubSpotSDK::Crm::PortalFlagStateResponse
     end
 
     assert_pattern do
       response => {
         app_id: Integer,
         flag_name: String,
-        flag_state: HubspotSDK::Crm::PortalFlagStateResponse::FlagState,
+        flag_state: HubSpotSDK::Crm::PortalFlagStateResponse::FlagState,
         portal_id: Integer
       }
     end
@@ -104,12 +104,12 @@ class HubspotSDK::Test::Resources::Crm::FeatureFlagsTest < HubspotSDK::Test::Res
     response = @hubspot.crm.feature_flags.list_all(0)
 
     assert_pattern do
-      response => HubspotSDK::Crm::FlagsForAppResponse
+      response => HubSpotSDK::Crm::FlagsForAppResponse
     end
 
     assert_pattern do
       response => {
-        flags_for_app: ^(HubspotSDK::Internal::Type::ArrayOf[String])
+        flags_for_app: ^(HubSpotSDK::Internal::Type::ArrayOf[String])
       }
     end
   end
@@ -120,12 +120,12 @@ class HubspotSDK::Test::Resources::Crm::FeatureFlagsTest < HubspotSDK::Test::Res
     response = @hubspot.crm.feature_flags.list_portals("flagName", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::Crm::PortalFlagStateBatchResponse
+      response => HubSpotSDK::Crm::PortalFlagStateBatchResponse
     end
 
     assert_pattern do
       response => {
-        portal_flag_states: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PortalFlagStateResponse])
+        portal_flag_states: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PortalFlagStateResponse])
       }
     end
   end
@@ -137,14 +137,14 @@ class HubspotSDK::Test::Resources::Crm::FeatureFlagsTest < HubspotSDK::Test::Res
       @hubspot.crm.feature_flags.update_portal_state(0, app_id: 0, flag_name: "flagName", flag_state: :ABSENT)
 
     assert_pattern do
-      response => HubspotSDK::Crm::PortalFlagStateResponse
+      response => HubSpotSDK::Crm::PortalFlagStateResponse
     end
 
     assert_pattern do
       response => {
         app_id: Integer,
         flag_name: String,
-        flag_state: HubspotSDK::Crm::PortalFlagStateResponse::FlagState,
+        flag_state: HubSpotSDK::Crm::PortalFlagStateResponse::FlagState,
         portal_id: Integer
       }
     end

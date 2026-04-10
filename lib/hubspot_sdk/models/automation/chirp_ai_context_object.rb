@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class ChirpAIContextObject < HubspotSDK::Internal::Type::BaseModel
+      class ChirpAIContextObject < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute application_group
         #   The group to which the application belongs.
         #
@@ -20,29 +20,29 @@ module HubspotSDK
         #   Additional metadata related to the context, represented as key-value pairs.
         #
         #   @return [Hash{Symbol=>String}]
-        required :metadata, HubspotSDK::Internal::Type::HashOf[String]
+        required :metadata, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute otel_context_holder
         #   Holds OpenTelemetry context information as key-value pairs.
         #
         #   @return [Hash{Symbol=>String}]
         required :otel_context_holder,
-                 HubspotSDK::Internal::Type::HashOf[String],
+                 HubSpotSDK::Internal::Type::HashOf[String],
                  api_name: :otelContextHolder
 
         # @!attribute unstructured_sources
         #
-        #   @return [Array<Symbol, HubspotSDK::Models::Automation::ChirpAIContextObject::UnstructuredSource>]
+        #   @return [Array<Symbol, HubSpotSDK::Models::Automation::ChirpAIContextObject::UnstructuredSource>]
         required :unstructured_sources,
                  -> {
-                   HubspotSDK::Internal::Type::ArrayOf[enum: HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource]
+                   HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource]
                  },
                  api_name: :unstructuredSources
 
         # @!attribute compliance_ids
         #
-        #   @return [HubspotSDK::Models::Automation::ComplianceIDs, nil]
-        optional :compliance_ids, -> { HubspotSDK::Automation::ComplianceIDs }, api_name: :complianceIds
+        #   @return [HubSpotSDK::Models::Automation::ComplianceIDs, nil]
+        optional :compliance_ids, -> { HubSpotSDK::Automation::ComplianceIDs }, api_name: :complianceIds
 
         # @!attribute feature_id
         #   The identifier for the feature associated with the context.
@@ -71,9 +71,9 @@ module HubspotSDK
         #
         #   @param otel_context_holder [Hash{Symbol=>String}] Holds OpenTelemetry context information as key-value pairs.
         #
-        #   @param unstructured_sources [Array<Symbol, HubspotSDK::Models::Automation::ChirpAIContextObject::UnstructuredSource>]
+        #   @param unstructured_sources [Array<Symbol, HubSpotSDK::Models::Automation::ChirpAIContextObject::UnstructuredSource>]
         #
-        #   @param compliance_ids [HubspotSDK::Models::Automation::ComplianceIDs]
+        #   @param compliance_ids [HubSpotSDK::Models::Automation::ComplianceIDs]
         #
         #   @param feature_id [String] The identifier for the feature associated with the context.
         #
@@ -82,7 +82,7 @@ module HubspotSDK
         #   @param trajectory_id [String] The identifier for the trajectory, formatted as a UUID.
 
         module UnstructuredSource
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NONE = :NONE
           USER_INPUT = :USER_INPUT

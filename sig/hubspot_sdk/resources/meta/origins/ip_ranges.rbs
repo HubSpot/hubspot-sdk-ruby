@@ -1,21 +1,21 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Meta
       class Origins
         class IPRanges
           def list: (
-            ?direction: ::Array[HubspotSDK::Models::Meta::Origins::IPRangeListParams::direction],
-            ?service: ::Array[HubspotSDK::Models::Meta::Origins::IPRangeListParams::service],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Meta::CollectionResponseIPRangeNoPaging
+            ?direction: ::Array[HubSpotSDK::Models::Meta::Origins::IPRangeListParams::direction],
+            ?service: ::Array[HubSpotSDK::Models::Meta::Origins::IPRangeListParams::service],
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Meta::CollectionResponseIPRangeNoPaging
 
           def list_simple: (
-            ?direction: ::Array[HubspotSDK::Models::Meta::Origins::IPRangeListSimpleParams::direction],
-            ?service: ::Array[HubspotSDK::Models::Meta::Origins::IPRangeListSimpleParams::service],
-            ?request_options: HubspotSDK::request_opts
+            ?direction: ::Array[HubSpotSDK::Models::Meta::Origins::IPRangeListSimpleParams::direction],
+            ?service: ::Array[HubSpotSDK::Models::Meta::Origins::IPRangeListSimpleParams::service],
+            ?request_options: HubSpotSDK::request_opts
           ) -> String
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

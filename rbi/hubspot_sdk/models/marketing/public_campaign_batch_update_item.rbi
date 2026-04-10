@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicCampaignBatchUpdateItem < HubspotSDK::Internal::Type::BaseModel
+      class PublicCampaignBatchUpdateItem < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::PublicCampaignBatchUpdateItem,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::PublicCampaignBatchUpdateItem,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

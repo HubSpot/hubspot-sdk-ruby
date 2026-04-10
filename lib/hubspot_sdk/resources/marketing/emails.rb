@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class Emails
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Marketing::EmailCreateParams} for more details.
+        # {HubSpotSDK::Models::Marketing::EmailCreateParams} for more details.
         #
         # @overload create(active_domain: nil, archived: nil, business_unit_id: nil, campaign: nil, content: nil, feedback_survey_id: nil, folder_id_v2: nil, from: nil, jitter_send_time: nil, language: nil, name: nil, publish_date: nil, rss_data: nil, send_on_publish: nil, state: nil, subcategory: nil, subject: nil, subscription_details: nil, testing: nil, to: nil, webversion: nil, request_options: {})
         #
@@ -17,58 +17,58 @@ module HubspotSDK
         #
         # @param campaign [String] The ID of the campaign this email is associated to.
         #
-        # @param content [HubspotSDK::Models::Marketing::PublicEmailContent]
+        # @param content [HubSpotSDK::Models::Marketing::PublicEmailContent]
         #
         # @param feedback_survey_id [String] The ID of the feedback survey linked to the email.
         #
         # @param folder_id_v2 [Integer] The ID of the folder where the email will be stored.
         #
-        # @param from [HubspotSDK::Models::Marketing::PublicEmailFromDetails]
+        # @param from [HubSpotSDK::Models::Marketing::PublicEmailFromDetails]
         #
         # @param jitter_send_time [Boolean] Determines whether the email send time should be randomized to avoid sending all
         #
-        # @param language [Symbol, HubspotSDK::Models::Marketing::EmailCreateRequest::Language] The language code for the email, such as 'en' for English.
+        # @param language [Symbol, HubSpotSDK::Models::Marketing::EmailCreateRequest::Language] The language code for the email, such as 'en' for English.
         #
         # @param name [String] The name of the email, as displayed on the email dashboard.
         #
         # @param publish_date [Time] The date and time the email is scheduled for, in ISO8601 representation. This is
         #
-        # @param rss_data [HubspotSDK::Models::Marketing::PublicRssEmailDetails]
+        # @param rss_data [HubSpotSDK::Models::Marketing::PublicRssEmailDetails]
         #
         # @param send_on_publish [Boolean] Determines whether the email will be sent immediately on publish.
         #
-        # @param state [Symbol, HubspotSDK::Models::Marketing::EmailCreateRequest::State] The email state.
+        # @param state [Symbol, HubSpotSDK::Models::Marketing::EmailCreateRequest::State] The email state.
         #
-        # @param subcategory [Symbol, HubspotSDK::Models::Marketing::EmailCreateRequest::Subcategory] The email subcategory.
+        # @param subcategory [Symbol, HubSpotSDK::Models::Marketing::EmailCreateRequest::Subcategory] The email subcategory.
         #
         # @param subject [String] The subject of the email.
         #
-        # @param subscription_details [HubspotSDK::Models::Marketing::PublicEmailSubscriptionDetails]
+        # @param subscription_details [HubSpotSDK::Models::Marketing::PublicEmailSubscriptionDetails]
         #
-        # @param testing [HubspotSDK::Models::Marketing::PublicEmailTestingDetails]
+        # @param testing [HubSpotSDK::Models::Marketing::PublicEmailTestingDetails]
         #
-        # @param to [HubspotSDK::Models::Marketing::PublicEmailToDetails]
+        # @param to [HubSpotSDK::Models::Marketing::PublicEmailToDetails]
         #
-        # @param webversion [HubspotSDK::Models::Marketing::PublicWebversionDetails]
+        # @param webversion [HubSpotSDK::Models::Marketing::PublicWebversionDetails]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::PublicEmail]
+        # @return [HubSpotSDK::Models::Marketing::PublicEmail]
         #
-        # @see HubspotSDK::Models::Marketing::EmailCreateParams
+        # @see HubSpotSDK::Models::Marketing::EmailCreateParams
         def create(params = {})
-          parsed, options = HubspotSDK::Marketing::EmailCreateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Marketing::EmailCreateParams.dump_request(params)
           @client.request(
             method: :post,
             path: "marketing/emails/2026-03",
             body: parsed,
-            model: HubspotSDK::Marketing::PublicEmail,
+            model: HubSpotSDK::Marketing::PublicEmail,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Marketing::EmailUpdateParams} for more details.
+        # {HubSpotSDK::Models::Marketing::EmailUpdateParams} for more details.
         #
         # Change properties of a marketing email.
         #
@@ -84,59 +84,59 @@ module HubspotSDK
         #
         # @param campaign [String] Body param: The ID of the campaign this email is associated to.
         #
-        # @param content [HubspotSDK::Models::Marketing::PublicEmailContent] Body param
+        # @param content [HubSpotSDK::Models::Marketing::PublicEmailContent] Body param
         #
         # @param folder_id_v2 [Integer] Body param: The ID of the folder where the email will be stored.
         #
-        # @param from [HubspotSDK::Models::Marketing::PublicEmailFromDetails] Body param
+        # @param from [HubSpotSDK::Models::Marketing::PublicEmailFromDetails] Body param
         #
         # @param jitter_send_time [Boolean] Body param: Determines whether the email send time should be randomized to avoid
         #
-        # @param language [Symbol, HubspotSDK::Models::Marketing::EmailUpdateRequest::Language] Body param: The language code for the email, such as 'en' for English.
+        # @param language [Symbol, HubSpotSDK::Models::Marketing::EmailUpdateRequest::Language] Body param: The language code for the email, such as 'en' for English.
         #
         # @param name [String] Body param: The name of the email, as displayed on the email dashboard.
         #
         # @param publish_date [Time] Body param: The date and time the email is scheduled for, in ISO8601 representat
         #
-        # @param rss_data [HubspotSDK::Models::Marketing::PublicRssEmailDetails] Body param
+        # @param rss_data [HubSpotSDK::Models::Marketing::PublicRssEmailDetails] Body param
         #
         # @param send_on_publish [Boolean] Body param: Determines whether the email will be sent immediately on publish.
         #
-        # @param state [Symbol, HubspotSDK::Models::Marketing::EmailUpdateRequest::State] Body param: The email state.
+        # @param state [Symbol, HubSpotSDK::Models::Marketing::EmailUpdateRequest::State] Body param: The email state.
         #
-        # @param subcategory [Symbol, HubspotSDK::Models::Marketing::EmailUpdateRequest::Subcategory] Body param: The email subcategory.
+        # @param subcategory [Symbol, HubSpotSDK::Models::Marketing::EmailUpdateRequest::Subcategory] Body param: The email subcategory.
         #
         # @param subject [String] Body param: The subject of the email.
         #
-        # @param subscription_details [HubspotSDK::Models::Marketing::PublicEmailSubscriptionDetails] Body param
+        # @param subscription_details [HubSpotSDK::Models::Marketing::PublicEmailSubscriptionDetails] Body param
         #
-        # @param testing [HubspotSDK::Models::Marketing::PublicEmailTestingDetails] Body param
+        # @param testing [HubSpotSDK::Models::Marketing::PublicEmailTestingDetails] Body param
         #
-        # @param to [HubspotSDK::Models::Marketing::PublicEmailToDetails] Body param
+        # @param to [HubSpotSDK::Models::Marketing::PublicEmailToDetails] Body param
         #
-        # @param webversion [HubspotSDK::Models::Marketing::PublicWebversionDetails] Body param
+        # @param webversion [HubSpotSDK::Models::Marketing::PublicWebversionDetails] Body param
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::PublicEmail]
+        # @return [HubSpotSDK::Models::Marketing::PublicEmail]
         #
-        # @see HubspotSDK::Models::Marketing::EmailUpdateParams
+        # @see HubSpotSDK::Models::Marketing::EmailUpdateParams
         def update(email_id, params = {})
           query_params = [:query_archived]
-          parsed, options = HubspotSDK::Marketing::EmailUpdateParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+          parsed, options = HubSpotSDK::Marketing::EmailUpdateParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :patch,
             path: ["marketing/emails/2026-03/%1$s", email_id],
             query: query.transform_keys(query_archived: "archived"),
             body: parsed.except(*query_params),
-            model: HubspotSDK::Marketing::PublicEmail,
+            model: HubSpotSDK::Marketing::PublicEmail,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Marketing::EmailListParams} for more details.
+        # {HubSpotSDK::Models::Marketing::EmailListParams} for more details.
         #
         # @overload list(after: nil, archived: nil, campaign: nil, created_after: nil, created_at: nil, created_before: nil, included_properties: nil, include_stats: nil, is_published: nil, limit: nil, marketing_campaign_names: nil, published_after: nil, published_at: nil, published_before: nil, sort: nil, type: nil, updated_after: nil, updated_at: nil, updated_before: nil, variant_stats: nil, workflow_names: nil, request_options: {})
         #
@@ -170,7 +170,7 @@ module HubspotSDK
         #
         # @param sort [Array<String>]
         #
-        # @param type [Symbol, HubspotSDK::Models::Marketing::EmailListParams::Type]
+        # @param type [Symbol, HubSpotSDK::Models::Marketing::EmailListParams::Type]
         #
         # @param updated_after [Time]
         #
@@ -182,14 +182,14 @@ module HubspotSDK
         #
         # @param workflow_names [Boolean]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Marketing::PublicEmail>]
+        # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Marketing::PublicEmail>]
         #
-        # @see HubspotSDK::Models::Marketing::EmailListParams
+        # @see HubSpotSDK::Models::Marketing::EmailListParams
         def list(params = {})
-          parsed, options = HubspotSDK::Marketing::EmailListParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Marketing::EmailListParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "marketing/emails/2026-03",
@@ -210,8 +210,8 @@ module HubspotSDK
               variant_stats: "variantStats",
               workflow_names: "workflowNames"
             ),
-            page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Marketing::PublicEmail,
+            page: HubSpotSDK::Internal::Page,
+            model: HubSpotSDK::Marketing::PublicEmail,
             options: options
           )
         end
@@ -224,14 +224,14 @@ module HubspotSDK
         #
         # @param archived [Boolean] Whether to return only results that have been archived.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Marketing::EmailDeleteParams
+        # @see HubSpotSDK::Models::Marketing::EmailDeleteParams
         def delete(email_id, params = {})
-          parsed, options = HubspotSDK::Marketing::EmailDeleteParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Marketing::EmailDeleteParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :delete,
             path: ["marketing/emails/2026-03/%1$s", email_id],
@@ -252,18 +252,18 @@ module HubspotSDK
         #
         # @param language [String] The language code for the cloned email, such as 'en' for English.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::PublicEmail]
+        # @return [HubSpotSDK::Models::Marketing::PublicEmail]
         #
-        # @see HubspotSDK::Models::Marketing::EmailCloneParams
+        # @see HubSpotSDK::Models::Marketing::EmailCloneParams
         def clone_(params)
-          parsed, options = HubspotSDK::Marketing::EmailCloneParams.dump_request(params)
+          parsed, options = HubSpotSDK::Marketing::EmailCloneParams.dump_request(params)
           @client.request(
             method: :post,
             path: "marketing/emails/2026-03/clone",
             body: parsed,
-            model: HubspotSDK::Marketing::PublicEmail,
+            model: HubSpotSDK::Marketing::PublicEmail,
             options: options
           )
         end
@@ -278,18 +278,18 @@ module HubspotSDK
         #
         # @param variation_name [String] Name of A/B test variation.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::PublicEmail]
+        # @return [HubSpotSDK::Models::Marketing::PublicEmail]
         #
-        # @see HubspotSDK::Models::Marketing::EmailCreateAbTestVariationParams
+        # @see HubSpotSDK::Models::Marketing::EmailCreateAbTestVariationParams
         def create_ab_test_variation(params)
-          parsed, options = HubspotSDK::Marketing::EmailCreateAbTestVariationParams.dump_request(params)
+          parsed, options = HubSpotSDK::Marketing::EmailCreateAbTestVariationParams.dump_request(params)
           @client.request(
             method: :post,
             path: "marketing/emails/2026-03/ab-test/create-variation",
             body: parsed,
-            model: HubspotSDK::Marketing::PublicEmail,
+            model: HubSpotSDK::Marketing::PublicEmail,
             options: options
           )
         end
@@ -304,14 +304,14 @@ module HubspotSDK
         # @param end_timestamp [String]
         # @param property [String]
         # @param start_timestamp [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::AggregateEmailStatistics]
+        # @return [HubSpotSDK::Models::Marketing::AggregateEmailStatistics]
         #
-        # @see HubspotSDK::Models::Marketing::EmailGetParams
+        # @see HubSpotSDK::Models::Marketing::EmailGetParams
         def get(params = {})
-          parsed, options = HubspotSDK::Marketing::EmailGetParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Marketing::EmailGetParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "marketing/emails/2026-03/statistics/list",
@@ -320,7 +320,7 @@ module HubspotSDK
               end_timestamp: "endTimestamp",
               start_timestamp: "startTimestamp"
             ),
-            model: HubspotSDK::Marketing::AggregateEmailStatistics,
+            model: HubSpotSDK::Marketing::AggregateEmailStatistics,
             options: options
           )
         end
@@ -345,14 +345,14 @@ module HubspotSDK
         #
         # @param workflow_names [Boolean]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::PublicEmail]
+        # @return [HubSpotSDK::Models::Marketing::PublicEmail]
         #
-        # @see HubspotSDK::Models::Marketing::EmailGetAbTestVariationParams
+        # @see HubSpotSDK::Models::Marketing::EmailGetAbTestVariationParams
         def get_ab_test_variation(email_id, params = {})
-          parsed, options = HubspotSDK::Marketing::EmailGetAbTestVariationParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Marketing::EmailGetAbTestVariationParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: ["marketing/emails/2026-03/%1$s/ab-test/get-variation", email_id],
@@ -363,7 +363,7 @@ module HubspotSDK
               variant_stats: "variantStats",
               workflow_names: "workflowNames"
             ),
-            model: HubspotSDK::Marketing::PublicEmail,
+            model: HubSpotSDK::Marketing::PublicEmail,
             options: options
           )
         end
@@ -374,16 +374,16 @@ module HubspotSDK
         # @overload get_draft(email_id, request_options: {})
         #
         # @param email_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::PublicEmail]
+        # @return [HubSpotSDK::Models::Marketing::PublicEmail]
         #
-        # @see HubspotSDK::Models::Marketing::EmailGetDraftParams
+        # @see HubSpotSDK::Models::Marketing::EmailGetDraftParams
         def get_draft(email_id, params = {})
           @client.request(
             method: :get,
             path: ["marketing/emails/2026-03/%1$s/draft", email_id],
-            model: HubspotSDK::Marketing::PublicEmail,
+            model: HubSpotSDK::Marketing::PublicEmail,
             options: params[:request_options]
           )
         end
@@ -395,16 +395,16 @@ module HubspotSDK
         #
         # @param email_ids [Array<Integer>]
         # @param end_timestamp [String]
-        # @param interval [Symbol, HubspotSDK::Models::Marketing::EmailGetHistogramParams::Interval]
+        # @param interval [Symbol, HubSpotSDK::Models::Marketing::EmailGetHistogramParams::Interval]
         # @param start_timestamp [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::CollectionResponseWithTotalEmailStatisticInterval]
+        # @return [HubSpotSDK::Models::Marketing::CollectionResponseWithTotalEmailStatisticInterval]
         #
-        # @see HubspotSDK::Models::Marketing::EmailGetHistogramParams
+        # @see HubSpotSDK::Models::Marketing::EmailGetHistogramParams
         def get_histogram(params = {})
-          parsed, options = HubspotSDK::Marketing::EmailGetHistogramParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Marketing::EmailGetHistogramParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "marketing/emails/2026-03/statistics/histogram",
@@ -413,7 +413,7 @@ module HubspotSDK
               end_timestamp: "endTimestamp",
               start_timestamp: "startTimestamp"
             ),
-            model: HubspotSDK::Marketing::CollectionResponseWithTotalEmailStatisticInterval,
+            model: HubSpotSDK::Marketing::CollectionResponseWithTotalEmailStatisticInterval,
             options: options
           )
         end
@@ -424,13 +424,13 @@ module HubspotSDK
         #
         # @param revision_id [String]
         # @param email_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::PublicEmailVersion]
+        # @return [HubSpotSDK::Models::Marketing::PublicEmailVersion]
         #
-        # @see HubspotSDK::Models::Marketing::EmailGetRevisionParams
+        # @see HubSpotSDK::Models::Marketing::EmailGetRevisionParams
         def get_revision(revision_id, params)
-          parsed, options = HubspotSDK::Marketing::EmailGetRevisionParams.dump_request(params)
+          parsed, options = HubSpotSDK::Marketing::EmailGetRevisionParams.dump_request(params)
           email_id =
             parsed.delete(:email_id) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -438,13 +438,13 @@ module HubspotSDK
           @client.request(
             method: :get,
             path: ["marketing/emails/2026-03/%1$s/revisions/%2$s", email_id, revision_id],
-            model: HubspotSDK::Marketing::PublicEmailVersion,
+            model: HubSpotSDK::Marketing::PublicEmailVersion,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Marketing::EmailListRevisionsParams} for more details.
+        # {HubSpotSDK::Models::Marketing::EmailListRevisionsParams} for more details.
         #
         # Get a list of all versions of a marketing email, with each entry including the
         # full state of that particular version. To view the most recent version, sort by
@@ -460,20 +460,20 @@ module HubspotSDK
         #
         # @param limit [Integer] The maximum number of results to display per page.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Marketing::VersionPublicEmail>]
+        # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Marketing::VersionPublicEmail>]
         #
-        # @see HubspotSDK::Models::Marketing::EmailListRevisionsParams
+        # @see HubSpotSDK::Models::Marketing::EmailListRevisionsParams
         def list_revisions(email_id, params = {})
-          parsed, options = HubspotSDK::Marketing::EmailListRevisionsParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Marketing::EmailListRevisionsParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: ["marketing/emails/2026-03/%1$s/revisions", email_id],
             query: query,
-            page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Marketing::VersionPublicEmail,
+            page: HubSpotSDK::Internal::Page,
+            model: HubSpotSDK::Marketing::VersionPublicEmail,
             options: options
           )
         end
@@ -485,11 +485,11 @@ module HubspotSDK
         # @overload publish(email_id, request_options: {})
         #
         # @param email_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Marketing::EmailPublishParams
+        # @see HubSpotSDK::Models::Marketing::EmailPublishParams
         def publish(email_id, params = {})
           @client.request(
             method: :post,
@@ -504,11 +504,11 @@ module HubspotSDK
         # @overload reset_draft(email_id, request_options: {})
         #
         # @param email_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Marketing::EmailResetDraftParams
+        # @see HubSpotSDK::Models::Marketing::EmailResetDraftParams
         def reset_draft(email_id, params = {})
           @client.request(
             method: :post,
@@ -525,13 +525,13 @@ module HubspotSDK
         #
         # @param revision_id [String]
         # @param email_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Marketing::EmailRestoreRevisionParams
+        # @see HubSpotSDK::Models::Marketing::EmailRestoreRevisionParams
         def restore_revision(revision_id, params)
-          parsed, options = HubspotSDK::Marketing::EmailRestoreRevisionParams.dump_request(params)
+          parsed, options = HubSpotSDK::Marketing::EmailRestoreRevisionParams.dump_request(params)
           email_id =
             parsed.delete(:email_id) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -551,13 +551,13 @@ module HubspotSDK
         #
         # @param revision_id [Integer]
         # @param email_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::PublicEmail]
+        # @return [HubSpotSDK::Models::Marketing::PublicEmail]
         #
-        # @see HubspotSDK::Models::Marketing::EmailRestoreRevisionToDraftParams
+        # @see HubSpotSDK::Models::Marketing::EmailRestoreRevisionToDraftParams
         def restore_revision_to_draft(revision_id, params)
-          parsed, options = HubspotSDK::Marketing::EmailRestoreRevisionToDraftParams.dump_request(params)
+          parsed, options = HubSpotSDK::Marketing::EmailRestoreRevisionToDraftParams.dump_request(params)
           email_id =
             parsed.delete(:email_id) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -565,7 +565,7 @@ module HubspotSDK
           @client.request(
             method: :post,
             path: ["marketing/emails/2026-03/%1$s/revisions/%2$s/restore-to-draft", email_id, revision_id],
-            model: HubspotSDK::Marketing::PublicEmail,
+            model: HubSpotSDK::Marketing::PublicEmail,
             options: options
           )
         end
@@ -578,11 +578,11 @@ module HubspotSDK
         # @overload unpublish(email_id, request_options: {})
         #
         # @param email_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Marketing::EmailUnpublishParams
+        # @see HubSpotSDK::Models::Marketing::EmailUnpublishParams
         def unpublish(email_id, params = {})
           @client.request(
             method: :post,
@@ -593,7 +593,7 @@ module HubspotSDK
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Marketing::EmailUpdateDraftParams} for more details.
+        # {HubSpotSDK::Models::Marketing::EmailUpdateDraftParams} for more details.
         #
         # Create or update the draft version of a marketing email. If no draft exists, the
         # system creates a draft from the current “live” email then applies the request
@@ -612,57 +612,57 @@ module HubspotSDK
         #
         # @param campaign [String] The ID of the campaign this email is associated to.
         #
-        # @param content [HubspotSDK::Models::Marketing::PublicEmailContent]
+        # @param content [HubSpotSDK::Models::Marketing::PublicEmailContent]
         #
         # @param folder_id_v2 [Integer] The ID of the folder where the email will be stored.
         #
-        # @param from [HubspotSDK::Models::Marketing::PublicEmailFromDetails]
+        # @param from [HubSpotSDK::Models::Marketing::PublicEmailFromDetails]
         #
         # @param jitter_send_time [Boolean] Determines whether the email send time should be randomized to avoid sending all
         #
-        # @param language [Symbol, HubspotSDK::Models::Marketing::EmailUpdateRequest::Language] The language code for the email, such as 'en' for English.
+        # @param language [Symbol, HubSpotSDK::Models::Marketing::EmailUpdateRequest::Language] The language code for the email, such as 'en' for English.
         #
         # @param name [String] The name of the email, as displayed on the email dashboard.
         #
         # @param publish_date [Time] The date and time the email is scheduled for, in ISO8601 representation. This is
         #
-        # @param rss_data [HubspotSDK::Models::Marketing::PublicRssEmailDetails]
+        # @param rss_data [HubSpotSDK::Models::Marketing::PublicRssEmailDetails]
         #
         # @param send_on_publish [Boolean] Determines whether the email will be sent immediately on publish.
         #
-        # @param state [Symbol, HubspotSDK::Models::Marketing::EmailUpdateRequest::State] The email state.
+        # @param state [Symbol, HubSpotSDK::Models::Marketing::EmailUpdateRequest::State] The email state.
         #
-        # @param subcategory [Symbol, HubspotSDK::Models::Marketing::EmailUpdateRequest::Subcategory] The email subcategory.
+        # @param subcategory [Symbol, HubSpotSDK::Models::Marketing::EmailUpdateRequest::Subcategory] The email subcategory.
         #
         # @param subject [String] The subject of the email.
         #
-        # @param subscription_details [HubspotSDK::Models::Marketing::PublicEmailSubscriptionDetails]
+        # @param subscription_details [HubSpotSDK::Models::Marketing::PublicEmailSubscriptionDetails]
         #
-        # @param testing [HubspotSDK::Models::Marketing::PublicEmailTestingDetails]
+        # @param testing [HubSpotSDK::Models::Marketing::PublicEmailTestingDetails]
         #
-        # @param to [HubspotSDK::Models::Marketing::PublicEmailToDetails]
+        # @param to [HubSpotSDK::Models::Marketing::PublicEmailToDetails]
         #
-        # @param webversion [HubspotSDK::Models::Marketing::PublicWebversionDetails]
+        # @param webversion [HubSpotSDK::Models::Marketing::PublicWebversionDetails]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::PublicEmail]
+        # @return [HubSpotSDK::Models::Marketing::PublicEmail]
         #
-        # @see HubspotSDK::Models::Marketing::EmailUpdateDraftParams
+        # @see HubSpotSDK::Models::Marketing::EmailUpdateDraftParams
         def update_draft(email_id, params = {})
-          parsed, options = HubspotSDK::Marketing::EmailUpdateDraftParams.dump_request(params)
+          parsed, options = HubSpotSDK::Marketing::EmailUpdateDraftParams.dump_request(params)
           @client.request(
             method: :patch,
             path: ["marketing/emails/2026-03/%1$s/draft", email_id],
             body: parsed,
-            model: HubspotSDK::Marketing::PublicEmail,
+            model: HubSpotSDK::Marketing::PublicEmail,
             options: options
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
         end

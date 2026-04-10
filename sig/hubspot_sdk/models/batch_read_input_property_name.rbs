@@ -1,41 +1,41 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type batch_read_input_property_name =
       {
         archived: bool,
-        data_sensitivity: HubspotSDK::Models::BatchReadInputPropertyName::data_sensitivity,
-        inputs: ::Array[HubspotSDK::PropertyName]
+        data_sensitivity: HubSpotSDK::Models::BatchReadInputPropertyName::data_sensitivity,
+        inputs: ::Array[HubSpotSDK::PropertyName]
       }
 
-    class BatchReadInputPropertyName < HubspotSDK::Internal::Type::BaseModel
+    class BatchReadInputPropertyName < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor archived: bool
 
-      attr_accessor data_sensitivity: HubspotSDK::Models::BatchReadInputPropertyName::data_sensitivity
+      attr_accessor data_sensitivity: HubSpotSDK::Models::BatchReadInputPropertyName::data_sensitivity
 
-      attr_accessor inputs: ::Array[HubspotSDK::PropertyName]
+      attr_accessor inputs: ::Array[HubSpotSDK::PropertyName]
 
       def initialize: (
         archived: bool,
-        data_sensitivity: HubspotSDK::Models::BatchReadInputPropertyName::data_sensitivity,
-        inputs: ::Array[HubspotSDK::PropertyName]
+        data_sensitivity: HubSpotSDK::Models::BatchReadInputPropertyName::data_sensitivity,
+        inputs: ::Array[HubSpotSDK::PropertyName]
       ) -> void
 
       def to_hash: -> {
         archived: bool,
-        data_sensitivity: HubspotSDK::Models::BatchReadInputPropertyName::data_sensitivity,
-        inputs: ::Array[HubspotSDK::PropertyName]
+        data_sensitivity: HubSpotSDK::Models::BatchReadInputPropertyName::data_sensitivity,
+        inputs: ::Array[HubSpotSDK::PropertyName]
       }
 
       type data_sensitivity = :highly_sensitive | :non_sensitive | :sensitive
 
       module DataSensitivity
-        extend HubspotSDK::Internal::Type::Enum
+        extend HubSpotSDK::Internal::Type::Enum
 
         HIGHLY_SENSITIVE: :highly_sensitive
         NON_SENSITIVE: :non_sensitive
         SENSITIVE: :sensitive
 
-        def self?.values: -> ::Array[HubspotSDK::Models::BatchReadInputPropertyName::data_sensitivity]
+        def self?.values: -> ::Array[HubSpotSDK::Models::BatchReadInputPropertyName::data_sensitivity]
       end
     end
   end

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type media_bridge_provider_partial =
@@ -9,7 +9,7 @@ module HubspotSDK
           name: String
         }
 
-      class MediaBridgeProviderPartial < HubspotSDK::Internal::Type::BaseModel
+      class MediaBridgeProviderPartial < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor updated_at: Integer
 
         attr_reader allow_import_on_disconnect: bool?

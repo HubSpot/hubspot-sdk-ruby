@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicConversationsMessage < HubspotSDK::Internal::Type::BaseModel
+      class PublicConversationsMessage < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [String]
@@ -12,13 +12,13 @@ module HubspotSDK
         # @!attribute archived
         #
         #   @return [Boolean]
-        required :archived, HubspotSDK::Internal::Type::Boolean
+        required :archived, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute attachments
         #
-        #   @return [Array<HubspotSDK::Models::Conversations::PublicFile, HubspotSDK::Models::Conversations::PublicLocation, HubspotSDK::Models::Conversations::PublicContact, HubspotSDK::Models::Conversations::PublicUnsupportedContent, HubspotSDK::Models::Conversations::PublicMessageHeader, HubspotSDK::Models::Conversations::PublicQuickReplies, HubspotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata, HubspotSDK::Models::Conversations::PublicSocialMetadataAttachment>]
+        #   @return [Array<HubSpotSDK::Models::Conversations::PublicFile, HubSpotSDK::Models::Conversations::PublicLocation, HubSpotSDK::Models::Conversations::PublicContact, HubSpotSDK::Models::Conversations::PublicUnsupportedContent, HubSpotSDK::Models::Conversations::PublicMessageHeader, HubSpotSDK::Models::Conversations::PublicQuickReplies, HubSpotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata, HubSpotSDK::Models::Conversations::PublicSocialMetadataAttachment>]
         required :attachments,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Conversations::PublicConversationsMessage::Attachment] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[union: HubSpotSDK::Conversations::PublicConversationsMessage::Attachment] }
 
         # @!attribute channel_account_id
         #
@@ -32,8 +32,8 @@ module HubspotSDK
 
         # @!attribute client
         #
-        #   @return [HubspotSDK::Models::Conversations::PublicClient]
-        required :client, -> { HubspotSDK::Conversations::PublicClient }
+        #   @return [HubSpotSDK::Models::Conversations::PublicClient]
+        required :client, -> { HubSpotSDK::Conversations::PublicClient }
 
         # @!attribute conversations_thread_id
         #
@@ -52,19 +52,19 @@ module HubspotSDK
 
         # @!attribute direction
         #
-        #   @return [Symbol, HubspotSDK::Models::Conversations::PublicConversationsMessage::Direction]
-        required :direction, enum: -> { HubspotSDK::Conversations::PublicConversationsMessage::Direction }
+        #   @return [Symbol, HubSpotSDK::Models::Conversations::PublicConversationsMessage::Direction]
+        required :direction, enum: -> { HubSpotSDK::Conversations::PublicConversationsMessage::Direction }
 
         # @!attribute recipients
         #
-        #   @return [Array<HubspotSDK::Models::Conversations::PublicRecipient>]
+        #   @return [Array<HubSpotSDK::Models::Conversations::PublicRecipient>]
         required :recipients,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::PublicRecipient] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Conversations::PublicRecipient] }
 
         # @!attribute senders
         #
-        #   @return [Array<HubspotSDK::Models::Conversations::PublicSender>]
-        required :senders, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::PublicSender] }
+        #   @return [Array<HubSpotSDK::Models::Conversations::PublicSender>]
+        required :senders, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Conversations::PublicSender] }
 
         # @!attribute text
         #
@@ -73,15 +73,15 @@ module HubspotSDK
 
         # @!attribute truncation_status
         #
-        #   @return [Symbol, HubspotSDK::Models::Conversations::PublicConversationsMessage::TruncationStatus]
+        #   @return [Symbol, HubSpotSDK::Models::Conversations::PublicConversationsMessage::TruncationStatus]
         required :truncation_status,
-                 enum: -> { HubspotSDK::Conversations::PublicConversationsMessage::TruncationStatus },
+                 enum: -> { HubSpotSDK::Conversations::PublicConversationsMessage::TruncationStatus },
                  api_name: :truncationStatus
 
         # @!attribute type
         #
-        #   @return [Symbol, HubspotSDK::Models::Conversations::PublicConversationsMessage::Type]
-        required :type, enum: -> { HubspotSDK::Conversations::PublicConversationsMessage::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Conversations::PublicConversationsMessage::Type]
+        required :type, enum: -> { HubSpotSDK::Conversations::PublicConversationsMessage::Type }
 
         # @!attribute in_reply_to_id
         #
@@ -95,8 +95,8 @@ module HubspotSDK
 
         # @!attribute status
         #
-        #   @return [HubspotSDK::Models::Conversations::PublicMessageStatus, nil]
-        optional :status, -> { HubspotSDK::Conversations::PublicMessageStatus }
+        #   @return [HubSpotSDK::Models::Conversations::PublicMessageStatus, nil]
+        optional :status, -> { HubSpotSDK::Conversations::PublicMessageStatus }
 
         # @!attribute subject
         #
@@ -111,51 +111,51 @@ module HubspotSDK
         # @!method initialize(id:, archived:, attachments:, channel_account_id:, channel_id:, client:, conversations_thread_id:, created_at:, created_by:, direction:, recipients:, senders:, text:, truncation_status:, type:, in_reply_to_id: nil, rich_text: nil, status: nil, subject: nil, updated_at: nil)
         #   @param id [String]
         #   @param archived [Boolean]
-        #   @param attachments [Array<HubspotSDK::Models::Conversations::PublicFile, HubspotSDK::Models::Conversations::PublicLocation, HubspotSDK::Models::Conversations::PublicContact, HubspotSDK::Models::Conversations::PublicUnsupportedContent, HubspotSDK::Models::Conversations::PublicMessageHeader, HubspotSDK::Models::Conversations::PublicQuickReplies, HubspotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata, HubspotSDK::Models::Conversations::PublicSocialMetadataAttachment>]
+        #   @param attachments [Array<HubSpotSDK::Models::Conversations::PublicFile, HubSpotSDK::Models::Conversations::PublicLocation, HubSpotSDK::Models::Conversations::PublicContact, HubSpotSDK::Models::Conversations::PublicUnsupportedContent, HubSpotSDK::Models::Conversations::PublicMessageHeader, HubSpotSDK::Models::Conversations::PublicQuickReplies, HubSpotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata, HubSpotSDK::Models::Conversations::PublicSocialMetadataAttachment>]
         #   @param channel_account_id [String]
         #   @param channel_id [String]
-        #   @param client [HubspotSDK::Models::Conversations::PublicClient]
+        #   @param client [HubSpotSDK::Models::Conversations::PublicClient]
         #   @param conversations_thread_id [String]
         #   @param created_at [Time]
         #   @param created_by [String]
-        #   @param direction [Symbol, HubspotSDK::Models::Conversations::PublicConversationsMessage::Direction]
-        #   @param recipients [Array<HubspotSDK::Models::Conversations::PublicRecipient>]
-        #   @param senders [Array<HubspotSDK::Models::Conversations::PublicSender>]
+        #   @param direction [Symbol, HubSpotSDK::Models::Conversations::PublicConversationsMessage::Direction]
+        #   @param recipients [Array<HubSpotSDK::Models::Conversations::PublicRecipient>]
+        #   @param senders [Array<HubSpotSDK::Models::Conversations::PublicSender>]
         #   @param text [String]
-        #   @param truncation_status [Symbol, HubspotSDK::Models::Conversations::PublicConversationsMessage::TruncationStatus]
-        #   @param type [Symbol, HubspotSDK::Models::Conversations::PublicConversationsMessage::Type]
+        #   @param truncation_status [Symbol, HubSpotSDK::Models::Conversations::PublicConversationsMessage::TruncationStatus]
+        #   @param type [Symbol, HubSpotSDK::Models::Conversations::PublicConversationsMessage::Type]
         #   @param in_reply_to_id [String]
         #   @param rich_text [String]
-        #   @param status [HubspotSDK::Models::Conversations::PublicMessageStatus]
+        #   @param status [HubSpotSDK::Models::Conversations::PublicMessageStatus]
         #   @param subject [String]
         #   @param updated_at [Time]
 
         module Attachment
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubspotSDK::Conversations::PublicFile }
+          variant -> { HubSpotSDK::Conversations::PublicFile }
 
-          variant -> { HubspotSDK::Conversations::PublicLocation }
+          variant -> { HubSpotSDK::Conversations::PublicLocation }
 
-          variant -> { HubspotSDK::Conversations::PublicContact }
+          variant -> { HubSpotSDK::Conversations::PublicContact }
 
-          variant -> { HubspotSDK::Conversations::PublicUnsupportedContent }
+          variant -> { HubSpotSDK::Conversations::PublicUnsupportedContent }
 
-          variant -> { HubspotSDK::Conversations::PublicMessageHeader }
+          variant -> { HubSpotSDK::Conversations::PublicMessageHeader }
 
-          variant -> { HubspotSDK::Conversations::PublicQuickReplies }
+          variant -> { HubSpotSDK::Conversations::PublicQuickReplies }
 
-          variant -> { HubspotSDK::Conversations::PublicWhatsAppTemplateMetadata }
+          variant -> { HubSpotSDK::Conversations::PublicWhatsAppTemplateMetadata }
 
-          variant -> { HubspotSDK::Conversations::PublicSocialMetadataAttachment }
+          variant -> { HubSpotSDK::Conversations::PublicSocialMetadataAttachment }
 
           # @!method self.variants
-          #   @return [Array(HubspotSDK::Models::Conversations::PublicFile, HubspotSDK::Models::Conversations::PublicLocation, HubspotSDK::Models::Conversations::PublicContact, HubspotSDK::Models::Conversations::PublicUnsupportedContent, HubspotSDK::Models::Conversations::PublicMessageHeader, HubspotSDK::Models::Conversations::PublicQuickReplies, HubspotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata, HubspotSDK::Models::Conversations::PublicSocialMetadataAttachment)]
+          #   @return [Array(HubSpotSDK::Models::Conversations::PublicFile, HubSpotSDK::Models::Conversations::PublicLocation, HubSpotSDK::Models::Conversations::PublicContact, HubSpotSDK::Models::Conversations::PublicUnsupportedContent, HubSpotSDK::Models::Conversations::PublicMessageHeader, HubSpotSDK::Models::Conversations::PublicQuickReplies, HubSpotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata, HubSpotSDK::Models::Conversations::PublicSocialMetadataAttachment)]
         end
 
-        # @see HubspotSDK::Models::Conversations::PublicConversationsMessage#direction
+        # @see HubSpotSDK::Models::Conversations::PublicConversationsMessage#direction
         module Direction
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           INCOMING = :INCOMING
           OUTGOING = :OUTGOING
@@ -164,9 +164,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Conversations::PublicConversationsMessage#truncation_status
+        # @see HubSpotSDK::Models::Conversations::PublicConversationsMessage#truncation_status
         module TruncationStatus
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NOT_TRUNCATED = :NOT_TRUNCATED
           TRUNCATED = :TRUNCATED
@@ -176,9 +176,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Conversations::PublicConversationsMessage#type
+        # @see HubSpotSDK::Models::Conversations::PublicConversationsMessage#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           MESSAGE = :MESSAGE
 

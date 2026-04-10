@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ContentCloneRequestVNext < HubspotSDK::Internal::Type::BaseModel
+      class ContentCloneRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   ID of the object to be cloned.
         #

@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicChannelIntegrationMessageUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicChannelIntegrationMessageUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute status_type
         #   Valid status are SENT, FAILED, and READ
         #
-        #   @return [Symbol, HubspotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType]
+        #   @return [Symbol, HubSpotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType]
         required :status_type,
                  enum: -> {
-                   HubspotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType
+                   HubSpotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType
                  },
                  api_name: :statusType
 
@@ -20,15 +20,15 @@ module HubspotSDK
         optional :error_message, String, api_name: :errorMessage
 
         # @!method initialize(status_type:, error_message: nil)
-        #   @param status_type [Symbol, HubspotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType] Valid status are SENT, FAILED, and READ
+        #   @param status_type [Symbol, HubSpotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType] Valid status are SENT, FAILED, and READ
         #
         #   @param error_message [String]
 
         # Valid status are SENT, FAILED, and READ
         #
-        # @see HubspotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest#status_type
+        # @see HubSpotSDK::Models::Conversations::PublicChannelIntegrationMessageUpdateRequest#status_type
         module StatusType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           FAILED = :FAILED
           READ = :READ

@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class FileUpdateInput < HubspotSDK::Internal::Type::BaseModel
+      class FileUpdateInput < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute clear_expires
         #
         #   @return [Boolean]
-        required :clear_expires, HubspotSDK::Internal::Type::Boolean, api_name: :clearExpires
+        required :clear_expires, HubSpotSDK::Internal::Type::Boolean, api_name: :clearExpires
 
         # @!attribute access
         #   NONE: Do not run any duplicate validation. REJECT: Reject the upload if a
         #   duplicate is found. RETURN_EXISTING: If a duplicate file is found, do not upload
         #   a new file and return the found duplicate instead.
         #
-        #   @return [Symbol, HubspotSDK::Models::Files::FileUpdateInput::Access, nil]
-        optional :access, enum: -> { HubspotSDK::Files::FileUpdateInput::Access }
+        #   @return [Symbol, HubSpotSDK::Models::Files::FileUpdateInput::Access, nil]
+        optional :access, enum: -> { HubSpotSDK::Files::FileUpdateInput::Access }
 
         # @!attribute expires_at
         #
@@ -26,7 +26,7 @@ module HubspotSDK
         #   Mark whether the file should be used in new content or not.
         #
         #   @return [Boolean, nil]
-        optional :is_usable_in_content, HubspotSDK::Internal::Type::Boolean, api_name: :isUsableInContent
+        optional :is_usable_in_content, HubSpotSDK::Internal::Type::Boolean, api_name: :isUsableInContent
 
         # @!attribute name
         #   New name for the file.
@@ -50,11 +50,11 @@ module HubspotSDK
 
         # @!method initialize(clear_expires:, access: nil, expires_at: nil, is_usable_in_content: nil, name: nil, parent_folder_id: nil, parent_folder_path: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Files::FileUpdateInput} for more details.
+        #   {HubSpotSDK::Models::Files::FileUpdateInput} for more details.
         #
         #   @param clear_expires [Boolean]
         #
-        #   @param access [Symbol, HubspotSDK::Models::Files::FileUpdateInput::Access] NONE: Do not run any duplicate validation. REJECT: Reject the upload if a duplic
+        #   @param access [Symbol, HubSpotSDK::Models::Files::FileUpdateInput::Access] NONE: Do not run any duplicate validation. REJECT: Reject the upload if a duplic
         #
         #   @param expires_at [Time]
         #
@@ -70,9 +70,9 @@ module HubspotSDK
         # duplicate is found. RETURN_EXISTING: If a duplicate file is found, do not upload
         # a new file and return the found duplicate instead.
         #
-        # @see HubspotSDK::Models::Files::FileUpdateInput#access
+        # @see HubSpotSDK::Models::Files::FileUpdateInput#access
         module Access
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HIDDEN_INDEXABLE = :HIDDEN_INDEXABLE
           HIDDEN_NOT_INDEXABLE = :HIDDEN_NOT_INDEXABLE

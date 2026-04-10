@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::AssociationsSchema::LabelsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::AssociationsSchema::LabelsTest < HubSpotSDK::Test::ResourceTest
   def test_batch_create_required_params
     skip("Mock server tests are disabled")
 
@@ -14,16 +14,16 @@ class HubspotSDK::Test::Resources::Crm::AssociationsSchema::LabelsTest < Hubspot
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration
+      response => HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicAssociationDefinitionUserConfiguration]),
         started_at: Time,
-        status: HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionUserConfiguration::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -41,12 +41,12 @@ class HubspotSDK::Test::Resources::Crm::AssociationsSchema::LabelsTest < Hubspot
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::CollectionResponseAssociationSpecWithLabelNoPaging
+      response => HubSpotSDK::Crm::CollectionResponseAssociationSpecWithLabelNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::AssociationSpecWithLabel])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::AssociationSpecWithLabel])
       }
     end
   end
@@ -73,12 +73,12 @@ class HubspotSDK::Test::Resources::Crm::AssociationsSchema::LabelsTest < Hubspot
       @hubspot.crm.associations_schema.labels.list_labels("toObjectType", from_object_type: "fromObjectType")
 
     assert_pattern do
-      response => HubspotSDK::Crm::CollectionResponseAssociationSpecWithLabelNoPaging
+      response => HubSpotSDK::Crm::CollectionResponseAssociationSpecWithLabelNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::AssociationSpecWithLabel])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::AssociationSpecWithLabel])
       }
     end
   end

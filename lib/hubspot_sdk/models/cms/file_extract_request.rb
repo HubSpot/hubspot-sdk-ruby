@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class FileExtractRequest < HubspotSDK::Internal::Type::BaseModel
+      class FileExtractRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute path
         #   The file system location where the zip file is to be extracted.
         #

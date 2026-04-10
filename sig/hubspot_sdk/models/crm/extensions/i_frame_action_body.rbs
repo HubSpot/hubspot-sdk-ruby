@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
@@ -6,18 +6,18 @@ module HubspotSDK
           {
             height: Integer,
             property_names_included: ::Array[String],
-            type: HubspotSDK::Models::Crm::Extensions::IFrameActionBody::type_,
+            type: HubSpotSDK::Models::Crm::Extensions::IFrameActionBody::type_,
             url: String,
             width: Integer,
             label: String
           }
 
-        class IFrameActionBody < HubspotSDK::Internal::Type::BaseModel
+        class IFrameActionBody < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor height: Integer
 
           attr_accessor property_names_included: ::Array[String]
 
-          attr_accessor type: HubspotSDK::Models::Crm::Extensions::IFrameActionBody::type_
+          attr_accessor type: HubSpotSDK::Models::Crm::Extensions::IFrameActionBody::type_
 
           attr_accessor url: String
 
@@ -30,7 +30,7 @@ module HubspotSDK
           def initialize: (
             height: Integer,
             property_names_included: ::Array[String],
-            type: HubspotSDK::Models::Crm::Extensions::IFrameActionBody::type_,
+            type: HubSpotSDK::Models::Crm::Extensions::IFrameActionBody::type_,
             url: String,
             width: Integer,
             ?label: String
@@ -39,7 +39,7 @@ module HubspotSDK
           def to_hash: -> {
             height: Integer,
             property_names_included: ::Array[String],
-            type: HubspotSDK::Models::Crm::Extensions::IFrameActionBody::type_,
+            type: HubSpotSDK::Models::Crm::Extensions::IFrameActionBody::type_,
             url: String,
             width: Integer,
             label: String
@@ -48,11 +48,11 @@ module HubspotSDK
           type type_ = :IFRAME
 
           module Type
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             IFRAME: :IFRAME
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::IFrameActionBody::type_]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Crm::Extensions::IFrameActionBody::type_]
           end
         end
       end

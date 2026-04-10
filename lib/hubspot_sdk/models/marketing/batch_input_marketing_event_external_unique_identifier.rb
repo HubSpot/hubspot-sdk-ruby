@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class BatchInputMarketingEventExternalUniqueIdentifier < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputMarketingEventExternalUniqueIdentifier < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute inputs
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::MarketingEventExternalUniqueIdentifier>]
+        #   @return [Array<HubSpotSDK::Models::Marketing::MarketingEventExternalUniqueIdentifier>]
         required :inputs,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::MarketingEventExternalUniqueIdentifier] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::MarketingEventExternalUniqueIdentifier] }
 
         # @!method initialize(inputs:)
-        #   @param inputs [Array<HubspotSDK::Models::Marketing::MarketingEventExternalUniqueIdentifier>]
+        #   @param inputs [Array<HubSpotSDK::Models::Marketing::MarketingEventExternalUniqueIdentifier>]
       end
     end
   end

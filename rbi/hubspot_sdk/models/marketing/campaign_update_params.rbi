@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class CampaignUpdateParams < HubspotSDK::Models::Marketing::PublicCampaignInput
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class CampaignUpdateParams < HubSpotSDK::Models::Marketing::PublicCampaignInput
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::CampaignUpdateParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::CampaignUpdateParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -21,7 +21,7 @@ module HubspotSDK
         sig do
           params(
             campaign_guid: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(campaign_guid:, request_options: {})
@@ -31,7 +31,7 @@ module HubspotSDK
           override.returns(
             {
               campaign_guid: String,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end

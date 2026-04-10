@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Conversations
       class CustomChannels
-        attr_reader channel_accounts: HubspotSDK::Resources::Conversations::CustomChannels::ChannelAccounts
+        attr_reader channel_accounts: HubSpotSDK::Resources::Conversations::CustomChannels::ChannelAccounts
 
-        attr_reader messages: HubspotSDK::Resources::Conversations::CustomChannels::Messages
+        attr_reader messages: HubSpotSDK::Resources::Conversations::CustomChannels::Messages
 
         def create: (
           capabilities: ::Hash[Symbol, top],
@@ -13,8 +13,8 @@ module HubspotSDK
           ?channel_description: String,
           ?channel_logo_url: String,
           ?webhook_url: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Conversations::PublicChannelIntegrationChannel
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Conversations::PublicChannelIntegrationChannel
 
         def update: (
           Integer channel_id,
@@ -24,30 +24,30 @@ module HubspotSDK
           channel_logo_url: top,
           name: top,
           webhook_url: top,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Conversations::PublicChannelIntegrationChannel
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Conversations::PublicChannelIntegrationChannel
 
         def list: (
           ?after: String,
           ?default_page_length: Integer,
           ?limit: Integer,
           ?sort: ::Array[String],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Conversations::PublicChannelIntegrationChannel]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Conversations::PublicChannelIntegrationChannel]
 
         def delete: (
           Integer channel_id,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def get: (
           Integer channel_account_id,
           channel_id: Integer,
           ?archived: bool,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Conversations::PublicChannelAccount
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Conversations::PublicChannelAccount
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

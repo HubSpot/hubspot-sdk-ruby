@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Automation
       class Actions
@@ -8,16 +8,16 @@ module HubspotSDK
             output_fields: ::Hash[Symbol, String],
             typed_outputs: top,
             ?failure_reason_type: String,
-            ?request_context: HubspotSDK::Models::Automation::CallbackCompletionRequest::request_context,
-            ?request_options: HubspotSDK::request_opts
+            ?request_context: HubSpotSDK::Models::Automation::CallbackCompletionRequest::request_context,
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def complete_batch: (
-            inputs: ::Array[HubspotSDK::Automation::CallbackCompletionBatchRequest],
-            ?request_options: HubspotSDK::request_opts
+            inputs: ::Array[HubSpotSDK::Automation::CallbackCompletionBatchRequest],
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

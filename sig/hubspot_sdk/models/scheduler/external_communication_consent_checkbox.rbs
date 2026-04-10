@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_communication_consent_checkbox =
         { communication_type_id: String, label: String, required: bool }
 
-      class ExternalCommunicationConsentCheckbox < HubspotSDK::Internal::Type::BaseModel
+      class ExternalCommunicationConsentCheckbox < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor communication_type_id: String
 
         attr_accessor label: String

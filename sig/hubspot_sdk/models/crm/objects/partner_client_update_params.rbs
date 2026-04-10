@@ -1,14 +1,14 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Objects
         type partner_client_update_params =
           { partner_client_id: String, id_property: String }
-          & HubspotSDK::Internal::Type::request_parameters
+          & HubSpotSDK::Internal::Type::request_parameters
 
-        class PartnerClientUpdateParams < HubspotSDK::Models::Crm::SimplePublicObjectInput
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class PartnerClientUpdateParams < HubSpotSDK::Models::Crm::SimplePublicObjectInput
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           def partner_client_id: -> String
 
@@ -21,13 +21,13 @@ module HubspotSDK
           def initialize: (
             partner_client_id: String,
             ?id_property: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
             partner_client_id: String,
             id_property: String,
-            request_options: HubspotSDK::RequestOptions
+            request_options: HubSpotSDK::RequestOptions
           }
         end
       end

@@ -1,46 +1,46 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class ContactProfile < HubspotSDK::Internal::Type::BaseModel
+      class ContactProfile < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute addresses
         #
-        #   @return [Array<HubspotSDK::Models::Conversations::ContactAddress>]
-        required :addresses, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::ContactAddress] }
+        #   @return [Array<HubSpotSDK::Models::Conversations::ContactAddress>]
+        required :addresses, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Conversations::ContactAddress] }
 
         # @!attribute emails
         #
-        #   @return [Array<HubspotSDK::Models::Conversations::ContactEmail>]
-        required :emails, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::ContactEmail] }
+        #   @return [Array<HubSpotSDK::Models::Conversations::ContactEmail>]
+        required :emails, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Conversations::ContactEmail] }
 
         # @!attribute phones
         #
-        #   @return [Array<HubspotSDK::Models::Conversations::ContactPhone>]
-        required :phones, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::ContactPhone] }
+        #   @return [Array<HubSpotSDK::Models::Conversations::ContactPhone>]
+        required :phones, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Conversations::ContactPhone] }
 
         # @!attribute urls
         #
-        #   @return [Array<HubspotSDK::Models::Conversations::ContactURL>]
-        required :urls, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::ContactURL] }
+        #   @return [Array<HubSpotSDK::Models::Conversations::ContactURL>]
+        required :urls, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Conversations::ContactURL] }
 
         # @!attribute name
         #
-        #   @return [HubspotSDK::Models::Conversations::ContactName, nil]
-        optional :name, -> { HubspotSDK::Conversations::ContactName }
+        #   @return [HubSpotSDK::Models::Conversations::ContactName, nil]
+        optional :name, -> { HubSpotSDK::Conversations::ContactName }
 
         # @!attribute org
         #
-        #   @return [HubspotSDK::Models::Conversations::ContactOrg, nil]
-        optional :org, -> { HubspotSDK::Conversations::ContactOrg }
+        #   @return [HubSpotSDK::Models::Conversations::ContactOrg, nil]
+        optional :org, -> { HubSpotSDK::Conversations::ContactOrg }
 
         # @!method initialize(addresses:, emails:, phones:, urls:, name: nil, org: nil)
-        #   @param addresses [Array<HubspotSDK::Models::Conversations::ContactAddress>]
-        #   @param emails [Array<HubspotSDK::Models::Conversations::ContactEmail>]
-        #   @param phones [Array<HubspotSDK::Models::Conversations::ContactPhone>]
-        #   @param urls [Array<HubspotSDK::Models::Conversations::ContactURL>]
-        #   @param name [HubspotSDK::Models::Conversations::ContactName]
-        #   @param org [HubspotSDK::Models::Conversations::ContactOrg]
+        #   @param addresses [Array<HubSpotSDK::Models::Conversations::ContactAddress>]
+        #   @param emails [Array<HubSpotSDK::Models::Conversations::ContactEmail>]
+        #   @param phones [Array<HubSpotSDK::Models::Conversations::ContactPhone>]
+        #   @param urls [Array<HubSpotSDK::Models::Conversations::ContactURL>]
+        #   @param name [HubSpotSDK::Models::Conversations::ContactName]
+        #   @param org [HubSpotSDK::Models::Conversations::ContactOrg]
       end
     end
   end

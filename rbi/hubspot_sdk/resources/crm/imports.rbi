@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Imports
         sig do
           params(
-            files: HubspotSDK::Internal::FileInput,
+            files: HubSpotSDK::Internal::FileInput,
             import_request: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::PublicImportResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::PublicImportResponse)
         end
         def create(files: nil, import_request: nil, request_options: {})
         end
@@ -18,9 +18,9 @@ module HubspotSDK
           params(
             after: String,
             limit: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Internal::Page[HubspotSDK::Crm::PublicImportResponse]
+            HubSpotSDK::Internal::Page[HubSpotSDK::Crm::PublicImportResponse]
           )
         end
         def list(
@@ -37,8 +37,8 @@ module HubspotSDK
         sig do
           params(
             import_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::ActionResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::ActionResponse)
         end
         def cancel(import_id, request_options: {})
         end
@@ -46,8 +46,8 @@ module HubspotSDK
         sig do
           params(
             import_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::PublicImportResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::PublicImportResponse)
         end
         def get(import_id, request_options: {})
         end
@@ -59,9 +59,9 @@ module HubspotSDK
             include_error_message: T::Boolean,
             include_row_data: T::Boolean,
             limit: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Internal::Page[HubspotSDK::Crm::PublicImportError]
+            HubSpotSDK::Internal::Page[HubSpotSDK::Crm::PublicImportError]
           )
         end
         def list_errors(
@@ -79,7 +79,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

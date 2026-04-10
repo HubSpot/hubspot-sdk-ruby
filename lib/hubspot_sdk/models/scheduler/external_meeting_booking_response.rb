@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalMeetingBookingResponse < HubspotSDK::Internal::Type::BaseModel
+      class ExternalMeetingBookingResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute booking_timezone
         #   The timezone the meeting was booked from.
         #
@@ -36,31 +36,31 @@ module HubspotSDK
 
         # @!attribute form_fields
         #
-        #   @return [Array<HubspotSDK::Models::Scheduler::ExternalValidatedFormField>]
+        #   @return [Array<HubSpotSDK::Models::Scheduler::ExternalValidatedFormField>]
         required :form_fields,
                  -> {
-                   HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Scheduler::ExternalValidatedFormField]
+                   HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Scheduler::ExternalValidatedFormField]
                  },
                  api_name: :formFields
 
         # @!attribute guest_emails
         #
         #   @return [Array<String>]
-        required :guest_emails, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :guestEmails
+        required :guest_emails, HubSpotSDK::Internal::Type::ArrayOf[String], api_name: :guestEmails
 
         # @!attribute is_offline
         #   Whether the meeting was booked offline and no associated calendar event was
         #   created.
         #
         #   @return [Boolean]
-        required :is_offline, HubspotSDK::Internal::Type::Boolean, api_name: :isOffline
+        required :is_offline, HubSpotSDK::Internal::Type::Boolean, api_name: :isOffline
 
         # @!attribute legal_consent_responses
         #
-        #   @return [Array<HubspotSDK::Models::Scheduler::ExternalLegalConsentResponse>]
+        #   @return [Array<HubSpotSDK::Models::Scheduler::ExternalLegalConsentResponse>]
         required :legal_consent_responses,
                  -> {
-                   HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Scheduler::ExternalLegalConsentResponse]
+                   HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Scheduler::ExternalLegalConsentResponse]
                  },
                  api_name: :legalConsentResponses
 
@@ -103,7 +103,7 @@ module HubspotSDK
 
         # @!method initialize(booking_timezone:, calendar_event_id:, contact_id:, duration:, end_:, form_fields:, guest_emails:, is_offline:, legal_consent_responses:, start:, subject:, locale: nil, location: nil, web_conference_meeting_id: nil, web_conference_url: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Scheduler::ExternalMeetingBookingResponse} for more
+        #   {HubSpotSDK::Models::Scheduler::ExternalMeetingBookingResponse} for more
         #   details.
         #
         #   @param booking_timezone [String] The timezone the meeting was booked from.
@@ -116,13 +116,13 @@ module HubspotSDK
         #
         #   @param end_ [Time] The date and time when the meeting is scheduled to end, in ISO 8601 format.
         #
-        #   @param form_fields [Array<HubspotSDK::Models::Scheduler::ExternalValidatedFormField>]
+        #   @param form_fields [Array<HubSpotSDK::Models::Scheduler::ExternalValidatedFormField>]
         #
         #   @param guest_emails [Array<String>]
         #
         #   @param is_offline [Boolean] Whether the meeting was booked offline and no associated calendar event was crea
         #
-        #   @param legal_consent_responses [Array<HubspotSDK::Models::Scheduler::ExternalLegalConsentResponse>]
+        #   @param legal_consent_responses [Array<HubSpotSDK::Models::Scheduler::ExternalLegalConsentResponse>]
         #
         #   @param start [Time] The date and time when the meeting is scheduled to start, in ISO 8601 format.
         #

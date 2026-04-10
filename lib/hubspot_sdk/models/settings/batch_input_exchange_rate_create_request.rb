@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class BatchInputExchangeRateCreateRequest < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputExchangeRateCreateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute inputs
         #
-        #   @return [Array<HubspotSDK::Models::Settings::ExchangeRateCreateRequest>]
+        #   @return [Array<HubSpotSDK::Models::Settings::ExchangeRateCreateRequest>]
         required :inputs,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Settings::ExchangeRateCreateRequest] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Settings::ExchangeRateCreateRequest] }
 
         # @!method initialize(inputs:)
-        #   @param inputs [Array<HubspotSDK::Models::Settings::ExchangeRateCreateRequest>]
+        #   @param inputs [Array<HubSpotSDK::Models::Settings::ExchangeRateCreateRequest>]
       end
     end
   end

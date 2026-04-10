@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class StringFieldSchema < HubspotSDK::Internal::Type::BaseModel
+      class StringFieldSchema < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::StringFieldSchema,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::StringFieldSchema,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Indicates that the type is a string, with the default value being STRING.
         sig do
-          returns(HubspotSDK::Automation::StringFieldSchema::Type::OrSymbol)
+          returns(HubSpotSDK::Automation::StringFieldSchema::Type::OrSymbol)
         end
         attr_accessor :type
 
@@ -23,7 +23,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Automation::StringFieldSchema::Format::OrSymbol
+              HubSpotSDK::Automation::StringFieldSchema::Format::OrSymbol
             )
           )
         end
@@ -31,15 +31,15 @@ module HubspotSDK
 
         sig do
           params(
-            format_: HubspotSDK::Automation::StringFieldSchema::Format::OrSymbol
+            format_: HubSpotSDK::Automation::StringFieldSchema::Format::OrSymbol
           ).void
         end
         attr_writer :format_
 
         sig do
           params(
-            type: HubspotSDK::Automation::StringFieldSchema::Type::OrSymbol,
-            format_: HubspotSDK::Automation::StringFieldSchema::Format::OrSymbol
+            type: HubSpotSDK::Automation::StringFieldSchema::Type::OrSymbol,
+            format_: HubSpotSDK::Automation::StringFieldSchema::Format::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -54,9 +54,9 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              type: HubspotSDK::Automation::StringFieldSchema::Type::OrSymbol,
+              type: HubSpotSDK::Automation::StringFieldSchema::Type::OrSymbol,
               format_:
-                HubspotSDK::Automation::StringFieldSchema::Format::OrSymbol
+                HubSpotSDK::Automation::StringFieldSchema::Format::OrSymbol
             }
           )
         end
@@ -65,24 +65,24 @@ module HubspotSDK
 
         # Indicates that the type is a string, with the default value being STRING.
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Automation::StringFieldSchema::Type)
+              T.all(Symbol, HubSpotSDK::Automation::StringFieldSchema::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           STRING =
             T.let(
               :STRING,
-              HubspotSDK::Automation::StringFieldSchema::Type::TaggedSymbol
+              HubSpotSDK::Automation::StringFieldSchema::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::StringFieldSchema::Type::TaggedSymbol
+                HubSpotSDK::Automation::StringFieldSchema::Type::TaggedSymbol
               ]
             )
           end
@@ -93,44 +93,44 @@ module HubspotSDK
         # Specifies the format of the string, with accepted values: DATE, DATE_TIME,
         # OBJECT_COORDINATE, TIME, URI.
         module Format
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Automation::StringFieldSchema::Format)
+              T.all(Symbol, HubSpotSDK::Automation::StringFieldSchema::Format)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           DATE =
             T.let(
               :DATE,
-              HubspotSDK::Automation::StringFieldSchema::Format::TaggedSymbol
+              HubSpotSDK::Automation::StringFieldSchema::Format::TaggedSymbol
             )
           DATE_TIME =
             T.let(
               :DATE_TIME,
-              HubspotSDK::Automation::StringFieldSchema::Format::TaggedSymbol
+              HubSpotSDK::Automation::StringFieldSchema::Format::TaggedSymbol
             )
           OBJECT_COORDINATE =
             T.let(
               :OBJECT_COORDINATE,
-              HubspotSDK::Automation::StringFieldSchema::Format::TaggedSymbol
+              HubSpotSDK::Automation::StringFieldSchema::Format::TaggedSymbol
             )
           TIME =
             T.let(
               :TIME,
-              HubspotSDK::Automation::StringFieldSchema::Format::TaggedSymbol
+              HubSpotSDK::Automation::StringFieldSchema::Format::TaggedSymbol
             )
           URI =
             T.let(
               :URI,
-              HubspotSDK::Automation::StringFieldSchema::Format::TaggedSymbol
+              HubSpotSDK::Automation::StringFieldSchema::Format::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::StringFieldSchema::Format::TaggedSymbol
+                HubSpotSDK::Automation::StringFieldSchema::Format::TaggedSymbol
               ]
             )
           end

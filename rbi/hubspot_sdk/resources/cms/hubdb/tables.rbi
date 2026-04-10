@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Hubdb
@@ -11,14 +11,14 @@ module HubspotSDK
             params(
               allow_child_tables: T::Boolean,
               allow_public_api_access: T::Boolean,
-              columns: T::Array[HubspotSDK::Cms::ColumnRequest::OrHash],
+              columns: T::Array[HubSpotSDK::Cms::ColumnRequest::OrHash],
               dynamic_meta_tags: T::Hash[Symbol, Integer],
               enable_child_table_pages: T::Boolean,
               label: String,
               name: String,
               use_for_pages: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::HubDBTableV3)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::HubDBTableV3)
           end
           def create(
             # Specifies whether child tables can be created
@@ -59,8 +59,8 @@ module HubspotSDK
               updated_after: Time,
               updated_at: Time,
               updated_before: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Internal::Page[HubspotSDK::Cms::HubDBTableV3])
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Internal::Page[HubSpotSDK::Cms::HubDBTableV3])
           end
           def list(
             # The paging cursor token of the last successfully read resource will be returned
@@ -89,7 +89,7 @@ module HubspotSDK
           sig do
             params(
               table_id_or_name: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete(table_id_or_name, request_options: {})
@@ -105,8 +105,8 @@ module HubspotSDK
               is_hubspot_defined: T::Boolean,
               new_label: String,
               new_name: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::HubDBTableV3)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::HubDBTableV3)
           end
           def clone_draft(
             table_id_or_name,
@@ -127,7 +127,7 @@ module HubspotSDK
             params(
               version_id: Integer,
               table_id_or_name: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete_version(version_id, table_id_or_name:, request_options: {})
@@ -138,7 +138,7 @@ module HubspotSDK
             params(
               table_id_or_name: String,
               format_: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def export(table_id_or_name, format_: nil, request_options: {})
@@ -149,7 +149,7 @@ module HubspotSDK
             params(
               table_id_or_name: String,
               format_: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def export_draft(table_id_or_name, format_: nil, request_options: {})
@@ -168,8 +168,8 @@ module HubspotSDK
               archived: T::Boolean,
               include_foreign_ids: T::Boolean,
               is_get_localized_schema: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::HubDBTableV3)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::HubDBTableV3)
           end
           def get(
             table_id_or_name,
@@ -190,8 +190,8 @@ module HubspotSDK
               archived: T::Boolean,
               include_foreign_ids: T::Boolean,
               is_get_localized_schema: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::HubDBTableV3)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::HubDBTableV3)
           end
           def get_draft(
             table_id_or_name,
@@ -216,9 +216,9 @@ module HubspotSDK
             params(
               table_id_or_name: String,
               config: String,
-              file: HubspotSDK::Internal::FileInput,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::ImportResult)
+              file: HubSpotSDK::Internal::FileInput,
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::ImportResult)
           end
           def import_draft(
             table_id_or_name,
@@ -244,8 +244,8 @@ module HubspotSDK
               updated_after: Time,
               updated_at: Time,
               updated_before: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Internal::Page[HubspotSDK::Cms::HubDBTableV3])
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Internal::Page[HubSpotSDK::Cms::HubDBTableV3])
           end
           def list_draft(
             # The paging cursor token of the last successfully read resource will be returned
@@ -276,8 +276,8 @@ module HubspotSDK
             params(
               table_id_or_name: String,
               include_foreign_ids: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::HubDBTableV3)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::HubDBTableV3)
           end
           def publish_draft(
             table_id_or_name,
@@ -293,8 +293,8 @@ module HubspotSDK
             params(
               table_id_or_name: String,
               include_foreign_ids: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::HubDBTableV3)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::HubDBTableV3)
           end
           def reset_draft(
             table_id_or_name,
@@ -309,8 +309,8 @@ module HubspotSDK
             params(
               table_id_or_name: String,
               include_foreign_ids: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::HubDBTableV3)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::HubDBTableV3)
           end
           def unpublish(
             table_id_or_name,
@@ -332,7 +332,7 @@ module HubspotSDK
               table_id_or_name: String,
               allow_child_tables: T::Boolean,
               allow_public_api_access: T::Boolean,
-              columns: T::Array[HubspotSDK::Cms::ColumnRequest::OrHash],
+              columns: T::Array[HubSpotSDK::Cms::ColumnRequest::OrHash],
               dynamic_meta_tags: T::Hash[Symbol, Integer],
               enable_child_table_pages: T::Boolean,
               label: String,
@@ -341,8 +341,8 @@ module HubspotSDK
               archived: T::Boolean,
               include_foreign_ids: T::Boolean,
               is_get_localized_schema: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::HubDBTableV3)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::HubDBTableV3)
           end
           def update_draft(
             # Path param
@@ -378,7 +378,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

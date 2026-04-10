@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
       type subscription_definition =
@@ -14,10 +14,10 @@ module HubspotSDK
           business_unit_id: Integer,
           communication_method: String,
           purpose: String,
-          subscription_translations: ::Array[HubspotSDK::CommunicationPreferences::PublicSubscriptionTranslation]
+          subscription_translations: ::Array[HubSpotSDK::CommunicationPreferences::PublicSubscriptionTranslation]
         }
 
-      class SubscriptionDefinition < HubspotSDK::Internal::Type::BaseModel
+      class SubscriptionDefinition < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor created_at: Time
@@ -46,11 +46,11 @@ module HubspotSDK
 
         def purpose=: (String) -> String
 
-        attr_reader subscription_translations: ::Array[HubspotSDK::CommunicationPreferences::PublicSubscriptionTranslation]?
+        attr_reader subscription_translations: ::Array[HubSpotSDK::CommunicationPreferences::PublicSubscriptionTranslation]?
 
         def subscription_translations=: (
-          ::Array[HubspotSDK::CommunicationPreferences::PublicSubscriptionTranslation]
-        ) -> ::Array[HubspotSDK::CommunicationPreferences::PublicSubscriptionTranslation]
+          ::Array[HubSpotSDK::CommunicationPreferences::PublicSubscriptionTranslation]
+        ) -> ::Array[HubSpotSDK::CommunicationPreferences::PublicSubscriptionTranslation]
 
         def initialize: (
           id: String,
@@ -64,7 +64,7 @@ module HubspotSDK
           ?business_unit_id: Integer,
           ?communication_method: String,
           ?purpose: String,
-          ?subscription_translations: ::Array[HubspotSDK::CommunicationPreferences::PublicSubscriptionTranslation]
+          ?subscription_translations: ::Array[HubSpotSDK::CommunicationPreferences::PublicSubscriptionTranslation]
         ) -> void
 
         def to_hash: -> {
@@ -79,7 +79,7 @@ module HubspotSDK
           business_unit_id: Integer,
           communication_method: String,
           purpose: String,
-          subscription_translations: ::Array[HubspotSDK::CommunicationPreferences::PublicSubscriptionTranslation]
+          subscription_translations: ::Array[HubSpotSDK::CommunicationPreferences::PublicSubscriptionTranslation]
         }
       end
     end

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Imports#list_errors
-      class ImportListErrorsParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Crm::Imports#list_errors
+      class ImportListErrorsParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute import_id
         #
@@ -24,12 +24,12 @@ module HubspotSDK
         # @!attribute include_error_message
         #
         #   @return [Boolean, nil]
-        optional :include_error_message, HubspotSDK::Internal::Type::Boolean
+        optional :include_error_message, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute include_row_data
         #
         #   @return [Boolean, nil]
-        optional :include_row_data, HubspotSDK::Internal::Type::Boolean
+        optional :include_row_data, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute limit
         #   The maximum number of results to display per page.
@@ -39,7 +39,7 @@ module HubspotSDK
 
         # @!method initialize(import_id:, after: nil, include_error_message: nil, include_row_data: nil, limit: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::ImportListErrorsParams} for more details.
+        #   {HubSpotSDK::Models::Crm::ImportListErrorsParams} for more details.
         #
         #   @param import_id [Integer]
         #
@@ -51,7 +51,7 @@ module HubspotSDK
         #
         #   @param limit [Integer] The maximum number of results to display per page.
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

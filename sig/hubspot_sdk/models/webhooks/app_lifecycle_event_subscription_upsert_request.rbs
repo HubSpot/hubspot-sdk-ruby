@@ -1,30 +1,30 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       type app_lifecycle_event_subscription_upsert_request =
         {
           event_type_id: String,
           properties: ::Array[String],
-          subscription_type: HubspotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::subscription_type
+          subscription_type: HubSpotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::subscription_type
         }
 
-      class AppLifecycleEventSubscriptionUpsertRequest < HubspotSDK::Internal::Type::BaseModel
+      class AppLifecycleEventSubscriptionUpsertRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor event_type_id: String
 
         attr_accessor properties: ::Array[String]
 
-        attr_accessor subscription_type: HubspotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::subscription_type
+        attr_accessor subscription_type: HubSpotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::subscription_type
 
         def initialize: (
           event_type_id: String,
           properties: ::Array[String],
-          subscription_type: HubspotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::subscription_type
+          subscription_type: HubSpotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::subscription_type
         ) -> void
 
         def to_hash: -> {
           event_type_id: String,
           properties: ::Array[String],
-          subscription_type: HubspotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::subscription_type
+          subscription_type: HubSpotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::subscription_type
         }
 
         type subscription_type =
@@ -35,7 +35,7 @@ module HubspotSDK
           | :LIST_MEMBERSHIP
 
         module SubscriptionType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           OBJECT: :OBJECT
           ASSOCIATION: :ASSOCIATION
@@ -43,7 +43,7 @@ module HubspotSDK
           APP_LIFECYCLE_EVENT: :APP_LIFECYCLE_EVENT
           LIST_MEMBERSHIP: :LIST_MEMBERSHIP
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::subscription_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::subscription_type]
         end
       end
     end

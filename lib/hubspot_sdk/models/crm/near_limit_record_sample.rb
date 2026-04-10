@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class NearLimitRecordSample < HubspotSDK::Internal::Type::BaseModel
+      class NearLimitRecordSample < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute label
         #   The primary identifier of the record.
         #

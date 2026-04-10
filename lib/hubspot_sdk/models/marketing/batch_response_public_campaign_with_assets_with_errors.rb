@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class BatchResponsePublicCampaignWithAssetsWithErrors < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponsePublicCampaignWithAssetsWithErrors < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   The date and time when the batch operation was completed.
         #
@@ -12,9 +12,9 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::PublicCampaignWithAssets>]
+        #   @return [Array<HubSpotSDK::Models::Marketing::PublicCampaignWithAssets>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicCampaignWithAssets] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::PublicCampaignWithAssets] }
 
         # @!attribute started_at
         #   The date and time when the batch operation started.
@@ -26,20 +26,20 @@ module HubspotSDK
         #   The current status of the batch operation, which can be CANCELED, COMPLETE,
         #   PENDING, or PROCESSING.
         #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::BatchResponsePublicCampaignWithAssetsWithErrors::Status]
+        #   @return [Symbol, HubSpotSDK::Models::Marketing::BatchResponsePublicCampaignWithAssetsWithErrors::Status]
         required :status,
-                 enum: -> { HubspotSDK::Marketing::BatchResponsePublicCampaignWithAssetsWithErrors::Status }
+                 enum: -> { HubSpotSDK::Marketing::BatchResponsePublicCampaignWithAssetsWithErrors::Status }
 
         # @!attribute errors
         #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
+        #   @return [Array<HubSpotSDK::Models::StandardError>, nil]
+        optional :errors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError] }
 
         # @!attribute links
         #   A collection of links related to the batch operation.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute num_errors
         #   The number of errors that occurred during the batch operation.
@@ -55,18 +55,18 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::BatchResponsePublicCampaignWithAssetsWithErrors}
+        #   {HubSpotSDK::Models::Marketing::BatchResponsePublicCampaignWithAssetsWithErrors}
         #   for more details.
         #
         #   @param completed_at [Time] The date and time when the batch operation was completed.
         #
-        #   @param results [Array<HubspotSDK::Models::Marketing::PublicCampaignWithAssets>]
+        #   @param results [Array<HubSpotSDK::Models::Marketing::PublicCampaignWithAssets>]
         #
         #   @param started_at [Time] The date and time when the batch operation started.
         #
-        #   @param status [Symbol, HubspotSDK::Models::Marketing::BatchResponsePublicCampaignWithAssetsWithErrors::Status] The current status of the batch operation, which can be CANCELED, COMPLETE, PEND
+        #   @param status [Symbol, HubSpotSDK::Models::Marketing::BatchResponsePublicCampaignWithAssetsWithErrors::Status] The current status of the batch operation, which can be CANCELED, COMPLETE, PEND
         #
-        #   @param errors [Array<HubspotSDK::Models::StandardError>]
+        #   @param errors [Array<HubSpotSDK::Models::StandardError>]
         #
         #   @param links [Hash{Symbol=>String}] A collection of links related to the batch operation.
         #
@@ -77,9 +77,9 @@ module HubspotSDK
         # The current status of the batch operation, which can be CANCELED, COMPLETE,
         # PENDING, or PROCESSING.
         #
-        # @see HubspotSDK::Models::Marketing::BatchResponsePublicCampaignWithAssetsWithErrors#status
+        # @see HubSpotSDK::Models::Marketing::BatchResponsePublicCampaignWithAssetsWithErrors#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

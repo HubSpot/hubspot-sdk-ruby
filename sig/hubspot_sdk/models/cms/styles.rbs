@@ -1,59 +1,59 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type styles =
         {
-          background_color: HubspotSDK::Cms::RgbaColor,
-          background_gradient: HubspotSDK::Cms::Gradient,
-          background_image: HubspotSDK::Cms::BackgroundImage,
-          flexbox_positioning: HubspotSDK::Models::Cms::Styles::flexbox_positioning,
+          background_color: HubSpotSDK::Cms::RgbaColor,
+          background_gradient: HubSpotSDK::Cms::Gradient,
+          background_image: HubSpotSDK::Cms::BackgroundImage,
+          flexbox_positioning: HubSpotSDK::Models::Cms::Styles::flexbox_positioning,
           force_full_width_section: bool,
           max_width_section_centering: Integer,
-          vertical_alignment: HubspotSDK::Models::Cms::Styles::vertical_alignment,
-          breakpoint_styles: ::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles]
+          vertical_alignment: HubSpotSDK::Models::Cms::Styles::vertical_alignment,
+          breakpoint_styles: ::Hash[Symbol, HubSpotSDK::Cms::BreakpointStyles]
         }
 
-      class Styles < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor background_color: HubspotSDK::Cms::RgbaColor
+      class Styles < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor background_color: HubSpotSDK::Cms::RgbaColor
 
-        attr_accessor background_gradient: HubspotSDK::Cms::Gradient
+        attr_accessor background_gradient: HubSpotSDK::Cms::Gradient
 
-        attr_accessor background_image: HubspotSDK::Cms::BackgroundImage
+        attr_accessor background_image: HubSpotSDK::Cms::BackgroundImage
 
-        attr_accessor flexbox_positioning: HubspotSDK::Models::Cms::Styles::flexbox_positioning
+        attr_accessor flexbox_positioning: HubSpotSDK::Models::Cms::Styles::flexbox_positioning
 
         attr_accessor force_full_width_section: bool
 
         attr_accessor max_width_section_centering: Integer
 
-        attr_accessor vertical_alignment: HubspotSDK::Models::Cms::Styles::vertical_alignment
+        attr_accessor vertical_alignment: HubSpotSDK::Models::Cms::Styles::vertical_alignment
 
-        attr_reader breakpoint_styles: ::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles]?
+        attr_reader breakpoint_styles: ::Hash[Symbol, HubSpotSDK::Cms::BreakpointStyles]?
 
         def breakpoint_styles=: (
-          ::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles]
-        ) -> ::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles]
+          ::Hash[Symbol, HubSpotSDK::Cms::BreakpointStyles]
+        ) -> ::Hash[Symbol, HubSpotSDK::Cms::BreakpointStyles]
 
         def initialize: (
-          background_color: HubspotSDK::Cms::RgbaColor,
-          background_gradient: HubspotSDK::Cms::Gradient,
-          background_image: HubspotSDK::Cms::BackgroundImage,
-          flexbox_positioning: HubspotSDK::Models::Cms::Styles::flexbox_positioning,
+          background_color: HubSpotSDK::Cms::RgbaColor,
+          background_gradient: HubSpotSDK::Cms::Gradient,
+          background_image: HubSpotSDK::Cms::BackgroundImage,
+          flexbox_positioning: HubSpotSDK::Models::Cms::Styles::flexbox_positioning,
           force_full_width_section: bool,
           max_width_section_centering: Integer,
-          vertical_alignment: HubspotSDK::Models::Cms::Styles::vertical_alignment,
-          ?breakpoint_styles: ::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles]
+          vertical_alignment: HubSpotSDK::Models::Cms::Styles::vertical_alignment,
+          ?breakpoint_styles: ::Hash[Symbol, HubSpotSDK::Cms::BreakpointStyles]
         ) -> void
 
         def to_hash: -> {
-          background_color: HubspotSDK::Cms::RgbaColor,
-          background_gradient: HubspotSDK::Cms::Gradient,
-          background_image: HubspotSDK::Cms::BackgroundImage,
-          flexbox_positioning: HubspotSDK::Models::Cms::Styles::flexbox_positioning,
+          background_color: HubSpotSDK::Cms::RgbaColor,
+          background_gradient: HubSpotSDK::Cms::Gradient,
+          background_image: HubSpotSDK::Cms::BackgroundImage,
+          flexbox_positioning: HubSpotSDK::Models::Cms::Styles::flexbox_positioning,
           force_full_width_section: bool,
           max_width_section_centering: Integer,
-          vertical_alignment: HubspotSDK::Models::Cms::Styles::vertical_alignment,
-          breakpoint_styles: ::Hash[Symbol, HubspotSDK::Cms::BreakpointStyles]
+          vertical_alignment: HubSpotSDK::Models::Cms::Styles::vertical_alignment,
+          breakpoint_styles: ::Hash[Symbol, HubSpotSDK::Cms::BreakpointStyles]
         }
 
         type flexbox_positioning =
@@ -68,7 +68,7 @@ module HubspotSDK
           | :TOP_RIGHT
 
         module FlexboxPositioning
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOTTOM_CENTER: :BOTTOM_CENTER
           BOTTOM_LEFT: :BOTTOM_LEFT
@@ -80,19 +80,19 @@ module HubspotSDK
           TOP_LEFT: :TOP_LEFT
           TOP_RIGHT: :TOP_RIGHT
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::Styles::flexbox_positioning]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Styles::flexbox_positioning]
         end
 
         type vertical_alignment = :BOTTOM | :MIDDLE | :TOP
 
         module VerticalAlignment
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOTTOM: :BOTTOM
           MIDDLE: :MIDDLE
           TOP: :TOP
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::Styles::vertical_alignment]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Styles::vertical_alignment]
         end
       end
     end

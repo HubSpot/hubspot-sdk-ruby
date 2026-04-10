@@ -1,13 +1,13 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Auth
-      sig { returns(HubspotSDK::Resources::Auth::OAuth) }
+      sig { returns(HubSpotSDK::Resources::Auth::OAuth) }
       attr_reader :oauth
 
       # @api private
-      sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+      sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
       def self.new(client:)
       end
     end

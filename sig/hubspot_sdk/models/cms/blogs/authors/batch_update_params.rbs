@@ -1,14 +1,14 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
         module Authors
           type batch_update_params =
-            { archived: bool } & HubspotSDK::Internal::Type::request_parameters
+            { archived: bool } & HubSpotSDK::Internal::Type::request_parameters
 
-          class BatchUpdateParams < HubspotSDK::Models::Cms::BatchInputJsonNode
-            extend HubspotSDK::Internal::Type::RequestParameters::Converter
-            include HubspotSDK::Internal::Type::RequestParameters
+          class BatchUpdateParams < HubSpotSDK::Models::Cms::BatchInputJsonNode
+            extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+            include HubSpotSDK::Internal::Type::RequestParameters
 
             def archived: -> bool?
 
@@ -16,12 +16,12 @@ module HubspotSDK
 
             def initialize: (
               ?archived: bool,
-              ?request_options: HubspotSDK::request_opts
+              ?request_options: HubSpotSDK::request_opts
             ) -> void
 
             def to_hash: -> {
               archived: bool,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           end
         end

@@ -1,33 +1,33 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Scheduler
       class Meetings
         class Advanced
           def create: (
             organizer_user_id: String,
-            associations: ::Array[HubspotSDK::Scheduler::ExternalAssociationCreateRequest],
-            email_reminder_schedule: HubspotSDK::Scheduler::ExternalEmailReminderSchedule,
-            properties: HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties,
+            associations: ::Array[HubSpotSDK::Scheduler::ExternalAssociationCreateRequest],
+            email_reminder_schedule: HubSpotSDK::Scheduler::ExternalEmailReminderSchedule,
+            properties: HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties,
             timezone: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Scheduler::ExternalCalenderMeetingEventResponse
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Scheduler::ExternalCalenderMeetingEventResponse
 
           def book: (
             duration: Integer,
             email: String,
             first_name: String,
-            form_fields: ::Array[HubspotSDK::Scheduler::ExternalBookingFormField],
+            form_fields: ::Array[HubSpotSDK::Scheduler::ExternalBookingFormField],
             last_name: String,
-            legal_consent_responses: ::Array[HubspotSDK::Scheduler::ExternalLegalConsentResponse],
+            legal_consent_responses: ::Array[HubSpotSDK::Scheduler::ExternalLegalConsentResponse],
             likely_available_user_ids: ::Array[String],
             slug: String,
             start_time: Time,
             ?locale: String,
             ?timezone: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Scheduler::ExternalMeetingBookingResponse
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Scheduler::ExternalMeetingBookingResponse
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

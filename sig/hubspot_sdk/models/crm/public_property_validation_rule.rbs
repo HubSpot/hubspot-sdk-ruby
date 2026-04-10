@@ -1,17 +1,17 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_property_validation_rule =
         {
           rule_arguments: ::Array[String],
-          rule_type: HubspotSDK::Models::Crm::PublicPropertyValidationRule::rule_type,
+          rule_type: HubSpotSDK::Models::Crm::PublicPropertyValidationRule::rule_type,
           should_apply_normalization: bool
         }
 
-      class PublicPropertyValidationRule < HubspotSDK::Internal::Type::BaseModel
+      class PublicPropertyValidationRule < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor rule_arguments: ::Array[String]
 
-        attr_accessor rule_type: HubspotSDK::Models::Crm::PublicPropertyValidationRule::rule_type
+        attr_accessor rule_type: HubSpotSDK::Models::Crm::PublicPropertyValidationRule::rule_type
 
         attr_reader should_apply_normalization: bool?
 
@@ -19,13 +19,13 @@ module HubspotSDK
 
         def initialize: (
           rule_arguments: ::Array[String],
-          rule_type: HubspotSDK::Models::Crm::PublicPropertyValidationRule::rule_type,
+          rule_type: HubSpotSDK::Models::Crm::PublicPropertyValidationRule::rule_type,
           ?should_apply_normalization: bool
         ) -> void
 
         def to_hash: -> {
           rule_arguments: ::Array[String],
-          rule_type: HubspotSDK::Models::Crm::PublicPropertyValidationRule::rule_type,
+          rule_type: HubSpotSDK::Models::Crm::PublicPropertyValidationRule::rule_type,
           should_apply_normalization: bool
         }
 
@@ -59,7 +59,7 @@ module HubspotSDK
           | :WHITESPACE
 
         module RuleType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AFTER_DATETIME_DURATION: :AFTER_DATETIME_DURATION
           AFTER_DURATION: :AFTER_DURATION
@@ -89,7 +89,7 @@ module HubspotSDK
           URL_BLOCKED_DOMAINS: :URL_BLOCKED_DOMAINS
           WHITESPACE: :WHITESPACE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicPropertyValidationRule::rule_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicPropertyValidationRule::rule_type]
         end
       end
     end

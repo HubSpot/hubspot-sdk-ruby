@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class PropertiesValidations
@@ -8,9 +8,9 @@ module HubspotSDK
         sig do
           params(
             object_type_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Crm::CollectionResponsePublicPropertyValidationRuleMapNoPaging
+            HubSpotSDK::Crm::CollectionResponsePublicPropertyValidationRuleMapNoPaging
           )
         end
         def get_by_object_type_id(object_type_id, request_options: {})
@@ -21,9 +21,9 @@ module HubspotSDK
           params(
             property_name: String,
             object_type_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Crm::CollectionResponsePublicPropertyValidationRuleNoPaging
+            HubSpotSDK::Crm::CollectionResponsePublicPropertyValidationRuleNoPaging
           )
         end
         def get_by_object_type_id_and_property_name(
@@ -38,11 +38,11 @@ module HubspotSDK
         sig do
           params(
             rule_type:
-              HubspotSDK::Crm::PropertiesValidationGetByObjectTypeIDPropertyNameAndRuleTypeParams::RuleType::OrSymbol,
+              HubSpotSDK::Crm::PropertiesValidationGetByObjectTypeIDPropertyNameAndRuleTypeParams::RuleType::OrSymbol,
             object_type_id: String,
             property_name: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::PublicPropertyValidationRule)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::PublicPropertyValidationRule)
         end
         def get_by_object_type_id_property_name_and_rule_type(
           rule_type,
@@ -57,12 +57,12 @@ module HubspotSDK
         sig do
           params(
             rule_type:
-              HubspotSDK::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::RuleType::OrSymbol,
+              HubSpotSDK::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::RuleType::OrSymbol,
             object_type_id: String,
             property_name: String,
             rule_arguments: T::Array[String],
             should_apply_normalization: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def update_by_object_type_id_property_name_and_rule_type(
@@ -82,7 +82,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

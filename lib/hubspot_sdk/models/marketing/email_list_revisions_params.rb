@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::Emails#list_revisions
-      class EmailListRevisionsParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Marketing::Emails#list_revisions
+      class EmailListRevisionsParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute email_id
         #
@@ -34,7 +34,7 @@ module HubspotSDK
 
         # @!method initialize(email_id:, after: nil, before: nil, limit: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::EmailListRevisionsParams} for more details.
+        #   {HubSpotSDK::Models::Marketing::EmailListRevisionsParams} for more details.
         #
         #   @param email_id [String]
         #
@@ -44,7 +44,7 @@ module HubspotSDK
         #
         #   @param limit [Integer] The maximum number of results to display per page.
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

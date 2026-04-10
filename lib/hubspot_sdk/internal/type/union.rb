@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       # @api private
       #
       # @example
-      #   # `token_info_response_base_if` is a `HubspotSDK::Auth::TokenInfoResponseBaseIf`
+      #   # `token_info_response_base_if` is a `HubSpotSDK::Auth::TokenInfoResponseBaseIf`
       #   case token_info_response_base_if
-      #   when HubspotSDK::Auth::PublicAccessTokenInfoResponse
+      #   when HubSpotSDK::Auth::PublicAccessTokenInfoResponse
       #     puts(token_info_response_base_if.token)
-      #   when HubspotSDK::Auth::PublicRefreshTokenInfoResponse
+      #   when HubSpotSDK::Auth::PublicRefreshTokenInfoResponse
       #     puts(token_info_response_base_if.active)
       #   else
       #     puts(token_info_response_base_if)
       #   end
       module Union
-        include HubspotSDK::Internal::Type::Converter
-        include HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        include HubSpotSDK::Internal::Type::Converter
+        include HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         # @api private
         #
@@ -50,9 +50,9 @@ module HubspotSDK
 
         # @api private
         #
-        # @param key [Symbol, Hash{Symbol=>Object}, Proc, HubspotSDK::Internal::Type::Converter, Class]
+        # @param key [Symbol, Hash{Symbol=>Object}, Proc, HubSpotSDK::Internal::Type::Converter, Class]
         #
-        # @param spec [Hash{Symbol=>Object}, Proc, HubspotSDK::Internal::Type::Converter, Class] .
+        # @param spec [Hash{Symbol=>Object}, Proc, HubSpotSDK::Internal::Type::Converter, Class] .
         #
         #   @option spec [NilClass, TrueClass, FalseClass, Integer, Float, Symbol] :const
         #
@@ -62,13 +62,13 @@ module HubspotSDK
         #
         #   @option spec [Boolean] :"nil?"
         private def variant(key, spec = nil)
-          meta = HubspotSDK::Internal::Type::Converter.meta_info(nil, spec)
+          meta = HubSpotSDK::Internal::Type::Converter.meta_info(nil, spec)
           variant_info =
             case key
             in Symbol
-              [key, HubspotSDK::Internal::Type::Converter.type_info(spec), meta]
-            in Proc | HubspotSDK::Internal::Type::Converter | Class | Hash
-              [nil, HubspotSDK::Internal::Type::Converter.type_info(key), meta]
+              [key, HubSpotSDK::Internal::Type::Converter.type_info(spec), meta]
+            in Proc | HubSpotSDK::Internal::Type::Converter | Class | Hash
+              [nil, HubSpotSDK::Internal::Type::Converter.type_info(key), meta]
             end
 
           known_variants << variant_info
@@ -78,17 +78,17 @@ module HubspotSDK
         #
         # @param value [Object]
         #
-        # @return [HubspotSDK::Internal::Type::Converter, Class, nil]
+        # @return [HubSpotSDK::Internal::Type::Converter, Class, nil]
         private def resolve_variant(value)
           case [@discriminator, value]
-          in [_, HubspotSDK::Internal::Type::BaseModel]
+          in [_, HubSpotSDK::Internal::Type::BaseModel]
             value.class
           in [Symbol, Hash]
             key = value.fetch(@discriminator) do
-              value.fetch(@discriminator.to_s, HubspotSDK::Internal::OMIT)
+              value.fetch(@discriminator.to_s, HubSpotSDK::Internal::OMIT)
             end
 
-            return nil if key == HubspotSDK::Internal::OMIT
+            return nil if key == HubSpotSDK::Internal::OMIT
 
             key = key.to_sym if key.is_a?(String)
             _, found = known_variants.find { |k,| k == key }
@@ -118,7 +118,7 @@ module HubspotSDK
         #
         # @return [Boolean]
         def ==(other)
-          HubspotSDK::Internal::Type::Union === other && other.derefed_variants == derefed_variants
+          HubSpotSDK::Internal::Type::Union === other && other.derefed_variants == derefed_variants
         end
 
         # @api public
@@ -150,7 +150,7 @@ module HubspotSDK
         # @return [Object]
         def coerce(value, state:)
           if (target = resolve_variant(value))
-            return HubspotSDK::Internal::Type::Converter.coerce(target, value, state: state)
+            return HubSpotSDK::Internal::Type::Converter.coerce(target, value, state: state)
           end
 
           strictness = state.fetch(:strictness)
@@ -162,7 +162,7 @@ module HubspotSDK
             exact = state[:exactness] = {yes: 0, no: 0, maybe: 0}
             state[:branched] += 1
 
-            coerced = HubspotSDK::Internal::Type::Converter.coerce(target, value, state: state)
+            coerced = HubSpotSDK::Internal::Type::Converter.coerce(target, value, state: state)
             yes, no, maybe = exact.values
             if (no + maybe).zero? || (!strictness && yes.positive?)
               exact.each { exactness[_1] += _2 }
@@ -198,12 +198,12 @@ module HubspotSDK
         # @return [Object]
         def dump(value, state:)
           if (target = resolve_variant(value))
-            return HubspotSDK::Internal::Type::Converter.dump(target, value, state: state)
+            return HubSpotSDK::Internal::Type::Converter.dump(target, value, state: state)
           end
 
           known_variants.each do
             target = _2.call
-            return HubspotSDK::Internal::Type::Converter.dump(target, value, state: state) if target === value
+            return HubSpotSDK::Internal::Type::Converter.dump(target, value, state: state) if target === value
           end
 
           super
@@ -213,7 +213,7 @@ module HubspotSDK
         #
         # @return [Object]
         def to_sorbet_type
-          types = variants.map { HubspotSDK::Internal::Util::SorbetRuntimeSupport.to_sorbet_type(_1) }.uniq
+          types = variants.map { HubSpotSDK::Internal::Util::SorbetRuntimeSupport.to_sorbet_type(_1) }.uniq
           case types
           in []
             T.noreturn
@@ -237,7 +237,7 @@ module HubspotSDK
             return is_a?(Module) ? super() : self.class.name
           end
 
-          members = variants.map { HubspotSDK::Internal::Type::Converter.inspect(_1, depth: depth.succ) }
+          members = variants.map { HubSpotSDK::Internal::Type::Converter.inspect(_1, depth: depth.succ) }
           prefix = is_a?(Module) ? name : self.class.name
 
           "#{prefix}[#{members.join(' | ')}]"

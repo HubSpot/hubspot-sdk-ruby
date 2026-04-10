@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::MediaBridge#create_property_group
-      class MediaBridgeCreatePropertyGroupParams < HubspotSDK::Models::PropertyGroupCreate
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Cms::MediaBridge#create_property_group
+      class MediaBridgeCreatePropertyGroupParams < HubSpotSDK::Models::PropertyGroupCreate
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute app_id
         #
@@ -21,7 +21,7 @@ module HubspotSDK
         # @!method initialize(app_id:, object_type:, request_options: {})
         #   @param app_id [Integer]
         #   @param object_type [String]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

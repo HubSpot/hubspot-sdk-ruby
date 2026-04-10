@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class SourceCodeGetExtractionStatusParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class SourceCodeGetExtractionStatusParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::SourceCodeGetExtractionStatusParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::SourceCodeGetExtractionStatusParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -21,7 +21,7 @@ module HubspotSDK
         sig do
           params(
             task_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(task_id:, request_options: {})
@@ -29,7 +29,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { task_id: Integer, request_options: HubspotSDK::RequestOptions }
+            { task_id: Integer, request_options: HubSpotSDK::RequestOptions }
           )
         end
         def to_hash

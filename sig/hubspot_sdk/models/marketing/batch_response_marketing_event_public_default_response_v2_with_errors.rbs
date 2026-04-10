@@ -1,32 +1,32 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type batch_response_marketing_event_public_default_response_v2_with_errors =
         {
           completed_at: Time,
-          results: ::Array[HubspotSDK::Marketing::MarketingEventPublicDefaultResponseV2],
+          results: ::Array[HubSpotSDK::Marketing::MarketingEventPublicDefaultResponseV2],
           started_at: Time,
-          status: HubspotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::status,
-          errors: ::Array[HubspotSDK::StandardError],
+          status: HubSpotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::status,
+          errors: ::Array[HubSpotSDK::StandardError],
           links: ::Hash[Symbol, String],
           num_errors: Integer,
           requested_at: Time
         }
 
-      class BatchResponseMarketingEventPublicDefaultResponseV2WithErrors < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseMarketingEventPublicDefaultResponseV2WithErrors < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor completed_at: Time
 
-        attr_accessor results: ::Array[HubspotSDK::Marketing::MarketingEventPublicDefaultResponseV2]
+        attr_accessor results: ::Array[HubSpotSDK::Marketing::MarketingEventPublicDefaultResponseV2]
 
         attr_accessor started_at: Time
 
-        attr_accessor status: HubspotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::status
+        attr_accessor status: HubSpotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::status
 
-        attr_reader errors: ::Array[HubspotSDK::StandardError]?
+        attr_reader errors: ::Array[HubSpotSDK::StandardError]?
 
         def errors=: (
-          ::Array[HubspotSDK::StandardError]
-        ) -> ::Array[HubspotSDK::StandardError]
+          ::Array[HubSpotSDK::StandardError]
+        ) -> ::Array[HubSpotSDK::StandardError]
 
         attr_reader links: ::Hash[Symbol, String]?
 
@@ -42,10 +42,10 @@ module HubspotSDK
 
         def initialize: (
           completed_at: Time,
-          results: ::Array[HubspotSDK::Marketing::MarketingEventPublicDefaultResponseV2],
+          results: ::Array[HubSpotSDK::Marketing::MarketingEventPublicDefaultResponseV2],
           started_at: Time,
-          status: HubspotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::status,
-          ?errors: ::Array[HubspotSDK::StandardError],
+          status: HubSpotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::status,
+          ?errors: ::Array[HubSpotSDK::StandardError],
           ?links: ::Hash[Symbol, String],
           ?num_errors: Integer,
           ?requested_at: Time
@@ -53,10 +53,10 @@ module HubspotSDK
 
         def to_hash: -> {
           completed_at: Time,
-          results: ::Array[HubspotSDK::Marketing::MarketingEventPublicDefaultResponseV2],
+          results: ::Array[HubSpotSDK::Marketing::MarketingEventPublicDefaultResponseV2],
           started_at: Time,
-          status: HubspotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::status,
-          errors: ::Array[HubspotSDK::StandardError],
+          status: HubSpotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::status,
+          errors: ::Array[HubSpotSDK::StandardError],
           links: ::Hash[Symbol, String],
           num_errors: Integer,
           requested_at: Time
@@ -65,14 +65,14 @@ module HubspotSDK
         type status = :CANCELED | :COMPLETE | :PENDING | :PROCESSING
 
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED: :CANCELED
           COMPLETE: :COMPLETE
           PENDING: :PENDING
           PROCESSING: :PROCESSING
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::status]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2WithErrors::status]
         end
       end
     end

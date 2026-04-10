@@ -2,7 +2,7 @@
 
 require_relative "../test_helper"
 
-class HubspotSDK::Test::Resources::CommunicationPreferencesTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::CommunicationPreferencesTest < HubSpotSDK::Test::ResourceTest
   def test_generate_links_required_params
     skip("Mock server tests are disabled")
 
@@ -13,7 +13,7 @@ class HubspotSDK::Test::Resources::CommunicationPreferencesTest < HubspotSDK::Te
       )
 
     assert_pattern do
-      response => HubspotSDK::CommunicationPreferences::LinkGenerationResponse
+      response => HubSpotSDK::CommunicationPreferences::LinkGenerationResponse
     end
 
     assert_pattern do
@@ -32,17 +32,17 @@ class HubspotSDK::Test::Resources::CommunicationPreferencesTest < HubspotSDK::Te
     response = @hubspot.communication_preferences.get_statuses("subscriberIdString", channel: :EMAIL)
 
     assert_pattern do
-      response => HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus
+      response => HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CommunicationPreferences::PublicStatus]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::CommunicationPreferences::PublicStatus]),
         started_at: Time,
-        status: HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status,
+        errors: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError]) | nil,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
       }
@@ -56,17 +56,17 @@ class HubspotSDK::Test::Resources::CommunicationPreferencesTest < HubspotSDK::Te
       @hubspot.communication_preferences.get_unsubscribe_all_status("subscriberIdString", channel: :EMAIL)
 
     assert_pattern do
-      response => HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus
+      response => HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CommunicationPreferences::PublicWideStatus]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::CommunicationPreferences::PublicWideStatus]),
         started_at: Time,
-        status: HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus::Status,
+        errors: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError]) | nil,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
       }
@@ -79,17 +79,17 @@ class HubspotSDK::Test::Resources::CommunicationPreferencesTest < HubspotSDK::Te
     response = @hubspot.communication_preferences.unsubscribe_all("subscriberIdString", channel: :EMAIL)
 
     assert_pattern do
-      response => HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus
+      response => HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CommunicationPreferences::PublicStatus]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::CommunicationPreferences::PublicStatus]),
         started_at: Time,
-        status: HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status,
+        errors: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError]) | nil,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
       }
@@ -108,17 +108,17 @@ class HubspotSDK::Test::Resources::CommunicationPreferencesTest < HubspotSDK::Te
       )
 
     assert_pattern do
-      response => HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus
+      response => HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CommunicationPreferences::PublicStatus]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::CommunicationPreferences::PublicStatus]),
         started_at: Time,
-        status: HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status,
+        errors: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError]) | nil,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
       }

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class HubDBTableV3Request < HubspotSDK::Internal::Type::BaseModel
+      class HubDBTableV3Request < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::HubDBTableV3Request,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::HubDBTableV3Request,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -21,7 +21,7 @@ module HubspotSDK
         attr_accessor :allow_public_api_access
 
         # List of columns in the table
-        sig { returns(T::Array[HubspotSDK::Cms::ColumnRequest]) }
+        sig { returns(T::Array[HubSpotSDK::Cms::ColumnRequest]) }
         attr_accessor :columns
 
         # Specifies the key value pairs of the
@@ -50,7 +50,7 @@ module HubspotSDK
           params(
             allow_child_tables: T::Boolean,
             allow_public_api_access: T::Boolean,
-            columns: T::Array[HubspotSDK::Cms::ColumnRequest::OrHash],
+            columns: T::Array[HubSpotSDK::Cms::ColumnRequest::OrHash],
             dynamic_meta_tags: T::Hash[Symbol, Integer],
             enable_child_table_pages: T::Boolean,
             label: String,
@@ -85,7 +85,7 @@ module HubspotSDK
             {
               allow_child_tables: T::Boolean,
               allow_public_api_access: T::Boolean,
-              columns: T::Array[HubspotSDK::Cms::ColumnRequest],
+              columns: T::Array[HubSpotSDK::Cms::ColumnRequest],
               dynamic_meta_tags: T::Hash[Symbol, Integer],
               enable_child_table_pages: T::Boolean,
               label: String,

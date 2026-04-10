@@ -1,28 +1,28 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class BatchInputPublicCampaignDeleteInput < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputPublicCampaignDeleteInput < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::BatchInputPublicCampaignDeleteInput,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::BatchInputPublicCampaignDeleteInput,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # An array of PublicCampaignDeleteInput objects, each specifying a campaign to be
         # deleted. Each object must include the campaign's unique identifier.
         sig do
-          returns(T::Array[HubspotSDK::Marketing::PublicCampaignDeleteInput])
+          returns(T::Array[HubSpotSDK::Marketing::PublicCampaignDeleteInput])
         end
         attr_accessor :inputs
 
         sig do
           params(
             inputs:
-              T::Array[HubspotSDK::Marketing::PublicCampaignDeleteInput::OrHash]
+              T::Array[HubSpotSDK::Marketing::PublicCampaignDeleteInput::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(
@@ -35,7 +35,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              inputs: T::Array[HubspotSDK::Marketing::PublicCampaignDeleteInput]
+              inputs: T::Array[HubSpotSDK::Marketing::PublicCampaignDeleteInput]
             }
           )
         end
